@@ -20,14 +20,14 @@ class LiquidBlock : public ::LiquidBlockBase {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 86
+    // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 145
+    // vIndex: 146
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
@@ -37,20 +37,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int _getSlopeDistance(::BlockSource& region, ::BlockPos const& pos, int pass, int from) const;
+    MCNAPI int _getSlopeDistance(::BlockSource& region, ::BlockPos const& pos, int pass, int from) const;
 
-    MCAPI bool _isLiquidBlocking(
+    MCNAPI bool _isLiquidBlocking(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         ::BlockPos const& flowFromPos,
         uchar             flowFromDirection
     ) const;
 
-    MCAPI void _spread(::BlockSource& region, ::BlockPos const& pos, int depth, bool preserveExisting) const;
+    MCNAPI void _spread(::BlockSource& region, ::BlockPos const& pos, int depth, bool preserveExisting) const;
 
-    MCAPI bool _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool onlyDetectStatic) const;
+    MCNAPI bool _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool onlyDetectStatic) const;
 
-    MCAPI void _trySpreadTo(
+    MCNAPI void _trySpreadTo(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         int               neighbor,
@@ -58,21 +58,21 @@ public:
         uchar             flowFromDirection
     ) const;
 
-    MCAPI ::std::array<bool, 4> getSpread(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI ::std::array<bool, 4> getSpread(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
+    MCNAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

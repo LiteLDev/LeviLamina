@@ -32,7 +32,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                       mLastInputAux;
     ::ll::TypedStorage<8, 32, ::std::string>            mLastOutputName;
     ::ll::TypedStorage<4, 4, int>                       mLastResultDisplayId;
-    ::ll::TypedStorage<4, 4, ::BlockActorType const>    mBlockActorType;
+    ::ll::TypedStorage<1, 1, ::BlockActorType const>    mBlockActorType;
     ::ll::TypedStorage<1, 1, ::ContainerEnumName const> mIngredientContainerName;
     ::ll::TypedStorage<8, 48, ::HashedString const>     mRecipeTag;
     // NOLINTEND

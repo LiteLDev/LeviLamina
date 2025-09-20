@@ -55,8 +55,6 @@ public:
 
     MCNAPI ::entt::meta_any resolveAsWeakTypedObjectHandle(::Scripting::ObjectHandle handle);
 
-    MCNAPI ::entt::meta_type const& resolvedType(::Scripting::ObjectHandle handle);
-
     MCNAPI void setScriptRef(::Scripting::ObjectHandle handle, ::std::unique_ptr<::Scripting::IScriptRef>&& scriptRef);
 
     MCNAPI bool valid(::Scripting::ObjectHandle const& handle);

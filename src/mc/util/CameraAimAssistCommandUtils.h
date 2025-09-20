@@ -30,7 +30,8 @@ MCNAPI void setAimAssistForPlayerTargets(
     float                              distance,
     ::CommandSelector<::Player> const& playerTargets,
     ::CommandOrigin const&             origin,
-    ::CommandOutput&                   output
+    ::CommandOutput&                   output,
+    bool                               showDebugRender
 );
 // NOLINTEND
 

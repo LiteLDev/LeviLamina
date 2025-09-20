@@ -56,12 +56,11 @@ public:
     // prevent constructor by default
     AttachableDecoration& operator=(AttachableDecoration const&);
     AttachableDecoration(AttachableDecoration const&);
+    AttachableDecoration();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AttachableDecoration();
-
     MCNAPI void _placeMultiDecoration(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
@@ -77,12 +76,6 @@ public:
     ) const;
 
     MCNAPI ~AttachableDecoration();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

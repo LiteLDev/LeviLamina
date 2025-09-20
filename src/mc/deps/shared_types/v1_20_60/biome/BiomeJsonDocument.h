@@ -72,7 +72,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 32> mUnk7f4c54;
+            ::ll::UntypedStorage<8, 32> mUnk1e1bcf;
             // NOLINTEND
 
         public:
@@ -114,27 +114,14 @@ public:
 
         public:
             // prevent constructor by default
+            ComponentMap& operator=(ComponentMap const&);
+            ComponentMap(ComponentMap const&);
             ComponentMap();
-
-        public:
-            // member functions
-            // NOLINTBEGIN
-            MCNAPI ComponentMap(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap const&);
-
-            MCNAPI ::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap&
-            operator=(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap const&);
-            // NOLINTEND
 
         public:
             // static functions
             // NOLINTBEGIN
             MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-            // NOLINTEND
-
-        public:
-            // constructor thunks
-            // NOLINTBEGIN
-            MCNAPI void* $ctor(::SharedTypes::v1_20_60::BiomeJsonDocument::BiomeJsonObject::ComponentMap const&);
             // NOLINTEND
         };
 

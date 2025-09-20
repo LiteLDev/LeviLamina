@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
+class BlockType;
 class CompoundTagUpdaterContext;
 namespace FlatteningUtils { class RemovedState; }
 namespace FlatteningUtils { struct LegacyBlockInfo; }
@@ -24,7 +24,7 @@ MCNAPI void addUpdate(
     ::std::vector<::std::shared_ptr<::FlatteningUtils::RemovedState>> const& removedStates
 );
 
-MCNAPI ::std::vector<::WeakPtr<::BlockLegacy const>>
+MCNAPI ::std::vector<::WeakPtr<::BlockType const>>
 getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
 
 MCNAPI ::std::function<::Block const*(int)>

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -59,10 +59,10 @@ public:
     virtual bool trySend(bool const);
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::string>> getAuthToken() = 0;
+    virtual ::Bedrock::Threading::Async<::std::string> getAuthToken() = 0;
 
     // vIndex: 3
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>> send(::std::string) = 0;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::std::string) = 0;
 
     // vIndex: 4
     virtual void processResponse(::Bedrock::Http::Response) = 0;

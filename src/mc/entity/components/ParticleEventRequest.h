@@ -2,6 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+class MolangVariableMap;
+class Vec3;
+// clang-format on
+
 struct ParticleEventRequest {
 public:
     // ParticleEventRequest inner types declare
@@ -99,5 +106,24 @@ public:
             ::ParticleEventRequest::TerrainSlideData,
             ::ParticleEventRequest::BreakingItemData>>
         mData;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~ParticleEventRequest();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::ParticleEventRequest
+    addParticleEffect(::HashedString effect, ::Vec3 const& emitterPosition, ::MolangVariableMap molangVariables);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

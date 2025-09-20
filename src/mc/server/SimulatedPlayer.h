@@ -184,7 +184,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::SimulatedPlayer* create(
         ::std::string const&                                  name,
-        ::BlockPos const&                                     spawnPos,
+        ::Vec3 const&                                         spawnPos,
         ::DimensionType                                       dimensionId,
         ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> serverNetworkHandler,
         ::std::string const&                                  xuid,
@@ -193,7 +193,7 @@ public:
 
     MCAPI static ::SimulatedPlayer* create(
         ::std::string const&                                  name,
-        ::BlockPos const&                                     spawnPos,
+        ::Vec3 const&                                         spawnPos,
         ::Vec3 const&                                         spawnPosDelta,
         ::Vec2 const&                                         spawnRotation,
         bool                                                  spawnLoadedFromSave,

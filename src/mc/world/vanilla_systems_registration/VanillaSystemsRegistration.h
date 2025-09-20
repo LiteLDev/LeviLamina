@@ -12,6 +12,7 @@ class EntitySystems;
 class Experiments;
 class ILevel;
 struct PlayerMovementSettings;
+struct TickDeathSettings;
 namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 // clang-format on
 
@@ -22,6 +23,7 @@ MCNAPI ::VanillaSystemsRegistration::RegistrationOptions getDefault(
     bool                            isClientSide,
     bool                            connectedToThirdPartyServer,
     ::PlayerMovementSettings const& movementSettings,
+    ::TickDeathSettings const&      tickDeathSettings,
     ::BaseGameVersion const&        baseGameVersion,
     ::Experiments const&            experiments
 );

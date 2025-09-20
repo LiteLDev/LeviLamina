@@ -66,7 +66,7 @@ public:
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 135
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool, bool) /*override*/;
 
     // vIndex: 8
     virtual ~Boat() /*override*/ = default;
@@ -115,9 +115,9 @@ public:
 
     MCAPI float $getPassengerYRotation(::Actor const& passenger) const;
 
-    MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool, bool);
     // NOLINTEND
 
 public:

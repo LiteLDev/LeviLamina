@@ -9,7 +9,8 @@ enum class SerializationTraits : uchar {
     Compression       = 1 << 0,
     BigEndian         = 1 << 1,
     EnumAsValue       = 1 << 2,
-    EnttEnumAsBitmask = Compression | EnumAsValue,
+    NoSizeCompression = 1 << 3,
+    EnttEnumAsBitmask = Compression | NoSizeCompression,
 };
 
 }

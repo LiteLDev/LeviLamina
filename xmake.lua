@@ -14,6 +14,7 @@ add_requires("leveldb")
 add_requires("type_safe")
 add_requires("expected-lite")
 add_requires("rapidjson v1.1.0")
+add_requires("concurrentqueue")
 
 target("bdsheader")
     set_license("mit")
@@ -27,7 +28,7 @@ target("bdsheader")
     add_defines("UNICODE", "WIN32_LEAN_AND_MEAN", "_AMD64_", "NOMINMAX", "_CRT_SECURE_NO_WARNINGS")
     add_shflags("/DELAYLOAD:bedrock_server.dll")
     add_files("test/**.cpp")
-    add_packages("gsl", "fmt", "entt", "leveldb", "type_safe", "rapidjson", "glm", "expected-lite")
+    add_packages("gsl", "fmt", "entt", "leveldb", "type_safe", "rapidjson", "glm", "expected-lite", "concurrentqueue")
     on_config(function (target)
         headers = "// clang-format off\n#ifndef __INCLUDE_ALL_H__\n#define __INCLUDE_ALL_H__\n\n"
         for _,x in ipairs(os.files("src/**.h")) do

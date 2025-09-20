@@ -97,6 +97,7 @@ class TextObjectRoot;
 class Vec2;
 struct AABBShapeComponent;
 struct ActorRotationComponent;
+struct BiomeIdType;
 struct INpcDialogueData;
 struct MutableAttributeWithContext;
 struct PlayerAuthenticationInfo;
@@ -201,7 +202,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<ushort>>                      mOceanBiomes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>>               mOceanBiomes;
     ::ll::TypedStorage<8, 24, ::std::vector<ushort>>                      mFroglights;
     ::ll::TypedStorage<4, 4, float const>                                 mSneakHeight;
     ::ll::TypedStorage<4, 4, float const>                                 mSneakOffset;
@@ -429,7 +430,7 @@ public:
     virtual bool isInTrialMode();
 
     // vIndex: 143
-    virtual void setSpeed(float _speed) /*override*/;
+    virtual void setSpeed(float speed) /*override*/;
 
     // vIndex: 149
     virtual int getItemUseDuration() const /*override*/;
@@ -447,7 +448,7 @@ public:
     virtual bool isDamageBlocked(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 160
     virtual ::std::vector<::ItemStack const*> getAllHand() const /*override*/;
@@ -575,7 +576,7 @@ public:
     virtual float getSpeed() const /*override*/;
 
     // vIndex: 213
-    virtual void setPlayerGameType(::GameType);
+    virtual void setPlayerGameType(::GameType gameType);
 
     // vIndex: 214
     virtual void initHUDContainerManager();
@@ -1200,7 +1201,7 @@ public:
 
     MCFOLD bool $isInTrialMode();
 
-    MCAPI void $setSpeed(float _speed);
+    MCAPI void $setSpeed(float speed);
 
     MCAPI int $getItemUseDuration() const;
 
@@ -1212,13 +1213,15 @@ public:
 
     MCAPI bool $isDamageBlocked(::ActorDamageSource const& source) const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI ::std::vector<::ItemStack const*> $getAllHand() const;
 
     MCAPI ::std::vector<::ItemStack const*> $getAllEquipment() const;
 
     MCAPI bool $add(::ItemStack& item);
+
+    MCAPI ::CommandPermissionLevel $getCommandPermissionLevel() const;
 
     MCFOLD ::ItemStack const& $getCarriedItem() const;
 
@@ -1300,6 +1303,8 @@ public:
     MCFOLD void $stopLoading();
 
     MCAPI float $getSpeed() const;
+
+    MCAPI void $setPlayerGameType(::GameType gameType);
 
     MCAPI void $initHUDContainerManager();
 

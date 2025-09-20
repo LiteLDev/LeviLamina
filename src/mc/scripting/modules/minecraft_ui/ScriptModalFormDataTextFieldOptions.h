@@ -13,20 +13,22 @@ struct ScriptModalFormDataTextFieldOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40>  mUnkd7c867;
+    ::ll::UntypedStorage<8, 224> mUnkbb823c;
     ::ll::UntypedStorage<8, 224> mUnk7f2cd1;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ScriptModalFormDataTextFieldOptions& operator=(ScriptModalFormDataTextFieldOptions const&);
-    ScriptModalFormDataTextFieldOptions(ScriptModalFormDataTextFieldOptions const&);
     ScriptModalFormDataTextFieldOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptModalFormDataTextFieldOptions(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions&&);
+
+    MCNAPI
+    ScriptModalFormDataTextFieldOptions(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions const&);
 
     MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions&
     operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions&&);
@@ -44,6 +46,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions&&);
+
+    MCNAPI void* $ctor(::ScriptModuleMinecraftServerUI::ScriptModalFormDataTextFieldOptions const&);
     // NOLINTEND
 
 public:

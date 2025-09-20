@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/CompactionStatus.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/world/level/storage/LevelStorage.h"
 #include "mc/world/level/storage/StorageVersion.h"
 #include "mc/world/level/storage/db_helpers/Category.h"
@@ -59,16 +59,14 @@ public:
     virtual ::Core::PathBuffer<::std::string> const& getFullPath() const /*override*/;
 
     // vIndex: 11
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    virtual ::Bedrock::Threading::Async<void>
     saveData(::std::string const&, ::std::string&&, ::DBHelpers::Category) /*override*/;
 
     // vIndex: 10
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    saveData(::LevelStorageWriteBatch const&) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> saveData(::LevelStorageWriteBatch const&) /*override*/;
 
     // vIndex: 12
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    deleteData(::std::string const&, ::DBHelpers::Category) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> deleteData(::std::string const&, ::DBHelpers::Category) /*override*/;
 
     // vIndex: 13
     virtual void getStatistics(::std::string&, ::LevelStorage::StatsType) const /*override*/;
@@ -98,7 +96,7 @@ public:
     virtual void releaseSnapshot() /*override*/;
 
     // vIndex: 24
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> compactStorage() /*override*/;
+    virtual ::Bedrock::Threading::Async<void> compactStorage() /*override*/;
 
     // vIndex: 25
     virtual void syncAndSuspendStorage() /*override*/;

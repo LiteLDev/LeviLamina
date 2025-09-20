@@ -16,16 +16,4 @@ public:
     LoadedResourceData& operator=(LoadedResourceData const&);
     LoadedResourceData(LoadedResourceData const&);
     LoadedResourceData();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~LoadedResourceData();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

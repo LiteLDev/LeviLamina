@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Resources { class MinecraftDocumentInput; }
-namespace SharedTypes::v1_21_80 { struct CameraPresetFile; }
+namespace SharedTypes::v1_21_90 { struct CameraPresetFile; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -17,7 +17,7 @@ class CameraPresetLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnk3ab800;
+    ::ll::UntypedStorage<8, 192> mUnk2ad549;
     // NOLINTEND
 
 public:
@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     MCNAPI CameraPresetLoader(::MolangVersion molangVersion, ::cereal::ReflectionCtx const& ctx);
 
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_80::CameraPresetFile>
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_90::CameraPresetFile>
     load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
     MCNAPI ~CameraPresetLoader();

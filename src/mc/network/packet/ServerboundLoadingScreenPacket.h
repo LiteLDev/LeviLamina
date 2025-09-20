@@ -3,55 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
-#include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/packet/ServerboundLoadingScreenPacketType.h"
-#include "mc/platform/Result.h"
-#include "mc/util/LoadingScreenId.h"
+#include "mc/network/packet/ServerboundLoadingScreenPacketPayload.h"
+#include "mc/network/packet/serialize/SerializedPayloadPacket.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
+struct ServerboundLoadingScreenPacketInfo;
 // clang-format on
 
-class ServerboundLoadingScreenPacket : public ::Packet {
+class ServerboundLoadingScreenPacket
+: public ::SerializedPayloadPacket<::ServerboundLoadingScreenPacketInfo, ::ServerboundLoadingScreenPacketPayload> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ServerboundLoadingScreenPacketType> mServerboundLoadingScreenPacketType;
-    ::ll::TypedStorage<4, 8, ::LoadingScreenId>                    mLoadingScreenId;
-    // NOLINTEND
+    // ServerboundLoadingScreenPacket inner types define
+    using PayloadType = ::ServerboundLoadingScreenPacketPayload;
+
+    using PacketInfo = ::ServerboundLoadingScreenPacketInfo;
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ServerboundLoadingScreenPacket() /*override*/ = default;
-
-    // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const /*override*/;
-
-    // vIndex: 2
-    virtual ::std::string getName() const /*override*/;
-
-    // vIndex: 4
-    virtual void write(::BinaryStream& bitStream) const /*override*/;
-
-    // vIndex: 8
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& bitStream) /*override*/;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
-
-    MCAPI ::std::string $getName() const;
-
-    MCAPI void $write(::BinaryStream& bitStream) const;
-
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& bitStream);
     // NOLINTEND
 
 public:

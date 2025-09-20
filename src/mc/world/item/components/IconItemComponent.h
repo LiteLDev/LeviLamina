@@ -19,7 +19,7 @@ class IconItemComponent : public ::NetworkedItemComponent<::IconItemComponent> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::SharedTypes::Reference<5>>> mTextures;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::SharedTypes::Reference<8>>> mTextures;
     // NOLINTEND
 
 public:

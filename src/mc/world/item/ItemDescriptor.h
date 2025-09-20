@@ -10,7 +10,7 @@
 // clang-format off
 class BinaryStream;
 class Block;
-class BlockLegacy;
+class BlockType;
 class CompoundTag;
 class Item;
 class ReadOnlyBinaryStream;
@@ -172,7 +172,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ItemDescriptor(::Block const& block);
 
-    MCAPI explicit ItemDescriptor(::BlockLegacy const& block);
+    MCAPI explicit ItemDescriptor(::BlockType const& block);
 
     MCAPI explicit ItemDescriptor(::ItemTag const& itemTag);
 
@@ -192,6 +192,8 @@ public:
 
     MCAPI ::Block const* getBlock() const;
 
+    MCAPI ::WeakPtr<::BlockType const> const& getBlockType() const;
+
     MCAPI ::std::string getFullName() const;
 
     MCAPI short getId() const;
@@ -199,8 +201,6 @@ public:
     MCAPI int getIdAux() const;
 
     MCAPI ::Item const* getItem() const;
-
-    MCAPI ::WeakPtr<::BlockLegacy const> const& getLegacyBlock() const;
 
     MCAPI ::std::string getRawNameId() const;
 
@@ -232,7 +232,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::Block const& block);
 
-    MCAPI void* $ctor(::BlockLegacy const& block);
+    MCAPI void* $ctor(::BlockType const& block);
 
     MCAPI void* $ctor(::ItemTag const& itemTag);
 

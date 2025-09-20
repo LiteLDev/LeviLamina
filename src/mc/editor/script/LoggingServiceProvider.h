@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/LogChannel.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/logging/LogLevel.h"
 
@@ -24,7 +25,13 @@ public:
     virtual ~LoggingServiceProvider() = default;
 
     // vIndex: 1
-    virtual void log(::std::string&&, ::Player*, ::Editor::LogLevel, ::std::vector<::HashedString>&&) = 0;
+    virtual void
+    log(::std::string&&,
+        ::Player*,
+        ::Editor::LogLevel,
+        ::std::vector<::HashedString>&&,
+        ::std::optional<::Editor::LogChannel>,
+        ::std::optional<::std::string>&&) = 0;
 
     // vIndex: 2
     virtual void flush() = 0;

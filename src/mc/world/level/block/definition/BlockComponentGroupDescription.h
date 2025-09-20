@@ -26,12 +26,13 @@ public:
 
     public:
         // prevent constructor by default
-        Components(Components const&);
         Components();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI Components(::BlockComponentGroupDescription::Components const&);
+
         MCNAPI void _setCustomComponent(
             ::std::string_view                               compName,
             ::std::shared_ptr<::cereal::DynamicValue> const& compData,
@@ -46,6 +47,12 @@ public:
         operator=(::BlockComponentGroupDescription::Components const&);
 
         MCNAPI ~Components();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::BlockComponentGroupDescription::Components const&);
         // NOLINTEND
 
     public:
@@ -66,11 +73,12 @@ public:
 public:
     // prevent constructor by default
     BlockComponentGroupDescription& operator=(BlockComponentGroupDescription const&);
-    BlockComponentGroupDescription();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI BlockComponentGroupDescription();
+
     MCNAPI BlockComponentGroupDescription(::BlockComponentGroupDescription&&);
 
     MCNAPI BlockComponentGroupDescription(::BlockComponentGroupDescription const&);
@@ -87,6 +95,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::BlockComponentGroupDescription&&);
 
     MCNAPI void* $ctor(::BlockComponentGroupDescription const&);

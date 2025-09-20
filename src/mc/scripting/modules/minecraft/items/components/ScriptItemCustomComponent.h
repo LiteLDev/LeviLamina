@@ -3,10 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/items/components/ScriptItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { struct ScriptCustomComponentParameters; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -22,6 +26,7 @@ public:
 public:
     // prevent constructor by default
     ScriptItemCustomComponent& operator=(ScriptItemCustomComponent const&);
+    ScriptItemCustomComponent(ScriptItemCustomComponent const&);
     ScriptItemCustomComponent();
 
 public:
@@ -34,7 +39,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemCustomComponent(::ScriptModuleMinecraft::ScriptItemCustomComponent const&);
+    MCNAPI ScriptItemCustomComponent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemStackHandle,
+        ::std::string const&                                                           name,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+                                              parameters,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 
 public:
@@ -46,7 +57,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponent const&);
+    MCNAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemStackHandle,
+        ::std::string const&                                                           name,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+                                              parameters,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 
 public:

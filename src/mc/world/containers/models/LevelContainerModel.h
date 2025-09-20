@@ -25,7 +25,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Player&>                        mPlayer;
     ::ll::TypedStorage<4, 12, ::BlockPos>                      mBlockPos;
-    ::ll::TypedStorage<4, 4, ::BlockActorType>                 mBlockEntityType;
+    ::ll::TypedStorage<1, 1, ::BlockActorType>                 mBlockEntityType;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>                  mEntityUniqueId;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mContainerRemovedSubscription;
     // NOLINTEND

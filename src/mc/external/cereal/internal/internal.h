@@ -45,9 +45,9 @@ MCNAPI void fillEnumDescription(
     ::cereal::internal::BasicSchema::DescriptionMode mode
 );
 
-MCNAPI ::cereal::internal::ReflectedType getReflectedType(::entt::meta_type const& type);
+MCNAPI ::std::string_view getOrMakeUpSchemaName(::entt::meta_type const& type);
 
-MCNAPI ::std::string_view getSchemaNameOrAssert(::entt::meta_ctx const& ctx, ::entt::type_info const& info);
+MCNAPI ::cereal::internal::ReflectedType getReflectedType(::entt::meta_type const& type);
 
 MCNAPI ::entt::
     dense_map<::std::string, ::entt::meta_any, ::cereal::util::internal::StringViewHash, ::std::equal_to<void>>*

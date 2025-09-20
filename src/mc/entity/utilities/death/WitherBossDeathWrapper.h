@@ -14,4 +14,10 @@ public:
     WitherBossDeathWrapper& operator=(WitherBossDeathWrapper const&);
     WitherBossDeathWrapper(WitherBossDeathWrapper const&);
     WitherBossDeathWrapper();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void explode();
+    // NOLINTEND
 };

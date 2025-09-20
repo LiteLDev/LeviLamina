@@ -30,7 +30,7 @@ MCNAPI float getDistanceSquared(::Actor const& actor1, ::Actor const& actor2);
 MCNAPI ::LeashablePreset const&
 getPreset(::Actor const& leashedActor, ::LeashableComponent const& leashableComponent, ::Actor const* leashHolder);
 
-MCNAPI bool isBeingPulledByLeash(::Actor const& actor);
+MCNAPI bool isAboveHardDistance(::Actor const& actor);
 
 MCNAPI void leash(::Actor& entityToLeash, ::Actor& leashHolder, bool emitGameEvent, bool executeEntityEvent);
 

@@ -18,11 +18,14 @@ namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemComponents; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
 namespace ScriptModuleMinecraft { struct ScriptPotionOptions; }
+namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct EngineError; }
 namespace Scripting { struct Error; }
+namespace Scripting { struct UnsupportedAPIError; }
 namespace Scripting { struct Version; }
 // clang-format on
 
@@ -63,7 +66,8 @@ public:
         int                                                                                  data
     );
 
-    MCNAPI ::std::optional<::Scripting::Error> _validateDynamicProperty(
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::UnsupportedAPIError>
+    _validateDynamicProperty(
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value
     ) const;
@@ -100,6 +104,8 @@ public:
 
     MCNAPI ::std::optional<::std::string> getNameTag() const;
 
+    MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptRawMessageInterface> getRawLore() const;
+
     MCNAPI ::std::vector<::std::string> getTags() const;
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> getType() const;
@@ -125,7 +131,7 @@ public:
 
     MCNAPI ::ScriptModuleMinecraft::ScriptItemStack& operator=(::ScriptModuleMinecraft::ScriptItemStack&&);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setAmount(int amount);
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> setAmount(int amount);
 
     MCNAPI ::Scripting::Result_deprecated<void>
     setCanDestroy(::std::optional<::std::vector<::std::string>> const& blockIdentifiers);
@@ -133,18 +139,27 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void>
     setCanPlaceOn(::std::optional<::std::vector<::std::string>> const& blockIdentifiers);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setDynamicProperties(
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::UnsupportedAPIError>
+    setDynamicProperties(
         ::Scripting::ContextConfig const& contextConfig,
         ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>> const& values
     );
 
-    MCNAPI ::Scripting::Result_deprecated<void> setDynamicProperty(
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::UnsupportedAPIError>
+    setDynamicProperty(
         ::Scripting::ContextConfig const&                                                  contextConfig,
         ::std::string const&                                                               key,
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& optionalValue
     );
 
-    MCNAPI ::Scripting::Result_deprecated<void> setLore(::std::optional<::std::vector<::std::string>> const& loreList);
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::Error> setLoreBeta(
+        ::std::optional<
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+            loreVariantList
+    );
+
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError>
+    setLoreStable(::std::optional<::std::vector<::std::string>> const& loreList);
 
     MCNAPI void setLoreV010(::std::optional<::std::vector<::std::string>> const& loreList);
 
@@ -174,7 +189,17 @@ public:
     MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
     createOptionalHandle(::Scripting::WeakLifetimeScope scope, ::ItemStackBase const& item);
 
-    MCNAPI static ::std::optional<::Scripting::Error> validateLoreLength(::std::vector<::std::string> const& loreList);
+    MCNAPI static ::std::vector<::ScriptModuleMinecraft::ScriptRawMessageInterface>
+    createRawLoreVector(::std::vector<::std::string> lore);
+
+    MCNAPI static ::std::optional<::std::vector<::std::string>> tryCreateLoreVector(
+        ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> const&
+                       loreVariantList,
+        ::std::string& errorMessage
+    );
+
+    MCNAPI static ::std::optional<::Scripting::ArgumentOutOfBoundsError>
+    validateLoreLength(::std::vector<::std::string> const& loreList);
     // NOLINTEND
 
 public:

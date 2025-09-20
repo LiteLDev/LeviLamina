@@ -46,8 +46,8 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3>                                mThrownPos;
     ::ll::TypedStorage<4, 12, ::Vec3>                                mApexPos;
     ::ll::TypedStorage<1, 1, bool>                                   mFoundApex;
-    ::ll::TypedStorage<4, 4, int>                                    mLife;
-    ::ll::TypedStorage<4, 4, int>                                    mTickCount;
+    ::ll::TypedStorage<4, 4, int>                                    mDespawnTimer;
+    ::ll::TypedStorage<4, 4, int>                                    mLifetime;
     ::ll::TypedStorage<4, 4, int>                                    mFlightTime;
     ::ll::TypedStorage<4, 4, int>                                    mOnGroundTime;
     ::ll::TypedStorage<4, 4, int>                                    mShakeTime;

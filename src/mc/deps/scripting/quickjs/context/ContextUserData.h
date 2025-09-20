@@ -10,6 +10,7 @@
 namespace Scripting { class LifetimeRegistry; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDependency; }
+namespace Scripting::QuickJS { struct ParseContextData; }
 // clang-format on
 
 namespace Scripting::QuickJS {
@@ -50,6 +51,8 @@ public:
     MCNAPI ::std::string generateParseContextErrorMessage() const;
 
     MCNAPI ::Scripting::LifetimeRegistry& getLifetimeRegistry();
+
+    MCNAPI ::Scripting::QuickJS::ParseContextData const& peekParseContext() const;
 
     MCNAPI void popParseContext();
 

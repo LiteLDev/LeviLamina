@@ -11,4 +11,5 @@ enum class FlatWorldPresetID : int {
     BottomlessPit  = 5,
     Desert         = 6,
     RedstoneReady  = 7,
+    TheVoid        = 8,
 };

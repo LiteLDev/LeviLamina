@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
-class ReinforcedDeepslateBlock : public ::BlockLegacy {
+class ReinforcedDeepslateBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 45
+    // vIndex: 46
     virtual bool canBeOriginalSurface() const /*override*/;
 
     // vIndex: 0
@@ -19,7 +19,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canBeOriginalSurface() const;
+    MCNAPI bool $canBeOriginalSurface() const;
     // NOLINTEND
 
 public:

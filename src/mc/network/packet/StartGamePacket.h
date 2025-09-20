@@ -51,6 +51,7 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                         mServerBlockTypeRegistryChecksum;
     ::ll::TypedStorage<1, 1, bool>                           mServerEnabledClientSideGeneration;
     ::ll::TypedStorage<1, 1, bool>                           mBlockNetworkIdsAreHashes;
+    ::ll::TypedStorage<1, 1, bool>                           mTickDeathSystemsEnabled;
     ::ll::TypedStorage<1, 1, ::NetworkPermissions>           mNetworkPermissions;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::CompoundTag>>> mBlockProperties;
     // NOLINTEND
@@ -64,10 +65,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 13
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -95,6 +96,7 @@ public:
         bool                            isTrial,
         ::CompoundTag                   playerPropertyData,
         ::PlayerMovementSettings const& movementSettings,
+        bool                            enableTickDeathSystems,
         ::std::string const&            serverVersion,
         ::mce::UUID const&              worldTemplateId,
         uint64                          levelCurrentTime,
@@ -124,6 +126,7 @@ public:
         bool                            isTrial,
         ::CompoundTag                   playerPropertyData,
         ::PlayerMovementSettings const& movementSettings,
+        bool                            enableTickDeathSystems,
         ::std::string const&            serverVersion,
         ::mce::UUID const&              worldTemplateId,
         uint64                          levelCurrentTime,

@@ -20,7 +20,7 @@
 #include "mc/client/world/JoinServerWorldResult.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
@@ -42,6 +42,7 @@
 // clang-format off
 class AbstractScene;
 class Actor;
+class ActorAnimationGroup;
 class ActorBlockRenderer;
 class ActorRenderDispatcher;
 class ActorResourceDefinitionGroup;
@@ -49,7 +50,6 @@ class BlockActorRenderDispatcher;
 class BlockCullingGroup;
 class BlockSource;
 class BlockTessellator;
-class BlockTypeRegistry;
 class BuildActionIntention;
 class CachedScenes;
 class CameraRegistry;
@@ -95,6 +95,7 @@ class IMinecraftGame;
 class IOptions;
 class IResourcePackRepository;
 class ISceneStack;
+class ISettingsRegistry;
 class ITTSEventManager;
 class IUIRepository;
 class ItemInHandRenderer;
@@ -106,6 +107,7 @@ class Level;
 class LevelRenderer;
 class LevelRendererCameraProxy;
 class LightTexture;
+class LinkedAssetValidator;
 class LocalPlayer;
 class MarketplaceServicesManager;
 class Minecraft;
@@ -127,7 +129,6 @@ class ProfanityContext;
 class ProgressHandler;
 class ResourcePackManager;
 class SceneFactory;
-class SceneStack;
 class ScreenContext;
 class ScreenLoadTimeTracker;
 class ShaderColor;
@@ -235,7 +236,8 @@ public:
     virtual ::std::optional<::Social::GameConnectionInfo> getGameConnectionInfo() = 0;
 
     // vIndex: 12
-    virtual void onStartJoinGame(bool, ::std::string const&, ::NetworkType, ::Social::MultiplayerServiceIdentifier) = 0;
+    virtual void
+    onStartJoinGame(bool, ::std::string const&, ::NetworkType, ::Social::MultiplayerServiceIdentifier, bool) = 0;
 
     // vIndex: 13
     virtual void onCancelJoinGame() = 0;
@@ -290,7 +292,7 @@ public:
     ) = 0;
 
     // vIndex: 29
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::ClientGameSetupResult>>
+    virtual ::Bedrock::Threading::Async<::ClientGameSetupResult>
     setupClientGame(bool, ::std::unique_ptr<::GameModuleClient>) = 0;
 
     // vIndex: 30
@@ -615,1006 +617,1015 @@ public:
     virtual bool isAdhocEnabled() const = 0;
 
     // vIndex: 137
-    virtual bool isMarketplaceDisabled() const = 0;
+    virtual ::std::shared_ptr<::ActorAnimationGroup> getActorAnimationGroup() const = 0;
 
     // vIndex: 138
-    virtual ::std::pair<::StoreErrorCodes, ::std::string> const getMarketplaceDisabledReasonWithErrorCode() const = 0;
+    virtual bool isMarketplaceDisabled() const = 0;
 
     // vIndex: 139
-    virtual void linkToOffer(::std::string const&, bool) = 0;
+    virtual ::std::pair<::StoreErrorCodes, ::std::string> const getMarketplaceDisabledReasonWithErrorCode() const = 0;
 
     // vIndex: 140
-    virtual void linkToPage(::std::string const&) = 0;
+    virtual void linkToOffer(::std::string const&, bool) = 0;
 
     // vIndex: 141
-    virtual void linkTo3PServerOffers(::std::string const&, ::std::string const&) = 0;
+    virtual void linkToPage(::std::string const&) = 0;
 
     // vIndex: 142
-    virtual void navigateToMarketplaceInventoryScreen(::InventoryTabIndex) = 0;
+    virtual void linkTo3PServerOffers(::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 143
-    virtual void navigateToStoreHomeScreen() = 0;
+    virtual void navigateToMarketplaceInventoryScreen(::InventoryTabIndex) = 0;
 
     // vIndex: 144
-    virtual void navigateToCoinPurchaseScreen(int, ::std::function<void(bool, int)>) = 0;
+    virtual void navigateToStoreHomeScreen() = 0;
 
     // vIndex: 145
-    virtual void navigateToPurchaseOfferScreen(::StoreCatalogItem&, ::StoreNavigationOrigin, bool const) = 0;
+    virtual void navigateToCoinPurchaseScreen(int, ::std::function<void(bool, int)>) = 0;
 
     // vIndex: 146
-    virtual void navigateToDressingRoomOfferScreen(::std::string const&) = 0;
+    virtual void navigateToPurchaseOfferScreen(::StoreCatalogItem&, ::StoreNavigationOrigin, bool const) = 0;
 
     // vIndex: 147
-    virtual bool navigateToProfileScreen(::std::string const&, bool const) = 0;
+    virtual void navigateToDressingRoomOfferScreen(::std::string const&) = 0;
 
     // vIndex: 148
-    virtual void navigateToServersScreen(bool const) = 0;
+    virtual bool navigateToProfileScreen(::std::string const&, bool const) = 0;
 
     // vIndex: 149
-    virtual void navigateToHowToPlayScreen(::std::string const&) = 0;
+    virtual void navigateToServersScreen(bool const) = 0;
 
     // vIndex: 150
-    virtual void navigateToGatheringInfoScreen(bool) = 0;
+    virtual void navigateToHowToPlayScreen(::std::string const&) = 0;
 
     // vIndex: 151
-    virtual void navigateToMarketplacePassPDPScreen(::MarketplacePassTabIndex) = 0;
+    virtual void navigateToGatheringInfoScreen(bool) = 0;
 
     // vIndex: 152
-    virtual void navigateToRealmsStoriesTransitionScreen(::Realms::World const&) = 0;
+    virtual void navigateToMarketplacePassPDPScreen(::MarketplacePassTabIndex) = 0;
 
     // vIndex: 153
-    virtual void tryPushLeaveGameScreen() = 0;
+    virtual void navigateToRealmsStoriesTransitionScreen(::Realms::World const&) = 0;
 
     // vIndex: 154
-    virtual void tryStartDayOneExperience() = 0;
+    virtual void tryPushLeaveGameScreen() = 0;
 
     // vIndex: 155
-    virtual bool isReadyToRender() const = 0;
+    virtual void tryStartDayOneExperience() = 0;
 
     // vIndex: 156
-    virtual void onDimensionChangedEvent() = 0;
+    virtual bool isReadyToRender() const = 0;
 
     // vIndex: 157
-    virtual void onGameEventNotification(::ui::GameEventNotification) = 0;
+    virtual void onDimensionChangedEvent() = 0;
 
     // vIndex: 158
-    virtual ::std::string getTopScreenName() const = 0;
+    virtual void onGameEventNotification(::ui::GameEventNotification) = 0;
 
     // vIndex: 159
-    virtual void setLeaveGameInProgressAsReadyToContinue() = 0;
+    virtual ::std::string getTopScreenName() const = 0;
 
     // vIndex: 160
-    virtual void stopDestroying() = 0;
+    virtual void setLeaveGameInProgressAsReadyToContinue() = 0;
 
     // vIndex: 161
+    virtual void stopDestroying() = 0;
+
+    // vIndex: 162
     virtual void onClientCreatedLevel(
         ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>>,
         ::OwnerPtr<::EntityContext>
     ) = 0;
 
-    // vIndex: 162
+    // vIndex: 163
     virtual uint64 getClientRandomId() const = 0;
 
-    // vIndex: 163
+    // vIndex: 164
     virtual ::PlayerAuthentication& getPlayerAuthentication() = 0;
 
-    // vIndex: 164
+    // vIndex: 165
     virtual ::std::weak_ptr<::PlayerAuthentication> getWeakPlayerAuthentication() = 0;
 
-    // vIndex: 165
+    // vIndex: 166
     virtual void registerToUserManager(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&, int) = 0;
 
-    // vIndex: 166
+    // vIndex: 167
     virtual void resumeWithUserManager(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&, int) = 0;
 
-    // vIndex: 168
+    // vIndex: 169
     virtual void createPlayerAuthentication() = 0;
 
-    // vIndex: 167
+    // vIndex: 168
     virtual void createPlayerAuthentication(uint64) = 0;
 
-    // vIndex: 169
+    // vIndex: 170
     virtual ::std::string getPlatformId() const = 0;
 
-    // vIndex: 170
+    // vIndex: 171
     virtual ::std::string getPlatformOnlineId() const = 0;
 
-    // vIndex: 171
+    // vIndex: 172
     virtual bool isHoloCursorNeeded() const = 0;
 
-    // vIndex: 172
+    // vIndex: 173
     virtual bool useController() const = 0;
 
-    // vIndex: 173
+    // vIndex: 174
     virtual bool useTouchscreen() const = 0;
 
-    // vIndex: 174
+    // vIndex: 175
     virtual bool getMouseGrabbed() const = 0;
 
-    // vIndex: 175
+    // vIndex: 176
     virtual bool currentInputModeIsGamePadOrMotionController() const = 0;
 
-    // vIndex: 176
+    // vIndex: 177
     virtual bool currentInputModeIsMouseAndKeyboard() const = 0;
 
-    // vIndex: 177
+    // vIndex: 178
     virtual bool getForceMonoscopic() const = 0;
 
-    // vIndex: 178
+    // vIndex: 179
     virtual bool allowPicking() const = 0;
 
-    // vIndex: 179
+    // vIndex: 180
     virtual bool isShowingMenu() const = 0;
 
-    // vIndex: 180
+    // vIndex: 181
     virtual bool isShowingProgressScreen() const = 0;
 
-    // vIndex: 181
+    // vIndex: 182
     virtual bool isShowingWorldProgressScreen() const = 0;
 
-    // vIndex: 182
+    // vIndex: 183
     virtual bool isShowingRealmsProgressScreen() const = 0;
 
-    // vIndex: 183
+    // vIndex: 184
     virtual bool isShowingDeathScreen() const = 0;
 
-    // vIndex: 184
+    // vIndex: 185
     virtual bool isShowingServerForm() const = 0;
 
-    // vIndex: 185
+    // vIndex: 186
     virtual bool isScreenReplaceable() const = 0;
 
-    // vIndex: 186
+    // vIndex: 187
     virtual bool isInWorldAndNotShowingAnyMenuScreens() const = 0;
 
-    // vIndex: 187
+    // vIndex: 188
     virtual bool isWorldActive() const = 0;
 
-    // vIndex: 188
+    // vIndex: 189
     virtual bool isInRealm() = 0;
 
-    // vIndex: 189
+    // vIndex: 190
     virtual bool readyForShutdown() const = 0;
 
-    // vIndex: 190
+    // vIndex: 191
     virtual bool isPrimaryClient() const = 0;
 
-    // vIndex: 191
+    // vIndex: 192
     virtual bool isEduMode() const = 0;
 
-    // vIndex: 192
+    // vIndex: 193
     virtual bool isGamepadCursorEnabled() const = 0;
 
-    // vIndex: 193
+    // vIndex: 194
     virtual bool isInControlCustomization() const = 0;
 
-    // vIndex: 195
+    // vIndex: 196
     virtual ::Bedrock::NotNullNonOwnerPtr<::Minecraft> getServerData() = 0;
 
-    // vIndex: 194
+    // vIndex: 195
     virtual ::Bedrock::NotNullNonOwnerPtr<::Minecraft const> getServerData() const = 0;
 
-    // vIndex: 197
+    // vIndex: 198
     virtual ::MultiPlayerLevel* getLevel() = 0;
 
-    // vIndex: 196
+    // vIndex: 197
     virtual ::MultiPlayerLevel const* getLevel() const = 0;
 
-    // vIndex: 198
+    // vIndex: 199
     virtual bool hasLevel() const = 0;
 
-    // vIndex: 199
+    // vIndex: 200
     virtual bool isPreGame() const = 0;
 
-    // vIndex: 200
+    // vIndex: 201
     virtual bool isInMultiplayerGame() const = 0;
 
-    // vIndex: 201
+    // vIndex: 202
     virtual bool isMultiPlayerClient() const = 0;
 
-    // vIndex: 203
+    // vIndex: 204
     virtual ::IOptions& getOptions() = 0;
 
-    // vIndex: 202
+    // vIndex: 203
     virtual ::IOptions const& getOptions() const = 0;
 
-    // vIndex: 205
+    // vIndex: 206
     virtual ::std::shared_ptr<::Options> getOptionsPtr() = 0;
 
-    // vIndex: 204
+    // vIndex: 205
     virtual ::std::shared_ptr<::Options const> const getOptionsPtr() const = 0;
 
-    // vIndex: 206
+    // vIndex: 207
     virtual void setUser(::std::shared_ptr<::Social::User> const&) = 0;
 
-    // vIndex: 208
+    // vIndex: 209
     virtual ::std::shared_ptr<::Social::User> getUser() = 0;
 
-    // vIndex: 207
+    // vIndex: 208
     virtual ::std::shared_ptr<::Social::User const> const getUser() const = 0;
 
-    // vIndex: 209
-    virtual ::Option const& getShowLearningPromptsOption() const = 0;
-
     // vIndex: 210
-    virtual ::Option& getShowControlTipsOption() = 0;
+    virtual ::std::shared_ptr<::ISettingsRegistry> getSettingsRegistry() = 0;
 
     // vIndex: 211
-    virtual ::Option& getShowControlTipsOverrideOption() = 0;
+    virtual ::Option const& getShowLearningPromptsOption() const = 0;
 
     // vIndex: 212
-    virtual double getControlTipsTimeElapsed() const = 0;
+    virtual ::Option& getShowControlTipsOption() = 0;
 
     // vIndex: 213
-    virtual void setControlTipsTimeElapsedStart() = 0;
+    virtual ::Option& getShowControlTipsOverrideOption() = 0;
 
     // vIndex: 214
-    virtual ::GameRenderer& getGameRenderer() const = 0;
+    virtual double getControlTipsTimeElapsed() const = 0;
 
     // vIndex: 215
-    virtual ::Bedrock::NonOwnerPointer<::HolosceneRenderer> getHolosceneRenderer() const = 0;
+    virtual void setControlTipsTimeElapsedStart() = 0;
 
     // vIndex: 216
-    virtual ::LevelRenderer* getLevelRenderer() const = 0;
+    virtual ::GameRenderer& getGameRenderer() const = 0;
 
     // vIndex: 217
-    virtual ::LevelRendererCameraProxy* getLevelRendererCameraProxy() const = 0;
-
-    // vIndex: 219
-    virtual ::Bedrock::NonOwnerPointer<::CameraRegistry> getCameraRegistry() = 0;
+    virtual ::Bedrock::NonOwnerPointer<::HolosceneRenderer> getHolosceneRenderer() const = 0;
 
     // vIndex: 218
-    virtual ::Bedrock::NonOwnerPointer<::CameraRegistry const> getCameraRegistry() const = 0;
+    virtual ::LevelRenderer* getLevelRenderer() const = 0;
 
-    // vIndex: 220
-    virtual ::Bedrock::NonOwnerPointer<::EntitySystems> getCameraSystems() = 0;
+    // vIndex: 219
+    virtual ::LevelRendererCameraProxy* getLevelRendererCameraProxy() const = 0;
 
     // vIndex: 221
-    virtual ::LightTexture* getLightTexture() = 0;
+    virtual ::Bedrock::NonOwnerPointer<::CameraRegistry> getCameraRegistry() = 0;
+
+    // vIndex: 220
+    virtual ::Bedrock::NonOwnerPointer<::CameraRegistry const> getCameraRegistry() const = 0;
 
     // vIndex: 222
-    virtual void setupLevelRendering(::MultiPlayerLevel&, ::WeakEntityRef) = 0;
+    virtual ::Bedrock::NonOwnerPointer<::EntitySystems> getCameraSystems() = 0;
 
     // vIndex: 223
-    virtual ::mce::ViewportInfo const& getViewportInfo() const = 0;
+    virtual ::LightTexture* getLightTexture() = 0;
 
     // vIndex: 224
-    virtual void setViewportInfo(::mce::ViewportInfo const&) = 0;
+    virtual void setupLevelRendering(::MultiPlayerLevel&, ::WeakEntityRef) = 0;
 
     // vIndex: 225
-    virtual ::Vec2 getNormalizedViewportSize() const = 0;
+    virtual ::mce::ViewportInfo const& getViewportInfo() const = 0;
 
     // vIndex: 226
-    virtual void updateChunkRadius() = 0;
+    virtual void setViewportInfo(::mce::ViewportInfo const&) = 0;
 
     // vIndex: 227
-    virtual void setUITexture(::mce::Texture*) = 0;
+    virtual ::Vec2 getNormalizedViewportSize() const = 0;
 
     // vIndex: 228
-    virtual ::mce::Texture* getUITexture() = 0;
+    virtual void updateChunkRadius() = 0;
 
     // vIndex: 229
-    virtual void setLevelTexture(::mce::Texture*) = 0;
+    virtual void setUITexture(::mce::Texture*) = 0;
 
     // vIndex: 230
-    virtual ::mce::Texture* getLevelTexture() = 0;
+    virtual ::mce::Texture* getUITexture() = 0;
 
     // vIndex: 231
-    virtual void setUICursorTexture(::mce::TexturePtr) = 0;
+    virtual void setLevelTexture(::mce::Texture*) = 0;
 
     // vIndex: 232
-    virtual ::mce::TexturePtr getUICursorTexture() const = 0;
+    virtual ::mce::Texture* getLevelTexture() = 0;
 
     // vIndex: 233
-    virtual ::mce::Camera& getCamera() = 0;
+    virtual void setUICursorTexture(::mce::TexturePtr) = 0;
 
     // vIndex: 234
-    virtual ::ShaderColor& getShaderColor() = 0;
+    virtual ::mce::TexturePtr getUICursorTexture() const = 0;
 
     // vIndex: 235
-    virtual ::ShaderColor& getDarkShaderColor() = 0;
+    virtual ::mce::Camera& getCamera() = 0;
 
     // vIndex: 236
-    virtual void clearGraphicsCache() = 0;
+    virtual ::ShaderColor& getShaderColor() = 0;
 
     // vIndex: 237
-    virtual void getNormalizedUICursorTransform(::MatrixStack::MatrixStackRef&, float) = 0;
+    virtual ::ShaderColor& getDarkShaderColor() = 0;
 
     // vIndex: 238
-    virtual bool shouldRenderUICursor() const = 0;
+    virtual void clearGraphicsCache() = 0;
 
     // vIndex: 239
-    virtual bool getRenderPlayerModel() const = 0;
+    virtual void getNormalizedUICursorTransform(::MatrixStack::MatrixStackRef&, float) = 0;
 
     // vIndex: 240
-    virtual ::DeferredLighting& getDeferredLighting() = 0;
+    virtual bool shouldRenderUICursor() const = 0;
 
     // vIndex: 241
-    virtual float getGuiScale() const = 0;
+    virtual bool getRenderPlayerModel() const = 0;
 
     // vIndex: 242
-    virtual ::Option const& getGuiScaleOption() const = 0;
+    virtual ::DeferredLighting& getDeferredLighting() = 0;
 
     // vIndex: 243
-    virtual int getGuiScaleOffset() const = 0;
+    virtual float getGuiScale() const = 0;
 
     // vIndex: 244
-    virtual void setGuiScaleOffset(int) = 0;
+    virtual ::Option const& getGuiScaleOption() const = 0;
 
     // vIndex: 245
-    virtual void renderImGui(::ScreenContext&, bool) = 0;
-
-    // vIndex: 247
-    virtual ::Bedrock::NotNullNonOwnerPtr<::GuiData> getGuiData() = 0;
+    virtual int getGuiScaleOffset() const = 0;
 
     // vIndex: 246
-    virtual ::Bedrock::NotNullNonOwnerPtr<::GuiData const> getGuiData() const = 0;
+    virtual void setGuiScaleOffset(int) = 0;
 
-    // vIndex: 248
-    virtual ::GuidedFlowManager& getGuidedFlowManager() = 0;
+    // vIndex: 247
+    virtual void renderImGui(::ScreenContext&, bool) = 0;
 
     // vIndex: 249
-    virtual ::PixelCalc const& getDpadScale() const = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::GuiData> getGuiData() = 0;
+
+    // vIndex: 248
+    virtual ::Bedrock::NotNullNonOwnerPtr<::GuiData const> getGuiData() const = 0;
 
     // vIndex: 250
-    virtual ::Bedrock::NotNullNonOwnerPtr<::DateManager const> getDateManager() const = 0;
+    virtual ::GuidedFlowManager& getGuidedFlowManager() = 0;
 
     // vIndex: 251
-    virtual void addOverrideHoursToDateTime(uint const) = 0;
+    virtual ::PixelCalc const& getDpadScale() const = 0;
 
     // vIndex: 252
-    virtual ::ToastManager& getToastManager() = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::DateManager const> getDateManager() const = 0;
 
     // vIndex: 253
+    virtual void addOverrideHoursToDateTime(uint const) = 0;
+
+    // vIndex: 254
+    virtual ::ToastManager& getToastManager() = 0;
+
+    // vIndex: 255
     virtual ::ClipboardProxy<::ApplicationSignal::ClipboardCopy, ::ApplicationSignal::ClipboardPasteRequest>&
     getClipboardManager() = 0;
 
-    // vIndex: 255
+    // vIndex: 257
     virtual ::AbstractScene* getTopScene() = 0;
 
-    // vIndex: 254
+    // vIndex: 256
     virtual ::AbstractScene const* getTopScene() const = 0;
 
-    // vIndex: 257
+    // vIndex: 259
     virtual ::AbstractScene* getActiveScene() = 0;
 
-    // vIndex: 256
+    // vIndex: 258
     virtual ::AbstractScene const* getActiveScene() const = 0;
 
-    // vIndex: 258
+    // vIndex: 260
     virtual ::SceneFactory& getSceneFactory() const = 0;
 
-    // vIndex: 259
+    // vIndex: 261
     virtual ::OreUI::SceneProvider& getSceneProvider() const = 0;
 
-    // vIndex: 260
+    // vIndex: 262
     virtual ::WeakRef<::OreUI::UIBlockThumbnailAtlasManager> getOreUIBlockThumbnailAtlasManager() const = 0;
 
-    // vIndex: 261
+    // vIndex: 263
     virtual ::ui::ScreenTechStackSelector& getScreenTechStackSelector() = 0;
 
-    // vIndex: 263
-    virtual ::Bedrock::NotNullNonOwnerPtr<::SceneStack const> getClientSceneStack() const = 0;
-
-    // vIndex: 262
-    virtual ::Bedrock::NotNullNonOwnerPtr<::SceneStack> getClientSceneStack() = 0;
+    // vIndex: 265
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> getClientSceneStack() const = 0;
 
     // vIndex: 264
-    virtual ::OreUI::Router& getClientUIRouter() const = 0;
-
-    // vIndex: 265
-    virtual ::ISceneStack& getMainSceneStackInterface() = 0;
-
-    // vIndex: 267
-    virtual ::Bedrock::NotNullNonOwnerPtr<::SceneStack> getMainSceneStack() = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> getClientSceneStack() = 0;
 
     // vIndex: 266
-    virtual ::Bedrock::NotNullNonOwnerPtr<::SceneStack const> getMainSceneStack() const = 0;
+    virtual ::OreUI::Router& getClientUIRouter() const = 0;
+
+    // vIndex: 267
+    virtual ::ISceneStack& getMainSceneStackInterface() = 0;
 
     // vIndex: 269
-    virtual ::Bedrock::NotNullNonOwnerPtr<::SceneStack const> getCurrentSceneStack() const = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> getMainSceneStack() = 0;
 
     // vIndex: 268
-    virtual ::Bedrock::NotNullNonOwnerPtr<::SceneStack> getCurrentSceneStack() = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> getMainSceneStack() const = 0;
 
     // vIndex: 271
-    virtual ::OreUI::Router& getCurrentUIRouter() = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> getCurrentSceneStack() const = 0;
 
     // vIndex: 270
-    virtual ::OreUI::Router const& getCurrentUIRouter() const = 0;
-
-    // vIndex: 272
-    virtual ::OreUI::ITelemetry& getOreUITelemetry() = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> getCurrentSceneStack() = 0;
 
     // vIndex: 273
-    virtual ::Bedrock::NotNullNonOwnerPtr<::SceneStack>
-    prepareSceneFor(::ui::SceneType const, ::std::function<::std::shared_ptr<::AbstractScene>()>) = 0;
+    virtual ::OreUI::Router& getCurrentUIRouter() = 0;
+
+    // vIndex: 272
+    virtual ::OreUI::Router const& getCurrentUIRouter() const = 0;
 
     // vIndex: 274
-    virtual ::CachedScenes& getCachedScenes() = 0;
+    virtual ::OreUI::ITelemetry& getOreUITelemetry() = 0;
 
     // vIndex: 275
-    virtual ::std::string getScreenName() const = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack>
+    prepareSceneFor(::ui::SceneType const, ::std::function<::std::shared_ptr<::AbstractScene>()>) = 0;
 
     // vIndex: 276
-    virtual ::std::string getScreenTelemetry() const = 0;
+    virtual ::CachedScenes& getCachedScenes() = 0;
 
     // vIndex: 277
-    virtual ::ui::SceneType getTopSceneType() const = 0;
+    virtual ::std::string getScreenName() const = 0;
 
     // vIndex: 278
-    virtual ::MobEffectsLayout& getMobEffectsLayout() = 0;
-
-    // vIndex: 280
-    virtual ::std::string emoticonifyText(::std::string const&) const = 0;
+    virtual ::std::string getScreenTelemetry() const = 0;
 
     // vIndex: 279
-    virtual ::std::string emoticonifyText(::std::string const&, bool) = 0;
+    virtual ::ui::SceneType getTopSceneType() const = 0;
 
-    // vIndex: 281
-    virtual void onMobEffectsChange() = 0;
+    // vIndex: 280
+    virtual ::MobEffectsLayout& getMobEffectsLayout() = 0;
 
     // vIndex: 282
-    virtual void setUISizeAndScale(int, int, float) = 0;
+    virtual ::std::string emoticonifyText(::std::string const&) const = 0;
+
+    // vIndex: 281
+    virtual ::std::string emoticonifyText(::std::string const&, bool) = 0;
 
     // vIndex: 283
-    virtual void forEachVisibleScreen(::std::function<void(::AbstractScene&)>, bool) = 0;
+    virtual void onMobEffectsChange() = 0;
 
     // vIndex: 284
-    virtual void forEachScreen(::std::function<bool(::AbstractScene&)>, bool) = 0;
+    virtual void setUISizeAndScale(int, int, float) = 0;
 
     // vIndex: 285
-    virtual void forEachScreenConst(::std::function<bool(::AbstractScene const&)>, bool) const = 0;
+    virtual void forEachVisibleScreen(::std::function<void(::AbstractScene&)>, bool) = 0;
 
     // vIndex: 286
-    virtual bool updateSceneStack() = 0;
+    virtual void forEachScreen(::std::function<bool(::AbstractScene&)>, bool) = 0;
 
     // vIndex: 287
-    virtual void forEachAlwaysAcceptInputScreen(::std::function<void(::AbstractScene&)>, ::AbstractScene const*) = 0;
+    virtual void forEachScreenConst(::std::function<bool(::AbstractScene const&)>, bool) const = 0;
 
     // vIndex: 288
-    virtual void forEachAlwaysAcceptInputScreenWithTop(::std::function<void(::AbstractScene&)>) = 0;
+    virtual bool updateSceneStack() = 0;
 
     // vIndex: 289
-    virtual void showPlayerProfile(::std::string const&, ::std::string const&) = 0;
+    virtual void forEachAlwaysAcceptInputScreen(::std::function<void(::AbstractScene&)>, ::AbstractScene const*) = 0;
 
     // vIndex: 290
-    virtual bool isInGameInputEnabled() const = 0;
+    virtual void forEachAlwaysAcceptInputScreenWithTop(::std::function<void(::AbstractScene&)>) = 0;
 
     // vIndex: 291
-    virtual void setInGameInputEnabled(bool) = 0;
+    virtual void showPlayerProfile(::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 292
-    virtual ::Vec2 getSafeZoneScale() const = 0;
+    virtual bool isInGameInputEnabled() const = 0;
 
     // vIndex: 293
+    virtual void setInGameInputEnabled(bool) = 0;
+
+    // vIndex: 294
+    virtual ::Vec2 getSafeZoneScale() const = 0;
+
+    // vIndex: 295
     virtual void verifySkinApproval(
         ::std::string const&,
         ::std::function<void(::std::string)> const&,
         ::std::function<void()> const&
     ) const = 0;
 
-    // vIndex: 294
+    // vIndex: 296
     virtual ::InputMode getCurrentInputMode() const = 0;
 
-    // vIndex: 295
+    // vIndex: 297
     virtual bool isTouchGameplayAllowed() const = 0;
 
-    // vIndex: 296
+    // vIndex: 298
     virtual ::Bedrock::NonOwnerPointer<::MinecraftInputHandler> getMinecraftInput() const = 0;
 
-    // vIndex: 297
+    // vIndex: 299
     virtual void setHoloInput(::std::unique_ptr<::HolographicPlatform>) = 0;
 
-    // vIndex: 298
+    // vIndex: 300
     virtual ::HolographicPlatform& getHoloInput() const = 0;
 
-    // vIndex: 299
+    // vIndex: 301
     virtual ::VoiceSystem& getVoiceSystem() const = 0;
 
-    // vIndex: 300
+    // vIndex: 302
     virtual ::KeyboardManager& getKeyboardManager() = 0;
 
-    // vIndex: 301
+    // vIndex: 303
     virtual void setVoiceSystem(::std::unique_ptr<::VoiceSystem>) = 0;
 
-    // vIndex: 302
+    // vIndex: 304
     virtual void setLastPointerLocation(float, float, float) = 0;
 
-    // vIndex: 303
+    // vIndex: 305
     virtual ::Vec3 getLastPointerLocation() = 0;
 
-    // vIndex: 304
+    // vIndex: 306
     virtual void clearTouchPointerLocations() = 0;
 
-    // vIndex: 305
+    // vIndex: 307
     virtual void clearTouchPointerLocation(int) = 0;
 
-    // vIndex: 306
+    // vIndex: 308
     virtual void updateControlOptionState(uint, bool) = 0;
 
-    // vIndex: 307
+    // vIndex: 309
     virtual void clearActiveControlOptions() = 0;
 
-    // vIndex: 308
+    // vIndex: 310
     virtual ::std::set<uint> const& getActiveControlOptions() const = 0;
 
-    // vIndex: 309
+    // vIndex: 311
     virtual ::std::vector<::OptionID> getActiveOptionIDs(::ControlOptionType) const = 0;
 
-    // vIndex: 310
+    // vIndex: 312
     virtual void setNumberOfActiveConfigs(int) = 0;
 
-    // vIndex: 311
+    // vIndex: 313
     virtual int getNumberOfActiveConfigs() const = 0;
 
-    // vIndex: 312
+    // vIndex: 314
     virtual bool isNoConfigSelected() const = 0;
 
-    // vIndex: 313
+    // vIndex: 315
     virtual void setNumberOfEnabledConfigs(int) = 0;
 
-    // vIndex: 314
+    // vIndex: 316
     virtual int getNumberOfEnabledConfigs() const = 0;
 
-    // vIndex: 315
+    // vIndex: 317
     virtual void setWYSIWYGState(::WYSIWYGState) = 0;
 
-    // vIndex: 316
+    // vIndex: 318
     virtual ::WYSIWYGState getWYSIWYGState() const = 0;
 
-    // vIndex: 317
+    // vIndex: 319
     virtual void setOtherConfigsExistInThisCategory(bool) = 0;
 
-    // vIndex: 318
+    // vIndex: 320
     virtual bool getOtherConfigsExistInThisCategory() const = 0;
 
-    // vIndex: 319
+    // vIndex: 321
     virtual void updateTouchPointerLocation(int, float, float) = 0;
 
-    // vIndex: 320
+    // vIndex: 322
     virtual ::Vec2 getTouchPointerLocation(int) const = 0;
 
-    // vIndex: 321
+    // vIndex: 323
     virtual void updateActionPointerId(int) = 0;
 
-    // vIndex: 322
+    // vIndex: 324
     virtual int getActionPointerId() const = 0;
 
-    // vIndex: 323
+    // vIndex: 325
     virtual bool shouldUseLastPointerLocationOnFocusChange() = 0;
 
-    // vIndex: 324
+    // vIndex: 326
     virtual void adjustGazeCursorByMouse(float, float) = 0;
 
-    // vIndex: 325
+    // vIndex: 327
     virtual bool currentScreenShouldStealMouse() = 0;
 
-    // vIndex: 326
+    // vIndex: 328
     virtual ::BuildActionIntention& getInProgressBAI() const = 0;
 
-    // vIndex: 327
+    // vIndex: 329
     virtual bool newDictationDataAvailable() const = 0;
 
-    // vIndex: 328
+    // vIndex: 330
     virtual void clearDictationDataAvailable() = 0;
 
-    // vIndex: 329
+    // vIndex: 331
     virtual ::std::string const& getDictationText() const = 0;
 
-    // vIndex: 330
+    // vIndex: 332
     virtual ::PacketSender& getPacketSender() = 0;
 
-    // vIndex: 332
+    // vIndex: 334
     virtual ::ClientNetworkSystem& getClientNetworkSystem() = 0;
 
-    // vIndex: 331
+    // vIndex: 333
     virtual ::ClientNetworkSystem const& getClientNetworkSystem() const = 0;
 
-    // vIndex: 333
+    // vIndex: 335
     virtual void setMoveTurnInput(::std::unique_ptr<::ClientMoveInputHandler>) = 0;
 
-    // vIndex: 334
+    // vIndex: 336
     virtual void setupPersistentControls(::InputMode) = 0;
 
-    // vIndex: 335
+    // vIndex: 337
     virtual void resetPlayerMovement() = 0;
 
-    // vIndex: 336
+    // vIndex: 338
     virtual void suspendPredictedMovement() = 0;
 
-    // vIndex: 337
+    // vIndex: 339
     virtual void onClientInputInitComplete() = 0;
 
-    // vIndex: 338
+    // vIndex: 340
     virtual ::glm::vec2 getGamepadCursorPosition() const = 0;
 
-    // vIndex: 339
+    // vIndex: 341
     virtual void setClientInputHandler(::std::unique_ptr<::ClientInputHandler>) = 0;
 
-    // vIndex: 340
+    // vIndex: 342
     virtual ::ClientInputHandler* getInput() const = 0;
 
-    // vIndex: 341
+    // vIndex: 343
     virtual int getControllerId() const = 0;
 
-    // vIndex: 342
+    // vIndex: 344
     virtual bool hasConnectedController() const = 0;
 
-    // vIndex: 343
+    // vIndex: 345
     virtual ::SubClientId getClientSubId() const = 0;
 
-    // vIndex: 344
+    // vIndex: 346
     virtual void setSuspendInput(bool) = 0;
 
-    // vIndex: 345
+    // vIndex: 347
     virtual void setSuspendDirectionalInput(bool) = 0;
 
-    // vIndex: 346
+    // vIndex: 348
     virtual void setDisableInput(bool) = 0;
 
-    // vIndex: 347
+    // vIndex: 349
     virtual void grabMouse() = 0;
 
-    // vIndex: 348
+    // vIndex: 350
     virtual void releaseMouse() = 0;
 
-    // vIndex: 349
+    // vIndex: 351
     virtual void refocusMouse(bool) = 0;
 
-    // vIndex: 350
+    // vIndex: 352
     virtual void setMouseType(::ui::MousePointerType) = 0;
 
-    // vIndex: 351
+    // vIndex: 353
     virtual void resetBai(int) = 0;
 
-    // vIndex: 352
+    // vIndex: 354
     virtual void clearInProgressBAI() = 0;
 
-    // vIndex: 353
+    // vIndex: 355
     virtual ::Bedrock::NotNullNonOwnerPtr<::SoundEngine> getSoundEngine() const = 0;
 
-    // vIndex: 354
+    // vIndex: 356
     virtual ::MusicManager const* getMusicManager() const = 0;
 
-    // vIndex: 355
-    virtual void play(::std::string const&, ::Vec3 const&, float, float) = 0;
-
-    // vIndex: 356
-    virtual void playUI(::std::string const&, float, float) = 0;
-
     // vIndex: 357
-    virtual void muteAudio() = 0;
+    virtual ::MusicManager* getMusicManagerNonConst() const = 0;
 
     // vIndex: 358
-    virtual void unMuteAudio() = 0;
+    virtual void play(::std::string const&, ::Vec3 const&, float, float) = 0;
 
     // vIndex: 359
-    virtual void fadeOutMusic() const = 0;
+    virtual void playUI(::std::string const&, float, float) = 0;
 
     // vIndex: 360
-    virtual ::TaskGroup& getTaskGroup() = 0;
+    virtual void muteAudio() = 0;
 
     // vIndex: 361
-    virtual void onFullVanillaPackOnStack() = 0;
+    virtual void unMuteAudio() = 0;
 
     // vIndex: 362
-    virtual bool isFullVanillaPackOnStack() const = 0;
+    virtual void fadeOutMusic() const = 0;
 
     // vIndex: 363
-    virtual void onPlayerLoaded(::Player&) = 0;
+    virtual ::TaskGroup& getTaskGroup() = 0;
 
     // vIndex: 364
-    virtual void setClientGameMode(::GameType) = 0;
+    virtual void onFullVanillaPackOnStack() = 0;
 
     // vIndex: 365
-    virtual void resetToDefaultGameMode() = 0;
+    virtual bool isFullVanillaPackOnStack() const = 0;
 
     // vIndex: 366
-    virtual ::IGameConnectionListener& getGameConnectionListener() = 0;
+    virtual void onPlayerLoaded(::Player&) = 0;
 
     // vIndex: 367
-    virtual void connectToThirdPartyServer(::std::string const&, ::std::string const&, int) = 0;
+    virtual void setClientGameMode(::GameType) = 0;
 
     // vIndex: 368
+    virtual void resetToDefaultGameMode() = 0;
+
+    // vIndex: 369
+    virtual ::IGameConnectionListener& getGameConnectionListener() = 0;
+
+    // vIndex: 370
+    virtual void connectToThirdPartyServer(::std::string const&, ::std::string const&, int) = 0;
+
+    // vIndex: 371
     virtual void connectToExperience(
         ::std::string const&,
         ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)>,
         ::std::function<void(::World::JoinServerWorldResult)>
     ) = 0;
 
-    // vIndex: 369
+    // vIndex: 372
     virtual void startExternalNetworkWorld(::Social::GameConnectionInfo, ::std::string const&, bool) = 0;
 
-    // vIndex: 370
+    // vIndex: 373
     virtual bool isReadyToReconnect() const = 0;
 
-    // vIndex: 371
+    // vIndex: 374
     virtual bool checkForPiracy() = 0;
 
-    // vIndex: 372
+    // vIndex: 375
     virtual void updateChatFilterStatus(::ProfanityContext&) = 0;
 
-    // vIndex: 373
+    // vIndex: 376
     virtual void updateControllerHandling() = 0;
 
-    // vIndex: 374
+    // vIndex: 377
     virtual void setBehaviorCommandCallback(::std::function<void(::std::string const&, ::BehaviorStatus)>) = 0;
 
-    // vIndex: 375
+    // vIndex: 378
     virtual void setBehaviorCommandStatus(::std::string const&, ::BehaviorStatus) = 0;
 
-    // vIndex: 376
+    // vIndex: 379
     virtual void setConnectGamepadScreenActive(bool) = 0;
 
-    // vIndex: 377
+    // vIndex: 380
     virtual ::Core::PathBuffer<::std::string> requestScreenshot(::ScreenshotOptions&) = 0;
 
-    // vIndex: 378
+    // vIndex: 381
     virtual ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger> getDevConsoleLogger() const = 0;
 
-    // vIndex: 379
+    // vIndex: 382
     virtual ::std::shared_ptr<::FileDataRequest> requestImageFromUrl(
         ::std::string const&,
         ::std::function<void(::Bedrock::Http::Status, ::Core::Path const&, uint64)>
     ) = 0;
 
-    // vIndex: 380
+    // vIndex: 383
     virtual void initializeRenderResources() = 0;
 
-    // vIndex: 381
+    // vIndex: 384
     virtual void postInitRenderResources() = 0;
 
-    // vIndex: 382
+    // vIndex: 385
     virtual void onAppSuspended() = 0;
 
-    // vIndex: 383
+    // vIndex: 386
     virtual void onAppSuspensionDisconnect() = 0;
 
-    // vIndex: 384
+    // vIndex: 387
     virtual void onAppResumed() = 0;
 
-    // vIndex: 385
+    // vIndex: 388
     virtual void onActiveResourcePacksChanged(::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const&) = 0;
 
-    // vIndex: 386
+    // vIndex: 389
     virtual void reloadEntityRenderers(::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const&);
 
-    // vIndex: 387
+    // vIndex: 390
     virtual ::BlockTessellator& getBlockTessellator() = 0;
 
-    // vIndex: 388
+    // vIndex: 391
     virtual ::BlockActorRenderDispatcher& getBlockEntityRenderDispatcher() = 0;
 
-    // vIndex: 389
+    // vIndex: 392
     virtual ::std::shared_ptr<::ActorRenderDispatcher> getEntityRenderDispatcher() = 0;
 
-    // vIndex: 390
+    // vIndex: 393
     virtual ::ActorBlockRenderer& getEntityBlockRenderer() = 0;
 
-    // vIndex: 391
+    // vIndex: 394
     virtual ::ItemInHandRenderer* getItemInHandRenderer() = 0;
 
-    // vIndex: 392
+    // vIndex: 395
     virtual ::ItemRenderer* getItemRenderer() = 0;
 
-    // vIndex: 393
+    // vIndex: 396
     virtual ::HudIconActorRenderer* getHudIconActorRenderer() = 0;
 
-    // vIndex: 394
+    // vIndex: 397
     virtual ::std::deque<::std::string>& getSentMessageHistory() = 0;
 
-    // vIndex: 395
+    // vIndex: 398
     virtual ::std::deque<::std::string>& getDevConsoleMessageHistory() = 0;
 
-    // vIndex: 396
+    // vIndex: 399
     virtual ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> getProfanityContext() const = 0;
 
-    // vIndex: 397
+    // vIndex: 400
     virtual void initTTSClient(::std::shared_ptr<::TextToSpeechClient>) = 0;
 
-    // vIndex: 399
+    // vIndex: 402
     virtual ::std::shared_ptr<::TextToSpeechClient> getTTSClient() = 0;
 
-    // vIndex: 398
+    // vIndex: 401
     virtual ::std::shared_ptr<::TextToSpeechClient const> getTTSClient() const = 0;
 
-    // vIndex: 400
+    // vIndex: 403
     virtual ::std::shared_ptr<::ITTSEventManager> getTTSEventManager() = 0;
 
-    // vIndex: 401
+    // vIndex: 404
     virtual void
     addTTSMessage(::std::string const&, ::ProfanityFilterContext, bool, ::std::string const&, bool, bool) = 0;
 
-    // vIndex: 402
+    // vIndex: 405
     virtual void initCommands() = 0;
 
-    // vIndex: 403
+    // vIndex: 406
     virtual uint getUserId() const = 0;
 
-    // vIndex: 404
+    // vIndex: 407
     virtual bool isPrimaryUser() const = 0;
 
-    // vIndex: 405
+    // vIndex: 408
     virtual double getServerConnectionTime() const = 0;
 
-    // vIndex: 407
+    // vIndex: 410
     virtual ::ClientHMDState& getHMDState() = 0;
 
-    // vIndex: 406
+    // vIndex: 409
     virtual ::ClientHMDState const& getHMDState() const = 0;
 
-    // vIndex: 408
+    // vIndex: 411
     virtual void setServerPingTime(int) = 0;
 
-    // vIndex: 409
+    // vIndex: 412
     virtual int getServerPingTime() const = 0;
 
-    // vIndex: 410
+    // vIndex: 413
     virtual void setDefaultPlayscreenTab(::PlayScreenDefaultTab) = 0;
 
-    // vIndex: 411
+    // vIndex: 414
     virtual void setClientInstanceState(::ClientInstanceState const&) = 0;
 
-    // vIndex: 412
+    // vIndex: 415
     virtual void setUIEventCoordinator(::Bedrock::UniqueOwnerPointer<::UIEventCoordinator>&&) = 0;
 
-    // vIndex: 413
+    // vIndex: 416
     virtual ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> getUIEventCoordinator() = 0;
 
-    // vIndex: 414
+    // vIndex: 417
     virtual ::Bedrock::NotNullNonOwnerPtr<::ClientInstanceEventCoordinator> getEventCoordinator() = 0;
 
-    // vIndex: 415
+    // vIndex: 418
     virtual ::ClientNetworkEventCoordinator& getClientNetworkEventCoordinator() = 0;
 
-    // vIndex: 416
+    // vIndex: 419
     virtual ::ClientScriptEventCoordinator& getClientScriptEventCoordinator() = 0;
 
-    // vIndex: 417
+    // vIndex: 420
     virtual void computeScreenCoordsFromScreenNormCoords(float, float, short&, short&) = 0;
 
-    // vIndex: 418
+    // vIndex: 421
     virtual ::std::chrono::steady_clock::time_point getNoBlockBreakUntil() = 0;
 
-    // vIndex: 419
+    // vIndex: 422
     virtual void setNoBlockBreakUntil(::std::chrono::steady_clock::time_point) = 0;
 
-    // vIndex: 420
+    // vIndex: 423
     virtual void setDictation(::std::string const&) = 0;
 
-    // vIndex: 421
+    // vIndex: 424
     virtual void setNewDictationString(bool) = 0;
 
-    // vIndex: 422
+    // vIndex: 425
     virtual ::GameModuleClient* getGameModule() = 0;
 
-    // vIndex: 423
+    // vIndex: 426
     virtual ::ClientHitDetectCoordinator& getHitEventCoordinator() = 0;
 
-    // vIndex: 424
+    // vIndex: 427
     virtual ::GameCallbacks& getGameCallbacks() = 0;
 
-    // vIndex: 425
+    // vIndex: 428
     virtual void setActiveFileStorageArea(::std::shared_ptr<::Core::FileStorageArea>) = 0;
 
-    // vIndex: 426
+    // vIndex: 429
     virtual void sendClientEnteredLevel() = 0;
 
-    // vIndex: 427
+    // vIndex: 430
     virtual ::HitDetectSystem* getHitDetectSystem() = 0;
 
-    // vIndex: 428
+    // vIndex: 431
     virtual bool isPlaying() const = 0;
 
-    // vIndex: 429
+    // vIndex: 432
     virtual ::ClientInstanceState getClientInstanceState() const = 0;
 
-    // vIndex: 430
+    // vIndex: 433
     virtual ::LatencyGraphDisplay* getLatencyGraphDisplay() const = 0;
 
-    // vIndex: 431
+    // vIndex: 434
     virtual ::PlayerCapabilities::IClientController const& getClientCapabilities() const = 0;
 
-    // vIndex: 432
+    // vIndex: 435
     virtual ::cg::math::Rect<float>
     calculateViewPortModifiers(::SubClientId const, uint64 const, ::SplitScreenDirection const) const = 0;
 
-    // vIndex: 433
+    // vIndex: 436
     virtual ::std::weak_ptr<::IClientInstance> getWeakPtrToThis() = 0;
 
-    // vIndex: 434
+    // vIndex: 437
     virtual ::ClientRequirementVerifier const& getClientRequirementVerifier() const = 0;
 
-    // vIndex: 436
+    // vIndex: 439
     virtual ::Bedrock::NotNullNonOwnerPtr<::FogDefinitionRegistry const> getFogDefinitionRegistry() const = 0;
 
-    // vIndex: 435
+    // vIndex: 438
     virtual ::Bedrock::NotNullNonOwnerPtr<::FogDefinitionRegistry> getFogDefinitionRegistry() = 0;
 
-    // vIndex: 438
+    // vIndex: 441
     virtual ::Bedrock::NotNullNonOwnerPtr<::FogManager const> getFogManager() const = 0;
 
-    // vIndex: 437
+    // vIndex: 440
     virtual ::Bedrock::NotNullNonOwnerPtr<::FogManager> getFogManager() = 0;
 
-    // vIndex: 439
+    // vIndex: 442
     virtual ::Bedrock::NotNullNonOwnerPtr<::ScreenLoadTimeTracker> getScreenLoadTimeTracker() = 0;
 
-    // vIndex: 440
+    // vIndex: 443
     virtual ::ItemRegistryRef getItemRegistry() const = 0;
 
-    // vIndex: 441
-    virtual ::std::weak_ptr<::BlockTypeRegistry> getBlockRegistry() const = 0;
-
-    // vIndex: 442
+    // vIndex: 444
     virtual ::Bedrock::NotNullNonOwnerPtr<::DisconnectionRequestHandler> getDisconnectionRequestHandler() const = 0;
 
-    // vIndex: 443
+    // vIndex: 445
     virtual float getRemoteServerTimeMs() const = 0;
 
-    // vIndex: 444
+    // vIndex: 446
     virtual void setRemoteServerTimeMs(float) = 0;
 
-    // vIndex: 445
+    // vIndex: 447
     virtual float getRemoteServerNetworkTimeMs() const = 0;
 
-    // vIndex: 446
+    // vIndex: 448
     virtual void setRemoteServerNetworkTimeMs(float) = 0;
 
-    // vIndex: 447
+    // vIndex: 449
     virtual ::Bedrock::NonOwnerPointer<::ClientScriptManager> getClientScriptManager() = 0;
 
-    // vIndex: 448
+    // vIndex: 450
     virtual ::Scripting::ScriptEngine* getScriptingEngine() = 0;
 
-    // vIndex: 449
+    // vIndex: 451
     virtual ::Bedrock::NonOwnerPointer<::WorldTransferAgent> const getWorldTransferAgent() const = 0;
 
-    // vIndex: 450
+    // vIndex: 452
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerReportHandler> getPlayerReportHandler() = 0;
 
-    // vIndex: 452
+    // vIndex: 454
     virtual void flagDisconnectionAndNotify(::Connection::DisconnectFailReason) = 0;
 
-    // vIndex: 451
+    // vIndex: 453
     virtual void flagDisconnectionAndNotify(::DisconnectionScreenParams const&) = 0;
 
-    // vIndex: 453
+    // vIndex: 455
     virtual void disconnectSubClient(::Connection::DisconnectFailReason) = 0;
 
-    // vIndex: 454
+    // vIndex: 456
     virtual void setClientUpdateAndRenderThrottling(bool, int, float) = 0;
 
-    // vIndex: 455
+    // vIndex: 457
     virtual bool isClientUpdateAndRenderThrottlingEnabled() const = 0;
 
-    // vIndex: 456
+    // vIndex: 458
     virtual int getClientUpdateAndRenderThrottlingThreshold() const = 0;
 
-    // vIndex: 457
+    // vIndex: 459
     virtual float getClientUpdateAndRenderThrottlingScalar() const = 0;
 
-    // vIndex: 458
+    // vIndex: 460
     virtual bool isUserBanned() const = 0;
 
-    // vIndex: 459
+    // vIndex: 461
     virtual void setupPauseManagers() = 0;
 
-    // vIndex: 460
+    // vIndex: 462
     virtual bool isEligibleForPauseFeature() const = 0;
 
-    // vIndex: 461
+    // vIndex: 463
     virtual bool requestInGamePause(bool) = 0;
 
-    // vIndex: 462
+    // vIndex: 464
     virtual void openContentLogHistory() = 0;
 
-    // vIndex: 463
+    // vIndex: 465
     virtual double getGameUpdateDurationInSeconds() const = 0;
 
-    // vIndex: 464
+    // vIndex: 466
     virtual ::std::optional<::PlayerJoinWorldTelemetryInfo> getPlayerJoinWorldTelemetryInfo() const = 0;
+
+    // vIndex: 467
+    virtual ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> getLinkedAssetValidator() = 0;
     // NOLINTEND
 
 public:

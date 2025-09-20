@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class BlockLegacy;
+class BlockType;
 class CompoundTag;
 class Item;
 class ReadOnlyBinaryStream;
@@ -71,7 +71,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor>
-    _initFromBlockLegacy(::BlockLegacy const& block, ::WeakPtr<::Item>&& item) const;
+    _initFromBlockType(::BlockType const& block, ::WeakPtr<::Item>&& item) const;
 
     MCNAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> _initFromItem(::WeakPtr<::Item>&& item, short aux) const;
     // NOLINTEND

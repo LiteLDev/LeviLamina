@@ -38,7 +38,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value const& object);
+    MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value object);
     // NOLINTEND
 
 public:

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/pack_command/PackCommand.h"
 #include "mc/resources/pack_command/UpgradeLegacyDependencies.h"
 
@@ -23,10 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI UpgradeLegacyDependenciesCommand(
-        ::Bedrock::NonOwnerPointer<::Pack> pack,
-        ::std::vector<::PackIdVersion>     newDependencies
-    );
+    MCNAPI
+    UpgradeLegacyDependenciesCommand(::std::shared_ptr<::Pack> pack, ::std::vector<::PackIdVersion> newDependencies);
 
     MCNAPI ~UpgradeLegacyDependenciesCommand();
     // NOLINTEND
@@ -34,7 +31,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::Pack> pack, ::std::vector<::PackIdVersion> newDependencies);
+    MCNAPI void* $ctor(::std::shared_ptr<::Pack> pack, ::std::vector<::PackIdVersion> newDependencies);
     // NOLINTEND
 
 public:

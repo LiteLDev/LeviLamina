@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
-class MetalBlock : public ::BlockLegacy {
+class MetalBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN

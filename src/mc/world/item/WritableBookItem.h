@@ -7,7 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class CompoundTag;
 class ItemStack;
+class ItemStackBase;
 class Player;
 struct PageContent;
 // clang-format on
@@ -17,7 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     // vIndex: 50
     virtual bool requiresInteract() const /*override*/;
@@ -32,11 +34,28 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void _addPageAt(::ItemStackBase& book, int index, ::PageContent const& page);
+
+    MCAPI static ::PageContent _deletePage(::ItemStackBase& book, int index);
+
+    MCAPI static void _deletePages(::ItemStackBase& book);
+
+    MCAPI static void _replacePage(::ItemStackBase& book, int index, ::PageContent const& page);
+
+    MCAPI static void _signBookUserData(
+        ::CompoundTag&                 userData,
+        ::std::string                  title,
+        ::std::optional<::std::string> filteredTitle,
+        ::std::string                  author,
+        ::std::optional<::std::string> filteredAuthor,
+        ::std::string                  xuid
+    );
+
     MCAPI static void addPageAt(::ItemStack& book, int index, ::PageContent const& page);
 
-    MCAPI static ::PageContent deletePage(::ItemStack& book, int index);
+    MCAPI static void createUserDataIfEmpty(::ItemStackBase& book);
 
-    MCAPI static void replacePage(::ItemStack& book, int index, ::PageContent const& page);
+    MCAPI static ::PageContent deletePage(::ItemStack& book, int index);
 
     MCAPI static void signBook(
         ::ItemStack&                   book,
@@ -53,7 +72,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
     MCFOLD bool $requiresInteract() const;
 

@@ -10,12 +10,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockActorDataPacket;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
-class Player;
 class SaveContext;
 namespace mce { class Color; }
 // clang-format on
@@ -32,6 +33,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    CauldronBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -41,9 +46,9 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 28
+    // vIndex: 26
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 21
@@ -53,15 +58,15 @@ public:
     virtual int getContainerSize() const /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player&) /*override*/;
+    virtual void startOpen(::Actor&) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 35
+    // vIndex: 32
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 34
+    // vIndex: 31
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 1
@@ -83,16 +88,18 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit CauldronBlockActor(::BlockPos const& pos);
+
     MCAPI ::mce::Color getCustomColor() const;
 
     MCAPI ::mce::Color getMixDyeColor();
@@ -111,11 +118,17 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCAPI ::std::string $getName() const;
 
@@ -123,9 +136,9 @@ public:
 
     MCFOLD int $getContainerSize() const;
 
-    MCFOLD void $startOpen(::Player&);
+    MCFOLD void $startOpen(::Actor&);
 
-    MCFOLD void $stopOpen(::Player& player);
+    MCFOLD void $stopOpen(::Actor& actor);
 
     MCFOLD ::Container* $getContainer();
 

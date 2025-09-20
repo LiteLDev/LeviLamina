@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/brstd/function_ref.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -45,9 +45,9 @@ public:
 
     // vIndex: 1
     virtual bool loadAllVersionsOf(
-        ::ResourceLocation const&                           resourceLocation,
-        ::std::function<bool(::PackInstance const&)> const& packInstanceFilter,
-        ::ResourcePackMergeStrategy&                        mergeStrategy
+        ::ResourceLocation const&                          resourceLocation,
+        ::brstd::function_ref<bool(::PackInstance const&)> packInstanceFilter,
+        ::ResourcePackMergeStrategy&                       mergeStrategy
     ) const;
     // NOLINTEND
 
@@ -70,10 +70,6 @@ public:
         ::std::string const&                                     sourceContext
     ) const;
 
-    MCAPI void removeDuplicates();
-
-    MCAPI void removeIf(::std::function<bool(::PackInstance const&)> const& callback);
-
     MCAPI void removeInvalidPacks();
     // NOLINTEND
 
@@ -92,12 +88,6 @@ public:
     // NOLINTEND
 
 public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::map<::Core::PathBuffer<::std::string>, ::Core::PathBuffer<::std::string>>& mUpgradePathMap();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -112,9 +102,9 @@ public:
     $loadAllVersionsOf(::ResourceLocation const& resourceLocation, ::ResourcePackMergeStrategy& mergeStrategy) const;
 
     MCAPI bool $loadAllVersionsOf(
-        ::ResourceLocation const&                           resourceLocation,
-        ::std::function<bool(::PackInstance const&)> const& packInstanceFilter,
-        ::ResourcePackMergeStrategy&                        mergeStrategy
+        ::ResourceLocation const&                          resourceLocation,
+        ::brstd::function_ref<bool(::PackInstance const&)> packInstanceFilter,
+        ::ResourcePackMergeStrategy&                       mergeStrategy
     ) const;
     // NOLINTEND
 

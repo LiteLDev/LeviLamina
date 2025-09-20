@@ -4,12 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/BinaryStream.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/DevConnectionQuality.h"
 #include "mc/network/NetworkEnableDisableListener.h"
 #include "mc/network/NetworkSettingOptions.h"
+#include "mc/network/PacketGroupDefinition.h"
 #include "mc/network/RakNetConnector.h"
 #include "mc/network/RakPeerHelper.h"
 #include "mc/network/connection/DisconnectFailReason.h"
@@ -17,6 +18,7 @@
 // auto generated forward declare list
 // clang-format off
 class IPacketObserver;
+class IPacketSerializationController;
 class LocalConnector;
 class NetworkConnection;
 class NetworkIdentifier;
@@ -30,6 +32,7 @@ class ServerLocator;
 class TaskGroup;
 class WeakEntityRef;
 struct NetworkIdentifierWithSubId;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class NetworkSystem : public ::RakNetConnector::ConnectionCallbacks,
@@ -52,8 +55,8 @@ public:
         ::ll::UntypedStorage<8, 8>  mUnkdd05b9;
         ::ll::UntypedStorage<8, 24> mUnk331fbf;
         ::ll::UntypedStorage<8, 24> mUnkf4c1a6;
-        ::ll::UntypedStorage<4, 24> mUnkfbdc8b;
-        ::ll::UntypedStorage<1, 1>  mUnk3c7466;
+        ::ll::UntypedStorage<4, 20> mUnkfbdc8b;
+        ::ll::UntypedStorage<8, 8>  mUnk3861c4;
         // NOLINTEND
 
     public:
@@ -93,30 +96,32 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner>>        mNetworkSessionOwner;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::NetworkConnection>>>       mConnections;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LocalConnector>>                          mLocalConnector;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RemoteConnector>>                         mRemoteConnector;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerLocator>>                           mServerLocator;
-    ::ll::TypedStorage<8, 80, ::std::recursive_mutex>                                      mConnectionsMutex;
-    ::ll::TypedStorage<8, 8, uint64>                                                       mCurrentConnection;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>> mReceiveTask;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                               mReceiveTaskGroup;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IPacketObserver>>               mPacketObserver;
-    ::ll::TypedStorage<8, 8, ::Scheduler&>                                                 mMainThread;
-    ::ll::TypedStorage<8, 32, ::std::string>                                               mReceiveBuffer;
-    ::ll::TypedStorage<8, 32, ::std::string>                                               mSendBuffer;
-    ::ll::TypedStorage<8, 80, ::BinaryStream>                                              mSendStream;
-    ::ll::TypedStorage<8, 32, ::std::unique_ptr<::NetworkSystem::IncomingPacketQueue>[4]>  mIncomingPackets;
-    ::ll::TypedStorage<1, 1, bool>                                                         mUseIPv6Only;
-    ::ll::TypedStorage<2, 2, ushort>                                                       mDefaultGamePort;
-    ::ll::TypedStorage<2, 2, ushort>                                                       mDefaultGamePortv6;
-    ::ll::TypedStorage<1, 1, bool>                                                         mIsLanDiscoveryEnabled;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NetworkStatistics>>                       mNetworkStatistics;
-    ::ll::TypedStorage<1, 1, bool>                                                         mEnablePacketRateLimiting;
-    ::ll::TypedStorage<1, 1, bool>                                                         mWebsocketsEnabled;
-    ::ll::TypedStorage<4, 24, ::NetworkSettingOptions>                                     mNetworkSettingOptions;
-    ::ll::TypedStorage<1, 1, bool>                                                         mRawRecordingEnabled;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NetworkSessionOwner>>           mNetworkSessionOwner;
+    ::ll::TypedStorage<8, 80, ::std::recursive_mutex>                                         mConnectionsMutex;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::NetworkConnection>>>          mConnections;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LocalConnector>>                             mLocalConnector;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder>> mPacketGroupBuilder;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RemoteConnector>>                            mRemoteConnector;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerLocator>>                              mServerLocator;
+    ::ll::TypedStorage<8, 8, uint64>                                                          mCurrentConnection;
+    ::ll::TypedStorage<8, 16, ::Bedrock::Threading::Async<void>>                              mReceiveTask;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                                  mReceiveTaskGroup;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IPacketObserver>>                  mPacketObserver;
+    ::ll::TypedStorage<8, 8, ::Scheduler&>                                                    mMainThread;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                  mReceiveBuffer;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                  mSendBuffer;
+    ::ll::TypedStorage<8, 80, ::BinaryStream>                                                 mSendStream;
+    ::ll::TypedStorage<8, 32, ::std::unique_ptr<::NetworkSystem::IncomingPacketQueue>[4]>     mIncomingPackets;
+    ::ll::TypedStorage<1, 1, bool>                                                            mUseIPv6Only;
+    ::ll::TypedStorage<2, 2, ushort>                                                          mDefaultGamePort;
+    ::ll::TypedStorage<2, 2, ushort>                                                          mDefaultGamePortv6;
+    ::ll::TypedStorage<1, 1, bool>                                                            mIsLanDiscoveryEnabled;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NetworkStatistics>>                          mNetworkStatistics;
+    ::ll::TypedStorage<1, 1, bool>                                                            mWebsocketsEnabled;
+    ::ll::TypedStorage<4, 20, ::NetworkSettingOptions>                                        mNetworkSettingOptions;
+    ::ll::TypedStorage<1, 1, bool>                                                            mRawRecordingEnabled;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::cereal::ReflectionCtx>>>     mReflectionCtx;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IPacketSerializationController>>> mPacketOverrides;
     // NOLINTEND
 
 public:
@@ -166,11 +171,18 @@ public:
     ) /*override*/;
 
     // vIndex: 4
-    virtual void onAllConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) /*override*/;
+    virtual void onAllConnectionsClosed(
+        ::Connection::DisconnectFailReason discoReason,
+        ::std::string const&               reasonMessage,
+        bool                               skipDisconnectMessage
+    ) /*override*/;
 
     // vIndex: 5
-    virtual void
-    onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) /*override*/;
+    virtual void onAllRemoteConnectionsClosed(
+        ::Connection::DisconnectFailReason discoReason,
+        ::std::string const&               reasonMessage,
+        bool                               skipDisconnectMessage
+    ) /*override*/;
 
     // vIndex: 6
     virtual void onOutgoingConnectionFailed(
@@ -255,6 +267,18 @@ public:
         ::Connection::DisconnectFailReason const discoReason,
         ::std::string const&                     reasonMessage,
         bool                                     skipDisconnectMessage
+    );
+
+    MCAPI void $onAllConnectionsClosed(
+        ::Connection::DisconnectFailReason discoReason,
+        ::std::string const&               reasonMessage,
+        bool                               skipDisconnectMessage
+    );
+
+    MCAPI void $onAllRemoteConnectionsClosed(
+        ::Connection::DisconnectFailReason discoReason,
+        ::std::string const&               reasonMessage,
+        bool                               skipDisconnectMessage
     );
 
     MCAPI void

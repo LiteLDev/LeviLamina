@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Pack;
 namespace PackCommand { struct PackAssociations; }
 // clang-format on
 
@@ -16,7 +17,7 @@ class RepositoryImpl : public ::PackCommand::IResourceRepositories {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkd44f1b;
+    ::ll::UntypedStorage<8, 80> mUnkfd56c9;
     // NOLINTEND
 
 public:
@@ -32,6 +33,9 @@ public:
     virtual void
     fillPackAssociations(::std::vector<::gsl::not_null<::PackCommand::PackAssociations*>>& packs) /*override*/;
 
+    // vIndex: 2
+    virtual void removePacks(::std::vector<::gsl::not_null<::Pack const*>> const& packs) /*override*/;
+
     // vIndex: 0
     virtual ~RepositoryImpl() /*override*/ = default;
     // NOLINTEND
@@ -40,6 +44,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $fillPackAssociations(::std::vector<::gsl::not_null<::PackCommand::PackAssociations*>>& packs);
+
+    MCNAPI void $removePacks(::std::vector<::gsl::not_null<::Pack const*>> const& packs);
     // NOLINTEND
 
 public:

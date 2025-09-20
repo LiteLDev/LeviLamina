@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockPos;
 class BlockSource;
 class CompoundTag;
@@ -47,17 +48,17 @@ public:
     // vIndex: 0
     virtual ~ChemistryTableBlockActor() /*override*/;
 
-    // vIndex: 35
+    // vIndex: 32
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 34
+    // vIndex: 31
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 7
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
@@ -66,12 +67,12 @@ public:
     virtual int getContainerSize() const /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player& p) /*override*/;
+    virtual void startOpen(::Actor&) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -133,15 +134,15 @@ public:
 
     MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCNAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCNAPI int $getMaxStackSize() const;
 
     MCNAPI int $getContainerSize() const;
 
-    MCNAPI void $startOpen(::Player& p);
+    MCNAPI void $startOpen(::Actor&);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Actor& actor);
 
     MCNAPI void $onRemoved(::BlockSource& region);
 

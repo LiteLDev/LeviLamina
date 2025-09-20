@@ -4,7 +4,7 @@
 
 namespace persona {
 
-enum class ProfileType : int {
+enum class ProfileType : uchar {
     Legacy      = 0,
     Persona1    = 1,
     Persona2    = 2,

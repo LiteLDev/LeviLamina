@@ -18,7 +18,7 @@ class CameraInstructionPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 168, ::CameraInstruction> mCameraInstruction;
+    ::ll::TypedStorage<8, 192, ::CameraInstruction> mCameraInstruction;
     // NOLINTEND
 
 public:
@@ -34,13 +34,13 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 7
     virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 13
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0

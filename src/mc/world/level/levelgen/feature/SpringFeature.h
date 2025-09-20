@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class Random;
 // clang-format on
 
@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool isValidSpringBorderBlock(::BlockLegacy const& block, ::BlockSource& region) const;
+    MCNAPI bool isValidSpringBorderBlock(::BlockType const& block, ::BlockSource& region) const;
     // NOLINTEND
 
 public:

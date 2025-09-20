@@ -15,6 +15,7 @@ class HashedString;
 class IPreliminarySurfaceProvider;
 class Random;
 class StructureStart;
+struct BiomeIdType;
 // clang-format on
 
 class PillagerOutpostFeature : public ::StructureFeature {
@@ -23,7 +24,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnk2efe6c;
     ::ll::UntypedStorage<4, 4>  mUnk52e76e;
-    ::ll::UntypedStorage<8, 24> mUnke03df7;
+    ::ll::UntypedStorage<8, 24> mUnkc8f87c;
     // NOLINTEND
 
 public:
@@ -36,6 +37,9 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
+    virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
+
+    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -46,7 +50,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -62,7 +66,7 @@ public:
     // vIndex: 2
     virtual bool shouldPostProcessMobs() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension& generator,
         ::BiomeSource const&,
@@ -90,6 +94,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::gsl::span<::BiomeIdType const> $getRequiredBiomes() const;
+
     MCAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,

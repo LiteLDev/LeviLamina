@@ -21,7 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::CallStackEntry& operator=(::Scripting::CallStackEntry const&);
+    MCFOLD ::Scripting::CallStackEntry& operator=(::Scripting::CallStackEntry const&);
 
     MCAPI ~CallStackEntry();
     // NOLINTEND

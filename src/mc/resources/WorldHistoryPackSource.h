@@ -24,7 +24,6 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk712674;
     ::ll::UntypedStorage<8, 24> mUnk4f8c50;
     ::ll::UntypedStorage<1, 1>  mUnkb16dc9;
-    ::ll::UntypedStorage<1, 1>  mUnk664567;
     // NOLINTEND
 
 public:
@@ -37,15 +36,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~WorldHistoryPackSource() /*override*/;
+    virtual ~WorldHistoryPackSource() /*override*/ = default;
 
-    // vIndex: 3
+    // vIndex: 2
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
-    // vIndex: 4
+    // vIndex: 3
     virtual ::PackType getPackType() const /*override*/;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
     // NOLINTEND
 
@@ -60,12 +59,6 @@ public:
     MCNAPI ::std::unique_ptr<::Pack> _createPackFromHistoryPack(::WorldPackHistory const& worldPackHistory) const;
 
     MCNAPI bool _readWorldHistoryFile(::WorldPacksHistoryFile& file) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

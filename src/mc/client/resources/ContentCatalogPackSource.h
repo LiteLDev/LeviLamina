@@ -24,7 +24,7 @@ public:
     ::ll::UntypedStorage<8, 128> mUnk9dc461;
     ::ll::UntypedStorage<1, 1>   mUnke4c06f;
     ::ll::UntypedStorage<1, 1>   mUnk995e7a;
-    ::ll::UntypedStorage<8, 16>  mUnk86a824;
+    ::ll::UntypedStorage<8, 16>  mUnk86851b;
     ::ll::UntypedStorage<8, 8>   mUnk25db7d;
     ::ll::UntypedStorage<8, 8>   mUnkbe2d49;
     // NOLINTEND
@@ -41,19 +41,19 @@ public:
     // vIndex: 0
     virtual ~ContentCatalogPackSource() /*override*/ = default;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual void setEnabled(bool) /*override*/;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
 
-    // vIndex: 4
+    // vIndex: 3
     virtual ::PackType getPackType() const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual ::Bedrock::PubSub::Subscription setAsyncCallback(::std::function<void(bool)>) /*override*/;
 
-    // vIndex: 7
+    // vIndex: 6
     virtual void refreshCatalogItems(::IPackManifestFactory&) /*override*/;
     // NOLINTEND
 

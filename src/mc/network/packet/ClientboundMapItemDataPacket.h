@@ -54,7 +54,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
+    // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 1
@@ -63,7 +63,7 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 13
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0

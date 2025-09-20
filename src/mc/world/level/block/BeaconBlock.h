@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/ActorBlockBase.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ class Experiments;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class BeaconBlock : public ::ActorBlock {
+class BeaconBlock : public ::ActorBlockBase<::BlockType> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -25,10 +25,10 @@ public:
     // vIndex: 0
     virtual ~BeaconBlock() /*override*/ = default;
 
-    // vIndex: 135
+    // vIndex: 136
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
 

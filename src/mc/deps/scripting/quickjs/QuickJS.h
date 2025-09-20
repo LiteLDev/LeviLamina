@@ -212,10 +212,6 @@ MCNAPI ::entt::meta_any WriteError(::JSContext* ctx, ::JSValue exceptionVal);
 
 MCNAPI ::std::string WriteObject(::JSContext* ctx, ::JSValue val);
 
-MCNAPI double anyToDouble(::entt::meta_any const& any);
-
-MCNAPI ::std::string anyToString(::entt::meta_any const& any);
-
 MCNAPI ::Scripting::StrongObjectHandle getHandleFromObjectFactory(
     ::JSContext*                           ctx,
     ::Scripting::QuickJS::ContextUserData& contextData,

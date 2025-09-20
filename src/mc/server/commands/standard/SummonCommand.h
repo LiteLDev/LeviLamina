@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
@@ -43,6 +44,9 @@ public:
     // vIndex: 2
     virtual void execute(::CommandOrigin const& origin, ::CommandOutput& output) const /*override*/;
 
+    // vIndex: 3
+    virtual void postExecute(::Actor&) const;
+
     // vIndex: 0
     virtual ~SummonCommand() /*override*/ = default;
     // NOLINTEND
@@ -72,6 +76,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+
+    MCFOLD void $postExecute(::Actor&) const;
     // NOLINTEND
 
 public:

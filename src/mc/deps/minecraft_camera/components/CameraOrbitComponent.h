@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/minecraft_camera/Spherical.h"
 
-class CameraOrbitComponent {
+struct CameraOrbitComponent {
 public:
     // member variables
     // NOLINTBEGIN

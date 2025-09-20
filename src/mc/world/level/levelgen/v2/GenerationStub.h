@@ -57,12 +57,6 @@ public:
             ::br::worldgen::GenerationStub::BuildResult(::br::worldgen::GenerationContext&, ::BlockPos const&)>>
         mPlacer;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::br::worldgen::GenerationStub::BuildResult build(::br::worldgen::GenerationContext& context);
-    // NOLINTEND
 };
 
 } // namespace br::worldgen

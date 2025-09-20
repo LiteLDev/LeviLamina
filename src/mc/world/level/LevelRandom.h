@@ -15,7 +15,7 @@ class LevelRandom : public ::ILevelRandom {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 2568> mUnkc36ce9;
+    ::ll::UntypedStorage<8, 2576> mUnkc36ce9;
     // NOLINTEND
 
 public:

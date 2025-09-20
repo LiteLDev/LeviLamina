@@ -36,6 +36,8 @@ public:
     // NOLINTBEGIN
     MCAPI HitResult();
 
+    MCAPI HitResult(::HitResult&&);
+
     MCAPI HitResult(::HitResult const&);
 
     MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);
@@ -55,6 +57,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::HitResult&&);
 
     MCAPI void* $ctor(::HitResult const&);
 

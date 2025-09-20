@@ -14,7 +14,7 @@ class EnderChestBlock : public ::ChestBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 122
+    // vIndex: 123
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 0

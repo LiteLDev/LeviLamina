@@ -21,6 +21,8 @@ public:
 
 public:
     // prevent constructor by default
+    StringTag& operator=(StringTag const&);
+    StringTag(StringTag const&);
     StringTag();
 
 public:
@@ -55,6 +57,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit StringTag(::std::string data);
+
+    MCAPI ::StringTag& operator=(::StringTag&&);
     // NOLINTEND
 
 public:

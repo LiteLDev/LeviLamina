@@ -41,6 +41,9 @@ public:
     // vIndex: 0
     virtual ~RayTracingOptions() /*override*/ = default;
 
+    // vIndex: 5
+    virtual void unregisterResourcePackListener() /*override*/;
+
     // vIndex: 1
     virtual void onActiveResourcePacksChanged(::ResourcePackManager&) /*override*/;
 
@@ -50,43 +53,46 @@ public:
     // vIndex: 2
     virtual bool isHardwareDeferredCompatible() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual bool areRayTracingResourcesAvailable() const /*override*/;
 
-    // vIndex: 6
+    // vIndex: 7
     virtual bool isDeferredLightingModelAvailable() const /*override*/;
 
     // vIndex: 3
     virtual bool isPlatformCompatible() const /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual bool isPlatformDeferredPerformanceCompatible() const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual bool isRayTracingAvailable() const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual bool areDeferredShadingAndResourcesAvailable() const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual bool isVibrantVisualsAllowed() const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual void setForceDisableVibrantVisuals(bool) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual bool canSwitchGraphicsModeInGame() const /*override*/;
+
+    // vIndex: 14
+    virtual bool requiresPBRResources() const /*override*/;
 
     // vIndex: 4
     virtual bool isUpscalingAvailable() const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 15
     virtual ::dragon::rendering::LightingModels getLightingModel() const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 16
     virtual void setLightingModel(::dragon::rendering::LightingModels const) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 17
     virtual void setCanSwitchGraphicsModeInGame(bool) /*override*/;
     // NOLINTEND
 

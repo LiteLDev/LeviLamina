@@ -11,7 +11,6 @@ class ActorDamageSource;
 class CompoundTag;
 class DataLoadHelper;
 class Mob;
-namespace mce { class UUID; }
 // clang-format on
 
 class PigZombie : public ::Zombie {
@@ -55,12 +54,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _alert(::Mob& target);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& SPEED_MODIFIER_ATTACK_UUID();
     // NOLINTEND
 
 public:

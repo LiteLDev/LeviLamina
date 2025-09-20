@@ -47,6 +47,8 @@ public:
 
     MCNAPI void save(::CompoundTag& tag) const;
 
+    MCNAPI void setStructureSize(::BlockPos const& size);
+
     MCNAPI ~StructureEditorData();
     // NOLINTEND
 

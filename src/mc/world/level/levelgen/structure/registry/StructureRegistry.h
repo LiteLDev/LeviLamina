@@ -26,8 +26,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::shared_ptr<::br::worldgen::Structure const> get(::std::string_view key) const;
 
-    MCNAPI void record(::std::shared_ptr<::br::worldgen::Structure>&& structure);
-
     MCNAPI ~StructureRegistry();
     // NOLINTEND
 

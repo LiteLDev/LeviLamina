@@ -34,6 +34,9 @@ public:
     // vIndex: 0
     virtual ~RemoteConnectorComposite() /*override*/ = default;
 
+    // vIndex: 18
+    virtual void setDisableLanSignaling(bool) /*override*/;
+
     // vIndex: 1
     virtual ::std::string getLocalIp() /*override*/;
 
@@ -78,6 +81,9 @@ public:
 
     // vIndex: 17
     virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const&) /*override*/;
+
+    // vIndex: 19
+    virtual void setInactivityTimeout(::NetworkIdentifier const&, ::std::optional<::std::chrono::seconds>) /*override*/;
 
     // vIndex: 16
     virtual ::NetworkIdentifier getNetworkIdentifier() const /*override*/;

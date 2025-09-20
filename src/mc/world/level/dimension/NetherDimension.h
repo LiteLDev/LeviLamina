@@ -12,12 +12,12 @@
 // clang-format off
 class ChunkSource;
 class CompoundTag;
-class HashedString;
 class ILevel;
 class LevelChunk;
 class Scheduler;
 class Vec3;
 class WorldGenerator;
+struct BiomeIdType;
 namespace br::worldgen { class StructureSetRegistry; }
 // clang-format on
 
@@ -36,7 +36,7 @@ public:
     virtual void init(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
     // vIndex: 24
-    virtual ::HashedString getDefaultBiome() const /*override*/;
+    virtual ::BiomeIdType getDefaultBiomeId() const /*override*/;
 
     // vIndex: 1
     virtual bool isNaturalDimension() const /*override*/;
@@ -96,7 +96,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCAPI ::HashedString $getDefaultBiome() const;
+    MCAPI ::BiomeIdType $getDefaultBiomeId() const;
 
     MCFOLD bool $isNaturalDimension() const;
 

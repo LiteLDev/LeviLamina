@@ -17,12 +17,12 @@ class GlazedTerracottaBlock : public ::FaceDirectionalBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 91
+    // vIndex: 92
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual bool isValidAuxValue(int value) const /*override*/;
 
     // vIndex: 0
@@ -32,7 +32,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $getPlacementBlock(
+    MCNAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -40,7 +40,7 @@ public:
         int               itemValue
     ) const;
 
-    MCFOLD bool $isValidAuxValue(int value) const;
+    MCNAPI bool $isValidAuxValue(int value) const;
     // NOLINTEND
 
 public:

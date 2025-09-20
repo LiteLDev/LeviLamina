@@ -164,13 +164,13 @@ public:
     virtual bool checkSpawnObstruction() const;
 
     // vIndex: 28
-    virtual void addPassenger(::Actor& newPassenger) /*override*/;
+    virtual void addPassenger(::Actor& passenger) /*override*/;
 
     // vIndex: 27
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     // vIndex: 149
     virtual int getItemUseDuration() const;
@@ -194,7 +194,7 @@ public:
     virtual void blockedByShield(::ActorDamageSource const& source, ::Actor& blocker) /*override*/;
 
     // vIndex: 51
-    virtual void setTarget(::Actor* target) /*override*/;
+    virtual void setTarget(::Actor* entity) /*override*/;
 
     // vIndex: 53
     virtual bool attack(::Actor&, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
@@ -323,7 +323,7 @@ public:
     virtual void tickDeath();
 
     // vIndex: 137
-    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
     // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
@@ -494,7 +494,11 @@ public:
 
     MCAPI static float const& LADDER_CLIMB_SPEED();
 
+    MCAPI static int const& REMOVE_PASSENGERS_DELAY();
+
     MCAPI static float const& SLOW_FALL_GRAVITY();
+
+    MCAPI static int const& SPAWN_XP_DELAY();
     // NOLINTEND
 
 public:
@@ -569,11 +573,11 @@ public:
 
     MCAPI bool $checkSpawnObstruction() const;
 
-    MCAPI void $addPassenger(::Actor& newPassenger);
+    MCAPI void $addPassenger(::Actor& passenger);
 
     MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCFOLD int $getItemUseDuration() const;
 
@@ -589,7 +593,7 @@ public:
 
     MCAPI void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
 
-    MCFOLD void $setTarget(::Actor* target);
+    MCFOLD void $setTarget(::Actor* entity);
 
     MCFOLD bool $isAlliedTo(::Mob*);
 
@@ -658,7 +662,7 @@ public:
 
     MCAPI void $tickDeath();
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 

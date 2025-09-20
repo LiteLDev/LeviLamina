@@ -12,9 +12,9 @@
 // clang-format off
 class Actor;
 class Block;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class CompoundTag;
 class Container;
 class HashedString;
@@ -39,7 +39,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     // vIndex: 91
     virtual uchar getMaxStackSize(::ItemDescriptor const&) const /*override*/;
@@ -120,7 +120,7 @@ public:
 
     MCAPI bool _takePowderSnow(::ItemStack& item, ::Actor& actor, ::BlockPos const& pos) const;
 
-    MCAPI ::BlockLegacy const* _tryGetBlock(::BucketFillType contents) const;
+    MCAPI ::BlockType const* _tryGetBlock(::BucketFillType contents) const;
 
     MCAPI void addBucketEntitySaveData(::Actor& entity, ::ItemStack& instance) const;
 
@@ -141,7 +141,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
 

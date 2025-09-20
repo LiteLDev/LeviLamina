@@ -15,6 +15,8 @@ class PackReport;
 class ResourceLocation;
 class SubpackInfoCollection;
 namespace Core { class Path; }
+namespace Puv { class LoadResultAny; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class PackManifestFactory : public ::IPackManifestFactory {
@@ -23,6 +25,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk6440d6;
     ::ll::UntypedStorage<8, 8>  mUnk89c744;
+    ::ll::UntypedStorage<8, 8>  mUnk99ad44;
     ::ll::UntypedStorage<8, 8>  mUnk4c2c4c;
     // NOLINTEND
 
@@ -50,15 +53,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackManifestFactory(::PackCapabilityRegistry const& packCapabilityRegistry, ::IPackTelemetry& eventing);
-
-    MCNAPI ::std::unique_ptr<::PackManifest> create(
-        ::PackAccessStrategy&             accessStrategy,
-        ::std::string const&              manifestContent,
-        ::PackReport&                     report,
-        ::std::unique_ptr<::PackManifest> sourceManifest,
-        ::SubpackInfoCollection*          subpackInfoStack
+    MCNAPI PackManifestFactory(
+        ::PackCapabilityRegistry const& packCapabilityRegistry,
+        ::IPackTelemetry&               eventing,
+        ::cereal::ReflectionCtx&        ctx
     );
+
+    MCNAPI void _forwardPuvLogsToPackReport(::Puv::LoadResultAny const& res, ::PackReport& report);
+
+    MCNAPI void _setAndCachePackSize(
+        ::PackManifest&           manifest,
+        ::PackAccessStrategy&     accessStrategy,
+        ::ResourceLocation const& location
+    );
+
+    MCNAPI ::std::unique_ptr<::PackManifest>
+    _upgradeToWorldTemplateManifest(::PackAccessStrategy const& accessStrategy, ::PackManifest&& inputPack);
     // NOLINTEND
 
 public:
@@ -78,7 +88,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PackCapabilityRegistry const& packCapabilityRegistry, ::IPackTelemetry& eventing);
+    MCNAPI void* $ctor(
+        ::PackCapabilityRegistry const& packCapabilityRegistry,
+        ::IPackTelemetry&               eventing,
+        ::cereal::ReflectionCtx&        ctx
+    );
     // NOLINTEND
 
 public:

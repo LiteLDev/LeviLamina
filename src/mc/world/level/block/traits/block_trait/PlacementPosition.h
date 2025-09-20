@@ -10,8 +10,8 @@
 // clang-format off
 class Actor;
 class Block;
-class BlockLegacy;
 class BlockPos;
+class BlockType;
 class CompoundTag;
 class Vec3;
 // clang-format on
@@ -156,7 +156,7 @@ public:
     virtual void initializeFromNetwork(::CompoundTag const& tag) /*override*/;
 
     // vIndex: 1
-    virtual void applyToBlockLegacy(::BlockLegacy& blockLegacy) const /*override*/;
+    virtual void applyToBlockType(::BlockType& blockType) const /*override*/;
 
     // vIndex: 0
     virtual ~PlacementPosition() /*override*/;
@@ -197,7 +197,7 @@ public:
 
     MCNAPI void $initializeFromNetwork(::CompoundTag const& tag);
 
-    MCNAPI void $applyToBlockLegacy(::BlockLegacy& blockLegacy) const;
+    MCNAPI void $applyToBlockType(::BlockType& blockType) const;
     // NOLINTEND
 
 public:

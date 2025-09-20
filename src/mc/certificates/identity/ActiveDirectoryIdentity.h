@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Identity { class IEduAuth; }
+namespace Identity { struct EduAuthParameters; }
 namespace Identity { struct ServiceResponse; }
 // clang-format on
 
@@ -27,6 +28,7 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnk9f179e;
     ::ll::UntypedStorage<8, 16>   mUnk16c98e;
     ::ll::UntypedStorage<8, 8>    mUnk89d1c9;
+    ::ll::UntypedStorage<8, 24>   mUnkf84d67;
     ::ll::UntypedStorage<8, 88>   mUnk3ae843;
     ::ll::UntypedStorage<8, 80>   mUnke3078c;
     // NOLINTEND

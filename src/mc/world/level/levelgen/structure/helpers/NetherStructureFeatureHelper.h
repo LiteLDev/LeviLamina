@@ -8,17 +8,18 @@ class BiomeSource;
 class ChunkPos;
 class HashedString;
 class Random;
+struct BiomeIdType;
 // clang-format on
 
 namespace NetherStructureFeatureHelper {
 // functions
 // NOLINTBEGIN
 MCNAPI ::HashedString getStructureFeatureTypeForChunk(
-    ::BiomeSource const&         biomeSource,
-    ::Random&                    random,
-    ::ChunkPos const&            chunkPos,
-    uint                         levelSeed,
-    ::std::vector<uint64> const& allowedBiomes
+    ::BiomeSource const&                biomeSource,
+    ::Random&                           random,
+    ::ChunkPos const&                   chunkPos,
+    uint                                levelSeed,
+    ::std::vector<::BiomeIdType> const& allowedBiomes
 );
 // NOLINTEND
 

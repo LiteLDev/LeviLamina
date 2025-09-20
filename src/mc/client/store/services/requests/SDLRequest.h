@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/services/requests/HttpRequestHandler.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -51,11 +51,10 @@ public:
     virtual ~SDLRequest() /*override*/ = default;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::string>> getAuthToken() /*override*/;
+    virtual ::Bedrock::Threading::Async<::std::string> getAuthToken() /*override*/;
 
     // vIndex: 3
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
-        send(::std::string) /*override*/;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::std::string) /*override*/;
     // NOLINTEND
 
 public:

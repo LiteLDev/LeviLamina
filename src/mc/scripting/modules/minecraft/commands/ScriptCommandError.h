@@ -15,12 +15,21 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptCommandError : public ::Scripting::BaseError {
 public:
+    // ScriptCommandError inner types define
+    enum class ErrorType : int {
+        Parsing   = 0,
+        Executing = 1,
+    };
+
+public:
     // prevent constructor by default
     ScriptCommandError();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptCommandError(::std::string message, ::ScriptModuleMinecraft::ScriptCommandError::ErrorType type);
+
     MCNAPI ScriptCommandError(::std::string messages, ::MCRESULT const& result);
 
     MCNAPI ~ScriptCommandError();
@@ -35,6 +44,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::string message, ::ScriptModuleMinecraft::ScriptCommandError::ErrorType type);
+
     MCNAPI void* $ctor(::std::string messages, ::MCRESULT const& result);
     // NOLINTEND
 

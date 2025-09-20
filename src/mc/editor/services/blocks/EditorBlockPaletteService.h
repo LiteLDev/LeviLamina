@@ -11,7 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
+class BlockType;
 class HashedString;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
@@ -76,7 +76,7 @@ public:
     virtual ::Editor::EditorBlockPalette const& getActivePalette() const /*override*/;
 
     // vIndex: 14
-    virtual void forEachBlockType(::std::function<void(::BlockLegacy const&, bool)> callback) const /*override*/;
+    virtual void forEachBlockType(::std::function<void(::BlockType const&, bool)> callback) const /*override*/;
 
     // vIndex: 7
     virtual int getSelectedPaletteItemIndex() const /*override*/;
@@ -85,7 +85,7 @@ public:
     virtual ::Scripting::Result_deprecated<void> pickBlock(::Block const&) = 0;
 
     // vIndex: 10
-    virtual ::Scripting::Result_deprecated<::BlockLegacy const*> getSelectedBlockType() const /*override*/;
+    virtual ::Scripting::Result_deprecated<::BlockType const*> getSelectedBlockType() const /*override*/;
 
     // vIndex: 11
     virtual ::std::vector<::std::string> getPaletteIdList() const /*override*/;
@@ -145,7 +145,7 @@ public:
 
     MCNAPI ::Scripting::Error _getAttemptingToRemoveOnlyPaletteError(::HashedString const& paletteId) const;
 
-    MCNAPI ::Scripting::ArgumentOutOfBoundsError _getIndexOutOfBoundsError(int index, int max) const;
+    MCNAPI ::Scripting::ArgumentOutOfBoundsError _getIndexOutOfBoundsError(int param, int argIndex, int max) const;
 
     MCNAPI ::Editor::EditorBlockPalette* _getPalette(::HashedString const& paletteId) const;
 
@@ -187,11 +187,11 @@ public:
 
     MCNAPI ::Editor::EditorBlockPalette const& $getActivePalette() const;
 
-    MCNAPI void $forEachBlockType(::std::function<void(::BlockLegacy const&, bool)> callback) const;
+    MCNAPI void $forEachBlockType(::std::function<void(::BlockType const&, bool)> callback) const;
 
     MCNAPI int $getSelectedPaletteItemIndex() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::BlockLegacy const*> $getSelectedBlockType() const;
+    MCNAPI ::Scripting::Result_deprecated<::BlockType const*> $getSelectedBlockType() const;
 
     MCNAPI ::std::vector<::std::string> $getPaletteIdList() const;
 

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -22,12 +23,12 @@ namespace Core { class Path; }
 namespace mce { class UUID; }
 // clang-format on
 
-class IPackSourceFactory {
+class IPackSourceFactory : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPackSourceFactory() = default;
+    virtual ~IPackSourceFactory() /*override*/;
 
     // vIndex: 2
     virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
@@ -74,6 +75,12 @@ public:
 
     // vIndex: 12
     virtual void removeFromDirectoryPackSource(::Core::Path const&) = 0;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockLegacy;
+class BlockType;
 class ExpressionNode;
 class Mob;
 // clang-format on
@@ -18,13 +18,12 @@ class EatBlockGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                           mMob;
-    ::ll::TypedStorage<4, 4, int>                              mTicksUntilEat;
-    ::ll::TypedStorage<4, 4, int>                              mTotalTicksUntilEat;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>       mOnEat;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>> mSuccessChance;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockLegacy const*, ::BlockLegacy const*>>
-        mEatAndReplaceBlockPairs;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                                        mMob;
+    ::ll::TypedStorage<4, 4, int>                                                           mTicksUntilEat;
+    ::ll::TypedStorage<4, 4, int>                                                           mTotalTicksUntilEat;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>                                    mOnEat;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>>                              mSuccessChance;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockType const*, ::BlockType const*>> mEatAndReplaceBlockPairs;
     // NOLINTEND
 
 public:

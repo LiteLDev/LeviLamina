@@ -5,19 +5,15 @@
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
+struct BiomeIdType;
 // clang-format on
 
 namespace BiomeIdCompatibility {
 // functions
 // NOLINTBEGIN
-MCNAPI ushort getFixedId(::std::string const& biomeName);
+MCNAPI ::std::string_view getFixedBiomeName(::BiomeIdType biomeId);
 
-MCNAPI bool isReserved(ushort id, ::BaseGameVersion const& baseGameVersion);
-// NOLINTEND
-
-// static variables
-// NOLINTBEGIN
-MCNAPI ushort const& MAX_CUSTOM_BIOMES();
+MCNAPI bool isReserved(::BiomeIdType id, ::BaseGameVersion const& baseGameVersion);
 // NOLINTEND
 
 } // namespace BiomeIdCompatibility

@@ -30,7 +30,5 @@ public:
     MCNAPI bool hasModifier(::std::shared_ptr<::AttributeModifier> modifier) const;
 
     MCNAPI bool removeModifier(::mce::UUID const& id);
-
-    MCNAPI void setDefaultValue(float defaultValue, int operand);
     // NOLINTEND
 };

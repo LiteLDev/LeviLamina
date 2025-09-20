@@ -17,7 +17,7 @@ class RotatedPillarInfestedBlock : public ::RotatedPillarBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 90
+    // vIndex: 91
     virtual void spawnAfterBreak(
         ::BlockSource& region,
         ::Block const&,
@@ -32,7 +32,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $spawnAfterBreak(
+    MCNAPI void $spawnAfterBreak(
         ::BlockSource& region,
         ::Block const&,
         ::BlockPos const&             pos,

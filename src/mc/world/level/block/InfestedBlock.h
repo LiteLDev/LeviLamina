@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +14,7 @@ class BlockSource;
 struct ResourceDropsContext;
 // clang-format on
 
-class InfestedBlock : public ::BlockLegacy {
+class InfestedBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
@@ -24,10 +24,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 129
+    // vIndex: 130
     virtual ::Block const* tryGetUninfested(::Block const& block) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 91
     virtual void spawnAfterBreak(
         ::BlockSource& region,
         ::Block const&,
@@ -42,15 +42,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void spawnSilverfish(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static void spawnSilverfish(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Block const* $tryGetUninfested(::Block const& block) const;
+    MCNAPI ::Block const* $tryGetUninfested(::Block const& block) const;
 
-    MCFOLD void $spawnAfterBreak(
+    MCNAPI void $spawnAfterBreak(
         ::BlockSource& region,
         ::Block const&,
         ::BlockPos const&             pos,

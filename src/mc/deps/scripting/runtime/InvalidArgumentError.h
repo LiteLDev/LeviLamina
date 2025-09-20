@@ -6,6 +6,12 @@
 #include "mc/deps/scripting/runtime/BaseError.h"
 #include "mc/deps/scripting/runtime/InvalidArgumentErrorType.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct EnumBinding; }
+namespace Scripting { struct ErrorBinding; }
+// clang-format on
+
 namespace Scripting {
 
 struct InvalidArgumentError : public ::Scripting::BaseError {
@@ -26,11 +32,20 @@ public:
     // NOLINTBEGIN
     MCAPI InvalidArgumentError(::Scripting::InvalidArgumentError const&);
 
-    MCAPI InvalidArgumentError(::std::string const& message_, int index_);
+    MCAPI InvalidArgumentError(::std::string const& argTypeName, int index_);
 
-    MCAPI InvalidArgumentError(::std::string const& message_, ::Scripting::InvalidArgumentErrorType type_, int index_);
+    MCAPI
+    InvalidArgumentError(::std::string const& argTypeName, ::Scripting::InvalidArgumentErrorType type_, int index_);
 
     MCAPI ~InvalidArgumentError();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ErrorBinding bind();
+
+    MCAPI static ::Scripting::EnumBinding bindEnum();
     // NOLINTEND
 
 public:
@@ -38,9 +53,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::Scripting::InvalidArgumentError const&);
 
-    MCAPI void* $ctor(::std::string const& message_, int index_);
+    MCAPI void* $ctor(::std::string const& argTypeName, int index_);
 
-    MCAPI void* $ctor(::std::string const& message_, ::Scripting::InvalidArgumentErrorType type_, int index_);
+    MCAPI void* $ctor(::std::string const& argTypeName, ::Scripting::InvalidArgumentErrorType type_, int index_);
     // NOLINTEND
 
 public:

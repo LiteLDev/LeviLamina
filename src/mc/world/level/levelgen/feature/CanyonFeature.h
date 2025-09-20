@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class BiomeSource;
-class BlockLegacy;
+class BlockType;
 class BlockVolume;
 class ChunkPos;
 class Random;
@@ -47,7 +47,7 @@ public:
     ) const;
 
     // vIndex: 1
-    virtual bool _isDiggable(::BlockLegacy const& block) const;
+    virtual bool _isDiggable(::BlockType const& block) const;
     // NOLINTEND
 
 public:
@@ -115,7 +115,7 @@ public:
         ::WorldGenContext const& context
     ) const;
 
-    MCNAPI bool $_isDiggable(::BlockLegacy const& block) const;
+    MCNAPI bool $_isDiggable(::BlockType const& block) const;
     // NOLINTEND
 
 public:

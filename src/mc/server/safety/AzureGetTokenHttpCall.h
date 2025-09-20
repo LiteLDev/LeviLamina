@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -42,15 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AzureGetTokenHttpCall(
-        ::std::string                        tenantId,
-        ::std::string                        clientId,
-        ::std::string                        scope,
-        ::Bedrock::Services::ClientAssertion clientAssertionAuth
-    );
-
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Services::AzureGetTokenHttpResponse>>
-    send(::TaskGroup& taskGroup);
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Services::AzureGetTokenHttpResponse> send(::TaskGroup& taskGroup);
     // NOLINTEND
 
 public:
@@ -64,17 +56,6 @@ public:
     );
 
     MCNAPI static ::Bedrock::Services::AzureGetTokenHttpResponse _parseResponse(::Bedrock::Http::Response response);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::string                        tenantId,
-        ::std::string                        clientId,
-        ::std::string                        scope,
-        ::Bedrock::Services::ClientAssertion clientAssertionAuth
-    );
     // NOLINTEND
 
 public:

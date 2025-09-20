@@ -81,8 +81,6 @@ public:
 
     MCNAPI ::DenyList::Duration getDuration(::DenyList::Entry const& entry) const;
 
-    MCNAPI ::std::string const& getMessage(::DenyList::Entry const& entry) const;
-
     MCNAPI bool isBlocked(::DenyList::Entry const& entry) const;
 
     MCNAPI ~DenyList();

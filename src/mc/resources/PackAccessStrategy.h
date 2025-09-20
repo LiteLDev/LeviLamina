@@ -107,6 +107,8 @@ public:
 
     MCNAPI void _forEachInAssetSet(::std::function<void(::Core::Path const&)> callback) const;
 
+    MCNAPI bool _isInAssetSet(::Core::Path const& path) const;
+
     MCNAPI void _upgradeContentsFile(::Json::Value& root);
 
     MCNAPI ::Bedrock::Resources::PreloadedPathHandle preload(::Core::Path const& packRelativePath) const;

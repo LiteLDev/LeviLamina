@@ -24,19 +24,19 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 146
+    // vIndex: 147
     virtual int getTickDelay() const /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual int getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 149
     virtual int getSignalForData(int data) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 150
     virtual int getRedstoneSignal(int signal) const /*override*/;
 
     // vIndex: 0
@@ -46,15 +46,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getTickDelay() const;
+    MCNAPI int $getTickDelay() const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI int $getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI int $getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD int $getSignalForData(int data) const;
+    MCNAPI int $getSignalForData(int data) const;
 
-    MCFOLD int $getRedstoneSignal(int signal) const;
+    MCNAPI int $getRedstoneSignal(int signal) const;
     // NOLINTEND
 
 public:

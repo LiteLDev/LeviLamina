@@ -7,16 +7,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PrintStream();
+    virtual ~PrintStream() = default;
 
     // vIndex: 1
     virtual void print(::std::string const& s);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

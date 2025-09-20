@@ -21,8 +21,12 @@ struct WorldGenRandom : public ::IRandom, public ::IRandomSeeded {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 56, ::std::variant<::SimpleRandom, ::XoroshiroRandom>> mSource;
+    ::ll::TypedStorage<8, 72, ::std::variant<::SimpleRandom, ::XoroshiroRandom>> mSource;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    WorldGenRandom();
 
 public:
     // virtual functions
@@ -76,6 +80,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit WorldGenRandom(::SimpleRandom source);
+
     MCNAPI ::br::worldgen::WorldGenRandom forkPositional(::BlockPos pos);
 
     MCNAPI ::br::worldgen::WorldGenRandom& setLargeFeatureSeed(int64 seed, int chunkX, int chunkZ);
@@ -85,6 +91,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::br::worldgen::WorldGenRandom createDecoration(int64 seed, int chunkX, int chunkZ);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::SimpleRandom source);
     // NOLINTEND
 
 public:

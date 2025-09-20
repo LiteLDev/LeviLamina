@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/events/NetworkType.h"
 
 // auto generated forward declare list
@@ -27,8 +27,7 @@ public:
     virtual void joinRemoteServerWithAddress(::Social::GameConnectionInfo, ::NetworkType) = 0;
 
     // vIndex: 3
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    joinMultiplayerGame(::Social::MultiplayerGameInfo const&) = 0;
+    virtual ::Bedrock::Threading::Async<void> joinMultiplayerGame(::Social::MultiplayerGameInfo const&) = 0;
     // NOLINTEND
 
 public:

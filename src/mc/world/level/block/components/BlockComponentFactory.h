@@ -78,9 +78,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit BlockComponentFactory(::IPackLoadContext const* packLoadContext);
+
     MCNAPI void _buildBlockComponentsSchema();
 
     MCNAPI void _registerLegacyDescriptions(::IPackLoadContext const* packLoadContext);
+
+    MCNAPI ::std::unique_ptr<::BlockComponentDescription>
+    createDescription(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
 
     MCNAPI ::BlockComponentFactory& operator=(::BlockComponentFactory const&);
     // NOLINTEND
@@ -92,6 +97,12 @@ public:
     contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
     MCNAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IPackLoadContext const* packLoadContext);
     // NOLINTEND
 
 public:

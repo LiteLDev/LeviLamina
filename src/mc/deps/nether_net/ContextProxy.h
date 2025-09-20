@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace NetherNet { class LanThreadManager; }
+namespace NetherNet { class ILanDiscovery; }
 namespace NetherNet { class RtcThreadManager; }
 namespace NetherNet { struct GlobalConfiguration; }
 // clang-format on
@@ -44,15 +44,21 @@ public:
     virtual ::NetherNet::RtcThreadManager const& getWorkerThread() const /*override*/;
 
     // vIndex: 4
-    virtual ::NetherNet::LanThreadManager& getLanThread() /*override*/;
+    virtual ::NetherNet::ILanDiscovery& getLanDiscovery() /*override*/;
 
     // vIndex: 5
-    virtual ::NetherNet::GlobalConfiguration const& getGlobalConfig() const /*override*/;
-
-    // vIndex: 7
-    virtual void setLoggingLevel(::NetherNet::LogSeverity min) /*override*/;
+    virtual void onSuspend() /*override*/;
 
     // vIndex: 6
+    virtual void onResume() /*override*/;
+
+    // vIndex: 7
+    virtual ::NetherNet::GlobalConfiguration const& getGlobalConfig() const /*override*/;
+
+    // vIndex: 9
+    virtual void setLoggingLevel(::NetherNet::LogSeverity min) /*override*/;
+
+    // vIndex: 8
     virtual void _logMessage(::NetherNet::LogSeverity level, char const* fmt, char* args) const /*override*/;
     // NOLINTEND
 
@@ -71,7 +77,11 @@ public:
 
     MCNAPI ::NetherNet::RtcThreadManager const& $getWorkerThread() const;
 
-    MCNAPI ::NetherNet::LanThreadManager& $getLanThread();
+    MCNAPI ::NetherNet::ILanDiscovery& $getLanDiscovery();
+
+    MCNAPI void $onSuspend();
+
+    MCNAPI void $onResume();
 
     MCNAPI ::NetherNet::GlobalConfiguration const& $getGlobalConfig() const;
 

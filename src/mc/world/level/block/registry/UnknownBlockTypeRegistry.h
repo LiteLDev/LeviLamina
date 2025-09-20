@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
+class BlockType;
 class CompoundTag;
 // clang-format on
 
@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnkfa461f;
-    ::ll::UntypedStorage<8, 16> mUnk3ca5c1;
+    ::ll::UntypedStorage<8, 16> mUnk65fe59;
     // NOLINTEND
 
 public:

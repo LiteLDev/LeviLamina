@@ -112,6 +112,15 @@ public:
     // vIndex: 0
     virtual ~NetherNetConnector() /*override*/;
 
+    // vIndex: 18
+    virtual void setDisableLanSignaling(bool disableLanSignaling) /*override*/;
+
+    // vIndex: 19
+    virtual void setInactivityTimeout(
+        ::NetworkIdentifier const&              id,
+        ::std::optional<::std::chrono::seconds> inactivityTimeout
+    ) /*override*/;
+
     // vIndex: 9
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
@@ -200,6 +209,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $setDisableLanSignaling(bool disableLanSignaling);
+
+    MCNAPI void
+    $setInactivityTimeout(::NetworkIdentifier const& id, ::std::optional<::std::chrono::seconds> inactivityTimeout);
+
     MCNAPI bool $host(::ConnectionDefinition const& definition);
 
     MCNAPI bool $connect(::Social::GameConnectionInfo const&, ::Social::GameConnectionInfo const&);

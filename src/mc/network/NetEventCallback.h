@@ -10,6 +10,7 @@
 #include "mc/network/OutgoingPacketFilterResult.h"
 #include "mc/network/PacketViolationResponse.h"
 #include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/network/connection/DisconnectionStage.h"
 #include "mc/network/packet/ShowStoreOfferRedirectType.h"
 
 // auto generated forward declare list
@@ -266,6 +267,7 @@ public:
     virtual void onDisconnect(
         ::NetworkIdentifier const&,
         ::Connection::DisconnectFailReason const,
+        ::Connection::DisconnectionStage const,
         ::std::string const& message,
         bool                 skipMessage,
         ::std::string const& telemetryOverride
@@ -444,7 +446,7 @@ public:
     virtual void handle(::NetworkIdentifier const&, ::MovementEffectPacket const&);
 
     // vIndex: 186
-    virtual void handle(::NetworkIdentifier const&, ::MobEquipmentPacket const&);
+    virtual void handle(::NetworkIdentifier const&, ::std::shared_ptr<::MobEquipmentPacket>);
 
     // vIndex: 185
     virtual void handle(::NetworkIdentifier const&, ::MobArmorEquipmentPacket const&);
@@ -981,6 +983,7 @@ public:
     MCNAPI void $onDisconnect(
         ::NetworkIdentifier const&,
         ::Connection::DisconnectFailReason const,
+        ::Connection::DisconnectionStage const,
         ::std::string const& message,
         bool                 skipMessage,
         ::std::string const& telemetryOverride
@@ -1101,7 +1104,7 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::MovementEffectPacket const&);
 
-    MCNAPI void $handle(::NetworkIdentifier const&, ::MobEquipmentPacket const&);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::MobEquipmentPacket>);
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::MobArmorEquipmentPacket const&);
 

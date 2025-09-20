@@ -7,6 +7,7 @@
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/islands/AppIsland.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/network/PacketGroupDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -64,6 +65,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk16bb39;
     ::ll::UntypedStorage<8, 16> mUnk52e6e7;
     ::ll::UntypedStorage<8, 16> mUnk825af0;
+    ::ll::UntypedStorage<8, 8>  mUnk6eb85f;
     // NOLINTEND
 
 public:
@@ -129,13 +131,14 @@ public:
     );
 
     MCAPI ::DedicatedServer::StartResult runDedicatedServerLoop(
-        ::Core::FilePathManager&              filePathManager,
-        ::PropertiesSettings&                 properties,
-        ::LevelSettings&                      settings,
-        ::AllowListFile&                      userAllowList,
-        ::std::unique_ptr<::PermissionsFile>& permissionsFile,
-        ::Bedrock::ActivationArguments const& args,
-        ::TestConfig&                         testConfig
+        ::Core::FilePathManager&                                     filePathManager,
+        ::PropertiesSettings&                                        properties,
+        ::LevelSettings&                                             settings,
+        ::AllowListFile&                                             userAllowList,
+        ::std::unique_ptr<::PermissionsFile>&                        permissionsFile,
+        ::std::optional<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder,
+        ::Bedrock::ActivationArguments const&                        args,
+        ::TestConfig&                                                testConfig
     );
 
     MCAPI void shutdownServices();

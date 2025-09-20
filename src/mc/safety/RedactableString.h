@@ -24,6 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI RedactableString(::std::string&& unredactedString, ::std::optional<::std::string>&& redactedString);
+
     MCAPI void append(::std::string rhs);
 
     MCAPI ::Bedrock::Result<void> erase(uint64 offset, uint64 count);
@@ -45,6 +47,12 @@ public:
     MCAPI void setRedacted(::std::optional<::std::string>&& redactedString);
 
     MCAPI ~RedactableString();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string&& unredactedString, ::std::optional<::std::string>&& redactedString);
     // NOLINTEND
 
 public:

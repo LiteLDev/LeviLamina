@@ -37,7 +37,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 3
+    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -48,7 +48,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&         dimension,
         ::BiomeSource const& biomeSource,
@@ -57,7 +57,7 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     ) /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&,
         ::Random&         random,

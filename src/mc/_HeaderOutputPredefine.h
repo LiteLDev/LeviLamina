@@ -106,6 +106,9 @@
 // fmt C++ Library
 #include "fmt/format.h"
 
+// moodycamel::ConcurrentQueue C++ Library
+#include "concurrentqueue.h" 
+
 struct HWND__;
 struct _TP_CALLBACK_INSTANCE;
 struct _TP_WAIT;

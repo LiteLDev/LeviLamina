@@ -29,9 +29,9 @@ class Biome;
 class Block;
 class BlockActor;
 class BlockDescriptor;
-class BlockLegacy;
 class BlockSourceListener;
 class BlockTickingQueue;
+class BlockType;
 class BlockVolume;
 class BoundingBox;
 class ChunkSource;
@@ -280,7 +280,8 @@ public:
         bool                                                                     ignoreBorderBlocks,
         bool                                                                     fullOnly,
         ::Actor*                                                                 actor,
-        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& shouldCheckBlock
+        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& shouldCheckBlock,
+        bool                                                                     stopOnFirstLiquidHit
     ) const /*override*/;
 
     // vIndex: 48
@@ -551,7 +552,7 @@ public:
     MCAPI bool hasTickInPendingTicks(::BlockPos const& pos, ::Block const& block, ::TickingQueueType queueType) const;
 
     MCAPI bool
-    hasTickInPendingTicks(::BlockPos const& pos, ::BlockLegacy const& block, ::TickingQueueType queueType) const;
+    hasTickInPendingTicks(::BlockPos const& pos, ::BlockType const& block, ::TickingQueueType queueType) const;
 
     MCAPI bool hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const;
 
@@ -582,6 +583,8 @@ public:
     );
 
     MCAPI bool setBlock(int x, int y, int z, ::Block const& block, int updateFlags, ::Actor* blockChangeSource);
+
+    MCAPI bool setBlockAndRetainCompatibleBlockActor(::BlockPos const& pos, ::Block const& block, int updateFlags);
 
     MCAPI void setBorderBlock(::BlockPos const& pos, bool val);
 
@@ -751,7 +754,8 @@ public:
         bool                                                                     ignoreBorderBlocks,
         bool                                                                     fullOnly,
         ::Actor*                                                                 actor,
-        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& shouldCheckBlock
+        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& shouldCheckBlock,
+        bool                                                                     stopOnFirstLiquidHit
     ) const;
 
     MCAPI ::HitResult $clip(::ClipParameters const& parameters) const;

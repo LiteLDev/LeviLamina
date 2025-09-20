@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
+class BlockType;
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -28,7 +28,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkfae8ee;
+        ::ll::UntypedStorage<8, 8> mUnkc3ff51;
         // NOLINTEND
 
     public:
@@ -58,7 +58,7 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
     createDefaultBlockPermutationV010() const;
 
-    MCNAPI ::BlockLegacy const& getBlock() const;
+    MCNAPI ::BlockType const& getBlock() const;
 
     MCNAPI ::std::string getId() const;
     // NOLINTEND
@@ -69,10 +69,10 @@ public:
     MCNAPI static ::Scripting::ClassBinding bind();
 
     MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>
-    getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockLegacy const& block);
+    getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockType const& block);
 
     MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
-    tryGetHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockLegacy const& block);
+    tryGetHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockType const& block);
     // NOLINTEND
 };
 

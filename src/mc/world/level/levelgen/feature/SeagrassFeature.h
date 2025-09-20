@@ -18,6 +18,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4> mUnk91d3bb;
     ::ll::UntypedStorage<4, 4> mUnkeb19ab;
+    ::ll::UntypedStorage<8, 8> mUnkcf9df4;
     // NOLINTEND
 
 public:
@@ -34,6 +35,12 @@ public:
 
     // vIndex: 0
     virtual ~SeagrassFeature() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _tryPlaceTallSeagrass(::BlockSource& region, ::BlockPos const& pos, bool isColdEnoughForIce) const;
     // NOLINTEND
 
 public:

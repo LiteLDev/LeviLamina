@@ -5,10 +5,12 @@
 namespace Scripting {
 
 enum class InvalidArgumentErrorType : uchar {
-    Unspecified = 0,
-    Empty       = 1,
-    Unknown     = 2,
-    Duplicate   = 3,
+    Unspecified      = 0,
+    Empty            = 1,
+    Duplicate        = 2,
+    InvalidType      = 3,
+    UnsupportedValue = 4,
+    Unknown          = 5,
 };
 
 }

@@ -16,7 +16,7 @@ struct FogAppearanceClientBiomeJsonComponent : public ::SharedTypes::v1_21_40::I
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk21db0e;
+    ::ll::UntypedStorage<8, 32> mUnkf26d2a;
     // NOLINTEND
 
 public:

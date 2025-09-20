@@ -66,9 +66,12 @@ public:
     getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;
 
     // vIndex: 7
-    virtual bool _allowReadBlock(::BlockPos const&, ::Block const& block) const;
+    virtual void fillEmpty(::BlockPos const& size);
 
     // vIndex: 8
+    virtual bool _allowReadBlock(::BlockPos const&, ::Block const& block) const;
+
+    // vIndex: 9
     virtual bool _allowReadActor(::Actor const& actor) const;
 
     // vIndex: 2
@@ -134,8 +137,6 @@ public:
         bool updateItemData,
         bool ignoreJigsawBlocks
     ) const;
-
-    MCAPI void fillEmpty(::BlockPos const& size);
 
     MCAPI void fillFromWorld(
         ::BlockSource&             region,
@@ -218,6 +219,8 @@ public:
 
     MCAPI ::BoundingBox
     $getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;
+
+    MCAPI void $fillEmpty(::BlockPos const& size);
 
     MCAPI bool $_allowReadBlock(::BlockPos const&, ::Block const& block) const;
 

@@ -13,7 +13,6 @@ class ActorDamageSource;
 class ActorDefinitionGroup;
 class EntityContext;
 struct ActorDefinitionIdentifier;
-namespace mce { class UUID; }
 // clang-format on
 
 class Skeleton : public ::HumanoidMonster {
@@ -76,12 +75,6 @@ public:
     );
 
     MCFOLD void setSkeletonType(::Skeleton::SkeletonType type);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& SPEED_MODIFIER_ATTACK_UUID();
     // NOLINTEND
 
 public:

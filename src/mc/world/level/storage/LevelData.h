@@ -109,7 +109,6 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationCreatorId;
     ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationCreatorWorldId;
     ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationReferrerId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                          mEducationReferrerType;
     ::ll::TypedStorage<1, 1, bool>                                                    mUseMsaGamertagsOnly;
     ::ll::TypedStorage<1, 1, bool>                                                    mBonusChestEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                    mBonusChestSpawned;
@@ -197,6 +196,8 @@ public:
     MCAPI ::WorldVersion getWorldVersion() const;
 
     MCAPI void registerWithLevelStorageManagerEvents(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+
+    MCAPI void setBiomeOverride(::std::string const& biomeName);
 
     MCAPI void setDaylightCycle(::DaylightCycle daylightCycle);
 

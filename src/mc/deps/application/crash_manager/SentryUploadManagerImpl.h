@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/application/crash_manager/SentryUploadManager.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/platform/Copyable.h"
 #include "mc/platform/Result.h"
 
@@ -40,7 +40,7 @@ public:
         /*override*/;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Copyable<::Bedrock::Result<void>>>>
+    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<void>>>
     uploadMinidump(::TaskGroup&, ::Core::Path const&, ::std::string const&) const /*override*/;
 
     // vIndex: 3

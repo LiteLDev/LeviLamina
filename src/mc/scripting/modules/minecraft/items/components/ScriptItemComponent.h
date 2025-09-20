@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/components/ScriptComponent.h"
 
 // auto generated forward declare list
@@ -20,12 +20,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk5e0c70;
+    ::ll::UntypedStorage<8, 32> mUnk8f4aee;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ScriptItemComponent& operator=(ScriptItemComponent const&);
-    ScriptItemComponent(ScriptItemComponent const&);
     ScriptItemComponent();
 
 public:
@@ -41,10 +41,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptItemComponent(::ScriptModuleMinecraft::ScriptItemComponent const&);
+
     MCNAPI ScriptItemComponent(
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Scripting::WeakLifetimeScope const&                                        scope,
-        ::std::string                                                                id
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope,
+        ::std::string                                                                  id
     );
     // NOLINTEND
 
@@ -57,10 +59,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemComponent const&);
+
     MCNAPI void* $ctor(
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Scripting::WeakLifetimeScope const&                                        scope,
-        ::std::string                                                                id
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope,
+        ::std::string                                                                  id
     );
     // NOLINTEND
 

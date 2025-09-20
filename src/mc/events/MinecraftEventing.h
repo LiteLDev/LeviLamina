@@ -7,6 +7,7 @@
 #include "mc/certificates/identity/LastClickedSource.h"
 #include "mc/certificates/identity/edu/Role.h"
 #include "mc/client/game/DiskStatus.h"
+#include "mc/client/game/edu_cloud/CloudItemType.h"
 #include "mc/client/game/edu_cloud/ConflictResolutionStatus.h"
 #include "mc/client/gui/screens/controllers/ClassroomSetting.h"
 #include "mc/client/gui/screens/controllers/EduShareMethodType.h"
@@ -60,6 +61,7 @@
 #include "mc/server/safety/ChatFloodingAction.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/player/LoadingState.h"
+#include "mc/world/actor/player/persona/ProfileType.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/level/FileArchiverOutcome.h"
 #include "mc/world/level/GameType.h"
@@ -92,7 +94,6 @@ class Offer;
 class Options;
 class PackInstance;
 class PackManifest;
-class PackReport;
 class PackSettings;
 class PacketObserver;
 class PerfContextTrackerReport;
@@ -457,7 +458,7 @@ public:
     // vIndex: 11
     virtual void forceSendEvents() /*override*/;
 
-    // vIndex: 274
+    // vIndex: 273
     virtual ::std::string getSessionId() /*override*/;
 
     // vIndex: 5
@@ -471,10 +472,10 @@ public:
 
     // vIndex: 134
     virtual void fireEventWorldLoaded(
-        ::Player*            player,
-        ::std::string const& personaSlot,
-        ::std::string const& classicSkinId,
-        bool                 usingClassicSkin
+        ::Player*                    player,
+        ::persona::ProfileType const personaSlot,
+        ::std::string const&         classicSkinId,
+        bool                         usingClassicSkin
     ) /*override*/;
 
     // vIndex: 128
@@ -508,7 +509,7 @@ public:
     // vIndex: 129
     virtual void fireEventPlayerBounced(::Player* player, ::Block const& block, int bounceHeight) /*override*/;
 
-    // vIndex: 221
+    // vIndex: 220
     virtual void
     fireEventPlayerDamaged(::Player* player, ::SharedTypes::Legacy::ActorDamageCause damageCause) /*override*/;
 
@@ -529,7 +530,7 @@ public:
     virtual void
     fireEventPlayerAttemptingExploit(::Player* player, ::IMinecraftEventing::ExploitType exploitType) /*override*/;
 
-    // vIndex: 253
+    // vIndex: 252
     virtual void fireEventWorldGenerated(
         ::std::string const&   levelId,
         ::LevelSettings const& levelSettings,
@@ -604,7 +605,9 @@ public:
         bool,
         ::Social::MultiplayerServiceIdentifier,
         ::std::string const&,
-        ::std::string const&
+        ::std::string const&,
+        ::std::string const&,
+        bool
     ) /*override*/;
 
     // vIndex: 29
@@ -626,7 +629,10 @@ public:
     virtual void fireEventOnClientDisconnect(
         ::SubClientId                      subId,
         bool                               isNetworked,
-        ::Connection::DisconnectFailReason reason
+        ::Connection::DisconnectFailReason reason,
+        ::std::string const&               titleMessage,
+        ::std::string const&               errorMessage,
+        ::std::string const&               codeword
     ) /*override*/;
 
     // vIndex: 32
@@ -670,7 +676,7 @@ public:
         ::std::string const&                    errorCode
     ) /*override*/;
 
-    // vIndex: 232
+    // vIndex: 231
     virtual void fireEventSignInEdu(
         ::std::string const&                                            mutsUserId,
         ::edu::Role                                                     role,
@@ -680,7 +686,7 @@ public:
         ::std::vector<::std::pair<::std::string, ::std::string>> const& details
     ) /*override*/;
 
-    // vIndex: 233
+    // vIndex: 232
     virtual void fireEventSignOutEdu(
         ::std::string const& mutsUserId,
         ::edu::Role          role,
@@ -689,27 +695,29 @@ public:
         ::std::string const& error
     ) /*override*/;
 
-    // vIndex: 234
+    // vIndex: 233
     virtual void fireEventSwitchAccountEdu(
         ::std::string const& mutsUserId,
         ::edu::Role          role,
         ::std::string const& tenantType
     ) /*override*/;
 
-    // vIndex: 235
+    // vIndex: 234
     virtual void fireEventEduDemoConversion(::edu::Role role, ::LastClickedSource lastClickedSource) /*override*/;
 
-    // vIndex: 238
+    // vIndex: 237
     virtual void fireEventCloudOperationStartedEdu(
         ::EduCloudUtils::Operation const,
+        ::EduCloud::CloudItemType const,
         ::std::string const&,
         uint64 const,
         ::std::optional<::std::string> const&
     ) /*override*/;
 
-    // vIndex: 240
+    // vIndex: 239
     virtual void fireEventCloudOperationEndedEdu(
         ::EduCloudUtils::Operation const,
+        ::EduCloud::CloudItemType const,
         ::std::string const&,
         ::std::chrono::milliseconds const,
         uint const,
@@ -720,7 +728,7 @@ public:
         ::std::optional<::std::string> const&
     ) /*override*/;
 
-    // vIndex: 239
+    // vIndex: 238
     virtual void fireEventCloudMyWorldsSummary(
         int const totalWorldsCount,
         int const placeholderCount,
@@ -729,11 +737,11 @@ public:
         int const conflictCount
     ) /*override*/;
 
-    // vIndex: 241
+    // vIndex: 240
     virtual void
     fireEventCloudConflictCheckEdu(::std::string const&, ::EduCloud::ConflictResolutionStatus const) /*override*/;
 
-    // vIndex: 236
+    // vIndex: 235
     virtual void fireEventPopupFiredEdu(
         ::std::string const&          mutsUserId,
         ::std::string const&          dialogType,
@@ -742,7 +750,7 @@ public:
         ::ActiveDirectoryAction const postAction
     ) /*override*/;
 
-    // vIndex: 237
+    // vIndex: 236
     virtual void fireEventPlayIntegrityCheck(
         ::std::string const& result,
         ::std::string const& appRecognitionVerdict,
@@ -847,17 +855,17 @@ public:
     // vIndex: 65
     virtual void fireEventAppSurfaceDestroyed() /*override*/;
 
-    // vIndex: 242
+    // vIndex: 241
     virtual void fireEventPurchaseGameAttempt(
         ::std::string const& storeId,
         ::std::string const& activeTab,
         ::std::string const& productId
     ) /*override*/;
 
-    // vIndex: 243
+    // vIndex: 242
     virtual void fireEventPurchaseGameResult(int purchaseResult) /*override*/;
 
-    // vIndex: 244
+    // vIndex: 243
     virtual void fireEventTrialDeviceIdCorrelation(
         int64                myTime,
         ::std::string const& theirId,
@@ -865,7 +873,7 @@ public:
         ::std::string const& theirLastSessionId
     ) /*override*/;
 
-    // vIndex: 245
+    // vIndex: 244
     virtual void fireEventDeviceIdManagerFailOnIdentityGained() /*override*/;
 
     // vIndex: 102
@@ -877,17 +885,17 @@ public:
         uint64               premiumSpace
     ) /*override*/;
 
-    // vIndex: 246
+    // vIndex: 245
     virtual void fireEventPushNotificationPermission(bool permission, ::std::string const& deviceId) /*override*/;
 
-    // vIndex: 247
+    // vIndex: 246
     virtual void fireEventPushNotificationReceived(::PushNotificationMessage const& msg) /*override*/;
 
-    // vIndex: 248
+    // vIndex: 247
     virtual void
     fireEventPushNotificationOpened(::std::string const& threadId, ::std::string const& deepLink) /*override*/;
 
-    // vIndex: 249
+    // vIndex: 248
     virtual void firePerfTestEvent(
         ::std::string const&                                    testArtifact,
         ::std::string const&                                    modelName,
@@ -898,14 +906,14 @@ public:
         ::std::vector<::std::pair<::std::string, float>> const& testArtifactData
     ) /*override*/;
 
-    // vIndex: 250
+    // vIndex: 249
     virtual void fireEventLicenseCheck(bool isLicensed, ::ExtraLicenseData& data) /*override*/;
 
-    // vIndex: 251
+    // vIndex: 250
     virtual void
     fireQueryOfferResult(::std::string const& storeID, int NumberOfOffers, bool QuerySucceeded) /*override*/;
 
-    // vIndex: 252
+    // vIndex: 251
     virtual void fireEventQueryPurchasesResult(
         ::std::string const& storeID,
         ::std::string const& priorPurchaseIds,
@@ -985,7 +993,7 @@ public:
         ::std::string const& errorMessage
     ) /*override*/;
 
-    // vIndex: 314
+    // vIndex: 313
     virtual void fireEventDeviceAccountFailure(
         ::IMinecraftEventing::SignInStage               stage,
         ::IMinecraftEventing::DeviceAccountFailurePhase phase,
@@ -993,7 +1001,7 @@ public:
         ::std::string const&                            accountID
     ) /*override*/;
 
-    // vIndex: 313
+    // vIndex: 312
     virtual void fireEventDeviceAccountSuccess(bool isNewAccount, ::std::string const& accountID) /*override*/;
 
     // vIndex: 100
@@ -1005,7 +1013,7 @@ public:
     // vIndex: 56
     virtual void fireEventVideoPlayed(::std::string const& productId, ::std::string const& videoUrl) /*override*/;
 
-    // vIndex: 255
+    // vIndex: 254
     virtual void fireEventBundleSubOfferClicked(
         int                  offerIndex,
         int                  bundleSubOfferCount,
@@ -1015,21 +1023,21 @@ public:
         ::std::string const& timeRemainingOnSale
     ) /*override*/;
 
-    // vIndex: 257
+    // vIndex: 256
     virtual void fireEventStoreOfferClicked(::Social::eventData::StoreOfferClickedData const& eventData) /*override*/;
 
-    // vIndex: 256
+    // vIndex: 255
     virtual void
     fireEventStoreOfferClicked(::std::string const telemetryId, ::std::string const& productId) /*override*/;
 
-    // vIndex: 258
+    // vIndex: 257
     virtual void
     fireEventPersonaOfferClicked(::Social::eventData::PersonaOfferClickedData const& eventData) /*override*/;
 
-    // vIndex: 259
+    // vIndex: 258
     virtual void fireEventStoreSearch(::storeSearch::TelemetryData const& telemetryData) /*override*/;
 
-    // vIndex: 260
+    // vIndex: 259
     virtual void fireEventSearchItemSelected(
         int const            correlationId,
         int const            sessionId,
@@ -1040,26 +1048,26 @@ public:
         ::std::string const& searchType
     ) /*override*/;
 
-    // vIndex: 261
+    // vIndex: 260
     virtual void fireEventRealmsSubscriptionPurchaseStarted(
         ::ProductSku const&    productSku,
         ::RealmsPurchaseIntent intent
     ) /*override*/;
 
-    // vIndex: 262
+    // vIndex: 261
     virtual void fireEventRealmsSubscriptionPurchaseSucceeded(
         ::ProductSku const&    productSku,
         ::RealmsPurchaseIntent intent
     ) /*override*/;
 
-    // vIndex: 263
+    // vIndex: 262
     virtual void fireEventRealmsSubscriptionPurchaseFailed(
         ::ProductSku const&           productSku,
         ::RealmsPurchaseIntent        intent,
         ::RealmsPurchaseFailureReason reason
     ) /*override*/;
 
-    // vIndex: 264
+    // vIndex: 263
     virtual void fireEventRealmsPurchaseFulfillment(
         ::std::string const&             correlationId,
         ::std::string const&             storeId,
@@ -1070,7 +1078,7 @@ public:
         ::std::string const&             failureReason
     ) /*override*/;
 
-    // vIndex: 265
+    // vIndex: 264
     virtual void fireEventRealmsPurchaseFailure(
         ::RealmsOfferPeriod            offerPeriod,
         ::RealmsOfferTier              offerTier,
@@ -1080,7 +1088,7 @@ public:
         ::std::vector<::Offer*> const& unavailableOffers
     ) /*override*/;
 
-    // vIndex: 266
+    // vIndex: 265
     virtual void fireEventUserListUpdated(
         ::std::string const& productId,
         ::std::string const& listId,
@@ -1088,7 +1096,7 @@ public:
         bool                 success
     ) /*override*/;
 
-    // vIndex: 267
+    // vIndex: 266
     virtual void fireEventUgcAcquisitionStateChanged(
         ::std::string const& ugcProductId,
         uint64               downloadSize,
@@ -1174,7 +1182,12 @@ public:
     virtual void fireEventPackImportTimeout(::std::string const& productId) /*override*/;
 
     // vIndex: 116
-    virtual void fireEventStoreErrorPage(::std::string const& errorCode, ::std::string const& pageId) /*override*/;
+    virtual void fireEventStoreErrorPage(
+        ::std::string const& errorCode,
+        ::std::string const& pageId,
+        ::std::string const& discoveryServiceTitleId,
+        ::std::string const& playFabTitleId
+    ) /*override*/;
 
     // vIndex: 117
     virtual void setServerIdsforClient(
@@ -1258,28 +1271,19 @@ public:
     virtual void fireEventPopupClosed(::std::string const& popupName) const /*override*/;
 
     // vIndex: 209
-    virtual void fireEventOfferRated(
-        ::std::string const& productId,
-        int                  rating,
-        int                  previous_rating,
-        int                  count,
-        double               timeElapsed
-    ) /*override*/;
-
-    // vIndex: 210
     virtual void
     fireEventNewContentCheckCompleted(::std::string const& newContentPrefix, bool hasNewStoreContent) /*override*/;
 
-    // vIndex: 211
+    // vIndex: 210
     virtual void fireEventEncyclopediaTopicChanged(::std::string const& topicName, ::InputMode inputMode) /*override*/;
 
-    // vIndex: 212
+    // vIndex: 211
     virtual void fireEventHowToPlayTopicChanged(::std::string const& topicName, ::InputMode inputMode) /*override*/;
 
-    // vIndex: 213
+    // vIndex: 212
     virtual void fireEventAndroidHelpRequest() /*override*/;
 
-    // vIndex: 214
+    // vIndex: 213
     virtual void fireEventWorldFilesListed(
         uint64 numLevels,
         uint64 totalSizeMB,
@@ -1290,46 +1294,46 @@ public:
     // vIndex: 101
     virtual void fireEventStorage(int state, ::std::string const& extra) /*override*/;
 
-    // vIndex: 229
+    // vIndex: 228
     virtual void fireEventStorageReport(::std::string const& report) /*override*/;
 
-    // vIndex: 216
+    // vIndex: 215
     virtual void fireEventPlayerMessageSay(::std::string const& fromName, ::std::string const& message) /*override*/;
 
-    // vIndex: 217
+    // vIndex: 216
     virtual void fireEventPlayerMessageTell(
         ::std::string const& fromName,
         ::std::string const& toName,
         ::std::string const& message
     ) /*override*/;
 
-    // vIndex: 218
+    // vIndex: 217
     virtual void fireEventPlayerMessageChat(::std::string const& fromName, ::std::string const& message) /*override*/;
 
-    // vIndex: 219
+    // vIndex: 218
     virtual void fireEventPlayerMessageMe(::std::string const& fromName, ::std::string const& message) /*override*/;
 
-    // vIndex: 220
+    // vIndex: 219
     virtual void fireEventPlayerMessageTitle(
         ::std::string const& fromName,
         ::std::string const& toName,
         ::std::string const& message
     ) /*override*/;
 
-    // vIndex: 222
+    // vIndex: 221
     virtual void
     fireEventPlayerKicked(::std::string const& sessionType, ::std::string const& kickedPlayer) /*override*/;
 
-    // vIndex: 223
+    // vIndex: 222
     virtual void fireEventPlayerBanned(::std::string const& bannedPlayer) /*override*/;
 
-    // vIndex: 275
+    // vIndex: 274
     virtual void fireEventChunkLoaded(::LevelChunk& chunk) /*override*/;
 
-    // vIndex: 276
+    // vIndex: 275
     virtual void fireEventChunkUnloaded(::LevelChunk& chunk) /*override*/;
 
-    // vIndex: 277
+    // vIndex: 276
     virtual void fireEventChunkChanged(::LevelChunk& chunk) /*override*/;
 
     // vIndex: 72
@@ -1342,10 +1346,7 @@ public:
         bool                   downloadOptionalResourcePacks
     ) /*override*/;
 
-    // vIndex: 1
-    virtual void fireEventPackUpgradeAttempt(::PackManifest const& manifest, ::PackReport const& report) /*override*/;
-
-    // vIndex: 230
+    // vIndex: 229
     virtual void fireEventStackLoaded(::StackStats const& stats) /*override*/;
 
     // vIndex: 86
@@ -1620,28 +1621,28 @@ public:
     virtual void
     fireGlobalResourcePackCrashRecovery(::PackInstance& packInstance, ::mce::UUID recoveryID, int order) /*override*/;
 
-    // vIndex: 224
+    // vIndex: 223
     virtual void fireEventRealmShared(
         ::std::string const&                   url,
         ::IMinecraftEventing::ShareMode const& mode,
         ::Realms::RealmId const&               worldId
     ) /*override*/;
 
-    // vIndex: 225
+    // vIndex: 224
     virtual void
     fireEventRealmMemberlistCleared(::Realms::RealmId const& worldId, int const& numberOfUsersRemoved) /*override*/;
 
-    // vIndex: 226
+    // vIndex: 225
     virtual void fireEventRealmUrlGenerated(::std::string const& url, ::Realms::RealmId const& worldId) /*override*/;
 
-    // vIndex: 227
+    // vIndex: 226
     virtual void fireEventStructureExport(
         ::glTFExportData const&             exportData,
         ::IMinecraftEventing::ExportOutcome outcome,
         ::IMinecraftEventing::ExportStage   stage
     ) const /*override*/;
 
-    // vIndex: 228
+    // vIndex: 227
     virtual void fireEventContentShared(
         ::std::string const&                   productId,
         ::std::string const&                   url,
@@ -1733,18 +1734,18 @@ public:
     virtual void
     fireEventOnDeviceLost(::std::vector<::SerialWorkListLogEntry> const& performanceCountsAndTimings) /*override*/;
 
-    // vIndex: 268
+    // vIndex: 267
     virtual void
     fireEventRealmsGeneralCall(::std::string const& callName, ::Bedrock::Http::Status returnCode) /*override*/;
 
-    // vIndex: 269
+    // vIndex: 268
     virtual void fireEventRealmsRealmSpecificCall(
         ::std::string const&    callName,
         ::Realms::RealmId       realmId,
         ::Bedrock::Http::Status returnCode
     ) /*override*/;
 
-    // vIndex: 270
+    // vIndex: 269
     virtual void fireEventRealmDownload(
         ::std::string const& correlationId,
         ::std::string const& downloadStage,
@@ -1753,7 +1754,7 @@ public:
         int const            fileSizeKB
     ) /*override*/;
 
-    // vIndex: 271
+    // vIndex: 270
     virtual void fireEventRealmUpload(
         ::std::string const& correlationId,
         ::std::string const& uploadStage,
@@ -1767,11 +1768,11 @@ public:
     virtual void
     fireRealmConnectionEventStart(::IMinecraftEventing::RealmConnectionFlow realmConnectionFlow) /*override*/;
 
-    // vIndex: 272
+    // vIndex: 271
     virtual void
     fireRealmConnectionEventRealmAPIRequest(::IMinecraftEventing::RealmConnectionFlow realmConnectionFlow) /*override*/;
 
-    // vIndex: 273
+    // vIndex: 272
     virtual void fireRealmConnectionEventRealmAPIResponse(
         ::IMinecraftEventing::RealmConnectionFlow realmConnectionFlow,
         int                                       responseCode
@@ -1808,7 +1809,7 @@ public:
         ::std::string const&                            clubId
     ) /*override*/;
 
-    // vIndex: 254
+    // vIndex: 253
     virtual void fireEventCopyWorldEducationEnabled() /*override*/;
 
     // vIndex: 84
@@ -1818,13 +1819,13 @@ public:
     virtual void
     fireEventServerRespawnSearchTime(::Player& player, ::PlayerRespawnTelemetryData const& data) /*override*/;
 
-    // vIndex: 231
+    // vIndex: 230
     virtual void fireEventUnknownBlockReceived(::NewBlockID const& blockId, ushort data) /*override*/;
 
     // vIndex: 80
     virtual void fireEventCompoundCreatorCreated(int compoundId, int count) /*override*/;
 
-    // vIndex: 215
+    // vIndex: 214
     virtual void fireEventLabTableCreated(int reactionId, int productId, int productAux) /*override*/;
 
     // vIndex: 81
@@ -1837,78 +1838,78 @@ public:
     // vIndex: 83
     virtual void fireEventReducerBlockEntered(::ItemDescriptor const& item) /*override*/;
 
-    // vIndex: 278
+    // vIndex: 277
     virtual void fireEventMultiplayerSessionUpdate(::Bedrock::NonOwnerPointer<::MultiPlayerLevel> level) /*override*/;
 
-    // vIndex: 279
+    // vIndex: 278
     virtual void fireEventLevelDestruct() /*override*/;
 
-    // vIndex: 280
+    // vIndex: 279
     virtual void flagEventDeepLink() /*override*/;
 
-    // vIndex: 281
+    // vIndex: 280
     virtual void flagEventPlayerGameTypeDefault(bool isDefault) /*override*/;
 
-    // vIndex: 282
+    // vIndex: 281
     virtual void fileEventCloudWorldPullFailed(
         ::std::string const& reason,
         ::std::string const& worldID,
         bool                 localLevelDatUsed
     ) /*override*/;
 
-    // vIndex: 283
+    // vIndex: 282
     virtual void
     fireEventLevelDatLoadFailed(::std::string const& reason, ::std::string const& worldID, bool isFatal) /*override*/;
 
-    // vIndex: 284
+    // vIndex: 283
     virtual void fireEventWorldCorruptionCausedWorldShutdown(
         ::LevelStorageEventingContext const& context,
         ::std::string const&                 reason,
         ::std::optional<bool>                isOutOfDiskSpace
     ) /*override*/;
 
-    // vIndex: 285
+    // vIndex: 284
     virtual void
     fireEventClientLeftGameDueToUnrecoverableError(::std::string const& reason, bool isServer) /*override*/;
 
-    // vIndex: 286
+    // vIndex: 285
     virtual void fireEventServerShutdownDueToError(::std::string const& reason) /*override*/;
 
-    // vIndex: 287
+    // vIndex: 286
     virtual void fireEventDBStorageSizeSnapshot(
         ::LevelStorageEventingContext const& context,
         ::DBStorageFolderWatcher const&      folderWatcher,
         ::DBStorageFolderWatcherSnapshotKind kind
     ) /*override*/;
 
-    // vIndex: 288
+    // vIndex: 287
     virtual void fireEventLevelDBPerformanceData(
         ::LevelStorageEventingContext const&       context,
         ::DBStoragePerformanceTelemetryData const& perfData
     ) /*override*/;
 
-    // vIndex: 305
+    // vIndex: 304
     virtual void fireEventWorldHistoryPackSourceMissingDuringUpgrade(
         ::std::string const& worldPath,
         ::std::string const& levelId,
         ::std::string const& deletionCandidate
     ) /*override*/;
 
-    // vIndex: 306
+    // vIndex: 305
     virtual void fireStructureBlockAction(
         ::IMinecraftEventing::StructureBlockActionType structureBlockActionType,
         ::StructureEditorData const&                   structureEditorData,
         ::StructureTelemetryClientData const*          telemetryClientData
     ) /*override*/;
 
-    // vIndex: 307
+    // vIndex: 306
     virtual void fireStructureBlockRedstoneActivated(
         ::IMinecraftEventing::StructureBlockActionType structureBlockActionType,
         ::StructureEditorData const&                   structureEditorData,
         ::StructureTelemetryClientData const*          telemetryClientData
     ) /*override*/;
 
-    // vIndex: 289
+    // vIndex: 288
     virtual void fireEventSidebarNavigation(
         uint const&          userId,
         ::std::string const& layoutType,
@@ -1919,7 +1920,7 @@ public:
         bool const           hasChildren
     ) /*override*/;
 
-    // vIndex: 290
+    // vIndex: 289
     virtual void fireEventSidebarVerboseToggled(
         uint const&          userId,
         ::std::string const& layoutType,
@@ -1927,16 +1928,16 @@ public:
         bool const           verboseState
     ) /*override*/;
 
-    // vIndex: 291
+    // vIndex: 290
     virtual void fireEventPersonaUserLoadedActive(
-        ::std::string const& personaProfileName,
-        ::std::string const& classicSkinId,
-        bool                 personaUsesClassicSkin
+        ::persona::ProfileType const personaProfile,
+        ::std::string const&         classicSkinId,
+        bool                         personaUsesClassicSkin
     ) /*override*/;
 
-    // vIndex: 292
+    // vIndex: 291
     virtual void fireEventPersonaItemPreviewed(
-        ::std::string const&                personaProfile,
+        ::persona::ProfileType const        personaProfile,
         ::std::string const&                itemOfferId,
         ::std::string const&                productId,
         uint                                row,
@@ -1949,16 +1950,9 @@ public:
         ::IMinecraftEventing::StoreType     storeType
     ) /*override*/;
 
-    // vIndex: 293
-    virtual void fireEventPersonaSkinChanged(
-        ::std::string const& personaProfile,
-        ::std::string const& classicSkinId,
-        bool                 isClassicSkinUsed
-    ) /*override*/;
-
-    // vIndex: 294
+    // vIndex: 292
     virtual void fireEventPersonaAvatarUpdated(
-        ::std::string const&                personaProfile,
+        ::persona::ProfileType const        personaProfile,
         ::std::vector<::std::string> const& newAppearancePieceIds,
         ::std::vector<bool> const&          newPieces,
         ::std::vector<bool> const&          tintedPieces,
@@ -1972,53 +1966,61 @@ public:
         ::std::vector<::std::string> const& emoteSlotNumbers
     ) /*override*/;
 
-    // vIndex: 295
-    virtual void fireEventPersonaAvatarsListed(::std::vector<::std::string> const& profileTypesUsed) /*override*/;
+    // vIndex: 293
+    virtual void fireEventPersonaSkinChanged(
+        ::persona::ProfileType const personaProfile,
+        ::std::string const&         classicSkinId,
+        bool                         isClassicSkinUsed
+    ) /*override*/;
 
-    // vIndex: 296
+    // vIndex: 294
+    virtual void
+    fireEventPersonaAvatarsListed(::std::vector<::persona::ProfileType> const& profileTypesUsed) /*override*/;
+
+    // vIndex: 295
     virtual void fireEventPersonaEmotePlayed(
         ::std::string const& emoteProductId,
         bool                 isEmoteEndedEarly,
         int                  emoteSlotId
     ) /*override*/;
 
-    // vIndex: 297
+    // vIndex: 296
     virtual void fireEventDefaultCastSelected(
         int                  previewIndex,
         ::mce::UUID          appearanceId,
         ::std::string const& appearanceName
     ) /*override*/;
 
-    // vIndex: 298
+    // vIndex: 297
     virtual void fireEventPersonaInitalizationEvent(
         uint                 secondsToCompletion,
         ::std::string const& status,
         ::std::string const& user
     ) /*override*/;
 
-    // vIndex: 299
+    // vIndex: 298
     virtual void
     fireEventPersonaGeneralError(::std::string const& personaErrorName, uint duplicateErrorsFired) /*override*/;
 
-    // vIndex: 300
+    // vIndex: 299
     virtual void fireEventPersonaLoadingPieces(uint piecesLoaded, double timeToLoadInSeconds) /*override*/;
 
-    // vIndex: 301
+    // vIndex: 300
     virtual void fireEventPersonaStillLoading(
-        bool                                isSignedIn,
-        bool                                selectedSkinInitialized,
-        bool                                isStillSyncingWithService,
-        bool                                isRepoStillBuildingAppearances,
-        bool                                isPendingSkinStillLoading,
-        bool                                isRefreshingEntitlements,
-        bool                                isUserUpdateInProgress,
-        bool                                isSelectedSkinLoaded,
-        ::std::vector<::std::string> const& failingPersonaProfiles,
-        int                                 unknownPersonasCount,
-        double                              timeElapsed
+        bool                                         isSignedIn,
+        bool                                         selectedSkinInitialized,
+        bool                                         isStillSyncingWithService,
+        bool                                         isRepoStillBuildingAppearances,
+        bool                                         isPendingSkinStillLoading,
+        bool                                         isRefreshingEntitlements,
+        bool                                         isUserUpdateInProgress,
+        bool                                         isSelectedSkinLoaded,
+        ::std::vector<::persona::ProfileType> const& failingPersonaProfiles,
+        int                                          unknownPersonasCount,
+        double                                       timeElapsed
     ) /*override*/;
 
-    // vIndex: 302
+    // vIndex: 301
     virtual void fireEventPersonaCreationFailed(
         ::std::string const& errorName,
         ::std::string const& pieceId,
@@ -2028,20 +2030,20 @@ public:
         ::std::string const& appearancePieceType
     ) /*override*/;
 
-    // vIndex: 303
+    // vIndex: 302
     virtual void fireEventPersonaCategoryInformation(::std::string const& categoryInformation) /*override*/;
 
-    // vIndex: 304
+    // vIndex: 303
     virtual void fireEventDisplayLoggedError(::std::string const errorMessage) /*override*/;
 
-    // vIndex: 308
+    // vIndex: 307
     virtual void fireEventOreUIError(uint const& userId, ::std::string const& errorType) /*override*/;
 
-    // vIndex: 309
+    // vIndex: 308
     virtual void
     fireEventOreUIScreenPerformance(uint const& userId, ::OreUI::DataTracker const& dataTracker) /*override*/;
 
-    // vIndex: 310
+    // vIndex: 309
     virtual void fireEventRealmsStoriesOptIn(
         ::std::string const& correlationId,
         ::std::string const& action,
@@ -2049,20 +2051,20 @@ public:
         bool const           isOwner
     ) /*override*/;
 
-    // vIndex: 311
+    // vIndex: 310
     virtual void fireEventOnboardingWorldCreationUsage(
         bool onboardingWorldCreationUsed,
         bool hasWorlds,
         bool hasOnlyBaseGamePacks
     ) /*override*/;
 
-    // vIndex: 312
+    // vIndex: 311
     virtual void fireEventVRModeChanged(bool const isVRModeEnabled) /*override*/;
 
-    // vIndex: 315
+    // vIndex: 314
     virtual ::std::shared_ptr<void*> requestEventDeferment() /*override*/;
 
-    // vIndex: 316
+    // vIndex: 315
     virtual ::gsl::not_null<::Bedrock::CrashTelemetryProcessor*> getCrashTelemetryProcessor() /*override*/;
 
     // vIndex: 1
@@ -2077,13 +2079,13 @@ public:
     // vIndex: 4
     virtual void sendCrashStatusTelemetry(::Bedrock::CrashUploadStatus const& status) /*override*/;
 
-    // vIndex: 317
+    // vIndex: 316
     virtual void fireEventLevelChunkPerformanceData(bool isClientSide) /*override*/;
 
-    // vIndex: 318
+    // vIndex: 317
     virtual void fireChunkRecyclerTelemetryData(::ChunkRecyclerTelemetryOutput const& output) /*override*/;
 
-    // vIndex: 319
+    // vIndex: 318
     virtual void
     fireEventActorValueValidationFailed(::std::string const& invalidValue, char const* caller) /*override*/;
 
@@ -2095,11 +2097,11 @@ public:
         ::std::string const&       loadInstanceId
     ) /*override*/;
 
-    // vIndex: 320
+    // vIndex: 319
     virtual void
     fireDBStorageError(::LevelStorageEventingContext const& context, ::std::string const& errorType) /*override*/;
 
-    // vIndex: 334
+    // vIndex: 333
     virtual void fireStorageMigrationEvent(
         bool                                              isSuccessful,
         ::Bedrock::StorageMigration::StorageMigrationType migrationType,
@@ -2109,7 +2111,7 @@ public:
         ::std::string const&                              failureReason
     ) /*override*/;
 
-    // vIndex: 335
+    // vIndex: 334
     virtual void fireEventConnectedStorageResult(
         ::ConnectedStorageEventType eventType,
         bool                        succeeded,
@@ -2123,24 +2125,24 @@ public:
         ::std::optional<uint>       HACK_oldFilesToDeleteCount
     ) /*override*/;
 
-    // vIndex: 336
+    // vIndex: 335
     virtual void fireEventConnectedStorageError(
         char const*          message,
         ::std::string const& levelId,
         int64                quotaRemaining
     ) /*override*/;
 
-    // vIndex: 321
+    // vIndex: 320
     virtual void fireServerStarted(
         ::IMinecraftEventing::ServerType                          serverType,
         ::std::string const&                                      serverId,
         ::std::unordered_map<::std::string, ::std::string> const& propertiesChanged
     ) /*override*/;
 
-    // vIndex: 322
+    // vIndex: 321
     virtual void fireServerShutdown(::std::string const& serverId) /*override*/;
 
-    // vIndex: 323
+    // vIndex: 322
     virtual void fireSafetyServiceTextProcessEvent(
         ::std::string const&        authorId,
         ::TextProcessingEventOrigin eventOrigin,
@@ -2155,7 +2157,7 @@ public:
         bool                        isCachedResponse
     ) /*override*/;
 
-    // vIndex: 324
+    // vIndex: 323
     virtual void fireBannedSkinVerificationEvent(
         uint const&          userId,
         ::std::string const& serverType,
@@ -2165,7 +2167,7 @@ public:
         ::std::string const& message
     ) /*override*/;
 
-    // vIndex: 325
+    // vIndex: 324
     virtual void fireEventPlayerReportSent(
         bool                 successfulReportSent,
         ::std::string const& failureSource,
@@ -2173,13 +2175,13 @@ public:
         ::std::string const& reportID
     ) /*override*/;
 
-    // vIndex: 326
+    // vIndex: 325
     virtual void fireEventOneDSPlayerReportPayload(
         ::std::string const& reportPayloadJson,
         ::std::string const& reportID
     ) /*override*/;
 
-    // vIndex: 331
+    // vIndex: 330
     virtual void firePlayerAccountMetadata(
         ::Social::PermissionCheckResult multiPlayerAllowed,
         ::Social::PermissionCheckResult chatAllowed,
@@ -2191,31 +2193,31 @@ public:
         bool                            isGuest
     ) /*override*/;
 
-    // vIndex: 327
+    // vIndex: 326
     virtual void fireEventSafetyHTTPRequest(
         ::std::string const& method,
         ::std::string const& url,
         int const            responseCode
     ) /*override*/;
 
-    // vIndex: 328
+    // vIndex: 327
     virtual void fireEventProfanityFilter(bool localFilter, bool remoteFilter, bool playerFilter) /*override*/;
 
-    // vIndex: 329
+    // vIndex: 328
     virtual void fireEventChatFloodingActionTaken(
         ::std::string const&         authorXuid,
         ::Safety::ChatFloodingAction action,
         ::std::string const&         message
     ) /*override*/;
 
-    // vIndex: 330
+    // vIndex: 329
     virtual void
     fireEventTextProcessorStartupFailed(::std::string const& stage, int retryCount, int maxRetryCount) /*override*/;
 
-    // vIndex: 332
+    // vIndex: 331
     virtual void fireEventBlockUser(::std::string const& xuid, bool isSuccess, bool isBlocked) /*override*/;
 
-    // vIndex: 333
+    // vIndex: 332
     virtual void fireEventMuteUser(::std::string const& xuid, bool isSuccess, bool isMuted) /*override*/;
 
     // vIndex: 1
@@ -2224,16 +2226,17 @@ public:
     // vIndex: 23
     virtual ::Json::Value propertiesAsJsonValue() const /*override*/;
 
-    // vIndex: 337
+    // vIndex: 336
     virtual void fireEventUwpToGdkMigrationComplete(
         ::Bedrock::DeviceIdContext const& deviceIdContext,
-        ::std::string const&              gdkDeviceId
+        ::std::string const&              gdkDeviceId,
+        ::std::string_view                migrationErrors
     ) /*override*/;
 
-    // vIndex: 338
+    // vIndex: 337
     virtual void fireNetworkChangedEvent(::std::string const& networkConnectionType) /*override*/;
 
-    // vIndex: 339
+    // vIndex: 338
     virtual void fireEventMessageServiceImpression(
         ::std::string const& messageId,
         ::std::string const& messageSessionId,
@@ -2242,7 +2245,7 @@ public:
         bool const           isControl
     ) /*override*/;
 
-    // vIndex: 340
+    // vIndex: 339
     virtual void fireEventMessageReceived(
         ::std::string const& messageId,
         ::std::string const& messageSessionId,
@@ -2251,20 +2254,20 @@ public:
         bool const           isControl
     ) /*override*/;
 
-    // vIndex: 341
+    // vIndex: 340
     virtual void fireEventGoogleAccountHoldWarning(bool navigatedToSubscription) /*override*/;
 
-    // vIndex: 342
+    // vIndex: 341
     virtual void fireDelayedEventReportOfflineAction(::std::string const& offlineAction) /*override*/;
 
-    // vIndex: 343
+    // vIndex: 342
     virtual void fireEventFeedbackSubmitted(
         ::std::string const& productId,
         bool                 safetyCheckSuccessful,
         bool                 isValidText
     ) /*override*/;
 
-    // vIndex: 344
+    // vIndex: 343
     virtual void fireEventTrackDeeplinks(
         ::std::string const& deeplinkDestination,
         ::std::string const& deeplinkSource,
@@ -2272,53 +2275,53 @@ public:
         ::std::string const& educationReferrerType
     ) /*override*/;
 
-    // vIndex: 345
+    // vIndex: 344
     virtual void fireEventReceivedUniqueWebSessionId(::std::string const& webSessionId) /*override*/;
 
-    // vIndex: 346
+    // vIndex: 345
     virtual void
     firePlayerUnexpectedFallDamage(float const fallDistance, bool isVehicle, float const divergenceAmount) /*override*/;
 
-    // vIndex: 347
+    // vIndex: 346
     virtual void fireEventActorMovementCorrectionDivergence(
         ::ActorType                 actorType,
         ::std::vector<float> const& divergences
     ) /*override*/;
 
-    // vIndex: 348
+    // vIndex: 347
     virtual void fireEventDedicatedServerDiscoveryResponse(int const status, int const retryAttempt) /*override*/;
 
-    // vIndex: 349
+    // vIndex: 348
     virtual void fireEventInGamePause(bool pauseStatus) /*override*/;
 
-    // vIndex: 350
+    // vIndex: 349
     virtual void
     fireEventGameTip(int gameTipId, int gameTipEventType, int gameTipTestGroup, ::InputMode inputMode) /*override*/;
 
-    // vIndex: 351
+    // vIndex: 350
     virtual void fireEventAddedFriend(
         ::std::string const&                      addedXuid,
         ::IMinecraftEventing::AddedFriendLocation location,
         bool                                      success
     ) /*override*/;
 
-    // vIndex: 352
+    // vIndex: 351
     virtual void fireEventInboxSummary(::Social::Events::InboxSummaryData const& data) /*override*/;
 
-    // vIndex: 353
+    // vIndex: 352
     virtual void fireEventTrialStatusFailed(int errorCode) /*override*/;
 
-    // vIndex: 354
+    // vIndex: 353
     virtual void
     fireEventSaveDataExpansion(uint64 preExpansionSize, uint64 postExpansionSize, uint64 levelUsedSize) /*override*/;
 
-    // vIndex: 355
+    // vIndex: 354
     virtual void fireEventProfileButtonPressed(::std::string const& entryPoint) const /*override*/;
 
-    // vIndex: 356
+    // vIndex: 355
     virtual void fireEventWorldCopy(uint64 worldSize, uint64 filesSum, ::LevelSeed64 worldSeed) /*override*/;
 
-    // vIndex: 357
+    // vIndex: 356
     virtual void fireEventWriteBudgetLow(
         uint64                     remainingWriteBudget,
         float                      writeRateMBPerMin,
@@ -2327,7 +2330,7 @@ public:
         ::std::string const&       correlationId
     ) /*override*/;
 
-    // vIndex: 358
+    // vIndex: 357
     virtual void fireEventWriteBudgetReplenished(
         ::std::chrono::nanoseconds throttledTime,
         uint64                     lowestWriteBudget,
@@ -2337,7 +2340,7 @@ public:
         ::std::string const&       correlationId
     ) /*override*/;
 
-    // vIndex: 359
+    // vIndex: 358
     virtual void fireEventLargeFileWriteStall(
         uint64                              totalWriteSizeBytes,
         ::std::vector<::std::string> const& largestFileNames,
@@ -2353,10 +2356,10 @@ public:
         ::std::vector<::std::string> const& associatedContentIDs
     ) /*override*/;
 
-    // vIndex: 360
+    // vIndex: 359
     virtual void fireEventLowMemoryDetected(::LowMemoryReport const& report) /*override*/;
 
-    // vIndex: 361
+    // vIndex: 360
     virtual void fireEventReceivedApplicationExitInfo(
         ::std::string const& description,
         int                  reasonCode,
@@ -2368,11 +2371,15 @@ public:
         bool                 deviceSupportsReasonLowMem
     ) /*override*/;
 
-    // vIndex: 362
+    // vIndex: 361
     virtual void fireEventBug1341395(::std::string const& details) /*override*/;
 
-    // vIndex: 363
+    // vIndex: 362
     virtual void fireEventImmersiveReaderStatus(::Bedrock::Http::Status const status) /*override*/;
+
+    // vIndex: 363
+    virtual void
+        fireEventPacketSerializationMismatch(::MinecraftPacketIds, ::std::string_view, ::std::string_view) /*override*/;
 
     // vIndex: 12
     virtual ::Social::Events::EventManager& getEventManager() const /*override*/;
@@ -2584,10 +2591,10 @@ public:
     MCNAPI ::std::chrono::steady_clock::time_point $getWorldSessionIdGenerationTimestamp() const;
 
     MCNAPI void $fireEventWorldLoaded(
-        ::Player*            player,
-        ::std::string const& personaSlot,
-        ::std::string const& classicSkinId,
-        bool                 usingClassicSkin
+        ::Player*                    player,
+        ::persona::ProfileType const personaSlot,
+        ::std::string const&         classicSkinId,
+        bool                         usingClassicSkin
     );
 
     MCNAPI void $fireEventLockedItemGiven();
@@ -2668,8 +2675,14 @@ public:
         ::MessagePerformance const&   messagePerformanceEvent
     );
 
-    MCNAPI void
-    $fireEventOnClientDisconnect(::SubClientId subId, bool isNetworked, ::Connection::DisconnectFailReason reason);
+    MCNAPI void $fireEventOnClientDisconnect(
+        ::SubClientId                      subId,
+        bool                               isNetworked,
+        ::Connection::DisconnectFailReason reason,
+        ::std::string const&               titleMessage,
+        ::std::string const&               errorMessage,
+        ::std::string const&               codeword
+    );
 
     MCNAPI void $fireEventOnServerDisconnect(
         ::Connection::DisconnectFailReason reason,
@@ -3084,7 +3097,12 @@ public:
 
     MCNAPI void $fireEventPackImportTimeout(::std::string const& productId);
 
-    MCNAPI void $fireEventStoreErrorPage(::std::string const& errorCode, ::std::string const& pageId);
+    MCNAPI void $fireEventStoreErrorPage(
+        ::std::string const& errorCode,
+        ::std::string const& pageId,
+        ::std::string const& discoveryServiceTitleId,
+        ::std::string const& playFabTitleId
+    );
 
     MCNAPI void $setServerIdsforClient(
         ::std::string const& multiplayerCorrelationId,
@@ -3144,14 +3162,6 @@ public:
 
     MCNAPI void $fireEventPopupClosed(::std::string const& popupName) const;
 
-    MCNAPI void $fireEventOfferRated(
-        ::std::string const& productId,
-        int                  rating,
-        int                  previous_rating,
-        int                  count,
-        double               timeElapsed
-    );
-
     MCNAPI void $fireEventNewContentCheckCompleted(::std::string const& newContentPrefix, bool hasNewStoreContent);
 
     MCNAPI void $fireEventEncyclopediaTopicChanged(::std::string const& topicName, ::InputMode inputMode);
@@ -3199,8 +3209,6 @@ public:
 
     MCNAPI void
     $fireEventRespondedToAcceptContent(::PacksInfoData const& data, bool accepted, bool downloadOptionalResourcePacks);
-
-    MCNAPI void $fireEventPackUpgradeAttempt(::PackManifest const& manifest, ::PackReport const& report);
 
     MCNAPI void $fireEventStackLoaded(::StackStats const& stats);
 
@@ -3648,13 +3656,13 @@ public:
     );
 
     MCNAPI void $fireEventPersonaUserLoadedActive(
-        ::std::string const& personaProfileName,
-        ::std::string const& classicSkinId,
-        bool                 personaUsesClassicSkin
+        ::persona::ProfileType const personaProfile,
+        ::std::string const&         classicSkinId,
+        bool                         personaUsesClassicSkin
     );
 
     MCNAPI void $fireEventPersonaItemPreviewed(
-        ::std::string const&                personaProfile,
+        ::persona::ProfileType const        personaProfile,
         ::std::string const&                itemOfferId,
         ::std::string const&                productId,
         uint                                row,
@@ -3667,14 +3675,8 @@ public:
         ::IMinecraftEventing::StoreType     storeType
     );
 
-    MCNAPI void $fireEventPersonaSkinChanged(
-        ::std::string const& personaProfile,
-        ::std::string const& classicSkinId,
-        bool                 isClassicSkinUsed
-    );
-
     MCNAPI void $fireEventPersonaAvatarUpdated(
-        ::std::string const&                personaProfile,
+        ::persona::ProfileType const        personaProfile,
         ::std::vector<::std::string> const& newAppearancePieceIds,
         ::std::vector<bool> const&          newPieces,
         ::std::vector<bool> const&          tintedPieces,
@@ -3688,7 +3690,13 @@ public:
         ::std::vector<::std::string> const& emoteSlotNumbers
     );
 
-    MCNAPI void $fireEventPersonaAvatarsListed(::std::vector<::std::string> const& profileTypesUsed);
+    MCNAPI void $fireEventPersonaSkinChanged(
+        ::persona::ProfileType const personaProfile,
+        ::std::string const&         classicSkinId,
+        bool                         isClassicSkinUsed
+    );
+
+    MCNAPI void $fireEventPersonaAvatarsListed(::std::vector<::persona::ProfileType> const& profileTypesUsed);
 
     MCNAPI void
     $fireEventPersonaEmotePlayed(::std::string const& emoteProductId, bool isEmoteEndedEarly, int emoteSlotId);
@@ -3707,17 +3715,17 @@ public:
     MCNAPI void $fireEventPersonaLoadingPieces(uint piecesLoaded, double timeToLoadInSeconds);
 
     MCNAPI void $fireEventPersonaStillLoading(
-        bool                                isSignedIn,
-        bool                                selectedSkinInitialized,
-        bool                                isStillSyncingWithService,
-        bool                                isRepoStillBuildingAppearances,
-        bool                                isPendingSkinStillLoading,
-        bool                                isRefreshingEntitlements,
-        bool                                isUserUpdateInProgress,
-        bool                                isSelectedSkinLoaded,
-        ::std::vector<::std::string> const& failingPersonaProfiles,
-        int                                 unknownPersonasCount,
-        double                              timeElapsed
+        bool                                         isSignedIn,
+        bool                                         selectedSkinInitialized,
+        bool                                         isStillSyncingWithService,
+        bool                                         isRepoStillBuildingAppearances,
+        bool                                         isPendingSkinStillLoading,
+        bool                                         isRefreshingEntitlements,
+        bool                                         isUserUpdateInProgress,
+        bool                                         isSelectedSkinLoaded,
+        ::std::vector<::persona::ProfileType> const& failingPersonaProfiles,
+        int                                          unknownPersonasCount,
+        double                                       timeElapsed
     );
 
     MCNAPI void $fireEventPersonaCreationFailed(
@@ -3876,7 +3884,8 @@ public:
 
     MCNAPI void $fireEventUwpToGdkMigrationComplete(
         ::Bedrock::DeviceIdContext const& deviceIdContext,
-        ::std::string const&              gdkDeviceId
+        ::std::string const&              gdkDeviceId,
+        ::std::string_view                migrationErrors
     );
 
     MCNAPI void $fireNetworkChangedEvent(::std::string const& networkConnectionType);

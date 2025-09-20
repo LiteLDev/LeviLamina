@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,7 +21,7 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
-class VineBlock : public ::BlockLegacy {
+class VineBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -49,25 +49,25 @@ public:
         ::AABB&                    bufferValue
     ) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 80
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 86
+    // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 91
+    // vIndex: 92
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 137
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual ::Block const& sanitizeFillBlock(::Block const& block) const /*override*/;
 
     // vIndex: 0
@@ -77,72 +77,72 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canGrowDown(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool _canGrowDown(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool _canSideSpread(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool _canSideSpread(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int _nextVineDirections(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI int _nextVineDirections(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void growDown(::BlockSource& region, ::BlockPos const& pos, int spawnFacings) const;
+    MCNAPI void growDown(::BlockSource& region, ::BlockPos const& pos, int spawnFacings) const;
 
-    MCAPI void growSideways(::BlockSource& region, ::BlockPos const& pos, int testDirection) const;
+    MCNAPI void growSideways(::BlockSource& region, ::BlockPos const& pos, int testDirection) const;
 
-    MCAPI void growUp(::BlockSource& region, ::BlockPos const& pos, int spawnFacings) const;
+    MCNAPI void growUp(::BlockSource& region, ::BlockPos const& pos, int spawnFacings) const;
 
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isAcceptableNeighbour(::Block const& block);
+    MCNAPI static bool isAcceptableNeighbour(::Block const& block);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& VINE_ALL();
+    MCNAPI static int const& VINE_ALL();
 
-    MCAPI static int const& VINE_EAST();
+    MCNAPI static int const& VINE_EAST();
 
-    MCAPI static int const& VINE_NORTH();
+    MCNAPI static int const& VINE_NORTH();
 
-    MCAPI static int const& VINE_SOUTH();
+    MCNAPI static int const& VINE_SOUTH();
 
-    MCAPI static int const& VINE_WEST();
+    MCNAPI static int const& VINE_WEST();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB const& $getVisualShapeInWorld(
+    MCNAPI ::AABB const& $getVisualShapeInWorld(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::AABB&                    bufferAABB
     ) const;
 
-    MCFOLD ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD ::AABB const& $getOutline(
+    MCNAPI ::AABB const& $getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::AABB&                    bufferValue
     ) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI ::Block const& $getPlacementBlock(
+    MCNAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -150,11 +150,11 @@ public:
         int               itemValue
     ) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
+    MCNAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
     // NOLINTEND
 
 public:

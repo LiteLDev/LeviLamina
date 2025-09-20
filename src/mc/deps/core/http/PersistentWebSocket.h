@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/http/StatusCode.h"
 #include "mc/deps/core/http/WebSocket.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/AsyncPromise.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,10 +40,10 @@ public:
     virtual bool shouldReconnect() const;
 
     // vIndex: 5
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Url>> getUrl() = 0;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl() = 0;
 
     // vIndex: 6
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::HeaderCollection>> getHeaders();
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::HeaderCollection> getHeaders();
 
     // vIndex: 7
     virtual ::Bedrock::Http::RetryPolicy getReconnectPolicy();
@@ -100,7 +100,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $shouldReconnect() const;
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::HeaderCollection>> $getHeaders();
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::HeaderCollection> $getHeaders();
 
     MCNAPI ::Bedrock::Http::RetryPolicy $getReconnectPolicy();
 

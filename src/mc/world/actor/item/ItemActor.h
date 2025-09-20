@@ -25,17 +25,34 @@ struct VariantParameterList;
 
 class ItemActor : public ::Actor {
 public:
+    // ItemActor inner types declare
+    // clang-format off
+    struct ItemRenderAdjustments;
+    // clang-format on
+
+    // ItemActor inner types define
+    struct ItemRenderAdjustments {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool>  mUseAdjustments;
+        ::ll::TypedStorage<4, 4, float> mFirstRenderedYaw;
+        // NOLINTEND
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 152, ::ItemStack> mItem;
-    ::ll::TypedStorage<4, 4, int>           mAge;
-    ::ll::TypedStorage<4, 4, int>           mPickupDelay;
-    ::ll::TypedStorage<4, 4, int>           mThrowTime;
-    ::ll::TypedStorage<4, 4, float>         mBobOffs;
-    ::ll::TypedStorage<4, 4, int>           mHealth;
-    ::ll::TypedStorage<4, 4, int>           mLifeTime;
-    ::ll::TypedStorage<1, 1, bool>          mIsInItemFrame;
-    ::ll::TypedStorage<1, 1, bool>          mIsFromFishing;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                                        mItem;
+    ::ll::TypedStorage<4, 4, int>                                                  mAge;
+    ::ll::TypedStorage<4, 4, int>                                                  mPickupDelay;
+    ::ll::TypedStorage<4, 4, int>                                                  mThrowTime;
+    ::ll::TypedStorage<4, 4, float>                                                mBobOffs;
+    ::ll::TypedStorage<4, 4, int>                                                  mHealth;
+    ::ll::TypedStorage<4, 4, int>                                                  mLifeTime;
+    ::ll::TypedStorage<1, 1, bool>                                                 mIsInItemFrame;
+    ::ll::TypedStorage<1, 1, bool>                                                 mIsFromFishing;
+    ::ll::TypedStorage<4, 12, ::std::optional<::ItemActor::ItemRenderAdjustments>> mRenderAdjustments;
     // NOLINTEND
 
 public:

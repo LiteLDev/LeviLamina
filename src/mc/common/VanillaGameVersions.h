@@ -36,6 +36,8 @@ MCNAPI ::BaseGameVersion const& Summer24UpdateVersion();
 
 MCNAPI ::BaseGameVersion const& Summer24UpdateVersion_U1();
 
+MCNAPI ::BaseGameVersion const& Summer24UpdateVersion_U10();
+
 MCNAPI ::BaseGameVersion const& Summer24UpdateVersion_U3();
 
 MCNAPI ::BaseGameVersion const& Summer24UpdateVersion_U4();

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/http/DispatcherProcess.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,7 +23,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response>
     send(::Bedrock::Http::Request&& request) /*override*/;
 
     // vIndex: 0
@@ -45,8 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
-    $send(::Bedrock::Http::Request&& request);
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> $send(::Bedrock::Http::Request&& request);
     // NOLINTEND
 
 public:

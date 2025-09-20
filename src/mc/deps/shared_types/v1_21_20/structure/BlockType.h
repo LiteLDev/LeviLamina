@@ -5,10 +5,12 @@
 namespace SharedTypes::v1_21_20::JigsawStructure::ProcessorRule {
 
 enum class BlockType : uchar {
-    AlwaysTrue       = 0,
-    BlockMatch       = 1,
-    RandomBlockMatch = 2,
-    TagMatch         = 3,
+    AlwaysTrue            = 0,
+    BlockMatch            = 1,
+    RandomBlockMatch      = 2,
+    TagMatch              = 3,
+    BlockStateMatch       = 4,
+    RandomBlockStateMatch = 5,
 };
 
 }

@@ -37,6 +37,7 @@ enum class ESessionError : int {
     ERelayServerConfigurationResultParsingErrorNoCreds      = 29,
     ERelayServerConfigurationResultParsingErrorNoServers    = 30,
     ERelayServerConfigurationResultParsingErrorNoExpiration = 31,
+    ESessionErrorDataChannelClosed                          = 32,
 };
 
 }

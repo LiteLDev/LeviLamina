@@ -9,7 +9,7 @@
 #include "mc/common/GameUserType.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/identity/IdentityEventResponse.h"
 #include "mc/identity/IdentityType.h"
@@ -127,7 +127,7 @@ public:
     getAuthToken(::Social::IdentityType, ::std::string const&, ::std::function<void(::Social::AuthToken)>) const = 0;
 
     // vIndex: 24
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Social::AuthToken>>
+    virtual ::Bedrock::Threading::Async<::Social::AuthToken>
     getAuthToken(::Social::IdentityType, ::std::string const&) const = 0;
 
     // vIndex: 26
@@ -152,7 +152,7 @@ public:
     virtual bool shouldLinkPlayFabAndLiveAccounts() const = 0;
 
     // vIndex: 33
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> unlinkXboxLiveAccount() = 0;
+    virtual ::Bedrock::Threading::Async<bool> unlinkXboxLiveAccount() = 0;
 
     // vIndex: 34
     virtual void getUserDataObject(::Social::IUserDataObject&) const = 0;
@@ -298,11 +298,11 @@ public:
     virtual ::Social::ProfileImageOptions getDefaultProfileImageOptions() const = 0;
 
     // vIndex: 79
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::shared_ptr<::mce::Image>>>
+    virtual ::Bedrock::Threading::Async<::std::shared_ptr<::mce::Image>>
     getProfileImage(::Social::ProfileImageOptions const&) = 0;
 
     // vIndex: 80
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Core::PathBuffer<::std::string>>>
+    virtual ::Bedrock::Threading::Async<::Core::PathBuffer<::std::string>>
     getProfileImageFile(::Social::ProfileImageOptions const&) = 0;
 
     // vIndex: 81

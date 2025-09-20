@@ -19,13 +19,13 @@ MCNAPI ::std::string_view getName(::entt::meta_data const& data);
 
 MCNAPI ::std::string_view getName(::entt::meta_type const& type);
 
-MCNAPI ::std::string_view getName(::entt::meta_type const& type, uint member);
-
 MCNAPI ::cereal::SchemaDescription getSchemaDescription(::cereal::ReflectionCtx const& ctx, ::entt::type_info info);
 
 MCNAPI ::std::vector<::cereal::SchemaDescription> getSchemaDescriptions(::cereal::ReflectionCtx const& ctx);
 
 MCNAPI bool isOptional(::entt::meta_type const& type);
+
+MCNAPI bool isReflected(::cereal::ReflectionCtx const& ctx, ::entt::type_info const& info);
 
 MCNAPI bool isVariant(::entt::meta_type const& type);
 

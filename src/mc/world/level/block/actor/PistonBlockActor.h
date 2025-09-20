@@ -11,6 +11,7 @@
 // clang-format off
 class AABB;
 class Actor;
+class Block;
 class BlockActorDataPacket;
 class BlockSource;
 class CompoundTag;
@@ -42,6 +43,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    PistonBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -53,19 +58,19 @@ public:
     // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    // vIndex: 33
+    // vIndex: 30
     virtual ::PistonBlockActor* getOwningPiston(::BlockSource&) /*override*/;
 
-    // vIndex: 32
+    // vIndex: 29
     virtual ::PistonBlockActor const* getOwningPiston(::BlockSource&) const /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -75,6 +80,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PistonBlockActor(::BlockPos const& pos, bool isSticky);
+
     MCAPI bool _attachedBlockWalker(
         ::BlockSource&    region,
         ::BlockPos const& curPos,
@@ -113,6 +120,8 @@ public:
 
     MCAPI void _spawnMovingBlocks(::BlockSource& region);
 
+    MCAPI ::Block const* getCorrectArmBlock() const;
+
     MCAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
     // NOLINTEND
 
@@ -125,6 +134,12 @@ public:
         ::Randomize                   randomize,
         ::ResourceDropsContext const& resourceDropsContext
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos, bool isSticky);
     // NOLINTEND
 
 public:

@@ -9,7 +9,7 @@
 // clang-format off
 struct ServerCameraAllowedControlSchemesComponent;
 struct ServerCameraDefaultControlSchemesComponent;
-namespace SharedTypes::v1_21_80 { struct CameraPreset; }
+namespace SharedTypes::v1_21_90 { struct CameraPreset; }
 // clang-format on
 
 namespace ControlSchemeUtils {
@@ -19,7 +19,7 @@ MCNAPI ::std::vector<::ControlScheme::Scheme> const getAllowedSchemesForCamera(:
 
 MCNAPI ::ControlScheme::Scheme getDefaultControlScheme(
     ::std::string_view                                          cameraName,
-    ::std::vector<::SharedTypes::v1_21_80::CameraPreset> const& presets,
+    ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& presets,
     ::std::vector<::ControlScheme::Scheme> const&               allowedControlSchemes
 );
 
@@ -27,7 +27,7 @@ MCNAPI void populateControlSchemeServerComponents(
     ::ServerCameraAllowedControlSchemesComponent&               allowedSchemesComponent,
     ::ServerCameraDefaultControlSchemesComponent&               defaultSchemesComponent,
     ::std::string_view                                          presetName,
-    ::std::vector<::SharedTypes::v1_21_80::CameraPreset> const& cameraPresets
+    ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& cameraPresets
 );
 // NOLINTEND
 

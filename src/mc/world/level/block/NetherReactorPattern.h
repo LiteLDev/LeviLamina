@@ -6,7 +6,7 @@ class NetherReactorPattern {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnk53b45f;
+    ::ll::UntypedStorage<8, 216> mUnke35cca;
     // NOLINTEND
 
 public:

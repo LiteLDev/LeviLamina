@@ -16,7 +16,7 @@ struct LightingIdentifierClientBiomeJsonComponent : public ::SharedTypes::v1_21_
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk929841;
+    ::ll::UntypedStorage<8, 32> mUnkb9b59c;
     // NOLINTEND
 
 public:

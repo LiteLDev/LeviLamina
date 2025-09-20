@@ -918,8 +918,6 @@ public:
 
     MCAPI void initActorProperties();
 
-    MCAPI void initParams(::VariantParameterList& params);
-
     MCAPI void initParams(::RenderParams& params);
 
     MCAPI bool isAdventure() const;
@@ -1416,8 +1414,6 @@ public:
     MCAPI void $stopSwimming();
 
     MCFOLD void $buildDebugInfo(::std::string&) const;
-
-    MCAPI ::CommandPermissionLevel $getCommandPermissionLevel() const;
 
     MCFOLD int $getDeathTime() const;
 

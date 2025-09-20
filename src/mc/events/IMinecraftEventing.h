@@ -7,6 +7,7 @@
 #include "mc/certificates/identity/LastClickedSource.h"
 #include "mc/certificates/identity/edu/Role.h"
 #include "mc/client/game/DiskStatus.h"
+#include "mc/client/game/edu_cloud/CloudItemType.h"
 #include "mc/client/game/edu_cloud/ConflictResolutionStatus.h"
 #include "mc/client/gui/screens/controllers/ClassroomSetting.h"
 #include "mc/client/gui/screens/controllers/EduShareMethodType.h"
@@ -59,6 +60,7 @@
 #include "mc/server/safety/ChatFloodingAction.h"
 #include "mc/world/actor/ActorType.h"
 #include "mc/world/actor/player/LoadingState.h"
+#include "mc/world/actor/player/persona/ProfileType.h"
 #include "mc/world/level/FileArchiverOutcome.h"
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/storage/DBStorageFolderWatcherSnapshotKind.h"
@@ -561,7 +563,9 @@ public:
         bool,
         ::Social::MultiplayerServiceIdentifier,
         ::std::string const&,
-        ::std::string const&
+        ::std::string const&,
+        ::std::string const&,
+        bool
     ) = 0;
 
     // vIndex: 29
@@ -577,7 +581,14 @@ public:
     virtual void fireEventSignalMessagePerformance(::NetherNet::NetworkID const&, ::MessagePerformance const&) = 0;
 
     // vIndex: 31
-    virtual void fireEventOnClientDisconnect(::SubClientId, bool, ::Connection::DisconnectFailReason) = 0;
+    virtual void fireEventOnClientDisconnect(
+        ::SubClientId,
+        bool,
+        ::Connection::DisconnectFailReason,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&
+    ) = 0;
 
     // vIndex: 32
     virtual void fireEventOnServerDisconnect(
@@ -944,7 +955,8 @@ public:
     virtual void fireEventPackImportTimeout(::std::string const&) = 0;
 
     // vIndex: 116
-    virtual void fireEventStoreErrorPage(::std::string const&, ::std::string const&) = 0;
+    virtual void
+    fireEventStoreErrorPage(::std::string const&, ::std::string const&, ::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 117
     virtual void setServerIdsforClient(
@@ -1014,7 +1026,7 @@ public:
     virtual void fireEventPlayerAttemptingExploit(::Player*, ::IMinecraftEventing::ExploitType) = 0;
 
     // vIndex: 134
-    virtual void fireEventWorldLoaded(::Player*, ::std::string const&, ::std::string const&, bool) = 0;
+    virtual void fireEventWorldLoaded(::Player*, ::persona::ProfileType const, ::std::string const&, bool) = 0;
 
     // vIndex: 135
     virtual void fireMinecraftVersionLaunched(bool) = 0;
@@ -1306,81 +1318,78 @@ public:
     virtual void fireEventDefaultGameTypeChanged(::GameType, ::GameType) = 0;
 
     // vIndex: 209
-    virtual void fireEventOfferRated(::std::string const&, int, int, int, double) = 0;
-
-    // vIndex: 210
     virtual void fireEventNewContentCheckCompleted(::std::string const&, bool) = 0;
 
-    // vIndex: 211
+    // vIndex: 210
     virtual void fireEventEncyclopediaTopicChanged(::std::string const&, ::InputMode) = 0;
 
-    // vIndex: 212
+    // vIndex: 211
     virtual void fireEventHowToPlayTopicChanged(::std::string const&, ::InputMode) = 0;
 
-    // vIndex: 213
+    // vIndex: 212
     virtual void fireEventAndroidHelpRequest() = 0;
 
-    // vIndex: 214
+    // vIndex: 213
     virtual void fireEventWorldFilesListed(uint64, uint64, uint64, uint64) = 0;
 
-    // vIndex: 215
+    // vIndex: 214
     virtual void fireEventLabTableCreated(int, int, int) = 0;
 
-    // vIndex: 216
+    // vIndex: 215
     virtual void fireEventPlayerMessageSay(::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 217
+    // vIndex: 216
     virtual void fireEventPlayerMessageTell(::std::string const&, ::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 218
+    // vIndex: 217
     virtual void fireEventPlayerMessageChat(::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 219
+    // vIndex: 218
     virtual void fireEventPlayerMessageMe(::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 220
+    // vIndex: 219
     virtual void fireEventPlayerMessageTitle(::std::string const&, ::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 221
+    // vIndex: 220
     virtual void fireEventPlayerDamaged(::Player*, ::SharedTypes::Legacy::ActorDamageCause) = 0;
 
-    // vIndex: 222
+    // vIndex: 221
     virtual void fireEventPlayerKicked(::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 223
+    // vIndex: 222
     virtual void fireEventPlayerBanned(::std::string const&) = 0;
 
-    // vIndex: 224
+    // vIndex: 223
     virtual void
     fireEventRealmShared(::std::string const&, ::IMinecraftEventing::ShareMode const&, ::Realms::RealmId const&) = 0;
 
-    // vIndex: 225
+    // vIndex: 224
     virtual void fireEventRealmMemberlistCleared(::Realms::RealmId const&, int const&) = 0;
 
-    // vIndex: 226
+    // vIndex: 225
     virtual void fireEventRealmUrlGenerated(::std::string const&, ::Realms::RealmId const&) = 0;
 
-    // vIndex: 227
+    // vIndex: 226
     virtual void fireEventStructureExport(
         ::glTFExportData const&,
         ::IMinecraftEventing::ExportOutcome,
         ::IMinecraftEventing::ExportStage
     ) const = 0;
 
-    // vIndex: 228
+    // vIndex: 227
     virtual void
     fireEventContentShared(::std::string const&, ::std::string const&, ::IMinecraftEventing::ShareMode const&) = 0;
 
-    // vIndex: 229
+    // vIndex: 228
     virtual void fireEventStorageReport(::std::string const&) = 0;
 
-    // vIndex: 230
+    // vIndex: 229
     virtual void fireEventStackLoaded(::StackStats const&) = 0;
 
-    // vIndex: 231
+    // vIndex: 230
     virtual void fireEventUnknownBlockReceived(::NewBlockID const&, ushort) = 0;
 
-    // vIndex: 232
+    // vIndex: 231
     virtual void fireEventSignInEdu(
         ::std::string const&,
         ::edu::Role,
@@ -1390,7 +1399,7 @@ public:
         ::std::vector<::std::pair<::std::string, ::std::string>> const&
     ) = 0;
 
-    // vIndex: 233
+    // vIndex: 232
     virtual void fireEventSignOutEdu(
         ::std::string const&,
         ::edu::Role,
@@ -1399,13 +1408,13 @@ public:
         ::std::string const&
     ) = 0;
 
-    // vIndex: 234
+    // vIndex: 233
     virtual void fireEventSwitchAccountEdu(::std::string const&, ::edu::Role, ::std::string const&) = 0;
 
-    // vIndex: 235
+    // vIndex: 234
     virtual void fireEventEduDemoConversion(::edu::Role, ::LastClickedSource) = 0;
 
-    // vIndex: 236
+    // vIndex: 235
     virtual void fireEventPopupFiredEdu(
         ::std::string const&,
         ::std::string const&,
@@ -1414,7 +1423,7 @@ public:
         ::ActiveDirectoryAction const
     ) = 0;
 
-    // vIndex: 237
+    // vIndex: 236
     virtual void fireEventPlayIntegrityCheck(
         ::std::string const&,
         ::std::string const&,
@@ -1422,20 +1431,22 @@ public:
         ::std::string const&
     ) = 0;
 
-    // vIndex: 238
+    // vIndex: 237
     virtual void fireEventCloudOperationStartedEdu(
         ::EduCloudUtils::Operation const,
+        ::EduCloud::CloudItemType const,
         ::std::string const&,
         uint64 const,
         ::std::optional<::std::string> const&
     ) = 0;
 
-    // vIndex: 239
+    // vIndex: 238
     virtual void fireEventCloudMyWorldsSummary(int const, int const, int const, int const, int const) = 0;
 
-    // vIndex: 240
+    // vIndex: 239
     virtual void fireEventCloudOperationEndedEdu(
         ::EduCloudUtils::Operation const,
+        ::EduCloud::CloudItemType const,
         ::std::string const&,
         ::std::chrono::milliseconds const,
         uint const,
@@ -1446,31 +1457,31 @@ public:
         ::std::optional<::std::string> const&
     ) = 0;
 
-    // vIndex: 241
+    // vIndex: 240
     virtual void fireEventCloudConflictCheckEdu(::std::string const&, ::EduCloud::ConflictResolutionStatus const) = 0;
 
-    // vIndex: 242
+    // vIndex: 241
     virtual void fireEventPurchaseGameAttempt(::std::string const&, ::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 243
+    // vIndex: 242
     virtual void fireEventPurchaseGameResult(int) = 0;
 
-    // vIndex: 244
+    // vIndex: 243
     virtual void fireEventTrialDeviceIdCorrelation(int64, ::std::string const&, int64, ::std::string const&) = 0;
 
-    // vIndex: 245
+    // vIndex: 244
     virtual void fireEventDeviceIdManagerFailOnIdentityGained() = 0;
 
-    // vIndex: 246
+    // vIndex: 245
     virtual void fireEventPushNotificationPermission(bool, ::std::string const&) = 0;
 
-    // vIndex: 247
+    // vIndex: 246
     virtual void fireEventPushNotificationReceived(::PushNotificationMessage const&) = 0;
 
-    // vIndex: 248
+    // vIndex: 247
     virtual void fireEventPushNotificationOpened(::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 249
+    // vIndex: 248
     virtual void firePerfTestEvent(
         ::std::string const&,
         ::std::string const&,
@@ -1481,22 +1492,22 @@ public:
         ::std::vector<::std::pair<::std::string, float>> const&
     ) = 0;
 
-    // vIndex: 250
+    // vIndex: 249
     virtual void fireEventLicenseCheck(bool, ::ExtraLicenseData&) = 0;
 
-    // vIndex: 251
+    // vIndex: 250
     virtual void fireQueryOfferResult(::std::string const&, int, bool) = 0;
 
-    // vIndex: 252
+    // vIndex: 251
     virtual void fireEventQueryPurchasesResult(::std::string const&, ::std::string const&, int, bool) = 0;
 
-    // vIndex: 253
+    // vIndex: 252
     virtual void fireEventWorldGenerated(::std::string const&, ::LevelSettings const&, bool) = 0;
 
-    // vIndex: 254
+    // vIndex: 253
     virtual void fireEventCopyWorldEducationEnabled() = 0;
 
-    // vIndex: 255
+    // vIndex: 254
     virtual void fireEventBundleSubOfferClicked(
         int,
         int,
@@ -1506,19 +1517,19 @@ public:
         ::std::string const&
     ) = 0;
 
-    // vIndex: 257
+    // vIndex: 256
     virtual void fireEventStoreOfferClicked(::Social::eventData::StoreOfferClickedData const&) = 0;
 
-    // vIndex: 256
+    // vIndex: 255
     virtual void fireEventStoreOfferClicked(::std::string const, ::std::string const&) = 0;
 
-    // vIndex: 258
+    // vIndex: 257
     virtual void fireEventPersonaOfferClicked(::Social::eventData::PersonaOfferClickedData const&) = 0;
 
-    // vIndex: 259
+    // vIndex: 258
     virtual void fireEventStoreSearch(::storeSearch::TelemetryData const&) = 0;
 
-    // vIndex: 260
+    // vIndex: 259
     virtual void fireEventSearchItemSelected(
         int const,
         int const,
@@ -1529,20 +1540,20 @@ public:
         ::std::string const&
     ) = 0;
 
-    // vIndex: 261
+    // vIndex: 260
     virtual void fireEventRealmsSubscriptionPurchaseStarted(::ProductSku const&, ::RealmsPurchaseIntent) = 0;
 
-    // vIndex: 262
+    // vIndex: 261
     virtual void fireEventRealmsSubscriptionPurchaseSucceeded(::ProductSku const&, ::RealmsPurchaseIntent) = 0;
 
-    // vIndex: 263
+    // vIndex: 262
     virtual void fireEventRealmsSubscriptionPurchaseFailed(
         ::ProductSku const&,
         ::RealmsPurchaseIntent,
         ::RealmsPurchaseFailureReason
     ) = 0;
 
-    // vIndex: 264
+    // vIndex: 263
     virtual void fireEventRealmsPurchaseFulfillment(
         ::std::string const&,
         ::std::string const&,
@@ -1553,7 +1564,7 @@ public:
         ::std::string const&
     ) = 0;
 
-    // vIndex: 265
+    // vIndex: 264
     virtual void fireEventRealmsPurchaseFailure(
         ::RealmsOfferPeriod,
         ::RealmsOfferTier,
@@ -1563,10 +1574,10 @@ public:
         ::std::vector<::Offer*> const&
     ) = 0;
 
-    // vIndex: 266
+    // vIndex: 265
     virtual void fireEventUserListUpdated(::std::string const&, ::std::string const&, ::std::string const&, bool) = 0;
 
-    // vIndex: 267
+    // vIndex: 266
     virtual void fireEventUgcAcquisitionStateChanged(
         ::std::string const&,
         uint64,
@@ -1581,83 +1592,83 @@ public:
         int
     ) = 0;
 
-    // vIndex: 268
+    // vIndex: 267
     virtual void fireEventRealmsGeneralCall(::std::string const&, ::Bedrock::Http::Status) = 0;
 
-    // vIndex: 269
+    // vIndex: 268
     virtual void fireEventRealmsRealmSpecificCall(::std::string const&, ::Realms::RealmId, ::Bedrock::Http::Status) = 0;
 
-    // vIndex: 270
+    // vIndex: 269
     virtual void
     fireEventRealmDownload(::std::string const&, ::std::string const&, int const, int const, int const) = 0;
 
-    // vIndex: 271
+    // vIndex: 270
     virtual void
     fireEventRealmUpload(::std::string const&, ::std::string const&, int const, int const, int const, bool const) = 0;
 
-    // vIndex: 272
+    // vIndex: 271
     virtual void fireRealmConnectionEventRealmAPIRequest(::IMinecraftEventing::RealmConnectionFlow) = 0;
 
-    // vIndex: 273
+    // vIndex: 272
     virtual void fireRealmConnectionEventRealmAPIResponse(::IMinecraftEventing::RealmConnectionFlow, int) = 0;
 
-    // vIndex: 274
+    // vIndex: 273
     virtual ::std::string getSessionId() = 0;
 
-    // vIndex: 275
+    // vIndex: 274
     virtual void fireEventChunkLoaded(::LevelChunk&) = 0;
 
-    // vIndex: 276
+    // vIndex: 275
     virtual void fireEventChunkUnloaded(::LevelChunk&) = 0;
 
-    // vIndex: 277
+    // vIndex: 276
     virtual void fireEventChunkChanged(::LevelChunk&) = 0;
 
-    // vIndex: 278
+    // vIndex: 277
     virtual void fireEventMultiplayerSessionUpdate(::Bedrock::NonOwnerPointer<::MultiPlayerLevel>) = 0;
 
-    // vIndex: 279
+    // vIndex: 278
     virtual void fireEventLevelDestruct() = 0;
 
-    // vIndex: 280
+    // vIndex: 279
     virtual void flagEventDeepLink() = 0;
 
-    // vIndex: 281
+    // vIndex: 280
     virtual void flagEventPlayerGameTypeDefault(bool) = 0;
 
-    // vIndex: 282
+    // vIndex: 281
     virtual void fileEventCloudWorldPullFailed(::std::string const&, ::std::string const&, bool) = 0;
 
-    // vIndex: 283
+    // vIndex: 282
     virtual void fireEventLevelDatLoadFailed(::std::string const&, ::std::string const&, bool) = 0;
 
-    // vIndex: 284
+    // vIndex: 283
     virtual void fireEventWorldCorruptionCausedWorldShutdown(
         ::LevelStorageEventingContext const&,
         ::std::string const&,
         ::std::optional<bool>
     ) = 0;
 
-    // vIndex: 285
+    // vIndex: 284
     virtual void fireEventClientLeftGameDueToUnrecoverableError(::std::string const&, bool) = 0;
 
-    // vIndex: 286
+    // vIndex: 285
     virtual void fireEventServerShutdownDueToError(::std::string const&) = 0;
 
-    // vIndex: 287
+    // vIndex: 286
     virtual void fireEventDBStorageSizeSnapshot(
         ::LevelStorageEventingContext const&,
         ::DBStorageFolderWatcher const&,
         ::DBStorageFolderWatcherSnapshotKind
     ) = 0;
 
-    // vIndex: 288
+    // vIndex: 287
     virtual void fireEventLevelDBPerformanceData(
         ::LevelStorageEventingContext const&,
         ::DBStoragePerformanceTelemetryData const&
     ) = 0;
 
-    // vIndex: 289
+    // vIndex: 288
     virtual void fireEventSidebarNavigation(
         uint const&,
         ::std::string const&,
@@ -1668,16 +1679,16 @@ public:
         bool const
     ) = 0;
 
-    // vIndex: 290
+    // vIndex: 289
     virtual void
     fireEventSidebarVerboseToggled(uint const&, ::std::string const&, ::std::string const&, bool const) = 0;
 
-    // vIndex: 291
-    virtual void fireEventPersonaUserLoadedActive(::std::string const&, ::std::string const&, bool) = 0;
+    // vIndex: 290
+    virtual void fireEventPersonaUserLoadedActive(::persona::ProfileType const, ::std::string const&, bool) = 0;
 
-    // vIndex: 292
+    // vIndex: 291
     virtual void fireEventPersonaItemPreviewed(
-        ::std::string const&,
+        ::persona::ProfileType const,
         ::std::string const&,
         ::std::string const&,
         uint,
@@ -1690,12 +1701,9 @@ public:
         ::IMinecraftEventing::StoreType
     ) = 0;
 
-    // vIndex: 293
-    virtual void fireEventPersonaSkinChanged(::std::string const&, ::std::string const&, bool) = 0;
-
-    // vIndex: 294
+    // vIndex: 292
     virtual void fireEventPersonaAvatarUpdated(
-        ::std::string const&,
+        ::persona::ProfileType const,
         ::std::vector<::std::string> const&,
         ::std::vector<bool> const&,
         ::std::vector<bool> const&,
@@ -1709,25 +1717,28 @@ public:
         ::std::vector<::std::string> const&
     ) = 0;
 
-    // vIndex: 295
-    virtual void fireEventPersonaAvatarsListed(::std::vector<::std::string> const&) = 0;
+    // vIndex: 293
+    virtual void fireEventPersonaSkinChanged(::persona::ProfileType const, ::std::string const&, bool) = 0;
 
-    // vIndex: 296
+    // vIndex: 294
+    virtual void fireEventPersonaAvatarsListed(::std::vector<::persona::ProfileType> const&) = 0;
+
+    // vIndex: 295
     virtual void fireEventPersonaEmotePlayed(::std::string const&, bool, int) = 0;
 
-    // vIndex: 297
+    // vIndex: 296
     virtual void fireEventDefaultCastSelected(int, ::mce::UUID, ::std::string const&) = 0;
 
-    // vIndex: 298
+    // vIndex: 297
     virtual void fireEventPersonaInitalizationEvent(uint, ::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 299
+    // vIndex: 298
     virtual void fireEventPersonaGeneralError(::std::string const&, uint) = 0;
 
-    // vIndex: 300
+    // vIndex: 299
     virtual void fireEventPersonaLoadingPieces(uint, double) = 0;
 
-    // vIndex: 301
+    // vIndex: 300
     virtual void fireEventPersonaStillLoading(
         bool,
         bool,
@@ -1737,12 +1748,12 @@ public:
         bool,
         bool,
         bool,
-        ::std::vector<::std::string> const&,
+        ::std::vector<::persona::ProfileType> const&,
         int,
         double
     ) = 0;
 
-    // vIndex: 302
+    // vIndex: 301
     virtual void fireEventPersonaCreationFailed(
         ::std::string const&,
         ::std::string const&,
@@ -1752,53 +1763,53 @@ public:
         ::std::string const&
     ) = 0;
 
-    // vIndex: 303
+    // vIndex: 302
     virtual void fireEventPersonaCategoryInformation(::std::string const&) = 0;
 
-    // vIndex: 304
+    // vIndex: 303
     virtual void fireEventDisplayLoggedError(::std::string const) = 0;
 
-    // vIndex: 305
+    // vIndex: 304
     virtual void fireEventWorldHistoryPackSourceMissingDuringUpgrade(
         ::std::string const&,
         ::std::string const&,
         ::std::string const&
     ) = 0;
 
-    // vIndex: 306
+    // vIndex: 305
     virtual void fireStructureBlockAction(
         ::IMinecraftEventing::StructureBlockActionType,
         ::StructureEditorData const&,
         ::StructureTelemetryClientData const*
     ) = 0;
 
-    // vIndex: 307
+    // vIndex: 306
     virtual void fireStructureBlockRedstoneActivated(
         ::IMinecraftEventing::StructureBlockActionType,
         ::StructureEditorData const&,
         ::StructureTelemetryClientData const*
     ) = 0;
 
-    // vIndex: 308
+    // vIndex: 307
     virtual void fireEventOreUIError(uint const&, ::std::string const&) = 0;
 
-    // vIndex: 309
+    // vIndex: 308
     virtual void fireEventOreUIScreenPerformance(uint const&, ::OreUI::DataTracker const&) = 0;
 
-    // vIndex: 310
+    // vIndex: 309
     virtual void
     fireEventRealmsStoriesOptIn(::std::string const&, ::std::string const&, ::std::string const&, bool const) = 0;
 
-    // vIndex: 311
+    // vIndex: 310
     virtual void fireEventOnboardingWorldCreationUsage(bool, bool, bool) = 0;
 
-    // vIndex: 312
+    // vIndex: 311
     virtual void fireEventVRModeChanged(bool const) = 0;
 
-    // vIndex: 313
+    // vIndex: 312
     virtual void fireEventDeviceAccountSuccess(bool, ::std::string const&) = 0;
 
-    // vIndex: 314
+    // vIndex: 313
     virtual void fireEventDeviceAccountFailure(
         ::IMinecraftEventing::SignInStage,
         ::IMinecraftEventing::DeviceAccountFailurePhase,
@@ -1806,35 +1817,35 @@ public:
         ::std::string const&
     ) = 0;
 
-    // vIndex: 315
+    // vIndex: 314
     virtual ::std::shared_ptr<void*> requestEventDeferment() = 0;
 
-    // vIndex: 316
+    // vIndex: 315
     virtual ::gsl::not_null<::Bedrock::CrashTelemetryProcessor*> getCrashTelemetryProcessor() = 0;
 
-    // vIndex: 317
+    // vIndex: 316
     virtual void fireEventLevelChunkPerformanceData(bool) = 0;
 
-    // vIndex: 318
+    // vIndex: 317
     virtual void fireChunkRecyclerTelemetryData(::ChunkRecyclerTelemetryOutput const&) = 0;
 
-    // vIndex: 319
+    // vIndex: 318
     virtual void fireEventActorValueValidationFailed(::std::string const&, char const*) = 0;
 
-    // vIndex: 320
+    // vIndex: 319
     virtual void fireDBStorageError(::LevelStorageEventingContext const&, ::std::string const&) = 0;
 
-    // vIndex: 321
+    // vIndex: 320
     virtual void fireServerStarted(
         ::IMinecraftEventing::ServerType,
         ::std::string const&,
         ::std::unordered_map<::std::string, ::std::string> const&
     ) = 0;
 
-    // vIndex: 322
+    // vIndex: 321
     virtual void fireServerShutdown(::std::string const&) = 0;
 
-    // vIndex: 323
+    // vIndex: 322
     virtual void fireSafetyServiceTextProcessEvent(
         ::std::string const&,
         ::TextProcessingEventOrigin,
@@ -1849,7 +1860,7 @@ public:
         bool
     ) = 0;
 
-    // vIndex: 324
+    // vIndex: 323
     virtual void fireBannedSkinVerificationEvent(
         uint const&,
         ::std::string const&,
@@ -1859,26 +1870,26 @@ public:
         ::std::string const&
     ) = 0;
 
-    // vIndex: 325
+    // vIndex: 324
     virtual void fireEventPlayerReportSent(bool, ::std::string const&, ::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 326
+    // vIndex: 325
     virtual void fireEventOneDSPlayerReportPayload(::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 327
+    // vIndex: 326
     virtual void fireEventSafetyHTTPRequest(::std::string const&, ::std::string const&, int const) = 0;
 
-    // vIndex: 328
+    // vIndex: 327
     virtual void fireEventProfanityFilter(bool, bool, bool) = 0;
 
-    // vIndex: 329
+    // vIndex: 328
     virtual void
     fireEventChatFloodingActionTaken(::std::string const&, ::Safety::ChatFloodingAction, ::std::string const&) = 0;
 
-    // vIndex: 330
+    // vIndex: 329
     virtual void fireEventTextProcessorStartupFailed(::std::string const&, int, int) = 0;
 
-    // vIndex: 331
+    // vIndex: 330
     virtual void firePlayerAccountMetadata(
         ::Social::PermissionCheckResult,
         ::Social::PermissionCheckResult,
@@ -1890,13 +1901,13 @@ public:
         bool
     ) = 0;
 
-    // vIndex: 332
+    // vIndex: 331
     virtual void fireEventBlockUser(::std::string const&, bool, bool) = 0;
 
-    // vIndex: 333
+    // vIndex: 332
     virtual void fireEventMuteUser(::std::string const&, bool, bool) = 0;
 
-    // vIndex: 334
+    // vIndex: 333
     virtual void fireStorageMigrationEvent(
         bool,
         ::Bedrock::StorageMigration::StorageMigrationType,
@@ -1906,7 +1917,7 @@ public:
         ::std::string const&
     ) = 0;
 
-    // vIndex: 335
+    // vIndex: 334
     virtual void fireEventConnectedStorageResult(
         ::ConnectedStorageEventType,
         bool,
@@ -1920,16 +1931,17 @@ public:
         ::std::optional<uint>
     ) = 0;
 
-    // vIndex: 336
+    // vIndex: 335
     virtual void fireEventConnectedStorageError(char const*, ::std::string const&, int64) = 0;
 
-    // vIndex: 337
-    virtual void fireEventUwpToGdkMigrationComplete(::Bedrock::DeviceIdContext const&, ::std::string const&) = 0;
+    // vIndex: 336
+    virtual void
+    fireEventUwpToGdkMigrationComplete(::Bedrock::DeviceIdContext const&, ::std::string const&, ::std::string_view) = 0;
 
-    // vIndex: 338
+    // vIndex: 337
     virtual void fireNetworkChangedEvent(::std::string const&) = 0;
 
-    // vIndex: 339
+    // vIndex: 338
     virtual void fireEventMessageServiceImpression(
         ::std::string const&,
         ::std::string const&,
@@ -1938,7 +1950,7 @@ public:
         bool const
     ) = 0;
 
-    // vIndex: 340
+    // vIndex: 339
     virtual void fireEventMessageReceived(
         ::std::string const&,
         ::std::string const&,
@@ -1947,59 +1959,59 @@ public:
         bool const
     ) = 0;
 
-    // vIndex: 341
+    // vIndex: 340
     virtual void fireEventGoogleAccountHoldWarning(bool) = 0;
 
-    // vIndex: 342
+    // vIndex: 341
     virtual void fireDelayedEventReportOfflineAction(::std::string const&) = 0;
 
-    // vIndex: 343
+    // vIndex: 342
     virtual void fireEventFeedbackSubmitted(::std::string const&, bool, bool) = 0;
 
-    // vIndex: 344
+    // vIndex: 343
     virtual void
     fireEventTrackDeeplinks(::std::string const&, ::std::string const&, ::std::string const&, ::std::string const&) = 0;
 
-    // vIndex: 345
+    // vIndex: 344
     virtual void fireEventReceivedUniqueWebSessionId(::std::string const&) = 0;
 
-    // vIndex: 346
+    // vIndex: 345
     virtual void firePlayerUnexpectedFallDamage(float const, bool, float const) = 0;
 
-    // vIndex: 347
+    // vIndex: 346
     virtual void fireEventActorMovementCorrectionDivergence(::ActorType, ::std::vector<float> const&) = 0;
 
-    // vIndex: 348
+    // vIndex: 347
     virtual void fireEventDedicatedServerDiscoveryResponse(int const, int const) = 0;
 
-    // vIndex: 349
+    // vIndex: 348
     virtual void fireEventInGamePause(bool) = 0;
 
-    // vIndex: 350
+    // vIndex: 349
     virtual void fireEventGameTip(int, int, int, ::InputMode) = 0;
 
-    // vIndex: 351
+    // vIndex: 350
     virtual void fireEventAddedFriend(::std::string const&, ::IMinecraftEventing::AddedFriendLocation, bool) = 0;
 
-    // vIndex: 352
+    // vIndex: 351
     virtual void fireEventInboxSummary(::Social::Events::InboxSummaryData const&) = 0;
 
-    // vIndex: 353
+    // vIndex: 352
     virtual void fireEventTrialStatusFailed(int) = 0;
 
-    // vIndex: 354
+    // vIndex: 353
     virtual void fireEventSaveDataExpansion(uint64, uint64, uint64) = 0;
 
-    // vIndex: 355
+    // vIndex: 354
     virtual void fireEventProfileButtonPressed(::std::string const&) const = 0;
 
-    // vIndex: 356
+    // vIndex: 355
     virtual void fireEventWorldCopy(uint64, uint64, ::LevelSeed64) = 0;
 
-    // vIndex: 357
+    // vIndex: 356
     virtual void fireEventWriteBudgetLow(uint64, float, ::std::chrono::nanoseconds, bool, ::std::string const&) = 0;
 
-    // vIndex: 358
+    // vIndex: 357
     virtual void fireEventWriteBudgetReplenished(
         ::std::chrono::nanoseconds,
         uint64,
@@ -2009,7 +2021,7 @@ public:
         ::std::string const&
     ) = 0;
 
-    // vIndex: 359
+    // vIndex: 358
     virtual void fireEventLargeFileWriteStall(
         uint64,
         ::std::vector<::std::string> const&,
@@ -2025,10 +2037,10 @@ public:
         ::std::vector<::std::string> const&
     ) = 0;
 
-    // vIndex: 360
+    // vIndex: 359
     virtual void fireEventLowMemoryDetected(::LowMemoryReport const&) = 0;
 
-    // vIndex: 361
+    // vIndex: 360
     virtual void fireEventReceivedApplicationExitInfo(
         ::std::string const&,
         int,
@@ -2040,11 +2052,14 @@ public:
         bool
     ) = 0;
 
-    // vIndex: 362
+    // vIndex: 361
     virtual void fireEventBug1341395(::std::string const&) = 0;
 
-    // vIndex: 363
+    // vIndex: 362
     virtual void fireEventImmersiveReaderStatus(::Bedrock::Http::Status const) = 0;
+
+    // vIndex: 363
+    virtual void fireEventPacketSerializationMismatch(::MinecraftPacketIds, ::std::string_view, ::std::string_view) = 0;
     // NOLINTEND
 
 public:

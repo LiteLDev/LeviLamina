@@ -11,9 +11,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class Mob;
 // clang-format on
 
@@ -86,7 +86,7 @@ public:
         ::std::string const&                   layEggSound
     );
 
-    MCAPI bool _isTargetBlock(::BlockLegacy const& block) const;
+    MCAPI bool _isTargetBlock(::BlockType const& block) const;
     // NOLINTEND
 
 public:

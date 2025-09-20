@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class InventoryTransactionPacket;
+class InventoryPacket;
 struct IPlayerTickPolicy;
 struct MovementPackets;
 // clang-format on
@@ -36,7 +36,7 @@ public:
 
     MCNAPI ServerPlayerMovementComponent(::ServerPlayerMovementComponent&&);
 
-    MCNAPI bool addInventoryTransactionPacket(::std::shared_ptr<::InventoryTransactionPacket> packet);
+    MCNAPI bool addInventoryTransactionPacket(::std::shared_ptr<::InventoryPacket> packet);
 
     MCNAPI ::MovementPackets& front();
 

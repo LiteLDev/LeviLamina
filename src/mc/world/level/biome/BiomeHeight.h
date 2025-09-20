@@ -6,8 +6,8 @@ struct BiomeHeight {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5f76e7;
-    ::ll::UntypedStorage<4, 4> mUnk60eb1a;
+    ::ll::UntypedStorage<4, 4> mUnk4d3718;
+    ::ll::UntypedStorage<4, 4> mUnka8656b;
     // NOLINTEND
 
 public:

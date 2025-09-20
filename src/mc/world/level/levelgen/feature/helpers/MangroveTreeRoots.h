@@ -34,6 +34,7 @@ public:
     // prevent constructor by default
     MangroveTreeRoots& operator=(MangroveTreeRoots const&);
     MangroveTreeRoots(MangroveTreeRoots const&);
+    MangroveTreeRoots();
 
 public:
     // virtual functions
@@ -55,8 +56,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MangroveTreeRoots();
-
     MCNAPI void _placeRoot(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random) const;
 
     MCNAPI ::std::vector<::BlockPos>
@@ -72,12 +71,6 @@ public:
         int                             layer,
         ::TreeHelper::TreeParams const& treeParams
     ) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

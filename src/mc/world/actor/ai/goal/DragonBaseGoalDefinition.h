@@ -39,6 +39,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $validateMobType(::Mob& mob) const;
+    MCAPI bool $validateMobType(::Mob& mob) const;
     // NOLINTEND
 };

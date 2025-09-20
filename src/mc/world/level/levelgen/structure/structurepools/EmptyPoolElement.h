@@ -48,8 +48,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockPos $getSize(::Rotation rotation) const;
-
     MCNAPI ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
 
     MCNAPI ::std::vector<::JigsawBlockInfo>

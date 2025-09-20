@@ -12,9 +12,9 @@
 // clang-format off
 class Actor;
 class BlockDescriptor;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class Container;
 class HashedString;
 class ItemStack;
@@ -59,11 +59,11 @@ public:
     MCAPI explicit EntityPlacerItemComponent(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
 
     MCAPI void _positionAndRotateActor(
-        ::Actor&             actor,
-        ::Vec3               position,
-        uchar                face,
-        ::Vec3 const&        playerFeetPos,
-        ::BlockLegacy const* blockLegacy
+        ::Actor&           actor,
+        ::Vec3             position,
+        uchar              face,
+        ::Vec3 const&      playerFeetPos,
+        ::BlockType const* blockType
     ) const;
 
     MCAPI void _setActorCustomName(::Actor& actor, ::ItemStack const& item) const;

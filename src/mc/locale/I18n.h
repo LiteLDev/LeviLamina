@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -32,7 +33,7 @@ public:
     virtual ::std::unordered_map<::std::string, ::std::string> findAvailableLanguageNames(::ResourcePackManager&) = 0;
 
     // vIndex: 4
-    virtual void loadLanguages(
+    virtual ::Bedrock::Threading::Async<void> loadLanguages(
         ::ResourcePackManager&,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>,
         ::std::string const&
@@ -84,10 +85,10 @@ public:
 
     // vIndex: 17
     virtual ::std::string
-    get(::std::string const&, ::std::vector<::std::string> const&, ::std::shared_ptr<::Localization> const) = 0;
+    get(::std::string const&, ::std::vector<::std::string> const&, ::std::shared_ptr<::Localization const> const) = 0;
 
     // vIndex: 16
-    virtual ::std::string get(::std::string const&, ::std::shared_ptr<::Localization> const) = 0;
+    virtual ::std::string get(::std::string const&, ::std::shared_ptr<::Localization const> const) = 0;
 
     // vIndex: 18
     virtual ::std::string getPackKeywordValue(::PackManifest const&, ::std::string const&) = 0;
@@ -105,7 +106,7 @@ public:
     virtual ::std::string const& getLanguageName(::std::string const&) = 0;
 
     // vIndex: 23
-    virtual ::std::shared_ptr<::Localization> const getLocaleFor(::std::string const&) = 0;
+    virtual ::std::shared_ptr<::Localization const> const getLocaleFor(::std::string const&) = 0;
 
     // vIndex: 24
     virtual ::std::string const& getLocaleCodeFor(::std::string const&) = 0;

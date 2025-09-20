@@ -55,7 +55,7 @@ public:
     MCAPI bool
     $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND
 
 public:

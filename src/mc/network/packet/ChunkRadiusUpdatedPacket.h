@@ -3,38 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
-#include "mc/network/MinecraftPacketIds.h"
-#include "mc/platform/Result.h"
+#include "mc/network/packet/ChunkRadiusUpdatedPacketPayload.h"
+#include "mc/network/packet/serialize/SerializedPayloadPacket.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
+struct ChunkRadiusUpdatedPacketInfo;
 // clang-format on
 
-class ChunkRadiusUpdatedPacket : public ::Packet {
+class ChunkRadiusUpdatedPacket
+: public ::SerializedPayloadPacket<::ChunkRadiusUpdatedPacketInfo, ::ChunkRadiusUpdatedPacketPayload> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mChunkRadius;
-    // NOLINTEND
+    // ChunkRadiusUpdatedPacket inner types define
+    using PayloadType = ::ChunkRadiusUpdatedPacketPayload;
+
+    using PacketInfo = ::ChunkRadiusUpdatedPacketInfo;
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const /*override*/;
-
-    // vIndex: 2
-    virtual ::std::string getName() const /*override*/;
-
-    // vIndex: 4
-    virtual void write(::BinaryStream& stream) const /*override*/;
-
-    // vIndex: 8
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
     // vIndex: 0
     virtual ~ChunkRadiusUpdatedPacket() /*override*/;
     // NOLINTEND
@@ -43,18 +30,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCFOLD ::MinecraftPacketIds $getId() const;
-
-    MCAPI ::std::string $getName() const;
-
-    MCAPI void $write(::BinaryStream& stream) const;
-
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

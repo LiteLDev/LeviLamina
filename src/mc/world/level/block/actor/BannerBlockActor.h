@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockActorDataPacket;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -30,9 +31,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BannerBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 13
+    // vIndex: 11
     virtual void onPlace(::BlockSource& region) /*override*/;
 
     // vIndex: 9
@@ -44,10 +49,10 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -57,6 +62,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit BannerBlockActor(::BlockPos const& pos);
+
     MCNAPI void setItemValues(::ItemStackBase const& instance);
     // NOLINTEND
 
@@ -88,6 +95,12 @@ public:
     MCNAPI static ::std::string const& TAG_PATTERNS();
 
     MCNAPI static ::std::string const& TAG_TYPE();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

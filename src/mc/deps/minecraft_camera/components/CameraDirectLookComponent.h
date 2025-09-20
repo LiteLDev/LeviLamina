@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CameraDirectLookComponent {
+struct CameraDirectLookComponent {
 public:
     // member variables
     // NOLINTBEGIN

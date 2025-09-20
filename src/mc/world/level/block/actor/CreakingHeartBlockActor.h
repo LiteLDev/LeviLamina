@@ -8,6 +8,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
+class Block;
+class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
@@ -41,8 +44,17 @@ public:
     // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
+
+    // vIndex: 17
+    virtual void executeEvent(
+        ::BlockSource& region,
+        ::BlockPos const&,
+        ::Block const&       block,
+        ::std::string const& eventName,
+        ::Actor&             actor
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~CreakingHeartBlockActor() /*override*/ = default;
@@ -66,6 +78,14 @@ public:
     MCNAPI void $tick(::BlockSource& region);
 
     MCNAPI void $onRemoved(::BlockSource& region);
+
+    MCNAPI void $executeEvent(
+        ::BlockSource& region,
+        ::BlockPos const&,
+        ::Block const&       block,
+        ::std::string const& eventName,
+        ::Actor&             actor
+    );
     // NOLINTEND
 
 public:

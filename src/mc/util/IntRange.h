@@ -31,15 +31,7 @@ public:
 
     MCNAPI int getValue(::Random& random) const;
 
-    MCNAPI int getValueInclusive(::Random& random) const;
-
     MCNAPI bool parseJson(::Json::Value node, int minDefault, int maxDefault);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::IntRange const& ZERO();
     // NOLINTEND
 
 public:

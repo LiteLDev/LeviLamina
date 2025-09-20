@@ -12,6 +12,17 @@ class ContentTierInfo;
 
 class ContentTierManager : public ::IContentTierManager {
 public:
+    // ContentTierManager inner types define
+    enum class ContentMemoryTier : int {
+        UltraLowTier  = 5,
+        SuperLowTier  = 11,
+        LowTier       = 12,
+        MediumTier    = 18,
+        HighTier      = 24,
+        SuperHighTier = 32,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk44461e;
@@ -38,6 +49,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit ContentTierManager(::std::function<bool()> isHardwareRayTracingCompatible);
+
+    MCNAPI void _calculateMemoryTier();
     // NOLINTEND
 
 public:

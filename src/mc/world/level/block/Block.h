@@ -15,10 +15,10 @@
 class AABB;
 class Actor;
 class BaseGameVersion;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
 class BlockState;
+class BlockType;
 class DefinitionTrigger;
 class GetCollisionShapeInterface;
 class HashedString;
@@ -38,17 +38,17 @@ class Block {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 104, ::BlockComponentStorage>       mComponents;
-    ::ll::TypedStorage<2, 2, ushort const>                    mData;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockLegacy*>> mLegacyBlock;
-    ::ll::TypedStorage<4, 8, ::CachedComponentData>           mCachedComponentData;
-    ::ll::TypedStorage<8, 104, ::BlockComponentDirectData>    mDirectData;
-    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>  mTags;
-    ::ll::TypedStorage<8, 24, ::CompoundTag>                  mSerializationId;
-    ::ll::TypedStorage<8, 8, uint64>                          mSerializationIdHash;
-    ::ll::TypedStorage<4, 4, uint>                            mSerializationIdHashForNetwork;
-    ::ll::TypedStorage<4, 4, uint>                            mNetworkId;
-    ::ll::TypedStorage<1, 1, bool>                            mHasRuntimeId;
+    ::ll::TypedStorage<8, 104, ::BlockComponentStorage>      mComponents;
+    ::ll::TypedStorage<2, 2, ushort const>                   mData;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockType*>>  mBlockType;
+    ::ll::TypedStorage<4, 8, ::CachedComponentData>          mCachedComponentData;
+    ::ll::TypedStorage<8, 104, ::BlockComponentDirectData>   mDirectData;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>> mTags;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>                 mSerializationId;
+    ::ll::TypedStorage<8, 8, uint64>                         mSerializationIdHash;
+    ::ll::TypedStorage<4, 4, uint>                           mSerializationIdHashForNetwork;
+    ::ll::TypedStorage<4, 4, uint>                           mNetworkId;
+    ::ll::TypedStorage<1, 1, bool>                           mHasRuntimeId;
     // NOLINTEND
 
 public:
@@ -65,9 +65,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Block(ushort data, ::gsl::not_null<::BlockLegacy*> oldBlock);
+    MCAPI Block(ushort data, ::gsl::not_null<::BlockType*> oldBlock);
 
-    MCAPI Block(ushort data, ::gsl::not_null<::BlockLegacy*> oldBlock, ::CompoundTag serId, uint const& runId);
+    MCAPI Block(ushort data, ::gsl::not_null<::BlockType*> oldBlock, ::CompoundTag serId, uint const& runId);
 
     MCAPI bool _isSolid() const;
 
@@ -87,8 +87,6 @@ public:
     MCAPI ::std::string buildDescriptionName() const;
 
     MCAPI void buildSerializationId(uint latestUpdaterVersion);
-
-    MCAPI ::std::string buildSerializationIdString() const;
 
     MCAPI bool canProvideFullSupport(uchar face) const;
 
@@ -123,6 +121,8 @@ public:
 
     MCAPI void finalizeBlockComponentStorage();
 
+    MCAPI ::BlockType const& getBlockType() const;
+
     MCAPI bool getCollisionShape(
         ::AABB&                                            outAABB,
         ::IConstBlockSource const&                         region,
@@ -131,8 +131,6 @@ public:
     ) const;
 
     MCAPI ::std::string getDescriptionId() const;
-
-    MCAPI ::BlockLegacy const& getLegacyBlock() const;
 
     MCAPI ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -172,8 +170,6 @@ public:
 
     MCAPI void onFallOn(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, float fallDistance) const;
 
-    MCAPI void onPlace(::BlockSource& region, ::BlockPos const& pos, ::Block const& previousBlock) const;
-
     MCAPI void onStepOff(::Actor& entity, ::BlockPos const& pos) const;
 
     MCAPI void onStepOn(::Actor& entity, ::BlockPos const& pos) const;
@@ -205,9 +201,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(ushort data, ::gsl::not_null<::BlockLegacy*> oldBlock);
+    MCAPI void* $ctor(ushort data, ::gsl::not_null<::BlockType*> oldBlock);
 
-    MCAPI void* $ctor(ushort data, ::gsl::not_null<::BlockLegacy*> oldBlock, ::CompoundTag serId, uint const& runId);
+    MCAPI void* $ctor(ushort data, ::gsl::not_null<::BlockType*> oldBlock, ::CompoundTag serId, uint const& runId);
     // NOLINTEND
 
 public:

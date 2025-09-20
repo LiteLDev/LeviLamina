@@ -3,12 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/minecraft_camera/PlayerViewMode.h"
+#include "mc/deps/shared_types/v1_21_100/camera/PlayerViewMode.h"
 
-class CameraPerspectiveOptionComponent {
+struct CameraPerspectiveOptionComponent {
+public:
+    // CameraPerspectiveOptionComponent inner types define
+    using PlayerViewMode = ::SharedTypes::v1_21_100::PlayerViewMode;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::PlayerViewMode> mActivateForViewMode;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_100::PlayerViewMode> mActivateForViewMode;
     // NOLINTEND
 };

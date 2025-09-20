@@ -7,15 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 // clang-format on
 
 class DaylightDetectorBlockActor : public ::BlockActor {
-public:
-    // prevent constructor by default
-    DaylightDetectorBlockActor();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -24,18 +19,6 @@ public:
 
     // vIndex: 0
     virtual ~DaylightDetectorBlockActor() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit DaylightDetectorBlockActor(::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

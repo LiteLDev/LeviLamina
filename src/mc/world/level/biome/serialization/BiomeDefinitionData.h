@@ -15,7 +15,7 @@ struct BiomeDefinitionData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 4>   mUnk67b62a;
+    ::ll::UntypedStorage<2, 2>   mUnkae4840;
     ::ll::UntypedStorage<4, 4>   mUnk96e0f9;
     ::ll::UntypedStorage<4, 4>   mUnk74d490;
     ::ll::UntypedStorage<4, 4>   mUnk12d4aa;

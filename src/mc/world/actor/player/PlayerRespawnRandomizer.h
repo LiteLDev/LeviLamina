@@ -9,7 +9,7 @@ class PlayerRespawnRandomizer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkfec188;
+    ::ll::UntypedStorage<8, 64> mUnkfec188;
     ::ll::UntypedStorage<4, 4>  mUnkef49ff;
     ::ll::UntypedStorage<4, 4>  mUnk79ea10;
     ::ll::UntypedStorage<4, 24> mUnk55ab1a;

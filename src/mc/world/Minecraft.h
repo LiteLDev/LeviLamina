@@ -148,11 +148,8 @@ public:
 
     MCAPI void configureGameTest(::Level& level, ::Experiments const& experiments);
 
-    MCAPI void disconnectClient(
-        ::NetworkIdentifier const&         id,
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage
-    );
+    MCAPI void
+    disconnectClientByReason(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason disconnectReason);
 
     MCAPI ::Level* getLevel() const;
 

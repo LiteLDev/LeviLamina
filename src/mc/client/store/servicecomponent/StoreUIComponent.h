@@ -93,11 +93,8 @@ public:
     // vIndex: 17
     virtual void _parseData(::Json::Value const&);
 
-    // vIndex: 19
-    virtual void _registerBindsAndEvents();
-
     // vIndex: 18
-    virtual void _registerBindsAndEvents(::StoreDataDrivenScreenController&);
+    virtual void _registerBindsAndEvents(::StoreDataDrivenScreenController&) = 0;
     // NOLINTEND
 
 public:

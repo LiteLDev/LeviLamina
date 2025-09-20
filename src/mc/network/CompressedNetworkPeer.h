@@ -15,7 +15,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>           mReceiveBuffer;
     ::ll::TypedStorage<1, 1, bool>                     mCompressionEnabled;
     ::ll::TypedStorage<1, 1, bool>                     mHybridCompressionEnabled;
-    ::ll::TypedStorage<4, 24, ::NetworkSettingOptions> mNetworkSettings;
+    ::ll::TypedStorage<4, 20, ::NetworkSettingOptions> mNetworkSettings;
     // NOLINTEND
 
 public:

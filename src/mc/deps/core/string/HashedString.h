@@ -18,8 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit HashedString(nullptr_t);
-
     MCNAPI HashedString(::HashedString&& rhs);
 
     MCNAPI HashedString(::HashedString const& rhs);
@@ -62,8 +60,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(nullptr_t);
-
     MCNAPI void* $ctor(::HashedString&& rhs);
 
     MCNAPI void* $ctor(::HashedString const& rhs);

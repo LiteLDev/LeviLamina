@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/network/services/signaling/ISignalingServiceConfigProvider.h"
 #include "mc/options/DiscoveryEnvironment.h"
 
@@ -37,11 +37,10 @@ public:
     virtual ~SignalingServiceDedicatedServerConfigProvider() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Url>> getUrl() /*override*/;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl() /*override*/;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::ISignalingServiceConfigProvider::Token>>
-    getAuthToken() /*override*/;
+    virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() /*override*/;
 
     // vIndex: 3
     virtual void reset() /*override*/;
@@ -70,10 +69,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Url>> $getUrl();
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Url> $getUrl();
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::ISignalingServiceConfigProvider::Token>>
-    $getAuthToken();
+    MCNAPI ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> $getAuthToken();
 
     MCNAPI void $reset();
     // NOLINTEND

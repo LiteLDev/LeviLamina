@@ -16,7 +16,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
+class BlockType;
 class Vec3;
 namespace ScriptModuleGameTest { class ScriptGameTestConnectivity; }
 namespace ScriptModuleGameTest { class ScriptGameTestSequence; }
@@ -55,7 +55,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockLegacy const*> _getBlockFromVariant(
+    MCNAPI ::std::optional<::BlockType const*> _getBlockFromVariant(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
             ::std::string> const& block
@@ -204,6 +204,8 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> runAfterDelay(int ticksToDelay, ::Scripting::Closure<void()> fn);
 
     MCNAPI ::Scripting::Result_deprecated<void> runAtTickTime(int tickTime, ::Scripting::Closure<void()> fn);
+
+    MCNAPI ::Scripting::Result<void, ::gametest::GameTestError> runOnFinish(::Scripting::Closure<void()> fn);
 
     MCNAPI ::Scripting::Result<void, ::gametest::GameTestError>
     setBlockPermutation(::ScriptModuleMinecraft::ScriptBlockPermutation const& block, ::Vec3 const& position);

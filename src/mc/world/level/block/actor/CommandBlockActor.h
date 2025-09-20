@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/block/CommandBlockMode.h"
 #include "mc/world/level/block/actor/BaseCommandBlock.h"
 #include "mc/world/level/block/actor/BlockActor.h"
@@ -18,7 +17,6 @@ class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class Player;
-class ProfanityContext;
 class SaveContext;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
@@ -63,26 +61,22 @@ public:
     // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 11
     virtual void onPlace(::BlockSource& region) /*override*/;
 
-    // vIndex: 26
+    // vIndex: 25
     virtual ::Bedrock::Safety::RedactableString const& getCustomName() const /*override*/;
 
     // vIndex: 27
-    virtual ::std::string const&
-    getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context) /*override*/;
-
-    // vIndex: 29
     virtual void setCustomName(::Bedrock::Safety::RedactableString const& name) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 44
     virtual bool _playerCanUpdate(::Player const& player) const /*override*/;
 
     // vIndex: 0
@@ -145,9 +139,6 @@ public:
     MCNAPI void $onPlace(::BlockSource& region);
 
     MCNAPI ::Bedrock::Safety::RedactableString const& $getCustomName() const;
-
-    MCNAPI ::std::string const&
-    $getFilteredCustomName(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> const& context);
 
     MCNAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
 

@@ -14,13 +14,14 @@ class Dimension;
 class IPreliminarySurfaceProvider;
 class Random;
 class StructureStart;
+struct BiomeIdType;
 // clang-format on
 
 class NetherFortressFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke6592a;
+    ::ll::UntypedStorage<8, 24> mUnkb6b0cc;
     // NOLINTEND
 
 public:
@@ -32,10 +33,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 3
+    virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
+
     // vIndex: 1
     virtual bool shouldAddHardcodedSpawnAreas() const /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -45,7 +49,7 @@ public:
         ::Dimension const&                   dimension
     ) /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&                         generator,
         ::BiomeSource const&                 biomeSource,
@@ -73,6 +77,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD ::gsl::span<::BiomeIdType const> $getRequiredBiomes() const;
+
     MCFOLD bool $shouldAddHardcodedSpawnAreas() const;
 
     MCAPI bool $isFeatureChunk(

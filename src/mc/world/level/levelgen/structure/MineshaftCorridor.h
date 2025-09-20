@@ -61,9 +61,6 @@ public:
     MCNAPI void
     _placeCobWeb(::BlockSource& region, ::BoundingBox const& chunkBB, ::Random& random, float p, int x0, int y1, int z);
 
-    MCNAPI void
-    _placeDoubleLowerOrUpperSupport(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y, int z);
-
     MCNAPI void _placeSupport(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,

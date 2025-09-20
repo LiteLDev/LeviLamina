@@ -31,6 +31,8 @@ public:
 
     MCNAPI static ::ItemTag const& Cooked();
 
+    MCNAPI static ::ItemTag const& CopperTier();
+
     MCNAPI static ::ItemTag const& CrimsonStems();
 
     MCNAPI static ::ItemTag const& DecoratedPotSherds();

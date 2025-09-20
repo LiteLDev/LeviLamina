@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/screens/models/IMinecraftScreenModel.h"
 #include "mc/client/services/download/IDlcBatcher.h"
+#include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/connection/DisconnectFailReason.h"
 
@@ -14,9 +16,13 @@ class IDlcBatchModel;
 class SkinHandle;
 class StoreCatalogRepository;
 struct PackIdVersion;
+struct StoreDataDrivenScreenParams;
+namespace Social { class IUserManager; }
 // clang-format on
 
-class MinecraftScreenModel : public ::IDlcBatcher, public ::std::enable_shared_from_this<::MinecraftScreenModel> {
+class MinecraftScreenModel : public ::IMinecraftScreenModel,
+                             public ::IDlcBatcher,
+                             public ::std::enable_shared_from_this<::MinecraftScreenModel> {
 public:
     // MinecraftScreenModel inner types declare
     // clang-format off
@@ -31,7 +37,7 @@ public:
         ::ll::UntypedStorage<8, 8>  mUnkb9c806;
         ::ll::UntypedStorage<8, 8>  mUnk8d2695;
         ::ll::UntypedStorage<8, 24> mUnk81dcb0;
-        ::ll::UntypedStorage<8, 24> mUnka54f50;
+        ::ll::UntypedStorage<8, 24> mUnk5380eb;
         ::ll::UntypedStorage<8, 8>  mUnk3264d3;
         ::ll::UntypedStorage<8, 8>  mUnk960ac9;
         // NOLINTEND
@@ -54,7 +60,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkd4f179;
     ::ll::UntypedStorage<8, 24> mUnk5898df;
     ::ll::UntypedStorage<8, 24> mUnkb8f778;
-    ::ll::UntypedStorage<8, 24> mUnkd7b250;
+    ::ll::UntypedStorage<8, 24> mUnk93fc9a;
     ::ll::UntypedStorage<8, 16> mUnk8c29e5;
     ::ll::UntypedStorage<8, 8>  mUnk3c4539;
     ::ll::UntypedStorage<1, 1>  mUnk5cfbc7;
@@ -67,7 +73,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk20edbb;
     ::ll::UntypedStorage<8, 16> mUnk4e8c10;
     ::ll::UntypedStorage<8, 8>  mUnkd89614;
-    ::ll::UntypedStorage<8, 16> mUnk347846;
+    ::ll::UntypedStorage<8, 16> mUnk866edf;
     ::ll::UntypedStorage<8, 8>  mUnk6a6185;
     ::ll::UntypedStorage<8, 16> mUnk41aee7;
     ::ll::UntypedStorage<8, 8>  mUnk430851;
@@ -89,17 +95,32 @@ public:
     // vIndex: 0
     virtual ~MinecraftScreenModel() /*override*/ = default;
 
-    // vIndex: 4
+    // vIndex: 8
     virtual void
     navigateToDisconnectScreen(::std::string const&, ::std::string const&, ::Connection::DisconnectFailReason);
 
+    // vIndex: 7
+    virtual void navigateToDisconnectScreen(::Connection::DisconnectFailReason);
+
     // vIndex: 5
-    virtual bool isInGame() const;
+    virtual bool tryNavigateToProfileScreen() /*override*/;
 
     // vIndex: 6
+    virtual bool tryNavigateToSafeZoneScreenOnFirstSignin() /*override*/;
+
+    // vIndex: 4
+    virtual void navigateToStoreDataDrivenScreen(::StoreDataDrivenScreenParams const&, bool) /*override*/;
+
+    // vIndex: 9
+    virtual bool isInGame() const;
+
+    // vIndex: 10
     virtual bool isSelectedSkinInitialized() const;
 
-    // vIndex: 7
+    // vIndex: 1
+    virtual ::SubClientId getSubClientId() const /*override*/;
+
+    // vIndex: 11
     virtual bool platformTTSExists() const;
 
     // vIndex: 3
@@ -111,22 +132,28 @@ public:
     // vIndex: 1
     virtual ::IDlcBatchModel& getDlcBatchModel(::std::vector<::PackIdVersion> const&) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 12
     virtual ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> getStoreCatalogRepository() const;
 
-    // vIndex: 9
+    // vIndex: 13
     virtual float getStoreNetworkFailureTimeout() const;
 
-    // vIndex: 10
+    // vIndex: 14
     virtual bool isAdhocEnabled() const;
 
-    // vIndex: 11
+    // vIndex: 15
     virtual bool isDirty() const;
 
-    // vIndex: 12
+    // vIndex: 16
     virtual ::SkinHandle const& getSelectedSkinHandle() const;
 
-    // vIndex: 13
+    // vIndex: 3
+    virtual ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> getUserManager() /*override*/;
+
+    // vIndex: 2
+    virtual ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const getUserManager() const /*override*/;
+
+    // vIndex: 17
     virtual ::std::string const& getLastPoppedScreenName() const;
     // NOLINTEND
 

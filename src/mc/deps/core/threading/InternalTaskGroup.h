@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/IBackgroundTaskOwner.h"
 #include "mc/deps/core/threading/TaskGroupState.h"
 #include "mc/platform/brstd/move_only_function.h"
@@ -20,14 +20,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue_DEPRECATED(
+    virtual ::Bedrock::Threading::Async<void> queue_DEPRECATED(
         ::TaskStartInfo const&,
         ::brstd::move_only_function<::TaskResult()>&&,
         ::std::function<void()>&&
     ) /*override*/;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    virtual ::Bedrock::Threading::Async<void>
     queueSync_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&) /*override*/;
 
     // vIndex: 3
@@ -52,10 +52,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    MCNAPI ::Bedrock::Threading::Async<void>
     $queue_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&, ::std::function<void()>&&);
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    MCNAPI ::Bedrock::Threading::Async<void>
     $queueSync_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&);
 
     MCNAPI void $taskRegister(::std::shared_ptr<::BackgroundTaskBase>);

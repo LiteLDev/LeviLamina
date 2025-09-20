@@ -11,10 +11,10 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
 class BlockPalette;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class BoundingBox;
 class CompoundTag;
 class LevelChunk;
@@ -102,7 +102,7 @@ public:
         int               priorityOffset
     );
 
-    MCAPI void eliminateDuplicatesOf(::BlockLegacy const& block);
+    MCAPI void eliminateDuplicatesOf(::BlockType const& block);
 
     MCAPI void finishInstaticking();
 

@@ -8,8 +8,8 @@ struct PackAssociations {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc835a2;
-    ::ll::UntypedStorage<8, 24> mUnkcd988a;
+    ::ll::UntypedStorage<8, 16> mUnk2108b3;
+    ::ll::UntypedStorage<8, 16> mUnkb07109;
     // NOLINTEND
 
 public:
@@ -17,18 +17,6 @@ public:
     PackAssociations& operator=(PackAssociations const&);
     PackAssociations(PackAssociations const&);
     PackAssociations();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~PackAssociations();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace PackCommand

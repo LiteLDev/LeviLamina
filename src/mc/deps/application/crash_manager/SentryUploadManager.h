@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/Copyable.h"
 #include "mc/platform/Result.h"
@@ -27,7 +27,7 @@ public:
     virtual ::std::string getParameters(::Bedrock::SessionInfo const&, ::Bedrock::PlatformRuntimeInfo const*) const = 0;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Copyable<::Bedrock::Result<void>>>>
+    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<void>>>
     uploadMinidump(::TaskGroup&, ::Core::Path const&, ::std::string const&) const = 0;
 
     // vIndex: 3

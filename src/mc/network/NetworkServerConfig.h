@@ -23,15 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkServerConfig(::NetworkServerConfig&&);
-
     MCAPI ~NetworkServerConfig();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::NetworkServerConfig&&);
     // NOLINTEND
 
 public:

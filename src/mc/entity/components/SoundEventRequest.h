@@ -144,6 +144,18 @@ public:
         bool                                   isGlobal
     );
 
+    MCNAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
+        ::ActorDataFlagComponent const&        actorFlags,
+        ::ActorDefinitionIdentifier const&     identifier,
+        ::ActorUniqueID                        actorId,
+        ::DimensionType                        dimension,
+        ::SharedTypes::Legacy::LevelSoundEvent type,
+        ::StrictEntityContext const&           entity,
+        ::SharedTypes::Legacy::ActorLocation   location,
+        int                                    data,
+        bool                                   isGlobal
+    );
+
     MCNAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
         ::ActorDataFlagComponent const&        actorFlags,
         ::ActorDefinitionIdentifier const&     identifier,

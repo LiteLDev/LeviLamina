@@ -19,6 +19,7 @@ public:
     // CameraInstruction inner types declare
     // clang-format off
     struct FadeInstruction;
+    struct FovInstruction;
     struct SetInstruction;
     struct TargetInstruction;
     // clang-format on
@@ -244,6 +245,29 @@ public:
         // NOLINTEND
     };
 
+    struct FovInstruction {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk92b57e;
+        ::ll::UntypedStorage<1, 1> mUnkc5385b;
+        ::ll::UntypedStorage<4, 4> mUnk8ff2a0;
+        ::ll::UntypedStorage<4, 4> mUnk21fb35;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FovInstruction& operator=(FovInstruction const&);
+        FovInstruction(FovInstruction const&);
+        FovInstruction();
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static ::Bedrock::Result<::CameraInstruction::FovInstruction> read(::ReadOnlyBinaryStream& stream);
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -252,6 +276,7 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                    mRemoveTarget;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                    mClear;
     ::ll::TypedStorage<4, 36, ::std::optional<::CameraInstruction::FadeInstruction>>   mFade;
+    ::ll::TypedStorage<4, 20, ::std::optional<::CameraInstruction::FovInstruction>>    mFieldOfView;
     // NOLINTEND
 
 public:
@@ -265,6 +290,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
     MCNAPI static ::Bedrock::Result<::CameraInstruction> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

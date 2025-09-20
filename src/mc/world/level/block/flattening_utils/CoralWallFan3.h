@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 namespace FlatteningUtils::CoralWallFan3 {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::vector<::BlockLegacy::RemovedStateCollection::SplitBlock> getDeadSplitStates(bool hangType);
+MCNAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getDeadSplitStates(bool hangType);
 
-MCNAPI ::std::vector<::BlockLegacy::RemovedStateCollection::SplitBlock> getHangTypeSplitStates(bool dead);
+MCNAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getHangTypeSplitStates(bool dead);
 // NOLINTEND
 
 } // namespace FlatteningUtils::CoralWallFan3

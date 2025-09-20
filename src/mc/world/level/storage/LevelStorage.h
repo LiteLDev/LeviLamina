@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/CompactionStatus.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/world/level/storage/StorageVersion.h"
 #include "mc/world/level/storage/db_helpers/Category.h"
 
@@ -71,15 +71,14 @@ public:
     virtual ::Core::PathBuffer<::std::string> const& getFullPath() const = 0;
 
     // vIndex: 11
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    virtual ::Bedrock::Threading::Async<void>
     saveData(::std::string const&, ::std::string&&, ::DBHelpers::Category) = 0;
 
     // vIndex: 10
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> saveData(::LevelStorageWriteBatch const&) = 0;
+    virtual ::Bedrock::Threading::Async<void> saveData(::LevelStorageWriteBatch const&) = 0;
 
     // vIndex: 12
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    deleteData(::std::string const&, ::DBHelpers::Category) = 0;
+    virtual ::Bedrock::Threading::Async<void> deleteData(::std::string const&, ::DBHelpers::Category) = 0;
 
     // vIndex: 13
     virtual void getStatistics(::std::string&, ::LevelStorage::StatsType) const = 0;
@@ -115,7 +114,7 @@ public:
     virtual void releaseSnapshot() = 0;
 
     // vIndex: 24
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> compactStorage() = 0;
+    virtual ::Bedrock::Threading::Async<void> compactStorage() = 0;
 
     // vIndex: 25
     virtual void syncAndSuspendStorage() = 0;
@@ -153,7 +152,7 @@ public:
 
     MCAPI void save(::Player& player);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    MCAPI ::Bedrock::Threading::Async<void>
     saveData(::std::string const& key, ::CompoundTag const& tag, ::DBHelpers::Category category);
     // NOLINTEND
 

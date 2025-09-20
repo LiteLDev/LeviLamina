@@ -6,7 +6,7 @@
 #include "mc/common/SubClientId.h"
 #include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/minecraft/threading/EnableQueueForMainThread.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/SharedAsync.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/ServiceReference.h"
 #include "mc/deps/core/utility/optional_ref.h"
@@ -20,6 +20,7 @@
 #include "mc/network/PacketViolationResponse.h"
 #include "mc/network/XboxLiveUserObserver.h"
 #include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/network/connection/DisconnectionStage.h"
 #include "mc/platform/MultiplayerServiceObserver.h"
 #include "mc/platform/UUID.h"
 #include "mc/platform/threading/Mutex.h"
@@ -68,6 +69,7 @@ class GameCallbacks;
 class GameSpecificNetEventCallback;
 class GameTestNetworkAdapter;
 class GameTestRequestPacket;
+class IEDUSystems;
 class ILevel;
 class IMinecraftApp;
 class IPacketSecurityController;
@@ -149,7 +151,6 @@ struct PackIdVersion;
 namespace Automation { class AutomationClient; }
 namespace Bedrock::Safety { class RedactableString; }
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }
-namespace Identity { class IEduAuth; }
 namespace ResourcePackPathLifetimeHelpers { class ResourcePackPathCache; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class MultiplayerServiceManager; }
@@ -241,10 +242,7 @@ public:
             uint64,
             ::std::unordered_map<::std::string, ::std::shared_ptr<::ResourcePackFileUploadManager>>>>
         mResourceUploadManagers;
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::gsl::not_null<::std::shared_ptr<::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>>>>
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::Bedrock::Threading::SharedAsync<void>>>>
         mPreviousUpload;
     ::ll::
         TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ResourcePackPathLifetimeHelpers::ResourcePackPathCache>>>
@@ -265,7 +263,7 @@ public:
     ::ll::TypedStorage<8, 40, ::ServiceReference<::Social::MultiplayerServiceManager>> mMultiplayerServiceManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeDefinitionListPacket const>>     mBiomeDefinitionListWithoutCSCG;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeDefinitionListPacket const>>     mBiomeDefinitionListWithCSCG;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Identity::IEduAuth>>                 mEduAuth;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IEDUSystems>>               mEduSystems;
     ::ll::TypedStorage<8, 32, ::std::string>                                           mServerId;
     ::ll::TypedStorage<8, 32, ::std::string>                                           mScenarioId;
     ::ll::TypedStorage<8, 32, ::std::string>                                           mWorldId;
@@ -345,6 +343,7 @@ public:
     virtual void onDisconnect(
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
+        ::Connection::DisconnectionStage const   disconnectStage,
         ::std::string const&                     message,
         bool                                     skipMessage,
         ::std::string const&                     telemetryOverride
@@ -455,7 +454,7 @@ public:
     virtual void handle(::NetworkIdentifier const& source, ::MapInfoRequestPacket const& packet) /*override*/;
 
     // vIndex: 186
-    virtual void handle(::NetworkIdentifier const& source, ::MobEquipmentPacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::std::shared_ptr<::MobEquipmentPacket> packet) /*override*/;
 
     // vIndex: 101
     virtual void handle(::NetworkIdentifier const& source, ::ModalFormResponsePacket const& packet) /*override*/;
@@ -767,6 +766,9 @@ public:
     );
 
     MCAPI void
+    disconnectClientByReason(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason disconnectReason);
+
+    MCAPI void
     engineCancelResponseHelper(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet);
 
     MCAPI void engineDownloadingFinishedResponseHelper(
@@ -811,8 +813,6 @@ public:
         ::CommandBlockUpdatePacket const&          packet,
         ::Bedrock::Safety::RedactableString const* redactedName
     );
-
-    MCAPI static void handle(::ServerPlayer* player, ::std::shared_ptr<::InventoryTransactionPacket> packet);
 
     MCAPI static void handle(::Player* player, ::PlayerAuthInputPacket const& packet);
     // NOLINTEND
@@ -902,6 +902,7 @@ public:
     MCAPI void $onDisconnect(
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
+        ::Connection::DisconnectionStage const   disconnectStage,
         ::std::string const&                     message,
         bool                                     skipMessage,
         ::std::string const&                     telemetryOverride
@@ -976,7 +977,7 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::MapInfoRequestPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::MobEquipmentPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::MobEquipmentPacket> packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::ModalFormResponsePacket const& packet);
 

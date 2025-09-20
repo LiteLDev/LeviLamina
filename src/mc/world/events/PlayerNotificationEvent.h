@@ -11,6 +11,7 @@ struct PlayerAddEvent;
 struct PlayerAddExpEvent;
 struct PlayerAddLevelEvent;
 struct PlayerArmorExchangeEvent;
+struct PlayerCloseContainerEvent;
 struct PlayerDamageEvent;
 struct PlayerDestroyBlockEvent;
 struct PlayerDimensionChangeAfterEvent;
@@ -62,6 +63,7 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
                                      ::PlayerInputModeChangeEvent const,
                                      ::PlayerInitialSpawnEvent const,
                                      ::PlayerOpenContainerEvent const,
+                                     ::PlayerCloseContainerEvent const,
                                      ::PlayerShootArrowEvent const,
                                      ::PlayerRespawnEvent const,
                                      ::PlayerStopLoadingEvent const,

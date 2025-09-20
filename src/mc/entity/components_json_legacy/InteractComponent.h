@@ -37,14 +37,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _spawnParticle(
-        ::BlockSource&       region,
-        ::Actor&             owner,
-        ::Player&            player,
-        ::ItemStack const&   usedItemCopy,
-        ::Interaction const& description
-    );
-
     MCNAPI static void
     _tryDropItem(::BlockSource& region, ::Actor& owner, ::ItemSlotInfo const& itemSlotInfo, float yOffset);
 

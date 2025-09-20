@@ -10,8 +10,9 @@
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/resource/ResourceLocation.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/resources/IResourcePackRepository.h"
 
@@ -29,12 +30,14 @@ class PackSettingsFactory;
 class PackSource;
 class PackSourceFactory;
 class PackSourceReport;
+class RepositoryPacks;
 class ResourcePack;
 class ResourcePackStack;
 class SemVersion;
 class TaskGroup;
 struct InvalidPacksFilterGroup;
 struct PackInstanceId;
+struct RepositoryPackTuple;
 namespace Core { class FilePathManager; }
 namespace Core { class Path; }
 namespace PackCommand { class IPackCommandPipeline; }
@@ -66,7 +69,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager>> mFilePathManager;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ResourcePack>>>       mAllResourcePacks;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::RepositoryPacks>>>  mAllResourcePacks;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>                mPackSource;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>                mCachePackSource;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>                mWorldPackSource;
@@ -89,13 +92,12 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackSettingsFactory>>                mPackSettingsFactory;
     ::ll::TypedStorage<8, 8, ::PackSourceFactory&>                                    mPackSourceFactory;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PackCommand::IPackCommandPipeline>> mCommands;
-    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::ResourcePack*)>>> mRemoveResourcePackCallback;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                             mInitTaskGroup;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                               mInitializeMutex;
-    ::ll::TypedStorage<1, 1, bool>                                                       mCancelInitialization;
-    ::ll::TypedStorage<1, 1, bool>                                                       mInitialized;
-    ::ll::TypedStorage<1, 1, bool>                                                       mReloadUserPacksRequested;
-    ::ll::TypedStorage<1, 1, bool>                                                       mRefreshPacksRequested;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                                   mInitTaskGroup;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                     mInitializeMutex;
+    ::ll::TypedStorage<1, 1, bool>                                                             mCancelInitialization;
+    ::ll::TypedStorage<1, 1, bool>                                                             mInitialized;
+    ::ll::TypedStorage<1, 1, bool>               mReloadUserPacksRequested;
+    ::ll::TypedStorage<1, 1, bool>               mRefreshPacksRequested;
     ::ll::TypedStorage<8, 24, ::ContentIdentity> mCurrentPremiumWorldTemplateIdentity;
     // NOLINTEND
 
@@ -143,7 +145,8 @@ public:
     virtual ::ResourcePack* getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const /*override*/;
 
     // vIndex: 9
-    virtual ::ResourcePack* getResourcePackInPath(::Core::Path const& path) const /*override*/;
+    virtual ::Bedrock::Threading::Async<::std::shared_ptr<::ResourcePack>>
+    getResourcePackInPath(::Core::Path const& path) const /*override*/;
 
     // vIndex: 10
     virtual bool isResourcePackLoaded(::PackIdVersion const& identity, ::PackOrigin const& location) /*override*/;
@@ -225,7 +228,7 @@ public:
     virtual void refreshPacks() /*override*/;
 
     // vIndex: 34
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> refreshPacksAsync() /*override*/;
+    virtual ::Bedrock::Threading::Async<void> refreshPacksAsync() /*override*/;
 
     // vIndex: 35
     virtual void requestReloadUserPacks() /*override*/;
@@ -280,13 +283,6 @@ public:
     virtual void untrackInvalidPack(::ResourceLocation const& packLocation) /*override*/;
 
     // vIndex: 52
-    virtual void
-    registerResourcePackRemovedCallback(void* ptr, ::std::function<void(::ResourcePack*)> callback) /*override*/;
-
-    // vIndex: 53
-    virtual void unregisterResourcePackRemovedCallback(void* ptr) /*override*/;
-
-    // vIndex: 54
     virtual bool isInitialized() const /*override*/;
     // NOLINTEND
 
@@ -294,6 +290,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ResourcePackRepository(
+        ::gsl::not_null<::std::shared_ptr<::RepositoryPacks>>                 repositoryPacks,
         ::IMinecraftEventing&                                                 eventing,
         ::PackManifestFactory&                                                manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> const& contentAccessibility,
@@ -302,8 +299,6 @@ public:
         ::PackSourceFactory&                                                  packSourceFactory,
         bool                                                                  initAsync
     );
-
-    MCAPI bool _addResourcePackIfNotAlreadyAdded(::Pack& pack);
 
     MCAPI void _findVanillaPacks();
 
@@ -317,13 +312,7 @@ public:
 
     MCAPI void _loadPacks();
 
-    MCAPI bool _packExists(::mce::UUID const& packId, ::SemVersion const& version, ::PackOrigin origin) const;
-
     MCAPI void _reloadUserPacks();
-
-    MCAPI bool _removePack(::ResourceLocation const& packLocation, bool unregisterDeleteCallback);
-
-    MCAPI void _triggerRemoveResourcePackCallback(::ResourcePack* resourcePack);
 
     MCAPI void _validateDependencies();
     // NOLINTEND
@@ -331,6 +320,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::optional<::RepositoryPackTuple>
+    _addResourcePackIfNotAlreadyAdded(::gsl::not_null<::std::shared_ptr<::Pack>> pack, ::RepositoryPacks& packs);
+
+    MCAPI static bool
+    _packExists(::RepositoryPacks& packs, ::mce::UUID const& packId, ::SemVersion const& version, ::PackOrigin origin);
+
+    MCAPI static void _removePacksIf(
+        ::brstd::function_ref<bool(::ResourcePack const&)> callback,
+        ::RepositoryPacks&                                 packs,
+        ::TaskGroup&                                       taskGroup,
+        ::PackCommand::IPackCommandPipeline&               commands
+    );
+
     MCAPI static ::PackSourceReport loadAndUpgradePacks(
         ::PackSource&                        packSource,
         ::IPackManifestFactory&              manifestFactory,
@@ -349,6 +351,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
+        ::gsl::not_null<::std::shared_ptr<::RepositoryPacks>>                 repositoryPacks,
         ::IMinecraftEventing&                                                 eventing,
         ::PackManifestFactory&                                                manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> const& contentAccessibility,
@@ -389,7 +392,8 @@ public:
 
     MCAPI ::ResourcePack* $getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const;
 
-    MCAPI ::ResourcePack* $getResourcePackInPath(::Core::Path const& path) const;
+    MCAPI ::Bedrock::Threading::Async<::std::shared_ptr<::ResourcePack>>
+    $getResourcePackInPath(::Core::Path const& path) const;
 
     MCAPI bool $isResourcePackLoaded(::PackIdVersion const& identity, ::PackOrigin const& location);
 
@@ -445,15 +449,15 @@ public:
 
     MCAPI void $refreshPacks();
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> $refreshPacksAsync();
+    MCAPI ::Bedrock::Threading::Async<void> $refreshPacksAsync();
 
     MCAPI void $requestReloadUserPacks();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> $getKeyProvider() const;
 
-    MCFOLD ::PackManifestFactory& $getPackManifestFactory();
+    MCAPI ::PackManifestFactory& $getPackManifestFactory();
 
-    MCFOLD ::PackSettingsFactory& $getPackSettingsFactory() const;
+    MCAPI ::PackSettingsFactory& $getPackSettingsFactory() const;
 
     MCAPI ::PackSourceFactory& $getPackSourceFactory();
 
@@ -480,10 +484,6 @@ public:
     MCAPI void $postDeletePack(::ResourceLocation const& packLocation);
 
     MCAPI void $untrackInvalidPack(::ResourceLocation const& packLocation);
-
-    MCAPI void $registerResourcePackRemovedCallback(void* ptr, ::std::function<void(::ResourcePack*)> callback);
-
-    MCAPI void $unregisterResourcePackRemovedCallback(void* ptr);
 
     MCAPI bool $isInitialized() const;
     // NOLINTEND

@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/options/EducationServicesEnvironment.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/debug/log/LogLevel.h"
 #include "mc/deps/core/file/file_system/FileType.h"
+#include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/sem_ver/SemVersionBase.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/json/ValueType.h"
@@ -18,6 +18,7 @@
 #include "mc/external/libsrtp/srtp_err_status_t.h"
 #include "mc/network/packet/AgentActionType.h"
 #include "mc/options/DiscoveryEnvironment.h"
+#include "mc/options/EducationServicesEnvironment.h"
 #include "mc/util/HudElement.h"
 #include "mc/util/gltf/Accessor.h"
 #include "mc/util/gltf/Image.h"
@@ -48,9 +49,9 @@ class ActorOwnerComponent;
 class Biome;
 class BiomeArea;
 class Block;
-class BlockLegacy;
 class BlockPos;
 class BlockState;
+class BlockType;
 class BoundingBox;
 class BribeableComponent;
 class CircuitComponentList;
@@ -59,16 +60,20 @@ class CircuitTrackingInfo;
 class DefinitionTrigger;
 class Dimension;
 class ExpressionNode;
+class FeatureRegistry;
 class GatheringServerInfo;
 class HashedString;
 class I18n;
 class IFileAccess;
 class InternalTaskGroup;
 class ItemInstance;
+class JigsawStructureRegistry;
 class LevelData;
 class ListTag;
 class RecipeIngredient;
 class SemVersionConstant;
+class StructureManager;
+class StructurePoolElement;
 class SubChunkBrightnessStorage;
 class ThirdPartyInfo;
 class WorkerPool;
@@ -101,6 +106,8 @@ namespace Core { class Result; }
 namespace Json { class Value; }
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct RakPeerConfiguration; }
+namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool { struct EmptyPoolElement; }
+namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool { struct SinglePoolElement; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class UUID; }
 // clang-format on
@@ -154,11 +161,15 @@ MCAPI long Mock_Internal_ReadRequestBodyIntoMemory(
 
 MCAPI ::std::optional<::NetherNet::LogSeverity> NetherNetLogSeverityFromString(::std::string const& str);
 
+MCAPI ::PackType PackTypeFromString(::std::string const& value);
+
 MCAPI void PlatformBedrockLogOut(uint _priority, char const* buf, uint64 nullTerminatorPos);
 
 MCAPI ::std::string StringFromCreativeItemCategory(::CreativeItemCategory category);
 
 MCAPI ::std::string StringFromMaterialType(::MaterialType const& materialType);
+
+MCAPI ::std::string const& StringFromPackType(::PackType value);
 
 MCAPI ::SharedTypes::Legacy::UseAnimation UseAnimationFromString(::std::string const& str);
 
@@ -212,7 +223,7 @@ _parseLayersV5(::Json::Value const& root, ::LevelData const& levelData);
 MCAPI ::std::optional<::std::vector<::BlockLayer>>
 _parseLayersV6(::Json::Value const& root, ::LevelData const& levelData, ::WorldVersion worldVersion);
 
-MCAPI ::std::unique_ptr<::ListTag> _saveBlockList(::std::vector<::BlockLegacy const*> const& blockList);
+MCAPI ::std::unique_ptr<::ListTag> _saveBlockList(::std::vector<::BlockType const*> const& blockList);
 
 MCAPI void
 _tickBribeableComponent(::ActorOwnerComponent& actorOwnerComponent, ::BribeableComponent& bribeableComponent);
@@ -286,6 +297,29 @@ MCAPI void forEachEntityType(
 
 MCAPI uint64 fread(void* buffer, uint64 size, uint64 count, ::Core::File& file);
 
+MCAPI ::std::tuple<::std::string, ::std::unique_ptr<::StructurePoolElement>> from(
+    ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::EmptyPoolElement const&,
+    ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+    ::JigsawStructureRegistry&,
+    ::FeatureRegistry const&
+);
+
+MCAPI ::std::tuple<::std::string, ::std::unique_ptr<::StructurePoolElement>> from(
+    ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const& element,
+    ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                              structureManager,
+    ::JigsawStructureRegistry&                                                     registry,
+    ::FeatureRegistry const&
+);
+
+MCAPI ::std::tuple<::std::string, ::std::unique_ptr<::StructurePoolElement>> from(
+    ::std::variant<
+        ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::EmptyPoolElement,
+        ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement> const& element,
+    ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structures,
+    ::JigsawStructureRegistry&                                                          registry,
+    ::FeatureRegistry const&                                                            features
+);
+
 MCAPI int fseek(::Core::File& file, int64 offset, int origin);
 
 MCAPI ::std::string gatherTypeStrings(::std::vector<::Json::ValueType> const& types);
@@ -338,11 +372,6 @@ MCAPI bool operator<(
 MCAPI bool operator<(
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
     ::SemVersionBase<::std::string_view> const&               rhs
-);
-
-MCFOLD bool operator<=(
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
-    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
 );
 
 MCAPI bool operator==(::DefinitionTrigger const& a, ::DefinitionTrigger const& b);

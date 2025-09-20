@@ -37,10 +37,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::MessToken> fromString(::std::string const& tokenString);
+    MCNAPI static ::std::optional<::MessToken>
+    fromString(::std::string const& tokenString, ::std::vector<::std::string> const& messPublicKeys);
 
     MCNAPI static ::std::optional<::std::pair<::Json::Value, ::MessToken>>
-    unpackChainIfTrusted(::WebToken const& selfSignedToken);
+    unpackChainIfTrusted(::WebToken const& selfSignedToken, ::std::vector<::std::string> const& messPublicKeys);
     // NOLINTEND
 
 public:

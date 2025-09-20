@@ -7,9 +7,11 @@
 
 // auto generated forward declare list
 // clang-format off
+struct CameraActivationEvent;
 struct CameraClearInstructionEvent;
 struct CameraFadeInstructionEvent;
 struct CameraRemoveTargetInstructionEvent;
+struct CameraSetFovInstructionEvent;
 struct CameraSetInstructionEvent;
 struct CameraTargetInstructionEvent;
 // clang-format on

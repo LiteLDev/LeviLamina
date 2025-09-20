@@ -86,7 +86,7 @@ public:
     // vIndex: 95
     virtual bool supportsVibration() const /*override*/;
 
-    // vIndex: 177
+    // vIndex: 176
     virtual bool supportsFliteTTS() const /*override*/;
 
     // vIndex: 68
@@ -140,7 +140,7 @@ public:
     // vIndex: 16
     virtual ::BuildPlatform getBuildPlatform() const /*override*/;
 
-    // vIndex: 178
+    // vIndex: 177
     virtual ::std::unique_ptr<::SecureStorage> getSecureStorage() /*override*/;
 
     // vIndex: 1
@@ -173,16 +173,16 @@ public:
     // vIndex: 155
     virtual void setFullscreenMode(::FullscreenMode const fullscreenMode) /*override*/;
 
-    // vIndex: 210
+    // vIndex: 209
     virtual bool isWebviewSupported() const /*override*/;
 
-    // vIndex: 211
+    // vIndex: 210
     virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&& args) const /*override*/;
 
-    // vIndex: 214
+    // vIndex: 213
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
-    // vIndex: 215
+    // vIndex: 214
     virtual ::std::variant<::HWND__*, ::std::monostate> getRenderSurfaceParameters() const /*override*/;
 
     // vIndex: 108
@@ -191,10 +191,10 @@ public:
     // vIndex: 36
     virtual void hideSplashScreen() /*override*/;
 
-    // vIndex: 246
+    // vIndex: 245
     virtual int getPlatformDpi() const /*override*/;
 
-    // vIndex: 247
+    // vIndex: 246
     virtual ::UIScalingRules getPlatformUIScalingRules() const /*override*/;
     // NOLINTEND
 

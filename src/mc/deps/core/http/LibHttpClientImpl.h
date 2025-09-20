@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/http/DispatcherProcess.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,7 +46,7 @@ public:
     virtual void shutdown() /*override*/;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response>
     send(::Bedrock::Http::Request&& request) /*override*/;
     // NOLINTEND
 
@@ -58,10 +58,10 @@ public:
     MCNAPI ::std::optional<::std::chrono::seconds>
     _checkRetryPolicy(::gsl::not_null<::HC_CALL*> call, ::Bedrock::Http::Response const& httpResponse);
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response>
     _convertResponse(::gsl::not_null<::HC_CALL*> callHandle);
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response>
     _retry(::gsl::not_null<::HC_CALL*> callHandle, ::std::chrono::seconds delay);
 
     MCNAPI ::std::shared_ptr<::Bedrock::Http::Internal::IRequestBody>
@@ -120,8 +120,7 @@ public:
 
     MCNAPI void $shutdown();
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
-    $send(::Bedrock::Http::Request&& request);
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> $send(::Bedrock::Http::Request&& request);
     // NOLINTEND
 
 public:

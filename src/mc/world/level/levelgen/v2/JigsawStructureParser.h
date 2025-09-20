@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class FeatureRegistry;
 class IWorldRegistriesProvider;
 class JigsawStructureRegistry;
 class StructureManager;
@@ -51,7 +52,8 @@ public:
     MCNAPI static ::std::vector<::StructureTemplatePool> prepareTemplatePoolsData(
         ::std::vector<::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents> const& templatePoolsData,
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                    structureManager,
-        ::JigsawStructureRegistry&                                                           registry
+        ::JigsawStructureRegistry&                                                           registry,
+        ::FeatureRegistry const&                                                             features
     );
 
     MCNAPI static ::br::worldgen::JigsawStructure processJigsawDefinition(
@@ -67,7 +69,8 @@ public:
     MCNAPI static ::StructureTemplatePool processTemplatePool(
         ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const& templatePool,
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                     structureManager,
-        ::JigsawStructureRegistry&                                            registry
+        ::JigsawStructureRegistry&                                            registry,
+        ::FeatureRegistry const&                                              features
     );
     // NOLINTEND
 };

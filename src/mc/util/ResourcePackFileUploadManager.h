@@ -5,7 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackType.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
+#include "mc/deps/core/threading/SharedAsync.h"
 #include "mc/util/FileUploadManager.h"
 
 // auto generated forward declare list
@@ -24,7 +25,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkdd11ab;
     ::ll::UntypedStorage<8, 8>  mUnk42937c;
-    ::ll::UntypedStorage<8, 16> mUnk9f863d;
+    ::ll::UntypedStorage<8, 16> mUnk282ca1;
     // NOLINTEND
 
 public:
@@ -56,10 +57,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ResourcePackFileUploadManager(
-        ::TaskGroup&                                                                   taskGroup,
-        ::std::shared_ptr<::IFileChunkUploader>                                        fileUploader,
-        ::std::shared_ptr<::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>> previousUpload,
-        ::ResourcePackPathLifetimeHelpers::ResourcePackPathCache&                      resourcePackPathCache
+        ::TaskGroup&                                               taskGroup,
+        ::std::shared_ptr<::IFileChunkUploader>                    fileUploader,
+        ::std::shared_ptr<::Bedrock::Threading::SharedAsync<void>> previousUpload,
+        ::ResourcePackPathLifetimeHelpers::ResourcePackPathCache&  resourcePackPathCache
     );
 
     MCAPI void _addZipPath(::Core::PathBuffer<::std::string> const& resourceZipPath);
@@ -79,7 +80,7 @@ public:
         ::Json::Value const&                     uploadOptions
     );
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> _uploadResourcePackFolder(
+    MCAPI ::Bedrock::Threading::Async<void> _uploadResourcePackFolder(
         ::std::string const&                     resourcePack,
         ::ResourceLocation const&                resourcePackLocation,
         ::Core::PathBuffer<::std::string> const& resourceZipPath,
@@ -100,10 +101,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(
-        ::TaskGroup&                                                                   taskGroup,
-        ::std::shared_ptr<::IFileChunkUploader>                                        fileUploader,
-        ::std::shared_ptr<::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>> previousUpload,
-        ::ResourcePackPathLifetimeHelpers::ResourcePackPathCache&                      resourcePackPathCache
+        ::TaskGroup&                                               taskGroup,
+        ::std::shared_ptr<::IFileChunkUploader>                    fileUploader,
+        ::std::shared_ptr<::Bedrock::Threading::SharedAsync<void>> previousUpload,
+        ::ResourcePackPathLifetimeHelpers::ResourcePackPathCache&  resourcePackPathCache
     );
     // NOLINTEND
 

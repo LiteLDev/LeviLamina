@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/network/packet/SetTitlePacket.h"
+#include "mc/network/packet/SetTitlePacketPayload.h"
 #include "mc/server/commands/CommandSelectorResults.h"
 #include "mc/server/commands/standard/MessagingCommand.h"
 
@@ -59,7 +59,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool _sendTitlePacketTextObject(
-        ::SetTitlePacket::TitleType               type,
+        ::SetTitlePacketPayload::TitleType        type,
         ::CommandOrigin const&                    origin,
         ::CommandOutput&                          output,
         ::CommandSelectorResults<::Player> const& targets

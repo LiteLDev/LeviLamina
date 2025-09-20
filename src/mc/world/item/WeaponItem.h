@@ -15,6 +15,7 @@ class ItemStackBase;
 class Level;
 class Mob;
 class Player;
+struct ItemTier;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
@@ -22,8 +23,8 @@ class WeaponItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                 mDamage;
-    ::ll::TypedStorage<8, 8, ::Item::Tier const&> mTier;
+    ::ll::TypedStorage<4, 4, int>               mDamage;
+    ::ll::TypedStorage<8, 8, ::ItemTier const&> mTier;
     // NOLINTEND
 
 public:
@@ -48,7 +49,7 @@ public:
     virtual bool isHandEquipped() const /*override*/;
 
     // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     // vIndex: 32
     virtual bool canDestroySpecial(::Block const& block) const /*override*/;
@@ -98,7 +99,7 @@ public:
 
     MCFOLD bool $isHandEquipped() const;
 
-    MCFOLD ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCFOLD ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
     MCAPI bool $canDestroySpecial(::Block const& block) const;
 

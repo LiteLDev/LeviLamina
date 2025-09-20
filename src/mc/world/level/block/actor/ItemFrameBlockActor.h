@@ -57,19 +57,19 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 21
+    // vIndex: 20
     virtual float getShadowRadius(::BlockSource&) const /*override*/;
 
     // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -79,9 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ItemFrameBlockActor(::BlockPos pos);
-
-    MCAPI ItemFrameBlockActor(::BlockPos pos, ::BlockActorType type, ::std::string const& id);
+    MCAPI ItemFrameBlockActor(::BlockPos const& pos, ::BlockActorType type);
 
     MCAPI void _checkMapRemoval(::BlockSource& region, ::ItemInstance& item);
 
@@ -106,9 +104,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos pos);
-
-    MCAPI void* $ctor(::BlockPos pos, ::BlockActorType type, ::std::string const& id);
+    MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType type);
     // NOLINTEND
 
 public:

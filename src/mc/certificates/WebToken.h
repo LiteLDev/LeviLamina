@@ -24,12 +24,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    WebToken();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI WebToken();
+
     MCNAPI explicit WebToken(::std::string token);
 
     MCNAPI void _parse(::Json::Value& value, ::std::string const& data);
@@ -58,6 +56,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::std::string token);
     // NOLINTEND
 

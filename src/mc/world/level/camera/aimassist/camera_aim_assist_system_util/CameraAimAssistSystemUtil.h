@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/network/packet/CameraAimAssistPacket.h"
+#include "mc/network/packet/CameraAimAssistPacketPayload.h"
 #include "mc/platform/Result.h"
 #include "mc/world/level/camera/aimassist/camera_aim_assist/TargetMode.h"
 
@@ -22,7 +22,7 @@ namespace CameraAimAssistSystemUtil {
 // NOLINTBEGIN
 MCNAPI void clearAimAssistForServerPlayer(::ServerPlayer& player);
 
-MCNAPI ::std::optional<::CameraAimAssistPacket::TargetMode>
+MCNAPI ::std::optional<::CameraAimAssistPacketPayload::TargetMode>
 getPacketTargetMode(::CameraAimAssist::TargetMode targetMode);
 
 MCNAPI ::Bedrock::Result<
@@ -36,7 +36,8 @@ setAimAssistForServerPlayer(
     ::HashedString const&         presetId,
     ::CameraAimAssist::TargetMode targetMode,
     ::Vec2 const&                 viewAngle,
-    float                         distance
+    float                         distance,
+    bool                          showDebugRender
 );
 // NOLINTEND
 

@@ -18,6 +18,7 @@ class Dimension;
 class IPreliminarySurfaceProvider;
 class Random;
 class StructureStart;
+struct BiomeIdType;
 // clang-format on
 
 class StructureFeature {
@@ -58,6 +59,9 @@ public:
     virtual bool shouldPostProcessMobs() const;
 
     // vIndex: 3
+    virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const;
+
+    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -68,7 +72,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    // vIndex: 4
+    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&,
         ::Random&,
@@ -78,7 +82,7 @@ public:
         ::Dimension const&
     ) = 0;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&,
         ::BiomeSource const&,
@@ -87,7 +91,7 @@ public:
         ::IPreliminarySurfaceProvider const&
     ) = 0;
 
-    // vIndex: 6
+    // vIndex: 7
     virtual ::StructureStart* getStructureAt(int cellX, int cellY, int cellZ);
     // NOLINTEND
 
@@ -170,6 +174,8 @@ public:
     MCFOLD bool $shouldAddHardcodedSpawnAreas() const;
 
     MCFOLD bool $shouldPostProcessMobs() const;
+
+    MCFOLD ::gsl::span<::BiomeIdType const> $getRequiredBiomes() const;
 
     MCAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,

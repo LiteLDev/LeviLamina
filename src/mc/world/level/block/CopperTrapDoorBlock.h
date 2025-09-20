@@ -16,10 +16,10 @@ class CopperTrapDoorBlock : public ::CopperBlock<::TrapDoorBlock> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 146
+    // vIndex: 147
     virtual void _useTrapDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0

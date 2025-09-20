@@ -60,18 +60,21 @@ public:
     virtual void dataFile(::std::string const&, bool const, ::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 11
-    virtual bool encryptConnection(::std::string const&, ::CodeBuilder::EncryptionRequest const&) = 0;
+    virtual void dataFilePath(::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 12
-    virtual void subscribe(::std::string const&, ::std::string const&) = 0;
+    virtual bool encryptConnection(::std::string const&, ::CodeBuilder::EncryptionRequest const&) = 0;
 
     // vIndex: 13
-    virtual void unsubscribe(::std::string const&, ::std::string const&) = 0;
+    virtual void subscribe(::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 14
-    virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const&) = 0;
+    virtual void unsubscribe(::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 15
+    virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const&) = 0;
+
+    // vIndex: 16
     virtual bool tutorialCached(::std::string const&) = 0;
     // NOLINTEND
 
