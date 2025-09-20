@@ -130,7 +130,8 @@ class HitResult Actor::traceRay(
             false,
             false,
             nullptr,
-            blockCheckFunction
+            blockCheckFunction,
+            false
         );
         if (result) {
             tMax = static_cast<float>((origin - result.mPos).length());

@@ -46,8 +46,6 @@ public:
     // NOLINTBEGIN
     MCAPI HitResult();
 
-    MCAPI HitResult(::HitResult&&);
-
     MCAPI HitResult(::HitResult const&);
 
     MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);

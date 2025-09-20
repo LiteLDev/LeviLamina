@@ -14,7 +14,6 @@
 #include "ll/api/service/Bedrock.h"
 
 void BlockActor::refresh(optional_ref<class BlockSource> blockSource) {
-    mChanged = true;
     if (!blockSource) {
         return;
     }

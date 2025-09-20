@@ -12,9 +12,7 @@ public:
 
     [[nodiscard]] constexpr StringTag() = default;
 
-    [[nodiscard]] constexpr StringTag& operator=(StringTag const&);
-    StringTag(StringTag const&);
-    StringTag(std::string str) : std::string(std::move(str)) {}
+    [[nodiscard]] constexpr StringTag(std::string str) : std::string(std::move(str)) {}
     [[nodiscard]] constexpr StringTag(std::string_view str) : std::string(str) {}
     template <size_t N>
     [[nodiscard]] constexpr StringTag(char const (&str)[N]) : std::string(str) {}

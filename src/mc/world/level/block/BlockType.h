@@ -167,21 +167,6 @@ public:
         ::ll::TypedStorage<8, 48, ::HashedString> mFullName;
         ::ll::TypedStorage<8, 48, ::HashedString> mPreFlatteningName;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        NameInfo& operator=(NameInfo const&);
-        NameInfo(NameInfo const&);
-        NameInfo();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::BlockType::NameInfo& operator=(::BlockType::NameInfo&&);
-
-        MCNAPI ~NameInfo();
-        // NOLINTEND
-
     public:
         // destructor thunk
         // NOLINTBEGIN
@@ -373,8 +358,8 @@ public:
 public:
     LLNDAPI std::string const& getTypeName() const;
 
-    LLNDAPI static optional_ref<BlockLegacy>       tryGetFromRegistry(std::string_view name);
-    LLNDAPI static optional_ref<BlockLegacy const> tryGetFromRegistry(uint legacyBlockID);
+    LLNDAPI static optional_ref<BlockType>         tryGetFromRegistry(std::string_view name);
+    LLNDAPI static optional_ref<BlockType const>   tryGetFromRegistry(uint legacyBlockID);
 
 public:
     // member variables
