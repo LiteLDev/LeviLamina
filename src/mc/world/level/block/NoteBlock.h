@@ -18,7 +18,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class NoteBlock : public ::ActorBlockBase<::BlockType> {
+class NoteBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN

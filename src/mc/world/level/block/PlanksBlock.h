@@ -35,15 +35,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::array<::std::string, 10> const& WOOD_NAMES();
+    MCAPI static ::std::array<::std::string, 10> const& WOOD_NAMES();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $buildDescriptionId(::Block const&) const;
+    MCAPI ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

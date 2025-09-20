@@ -22,7 +22,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class PistonBlock : public ::ActorBlockBase<::BlockType> {
+class PistonBlock : public ::ActorBlock {
 public:
     // PistonBlock inner types define
     enum class Type : int {

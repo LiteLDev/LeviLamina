@@ -27,9 +27,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface() const;
 
-    MCNAPI ::Block const* $tryGetInfested(::Block const& block) const;
+    MCAPI ::Block const* $tryGetInfested(::Block const& block) const;
     // NOLINTEND
 
 public:

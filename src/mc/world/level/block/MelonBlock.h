@@ -24,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canConnect(::Block const&, uchar, ::Block const&) const;
+    MCFOLD bool $canConnect(::Block const&, uchar, ::Block const&) const;
     // NOLINTEND
 
 public:

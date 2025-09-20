@@ -17,7 +17,7 @@ class IConstBlockSource;
 struct Brightness;
 // clang-format on
 
-class TrialSpawnerBlock : public ::ActorBlockBase<::BlockType> {
+class TrialSpawnerBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

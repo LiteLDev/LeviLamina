@@ -24,7 +24,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class ChestBlock : public ::ActorBlockBase<::BlockType> {
+class ChestBlock : public ::ActorBlock {
 public:
     // ChestBlock inner types define
     enum class ChestType : uchar {

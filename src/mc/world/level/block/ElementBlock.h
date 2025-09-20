@@ -47,31 +47,31 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ElementInfo getElementInfo(::ElementType e);
+    MCAPI static ::ElementInfo getElementInfo(::ElementType e);
 
-    MCNAPI static ::RecipeIngredient getIngredientForElement(::ElementType e, int stackCount);
+    MCAPI static ::RecipeIngredient getIngredientForElement(::ElementType e, int stackCount);
 
-    MCNAPI static ::ItemInstance getItemForElement(::ElementType e, int stackCount);
+    MCAPI static ::ItemInstance getItemForElement(::ElementType e, int stackCount);
 
-    MCNAPI static void initElements();
+    MCAPI static void initElements();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::BlockType const*>& mElements();
+    MCAPI static ::std::vector<::BlockType const*>& mElements();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::mce::Color $getMapColor(::BlockSource&, ::BlockPos const&, ::Block const& block) const;
+    MCAPI ::mce::Color $getMapColor(::BlockSource&, ::BlockPos const&, ::Block const& block) const;
 
-    MCNAPI ::std::string $buildDescriptionId(::Block const& block) const;
+    MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCNAPI bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
 
-    MCNAPI ::Block const* $tryLegacyUpgrade(ushort extraData) const;
+    MCAPI ::Block const* $tryLegacyUpgrade(ushort extraData) const;
     // NOLINTEND
 
 public:

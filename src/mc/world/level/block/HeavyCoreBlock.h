@@ -33,9 +33,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCNAPI bool $liquidCanFlowIntoFromDirection(
+    MCFOLD bool $liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,
         ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
         ::BlockPos const&                                         pos

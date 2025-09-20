@@ -55,37 +55,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _scatterVegetation(
+    MCAPI bool _scatterVegetation(
         ::BlockSource&                                      region,
         ::BlockPos const&                                   pos,
         ::Random&                                           random,
         ::std::function<::Block const&(::Randomize const&)> plantProvider
     ) const;
 
-    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool canBeNylium(::BlockSource const& region, ::BlockPos const& pos);
+    MCAPI static bool canBeNylium(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCNAPI static ::Block const& crimsonBlockProvider(::Randomize const& randomize);
+    MCAPI static ::Block const& crimsonBlockProvider(::Randomize const& randomize);
 
-    MCNAPI static ::Block const& netherSproutBlockProvider(::Randomize const& randomize);
+    MCAPI static ::Block const& netherSproutBlockProvider(::Randomize const& randomize);
 
-    MCNAPI static ::Block const& warpedBlockProvider(::Randomize const& randomize);
+    MCAPI static ::Block const& warpedBlockProvider(::Randomize const& randomize);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCNAPI bool
+    MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

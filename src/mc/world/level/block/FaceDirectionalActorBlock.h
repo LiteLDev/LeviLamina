@@ -15,7 +15,7 @@ class BlockPos;
 class Vec3;
 // clang-format on
 
-class FaceDirectionalActorBlock : public ::ActorBlockBase<::BlockType> {
+class FaceDirectionalActorBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN

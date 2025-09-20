@@ -30,23 +30,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Brightness const& MIN_BRIGHTNESS_TO_PERSIST();
+    MCAPI static ::Brightness const& MIN_BRIGHTNESS_TO_PERSIST();
 
-    MCNAPI static ::Brightness const& MIN_BRIGHTNESS_TO_SPREAD();
+    MCAPI static ::Brightness const& MIN_BRIGHTNESS_TO_SPREAD();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

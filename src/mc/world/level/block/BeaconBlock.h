@@ -12,7 +12,7 @@ class Experiments;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class BeaconBlock : public ::ActorBlockBase<::BlockType> {
+class BeaconBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN

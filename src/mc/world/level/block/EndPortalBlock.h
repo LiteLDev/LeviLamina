@@ -24,7 +24,7 @@ struct BlockAnimateTickData;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
-class EndPortalBlock : public ::ActorBlockBase<::BlockType> {
+class EndPortalBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

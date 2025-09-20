@@ -37,9 +37,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCNAPI ::Block const& $getPlacementBlock(
+    MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -47,7 +47,7 @@ public:
         int               itemValue
     ) const;
 
-    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
     // NOLINTEND
 
 public:

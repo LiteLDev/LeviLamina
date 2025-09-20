@@ -23,7 +23,7 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class CommandBlock : public ::ActorBlockBase<::BlockType> {
+class CommandBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN

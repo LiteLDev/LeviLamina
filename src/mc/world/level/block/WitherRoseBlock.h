@@ -53,22 +53,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
+    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
 
-    MCNAPI bool
+    MCFOLD bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCNAPI ::std::string $buildDescriptionId(::Block const& block) const;
+    MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCNAPI bool $isAuxValueRelevantForPicking() const;
+    MCFOLD bool $isAuxValueRelevantForPicking() const;
 
-    MCNAPI bool $canSpawnOn(::Actor* actor) const;
+    MCAPI bool $canSpawnOn(::Actor* actor) const;
 
-    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:

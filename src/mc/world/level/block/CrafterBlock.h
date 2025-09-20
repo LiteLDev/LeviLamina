@@ -20,7 +20,7 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class CrafterBlock : public ::ActorBlockBase<::BlockType> {
+class CrafterBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

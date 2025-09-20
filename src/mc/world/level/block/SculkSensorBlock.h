@@ -22,7 +22,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class SculkSensorBlock : public ::ActorBlockBase<::BlockType> {
+class SculkSensorBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN

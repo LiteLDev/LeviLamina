@@ -105,17 +105,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::AABB const&
+    MCFOLD ::AABB const&
     $getVisualShapeInWorld(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB&) const;
 
-    MCNAPI ::AABB const& $getVisualShape(::Block const&, ::AABB&) const;
+    MCFOLD ::AABB const& $getVisualShape(::Block const&, ::AABB&) const;
 
-    MCNAPI ::AABB const&
+    MCAPI ::AABB const&
     $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const;
 
-    MCNAPI bool $isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const;
+    MCFOLD bool $isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const;
 
-    MCNAPI void $addAABBs(
+    MCFOLD void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -123,7 +123,7 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCNAPI bool $addCollisionShapes(
+    MCFOLD bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -132,34 +132,34 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCNAPI ::AABB $getCollisionShape(
+    MCFOLD ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCNAPI bool $mayPick() const;
+    MCFOLD bool $mayPick() const;
 
-    MCNAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
+    MCFOLD bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $tryToPlace(
+    MCFOLD bool $tryToPlace(
         ::BlockSource&                 region,
         ::BlockPos const&              pos,
         ::Block const&                 block,
         ::ActorBlockSyncMessage const* syncMsg
     ) const;
 
-    MCNAPI void
+    MCFOLD void
     $destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
 
-    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
     // NOLINTEND
 
 public:

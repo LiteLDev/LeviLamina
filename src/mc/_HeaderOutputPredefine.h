@@ -166,10 +166,10 @@ using ItemStackNetId           = TypedServerNetId<ItemStackNetIdTag, int>;
 using ItemStackRequestId       = TypedClientNetId<ItemStackRequestIdTag, int>;
 using ItemStackLegacyRequestId = TypedClientNetId<ItemStackLegacyRequestIdTag, int>;
 
-class BlockLegacy;
+class BlockType;
 template <typename T0>
 class ActorBlockBase;
-using ActorBlock = ActorBlockBase<BlockLegacy>;
+using ActorBlock = ActorBlockBase<BlockType>;
 
 template<int>
 class ParityImprovedNoiseImpl;

@@ -19,7 +19,7 @@ struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class FurnaceBlock : public ::ActorBlockBase<::BlockType> {
+class FurnaceBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN

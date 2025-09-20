@@ -110,38 +110,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::WallConnectionType
+    MCAPI ::WallConnectionType
     _desiredConnectionState(::BlockSource& region, ::BlockPos const& pos, uchar neighbor) const;
 
-    MCNAPI bool _isCovered(::BlockSource& region, ::BlockPos const& pos, ::AABB const& testAABB) const;
+    MCAPI bool _isCovered(::BlockSource& region, ::BlockPos const& pos, ::AABB const& testAABB) const;
 
-    MCNAPI bool _shouldBePost(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCAPI bool _shouldBePost(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI bool _shouldUpdateConnectionStates(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool _shouldUpdateConnectionStates(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool _tryAddToTickingQueue(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool _tryAddToTickingQueue(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCNAPI void tryFixWallStates(::BlockSource& region, ::BlockPos const& pos, int updateFlags) const;
+    MCAPI void tryFixWallStates(::BlockSource& region, ::BlockPos const& pos, int updateFlags) const;
 
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static float const& POST_HEIGHT();
+    MCAPI static float const& POST_HEIGHT();
 
-    MCNAPI static ::BaseGameVersion const& WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    MCAPI static ::BaseGameVersion const& WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Block const& $getPlacementBlock(
+    MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -149,43 +149,43 @@ public:
         int               itemValue
     ) const;
 
-    MCNAPI void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI ::AABB const& $getVisualShapeInWorld(
+    MCAPI ::AABB const& $getVisualShapeInWorld(
         ::Block const& block,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::AABB& bufferAABB
     ) const;
 
-    MCNAPI ::AABB $getCollisionShape(
+    MCAPI ::AABB $getCollisionShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCNAPI ::AABB const& $getOutline(
+    MCFOLD ::AABB const& $getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::AABB&                    bufferValue
     ) const;
 
-    MCNAPI bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
+    MCFOLD bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
 
-    MCNAPI bool
+    MCFOLD bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCNAPI bool $isWallBlock() const;
+    MCFOLD bool $isWallBlock() const;
 
-    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCNAPI ::HitResult $clip(
+    MCFOLD ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
         ::BlockPos const&                                  pos,
@@ -195,9 +195,9 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

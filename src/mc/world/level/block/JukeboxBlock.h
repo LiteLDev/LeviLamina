@@ -17,7 +17,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class JukeboxBlock : public ::ActorBlockBase<::BlockType> {
+class JukeboxBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

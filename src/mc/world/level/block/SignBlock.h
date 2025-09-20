@@ -29,7 +29,7 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 namespace mce { class Color; }
 // clang-format on
 
-class SignBlock : public ::ActorBlockBase<::BlockType> {
+class SignBlock : public ::ActorBlock {
 public:
     // SignBlock inner types declare
     // clang-format off

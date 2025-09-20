@@ -18,7 +18,7 @@ class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class ChemistryTableBlock : public ::ActorBlockBase<::BlockType> {
+class ChemistryTableBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

@@ -151,7 +151,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool setInnerPieceShape(
+    MCAPI bool setInnerPieceShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -159,7 +159,7 @@ public:
         bool                       shrink
     ) const;
 
-    MCNAPI bool setStepShape(
+    MCAPI bool setStepShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -171,19 +171,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<int[][2]> DEAD_SPACES();
+    MCAPI static ::std::add_lvalue_reference_t<int[][2]> DEAD_SPACES();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HitResult $clip(
+    MCAPI ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
         ::BlockPos const&                                  pos,
@@ -193,10 +193,10 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCNAPI ::AABB const&
+    MCFOLD ::AABB const&
     $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCNAPI void $addAABBs(
+    MCAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -204,7 +204,7 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCNAPI bool $addCollisionShapes(
+    MCFOLD bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -213,31 +213,31 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCNAPI bool
+    MCAPI bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
+    MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
+    MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
-    MCNAPI void
+    MCAPI void
     $destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
 
-    MCNAPI bool $mayPick() const;
+    MCAPI bool $mayPick() const;
 
-    MCNAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
+    MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCNAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
+    MCAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
 
-    MCNAPI ::Block const& $getPlacementBlock(
+    MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -245,21 +245,21 @@ public:
         int               itemValue
     ) const;
 
-    MCNAPI bool $isStairBlock() const;
+    MCFOLD bool $isStairBlock() const;
 
-    MCNAPI int $getVariant(::Block const& block) const;
+    MCFOLD int $getVariant(::Block const& block) const;
 
-    MCNAPI bool $canConnect(::Block const&, uchar toOther, ::Block const& thisBlock) const;
+    MCAPI bool $canConnect(::Block const&, uchar toOther, ::Block const& thisBlock) const;
 
-    MCNAPI bool $liquidCanFlowIntoFromDirection(
+    MCAPI bool $liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,
         ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
         ::BlockPos const&                                         pos
     ) const;
 
-    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

@@ -21,7 +21,7 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class ComparatorBlock : public ::ActorBlockBase<::BlockType> {
+class ComparatorBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN

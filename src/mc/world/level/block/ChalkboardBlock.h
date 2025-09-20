@@ -23,7 +23,7 @@ class ItemInstance;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class ChalkboardBlock : public ::ActorBlockBase<::BlockType> {
+class ChalkboardBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

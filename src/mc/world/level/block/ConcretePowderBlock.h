@@ -49,26 +49,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool
-    _tryTouchWater(::BlockSource& region, ::BlockPos const& pos, ::std::optional<::HashedString> name) const;
+    MCAPI bool _tryTouchWater(::BlockSource& region, ::BlockPos const& pos, ::std::optional<::HashedString> name) const;
 
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::mce::Color $getDustColor(::Block const& block) const;
+    MCFOLD ::mce::Color $getDustColor(::Block const& block) const;
 
-    MCNAPI ::std::string $getDustParticleName(::Block const& block) const;
+    MCAPI ::std::string $getDustParticleName(::Block const& block) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI bool $shouldStopFalling(::Actor& entity) const;
+    MCAPI bool $shouldStopFalling(::Actor& entity) const;
 
-    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

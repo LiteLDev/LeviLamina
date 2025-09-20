@@ -18,7 +18,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class SculkShriekerBlock : public ::ActorBlockBase<::BlockType> {
+class SculkShriekerBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

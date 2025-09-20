@@ -21,7 +21,7 @@ struct UpdateEntityAfterFallOnInterface;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
-class MovingBlock : public ::ActorBlockBase<::BlockType> {
+class MovingBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

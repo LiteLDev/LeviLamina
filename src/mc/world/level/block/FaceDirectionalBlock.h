@@ -49,11 +49,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Block const& $getRenderBlock() const;
+    MCFOLD ::Block const& $getRenderBlock() const;
 
-    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCFOLD uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCNAPI ::Block const& $getPlacementBlock(
+    MCFOLD ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -61,6 +61,6 @@ public:
         int               itemValue
     ) const;
 
-    MCNAPI bool $isValidAuxValue(int value) const;
+    MCAPI bool $isValidAuxValue(int value) const;
     // NOLINTEND
 };

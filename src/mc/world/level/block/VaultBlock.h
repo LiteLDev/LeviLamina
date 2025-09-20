@@ -18,7 +18,7 @@ struct Brightness;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class VaultBlock : public ::ActorBlockBase<::BlockType> {
+class VaultBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

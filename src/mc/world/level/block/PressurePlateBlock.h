@@ -45,11 +45,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI int $getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI int $getSignalForData(int data) const;
+    MCAPI int $getSignalForData(int data) const;
 
-    MCNAPI int $getRedstoneSignal(int signal) const;
+    MCAPI int $getRedstoneSignal(int signal) const;
     // NOLINTEND
 
 public:

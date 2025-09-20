@@ -3,14 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/Brightness.h"
+#include "mc/common/NewBlockID.h"
 #include "mc/common/WeakPtr.h"
+#include "mc/deps/core/container/Cache.h"
+#include "mc/deps/core/container/EnumSet.h"
+#include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/platform/brstd/function_ref.h"
+#include "mc/resources/BaseGameVersion.h"
+#include "mc/util/IntRange.h"
 #include "mc/world/Direction.h"
 #include "mc/world/Flip.h"
 #include "mc/world/item/CreativeItemCategory.h"
 #include "mc/world/item/FertilizerType.h"
 #include "mc/world/level/ShapeType.h"
+#include "mc/world/level/block/BlockClientPredictionOverrides.h"
 #include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
@@ -19,25 +28,31 @@
 #include "mc/world/level/block/LavaFlammable.h"
 #include "mc/world/level/block/NoteBlockInstrument.h"
 #include "mc/world/level/block/TintMethod.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
+#include "mc/world/level/block/block_events/BlockEventManager.h"
+#include "mc/world/level/block/components/BlockComponentStorage.h"
+#include "mc/world/level/block/components/NetEaseBlockComponentStorage.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Actor;
-class BaseGameVersion;
 class Block;
 class BlockActor;
 class BlockItem;
 class BlockPos;
 class BlockSource;
 class BlockState;
+class BlockStateGroup;
+class BlockStateInstance;
 class Container;
+class DefinitionEvent;
 class EntityContext;
 class Experiments;
 class GetCollisionShapeInterface;
-class HashedString;
 class HitResult;
 class IConstBlockSource;
+class IResourceDropsStrategy;
 class ItemActor;
 class ItemInstance;
 class ItemStack;
@@ -53,17 +68,15 @@ struct ActorBlockSyncMessage;
 struct BlockAnimateTickData;
 struct BlockComponentDescription;
 struct BlockGraphicsModeChangeContext;
-struct Brightness;
 struct CommandName;
 struct CopperBehavior;
-struct IntRange;
 struct ResourceDrops;
 struct ResourceDropsContext;
 struct UpdateEntityAfterFallOnInterface;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
+namespace BlockTrait { class IGetPlacementBlockCallback; }
 namespace BlockTrait { class ITrait; }
 namespace br::spawn { struct EntityType; }
-namespace mce { class Color; }
 // clang-format on
 
 class BlockType {
@@ -82,10 +95,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48> mUnk455b02;
-        ::ll::UntypedStorage<8, 32> mUnk57d889;
-        ::ll::UntypedStorage<8, 48> mUnk39e489;
-        ::ll::UntypedStorage<8, 48> mUnk5f751a;
+        ::ll::TypedStorage<8, 48, ::HashedString> mRawName;
+        ::ll::TypedStorage<8, 32, ::std::string>  mNamespaceName;
+        ::ll::TypedStorage<8, 48, ::HashedString> mFullName;
+        ::ll::TypedStorage<8, 48, ::HashedString> mPreFlatteningName;
         // NOLINTEND
 
     public:
@@ -113,31 +126,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk809650;
-        ::ll::UntypedStorage<1, 1> mUnkdac040;
-        ::ll::UntypedStorage<1, 1> mUnk52ea6d;
-        ::ll::UntypedStorage<1, 1> mUnk629661;
+        ::ll::TypedStorage<1, 1, bool> mNorth;
+        ::ll::TypedStorage<1, 1, bool> mEast;
+        ::ll::TypedStorage<1, 1, bool> mSouth;
+        ::ll::TypedStorage<1, 1, bool> mWest;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        HorizontalDirectionBits& operator=(HorizontalDirectionBits const&);
-        HorizontalDirectionBits(HorizontalDirectionBits const&);
-        HorizontalDirectionBits();
     };
 
     struct AlteredStateCollection {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnka7506e;
+        ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::BlockState const>> mBlockState;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        AlteredStateCollection& operator=(AlteredStateCollection const&);
-        AlteredStateCollection(AlteredStateCollection const&);
-        AlteredStateCollection();
 
     public:
         // virtual functions
@@ -177,28 +178,16 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<4, 4> mUnk4511c3;
-            ::ll::UntypedStorage<8, 8> mUnkebc254;
+            ::ll::TypedStorage<4, 4, int>                                   mData;
+            ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::BlockType>> mBlockType;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            SplitBlock& operator=(SplitBlock const&);
-            SplitBlock(SplitBlock const&);
-            SplitBlock();
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk5eb912;
+        ::ll::TypedStorage<8, 24, ::std::vector<::BlockType::RemovedStateCollection::SplitBlock>> mSplitBlocks;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RemovedStateCollection& operator=(RemovedStateCollection const&);
-        RemovedStateCollection(RemovedStateCollection const&);
-        RemovedStateCollection();
 
     public:
         // virtual functions
@@ -239,16 +228,20 @@ public:
 
     struct RearrangedStateCollection : public ::BlockType::AlteredStateCollection {
     public:
+        // RearrangedStateCollection inner types define
+        using GetterType = ::std::function<::std::optional<int>(::BlockType const&, int)>;
+
+        using SetterType = ::std::function<::Block const*(::BlockType const&, int, int)>;
+
+    public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnkd662de;
-        ::ll::UntypedStorage<8, 64> mUnk88b9e8;
+        ::ll::TypedStorage<8, 64, ::std::function<::std::optional<int>(::BlockType const&, int)>> mGetter;
+        ::ll::TypedStorage<8, 64, ::std::function<::Block const*(::BlockType const&, int, int)>>  mSetter;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        RearrangedStateCollection& operator=(RearrangedStateCollection const&);
-        RearrangedStateCollection(RearrangedStateCollection const&);
         RearrangedStateCollection();
 
     public:
@@ -313,73 +306,75 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk4d6512;
-    ::ll::UntypedStorage<8, 104> mUnk71a1e0;
-    ::ll::UntypedStorage<8, 176> mUnkbcbbef;
-    ::ll::UntypedStorage<8, 8>   mUnk1d166c;
-    ::ll::UntypedStorage<1, 1>   mUnkb1e89e;
-    ::ll::UntypedStorage<1, 1>   mUnk24edd1;
-    ::ll::UntypedStorage<1, 1>   mUnk7f6c25;
-    ::ll::UntypedStorage<1, 1>   mUnk1dbd1a;
-    ::ll::UntypedStorage<4, 4>   mUnkc0784b;
-    ::ll::UntypedStorage<1, 1>   mUnk93982c;
-    ::ll::UntypedStorage<1, 1>   mUnkc6dec4;
-    ::ll::UntypedStorage<1, 1>   mUnke61c4b;
-    ::ll::UntypedStorage<4, 4>   mUnk6c3a08;
-    ::ll::UntypedStorage<8, 8>   mUnke3032a;
-    ::ll::UntypedStorage<1, 1>   mUnk122f8b;
-    ::ll::UntypedStorage<4, 4>   mUnkaa2e80;
-    ::ll::UntypedStorage<4, 4>   mUnk405fe6;
-    ::ll::UntypedStorage<8, 32>  mUnk86e62c;
-    ::ll::UntypedStorage<1, 1>   mUnk343844;
-    ::ll::UntypedStorage<1, 1>   mUnkc11623;
-    ::ll::UntypedStorage<1, 1>   mUnk7e8786;
-    ::ll::UntypedStorage<1, 1>   mUnkb8b15b;
-    ::ll::UntypedStorage<1, 1>   mUnk786e0c;
-    ::ll::UntypedStorage<1, 1>   mUnk8ee373;
-    ::ll::UntypedStorage<1, 1>   mUnka7d9b1;
-    ::ll::UntypedStorage<1, 1>   mUnkf5b94c;
-    ::ll::UntypedStorage<1, 1>   mUnkf0120c;
-    ::ll::UntypedStorage<1, 1>   mUnk3e052d;
-    ::ll::UntypedStorage<4, 4>   mUnk5785fd;
-    ::ll::UntypedStorage<1, 1>   mUnkb12268;
-    ::ll::UntypedStorage<1, 1>   mUnk351cb0;
-    ::ll::UntypedStorage<1, 1>   mUnk402b8c;
-    ::ll::UntypedStorage<1, 1>   mUnk3ca674;
-    ::ll::UntypedStorage<1, 1>   mUnk9ae304;
-    ::ll::UntypedStorage<1, 1>   mUnk2513f2;
-    ::ll::UntypedStorage<4, 4>   mUnk9db1fc;
-    ::ll::UntypedStorage<4, 4>   mUnk51e5b3;
-    ::ll::UntypedStorage<1, 1>   mUnkc8d83b;
-    ::ll::UntypedStorage<4, 16>  mUnkec624d;
-    ::ll::UntypedStorage<4, 4>   mUnk584f0e;
-    ::ll::UntypedStorage<4, 4>   mUnk2baec7;
-    ::ll::UntypedStorage<1, 1>   mUnk9bd1ee;
-    ::ll::UntypedStorage<1, 1>   mUnk2cbda1;
-    ::ll::UntypedStorage<2, 2>   mUnkdddb2a;
-    ::ll::UntypedStorage<8, 32>  mUnk7b6032;
-    ::ll::UntypedStorage<1, 1>   mUnkac02e6;
-    ::ll::UntypedStorage<8, 24>  mUnk9f54ee;
-    ::ll::UntypedStorage<8, 64>  mUnkafac50;
-    ::ll::UntypedStorage<1, 1>   mUnk31bef8;
-    ::ll::UntypedStorage<4, 24>  mUnk50de7e;
-    ::ll::UntypedStorage<4, 4>   mUnke3a189;
-    ::ll::UntypedStorage<4, 4>   mUnk9ee80b;
-    ::ll::UntypedStorage<8, 16>  mUnkf222c0;
-    ::ll::UntypedStorage<8, 64>  mUnkebdafb;
-    ::ll::UntypedStorage<8, 8>   mUnkd926cd;
-    ::ll::UntypedStorage<8, 24>  mUnkacef8d;
-    ::ll::UntypedStorage<8, 8>   mUnk4669c8;
-    ::ll::UntypedStorage<8, 24>  mUnkd42951;
-    ::ll::UntypedStorage<8, 72>  mUnk49bfe1;
-    ::ll::UntypedStorage<8, 8>   mUnkdfc8ae;
-    ::ll::UntypedStorage<8, 8>   mUnkba2d4f;
-    ::ll::UntypedStorage<4, 8>   mUnke271af;
-    ::ll::UntypedStorage<1, 1>   mUnkff8988;
-    ::ll::UntypedStorage<8, 104> mUnkd7d805;
-    ::ll::UntypedStorage<8, 24>  mUnk8fc1c6;
-    ::ll::UntypedStorage<1, 1>   mUnkf6a0f4;
-    ::ll::UntypedStorage<8, 32>  mUnk56c3eb;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mDescriptionId;
+    ::ll::TypedStorage<8, 104, ::BlockComponentStorage>      mComponents;
+    ::ll::TypedStorage<8, 176, ::BlockType::NameInfo>        mNameInfo;
+    ::ll::TypedStorage<8, 8, ::BlockProperty>                mProperties;
+    ::ll::TypedStorage<1, 1, bool>                           mFancy;
+    ::ll::TypedStorage<1, 1, ::BlockRenderLayer>             mRenderLayer;
+    ::ll::TypedStorage<1, 1, bool>                           mRenderLayerCanRenderAsOpaque;
+    ::ll::TypedStorage<1, 1, ::BlockActorType>               mBlockEntityType;
+    ::ll::TypedStorage<4, 4, float>                          mThickness;
+    ::ll::TypedStorage<1, 1, bool>                           mCanSlide;
+    ::ll::TypedStorage<1, 1, bool>                           mCanReactToNeighborsDuringInstatick;
+    ::ll::TypedStorage<1, 1, bool>                           mIsInteraction;
+    ::ll::TypedStorage<4, 4, float>                          mGravity;
+    ::ll::TypedStorage<8, 8, ::Material const&>              mMaterial;
+    ::ll::TypedStorage<1, 1, bool>                           mFalling;
+    ::ll::TypedStorage<4, 4, float>                          mParticleQuantityScalar;
+    ::ll::TypedStorage<4, 4, ::CreativeItemCategory>         mCreativeCategory;
+    ::ll::TypedStorage<8, 32, ::std::string>                 mCreativeGroup;
+    ::ll::TypedStorage<1, 1, bool>                           mIsHiddenInCommands;
+    ::ll::TypedStorage<1, 1, bool>                           mAllowsRunes;
+    ::ll::TypedStorage<1, 1, bool>                           mCanBeBrokenFromFalling;
+    ::ll::TypedStorage<1, 1, bool>                           mCanBeOriginalSurface;
+    ::ll::TypedStorage<1, 1, bool>                           mSolid;
+    ::ll::TypedStorage<1, 1, bool>                           mPushesOutItems;
+    ::ll::TypedStorage<1, 1, bool>                           mIgnoreBlockForInsideCubeRenderer;
+    ::ll::TypedStorage<1, 1, bool>                           mIsTrapdoor;
+    ::ll::TypedStorage<1, 1, bool>                           mIsDoor;
+    ::ll::TypedStorage<1, 1, bool>                           mIsOpaqueFullBlock;
+    ::ll::TypedStorage<4, 4, float>                          mTranslucency;
+    ::ll::TypedStorage<1, 1, bool>                           mShouldRandomTickExtraLayer;
+    ::ll::TypedStorage<1, 1, bool>                           mIsMobPiece;
+    ::ll::TypedStorage<1, 1, bool>                           mCanBeExtraBlock;
+    ::ll::TypedStorage<1, 1, bool>                           mCanPropagateBrightness;
+    ::ll::TypedStorage<1, 1, ::Brightness>                   mLightBlock;
+    ::ll::TypedStorage<1, 1, ::Brightness>                   mLightEmission;
+    ::ll::TypedStorage<4, 4, ::FlameOdds>                    mFlameOdds;
+    ::ll::TypedStorage<4, 4, ::BurnOdds>                     mBurnOdds;
+    ::ll::TypedStorage<1, 1, ::LavaFlammable>                mLavaFlammable;
+    ::ll::TypedStorage<4, 16, ::mce::Color>                  mMapColor;
+    ::ll::TypedStorage<4, 4, float>                          mFriction;
+    ::ll::TypedStorage<4, 4, ::NoteBlockInstrument>          mNoteBlockInstrument;
+    ::ll::TypedStorage<1, 1, ::TintMethod>                   mTintMethod;
+    ::ll::TypedStorage<1, 1, bool>                           mReturnDefaultBlockOnUnidentifiedBlockState;
+    ::ll::TypedStorage<2, 2, ::NewBlockID>                   mID;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>             mMinRequiredBaseGameVersion;
+    ::ll::TypedStorage<1, 1, bool>                           mIsVanilla;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>> mTags;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DefinitionEvent>> mEventHandlers;
+    ::ll::TypedStorage<1, 1, bool>                                          mDataDrivenVanillaBlocksAndItemsEnabled;
+    ::ll::TypedStorage<4, 24, ::AABB>                                       mVisualShape;
+    ::ll::TypedStorage<4, 4, uint>                                          mBitsUsed;
+    ::ll::TypedStorage<4, 4, uint>                                          mTotalBitsUsed;
+    ::ll::TypedStorage<8, 16, ::std::map<uint64, ::BlockStateInstance>>     mStates;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, uint64>> mStateNameMap;
+    ::ll::TypedStorage<8, 8, uint64>                                        mCreativeEnumState;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Block>>>    mBlockPermutations;
+    ::ll::TypedStorage<8, 8, ::Block const*>                                mDefaultState;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::BlockTrait::IGetPlacementBlockCallback>>>
+                                                                                     mGetPlacementBlockCallbacks;
+    ::ll::TypedStorage<8, 72, ::Core::Cache<ushort, ::Block const*, ::Block const*>> mLegacyDataLookupTable;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockStateGroup>>                   mBlockStateGroup;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IResourceDropsStrategy>>            mResourceDropsStrategy;
+    ::ll::TypedStorage<4, 8, ::IntRange>                                             mExperienceDropRange;
+    ::ll::TypedStorage<1, 1, bool>                                                   mRequiresCorrectToolForDrops;
+    ::ll::TypedStorage<8, 104, ::NetEaseBlockComponentStorage>                       mNetEaseComponentStorage;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::BlockType::AlteredStateCollection>>>
+                                                                                      mAlteredStateCollections;
+    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockClientPredictionOverrides, 7>> mClientPredictionOverrides;
+    ::ll::TypedStorage<8, 32, ::BlockEvents::BlockEventManager>                       mEventManager;
     // NOLINTEND
 
 public:
@@ -908,114 +903,114 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockType(::std::string const& nameId, int id, ::Material const& material);
+    MCAPI BlockType(::std::string const& nameId, int id, ::Material const& material);
 
-    MCNAPI void _executeEvent(
+    MCAPI void _executeEvent(
         ::std::string const&                                                  name,
         ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
         ::RenderParams&                                                       params
     ) const;
 
-    MCNAPI ::BlockType& addBlockProperties(::BlockProperty addedProperties);
+    MCAPI ::BlockType& addBlockProperties(::BlockProperty addedProperties);
 
-    MCNAPI ::BlockType& addComponent(::BlockComponentDescription const& blockComponentDescription);
+    MCAPI ::BlockType& addComponent(::BlockComponentDescription const& blockComponentDescription);
 
-    MCNAPI ::BlockType& addState(::BlockState const& state);
+    MCAPI ::BlockType& addState(::BlockState const& state);
 
-    MCNAPI ::BlockType& addState(::BlockState const& state, uint64 variationCount);
+    MCAPI ::BlockType& addState(::BlockState const& state, uint64 variationCount);
 
-    MCNAPI ::BlockType& addTag(::HashedString const& tag);
+    MCAPI ::BlockType& addTag(::HashedString const& tag);
 
-    MCNAPI ::BlockType& addTrait(::BlockTrait::ITrait const& trait);
+    MCAPI ::BlockType& addTrait(::BlockTrait::ITrait const& trait);
 
-    MCNAPI bool anyOf(::gsl::span<::std::reference_wrapper<::HashedString const> const> const& blockTypeIdList) const;
+    MCAPI bool anyOf(::gsl::span<::std::reference_wrapper<::HashedString const> const> const& blockTypeIdList) const;
 
-    MCNAPI ::std::string buildDescriptionName(::Block const& block) const;
+    MCAPI ::std::string buildDescriptionName(::Block const& block) const;
 
-    MCNAPI void createBlockPermutations(uint latestUpdaterVersion);
+    MCAPI void createBlockPermutations(uint latestUpdaterVersion);
 
-    MCNAPI ::WeakPtr<::BlockType> createWeakPtr() const;
+    MCAPI ::WeakPtr<::BlockType> createWeakPtr() const;
 
-    MCNAPI void executeEvent(::std::string const& name, ::RenderParams& params) const;
+    MCAPI void executeEvent(::std::string const& name, ::RenderParams& params) const;
 
-    MCNAPI void finalizeBlockComponentStorage();
+    MCAPI void finalizeBlockComponentStorage();
 
-    MCNAPI void forEachBlockPermutation(::brstd::function_ref<bool(::Block const&)> callback) const;
+    MCAPI void forEachBlockPermutation(::brstd::function_ref<bool(::Block const&)> callback) const;
 
-    MCNAPI short getBlockItemId() const;
+    MCAPI short getBlockItemId() const;
 
-    MCNAPI ::BlockState const* getBlockState(::HashedString const& name) const;
+    MCAPI ::BlockState const* getBlockState(::HashedString const& name) const;
 
-    MCNAPI ::std::vector<::CommandName> getCommandNames() const;
+    MCAPI ::std::vector<::CommandName> getCommandNames() const;
 
-    MCNAPI void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
+    MCAPI void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
 
-    MCNAPI ::ResourceDrops getResourceDrops(
+    MCAPI ::ResourceDrops getResourceDrops(
         ::Block const&                block,
         ::Randomize&                  randomize,
         ::ResourceDropsContext const& resourceDropsContext
     ) const;
 
-    MCNAPI ::Block const& getStateFromLegacyData(ushort data) const;
+    MCAPI ::Block const& getStateFromLegacyData(ushort data) const;
 
-    MCNAPI bool hasState(::BlockState const& stateType) const;
+    MCAPI bool hasState(::BlockState const& stateType) const;
 
-    MCNAPI bool hasTag(::HashedString const& tag) const;
+    MCAPI bool hasTag(::HashedString const& tag) const;
 
-    MCNAPI bool isValidSpawn(
+    MCAPI bool isValidSpawn(
         ::BlockSource&                 region,
         ::Block const&                 state,
         ::BlockPos                     pos,
         ::br::spawn::EntityType const& entityType
     ) const;
 
-    MCNAPI void onFallOnBase(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCAPI void onFallOnBase(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
 
-    MCNAPI ::BlockType& overrideBlockProperties(::BlockProperty newProperties);
+    MCAPI ::BlockType& overrideBlockProperties(::BlockProperty newProperties);
 
-    MCNAPI ::BlockType& setAllowsRunes(bool interference);
+    MCAPI ::BlockType& setAllowsRunes(bool interference);
 
-    MCNAPI ::BlockType& setCanBeExtraBlock(bool state);
+    MCAPI ::BlockType& setCanBeExtraBlock(bool state);
 
-    MCNAPI ::BlockType& setCanBeOriginalSurface(bool canBeOriginalSurface);
+    MCAPI ::BlockType& setCanBeOriginalSurface(bool canBeOriginalSurface);
 
-    MCNAPI ::BlockType& setCategory(::CreativeItemCategory creativeCategory);
+    MCAPI ::BlockType& setCategory(::CreativeItemCategory creativeCategory);
 
-    MCNAPI ::BlockType& setCreativeGroup(::std::string const& value);
+    MCAPI ::BlockType& setCreativeGroup(::std::string const& value);
 
-    MCNAPI ::BlockType& setExperienceDrop(::IntRange dropRange);
+    MCAPI ::BlockType& setExperienceDrop(::IntRange dropRange);
 
-    MCNAPI ::BlockType& setFlammable(::FlameOdds flameOdds, ::BurnOdds burnOdds, ::LavaFlammable lavaFlammable);
+    MCAPI ::BlockType& setFlammable(::FlameOdds flameOdds, ::BurnOdds burnOdds, ::LavaFlammable lavaFlammable);
 
-    MCNAPI ::BlockType& setFriction(float f);
+    MCAPI ::BlockType& setFriction(float f);
 
-    MCNAPI ::BlockType& setInstrument(::NoteBlockInstrument instrument);
+    MCAPI ::BlockType& setInstrument(::NoteBlockInstrument instrument);
 
-    MCNAPI ::BlockType& setIsHiddenInCommands(bool isHiddenInCommands);
+    MCAPI ::BlockType& setIsHiddenInCommands(bool isHiddenInCommands);
 
-    MCNAPI ::BlockType& setIsValidSpawn(
+    MCAPI ::BlockType& setIsValidSpawn(
         bool (*predicate)(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&)
     );
 
-    MCNAPI ::BlockType& setLightBlock(::Brightness brightness);
+    MCAPI ::BlockType& setLightBlock(::Brightness brightness);
 
-    MCNAPI ::BlockType& setLightEmission(::Brightness brightness);
+    MCAPI ::BlockType& setLightEmission(::Brightness brightness);
 
-    MCNAPI ::BlockType& setMapColor(::mce::Color const& color);
+    MCAPI ::BlockType& setMapColor(::mce::Color const& color);
 
-    MCNAPI ::BlockType& setMinRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
+    MCAPI ::BlockType& setMinRequiredBaseGameVersion(::BaseGameVersion const& baseGameVersion);
 
-    MCNAPI ::BlockType& setNameId(::std::string const& id);
+    MCAPI ::BlockType& setNameId(::std::string const& id);
 
-    MCNAPI ::BlockType& setRequiresCorrectToolForDrops();
+    MCAPI ::BlockType& setRequiresCorrectToolForDrops();
 
-    MCNAPI ::BlockType& setTintMethod(::TintMethod tintMethod);
+    MCAPI ::BlockType& setTintMethod(::TintMethod tintMethod);
 
-    MCNAPI ::BlockType& setTranslucency(float translucency);
+    MCAPI ::BlockType& setTranslucency(float translucency);
 
-    MCNAPI bool shouldTriggerOnStandOn(::Actor& entity, ::BlockPos const& pos) const;
+    MCAPI bool shouldTriggerOnStandOn(::Actor& entity, ::BlockPos const& pos) const;
 
-    MCNAPI void spawnResources(
+    MCAPI void spawnResources(
         ::BlockSource&                region,
         ::BlockPos const&             pos,
         ::Block const&                block,
@@ -1023,9 +1018,9 @@ public:
         ::ResourceDropsContext const& resourceDropsContext
     ) const;
 
-    MCNAPI ::Block const* tryGetStateFromLegacyData(ushort data) const;
+    MCAPI ::Block const* tryGetStateFromLegacyData(ushort data) const;
 
-    MCNAPI bool updateTallestCollisionShape(
+    MCAPI bool updateTallestCollisionShape(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
         ::BlockPos const&                                  pos,
@@ -1040,52 +1035,52 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string buildDescriptionIdFromNameInfo(::BlockType::NameInfo const& nameInfo);
+    MCAPI static ::std::string buildDescriptionIdFromNameInfo(::BlockType::NameInfo const& nameInfo);
 
-    MCNAPI static ::BlockType::NameInfo extractBlockNameInfo(::std::string const& name);
+    MCAPI static ::BlockType::NameInfo extractBlockNameInfo(::std::string const& name);
 
-    MCNAPI static ::BlockType::HorizontalDirectionBits
+    MCAPI static ::BlockType::HorizontalDirectionBits
     getConnectedDirections(::Block const& thisBlock, ::BlockPos const& pos, ::IConstBlockSource const& region);
 
-    MCNAPI static uchar getPlacementFacingAll(::Actor const& entity, ::BlockPos const& pos, float yRotOffsetDegree);
+    MCAPI static uchar getPlacementFacingAll(::Actor const& entity, ::BlockPos const& pos, float yRotOffsetDegree);
 
-    MCNAPI static ::ItemActor* popResource(::BlockSource& region, ::BlockPos const& pos, ::ItemStack const& item);
+    MCAPI static ::ItemActor* popResource(::BlockSource& region, ::BlockPos const& pos, ::ItemStack const& item);
 
-    MCNAPI static ::ItemActor*
+    MCAPI static ::ItemActor*
     popResource(::BlockSource& region, ::BlockPos const& pos, ::ItemInstance const& itemInstance);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& BLOCK_DESCRIPTION_PREFIX();
+    MCAPI static ::std::string const& BLOCK_DESCRIPTION_PREFIX();
 
-    MCNAPI static float const& SIZE_OFFSET();
+    MCAPI static float const& SIZE_OFFSET();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::BlockActor> $newBlockEntity(::BlockPos const& pos, ::Block const& block) const;
+    MCAPI ::std::shared_ptr<::BlockActor> $newBlockEntity(::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
+    MCAPI ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
 
-    MCNAPI bool
+    MCFOLD bool
     $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
 
-    MCNAPI ::HitResult $clip(
+    MCAPI ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
         ::BlockPos const&                                  pos,
@@ -1095,21 +1090,21 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCNAPI ::AABB $getCollisionShape(
+    MCAPI ::AABB $getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
         ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCNAPI bool $getCollisionShapeForCamera(
+    MCAPI bool $getCollisionShapeForCamera(
         ::AABB&                    outAABB,
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos
     ) const;
 
-    MCNAPI bool $addCollisionShapes(
+    MCAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -1118,7 +1113,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCNAPI void $addAABBs(
+    MCAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -1126,195 +1121,195 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCNAPI ::AABB const&
+    MCAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCNAPI ::AABB const& $getVisualShapeInWorld(
+    MCFOLD ::AABB const& $getVisualShapeInWorld(
         ::Block const& block,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::AABB& bufferAABB
     ) const;
 
-    MCNAPI ::AABB const& $getVisualShape(::Block const&, ::AABB&) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const&, ::AABB&) const;
 
-    MCNAPI ::AABB const& $getUIShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCAPI ::AABB const& $getUIShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCNAPI bool
+    MCAPI bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCNAPI bool $isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const;
+    MCAPI bool $isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const;
 
-    MCNAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
+    MCAPI ::Vec3 $randomlyModifyPosition(::BlockPos const& pos) const;
 
-    MCNAPI void $onProjectileHit(::BlockSource&, ::BlockPos const&, ::Actor const&) const;
+    MCFOLD void $onProjectileHit(::BlockSource&, ::BlockPos const&, ::Actor const&) const;
 
-    MCNAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $liquidCanFlowIntoFromDirection(
+    MCFOLD bool $liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,
         ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
         ::BlockPos const&                                         pos
     ) const;
 
-    MCNAPI bool $hasVariableLighting() const;
+    MCFOLD bool $hasVariableLighting() const;
 
-    MCNAPI bool $isStrippable(::Block const& srcBlock) const;
+    MCFOLD bool $isStrippable(::Block const& srcBlock) const;
 
-    MCNAPI ::Block const& $getStrippedBlock(::Block const& srcBlock) const;
+    MCFOLD ::Block const& $getStrippedBlock(::Block const& srcBlock) const;
 
-    MCNAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
+    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
 
-    MCNAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
+    MCAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
 
-    MCNAPI bool $canConnect(::Block const&, uchar toOther, ::Block const& thisBlock) const;
+    MCAPI bool $canConnect(::Block const&, uchar toOther, ::Block const& thisBlock) const;
 
-    MCNAPI bool $isMovingBlock() const;
+    MCFOLD bool $isMovingBlock() const;
 
-    MCNAPI ::CopperBehavior const* $tryGetCopperBehavior() const;
+    MCFOLD ::CopperBehavior const* $tryGetCopperBehavior() const;
 
-    MCNAPI bool $isStemBlock() const;
+    MCFOLD bool $isStemBlock() const;
 
-    MCNAPI bool $isContainerBlock() const;
+    MCFOLD bool $isContainerBlock() const;
 
-    MCNAPI bool $isCraftingBlock() const;
+    MCFOLD bool $isCraftingBlock() const;
 
-    MCNAPI bool $isLavaBlocking() const;
+    MCAPI bool $isLavaBlocking() const;
 
-    MCNAPI bool $isFenceBlock() const;
+    MCFOLD bool $isFenceBlock() const;
 
-    MCNAPI bool $isFenceGateBlock() const;
+    MCFOLD bool $isFenceGateBlock() const;
 
-    MCNAPI bool $isThinFenceBlock() const;
+    MCFOLD bool $isThinFenceBlock() const;
 
-    MCNAPI bool $isWallBlock() const;
+    MCFOLD bool $isWallBlock() const;
 
-    MCNAPI bool $isStairBlock() const;
+    MCFOLD bool $isStairBlock() const;
 
-    MCNAPI bool $isSlabBlock() const;
+    MCFOLD bool $isSlabBlock() const;
 
-    MCNAPI bool $isDoorBlock() const;
+    MCFOLD bool $isDoorBlock() const;
 
-    MCNAPI bool $isChestBlock() const;
+    MCFOLD bool $isChestBlock() const;
 
-    MCNAPI bool $isRailBlock() const;
+    MCFOLD bool $isRailBlock() const;
 
-    MCNAPI bool $isButtonBlock() const;
+    MCFOLD bool $isButtonBlock() const;
 
-    MCNAPI bool $isLeverBlock() const;
+    MCFOLD bool $isLeverBlock() const;
 
-    MCNAPI bool $isCandleCakeBlock() const;
+    MCFOLD bool $isCandleCakeBlock() const;
 
-    MCNAPI bool $isMultifaceBlock() const;
+    MCFOLD bool $isMultifaceBlock() const;
 
-    MCNAPI bool $isSignalSource() const;
+    MCFOLD bool $isSignalSource() const;
 
-    MCNAPI bool $isConsumerComponent() const;
+    MCFOLD bool $isConsumerComponent() const;
 
-    MCNAPI bool $canBeOriginalSurface() const;
+    MCAPI bool $canBeOriginalSurface() const;
 
-    MCNAPI bool $isSilentWhenJumpingOff() const;
+    MCFOLD bool $isSilentWhenJumpingOff() const;
 
-    MCNAPI bool $isValidAuxValue(int value) const;
+    MCFOLD bool $isValidAuxValue(int value) const;
 
-    MCNAPI bool $canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD bool $canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
+    MCFOLD ::Block const& $sanitizeFillBlock(::Block const& block) const;
 
-    MCNAPI void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
+    MCFOLD int $getDirectSignal(::BlockSource& region, ::BlockPos const& pos, int dir) const;
 
-    MCNAPI ::std::optional<::HashedString> $getRequiredMedium() const;
+    MCAPI ::std::optional<::HashedString> $getRequiredMedium() const;
 
-    MCNAPI bool
+    MCFOLD bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCNAPI void
+    MCFOLD void
     $handlePrecipitation(::BlockSource& region, ::BlockPos const& pos, float downfallAmount, float temperature) const;
 
-    MCNAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
-    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCNAPI bool $shouldDispense(::BlockSource& region, ::Container& container) const;
+    MCFOLD bool $shouldDispense(::BlockSource& region, ::Container& container) const;
 
-    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCFOLD bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCNAPI void
+    MCFOLD void
     $transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const;
 
-    MCNAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCFOLD void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCNAPI void $onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const;
+    MCFOLD void $onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const;
 
-    MCNAPI bool $detachesOnPistonMove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $detachesOnPistonMove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
+    MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
-    MCNAPI bool $isBounceBlock() const;
+    MCFOLD bool $isBounceBlock() const;
 
-    MCNAPI bool $isPreservingMediumWhenPlaced(::BlockType const* medium) const;
+    MCFOLD bool $isPreservingMediumWhenPlaced(::BlockType const* medium) const;
 
-    MCNAPI bool $isFilteredOut(::BlockRenderLayer) const;
+    MCFOLD bool $isFilteredOut(::BlockRenderLayer) const;
 
-    MCNAPI bool $canRenderSelectionOverlay(::BlockRenderLayer) const;
+    MCFOLD bool $canRenderSelectionOverlay(::BlockRenderLayer) const;
 
-    MCNAPI bool $ignoreEntitiesOnPistonMove(::Block const& block) const;
+    MCFOLD bool $ignoreEntitiesOnPistonMove(::Block const& block) const;
 
-    MCNAPI bool
+    MCFOLD bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCNAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCNAPI bool $mayPick() const;
+    MCFOLD bool $mayPick() const;
 
-    MCNAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
+    MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $tryToPlace(
+    MCFOLD bool $tryToPlace(
         ::BlockSource&                 region,
         ::BlockPos const&              pos,
         ::Block const&                 block,
         ::ActorBlockSyncMessage const* syncMsg
     ) const;
 
-    MCNAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+    MCFOLD bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 
-    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCNAPI void
+    MCFOLD void
     $destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
 
-    MCNAPI bool $getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const;
+    MCFOLD bool $getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
+    MCFOLD bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
-    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCNAPI void
+    MCFOLD void
     $spawnAfterBreak(::BlockSource&, ::Block const&, ::BlockPos const&, ::ResourceDropsContext const&) const;
 
-    MCNAPI ::Block const& $getPlacementBlock(
+    MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -1322,26 +1317,26 @@ public:
         int               itemValue
     ) const;
 
-    MCNAPI int $calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
+    MCAPI int $calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
 
-    MCNAPI bool $isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
+    MCFOLD bool $isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
 
-    MCNAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
+    MCFOLD bool $attack(::Player* player, ::BlockPos const& pos) const;
 
-    MCNAPI bool $shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
+    MCAPI bool $shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCNAPI bool $canBeBuiltOver(
+    MCAPI bool $canBeBuiltOver(
         ::Block const&     block,
         ::BlockSource&     region,
         ::BlockPos const&  pos,
         ::BlockItem const& newItem
     ) const;
 
-    MCNAPI bool $canBeBuiltOver(::Block const& block, ::BlockSource&, ::BlockPos const&) const;
+    MCAPI bool $canBeBuiltOver(::Block const& block, ::BlockSource&, ::BlockPos const&) const;
 
-    MCNAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
+    MCFOLD void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
 
-    MCNAPI void $executeEvent(
+    MCAPI void $executeEvent(
         ::BlockSource&       region,
         ::BlockPos const&    pos,
         ::Block const&       block,
@@ -1349,98 +1344,98 @@ public:
         ::Actor&             sourceEntity
     ) const;
 
-    MCNAPI ::MobSpawnerData const* $getMobToSpawn(::SpawnConditions const& conditions, ::BlockSource& region) const;
+    MCAPI ::MobSpawnerData const* $getMobToSpawn(::SpawnConditions const& conditions, ::BlockSource& region) const;
 
-    MCNAPI bool $shouldStopFalling(::Actor& entity) const;
+    MCAPI bool $shouldStopFalling(::Actor& entity) const;
 
-    MCNAPI bool $pushesUpFallingBlocks() const;
+    MCFOLD bool $pushesUpFallingBlocks() const;
 
-    MCNAPI bool $canHaveExtraData() const;
+    MCFOLD bool $canHaveExtraData() const;
 
-    MCNAPI bool $hasComparatorSignal() const;
+    MCFOLD bool $hasComparatorSignal() const;
 
-    MCNAPI int
+    MCFOLD int
     $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCNAPI bool $canSlide(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSlide(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $canInstatick() const;
+    MCFOLD bool $canInstatick() const;
 
-    MCNAPI bool $canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCFOLD bool $canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $notifySpawnedAt(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $notifySpawnedAt(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $causesFreezeEffect() const;
+    MCFOLD bool $causesFreezeEffect() const;
 
-    MCNAPI ::std::string $buildDescriptionId(::Block const&) const;
+    MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCNAPI bool $isAuxValueRelevantForPicking() const;
+    MCFOLD bool $isAuxValueRelevantForPicking() const;
 
-    MCNAPI bool $isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
+    MCFOLD bool $isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
 
-    MCNAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
+    MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
-    MCNAPI float $getShadeBrightness(::Block const& block) const;
+    MCAPI float $getShadeBrightness(::Block const& block) const;
 
-    MCNAPI int $telemetryVariant(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI int $telemetryVariant(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI int $getVariant(::Block const& block) const;
+    MCAPI int $getVariant(::Block const& block) const;
 
-    MCNAPI bool $canSpawnOn(::Actor*) const;
+    MCFOLD bool $canSpawnOn(::Actor*) const;
 
-    MCNAPI ::Block const& $getRenderBlock() const;
+    MCFOLD ::Block const& $getRenderBlock() const;
 
-    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCFOLD uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCNAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+    MCFOLD ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const&) const;
+    MCFOLD void $animateTickBedrockLegacy(::BlockAnimateTickData const&) const;
 
-    MCNAPI void $animateTick(::BlockAnimateTickData const&) const;
+    MCFOLD void $animateTick(::BlockAnimateTickData const&) const;
 
-    MCNAPI ::BlockType& $init();
+    MCFOLD ::BlockType& $init();
 
-    MCNAPI ::Brightness $getLightEmission(::Block const&) const;
+    MCAPI ::Brightness $getLightEmission(::Block const&) const;
 
-    MCNAPI ::Block const* $tryLegacyUpgrade(ushort) const;
+    MCFOLD ::Block const* $tryLegacyUpgrade(ushort) const;
 
-    MCNAPI bool $dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const;
+    MCFOLD bool $dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const;
 
-    MCNAPI ::Block const* $tryGetInfested(::Block const&) const;
+    MCFOLD ::Block const* $tryGetInfested(::Block const&) const;
 
-    MCNAPI ::Block const* $tryGetUninfested(::Block const&) const;
+    MCFOLD ::Block const* $tryGetUninfested(::Block const&) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCFOLD void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
+    MCFOLD void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
 
-    MCNAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCNAPI bool $shouldTickOnSetBlock() const;
+    MCFOLD bool $shouldTickOnSetBlock() const;
 
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
+    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI ::BlockRenderLayer $getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
+    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
 
-    MCNAPI int $getExtraRenderLayers() const;
+    MCFOLD int $getExtraRenderLayers() const;
 
-    MCNAPI ::HashedString const& $getCullingLayer() const;
+    MCAPI ::HashedString const& $getCullingLayer() const;
 
-    MCNAPI ::Brightness $getLight(::Block const&) const;
+    MCAPI ::Brightness $getLight(::Block const&) const;
 
-    MCNAPI ::Brightness $getEmissiveBrightness(::Block const&) const;
+    MCFOLD ::Brightness $getEmissiveBrightness(::Block const&) const;
 
-    MCNAPI ::mce::Color $getMapColor(::BlockSource&, ::BlockPos const&, ::Block const&) const;
+    MCFOLD ::mce::Color $getMapColor(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
-    MCNAPI void $_onHitByActivatingAttack(::BlockSource&, ::BlockPos const&, ::Actor*) const;
+    MCFOLD void $_onHitByActivatingAttack(::BlockSource&, ::BlockPos const&, ::Actor*) const;
 
-    MCNAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor&) const;
+    MCFOLD void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor&) const;
     // NOLINTEND
 
 public:

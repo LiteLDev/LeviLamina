@@ -28,7 +28,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class HopperBlock : public ::ActorBlockBase<::BlockType> {
+class HopperBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
