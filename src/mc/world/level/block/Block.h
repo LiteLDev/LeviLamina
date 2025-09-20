@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
@@ -47,30 +47,30 @@ public:
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, BlockStatesType const& states);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(CompoundTag const& nbt);
 
-    [[nodiscard]] inline std::string const& getTypeName() const { return getLegacyBlock().getTypeName(); }
+    [[nodiscard]] inline std::string const& getTypeName() const { return getBlockType().getTypeName(); }
 
-    [[nodiscard]] inline short getBlockItemId() const { return getLegacyBlock().getBlockItemId(); }
+    [[nodiscard]] inline short getBlockItemId() const { return getBlockType().getBlockItemId(); }
 
     [[nodiscard]] inline ushort getData() const { return mData; }
 
     template <typename T>
     std::optional<T> getState(uint64 id) const {
-        return mLegacyBlock->getState<T>(id, mData);
+        return mBlockType->getState<T>(id, mData);
     }
 
     template <typename T>
     std::optional<T> getState(BlockState const& state) const {
-        return mLegacyBlock->getState<T>(state, mData);
+        return mBlockType->getState<T>(state, mData);
     }
 
     template <typename T>
     optional_ref<Block const> setState(uint64 id, T value) const {
-        return mLegacyBlock->trySetState(id, value, mData);
+        return mBlockType->trySetState(id, value, mData);
     }
 
     template <typename T>
     optional_ref<Block const> setState(BlockState const& state, T value) const {
-        return mLegacyBlock->trySetState(state, value, mData);
+        return mBlockType->trySetState(state, value, mData);
     }
 
 public:

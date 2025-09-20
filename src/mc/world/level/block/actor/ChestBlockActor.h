@@ -80,7 +80,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float>                           mSpeed;
     ::ll::TypedStorage<1, 1, bool>                            mIsGlobalChest;
-    ::ll::TypedStorage<1, 1, bool>                            mUsesLegacyBlockDetection;
+    ::ll::TypedStorage<1, 1, bool>                            mUsesBlockTypeDetection;
     ::ll::TypedStorage<4, 4, float>                           mObstructionHeight;
     bool                                                      mPairLead : 1;
     ::ll::TypedStorage<4, 4, float>                           mOpenness;

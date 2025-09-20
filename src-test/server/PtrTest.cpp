@@ -3,7 +3,7 @@
 // #include "mc/server/ServerInstance.h"
 // #include "mc/world/events/ServerInstanceEventCoordinator.h"
 // #include "mc/world/level/block/Block.h"
-// #include "mc/world/level/block/BlockLegacy.h"
+// #include "mc/world/level/block/BlockType.h"
 // #include "mc/world/level/block/definition/BlockDefinitionGroup.h"
 // #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 // #include "mc/world/level/material/Material.h"
@@ -70,7 +70,7 @@
 //     ::ServerInstance& ins
 //) {
 //     origin(ins);
-//     // SharedPtr<BlockLegacy>::makeShared("hl:wd", 1234, Material::getMaterial(MaterialType::Dirt));
+//     // SharedPtr<BlockType>::makeShared("hl:wd", 1234, Material::getMaterial(MaterialType::Dirt));
 //     test();
 // }
 //

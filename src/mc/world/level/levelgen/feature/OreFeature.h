@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/block/Block.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/levelgen/feature/ReplaceRule.h"
 
 // auto generated inclusion list

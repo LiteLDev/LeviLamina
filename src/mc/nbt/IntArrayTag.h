@@ -19,12 +19,6 @@ public:
     [[nodiscard]] constexpr IntArrayTag(std::initializer_list<int> val) : Array(val) {}
 
 public:
-    // prevent constructor by default
-    IntArrayTag& operator=(IntArrayTag const&);
-    IntArrayTag(IntArrayTag const&);
-    IntArrayTag();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
@@ -50,12 +44,6 @@ public:
 
     // vIndex: 0
     virtual ~IntArrayTag() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::IntArrayTag& operator=(::IntArrayTag&&);
     // NOLINTEND
 
 public:
