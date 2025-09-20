@@ -12,7 +12,7 @@ class BlockPos;
 class BlockSource;
 // clang-format on
 
-class ConduitBlock : public ::ActorBlockBase<::BlockType> {
+class ConduitBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

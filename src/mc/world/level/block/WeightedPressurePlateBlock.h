@@ -46,15 +46,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getTickDelay() const;
+    MCFOLD int $getTickDelay() const;
 
-    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCNAPI int $getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI int $getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI int $getSignalForData(int data) const;
+    MCFOLD int $getSignalForData(int data) const;
 
-    MCNAPI int $getRedstoneSignal(int signal) const;
+    MCFOLD int $getRedstoneSignal(int signal) const;
     // NOLINTEND
 
 public:

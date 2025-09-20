@@ -24,7 +24,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class BannerBlock : public ::ActorBlockBase<::BlockType> {
+class BannerBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN

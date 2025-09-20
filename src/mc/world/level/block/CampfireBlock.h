@@ -22,7 +22,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class CampfireBlock : public ::ActorBlockBase<::BlockType> {
+class CampfireBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN

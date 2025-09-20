@@ -66,37 +66,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::AABB $getCollisionShape(
+    MCFOLD ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCNAPI ::AABB const&
+    MCFOLD ::AABB const&
     $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const;
 
-    MCNAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
+    MCAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
 
-    MCNAPI bool $mayPick() const;
+    MCFOLD bool $mayPick() const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

@@ -6,7 +6,7 @@
 #include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockType.h"
 
-class NetherReactorBlock : public ::ActorBlockBase<::BlockType> {
+class NetherReactorBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

@@ -16,7 +16,7 @@ class GetCollisionShapeInterface;
 class IConstBlockSource;
 // clang-format on
 
-class MobSpawnerBlock : public ::ActorBlockBase<::BlockType> {
+class MobSpawnerBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

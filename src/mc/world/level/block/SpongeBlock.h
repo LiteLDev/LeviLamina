@@ -36,29 +36,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _attemptAbsorbWater(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _attemptAbsorbWater(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void _evaporateWater(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _evaporateWater(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool _performAbsorbWater(::BlockSource& region, ::BlockPos const& startPos) const;
+    MCAPI bool _performAbsorbWater(::BlockSource& region, ::BlockPos const& startPos) const;
 
-    MCNAPI void _setShouldDry(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _setShouldDry(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void _spawnAbsorbParticles(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _spawnAbsorbParticles(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

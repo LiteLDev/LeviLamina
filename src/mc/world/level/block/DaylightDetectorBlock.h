@@ -19,7 +19,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class DaylightDetectorBlock : public ::ActorBlockBase<::BlockType> {
+class DaylightDetectorBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN

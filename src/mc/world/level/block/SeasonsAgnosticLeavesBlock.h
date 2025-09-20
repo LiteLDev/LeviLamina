@@ -32,9 +32,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
+    MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
     // NOLINTEND
 
 public:

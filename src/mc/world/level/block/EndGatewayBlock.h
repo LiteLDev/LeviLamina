@@ -20,7 +20,7 @@ class ItemInstance;
 struct BlockAnimateTickData;
 // clang-format on
 
-class EndGatewayBlock : public ::ActorBlockBase<::BlockType> {
+class EndGatewayBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

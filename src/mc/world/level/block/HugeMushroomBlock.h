@@ -19,7 +19,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockType& $init();
+    MCAPI ::BlockType& $init();
     // NOLINTEND
 
 public:

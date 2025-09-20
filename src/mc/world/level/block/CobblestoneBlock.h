@@ -24,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Block const* $tryGetInfested(::Block const& block) const;
+    MCAPI ::Block const* $tryGetInfested(::Block const& block) const;
     // NOLINTEND
 
 public:

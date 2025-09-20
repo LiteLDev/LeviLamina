@@ -115,49 +115,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void fetchPathableNeighbors(
+    MCAPI void fetchPathableNeighbors(
         ::std::vector<::BlockPos>& outNeighbors,
         ::BlockSource&             region,
         ::BlockPos const&          pos,
         ::Vec3 const&              entityPos
     ) const;
 
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BaseGameVersion const& FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    MCAPI static ::BaseGameVersion const& FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
+    MCAPI bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
 
-    MCNAPI ::AABB const& $getVisualShapeInWorld(
+    MCAPI ::AABB const& $getVisualShapeInWorld(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::AABB&                    bufferAABB
     ) const;
 
-    MCNAPI ::AABB $getCollisionShape(
+    MCAPI ::AABB $getCollisionShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCNAPI ::AABB const& $getOutline(
+    MCAPI ::AABB const& $getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::AABB&                    bufferValue
     ) const;
 
-    MCNAPI bool $addCollisionShapes(
+    MCAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -166,24 +166,24 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI ::std::string $buildDescriptionId(::Block const& block) const;
+    MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCNAPI bool $isFenceBlock() const;
+    MCFOLD bool $isFenceBlock() const;
 
-    MCNAPI bool
+    MCFOLD bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCNAPI ::HitResult $clip(
+    MCFOLD ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
         ::BlockPos const&                                  pos,
@@ -193,7 +193,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

@@ -48,32 +48,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _addToRandomTickingQueue(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI static void _addToRandomTickingQueue(::BlockSource& region, ::BlockPos const& pos);
 
-    MCNAPI static void
+    MCAPI static void
     _spawnParticles(::SharedTypes::Legacy::LevelEvent particleEvent, ::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCNAPI ::std::string $buildDescriptionId(::Block const&) const;
+    MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCNAPI int $getVariant(::Block const& block) const;
+    MCAPI int $getVariant(::Block const& block) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

@@ -48,27 +48,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addToTickQueue(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void addToTickQueue(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getVariant(::Block const& block) const;
+    MCFOLD int $getVariant(::Block const& block) const;
 
-    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI ::Brightness $getEmissiveBrightness(::Block const&) const;
+    MCAPI ::Brightness $getEmissiveBrightness(::Block const&) const;
 
-    MCNAPI bool $shouldTickOnSetBlock() const;
+    MCFOLD bool $shouldTickOnSetBlock() const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

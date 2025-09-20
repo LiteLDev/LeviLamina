@@ -55,7 +55,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SaplingBlock(
+    MCAPI SaplingBlock(
         ::std::string const&           nameId,
         int                            id,
         ::std::optional<::std::string> singleSaplingTree,
@@ -63,12 +63,12 @@ public:
         ::std::optional<::std::string> quadrupleSaplingTree
     );
 
-    MCNAPI bool _age(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool _age(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI ::std::optional<::BlockPos>
+    MCAPI ::std::optional<::BlockPos>
     _getQuadrupleSaplingOffset(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool _placeFeature(
+    MCAPI bool _placeFeature(
         ::BlockSource&              region,
         ::BlockPos const&           pos,
         ::std::optional<::BlockPos> quadrupleSaplingOffset,
@@ -76,22 +76,22 @@ public:
         ::Random&                   random
     ) const;
 
-    MCNAPI bool _placeTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool _placeTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI void _setBlockNoUpdate(
+    MCAPI void _setBlockNoUpdate(
         ::BlockSource&              region,
         ::BlockPos const&           pos,
         ::std::optional<::BlockPos> quadrupleSaplingOffset,
         ::Block const&              block
     ) const;
 
-    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string const&           nameId,
         int                            id,
         ::std::optional<::std::string> singleSaplingTree,
@@ -103,14 +103,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool
+    MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const;
 
-    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

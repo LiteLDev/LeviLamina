@@ -69,20 +69,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CoralFanHang(
+    MCAPI CoralFanHang(
         ::std::string const&  nameId,
         int                   id,
         ::HashedString const& coralFanVersion,
         ::HashedString const& deadVersion
     );
 
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::string const&  nameId,
         int                   id,
         ::HashedString const& coralFanVersion,
@@ -93,22 +93,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI ::AABB const&
+    MCAPI ::AABB const&
     $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCNAPI ::std::string $buildDescriptionId(::Block const&) const;
+    MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCNAPI void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:

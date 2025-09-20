@@ -83,58 +83,58 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCNAPI void updateDelay(::BlockSource& region, ::BlockPos const& pos, bool doIncrement) const;
+    MCAPI void updateDelay(::BlockSource& region, ::BlockPos const& pos, bool doIncrement) const;
 
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<int const[]> DELAYS();
+    MCAPI static ::std::add_lvalue_reference_t<int const[]> DELAYS();
 
-    MCNAPI static ::std::add_lvalue_reference_t<float const[]> DELAY_RENDER_OFFSETS();
+    MCAPI static ::std::add_lvalue_reference_t<float const[]> DELAY_RENDER_OFFSETS();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCNAPI bool $isLocked(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $isLocked(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool
+    MCAPI bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCNAPI bool $isPreservingMediumWhenPlaced(::BlockType const* medium) const;
+    MCFOLD bool $isPreservingMediumWhenPlaced(::BlockType const* medium) const;
 
-    MCNAPI int $getTurnOnDelay(::Block const& block) const;
+    MCAPI int $getTurnOnDelay(::Block const& block) const;
 
-    MCNAPI ::Block const* $getOnBlock(::Block const* block) const;
+    MCAPI ::Block const* $getOnBlock(::Block const* block) const;
 
-    MCNAPI ::Block const* $getOffBlock(::Block const* block) const;
+    MCAPI ::Block const* $getOffBlock(::Block const* block) const;
 
-    MCNAPI bool $isAlternateInput(::Block const& block) const;
+    MCAPI bool $isAlternateInput(::Block const& block) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

@@ -19,7 +19,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface() const;
     // NOLINTEND
 
 public:

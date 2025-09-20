@@ -117,41 +117,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _die(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _die(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void runDecay(::BlockSource& region, ::BlockPos const& pos, int range);
+    MCAPI static void runDecay(::BlockSource& region, ::BlockPos const& pos, int range);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::LeavesBlock::ParticleParams const& BIOME_TINTED_LEAVES_PARTICLE_PARAMS();
+    MCAPI static ::LeavesBlock::ParticleParams const& BIOME_TINTED_LEAVES_PARTICLE_PARAMS();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI int $getVariant(::Block const& block) const;
+    MCAPI int $getVariant(::Block const& block) const;
 
-    MCNAPI bool $isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
+    MCAPI bool $isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
 
-    MCNAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI ::HashedString const& $getCullingLayer() const;
+    MCAPI ::HashedString const& $getCullingLayer() const;
 
-    MCNAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
+    MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCNAPI ::Block const& $getPlacementBlock(
+    MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -159,13 +159,13 @@ public:
         int               itemValue
     ) const;
 
-    MCNAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
+    MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
-    MCNAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
-    MCNAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
+    MCFOLD bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

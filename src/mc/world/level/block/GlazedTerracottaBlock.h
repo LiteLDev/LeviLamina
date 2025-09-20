@@ -32,7 +32,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Block const& $getPlacementBlock(
+    MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -40,7 +40,7 @@ public:
         int               itemValue
     ) const;
 
-    MCNAPI bool $isValidAuxValue(int value) const;
+    MCFOLD bool $isValidAuxValue(int value) const;
     // NOLINTEND
 
 public:

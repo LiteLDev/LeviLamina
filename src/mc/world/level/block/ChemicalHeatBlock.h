@@ -37,31 +37,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _queueTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void _queueTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::BlockPos> const& _getRelativeOffsets();
+    MCAPI static ::std::vector<::BlockPos> const& _getRelativeOffsets();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getExtraRenderLayers() const;
+    MCFOLD int $getExtraRenderLayers() const;
 
-    MCNAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

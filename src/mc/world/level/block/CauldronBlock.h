@@ -39,7 +39,7 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class CauldronBlock : public ::ActorBlockBase<::BlockType> {
+class CauldronBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

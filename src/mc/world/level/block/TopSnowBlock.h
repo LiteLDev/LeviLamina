@@ -137,72 +137,71 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const* item) const;
+    MCAPI bool _canBeBuiltOver(::BlockSource& region, ::BlockPos const& pos, ::BlockItem const* item) const;
 
-    MCNAPI bool melt(::BlockSource& region, ::BlockPos const& pos, int meltHeight) const;
+    MCAPI bool melt(::BlockSource& region, ::BlockPos const& pos, int meltHeight) const;
 
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    MCNAPI void startFallingIfLostSupport(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI void startFallingIfLostSupport(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Block const&
-    buildSnowBlock(::BlockSource& region, ::BlockPos const& pos, int height, bool additive);
+    MCAPI static ::Block const& buildSnowBlock(::BlockSource& region, ::BlockPos const& pos, int height, bool additive);
 
-    MCNAPI static ::Block const&
+    MCAPI static ::Block const&
     getSnowBlockToBuild(::BlockSource const& region, ::BlockPos const& pos, int height, bool additive);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static int const& MAX_HEIGHT();
+    MCAPI static int const& MAX_HEIGHT();
 
-    MCNAPI static ::BaseGameVersion const& TOP_SNOW_FALL_ON_PLACE();
+    MCAPI static ::BaseGameVersion const& TOP_SNOW_FALL_ON_PLACE();
 
-    MCNAPI static ::BaseGameVersion const& TOP_SNOW_JAVA_PARITY_VERSION();
+    MCAPI static ::BaseGameVersion const& TOP_SNOW_JAVA_PARITY_VERSION();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCNAPI ::AABB $getCollisionShape(
+    MCAPI ::AABB $getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
         ::BlockPos const&                                  pos,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCNAPI bool $getCollisionShapeForCamera(
+    MCAPI bool $getCollisionShapeForCamera(
         ::AABB&                    outAABB,
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos
     ) const;
 
-    MCNAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
+    MCAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $tryToPlace(
+    MCAPI bool $tryToPlace(
         ::BlockSource&                 region,
         ::BlockPos const&              pos,
         ::Block const&                 block,
         ::ActorBlockSyncMessage const* syncMsg
     ) const;
 
-    MCNAPI ::Block const& $getPlacementBlock(
+    MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -210,39 +209,39 @@ public:
         int               itemValue
     ) const;
 
-    MCNAPI bool $isPreservingMediumWhenPlaced(::BlockType const* medium) const;
+    MCAPI bool $isPreservingMediumWhenPlaced(::BlockType const* medium) const;
 
-    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI ::mce::Color $getDustColor(::Block const&) const;
+    MCFOLD ::mce::Color $getDustColor(::Block const&) const;
 
-    MCNAPI ::std::string $getDustParticleName(::Block const&) const;
+    MCAPI ::std::string $getDustParticleName(::Block const&) const;
 
-    MCNAPI bool $shouldStopFalling(::Actor& entity) const;
+    MCAPI bool $shouldStopFalling(::Actor& entity) const;
 
-    MCNAPI bool $canBeBuiltOver(
+    MCAPI bool $canBeBuiltOver(
         ::Block const&     block,
         ::BlockSource&     region,
         ::BlockPos const&  pos,
         ::BlockItem const& newItem
     ) const;
 
-    MCNAPI bool $canBeBuiltOver(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canBeBuiltOver(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $canHaveExtraData() const;
+    MCFOLD bool $canHaveExtraData() const;
 
-    MCNAPI bool $isLavaBlocking() const;
+    MCFOLD bool $isLavaBlocking() const;
 
-    MCNAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void
+    MCAPI void
     $startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

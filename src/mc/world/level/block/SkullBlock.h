@@ -21,7 +21,7 @@ class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class SkullBlock : public ::ActorBlockBase<::BlockType> {
+class SkullBlock : public ::ActorBlock {
 public:
     // SkullBlock inner types define
     enum class SkullType : int {

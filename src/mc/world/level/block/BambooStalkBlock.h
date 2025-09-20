@@ -72,23 +72,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Block const& _determineNewBlockState(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI ::Block const& _determineNewBlockState(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI ::LeafSize _getLeafSize(::Block const& block) const;
+    MCAPI ::LeafSize _getLeafSize(::Block const& block) const;
 
-    MCNAPI ::StalkThickness _getStalkThickness(::Block const& block) const;
+    MCAPI ::StalkThickness _getStalkThickness(::Block const& block) const;
 
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Block const& $getPlacementBlock(
+    MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -96,26 +96,26 @@ public:
         int               itemValue
     ) const;
 
-    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI bool
+    MCAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCNAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCNAPI bool $isValidAuxValue(int auxValue) const;
+    MCAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB&) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB&) const;
 
-    MCNAPI bool $isLavaBlocking() const;
+    MCFOLD bool $isLavaBlocking() const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

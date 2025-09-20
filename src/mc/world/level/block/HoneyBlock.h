@@ -50,32 +50,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void triggerSlidingDownEffects(::Actor& entity, ::BlockPos const& pos, ::Block const& honeyBlock);
+    MCAPI static void triggerSlidingDownEffects(::Actor& entity, ::BlockPos const& pos, ::Block const& honeyBlock);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCNAPI ::AABB $getCollisionShape(
+    MCAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCNAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCNAPI int $getExtraRenderLayers() const;
+    MCFOLD int $getExtraRenderLayers() const;
 
-    MCNAPI ::AABB const& $getVisualShape(::Block const&, ::AABB& bufferAABB) const;
+    MCAPI ::AABB const& $getVisualShape(::Block const&, ::AABB& bufferAABB) const;
     // NOLINTEND
 
 public:

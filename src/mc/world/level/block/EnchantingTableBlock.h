@@ -16,7 +16,7 @@ class Experiments;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class EnchantingTableBlock : public ::ActorBlockBase<::BlockType> {
+class EnchantingTableBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

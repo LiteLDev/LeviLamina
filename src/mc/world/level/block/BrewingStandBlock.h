@@ -24,7 +24,7 @@ struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class BrewingStandBlock : public ::ActorBlockBase<::BlockType> {
+class BrewingStandBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

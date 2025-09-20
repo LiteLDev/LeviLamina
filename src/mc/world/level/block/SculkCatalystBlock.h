@@ -16,7 +16,7 @@ class Random;
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class SculkCatalystBlock : public ::ActorBlockBase<::BlockType> {
+class SculkCatalystBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN

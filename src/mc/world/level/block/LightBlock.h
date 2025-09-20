@@ -86,13 +86,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $addCollisionShapes(
+    MCFOLD bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -101,36 +101,36 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCNAPI ::AABB $getCollisionShape(
+    MCFOLD ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCNAPI bool $isFilteredOut(::BlockRenderLayer heldItemRenderLayer) const;
+    MCAPI bool $isFilteredOut(::BlockRenderLayer heldItemRenderLayer) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $tryToPlace(
+    MCFOLD bool $tryToPlace(
         ::BlockSource&                 region,
         ::BlockPos const&              pos,
         ::Block const&                 block,
         ::ActorBlockSyncMessage const* syncMsg
     ) const;
 
-    MCNAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
-    MCNAPI bool $canBeBuiltOver(
+    MCAPI bool $canBeBuiltOver(
         ::Block const&     block,
         ::BlockSource&     region,
         ::BlockPos const&  pos,
         ::BlockItem const& newItem
     ) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:
