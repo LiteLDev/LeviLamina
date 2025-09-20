@@ -8,13 +8,13 @@ struct CarverConfiguration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkc2c98d;
-    ::ll::UntypedStorage<4, 4>  mUnk5f64bf;
-    ::ll::UntypedStorage<8, 64> mUnkd34b77;
-    ::ll::UntypedStorage<8, 64> mUnk5d1a2f;
-    ::ll::UntypedStorage<8, 64> mUnkba4041;
-    ::ll::UntypedStorage<8, 64> mUnk7e6492;
-    ::ll::UntypedStorage<8, 64> mUnkef979e;
+    ::ll::UntypedStorage<1, 1> mUnk199ca9;
+    ::ll::UntypedStorage<4, 4> mUnkd3a66f;
+    ::ll::UntypedStorage<8, 8> mUnk4e9378;
+    ::ll::UntypedStorage<8, 8> mUnk70603f;
+    ::ll::UntypedStorage<8, 8> mUnk9fa816;
+    ::ll::UntypedStorage<8, 8> mUnk430116;
+    ::ll::UntypedStorage<8, 8> mUnk4bcf4c;
     // NOLINTEND
 
 public:

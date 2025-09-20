@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/certificates/WebToken.h"
+#include "mc/certificates/identity/GameServerToken.h"
 #include "mc/certificates/identity/LegacyMultiplayerToken.h"
+#include "mc/certificates/identity/PlayerAuthenticationInfo.h"
 #include "mc/certificates/identity/PlayerAuthenticationType.h"
 #include "mc/certificates/identity/RawGameServerToken.h"
 #include "mc/world/actor/player/persona/PieceType.h"
@@ -15,7 +18,6 @@ class MinEngineVersion;
 class SerializedPersonaPieceHandle;
 class TintMapColor;
 class UnverifiedCertificate;
-class WebToken;
 namespace Json { class Value; }
 namespace mce { class Color; }
 // clang-format on
@@ -24,11 +26,14 @@ class ConnectionRequest {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                                       mIsVerified;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WebToken>>              mRawToken;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UnverifiedCertificate>> mCertificateData;
     ::ll::TypedStorage<8, 8, ::LegacyMultiplayerToken>                   mLegacyMultiplayerToken;
-    ::ll::TypedStorage<8, 32, ::RawGameServerToken>                      mGameServerToken;
+    ::ll::TypedStorage<8, 32, ::RawGameServerToken>                      mUnverifiedGameServerToken;
+    ::ll::TypedStorage<8, 136, ::GameServerToken>                        mVerifiedGameServerToken;
     ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType>                 mAuthenticationType;
+    ::ll::TypedStorage<8, 272, ::PlayerAuthenticationInfo>               mAuthenticationInfo;
     // NOLINTEND
 
 public:
@@ -85,13 +90,17 @@ public:
 
     MCFOLD ::std::string getSkinId() const;
 
-    MCAPI ushort getSkinImageHeight() const;
+    MCFOLD ushort getSkinImageHeight() const;
 
-    MCAPI ushort getSkinImageWidth() const;
+    MCFOLD ushort getSkinImageWidth() const;
 
     MCAPI ::std::string getSkinResourcePatch() const;
 
+    MCFOLD void invalidate();
+
     MCFOLD bool isPersonaSkin() const;
+
+    MCAPI bool isWellFormed() const;
 
     MCFOLD ::std::string toString();
 

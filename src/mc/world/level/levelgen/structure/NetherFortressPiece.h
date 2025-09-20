@@ -70,6 +70,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit NetherFortressPiece(int genDepth);
+
     MCNAPI ::std::unique_ptr<::NetherFortressPiece> findAndCreateBridgePieceFactory(
         ::std::string const&                                pieceClass,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
@@ -131,6 +133,12 @@ public:
         int                                                 direction,
         int                                                 depth
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(int genDepth);
     // NOLINTEND
 
 public:

@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/ActorBlockBase.h"
-#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,29 +18,29 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class SculkShriekerBlock : public ::ActorBlock {
+class SculkShriekerBlock : public ::ActorBlockBase<::BlockType> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 124
-    virtual ::BlockLegacy& init() /*override*/;
+    // vIndex: 125
+    virtual ::BlockType& init() /*override*/;
 
-    // vIndex: 131
+    // vIndex: 132
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 133
+    // vIndex: 134
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 117
+    // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -58,7 +58,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockLegacy& $init();
+    MCNAPI ::BlockType& $init();
 
     MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 

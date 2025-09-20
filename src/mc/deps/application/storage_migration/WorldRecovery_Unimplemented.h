@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/application/storage_migration/WorldRecovery.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/pub_sub/DeferralType.h"
 
 // auto generated forward declare list
@@ -24,7 +24,7 @@ public:
 
     // vIndex: 2
     virtual ::std::tuple<
-        ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::WorldRecovery::RecoveryResult>>,
+        ::Bedrock::Threading::Async<::Bedrock::WorldRecovery::RecoveryResult>,
         ::Bedrock::PubSub::DeferredSubscription>
         doRecovery(
             ::std::string_view,

@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isSameBlock(::Block const& rhs, bool onlyCompareBlockLegacy, bool compareWithComplexAlias) const;
+    MCAPI bool isSameBlock(::Block const& rhs, bool onlyCompareBlockType, bool compareWithComplexAlias) const;
 
     MCAPI ~CommandBlockNameResult();
     // NOLINTEND

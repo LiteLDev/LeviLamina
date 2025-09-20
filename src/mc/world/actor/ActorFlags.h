@@ -123,7 +123,7 @@ enum class ActorFlags : int {
     TimerFlag3                    = 117,
     BodyRotationBlocked           = 118,
     RendersWhenInvisible          = 119,
-    BodyRotationAxisAligned       = 120,
+    RotationAxisAligned           = 120,
     Collidable                    = 121,
     WasdAirControlled             = 122,
     DoesServerAuthOnlyDismount    = 123,

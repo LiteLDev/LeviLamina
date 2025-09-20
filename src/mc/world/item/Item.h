@@ -26,9 +26,9 @@
 // clang-format off
 class Actor;
 class Block;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class CameraItemComponentLegacy;
 class CompoundTag;
 class Container;
@@ -64,25 +64,6 @@ namespace mce { class Color; }
 
 class Item {
 public:
-    // Item inner types declare
-    // clang-format off
-    class Tier;
-    // clang-format on
-
-    // Item inner types define
-    class Tier {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int const>   mLevel;
-        ::ll::TypedStorage<4, 4, int const>   mUses;
-        ::ll::TypedStorage<4, 4, float const> mSpeed;
-        ::ll::TypedStorage<4, 4, int const>   mDamage;
-        ::ll::TypedStorage<4, 4, int const>   mEnchantmentValue;
-        // NOLINTEND
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::ItemVersion>                                   mItemParseVersion;
@@ -115,7 +96,7 @@ public:
     bool                                                                      mIgnoresPermissions   : 1;
     ::ll::TypedStorage<4, 4, int>                                             mMaxUseDuration;
     ::ll::TypedStorage<8, 32, ::BaseGameVersion>                              mMinRequiredBaseGameVersion;
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockLegacy const>>                  mLegacyBlock;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>>                    mBlockType;
     ::ll::TypedStorage<4, 4, ::CreativeItemCategory>                          mCreativeCategory;
     ::ll::TypedStorage<8, 8, ::Item*>                                         mCraftingRemainingItem;
     ::ll::TypedStorage<8, 32, ::std::string>                                  mCreativeGroup;
@@ -142,7 +123,12 @@ public:
     virtual ~Item();
 
     // vIndex: 1
-    virtual bool initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const);
+    virtual bool initServer(
+        ::Json::Value const& data,
+        ::SemVersion const&,
+        ::IPackLoadContext& packLoadContext,
+        ::JsonBetaState const
+    );
 
     // vIndex: 2
     virtual void tearDown();
@@ -157,7 +143,7 @@ public:
     virtual int getMaxUseDuration(::ItemStack const*) const;
 
     // vIndex: 6
-    virtual ::WeakPtr<::BlockLegacy const> const& getLegacyBlockForRendering() const;
+    virtual ::WeakPtr<::BlockType const> const& getBlockTypeForRendering() const;
 
     // vIndex: 7
     virtual bool isMusicDisk() const;
@@ -469,7 +455,7 @@ public:
     virtual bool hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
 
     // vIndex: 106
-    virtual void initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&);
+    virtual void initClient(::Json::Value const& data, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&);
 
     // vIndex: 107
     virtual ::Item& setIconInfo(::std::string const& name, int index);
@@ -629,6 +615,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI bool $initServer(
+        ::Json::Value const& data,
+        ::SemVersion const&,
+        ::IPackLoadContext& packLoadContext,
+        ::JsonBetaState const
+    );
+
     MCFOLD void $tearDown();
 
     MCAPI ::Item& $setDescriptionId(::std::string const& description);
@@ -637,7 +630,7 @@ public:
 
     MCAPI int $getMaxUseDuration(::ItemStack const*) const;
 
-    MCFOLD ::WeakPtr<::BlockLegacy const> const& $getLegacyBlockForRendering() const;
+    MCFOLD ::WeakPtr<::BlockType const> const& $getBlockTypeForRendering() const;
 
     MCFOLD bool $isMusicDisk() const;
 
@@ -658,6 +651,8 @@ public:
     MCFOLD bool $isDyeable() const;
 
     MCFOLD bool $isDye() const;
+
+    MCFOLD ::ItemColor $getItemColor() const;
 
     MCFOLD bool $isFertilizer() const;
 
@@ -837,6 +832,8 @@ public:
 
     MCFOLD void $enchantProjectile(::ItemStackBase const&, ::Actor&) const;
 
+    MCFOLD ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
+
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
     MCFOLD bool $shouldSendInteractionGameEvents() const;
@@ -844,6 +841,8 @@ public:
     MCFOLD bool $useInterruptedByAttacking() const;
 
     MCFOLD bool $hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
+
+    MCAPI void $initClient(::Json::Value const& data, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&);
 
     MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 

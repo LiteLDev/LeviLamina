@@ -16,7 +16,7 @@ struct AtmosphereIdentifierClientBiomeJsonComponent : public ::SharedTypes::v1_2
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk40bf83;
+    ::ll::UntypedStorage<8, 32> mUnk2528aa;
     // NOLINTEND
 
 public:

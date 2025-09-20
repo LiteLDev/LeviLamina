@@ -6,6 +6,7 @@
 // clang-format off
 class CompoundTag;
 class Vec3;
+namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -97,7 +98,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::std::string> validateDynamicProperty(
+    MCAPI static ::std::optional<::Scripting::ArgumentOutOfBoundsError> validateDynamicProperty(
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value
     );

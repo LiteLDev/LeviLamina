@@ -20,6 +20,12 @@ public:
 
 
 public:
+    // prevent constructor by default
+    ByteArrayTag& operator=(ByteArrayTag const&);
+    ByteArrayTag(ByteArrayTag const&);
+    ByteArrayTag();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
@@ -45,6 +51,12 @@ public:
 
     // vIndex: 0
     virtual ~ByteArrayTag() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ::ByteArrayTag& operator=(::ByteArrayTag&&);
     // NOLINTEND
 
 public:

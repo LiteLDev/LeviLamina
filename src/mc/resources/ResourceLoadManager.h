@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/resources/ResourceLoadType.h"
@@ -61,7 +61,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue(
+        MCNAPI ::Bedrock::Threading::Async<void> queue(
             ::brstd::move_only_function<::TaskResult()> threadedCallback,
             ::std::function<void()>                     mainThreadCallback,
             uint                                        taskPriority
@@ -99,14 +99,14 @@ public:
     MCNAPI void
     _prepareTaskGroupToRunAgain(::gsl::not_null<::ResourceLoadManager::ResourceLoadTaskGroup*> resourceLoadTaskGroup);
 
-    MCNAPI bool cancel(::ResourceLoadType resourceLoadType);
-
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue(
+    MCNAPI ::Bedrock::Threading::Async<void> queue(
         ::ResourceLoadType                          resourceLoadType,
         ::brstd::move_only_function<::TaskResult()> threadedCallback,
         ::std::function<void()>                     mainThreadCallback,
         uint                                        taskPriority
     );
+
+    MCNAPI bool softCancel(::ResourceLoadType resourceLoadType);
     // NOLINTEND
 
 public:

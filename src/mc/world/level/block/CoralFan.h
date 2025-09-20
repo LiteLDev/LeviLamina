@@ -36,7 +36,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 47
+    // vIndex: 48
     virtual bool isValidAuxValue(int value) const /*override*/;
 
     // vIndex: 5
@@ -47,27 +47,27 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 74
+    // vIndex: 75
     virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
     // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 86
+    // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 56
+    // vIndex: 57
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
-    // vIndex: 80
+    // vIndex: 81
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0

@@ -13,6 +13,10 @@
 class BlockSource;
 namespace Editor { class EditorStructureTemplate; }
 namespace Editor { class RelativeVolumeListBlockVolume; }
+namespace Editor { struct EditorStructureDBMetadata; }
+namespace Editor { struct EditorStructureMetadataDeleteEditResult; }
+namespace Editor { struct EditorStructureMetadataEditParams; }
+namespace Editor { struct EditorStructureMetadataQueryParams; }
 namespace Editor::Network { class StructureCopyToClipboardPayload; }
 namespace Editor::Network { class StructureDeletePayload; }
 namespace Editor::Network { class StructureDuplicatePayload; }
@@ -21,6 +25,7 @@ namespace Editor::Network { class StructureFromClipboardPayload; }
 namespace Editor::Network { class StructureFromSelectionPayload; }
 namespace Editor::Network { class StructureQueryPayload; }
 namespace Editor::Network { class StructureReplaceFromClipboardPayload; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Services {
@@ -58,6 +63,40 @@ public:
 
     // vIndex: 1
     virtual ::std::optional<::Editor::EditorStructureTemplate> loadStructure(::std::string const& id) /*override*/;
+
+    // vIndex: 2
+    virtual ::std::optional<::std::string> createNewEditorProjectStructure(
+        ::Editor::EditorStructureTemplate const& editorStructure,
+        ::mce::UUID const&                       guid,
+        ::std::string const&                     structureName
+    ) /*override*/;
+
+    // vIndex: 3
+    virtual ::std::vector<::Editor::EditorStructureDBMetadata> queryDB(
+        ::Editor::EditorStructureMetadataQueryParams const& params,
+        bool const                                          reprocessLevelStructures
+    ) /*override*/;
+
+    // vIndex: 4
+    virtual ::Editor::EditorStructureMetadataDeleteEditResult const
+    editStructureMetadata(::Editor::EditorStructureMetadataEditParams& params) /*override*/;
+
+    // vIndex: 5
+    virtual bool replaceMCStructureFromTemplate(
+        ::mce::UUID const&                       guid,
+        ::Editor::EditorStructureTemplate const& structureTemplate
+    ) /*override*/;
+
+    // vIndex: 6
+    virtual ::std::optional<::Editor::EditorStructureTemplate> load(::mce::UUID const& guid) /*override*/;
+
+    // vIndex: 7
+    virtual ::std::optional<::Editor::EditorStructureDBMetadata> const
+    getMetadataByGuid(::mce::UUID const& guid) /*override*/;
+
+    // vIndex: 8
+    virtual ::Editor::EditorStructureMetadataDeleteEditResult const
+    deleteEditorStructure(::mce::UUID const& guid) /*override*/;
     // NOLINTEND
 
 public:
@@ -105,6 +144,29 @@ public:
     MCNAPI ::std::string_view $getServiceName() const;
 
     MCNAPI ::std::optional<::Editor::EditorStructureTemplate> $loadStructure(::std::string const& id);
+
+    MCNAPI ::std::optional<::std::string> $createNewEditorProjectStructure(
+        ::Editor::EditorStructureTemplate const& editorStructure,
+        ::mce::UUID const&                       guid,
+        ::std::string const&                     structureName
+    );
+
+    MCNAPI ::std::vector<::Editor::EditorStructureDBMetadata>
+    $queryDB(::Editor::EditorStructureMetadataQueryParams const& params, bool const reprocessLevelStructures);
+
+    MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult const
+    $editStructureMetadata(::Editor::EditorStructureMetadataEditParams& params);
+
+    MCNAPI bool $replaceMCStructureFromTemplate(
+        ::mce::UUID const&                       guid,
+        ::Editor::EditorStructureTemplate const& structureTemplate
+    );
+
+    MCNAPI ::std::optional<::Editor::EditorStructureTemplate> $load(::mce::UUID const& guid);
+
+    MCNAPI ::std::optional<::Editor::EditorStructureDBMetadata> const $getMetadataByGuid(::mce::UUID const& guid);
+
+    MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult const $deleteEditorStructure(::mce::UUID const& guid);
     // NOLINTEND
 
 public:

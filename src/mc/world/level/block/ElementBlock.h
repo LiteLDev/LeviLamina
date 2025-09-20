@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/block/ElementType.h"
 
 // auto generated forward declare list
@@ -18,7 +18,7 @@ struct ElementInfo;
 namespace mce { class Color; }
 // clang-format on
 
-class ElementBlock : public ::BlockLegacy {
+class ElementBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
@@ -28,16 +28,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 143
+    // vIndex: 144
     virtual ::mce::Color getMapColor(::BlockSource&, ::BlockPos const&, ::Block const& block) const /*override*/;
 
-    // vIndex: 111
+    // vIndex: 112
     virtual ::std::string buildDescriptionId(::Block const& block) const /*override*/;
 
-    // vIndex: 55
-    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
+    // vIndex: 56
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
 
-    // vIndex: 126
+    // vIndex: 127
     virtual ::Block const* tryLegacyUpgrade(ushort extraData) const /*override*/;
 
     // vIndex: 0
@@ -47,31 +47,31 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ElementInfo getElementInfo(::ElementType e);
+    MCNAPI static ::ElementInfo getElementInfo(::ElementType e);
 
-    MCAPI static ::RecipeIngredient getIngredientForElement(::ElementType e, int stackCount);
+    MCNAPI static ::RecipeIngredient getIngredientForElement(::ElementType e, int stackCount);
 
-    MCAPI static ::ItemInstance getItemForElement(::ElementType e, int stackCount);
+    MCNAPI static ::ItemInstance getItemForElement(::ElementType e, int stackCount);
 
-    MCAPI static void initElements();
+    MCNAPI static void initElements();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::BlockLegacy const*>& mElements();
+    MCNAPI static ::std::vector<::BlockType const*>& mElements();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color $getMapColor(::BlockSource&, ::BlockPos const&, ::Block const& block) const;
+    MCNAPI ::mce::Color $getMapColor(::BlockSource&, ::BlockPos const&, ::Block const& block) const;
 
-    MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
+    MCNAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCNAPI bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
 
-    MCAPI ::Block const* $tryLegacyUpgrade(ushort extraData) const;
+    MCNAPI ::Block const* $tryLegacyUpgrade(ushort extraData) const;
     // NOLINTEND
 
 public:

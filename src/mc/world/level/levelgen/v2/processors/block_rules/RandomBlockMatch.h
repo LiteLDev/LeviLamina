@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
+class BlockType;
 class IRandom;
 namespace Util { class XXHash; }
 // clang-format on
@@ -19,8 +19,8 @@ struct RandomBlockMatch : public ::br::worldgen::processors::BlockRules::TestTyp
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BlockLegacy const*> mBlock;
-    ::ll::TypedStorage<4, 4, float>                mProbability;
+    ::ll::TypedStorage<8, 8, ::BlockType const*> mBlock;
+    ::ll::TypedStorage<4, 4, float>              mProbability;
     // NOLINTEND
 
 public:

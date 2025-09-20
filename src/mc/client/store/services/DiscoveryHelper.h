@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
@@ -41,8 +41,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit DiscoveryHelper(::Bedrock::Services::DiscoveryConfig const& discoveryConfig);
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Url>>
-    getURL(::std::string const& serviceName);
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Url> getURL(::std::string const& serviceName);
     // NOLINTEND
 
 public:

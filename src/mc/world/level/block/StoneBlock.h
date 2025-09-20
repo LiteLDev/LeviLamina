@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,24 +16,24 @@ class ItemInstance;
 namespace mce { class Color; }
 // clang-format on
 
-class StoneBlock : public ::BlockLegacy {
+class StoneBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual bool canBeOriginalSurface() const /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 143
+    // vIndex: 144
     virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
-    // vIndex: 128
+    // vIndex: 129
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
 
     // vIndex: 0
@@ -43,15 +43,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
-    MCFOLD bool $canBeOriginalSurface() const;
+    MCNAPI bool $canBeOriginalSurface() const;
 
-    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCFOLD ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI ::Block const* $tryGetInfested(::Block const& block) const;
+    MCNAPI ::Block const* $tryGetInfested(::Block const& block) const;
     // NOLINTEND
 
 public:

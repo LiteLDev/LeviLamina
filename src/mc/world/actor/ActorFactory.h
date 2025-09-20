@@ -118,6 +118,9 @@ public:
     );
 
     MCAPI ::OwnerPtr<::EntityContext>
+    createSummonedActor(::ActorDefinitionIdentifier const& identifier, ::Actor* spawner, ::Vec3 const& position);
+
+    MCAPI ::OwnerPtr<::EntityContext>
     createTransformedActor(::ActorDefinitionIdentifier const& identifier, ::Actor* from);
 
     MCAPI void init(::Experiments const& experiments);

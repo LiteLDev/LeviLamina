@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +14,7 @@ class BlockPos;
 class IConstBlockSource;
 // clang-format on
 
-class GlassBlock : public ::BlockLegacy {
+class GlassBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
@@ -29,10 +29,10 @@ public:
     // vIndex: 24
     virtual bool canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const /*override*/;
 
-    // vIndex: 55
-    virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
+    // vIndex: 56
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
-    // vIndex: 83
+    // vIndex: 84
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 6
@@ -50,13 +50,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
+    MCNAPI bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
 
-    MCAPI bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
+    MCNAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
-    MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI bool $getCollisionShapeForCamera(
+    MCNAPI bool $getCollisionShapeForCamera(
         ::AABB&                    outAABB,
         ::Block const&             block,
         ::IConstBlockSource const& region,

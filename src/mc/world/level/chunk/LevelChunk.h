@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/block/tessellation_pipeline/VolumeOf.h"
+#include "mc/common/BiomeIdType.h"
 #include "mc/common/BrightnessPair.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/game_refs/WeakRef.h"
@@ -171,7 +172,7 @@ public:
     ::ll::TypedStorage<2, 512, ::std::array<::ChunkLocalHeight, 256>>                       mRenderHeightmap;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::vector<short>>>                       mPreWorldGenHeightmap;
     ::ll::TypedStorage<2, 2, ::ChunkLocalHeight>                                            mNonAirMaxHeight;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<ushort, ::BiomeChunkState>>              mBiomeStates;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BiomeIdType, ::BiomeChunkState>>       mBiomeStates;
     ::ll::TypedStorage<2, 2, ushort>                                                        m3dBiomeStackSize;
     ::ll::TypedStorage<1, 1, bool>                                                          mHasCachedTemperatureNoise;
     ::ll::TypedStorage<1, 256, ::std::array<bool, 256>>                                     mBorderBlockMap;
@@ -349,6 +350,8 @@ public:
         ::std::optional<::DeserializationChanges*> deserializationChanges
     );
 
+    MCAPI void fetchBiomes(::std::vector<::Biome const*>& biomes) const;
+
     MCAPI void fillBiomes(::BiomeChunkData const& biomeChunkData);
 
     MCAPI void finalizeDeserialization();
@@ -384,8 +387,6 @@ public:
     MCAPI ::Block const& getBlock(::ChunkBlockPos const& pos) const;
 
     MCAPI ::BrightnessPair getBrightness(::ChunkBlockPos const& pos) const;
-
-    MCAPI schar getCachedTemperatureNoise(::ChunkBlockPos const& pos);
 
     MCAPI void getEntities(
         ::gsl::span<::gsl::not_null<::Actor const*>> ignoredEntities,
@@ -464,7 +465,7 @@ public:
 
     MCAPI void serializeEntityRemovals(::std::function<void(::std::string const&)> callback);
 
-    MCAPI void setAllLegacyBlockIDAndData(::buffer_span<::BlockID> ids, ::buffer_span<::NibblePair> data);
+    MCAPI void setAllBlockTypeIDAndData(::buffer_span<::BlockID> ids, ::buffer_span<::NibblePair> data);
 
     MCAPI void setBiomeFromVolume(::ClientBlockPipeline::VolumeOf<::Biome const*> const& volume, uint yOffset);
 

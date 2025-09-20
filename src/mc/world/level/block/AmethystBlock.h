@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,14 +12,14 @@ class BlockPos;
 class BlockSource;
 // clang-format on
 
-class AmethystBlock : public ::BlockLegacy {
+class AmethystBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 16
     virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const /*override*/;
 
-    // vIndex: 46
+    // vIndex: 47
     virtual bool isSilentWhenJumpingOff() const /*override*/;
 
     // vIndex: 0
@@ -29,9 +29,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
+    MCNAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
 
-    MCFOLD bool $isSilentWhenJumpingOff() const;
+    MCNAPI bool $isSilentWhenJumpingOff() const;
     // NOLINTEND
 
 public:

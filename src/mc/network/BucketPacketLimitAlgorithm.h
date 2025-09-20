@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/network/IPacketLimitAlgorithm.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/platform/Result.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace Json { class Value; }
+// clang-format on
 
 class BucketPacketLimitAlgorithm : public ::IPacketLimitAlgorithm {
 public:
@@ -20,35 +26,53 @@ public:
 public:
     // prevent constructor by default
     BucketPacketLimitAlgorithm& operator=(BucketPacketLimitAlgorithm const&);
-    BucketPacketLimitAlgorithm(BucketPacketLimitAlgorithm const&);
     BucketPacketLimitAlgorithm();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+    // vIndex: 1
+    virtual ::std::unique_ptr<::IPacketLimitAlgorithm> copy() const /*override*/;
+
+    // vIndex: 2
     virtual uint checkPacket(::MinecraftPacketIds) /*override*/;
 
-    // vIndex: 1
-    virtual ~BucketPacketLimitAlgorithm() /*override*/ = default;
+    // vIndex: 0
+    virtual ~BucketPacketLimitAlgorithm() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI BucketPacketLimitAlgorithm(::BucketPacketLimitAlgorithm const& other);
+
     MCNAPI BucketPacketLimitAlgorithm(float drainRatePerSec, uint maxBucketSize);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Bedrock::Result<::BucketPacketLimitAlgorithm> createFromJsonParams(::Json::Value& paramsNode);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::BucketPacketLimitAlgorithm const& other);
+
     MCNAPI void* $ctor(float drainRatePerSec, uint maxBucketSize);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI ::std::unique_ptr<::IPacketLimitAlgorithm> $copy() const;
     // NOLINTEND
 
 public:

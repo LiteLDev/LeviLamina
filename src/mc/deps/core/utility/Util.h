@@ -17,25 +17,6 @@ namespace Json { class Value; }
 namespace Util {
 // functions
 // NOLINTBEGIN
-MCNAPI void _breakIntoWordsAndFindProfanity(
-    ::std::string&                                  str,
-    ::std::vector<::std::pair<int, int>> const&     originalStrIndexes,
-    ::std::unordered_set<char> const&               escapeChars,
-    ::std::set<::std::pair<int, int>>&              profanityLocations,
-    ::std::unordered_map<::std::string, int> const& exactMap,
-    ::std::unordered_set<::std::string> const&      containsSet
-);
-
-MCNAPI void _recordProfanityLocationInWord(
-    ::std::string const&                            word,
-    ::std::vector<::std::pair<int, int>> const&     originalStrIndexes,
-    int                                             start,
-    int                                             end,
-    ::std::set<::std::pair<int, int>>&              profanityLocations,
-    ::std::unordered_map<::std::string, int> const& exactMap,
-    ::std::unordered_set<::std::string> const&      containsSet
-);
-
 MCNAPI ::std::string base64_decode(::std::string const& encoded_string);
 
 MCNAPI ::std::string base64_encode(uchar const* bytes_to_encode, uint64 in_len, bool pad);
@@ -46,19 +27,9 @@ MCNAPI ::std::string base64url_encode(::std::string str);
 
 MCNAPI bool compareNoCase(::std::string_view lhs, ::std::string_view rhs);
 
+MCNAPI ::std::string ensureNamespace(::std::string_view id, ::std::string_view defaultNamespace);
+
 MCNAPI ::std::string ensureNamespace(::std::string const& id, ::std::string_view defaultNamespace);
-
-MCNAPI ::std::string filterProfanityFromString(
-    ::std::string const&                            inputStr,
-    ::std::unordered_map<::std::string, int> const& profanityExactMap,
-    ::std::unordered_set<::std::string> const&      profanityContainsSet
-);
-
-MCNAPI ::std::set<::std::pair<int, int>> findProfanityInString(
-    ::std::string const&                            inputStr,
-    ::std::unordered_map<::std::string, int> const& exactMap,
-    ::std::unordered_set<::std::string> const&      containsSet
-);
 
 MCNAPI ::std::string formatTickDuration(int ticks);
 
@@ -68,7 +39,11 @@ MCNAPI ::BidirectionalUnorderedMap<int, uint64> generateHashMapFromListTag(::Lis
 
 MCNAPI ::std::string generateRandomId(int modifier);
 
+MCNAPI ::std::string_view getNameWithoutNamespace(::std::string_view name);
+
 MCNAPI bool isValidNamespaceFormat(::std::string_view name);
+
+MCNAPI bool isValidPfid(::std::string const& inputStr);
 
 MCNAPI bool isValidUTF8(::std::string const& content);
 

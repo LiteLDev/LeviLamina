@@ -19,7 +19,7 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString>                                           mGeometryName;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>> mBlockSchematic;
     ::ll::TypedStorage<1, 1, bool>                                                      mNeedsLegacyTopRotation;
-    ::ll::TypedStorage<1, 1, bool>                                                      mUseLegacyBlockLightAbsorption;
+    ::ll::TypedStorage<1, 1, bool>                                                      mUseBlockTypeLightAbsorption;
     ::ll::TypedStorage<1, 1, bool>                                                      mIsFullBlock;
     ::ll::TypedStorage<1, 1, bool>                                                      mIgnoreGeometryForIsSolid;
     ::ll::TypedStorage<8, 48, ::HashedString>                                           mCullingLayer;

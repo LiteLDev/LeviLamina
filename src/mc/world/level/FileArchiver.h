@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/file/ZipProgress.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
@@ -180,7 +180,7 @@ public:
         virtual void enqueueConvertImportingWorldTasks(
             ::std::shared_ptr<::FileArchiver::Result>&,
             ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>,
-            ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>&
+            ::Bedrock::Threading::Async<void>&
         ) = 0;
 
         // vIndex: 2
@@ -190,7 +190,7 @@ public:
         virtual void enqueueConvertExportingWorldTasks(
             ::std::shared_ptr<::FileArchiver::ExportData>&,
             ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>,
-            ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>&,
+            ::Bedrock::Threading::Async<void>&,
             ::std::function<void(::LevelData&)>
         ) = 0;
         // NOLINTEND
@@ -312,15 +312,15 @@ public:
     MCAPI void
     _copyPackToTemp(::PackInstance const& packInstance, ::Core::Path const& tempPath, ::FileArchiver::Result& result);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>> _enqueueExportWorldTasks(
-        ::Core::Path const&                                         outputFilePath,
-        ::std::string const&                                        worldId,
-        bool                                                        isBundle,
-        ::FileArchiver::ExportType                                  exportType,
-        ::FileArchiver::ShowToast                                   showToast,
-        ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> preTaskHandle,
-        ::std::function<void(::FileArchiver::Result&)>              cleanupTask,
-        ::std::function<void(::LevelData&)>                         convertPreExportCallback
+    MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result> _enqueueExportWorldTasks(
+        ::Core::Path const&                            outputFilePath,
+        ::std::string const&                           worldId,
+        bool                                           isBundle,
+        ::FileArchiver::ExportType                     exportType,
+        ::FileArchiver::ShowToast                      showToast,
+        ::Bedrock::Threading::Async<void>              preTaskHandle,
+        ::std::function<void(::FileArchiver::Result&)> cleanupTask,
+        ::std::function<void(::LevelData&)>            convertPreExportCallback
     );
 
     MCAPI void _exportLevelFiles(
@@ -350,7 +350,7 @@ public:
 
     MCAPI ::std::string copyLevel(::std::string const& worldId);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>> exportCurrentEditorLevel(
+    MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result> exportCurrentEditorLevel(
         ::Level*                            level,
         ::Core::Path const&                 exportFilePath,
         ::std::function<void(::LevelData&)> preExportConvertedCallback,
@@ -358,7 +358,7 @@ public:
         ::FileArchiver::ShowToast           toast
     );
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>> exportCurrentLevel(
+    MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result> exportCurrentLevel(
         ::Level*                   level,
         bool                       isBundle,
         ::FileArchiver::ExportType exportType,
@@ -373,7 +373,7 @@ public:
         ::std::function<void(::FileArchiver::Result&)> exportCallback
     );
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FileArchiver::Result>>
+    MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result>
     exportPack(::Core::Path const& path, ::Core::Path const& exportFilePath);
 
     MCAPI void exportPack(

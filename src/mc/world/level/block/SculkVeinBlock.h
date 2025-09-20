@@ -18,10 +18,10 @@ class SculkVeinBlock : public ::MultifaceBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 56
+    // vIndex: 57
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
@@ -32,9 +32,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
     // NOLINTEND
 
 public:

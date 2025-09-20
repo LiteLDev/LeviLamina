@@ -28,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     // vIndex: 87
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
@@ -44,7 +44,7 @@ public:
 
     // vIndex: 120
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
     // vIndex: 0
@@ -54,7 +54,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
@@ -65,7 +65,7 @@ public:
     MCFOLD bool $isValidAuxValue(int auxValue) const;
 
     MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:

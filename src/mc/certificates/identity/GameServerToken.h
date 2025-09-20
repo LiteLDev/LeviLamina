@@ -13,4 +13,16 @@ public:
     ::ll::TypedStorage<1, 1, bool>         mIsValid;
     ::ll::TypedStorage<8, 128, ::WebToken> mRawToken;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~GameServerToken();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
+    // NOLINTEND
 };

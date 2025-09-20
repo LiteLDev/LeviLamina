@@ -18,11 +18,11 @@ class Cursor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 20> mUnke239e9;
+    ::ll::UntypedStorage<4, 32> mUnke239e9;
     ::ll::UntypedStorage<4, 60> mUnk3b8be1;
     ::ll::UntypedStorage<4, 96> mUnk7b54c7;
     ::ll::UntypedStorage<4, 36> mUnkd9d534;
-    ::ll::UntypedStorage<4, 16> mUnkfac3b4;
+    ::ll::UntypedStorage<4, 28> mUnkfac3b4;
     // NOLINTEND
 
 public:

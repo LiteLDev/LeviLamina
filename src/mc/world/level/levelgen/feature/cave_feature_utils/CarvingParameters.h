@@ -8,10 +8,10 @@ struct CarvingParameters {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkdd7f5e;
-    ::ll::UntypedStorage<4, 4>  mUnkbb788e;
-    ::ll::UntypedStorage<4, 4>  mUnk6856df;
-    ::ll::UntypedStorage<4, 12> mUnk5ded23;
+    ::ll::UntypedStorage<4, 4>  mUnk9cd8e7;
+    ::ll::UntypedStorage<4, 4>  mUnk507e8d;
+    ::ll::UntypedStorage<4, 4>  mUnkc30217;
+    ::ll::UntypedStorage<4, 12> mUnk2a627f;
     // NOLINTEND
 
 public:

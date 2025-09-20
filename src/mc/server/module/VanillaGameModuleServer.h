@@ -17,6 +17,7 @@ class IWorldRegistriesProvider;
 class ItemRegistryRef;
 class Level;
 class LevelStorage;
+class LinkedAssetValidator;
 class Player;
 class ResourcePackManager;
 class ResourcePackStack;
@@ -63,11 +64,11 @@ public:
 
     // vIndex: 3
     virtual void configureLevel(
-        ::Bedrock::NotNullNonOwnerPtr<::Level> const& level,
-        ::Experiments const&                          experiments,
-        ::ResourcePackManager&                        resourcePackManager,
-        ::BaseGameVersion const&                      baseGameVersion,
-        ::ServerScriptManager const*                  scriptManager
+        ::Bedrock::NotNullNonOwnerPtr<::Level>& level,
+        ::Experiments const&                    experiments,
+        ::ResourcePackManager&                  resourcePackManager,
+        ::BaseGameVersion const&                baseGameVersion,
+        ::ServerScriptManager const*            scriptManager
     ) /*override*/;
 
     // vIndex: 4
@@ -96,13 +97,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void _configureWorldGen(
-        ::IWorldRegistriesProvider&    worldRegistries,
-        ::SpawnSettings const&         spawnSettings,
-        ::Experiments const&           experiments,
-        ::ResourcePackManager&         resourcePackManager,
-        ::BaseGameVersion const&       baseGameVersion,
-        ::LevelStorage*                levelStorage,
-        ::cereal::ReflectionCtx const& ctx
+        ::IWorldRegistriesProvider&                        worldRegistries,
+        ::SpawnSettings const&                             spawnSettings,
+        ::Experiments const&                               experiments,
+        ::ResourcePackManager&                             resourcePackManager,
+        ::BaseGameVersion const&                           baseGameVersion,
+        ::LevelStorage*                                    levelStorage,
+        ::cereal::ReflectionCtx&                           ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
     );
 
     MCNAPI void _registerListeners(::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
@@ -122,11 +124,11 @@ public:
     );
 
     MCNAPI void $configureLevel(
-        ::Bedrock::NotNullNonOwnerPtr<::Level> const& level,
-        ::Experiments const&                          experiments,
-        ::ResourcePackManager&                        resourcePackManager,
-        ::BaseGameVersion const&                      baseGameVersion,
-        ::ServerScriptManager const*                  scriptManager
+        ::Bedrock::NotNullNonOwnerPtr<::Level>& level,
+        ::Experiments const&                    experiments,
+        ::ResourcePackManager&                  resourcePackManager,
+        ::BaseGameVersion const&                baseGameVersion,
+        ::ServerScriptManager const*            scriptManager
     );
 
     MCNAPI void $configureNewPlayer(::Player& player);

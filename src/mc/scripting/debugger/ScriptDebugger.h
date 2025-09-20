@@ -18,7 +18,6 @@ class ServerLevel;
 struct ScriptDebuggerSettings;
 namespace Core { class Path; }
 namespace ScriptDebuggerMessages { struct CommandMessage; }
-namespace ScriptDebuggerMessages { struct ProfilerMessage; }
 namespace Scripting { class ScriptEngine; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -127,8 +126,6 @@ public:
     MCNAPI void _debuggerMessageHandler(::std::string_view message);
 
     MCNAPI void _handleCommandMessage(::ScriptDebuggerMessages::CommandMessage const& commandMessage);
-
-    MCNAPI void _handleStopProfilerMessage(::ScriptDebuggerMessages::ProfilerMessage const& profilerMessage);
 
     MCNAPI ::std::string _sanitizeHostName(::std::string const& host) const;
 

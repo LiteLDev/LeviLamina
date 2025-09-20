@@ -328,7 +328,7 @@ public:
         ::BlockPos const& location,
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
-            ::std::string> const& blockType
+            ::std::string> const& blockTypeOrBlockTypeName
     );
     // NOLINTEND
 };

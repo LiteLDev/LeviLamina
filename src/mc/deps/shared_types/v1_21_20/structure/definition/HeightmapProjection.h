@@ -5,8 +5,9 @@
 namespace SharedTypes::v1_21_20::JigsawStructureDefinition {
 
 enum class HeightmapProjection : uchar {
-    WorldSurface = 0,
-    OceanFloor   = 1,
+    None         = 0,
+    WorldSurface = 1,
+    OceanFloor   = 2,
 };
 
 }

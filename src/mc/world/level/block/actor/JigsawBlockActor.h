@@ -37,19 +37,19 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 40
+    // vIndex: 37
     virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const&) const /*override*/;
 
-    // vIndex: 42
+    // vIndex: 39
     virtual void setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const /*override*/;
 
     // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/platform/brstd/function_ref.h"
 #include "mc/resources/PackSource.h"
 
 // auto generated forward declare list
@@ -26,24 +27,20 @@ public:
     virtual ~CompositePackSource() /*override*/ = default;
 
     // vIndex: 1
-    virtual void forEachPackConst(::std::function<void(::Pack const&)> callback) const /*override*/;
+    virtual void
+    forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback) /*override*/;
 
-    // vIndex: 2
-    virtual void forEachPack(::std::function<void(::Pack&)> callback) /*override*/;
-
-    // vIndex: 5
+    // vIndex: 4
     virtual void _buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources) /*override*/;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
-
-    MCAPI void $forEachPack(::std::function<void(::Pack&)> callback);
+    MCAPI void $forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback);
 
     MCAPI void $_buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources);
 

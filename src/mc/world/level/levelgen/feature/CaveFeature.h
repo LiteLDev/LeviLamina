@@ -79,6 +79,7 @@ public:
     ::ll::UntypedStorage<4, 8>  mUnkfcde6a;
     ::ll::UntypedStorage<4, 8>  mUnk7fcf24;
     ::ll::UntypedStorage<4, 8>  mUnkd31917;
+    ::ll::UntypedStorage<8, 32> mUnk2b3090;
     ::ll::UntypedStorage<4, 4>  mUnk981efd;
     ::ll::UntypedStorage<4, 4>  mUnk92ad90;
     ::ll::UntypedStorage<4, 4>  mUnkfe575b;
@@ -88,11 +89,10 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnkc07cc0;
     ::ll::UntypedStorage<4, 4>  mUnk2d5fac;
     ::ll::UntypedStorage<4, 4>  mUnkb74db5;
-    ::ll::UntypedStorage<8, 32> mUnk2b3090;
+    ::ll::UntypedStorage<1, 1>  mUnke54e3a;
     ::ll::UntypedStorage<8, 64> mUnk72d7de;
     ::ll::UntypedStorage<8, 80> mUnkd9c652;
     ::ll::UntypedStorage<4, 4>  mUnk31fc06;
-    ::ll::UntypedStorage<1, 1>  mUnke54e3a;
     // NOLINTEND
 
 public:
@@ -104,7 +104,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~CaveFeature() /*override*/;
+    virtual ~CaveFeature() /*override*/ = default;
 
     // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
@@ -146,13 +146,13 @@ public:
     virtual bool carveEllipsoidVolume(
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
-        ::Random&                                      random,
-        ::ChunkPos const&                              chunkPos,
-        ::Vec3 const&                                  startPos,
-        ::BoundingBox const&                           volume,
-        float                                          rad,
-        float                                          yRad,
-        ::CaveFeatureUtils::CarvingParameters const&   carvingParameters
+        ::Random&,
+        ::ChunkPos const&                            chunkPos,
+        ::Vec3 const&                                startPos,
+        ::BoundingBox const&                         volume,
+        float                                        rad,
+        float                                        yRad,
+        ::CaveFeatureUtils::CarvingParameters const& carvingParameters
     ) const;
 
     // vIndex: 7
@@ -175,7 +175,6 @@ public:
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
         ::BlockPos                                     currentBlockPos,
-        bool*                                          hasGrass,
         bool                                           carved,
         ::Vec3 const&                                  originalStartPos,
         int                                            currentYIndex,
@@ -200,12 +199,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -246,13 +239,13 @@ public:
     MCNAPI bool $carveEllipsoidVolume(
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
-        ::Random&                                      random,
-        ::ChunkPos const&                              chunkPos,
-        ::Vec3 const&                                  startPos,
-        ::BoundingBox const&                           volume,
-        float                                          rad,
-        float                                          yRad,
-        ::CaveFeatureUtils::CarvingParameters const&   carvingParameters
+        ::Random&,
+        ::ChunkPos const&                            chunkPos,
+        ::Vec3 const&                                startPos,
+        ::BoundingBox const&                         volume,
+        float                                        rad,
+        float                                        yRad,
+        ::CaveFeatureUtils::CarvingParameters const& carvingParameters
     ) const;
 
     MCNAPI void $addFeature(

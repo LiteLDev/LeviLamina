@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentInstance; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentLevelOutOfBoundsError; }
 namespace ScriptModuleMinecraft { struct ScriptItemEnchantmentType; }
@@ -34,6 +35,7 @@ public:
 public:
     // prevent constructor by default
     ScriptItemEnchantmentComponent& operator=(ScriptItemEnchantmentComponent const&);
+    ScriptItemEnchantmentComponent(ScriptItemEnchantmentComponent const&);
     ScriptItemEnchantmentComponent();
 
 public:
@@ -46,7 +48,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemEnchantmentComponent(::ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
+    MCNAPI ScriptItemEnchantmentComponent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
 
     MCNAPI ::Scripting::Result<
         void,
@@ -111,7 +116,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemEnchantmentComponent const&);
+    MCNAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
     // NOLINTEND
 
 public:

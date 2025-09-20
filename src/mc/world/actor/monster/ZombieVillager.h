@@ -35,7 +35,7 @@ public:
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
@@ -52,7 +52,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

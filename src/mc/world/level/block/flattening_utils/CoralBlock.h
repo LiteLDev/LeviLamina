@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/block/CoralColor.h"
 
 // auto generated forward declare list
@@ -19,9 +19,9 @@ MCNAPI ::FlatteningUtils::Instance get();
 
 MCNAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
 
-MCNAPI ::std::vector<::BlockLegacy::RemovedStateCollection::SplitBlock> getColorSplitStates(bool dead);
+MCNAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getColorSplitStates(bool dead);
 
-MCNAPI ::std::vector<::BlockLegacy::RemovedStateCollection::SplitBlock> getDeadSplitStates(::CoralColor color);
+MCNAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getDeadSplitStates(::CoralColor color);
 // NOLINTEND
 
 } // namespace FlatteningUtils::CoralBlock

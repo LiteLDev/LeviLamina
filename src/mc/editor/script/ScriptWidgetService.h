@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/ScriptWidgetService_WidgetInterface.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetService_GroupInterface.h"
+#include "mc/editor/script/ScriptWidgetService_WidgetInterface.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 
 // auto generated forward declare list

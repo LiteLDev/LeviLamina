@@ -38,6 +38,7 @@ namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { class ScriptPlayerIterator; }
 namespace ScriptModuleMinecraft { class ScriptVector; }
 namespace ScriptModuleMinecraft { struct ScriptActorQueryOptions; }
+namespace ScriptModuleMinecraft { struct ScriptActorSpawnError; }
 namespace ScriptModuleMinecraft { struct ScriptBiomeSearchOptions; }
 namespace ScriptModuleMinecraft { struct ScriptBlockFillOptions; }
 namespace ScriptModuleMinecraft { struct ScriptBlockRaycastOptions; }
@@ -45,6 +46,7 @@ namespace ScriptModuleMinecraft { struct ScriptCommandError; }
 namespace ScriptModuleMinecraft { struct ScriptCommandResult; }
 namespace ScriptModuleMinecraft { struct ScriptEntityRaycastOptions; }
 namespace ScriptModuleMinecraft { struct ScriptExplosionOptions; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
 namespace ScriptModuleMinecraft { struct ScriptSpawnEntityOptions; }
@@ -61,6 +63,8 @@ namespace Scripting { struct Error; }
 namespace Scripting { struct InvalidArgumentError; }
 namespace Scripting { struct JSON; }
 namespace Scripting { struct NumberRange; }
+namespace Scripting { struct PropertyOutOfBoundsError; }
+namespace Scripting { struct UnsupportedAPIError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -112,8 +116,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::InvalidArgumentError,
-        ::Scripting::Error>
+        ::ScriptModuleMinecraft::ScriptActorSpawnError>
     _spawnEntity(
         ::std::variant<::ScriptModuleMinecraft::ScriptActorType, ::std::string> const& identifier,
         ::std::variant<::BlockPos, ::Vec3> const&                                      pos,
@@ -237,8 +242,10 @@ public:
         bool                                                                                        allowUnloadedChunks
     ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+    MCNAPI ::Scripting::Result<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>,
+        ::ScriptModuleMinecraft::ScriptCommandError,
+        ::Scripting::InvalidArgumentError>
     getEntities(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
 
     MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
@@ -247,7 +254,12 @@ public:
     MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     getEntitiesAtBlockLocation_V010(::BlockPos const& pos) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::ScriptModuleMinecraft::ScriptEntityRaycastHit>>
+    MCNAPI ::Scripting::Result<
+        ::std::vector<::ScriptModuleMinecraft::ScriptEntityRaycastHit>,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::InvalidArgumentError,
+        ::Scripting::EngineError,
+        ::Scripting::UnsupportedAPIError>
     getEntitiesFromRay(
         ::Scripting::WeakLifetimeScope                                              scope,
         ::Vec3 const&                                                               pos,
@@ -274,8 +286,10 @@ public:
 
     MCNAPI ::std::string getLocalizationKey() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
+    MCNAPI ::Scripting::Result<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>,
+        ::ScriptModuleMinecraft::ScriptCommandError,
+        ::Scripting::InvalidArgumentError>
     getPlayers(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
 
     MCNAPI ::Scripting::Result_deprecated<
@@ -305,7 +319,7 @@ public:
         Result<bool, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
         placeFeatureRule(::std::string const& featureRuleName, ::Vec3 const& location) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> playSound(
+    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> playSound(
         ::std::string const&                                              soundID,
         ::Vec3 const&                                                     location,
         ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
@@ -357,10 +371,11 @@ public:
 
     MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
         ::Scripting::InvalidArgumentError,
-        ::Scripting::Error>
+        ::ScriptModuleMinecraft::ScriptActorSpawnError>
     spawnEntity(
         ::std::variant<::ScriptModuleMinecraft::ScriptActorType, ::std::string> const& identifier,
         ::Vec3 const&                                                                  pos,
@@ -372,9 +387,11 @@ public:
 
     MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError,
-        ::Scripting::Error>
+        ::Scripting::InvalidArgumentError,
+        ::ScriptModuleMinecraft::ScriptActorSpawnError>
     spawnEntity_V130(::std::string const& identifier, ::Vec3 const& pos) const;
 
     MCNAPI ::Scripting::Result<

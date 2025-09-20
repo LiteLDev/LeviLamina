@@ -24,10 +24,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 117
+    // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 143
+    // vIndex: 144
     virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
@@ -38,9 +38,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
     // NOLINTEND
 
 public:

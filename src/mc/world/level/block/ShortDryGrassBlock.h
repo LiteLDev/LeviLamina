@@ -19,22 +19,22 @@ class ShortDryGrassBlock : public ::FoliageBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 78
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 80
+    // vIndex: 81
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 75
+    // vIndex: 76
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 73
+    // vIndex: 74
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 123
+    // vIndex: 124
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 0
@@ -44,16 +44,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
     // NOLINTEND
 
 public:

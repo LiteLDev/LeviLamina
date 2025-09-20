@@ -24,8 +24,9 @@ class HangingActor : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkfac361;
-    ::ll::UntypedStorage<4, 4> mUnkf92ba7;
+    ::ll::UntypedStorage<4, 4> mUnk7ede45;
+    ::ll::UntypedStorage<4, 4> mUnk56346e;
+    ::ll::UntypedStorage<4, 4> mUnke7da52;
     // NOLINTEND
 
 public:
@@ -53,7 +54,7 @@ public:
     virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
     // vIndex: 141
-    virtual bool placeHangingEntity(::BlockSource& region, int direction);
+    virtual bool placeHangingEntity(::BlockSource&, int);
 
     // vIndex: 142
     virtual bool wouldSurvive(::BlockSource& region);
@@ -62,13 +63,13 @@ public:
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
     // vIndex: 2
-    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
     // vIndex: 135
-    virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
+    virtual bool _hurt(::ActorDamageSource const& source, float, bool, bool) /*override*/;
 
     // vIndex: 137
     virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
@@ -86,7 +87,8 @@ public:
     MCAPI HangingActor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
+        ::EntityContext&                   entityContext,
+        int                                wouldSurviveCheckCooldown
     );
 
     MCAPI bool _blockIsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
@@ -106,7 +108,8 @@ public:
     MCAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
+        ::EntityContext&                   entityContext,
+        int                                wouldSurviveCheckCooldown
     );
     // NOLINTEND
 
@@ -123,17 +126,17 @@ public:
 
     MCAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCFOLD bool $placeHangingEntity(::BlockSource& region, int direction);
+    MCFOLD bool $placeHangingEntity(::BlockSource&, int);
 
     MCAPI bool $wouldSurvive(::BlockSource& region);
 
     MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
     MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+    MCAPI bool $_hurt(::ActorDamageSource const& source, float, bool, bool);
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

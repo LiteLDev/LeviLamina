@@ -3,35 +3,36 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/level/block/actor/ChestBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockSource;
-class Player;
 // clang-format on
 
 class BarrelBlockActor : public ::ChestBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 28
+    // vIndex: 26
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 11
     virtual void onPlace(::BlockSource& region) /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player& player) /*override*/;
+    virtual void startOpen(::Actor& actor) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
     // vIndex: 51
-    virtual void playOpenSound(::BlockSource& region) /*override*/;
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getOpenSound(::BlockSource const& region) const /*override*/;
 
     // vIndex: 52
-    virtual void playCloseSound(::BlockSource& region) /*override*/;
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getCloseSound(::BlockSource const& region) const /*override*/;
 
     // vIndex: 0
     virtual ~BarrelBlockActor() /*override*/ = default;
@@ -44,13 +45,13 @@ public:
 
     MCFOLD void $onPlace(::BlockSource& region);
 
-    MCAPI void $startOpen(::Player& player);
+    MCAPI void $startOpen(::Actor& actor);
 
-    MCAPI void $stopOpen(::Player& player);
+    MCAPI void $stopOpen(::Actor& actor);
 
-    MCAPI void $playOpenSound(::BlockSource& region);
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getOpenSound(::BlockSource const& region) const;
 
-    MCAPI void $playCloseSound(::BlockSource& region);
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getCloseSound(::BlockSource const& region) const;
     // NOLINTEND
 
 public:

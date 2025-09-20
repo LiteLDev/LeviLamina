@@ -18,16 +18,16 @@ class CalibratedSculkSensorBlock : public ::SculkSensorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 120
+    // vIndex: 121
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 121
+    // vIndex: 122
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 117
+    // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0

@@ -8,9 +8,9 @@ struct SinglePoolElement {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk346d1e;
     ::ll::UntypedStorage<8, 32> mUnk4d6da9;
     ::ll::UntypedStorage<8, 32> mUnk18a100;
+    ::ll::UntypedStorage<1, 1>  mUnkc4a555;
     // NOLINTEND
 
 public:
@@ -26,6 +26,14 @@ public:
 
     MCNAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&
     operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const&);
+
+    MCNAPI ~SinglePoolElement();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

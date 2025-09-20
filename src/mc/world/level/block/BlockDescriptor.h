@@ -13,7 +13,6 @@
 class Block;
 class CompoundTag;
 class ExpressionNode;
-namespace SharedTypes::Legacy { struct BlockDescriptor; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -132,8 +131,6 @@ public:
     // NOLINTBEGIN
     MCNAPI BlockDescriptor();
 
-    MCNAPI explicit BlockDescriptor(::SharedTypes::Legacy::BlockDescriptor desc);
-
     MCNAPI explicit BlockDescriptor(::HashedString const& fullName);
 
     MCNAPI BlockDescriptor(::BlockDescriptor&& rhs);
@@ -192,8 +189,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor desc);
 
     MCNAPI void* $ctor(::HashedString const& fullName);
 

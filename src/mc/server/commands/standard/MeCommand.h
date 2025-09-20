@@ -16,7 +16,7 @@ class MeCommand : public ::MessagingCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka847a8;
+    ::ll::UntypedStorage<8, 32> mUnka847a8;
     // NOLINTEND
 
 public:

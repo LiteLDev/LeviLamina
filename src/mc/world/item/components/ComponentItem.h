@@ -20,9 +20,9 @@
 class Actor;
 class BaseGameVersion;
 class Block;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class CompoundTag;
 class Container;
 class Experiments;
@@ -66,7 +66,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                          mIsAttachable;
     ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::std::shared_ptr<::ItemComponent>>> mItemComponents;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IconItemComponent>>                         mIcon;
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockLegacy const>>                                  mLegacyBlockForRendering;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>>                                    mBlockTypeForRendering;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::shared_ptr<::ItemComponent>>>
                                                                                             mRegisteredCerealComponents;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
@@ -120,7 +120,7 @@ public:
     virtual bool isTrimAllowed() const /*override*/;
 
     // vIndex: 6
-    virtual ::WeakPtr<::BlockLegacy const> const& getLegacyBlockForRendering() const /*override*/;
+    virtual ::WeakPtr<::BlockType const> const& getBlockTypeForRendering() const /*override*/;
 
     // vIndex: 23
     virtual ::ItemComponent* getComponent(::HashedString const& id) const /*override*/;
@@ -292,7 +292,7 @@ public:
     virtual bool canBeCharged() const /*override*/;
 
     // vIndex: 3
-    virtual ::ComponentItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
+    virtual ::ComponentItem& setDescriptionId(::std::string const& description) /*override*/;
 
     // vIndex: 123
     virtual bool shouldUseJsonForRenderMatrix() const;
@@ -441,7 +441,7 @@ public:
 
     MCAPI bool $isTrimAllowed() const;
 
-    MCAPI ::WeakPtr<::BlockLegacy const> const& $getLegacyBlockForRendering() const;
+    MCAPI ::WeakPtr<::BlockType const> const& $getBlockTypeForRendering() const;
 
     MCAPI ::ItemComponent* $getComponent(::HashedString const& id) const;
 
@@ -513,6 +513,8 @@ public:
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+
     MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
     MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
@@ -550,7 +552,7 @@ public:
 
     MCAPI bool $canBeCharged() const;
 
-    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& descriptionId);
+    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& description);
 
     MCAPI bool $shouldUseJsonForRenderMatrix() const;
 

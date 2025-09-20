@@ -12,8 +12,8 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
 class BlockPos;
+class BlockType;
 struct ReplaceRule;
 // clang-format on
 
@@ -31,8 +31,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Block const*, ::std::vector<::BlockLegacy const*>>>>
-            mRules;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Block const*, ::std::vector<::BlockType const*>>>> mRules;
         // NOLINTEND
 
     public:

@@ -123,7 +123,8 @@ public:
         bool,
         bool,
         ::Actor*,
-        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const&
+        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const&,
+        bool
     ) const = 0;
 
     // vIndex: 48

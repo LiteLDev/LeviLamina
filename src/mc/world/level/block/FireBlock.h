@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,7 +23,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class FireBlock : public ::BlockLegacy {
+class FireBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -39,27 +39,27 @@ public:
     virtual ::AABB const&
     getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const /*override*/;
 
-    // vIndex: 122
+    // vIndex: 123
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 77
+    // vIndex: 78
     virtual bool mayPick() const /*override*/;
 
-    // vIndex: 145
+    // vIndex: 146
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 86
+    // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 56
+    // vIndex: 57
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0

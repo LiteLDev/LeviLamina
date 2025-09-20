@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +15,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class CoralBlock : public ::BlockLegacy {
+class CoralBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
@@ -29,14 +29,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 86
+    // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 80
+    // vIndex: 81
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -46,27 +46,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CoralBlock(::std::string const& nameId, int id, ::HashedString const& deadVersion);
+    MCNAPI CoralBlock(::std::string const& nameId, int id, ::HashedString const& deadVersion);
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::HashedString const& deadVersion);
+    MCNAPI void* $ctor(::std::string const& nameId, int id, ::HashedString const& deadVersion);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

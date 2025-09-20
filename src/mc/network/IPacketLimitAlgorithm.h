@@ -10,27 +10,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual uint checkPacket(::MinecraftPacketIds) = 0;
+    virtual ~IPacketLimitAlgorithm() = default;
 
     // vIndex: 1
-    virtual ~IPacketLimitAlgorithm();
-    // NOLINTEND
+    virtual ::std::unique_ptr<::IPacketLimitAlgorithm> copy() const = 0;
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    // vIndex: 2
+    virtual uint checkPacket(::MinecraftPacketIds) = 0;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

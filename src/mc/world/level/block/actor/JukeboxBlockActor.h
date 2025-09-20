@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
@@ -17,7 +18,6 @@ class Container;
 class DataLoadHelper;
 class ILevel;
 class Level;
-class Player;
 class SaveContext;
 // clang-format on
 
@@ -64,18 +64,18 @@ public:
     virtual ::ItemStack const& getItem(int) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player&) /*override*/;
+    virtual void startOpen(::Actor&) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 35
+    // vIndex: 32
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 34
+    // vIndex: 31
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 10
@@ -88,10 +88,10 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -135,15 +135,15 @@ public:
 
     MCAPI bool $canPushInItem(int, int, ::ItemStack const& item) const;
 
-    MCFOLD bool $canPullOutItem(int, int, ::ItemStack const&) const;
+    MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
     MCAPI ::ItemStack const& $getItem(int) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCFOLD void $startOpen(::Player&);
+    MCFOLD void $startOpen(::Actor&);
 
-    MCFOLD void $stopOpen(::Player& player);
+    MCFOLD void $stopOpen(::Actor& actor);
 
     MCFOLD ::Container* $getContainer();
 

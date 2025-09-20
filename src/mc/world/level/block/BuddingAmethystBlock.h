@@ -18,13 +18,13 @@ class BuddingAmethystBlock : public ::AmethystBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 46
+    // vIndex: 47
     virtual bool isSilentWhenJumpingOff() const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -34,17 +34,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCFOLD bool $isSilentWhenJumpingOff() const;
+    MCNAPI bool $isSilentWhenJumpingOff() const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

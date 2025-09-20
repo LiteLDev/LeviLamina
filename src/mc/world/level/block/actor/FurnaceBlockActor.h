@@ -15,6 +15,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Block;
 class BlockActorDataPacket;
 class BlockPos;
@@ -25,7 +26,6 @@ class ILevel;
 class Item;
 class ItemStackBase;
 class LevelChunk;
-class Player;
 class Recipes;
 class SaveContext;
 // clang-format on
@@ -49,7 +49,7 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                   mStoredXP;
     ::ll::TypedStorage<8, 456, ::ItemStack[3]>                       mItems;
     ::ll::TypedStorage<1, 3, bool[3]>                                mDirty;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>> mPlayers;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>> mActors;
     ::ll::TypedStorage<8, 48, ::HashedString const>                  mRecipeTag;
     ::ll::TypedStorage<4, 4, int const>                              mBurnInterval;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSmeltSoundEvent;
@@ -77,7 +77,7 @@ public:
     // vIndex: 12
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 28
+    // vIndex: 26
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 21
@@ -86,14 +86,14 @@ public:
     // vIndex: 20
     virtual int getContainerSize() const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void onRemoved(::BlockSource&) /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player& player) /*override*/;
+    virtual void startOpen(::Actor& actor) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
     // vIndex: 32
     virtual bool canPushInItem(int slot, int face, ::ItemStack const& item) const /*override*/;
@@ -101,10 +101,10 @@ public:
     // vIndex: 33
     virtual bool canPullOutItem(int slot, int face, ::ItemStack const& item) const /*override*/;
 
-    // vIndex: 35
+    // vIndex: 32
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 34
+    // vIndex: 31
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 1
@@ -119,10 +119,10 @@ public:
     // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const& position) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 12
     virtual void onMove() /*override*/;
 
     // vIndex: 2
@@ -132,13 +132,13 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 41
     virtual void fixupOnLoad(::LevelChunk& lc) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -250,9 +250,9 @@ public:
 
     MCNAPI void $onRemoved(::BlockSource&);
 
-    MCNAPI void $startOpen(::Player& player);
+    MCNAPI void $startOpen(::Actor& actor);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Actor& actor);
 
     MCNAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
 

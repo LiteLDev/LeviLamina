@@ -76,9 +76,6 @@ public:
         bool                                       recurseAnyways
     ) const;
 
-    MCAPI void
-    forEachInAssetSet(::Core::Path const& filePath, ::std::function<void(::Core::Path const&)> callback) const;
-
     MCAPI void generateAssetSet();
 
     MCAPI ::PackManifest const& getManifest() const;
@@ -100,8 +97,6 @@ public:
     MCAPI ::Bedrock::Resources::PreloadedPathHandle preloadPath(::Core::Path const& packRelativePath) const;
 
     MCAPI void setLocale(::std::string const& code);
-
-    MCAPI void unregisterDeleteCallback(void* owner);
     // NOLINTEND
 
 public:

@@ -40,7 +40,7 @@ public:
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 3
-    virtual ::SnowballItem& setDescriptionId(::std::string const& description) /*override*/;
+    virtual ::SnowballItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
 
     // vIndex: 77
     virtual ::Actor*
@@ -78,7 +78,7 @@ public:
     MCFOLD ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::SnowballItem& $setDescriptionId(::std::string const& description);
+    MCFOLD ::SnowballItem& $setDescriptionId(::std::string const& descriptionId);
 
     MCAPI ::Actor*
     $createProjectileActor(::BlockSource& region, ::ItemStack const&, ::Vec3 const& pos, ::Vec3 const& direction) const;

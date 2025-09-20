@@ -9,6 +9,7 @@
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/textobject/TextObjectRoot.h"
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/BlockActorRendererId.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/block/actor/SignTextSide.h"
 
@@ -193,41 +194,41 @@ public:
     // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 21
+    // vIndex: 20
     virtual float getShadowRadius(::BlockSource& region) const /*override*/;
 
-    // vIndex: 30
+    // vIndex: 28
     virtual ::std::string getImmersiveReaderText(::BlockSource& region) /*override*/;
 
     // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 40
+    // vIndex: 37
     virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const& tag) const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 38
     virtual ::std::vector<::std::string> getFilteredUgcStrings(::CompoundTag const& tag) const /*override*/;
 
-    // vIndex: 42
+    // vIndex: 39
     virtual void setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
-    // vIndex: 43
+    // vIndex: 40
     virtual void setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 44
     virtual bool _playerCanUpdate(::Player const& fromPlayer) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SignBlockActor(::BlockPos const& pos, ::BlockActorType blockActorType, ::std::string const& typeString);
+    MCAPI SignBlockActor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
 
     MCAPI void _updateTextFromClient(::CompoundTag const& data, ::BlockSource const& region);
 
@@ -241,7 +242,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::std::string const& typeString);
+    MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
     // NOLINTEND
 
 public:

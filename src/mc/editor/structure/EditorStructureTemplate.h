@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/levelgen/structure/StructureTemplate.h"
 
 // auto generated forward declare list
@@ -14,9 +13,9 @@ class Block;
 class BlockPalette;
 class BlockPos;
 class BlockSource;
+class BlockVolumeBase;
 class BoundingBox;
 class CompoundTag;
-class IUnknownBlockTypeRegistry;
 class StructureSettings;
 class Vec3;
 namespace Editor { class RelativeVolumeListBlockVolume; }
@@ -62,9 +61,12 @@ public:
     getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const /*override*/;
 
     // vIndex: 7
-    virtual bool _allowReadBlock(::BlockPos const& position, ::Block const& block) const /*override*/;
+    virtual void fillEmpty(::BlockPos const& size) /*override*/;
 
     // vIndex: 8
+    virtual bool _allowReadBlock(::BlockPos const& position, ::Block const& block) const /*override*/;
+
+    // vIndex: 9
     virtual bool _allowReadActor(::Actor const& actor) const /*override*/;
     // NOLINTEND
 
@@ -75,11 +77,6 @@ public:
 
     MCNAPI explicit EditorStructureTemplate(::std::string_view name);
 
-    MCNAPI EditorStructureTemplate(
-        ::StructureTemplate const&                              temp,
-        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
-    );
-
     MCNAPI void _editorFillBlockInfo(
         ::BlockSource&                                 region,
         ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator,
@@ -89,6 +86,12 @@ public:
     );
 
     MCNAPI bool _parseOrigin(::CompoundTag const& tag);
+
+    MCNAPI void editorFillFromWorld(
+        ::BlockSource&             region,
+        ::StructureSettings const& structureSettings,
+        ::BlockVolumeBase const&   volume
+    );
 
     MCNAPI void editorFillFromWorld(
         ::BlockSource&                                 region,
@@ -111,8 +114,6 @@ public:
         ::StructureSettings const& structureSettings
     ) const;
 
-    MCNAPI void setLocation(::std::string location);
-
     MCNAPI bool setOrigin(::Vec3 newOrigin);
     // NOLINTEND
 
@@ -122,11 +123,6 @@ public:
     MCNAPI void* $ctor(::Editor::EditorStructureTemplate const&);
 
     MCNAPI void* $ctor(::std::string_view name);
-
-    MCNAPI void* $ctor(
-        ::StructureTemplate const&                              temp,
-        ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
-    );
     // NOLINTEND
 
 public:
@@ -146,6 +142,8 @@ public:
 
     MCNAPI ::BoundingBox
     $getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;
+
+    MCNAPI void $fillEmpty(::BlockPos const& size);
 
     MCNAPI bool $_allowReadBlock(::BlockPos const& position, ::Block const& block) const;
 

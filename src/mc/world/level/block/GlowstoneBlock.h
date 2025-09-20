@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,11 +12,11 @@ class Container;
 class Vec3;
 // clang-format on
 
-class GlowstoneBlock : public ::BlockLegacy {
+class GlowstoneBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 58
+    // vIndex: 59
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
@@ -27,7 +27,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
     // NOLINTEND
 
 public:

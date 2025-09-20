@@ -51,7 +51,7 @@ public:
     virtual void containerContentChanged(int iSlot) /*override*/;
 
     // vIndex: 0
-    virtual void containerClosed(::Player& player) /*override*/;
+    virtual void containerClosed(::Actor& actor) /*override*/;
 
     // vIndex: 1
     virtual ~ContainerComponent() /*override*/;
@@ -119,7 +119,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $containerContentChanged(int iSlot);
 
-    MCAPI void $containerClosed(::Player& player);
+    MCAPI void $containerClosed(::Actor& actor);
     // NOLINTEND
 
 public:

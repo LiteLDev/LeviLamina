@@ -456,6 +456,8 @@ MCAPI ::HashedString const& CopperBlock();
 
 MCAPI ::HashedString const& CopperBulb();
 
+MCAPI ::HashedString const& CopperChest();
+
 MCAPI ::HashedString const& CopperDoor();
 
 MCAPI ::HashedString const& CopperGrate();
@@ -777,6 +779,8 @@ MCAPI ::HashedString const& ExposedChiseledCopper();
 MCAPI ::HashedString const& ExposedCopper();
 
 MCAPI ::HashedString const& ExposedCopperBulb();
+
+MCAPI ::HashedString const& ExposedCopperChest();
 
 MCAPI ::HashedString const& ExposedCopperDoor();
 
@@ -1425,6 +1429,8 @@ MCAPI ::HashedString const& OxidizedChiseledCopper();
 MCAPI ::HashedString const& OxidizedCopper();
 
 MCAPI ::HashedString const& OxidizedCopperBulb();
+
+MCAPI ::HashedString const& OxidizedCopperChest();
 
 MCAPI ::HashedString const& OxidizedCopperDoor();
 
@@ -2132,6 +2138,8 @@ MCAPI ::HashedString const& WaxedCopper();
 
 MCAPI ::HashedString const& WaxedCopperBulb();
 
+MCAPI ::HashedString const& WaxedCopperChest();
+
 MCAPI ::HashedString const& WaxedCopperDoor();
 
 MCAPI ::HashedString const& WaxedCopperGrate();
@@ -2151,6 +2159,8 @@ MCAPI ::HashedString const& WaxedExposedChiseledCopper();
 MCAPI ::HashedString const& WaxedExposedCopper();
 
 MCAPI ::HashedString const& WaxedExposedCopperBulb();
+
+MCAPI ::HashedString const& WaxedExposedCopperChest();
 
 MCAPI ::HashedString const& WaxedExposedCopperDoor();
 
@@ -2172,6 +2182,8 @@ MCAPI ::HashedString const& WaxedOxidizedCopper();
 
 MCAPI ::HashedString const& WaxedOxidizedCopperBulb();
 
+MCAPI ::HashedString const& WaxedOxidizedCopperChest();
+
 MCAPI ::HashedString const& WaxedOxidizedCopperDoor();
 
 MCAPI ::HashedString const& WaxedOxidizedCopperGrate();
@@ -2192,6 +2204,8 @@ MCAPI ::HashedString const& WaxedWeatheredCopper();
 
 MCAPI ::HashedString const& WaxedWeatheredCopperBulb();
 
+MCAPI ::HashedString const& WaxedWeatheredCopperChest();
+
 MCAPI ::HashedString const& WaxedWeatheredCopperDoor();
 
 MCAPI ::HashedString const& WaxedWeatheredCopperGrate();
@@ -2211,6 +2225,8 @@ MCAPI ::HashedString const& WeatheredChiseledCopper();
 MCAPI ::HashedString const& WeatheredCopper();
 
 MCAPI ::HashedString const& WeatheredCopperBulb();
+
+MCAPI ::HashedString const& WeatheredCopperChest();
 
 MCAPI ::HashedString const& WeatheredCopperDoor();
 

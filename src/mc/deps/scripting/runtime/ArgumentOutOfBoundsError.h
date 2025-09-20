@@ -5,15 +5,21 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/BaseError.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Scripting { struct ErrorBinding; }
+// clang-format on
+
 namespace Scripting {
 
 struct ArgumentOutOfBoundsError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, double> value;
-    ::ll::TypedStorage<8, 8, double> minValue;
-    ::ll::TypedStorage<8, 8, double> maxValue;
+    ::ll::TypedStorage<8, 16, ::std::optional<double>> value;
+    ::ll::TypedStorage<8, 16, ::std::optional<double>> minValue;
+    ::ll::TypedStorage<8, 16, ::std::optional<double>> maxValue;
+    ::ll::TypedStorage<4, 4, int>                      index;
     // NOLINTEND
 
 public:
@@ -24,25 +30,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError&&);
-
     MCAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError const&);
 
-    MCAPI ArgumentOutOfBoundsError(::std::string const& message_, double value_, double minValue_, double maxValue_);
-
-    MCFOLD ::Scripting::ArgumentOutOfBoundsError& operator=(::Scripting::ArgumentOutOfBoundsError&&);
+    MCAPI ArgumentOutOfBoundsError(
+        ::std::string const&    propertyName,
+        int                     index_,
+        ::std::optional<double> value_,
+        ::std::optional<double> minValue_,
+        ::std::optional<double> maxValue_
+    );
 
     MCAPI ~ArgumentOutOfBoundsError();
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Scripting::ArgumentOutOfBoundsError&&);
+    MCAPI void* $ctor(::Scripting::ArgumentOutOfBoundsError const&);
 
-    MCFOLD void* $ctor(::Scripting::ArgumentOutOfBoundsError const&);
-
-    MCAPI void* $ctor(::std::string const& message_, double value_, double minValue_, double maxValue_);
+    MCAPI void* $ctor(
+        ::std::string const&    propertyName,
+        int                     index_,
+        ::std::optional<double> value_,
+        ::std::optional<double> minValue_,
+        ::std::optional<double> maxValue_
+    );
     // NOLINTEND
 
 public:

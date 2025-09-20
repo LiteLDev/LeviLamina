@@ -28,7 +28,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnk3f5bbc;
+        ::ll::UntypedStorage<8, 80> mUnkc0676f;
         // NOLINTEND
 
     public:
@@ -48,7 +48,7 @@ public:
         // NOLINTBEGIN
         MCNAPI static void fromReference(
             ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeName& instance,
-            ::SharedTypes::Reference<0> const&                                                      ref
+            ::SharedTypes::Reference<1> const&                                                      ref
         );
         // NOLINTEND
 
@@ -79,7 +79,7 @@ public:
 
         MCNAPI static void fromReference(
             ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeNameVector& instance,
-            ::SharedTypes::Reference<0> const&                                                            ref
+            ::SharedTypes::Reference<1> const&                                                            ref
         );
 
         MCNAPI static void fromVector(

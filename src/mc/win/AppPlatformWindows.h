@@ -42,19 +42,19 @@ public:
     // vIndex: 26
     virtual void initializeGraphicsDeviceTier() /*override*/;
 
-    // vIndex: 248
+    // vIndex: 247
     virtual ::Core::PathBuffer<::std::string> getPlatformTempPath() const /*override*/;
 
     // vIndex: 65
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
-    // vIndex: 176
+    // vIndex: 175
     virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const& rootPath) /*override*/;
 
     // vIndex: 76
     virtual bool allowContentLogWriteToDisk() /*override*/;
 
-    // vIndex: 179
+    // vIndex: 178
     virtual bool devHotReloadRenderResources() const /*override*/;
 
     // vIndex: 78
@@ -63,32 +63,32 @@ public:
     // vIndex: 79
     virtual ::MPMCQueue<::std::function<void()>>& getMainThreadQueue() /*override*/;
 
-    // vIndex: 212
+    // vIndex: 211
     virtual bool canAppSelfTerminate() const /*override*/;
 
-    // vIndex: 213
+    // vIndex: 212
     virtual bool getPlatformTTSExists() const /*override*/;
 
-    // vIndex: 214
+    // vIndex: 213
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
     // vIndex: 67
     virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const
         /*override*/;
 
-    // vIndex: 236
+    // vIndex: 235
     virtual bool is24HourTimeFormat() const /*override*/;
 
-    // vIndex: 238
+    // vIndex: 237
     virtual ::Core::PathBuffer<::std::string> _getCurrentStoragePath() const /*override*/;
 
-    // vIndex: 239
+    // vIndex: 238
     virtual ::Core::PathBuffer<::std::string> _getExternalStoragePath() const /*override*/;
 
-    // vIndex: 240
+    // vIndex: 239
     virtual ::Core::PathBuffer<::std::string> _getInternalStoragePath() const /*override*/;
 
-    // vIndex: 241
+    // vIndex: 240
     virtual ::Core::PathBuffer<::std::string> _getUserdataPath() const /*override*/;
 
     // vIndex: 45

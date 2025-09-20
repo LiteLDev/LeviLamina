@@ -2,24 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/brstd/move_only_function.h"
+
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockPos;
 class BlockSource;
-struct BuildMatch;
+struct BlockPatternData;
 // clang-format on
 
 class BlockPatternBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc90572;
-    ::ll::UntypedStorage<8, 24> mUnkdf8196;
-    ::ll::UntypedStorage<8, 16> mUnk1300cd;
-    ::ll::UntypedStorage<1, 1>  mUnk59c3f0;
-    ::ll::UntypedStorage<4, 4>  mUnk64f13f;
-    ::ll::UntypedStorage<4, 4>  mUnk612a6e;
+    ::ll::UntypedStorage<8, 88> mUnkd5a757;
     // NOLINTEND
 
 public:
@@ -31,29 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _fitsBlockPatternEntry(int subPattern, int rowIndex, ::BlockPos const& pos, ::Block const& block);
+    MCNAPI ::BlockPatternBuilder& aisle(::std::vector<::std::string> patterns);
 
-    MCNAPI ::BlockPatternBuilder& aisle(int, ...);
+    MCNAPI ::BlockPatternData buildOrAssert();
 
-    MCNAPI ::BlockPatternBuilder& build();
-
-    MCNAPI ::BlockPatternBuilder& define(char pattern, ::Block const& block);
-
-    MCNAPI ::BuildMatch match(::BlockPos const& pos);
-
-    MCNAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex, uchar forward, uchar up);
-
-    MCNAPI void replaceBlocks(
-        char                                                     subPattern,
-        ::BuildMatch                                             buildMatch,
-        ::Block const&                                           block,
-        ::std::function<void(::Block const&, ::BlockPos const&)> preReplaceCallback
+    MCNAPI ::BlockPatternBuilder& define(
+        char                                                                                       pattern,
+        ::brstd::move_only_function<bool(::BlockSource&, ::BlockPos const&, ::Block const&) const> tester
     );
+
+    MCNAPI ~BlockPatternBuilder();
     // NOLINTEND
 
 public:
-    // static functions
+    // destructor thunk
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::BlockPatternBuilder> start(::BlockSource& region);
+    MCNAPI void $dtor();
     // NOLINTEND
 };

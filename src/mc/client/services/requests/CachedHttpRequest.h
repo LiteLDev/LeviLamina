@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/services/requests/HttpRequestHandler.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -64,8 +64,7 @@ public:
     virtual ~CachedHttpRequest() /*override*/ = default;
 
     // vIndex: 3
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
-        send(::std::string) /*override*/;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response> send(::std::string) /*override*/;
 
     // vIndex: 10
     virtual ::Bedrock::Http::Request _createRequest(::std::string) = 0;

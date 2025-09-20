@@ -2,23 +2,31 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
+
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
 class BiomeComponentFactory;
 class BiomeRegistry;
+class Dimension;
 class Experiments;
 class IWorldRegistriesProvider;
 class SurfaceBuilderRegistry;
+struct BiomeIdType;
 struct SpawnSettings;
-namespace mce { class Color; }
 // clang-format on
 
 class VanillaBiomes {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initAdditionalCommonComponents(::BiomeRegistry& registry);
+    MCAPI static void addBiomeDimensionAttributeComponentHelper(
+        ::BiomeRegistry& registry,
+        ::BiomeIdType    id,
+        ::DimensionType  dimensionType
+    );
 
     MCAPI static void initBiomeComponentGlue(::BiomeComponentFactory& factory);
 
@@ -28,7 +36,7 @@ public:
         ::BiomeRegistry&         registry,
         ::SpawnSettings const&   spawnSettings,
         ::BaseGameVersion const& baseGameVersion,
-        ::Experiments const&     experiments
+        ::Experiments const&
     );
 
     MCAPI static void initDefaultWorldGenComponents(::IWorldRegistriesProvider& registries);
@@ -41,10 +49,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::Color const& SWAMP_WATER_COLOR();
-
-    MCAPI static ::mce::Color const& WATER_FOG_COLOR_SWAMP();
-
-    MCAPI static ::std::set<ushort>& mPlayerValidSpawns();
+    MCAPI static ::std::set<::BiomeIdType>& mPlayerValidSpawns();
     // NOLINTEND
 };

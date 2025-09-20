@@ -58,7 +58,7 @@ public:
     // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 1

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/block/CopperBlock.h"
 
 // auto generated forward declare list
@@ -14,7 +14,7 @@ class BlockPos;
 class IConstBlockSource;
 // clang-format on
 
-class CopperGrateBlock : public ::CopperBlock<::BlockLegacy> {
+class CopperGrateBlock : public ::CopperBlock<::BlockType> {
 public:
     // virtual functions
     // NOLINTBEGIN

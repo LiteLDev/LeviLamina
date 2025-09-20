@@ -18,6 +18,8 @@ struct LevelChunkAndSubChunkLoggingData : public ::Bedrock::EnableNonOwnerRefere
 public:
     // LevelChunkAndSubChunkLoggingData inner types declare
     // clang-format off
+    struct CollatedLogEntry;
+    struct DebugRenderingOptions;
     struct LogEntry;
     // clang-format on
 
@@ -32,16 +34,38 @@ public:
         // NOLINTEND
     };
 
+    struct CollatedLogEntry {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, ::std::chrono::duration<float, ::std::ratio<1, 1>>> mElapsedTime;
+        ::ll::TypedStorage<8, 32, ::std::string>                                     mClientOrServer;
+        ::ll::TypedStorage<8, 32, ::std::string>                                     mType;
+        ::ll::TypedStorage<8, 32, ::std::string>                                     mMessage;
+        // NOLINTEND
+    };
+
+    struct DebugRenderingOptions {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, bool> mEnabled;
+        ::ll::TypedStorage<1, 1, bool> mShowLevelChunk;
+        ::ll::TypedStorage<1, 1, bool> mShowSubChunk;
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::SubChunkPos>                          mCurrentPlayerSubChunk;
-    ::ll::TypedStorage<4, 12, ::SubChunkPos>                          mSubChunkToTrack;
-    ::ll::TypedStorage<1, 1, bool>                                    mCollectData;
-    ::ll::TypedStorage<1, 1, bool>                                    mLogAllData;
-    ::ll::TypedStorage<1, 1, bool>                                    mCollectSubChunkPosition;
-    ::ll::TypedStorage<1, 1, ::ChunkState>                            mTrackedLevelChunkStateServer;
-    ::ll::TypedStorage<1, 1, ::ChunkState>                            mTrackedLevelChunkStateClient;
+    ::ll::TypedStorage<4, 12, ::SubChunkPos>                                            mCurrentPlayerSubChunk;
+    ::ll::TypedStorage<4, 12, ::SubChunkPos>                                            mSubChunkToTrack;
+    ::ll::TypedStorage<1, 1, bool>                                                      mCollectData;
+    ::ll::TypedStorage<1, 1, bool>                                                      mLogAllData;
+    ::ll::TypedStorage<1, 1, bool>                                                      mCollectSubChunkPosition;
+    ::ll::TypedStorage<1, 3, ::LevelChunkAndSubChunkLoggingData::DebugRenderingOptions> mDebugRenderingOptions;
+    ::ll::TypedStorage<1, 1, ::ChunkState>                                              mTrackedLevelChunkStateServer;
+    ::ll::TypedStorage<1, 1, ::ChunkState>                                              mTrackedLevelChunkStateClient;
     ::ll::TypedStorage<1, 1, ::ChunkState>                            mTrackedLevelChunkStateClientServer;
     ::ll::TypedStorage<4, 4, ::SubChunk::SubChunkState>               mTrackedSubChunkStateServer;
     ::ll::TypedStorage<4, 4, ::SubChunk::SubChunkState>               mTrackedSubChunkStateClient;

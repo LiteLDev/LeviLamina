@@ -250,9 +250,31 @@ MCAPI ::HashedString const& CookedSalmon();
 
 MCAPI ::HashedString const& Cookie();
 
+MCAPI ::HashedString const& CopperAxe();
+
+MCAPI ::HashedString const& CopperBoots();
+
+MCAPI ::HashedString const& CopperChestplate();
+
 MCAPI ::HashedString const& CopperDoor();
 
+MCAPI ::HashedString const& CopperGolemSpawnEgg();
+
+MCAPI ::HashedString const& CopperHelmet();
+
+MCAPI ::HashedString const& CopperHoe();
+
 MCAPI ::HashedString const& CopperIngot();
+
+MCAPI ::HashedString const& CopperLeggings();
+
+MCAPI ::HashedString const& CopperNugget();
+
+MCAPI ::HashedString const& CopperPickaxe();
+
+MCAPI ::HashedString const& CopperShovel();
+
+MCAPI ::HashedString const& CopperSword();
 
 MCAPI ::HashedString const& CowSpawnEgg();
 

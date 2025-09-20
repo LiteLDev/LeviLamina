@@ -45,13 +45,13 @@ public:
     // vIndex: 57
     virtual ::EventResult onEvent(::PlayerRespawnEvent const& respawnEvent) /*override*/;
 
-    // vIndex: 60
+    // vIndex: 61
     virtual ::EventResult onEvent(::PlayerInitialSpawnEvent const& initialSpawnEvent) /*override*/;
 
     // vIndex: 52
     virtual ::EventResult onEvent(::PlayerDimensionChangeAfterEvent const& playerDimensionChangeEvent) /*override*/;
 
-    // vIndex: 61
+    // vIndex: 62
     virtual ::EventResult onEvent(::PlayerInputModeChangeEvent const& playerInputModeChangeEvent) /*override*/;
 
     // vIndex: 45

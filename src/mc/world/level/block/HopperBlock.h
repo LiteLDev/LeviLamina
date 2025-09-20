@@ -6,8 +6,8 @@
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/ActorBlockBase.h"
-#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,21 +28,21 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class HopperBlock : public ::ActorBlock {
+class HopperBlock : public ::ActorBlockBase<::BlockType> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 131
+    // vIndex: 132
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 60
+    // vIndex: 61
     virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
         /*override*/;
 
-    // vIndex: 135
+    // vIndex: 136
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 28
@@ -69,41 +69,41 @@ public:
 
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const& block,
-        ::BlockSource const&,
-        ::BlockPos const& pos,
-        ::Vec3 const&     origin,
-        ::Vec3 const&     end,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
     // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 91
+    // vIndex: 92
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 104
+    // vIndex: 105
     virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 105
+    // vIndex: 106
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 83
+    // vIndex: 84
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 137
     virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
         /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -154,16 +154,6 @@ public:
         ::BlockPos const&          pos,
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
-    ) const;
-
-    MCAPI ::HitResult $clip(
-        ::Block const& block,
-        ::BlockSource const&,
-        ::BlockPos const& pos,
-        ::Vec3 const&     origin,
-        ::Vec3 const&     end,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
     MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;

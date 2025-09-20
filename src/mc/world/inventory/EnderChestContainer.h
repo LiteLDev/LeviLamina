@@ -8,25 +8,25 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ChestBlockActor;
-class Player;
 // clang-format on
 
 class EnderChestContainer : public ::FillingContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ChestBlockActor*> activeChest;
+    ::ll::TypedStorage<8, 8, ::ChestBlockActor*> mActiveChest;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 22
-    virtual void startOpen(::Player& player) /*override*/;
+    virtual void startOpen(::Actor& actor) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
     // vIndex: 5
     virtual ::Bedrock::PubSub::Connector<void()>* getContainerRemovedConnector() /*override*/;
@@ -41,9 +41,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $startOpen(::Player& player);
+    MCNAPI void $startOpen(::Actor& actor);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Actor& actor);
 
     MCNAPI ::Bedrock::PubSub::Connector<void()>* $getContainerRemovedConnector();
 

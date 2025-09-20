@@ -16,6 +16,7 @@ class BoundingBox;
 class ChunkLocalNoiseCache;
 class DimensionHeightRange;
 class LevelChunk;
+struct BiomeIdType;
 struct GetBiomeOptions;
 // clang-format on
 
@@ -70,7 +71,8 @@ public:
     getBiomeArea(::BoundingBox const& box, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const /*override*/;
 
     // vIndex: 4
-    virtual bool containsOnly(int xo, int yo, int zo, int r, ::gsl::span<uint64 const> allowed) const /*override*/;
+    virtual bool containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const
+        /*override*/;
 
     // vIndex: 7
     virtual ::Biome const* getBiome(::BlockPos const& blockPos) const /*override*/;
@@ -82,7 +84,7 @@ public:
     virtual ::Biome const* getBiome(int blockX, int blockY, int blockZ) const /*override*/;
 
     // vIndex: 8
-    virtual bool hasBiomeById(ushort id) const /*override*/;
+    virtual bool hasBiomeById(::BiomeIdType id) const /*override*/;
 
     // vIndex: 9
     virtual bool hasBiomeByNameHash(uint64 hash) const /*override*/;
@@ -122,7 +124,7 @@ public:
     MCNAPI ::BiomeArea
     $getBiomeArea(::BoundingBox const& box, uint scale, ::GetBiomeOptions const& getBiomeOptionsIn) const;
 
-    MCNAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<uint64 const> allowed) const;
+    MCNAPI bool $containsOnly(int xo, int yo, int zo, int r, ::gsl::span<::BiomeIdType const> allowed) const;
 
     MCNAPI ::Biome const* $getBiome(::BlockPos const& blockPos) const;
 
@@ -130,7 +132,7 @@ public:
 
     MCNAPI ::Biome const* $getBiome(int blockX, int blockY, int blockZ) const;
 
-    MCNAPI bool $hasBiomeById(ushort id) const;
+    MCNAPI bool $hasBiomeById(::BiomeIdType id) const;
 
     MCNAPI bool $hasBiomeByNameHash(uint64 hash) const;
 

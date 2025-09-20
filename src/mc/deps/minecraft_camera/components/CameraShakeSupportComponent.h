@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CameraShakeSupportComponent {
+struct CameraShakeSupportComponent {
 public:
     // member variables
     // NOLINTBEGIN

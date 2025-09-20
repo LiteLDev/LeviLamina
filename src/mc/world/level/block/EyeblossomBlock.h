@@ -20,13 +20,13 @@ class EyeblossomBlock : public ::FlowerBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 146
+    // vIndex: 147
     virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
-    // vIndex: 145
+    // vIndex: 146
     virtual void entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
     // vIndex: 0
@@ -36,20 +36,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     _updateEyeblossomState(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool isMainBlock) const;
 
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
-    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
+    MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
     // NOLINTEND
 
 public:

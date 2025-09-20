@@ -32,6 +32,8 @@ public:
 
     MCNAPI void addToChain(::Json::Value& chain) const;
 
+    MCNAPI ::std::string getIdentityPublicKey() const;
+
     MCNAPI ::std::string toString() const;
 
     MCNAPI ::std::unique_ptr<::Certificate> verify(::std::vector<::std::string> const& trustedKeys) const;

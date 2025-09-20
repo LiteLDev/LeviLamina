@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6
-    virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) /*override*/;
+    virtual int Send(void const* data, uint64 size, ::rtc::PacketOptions const& options) /*override*/;
 
     // vIndex: 7
     virtual int GetError() /*override*/;
@@ -61,7 +61,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $Send(void const* data, uint64 len, ::rtc::PacketOptions const& options);
+    MCNAPI int $Send(void const* data, uint64 size, ::rtc::PacketOptions const& options);
 
     MCNAPI int $GetError();
     // NOLINTEND

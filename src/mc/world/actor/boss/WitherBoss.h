@@ -172,10 +172,6 @@ public:
 
     MCAPI bool canShoot();
 
-    MCAPI bool getAerialAttack() const;
-
-    MCAPI ::ActorUniqueID getAlternativeTarget(int headIndex);
-
     MCAPI ::Vec3 getHeadPos(int headID) const;
 
     MCAPI bool hasAerialAttack() const;
@@ -246,7 +242,7 @@ public:
 
     MCAPI ::Vec3 $getFiringPos() const;
 
-    MCFOLD void $tickDeath();
+    MCAPI void $tickDeath();
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
     // NOLINTEND

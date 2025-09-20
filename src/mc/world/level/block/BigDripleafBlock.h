@@ -6,7 +6,7 @@
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/item/FertilizerType.h"
 #include "mc/world/level/block/BigDripleafTilt.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,12 +23,12 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class BigDripleafBlock : public ::BlockLegacy {
+class BigDripleafBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 124
-    virtual ::BlockLegacy& init() /*override*/;
+    // vIndex: 125
+    virtual ::BlockType& init() /*override*/;
 
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
@@ -41,37 +41,37 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 80
+    // vIndex: 81
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 137
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 73
+    // vIndex: 74
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 75
+    // vIndex: 76
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 56
+    // vIndex: 57
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
-    // vIndex: 86
+    // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 66
+    // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 60
+    // vIndex: 61
     virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
         /*override*/;
 
-    // vIndex: 145
+    // vIndex: 146
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
     // vIndex: 16
@@ -80,7 +80,7 @@ public:
     // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -90,60 +90,60 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _resetTilt(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void _resetTilt(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void
+    MCNAPI void
     _setTiltAndScheduleTick(::BigDripleafTilt bigDripleafTilt, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void placeWithRandomHeight(::BlockSource& region, ::Random& random, ::BlockPos stemPos, int facing);
+    MCNAPI static void placeWithRandomHeight(::BlockSource& region, ::Random& random, ::BlockPos stemPos, int facing);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockLegacy& $init();
+    MCNAPI ::BlockType& $init();
 
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
         ::BlockPos const&                                  pos,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
+    MCNAPI void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
+    MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
+    MCNAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
 
-    MCFOLD bool $isLavaBlocking() const;
+    MCNAPI bool $isLavaBlocking() const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

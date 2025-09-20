@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/ActorBlockBase.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,14 +12,14 @@ class BlockPos;
 class BlockSource;
 // clang-format on
 
-class ConduitBlock : public ::ActorBlock {
+class ConduitBlock : public ::ActorBlockBase<::BlockType> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ConduitBlock() /*override*/ = default;
 
-    // vIndex: 79
+    // vIndex: 80
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
     // NOLINTEND
 

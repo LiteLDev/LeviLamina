@@ -29,15 +29,18 @@ public:
 
 public:
     // prevent constructor by default
-    PageContent(PageContent const&);
     PageContent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PageContent(::PageContent const&);
+
     MCNAPI PageContent(::PageContent&&);
 
     MCNAPI PageContent(::std::string nText, ::std::optional<::std::string> nFilteredText);
+
+    MCNAPI ::PageContent& operator=(::PageContent&&);
 
     MCNAPI ::PageContent& operator=(::PageContent const&);
 
@@ -61,6 +64,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::PageContent const&);
+
     MCNAPI void* $ctor(::PageContent&&);
 
     MCNAPI void* $ctor(::std::string nText, ::std::optional<::std::string> nFilteredText);

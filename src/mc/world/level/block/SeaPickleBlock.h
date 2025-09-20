@@ -28,14 +28,14 @@ class SeaPickleBlock : public ::FoliageBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 86
+    // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 146
+    // vIndex: 147
     virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
-    // vIndex: 111
+    // vIndex: 112
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
     // vIndex: 5
@@ -46,22 +46,22 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 137
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 73
+    // vIndex: 74
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 74
+    // vIndex: 75
     virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
-    // vIndex: 75
+    // vIndex: 76
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 125
+    // vIndex: 126
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
     // vIndex: 19
@@ -70,13 +70,13 @@ public:
     // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 80
+    // vIndex: 81
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -86,49 +86,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _randomTick(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void _randomTick(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
+    MCNAPI ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCFOLD ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCNAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
+    MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCFOLD bool $hasVariableLighting() const;
+    MCNAPI bool $hasVariableLighting() const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

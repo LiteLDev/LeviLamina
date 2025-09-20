@@ -39,19 +39,19 @@ public:
     // vIndex: 2
     virtual ::Block const* getNextBlockPermutation(::Block const& currentBlock) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 80
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual void checkAlive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 137
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 147
     virtual void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const /*override*/;
 
     // vIndex: 5
@@ -65,27 +65,27 @@ public:
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 88
+    // vIndex: 89
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
-    // vIndex: 87
+    // vIndex: 88
     virtual bool getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const
         /*override*/;
 
-    // vIndex: 73
+    // vIndex: 74
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 75
+    // vIndex: 76
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 149
+    // vIndex: 150
     virtual ::Block const& _keepRelevantStateForDropping(::Block const& block) const;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -95,55 +95,55 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DoublePlantBaseBlock(::std::string const& nameId, int id);
+    MCNAPI DoublePlantBaseBlock(::std::string const& nameId, int id);
 
-    MCAPI void _preventCreativeDropFromBottomPart(::Player const& player, ::BlockPos const& bottomHalfPos) const;
+    MCNAPI void _preventCreativeDropFromBottomPart(::Player const& player, ::BlockPos const& bottomHalfPos) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCNAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
+    MCNAPI ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
 
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCFOLD void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCFOLD ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCFOLD bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
+    MCNAPI bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI ::Block const& $_keepRelevantStateForDropping(::Block const& block) const;
+    MCNAPI ::Block const& $_keepRelevantStateForDropping(::Block const& block) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

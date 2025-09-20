@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,7 @@ class Block;
 class BlockPos;
 // clang-format on
 
-class HeavyCoreBlock : public ::BlockLegacy {
+class HeavyCoreBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -33,9 +33,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCFOLD bool $liquidCanFlowIntoFromDirection(
+    MCNAPI bool $liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,
         ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
         ::BlockPos const&                                         pos

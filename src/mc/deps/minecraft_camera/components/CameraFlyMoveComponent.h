@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CameraFlyMoveComponent {
+struct CameraFlyMoveComponent {
 public:
     // member variables
     // NOLINTBEGIN

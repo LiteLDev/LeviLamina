@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,7 +21,7 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class FlowerBedBlock : public ::BlockLegacy {
+class FlowerBedBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
@@ -31,16 +31,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 117
+    // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 80
+    // vIndex: 81
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 137
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 86
+    // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
@@ -52,16 +52,16 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 73
+    // vIndex: 74
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 75
+    // vIndex: 76
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -71,41 +71,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool tryGrow(::BlockSource& region, ::BlockPos pos);
+    MCNAPI static bool tryGrow(::BlockSource& region, ::BlockPos pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

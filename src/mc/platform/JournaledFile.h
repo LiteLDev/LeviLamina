@@ -59,8 +59,6 @@ public:
 
     MCNAPI static ::Core::PathBuffer<::std::string> findReadPath(::Core::Path fileName);
 
-    MCNAPI static bool isOldFile(::Core::Path fileName);
-
     MCNAPI static void populateImportantFiles(::Core::Path fileName, ::std::vector<::std::string>& importantFiles);
 
     MCNAPI static ::Core::Result replaceHeadFileWithBackup(::Core::Path fileName);

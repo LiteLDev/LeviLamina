@@ -17,7 +17,7 @@ class DestroyOperation : public ::PositionTrackingDB::AsyncOperationBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnka1cd0f;
+    ::ll::UntypedStorage<8, 16> mUnk964b91;
     // NOLINTEND
 
 public:

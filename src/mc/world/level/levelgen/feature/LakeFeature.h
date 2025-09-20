@@ -47,6 +47,9 @@ public:
         ::Block const&                                      block,
         ::std::optional<::XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory
     );
+
+    MCNAPI ::Block const*
+    _getSolidBlockAroundLavaLake(::BlockPos blockPos, ::Block const& deepslate, ::Block const& stone) const;
     // NOLINTEND
 
 public:

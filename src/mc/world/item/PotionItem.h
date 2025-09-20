@@ -11,9 +11,9 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class CompoundTag;
 class Container;
 class InteractionResult;
@@ -69,7 +69,7 @@ public:
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
     // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 79
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
@@ -99,7 +99,7 @@ public:
     // NOLINTBEGIN
     MCAPI PotionItem(::std::string const& name, int id);
 
-    MCAPI bool const _isBlockConvertibleToMud(::BlockLegacy const& block) const;
+    MCAPI bool const _isBlockConvertibleToMud(::BlockType const& block) const;
     // NOLINTEND
 
 public:
@@ -136,7 +136,9 @@ public:
 
     MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 

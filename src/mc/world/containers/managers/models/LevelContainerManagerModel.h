@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::BlockPos>      mBlockPos;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>  mEntityUniqueID;
-    ::ll::TypedStorage<4, 4, ::BlockActorType> mBlockActorType;
+    ::ll::TypedStorage<1, 1, ::BlockActorType> mBlockActorType;
     // NOLINTEND
 
 public:

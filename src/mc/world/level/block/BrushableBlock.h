@@ -11,9 +11,9 @@
 class Actor;
 class Block;
 class BlockActor;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class Experiments;
 class HashedString;
 class ItemInstance;
@@ -42,37 +42,37 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 124
-    virtual ::BlockLegacy& init() /*override*/;
+    // vIndex: 125
+    virtual ::BlockType& init() /*override*/;
 
-    // vIndex: 149
+    // vIndex: 150
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const* blockActor) const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 147
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
-    // vIndex: 117
+    // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 73
+    // vIndex: 74
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 74
+    // vIndex: 75
     virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
-    // vIndex: 75
+    // vIndex: 76
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -82,46 +82,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BrushableBlock(::std::string const& nameID, int id);
+    MCNAPI BrushableBlock(::std::string const& nameID, int id);
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& EmptyBrushedBlock();
+    MCNAPI static ::HashedString const& EmptyBrushedBlock();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameID, int id);
+    MCNAPI void* $ctor(::std::string const& nameID, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockLegacy& $init();
+    MCNAPI ::BlockType& $init();
 
-    MCAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const* blockActor) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const* blockActor) const;
 
-    MCAPI ::mce::Color $getDustColor(::Block const&) const;
+    MCNAPI ::mce::Color $getDustColor(::Block const&) const;
 
-    MCAPI ::std::string $getDustParticleName(::Block const&) const;
+    MCNAPI ::std::string $getDustParticleName(::Block const&) const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCFOLD bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCNAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

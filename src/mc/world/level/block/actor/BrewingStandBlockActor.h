@@ -9,13 +9,12 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
+class Actor;
 class BlockSource;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class Item;
-class Player;
 class SaveContext;
 // clang-format on
 
@@ -42,10 +41,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BrewingStandBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -57,7 +52,7 @@ public:
     // vIndex: 12
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 28
+    // vIndex: 26
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 21
@@ -67,15 +62,15 @@ public:
     virtual int getContainerSize() const /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player&) /*override*/;
+    virtual void startOpen(::Actor&) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
     // vIndex: 34
     virtual void setContainerChanged(int slot) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void onRemoved(::BlockSource&) /*override*/;
 
     // vIndex: 32
@@ -84,10 +79,10 @@ public:
     // vIndex: 33
     virtual bool canPullOutItem(int slot, int face, ::ItemStack const&) const /*override*/;
 
-    // vIndex: 35
+    // vIndex: 32
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 34
+    // vIndex: 31
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 1
@@ -102,7 +97,7 @@ public:
     // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 12
     virtual void onMove() /*override*/;
 
     // vIndex: 2
@@ -116,17 +111,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BrewingStandBlockActor(::BlockPos const& pos);
-
     MCNAPI void brew();
 
     MCNAPI bool canBrew();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -142,9 +129,9 @@ public:
 
     MCNAPI int $getContainerSize() const;
 
-    MCNAPI void $startOpen(::Player&);
+    MCNAPI void $startOpen(::Actor&);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Actor& actor);
 
     MCNAPI void $setContainerChanged(int slot);
 

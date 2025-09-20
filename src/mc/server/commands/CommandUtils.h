@@ -25,7 +25,6 @@ class LevelData;
 class Player;
 class Vec3;
 struct ActorDefinitionIdentifier;
-namespace Bedrock::Safety { class RedactableString; }
 namespace Json { class Value; }
 class BlockPos;
 class Vec3;
@@ -77,8 +76,6 @@ MCAPI ::std::string getTelemetryErrorList(::CommandOutput const& output);
 MCAPI bool isFunctionValid(::CommandOutput& output, ::FunctionEntry& functionEntry, ::std::string const& resolvedPath);
 
 MCAPI bool isPlayerSpawnedMob(::Actor const& entity, ::Actor const& summoner);
-
-MCAPI void nameEntity(::Actor& actor, bool nameSet, ::Bedrock::Safety::RedactableString const& actorName);
 
 MCAPI void setDifficulty(::Level& level, ::SharedTypes::Legacy::Difficulty difficulty);
 

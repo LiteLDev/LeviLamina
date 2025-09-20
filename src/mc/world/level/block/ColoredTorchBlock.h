@@ -26,15 +26,15 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 122
+    // vIndex: 123
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 91
+    // vIndex: 92
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 55
+    // vIndex: 56
     virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
     // vIndex: 0
@@ -44,9 +44,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI ::Block const& $getPlacementBlock(
+    MCNAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -54,7 +54,7 @@ public:
         int               itemValue
     ) const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCNAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
     // NOLINTEND
 
 public:

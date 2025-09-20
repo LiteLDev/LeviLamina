@@ -11,9 +11,9 @@
 class AABB;
 class Actor;
 class Block;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class Experiments;
 class Random;
 namespace BlockEvents { class BlockRandomTickEvent; }
@@ -23,31 +23,31 @@ class MangrovePropaguleBlock : public ::FoliageBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 124
-    virtual ::BlockLegacy& init() /*override*/;
+    // vIndex: 125
+    virtual ::BlockType& init() /*override*/;
 
-    // vIndex: 80
+    // vIndex: 81
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 75
+    // vIndex: 76
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 137
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 73
+    // vIndex: 74
     virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const
         /*override*/;
 
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 117
+    // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
@@ -57,34 +57,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool _isFullyGrown(::Block const& block) const;
+    MCNAPI bool _isFullyGrown(::Block const& block) const;
 
-    MCAPI bool _isHanging(::Block const& block) const;
+    MCNAPI bool _isHanging(::Block const& block) const;
 
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockLegacy& $init();
+    MCNAPI ::BlockType& $init();
 
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCNAPI bool
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const;
 
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

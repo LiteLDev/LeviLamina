@@ -5,14 +5,14 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
 class BlockPos;
+class BlockType;
 // clang-format on
 
 namespace BlockUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool allowsNetherVegetation(::BlockLegacy const& block);
+MCAPI bool allowsNetherVegetation(::BlockType const& block);
 
 MCAPI float getLiquidBlockHeight(::Block const& block, ::BlockPos const& blockPos);
 

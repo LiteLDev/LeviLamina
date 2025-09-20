@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -16,11 +17,12 @@ namespace Identity { struct SignOutResult; }
 
 namespace Identity {
 
-class IEduAuth {
+class IEduAuth : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8954c5;
+    ::ll::UntypedStorage<8, 8>  mUnk8954c5;
+    ::ll::UntypedStorage<8, 64> mUnkc06796;
     // NOLINTEND
 
 public:
@@ -33,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IEduAuth() = default;
+    virtual ~IEduAuth() /*override*/ = default;
 
     // vIndex: 1
     virtual void Authenticate(

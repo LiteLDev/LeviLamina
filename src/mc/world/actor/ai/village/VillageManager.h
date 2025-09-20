@@ -13,9 +13,9 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class Dimension;
 class HashedString;
 class ILevelStorageManagerConnector;
@@ -36,7 +36,7 @@ public:
     // clang-format on
 
     // VillageManager inner types define
-    using POIBlueprintMap = ::std::unordered_map<::BlockLegacy const*, ::std::unique_ptr<::POIBlueprint>>;
+    using POIBlueprintMap = ::std::unordered_map<::BlockType const*, ::std::unique_ptr<::POIBlueprint>>;
 
     using VillageMap = ::std::unordered_map<::mce::UUID, ::std::shared_ptr<::Village>>;
 
@@ -87,7 +87,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::mce::UUID, ::std::shared_ptr<::Village>>> mVillages;
     ::ll::TypedStorage<8, 192, ::std::array<::std::unordered_map<::BlockPos, ::std::shared_ptr<::POIInstance>>, 3>>
         mClusteredPOIs;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockLegacy const*, ::std::unique_ptr<::POIBlueprint>>>
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockType const*, ::std::unique_ptr<::POIBlueprint>>>
                                                                mPOIBlueprints;
     ::ll::TypedStorage<8, 8, ::Tick>                           mTickCount;
     ::ll::TypedStorage<8, 32, ::WanderingTraderScheduler>      mWanderingTraderScheduler;

@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class BiomeSource;
-class BlockLegacy;
+class BlockType;
 class BlockVolume;
 class ChunkPos;
 class Random;
@@ -22,7 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool _isDiggable(::BlockLegacy const& block) const /*override*/;
+    virtual bool _isDiggable(::BlockType const& block) const /*override*/;
 
     // vIndex: 0
     virtual bool _carve(
@@ -49,7 +49,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_isDiggable(::BlockLegacy const& block) const;
+    MCNAPI bool $_isDiggable(::BlockType const& block) const;
 
     MCNAPI bool $_carve(
         ::BlockVolume&       blocks,

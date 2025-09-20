@@ -9,10 +9,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class IPlayerContainerSetter;
 class ISparseContainerSetListener;
 class ItemStack;
-class Player;
 // clang-format on
 
 class SimpleSparseContainer : public ::Container, public ::ContainerContentChangeListener {
@@ -49,10 +49,10 @@ public:
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player& player) /*override*/;
+    virtual void startOpen(::Actor& actor) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
     // vIndex: 20
     virtual int getContainerSize() const /*override*/;
@@ -102,9 +102,9 @@ public:
 
     MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCNAPI void $startOpen(::Player& player);
+    MCNAPI void $startOpen(::Actor& actor);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Actor& actor);
 
     MCNAPI int $getContainerSize() const;
 

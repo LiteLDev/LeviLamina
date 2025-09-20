@@ -3,56 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
-#include "mc/network/MinecraftPacketIds.h"
-#include "mc/platform/Result.h"
+#include "mc/network/packet/ServerSettingsResponsePacketPayload.h"
+#include "mc/network/packet/serialize/SerializedPayloadPacket.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
+struct ServerSettingsResponsePacketInfo;
 // clang-format on
 
-class ServerSettingsResponsePacket : public ::Packet {
+class ServerSettingsResponsePacket
+: public ::SerializedPayloadPacket<::ServerSettingsResponsePacketInfo, ::ServerSettingsResponsePacketPayload> {
 public:
     ServerSettingsResponsePacket(uint formId, ::std::string const& formJSON) : mFormId(formId), mFormJSON(formJSON) {}
-
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>           mFormId;
-    ::ll::TypedStorage<8, 32, ::std::string> mFormJSON;
-    // NOLINTEND
+    // ServerSettingsResponsePacket inner types define
+    using PayloadType = ::ServerSettingsResponsePacketPayload;
+
+    using PacketInfo = ::ServerSettingsResponsePacketInfo;
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const /*override*/;
-
-    // vIndex: 2
-    virtual ::std::string getName() const /*override*/;
-
-    // vIndex: 4
-    virtual void write(::BinaryStream& stream) const /*override*/;
-
-    // vIndex: 8
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
     // vIndex: 0
     virtual ~ServerSettingsResponsePacket() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
-
-    MCAPI ::std::string $getName() const;
-
-    MCFOLD void $write(::BinaryStream& stream) const;
-
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

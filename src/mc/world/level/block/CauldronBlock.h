@@ -8,8 +8,8 @@
 #include "mc/events/MinecraftEventing.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/block/ActorBlockBase.h"
-#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/block/CauldronLiquidType.h"
 #include "mc/world/level/material/MaterialType.h"
 
@@ -39,7 +39,7 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class CauldronBlock : public ::ActorBlock {
+class CauldronBlock : public ::ActorBlockBase<::BlockType> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -55,13 +55,13 @@ public:
 
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const&       block,
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::Vec3 const&        A,
-        ::Vec3 const&        B,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
     // vIndex: 8
@@ -76,44 +76,44 @@ public:
     // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 54
+    // vIndex: 55
     virtual void
     handlePrecipitation(::BlockSource& region, ::BlockPos const& pos, float downfallAmount, float temperature) const
         /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 104
+    // vIndex: 105
     virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 105
+    // vIndex: 106
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
-    // vIndex: 122
+    // vIndex: 123
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 135
+    // vIndex: 136
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 140
     virtual int getExtraRenderLayers() const /*override*/;
 
-    // vIndex: 86
+    // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 83
+    // vIndex: 84
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 142
     virtual ::Brightness getLight(::Block const& block) const /*override*/;
 
-    // vIndex: 125
+    // vIndex: 126
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -192,13 +192,13 @@ public:
     ) const;
 
     MCFOLD ::HitResult $clip(
-        ::Block const&       block,
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::Vec3 const&        A,
-        ::Vec3 const&        B,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
     MCAPI void $addAABBs(

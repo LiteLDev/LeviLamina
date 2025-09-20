@@ -6,8 +6,8 @@
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,7 +30,7 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class ComposterBlock : public ::BlockLegacy {
+class ComposterBlock : public ::BlockType {
 public:
     // ComposterBlock inner types define
     enum class FillLevel : int {
@@ -43,28 +43,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 131
+    // vIndex: 132
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 61
+    // vIndex: 62
     virtual void onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const /*override*/;
 
-    // vIndex: 104
+    // vIndex: 105
     virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 105
+    // vIndex: 106
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const&       block,
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::Vec3 const&        A,
-        ::Vec3 const&        B,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
     // vIndex: 7
@@ -89,13 +89,13 @@ public:
     // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 117
+    // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 83
+    // vIndex: 84
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -105,64 +105,65 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _emitBoneMeal(::Level&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void _emitBoneMeal(::Level&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void _notifyClientComposterUsed(
+    MCNAPI void _notifyClientComposterUsed(
         ::Player const&                              player,
         short                                        itemId,
         ::MinecraftEventing::POIBlockInteractionType interactionType
     ) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<uint64, schar> const& _getCompostableItems();
+    MCNAPI static ::std::unordered_map<uint64, schar> const& _getCompostableItems();
 
-    MCAPI static int
+    MCNAPI static int
     addItems(::ItemStack const& item, int amount, ::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
-    MCAPI static void empty(::BlockSource& region, ::Block const& composter, ::BlockPos const& pos);
+    MCNAPI static void empty(::BlockSource& region, ::Block const& composter, ::BlockPos const& pos);
 
-    MCAPI static schar getFillChance(::ItemStackBase const& item);
+    MCNAPI static schar getFillChance(::ItemStackBase const& item);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    MCNAPI static ::BaseGameVersion const& COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION();
 
-    MCAPI static ::Vec3 const& PARTICLE_OFFSET();
+    MCNAPI static ::Vec3 const& PARTICLE_OFFSET();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const;
+    MCNAPI void $onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const;
 
-    MCFOLD bool $hasComparatorSignal() const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCNAPI int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCFOLD ::HitResult $clip(
-        ::Block const&       block,
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::Vec3 const&        A,
-        ::Vec3 const&        B,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+    MCNAPI ::HitResult $clip(
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCFOLD bool $addCollisionShapes(
+    MCNAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -171,7 +172,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI void $addAABBs(
+    MCNAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -179,13 +180,13 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCFOLD int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

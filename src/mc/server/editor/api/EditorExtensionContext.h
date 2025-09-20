@@ -14,6 +14,7 @@ namespace Editor::Services { class BrushShapeManagerServiceProvider; }
 namespace Editor::Services { class ClipboardServiceProvider; }
 namespace Editor::Services { class EditorBlockPaletteServiceProvider; }
 namespace Editor::Services { class EditorSettingsServiceProvider; }
+namespace Editor::Services { class ServerStructureServiceProvider; }
 namespace Editor::Services { class TransactionManagerServiceProvider; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -70,6 +71,7 @@ public:
         ::Editor::Services::ClipboardServiceProvider*          clipboardService,
         ::Editor::Services::EditorBlockPaletteServiceProvider* blockPaletteService,
         ::Editor::Services::BrushShapeManagerServiceProvider*  brushShapeService,
+        ::Editor::Services::ServerStructureServiceProvider*    serverStructureService,
         ::Scripting::WeakLifetimeScope                         scope,
         ::Editor::API::EditorExtension&                        extension
     );
@@ -92,6 +94,7 @@ public:
         ::Editor::Services::ClipboardServiceProvider*          clipboardService,
         ::Editor::Services::EditorBlockPaletteServiceProvider* blockPaletteService,
         ::Editor::Services::BrushShapeManagerServiceProvider*  brushShapeService,
+        ::Editor::Services::ServerStructureServiceProvider*    serverStructureService,
         ::Scripting::WeakLifetimeScope                         scope,
         ::Editor::API::EditorExtension&                        extension
     );

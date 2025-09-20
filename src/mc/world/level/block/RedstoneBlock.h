@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/Direction.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,25 +15,25 @@ class Experiments;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
 
-class RedstoneBlock : public ::BlockLegacy {
+class RedstoneBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 53
+    // vIndex: 54
     virtual bool
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
         /*override*/;
 
-    // vIndex: 66
+    // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual bool isSignalSource() const /*override*/;
 
-    // vIndex: 118
+    // vIndex: 119
     virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -43,22 +43,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool
+    MCNAPI bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $isSignalSource() const;
+    MCNAPI bool $isSignalSource() const;
 
-    MCFOLD bool $canSpawnOn(::Actor*) const;
+    MCNAPI bool $canSpawnOn(::Actor*) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,68 +24,68 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace mce { class Color; }
 // clang-format on
 
-class BedBlock : public ::BlockLegacy {
+class BedBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 135
+    // vIndex: 136
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 117
+    // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 121
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
     // vIndex: 2
     virtual ::Block const* getNextBlockPermutation(::Block const& currentBlock) const /*override*/;
 
-    // vIndex: 88
+    // vIndex: 89
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
-    // vIndex: 86
+    // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const* blockActor) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 88
     virtual bool getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const
         /*override*/;
 
-    // vIndex: 67
+    // vIndex: 68
     virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const
         /*override*/;
 
-    // vIndex: 68
+    // vIndex: 69
     virtual bool isBounceBlock() const /*override*/;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual bool canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const /*override*/;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual ::Block const& sanitizeFillBlock(::Block const& block) const /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual void onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const /*override*/;
 
-    // vIndex: 116
+    // vIndex: 117
     virtual int telemetryVariant(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 56
+    // vIndex: 57
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
-    // vIndex: 108
+    // vIndex: 109
     virtual bool canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 143
+    // vIndex: 144
     virtual ::mce::Color getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -95,66 +95,66 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCNAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::BlockPos>
+    MCNAPI static ::std::optional<::BlockPos>
     findWakeupPosition(::BlockSource& region, ::BlockPos const& pos, ::std::optional<::Vec3> const& enteredBedPos);
 
-    MCAPI static bool isValidStandUpPosition(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static bool isValidStandUpPosition(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<int[][2]> HEAD_DIRECTION_OFFSETS();
+    MCNAPI static ::std::add_lvalue_reference_t<int[][2]> HEAD_DIRECTION_OFFSETS();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCFOLD ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
+    MCNAPI ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
 
-    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const* blockActor) const;
 
-    MCAPI bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
+    MCNAPI bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
-    MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
+    MCNAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
-    MCFOLD bool $isBounceBlock() const;
+    MCNAPI bool $isBounceBlock() const;
 
-    MCAPI bool $canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI bool $canFillAtPos(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
+    MCNAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
 
-    MCAPI void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI int $telemetryVariant(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI int $telemetryVariant(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCFOLD bool $canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI ::mce::Color $getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI ::mce::Color $getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

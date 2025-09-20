@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
@@ -41,12 +41,11 @@ public:
     virtual ~ServiceClient() /*override*/ = default;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::string>>
+    virtual ::Bedrock::Threading::Async<::std::string>
     getAuthorizationHeader(::std::shared_ptr<::Social::User>, ::std::string const&) const;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::string>>
-    getAuthorizationHeader(::std::string const&) const;
+    virtual ::Bedrock::Threading::Async<::std::string> getAuthorizationHeader(::std::string const&) const;
 
     // vIndex: 3
     virtual void update();

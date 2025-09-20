@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,11 +21,12 @@ class GetCollisionShapeInterface;
 class HitResult;
 class IConstBlockSource;
 class ItemInstance;
+class Player;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
-class FenceBlock : public ::BlockLegacy {
+class FenceBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -69,10 +70,14 @@ public:
     // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 111
+    // vIndex: 89
+    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
+        /*override*/;
+
+    // vIndex: 112
     virtual ::std::string buildDescriptionId(::Block const& block) const /*override*/;
 
     // vIndex: 31
@@ -83,24 +88,24 @@ public:
     getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
         /*override*/;
 
-    // vIndex: 78
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 83
+    // vIndex: 84
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const&       block,
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::Vec3 const&        origin,
-        ::Vec3 const&        end,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -110,49 +115,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void fetchPathableNeighbors(
+    MCNAPI void fetchPathableNeighbors(
         ::std::vector<::BlockPos>& outNeighbors,
         ::BlockSource&             region,
         ::BlockPos const&          pos,
         ::Vec3 const&              entityPos
     ) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    MCNAPI static ::BaseGameVersion const& FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
+    MCNAPI bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
 
-    MCAPI ::AABB const& $getVisualShapeInWorld(
+    MCNAPI ::AABB const& $getVisualShapeInWorld(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::AABB&                    bufferAABB
     ) const;
 
-    MCAPI ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCAPI ::AABB const& $getOutline(
+    MCNAPI ::AABB const& $getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::AABB&                    bufferValue
     ) const;
 
-    MCAPI bool $addCollisionShapes(
+    MCNAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -161,32 +166,34 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
-    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
+    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCFOLD bool $isFenceBlock() const;
+    MCNAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCFOLD bool
+    MCNAPI bool $isFenceBlock() const;
+
+    MCNAPI bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCFOLD ::HitResult $clip(
-        ::Block const&       block,
-        ::BlockSource const& region,
-        ::BlockPos const&    pos,
-        ::Vec3 const&        origin,
-        ::Vec3 const&        end,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+    MCNAPI ::HitResult $clip(
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

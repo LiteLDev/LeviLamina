@@ -6,7 +6,7 @@ class WorldTemplateManagerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnk812f17;
+    ::ll::UntypedStorage<8, 128> mUnk812f17;
     // NOLINTEND
 
 public:

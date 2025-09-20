@@ -26,6 +26,12 @@ public:
     [[nodiscard]] constexpr ListTag(std::vector<CompoundTagVariant> tags);
 
 public:
+    // prevent constructor by default
+    ListTag& operator=(ListTag const&);
+    ListTag(ListTag const&);
+    ListTag();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -70,9 +76,9 @@ public:
 
     MCAPI ::Tag* get(int index) const;
 
-    MCAPI ::CompoundTag* getCompound(uint64 index);
-
     MCAPI float getFloat(int index) const;
+
+    MCAPI ::ListTag& operator=(::ListTag&&);
 
     MCFOLD int size() const;
     // NOLINTEND

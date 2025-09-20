@@ -29,6 +29,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    StructureBlockActor();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -40,10 +44,10 @@ public:
     // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -53,6 +57,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit StructureBlockActor(::BlockPos const& pos);
+
     MCNAPI bool _loadStructure(::BlockSource& region, ::BlockPos const& position, ::BaseGameVersion const& version);
 
     MCNAPI bool _saveStructure(::BlockSource& region, ::BlockPos const& position, bool redstoneTriggered);
@@ -60,6 +66,12 @@ public:
     MCNAPI void setPowered(::BlockSource& region, ::BlockPos const& pos, bool shouldTrigger, bool redstoneTriggered);
 
     MCNAPI void setStructureData(::StructureEditorData const& data);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

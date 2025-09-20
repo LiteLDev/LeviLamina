@@ -19,18 +19,31 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                      mCommaSeperator;
-    ::ll::TypedStorage<8, 32, ::std::string>                            mDigitGroupSeparator;
+    ::ll::TypedStorage<1, 1, bool const>                                mCommaSeperator;
+    ::ll::TypedStorage<8, 32, ::std::string const>                      mDigitGroupSeparator;
     ::ll::TypedStorage<8, 32, ::std::string const>                      mCode;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::string>> mStrings;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::string>> mCaseSensitiveCache;
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                       mCaseSensitiveCacheMutex;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::shared_mutex>>    mCaseSensitiveCacheMutex;
     ::ll::TypedStorage<1, 1, bool>                                      mMayContainIdentifier;
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Localization& operator=(Localization const&);
+    Localization();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Localization(::Localization&&);
+
+    MCAPI explicit Localization(::std::string const& code);
+
+    MCAPI Localization(::Localization const& rhs);
+
+    MCAPI Localization(::std::string const& code, ::Localization const* fallbackLocale);
+
     MCAPI ::OptionalString _get(::std::string const& id, ::std::vector<::std::string> const& params) const;
 
     MCAPI ::OptionalString _getSimple(::std::string const& id) const;
@@ -41,6 +54,8 @@ public:
 
     MCAPI void
     _replaceUTCDateTimeIdentifier(::std::string& strToParse, ::std::optional<::std::locale> const& locale) const;
+
+    MCAPI void addKeys(::Localization&& from);
 
     MCAPI void appendTranslations(
         ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& locStrings
@@ -69,6 +84,8 @@ public:
     );
 
     MCAPI void replaceIdentifiers();
+
+    MCAPI ~Localization();
     // NOLINTEND
 
 public:
@@ -77,5 +94,23 @@ public:
     MCAPI static ::std::string _getDigitGroupSeparator(::std::string const& langCode);
 
     MCAPI static bool _isCommaSeperatedLanguage(::std::string const& langCode);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Localization&&);
+
+    MCAPI void* $ctor(::std::string const& code);
+
+    MCAPI void* $ctor(::Localization const& rhs);
+
+    MCAPI void* $ctor(::std::string const& code, ::Localization const* fallbackLocale);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

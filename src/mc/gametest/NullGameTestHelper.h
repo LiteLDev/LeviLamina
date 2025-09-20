@@ -12,9 +12,9 @@
 // clang-format off
 class Actor;
 class Block;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class Dimension;
 class Item;
 class ItemStack;
@@ -61,7 +61,7 @@ public:
     virtual void succeedWhenBlockPresent(::Block const&, ::BlockPos const&, bool) /*override*/;
 
     // vIndex: 5
-    virtual void succeedWhenBlockPresent(::BlockLegacy const&, ::BlockPos const&, bool) /*override*/;
+    virtual void succeedWhenBlockPresent(::BlockType const&, ::BlockPos const&, bool) /*override*/;
 
     // vIndex: 8
     virtual void setNight() /*override*/;
@@ -163,11 +163,11 @@ public:
 
     // vIndex: 36
     virtual ::std::optional<::gametest::GameTestError>
-    assertBlockPresent(::BlockLegacy const&, int, int, int, bool) /*override*/;
+    assertBlockPresent(::BlockType const&, int, int, int, bool) /*override*/;
 
     // vIndex: 35
     virtual ::std::optional<::gametest::GameTestError>
-    assertBlockPresent(::BlockLegacy const&, ::BlockPos const&, bool) /*override*/;
+    assertBlockPresent(::BlockType const&, ::BlockPos const&, bool) /*override*/;
 
     // vIndex: 37
     virtual ::std::optional<::gametest::GameTestError>

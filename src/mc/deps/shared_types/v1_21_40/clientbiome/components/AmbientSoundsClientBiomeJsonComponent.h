@@ -16,9 +16,9 @@ struct AmbientSoundsClientBiomeJsonComponent : public ::SharedTypes::v1_21_40::I
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkdd944a;
-    ::ll::UntypedStorage<8, 32> mUnk3b53de;
-    ::ll::UntypedStorage<8, 32> mUnk7ef30c;
+    ::ll::UntypedStorage<8, 32> mUnkc012ac;
+    ::ll::UntypedStorage<8, 32> mUnk33e89d;
+    ::ll::UntypedStorage<8, 32> mUnkf15fa7;
     // NOLINTEND
 
 public:

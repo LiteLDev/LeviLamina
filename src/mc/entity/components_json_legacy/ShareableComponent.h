@@ -41,4 +41,11 @@ public:
     MCNAPI bool
     willPickup(::Actor& owner, ::ItemStack const& item, bool canPickupAnyItem, bool canPickupToHandOrEquipment) const;
     // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static bool
+    _canPickupItem(::ItemStack const& item, ::ItemStack const& carriedItem, int maxAmount, bool singularPickupOnly);
+    // NOLINTEND
 };

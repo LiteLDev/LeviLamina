@@ -4,9 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockDescriptor;
 class BlockPos;
-class IBlockWorldGenAPI;
 class SemVersion;
 // clang-format on
 
@@ -57,13 +55,6 @@ public:
 
     // vIndex: 3
     virtual void upgradeFormat(::SemVersion const&);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool
-    isExposedTo(::IBlockWorldGenAPI const& target, ::BlockPos const& candidatePos, ::BlockDescriptor const& exposedTo);
     // NOLINTEND
 
 public:

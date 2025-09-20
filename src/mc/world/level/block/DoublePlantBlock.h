@@ -16,7 +16,7 @@ class DoublePlantBlock : public ::DoublePlantBaseBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 66
+    // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0
@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool placeAt(::BlockSource& region, ::BlockPos const& pos, int updateType, ::Actor*) const;
+    MCNAPI bool placeAt(::BlockSource& region, ::BlockPos const& pos, int updateType, ::Actor*) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:

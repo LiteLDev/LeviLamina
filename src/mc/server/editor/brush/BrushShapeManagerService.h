@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/DirectionalPlacementMode.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -36,6 +37,8 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnka8c474;
     ::ll::UntypedStorage<4, 4>  mUnk55056d;
     ::ll::UntypedStorage<1, 1>  mUnk97eafd;
+    ::ll::UntypedStorage<4, 4>  mUnkca6267;
+    ::ll::UntypedStorage<1, 1>  mUnk205ad5;
     // NOLINTEND
 
 public:
@@ -113,6 +116,19 @@ public:
 
     // vIndex: 17
     virtual bool isBusy() /*override*/;
+
+    // vIndex: 18
+    virtual void
+    setDirectionalPlacementMode(::Editor::Brush::DirectionalPlacementMode directionalPlacementMode) /*override*/;
+
+    // vIndex: 19
+    virtual ::Editor::Brush::DirectionalPlacementMode getDirectionalPlacementMode() const /*override*/;
+
+    // vIndex: 20
+    virtual void setInverseEraseMode(bool const inverseErase) /*override*/;
+
+    // vIndex: 21
+    virtual bool getInverseEraseMode() const /*override*/;
     // NOLINTEND
 
 public:
@@ -175,6 +191,14 @@ public:
     MCNAPI void $setBrushShapeVisible(bool const visible);
 
     MCNAPI bool $isBusy();
+
+    MCNAPI void $setDirectionalPlacementMode(::Editor::Brush::DirectionalPlacementMode directionalPlacementMode);
+
+    MCNAPI ::Editor::Brush::DirectionalPlacementMode $getDirectionalPlacementMode() const;
+
+    MCNAPI void $setInverseEraseMode(bool const inverseErase);
+
+    MCNAPI bool $getInverseEraseMode() const;
     // NOLINTEND
 
 public:

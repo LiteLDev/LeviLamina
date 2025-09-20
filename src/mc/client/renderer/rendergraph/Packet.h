@@ -8,6 +8,7 @@
 #include "mc/network/Compressibility.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/NetworkPeer.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 
 // auto generated forward declare list
@@ -15,6 +16,7 @@
 class BinaryStream;
 class IPacketHandlerDispatcher;
 class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class Player;
@@ -104,25 +106,53 @@ public:
     virtual ::Bedrock::Result<void> checkSize(uint64 packetSize, bool receiverIsServer) const;
 
     // vIndex: 4
-    virtual void write(::BinaryStream&) const = 0;
-
-    // vIndex: 5
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream);
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                bitStream,
+        ::cereal::ReflectionCtx const& reflectionCtx,
+        ::std::optional<::SerializationMode>
+    ) const;
 
     // vIndex: 6
-    virtual bool disallowBatching() const;
+    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
-    // vIndex: 7
-    virtual bool isValid() const;
+    // vIndex: 5
+    virtual void write(::BinaryStream&) const = 0;
 
     // vIndex: 8
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    // vIndex: 7
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream);
+
+    // vIndex: 9
+    virtual bool disallowBatching() const;
+
+    // vIndex: 10
+    virtual bool isValid() const;
+
+    // vIndex: 11
+    virtual ::SerializationMode getSerializationMode() const;
+
+    // vIndex: 12
+    virtual void setSerializationMode(::SerializationMode);
+
+    // vIndex: 14
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    // vIndex: 13
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) = 0;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<void> readNoHeader(::ReadOnlyBinaryStream& bitstream, ::SubClientId const& subid);
+    MCAPI ::Bedrock::Result<void> readNoHeader(
+        ::ReadOnlyBinaryStream&        bitstream,
+        ::cereal::ReflectionCtx const& reflectionCtx,
+        ::SubClientId const&           subid
+    );
     // NOLINTEND
 
 public:
@@ -136,11 +166,29 @@ public:
     // NOLINTBEGIN
     MCAPI ::Bedrock::Result<void> $checkSize(uint64 packetSize, bool receiverIsServer) const;
 
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                bitStream,
+        ::cereal::ReflectionCtx const& reflectionCtx,
+        ::std::optional<::SerializationMode>
+    ) const;
+
+    MCAPI void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
+    MCFOLD ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
     MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
 
     MCFOLD bool $disallowBatching() const;
 
     MCFOLD bool $isValid() const;
+
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+
+    MCFOLD void $setSerializationMode(::SerializationMode);
+
+    MCFOLD ::Bedrock::Result<void>
+    $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:

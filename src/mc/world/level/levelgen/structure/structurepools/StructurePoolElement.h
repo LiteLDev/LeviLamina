@@ -259,6 +259,9 @@ public:
 
     // vIndex: 15
     virtual ::StructurePoolElementType type() const;
+
+    // vIndex: 16
+    virtual ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> createMetadata() const;
     // NOLINTEND
 
 public:
@@ -299,8 +302,6 @@ public:
     MCAPI ::SharedTypes::v1_21_80::JigsawStructureMetadata const& _getMetadata() const;
 
     MCAPI uint64 _getMetadataKey() const;
-
-    MCAPI ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> createMetadata() const;
     // NOLINTEND
 
 public:
@@ -428,6 +429,8 @@ public:
     MCAPI bool $isValid() const;
 
     MCFOLD ::StructurePoolElementType $type() const;
+
+    MCAPI ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> $createMetadata() const;
     // NOLINTEND
 
 public:

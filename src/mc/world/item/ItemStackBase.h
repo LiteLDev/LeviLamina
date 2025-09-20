@@ -12,7 +12,7 @@
 // clang-format off
 class Actor;
 class Block;
-class BlockLegacy;
+class BlockType;
 class ComponentItem;
 class CompoundTag;
 class ContainerComponent;
@@ -66,9 +66,9 @@ public:
     bool                                    mShowPickUp;
     bool                                    mWasPickedUp;
     ::std::chrono::steady_clock::time_point mPickupTime;
-    ::std::vector<::BlockLegacy const*>     mCanPlaceOn;
+    ::std::vector<::BlockType const*>       mCanPlaceOn;
     uint64                                  mCanPlaceOnHash;
-    ::std::vector<::BlockLegacy const*>     mCanDestroy;
+    ::std::vector<::BlockType const*>       mCanDestroy;
     uint64                                  mCanDestroyHash;
     ::Tick                                  mBlockingTick;
     ::std::unique_ptr<::ItemInstance>       mChargedItem;
@@ -84,7 +84,7 @@ public:
     virtual void reinit(::Item const& item, int count, int auxValue);
 
     // vIndex: 2
-    virtual void reinit(::BlockLegacy const& block, int count);
+    virtual void reinit(::BlockType const& block, int count);
 
     // vIndex: 1
     virtual void reinit(::std::string_view const name, int count, int auxValue);
@@ -108,7 +108,7 @@ public:
 
     MCAPI ItemStackBase(::ItemStackBase const& rhs);
 
-    MCAPI ItemStackBase(::BlockLegacy const& block, int count);
+    MCAPI ItemStackBase(::BlockType const& block, int count);
 
     MCAPI ItemStackBase(::Block const& block, int count = 1, ::CompoundTag const* _userData = nullptr);
 
@@ -149,6 +149,8 @@ public:
 
     MCAPI int getBaseRepairCost() const;
 
+    MCAPI ::WeakPtr<::BlockType const> const& getBlockType() const;
+
     MCAPI ::mce::Color getColor() const;
 
     MCAPI ::ComponentItem const* getComponentItem() const;
@@ -175,8 +177,6 @@ public:
     MCAPI int getIdAux() const;
 
     MCAPI ::Item const* getItem() const;
-
-    MCAPI ::WeakPtr<::BlockLegacy const> const& getLegacyBlock() const;
 
     MCAPI short getMaxDamage() const;
 
@@ -208,7 +208,7 @@ public:
 
     MCAPI bool hurtAndBreak(int deltaDamage, ::Actor* owner);
 
-    MCAPI void init(::BlockLegacy const& block, int count);
+    MCAPI void init(::BlockType const& block, int count);
 
     MCAPI void init(int id, int count_, int aux_, bool doRemap);
 
@@ -311,7 +311,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool
-    _loadBlocksForCanPlaceOnCanDestroy(::std::vector<::BlockLegacy const*>& blockList, ::std::string const& blockName);
+    _loadBlocksForCanPlaceOnCanDestroy(::std::vector<::BlockType const*>& blockList, ::std::string const& blockName);
     // NOLINTEND
 
 public:
@@ -349,7 +349,7 @@ public:
 
     MCAPI void* $ctor(::ItemStackBase const& rhs);
 
-    MCAPI void* $ctor(::BlockLegacy const& block, int count);
+    MCAPI void* $ctor(::BlockType const& block, int count);
 
     MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
 
@@ -367,7 +367,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $reinit(::Item const& item, int count, int auxValue);
 
-    MCFOLD void $reinit(::BlockLegacy const& block, int count);
+    MCFOLD void $reinit(::BlockType const& block, int count);
 
     MCFOLD void $reinit(::std::string_view const name, int count, int auxValue);
 

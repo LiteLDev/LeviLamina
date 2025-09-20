@@ -48,42 +48,45 @@ public:
     // vIndex: 0
     virtual ~WorldTemplateManager() /*override*/;
 
-    // vIndex: 4
-    virtual void populateWorldTemplates() /*override*/;
+    // vIndex: 1
+    virtual void flushResourceLoaderTasks() /*override*/;
 
     // vIndex: 5
-    virtual uint64 getWorldTemplateSize() const /*override*/;
+    virtual void populateWorldTemplates() /*override*/;
 
     // vIndex: 6
+    virtual uint64 getWorldTemplateSize() const /*override*/;
+
+    // vIndex: 7
     virtual ::WorldTemplateInfo const& getWorldTemplateAtIndex(int index) const /*override*/;
 
-    // vIndex: 3
+    // vIndex: 4
     virtual ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& getLocalTemplates() const /*override*/;
 
-    // vIndex: 1
+    // vIndex: 2
     virtual ::WorldTemplateInfo const*
     findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual ::WorldTemplateInfo const* findInstalledWorldTemplate(::PackIdVersion const& packIdentityToFind) const
         /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual void forEachWorldTemplate(::std::function<void(::WorldTemplateInfo const&)> const& callback) const
         /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void deleteWorldTemplateAndFiles(::PackIdVersion const& packIdentity) /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual bool isInitialized() const /*override*/;
 
-    // vIndex: 2
+    // vIndex: 3
     virtual ::Bedrock::PubSub::Subscription registerModifiedCallback(
         ::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction
     ) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual ::WorldTemplateCollectionView createView(::mce::UUID const& toView) const /*override*/;
     // NOLINTEND
 
@@ -115,6 +118,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI void $flushResourceLoaderTasks();
+
     MCNAPI void $populateWorldTemplates();
 
     MCNAPI uint64 $getWorldTemplateSize() const;

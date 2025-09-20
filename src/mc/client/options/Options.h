@@ -45,12 +45,10 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk8a8948;
     ::ll::UntypedStorage<4, 4>  mUnkf44041;
     ::ll::UntypedStorage<4, 4>  mUnk24eb7d;
-    ::ll::UntypedStorage<4, 4>  mUnk23ba8d;
     ::ll::UntypedStorage<4, 4>  mUnk8f9ddd;
     ::ll::UntypedStorage<4, 4>  mUnkf45021;
     ::ll::UntypedStorage<4, 4>  mUnk8a28e3;
     ::ll::UntypedStorage<8, 24> mUnkdc670b;
-    ::ll::UntypedStorage<8, 24> mUnk33bec3;
     ::ll::UntypedStorage<8, 24> mUnk727e15;
     ::ll::UntypedStorage<8, 24> mUnked4d9d;
     ::ll::UntypedStorage<4, 4>  mUnk15219e;
@@ -108,10 +106,10 @@ public:
     virtual void
     setClientInstanceCoordinator(::Bedrock::NonOwnerPointer<::ClientInstanceEventCoordinator> const&) /*override*/;
 
-    // vIndex: 51
+    // vIndex: 49
     virtual ::FileStorageDirectory getFileStorageLocation() const /*override*/;
 
-    // vIndex: 50
+    // vIndex: 48
     virtual void setFileStorageLocation(::FileStorageDirectory, ::std::function<void(bool)>) /*override*/;
 
     // vIndex: 10
@@ -157,93 +155,90 @@ public:
     virtual ::ChatOptions& getChatOptions() /*override*/;
 
     // vIndex: 24
-    virtual ::std::array<::std::unique_ptr<::Option>, 804> const& getAllRegisteredOptions() /*override*/;
+    virtual ::std::array<::std::unique_ptr<::Option>, 766> const& getAllRegisteredOptions() /*override*/;
 
     // vIndex: 25
     virtual void forEachOption(::std::function<void(::Option*)>) /*override*/;
 
-    // vIndex: 54
+    // vIndex: 51
     virtual int getViewDistanceChunks() const /*override*/;
 
-    // vIndex: 55
-    virtual int getDefaultViewDistanceChunks(bool, ::GraphicsMode) const /*override*/;
+    // vIndex: 52
+    virtual int getDefaultViewDistanceChunks(::GraphicsMode) const /*override*/;
 
-    // vIndex: 56
+    // vIndex: 53
     virtual int getMaxViewDistanceChunks() const /*override*/;
 
-    // vIndex: 57
+    // vIndex: 54
     virtual int getMaxViewDistanceChunksRaw() const /*override*/;
 
-    // vIndex: 83
-    virtual bool getVRMirrorTexture() /*override*/;
-
-    // vIndex: 93
+    // vIndex: 66
     virtual bool getRayTracing() const /*override*/;
 
-    // vIndex: 94
+    // vIndex: 67
     virtual bool getDeferred() const /*override*/;
 
-    // vIndex: 106
+    // vIndex: 79
     virtual ::GamePadRemappingLayout& getGamePadRemappingByType(::VRControllerType) /*override*/;
 
-    // vIndex: 107
+    // vIndex: 80
     virtual ::std::shared_ptr<::KeyboardRemappingLayout> getCurrentKeyboardRemapping() const /*override*/;
 
-    // vIndex: 108
+    // vIndex: 81
     virtual ::std::shared_ptr<::KeyboardRemappingLayout> getKeyboardRemappingByType(::KeyboardType) const /*override*/;
 
-    // vIndex: 109
+    // vIndex: 82
     virtual ::GamePadRemappingLayout& getMotionControllerRemapping() /*override*/;
 
-    // vIndex: 110
+    // vIndex: 83
     virtual void setLanguage(::std::string const&) /*override*/;
 
-    // vIndex: 111
+    // vIndex: 84
     virtual ::std::string getLanguage() const /*override*/;
 
-    // vIndex: 137
+    // vIndex: 110
     virtual void setPlayerViewPerspective(int) /*override*/;
 
-    // vIndex: 156
+    // vIndex: 128
     virtual void setRecentSkinIds(::std::vector<::std::string> const&) /*override*/;
 
-    // vIndex: 157
+    // vIndex: 129
     virtual ::std::vector<::std::string> const& getRecentSkinIds() /*override*/;
 
-    // vIndex: 349
+    // vIndex: 312
     virtual float getDefaultPlatformSafeZoneX() const /*override*/;
 
-    // vIndex: 350
+    // vIndex: 313
     virtual float getDefaultPlatformSafeZoneY() const /*override*/;
 
-    // vIndex: 351
+    // vIndex: 314
     virtual bool getServerboundClientDiagnosticsEnabled() const /*override*/;
 
-    // vIndex: 352
+    // vIndex: 315
     virtual ::ScriptDebuggerSettings getScriptDebuggerSettings() const /*override*/;
 
-    // vIndex: 353
+    // vIndex: 316
     virtual ::Scripting::WatchdogSettings getScriptWatchdogSettings() const /*override*/;
 
-    // vIndex: 88
+    // vIndex: 61
     virtual ::GraphicsMode getGraphicsMode() const /*override*/;
 
-    // vIndex: 95
+    // vIndex: 68
     virtual int getGraphicsQualityPresetMode() const /*override*/;
 
-    // vIndex: 96
+    // vIndex: 69
     virtual int getDeferredTargetFrameRate() const /*override*/;
 
-    // vIndex: 369
+    // vIndex: 332
     virtual void setSaveDeferralCount(int) /*override*/;
 
-    // vIndex: 370
+    // vIndex: 333
     virtual int getSaveDeferralCount() const /*override*/;
 
-    // vIndex: 371
+    // vIndex: 334
     virtual ::std::optional<::DeviceMemoryTier> getScriptingMemoryTierOverride() const /*override*/;
 
-    // vIndex: 372
+    // vIndex: 335
     virtual void setForceVibrantVisualsDisabled(bool) /*override*/;
     // NOLINTEND
 

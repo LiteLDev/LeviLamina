@@ -17,6 +17,7 @@ class IPreliminarySurfaceProvider;
 class OceanMonumentFeature;
 class Random;
 class StructureStart;
+struct BiomeIdType;
 // clang-format on
 
 class ShipwreckFeature : public ::StructureFeature {
@@ -27,7 +28,7 @@ public:
     ::ll::UntypedStorage<4, 4>  mUnk7f361c;
     ::ll::UntypedStorage<4, 4>  mUnk4ce55a;
     ::ll::UntypedStorage<8, 8>  mUnkc7588e;
-    ::ll::UntypedStorage<8, 24> mUnkeb64e9;
+    ::ll::UntypedStorage<8, 24> mUnk227c84;
     // NOLINTEND
 
 public:
@@ -40,6 +41,9 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
+    virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
+
+    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -50,7 +54,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&         generator,
         ::BiomeSource const& biomeSource,
@@ -59,7 +63,7 @@ public:
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -88,6 +92,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCAPI ::gsl::span<::BiomeIdType const> $getRequiredBiomes() const;
+
     MCAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,

@@ -34,8 +34,6 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubpackInfoCollection>>                        mSubpackInfoStack;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackMetadata>>                                 mMetadata;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackCommand::UpgradeLegacyDependencies const>> mDependenciesUpgrade;
-    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::Pack&)>>>                mPackUpdatedCallbacks;
-    ::ll::TypedStorage<8, 16, ::std::map<void*, ::std::function<void(::Pack&)>>>                mPackDeletedCallbacks;
     // NOLINTEND
 
 public:

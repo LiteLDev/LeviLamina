@@ -16,7 +16,7 @@ struct WorldTemplateInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 1056> mUnk207bb5;
+    ::ll::UntypedStorage<8, 1080> mUnk207bb5;
     // NOLINTEND
 
 public:

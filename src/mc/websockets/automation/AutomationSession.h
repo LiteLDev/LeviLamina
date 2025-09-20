@@ -45,7 +45,7 @@ public:
     ::ll::UntypedStorage<8, 32>   mUnk7347c6;
     ::ll::UntypedStorage<8, 64>   mUnk2747d5;
     ::ll::UntypedStorage<8, 8>    mUnkc5c47e;
-    ::ll::UntypedStorage<8, 8>    mUnk27d909;
+    ::ll::UntypedStorage<8, 24>   mUnk27d909;
     ::ll::UntypedStorage<8, 8>    mUnkf24bcf;
     // NOLINTEND
 
@@ -110,19 +110,22 @@ public:
     ) /*override*/;
 
     // vIndex: 11
+    virtual void dataFilePath(::std::string const& requestId, ::std::string const& filePath) /*override*/;
+
+    // vIndex: 12
     virtual bool
     encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual void subscribe(::std::string const& requestId, ::std::string const& eventId) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void unsubscribe(::std::string const& requestId, ::std::string const& eventId) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void error(::std::string const&, ::CodeBuilder::ErrorMessage const& message) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual bool tutorialCached(::std::string const& tutorialPath) /*override*/;
     // NOLINTEND
 
@@ -206,6 +209,8 @@ public:
         ::std::vector<::std::string> const idList,
         ::EduCloudProxy::CloudProject      project
     );
+
+    MCNAPI void $dataFilePath(::std::string const& requestId, ::std::string const& filePath);
 
     MCNAPI bool $encryptConnection(::std::string const& requestId, ::CodeBuilder::EncryptionRequest const& request);
 

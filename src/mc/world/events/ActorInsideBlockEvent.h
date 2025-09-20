@@ -9,8 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
 class BlockSourceHandle;
+class BlockType;
 class EntityContext;
 // clang-format on
 
@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext> const>             mActor;
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockLegacy const> const>          mBlock;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const> const>            mBlock;
     ::ll::TypedStorage<4, 12, ::BlockPos const>                             mPos;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle> const> mBlockSourceHandle;
     // NOLINTEND

@@ -47,6 +47,12 @@ public:
     // vIndex: 17
     virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const&) = 0;
 
+    // vIndex: 18
+    virtual void setDisableLanSignaling(bool) = 0;
+
+    // vIndex: 19
+    virtual void setInactivityTimeout(::NetworkIdentifier const&, ::std::optional<::std::chrono::seconds>);
+
     // vIndex: 0
     virtual ~RemoteConnector() /*override*/;
     // NOLINTEND
@@ -60,7 +66,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI void $setInactivityTimeout(::NetworkIdentifier const&, ::std::optional<::std::chrono::seconds>);
     // NOLINTEND
 
 public:

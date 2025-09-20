@@ -36,6 +36,8 @@ public:
         ::Block const*     finalBlock,
         ::JigsawEditorData editorData
     );
+
+    MCNAPI ~JigsawBlockInfo();
     // NOLINTEND
 
 public:
@@ -45,5 +47,11 @@ public:
 
     MCNAPI void*
     $ctor(::BlockPos const& pos, ::Block const* block, ::Block const* finalBlock, ::JigsawEditorData editorData);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

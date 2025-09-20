@@ -15,6 +15,22 @@ class Random;
 
 class IcebergFeature : public ::Feature {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk6e424d;
+    ::ll::UntypedStorage<8, 8> mUnk713ba3;
+    ::ll::UntypedStorage<8, 8> mUnkd7a0a0;
+    ::ll::UntypedStorage<8, 8> mUnk785d56;
+    ::ll::UntypedStorage<8, 8> mUnk6ef3df;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    IcebergFeature& operator=(IcebergFeature const&);
+    IcebergFeature(IcebergFeature const&);
+    IcebergFeature();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
@@ -27,19 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void carve(
-        int               radius,
-        int               yOff,
-        ::BlockPos const& globalOrigin,
-        ::BlockSource&    region,
-        bool              underWater,
-        float             angle,
-        ::BlockPos const& localOrigin,
-        int               ellipseA,
-        int               ellipseC
-    ) const;
-
-    MCNAPI void generateIcebergBlock(
+    MCNAPI void _generateIcebergBlock(
         ::BlockSource&    region,
         ::Random&         random,
         ::BlockPos const& origin,
@@ -52,8 +56,20 @@ public:
         bool              snowOnTop,
         bool              isEllipse,
         float             shapeAngle,
-        int               elllipseC,
+        int               ellipseC,
         ::Block const&    blockToPlace
+    ) const;
+
+    MCNAPI void carve(
+        int               radius,
+        int               yOff,
+        ::BlockPos const& globalOrigin,
+        ::BlockSource&    region,
+        bool              underWater,
+        float             angle,
+        ::BlockPos const& localOrigin,
+        int               ellipseA,
+        int               ellipseC
     ) const;
     // NOLINTEND
 

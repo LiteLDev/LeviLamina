@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/world/Direction.h"
 #include "mc/world/level/block/ActorBlockBase.h"
-#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,7 +22,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class PistonBlock : public ::ActorBlock {
+class PistonBlock : public ::ActorBlockBase<::BlockType> {
 public:
     // PistonBlock inner types define
     enum class Type : int {
@@ -39,53 +39,53 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 66
+    // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 91
+    // vIndex: 92
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 60
+    // vIndex: 61
     virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
         /*override*/;
 
     // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 86
+    // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 87
+    // vIndex: 88
     virtual bool getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const
         /*override*/;
 
-    // vIndex: 53
+    // vIndex: 54
     virtual bool
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
         /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual bool isValidAuxValue(int value) const /*override*/;
 
-    // vIndex: 137
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 117
+    // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 121
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 83
+    // vIndex: 84
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 102
+    // vIndex: 103
     virtual bool pushesUpFallingBlocks() const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0

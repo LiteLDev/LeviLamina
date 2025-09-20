@@ -10,7 +10,7 @@ struct BlockMaterialInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk47e562;
+    ::ll::UntypedStorage<8, 32> mUnkf1d641;
     ::ll::UntypedStorage<4, 4>  mUnk22148c;
     ::ll::UntypedStorage<1, 1>  mUnkdce191;
     ::ll::UntypedStorage<1, 1>  mUnk50874f;

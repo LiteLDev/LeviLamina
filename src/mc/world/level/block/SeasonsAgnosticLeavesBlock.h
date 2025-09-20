@@ -18,11 +18,11 @@ class SeasonsAgnosticLeavesBlock : public ::LeavesBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 138
+    // vIndex: 139
     virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
         /*override*/;
 
-    // vIndex: 114
+    // vIndex: 115
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
     // vIndex: 0
@@ -32,9 +32,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
+    MCNAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
     // NOLINTEND
 
 public:

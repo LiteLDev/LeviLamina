@@ -40,13 +40,13 @@ public:
     // vIndex: 0
     virtual ~DirectoryPackSource() /*override*/;
 
-    // vIndex: 3
+    // vIndex: 2
     virtual ::PackOrigin getPackOrigin() const /*override*/;
 
-    // vIndex: 4
+    // vIndex: 3
     virtual ::PackType getPackType() const /*override*/;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
     // NOLINTEND
 

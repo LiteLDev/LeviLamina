@@ -6,6 +6,7 @@
 #include "mc/common/SubClientId.h"
 #include "mc/network/IPacketSecurityController.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/PacketGroupDefinition.h"
 #include "mc/network/PacketViolationResponse.h"
 #include "mc/platform/ErrorInfo.h"
 
@@ -47,18 +48,29 @@ public:
 
     // vIndex: 3
     virtual ::Bedrock::ErrorInfo<::std::error_code> consumePacketError(::SubClientId subClientId) /*override*/;
+
+    // vIndex: 4
+    virtual void reloadPacketLimitConfig(
+        ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PacketSecurityController(::NetworkIdentifier const& netId, bool packetLimitHandlerEnabled);
+    MCNAPI PacketSecurityController(
+        ::NetworkIdentifier const&                                     netId,
+        ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::NetworkIdentifier const& netId, bool packetLimitHandlerEnabled);
+    MCNAPI void* $ctor(
+        ::NetworkIdentifier const&                                     netId,
+        ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder
+    );
     // NOLINTEND
 
 public:
@@ -74,6 +86,9 @@ public:
     MCNAPI uint $getTelemetryData();
 
     MCNAPI ::Bedrock::ErrorInfo<::std::error_code> $consumePacketError(::SubClientId subClientId);
+
+    MCNAPI void
+    $reloadPacketLimitConfig(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder);
     // NOLINTEND
 
 public:

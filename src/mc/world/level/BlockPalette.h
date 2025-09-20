@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
+class BlockType;
 class IUnknownBlockTypeRegistry;
 class Level;
 struct NewBlockID;
@@ -73,7 +73,7 @@ public:
 
     MCNAPI bool shouldWarnFor(::NewBlockID id, ushort data) const;
 
-    MCNAPI ::Block const& switchBlock(::Block const& oldBlock, ::BlockLegacy const& newBlockType) const;
+    MCNAPI ::Block const& switchBlock(::Block const& oldBlock, ::BlockType const& newBlockType) const;
     // NOLINTEND
 
 public:

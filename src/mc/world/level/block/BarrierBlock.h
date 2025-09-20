@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 // clang-format on
 
-class BarrierBlock : public ::BlockLegacy {
+class BarrierBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -20,16 +20,16 @@ public:
     // vIndex: 24
     virtual bool canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const /*override*/;
 
-    // vIndex: 115
+    // vIndex: 116
     virtual float getShadeBrightness(::Block const& block) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
+    MCNAPI bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
 
-    MCFOLD float $getShadeBrightness(::Block const& block) const;
+    MCNAPI float $getShadeBrightness(::Block const& block) const;
     // NOLINTEND
 
 public:

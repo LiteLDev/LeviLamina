@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,24 +14,24 @@ struct UpdateEntityAfterFallOnInterface;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 // clang-format on
 
-class SlimeBlock : public ::BlockLegacy {
+class SlimeBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 133
+    // vIndex: 134
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 67
+    // vIndex: 68
     virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const
         /*override*/;
 
-    // vIndex: 68
+    // vIndex: 69
     virtual bool isBounceBlock() const /*override*/;
 
-    // vIndex: 139
+    // vIndex: 140
     virtual int getExtraRenderLayers() const /*override*/;
 
     // vIndex: 0
@@ -41,21 +41,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCNAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCNAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
+    MCNAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
-    MCFOLD bool $isBounceBlock() const;
+    MCNAPI bool $isBounceBlock() const;
 
-    MCFOLD int $getExtraRenderLayers() const;
+    MCNAPI int $getExtraRenderLayers() const;
     // NOLINTEND
 
 public:

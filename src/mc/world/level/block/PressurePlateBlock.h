@@ -29,13 +29,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 147
+    // vIndex: 148
     virtual int getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 149
     virtual int getSignalForData(int data) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 150
     virtual int getRedstoneSignal(int signal) const /*override*/;
 
     // vIndex: 0
@@ -45,11 +45,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI int $getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int $getSignalForData(int data) const;
+    MCNAPI int $getSignalForData(int data) const;
 
-    MCAPI int $getRedstoneSignal(int signal) const;
+    MCNAPI int $getRedstoneSignal(int signal) const;
     // NOLINTEND
 
 public:

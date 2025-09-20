@@ -13,6 +13,7 @@
 #include "mc/deps/core/utility/ServiceRegistrationToken.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/nether_net/LogSeverity.h"
+#include "mc/network/PacketGroupDefinition.h"
 #include "mc/platform/threading/Mutex.h"
 #include "mc/server/ServerGraphicsSettings.h"
 #include "mc/world/GameCallbacks.h"
@@ -21,7 +22,6 @@
 // auto generated forward declare list
 // clang-format off
 class AllowList;
-class BlockTypeRegistry;
 class CDNConfig;
 class DebugEndPoint;
 class EducationOptions;
@@ -29,6 +29,7 @@ class Experiments;
 class IContentTierManager;
 class IMinecraftApp;
 class IMinecraftEventing;
+class IPacketSerializationController;
 class IResourcePackRepository;
 class ItemRegistry;
 class ItemRegistryRef;
@@ -115,7 +116,6 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WorldSessionEndPoint>>         mWorldSessionEndPoint;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Core::FileStorageArea>>       mStorageAreaForLevel;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ItemRegistry>>                mServerItemRegistry;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockTypeRegistry>>           mBlockRegistry;
     ::ll::TypedStorage<1, 1, bool>                                              mEnableItemStackNetManager;
     ::ll::TypedStorage<1, 1, bool>                                              mbInitialized;
     ::ll::TypedStorage<1, 1, bool>                                              mbFlaggedForEarlyDestruction;
@@ -214,6 +214,7 @@ public:
         ::IMinecraftApp&                                                             app,
         ::AllowList&                                                                 allowList,
         ::PermissionsFile*                                                           permissionsFile,
+        ::std::optional<::PacketGroupDefinition::PacketGroupBuilder>                 packetGroupBuilder,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&                pathManager,
         ::std::chrono::seconds                                                       maxPlayerIdleTime,
         ::std::string                                                                levelId,
@@ -246,6 +247,7 @@ public:
         ::std::optional<::PlayerMovementSettings>                                    playerMovementSettings,
         ::ScriptSettings&&                                                           scriptSettings,
         ::Experiments const&                                                         levelExperiments,
+        bool                                                                         disableLanSignaling,
         bool                                                                         isServerVisibleToLanDiscovery,
         bool                                                                         enablePacketRateLimiting,
         float                                                                        worldSizeMB,
@@ -259,7 +261,8 @@ public:
         ::TextProcessorInitParams                                                    textProcessorInitParams,
         ::std::optional<::NetherNet::NetworkID>                                      netherNetId,
         ::Bedrock::NonOwnerPointer<::SignalingService>                               signalingService,
-        ::std::optional<bool>                                                        disableClientVibrantVisuals
+        ::std::optional<bool>                                                        disableClientVibrantVisuals,
+        ::std::unique_ptr<::IPacketSerializationController>                          packetController
     );
 
     MCAPI void leaveGameSync();

@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/ShapeType.h"
-#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,11 +26,11 @@ class Vec3;
 struct BlockAnimateTickData;
 // clang-format on
 
-class StairBlock : public ::BlockLegacy {
+class StairBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BlockLegacy const&> mBase;
+    ::ll::TypedStorage<8, 8, ::BlockType const&> mBase;
     // NOLINTEND
 
 public:
@@ -44,13 +44,13 @@ public:
     // NOLINTBEGIN
     // vIndex: 4
     virtual ::HitResult clip(
-        ::Block const& block,
-        ::BlockSource const&,
-        ::BlockPos const& pos,
-        ::Vec3 const&     A,
-        ::Vec3 const&     B,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
     // vIndex: 9
@@ -83,41 +83,41 @@ public:
         /*override*/;
 
     // vIndex: 22
-    virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const /*override*/;
-
-    // vIndex: 122
-    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     // vIndex: 123
+    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
+
+    // vIndex: 124
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 94
+    // vIndex: 95
     virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 85
     virtual void
     destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const
         /*override*/;
 
-    // vIndex: 77
+    // vIndex: 78
     virtual bool mayPick() const /*override*/;
 
-    // vIndex: 76
+    // vIndex: 77
     virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 80
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 132
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 133
+    // vIndex: 134
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 132
+    // vIndex: 133
     virtual void onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const /*override*/;
 
-    // vIndex: 91
+    // vIndex: 92
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
@@ -125,7 +125,7 @@ public:
     // vIndex: 35
     virtual bool isStairBlock() const /*override*/;
 
-    // vIndex: 117
+    // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
     // vIndex: 24
@@ -138,10 +138,10 @@ public:
         ::BlockPos const&                                         pos
     ) const /*override*/;
 
-    // vIndex: 83
+    // vIndex: 84
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
@@ -151,7 +151,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool setInnerPieceShape(
+    MCNAPI bool setInnerPieceShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -159,7 +159,7 @@ public:
         bool                       shrink
     ) const;
 
-    MCAPI bool setStepShape(
+    MCNAPI bool setStepShape(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -171,32 +171,32 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<int[][2]> DEAD_SPACES();
+    MCNAPI static ::std::add_lvalue_reference_t<int[][2]> DEAD_SPACES();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::HitResult $clip(
-        ::Block const& block,
-        ::BlockSource const&,
-        ::BlockPos const& pos,
-        ::Vec3 const&     A,
-        ::Vec3 const&     B,
-        ::ShapeType,
-        ::optional_ref<::GetCollisionShapeInterface const>
+    MCNAPI ::HitResult $clip(
+        ::Block const&                                     block,
+        ::BlockSource const&                               region,
+        ::BlockPos const&                                  pos,
+        ::Vec3 const&                                      A,
+        ::Vec3 const&                                      B,
+        ::ShapeType                                        shapeType,
+        ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCFOLD ::AABB const&
+    MCNAPI ::AABB const&
     $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCAPI void $addAABBs(
+    MCNAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
@@ -204,7 +204,7 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCFOLD bool $addCollisionShapes(
+    MCNAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -213,33 +213,31 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI bool
+    MCNAPI bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
-    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
+    MCNAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
-    MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
-
-    MCAPI void
+    MCNAPI void
     $destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
 
-    MCAPI bool $mayPick() const;
+    MCNAPI bool $mayPick() const;
 
-    MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
+    MCNAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCNAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
+    MCNAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
 
-    MCAPI ::Block const& $getPlacementBlock(
+    MCNAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -247,21 +245,21 @@ public:
         int               itemValue
     ) const;
 
-    MCFOLD bool $isStairBlock() const;
+    MCNAPI bool $isStairBlock() const;
 
-    MCFOLD int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI bool $canConnect(::Block const&, uchar toOther, ::Block const& thisBlock) const;
+    MCNAPI bool $canConnect(::Block const&, uchar toOther, ::Block const& thisBlock) const;
 
-    MCAPI bool $liquidCanFlowIntoFromDirection(
+    MCNAPI bool $liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,
         ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
         ::BlockPos const&                                         pos
     ) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

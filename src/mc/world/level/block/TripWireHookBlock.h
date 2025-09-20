@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/Direction.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,7 +22,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class TripWireHookBlock : public ::BlockLegacy {
+class TripWireHookBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -37,39 +37,39 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 132
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 80
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 91
+    // vIndex: 92
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 86
+    // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 53
+    // vIndex: 54
     virtual bool
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
         /*override*/;
 
-    // vIndex: 118
+    // vIndex: 119
     virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    // vIndex: 137
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -79,7 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _emitState(
+    MCNAPI void _emitState(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         bool              attached,
@@ -88,35 +88,35 @@ public:
         bool              wasPowered
     ) const;
 
-    MCAPI void
+    MCNAPI void
     calculateState(::BlockSource& region, ::BlockPos const& pos, bool isBeingDestroyed, int wireSourceIdx) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCFOLD ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $getPlacementBlock(
+    MCNAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -124,16 +124,16 @@ public:
         int               itemValue
     ) const;
 
-    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD bool
+    MCNAPI bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCFOLD bool $canSpawnOn(::Actor*) const;
+    MCNAPI bool $canSpawnOn(::Actor*) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 // auto generated forward declare list
@@ -56,7 +56,7 @@ public:
     virtual bool directoryPickingEnabledForPlatform() const = 0;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::FilePickerManager::DirectoryPickerResult>>
+    virtual ::Bedrock::Threading::Async<::Bedrock::FilePickerManager::DirectoryPickerResult>
     pickDirectory(::Bedrock::DirectoryPickerConfig const&) = 0;
 
     // vIndex: 0

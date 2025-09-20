@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/network/Compressibility.h"
 #include "mc/network/NetworkPeer.h"
 
@@ -12,7 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk7d0116;
-    ::ll::UntypedStorage<8, 96> mUnka37b88;
+    ::ll::UntypedStorage<8, 96> mUnk7c2d2e;
     ::ll::UntypedStorage<8, 8>  mUnk9e18c2;
     // NOLINTEND
 

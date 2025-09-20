@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace NetherNet { class LanThreadManager; }
+namespace NetherNet { class ILanDiscovery; }
 namespace NetherNet { class RtcThreadManager; }
 namespace NetherNet { struct GlobalConfiguration; }
 // clang-format on
@@ -32,15 +32,21 @@ public:
     virtual ::NetherNet::RtcThreadManager const& getWorkerThread() const = 0;
 
     // vIndex: 4
-    virtual ::NetherNet::LanThreadManager& getLanThread() = 0;
+    virtual ::NetherNet::ILanDiscovery& getLanDiscovery() = 0;
 
     // vIndex: 5
-    virtual ::NetherNet::GlobalConfiguration const& getGlobalConfig() const = 0;
+    virtual void onSuspend() = 0;
 
     // vIndex: 6
-    virtual void _logMessage(::NetherNet::LogSeverity, char const*, char*) const = 0;
+    virtual void onResume() = 0;
 
     // vIndex: 7
+    virtual ::NetherNet::GlobalConfiguration const& getGlobalConfig() const = 0;
+
+    // vIndex: 8
+    virtual void _logMessage(::NetherNet::LogSeverity, char const*, char*) const = 0;
+
+    // vIndex: 9
     virtual void setLoggingLevel(::NetherNet::LogSeverity) = 0;
     // NOLINTEND
 
@@ -54,6 +60,12 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -17,13 +17,13 @@ class UnderwaterTorchBlock : public ::TorchBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 122
+    // vIndex: 123
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 55
+    // vIndex: 56
     virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 30
@@ -36,13 +36,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCNAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $isLavaBlocking() const;
+    MCNAPI bool $isLavaBlocking() const;
     // NOLINTEND
 
 public:

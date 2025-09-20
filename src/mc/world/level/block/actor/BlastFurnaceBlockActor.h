@@ -9,7 +9,7 @@ class BlastFurnaceBlockActor : public ::FurnaceBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 28
+    // vIndex: 26
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 0

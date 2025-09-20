@@ -16,8 +16,9 @@ class OceanFrozenSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk160b83;
-    ::ll::UntypedStorage<8, 8> mUnk89e0d4;
+    ::ll::UntypedStorage<8, 8> mUnka08757;
+    ::ll::UntypedStorage<8, 8> mUnkfd090e;
+    ::ll::UntypedStorage<8, 8> mUnk72ae9e;
     // NOLINTEND
 
 public:

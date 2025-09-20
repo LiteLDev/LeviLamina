@@ -26,17 +26,17 @@ class DecoratedPotBlock : public ::FaceDirectionalActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const* blockActor) const /*override*/;
 
-    // vIndex: 88
+    // vIndex: 89
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
-    // vIndex: 131
+    // vIndex: 132
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 135
+    // vIndex: 136
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 16
@@ -45,18 +45,18 @@ public:
     // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 56
+    // vIndex: 57
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
-    // vIndex: 104
+    // vIndex: 105
     virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 105
+    // vIndex: 106
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0

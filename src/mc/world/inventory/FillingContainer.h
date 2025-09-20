@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ItemStack;
 class ListTag;
 class Player;
@@ -74,7 +75,7 @@ public:
     virtual int getContainerSize() const /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player&) /*override*/;
+    virtual void startOpen(::Actor&) /*override*/;
 
     // vIndex: 2
     virtual void serverInitItemStackIds(
@@ -142,7 +143,7 @@ public:
 
     MCFOLD int $getContainerSize() const;
 
-    MCFOLD void $startOpen(::Player&);
+    MCFOLD void $startOpen(::Actor&);
 
     MCFOLD void $serverInitItemStackIds(
         int                                            containerSlot,

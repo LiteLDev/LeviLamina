@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +14,7 @@ class BlockPos;
 class IConstBlockSource;
 // clang-format on
 
-class StainedGlassBlock : public ::BlockLegacy {
+class StainedGlassBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ public:
         ::BlockPos const&          pos
     ) const /*override*/;
 
-    // vIndex: 83
+    // vIndex: 84
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 0
@@ -46,22 +46,22 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION();
+    MCNAPI static ::BaseGameVersion const& STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
+    MCNAPI bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
 
-    MCAPI bool $getCollisionShapeForCamera(
+    MCNAPI bool $getCollisionShapeForCamera(
         ::AABB&                    outAABB,
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos
     ) const;
 
-    MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+    MCNAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
     // NOLINTEND
 
 public:

@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
+class BlockType;
 class CompoundTag;
 // clang-format on
 
@@ -18,7 +18,7 @@ public:
     virtual ~ITrait() = default;
 
     // vIndex: 1
-    virtual void applyToBlockLegacy(::BlockLegacy&) const = 0;
+    virtual void applyToBlockType(::BlockType&) const = 0;
 
     // vIndex: 2
     virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag() const = 0;

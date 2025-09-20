@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/block/ActorBlockBase.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +17,7 @@ class IConstBlockSource;
 struct Brightness;
 // clang-format on
 
-class TrialSpawnerBlock : public ::ActorBlock {
+class TrialSpawnerBlock : public ::ActorBlockBase<::BlockType> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,10 +29,10 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const /*override*/;
 
-    // vIndex: 125
+    // vIndex: 126
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 117
+    // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
     // vIndex: 0

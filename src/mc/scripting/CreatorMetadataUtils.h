@@ -98,6 +98,13 @@ MCAPI ::std::initializer_list<::AllExperiments> getRequiredExperimentsForMetadat
 
 MCAPI ::std::string scriptingVersionToString(::Scripting::Version const& version);
 
+MCAPI bool validateVariantResolution(
+    ::Scripting::ModuleBinding const&       moduleToBind,
+    ::entt::meta_type const&                variantType,
+    ::Scripting::ModuleBindingBundle const& loadedModules,
+    ::std::string const&                    bindingName
+);
+
 MCAPI bool writeJsonMetadataToFile(::Json::Value const& json, ::Core::Path const& filepath);
 // NOLINTEND
 

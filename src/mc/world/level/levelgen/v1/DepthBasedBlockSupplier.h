@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+class BlockPos;
+// clang-format on
+
 class DepthBasedBlockSupplier {
 public:
     // member variables
@@ -15,4 +21,10 @@ public:
     DepthBasedBlockSupplier& operator=(DepthBasedBlockSupplier const&);
     DepthBasedBlockSupplier(DepthBasedBlockSupplier const&);
     DepthBasedBlockSupplier();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Block const* getBlock(::BlockPos const& pos, ::Block const* fallback) const;
+    // NOLINTEND
 };

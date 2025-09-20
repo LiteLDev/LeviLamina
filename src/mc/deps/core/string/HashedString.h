@@ -140,8 +140,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(nullptr_t);
-
     MCNAPI void* $ctor(::HashedString&& rhs);
 
     MCNAPI void* $ctor(::HashedString const& rhs);

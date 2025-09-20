@@ -3,55 +3,27 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
-#include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/packet/ClientCameraAimAssistPacketAction.h"
-#include "mc/platform/Result.h"
+#include "mc/network/packet/ClientCameraAimAssistPacketPayload.h"
+#include "mc/network/packet/serialize/SerializedPayloadPacket.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
+struct ClientCameraAimAssistPacketInfo;
 // clang-format on
 
-class ClientCameraAimAssistPacket : public ::Packet {
+class ClientCameraAimAssistPacket
+: public ::SerializedPayloadPacket<::ClientCameraAimAssistPacketInfo, ::ClientCameraAimAssistPacketPayload> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                      mCameraPresetId;
-    ::ll::TypedStorage<1, 1, ::ClientCameraAimAssistPacketAction> mAction;
-    ::ll::TypedStorage<1, 1, bool>                                mAllowAimAssist;
-    // NOLINTEND
+    // ClientCameraAimAssistPacket inner types define
+    using PayloadType = ::ClientCameraAimAssistPacketPayload;
+
+    using PacketInfo = ::ClientCameraAimAssistPacketInfo;
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const /*override*/;
-
-    // vIndex: 2
-    virtual ::std::string getName() const /*override*/;
-
-    // vIndex: 4
-    virtual void write(::BinaryStream& stream) const /*override*/;
-
-    // vIndex: 8
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
     // vIndex: 0
     virtual ~ClientCameraAimAssistPacket() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
-
-    MCAPI ::std::string $getName() const;
-
-    MCAPI void $write(::BinaryStream& stream) const;
-
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/world/Direction.h"
 #include "mc/world/level/block/ActorBlockBase.h"
-#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/BlockSupportType.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,7 +22,7 @@ namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
-class SculkSensorBlock : public ::ActorBlock {
+class SculkSensorBlock : public ::ActorBlockBase<::BlockType> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,33 +35,33 @@ public:
     // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 133
+    // vIndex: 134
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 43
+    // vIndex: 44
     virtual bool isSignalSource() const /*override*/;
 
-    // vIndex: 53
+    // vIndex: 54
     virtual bool
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
         /*override*/;
 
-    // vIndex: 122
+    // vIndex: 123
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 125
+    // vIndex: 126
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 142
+    // vIndex: 143
     virtual ::Brightness getEmissiveBrightness(::Block const& block) const /*override*/;
 
-    // vIndex: 104
+    // vIndex: 105
     virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 105
+    // vIndex: 106
     virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
         /*override*/;
 
@@ -72,7 +72,7 @@ public:
         ::BlockPos const&                                         pos
     ) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0

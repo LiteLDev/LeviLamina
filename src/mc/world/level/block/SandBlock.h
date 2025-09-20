@@ -21,28 +21,28 @@ class SandBlock : public ::FallingBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 147
     virtual ::mce::Color getDustColor(::Block const& block) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual ::std::string getDustParticleName(::Block const& block) const /*override*/;
 
-    // vIndex: 73
+    // vIndex: 74
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 74
+    // vIndex: 75
     virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
-    // vIndex: 75
+    // vIndex: 76
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual bool canBeOriginalSurface() const /*override*/;
 
     // vIndex: 0
@@ -52,20 +52,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCAPI ::mce::Color $getDustColor(::Block const& block) const;
+    MCNAPI ::mce::Color $getDustColor(::Block const& block) const;
 
-    MCAPI ::std::string $getDustParticleName(::Block const& block) const;
+    MCNAPI ::std::string $getDustParticleName(::Block const& block) const;
 
-    MCFOLD bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCNAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCFOLD bool $canBeOriginalSurface() const;
+    MCNAPI bool $canBeOriginalSurface() const;
     // NOLINTEND
 
 public:

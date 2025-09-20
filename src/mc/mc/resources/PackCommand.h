@@ -2,16 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/platform/brstd/move_only_function.h"
-
 // auto generated forward declare list
 // clang-format off
-class IResourcePackRepository;
 class TaskGroup;
 namespace PackCommand { class IPackCommandPipeline; }
 namespace PackCommand { class IResourceRepositories; }
+namespace PackCommand { struct RepositoriesOptions; }
 // clang-format on
 
 namespace PackCommand {
@@ -23,7 +19,7 @@ MCNAPI ::std::unique_ptr<::PackCommand::IPackCommandPipeline> createPackCommandP
 );
 
 MCNAPI ::std::unique_ptr<::PackCommand::IResourceRepositories>
-createResourceRepositories(::brstd::move_only_function<::Bedrock::NonOwnerPointer<::IResourcePackRepository>()> repo);
+createResourceRepositories(::PackCommand::RepositoriesOptions options);
 // NOLINTEND
 
 } // namespace PackCommand

@@ -18,13 +18,13 @@ class HayBlock : public ::RotatedPillarBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 117
+    // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
     // vIndex: 0
@@ -34,17 +34,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCNAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCFOLD int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
     // NOLINTEND
 
 public:

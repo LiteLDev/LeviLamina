@@ -13,7 +13,7 @@ struct EntityPlacerItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf38db1;
+    ::ll::UntypedStorage<8, 32> mUnk502757;
     ::ll::UntypedStorage<8, 24> mUnkadc727;
     ::ll::UntypedStorage<8, 24> mUnkdba18d;
     // NOLINTEND

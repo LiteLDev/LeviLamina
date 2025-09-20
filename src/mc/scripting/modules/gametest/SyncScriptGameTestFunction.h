@@ -22,7 +22,7 @@ class SyncScriptGameTestFunction : public ::ScriptModuleGameTest::BaseScriptGame
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 232> mUnkb88201;
+    ::ll::UntypedStorage<8, 248> mUnkb88201;
     // NOLINTEND
 
 public:

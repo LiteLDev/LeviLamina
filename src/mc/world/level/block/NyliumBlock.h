@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +18,7 @@ class Randomize;
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
-class NyliumBlock : public ::BlockLegacy {
+class NyliumBlock : public ::BlockType {
 public:
     // NyliumBlock inner types declare
     // clang-format off
@@ -36,16 +36,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 75
+    // vIndex: 76
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 73
+    // vIndex: 74
     virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -55,37 +55,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _scatterVegetation(
+    MCNAPI bool _scatterVegetation(
         ::BlockSource&                                      region,
         ::BlockPos const&                                   pos,
         ::Random&                                           random,
         ::std::function<::Block const&(::Randomize const&)> plantProvider
     ) const;
 
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool canBeNylium(::BlockSource const& region, ::BlockPos const& pos);
+    MCNAPI static bool canBeNylium(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI static ::Block const& crimsonBlockProvider(::Randomize const& randomize);
+    MCNAPI static ::Block const& crimsonBlockProvider(::Randomize const& randomize);
 
-    MCAPI static ::Block const& netherSproutBlockProvider(::Randomize const& randomize);
+    MCNAPI static ::Block const& netherSproutBlockProvider(::Randomize const& randomize);
 
-    MCAPI static ::Block const& warpedBlockProvider(::Randomize const& randomize);
+    MCNAPI static ::Block const& warpedBlockProvider(::Randomize const& randomize);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
+    MCNAPI bool
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

@@ -39,11 +39,8 @@ public:
     MCNAPI ::Scripting::Result_deprecated<bool> getWaxed() const;
 
     MCNAPI ::Scripting::Result_deprecated<void> setText(
-        ::std::variant<
-            ::std::string,
-            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
-            ::ScriptModuleMinecraft::ScriptRawTextInterface> const& messageParameter,
-        ::SignTextSide                                              side
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& messageParameter,
+        ::SignTextSide                                                                           side
     );
 
     MCNAPI ::Scripting::Result_deprecated<void>

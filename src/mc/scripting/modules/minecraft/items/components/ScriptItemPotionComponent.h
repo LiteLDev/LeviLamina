@@ -10,15 +10,21 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptPotionEffectType; }
 namespace ScriptModuleMinecraft { class ScriptPotionLiquidType; }
 namespace ScriptModuleMinecraft { class ScriptPotionModifierType; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
 
 class ScriptItemPotionComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
+public:
+    // prevent constructor by default
+    ScriptItemPotionComponent();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,6 +35,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptItemPotionComponent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemStackHandle,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
+
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>>
     _getPotionEffectType() const;
@@ -49,6 +60,15 @@ public:
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
     MCNAPI static ::std::string const& getTypeName();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> itemStackHandle,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
     // NOLINTEND
 
 public:

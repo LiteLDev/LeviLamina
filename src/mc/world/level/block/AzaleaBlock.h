@@ -31,12 +31,12 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 73
+    // vIndex: 74
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 75
+    // vIndex: 76
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
@@ -46,7 +46,7 @@ public:
     // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 80
+    // vIndex: 81
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0
@@ -56,29 +56,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool _growTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCFOLD bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
+    MCNAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
 
-    MCFOLD bool $isLavaBlocking() const;
+    MCNAPI bool $isLavaBlocking() const;
 
-    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes {
 
 struct BaseGoalDefinition {
@@ -33,6 +38,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::vector<::SharedTypes::BaseGoalDefinition::Flag> flagsVec() const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

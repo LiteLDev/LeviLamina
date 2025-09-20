@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/AppPlatformListener.h"
 #include "mc/deps/core/http/PersistentWebSocket.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/nether_net/ESessionError.h"
@@ -76,11 +76,10 @@ public:
         virtual bool shouldReconnect() const /*override*/;
 
         // vIndex: 5
-        virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Url>> getUrl() /*override*/;
+        virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl() /*override*/;
 
         // vIndex: 6
-        virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::HeaderCollection>>
-        getHeaders() /*override*/;
+        virtual ::Bedrock::Threading::Async<::Bedrock::Http::HeaderCollection> getHeaders() /*override*/;
 
         // vIndex: 7
         virtual ::Bedrock::Http::RetryPolicy getReconnectPolicy() /*override*/;
@@ -120,9 +119,9 @@ public:
 
         MCNAPI void _sendPing() const;
 
-        MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::error_code>> connect();
+        MCNAPI ::Bedrock::Threading::Async<::std::error_code> connect();
 
-        MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::NetherNet::ESessionError>>
+        MCNAPI ::Bedrock::Threading::Async<::NetherNet::ESessionError>
         sendTo(::NetherNet::NetworkID to, ::std::string const& message);
 
         MCNAPI void update();
@@ -151,9 +150,9 @@ public:
 
         MCNAPI bool $shouldReconnect() const;
 
-        MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Url>> $getUrl();
+        MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Url> $getUrl();
 
-        MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::HeaderCollection>> $getHeaders();
+        MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::HeaderCollection> $getHeaders();
 
         MCNAPI ::Bedrock::Http::RetryPolicy $getReconnectPolicy();
 
@@ -259,12 +258,11 @@ public:
 
     MCNAPI ::gsl::not_null<::std::shared_ptr<::NetherNet::ISignalingInterface>> getChannel() const;
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::vector<::NetherNet::StunRelayServer>>>
-    getRelayConfig() const;
+    MCNAPI ::Bedrock::Threading::Async<::std::vector<::NetherNet::StunRelayServer>> getRelayConfig() const;
 
     MCNAPI ::std::shared_ptr<::ISignalingServiceTelemetry const> getTelemetry() const;
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::error_code>> signIn(::NetherNet::NetworkID id);
+    MCNAPI ::Bedrock::Threading::Async<::std::error_code> signIn(::NetherNet::NetworkID id);
     // NOLINTEND
 
 public:

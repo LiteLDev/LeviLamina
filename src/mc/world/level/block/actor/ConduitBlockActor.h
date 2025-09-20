@@ -35,10 +35,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ConduitBlockActor();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -47,7 +43,7 @@ public:
     // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 22
+    // vIndex: 21
     virtual bool hasAlphaLayer() const /*override*/;
 
     // vIndex: 2
@@ -56,29 +52,21 @@ public:
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ConduitBlockActor(::BlockPos const& pos);
-
     MCNAPI void _animateTick(::BlockSource& region) const;
 
     MCNAPI void _checkShape(::BlockSource& region);
 
     MCNAPI void _updateTarget(::BlockSource& region);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:

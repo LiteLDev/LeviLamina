@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor::Network { class AudioSettingsChangedPayload; }
 namespace Editor::Network { class GraphicsSettingsChangedPayload; }
 namespace Editor::Network { class SpeedSettingsChangedPayload; }
 namespace Editor::Network { class ThemeSettingsChangedPayload; }
@@ -18,6 +19,7 @@ namespace Editor::Network { class ThemeSettingsCurrentThemeChangedPayload; }
 namespace Editor::Network { class ThemeSettingsNewThemeCreatedPayload; }
 namespace Editor::Network { class ThemeSettingsThemeColorUpdatedPayload; }
 namespace Editor::Network { class ThemeSettingsThemeDeletedPayload; }
+namespace Editor::Settings { struct AudioProps; }
 namespace Editor::Settings { struct GraphicsProps; }
 namespace Editor::Settings { struct SpeedProps; }
 namespace Editor::Settings { struct ThemeProps; }
@@ -50,34 +52,38 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 7
+    virtual void
+    _handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const& payload) /*override*/;
+
+    // vIndex: 8
     virtual void _handleGraphicsSettingsChangedPayload(
         ::Editor::Network::GraphicsSettingsChangedPayload const& payload
     ) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void
     _handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void
     _handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload) /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual void _handleThemeSettingsCurrentThemeChangedPayload(
         ::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const& payload
     ) /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual void _handleThemeSettingsNewThemeCreatedPayload(
         ::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload
     ) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual void _handleThemeSettingsThemeColorUpdatedPayload(
         ::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload
     ) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void _handleThemeSettingsThemeDeletedPayload(
         ::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload
     ) /*override*/;
@@ -87,6 +93,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit EditorServerSettingsService(::Editor::ServiceProviderCollection& providers);
+
+    MCNAPI void _handleAudioSettingsModified(::Editor::Settings::AudioProps const& props);
 
     MCNAPI void _handleCurrentThemeModified(::std::string const& id);
 
@@ -131,6 +139,8 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::std::string_view $getServiceName() const;
+
+    MCNAPI void $_handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const& payload);
 
     MCNAPI void
     $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& payload);

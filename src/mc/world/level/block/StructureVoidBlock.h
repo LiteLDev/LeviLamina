@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/level/block/BlockLegacy.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,7 +18,7 @@ class GetCollisionShapeInterface;
 class IConstBlockSource;
 // clang-format on
 
-class StructureVoidBlock : public ::BlockLegacy {
+class StructureVoidBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -26,7 +26,7 @@ public:
     virtual bool isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const
         /*override*/;
 
-    // vIndex: 71
+    // vIndex: 72
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer heldItemRenderLayer) const /*override*/;
 
     // vIndex: 5
@@ -47,7 +47,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const /*override*/;
 
-    // vIndex: 56
+    // vIndex: 57
     virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
         /*override*/;
 
@@ -58,18 +58,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const;
+    MCNAPI bool $isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const;
 
-    MCAPI bool $canRenderSelectionOverlay(::BlockRenderLayer heldItemRenderLayer) const;
+    MCNAPI bool $canRenderSelectionOverlay(::BlockRenderLayer heldItemRenderLayer) const;
 
-    MCFOLD ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD bool $addCollisionShapes(
+    MCNAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -78,7 +78,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
     // NOLINTEND
 
 public:

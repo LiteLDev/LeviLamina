@@ -64,7 +64,7 @@ public:
     virtual bool shouldDropDeathLoot() const /*override*/;
 
     // vIndex: 2
-    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -129,8 +129,6 @@ public:
     MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
 
     MCFOLD bool $shouldDropDeathLoot() const;
-
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:

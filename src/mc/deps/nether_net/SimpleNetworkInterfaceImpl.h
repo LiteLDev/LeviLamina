@@ -48,6 +48,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnkb5d73e;
     ::ll::UntypedStorage<8, 80>  mUnka71ac8;
     ::ll::UntypedStorage<8, 384> mUnkcf1ee0;
+    ::ll::UntypedStorage<1, 1>   mUnk49643d;
     ::ll::UntypedStorage<8, 16>  mUnk6e9a1e;
     ::ll::UntypedStorage<8, 16>  mUnkd76d91;
     ::ll::UntypedStorage<8, 16>  mUnk9e7ad4;
@@ -112,21 +113,33 @@ public:
     // vIndex: 9
     virtual void SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 10
+    virtual void SetInactivityTimeout(
+        ::NetherNet::NetworkID                  remoteId,
+        ::std::optional<::std::chrono::seconds> inactivityTimeout
+    ) /*override*/;
+
+    // vIndex: 17
     virtual ::Bedrock::PubSub::Subscription
     RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 16
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler* handler) /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual bool IsBroadcastDiscoveryEnabled() /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual void EnableBroadcastDiscovery() /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual void DisableBroadcastDiscovery() /*override*/;
+
+    // vIndex: 14
+    virtual void EnableLANSignaling() /*override*/;
+
+    // vIndex: 15
+    virtual void DisableLANSignaling() /*override*/;
 
     // vIndex: 1
     virtual void OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event) /*override*/;
@@ -203,6 +216,9 @@ public:
 
     MCNAPI void $SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config);
 
+    MCNAPI void
+    $SetInactivityTimeout(::NetherNet::NetworkID remoteId, ::std::optional<::std::chrono::seconds> inactivityTimeout);
+
     MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
 
     MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ILanEventHandler* handler);
@@ -212,6 +228,10 @@ public:
     MCNAPI void $EnableBroadcastDiscovery();
 
     MCNAPI void $DisableBroadcastDiscovery();
+
+    MCNAPI void $EnableLANSignaling();
+
+    MCNAPI void $DisableLANSignaling();
 
     MCNAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event);
 

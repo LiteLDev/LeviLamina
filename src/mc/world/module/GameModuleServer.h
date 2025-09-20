@@ -43,7 +43,7 @@ public:
 
     // vIndex: 3
     virtual void configureLevel(
-        ::Bedrock::NotNullNonOwnerPtr<::Level> const&,
+        ::Bedrock::NotNullNonOwnerPtr<::Level>&,
         ::Experiments const&,
         ::ResourcePackManager&,
         ::BaseGameVersion const&,

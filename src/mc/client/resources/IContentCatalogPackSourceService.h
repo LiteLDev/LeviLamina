@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/http/RequestPriority.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,12 +23,11 @@ public:
     virtual ~IContentCatalogPackSourceService() = default;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::FetchImageDataResult>>
+    virtual ::Bedrock::Threading::Async<::FetchImageDataResult>
     fetchImageData(::FetchImageParams const&, ::Bedrock::Http::RequestPriority) = 0;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::DurableSearchResults>>
-    searchCatalog(::SearchQuery const&) = 0;
+    virtual ::Bedrock::Threading::Async<::DurableSearchResults> searchCatalog(::SearchQuery const&) = 0;
 
     // vIndex: 3
     virtual bool isRealmsPlusExpired(::IEntitlementManager&) = 0;

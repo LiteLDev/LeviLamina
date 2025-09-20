@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/events/gameevents/VibrationListener.h"
 #include "mc/world/level/block/actor/BlockActor.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,6 +15,7 @@ class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class SaveContext;
+class SculkSensorVibrationConfig;
 // clang-format on
 
 class SculkSensorBlockActor : public ::BlockActor {
@@ -40,7 +42,7 @@ public:
     // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -51,12 +53,26 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit SculkSensorBlockActor(::BlockPos const& pos);
+
+    MCNAPI SculkSensorBlockActor(
+        ::BlockActorType                                  type,
+        ::BlockPos const&                                 pos,
+        uint                                              listenerRange,
+        ::std::unique_ptr<::SculkSensorVibrationConfig>&& vibrationConfig
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::BlockPos const& pos);
+
+    MCNAPI void* $ctor(
+        ::BlockActorType                                  type,
+        ::BlockPos const&                                 pos,
+        uint                                              listenerRange,
+        ::std::unique_ptr<::SculkSensorVibrationConfig>&& vibrationConfig
+    );
     // NOLINTEND
 
 public:

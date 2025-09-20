@@ -130,7 +130,7 @@ public:
     // vIndex: 6
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
-    onBeforePlayerGameModeChange(::Player const& player, ::GameType fromGameMode, ::GameType toGameMode) /*override*/;
+    onBeforePlayerGameModeChange(::Player const&, ::GameType, ::GameType) /*override*/;
 
     // vIndex: 2
     virtual void onBeforeWorldInitialize(
@@ -231,10 +231,6 @@ public:
         ::Actor&                                     target,
         ::PlayerInteractWithEntityBeforeEvent const& eventData
     );
-
-    MCNAPI ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
-    $onBeforePlayerGameModeChange(::Player const& player, ::GameType fromGameMode, ::GameType toGameMode);
 
     MCNAPI void $onBeforeWorldInitialize(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&

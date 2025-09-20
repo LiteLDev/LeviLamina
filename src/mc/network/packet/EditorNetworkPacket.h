@@ -3,60 +3,56 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
-#include "mc/nbt/CompoundTag.h"
-#include "mc/network/MinecraftPacketIds.h"
-#include "mc/platform/Result.h"
+#include "mc/network/packet/EditorNetworkPacketPayload.h"
+#include "mc/network/packet/serialize/SerializedPayloadPacket.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
+struct EditorNetworkPacketInfo;
 // clang-format on
 
-class EditorNetworkPacket : public ::Packet {
+class EditorNetworkPacket : public ::SerializedPayloadPacket<::EditorNetworkPacketInfo, ::EditorNetworkPacketPayload> {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::CompoundTag> mBinaryPayload;
-    ::ll::TypedStorage<1, 1, bool>           mRouteToManager;
-    // NOLINTEND
+    // EditorNetworkPacket inner types define
+    using PayloadType = ::EditorNetworkPacketPayload;
+
+    using PacketInfo = ::EditorNetworkPacketInfo;
+
+public:
+    // prevent constructor by default
+    EditorNetworkPacket& operator=(EditorNetworkPacket const&);
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const /*override*/;
-
-    // vIndex: 2
-    virtual ::std::string getName() const /*override*/;
-
-    // vIndex: 4
-    virtual void write(::BinaryStream& stream) const /*override*/;
-
-    // vIndex: 8
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
     // vIndex: 0
     virtual ~EditorNetworkPacket() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI EditorNetworkPacket();
+
+    MCAPI EditorNetworkPacket(::EditorNetworkPacket&&);
+
+    MCAPI EditorNetworkPacket(::EditorNetworkPacket const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+
+    MCAPI void* $ctor(::EditorNetworkPacket&&);
+
+    MCAPI void* $ctor(::EditorNetworkPacket const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
-
-    MCAPI ::std::string $getName() const;
-
-    MCAPI void $write(::BinaryStream& stream) const;
-
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

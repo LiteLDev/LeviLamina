@@ -52,10 +52,10 @@ public:
 
     MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
     tryCreateComponent(
-        ::std::string_view                                                           componentName,
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Scripting::WeakLifetimeScope const&                                        scope,
-        bool                                                                         includeCustom
+        ::std::string_view                                                             componentName,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope,
+        bool                                                                           includeCustom
     );
     // NOLINTEND
 

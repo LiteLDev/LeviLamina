@@ -54,7 +54,7 @@ public:
         ::ll::TypedStorage<8, 655360, ::std::array<::Block const*, 81920>> blockBuffer;
         ::ll::TypedStorage<8, 8, float*>                                   fi;
         ::ll::TypedStorage<8, 8, float*>                                   fis;
-        ::ll::TypedStorage<8, 2568, ::Random>                              random;
+        ::ll::TypedStorage<8, 2576, ::Random>                              random;
         // NOLINTEND
     };
 

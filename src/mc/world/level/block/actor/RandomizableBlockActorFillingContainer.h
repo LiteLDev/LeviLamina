@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockSource;
-class Player;
 class Vec3;
 // clang-format on
 
@@ -24,7 +24,7 @@ public:
     virtual void setContainerChanged(int slot) /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player& player) /*override*/;
+    virtual void startOpen(::Actor& actor) /*override*/;
 
     // vIndex: 18
     virtual void dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot) /*override*/;
@@ -32,7 +32,7 @@ public:
     // vIndex: 19
     virtual void dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void onRemoved(::BlockSource&) /*override*/;
 
     // vIndex: 41
@@ -50,7 +50,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $setContainerChanged(int slot);
 
-    MCNAPI void $startOpen(::Player& player);
+    MCNAPI void $startOpen(::Actor& actor);
 
     MCNAPI void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 

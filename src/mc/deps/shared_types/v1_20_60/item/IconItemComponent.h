@@ -14,7 +14,7 @@ struct IconItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk15b457;
+    ::ll::UntypedStorage<8, 64> mUnkdff76b;
     // NOLINTEND
 
 public:

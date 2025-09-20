@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -36,7 +36,7 @@ public:
 
     MCNAPI ::Bedrock::Http::Request& operator=(::Bedrock::Http::Request const&);
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>> send();
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> send();
 
     MCNAPI ~Request();
     // NOLINTEND

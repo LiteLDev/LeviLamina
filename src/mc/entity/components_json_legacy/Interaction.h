@@ -29,9 +29,7 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk3a3d80;
     ::ll::UntypedStorage<8, 32>  mUnka7364a;
     ::ll::UntypedStorage<8, 32>  mUnke8c60e;
-    ::ll::UntypedStorage<4, 4>   mUnke0db27;
-    ::ll::UntypedStorage<1, 1>   mUnk6d76db;
-    ::ll::UntypedStorage<4, 4>   mUnka57a41;
+    ::ll::UntypedStorage<4, 12>  mUnkbdcf46;
     ::ll::UntypedStorage<4, 4>   mUnk2de782;
     ::ll::UntypedStorage<4, 4>   mUnkaceac1;
     ::ll::UntypedStorage<8, 24>  mUnk968bff;
@@ -64,8 +62,6 @@ public:
     MCNAPI void setDropItemSlot(::std::string const& slot);
 
     MCNAPI void setEquipItemSlot(::std::string const& slot);
-
-    MCNAPI void setParticleType(::std::string const& name);
 
     MCNAPI void setRepairItemAmount(int const& amount);
 

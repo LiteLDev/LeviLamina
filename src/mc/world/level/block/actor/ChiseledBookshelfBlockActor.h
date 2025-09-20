@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
@@ -15,7 +16,6 @@ class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class ItemStack;
-class Player;
 class SaveContext;
 // clang-format on
 
@@ -40,7 +40,7 @@ public:
     // vIndex: 12
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 28
+    // vIndex: 26
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 21
@@ -50,15 +50,15 @@ public:
     virtual int getContainerSize() const /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player&) /*override*/;
+    virtual void startOpen(::Actor&) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 35
+    // vIndex: 32
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 34
+    // vIndex: 31
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 2
@@ -89,10 +89,10 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -136,9 +136,9 @@ public:
 
     MCNAPI int $getContainerSize() const;
 
-    MCNAPI void $startOpen(::Player&);
+    MCNAPI void $startOpen(::Actor&);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Actor& actor);
 
     MCNAPI ::Container* $getContainer();
 

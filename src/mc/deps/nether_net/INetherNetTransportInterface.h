@@ -63,18 +63,27 @@ public:
     virtual void SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const&) = 0;
 
     // vIndex: 10
-    virtual bool IsBroadcastDiscoveryEnabled() = 0;
+    virtual void SetInactivityTimeout(::NetherNet::NetworkID, ::std::optional<::std::chrono::seconds>) = 0;
 
     // vIndex: 11
-    virtual void EnableBroadcastDiscovery() = 0;
+    virtual bool IsBroadcastDiscoveryEnabled() = 0;
 
     // vIndex: 12
+    virtual void EnableBroadcastDiscovery() = 0;
+
+    // vIndex: 13
     virtual void DisableBroadcastDiscovery() = 0;
 
     // vIndex: 14
+    virtual void EnableLANSignaling() = 0;
+
+    // vIndex: 15
+    virtual void DisableLANSignaling() = 0;
+
+    // vIndex: 17
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler*) = 0;
 
-    // vIndex: 13
+    // vIndex: 16
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler*) = 0;
     // NOLINTEND
 

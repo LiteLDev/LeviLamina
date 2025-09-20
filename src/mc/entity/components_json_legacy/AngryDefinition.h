@@ -7,6 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class AngryComponent;
+class EntityContext;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
@@ -39,6 +41,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void addBroadcastTargetByName(::std::string const& name);
+
+    MCNAPI void initialize(::EntityContext& entity, ::AngryComponent& component) const;
 
     MCNAPI ~AngryDefinition();
     // NOLINTEND

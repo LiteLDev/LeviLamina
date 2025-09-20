@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/network/services/CachedAsyncSource.h"
 #include "mc/network/services/auth/AuthTokenRetrievalType.h"
@@ -48,8 +48,7 @@ public:
     // NOLINTBEGIN
     MCNAPI AuthHelper(::std::string applicationId, ::std::string applicationTenantId, int maxAuthRetryAttempts);
 
-    MCNAPI ::std::shared_ptr<
-        ::Bedrock::Threading::IAsyncResult<::nonstd::expected<::std::string, ::Bedrock::Threading::CachedAsyncRetry>>>
+    MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::std::string, ::Bedrock::Threading::CachedAsyncRetry>>
     _getAuthToken(
         int                                        retryCount,
         ::Bedrock::Services::AzureGetTokenHttpCall azureTokenCall,
@@ -61,7 +60,7 @@ public:
 
     MCNAPI void clear(::std::string const& serviceName);
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::string>> getAuthToken(
+    MCNAPI ::Bedrock::Threading::Async<::std::string> getAuthToken(
         ::DiscoveryEnvironment                      environment,
         ::std::string const&                        serviceName,
         ::Bedrock::Services::AuthTokenRetrievalType authTokenRetrievalType

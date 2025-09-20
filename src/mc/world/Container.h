@@ -15,13 +15,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockSource;
 class CompoundTag;
 class ContainerCloseListener;
 class ContainerContentChangeListener;
 class ContainerSizeChangeListener;
 class ItemStack;
-class Player;
 class Random;
 class Vec3;
 struct ContainerRuntimeIdTag;
@@ -181,10 +181,10 @@ public:
     virtual int getMaxStackSize() const = 0;
 
     // vIndex: 22
-    virtual void startOpen(::Player&) = 0;
+    virtual void startOpen(::Actor&) = 0;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player);
+    virtual void stopOpen(::Actor& actor);
 
     // vIndex: 24
     virtual ::std::vector<::ItemStack> getSlotCopies() const;
@@ -340,7 +340,7 @@ public:
 
     MCAPI void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
-    MCAPI void $stopOpen(::Player& player);
+    MCAPI void $stopOpen(::Actor& actor);
 
     MCAPI ::std::vector<::ItemStack> $getSlotCopies() const;
 

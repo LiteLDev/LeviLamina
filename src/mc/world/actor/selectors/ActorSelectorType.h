@@ -11,4 +11,5 @@ enum class ActorSelectorType : int {
     OwnedAgent    = 5,
     Agents        = 6,
     Initiator     = 7,
+    Nearest       = 8,
 };

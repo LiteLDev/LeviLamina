@@ -15,6 +15,7 @@ public:
     ::ll::TypedStorage<4, 4, float>                         mViewFrustumDistance;
     ::ll::TypedStorage<1, 1, ::CameraAimAssist::TargetMode> mTargetMode;
     ::ll::TypedStorage<8, 48, ::HashedString>               mPriorityPresetId;
+    ::ll::TypedStorage<1, 1, bool>                          mShowDebugRender;
     // NOLINTEND
 
 public:

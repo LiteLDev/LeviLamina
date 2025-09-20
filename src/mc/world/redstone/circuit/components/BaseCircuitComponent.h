@@ -147,7 +147,7 @@ public:
 
     MCFOLD int $getDirection() const;
 
-    MCAPI void $setStrength(int strength);
+    MCFOLD void $setStrength(int strength);
 
     MCAPI void $setDirection(uchar direction);
 

@@ -14,7 +14,7 @@ struct PlanterItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk85888c;
+    ::ll::UntypedStorage<8, 32> mUnk78518d;
     ::ll::UntypedStorage<8, 24> mUnk81fc40;
     ::ll::UntypedStorage<1, 1>  mUnkd6fad7;
     // NOLINTEND

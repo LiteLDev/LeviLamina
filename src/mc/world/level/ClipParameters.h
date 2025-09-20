@@ -22,6 +22,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Actor*>      mActor;
     ::ll::TypedStorage<1, 1, bool>          mLiquid;
     ::ll::TypedStorage<1, 1, bool>          mFullOnly;
+    ::ll::TypedStorage<1, 1, bool>          mStopOnFirstLiquidHit;
     ::ll::TypedStorage<1, 1, bool>          mIgnoreBorderBlocks;
     ::ll::TypedStorage<1, 1, ::ShapeType>   mShapeType;
     ::ll::TypedStorage<4, 4, int>           mMaxDistance;
