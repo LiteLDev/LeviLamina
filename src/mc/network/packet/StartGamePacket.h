@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/resource/ContentIdentity.h"
@@ -12,6 +11,7 @@
 #include "mc/nbt/CompoundTag.h"
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/NetworkPermissions.h"
+#include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/platform/UUID.h"
 #include "mc/world/actor/player/SyncedPlayerMovementSettings.h"

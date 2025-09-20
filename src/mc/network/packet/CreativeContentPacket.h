@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
 #include "mc/world/item/CreativeItemCategory.h"

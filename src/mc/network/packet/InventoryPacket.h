@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
+#include "mc/network/Packet.h"
 
 // auto generated forward declare list
 // clang-format off
