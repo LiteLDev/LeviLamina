@@ -25,11 +25,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $updateMovement();
+    MCAPI void $updateMovement();
 
-    MCNAPI void $stopMovement();
+    MCFOLD void $stopMovement();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

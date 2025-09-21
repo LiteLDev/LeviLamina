@@ -4,6 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/util/FloatRange.h"
+#include "mc/util/TargetSelectionMethod.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
@@ -12,6 +15,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionTrigger;
+class ItemDescriptor;
 class Mob;
 class Path;
 namespace JsonUtil { class EmptyClass; }
@@ -29,23 +34,17 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnka7537c;
-        ::ll::UntypedStorage<4, 4>  mUnk38c445;
-        ::ll::UntypedStorage<4, 4>  mUnk9f40b6;
-        ::ll::UntypedStorage<4, 4>  mUnk374371;
-        ::ll::UntypedStorage<4, 4>  mUnk4619f9;
-        ::ll::UntypedStorage<1, 1>  mUnk292803;
-        ::ll::UntypedStorage<8, 24> mUnk638a9b;
-        ::ll::UntypedStorage<8, 24> mUnkc9c2cb;
-        ::ll::UntypedStorage<4, 4>  mUnkedd51b;
-        ::ll::UntypedStorage<4, 8>  mUnk2e74fc;
+        ::ll::TypedStorage<4, 4, float>                                    mWalkSpeedModifier;
+        ::ll::TypedStorage<4, 4, float>                                    mSprintSpeedModifier;
+        ::ll::TypedStorage<4, 4, int>                                      mInterval;
+        ::ll::TypedStorage<4, 4, int>                                      mSearchRange;
+        ::ll::TypedStorage<4, 4, int>                                      mSearchHeight;
+        ::ll::TypedStorage<1, 1, ::TargetSelectionMethod>                  mMethod;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>         mTargetBlockDescriptors;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mOnEscapedTriggers;
+        ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>   mSoundEvent;
+        ::ll::TypedStorage<4, 8, ::FloatRange>                             mSoundIntervalRange;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
 
     public:
         // virtual functions
@@ -57,15 +56,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void setSoundEvent(::std::string const& soundEvent);
+        MCAPI void setSoundEvent(::std::string const& soundEvent);
 
-        MCNAPI void setTargetSelectionMethod(::std::string const& methodCased);
+        MCAPI void setTargetSelectionMethod(::std::string const& methodCased);
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AvoidBlockGoal::Definition>>&
                 root
@@ -75,7 +74,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -131,23 +130,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _findTargetBlock();
+    MCAPI bool _findTargetBlock();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
     // NOLINTEND
 
 public:

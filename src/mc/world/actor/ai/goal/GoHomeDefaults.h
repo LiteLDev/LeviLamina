@@ -5,11 +5,11 @@
 namespace GoHomeDefaults {
 // static variables
 // NOLINTBEGIN
-MCNAPI float const& CALCULATE_NEW_PATH_RADIUS();
+MCAPI float const& CALCULATE_NEW_PATH_RADIUS();
 
-MCNAPI float const& GOAL_RADIUS();
+MCAPI float const& GOAL_RADIUS();
 
-MCNAPI float const& SPEED_MULTIPLIER();
+MCAPI float const& SPEED_MULTIPLIER();
 // NOLINTEND
 
 } // namespace GoHomeDefaults

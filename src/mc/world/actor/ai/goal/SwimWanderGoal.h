@@ -55,23 +55,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _hasSpaceToWander() const;
+    MCAPI bool _hasSpaceToWander() const;
 
-    MCNAPI bool _setWantedPosition();
+    MCAPI bool _setWantedPosition();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCFOLD void $start();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

@@ -10,7 +10,7 @@ class Vec3;
 namespace OfferFlowerDefaults {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::Vec3 const& SEARCH_AREA();
+MCAPI ::Vec3 const& SEARCH_AREA();
 // NOLINTEND
 
 } // namespace OfferFlowerDefaults

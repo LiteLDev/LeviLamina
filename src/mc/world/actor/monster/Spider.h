@@ -20,6 +20,8 @@ public:
         Cave   = 1,
     };
 
+    using DataFlagIdType = char;
+
 public:
     // prevent constructor by default
     Spider();

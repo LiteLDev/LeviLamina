@@ -29,14 +29,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
+    MCAPI void $removeEffects(::BaseAttributeMap& attributeMapToRemoveFrom);
 
-    MCNAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
+    MCAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

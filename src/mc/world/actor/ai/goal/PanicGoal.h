@@ -68,7 +68,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PanicGoal(
+    MCAPI PanicGoal(
         ::Mob&                                                 mob,
         float                                                  speedMultiplier,
         bool                                                   ignoreMobDamage,
@@ -79,15 +79,15 @@ public:
         ::std::vector<::SharedTypes::Legacy::ActorDamageCause> damageCauses
     );
 
-    MCNAPI ::std::optional<::Vec3> _findWaterPos(int xzDist, int yDist) const;
+    MCAPI ::std::optional<::Vec3> _findWaterPos(int xzDist, int yDist) const;
 
-    MCNAPI ::std::optional<::Vec3> _tryGeneratePathEnd() const;
+    MCAPI ::std::optional<::Vec3> _tryGeneratePathEnd() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Mob&                                                 mob,
         float                                                  speedMultiplier,
         bool                                                   ignoreMobDamage,
@@ -102,17 +102,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

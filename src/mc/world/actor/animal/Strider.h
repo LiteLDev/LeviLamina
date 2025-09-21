@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/animal/Animal.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class Player;
 // clang-format on
 
 class Strider : public ::Animal {
@@ -29,18 +31,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnk2b541a;
-        ::ll::UntypedStorage<1, 1>  mUnke10c81;
-        ::ll::UntypedStorage<1, 1>  mUnkda17f1;
-        ::ll::UntypedStorage<4, 12> mUnk4982aa;
-        ::ll::UntypedStorage<8, 8>  mUnk75e236;
+        ::ll::TypedStorage<1, 1, ::Strider::PlayerRideInLavaInOverworldAchievementTracker::VehicleState> mState;
+        ::ll::TypedStorage<1, 1, bool>      mHasSentAchievement;
+        ::ll::TypedStorage<1, 1, bool>      mInLavaWithPlayer;
+        ::ll::TypedStorage<4, 12, ::Vec3>   mStartPosInLava;
+        ::ll::TypedStorage<8, 8, ::Player*> mPlayer;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PlayerRideInLavaInOverworldAchievementTracker& operator=(PlayerRideInLavaInOverworldAchievementTracker const&);
-        PlayerRideInLavaInOverworldAchievementTracker(PlayerRideInLavaInOverworldAchievementTracker const&);
-        PlayerRideInLavaInOverworldAchievementTracker();
 
     public:
         // member functions
@@ -52,14 +48,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkcfee51;
+    ::ll::TypedStorage<8, 24, ::Strider::PlayerRideInLavaInOverworldAchievementTracker>
+        mPlayerRideInLavaInOverworldAchievementTracker;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Strider& operator=(Strider const&);
-    Strider(Strider const&);
-    Strider();
 
 public:
     // virtual functions

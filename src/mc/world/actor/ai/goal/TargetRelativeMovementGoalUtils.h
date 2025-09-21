@@ -13,7 +13,7 @@ class Vec3;
 namespace TargetRelativeMovementGoalUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::optional<::Vec3> calculateJumpVectorForElevationAngle(
+MCAPI ::std::optional<::Vec3> calculateJumpVectorForElevationAngle(
     ::IBlockSource& region,
     ::AABB const&   actorAABB,
     ::Vec3 const&   actorPos,
@@ -24,7 +24,7 @@ MCNAPI ::std::optional<::Vec3> calculateJumpVectorForElevationAngle(
     bool            checkCollision
 );
 
-MCNAPI ::Vec3 getRandomPointBehindTarget(
+MCAPI ::Vec3 getRandomPointBehindTarget(
     ::Actor const& owner,
     ::Actor const& target,
     float          spreadDegrees,
@@ -32,7 +32,7 @@ MCNAPI ::Vec3 getRandomPointBehindTarget(
     float          maxLandingDistance
 );
 
-MCNAPI bool validTransition(
+MCAPI bool validTransition(
     ::AABB const&   mobAABB,
     ::IBlockSource& region,
     ::Vec3 const&   oldPos,

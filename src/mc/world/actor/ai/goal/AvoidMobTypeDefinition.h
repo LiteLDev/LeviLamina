@@ -3,40 +3,41 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/FloatRange.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
+struct MobDescriptor;
 namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class AvoidMobTypeDefinition : public ::BaseGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk83ce21;
-    ::ll::UntypedStorage<4, 4>   mUnk50d225;
-    ::ll::UntypedStorage<4, 4>   mUnkabe867;
-    ::ll::UntypedStorage<4, 4>   mUnk24b650;
-    ::ll::UntypedStorage<4, 4>   mUnkcfc28c;
-    ::ll::UntypedStorage<4, 4>   mUnk400c69;
-    ::ll::UntypedStorage<4, 4>   mUnkf08cd0;
-    ::ll::UntypedStorage<4, 4>   mUnka4d38b;
-    ::ll::UntypedStorage<4, 4>   mUnkd1aab1;
-    ::ll::UntypedStorage<4, 4>   mUnka078d6;
-    ::ll::UntypedStorage<1, 1>   mUnk905770;
-    ::ll::UntypedStorage<8, 104> mUnk184a73;
-    ::ll::UntypedStorage<8, 32>  mUnkc6dbc8;
-    ::ll::UntypedStorage<4, 8>   mUnkf0f9c2;
-    ::ll::UntypedStorage<8, 24>  mUnk167642;
-    // NOLINTEND
+    // AvoidMobTypeDefinition inner types define
+    using self = ::AvoidMobTypeDefinition;
 
 public:
-    // prevent constructor by default
-    AvoidMobTypeDefinition& operator=(AvoidMobTypeDefinition const&);
-    AvoidMobTypeDefinition(AvoidMobTypeDefinition const&);
-    AvoidMobTypeDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool>                            mIgnoreVisibility;
+    ::ll::TypedStorage<4, 4, int>                             mAvoidTargetPositionDistanceXZ;
+    ::ll::TypedStorage<4, 4, int>                             mAvoidTargetPositionDistanceY;
+    ::ll::TypedStorage<4, 4, float>                           mMaximumDistance;
+    ::ll::TypedStorage<4, 4, float>                           mMaximumFlee;
+    ::ll::TypedStorage<4, 4, float>                           mProbabilityPerStrength;
+    ::ll::TypedStorage<4, 4, float>                           mRiverSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                           mSprintDistance;
+    ::ll::TypedStorage<4, 4, float>                           mSprintSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                           mWalkSpeedModifier;
+    ::ll::TypedStorage<1, 1, bool>                            mRemoveTarget;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>      mOnEscapeTrigger;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mSoundEvent;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                    mSoundIntervalRange;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mAvoidMobs;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -48,7 +49,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                                   name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AvoidMobTypeDefinition>>& root
     );
@@ -57,7 +58,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -17,15 +17,21 @@ class TaskGroup;
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace ResourcePackPathLifetimeHelpers { class ResourcePackPathCache; }
+namespace ResourcePackPathLifetimeHelpers { class ScopeDestroyedPath; }
 // clang-format on
 
 class ResourcePackFileUploadManager : public ::FileUploadManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkdd11ab;
-    ::ll::UntypedStorage<8, 8>  mUnk42937c;
-    ::ll::UntypedStorage<8, 16> mUnk282ca1;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::shared_ptr<::ResourcePackPathLifetimeHelpers::ScopeDestroyedPath const>>>
+                                                                                        mZipPaths;
+    ::ll::TypedStorage<8, 8, ::ResourcePackPathLifetimeHelpers::ResourcePackPathCache&> mResourcePackPathCache;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::Bedrock::Threading::SharedAsync<void>>>>
+        mPreviousUpload;
     // NOLINTEND
 
 public:

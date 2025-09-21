@@ -7,6 +7,10 @@
 
 class MoveTowardsHomeRestrictionDefinition : public ::MoveTowardsRestrictionDefinition {
 public:
+    // MoveTowardsHomeRestrictionDefinition inner types define
+    using self = ::MoveTowardsHomeRestrictionDefinition;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

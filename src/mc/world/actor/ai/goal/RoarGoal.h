@@ -25,16 +25,14 @@ public:
     // RoarGoal inner types define
     class Definition : public ::BaseGoalDefinition {
     public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkfc8a93;
-        // NOLINTEND
+        // Definition inner types define
+        using self = ::RoarGoal::Definition;
 
     public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, float> mDuration;
+        // NOLINTEND
 
     public:
         // virtual functions
@@ -46,7 +44,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const&                                                                                 name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RoarGoal::Definition>>& root
         );
@@ -102,23 +100,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::WeakEntityRef> _findRoarTarget() const;
+    MCAPI ::std::optional<::WeakEntityRef> _findRoarTarget() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

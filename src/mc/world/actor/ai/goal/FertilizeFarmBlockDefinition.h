@@ -13,22 +13,20 @@ namespace JsonUtil { class EmptyClass; }
 
 class FertilizeFarmBlockDefinition : public ::BaseGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk61f32a;
-    ::ll::UntypedStorage<4, 4> mUnkb92e5f;
-    ::ll::UntypedStorage<4, 4> mUnke365e6;
-    ::ll::UntypedStorage<4, 4> mUnkf893be;
-    ::ll::UntypedStorage<4, 4> mUnka8913a;
-    ::ll::UntypedStorage<4, 4> mUnkd3b309;
-    ::ll::UntypedStorage<4, 4> mUnk99e513;
-    // NOLINTEND
+    // FertilizeFarmBlockDefinition inner types define
+    using self = ::FertilizeFarmBlockDefinition;
 
 public:
-    // prevent constructor by default
-    FertilizeFarmBlockDefinition& operator=(FertilizeFarmBlockDefinition const&);
-    FertilizeFarmBlockDefinition(FertilizeFarmBlockDefinition const&);
-    FertilizeFarmBlockDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int>   mMaxFertilizerUsage;
+    ::ll::TypedStorage<4, 4, float> mSearchCooldownMaximumSeconds;
+    ::ll::TypedStorage<4, 4, int>   mSearchCount;
+    ::ll::TypedStorage<4, 4, int>   mSearchHeight;
+    ::ll::TypedStorage<4, 4, int>   mSearchRange;
+    ::ll::TypedStorage<4, 4, float> mGoalRadius;
+    ::ll::TypedStorage<4, 4, float> mSpeedModifier;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -40,7 +38,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const& name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FertilizeFarmBlockDefinition>>&
             root

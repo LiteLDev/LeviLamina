@@ -2,40 +2,37 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorFilterGroup.h"
+
 struct MobDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk4296fc;
-    ::ll::UntypedStorage<4, 4>  mUnk1cc34d;
-    ::ll::UntypedStorage<4, 4>  mUnk7cc9e8;
-    ::ll::UntypedStorage<4, 4>  mUnkb0818f;
-    ::ll::UntypedStorage<4, 4>  mUnka46072;
-    ::ll::UntypedStorage<4, 4>  mUnkf6fbab;
-    ::ll::UntypedStorage<1, 1>  mUnk68a627;
-    ::ll::UntypedStorage<1, 1>  mUnk5f326e;
-    ::ll::UntypedStorage<1, 1>  mUnkf77325;
-    ::ll::UntypedStorage<1, 1>  mUnk6063ab;
-    ::ll::UntypedStorage<4, 4>  mUnkeaee9f;
-    ::ll::UntypedStorage<4, 4>  mUnk857ba9;
-    ::ll::UntypedStorage<4, 4>  mUnk3d3978;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mTargetFilter;
+    ::ll::TypedStorage<4, 4, float>               mMaxDistance;
+    ::ll::TypedStorage<4, 4, float>               mMaxHeight;
+    ::ll::TypedStorage<4, 4, float>               mMaxFlee;
+    ::ll::TypedStorage<4, 4, float>               mWalkSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>               mSprintSpeedModifier;
+    ::ll::TypedStorage<1, 1, bool>                mOverrideMustSee;
+    ::ll::TypedStorage<1, 1, bool>                mMustSee;
+    ::ll::TypedStorage<1, 1, bool>                mCheckIfOutnumbered;
+    ::ll::TypedStorage<1, 1, bool>                mReevaluateDescription;
+    ::ll::TypedStorage<4, 4, int>                 mMustSeeForgetTicks;
+    ::ll::TypedStorage<4, 4, int>                 mPriority;
+    ::ll::TypedStorage<4, 4, int>                 mCooldownInTicks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MobDescriptor& operator=(MobDescriptor const&);
-    MobDescriptor(MobDescriptor const&);
-    MobDescriptor();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~MobDescriptor();
+    MCAPI ~MobDescriptor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

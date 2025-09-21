@@ -10,9 +10,9 @@ class BaseGameVersion;
 namespace FollowOwnerGoalVersions {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::BaseGameVersion const& KEEP_FOLLOWING_AFTER_TELEPORTING();
+MCAPI ::BaseGameVersion const& KEEP_FOLLOWING_AFTER_TELEPORTING();
 
-MCNAPI ::BaseGameVersion const& RANDOMIZE_AND_CHECK_FOR_CLEARANCE_WHEN_TELEPORTING();
+MCAPI ::BaseGameVersion const& RANDOMIZE_AND_CHECK_FOR_CLEARANCE_WHEN_TELEPORTING();
 // NOLINTEND
 
 } // namespace FollowOwnerGoalVersions

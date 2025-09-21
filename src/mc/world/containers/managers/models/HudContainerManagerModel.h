@@ -67,34 +67,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI HudContainerManagerModel(::ContainerID containerId, ::Player& player);
+    MCAPI HudContainerManagerModel(::ContainerID containerId, ::Player& player);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ContainerID containerId, ::Player& player);
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCFOLD ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
-    MCNAPI ::ItemStack const& $getSlot(int slot) const;
+    MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCNAPI void $setData(int id, int value);
+    MCFOLD void $setData(int id, int value);
 
-    MCNAPI void $broadcastChanges();
+    MCAPI void $broadcastChanges();
 
-    MCNAPI ::ContainerScreenContext $_postInit();
+    MCAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

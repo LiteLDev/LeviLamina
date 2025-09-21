@@ -24,15 +24,13 @@ class HangingActor : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7ede45;
-    ::ll::UntypedStorage<4, 4> mUnk56346e;
-    ::ll::UntypedStorage<4, 4> mUnke7da52;
+    ::ll::TypedStorage<4, 4, int> mDirection;
+    ::ll::TypedStorage<4, 4, int> mTicksToWouldSurviveCheck;
+    ::ll::TypedStorage<4, 4, int> mWouldSurviveCheckCooldown;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    HangingActor& operator=(HangingActor const&);
-    HangingActor(HangingActor const&);
     HangingActor();
 
 public:

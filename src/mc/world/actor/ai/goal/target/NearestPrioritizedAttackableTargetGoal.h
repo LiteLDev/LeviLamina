@@ -28,9 +28,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI ::ActorUniqueID $_findTarget(::MobDescriptor const** outMobDescriptor);
+    MCAPI ::ActorUniqueID $_findTarget(::MobDescriptor const** outMobDescriptor);
     // NOLINTEND
 
 public:

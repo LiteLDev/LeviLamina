@@ -56,37 +56,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    MaterialReducerContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+    MCAPI MaterialReducerContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCFOLD ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCFOLD void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
-    MCNAPI ::ItemStack const& $getSlot(int slot) const;
+    MCFOLD ::ItemStack const& $getSlot(int slot) const;
 
-    MCNAPI void $setData(int id, int value);
+    MCFOLD void $setData(int id, int value);
 
-    MCNAPI bool $isValid(float pickRange);
+    MCAPI bool $isValid(float pickRange);
 
-    MCNAPI void $broadcastChanges();
+    MCFOLD void $broadcastChanges();
 
-    MCNAPI ::ContainerScreenContext $_postInit();
+    MCAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

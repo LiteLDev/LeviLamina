@@ -53,27 +53,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _findFertilizer();
+    MCAPI bool _findFertilizer();
 
-    MCNAPI bool tryFertilizeCrop(::BlockSource& region, ::BlockPos const& farmlandPos);
+    MCAPI bool tryFertilizeCrop(::BlockSource& region, ::BlockPos const& farmlandPos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

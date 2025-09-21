@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/BiomeIdType.h"
+#include "mc/world/level/biome/climate_utils/Parameter.h"
+
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
@@ -9,31 +13,30 @@ class Biome;
 class BiomeRegistry;
 class Experiments;
 struct BiomeNoiseTarget;
-namespace ClimateUtils { struct Parameter; }
 // clang-format on
 
 class OverworldBiomeBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnkff988f;
-    ::ll::UntypedStorage<8, 16>  mUnk5965fc;
-    ::ll::UntypedStorage<2, 20>  mUnka4ebfa;
-    ::ll::UntypedStorage<2, 50>  mUnk9571a8;
-    ::ll::UntypedStorage<2, 50>  mUnk951c9f;
-    ::ll::UntypedStorage<2, 50>  mUnke6d370;
-    ::ll::UntypedStorage<2, 50>  mUnk814ba2;
-    ::ll::UntypedStorage<2, 50>  mUnkfe9916;
-    ::ll::UntypedStorage<2, 50>  mUnkde00e0;
-    ::ll::UntypedStorage<2, 50>  mUnk7ff101;
-    ::ll::UntypedStorage<8, 8>   mUnk4829fa;
-    ::ll::UntypedStorage<8, 8>   mUnkf351ee;
-    ::ll::UntypedStorage<8, 80>  mUnkdeb30a;
-    ::ll::UntypedStorage<8, 200> mUnk61c267;
-    ::ll::UntypedStorage<8, 200> mUnkf28518;
-    ::ll::UntypedStorage<8, 200> mUnk479b27;
-    ::ll::UntypedStorage<8, 200> mUnk86c069;
-    ::ll::UntypedStorage<8, 200> mUnkf0c738;
+    ::ll::TypedStorage<8, 16, ::ClimateUtils::Parameter const>                   FROZEN_RANGE;
+    ::ll::TypedStorage<8, 16, ::ClimateUtils::Parameter const>                   UNFROZEN_RANGE;
+    ::ll::TypedStorage<2, 20, ::BiomeIdType[2][5]>                               OCEANS_IDS;
+    ::ll::TypedStorage<2, 50, ::BiomeIdType[5][5]>                               MIDDLE_BIOMES_IDS;
+    ::ll::TypedStorage<2, 50, ::BiomeIdType[5][5]>                               MIDDLE_BIOMES_VARIANT_IDS;
+    ::ll::TypedStorage<2, 50, ::BiomeIdType[5][5]>                               PLATEAU_BIOMES_IDS;
+    ::ll::TypedStorage<2, 50, ::BiomeIdType[5][5]>                               PLATEAU_BIOMES_IDS_1_21_60;
+    ::ll::TypedStorage<2, 50, ::BiomeIdType[5][5]>                               PLATEAU_BIOMES_VARIANT_IDS;
+    ::ll::TypedStorage<2, 50, ::BiomeIdType[5][5]>                               PLATEAU_BIOMES_VARIANT_IDS_1_21_60;
+    ::ll::TypedStorage<2, 50, ::BiomeIdType[5][5]>                               EXTREME_HILLS_IDS;
+    ::ll::TypedStorage<8, 8, ::BaseGameVersion const&>                           mBaseGameVersion;
+    ::ll::TypedStorage<8, 8, ::Experiments const&>                               mExperiments;
+    ::ll::TypedStorage<8, 80, ::std::array<::std::array<::Biome const*, 5>, 2>>  OCEANS;
+    ::ll::TypedStorage<8, 200, ::std::array<::std::array<::Biome const*, 5>, 5>> MIDDLE_BIOMES;
+    ::ll::TypedStorage<8, 200, ::std::array<::std::array<::Biome const*, 5>, 5>> MIDDLE_BIOMES_VARIANT;
+    ::ll::TypedStorage<8, 200, ::std::array<::std::array<::Biome const*, 5>, 5>> PLATEAU_BIOMES;
+    ::ll::TypedStorage<8, 200, ::std::array<::std::array<::Biome const*, 5>, 5>> PLATEAU_BIOMES_VARIANT;
+    ::ll::TypedStorage<8, 200, ::std::array<::std::array<::Biome const*, 5>, 5>> EXTREME_HILLS;
     // NOLINTEND
 
 public:

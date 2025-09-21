@@ -52,14 +52,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf8a971;
-    ::ll::UntypedStorage<4, 4> mUnk4f8dc7;
+    ::ll::TypedStorage<8, 8, uint64> mLastHit;
+    ::ll::TypedStorage<4, 4, int>    mLastCircuitStrength;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ArmorStand& operator=(ArmorStand const&);
-    ArmorStand(ArmorStand const&);
     ArmorStand();
 
 public:

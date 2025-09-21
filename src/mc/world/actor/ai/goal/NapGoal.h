@@ -59,7 +59,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NapGoal(
+    MCAPI NapGoal(
         ::Mob&                    mob,
         float                     cooldownTimeMin,
         float                     cooldownTimeMax,
@@ -69,15 +69,15 @@ public:
         ::ActorFilterGroup const& wakeMobExceptions
     );
 
-    MCNAPI bool _canSleep(::Tick const& currentTick) const;
+    MCAPI bool _canSleep(::Tick const& currentTick) const;
 
-    MCNAPI bool _detectsMobs() const;
+    MCAPI bool _detectsMobs() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Mob&                    mob,
         float                     cooldownTimeMin,
         float                     cooldownTimeMax,
@@ -91,15 +91,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
