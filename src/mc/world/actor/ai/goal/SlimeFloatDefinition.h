@@ -13,17 +13,15 @@ namespace JsonUtil { class EmptyClass; }
 
 class SlimeFloatDefinition : public ::BaseGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka7bcf1;
-    ::ll::UntypedStorage<4, 4> mUnk68b86c;
-    // NOLINTEND
+    // SlimeFloatDefinition inner types define
+    using self = ::SlimeFloatDefinition;
 
 public:
-    // prevent constructor by default
-    SlimeFloatDefinition& operator=(SlimeFloatDefinition const&);
-    SlimeFloatDefinition(SlimeFloatDefinition const&);
-    SlimeFloatDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float> mJumpChancePercentage;
+    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -35,7 +33,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                                 name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SlimeFloatDefinition>>& root
     );

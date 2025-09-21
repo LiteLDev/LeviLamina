@@ -27,15 +27,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkb2cae8;
-        ::ll::UntypedStorage<4, 4> mUnk8e0648;
+        ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
+        ::ll::TypedStorage<4, 4, float> mGoalRadius;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
 
     public:
         // virtual functions
@@ -47,7 +41,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const&                                   name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
                 ::JsonUtil::EmptyClass,
@@ -108,17 +102,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

@@ -78,26 +78,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _dischargeCarriedItem();
+    MCAPI void _dischargeCarriedItem();
 
-    MCNAPI void
+    MCAPI void
     handleAttackBehavior(::Actor* lockedTarget, ::Vec3 const& lockedTargetPos, float targetDistanceSq, bool canSee);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

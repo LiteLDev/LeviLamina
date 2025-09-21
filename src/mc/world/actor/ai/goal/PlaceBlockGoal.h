@@ -3,9 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/IntRange.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
+#include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -39,48 +43,37 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 184> mUnk384617;
-            ::ll::UntypedStorage<8, 64>  mUnkc17286;
-            ::ll::UntypedStorage<4, 4>   mUnk2cb266;
+            ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlock;
+            ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilter;
+            ::ll::TypedStorage<4, 4, int>                 mWeight;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            WeightedBlockDescriptor& operator=(WeightedBlockDescriptor const&);
-            WeightedBlockDescriptor(WeightedBlockDescriptor const&);
-            WeightedBlockDescriptor();
 
         public:
             // member functions
             // NOLINTBEGIN
-            MCNAPI ~WeightedBlockDescriptor();
+            MCAPI ~WeightedBlockDescriptor();
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCNAPI void $dtor();
+            MCAPI void $dtor();
             // NOLINTEND
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24>  mUnk8fbefb;
-        ::ll::UntypedStorage<8, 24>  mUnk501d87;
-        ::ll::UntypedStorage<8, 64>  mUnk9406c8;
-        ::ll::UntypedStorage<8, 104> mUnke466f5;
-        ::ll::UntypedStorage<4, 8>   mUnk61eaa2;
-        ::ll::UntypedStorage<4, 8>   mUnkf07b29;
-        ::ll::UntypedStorage<4, 4>   mUnk40c0e9;
-        ::ll::UntypedStorage<1, 1>   mUnk41fd8d;
+        ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mPlaceableCarriedBlocks;
+        ::ll::TypedStorage<8, 24, ::std::vector<::PlaceBlockGoal::Definition::WeightedBlockDescriptor>>
+                                                             mRandomlyPlaceableBlocks;
+        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mCanPlace;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnPlace;
+        ::ll::TypedStorage<4, 8, ::IntRange>                 mXZRange;
+        ::ll::TypedStorage<4, 8, ::IntRange>                 mYRange;
+        ::ll::TypedStorage<4, 4, float>                      mChance;
+        ::ll::TypedStorage<1, 1, bool>                       mAffectedByGriefingRule;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
 
     public:
         // virtual functions
@@ -92,7 +85,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::PlaceBlockGoal::Definition>>&
                 root
@@ -102,7 +95,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -144,27 +137,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _placeBlock(
+    MCAPI void _placeBlock(
         ::BlockSource&                region,
         ::BlockPos const&             targetPos,
         ::VariantParameterList const& params,
         ::Block const&                placementBlock
     );
 
-    MCNAPI ::Block const* _tryGetRandomPlaceBlock(::VariantParameterListConst const& params, ::Random& random) const;
+    MCAPI ::Block const* _tryGetRandomPlaceBlock(::VariantParameterListConst const& params, ::Random& random) const;
 
-    MCNAPI void
+    MCAPI void
     _tryPlaceCarriedBlock(::BlockSource& region, ::BlockPos const& targetPos, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

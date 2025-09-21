@@ -7,6 +7,7 @@
 #include "mc/world/actor/ai/goal/TransportItemsGoalSettings.h"
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
+#include "mc/world/level/block/actor/ChestBlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -32,14 +33,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkeb420c;
+        ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ChestBlockActor::ChestCloser>> mChestCloser;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ContainerCloser& operator=(ContainerCloser const&);
-        ContainerCloser(ContainerCloser const&);
-        ContainerCloser();
     };
 
     enum class Event : int {
@@ -95,27 +90,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _executeEvent(::TransportItemsGoal::Event event) const;
+    MCAPI void _executeEvent(::TransportItemsGoal::Event event) const;
 
-    MCNAPI void _tickIdle();
+    MCAPI void _tickIdle();
 
-    MCNAPI void _tickQueuing(::BlockPos const& targetPos);
+    MCAPI void _tickQueuing(::BlockPos const& targetPos);
 
-    MCNAPI void _tickTravelling(::BlockPos const& targetPos);
+    MCAPI void _tickTravelling(::BlockPos const& targetPos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

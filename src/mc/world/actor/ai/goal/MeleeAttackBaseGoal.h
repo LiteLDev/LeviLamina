@@ -84,39 +84,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit MeleeAttackBaseGoal(::Mob& mob);
+    MCAPI explicit MeleeAttackBaseGoal(::Mob& mob);
 
-    MCNAPI void _attemptAttackTarget(::Actor& target, bool canReachTarget, bool hasLineOfSight);
+    MCAPI void _attemptAttackTarget(::Actor& target, bool canReachTarget, bool hasLineOfSight);
 
-    MCNAPI void _attemptMoveToTargetPosition(::Actor& target, bool canReachTarget, float targetDistanceSq);
+    MCAPI void _attemptMoveToTargetPosition(::Actor& target, bool canReachTarget, float targetDistanceSq);
 
-    MCNAPI bool _inSunlight(::Actor const& actor) const;
+    MCAPI bool _inSunlight(::Actor const& actor) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Mob& mob);
+    MCAPI void* $ctor(::Mob& mob);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCFOLD void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $_attemptMoveToTarget(::Actor& target);
+    MCAPI void $_attemptMoveToTarget(::Actor& target);
     // NOLINTEND
 
 public:

@@ -27,19 +27,13 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkc53cd2;
-        ::ll::UntypedStorage<4, 4> mUnkee577d;
-        ::ll::UntypedStorage<4, 4> mUnkbd24b6;
-        ::ll::UntypedStorage<4, 4> mUnk279837;
-        ::ll::UntypedStorage<4, 4> mUnk47f7f8;
-        ::ll::UntypedStorage<4, 4> mUnke900b4;
+        ::ll::TypedStorage<4, 4, float> mSpeedModifier;
+        ::ll::TypedStorage<4, 4, int>   mSearchRange;
+        ::ll::TypedStorage<4, 4, int>   mSearchHeight;
+        ::ll::TypedStorage<4, 4, int>   mSearchCount;
+        ::ll::TypedStorage<4, 4, float> mGoalRadius;
+        ::ll::TypedStorage<4, 4, float> mTimeoutCooldown;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MoveOutdoorsDefinition& operator=(MoveOutdoorsDefinition const&);
-        MoveOutdoorsDefinition(MoveOutdoorsDefinition const&);
-        MoveOutdoorsDefinition();
 
     public:
         // virtual functions
@@ -51,7 +45,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MoveOutdoorsGoal::MoveOutdoorsDefinition>>&
@@ -98,27 +92,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _setNextTargetTick();
+    MCAPI void _setNextTargetTick();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool mobHasClearSpaceAbove(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI static bool mobHasClearSpaceAbove(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

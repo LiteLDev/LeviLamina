@@ -36,22 +36,20 @@ public:
 
     class Definition : public ::BaseGoalDefinition {
     public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>   mUnke229a2;
-        ::ll::UntypedStorage<4, 4>   mUnk711dae;
-        ::ll::UntypedStorage<1, 1>   mUnkdbff2e;
-        ::ll::UntypedStorage<1, 1>   mUnk1366fe;
-        ::ll::UntypedStorage<1, 1>   mUnk5f98e3;
-        ::ll::UntypedStorage<1, 1>   mUnka52e69;
-        ::ll::UntypedStorage<8, 104> mUnk4b8d8e;
-        // NOLINTEND
+        // Definition inner types define
+        using self = ::DigGoal::Definition;
 
     public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, float>                      mDuration;
+        ::ll::TypedStorage<4, 4, float>                      mIdleTimeSeconds;
+        ::ll::TypedStorage<1, 1, bool>                       mAllowDigWhenNamed;
+        ::ll::TypedStorage<1, 1, bool>                       mVibrationIsDisturbance;
+        ::ll::TypedStorage<1, 1, bool>                       mSuspicionIsDisturbance;
+        ::ll::TypedStorage<1, 1, bool>                       mDigsInDaylight;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnStartEvent;
+        // NOLINTEND
 
     public:
         // virtual functions
@@ -63,7 +61,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const&                                                                                name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DigGoal::Definition>>& root
         );
@@ -125,23 +123,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::DigGoal::CanUseResult _canUse() const;
+    MCAPI ::DigGoal::CanUseResult _canUse() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCFOLD void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

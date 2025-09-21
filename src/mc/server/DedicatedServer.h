@@ -7,22 +7,42 @@
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/islands/AppIsland.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/ScopeExit.h"
+#include "mc/deps/core/utility/ServiceRegistrationToken.h"
+#include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/network/PacketGroupDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
 class AllowListFile;
+class AppConfigs;
+class CDNConfig;
+class ConsoleInputReader;
+class EditorBootstrapper;
 class FileArchiver;
+class IEDUSystems;
 class IGameModuleShared;
 class IMinecraftEventing;
+class LevelDbEnv;
 class LevelSettings;
 class Minecraft;
 class PermissionsFile;
 class PropertiesSettings;
+class ServerInstanceEventCoordinator;
+class ServerTextSettings;
+class SignalingService;
+class SignalingServiceSignInJob;
 class TestConfig;
+struct ImguiProfiler;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
+namespace Bedrock::Http { class DispatcherInterface; }
+namespace Bedrock::Http { class DispatcherProcess; }
+namespace Bedrock::Services { class AuthHelper; }
+namespace Bedrock::Services { class DiscoveryHelper; }
+namespace CodeBuilder { class IManager; }
 namespace Core { class FilePathManager; }
+namespace Core { class FileSystem; }
 // clang-format on
 
 class DedicatedServer : public ::IMinecraftApp, public ::Bedrock::AppIsland {
@@ -39,39 +59,36 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk68043b;
-    ::ll::UntypedStorage<8, 24> mUnkbdf2c1;
-    ::ll::UntypedStorage<8, 16> mUnkb072ba;
-    ::ll::UntypedStorage<1, 1>  mUnk193fee;
-    ::ll::UntypedStorage<4, 4>  mUnkacb014;
-    ::ll::UntypedStorage<8, 8>  mUnka2d04f;
-    ::ll::UntypedStorage<8, 8>  mUnkeefa08;
-    ::ll::UntypedStorage<8, 8>  mUnka4b40a;
-    ::ll::UntypedStorage<8, 8>  mUnkf12457;
-    ::ll::UntypedStorage<8, 16> mUnk7e3932;
-    ::ll::UntypedStorage<8, 8>  mUnk7918f1;
-    ::ll::UntypedStorage<8, 32> mUnk8d1b07;
-    ::ll::UntypedStorage<8, 64> mUnke208cc;
-    ::ll::UntypedStorage<8, 8>  mUnk52b1b9;
-    ::ll::UntypedStorage<8, 8>  mUnk4044be;
-    ::ll::UntypedStorage<8, 8>  mUnka4996b;
-    ::ll::UntypedStorage<8, 8>  mUnk8f0902;
-    ::ll::UntypedStorage<8, 8>  mUnk85bec9;
-    ::ll::UntypedStorage<8, 8>  mUnk5ad410;
-    ::ll::UntypedStorage<8, 8>  mUnk646615;
-    ::ll::UntypedStorage<8, 8>  mUnkdadb88;
-    ::ll::UntypedStorage<8, 8>  mUnk5d6b3b;
-    ::ll::UntypedStorage<8, 8>  mUnk7c88b4;
-    ::ll::UntypedStorage<8, 16> mUnk16bb39;
-    ::ll::UntypedStorage<8, 16> mUnk52e6e7;
-    ::ll::UntypedStorage<8, 16> mUnk825af0;
-    ::ll::UntypedStorage<8, 8>  mUnk6eb85f;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Minecraft>>        mMinecraft;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Core::FileSystem>> mFileSystem;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::ServerInstanceEventCoordinator>>
+                                                                                     mServerInstanceEventCoordinator;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                    mWantsToQuit;
+    ::ll::TypedStorage<4, 4, ::std::atomic<::DedicatedServer::StartResult>>          mResult;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConsoleInputReader>>                mConsoleInputReader;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IGameModuleShared>>                 mGameModule;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AppConfigs>>                        mAppConfig;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::AppConfigs>>               mAppConfigServiceRegistrationToken;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Http::DispatcherProcess>> mHttpDispatcher;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::Bedrock::Http::DispatcherInterface>>
+                                                                         mHttpDispatcherServiceRegistrationToken;
+    ::ll::TypedStorage<8, 32, ::std::string>                             mSessionID;
+    ::ll::TypedStorage<8, 64, ::Bedrock::ScopeExit>                      mOnDestructioncloseAndResetAllLogs;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelDbEnv>>            mLevelDbEnv;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CodeBuilder::IManager>> mCodeBuilder;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::CodeBuilder::IManager>>      mCodeBuilderRegistrationToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ImguiProfiler>>                       mImguiProfiler;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ImguiProfiler>>              mImguiProfilerRegistrationToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FileArchiver>>                        mFileArchiver;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EditorBootstrapper>>                  mEditorBootstrapper;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CDNConfig>>                           mCDNConfig;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerTextSettings>>                  mServerTextSettings;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SignalingService>>                    mSignalingService;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingServiceSignInJob>>          mSignalingServiceSignInJob;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Services::DiscoveryHelper>> mDiscoveryServiceHelper;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Services::AuthHelper>>      mAuthServiceHelper;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IEDUSystems>>                         mEduSystems;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DedicatedServer& operator=(DedicatedServer const&);
-    DedicatedServer(DedicatedServer const&);
 
 public:
     // virtual functions

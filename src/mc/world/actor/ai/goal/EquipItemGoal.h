@@ -71,21 +71,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _dropItem(::ItemStack const& item) const;
+    MCAPI void _dropItem(::ItemStack const& item) const;
 
-    MCNAPI void _sendMobEquipmentPacket(::MobEquipmentPacket packet) const;
+    MCAPI void _sendMobEquipmentPacket(::MobEquipmentPacket packet) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

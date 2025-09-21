@@ -64,25 +64,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _selectNext();
+    MCAPI void _selectNext();
 
-    MCNAPI void _setAnchorAboveGround();
+    MCAPI void _setAnchorAboveGround();
 
-    MCNAPI void _setAnchorAboveTarget();
+    MCAPI void _setAnchorAboveTarget();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCFOLD void $stop();
 
-    MCNAPI bool $canUse();
+    MCFOLD bool $canUse();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

@@ -27,15 +27,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk63a5f0;
-        ::ll::UntypedStorage<8, 64> mUnke8c456;
+        ::ll::TypedStorage<4, 4, float>               mMaxCooldownSeconds;
+        ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DrinkMilkDefinition& operator=(DrinkMilkDefinition const&);
-        DrinkMilkDefinition(DrinkMilkDefinition const&);
-        DrinkMilkDefinition();
 
     public:
         // virtual functions
@@ -47,7 +41,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DrinkMilkGoal::DrinkMilkDefinition>>& root
@@ -105,17 +99,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

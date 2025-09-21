@@ -56,35 +56,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _findNewPartner(::ActorUniqueID previousPartnerId);
+    MCAPI void _findNewPartner(::ActorUniqueID previousPartnerId);
 
-    MCNAPI ::MingleComponent& _getMingleComponent() const;
+    MCAPI ::MingleComponent& _getMingleComponent() const;
 
-    MCNAPI bool _isWithinInteractRange(::Actor& partner) const;
+    MCAPI bool _isWithinInteractRange(::Actor& partner) const;
 
-    MCNAPI void _tickPartneredActive(::MingleComponent& mingleComponent);
+    MCAPI void _tickPartneredActive(::MingleComponent& mingleComponent);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::MingleComponent* _tryGetMingleComponent(::Actor& actor);
+    MCAPI static ::MingleComponent* _tryGetMingleComponent(::Actor& actor);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

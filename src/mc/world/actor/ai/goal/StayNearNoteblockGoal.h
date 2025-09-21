@@ -26,17 +26,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkabdc09;
-        ::ll::UntypedStorage<4, 4> mUnk34cede;
-        ::ll::UntypedStorage<4, 4> mUnk54ab03;
-        ::ll::UntypedStorage<4, 4> mUnk935c11;
+        ::ll::TypedStorage<4, 4, float> mSpeed;
+        ::ll::TypedStorage<4, 4, float> mStartDistance;
+        ::ll::TypedStorage<4, 4, float> mStopDistance;
+        ::ll::TypedStorage<4, 4, int>   mListenTime;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
 
     public:
         // virtual functions
@@ -48,7 +42,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::StayNearNoteblockGoal::Definition>>& root
@@ -104,23 +98,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> const _hasLastVibrationAtNoteblock();
+    MCAPI ::std::optional<::BlockPos> const _hasLastVibrationAtNoteblock();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCFOLD void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

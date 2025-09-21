@@ -13,19 +13,17 @@ namespace JsonUtil { class EmptyClass; }
 
 class SwimWanderDefinition : public ::BaseGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2f517a;
-    ::ll::UntypedStorage<4, 4> mUnkfab444;
-    ::ll::UntypedStorage<4, 4> mUnk24c74f;
-    ::ll::UntypedStorage<4, 4> mUnk4b39d3;
-    // NOLINTEND
+    // SwimWanderDefinition inner types define
+    using self = ::SwimWanderDefinition;
 
 public:
-    // prevent constructor by default
-    SwimWanderDefinition& operator=(SwimWanderDefinition const&);
-    SwimWanderDefinition(SwimWanderDefinition const&);
-    SwimWanderDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float> mInterval;
+    ::ll::TypedStorage<4, 4, float> mLookAheadDistance;
+    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, float> mWanderTime;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -37,7 +35,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                                 name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SwimWanderDefinition>>& root
     );

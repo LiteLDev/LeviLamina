@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/FloatRange.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/actor/ai/util/ExpiringTick.h"
@@ -12,7 +14,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionTrigger;
 class BlockDescriptor;
 class BlockSource;
 class EntityContext;
@@ -31,32 +32,31 @@ public:
     // RandomSearchAndDigGoal inner types define
     class Definition : public ::BaseGoalDefinition {
     public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>   mUnk4238e5;
-        ::ll::UntypedStorage<4, 4>   mUnka8d56d;
-        ::ll::UntypedStorage<4, 4>   mUnkfb237e;
-        ::ll::UntypedStorage<4, 4>   mUnk76bbab;
-        ::ll::UntypedStorage<4, 4>   mUnk7ee553;
-        ::ll::UntypedStorage<4, 4>   mUnkabc13c;
-        ::ll::UntypedStorage<4, 4>   mUnk982b6b;
-        ::ll::UntypedStorage<4, 4>   mUnk1a41fe;
-        ::ll::UntypedStorage<4, 8>   mUnk6fd5b8;
-        ::ll::UntypedStorage<4, 8>   mUnk3568bb;
-        ::ll::UntypedStorage<8, 104> mUnka78a58;
-        ::ll::UntypedStorage<8, 104> mUnkb75651;
-        ::ll::UntypedStorage<8, 104> mUnkab4305;
-        ::ll::UntypedStorage<8, 104> mUnk6d29d0;
-        ::ll::UntypedStorage<8, 104> mUnkaa0a4f;
-        ::ll::UntypedStorage<8, 104> mUnk2873e0;
-        ::ll::UntypedStorage<8, 24>  mUnk8c296b;
-        ::ll::UntypedStorage<8, 32>  mUnk75129d;
-        // NOLINTEND
+        // Definition inner types define
+        using self = ::RandomSearchAndDigGoal::Definition;
 
     public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, float>                             mSpeedMod;
+        ::ll::TypedStorage<4, 4, float>                             mGoalRadius;
+        ::ll::TypedStorage<4, 4, float>                             mDigSpawnItemPosOffset;
+        ::ll::TypedStorage<4, 4, float>                             mDigSpawnItemAfterSeconds;
+        ::ll::TypedStorage<4, 4, int>                               mFindWantedPosRetries;
+        ::ll::TypedStorage<4, 4, int>                               mSearchRangeXZ;
+        ::ll::TypedStorage<4, 4, int>                               mSearchRangeY;
+        ::ll::TypedStorage<4, 4, float>                             mTargetDigPositionOffset;
+        ::ll::TypedStorage<4, 8, ::FloatRange>                      mDiggingDurationRange;
+        ::ll::TypedStorage<4, 8, ::FloatRange>                      mCooldownRangeSeconds;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnSearchingStartEvent;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnFailDuringSearchingEvent;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnDiggingStartEvent;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnItemFoundEvent;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnFailDuringDiggingEvent;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>        mOnSuccessEvent;
+        ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mTargetBlocks;
+        ::ll::TypedStorage<8, 32, ::std::string>                    mItemTable;
+        // NOLINTEND
 
     public:
         // virtual functions
@@ -68,17 +68,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Definition();
+        MCAPI Definition();
 
-        MCNAPI void addBlockDescriptor(::BlockDescriptor const& blockDescriptor);
+        MCAPI void addBlockDescriptor(::BlockDescriptor const& blockDescriptor);
 
-        MCNAPI void initialize(::EntityContext& entity, ::RandomSearchAndDigGoal& goal) const;
+        MCAPI void initialize(::EntityContext& entity, ::RandomSearchAndDigGoal& goal) const;
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<
                 ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RandomSearchAndDigGoal::Definition>>& root
@@ -88,13 +88,13 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -173,33 +173,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::RandomSearchAndDigGoal::CanUseOutcome _canUse();
+    MCAPI ::RandomSearchAndDigGoal::CanUseOutcome _canUse();
 
-    MCNAPI void _digUpItems();
+    MCAPI void _digUpItems();
 
-    MCNAPI void _emitDiggingParticles();
+    MCAPI void _emitDiggingParticles();
 
-    MCNAPI ::std::optional<::BlockPos> _findWantedTargetPos() const;
+    MCAPI ::std::optional<::BlockPos> _findWantedTargetPos() const;
 
-    MCNAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos pos) const;
+    MCAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos pos) const;
 
-    MCNAPI void _triggerEvent(::ActorDefinitionTrigger const& eventTrigger) const;
+    MCAPI void _triggerEvent(::ActorDefinitionTrigger const& eventTrigger) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

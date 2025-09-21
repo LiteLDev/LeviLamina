@@ -2,37 +2,35 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorFilterGroup.h"
+
 struct DrinkPotionData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk3c6934;
-    ::ll::UntypedStorage<4, 4>  mUnkbfc32b;
-    ::ll::UntypedStorage<8, 64> mUnk1390a3;
+    ::ll::TypedStorage<4, 4, int>                 mPotionId;
+    ::ll::TypedStorage<4, 4, float>               mChance;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DrinkPotionData& operator=(DrinkPotionData const&);
-    DrinkPotionData(DrinkPotionData const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DrinkPotionData();
+    MCAPI DrinkPotionData();
 
-    MCNAPI ~DrinkPotionData();
+    MCAPI ~DrinkPotionData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

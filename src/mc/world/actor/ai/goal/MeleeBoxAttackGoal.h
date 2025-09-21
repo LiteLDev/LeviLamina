@@ -35,21 +35,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::AABB _getTargetHitBox(::Actor const& target) const;
+    MCAPI ::AABB _getTargetHitBox(::Actor const& target) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
+    MCFOLD static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:
