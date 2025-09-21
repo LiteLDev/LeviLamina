@@ -19,13 +19,11 @@ class Panda : public ::Animal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk737550;
+    ::ll::TypedStorage<1, 1, bool> mFinishedTransitionLastTick;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Panda& operator=(Panda const&);
-    Panda(Panda const&);
     Panda();
 
 public:

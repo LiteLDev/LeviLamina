@@ -16,14 +16,8 @@ class Dolphin : public ::WaterAnimal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2ae03e;
+    ::ll::TypedStorage<4, 4, int> mBreatheCounter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Dolphin& operator=(Dolphin const&);
-    Dolphin(Dolphin const&);
-    Dolphin();
 
 public:
     // virtual functions

@@ -42,23 +42,23 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $setContainerChanged(int slot);
+    MCFOLD void $setContainerChanged(int slot);
 
-    MCNAPI void $startOpen(::Actor& actor);
+    MCAPI void $startOpen(::Actor& actor);
 
-    MCNAPI void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
+    MCFOLD void $dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCNAPI void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
+    MCFOLD void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
-    MCNAPI void $onRemoved(::BlockSource&);
+    MCFOLD void $onRemoved(::BlockSource&);
 
-    MCNAPI void $initializeContainerContents(::BlockSource& region);
+    MCFOLD void $initializeContainerContents(::BlockSource& region);
     // NOLINTEND
 
 public:
@@ -66,6 +66,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftableForFillingContainer();
 
-    MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
+    MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
 };

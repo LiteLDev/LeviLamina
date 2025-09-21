@@ -24,12 +24,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
+    MCAPI float $getAttributeModifierValue(int amplifier, ::AttributeModifier const& modifier) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

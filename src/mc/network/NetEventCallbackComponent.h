@@ -20,6 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void set(::Bedrock::NonOwnerPointer<::NetEventCallback> callback);
+    MCAPI void set(::Bedrock::NonOwnerPointer<::NetEventCallback> callback);
     // NOLINTEND
 };

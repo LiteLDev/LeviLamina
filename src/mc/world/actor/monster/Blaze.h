@@ -16,16 +16,18 @@ struct ActorDefinitionIdentifier;
 
 class Blaze : public ::Monster {
 public:
+    // Blaze inner types define
+    using DataFlagIdType = char;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8bbde8;
-    ::ll::UntypedStorage<4, 4> mUnk54d31f;
+    ::ll::TypedStorage<4, 4, float> mAllowedHeightOffset;
+    ::ll::TypedStorage<4, 4, int>   mNextHeightOffsetChangeTick;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Blaze& operator=(Blaze const&);
-    Blaze(Blaze const&);
     Blaze();
 
 public:

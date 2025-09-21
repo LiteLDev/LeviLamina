@@ -20,19 +20,13 @@ class Wolf : public ::Animal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2a67c0;
-    ::ll::UntypedStorage<4, 4> mUnk7af3c9;
-    ::ll::UntypedStorage<4, 4> mUnk3b4e09;
-    ::ll::UntypedStorage<4, 4> mUnke5d0b7;
-    ::ll::UntypedStorage<1, 1> mUnkb0504e;
-    ::ll::UntypedStorage<1, 1> mUnk6c6cc2;
+    ::ll::TypedStorage<4, 4, float> mShakeAnim;
+    ::ll::TypedStorage<4, 4, float> mShakeAnimO;
+    ::ll::TypedStorage<4, 4, float> mInterestedAngle;
+    ::ll::TypedStorage<4, 4, float> mInterestedAngleO;
+    ::ll::TypedStorage<1, 1, bool>  mIsWet;
+    ::ll::TypedStorage<1, 1, bool>  mIsShaking;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Wolf& operator=(Wolf const&);
-    Wolf(Wolf const&);
-    Wolf();
 
 public:
     // virtual functions

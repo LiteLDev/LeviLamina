@@ -4,8 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/comprehensive/ParticleType.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
+#include "mc/world/effect/EffectDuration.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,8 +18,6 @@ class EntityContext;
 class MobEffectInstance;
 class Random;
 struct ActorDefinitionIdentifier;
-struct ActorUniqueID;
-struct EffectDuration;
 struct VariantParameterList;
 namespace mce { class Color; }
 // clang-format on
@@ -26,21 +26,19 @@ class AreaEffectCloud : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkce8056;
-    ::ll::UntypedStorage<1, 1>  mUnk156f46;
-    ::ll::UntypedStorage<8, 8>  mUnkdb5778;
-    ::ll::UntypedStorage<4, 4>  mUnkc6f235;
-    ::ll::UntypedStorage<4, 4>  mUnk710b83;
-    ::ll::UntypedStorage<4, 4>  mUnke886ed;
-    ::ll::UntypedStorage<4, 4>  mUnk2cbab8;
-    ::ll::UntypedStorage<8, 24> mUnk92e9be;
-    ::ll::UntypedStorage<8, 64> mUnk66cb21;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                             mOwnerId;
+    ::ll::TypedStorage<1, 1, bool>                                        mAffectOwner;
+    ::ll::TypedStorage<8, 8, int64>                                       mSpawnTickClient;
+    ::ll::TypedStorage<4, 4, int>                                         mReapplicationDelay;
+    ::ll::TypedStorage<4, 4, ::EffectDuration>                            mDurationOnUse;
+    ::ll::TypedStorage<4, 4, int>                                         mLocalPickupCount;
+    ::ll::TypedStorage<4, 4, float>                                       mRadiusOnUse;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>>         mMobAreaEffects;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, int>> mVictims;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    AreaEffectCloud& operator=(AreaEffectCloud const&);
-    AreaEffectCloud(AreaEffectCloud const&);
     AreaEffectCloud();
 
 public:

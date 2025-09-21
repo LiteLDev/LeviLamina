@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/monster/Monster.h"
 
@@ -14,33 +16,35 @@ class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class Vec3;
+class Mob;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
 class Guardian : public ::Monster {
 public:
+    // Guardian inner types define
+    using DataFlagIdType = char;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk57d3d5;
-    ::ll::UntypedStorage<4, 4>  mUnk3decdb;
-    ::ll::UntypedStorage<4, 4>  mUnk347092;
-    ::ll::UntypedStorage<4, 4>  mUnkdf392f;
-    ::ll::UntypedStorage<4, 12> mUnk84296a;
-    ::ll::UntypedStorage<8, 8>  mUnkb833b0;
-    ::ll::UntypedStorage<4, 4>  mUnkeff916;
-    ::ll::UntypedStorage<1, 1>  mUnk880f37;
-    ::ll::UntypedStorage<8, 8>  mUnk3ad402;
-    ::ll::UntypedStorage<1, 1>  mUnk78b2b3;
-    ::ll::UntypedStorage<8, 8>  mUnkfa487a;
-    ::ll::UntypedStorage<8, 8>  mUnkad1f17;
+    ::ll::TypedStorage<8, 32, ::std::string>  ATTACK_SOUND;
+    ::ll::TypedStorage<4, 4, float>           ELDER_SIZE_SCALE;
+    ::ll::TypedStorage<4, 4, int>             FLAG_MOVING;
+    ::ll::TypedStorage<4, 4, int>             FLAG_ELDER;
+    ::ll::TypedStorage<4, 12, ::Vec3>         startPos;
+    ::ll::TypedStorage<8, 8, ::Mob*>          clientSideCachedAttackTarget;
+    ::ll::TypedStorage<4, 4, int>             clientSideAttackTime;
+    ::ll::TypedStorage<1, 1, bool>            clientSideTouchedGround;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mAttackTargetId;
+    ::ll::TypedStorage<1, 1, bool>            mElderGhost;
+    ::ll::TypedStorage<8, 8, uint64>          mLaserLoop;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEyeTarget;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Guardian& operator=(Guardian const&);
-    Guardian(Guardian const&);
     Guardian();
 
 public:

@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/actor/Actor.h"
+#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +13,6 @@ class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
-class ItemStack;
 struct ActorDefinitionIdentifier;
 // clang-format on
 
@@ -19,16 +20,14 @@ class OminousItemSpawner : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk282299;
-    ::ll::UntypedStorage<4, 4>   mUnk1d312a;
-    ::ll::UntypedStorage<8, 152> mUnk44ad75;
-    ::ll::UntypedStorage<8, 24>  mUnk7648eb;
+    ::ll::TypedStorage<4, 4, int>              mTicksBeforeRemoval;
+    ::ll::TypedStorage<4, 4, int>              mHasTicked;
+    ::ll::TypedStorage<8, 152, ::ItemStack>    mItemToSpawn;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mDisplayEntity;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    OminousItemSpawner& operator=(OminousItemSpawner const&);
-    OminousItemSpawner(OminousItemSpawner const&);
     OminousItemSpawner();
 
 public:

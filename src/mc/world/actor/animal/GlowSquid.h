@@ -17,15 +17,9 @@ class GlowSquid : public ::Squid {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3a0a2a;
-    ::ll::UntypedStorage<1, 1> mUnk29ae7c;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mStartTime;
+    ::ll::TypedStorage<1, 1, bool>                                    mGoingDark;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GlowSquid& operator=(GlowSquid const&);
-    GlowSquid(GlowSquid const&);
-    GlowSquid();
 
 public:
     // virtual functions

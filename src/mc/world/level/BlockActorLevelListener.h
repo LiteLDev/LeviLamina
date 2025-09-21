@@ -36,17 +36,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
+    MCAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCNAPI void
+    MCAPI void
     $onSubChunkLoaded(::ChunkSource&, ::LevelChunk& lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged);
 
-    MCNAPI void $onChunkUnloaded(::LevelChunk& lc);
+    MCAPI void $onChunkUnloaded(::LevelChunk& lc);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

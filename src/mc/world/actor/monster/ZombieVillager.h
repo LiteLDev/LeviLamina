@@ -18,15 +18,9 @@ class ZombieVillager : public ::Zombie {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk48fc92;
-    ::ll::UntypedStorage<1, 1> mUnk4d0943;
+    ::ll::TypedStorage<4, 4, int>  villagerConversionTime;
+    ::ll::TypedStorage<1, 1, bool> mSpawnedFromVillage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ZombieVillager& operator=(ZombieVillager const&);
-    ZombieVillager(ZombieVillager const&);
-    ZombieVillager();
 
 public:
     // virtual functions
