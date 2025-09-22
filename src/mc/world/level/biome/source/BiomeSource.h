@@ -13,6 +13,7 @@ class BlockPos;
 class BoundingBox;
 class ChunkLocalNoiseCache;
 class LevelChunk;
+struct BiomeIdType;
 struct GetBiomeOptions;
 // clang-format on
 
@@ -33,7 +34,7 @@ public:
     virtual ::BiomeArea getBiomeArea(::BoundingBox const&, uint, ::GetBiomeOptions const&) const = 0;
 
     // vIndex: 4
-    virtual bool containsOnly(int, int, int, int, ::gsl::span<uint64 const>) const = 0;
+    virtual bool containsOnly(int, int, int, int, ::gsl::span<::BiomeIdType const>) const = 0;
 
     // vIndex: 7
     virtual ::Biome const* getBiome(::BlockPos const&) const = 0;
@@ -45,7 +46,7 @@ public:
     virtual ::Biome const* getBiome(int, int, int) const = 0;
 
     // vIndex: 8
-    virtual bool hasBiomeById(ushort) const = 0;
+    virtual bool hasBiomeById(::BiomeIdType) const = 0;
 
     // vIndex: 9
     virtual bool hasBiomeByNameHash(uint64) const = 0;

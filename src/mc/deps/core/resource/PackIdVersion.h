@@ -29,8 +29,6 @@ public:
     // NOLINTBEGIN
     MCAPI PackIdVersion(::PackIdVersion const&);
 
-    MCAPI PackIdVersion(::std::string const& id, ::std::string const& version, ::PackType packType);
-
     MCAPI PackIdVersion(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);
 
     MCAPI ::std::string asString() const;
@@ -58,8 +56,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::PackIdVersion const&);
-
-    MCAPI void* $ctor(::std::string const& id, ::std::string const& version, ::PackType packType);
 
     MCAPI void* $ctor(::mce::UUID const& id, ::SemVersion const& version, ::PackType packType);
     // NOLINTEND

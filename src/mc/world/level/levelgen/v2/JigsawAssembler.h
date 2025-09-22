@@ -15,6 +15,7 @@ namespace br::worldgen { class GenerationStub; }
 namespace br::worldgen { class WorldGenContext; }
 namespace br::worldgen { struct DimensionPadding; }
 namespace br::worldgen { struct GenerationContext; }
+namespace br::worldgen { struct MaxDistanceFromCenter; }
 // clang-format on
 
 namespace br::worldgen {
@@ -31,7 +32,7 @@ public:
         int                                       maxDepth,
         ::BlockPos                                startPos,
         ::br::worldgen::HeightmapProjection::Type heightmapProjection,
-        int                                       maxDistanceFromCenter,
+        ::br::worldgen::MaxDistanceFromCenter     maxDistanceFromCenter,
         ::br::worldgen::DimensionPadding          dimensionPadding,
         ::PoolAliasBinding::PoolAliasLookup&&     poolAliasLookup,
         ::br::worldgen::JigsawExpansion           expansion,

@@ -19,7 +19,7 @@ class SayCommand : public ::MessagingCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk360023;
+    ::ll::UntypedStorage<8, 32> mUnk360023;
     // NOLINTEND
 
 public:

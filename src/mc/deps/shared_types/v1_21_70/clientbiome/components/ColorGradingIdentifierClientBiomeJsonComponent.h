@@ -16,7 +16,7 @@ struct ColorGradingIdentifierClientBiomeJsonComponent : public ::SharedTypes::v1
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1f6a50;
+    ::ll::UntypedStorage<8, 32> mUnk225a0a;
     // NOLINTEND
 
 public:

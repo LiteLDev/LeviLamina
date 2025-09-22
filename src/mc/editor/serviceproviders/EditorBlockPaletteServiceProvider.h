@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
+class BlockType;
 class HashedString;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { struct EditorBlockPalette; }
@@ -62,7 +62,7 @@ public:
     virtual ::Scripting::Result_deprecated<void> pickBlock(::Block const&) = 0;
 
     // vIndex: 10
-    virtual ::Scripting::Result_deprecated<::BlockLegacy const*> getSelectedBlockType() const = 0;
+    virtual ::Scripting::Result_deprecated<::BlockType const*> getSelectedBlockType() const = 0;
 
     // vIndex: 11
     virtual ::std::vector<::std::string> getPaletteIdList() const = 0;
@@ -76,7 +76,7 @@ public:
     getPaletteItem(::HashedString const&, int) const = 0;
 
     // vIndex: 14
-    virtual void forEachBlockType(::std::function<void(::BlockLegacy const&, bool)>) const = 0;
+    virtual void forEachBlockType(::std::function<void(::BlockType const&, bool)>) const = 0;
 
     // vIndex: 15
     virtual ::Bedrock::PubSub::Subscription registerEventListener(

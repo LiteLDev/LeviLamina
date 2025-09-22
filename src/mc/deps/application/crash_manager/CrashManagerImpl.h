@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/application/crash_manager/CrashManager.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 
 // auto generated forward declare list
 // clang-format off

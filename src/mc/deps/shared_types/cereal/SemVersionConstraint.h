@@ -17,8 +17,8 @@ class SemVersionConstraint : public ::cereal::Constraint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka2b475;
-    ::ll::UntypedStorage<8, 24> mUnk5be173;
+    ::ll::UntypedStorage<8, 32> mUnk1e1562;
+    ::ll::UntypedStorage<8, 32> mUnkeae1a6;
     // NOLINTEND
 
 public:

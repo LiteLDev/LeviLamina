@@ -42,6 +42,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::SharedTypes::NamespaceConstraint& disallowMinecraft();
+
     MCNAPI ::std::string getRegexString(::std::optional<::std::string> disallowedNamespace) const;
     // NOLINTEND
 

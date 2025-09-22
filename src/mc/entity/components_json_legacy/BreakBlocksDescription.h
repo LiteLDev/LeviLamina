@@ -14,7 +14,7 @@ struct BreakBlocksDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk25213d;
+    ::ll::UntypedStorage<8, 64> mUnk931570;
     // NOLINTEND
 
 public:

@@ -30,18 +30,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk4e5c3a;
-        ::ll::UntypedStorage<4, 4> mUnk36f1db;
-        ::ll::UntypedStorage<4, 4> mUnke583fe;
-        ::ll::UntypedStorage<4, 4> mUnk3a8303;
-        ::ll::UntypedStorage<4, 8> mUnkaa5169;
+        ::ll::TypedStorage<4, 4, float>        mDuration;
+        ::ll::TypedStorage<4, 4, float>        mSniffingRadius;
+        ::ll::TypedStorage<4, 4, float>        mSuspicionRadiusHorizontal;
+        ::ll::TypedStorage<4, 4, float>        mSuspicionRadiusVertical;
+        ::ll::TypedStorage<4, 8, ::FloatRange> mCooldownRangeSeconds;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
 
     public:
         // virtual functions
@@ -53,7 +47,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const&                                                                                  name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SniffGoal::Definition>>& root
         );
@@ -113,25 +107,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::DistanceSortedActor> _fetchNearbySniffableActors(::ActorType actorType) const;
+    MCAPI ::std::vector<::DistanceSortedActor> _fetchNearbySniffableActors(::ActorType actorType) const;
 
-    MCNAPI ::std::optional<::DistanceSortedActor> _fetchNearestSniffableActor() const;
+    MCAPI ::std::optional<::DistanceSortedActor> _fetchNearestSniffableActor() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCFOLD void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

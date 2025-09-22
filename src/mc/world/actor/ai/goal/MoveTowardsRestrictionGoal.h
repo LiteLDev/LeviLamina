@@ -42,14 +42,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _randomizeWantedPositionTowardsRestriction(::Vec3 const& restrictionCenter);
+    MCAPI bool _randomizeWantedPositionTowardsRestriction(::Vec3 const& restrictionCenter);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCFOLD void $start();
     // NOLINTEND
 };

@@ -46,7 +46,7 @@ public:
     virtual ::rtc::SocketAddress GetRemoteAddress() const /*override*/;
 
     // vIndex: 3
-    virtual int Send(void const* pv, uint64 cb, ::rtc::PacketOptions const& options) /*override*/;
+    virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) /*override*/;
 
     // vIndex: 4
     virtual int SendTo(
@@ -102,7 +102,7 @@ public:
 
     MCNAPI ::rtc::SocketAddress $GetRemoteAddress() const;
 
-    MCNAPI int $Send(void const* pv, uint64 cb, ::rtc::PacketOptions const& options);
+    MCNAPI int $Send(void const* data, uint64 len, ::rtc::PacketOptions const& options);
 
     MCNAPI int
     $SendTo(void const* pv, uint64 cb, ::rtc::SocketAddress const& addr, ::rtc::PacketOptions const& options);

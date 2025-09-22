@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/identity/IdentityEventResponse.h"
 #include "mc/identity/IdentityType.h"
 #include "mc/identity/PermissionDenyReason.h"
@@ -60,7 +60,7 @@ public:
     virtual void cancelSignIn();
 
     // vIndex: 6
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<bool>> signOut();
+    virtual ::Bedrock::Threading::Async<bool> signOut();
 
     // vIndex: 7
     virtual void doDisconnect();
@@ -96,8 +96,7 @@ public:
     virtual ::Social::PlayerIDs getIds() const;
 
     // vIndex: 18
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Social::AuthToken>>
-    getAuthToken(::std::string const&) const;
+    virtual ::Bedrock::Threading::Async<::Social::AuthToken> getAuthToken(::std::string const&) const;
 
     // vIndex: 19
     virtual void getUserDataObject(::Social::IUserDataObject&) const;
@@ -196,16 +195,14 @@ public:
     virtual bool isBlockingUser(::std::string const&) const;
 
     // vIndex: 51
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Social::PlatformUserProfileData>>
-    getProfile(::std::string const&);
+    virtual ::Bedrock::Threading::Async<::Social::PlatformUserProfileData> getProfile(::std::string const&);
 
     // vIndex: 52
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::vector<::Social::PlatformUserProfileData>>>
+    virtual ::Bedrock::Threading::Async<::std::vector<::Social::PlatformUserProfileData>>
     getProfiles(::std::vector<::std::string> const&);
 
     // vIndex: 53
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::vector<::Social::PlatformUserProfileData>>>
-    getFriendProfiles();
+    virtual ::Bedrock::Threading::Async<::std::vector<::Social::PlatformUserProfileData>> getFriendProfiles();
 
     // vIndex: 54
     virtual void pruneProfileImageCache();

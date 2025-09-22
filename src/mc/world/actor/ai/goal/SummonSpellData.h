@@ -2,20 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/actor/ActorFilterGroup.h"
+
+// auto generated forward declare list
+// clang-format off
+struct SummonSpellStage;
+// clang-format on
+
 struct SummonSpellData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk586f56;
-    ::ll::UntypedStorage<4, 4>  mUnkc53df2;
-    ::ll::UntypedStorage<4, 4>  mUnk71b8cc;
-    ::ll::UntypedStorage<4, 4>  mUnk4f45cd;
-    ::ll::UntypedStorage<8, 64> mUnk416083;
-    ::ll::UntypedStorage<4, 4>  mUnkff9321;
-    ::ll::UntypedStorage<1, 1>  mUnk7f1b0d;
-    ::ll::UntypedStorage<4, 4>  mUnkafa557;
-    ::ll::UntypedStorage<8, 24> mUnk1b420f;
-    ::ll::UntypedStorage<4, 4>  mUnkad1855;
+    ::ll::TypedStorage<4, 4, float>                                  minActivationRange;
+    ::ll::TypedStorage<4, 4, float>                                  maxActivationRange;
+    ::ll::TypedStorage<4, 4, int>                                    cooldownTime;
+    ::ll::TypedStorage<4, 4, float>                                  weight;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                    targetFilter;
+    ::ll::TypedStorage<4, 4, float>                                  castDuration;
+    ::ll::TypedStorage<1, 1, bool>                                   doCastingAnimation;
+    ::ll::TypedStorage<4, 4, int>                                    particleColor;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SummonSpellStage>>     stages;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> startSound;
     // NOLINTEND
 
 public:
@@ -26,20 +35,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SummonSpellData(::SummonSpellData const&);
+    MCAPI SummonSpellData(::SummonSpellData const&);
 
-    MCNAPI ~SummonSpellData();
+    MCAPI ~SummonSpellData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SummonSpellData const&);
+    MCAPI void* $ctor(::SummonSpellData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 // clang-format on
 
-class MangroveRootsBlock : public ::BlockLegacy {
+class MangroveRootsBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN

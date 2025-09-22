@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/v2/processors/BlockStateMatch.h"
+#include "mc/world/level/levelgen/v2/processors/RandomBlockStateMatch.h"
 #include "mc/world/level/levelgen/v2/processors/block_rules/AlwaysTrue.h"
 #include "mc/world/level/levelgen/v2/processors/block_rules/BlockMatch.h"
 #include "mc/world/level/levelgen/v2/processors/block_rules/RandomBlockMatch.h"
@@ -25,7 +27,9 @@ public:
         ::br::worldgen::processors::BlockRules::AlwaysTrue,
         ::br::worldgen::processors::BlockRules::BlockMatch,
         ::br::worldgen::processors::BlockRules::RandomBlockMatch,
-        ::br::worldgen::processors::BlockRules::TagMatch>;
+        ::br::worldgen::processors::BlockRules::TagMatch,
+        ::br::worldgen::processors::BlockRules::BlockStateMatch,
+        ::br::worldgen::processors::BlockRules::RandomBlockStateMatch>;
 
 public:
     // member variables
@@ -37,7 +41,9 @@ public:
             ::br::worldgen::processors::BlockRules::AlwaysTrue,
             ::br::worldgen::processors::BlockRules::BlockMatch,
             ::br::worldgen::processors::BlockRules::RandomBlockMatch,
-            ::br::worldgen::processors::BlockRules::TagMatch>>
+            ::br::worldgen::processors::BlockRules::TagMatch,
+            ::br::worldgen::processors::BlockRules::BlockStateMatch,
+            ::br::worldgen::processors::BlockRules::RandomBlockStateMatch>>
         mData;
     // NOLINTEND
 

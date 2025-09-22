@@ -11,7 +11,7 @@ class Material : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkfa608e;
+    ::ll::UntypedStorage<1, 1>  mUnk1c7c71;
     ::ll::UntypedStorage<8, 88> mUnka4e86b;
     ::ll::UntypedStorage<4, 4>  mUnk98f450;
     ::ll::UntypedStorage<1, 1>  mUnk7f9102;

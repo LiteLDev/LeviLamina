@@ -15,17 +15,11 @@ class SwimUpForBreathDefinition : public ::BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk1ab2f0;
-    ::ll::UntypedStorage<4, 4>  mUnk4d1366;
-    ::ll::UntypedStorage<4, 4>  mUnk980937;
-    ::ll::UntypedStorage<8, 32> mUnk81eab7;
+    ::ll::TypedStorage<4, 4, float>          mSpeedMod;
+    ::ll::TypedStorage<4, 4, int>            mSearchRadius;
+    ::ll::TypedStorage<4, 4, int>            mSearchHeight;
+    ::ll::TypedStorage<8, 32, ::std::string> mMaterialTypeName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SwimUpForBreathDefinition& operator=(SwimUpForBreathDefinition const&);
-    SwimUpForBreathDefinition(SwimUpForBreathDefinition const&);
-    SwimUpForBreathDefinition();
 
 public:
     // virtual functions
@@ -37,7 +31,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                                      name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SwimUpForBreathDefinition>>& root
     );

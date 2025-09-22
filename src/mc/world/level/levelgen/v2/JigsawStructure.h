@@ -6,13 +6,16 @@
 #include "mc/world/level/levelgen/v2/DimensionPadding.h"
 #include "mc/world/level/levelgen/v2/JigsawExpansion.h"
 #include "mc/world/level/levelgen/v2/LiquidSettings.h"
+#include "mc/world/level/levelgen/v2/MaxDistanceFromCenter.h"
 #include "mc/world/level/levelgen/v2/Structure.h"
 #include "mc/world/level/levelgen/v2/StructureHeightProvider.h"
 #include "mc/world/level/levelgen/v2/heightmap_projection/Type.h"
 
 // auto generated forward declare list
 // clang-format off
+class IRandom;
 namespace br::worldgen { class GenerationStub; }
+namespace br::worldgen { class WorldGenContext; }
 namespace br::worldgen { struct GenerationContext; }
 // clang-format on
 
@@ -26,7 +29,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                            mStart;
     ::ll::TypedStorage<1, 1, char>                                      mMaxDepth;
     ::ll::TypedStorage<8, 56, ::br::worldgen::StructureHeightProvider>  mStartHeight;
-    ::ll::TypedStorage<4, 4, int>                                       mMaxDistanceFromCenter;
+    ::ll::TypedStorage<4, 8, ::br::worldgen::MaxDistanceFromCenter>     mMaxDistanceFromCenter;
     ::ll::TypedStorage<4, 8, ::br::worldgen::DimensionPadding>          mDimensionPadding;
     ::ll::TypedStorage<1, 1, ::br::worldgen::HeightmapProjection::Type> mProjectStartToHeightmap;
     ::ll::TypedStorage<1, 1, ::br::worldgen::JigsawExpansion>           mExpansion;
@@ -41,9 +44,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+    // vIndex: 2
     virtual ::std::optional<::br::worldgen::GenerationStub>
     findValidGenerationPoint(::br::worldgen::GenerationContext& context) const /*override*/;
+
+    // vIndex: 1
+    virtual short originHeight(::IRandom& random, ::br::worldgen::WorldGenContext& context) const /*override*/;
 
     // vIndex: 0
     virtual ~JigsawStructure() /*override*/;
@@ -76,6 +82,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::optional<::br::worldgen::GenerationStub>
     $findValidGenerationPoint(::br::worldgen::GenerationContext& context) const;
+
+    MCNAPI short $originHeight(::IRandom& random, ::br::worldgen::WorldGenContext& context) const;
     // NOLINTEND
 
 public:

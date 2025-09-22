@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/TaskGroupState.h"
 #include "mc/platform/brstd/move_only_function.h"
 
@@ -22,14 +22,14 @@ public:
     virtual ~IBackgroundTaskOwner() = default;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> queue_DEPRECATED(
+    virtual ::Bedrock::Threading::Async<void> queue_DEPRECATED(
         ::TaskStartInfo const&,
         ::brstd::move_only_function<::TaskResult()>&&,
         ::std::function<void()>&&
     ) = 0;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    virtual ::Bedrock::Threading::Async<void>
     queueSync_DEPRECATED(::TaskStartInfo const&, ::brstd::move_only_function<::TaskResult()>&&) = 0;
 
     // vIndex: 3

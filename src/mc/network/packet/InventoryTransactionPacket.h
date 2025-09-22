@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/packet/InventoryPacket.h"
 #include "mc/platform/Result.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
@@ -12,12 +12,16 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class BlockPalette;
 class ComplexInventoryTransaction;
 class ReadOnlyBinaryStream;
+class ServerPlayer;
+struct ActorRotationComponent;
 struct ItemStackLegacyRequestIdTag;
+struct MoveInputComponent;
 // clang-format on
 
-class InventoryTransactionPacket : public ::Packet {
+class InventoryTransactionPacket : public ::InventoryPacket {
 public:
     // InventoryTransactionPacket inner types define
     using LegacySetSlot = ::std::pair<::ContainerEnumName, ::std::vector<uchar>>;
@@ -35,20 +39,29 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~InventoryTransactionPacket() /*override*/;
+
     // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 8
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    // vIndex: 15
+    virtual void handle(
+        ::ServerPlayer&             player,
+        ::BlockPalette&             blockPalette,
+        ::MoveInputComponent const& moveInput,
+        ::ActorRotationComponent&   actorRotation,
+        bool                        isAimAssist
+    ) const /*override*/;
 
-    // vIndex: 0
-    virtual ~InventoryTransactionPacket() /*override*/;
+    // vIndex: 13
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
 public:
@@ -65,6 +78,14 @@ public:
     MCAPI ::std::string $getName() const;
 
     MCAPI void $write(::BinaryStream& stream) const;
+
+    MCAPI void $handle(
+        ::ServerPlayer&             player,
+        ::BlockPalette&             blockPalette,
+        ::MoveInputComponent const& moveInput,
+        ::ActorRotationComponent&   actorRotation,
+        bool                        isAimAssist
+    ) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND

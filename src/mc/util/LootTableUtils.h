@@ -38,7 +38,7 @@ public:
 
     MCAPI static ::std::vector<::ItemStack> generateRandomDeathLoot(
         ::LootTable const&         table,
-        ::Actor&                   entity,
+        ::Actor&                   lootSourceEntity,
         ::ActorDamageSource const* damageSource,
         ::ItemStack const*         tool,
         ::Player*                  killer,

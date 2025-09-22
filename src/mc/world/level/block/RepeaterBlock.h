@@ -10,9 +10,9 @@
 // clang-format off
 class Block;
 class BlockActor;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class Experiments;
 class ItemInstance;
 struct BlockAnimateTickData;
@@ -25,55 +25,55 @@ class RepeaterBlock : public ::DiodeBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 66
+    // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual bool isLocked(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 135
+    // vIndex: 136
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 122
+    // vIndex: 123
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 137
+    // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 86
+    // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 131
+    // vIndex: 132
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 53
+    // vIndex: 54
     virtual bool
     shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
         /*override*/;
 
-    // vIndex: 69
-    virtual bool isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const /*override*/;
-
-    // vIndex: 157
-    virtual int getTurnOnDelay(::Block const& block) const /*override*/;
+    // vIndex: 70
+    virtual bool isPreservingMediumWhenPlaced(::BlockType const* medium) const /*override*/;
 
     // vIndex: 158
-    virtual ::Block const* getOnBlock(::Block const* block) const /*override*/;
+    virtual int getTurnOnDelay(::Block const& block) const /*override*/;
 
     // vIndex: 159
+    virtual ::Block const* getOnBlock(::Block const* block) const /*override*/;
+
+    // vIndex: 160
     virtual ::Block const* getOffBlock(::Block const* block) const /*override*/;
 
-    // vIndex: 153
+    // vIndex: 154
     virtual bool isAlternateInput(::Block const& block) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -124,7 +124,7 @@ public:
     MCAPI bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCFOLD bool $isPreservingMediumWhenPlaced(::BlockLegacy const* medium) const;
+    MCFOLD bool $isPreservingMediumWhenPlaced(::BlockType const* medium) const;
 
     MCAPI int $getTurnOnDelay(::Block const& block) const;
 

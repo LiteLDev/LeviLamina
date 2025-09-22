@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>   mUnk8c3b5e;
     ::ll::UntypedStorage<8, 200> mUnk28fb71;
-    ::ll::UntypedStorage<8, 24>  mUnkf19dd5;
+    ::ll::UntypedStorage<8, 32>  mUnkf19dd5;
     ::ll::UntypedStorage<4, 4>   mUnk189b73;
     ::ll::UntypedStorage<4, 4>   mUnkc6c5f6;
     ::ll::UntypedStorage<4, 4>   mUnka4d770;

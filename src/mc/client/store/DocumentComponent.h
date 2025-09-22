@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/store/servicecomponent/StoreUIComponent.h"
+#include "mc/client/store/servicecomponent/StoreUIComponentWithStaticBinding.h"
 
-class DocumentComponent : public ::StoreUIComponent {
+class DocumentComponent : public ::StoreUIComponentWithStaticBinding<void> {
 public:
     // member variables
     // NOLINTBEGIN

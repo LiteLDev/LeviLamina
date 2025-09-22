@@ -39,7 +39,7 @@ public:
     // vIndex: 0
     virtual ~WorldTemplatePackSource() /*override*/ = default;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&& options) /*override*/;
     // NOLINTEND
 

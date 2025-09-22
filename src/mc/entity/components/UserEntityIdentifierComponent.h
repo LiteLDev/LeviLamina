@@ -13,12 +13,12 @@ class UserEntityIdentifierComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>       mNetworkId;
-    ::ll::TypedStorage<1, 1, ::SubClientId>               mClientSubId;
-    ::ll::TypedStorage<8, 32, ::std::string>              mPlayFabIdUnverified;
-    ::ll::TypedStorage<8, 16, ::mce::UUID>                mClientUUID;
-    ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType>  mAuthenticationType;
-    ::ll::TypedStorage<8, 64, ::PlayerAuthenticationInfo> mTrustedPlayerInfo;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>        mNetworkId;
+    ::ll::TypedStorage<1, 1, ::SubClientId>                mClientSubId;
+    ::ll::TypedStorage<8, 32, ::std::string>               mPlayFabIdUnverified;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                 mClientUUID;
+    ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType>   mAuthenticationType;
+    ::ll::TypedStorage<8, 272, ::PlayerAuthenticationInfo> mTrustedPlayerInfo;
     // NOLINTEND
 
 public:
@@ -33,19 +33,11 @@ public:
     MCAPI UserEntityIdentifierComponent(::UserEntityIdentifierComponent&&);
 
     MCAPI ::UserEntityIdentifierComponent& operator=(::UserEntityIdentifierComponent&&);
-
-    MCAPI ~UserEntityIdentifierComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::UserEntityIdentifierComponent&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

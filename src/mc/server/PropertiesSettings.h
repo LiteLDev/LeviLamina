@@ -14,6 +14,7 @@
 #include "mc/network/NetworkPermissions.h"
 #include "mc/network/NetworkSettingOptions.h"
 #include "mc/network/TransportLayer.h"
+#include "mc/options/EducationServicesEnvironment.h"
 #include "mc/scripting/ScriptSettings.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 #include "mc/world/actor/player/PlayerMovementSettings.h"
@@ -77,7 +78,7 @@ public:
     ::ll::TypedStorage<4, 4, ::HCTraceLevel>                                      mHttpLogLevel;
     ::ll::TypedStorage<4, 4, float>                                               mWebsocketRetryTime;
     ::ll::TypedStorage<1, 1, bool>                                                mUseWebsocketEncryption;
-    ::ll::TypedStorage<4, 24, ::NetworkSettingOptions>                            mNetworkSettings;
+    ::ll::TypedStorage<4, 20, ::NetworkSettingOptions>                            mNetworkSettings;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mCustomProperties;
     ::ll::TypedStorage<8, 64, ::PlayerMovementSettings>                           mPlayerMovementSettings;
     ::ll::TypedStorage<8, 704, ::ScriptSettings>                                  mScriptSettings;
@@ -98,6 +99,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                      mServerPublicIP;
     ::ll::TypedStorage<8, 24, ::std::vector<::MappedPorts>>                       mPortMappings;
     ::ll::TypedStorage<4, 8, ::Bedrock::Services::DiscoveryConfig>                mDiscoveryConfig;
+    ::ll::TypedStorage<4, 4, ::EducationServicesEnvironment>                      mEducationServicesEnvironment;
     // NOLINTEND
 
 public:
@@ -114,8 +116,6 @@ public:
     MCAPI ::SharedTypes::Legacy::Difficulty getDifficulty() const;
 
     MCAPI ::CommandPermissionLevel getOpPermissionLevel() const;
-
-    MCAPI float websocketRetryTime() const;
 
     MCAPI ~PropertiesSettings();
     // NOLINTEND

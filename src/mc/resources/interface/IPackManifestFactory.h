@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+
 // auto generated forward declare list
 // clang-format off
 class PackAccessStrategy;
@@ -11,12 +14,12 @@ class ResourceLocation;
 class SubpackInfoCollection;
 // clang-format on
 
-class IPackManifestFactory {
+class IPackManifestFactory : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPackManifestFactory();
+    virtual ~IPackManifestFactory() /*override*/;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::PackManifest>
@@ -33,11 +36,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

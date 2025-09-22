@@ -10,7 +10,7 @@ class CompositePacketLimitAlgorithm : public ::IPacketLimitAlgorithm {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk6c2121;
+    ::ll::UntypedStorage<8, 24> mUnk1a756c;
     // NOLINTEND
 
 public:
@@ -22,17 +22,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual uint checkPacket(::MinecraftPacketIds) /*override*/;
-
     // vIndex: 1
+    virtual ::std::unique_ptr<::IPacketLimitAlgorithm> copy() const /*override*/;
+
+    // vIndex: 2
+    virtual uint checkPacket(::MinecraftPacketIds packet) /*override*/;
+
+    // vIndex: 0
     virtual ~CompositePacketLimitAlgorithm() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::unique_ptr<::IPacketLimitAlgorithm> $copy() const;
 
+    MCNAPI uint $checkPacket(::MinecraftPacketIds packet);
     // NOLINTEND
 
 public:

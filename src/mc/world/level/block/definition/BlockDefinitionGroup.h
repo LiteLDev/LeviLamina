@@ -14,7 +14,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
+class BlockType;
 class CompoundTag;
 class Experiments;
 class IPackLoadContext;
@@ -96,7 +96,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit BlockDefinitionGroup(::cereal::ReflectionCtx const& ctx);
 
-    MCNAPI void _applyBlockStates(::BlockLegacy* block, ::BlockDefinition const& definition);
+    MCNAPI void _applyBlockStates(::BlockType* block, ::BlockDefinition const& definition);
 
     MCNAPI void _buildBlockDescriptionSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockDescription>>& description
@@ -153,6 +153,8 @@ public:
 
     MCNAPI void buildBlockSchema();
 
+    MCNAPI void digestServerBlockProperties(::std::vector<::std::pair<::std::string, ::CompoundTag>> const& blocks);
+
     MCNAPI ::std::unique_ptr<::BlockDefinition>
     generateBlockDefinition(::BlockDefinitionGroup::BlockResource const& resource, ::IPackLoadContext& packLoadContext);
 
@@ -162,7 +164,7 @@ public:
 
     MCNAPI void initBlockFromDefinition(::Block& block, ::BlockPermutationDescription const& definition);
 
-    MCNAPI void initBlockLegacyFromDefinition(::BlockLegacy& blockLegacy, ::BlockDefinition const& definition);
+    MCNAPI void initBlockTypeFromDefinition(::BlockType& blockType, ::BlockDefinition const& definition);
 
     MCNAPI void initializeBlockFromDefinition(::BlockDefinition const& definition, ::Level& level);
 
@@ -181,7 +183,7 @@ public:
 
     MCNAPI void registerBlockFromDefinition(::BlockDefinition const& definition, bool assertIfAlreadyExists);
 
-    MCNAPI ::WeakPtr<::BlockLegacy> registerDataDrivenBlock(::BlockDescription const& desc);
+    MCNAPI ::WeakPtr<::BlockType> registerDataDrivenBlock(::BlockDescription const& desc);
 
     MCNAPI ~BlockDefinitionGroup();
     // NOLINTEND

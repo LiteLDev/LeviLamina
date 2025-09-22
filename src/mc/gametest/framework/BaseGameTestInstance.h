@@ -32,6 +32,7 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnk96e162;
     ::ll::UntypedStorage<8, 24>  mUnk367b13;
     ::ll::UntypedStorage<8, 64>  mUnkc7fcf4;
+    ::ll::UntypedStorage<8, 24>  mUnkb2b602;
     ::ll::UntypedStorage<8, 24>  mUnk6788f9;
     ::ll::UntypedStorage<8, 8>   mUnk2a8560;
     ::ll::UntypedStorage<8, 248> mUnkfdc9e5;
@@ -113,6 +114,8 @@ public:
         ::gametest::BaseGameTestFunction const&                testFunction,
         ::std::unique_ptr<::gametest::IGameTestHelperProvider> helper
     );
+
+    MCNAPI void _cleanup();
 
     MCNAPI ::gametest::GameTestSequence& createSequence();
 

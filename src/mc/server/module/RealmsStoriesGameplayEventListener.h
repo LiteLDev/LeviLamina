@@ -46,7 +46,7 @@ public:
     // vIndex: 32
     virtual ::EventResult onEvent(::ActorKilledEvent const& actorKilledEvent) /*override*/;
 
-    // vIndex: 68
+    // vIndex: 69
     virtual ::EventResult onEvent(::PlayerUseNameTagEvent const& playerUseNameTagEvent) /*override*/;
 
     // vIndex: 16

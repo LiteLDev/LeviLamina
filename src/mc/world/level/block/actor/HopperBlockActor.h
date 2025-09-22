@@ -12,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
@@ -19,7 +20,6 @@ class CompoundTag;
 class DataLoadHelper;
 class FurnaceBlockActor;
 class ILevel;
-class Player;
 class SaveContext;
 // clang-format on
 
@@ -53,7 +53,7 @@ public:
     // vIndex: 12
     virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 28
+    // vIndex: 26
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 20
@@ -63,27 +63,27 @@ public:
     virtual int getMaxStackSize() const /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player&) /*override*/;
+    virtual void startOpen(::Actor&) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 35
+    // vIndex: 32
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 34
+    // vIndex: 31
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 34
     virtual void setContainerChanged(int slot) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void onRemoved(::BlockSource&) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual void onNeighborChanged(::BlockSource& region, ::BlockPos const&) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 12
     virtual void onMove() /*override*/;
 
     // vIndex: 2
@@ -93,10 +93,10 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource&) /*override*/;
 
     // vIndex: 0
@@ -148,9 +148,9 @@ public:
 
     MCFOLD int $getMaxStackSize() const;
 
-    MCFOLD void $startOpen(::Player&);
+    MCFOLD void $startOpen(::Actor&);
 
-    MCFOLD void $stopOpen(::Player& player);
+    MCFOLD void $stopOpen(::Actor& actor);
 
     MCFOLD ::Container* $getContainer();
 

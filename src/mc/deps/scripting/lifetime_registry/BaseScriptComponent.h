@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/scripting/lifetime_registry/ObjectHandleValue.h"
-
 namespace Scripting::internal {
 
 struct BaseScriptComponent {
@@ -32,11 +29,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI BaseScriptComponent(::Scripting::internal::BaseScriptComponent&&);
-
-    MCNAPI ::entt::meta_any fetch(
-        ::entt::basic_registry<::Scripting::ObjectHandleValue>& registry,
-        ::Scripting::ObjectHandleValue                          handle
-    ) const;
 
     MCNAPI ::Scripting::internal::BaseScriptComponent& operator=(::Scripting::internal::BaseScriptComponent&&);
 

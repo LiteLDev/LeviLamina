@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/AsyncPromise.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/nether_net/ILanEventHandler.h"
 #include "mc/network/services/signaling/SignalServiceConnectStage.h"
@@ -71,7 +71,7 @@ public:
         bool                                                    fetchRelayConfig
     ) const;
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::error_code>> signin(bool fetchRelayConfig) const;
+    MCNAPI ::Bedrock::Threading::Async<::std::error_code> signin(bool fetchRelayConfig) const;
     // NOLINTEND
 
 public:

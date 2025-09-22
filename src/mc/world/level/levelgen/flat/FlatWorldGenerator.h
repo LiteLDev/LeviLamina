@@ -38,6 +38,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>        mPrototypeBlocks;
     ::ll::TypedStorage<8, 40, ::BlockVolume>                        mPrototype;
+    ::ll::TypedStorage<1, 1, bool>                                  mIsVoidWorld;
     ::ll::TypedStorage<8, 8, ::Biome const*>                        mBiome;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FixedBiomeSource>> mBiomeSource;
     // NOLINTEND
@@ -148,7 +149,7 @@ public:
 
     MCAPI ::BlockPos $findSpawnPosition() const;
 
-    MCFOLD ::BiomeSource const& $getBiomeSource() const;
+    MCAPI ::BiomeSource const& $getBiomeSource() const;
 
     MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 

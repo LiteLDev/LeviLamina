@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/monster/Monster.h"
@@ -30,16 +31,14 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk874ac2;
-    ::ll::UntypedStorage<4, 4> mUnkc3abae;
-    ::ll::UntypedStorage<4, 4> mUnkba9a10;
-    ::ll::UntypedStorage<4, 4> mUnk90285c;
+    ::ll::TypedStorage<4, 4, float>          mTargetSquish;
+    ::ll::TypedStorage<4, 4, ::ParticleType> mParticleType;
+    ::ll::TypedStorage<4, 4, float>          mSquish;
+    ::ll::TypedStorage<4, 4, float>          mOldSquish;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Slime& operator=(Slime const&);
-    Slime(Slime const&);
     Slime();
 
 public:

@@ -25,27 +25,25 @@ public:
     // SonicBoomGoal inner types define
     class Definition : public ::BaseGoalDefinition {
     public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk11af3a;
-        ::ll::UntypedStorage<4, 4>  mUnka719e0;
-        ::ll::UntypedStorage<4, 4>  mUnkd8351d;
-        ::ll::UntypedStorage<4, 4>  mUnk5a0044;
-        ::ll::UntypedStorage<4, 4>  mUnkf88d75;
-        ::ll::UntypedStorage<4, 4>  mUnkc5eeb7;
-        ::ll::UntypedStorage<4, 4>  mUnk620727;
-        ::ll::UntypedStorage<4, 4>  mUnk36eafc;
-        ::ll::UntypedStorage<4, 4>  mUnk73df70;
-        ::ll::UntypedStorage<4, 4>  mUnkab5d4f;
-        ::ll::UntypedStorage<8, 32> mUnka60694;
-        ::ll::UntypedStorage<8, 32> mUnkb8a8a1;
-        // NOLINTEND
+        // Definition inner types define
+        using self = ::SonicBoomGoal::Definition;
 
     public:
-        // prevent constructor by default
-        Definition& operator=(Definition const&);
-        Definition(Definition const&);
-        Definition();
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 4, float>          mDuration;
+        ::ll::TypedStorage<4, 4, float>          mSpeedMultiplier;
+        ::ll::TypedStorage<4, 4, float>          mAttackDamage;
+        ::ll::TypedStorage<4, 4, float>          mAttackRangeHorizontal;
+        ::ll::TypedStorage<4, 4, float>          mAttackRangeVertical;
+        ::ll::TypedStorage<4, 4, float>          mAttackCooldown;
+        ::ll::TypedStorage<4, 4, float>          mKnockbackHorizontalStrength;
+        ::ll::TypedStorage<4, 4, float>          mKnockbackVerticalStrength;
+        ::ll::TypedStorage<4, 4, float>          mKnockbackHeightCap;
+        ::ll::TypedStorage<4, 4, float>          mDurationUntilAttackSound;
+        ::ll::TypedStorage<8, 32, ::std::string> mAttackSound;
+        ::ll::TypedStorage<8, 32, ::std::string> mChargeSound;
+        // NOLINTEND
 
     public:
         // virtual functions
@@ -57,7 +55,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void buildSchema(
+        MCAPI static void buildSchema(
             ::std::string const& name,
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SonicBoomGoal::Definition>>&
                 root
@@ -127,17 +125,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

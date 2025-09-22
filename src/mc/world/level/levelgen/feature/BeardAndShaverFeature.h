@@ -27,6 +27,7 @@ public:
     // prevent constructor by default
     BeardAndShaverFeature& operator=(BeardAndShaverFeature const&);
     BeardAndShaverFeature(BeardAndShaverFeature const&);
+    BeardAndShaverFeature();
 
 public:
     // virtual functions
@@ -36,18 +37,6 @@ public:
 
     // vIndex: 1
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI BeardAndShaverFeature();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

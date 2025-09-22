@@ -30,7 +30,7 @@ public:
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
     // vIndex: 8
-    virtual ~Piglin() /*override*/ = default;
+    virtual ~Piglin() /*override*/;
     // NOLINTEND
 
 public:
@@ -51,6 +51,12 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

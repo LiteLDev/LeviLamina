@@ -18,13 +18,11 @@ class Endermite : public ::Monster {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk611d5a;
+    ::ll::TypedStorage<4, 4, int> mLifeTime;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Endermite& operator=(Endermite const&);
-    Endermite(Endermite const&);
     Endermite();
 
 public:

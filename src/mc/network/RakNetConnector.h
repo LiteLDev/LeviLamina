@@ -285,14 +285,17 @@ public:
     // vIndex: 16
     virtual ::NetworkIdentifier getNetworkIdentifier() const /*override*/;
 
-    // vIndex: 19
+    // vIndex: 21
     virtual ::RakNet::RakPeerInterface* getPeer();
 
-    // vIndex: 18
+    // vIndex: 20
     virtual ::RakNet::RakPeerInterface const* getPeer() const;
 
     // vIndex: 8
     virtual ::TransportLayer getNetworkType() const /*override*/;
+
+    // vIndex: 18
+    virtual void setDisableLanSignaling(bool) /*override*/;
 
     // vIndex: 1
     virtual void _onDisable() /*override*/;
@@ -382,6 +385,8 @@ public:
     MCNAPI ::RakNet::RakPeerInterface const* $getPeer() const;
 
     MCNAPI ::TransportLayer $getNetworkType() const;
+
+    MCNAPI void $setDisableLanSignaling(bool);
 
     MCNAPI void $_onDisable();
 

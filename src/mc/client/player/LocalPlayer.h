@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/oreui/routing/routes/GameplayRouteHandler.h"
 #include "mc/common/Brightness.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
@@ -192,7 +191,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                                            mResetHMDAfterSleepTickDelay;
     ::ll::TypedStorage<4, 4, int>                                            mRenderChunkRadiusLowMemoryWatermark;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mLastDeathInfo;
-    ::ll::TypedStorage<8, 120, ::OreUI::GameplayRouteHandler>                mGameplayRouteHandler;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Editor::IEditorPlayer>>     mEditorClientPlayer;
     ::ll::TypedStorage<4, 4, float>                                          mCurrentExpCache;
     ::ll::TypedStorage<4, 4, int>                                            mCurrentLevelCache;
@@ -352,7 +350,7 @@ public:
     virtual void changeDimension(::ChangeDimensionPacket const&) /*override*/;
 
     // vIndex: 213
-    virtual void setPlayerGameType(::GameType) /*override*/;
+    virtual void setPlayerGameType(::GameType gameType) /*override*/;
 
     // vIndex: 91
     virtual ::ActorUniqueID getControllingPlayer() const /*override*/;

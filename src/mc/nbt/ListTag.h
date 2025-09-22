@@ -70,8 +70,6 @@ public:
 
     MCAPI ::Tag* get(int index) const;
 
-    MCAPI ::CompoundTag* getCompound(uint64 index);
-
     MCAPI float getFloat(int index) const;
 
     MCFOLD int size() const;

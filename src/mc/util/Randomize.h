@@ -7,14 +7,14 @@
 
 // auto generated forward declare list
 // clang-format off
-class Random;
+class IRandom;
 // clang-format on
 
 class Randomize {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Random>> mRandom;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IRandom>> mRandom;
     // NOLINTEND
 
 public:
@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Randomize(::Random& random);
+    MCAPI explicit Randomize(::IRandom& random);
 
     MCAPI bool chanceFloatGreaterThan(float improbability) const;
 
@@ -40,7 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Random& random);
+    MCFOLD void* $ctor(::IRandom& random);
     // NOLINTEND
 
 public:

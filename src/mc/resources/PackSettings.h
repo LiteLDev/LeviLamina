@@ -2,28 +2,49 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/json/Value.h"
-
 // auto generated forward declare list
 // clang-format off
-class PackSetting;
-struct PackIdVersion;
+namespace SharedTypes::v3_0_0::PackManifestDefinition { struct LabelSetting; }
+namespace SharedTypes::v3_0_0::PackManifestDefinition { struct SliderSetting; }
+namespace SharedTypes::v3_0_0::PackManifestDefinition { struct ToggleSetting; }
 // clang-format on
 
 class PackSettings {
 public:
+    // PackSettings inner types define
+    using UnorderedNameValueMap = ::std::unordered_map<::std::string, ::std::variant<float, bool>>;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Json::Value>                                      mSettings;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::PackSetting>> mPackSettings;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::variant<float, bool>>> mNameValueMap;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PackSettings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _initPackSetting(::std::string const& name, ::Json::Value const& value);
+    MCNAPI PackSettings(
+        ::std::vector<::std::variant<
+            ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting>> const& packSettingDef,
+        ::std::map<::std::string, ::std::variant<float, bool>> const*             loadedValues
+    );
+    // NOLINTEND
 
-    MCNAPI void loadPackSettings(::PackIdVersion const& packId, ::Json::Value const& packSettings);
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::std::vector<::std::variant<
+            ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting>> const& packSettingDef,
+        ::std::map<::std::string, ::std::variant<float, bool>> const*             loadedValues
+    );
     // NOLINTEND
 };

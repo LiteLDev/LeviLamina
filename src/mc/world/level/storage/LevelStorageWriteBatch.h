@@ -88,14 +88,14 @@ public:
     virtual void putKey(::std::string const& key, ::std::string const& data, ::DBHelpers::Category category);
 
     // vIndex: 2
-    virtual void putKey(::std::string const&, ::std::string&&, ::DBHelpers::Category);
+    virtual void putKey(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
 
     // vIndex: 1
     virtual void
     putKey(::std::string const& key, ::std::shared_ptr<::std::string> data, ::DBHelpers::Category category);
 
     // vIndex: 5
-    virtual void deleteKey(::std::string const&, ::DBHelpers::Category);
+    virtual void deleteKey(::std::string const& key, ::DBHelpers::Category category);
 
     // vIndex: 6
     virtual void flush(::LevelStorage& db);
@@ -128,7 +128,11 @@ public:
 
     MCAPI void $putKey(::std::string const& key, ::std::string const& data, ::DBHelpers::Category category);
 
+    MCAPI void $putKey(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
+
     MCAPI void $putKey(::std::string const& key, ::std::shared_ptr<::std::string> data, ::DBHelpers::Category category);
+
+    MCAPI void $deleteKey(::std::string const& key, ::DBHelpers::Category category);
 
     MCAPI void $flush(::LevelStorage& db);
     // NOLINTEND

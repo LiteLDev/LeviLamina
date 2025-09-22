@@ -42,9 +42,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool canParse(::std::string const& in);
+    MCAPI static bool canParse(::std::string_view in);
 
-    MCAPI static ::mce::UUID fromString(::std::string const& in);
+    MCAPI static ::mce::UUID fromString(::std::string_view in);
     // NOLINTEND
 
 public:

@@ -15,6 +15,7 @@
 // clang-format off
 class Actor;
 class ActorGarbageCollector;
+class ActorRuntimeID;
 class Dimension;
 class EntityContext;
 class IActorManagerProxy;
@@ -22,6 +23,7 @@ class IAddActorEntityProxy;
 class ILevelChunkEventManagerConnector;
 class LevelChunk;
 class WeakEntityRef;
+struct ActorUniqueID;
 // clang-format on
 
 class ActorManager : public ::IActorManagerConnector {
@@ -77,6 +79,13 @@ public:
 
     MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
     addActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
+
+    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError> addActorEntity(
+        ::Dimension&                dimension,
+        ::ActorUniqueID             actorUniqueID,
+        ::ActorRuntimeID            actorRuntimeID,
+        ::OwnerPtr<::EntityContext> entity
+    );
 
     MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
     addGlobalActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/DirectionalPlacementMode.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Closure.h"
@@ -30,7 +31,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnke91993;
     ::ll::UntypedStorage<8, 24>  mUnkde8b6f;
     ::ll::UntypedStorage<8, 40>  mUnk26d3cf;
-    ::ll::UntypedStorage<8, 232> mUnk7c5ced;
+    ::ll::UntypedStorage<8, 248> mUnk7c5ced;
     // NOLINTEND
 
 public:
@@ -66,6 +67,10 @@ public:
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>>
     getCurrentBrushVolume();
 
+    MCNAPI ::Editor::Brush::DirectionalPlacementMode getDirectionalPlacementMode() const;
+
+    MCNAPI bool getInverseEraseMode() const;
+
     MCNAPI bool isBrushPaintBusy();
 
     MCNAPI ::Scripting::Result_deprecated<void> setBrushMask(::Editor::ScriptModule::ScriptBlockMaskList const& mask);
@@ -81,9 +86,13 @@ public:
 
     MCNAPI void setBrushShapeVisible(bool visible);
 
+    MCNAPI void setDirectionalPlacementMode(::Editor::Brush::DirectionalPlacementMode directionalPlacementMode);
+
     MCNAPI void setFlattenHeight(int flattenHeight);
 
     MCNAPI void setFlattenRadius(int flattenRadius);
+
+    MCNAPI void setInverseEraseMode(bool inverseEraseMode);
 
     MCNAPI void setTerrainStrength(int terrainStrength);
 

@@ -167,7 +167,7 @@ public:
     virtual bool AddStream(::webrtc::MediaStreamInterface* local_stream) /*override*/;
 
     // vIndex: 6
-    virtual void RemoveStream(::webrtc::MediaStreamInterface* remove_stream) /*override*/;
+    virtual void RemoveStream(::webrtc::MediaStreamInterface* local_stream) /*override*/;
 
     // vIndex: 8
     virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> AddTrack(
@@ -730,7 +730,7 @@ public:
 
     MCNAPI bool $AddStream(::webrtc::MediaStreamInterface* local_stream);
 
-    MCNAPI void $RemoveStream(::webrtc::MediaStreamInterface* remove_stream);
+    MCNAPI void $RemoveStream(::webrtc::MediaStreamInterface* local_stream);
 
     MCNAPI ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpSenderInterface>> $AddTrack(
         ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface> track,

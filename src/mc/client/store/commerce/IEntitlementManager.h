@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/client/store/commerce/StorePlatform.h"
 #include "mc/client/store/iap/transactions/TransactionStatus.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/events/IMinecraftEventing.h"
 
@@ -36,7 +36,7 @@ public:
     virtual void refreshInventoryIfNeeded() = 0;
 
     // vIndex: 3
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> loadEntitlementCacheIfNeeded() = 0;
+    virtual ::Bedrock::Threading::Async<void> loadEntitlementCacheIfNeeded() = 0;
 
     // vIndex: 4
     virtual void processLegacyOfferOwnership(
@@ -50,7 +50,7 @@ public:
     virtual void purchaseCoinOffer(::PurchaseInfo const&, ::std::string const&, ::std::function<void(bool)>) = 0;
 
     // vIndex: 6
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> processExternalStorePurchases() = 0;
+    virtual ::Bedrock::Threading::Async<void> processExternalStorePurchases() = 0;
 
     // vIndex: 7
     virtual void processSubscriptionPurchase(
@@ -82,13 +82,13 @@ public:
     virtual ::std::string const& getInventoryVersion() const = 0;
 
     // vIndex: 15
-    virtual void setInventoryVersionAndUpdateInventory(::std::string const&) = 0;
+    virtual ::Bedrock::Threading::Async<void> setInventoryVersionAndUpdateInventory(::std::string const&) = 0;
 
     // vIndex: 16
     virtual void deleteCachedInventory() = 0;
 
     // vIndex: 17
-    virtual void forceInventoryRefresh() = 0;
+    virtual ::Bedrock::Threading::Async<void> forceInventoryRefresh() = 0;
 
     // vIndex: 18
     virtual ::std::optional<::PurchaseReceiptPacket> createThirdPartyReceiptPacket(::std::string const&) = 0;

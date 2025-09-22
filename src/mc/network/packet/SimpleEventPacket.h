@@ -3,47 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
-#include "mc/network/MinecraftPacketIds.h"
-#include "mc/platform/Result.h"
+#include "mc/network/packet/SimpleEventPacketPayload.h"
+#include "mc/network/packet/serialize/SerializedPayloadPacket.h"
 
 // auto generated forward declare list
 // clang-format off
-class BinaryStream;
-class ReadOnlyBinaryStream;
+struct SimpleEventPacketInfo;
 // clang-format on
 
-class SimpleEventPacket : public ::Packet {
+class SimpleEventPacket : public ::SerializedPayloadPacket<::SimpleEventPacketInfo, ::SimpleEventPacketPayload> {
 public:
     // SimpleEventPacket inner types define
-    enum class Subtype : int {
-        UninitializedSubtype        = 0,
-        EnableCommands              = 1,
-        DisableCommands             = 2,
-        UnlockWorldTemplateSettings = 3,
-    };
+    using PayloadType = ::SimpleEventPacketPayload;
 
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SimpleEventPacket::Subtype> mSubtype;
-    // NOLINTEND
+    using PacketInfo = ::SimpleEventPacketInfo;
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual ::MinecraftPacketIds getId() const /*override*/;
-
-    // vIndex: 2
-    virtual ::std::string getName() const /*override*/;
-
-    // vIndex: 4
-    virtual void write(::BinaryStream& stream) const /*override*/;
-
-    // vIndex: 8
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-
     // vIndex: 0
     virtual ~SimpleEventPacket() /*override*/;
     // NOLINTEND
@@ -52,18 +29,6 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCFOLD ::MinecraftPacketIds $getId() const;
-
-    MCAPI ::std::string $getName() const;
-
-    MCAPI void $write(::BinaryStream& stream) const;
-
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:

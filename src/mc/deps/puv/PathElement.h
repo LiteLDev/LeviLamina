@@ -11,7 +11,7 @@ struct PathElement {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 144> mUnk4e5dd3;
+    ::ll::UntypedStorage<8, 160> mUnk4e5dd3;
     ::ll::UntypedStorage<4, 4>   mUnk38da85;
     ::ll::UntypedStorage<8, 32>  mUnk42ac2b;
     ::ll::UntypedStorage<4, 4>   mUnkec9b9a;

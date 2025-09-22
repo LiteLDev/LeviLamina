@@ -51,13 +51,12 @@ public:
 public:
     // prevent constructor by default
     SerializerContext& operator=(SerializerContext const&);
+    SerializerContext(SerializerContext const&);
     SerializerContext();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SerializerContext(::cereal::SerializerContext const&);
-
     MCNAPI void consumeContext(::cereal::SerializerContext const& other);
 
     MCNAPI ::cereal::SerializerContext detachContext();
@@ -72,12 +71,6 @@ public:
     pushContext(::cereal::BasicSerializerContext::ContextType contextType, ::std::string contextToken);
 
     MCNAPI ~SerializerContext();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::SerializerContext const&);
     // NOLINTEND
 
 public:

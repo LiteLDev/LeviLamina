@@ -13,20 +13,18 @@ namespace JsonUtil { class EmptyClass; }
 
 class SlimeAttackDefinition : public ::BaseGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk397efe;
-    ::ll::UntypedStorage<4, 4> mUnkb648c6;
-    ::ll::UntypedStorage<4, 4> mUnk67ead0;
-    ::ll::UntypedStorage<4, 4> mUnkf38a35;
-    ::ll::UntypedStorage<1, 1> mUnkcb6343;
-    // NOLINTEND
+    // SlimeAttackDefinition inner types define
+    using self = ::SlimeAttackDefinition;
 
 public:
-    // prevent constructor by default
-    SlimeAttackDefinition& operator=(SlimeAttackDefinition const&);
-    SlimeAttackDefinition(SlimeAttackDefinition const&);
-    SlimeAttackDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float> mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float> mMaxRotationY;
+    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, float> mGrowTiredCooldownTime;
+    ::ll::TypedStorage<1, 1, bool>  mSetPersistent;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -38,7 +36,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                                  name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SlimeAttackDefinition>>& root
     );

@@ -17,11 +17,11 @@ class RenderParams;
 namespace LegacyTreeFeatureHelpers {
 // functions
 // NOLINTBEGIN
-MCNAPI void _placeTrees(
+MCNAPI void placeTrees(
     ::IBlockWorldGenAPI&                                     target,
     ::BlockPos const&                                        origin,
     ::Random&                                                random,
-    int                                                      forests,
+    int                                                      treeCount,
     ::RenderParams&                                          renderParams,
     ::WeakRef<::IFeature>                                    tallGrassFeature,
     ::std::function<::WeakRef<::IFeature>(::Random&)> const& getTreeFeature

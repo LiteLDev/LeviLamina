@@ -110,6 +110,8 @@ public:
 
     MCNAPI ::Json::Value blocksToJson() const;
 
+    MCNAPI ::Json::Value getFilepathJson(::std::string const& filePath) const;
+
     MCNAPI ::Json::Value itemsToJson() const;
 
     MCNAPI ::Json::Value mobsToJson() const;

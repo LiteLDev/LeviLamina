@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core { struct FilePathManagerPaths; }
 // clang-format on
 
@@ -22,8 +23,10 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk572541;
     ::ll::UntypedStorage<8, 32> mUnk4e130e;
     ::ll::UntypedStorage<8, 32> mUnk48591c;
+    ::ll::UntypedStorage<8, 32> mUnkd9ba57;
     ::ll::UntypedStorage<8, 32> mUnk6c2c6e;
     ::ll::UntypedStorage<8, 32> mUnkf9b714;
+    ::ll::UntypedStorage<8, 32> mUnk369d18;
     ::ll::UntypedStorage<8, 32> mUnk3ea53f;
     ::ll::UntypedStorage<8, 32> mUnk4e27dc;
     ::ll::UntypedStorage<8, 32> mUnka3fac4;
@@ -52,6 +55,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit FilePathManager(::Core::FilePathManagerPaths&& paths);
+
+    MCNAPI ::Core::PathView getWorldsPath() const;
 
     MCNAPI void setRootPath(::Core::Path const& path);
     // NOLINTEND

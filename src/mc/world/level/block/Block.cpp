@@ -17,33 +17,34 @@ optional_ref<Block const> Block::tryGetFromRegistry(uint runtimeID) {
     });
 }
 optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name) {
-    return BlockLegacy::tryGetFromRegistry(name).transform([&](auto& block) -> decltype(auto) {
+    return BlockType::tryGetFromRegistry(name).transform([&](auto& block) -> decltype(auto) {
         return block.mDefaultState;
     });
 }
 optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, ushort legacyData) {
-    return BlockLegacy::tryGetFromRegistry(name).transform([&](auto& block) -> decltype(auto) {
+    return BlockType::tryGetFromRegistry(name).transform([&](auto& block) -> decltype(auto) {
         return block.tryGetStateFromLegacyData(legacyData);
     });
 }
 optional_ref<Block const> Block::tryGetFromRegistry(uint legacyBlockID, ushort legacyData) {
-    return BlockLegacy::tryGetFromRegistry(legacyBlockID).transform([&](auto& block) -> decltype(auto) {
+    return BlockType::tryGetFromRegistry(legacyBlockID).transform([&](auto& block) -> decltype(auto) {
         return block.tryGetStateFromLegacyData(legacyData);
     });
 }
 optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, Block::BlockStatesType const& states) {
-    auto blockLegacyPtr = BlockLegacy::tryGetFromRegistry(name);
-    if (!blockLegacyPtr) {
+    auto blockTypePtr = BlockType::tryGetFromRegistry(name);
+    if (!blockTypePtr) {
         return nullptr;
     }
+    auto&        registry = BlockTypeRegistry::get();
     HashedString nameHash{name};
-    if (!BlockTypeRegistry::isComplexAliasBlock(nameHash)) {
-        return blockLegacyPtr->mDefaultState;
+    if (!registry.isComplexAliasBlock(nameHash)) {
+        return blockTypePtr->mDefaultState;
     }
     std::vector<BlockTypeRegistry::BlockComplexAliasBlockState> stateList;
     for (auto& [k, v] : states) {
         HashedString stateNameHash{k};
-        auto*        stateBase = blockLegacyPtr->getBlockState(stateNameHash);
+        auto*        stateBase = blockTypePtr->getBlockState(stateNameHash);
         if (stateBase == nullptr) {
             continue;
         }
@@ -55,12 +56,11 @@ optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, Block
         }
         stateList.emplace_back(stateNameHash, value);
     }
-    auto block =
-        BlockTypeRegistry::_lookupByNameImpl(nameHash, 0, BlockTypeRegistry::LookupByNameImplResolve::Block).mBlock;
+    auto block = registry._lookupByNameImpl(nameHash, 0, BlockTypeRegistry::LookupByNameImplResolve::Block).mBlock;
     if (block) {
         for (auto& state : stateList) {
             if (block) {
-                auto legacyBlock = block->mLegacyBlock.get();
+                auto legacyBlock = block->mBlockType.get();
                 if (!legacyBlock) {
                     return std::nullopt;
                 }

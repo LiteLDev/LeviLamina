@@ -18,6 +18,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void addChild(::BoundingBox box);
+
     MCNAPI ~JigsawSpace();
     // NOLINTEND
 

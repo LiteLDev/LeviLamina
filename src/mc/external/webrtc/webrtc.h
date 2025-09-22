@@ -10,6 +10,7 @@
 #include "mc/external/webrtc/IceCandidateType.h"
 #include "mc/external/webrtc/PeerConnectionInterface.h"
 #include "mc/external/webrtc/Priority.h"
+#include "mc/external/webrtc/RTCErrorDetailType.h"
 #include "mc/external/webrtc/RTCErrorType.h"
 #include "mc/external/webrtc/RtpReceiverProxyWithInternal.h"
 #include "mc/external/webrtc/RtpSenderProxyWithInternal.h"
@@ -354,6 +355,8 @@ MCNAPI ::webrtc::RtpCapabilities ToRtpCapabilities(
 MCNAPI ::webrtc::RtpCodecCapability ToRtpCodecCapability(::cricket::Codec const& cricket_codec);
 
 MCNAPI ::std::string_view ToString(::webrtc::RTCErrorType error);
+
+MCNAPI ::std::string_view ToString(::webrtc::RTCErrorDetailType error);
 
 MCNAPI ::std::string ToString(::webrtc::DataRate value);
 

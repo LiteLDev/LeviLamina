@@ -4,8 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
 class BlockPos;
+class BlockType;
 class IConstBlockSource;
 // clang-format on
 
@@ -14,7 +14,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static bool canBlockBeAscendedByJumping(
-        ::BlockLegacy const&       block,
+        ::BlockType const&         block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          blockPos,
         bool                       canStandOnSnow,

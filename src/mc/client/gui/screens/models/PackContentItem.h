@@ -5,12 +5,13 @@
 // auto generated inclusion list
 #include "mc/client/gui/screens/models/ManifestContentItem.h"
 #include "mc/client/gui/screens/models/PackReportState.h"
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/resources/PackReport.h"
 #include "mc/resources/SubpackInfoCollection.h"
 
 // auto generated forward declare list
 // clang-format off
-class PackSettings;
+class PackSettingsFactory;
 struct PackContentItemListPosition;
 // clang-format on
 
@@ -32,7 +33,9 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                                    mDateAvailable;
     ::ll::TypedStorage<1, 1, ::PackReportState>                                                 mReportState;
     ::ll::TypedStorage<8, 24, ::SubpackInfoCollection>                                          mSubpackInfo;
-    ::ll::TypedStorage<8, 8, ::PackSettings*>                                                   mPackSettings;
+    ::ll::TypedStorage<8, 8, ::PackSettingsFactory*>                                            mPackSettingsFactory;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                                   mWorldId;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Core::PathBuffer<::std::string>>>               mPackSettingsPath;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::PackContentItemListPosition>>> mListPosition;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::weak_ptr<::PackContentItem const>>>          mDependencies;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::weak_ptr<::PackContentItem const>>>          mDependentContent;

@@ -7,7 +7,6 @@
 #include "mc/client/gui/screens/models/MinecraftScreenModel.h"
 #include "mc/client/network/NetworkFilter.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/network/connection/DisconnectFailReason.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,7 +26,7 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk76c977;
     ::ll::UntypedStorage<8, 16>  mUnkef369f;
     ::ll::UntypedStorage<8, 8>   mUnk52b71e;
-    ::ll::UntypedStorage<8, 16>  mUnk8c0d7d;
+    ::ll::UntypedStorage<8, 16>  mUnk91f226;
     ::ll::UntypedStorage<8, 8>   mUnkb2c4db;
     ::ll::UntypedStorage<8, 24>  mUnk6e0902;
     ::ll::UntypedStorage<8, 8>   mUnk5d30f7;
@@ -55,23 +54,16 @@ public:
         bool
     ) /*override*/;
 
-    // vIndex: 4
-    virtual void navigateToDisconnectScreen(
-        ::std::string const&,
-        ::std::string const&,
-        ::Connection::DisconnectFailReason
-    ) /*override*/;
-
-    // vIndex: 13
+    // vIndex: 17
     virtual ::std::string const& getLastPoppedScreenName() const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 12
     virtual ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> getStoreCatalogRepository() const /*override*/;
 
     // vIndex: 3
     virtual bool doesPlatformSupportRealms() const /*override*/;
 
-    // vIndex: 6
+    // vIndex: 10
     virtual bool isSelectedSkinInitialized() const /*override*/;
 
     // vIndex: 5
@@ -83,22 +75,22 @@ public:
     // vIndex: 4
     virtual bool isPackIdInRealmsPlus(::std::string const&) const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 13
     virtual float getStoreNetworkFailureTimeout() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 9
     virtual bool isInGame() const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 18
     virtual ::IMinecraftEventing& getMinecraftEventing() const;
 
-    // vIndex: 10
+    // vIndex: 14
     virtual bool isAdhocEnabled() const /*override*/;
 
     // vIndex: 2
     virtual bool isNetworkEnabled(::NetworkFilter) const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 11
     virtual bool platformTTSExists() const /*override*/;
     // NOLINTEND
 

@@ -187,6 +187,8 @@ public:
 
     MCNAPI void _notifyLevelUpdated(::std::string const& levelId);
 
+    MCNAPI void _notifyNewLevelFound(::std::string const& levelId);
+
     MCNAPI void _refreshSummary(::std::string const& levelId, ::LevelCache& cache);
     // NOLINTEND
 

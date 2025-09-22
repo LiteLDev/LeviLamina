@@ -20,5 +20,6 @@ enum class AllExperiments : int {
     VanillaBlockGeometry                   = 14,
     JigsawStructures                       = 15,
     SimplifiedSpawnRules                   = 16,
-    Count                                  = 17,
+    Y2025Drop3                             = 17,
+    Count                                  = 18,
 };

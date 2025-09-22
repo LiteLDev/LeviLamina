@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Pack;
 namespace PackCommand { struct PackAssociations; }
 // clang-format on
 
@@ -18,6 +19,9 @@ public:
 
     // vIndex: 1
     virtual void fillPackAssociations(::std::vector<::gsl::not_null<::PackCommand::PackAssociations*>>&) = 0;
+
+    // vIndex: 2
+    virtual void removePacks(::std::vector<::gsl::not_null<::Pack const*>> const&) = 0;
     // NOLINTEND
 
 public:

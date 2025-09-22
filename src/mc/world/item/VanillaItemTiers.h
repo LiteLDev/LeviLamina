@@ -2,36 +2,34 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/world/item/Item.h"
-
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
 class ItemStack;
+struct ItemTier;
 // clang-format on
 
-class VanillaItemTiers {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::vector<::ItemStack> const
-    getTierItems(::Item::Tier const& tier, ::BaseGameVersion const& baseGameVersion);
-    // NOLINTEND
+namespace VanillaItemTiers {
+// functions
+// NOLINTBEGIN
+MCNAPI ::std::vector<::ItemStack> getTierItems(::ItemTier const& tier, ::BaseGameVersion const& baseGameVersion);
+// NOLINTEND
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::Item::Tier const& DIAMOND();
+// static variables
+// NOLINTBEGIN
+MCNAPI ::ItemTier const& COPPER();
 
-    MCNAPI static ::Item::Tier const& GOLD();
+MCNAPI ::ItemTier const& DIAMOND();
 
-    MCNAPI static ::Item::Tier const& IRON();
+MCNAPI ::ItemTier const& GOLD();
 
-    MCNAPI static ::Item::Tier const& NETHERITE();
+MCNAPI ::ItemTier const& IRON();
 
-    MCNAPI static ::Item::Tier const& STONE();
+MCNAPI ::ItemTier const& NETHERITE();
 
-    MCNAPI static ::Item::Tier const& WOOD();
-    // NOLINTEND
-};
+MCNAPI ::ItemTier const& STONE();
+
+MCNAPI ::ItemTier const& WOOD();
+// NOLINTEND
+
+} // namespace VanillaItemTiers

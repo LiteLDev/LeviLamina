@@ -19,13 +19,13 @@ class DeepslateRedStoneOreBlock : public ::RedStoneOreBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 147
     virtual void _lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual void _unlightBlock(::BlockEvents::BlockRandomTickEvent& eventData) const /*override*/;
 
     // vIndex: 0

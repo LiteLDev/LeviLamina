@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
+class BlockType;
 class Item;
 class ReadOnlyBinaryStream;
 struct ItemTag;
@@ -33,7 +33,7 @@ public:
 
     MCAPI explicit RecipeIngredient(::ReadOnlyBinaryStream& stream);
 
-    MCAPI RecipeIngredient(::BlockLegacy const& block, ushort stackSize);
+    MCAPI RecipeIngredient(::BlockType const& block, ushort stackSize);
 
     MCAPI RecipeIngredient(::Block const& block, ushort stackSize);
 
@@ -59,7 +59,7 @@ public:
 
     MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);
 
-    MCAPI void* $ctor(::BlockLegacy const& block, ushort stackSize);
+    MCAPI void* $ctor(::BlockType const& block, ushort stackSize);
 
     MCAPI void* $ctor(::Block const& block, ushort stackSize);
 

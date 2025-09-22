@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,7 +20,7 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
-class RedStoneOreBlock : public ::BlockLegacy {
+class RedStoneOreBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
@@ -30,28 +30,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 94
+    // vIndex: 95
     virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 133
+    // vIndex: 134
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 122
+    // vIndex: 123
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual bool canBeOriginalSurface() const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 147
     virtual void _lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual void _unlightBlock(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0

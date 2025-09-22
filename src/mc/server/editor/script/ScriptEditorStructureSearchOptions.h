@@ -13,10 +13,10 @@ class ScriptEditorStructureSearchOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf7281a;
+    ::ll::UntypedStorage<8, 32> mUnk98b32e;
     ::ll::UntypedStorage<8, 32> mUnkb53a96;
-    ::ll::UntypedStorage<8, 32> mUnk725ea9;
-    ::ll::UntypedStorage<8, 40> mUnk3c4f7a;
+    ::ll::UntypedStorage<8, 40> mUnkbd6679;
+    ::ll::UntypedStorage<8, 40> mUnk46e81d;
     // NOLINTEND
 
 public:

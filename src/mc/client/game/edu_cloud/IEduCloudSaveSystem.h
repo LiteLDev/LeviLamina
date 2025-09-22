@@ -12,6 +12,7 @@
 #include "mc/client/util/edu_cloud_utils/Operation.h"
 #include "mc/client/util/edu_cloud_utils/UploadType.h"
 #include "mc/common/edu_cloud_proxy/Operation.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/Copyable.h"
@@ -20,13 +21,11 @@
 // auto generated forward declare list
 // clang-format off
 struct LevelSummary;
-namespace Core { class Path; }
 namespace EduCloudProxy { struct CloudProject; }
 namespace MSGraph::Models { struct DownloadUrlInfo; }
 namespace MSGraph::Models { struct DriveItem; }
 namespace MSGraph::Models { struct DriveItemCollection; }
 namespace MSGraph::Models { struct GraphError; }
-namespace MSGraph::Models { struct UploadSession; }
 // clang-format on
 
 namespace EduCloud {
@@ -79,16 +78,12 @@ public:
     virtual void initializeCloudProxy(::std::function<void(::std::string const&)>) = 0;
 
     // vIndex: 12
-    virtual void syncEmbeddedWorldProjects(::std::vector<::Core::Path>) = 0;
-
-    // vIndex: 13
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<
-        ::Bedrock::Copyable<::Bedrock::Result<::std::string, ::MSGraph::Models::GraphError>>>>
+    virtual ::Bedrock::Threading::Async<
+        ::Bedrock::Copyable<::Bedrock::Result<::std::string, ::MSGraph::Models::GraphError>>>
     getUploadFolderUrl() = 0;
 
-    // vIndex: 14
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Copyable<::Bedrock::Result<bool>>>>
-    uploadWorld(
+    // vIndex: 13
+    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<bool>>> uploadWorld(
         ::std::string const&,
         ::std::string const&,
         ::std::function<void(::EduCloud::UploadWorldProgress, ::MSGraph::GraphResponse)>,
@@ -96,35 +91,34 @@ public:
         bool
     ) = 0;
 
-    // vIndex: 15
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Copyable<::Bedrock::Result<bool>>>>
+    // vIndex: 14
+    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<bool>>>
     uploadMakeCodeProject(::std::string const, ::EduCloudProxy::CloudProject&) = 0;
 
-    // vIndex: 16
+    // vIndex: 15
     virtual ::std::string getFolderDisplayName() = 0;
 
-    // vIndex: 17
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<
-        ::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::DriveItemCollection, ::MSGraph::Models::GraphError>>>>
+    // vIndex: 16
+    virtual ::Bedrock::Threading::Async<
+        ::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::DriveItemCollection, ::MSGraph::Models::GraphError>>>
         fetch(::EduCloud::CloudItemType, ::std::string, ::EduCloud::DrivePaths) = 0;
 
-    // vIndex: 18
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<
-        ::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::DownloadUrlInfo, ::MSGraph::Models::GraphError>>>>
+    // vIndex: 17
+    virtual ::Bedrock::Threading::Async<
+        ::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::DownloadUrlInfo, ::MSGraph::Models::GraphError>>>
     getDownloadUrlInfo(::EduCloud::CloudItemType const, ::std::string const&) = 0;
 
-    // vIndex: 19
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<
-        ::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::DriveItem, ::MSGraph::Models::GraphError>>>>
+    // vIndex: 18
+    virtual ::Bedrock::Threading::Async<
+        ::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::DriveItem, ::MSGraph::Models::GraphError>>>
     getCloudItemById(::EduCloud::CloudItemType const, ::std::string const&) = 0;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual ::EduCloud::ConflictResolutionStatus
     determineConflictResolutionStatus(::std::string const&, ::std::string const&, bool, bool) = 0;
 
-    // vIndex: 21
-    virtual ::std::shared_ptr<
-        ::Bedrock::Threading::IAsyncResult<::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::GraphError>>>>
+    // vIndex: 20
+    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::GraphError>>>
     deleteItemById(::std::string const&) = 0;
     // NOLINTEND
 

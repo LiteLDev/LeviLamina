@@ -18,7 +18,6 @@ public:
 
     [[nodiscard]] constexpr ByteArrayTag(std::initializer_list<uchar> val) : Array(val) {}
 
-
 public:
     // virtual functions
     // NOLINTBEGIN

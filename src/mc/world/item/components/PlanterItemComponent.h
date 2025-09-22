@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/world/item/components/BlockLegacyPtr.h"
+#include "mc/world/item/components/BlockTypePtr.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -28,7 +28,7 @@ class PlanterItemComponent : public ::NetworkedItemComponent<::PlanterItemCompon
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BlockLegacyPtr>                  mBlock;
+    ::ll::TypedStorage<8, 8, ::BlockTypePtr>                    mBlock;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedUseBlocks;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>  mOnUseOnSubscription;
     ::ll::TypedStorage<1, 1, bool>                              mCanUseBlockAsIcon;

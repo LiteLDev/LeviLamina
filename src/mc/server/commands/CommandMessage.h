@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/server/commands/CommandMessageParams.h"
 #include "mc/server/commands/CommandSelector.h"
 
 // auto generated forward declare list
@@ -33,6 +34,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::CommandMessage::MessageComponent>> mData;
+    ::ll::TypedStorage<1, 1, ::CommandMessageParams const>                       mParameters;
     // NOLINTEND
 
 public:

@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/SpawnSettings.h"
 #include "mc/world/level/Spawner.h"
+#include "mc/world/level/spawn/SpawnPlacements.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,9 +14,11 @@ class ActorSpawnRuleGroup;
 class BlockPos;
 class BlockSource;
 class ChunkPos;
+class HashedString;
 class IWorldRegistriesProvider;
 class ItemActor;
 class ItemStack;
+class Level;
 class LevelChunkVolumeData;
 class Mob;
 class MobSpawnRules;
@@ -28,26 +32,24 @@ class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct MobSpawnHerdInfo;
-struct SpawnSettings;
 namespace br::spawn { class EntityTypeCache; }
-namespace br::spawn { class SpawnPlacements; }
 // clang-format on
 
 class BedrockSpawner : public ::Spawner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk68d560;
-    ::ll::UntypedStorage<8, 48>  mUnk8ab4e7;
-    ::ll::UntypedStorage<8, 8>   mUnk5ec8f1;
-    ::ll::UntypedStorage<8, 8>   mUnk2bf45e;
-    ::ll::UntypedStorage<8, 8>   mUnk86ad24;
-    ::ll::UntypedStorage<8, 272> mUnk6f4ad5;
-    ::ll::UntypedStorage<4, 56>  mUnk8d4b8a;
-    ::ll::UntypedStorage<8, 128> mUnk39b4be;
-    ::ll::UntypedStorage<4, 4>   mUnkc641af;
-    ::ll::UntypedStorage<4, 4>   mUnk740ff9;
-    ::ll::UntypedStorage<4, 4>   mUnka71f9c;
+    ::ll::TypedStorage<8, 8, ::Level&>                                        mLevel;
+    ::ll::TypedStorage<8, 48, ::SpawnSettings>                                mSpawnSettings;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorSpawnRuleGroup>>        mActorSpawnRules;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SpawnGroupRegistry>>         mSpawnGroupRegistry;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::br::spawn::EntityTypeCache>> mEntityTypeCache;
+    ::ll::TypedStorage<8, 272, ::br::spawn::SpawnPlacements>                  mSpawnPlacements;
+    ::ll::TypedStorage<4, 56, int[2][7]>                                      mBaseTypeCount;
+    ::ll::TypedStorage<8, 128, ::std::unordered_map<::HashedString, int>[2]>  mEntityTypeCount;
+    ::ll::TypedStorage<4, 4, int>                                             mTotalEntityCount;
+    ::ll::TypedStorage<4, 4, uint>                                            mSpawnableMobTickCount;
+    ::ll::TypedStorage<4, 4, uint>                                            mSpawnableMobTickCountPrevious;
     // NOLINTEND
 
 public:

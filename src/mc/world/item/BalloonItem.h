@@ -4,19 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/world/item/ChemistryItem.h"
-#include "mc/world/item/ItemColor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockPos;
-class BlockSource;
 class CompoundTag;
 class InteractionResult;
 class ItemDescriptor;
-class ItemInstance;
 class ItemStack;
-class LeashFenceKnotActor;
 class Vec3;
 namespace mce { class Color; }
 // clang-format on
@@ -26,11 +22,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 87
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
+        /*override*/;
 
     // vIndex: 66
-    virtual ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const& instance) const /*override*/;
+    virtual ::mce::Color getColor(::CompoundTag const*, ::ItemDescriptor const& instance) const /*override*/;
 
     // vIndex: 15
     virtual bool isDyeable() const /*override*/;
@@ -45,20 +41,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::LeashFenceKnotActor* _createKnot(::BlockSource& region, ::BlockPos pos, ::ItemInstance const& item) const;
-
-    MCAPI ::ItemColor _getColorIndex(::ItemDescriptor const& itemInstance) const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
-    MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const& instance) const;
+    MCAPI ::mce::Color $getColor(::CompoundTag const*, ::ItemDescriptor const& instance) const;
 
     MCFOLD bool $isDyeable() const;
 

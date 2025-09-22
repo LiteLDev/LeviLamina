@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/FileArchiver.h"
 
@@ -70,7 +70,7 @@ public:
     virtual void enqueueConvertImportingWorldTasks(
         ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
-        ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>&    prevTaskHandle
+        ::Bedrock::Threading::Async<void>&                              prevTaskHandle
     ) /*override*/;
 
     // vIndex: 2
@@ -80,7 +80,7 @@ public:
     virtual void enqueueConvertExportingWorldTasks(
         ::std::shared_ptr<::FileArchiver::ExportData>&                  exportData,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
-        ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>&    prevTaskHandle,
+        ::Bedrock::Threading::Async<void>&                              prevTaskHandle,
         ::std::function<void(::LevelData&)>                             preExportCallback
     ) /*override*/;
     // NOLINTEND
@@ -139,7 +139,7 @@ public:
     MCNAPI void $enqueueConvertImportingWorldTasks(
         ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
-        ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>&    prevTaskHandle
+        ::Bedrock::Threading::Async<void>&                              prevTaskHandle
     );
 
     MCNAPI bool $shouldCopyWorldForConversion(::std::string const& levelId) const;
@@ -147,7 +147,7 @@ public:
     MCNAPI void $enqueueConvertExportingWorldTasks(
         ::std::shared_ptr<::FileArchiver::ExportData>&                  exportData,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
-        ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>&    prevTaskHandle,
+        ::Bedrock::Threading::Async<void>&                              prevTaskHandle,
         ::std::function<void(::LevelData&)>                             preExportCallback
     );
     // NOLINTEND

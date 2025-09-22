@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
@@ -16,7 +17,6 @@ class CompoundTag;
 class Container;
 class DataLoadHelper;
 class ILevel;
-class Player;
 class Random;
 class SaveContext;
 // clang-format on
@@ -38,10 +38,10 @@ public:
     // vIndex: 20
     virtual int getContainerSize() const /*override*/;
 
-    // vIndex: 35
+    // vIndex: 32
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 34
+    // vIndex: 31
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 7
@@ -53,14 +53,14 @@ public:
     // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
 
-    // vIndex: 28
+    // vIndex: 26
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player& player) /*override*/;
+    virtual void startOpen(::Actor& actor) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
@@ -68,7 +68,7 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 12
     virtual void onMove() /*override*/;
 
     // vIndex: 2
@@ -78,10 +78,10 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -129,9 +129,9 @@ public:
 
     MCAPI ::std::string $getName() const;
 
-    MCFOLD void $startOpen(::Player& player);
+    MCFOLD void $startOpen(::Actor& actor);
 
-    MCFOLD void $stopOpen(::Player& player);
+    MCFOLD void $stopOpen(::Actor& actor);
 
     MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 

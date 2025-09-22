@@ -7,9 +7,9 @@
 #include "mc/world/actor/state/PropertySyncData.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/Packet.h"
 #include "mc/network/packet/PlayerInputTick.h"
 #include "mc/platform/Result.h"
 #include "mc/world/actor/state/PropertySyncData.h"
@@ -49,10 +49,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 13
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 

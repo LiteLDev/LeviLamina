@@ -29,6 +29,8 @@ public:
 
     MCNAPI ::cereal::ComponentStorage& operator=(::cereal::ComponentStorage&&);
 
+    MCNAPI bool operator==(::cereal::ComponentStorage const& other) const;
+
     MCNAPI bool removeComponent(::std::string_view name);
     // NOLINTEND
 };

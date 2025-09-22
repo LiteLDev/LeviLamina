@@ -80,35 +80,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _attemptToStrike(::Vec3 const& mobPos, ::Vec3 const& targetPos);
+    MCAPI void _attemptToStrike(::Vec3 const& mobPos, ::Vec3 const& targetPos);
 
-    MCNAPI bool _isPouncePathClear(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
+    MCAPI bool _isPouncePathClear(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
 
-    MCNAPI bool _isStuckBlock(::BlockPos blockPos) const;
+    MCAPI bool _isStuckBlock(::BlockPos blockPos) const;
 
-    MCNAPI void _pounce(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
+    MCAPI void _pounce(::Vec3 const& mobPos, ::Vec3 const& targetPos) const;
 
-    MCNAPI void _preparePounce(::Vec3 const& mobPos, ::Vec3 const& targetPos);
+    MCAPI void _preparePounce(::Vec3 const& mobPos, ::Vec3 const& targetPos);
 
-    MCNAPI void _stuck();
+    MCAPI void _stuck();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI bool $canBeInterrupted();
+    MCAPI bool $canBeInterrupted();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

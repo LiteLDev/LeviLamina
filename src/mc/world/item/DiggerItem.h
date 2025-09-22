@@ -13,6 +13,7 @@ class HashedString;
 class ItemStackBase;
 class Level;
 class RenderParams;
+struct ItemTier;
 namespace Bedrock::Safety { class RedactableString; }
 // clang-format on
 
@@ -20,7 +21,7 @@ class DiggerItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Item::Tier const&>   mTier;
+    ::ll::TypedStorage<8, 8, ::ItemTier const&>     mTier;
     ::ll::TypedStorage<8, 8, ::HashedString const&> mBlockDestructionTag;
     ::ll::TypedStorage<4, 4, int>                   mAttackDamage;
     // NOLINTEND

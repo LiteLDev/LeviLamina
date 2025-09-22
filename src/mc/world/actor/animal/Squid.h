@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Color.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
@@ -16,34 +17,31 @@ class EntityContext;
 class Vec3;
 struct ActorDefinitionIdentifier;
 struct VariantParameterList;
-namespace mce { class Color; }
 // clang-format on
 
 class Squid : public ::Mob {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk7fce78;
-    ::ll::UntypedStorage<4, 4>  mUnk5e9d92;
-    ::ll::UntypedStorage<4, 4>  mUnk50b096;
-    ::ll::UntypedStorage<4, 4>  mUnk62e2ee;
-    ::ll::UntypedStorage<4, 4>  mUnk713e69;
-    ::ll::UntypedStorage<4, 4>  mUnkb67107;
-    ::ll::UntypedStorage<4, 4>  mUnk7592ae;
-    ::ll::UntypedStorage<4, 4>  mUnke10f3c;
-    ::ll::UntypedStorage<4, 4>  mUnkcf3931;
-    ::ll::UntypedStorage<4, 4>  mUnkd1e7d7;
-    ::ll::UntypedStorage<4, 4>  mUnkd41b7e;
-    ::ll::UntypedStorage<4, 4>  mUnk159f78;
-    ::ll::UntypedStorage<4, 4>  mUnk21f29d;
-    ::ll::UntypedStorage<4, 4>  mUnka0bf64;
-    ::ll::UntypedStorage<4, 4>  mUnk586089;
+    ::ll::TypedStorage<4, 16, ::mce::Color> mInkColor;
+    ::ll::TypedStorage<4, 4, float>         mSpeed;
+    ::ll::TypedStorage<4, 4, float>         mTentacleSpeed;
+    ::ll::TypedStorage<4, 4, float>         mRotateSpeed;
+    ::ll::TypedStorage<4, 4, float>         mXBodyRot;
+    ::ll::TypedStorage<4, 4, float>         mXBodyRotO;
+    ::ll::TypedStorage<4, 4, float>         mZBodyRot;
+    ::ll::TypedStorage<4, 4, float>         mZBodyRotO;
+    ::ll::TypedStorage<4, 4, float>         mTx;
+    ::ll::TypedStorage<4, 4, float>         mTy;
+    ::ll::TypedStorage<4, 4, float>         mTz;
+    ::ll::TypedStorage<4, 4, float>         mTentacleMovement;
+    ::ll::TypedStorage<4, 4, float>         mOldTentacleMovement;
+    ::ll::TypedStorage<4, 4, float>         mTentacleAngle;
+    ::ll::TypedStorage<4, 4, float>         mOldTentacleAngle;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Squid& operator=(Squid const&);
-    Squid(Squid const&);
     Squid();
 
 public:
@@ -118,7 +116,7 @@ public:
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $_getInkSquirtSoundEvent() const;
 
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:

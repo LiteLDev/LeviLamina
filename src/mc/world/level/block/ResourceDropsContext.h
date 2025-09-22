@@ -39,11 +39,4 @@ public:
 
     MCAPI bool isUsingSilkTouch() const;
     // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::ResourceDropsContext
-    fromPlayerMining(::IBlockSource const& region, ::BlockPos const& position, ::ItemStack const& usedItem);
-    // NOLINTEND
 };

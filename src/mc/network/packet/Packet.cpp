@@ -1,9 +1,9 @@
 #include "ll/api/service/Bedrock.h"
 
-#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/network/LoopbackPacketSender.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/network/NetworkIdentifierWithSubId.h"
+#include "mc/network/Packet.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/world/Minecraft.h"
 #include "mc/world/actor/player/Player.h"

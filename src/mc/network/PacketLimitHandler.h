@@ -12,7 +12,7 @@ class PacketLimitHandler : public ::IPacketSecurityHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnkf2ee70;
+    ::ll::UntypedStorage<8, 8>  mUnkbbec0f;
     ::ll::UntypedStorage<8, 24> mUnke5b26d;
     ::ll::UntypedStorage<1, 1>  mUnk416e17;
     // NOLINTEND
@@ -38,6 +38,13 @@ public:
 
     // vIndex: 2
     virtual ~PacketLimitHandler() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::PacketViolationResponse
+    _checkLimitThreshold(::MinecraftPacketIds packetId, bool* outIsNewOrUpdatedViolation);
     // NOLINTEND
 
 public:

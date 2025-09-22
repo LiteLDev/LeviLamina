@@ -13,17 +13,15 @@ namespace JsonUtil { class EmptyClass; }
 
 class StompAttackDefinition : public ::MeleeAttackDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7ac371;
-    ::ll::UntypedStorage<4, 4> mUnk79d234;
-    // NOLINTEND
+    // StompAttackDefinition inner types define
+    using self = ::StompAttackDefinition;
 
 public:
-    // prevent constructor by default
-    StompAttackDefinition& operator=(StompAttackDefinition const&);
-    StompAttackDefinition(StompAttackDefinition const&);
-    StompAttackDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float> mStompRangeMultiplier;
+    ::ll::TypedStorage<4, 4, float> mNoDamageRangeMultiplier;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -35,7 +33,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                                  name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::StompAttackDefinition>>& root
     );

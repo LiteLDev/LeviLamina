@@ -11,23 +11,16 @@ class ActorDamageSource;
 class CompoundTag;
 class DataLoadHelper;
 class Mob;
-namespace mce { class UUID; }
 // clang-format on
 
 class PigZombie : public ::Zombie {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb480f4;
-    ::ll::UntypedStorage<4, 4> mUnka23cdc;
-    ::ll::UntypedStorage<4, 4> mUnkdf9a1f;
+    ::ll::TypedStorage<4, 4, int> mAngerTime;
+    ::ll::TypedStorage<4, 4, int> mPlayAngrySoundIn;
+    ::ll::TypedStorage<4, 4, int> mStunedTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PigZombie& operator=(PigZombie const&);
-    PigZombie(PigZombie const&);
-    PigZombie();
 
 public:
     // virtual functions
@@ -55,12 +48,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void _alert(::Mob& target);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& SPEED_MODIFIER_ATTACK_UUID();
     // NOLINTEND
 
 public:

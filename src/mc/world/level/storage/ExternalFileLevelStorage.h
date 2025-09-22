@@ -9,6 +9,7 @@
 // clang-format off
 class ContentIdentity;
 class IContentKeyProvider;
+class IMinecraftEventing;
 class LevelData;
 class PackAccessStrategy;
 class TaskGroup;
@@ -39,8 +40,12 @@ MCNAPI bool isLevelMarkedForSync(::Core::Path const& directory);
 
 MCNAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
 
-MCNAPI ::Core::Result
-readLevelDataFromFile(::Core::Path const& directory, ::std::string const& levelId, ::LevelData& levelData);
+MCNAPI ::Core::Result readLevelDataFromFile(
+    ::Core::Path const&   directory,
+    ::std::string const&  levelId,
+    ::LevelData&          levelData,
+    ::IMinecraftEventing* eventing
+);
 
 MCNAPI bool readShallowLevelSummaryFromSyncFile(
     ::Core::Path const&  directory,

@@ -27,29 +27,29 @@ public:
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 135
+    // vIndex: 136
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 22
-    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
-
-    // vIndex: 146
-    virtual int _getNumCandles(::Block const& block) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     // vIndex: 147
+    virtual int _getNumCandles(::Block const& block) const /*override*/;
+
+    // vIndex: 148
     virtual void _iterateCandles(
         ::Block const&                            block,
         ::BlockPos const&                         pos,
         ::std::function<void(::Vec3 const&, int)> callback
     ) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 149
     virtual void _tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
@@ -79,6 +79,8 @@ public:
     MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
     MCFOLD bool $isInteractiveBlock() const;
+
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCAPI int $_getNumCandles(::Block const& block) const;
 

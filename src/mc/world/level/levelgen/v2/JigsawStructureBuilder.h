@@ -6,6 +6,7 @@
 #include "mc/world/level/levelgen/v2/DimensionPadding.h"
 #include "mc/world/level/levelgen/v2/JigsawExpansion.h"
 #include "mc/world/level/levelgen/v2/LiquidSettings.h"
+#include "mc/world/level/levelgen/v2/MaxDistanceFromCenter.h"
 #include "mc/world/level/levelgen/v2/StructureBuilder.h"
 #include "mc/world/level/levelgen/v2/StructureHeightProvider.h"
 #include "mc/world/level/levelgen/v2/heightmap_projection/Type.h"
@@ -24,7 +25,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, char>                                                  mMaxDepth;
-    ::ll::TypedStorage<4, 4, int>                                                   mMaxDistanceFromCenter;
+    ::ll::TypedStorage<4, 8, ::br::worldgen::MaxDistanceFromCenter>                 mMaxDistanceFromCenter;
     ::ll::TypedStorage<4, 8, ::br::worldgen::DimensionPadding>                      mDimensionPadding;
     ::ll::TypedStorage<8, 32, ::std::string>                                        mStart;
     ::ll::TypedStorage<8, 32, ::std::string>                                        mStartJigsawName;
@@ -49,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JigsawStructureBuilder(::std::string_view key, ::HashedString type, int maxDistanceFromCenter);
+    MCNAPI JigsawStructureBuilder(::std::string_view key, ::HashedString type);
 
     MCNAPI ::br::worldgen::JigsawStructure build();
 
@@ -65,7 +66,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view key, ::HashedString type, int maxDistanceFromCenter);
+    MCNAPI void* $ctor(::std::string_view key, ::HashedString type);
     // NOLINTEND
 
 public:

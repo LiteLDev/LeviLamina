@@ -11,6 +11,7 @@ class Player;
 namespace ScriptModuleMinecraft { struct ScriptCameraDefaultOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraFadeOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraFixedBoomOptions; }
+namespace ScriptModuleMinecraft { struct ScriptCameraFovOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraSetFacingOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraSetLocationOptions; }
 namespace ScriptModuleMinecraft { struct ScriptCameraSetPositionOptions; }
@@ -86,6 +87,9 @@ public:
         ::std::string const&                                        cameraPreset,
         ::std::optional<::ScriptModuleMinecraft::ScriptEaseOptions> easeOptions
     );
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    setFov(::std::optional<::ScriptModuleMinecraft::ScriptCameraFovOptions> fovOptions) const;
     // NOLINTEND
 
 public:

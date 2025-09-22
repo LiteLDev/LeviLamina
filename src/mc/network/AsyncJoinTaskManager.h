@@ -4,7 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
+#include "mc/deps/core/threading/SharedAsync.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/brstd/move_only_function.h"
 
@@ -29,7 +30,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk4a77f8;
+        ::ll::UntypedStorage<8, 16> mUnk6b540f;
         ::ll::UntypedStorage<1, 1>  mUnk94d63a;
         ::ll::UntypedStorage<8, 8>  mUnkc03172;
         // NOLINTEND
@@ -82,15 +83,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::nonstd::expected<void, ::AsyncJoinError> _handleAllVerdictsTaskCompletion(
-        ::SubClientId subClientId,
-        uint64        verdictId,
-        ::std::vector<
-            ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::nonstd::expected<void, ::AsyncJoinError>>>> const&
-            results
+        ::SubClientId                                                                                       subClientId,
+        uint64                                                                                              verdictId,
+        ::std::vector<::Bedrock::Threading::SharedAsync<::nonstd::expected<void, ::AsyncJoinError>>> const& results
     );
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::nonstd::expected<void, ::AsyncJoinError>>>
-    handleAsyncJoinCallbacks(
+    MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<void, ::AsyncJoinError>> handleAsyncJoinCallbacks(
         ::NetworkIdentifier const& source,
         ::std::variant<
             ::std::reference_wrapper<::ConnectionRequest const>,

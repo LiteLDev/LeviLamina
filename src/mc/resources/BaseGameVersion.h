@@ -37,7 +37,7 @@ public:
 
     MCAPI bool isCompatibleWith(::BaseGameVersion const& baseGameVersion) const;
 
-    MCFOLD bool operator<=(::BaseGameVersion const& rhs) const;
+    MCAPI bool operator<=(::BaseGameVersion const& rhs) const;
 
     MCAPI ::BaseGameVersion& operator=(::BaseGameVersion const&);
 

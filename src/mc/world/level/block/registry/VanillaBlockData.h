@@ -26,6 +26,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+
+    MCNAPI void initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 
 public:

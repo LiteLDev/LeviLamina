@@ -15,13 +15,14 @@ class HashedString;
 class IPreliminarySurfaceProvider;
 class Random;
 class StructureStart;
+struct BiomeIdType;
 // clang-format on
 
 class AncientCityFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk1c9344;
+    ::ll::UntypedStorage<8, 24> mUnkeb47d4;
     // NOLINTEND
 
 public:
@@ -33,7 +34,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
+    // vIndex: 5
     virtual bool isFeatureChunk(
         ::BiomeSource const& biomeSource,
         ::Random&            random,
@@ -44,6 +45,9 @@ public:
     ) /*override*/;
 
     // vIndex: 3
+    virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
+
+    // vIndex: 4
     virtual bool getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
@@ -54,7 +58,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     ) /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
         ::Dimension&         dimension,
         ::BiomeSource const& biomeSource,
@@ -78,6 +82,8 @@ public:
         ::IPreliminarySurfaceProvider const&,
         ::Dimension const&
     );
+
+    MCFOLD ::gsl::span<::BiomeIdType const> $getRequiredBiomes() const;
 
     MCAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,

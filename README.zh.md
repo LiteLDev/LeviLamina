@@ -45,9 +45,7 @@ LeviLamina 遵循 [Code of Conduct](https://www.contributor-covenant.org/version
 
 ### 贡献者
 
-这个项目的存在要感谢所有的贡献者。
-
-![贡献者](https://contrib.rocks/image?repo=LiteLDev/LeviLamina)
+这个项目的存在要感谢所有的[贡献者](https://github.com/LiteLDev/LeviLamina/graphs/contributors)。
 
 ## 许可证
 

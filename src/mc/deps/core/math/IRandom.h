@@ -2,17 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+
 // auto generated forward declare list
 // clang-format off
 class IPositionalRandomFactory;
 // clang-format on
 
-class IRandom {
+class IRandom : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IRandom();
+    virtual ~IRandom() /*override*/;
 
     // vIndex: 2
     virtual int nextInt() = 0;
@@ -55,11 +58,5 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::std::unique_ptr<::IPositionalRandomFactory> $forkPositional();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/common/SubClientId.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/PacketGroupDefinition.h"
 #include "mc/network/PacketViolationResponse.h"
 #include "mc/platform/ErrorInfo.h"
 
@@ -14,10 +15,11 @@ class NetworkIdentifier;
 namespace Bedrock { struct ImplCtor; }
 // clang-format on
 
-class IPacketSecurityController : public ::Bedrock::ImplBase<
-                                      ::IPacketSecurityController,
-                                      ::Bedrock::ImplCtor(::NetworkIdentifier const&),
-                                      ::Bedrock::ImplCtor(::NetworkIdentifier const&, bool)> {
+class IPacketSecurityController
+: public ::Bedrock::ImplBase<
+      ::IPacketSecurityController,
+      ::Bedrock::ImplCtor(::NetworkIdentifier const&),
+      ::Bedrock::ImplCtor(::NetworkIdentifier const&, ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder>)> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -34,6 +36,9 @@ public:
 
     // vIndex: 3
     virtual ::Bedrock::ErrorInfo<::std::error_code> consumePacketError(::SubClientId) = 0;
+
+    // vIndex: 4
+    virtual void reloadPacketLimitConfig(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder>) = 0;
 
     // vIndex: 0
     virtual ~IPacketSecurityController() /*override*/;

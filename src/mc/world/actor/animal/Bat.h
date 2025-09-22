@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/actor/Mob.h"
 
 // auto generated forward declare list
@@ -19,14 +20,12 @@ class Bat : public ::Mob {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk567aa1;
-    ::ll::UntypedStorage<4, 12> mUnk8e565f;
+    ::ll::TypedStorage<1, 1, bool>    mWasResting;
+    ::ll::TypedStorage<4, 12, ::Vec3> mTargetPosition;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Bat& operator=(Bat const&);
-    Bat(Bat const&);
     Bat();
 
 public:
@@ -42,7 +41,7 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 137
-    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
     // vIndex: 146
     virtual void pushActors() /*override*/;
@@ -81,7 +80,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
     MCFOLD void $pushActors();
     // NOLINTEND

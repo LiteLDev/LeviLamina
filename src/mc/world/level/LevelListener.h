@@ -170,6 +170,10 @@ public:
 
     MCFOLD void $onLevelDestruction(::std::string const&);
 
+    MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int);
+
+    MCFOLD void $levelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&);
+
     MCAPI void $takePicture(
         ::cg::ImageBuffer&,
         ::Actor*,
@@ -188,6 +192,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

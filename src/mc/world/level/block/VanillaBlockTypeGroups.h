@@ -36,6 +36,8 @@ MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Copp
 
 MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperBulbBlockIds();
 
+MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperChestBlockIds();
+
 MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperDoorBlockIds();
 
 MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperGrateBlockIds();

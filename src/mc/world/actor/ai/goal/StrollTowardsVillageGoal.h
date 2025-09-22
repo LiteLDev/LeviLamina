@@ -36,11 +36,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI ::BlockPos $_selectRandomPosInVillage();
+    MCAPI ::BlockPos $_selectRandomPosInVillage();
     // NOLINTEND
 
 public:

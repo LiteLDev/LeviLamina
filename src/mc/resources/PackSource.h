@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/brstd/function_ref.h"
 
@@ -20,14 +21,59 @@ struct PackSourceOptions;
 namespace PackCommand { struct UpgradeLegacyDependenciesBatch; }
 // clang-format on
 
-class PackSource {
+class PackSource : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // PackSource inner types declare
     // clang-format off
     struct PackTaskData;
+    class RequiredPackOrigin;
+    class RequiredPackType;
+    class RequiredResourceOrBehaviorPackType;
     // clang-format on
 
     // PackSource inner types define
+    class RequiredPackType {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnka29ba2;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RequiredPackType& operator=(RequiredPackType const&);
+        RequiredPackType(RequiredPackType const&);
+        RequiredPackType();
+    };
+
+    class RequiredPackOrigin {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk6149af;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RequiredPackOrigin& operator=(RequiredPackOrigin const&);
+        RequiredPackOrigin(RequiredPackOrigin const&);
+        RequiredPackOrigin();
+    };
+
+    class RequiredResourceOrBehaviorPackType {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk2a81d8;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RequiredResourceOrBehaviorPackType& operator=(RequiredResourceOrBehaviorPackType const&);
+        RequiredResourceOrBehaviorPackType(RequiredResourceOrBehaviorPackType const&);
+        RequiredResourceOrBehaviorPackType();
+    };
+
     struct PackTaskData {
     public:
         // member variables
@@ -60,9 +106,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkbebb21;
-    ::ll::UntypedStorage<8, 24> mUnk38d360;
-    ::ll::UntypedStorage<8, 64> mUnk3a6778;
+    ::ll::UntypedStorage<8, 8> mUnkbebb21;
+    ::ll::UntypedStorage<8, 8> mUnk442d24;
+    ::ll::UntypedStorage<8, 8> mUnk809155;
     // NOLINTEND
 
 public:
@@ -78,21 +124,18 @@ public:
     virtual ~PackSource() = 0;
 
     // vIndex: 1
-    virtual void forEachPackConst(::std::function<void(::Pack const&)> callback) const;
+    virtual void forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback);
 
     // vIndex: 2
-    virtual void forEachPack(::std::function<void(::Pack&)> callback);
-
-    // vIndex: 3
     virtual ::PackOrigin getPackOrigin() const;
 
-    // vIndex: 4
+    // vIndex: 3
     virtual ::PackType getPackType() const;
 
-    // vIndex: 5
+    // vIndex: 4
     virtual void _buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources);
 
-    // vIndex: 6
+    // vIndex: 5
     virtual ::PackSourceLoadResult _loadImpl(::PackSourceLoadOptions&&) = 0;
     // NOLINTEND
 
@@ -102,6 +145,8 @@ public:
     MCNAPI explicit PackSource(::PackSourceOptions options);
 
     MCNAPI ::PackSourceLoadResult _applyAndFinishLoadTask(::std::shared_ptr<::PackSource::PackTaskData> task);
+
+    MCNAPI ::PackSourceLoadResult _createImmediateLoadResult();
 
     MCNAPI ::PackSourceLoadResult
     _getTaskData(::brstd::function_ref<::PackSourceLoadResult(::std::shared_ptr<::PackSource::PackTaskData>)> task);
@@ -119,7 +164,8 @@ public:
 
     MCNAPI ::PackSourceLoadResult requestLoad(::PackSourceLoadOptions&& options);
 
-    MCNAPI void resolveUpgradeDependencies(::Pack& pack, ::PackCommand::UpgradeLegacyDependenciesBatch& commands);
+    MCNAPI void
+    resolveUpgradeDependencies(::std::shared_ptr<::Pack> pack, ::PackCommand::UpgradeLegacyDependenciesBatch& commands);
     // NOLINTEND
 
 public:
@@ -131,9 +177,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $forEachPackConst(::std::function<void(::Pack const&)> callback) const;
-
-    MCNAPI void $forEachPack(::std::function<void(::Pack&)> callback);
+    MCNAPI void $forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback);
 
     MCNAPI ::PackOrigin $getPackOrigin() const;
 

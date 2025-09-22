@@ -13,10 +13,10 @@ class IAppConfigData;
 class IContentAccessibilityProvider;
 class IEntitlementManager;
 class IMinecraftGame;
+class ISceneStack;
 class IScreenCapabilities;
 class LevelData;
 class SceneFactory;
-class SceneStack;
 struct ConnectionDefinition;
 struct PackIdVersion;
 // clang-format on
@@ -35,7 +35,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk9f7098;
     ::ll::UntypedStorage<8, 8>  mUnke1b346;
-    ::ll::UntypedStorage<8, 64> mUnk5c71b9;
+    ::ll::UntypedStorage<8, 64> mUnk6aa499;
     // NOLINTEND
 
 public:

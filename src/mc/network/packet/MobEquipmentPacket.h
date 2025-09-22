@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/renderer/rendergraph/Packet.h"
 #include "mc/legacy/ActorRuntimeID.h"
 #include "mc/network/MinecraftPacketIds.h"
+#include "mc/network/packet/InventoryPacket.h"
 #include "mc/platform/Result.h"
 #include "mc/world/ContainerID.h"
 #include "mc/world/item/NetworkItemStackDescriptor.h"
@@ -13,11 +13,15 @@
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
+class BlockPalette;
 class ItemStack;
 class ReadOnlyBinaryStream;
+class ServerPlayer;
+struct ActorRotationComponent;
+struct MoveInputComponent;
 // clang-format on
 
-class MobEquipmentPacket : public ::Packet {
+class MobEquipmentPacket : public ::InventoryPacket {
 public:
     // member variables
     // NOLINTBEGIN
@@ -46,10 +50,15 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 4
+    // vIndex: 15
+    virtual void
+    handle(::ServerPlayer& player, ::BlockPalette&, ::MoveInputComponent const&, ::ActorRotationComponent&, bool) const
+        /*override*/;
+
+    // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 13
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -109,6 +118,14 @@ public:
     MCAPI ::MinecraftPacketIds $getId() const;
 
     MCAPI ::std::string $getName() const;
+
+    MCAPI void $handle(
+        ::ServerPlayer& player,
+        ::BlockPalette&,
+        ::MoveInputComponent const&,
+        ::ActorRotationComponent&,
+        bool
+    ) const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 

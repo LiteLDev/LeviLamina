@@ -8,7 +8,7 @@
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/client/social/UserPlatformConnectionResult.h"
 #include "mc/common/GameUserType.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/Subject.h"
 #include "mc/identity/IdentityType.h"
@@ -128,8 +128,7 @@ public:
     virtual bool isPrimaryUserInitialSignInInProgress() const /*override*/;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-        createPrimaryUserAsync(::std::shared_ptr<::Options>) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> createPrimaryUserAsync(::std::shared_ptr<::Options>) /*override*/;
 
     // vIndex: 2
     virtual void initPrimaryIdentity() /*override*/;
@@ -141,7 +140,7 @@ public:
     virtual void setSecondaryUserCreationAllowed(int) /*override*/;
 
     // vIndex: 6
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> addSecondaryUserAsync(
+    virtual ::Bedrock::Threading::Async<void> addSecondaryUserAsync(
         int,
         ::std::shared_ptr<::Options>,
         ::std::function<void(::Social::UserPlatformConnectionResult)>
@@ -154,7 +153,7 @@ public:
     virtual void updateMapping(bool, bool) /*override*/;
 
     // vIndex: 13
-    virtual bool isPrimaryUserReady() /*override*/;
+    virtual bool isPrimaryUserReady() const /*override*/;
 
     // vIndex: 14
     virtual bool canAccessPlayScreen() /*override*/;
@@ -172,7 +171,7 @@ public:
     virtual bool canAccessSkinScreen() /*override*/;
 
     // vIndex: 19
-    virtual bool canAccessStoreScreen() /*override*/;
+    virtual bool canAccessStoreScreen() const /*override*/;
 
     // vIndex: 20
     virtual bool canAccessRealmsPendingInvitesScreen() /*override*/;

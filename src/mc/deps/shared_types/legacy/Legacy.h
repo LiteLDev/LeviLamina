@@ -12,6 +12,8 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::Legacy {
 // functions
 // NOLINTBEGIN
+MCNAPI void bindEquipmentSlot(::cereal::ReflectionCtx& ctx);
+
 MCNAPI void bindLevelSoundEventType(::cereal::ReflectionCtx& ctx);
 
 MCNAPI bool

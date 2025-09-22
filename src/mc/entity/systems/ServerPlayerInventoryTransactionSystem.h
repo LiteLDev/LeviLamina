@@ -24,7 +24,7 @@ MCNAPI void transactInventoryPacket(
 );
 
 MCNAPI void
-transferInventoryTransactionPackets(::ServerPlayerMovementComponent& movementComponent, ::EntityContext& entity);
+transferInventoryTransactionPackets(::ServerPlayerMovementComponent const& movementComponent, ::EntityContext& entity);
 // NOLINTEND
 
 } // namespace ServerPlayerInventoryTransactionSystem

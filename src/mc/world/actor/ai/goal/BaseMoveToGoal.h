@@ -103,7 +103,7 @@ public:
 
     MCAPI void $tick();
 
-    MCAPI bool $hasReachedTarget() const;
+    MCFOLD bool $hasReachedTarget() const;
 
     MCAPI int $_nextStartTick();
 

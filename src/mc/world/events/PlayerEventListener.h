@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/events/MinecraftEventing.h"
 #include "mc/network/packet/PlayerActionType.h"
+#include "mc/world/actor/player/persona/ProfileType.h"
 #include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
@@ -104,10 +105,10 @@ public:
 
     // vIndex: 22
     virtual ::EventResult onPlayerCreated(
-        ::LocalPlayer&       player,
-        ::std::string const& personaSlot,
-        ::std::string const& classicSkinId,
-        bool                 usingClassicSkin
+        ::LocalPlayer&               player,
+        ::persona::ProfileType const personaSlot,
+        ::std::string const&         classicSkinId,
+        bool                         usingClassicSkin
     );
 
     // vIndex: 24
@@ -228,10 +229,10 @@ public:
     $onPlayerStopRiding(::Player& player, bool exitFromPassenger, bool entityIsBeingDestroyed, bool switchingVehicles);
 
     MCFOLD ::EventResult $onPlayerCreated(
-        ::LocalPlayer&       player,
-        ::std::string const& personaSlot,
-        ::std::string const& classicSkinId,
-        bool                 usingClassicSkin
+        ::LocalPlayer&               player,
+        ::persona::ProfileType const personaSlot,
+        ::std::string const&         classicSkinId,
+        bool                         usingClassicSkin
     );
 
     MCFOLD ::EventResult $onPlayerTeleported(::Player& player);

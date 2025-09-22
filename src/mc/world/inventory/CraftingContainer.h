@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ItemStack;
-class Player;
 // clang-format on
 
 class CraftingContainer : public ::Container {
@@ -45,10 +45,10 @@ public:
     virtual void setContainerChanged(int slot) /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player&) /*override*/;
+    virtual void startOpen(::Actor&) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
     // vIndex: 2
     virtual void serverInitItemStackIds(
@@ -89,9 +89,9 @@ public:
 
     MCNAPI void $setContainerChanged(int slot);
 
-    MCNAPI void $startOpen(::Player&);
+    MCNAPI void $startOpen(::Actor&);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Actor& actor);
 
     MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,

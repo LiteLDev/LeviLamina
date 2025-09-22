@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ class BlockActor;
 class ItemInstance;
 // clang-format on
 
-class StoneBricksBlock : public ::BlockLegacy {
+class StoneBricksBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
@@ -23,10 +23,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 128
+    // vIndex: 129
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
 
     // vIndex: 0

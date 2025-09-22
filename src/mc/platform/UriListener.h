@@ -19,6 +19,9 @@ public:
 
     // vIndex: 2
     virtual void tick() = 0;
+
+    // vIndex: 3
+    virtual void executeStartupUris() = 0;
     // NOLINTEND
 
 public:

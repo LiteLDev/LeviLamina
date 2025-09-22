@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/world/level/block/actor/ChestBlockActor.h"
 
 // auto generated forward declare list
@@ -16,7 +17,6 @@ class DataLoadHelper;
 class ILevel;
 class ItemStack;
 class ItemStackBase;
-class Player;
 class SaveContext;
 class Vec3;
 // clang-format on
@@ -35,13 +35,13 @@ public:
     // vIndex: 0
     virtual ~ShulkerBoxBlockActor() /*override*/ = default;
 
-    // vIndex: 28
+    // vIndex: 26
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 11
     virtual void onPlace(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -57,27 +57,27 @@ public:
     virtual bool canPushInItem(int slot, int face, ::ItemStack const& item) const /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player& player) /*override*/;
+    virtual void startOpen(::Actor& actor) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 51
-    virtual void playOpenSound(::BlockSource& region) /*override*/;
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getOpenSound(::BlockSource const& region) const /*override*/;
 
     // vIndex: 52
-    virtual void playCloseSound(::BlockSource& region) /*override*/;
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getCloseSound(::BlockSource const& region) const /*override*/;
 
-    // vIndex: 54
+    // vIndex: 49
     virtual ::AABB getObstructionAABB() const /*override*/;
 
-    // vIndex: 55
+    // vIndex: 50
     virtual bool _detectEntityObstruction(::BlockSource& region) const /*override*/;
     // NOLINTEND
 
@@ -117,17 +117,17 @@ public:
 
     MCAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
 
-    MCAPI void $startOpen(::Player& player);
+    MCAPI void $startOpen(::Actor& actor);
 
-    MCAPI void $stopOpen(::Player& player);
+    MCAPI void $stopOpen(::Actor& actor);
 
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-    MCAPI void $playOpenSound(::BlockSource& region);
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getOpenSound(::BlockSource const& region) const;
 
-    MCAPI void $playCloseSound(::BlockSource& region);
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getCloseSound(::BlockSource const& region) const;
 
     MCAPI ::AABB $getObstructionAABB() const;
 

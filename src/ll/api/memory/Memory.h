@@ -71,7 +71,7 @@ inline void modify(T& ref, brstd::function_ref<void(std::remove_cv_t<T>&)> f) {
 
 template <class R = void, class... Args>
 constexpr auto addressCall(void const* address, auto&&... args) -> R {
-    return ((R(*)(Args...))address)(std::forward<decltype(args)>(args)...);
+    return ((R (*)(Args...))address)(std::forward<decltype(args)>(args)...);
 }
 
 template <class R = void, class... Args>

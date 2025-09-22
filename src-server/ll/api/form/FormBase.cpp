@@ -13,8 +13,11 @@ public:
 
     ~RawFormHandler() override = default;
 
-    void handle(Player& player, std::optional<Json::Value> data, std::optional<ModalFormCancelReason> cancelReason)
-        const override {
+    void handle(
+        Player&                              player,
+        std::optional<Json::Value>           data,
+        std::optional<ModalFormCancelReason> cancelReason
+    ) const override {
         if (mCallback) {
             auto result = data.transform([](auto const& data) {
                 // Json::FastWriter writer{};

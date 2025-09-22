@@ -7,7 +7,7 @@
 #include "mc/deps/core/resource/PackCategory.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -64,7 +64,8 @@ public:
     virtual ::ResourcePack* getResourcePackContainingModule(::PackIdVersion const&) const = 0;
 
     // vIndex: 9
-    virtual ::ResourcePack* getResourcePackInPath(::Core::Path const&) const = 0;
+    virtual ::Bedrock::Threading::Async<::std::shared_ptr<::ResourcePack>>
+    getResourcePackInPath(::Core::Path const&) const = 0;
 
     // vIndex: 10
     virtual bool isResourcePackLoaded(::PackIdVersion const&, ::PackOrigin const&) = 0;
@@ -139,7 +140,7 @@ public:
     virtual void refreshPacks() = 0;
 
     // vIndex: 34
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> refreshPacksAsync() = 0;
+    virtual ::Bedrock::Threading::Async<void> refreshPacksAsync() = 0;
 
     // vIndex: 35
     virtual void requestReloadUserPacks() = 0;
@@ -193,12 +194,6 @@ public:
     virtual void untrackInvalidPack(::ResourceLocation const&) = 0;
 
     // vIndex: 52
-    virtual void registerResourcePackRemovedCallback(void*, ::std::function<void(::ResourcePack*)>) = 0;
-
-    // vIndex: 53
-    virtual void unregisterResourcePackRemovedCallback(void*) = 0;
-
-    // vIndex: 54
     virtual bool isInitialized() const = 0;
     // NOLINTEND
 

@@ -26,7 +26,7 @@ enum class ActorDataIDs : uchar {
     OldSwell                         = 20,
     SwellDir                         = 21,
     ChargeAmount                     = 22,
-    CarryBlockRuntimeId              = 23,
+    DeprecatedCarryBlockRuntimeId    = 23,
     ClientEvent                      = 24,
     UsingItem                        = 25,
     PlayerFlags                      = 26,

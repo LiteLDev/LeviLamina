@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/FloatRange.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 
@@ -13,18 +14,16 @@ namespace JsonUtil { class EmptyClass; }
 
 class SwoopAttackDefinition : public ::BaseGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke07c16;
-    ::ll::UntypedStorage<4, 4> mUnke6c15c;
-    ::ll::UntypedStorage<4, 8> mUnk9d5b97;
-    // NOLINTEND
+    // SwoopAttackDefinition inner types define
+    using self = ::SwoopAttackDefinition;
 
 public:
-    // prevent constructor by default
-    SwoopAttackDefinition& operator=(SwoopAttackDefinition const&);
-    SwoopAttackDefinition(SwoopAttackDefinition const&);
-    SwoopAttackDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float>        mDamageReach;
+    ::ll::TypedStorage<4, 4, float>        mSpeedMultiplier;
+    ::ll::TypedStorage<4, 8, ::FloatRange> mCooldownTime;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -36,7 +35,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                                  name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SwoopAttackDefinition>>& root
     );

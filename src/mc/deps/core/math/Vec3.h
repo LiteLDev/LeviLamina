@@ -18,8 +18,6 @@ public:
 
     MCAPI bool isNear(::Vec3 const& rhs, float e) const;
 
-    MCAPI ::std::string toJsonString() const;
-
     MCAPI ::std::string toString() const;
     // NOLINTEND
 

@@ -6,7 +6,7 @@ struct ComponentItemData_Legacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkffded2;
+    ::ll::UntypedStorage<8, 8>  mUnkff2ccd;
     ::ll::UntypedStorage<8, 24> mUnk32ef34;
     ::ll::UntypedStorage<8, 40> mUnk477935;
     ::ll::UntypedStorage<8, 40> mUnka90ecd;

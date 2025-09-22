@@ -17,7 +17,7 @@ class DedicatedWSServerCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb82e93;
+    ::ll::UntypedStorage<8, 32> mUnkb82e93;
     // NOLINTEND
 
 public:

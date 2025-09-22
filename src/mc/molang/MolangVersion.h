@@ -17,7 +17,8 @@ enum class MolangVersion : short {
     DeprecateOldBlockQueryNames            = 10,
     DeprecatedSnifferAndCamelQueries       = 11,
     LeafSupportingInFirstSolidBlockBelow   = 12,
-    NumValidVersions                       = 13,
-    Latest                                 = 12,
-    HardcodedMolang                        = 12,
+    CarryingBlockQueryAllActors            = 13,
+    NumValidVersions                       = 14,
+    Latest                                 = 13,
+    HardcodedMolang                        = 13,
 };

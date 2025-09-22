@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/LogArea.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 #include "mc/world/item/ItemColor.h"
 #include "mc/world/level/block/BannerBlockType.h"
 
@@ -14,6 +15,12 @@ class SemVersion;
 class Vec2;
 class Vec3;
 namespace Json { class Value; }
+namespace JsonUtil { class EmptyClass; }
+namespace SharedTypes::v1_21_100 { struct ChargeAttackGoalDefinition; }
+namespace SharedTypes::v1_21_100 { struct CircleAroundAnchorGoalDefinition; }
+namespace SharedTypes::v1_21_100 { struct ControlledByPlayerGoalDefinition; }
+namespace SharedTypes::v1_21_100 { struct DragonFlamingGoalDefinition; }
+namespace SharedTypes::v1_21_100 { struct EatMobGoalDefinition; }
 // clang-format on
 
 namespace JsonUtil {
@@ -25,6 +32,40 @@ MCNAPI void LogMissingChildSchemaOption(
     ::std::string const& missingName,
     ::std::string const& foundNodesStr,
     ::std::string const& optionsStr
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_100::EatMobGoalDefinition>>& root,
+    ::std::string const&
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_21_100::ControlledByPlayerGoalDefinition>>& root,
+    ::std::string const&                                              name
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_21_100::CircleAroundAnchorGoalDefinition>>& root,
+    ::std::string const&                                              name
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
+        ::JsonUtil::EmptyClass,
+        ::SharedTypes::v1_21_100::DragonFlamingGoalDefinition>>& root,
+    ::std::string const&                                         name
+);
+
+MCNAPI void buildActorGoalSchema(
+    ::std::shared_ptr<
+        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SharedTypes::v1_21_100::ChargeAttackGoalDefinition>>&
+                         root,
+    ::std::string const& name
 );
 
 MCNAPI void eraseSchema(::HashedString const& name, ::SemVersion const& version);

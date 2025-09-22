@@ -208,7 +208,7 @@ struct LL_EBO Hook {};
         static int hook(bool suspendThreads = true) {                                                                  \
             _Detector<_OriginFuncType>();                                                                              \
             if (!_HookTarget) _HookTarget = ::ll::memory::resolveIdentifier<_OriginFuncType>(IDENTIFIER);              \
-            return ::ll::memory::hookEx(                                                                              \
+            return ::ll::memory::hookEx(                                                                               \
                 _HookTarget,                                                                                           \
                 ::ll::memory::toFuncPtr(&DEF_TYPE::detour),                                                            \
                 reinterpret_cast<_FuncPtr*>(&_OriginalFunc),                                                           \

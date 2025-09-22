@@ -5,8 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct Error; }
 namespace Scripting { struct InterfaceBinding; }
+namespace Scripting { struct PropertyOutOfBoundsError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::Scripting::Error> validate() const;
+    MCNAPI ::std::optional<::Scripting::PropertyOutOfBoundsError> validate() const;
     // NOLINTEND
 
 public:

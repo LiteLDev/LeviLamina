@@ -76,6 +76,13 @@ public:
     MCNAPI ::SubChunk*
     _getBlock(::SubChunkLightIndex coordIndex, ::Block const*& block, ::Block const*& extraBlock) const;
 
+    MCNAPI ::SubChunk* _getBlock(
+        ::SubChunkLightIndex coordIndex,
+        ::Block const*&      block,
+        ::Block const*&      extraBlock,
+        uint&                subChunkIndex
+    ) const;
+
     MCNAPI ::SubChunkBrightnessStorage::LightPair _getLightPair(::SubChunkLightIndex coordIndex) const;
 
     MCNAPI void _propagateBlockLight();

@@ -1086,86 +1086,182 @@ public:
 };
 
 // following are the functions required by CommandParameterData's ParseFunction
-MCTAPI bool CommandRegistry::parse<
-    std::
-        string>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<std::string>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<
-    int>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<int>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<
-    float>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<float>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<
-    Json::
-        Value>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<Json::Value>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<
-    CommandCompareOperator>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<CommandCompareOperator>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<
-    CommandFilePath>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<CommandFilePath>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<
-    CommandIntegerRange>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<CommandIntegerRange>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<
-    CommandMessage>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<CommandMessage>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<
-    CommandOperator>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<CommandOperator>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<
-    CommandPosition>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<CommandPosition>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<
-    CommandPositionFloat>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<CommandPositionFloat>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<
-    CommandRawText>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<CommandRawText>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<CommandSelector<
-    Actor>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<CommandSelector<Actor>>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<CommandSelector<
-    Player>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<CommandSelector<Player>>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<
-    CommandWildcardInt>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<CommandWildcardInt>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<
-    class
-    RelativeFloat>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<class RelativeFloat>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<WildcardCommandSelector<
-    Actor>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<WildcardCommandSelector<Actor>>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<std::unique_ptr<
-    ::Command>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<std::unique_ptr<::Command>>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parse<std::vector<
-    BlockStateCommandParam>>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parse<std::vector<BlockStateCommandParam>>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;
 
-MCTAPI bool CommandRegistry::parseEnum<
-    CommandChainedSubcommand,
-    void>(void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-    const;
+MCTAPI bool CommandRegistry::parseEnum<CommandChainedSubcommand, void>(
+    void*,
+    CommandRegistry::ParseToken const&,
+    CommandOrigin const&,
+    int,
+    std::string&,
+    std::vector<std::string>&
+) const;

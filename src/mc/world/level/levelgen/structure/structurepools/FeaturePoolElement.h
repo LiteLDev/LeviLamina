@@ -20,6 +20,7 @@ class LegacyStructureSettings;
 class Random;
 class StructureManager;
 struct ActorDefinitionIdentifier;
+namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadata; }
 // clang-format on
 
 class FeaturePoolElement : public ::StructurePoolElement {
@@ -60,6 +61,9 @@ public:
     // vIndex: 15
     virtual ::StructurePoolElementType type() const /*override*/;
 
+    // vIndex: 16
+    virtual ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> createMetadata() const /*override*/;
+
     // vIndex: 14
     virtual ~FeaturePoolElement() /*override*/ = default;
     // NOLINTEND
@@ -99,6 +103,8 @@ public:
     ) const;
 
     MCNAPI ::StructurePoolElementType $type() const;
+
+    MCNAPI ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> $createMetadata() const;
     // NOLINTEND
 
 public:

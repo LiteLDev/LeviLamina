@@ -14,8 +14,8 @@ namespace ll::data {
 class AnyFunctionObjBase : public AnyObjBase {
 protected:
     template <class Arg>
-    static auto getArg(std::any& any
-    ) -> std::conditional_t<std::is_reference_v<Arg>, Arg, std::add_lvalue_reference_t<Arg>> {
+    static auto getArg(std::any& any)
+        -> std::conditional_t<std::is_reference_v<Arg>, Arg, std::add_lvalue_reference_t<Arg>> {
         using Ret   = std::conditional_t<std::is_reference_v<Arg>, Arg, std::add_lvalue_reference_t<Arg>>;
         using Decay = std::decay_t<Arg>;
         using Wrap  = std::remove_cvref_t<Arg>;

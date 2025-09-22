@@ -74,6 +74,9 @@ public:
     // vIndex: 2
     virtual void tick() /*override*/;
 
+    // vIndex: 3
+    virtual void executeStartupUris() /*override*/;
+
     // vIndex: 24
     virtual void onLevelDestruction(::std::string const&) /*override*/;
 
@@ -117,6 +120,8 @@ public:
     MCNAPI void $send(::CodeBuilder::ChatMessage const& message);
 
     MCNAPI void $tick();
+
+    MCNAPI void $executeStartupUris();
 
     MCNAPI void $onLevelDestruction(::std::string const&);
 

@@ -6,7 +6,7 @@
 #include "mc/client/gui/DirtyFlag.h"
 #include "mc/client/store/StoreCatalogItemVisualLayer.h"
 #include "mc/client/store/servicecomponent/ImageTelemetryInfo.h"
-#include "mc/client/store/servicecomponent/StoreUIComponent.h"
+#include "mc/client/store/servicecomponent/StoreUIComponentWithStaticBinding.h"
 #include "mc/client/store/servicecomponent/utility/LinksToStyle.h"
 #include "mc/client/store/servicecomponent/utility/StyleData.h"
 #include "mc/deps/json/Value.h"
@@ -14,10 +14,10 @@
 // auto generated forward declare list
 // clang-format off
 class StoreCatalogItem;
-class StoreDataDrivenScreenController;
+class StoreUIComponent;
 // clang-format on
 
-class OfferCollectionComponent : public ::StoreUIComponent {
+class OfferCollectionComponent : public ::StoreUIComponentWithStaticBinding<::OfferCollectionComponent> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -70,9 +70,6 @@ public:
 
     // vIndex: 17
     virtual void _parseData(::Json::Value const&) /*override*/;
-
-    // vIndex: 18
-    virtual void _registerBindsAndEvents(::StoreDataDrivenScreenController&) /*override*/;
     // NOLINTEND
 
 public:

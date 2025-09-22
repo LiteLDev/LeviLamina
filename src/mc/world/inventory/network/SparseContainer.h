@@ -10,11 +10,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class IPlayerContainerSetter;
 class ISparseContainerSetListener;
 class ItemStack;
 class ItemStackBase;
-class Player;
 // clang-format on
 
 class SparseContainer : public ::Container, public ::ContainerContentChangeListener {
@@ -88,10 +88,10 @@ public:
     virtual void serverInitItemStackIds(int, int, ::std::function<void(int, ::ItemStack const&)>) /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player&) /*override*/;
+    virtual void startOpen(::Actor&) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
     // vIndex: 14
     virtual void removeItem(int slot, int count) /*override*/;

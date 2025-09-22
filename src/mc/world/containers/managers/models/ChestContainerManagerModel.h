@@ -19,7 +19,7 @@ class ChestContainerManagerModel : public ::LevelContainerManagerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::BlockActorType> mBlockActorType;
+    ::ll::TypedStorage<1, 1, ::BlockActorType> mBlockActorType;
     // NOLINTEND
 
 public:
@@ -42,9 +42,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ChestContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
+    MCAPI ChestContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
 
-    MCNAPI ChestContainerManagerModel(
+    MCAPI ChestContainerManagerModel(
         ::ContainerID     containerId,
         ::Player&         player,
         ::BlockPos const& blockPos,
@@ -55,23 +55,23 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
 
-    MCNAPI void*
+    MCAPI void*
     $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos, ::BlockActorType blockActorType);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValid(float pickRange);
+    MCAPI bool $isValid(float pickRange);
 
-    MCNAPI ::ContainerScreenContext $_postInit();
+    MCAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

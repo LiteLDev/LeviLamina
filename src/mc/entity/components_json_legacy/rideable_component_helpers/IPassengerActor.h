@@ -26,6 +26,9 @@ public:
     virtual bool isLeashed() const = 0;
 
     // vIndex: 4
+    virtual bool isUnderLeashHardDistance() const = 0;
+
+    // vIndex: 5
     virtual ::AABB const& getAABB() const = 0;
     // NOLINTEND
 

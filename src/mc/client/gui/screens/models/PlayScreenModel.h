@@ -84,12 +84,6 @@ public:
         // NOLINTEND
     };
 
-    enum class FetchOutcome : int {
-        Success   = 0,
-        Failure   = 1,
-        Cancelled = 2,
-    };
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -131,7 +125,7 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnk27c849;
     ::ll::UntypedStorage<4, 4>  mUnk60fb6f;
     ::ll::UntypedStorage<8, 32> mUnkf714e4;
-    ::ll::UntypedStorage<8, 16> mUnk6e1999;
+    ::ll::UntypedStorage<8, 16> mUnke0c444;
     ::ll::UntypedStorage<8, 8>  mUnk36a0c6;
     ::ll::UntypedStorage<8, 32> mUnk63414e;
     ::ll::UntypedStorage<1, 1>  mUnk5a3251;
@@ -184,10 +178,10 @@ public:
     // vIndex: 5
     virtual void startLocalWorld(::LocalWorldInfo, ::LevelSettings const*) /*override*/;
 
-    // vIndex: 11
+    // vIndex: 15
     virtual bool isDirty() const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 18
     virtual ::IMinecraftEventing& getMinecraftEventing() const /*override*/;
     // NOLINTEND
 

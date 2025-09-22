@@ -46,7 +46,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Level&>    mLevel;
-    ::ll::TypedStorage<8, 2568, ::Random> mRandom;
+    ::ll::TypedStorage<8, 2576, ::Random> mRandom;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::DimensionType, ::std::unordered_set<::PortalRecord>>>
         mPortalRecords;
     // NOLINTEND
@@ -67,7 +67,7 @@ public:
     virtual void serialize(::CompoundTag& tag) const /*override*/;
 
     // vIndex: 0
-    virtual ~PortalForcer() /*override*/;
+    virtual ~PortalForcer() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -105,12 +105,6 @@ public:
     MCAPI static ::BaseGameVersion const& MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION();
 
     MCAPI static ::std::string const& PORTAL_FILE_ID();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

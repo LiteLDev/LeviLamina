@@ -11,14 +11,11 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
-class AttributeModifier;
-class Block;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
 class MobEffectInstance;
 struct ActorDefinitionIdentifier;
-namespace mce { class UUID; }
 // clang-format on
 
 class EnderMan : public ::Monster {
@@ -74,18 +71,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-
-    MCAPI ::Block const& getCarryingBlock() const;
-
-    MCAPI void setCarryingBlock(::Block const& block);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::AttributeModifier>& SPEED_MODIFIER_ATTACKING();
-
-    MCAPI static ::mce::UUID const& SPEED_MODIFIER_ATTACKING_UUID();
     // NOLINTEND
 
 public:

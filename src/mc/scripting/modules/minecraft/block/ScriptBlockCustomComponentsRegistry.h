@@ -15,8 +15,8 @@
 // clang-format off
 class Block;
 class BlockCustomComponentsComponent;
-class BlockLegacy;
 class BlockPos;
+class BlockType;
 class HashedString;
 class IBlockSource;
 class ScriptDeferredEventCoordinator;
@@ -188,7 +188,7 @@ public:
     );
 
     MCNAPI void _registerBlockForEventing(
-        ::BlockLegacy&                                                           block,
+        ::BlockType&                                                             block,
         ::std::vector<::gsl::not_null<::BlockCustomComponentsComponent*>> const& comps
     );
 

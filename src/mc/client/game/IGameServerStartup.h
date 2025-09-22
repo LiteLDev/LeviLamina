@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/game/StartIntent.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,7 +24,7 @@ public:
     virtual bool canStartLocalServer() const = 0;
 
     // vIndex: 2
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> startLocalServerAsync(
+    virtual ::Bedrock::Threading::Async<void> startLocalServerAsync(
         ::std::string const&,
         ::std::string const&,
         ::ContentIdentity const&,

@@ -44,7 +44,6 @@ class DelayActionList;
 class DimensionBrightnessRamp;
 class EntityContext;
 class GameEventDispatcher;
-class HashedString;
 class ILevel;
 class ILevelStorageManagerConnector;
 class LevelChunk;
@@ -69,6 +68,7 @@ class WorldGenerator;
 struct ActorBlockSyncMessage;
 struct ActorChunkTransferEntry;
 struct ActorUnloadedChunkTransferEntry;
+struct BiomeIdType;
 struct NetworkIdentifierWithSubId;
 struct UpdateSubChunkBlocksChangedInfo;
 namespace br::worldgen { class StructureSetRegistry; }
@@ -244,7 +244,7 @@ public:
     virtual short getCloudHeight() const;
 
     // vIndex: 24
-    virtual ::HashedString getDefaultBiome() const;
+    virtual ::BiomeIdType getDefaultBiomeId() const;
 
     // vIndex: 25
     virtual bool mayRespawnViaBed() const;
@@ -490,7 +490,7 @@ public:
 
     MCFOLD short $getCloudHeight() const;
 
-    MCAPI ::HashedString $getDefaultBiome() const;
+    MCAPI ::BiomeIdType $getDefaultBiomeId() const;
 
     MCFOLD bool $mayRespawnViaBed() const;
 

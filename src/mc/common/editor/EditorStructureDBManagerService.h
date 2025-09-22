@@ -63,10 +63,10 @@ public:
 
     // vIndex: 1
     virtual ::std::optional<::std::string> createNewEditorProjectStructure(
-        ::Editor::EditorStructureTemplate&    templateData,
-        ::std::string const&                  id,
-        ::std::optional<::std::string> const& fullName,
-        ::std::optional<::std::string> const& displayName
+        ::Editor::EditorStructureTemplate const& templateData,
+        ::std::string const&                     id,
+        ::std::optional<::std::string> const&    fullName,
+        ::std::optional<::std::string> const&    displayName
     ) /*override*/;
 
     // vIndex: 2
@@ -186,10 +186,10 @@ public:
     MCNAPI ::std::string_view $getServiceName() const;
 
     MCNAPI ::std::optional<::std::string> $createNewEditorProjectStructure(
-        ::Editor::EditorStructureTemplate&    templateData,
-        ::std::string const&                  id,
-        ::std::optional<::std::string> const& fullName,
-        ::std::optional<::std::string> const& displayName
+        ::Editor::EditorStructureTemplate const& templateData,
+        ::std::string const&                     id,
+        ::std::optional<::std::string> const&    fullName,
+        ::std::optional<::std::string> const&    displayName
     );
 
     MCNAPI bool $replaceMCStructureFromTemplate(

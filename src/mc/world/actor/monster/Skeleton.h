@@ -12,8 +12,8 @@ class Actor;
 class ActorDamageSource;
 class ActorDefinitionGroup;
 class EntityContext;
+class WitherBoss;
 struct ActorDefinitionIdentifier;
-namespace mce { class UUID; }
 // clang-format on
 
 class Skeleton : public ::HumanoidMonster {
@@ -29,13 +29,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8992a7;
+    ::ll::TypedStorage<8, 8, ::WitherBoss*> mParentWither;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    Skeleton& operator=(Skeleton const&);
-    Skeleton(Skeleton const&);
     Skeleton();
 
 public:
@@ -76,12 +74,6 @@ public:
     );
 
     MCFOLD void setSkeletonType(::Skeleton::SkeletonType type);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& SPEED_MODIFIER_ATTACK_UUID();
     // NOLINTEND
 
 public:

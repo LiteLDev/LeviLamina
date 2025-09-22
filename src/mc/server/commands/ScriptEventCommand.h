@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>    mMessageId;
-    ::ll::TypedStorage<8, 24, ::CommandMessage> mMessage;
+    ::ll::TypedStorage<8, 32, ::CommandMessage> mMessage;
     // NOLINTEND
 
 public:
@@ -35,12 +35,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ushort const& MAX_MESSAGE_LENGTH();
     // NOLINTEND
 
 public:

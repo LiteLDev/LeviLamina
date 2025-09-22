@@ -10,7 +10,6 @@
 // clang-format off
 class ActorDamageSource;
 class ActorDefinitionGroup;
-class AttributeModifier;
 class BlockPos;
 class BodyControl;
 class CompoundTag;
@@ -21,7 +20,6 @@ struct ActorDefinitionIdentifier;
 struct ShulkerBounds;
 struct ShulkerBoundsInput;
 struct VariantParameterList;
-namespace mce { class UUID; }
 // clang-format on
 
 class Shulker : public ::Mob {
@@ -109,14 +107,6 @@ public:
     MCAPI static ::ShulkerBounds computeShulkerBounds(::ShulkerBoundsInput const& input);
 
     MCAPI static void setShulkerAttachPos(::SynchedActorDataWriter data, ::BlockPos const& pos);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::AttributeModifier>& COVERED_ARMOR_MODIFIER();
-
-    MCAPI static ::mce::UUID const& COVERED_ARMOR_MODIFIER_UUID();
     // NOLINTEND
 
 public:

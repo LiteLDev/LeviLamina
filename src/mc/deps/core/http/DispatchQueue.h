@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/http/DispatcherProcess.h"
 #include "mc/deps/core/http/Response.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/AsyncResultBase.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,7 +29,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1>  mUnkc7d5ff;
-        ::ll::UntypedStorage<8, 16> mUnk16d853;
+        ::ll::UntypedStorage<8, 16> mUnk80bc96;
         // NOLINTEND
 
     public:
@@ -80,7 +80,7 @@ public:
     ::ll::UntypedStorage<8, 80>  mUnked6186;
     ::ll::UntypedStorage<4, 4>   mUnkd0e8a3;
     ::ll::UntypedStorage<8, 336> mUnk88bbd3;
-    ::ll::UntypedStorage<8, 24>  mUnk2d9653;
+    ::ll::UntypedStorage<8, 24>  mUnkd5af65;
     ::ll::UntypedStorage<8, 32>  mUnkb12c33;
     // NOLINTEND
 
@@ -97,7 +97,7 @@ public:
     virtual ~DispatchQueue() /*override*/;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Response>
     send(::Bedrock::Http::Request&& request) /*override*/;
     // NOLINTEND
 
@@ -106,8 +106,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit DispatchQueue(::std::shared_ptr<::Bedrock::Http::DispatcherProcess> childProcess);
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
-    _addNewRequest(::Bedrock::Http::Request&& request);
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> _addNewRequest(::Bedrock::Http::Request&& request);
 
     MCNAPI void _cleanUpCompletedRequests();
 
@@ -131,8 +130,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::Bedrock::Http::Response>>
-    $send(::Bedrock::Http::Request&& request);
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> $send(::Bedrock::Http::Request&& request);
     // NOLINTEND
 
 public:

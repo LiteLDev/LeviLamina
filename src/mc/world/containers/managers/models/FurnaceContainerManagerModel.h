@@ -32,7 +32,7 @@ public:
     ::ll::TypedStorage<4, 4, int>                       mLastInputAux;
     ::ll::TypedStorage<8, 32, ::std::string>            mLastOutputName;
     ::ll::TypedStorage<4, 4, int>                       mLastResultDisplayId;
-    ::ll::TypedStorage<4, 4, ::BlockActorType const>    mBlockActorType;
+    ::ll::TypedStorage<1, 1, ::BlockActorType const>    mBlockActorType;
     ::ll::TypedStorage<1, 1, ::ContainerEnumName const> mIngredientContainerName;
     ::ll::TypedStorage<8, 48, ::HashedString const>     mRecipeTag;
     // NOLINTEND
@@ -72,7 +72,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FurnaceContainerManagerModel(
+    MCAPI FurnaceContainerManagerModel(
         ::HashedString const&                recipeTag,
         ::SharedTypes::Legacy::ContainerType containerType,
         ::BlockActorType                     blockActorType,
@@ -81,15 +81,15 @@ public:
         ::BlockPos const&                    blockPos
     );
 
-    MCNAPI ::FurnaceBlockActor* _getFurnaceEntity();
+    MCAPI ::FurnaceBlockActor* _getFurnaceEntity();
 
-    MCNAPI void _updateResultSlotInfo();
+    MCAPI void _updateResultSlotInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::HashedString const&                recipeTag,
         ::SharedTypes::Legacy::ContainerType containerType,
         ::BlockActorType                     blockActorType,
@@ -102,30 +102,30 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
-    MCNAPI ::ItemStack const& $getSlot(int slot) const;
+    MCAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCNAPI void $setData(int id, int value);
+    MCAPI void $setData(int id, int value);
 
-    MCNAPI bool $isValid(float pickRange);
+    MCAPI bool $isValid(float pickRange);
 
-    MCNAPI void $broadcastChanges();
+    MCAPI void $broadcastChanges();
 
-    MCNAPI ::ContainerScreenContext $_postInit();
+    MCAPI ::ContainerScreenContext $_postInit();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -23,7 +23,7 @@ class ScriptAsyncGameTestFunction : public ::ScriptModuleGameTest::BaseScriptGam
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 232> mUnkbaa30c;
+    ::ll::UntypedStorage<8, 248> mUnkbaa30c;
     // NOLINTEND
 
 public:

@@ -5,10 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/IRandom.h"
 #include "mc/deps/core/math/Random.h"
-#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/util/ThreadOwner.h"
 
-class Random : public ::IRandom, public ::Bedrock::EnableNonOwnerReferences {
+class Random : public ::IRandom {
 public:
     // Random inner types define
     using result_type = uint;
@@ -16,7 +15,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 2536, ::Bedrock::Application::ThreadOwner<::Core::Random, Bedrock::Application::ThreadOwnerBehavior::Assert>> mRandom;
+    ::ll::TypedStorage<
+        8,
+        2552,
+        ::Bedrock::Application::ThreadOwner<::Core::Random, Bedrock::Application::ThreadOwnerBehavior::Assert>>
+        mRandom;
     // NOLINTEND
 
 public:
@@ -63,8 +66,6 @@ public:
     MCAPI float nextFloat(float min, float max);
 
     MCAPI int nextInt(int min, int max);
-
-    MCAPI int nextIntInclusive(int min, int max);
 
     MCAPI void setSeed(uint seed);
     // NOLINTEND
@@ -114,8 +115,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForIRandom();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -4,7 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/packet/UpdateBlockPacket.h"
+#include "mc/network/NetworkBlockPosition.h"
+#include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
 #include "mc/world/level/ActorBlockSyncMessage.h"
 
@@ -14,11 +15,15 @@ class BinaryStream;
 class ReadOnlyBinaryStream;
 // clang-format on
 
-class UpdateBlockSyncedPacket : public ::UpdateBlockPacket {
+class UpdateBlockSyncedPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>  mPos;
+    ::ll::TypedStorage<4, 4, uint>                     mLayer;
+    ::ll::TypedStorage<1, 1, uchar>                    mUpdateFlags;
     ::ll::TypedStorage<8, 16, ::ActorBlockSyncMessage> mEntityBlockSyncMessage;
+    ::ll::TypedStorage<4, 4, uint>                     mRuntimeId;
     // NOLINTEND
 
 public:
@@ -33,10 +38,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 13
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 

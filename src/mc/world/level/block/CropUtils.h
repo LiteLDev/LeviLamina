@@ -4,15 +4,15 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 // clang-format on
 
 namespace CropUtils {
 // functions
 // NOLINTBEGIN
-MCAPI float getGrowthSpeed(::BlockLegacy const& legacyBlock, ::BlockSource const& region, ::BlockPos const& pos);
+MCAPI float getGrowthSpeed(::BlockType const& blockType, ::BlockSource const& region, ::BlockPos const& pos);
 // NOLINTEND
 
 } // namespace CropUtils

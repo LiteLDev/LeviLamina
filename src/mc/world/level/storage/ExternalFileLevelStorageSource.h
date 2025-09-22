@@ -107,11 +107,11 @@ public:
     virtual ::Core::PathBuffer<::std::string> const getPathToLevel(::std::string const& levelId) const /*override*/;
 
     // vIndex: 16
-    virtual ::Core::PathBuffer<::std::string> const
-    getPathToLevelInfo(::std::string const& levelId, bool forceInfo) const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> const getPathToLevelInfo(::std::string const& levelId, bool) const
+        /*override*/;
 
     // vIndex: 17
-    virtual bool isBetaRetailLevel(::std::string const& levelId) const /*override*/;
+    virtual bool isBetaRetailLevel(::std::string const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -187,10 +187,9 @@ public:
 
     MCAPI ::Core::PathBuffer<::std::string> const $getPathToLevel(::std::string const& levelId) const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const
-    $getPathToLevelInfo(::std::string const& levelId, bool forceInfo) const;
+    MCAPI ::Core::PathBuffer<::std::string> const $getPathToLevelInfo(::std::string const& levelId, bool) const;
 
-    MCFOLD bool $isBetaRetailLevel(::std::string const& levelId) const;
+    MCFOLD bool $isBetaRetailLevel(::std::string const&) const;
     // NOLINTEND
 
 public:

@@ -29,8 +29,8 @@ struct ActorMigratedDefinitionCustomData;
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace Puv { class Input; }
-namespace SharedTypes::v1_21_90 { struct ActorDefinitions; }
-namespace SharedTypes::v1_21_90 { struct ActorDocument; }
+namespace SharedTypes::v1_21_100 { struct ActorDefinitions; }
+namespace SharedTypes::v1_21_100 { struct ActorDocument; }
 // clang-format on
 
 class ActorDefinitionGroup : public ::Bedrock::EnableNonOwnerReferences {
@@ -105,7 +105,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkcf7ca4;
     ::ll::UntypedStorage<8, 8>  mUnk6ed894;
     ::ll::UntypedStorage<8, 72> mUnkc1236e;
-    ::ll::UntypedStorage<8, 8>  mUnke79e3a;
+    ::ll::UntypedStorage<8, 8>  mUnkedf698;
     // NOLINTEND
 
 public:
@@ -165,7 +165,7 @@ public:
         ::LogArea            logArea
     );
 
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_90::ActorDocument> _loadEntityNode(
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_100::ActorDocument> _loadEntityNode(
         ::Puv::Input const&                     input,
         ::SemVersion const&                     formatVersion,
         ::IPackLoadContext&                     packLoadContext,
@@ -174,12 +174,12 @@ public:
     ) const;
 
     MCNAPI ::ActorDefinitionParseStatus _loadTemplates(
-        ::Level&                                                                        level,
-        ::std::string const&                                                            base,
-        ::std::unordered_map<::std::string, ::SharedTypes::v1_21_90::ActorDefinitions>& componentsGroup,
-        ::SemVersion const&                                                             formatVersion,
-        ::IPackLoadContext const&                                                       packLoadContext,
-        ::JsonBetaState                                                                 useBetaFeatures
+        ::Level&                                                                         level,
+        ::std::string const&                                                             base,
+        ::std::unordered_map<::std::string, ::SharedTypes::v1_21_100::ActorDefinitions>& componentsGroup,
+        ::SemVersion const&                                                              formatVersion,
+        ::IPackLoadContext const&                                                        packLoadContext,
+        ::JsonBetaState                                                                  useBetaFeatures
     );
 
     MCNAPI void _removeRef(::ActorDefinitionPtr& ptr);

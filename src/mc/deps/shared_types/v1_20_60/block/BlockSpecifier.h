@@ -13,19 +13,18 @@ struct BlockSpecifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk8322cc;
+    ::ll::UntypedStorage<8, 32> mUnkce1165;
     ::ll::UntypedStorage<8, 64> mUnk610961;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    BlockSpecifier(BlockSpecifier const&);
     BlockSpecifier();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockSpecifier(::SharedTypes::v1_20_60::BlockSpecifier const&);
-
     MCNAPI BlockSpecifier(::SharedTypes::v1_20_60::BlockSpecifier&&);
 
     MCNAPI ::SharedTypes::v1_20_60::BlockSpecifier& operator=(::SharedTypes::v1_20_60::BlockSpecifier const&);
@@ -44,8 +43,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_60::BlockSpecifier const&);
-
     MCNAPI void* $ctor(::SharedTypes::v1_20_60::BlockSpecifier&&);
     // NOLINTEND
 

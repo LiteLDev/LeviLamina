@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _placeBaseBlockCircle(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
+    MCNAPI void _replaceBaseBlockCircle(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
 
     MCNAPI ~TreeParams();
     // NOLINTEND

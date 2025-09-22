@@ -130,6 +130,9 @@
 #include "fmt/format.h"
 #include "fmt/std.h"
 
+// moodycamel::ConcurrentQueue C++ Library
+#include "concurrentqueue.h" 
+
 struct HWND__;
 struct _TP_CALLBACK_INSTANCE;
 struct _TP_WAIT;
@@ -179,10 +182,10 @@ using ItemStackNetId           = TypedServerNetId<ItemStackNetIdTag, int>;
 using ItemStackRequestId       = TypedClientNetId<ItemStackRequestIdTag, int>;
 using ItemStackLegacyRequestId = TypedClientNetId<ItemStackLegacyRequestIdTag, int>;
 
-class BlockLegacy;
+class BlockType;
 template <typename T0>
 class ActorBlockBase;
-using ActorBlock = ActorBlockBase<BlockLegacy>;
+using ActorBlock = ActorBlockBase<BlockType>;
 
 template<int>
 class ParityImprovedNoiseImpl;

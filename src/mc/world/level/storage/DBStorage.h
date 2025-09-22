@@ -6,7 +6,7 @@
 #include "mc/common/CompactionStatus.h"
 #include "mc/deps/core/file/LevelStorageResult.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/brstd/flat_set.h"
 #include "mc/platform/brstd/move_only_function.h"
@@ -125,38 +125,38 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DBStorageEnvironmentChain>>               mEnvChain;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::Cache>>                          mCache;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::FilterPolicy const>>             mFilterPolicy;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::Compressor>>                     mCompressor;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::Compressor>>                     mLegacyCompressor;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DBStorage::Options>>                      mOptions;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::DecompressAllocator>>            mDecompressAllocator;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::DB>>                             mDb;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                               mIOTaskGroup;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                               mCompactionTaskGroup;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>> mCompactionTask;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>> mWriteTask;
-    ::ll::TypedStorage<8, 40, ::Core::LevelStorageResult>                                  mState;
-    ::ll::TypedStorage<8, 8, ::ContentIdentity const*>                                     mContentIdentity;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                           mFullPath;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                           mDbPath;
-    ::ll::TypedStorage<8, 32, ::std::string>                                               mLevelId;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                 mCompactionMutex;
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                          mWriteCacheMutex;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                 mCacheFlushMutex;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                      mLastCompactionStartTime;
-    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                                   mCompactionInterval;
-    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                                   mWriteFlushInterval;
-    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mAllowFlush;
-    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mSavingInProgress;
-    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mSnapshotInProgress;
-    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mShutdownStarted;
-    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mNoMoreWrites;
-    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                          mShutdownDone;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>>                                           mOutstandingJobs;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::SaveTransactionManager>>        mSaveTransactionManager;
-    ::ll::TypedStorage<8, 64, ::std::function<void()>>                                     mCriticalSyncSaveCallback;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DBStorageEnvironmentChain>>        mEnvChain;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::Cache>>                   mCache;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::FilterPolicy const>>      mFilterPolicy;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::Compressor>>              mCompressor;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::Compressor>>              mLegacyCompressor;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DBStorage::Options>>               mOptions;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::DecompressAllocator>>     mDecompressAllocator;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::DB>>                      mDb;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                        mIOTaskGroup;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                        mCompactionTaskGroup;
+    ::ll::TypedStorage<8, 16, ::Bedrock::Threading::Async<void>>                    mCompactionTask;
+    ::ll::TypedStorage<8, 16, ::Bedrock::Threading::Async<void>>                    mWriteTask;
+    ::ll::TypedStorage<8, 40, ::Core::LevelStorageResult>                           mState;
+    ::ll::TypedStorage<8, 8, ::ContentIdentity const*>                              mContentIdentity;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                    mFullPath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                    mDbPath;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mLevelId;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                          mCompactionMutex;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                                   mWriteCacheMutex;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                          mCacheFlushMutex;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>               mLastCompactionStartTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                            mCompactionInterval;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                            mWriteFlushInterval;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                   mAllowFlush;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                   mSavingInProgress;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                   mSnapshotInProgress;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                   mShutdownStarted;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                   mNoMoreWrites;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                   mShutdownDone;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>                                    mOutstandingJobs;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::SaveTransactionManager>> mSaveTransactionManager;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>                              mCriticalSyncSaveCallback;
     ::ll::TypedStorage<8, 64, ::std::function<void(::CompactionStatus)>> mExternallyRegisteredCompactionCallback;
     ::ll::TypedStorage<
         8,
@@ -199,7 +199,7 @@ public:
 
     // vIndex: 7
     virtual ::std::unique_ptr<::ChunkSource>
-        createChunkStorage(::std::unique_ptr<::ChunkSource>, ::StorageVersion) /*override*/;
+    createChunkStorage(::std::unique_ptr<::ChunkSource> generator, ::StorageVersion) /*override*/;
 
     // vIndex: 9
     virtual ::Core::PathBuffer<::std::string> const& getFullPath() const /*override*/;
@@ -218,15 +218,14 @@ public:
     virtual void saveLevelData(::LevelData const& levelData) /*override*/;
 
     // vIndex: 11
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    virtual ::Bedrock::Threading::Async<void>
     saveData(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category) /*override*/;
 
     // vIndex: 10
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    saveData(::LevelStorageWriteBatch const& batch) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> saveData(::LevelStorageWriteBatch const& batch) /*override*/;
 
     // vIndex: 12
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    virtual ::Bedrock::Threading::Async<void>
     deleteData(::std::string const& key, ::DBHelpers::Category category) /*override*/;
 
     // vIndex: 20
@@ -266,7 +265,7 @@ public:
     virtual void releaseSnapshot() /*override*/;
 
     // vIndex: 24
-    virtual ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> compactStorage() /*override*/;
+    virtual ::Bedrock::Threading::Async<void> compactStorage() /*override*/;
 
     // vIndex: 25
     virtual void syncAndSuspendStorage() /*override*/;
@@ -320,8 +319,6 @@ public:
     MCAPI ::DBStorage::PendingWriteResult
     _readPendingWrite(::std::string const& key, ::DBHelpers::Category category) const;
 
-    MCAPI void _removeCorruptedMark() const;
-
     MCAPI void _scheduleNextAutoCompaction();
 
     MCAPI bool _suspendAndPerformSaveAction(
@@ -353,6 +350,9 @@ public:
 
     MCFOLD ::Core::LevelStorageResult $getState() const;
 
+    MCAPI ::std::unique_ptr<::ChunkSource>
+    $createChunkStorage(::std::unique_ptr<::ChunkSource> generator, ::StorageVersion);
+
     MCFOLD ::Core::PathBuffer<::std::string> const& $getFullPath() const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const& key, ::DBHelpers::Category category);
@@ -363,13 +363,12 @@ public:
 
     MCAPI void $saveLevelData(::LevelData const& levelData);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
+    MCAPI ::Bedrock::Threading::Async<void>
     $saveData(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> $saveData(::LevelStorageWriteBatch const& batch);
+    MCAPI ::Bedrock::Threading::Async<void> $saveData(::LevelStorageWriteBatch const& batch);
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>>
-    $deleteData(::std::string const& key, ::DBHelpers::Category category);
+    MCAPI ::Bedrock::Threading::Async<void> $deleteData(::std::string const& key, ::DBHelpers::Category category);
 
     MCAPI bool $loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
 
@@ -396,7 +395,7 @@ public:
 
     MCAPI void $releaseSnapshot();
 
-    MCAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<void>> $compactStorage();
+    MCAPI ::Bedrock::Threading::Async<void> $compactStorage();
 
     MCAPI void $syncAndSuspendStorage();
 

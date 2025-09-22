@@ -41,6 +41,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit PathView(char const* src);
+
     MCNAPI explicit PathView(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
 
     MCNAPI explicit PathView(::Core::Path const& src);
@@ -57,6 +59,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(char const* src);
+
     MCNAPI void* $ctor(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
 
     MCNAPI void* $ctor(::Core::Path const& src);

@@ -14,7 +14,7 @@ MCNAPI ::Scripting::EnumBinding bindBrushPaintCompletionStates();
 
 MCNAPI ::Scripting::EnumBinding bindBrushPaintModes();
 
-MCNAPI ::Scripting::EnumBinding bindBrushShapeMethods();
+MCNAPI ::Scripting::EnumBinding bindDirectionalPlacementModes();
 // NOLINTEND
 
 } // namespace Editor::Brush

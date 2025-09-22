@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Color.h"
 #include "mc/world/item/FertilizerType.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
 
 // auto generated forward declare list
@@ -22,7 +22,7 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockRandomTickEvent; }
 // clang-format on
 
-class GrassBlock : public ::BlockLegacy {
+class GrassBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
@@ -37,27 +37,27 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 73
+    // vIndex: 74
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
 
-    // vIndex: 75
+    // vIndex: 76
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
         /*override*/;
 
-    // vIndex: 92
+    // vIndex: 93
     virtual int calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const
         /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual bool canBeOriginalSurface() const /*override*/;
 
-    // vIndex: 82
+    // vIndex: 83
     virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
         /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -71,7 +71,9 @@ public:
 
     MCAPI bool _canBeGrass(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI bool _plantGrass(::BlockSource& region, ::BlockPos const& abovePos, ::Randomize& randomize) const;
+    MCAPI bool _randomWalk(::BlockSource& region, ::BlockPos& pos, ::Randomize& randomize, int j) const;
+
+    MCAPI bool fertilize(::BlockSource& region, ::BlockPos const& pos, ::Randomize& randomize) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 

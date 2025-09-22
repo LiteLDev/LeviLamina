@@ -68,7 +68,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCFOLD void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
     // NOLINTEND

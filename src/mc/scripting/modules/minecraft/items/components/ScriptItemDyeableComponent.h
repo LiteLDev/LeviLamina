@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/items/components/ScriptItemComponent.h"
@@ -10,7 +11,9 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace ScriptModuleMinecraft { class ScriptRGB; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
 namespace Scripting { struct InvalidArgumentError; }
@@ -19,6 +22,10 @@ namespace Scripting { struct InvalidArgumentError; }
 namespace ScriptModuleMinecraft {
 
 class ScriptItemDyeableComponent : public ::ScriptModuleMinecraft::ScriptItemComponent {
+public:
+    // prevent constructor by default
+    ScriptItemDyeableComponent();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,6 +36,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptItemDyeableComponent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
+
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRGB>> getColor();
 
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::ScriptModuleMinecraft::ScriptRGB>> getDefaultColor();
@@ -42,6 +54,15 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
+        ::Scripting::WeakLifetimeScope const&                                          scope
+    );
     // NOLINTEND
 
 public:

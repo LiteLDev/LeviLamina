@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/block/WoodType.h"
 
 // auto generated forward declare list
@@ -12,7 +12,7 @@ class Block;
 class Experiments;
 // clang-format on
 
-class PlanksBlock : public ::BlockLegacy {
+class PlanksBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
@@ -22,10 +22,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 111
+    // vIndex: 112
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0

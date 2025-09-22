@@ -156,4 +156,5 @@ enum class ActorType : int {
     OminousItemSpawner         = 145,
     Creaking                   = 2962,
     HappyGhast                 = 5011,
+    CopperGolem                = 916,
 };

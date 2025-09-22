@@ -9,17 +9,17 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class BlockActorDataPacket;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class ItemDescriptor;
 class ItemStack;
 class MobEffect;
-class Player;
 class SaveContext;
 class Vec3;
 struct BeaconBeamSection;
@@ -68,7 +68,7 @@ public:
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 22
+    // vIndex: 21
     virtual bool hasAlphaLayer() const /*override*/;
 
     // vIndex: 7
@@ -86,7 +86,7 @@ public:
     // vIndex: 14
     virtual void removeItem(int slot, int count) /*override*/;
 
-    // vIndex: 28
+    // vIndex: 26
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 20
@@ -96,10 +96,10 @@ public:
     virtual int getMaxStackSize() const /*override*/;
 
     // vIndex: 22
-    virtual void startOpen(::Player& player) /*override*/;
+    virtual void startOpen(::Actor&) /*override*/;
 
     // vIndex: 23
-    virtual void stopOpen(::Player& player) /*override*/;
+    virtual void stopOpen(::Actor& actor) /*override*/;
 
     // vIndex: 2
     virtual void serverInitItemStackIds(
@@ -108,16 +108,16 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 35
+    // vIndex: 32
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 34
+    // vIndex: 31
     virtual ::Container const* getContainer() const /*override*/;
 
-    // vIndex: 45
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
@@ -151,7 +151,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::BlockColor _getMediumColor(::BlockLegacy const& medium);
+    MCNAPI static ::BlockColor _getMediumColor(::BlockType const& medium);
 
     MCNAPI static bool isPaymentItem(::ItemDescriptor const& pItem);
     // NOLINTEND
@@ -189,9 +189,9 @@ public:
 
     MCNAPI int $getMaxStackSize() const;
 
-    MCNAPI void $startOpen(::Player& player);
+    MCNAPI void $startOpen(::Actor&);
 
-    MCNAPI void $stopOpen(::Player& player);
+    MCNAPI void $stopOpen(::Actor& actor);
 
     MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,

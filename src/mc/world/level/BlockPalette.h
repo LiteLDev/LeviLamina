@@ -9,7 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
+class BlockType;
 class IUnknownBlockTypeRegistry;
 class Level;
 struct NewBlockID;
@@ -33,8 +33,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>       mLegacyBlockStatesConversionWarningMutex;
-    ::ll::TypedStorage<8, 16, ::std::set<::std::pair<int, int>>> mLegacyBlockStatesConversionWarningSet;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>       mBlockTypeStatesConversionWarningMutex;
+    ::ll::TypedStorage<8, 16, ::std::set<::std::pair<int, int>>> mBlockTypeStatesConversionWarningSet;
     ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>     mBlockFromNetworkId;
     ::ll::TypedStorage<8, 8, ::Level*>                           mLevel;
     // NOLINTEND
@@ -73,7 +73,7 @@ public:
 
     MCNAPI bool shouldWarnFor(::NewBlockID id, ushort data) const;
 
-    MCNAPI ::Block const& switchBlock(::Block const& oldBlock, ::BlockLegacy const& newBlockType) const;
+    MCNAPI ::Block const& switchBlock(::Block const& oldBlock, ::BlockType const& newBlockType) const;
     // NOLINTEND
 
 public:

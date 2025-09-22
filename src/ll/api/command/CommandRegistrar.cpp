@@ -124,7 +124,12 @@ bool CommandRegistrar::tryRegisterRuntimeEnum(
     std::string const&                          name,
     std::vector<std::pair<std::string, uint64>> values
 ) {
-    return tryRegisterEnum(name, std::move(values), Bedrock::type_id<CommandRegistry, RuntimeEnum>(), &CommandRegistry::parse<RuntimeEnum>);
+    return tryRegisterEnum(
+        name,
+        std::move(values),
+        Bedrock::type_id<CommandRegistry, RuntimeEnum>(),
+        &CommandRegistry::parse<RuntimeEnum>
+    );
 }
 bool CommandRegistrar::addRuntimeEnumValues(
     std::string const&                          name,
@@ -179,9 +184,12 @@ char const* CommandRegistrar::addText(CommandHandle& /*handle*/, std::string_vie
     } else {
         impl->textWithRef.try_emplace(storedName, 1);
         tryRegisterEnum(
-            storedName, {{std::string{text}, 0}},
-        Bedrock::type_id<CommandRegistry, OverloadData::Placeholder>(),
-        &CommandRegistry::parse<OverloadData::Placeholder>
+            storedName,
+            {
+                {std::string{text}, 0}
+        },
+            Bedrock::type_id<CommandRegistry, OverloadData::Placeholder>(),
+            &CommandRegistry::parse<OverloadData::Placeholder>
         );
     }
     return impl->textWithRef.find(storedName)->first.c_str();

@@ -66,6 +66,8 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
+    MCAPI void* $ctor(::HitResult&&);
+
     MCAPI void* $ctor(::HitResult const&);
 
     MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos);

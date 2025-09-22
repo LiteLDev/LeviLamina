@@ -18,10 +18,10 @@ class CarrotBlock : public ::CropBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 149
+    // vIndex: 150
     virtual ::ItemInstance const getBaseSeed() const /*override*/;
 
-    // vIndex: 117
+    // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
 
     // vIndex: 9

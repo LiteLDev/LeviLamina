@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/Flip.h"
-#include "mc/world/level/block/BlockLegacy.h"
+#include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +14,7 @@ class BlockPos;
 class Vec3;
 // clang-format on
 
-class FaceDirectionalBlock : public ::BlockLegacy {
+class FaceDirectionalBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
@@ -25,21 +25,21 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 119
+    // vIndex: 120
     virtual ::Block const& getRenderBlock() const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 121
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 121
+    // vIndex: 122
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 91
+    // vIndex: 92
     virtual ::Block const&
     getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
         /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual bool isValidAuxValue(int value) const /*override*/;
 
     // vIndex: 0

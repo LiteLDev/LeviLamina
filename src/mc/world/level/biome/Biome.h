@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/BiomeIdType.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/util/IDType.h"
 #include "mc/util/TagRegistry.h"
@@ -15,6 +16,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class LevelChunk;
 class MobSpawnerData;
 class WellKnownTagID;
 struct BiomeTagIDType;
@@ -25,32 +27,12 @@ namespace mce { class Color; }
 
 class Biome {
 public:
-    // Biome inner types declare
-    // clang-format off
-    struct CachedClientComponentData;
-    // clang-format on
-
     // Biome inner types define
     enum class BiomeTempCategory : int {
         Ocean  = 0,
         Cold   = 1,
         Medium = 2,
         Warm   = 3,
-    };
-
-    struct CachedClientComponentData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk586aaa;
-        ::ll::UntypedStorage<1, 1> mUnka6d024;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CachedClientComponentData& operator=(CachedClientComponentData const&);
-        CachedClientComponentData(CachedClientComponentData const&);
-        CachedClientComponentData();
     };
 
 public:
@@ -74,10 +56,9 @@ public:
     ::ll::TypedStorage<4, 12, ::OceanRuinConfiguration>                           mOceanRuinConfig;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::MobSpawnerData>>> mMobs;
     ::ll::TypedStorage<8, 256, ::std::array<::WeightedRandomList<::br::worldgen::SpawnerData>, 8>> mMobsMap;
-    ::ll::TypedStorage<1, 2, ::Biome::CachedClientComponentData> mCachedClientComponentData;
-    ::ll::TypedStorage<2, 2, ushort const>                       mId;
-    ::ll::TypedStorage<8, 32, ::BiomeComponentStorage>           mBiomeComponentStorage;
-    ::ll::TypedStorage<8, 48, ::HashedString const>              mHash;
+    ::ll::TypedStorage<2, 2, ::BiomeIdType const>                                                  mId;
+    ::ll::TypedStorage<8, 32, ::BiomeComponentStorage> mBiomeComponentStorage;
+    ::ll::TypedStorage<8, 48, ::HashedString const>    mHash;
     // NOLINTEND
 
 public:
@@ -94,7 +75,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Biome(ushort id, ::std::string_view name);
+    MCAPI Biome(::BiomeIdType id, ::std::string_view name);
 
     MCAPI ::VanillaBiomeTypes getBiomeType() const;
 
@@ -105,8 +86,6 @@ public:
     MCAPI float getTemperature(::BlockSource const& region, ::BlockPos const& pos) const;
 
     MCAPI ::Biome::BiomeTempCategory getTemperatureCategory() const;
-
-    MCAPI float getTemperatureWorldGen(::BlockPos const& pos, short seaLevel) const;
 
     MCAPI bool hasTag(::WellKnownTagID const& tagID) const;
 
@@ -128,6 +107,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void buildCachedTemperatureNoise(::LevelChunk& chunk);
+
     MCAPI static ::mce::Color getColorBySamplingSurroundings(
         ::BlockSource&                                                     region,
         ::BlockPos const&                                                  pos,
@@ -161,7 +142,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(ushort id, ::std::string_view name);
+    MCAPI void* $ctor(::BiomeIdType id, ::std::string_view name);
     // NOLINTEND
 
 public:

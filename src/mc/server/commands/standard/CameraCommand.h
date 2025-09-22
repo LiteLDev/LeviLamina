@@ -26,17 +26,19 @@ public:
         Ease         = 2,
         Pos          = 3,
         Rot          = 4,
-        Facing       = 5,
-        TargetEntity = 6,
-        TargetOffset = 7,
-        RemoveTarget = 8,
-        ViewOffset   = 9,
-        EntityOffset = 10,
-        Default      = 11,
-        Clear        = 12,
-        Fade         = 13,
-        Time         = 14,
-        Color        = 15,
+        FovSet       = 5,
+        FovClear     = 6,
+        Facing       = 7,
+        TargetEntity = 8,
+        TargetOffset = 9,
+        RemoveTarget = 10,
+        ViewOffset   = 11,
+        EntityOffset = 12,
+        Default      = 13,
+        Clear        = 14,
+        Fade         = 15,
+        Time         = 16,
+        Color        = 17,
     };
 
 public:
@@ -79,6 +81,10 @@ public:
     ::ll::UntypedStorage<4, 4>   mUnkcb9bf0;
     ::ll::UntypedStorage<4, 4>   mUnk1be6e3;
     ::ll::UntypedStorage<4, 4>   mUnk7df88a;
+    ::ll::UntypedStorage<1, 1>   mUnkcf2ab3;
+    ::ll::UntypedStorage<4, 4>   mUnkecea45;
+    ::ll::UntypedStorage<4, 4>   mUnk55454d;
+    ::ll::UntypedStorage<4, 4>   mUnk647e26;
     // NOLINTEND
 
 public:
@@ -119,7 +125,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry, ::Experiments const*);
+    MCAPI static void setup(::CommandRegistry& registry, ::Experiments const* experiments);
     // NOLINTEND
 
 public:
@@ -138,6 +144,10 @@ public:
     MCAPI static char const*& ENUM_OPTION_FACING();
 
     MCAPI static char const*& ENUM_OPTION_FADE();
+
+    MCAPI static char const*& ENUM_OPTION_FOV();
+
+    MCAPI static char const*& ENUM_OPTION_FOV_CLEAR();
 
     MCAPI static char const*& ENUM_OPTION_POS();
 
@@ -168,6 +178,10 @@ public:
     MCAPI static char const*& OPTION_FACING();
 
     MCAPI static char const*& OPTION_FADE();
+
+    MCAPI static char const*& OPTION_FOV();
+
+    MCAPI static char const*& OPTION_FOV_CLEAR();
 
     MCAPI static char const*& OPTION_POS();
 

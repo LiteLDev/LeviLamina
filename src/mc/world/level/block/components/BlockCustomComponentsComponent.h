@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
+class BlockType;
 struct BlockCustomComponentData;
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
@@ -56,6 +56,6 @@ public:
     MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
         void>>
-    tryGetComponentsToExecute(::BlockLegacy const& baseBlock) const;
+    tryGetComponentsToExecute(::BlockType const& baseBlock) const;
     // NOLINTEND
 };

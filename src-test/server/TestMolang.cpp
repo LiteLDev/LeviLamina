@@ -5,8 +5,8 @@
 
 
 #include "ll/api/memory/Hook.h"
-#include "mc/server/commands/CommandOutput.h"
 #include "mc/scripting/ServerScriptManager.h"
+#include "mc/server/commands/CommandOutput.h"
 
 #include "ll/api/io/Logger.h"
 #include "ll/api/io/LoggerRegistry.h"

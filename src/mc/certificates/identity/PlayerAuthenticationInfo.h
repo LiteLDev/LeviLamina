@@ -2,18 +2,47 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/UUID.h"
+
 struct PlayerAuthenticationInfo {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> Xuid;
+    ::ll::TypedStorage<8, 32, ::std::string> PlayFabId;
+    ::ll::TypedStorage<8, 32, ::std::string> NintendoId;
+    ::ll::TypedStorage<8, 32, ::std::string> PsnId;
     ::ll::TypedStorage<8, 32, ::std::string> XboxLiveName;
+    ::ll::TypedStorage<8, 32, ::std::string> NintendoName;
+    ::ll::TypedStorage<8, 32, ::std::string> PlayStationName;
+    ::ll::TypedStorage<8, 32, ::std::string> PublicKey;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>   AuthenticatedUuid;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PlayerAuthenticationInfo& operator=(PlayerAuthenticationInfo const&);
+    PlayerAuthenticationInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PlayerAuthenticationInfo(::PlayerAuthenticationInfo const&);
+
+    MCNAPI PlayerAuthenticationInfo(::PlayerAuthenticationInfo&&);
+
+    MCNAPI ::PlayerAuthenticationInfo& operator=(::PlayerAuthenticationInfo&&);
+
     MCNAPI ~PlayerAuthenticationInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::PlayerAuthenticationInfo const&);
+
+    MCNAPI void* $ctor(::PlayerAuthenticationInfo&&);
     // NOLINTEND
 
 public:

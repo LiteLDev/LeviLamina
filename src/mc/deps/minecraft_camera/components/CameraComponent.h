@@ -6,7 +6,7 @@
 #include "mc/deps/core/math/Matrix.h"
 #include "mc/deps/core/string/HashedString.h"
 
-class CameraComponent {
+struct CameraComponent {
 public:
     // member variables
     // NOLINTBEGIN

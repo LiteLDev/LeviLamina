@@ -14,7 +14,7 @@ class CherryLeavesBlock : public ::SeasonsAgnosticLeavesBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 123
+    // vIndex: 124
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 0

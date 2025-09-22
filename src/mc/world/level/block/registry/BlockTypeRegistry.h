@@ -8,13 +8,15 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/Owner.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/resources/BaseGameVersion.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
+class BlockType;
 class BlockTypeRegistryModificationsLock;
 class BlockTypeRegistryRWLock;
 class BlockTypeRegistryReadLock;
@@ -33,7 +35,7 @@ public:
     // clang-format on
 
     // BlockTypeRegistry inner types define
-    using BlockLookupMap = ::std::map<::HashedString, ::SharedPtr<::BlockLegacy>>;
+    using BlockLookupMap = ::std::map<::HashedString, ::SharedPtr<::BlockType>>;
 
     using BlockAliasLookupMap = ::std::unordered_map<::HashedString, ::HashedString>;
 
@@ -99,8 +101,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockLegacy const>> mBlockLegacy;
-        ::ll::TypedStorage<8, 8, ::Block const*>                 mBlock;
+        ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>> mBlockType;
+        ::ll::TypedStorage<8, 8, ::Block const*>               mBlock;
         // NOLINTEND
 
     public:
@@ -110,21 +112,29 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI LookupByNameImplReturnType(::Block const* block, bool resolveBlockLegacy);
+        MCNAPI LookupByNameImplReturnType(::Block const* block, bool resolveBlockType);
 
-        MCNAPI LookupByNameImplReturnType(::WeakPtr<::BlockLegacy const> blockLegacy, ::Block const* block);
+        MCNAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, ::Block const* block);
 
-        MCNAPI LookupByNameImplReturnType(::WeakPtr<::BlockLegacy const> blockLegacy, int data, bool resolveBlock);
+        MCNAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
+
+        MCNAPI ~LookupByNameImplReturnType();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::Block const* block, bool resolveBlockLegacy);
+        MCNAPI void* $ctor(::Block const* block, bool resolveBlockType);
 
-        MCNAPI void* $ctor(::WeakPtr<::BlockLegacy const> blockLegacy, ::Block const* block);
+        MCNAPI void* $ctor(::WeakPtr<::BlockType const> blockType, ::Block const* block);
 
-        MCNAPI void* $ctor(::WeakPtr<::BlockLegacy const> blockLegacy, int data, bool resolveBlock);
+        MCNAPI void* $ctor(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -141,7 +151,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::BlockLegacy const&> mAirBlock;
+        ::ll::TypedStorage<8, 8, ::BlockType const&> mAirBlock;
         // NOLINTEND
 
     public:
@@ -152,54 +162,73 @@ public:
     };
 
     enum class LookupByNameImplResolve : int {
-        BlockLegacy = 0,
-        Block       = 1,
+        BlockType = 0,
+        Block     = 1,
     };
 
 public:
-    // static functions
+    // member variables
     // NOLINTBEGIN
-    MCAPI static ::BlockTypeRegistryReadLock _lockAgainstRegistryModifications();
+    ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::SharedPtr<::BlockType>>> mBlockLookupMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::HashedString>> mBlockAliasLookupMap;
+    ::ll::TypedStorage<8, 72, ::entt::dense_map<::HashedString, ::BlockTypeRegistry::BlockComplexAliasContent>>
+        mBlockComplexAliasLookupMap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::std::reference_wrapper<::HashedString const>>>>
+                                                                 mBlockComplexAliasPostSplitBlockNamesList;
+    ::ll::TypedStorage<8, 72, ::entt::dense_map<uint64, uint64>> mBlockComplexAliasPostSplitBlockNamesLookupMap;
+    ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::HashedString>> mBlockComplexAliasPreSplitBlockNamesLookupMap;
+    ::ll::TypedStorage<8, 16, ::std::set<::std::string>>                  mKnownNamespaces;
+    ::ll::TypedStorage<8, 72, ::entt::dense_map<uint64, ::HashedString>>  mBlockNameHashToStringMap;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTypeRegistry::DirectAccessBlocks>> mDirectAccessBlocks;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockTypeRegistryRWLock>>              mRWLock;
+    // NOLINTEND
 
-    MCAPI static ::BlockTypeRegistryModificationsLock _lockForRegistryModifications();
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BlockTypeRegistry();
 
-    MCAPI static ::BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
+    MCAPI ::BlockTypeRegistryReadLock _lockAgainstRegistryModifications() const;
+
+    MCAPI ::BlockTypeRegistryModificationsLock _lockForRegistryModifications() const;
+
+    MCAPI ::BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
         ::HashedString const&                        name,
         int                                          data,
         ::BlockTypeRegistry::LookupByNameImplResolve resolve,
         bool                                         logNotFound = false
-    );
+    ) const;
 
-    MCAPI static void checkBlockPermutationCap();
+    MCAPI void checkBlockPermutationCap() const;
 
-    MCAPI static uint64 computeBlockTypeRegistryChecksum(::BaseGameVersion const& worldBaseGameVersion);
+    MCAPI uint64 computeBlockTypeRegistryChecksum(::BaseGameVersion const& worldBaseGameVersion) const;
 
-    MCAPI static void finalizeBlockComponentStorage();
+    MCAPI void finalizeBlockComponentStorage();
 
-    MCAPI static void finalizeBlockCustomComponentEvents(::ServerScriptManager const& scriptManager);
+    MCAPI void finalizeBlockCustomComponentEvents(::ServerScriptManager const& scriptManager);
 
-    MCAPI static void forEachBlock(::brstd::function_ref<bool(::BlockLegacy const&)> callback);
+    MCAPI void forEachBlock(::brstd::function_ref<bool(::BlockType const&)> callback) const;
 
-    MCAPI static ::HashedString const& getBlockNameFromNameHash(uint64 hash);
+    MCAPI ::HashedString const& getBlockNameFromNameHash(uint64 hash) const;
 
-    MCAPI static ::std::vector<::std::reference_wrapper<::HashedString const>> const&
-    getComplexAliasPostSplitBlockNames(::HashedString const& oldName);
+    MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
+    getComplexAliasPostSplitBlockNames(::HashedString const& oldName) const;
 
-    MCAPI static ::Block const& getDefaultBlockState(::HashedString const& name, bool logNotFound = false);
+    MCAPI ::Block const& getDefaultBlockState(::HashedString const& name, bool logNotFound = false) const;
 
-    MCAPI static ::BlockTypeRegistry::DirectAccessBlocks const& getDirectAccessBlocks();
+    MCAPI ::BlockTypeRegistry::DirectAccessBlocks const& getDirectAccessBlocks() const;
 
-    MCAPI static void initHardCodedBlockComponents(::Experiments const& experiments);
+    MCAPI void initHardCodedBlockComponents(::Experiments const& experiments);
 
-    MCAPI static bool isComplexAliasBlock(::HashedString const& blockName);
+    MCAPI bool isComplexAliasBlock(::HashedString const& blockName) const;
 
-    MCAPI static ::WeakPtr<::BlockLegacy> lookupByName(::HashedString const& name, bool logNotFound = false);
+    MCAPI ::WeakPtr<::BlockType> lookupByName(::HashedString const& name, bool logNotFound = false) const;
 
-    MCAPI static void prepareBlocks(uint latestUpdaterVersion);
+    MCAPI void prepareBlocks(uint latestUpdaterVersion);
 
-    MCAPI static void registerAlias(::HashedString const& alias, ::HashedString const& name);
+    MCAPI void registerAlias(::HashedString const& alias, ::HashedString const& name);
 
-    MCAPI static void registerComplexAlias(
+    MCAPI void registerComplexAlias(
         ::HashedString const&                                                alias,
         ::std::function<::Block const*(int)>                                 callback,
         ::std::vector<::std::reference_wrapper<::HashedString const>> const& postSplitBlockNames,
@@ -209,36 +238,38 @@ public:
         int                                                                  startVariant
     );
 
-    MCAPI static void setupDirectAccessBlocks();
+    MCAPI void setupDirectAccessBlocks();
 
-    MCAPI static void unregisterBlock(::HashedString const& name);
+    MCAPI void unregisterBlock(::HashedString const& name);
 
-    MCAPI static void unregisterBlocks();
+    MCAPI void unregisterBlocks();
+
+    MCAPI ~BlockTypeRegistry();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::BlockTypeRegistry& get();
+
+    MCAPI static ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry> getNonOwner();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::HashedString, ::HashedString>& mBlockAliasLookupMap();
+    MCAPI static ::Bedrock::Owner<::BlockTypeRegistry>& mBlockTypeRegistry();
+    // NOLINTEND
 
-    MCAPI static ::entt::dense_map<::HashedString, ::BlockTypeRegistry::BlockComplexAliasContent>&
-    mBlockComplexAliasLookupMap();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
 
-    MCAPI static ::std::vector<::std::vector<::std::reference_wrapper<::HashedString const>>>&
-    mBlockComplexAliasPostSplitBlockNamesList();
-
-    MCAPI static ::entt::dense_map<uint64, uint64>& mBlockComplexAliasPostSplitBlockNamesLookupMap();
-
-    MCAPI static ::std::map<::HashedString, ::HashedString>& mBlockComplexAliasPreSplitBlockNamesLookupMap();
-
-    MCAPI static ::std::map<::HashedString, ::SharedPtr<::BlockLegacy>>& mBlockLookupMap();
-
-    MCAPI static ::entt::dense_map<uint64, ::HashedString>& mBlockNameHashToStringMap();
-
-    MCAPI static ::std::unique_ptr<::BlockTypeRegistry::DirectAccessBlocks>& mDirectAccessBlocks();
-
-    MCAPI static ::std::set<::std::string>& mKnownNamespaces();
-
-    MCAPI static ::std::shared_ptr<::BlockTypeRegistryRWLock>& mRWLock();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 };

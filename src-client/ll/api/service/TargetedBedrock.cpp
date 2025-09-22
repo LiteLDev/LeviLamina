@@ -129,7 +129,13 @@ LL_TYPE_INSTANCE_HOOK(LevelDestructor, HookPriority::High, Level, &Level::$dtor,
 
 // ServerNetworkHandler
 static std::atomic<ServerNetworkHandler*> serverNetworkHandler;
-LL_TYPE_INSTANCE_HOOK(ServerNetworkHandlerCtor, HookPriority::High, Minecraft, &Minecraft::getServerNetworkHandler, Bedrock::NonOwnerPointer<::ServerNetworkHandler>) {
+LL_TYPE_INSTANCE_HOOK(
+    ServerNetworkHandlerCtor,
+    HookPriority::High,
+    Minecraft,
+    &Minecraft::getServerNetworkHandler,
+    Bedrock::NonOwnerPointer<::ServerNetworkHandler>
+) {
     unhook();
     auto res             = origin();
     serverNetworkHandler = res.mPointer;

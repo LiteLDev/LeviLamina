@@ -10,9 +10,9 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class Experiments;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace mce { class Color; }
@@ -22,21 +22,21 @@ class LogBlock : public ::RotatedPillarBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockLegacy const>>        mStrippedBlockLegacy;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>>          mStrippedBlockType;
     ::ll::TypedStorage<4, 36, ::std::optional<::LogBlockMapColors>> mMapColors;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 131
+    // vIndex: 132
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 143
+    // vIndex: 144
     virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
 
-    // vIndex: 130
+    // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0

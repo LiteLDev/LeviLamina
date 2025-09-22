@@ -22,16 +22,16 @@ LL_STATIC_HOOK(
     HookPriority::Normal,
     &ServerMoveInputHandlerSystemUtils::_tickServerMoveInputHandler,
     void,
-    StrictEntityContext&                                     strictEntityContext,
-    MovementAbilitiesComponent const&                        abilitiesComponent,
-    ServerPlayerCurrentMovementComponent const&              serverPlayerCurrentMovementComponent,
-    ClientInputLockComponent&                                lockComponent,
-    MoveInputComponent&                                      input,
-    ActorDataFlagComponent&                                  actorDataFlag,
-    ActorDataDirtyFlagsComponent&                            actorDataDirtyFlags,
-    VanillaClientGameplayComponent&                          vanillaClientGameplayComponent,
-    ::Optional<::SneakingComponent const>                    sneakingComponent,
-    ::Optional<::WasInWaterFlagComponent const>              isInWater
+    StrictEntityContext&                        strictEntityContext,
+    MovementAbilitiesComponent const&           abilitiesComponent,
+    ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovementComponent,
+    ClientInputLockComponent&                   lockComponent,
+    MoveInputComponent&                         input,
+    ActorDataFlagComponent&                     actorDataFlag,
+    ActorDataDirtyFlagsComponent&               actorDataDirtyFlags,
+    VanillaClientGameplayComponent&             vanillaClientGameplayComponent,
+    ::Optional<::SneakingComponent const>       sneakingComponent,
+    ::Optional<::WasInWaterFlagComponent const> isInWater
 ) {
     origin(
         strictEntityContext,

@@ -178,39 +178,42 @@ public:
     virtual bool isLoadingMusic() const;
 
     // vIndex: 42
-    virtual ::Core::PathBuffer<::std::string> const& getCurrentlyPlayingMusicName() const;
+    virtual void cancelLoadMusic();
 
     // vIndex: 43
-    virtual ::std::string getCurrentlyPlayingEventName() const;
+    virtual ::Core::PathBuffer<::std::string> const& getCurrentlyPlayingMusicName() const;
 
     // vIndex: 44
-    virtual void stopMusic();
+    virtual ::std::string getCurrentlyPlayingEventName() const;
 
     // vIndex: 45
-    virtual void stopRecords();
+    virtual void stopMusic();
 
     // vIndex: 46
-    virtual void stopAllSounds();
+    virtual void stopRecords();
 
     // vIndex: 47
-    virtual void pauseAllPlayingSounds();
+    virtual void stopAllSounds();
 
     // vIndex: 48
-    virtual void resumeAllPreviouslyPlayingSounds();
+    virtual void pauseAllPlayingSounds();
 
     // vIndex: 49
-    virtual void fadeMusicOut(float);
+    virtual void resumeAllPreviouslyPlayingSounds();
 
     // vIndex: 50
-    virtual bool isMusicChannelPlaying() const;
+    virtual void fadeMusicOut(float);
 
     // vIndex: 51
-    virtual void pauseMusic(bool);
+    virtual bool isMusicChannelPlaying() const;
 
     // vIndex: 52
-    virtual void update(float);
+    virtual void pauseMusic(bool);
 
     // vIndex: 53
+    virtual void update(float);
+
+    // vIndex: 54
     virtual uint64 registerLoop(
         ::SoundItem const&,
         ::std::weak_ptr<::SoundEvent> const,
@@ -220,28 +223,28 @@ public:
         float
     );
 
-    // vIndex: 54
+    // vIndex: 55
     virtual void unregisterLoop(uint64, bool);
 
-    // vIndex: 55
+    // vIndex: 56
     virtual void displayDebugStats(::std::string&) const;
 
-    // vIndex: 56
+    // vIndex: 57
     virtual void startSnapshot(::std::string const&);
 
-    // vIndex: 57
+    // vIndex: 58
     virtual void stopSnapshot(::std::string const&);
 
-    // vIndex: 58
+    // vIndex: 59
     virtual void stopAllSnapshots();
 
-    // vIndex: 59
+    // vIndex: 60
     virtual uint64 getNewSoundHandle();
 
-    // vIndex: 60
+    // vIndex: 61
     virtual ::std::optional<::PlayingSoundAttributes> tryGetPlayingSoundAttributes(uint64) const;
 
-    // vIndex: 61
+    // vIndex: 62
     virtual ::std::optional<::LoopingSoundAttributes> tryGetLoopingSoundAttributes(uint64) const;
     // NOLINTEND
 

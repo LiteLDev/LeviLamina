@@ -13,9 +13,9 @@
 class AABB;
 class Actor;
 class Block;
-class BlockLegacy;
 class BlockPos;
 class BlockSource;
+class BlockType;
 class Container;
 class Dimension;
 class Item;
@@ -86,7 +86,7 @@ public:
 
     // vIndex: 5
     virtual void
-    succeedWhenBlockPresent(::BlockLegacy const& block, ::BlockPos const& position, bool isPresent) /*override*/;
+    succeedWhenBlockPresent(::BlockType const& block, ::BlockPos const& position, bool isPresent) /*override*/;
 
     // vIndex: 8
     virtual void setNight() /*override*/;
@@ -208,11 +208,11 @@ public:
 
     // vIndex: 36
     virtual ::std::optional<::gametest::GameTestError>
-    assertBlockPresent(::BlockLegacy const& blockType, int x, int y, int z, bool isPresent) /*override*/;
+    assertBlockPresent(::BlockType const& blockType, int x, int y, int z, bool isPresent) /*override*/;
 
     // vIndex: 35
     virtual ::std::optional<::gametest::GameTestError>
-    assertBlockPresent(::BlockLegacy const& blockType, ::BlockPos const& pos, bool isPresent) /*override*/;
+    assertBlockPresent(::BlockType const& blockType, ::BlockPos const& pos, bool isPresent) /*override*/;
 
     // vIndex: 37
     virtual ::std::optional<::gametest::GameTestError>
@@ -391,7 +391,7 @@ public:
 
     MCAPI void $succeedWhenBlockPresent(::Block const& block, ::BlockPos const& pos, bool isPresent);
 
-    MCAPI void $succeedWhenBlockPresent(::BlockLegacy const& block, ::BlockPos const& position, bool isPresent);
+    MCAPI void $succeedWhenBlockPresent(::BlockType const& block, ::BlockPos const& position, bool isPresent);
 
     MCAPI void $setNight();
 
@@ -471,10 +471,10 @@ public:
     );
 
     MCAPI ::std::optional<::gametest::GameTestError>
-    $assertBlockPresent(::BlockLegacy const& blockType, int x, int y, int z, bool isPresent);
+    $assertBlockPresent(::BlockType const& blockType, int x, int y, int z, bool isPresent);
 
     MCAPI ::std::optional<::gametest::GameTestError>
-    $assertBlockPresent(::BlockLegacy const& blockType, ::BlockPos const& pos, bool isPresent);
+    $assertBlockPresent(::BlockType const& blockType, ::BlockPos const& pos, bool isPresent);
 
     MCAPI ::std::optional<::gametest::GameTestError>
     $assertBlockState(::BlockPos const& blockPos, ::std::function<bool(::Block const&)> predicate);

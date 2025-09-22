@@ -13,17 +13,15 @@ namespace JsonUtil { class EmptyClass; }
 
 class SwimIdleDefinition : public ::BaseGoalDefinition {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk11833e;
-    ::ll::UntypedStorage<4, 4> mUnk9b80d6;
-    // NOLINTEND
+    // SwimIdleDefinition inner types define
+    using self = ::SwimIdleDefinition;
 
 public:
-    // prevent constructor by default
-    SwimIdleDefinition& operator=(SwimIdleDefinition const&);
-    SwimIdleDefinition(SwimIdleDefinition const&);
-    SwimIdleDefinition();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, float> mSuccessRate;
+    ::ll::TypedStorage<4, 4, float> mIdleTime;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -35,7 +33,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
+    MCAPI static void buildSchema(
         ::std::string const&                                                                               name,
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SwimIdleDefinition>>& root
     );

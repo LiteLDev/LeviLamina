@@ -45,6 +45,7 @@ public:
         Elytra    = 5,
         Turtle    = 6,
         Netherite = 7,
+        Copper    = 8,
     };
 
     class ArmorMaterial {
@@ -170,6 +171,8 @@ public:
     // NOLINTBEGIN
     MCAPI static ::HumanoidArmorItem::ArmorMaterial const& CHAIN();
 
+    MCAPI static ::HumanoidArmorItem::ArmorMaterial const& COPPER();
+
     MCAPI static ::mce::Color& DEFAULT_LEATHER_COLOR();
 
     MCAPI static ::HumanoidArmorItem::ArmorMaterial const& DIAMOND();
@@ -185,8 +188,6 @@ public:
     MCAPI static ::HumanoidArmorItem::ArmorMaterial const& NETHERITE();
 
     MCAPI static ::HumanoidArmorItem::ArmorMaterial const& TURTLE();
-
-    MCAPI static ::std::add_lvalue_reference_t<int const[]> mHealthPerSlot();
     // NOLINTEND
 
 public:
@@ -221,6 +222,8 @@ public:
     MCAPI bool $isDyeable() const;
 
     MCAPI bool $isTrimAllowed() const;
+
+    MCAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 

@@ -5,10 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/platform/DisplayOrientation.h"
 #include "mc/deps/core/platform/FileStorageDirectory.h"
+#include "mc/platform/brstd/move_only_function.h"
 
 // auto generated forward declare list
 // clang-format off
 class ActivationUri;
+class IMinecraftGame;
 class PropertyBag;
 class PushNotificationMessage;
 namespace Bedrock { class ActivationArguments; }
@@ -25,6 +27,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkdc7fc5;
     ::ll::UntypedStorage<8, 8>  mUnk47147a;
     ::ll::UntypedStorage<8, 24> mUnk162f42;
+    ::ll::UntypedStorage<8, 64> mUnkae2910;
     ::ll::UntypedStorage<1, 1>  mUnk377acb;
     ::ll::UntypedStorage<1, 1>  mUnk850436;
     // NOLINTEND

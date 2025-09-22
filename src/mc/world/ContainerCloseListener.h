@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Player;
+class Actor;
 // clang-format on
 
 class ContainerCloseListener {
@@ -12,7 +12,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual void containerClosed(::Player&) = 0;
+    virtual void containerClosed(::Actor&) = 0;
 
     // vIndex: 1
     virtual ~ContainerCloseListener();

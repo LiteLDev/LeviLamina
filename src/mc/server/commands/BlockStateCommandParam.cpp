@@ -16,8 +16,8 @@ ll::Expected<Block::BlockStateValueType> BlockStateCommandParam::toStateValue() 
         return ll::makeErrorCodeError(std::errc::invalid_argument);
     }
 }
-ll::Expected<Block::BlockStatesType> BlockStateCommandParam::toStateMap(std::vector<BlockStateCommandParam> const& vec
-) {
+ll::Expected<Block::BlockStatesType>
+BlockStateCommandParam::toStateMap(std::vector<BlockStateCommandParam> const& vec) {
     Block::BlockStatesType res;
     res.reserve(vec.size());
     for (auto& p : vec) {

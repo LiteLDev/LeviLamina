@@ -4,7 +4,7 @@
 
 namespace SharedTypes::v1_21_20 {
 
-enum class VerticalAnchorLocation : int {
+enum class VerticalAnchorLocation : uchar {
     Absolute    = 0,
     AboveBottom = 1,
     BelowTop    = 2,

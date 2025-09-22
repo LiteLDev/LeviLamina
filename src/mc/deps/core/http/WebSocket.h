@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/http/StatusCode.h"
+#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/AsyncPromise.h"
-#include "mc/deps/core/threading/IAsyncResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -52,12 +52,10 @@ public:
     // NOLINTBEGIN
     MCNAPI ::HC_WEBSOCKET_OBSERVER* _allocateSocket(::std::future<void> connectCompleted);
 
-    MCNAPI ::std::shared_ptr<
-        ::Bedrock::Threading::IAsyncResult<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>>
+    MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>
     connect(::std::string const& uri, ::Bedrock::Http::HeaderCollection const& headers);
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Threading::IAsyncResult<::std::error_code>>
-    send(::std::string const& message) const;
+    MCNAPI ::Bedrock::Threading::Async<::std::error_code> send(::std::string const& message) const;
     // NOLINTEND
 
 public:

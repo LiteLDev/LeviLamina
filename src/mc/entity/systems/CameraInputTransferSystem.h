@@ -9,11 +9,11 @@
 
 // auto generated forward declare list
 // clang-format off
-class CameraComponent;
 class StrictEntityContext;
 struct ActiveCameraComponent;
 struct ActorMovementTickNeededComponent;
 struct CameraAttachComponent;
+struct CameraComponent;
 struct ControlSchemeComponent;
 struct DefaultInputCameraComponent;
 struct LocalPlayerComponent;

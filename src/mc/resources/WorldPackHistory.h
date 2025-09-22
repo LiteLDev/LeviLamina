@@ -22,19 +22,14 @@ public:
 public:
     // prevent constructor by default
     WorldPackHistory& operator=(WorldPackHistory const&);
+    WorldPackHistory();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WorldPackHistory();
-
     MCNAPI WorldPackHistory(::WorldPackHistory const&);
 
-    MCNAPI WorldPackHistory(::WorldPackHistory&&);
-
     MCNAPI bool initializeFromJson(::Json::Value const& value);
-
-    MCNAPI void setUnlocalizedName(::std::string const& unlocalizedName);
 
     MCNAPI ::Json::Value toJsonValue() const;
 
@@ -44,11 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(::WorldPackHistory const&);
-
-    MCNAPI void* $ctor(::WorldPackHistory&&);
     // NOLINTEND
 
 public:

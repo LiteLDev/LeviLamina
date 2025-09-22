@@ -68,7 +68,7 @@ concept IsDispatcher = requires(T t) {
     t.call();
 };
 
-struct LL_EBO VectorBaseTag{};
+struct LL_EBO VectorBaseTag {};
 
 template <typename T>
 concept IsVectorBase = std::is_base_of_v<VectorBaseTag, T>;

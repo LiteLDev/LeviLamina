@@ -7,7 +7,6 @@
 #include "mc/world/events/gameevents/PositionSource.h"
 #include "mc/world/level/block/SculkSpreader.h"
 #include "mc/world/level/block/actor/BlockActor.h"
-#include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -48,7 +47,7 @@ public:
     // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 1
@@ -83,14 +82,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _trySendItSpreadsEventPacket(::Actor& actor);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::BlockActorType const& TypeId();
-
-    MCAPI static ::std::string const& TypeString();
     // NOLINTEND
 
 public:

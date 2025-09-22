@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/player/ScriptPlayer.h"
@@ -20,7 +21,10 @@ namespace ScriptModuleGameTest { struct ScriptMoveToOptions; }
 namespace ScriptModuleGameTest { struct ScriptNavigationResult; }
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
+namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct UnsupportedAPIError; }
 namespace gametest { class BaseGameTestHelper; }
 namespace gametest { struct GameTestError; }
 // clang-format on
@@ -31,16 +35,25 @@ class ScriptSimulatedPlayer : public ::ScriptModuleMinecraft::ScriptPlayer {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 9
-    virtual ::Scripting::Result_deprecated<void> applyImpulseStable(::Actor& self, ::Vec3 const& vector) /*override*/;
+    // vIndex: 13
+    virtual ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::ArgumentOutOfBoundsError,
+        ::Scripting::UnsupportedAPIError>
+    applyImpulseStable(::Actor& self, ::Vec3 const& vector) /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result_deprecated<void> clearVelocityStable(::Actor& self) /*override*/;
+    virtual ::Scripting::
+        Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
+        clearVelocityStable(::Actor& self) /*override*/;
 
-    // vIndex: 10
-    virtual ::Scripting::Result_deprecated<void> remove(::Actor& self) /*override*/;
+    // vIndex: 14
+    virtual ::Scripting::
+        Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
+        remove(::Actor& self) /*override*/;
 
-    // vIndex: 11
+    // vIndex: 15
     virtual bool isValid() const /*override*/;
 
     // vIndex: 0
@@ -186,11 +199,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> $applyImpulseStable(::Actor& self, ::Vec3 const& vector);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::ArgumentOutOfBoundsError,
+        ::Scripting::UnsupportedAPIError>
+    $applyImpulseStable(::Actor& self, ::Vec3 const& vector);
 
-    MCNAPI ::Scripting::Result_deprecated<void> $clearVelocityStable(::Actor& self);
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
+    $clearVelocityStable(::Actor& self);
 
-    MCNAPI ::Scripting::Result_deprecated<void> $remove(::Actor& self);
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
+    $remove(::Actor& self);
 
     MCNAPI bool $isValid() const;
     // NOLINTEND

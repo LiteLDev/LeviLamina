@@ -16,9 +16,15 @@ struct RuntimeSoftEnum : std::string {
 template <>
 struct ParamTraits<RuntimeEnum> : ParamTraitsBase<RuntimeEnum> {
     struct Parser {
-        bool
-        operator()(CommandRegistry const& registry, void* storage, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&, std::vector<std::string>&)
-            const {
+        bool operator()(
+            CommandRegistry const&             registry,
+            void*                              storage,
+            CommandRegistry::ParseToken const& token,
+            CommandOrigin const&,
+            int,
+            std::string&,
+            std::vector<std::string>&
+        ) const {
             *(RuntimeEnum*)storage = {token.toString(), registry.getEnumData(token)};
             return true;
         }

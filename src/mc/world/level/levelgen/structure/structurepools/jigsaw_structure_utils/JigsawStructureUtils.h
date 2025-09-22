@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class CompoundTag;
 namespace JigsawStructureUtils { struct JigsawBlockMetadataCacheHandle; }
 namespace SharedTypes::v1_21_80 { class JigsawBlockMetadata; }
 namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadataFile; }
@@ -33,6 +34,8 @@ MCNAPI ::BlockPos getPosition(
     ::BlockPos const&                                   offset,
     ::Rotation                                          rotation
 );
+
+MCNAPI ::std::string getSerializationIdString(::CompoundTag const& blockIdTag);
 // NOLINTEND
 
 } // namespace JigsawStructureUtils

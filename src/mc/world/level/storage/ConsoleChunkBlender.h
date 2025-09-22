@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockLegacy;
+class BlockType;
 class ChunkLocalHeight;
 class LevelChunk;
 class PerlinSimplexNoise;
@@ -64,10 +64,10 @@ public:
     MCNAPI ::ChunkLocalHeight _findHighestStoneOrBedrockHeight(::LevelChunk& lc, int x, int z);
 
     MCNAPI ::ChunkLocalHeight _findTopMostWaterHeight(
-        ::LevelChunk&                                     lc,
-        int                                               x,
-        int                                               z,
-        ::std::unordered_set<::BlockLegacy const*> const& waterBlocks
+        ::LevelChunk&                                   lc,
+        int                                             x,
+        int                                             z,
+        ::std::unordered_set<::BlockType const*> const& waterBlocks
     );
 
     MCNAPI void _prepInterpTable();

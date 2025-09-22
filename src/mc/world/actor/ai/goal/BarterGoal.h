@@ -47,21 +47,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Vec3 _getThrowVector();
+    MCAPI ::Vec3 _getThrowVector();
 
-    MCNAPI void _sendBarterEventPacket(::BarterComponent* barterComponent);
+    MCAPI void _sendBarterEventPacket(::BarterComponent* barterComponent);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCFOLD bool $canContinueToUse();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
     // NOLINTEND
 
 public:

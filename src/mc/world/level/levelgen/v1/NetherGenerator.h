@@ -41,7 +41,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 2568, ::Random>                              random;
+        ::ll::TypedStorage<8, 2576, ::Random>                              random;
         ::ll::TypedStorage<8, 262144, ::std::array<::Block const*, 32768>> blockBuffer;
         // NOLINTEND
     };
@@ -171,7 +171,7 @@ public:
 
     MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCAPI ::BiomeSource const& $getBiomeSource() const;
+    MCFOLD ::BiomeSource const& $getBiomeSource() const;
 
     MCFOLD ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 

@@ -41,23 +41,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _determineMovePos();
+    MCAPI void _determineMovePos();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $appendDebugInfo(::std::string& str) const;
+    MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
-    MCNAPI void $stop();
+    MCFOLD void $stop();
     // NOLINTEND
 
 public:

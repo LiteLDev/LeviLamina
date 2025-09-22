@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace PackCommand { struct MoveReplaceBatch; }
+// clang-format on
+
 namespace PackCommand {
 
 struct CommandExecutor {
@@ -21,6 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void operator()(::PackCommand::MoveReplaceBatch& commands);
+
     MCNAPI ~CommandExecutor();
     // NOLINTEND
 

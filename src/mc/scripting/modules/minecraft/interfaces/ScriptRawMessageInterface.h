@@ -52,6 +52,8 @@ public:
 
     MCNAPI ::Json::Value toJson() const;
 
+    MCNAPI ::Json::Value toRawTextJson() const;
+
     MCNAPI ::std::string toString() const;
 
     MCNAPI ~ScriptRawMessageInterface();

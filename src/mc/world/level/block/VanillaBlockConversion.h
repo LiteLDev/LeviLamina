@@ -8,13 +8,13 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockLegacy;
+class BlockType;
 // clang-format on
 
 namespace VanillaBlockConversion {
 // functions
 // NOLINTBEGIN
-MCAPI ::WeakPtr<::BlockLegacy const> getBlockTypeFromLegacyId(uint id);
+MCAPI ::WeakPtr<::BlockType const> getBlockTypeFromLegacyId(uint id);
 
 MCAPI int getBlockTypeLegacyIdFromName(::std::string const& rawName);
 

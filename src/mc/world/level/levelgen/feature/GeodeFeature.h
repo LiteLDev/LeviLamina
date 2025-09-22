@@ -51,6 +51,7 @@ public:
     // prevent constructor by default
     GeodeFeature& operator=(GeodeFeature const&);
     GeodeFeature(GeodeFeature const&);
+    GeodeFeature();
 
 public:
     // virtual functions
@@ -60,18 +61,6 @@ public:
 
     // vIndex: 0
     virtual ~GeodeFeature() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI GeodeFeature();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

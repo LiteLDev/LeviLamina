@@ -8,6 +8,7 @@
 #include "mc/network/NetEventCallback.h"
 #include "mc/network/OutgoingPacketFilterResult.h"
 #include "mc/network/connection/DisconnectFailReason.h"
+#include "mc/network/connection/DisconnectionStage.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -63,6 +64,7 @@ public:
     virtual void onDisconnect(
         ::NetworkIdentifier const&,
         ::Connection::DisconnectFailReason const,
+        ::Connection::DisconnectionStage const,
         ::std::string const&,
         bool,
         ::std::string const&

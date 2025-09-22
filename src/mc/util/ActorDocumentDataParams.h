@@ -9,14 +9,14 @@
 // clang-format off
 class MinEngineVersion;
 class SemVersion;
-namespace SharedTypes::v1_21_90 { struct ActorDefinitions; }
+namespace SharedTypes::v1_21_100 { struct ActorDefinitions; }
 // clang-format on
 
 struct ActorDocumentDataParams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk285543;
+    ::ll::UntypedStorage<8, 8>  mUnkb54d29;
     ::ll::UntypedStorage<8, 24> mUnk4b99f1;
     ::ll::UntypedStorage<8, 32> mUnkd3c737;
     ::ll::UntypedStorage<1, 1>  mUnk6b732f;
@@ -34,11 +34,11 @@ public:
     MCNAPI ActorDocumentDataParams(::ActorDocumentDataParams const&);
 
     MCNAPI ActorDocumentDataParams(
-        ::SharedTypes::v1_21_90::ActorDefinitions& value,
-        ::SemVersion const&                        formatVersion,
-        ::MinEngineVersion const&                  minEngineVersion,
-        bool                                       isBaseGamePack,
-        ::JsonBetaState                            canUseBeta
+        ::SharedTypes::v1_21_100::ActorDefinitions& value,
+        ::SemVersion const&                         formatVersion,
+        ::MinEngineVersion const&                   minEngineVersion,
+        bool                                        isBaseGamePack,
+        ::JsonBetaState                             canUseBeta
     );
 
     MCNAPI ~ActorDocumentDataParams();
@@ -50,11 +50,11 @@ public:
     MCNAPI void* $ctor(::ActorDocumentDataParams const&);
 
     MCNAPI void* $ctor(
-        ::SharedTypes::v1_21_90::ActorDefinitions& value,
-        ::SemVersion const&                        formatVersion,
-        ::MinEngineVersion const&                  minEngineVersion,
-        bool                                       isBaseGamePack,
-        ::JsonBetaState                            canUseBeta
+        ::SharedTypes::v1_21_100::ActorDefinitions& value,
+        ::SemVersion const&                         formatVersion,
+        ::MinEngineVersion const&                   minEngineVersion,
+        bool                                        isBaseGamePack,
+        ::JsonBetaState                             canUseBeta
     );
     // NOLINTEND
 

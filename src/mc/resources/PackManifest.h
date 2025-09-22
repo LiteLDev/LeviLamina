@@ -11,7 +11,6 @@
 #include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core/resource/ResourceMetadata.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/json/Value.h"
 #include "mc/resources/BaseGameVersion.h"
 #include "mc/resources/ManifestOrigin.h"
 #include "mc/resources/ManifestType.h"
@@ -26,6 +25,10 @@
 class ResourceInformation;
 struct LegacyPackIdVersion;
 struct ModuleIdentifier;
+namespace Json { class Value; }
+namespace SharedTypes::v3_0_0::PackManifestDefinition { struct LabelSetting; }
+namespace SharedTypes::v3_0_0::PackManifestDefinition { struct SliderSetting; }
+namespace SharedTypes::v3_0_0::PackManifestDefinition { struct ToggleSetting; }
 // clang-format on
 
 class PackManifest : public ::Bedrock::EnableNonOwnerReferences {
@@ -40,45 +43,52 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 56, ::ResourceLocation> mLocation;
-    ::ll::TypedStorage<8, 48, ::PackIdVersion>    mIdentity;
-    ::ll::TypedStorage<8, 24, ::ContentIdentity>  mContentIdentity;
-    ::ll::TypedStorage<8, 32, ::MinEngineVersion> mMinEngineVersion;
-    ::ll::TypedStorage<8, 32, ::BaseGameVersion>  mRequiredBaseGameVersion;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::PackCapability::TrustLevel>> mCapabilities;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                     mName;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                     mDescription;
-    ::ll::TypedStorage<1, 1, bool>                                                               mExpired;
-    ::ll::TypedStorage<8, 56, ::ResourceLocation>                                                mPackIconLocation;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ResourceInformation>>                              mModules;
-    ::ll::TypedStorage<8, 24, ::std::vector<::PackIdVersion>>                                    mPackDependencies;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ModuleIdentifier>>                                 mModuleDependencies;
-    ::ll::TypedStorage<8, 24, ::std::vector<::LegacyPackIdVersion>>   mLegacyModuleDependencies;
-    ::ll::TypedStorage<8, 16, ::Json::Value>                          mSettings;
-    ::ll::TypedStorage<8, 136, ::ResourceMetadata>                    mMetadata;
-    ::ll::TypedStorage<1, 1, ::PackType>                              mPackType;
+    ::ll::TypedStorage<1, 1, ::ManifestType>                          mManifestType;
+    ::ll::TypedStorage<1, 1, ::ManifestOrigin>                        mManifestOrigin;
+    ::ll::TypedStorage<8, 56, ::ResourceLocation>                     mLocation;
+    ::ll::TypedStorage<8, 56, ::ResourceLocation>                     mPackIconLocation;
+    ::ll::TypedStorage<8, 24, ::ContentIdentity>                      mContentIdentity;
+    ::ll::TypedStorage<8, 24, ::ContentIdentity>                      mSourceIdentity;
     ::ll::TypedStorage<4, 4, ::PackCategory>                          mPackCategory;
     ::ll::TypedStorage<1, 1, ::PackOrigin>                            mPackOrigin;
-    ::ll::TypedStorage<1, 1, ::ManifestOrigin>                        mManifestOrigin;
-    ::ll::TypedStorage<1, 1, ::ManifestType>                          mManifestType;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsHidden;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsTitleLocked;
+    ::ll::TypedStorage<1, 1, bool>                                    mExpired;
     ::ll::TypedStorage<8, 8, uint64>                                  mSize;
     ::ll::TypedStorage<8, 32, ::std::string>                          mLastModifiedDate;
-    ::ll::TypedStorage<1, 1, bool>                                    mHasValidUUID;
-    ::ll::TypedStorage<1, 1, bool>                                    mHasPlugins;
-    ::ll::TypedStorage<1, 1, bool>                                    mHasClientScript;
-    ::ll::TypedStorage<1, 1, bool>                                    mHasEducationMetadata;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsPlatformLocked;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsRandomSeedAllowed;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsTitleLocked;
-    ::ll::TypedStorage<4, 4, ::PackCapability::TrustLevel>            mMaximumAllowedTrustLevel;
-    ::ll::TypedStorage<1, 1, ::TemplateLockState>                     mTemplateOptionLockState;
-    ::ll::TypedStorage<1, 1, ::PackScope>                             mScope;
-    ::ll::TypedStorage<8, 24, ::ContentIdentity>                      mSourceIdentity;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>           mLanguageCodesForPackKeywords;
-    ::ll::TypedStorage<4, 4, ::PackManifest::PackRedownloadableState> mPackRedownloadableState;
     ::ll::TypedStorage<1, 1, ::PackManifestFormat>                    mFormatVersion;
     ::ll::TypedStorage<1, 1, ::PackManifestFormat>                    mOriginalFormatVersion;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mDescription;
+    ::ll::TypedStorage<8, 48, ::PackIdVersion>                        mIdentity;
+    ::ll::TypedStorage<1, 1, ::PackScope>                             mPackScope;
+    ::ll::TypedStorage<1, 1, ::PackType>                              mPackType;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                      mRequiredBaseGameVersion;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion>                     mMinEngineVersion;
+    ::ll::TypedStorage<1, 1, ::TemplateLockState>                     mTemplateOptionLockState;
+    ::ll::TypedStorage<4, 4, ::PackManifest::PackRedownloadableState> mPackReDownloadableState;
+    ::ll::TypedStorage<4, 4, ::PackCapability::TrustLevel>            mMaximumAllowedTrustLevel;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsHidden;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsPlatformLocked;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsRandomSeedAllowed;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasClientScript;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasEducationMetadata;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasPlugins;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasValidUUID;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ResourceInformation>>   mModules;
+    ::ll::TypedStorage<8, 24, ::std::vector<::LegacyPackIdVersion>>   mLegacyModuleDependencies;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackIdVersion>>         mPackDependencies;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ModuleIdentifier>>      mModuleDependencies;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::std::optional<::std::vector<::std::variant<
+            ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting>>>>
+                                                                                                 mPackSettingsDef;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::PackCapability::TrustLevel>> mCapabilities;
+    ::ll::TypedStorage<8, 136, ::ResourceMetadata>                                               mMetadata;
     // NOLINTEND
 
 public:
@@ -111,6 +121,8 @@ public:
 
     MCAPI void addModule(::ResourceInformation const& resourceInfo);
 
+    MCAPI void addModuleDependency(::ModuleIdentifier const& moduleId);
+
     MCAPI void addPackCapability(::std::string_view capability, ::PackCapability::TrustLevel trustLevel);
 
     MCAPI void addPackDependency(::PackIdVersion const& packId);
@@ -123,25 +135,38 @@ public:
 
     MCAPI bool hasPackCapability(::std::string_view capability) const;
 
-    MCAPI bool isRestrictedPack() const;
-
-    MCAPI bool isUsingPackNameKeyword() const;
-
     MCAPI void serialize(::PackManifestFormat formatVersion, ::Json::Value& destination) const;
 
     MCAPI void setDescription(::std::string const& description);
 
+    MCAPI void setIdentity(::PackIdVersion const& identity);
+
     MCAPI void setLastModifiedDate(int64 lastModifiedDate);
 
     MCAPI void setLocalizedNameKeywords(::std::unordered_map<::std::string, ::std::string> const& localizationNameMap);
+
+    MCAPI void setMinEngineVersion(::MinEngineVersion const& engineVersion);
+
+    MCAPI void setName(::std::string const& name);
+
+    MCAPI void setPackSettingsDef(
+        ::std::vector<::std::variant<
+            ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting>> packSettingsDef
+    );
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::PackScope StringToPackScope(::std::string const& str);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::string const& MarioPackId();
-
-    MCAPI static ::std::unordered_map<::std::string, ::PackScope> const& STRING_TO_PACK_SCOPE();
     // NOLINTEND
 
 public:

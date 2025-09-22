@@ -65,6 +65,9 @@ public:
     // NOLINTBEGIN
     MCNAPI BlockTraitFactory();
 
+    MCNAPI ::std::unique_ptr<::BlockTrait::ITrait>
+    createTrait(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
+
     MCNAPI ~BlockTraitFactory();
     // NOLINTEND
 
