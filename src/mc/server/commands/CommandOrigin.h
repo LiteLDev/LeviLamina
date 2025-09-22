@@ -38,6 +38,7 @@ public:
 
 public:
     CommandOrigin() { mUUID = Crypto::Random::generateUUID(); }
+    LLNDAPI std::string getLocaleCode() const;
 
 public:
     // virtual functions
