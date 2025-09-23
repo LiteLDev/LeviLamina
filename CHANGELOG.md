@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0] - 2025-09-23
+
+### Added
+
+- Added the getLocaleCode method to CommandOrigin [#1739] @zimuya4153
+- Added some ChunkBlockPos api @OEOTYAN
+
+### Changed
+
+- Adapted to Minecraft 1.21.102.1 @OEOTYAN @ShrBox
+
 ## [1.4.4] - 2025-08-27
 
 ### Added
@@ -1063,8 +1074,10 @@ For lip and tooth-hub test only.
 [#1684]: https://github.com/LiteLDev/LeviLamina/issues/1684
 [#1706]: https://github.com/LiteLDev/LeviLamina/issues/1706
 [#1722]: https://github.com/LiteLDev/LeviLamina/issues/1722
+[#1739]: https://github.com/LiteLDev/LeviLamina/issues/1739
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.4...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.0...HEAD
+[1.5.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.4...v1.5.0
 [1.4.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.3...v1.4.4
 [1.4.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.2...v1.4.3
 [1.4.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.1...v1.4.2
