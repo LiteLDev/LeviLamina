@@ -49,13 +49,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~BlockComplexAliasBlockState();
+        MCAPI ~BlockComplexAliasBlockState();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -80,18 +80,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::Block const* operator()(int data) const;
+        MCAPI ::Block const* operator()(int data) const;
 
-        MCNAPI ::BlockTypeRegistry::BlockComplexAliasContent&
-        operator=(::BlockTypeRegistry::BlockComplexAliasContent&&);
+        MCAPI ::BlockTypeRegistry::BlockComplexAliasContent& operator=(::BlockTypeRegistry::BlockComplexAliasContent&&);
 
-        MCNAPI ~BlockComplexAliasContent();
+        MCAPI ~BlockComplexAliasContent();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -112,29 +111,29 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI LookupByNameImplReturnType(::Block const* block, bool resolveBlockType);
+        MCAPI LookupByNameImplReturnType(::Block const* block, bool resolveBlockType);
 
-        MCNAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, ::Block const* block);
+        MCAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, ::Block const* block);
 
-        MCNAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
+        MCAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
 
-        MCNAPI ~LookupByNameImplReturnType();
+        MCAPI ~LookupByNameImplReturnType();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::Block const* block, bool resolveBlockType);
+        MCAPI void* $ctor(::Block const* block, bool resolveBlockType);
 
-        MCNAPI void* $ctor(::WeakPtr<::BlockType const> blockType, ::Block const* block);
+        MCAPI void* $ctor(::WeakPtr<::BlockType const> blockType, ::Block const* block);
 
-        MCNAPI void* $ctor(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
+        MCAPI void* $ctor(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
