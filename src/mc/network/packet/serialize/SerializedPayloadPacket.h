@@ -18,8 +18,6 @@ public:
 
     virtual ::std::string getName() const;
 
-    virtual ::Bedrock::Result<void> checkSize(uint64 packetSize, bool receiverIsServer) const;
-
     virtual void writeWithSerializationMode(
         ::BinaryStream&                bitStream,
         ::cereal::ReflectionCtx const& reflectionCtx,
