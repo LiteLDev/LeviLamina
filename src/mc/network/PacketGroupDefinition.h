@@ -30,22 +30,20 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 24> mUnkba3aea;
-            ::ll::UntypedStorage<8, 8>  mUnk6e83d8;
+            ::ll::TypedStorage<8, 24, ::std::vector<::MinecraftPacketIds>>       packetIds;
+            ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPacketLimitAlgorithm>> algorithm;
             // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            AlgorithmEntry& operator=(AlgorithmEntry const&);
-            AlgorithmEntry(AlgorithmEntry const&);
-            AlgorithmEntry();
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnkec09d3;
-        ::ll::UntypedStorage<8, 8>  mUnkcc0635;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::unordered_map<::MinecraftPacketIds, ::std::vector<::std::unique_ptr<::IPacketLimitAlgorithm>>>>
+                                                                             mBasicPacketGroups;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPacketLimitAlgorithm>> mDefaultAlgorithm;
         // NOLINTEND
 
     public:
@@ -56,47 +54,42 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI PacketGroupBuilder();
+        MCAPI PacketGroupBuilder();
 
-        MCNAPI PacketGroupBuilder(::PacketGroupDefinition::PacketGroupBuilder&&);
+        MCAPI PacketGroupBuilder(::PacketGroupDefinition::PacketGroupBuilder&&);
 
-        MCNAPI void addPacketAlgorithm(
+        MCAPI void addPacketAlgorithm(
             ::std::vector<::MinecraftPacketIds> const& packetIds,
             ::std::unique_ptr<::IPacketLimitAlgorithm> algorithm
         );
 
-        MCNAPI ::std::unique_ptr<::PacketGroupDefinition> createGroupDefinition() const;
+        MCAPI ::std::unique_ptr<::PacketGroupDefinition> createGroupDefinition() const;
 
-        MCNAPI void setDefaultAlgorithm(::std::unique_ptr<::IPacketLimitAlgorithm> algorithm);
+        MCAPI void setDefaultAlgorithm(::std::unique_ptr<::IPacketLimitAlgorithm> algorithm);
 
-        MCNAPI ~PacketGroupBuilder();
+        MCAPI ~PacketGroupBuilder();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCAPI void* $ctor();
 
-        MCNAPI void* $ctor(::PacketGroupDefinition::PacketGroupBuilder&&);
+        MCAPI void* $ctor(::PacketGroupDefinition::PacketGroupBuilder&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk36ad52;
-    ::ll::UntypedStorage<8, 8>  mUnk5e6ab5;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::MinecraftPacketIds, ::std::unique_ptr<::IPacketLimitAlgorithm>>>
+                                                                         mPacketGroups;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPacketLimitAlgorithm>> mDefaultAlgorithm;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PacketGroupDefinition& operator=(PacketGroupDefinition const&);
-    PacketGroupDefinition(PacketGroupDefinition const&);
-    PacketGroupDefinition();
 };
