@@ -19,6 +19,10 @@ public:
     using PacketInfo = ::SetTitlePacketInfo;
 
 public:
+    template <typename... Args>
+    SetTitlePacket(Args&&... args) : SerializedPayloadPacket(std::forward<Args>(args)...) {}
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

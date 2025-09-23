@@ -24,6 +24,11 @@ public:
     // NOLINTEND
 
 public:
+    template <typename... Args>
+    PlaySoundPacket(Args&&... args) : Packet(),
+                                      PlaySoundPacketPayload(std::forward<Args>(args)...) {}
+
+public:
     // prevent constructor by default
     PlaySoundPacket();
 

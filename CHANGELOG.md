@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.1] - 2025-09-23
+
+### Fixed
+
+- Fixed TransferPacket.h @ShrBox
+- Added missing constructor for SetTitlePacket and PlaySoundPacket.h @ShrBox
+
 ## [1.5.0] - 2025-09-23
 
 ### Added
@@ -1076,7 +1083,8 @@ For lip and tooth-hub test only.
 [#1722]: https://github.com/LiteLDev/LeviLamina/issues/1722
 [#1739]: https://github.com/LiteLDev/LeviLamina/issues/1739
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.1...HEAD
+[1.5.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.4...v1.5.0
 [1.4.4]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.3...v1.4.4
 [1.4.3]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.2...v1.4.3
