@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ll/api/utils/HashUtils.h"
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
@@ -31,3 +32,18 @@ public:
     }
     constexpr ushort toLegacyIndex() const { return (ushort)((x & 0xF) << 12 | (z & 0xF) << 8 | (uint8)y.mVal); }
 };
+
+
+namespace std {
+template <>
+class hash<ChunkBlockPos> {
+public:
+    size_t operator()(ChunkBlockPos const& t) const {
+        ll::utils::hash_utils::HashCombiner hc;
+        hc.add(std::hash<short>()(t.x));
+        hc.add(std::hash<short>()(t.y.mVal));
+        hc.add(std::hash<short>()(t.z));
+        return hc.hash();
+    }
+};
+} // namespace std
