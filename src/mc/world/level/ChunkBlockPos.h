@@ -2,6 +2,7 @@
 
 #include "ll/api/utils/HashUtils.h"
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
 #include "mc/world/level/ChunkLocalHeight.h"
