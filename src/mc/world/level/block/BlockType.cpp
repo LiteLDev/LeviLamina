@@ -4,9 +4,12 @@
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 
 std::string const&      BlockType::getTypeName() const { return mNameInfo->mFullName->getString(); }
-optional_ref<BlockType> BlockType::tryGetFromRegistry(std::string_view name) {
-    auto blockTypePtr = BlockTypeRegistry::get().lookupByName(HashedString{name});
+optional_ref<BlockType> BlockType::tryGetFromRegistry(HashedString const& name) {
+    auto blockTypePtr = BlockTypeRegistry::get().lookupByName(name);
     return blockTypePtr.get();
+}
+optional_ref<BlockType> BlockType::tryGetFromRegistry(std::string_view name) {
+    return tryGetFromRegistry(HashedString{name});
 }
 optional_ref<BlockType const> BlockType::tryGetFromRegistry(uint legacyBlockID) {
     auto blockTypePtr = VanillaBlockConversion::getBlockTypeFromLegacyId(legacyBlockID);

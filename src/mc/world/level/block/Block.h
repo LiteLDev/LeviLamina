@@ -41,11 +41,15 @@ public:
     using BlockStatesType     = std::vector<std::pair<std::string, BlockStateValueType>>;
 
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(uint runtimeID);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(uint legacyBlockID, ushort legacyData);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(HashedString const& name);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(HashedString const& name, ushort legacyData);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(HashedString const& name, BlockStatesType const& states);
+    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(CompoundTag const& nbt);
+    
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, ushort legacyData);
-    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(uint legacyBlockID, ushort legacyData);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, BlockStatesType const& states);
-    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(CompoundTag const& nbt);
 
     [[nodiscard]] inline std::string const& getTypeName() const { return getBlockType().getTypeName(); }
 

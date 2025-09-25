@@ -359,8 +359,10 @@ public:
 public:
     LLNDAPI std::string const& getTypeName() const;
 
-    LLNDAPI static optional_ref<BlockType>       tryGetFromRegistry(std::string_view name);
+    LLNDAPI static optional_ref<BlockType>       tryGetFromRegistry(HashedString const& name);
     LLNDAPI static optional_ref<BlockType const> tryGetFromRegistry(uint legacyBlockID);
+
+    LLNDAPI static optional_ref<BlockType>       tryGetFromRegistry(std::string_view name);
 
 public:
     // member variables
