@@ -31,7 +31,7 @@ LL_TYPE_INSTANCE_HOOK(
     ActorHurtEventHook,
     HookPriority::Normal,
     Actor,
-    &Actor::$_hurt,
+    &Actor::hurt,
     bool,
     ActorDamageSource const& source,
     float                    damage,
