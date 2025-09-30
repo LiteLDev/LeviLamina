@@ -126,3 +126,5 @@ bool Player::addAndRefresh(class ItemStack& item) {
 }
 
 optional_ref<EnderChestContainer> Player::getEnderChestContainer() const { return mEnderChestInventory.get(); }
+
+Inventory& Player::getInventory() const { return *mInventory->mInventory; }

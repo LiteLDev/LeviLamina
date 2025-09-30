@@ -117,6 +117,7 @@ namespace mce { class UUID; }
 // clang-format on
 
 class ConnectionRequest;
+class Inventory;
 
 class Player : public ::Mob {
 public:
@@ -281,6 +282,8 @@ public:
     LLAPI bool addAndRefresh(class ItemStack& item);
 
     LLNDAPI optional_ref<EnderChestContainer> getEnderChestContainer() const;
+
+    LLNDAPI  Inventory& getInventory() const;
 
 public:
     // member variables

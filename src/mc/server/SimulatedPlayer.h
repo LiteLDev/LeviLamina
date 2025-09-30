@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/core/math/Vec2.h"
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/server/sim/LookDuration.h"
 #include "mc/world/actor/provider/SynchedActorDataAccess.h"
 
 // auto generated inclusion list
@@ -52,19 +53,36 @@ public:
     LLAPI static optional_ref<SimulatedPlayer>
     create(std::string const& name, Vec3 const& pos, DimensionType dimId = 0, Vec2 const& rotation = {0, 0});
 
-    [[nodiscard]] inline bool simulateSneaking() {
+    bool simulateSneaking() {
         setSneaking(true);
         return SynchedActorDataAccess::getActorFlag(getEntityContext(), ActorFlags::Sneaking);
     }
-    [[nodiscard]] inline bool simulateStopSneaking() {
+    bool simulateStopSneaking() {
         setSneaking(false);
         return !SynchedActorDataAccess::getActorFlag(getEntityContext(), ActorFlags::Sneaking);
     }
-    inline bool simulateUseItem() { return simulateUseItemInSlot(getSelectedItemSlot()); }
+    bool simulateUseItem() { return simulateUseItemInSlot(getSelectedItemSlot()); }
 
     LLAPI bool simulateDestroyBlock(BlockPos const&, ScriptModuleMinecraft::ScriptFacing);
-
     LLAPI bool simulateDestroyLookAt(float handLength = 5.5f);
+    LLAPI void simulateStopMoving();
+    LLAPI bool simulateAttack(Actor* target);
+    LLAPI void simulateStartBuildInSlot(int slot);
+    LLAPI void simulateStopBuild();
+    LLAPI void simulateStopUsingItem();
+    LLAPI bool simulateGiveItem(ItemStack& item, bool selectSlot);
+    LLAPI bool simulateSetItem(ItemStack const& item, bool selectSlot, int slot);
+    LLAPI bool simulateDropSelectedItem();
+    LLAPI bool simulateInteract(Actor& actor);
+    LLAPI void simulateStopInteracting();
+    LLAPI bool isSimulatingDestroyingBlock();
+    LLAPI void simulateLookAt(Vec3 const& pos, sim::LookDuration lookType = sim::LookDuration::Instant);
+    LLAPI void simulateLookAt(Actor& actor, sim::LookDuration lookType = sim::LookDuration::Instant);
+    LLAPI void simulateLookAt(BlockPos const& blockPos, sim::LookDuration lookType = sim::LookDuration::Instant);
+    LLAPI void simulateDisconnect();
+    LLAPI bool simulateRespawn();
+    LLAPI void simulateFly();
+    LLAPI void simulateStopFlying();
 
     LLAPI static ::SimulatedPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 

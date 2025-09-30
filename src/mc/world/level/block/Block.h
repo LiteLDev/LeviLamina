@@ -44,9 +44,10 @@ public:
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(uint legacyBlockID, ushort legacyData);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(HashedString const& name);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(HashedString const& name, ushort legacyData);
-    LLNDAPI static optional_ref<Block const> tryGetFromRegistry(HashedString const& name, BlockStatesType const& states);
+    LLNDAPI static optional_ref<Block const>
+    tryGetFromRegistry(HashedString const& name, BlockStatesType const& states);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(CompoundTag const& nbt);
-    
+
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, ushort legacyData);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, BlockStatesType const& states);
@@ -76,6 +77,8 @@ public:
     optional_ref<Block const> setState(BlockState const& state, T value) const {
         return mBlockType->trySetState(state, value, mData);
     }
+
+    bool operator==(Block const& other) const { return mSerializationIdHash == other.mSerializationIdHash; }
 
 public:
     // member variables

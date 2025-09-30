@@ -49,8 +49,6 @@ public:
     );
 
     MCNAPI void finalize(::SimulatedPlayer& player);
-
-    MCNAPI ~MovementIntent();
     // NOLINTEND
 
 public:
