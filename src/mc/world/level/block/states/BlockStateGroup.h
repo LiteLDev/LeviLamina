@@ -30,31 +30,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockStateGroup();
+    MCAPI BlockStateGroup();
 
-    MCNAPI ::BlockStateMeta const* getBlockStateFromHash(uint64 const& h) const;
+    MCAPI ::BlockStateMeta const* getBlockStateFromHash(uint64 const& h) const;
 
-    MCNAPI void registerBlockStateDefinition(::BlockStateDefinition const& def);
+    MCAPI void registerBlockStateDefinition(::BlockStateDefinition const& def);
 
-    MCNAPI void registerExistingBlockState(::BlockState const& state);
+    MCAPI void registerExistingBlockState(::BlockState const& state);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool
+    MCAPI static bool
     loadBlockStateFromJson(::BlockStateDefinition& blockState, ::std::string const& name, ::Json::Value const& root);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static int const& MAX_ENUM_SIZE();
+    MCAPI static int const& MAX_ENUM_SIZE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };

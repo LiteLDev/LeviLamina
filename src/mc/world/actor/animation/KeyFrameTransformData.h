@@ -27,6 +27,8 @@ public:
 
     MCNAPI void addChannelTransform(::ExpressionNode const& expression, int axisIndex);
 
+    MCNAPI float getFirstChannelFloat(uint64 axisIndex) const;
+
     MCNAPI bool operator==(::KeyFrameTransformData const& rhs) const;
     // NOLINTEND
 

@@ -61,27 +61,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _placeMultiDecoration(
+    MCAPI void _placeMultiDecoration(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
         ::Block const&       block,
         ::BlockPos const&    origin
     ) const;
 
-    MCNAPI void placeDecoration(
+    MCAPI void placeDecoration(
         ::IBlockWorldGenAPI&                                     target,
         ::BlockPos const&                                        pos,
         ::Random&                                                random,
         ::TreeHelper::AttachableDecoration::DirectionMask const& mask
     ) const;
 
-    MCNAPI ~AttachableDecoration();
+    MCAPI ~AttachableDecoration();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -17,25 +17,23 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Vec3();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Vec3();
+    MCAPI explicit Vec3(float s);
 
     MCAPI Vec3(float x_, float y_, float z_);
-
-    MCAPI float distanceTo(::Vec3 const& p) const;
 
     MCAPI bool isNan() const;
 
     MCAPI bool isNear(::Vec3 const& rhs, float e) const;
 
-    MCAPI float lengthSquared() const;
-
     MCFOLD ::Vec3 normalized() const;
 
     MCAPI ::Vec3 operator*(float k) const;
-
-    MCAPI ::Vec3 operator+(::Vec3 const& rhs) const;
 
     MCAPI ::Vec3 operator-() const;
 
@@ -75,7 +73,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCAPI void* $ctor(float s);
 
     MCAPI void* $ctor(float x_, float y_, float z_);
     // NOLINTEND

@@ -14,22 +14,20 @@ struct PlanterItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk78518d;
+    ::ll::UntypedStorage<8, 32> mUnkfad5ea;
     ::ll::UntypedStorage<8, 24> mUnk81fc40;
     ::ll::UntypedStorage<1, 1>  mUnkd6fad7;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    PlanterItemComponent& operator=(PlanterItemComponent const&);
     PlanterItemComponent(PlanterItemComponent const&);
     PlanterItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_40::PlanterItemComponent&
-    operator=(::SharedTypes::v1_21_40::PlanterItemComponent const&);
-
     MCNAPI ::SharedTypes::v1_21_40::PlanterItemComponent& operator=(::SharedTypes::v1_21_40::PlanterItemComponent&&);
 
     MCNAPI ~PlanterItemComponent();

@@ -72,7 +72,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
-    MCFOLD void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
     MCFOLD float $getShadowRadius() const;
 

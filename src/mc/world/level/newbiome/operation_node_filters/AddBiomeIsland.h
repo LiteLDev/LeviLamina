@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
-class BiomeRegistry;
 // clang-format on
 
 namespace OperationNodeFilters {
@@ -27,23 +26,6 @@ public:
     AddBiomeIsland& operator=(AddBiomeIsland const&);
     AddBiomeIsland(AddBiomeIsland const&);
     AddBiomeIsland();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI AddBiomeIsland(
-        ::BiomeRegistry const& biomeRegistry,
-        ::Biome const&         defaultIslandBiome,
-        ::Biome const&         specialIslandBiome
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::BiomeRegistry const& biomeRegistry, ::Biome const& defaultIslandBiome, ::Biome const& specialIslandBiome);
-    // NOLINTEND
 };
 
 } // namespace OperationNodeFilters

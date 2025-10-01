@@ -31,8 +31,6 @@ public:
 
     MCAPI void _set(char const* data, uint64 length, ::Bedrock::StaticOptimizedString::StorageType storageType);
 
-    MCAPI uint64 length() const;
-
     MCAPI ::Bedrock::StaticOptimizedString& operator=(::Bedrock::StaticOptimizedString const& other);
 
     MCAPI ~StaticOptimizedString();

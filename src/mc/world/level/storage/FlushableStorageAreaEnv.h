@@ -24,7 +24,7 @@ public:
     // vIndex: 0
     virtual ~FlushableStorageAreaEnv() /*override*/ = default;
 
-    // vIndex: 20
+    // vIndex: 22
     virtual void flushToPermanentStorage() /*override*/;
     // NOLINTEND
 

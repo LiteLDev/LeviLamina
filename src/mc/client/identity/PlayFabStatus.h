@@ -33,6 +33,7 @@ enum class PlayFabStatus : int {
     GettingTitleKeyFailed                        = 25,
     GettingPSNAuthTokenFailed                    = 26,
     GettingNintendoAuthTokenFailed               = 27,
+    NetworkNotReady                              = 28,
     DoNotRetry                                   = 1000,
     AccountBanned                                = 1000,
     AccountDeleted                               = 1001,

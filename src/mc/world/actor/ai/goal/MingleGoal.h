@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/entity/components/MingleComponent.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/actor/ai/goal/MoveToPOIGoal.h"
 
@@ -60,15 +61,13 @@ public:
 
     MCAPI ::MingleComponent& _getMingleComponent() const;
 
-    MCAPI bool _isWithinInteractRange(::Actor& partner) const;
+    MCAPI bool _tryPathToPartner(::Actor& partner);
 
-    MCAPI void _tickPartneredActive(::MingleComponent& mingleComponent);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::MingleComponent* _tryGetMingleComponent(::Actor& actor);
+    MCAPI bool _validatePartnerState(
+        ::MingleComponent::MingleState expectedState,
+        ::MingleComponent&             mingleComponent,
+        bool                           requireWithinInteractRange
+    );
     // NOLINTEND
 
 public:

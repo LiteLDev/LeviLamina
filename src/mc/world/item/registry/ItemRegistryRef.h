@@ -18,6 +18,7 @@ class HashedString;
 class IContainerRegistryAccess;
 class IContainerRegistryTracker;
 class IDynamicContainerSerialization;
+class IMinecraftEventing;
 class Item;
 class ItemRegistry;
 class LevelData;
@@ -44,7 +45,9 @@ public:
         ::BaseGameVersion const&,
         ::Experiments const&,
         ::ResourcePackManager const&,
-        ::cereal::ReflectionCtx const&
+        ::cereal::ReflectionCtx const&,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const,
+        ::IMinecraftEventing&
     );
 
     class LockGuard {
@@ -63,13 +66,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~LockGuard();
+        MCAPI ~LockGuard();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -118,9 +121,11 @@ public:
     MCAPI ::BaseGameVersion getWorldBaseGameVersion() const;
 
     MCAPI void initCreativeItemsServer(
-        ::BlockDefinitionGroup const& blockDefinitionGroup,
-        ::Experiments const&          experiment,
-        ::ResourcePackManager const&  resourcePackManager,
+        ::BlockDefinitionGroup const&                      blockDefinitionGroup,
+        ::Experiments const&                               experiment,
+        ::ResourcePackManager const&                       resourcePackManager,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
+        ::IMinecraftEventing&                              eventing,
         ::std::function<void(
             ::ItemRegistryRef,
             ::BlockDefinitionGroup const&,
@@ -128,15 +133,18 @@ public:
             ::BaseGameVersion const&,
             ::Experiments const&,
             ::ResourcePackManager const&,
-            ::cereal::ReflectionCtx const&
-        )>                            registerCallback
+            ::cereal::ReflectionCtx const&,
+            ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>,
+            ::IMinecraftEventing&
+        )>                                                 registerCallback
     ) const;
 
     MCAPI void initServer(
         ::Experiments const&                               experiments,
         ::BaseGameVersion const&                           baseGameVersion,
         ::ResourcePackManager*                             rpm,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
+        ::IMinecraftEventing&                              eventing
     ) const;
 
     MCAPI bool isComplexAlias(::HashedString const& oldName) const;
@@ -184,8 +192,6 @@ public:
     MCAPI void setCheckForItemWorldCompatibility(bool value) const;
 
     MCAPI void setServerInitializingCreativeItems(bool value) const;
-
-    MCAPI void shutdown() const;
 
     MCAPI void unregisterItem(::HashedString const& itemName) const;
 

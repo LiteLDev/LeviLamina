@@ -7,6 +7,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
+class EntityContext;
+class PacketSender;
+class Player;
+class UserEntityIdentifierComponent;
+struct ControlSchemeComponent;
 struct ServerCameraAllowedControlSchemesComponent;
 struct ServerCameraDefaultControlSchemesComponent;
 namespace SharedTypes::v1_21_90 { struct CameraPreset; }
@@ -29,6 +35,21 @@ MCNAPI void populateControlSchemeServerComponents(
     ::std::string_view                                          presetName,
     ::std::vector<::SharedTypes::v1_21_90::CameraPreset> const& cameraPresets
 );
+
+MCNAPI ::ControlScheme::Scheme resolveControlSchemeOnCameraSetCommand(
+    ::EntityContext const&          levelEntity,
+    ::std::string const&            cameraPresetName,
+    ::ControlSchemeComponent const& schemeComponent,
+    ::Player&                       player
+);
+
+MCNAPI void sendControlSchemeToClient(
+    ::ControlScheme::Scheme                scheme,
+    ::PacketSender&                        sender,
+    ::UserEntityIdentifierComponent const* userIdentifier
+);
+
+MCNAPI bool shouldSupportNewChanges();
 // NOLINTEND
 
 // static variables
@@ -37,6 +58,8 @@ MCNAPI ::std::unordered_map<::std::string_view, ::std::vector<::ControlScheme::S
 DEFAULT_ALLOWED_SCHEMES_FOR_CAMERA();
 
 MCNAPI ::std::unordered_set<::std::string_view> const& MC_CAMERAS();
+
+MCNAPI ::BaseGameVersion& baseGameVersion();
 // NOLINTEND
 
 } // namespace ControlSchemeUtils

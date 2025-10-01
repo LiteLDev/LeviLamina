@@ -12,7 +12,6 @@ class ActorOwnerComponent;
 class StrictEntityContext;
 struct ActorMovementTickNeededComponent;
 struct BlazeFlagComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class BlazePreTravelSystem {
@@ -28,7 +27,5 @@ public:
             ::Include<::ActorMovementTickNeededComponent, ::BlazeFlagComponent>,
             ::ActorOwnerComponent> view
     );
-
-    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

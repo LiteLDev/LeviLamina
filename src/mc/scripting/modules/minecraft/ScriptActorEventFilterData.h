@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 // clang-format on
 
@@ -29,6 +30,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit ScriptActorEventFilterData(::Actor const& actor);
+
     MCNAPI ~ScriptActorEventFilterData();
     // NOLINTEND
 
@@ -37,6 +40,12 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::optional<::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData>
     create(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& actor);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Actor const& actor);
     // NOLINTEND
 
 public:

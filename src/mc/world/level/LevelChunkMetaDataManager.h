@@ -65,6 +65,12 @@ public:
         ::LevelChunkMetaData&                             metaData
     );
 
+    MCNAPI static void inferTargetMetaData(
+        ::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper,
+        ::DimensionType                                   dimensionID,
+        ::LevelChunkMetaData&                             metaData
+    );
+
     MCNAPI static ::std::shared_ptr<::LevelChunkMetaData> initializeLevelChunkMetaData(
         ::DimensionType                                   dimensionId,
         ::std::string const&                              dimensionName,

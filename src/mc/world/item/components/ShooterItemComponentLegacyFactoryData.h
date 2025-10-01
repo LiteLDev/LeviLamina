@@ -37,16 +37,16 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ShooterAmmunitionEntry(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
+        MCAPI ShooterAmmunitionEntry(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
 
-        MCNAPI ::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry&
+        MCFOLD ::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry&
         operator=(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
+        MCFOLD void* $ctor(::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry const&);
         // NOLINTEND
     };
 

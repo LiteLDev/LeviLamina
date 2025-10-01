@@ -17,13 +17,13 @@ class RangedWeaponItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 80
+    // vIndex: 82
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
     // vIndex: 76
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 110
+    // vIndex: 112
     virtual int
     getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const
         /*override*/;
@@ -31,7 +31,7 @@ public:
     // vIndex: 55
     virtual int getEnchantValue() const /*override*/;
 
-    // vIndex: 82
+    // vIndex: 84
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
     // vIndex: 0

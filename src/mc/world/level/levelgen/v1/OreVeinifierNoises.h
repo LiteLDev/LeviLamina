@@ -30,9 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI OreVeinifierNoises(::OreVeinifierNoises const&);
+    MCAPI OreVeinifierNoises(::OreVeinifierNoises const&);
 
-    MCNAPI OreVeinifierNoises(
+    MCAPI OreVeinifierNoises(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeininessNoiseSource,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeinNoiseSourceA,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeinNoiseSourceB,
@@ -40,21 +40,21 @@ public:
         ::XoroshiroPositionalRandomFactory                                            mPositionalRandomFactory
     );
 
-    MCNAPI ~OreVeinifierNoises();
+    MCAPI ~OreVeinifierNoises();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::OreVeinifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
+    MCAPI static ::OreVeinifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::OreVeinifierNoises const&);
+    MCFOLD void* $ctor(::OreVeinifierNoises const&);
 
-    MCNAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeininessNoiseSource,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeinNoiseSourceA,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> mVeinNoiseSourceB,
@@ -66,6 +66,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

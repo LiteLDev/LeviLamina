@@ -108,13 +108,13 @@ public:
     MCAPI void _registerRules();
 
     MCAPI ::std::unique_ptr<::GameRulesChangedPacket> _setGameRule(
-        ::GameRule*                  gameRule,
-        ::GameRule::Value            value,
-        ::GameRule::Type             type,
-        bool                         returnPacket,
-        bool*                        pValueValidated,
-        bool*                        pValueChanged,
-        ::GameRule::ValidationError* errorOutput
+        ::GameRule*                                        gameRule,
+        ::std::variant<::std::monostate, bool, int, float> value,
+        ::GameRule::Type                                   type,
+        bool                                               returnPacket,
+        bool*                                              pValueValidated,
+        bool*                                              pValueChanged,
+        ::GameRule::ValidationError*                       errorOutput
     );
 
     MCAPI ::std::unique_ptr<::GameRulesChangedPacket> createAllGameRulesPacket() const;
@@ -136,6 +136,15 @@ public:
     MCAPI ::std::unique_ptr<::GameRulesChangedPacket> setRule(
         ::GameRuleId                 rule,
         bool                         value,
+        bool                         returnPacket,
+        bool*                        pValueValidated,
+        bool*                        pValueChanged,
+        ::GameRule::ValidationError* errorOutput
+    );
+
+    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> setRule(
+        ::GameRuleId                 rule,
+        int                          value,
         bool                         returnPacket,
         bool*                        pValueValidated,
         bool*                        pValueChanged,

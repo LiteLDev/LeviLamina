@@ -21,7 +21,7 @@ class BalloonItem : public ::ChemistryItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
         /*override*/;
 
@@ -31,7 +31,7 @@ public:
     // vIndex: 15
     virtual bool isDyeable() const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 122
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;

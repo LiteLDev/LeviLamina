@@ -56,6 +56,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getIncludeTypes() const;
 
+    MCNAPI bool isEmpty() const;
+
     MCNAPI bool isValid(::Scripting::Error& error) const;
 
     MCNAPI bool operator()(::Block const& block) const;

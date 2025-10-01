@@ -39,13 +39,13 @@ public:
     // vIndex: 38
     virtual float getBrightness(float a, ::IConstBlockSource const& region) const /*override*/;
 
-    // vIndex: 145
+    // vIndex: 146
     virtual void aiStep() /*override*/;
 
     // vIndex: 48
     virtual bool isOnFire() const /*override*/;
 
-    // vIndex: 177
+    // vIndex: 178
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
     // vIndex: 24

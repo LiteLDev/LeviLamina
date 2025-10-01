@@ -15,11 +15,9 @@ class BlockPalette;
 class BlockPos;
 class BlockSource;
 class BlockType;
-class BoundingBox;
 class CompoundTag;
 class LevelChunk;
 class ListTag;
-struct TickDelayBlock;
 // clang-format on
 
 class BlockTickingQueue {
@@ -50,8 +48,6 @@ public:
         // NOLINTBEGIN
         MCAPI void _pruneQueueForMemory();
 
-        MCAPI bool remove(::BlockPos const& pos, ::Block const& block);
-
         MCAPI ~TickDataSet();
         // NOLINTEND
 
@@ -75,14 +71,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BlockTickingQueue();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockTickingQueue(::TickingQueueType queueType);
-
     MCAPI void _acquireAllTicks(::BlockTickingQueue& otherChunkQueue);
 
     MCAPI void _addToNextTickQueue(::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
@@ -108,24 +98,17 @@ public:
 
     MCAPI bool getNextUpdateForPos(::BlockPos const& pos, ::Tick& tick) const;
 
-    MCAPI ::std::unordered_multimap<::BlockPos, ::TickDelayBlock>
-    getTickDelaysInArea(::BoundingBox const& boundingBox) const;
-
     MCAPI void load(::CompoundTag const& tag, ::BlockPalette const& palette);
 
     MCAPI void remove(::std::function<bool(::TickNextTickData const&)> const& removeCondition);
+
+    MCAPI void remove(::BlockPos const& pos, ::Block const& block);
 
     MCAPI void save(::CompoundTag& tag) const;
 
     MCAPI bool tickPendingTicks(::BlockSource& region, ::Tick const& until, int max, bool instaTick_);
 
     MCAPI ~BlockTickingQueue();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::TickingQueueType queueType);
     // NOLINTEND
 
 public:

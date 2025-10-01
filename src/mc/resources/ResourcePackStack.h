@@ -16,6 +16,7 @@ class PackInstance;
 class PackSourceReport;
 class ResourceLocation;
 class ResourcePackMergeStrategy;
+struct PackInstanceId;
 // clang-format on
 
 class ResourcePackStack {
@@ -29,6 +30,10 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::PackInstance>>        mStack;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackSourceReport>> mPackSourceReport;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ResourcePackStack();
 
 public:
     // virtual functions
@@ -54,6 +59,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ResourcePackStack(
+        ::std::vector<::PackInstanceId> const&                                identities,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
+        bool                                                                  anyVersion
+    );
+
+    MCAPI void _setLoadingReport(::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo);
+
     MCAPI void
     add(::PackInstance                                                        packInstance,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
@@ -63,12 +76,16 @@ public:
 
     MCAPI void getSplitStacks(::ResourcePackStack& clientStack, ::ResourcePackStack& serverStack) const;
 
+    MCAPI bool hasCapabilityInStack(::std::string_view capability) const;
+
     MCAPI bool hasPlatformLockedContent() const;
 
     MCAPI bool isAssetExtractionViableForAll(
         ::std::function<::std::string(::ContentIdentity const&)> getContentKey,
         ::std::string const&                                     sourceContext
     ) const;
+
+    MCAPI void removeIf(::std::function<bool(::PackInstance const&)> const& callback);
 
     MCAPI void removeInvalidPacks();
     // NOLINTEND
@@ -83,8 +100,21 @@ public:
         bool                                                                  isDependent
     );
 
-    MCAPI static ::std::unique_ptr<::ResourcePackStack>
-    deserialize(::std::istream& fileStream, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo);
+    MCAPI static ::std::unique_ptr<::ResourcePackStack> deserialize(
+        ::std::istream&                                                       fileStream,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
+        ::std::optional<::std::string>                                        levelId
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::std::vector<::PackInstanceId> const&                                identities,
+        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
+        bool                                                                  anyVersion
+    );
     // NOLINTEND
 
 public:

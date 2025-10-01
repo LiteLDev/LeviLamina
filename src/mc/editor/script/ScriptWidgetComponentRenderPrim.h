@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/WidgetComponentType.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
+#include "mc/editor/WidgetComponentType.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 #include "mc/scripting/PrimitiveType.h"
 

@@ -16,17 +16,17 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackRequestSlotInfo& operator=(ItemStackRequestSlotInfo const&);
-    ItemStackRequestSlotInfo(ItemStackRequestSlotInfo const&);
-    ItemStackRequestSlotInfo();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ItemStackRequestSlotInfo& operator=(::ItemStackRequestSlotInfo&&);
+    MCNAPI ItemStackRequestSlotInfo();
 
     MCNAPI ~ItemStackRequestSlotInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

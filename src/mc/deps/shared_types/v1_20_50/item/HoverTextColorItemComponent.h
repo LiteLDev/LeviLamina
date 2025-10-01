@@ -18,6 +18,7 @@ public:
 
 public:
     // prevent constructor by default
+    HoverTextColorItemComponent& operator=(HoverTextColorItemComponent const&);
     HoverTextColorItemComponent(HoverTextColorItemComponent const&);
     HoverTextColorItemComponent();
 
@@ -28,9 +29,6 @@ public:
 
     MCNAPI ::SharedTypes::v1_20_50::HoverTextColorItemComponent&
     operator=(::SharedTypes::v1_20_50::HoverTextColorItemComponent&&);
-
-    MCNAPI ::SharedTypes::v1_20_50::HoverTextColorItemComponent&
-    operator=(::SharedTypes::v1_20_50::HoverTextColorItemComponent const&);
 
     MCNAPI ~HoverTextColorItemComponent();
     // NOLINTEND

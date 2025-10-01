@@ -20,6 +20,7 @@ class HashedString;
 class IContainerRegistryAccess;
 class IContainerRegistryTracker;
 class IDynamicContainerSerialization;
+class IMinecraftEventing;
 class IPackLoadContext;
 class Item;
 class ItemRegistryRef;
@@ -33,6 +34,7 @@ struct ItemTag;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace Bedrock::Threading { class Mutex; }
 namespace Core { class Path; }
+namespace PuvLoadData { struct LoadResultWithTiming; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -56,6 +58,7 @@ public:
         ::ll::UntypedStorage<8, 16> mUnk3d8ae0;
         ::ll::UntypedStorage<8, 24> mUnkb0fb71;
         ::ll::UntypedStorage<8, 16> mUnk48eade;
+        ::ll::UntypedStorage<8, 32> mUnkb103c2;
         // NOLINTEND
 
     public:
@@ -67,13 +70,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~LoadedItemAsset();
+        MCAPI LoadedItemAsset(::ItemRegistry::LoadedItemAsset&&);
+
+        MCAPI ~LoadedItemAsset();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCAPI void* $ctor(::ItemRegistry::LoadedItemAsset&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -84,7 +95,9 @@ public:
         ::BaseGameVersion const&,
         ::Experiments const&,
         ::ResourcePackManager const&,
-        ::cereal::ReflectionCtx const&
+        ::cereal::ReflectionCtx const&,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const,
+        ::IMinecraftEventing&
     );
 
     struct ItemAlias {
@@ -104,13 +117,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~ItemAlias();
+        MCAPI ~ItemAlias();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -131,23 +144,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ItemHashAlias(uint64 nameHash, ::BaseGameVersion const& version);
+        MCAPI ItemHashAlias(uint64 nameHash, ::BaseGameVersion const& version);
 
-        MCNAPI ::ItemRegistry::ItemHashAlias& operator=(::ItemRegistry::ItemHashAlias&&);
+        MCAPI ::ItemRegistry::ItemHashAlias& operator=(::ItemRegistry::ItemHashAlias&&);
 
-        MCNAPI ~ItemHashAlias();
+        MCAPI ~ItemHashAlias();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(uint64 nameHash, ::BaseGameVersion const& version);
+        MCAPI void* $ctor(uint64 nameHash, ::BaseGameVersion const& version);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -155,7 +168,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnkbbb797;
+        ::ll::UntypedStorage<8, 96> mUnkbbb797;
         ::ll::UntypedStorage<8, 32> mUnkb57c73;
         // NOLINTEND
 
@@ -168,13 +181,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~ItemLoadResult();
+        MCAPI ~ItemLoadResult();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -219,7 +232,13 @@ public:
     // NOLINTBEGIN
     MCAPI ItemRegistry();
 
-    MCAPI void
+    MCAPI void _initServerData(
+        ::std::vector<::ItemRegistry::LoadedItemAsset> const& allItemAssets,
+        ::ItemParseContext&                                   parseContext,
+        ::IMinecraftEventing&                                 eventing
+    );
+
+    MCAPI ::PuvLoadData::LoadResultWithTiming
     _loadItemDefinition(::ItemRegistry::LoadedItemAsset const& loadedItemAsset, ::ItemParseContext& parseContext);
 
     MCAPI void addItemToTagMap(::Item const& item);
@@ -240,9 +259,11 @@ public:
     MCAPI ::HashedString getNameFromLegacyID(short id);
 
     MCAPI void initCreativeItemsServer(
-        ::BlockDefinitionGroup const& blockDefinitionGroup,
-        ::Experiments const&          experiments,
-        ::ResourcePackManager const&  resourcePackManager,
+        ::BlockDefinitionGroup const&                      blockDefinitionGroup,
+        ::Experiments const&                               experiments,
+        ::ResourcePackManager const&                       resourcePackManager,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
+        ::IMinecraftEventing&                              eventing,
         ::std::function<void(
             ::ItemRegistryRef,
             ::BlockDefinitionGroup const&,
@@ -250,15 +271,18 @@ public:
             ::BaseGameVersion const&,
             ::Experiments const&,
             ::ResourcePackManager const&,
-            ::cereal::ReflectionCtx const&
-        )>                            registerCallback
+            ::cereal::ReflectionCtx const&,
+            ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>,
+            ::IMinecraftEventing&
+        )>                                                 registerCallback
     );
 
     MCAPI void initServer(
         ::Experiments const&                               experiments,
         ::BaseGameVersion const&                           baseGameVersion,
         ::ResourcePackManager*                             rpm,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
+        ::IMinecraftEventing&                              eventing
     );
 
     MCAPI ::WeakPtr<::Item> lookupByName(int& inOutItemAux, ::std::string_view inString) const;
@@ -281,15 +305,17 @@ public:
 
     MCAPI void registerItem(::SharedPtr<::Item> item);
 
-    MCAPI void registerLegacyID(::HashedString const& name, short id);
-
     MCAPI void registerLegacyMapping(
         ::HashedString const&    alias,
         ::HashedString const&    name,
         ::BaseGameVersion const& fromVersion
     );
 
+    MCAPI void registerValidatorIdentifier(::std::string const& str);
+
     MCAPI void setCheckForItemWorldCompatibility(bool value);
+
+    MCAPI void shutdown();
 
     MCAPI void unregisterItem(::HashedString const& itemName);
 
@@ -312,7 +338,8 @@ public:
         ::std::string                         jsonData,
         ::std::shared_ptr<::IPackLoadContext> packLoadContext,
         ::Core::Path const&                   filenameWithExtension,
-        ::cereal::ReflectionCtx const&        ctx
+        ::cereal::ReflectionCtx const&        ctx,
+        ::std::string const&                  packName
     );
     // NOLINTEND
 

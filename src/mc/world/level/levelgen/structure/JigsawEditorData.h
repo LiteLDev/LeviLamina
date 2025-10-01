@@ -31,24 +31,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI ::JigsawEditorData& operator=(::JigsawEditorData&&);
+    MCAPI ::JigsawEditorData& operator=(::JigsawEditorData&&);
 
-    MCNAPI void save(::CompoundTag& tag) const;
+    MCAPI void save(::CompoundTag& tag) const;
 
-    MCNAPI ~JigsawEditorData();
+    MCAPI ~JigsawEditorData();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<int, ::std::string> const& JOINT_TYPE_TO_NAME();
+    MCAPI static ::std::unordered_map<int, ::std::string> const& JOINT_TYPE_TO_NAME();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

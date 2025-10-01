@@ -18,13 +18,7 @@ public:
     virtual ::webrtc::RefCountReleaseStatus Release() const = 0;
 
     // vIndex: 2
-    virtual ~RefCountInterface();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~RefCountInterface() = default;
     // NOLINTEND
 
 public:

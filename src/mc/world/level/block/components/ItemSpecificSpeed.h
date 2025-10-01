@@ -17,22 +17,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemSpecificSpeed(::ItemSpecificSpeed const&);
+    MCAPI ItemSpecificSpeed(::ItemSpecificSpeed const&);
 
-    MCNAPI ::ItemSpecificSpeed& operator=(::ItemSpecificSpeed const&);
+    MCFOLD ::ItemSpecificSpeed& operator=(::ItemSpecificSpeed const&);
 
-    MCNAPI ~ItemSpecificSpeed();
+    MCAPI ~ItemSpecificSpeed();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ItemSpecificSpeed const&);
+    MCFOLD void* $ctor(::ItemSpecificSpeed const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

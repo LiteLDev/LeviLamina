@@ -16,11 +16,11 @@ class ChestBoatItem : public ::BoatItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 121
+    // vIndex: 123
     virtual ::ActorType _getActorType() const /*override*/;
 
     // vIndex: 0

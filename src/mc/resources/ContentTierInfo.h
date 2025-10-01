@@ -6,7 +6,7 @@ class ContentTierInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke5b8c8;
+    ::ll::UntypedStorage<1, 1> mUnk74513b;
     ::ll::UntypedStorage<1, 1> mUnk25ee98;
     // NOLINTEND
 

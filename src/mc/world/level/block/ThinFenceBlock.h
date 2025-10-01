@@ -32,7 +32,7 @@ public:
     virtual void addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
+        ::BlockPos const&          blockPos,
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
     ) const /*override*/;
@@ -80,7 +80,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 22
-    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     // vIndex: 24
     virtual bool canConnect(::Block const& otherBlock, uchar, ::Block const&) const /*override*/;
@@ -97,7 +97,7 @@ public:
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 0
-    virtual ~ThinFenceBlock() /*override*/ = default;
+    virtual ~ThinFenceBlock() /*override*/;
     // NOLINTEND
 
 public:
@@ -107,12 +107,18 @@ public:
     // NOLINTEND
 
 public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $addAABBs(
         ::Block const&             block,
         ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
+        ::BlockPos const&          blockPos,
         ::AABB const*              intersectTestBox,
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
@@ -153,6 +159,8 @@ public:
         ::BlockPos const&          pos,
         ::AABB&                    bufferValue
     ) const;
+
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCFOLD bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
 

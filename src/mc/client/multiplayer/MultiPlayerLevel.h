@@ -91,56 +91,56 @@ public:
     // vIndex: 47
     virtual ::Bedrock::NonOwnerPointer<::DisplayActorManager> getDisplayActorManager() /*override*/;
 
-    // vIndex: 392
+    // vIndex: 393
     virtual ::PlayerSleepManager const& getPlayerSleepManager() const /*override*/;
 
-    // vIndex: 391
+    // vIndex: 392
     virtual ::PlayerSleepManager& getPlayerSleepManager() /*override*/;
 
-    // vIndex: 314
+    // vIndex: 315
     virtual void notifySubChunkRequestManager(::SubChunkPacket const&) /*override*/;
 
-    // vIndex: 315
+    // vIndex: 316
     virtual ::SubChunkRequestManager* getSubChunkRequestManager() /*override*/;
 
-    // vIndex: 223
+    // vIndex: 224
     virtual void onSubChunkLoaded(::ChunkSource&, ::LevelChunk&, short, bool) /*override*/;
 
-    // vIndex: 224
+    // vIndex: 225
     virtual ::Bedrock::NonOwnerPointer<::SubChunkManager> getSubChunkManager() /*override*/;
 
-    // vIndex: 298
+    // vIndex: 299
     virtual bool canUseSkin(::SerializedSkin const&, ::NetworkIdentifier const&, ::ActorUniqueID const&) const
         /*override*/;
 
-    // vIndex: 299
+    // vIndex: 300
     virtual ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> getTrustedSkinHelper() const /*override*/;
 
-    // vIndex: 373
+    // vIndex: 374
     virtual ::MultiPlayerLevel* asMultiPlayerLevel() /*override*/;
 
-    // vIndex: 375
+    // vIndex: 376
     virtual ::Bedrock::NonOwnerPointer<::CameraRegistry const> getCameraRegistry() const /*override*/;
 
-    // vIndex: 374
+    // vIndex: 375
     virtual ::Bedrock::NonOwnerPointer<::CameraRegistry> getCameraRegistry() /*override*/;
 
-    // vIndex: 376
+    // vIndex: 377
     virtual ::Bedrock::NonOwnerPointer<::EntitySystems> getCameraSystems() /*override*/;
 
-    // vIndex: 390
+    // vIndex: 391
     virtual ::ArmorTrimUnloader* getArmorTrimUnloader() /*override*/;
 
-    // vIndex: 371
+    // vIndex: 372
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() /*override*/;
 
-    // vIndex: 384
+    // vIndex: 385
     virtual void subChunkTickAndSendRequests() /*override*/;
 
-    // vIndex: 387
+    // vIndex: 388
     virtual ::MapDataManager& _getMapDataManager() /*override*/;
 
-    // vIndex: 393
+    // vIndex: 394
     virtual void _subTick() /*override*/;
     // NOLINTEND
 

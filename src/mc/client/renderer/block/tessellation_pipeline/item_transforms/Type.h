@@ -13,7 +13,8 @@ enum class Type : uint {
     Ground               = 5,
     Fixed                = 6,
     Head                 = 7,
-    Max                  = 8,
+    Embedded             = 8,
+    Max                  = 9,
 };
 
 }

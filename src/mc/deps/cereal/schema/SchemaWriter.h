@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/schema/SchemaRWType.h"
 #include "mc/deps/cereal/schema/SerializationTraitsSupport.h"
 
 // auto generated forward declare list
@@ -56,22 +57,25 @@ public:
     virtual bool write(::std::string_view const) = 0;
 
     // vIndex: 14
-    virtual bool pushMember(::std::string_view const) = 0;
+    virtual void writeValidityFlag(bool) = 0;
 
     // vIndex: 15
-    virtual void popMember() = 0;
+    virtual void writeControlValue(uint) = 0;
 
     // vIndex: 16
-    virtual bool openObject() = 0;
+    virtual bool pushMember(::std::string_view const) = 0;
 
     // vIndex: 17
-    virtual bool openArray(uint64) = 0;
+    virtual void popMember() = 0;
 
     // vIndex: 18
-    virtual void close() = 0;
+    virtual ::cereal::SchemaRWType openObject() = 0;
 
     // vIndex: 19
-    virtual bool isSequenceWriter() const;
+    virtual ::cereal::SchemaRWType openArray(bool, uint64) = 0;
+
+    // vIndex: 20
+    virtual void close() = 0;
 
     // vIndex: 0
     virtual ~SchemaWriter() /*override*/ = default;
@@ -80,7 +84,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isSequenceWriter() const;
+
     // NOLINTEND
 };
 

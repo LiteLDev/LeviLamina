@@ -20,6 +20,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptNetHeader& operator=(ScriptNetHeader const&);
     ScriptNetHeader(ScriptNetHeader const&);
     ScriptNetHeader();
 
@@ -33,9 +34,9 @@ public:
         ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> value
     );
 
-    MCNAPI ::ScriptModuleMinecraftNet::ScriptNetHeader& operator=(::ScriptModuleMinecraftNet::ScriptNetHeader const&);
-
     MCNAPI ::ScriptModuleMinecraftNet::ScriptNetHeader& operator=(::ScriptModuleMinecraftNet::ScriptNetHeader&&);
+
+    MCNAPI ~ScriptNetHeader();
     // NOLINTEND
 
 public:
@@ -51,6 +52,12 @@ public:
 
     MCNAPI void*
     $ctor(::std::string const& key, ::std::variant<::std::string, ::ScriptModuleServerAdmin::ScriptSecretString> value);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

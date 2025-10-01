@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/world/item/alchemy/Potion.h"
 #include "mc/world/persistence/DynamicPropertyDefinePropertyError.h"
 
 // auto generated forward declare list
@@ -23,8 +22,6 @@ namespace ScriptModuleMinecraft { class ScriptAimAssistCategorySettings; }
 namespace ScriptModuleMinecraft { class ScriptAimAssistPresetSettings; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { class ScriptBlockType; }
-namespace ScriptModuleMinecraft { class ScriptPotionEffectType; }
-namespace ScriptModuleMinecraft { class ScriptPotionModifierType; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { struct ScriptCustomCommandInterface; }
 namespace Scripting { class ModuleBindingBuilder; }
@@ -98,6 +95,8 @@ MCNAPI ::Scripting::EnumBinding bindFacingEnumV010();
 
 MCNAPI ::Scripting::EnumBinding bindFacingEnumV1();
 
+MCNAPI ::Scripting::EnumBinding bindHeldItemOption();
+
 MCNAPI void bindHudElements(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
 MCNAPI void bindHudVisibility(::Scripting::ModuleBindingBuilder& moduleBuilder);
@@ -127,20 +126,6 @@ MCNAPI ::Block const* extractBlockFromVariant(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
 );
 
-MCNAPI ::std::shared_ptr<::Potion const> const getLongPotion(::Potion::PotionVariant potionEffect);
-
-MCNAPI ::std::shared_ptr<::Potion const> const getNormalPotion(::Potion::PotionVariant potionEffect);
-
-MCNAPI ::std::shared_ptr<::Potion const> const getPotion(
-    ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>   effect,
-    ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType> modifier
-);
-
-MCNAPI ::std::optional<int> getPotionId(
-    ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>   effect,
-    ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType> modifier
-);
-
 MCNAPI ::std::string getScriptScoreboardParticipantName(
     ::std::variant<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
@@ -148,13 +133,13 @@ MCNAPI ::std::string getScriptScoreboardParticipantName(
         ::std::string> const& participant
 );
 
-MCNAPI ::std::shared_ptr<::Potion const> const getStrongPotion(::Potion::PotionVariant potionEffect);
-
 MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition
 makeAimAssistCategoryDefinition(::ScriptModuleMinecraft::ScriptAimAssistCategorySettings const& category);
 
 MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition
 makeAimAssistPresetDefinition(::ScriptModuleMinecraft::ScriptAimAssistPresetSettings const& preset);
+
+MCNAPI ::std::optional<::std::shared_ptr<::Potion const> const> tryGetPotion(::std::string const& potionNameId);
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft

@@ -63,34 +63,34 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::std::unique_ptr<::MolangDescriptor>> deserialize(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::std::unique_ptr<::MolangDescriptor>> deserialize(::ReadOnlyBinaryStream& stream);
 
-    MCNAPI static ::std::unique_ptr<::MolangDescriptor>
+    MCAPI static ::std::unique_ptr<::MolangDescriptor>
     fromExpressionTag(::std::string const& tagExpression, ::MolangVersion molangVersion);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
+    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
 
-    MCNAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
+    MCAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
-    MCNAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const;
+    MCAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const;
 
-    MCNAPI ::std::string $getFullName() const;
+    MCAPI ::std::string $getFullName() const;
 
-    MCNAPI ::std::map<::std::string, ::std::string> $toMap() const;
+    MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
 
-    MCNAPI ::std::optional<::CompoundTag> $save() const;
+    MCAPI ::std::optional<::CompoundTag> $save() const;
 
-    MCNAPI void $serialize(::Json::Value& val) const;
+    MCAPI void $serialize(::Json::Value& val) const;
 
-    MCNAPI void $serialize(::BinaryStream& stream) const;
+    MCAPI void $serialize(::BinaryStream& stream) const;
 
-    MCNAPI ::ItemDescriptor::InternalType $getType() const;
+    MCFOLD ::ItemDescriptor::InternalType $getType() const;
 
-    MCNAPI uint64 $getHash() const;
+    MCAPI uint64 $getHash() const;
     // NOLINTEND
 
 public:

@@ -140,13 +140,15 @@ public:
 
     public:
         // prevent constructor by default
-        ComponentStateEntity& operator=(ComponentStateEntity const&);
         ComponentStateEntity(ComponentStateEntity const&);
         ComponentStateEntity();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity&
+        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity const&);
+
         MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity&
         operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateEntity&&);
 
@@ -219,7 +221,6 @@ public:
 
     public:
         // prevent constructor by default
-        ComponentStateText& operator=(ComponentStateText const&);
         ComponentStateText(ComponentStateText const&);
         ComponentStateText();
 
@@ -228,6 +229,9 @@ public:
         // NOLINTBEGIN
         MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateText&
         operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateText&&);
+
+        MCNAPI ::Editor::Network::WidgetComponentStateChangePayload::ComponentStateText&
+        operator=(::Editor::Network::WidgetComponentStateChangePayload::ComponentStateText const&);
 
         MCNAPI ~ComponentStateText();
         // NOLINTEND

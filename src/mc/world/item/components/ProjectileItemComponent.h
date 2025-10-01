@@ -31,6 +31,7 @@ public:
 
 public:
     // prevent constructor by default
+    ProjectileItemComponent& operator=(ProjectileItemComponent const&);
     ProjectileItemComponent();
 
 public:
@@ -43,6 +44,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ProjectileItemComponent(::ProjectileItemComponent const&);
+
     MCAPI explicit ProjectileItemComponent(::SharedTypes::v1_20_50::ProjectileItemComponent component);
 
     MCAPI ProjectileItemComponent(::ActorType actorType, float minCriticalPower);
@@ -75,6 +78,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::ProjectileItemComponent const&);
+
     MCAPI void* $ctor(::SharedTypes::v1_20_50::ProjectileItemComponent component);
 
     MCAPI void* $ctor(::ActorType actorType, float minCriticalPower);

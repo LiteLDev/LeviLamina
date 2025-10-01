@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-struct SurfaceMaterialBlocks;
-// clang-format on
-
 struct SurfaceMaterialAdjustmentEvaluated {
 public:
     // SurfaceMaterialAdjustmentEvaluated inner types declare
@@ -46,10 +41,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void makeAdjustments(::SurfaceMaterialBlocks& blockPalette, int height) const;
-
-    MCNAPI ::SurfaceMaterialAdjustmentEvaluated& operator=(::SurfaceMaterialAdjustmentEvaluated&&);
-
     MCNAPI ~SurfaceMaterialAdjustmentEvaluated();
     // NOLINTEND
 

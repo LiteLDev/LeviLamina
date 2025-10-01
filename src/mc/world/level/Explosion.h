@@ -14,6 +14,7 @@
 class Actor;
 class Block;
 class BlockSource;
+class IRandom;
 class ItemStack;
 class Randomize;
 struct ResourceDropsContext;
@@ -51,9 +52,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Explosion(::BlockSource& region, ::Actor* optSource, ::Vec3 const& pos, float radius);
+
     MCAPI ::std::vector<::gsl::not_null<::Actor*>> _getActorsInRange(::Actor* optSource, float range) const;
 
-    MCAPI bool explode();
+    MCAPI bool explode(::IRandom& random);
 
     MCAPI ::Vec3 getEyePos(::Actor& actor) const;
 
@@ -77,6 +80,12 @@ public:
         ::ResourceDropsContext const&                        resourceDropsContext,
         ::std::vector<::std::pair<::ItemStack, ::BlockPos>>& itemStacks
     );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockSource& region, ::Actor* optSource, ::Vec3 const& pos, float radius);
     // NOLINTEND
 
 public:

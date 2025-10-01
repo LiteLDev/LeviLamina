@@ -17,30 +17,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacyOnDigTriggerItemComponentData();
+    MCAPI LegacyOnDigTriggerItemComponentData();
 
-    MCNAPI LegacyOnDigTriggerItemComponentData(::LegacyOnDigTriggerItemComponentData const&);
+    MCAPI LegacyOnDigTriggerItemComponentData(::LegacyOnDigTriggerItemComponentData const&);
 
-    MCNAPI LegacyOnDigTriggerItemComponentData(::LegacyOnDigTriggerItemComponentData&&);
+    MCAPI LegacyOnDigTriggerItemComponentData(::LegacyOnDigTriggerItemComponentData&&);
 
-    MCNAPI ::LegacyOnDigTriggerItemComponentData& operator=(::LegacyOnDigTriggerItemComponentData&&);
+    MCAPI ::LegacyOnDigTriggerItemComponentData& operator=(::LegacyOnDigTriggerItemComponentData&&);
 
-    MCNAPI ~LegacyOnDigTriggerItemComponentData();
+    MCAPI ~LegacyOnDigTriggerItemComponentData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::LegacyOnDigTriggerItemComponentData const&);
+    MCAPI void* $ctor(::LegacyOnDigTriggerItemComponentData const&);
 
-    MCNAPI void* $ctor(::LegacyOnDigTriggerItemComponentData&&);
+    MCAPI void* $ctor(::LegacyOnDigTriggerItemComponentData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

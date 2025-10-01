@@ -26,6 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptCameraTargetOptions const& other) const;
+
     MCNAPI ~ScriptCameraTargetOptions();
     // NOLINTEND
 

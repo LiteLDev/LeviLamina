@@ -58,21 +58,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ShieldRecipe(::std::string const& recipeId, ::mce::UUID const* uuid);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID& ID();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const* uuid);
     // NOLINTEND
 
 public:

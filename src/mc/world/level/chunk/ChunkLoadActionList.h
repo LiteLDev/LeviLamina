@@ -11,8 +11,11 @@
 // auto generated forward declare list
 // clang-format off
 class ChunkLoadedRequest;
+class CompoundTag;
 class Dimension;
+class ICommandOriginLoader;
 class IRequestAction;
+class JigsawStructureElementRegistry;
 class LevelStorage;
 class ServerLevel;
 // clang-format on
@@ -64,6 +67,14 @@ public:
         ::ServerLevel&                                               serverLevel,
         ::Dimension&                                                 dimension,
         ::std::function<::ChunksLoadedStatus(::ChunkLoadedRequest&)> chunksLoadedCheckFunction
+    );
+
+    MCNAPI void loadRequest(
+        ::std::string const&                    key,
+        ::CompoundTag const&                    tag,
+        ::ICommandOriginLoader&                 loader,
+        ::std::string const&                    dimensionPrefix,
+        ::JigsawStructureElementRegistry const& elementReg
     );
 
     MCNAPI ::QueueRequestResult queueRequestOrExecuteAction(

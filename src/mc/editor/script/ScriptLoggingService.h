@@ -21,9 +21,6 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk2eada6;
     ::ll::UntypedStorage<8, 8>  mUnk4209f3;
-    ::ll::UntypedStorage<8, 24> mUnk6b9f0d;
-    ::ll::UntypedStorage<1, 2>  mUnkc9ec79;
-    ::ll::UntypedStorage<8, 40> mUnkd45969;
     // NOLINTEND
 
 public:
@@ -35,8 +32,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptLoggingService(::Editor::ScriptModule::ScriptLoggingService&&);
-
     MCNAPI ::Scripting::Result_deprecated<void> _logMessage(
         ::Editor::LogLevel                                           level,
         ::std::string                                                message,
@@ -52,8 +47,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void>
     info(::std::string message, ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps);
 
-    MCNAPI ::Editor::ScriptModule::ScriptLoggingService& operator=(::Editor::ScriptModule::ScriptLoggingService&&);
-
     MCNAPI ::Scripting::Result_deprecated<void>
     warning(::std::string message, ::std::optional<::Editor::ScriptModule::ScriptLogProperties> logProps);
     // NOLINTEND
@@ -62,12 +55,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptLoggingService&&);
     // NOLINTEND
 };
 

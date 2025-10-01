@@ -13,6 +13,7 @@
 class CreativeGroupInfo;
 class CreativeItemEntry;
 class CreativeItemGroupCategory;
+class HashedString;
 class ItemInstance;
 struct CreativeItemNetIdTag;
 // clang-format on
@@ -38,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::brstd::flat_map<
+    MCAPI ::brstd::flat_map<
         ::CreativeItemCategory,
         ::gsl::not_null<::CreativeItemGroupCategory*>,
         ::std::less<::CreativeItemCategory>,
@@ -46,17 +47,20 @@ public:
         ::std::vector<::gsl::not_null<::CreativeItemGroupCategory*>>>
     createCategories();
 
-    MCNAPI void forEachCreativeItemInstance(::std::function<bool(::ItemInstance const&)> func) const;
+    MCAPI void forEachCreativeItemInstance(::std::function<bool(::ItemInstance const&)> func) const;
 
-    MCNAPI ::CreativeItemGroupCategory* newCreativeCategory(::std::string const& name, ::CreativeItemCategory category);
+    MCAPI ::CreativeItemGroupCategory* newCreativeCategory(::std::string const& name, ::CreativeItemCategory category);
 
-    MCNAPI void updateNetIdMap();
+    MCAPI ::CreativeGroupInfo*
+    newCreativeGroup(::CreativeItemCategory category, ::HashedString const& name, ::ItemInstance const& icon);
+
+    MCAPI void updateNetIdMap();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

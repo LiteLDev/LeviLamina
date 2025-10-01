@@ -35,15 +35,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CreativeGroupInfo* addAnonymousGroup();
+    MCAPI ::CreativeGroupInfo* addAnonymousGroup();
 
-    MCNAPI ::CreativeGroupInfo* addChildGroup(::HashedString const& name, ::ItemInstance const& icon);
+    MCAPI ::CreativeGroupInfo* addChildGroup(::HashedString const& name, ::ItemInstance const& icon);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

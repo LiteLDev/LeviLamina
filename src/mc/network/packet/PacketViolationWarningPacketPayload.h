@@ -19,6 +19,7 @@ public:
 
 public:
     // prevent constructor by default
+    PacketViolationWarningPacketPayload& operator=(PacketViolationWarningPacketPayload const&);
     PacketViolationWarningPacketPayload(PacketViolationWarningPacketPayload const&);
     PacketViolationWarningPacketPayload();
 
@@ -26,8 +27,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::PacketViolationWarningPacketPayload& operator=(::PacketViolationWarningPacketPayload&&);
-
-    MCFOLD ::PacketViolationWarningPacketPayload& operator=(::PacketViolationWarningPacketPayload const&);
 
     MCAPI ~PacketViolationWarningPacketPayload();
     // NOLINTEND

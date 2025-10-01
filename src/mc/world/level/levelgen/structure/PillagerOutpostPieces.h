@@ -81,7 +81,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI PillagerOutpostPiece(
+        MCAPI PillagerOutpostPiece(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string                                     templateName,
             ::BlockPos const&                                 origin,
@@ -91,20 +91,18 @@ public:
             ::Dimension&                                      dimension
         );
 
-        MCNAPI void _addMobsFromPositions(
+        MCAPI void _addMobsFromPositions(
             ::BoundingBox const&               chunkBB,
             ::ActorDefinitionIdentifier const& definition,
             ::BlockSource&                     region,
             ::std::vector<::BlockPos> const&   entityPositions
         );
-
-        MCNAPI void _loadTemplate();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(
+        MCAPI void* $ctor(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string                                     templateName,
             ::BlockPos const&                                 origin,
@@ -118,19 +116,19 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+        MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-        MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-        MCNAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+        MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
 
-        MCNAPI void $_handleDataMarker(
+        MCAPI void $_handleDataMarker(
             ::std::string const& markerId,
             ::BlockPos const&    position,
             ::BlockSource&       region,
@@ -149,7 +147,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _addPiece(
+    MCAPI static void _addPiece(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
         ::BlockPos const&                                   position,
         ::Rotation const&                                   rotation,
@@ -158,7 +156,7 @@ public:
         ::Dimension&                                        dimension
     );
 
-    MCNAPI static void _addScatteredPieces(
+    MCAPI static void _addScatteredPieces(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
         ::Random&                                           random,
         ::Rotation const&                                   rotation,
@@ -171,12 +169,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::array<::std::string_view, 7>& MSC_FEATURES();
+    MCAPI static ::std::array<::std::string_view, 7>& MSC_FEATURES();
 
-    MCNAPI static ::std::string_view& PILLAGER_LOOT();
+    MCAPI static ::std::string_view& PILLAGER_LOOT();
 
-    MCNAPI static ::std::string_view& STRUCTURE_WATCHTOWER();
+    MCAPI static ::std::string_view& STRUCTURE_WATCHTOWER();
 
-    MCNAPI static ::std::string_view& STRUCTURE_WATCHTOWER_OVERGROWN();
+    MCAPI static ::std::string_view& STRUCTURE_WATCHTOWER_OVERGROWN();
     // NOLINTEND
 };

@@ -26,30 +26,17 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    EntityType& operator=(EntityType const&);
-    EntityType();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EntityType(::br::spawn::EntityType const&);
+    MCAPI bool isBlockDangerous(::Block const& block) const;
 
-    MCNAPI bool isBlockDangerous(::Block const& block) const;
-
-    MCNAPI ~EntityType();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::br::spawn::EntityType const&);
+    MCAPI ~EntityType();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

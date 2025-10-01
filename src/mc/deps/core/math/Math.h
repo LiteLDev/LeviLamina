@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace mce { struct Degree; }
+// clang-format on
+
 namespace mce {
 
 class Math {
@@ -26,13 +31,11 @@ public:
 
     MCNAPI static float clampRotate(float current, float target, float maxDelta);
 
-    MCNAPI static bool isNan(double d);
-
-    MCNAPI static bool isNan(float f);
-
     MCNAPI static float lerpRotate(float from, float to, float a);
 
     MCNAPI static float wrapDegrees(float input);
+
+    MCNAPI static ::mce::Degree wrapDegrees(::mce::Degree input);
 
     MCNAPI static float wrapRadians(float angle);
     // NOLINTEND

@@ -2,14 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace JsonUtil { class EmptyClass; }
-// clang-format on
-
 struct EntityArmorEquipmentSlotMappingDefinition {
 public:
     // member variables
@@ -27,14 +19,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void _setArmorSlot(::std::string const& slot);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void buildSchema(
-        ::std::shared_ptr<
-            ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EntityArmorEquipmentSlotMappingDefinition>>& root
-    );
     // NOLINTEND
 };

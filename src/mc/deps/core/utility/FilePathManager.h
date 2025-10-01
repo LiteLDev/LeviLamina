@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class Path; }
 namespace Core { class PathView; }
 namespace Core { struct FilePathManagerPaths; }
 // clang-format on
@@ -56,9 +55,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit FilePathManager(::Core::FilePathManagerPaths&& paths);
 
-    MCNAPI ::Core::PathView getWorldsPath() const;
-
-    MCNAPI void setRootPath(::Core::Path const& path);
+    MCNAPI void setRootPath(::Core::PathView path);
     // NOLINTEND
 
 public:

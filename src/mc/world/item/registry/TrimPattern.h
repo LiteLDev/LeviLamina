@@ -19,20 +19,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TrimPattern(::TrimPattern&&);
-
-    MCNAPI ~TrimPattern();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::TrimPattern&&);
+    MCAPI ~TrimPattern();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

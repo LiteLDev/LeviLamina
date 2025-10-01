@@ -63,21 +63,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
+    MCAPI
     LegacyTreeFeature(::LegacyTreeFeature::Type placementType, ::FeatureRegistry& registry, bool shouldPlaceLeafLitter);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::LegacyTreeFeature::Type placementType, ::FeatureRegistry& registry, bool shouldPlaceLeafLitter);
+    MCAPI void* $ctor(::LegacyTreeFeature::Type placementType, ::FeatureRegistry& registry, bool shouldPlaceLeafLitter);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

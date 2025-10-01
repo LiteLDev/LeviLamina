@@ -23,23 +23,23 @@ class NavigationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                mAvoidDamageBlocks;
-    ::ll::TypedStorage<1, 1, bool>                                mAvoidPortals;
-    ::ll::TypedStorage<1, 1, bool>                                mAvoidSun;
-    ::ll::TypedStorage<1, 1, bool>                                mAvoidWater;
-    ::ll::TypedStorage<1, 1, bool>                                mCanBreach;
-    ::ll::TypedStorage<1, 1, bool>                                mCanFloat;
-    ::ll::TypedStorage<1, 1, bool>                                mCanPathOverLava;
-    ::ll::TypedStorage<1, 1, bool>                                mCanWalkInLava;
-    ::ll::TypedStorage<1, 1, bool>                                mCanJump;
-    ::ll::TypedStorage<1, 1, bool>                                mCanOpenDoors;
-    ::ll::TypedStorage<1, 1, bool>                                mCanOpenIronDoors;
-    ::ll::TypedStorage<1, 1, bool>                                mCanPassDoors;
-    ::ll::TypedStorage<1, 1, bool>                                mCanSink;
-    ::ll::TypedStorage<1, 1, bool>                                mIsAmphibious;
-    ::ll::TypedStorage<1, 1, bool>                                mIsFollowingRivers;
-    ::ll::TypedStorage<1, 1, bool>                                mHasEndPathRadius;
-    ::ll::TypedStorage<1, 1, bool>                                mHasDestination;
+    bool                                                          mAvoidDamageBlocks : 1;
+    bool                                                          mAvoidPortals      : 1;
+    bool                                                          mAvoidSun          : 1;
+    bool                                                          mAvoidWater        : 1;
+    bool                                                          mCanBreach         : 1;
+    bool                                                          mCanFloat          : 1;
+    bool                                                          mCanPathOverLava   : 1;
+    bool                                                          mCanWalkInLava     : 1;
+    bool                                                          mCanJump           : 1;
+    bool                                                          mCanOpenDoors      : 1;
+    bool                                                          mCanOpenIronDoors  : 1;
+    bool                                                          mCanPassDoors      : 1;
+    bool                                                          mCanSink           : 1;
+    bool                                                          mIsAmphibious      : 1;
+    bool                                                          mIsFollowingRivers : 1;
+    bool                                                          mHasEndPathRadius  : 1;
+    bool                                                          mHasDestination    : 1;
     ::ll::TypedStorage<4, 4, int>                                 mTick;
     ::ll::TypedStorage<4, 4, int>                                 mTickTimeout;
     ::ll::TypedStorage<4, 4, int>                                 mLastStuckCheck;
@@ -56,12 +56,15 @@ public:
 public:
     // prevent constructor by default
     NavigationComponent& operator=(NavigationComponent const&);
-    NavigationComponent(NavigationComponent const&);
     NavigationComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NavigationComponent(::NavigationComponent const& other);
+
+    MCAPI float getMaxDistance(::Actor const& owner) const;
+
     MCAPI void initMultiTypeNavigationComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
 
     MCAPI void initializeFromDefinition(::Mob& owner, ::NavigationDescription* description);
@@ -81,6 +84,12 @@ public:
     MCAPI ::NavigationComponent& operator=(::NavigationComponent&&);
 
     MCAPI ~NavigationComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::NavigationComponent const& other);
     // NOLINTEND
 
 public:

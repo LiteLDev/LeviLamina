@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 struct AdventureSettings;
 // clang-format on
 
@@ -24,22 +23,22 @@ public:
     virtual bool isInWorldAndNotShowingAnyMenuScreens() const = 0;
 
     // vIndex: 2
-    virtual ::AdventureSettings const& getAdventureSettings() const = 0;
+    virtual bool isPausingGame() const = 0;
 
     // vIndex: 3
-    virtual ::ClientPlayMode getPlayMode() const = 0;
+    virtual ::AdventureSettings const& getAdventureSettings() const = 0;
 
     // vIndex: 4
-    virtual ::InputMode getInputMode() const = 0;
+    virtual ::ClientPlayMode getPlayMode() const = 0;
 
     // vIndex: 5
-    virtual ::GameType getDefaultGameType() const = 0;
+    virtual ::InputMode getInputMode() const = 0;
 
     // vIndex: 6
-    virtual float getSmoothRotationSpeed() const = 0;
+    virtual ::GameType getDefaultGameType() const = 0;
 
     // vIndex: 7
-    virtual ::Vec3 getWorldSpaceVRRealityGazeDir() const = 0;
+    virtual float getSmoothRotationSpeed() const = 0;
     // NOLINTEND
 
 public:

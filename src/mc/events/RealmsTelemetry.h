@@ -72,6 +72,8 @@ public:
 
         MCNAPI void addAllCalls(::Social::Events::RealmsTelemetry::CallCount const& other);
 
+        MCNAPI void addCall(::Bedrock::Http::Status returnCode, int count);
+
         MCNAPI ::Json::Value toJson() const;
 
         MCNAPI ~CallCount();

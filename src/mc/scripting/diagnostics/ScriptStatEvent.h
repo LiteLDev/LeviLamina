@@ -18,6 +18,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptStatEvent& operator=(ScriptStatEvent const&);
     ScriptStatEvent(ScriptStatEvent const&);
     ScriptStatEvent();
 
@@ -25,8 +26,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::ScriptStatEvent& operator=(::ScriptStatEvent&&);
-
-    MCNAPI ::ScriptStatEvent& operator=(::ScriptStatEvent const&);
 
     MCNAPI ~ScriptStatEvent();
     // NOLINTEND

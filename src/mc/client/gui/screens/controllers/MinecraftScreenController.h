@@ -46,9 +46,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk597512;
     ::ll::UntypedStorage<4, 4>  mUnk6b49e5;
     ::ll::UntypedStorage<4, 4>  mUnk3fbbc6;
-    ::ll::UntypedStorage<4, 4>  mUnkf658f0;
     ::ll::UntypedStorage<4, 4>  mUnk9d8073;
-    ::ll::UntypedStorage<4, 4>  mUnk89309d;
     ::ll::UntypedStorage<1, 1>  mUnk398789;
     ::ll::UntypedStorage<8, 64> mUnk74da16;
     ::ll::UntypedStorage<8, 32> mUnk88ae43;
@@ -78,13 +76,13 @@ public:
     // vIndex: 2
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    // vIndex: 33
+    // vIndex: 32
     virtual uint getSceneId() const /*override*/;
 
-    // vIndex: 24
+    // vIndex: 23
     virtual void setSuspendInput(bool) /*override*/;
 
-    // vIndex: 25
+    // vIndex: 24
     virtual void setSuspendDirectionalInput(bool) /*override*/;
 
     // vIndex: 16
@@ -98,9 +96,6 @@ public:
 
     // vIndex: 6
     virtual void onOpen() /*override*/;
-
-    // vIndex: 21
-    virtual void onDictationEvent(::std::string const&) /*override*/;
 
     // vIndex: 19
     virtual bool bind(
@@ -116,49 +111,49 @@ public:
     // vIndex: 18
     virtual bool bind(::std::string const&, uint, ::std::string const&, ::UIPropertyBag&) /*override*/;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual bool _doesScreenHaveExitBehavior() const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 40
     virtual bool _isStillValid() const;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual bool _getGamepadHelperVisible() const;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual bool _getMixedHelperVisible() const;
 
-    // vIndex: 44
+    // vIndex: 43
     virtual bool _getKeyboardHelperVisible() const;
 
-    // vIndex: 45
+    // vIndex: 44
     virtual bool _getGestureControlEnabled() const;
 
-    // vIndex: 46
+    // vIndex: 45
     virtual ::std::string _getButtonStartDescription();
 
-    // vIndex: 47
+    // vIndex: 46
     virtual ::std::string _getButtonADescription();
 
-    // vIndex: 48
+    // vIndex: 47
     virtual ::std::string _getButtonBDescription();
 
-    // vIndex: 49
+    // vIndex: 48
     virtual ::std::string _getButtonXDescription();
 
-    // vIndex: 50
+    // vIndex: 49
     virtual ::std::string _getButtonYDescription();
 
-    // vIndex: 51
+    // vIndex: 50
     virtual ::std::string _getButtonKeyboardDescription();
 
-    // vIndex: 52
+    // vIndex: 51
     virtual void showPickCustomSkinDialog(::std::function<void(::PickCustomSkinResult)>);
 
-    // vIndex: 53
+    // vIndex: 52
     virtual ::std::string _getScreenName() const;
 
-    // vIndex: 54
+    // vIndex: 53
     virtual ::ui::ViewRequest promptConnect(bool, ::std::function<void(::Social::UserPlatformConnectionResult)>);
     // NOLINTEND
 

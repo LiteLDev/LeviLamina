@@ -45,15 +45,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::BlockComponentFactory::ComponentMetadata& operator=(::BlockComponentFactory::ComponentMetadata&&);
+        MCAPI ::BlockComponentFactory::ComponentMetadata& operator=(::BlockComponentFactory::ComponentMetadata&&);
 
-        MCNAPI ~ComponentMetadata();
+        MCAPI ~ComponentMetadata();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -78,37 +78,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockComponentFactory(::IPackLoadContext const* packLoadContext);
+    MCAPI explicit BlockComponentFactory(::IPackLoadContext const* packLoadContext);
 
-    MCNAPI void _buildBlockComponentsSchema();
+    MCAPI void _buildBlockComponentsSchema();
 
-    MCNAPI void _registerLegacyDescriptions(::IPackLoadContext const* packLoadContext);
+    MCAPI void _registerLegacyDescriptions(::IPackLoadContext const* packLoadContext);
 
-    MCNAPI ::std::unique_ptr<::BlockComponentDescription>
+    MCAPI ::std::unique_ptr<::BlockComponentDescription>
     createDescription(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
 
-    MCNAPI ::BlockComponentFactory& operator=(::BlockComponentFactory const&);
+    MCAPI ::BlockComponentFactory& operator=(::BlockComponentFactory const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>*
+    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>*
     contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
-    MCNAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
+    MCAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::IPackLoadContext const* packLoadContext);
+    MCAPI void* $ctor(::IPackLoadContext const* packLoadContext);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

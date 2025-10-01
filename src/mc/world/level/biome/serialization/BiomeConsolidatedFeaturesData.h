@@ -27,8 +27,6 @@ public:
     // NOLINTBEGIN
     MCNAPI BiomeConsolidatedFeaturesData(::BiomeConsolidatedFeaturesData const&);
 
-    MCNAPI BiomeConsolidatedFeaturesData(::BiomeConsolidatedFeaturesData&&);
-
     MCNAPI ~BiomeConsolidatedFeaturesData();
     // NOLINTEND
 
@@ -42,8 +40,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::BiomeConsolidatedFeaturesData const&);
-
-    MCNAPI void* $ctor(::BiomeConsolidatedFeaturesData&&);
     // NOLINTEND
 
 public:

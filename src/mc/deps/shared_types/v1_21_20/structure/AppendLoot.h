@@ -8,11 +8,12 @@ struct AppendLoot {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3e925c;
+    ::ll::UntypedStorage<8, 32> mUnk9ae2db;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    AppendLoot& operator=(AppendLoot const&);
     AppendLoot(AppendLoot const&);
     AppendLoot();
 
@@ -21,9 +22,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot&&);
-
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot&
-    operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::AppendLoot const&);
 
     MCNAPI ~AppendLoot();
     // NOLINTEND

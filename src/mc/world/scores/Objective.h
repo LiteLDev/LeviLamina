@@ -43,8 +43,6 @@ public:
     MCAPI Objective(::std::string const& name, ::ObjectiveCriteria const& criteria);
 
     MCAPI ::ScoreInfo getPlayerScore(::ScoreboardId const& id) const;
-
-    MCAPI bool hasScore(::ScoreboardId const& id) const;
     // NOLINTEND
 
 public:

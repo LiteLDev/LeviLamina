@@ -18,12 +18,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~TagUpdateToken();
+    MCAPI explicit TagUpdateToken(::std::weak_ptr<::std::atomic<int>> tokenCount);
+
+    MCAPI ~TagUpdateToken();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::weak_ptr<::std::atomic<int>> tokenCount);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

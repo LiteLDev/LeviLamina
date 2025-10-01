@@ -40,27 +40,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool matchesPatternItem(::ItemStackBase const& item) const;
+    MCAPI bool matchesPatternItem(::ItemStackBase const& item) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static char const* const& BASE_NAME();
+    MCAPI static char const* const& BASE_NAME();
 
-    MCNAPI static char const* const& CREEPER_NAME_ID();
+    MCAPI static char const* const& CREEPER_NAME_ID();
 
-    MCNAPI static char const* const& CURLY_BORDER_NAME_ID();
+    MCAPI static char const* const& CURLY_BORDER_NAME_ID();
 
-    MCNAPI static char const* const& SQUARE_TOP_LEFT_NAME_ID();
+    MCAPI static char const* const& SQUARE_TOP_LEFT_NAME_ID();
 
-    MCNAPI static ::std::vector<::BannerPattern> const& mPatterns();
+    MCAPI static ::std::vector<::BannerPattern> const& mPatterns();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

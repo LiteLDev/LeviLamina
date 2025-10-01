@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class IFileAccess;
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 namespace Core {
@@ -61,7 +61,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::Core::UnzipFile> create(
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess,
-        ::Core::Path const&                          zipPath,
+        ::Core::PathView                             zipPath,
         ::Core::UnzipFileLibrary                     library
     );
     // NOLINTEND

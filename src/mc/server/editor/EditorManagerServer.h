@@ -6,6 +6,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/EditorManager.h"
+#include "mc/editor/EditorManagerServerServiceProvider.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/LevelEventListener.h"
@@ -22,6 +23,7 @@ class Player;
 class Scheduler;
 class ServerInstance;
 struct ScriptingWorldInitializeEvent;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Core { class FilePathManager; }
 namespace Editor { class IEditorPlayer; }
 namespace Editor::Network { class INetworkPayload; }
@@ -32,6 +34,7 @@ namespace Scripting { struct ContextId; }
 namespace Editor {
 
 class EditorManagerServer : public ::Editor::EditorManager,
+                            public ::Editor::Services::EditorManagerServerServiceProvider,
                             public ::EventListenerDispatcher<::LevelEventListener>,
                             public ::ServerInstanceEventListener {
 public:
@@ -41,6 +44,7 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk2bb08a;
     ::ll::UntypedStorage<8, 8>  mUnkf4abda;
     ::ll::UntypedStorage<8, 24> mUnk62d704;
+    ::ll::UntypedStorage<8, 48> mUnkc95cac;
     // NOLINTEND
 
 public:
@@ -84,6 +88,10 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
     ) /*override*/;
+
+    // vIndex: 1
+    virtual ::Bedrock::PubSub::Subscription
+    registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)> func) /*override*/;
     // NOLINTEND
 
 public:
@@ -132,6 +140,9 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
     );
+
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $registerLevelInitializeSubscriber(::std::function<void(bool, ::Editor::EditorManagerServer&)> func);
     // NOLINTEND
 
 public:
@@ -140,6 +151,8 @@ public:
     MCNAPI static void** $vftableForIEditorManager();
 
     MCNAPI static void** $vftableForEditorServiceList();
+
+    MCNAPI static void** $vftableForEditorManagerServerServiceProvider();
 
     MCNAPI static void** $vftableForEditorManagerServiceProvider();
 

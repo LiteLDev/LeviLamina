@@ -20,6 +20,7 @@ public:
 
 public:
     // prevent constructor by default
+    AddPaintingPacketPayload& operator=(AddPaintingPacketPayload const&);
     AddPaintingPacketPayload(AddPaintingPacketPayload const&);
     AddPaintingPacketPayload();
 
@@ -27,8 +28,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::AddPaintingPacketPayload& operator=(::AddPaintingPacketPayload&&);
-
-    MCAPI ::AddPaintingPacketPayload& operator=(::AddPaintingPacketPayload const&);
 
     MCAPI ~AddPaintingPacketPayload();
     // NOLINTEND

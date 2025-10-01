@@ -11,6 +11,6 @@ class VanillaVillageJigsawStructureActorRules {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void initialize(::JigsawStructureRegistry& jigsawRegistry);
+    MCAPI static void initialize(::JigsawStructureRegistry& jigsawRegistry);
     // NOLINTEND
 };

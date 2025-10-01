@@ -19,6 +19,7 @@ public:
 
 public:
     // prevent constructor by default
+    PlaytestBeginSessionTransferPayload& operator=(PlaytestBeginSessionTransferPayload const&);
     PlaytestBeginSessionTransferPayload(PlaytestBeginSessionTransferPayload const&);
     PlaytestBeginSessionTransferPayload();
 
@@ -27,13 +28,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~PlaytestBeginSessionTransferPayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::Network::PlaytestBeginSessionTransferPayload&
-    operator=(::Editor::Network::PlaytestBeginSessionTransferPayload const&);
     // NOLINTEND
 
 public:

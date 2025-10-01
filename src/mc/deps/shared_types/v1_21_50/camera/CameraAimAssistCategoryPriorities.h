@@ -9,6 +9,7 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_21_50 {
@@ -17,8 +18,8 @@ struct CameraAimAssistCategoryPriorities {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk9fd642;
-    ::ll::UntypedStorage<8, 64> mUnkb76217;
+    ::ll::UntypedStorage<8, 64> mUnk6dd226;
+    ::ll::UntypedStorage<8, 64> mUnked134c;
     ::ll::UntypedStorage<4, 8>  mUnk86c058;
     ::ll::UntypedStorage<4, 8>  mUnk845646;
     // NOLINTEND
@@ -34,6 +35,8 @@ public:
 
     MCNAPI CameraAimAssistCategoryPriorities(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities const&);
 
+    MCNAPI CameraAimAssistCategoryPriorities(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
+
     MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
 
@@ -47,6 +50,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+
     MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities>
     read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
@@ -57,6 +62,8 @@ public:
     MCNAPI void* $ctor();
 
     MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities const&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
     // NOLINTEND
 
 public:

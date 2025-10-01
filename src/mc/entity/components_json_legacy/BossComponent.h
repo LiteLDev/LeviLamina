@@ -17,7 +17,7 @@ class Player;
 namespace mce { class UUID; }
 // clang-format on
 
-class BossComponent {
+struct BossComponent {
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,8 +58,6 @@ public:
     MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCNAPI void sendDeathTelemetry(::Actor& owner);
-
-    MCNAPI void setName(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
 
     MCNAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
 

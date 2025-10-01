@@ -24,7 +24,7 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 46
-    virtual bool canBeOriginalSurface() const /*override*/;
+    virtual bool canBeOriginalSurface(bool) const /*override*/;
 
     // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
@@ -45,7 +45,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
-    MCFOLD bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface(bool) const;
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 

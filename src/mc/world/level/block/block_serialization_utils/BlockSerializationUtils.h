@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/block_serialization_utils/NBTState.h"
-#include "mc/world/level/block/block_serialization_utils/NbtToBlockCache.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,13 +16,6 @@ namespace BlockSerializationUtils { struct NbtToBlockCache; }
 namespace BlockSerializationUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void addToCache(
-    ::BlockSerializationUtils::NbtToBlockCache&            cache,
-    ::BlockSerializationUtils::NbtToBlockCache::Key const& key,
-    ::BlockSerializationUtils::NBTState                    nbtState,
-    ::Block const*                                         block
-);
-
 MCAPI void initBlockReplaceDataMap();
 
 MCAPI ::std::pair<::BlockSerializationUtils::NBTState, ::Block const*>

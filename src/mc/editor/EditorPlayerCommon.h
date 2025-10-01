@@ -4,18 +4,22 @@
 
 // auto generated inclusion list
 #include "mc/common/editor/IEditorPlayer.h"
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/serviceproviders/EditorPlayerServiceProvider.h"
 #include "mc/editor/services/EditorServiceList.h"
+#include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/PlayerEventListener.h"
 
 // auto generated forward declare list
 // clang-format off
+class Dimension;
 class Player;
 class PlayerEventCoordinator;
+struct PlayerDimensionChangeAfterEvent;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace Editor { class ServiceProviderCollection; }
@@ -26,7 +30,7 @@ namespace Editor {
 class EditorPlayerCommon : public ::Editor::IEditorPlayer,
                            public ::Editor::EditorPlayerServiceProvider,
                            public ::Editor::Services::EditorServiceList,
-                           public ::PlayerEventListener {
+                           public ::EventListenerDispatcher<::PlayerEventListener> {
 public:
     // EditorPlayerCommon inner types define
     enum class InitializationState : int {
@@ -43,6 +47,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkb995b8;
     ::ll::UntypedStorage<8, 48> mUnk6374b5;
+    ::ll::UntypedStorage<8, 48> mUnkc284f0;
     ::ll::UntypedStorage<8, 24> mUnk6b14f6;
     ::ll::UntypedStorage<4, 4>  mUnk2b7012;
     // NOLINTEND
@@ -56,6 +61,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 52
+    virtual ::EventResult onEvent(::PlayerDimensionChangeAfterEvent const& evt) /*override*/;
+
     // vIndex: 0
     virtual ~EditorPlayerCommon() /*override*/;
 
@@ -74,6 +82,10 @@ public:
     // vIndex: 2
     virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)> fnTick) /*override*/;
+
+    // vIndex: 3
+    virtual ::Bedrock::PubSub::Subscription
+    registerDimensionChange(::std::function<void(::DimensionType, ::DimensionType)> fn) /*override*/;
 
     // vIndex: 1
     virtual ::Player* getPlayer() const /*override*/;
@@ -109,6 +121,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::EventResult $onEvent(::PlayerDimensionChangeAfterEvent const& evt);
+
     MCNAPI ::Scripting::Result_deprecated<void> $init();
 
     MCNAPI ::Scripting::Result_deprecated<void> $ready();
@@ -119,6 +133,9 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
     $registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)> fnTick);
+
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $registerDimensionChange(::std::function<void(::DimensionType, ::DimensionType)> fn);
 
     MCNAPI ::Player* $getPlayer() const;
 
@@ -134,7 +151,7 @@ public:
 
     MCNAPI static void** $vftableForEditorPlayerServiceProvider();
 
-    MCNAPI static void** $vftableForPlayerEventListener();
+    MCNAPI static void** $vftableForEventListenerDispatcher();
 
     MCNAPI static void** $vftableForIEditorPlayer();
     // NOLINTEND

@@ -119,6 +119,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit DebugEndPoint(::std::optional<::LogLevel> minLogLevel);
+
     MCNAPI void initializeContentLogging(::ResourcePackManager& mgr, ::Core::Path const& levelPath);
     // NOLINTEND
 
@@ -126,6 +128,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::unordered_map<::LogArea, bool> const& mAssertAreas();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::optional<::LogLevel> minLogLevel);
     // NOLINTEND
 
 public:

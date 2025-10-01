@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ComponentItem;
 class HashedString;
 class SemVersion;
 namespace SharedTypes::v1_20_50 { struct EnchantableItemComponent; }
@@ -24,6 +25,7 @@ public:
 
 public:
     // prevent constructor by default
+    EnchantableItemComponent& operator=(EnchantableItemComponent const&);
     EnchantableItemComponent(EnchantableItemComponent const&);
     EnchantableItemComponent();
 
@@ -31,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7
-    virtual void _initializeComponent() /*override*/;
+    virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
     // vIndex: 0
     virtual ~EnchantableItemComponent() /*override*/ = default;
@@ -43,8 +45,6 @@ public:
     MCAPI explicit EnchantableItemComponent(::SharedTypes::v1_20_50::EnchantableItemComponent component);
 
     MCFOLD ::EnchantableItemComponent& operator=(::EnchantableItemComponent&&);
-
-    MCFOLD ::EnchantableItemComponent& operator=(::EnchantableItemComponent const&);
     // NOLINTEND
 
 public:
@@ -68,7 +68,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent(::ComponentItem& owner);
     // NOLINTEND
 
 public:

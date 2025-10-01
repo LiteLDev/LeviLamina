@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/options/PlayFabEnvironment.h"
 #include "mc/client/social/IUserManager.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/client/social/UserPlatformConnectionResult.h"
@@ -55,6 +54,7 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnkbb4da2;
     ::ll::UntypedStorage<8, 16>  mUnk89970d;
     ::ll::UntypedStorage<8, 8>   mUnk89c3de;
+    ::ll::UntypedStorage<8, 8>   mUnk886a7a;
     ::ll::UntypedStorage<8, 8>   mUnk210f01;
     ::ll::UntypedStorage<8, 64>  mUnk63325d;
     ::ll::UntypedStorage<8, 64>  mUnk5805c3;
@@ -83,48 +83,46 @@ public:
     virtual void removeClient(::std::shared_ptr<::IClientInstance> const&) /*override*/;
 
     // vIndex: 36
-    virtual void setUserClient(int, ::std::shared_ptr<::IClientInstance> const&) /*override*/;
+    virtual ::std::shared_ptr<::Social::User>
+    setUserClient(int, ::std::shared_ptr<::IClientInstance> const&) /*override*/;
 
     // vIndex: 37
     virtual bool userHasClient(int) /*override*/;
 
     // vIndex: 38
-    virtual ::Social::PlayFabEnvironment getEnvironment() const /*override*/;
-
-    // vIndex: 39
     virtual ::std::string_view getPlayFabTitleId() const /*override*/;
 
     // vIndex: 3
     virtual ::std::shared_ptr<::Social::User> getPrimaryUser() const /*override*/;
 
-    // vIndex: 54
+    // vIndex: 53
     virtual ::std::shared_ptr<::Social::User> getUserFromUserId(uint) /*override*/;
 
-    // vIndex: 53
+    // vIndex: 52
     virtual ::std::shared_ptr<::Social::User const> const getUserFromUserId(uint) const /*override*/;
 
-    // vIndex: 52
+    // vIndex: 51
     virtual ::std::shared_ptr<::Social::User> getUserFromControllerId(int) const /*override*/;
 
-    // vIndex: 51
+    // vIndex: 50
     virtual ::std::shared_ptr<::Social::User> getUser(::IClientInstance const&) const /*override*/;
 
-    // vIndex: 50
+    // vIndex: 49
     virtual ::std::shared_ptr<::Social::User> getUser(::Social::XboxLiveUser const&) /*override*/;
 
-    // vIndex: 55
+    // vIndex: 54
     virtual ::GameUserType getUserTypeFromUserId(uint) const /*override*/;
 
-    // vIndex: 56
+    // vIndex: 55
     virtual bool isChatAllowedWhenBlockedByPlatform() const /*override*/;
 
-    // vIndex: 57
+    // vIndex: 56
     virtual ::std::vector<::std::shared_ptr<::Social::User>> const& getUsers() const /*override*/;
 
-    // vIndex: 58
+    // vIndex: 57
     virtual bool isUserSignedIn(uint) /*override*/;
 
-    // vIndex: 59
+    // vIndex: 58
     virtual bool isPrimaryUserInitialSignInInProgress() const /*override*/;
 
     // vIndex: 1
@@ -146,10 +144,10 @@ public:
         ::std::function<void(::Social::UserPlatformConnectionResult)>
     ) /*override*/;
 
-    // vIndex: 48
+    // vIndex: 47
     virtual void tick(::IMinecraftGame&) /*override*/;
 
-    // vIndex: 49
+    // vIndex: 48
     virtual void updateMapping(bool, bool) /*override*/;
 
     // vIndex: 13
@@ -194,7 +192,7 @@ public:
     // vIndex: 8
     virtual bool canChangePrimaryUserFromStartMenuScreen() const /*override*/;
 
-    // vIndex: 64
+    // vIndex: 63
     virtual bool hasPlatformPremiumAccess() const;
 
     // vIndex: 27
@@ -213,38 +211,38 @@ public:
     getLinkedPlatformIds(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) const
         /*override*/;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> retrieveCIDToClientMap() /*override*/;
 
-    // vIndex: 41
+    // vIndex: 40
     virtual int getClientCID(::IClientInstance const&) const /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual void
     registerSignOutListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void
     registerSignInListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 43
     virtual ::Bedrock::PubSub::Subscription registerIdentitySignInCallback(
         ::Social::IdentityType,
         ::std::function<void(uint, ::Social::IdentityType)>
     ) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 44
     virtual ::Bedrock::PubSub::Subscription registerIdentitySignOutCallback(
         ::Social::IdentityType,
         ::std::function<void(uint, ::Social::IdentityType)>
     ) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 45
     virtual ::Bedrock::PubSub::Subscription registerProfileImageChangedCallback(
         ::std::function<void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)>
     ) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 46
     virtual bool needGamepadDisconnectScreen(int) /*override*/;
 
     // vIndex: 31
@@ -274,16 +272,16 @@ public:
     // vIndex: 7
     virtual bool controllerChanged(int&, int&) /*override*/;
 
-    // vIndex: 60
+    // vIndex: 59
     virtual void registerLevelLocationObserver(::ILevelListCache&) /*override*/;
 
-    // vIndex: 61
+    // vIndex: 60
     virtual ::Social::MultiplayerServiceObserver& getMultiplayerServiceObserver() /*override*/;
 
-    // vIndex: 62
+    // vIndex: 61
     virtual ::Social::MultiplayerServiceIdentifier getPlatformMultiplayerServiceIdentifier() const /*override*/;
 
-    // vIndex: 63
+    // vIndex: 62
     virtual bool willSyncUserDataStorage() const /*override*/;
 
     // vIndex: 2
@@ -295,17 +293,17 @@ public:
     // vIndex: 4
     virtual void onLevelDeleted(::std::string const&) /*override*/;
 
-    // vIndex: 65
+    // vIndex: 64
     virtual void _onAppResumed();
 
-    // vIndex: 66
+    // vIndex: 65
     virtual void _onAppSuspended();
 
-    // vIndex: 67
+    // vIndex: 66
     virtual ::std::shared_ptr<::Social::UserCreationData>
     _prepareUserCreationData(::GameUserType, int, ::std::shared_ptr<::Options>, uint);
 
-    // vIndex: 68
+    // vIndex: 67
     virtual void _onUserAdded(::std::shared_ptr<::Social::User> const&);
     // NOLINTEND
 

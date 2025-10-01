@@ -27,13 +27,13 @@ public:
     isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const
         /*override*/;
 
-    // vIndex: 82
+    // vIndex: 84
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
     // vIndex: 37
-    virtual float getAttackDamageBonus(::Actor const& attacker, float) const /*override*/;
+    virtual float getAttackDamageBonus(::Actor const& attacker) const /*override*/;
 
-    // vIndex: 81
+    // vIndex: 83
     virtual float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const /*override*/;
 
     // vIndex: 32
@@ -53,7 +53,7 @@ public:
 
     MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI float $getAttackDamageBonus(::Actor const& attacker, float) const;
+    MCAPI float $getAttackDamageBonus(::Actor const& attacker) const;
 
     MCFOLD float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 

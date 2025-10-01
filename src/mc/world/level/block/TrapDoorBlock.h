@@ -18,17 +18,12 @@ class BlockSource;
 class Experiments;
 class IConstBlockSource;
 class ItemInstance;
-class Material;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 class TrapDoorBlock : public ::BlockType {
-public:
-    // prevent constructor by default
-    TrapDoorBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -87,8 +82,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TrapDoorBlock(::std::string const& nameId, int id, ::Material const& material);
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void toggleOpen(::BlockSource& region, ::Actor* user, ::BlockPos const& pos) const;
@@ -106,12 +99,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::BaseGameVersion const& TRAP_DOOR_DOESNT_BREAK_FALLING_BLOCK_VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
@@ -142,7 +129,7 @@ public:
 
     MCAPI bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
     MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 

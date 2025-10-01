@@ -40,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI VillageStart(
+    MCAPI VillageStart(
         ::Dimension&                         generator,
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -53,7 +53,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Dimension&                         generator,
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
@@ -66,9 +66,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI ::std::string_view $getStructureName() const;
+    MCAPI ::std::string_view $getStructureName() const;
     // NOLINTEND
 
 public:

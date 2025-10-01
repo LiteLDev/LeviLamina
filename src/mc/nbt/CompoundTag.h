@@ -75,8 +75,6 @@ public:
 
     MCAPI void append(::CompoundTag const& tag);
 
-    MCAPI void clear();
-
     MCAPI ::std::unique_ptr<::CompoundTag> clone() const;
 
     MCAPI bool contains(::std::string_view name) const;
@@ -85,31 +83,25 @@ public:
 
     MCAPI void deepCopy(::CompoundTag const& other);
 
-    MCAPI ::Tag const* get(::std::string_view name) const;
-
     MCAPI bool getBoolean(::std::string_view string) const;
 
     MCAPI uchar getByte(::std::string_view name) const;
 
     MCAPI ::std::vector<uchar> const& getByteArray(::std::string_view name) const;
 
-    MCAPI ::CompoundTag const* getCompound(::std::string_view) const;
-
-    MCFOLD ::CompoundTag* getCompound(::std::string_view name);
+    MCAPI ::CompoundTag const* getCompound(::std::string_view name) const;
 
     MCAPI float getFloat(::std::string_view name) const;
 
     MCAPI int getInt(::std::string_view name) const;
 
-    MCAPI ::Int64Tag const* getInt64Tag(::std::string_view) const;
-
-    MCFOLD ::Int64Tag* getInt64Tag(::std::string_view name);
+    MCAPI ::Int64Tag const* getInt64Tag(::std::string_view name) const;
 
     MCAPI ::IntTag const* getIntTag(::std::string_view name) const;
 
-    MCAPI ::ListTag const* getList(::std::string_view) const;
+    MCAPI ::ListTag const* getList(::std::string_view name) const;
 
-    MCFOLD ::ListTag* getList(::std::string_view name);
+    MCAPI ::ListTag* getList(::std::string_view name);
 
     MCAPI ::ShortTag const* getShortTag(::std::string_view name) const;
 
@@ -117,7 +109,7 @@ public:
 
     MCAPI ::StringTag const* getStringTag(::std::string_view name) const;
 
-    MCAPI ::CompoundTag& operator=(::CompoundTag&& rhs);
+    MCFOLD ::CompoundTag& operator=(::CompoundTag&& rhs);
 
     MCAPI ::Tag& put(::std::string name, ::Tag&& tag);
 

@@ -127,8 +127,6 @@ public:
 
     MCAPI void _explodeCauldronContents(::BlockSource& region, ::BlockPos const& pos, ushort) const;
 
-    MCAPI bool const _mayUpdateLiquidLevel(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void _sendCauldronUsedEventToClient(
         ::Player const&                              player,
         short                                        itemId,

@@ -83,7 +83,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EditorBootstrapper>>                  mEditorBootstrapper;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CDNConfig>>                           mCDNConfig;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerTextSettings>>                  mServerTextSettings;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SignalingService>>                    mSignalingService;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingService>>                   mSignalingService;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingServiceSignInJob>>          mSignalingServiceSignInJob;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Services::DiscoveryHelper>> mDiscoveryServiceHelper;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Services::AuthHelper>>      mAuthServiceHelper;

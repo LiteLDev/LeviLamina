@@ -4,13 +4,13 @@
 
 // auto generated inclusion list
 #include "mc/common/GameVersion.h"
-#include "mc/common/editor/WorldType.h"
 #include "mc/config/ChatRestrictionLevel.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/json/Value.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
+#include "mc/editor/WorldType.h"
 #include "mc/network/GamePublishSetting.h"
 #include "mc/options/EducationEditionOffer.h"
 #include "mc/options/EducationEditionOfferValue.h"
@@ -173,8 +173,6 @@ public:
 
     MCAPI ::BaseGameVersion const& getBaseGameVersion() const;
 
-    MCAPI ::DaylightCycle getDaylightCycle() const;
-
     MCAPI ::CompoundTag const& getEduSharedUriResource() const;
 
     MCAPI ::std::string const& getEducationOid() const;
@@ -183,13 +181,7 @@ public:
 
     MCAPI ::GeneratorType getGenerator() const;
 
-    MCAPI int getLimitedWorldDepth() const;
-
-    MCAPI int getLimitedWorldWidth() const;
-
     MCAPI ::LevelSeed64 getSeed() const;
-
-    MCAPI ::BlockPos const& getSpawnPos() const;
 
     MCAPI void getTagData(::CompoundTag const& tag);
 
@@ -217,8 +209,6 @@ public:
 
     MCAPI void setIsHardcore(bool value);
 
-    MCAPI void setLevelName(::std::string const& levelName);
-
     MCAPI void setSeed(::LevelSeed64 seed);
 
     MCAPI void setSpawnPos(::BlockPos const& spawn);
@@ -226,8 +216,6 @@ public:
     MCAPI void setTagData(::CompoundTag& tag) const;
 
     MCAPI void setWorldVersion(::WorldVersion version);
-
-    MCAPI void touchLastLoadedWithVersion();
 
     MCAPI void v1_read(::RakNet::BitStream& bitStream, ::StorageVersion storageVersion);
 

@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/ContiguousSelectionType.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/editor/ContiguousSelectionType.h"
 #include "mc/editor/serviceproviders/CommonBlockUtilityServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -177,6 +177,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::BlockSource& _getBlockSource() const;
+
+    MCNAPI ::Dimension& _getDimension() const;
     // NOLINTEND
 
 public:

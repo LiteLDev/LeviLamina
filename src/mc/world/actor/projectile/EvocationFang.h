@@ -29,7 +29,7 @@ public:
     virtual ::ActorUniqueID getSourceUniqueID() const /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
@@ -51,7 +51,7 @@ public:
 
     MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCFOLD float $getShadowRadius() const;
     // NOLINTEND

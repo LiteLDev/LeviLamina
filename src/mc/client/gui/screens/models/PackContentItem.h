@@ -35,7 +35,7 @@ public:
     ::ll::TypedStorage<8, 24, ::SubpackInfoCollection>                                          mSubpackInfo;
     ::ll::TypedStorage<8, 8, ::PackSettingsFactory*>                                            mPackSettingsFactory;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                                   mWorldId;
-    ::ll::TypedStorage<8, 40, ::std::optional<::Core::PathBuffer<::std::string>>>               mPackSettingsPath;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Core::PathBuffer<::std::string>>>               mWorldPath;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::PackContentItemListPosition>>> mListPosition;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::weak_ptr<::PackContentItem const>>>          mDependencies;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::weak_ptr<::PackContentItem const>>>          mDependentContent;

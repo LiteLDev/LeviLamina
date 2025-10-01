@@ -35,7 +35,7 @@ public:
         /*override*/;
 
     // vIndex: 46
-    virtual bool canBeOriginalSurface() const /*override*/;
+    virtual bool canBeOriginalSurface(bool) const /*override*/;
 
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -60,7 +60,7 @@ public:
 
     MCAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 
-    MCFOLD bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface(bool) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND

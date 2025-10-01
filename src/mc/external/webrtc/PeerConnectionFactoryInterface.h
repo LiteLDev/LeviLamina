@@ -111,7 +111,7 @@ public:
 
     // vIndex: 11
     virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
-    CreateVideoTrack(::std::string const& label, ::webrtc::VideoTrackSourceInterface* source);
+    CreateVideoTrack(::std::string const&, ::webrtc::VideoTrackSourceInterface*);
 
     // vIndex: 13
     virtual ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>
@@ -147,9 +147,6 @@ public:
         ::std::unique_ptr<::rtc::RTCCertificateGeneratorInterface> cert_generator,
         ::webrtc::PeerConnectionObserver*                          observer
     );
-
-    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
-    $CreateVideoTrack(::std::string const& label, ::webrtc::VideoTrackSourceInterface* source);
     // NOLINTEND
 };
 

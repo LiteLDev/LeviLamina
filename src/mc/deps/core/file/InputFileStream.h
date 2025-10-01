@@ -17,7 +17,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~InputFileStream() /*override*/ = default;
+    virtual ~InputFileStream() /*override*/;
     // NOLINTEND
 
 public:
@@ -34,6 +34,12 @@ public:
     MCNAPI void* $ctor();
 
     MCNAPI void* $ctor(::Core::Path const& fileName, int openMode);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

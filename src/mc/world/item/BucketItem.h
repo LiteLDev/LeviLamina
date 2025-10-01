@@ -38,10 +38,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    // vIndex: 109
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 91
+    // vIndex: 93
     virtual uchar getMaxStackSize(::ItemDescriptor const&) const /*override*/;
 
     // vIndex: 75
@@ -50,10 +50,10 @@ public:
     // vIndex: 76
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 80
+    // vIndex: 82
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 81
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
 
@@ -63,20 +63,20 @@ public:
     // vIndex: 12
     virtual bool isBucket() const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
     // vIndex: 48
     virtual bool isLiquidClipItem() const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 99
+    // vIndex: 101
     virtual bool validFishInteraction(int) const /*override*/;
 
-    // vIndex: 112
+    // vIndex: 114
     virtual ::Brightness getLightEmission(int) const /*override*/;
 
     // vIndex: 60
@@ -85,7 +85,7 @@ public:
     // vIndex: 47
     virtual bool isDestructive(int auxValue) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 122
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
@@ -141,7 +141,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
 

@@ -35,56 +35,54 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructureEditorData();
+    MCAPI StructureEditorData();
 
-    MCNAPI StructureEditorData(::StructureEditorData&&);
+    MCAPI StructureEditorData(::StructureEditorData&&);
 
-    MCNAPI StructureEditorData(::StructureEditorData const&);
+    MCAPI StructureEditorData(::StructureEditorData const&);
 
-    MCNAPI void load(::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void load(::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI ::StructureEditorData& operator=(::StructureEditorData&&);
+    MCAPI void save(::CompoundTag& tag) const;
 
-    MCNAPI void save(::CompoundTag& tag) const;
+    MCAPI void setStructureSize(::BlockPos const& size);
 
-    MCNAPI void setStructureSize(::BlockPos const& size);
-
-    MCNAPI ~StructureEditorData();
+    MCAPI ~StructureEditorData();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& DEFAULT_EXPORT_NAME();
+    MCAPI static ::std::string const& DEFAULT_EXPORT_NAME();
 
-    MCNAPI static ::std::string const& DEFAULT_STRUCTURE_NAMESPACE();
+    MCAPI static ::std::string const& DEFAULT_STRUCTURE_NAMESPACE();
 
-    MCNAPI static ::StructureBlockType const& DEFAULT_STRUCTURE_TYPE();
+    MCAPI static ::StructureBlockType const& DEFAULT_STRUCTURE_TYPE();
 
-    MCNAPI static ::BlockPos const& MAX_STRUCTURE_OFFSET();
+    MCAPI static ::BlockPos const& MAX_STRUCTURE_OFFSET();
 
-    MCNAPI static ::BlockPos const& MIN_STRUCTURE_OFFSET();
+    MCAPI static ::BlockPos const& MIN_STRUCTURE_OFFSET();
 
-    MCNAPI static ::BlockPos const& MIN_STRUCTURE_SIZE();
+    MCAPI static ::BlockPos const& MIN_STRUCTURE_SIZE();
 
-    MCNAPI static char const& NAMESPACE_DELIMITER();
+    MCAPI static char const& NAMESPACE_DELIMITER();
 
-    MCNAPI static ::std::string const& NAME_PREFIX();
+    MCAPI static ::std::string const& NAME_PREFIX();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::StructureEditorData&&);
+    MCAPI void* $ctor(::StructureEditorData&&);
 
-    MCNAPI void* $ctor(::StructureEditorData const&);
+    MCAPI void* $ctor(::StructureEditorData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

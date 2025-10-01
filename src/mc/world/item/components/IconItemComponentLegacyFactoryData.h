@@ -16,11 +16,12 @@ struct IconItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactory
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk30e49e;
+    ::ll::UntypedStorage<8, 32> mUnk2ebe53;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    IconItemComponentLegacyFactoryData& operator=(IconItemComponentLegacyFactoryData const&);
     IconItemComponentLegacyFactoryData(IconItemComponentLegacyFactoryData const&);
     IconItemComponentLegacyFactoryData();
 
@@ -34,8 +35,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::IconItemComponentLegacyFactoryData& operator=(::IconItemComponentLegacyFactoryData const&);
-
     MCAPI ::IconItemComponentLegacyFactoryData& operator=(::IconItemComponentLegacyFactoryData&&);
     // NOLINTEND
 

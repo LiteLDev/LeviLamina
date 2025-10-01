@@ -14,7 +14,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~LootItemCondition();
+    virtual ~LootItemCondition() = default;
 
     // vIndex: 1
     virtual bool applies(::Random&, ::LootTableContext&) = 0;
@@ -23,24 +23,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value object, bool);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value const& object, bool);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

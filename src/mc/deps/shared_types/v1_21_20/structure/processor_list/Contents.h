@@ -20,6 +20,7 @@ public:
 
 public:
     // prevent constructor by default
+    Contents& operator=(Contents const&);
     Contents(Contents const&);
     Contents();
 
@@ -28,9 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&&);
-
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents const&);
 
     MCNAPI ~Contents();
     // NOLINTEND

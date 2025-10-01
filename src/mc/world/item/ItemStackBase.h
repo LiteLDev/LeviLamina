@@ -25,7 +25,6 @@ class RecipeIngredient;
 class RenderParams;
 class SaveContext;
 class Vec3;
-struct ItemTag;
 namespace Bedrock::Safety { class RedactableString; }
 namespace Json { class Value; }
 namespace mce { class Color; }
@@ -79,7 +78,7 @@ public:
     virtual void reinit(::Item const& item, int count, int auxValue);
 
     // vIndex: 2
-    virtual void reinit(::BlockType const& block, int count);
+    virtual void reinit(::Block const& block, int count);
 
     // vIndex: 1
     virtual void reinit(::std::string_view const name, int count, int auxValue);
@@ -103,8 +102,6 @@ public:
 
     MCAPI ItemStackBase(::ItemStackBase const& rhs);
 
-    MCAPI ItemStackBase(::BlockType const& block, int count);
-
     MCAPI ItemStackBase(::Block const& block, int count, ::CompoundTag const* _userData);
 
     MCAPI ItemStackBase(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
@@ -126,6 +123,8 @@ public:
     MCAPI void _setItemFromBlockName(::HashedString const& blockName);
 
     MCAPI void _updateCompareHashes();
+
+    MCAPI void add(int inCount);
 
     MCAPI bool addComponents(::Json::Value const& root, ::std::string& errorMsg);
 
@@ -172,8 +171,6 @@ public:
 
     MCAPI ::Item const* getItem() const;
 
-    MCAPI short getMaxDamage() const;
-
     MCAPI uchar getMaxStackSize() const;
 
     MCAPI ::std::string getName() const;
@@ -198,8 +195,6 @@ public:
 
     MCAPI bool hasSameUserData(::ItemStackBase const& other) const;
 
-    MCAPI bool hasTag(::ItemTag const& string) const;
-
     MCAPI bool hurtAndBreak(int deltaDamage, ::Actor* owner);
 
     MCAPI void init(::BlockType const& block, int count);
@@ -214,19 +209,9 @@ public:
 
     MCAPI bool isDamageableItem() const;
 
-    MCAPI bool isDamaged() const;
-
-    MCAPI bool isEnchanted() const;
-
     MCAPI bool isEnchantingBook() const;
 
-    MCAPI bool isFullStack() const;
-
-    MCAPI bool isGlint() const;
-
     MCAPI bool isHorseArmorItem() const;
-
-    MCAPI bool isHumanoidArmorItem() const;
 
     MCAPI bool isHumanoidWearableBlockItem() const;
 
@@ -244,15 +229,11 @@ public:
 
     MCAPI bool isPotionItem() const;
 
-    MCAPI bool isStackable() const;
-
     MCAPI bool isStackable(::ItemStackBase const& other) const;
 
     MCAPI bool isStackedByData() const;
 
     MCFOLD bool matches(::ItemStackBase const& other) const;
-
-    MCAPI bool matchesEitherWearableCase(::CompoundTag const* userData) const;
 
     MCAPI bool matchesItem(::ItemStackBase const& other) const;
 
@@ -265,8 +246,6 @@ public:
     MCFOLD bool operator==(::ItemStackBase const& rhs) const;
 
     MCAPI void remove(int inCount);
-
-    MCAPI void removeEnchants();
 
     MCAPI void resetHoverName();
 
@@ -295,6 +274,8 @@ public:
     );
 
     MCAPI void setRepairCost(int cost);
+
+    MCAPI void setStackSize(uchar inCount);
 
     MCAPI void setUserData(::std::unique_ptr<::CompoundTag> tag);
 
@@ -343,8 +324,6 @@ public:
 
     MCAPI void* $ctor(::ItemStackBase const& rhs);
 
-    MCAPI void* $ctor(::BlockType const& block, int count);
-
     MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
 
     MCAPI void* $ctor(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
@@ -361,7 +340,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $reinit(::Item const& item, int count, int auxValue);
 
-    MCFOLD void $reinit(::BlockType const& block, int count);
+    MCFOLD void $reinit(::Block const& block, int count);
 
     MCFOLD void $reinit(::std::string_view const name, int count, int auxValue);
 

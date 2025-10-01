@@ -15,13 +15,13 @@ namespace FlatteningUtils { struct Instance; }
 namespace FlatteningUtils::Wood {
 // functions
 // NOLINTBEGIN
-MCNAPI ::FlatteningUtils::Instance get();
+MCAPI ::FlatteningUtils::Instance get();
 
-MCNAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
+MCAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
 
-MCNAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getStrippedSplitStates(::WoodType type);
+MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getStrippedSplitStates(::WoodType type);
 
-MCNAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getWoodTypeSplitStates(bool stripped);
+MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getWoodTypeSplitStates(bool stripped);
 // NOLINTEND
 
 } // namespace FlatteningUtils::Wood

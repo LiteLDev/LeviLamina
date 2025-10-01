@@ -32,6 +32,7 @@ struct MobFlagComponent;
 struct MoveRequestComponent;
 struct MovementInterpolatorComponent;
 struct ServerCatchupMovementTrackerComponent;
+struct ShouldBeSimulatedComponent;
 struct StateVectorComponent;
 struct TickingSystemWithInfo;
 // clang-format on
@@ -118,6 +119,19 @@ MCNAPI void flagSolidMobsFromNearbyEntity(
     ::LocalSpatialEntityFetcher&                                                                   fetcher,
     ::EntityModifier<::IsSolidMobNearbyComponent>                                                  modifier,
     ::std::vector<::StrictEntityContext>&                                                          buffer
+);
+
+MCNAPI void flagSolidMobsFromNearbySystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ShouldBeSimulatedComponent, ::ActorMovementTickNeededComponent>,
+        ::DimensionTypeComponent const,
+        ::AABBShapeComponent const,
+        ::Optional<::MobFlagComponent const>,
+        ::Optional<::IsSolidMobComponent const>>                                                   view,
+    ::ViewT<::StrictEntityContext, ::IsSolidMobComponent const, ::AABBShapeComponent const> const& solidMobs,
+    ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent const>                            fetcherFactory,
+    ::EntityModifier<::IsSolidMobNearbyComponent>                                                  modifier
 );
 
 MCNAPI ::std::optional<::Vec3> getLatestPosition(

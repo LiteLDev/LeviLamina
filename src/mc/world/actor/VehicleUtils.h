@@ -4,56 +4,38 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class Block;
 class BlockPos;
 class IConstBlockSource;
 class Vec3;
+struct ActorUniqueID;
+namespace VehicleUtils { struct VehicleDirections; }
 // clang-format on
 
-class VehicleUtils {
-public:
-    // VehicleUtils inner types declare
-    // clang-format off
-    struct VehicleDirections;
-    // clang-format on
+namespace VehicleUtils {
+// functions
+// NOLINTBEGIN
+MCNAPI ::std::optional<float> calculateBlockFloorHeight(::IConstBlockSource const& region, ::BlockPos const& blockPos);
 
-    // VehicleUtils inner types define
-    struct VehicleDirections {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkbf7371;
-        ::ll::UntypedStorage<4, 12> mUnkeb8adf;
-        // NOLINTEND
+MCNAPI bool ignoredExitCollisionBlock(::Block const& block);
 
-    public:
-        // prevent constructor by default
-        VehicleDirections& operator=(VehicleDirections const&);
-        VehicleDirections(VehicleDirections const&);
-        VehicleDirections();
-    };
+MCNAPI bool isPassengerOfActor(::Actor const& maybePassenger, ::ActorUniqueID const& actorID);
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::optional<float>
-    calculateBlockFloorHeight(::IConstBlockSource const& region, ::BlockPos const& blockPos);
+MCNAPI ::std::optional<::Vec3> testPosFollowingEjectPattern(
+    ::VehicleUtils::VehicleDirections const&            vehicleDirections,
+    ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
+);
 
-    MCNAPI static bool ignoredExitCollisionBlock(::Block const& block);
+MCNAPI ::std::optional<::Vec3> testPosFollowingLegacyActivatorRailPattern(
+    ::VehicleUtils::VehicleDirections const&            vehicleDirections,
+    ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
+);
 
-    MCNAPI static ::std::optional<::Vec3> testPosFollowingEjectPattern(
-        ::VehicleUtils::VehicleDirections const&            vehicleDirections,
-        ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
-    );
+MCNAPI ::std::optional<::Vec3> testPosFollowingLegacyActorPattern(
+    ::VehicleUtils::VehicleDirections const&,
+    ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
+);
+// NOLINTEND
 
-    MCNAPI static ::std::optional<::Vec3> testPosFollowingLegacyActivatorRailPattern(
-        ::VehicleUtils::VehicleDirections const&            vehicleDirections,
-        ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
-    );
-
-    MCNAPI static ::std::optional<::Vec3> testPosFollowingLegacyActorPattern(
-        ::VehicleUtils::VehicleDirections const&            vehicleDirections,
-        ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
-    );
-    // NOLINTEND
-};
+} // namespace VehicleUtils

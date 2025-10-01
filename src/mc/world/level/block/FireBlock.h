@@ -88,7 +88,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isSolidToppedBlock(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI static bool isSolidToppedBlock(::IConstBlockSource const& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

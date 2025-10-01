@@ -28,8 +28,6 @@ public:
 
     MCNAPI HashedString(uint64 hash, char const* str);
 
-    MCNAPI char const* c_str() const;
-
     MCNAPI bool empty() const;
 
     MCNAPI ::std::string const& getString() const;
@@ -46,6 +44,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static uint64 computeHash(char const* str);
+
     MCNAPI static uint64 computeHash(::std::string const& str);
 
     MCNAPI static ::HashedString const& getEmptyString();

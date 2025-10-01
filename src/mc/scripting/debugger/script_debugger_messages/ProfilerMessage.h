@@ -14,14 +14,13 @@ public:
 
 public:
     // prevent constructor by default
+    ProfilerMessage& operator=(ProfilerMessage const&);
     ProfilerMessage(ProfilerMessage const&);
     ProfilerMessage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptDebuggerMessages::ProfilerMessage& operator=(::ScriptDebuggerMessages::ProfilerMessage const&);
-
     MCNAPI ::ScriptDebuggerMessages::ProfilerMessage& operator=(::ScriptDebuggerMessages::ProfilerMessage&&);
     // NOLINTEND
 };

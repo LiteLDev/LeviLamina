@@ -31,13 +31,12 @@ public:
 public:
     // prevent constructor by default
     ScriptBookError& operator=(ScriptBookError const&);
+    ScriptBookError(ScriptBookError const&);
     ScriptBookError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBookError(::ScriptModuleMinecraft::ScriptBookError const&);
-
     MCNAPI ScriptBookError(::std::string_view name, ::ScriptModuleMinecraft::ScriptBookError::Reason reason);
 
     MCNAPI ~ScriptBookError();
@@ -54,8 +53,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBookError const&);
-
     MCNAPI void* $ctor(::std::string_view name, ::ScriptModuleMinecraft::ScriptBookError::Reason reason);
     // NOLINTEND
 

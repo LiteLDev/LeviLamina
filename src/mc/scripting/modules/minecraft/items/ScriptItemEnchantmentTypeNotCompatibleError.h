@@ -14,25 +14,9 @@ namespace ScriptModuleMinecraft {
 
 struct ScriptItemEnchantmentTypeNotCompatibleError : public ::Scripting::BaseError {
 public:
-    // prevent constructor by default
-    ScriptItemEnchantmentTypeNotCompatibleError();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit ScriptItemEnchantmentTypeNotCompatibleError(::std::string const& typeName);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& typeName);
     // NOLINTEND
 };
 

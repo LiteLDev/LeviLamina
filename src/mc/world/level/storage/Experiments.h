@@ -23,8 +23,6 @@ public:
 
     MCAPI void getTagData(::CompoundTag const& tag);
 
-    MCAPI void setExperimentByToggleIndex(uint64 index, bool value);
-
     MCAPI void setExperimentEnabled(::AllExperiments experiment, bool value);
 
     MCAPI void setTagData(::CompoundTag& tag) const;

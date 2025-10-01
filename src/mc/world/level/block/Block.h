@@ -31,7 +31,6 @@ class Player;
 class Random;
 class RenderParams;
 class Vec3;
-namespace mce { class Color; }
 // clang-format on
 
 class Block {
@@ -42,7 +41,7 @@ public:
     ::ll::TypedStorage<2, 2, ushort const>                   mData;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockType*>>  mBlockType;
     ::ll::TypedStorage<4, 8, ::CachedComponentData>          mCachedComponentData;
-    ::ll::TypedStorage<8, 104, ::BlockComponentDirectData>   mDirectData;
+    ::ll::TypedStorage<8, 96, ::BlockComponentDirectData>    mDirectData;
     ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>> mTags;
     ::ll::TypedStorage<8, 24, ::CompoundTag>                 mSerializationId;
     ::ll::TypedStorage<8, 8, uint64>                         mSerializationIdHash;
@@ -79,6 +78,8 @@ public:
     ) const;
 
     MCAPI void _removeFromTickingQueues(::BlockSource& region, ::BlockPos const& pos) const;
+
+    MCAPI ::ItemInstance asItemInstance(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI ::ItemInstance asItemInstance(::BlockSource& region, ::BlockPos const& position, bool withData) const;
 
@@ -119,10 +120,6 @@ public:
 
     MCAPI bool executeTrigger(::DefinitionTrigger const& trigger, ::RenderParams& params) const;
 
-    MCAPI void finalizeBlockComponentStorage();
-
-    MCAPI ::BlockType const& getBlockType() const;
-
     MCAPI bool getCollisionShape(
         ::AABB&                                            outAABB,
         ::IConstBlockSource const&                         region,
@@ -132,37 +129,21 @@ public:
 
     MCAPI ::std::string getDescriptionId() const;
 
-    MCAPI ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI ::Block const& getStateFromLegacyData(ushort data) const;
+
+    MCAPI bool hasState(::HashedString const& name) const;
 
     MCAPI bool hasState(::BlockState const& stateType) const;
 
     MCAPI bool hasTag(::HashedString const& tagName) const;
 
-    MCAPI bool isAir() const;
-
-    MCAPI bool isButtonBlock() const;
-
-    MCAPI bool isCropBlock() const;
-
-    MCAPI bool isDoorBlock() const;
-
-    MCFOLD bool isMotionBlockingBlock() const;
-
     MCAPI bool isPartialBlock(::BlockSource const& region, ::BlockPos const& pos) const;
 
     MCAPI bool isPreservingMediumWhenPlaced(::Block const& medium) const;
 
-    MCAPI bool isSlabBlock() const;
-
-    MCAPI bool isSolidBlockingBlock() const;
-
     MCAPI bool isSolidBlockingBlockAndNotSignalSource() const;
 
     MCAPI bool isTopPartialBlock(::BlockSource const& region, ::BlockPos const& pos) const;
-
-    MCAPI bool isValidAuxValue(int value) const;
 
     MCAPI bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
@@ -182,8 +163,6 @@ public:
     MCAPI void queuedTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
     MCAPI void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
-
-    MCAPI ::Block const& sanitizeFillBlock() const;
 
     MCAPI bool shouldRandomTick() const;
 

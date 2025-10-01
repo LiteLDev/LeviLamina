@@ -49,29 +49,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit TemplateStructurePiece(int depth);
+    MCAPI explicit TemplateStructurePiece(int depth);
 
-    MCNAPI void _setBoundingBoxFromTemplate();
+    MCAPI void _setBoundingBoxFromTemplate();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(int depth);
+    MCAPI void* $ctor(int depth);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void $moveBoundingBox(int dx, int dy, int dz);
+    MCAPI void $moveBoundingBox(int dx, int dy, int dz);
     // NOLINTEND
 
 public:

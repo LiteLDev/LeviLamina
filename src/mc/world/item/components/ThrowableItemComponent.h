@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ComponentItem;
 class HashedString;
 class ItemStack;
 class Player;
@@ -38,7 +39,7 @@ public:
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
 
     // vIndex: 7
-    virtual void _initializeComponent() /*override*/;
+    virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
     // vIndex: 0
     virtual ~ThrowableItemComponent() /*override*/ = default;
@@ -72,7 +73,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent(::ComponentItem& owner);
     // NOLINTEND
 
 public:

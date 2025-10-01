@@ -83,8 +83,6 @@ public:
 
     MCNAPI ::Bedrock::JSONObject::ParseResult const& loadString(::std::string_view str);
 
-    MCNAPI void reset();
-
     MCNAPI ~Document();
     // NOLINTEND
 

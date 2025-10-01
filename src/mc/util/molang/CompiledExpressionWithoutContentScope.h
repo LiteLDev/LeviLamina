@@ -131,8 +131,6 @@ public:
 
     MCNAPI ::std::string $getExpressionString() const;
 
-    MCNAPI ::MolangVersion $getMolangVersion() const;
-
     MCNAPI void $replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>&);
 
     MCNAPI void $validateArrayVariables() const;

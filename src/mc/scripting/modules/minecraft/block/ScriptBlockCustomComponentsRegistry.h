@@ -32,7 +32,6 @@ namespace BlockEvents { class BlockRandomTickEvent; }
 namespace BlockEvents { class BlockRandomTickLegacyEvent; }
 namespace BlockEvents { class BlockStepOffEvent; }
 namespace BlockEvents { class BlockStepOnEvent; }
-namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
 namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentAlreadyRegisteredError; }
@@ -43,7 +42,6 @@ namespace ScriptModuleMinecraft { struct ScriptCustomComponentInvalidRegistryErr
 namespace ScriptModuleMinecraft { struct ScriptCustomComponentParameters; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -114,13 +112,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 8
+    // vIndex: 9
     virtual void onPreFlushAfterEvents() /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void onPostFlushAfterEvents() /*override*/;
 
     // vIndex: 2
@@ -250,11 +248,6 @@ public:
     _getEventMetadata();
 
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
-
-    MCNAPI static void generateOrderDocumentationForVersion(
-        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
-        ::Json::Value&                       eventOrderArray
-    );
     // NOLINTEND
 
 public:

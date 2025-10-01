@@ -27,7 +27,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int newAnimationFrame, bool) const /*override*/;
 
     // vIndex: 76
@@ -39,10 +39,10 @@ public:
     // vIndex: 50
     virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 109
+    // vIndex: 111
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    // vIndex: 110
+    // vIndex: 112
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const /*override*/;
 
     // vIndex: 54
@@ -51,19 +51,19 @@ public:
     // vIndex: 55
     virtual int getEnchantValue() const /*override*/;
 
-    // vIndex: 82
+    // vIndex: 84
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 103
+    // vIndex: 105
     virtual bool shouldSendInteractionGameEvents() const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 125
     virtual bool shouldUseJsonForRenderMatrix() const /*override*/;
 
-    // vIndex: 107
+    // vIndex: 109
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
     // vIndex: 0

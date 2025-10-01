@@ -18,7 +18,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>  mIsPushable;
     ::ll::TypedStorage<1, 1, bool>  mIsPushableByPiston;
-    ::ll::TypedStorage<4, 4, float> mPushthrough;
+    ::ll::TypedStorage<4, 4, float> mPushThrough;
     // NOLINTEND
 
 public:

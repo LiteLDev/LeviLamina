@@ -4,9 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/resource/PackOrigin.h"
-#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/resources/PackReport.h"
 #include "mc/resources/ResourceSignature.h"
 
@@ -14,15 +11,11 @@
 // clang-format off
 class Pack;
 class PackAccessStrategy;
-class PackManifest;
-class ResourceLocation;
-class SubpackInfoCollection;
 struct SubpackInfo;
-namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Core { class Path; }
 // clang-format on
 
-class ResourcePack : public ::Bedrock::EnableNonOwnerReferences {
+class ResourcePack {
 public:
     // ResourcePack inner types define
     using Callback = ::std::function<void(::Core::Path const&)>;
@@ -32,11 +25,11 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                              mHidden;
     ::ll::TypedStorage<1, 1, bool>                                              mError;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Pack>>            mPack;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::Pack>>>       mPack;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>>           mSubpackAccessStrategy;
     ::ll::TypedStorage<8, 248, ::PackReport>                                    mPackReport;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Pack>>>         mSubPacks;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ResourcePack>>> mSubResourcePacks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::Pack>>>         mSubPacks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ResourcePack>>> mSubResourcePacks;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                mIconPath;
     ::ll::TypedStorage<8, 8, double>                                            mLoadTime;
     ::ll::TypedStorage<1, 1, bool>                                              mIsBaseGamePack;
@@ -50,16 +43,9 @@ public:
     ResourcePack();
 
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~ResourcePack() /*override*/;
-    // NOLINTEND
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ResourcePack(::Pack& pack);
+    MCAPI explicit ResourcePack(::gsl::not_null<::std::shared_ptr<::Pack>> pack);
 
     MCAPI void _createSubpack(::SubpackInfo const& subpackInfo);
 
@@ -78,25 +64,15 @@ public:
 
     MCAPI void generateAssetSet();
 
-    MCAPI ::PackManifest const& getManifest() const;
-
-    MCAPI ::PackOrigin getPackOrigin() const;
-
     MCAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream, int subpackIndex) const;
-
-    MCAPI ::ResourceLocation const& getResourceLocation() const;
-
-    MCAPI ::SubpackInfoCollection const& getSubpackInfoStack() const;
 
     MCAPI bool hasResource(::Core::Path const& resourceName, int subpackIndex) const;
 
     MCAPI bool isAssetExtractionViable() const;
 
-    MCAPI bool isZipped() const;
-
-    MCAPI ::Bedrock::Resources::PreloadedPathHandle preloadPath(::Core::Path const& packRelativePath) const;
-
     MCAPI void setLocale(::std::string const& code);
+
+    MCAPI ~ResourcePack();
     // NOLINTEND
 
 public:
@@ -112,18 +88,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Pack& pack);
+    MCAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::Pack>> pack);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

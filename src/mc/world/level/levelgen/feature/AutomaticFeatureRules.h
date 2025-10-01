@@ -4,12 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/ServiceReference.h"
+#include "mc/deps/puv/LoadResult.h"
 
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
 class FeatureRegistry;
 class HashedString;
+class IMinecraftEventing;
 class IWorldRegistriesProvider;
 class MinEngineVersion;
 class ResourcePackManager;
@@ -44,13 +46,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~AutomaticFeatureRule();
+        MCAPI ~AutomaticFeatureRule();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -58,6 +60,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 192> mUnka8c11c;
+    ::ll::UntypedStorage<8, 8>   mUnkd6d3f6;
     // NOLINTEND
 
 public:
@@ -69,7 +72,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AutomaticFeatureRules(::cereal::ReflectionCtx const& ctx);
+    MCAPI AutomaticFeatureRules(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
 
     MCAPI void _applyAutomaticFeatureRuleDefinition(
         ::AutomaticFeatureRules::AutomaticFeatureRule&            automaticFeatureRule,
@@ -78,7 +81,7 @@ public:
         ::FeatureRegistry&                                        featureRegistry
     ) const;
 
-    MCAPI void _parseAndInsertUnsorted(
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_20::AutomaticFeatureRulesData> _parseAndInsertUnsorted(
         ::std::string const&        filename,
         ::std::string&&             data,
         ::MinEngineVersion const&   minEngineVersion,
@@ -114,6 +117,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
     // NOLINTEND
 };

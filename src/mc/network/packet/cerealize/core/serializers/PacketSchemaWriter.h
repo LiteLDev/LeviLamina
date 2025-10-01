@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/schema/SchemaRWType.h"
 #include "mc/deps/cereal/schema/SchemaWriter.h"
 
 // auto generated forward declare list
@@ -67,22 +68,25 @@ public:
     virtual bool write(::std::string_view const value) /*override*/;
 
     // vIndex: 14
-    virtual bool pushMember(::std::string_view const) /*override*/;
+    virtual void writeValidityFlag(bool value) /*override*/;
 
     // vIndex: 15
-    virtual void popMember() /*override*/;
+    virtual void writeControlValue(uint value) /*override*/;
 
     // vIndex: 16
-    virtual bool openObject() /*override*/;
+    virtual bool pushMember(::std::string_view const) /*override*/;
 
     // vIndex: 17
-    virtual bool openArray(uint64 len) /*override*/;
+    virtual void popMember() /*override*/;
 
     // vIndex: 18
-    virtual void close() /*override*/;
+    virtual ::cereal::SchemaRWType openObject() /*override*/;
 
     // vIndex: 19
-    virtual bool isSequenceWriter() const /*override*/;
+    virtual ::cereal::SchemaRWType openArray(bool isDynamicExtent, uint64 length) /*override*/;
+
+    // vIndex: 20
+    virtual void close() /*override*/;
 
     // vIndex: 0
     virtual ~PacketSchemaWriter() /*override*/ = default;
@@ -117,17 +121,19 @@ public:
 
     MCAPI bool $write(::std::string_view const value);
 
+    MCAPI void $writeValidityFlag(bool value);
+
+    MCAPI void $writeControlValue(uint value);
+
     MCFOLD bool $pushMember(::std::string_view const);
 
     MCFOLD void $popMember();
 
-    MCFOLD bool $openObject();
+    MCFOLD ::cereal::SchemaRWType $openObject();
 
-    MCAPI bool $openArray(uint64 len);
+    MCAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
 
     MCFOLD void $close();
-
-    MCFOLD bool $isSequenceWriter() const;
     // NOLINTEND
 
 public:

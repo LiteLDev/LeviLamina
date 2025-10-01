@@ -15,10 +15,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::std::string asString() const;
-
-    MCAPI bool operator!=(::mce::UUID const& rhs) const;
-
-    MCFOLD bool operator==(::mce::UUID const& rhs) const;
     // NOLINTEND
 
 public:

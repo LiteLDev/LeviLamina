@@ -56,6 +56,8 @@ public:
         // NOLINTBEGIN
         MCNAPI explicit Impl(::Bedrock::DataStore* owner);
 
+        MCNAPI ::Bedrock::JSONObject::Node* _getValueForKey(char const* key, uint64 keyLength);
+
         MCNAPI ::Bedrock::JSONObject::Node*
         _setValueForKey(char const* key, uint64 keyLength, ::Bedrock::JSONObject::ValueWrapper const& value);
 

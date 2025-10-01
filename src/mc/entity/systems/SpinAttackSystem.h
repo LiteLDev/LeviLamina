@@ -10,11 +10,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorOwnerComponent;
 class EntitySystems;
 class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
+struct ActorEquipmentComponent;
 struct ActorHeadInWaterFlagComponent;
 struct ActorIsImmobileFlagComponent;
 struct ActorIsKnockedBackOnDeathFlagComponent;
@@ -58,6 +60,14 @@ MCNAPI void _stopSpinAttack(
     ::DamageNearbyMobsComponent&                                damageNearbyMobs,
     ::PlayerActionComponent&                                    playerAction,
     ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier
+);
+
+MCNAPI void _tickDamageNearbyMobs(
+    ::entt::type_list<::Include<::PlayerComponent>>,
+    ::ActorEquipmentComponent const&                      actorEquipment,
+    ::SpinAttackResultsComponent const&                   spinAttackResult,
+    ::ActorOwnerComponent&                                actorComponent,
+    ::ViewT<::StrictEntityContext, ::ActorOwnerComponent> actorView
 );
 
 MCNAPI void _tickPostDamageNearbyMobs(

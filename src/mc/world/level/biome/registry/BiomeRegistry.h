@@ -23,10 +23,11 @@ class IWorldRegistriesProvider;
 class LevelStorage;
 class LinkedAssetValidator;
 class ResourcePackManager;
+class WellKnownTagID;
 struct BiomeIdType;
 struct BiomeTagIDType;
 struct BiomeTagSetIDType;
-namespace SharedTypes::v1_21_100 { struct BiomeJsonDocument; }
+namespace SharedTypes::v1_21_110 { struct BiomeJsonDocument; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -36,6 +37,7 @@ public:
     // clang-format off
     struct BiomeComparator;
     struct LoadedBiomeDocument;
+    struct SeasonTextureRowSettings;
     // clang-format on
 
     // BiomeRegistry inner types define
@@ -43,7 +45,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnka38b0d;
+        ::ll::UntypedStorage<8, 8> mUnk4dc404;
         // NOLINTEND
 
     public:
@@ -51,6 +53,22 @@ public:
         LoadedBiomeDocument& operator=(LoadedBiomeDocument const&);
         LoadedBiomeDocument(LoadedBiomeDocument const&);
         LoadedBiomeDocument();
+    };
+
+    struct SeasonTextureRowSettings {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk660be0;
+        ::ll::UntypedStorage<4, 4> mUnk222da8;
+        ::ll::UntypedStorage<4, 4> mUnk4607e5;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SeasonTextureRowSettings& operator=(SeasonTextureRowSettings const&);
+        SeasonTextureRowSettings(SeasonTextureRowSettings const&);
+        SeasonTextureRowSettings();
     };
 
     using BiomeNameLookupMap = ::std::unordered_map<uint64, ::std::unique_ptr<::Biome>>;
@@ -76,16 +94,12 @@ public:
                                                   mRemovedBiomesIdAndFullName;
     ::ll::TypedStorage<4, 4, uint>                mNextCustomBiomeId;
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>> mClosedForRegistration;
-    ::ll::TypedStorage<1, 1, bool>                mLoadFromAllPacks;
     ::ll::TypedStorage<8, 128, ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>> mTagRegistry;
     ::ll::TypedStorage<8, 8, ::Biome*>                                                                   mEmptyBiome;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnLevelStorageManagerStartLeaveGameSubscription;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeRegistry::SeasonTextureRowSettings>> mSeasonTextureRowSettings;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeRegistry();
 
 public:
     // virtual functions
@@ -97,13 +111,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BiomeRegistry(::BaseGameVersion const& baseGameVersion);
+    MCAPI BiomeRegistry();
 
     MCAPI void _initTagRegistry();
 
     MCAPI ::Biome& _register(::std::string_view name, ::BiomeIdType id);
 
     MCAPI void _save(::LevelStorage& levelStorage) const;
+
+    MCAPI bool biomeHasTag(::Biome const& biome, ::HashedString const& id) const;
+
+    MCAPI bool biomeHasTag(::Biome const& biome, uint64 tagHash) const;
+
+    MCFOLD bool biomeHasTag(::Biome const& biome, ::WellKnownTagID const& tagID) const;
+
+    MCAPI bool biomeHasTag(::Biome const&, ::IDType<::BiomeTagIDType> const&) const;
 
     MCFOLD void forEachBiome(::std::function<void(::Biome const&)> callback) const;
 
@@ -114,23 +136,24 @@ public:
     MCAPI void initServerFromPacks(
         ::ResourcePackManager const&                       loader,
         ::IWorldRegistriesProvider&                        worldRegistries,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
+        ::BaseGameVersion const&                           baseGameVersion
     );
 
     MCAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI ::std::unordered_map<::std::string, ::std::unique_ptr<::SharedTypes::v1_21_100::BiomeJsonDocument>>
+    MCAPI ::std::unordered_map<::std::string, ::std::unique_ptr<::SharedTypes::v1_21_110::BiomeJsonDocument>>
     loadAllBiomeDocuments(
         ::ResourcePackManager const&                       loader,
-        bool                                               loadFromAllPacks,
         ::cereal::ReflectionCtx&                           ctx,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
+        ::BaseGameVersion const&                           baseGameVersion
     );
 
     MCAPI void loadBiomeData(::LevelStorage const& levelStorage);
 
-    MCAPI void loadBiomeTable(::LevelStorage const& levelStorage, ::BaseGameVersion const& baseGameVersion);
+    MCAPI void loadBiomeTable(::LevelStorage const& levelStorage);
 
     MCAPI ::Biome* lookupByHash(::HashedString const& hash);
 
@@ -142,13 +165,15 @@ public:
 
     MCAPI ::Biome* lookupByName(::std::string const& name);
 
-    MCAPI void saveBiomeTable(::LevelStorage& levelStorage, ::BaseGameVersion const& baseGameVersion) const;
+    MCAPI void removeFailedToLoadBiomes();
+
+    MCAPI void saveBiomeTable(::LevelStorage& levelStorage) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BaseGameVersion const& baseGameVersion);
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:

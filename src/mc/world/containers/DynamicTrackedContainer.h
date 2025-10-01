@@ -15,6 +15,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::StorageItemContainerModel>> mModel;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LockingFillingContainer>>   mBackingContainer;
     ::ll::TypedStorage<1, 1, bool>                                            mExpired;
+    ::ll::TypedStorage<1, 1, bool>                                            mIsValid;
     // NOLINTEND
 
 public:

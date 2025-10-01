@@ -59,5 +59,7 @@ enum class BlockActorType : uchar {
     TrialSpawner          = 56,
     Vault                 = 57,
     CreakingHeart         = 58,
-    Count                 = 59,
+    Shelf                 = 59,
+    CopperGolemStatue     = 60,
+    Count                 = 61,
 };

@@ -112,8 +112,6 @@ MCAPI bool isUnderLiquid(
 MCAPI bool onHoverableBlock(::IConstBlockSource const& region, ::Vec3 const& pos, ::AABB const& aabb);
 
 MCAPI bool shouldApplyLava(::IConstBlockSource const& region, ::EntityContext const& entity);
-
-MCAPI void startSpinAttack(::EntityContext& entity, int riptideLevel);
 // NOLINTEND
 
 } // namespace ActorMobilityUtils

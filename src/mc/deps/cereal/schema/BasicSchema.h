@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/schema/VariantPriorityLevel.h"
+#include "mc/platform/brstd/flat_set.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,6 +13,9 @@ namespace cereal { class SerializerContext; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
+namespace cereal::internal { struct LoadState; }
+namespace cereal::internal { struct OverrideState; }
+namespace cereal::internal { struct SaveState; }
 // clang-format on
 
 namespace cereal::internal {
@@ -33,7 +37,7 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnk25883b;
         ::ll::UntypedStorage<8, 32> mUnka7498e;
-        ::ll::UntypedStorage<8, 72> mUnkf81a52;
+        ::ll::UntypedStorage<8, 72> mUnkfb7a42;
         ::ll::UntypedStorage<8, 32> mUnk5fc8e6;
         ::ll::UntypedStorage<1, 1>  mUnk7fcb00;
         // NOLINTEND
@@ -78,10 +82,11 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnkf6e459;
         ::ll::UntypedStorage<8, 8>  mUnkcc5bac;
+        ::ll::UntypedStorage<8, 32> mUnka15dd0;
         ::ll::UntypedStorage<8, 32> mUnkc97556;
         ::ll::UntypedStorage<8, 8>  mUnkb0e062;
-        ::ll::UntypedStorage<8, 72> mUnkf7b794;
-        ::ll::UntypedStorage<8, 40> mUnk3afbfc;
+        ::ll::UntypedStorage<8, 72> mUnk332289;
+        ::ll::UntypedStorage<8, 40> mUnk235705;
         ::ll::UntypedStorage<8, 32> mUnke471ac;
         ::ll::UntypedStorage<1, 1>  mUnk9dbec8;
         // NOLINTEND
@@ -171,16 +176,18 @@ public:
     ) const;
 
     // vIndex: 6
-    virtual void
-    doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::SerializerContext&) const;
+    virtual void doLoad(
+        ::cereal::SchemaReader&,
+        ::entt::meta_any&,
+        ::entt::meta_any const&,
+        ::cereal::internal::LoadState const&
+    ) const;
 
     // vIndex: 7
-    virtual void doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::SerializerContext& context) const;
+    virtual void
+    doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::internal::SaveState const& state) const;
 
     // vIndex: 8
-    virtual bool doVerifyInitialization(::cereal::SchemaWriter const&, ::entt::meta_any const&) const;
-
-    // vIndex: 9
     virtual ::cereal::SchemaDescription
     makeDescription(::entt::meta_ctx const&, ::cereal::internal::BasicSchema::DescriptionMode) const = 0;
     // NOLINTEND
@@ -189,10 +196,10 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void load(
-        ::cereal::SchemaReader&      value,
-        ::entt::meta_any&            any,
-        ::entt::meta_any const&      udata,
-        ::cereal::SerializerContext& context
+        ::cereal::SchemaReader&              value,
+        ::entt::meta_any&                    any,
+        ::entt::meta_any const&              udata,
+        ::cereal::internal::LoadState const& state
     ) const;
     // NOLINTEND
 
@@ -213,9 +220,8 @@ public:
         ::cereal::SerializerContext& context
     ) const;
 
-    MCNAPI void $doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::SerializerContext& context) const;
-
-    MCNAPI bool $doVerifyInitialization(::cereal::SchemaWriter const&, ::entt::meta_any const&) const;
+    MCNAPI void
+    $doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::internal::SaveState const& state) const;
     // NOLINTEND
 };
 

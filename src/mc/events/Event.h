@@ -60,6 +60,8 @@ public:
 
     MCNAPI void addProperty(::Social::Events::Property const& property);
 
+    MCNAPI bool operator==(::Social::Events::Event const& other) const;
+
     MCNAPI void updateMeasurements(::Social::Events::Event const& event);
 
     MCNAPI ~Event();

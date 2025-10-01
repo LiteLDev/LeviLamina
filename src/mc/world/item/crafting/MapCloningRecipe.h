@@ -9,7 +9,6 @@
 // clang-format off
 class CraftingContainer;
 class CraftingContext;
-class HashedString;
 class ItemInstance;
 class RecipeIngredient;
 namespace mce { class UUID; }
@@ -55,9 +54,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
+    // member functions
     // NOLINTBEGIN
-    MCAPI static ::HashedString _getTagForUUID(::mce::UUID const& uuid);
+    MCAPI MapCloningRecipe(::std::string const& recipeId, ::mce::UUID const& uuid);
     // NOLINTEND
 
 public:
@@ -66,6 +65,12 @@ public:
     MCAPI static ::mce::UUID const& CartographyTableID();
 
     MCAPI static ::mce::UUID const& CraftingTableID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& recipeId, ::mce::UUID const& uuid);
     // NOLINTEND
 
 public:

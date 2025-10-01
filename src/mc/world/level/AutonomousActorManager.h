@@ -3,13 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/game_refs/StackRefResult.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ActorFactory;
+class ActorManager;
 class EntityContext;
+class EntityRegistry;
 class IAddActorEntityProxy;
 class ILevelChunkEventManagerConnector;
 class ILevelStorageManagerConnector;
@@ -43,11 +47,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI AutonomousActorManager(
+        ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
+        ::Bedrock::NotNullNonOwnerPtr<::ActorManager>              actorManager
+    );
+
     MCNAPI void _moveActiveAutonomousActorEntityToInactive(::Actor& actor, ::LevelChunk& levelChunk);
 
     MCNAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
-
-    MCNAPI void _onChunkLoaded(::LevelChunk& levelChunk);
 
     MCNAPI void _onRemoveActorEntityReferences(::Actor& actor);
 
@@ -79,6 +86,15 @@ public:
     MCNAPI static ::std::string_view const& AUTONOMOUS_ACTOR_KEY();
 
     MCNAPI static ::std::string_view const& AUTONOMOUS_ACTOR_LIST_KEY();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
+        ::Bedrock::NotNullNonOwnerPtr<::ActorManager>              actorManager
+    );
     // NOLINTEND
 
 public:

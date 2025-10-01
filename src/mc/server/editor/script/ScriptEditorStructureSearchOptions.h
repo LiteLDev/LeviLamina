@@ -21,13 +21,14 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptEditorStructureSearchOptions(ScriptEditorStructureSearchOptions const&);
     ScriptEditorStructureSearchOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptEditorStructureSearchOptions(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
+
+    MCNAPI ScriptEditorStructureSearchOptions(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
 
     MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions&
     operator=(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
@@ -48,6 +49,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
+
+    MCNAPI void* $ctor(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
     // NOLINTEND
 
 public:

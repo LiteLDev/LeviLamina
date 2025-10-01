@@ -708,6 +708,9 @@ public:
 
     MCAPI int GetIndexFromSystemAddress(::RakNet::SystemAddress systemAddress, bool calledFromNetworkThread) const;
 
+    MCAPI ::RakNet::RakPeer::RemoteSystemStruct*
+    GetRemoteSystem(::RakNet::AddressOrGUID systemIdentifier, bool calledFromNetworkThread, bool onlyActive) const;
+
     MCAPI ::RakNet::RakPeer::RemoteSystemStruct* GetRemoteSystemFromSystemAddress(
         ::RakNet::SystemAddress systemAddress,
         bool                    calledFromNetworkThread,

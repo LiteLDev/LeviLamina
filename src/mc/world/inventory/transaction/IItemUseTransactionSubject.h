@@ -69,34 +69,37 @@ public:
     virtual bool baseUseItem(::ItemStack&) = 0;
 
     // vIndex: 14
+    virtual bool baseUseItemAsAttack(::ItemStack&) = 0;
+
+    // vIndex: 15
     virtual ::InteractionResult
     useItemOn(::ItemStack&, ::BlockPos const&, uchar, ::Vec3 const&, ::Block const*, bool) = 0;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual void resendBlocksAroundArea(::BlockPos const&, uchar) const = 0;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual void resendPlayerState() const = 0;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void sendPlayerInventory() const = 0;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual bool isSneaking() const = 0;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual ::Block const& getBlock(::BlockPos const&) const = 0;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual ::Block const& getExtraBlock(::BlockPos const&) const = 0;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual bool isLastBuildBlockInteractive() const = 0;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual void sendBlockInteractedWith(::BlockPos const&) = 0;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual ::DepenetrationComponent& getDepenetrationComponent() = 0;
     // NOLINTEND
 

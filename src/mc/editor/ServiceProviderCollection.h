@@ -50,6 +50,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::std::vector<::std::string> getServiceList() const;
+
     MCNAPI ~ServiceProviderCollection();
     // NOLINTEND
 

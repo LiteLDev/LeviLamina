@@ -2,9 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/runtime/Result.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EngineError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -13,7 +17,7 @@ class ScriptPotionEffectType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke17d2a;
+    ::ll::UntypedStorage<8, 16> mUnkb244c9;
     // NOLINTEND
 
 public:
@@ -25,7 +29,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::string getPotionEffectTypeId() const;
+    MCNAPI ::Scripting::Result<::std::optional<int>, ::Scripting::EngineError> _getDurationTicks() const;
+
+    MCNAPI ::std::string getPotionNameIdWithPrefix();
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptPotionEffectType&
+    operator=(::ScriptModuleMinecraft::ScriptPotionEffectType&&);
     // NOLINTEND
 
 public:

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core { class File; }
+// clang-format on
+
 class LevelDbSequentialFile : public ::leveldb::SequentialFile {
 public:
     // member variables
@@ -26,6 +31,18 @@ public:
 
     // vIndex: 0
     virtual ~LevelDbSequentialFile() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit LevelDbSequentialFile(::Core::File&& file);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Core::File&& file);
     // NOLINTEND
 
 public:

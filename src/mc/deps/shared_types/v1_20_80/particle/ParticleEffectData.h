@@ -21,7 +21,6 @@ public:
 
 public:
     // prevent constructor by default
-    ParticleEffectData& operator=(ParticleEffectData const&);
     ParticleEffectData();
 
 public:
@@ -30,6 +29,8 @@ public:
     MCNAPI ParticleEffectData(::SharedTypes::v1_20_80::ParticleEffectData const&);
 
     MCNAPI ::SharedTypes::v1_20_80::ParticleEffectData& operator=(::SharedTypes::v1_20_80::ParticleEffectData&&);
+
+    MCNAPI ::SharedTypes::v1_20_80::ParticleEffectData& operator=(::SharedTypes::v1_20_80::ParticleEffectData const&);
     // NOLINTEND
 
 public:

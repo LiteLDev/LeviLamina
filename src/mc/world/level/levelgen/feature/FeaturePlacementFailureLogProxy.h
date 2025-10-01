@@ -23,6 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void logFailure(::Bedrock::StaticOptimizedString source, ::Bedrock::StaticOptimizedString message) const;
+    MCAPI void logFailure(::Bedrock::StaticOptimizedString source, ::Bedrock::StaticOptimizedString message) const;
     // NOLINTEND
 };

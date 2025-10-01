@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/ThemeSettingsColorKey.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/editor/Mode.h"
+#include "mc/editor/ThemeSettingsColorKey.h"
 #include "mc/scripting/modules/minecraft/events/IScriptScriptDeferredEventListener.h"
 #include "mc/scripting/modules/minecraft/events/metadata/ScriptAfterEventMetadata.h"
 
@@ -13,9 +13,15 @@
 // clang-format off
 class ScriptDeferredFlushTracker;
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor { struct EditorBlockPaletteEventActivePaletteChanged; }
+namespace Editor { struct EditorBlockPaletteEventItemUpdated; }
+namespace Editor { struct EditorBlockPaletteEventPaletteRemoved; }
+namespace Editor { struct EditorBlockPaletteEventPaletteUpdated; }
+namespace Editor { struct EditorBlockPaletteEventSelectedItemIndexChanged; }
 namespace Editor::Cursor { struct CursorState; }
 namespace Editor::Cursor { struct Position; }
 namespace Editor::Selection { struct SelectionVolumeEvent; }
+namespace Editor::Services { class EditorBlockPaletteServiceProvider; }
 namespace Editor::Services { class EditorSettingsServiceProvider; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace mce { class Color; }
@@ -39,7 +45,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 4
+        // vIndex: 5
         virtual void
         onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
@@ -80,6 +86,16 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ScriptExtensionContextAfterEvents(::Editor::ScriptModule::ScriptExtensionContextAfterEvents&&);
+
+    MCNAPI void _handleBlockPaletteChanged(
+        ::Editor::Services::EditorBlockPaletteServiceProvider const* paletteService,
+        ::std::variant<
+            ::Editor::EditorBlockPaletteEventItemUpdated,
+            ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
+            ::Editor::EditorBlockPaletteEventActivePaletteChanged,
+            ::Editor::EditorBlockPaletteEventPaletteUpdated,
+            ::Editor::EditorBlockPaletteEventPaletteRemoved> const& blockPaletteEvent
+    );
 
     MCNAPI void _handleClipboardItemChangeEvent(::mce::UUID const& itemId, bool isPrimary);
 

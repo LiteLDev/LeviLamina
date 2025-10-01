@@ -11,14 +11,18 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/json/ValueType.h"
 #include "mc/deps/nether_net/LogSeverity.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/deps/shared_types/legacy/FilterSubject.h"
 #include "mc/deps/shared_types/legacy/item/UseAnimation.h"
+#include "mc/deps/shared_types/v1_19_40/item/ItemCategory.h"
 #include "mc/events/TextProcessingEventOrigin.h"
 #include "mc/external/lib_http_client/http_stl_allocator.h"
 #include "mc/external/libsrtp/srtp_err_status_t.h"
 #include "mc/network/packet/AgentActionType.h"
 #include "mc/options/DiscoveryEnvironment.h"
 #include "mc/options/EducationServicesEnvironment.h"
+#include "mc/platform/Result.h"
 #include "mc/util/HudElement.h"
 #include "mc/util/gltf/Accessor.h"
 #include "mc/util/gltf/Image.h"
@@ -31,6 +35,7 @@
 #include "mc/world/filters/FilterGroup.h"
 #include "mc/world/filters/FilterOperator.h"
 #include "mc/world/item/CreativeItemCategory.h"
+#include "mc/world/level/GameType.h"
 #include "mc/world/level/WorldVersion.h"
 #include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/block/BlockSlot.h"
@@ -59,6 +64,8 @@ class CircuitSceneGraph;
 class CircuitTrackingInfo;
 class DefinitionTrigger;
 class Dimension;
+class EntityContext;
+class ExperienceRewardComponent;
 class ExpressionNode;
 class FeatureRegistry;
 class GatheringServerInfo;
@@ -71,6 +78,7 @@ class JigsawStructureRegistry;
 class LevelData;
 class ListTag;
 class RecipeIngredient;
+class RedstoneTorchCapacitor;
 class SemVersionConstant;
 class StructureManager;
 class StructurePoolElement;
@@ -94,18 +102,27 @@ struct MCRESULT;
 struct MaterialAlphaModeEnumHasher;
 struct ScatterParamsMolangVariableIndices;
 struct TextProcessingEventOriginEnumHasher;
-struct ThreadConfiguration;
 struct TypeMapping;
 struct WorkerConfiguration;
 struct srtp_auth_t;
 namespace Bedrock { class StaticOptimizedString; }
 namespace Bedrock { class WorkerPoolHandleInterface; }
+namespace Bedrock::Services { class IDiscoveryService; }
+namespace Bedrock::Services { struct DiscoveryConfig; }
 namespace Core { class File; }
 namespace Core { class PathView; }
-namespace Core { class Result; }
 namespace Json { class Value; }
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { struct RakPeerConfiguration; }
+namespace ScriptModuleGameTest { class ScriptSimulatedPlayer; }
+namespace ScriptModuleGameTest { struct ScriptPlayerSkinData; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
+namespace ScriptModuleMinecraft { struct ScriptDimensionLocation; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
+namespace Scripting { class WeakLifetimeScope; }
+namespace Scripting { struct EngineError; }
+namespace Scripting { struct InvalidArgumentError; }
+namespace SharedTypes::v1_21_110 { struct ExperienceRewardDefinition; }
 namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool { struct EmptyPoolElement; }
 namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool { struct SinglePoolElement; }
 namespace cereal { struct ReflectionCtx; }
@@ -115,6 +132,9 @@ namespace mce { class UUID; }
 // functions
 // NOLINTBEGIN
 MCAPI void BedrockLogOut(uint, char const*, ...);
+
+MCAPI ::CreativeItemCategory
+CreativeItemCategoryComprehensiveToRuntime(::SharedTypes::v1_19_40::ItemCategory::CreativeItemCategory category);
 
 MCAPI ::CreativeItemCategory CreativeItemCategoryFromString(::std::string const& str);
 
@@ -144,13 +164,13 @@ MCAPI ::std::unordered_map<::std::string, ::ActorFactoryData>& GetActorDataRegis
 
 MCAPI double GetEngagementMetricsTimeSinceAppStart_DEPRECATED();
 
-MCAPI void JSONSchemaBindings(::cereal::ReflectionCtx& ctx);
-
 MCAPI ::std::optional<::LogLevel> LogLevelFromString(::std::string const& str);
 
 MCFOLD bool MOCK_ASSERT_HANDLER(::AssertHandlerContext const& context);
 
 MCAPI bool MOCK_ASSERT_HANDLER_NO_THROW(::AssertHandlerContext const& context);
+
+MCAPI ::MaterialType MaterialTypeFromString(::std::string const& materialType);
 
 MCAPI bool Mock_Internal_HCHttpCallPerformAsync(::HC_CALL* originalCall);
 
@@ -165,7 +185,11 @@ MCAPI ::PackType PackTypeFromString(::std::string const& value);
 
 MCAPI void PlatformBedrockLogOut(uint _priority, char const* buf, uint64 nullTerminatorPos);
 
-MCAPI ::std::string StringFromCreativeItemCategory(::CreativeItemCategory category);
+MCAPI void PushCircularReference(
+    ::std::unordered_map<::BlockPos, ::RedstoneTorchCapacitor*>&                      relatedTorches,
+    ::BlockPos const&                                                                 pos,
+    ::std::queue<::RedstoneTorchCapacitor*, ::std::deque<::RedstoneTorchCapacitor*>>& list
+);
 
 MCAPI ::std::string StringFromMaterialType(::MaterialType const& materialType);
 
@@ -257,8 +281,6 @@ MCAPI void compoundBlockVolumeActionBindType(::cereal::ReflectionCtx& ctx);
 
 MCAPI void compoundBlockVolumePositionRelativityBindType(::cereal::ReflectionCtx& ctx);
 
-MCAPI void configureThread(::ThreadConfiguration const& config);
-
 MCAPI ::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>
 createUniqueRakPeer(::RakNet::RakPeerConfiguration const& config);
 
@@ -285,8 +307,6 @@ MCAPI ::srtp_err_status_t external_hmac_init(void* state, uchar const* key, int 
 MCFOLD ::srtp_err_status_t external_hmac_start(void*);
 
 MCFOLD ::srtp_err_status_t external_hmac_update(void*, uchar const*, int);
-
-MCAPI int fclose(::Core::File& file);
 
 MCAPI ::std::optional<::FlatWorldPresetID> flatWorldPresetIDFromString(::std::string const& str);
 
@@ -322,13 +342,15 @@ MCAPI ::std::tuple<::std::string, ::std::unique_ptr<::StructurePoolElement>> fro
 
 MCAPI int fseek(::Core::File& file, int64 offset, int origin);
 
+MCAPI int64 ftell(::Core::File& file);
+
+MCAPI uint64 fwrite(void const* buffer, uint64 size, uint64 count, ::Core::File& file);
+
 MCAPI ::std::string gatherTypeStrings(::std::vector<::Json::ValueType> const& types);
 
 MCAPI ::std::string getDiscoveryServiceURL(::DiscoveryEnvironment environment);
 
 MCAPI ::Bedrock::FileType getFileType(::Core::PathView filePath, ::IFileAccess& fileAccess);
-
-MCAPI ::FlatWorldPreset const& getFlatWorldPresetWithID(::FlatWorldPresetID id);
 
 MCAPI ::std::unordered_map<::FlatWorldPresetID, ::FlatWorldPreset> const& getFlatWorldPresets();
 
@@ -340,7 +362,19 @@ MCAPI ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeEvent
 
 MCAPI ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeLOCMapAccess();
 
+MCAPI ::Scripting::Result<
+    ::ScriptModuleGameTest::ScriptPlayerSkinData,
+    ::Scripting::InvalidArgumentError,
+    ::ScriptModuleMinecraft::ScriptInvalidActorError>
+getPlayerSkin(::ScriptModuleMinecraft::ScriptPlayer const& player);
+
 MCAPI ::AllWorkerConfigurations getWorkerConfiguration(uint highPowerCores, uint totalCores);
+
+MCAPI void initialize(
+    ::EntityContext&,
+    ::ExperienceRewardComponent&                                runtimeComponent,
+    ::SharedTypes::v1_21_110::ExperienceRewardDefinition const& loadedData
+);
 
 MCAPI ::std::string join(::std::string prefix, ::std::string_view chunkKey);
 
@@ -351,6 +385,9 @@ MCAPI ::std::string join(::std::string_view prefix, ::LevelChunkTag tag, uint i)
 MCAPI ::std::string makeGuestDisplayName(::std::string const& hostName, ::SubClientId subclientId);
 
 MCAPI ::mce::UUID makeGuestUUID(::mce::UUID const& hostUuid, ::SubClientId subclientId);
+
+MCAPI ::std::shared_ptr<::Bedrock::Services::IDiscoveryService>
+makeServerDiscoveryService(::Bedrock::Services::DiscoveryConfig const& discoveryConfig);
 
 MCAPI bool operator!=(
     ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
@@ -390,7 +427,7 @@ MCAPI bool operator==(
     ::SemVersionBase<::std::string_view> const&               rhs
 );
 
-MCFOLD bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
+MCAPI bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
 
 MCAPI ::BlockProperty operator|(::BlockProperty lhs, ::BlockProperty b);
 
@@ -402,11 +439,21 @@ MCAPI void renderMapChunk(
     ::MapItemSavedData::ChunkBounds pixelsBB
 );
 
+MCAPI ::Scripting::Result<
+    ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSimulatedPlayer>,
+    ::Scripting::EngineError>
+spawnSimulatedPlayer(
+    ::Scripting::WeakLifetimeScope const&                   scope,
+    ::ScriptModuleMinecraft::ScriptDimensionLocation const& location,
+    ::std::string const&                                    name,
+    ::GameType                                              gameMode
+);
+
 MCAPI ::DiscoveryEnvironment stringToDiscoveryEnvironment(::std::string const& str);
 
 MCAPI ::ItemInstance toItemInstance(::RecipeIngredient const& ingredient);
 
-MCAPI ::leveldb::Status toLevelDbStatus(::Core::Result const& result);
+MCAPI ::leveldb::Status toLevelDbStatus(::Bedrock::Result<void>&& result);
 
 MCAPI ::std::string toString(::AgentActionType type);
 

@@ -11,7 +11,6 @@
 class AutomaticFeatureRules;
 class BaseGameVersion;
 class BiomeRegistry;
-class Experiments;
 class IWorldRegistriesProvider;
 class LevelSeed64;
 class LevelStorage;
@@ -44,7 +43,6 @@ public:
     BiomeManager(::OwnerPtr<::BiomeRegistry> biomes, ::std::unique_ptr<::AutomaticFeatureRules> automaticFeatureRules);
 
     MCNAPI void _initializeServerBiomeRegistry(
-        ::Experiments const&                               experiments,
         ::IWorldRegistriesProvider&                        worldRegistries,
         ::ResourcePackManager const&                       resourcePackManager,
         ::LevelSeed64                                      levelSeed,
@@ -54,7 +52,6 @@ public:
     );
 
     MCNAPI void initializeBiomeRegistryAndAutomaticFeatureRulesOnServer(
-        ::Experiments const&                               experiments,
         ::IWorldRegistriesProvider&                        worldRegistries,
         ::ResourcePackManager&                             resourcePackManager,
         ::LevelSeed64                                      levelSeed,

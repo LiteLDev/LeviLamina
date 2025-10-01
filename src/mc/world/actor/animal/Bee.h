@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8
-    virtual ~Bee() /*override*/;
+    virtual ~Bee() /*override*/ = default;
 
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
@@ -60,12 +60,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

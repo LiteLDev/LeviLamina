@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 22
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     // vIndex: 134
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
@@ -82,22 +82,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _setCooldownPhase(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
+    MCAPI static void _setCooldownPhase(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
-    MCNAPI static void _setInactivePhase(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
+    MCAPI static void _setInactivePhase(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
-    MCNAPI static void
+    MCAPI static void
     _tryResonateVibration(::BlockSource& region, ::BlockPos const& pos, ::Actor* source, int vibrationFrequency);
 
-    MCNAPI static void setActivePhase(
+    MCAPI static void setActivePhase(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         ::Actor*          source,
@@ -109,35 +109,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCNAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $isSignalSource() const;
 
-    MCNAPI bool $isSignalSource() const;
-
-    MCNAPI bool
+    MCFOLD bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
+    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCNAPI ::Brightness $getEmissiveBrightness(::Block const& block) const;
+    MCAPI ::Brightness $getEmissiveBrightness(::Block const& block) const;
 
-    MCNAPI bool $hasComparatorSignal() const;
+    MCFOLD bool $hasComparatorSignal() const;
 
-    MCNAPI int
-    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCNAPI bool $liquidCanFlowIntoFromDirection(
+    MCFOLD bool $liquidCanFlowIntoFromDirection(
         uchar                                                     flowIntoFacing,
         ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
         ::BlockPos const&                                         pos
     ) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

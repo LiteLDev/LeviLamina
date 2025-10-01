@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8
-    virtual ~HappyGhast() /*override*/;
+    virtual ~HappyGhast() /*override*/ = default;
 
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
@@ -43,7 +43,7 @@ public:
     // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 145
+    // vIndex: 146
     virtual void aiStep() /*override*/;
     // NOLINTEND
 
@@ -67,12 +67,6 @@ public:
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

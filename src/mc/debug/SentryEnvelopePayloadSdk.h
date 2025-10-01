@@ -18,6 +18,7 @@ public:
 
 public:
     // prevent constructor by default
+    SentryEnvelopePayloadSdk& operator=(SentryEnvelopePayloadSdk const&);
     SentryEnvelopePayloadSdk(SentryEnvelopePayloadSdk const&);
     SentryEnvelopePayloadSdk();
 
@@ -25,8 +26,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::SentryEnvelopePayloadSdk& operator=(::SentryEnvelopePayloadSdk&&);
-
-    MCNAPI ::SentryEnvelopePayloadSdk& operator=(::SentryEnvelopePayloadSdk const&);
 
     MCNAPI ~SentryEnvelopePayloadSdk();
     // NOLINTEND

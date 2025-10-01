@@ -178,8 +178,6 @@ MCAPI ::HashedString const& Cauldron();
 
 MCAPI ::HashedString const& CaveSpiderSpawnEgg();
 
-MCAPI ::HashedString const& Chain();
-
 MCAPI ::HashedString const& ChainmailBoots();
 
 MCAPI ::HashedString const& ChainmailChestplate();
@@ -263,6 +261,8 @@ MCAPI ::HashedString const& CopperGolemSpawnEgg();
 MCAPI ::HashedString const& CopperHelmet();
 
 MCAPI ::HashedString const& CopperHoe();
+
+MCAPI ::HashedString const& CopperHorseArmor();
 
 MCAPI ::HashedString const& CopperIngot();
 

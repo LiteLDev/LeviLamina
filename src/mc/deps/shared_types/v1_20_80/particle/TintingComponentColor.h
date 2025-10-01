@@ -20,13 +20,12 @@ public:
 
 public:
     // prevent constructor by default
+    TintingComponentColor(TintingComponentColor const&);
     TintingComponentColor();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TintingComponentColor(::SharedTypes::v1_20_80::TintingComponentColor const&);
-
     MCNAPI ::SharedTypes::v1_20_80::TintingComponentColor&
     operator=(::SharedTypes::v1_20_80::TintingComponentColor const&);
 
@@ -39,12 +38,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::TintingComponentColor const&);
     // NOLINTEND
 
 public:

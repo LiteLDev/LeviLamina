@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
-class VibrationListenerComponent;
+struct VibrationListenerComponent;
 // clang-format on
 
 namespace VibrationListenerSystemInternal {

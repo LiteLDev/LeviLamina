@@ -4,12 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/StackRefResult.h"
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
 namespace Bedrock::PubSub { class Subscription; }
+namespace Editor { class ProjectRegion; }
 namespace Editor::Cursor { class ServerCursor; }
 namespace Editor::Cursor { struct AttachmentProperties; }
 namespace Editor::Cursor { struct CursorState; }
@@ -57,6 +59,9 @@ public:
     virtual ::Bedrock::PubSub::Subscription listenForCursorPositionChanges(
         ::std::function<void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)>
     ) = 0;
+
+    // vIndex: 10
+    virtual ::WeakRef<::Editor::ProjectRegion> getRegion() const = 0;
     // NOLINTEND
 
 public:

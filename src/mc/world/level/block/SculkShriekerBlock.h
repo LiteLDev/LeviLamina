@@ -35,7 +35,7 @@ public:
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 22
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
@@ -50,27 +50,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockType& $init();
+    MCAPI ::BlockType& $init();
 
-    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    MCAPI int $getVariant(::Block const& block) const;
 
-    MCNAPI int $getVariant(::Block const& block) const;
-
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

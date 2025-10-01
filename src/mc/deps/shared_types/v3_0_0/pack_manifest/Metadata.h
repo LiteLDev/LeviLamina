@@ -8,7 +8,7 @@ struct Metadata {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke6cf29;
+    ::ll::UntypedStorage<8, 32> mUnkf74ef6;
     ::ll::UntypedStorage<8, 40> mUnkd2a493;
     ::ll::UntypedStorage<8, 40> mUnk5473e6;
     ::ll::UntypedStorage<8, 40> mUnk795b88;
@@ -17,7 +17,6 @@ public:
 
 public:
     // prevent constructor by default
-    Metadata& operator=(Metadata const&);
     Metadata();
 
 public:
@@ -29,6 +28,9 @@ public:
 
     MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
+
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata const&);
 
     MCNAPI ~Metadata();
     // NOLINTEND

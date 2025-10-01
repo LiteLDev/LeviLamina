@@ -37,6 +37,10 @@ MCAPI uint64 const& DeviceIdMaxLength();
 
 MCAPI bool const& IsAnyBeta();
 
+MCAPI bool const& IsDevBuild();
+
+MCAPI bool const& IsPS4Platform();
+
 MCAPI int const& MajorVersion();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> MajorVersionStringFormated();

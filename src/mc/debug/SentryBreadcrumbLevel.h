@@ -7,4 +7,5 @@ enum class SentryBreadcrumbLevel : int {
     Warning = 1,
     Info    = 2,
     Debug   = 3,
+    Fatal   = 4,
 };

@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class Experiments;
 // clang-format on
 
 class PlanksBlock : public ::BlockType {
@@ -25,9 +24,6 @@ public:
     // vIndex: 112
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
-    // vIndex: 131
-    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
-
     // vIndex: 0
     virtual ~PlanksBlock() /*override*/ = default;
     // NOLINTEND
@@ -42,8 +38,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::std::string $buildDescriptionId(::Block const&) const;
-
-    MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

@@ -4,11 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/puv/LoadResult.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockDefinitionGroup;
 class IPackLoadContext;
+struct BlockDefinition;
+namespace Bedrock::Resources { class MinecraftDocumentInput; }
 // clang-format on
 
 class BlockDefinitionLoader {
@@ -27,20 +30,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockDefinitionLoader(
+    MCAPI BlockDefinitionLoader(
         ::gsl::not_null<::BlockDefinitionGroup*>                  group,
         ::gsl::not_null<::Core::PathBuffer<::std::string> const*> heapPathBuffer,
         ::std::string                                             resourcePackLocation,
         ::gsl::not_null<::IPackLoadContext*>                      packLoadContext
     );
 
-    MCNAPI ~BlockDefinitionLoader();
+    MCAPI ::Puv::LoadResult<::BlockDefinition> load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
+
+    MCAPI ~BlockDefinitionLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::gsl::not_null<::BlockDefinitionGroup*>                  group,
         ::gsl::not_null<::Core::PathBuffer<::std::string> const*> heapPathBuffer,
         ::std::string                                             resourcePackLocation,
@@ -51,6 +56,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

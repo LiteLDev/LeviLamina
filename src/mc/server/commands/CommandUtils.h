@@ -46,6 +46,10 @@ MCAPI void alterSpawnableEntities(
 
 MCAPI void broadcastPlayerSpawnedMobEvent(::Actor const& entity, ::Actor& summoner);
 
+MCAPI void clearBlockEntityContents(::BlockSource& region, ::BlockPos const& pos);
+
+MCAPI void clearBlockEntityLootTable(::BlockSource& region, ::BlockPos const& pos);
+
 MCAPI void convertBlockEntityTag(::CompoundTag& tag, ::BlockActor const& entity, ::BlockPos const& offset);
 
 MCAPI ::ItemStack createItemStack(::std::string const& itemName, int amount, int data);
@@ -65,7 +69,7 @@ MCAPI ::std::string getActorName(::Actor const& actor);
 
 MCAPI ::Vec3 getFeetPos(::Actor const* entity);
 
-MCAPI ::std::vector<::ActorType> getInvalidCommandEntities();
+MCAPI ::std::vector<::ActorType> getInvalidCommandEntities(bool isChemistryEnabled, bool isCodeBuilderEnabled);
 
 MCAPI ::std::string getTelemetryErrorList(::CommandOutput const& output);
 
@@ -74,8 +78,6 @@ MCAPI bool isFunctionValid(::CommandOutput& output, ::FunctionEntry& functionEnt
 MCAPI bool isPlayerSpawnedMob(::Actor const& entity, ::Actor const& summoner);
 
 MCAPI void setDifficulty(::Level& level, ::SharedTypes::Legacy::Difficulty difficulty);
-
-MCAPI void setInitEvent(::ActorDefinitionIdentifier& actorId, ::std::string const& eventName);
 
 MCAPI ::std::string toJsonResult(::std::string const& commandName, ::Json::Value const& rawData);
 

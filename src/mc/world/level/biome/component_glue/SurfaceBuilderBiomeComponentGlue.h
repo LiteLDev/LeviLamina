@@ -25,6 +25,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnkc52759;
     ::ll::UntypedStorage<8, 24> mUnkf4c91c;
     ::ll::UntypedStorage<8, 8>  mUnk5c2c42;
+    ::ll::UntypedStorage<4, 4>  mUnk712a0f;
     ::ll::UntypedStorage<8, 8>  mUnka5b1b4;
     ::ll::UntypedStorage<8, 8>  mUnk1fc1c2;
     ::ll::UntypedStorage<1, 1>  mUnk7475a2;

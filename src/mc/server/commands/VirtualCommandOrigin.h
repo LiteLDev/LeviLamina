@@ -83,7 +83,7 @@ public:
     virtual bool hasTellPerms() const /*override*/;
 
     // vIndex: 15
-    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const /*override*/;
+    virtual bool canUseAbility(::AbilitiesIndex ability) const /*override*/;
 
     // vIndex: 17
     virtual bool canUseCommandsWithoutCheatsEnabled() const /*override*/;
@@ -202,7 +202,7 @@ public:
 
     MCNAPI bool $hasTellPerms() const;
 
-    MCNAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
+    MCNAPI bool $canUseAbility(::AbilitiesIndex ability) const;
 
     MCNAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 

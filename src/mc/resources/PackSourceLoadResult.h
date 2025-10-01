@@ -14,12 +14,19 @@ public:
     // prevent constructor by default
     PackSourceLoadResult& operator=(PackSourceLoadResult const&);
     PackSourceLoadResult(PackSourceLoadResult const&);
-    PackSourceLoadResult();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI PackSourceLoadResult();
+
     MCNAPI ~PackSourceLoadResult();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

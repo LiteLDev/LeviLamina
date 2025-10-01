@@ -42,31 +42,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 25
+    // vIndex: 24
     virtual ::std::vector<::AABB>& fetchAABBs(::AABB const&, bool) = 0;
 
-    // vIndex: 26
+    // vIndex: 25
     virtual ::std::vector<::AABB>&
     fetchCollisionShapes(::AABB const&, bool, ::std::optional<::EntityContext const>, ::std::vector<::AABB>*) = 0;
 
-    // vIndex: 27
+    // vIndex: 26
     virtual ::WeakRef<::BlockSource> getWeakRef() = 0;
 
-    // vIndex: 28
+    // vIndex: 27
     virtual void addListener(::BlockSourceListener&) = 0;
 
-    // vIndex: 29
+    // vIndex: 28
     virtual void removeListener(::BlockSourceListener&) = 0;
 
-    // vIndex: 31
+    // vIndex: 30
     virtual ::gsl::span<::gsl::not_null<::Actor*>> fetchEntities(::Actor const*, ::AABB const&, bool, bool) = 0;
 
-    // vIndex: 30
+    // vIndex: 29
     virtual ::gsl::span<::gsl::not_null<::Actor*>>
     fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) = 0;
 
-    // vIndex: 32
+    // vIndex: 31
     virtual bool setBlock(::BlockPos const&, ::Block const&, int, ::ActorBlockSyncMessage const*, ::Actor*) = 0;
+
+    // vIndex: 32
+    virtual bool removeBlock(::BlockPos const&) = 0;
 
     // vIndex: 33
     virtual short getMinHeight() const = 0;
@@ -161,9 +164,6 @@ public:
     virtual bool checkBlockPermissions(::Actor&, ::BlockPos const&, uchar, ::ItemStackBase const&, bool) = 0;
 
     // vIndex: 60
-    virtual bool removeBlock(::BlockPos const&) = 0;
-
-    // vIndex: 61
     virtual void postGameEvent(::Actor*, ::GameEvent const&, ::BlockPos const&, ::Block const*) = 0;
 
     // vIndex: 0

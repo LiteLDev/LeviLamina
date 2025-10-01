@@ -96,7 +96,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
@@ -121,8 +121,6 @@ public:
     MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
     MCFOLD bool $hasVariableLighting() const;
-
-    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
     MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 

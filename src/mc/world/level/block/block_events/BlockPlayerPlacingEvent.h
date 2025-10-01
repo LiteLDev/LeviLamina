@@ -43,14 +43,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCFOLD ::Block const& getPermutationToPlace() const;
-
-    MCAPI void setPermutationToPlace(::Block const& perm);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();

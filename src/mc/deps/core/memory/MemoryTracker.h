@@ -38,12 +38,9 @@ public:
     virtual uint64 getCategoryTotalAllocationCount(uint) const;
 
     // vIndex: 7
-    virtual char const* getCategoryName(uint) const;
-
-    // vIndex: 8
     virtual void publish();
 
-    // vIndex: 9
+    // vIndex: 8
     virtual void populateCounters(::std::vector<::Memory::MemoryCategoryCounter>&, uint64) const;
     // NOLINTEND
 
@@ -61,8 +58,6 @@ public:
     MCFOLD uint64 $getCategoryAllocatedMemory(uint) const;
 
     MCFOLD uint64 $getCategoryTotalAllocationCount(uint) const;
-
-    MCFOLD char const* $getCategoryName(uint) const;
 
     MCFOLD void $publish();
 

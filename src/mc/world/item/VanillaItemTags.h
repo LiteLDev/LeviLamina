@@ -11,132 +11,132 @@ class VanillaItemTags {
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::ItemTag const& Armor();
+    MCAPI static ::ItemTag const& Armor();
 
-    MCNAPI static ::ItemTag const& Arrows();
+    MCAPI static ::ItemTag const& Arrows();
 
-    MCNAPI static ::ItemTag const& Banners();
+    MCAPI static ::ItemTag const& Banners();
 
-    MCNAPI static ::ItemTag const& Boat();
+    MCAPI static ::ItemTag const& Boat();
 
-    MCNAPI static ::ItemTag const& Boats();
+    MCAPI static ::ItemTag const& Boats();
 
-    MCNAPI static ::ItemTag const& BookshelfBooks();
+    MCAPI static ::ItemTag const& BookshelfBooks();
 
-    MCNAPI static ::ItemTag const& ChainmailTier();
+    MCAPI static ::ItemTag const& ChainmailTier();
 
-    MCNAPI static ::ItemTag const& ChestBoat();
+    MCAPI static ::ItemTag const& ChestBoat();
 
-    MCNAPI static ::ItemTag const& Coals();
+    MCAPI static ::ItemTag const& Coals();
 
-    MCNAPI static ::ItemTag const& Cooked();
+    MCAPI static ::ItemTag const& Cooked();
 
-    MCNAPI static ::ItemTag const& CopperTier();
+    MCAPI static ::ItemTag const& CopperTier();
 
-    MCNAPI static ::ItemTag const& CrimsonStems();
+    MCAPI static ::ItemTag const& CrimsonStems();
 
-    MCNAPI static ::ItemTag const& DecoratedPotSherds();
+    MCAPI static ::ItemTag const& DecoratedPotSherds();
 
-    MCNAPI static ::ItemTag const& DiamondTier();
+    MCAPI static ::ItemTag const& DiamondTier();
 
-    MCNAPI static ::ItemTag const& Digger();
+    MCAPI static ::ItemTag const& Digger();
 
-    MCNAPI static ::ItemTag const& Door();
+    MCAPI static ::ItemTag const& Door();
 
-    MCNAPI static ::ItemTag const& Egg();
+    MCAPI static ::ItemTag const& Egg();
 
-    MCNAPI static ::ItemTag const& Fishes();
+    MCAPI static ::ItemTag const& Fishes();
 
-    MCNAPI static ::ItemTag const& Food();
+    MCAPI static ::ItemTag const& Food();
 
-    MCNAPI static ::ItemTag const& GoldenTier();
+    MCAPI static ::ItemTag const& GoldenTier();
 
-    MCNAPI static ::ItemTag const& HangingActor();
+    MCAPI static ::ItemTag const& HangingActor();
 
-    MCNAPI static ::ItemTag const& HangingSign();
+    MCAPI static ::ItemTag const& HangingSign();
 
-    MCNAPI static ::ItemTag const& Harness();
+    MCAPI static ::ItemTag const& Harness();
 
-    MCNAPI static ::ItemTag const& Hatchet();
+    MCAPI static ::ItemTag const& Hatchet();
 
-    MCNAPI static ::ItemTag const& Hoe();
+    MCAPI static ::ItemTag const& Hoe();
 
-    MCNAPI static ::ItemTag const& HorseArmor();
+    MCAPI static ::ItemTag const& HorseArmor();
 
-    MCNAPI static ::ItemTag const& IronTier();
+    MCAPI static ::ItemTag const& IronTier();
 
-    MCNAPI static ::ItemTag const& LeatherTier();
+    MCAPI static ::ItemTag const& LeatherTier();
 
-    MCNAPI static ::ItemTag const& LecternBooks();
+    MCAPI static ::ItemTag const& LecternBooks();
 
-    MCNAPI static ::ItemTag const& Logs();
+    MCAPI static ::ItemTag const& Logs();
 
-    MCNAPI static ::ItemTag const& LogsThatBurn();
+    MCAPI static ::ItemTag const& LogsThatBurn();
 
-    MCNAPI static ::ItemTag const& MangroveLogs();
+    MCAPI static ::ItemTag const& MangroveLogs();
 
-    MCNAPI static ::ItemTag const& Meat();
+    MCAPI static ::ItemTag const& Meat();
 
-    MCNAPI static ::ItemTag const& Minecart();
+    MCAPI static ::ItemTag const& Minecart();
 
-    MCNAPI static ::ItemTag const& MusicDiscs();
+    MCAPI static ::ItemTag const& MusicDiscs();
 
-    MCNAPI static ::ItemTag const& NetheriteTier();
+    MCAPI static ::ItemTag const& NetheriteTier();
 
-    MCNAPI static ::ItemTag const& Pickaxe();
+    MCAPI static ::ItemTag const& Pickaxe();
 
-    MCNAPI static ::ItemTag const& PiglinLoved();
+    MCAPI static ::ItemTag const& PiglinLoved();
 
-    MCNAPI static ::ItemTag const& PiglinRepellents();
+    MCAPI static ::ItemTag const& PiglinRepellents();
 
-    MCNAPI static ::ItemTag const& Planks();
+    MCAPI static ::ItemTag const& Planks();
 
-    MCNAPI static ::ItemTag const& Sand();
+    MCAPI static ::ItemTag const& Sand();
 
-    MCNAPI static ::ItemTag const& Shears();
+    MCAPI static ::ItemTag const& Shears();
 
-    MCNAPI static ::ItemTag const& Shovel();
+    MCAPI static ::ItemTag const& Shovel();
 
-    MCNAPI static ::ItemTag const& Sign();
+    MCAPI static ::ItemTag const& Sign();
 
-    MCNAPI static ::ItemTag const& SoulFireBaseBlocks();
+    MCAPI static ::ItemTag const& SoulFireBaseBlocks();
 
-    MCNAPI static ::ItemTag const& SpawnEgg();
+    MCAPI static ::ItemTag const& SpawnEgg();
 
-    MCNAPI static ::ItemTag const& StoneBricks();
+    MCAPI static ::ItemTag const& StoneBricks();
 
-    MCNAPI static ::ItemTag const& StoneCraftingMaterials();
+    MCAPI static ::ItemTag const& StoneCraftingMaterials();
 
-    MCNAPI static ::ItemTag const& StoneTier();
+    MCAPI static ::ItemTag const& StoneTier();
 
-    MCNAPI static ::ItemTag const& StoneToolMaterials();
+    MCAPI static ::ItemTag const& StoneToolMaterials();
 
-    MCNAPI static ::ItemTag const& Sword();
+    MCAPI static ::ItemTag const& Sword();
 
-    MCNAPI static ::ItemTag const& Tool();
+    MCAPI static ::ItemTag const& Tool();
 
-    MCNAPI static ::ItemTag const& TransformMaterials();
+    MCAPI static ::ItemTag const& TransformMaterials();
 
-    MCNAPI static ::ItemTag const& TransformTemplates();
+    MCAPI static ::ItemTag const& TransformTemplates();
 
-    MCNAPI static ::ItemTag const& TransformableItems();
+    MCAPI static ::ItemTag const& TransformableItems();
 
-    MCNAPI static ::ItemTag const& Trident();
+    MCAPI static ::ItemTag const& Trident();
 
-    MCNAPI static ::ItemTag const& TrimMaterials();
+    MCAPI static ::ItemTag const& TrimMaterials();
 
-    MCNAPI static ::ItemTag const& TrimTemplates();
+    MCAPI static ::ItemTag const& TrimTemplates();
 
-    MCNAPI static ::ItemTag const& TrimmableArmors();
+    MCAPI static ::ItemTag const& TrimmableArmors();
 
-    MCNAPI static ::ItemTag const& VibrationDamper();
+    MCAPI static ::ItemTag const& VibrationDamper();
 
-    MCNAPI static ::ItemTag const& WarpedStems();
+    MCAPI static ::ItemTag const& WarpedStems();
 
-    MCNAPI static ::ItemTag const& WoodenSlabs();
+    MCAPI static ::ItemTag const& WoodenSlabs();
 
-    MCNAPI static ::ItemTag const& WoodenTier();
+    MCAPI static ::ItemTag const& WoodenTier();
 
-    MCNAPI static ::ItemTag const& Wool();
+    MCAPI static ::ItemTag const& Wool();
     // NOLINTEND
 };

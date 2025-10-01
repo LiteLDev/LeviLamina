@@ -14,6 +14,8 @@ public:
         Error   = 0,
         Warning = 1,
         Info    = 2,
+        Debug   = 3,
+        Fatal   = 4,
     };
 
     enum class Platform : int {
@@ -38,7 +40,6 @@ public:
 
 public:
     // prevent constructor by default
-    SentryEnvelopePayload& operator=(SentryEnvelopePayload const&);
     SentryEnvelopePayload();
 
 public:
@@ -49,6 +50,8 @@ public:
     MCNAPI SentryEnvelopePayload(::SentryEnvelopePayload const&);
 
     MCNAPI ::SentryEnvelopePayload& operator=(::SentryEnvelopePayload&&);
+
+    MCNAPI ::SentryEnvelopePayload& operator=(::SentryEnvelopePayload const&);
 
     MCNAPI ~SentryEnvelopePayload();
     // NOLINTEND

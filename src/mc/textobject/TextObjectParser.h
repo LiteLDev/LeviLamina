@@ -91,13 +91,6 @@ public:
         ::TextObjectParser::ErrorLocalization& errorLocalization
     );
 
-    MCNAPI static bool _textObjectFromString(
-        ::std::string const&                   jsonAsString,
-        ::TextObjectRoot&                      parsedObject,
-        ::TextObjectParser::ServerData*        serverData,
-        ::TextObjectParser::ErrorLocalization& errorLocalization
-    );
-
     MCNAPI static bool
     textObjectFromJson(::Json::Value const& root, ::TextObjectRoot& parsedObject, ::std::string& errorMsg);
 

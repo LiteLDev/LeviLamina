@@ -8,8 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class AddRiderComponent;
 class AddRiderDefinition;
+struct AddRiderComponent;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on

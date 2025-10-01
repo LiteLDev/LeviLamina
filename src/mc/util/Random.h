@@ -59,8 +59,6 @@ public:
 
     MCAPI Random(uint seed, bool onlyUsedDeterministically);
 
-    MCAPI float nextFloat(float min, float max);
-
     MCAPI int nextInt(int min, int max);
 
     MCAPI void setSeed(uint seed);

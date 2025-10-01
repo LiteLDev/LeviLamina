@@ -34,8 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BiomeScatterParamData& operator=(::BiomeScatterParamData&&);
-
     MCNAPI void write(::BinaryStream& stream) const;
 
     MCNAPI ~BiomeScatterParamData();

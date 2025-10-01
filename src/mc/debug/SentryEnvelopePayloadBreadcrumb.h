@@ -14,23 +14,17 @@ public:
 
 public:
     // prevent constructor by default
-    SentryEnvelopePayloadBreadcrumb& operator=(SentryEnvelopePayloadBreadcrumb const&);
     SentryEnvelopePayloadBreadcrumb(SentryEnvelopePayloadBreadcrumb const&);
+    SentryEnvelopePayloadBreadcrumb();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SentryEnvelopePayloadBreadcrumb();
-
     MCNAPI ::SentryEnvelopePayloadBreadcrumb& operator=(::SentryEnvelopePayloadBreadcrumb&&);
 
-    MCNAPI ~SentryEnvelopePayloadBreadcrumb();
-    // NOLINTEND
+    MCNAPI ::SentryEnvelopePayloadBreadcrumb& operator=(::SentryEnvelopePayloadBreadcrumb const&);
 
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI ~SentryEnvelopePayloadBreadcrumb();
     // NOLINTEND
 
 public:

@@ -18,7 +18,6 @@ struct OnGroundFlagComponent;
 struct RailMovementComponent;
 struct SnapOnRailComponent;
 struct StateVectorComponent;
-struct TickingSystemWithInfo;
 // clang-format on
 
 class MinecartComeOffRailSystem {
@@ -43,7 +42,5 @@ public:
             ::Optional<::OnGroundFlagComponent const>> view,
         ::EntityModifier<::MoveRequestComponent>       mod
     );
-
-    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

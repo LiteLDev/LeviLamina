@@ -87,6 +87,8 @@ public:
 
     MCNAPI void add(::std::string const& messageId, ::std::function<void(::NetherNet::ESessionError)>&& onComplete);
 
+    MCNAPI void messageAccepted(::std::string const& messageId);
+
     MCNAPI void messageError(::std::string const& messageId, ::NetherNet::ESessionError error);
 
     MCNAPI void messageSent(

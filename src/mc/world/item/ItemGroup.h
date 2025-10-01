@@ -24,20 +24,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ItemGroup(::ItemInstance const& itemInstance);
+    MCAPI explicit ItemGroup(::ItemInstance const& itemInstance);
 
-    MCNAPI ~ItemGroup();
+    MCAPI ~ItemGroup();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ItemInstance const& itemInstance);
+    MCAPI void* $ctor(::ItemInstance const& itemInstance);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

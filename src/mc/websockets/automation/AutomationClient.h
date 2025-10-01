@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/codebuilder/IClient.h"
-#include "mc/platform/UriListener.h"
+#include "mc/deps/application/UriListener.h"
 #include "mc/world/level/LevelListener.h"
 
 // auto generated forward declare list

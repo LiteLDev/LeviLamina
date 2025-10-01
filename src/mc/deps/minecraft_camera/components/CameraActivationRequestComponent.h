@@ -2,10 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class CameraActivationRequestComponent {
+namespace MinecraftCamera {
+
+struct CameraActivationRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint> mActivationPriority;
+    ::ll::UntypedStorage<4, 4> mUnk73526a;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CameraActivationRequestComponent& operator=(CameraActivationRequestComponent const&);
+    CameraActivationRequestComponent(CameraActivationRequestComponent const&);
+    CameraActivationRequestComponent();
 };
+
+} // namespace MinecraftCamera

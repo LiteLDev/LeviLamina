@@ -9,7 +9,7 @@
 // clang-format off
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ModuleBinding; }
-namespace Scripting { struct UUID; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Scripting {
@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static char const*& ModuleName();
 
-    MCNAPI static ::Scripting::UUID const& ModuleUUID();
+    MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
 
 public:

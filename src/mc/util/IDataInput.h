@@ -50,7 +50,15 @@ public:
 
     MCAPI bool readBytes(void* data, uint64 bytes);
 
+    MCAPI int readInt();
+
+    MCAPI int64 readLongLong();
+
     MCAPI ::std::string readLongString();
+
+    MCAPI short readShort();
+
+    MCAPI ::std::string readString();
     // NOLINTEND
 
 public:

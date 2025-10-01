@@ -32,25 +32,25 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::BlockPos
+    MCAPI static ::BlockPos
     _calculateTargetPos(::BlockSource& region, ::BlockPos origin, ::Rotation rot, ::BlockPos size);
 
-    MCNAPI static ::BlockPos
+    MCAPI static ::BlockPos
     _calculateTargetPosLegacy(::BlockSource& region, ::BlockPos origin, ::Rotation rot, ::BlockPos size);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<::std::string const[]> STRUCTURE_SHIPWRECK_TYPES();
+    MCAPI static ::std::add_lvalue_reference_t<::std::string const[]> STRUCTURE_SHIPWRECK_TYPES();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:

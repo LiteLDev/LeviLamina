@@ -5,16 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/AsyncPromise.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/nether_net/ILanEventHandler.h"
-#include "mc/network/services/signaling/SignalServiceConnectStage.h"
 
 // auto generated forward declare list
 // clang-format off
-class SignalingService;
-struct NetherNetConnector;
-namespace Json { class Value; }
-namespace NetherNet { struct StunRelayServer; }
+namespace NetherNet { struct NetworkID; }
 namespace NetherNet::LanEvents { struct MessageReceived; }
 namespace NetherNet::LanEvents { struct MessageSent; }
 // clang-format on
@@ -40,66 +35,31 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SignalingServiceSignInJob() /*override*/;
+    virtual ~SignalingServiceSignInJob() /*override*/ = default;
 
     // vIndex: 4
-    virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const& event) /*override*/;
+    virtual void OnLanEvent(::NetherNet::LanEvents::MessageSent const&) /*override*/;
 
     // vIndex: 3
-    virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event) /*override*/;
+    virtual void OnLanEvent(::NetherNet::LanEvents::MessageReceived const&) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SignalingServiceSignInJob(
-        ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&& netherNetConnector,
-        ::Bedrock::NotNullNonOwnerPtr<::SignalingService>     signalingService
-    );
-
-    MCNAPI void
-    _fireEventSignalServiceConnect(::SignalServiceConnectStage stage, ::Json::Value const& properties) const;
-
-    MCNAPI void _handleRelayConfig(
-        ::std::vector<::NetherNet::StunRelayServer> const&      config,
-        ::Bedrock::Threading::AsyncPromise<::std::error_code>&& signInPromise
-    ) const;
-
     MCNAPI void _handleSignInResult(
         ::std::error_code                                       error,
         ::Bedrock::Threading::AsyncPromise<::std::error_code>&& signInPromise,
         bool                                                    fetchRelayConfig
     ) const;
 
-    MCNAPI ::Bedrock::Threading::Async<::std::error_code> signin(bool fetchRelayConfig) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&& netherNetConnector,
-        ::Bedrock::NotNullNonOwnerPtr<::SignalingService>     signalingService
-    );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCNAPI ::Bedrock::Threading::Async<::std::error_code>
+    signin(bool fetchRelayConfig, ::std::optional<::NetherNet::NetworkID> playerMessagingId) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const& event);
 
-    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event);
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

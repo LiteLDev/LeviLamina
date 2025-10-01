@@ -27,9 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Vec3 rotationTypeAsVec3() const;
+    MCAPI ::Vec3 rotationTypeAsVec3() const;
 
-    MCNAPI void rotationTypeFromVec3(::Vec3 const& arr);
+    MCAPI void rotationTypeFromVec3(::Vec3 const& arr);
     // NOLINTEND
 };
 

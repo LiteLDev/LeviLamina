@@ -6,9 +6,10 @@ namespace Connection {
 
 enum class DisconnectionStage : uint {
     Unknown             = 0,
-    InitialConnection   = 1,
-    ClientDisconnection = 2,
-    ServerDisconnection = 3,
+    Prerequisites       = 1,
+    InitialConnection   = 2,
+    ClientDisconnection = 3,
+    ServerDisconnection = 4,
 };
 
 }

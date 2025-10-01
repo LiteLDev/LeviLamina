@@ -12,14 +12,13 @@ public:
 
 public:
     // prevent constructor by default
+    SettingsCommandPacketPayload& operator=(SettingsCommandPacketPayload const&);
     SettingsCommandPacketPayload(SettingsCommandPacketPayload const&);
     SettingsCommandPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SettingsCommandPacketPayload& operator=(::SettingsCommandPacketPayload const&);
-
     MCFOLD ::SettingsCommandPacketPayload& operator=(::SettingsCommandPacketPayload&&);
 
     MCAPI ~SettingsCommandPacketPayload();

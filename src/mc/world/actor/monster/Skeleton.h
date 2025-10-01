@@ -42,14 +42,14 @@ public:
     // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 154
+    // vIndex: 155
     virtual bool doHurtTarget(::Actor*, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
 
     // vIndex: 105
     virtual bool canBeAffected(uint id) const /*override*/;
 
     // vIndex: 51
-    virtual void setTarget(::Actor* entity) /*override*/;
+    virtual void setTarget(::Actor* target) /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
@@ -93,7 +93,7 @@ public:
 
     MCAPI bool $canBeAffected(uint id) const;
 
-    MCFOLD void $setTarget(::Actor* entity);
+    MCFOLD void $setTarget(::Actor* target);
 
     MCAPI void $normalTick();
 

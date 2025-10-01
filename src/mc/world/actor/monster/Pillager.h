@@ -23,13 +23,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 177
+    // vIndex: 178
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
     // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 171
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
     // vIndex: 8

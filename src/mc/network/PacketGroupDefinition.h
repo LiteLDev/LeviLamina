@@ -50,22 +50,14 @@ public:
         // prevent constructor by default
         PacketGroupBuilder& operator=(PacketGroupBuilder const&);
         PacketGroupBuilder(PacketGroupBuilder const&);
+        PacketGroupBuilder();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI PacketGroupBuilder();
-
         MCAPI PacketGroupBuilder(::PacketGroupDefinition::PacketGroupBuilder&&);
 
-        MCAPI void addPacketAlgorithm(
-            ::std::vector<::MinecraftPacketIds> const& packetIds,
-            ::std::unique_ptr<::IPacketLimitAlgorithm> algorithm
-        );
-
         MCAPI ::std::unique_ptr<::PacketGroupDefinition> createGroupDefinition() const;
-
-        MCAPI void setDefaultAlgorithm(::std::unique_ptr<::IPacketLimitAlgorithm> algorithm);
 
         MCAPI ~PacketGroupBuilder();
         // NOLINTEND
@@ -73,8 +65,6 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
-
         MCAPI void* $ctor(::PacketGroupDefinition::PacketGroupBuilder&&);
         // NOLINTEND
 

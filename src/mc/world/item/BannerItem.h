@@ -40,12 +40,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 120
+    // vIndex: 122
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
@@ -66,7 +66,7 @@ public:
     // vIndex: 45
     virtual bool isWearableThroughLootTable(::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 97
+    // vIndex: 99
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
     // vIndex: 0
@@ -88,8 +88,6 @@ public:
 
     MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
-
-    MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,

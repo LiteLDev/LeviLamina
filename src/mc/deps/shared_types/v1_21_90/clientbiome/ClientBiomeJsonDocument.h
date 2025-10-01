@@ -34,6 +34,7 @@ public:
 
         public:
             // prevent constructor by default
+            ClientBiomeDescription& operator=(ClientBiomeDescription const&);
             ClientBiomeDescription(ClientBiomeDescription const&);
             ClientBiomeDescription();
 
@@ -43,11 +44,6 @@ public:
             MCNAPI ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&
             operator=(
                 ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&&
-            );
-
-            MCNAPI ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription&
-            operator=(
-                ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject::ClientBiomeDescription const&
             );
 
             MCNAPI ~ClientBiomeDescription();
@@ -75,6 +71,7 @@ public:
 
     public:
         // prevent constructor by default
+        ClientBiomeJsonObject& operator=(ClientBiomeJsonObject const&);
         ClientBiomeJsonObject(ClientBiomeJsonObject const&);
         ClientBiomeJsonObject();
 
@@ -83,9 +80,6 @@ public:
         // NOLINTBEGIN
         MCNAPI ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject&
         operator=(::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject&&);
-
-        MCNAPI ::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject&
-        operator=(::SharedTypes::v1_21_90::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
 
         MCNAPI ~ClientBiomeJsonObject();
         // NOLINTEND

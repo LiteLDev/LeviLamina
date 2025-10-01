@@ -28,26 +28,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void fromMap(::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound> const& proxyMap);
+    MCAPI void fromMap(::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound> const& proxyMap);
 
-    MCNAPI ::BlockDescriptorSerializer::StatesProxy& operator=(::BlockDescriptorSerializer::StatesProxy&&);
+    MCAPI ::BlockDescriptorSerializer::StatesProxy& operator=(::BlockDescriptorSerializer::StatesProxy&&);
 
-    MCNAPI ~StatesProxy();
+    MCAPI ~StatesProxy();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound>
+    MCAPI static ::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound>
     toMap(::BlockDescriptorSerializer::StatesProxy const& instance);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

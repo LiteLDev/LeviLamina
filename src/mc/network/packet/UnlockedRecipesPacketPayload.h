@@ -21,16 +21,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    UnlockedRecipesPacketPayload& operator=(UnlockedRecipesPacketPayload const&);
-    UnlockedRecipesPacketPayload(UnlockedRecipesPacketPayload const&);
-    UnlockedRecipesPacketPayload();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::UnlockedRecipesPacketPayload& operator=(::UnlockedRecipesPacketPayload&&);
-
     MCAPI ~UnlockedRecipesPacketPayload();
     // NOLINTEND
 

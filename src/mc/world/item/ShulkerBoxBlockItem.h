@@ -25,7 +25,7 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 88
+    // vIndex: 90
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const /*override*/;
 
     // vIndex: 33

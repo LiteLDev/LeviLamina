@@ -14,7 +14,7 @@ struct BiomeIdType;
 namespace NetherStructureFeatureHelper {
 // functions
 // NOLINTBEGIN
-MCNAPI ::HashedString getStructureFeatureTypeForChunk(
+MCAPI ::HashedString getStructureFeatureTypeForChunk(
     ::BiomeSource const&                biomeSource,
     ::Random&                           random,
     ::ChunkPos const&                   chunkPos,

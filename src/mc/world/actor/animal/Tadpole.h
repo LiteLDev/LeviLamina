@@ -8,10 +8,17 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
 class Tadpole : public ::WaterAnimal {
+public:
+    // prevent constructor by default
+    Tadpole();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -21,6 +28,26 @@ public:
 
     // vIndex: 8
     virtual ~Tadpole() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Tadpole(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityId
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityId
+    );
     // NOLINTEND
 
 public:

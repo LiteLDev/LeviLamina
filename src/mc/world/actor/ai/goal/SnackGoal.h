@@ -38,6 +38,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 0
+    virtual ~SnackGoal() /*override*/;
+
     // vIndex: 1
     virtual bool canUse() /*override*/;
 
@@ -58,9 +61,6 @@ public:
 
     // vIndex: 10
     virtual int getRandomEatingEnd() const;
-
-    // vIndex: 0
-    virtual ~SnackGoal() /*override*/;
     // NOLINTEND
 
 public:

@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockType;
 class CompoundTag;
 class Item;
 // clang-format on
@@ -22,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual void reinit(::BlockType const& block, int count) /*override*/;
+    virtual void reinit(::Block const& block, int count) /*override*/;
 
     // vIndex: 3
     virtual void reinit(::Item const& item, int count, int auxValue) /*override*/;
@@ -41,9 +40,7 @@ public:
 
     MCAPI explicit ItemInstance(::ItemStackBase const& rhs);
 
-    MCAPI ItemInstance(::ItemInstance const& rhs);
-
-    MCAPI ItemInstance(::BlockType const& block, int count);
+    MCAPI ItemInstance(::ItemInstance const&);
 
     MCAPI ItemInstance(::Block const& block, int count, ::CompoundTag const* _userData);
 
@@ -71,9 +68,7 @@ public:
 
     MCFOLD void* $ctor(::ItemStackBase const& rhs);
 
-    MCAPI void* $ctor(::ItemInstance const& rhs);
-
-    MCAPI void* $ctor(::BlockType const& block, int count);
+    MCAPI void* $ctor(::ItemInstance const&);
 
     MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
 
@@ -91,7 +86,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reinit(::BlockType const& block, int count);
+    MCAPI void $reinit(::Block const& block, int count);
 
     MCAPI void $reinit(::Item const& item, int count, int auxValue);
 

@@ -8,12 +8,12 @@
 
 // auto generated forward declare list
 // clang-format off
-class WaterMovementComponent;
 struct ActorDataFlagComponent;
 struct OnGroundFlagComponent;
 struct StateVectorComponent;
 struct SwimSpeedMultiplierComponent;
 struct TickingSystemWithInfo;
+struct WaterMovementComponent;
 struct WaterTravelFlagComponent;
 struct WaterWalkSpeedEnchantComponent;
 // clang-format on

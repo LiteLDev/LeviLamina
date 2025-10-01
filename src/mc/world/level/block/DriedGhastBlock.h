@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 132
-    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
+    virtual void onRemove(::BlockSource& region, ::BlockPos const& position) const /*override*/;
 
     // vIndex: 124
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
@@ -47,7 +47,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& position) const;
 
     MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/options/PlayFabEnvironment.h"
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/client/social/UserPlatformConnectionResult.h"
 #include "mc/common/GameUserType.h"
@@ -153,93 +152,90 @@ public:
     virtual void removeClient(::std::shared_ptr<::IClientInstance> const&) = 0;
 
     // vIndex: 36
-    virtual void setUserClient(int, ::std::shared_ptr<::IClientInstance> const&) = 0;
+    virtual ::std::shared_ptr<::Social::User> setUserClient(int, ::std::shared_ptr<::IClientInstance> const&) = 0;
 
     // vIndex: 37
     virtual bool userHasClient(int) = 0;
 
     // vIndex: 38
-    virtual ::Social::PlayFabEnvironment getEnvironment() const = 0;
-
-    // vIndex: 39
     virtual ::std::string_view getPlayFabTitleId() const = 0;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> retrieveCIDToClientMap() = 0;
 
-    // vIndex: 41
+    // vIndex: 40
     virtual int getClientCID(::IClientInstance const&) const = 0;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual void registerSignOutListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) = 0;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void registerSignInListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) = 0;
 
-    // vIndex: 44
+    // vIndex: 43
     virtual ::Bedrock::PubSub::Subscription
         registerIdentitySignInCallback(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>) = 0;
 
-    // vIndex: 45
+    // vIndex: 44
     virtual ::Bedrock::PubSub::Subscription registerIdentitySignOutCallback(
         ::Social::IdentityType,
         ::std::function<void(uint, ::Social::IdentityType)>
     ) = 0;
 
-    // vIndex: 46
+    // vIndex: 45
     virtual ::Bedrock::PubSub::Subscription registerProfileImageChangedCallback(
         ::std::function<void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)>
     ) = 0;
 
-    // vIndex: 47
+    // vIndex: 46
     virtual bool needGamepadDisconnectScreen(int) = 0;
 
-    // vIndex: 48
+    // vIndex: 47
     virtual void tick(::IMinecraftGame&) = 0;
 
-    // vIndex: 49
+    // vIndex: 48
     virtual void updateMapping(bool, bool) = 0;
 
-    // vIndex: 51
+    // vIndex: 50
     virtual ::std::shared_ptr<::Social::User> getUser(::IClientInstance const&) const = 0;
 
-    // vIndex: 50
+    // vIndex: 49
     virtual ::std::shared_ptr<::Social::User> getUser(::Social::XboxLiveUser const&) = 0;
 
-    // vIndex: 52
+    // vIndex: 51
     virtual ::std::shared_ptr<::Social::User> getUserFromControllerId(int) const = 0;
 
-    // vIndex: 54
+    // vIndex: 53
     virtual ::std::shared_ptr<::Social::User> getUserFromUserId(uint) = 0;
 
-    // vIndex: 53
+    // vIndex: 52
     virtual ::std::shared_ptr<::Social::User const> const getUserFromUserId(uint) const = 0;
 
-    // vIndex: 55
+    // vIndex: 54
     virtual ::GameUserType getUserTypeFromUserId(uint) const = 0;
 
-    // vIndex: 56
+    // vIndex: 55
     virtual bool isChatAllowedWhenBlockedByPlatform() const = 0;
 
-    // vIndex: 57
+    // vIndex: 56
     virtual ::std::vector<::std::shared_ptr<::Social::User>> const& getUsers() const = 0;
 
-    // vIndex: 58
+    // vIndex: 57
     virtual bool isUserSignedIn(uint) = 0;
 
-    // vIndex: 59
+    // vIndex: 58
     virtual bool isPrimaryUserInitialSignInInProgress() const = 0;
 
-    // vIndex: 60
+    // vIndex: 59
     virtual void registerLevelLocationObserver(::ILevelListCache&) = 0;
 
-    // vIndex: 61
+    // vIndex: 60
     virtual ::Social::MultiplayerServiceObserver& getMultiplayerServiceObserver() = 0;
 
-    // vIndex: 62
+    // vIndex: 61
     virtual ::Social::MultiplayerServiceIdentifier getPlatformMultiplayerServiceIdentifier() const = 0;
 
-    // vIndex: 63
+    // vIndex: 62
     virtual bool willSyncUserDataStorage() const = 0;
     // NOLINTEND
 

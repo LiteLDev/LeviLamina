@@ -28,8 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BiomeConditionalTransformationData(::BiomeConditionalTransformationData&&);
-
     MCNAPI ~BiomeConditionalTransformationData();
     // NOLINTEND
 
@@ -37,12 +35,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::Result<::BiomeConditionalTransformationData> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::BiomeConditionalTransformationData&&);
     // NOLINTEND
 
 public:

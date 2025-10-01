@@ -24,27 +24,30 @@ public:
     virtual void onFlushSystemAfterEvents(::ScriptDeferredFlushTracker&);
 
     // vIndex: 4
-    virtual void onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker&);
+    virtual void onFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker&);
 
     // vIndex: 5
-    virtual void onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
+    virtual void onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker&);
 
     // vIndex: 6
-    virtual void onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker&);
+    virtual void onFlushBlockCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
 
     // vIndex: 7
-    virtual void onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
+    virtual void onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker&);
 
     // vIndex: 8
-    virtual void onPreFlushAfterEvents();
+    virtual void onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker&);
 
     // vIndex: 9
-    virtual void onPostFlushAfterEvents();
+    virtual void onPreFlushAfterEvents();
 
     // vIndex: 10
-    virtual void onScriptTickStart();
+    virtual void onPostFlushAfterEvents();
 
     // vIndex: 11
+    virtual void onScriptTickStart();
+
+    // vIndex: 12
     virtual void onScriptTickEnd();
     // NOLINTEND
 
@@ -56,6 +59,8 @@ public:
     MCFOLD void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker&);
 
     MCFOLD void $onFlushSystemAfterEvents(::ScriptDeferredFlushTracker&);
+
+    MCFOLD void $onFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker&);
 
     MCFOLD void $onFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker&);
 

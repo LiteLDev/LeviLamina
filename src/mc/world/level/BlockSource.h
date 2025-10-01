@@ -17,7 +17,6 @@
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/Tick.h"
 #include "mc/world/level/TickingQueueType.h"
-#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 #include "mc/world/level/material/MaterialType.h"
 
@@ -102,7 +101,7 @@ public:
     // vIndex: 0
     virtual ~BlockSource() /*override*/;
 
-    // vIndex: 27
+    // vIndex: 26
     virtual ::WeakRef<::BlockSource> getWeakRef() /*override*/;
 
     // vIndex: 41
@@ -117,16 +116,16 @@ public:
     // vIndex: 37
     virtual ::Dimension const& getDimensionConst() const /*override*/;
 
-    // vIndex: 18
+    // vIndex: 17
     virtual ::DimensionType getDimensionId() const /*override*/;
 
     // vIndex: 57
     virtual bool isInstaticking(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 28
+    // vIndex: 27
     virtual void addListener(::BlockSourceListener& l) /*override*/;
 
-    // vIndex: 29
+    // vIndex: 28
     virtual void removeListener(::BlockSourceListener& l) /*override*/;
 
     // vIndex: 40
@@ -156,10 +155,10 @@ public:
     // vIndex: 46
     virtual short getHeight(::std::function<bool(::Block const&)> const& type, int x, int z) const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 12
     virtual ::Material const& getMaterial(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 12
+    // vIndex: 11
     virtual ::Material const& getMaterial(int x, int y, int z) const /*override*/;
 
     // vIndex: 34
@@ -168,17 +167,11 @@ public:
     // vIndex: 33
     virtual short getMinHeight() const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 13
     virtual bool hasBorderBlock(::BlockPos const pos) const /*override*/;
 
-    // vIndex: 23
+    // vIndex: 22
     virtual float getBrightness(::BlockPos const& pos) const /*override*/;
-
-    // vIndex: 6
-    virtual ::Block const& getLiquidBlock(::BlockPos const& p) const /*override*/;
-
-    // vIndex: 5
-    virtual ::Block const& getExtraBlock(::BlockPos const& p) const /*override*/;
 
     // vIndex: 54
     virtual bool mayPlace(
@@ -190,53 +183,47 @@ public:
         ::Vec3            clickPos
     ) /*override*/;
 
-    // vIndex: 7
-    virtual bool hasBlock(::BlockPos const& pos) const /*override*/;
-
     // vIndex: 55
     virtual bool canDoBlockDrops() const /*override*/;
 
     // vIndex: 56
     virtual bool canDoContainedItemDrops() const /*override*/;
 
-    // vIndex: 17
+    // vIndex: 16
     virtual bool hasChunksAt(::Bounds const& bounds, bool ignoreClientChunk) const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 15
     virtual bool hasChunksAt(::BlockPos const& pos, int r, bool ignoreClientChunk) const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 14
     virtual bool hasChunksAt(::AABB const& bb, bool ignoreClientChunk) const /*override*/;
 
     // vIndex: 53
     virtual bool areChunksFullyLoaded(::BlockPos const& pos, int r) const /*override*/;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual bool containsAnyLiquid(::AABB const& box) const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual bool containsMaterial(::AABB const& box, ::MaterialType material) const /*override*/;
-
-    // vIndex: 4
-    virtual ::BlockActor const* getBlockEntity(::BlockPos const& pos) const /*override*/;
-
-    // vIndex: 31
-    virtual ::gsl::span<::gsl::not_null<::Actor*>>
-    fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities) /*override*/;
 
     // vIndex: 30
     virtual ::gsl::span<::gsl::not_null<::Actor*>>
+    fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities) /*override*/;
+
+    // vIndex: 29
+    virtual ::gsl::span<::gsl::not_null<::Actor*>>
     fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 18
     virtual void
     fetchAABBs(::std::vector<::AABB>& shapes, ::AABB const& intersectTestBox, bool withUnloadedChunks) const
         /*override*/;
 
-    // vIndex: 25
+    // vIndex: 24
     virtual ::std::vector<::AABB>& fetchAABBs(::AABB const& intersectTestBox, bool withUnloadedChunks) /*override*/;
 
-    // vIndex: 26
+    // vIndex: 25
     virtual ::std::vector<::AABB>& fetchCollisionShapes(
         ::AABB const&                          intersectTestBox,
         bool                                   withUnloadedChunks,
@@ -244,7 +231,7 @@ public:
         ::std::vector<::AABB>*                 tempShapes
     ) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual void fetchCollisionShapes(
         ::std::vector<::AABB>&                             shapes,
         ::AABB const&                                      intersectTestBox,
@@ -253,7 +240,7 @@ public:
         ::std::vector<::AABB>*                             tempShapes
     ) const /*override*/;
 
-    // vIndex: 21
+    // vIndex: 20
     virtual void fetchCollisionShapesAndBlocks(
         ::std::vector<::BlockSourceVisitor::CollisionShape>& shapes,
         ::AABB const&                                        intersectTestBox,
@@ -262,7 +249,7 @@ public:
         ::std::vector<::AABB>*                               tempShapes
     ) const /*override*/;
 
-    // vIndex: 22
+    // vIndex: 21
     virtual ::AABB getTallestCollisionShape(
         ::AABB const&                                      intersectTestBox,
         float*                                             actualSurfaceOffset,
@@ -287,14 +274,11 @@ public:
     // vIndex: 48
     virtual ::HitResult clip(::ClipParameters const& parameters) const /*override*/;
 
-    // vIndex: 10
+    // vIndex: 9
     virtual bool isInWall(::Vec3 const& pos) const /*override*/;
 
-    // vIndex: 11
+    // vIndex: 10
     virtual bool isUnderWater(::Vec3 const& pos, ::Block const& block) const /*override*/;
-
-    // vIndex: 3
-    virtual ::Block const& getBlock(int x, int y, int z) const /*override*/;
 
     // vIndex: 2
     virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
@@ -302,7 +286,19 @@ public:
     // vIndex: 1
     virtual ::Block const& getBlock(::BlockPos const& pos, uint layer) const /*override*/;
 
-    // vIndex: 32
+    // vIndex: 3
+    virtual ::BlockActor const* getBlockEntity(::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 4
+    virtual ::Block const& getExtraBlock(::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 5
+    virtual ::Block const& getLiquidBlock(::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 6
+    virtual bool hasBlock(::BlockPos const& pos) const /*override*/;
+
+    // vIndex: 31
     virtual bool setBlock(
         ::BlockPos const&              pos,
         ::Block const&                 block,
@@ -311,14 +307,14 @@ public:
         ::Actor*                       blockChangeSource
     ) /*override*/;
 
+    // vIndex: 32
+    virtual bool removeBlock(::BlockPos const& pos) /*override*/;
+
     // vIndex: 51
     virtual bool isSolidBlockingBlock(int x, int y, int z) const /*override*/;
 
     // vIndex: 52
     virtual bool isSolidBlockingBlock(::BlockPos const& p) const /*override*/;
-
-    // vIndex: 60
-    virtual bool removeBlock(::BlockPos const& pos) /*override*/;
 
     // vIndex: 42
     virtual ::ILevel& getILevel() const /*override*/;
@@ -338,10 +334,10 @@ public:
         bool                   generateParticle
     ) /*override*/;
 
-    // vIndex: 24
+    // vIndex: 23
     virtual float getVisualLiquidHeight(::Vec3 const& pos) const /*override*/;
 
-    // vIndex: 61
+    // vIndex: 60
     virtual void postGameEvent(
         ::Actor*           source,
         ::GameEvent const& gameEvent,
@@ -383,6 +379,8 @@ public:
         ::ActorBlockSyncMessage const* syncMsg,
         ::Actor*                       blockChangeSource
     );
+
+    MCAPI void _checkValidity(bool forceCheckForValidity) const;
 
     MCAPI void _fetchBorderBlockCollisions(
         ::std::vector<::AABB>&                             shapes,
@@ -440,8 +438,6 @@ public:
     MCAPI bool areChunksFullyLoaded(::BlockPos const& min, ::BlockPos const& max) const;
 
     MCAPI void blockEvent(::BlockPos const& pos, int b0, int b1);
-
-    MCAPI bool canProvideSupport(::BlockPos const& pos, uchar face, ::BlockSupportType type) const;
 
     MCAPI bool canSeeSky(::BlockPos const& pos) const;
 
@@ -529,9 +525,9 @@ public:
 
     MCAPI ::BlockActor* getBlockEntity(::BlockPos const&);
 
-    MCAPI ::BrightnessPair getBrightnessPair(::BlockPos const& pos) const;
-
     MCAPI float getSeenPercent(::Vec3 const& center, ::AABB const& bb);
+
+    MCAPI int getSkylightBrightness(::BlockPos const& pos) const;
 
     MCAPI void getTallestCollisionShapeFromUnloadedChunksAABBs(
         ::AABB const& intersectTestBox,
@@ -556,13 +552,9 @@ public:
 
     MCAPI bool hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const;
 
-    MCAPI bool isEmptyBlock(int x, int y, int z);
-
     MCAPI bool isNearUnloadedChunks(::ChunkPos const& pos) const;
 
     MCAPI bool isTouchingMaterial(::BlockPos const& pos, ::MaterialType type) const;
-
-    MCAPI bool isUnobstructedByEntities(::AABB const& aabb, ::Actor const* ignoreEntity);
 
     MCAPI bool isWithinHeightLimits(int y) const;
 
@@ -571,7 +563,7 @@ public:
     MCAPI void
     postGameEvent(::Actor* source, ::GameEvent const& gameEvent, ::Vec3 const& originPos, ::Block const* affectedBlock);
 
-    MCAPI bool removeBlock(int x, int y, int z);
+    MCAPI ::std::shared_ptr<::BlockActor> removeBlockEntity(::BlockPos const& blockPos);
 
     MCAPI bool setBlock(
         ::BlockPos const&               pos,
@@ -582,13 +574,11 @@ public:
         ::Actor*                        blockChangeSource
     );
 
-    MCAPI bool setBlock(int x, int y, int z, ::Block const& block, int updateFlags, ::Actor* blockChangeSource);
-
     MCAPI bool setBlockAndRetainCompatibleBlockActor(::BlockPos const& pos, ::Block const& block, int updateFlags);
 
     MCAPI void setBorderBlock(::BlockPos const& pos, bool val);
 
-    MCAPI bool setExtraBlock(::BlockPos const& p, ::Block const& block, int updateFlags);
+    MCAPI bool setExtraBlock(::BlockPos const& pos, ::Block const& block, int updateFlags);
 
     MCAPI bool setExtraBlockSimple(::BlockPos const& pos, ::Block const& block);
 
@@ -601,6 +591,8 @@ public:
     MCAPI static bool containsAnyLiquid(::IConstBlockSource const& region, ::AABB const& box);
 
     MCAPI static bool containsMaterial(::IConstBlockSource const& region, ::AABB const& box, ::MaterialType material);
+
+    MCFOLD static ::Block const& getEmptyBlock();
     // NOLINTEND
 
 public:
@@ -674,10 +666,6 @@ public:
 
     MCAPI float $getBrightness(::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $getLiquidBlock(::BlockPos const& p) const;
-
-    MCAPI ::Block const& $getExtraBlock(::BlockPos const& p) const;
-
     MCAPI bool $mayPlace(
         ::Block const&    block,
         ::BlockPos const& pos,
@@ -686,8 +674,6 @@ public:
         bool              ignoreEntities,
         ::Vec3            clickPos
     );
-
-    MCAPI bool $hasBlock(::BlockPos const& pos) const;
 
     MCAPI bool $canDoBlockDrops() const;
 
@@ -704,8 +690,6 @@ public:
     MCAPI bool $containsAnyLiquid(::AABB const& box) const;
 
     MCAPI bool $containsMaterial(::AABB const& box, ::MaterialType material) const;
-
-    MCFOLD ::BlockActor const* $getBlockEntity(::BlockPos const& pos) const;
 
     MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
     $fetchEntities(::Actor const* except, ::AABB const& bb, bool useHitbox, bool getDisplayEntities);
@@ -764,11 +748,17 @@ public:
 
     MCAPI bool $isUnderWater(::Vec3 const& pos, ::Block const& block) const;
 
-    MCAPI ::Block const& $getBlock(int x, int y, int z) const;
-
     MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
 
     MCAPI ::Block const& $getBlock(::BlockPos const& pos, uint layer) const;
+
+    MCFOLD ::BlockActor const* $getBlockEntity(::BlockPos const& pos) const;
+
+    MCAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
+
+    MCAPI ::Block const& $getLiquidBlock(::BlockPos const& pos) const;
+
+    MCAPI bool $hasBlock(::BlockPos const& pos) const;
 
     MCAPI bool $setBlock(
         ::BlockPos const&              pos,
@@ -778,11 +768,11 @@ public:
         ::Actor*                       blockChangeSource
     );
 
+    MCAPI bool $removeBlock(::BlockPos const& pos);
+
     MCAPI bool $isSolidBlockingBlock(int x, int y, int z) const;
 
     MCAPI bool $isSolidBlockingBlock(::BlockPos const& p) const;
-
-    MCAPI bool $removeBlock(::BlockPos const& pos);
 
     MCFOLD ::ILevel& $getILevel() const;
 

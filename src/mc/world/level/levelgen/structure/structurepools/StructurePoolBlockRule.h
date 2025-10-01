@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool processRule(
+    MCAPI bool processRule(
         ::Block const&    sourceBlock,
         ::Block const&    targetBlock,
         ::Random&         random,

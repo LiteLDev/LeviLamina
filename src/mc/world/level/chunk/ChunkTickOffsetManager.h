@@ -16,6 +16,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void initialize(uint serverTickRange);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::vector<::ChunkPos> getSortedPositionsFromClientOffsets(

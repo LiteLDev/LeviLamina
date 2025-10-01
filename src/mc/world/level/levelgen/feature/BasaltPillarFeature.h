@@ -27,10 +27,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     _blendAtGroundLevel(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::Block const& basalt) const;
 
-    MCNAPI bool _growColumn(
+    MCAPI bool _growColumn(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         ::Random&         random,
@@ -42,7 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

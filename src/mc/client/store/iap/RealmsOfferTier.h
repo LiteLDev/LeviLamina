@@ -5,5 +5,5 @@
 enum class RealmsOfferTier : int {
     Offer2Player  = 0,
     Offer10Player = 1,
-    Offer16Player = 2,
+    NotSpecified  = 2,
 };

@@ -19,5 +19,7 @@ enum class ToastMessageType : int {
     RecipeUnlocked              = 13,
     Snackbar                    = 14,
     ProgressPopup               = 15,
-    ReturnToGame                = 16,
+    PartyInvite                 = 16,
+    PartyTravel                 = 17,
+    ReturnToGame                = 18,
 };

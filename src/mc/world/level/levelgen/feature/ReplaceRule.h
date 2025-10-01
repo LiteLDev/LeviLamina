@@ -20,20 +20,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ReplaceRule(::BlockDescriptor block, ::std::vector<::BlockDescriptor> mayReplace);
+    MCAPI ReplaceRule(::BlockDescriptor block, ::std::vector<::BlockDescriptor> mayReplace);
 
-    MCNAPI ~ReplaceRule();
+    MCAPI ~ReplaceRule();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockDescriptor block, ::std::vector<::BlockDescriptor> mayReplace);
+    MCAPI void* $ctor(::BlockDescriptor block, ::std::vector<::BlockDescriptor> mayReplace);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

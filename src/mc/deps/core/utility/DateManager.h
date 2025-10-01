@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/platform/Result.h"
 
 class DateManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
@@ -47,6 +48,10 @@ public:
     _parseTimeZone(char const* str, uint64 len, ::DateManager::TimeZoneType* type, int* hours, int* minutes);
 
     MCNAPI static ::std::string getCurrentTimestampFileName();
+
+    MCNAPI static int64 getRealTime();
+
+    MCNAPI static ::Bedrock::Result<int64> parseImfFixdate(::std::string const& dateHeader);
 
     MCNAPI static bool toDateTime(
         ::std::string const&         strTime,

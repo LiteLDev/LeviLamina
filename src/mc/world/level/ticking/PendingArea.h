@@ -36,24 +36,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::TickingAreaDescription getDescription() const;
+    MCAPI ::TickingAreaDescription getDescription() const;
 
-    MCNAPI ::CompoundTag serialize(::DimensionType dimensionId) const;
+    MCAPI ::CompoundTag serialize(::DimensionType dimensionId) const;
 
-    MCNAPI ~PendingArea();
+    MCAPI ~PendingArea();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::PendingArea load(::std::string const& key, ::CompoundTag const& tag);
-
-    MCNAPI static bool validTag(::CompoundTag const& tag);
+    MCAPI static ::PendingArea load(::std::string const& key, ::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

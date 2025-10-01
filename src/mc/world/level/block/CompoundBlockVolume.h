@@ -37,28 +37,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _recalculateBounds();
+    MCAPI void _recalculateBounds();
 
-    MCNAPI ::CompoundBlockVolumeIterator begin() const;
+    MCAPI ::CompoundBlockVolumeIterator begin() const;
 
-    MCNAPI void forEachPosition(::std::function<bool(::BlockPos const&)> const& callback) const;
+    MCAPI void forEachPosition(::std::function<bool(::BlockPos const&)> const& callback) const;
 
-    MCNAPI ::std::vector<::CompoundBlockVolumeItem> getAbsoluteVolumeList() const;
+    MCAPI ::std::vector<::CompoundBlockVolumeItem> getAbsoluteVolumeList() const;
 
-    MCNAPI bool isInside(::BlockPos const& pos) const;
+    MCAPI bool isInside(::BlockPos const& pos) const;
 
-    MCNAPI ::CompoundBlockVolume& operator=(::CompoundBlockVolume const& other);
+    MCAPI ::CompoundBlockVolume& operator=(::CompoundBlockVolume const& other);
 
-    MCNAPI bool operator==(::CompoundBlockVolume const& other) const;
+    MCAPI bool operator==(::CompoundBlockVolume const& other) const;
 
-    MCNAPI ::std::optional<::CompoundBlockVolumeItem>
+    MCAPI ::std::optional<::CompoundBlockVolumeItem>
     peekLastVolume(::std::optional<::CompoundBlockVolumePositionRelativity> optRelativity) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

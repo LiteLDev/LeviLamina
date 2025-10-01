@@ -25,18 +25,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~LegacyBlendedNoise();
+    MCAPI ~LegacyBlendedNoise();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::LegacyBlendedNoise make(::IRandom& random);
+    MCAPI static ::LegacyBlendedNoise make(::IRandom& random);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

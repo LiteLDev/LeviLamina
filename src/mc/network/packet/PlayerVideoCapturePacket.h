@@ -55,7 +55,7 @@ public:
     // vIndex: 5
     virtual void write(::BinaryStream&) const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
 
     // vIndex: 0

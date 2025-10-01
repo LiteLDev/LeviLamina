@@ -25,8 +25,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::AABBHitResult clip(::Vec3 const& a, ::Vec3 const& b) const;
 
-    MCAPI ::AABB cloneAndExpandAlongDirection(::Vec3 const& direction) const;
-
     MCAPI ::AABB cloneAndFloor(float offsetMin, float offsetMax) const;
 
     MCAPI ::AABB cloneAndFloorMinAndCeilingMax() const;
@@ -50,9 +48,9 @@ public:
         ::Vec3&       intersectNorm
     ) const;
 
-    MCAPI bool intersects(::Vec3 const& segmentBegin, ::Vec3 const& segmentEnd) const;
+    MCAPI bool intersects(::AABB const& c) const;
 
-    MCAPI bool intersectsInner(::AABB const& c) const;
+    MCAPI bool intersects(::Vec3 const& segmentBegin, ::Vec3 const& segmentEnd) const;
     // NOLINTEND
 
 public:
@@ -60,8 +58,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::ClipCollideResult
     clipCollide(::AABB const& stationary, ::AABB const& moving, ::Vec3 const& velocity);
-
-    MCAPI static ::AABB fromPoints(::Vec3 const& A, ::Vec3 const& B);
     // NOLINTEND
 
 public:

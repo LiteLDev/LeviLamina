@@ -11,7 +11,6 @@
 struct HC_CALL;
 namespace Bedrock::Http { class Request; }
 namespace Bedrock::Http { class Response; }
-namespace Bedrock::Http::Internal { class IRequestBody; }
 namespace Bedrock::Http::Internal { class IResponseBody; }
 namespace Bedrock::Threading { class Mutex; }
 // clang-format on
@@ -64,9 +63,6 @@ public:
     MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response>
     _retry(::gsl::not_null<::HC_CALL*> callHandle, ::std::chrono::seconds delay);
 
-    MCNAPI ::std::shared_ptr<::Bedrock::Http::Internal::IRequestBody>
-    _tryGetRequestBody(::gsl::not_null<::HC_CALL*> call);
-
     MCNAPI ::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody>
     _tryGetResponseBody(::gsl::not_null<::HC_CALL*> call);
 
@@ -76,9 +72,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static long
-    _convertRequestBody(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Request const& request);
-
     MCNAPI static long
     _convertResponseBody(::gsl::not_null<::HC_CALL*> callHandle, ::Bedrock::Http::Response& response);
 

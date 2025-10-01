@@ -56,7 +56,7 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3>                                mCollisionPos;
     ::ll::TypedStorage<4, 4, int>                                    mEnchantPower;
     ::ll::TypedStorage<4, 4, int>                                    mEnchantImpaler;
-    ::ll::TypedStorage<8, 112, ::HitResult>                          mHitResult;
+    ::ll::TypedStorage<8, 136, ::HitResult>                          mHitResult;
     ::ll::TypedStorage<1, 1, uchar>                                  mHitFacing;
     ::ll::TypedStorage<1, 1, bool>                                   mReflect;
     ::ll::TypedStorage<4, 4, int>                                    mReflectImmunityTicks;
@@ -112,7 +112,7 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                   mCurrentDelay;
     ::ll::TypedStorage<1, 1, bool>                                   mWaitingForServer;
     ::ll::TypedStorage<1, 1, bool>                                   mWaitingForServerHitGround;
-    ::ll::TypedStorage<8, 112, ::HitResult>                          mCachedHitResult;
+    ::ll::TypedStorage<8, 136, ::HitResult>                          mCachedHitResult;
     ::ll::TypedStorage<1, 1, bool>                                   mDelayOneFrame;
     // NOLINTEND
 
@@ -142,10 +142,6 @@ public:
 
     MCAPI float computeCollisionMargin(::BaseGameVersion const& baseGameVersion);
 
-    MCAPI ::HitResult getCachedHitResult() const;
-
-    MCAPI ::HitResult getHitResult() const;
-
     MCAPI ::Vec3 getShooterAngle(::Actor& shooter) const;
 
     MCAPI float getUncertainty(::SharedTypes::Legacy::Difficulty diff) const;
@@ -160,7 +156,7 @@ public:
 
     MCAPI void lerpMotion(::Actor& owner, ::Vec3 const& delta);
 
-    MCAPI void onHit(::Actor& owner, ::HitResult const& res);
+    MCAPI void onHit(::Actor& owner, ::HitResult const& hitResult);
 
     MCAPI ::ProjectileComponent& operator=(::ProjectileComponent&&);
 

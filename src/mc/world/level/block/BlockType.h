@@ -23,9 +23,6 @@
 #include "mc/world/level/block/BlockProperty.h"
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/BlockSupportType.h"
-#include "mc/world/level/block/BurnOdds.h"
-#include "mc/world/level/block/FlameOdds.h"
-#include "mc/world/level/block/LavaFlammable.h"
 #include "mc/world/level/block/NoteBlockInstrument.h"
 #include "mc/world/level/block/TintMethod.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
@@ -76,6 +73,7 @@ struct UpdateEntityAfterFallOnInterface;
 namespace BlockEvents { class BlockEntityFallOnEvent; }
 namespace BlockTrait { class IGetPlacementBlockCallback; }
 namespace BlockTrait { class ITrait; }
+namespace VoxelShapes { class VoxelShapeRegistry; }
 namespace br::spawn { struct EntityType; }
 // clang-format on
 
@@ -110,15 +108,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::BlockType::NameInfo& operator=(::BlockType::NameInfo&&);
+        MCAPI ::BlockType::NameInfo& operator=(::BlockType::NameInfo&&);
 
-        MCNAPI ~NameInfo();
+        MCAPI ~NameInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -156,7 +154,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static bool _checkVersioningRequirements(::SemVersion const& removedSupportVersion);
+        MCAPI static bool _checkVersioningRequirements(::SemVersion const& removedSupportVersion);
         // NOLINTEND
 
     public:
@@ -205,7 +203,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void
+        MCAPI static void
         add(::BlockState const&                                              stateRef,
             ::std::vector<::BlockType::RemovedStateCollection::SplitBlock>&& splitBlocks,
             ::SemVersion const&                                              removedSupportVersion);
@@ -214,9 +212,9 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::std::optional<int> $getState(::BlockType const& blockType, int) const;
+        MCAPI ::std::optional<int> $getState(::BlockType const& blockType, int) const;
 
-        MCNAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
+        MCAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
         // NOLINTEND
 
     public:
@@ -260,7 +258,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI RearrangedStateCollection(
+        MCAPI RearrangedStateCollection(
             ::BlockState const&                                            stateRef,
             ::std::function<::std::optional<int>(::BlockType const&, int)> getter,
             ::std::function<::Block const*(::BlockType const&, int, int)>  setter
@@ -270,7 +268,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void
+        MCAPI static void
         add(::BlockType&                                                   blockType,
             ::BlockState const&                                            stateRef,
             ::std::function<::std::optional<int>(::BlockType const&, int)> getter,
@@ -281,7 +279,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(
+        MCAPI void* $ctor(
             ::BlockState const&                                            stateRef,
             ::std::function<::std::optional<int>(::BlockType const&, int)> getter,
             ::std::function<::Block const*(::BlockType const&, int, int)>  setter
@@ -291,9 +289,9 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::std::optional<int> $getState(::BlockType const& blockType, int blockData) const;
+        MCAPI ::std::optional<int> $getState(::BlockType const& blockType, int blockData) const;
 
-        MCNAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
+        MCAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
         // NOLINTEND
 
     public:
@@ -341,9 +339,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                           mCanPropagateBrightness;
     ::ll::TypedStorage<1, 1, ::Brightness>                   mLightBlock;
     ::ll::TypedStorage<1, 1, ::Brightness>                   mLightEmission;
-    ::ll::TypedStorage<4, 4, ::FlameOdds>                    mFlameOdds;
-    ::ll::TypedStorage<4, 4, ::BurnOdds>                     mBurnOdds;
-    ::ll::TypedStorage<1, 1, ::LavaFlammable>                mLavaFlammable;
     ::ll::TypedStorage<4, 16, ::mce::Color>                  mMapColor;
     ::ll::TypedStorage<4, 4, float>                          mFriction;
     ::ll::TypedStorage<4, 4, ::NoteBlockInstrument>          mNoteBlockInstrument;
@@ -375,6 +370,7 @@ public:
                                                                                       mAlteredStateCollections;
     ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockClientPredictionOverrides, 7>> mClientPredictionOverrides;
     ::ll::TypedStorage<8, 32, ::BlockEvents::BlockEventManager>                       mEventManager;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry>>   mShapeRegistry;
     // NOLINTEND
 
 public:
@@ -568,7 +564,7 @@ public:
     virtual bool isConsumerComponent() const;
 
     // vIndex: 46
-    virtual bool canBeOriginalSurface() const;
+    virtual bool canBeOriginalSurface(bool) const;
 
     // vIndex: 47
     virtual bool isSilentWhenJumpingOff() const;
@@ -911,6 +907,8 @@ public:
         ::RenderParams&                                                       params
     ) const;
 
+    MCAPI bool addAABB(::AABB const& shape, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes) const;
+
     MCAPI ::BlockType& addBlockProperties(::BlockProperty addedProperties);
 
     MCAPI ::BlockType& addComponent(::BlockComponentDescription const& blockComponentDescription);
@@ -980,8 +978,6 @@ public:
 
     MCAPI ::BlockType& setExperienceDrop(::IntRange dropRange);
 
-    MCAPI ::BlockType& setFlammable(::FlameOdds flameOdds, ::BurnOdds burnOdds, ::LavaFlammable lavaFlammable);
-
     MCAPI ::BlockType& setFriction(float f);
 
     MCAPI ::BlockType& setInstrument(::NoteBlockInstrument instrument);
@@ -1007,6 +1003,8 @@ public:
     MCAPI ::BlockType& setTintMethod(::TintMethod tintMethod);
 
     MCAPI ::BlockType& setTranslucency(float translucency);
+
+    MCAPI bool shouldRandomTick() const;
 
     MCAPI bool shouldTriggerOnStandOn(::Actor& entity, ::BlockPos const& pos) const;
 
@@ -1206,7 +1204,7 @@ public:
 
     MCFOLD bool $isConsumerComponent() const;
 
-    MCAPI bool $canBeOriginalSurface() const;
+    MCAPI bool $canBeOriginalSurface(bool) const;
 
     MCFOLD bool $isSilentWhenJumpingOff() const;
 

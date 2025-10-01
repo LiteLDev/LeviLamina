@@ -47,22 +47,22 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::JigsawStructurePostprocessAction>
+    MCAPI static ::std::unique_ptr<::JigsawStructurePostprocessAction>
     load(::CompoundTag const& tag, ::JigsawStructureElementRegistry const& elementReg);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::cereal::ReflectionCtx>& mCerealContext();
+    MCAPI static ::std::unique_ptr<::cereal::ReflectionCtx>& mCerealContext();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+    MCAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
 
-    MCNAPI void $serialize(::CompoundTag& tag);
+    MCAPI void $serialize(::CompoundTag& tag);
     // NOLINTEND
 
 public:

@@ -16,15 +16,14 @@ public:
 
 public:
     // prevent constructor by default
+    ClientCameraAimAssistPacketPayload& operator=(ClientCameraAimAssistPacketPayload const&);
     ClientCameraAimAssistPacketPayload(ClientCameraAimAssistPacketPayload const&);
     ClientCameraAimAssistPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ClientCameraAimAssistPacketPayload& operator=(::ClientCameraAimAssistPacketPayload&&);
-
-    MCAPI ::ClientCameraAimAssistPacketPayload& operator=(::ClientCameraAimAssistPacketPayload const&);
+    MCFOLD ::ClientCameraAimAssistPacketPayload& operator=(::ClientCameraAimAssistPacketPayload&&);
 
     MCAPI ~ClientCameraAimAssistPacketPayload();
     // NOLINTEND

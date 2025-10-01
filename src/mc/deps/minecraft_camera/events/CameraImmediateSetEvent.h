@@ -9,7 +9,7 @@ struct CameraImmediateSetEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>                                           mPresetIndex;
-    ::ll::TypedStorage<4, 32, ::std::optional<::CameraInstructionComponent>> mInstructionComponent;
+    ::ll::TypedStorage<4, 4, uint>                                                            mPresetIndex;
+    ::ll::TypedStorage<4, 32, ::std::optional<::MinecraftCamera::CameraInstructionComponent>> mInstructionComponent;
     // NOLINTEND
 };

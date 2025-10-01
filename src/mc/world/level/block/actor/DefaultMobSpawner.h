@@ -36,7 +36,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockPos const& $getPos();
+    MCAPI ::BlockPos const& $getPos();
     // NOLINTEND
 
 public:

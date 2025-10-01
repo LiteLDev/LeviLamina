@@ -15,6 +15,5 @@ enum class ResourceFileSystem : int {
     ScreenshotsDir = 9,
     StoreCache     = 10,
     MaterialsDir   = 11,
-    ShaderSDKDir   = 12,
-    Invalid        = 13,
+    Invalid        = 12,
 };

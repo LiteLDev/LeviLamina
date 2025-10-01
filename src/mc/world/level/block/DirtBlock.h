@@ -40,7 +40,7 @@ public:
         /*override*/;
 
     // vIndex: 46
-    virtual bool canBeOriginalSurface() const /*override*/;
+    virtual bool canBeOriginalSurface(bool) const /*override*/;
 
     // vIndex: 83
     virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
@@ -75,7 +75,7 @@ public:
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCFOLD bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface(bool) const;
 
     MCAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 

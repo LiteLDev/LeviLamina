@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class AttributeInstanceHandle;
 class BaseAttributeMap;
 class BinaryStream;
@@ -47,15 +46,13 @@ public:
     // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpdateAttributesPacket(::Actor const& entity, ::std::vector<::AttributeInstanceHandle> const& dirtyData);
-
     MCAPI UpdateAttributesPacket(
         ::ActorRuntimeID const&                         id,
         ::BaseAttributeMap const&                       map,
@@ -67,8 +64,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& entity, ::std::vector<::AttributeInstanceHandle> const& dirtyData);
-
     MCAPI void* $ctor(
         ::ActorRuntimeID const&                         id,
         ::BaseAttributeMap const&                       map,

@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/WidgetComponentType.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
+#include "mc/editor/WidgetComponentType.h"
 #include "mc/editor/script/ScriptWidgetComponent_WidgetInterface.h"
 
 // auto generated forward declare list

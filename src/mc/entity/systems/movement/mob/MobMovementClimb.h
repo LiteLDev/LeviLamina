@@ -24,12 +24,6 @@ struct TickingSystemWithInfo;
 namespace MobMovementClimb {
 // functions
 // NOLINTBEGIN
-MCNAPI void applyAutoClimbing(
-    ::StrictEntityContext const&                     entity,
-    ::StateVectorComponent&                          stateVector,
-    ::EntityModifier<::AutoClimbTravelFlagComponent> climbModifier
-);
-
 MCNAPI bool canAutoClimbNow(
     ::ActorDataFlagComponent const& synchedActorData,
     ::AABBShapeComponent const&     aabbShape,

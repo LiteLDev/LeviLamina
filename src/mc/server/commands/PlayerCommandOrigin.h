@@ -18,6 +18,7 @@ class CompoundTag;
 class Dimension;
 class Level;
 class NetworkIdentifier;
+class Player;
 class Vec2;
 class Vec3;
 struct CommandOriginIdentity;
@@ -102,6 +103,18 @@ public:
 
     // vIndex: 30
     virtual bool isValid() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI explicit PlayerCommandOrigin(::Player& origin);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::Player& origin);
     // NOLINTEND
 
 public:

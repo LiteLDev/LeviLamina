@@ -102,8 +102,6 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _waitRemoval();
-
     MCAPI void breakBlock();
 
     MCAPI void doNormalTick(::ITickDelegate& tickDelegate);

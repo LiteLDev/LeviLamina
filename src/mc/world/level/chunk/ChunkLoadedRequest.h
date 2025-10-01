@@ -64,8 +64,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool isValidTag(::CompoundTag const& tag);
-
     MCNAPI static ::DeserializedChunkLoadedRequest load(
         ::std::string const&                    key,
         ::CompoundTag const&                    tag,

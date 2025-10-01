@@ -38,12 +38,15 @@ public:
     virtual ~WebSocket() = default;
 
     // vIndex: 1
-    virtual void onMessage(::std::string_view);
+    virtual ::Bedrock::Threading::Async<::std::error_code> send(::std::string const& message) const;
 
     // vIndex: 2
-    virtual void onBinaryMessage(::gsl::span<uchar const>);
+    virtual void onMessage(::std::string_view);
 
     // vIndex: 3
+    virtual void onBinaryMessage(::gsl::span<uchar const>);
+
+    // vIndex: 4
     virtual void onClose(uint);
     // NOLINTEND
 
@@ -54,8 +57,6 @@ public:
 
     MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>
     connect(::std::string const& uri, ::Bedrock::Http::HeaderCollection const& headers);
-
-    MCNAPI ::Bedrock::Threading::Async<::std::error_code> send(::std::string const& message) const;
     // NOLINTEND
 
 public:
@@ -75,6 +76,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::Bedrock::Threading::Async<::std::error_code> $send(::std::string const& message) const;
+
     MCNAPI void $onMessage(::std::string_view);
 
     MCNAPI void $onBinaryMessage(::gsl::span<uchar const>);

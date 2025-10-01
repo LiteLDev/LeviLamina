@@ -36,8 +36,6 @@ public:
     // NOLINTBEGIN
     MCAPI InventoryTransaction(::InventoryTransaction const&);
 
-    MCAPI explicit InventoryTransaction(::std::vector<::InventoryAction> const& in);
-
     MCAPI void addAction(::InventoryAction const& action);
 
     MCAPI void addItemToContent(::ItemStack const& item, int count);
@@ -47,8 +45,6 @@ public:
     MCAPI void forceBalanceTransaction();
 
     MCAPI ::std::vector<::InventoryAction> const& getActions(::InventorySource const& source) const;
-
-    MCAPI void markValidActionsForSerialization(bool isClientSide) const;
 
     MCAPI ::InventoryTransactionError verifyFull(::Player& p, bool isSenderAuthority) const;
 
@@ -76,8 +72,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::InventoryTransaction const&);
-
-    MCAPI void* $ctor(::std::vector<::InventoryAction> const& in);
     // NOLINTEND
 
 public:

@@ -29,7 +29,7 @@ public:
     // vIndex: 20
     virtual bool isThrowable() const /*override*/;
 
-    // vIndex: 77
+    // vIndex: 79
     virtual ::Actor* createProjectileActor(
         ::BlockSource&     region,
         ::ItemStack const& stack,
@@ -37,7 +37,7 @@ public:
         ::Vec3 const&      direction
     ) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 

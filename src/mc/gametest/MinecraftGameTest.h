@@ -38,7 +38,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~MinecraftGameTest() /*override*/;
+    virtual ~MinecraftGameTest() /*override*/ = default;
 
     // vIndex: 24
     virtual void onLevelDestruction(::std::string const&) /*override*/;
@@ -52,8 +52,6 @@ public:
     MCNAPI void _runTestPreparation(::gametest::BaseGameTestFunction const& testFunction);
 
     MCNAPI void clearAllTests(::BlockSource& region);
-
-    MCNAPI void registerDefaultGameBatches(::Level& level);
 
     MCNAPI ::std::string
     runTest(::std::string const& testName, ::Dimension& dimension, ::gametest::TestParameters const& params);
@@ -76,12 +74,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Level& level);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

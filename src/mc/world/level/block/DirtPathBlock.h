@@ -44,7 +44,7 @@ public:
         /*override*/;
 
     // vIndex: 46
-    virtual bool canBeOriginalSurface() const /*override*/;
+    virtual bool canBeOriginalSurface(bool) const /*override*/;
 
     // vIndex: 138
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -92,7 +92,7 @@ public:
 
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface(bool) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 

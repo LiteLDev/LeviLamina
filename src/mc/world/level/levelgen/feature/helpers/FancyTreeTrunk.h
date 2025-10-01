@@ -82,22 +82,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int _checkLine(
+    MCAPI int _checkLine(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               startPos,
         ::BlockPos const&               endPos,
         ::TreeHelper::TreeParams const& treeParams
     ) const;
 
-    MCNAPI void _placeLimb(::IBlockWorldGenAPI& target, ::BlockPos const& startPos, ::BlockPos const& endPos) const;
+    MCAPI void _placeLimb(::IBlockWorldGenAPI& target, ::BlockPos const& startPos, ::BlockPos const& endPos) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getTreeHeight(::Random& random) const;
+    MCAPI int $getTreeHeight(::Random& random) const;
 
-    MCNAPI ::std::optional<::BlockPos> $placeTrunk(
+    MCAPI ::std::optional<::BlockPos> $placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::Random&                       random,

@@ -33,26 +33,8 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 32, ::std::string>                       mValue;
-        ::ll::TypedStorage<4, 8, ::std::optional<::Bedrock::LogLevel>> mLogLevel;
+        ::ll::TypedStorage<1, 3, ::std::optional<::Bedrock::LogLevel>> mLogLevel;
         ::ll::TypedStorage<4, 8, ::std::optional<::LogAreaID>>         mLogArea;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Context& operator=(Context const&);
-        Context(Context const&);
-        Context();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI Context(::Bedrock::CallStack::Context&&);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Bedrock::CallStack::Context&&);
         // NOLINTEND
     };
 
@@ -75,6 +57,9 @@ public:
         // NOLINTBEGIN
         MCAPI FrameWithContext(::Bedrock::CallStack::FrameWithContext&&);
 
+        MCAPI
+        FrameWithContext(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
+
         MCAPI ~FrameWithContext();
         // NOLINTEND
 
@@ -82,12 +67,15 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::Bedrock::CallStack::FrameWithContext&&);
+
+        MCAPI void*
+        $ctor(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

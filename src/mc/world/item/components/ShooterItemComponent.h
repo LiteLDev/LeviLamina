@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ComponentItem;
 class HashedString;
 class ItemStack;
 class Player;
@@ -43,24 +44,24 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ShooterAmmunitionEntry(::ShooterItemComponent::ShooterAmmunitionEntry const&);
+        MCAPI ShooterAmmunitionEntry(::ShooterItemComponent::ShooterAmmunitionEntry const&);
 
-        MCNAPI ::ShooterItemComponent::ShooterAmmunitionEntry&
+        MCFOLD ::ShooterItemComponent::ShooterAmmunitionEntry&
         operator=(::ShooterItemComponent::ShooterAmmunitionEntry const&);
 
-        MCNAPI ~ShooterAmmunitionEntry();
+        MCAPI ~ShooterAmmunitionEntry();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::ShooterItemComponent::ShooterAmmunitionEntry const&);
+        MCFOLD void* $ctor(::ShooterItemComponent::ShooterAmmunitionEntry const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -80,9 +81,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI float getData() const;
+        MCFOLD float getData() const;
 
-        MCNAPI void setValue(float duration);
+        MCAPI void setValue(float duration);
         // NOLINTEND
     };
 
@@ -108,7 +109,7 @@ public:
     virtual ~ShooterItemComponent() /*override*/ = default;
 
     // vIndex: 7
-    virtual void _initializeComponent() /*override*/;
+    virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
     // vIndex: 1
     virtual bool checkComponentDataForContentErrors() const /*override*/;
@@ -157,7 +158,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent(::ComponentItem& owner);
 
     MCAPI bool $checkComponentDataForContentErrors() const;
     // NOLINTEND

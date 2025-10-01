@@ -6,7 +6,6 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/resources/JsonBetaState.h"
@@ -46,6 +45,7 @@ struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
 namespace Core { class Path; }
 namespace Json { class Value; }
+namespace PuvLoadData { struct LoadResultWithTiming; }
 namespace cereal { struct ReflectionCtx; }
 namespace mce { class Color; }
 // clang-format on
@@ -83,7 +83,7 @@ public:
     virtual ~ComponentItem() /*override*/;
 
     // vIndex: 1
-    virtual bool
+    virtual ::PuvLoadData::LoadResultWithTiming
     initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const) /*override*/;
 
     // vIndex: 2
@@ -210,6 +210,12 @@ public:
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 77
+    virtual bool canUseAsAttack() const /*override*/;
+
+    // vIndex: 78
+    virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player& player) const /*override*/;
+
+    // vIndex: 79
     virtual ::Actor* createProjectileActor(
         ::BlockSource&     region,
         ::ItemStack const& stack,
@@ -217,84 +223,84 @@ public:
         ::Vec3 const&      direction
     ) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
-    // vIndex: 79
+    // vIndex: 81
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
 
-    // vIndex: 80
+    // vIndex: 82
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
-    // vIndex: 81
+    // vIndex: 83
     virtual float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const /*override*/;
 
-    // vIndex: 82
+    // vIndex: 84
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 83
+    // vIndex: 85
     virtual void hitActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 86
     virtual void hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const
         /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
-    // vIndex: 88
+    // vIndex: 90
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const /*override*/;
 
-    // vIndex: 91
+    // vIndex: 93
     virtual uchar getMaxStackSize(::ItemDescriptor const&) const /*override*/;
 
-    // vIndex: 94
-    virtual ::HashedString const& getCooldownType() const /*override*/;
+    // vIndex: 96
+    virtual ::HashedString const& getCooldownCategory() const /*override*/;
 
-    // vIndex: 95
-    virtual int getCooldownTime() const /*override*/;
+    // vIndex: 97
+    virtual int getCooldownDuration() const /*override*/;
 
-    // vIndex: 101
+    // vIndex: 103
     virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
 
-    // vIndex: 102
+    // vIndex: 104
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
-    // vIndex: 121
+    // vIndex: 123
     virtual bool useVariant(int, int, bool) const;
 
-    // vIndex: 122
+    // vIndex: 124
     virtual int getVariant(int, int, bool) const;
 
-    // vIndex: 106
-    virtual void
+    // vIndex: 108
+    virtual ::PuvLoadData::LoadResultWithTiming
     initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&) /*override*/;
 
-    // vIndex: 109
+    // vIndex: 111
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    // vIndex: 110
+    // vIndex: 112
     virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const /*override*/;
 
-    // vIndex: 111
+    // vIndex: 113
     virtual bool isEmissive(int auxValue) const /*override*/;
 
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    // vIndex: 109
+    virtual ::Item& setIconInfo(::std::string const& name, int frame) /*override*/;
 
-    // vIndex: 113
+    // vIndex: 115
     virtual bool canBeCharged() const /*override*/;
 
     // vIndex: 3
-    virtual ::ComponentItem& setDescriptionId(::std::string const& description) /*override*/;
+    virtual ::ComponentItem& setDescriptionId(::std::string const& descriptionId) /*override*/;
 
-    // vIndex: 123
+    // vIndex: 125
     virtual bool shouldUseJsonForRenderMatrix() const;
 
     // vIndex: 27
@@ -306,19 +312,19 @@ public:
     // vIndex: 29
     virtual ::std::vector<::std::string> validateFromNetwork(::CompoundTag const& tag) /*override*/;
 
-    // vIndex: 117
+    // vIndex: 119
     virtual bool
     _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const
         /*override*/;
 
-    // vIndex: 118
+    // vIndex: 120
     virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const
         /*override*/;
 
-    // vIndex: 119
+    // vIndex: 121
     virtual bool _shouldAutoCalculatePlacePos() const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 122
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
@@ -354,7 +360,7 @@ public:
 
     MCAPI void _loadItemTagsNetworkTag(::ListTag const& listTag);
 
-    MCAPI bool _validateSchemaAndInitItem(
+    MCAPI ::PuvLoadData::LoadResultWithTiming _validateSchemaAndInitItem(
         ::Json::Value const&           itemData,
         ::SemVersion const&            documentVersion,
         ::JsonBetaState                canUseBeta,
@@ -367,26 +373,6 @@ public:
 
     MCAPI void
     init(::ComponentItemDataAll_Latest&& data, ::SemVersion const& documentVersion, ::Experiments const& experiments);
-
-    MCAPI ::Bedrock::PubSub::Connector<void(int&, ::ItemStack&, ::Actor&, ::Mob&)>& onBeforeDurabilityDamage();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Actor&, ::Mob&)>& onHitActor();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&)>& onHitBlock();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemStack&, ::Actor&, ::Mob&)>& onHurtActor();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(bool&, ::ItemStack&, ::Block const&, int, int, int, ::Actor&)>&
-    onMiningBlock();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(bool&, ::ItemStack&, ::Player&)>& onUse();
-
-    MCAPI ::Bedrock::PubSub::Connector<
-        void(bool&, ::ItemStack const&, ::ItemStack&, ::Actor&, ::BlockPos, uchar, ::Vec3 const&)>&
-    onUseOn();
-
-    MCAPI ::Bedrock::PubSub::Connector<void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&)>&
-    onUseTimeDepleted();
     // NOLINTEND
 
 public:
@@ -504,6 +490,10 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
+    MCAPI bool $canUseAsAttack() const;
+
+    MCAPI ::ItemStack& $useAsAttack(::ItemStack& item, ::Player& player) const;
+
     MCAPI ::Actor* $createProjectileActor(
         ::BlockSource&     region,
         ::ItemStack const& stack,
@@ -531,9 +521,9 @@ public:
 
     MCFOLD uchar $getMaxStackSize(::ItemDescriptor const&) const;
 
-    MCAPI ::HashedString const& $getCooldownType() const;
+    MCAPI ::HashedString const& $getCooldownCategory() const;
 
-    MCAPI int $getCooldownTime() const;
+    MCAPI int $getCooldownDuration() const;
 
     MCFOLD bool $useVariant(int, int, bool) const;
 
@@ -548,11 +538,11 @@ public:
     MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int frame);
 
     MCAPI bool $canBeCharged() const;
 
-    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& description);
+    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& descriptionId);
 
     MCAPI bool $shouldUseJsonForRenderMatrix() const;
 

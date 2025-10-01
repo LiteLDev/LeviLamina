@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/WorldType.h"
 #include "mc/config/ChatRestrictionLevel.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/json/Value.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
+#include "mc/editor/WorldType.h"
 #include "mc/network/GamePublishSetting.h"
 #include "mc/options/EduSharedUriResource.h"
 #include "mc/options/EducationEditionOffer.h"
@@ -32,6 +32,7 @@
 class Dimension;
 class LevelData;
 struct PackInstanceId;
+namespace mce { class UUID; }
 // clang-format on
 
 class LevelSettings {
@@ -107,7 +108,7 @@ public:
     ::ll::TypedStorage<8, 328, ::std::optional<::EducationLevelSettings>> mEducationLevelSettings;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>                       mOverrideForceExperimentalGameplayFlag;
     ::ll::TypedStorage<8, 176, ::std::optional<::CloudSaveLevelInfo>>     mCloudSaveInfo;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>               mExcludedScriptModules;
+    ::ll::TypedStorage<8, 24, ::std::vector<::mce::UUID>>                 mExcludedScriptModules;
     // NOLINTEND
 
 public:
@@ -125,7 +126,7 @@ public:
 
     MCAPI LevelSettings(::LevelData const& data, ::DimensionType dimension);
 
-    MCAPI ::LevelSettings& addExcludedScriptModule(::std::string const& moduleUUID);
+    MCAPI ::LevelSettings& addExcludedScriptModule(::mce::UUID moduleUUID);
 
     MCAPI ::CloudSaveLevelInfo const& getCloudSaveInfo() const;
 

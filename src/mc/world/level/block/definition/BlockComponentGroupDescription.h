@@ -31,34 +31,34 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Components(::BlockComponentGroupDescription::Components const&);
+        MCAPI Components(::BlockComponentGroupDescription::Components const&);
 
-        MCNAPI void _setCustomComponent(
+        MCAPI void _setCustomComponent(
             ::std::string_view                               compName,
             ::std::shared_ptr<::cereal::DynamicValue> const& compData,
             bool                                             overridePlayerInteract,
             bool                                             overridePlayerPlacing
         );
 
-        MCNAPI ::std::shared_ptr<::cereal::DynamicValue>
+        MCAPI ::std::shared_ptr<::cereal::DynamicValue>
         getCustomComponent(::cereal::SerializerContext const& context) const;
 
-        MCNAPI ::BlockComponentGroupDescription::Components&
+        MCFOLD ::BlockComponentGroupDescription::Components&
         operator=(::BlockComponentGroupDescription::Components const&);
 
-        MCNAPI ~Components();
+        MCAPI ~Components();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::BlockComponentGroupDescription::Components const&);
+        MCAPI void* $ctor(::BlockComponentGroupDescription::Components const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -77,34 +77,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockComponentGroupDescription();
+    MCAPI BlockComponentGroupDescription();
 
-    MCNAPI BlockComponentGroupDescription(::BlockComponentGroupDescription&&);
+    MCAPI BlockComponentGroupDescription(::BlockComponentGroupDescription&&);
 
-    MCNAPI BlockComponentGroupDescription(::BlockComponentGroupDescription const&);
+    MCAPI BlockComponentGroupDescription(::BlockComponentGroupDescription const&);
 
-    MCNAPI void addComponentDescription(::std::shared_ptr<::BlockComponentDescription> desc);
+    MCAPI void addComponentDescription(::std::shared_ptr<::BlockComponentDescription> desc);
 
-    MCNAPI void foreachDescription(::std::function<void(::BlockComponentDescription const&)> callback) const;
+    MCAPI void foreachDescription(::std::function<void(::BlockComponentDescription const&)> callback) const;
 
-    MCNAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription&&);
+    MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription&&);
 
-    MCNAPI ~BlockComponentGroupDescription();
+    MCAPI ~BlockComponentGroupDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::BlockComponentGroupDescription&&);
+    MCAPI void* $ctor(::BlockComponentGroupDescription&&);
 
-    MCNAPI void* $ctor(::BlockComponentGroupDescription const&);
+    MCAPI void* $ctor(::BlockComponentGroupDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -4,9 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
+class LinkedAssetValidator;
 class ResourcePackManager;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -38,29 +40,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit JigsawStructureLoader(::cereal::ReflectionCtx const& ctx);
+    MCAPI JigsawStructureLoader(
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
 
-    MCNAPI void _parseJigsawDefinitionData(::std::string_view fileWithExtension, ::std::string&& fileData);
+    MCAPI void _parseJigsawDefinitionData(::std::string_view fileWithExtension, ::std::string&& fileData);
 
-    MCNAPI void _parseProcessorsData(::std::string_view fileWithExtension, ::std::string&& fileData);
+    MCAPI void _parseProcessorsData(::std::string_view fileWithExtension, ::std::string&& fileData);
 
-    MCNAPI void _parseStructureSetData(::std::string_view fileWithExtension, ::std::string&& fileData);
+    MCAPI void _parseStructureSetData(::std::string_view fileWithExtension, ::std::string&& fileData);
 
-    MCNAPI void _parseTemplatePoolsData(::std::string_view fileWithExtension, ::std::string&& fileData);
+    MCAPI void _parseTemplatePoolsData(::std::string_view fileWithExtension, ::std::string&& fileData);
 
-    MCNAPI void loadJigsawStructureData(::ResourcePackManager& resourcePackManager);
+    MCAPI void loadJigsawStructureData(::ResourcePackManager& resourcePackManager);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx);
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

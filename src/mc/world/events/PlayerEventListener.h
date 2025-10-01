@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/events/MinecraftEventing.h"
+#include "mc/events/NetworkType.h"
 #include "mc/network/packet/PlayerActionType.h"
 #include "mc/world/actor/player/persona/ProfileType.h"
 #include "mc/world/events/EventResult.h"
@@ -36,7 +37,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~PlayerEventListener();
+    virtual ~PlayerEventListener() = default;
 
     // vIndex: 1
     virtual ::EventResult onPlayerAwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievement);
@@ -108,7 +109,8 @@ public:
         ::LocalPlayer&               player,
         ::persona::ProfileType const personaSlot,
         ::std::string const&         classicSkinId,
-        bool                         usingClassicSkin
+        bool                         usingClassicSkin,
+        ::NetworkType                networkType
     );
 
     // vIndex: 24
@@ -176,12 +178,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCFOLD void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::EventResult $onPlayerAwardAchievement(::Player& player, ::MinecraftEventing::AchievementIds achievement);
@@ -232,7 +228,8 @@ public:
         ::LocalPlayer&               player,
         ::persona::ProfileType const personaSlot,
         ::std::string const&         classicSkinId,
-        bool                         usingClassicSkin
+        bool                         usingClassicSkin,
+        ::NetworkType                networkType
     );
 
     MCFOLD ::EventResult $onPlayerTeleported(::Player& player);

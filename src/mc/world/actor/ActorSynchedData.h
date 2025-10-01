@@ -25,6 +25,8 @@ MCNAPI void updateHasNPC(::Actor& actor);
 MCNAPI void updateIsBuoyant(::EntityContext& entity, ::SynchedActorDataEntityWrapper& entityData);
 
 MCNAPI void updateNameTag(::Actor& actor);
+
+MCNAPI void updateRuntimeID(::Actor& actor);
 // NOLINTEND
 
 } // namespace ActorSynchedData

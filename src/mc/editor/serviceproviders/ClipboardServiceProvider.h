@@ -9,6 +9,7 @@
 // clang-format off
 class BlockPos;
 class BlockVolumeBase;
+class Vec3;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class EditorStructureTemplate; }
 namespace Editor { class RelativeVolumeListBlockVolume; }
@@ -73,6 +74,12 @@ public:
     virtual ::BlockPos getSize(::mce::UUID const&) const = 0;
 
     // vIndex: 14
+    virtual ::Vec3 const& getNormalizedOrigin(::mce::UUID const&) const = 0;
+
+    // vIndex: 15
+    virtual ::Vec3 getOriginalWorldLocation(::mce::UUID const&) const = 0;
+
+    // vIndex: 16
     virtual ::Bedrock::PubSub::Subscription
         listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)>) = 0;
     // NOLINTEND

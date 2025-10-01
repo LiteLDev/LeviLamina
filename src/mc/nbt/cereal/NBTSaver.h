@@ -7,7 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { struct ReflectionCtx; }
+class CompoundTag;
 // clang-format on
 
 class NBTSaver : public ::cereal::BasicSaver {
@@ -33,13 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit NBTSaver(::cereal::ReflectionCtx const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const&);
+    MCNAPI ::CompoundTag getSavedCompoundTag();
     // NOLINTEND
 
 public:

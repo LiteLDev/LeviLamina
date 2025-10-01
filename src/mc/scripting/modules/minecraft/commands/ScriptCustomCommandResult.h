@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptCustomCommandResult& operator=(ScriptCustomCommandResult const&);
     ScriptCustomCommandResult(ScriptCustomCommandResult const&);
     ScriptCustomCommandResult();
 
@@ -28,6 +27,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleMinecraft::ScriptCustomCommandResult&
     operator=(::ScriptModuleMinecraft::ScriptCustomCommandResult&&);
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptCustomCommandResult&
+    operator=(::ScriptModuleMinecraft::ScriptCustomCommandResult const&);
 
     MCNAPI ~ScriptCustomCommandResult();
     // NOLINTEND

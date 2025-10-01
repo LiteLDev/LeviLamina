@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class BaseGameVersion;
-class CraftingItemCatalogMergeResult;
 class CreativeGroupInfo;
 class CreativeItemRegistry;
 class ItemInstance;
@@ -34,29 +33,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CreativeItemInitializer(
+    MCAPI CreativeItemInitializer(
         ::ItemRegistryRef const&                              itemRegistry,
         ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> creativeItemRegistry
     );
 
-    MCNAPI void _addCreativeItemServer(::CreativeGroupInfo& creativeGroupInfo, ::ItemInstance const& itemInstance);
+    MCAPI void _addCreativeItemServer(::CreativeGroupInfo& creativeGroupInfo, ::ItemInstance const& itemInstance);
 
-    MCNAPI void _addLooseCreativeItem(::ItemInstance const& itemInstance);
+    MCAPI void _addLooseCreativeItem(::ItemInstance const& itemInstance);
 
-    MCNAPI void _addLooseCreativeItemsServer(::BaseGameVersion const& worldVersion);
+    MCAPI void _addLooseCreativeItemsServer(::BaseGameVersion const& worldVersion);
 
-    MCNAPI void addLooseBlocks(::std::vector<::BlockDefinition const*> const& blockDefinitions);
+    MCAPI void addLooseBlocks(::std::vector<::BlockDefinition const*> const& blockDefinitions);
 
-    MCNAPI void
-    initializeFromCraftingItemCatalog(::CraftingItemCatalogMergeResult const& craftingItemCatalogMergeResult);
-
-    MCNAPI ~CreativeItemInitializer();
+    MCAPI ~CreativeItemInitializer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ItemRegistryRef const&                              itemRegistry,
         ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry> creativeItemRegistry
     );
@@ -65,6 +61,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

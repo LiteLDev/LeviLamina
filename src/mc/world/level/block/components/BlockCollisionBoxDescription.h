@@ -56,45 +56,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockCollisionBoxDescription(bool enabled);
+    MCAPI explicit BlockCollisionBoxDescription(bool enabled);
 
-    MCNAPI BlockCollisionBoxDescription(::Vec3 const& origin, ::Vec3 const& size);
+    MCAPI BlockCollisionBoxDescription(::Vec3 const& origin, ::Vec3 const& size);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(bool enabled);
+    MCAPI void* $ctor(bool enabled);
 
-    MCNAPI void* $ctor(::Vec3 const& origin, ::Vec3 const& size);
+    MCAPI void* $ctor(::Vec3 const& origin, ::Vec3 const& size);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCFOLD ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCFOLD void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:

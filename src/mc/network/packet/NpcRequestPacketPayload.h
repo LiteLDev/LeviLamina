@@ -30,14 +30,13 @@ public:
 
 public:
     // prevent constructor by default
+    NpcRequestPacketPayload& operator=(NpcRequestPacketPayload const&);
     NpcRequestPacketPayload(NpcRequestPacketPayload const&);
     NpcRequestPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::NpcRequestPacketPayload& operator=(::NpcRequestPacketPayload const&);
-
     MCAPI ::NpcRequestPacketPayload& operator=(::NpcRequestPacketPayload&&);
 
     MCAPI ~NpcRequestPacketPayload();

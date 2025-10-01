@@ -28,5 +28,10 @@ public:
         ::ViewT<::StrictEntityContext, ::UpdateWaterStateRequestComponent const> view,
         ::EntityModifier<::WasInLavaFlagComponent>                               mod
     );
+
+    MCNAPI static void tickSystem(
+        ::ViewT<::StrictEntityContext, ::UpdateWaterStateRequestComponent const> view,
+        ::EntityModifier<::WasInLavaFlagComponent>                               mod
+    );
     // NOLINTEND
 };

@@ -9,7 +9,7 @@ public:
     // vIndex: 0
     virtual ~FlushableEnv() /*override*/;
 
-    // vIndex: 20
+    // vIndex: 22
     virtual void flushToPermanentStorage() = 0;
     // NOLINTEND
 
@@ -23,5 +23,11 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

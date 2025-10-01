@@ -9,6 +9,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class Experiments;
 // clang-format on
 
 class PressurePlateBlock : public ::BasePressurePlateBlock {
@@ -38,6 +39,9 @@ public:
     // vIndex: 150
     virtual int getRedstoneSignal(int signal) const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
+
     // vIndex: 0
     virtual ~PressurePlateBlock() /*override*/ = default;
     // NOLINTEND
@@ -50,6 +54,8 @@ public:
     MCAPI int $getSignalForData(int data) const;
 
     MCAPI int $getRedstoneSignal(int signal) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

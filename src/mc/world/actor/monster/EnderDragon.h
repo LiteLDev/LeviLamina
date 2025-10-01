@@ -83,7 +83,7 @@ public:
     virtual bool isImmobile() const /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 36
     virtual ::Vec3 getHeadLookVector(float a) const /*override*/;
@@ -100,7 +100,7 @@ public:
     // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 173
+    // vIndex: 174
     virtual void tickDeath() /*override*/;
 
     // vIndex: 135
@@ -119,8 +119,6 @@ public:
     MCAPI void _checkCrystals();
 
     MCAPI bool _checkWalls(::AABB bb);
-
-    MCAPI float _getHeadYOffset(float a) const;
 
     MCAPI bool _hurt(::AABB* part, ::ActorDamageSource const& source, float damage);
 
@@ -187,7 +185,7 @@ public:
 
     MCFOLD bool $isImmobile() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI ::Vec3 $getHeadLookVector(float a) const;
 

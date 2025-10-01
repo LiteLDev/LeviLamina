@@ -43,7 +43,7 @@ public:
     // NOLINTBEGIN
     MCFOLD uchar $getPoweroutDirection() const;
 
-    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+    MCAPI ::CircuitComponentType $getCircuitComponentType() const;
     // NOLINTEND
 
 public:

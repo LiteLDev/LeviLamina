@@ -18,16 +18,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BlockCustomComponentData& operator=(::BlockCustomComponentData&&);
+    MCFOLD ::BlockCustomComponentData& operator=(::BlockCustomComponentData&&);
 
-    MCNAPI ::BlockCustomComponentData& operator=(::BlockCustomComponentData const&);
+    MCAPI ::BlockCustomComponentData& operator=(::BlockCustomComponentData const&);
 
-    MCNAPI ~BlockCustomComponentData();
+    MCAPI ~BlockCustomComponentData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

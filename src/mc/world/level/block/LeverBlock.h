@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -19,7 +18,6 @@ class GetCollisionShapeInterface;
 class IConstBlockSource;
 class Player;
 class Vec3;
-namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
@@ -42,9 +40,6 @@ public:
     // vIndex: 136
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 44
-    virtual bool isSignalSource() const /*override*/;
-
     // vIndex: 41
     virtual bool isLeverBlock() const /*override*/;
 
@@ -66,19 +61,8 @@ public:
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
         /*override*/;
 
-    // vIndex: 67
-    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
     // vIndex: 51
     virtual void onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const /*override*/;
-
-    // vIndex: 132
-    virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    // vIndex: 54
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
-        /*override*/;
 
     // vIndex: 94
     virtual bool isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const
@@ -100,8 +84,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCAPI void toggle(::BlockSource& region, ::BlockPos const& pos, ::Player* player) const;
@@ -123,8 +105,6 @@ public:
 
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCFOLD bool $isSignalSource() const;
-
     MCFOLD bool $isLeverBlock() const;
 
     MCFOLD bool $canSpawnOn(::Actor*) const;
@@ -143,14 +123,7 @@ public:
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void $onFillBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
-
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCFOLD bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCAPI bool $isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
 

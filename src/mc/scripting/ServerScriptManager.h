@@ -25,6 +25,7 @@ class LevelEventHandlerRegistrar;
 class MinecraftCommands;
 class MinecraftGameTest;
 class PackManifest;
+class PackSettingsCache;
 class Scheduler;
 class ScriptAsyncJobCoordinator;
 class ScriptClientDiagnosticsListener;
@@ -72,6 +73,7 @@ public:
     ::ll::TypedStorage<8, 144, ::ServerScriptManagerEvents>                        mScriptStateEvents;
     ::ll::TypedStorage<8, 704, ::ScriptSettings>                                   mSettings;
     ::ll::TypedStorage<8, 8, ::ServerLevel&>                                       mServerLevel;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PackSettingsCache>>              mPackSettingsCache;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Scheduler>>             mServerScheduler;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::ReflectionCtx>>           mCerealContext;
     ::ll::TypedStorage<1, 1, ::RegisterDiagnosticsStatsTypes>                      mRegisterDiagnosticsStatsTypes;
@@ -146,6 +148,7 @@ public:
     MCAPI ServerScriptManager(
         ::ScriptSettings&&                        settings,
         ::ServerLevel&                            serverLevel,
+        ::std::shared_ptr<::PackSettingsCache>    packSettingsCache,
         ::Bedrock::NonOwnerPointer<::Scheduler>   serverScheduler,
         ::MinecraftCommands&                      commands,
         ::IMinecraftEventing&                     eventing,
@@ -190,6 +193,7 @@ public:
     MCAPI void* $ctor(
         ::ScriptSettings&&                        settings,
         ::ServerLevel&                            serverLevel,
+        ::std::shared_ptr<::PackSettingsCache>    packSettingsCache,
         ::Bedrock::NonOwnerPointer<::Scheduler>   serverScheduler,
         ::MinecraftCommands&                      commands,
         ::IMinecraftEventing&                     eventing,

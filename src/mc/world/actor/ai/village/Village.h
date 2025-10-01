@@ -216,9 +216,9 @@ public:
 
     MCAPI uint64 getBedPOICount() const;
 
-    MCAPI ::Actor* getClosestAggressor(::Actor* from);
-
     MCAPI ::std::weak_ptr<::POIInstance> getClosestPOI(::POIType type, ::BlockPos const& position);
+
+    MCAPI bool hasInvalidRole(::ActorUniqueID const& actorId, ::DwellerRole const& role);
 
     MCAPI bool hasSpecificDweller(::DwellerRole role, ::ActorUniqueID const& id) const;
 

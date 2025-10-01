@@ -33,8 +33,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static float const& MIN_DISTANCE_TO_PLAYERS();
-
     MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };

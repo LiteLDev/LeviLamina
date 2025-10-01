@@ -59,6 +59,7 @@ struct ItemUsedOnEventContext;
 struct ResolvedItemIconInfo;
 namespace Bedrock::Safety { class RedactableString; }
 namespace Json { class Value; }
+namespace PuvLoadData { struct LoadResultWithTiming; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -108,7 +109,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FoodItemComponentLegacy>>    mFoodComponentLegacy;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SeedItemComponentLegacy>>    mSeedComponent;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CameraItemComponentLegacy>>  mCameraComponentLegacy;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>>         mOnResetBAIcallbacks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>>         mOnResetBAICallbacks;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemTag>>                       mTags;
     // NOLINTEND
 
@@ -123,12 +124,8 @@ public:
     virtual ~Item();
 
     // vIndex: 1
-    virtual bool initServer(
-        ::Json::Value const& data,
-        ::SemVersion const&,
-        ::IPackLoadContext& packLoadContext,
-        ::JsonBetaState const
-    );
+    virtual ::PuvLoadData::LoadResultWithTiming
+    initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const);
 
     // vIndex: 2
     virtual void tearDown();
@@ -236,7 +233,7 @@ public:
     virtual int getAttackDamage() const;
 
     // vIndex: 37
-    virtual float getAttackDamageBonus(::Actor const&, float) const;
+    virtual float getAttackDamageBonus(::Actor const&) const;
 
     // vIndex: 38
     virtual bool isHandEquipped() const;
@@ -361,143 +358,150 @@ public:
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const;
 
     // vIndex: 77
-    virtual ::Actor* createProjectileActor(::BlockSource&, ::ItemStack const&, ::Vec3 const&, ::Vec3 const&) const;
+    virtual bool canUseAsAttack() const;
 
     // vIndex: 78
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player&) const;
 
     // vIndex: 79
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    virtual ::Actor* createProjectileActor(::BlockSource&, ::ItemStack const&, ::Vec3 const&, ::Vec3 const&) const;
 
     // vIndex: 80
-    virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
     // vIndex: 81
-    virtual float getDestroySpeed(::ItemStackBase const&, ::Block const&) const;
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
     // vIndex: 82
-    virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
     // vIndex: 83
-    virtual void hitActor(::ItemStack&, ::Actor&, ::Mob&) const;
+    virtual float getDestroySpeed(::ItemStackBase const&, ::Block const&) const;
 
     // vIndex: 84
-    virtual void hitBlock(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&) const;
+    virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
     // vIndex: 85
-    virtual ::std::string buildDescriptionName(::ItemStackBase const& stack) const;
+    virtual void hitActor(::ItemStack&, ::Actor&, ::Mob&) const;
 
     // vIndex: 86
-    virtual ::Bedrock::Safety::RedactableString const buildRedactedDescriptionName(::ItemStackBase const& stack) const;
+    virtual void hitBlock(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&) const;
 
     // vIndex: 87
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    virtual ::std::string buildDescriptionName(::ItemStackBase const& stack) const;
 
     // vIndex: 88
-    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const;
+    virtual ::Bedrock::Safety::RedactableString const buildRedactedDescriptionName(::ItemStackBase const& stack) const;
 
     // vIndex: 89
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+
+    // vIndex: 90
+    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const;
+
+    // vIndex: 91
     virtual void
     readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
 
-    // vIndex: 90
+    // vIndex: 92
     virtual void writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const;
 
-    // vIndex: 91
+    // vIndex: 93
     virtual uchar getMaxStackSize(::ItemDescriptor const&) const;
 
-    // vIndex: 92
+    // vIndex: 94
     virtual bool inventoryTick(::ItemStack&, ::Level&, ::Actor&, int, bool) const;
 
-    // vIndex: 93
+    // vIndex: 95
     virtual void refreshedInContainer(::ItemStackBase const&, ::Level&) const;
 
-    // vIndex: 94
-    virtual ::HashedString const& getCooldownType() const;
-
-    // vIndex: 95
-    virtual int getCooldownTime() const;
+    // vIndex: 96
+    virtual ::HashedString const& getCooldownCategory() const;
 
     // vIndex: 97
+    virtual int getCooldownDuration() const;
+
+    // vIndex: 99
     virtual void fixupCommon(::ItemStackBase& stack) const;
 
-    // vIndex: 96
+    // vIndex: 98
     virtual void fixupCommon(::ItemStackBase& stack, ::ILevel&) const;
 
-    // vIndex: 98
+    // vIndex: 100
     virtual ::InHandUpdateType getInHandUpdateType(
-        ::Player const&,
+        ::Player const&    player,
         ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
         bool const,
         bool const slotChanged
     ) const;
 
-    // vIndex: 99
+    // vIndex: 101
     virtual bool validFishInteraction(int) const;
 
-    // vIndex: 100
+    // vIndex: 102
     virtual void enchantProjectile(::ItemStackBase const&, ::Actor&) const;
 
-    // vIndex: 101
+    // vIndex: 103
     virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const;
 
-    // vIndex: 102
+    // vIndex: 104
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const;
 
-    // vIndex: 103
+    // vIndex: 105
     virtual bool shouldSendInteractionGameEvents() const;
 
-    // vIndex: 104
+    // vIndex: 106
     virtual bool useInterruptedByAttacking() const;
 
-    // vIndex: 105
+    // vIndex: 107
     virtual bool hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
 
-    // vIndex: 106
-    virtual void initClient(::Json::Value const& data, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&);
-
-    // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index);
-
     // vIndex: 108
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const;
+    virtual ::PuvLoadData::LoadResultWithTiming
+    initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&);
 
     // vIndex: 109
-    virtual ::std::string getInteractText(::Player const& player) const;
+    virtual ::Item& setIconInfo(::std::string const& name, int index);
 
     // vIndex: 110
-    virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const;
 
     // vIndex: 111
-    virtual bool isEmissive(int auxValue) const;
+    virtual ::std::string getInteractText(::Player const& player) const;
 
     // vIndex: 112
-    virtual ::Brightness getLightEmission(int) const;
+    virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
 
     // vIndex: 113
-    virtual bool canBeCharged() const;
+    virtual bool isEmissive(int auxValue) const;
 
     // vIndex: 114
-    virtual void playSoundIncrementally(::ItemStack const&, ::Mob&) const;
+    virtual ::Brightness getLightEmission(int) const;
 
     // vIndex: 115
-    virtual float getFurnaceXPmultiplier(::ItemStackBase const&) const;
+    virtual bool canBeCharged() const;
 
     // vIndex: 116
-    virtual bool calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    virtual void playSoundIncrementally(::ItemStack const&, ::Mob&) const;
 
     // vIndex: 117
+    virtual float getFurnaceXPmultiplier(::ItemStackBase const&) const;
+
+    // vIndex: 118
+    virtual bool calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+
+    // vIndex: 119
     virtual bool
     _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
-    // vIndex: 118
+    // vIndex: 120
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor&, uchar&, ::BlockPos&) const;
 
-    // vIndex: 119
+    // vIndex: 121
     virtual bool _shouldAutoCalculatePlacePos() const;
 
-    // vIndex: 120
+    // vIndex: 122
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
@@ -525,8 +529,6 @@ public:
         ::Vec3 const&        clickPos
     ) const;
 
-    MCAPI ::Item& addTag(::HashedString const& tag);
-
     MCAPI ::Item& addTag(::ItemTag const& tag);
 
     MCAPI ::Item& addTags(::std::initializer_list<::std::reference_wrapper<::ItemTag const>> tags);
@@ -539,9 +541,11 @@ public:
 
     MCAPI ::std::vector<::CommandName> getCommandNames() const;
 
+    MCAPI short getDamageValue(::CompoundTag const* userData) const;
+
     MCAPI ::std::string getSerializedName() const;
 
-    MCAPI bool hasTag(::HashedString const& tag) const;
+    MCAPI bool hasTag(::ItemTag const& tag) const;
 
     MCAPI bool isCommandOnly(::BaseGameVersion const& baseGameVersion) const;
 
@@ -549,13 +553,9 @@ public:
 
     MCAPI bool operator==(::Item const& rhs) const;
 
-    MCAPI void removeDamageValue(::ItemStackBase& stack) const;
-
     MCAPI ::Item& setAllowOffhand(bool offhand);
 
-    MCAPI ::Item& setCreativeGroup(::std::string const& group);
-
-    MCAPI void setDamageValue(::ItemStackBase& stack, short newDamage) const;
+    MCAPI ::Item& setFireResistant(bool resistant);
 
     MCAPI ::Item& setIsGlint(bool glint);
 
@@ -586,8 +586,6 @@ public:
     MCAPI static bool isElytra(::ItemDescriptor const& itemDescriptor);
 
     MCAPI static bool isElytraBroken(int value);
-
-    MCAPI static bool isSameTypeAndItem(::ItemStackBase const& firstItem, ::ItemStackBase const& secondItem);
     // NOLINTEND
 
 public:
@@ -615,13 +613,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $initServer(
-        ::Json::Value const& data,
-        ::SemVersion const&,
-        ::IPackLoadContext& packLoadContext,
-        ::JsonBetaState const
-    );
-
     MCFOLD void $tearDown();
 
     MCAPI ::Item& $setDescriptionId(::std::string const& description);
@@ -651,8 +642,6 @@ public:
     MCFOLD bool $isDyeable() const;
 
     MCFOLD bool $isDye() const;
-
-    MCFOLD ::ItemColor $getItemColor() const;
 
     MCFOLD bool $isFertilizer() const;
 
@@ -692,7 +681,7 @@ public:
 
     MCFOLD int $getAttackDamage() const;
 
-    MCFOLD float $getAttackDamageBonus(::Actor const&, float) const;
+    MCFOLD float $getAttackDamageBonus(::Actor const&) const;
 
     MCAPI bool $isHandEquipped() const;
 
@@ -777,6 +766,10 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
+    MCFOLD bool $canUseAsAttack() const;
+
+    MCFOLD ::ItemStack& $useAsAttack(::ItemStack& item, ::Player&) const;
+
     MCFOLD ::Actor* $createProjectileActor(::BlockSource&, ::ItemStack const&, ::Vec3 const&, ::Vec3 const&) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
@@ -812,16 +805,16 @@ public:
 
     MCFOLD void $refreshedInContainer(::ItemStackBase const&, ::Level&) const;
 
-    MCAPI ::HashedString const& $getCooldownType() const;
+    MCAPI ::HashedString const& $getCooldownCategory() const;
 
-    MCAPI int $getCooldownTime() const;
+    MCAPI int $getCooldownDuration() const;
 
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
 
     MCFOLD void $fixupCommon(::ItemStackBase& stack, ::ILevel&) const;
 
     MCAPI ::InHandUpdateType $getInHandUpdateType(
-        ::Player const&,
+        ::Player const&    player,
         ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
         bool const,
@@ -832,8 +825,6 @@ public:
 
     MCFOLD void $enchantProjectile(::ItemStackBase const&, ::Actor&) const;
 
-    MCFOLD ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
-
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
     MCFOLD bool $shouldSendInteractionGameEvents() const;
@@ -841,8 +832,6 @@ public:
     MCFOLD bool $useInterruptedByAttacking() const;
 
     MCFOLD bool $hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
-
-    MCAPI void $initClient(::Json::Value const& data, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&);
 
     MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 

@@ -73,14 +73,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::ChunkBlender> _createChunkBlendingAttenuator(::ChunkPos const& lcPosition) const;
+    MCAPI ::std::shared_ptr<::ChunkBlender> _createChunkBlendingAttenuator(::ChunkPos const& lcPosition) const;
 
-    MCNAPI ::std::vector<::std::array<::ChunkBlenderUtil::AttenuationData, 4>> _finalizeChunkAttenuationData(
+    MCAPI ::std::vector<::std::array<::ChunkBlenderUtil::AttenuationData, 4>> _finalizeChunkAttenuationData(
         ::std::vector<::std::array<::ChunkBlenderFactory::IntermediateAttenuationData, 4>> const&
             chunkIntermediateAttenuationData
     ) const;
 
-    MCNAPI void _updateIntermediateAttenuationData(
+    MCAPI void _updateIntermediateAttenuationData(
         ::std::vector<::std::array<::ChunkBlenderFactory::IntermediateAttenuationData, 4>>&
                               chunkIntermediateAttenuationData,
         ::ChunkPos const&     oldChunkPosition,
@@ -89,6 +89,6 @@ public:
         bool                  adjacentChunk
     ) const;
 
-    MCNAPI ::std::shared_ptr<::ChunkBlender> getOrCreateChunkBlender(::ChunkPos const& lcPosition);
+    MCAPI ::std::shared_ptr<::ChunkBlender> getOrCreateChunkBlender(::ChunkPos const& lcPosition);
     // NOLINTEND
 };

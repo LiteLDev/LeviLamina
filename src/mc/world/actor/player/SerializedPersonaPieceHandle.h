@@ -16,4 +16,16 @@ public:
     ::ll::TypedStorage<1, 1, bool>                 mIsDefaultPiece;
     ::ll::TypedStorage<8, 32, ::std::string>       mProductId;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~SerializedPersonaPieceHandle();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

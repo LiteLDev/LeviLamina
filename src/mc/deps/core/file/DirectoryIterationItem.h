@@ -2,12 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/DirectoryIterationFlags.h"
-
 // auto generated forward declare list
 // clang-format off
-namespace Core { class PathPart; }
+namespace Core { class PathView; }
 // clang-format on
 
 namespace Core {
@@ -34,17 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit DirectoryIterationItem(::Core::DirectoryIterationFlags flags);
-
-    MCNAPI void setName(::Core::PathPart const& name);
+    MCNAPI void setFullPathName(::Core::PathView fullPathName);
 
     MCNAPI ~DirectoryIterationItem();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::DirectoryIterationFlags flags);
     // NOLINTEND
 
 public:

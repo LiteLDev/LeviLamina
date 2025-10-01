@@ -9,6 +9,7 @@
 // clang-format off
 class LootTableContext;
 class Random;
+namespace Json { class Value; }
 // clang-format on
 
 class LootItemIsBabyCondition : public ::LootItemCondition {
@@ -20,6 +21,12 @@ public:
 
     // vIndex: 0
     virtual ~LootItemIsBabyCondition() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value const& object);
     // NOLINTEND
 
 public:

@@ -60,7 +60,7 @@ public:
     ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::PacketObserver::PacketStats>>   mCurrentPacketStats;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>>       mCurrentSourceNetworkIdentifierStrings;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>>       mCurrentTargetNetworkIdentifierStrings;
-    ::ll::TypedStorage<8, 10528, ::std::array<::std::string, 329>>               mPacketNames;
+    ::ll::TypedStorage<8, 10560, ::std::array<::std::string, 330>>               mPacketNames;
     ::ll::TypedStorage<4, 16, ::NetworkStatistics::OverviewStats>                mCurrentOverview;
     ::ll::TypedStorage<8, 24, ::std::vector<::NetworkStatistics::OverviewStats>> mLastSeconds;
     ::ll::TypedStorage<8, 8, double>                                             mStartSeconds;

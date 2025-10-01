@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/container/EnumSet.h"
+#include "mc/world/level/block/actor/BlockActorType.h"
+#include "mc/world/level/block/actor/ChestBlockActor.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
@@ -18,6 +23,9 @@ MCNAPI bool isValidTargetContainer(
     ::TransportItemsGoalSettings const& settings
 );
 
+MCNAPI ::std::weak_ptr<::ChestBlockActor::ChestCloser>
+openContainer(::Mob& mob, ::BlockPos const& targetContainerPosition);
+
 MCNAPI bool tryPutItem(
     ::Mob&                              mob,
     ::BlockPos const&                   targetContainerPosition,
@@ -31,6 +39,13 @@ MCNAPI bool tryTakeItem(
     ::TransportItemsGoalSettings const& settings,
     bool                                dryRun
 );
+// NOLINTEND
+
+// static variables
+// NOLINTBEGIN
+MCNAPI ::Bedrock::EnumSet<::BlockActorType, 61> const& VALID_DESTINATION_BLOCKACTOR_TYPES();
+
+MCNAPI ::Bedrock::EnumSet<::BlockActorType, 61> const& VALID_SOURCE_BLOCKACTOR_TYPES();
 // NOLINTEND
 
 } // namespace TransportItemsUtils

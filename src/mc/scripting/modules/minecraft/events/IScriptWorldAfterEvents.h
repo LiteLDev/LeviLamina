@@ -33,6 +33,7 @@ namespace ScriptModuleMinecraft { struct ScriptItemStopUseOnAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptItemUseOnAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptLeverActionAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPackSettingChangeAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPistonActionAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerButtonInputAfterEvent; }
@@ -49,6 +50,7 @@ namespace ScriptModuleMinecraft { struct ScriptPlayerJoinAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerLeaveAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerSpawnAfterEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerSwingStartAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPressurePlatePopAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPressurePlatePushAfterEvent; }
 namespace ScriptModuleMinecraft { struct ScriptProjectileHitBlockAfterEvent; }
@@ -141,143 +143,153 @@ public:
     virtual void onActorDie(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorDieAfterEvent>&);
 
     // vIndex: 19
+    virtual void onPackSettingChange(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent>&
+    );
+
+    // vIndex: 20
     virtual void
     onPlayerSpawn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent>&);
 
-    // vIndex: 20
+    // vIndex: 21
     virtual void onPlayerDimensionChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent>&
     );
 
-    // vIndex: 21
+    // vIndex: 22
     virtual void onPlayerInputModeChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInputModeChangeAfterEvent>&
     );
 
-    // vIndex: 22
+    // vIndex: 23
     virtual void onPlayerInputPermissionCategoryChange(
         ::Scripting::StrongTypedObjectHandle<
             ::ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeAfterEvent>&
     );
 
-    // vIndex: 23
+    // vIndex: 24
     virtual void onPlayerInteractWithEntity(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent>&
     );
 
-    // vIndex: 24
+    // vIndex: 25
     virtual void onPlayerInteractWithBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent>&
     );
 
-    // vIndex: 25
+    // vIndex: 26
     virtual void onPlayerGameModeChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeAfterEvent>&
     );
 
-    // vIndex: 26
+    // vIndex: 27
     virtual void
     onPlayerEmote(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerEmoteAfterEvent>&);
 
-    // vIndex: 27
+    // vIndex: 28
     virtual void onPlayerButtonInput(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerButtonInputAfterEvent>&
     );
 
-    // vIndex: 28
+    // vIndex: 29
     virtual void onPlayerInventoryItemChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent>&
     );
 
-    // vIndex: 29
+    // vIndex: 30
     virtual void onPlayerHotbarSelectedSlotChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerHotbarSelectedSlotChangeAfterEvent>&
     );
 
-    // vIndex: 30
-    virtual void
-    onActivatePiston(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPistonActionAfterEvent>&);
-
     // vIndex: 31
-    virtual void
-    onActivateLever(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLeverActionAfterEvent>&);
+    virtual void onPlayerSwingStart(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerSwingStartAfterEvent>&
+    );
 
     // vIndex: 32
     virtual void
-    onPushButton(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptButtonPushAfterEvent>&);
+    onActivatePiston(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPistonActionAfterEvent>&);
 
     // vIndex: 33
     virtual void
-    onExplosion(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent>&);
+    onActivateLever(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLeverActionAfterEvent>&);
 
     // vIndex: 34
     virtual void
-    onExplodeBlock(::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData>&);
+    onPushButton(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptButtonPushAfterEvent>&);
 
     // vIndex: 35
+    virtual void
+    onExplosion(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent>&);
+
+    // vIndex: 36
+    virtual void
+    onExplodeBlock(::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData>&);
+
+    // vIndex: 37
     virtual void onPlayerPlaceBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEvent>&
     );
 
-    // vIndex: 36
+    // vIndex: 38
     virtual void onPlayerBreakBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent>&
     );
 
-    // vIndex: 37
+    // vIndex: 39
     virtual void onPushPressurePlate(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEvent>&
     );
 
-    // vIndex: 38
+    // vIndex: 40
     virtual void onPopPressurePlate(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEvent>&
     );
 
-    // vIndex: 39
+    // vIndex: 41
     virtual void
     onHitTargetBlock(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTargetBlockHitAfterEvent>&);
 
-    // vIndex: 40
+    // vIndex: 42
     virtual void
     onTripTripWire(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptTripWireTripAfterEvent>&);
 
-    // vIndex: 41
+    // vIndex: 43
     virtual void onItemUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseAfterEvent>&);
 
-    // vIndex: 42
-    virtual void onItemUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>&);
-
-    // vIndex: 43
-    virtual void
-    onItemStartUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent>&);
-
     // vIndex: 44
-    virtual void
-    onItemStopUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent>&);
+    virtual void onItemUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent>&);
 
     // vIndex: 45
     virtual void
-    onItemStartUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>&);
+    onItemStartUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseOnAfterEvent>&);
 
     // vIndex: 46
     virtual void
-    onItemCompleteUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>&);
+    onItemStopUseOn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseOnAfterEvent>&);
 
     // vIndex: 47
     virtual void
-    onItemReleaseUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>&);
+    onItemStartUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent>&);
 
     // vIndex: 48
     virtual void
-    onItemStopUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>&);
+    onItemCompleteUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemCompleteUseAfterEvent>&);
 
     // vIndex: 49
+    virtual void
+    onItemReleaseUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemReleaseUseAfterEvent>&);
+
+    // vIndex: 50
+    virtual void
+    onItemStopUse(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent>&);
+
+    // vIndex: 51
     virtual void onProjectileHitEntity(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent>&
     );
 
-    // vIndex: 50
+    // vIndex: 52
     virtual void onProjectileHitBlock(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptProjectileHitBlockAfterEvent>&
     );
@@ -307,6 +319,10 @@ public:
     );
 
     MCNAPI void $onActorDie(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorDieAfterEvent>&);
+
+    MCNAPI void $onPackSettingChange(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent>&
+    );
 
     MCNAPI void
     $onPlayerSpawn(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerSpawnAfterEvent>&);
@@ -349,6 +365,10 @@ public:
 
     MCNAPI void $onPlayerHotbarSelectedSlotChange(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerHotbarSelectedSlotChangeAfterEvent>&
+    );
+
+    MCNAPI void $onPlayerSwingStart(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerSwingStartAfterEvent>&
     );
 
     MCNAPI void

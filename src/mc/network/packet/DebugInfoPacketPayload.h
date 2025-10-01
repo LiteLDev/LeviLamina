@@ -15,15 +15,14 @@ public:
 
 public:
     // prevent constructor by default
+    DebugInfoPacketPayload& operator=(DebugInfoPacketPayload const&);
     DebugInfoPacketPayload(DebugInfoPacketPayload const&);
     DebugInfoPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::DebugInfoPacketPayload& operator=(::DebugInfoPacketPayload&&);
-
-    MCFOLD ::DebugInfoPacketPayload& operator=(::DebugInfoPacketPayload const&);
+    MCAPI ::DebugInfoPacketPayload& operator=(::DebugInfoPacketPayload&&);
 
     MCAPI ~DebugInfoPacketPayload();
     // NOLINTEND

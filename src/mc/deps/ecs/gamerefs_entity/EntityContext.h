@@ -40,7 +40,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::WeakRef<::EntityContext> getWeakRef() const;
-
-    MCAPI bool isValid() const;
     // NOLINTEND
 };

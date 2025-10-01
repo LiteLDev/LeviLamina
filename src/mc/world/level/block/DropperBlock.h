@@ -25,7 +25,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:

@@ -8,7 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class Dimension;
-class Options;
+class IOptionsReader;
 class Player;
 // clang-format on
 
@@ -17,10 +17,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void renderActorsDebugServerState(::Options const&, ::Dimension const&) /*override*/;
+    virtual void renderActorsDebugServerState(::IOptionsReader const&, ::Dimension const&) /*override*/;
 
     // vIndex: 2
-    virtual void renderSimulatedPlayerDebugServerState(::Options const&, ::Player&) /*override*/;
+    virtual void renderSimulatedPlayerDebugServerState(::IOptionsReader const&, ::Player&) /*override*/;
 
     // vIndex: 3
     virtual void debugRenderDimension(::Dimension&) /*override*/;

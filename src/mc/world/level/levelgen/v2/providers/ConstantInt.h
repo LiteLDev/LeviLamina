@@ -42,11 +42,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $sample(::IRandom&) const;
+    MCFOLD int $sample(::IRandom&) const;
 
-    MCNAPI int $maxValue() const;
+    MCFOLD int $maxValue() const;
 
-    MCNAPI int $minValue() const;
+    MCFOLD int $minValue() const;
     // NOLINTEND
 
 public:

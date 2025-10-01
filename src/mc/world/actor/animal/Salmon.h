@@ -9,7 +9,7 @@ class Salmon : public ::Fish {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 167
+    // vIndex: 168
     virtual bool createAIGoals() /*override*/;
 
     // vIndex: 8

@@ -65,6 +65,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::Core::Result flush();
+
     MCNAPI ::Core::Result write(void const* data, uint64 byteCount);
     // NOLINTEND
 };

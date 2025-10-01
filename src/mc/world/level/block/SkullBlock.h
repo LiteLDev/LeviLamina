@@ -57,7 +57,7 @@ public:
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 22
-    virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -98,8 +98,6 @@ public:
     ) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND

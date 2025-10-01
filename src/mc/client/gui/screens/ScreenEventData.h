@@ -10,7 +10,6 @@
 #include "mc/client/gui/screens/ControllerDirectionEventData.h"
 #include "mc/client/gui/screens/CustomRendererEventData.h"
 #include "mc/client/gui/screens/FocusMoveScreenEventData.h"
-#include "mc/client/gui/screens/HoloInputModeChangeScreenEventData.h"
 #include "mc/client/gui/screens/HoverScreenEventData.h"
 #include "mc/client/gui/screens/InputModeChangeScreenEventData.h"
 #include "mc/client/gui/screens/LockedStateEventData.h"
@@ -35,7 +34,6 @@ public:
     ::ll::TypedStorage<4, 40, ::PointerHeldScreenEventData>           pointerHeld;
     ::ll::TypedStorage<4, 40, ::FocusMoveScreenEventData>             focusMove;
     ::ll::TypedStorage<4, 40, ::InputModeChangeScreenEventData>       inputMode;
-    ::ll::TypedStorage<4, 40, ::HoloInputModeChangeScreenEventData>   holoInputMode;
     ::ll::TypedStorage<4, 40, ::ScrollRequestScreenEventData>         scrollRequest;
     ::ll::TypedStorage<4, 40, ::ScrollDirectionEventData>             scrollDirectionRequest;
     ::ll::TypedStorage<8, 40, ::ToggleChangeEventData>                toggle;

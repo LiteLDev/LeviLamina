@@ -21,7 +21,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~IPackCommandPipeline() /*override*/;
+    virtual ~IPackCommandPipeline() /*override*/ = default;
 
     // vIndex: 1
     virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&&) = 0;
@@ -35,12 +35,6 @@ public:
 
     // vIndex: 4
     virtual ::TaskGroup& getTaskGroup() = 0;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

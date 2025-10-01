@@ -86,8 +86,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isViablePlacePos(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
@@ -95,9 +93,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void placeUpperBlock(::BlockSource& region, ::BlockPos const& pos, int updateFlags);
-
-    MCAPI static bool
-    tryPlaceSmallDripleaf(::BlockSource& region, ::BlockPos const& pos, int directionState, int updateFlags);
     // NOLINTEND
 
 public:

@@ -159,15 +159,6 @@ public:
     MCNAPI ::RakNet::InternalPacket*
     BuildPacketFromSplitPacketList(::RakNet::SplitPacketChannel* splitPacketChannel, uint64 time);
 
-    MCNAPI ::RakNet::InternalPacket* BuildPacketFromSplitPacketList(
-        ushort                   splitPacketId,
-        uint64                   time,
-        ::RakNet::RakNetSocket2* s,
-        ::RakNet::SystemAddress& systemAddress,
-        ::RakNet::RakNetRandom*  rnr,
-        ::RakNet::BitStream&     updateBitStream
-    );
-
     MCNAPI void ClearPacketsAndDatagrams();
 
     MCNAPI ::RakNet::InternalPacket* CreateInternalPacketFromBitStream(::RakNet::BitStream* bitStream, uint64 time);

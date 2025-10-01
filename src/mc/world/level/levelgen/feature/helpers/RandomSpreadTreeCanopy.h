@@ -39,13 +39,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~WeightedBlockReference();
+        MCAPI ~WeightedBlockReference();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -84,7 +84,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $placeCanopy(
+    MCAPI ::std::optional<::BlockPos> $placeCanopy(
         ::IBlockWorldGenAPI&             target,
         ::BlockPos const&                pos,
         ::Random&                        random,

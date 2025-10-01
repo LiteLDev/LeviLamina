@@ -34,12 +34,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI File(::Core::File&& rhs);
+
     MCNAPI
     File(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
 
     MCNAPI ::Core::Result close();
 
-    MCNAPI ::Core::Result getPosition(uint64* pPosition);
+    MCNAPI ::Core::Result getRemainingSize(uint64* pSize);
 
     MCNAPI ::Core::Result getSize(uint64* pSize);
 
@@ -47,8 +49,6 @@ public:
     open(::Core::PathView fileName, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
 
     MCNAPI ::Core::File& operator=(::Core::File&& rhs);
-
-    MCNAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
 
     MCNAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
 
@@ -74,6 +74,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::Core::File&& rhs);
+
     MCNAPI void*
     $ctor(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
     // NOLINTEND

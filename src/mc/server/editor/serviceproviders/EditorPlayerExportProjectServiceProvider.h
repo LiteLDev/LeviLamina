@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/ProjectExportStatus.h"
-#include "mc/common/editor/WorldType.h"
+#include "mc/editor/ProjectExportStatus.h"
+#include "mc/editor/WorldType.h"
 #include "mc/editor/services/export/ExportResult.h"
 
 // auto generated forward declare list

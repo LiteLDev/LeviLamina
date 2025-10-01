@@ -8,7 +8,9 @@
 // auto generated forward declare list
 // clang-format off
 struct SentryEnvelopePayload;
+struct SentryEnvelopePayloadExceptionMechanism;
 namespace ScriptModuleDiagnostics { class IScriptSentryRequestSender; }
+namespace ScriptModuleDiagnostics { struct ScriptSentryCaptureContext; }
 namespace ScriptModuleDiagnostics { struct ScriptSentrySessionParameters; }
 namespace Scripting { struct BaseError; }
 // clang-format on
@@ -81,12 +83,21 @@ public:
         ::ScriptModuleDiagnostics::ScriptSentrySessionParameters                 parameters
     );
 
-    MCNAPI void _fillError(::SentryEnvelopePayload& result, ::Scripting::BaseError const& error);
+    MCNAPI void _fillError(
+        ::SentryEnvelopePayload&                         result,
+        ::Scripting::BaseError const&                    error,
+        ::SentryEnvelopePayloadExceptionMechanism const& exceptionMechanism
+    );
 
     MCNAPI void _sendEvent(::SentryEnvelopePayload eventPayload) const;
 
     MCNAPI void
     addBreadcrumb(::SentryBreadcrumbLevel level, ::std::string message, ::std::optional<::std::string> category);
+
+    MCNAPI void onManuallyCapturedException(
+        ::Scripting::BaseError const&                                          error,
+        ::std::optional<::ScriptModuleDiagnostics::ScriptSentryCaptureContext> context
+    );
 
     MCNAPI ~ScriptSentrySession();
     // NOLINTEND

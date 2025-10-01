@@ -56,22 +56,22 @@ public:
     // vIndex: 11
     virtual void remove() /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    // vIndex: 178
+    // vIndex: 179
     virtual bool doPlayLandSound();
 
-    // vIndex: 179
+    // vIndex: 180
     virtual void playJumpSound();
 
-    // vIndex: 171
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 180
+    // vIndex: 181
     virtual void decreaseSquish();
 
-    // vIndex: 181
+    // vIndex: 182
     virtual ::OwnerPtr<::EntityContext> createChild(int i);
 
     // vIndex: 137

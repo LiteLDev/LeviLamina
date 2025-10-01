@@ -22,14 +22,13 @@ public:
     // prevent constructor by default
     BiomeStringList& operator=(BiomeStringList const&);
     BiomeStringList(BiomeStringList const&);
-    BiomeStringList();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BiomeStringList(::BiomeStringList&&);
+    MCNAPI BiomeStringList();
 
-    MCNAPI ::BiomeStringList& operator=(::BiomeStringList&&);
+    MCNAPI BiomeStringList(::BiomeStringList&&);
 
     MCNAPI ~BiomeStringList();
     // NOLINTEND
@@ -43,6 +42,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::BiomeStringList&&);
     // NOLINTEND
 

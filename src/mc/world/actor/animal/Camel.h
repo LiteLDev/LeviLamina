@@ -30,7 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 145
+    // vIndex: 146
     virtual void aiStep() /*override*/;
 
     // vIndex: 24

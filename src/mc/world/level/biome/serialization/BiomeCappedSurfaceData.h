@@ -30,8 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BiomeCappedSurfaceData(::BiomeCappedSurfaceData&&);
-
     MCNAPI ~BiomeCappedSurfaceData();
     // NOLINTEND
 
@@ -39,12 +37,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::Result<::BiomeCappedSurfaceData> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::BiomeCappedSurfaceData&&);
     // NOLINTEND
 
 public:

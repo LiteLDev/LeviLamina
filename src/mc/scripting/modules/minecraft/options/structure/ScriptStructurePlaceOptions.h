@@ -26,13 +26,14 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptStructurePlaceOptions& operator=(ScriptStructurePlaceOptions const&);
+    ScriptStructurePlaceOptions(ScriptStructurePlaceOptions const&);
     ScriptStructurePlaceOptions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptStructurePlaceOptions(::ScriptModuleMinecraft::ScriptStructurePlaceOptions const&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptStructurePlaceOptions&
+    operator=(::ScriptModuleMinecraft::ScriptStructurePlaceOptions const&);
 
     MCNAPI ::ScriptModuleMinecraft::ScriptStructurePlaceOptions&
     operator=(::ScriptModuleMinecraft::ScriptStructurePlaceOptions&&);
@@ -44,12 +45,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructurePlaceOptions const&);
     // NOLINTEND
 
 public:

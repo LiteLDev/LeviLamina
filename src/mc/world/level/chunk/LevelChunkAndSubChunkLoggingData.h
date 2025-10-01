@@ -85,12 +85,4 @@ public:
     // vIndex: 0
     virtual ~LevelChunkAndSubChunkLoggingData() /*override*/ = default;
     // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void logLevelChunkEvent(::ChunkPos const& chunkPos, char const* message, bool isClientSide);
-
-    MCNAPI static void logSubChunkEvent(::SubChunkPos const& subChunkPos, char const* message, bool isClientSide);
-    // NOLINTEND
 };

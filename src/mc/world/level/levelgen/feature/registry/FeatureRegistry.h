@@ -40,21 +40,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI FeatureBinaryJsonFormat(::FeatureRegistry::FeatureBinaryJsonFormat&&);
+        MCFOLD ::FeatureRegistry::FeatureBinaryJsonFormat& operator=(::FeatureRegistry::FeatureBinaryJsonFormat&&);
 
-        MCNAPI ~FeatureBinaryJsonFormat();
-        // NOLINTEND
+        MCFOLD bool operator==(::FeatureRegistry::FeatureBinaryJsonFormat const& rhs) const;
 
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::FeatureRegistry::FeatureBinaryJsonFormat&&);
+        MCAPI ~FeatureBinaryJsonFormat();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

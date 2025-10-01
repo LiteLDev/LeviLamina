@@ -3,18 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/Path.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Path; }
-// clang-format on
 
 class CDNConfig : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::std::string>>> mPackCDNUrls;
+    ::ll::TypedStorage<8, 32, ::Core::Path const>                                       mPath;
     // NOLINTEND
 
 public:
@@ -27,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _readConfigFile(::Core::Path const& filePath);
+    MCNAPI void _readConfigFile();
     // NOLINTEND
 
 public:

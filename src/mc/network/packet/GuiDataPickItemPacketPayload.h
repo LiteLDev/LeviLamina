@@ -13,14 +13,13 @@ public:
 
 public:
     // prevent constructor by default
+    GuiDataPickItemPacketPayload& operator=(GuiDataPickItemPacketPayload const&);
     GuiDataPickItemPacketPayload(GuiDataPickItemPacketPayload const&);
     GuiDataPickItemPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::GuiDataPickItemPacketPayload& operator=(::GuiDataPickItemPacketPayload const&);
-
     MCFOLD ::GuiDataPickItemPacketPayload& operator=(::GuiDataPickItemPacketPayload&&);
 
     MCAPI ~GuiDataPickItemPacketPayload();

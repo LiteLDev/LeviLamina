@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ChangeDimensionRequest;
 class Dimension;
 class DimensionManager;
@@ -22,7 +21,6 @@ class IPlayerDimensionTransferer;
 class PacketSender;
 class Player;
 class PlayerLimboActorManager;
-struct ActorUniqueID;
 // clang-format on
 
 class PlayerDimensionTransferManager {
@@ -64,12 +62,6 @@ public:
 
     MCAPI bool _playerChangeDimension(::Player& player, ::ChangeDimensionRequest& changeRequest);
 
-    MCAPI void _playerChangeDimensionPrepareRegion(
-        ::Player&                 player,
-        ::ChangeDimensionRequest& changeRequest,
-        ::Dimension&              toDimension
-    );
-
     MCAPI bool _playerChangeDimensionWaitingForChunks(
         ::Player&                 player,
         ::ChangeDimensionRequest& changeRequest,
@@ -80,9 +72,7 @@ public:
 
     MCAPI void requestPlayerChangeDimension(::Player const& player, ::ChangeDimensionRequest&& changeRequest);
 
-    MCAPI void setPacketSender(::PacketSender& packetSender);
-
-    MCAPI void transferActorToOwnedEntityLimbo(::ActorUniqueID playerId, ::Actor& actor);
+    MCFOLD void setPacketSender(::PacketSender& packetSender);
 
     MCAPI ~PlayerDimensionTransferManager();
     // NOLINTEND

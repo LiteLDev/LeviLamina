@@ -30,10 +30,10 @@ public:
     ::ll::UntypedStorage<8, 88> mUnk64c2f5;
     ::ll::UntypedStorage<8, 32> mUnkfcd3e5;
     ::ll::UntypedStorage<8, 24> mUnk30c525;
-    ::ll::UntypedStorage<4, 12> mUnkd4367e;
+    ::ll::UntypedStorage<4, 12> mUnk873fae;
     ::ll::UntypedStorage<8, 32> mUnk8b0f70;
     ::ll::UntypedStorage<8, 32> mUnkbc4997;
-    ::ll::UntypedStorage<8, 32> mUnk363497;
+    ::ll::UntypedStorage<8, 32> mUnk5905bc;
     // NOLINTEND
 
 public:
@@ -85,8 +85,6 @@ public:
         ::BlockPos const&                              structureOffset
     );
 
-    MCNAPI bool _parseOrigin(::CompoundTag const& tag);
-
     MCNAPI void editorFillFromWorld(
         ::BlockSource&             region,
         ::StructureSettings const& structureSettings,
@@ -114,7 +112,7 @@ public:
         ::StructureSettings const& structureSettings
     ) const;
 
-    MCNAPI bool setOrigin(::Vec3 newOrigin);
+    MCNAPI bool setNormalizedOrigin(::Vec3 newOrigin);
     // NOLINTEND
 
 public:

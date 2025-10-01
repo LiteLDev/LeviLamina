@@ -35,23 +35,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ChunkAccessor(::Dimension& dimension, ::BiomeSource const& biomeSource);
+    MCAPI ChunkAccessor(::Dimension& dimension, ::BiomeSource const& biomeSource);
 
-    MCNAPI int getFirstFreeHeight(int x, int z, ::br::worldgen::HeightmapProjection::Type heightmapProjection) const;
+    MCAPI int getFirstFreeHeight(int x, int z, ::br::worldgen::HeightmapProjection::Type heightmapProjection) const;
 
-    MCNAPI ~ChunkAccessor();
+    MCAPI ~ChunkAccessor();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Dimension& dimension, ::BiomeSource const& biomeSource);
+    MCAPI void* $ctor(::Dimension& dimension, ::BiomeSource const& biomeSource);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

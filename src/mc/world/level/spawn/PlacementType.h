@@ -28,7 +28,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockPos $adjustSpawnPos(::BlockSource&, ::BlockPos candidate) const;
+    MCAPI ::BlockPos $adjustSpawnPos(::BlockSource&, ::BlockPos candidate) const;
     // NOLINTEND
 
 public:

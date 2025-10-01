@@ -15,6 +15,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class Experiments;
+class LecternBlockActor;
 class Player;
 class Vec3;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -77,6 +78,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool _dropBook(::Player& player, ::BlockPos const& pos) const;
+
+    MCAPI ::LecternBlockActor* _getBlockActor(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void _updateRedstone(::BlockSource& region, ::BlockPos const& pos, bool powered) const;
 

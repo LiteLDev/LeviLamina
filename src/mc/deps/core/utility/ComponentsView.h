@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Util::Url { struct Components; }
+// clang-format on
+
 namespace Util::Url {
 
 struct ComponentsView {
@@ -20,6 +25,12 @@ public:
     ComponentsView& operator=(ComponentsView const&);
     ComponentsView(ComponentsView const&);
     ComponentsView();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator==(::Util::Url::Components const& other) const;
+    // NOLINTEND
 };
 
 } // namespace Util::Url

@@ -18,12 +18,14 @@ class CooldownItemComponent : public ::NetworkedItemComponent<::CooldownItemComp
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString> mCoolDownType;
-    ::ll::TypedStorage<4, 4, float>           mCooldownTime;
+    ::ll::TypedStorage<4, 4, float>           mDuration;
+    ::ll::TypedStorage<8, 48, ::HashedString> mCategory;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    CooldownItemComponent& operator=(CooldownItemComponent const&);
+    CooldownItemComponent(CooldownItemComponent const&);
     CooldownItemComponent();
 
 public:
@@ -36,13 +38,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CooldownItemComponent(::CooldownItemComponent const&);
-
     MCAPI explicit CooldownItemComponent(::SharedTypes::v1_20_50::CooldownItemComponent component);
 
     MCAPI ::CooldownItemComponent& operator=(::CooldownItemComponent&&);
-
-    MCAPI ::CooldownItemComponent& operator=(::CooldownItemComponent const&);
     // NOLINTEND
 
 public:
@@ -60,8 +58,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CooldownItemComponent const&);
-
     MCAPI void* $ctor(::SharedTypes::v1_20_50::CooldownItemComponent component);
     // NOLINTEND
 

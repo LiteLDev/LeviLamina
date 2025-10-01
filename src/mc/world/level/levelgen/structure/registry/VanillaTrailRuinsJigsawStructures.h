@@ -12,12 +12,12 @@ class VanillaTrailRuinsJigsawStructures {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void initialize(::StructureTemplateRegistrationContext& context, ::JigsawStructureRegistry& registry);
+    MCAPI static void initialize(::StructureTemplateRegistrationContext& context, ::JigsawStructureRegistry& registry);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view const& START();
+    MCAPI static ::std::string_view const& START();
     // NOLINTEND
 };

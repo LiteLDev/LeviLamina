@@ -10,6 +10,7 @@
 // clang-format off
 class Biome;
 class BiomeArea;
+class BiomeSource3d;
 class BlockPos;
 class BoundingBox;
 class ChunkLocalNoiseCache;
@@ -63,7 +64,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk659304;
+    ::ll::UntypedStorage<8, 8>  mUnk5d4fd5;
     ::ll::UntypedStorage<8, 64> mUnkfe4142;
     ::ll::UntypedStorage<8, 40> mUnk5890e1;
     ::ll::UntypedStorage<8, 40> mUnkb07982;
@@ -122,7 +123,7 @@ public:
     MCNAPI ReplacementBiomeSource(
         ::XoroshiroPositionalRandomFactory const& random,
         ::std::vector<::BiomeReplacement> const&  biomeReplacements,
-        ::std::unique_ptr<::BiomeSource>          wrappedBiomeSource
+        ::std::unique_ptr<::BiomeSource3d>        wrappedBiomeSource
     );
 
     MCNAPI bool fullyReplacesBiomeById(::BiomeIdType id) const;
@@ -136,7 +137,7 @@ public:
     MCNAPI void* $ctor(
         ::XoroshiroPositionalRandomFactory const& random,
         ::std::vector<::BiomeReplacement> const&  biomeReplacements,
-        ::std::unique_ptr<::BiomeSource>          wrappedBiomeSource
+        ::std::unique_ptr<::BiomeSource3d>        wrappedBiomeSource
     );
     // NOLINTEND
 

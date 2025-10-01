@@ -15,10 +15,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    StringByteInput();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9
@@ -29,18 +25,6 @@ public:
 
     // vIndex: 0
     virtual ~StringByteInput() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit StringByteInput(::std::string_view in);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view in);
     // NOLINTEND
 
 public:

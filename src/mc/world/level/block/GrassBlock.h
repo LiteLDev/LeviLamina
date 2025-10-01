@@ -39,7 +39,7 @@ public:
     // NOLINTBEGIN
     // vIndex: 74
     virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const
         /*override*/;
 
     // vIndex: 76
@@ -51,7 +51,7 @@ public:
         /*override*/;
 
     // vIndex: 46
-    virtual bool canBeOriginalSurface() const /*override*/;
+    virtual bool canBeOriginalSurface(bool) const /*override*/;
 
     // vIndex: 83
     virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
@@ -71,9 +71,7 @@ public:
 
     MCAPI bool _canBeGrass(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI bool _randomWalk(::BlockSource& region, ::BlockPos& pos, ::Randomize& randomize, int j) const;
-
-    MCAPI bool fertilize(::BlockSource& region, ::BlockPos const& pos, ::Randomize& randomize) const;
+    MCAPI bool _plantGrass(::BlockSource& region, ::BlockPos const& abovePos, ::Randomize& randomize) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
@@ -96,13 +94,13 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI int $calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
 
-    MCFOLD bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface(bool) const;
 
     MCAPI bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 

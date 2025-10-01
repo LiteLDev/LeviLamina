@@ -57,6 +57,8 @@ public:
 
     MCAPI void setLastOutput(::std::string const& lastOutput, ::std::vector<::std::string> const& params);
 
+    MCAPI void setTrackOutput(bool trackOutput);
+
     MCAPI ~BaseCommandBlock();
     // NOLINTEND
 

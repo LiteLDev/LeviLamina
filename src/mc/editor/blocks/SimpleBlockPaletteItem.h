@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    SimpleBlockPaletteItem& operator=(SimpleBlockPaletteItem const&);
     SimpleBlockPaletteItem(SimpleBlockPaletteItem const&);
     SimpleBlockPaletteItem();
 
@@ -29,6 +28,8 @@ public:
     MCNAPI ::HashedString _getBlock() const;
 
     MCNAPI ::Editor::SimpleBlockPaletteItem& operator=(::Editor::SimpleBlockPaletteItem&&);
+
+    MCNAPI ::Editor::SimpleBlockPaletteItem& operator=(::Editor::SimpleBlockPaletteItem const&);
 
     MCNAPI ~SimpleBlockPaletteItem();
     // NOLINTEND

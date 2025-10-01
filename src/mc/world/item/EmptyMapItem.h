@@ -24,10 +24,10 @@ public:
     // vIndex: 50
     virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 109
+    // vIndex: 111
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
         /*override*/;
 
@@ -39,6 +39,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void addPlayerMarker(::ItemStackBase& map);
+
+    MCAPI static bool isLocatorMap(::ItemStackBase const& map);
     // NOLINTEND
 
 public:

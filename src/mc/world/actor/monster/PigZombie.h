@@ -10,7 +10,6 @@
 class ActorDamageSource;
 class CompoundTag;
 class DataLoadHelper;
-class Mob;
 // clang-format on
 
 class PigZombie : public ::Zombie {
@@ -28,7 +27,7 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
     // vIndex: 135
@@ -42,12 +41,6 @@ public:
 
     // vIndex: 8
     virtual ~PigZombie() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _alert(::Mob& target);
     // NOLINTEND
 
 public:

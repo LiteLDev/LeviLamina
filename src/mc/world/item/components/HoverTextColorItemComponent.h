@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ComponentItem;
 class SemVersion;
 namespace SharedTypes::v1_20_50 { struct HoverTextColorItemComponent; }
 namespace cereal { struct ReflectionCtx; }
@@ -23,13 +24,15 @@ public:
 
 public:
     // prevent constructor by default
+    HoverTextColorItemComponent& operator=(HoverTextColorItemComponent const&);
+    HoverTextColorItemComponent(HoverTextColorItemComponent const&);
     HoverTextColorItemComponent();
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7
-    virtual void _initializeComponent() /*override*/;
+    virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
     // vIndex: 0
     virtual ~HoverTextColorItemComponent() /*override*/ = default;
@@ -38,11 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HoverTextColorItemComponent(::HoverTextColorItemComponent const&);
-
     MCAPI explicit HoverTextColorItemComponent(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
-
-    MCAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent const&);
 
     MCAPI ::HoverTextColorItemComponent& operator=(::HoverTextColorItemComponent&&);
     // NOLINTEND
@@ -62,15 +61,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HoverTextColorItemComponent const&);
-
     MCAPI void* $ctor(::SharedTypes::v1_20_50::HoverTextColorItemComponent component);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent(::ComponentItem& owner);
     // NOLINTEND
 
 public:

@@ -13,7 +13,6 @@ public:
 
 public:
     // prevent constructor by default
-    SentryEnvelopePayloadUserData& operator=(SentryEnvelopePayloadUserData const&);
     SentryEnvelopePayloadUserData(SentryEnvelopePayloadUserData const&);
     SentryEnvelopePayloadUserData();
 
@@ -23,6 +22,8 @@ public:
     MCNAPI SentryEnvelopePayloadUserData(::SentryEnvelopePayloadUserData&&);
 
     MCNAPI ::SentryEnvelopePayloadUserData& operator=(::SentryEnvelopePayloadUserData&&);
+
+    MCNAPI ::SentryEnvelopePayloadUserData& operator=(::SentryEnvelopePayloadUserData const&);
 
     MCNAPI ~SentryEnvelopePayloadUserData();
     // NOLINTEND

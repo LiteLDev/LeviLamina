@@ -14,6 +14,7 @@ public:
 
 public:
     // prevent constructor by default
+    Dimension& operator=(Dimension const&);
     Dimension(Dimension const&);
     Dimension();
 
@@ -22,9 +23,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::Dimension&
     operator=(::SharedTypes::v1_21_60::DimensionDefinition::Dimension&&);
-
-    MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::Dimension&
-    operator=(::SharedTypes::v1_21_60::DimensionDefinition::Dimension const&);
     // NOLINTEND
 };
 

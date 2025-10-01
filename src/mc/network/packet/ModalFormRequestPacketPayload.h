@@ -12,6 +12,7 @@ public:
 
 public:
     // prevent constructor by default
+    ModalFormRequestPacketPayload& operator=(ModalFormRequestPacketPayload const&);
     ModalFormRequestPacketPayload(ModalFormRequestPacketPayload const&);
     ModalFormRequestPacketPayload();
 
@@ -19,8 +20,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::ModalFormRequestPacketPayload& operator=(::ModalFormRequestPacketPayload&&);
-
-    MCFOLD ::ModalFormRequestPacketPayload& operator=(::ModalFormRequestPacketPayload const&);
 
     MCAPI ~ModalFormRequestPacketPayload();
     // NOLINTEND

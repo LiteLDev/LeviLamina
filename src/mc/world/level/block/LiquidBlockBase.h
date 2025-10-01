@@ -67,6 +67,8 @@ public:
 
     MCAPI void emitFizzParticle(::BlockSource& region, ::BlockPos const& p) const;
 
+    MCAPI int getTickDelay(::BlockSource& region) const;
+
     MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void solidify(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& changedNeighbor) const;

@@ -48,27 +48,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool canAttach(::JigsawBlockInfo const& block1, ::JigsawBlockInfo const& block2);
+    MCAPI static bool canAttach(::JigsawBlockInfo const& block1, ::JigsawBlockInfo const& block2);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI ::Block const& $getRenderBlock() const;
+    MCAPI ::Block const& $getRenderBlock() const;
 
-    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCNAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCNAPI ::Block const& $getPlacementBlock(
+    MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -76,7 +76,7 @@ public:
         int               itemValue
     ) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

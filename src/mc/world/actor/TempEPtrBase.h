@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/world/actor/_TickPtr.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+// clang-format on
+
 class TempEPtrBase : public ::_TickPtr {
 public:
     // member variables
@@ -34,6 +39,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void _set(::Actor* e);
+
     MCNAPI bool isValid() const;
 
     MCNAPI void unset();

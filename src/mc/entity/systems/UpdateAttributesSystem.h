@@ -12,5 +12,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createProcessRequestSystem();
+
+    MCNAPI static ::TickingSystemWithInfo createUpdateSystem();
     // NOLINTEND
 };

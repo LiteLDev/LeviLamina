@@ -37,12 +37,6 @@ MCNAPI void forEachItemOnActorEnderChest(
     ::std::function<void(::ItemStack const&)> callback
 );
 
-MCNAPI void forEachItemOnActorEquippable(
-    ::Actor const&                            actor,
-    ::CommandIntegerRange const&              slot,
-    ::std::function<void(::ItemStack const&)> callback
-);
-
 MCNAPI void
 forEachItemOnActorHandSlot(::Actor const& actor, ::HandSlot slot, ::std::function<void(::ItemStack const&)> callback);
 

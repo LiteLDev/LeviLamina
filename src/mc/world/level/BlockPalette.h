@@ -12,6 +12,7 @@ class Block;
 class BlockType;
 class IUnknownBlockTypeRegistry;
 class Level;
+struct BlockID;
 struct NewBlockID;
 // clang-format on
 
@@ -65,6 +66,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit BlockPalette(::BlockPalette::ConstructorToken);
+
     MCNAPI explicit BlockPalette(::Level& level);
 
     MCNAPI ::Block const& getBlockFromLegacyData(::NewBlockID id, uint data) const;
@@ -77,8 +80,16 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Block const& convertLegacyBlock(::BlockID id, ushort data);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::BlockPalette::ConstructorToken);
+
     MCNAPI void* $ctor(::Level& level);
     // NOLINTEND
 

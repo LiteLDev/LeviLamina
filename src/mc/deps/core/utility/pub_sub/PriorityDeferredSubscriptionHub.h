@@ -36,6 +36,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI ::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&
+        operator=(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&&);
+
         MCNAPI ~DequeuedEntry();
         // NOLINTEND
 

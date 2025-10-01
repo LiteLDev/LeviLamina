@@ -28,7 +28,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptWidgetCreateOptions& operator=(ScriptWidgetCreateOptions const&);
     ScriptWidgetCreateOptions();
 
 public:
@@ -38,6 +37,9 @@ public:
 
     MCNAPI ::Editor::ScriptModule::ScriptWidgetCreateOptions&
     operator=(::Editor::ScriptModule::ScriptWidgetCreateOptions&&);
+
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetCreateOptions&
+    operator=(::Editor::ScriptModule::ScriptWidgetCreateOptions const&);
 
     MCNAPI ~ScriptWidgetCreateOptions();
     // NOLINTEND

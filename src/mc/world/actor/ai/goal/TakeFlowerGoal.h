@@ -6,6 +6,7 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ActorFilterGroup.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
@@ -28,14 +29,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>               mSpeedModifier;
-        ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-        ::ll::TypedStorage<4, 4, float>               mMinPickupFlowerWaitSeconds;
-        ::ll::TypedStorage<4, 4, float>               mMaxPickupFlowerWaitSeconds;
-        ::ll::TypedStorage<4, 12, ::Vec3>             mSearchArea;
-        ::ll::TypedStorage<4, 4, float>               mMaxRotationX;
-        ::ll::TypedStorage<4, 4, float>               mMaxHeadRotationY;
-        ::ll::TypedStorage<4, 4, float>               mMinDistanceToTarget;
+        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mFilters;
+        ::ll::TypedStorage<4, 4, float>                      mSpeedModifier;
+        ::ll::TypedStorage<4, 4, float>                      mMinPickupFlowerWaitSeconds;
+        ::ll::TypedStorage<4, 4, float>                      mMaxPickupFlowerWaitSeconds;
+        ::ll::TypedStorage<4, 12, ::Vec3>                    mSearchArea;
+        ::ll::TypedStorage<4, 4, float>                      mMaxRotationX;
+        ::ll::TypedStorage<4, 4, float>                      mMaxHeadRotationY;
+        ::ll::TypedStorage<4, 4, float>                      mMinDistanceToTarget;
+        ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnTakeFlower;
         // NOLINTEND
 
     public:
@@ -65,18 +67,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>               mSpeedModifier;
-    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-    ::ll::TypedStorage<4, 4, float>               mMinPickupFlowerWaitTicks;
-    ::ll::TypedStorage<4, 4, float>               mMaxPickupFlowerWaitTicks;
-    ::ll::TypedStorage<4, 12, ::Vec3>             mSearchArea;
-    ::ll::TypedStorage<4, 4, float>               mMaxRotationX;
-    ::ll::TypedStorage<4, 4, float>               mMaxHeadRotationY;
-    ::ll::TypedStorage<4, 4, float>               mMinDistanceToTargetSquared;
-    ::ll::TypedStorage<4, 4, int>                 mPickupFlowerTick;
-    ::ll::TypedStorage<1, 1, bool>                mTakeFlower;
-    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>    mOfferFlowerMob;
+    ::ll::TypedStorage<4, 4, float>                      mSpeedModifier;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mFilters;
+    ::ll::TypedStorage<4, 4, float>                      mMinPickupFlowerWaitTicks;
+    ::ll::TypedStorage<4, 4, float>                      mMaxPickupFlowerWaitTicks;
+    ::ll::TypedStorage<4, 12, ::Vec3>                    mSearchArea;
+    ::ll::TypedStorage<4, 4, float>                      mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float>                      mMaxHeadRotationY;
+    ::ll::TypedStorage<4, 4, float>                      mMinDistanceToTargetSquared;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnTakeFlower;
+    ::ll::TypedStorage<4, 4, int>                        mPickupFlowerTick;
+    ::ll::TypedStorage<1, 1, bool>                       mTakeFlower;
+    ::ll::TypedStorage<8, 8, ::Mob&>                     mMob;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>           mOfferFlowerMob;
     // NOLINTEND
 
 public:

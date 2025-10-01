@@ -52,7 +52,8 @@ public:
     virtual void loadLanguageKeywordsFromPack(
         ::PackManifest const&,
         ::PackAccessStrategy const&,
-        ::std::vector<::std::string> const&
+        ::std::vector<::std::string> const&,
+        ::std::optional<::std::vector<::std::string>> const&
     ) = 0;
 
     // vIndex: 9

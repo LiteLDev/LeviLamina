@@ -36,8 +36,6 @@ public:
 
     MCNAPI BiomeDecorationFeature(::BiomeDecorationFeature const&);
 
-    MCNAPI bool canUseFeature(::IFeature const& mFeatureValue) const;
-
     MCNAPI ~BiomeDecorationFeature();
     // NOLINTEND
 

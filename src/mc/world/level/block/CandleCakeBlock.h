@@ -76,6 +76,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _popCandle(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 

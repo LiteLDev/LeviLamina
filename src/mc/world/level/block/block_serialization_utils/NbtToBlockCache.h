@@ -57,13 +57,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~NbtToBlockCache();
+    MCAPI NbtToBlockCache();
+
+    MCAPI ~NbtToBlockCache();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

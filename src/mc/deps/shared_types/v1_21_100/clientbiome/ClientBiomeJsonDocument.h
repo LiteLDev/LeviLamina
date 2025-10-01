@@ -54,15 +54,13 @@ public:
 
     public:
         // prevent constructor by default
+        ClientBiomeJsonObject& operator=(ClientBiomeJsonObject const&);
         ClientBiomeJsonObject(ClientBiomeJsonObject const&);
         ClientBiomeJsonObject();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_21_100::ClientBiomeJsonDocument::ClientBiomeJsonObject&
-        operator=(::SharedTypes::v1_21_100::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
-
         MCNAPI ::SharedTypes::v1_21_100::ClientBiomeJsonDocument::ClientBiomeJsonObject&
         operator=(::SharedTypes::v1_21_100::ClientBiomeJsonDocument::ClientBiomeJsonObject&&);
 

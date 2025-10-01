@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
+struct ActorDefinitionIdentifier;
 // clang-format on
 
 class SpawnData : public ::WeightedRandom::WeighedRandomItem {
@@ -22,13 +23,16 @@ public:
 
 public:
     // prevent constructor by default
-    SpawnData(SpawnData const&);
     SpawnData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI SpawnData(::SpawnData const&);
+
     MCNAPI explicit SpawnData(::CompoundTag const& tag);
+
+    MCNAPI SpawnData(int randomWeight, ::ActorDefinitionIdentifier actorId);
 
     MCNAPI ::SpawnData& operator=(::SpawnData const&);
 
@@ -40,7 +44,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::SpawnData const&);
+
     MCNAPI void* $ctor(::CompoundTag const& tag);
+
+    MCNAPI void* $ctor(int randomWeight, ::ActorDefinitionIdentifier actorId);
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ public:
     // vIndex: 59
     virtual bool isComplex() const /*override*/;
 
-    // vIndex: 121
+    // vIndex: 123
     virtual ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const;
     // NOLINTEND
 

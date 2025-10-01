@@ -24,7 +24,7 @@ struct ModuleBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 104, ::Scripting::ModuleDescriptor>               descriptor;
+    ::ll::TypedStorage<8, 96, ::Scripting::ModuleDescriptor>                descriptor;
     ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::ModuleDependency>> moduleDependencies;
     ::ll::TypedStorage<8, 32, ::std::string>                                javaScript;
     ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::ClassBinding>>     classBindings;

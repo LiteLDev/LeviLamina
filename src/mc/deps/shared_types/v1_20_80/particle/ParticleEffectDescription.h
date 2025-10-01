@@ -19,18 +19,15 @@ public:
 
 public:
     // prevent constructor by default
+    ParticleEffectDescription& operator=(ParticleEffectDescription const&);
+    ParticleEffectDescription(ParticleEffectDescription const&);
     ParticleEffectDescription();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ParticleEffectDescription(::SharedTypes::v1_20_80::ParticleEffectDescription const&);
-
     MCNAPI ::SharedTypes::v1_20_80::ParticleEffectDescription&
     operator=(::SharedTypes::v1_20_80::ParticleEffectDescription&&);
-
-    MCNAPI ::SharedTypes::v1_20_80::ParticleEffectDescription&
-    operator=(::SharedTypes::v1_20_80::ParticleEffectDescription const&);
 
     MCNAPI ~ParticleEffectDescription();
     // NOLINTEND
@@ -39,12 +36,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEffectDescription const&);
     // NOLINTEND
 
 public:

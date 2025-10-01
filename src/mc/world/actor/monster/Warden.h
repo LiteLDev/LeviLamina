@@ -43,17 +43,17 @@ public:
     // vIndex: 51
     virtual void setTarget(::Actor* entity) /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual bool checkSpawnRules(bool) /*override*/;
 
-    // vIndex: 148
+    // vIndex: 149
     virtual bool checkSpawnObstruction() const /*override*/;
 
     // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 154
-    virtual bool doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
+    // vIndex: 155
+    virtual bool doHurtTarget(::Actor*, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
 
     // vIndex: 8
     virtual ~Warden() /*override*/ = default;
@@ -79,8 +79,6 @@ public:
     MCAPI bool $checkSpawnObstruction() const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
-
-    MCAPI bool $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
     // NOLINTEND
 
 public:

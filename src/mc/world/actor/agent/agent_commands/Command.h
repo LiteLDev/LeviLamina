@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/agent/agent_components/Direction.h"
+
+// auto generated forward declare list
+// clang-format off
+class Vec3;
+// clang-format on
+
 namespace AgentCommands {
 
 class Command {
@@ -38,6 +46,12 @@ public:
 
     // vIndex: 4
     virtual void fireCommandDoneEvent();
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Vec3 _getNextPosFromDirection(::AgentComponents::Direction dir);
     // NOLINTEND
 
 public:

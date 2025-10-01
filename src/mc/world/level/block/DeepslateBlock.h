@@ -15,7 +15,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 46
-    virtual bool canBeOriginalSurface() const /*override*/;
+    virtual bool canBeOriginalSurface(bool) const /*override*/;
 
     // vIndex: 129
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
@@ -27,7 +27,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface(bool) const;
 
     MCAPI ::Block const* $tryGetInfested(::Block const& block) const;
     // NOLINTEND

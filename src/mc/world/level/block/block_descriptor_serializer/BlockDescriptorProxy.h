@@ -30,28 +30,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockDescriptorProxy(::SharedTypes::Legacy::BlockDescriptor desc);
+    MCAPI explicit BlockDescriptorProxy(::SharedTypes::Legacy::BlockDescriptor desc);
 
-    MCNAPI BlockDescriptorProxy(::std::string name, ::std::vector<::BlockDescriptor::State> states, ::std::string tags);
+    MCAPI BlockDescriptorProxy(::std::string name, ::std::vector<::BlockDescriptor::State> states, ::std::string tags);
 
-    MCNAPI ::BlockDescriptorSerializer::BlockDescriptorProxy&
+    MCAPI ::BlockDescriptorSerializer::BlockDescriptorProxy&
     operator=(::BlockDescriptorSerializer::BlockDescriptorProxy&&);
 
-    MCNAPI ~BlockDescriptorProxy();
+    MCAPI ~BlockDescriptorProxy();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor desc);
+    MCAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor desc);
 
-    MCNAPI void* $ctor(::std::string name, ::std::vector<::BlockDescriptor::State> states, ::std::string tags);
+    MCAPI void* $ctor(::std::string name, ::std::vector<::BlockDescriptor::State> states, ::std::string tags);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

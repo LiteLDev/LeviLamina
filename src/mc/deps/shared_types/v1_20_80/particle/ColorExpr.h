@@ -19,13 +19,14 @@ public:
 
 public:
     // prevent constructor by default
-    ColorExpr& operator=(ColorExpr const&);
     ColorExpr(ColorExpr const&);
     ColorExpr();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::SharedTypes::v1_20_80::ColorExpr& operator=(::SharedTypes::v1_20_80::ColorExpr const&);
+
     MCNAPI ~ColorExpr();
     // NOLINTEND
 

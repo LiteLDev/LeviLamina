@@ -39,9 +39,9 @@ public:
     virtual ::leveldb::Status NewWritableFile(::std::string const& f, ::leveldb::WritableFile** r) /*override*/;
 
     // vIndex: 7
-    virtual ::leveldb::Status DeleteFileA(::std::string const& f) /*override*/;
+    virtual ::leveldb::Status RemoveFile(::std::string const& fname) /*override*/;
 
-    // vIndex: 11
+    // vIndex: 13
     virtual ::leveldb::Status RenameFile(::std::string const& from, ::std::string const& to) /*override*/;
 
     // vIndex: 0
@@ -79,7 +79,7 @@ public:
 
     MCNAPI ::leveldb::Status $NewWritableFile(::std::string const& f, ::leveldb::WritableFile** r);
 
-    MCNAPI ::leveldb::Status $DeleteFileA(::std::string const& f);
+    MCNAPI ::leveldb::Status $RemoveFile(::std::string const& fname);
 
     MCNAPI ::leveldb::Status $RenameFile(::std::string const& from, ::std::string const& to);
     // NOLINTEND

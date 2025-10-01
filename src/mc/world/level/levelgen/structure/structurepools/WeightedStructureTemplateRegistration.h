@@ -26,12 +26,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~WeightedStructureTemplateRegistration();
+    MCAPI ~WeightedStructureTemplateRegistration();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

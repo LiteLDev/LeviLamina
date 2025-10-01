@@ -22,6 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI void _initAbilityOptions();
+
     MCAPI void addSaveData(::CompoundTag& parentTag) const;
 
     MCAPI bool loadSaveData(::CompoundTag const& parentTag);

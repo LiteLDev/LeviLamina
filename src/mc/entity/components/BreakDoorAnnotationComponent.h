@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _cleanUp(::Mob& mob);
+    MCNAPI bool _shouldBreakDoor(::Mob& mob);
 
     MCNAPI bool canMobBreakDoor(::Mob& mob, ::Path const& path) const;
 

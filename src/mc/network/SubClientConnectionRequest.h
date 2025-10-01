@@ -9,6 +9,7 @@
 // clang-format off
 class AnimatedImageData;
 class MinEngineVersion;
+class MinecraftServiceKeyManager;
 class SerializedPersonaPieceHandle;
 class TintMapColor;
 class WebToken;
@@ -64,8 +65,6 @@ public:
 
     MCNAPI ::std::string getPlatformOnlineId() const;
 
-    MCNAPI ::std::string getPlayFabId() const;
-
     MCNAPI ::std::string getSelfSignedId() const;
 
     MCNAPI ::std::string getSkinAnimationData() const;
@@ -96,7 +95,11 @@ public:
 
     MCNAPI ::std::string toString();
 
-    MCNAPI bool verify(::std::vector<::std::string> const& trustedKeys, int64 currentTime);
+    MCNAPI bool verify(
+        ::std::vector<::std::string> const& trustedKeys,
+        int64                               currentTime,
+        ::MinecraftServiceKeyManager const& mcServiceKeyManager
+    );
 
     MCNAPI bool verifySelfSigned();
 

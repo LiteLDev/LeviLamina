@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/AppPlatformListener.h"
+#include "mc/deps/application/AppPlatformListener.h"
 #include "mc/deps/application/LowMemorySeverity.h"
 #include "mc/deps/core/file/LevelStorageState.h"
 #include "mc/deps/core/file/StorageAreaStateListener.h"
@@ -105,18 +105,20 @@ public:
     ::ll::TypedStorage<8, 16, ::std::thread>                                                   mServerInstanceThread;
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                     mResumeMutex;
     ::ll::TypedStorage<8, 72, ::std::condition_variable>                                       mResumeSignal;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerScriptManager>>                         mServerScriptManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Scripting::RegistryManager>>                  mScriptRegistryManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerScriptManager>>                         mServerScriptManager;
     ::ll::TypedStorage<8, 64, ::std::function<void(char const*)>>               mScriptWatchdogCriticalErrorCallback;
     ::ll::TypedStorage<8, 64, ::std::function<void(char const*, char const*)>>  mUnrecoverableErrorCallback;
     ::ll::TypedStorage<1, 1, bool>                                              mHandledLevelCorruption;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TextFilteringProcessor>>       mTextFilteringProcessor;
     ::ll::TypedStorage<8, 8, ::std::chrono::microseconds>                       mWakeupInterval;
     ::ll::TypedStorage<8, 32, ::std::string>                                    mLevelId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                    mServerName;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WorldSessionEndPoint>>         mWorldSessionEndPoint;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Core::FileStorageArea>>       mStorageAreaForLevel;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ItemRegistry>>                mServerItemRegistry;
     ::ll::TypedStorage<1, 1, bool>                                              mEnableItemStackNetManager;
+    ::ll::TypedStorage<1, 1, bool>                                              mEnableRealmsStories;
     ::ll::TypedStorage<1, 1, bool>                                              mbInitialized;
     ::ll::TypedStorage<1, 1, bool>                                              mbFlaggedForEarlyDestruction;
     ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ServerInstance>>      mServiceRegistrationToken;
@@ -244,6 +246,7 @@ public:
         ::NetworkSettingOptions const&                                               networkSettings,
         bool                                                                         enableItemStackNetManager,
         bool                                                                         enableItemTransactionLogger,
+        bool                                                                         enableRealmsStories,
         ::std::optional<::PlayerMovementSettings>                                    playerMovementSettings,
         ::ScriptSettings&&                                                           scriptSettings,
         ::Experiments const&                                                         levelExperiments,
@@ -273,8 +276,6 @@ public:
 
     MCAPI void
     setUnrecoverableErrorCallback(::std::function<void(char const*, char const*)> unrecoverableErrorCallback);
-
-    MCAPI void setWakeupFrequency(int hertz);
 
     MCAPI void startLeaveGame();
 

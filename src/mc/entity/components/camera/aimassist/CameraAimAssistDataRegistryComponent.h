@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/puv/LoadResult.h"
 #include "mc/deps/puv/Loader.h"
 #include "mc/platform/threading/Mutex.h"
 
@@ -12,9 +14,13 @@
 class CameraAimAssistPresetsPacket;
 class EntityContext;
 class HashedString;
+class IMinecraftEventing;
+class LinkedAssetValidator;
+class PackInstance;
 class PacketSender;
 class ResourcePackManager;
 struct CameraAimAssistDataRegistryDirtyComponent;
+namespace Core { class Path; }
 namespace SharedTypes::v1_21_50 { struct CameraAimAssistCategoriesFile; }
 namespace SharedTypes::v1_21_50 { struct CameraAimAssistCategoryDefinition; }
 namespace SharedTypes::v1_21_50 { struct CameraAimAssistPresetDefinition; }
@@ -37,7 +43,14 @@ public:
         ::std::unordered_map<::HashedString, ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition>>
                                                            mCategories;
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mRegistriesLock;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>        mEventing;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CameraAimAssistDataRegistryComponent& operator=(CameraAimAssistDataRegistryComponent const&);
+    CameraAimAssistDataRegistryComponent(CameraAimAssistDataRegistryComponent const&);
+    CameraAimAssistDataRegistryComponent();
 
 public:
     // virtual functions
@@ -49,16 +62,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _parseAndLoadAimAssistCategories(
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> _categoriesPackForEachCallback(
+        ::EntityContext&                                                             levelEntity,
+        ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> const& loader,
+        ::PackInstance const&                                                        pack,
+        ::std::string&                                                               fileData,
+        ::Core::Path const&                                                          filenameWithExtension
+    );
+
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> _parseAndLoadAimAssistCategories(
         ::EntityContext&                                                             levelEntity,
         ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistCategoriesFile> const& loader,
         ::std::string const&                                                         fileData
     );
 
-    MCNAPI void _parseAndLoadAimAssistPreset(
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistPresetFile> _parseAndLoadAimAssistPreset(
         ::EntityContext&                                                         levelEntity,
         ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistPresetFile> const& loader,
         ::std::string const&                                                     fileData
+    );
+
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_50::CameraAimAssistPresetFile> _presetsPackForEachCallback(
+        ::EntityContext&                                                         levelEntity,
+        ::Puv::Loader<::SharedTypes::v1_21_50::CameraAimAssistPresetFile> const& loader,
+        ::PackInstance const&                                                    pack,
+        ::std::string&                                                           fileData,
+        ::Core::Path const&                                                      filenameWithExtension
     );
 
     MCNAPI bool _validatePresetCategorySetting(::std::string const& categoryId) const;
@@ -70,9 +99,10 @@ public:
     addPreset(::EntityContext& levelEntity, ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&& preset);
 
     MCNAPI void loadJsonFilesForServer(
-        ::EntityContext&               levelEntity,
-        ::cereal::ReflectionCtx const& ctx,
-        ::ResourcePackManager const&   resourcePackManager
+        ::EntityContext&                                   levelEntity,
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::ResourcePackManager const&                       resourcePackManager,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
     MCNAPI ::CameraAimAssistPresetsPacket makePresetsPacketFromFullRegistry() const;

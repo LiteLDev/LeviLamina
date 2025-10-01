@@ -24,8 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::TrimMaterial> getTrimMaterialByItemName(::HashedString const& itemName) const;
+    MCAPI ::std::optional<::TrimMaterial> getTrimMaterialByItemName(::HashedString const& itemName) const;
 
-    MCNAPI ::std::optional<::TrimMaterial> getTrimMaterialByMaterialId(::HashedString const& materialId) const;
+    MCAPI ::std::optional<::TrimMaterial> getTrimMaterialByMaterialId(::HashedString const& materialId) const;
     // NOLINTEND
 };

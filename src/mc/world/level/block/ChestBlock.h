@@ -7,6 +7,7 @@
 #include "mc/world/level/block/ActorBlockBase.h"
 #include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
+#include "mc/world/level/block/ChestType.h"
 #include "mc/world/level/material/MaterialType.h"
 
 // auto generated forward declare list
@@ -26,18 +27,9 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 
 class ChestBlock : public ::ActorBlock {
 public:
-    // ChestBlock inner types define
-    enum class ChestType : uchar {
-        Basic  = 0,
-        Trap   = 1,
-        Ender  = 2,
-        Copper = 3,
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ChestBlock::ChestType> mType;
+    ::ll::TypedStorage<1, 1, ::ChestType> mType;
     // NOLINTEND
 
 public:
@@ -113,7 +105,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChestBlock(::std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
+    MCAPI ChestBlock(::std::string const& nameId, int id, ::ChestType type, ::MaterialType materialType);
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
@@ -131,7 +123,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::ChestBlock::ChestType type, ::MaterialType materialType);
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::ChestType type, ::MaterialType materialType);
     // NOLINTEND
 
 public:

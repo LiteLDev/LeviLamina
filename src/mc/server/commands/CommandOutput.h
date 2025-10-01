@@ -49,13 +49,6 @@ public:
 
     MCAPI bool hasErrorMessage() const;
 
-    MCAPI void load(
-        ::CommandOutputType                       type,
-        int                                       successCount,
-        ::std::vector<::CommandOutputMessage>&&   messages,
-        ::std::unique_ptr<::CommandPropertyBag>&& data
-    );
-
     MCAPI void success(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params);
 
     MCAPI ~CommandOutput();

@@ -21,15 +21,22 @@ public:
 
 public:
     // prevent constructor by default
-    EnumValue(EnumValue const&);
     EnumValue();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI EnumValue(::cereal::internal::EnumValue const&);
+
     MCNAPI ::cereal::internal::EnumValue& operator=(::cereal::internal::EnumValue&&);
 
     MCNAPI ::cereal::internal::EnumValue& operator=(::cereal::internal::EnumValue const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::cereal::internal::EnumValue const&);
     // NOLINTEND
 };
 

@@ -86,11 +86,14 @@ public:
 
     public:
         // prevent constructor by default
+        SubChunkPacketData& operator=(SubChunkPacketData const&);
         SubChunkPacketData();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCAPI SubChunkPacketData(::SubChunkPacket::SubChunkPacketData const&);
+
         MCAPI SubChunkPacketData(
             ::SubChunkPacket::SubChunkPosOffset const& pos,
             ::SubChunkPacket::SubChunkRequestResult    requestResult
@@ -102,6 +105,8 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
+        MCAPI void* $ctor(::SubChunkPacket::SubChunkPacketData const&);
+
         MCAPI void*
         $ctor(::SubChunkPacket::SubChunkPosOffset const& pos, ::SubChunkPacket::SubChunkRequestResult requestResult);
         // NOLINTEND
@@ -142,7 +147,7 @@ public:
     // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 

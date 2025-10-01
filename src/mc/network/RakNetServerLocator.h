@@ -95,25 +95,13 @@ public:
 
     public:
         // prevent constructor by default
+        AnnounceServerData& operator=(AnnounceServerData const&);
         AnnounceServerData();
 
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI AnnounceServerData(::RakNetServerLocator::AnnounceServerData const& announceData);
-
-        MCNAPI AnnounceServerData(
-            ::std::string const& playerName,
-            ::std::string const& worldName,
-            ::GameType           gameType,
-            int                  numPlayers,
-            int                  maxNumPlayers,
-            bool                 isJoinableThroughServerScreen,
-            bool                 isEditorWorld,
-            bool                 isHardcore
-        );
-
-        MCNAPI ::RakNetServerLocator::AnnounceServerData& operator=(::RakNetServerLocator::AnnounceServerData const&);
 
         MCNAPI ~AnnounceServerData();
         // NOLINTEND
@@ -122,17 +110,6 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::RakNetServerLocator::AnnounceServerData const& announceData);
-
-        MCNAPI void* $ctor(
-            ::std::string const& playerName,
-            ::std::string const& worldName,
-            ::GameType           gameType,
-            int                  numPlayers,
-            int                  maxNumPlayers,
-            bool                 isJoinableThroughServerScreen,
-            bool                 isEditorWorld,
-            bool                 isHardcore
-        );
         // NOLINTEND
 
     public:

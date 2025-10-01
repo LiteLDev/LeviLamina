@@ -14,7 +14,7 @@ class HangingSignBlockActor : public ::SignBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 20
+    // vIndex: 19
     virtual float getShadowRadius(::BlockSource&) const /*override*/;
 
     // vIndex: 0
@@ -24,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $getShadowRadius(::BlockSource&) const;
+    MCFOLD float $getShadowRadius(::BlockSource&) const;
     // NOLINTEND
 
 public:

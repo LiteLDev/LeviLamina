@@ -42,6 +42,7 @@ struct PlayerSelectedItemChangedEvent;
 struct PlayerShootArrowEvent;
 struct PlayerSkinLoadedClientEvent;
 struct PlayerStopLoadingEvent;
+struct PlayerSwingStartEvent;
 struct PlayerUpdateInteractionEvent;
 struct PlayerUseNameTagEvent;
 // clang-format on
@@ -65,6 +66,7 @@ struct PlayerNotificationEvent : public ::EventVariantImpl<
                                      ::PlayerOpenContainerEvent const,
                                      ::PlayerCloseContainerEvent const,
                                      ::PlayerShootArrowEvent const,
+                                     ::PlayerSwingStartEvent const,
                                      ::PlayerRespawnEvent const,
                                      ::PlayerStopLoadingEvent const,
                                      ::PlayerUpdateInteractionEvent const,

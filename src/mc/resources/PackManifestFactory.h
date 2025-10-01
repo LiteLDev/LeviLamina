@@ -16,16 +16,15 @@ class ResourceLocation;
 class SubpackInfoCollection;
 namespace Core { class Path; }
 namespace Puv { class LoadResultAny; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class PackManifestFactory : public ::IPackManifestFactory {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8>  mUnk3137ce;
     ::ll::UntypedStorage<8, 16> mUnk6440d6;
     ::ll::UntypedStorage<8, 8>  mUnk89c744;
-    ::ll::UntypedStorage<8, 8>  mUnk99ad44;
     ::ll::UntypedStorage<8, 8>  mUnk4c2c4c;
     // NOLINTEND
 
@@ -53,11 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackManifestFactory(
-        ::PackCapabilityRegistry const& packCapabilityRegistry,
-        ::IPackTelemetry&               eventing,
-        ::cereal::ReflectionCtx&        ctx
-    );
+    MCNAPI PackManifestFactory(::PackCapabilityRegistry const& packCapabilityRegistry, ::IPackTelemetry& eventing);
 
     MCNAPI void _forwardPuvLogsToPackReport(::Puv::LoadResultAny const& res, ::PackReport& report);
 
@@ -88,11 +83,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::PackCapabilityRegistry const& packCapabilityRegistry,
-        ::IPackTelemetry&               eventing,
-        ::cereal::ReflectionCtx&        ctx
-    );
+    MCNAPI void* $ctor(::PackCapabilityRegistry const& packCapabilityRegistry, ::IPackTelemetry& eventing);
     // NOLINTEND
 
 public:

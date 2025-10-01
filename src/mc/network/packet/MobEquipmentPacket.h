@@ -50,7 +50,7 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual void
     handle(::ServerPlayer& player, ::BlockPalette&, ::MoveInputComponent const&, ::ActorRotationComponent&, bool) const
         /*override*/;
@@ -58,7 +58,7 @@ public:
     // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -85,8 +85,6 @@ public:
         int                selectedSlot,
         ::ContainerID      containerId
     );
-
-    MCAPI void _convertFromBytes();
     // NOLINTEND
 
 public:

@@ -24,13 +24,7 @@ public:
     virtual void OnFailure(::webrtc::RTCError) = 0;
 
     // vIndex: 2
-    virtual ~CreateSessionDescriptionObserver() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~CreateSessionDescriptionObserver() /*override*/ = default;
     // NOLINTEND
 
 public:

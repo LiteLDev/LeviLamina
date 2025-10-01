@@ -55,7 +55,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _placeLayerOfLeaves(
+    MCAPI void _placeLayerOfLeaves(
         ::IBlockWorldGenAPI&            target,
         ::Random&                       random,
         ::BlockPos const&               canopyPos,
@@ -65,7 +65,7 @@ public:
         ::TreeHelper::TreeParams const& treeParams
     ) const;
 
-    MCNAPI void _placeLayerOfLeavesWithHangingLeavesBelow(
+    MCAPI void _placeLayerOfLeavesWithHangingLeavesBelow(
         ::IBlockWorldGenAPI&            target,
         ::Random&                       random,
         ::BlockPos const&               canopyPos,
@@ -75,13 +75,13 @@ public:
         ::TreeHelper::TreeParams const& treeParams
     ) const;
 
-    MCNAPI bool _shouldSkipPosition(::Random& random, ::BlockPos const& pos, int radius) const;
+    MCAPI bool _shouldSkipPosition(::Random& random, ::BlockPos const& pos, int radius) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $placeCanopy(
+    MCAPI ::std::optional<::BlockPos> $placeCanopy(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
         ::Random&            random,

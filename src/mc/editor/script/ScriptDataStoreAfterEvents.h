@@ -35,7 +35,7 @@ public:
     public:
         // virtual functions
         // NOLINTBEGIN
-        // vIndex: 6
+        // vIndex: 7
         virtual void onFlushEditorDataStoreAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
         // vIndex: 0

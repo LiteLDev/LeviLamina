@@ -10,11 +10,10 @@ struct BlockMaterialInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf1d641;
+    ::ll::UntypedStorage<8, 32> mUnked776e;
     ::ll::UntypedStorage<4, 4>  mUnk22148c;
     ::ll::UntypedStorage<1, 1>  mUnkdce191;
-    ::ll::UntypedStorage<1, 1>  mUnk50874f;
-    ::ll::UntypedStorage<1, 1>  mUnk12dc06;
+    ::ll::UntypedStorage<1, 1>  mUnk11ebfe;
     ::ll::UntypedStorage<1, 1>  mUnkf63cee;
     ::ll::UntypedStorage<8, 16> mUnk6e50da;
     // NOLINTEND
@@ -27,22 +26,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance&&);
+    MCAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance&&);
 
-    MCNAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance const&);
+    MCAPI ::BlockMaterialInstance& operator=(::BlockMaterialInstance const&);
 
-    MCNAPI ~BlockMaterialInstance();
+    MCAPI ~BlockMaterialInstance();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BidirectionalUnorderedMap<::std::string, ::BlockRenderLayer> const& renderLayerNameBiMap();
+    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::BlockRenderLayer> const& renderLayerNameBiMap();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

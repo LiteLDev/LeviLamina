@@ -29,7 +29,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 170
+    // vIndex: 171
     virtual void setTransitioningSitting(bool value) /*override*/;
 
     // vIndex: 63

@@ -14,4 +14,10 @@ public:
     SubpackInfoCollection& operator=(SubpackInfoCollection const&);
     SubpackInfoCollection(SubpackInfoCollection const&);
     SubpackInfoCollection();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::std::vector<::std::string> getSubpackNames() const;
+    // NOLINTEND
 };

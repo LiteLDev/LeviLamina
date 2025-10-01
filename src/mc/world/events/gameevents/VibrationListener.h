@@ -66,11 +66,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _areAdjacentChunksTicking(::BlockSource& region) const;
-
     MCAPI void _requestVibrationParticle(::BlockSource& region, ::BlockPos const& originPos, float timeToLive);
 
-    MCAPI void _tickInternal(::BlockSource& region);
+    MCAPI bool _tryAdvanceInFlightVibration(::BlockSource& region);
 
     MCAPI void _trySendSneakCloseToSculkSensorEventPacket(
         ::BlockSource&            region,
@@ -82,6 +80,8 @@ public:
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void save(::CompoundTag& tag) const;
+
+    MCAPI void tick(::BlockSource& region);
     // NOLINTEND
 
 public:

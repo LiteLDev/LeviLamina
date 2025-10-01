@@ -16,19 +16,16 @@ class VanillaBlockStateTransformUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::CommonDirection _mirrorFrontBack(::CommonDirection direction);
+    MCAPI static ::CommonDirection _mirrorFrontBack(::CommonDirection direction);
 
-    MCNAPI static ::CommonDirection _mirrorLeftRight(::CommonDirection direction);
+    MCAPI static ::CommonDirection _mirrorLeftRight(::CommonDirection direction);
 
-    MCNAPI static ::CommonDirection _rotate(::CommonDirection direction, ::Rotation rotation);
+    MCAPI static ::CommonDirection _rotate(::CommonDirection direction, ::Rotation rotation);
 
-    MCNAPI static ::Block const* transformBlock(::Block const& block, ::CommonDirection targetDirection);
+    MCAPI static ::Block const* transformBlock(::Block const& block, ::CommonDirection targetDirection);
 
-    MCNAPI static ::Block const* transformBlock(::Block const& block, ::Rotation rotation, ::Mirror mirror);
+    MCAPI static ::Block const* transformBlock(::Block const& block, ::Rotation rotation, ::Mirror mirror);
 
-    MCNAPI static ::Block const* transformCardinalDirection(::Block const& block, ::Rotation rotation, ::Mirror mirror);
-
-    MCNAPI static ::Block const*
-    transformMultiFaceDirectionBits(::Block const& block, ::Rotation rotation, ::Mirror mirror);
+    MCAPI static ::Block const* transformCardinalDirection(::Block const& block, ::Rotation rotation, ::Mirror mirror);
     // NOLINTEND
 };

@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _blendCubeCorners(
+    MCAPI void _blendCubeCorners(
         ::Vec3 const& origin,
         int           X,
         int           Y,
@@ -53,7 +53,7 @@ public:
         float&        vv3
     ) const;
 
-    MCNAPI void
+    MCAPI void
     _readArea(float* buffer, ::Vec3 const& pos, int xSize, int ySize, int zSize, ::Vec3 const& s, float pow) const;
     // NOLINTEND
 };

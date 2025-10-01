@@ -22,14 +22,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TrialSpawnerConfigRegistry();
+    MCAPI TrialSpawnerConfigRegistry();
 
-    MCNAPI ::TrialSpawnerConfig const& getConfig(::std::string const& registryKey) const;
+    MCAPI ::TrialSpawnerConfig const& getConfig(::std::string const& registryKey) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };

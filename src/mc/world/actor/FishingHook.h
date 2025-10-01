@@ -13,7 +13,6 @@
 class ActorDefinitionGroup;
 class EntityContext;
 class HitResult;
-class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
 struct VariantParameterList;
@@ -64,7 +63,7 @@ public:
     virtual bool shouldDropDeathLoot() const /*override*/;
 
     // vIndex: 2
-    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
     // NOLINTEND
 
 public:
@@ -103,8 +102,6 @@ public:
     MCAPI void postNormalTick();
 
     MCAPI int retrieve();
-
-    MCAPI void shoot(::Vec3 dir, float pow, float uncertainty);
     // NOLINTEND
 
 public:
@@ -129,6 +126,8 @@ public:
     MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
 
     MCFOLD bool $shouldDropDeathLoot() const;
+
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:

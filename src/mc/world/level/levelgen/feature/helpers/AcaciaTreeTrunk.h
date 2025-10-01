@@ -65,7 +65,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _placeLeaningBranches(
+    MCAPI void _placeLeaningBranches(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::BlockPos const&               branchPos,
@@ -77,7 +77,7 @@ public:
         ::TreeHelper::TreeParams const& treeParams
     ) const;
 
-    MCNAPI void _placeVerticalBranches(
+    MCAPI void _placeVerticalBranches(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::BlockPos const&               branchPos,
@@ -90,9 +90,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getTreeHeight(::Random& random) const;
+    MCAPI int $getTreeHeight(::Random& random) const;
 
-    MCNAPI ::std::optional<::BlockPos> $placeTrunk(
+    MCAPI ::std::optional<::BlockPos> $placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::Random&                       random,

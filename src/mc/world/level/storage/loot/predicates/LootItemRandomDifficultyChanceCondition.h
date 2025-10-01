@@ -9,13 +9,14 @@
 // clang-format off
 class LootTableContext;
 class Random;
+namespace Json { class Value; }
 // clang-format on
 
 class LootItemRandomDifficultyChanceCondition : public ::LootItemCondition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk12a2e8;
+    ::ll::UntypedStorage<4, 16> mUnkf0e81e;
     // NOLINTEND
 
 public:
@@ -27,11 +28,17 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LootItemRandomDifficultyChanceCondition() /*override*/ = default;
-
     // vIndex: 1
     virtual bool applies(::Random& random, ::LootTableContext& context) /*override*/;
+
+    // vIndex: 0
+    virtual ~LootItemRandomDifficultyChanceCondition() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value const& object);
     // NOLINTEND
 
 public:

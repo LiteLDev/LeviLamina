@@ -16,9 +16,9 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 
 namespace PublisherItemComponent {
 
-class OnUse : public ::ItemComponent,
-              public ::Bedrock::PubSub::
-                  Publisher<void(bool&, ::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
+struct OnUse : public ::ItemComponent,
+               public ::Bedrock::PubSub::
+                   Publisher<void(bool&, ::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
 public:
     // virtual functions
     // NOLINTBEGIN

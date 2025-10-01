@@ -13,7 +13,6 @@ class BlockActor;
 class BlockPos;
 class BlockSource;
 class Experiments;
-class HashedString;
 class IConstBlockSource;
 class ItemInstance;
 namespace BlockEvents { class BlockPlaceEvent; }
@@ -69,25 +68,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CoralFanHang(
-        ::std::string const&  nameId,
-        int                   id,
-        ::HashedString const& coralFanVersion,
-        ::HashedString const& deadVersion
-    );
-
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&  nameId,
-        int                   id,
-        ::HashedString const& coralFanVersion,
-        ::HashedString const& deadVersion
-    );
     // NOLINTEND
 
 public:

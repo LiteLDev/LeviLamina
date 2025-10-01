@@ -10,6 +10,8 @@ namespace Scripting { struct EnumBinding; }
 namespace gametest {
 // functions
 // NOLINTBEGIN
+MCNAPI ::Scripting::EnumBinding bindGameTestCompletedErrorReason();
+
 MCNAPI ::Scripting::EnumBinding bindGameTestErrorType();
 // NOLINTEND
 

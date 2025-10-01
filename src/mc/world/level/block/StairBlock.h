@@ -83,7 +83,7 @@ public:
         /*override*/;
 
     // vIndex: 22
-    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const /*override*/;
 
     // vIndex: 123
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
@@ -215,6 +215,8 @@ public:
 
     MCAPI bool
     $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
+
+    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 

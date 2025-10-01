@@ -22,16 +22,13 @@ public:
 
 public:
     // prevent constructor by default
+    SpawnSettings& operator=(SpawnSettings const&);
     SpawnSettings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnSettings(::SpawnSettings&&);
-
     MCAPI SpawnSettings(::SpawnSettings const&);
-
-    MCAPI ::SpawnSettings& operator=(::SpawnSettings const&);
 
     MCAPI ~SpawnSettings();
     // NOLINTEND
@@ -39,8 +36,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SpawnSettings&&);
-
     MCAPI void* $ctor(::SpawnSettings const&);
     // NOLINTEND
 

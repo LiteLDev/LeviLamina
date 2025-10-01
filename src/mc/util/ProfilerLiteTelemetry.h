@@ -23,13 +23,16 @@ public:
 
 public:
     // prevent constructor by default
-    ProfilerLiteTelemetry& operator=(ProfilerLiteTelemetry const&);
     ProfilerLiteTelemetry();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ProfilerLiteTelemetry(::ProfilerLiteTelemetry const&);
+
+    MCNAPI ::ProfilerLiteTelemetry& operator=(::ProfilerLiteTelemetry&&);
+
+    MCNAPI ::ProfilerLiteTelemetry& operator=(::ProfilerLiteTelemetry const&);
 
     MCNAPI ~ProfilerLiteTelemetry();
     // NOLINTEND

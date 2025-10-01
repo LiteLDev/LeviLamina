@@ -125,8 +125,6 @@ public:
 
     MCAPI ushort getOrientationData(::Block const* block, ushort data);
 
-    MCAPI int getWorldY(int y);
-
     MCAPI bool isAboveGround(int x0, int y1, int z, ::BlockSource& region);
     // NOLINTEND
 

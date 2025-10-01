@@ -17,10 +17,10 @@ class GlowStickItem : public ::ChemistryStickItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 112
+    // vIndex: 114
     virtual ::Brightness getLightEmission(int auxValue) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 

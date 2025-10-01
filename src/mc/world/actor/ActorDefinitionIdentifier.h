@@ -46,9 +46,6 @@ public:
 
     MCFOLD ::std::string const& getFullName() const;
 
-    MCAPI void
-    initialize(::std::string const& nameSpace, ::std::string const& identifier, ::std::string const& initEvent);
-
     MCAPI ::ActorDefinitionIdentifier& operator=(::ActorDefinitionIdentifier const&);
 
     MCAPI bool operator==(::ActorDefinitionIdentifier const& other) const;

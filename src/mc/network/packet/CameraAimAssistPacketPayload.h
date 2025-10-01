@@ -33,6 +33,7 @@ public:
 
 public:
     // prevent constructor by default
+    CameraAimAssistPacketPayload& operator=(CameraAimAssistPacketPayload const&);
     CameraAimAssistPacketPayload(CameraAimAssistPacketPayload const&);
     CameraAimAssistPacketPayload();
 
@@ -40,8 +41,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI ::CameraAimAssistPacketPayload& operator=(::CameraAimAssistPacketPayload&&);
-
-    MCAPI ::CameraAimAssistPacketPayload& operator=(::CameraAimAssistPacketPayload const&);
 
     MCAPI ~CameraAimAssistPacketPayload();
     // NOLINTEND

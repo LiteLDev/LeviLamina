@@ -4,14 +4,12 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockPos;
 class BlockSource;
 class CompoundTag;
 class DefaultSculkBehavior;
 class IBlockWorldGenAPI;
 class Random;
-class SculkBehavior;
 class SculkBlockBehavior;
 class SculkSpreader;
 class SculkVeinBlockBehavior;
@@ -37,9 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void load(::CompoundTag const& tag);
+    MCAPI void load(::CompoundTag const& tag);
 
-    MCNAPI void update(
+    MCAPI void update(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
         ::BlockPos const&    originPos,
@@ -52,21 +50,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::array<::BlockPos, 18> _getNonCornerNeighborsOffsets(::Random& random);
+    MCAPI static ::std::array<::BlockPos, 18> _getNonCornerNeighborsOffsets(::Random& random);
 
-    MCNAPI static ::SculkBehavior const& _getSculkBehavior(::Block const& block);
-
-    MCNAPI static bool
+    MCAPI static bool
     _isMovementUnobstructed(::IBlockWorldGenAPI& target, ::BlockPos const& fromPos, ::BlockPos const& toPos);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::DefaultSculkBehavior const& sDefaultSculkBehavior();
+    MCAPI static ::DefaultSculkBehavior const& sDefaultSculkBehavior();
 
-    MCNAPI static ::SculkBlockBehavior const& sSculkBlockBehavior();
+    MCAPI static ::SculkBlockBehavior const& sSculkBlockBehavior();
 
-    MCNAPI static ::SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
+    MCAPI static ::SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
     // NOLINTEND
 };

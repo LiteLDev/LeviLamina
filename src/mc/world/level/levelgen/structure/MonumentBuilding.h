@@ -49,46 +49,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MonumentBuilding(::Random& random, short seaLevel, int west, int north, int& orientation);
+    MCAPI MonumentBuilding(::Random& random, short seaLevel, int west, int north, int& orientation);
 
-    MCNAPI void generateEntranceArchs(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateEntranceArchs(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void generateEntranceWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateEntranceWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void generateLowerWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateLowerWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void generateMiddleWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateMiddleWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void generateRoofPiece(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateRoofPiece(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI ::std::vector<::std::shared_ptr<::RoomDefinition>> generateRoomGraph(::Random& random);
+    MCAPI ::std::vector<::std::shared_ptr<::RoomDefinition>> generateRoomGraph(::Random& random);
 
-    MCNAPI void generateUpperWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateUpperWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void
+    MCAPI void
     generateWing(bool isFlipped, int xoff, ::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Random& random, short seaLevel, int west, int north, int& orientation);
+    MCAPI void* $ctor(::Random& random, short seaLevel, int west, int north, int& orientation);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:

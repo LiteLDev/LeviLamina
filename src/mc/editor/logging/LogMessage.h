@@ -17,8 +17,8 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnke3dd3f;
     ::ll::UntypedStorage<1, 1>  mUnk7ceb69;
     ::ll::UntypedStorage<8, 24> mUnke63c1b;
-    ::ll::UntypedStorage<1, 2>  mUnk3634b1;
-    ::ll::UntypedStorage<8, 40> mUnkd825b8;
+    ::ll::UntypedStorage<1, 1>  mUnk74e63c;
+    ::ll::UntypedStorage<8, 32> mUnkc65e9f;
     ::ll::UntypedStorage<8, 32> mUnkb0af5c;
     // NOLINTEND
 
@@ -30,8 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LogMessage(::Editor::LogMessage&&);
-
     MCNAPI ::Editor::LogMessage& operator=(::Editor::LogMessage const&);
 
     MCNAPI ::Editor::LogMessage& operator=(::Editor::LogMessage&&);
@@ -43,12 +41,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::LogMessage&&);
     // NOLINTEND
 
 public:

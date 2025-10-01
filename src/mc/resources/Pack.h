@@ -6,7 +6,6 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
-#include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -25,7 +24,7 @@ namespace Core { class Path; }
 namespace PackCommand { struct UpgradeLegacyDependencies; }
 // clang-format on
 
-class Pack : public ::Bedrock::EnableNonOwnerReferences {
+class Pack {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,13 +38,6 @@ public:
 public:
     // prevent constructor by default
     Pack();
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~Pack() /*override*/;
-    // NOLINTEND
 
 public:
     // member functions
@@ -62,6 +54,8 @@ public:
     MCAPI void move(::Pack&& pack);
 
     MCAPI void upgradeLegacyDependencies(::std::unique_ptr<::PackCommand::UpgradeLegacyDependencies const> upgrade);
+
+    MCAPI ~Pack();
     // NOLINTEND
 
 public:
@@ -107,11 +101,5 @@ public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

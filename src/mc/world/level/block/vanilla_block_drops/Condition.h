@@ -13,12 +13,15 @@ struct ResourceDropsContext;
 namespace VanillaBlockDrops::Condition {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::function<bool(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> either(
+MCAPI ::std::function<bool(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> either(
     ::std::function<bool(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> condition1,
     ::std::function<bool(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> condition2
 );
 
-MCNAPI ::std::function<bool(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
+MCAPI ::std::function<bool(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
+fortuneBonusRandomChanceOneIn(::std::vector<int> possibilities);
+
+MCAPI ::std::function<bool(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
 toolMatches(::HashedString const& itemId);
 // NOLINTEND
 

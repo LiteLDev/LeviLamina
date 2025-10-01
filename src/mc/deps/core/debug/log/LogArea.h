@@ -41,5 +41,6 @@ enum class LogArea : uint {
     LootTable           = 35,
     Packs               = 36,
     DisconnectionScreen = 37,
-    Count               = 38,
+    VoxelShape          = 38,
+    Count               = 39,
 };

@@ -29,8 +29,6 @@ MCNAPI bool isReflected(::cereal::ReflectionCtx const& ctx, ::entt::type_info co
 
 MCNAPI bool isVariant(::entt::meta_type const& type);
 
-MCNAPI ::entt::meta_type resolve(::cereal::ReflectionCtx const& ctx, ::std::string_view name);
-
 MCNAPI ::Json::Value toJsonValue(::cereal::DynamicValue const& value);
 
 MCNAPI ::std::vector<::entt::meta_func> typeLevelSetters(::entt::meta_type const& type);

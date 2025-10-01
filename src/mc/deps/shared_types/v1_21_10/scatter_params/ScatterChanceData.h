@@ -21,12 +21,13 @@ public:
 public:
     // prevent constructor by default
     ScatterChanceData& operator=(ScatterChanceData const&);
-    ScatterChanceData(ScatterChanceData const&);
     ScatterChanceData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScatterChanceData(::SharedTypes::v1_21_10::ScatterChanceData const&);
+
     MCNAPI ScatterChanceData(::SharedTypes::v1_21_10::ScatterChanceData&&);
 
     MCNAPI ::SharedTypes::v1_21_10::ScatterChanceData& operator=(::SharedTypes::v1_21_10::ScatterChanceData&&);
@@ -43,6 +44,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::SharedTypes::v1_21_10::ScatterChanceData const&);
+
     MCNAPI void* $ctor(::SharedTypes::v1_21_10::ScatterChanceData&&);
     // NOLINTEND
 

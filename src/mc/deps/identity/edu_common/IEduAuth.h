@@ -68,6 +68,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Identity::EduAuthTokenPair getTokens() const;
+
+    MCNAPI bool hasValidMessToken() const;
     // NOLINTEND
 
 public:

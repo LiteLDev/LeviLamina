@@ -18,6 +18,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptTransferPlayerNetherNetOptions& operator=(ScriptTransferPlayerNetherNetOptions const&);
     ScriptTransferPlayerNetherNetOptions(ScriptTransferPlayerNetherNetOptions const&);
     ScriptTransferPlayerNetherNetOptions();
 
@@ -26,9 +27,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleServerAdmin::ScriptTransferPlayerNetherNetOptions&
     operator=(::ScriptModuleServerAdmin::ScriptTransferPlayerNetherNetOptions&&);
-
-    MCNAPI ::ScriptModuleServerAdmin::ScriptTransferPlayerNetherNetOptions&
-    operator=(::ScriptModuleServerAdmin::ScriptTransferPlayerNetherNetOptions const&);
 
     MCNAPI ~ScriptTransferPlayerNetherNetOptions();
     // NOLINTEND

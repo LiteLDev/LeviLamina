@@ -9,6 +9,7 @@
 // clang-format off
 class LootTableContext;
 class Random;
+namespace Json { class Value; }
 // clang-format on
 
 class LootItemActorHasVariantCondition : public ::LootItemCondition {
@@ -27,17 +28,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
+    virtual bool applies(::Random&, ::LootTableContext& context) /*override*/;
+
     // vIndex: 0
     virtual ~LootItemActorHasVariantCondition() /*override*/ = default;
+    // NOLINTEND
 
-    // vIndex: 1
-    virtual bool applies(::Random& random, ::LootTableContext& context) /*override*/;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value const& object);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $applies(::Random& random, ::LootTableContext& context);
+    MCNAPI bool $applies(::Random&, ::LootTableContext& context);
     // NOLINTEND
 
 public:

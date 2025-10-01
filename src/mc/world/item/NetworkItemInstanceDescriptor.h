@@ -10,7 +10,6 @@
 // clang-format off
 class BlockPalette;
 class ItemInstance;
-class ItemStackDescriptor;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -26,6 +25,7 @@ public:
     // prevent constructor by default
     NetworkItemInstanceDescriptor& operator=(NetworkItemInstanceDescriptor const&);
     NetworkItemInstanceDescriptor(NetworkItemInstanceDescriptor const&);
+    NetworkItemInstanceDescriptor();
 
 public:
     // virtual functions
@@ -37,12 +37,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkItemInstanceDescriptor();
-
-    MCAPI NetworkItemInstanceDescriptor(::NetworkItemInstanceDescriptor&&);
-
-    MCAPI explicit NetworkItemInstanceDescriptor(::ItemStackDescriptor const& descriptor);
-
     MCAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
 
     MCAPI ::ItemInstance getItemInstance(::BlockPalette const& blockPalette) const;
@@ -53,12 +47,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void* $ctor(::NetworkItemInstanceDescriptor&&);
-
-    MCAPI void* $ctor(::ItemStackDescriptor const& descriptor);
-
     MCAPI void* $ctor(::ItemInstance const& item);
     // NOLINTEND
 

@@ -13,6 +13,7 @@ public:
 
 public:
     // prevent constructor by default
+    Description& operator=(Description const&);
     Description(Description const&);
     Description();
 
@@ -20,8 +21,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_60::Spawn::Description& operator=(::SharedTypes::v1_21_60::Spawn::Description&&);
-
-    MCNAPI ::SharedTypes::v1_21_60::Spawn::Description& operator=(::SharedTypes::v1_21_60::Spawn::Description const&);
 
     MCNAPI ~Description();
     // NOLINTEND

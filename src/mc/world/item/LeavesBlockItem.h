@@ -27,14 +27,14 @@ public:
     // vIndex: 33
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 97
+    // vIndex: 99
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
-    // vIndex: 96
+    // vIndex: 98
     virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const /*override*/;
 
     // vIndex: 0

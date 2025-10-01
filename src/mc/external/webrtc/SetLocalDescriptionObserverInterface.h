@@ -20,13 +20,7 @@ public:
     virtual void OnSetLocalDescriptionComplete(::webrtc::RTCError) = 0;
 
     // vIndex: 2
-    virtual ~SetLocalDescriptionObserverInterface() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~SetLocalDescriptionObserverInterface() /*override*/ = default;
     // NOLINTEND
 
 public:

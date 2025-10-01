@@ -103,13 +103,6 @@ public:
         ::ScriptModuleMinecraft::ScriptScoreboardObjectiveDisplayOptions const& displaySetting
     );
 
-    MCNAPI ::ScoreboardIdentityRef* tryGetScoreboardParticipantIdentityRef(
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
-            ::std::string> const& participant
-    ) const;
-
     MCNAPI ::std::optional<::ScoreboardId> tryGetScoreboardParticipantScoreboardId(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,

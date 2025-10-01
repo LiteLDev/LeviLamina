@@ -3,6 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/BurnOdds.h"
+#include "mc/world/level/block/FlameOdds.h"
+#include "mc/world/level/block/LavaFlammable.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
@@ -15,6 +18,7 @@ struct BlockFlammableDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnk5bafc8;
     ::ll::UntypedStorage<4, 4> mUnk633d01;
     ::ll::UntypedStorage<4, 4> mUnkeedb42;
     // NOLINTEND
@@ -31,35 +35,58 @@ public:
     // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
 
+    // vIndex: 4
+    virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const /*override*/;
+
     // vIndex: 2
     virtual void initializeComponent(::BlockComponentStorage& blockComponentStorage) const /*override*/;
 
     // vIndex: 0
-    virtual ~BlockFlammableDescription() /*override*/ = default;
+    virtual ~BlockFlammableDescription() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BlockFlammableDescription(
+        ::FlameOdds     catchChanceModifier,
+        ::BurnOdds      destroyChanceModifier,
+        ::LavaFlammable lavaFlammable
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static int const& CATCH_CHANCE_DEFAULT();
+    MCAPI static ::std::string const& NameID();
+    // NOLINTEND
 
-    MCNAPI static int const& DESTROY_CHANCE_DEFAULT();
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::FlameOdds catchChanceModifier, ::BurnOdds destroyChanceModifier, ::LavaFlammable lavaFlammable);
+    // NOLINTEND
 
-    MCNAPI static ::std::string const& NameID();
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+
+    MCFOLD void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
     // NOLINTEND
 
 public:

@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _generateIcebergBlock(
+    MCAPI void _generateIcebergBlock(
         ::BlockSource&    region,
         ::Random&         random,
         ::BlockPos const& origin,
@@ -60,7 +60,7 @@ public:
         ::Block const&    blockToPlace
     ) const;
 
-    MCNAPI void carve(
+    MCAPI void carve(
         int               radius,
         int               yOff,
         ::BlockPos const& globalOrigin,
@@ -76,7 +76,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

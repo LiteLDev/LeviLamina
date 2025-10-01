@@ -61,16 +61,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::shared_ptr<::PoolAliasBinding> direct(::std::string&& id, ::std::string&& target);
+    MCAPI static ::std::shared_ptr<::PoolAliasBinding> direct(::std::string&& id, ::std::string&& target);
 
-    MCNAPI static ::std::shared_ptr<::PoolAliasBinding>
+    MCAPI static ::std::shared_ptr<::PoolAliasBinding>
     random(::std::string&& id, ::std::vector<::Core::SimpleWeightedEntry<::std::string>>&& targets);
 
-    MCNAPI static ::std::shared_ptr<::PoolAliasBinding> randomGroup(
+    MCAPI static ::std::shared_ptr<::PoolAliasBinding> randomGroup(
         ::std::vector<::Core::SimpleWeightedEntry<::std::vector<::std::shared_ptr<::PoolAliasBinding>>>>&& targets
     );
 
-    MCNAPI static ::PoolAliasBinding::PoolAliasLookup resolvePoolAliases(
+    MCAPI static ::PoolAliasBinding::PoolAliasLookup resolvePoolAliases(
         ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& aliases,
         ::BlockPos const&                                           structureStartPosition,
         int64                                                       levelSeed

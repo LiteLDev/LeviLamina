@@ -43,7 +43,7 @@ public:
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     // vIndex: 46
-    virtual bool canBeOriginalSurface() const /*override*/;
+    virtual bool canBeOriginalSurface(bool) const /*override*/;
 
     // vIndex: 147
     virtual void _lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
@@ -79,7 +79,7 @@ public:
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCFOLD bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface(bool) const;
 
     MCAPI void $_lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
 

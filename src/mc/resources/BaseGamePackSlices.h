@@ -27,7 +27,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk745cd0;
-        ::ll::UntypedStorage<8, 8>  mUnk5b766c;
+        ::ll::UntypedStorage<8, 16> mUnkb82ad5;
         // NOLINTEND
 
     public:
@@ -85,7 +85,7 @@ public:
     MCNAPI static void _add(
         ::std::vector<::BaseGamePackSlices::BaseGameVersionPack>& baseGameVersionPacks,
         ::BaseGameVersion const&                                  baseGameVersion,
-        ::ResourcePack&                                           pack
+        ::gsl::not_null<::std::shared_ptr<::ResourcePack>>        pack
     );
     // NOLINTEND
 

@@ -15,13 +15,14 @@ public:
 
 public:
     // prevent constructor by default
-    MessageEnvelope& operator=(MessageEnvelope const&);
     MessageEnvelope(MessageEnvelope const&);
     MessageEnvelope();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::ScriptDebuggerMessages::MessageEnvelope& operator=(::ScriptDebuggerMessages::MessageEnvelope const&);
+
     MCNAPI ::ScriptDebuggerMessages::MessageEnvelope& operator=(::ScriptDebuggerMessages::MessageEnvelope&&);
 
     MCNAPI ~MessageEnvelope();

@@ -45,8 +45,6 @@ public:
 
     MCNAPI void restoreStackState(::MolangEvalStackState&& state);
 
-    MCNAPI void setPushedValue(float value);
-
     MCNAPI ~MolangEvalParams();
     // NOLINTEND
 

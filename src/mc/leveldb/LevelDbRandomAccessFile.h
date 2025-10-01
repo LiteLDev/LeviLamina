@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core { class File; }
+// clang-format on
+
 class LevelDbRandomAccessFile : public ::leveldb::RandomAccessFile {
 public:
     // member variables
@@ -24,6 +29,18 @@ public:
 
     // vIndex: 0
     virtual ~LevelDbRandomAccessFile() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit LevelDbRandomAccessFile(::Core::File&& file);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Core::File&& file);
     // NOLINTEND
 
 public:

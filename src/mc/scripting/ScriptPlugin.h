@@ -24,23 +24,22 @@ class ScriptPlugin : public ::Scripting::IDependencyLoader, public ::Scripting::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk677bbf;
-    ::ll::UntypedStorage<8, 104> mUnk510e2b;
-    ::ll::UntypedStorage<8, 16>  mUnka5fd90;
-    ::ll::UntypedStorage<8, 24>  mUnkde6a3d;
-    ::ll::UntypedStorage<1, 1>   mUnk1dd446;
-    ::ll::UntypedStorage<8, 32>  mUnk67c5dc;
-    ::ll::UntypedStorage<8, 48>  mUnk55c0d6;
-    ::ll::UntypedStorage<8, 32>  mUnk210ffe;
-    ::ll::UntypedStorage<4, 4>   mUnkedd7b3;
-    ::ll::UntypedStorage<8, 32>  mUnkfa4080;
-    ::ll::UntypedStorage<8, 32>  mUnk9b4f34;
-    ::ll::UntypedStorage<8, 24>  mUnk6cbe98;
-    ::ll::UntypedStorage<8, 32>  mUnk553bc3;
-    ::ll::UntypedStorage<1, 1>   mUnk48ffe9;
-    ::ll::UntypedStorage<8, 16>  mUnkbf81fb;
-    ::ll::UntypedStorage<8, 8>   mUnk4bd1bf;
-    ::ll::UntypedStorage<8, 8>   mUnkba4497;
+    ::ll::UntypedStorage<8, 16> mUnk677bbf;
+    ::ll::UntypedStorage<8, 96> mUnk510e2b;
+    ::ll::UntypedStorage<8, 24> mUnkde6a3d;
+    ::ll::UntypedStorage<1, 1>  mUnk1dd446;
+    ::ll::UntypedStorage<8, 32> mUnk67c5dc;
+    ::ll::UntypedStorage<8, 48> mUnk55c0d6;
+    ::ll::UntypedStorage<8, 32> mUnk210ffe;
+    ::ll::UntypedStorage<4, 4>  mUnkedd7b3;
+    ::ll::UntypedStorage<8, 32> mUnkfa4080;
+    ::ll::UntypedStorage<8, 32> mUnk9b4f34;
+    ::ll::UntypedStorage<8, 24> mUnk6cbe98;
+    ::ll::UntypedStorage<8, 32> mUnk553bc3;
+    ::ll::UntypedStorage<1, 1>  mUnk48ffe9;
+    ::ll::UntypedStorage<8, 16> mUnkbf81fb;
+    ::ll::UntypedStorage<8, 8>  mUnk4bd1bf;
+    ::ll::UntypedStorage<8, 8>  mUnkba4497;
     // NOLINTEND
 
 public:

@@ -79,15 +79,13 @@ public:
 
     public:
         // prevent constructor by default
+        BucketContext& operator=(BucketContext const&);
         BucketContext(BucketContext const&);
         BucketContext();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::ChunkRecyclerTelemetryData::BucketContext&
-        operator=(::ChunkRecyclerTelemetryData::BucketContext const&);
-
         MCNAPI ~BucketContext();
         // NOLINTEND
 

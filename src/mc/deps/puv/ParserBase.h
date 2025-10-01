@@ -40,6 +40,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ParserBase(::SemVersion const& parserVersion, ::Puv::VersionRange supportedVersions);
+
+    MCNAPI ::Puv::LoadResultAny parse(::Puv::Input const& input) const;
     // NOLINTEND
 
 public:

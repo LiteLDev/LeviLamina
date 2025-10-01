@@ -13,6 +13,7 @@ public:
 
 public:
     // prevent constructor by default
+    ProtectedBlock& operator=(ProtectedBlock const&);
     ProtectedBlock(ProtectedBlock const&);
     ProtectedBlock();
 
@@ -21,9 +22,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&&);
-
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock&
-    operator=(::SharedTypes::v1_21_20::JigsawStructure::Processors::ProtectedBlock const&);
 
     MCNAPI ~ProtectedBlock();
     // NOLINTEND

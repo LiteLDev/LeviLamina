@@ -18,7 +18,7 @@ class SaddleItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
         /*override*/;
 

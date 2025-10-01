@@ -10,7 +10,6 @@
 class BlockPos;
 class ItemStack;
 class LabTableReactionComponent;
-class Vec3;
 // clang-format on
 
 class LabTableReaction {
@@ -44,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LabTableReaction(
+    MCAPI LabTableReaction(
         ::LabTableReactionType type,
         ::BlockPos const&      pos,
         bool                   isClientSide,
@@ -52,24 +51,22 @@ public:
         int                    startDelay
     );
 
-    MCNAPI ::Vec3 _getTableTop() const;
+    MCFOLD void addComponent(::std::unique_ptr<::LabTableReactionComponent> comp);
 
-    MCNAPI void addComponent(::std::unique_ptr<::LabTableReactionComponent> comp);
-
-    MCNAPI void addResultItem(::ItemStack const& resultItem);
+    MCAPI void addResultItem(::ItemStack const& resultItem);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LabTableReaction>
+    MCAPI static ::std::unique_ptr<::LabTableReaction>
     createReaction(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
+    MCAPI void*
     $ctor(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide, int maxLifetime, int startDelay);
     // NOLINTEND
 

@@ -26,7 +26,7 @@ public:
     // vIndex: 118
     virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
-    // vIndex: 177
+    // vIndex: 178
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
     // vIndex: 8

@@ -25,8 +25,6 @@ MCNAPI bool canStayLeashedTo(::Actor const& actor, ::Actor const& leashHolder, f
 
 MCNAPI ::std::vector<::gsl::not_null<::Actor*>> getCuttableLeashedActors(::Actor& actor, ::Player const* player);
 
-MCNAPI float getDistanceSquared(::Actor const& actor1, ::Actor const& actor2);
-
 MCNAPI ::LeashablePreset const&
 getPreset(::Actor const& leashedActor, ::LeashableComponent const& leashableComponent, ::Actor const* leashHolder);
 

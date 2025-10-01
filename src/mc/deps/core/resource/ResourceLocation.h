@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 class ResourceLocation {
@@ -22,31 +22,23 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ResourceLocation();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ResourceLocation();
-
-    MCNAPI ResourceLocation(::Core::Path const& path, ::ResourceFileSystem fileSystem);
+    MCNAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
 
     MCNAPI ::Core::PathBuffer<::std::string> getFullPath() const;
-
-    MCNAPI bool operator==(::ResourceLocation const& rhs) const;
 
     MCNAPI ~ResourceLocation();
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::ResourceLocation const& getEmptyLocation();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
-    MCNAPI void* $ctor(::Core::Path const& path, ::ResourceFileSystem fileSystem);
+    MCNAPI void* $ctor(::Core::PathView path, ::ResourceFileSystem fileSystem);
     // NOLINTEND
 
 public:

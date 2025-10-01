@@ -2,52 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ResourcePackFileDownloaderManager : public ::std::enable_shared_from_this<::ResourcePackFileDownloaderManager> {
-public:
-    // ResourcePackFileDownloaderManager inner types declare
-    // clang-format off
-    struct FileChunkBatch;
-    // clang-format on
+// auto generated inclusion list
+#include "mc/deps/core/resource/PackType.h"
+#include "mc/deps/core/threading/SharedAsync.h"
+#include "mc/util/IResourcePackFileDownloaderManager.h"
+#include "mc/util/ResourcePackFileDownloadError.h"
 
-    // ResourcePackFileDownloaderManager inner types define
-    struct FileChunkBatch {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk260d98;
-        ::ll::UntypedStorage<8, 8>  mUnkd899f1;
-        ::ll::UntypedStorage<8, 24> mUnk3c0bab;
-        ::ll::UntypedStorage<1, 1>  mUnk614968;
-        // NOLINTEND
+// auto generated forward declare list
+// clang-format off
+class TaskGroup;
+struct FileChunkInfo;
+namespace Core { class Path; }
+// clang-format on
 
-    public:
-        // prevent constructor by default
-        FileChunkBatch& operator=(FileChunkBatch const&);
-        FileChunkBatch(FileChunkBatch const&);
-        FileChunkBatch();
-    };
-
-    enum class ChunkOpResult : int {
-        DidNothing     = 0,
-        ReceivedChunks = 1,
-        WroteAllChunks = 2,
-        Failure        = 3,
-    };
-
+class ResourcePackFileDownloaderManager : public ::IResourcePackFileDownloaderManager {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 24> mUnk7b304f;
+    ::ll::UntypedStorage<8, 8>  mUnk22ad82;
     ::ll::UntypedStorage<8, 8>  mUnk7949dd;
-    ::ll::UntypedStorage<8, 32> mUnk615ea5;
-    ::ll::UntypedStorage<8, 32> mUnk3f9f6f;
-    ::ll::UntypedStorage<8, 32> mUnkc29e40;
-    ::ll::UntypedStorage<8, 32> mUnkcc8135;
-    ::ll::UntypedStorage<8, 32> mUnk5eb5f5;
-    ::ll::UntypedStorage<8, 96> mUnkcea299;
-    ::ll::UntypedStorage<8, 64> mUnkac5510;
-    ::ll::UntypedStorage<8, 64> mUnk21d658;
-    ::ll::UntypedStorage<8, 8>  mUnke8a915;
-    ::ll::UntypedStorage<8, 16> mUnk380593;
+    ::ll::UntypedStorage<8, 64> mUnk402738;
     // NOLINTEND
 
 public:
@@ -60,6 +35,35 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ResourcePackFileDownloaderManager() = default;
+    virtual ~ResourcePackFileDownloaderManager() /*override*/ = default;
+
+    // vIndex: 1
+    virtual void tryStartDownloadingFile(
+        ::TaskGroup&,
+        ::std::string const&,
+        uint,
+        int,
+        uint64,
+        ::std::string const&,
+        bool,
+        ::PackType,
+        ::std::function<void()>,
+        ::std::function<void(float, uint64)>,
+        ::std::function<void(::Core::Path const&)>,
+        ::std::function<void(::ResourcePackFileDownloadError)>
+    ) /*override*/;
+
+    // vIndex: 2
+    virtual ::Bedrock::Threading::SharedAsync<void>
+    chunkReceived(::TaskGroup&, ::std::string const&, ::FileChunkInfo const&, ::std::vector<uchar>) /*override*/;
+
+    // vIndex: 3
+    virtual void cleanup() /*override*/;
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+
     // NOLINTEND
 };

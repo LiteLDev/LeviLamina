@@ -27,6 +27,15 @@ public:
         ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView
     );
 
+    MCNAPI static void _tickVehicleServerMolangSeatPositionSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::PassengerComponent const,
+            ::ActorOwnerComponent,
+            ::PositionPassengerRequestComponent>                                            passengerView,
+        ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView
+    );
+
     MCNAPI static void _tickVehicleServerMolangSeatPositionSystemSingleEntity(
         ::StrictEntityContext const& entityContext,
         ::ViewT<

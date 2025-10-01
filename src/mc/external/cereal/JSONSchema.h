@@ -26,6 +26,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    JSONSchema& operator=(JSONSchema const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI JSONSchema();
@@ -40,8 +44,6 @@ public:
     );
 
     MCNAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema&&);
-
-    MCNAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema const&);
 
     MCNAPI ~JSONSchema();
     // NOLINTEND

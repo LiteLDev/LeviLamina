@@ -16,6 +16,18 @@ public:
     ContextBaseGameVersion& operator=(ContextBaseGameVersion const&);
     ContextBaseGameVersion(ContextBaseGameVersion const&);
     ContextBaseGameVersion();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~ContextBaseGameVersion();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace Scripting

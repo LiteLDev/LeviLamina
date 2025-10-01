@@ -39,13 +39,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool isValidSpringBorderBlock(::BlockType const& block, ::BlockSource& region) const;
+    MCAPI bool isValidSpringBorderBlock(::BlockType const& block, ::BlockSource& region) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

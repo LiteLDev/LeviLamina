@@ -36,7 +36,7 @@ public:
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mOnEndEvent;
     ::ll::TypedStorage<4, 4, int const>                              COOLDOWN_TICKS;
     ::ll::TypedStorage<1, 1, bool>                                   mCanGetScared;
-    ::ll::TypedStorage<4, 4, int>                                    mCoolDown;
+    ::ll::TypedStorage<4, 4, int>                                    mCooldown;
     ::ll::TypedStorage<1, 1, bool>                                   mCanMove;
     ::ll::TypedStorage<4, 4, float>                                  mTemptDistance;
     ::ll::TypedStorage<4, 4, float>                                  mStopDistance;

@@ -41,19 +41,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit UnburiedConstraint(::StructureTemplate& structure);
+    MCAPI explicit UnburiedConstraint(::StructureTemplate& structure);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::StructureTemplate& structure);
+    MCAPI void* $ctor(::StructureTemplate& structure);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isSatisfied(
+    MCAPI bool $isSatisfied(
         ::IBlockWorldGenAPI const& target,
         ::BlockPos const&          structurePos,
         ::Rotation const&          structureRot

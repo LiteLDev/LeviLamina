@@ -33,6 +33,9 @@ public:
     virtual bool _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const
         /*override*/;
 
+    // vIndex: 2
+    virtual ::LootPoolEntry::EntryType getEntryType() const /*override*/;
+
     // vIndex: 1
     virtual ~LootTableEntry() /*override*/ = default;
     // NOLINTEND
@@ -48,6 +51,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $_createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const;
+
+    MCNAPI ::LootPoolEntry::EntryType $getEntryType() const;
     // NOLINTEND
 
 public:

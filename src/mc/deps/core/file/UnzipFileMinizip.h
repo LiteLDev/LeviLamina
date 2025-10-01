@@ -10,7 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class IFileAccess;
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 namespace Core {
@@ -74,13 +74,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI UnzipFileMinizip(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess, ::Core::Path const& zipPath);
+    MCNAPI UnzipFileMinizip(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess, ::Core::PathView zipPath);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess, ::Core::Path const& zipPath);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess, ::Core::PathView zipPath);
     // NOLINTEND
 
 public:

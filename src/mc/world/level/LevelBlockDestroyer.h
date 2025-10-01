@@ -2,15 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
-// auto generated forward declare list
-// clang-format off
-class ILevelBlockDestroyerProxy;
-class LevelEventManager;
-// clang-format on
-
 class LevelBlockDestroyer {
 public:
     // member variables
@@ -24,22 +15,4 @@ public:
     LevelBlockDestroyer& operator=(LevelBlockDestroyer const&);
     LevelBlockDestroyer(LevelBlockDestroyer const&);
     LevelBlockDestroyer();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI LevelBlockDestroyer(
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> levelEventManager,
-        ::std::unique_ptr<::ILevelBlockDestroyerProxy>     levelBlockDestroyerProxy
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> levelEventManager,
-        ::std::unique_ptr<::ILevelBlockDestroyerProxy>     levelBlockDestroyerProxy
-    );
-    // NOLINTEND
 };

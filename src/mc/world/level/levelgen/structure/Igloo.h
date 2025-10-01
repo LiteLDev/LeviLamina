@@ -48,23 +48,23 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR();
+    MCAPI static ::std::string const& STRUCTURE_LOCATION_IGLOO_NO_TRAPDOOR();
 
-    MCNAPI static ::std::string const& STRUCTURE_LOCATION_IGLOO_TRAPDOOR();
+    MCAPI static ::std::string const& STRUCTURE_LOCATION_IGLOO_TRAPDOOR();
 
-    MCNAPI static ::std::string const& STRUCTURE_LOCATION_LABORATORY();
+    MCAPI static ::std::string const& STRUCTURE_LOCATION_LABORATORY();
 
-    MCNAPI static ::std::string const& STRUCTURE_LOCATION_LADDER();
+    MCAPI static ::std::string const& STRUCTURE_LOCATION_LADDER();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:

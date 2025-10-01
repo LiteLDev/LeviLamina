@@ -69,34 +69,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $updateSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $updateSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool
+    MCFOLD bool
     $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI bool $isSignalSource() const;
+    MCFOLD bool $isSignalSource() const;
 
-    MCNAPI int $getVariant(::Block const& block) const;
+    MCFOLD int $getVariant(::Block const& block) const;
 
-    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

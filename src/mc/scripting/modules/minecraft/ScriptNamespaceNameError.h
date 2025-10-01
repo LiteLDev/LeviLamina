@@ -33,13 +33,12 @@ public:
 public:
     // prevent constructor by default
     ScriptNamespaceNameError& operator=(ScriptNamespaceNameError const&);
+    ScriptNamespaceNameError(ScriptNamespaceNameError const&);
     ScriptNamespaceNameError();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptNamespaceNameError(::ScriptModuleMinecraft::ScriptNamespaceNameError const&);
-
     MCNAPI ScriptNamespaceNameError(
         ::std::string const&                                      name,
         ::std::string const&                                      message,
@@ -63,8 +62,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptNamespaceNameError const&);
-
     MCNAPI void* $ctor(
         ::std::string const&                                      name,
         ::std::string const&                                      message,

@@ -44,13 +44,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $test(::Block const& block, ::Randomize&) const;
+    MCAPI bool $test(::Block const& block, ::Randomize&) const;
 
-    MCNAPI bool $test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const;
+    MCFOLD bool $test(::BlockPos const&, ::BlockPos const&, ::Randomize&) const;
 
-    MCNAPI ::StructurePoolBlockPredicateType $getType() const;
+    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:

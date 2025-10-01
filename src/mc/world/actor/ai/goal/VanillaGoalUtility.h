@@ -6,19 +6,12 @@
 // clang-format off
 class ActorGoalFactory;
 class ActorMigratedDefinitionFactory;
-class BaseGameVersion;
-class Experiments;
 // clang-format on
 
 namespace VanillaGoalUtility {
 // functions
 // NOLINTBEGIN
-MCAPI void registerGoalsToFactory(
-    ::ActorGoalFactory&               factory,
-    ::ActorMigratedDefinitionFactory& migratedFactory,
-    ::BaseGameVersion const&          baseGameVersion,
-    ::Experiments const&              experiments
-);
+MCAPI void registerGoalsToFactory(::ActorGoalFactory& factory, ::ActorMigratedDefinitionFactory& migratedFactory);
 // NOLINTEND
 
 } // namespace VanillaGoalUtility

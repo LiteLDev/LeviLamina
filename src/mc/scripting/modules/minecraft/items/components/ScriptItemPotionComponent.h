@@ -4,18 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
-#include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/scripting/modules/minecraft/items/components/ScriptItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { class ScriptPotionDeliveryType; }
 namespace ScriptModuleMinecraft { class ScriptPotionEffectType; }
-namespace ScriptModuleMinecraft { class ScriptPotionLiquidType; }
-namespace ScriptModuleMinecraft { class ScriptPotionModifierType; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EngineError; }
+namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -40,17 +41,17 @@ public:
         ::Scripting::WeakLifetimeScope const&                                          scope
     );
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>>
+    MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionDeliveryType>,
+        ::Scripting::EngineError,
+        ::Scripting::Error>
+    _getPotionDeliveryType() const;
+
+    MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>,
+        ::Scripting::EngineError,
+        ::Scripting::Error>
     _getPotionEffectType() const;
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionLiquidType>>
-    _getPotionLiquidType() const;
-
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType>>
-    _getPotionModifierType() const;
     // NOLINTEND
 
 public:

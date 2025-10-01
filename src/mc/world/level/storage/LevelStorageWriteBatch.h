@@ -73,7 +73,6 @@ public:
     // prevent constructor by default
     LevelStorageWriteBatch& operator=(LevelStorageWriteBatch const&);
     LevelStorageWriteBatch(LevelStorageWriteBatch const&);
-    LevelStorageWriteBatch();
 
 public:
     // virtual functions
@@ -104,6 +103,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI LevelStorageWriteBatch();
+
     MCAPI LevelStorageWriteBatch(::LevelStorageWriteBatch&& rhs);
 
     MCAPI void clear();
@@ -112,6 +113,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor();
+
     MCAPI void* $ctor(::LevelStorageWriteBatch&& rhs);
     // NOLINTEND
 

@@ -26,7 +26,6 @@ public:
 
 public:
     // prevent constructor by default
-    InsideBlockEventMap& operator=(InsideBlockEventMap const&);
     InsideBlockEventMap();
 
 public:
@@ -42,6 +41,8 @@ public:
         ::ActorDefinitionTrigger const& enteredEvent,
         ::ActorDefinitionTrigger const& exitedEvent
     );
+
+    MCNAPI ::InsideBlockEventMap& operator=(::InsideBlockEventMap const&);
 
     MCNAPI ~InsideBlockEventMap();
     // NOLINTEND

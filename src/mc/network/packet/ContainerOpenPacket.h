@@ -47,7 +47,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 6
-    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
 
     // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
@@ -56,13 +56,19 @@ public:
     virtual ::Bedrock::Result<void>
     read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
-    // vIndex: 7
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream) /*override*/;
+    // vIndex: 9
+    virtual bool disallowBatching() const /*override*/;
+
+    // vIndex: 10
+    virtual bool isValid() const /*override*/;
 
     // vIndex: 13
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) /*override*/;
+    virtual ::std::string toString() const /*override*/;
 
     // vIndex: 14
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    // vIndex: 15
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
@@ -93,16 +99,20 @@ public:
         ::std::optional<::SerializationMode> overrideMode
     ) const;
 
-    MCFOLD void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 
     MCAPI ::Bedrock::Result<void>
     $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
-    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
+    MCFOLD bool $disallowBatching() const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream&);
+    MCFOLD bool $isValid() const;
+
+    MCAPI ::std::string $toString() const;
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
     MCAPI ::Bedrock::Result<void>
     $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);

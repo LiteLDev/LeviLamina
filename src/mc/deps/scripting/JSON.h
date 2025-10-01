@@ -13,14 +13,13 @@ public:
 
 public:
     // prevent constructor by default
+    JSON& operator=(JSON const&);
     JSON(JSON const&);
     JSON();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::JSON& operator=(::Scripting::JSON const&);
-
     MCNAPI ::Scripting::JSON& operator=(::Scripting::JSON&&);
 
     MCNAPI ~JSON();

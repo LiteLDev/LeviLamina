@@ -39,7 +39,7 @@ public:
     // vIndex: 9
     virtual bool disallowBatching() const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 

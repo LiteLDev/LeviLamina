@@ -30,26 +30,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FrozenOceanBuilderNoises(
+    MCAPI FrozenOceanBuilderNoises(
         ::XoroshiroPositionalRandomFactory                                            positionalRandomFactory,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergSurfaceNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarRoofNoise
     );
 
-    MCNAPI ~FrozenOceanBuilderNoises();
+    MCAPI ~FrozenOceanBuilderNoises();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::FrozenOceanBuilderNoises make(::XoroshiroPositionalRandomFactory const& positionalRandom);
+    MCAPI static ::FrozenOceanBuilderNoises make(::XoroshiroPositionalRandomFactory const& positionalRandom);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::XoroshiroPositionalRandomFactory                                            positionalRandomFactory,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarNoise,
         ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergSurfaceNoise,
@@ -60,6 +60,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

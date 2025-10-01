@@ -43,9 +43,12 @@ public:
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl() = 0;
 
     // vIndex: 2
-    virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() = 0;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getJsonRpcUrl() = 0;
 
     // vIndex: 3
+    virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() = 0;
+
+    // vIndex: 4
     virtual void reset() = 0;
     // NOLINTEND
 

@@ -17,6 +17,12 @@ public:
     MovementAbilitiesRequestVisitor& operator=(MovementAbilitiesRequestVisitor const&);
     MovementAbilitiesRequestVisitor(MovementAbilitiesRequestVisitor const&);
     MovementAbilitiesRequestVisitor();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void operator()(float value) const;
+    // NOLINTEND
 };
 
 } // namespace UpdateAbilitiesSystemImpl

@@ -39,16 +39,16 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual float getShadowRadius(::BlockSource&) const /*override*/;
 
     // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -63,8 +63,6 @@ public:
     MCAPI void dropAllItems(::BlockSource& region);
 
     MCAPI ::HashedString const& getCampfireTag(::BlockSource const& region) const;
-
-    MCAPI bool setItem(::BlockSource&, ::ItemInstance const& item);
     // NOLINTEND
 
 public:

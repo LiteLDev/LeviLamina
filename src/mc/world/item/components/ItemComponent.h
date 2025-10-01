@@ -45,7 +45,7 @@ public:
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
     // vIndex: 7
-    virtual void _initializeComponent();
+    virtual void _initializeComponent(::ComponentItem& owner);
     // NOLINTEND
 
 public:
@@ -63,7 +63,7 @@ public:
 
     MCFOLD void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCFOLD void $_initializeComponent();
+    MCFOLD void $_initializeComponent(::ComponentItem& owner);
     // NOLINTEND
 
 public:

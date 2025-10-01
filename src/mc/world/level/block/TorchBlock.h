@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/comprehensive/ParticleType.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/block/BlockType.h"
 #include "mc/world/level/block/TorchFacing.h"
@@ -24,6 +25,16 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class TorchBlock : public ::BlockType {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, ::ParticleType> mFlameParticle;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TorchBlock();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -66,6 +77,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TorchBlock(::std::string const& nameId, int id, ::ParticleType flameParticle);
+
     MCAPI bool canBePlacedOn(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
 
     MCAPI void onPlaceTorchBlock(::BlockEvents::BlockPlaceEvent& eventData) const;
@@ -79,6 +92,12 @@ public:
     MCAPI static ::std::add_lvalue_reference_t<::TorchFacing const[]> DATA_FROM_FACING();
 
     MCAPI static ::std::add_lvalue_reference_t<ushort const[]> FACING_FROM_DATA();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::ParticleType flameParticle);
     // NOLINTEND
 
 public:

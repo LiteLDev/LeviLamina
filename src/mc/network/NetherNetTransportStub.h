@@ -32,7 +32,7 @@ public:
     IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize) /*override*/;
 
     // vIndex: 3
-    virtual void ClearPacketData(::NetherNet::NetworkID remoteId, uint64 connectionId) /*override*/;
+    virtual void ClearPacketData(::NetherNet::NetworkID, uint64) /*override*/;
 
     // vIndex: 4
     virtual bool ReadPacket(

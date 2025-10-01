@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class TaskGroup;
-namespace PackCommand { class IResourceRepositories; }
 namespace PackCommand { struct MoveReplaceBatch; }
 namespace PackCommand { struct PackCommandHandle; }
 namespace PackCommand { struct RemoveBatch; }
@@ -54,25 +53,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackCommandPipelineImpl(
-        ::std::unique_ptr<::TaskGroup>                          taskGroup,
-        ::std::unique_ptr<::PackCommand::IResourceRepositories> repositories
-    );
-
     MCNAPI ::PackCommand::PackCommandHandle enqueueCommands(
         ::std::variant<
             ::PackCommand::UpgradeLegacyDependenciesBatch,
             ::PackCommand::MoveReplaceBatch,
             ::PackCommand::RemoveBatch>&& commands
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::unique_ptr<::TaskGroup>                          taskGroup,
-        ::std::unique_ptr<::PackCommand::IResourceRepositories> repositories
     );
     // NOLINTEND
 

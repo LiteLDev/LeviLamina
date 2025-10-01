@@ -62,13 +62,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Block const& $next(::Random& random, int, int, int, bool isEdge) const;
+    MCAPI ::Block const& $next(::Random& random, int, int, int, bool isEdge) const;
     // NOLINTEND
 
 public:

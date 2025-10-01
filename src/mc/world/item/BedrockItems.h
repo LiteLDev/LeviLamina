@@ -15,12 +15,12 @@ class BedrockItems {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void registerItems(::ItemRegistryRef itemRegistry);
+    MCAPI static void registerItems(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::WeakPtr<::Item>& mAir();
+    MCAPI static ::WeakPtr<::Item>& mAir();
     // NOLINTEND
 };

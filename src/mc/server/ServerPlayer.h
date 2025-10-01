@@ -127,14 +127,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+    // vIndex: 8
     virtual ~ServerPlayer() /*override*/;
 
     // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 145
+    // vIndex: 146
     virtual void aiStep() /*override*/;
 
     // vIndex: 24
@@ -154,66 +154,69 @@ public:
     // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 185
+    // vIndex: 186
     virtual void moveView() /*override*/;
 
-    // vIndex: 186
+    // vIndex: 187
     virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType) /*override*/;
 
-    // vIndex: 183
+    // vIndex: 184
     virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
 
     // vIndex: 52
     virtual bool isValidTarget(::Actor* attacker) const /*override*/;
 
-    // vIndex: 156
+    // vIndex: 111
+    virtual bool swing() /*override*/;
+
+    // vIndex: 157
     virtual void
     hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots) /*override*/;
 
-    // vIndex: 158
+    // vIndex: 159
     virtual void sendArmorDamage(::std::bitset<5> const damagedSlots) /*override*/;
 
-    // vIndex: 159
+    // vIndex: 160
     virtual void sendArmor(::std::bitset<5> const armorSlots) /*override*/;
 
-    // vIndex: 157
-    virtual void setDamagedArmor(::SharedTypes::Legacy::ArmorSlot, ::ItemStack const&) /*override*/;
+    // vIndex: 158
+    virtual void setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 165
+    // vIndex: 166
     virtual void sendInventory(bool shouldSelectSlot) /*override*/;
 
-    // vIndex: 228
+    // vIndex: 229
     virtual void sendInventoryTransaction(::InventoryTransaction const& transaction) const /*override*/;
 
-    // vIndex: 229
+    // vIndex: 230
     virtual void sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction> transaction) const
         /*override*/;
 
-    // vIndex: 230
+    // vIndex: 231
     virtual void sendNetworkPacket(::Packet& packet) const /*override*/;
 
-    // vIndex: 201
+    // vIndex: 202
     virtual void displayTextObjectMessage(
         ::TextObjectRoot const& textObject,
         ::std::string const&    fromXuid,
         ::std::string const&    fromPlatformId
     ) /*override*/;
 
-    // vIndex: 203
+    // vIndex: 204
     virtual void displayTextObjectWhisperMessage(
         ::ResolvedTextObject const& resolvedTextObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     ) /*override*/;
 
-    // vIndex: 202
+    // vIndex: 203
     virtual void displayTextObjectWhisperMessage(
         ::std::string const& message,
         ::std::string const& xuid,
         ::std::string const& platformId
     ) /*override*/;
 
-    // vIndex: 204
+    // vIndex: 205
     virtual void displayWhisperMessage(
         ::std::string const&                 author,
         ::std::string const&                 message,
@@ -222,37 +225,37 @@ public:
         ::std::string const&                 platformId
     ) /*override*/;
 
-    // vIndex: 195
+    // vIndex: 196
     virtual void openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen) /*override*/;
 
-    // vIndex: 193
+    // vIndex: 194
     virtual void openPortfolio() /*override*/;
 
-    // vIndex: 197
+    // vIndex: 198
     virtual void openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc) /*override*/;
 
-    // vIndex: 198
+    // vIndex: 199
     virtual void openInventory() /*override*/;
 
-    // vIndex: 194
+    // vIndex: 195
     virtual void openBook(int, bool, int, ::BlockActor* lectern) /*override*/;
 
-    // vIndex: 208
+    // vIndex: 209
     virtual void openSign(::BlockPos const& position, bool isFrontSide) /*override*/;
 
-    // vIndex: 187
+    // vIndex: 188
     virtual void checkMovementStats(::Vec3 const& d) /*override*/;
 
-    // vIndex: 188
+    // vIndex: 189
     virtual ::HashedString getCurrentStructureFeature() const /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
-
-    // vIndex: 220
-    virtual void setContainerData(::IContainerManager& menu, int id, int value) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     // vIndex: 221
+    virtual void setContainerData(::IContainerManager& menu, int id, int value) /*override*/;
+
+    // vIndex: 222
     virtual void slotChanged(
         ::IContainerManager& menu,
         ::Container&         container,
@@ -262,10 +265,10 @@ public:
         bool                 isResultSlot
     ) /*override*/;
 
-    // vIndex: 222
+    // vIndex: 223
     virtual void refreshContainer(::IContainerManager& menu) /*override*/;
 
-    // vIndex: 206
+    // vIndex: 207
     virtual void stopSleepInBed(bool forcefulWakeUp, bool updateLevelList) /*override*/;
 
     // vIndex: 72
@@ -274,7 +277,7 @@ public:
     // vIndex: 79
     virtual void setOffhandSlot(::ItemStack const& item) /*override*/;
 
-    // vIndex: 164
+    // vIndex: 165
     virtual void clearVanishEnchantedItemsOnDeath() /*override*/;
 
     // vIndex: 88
@@ -283,61 +286,61 @@ public:
     // vIndex: 90
     virtual void changeDimension(::DimensionType toId) /*override*/;
 
-    // vIndex: 181
+    // vIndex: 182
     virtual void changeDimensionWithCredits(::DimensionType dimension) /*override*/;
 
-    // vIndex: 213
+    // vIndex: 214
     virtual void setPlayerGameType(::GameType gameType) /*override*/;
 
-    // vIndex: 177
+    // vIndex: 178
     virtual void prepareRegion(::ChunkSource& mainChunkSource) /*override*/;
 
-    // vIndex: 224
+    // vIndex: 225
     virtual bool isActorRelevant(::Actor const& actor) /*override*/;
 
     // vIndex: 91
     virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
 
-    // vIndex: 178
+    // vIndex: 179
     virtual void destroyRegion() /*override*/;
 
-    // vIndex: 226
+    // vIndex: 227
     virtual void onSuspension() /*override*/;
 
-    // vIndex: 227
+    // vIndex: 228
     virtual void onLinkedSlotsChanged() /*override*/;
 
-    // vIndex: 225
+    // vIndex: 226
     virtual bool isTeacher() const /*override*/;
 
-    // vIndex: 210
+    // vIndex: 211
     virtual bool isLoading() const /*override*/;
 
     // vIndex: 82
     virtual bool load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 211
+    // vIndex: 212
     virtual bool isPlayerInitialized() const /*override*/;
 
-    // vIndex: 190
+    // vIndex: 191
     virtual void respawn() /*override*/;
 
-    // vIndex: 231
+    // vIndex: 232
     virtual ::PlayerEventCoordinator& getPlayerEventCoordinator() /*override*/;
 
-    // vIndex: 241
+    // vIndex: 244
     virtual void destroyEditorPlayer() /*override*/;
 
-    // vIndex: 240
+    // vIndex: 243
     virtual ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> getEditorPlayer() const /*override*/;
 
-    // vIndex: 236
+    // vIndex: 237
     virtual uchar getMaxChunkBuildRadius() const /*override*/;
 
-    // vIndex: 242
+    // vIndex: 245
     virtual int _getSpawnChunkLimit() const;
 
-    // vIndex: 243
+    // vIndex: 246
     virtual void _updateChunkPublisherView(::Vec3 const& position, float minDistance);
 
     // vIndex: 6
@@ -358,7 +361,6 @@ public:
         ::SubClientId                                      subid,
         ::std::function<void(::ServerPlayer&)>             onPlayerLoadedCallback,
         ::mce::UUID                                        uuid,
-        ::std::string const&                               playFabId,
         ::std::string const&                               deviceId,
         ::PlayerAuthenticationType                         authType,
         ::PlayerAuthenticationInfo const&                  authInfo,
@@ -441,7 +443,6 @@ public:
         ::SubClientId                                      subid,
         ::std::function<void(::ServerPlayer&)>             onPlayerLoadedCallback,
         ::mce::UUID                                        uuid,
-        ::std::string const&                               playFabId,
         ::std::string const&                               deviceId,
         ::PlayerAuthenticationType                         authType,
         ::PlayerAuthenticationInfo const&                  authInfo,
@@ -488,6 +489,8 @@ public:
     MCFOLD void $frameUpdate(::FrameUpdateContextBase&);
 
     MCAPI bool $isValidTarget(::Actor* attacker) const;
+
+    MCAPI bool $swing();
 
     MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots);
 
@@ -545,7 +548,7 @@ public:
 
     MCAPI ::HashedString $getCurrentStructureFeature() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI void $setContainerData(::IContainerManager& menu, int id, int value);
 

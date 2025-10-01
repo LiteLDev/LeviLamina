@@ -146,9 +146,9 @@ public:
 
     MCNAPI int execute(::FunctionEntry& toExecute, ::CommandOrigin const& origin, ::FunctionQueueOrder order);
 
-    MCNAPI int getExecutionLimit() const;
-
     MCNAPI void load(::ResourcePackManager& serverPackManager, ::CommandRegistry& registry);
+
+    MCNAPI void tick();
     // NOLINTEND
 
 public:

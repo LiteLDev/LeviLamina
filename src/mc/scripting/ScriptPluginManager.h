@@ -21,6 +21,7 @@ namespace Scripting { class IRuntime; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct RuntimeStats; }
 namespace Scripting { struct ScriptContextResult; }
+namespace mce { class UUID; }
 // clang-format on
 
 class ScriptPluginManager {
@@ -105,7 +106,7 @@ public:
             ::Scripting::ModuleDescriptor const&,
             ::ScriptPluginResult&
         )>> const&                              moduleFilters,
-        ::std::vector<::std::string>            excludeModuleIDs,
+        ::std::vector<::mce::UUID>              excludeModuleIDs,
         ::std::function<::PluginExecutionGroup(::std::vector<::Scripting::ModuleDescriptor> const&)>&&
             pluginExecutionGroupSelector
     );

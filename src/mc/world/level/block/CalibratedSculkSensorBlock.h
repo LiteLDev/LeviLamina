@@ -48,8 +48,6 @@ public:
     // NOLINTBEGIN
     MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
-
     MCAPI int $getVariant(::Block const& block) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;

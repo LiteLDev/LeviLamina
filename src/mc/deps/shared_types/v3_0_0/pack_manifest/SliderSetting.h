@@ -24,15 +24,13 @@ public:
 
 public:
     // prevent constructor by default
+    SliderSetting& operator=(SliderSetting const&);
     SliderSetting(SliderSetting const&);
     SliderSetting();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting const&);
-
     MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting&&);
 

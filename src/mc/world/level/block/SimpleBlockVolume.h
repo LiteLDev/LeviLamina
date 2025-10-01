@@ -90,47 +90,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool doesAreaTouchFaces(::BlockPos const& min, ::BlockPos const& max) const;
+    MCAPI bool doesAreaTouchFaces(::BlockPos const& min, ::BlockPos const& max) const;
 
-    MCNAPI ::SimpleBlockVolume::IntersectionResult intersects(::SimpleBlockVolume const& other) const;
+    MCAPI ::SimpleBlockVolume::IntersectionResult intersects(::SimpleBlockVolume const& other) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void cerealBindTypes(::cereal::ReflectionCtx& ctx);
+    MCAPI static void cerealBindTypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BlockPos $getMin() const;
+    MCAPI ::BlockPos $getMin() const;
 
-    MCNAPI ::BlockPos $getMax() const;
+    MCAPI ::BlockPos $getMax() const;
 
-    MCNAPI ::BoundingBox $getBoundingBox() const;
+    MCAPI ::BoundingBox $getBoundingBox() const;
 
-    MCNAPI ::glm::ivec3 $getSpan() const;
+    MCAPI ::glm::ivec3 $getSpan() const;
 
-    MCNAPI int $getCapacity() const;
+    MCAPI int $getCapacity() const;
 
-    MCNAPI bool $isInside(::BlockPos const& pos) const;
+    MCAPI bool $isInside(::BlockPos const& pos) const;
 
-    MCNAPI void $translate(::BlockPos const& delta);
+    MCAPI void $translate(::BlockPos const& delta);
 
-    MCNAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
+    MCAPI void $forEach(::std::function<bool(::BlockPos const&)> callback) const;
 
-    MCNAPI ::std::set<::ChunkPos> $getChunks() const;
+    MCAPI ::std::set<::ChunkPos> $getChunks() const;
 
-    MCNAPI ::std::unordered_set<::BlockPos> $getFlattenedBlockPositions() const;
+    MCAPI ::std::unordered_set<::BlockPos> $getFlattenedBlockPositions() const;
 
-    MCNAPI ::std::unique_ptr<::BaseBlockLocationIterator> $getIterator() const;
+    MCAPI ::std::unique_ptr<::BaseBlockLocationIterator> $getIterator() const;
     // NOLINTEND
 
 public:

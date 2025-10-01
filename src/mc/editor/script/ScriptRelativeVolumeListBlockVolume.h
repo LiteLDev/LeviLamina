@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/RelativeVolumeListBlockVolumeAction.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/editor/RelativeVolumeListBlockVolumeAction.h"
 #include "mc/scripting/modules/minecraft/ScriptBlockVolumeBase.h"
 
 // auto generated forward declare list

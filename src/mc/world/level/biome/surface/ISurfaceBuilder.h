@@ -56,9 +56,15 @@ public:
     virtual ~ISurfaceBuilder() = default;
 
     // vIndex: 1
-    virtual void init(::Biome&, uint) = 0;
+    virtual void initBuilder(uint) = 0;
 
     // vIndex: 2
+    virtual void initBiomeSurface(::Biome&) const = 0;
+
+    // vIndex: 3
+    virtual bool isBestBuilder(::Biome const&) const = 0;
+
+    // vIndex: 4
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const&) const = 0;
     // NOLINTEND
 

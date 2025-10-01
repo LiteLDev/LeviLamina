@@ -2,9 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/puv/LoadResult.h"
+
 // auto generated forward declare list
 // clang-format off
 class BiomeFilterGroup;
+class IMinecraftEventing;
 class MobSpawnRules;
 class ResourcePackManager;
 class SemVersion;
@@ -27,7 +31,14 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::SpawnGroupData>>>     mSpawnGroupRegistry;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::SpawnGroupData*>> mSpawnGroupLookupMap;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                                   mEventing;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SpawnGroupRegistry& operator=(SpawnGroupRegistry const&);
+    SpawnGroupRegistry(SpawnGroupRegistry const&);
+    SpawnGroupRegistry();
 
 public:
     // virtual functions
@@ -47,7 +58,8 @@ public:
             callback
     );
 
-    MCNAPI bool _readJson(::std::string&& data, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap);
+    MCNAPI ::Puv::LoadResult<::ActorSpawnRuleData>
+    _readJson(::std::string&& data, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap);
 
     MCNAPI void readResourceFiles(
         ::ResourcePackManager&                                     resourcePackManager,

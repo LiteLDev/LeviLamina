@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Identity { class IEduAuth; }
+namespace Social { class IEduMultiplayerHeadless; }
 // clang-format on
 
 class IEDUSystems : public ::Bedrock::EnableNonOwnerReferences {
@@ -31,6 +32,9 @@ public:
 
     // vIndex: 1
     virtual ::Identity::IEduAuth& getEduAuth() const = 0;
+
+    // vIndex: 2
+    virtual ::Social::IEduMultiplayerHeadless& getMultiplayerHeadless() const = 0;
     // NOLINTEND
 
 public:

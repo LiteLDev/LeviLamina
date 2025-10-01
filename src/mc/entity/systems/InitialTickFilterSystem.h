@@ -4,7 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
+#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Include.h"
+#include "mc/deps/ecs/strict/OptionalGlobal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,6 +34,12 @@ MCNAPI void tickingAreaFilterTickEntity(
     ::TickWorldComponent&                                 tickWorldComponent,
     ::CurrentTickComponent const&                         currentTickComponent,
     ::EntityModifier<::ActorMovementTickNeededComponent>& modifier
+);
+
+MCNAPI void tickingAreaFilterTickView(
+    ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::TickWorldComponent> view,
+    ::EntityModifier<::ActorMovementTickNeededComponent>                                                modifier
 );
 
 MCNAPI void validChunkFilterTickEntity(

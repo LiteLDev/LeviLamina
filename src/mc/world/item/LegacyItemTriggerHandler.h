@@ -44,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _executeEvent(
+    MCAPI void _executeEvent(
         ::std::unordered_map<::std::string, ::DefinitionEvent> const&         eventHandlers,
         ::ItemStackBase&                                                      item,
         ::std::string const&                                                  name,
@@ -52,7 +52,7 @@ public:
         ::RenderParams&                                                       params
     ) const;
 
-    MCNAPI bool _forceExecuteTrigger(
+    MCAPI bool _forceExecuteTrigger(
         ::std::unordered_map<::std::string, ::DefinitionEvent> const&         eventHandlers,
         ::ItemStackBase&                                                      item,
         ::DefinitionTrigger const&                                            trigger,
@@ -64,7 +64,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $executeTrigger(
+    MCAPI bool $executeTrigger(
         ::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers,
         ::ItemStackBase&                                              item,
         ::DefinitionTrigger const&                                    trigger,

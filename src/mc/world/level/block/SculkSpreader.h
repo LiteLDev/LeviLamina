@@ -33,11 +33,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addCursors(::BlockPos const& pos, int charge);
+    MCAPI void addCursors(::BlockPos const& pos, int charge);
 
-    MCNAPI void save(::CompoundTag& tag) const;
+    MCAPI void save(::CompoundTag& tag) const;
 
-    MCNAPI void updateCursors(
+    MCAPI void updateCursors(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
         ::BlockPos const&    originPos,
@@ -45,12 +45,12 @@ public:
         bool                 spreadVeins
     );
 
-    MCNAPI ~SculkSpreader();
+    MCAPI ~SculkSpreader();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

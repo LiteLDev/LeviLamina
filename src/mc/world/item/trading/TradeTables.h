@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IMinecraftEventing;
 class Level;
 class LinkedAssetValidator;
 class ResourcePackManager;
@@ -15,6 +16,40 @@ namespace Core { class Path; }
 // clang-format on
 
 class TradeTables {
+public:
+    // TradeTables inner types declare
+    // clang-format off
+    struct TradeTableLoadData;
+    // clang-format on
+
+    // TradeTables inner types define
+    struct TradeTableLoadData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnkf6f6b4;
+        ::ll::UntypedStorage<8, 32> mUnk748cba;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TradeTableLoadData& operator=(TradeTableLoadData const&);
+        TradeTableLoadData(TradeTableLoadData const&);
+        TradeTableLoadData();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ~TradeTableLoadData();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCFOLD void $dtor();
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -30,7 +65,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _parseAndStoreTradeTable(
+    MCAPI ::TradeTables::TradeTableLoadData _parseAndStoreTradeTable(
         ::Level&                                           level,
         ::ResourcePackManager*                             resourceLoader,
         ::Core::Path const&                                tradeTablePath,
@@ -38,16 +73,16 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCNAPI ::TradeTable* fetchTable(::std::string const& path);
+    MCAPI ::TradeTable* fetchTable(::std::string const& path);
 
-    MCNAPI void reload(::Level& level, bool usingUpcomingCreatorFeaturesExperiment);
+    MCAPI void reload(::Level& level, bool usingUpcomingCreatorFeaturesExperiment, ::IMinecraftEventing& eventing);
 
-    MCNAPI ~TradeTables();
+    MCAPI ~TradeTables();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

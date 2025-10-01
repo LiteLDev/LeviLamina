@@ -13,6 +13,7 @@ class LoadResultAny {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 32> mUnk23851a;
     ::ll::UntypedStorage<8, 24> mUnk545455;
     ::ll::UntypedStorage<8, 40> mUnk8aa8ef;
     ::ll::UntypedStorage<8, 80> mUnk6e20bb;

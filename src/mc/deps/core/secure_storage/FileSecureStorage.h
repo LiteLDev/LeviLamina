@@ -3,15 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/secure_storage/SecureStorage.h"
-#include "mc/deps/core/string/BasicStackString.h"
 
 // auto generated forward declare list
 // clang-format off
 class ISecureStorageKeySystem;
 class SecureStorageKey;
 namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 class FileSecureStorage : public ::SecureStorage {
@@ -129,11 +128,11 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI FileSecureStorage(
-        ::Core::PathBuffer<::std::string> const&                        settingsPath,
-        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& baseSettingsPath,
-        ::ISecureStorageKeySystem*                                      sskSystem,
-        ::Core::Path const&                                             userDataPath,
-        ::FileSecureStorage::StorageSystem*                             storage
+        ::Core::PathView                    settingsPath,
+        ::Core::PathView                    baseSettingsPath,
+        ::ISecureStorageKeySystem*          sskSystem,
+        ::Core::PathView                    userDataPath,
+        ::FileSecureStorage::StorageSystem* storage
     );
 
     MCNAPI ::std::string _contentKeyObfuscator(::std::string const& codedData, ::std::string const& identifier);
@@ -151,11 +150,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::Core::PathBuffer<::std::string> const&                        settingsPath,
-        ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& baseSettingsPath,
-        ::ISecureStorageKeySystem*                                      sskSystem,
-        ::Core::Path const&                                             userDataPath,
-        ::FileSecureStorage::StorageSystem*                             storage
+        ::Core::PathView                    settingsPath,
+        ::Core::PathView                    baseSettingsPath,
+        ::ISecureStorageKeySystem*          sskSystem,
+        ::Core::PathView                    userDataPath,
+        ::FileSecureStorage::StorageSystem* storage
     );
     // NOLINTEND
 

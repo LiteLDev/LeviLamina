@@ -5,13 +5,6 @@
 // auto generated inclusion list
 #include "mc/editor/network/NetworkPayload.h"
 
-// auto generated forward declare list
-// clang-format off
-class HashedString;
-namespace Editor { struct ProbabilityBlockPaletteItem; }
-namespace Editor { struct SimpleBlockPaletteItem; }
-// clang-format on
-
 namespace Editor::Network {
 
 class BlockPaletteItemChangedPayload
@@ -26,6 +19,7 @@ public:
 
 public:
     // prevent constructor by default
+    BlockPaletteItemChangedPayload(BlockPaletteItemChangedPayload const&);
     BlockPaletteItemChangedPayload();
 
 public:
@@ -38,28 +32,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const&);
-
-    MCNAPI BlockPaletteItemChangedPayload(
-        ::HashedString const&                                                                          paletteId,
-        int                                                                                            index,
-        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
-    );
-
     MCNAPI ::Editor::Network::BlockPaletteItemChangedPayload&
     operator=(::Editor::Network::BlockPaletteItemChangedPayload const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::Network::BlockPaletteItemChangedPayload const&);
-
-    MCNAPI void* $ctor(
-        ::HashedString const&                                                                          paletteId,
-        int                                                                                            index,
-        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
-    );
     // NOLINTEND
 
 public:

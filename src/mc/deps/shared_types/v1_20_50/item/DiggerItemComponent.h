@@ -27,13 +27,15 @@ public:
 
     public:
         // prevent constructor by default
-        BlockInfo& operator=(BlockInfo const&);
         BlockInfo(BlockInfo const&);
         BlockInfo();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI ::SharedTypes::v1_20_50::DiggerItemComponent::BlockInfo&
+        operator=(::SharedTypes::v1_20_50::DiggerItemComponent::BlockInfo const&);
+
         MCNAPI ~BlockInfo();
         // NOLINTEND
 

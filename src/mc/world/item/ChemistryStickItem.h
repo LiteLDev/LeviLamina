@@ -31,21 +31,21 @@ public:
     // vIndex: 76
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 81
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
 
     // vIndex: 63
     virtual bool uniqueAuxValues() const /*override*/;
 
-    // vIndex: 92
+    // vIndex: 94
     virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const
         /*override*/;
 
     // vIndex: 25
     virtual ::Item& setMaxDamage(int maxDamage) /*override*/;
 
-    // vIndex: 82
+    // vIndex: 84
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
     // vIndex: 53
@@ -58,7 +58,7 @@ public:
     // vIndex: 44
     virtual bool showsDurabilityInCreative() const /*override*/;
 
-    // vIndex: 97
+    // vIndex: 99
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
     // vIndex: 0

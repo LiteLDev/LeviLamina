@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/client/social/MultiplayerServiceIdentifier.h"
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/platform/ARVRPlatform.h"
 #include "mc/deps/core/platform/BuildPlatform.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
@@ -41,40 +40,46 @@ public:
     virtual bool const areTreatmentPacksThrottled() const = 0;
 
     // vIndex: 9
-    virtual bool isNetworkEnabled(bool) const = 0;
+    virtual void goToExternalConsumablesStoreListing() const = 0;
 
     // vIndex: 10
-    virtual bool isNetworkAvailable() const = 0;
+    virtual void showPlatformEmptyStoreDialog(::std::function<void(bool)>&&) = 0;
 
     // vIndex: 11
-    virtual bool isLANAvailable() const = 0;
+    virtual bool isNetworkEnabled(bool) const = 0;
 
     // vIndex: 12
-    virtual bool isLANAllowed() const = 0;
+    virtual bool isNetworkAvailable() const = 0;
 
     // vIndex: 13
-    virtual bool isInternetAvailable() const = 0;
+    virtual bool isLANAvailable() const = 0;
 
     // vIndex: 14
-    virtual bool multiplayerRequiresPremiumAccess() const = 0;
+    virtual bool isLANAllowed() const = 0;
 
     // vIndex: 15
-    virtual bool multiplayerRequiresUGCEnabled() const = 0;
+    virtual bool isInternetAvailable() const = 0;
 
     // vIndex: 16
-    virtual ::BuildPlatform getBuildPlatform() const = 0;
+    virtual bool multiplayerRequiresPremiumAccess() const = 0;
 
     // vIndex: 17
-    virtual ::ARVRPlatform getARVRPlatform() const = 0;
+    virtual bool multiplayerRequiresUGCEnabled() const = 0;
 
     // vIndex: 18
+    virtual ::BuildPlatform getBuildPlatform() const = 0;
+
+    // vIndex: 19
+    virtual ::std::string getPlatformString() const = 0;
+
+    // vIndex: 20
     virtual ::std::vector<::Social::MultiplayerServiceIdentifier>
     getBroadcastingMultiplayerServiceIds(bool, bool) const = 0;
 
-    // vIndex: 19
+    // vIndex: 21
     virtual uint64 getLowPhysicalMemoryThreshold() const = 0;
 
-    // vIndex: 20
+    // vIndex: 22
     virtual uint64 getTotalPhysicalMemory() const = 0;
     // NOLINTEND
 

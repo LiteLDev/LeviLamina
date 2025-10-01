@@ -3,75 +3,77 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/AutomaticID.h"
-#include "mc/deps/ecs/EntityNetId.h"
-#include "mc/nbt/CompoundTag.h"
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/NetworkBlockPosition.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/AddVolumeEntityPacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
-#include "mc/resources/MinEngineVersion.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
-class Dimension;
-class EntityContext;
 class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class AddVolumeEntityPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::CompoundTag>          mComponents;
-    ::ll::TypedStorage<8, 32, ::std::string>          mJsonIdentifier;
-    ::ll::TypedStorage<8, 32, ::std::string>          mInstanceName;
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mMinBounds;
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mMaxBounds;
-    ::ll::TypedStorage<4, 4, ::DimensionType>         mDimensionType;
-    ::ll::TypedStorage<8, 32, ::MinEngineVersion>     mMinEngineVersion;
-    ::ll::TypedStorage<4, 4, ::EntityNetId>           mEntityNetId;
+    ::ll::TypedStorage<8, 160, ::AddVolumeEntityPacketPayload> mPayload;
+    ::ll::TypedStorage<4, 4, ::SerializationMode>              mSerializationMode;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~AddVolumeEntityPacket() /*override*/;
-
     // vIndex: 1
     virtual ::MinecraftPacketIds getId() const /*override*/;
 
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 11
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
+
+    // vIndex: 12
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    // vIndex: 4
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    // vIndex: 6
+    virtual void write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
     // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 8
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    // vIndex: 9
+    virtual bool disallowBatching() const /*override*/;
+
+    // vIndex: 10
+    virtual bool isValid() const /*override*/;
+
     // vIndex: 13
+    virtual ::std::string toString() const /*override*/;
+
+    // vIndex: 14
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
-    // NOLINTEND
 
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI AddVolumeEntityPacket();
+    // vIndex: 15
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
-    MCAPI AddVolumeEntityPacket(
-        ::EntityContext const&    entity,
-        ::CompoundTag             components,
-        ::MinEngineVersion const& minEngineVersion
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor();
-
-    MCAPI void*
-    $ctor(::EntityContext const& entity, ::CompoundTag components, ::MinEngineVersion const& minEngineVersion);
+    // vIndex: 0
+    virtual ~AddVolumeEntityPacket() /*override*/;
     // NOLINTEND
 
 public:
@@ -87,9 +89,32 @@ public:
 
     MCAPI ::std::string $getName() const;
 
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
     MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
+
+    MCFOLD bool $isValid() const;
+
+    MCAPI ::std::string $toString() const;
+
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:

@@ -22,7 +22,7 @@ public:
 
     MCNAPI void transform3(::glm::vec3& outVec, float& outW) const;
 
-    MCNAPI void translate(float x, float y, float z);
+    MCNAPI void translate(::glm::vec3 const& t);
     // NOLINTEND
 
 public:

@@ -24,13 +24,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~FeatureRootParseContext();
+    MCAPI ~FeatureRootParseContext();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

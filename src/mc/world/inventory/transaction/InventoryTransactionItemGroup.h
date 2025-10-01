@@ -27,8 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool equals(::ItemStack const& item) const;
-
     MCAPI ::ItemStack getItemInstance() const;
 
     MCAPI ::InventoryTransactionItemGroup& operator=(::InventoryTransactionItemGroup const& rhs);

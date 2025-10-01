@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Molang::details { class IInstruction; }
 namespace brstd { struct source_location; }
 // clang-format on
 
@@ -29,6 +30,8 @@ public:
     // NOLINTBEGIN
     MCNAPI uint64 allocateInstruction();
 
+    MCNAPI void emplaceInstruction(::std::unique_ptr<::Molang::details::IInstruction> instruction);
+
     MCNAPI void insertJumpWithMaddAtIndex(
         uint64                   instructionIndexToPutThisInstruction,
         uint64                   instructionToJumpTo,
@@ -52,8 +55,6 @@ public:
     );
 
     MCNAPI void pushReturnValue(::brstd::source_location source);
-
-    MCNAPI void pushValue(float value, ::brstd::source_location source);
 
     MCNAPI void setReturnValue(float value, ::brstd::source_location source);
 

@@ -67,7 +67,7 @@ public:
     virtual ::GameEventListener::DeliveryMode getDeliveryMode() const /*override*/;
 
     // vIndex: 0
-    virtual ~SculkCatalystBlockActor() /*override*/ = default;
+    virtual ~SculkCatalystBlockActor() /*override*/;
     // NOLINTEND
 
 public:
@@ -88,6 +88,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

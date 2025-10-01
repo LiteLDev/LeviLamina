@@ -8,7 +8,7 @@ struct VersionRequestKey {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc23615;
+    ::ll::UntypedStorage<8, 16> mUnk392781;
     ::ll::UntypedStorage<8, 32> mUnkef6151;
     // NOLINTEND
 

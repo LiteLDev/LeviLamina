@@ -48,13 +48,13 @@ public:
     // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 21
+    // vIndex: 20
     virtual bool hasAlphaLayer() const /*override*/;
 
     // vIndex: 16
     virtual void triggerEvent(int b0, int b1) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     // vIndex: 0

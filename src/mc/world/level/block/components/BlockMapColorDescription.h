@@ -45,35 +45,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockMapColorDescription(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
+    MCAPI BlockMapColorDescription(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
+    MCAPI void* $ctor(::SharedTypes::Color255RGB mapColor, ::TintMethod tintMethod);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
     // NOLINTEND
 
 public:

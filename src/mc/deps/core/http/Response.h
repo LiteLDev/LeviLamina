@@ -32,9 +32,9 @@ public:
 
     MCNAPI explicit Response(::Bedrock::Http::Status status);
 
-    MCNAPI ::gsl::span<uchar const> getBodyAsBytes() const;
-
     MCNAPI ::Json::Value getBodyAsJson() const;
+
+    MCNAPI ::std::string getBodyAsUtf8String() const;
 
     MCNAPI ~Response();
     // NOLINTEND

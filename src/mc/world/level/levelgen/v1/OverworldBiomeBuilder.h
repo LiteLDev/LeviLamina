@@ -115,13 +115,6 @@ public:
 
     MCAPI ::Biome const* _pickBeachBiome(int temperatureIndex, ::BiomeRegistry const& biomeRegistry) const;
 
-    MCAPI ::Biome const* _pickPeakBiome(
-        int                              temperatureIndex,
-        int                              humidityIndex,
-        ::ClimateUtils::Parameter const& weirdness,
-        ::BiomeRegistry const&           biomeRegistry
-    ) const;
-
     MCAPI ::Biome const* _pickSlopeBiome(
         int                              temperatureIndex,
         int                              humidityIndex,

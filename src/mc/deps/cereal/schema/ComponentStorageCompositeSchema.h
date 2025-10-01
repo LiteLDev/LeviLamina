@@ -7,9 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class SerializerContext; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
+namespace cereal::internal { struct LoadState; }
+namespace cereal::internal { struct SaveState; }
 // clang-format on
 
 namespace cereal::internal {
@@ -20,16 +21,18 @@ public:
     // NOLINTBEGIN
     // vIndex: 6
     virtual void doLoad(
-        ::cereal::SchemaReader&      value,
-        ::entt::meta_any&            any,
-        ::entt::meta_any const&      udata,
-        ::cereal::SerializerContext& context
+        ::cereal::SchemaReader&              reader,
+        ::entt::meta_any&                    any,
+        ::entt::meta_any const&              udata,
+        ::cereal::internal::LoadState const& state
     ) const /*override*/;
 
     // vIndex: 7
-    virtual void
-    doSave(::cereal::SchemaWriter& value, ::entt::meta_any const& any, ::cereal::SerializerContext& context) const
-        /*override*/;
+    virtual void doSave(
+        ::cereal::SchemaWriter&              writer,
+        ::entt::meta_any const&              any,
+        ::cereal::internal::SaveState const& state
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~ComponentStorageCompositeSchema() /*override*/ = default;
@@ -39,14 +42,17 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $doLoad(
-        ::cereal::SchemaReader&      value,
-        ::entt::meta_any&            any,
-        ::entt::meta_any const&      udata,
-        ::cereal::SerializerContext& context
+        ::cereal::SchemaReader&              reader,
+        ::entt::meta_any&                    any,
+        ::entt::meta_any const&              udata,
+        ::cereal::internal::LoadState const& state
     ) const;
 
-    MCNAPI void
-    $doSave(::cereal::SchemaWriter& value, ::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
+    MCNAPI void $doSave(
+        ::cereal::SchemaWriter&              writer,
+        ::entt::meta_any const&              any,
+        ::cereal::internal::SaveState const& state
+    ) const;
     // NOLINTEND
 };
 

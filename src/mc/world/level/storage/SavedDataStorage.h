@@ -29,8 +29,6 @@ public:
     MCNAPI void _save(::SavedData const& data);
 
     MCNAPI bool loadAndSet(::SavedData& inoutData, ::std::string const& id);
-
-    MCNAPI void set(::std::string const& id, ::SavedData& data);
     // NOLINTEND
 
 public:

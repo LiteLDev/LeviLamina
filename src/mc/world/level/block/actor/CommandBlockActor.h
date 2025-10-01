@@ -64,19 +64,19 @@ public:
     // vIndex: 11
     virtual void onPlace(::BlockSource& region) /*override*/;
 
-    // vIndex: 25
+    // vIndex: 24
     virtual ::Bedrock::Safety::RedactableString const& getCustomName() const /*override*/;
 
-    // vIndex: 27
-    virtual void setCustomName(::Bedrock::Safety::RedactableString const& name) /*override*/;
+    // vIndex: 26
+    virtual void setCustomName(::Bedrock::Safety::RedactableString const& str) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void _onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 43
     virtual bool _playerCanUpdate(::Player const& player) const /*override*/;
 
     // vIndex: 0
@@ -86,23 +86,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CommandBlockActor(::BlockPos const& pos, ::CommandBlockMode mode);
+    MCAPI CommandBlockActor(::BlockPos const& pos, ::CommandBlockMode mode);
 
-    MCNAPI void _setAutomatic(::BlockSource& region, bool alwaysActive, ::CommandBlockMode currentMode);
+    MCAPI void _setAutomatic(::BlockSource& region, bool alwaysActive, ::CommandBlockMode currentMode);
 
-    MCNAPI ::CommandBlock const* getCommandBlock(::BlockSource& region) const;
+    MCAPI ::CommandBlock const* getCommandBlock(::BlockSource& region) const;
 
-    MCNAPI bool getConditionalMode(::BlockSource& region) const;
+    MCAPI bool getConditionalMode(::BlockSource& region) const;
 
-    MCNAPI bool markConditionMet(::BlockSource& region);
+    MCAPI bool markConditionMet(::BlockSource& region);
 
-    MCNAPI void markForSaving(::BlockSource& region);
+    MCAPI void markForSaving(::BlockSource& region);
 
-    MCNAPI void markForSaving(::BlockSource& region, int oldSuccessCount, bool oldConditionMet);
+    MCAPI void markForSaving(::BlockSource& region, int oldSuccessCount, bool oldConditionMet);
 
-    MCNAPI bool performCommand(::BlockSource& region);
+    MCAPI bool performCommand(::BlockSource& region);
 
-    MCNAPI void updateBlock(
+    MCAPI void updateBlock(
         ::BlockSource&                             region,
         ::std::string const&                       cmd,
         ::Bedrock::Safety::RedactableString const& name,
@@ -118,35 +118,35 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos, ::CommandBlockMode mode);
+    MCAPI void* $ctor(::BlockPos const& pos, ::CommandBlockMode mode);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $saveBlockData(::CompoundTag& tag, ::BlockSource& region) const;
+    MCAPI void $saveBlockData(::CompoundTag& tag, ::BlockSource& region) const;
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void $loadBlockData(::CompoundTag const& tag, ::BlockSource& region, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $loadBlockData(::CompoundTag const& tag, ::BlockSource& region, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void $onCustomTagLoadDone(::BlockSource& region);
+    MCAPI void $onCustomTagLoadDone(::BlockSource& region);
 
-    MCNAPI void $onChanged(::BlockSource& region);
+    MCFOLD void $onChanged(::BlockSource& region);
 
-    MCNAPI void $onPlace(::BlockSource& region);
+    MCAPI void $onPlace(::BlockSource& region);
 
-    MCNAPI ::Bedrock::Safety::RedactableString const& $getCustomName() const;
+    MCFOLD ::Bedrock::Safety::RedactableString const& $getCustomName() const;
 
-    MCNAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
+    MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& str);
 
-    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCNAPI void $_onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
+    MCAPI void $_onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
 
-    MCNAPI bool $_playerCanUpdate(::Player const& player) const;
+    MCAPI bool $_playerCanUpdate(::Player const& player) const;
     // NOLINTEND
 
 public:

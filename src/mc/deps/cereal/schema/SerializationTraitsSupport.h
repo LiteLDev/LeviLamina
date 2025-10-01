@@ -8,6 +8,7 @@ struct SerializationTraitsSupport {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<1, 1> mUnke9e0de;
     ::ll::UntypedStorage<1, 1> mUnk225374;
     // NOLINTEND
 

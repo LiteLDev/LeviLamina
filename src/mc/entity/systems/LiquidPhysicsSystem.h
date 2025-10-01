@@ -42,7 +42,8 @@ MCNAPI void _markForLiquidFlow(
     ::Optional<::MovementAbilitiesComponent const> const& abilities
 );
 
-MCNAPI void _tickLiquidBlocksFetch(
+MCNAPI void _singleTickLiquidBlocksFetch(
+    ::StrictEntityContext& entity,
     ::ViewT<
         ::StrictEntityContext,
         ::StateVectorComponent,

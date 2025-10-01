@@ -7,11 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class WorldTemplateCollectionView;
 struct WorldTemplateData;
 struct WorldTemplateInfo;
 struct WorldTemplateMutableInfo;
-namespace mce { class UUID; }
 // clang-format on
 
 class WorldTemplateCollection {
@@ -32,22 +30,11 @@ public:
     // NOLINTBEGIN
     MCNAPI WorldTemplateCollection();
 
-    MCNAPI ::WorldTemplateCollectionView createView(::mce::UUID const& toView) const;
-
     MCNAPI void erase(uint64 index);
 
     MCNAPI ::WorldTemplateCollection& operator=(::WorldTemplateCollection&&);
 
     MCNAPI void push_back(::WorldTemplateData&& data, ::WorldTemplateMutableInfo&& mutableInfo);
-
-    MCNAPI void sort(
-        ::brstd::function_ref<bool(
-            ::std::unique_ptr<::WorldTemplateInfo const> const&,
-            ::std::unique_ptr<::WorldTemplateInfo const> const&
-        )> const& sorter
-    );
-
-    MCNAPI ::WorldTemplateInfo const* tryGet(uint64 index) const;
     // NOLINTEND
 
 public:

@@ -17,6 +17,8 @@ namespace CerealHelpers {
 // NOLINTBEGIN
 MCNAPI void bindHelpers(::cereal::ReflectionCtx& ctx);
 
+MCNAPI void bindMceUUID(::cereal::ReflectionCtx& ctx);
+
 MCNAPI ::std::array<int, 3> blockPosAsArray(::BlockPos const& instance);
 
 MCNAPI void blockPosFromArray(::BlockPos& instance, ::std::array<int, 3> const& arr);

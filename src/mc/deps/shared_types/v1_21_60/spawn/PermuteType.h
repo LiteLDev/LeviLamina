@@ -10,19 +10,18 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnkb6984d;
     ::ll::UntypedStorage<4, 4>  mUnk76732d;
-    ::ll::UntypedStorage<8, 32> mUnk7ffae7;
+    ::ll::UntypedStorage<8, 32> mUnk4ec86f;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    PermuteType& operator=(PermuteType const&);
     PermuteType(PermuteType const&);
     PermuteType();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_60::Spawn::PermuteType& operator=(::SharedTypes::v1_21_60::Spawn::PermuteType const&);
-
     MCNAPI ::SharedTypes::v1_21_60::Spawn::PermuteType& operator=(::SharedTypes::v1_21_60::Spawn::PermuteType&&);
 
     MCNAPI ~PermuteType();

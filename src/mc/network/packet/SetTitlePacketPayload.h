@@ -38,8 +38,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SetTitlePacketPayload(::SetTitlePacketPayload&&);
-
     MCAPI explicit SetTitlePacketPayload(::SetTitlePacketPayload::TitleType type);
 
     MCAPI SetTitlePacketPayload(int fadeInTime, int stayTime, int fadeOutTime);
@@ -60,8 +58,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SetTitlePacketPayload&&);
-
     MCAPI void* $ctor(::SetTitlePacketPayload::TitleType type);
 
     MCAPI void* $ctor(int fadeInTime, int stayTime, int fadeOutTime);

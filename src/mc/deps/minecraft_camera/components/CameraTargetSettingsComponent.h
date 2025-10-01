@@ -2,21 +2,27 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/math/Vec2.h"
-#include "mc/deps/core/math/Vec3.h"
+namespace MinecraftCamera {
 
 struct CameraTargetSettingsComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                     mSnapToTarget;
-    ::ll::TypedStorage<1, 1, bool>                     mContinueTargeting;
-    ::ll::TypedStorage<4, 4, float>                    mRotationSpeed;
-    ::ll::TypedStorage<4, 4, float>                    mTrackingRadius;
-    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mHorizontalRotationLimit;
-    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mVerticalRotationLimit;
-    ::ll::TypedStorage<4, 8, ::Vec2>                   mCurrentEulerOrientation;
-    ::ll::TypedStorage<4, 12, ::Vec3>                  mTargetDirectionToLook;
+    ::ll::UntypedStorage<1, 1>  mUnk3ae205;
+    ::ll::UntypedStorage<1, 1>  mUnkbcd459;
+    ::ll::UntypedStorage<4, 4>  mUnked6184;
+    ::ll::UntypedStorage<4, 4>  mUnkf07497;
+    ::ll::UntypedStorage<4, 12> mUnkcfb1d3;
+    ::ll::UntypedStorage<4, 12> mUnkdd7640;
+    ::ll::UntypedStorage<4, 8>  mUnk821167;
+    ::ll::UntypedStorage<4, 12> mUnkb523be;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CameraTargetSettingsComponent& operator=(CameraTargetSettingsComponent const&);
+    CameraTargetSettingsComponent(CameraTargetSettingsComponent const&);
+    CameraTargetSettingsComponent();
 };
+
+} // namespace MinecraftCamera

@@ -38,8 +38,6 @@ public:
 
     MCNAPI bool addInventoryTransactionPacket(::std::shared_ptr<::InventoryPacket> packet);
 
-    MCNAPI ::MovementPackets& front();
-
     MCNAPI ::optional_ref<::MovementPackets> getOrCreate(::std::function<bool(::MovementPackets&)> const& fn);
 
     MCNAPI uint64 getReadyToSimulateCount() const;

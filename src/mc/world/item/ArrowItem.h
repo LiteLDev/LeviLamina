@@ -42,10 +42,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 107
+    // vIndex: 109
     virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 77
+    // vIndex: 79
     virtual ::Actor* createProjectileActor(
         ::BlockSource&     region,
         ::ItemStack const& stack,
@@ -53,11 +53,11 @@ public:
         ::Vec3 const&      direction
     ) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
@@ -69,13 +69,13 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 88
+    // vIndex: 90
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const /*override*/;
 
     // vIndex: 60
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 

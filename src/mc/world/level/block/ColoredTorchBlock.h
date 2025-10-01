@@ -35,7 +35,7 @@ public:
         /*override*/;
 
     // vIndex: 56
-    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
 
     // vIndex: 0
     virtual ~ColoredTorchBlock() /*override*/ = default;
@@ -54,7 +54,7 @@ public:
         int               itemValue
     ) const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
     // NOLINTEND
 
 public:

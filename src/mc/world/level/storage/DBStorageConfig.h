@@ -31,15 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DBStorageConfig(::DBStorageConfig&&);
-
     MCAPI ~DBStorageConfig();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DBStorageConfig&&);
     // NOLINTEND
 
 public:

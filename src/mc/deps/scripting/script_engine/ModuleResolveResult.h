@@ -19,23 +19,14 @@ public:
     // prevent constructor by default
     ModuleResolveResult& operator=(ModuleResolveResult const&);
     ModuleResolveResult(ModuleResolveResult const&);
+    ModuleResolveResult();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ModuleResolveResult();
-
-    MCNAPI bool hasErrors() const;
-
     MCNAPI ::Scripting::ModuleResolveResult& operator=(::Scripting::ModuleResolveResult&&);
 
     MCNAPI ~ModuleResolveResult();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

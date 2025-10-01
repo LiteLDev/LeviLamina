@@ -5,16 +5,16 @@
 struct ItemSlotInfo {
 public:
     // ItemSlotInfo inner types define
-    enum class SlotType : int {
+    enum class SlotType : uchar {
         Inventory = 0,
-        Armor     = 1,
+        Equipment = 1,
     };
 
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4> mUnk8ab9ee;
-    ::ll::UntypedStorage<4, 4> mUnk5ef5da;
+    ::ll::UntypedStorage<1, 1> mUnk5ef5da;
     // NOLINTEND
 
 public:

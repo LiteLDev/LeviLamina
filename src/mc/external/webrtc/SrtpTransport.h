@@ -68,10 +68,10 @@ public:
     virtual bool UnregisterRtpDemuxerSink(::webrtc::RtpPacketSinkInterface* sink) /*override*/;
 
     // vIndex: 15
-    virtual void OnRtpPacketReceived(::rtc::ReceivedPacket const& received_packet) /*override*/;
+    virtual void OnRtpPacketReceived(::rtc::ReceivedPacket const& packet) /*override*/;
 
     // vIndex: 16
-    virtual void OnRtcpPacketReceived(::rtc::ReceivedPacket const& received_packet) /*override*/;
+    virtual void OnRtcpPacketReceived(::rtc::ReceivedPacket const& packet) /*override*/;
 
     // vIndex: 14
     virtual void OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute> network_route) /*override*/;
@@ -151,9 +151,9 @@ public:
 
     MCNAPI bool $UnregisterRtpDemuxerSink(::webrtc::RtpPacketSinkInterface* sink);
 
-    MCNAPI void $OnRtpPacketReceived(::rtc::ReceivedPacket const& received_packet);
+    MCNAPI void $OnRtpPacketReceived(::rtc::ReceivedPacket const& packet);
 
-    MCNAPI void $OnRtcpPacketReceived(::rtc::ReceivedPacket const& received_packet);
+    MCNAPI void $OnRtcpPacketReceived(::rtc::ReceivedPacket const& packet);
 
     MCNAPI void $OnNetworkRouteChanged(::std::optional<::rtc::NetworkRoute> network_route);
 

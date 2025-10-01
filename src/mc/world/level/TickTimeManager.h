@@ -31,12 +31,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void _onWakeUpAllPlayers();
 
+    MCNAPI void _syncTime(int64 currentTick);
+
     MCNAPI void registerForGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
     MCNAPI void
     registerForPlayerSleepManagerEvents(::IServerPlayerSleepManagerConnector& serverPlayerSleepManagerConnector);
-
-    MCNAPI void update();
 
     MCNAPI ~TickTimeManager();
     // NOLINTEND

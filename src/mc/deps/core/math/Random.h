@@ -28,6 +28,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Random();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
@@ -64,8 +68,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Random();
-
     MCAPI Random(uint seed, bool onlyUsedDeterministically);
 
     MCAPI uint _genRandInt32();
@@ -84,8 +86,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(uint seed, bool onlyUsedDeterministically);
     // NOLINTEND
 

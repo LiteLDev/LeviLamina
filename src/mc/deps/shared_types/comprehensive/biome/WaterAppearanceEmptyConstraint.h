@@ -17,13 +17,13 @@ class WaterAppearanceEmptyConstraint : public ::cereal::Constraint {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+    // vIndex: 1
     virtual void doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const /*override*/;
 
-    // vIndex: 2
+    // vIndex: 3
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
-    // vIndex: 1
+    // vIndex: 2
     virtual ~WaterAppearanceEmptyConstraint() /*override*/ = default;
     // NOLINTEND
 

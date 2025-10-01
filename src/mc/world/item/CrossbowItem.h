@@ -34,41 +34,41 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 107
+    // vIndex: 109
     virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    // vIndex: 110
+    // vIndex: 112
     virtual int
     getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const
         /*override*/;
 
     // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 81
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
 
-    // vIndex: 80
+    // vIndex: 82
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
-    // vIndex: 114
+    // vIndex: 116
     virtual void playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const /*override*/;
 
     // vIndex: 54
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 113
+    // vIndex: 115
     virtual bool canBeCharged() const /*override*/;
 
     // vIndex: 5
     virtual int getMaxUseDuration(::ItemStack const* instance) const /*override*/;
 
-    // vIndex: 100
+    // vIndex: 102
     virtual void enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const /*override*/;
 
     // vIndex: 0
@@ -97,7 +97,7 @@ public:
     MCAPI int
     $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 

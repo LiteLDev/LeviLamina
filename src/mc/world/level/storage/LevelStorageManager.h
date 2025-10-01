@@ -92,8 +92,6 @@ public:
 
     MCAPI void initializeWithPlayerDeathManager(::IPlayerDeathManagerConnector& playerDeathManagerConnector);
 
-    MCAPI void onStartLeaveGame();
-
     MCAPI void save(::std::chrono::steady_clock::time_point currentTime);
 
     MCAPI void saveGameData(::std::chrono::steady_clock::time_point currentTime);
@@ -123,7 +121,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveConnector();
+    MCFOLD ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveConnector();
 
     MCAPI ::Bedrock::PubSub::Connector<void(::LevelStorage&)>& $getOnSaveGameDataConnector();
 

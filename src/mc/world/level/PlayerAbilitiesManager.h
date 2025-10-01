@@ -8,7 +8,9 @@
 // auto generated forward declare list
 // clang-format off
 class GameplayUserManager;
+class LayeredAbilities;
 class Player;
+struct ActorUniqueID;
 // clang-format on
 
 class PlayerAbilitiesManager {
@@ -31,6 +33,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI explicit PlayerAbilitiesManager(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
+
+    MCNAPI ::LayeredAbilities* getPlayerAbilities(::ActorUniqueID const& playerId);
 
     MCNAPI void sendAllPlayerAbilities(::Player const& playerReference);
 

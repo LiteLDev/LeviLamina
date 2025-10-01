@@ -24,8 +24,6 @@ public:
 
     MCNAPI void capture(::std::function<void()> interactFunc);
 
-    MCNAPI void setInteractText(::std::string const& text);
-
     MCNAPI ~ActorInteraction();
     // NOLINTEND
 

@@ -51,8 +51,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_begin();
+    MCAPI void $_begin();
 
-    MCNAPI void $_end();
+    MCFOLD void $_end();
     // NOLINTEND
 };

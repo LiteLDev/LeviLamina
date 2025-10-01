@@ -18,6 +18,7 @@ public:
 
 public:
     // prevent constructor by default
+    DisplayNameItemComponent& operator=(DisplayNameItemComponent const&);
     DisplayNameItemComponent(DisplayNameItemComponent const&);
     DisplayNameItemComponent();
 
@@ -26,9 +27,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_20_50::DisplayNameItemComponent&
     operator=(::SharedTypes::v1_20_50::DisplayNameItemComponent&&);
-
-    MCNAPI ::SharedTypes::v1_20_50::DisplayNameItemComponent&
-    operator=(::SharedTypes::v1_20_50::DisplayNameItemComponent const&);
     // NOLINTEND
 
 public:

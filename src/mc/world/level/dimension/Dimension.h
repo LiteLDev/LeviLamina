@@ -440,8 +440,6 @@ public:
     MCAPI void tryLoadLimboEntities(::ChunkPos const& loadPos);
 
     MCAPI void unregisterDisplayEntity(::WeakRef<::EntityContext> entityRef);
-
-    MCAPI void unregisterEntity(::ActorUniqueID const& actorID);
     // NOLINTEND
 
 public:

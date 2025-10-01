@@ -5,12 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathPart.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class PathView; }
-namespace Core { class Result; }
-// clang-format on
-
 namespace Core {
 
 class Path {
@@ -39,19 +33,13 @@ public:
     // NOLINTBEGIN
     MCNAPI Path();
 
-    MCNAPI explicit Path(char const* str);
+    MCNAPI explicit Path(::std::string&& str);
 
-    MCNAPI char const* getUtf8CString() const;
+    MCNAPI explicit Path(char const* str);
 
     MCNAPI ::Core::Path& operator=(::Core::Path&&);
 
     MCNAPI ~Path();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Core::Result makeFailure(::fmt::v11::fstring<char const*> const& format, ::Core::PathView path);
     // NOLINTEND
 
 public:
@@ -64,6 +52,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::std::string&& str);
 
     MCNAPI void* $ctor(char const* str);
     // NOLINTEND

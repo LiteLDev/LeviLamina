@@ -42,16 +42,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::AABB $getCollisionShape(
+    MCFOLD ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
+    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCNAPI int $getVariant(::Block const& block) const;
+    MCAPI int $getVariant(::Block const& block) const;
     // NOLINTEND
 
 public:

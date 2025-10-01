@@ -40,14 +40,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::AABB $getCollisionShape(
+    MCFOLD ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCNAPI ::AABB const&
+    MCFOLD ::AABB const&
     $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
     // NOLINTEND
 

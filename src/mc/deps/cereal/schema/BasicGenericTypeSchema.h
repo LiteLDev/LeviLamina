@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class SerializerContext; }
 namespace cereal { struct SchemaReader; }
+namespace cereal::internal { struct LoadState; }
 // clang-format on
 
 namespace cereal::internal {
@@ -25,12 +25,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void doLoadWithSchema(
-        ::entt::meta_type const&     type,
-        ::cereal::SchemaReader&      value,
-        ::entt::meta_any&            any,
-        ::entt::meta_any const&      udata,
-        ::cereal::SerializerContext& context,
-        ::entt::type_info const&     info
+        ::entt::meta_type const&             type,
+        ::cereal::SchemaReader&              value,
+        ::entt::meta_any&                    any,
+        ::entt::meta_any const&              udata,
+        ::cereal::internal::LoadState const& state,
+        ::entt::type_info const&             info
     ) const;
     // NOLINTEND
 };

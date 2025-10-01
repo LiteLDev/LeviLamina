@@ -36,6 +36,9 @@ public:
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
+    // vIndex: 46
+    virtual bool canBeOriginalSurface(bool aboveSeaLevel) const /*override*/;
+
     // vIndex: 0
     virtual ~IceBlock() /*override*/ = default;
     // NOLINTEND
@@ -60,6 +63,8 @@ public:
     MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
+
+    MCAPI bool $canBeOriginalSurface(bool aboveSeaLevel) const;
     // NOLINTEND
 
 public:

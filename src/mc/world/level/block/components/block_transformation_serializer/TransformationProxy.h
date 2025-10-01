@@ -29,7 +29,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     from(::BlockTransformationDescription& desc, ::BlockTransformationSerializer::TransformationProxy proxy);
     // NOLINTEND
 };

@@ -59,6 +59,10 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Definition(Definition const&);
+
+    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
@@ -73,6 +77,8 @@ public:
         MCAPI void addBlockDescriptor(::BlockDescriptor const& blockDescriptor);
 
         MCAPI void initialize(::EntityContext& entity, ::RandomSearchAndDigGoal& goal) const;
+
+        MCAPI ::RandomSearchAndDigGoal::Definition& operator=(::RandomSearchAndDigGoal::Definition const&);
         // NOLINTEND
 
     public:

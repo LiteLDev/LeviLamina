@@ -9,7 +9,7 @@ class CaveSpider : public ::Spider {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 178
+    // vIndex: 179
     virtual float getModelScale() const /*override*/;
 
     // vIndex: 113

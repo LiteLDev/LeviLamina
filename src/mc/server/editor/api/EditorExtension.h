@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Closure.h"
@@ -73,8 +72,6 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> executeShutdown(::Editor::API::EditorExtensionContext& context);
 
     MCNAPI ::Editor::API::EditorExtension& operator=(::Editor::API::EditorExtension const&);
-
-    MCNAPI void setTrackingScope(::Scripting::StrongTypedObjectHandle<::Editor::API::EditorExtension> object);
     // NOLINTEND
 
 public:

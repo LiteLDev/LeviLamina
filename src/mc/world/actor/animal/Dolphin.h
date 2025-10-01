@@ -8,16 +8,17 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class BlockPos;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
 class Dolphin : public ::WaterAnimal {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mBreatheCounter;
-    // NOLINTEND
+    // prevent constructor by default
+    Dolphin();
 
 public:
     // virtual functions
@@ -25,13 +26,10 @@ public:
     // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 171
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 145
-    virtual void aiStep() /*override*/;
-
-    // vIndex: 167
+    // vIndex: 168
     virtual bool createAIGoals() /*override*/;
 
     // vIndex: 4
@@ -43,13 +41,31 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI Dolphin(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD bool $canBePulledIntoVehicle() const;
 
     MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
-
-    MCAPI void $aiStep();
 
     MCAPI bool $createAIGoals();
 

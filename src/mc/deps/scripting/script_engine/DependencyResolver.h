@@ -8,7 +8,6 @@ namespace Scripting { class IModuleBindingFactory; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct ModuleResolveResult; }
 namespace Scripting { struct SupportedBindingModule; }
-namespace Scripting { struct UUID; }
 namespace Scripting { struct Version; }
 namespace Scripting { struct VersionRequestKey; }
 namespace Scripting { struct VersionRequestedBy; }
@@ -38,8 +37,6 @@ public:
         ::Scripting::ModuleDescriptor const&                forModule,
         ::std::vector<::Scripting::ModuleDescriptor> const& dependencies
     ) const;
-
-    MCNAPI ::Scripting::IModuleBindingFactory* _getModuleBindingFactory(::Scripting::UUID const& uuid) const;
 
     MCNAPI bool _isVersionMissing(
         ::Scripting::IModuleBindingFactory const& moduleFactory,

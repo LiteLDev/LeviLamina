@@ -38,21 +38,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::br::worldgen::processors::BlockRules::TagMatch from(::std::string_view tag);
+    MCAPI static ::br::worldgen::processors::BlockRules::TagMatch from(::std::string_view tag);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $test(::Block const& block, ::IRandom&) const;
+    MCAPI bool $test(::Block const& block, ::IRandom&) const;
 
-    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
     // NOLINTEND
 
 public:

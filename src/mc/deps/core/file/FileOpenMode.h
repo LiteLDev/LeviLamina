@@ -15,6 +15,8 @@ public:
     bool mUnkac531a : 1;
     bool mUnkf14fe5 : 1;
     bool mUnk7660af : 1;
+    bool mUnk8dc531 : 1;
+    bool mUnk7357bd : 1;
     // NOLINTEND
 
 public:

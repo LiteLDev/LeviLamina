@@ -29,19 +29,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BuriedTreasureStart(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
+    MCAPI BuriedTreasureStart(::Dimension& generator, ::Random& random, int chunkX, int chunkZ);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
+    MCAPI void* $ctor(::Dimension& generator, ::Random& random, int chunkX, int chunkZ);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string_view $getStructureName() const;
+    MCAPI ::std::string_view $getStructureName() const;
     // NOLINTEND
 
 public:

@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
 // clang-format on
 
@@ -26,6 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
+    getChunkAtPositionLoadedAndTickingError();
+
     MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getPositionWithinWorldBoundsError();
     // NOLINTEND

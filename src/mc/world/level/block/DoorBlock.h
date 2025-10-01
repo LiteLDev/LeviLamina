@@ -19,7 +19,6 @@ class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class ItemInstance;
-class Material;
 class Player;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -59,10 +58,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::DoorBlock::DoorType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DoorBlock();
 
 public:
     // virtual functions
@@ -162,8 +157,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DoorBlock(::std::string const& nameId, int id, ::Material const& material, ::DoorBlock::DoorType type);
-
     MCAPI ::Direction::Type getBlockedDirection(::IConstBlockSource const& region, ::BlockPos const& pos) const;
 
     MCAPI bool isToggled(::IConstBlockSource const& region, ::BlockPos const& pos) const;
@@ -187,12 +180,6 @@ public:
         ::Block const*&            outLowerBlock,
         ::Block const*&            outUpperBlock
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material, ::DoorBlock::DoorType type);
     // NOLINTEND
 
 public:

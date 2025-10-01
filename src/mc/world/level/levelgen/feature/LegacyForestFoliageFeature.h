@@ -48,22 +48,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
+    MCAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
 
-    MCNAPI void
+    MCAPI void
     _placeDoublePlants(::BlockSource& region, ::BlockPos const& origin, ::Random& random, int doublePlantCount) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
+    MCAPI void* $ctor(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
     // NOLINTEND
 
 public:

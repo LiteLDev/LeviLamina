@@ -34,46 +34,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PageContent(::PageContent const&);
+    MCAPI PageContent(::PageContent const&);
 
-    MCNAPI PageContent(::PageContent&&);
+    MCAPI PageContent(::PageContent&&);
 
-    MCNAPI PageContent(::std::string nText, ::std::optional<::std::string> nFilteredText);
+    MCAPI PageContent(::std::string nText, ::std::optional<::std::string> nFilteredText);
 
-    MCNAPI ::PageContent& operator=(::PageContent&&);
+    MCAPI ::PageContent& operator=(::PageContent&&);
 
-    MCNAPI ::PageContent& operator=(::PageContent const&);
+    MCAPI ::PageContent& operator=(::PageContent const&);
 
-    MCNAPI ~PageContent();
+    MCAPI ~PageContent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::PageContent read(::CompoundTag const& tag);
+    MCAPI static ::PageContent read(::CompoundTag const& tag);
 
-    MCNAPI static void write(::PageContent const& page, ::CompoundTag& tag);
+    MCAPI static void write(::PageContent const& page, ::CompoundTag& tag);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::PageContent const& BLANK_PAGE();
+    MCAPI static ::PageContent const& BLANK_PAGE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PageContent const&);
+    MCAPI void* $ctor(::PageContent const&);
 
-    MCNAPI void* $ctor(::PageContent&&);
+    MCAPI void* $ctor(::PageContent&&);
 
-    MCNAPI void* $ctor(::std::string nText, ::std::optional<::std::string> nFilteredText);
+    MCAPI void* $ctor(::std::string nText, ::std::optional<::std::string> nFilteredText);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

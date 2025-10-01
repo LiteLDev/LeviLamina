@@ -17,7 +17,7 @@ class InventoryPacket : public ::Packet {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 15
+    // vIndex: 16
     virtual void
     handle(::ServerPlayer&, ::BlockPalette&, ::MoveInputComponent const&, ::ActorRotationComponent&, bool) const = 0;
 

@@ -26,11 +26,12 @@ struct BiomeDefinitionChunkGenData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 36, ::std::optional<::BiomeClimateData>>                   mClimate;
+    ::ll::TypedStorage<4, 20, ::std::optional<::BiomeClimateData>>                   mClimate;
     ::ll::TypedStorage<8, 32, ::std::optional<::BiomeConsolidatedFeaturesData>>      mConsolidatedFeatures;
     ::ll::TypedStorage<4, 16, ::std::optional<::BiomeMountainParamsData>>            mMountainParams;
     ::ll::TypedStorage<8, 32, ::std::optional<::BiomeSurfaceMaterialAdjustmentData>> mSurfaceMaterialAdjustments;
     ::ll::TypedStorage<4, 28, ::std::optional<::BiomeSurfaceMaterialData>>           mSurfaceMaterials;
+    ::ll::TypedStorage<1, 1, bool>                                                   mHasDefaultOverworldSurface;
     ::ll::TypedStorage<1, 1, bool>                                                   mHasSwampSurface;
     ::ll::TypedStorage<1, 1, bool>                                                   mHasFrozenOceanSurface;
     ::ll::TypedStorage<1, 1, bool>                                                   mHasTheEndSurface;

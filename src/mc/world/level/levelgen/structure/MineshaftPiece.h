@@ -49,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::StructurePiece> createRandomShaftPiece(
+    MCAPI ::std::unique_ptr<::StructurePiece> createRandomShaftPiece(
         ::MineshaftData&                                    metadata,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -60,7 +60,7 @@ public:
         int                                                 genDepth
     );
 
-    MCNAPI ::StructurePiece* generateAndAddPiece(
+    MCAPI ::StructurePiece* generateAndAddPiece(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -71,21 +71,21 @@ public:
         int                                                 depth
     );
 
-    MCNAPI void setPlanksBlock(::BlockSource& region, ::Block const& planksBlock, int x, int y, int z);
+    MCAPI void setPlanksBlock(::BlockSource& region, ::Block const& planksBlock, int x, int y, int z);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB);
+    MCAPI bool $isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB);
 
-    MCNAPI bool
+    MCAPI bool
     $canBeReplaced(::BlockSource& region, int const x, int const y, int const z, ::BoundingBox const& chunkBB);
     // NOLINTEND
 

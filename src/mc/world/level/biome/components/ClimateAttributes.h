@@ -11,10 +11,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float> mTemperature;
     ::ll::TypedStorage<4, 4, float> mDownfall;
-    ::ll::TypedStorage<4, 4, float> mRedSporeDensity;
-    ::ll::TypedStorage<4, 4, float> mBlueSporeDensity;
-    ::ll::TypedStorage<4, 4, float> mAshDensity;
-    ::ll::TypedStorage<4, 4, float> mWhiteAshDensity;
     ::ll::TypedStorage<4, 4, float> mSnowAccumulationMin;
     ::ll::TypedStorage<4, 4, float> mSnowAccumulationMax;
     // NOLINTEND

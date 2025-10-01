@@ -79,8 +79,6 @@ public:
 
     MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&& other);
 
-    MCAPI ::MolangScriptArg& operator=(float&& value);
-
     MCAPI ::MolangScriptArg& operator=(::MolangMemberArray&& value);
 
     MCAPI bool operator==(::MolangScriptArg const& rhs) const;

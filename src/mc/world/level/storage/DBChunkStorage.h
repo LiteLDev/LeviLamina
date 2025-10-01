@@ -6,7 +6,6 @@
 #include "mc/resources/BaseGameVersion.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/chunk/ChunkSource.h"
-#include "mc/world/level/chunk/LevelChunkFormat.h"
 #include "mc/world/level/storage/ConsoleChunkBlender.h"
 #include "mc/world/level/storage/db_helpers/Category.h"
 
@@ -118,7 +117,7 @@ public:
     virtual bool saveLiveChunk(::LevelChunk& lc) /*override*/;
 
     // vIndex: 15
-    virtual void writeEntityChunkTransfer(::LevelChunk& levelChunk) /*override*/;
+    virtual void writeEntityChunkTransfer(::LevelChunk& lc) /*override*/;
 
     // vIndex: 16
     virtual void writeEntityChunkTransfersToUnloadedChunk(
@@ -190,7 +189,7 @@ public:
 
     MCAPI void _deserializeIndependentActorStorage(::LevelChunk& lc, ::std::string const& storageKeyDigestBuffer);
 
-    MCAPI ::std::optional<::LevelChunkFormat> _getLevelChunkFormat(::std::string_view prefix, ::std::string& buffer);
+    MCAPI ::std::shared_ptr<::LevelStorageWriteBatch> _getBuffer();
 
     MCAPI bool _hasChunk(::DBChunkStorageKey const& key);
 
@@ -290,7 +289,7 @@ public:
 
     MCAPI bool $saveLiveChunk(::LevelChunk& lc);
 
-    MCAPI void $writeEntityChunkTransfer(::LevelChunk& levelChunk);
+    MCAPI void $writeEntityChunkTransfer(::LevelChunk& lc);
 
     MCAPI void $writeEntityChunkTransfersToUnloadedChunk(
         ::ChunkKey const&                                       chunkKey,

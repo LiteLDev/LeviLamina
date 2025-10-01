@@ -29,8 +29,6 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                    mMoveInputStateLocked;
     ::ll::TypedStorage<1, 1, bool>                                    mPersistSneak;
     ::ll::TypedStorage<1, 1, bool>                                    mAutoJumpEnabled;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsCameraRelativeMovementEnabled;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsRotControlledByMoveDirection;
     ::ll::TypedStorage<1, 2, ::std::array<bool, 2>>                   mIsPaddling;
     // NOLINTEND
 

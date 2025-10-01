@@ -16,9 +16,8 @@ class HttpRequestHandler : public ::std::enable_shared_from_this<::HttpRequestHa
 public:
     // HttpRequestHandler inner types define
     enum class WaitForSignIn : uint {
-        None     = 0,
-        PlayFab  = 1,
-        XboxLive = 2,
+        None    = 0,
+        PlayFab = 1,
     };
 
     enum class RequestStatus : int {

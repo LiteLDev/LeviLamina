@@ -22,61 +22,58 @@ public:
 public:
     // prevent constructor by default
     ArmorTrim& operator=(ArmorTrim const&);
+    ArmorTrim(ArmorTrim const&);
     ArmorTrim();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ArmorTrim(::ArmorTrim const&);
+    MCAPI ArmorTrim(::HashedString patternId, ::HashedString materialId);
 
-    MCNAPI ArmorTrim(::HashedString patternId, ::HashedString materialId);
+    MCAPI void load(::CompoundTag const& tag);
 
-    MCNAPI void load(::CompoundTag const& tag);
-
-    MCNAPI ~ArmorTrim();
+    MCAPI ~ArmorTrim();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void appendUpgradeHoverText(
+    MCAPI static void appendUpgradeHoverText(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext
     );
 
-    MCNAPI static ::std::optional<::ArmorTrim> getTrim(::ItemStackBase const& instance);
+    MCAPI static ::std::optional<::ArmorTrim> getTrim(::ItemStackBase const& instance);
 
-    MCNAPI static void setTrim(::ItemStackBase& instance, ::ArmorTrim trim);
+    MCAPI static void setTrim(::ItemStackBase& instance, ::ArmorTrim trim);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& TAG_TRIM();
+    MCAPI static ::std::string const& TAG_TRIM();
 
-    MCNAPI static ::std::string const& TAG_TRIM_MATERIAL();
+    MCAPI static ::std::string const& TAG_TRIM_MATERIAL();
 
-    MCNAPI static ::std::string const& TAG_TRIM_PATTERN();
+    MCAPI static ::std::string const& TAG_TRIM_PATTERN();
 
-    MCNAPI static ::std::string const& UPGRADE_DESCRIPTION();
+    MCAPI static ::std::string const& UPGRADE_DESCRIPTION();
 
-    MCNAPI static ::std::string const& UPGRADE_DESCRIPTION_FORMAT();
+    MCAPI static ::std::string const& UPGRADE_DESCRIPTION_FORMAT();
 
-    MCNAPI static ::std::string const& WRONG_VERSION_OR_ITEM_ERROR();
+    MCAPI static ::std::string const& WRONG_VERSION_OR_ITEM_ERROR();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ArmorTrim const&);
-
-    MCNAPI void* $ctor(::HashedString patternId, ::HashedString materialId);
+    MCAPI void* $ctor(::HashedString patternId, ::HashedString materialId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

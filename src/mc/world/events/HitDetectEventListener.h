@@ -11,7 +11,7 @@ class HitDetectEventListener : public ::ClientHitDetectListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 112, ::HitResult> mHitResult;
+    ::ll::TypedStorage<8, 136, ::HitResult> mHitResult;
     // NOLINTEND
 
 public:

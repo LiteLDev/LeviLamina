@@ -83,7 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Aquifer(
+    MCAPI Aquifer(
         ::ChunkPos const&          chunkPos,
         ::AquiferNoises const&     aquiferNoises,
         ::OverworldNoises3d const& terrainNoises,
@@ -93,30 +93,30 @@ public:
         int                        seaLevel
     );
 
-    MCNAPI float _calculatePressure(
+    MCAPI float _calculatePressure(
         ::BlockPos                    worldPos,
         float&                        barrierNoiseValue,
         ::Aquifer::FluidSample const& fluidYClosest1,
         ::Aquifer::FluidSample const& fluidYClosest2
     ) const;
 
-    MCNAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
+    MCAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
 
-    MCNAPI ::Aquifer::FluidSample _getOrComputeNewFluidSample(::BlockPos const& cellCenter);
+    MCAPI ::Aquifer::FluidSample _getOrComputeNewFluidSample(::BlockPos const& cellCenter);
 
-    MCNAPI void computeAt(::BlockPos const& worldPos);
+    MCAPI void computeAt(::BlockPos const& worldPos);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::array<::std::pair<int, int>, 13> const& chunkOffset();
+    MCAPI static ::std::array<::std::pair<int, int>, 13> const& chunkOffset();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ChunkPos const&          chunkPos,
         ::AquiferNoises const&     aquiferNoises,
         ::OverworldNoises3d const& terrainNoises,

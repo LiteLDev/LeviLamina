@@ -22,28 +22,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RoomDefinition(::RoomDefinition const&);
+    MCAPI RoomDefinition(::RoomDefinition const&);
 
-    MCNAPI explicit RoomDefinition(int roomIndex);
+    MCAPI explicit RoomDefinition(int roomIndex);
 
-    MCNAPI bool findSource(int scanIndex);
+    MCAPI bool findSource(int scanIndex);
 
-    MCNAPI void setConnection(uchar const& direction, ::std::shared_ptr<::RoomDefinition> definition);
+    MCAPI void setConnection(uchar const& direction, ::std::shared_ptr<::RoomDefinition> definition);
 
-    MCNAPI ~RoomDefinition();
+    MCAPI ~RoomDefinition();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::RoomDefinition const&);
+    MCAPI void* $ctor(::RoomDefinition const&);
 
-    MCNAPI void* $ctor(int roomIndex);
+    MCAPI void* $ctor(int roomIndex);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -153,8 +153,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ContentLog();
-
     MCNAPI void _writeToLog(bool logOnlyOnce, ::LogArea area, ::LogLevel level, char*& args);
 
     MCNAPI ::std::string getScope();
@@ -164,8 +162,6 @@ public:
     MCNAPI void registerEndPoint(::Bedrock::typeid_t<::ContentLog> id, ::gsl::not_null<::ContentLogEndPoint*> endPoint);
 
     MCNAPI void unregisterEndPoint(::gsl::not_null<::ContentLogEndPoint*> endPoint);
-
-    MCNAPI void updateEnabledStatus();
     // NOLINTEND
 
 public:
@@ -174,12 +170,6 @@ public:
     MCNAPI static ::LogAreaID const getBedrockLogAreaFromContentLogArea(::LogArea contentLogArea);
 
     MCNAPI static char const* getLogAreaName(::LogArea area);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -104,8 +104,6 @@ public:
 
     MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
-
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);

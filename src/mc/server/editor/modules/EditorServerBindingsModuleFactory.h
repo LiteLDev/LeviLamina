@@ -10,6 +10,7 @@
 namespace Editor { class ServiceProviderCollection; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ModuleBinding; }
+namespace Scripting { struct ModuleDependency; }
 namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct Version; }
 // clang-format on
@@ -17,6 +18,10 @@ namespace Scripting { struct Version; }
 namespace Editor::API {
 
 class EditorServerBindingsModuleFactory : public ::Scripting::GenericModuleBindingFactory {
+public:
+    // prevent constructor by default
+    EditorServerBindingsModuleFactory();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -27,6 +32,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit EditorServerBindingsModuleFactory(::Editor::ServiceProviderCollection& managerServices);
+
     MCNAPI void _addVersions(::Editor::ServiceProviderCollection& managerServices);
 
     MCNAPI ::Scripting::ModuleBinding _generateBindings(
@@ -40,6 +47,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::std::vector<::Scripting::Version> versions);
+
     MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
     // NOLINTEND
 
@@ -47,6 +56,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static char const*& ModuleName();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& managerServices);
     // NOLINTEND
 
 public:

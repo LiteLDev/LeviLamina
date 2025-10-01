@@ -10,161 +10,161 @@ namespace mce { class Color; }
 namespace VanillaMapColor {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::mce::Color const& CLAY();
+MCAPI ::mce::Color const& CLAY();
 
-MCNAPI ::mce::Color const& COLOR_BLACK();
+MCAPI ::mce::Color const& COLOR_BLACK();
 
-MCNAPI ::mce::Color const& COLOR_BLUE();
+MCAPI ::mce::Color const& COLOR_BLUE();
 
-MCNAPI ::mce::Color const& COLOR_BROWN();
+MCAPI ::mce::Color const& COLOR_BROWN();
 
-MCNAPI ::mce::Color const& COLOR_CYAN();
+MCAPI ::mce::Color const& COLOR_CYAN();
 
-MCNAPI ::mce::Color const& COLOR_GRAY();
+MCAPI ::mce::Color const& COLOR_GRAY();
 
-MCNAPI ::mce::Color const& COLOR_GREEN();
+MCAPI ::mce::Color const& COLOR_GREEN();
 
-MCNAPI ::mce::Color const& COLOR_LIGHT_BLUE();
+MCAPI ::mce::Color const& COLOR_LIGHT_BLUE();
 
-MCNAPI ::mce::Color const& COLOR_LIGHT_GRAY();
+MCAPI ::mce::Color const& COLOR_LIGHT_GRAY();
 
-MCNAPI ::mce::Color const& COLOR_LIGHT_GREEN();
+MCAPI ::mce::Color const& COLOR_LIGHT_GREEN();
 
-MCNAPI ::mce::Color const& COLOR_MAGENTA();
+MCAPI ::mce::Color const& COLOR_MAGENTA();
 
-MCNAPI ::mce::Color const& COLOR_ORANGE();
+MCAPI ::mce::Color const& COLOR_ORANGE();
 
-MCNAPI ::mce::Color const& COLOR_PINK();
+MCAPI ::mce::Color const& COLOR_PINK();
 
-MCNAPI ::mce::Color const& COLOR_PURPLE();
+MCAPI ::mce::Color const& COLOR_PURPLE();
 
-MCNAPI ::mce::Color const& COLOR_RED();
+MCAPI ::mce::Color const& COLOR_RED();
 
-MCNAPI ::mce::Color const& COLOR_WHITE();
+MCAPI ::mce::Color const& COLOR_WHITE();
 
-MCNAPI ::mce::Color const& COLOR_YELLOW();
+MCAPI ::mce::Color const& COLOR_YELLOW();
 
-MCNAPI ::mce::Color const& CRIMSON_HYPHAE();
+MCAPI ::mce::Color const& CRIMSON_HYPHAE();
 
-MCNAPI ::mce::Color const& CRIMSON_NYLIUM();
+MCAPI ::mce::Color const& CRIMSON_NYLIUM();
 
-MCNAPI ::mce::Color const& CRIMSON_STEM();
+MCAPI ::mce::Color const& CRIMSON_STEM();
 
-MCNAPI ::mce::Color const& DEEPSLATE();
+MCAPI ::mce::Color const& DEEPSLATE();
 
-MCNAPI ::mce::Color const& DIAMOND();
+MCAPI ::mce::Color const& DIAMOND();
 
-MCNAPI ::mce::Color const& DIRT();
+MCAPI ::mce::Color const& DIRT();
 
-MCNAPI ::mce::Color const& ELEMENT_GROUP_ACTINIDE();
+MCAPI ::mce::Color const& ELEMENT_GROUP_ACTINIDE();
 
-MCNAPI ::mce::Color const& ELEMENT_GROUP_ALKALINE_EARTH();
+MCAPI ::mce::Color const& ELEMENT_GROUP_ALKALINE_EARTH();
 
-MCNAPI ::mce::Color const& ELEMENT_GROUP_ALKALI_METAL();
+MCAPI ::mce::Color const& ELEMENT_GROUP_ALKALI_METAL();
 
-MCNAPI ::mce::Color const& ELEMENT_GROUP_BASIC_METAL();
+MCAPI ::mce::Color const& ELEMENT_GROUP_BASIC_METAL();
 
-MCNAPI ::mce::Color const& ELEMENT_GROUP_HALOGEN();
+MCAPI ::mce::Color const& ELEMENT_GROUP_HALOGEN();
 
-MCNAPI ::mce::Color const& ELEMENT_GROUP_LATHANIDE();
+MCAPI ::mce::Color const& ELEMENT_GROUP_LATHANIDE();
 
-MCNAPI ::mce::Color const& ELEMENT_GROUP_NOBLE_GAS();
+MCAPI ::mce::Color const& ELEMENT_GROUP_NOBLE_GAS();
 
-MCNAPI ::mce::Color const& ELEMENT_GROUP_NON_METAL();
+MCAPI ::mce::Color const& ELEMENT_GROUP_NON_METAL();
 
-MCNAPI ::mce::Color const& ELEMENT_GROUP_SEMI_METAL();
+MCAPI ::mce::Color const& ELEMENT_GROUP_SEMI_METAL();
 
-MCNAPI ::mce::Color const& ELEMENT_GROUP_TRANSITION_METAL();
+MCAPI ::mce::Color const& ELEMENT_GROUP_TRANSITION_METAL();
 
-MCNAPI ::mce::Color const& ELEMENT_GROUP_UNKNOWN();
+MCAPI ::mce::Color const& ELEMENT_GROUP_UNKNOWN();
 
-MCNAPI ::mce::Color const& EMERALD();
+MCAPI ::mce::Color const& EMERALD();
 
-MCNAPI ::mce::Color const& FIRE();
+MCAPI ::mce::Color const& FIRE();
 
-MCNAPI ::mce::Color const& GLOW_LICHEN();
+MCAPI ::mce::Color const& GLOW_LICHEN();
 
-MCNAPI ::mce::Color const& GOLD();
+MCAPI ::mce::Color const& GOLD();
 
-MCNAPI ::mce::Color const& GRASS();
+MCAPI ::mce::Color const& GRASS();
 
-MCNAPI ::mce::Color const& ICE();
+MCAPI ::mce::Color const& ICE();
 
-MCNAPI ::mce::Color const& LAPIS();
+MCAPI ::mce::Color const& LAPIS();
 
-MCNAPI ::mce::Color const& LEAVES();
+MCAPI ::mce::Color const& LEAVES();
 
-MCNAPI ::mce::Color const& METAL();
+MCAPI ::mce::Color const& METAL();
 
-MCNAPI ::mce::Color const& NETHER();
+MCAPI ::mce::Color const& NETHER();
 
-MCNAPI ::mce::Color const& NONE();
+MCAPI ::mce::Color const& NONE();
 
-MCNAPI ::mce::Color const& PLANT();
+MCAPI ::mce::Color const& PLANT();
 
-MCNAPI ::mce::Color const& PODZOL();
+MCAPI ::mce::Color const& PODZOL();
 
-MCNAPI ::mce::Color const& QUARTZ();
+MCAPI ::mce::Color const& QUARTZ();
 
-MCNAPI ::mce::Color const& RAW_IRON();
+MCAPI ::mce::Color const& RAW_IRON();
 
-MCNAPI ::mce::Color const& SAND();
+MCAPI ::mce::Color const& SAND();
 
-MCNAPI ::mce::Color const& SCULK();
+MCAPI ::mce::Color const& SCULK();
 
-MCNAPI ::mce::Color const& SNOW();
+MCAPI ::mce::Color const& SNOW();
 
-MCNAPI ::mce::Color const& STONE();
+MCAPI ::mce::Color const& STONE();
 
-MCNAPI ::mce::Color const& TERRACOTTA_BLACK();
+MCAPI ::mce::Color const& TERRACOTTA_BLACK();
 
-MCNAPI ::mce::Color const& TERRACOTTA_BLUE();
+MCAPI ::mce::Color const& TERRACOTTA_BLUE();
 
-MCNAPI ::mce::Color const& TERRACOTTA_BROWN();
+MCAPI ::mce::Color const& TERRACOTTA_BROWN();
 
-MCNAPI ::mce::Color const& TERRACOTTA_CYAN();
+MCAPI ::mce::Color const& TERRACOTTA_CYAN();
 
-MCNAPI ::mce::Color const& TERRACOTTA_GRAY();
+MCAPI ::mce::Color const& TERRACOTTA_GRAY();
 
-MCNAPI ::mce::Color const& TERRACOTTA_GREEN();
+MCAPI ::mce::Color const& TERRACOTTA_GREEN();
 
-MCNAPI ::mce::Color const& TERRACOTTA_LIGHT_BLUE();
+MCAPI ::mce::Color const& TERRACOTTA_LIGHT_BLUE();
 
-MCNAPI ::mce::Color const& TERRACOTTA_LIGHT_GRAY();
+MCAPI ::mce::Color const& TERRACOTTA_LIGHT_GRAY();
 
-MCNAPI ::mce::Color const& TERRACOTTA_LIGHT_GREEN();
+MCAPI ::mce::Color const& TERRACOTTA_LIGHT_GREEN();
 
-MCNAPI ::mce::Color const& TERRACOTTA_MAGENTA();
+MCAPI ::mce::Color const& TERRACOTTA_MAGENTA();
 
-MCNAPI ::mce::Color const& TERRACOTTA_ORANGE();
+MCAPI ::mce::Color const& TERRACOTTA_ORANGE();
 
-MCNAPI ::mce::Color const& TERRACOTTA_PINK();
+MCAPI ::mce::Color const& TERRACOTTA_PINK();
 
-MCNAPI ::mce::Color const& TERRACOTTA_PURPLE();
+MCAPI ::mce::Color const& TERRACOTTA_PURPLE();
 
-MCNAPI ::mce::Color const& TERRACOTTA_RED();
+MCAPI ::mce::Color const& TERRACOTTA_RED();
 
-MCNAPI ::mce::Color const& TERRACOTTA_WHITE();
+MCAPI ::mce::Color const& TERRACOTTA_WHITE();
 
-MCNAPI ::mce::Color const& TERRACOTTA_YELLOW();
+MCAPI ::mce::Color const& TERRACOTTA_YELLOW();
 
-MCNAPI ::mce::Color const& VINE();
+MCAPI ::mce::Color const& VINE();
 
-MCNAPI ::mce::Color const& WARPED_HYPHAE();
+MCAPI ::mce::Color const& WARPED_HYPHAE();
 
-MCNAPI ::mce::Color const& WARPED_NYLIUM();
+MCAPI ::mce::Color const& WARPED_NYLIUM();
 
-MCNAPI ::mce::Color const& WARPED_STEM();
+MCAPI ::mce::Color const& WARPED_STEM();
 
-MCNAPI ::mce::Color const& WARPED_WART_BLOCK();
+MCAPI ::mce::Color const& WARPED_WART_BLOCK();
 
-MCNAPI ::mce::Color const& WATER();
+MCAPI ::mce::Color const& WATER();
 
-MCNAPI ::mce::Color const& WATERLOGGED();
+MCAPI ::mce::Color const& WATERLOGGED();
 
-MCNAPI ::mce::Color const& WOOD();
+MCAPI ::mce::Color const& WOOD();
 
-MCNAPI ::mce::Color const& WOOL();
+MCAPI ::mce::Color const& WOOL();
 // NOLINTEND
 
 } // namespace VanillaMapColor

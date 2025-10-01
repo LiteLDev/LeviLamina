@@ -11,6 +11,7 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class Experiments;
 class ItemInstance;
 // clang-format on
 
@@ -39,6 +40,9 @@ public:
     // vIndex: 150
     virtual int getRedstoneSignal(int signal) const /*override*/;
 
+    // vIndex: 131
+    virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
+
     // vIndex: 0
     virtual ~WeightedPressurePlateBlock() /*override*/ = default;
     // NOLINTEND
@@ -55,6 +59,8 @@ public:
     MCFOLD int $getSignalForData(int data) const;
 
     MCFOLD int $getRedstoneSignal(int signal) const;
+
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 
 public:

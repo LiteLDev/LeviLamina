@@ -33,12 +33,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $init(int64 seed);
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
 } // namespace OperationNodeDetails

@@ -108,11 +108,11 @@ public:
 
     MCNAPI void _queueRequests(::ItemStackRequestBatch const& requestBatch);
 
-    MCNAPI ::gsl::final_action<::std::function<void()>> _retainSetItemStackNetIdVariantScope();
-
     MCNAPI void _sendResponsePacket(::std::vector<::ItemStackResponseInfo>&& responses);
 
     MCNAPI void _setTextFilterState(::ItemStackNetManagerServer::TextFilterState state);
+
+    MCNAPI bool _tryFilterText(::ItemStackRequestData const* requestData);
 
     MCNAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
     // NOLINTEND

@@ -7,6 +7,7 @@
 class Player;
 class Vec2;
 class Vec3;
+struct ActorUniqueID;
 struct NetworkIdentifierWithSubId;
 // clang-format on
 
@@ -93,6 +94,8 @@ public:
     MCNAPI void _initializeLastSentValues();
 
     MCNAPI bool _shouldUpdateBasedOptimizationOnScore(::Player& player) const;
+
+    MCNAPI uint64 getLastSpatialTick(::ActorUniqueID const& playerID) const;
 
     MCNAPI void sendUpdate(bool forceTeleport, bool forceMoveLocalEntity, bool forceAbsoluteMovement);
 

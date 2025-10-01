@@ -8,16 +8,12 @@
 // auto generated forward declare list
 // clang-format off
 class Experiments;
-struct BlockAnimateTickData;
 // clang-format on
 
 class SoulTorchBlock : public ::TorchBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 123
-    virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
-
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
@@ -28,8 +24,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
-
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
 

@@ -16,11 +16,12 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk242ae1;
     ::ll::UntypedStorage<8, 24> mUnke111d9;
-    ::ll::UntypedStorage<8, 32> mUnkcee677;
+    ::ll::UntypedStorage<8, 32> mUnk281d77;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    Contents& operator=(Contents const&);
     Contents(Contents const&);
     Contents();
 
@@ -29,9 +30,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents&&);
-
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const&);
 
     MCNAPI ~Contents();
     // NOLINTEND
@@ -45,6 +43,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static ::std::string const& DEFAULT_FALLBACK();
+
     MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 

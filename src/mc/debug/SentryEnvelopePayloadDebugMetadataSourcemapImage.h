@@ -19,15 +19,14 @@ public:
 
 public:
     // prevent constructor by default
+    SentryEnvelopePayloadDebugMetadataSourcemapImage&
+    operator=(SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
     SentryEnvelopePayloadDebugMetadataSourcemapImage(SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
     SentryEnvelopePayloadDebugMetadataSourcemapImage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SentryEnvelopePayloadDebugMetadataSourcemapImage&
-    operator=(::SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
-
     MCNAPI ::SentryEnvelopePayloadDebugMetadataSourcemapImage&
     operator=(::SentryEnvelopePayloadDebugMetadataSourcemapImage&&);
 

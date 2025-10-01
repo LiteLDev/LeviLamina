@@ -8,8 +8,6 @@ namespace Core::Profile {
 MCNAPI void onFileOpenFailed(bool isReadOnly);
 
 MCNAPI void onFileOpenRequest(bool isReadOnly);
-
-MCNAPI void onFileOpenRetrySuccess(bool isReadOnly);
 // NOLINTEND
 
 } // namespace Core::Profile

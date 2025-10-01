@@ -14,7 +14,7 @@ class VindicationIllager : public ::HumanoidMonster {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 171
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
     // vIndex: 8

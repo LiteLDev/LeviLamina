@@ -54,47 +54,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockDestructibleByMiningDescription(float destroyTime);
+    MCAPI explicit BlockDestructibleByMiningDescription(float destroyTime);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& NameID();
+    MCAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(float destroyTime);
+    MCAPI void* $ctor(float destroyTime);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getName() const;
+    MCAPI ::std::string const& $getName() const;
 
-    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCNAPI bool $isNetworkComponent() const;
+    MCFOLD bool $isNetworkComponent() const;
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:

@@ -17,7 +17,6 @@ namespace ScriptModuleMinecraft { class IScriptItemCustomComponentReader; }
 namespace ScriptModuleMinecraft { class ScriptItemComponent; }
 namespace ScriptModuleMinecraft { class ScriptItemComponents; }
 namespace ScriptModuleMinecraft { class ScriptItemType; }
-namespace ScriptModuleMinecraft { struct ScriptPotionOptions; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
@@ -152,14 +151,11 @@ public:
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& optionalValue
     );
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::Error> setLoreBeta(
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::Error> setLore(
         ::std::optional<
             ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
             loreVariantList
     );
-
-    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError>
-    setLoreStable(::std::optional<::std::vector<::std::string>> const& loreList);
 
     MCNAPI void setLoreV010(::std::optional<::std::vector<::std::string>> const& loreList);
 
@@ -173,10 +169,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
-    _createPotion(::Scripting::WeakLifetimeScope& scope, ::ScriptModuleMinecraft::ScriptPotionOptions const& options);
-
     MCNAPI static ::Scripting::ClassBinding bind(
         ::BaseGameVersion const&                                                   baseGameVersion,
         ::Scripting::Version const&                                                version,

@@ -28,20 +28,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _load(::Json::Value const& root, ::LevelData const& levelData);
+    MCAPI bool _load(::Json::Value const& root, ::LevelData const& levelData);
 
-    MCNAPI ~FlatWorldOptions();
+    MCAPI ~FlatWorldOptions();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Json::Value getLayers(::LevelData const& levelData);
+    MCAPI static ::Json::Value getLayers(::LevelData const& levelData);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

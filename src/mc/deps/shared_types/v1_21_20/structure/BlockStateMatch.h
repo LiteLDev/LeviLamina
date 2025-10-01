@@ -13,15 +13,13 @@ public:
 
 public:
     // prevent constructor by default
+    BlockStateMatch& operator=(BlockStateMatch const&);
     BlockStateMatch(BlockStateMatch const&);
     BlockStateMatch();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockStateMatch&
-    operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockStateMatch const&);
-
     MCNAPI ~BlockStateMatch();
     // NOLINTEND
 

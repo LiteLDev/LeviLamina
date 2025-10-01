@@ -103,8 +103,6 @@ public:
                         fileAccess,
         ::ZipPackArgs&& args
     );
-
-    MCNAPI ::gsl::not_null<::IFileAccess*> getFileAccess() const;
     // NOLINTEND
 
 public:

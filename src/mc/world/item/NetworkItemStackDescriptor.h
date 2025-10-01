@@ -11,7 +11,6 @@
 // clang-format off
 class BlockPalette;
 class ItemStack;
-class ItemStackDescriptor;
 class ReadOnlyBinaryStream;
 // clang-format on
 
@@ -28,6 +27,7 @@ public:
 public:
     // prevent constructor by default
     NetworkItemStackDescriptor(NetworkItemStackDescriptor const&);
+    NetworkItemStackDescriptor();
 
 public:
     // virtual functions
@@ -39,11 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkItemStackDescriptor();
-
     MCAPI NetworkItemStackDescriptor(::NetworkItemStackDescriptor&&);
-
-    MCAPI explicit NetworkItemStackDescriptor(::ItemStackDescriptor const& descriptor);
 
     MCAPI explicit NetworkItemStackDescriptor(::ItemStack const& item);
 
@@ -59,11 +55,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::NetworkItemStackDescriptor&&);
-
-    MCAPI void* $ctor(::ItemStackDescriptor const& descriptor);
 
     MCAPI void* $ctor(::ItemStack const& item);
     // NOLINTEND

@@ -17,24 +17,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacyOnCompleteTriggerItemComponentData(::LegacyOnCompleteTriggerItemComponentData&&);
+    MCAPI LegacyOnCompleteTriggerItemComponentData(::LegacyOnCompleteTriggerItemComponentData&&);
 
-    MCNAPI LegacyOnCompleteTriggerItemComponentData(::LegacyOnCompleteTriggerItemComponentData const&);
+    MCAPI LegacyOnCompleteTriggerItemComponentData(::LegacyOnCompleteTriggerItemComponentData const&);
 
-    MCNAPI ~LegacyOnCompleteTriggerItemComponentData();
+    MCAPI ~LegacyOnCompleteTriggerItemComponentData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LegacyOnCompleteTriggerItemComponentData&&);
+    MCFOLD void* $ctor(::LegacyOnCompleteTriggerItemComponentData&&);
 
-    MCNAPI void* $ctor(::LegacyOnCompleteTriggerItemComponentData const&);
+    MCFOLD void* $ctor(::LegacyOnCompleteTriggerItemComponentData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

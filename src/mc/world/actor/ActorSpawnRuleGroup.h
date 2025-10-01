@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Experiments;
+class IMinecraftEventing;
 class IWorldRegistriesProvider;
 class LinkedAssetValidator;
 class MobSpawnRules;
@@ -20,10 +21,13 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mCategoryLookup;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mSpawnDelayStartMap;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                     mEventing;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    ActorSpawnRuleGroup& operator=(ActorSpawnRuleGroup const&);
+    ActorSpawnRuleGroup(ActorSpawnRuleGroup const&);
     ActorSpawnRuleGroup();
 
 public:
@@ -42,7 +46,8 @@ public:
         ::br::spawn::SpawnPlacements&  spawnPlacements,
         ::cereal::ReflectionCtx const& ctx,
         ::LinkedAssetValidator&        linkedAssetValidator,
-        ::Experiments const&           experiments
+        ::Experiments const&           experiments,
+        ::IMinecraftEventing&          eventing
     );
 
     MCNAPI void resetDelayEnd(::MobSpawnRules spawnRules, uint64 age, ::Random& random);
@@ -57,7 +62,8 @@ public:
         ::br::spawn::SpawnPlacements&  spawnPlacements,
         ::cereal::ReflectionCtx const& ctx,
         ::LinkedAssetValidator&        linkedAssetValidator,
-        ::Experiments const&           experiments
+        ::Experiments const&           experiments,
+        ::IMinecraftEventing&          eventing
     );
     // NOLINTEND
 

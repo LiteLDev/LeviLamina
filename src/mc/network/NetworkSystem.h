@@ -171,18 +171,11 @@ public:
     ) /*override*/;
 
     // vIndex: 4
-    virtual void onAllConnectionsClosed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage,
-        bool                               skipDisconnectMessage
-    ) /*override*/;
+    virtual void onAllConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) /*override*/;
 
     // vIndex: 5
-    virtual void onAllRemoteConnectionsClosed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage,
-        bool                               skipDisconnectMessage
-    ) /*override*/;
+    virtual void
+    onAllRemoteConnectionsClosed(::Connection::DisconnectFailReason, ::std::string const&, bool) /*override*/;
 
     // vIndex: 6
     virtual void onOutgoingConnectionFailed(
@@ -202,8 +195,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit NetworkSystem(::NetworkSystem::Dependencies&& deps);
-
-    MCAPI bool _isUsingNetherNetTransportLayer() const;
 
     MCAPI void _sendInternal(::NetworkIdentifier const& id, ::Packet const& packet, ::std::string const& data);
 
@@ -267,18 +258,6 @@ public:
         ::Connection::DisconnectFailReason const discoReason,
         ::std::string const&                     reasonMessage,
         bool                                     skipDisconnectMessage
-    );
-
-    MCAPI void $onAllConnectionsClosed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage,
-        bool                               skipDisconnectMessage
-    );
-
-    MCAPI void $onAllRemoteConnectionsClosed(
-        ::Connection::DisconnectFailReason discoReason,
-        ::std::string const&               reasonMessage,
-        bool                               skipDisconnectMessage
     );
 
     MCAPI void

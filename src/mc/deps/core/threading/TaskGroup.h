@@ -27,6 +27,9 @@ class TaskResult;
 class WorkerPool;
 class WorldPacksHistoryFile;
 struct AsyncJoinError;
+struct MinecraftServiceKeyInfo;
+struct MinecraftServiceKeysMetadata;
+struct PackSourceLoadResult;
 struct TaskStartInfo;
 namespace Bedrock::Http { class HeaderCollection; }
 namespace Bedrock::Http { class Request; }
@@ -36,8 +39,10 @@ namespace Bedrock::Services { struct AzureGetTokenHttpResponse; }
 namespace Bedrock::Services { struct EnvironmentQueryResponse; }
 namespace Bedrock::Threading { class Mutex; }
 namespace Bedrock::Threading { struct CachedAsyncRetry; }
+namespace Json { class Value; }
 namespace MakeCodeFileIO { struct MakeCodeFileIOReadResult; }
 namespace PackCommand { struct PackCommandResult; }
+namespace RepositoryLoading { struct PackModifications; }
 // clang-format on
 
 class TaskGroup : public ::IBackgroundTaskOwner {

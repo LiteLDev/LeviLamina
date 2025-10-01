@@ -11,6 +11,10 @@ namespace ScriptModuleGameTest {
 // functions
 // NOLINTBEGIN
 MCNAPI ::Scripting::EnumBinding bindLookDurationEnumV1();
+
+MCNAPI ::Scripting::EnumBinding bindPersonaArmSize();
+
+MCNAPI ::Scripting::EnumBinding bindPersonaPieceType();
 // NOLINTEND
 
 } // namespace ScriptModuleGameTest

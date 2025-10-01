@@ -30,11 +30,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    // vIndex: 110
+    // vIndex: 112
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const /*override*/;
 
     // vIndex: 54

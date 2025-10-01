@@ -41,21 +41,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _create(::Dimension& dimension, ::Random& random, ::ChunkPos const& pos);
+    MCAPI void _create(::Dimension& dimension, ::Random& random, ::ChunkPos const& pos);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static int getYPositionForFeature(::ChunkPos const& pos, ::Dimension& dimension);
+    MCAPI static int getYPositionForFeature(::ChunkPos const& pos, ::Dimension& dimension);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI ::std::string_view $getStructureName() const;
+    MCAPI ::std::string_view $getStructureName() const;
     // NOLINTEND
 
 public:

@@ -37,15 +37,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        EnumData& operator=(EnumData const&);
-        EnumData(EnumData const&);
-        EnumData();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI EnumData(::AvailableCommandsPacket::EnumData&&);
+        MCAPI EnumData();
 
         MCAPI ~EnumData();
         // NOLINTEND
@@ -53,7 +47,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::AvailableCommandsPacket::EnumData&&);
+        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
@@ -81,23 +75,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        SoftEnumData& operator=(SoftEnumData const&);
-        SoftEnumData(SoftEnumData const&);
-        SoftEnumData();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SoftEnumData(::AvailableCommandsPacket::SoftEnumData&&);
-
         MCAPI ~SoftEnumData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCFOLD void* $ctor(::AvailableCommandsPacket::SoftEnumData&&);
         // NOLINTEND
 
     public:
@@ -117,23 +97,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ConstrainedValueData& operator=(ConstrainedValueData const&);
-        ConstrainedValueData(ConstrainedValueData const&);
-        ConstrainedValueData();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ConstrainedValueData(::AvailableCommandsPacket::ConstrainedValueData&&);
-
         MCAPI ~ConstrainedValueData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::AvailableCommandsPacket::ConstrainedValueData&&);
         // NOLINTEND
 
     public:
@@ -154,23 +120,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        ParamData& operator=(ParamData const&);
-        ParamData(ParamData const&);
-        ParamData();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ParamData(::AvailableCommandsPacket::ParamData&&);
-
         MCAPI ~ParamData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::AvailableCommandsPacket::ParamData&&);
         // NOLINTEND
 
     public:
@@ -189,23 +141,9 @@ public:
         // NOLINTEND
 
     public:
-        // prevent constructor by default
-        OverloadData& operator=(OverloadData const&);
-        OverloadData(OverloadData const&);
-        OverloadData();
-
-    public:
         // member functions
         // NOLINTBEGIN
-        MCAPI OverloadData(::AvailableCommandsPacket::OverloadData&&);
-
         MCAPI ~OverloadData();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCAPI void* $ctor(::AvailableCommandsPacket::OverloadData&&);
         // NOLINTEND
 
     public:
@@ -283,7 +221,7 @@ public:
     // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 

@@ -54,13 +54,13 @@ public:
     // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 30
+    // vIndex: 29
     virtual ::PistonBlockActor* getOwningPiston(::BlockSource& region) /*override*/;
 
-    // vIndex: 29
+    // vIndex: 28
     virtual ::PistonBlockActor const* getOwningPiston(::BlockSource& region) const /*override*/;
 
-    // vIndex: 23
+    // vIndex: 22
     virtual ::AABB getCollisionShape(::IConstBlockSource const& region) const /*override*/;
 
     // vIndex: 14
@@ -69,10 +69,10 @@ public:
     // vIndex: 15
     virtual bool shouldPreserve(::BlockSource& region) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 

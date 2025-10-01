@@ -34,19 +34,11 @@ public:
     MCNAPI void _removeExpiredGenerators(::IScriptGeneratorStats* stats);
 
     MCNAPI void process(::std::chrono::microseconds timeSlice, ::IScriptGeneratorStats* stats);
-
-    MCNAPI ~ScriptAsyncJobCoordinator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ServerScriptManagerEvents& events);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

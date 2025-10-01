@@ -21,6 +21,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptPlayerAimAssistSettings& operator=(ScriptPlayerAimAssistSettings const&);
     ScriptPlayerAimAssistSettings(ScriptPlayerAimAssistSettings const&);
     ScriptPlayerAimAssistSettings();
 
@@ -29,9 +30,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings&
     operator=(::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings&&);
-
-    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings&
-    operator=(::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings const&);
 
     MCNAPI ~ScriptPlayerAimAssistSettings();
     // NOLINTEND

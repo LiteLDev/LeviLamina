@@ -40,25 +40,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NetherSpringFeature(::Block const& block, bool insideRock);
+    MCAPI NetherSpringFeature(::Block const& block, bool insideRock);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Block const& block, bool insideRock);
+    MCAPI void* $ctor(::Block const& block, bool insideRock);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

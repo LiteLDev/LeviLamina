@@ -14,28 +14,27 @@ public:
 
 public:
     // prevent constructor by default
+    ItemEnchantOption& operator=(ItemEnchantOption const&);
     ItemEnchantOption(ItemEnchantOption const&);
     ItemEnchantOption();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ItemEnchantOption(::ItemEnchantOption&&);
+    MCAPI ItemEnchantOption(::ItemEnchantOption&&);
 
-    MCNAPI ::ItemEnchantOption& operator=(::ItemEnchantOption const&);
-
-    MCNAPI ~ItemEnchantOption();
+    MCAPI ~ItemEnchantOption();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ItemEnchantOption&&);
+    MCAPI void* $ctor(::ItemEnchantOption&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

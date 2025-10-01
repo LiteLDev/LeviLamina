@@ -61,16 +61,16 @@ public:
     // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    // vIndex: 30
+    // vIndex: 29
     virtual ::PistonBlockActor* getOwningPiston(::BlockSource&) /*override*/;
 
-    // vIndex: 29
+    // vIndex: 28
     virtual ::PistonBlockActor const* getOwningPiston(::BlockSource&) const /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0

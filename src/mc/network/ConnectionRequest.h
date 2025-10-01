@@ -15,6 +15,7 @@
 // clang-format off
 class AnimatedImageData;
 class MinEngineVersion;
+class MinecraftServiceKeyManager;
 class SerializedPersonaPieceHandle;
 class TintMapColor;
 class UnverifiedCertificate;
@@ -70,11 +71,11 @@ public:
 
     MCAPI ::std::string getEduTokenChain() const;
 
+    MCAPI ::std::string getJoinerToHostNonce() const;
+
     MCFOLD ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
 
     MCFOLD ::std::unordered_map<::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
-
-    MCFOLD ::std::string getPlayFabIdUnverified() const;
 
     MCFOLD ::std::string getSelfSignedId() const;
 
@@ -104,7 +105,12 @@ public:
 
     MCFOLD ::std::string toString();
 
-    MCAPI bool verify(::std::vector<::std::string> const& trustedKeys, int64 currentTime, bool checkExpired);
+    MCAPI bool verify(
+        ::std::vector<::std::string> const& trustedKeys,
+        int64                               currentTime,
+        ::MinecraftServiceKeyManager const& mcServiceKeyManager,
+        bool                                checkExpired
+    );
 
     MCAPI bool verifySelfSigned(bool checkExpired);
 

@@ -26,14 +26,13 @@ public:
 
     public:
         // prevent constructor by default
+        Effect& operator=(Effect const&);
         Effect(Effect const&);
         Effect();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::FeedItem::Effect& operator=(::FeedItem::Effect const&);
-
         MCNAPI ::FeedItem::Effect& operator=(::FeedItem::Effect&&);
 
         MCNAPI ~Effect();

@@ -19,13 +19,17 @@ public:
 
 public:
     // prevent constructor by default
-    ColorGradient& operator=(ColorGradient const&);
-    ColorGradient(ColorGradient const&);
     ColorGradient();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ColorGradient(::SharedTypes::v1_20_80::ColorGradient const&);
+
+    MCNAPI ::SharedTypes::v1_20_80::ColorGradient& operator=(::SharedTypes::v1_20_80::ColorGradient&&);
+
+    MCNAPI ::SharedTypes::v1_20_80::ColorGradient& operator=(::SharedTypes::v1_20_80::ColorGradient const&);
+
     MCNAPI ~ColorGradient();
     // NOLINTEND
 
@@ -33,6 +37,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ColorGradient const&);
     // NOLINTEND
 
 public:

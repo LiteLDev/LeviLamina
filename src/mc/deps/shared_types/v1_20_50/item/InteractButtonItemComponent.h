@@ -19,14 +19,14 @@ public:
 
 public:
     // prevent constructor by default
+    InteractButtonItemComponent& operator=(InteractButtonItemComponent const&);
     InteractButtonItemComponent(InteractButtonItemComponent const&);
     InteractButtonItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_50::InteractButtonItemComponent&
-    operator=(::SharedTypes::v1_20_50::InteractButtonItemComponent const&);
+    MCNAPI InteractButtonItemComponent(::SharedTypes::v1_20_50::InteractButtonItemComponent&&);
 
     MCNAPI ::SharedTypes::v1_20_50::InteractButtonItemComponent&
     operator=(::SharedTypes::v1_20_50::InteractButtonItemComponent&&);
@@ -36,6 +36,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::InteractButtonItemComponent&&);
     // NOLINTEND
 };
 

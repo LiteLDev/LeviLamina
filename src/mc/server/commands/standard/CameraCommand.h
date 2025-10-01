@@ -125,7 +125,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry, ::Experiments const* experiments);
+    MCAPI static void setup(::CommandRegistry& registry, ::Experiments const*);
     // NOLINTEND
 
 public:

@@ -54,7 +54,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $addCollisionShapes(
+    MCAPI bool $addCollisionShapes(
         ::Block const&                                     block,
         ::IConstBlockSource const&                         region,
         ::BlockPos const&                                  pos,
@@ -63,13 +63,13 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI bool $canRenderSelectionOverlay(::BlockRenderLayer) const;
+    MCFOLD bool $canRenderSelectionOverlay(::BlockRenderLayer) const;
 
-    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCNAPI ::std::shared_ptr<::BlockActor> $newBlockEntity(::BlockPos const& pos, ::Block const& block) const;
+    MCAPI ::std::shared_ptr<::BlockActor> $newBlockEntity(::BlockPos const& pos, ::Block const& block) const;
     // NOLINTEND
 
 public:

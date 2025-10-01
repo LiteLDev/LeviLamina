@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/WorldType.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/shared_types/legacy/Difficulty.h"
+#include "mc/editor/WorldType.h"
 #include "mc/network/GamePublishSetting.h"
 #include "mc/options/EducationEditionOffer.h"
 #include "mc/world/level/GameType.h"
@@ -121,8 +121,6 @@ public:
     MCNAPI bool _isScreenshotIconPath(::Core::PathBuffer<::std::string> const& file);
 
     MCNAPI ::LevelSummary& operator=(::LevelSummary const&);
-
-    MCNAPI ::LevelSummary& setName(::std::string Name);
 
     MCNAPI ~LevelSummary();
     // NOLINTEND

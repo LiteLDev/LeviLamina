@@ -117,8 +117,6 @@ public:
 
     MCAPI bool _shouldBePost(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool _shouldUpdateConnectionStates(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCAPI bool _tryAddToTickingQueue(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;

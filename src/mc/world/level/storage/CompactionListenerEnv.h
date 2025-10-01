@@ -24,7 +24,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 14
+    // vIndex: 16
     virtual void Schedule(void (*function)(void*), void* arg) /*override*/;
 
     // vIndex: 0

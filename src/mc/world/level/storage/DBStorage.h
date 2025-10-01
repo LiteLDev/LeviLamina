@@ -52,7 +52,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 2152, ::leveldb::Options>   options;
+        ::ll::TypedStorage<8, 112, ::leveldb::Options>    options;
         ::ll::TypedStorage<8, 24, ::leveldb::ReadOptions> read;
         ::ll::TypedStorage<1, 1, ::leveldb::WriteOptions> write;
         // NOLINTEND
@@ -128,8 +128,6 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DBStorageEnvironmentChain>>        mEnvChain;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::Cache>>                   mCache;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::FilterPolicy const>>      mFilterPolicy;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::Compressor>>              mCompressor;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::Compressor>>              mLegacyCompressor;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DBStorage::Options>>               mOptions;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::DecompressAllocator>>     mDecompressAllocator;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::leveldb::DB>>                      mDb;
@@ -205,11 +203,10 @@ public:
     virtual ::Core::PathBuffer<::std::string> const& getFullPath() const /*override*/;
 
     // vIndex: 3
-    virtual ::std::unique_ptr<::CompoundTag>
-    getCompoundTag(::std::string const& key, ::DBHelpers::Category category) /*override*/;
+    virtual ::std::unique_ptr<::CompoundTag> getCompoundTag(::std::string const&, ::DBHelpers::Category) /*override*/;
 
     // vIndex: 4
-    virtual bool hasKey(::std::string_view key, ::DBHelpers::Category category) const /*override*/;
+    virtual bool hasKey(::std::string_view, ::DBHelpers::Category) const /*override*/;
 
     // vIndex: 6
     virtual bool loadLevelData(::LevelData& data) /*override*/;
@@ -219,14 +216,13 @@ public:
 
     // vIndex: 11
     virtual ::Bedrock::Threading::Async<void>
-    saveData(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category) /*override*/;
+    saveData(::std::string const&, ::std::string&&, ::DBHelpers::Category) /*override*/;
 
     // vIndex: 10
     virtual ::Bedrock::Threading::Async<void> saveData(::LevelStorageWriteBatch const& batch) /*override*/;
 
     // vIndex: 12
-    virtual ::Bedrock::Threading::Async<void>
-    deleteData(::std::string const& key, ::DBHelpers::Category category) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> deleteData(::std::string const&, ::DBHelpers::Category) /*override*/;
 
     // vIndex: 20
     virtual bool loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const
@@ -234,9 +230,9 @@ public:
 
     // vIndex: 5
     virtual void forEachKeyWithPrefix(
-        ::std::string_view                                                   prefix,
-        ::DBHelpers::Category                                                category,
-        ::std::function<void(::std::string_view, ::std::string_view)> const& callback
+        ::std::string_view,
+        ::DBHelpers::Category,
+        ::std::function<void(::std::string_view, ::std::string_view)> const&
     ) const /*override*/;
 
     // vIndex: 15
@@ -346,37 +342,20 @@ public:
     // NOLINTBEGIN
     MCAPI void $addStorageObserver(::std::unique_ptr<::LevelStorageObserver> observer);
 
-    MCAPI bool $loadedSuccessfully() const;
+    MCFOLD bool $loadedSuccessfully() const;
 
     MCFOLD ::Core::LevelStorageResult $getState() const;
 
     MCAPI ::std::unique_ptr<::ChunkSource>
     $createChunkStorage(::std::unique_ptr<::ChunkSource> generator, ::StorageVersion);
 
-    MCFOLD ::Core::PathBuffer<::std::string> const& $getFullPath() const;
-
-    MCAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const& key, ::DBHelpers::Category category);
-
-    MCAPI bool $hasKey(::std::string_view key, ::DBHelpers::Category category) const;
+    MCAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
 
     MCAPI bool $loadLevelData(::LevelData& data);
 
     MCAPI void $saveLevelData(::LevelData const& levelData);
 
-    MCAPI ::Bedrock::Threading::Async<void>
-    $saveData(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
-
     MCAPI ::Bedrock::Threading::Async<void> $saveData(::LevelStorageWriteBatch const& batch);
-
-    MCAPI ::Bedrock::Threading::Async<void> $deleteData(::std::string const& key, ::DBHelpers::Category category);
-
-    MCAPI bool $loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
-
-    MCAPI void $forEachKeyWithPrefix(
-        ::std::string_view                                                   prefix,
-        ::DBHelpers::Category                                                category,
-        ::std::function<void(::std::string_view, ::std::string_view)> const& callback
-    ) const;
 
     MCFOLD ::Core::LevelStorageResult $getLevelStorageState() const;
 
@@ -399,7 +378,7 @@ public:
 
     MCAPI void $syncAndSuspendStorage();
 
-    MCAPI void $resumeStorage();
+    MCFOLD void $resumeStorage();
 
     MCAPI void $setFlushAllowed(bool flushAllowed);
 

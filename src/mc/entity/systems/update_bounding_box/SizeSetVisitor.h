@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components/ShouldUpdateBoundingBoxRequestComponent.h"
+
 namespace UpdateBoundingBox {
 
 struct SizeSetVisitor {
@@ -16,6 +19,12 @@ public:
     SizeSetVisitor& operator=(SizeSetVisitor const&);
     SizeSetVisitor(SizeSetVisitor const&);
     SizeSetVisitor();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void operator()(::ShouldUpdateBoundingBoxRequestComponent::UpdateFromValue const& data);
+    // NOLINTEND
 };
 
 } // namespace UpdateBoundingBox

@@ -52,26 +52,26 @@ public:
 
     // vIndex: 5
     virtual void addTunnel(
-        ::IBlockWorldGenAPI&                                                target,
+        ::IBlockWorldGenAPI&                                                blocks,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
-        ::Random&                                                           random,
+        ::Random&                                                           _random,
         ::ChunkPos const&                                                   chunkPos,
         ::Vec3 const&                                                       startPos,
         float                                                               thickness,
-        float                                                               horizontalRotation,
-        float                                                               verticalRotation,
+        float                                                               yRot,
+        float                                                               xRot,
         int                                                                 step,
         int                                                                 dist,
         float                                                               yScale,
         ::RenderParams&                                                     renderParams,
-        ::CaveFeatureUtils::CarvingParameters const&                        carvingParameters,
+        ::CaveFeatureUtils::CarvingParameters const&                        carveValues,
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const /*override*/;
 
     // vIndex: 7
     virtual void addFeature(
-        ::IBlockWorldGenAPI&                                                target,
-        ::ChunkPos const&                                                   pos,
+        ::IBlockWorldGenAPI&                                                blocks,
+        ::ChunkPos const&                                                   chunkPos,
         ::Random&                                                           random,
         ::ChunkPos const&                                                   startChunk,
         ::RenderParams&                                                     renderParams,
@@ -85,9 +85,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
-    MCNAPI void $addRoom(
+    MCAPI void $addRoom(
         ::IBlockWorldGenAPI&                                                target,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
         ::Random&                                                           random,
@@ -98,26 +98,26 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
 
-    MCNAPI void $addTunnel(
-        ::IBlockWorldGenAPI&                                                target,
+    MCAPI void $addTunnel(
+        ::IBlockWorldGenAPI&                                                blocks,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
-        ::Random&                                                           random,
+        ::Random&                                                           _random,
         ::ChunkPos const&                                                   chunkPos,
         ::Vec3 const&                                                       startPos,
         float                                                               thickness,
-        float                                                               horizontalRotation,
-        float                                                               verticalRotation,
+        float                                                               yRot,
+        float                                                               xRot,
         int                                                                 step,
         int                                                                 dist,
         float                                                               yScale,
         ::RenderParams&                                                     renderParams,
-        ::CaveFeatureUtils::CarvingParameters const&                        carvingParameters,
+        ::CaveFeatureUtils::CarvingParameters const&                        carveValues,
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
 
-    MCNAPI void $addFeature(
-        ::IBlockWorldGenAPI&                                                target,
-        ::ChunkPos const&                                                   pos,
+    MCAPI void $addFeature(
+        ::IBlockWorldGenAPI&                                                blocks,
+        ::ChunkPos const&                                                   chunkPos,
         ::Random&                                                           random,
         ::ChunkPos const&                                                   startChunk,
         ::RenderParams&                                                     renderParams,

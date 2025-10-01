@@ -35,7 +35,7 @@ public:
     // vIndex: 0
     virtual ~ShulkerBoxBlockActor() /*override*/ = default;
 
-    // vIndex: 26
+    // vIndex: 25
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 21
@@ -62,22 +62,22 @@ public:
     // vIndex: 23
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
+    // vIndex: 50
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getOpenSound() const /*override*/;
+
     // vIndex: 51
-    virtual ::SharedTypes::Legacy::LevelSoundEvent getOpenSound(::BlockSource const& region) const /*override*/;
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getCloseSound() const /*override*/;
 
-    // vIndex: 52
-    virtual ::SharedTypes::Legacy::LevelSoundEvent getCloseSound(::BlockSource const& region) const /*override*/;
-
-    // vIndex: 49
+    // vIndex: 48
     virtual ::AABB getObstructionAABB() const /*override*/;
 
-    // vIndex: 50
+    // vIndex: 49
     virtual bool _detectEntityObstruction(::BlockSource& region) const /*override*/;
     // NOLINTEND
 
@@ -125,9 +125,9 @@ public:
 
     MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getOpenSound(::BlockSource const& region) const;
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getOpenSound() const;
 
-    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getCloseSound(::BlockSource const& region) const;
+    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getCloseSound() const;
 
     MCAPI ::AABB $getObstructionAABB() const;
 
