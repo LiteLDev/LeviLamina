@@ -4,7 +4,9 @@
 
 // auto generated forward declare list
 // clang-format off
+class CompositePackSource;
 class PackSourceFactory;
+struct RepositorySourceOptions;
 namespace Core { class PathView; }
 // clang-format on
 
@@ -12,27 +14,21 @@ class RepositorySources {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk225556;
-    ::ll::UntypedStorage<8, 8> mUnk9e3a49;
-    ::ll::UntypedStorage<8, 8> mUnka15aef;
-    ::ll::UntypedStorage<8, 8> mUnk37752a;
-    ::ll::UntypedStorage<8, 8> mUnkd29519;
-    ::ll::UntypedStorage<8, 8> mUnk1a72a3;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RepositorySourceOptions const>> mOptions;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>           mPackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>           mCachePackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>           mWorldPackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>           mPremiumWorldTemplatePackSource;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompositePackSource>>           mTempWorldTemplatePackSource;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RepositorySources& operator=(RepositorySources const&);
-    RepositorySources(RepositorySources const&);
-    RepositorySources();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void initializeCachedPackSource(::PackSourceFactory& packSourceFactory);
+    MCAPI void initializeCachedPackSource(::PackSourceFactory& packSourceFactory);
 
-    MCNAPI void initializePackSource(::PackSourceFactory& packSourceFactory);
+    MCAPI void initializePackSource(::PackSourceFactory& packSourceFactory);
 
-    MCNAPI void initializeWorldPackSource(::PackSourceFactory& packSourceFactory, ::Core::PathView currentWorldPath);
+    MCAPI void initializeWorldPackSource(::PackSourceFactory& packSourceFactory, ::Core::PathView currentWorldPath);
     // NOLINTEND
 };
