@@ -36,10 +36,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
-
-    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const&);
-
-    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const&);
     // NOLINTEND
 };
 

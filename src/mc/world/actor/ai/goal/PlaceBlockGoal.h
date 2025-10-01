@@ -76,10 +76,21 @@ public:
         // NOLINTEND
 
     public:
+        // prevent constructor by default
+        Definition(Definition const&);
+        Definition();
+
+    public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCAPI ::PlaceBlockGoal::Definition& operator=(::PlaceBlockGoal::Definition const&);
         // NOLINTEND
 
     public:

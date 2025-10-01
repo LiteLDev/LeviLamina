@@ -94,6 +94,8 @@ public:
 
     MCNAPI void registerEditorOnlyTickingSystem(::TickingSystemWithInfo&& system);
 
+    MCNAPI void registerGameOnlyMovementTickingSystem(::TickingSystemWithInfo&& system);
+
     MCNAPI void registerGameOnlyTickingSystem(::TickingSystemWithInfo&& system);
 
     MCNAPI void registerMovementTickingSystem(::TickingSystemWithInfo&& system);

@@ -101,6 +101,8 @@ public:
     );
 
     MCNAPI void _initialize(::WorldTemplateManagerInitData&& data);
+
+    MCNAPI void sortWorldTemplates();
     // NOLINTEND
 
 public:

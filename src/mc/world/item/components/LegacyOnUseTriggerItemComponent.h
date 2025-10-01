@@ -9,12 +9,11 @@
 
 // auto generated forward declare list
 // clang-format off
-class DefinitionTrigger;
+class ComponentItem;
 class HashedString;
 class ItemStack;
 class Player;
 struct LegacyOnUseTriggerItemComponentData;
-namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LegacyOnUseTriggerItemComponent : public ::LegacyTriggerItemComponent {
@@ -33,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7
-    virtual void _initializeComponent() /*override*/;
+    virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
     // vIndex: 0
     virtual ~LegacyOnUseTriggerItemComponent() /*override*/ = default;
@@ -62,7 +61,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent(::ComponentItem& owner);
     // NOLINTEND
 
 public:

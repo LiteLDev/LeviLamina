@@ -20,14 +20,13 @@ public:
 public:
     // prevent constructor by default
     FunctionBinding& operator=(FunctionBinding const&);
+    FunctionBinding(FunctionBinding const&);
     FunctionBinding();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI FunctionBinding(::Scripting::FunctionBinding&&);
-
-    MCNAPI FunctionBinding(::Scripting::FunctionBinding const&);
 
     MCNAPI ~FunctionBinding();
     // NOLINTEND
@@ -36,8 +35,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Scripting::FunctionBinding&&);
-
-    MCNAPI void* $ctor(::Scripting::FunctionBinding const&);
     // NOLINTEND
 
 public:

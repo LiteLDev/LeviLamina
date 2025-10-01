@@ -42,7 +42,9 @@ public:
         ::std::function<void(bool)> showIconFunction
     );
 
-    MCNAPI void onEndCompaction();
+    MCNAPI void _hideGlobalSaveIcon();
+
+    MCNAPI void _showGlobalSaveIcon();
     // NOLINTEND
 
 public:

@@ -9,8 +9,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class TrustComponent;
 struct ActorUniqueID;
+struct TrustComponent;
 // clang-format on
 
 class DefendTrustedTargetGoal : public ::NearestAttackableTargetGoal {

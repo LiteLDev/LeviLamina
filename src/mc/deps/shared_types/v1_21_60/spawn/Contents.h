@@ -28,8 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Contents(::SharedTypes::v1_21_60::Spawn::Contents&&);
-
     MCNAPI ~Contents();
     // NOLINTEND
 
@@ -43,12 +41,6 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::SemVersion const& VERSION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::SharedTypes::v1_21_60::Spawn::Contents&&);
     // NOLINTEND
 
 public:

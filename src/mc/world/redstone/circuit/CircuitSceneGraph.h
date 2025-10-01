@@ -5,7 +5,6 @@
 
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
-#include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -72,8 +71,6 @@ public:
     MCAPI void add(::BlockPos const& pos, ::std::unique_ptr<::BaseCircuitComponent> component);
 
     MCAPI void findRelationships(::BlockPos const& pos, ::BaseCircuitComponent* producerTarget, ::BlockSource* region);
-
-    MCAPI ::BaseCircuitComponent* getComponent(::BlockPos const& pos, ::CircuitComponentType typeID);
 
     MCAPI void invalidatePos(::BlockPos const& pos);
 

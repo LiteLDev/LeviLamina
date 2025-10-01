@@ -15,13 +15,20 @@ public:
 public:
     // prevent constructor by default
     SpawnAboveBlockFilter& operator=(SpawnAboveBlockFilter const&);
-    SpawnAboveBlockFilter(SpawnAboveBlockFilter const&);
     SpawnAboveBlockFilter();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI SpawnAboveBlockFilter(::SharedTypes::Legacy::Spawn::SpawnAboveBlockFilter const&);
+
     MCNAPI ~SpawnAboveBlockFilter();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::SharedTypes::Legacy::Spawn::SpawnAboveBlockFilter const&);
     // NOLINTEND
 
 public:

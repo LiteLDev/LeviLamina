@@ -26,6 +26,7 @@ public:
 public:
     // prevent constructor by default
     BucketPacketLimitAlgorithm& operator=(BucketPacketLimitAlgorithm const&);
+    BucketPacketLimitAlgorithm(BucketPacketLimitAlgorithm const&);
     BucketPacketLimitAlgorithm();
 
 public:
@@ -44,8 +45,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BucketPacketLimitAlgorithm(::BucketPacketLimitAlgorithm const& other);
-
     MCNAPI BucketPacketLimitAlgorithm(float drainRatePerSec, uint maxBucketSize);
     // NOLINTEND
 
@@ -58,8 +57,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BucketPacketLimitAlgorithm const& other);
-
     MCNAPI void* $ctor(float drainRatePerSec, uint maxBucketSize);
     // NOLINTEND
 

@@ -11,7 +11,6 @@
 class ExpressionNode;
 class HashedString;
 class ListTag;
-class PropertyMetadata;
 class RenderParams;
 namespace Json { class Value; }
 // clang-format on
@@ -21,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk4f1df6;
-    ::ll::UntypedStorage<8, 64> mUnkb73d7f;
+    ::ll::UntypedStorage<8, 56> mUnk2dab05;
     ::ll::UntypedStorage<8, 64> mUnk324226;
     ::ll::UntypedStorage<8, 24> mUnka580d9;
     ::ll::UntypedStorage<8, 24> mUnk91d7f8;
@@ -106,10 +105,6 @@ public:
     MCNAPI int getDefaultIntValue(uint64 intArrayIndex, ::RenderParams& renderParams) const;
 
     MCNAPI ::ListTag getNetworkSyncPropertyDescriptionsAsListTag() const;
-
-    MCNAPI ::PropertyMetadata const* getPropertyMetadata(uint64 propertyNameHash) const;
-
-    MCNAPI ::std::vector<::HashedString> const& getStringEnumValues(uint64 stringTypeArrayIndex) const;
 
     MCNAPI ~PropertyGroup();
     // NOLINTEND

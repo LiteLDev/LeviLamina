@@ -45,8 +45,6 @@ public:
 
     MCAPI ::EnchantmentInstance getEnchantment(::Enchant::Type enchantType);
 
-    MCAPI ::std::vector<::EnchantmentInstance> const& getEnchants(int activationType) const;
-
     MCAPI int getTotalValue(bool bookModifier) const;
 
     MCAPI int hasEnchant(::Enchant::Type enchantType) const;

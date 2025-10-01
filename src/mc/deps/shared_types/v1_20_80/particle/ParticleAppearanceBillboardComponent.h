@@ -26,7 +26,6 @@ public:
 public:
     // prevent constructor by default
     ParticleAppearanceBillboardComponent& operator=(ParticleAppearanceBillboardComponent const&);
-    ParticleAppearanceBillboardComponent(ParticleAppearanceBillboardComponent const&);
     ParticleAppearanceBillboardComponent();
 
 public:
@@ -43,6 +42,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ParticleAppearanceBillboardComponent(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
+
+    MCNAPI ParticleAppearanceBillboardComponent(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
 
     MCNAPI ::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&
     operator=(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
@@ -64,6 +65,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
     // NOLINTEND
 
 public:

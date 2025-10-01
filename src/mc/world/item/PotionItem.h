@@ -41,13 +41,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 121
+    // vIndex: 123
     virtual ::Potion::PotionType getPotionType() const;
 
-    // vIndex: 107
+    // vIndex: 109
     virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
         /*override*/;
 
@@ -59,23 +59,22 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 88
+    // vIndex: 90
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const /*override*/;
 
     // vIndex: 63
     virtual bool uniqueAuxValues() const /*override*/;
 
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
     // vIndex: 76
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 79
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
-        /*override*/;
+    // vIndex: 81
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& instance, ::Level* level, ::Player* player) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
@@ -85,7 +84,7 @@ public:
     // vIndex: 47
     virtual bool isDestructive(int auxValue) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 122
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
@@ -138,7 +137,7 @@ public:
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& instance, ::Level* level, ::Player* player) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 

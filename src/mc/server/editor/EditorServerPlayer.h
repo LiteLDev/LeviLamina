@@ -71,9 +71,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftableForIEditorPlayer();
 
-    MCNAPI static void** $vftableForPlayerEventListener();
-
     MCNAPI static void** $vftableForEditorPlayerServiceProvider();
+
+    MCNAPI static void** $vftableForEventListenerDispatcher();
 
     MCNAPI static void** $vftableForEditorServiceList();
     // NOLINTEND

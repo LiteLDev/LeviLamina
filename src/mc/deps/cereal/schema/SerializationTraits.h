@@ -10,7 +10,8 @@ enum class SerializationTraits : uchar {
     BigEndian         = 1 << 1,
     EnumAsValue       = 1 << 2,
     NoSizeCompression = 1 << 3,
-    EnttEnumAsBitmask = Compression | NoSizeCompression,
+    SkipAlsoReadAs    = 1 << 4,
+    EnttEnumAsBitmask = Compression | SkipAlsoReadAs,
 };
 
 }

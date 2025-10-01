@@ -178,8 +178,6 @@ public:
 
     MCAPI ::MobEffect& setFactorCalculationData(::MobEffect::FactorCalculationData const& factorCalculationData);
 
-    MCAPI ::MobEffect& setOnApplySound(::SharedTypes::Legacy::LevelSoundEvent onApplySound);
-
     MCAPI void setValueAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
     MCAPI void updateModsAndBuffs(

@@ -16,6 +16,7 @@ class BaseGameVersion;
 class Block;
 class BlockPos;
 class BlockSource;
+class Container;
 class Experiments;
 class GetCollisionShapeInterface;
 class HitResult;
@@ -125,6 +126,16 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<uint64, schar> const& _getCompostableItems();
 
+    MCAPI static bool addItems(
+        ::Container&      fromContainer,
+        int               slot,
+        ::ItemStack&      item,
+        int               amount,
+        ::BlockSource&    region,
+        ::Block const&    block,
+        ::BlockPos const& pos
+    );
+
     MCAPI static int
     addItems(::ItemStack const& item, int amount, ::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
@@ -151,16 +162,6 @@ public:
     MCFOLD bool $hasComparatorSignal() const;
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
-
-    MCFOLD ::HitResult $clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
 
     MCFOLD bool $addCollisionShapes(
         ::Block const&                                     block,

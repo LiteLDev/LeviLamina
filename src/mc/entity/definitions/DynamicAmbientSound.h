@@ -12,14 +12,13 @@ public:
 
 public:
     // prevent constructor by default
+    DynamicAmbientSound& operator=(DynamicAmbientSound const&);
     DynamicAmbientSound(DynamicAmbientSound const&);
     DynamicAmbientSound();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::DynamicAmbientSound& operator=(::DynamicAmbientSound const&);
-
     MCNAPI ~DynamicAmbientSound();
     // NOLINTEND
 

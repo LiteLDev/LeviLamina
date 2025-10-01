@@ -18,7 +18,6 @@ class AllowList;
 class DefaultCommandsContextProvider;
 class EntityContext;
 class EntityRegistry;
-class EntitySystems;
 class Experiments;
 class GameCallbacks;
 class GameModuleServer;
@@ -30,8 +29,10 @@ class IMinecraftEventing;
 class Level;
 class MinecraftCommands;
 class MinecraftGameTest;
+class MinecraftServiceKeyManager;
 class NetEventCallback;
 class NetworkIdentifier;
+class PackSettingsCache;
 class PacketSender;
 class PermissionsFile;
 class Player;
@@ -40,6 +41,7 @@ class ResourcePackManager;
 class Scheduler;
 class ServerMetrics;
 class ServerNetworkHandler;
+class ServerNetworkSystem;
 class StructureManager;
 class TextFilteringProcessor;
 class Timer;
@@ -63,6 +65,7 @@ public:
     ::ll::TypedStorage<8, 8, ::AllowList&>                                            mAllowList;
     ::ll::TypedStorage<8, 8, ::PermissionsFile*>                                      mPermissionsFile;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PrivateKeyManager>>                  mServerKeys;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MinecraftServiceKeyManager>>         mMinecraftServiceKeys;
     ::ll::TypedStorage<8, 32, ::std::string const>                                    mSaveGamePath;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager>> mFilePathManager;
     ::ll::TypedStorage<8, 8, ::ServerMetrics*>                                        mServerMetrics;
@@ -148,12 +151,15 @@ public:
 
     MCAPI void configureGameTest(::Level& level, ::Experiments const& experiments);
 
-    MCAPI void
-    disconnectClientByReason(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason disconnectReason);
+    MCAPI void disconnectClient(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason disconnectReason);
 
     MCAPI ::Level* getLevel() const;
 
+    MCAPI ::Bedrock::NonOwnerPointer<::MinecraftServiceKeyManager> getMinecraftServiceKeyManager();
+
     MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
+
+    MCAPI ::ServerNetworkSystem& getServerNetworkSystem();
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> getStructureManager();
 
@@ -169,7 +175,8 @@ public:
         ::std::unordered_map<::PackIdVersion, ::std::string> const&          packIdToContentKey,
         ::Scheduler&                                                         scheduler,
         ::TextFilteringProcessor*                                            textFilteringProcessor,
-        ::NetworkServerConfig const&                                         packetHandlerConfig
+        ::NetworkServerConfig const&                                         packetHandlerConfig,
+        ::std::shared_ptr<::PackSettingsCache>                               packSettingsCache
     );
 
     MCAPI void init();
@@ -183,12 +190,6 @@ public:
     MCAPI void tickSimtime(int nTick, int maxTick);
 
     MCAPI bool update();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void _tryCatchupMovementTicks(::EntitySystems& entitySystems, ::EntityRegistry& registry);
     // NOLINTEND
 
 public:

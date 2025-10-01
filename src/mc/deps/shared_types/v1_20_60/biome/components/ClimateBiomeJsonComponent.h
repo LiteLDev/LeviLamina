@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_20_60/biome/components/IBiomeJsonComponent.h"
+#include "mc/v1_20_60/biome/components/BiomeComponentVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,10 +20,6 @@ public:
     ::ll::UntypedStorage<4, 8>  mUnk1b4d75;
     ::ll::UntypedStorage<4, 12> mUnkc82d0c;
     ::ll::UntypedStorage<4, 8>  mUnke3d151;
-    ::ll::UntypedStorage<4, 8>  mUnkb612f9;
-    ::ll::UntypedStorage<4, 8>  mUnkc6d73b;
-    ::ll::UntypedStorage<4, 8>  mUnke85a25;
-    ::ll::UntypedStorage<4, 8>  mUnkb541cd;
     // NOLINTEND
 
 public:
@@ -34,6 +31,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
+    virtual ::BiomeComponentVersion getType() const /*override*/;
+
     // vIndex: 0
     virtual ~ClimateBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
@@ -50,6 +50,12 @@ public:
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI ::BiomeComponentVersion $getType() const;
     // NOLINTEND
 
 public:

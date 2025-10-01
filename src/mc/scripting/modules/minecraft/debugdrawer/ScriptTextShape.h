@@ -31,7 +31,7 @@ public:
     virtual void populatePacketData(::ScriptModuleDebugUtilities::PacketShapeData& packet) const /*override*/;
 
     // vIndex: 2
-    virtual void applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& packet) /*override*/;
+    virtual void applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& existing) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptTextShape() /*override*/;
@@ -71,7 +71,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $populatePacketData(::ScriptModuleDebugUtilities::PacketShapeData& packet) const;
 
-    MCAPI void $applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& packet);
+    MCAPI void $applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& existing);
     // NOLINTEND
 
 public:

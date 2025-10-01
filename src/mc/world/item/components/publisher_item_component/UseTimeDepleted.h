@@ -18,11 +18,11 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 
 namespace PublisherItemComponent {
 
-class UseTimeDepleted : public ::ItemComponent,
-                        public ::Bedrock::PubSub::Publisher<
-                            void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&),
-                            ::Bedrock::PubSub::ThreadModel::SingleThreaded,
-                            0> {
+struct UseTimeDepleted : public ::ItemComponent,
+                         public ::Bedrock::PubSub::Publisher<
+                             void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&),
+                             ::Bedrock::PubSub::ThreadModel::SingleThreaded,
+                             0> {
 public:
     // virtual functions
     // NOLINTBEGIN

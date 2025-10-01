@@ -68,7 +68,7 @@ public:
     ) const /*override*/;
 
     // vIndex: 22
-    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
     // vIndex: 90
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const*) const /*override*/;
@@ -165,8 +165,6 @@ public:
         ::std::vector<::AABB>&                             inoutBoxes,
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
-
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 

@@ -10,14 +10,14 @@ class LevelSoundEventMap {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::SharedTypes::Legacy::LevelSoundEvent getId(::std::string const& type);
+    MCAPI static ::SharedTypes::Legacy::LevelSoundEvent getId(::std::string const& type);
 
-    MCNAPI static ::std::string const& getName(::SharedTypes::Legacy::LevelSoundEvent type);
+    MCAPI static ::std::string const& getName(::SharedTypes::Legacy::LevelSoundEvent type);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BidirectionalUnorderedMap<::std::string, ::SharedTypes::Legacy::LevelSoundEvent> const& map();
+    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::SharedTypes::Legacy::LevelSoundEvent> const& map();
     // NOLINTEND
 };

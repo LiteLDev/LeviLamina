@@ -6,6 +6,6 @@ struct BeardKernel {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::array<float, 13824> const& getKernel();
+    MCAPI static ::std::array<float, 13824> const& getKernel();
     // NOLINTEND
 };

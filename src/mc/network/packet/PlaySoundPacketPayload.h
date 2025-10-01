@@ -22,6 +22,7 @@ public:
 
 public:
     // prevent constructor by default
+    PlaySoundPacketPayload& operator=(PlaySoundPacketPayload const&);
     PlaySoundPacketPayload(PlaySoundPacketPayload const&);
     PlaySoundPacketPayload();
 
@@ -31,8 +32,6 @@ public:
     MCAPI PlaySoundPacketPayload(::std::string name, ::Vec3 const& pos, float volume, float pitch);
 
     MCAPI ::PlaySoundPacketPayload& operator=(::PlaySoundPacketPayload&&);
-
-    MCAPI ::PlaySoundPacketPayload& operator=(::PlaySoundPacketPayload const&);
 
     MCAPI ~PlaySoundPacketPayload();
     // NOLINTEND

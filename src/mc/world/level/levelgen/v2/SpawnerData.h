@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/util/WeightedRandom.h"
 #include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/actor/ActorType.h"
 #include "mc/world/level/levelgen/v2/OverrideState.h"
 
 // auto generated forward declare list
@@ -63,36 +64,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SpawnerData(::br::worldgen::SpawnerData const&);
+    MCAPI SpawnerData(::br::worldgen::SpawnerData const&);
 
-    MCNAPI SpawnerData(::br::worldgen::SpawnerData&&);
+    MCAPI SpawnerData(::br::worldgen::SpawnerData&&);
 
-    MCNAPI ::br::worldgen::SpawnerData inRawBrightness(short minBrightness, short maxBrightness) const;
-
-    MCNAPI ::br::worldgen::SpawnerData withPopulation(short surfacePop, short undergroundPop) const;
-
-    MCNAPI ~SpawnerData();
+    MCAPI ~SpawnerData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::br::worldgen::SpawnerData
+    MCAPI static ::br::worldgen::SpawnerData
     make(::std::string_view id, short probabilityWeight, short minCount, short maxCount);
+
+    MCAPI static ::br::worldgen::SpawnerData
+    make(::ActorType id, short probabilityWeight, short minCount, short maxCount);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::br::worldgen::SpawnerData const&);
+    MCAPI void* $ctor(::br::worldgen::SpawnerData const&);
 
-    MCNAPI void* $ctor(::br::worldgen::SpawnerData&&);
+    MCAPI void* $ctor(::br::worldgen::SpawnerData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

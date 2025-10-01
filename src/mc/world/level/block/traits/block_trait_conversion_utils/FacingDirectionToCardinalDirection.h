@@ -13,13 +13,13 @@ namespace BlockTraitConversionUtils { struct ConvertedSet; }
 namespace BlockTraitConversionUtils::FacingDirectionToCardinalDirection {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::BlockTraitConversionUtils::ConvertedSet& R20U3();
+MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20U3();
 
-MCNAPI ::BlockTraitConversionUtils::ConvertedSet& R20U4();
+MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20U4();
 
-MCNAPI ::std::add_lvalue_reference_t<::Direction::Type const[]> conversionTable();
+MCAPI ::std::add_lvalue_reference_t<::Direction::Type const[]> conversionTable();
 
-MCNAPI ::std::add_lvalue_reference_t<::Direction::Type const[]> furnaceConversionTable();
+MCAPI ::std::add_lvalue_reference_t<::Direction::Type const[]> furnaceConversionTable();
 // NOLINTEND
 
 } // namespace BlockTraitConversionUtils::FacingDirectionToCardinalDirection

@@ -16,16 +16,16 @@ class VanillaGameModuleDedicatedServer : public ::IGameModuleShared {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
+    // vIndex: 2
     virtual ::std::unique_ptr<::GameModuleServer> createGameModuleServer() /*override*/;
 
-    // vIndex: 2
+    // vIndex: 3
     virtual ::std::shared_ptr<::IInPackagePacks> createInPackagePacks() /*override*/;
 
-    // vIndex: 3
+    // vIndex: 4
     virtual void registerMolangQueries() /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual void
     registerServerInstanceHandler(::ServerInstanceEventCoordinator& serverInstanceCoordinator) /*override*/;
 

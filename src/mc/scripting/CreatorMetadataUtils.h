@@ -56,11 +56,9 @@ MCAPI ::Json::Value _generateEntitiesMetadataJson(
 
 MCAPI ::Json::Value _generateItemsMetadataJson(::ItemRegistryRef itemRegistry);
 
+MCAPI ::Json::Value _generatePotionDeliveryTypesMetadataJson();
+
 MCAPI ::Json::Value _generatePotionEffectsMetadataJson();
-
-MCAPI ::Json::Value _generatePotionLiquidTypesMetadataJson();
-
-MCAPI ::Json::Value _generatePotionModifiersMetadataJson();
 
 MCAPI ::Json::Value _generateScriptingModuleMetadataJson(
     ::Scripting::ModuleBinding const&          moduleToBind,

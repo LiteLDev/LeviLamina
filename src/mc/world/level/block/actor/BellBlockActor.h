@@ -39,10 +39,10 @@ public:
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -52,22 +52,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool
-    ring(::Direction::Type direction, ::BlockSource& region, ::Actor* sourceActor, bool alarmNearbyDwellers);
+    MCAPI bool ring(::Direction::Type direction, ::BlockSource& region, ::Actor* sourceActor, bool alarmNearbyDwellers);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:

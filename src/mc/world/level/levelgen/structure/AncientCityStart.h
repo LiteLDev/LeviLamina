@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BiomeSource;
 class Dimension;
 class Random;
 // clang-format on
@@ -41,28 +40,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AncientCityStart(
-        ::Dimension&         dimension,
-        ::BiomeSource const& biomeSource,
-        ::Random&            random,
-        int                  chunkX,
-        int                  chunkZ
-    );
+    MCAPI AncientCityStart(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::Dimension& dimension, ::BiomeSource const& biomeSource, ::Random& random, int chunkX, int chunkZ);
+    MCAPI void* $ctor(::Dimension& dimension, ::Random& random, int chunkX, int chunkZ);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI ::std::string_view $getStructureName() const;
+    MCAPI ::std::string_view $getStructureName() const;
     // NOLINTEND
 
 public:

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
 #include "mc/world/events/EventCoordinator.h"
 #include "mc/world/events/EventRef.h"
@@ -10,6 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Dimension;
 class ItemEnchants;
 class ItemStack;
 class Player;
@@ -41,6 +43,8 @@ public:
     MCAPI void sendEvent(::EventRef<::PlayerGameplayEvent<void>> const& event);
 
     MCAPI void sendPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
+
+    MCAPI void sendPlayerPortalUsed(::Player& player, ::DimensionType fromDimension, ::DimensionType toDimension);
     // NOLINTEND
 
 public:

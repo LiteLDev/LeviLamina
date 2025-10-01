@@ -45,10 +45,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 55
-    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
+    virtual void setOwner(::ActorUniqueID const ownerID) /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
@@ -96,8 +96,6 @@ public:
     MCAPI void setPotion(short potionAUX);
 
     MCAPI void setRadiusChangeOnPickup(float changeAmount);
-
-    MCAPI void setRadiusPerTick(float radiusPerTick);
     // NOLINTEND
 
 public:
@@ -113,7 +111,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setOwner(::ActorUniqueID const ownerId);
+    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+
+    MCAPI void $setOwner(::ActorUniqueID const ownerID);
 
     MCAPI void $normalTick();
 

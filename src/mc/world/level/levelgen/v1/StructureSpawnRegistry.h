@@ -29,12 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride> const*
+    MCAPI ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride> const*
     get(::std::string const& key) const;
-
-    MCNAPI void insert(
-        ::std::string_view                                                                    key,
-        ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>&& staticStructureMobs
-    );
     // NOLINTEND
 };

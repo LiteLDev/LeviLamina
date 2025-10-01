@@ -30,8 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BiomeConsolidatedFeatureData(::BiomeConsolidatedFeatureData&&);
-
     MCNAPI ~BiomeConsolidatedFeatureData();
     // NOLINTEND
 
@@ -39,12 +37,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::Result<::BiomeConsolidatedFeatureData> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::BiomeConsolidatedFeatureData&&);
     // NOLINTEND
 
 public:

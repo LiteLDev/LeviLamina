@@ -15,26 +15,19 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Actor&>            mProjectile;
-    ::ll::TypedStorage<8, 112, ::HitResult const> mHitResult;
+    ::ll::TypedStorage<8, 136, ::HitResult const> mHitResult;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     ProjectileHitEvent& operator=(ProjectileHitEvent const&);
+    ProjectileHitEvent(ProjectileHitEvent const&);
     ProjectileHitEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ProjectileHitEvent(::ProjectileHitEvent const&);
-
     MCAPI ~ProjectileHitEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ProjectileHitEvent const&);
     // NOLINTEND
 
 public:

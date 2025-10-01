@@ -43,7 +43,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::BoundingBox findPieceBox(
+    MCAPI static ::BoundingBox findPieceBox(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&,
         int footX,
@@ -56,9 +56,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random&, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:

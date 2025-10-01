@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BossComponent;
 class EnderDragonDeathWrapper;
 class ExperienceRewardComponent;
 class MobDeathWrapper;
@@ -20,6 +19,7 @@ struct ActorDataDirtyFlagsComponent;
 struct ActorDataFlagComponent;
 struct ActorDefinitionIdentifierComponent;
 struct ActorUniqueIDComponent;
+struct BossComponent;
 struct DeathTickingComponent;
 struct DimensionTypeComponent;
 struct IsDeadFlagComponent;
@@ -57,20 +57,18 @@ MCNAPI void clientMobTickDeath(
 );
 
 MCNAPI void serverEnderDragonTickDeath(
-    ::EnderDragonDeathWrapper&                                       dragonDeath,
-    ::StrictEntityContext const&                                     entity,
-    ::ActorDataFlagComponent const&                                  actorFlags,
-    ::ActorDefinitionIdentifierComponent const&                      actorIdentifier,
-    ::ActorUniqueIDComponent const&                                  actorUniqueID,
-    ::DeathTickingComponent const&                                   deathTicking,
-    ::DimensionTypeComponent const&                                  dimensionType,
-    ::StateVectorComponent&                                          stateVector,
-    ::WingFlapDataComponent&                                         wingFlapData,
-    ::SpawnExperienceOrbRequestQueueComponent&                       experienceOrbRequestQueue,
-    ::Optional<::BossComponent>                                      boss,
-    ::OptionalComponentWrapper<::ParticleEventRequestQueueComponent> particleRequestQueue,
-    ::OptionalComponentWrapper<::RandomComponent>                    random,
-    ::OptionalComponentWrapper<::SoundEventRequestQueueComponent>    soundEventRequestQueue
+    ::EnderDragonDeathWrapper&                                    dragonDeath,
+    ::StrictEntityContext const&                                  entity,
+    ::ActorDataFlagComponent const&                               actorFlags,
+    ::ActorDefinitionIdentifierComponent const&                   actorIdentifier,
+    ::ActorUniqueIDComponent const&                               actorUniqueID,
+    ::DeathTickingComponent const&                                deathTicking,
+    ::DimensionTypeComponent const&                               dimensionType,
+    ::StateVectorComponent&                                       stateVector,
+    ::WingFlapDataComponent&                                      wingFlapData,
+    ::SpawnExperienceOrbRequestQueueComponent&                    experienceOrbRequestQueue,
+    ::Optional<::BossComponent>                                   boss,
+    ::OptionalComponentWrapper<::SoundEventRequestQueueComponent> soundEventRequestQueue
 );
 
 MCNAPI void serverMobTickDeath(
@@ -89,6 +87,15 @@ MCNAPI void serverMobTickDeath(
     ::Optional<::ExperienceRewardComponent>                       experienceReward,
     ::Optional<::PlayerComponent>                                 player,
     ::OptionalComponentWrapper<::SoundEventRequestQueueComponent> soundEventRequestQueue
+);
+
+MCNAPI void serverSpawnExperience(
+    ::MobDeathWrapper const&                   mobDeath,
+    ::DimensionTypeComponent const&            dimensionType,
+    ::ExperienceRewardComponent const&         experienceReward,
+    ::StateVectorComponent const&              stateVector,
+    ::SpawnExperienceOrbRequestQueueComponent& experienceOrbRequestQueue,
+    ::Optional<::PlayerComponent>              player
 );
 
 MCNAPI void serverTickWitherDie(

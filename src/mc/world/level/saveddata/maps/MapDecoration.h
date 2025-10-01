@@ -54,40 +54,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MapDecoration& operator=(MapDecoration const&);
-    MapDecoration();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapDecoration(::MapDecoration const&);
-
-    MCAPI MapDecoration(
-        ::MapDecoration::Type img,
-        schar                 x,
-        schar                 y,
-        schar                 rot,
-        ::std::string const&  label,
-        ::mce::Color const&   color
-    );
-
     MCAPI ~MapDecoration();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::MapDecoration const&);
-
-    MCAPI void* $ctor(
-        ::MapDecoration::Type img,
-        schar                 x,
-        schar                 y,
-        schar                 rot,
-        ::std::string const&  label,
-        ::mce::Color const&   color
-    );
     // NOLINTEND
 
 public:

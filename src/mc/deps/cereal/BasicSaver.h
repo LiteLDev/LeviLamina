@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct SaverConfig; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal::internal { class BasicSchema; }
 // clang-format on
@@ -18,6 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 112> mUnke6b1a6;
+    ::ll::UntypedStorage<1, 1>   mUnkfed958;
     // NOLINTEND
 
 public:
@@ -39,7 +41,8 @@ public:
     MCNAPI bool saveImpl(
         ::cereal::SchemaWriter&                writer,
         ::entt::meta_handle                    handle,
-        ::cereal::internal::BasicSchema const& fallback
+        ::cereal::internal::BasicSchema const& fallback,
+        ::cereal::SaverConfig const&           config
     );
     // NOLINTEND
 

@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Core { class DiskAccessDiagnostics; }
 namespace Core { class PathView; }
 // clang-format on
 
@@ -58,7 +59,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnkce5dfc;
-    ::ll::UntypedStorage<8, 16> mUnka6e7fd;
+    ::ll::UntypedStorage<8, 16> mUnkb6ced1;
     ::ll::UntypedStorage<8, 16> mUnk81e3dd;
     ::ll::UntypedStorage<8, 16> mUnk164044;
     ::ll::UntypedStorage<8, 56> mUnk893e32;
@@ -73,13 +74,16 @@ public:
     // prevent constructor by default
     DiskAccessTracker& operator=(DiskAccessTracker const&);
     DiskAccessTracker(DiskAccessTracker const&);
+    DiskAccessTracker();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DiskAccessTracker();
+    MCNAPI explicit DiskAccessTracker(::std::unique_ptr<::Core::DiskAccessDiagnostics> diagnostics);
 
     MCNAPI void _addNewWriteOperation(uint64 amount, ::Core::WriteOperation writeOperation, ::Core::PathView path);
+
+    MCNAPI ~DiskAccessTracker();
     // NOLINTEND
 
 public:
@@ -91,7 +95,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(::std::unique_ptr<::Core::DiskAccessDiagnostics> diagnostics);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

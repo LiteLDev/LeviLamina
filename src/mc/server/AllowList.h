@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AllowListEntry;
 namespace Json { class Value; }
 namespace mce { class UUID; }
 // clang-format on
@@ -38,8 +37,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI AllowListEntryMatcher(::std::string name, ::std::string xuid);
-
-        MCNAPI bool operator()(::AllowListEntry& entry);
         // NOLINTEND
 
     public:

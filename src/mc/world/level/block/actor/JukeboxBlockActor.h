@@ -72,10 +72,10 @@ public:
     // vIndex: 23
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 32
+    // vIndex: 31
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 31
+    // vIndex: 30
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 10
@@ -88,10 +88,10 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0

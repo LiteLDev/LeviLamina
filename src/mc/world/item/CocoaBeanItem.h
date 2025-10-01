@@ -27,10 +27,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    // vIndex: 109
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
     // vIndex: 16
@@ -42,7 +42,7 @@ public:
     // vIndex: 60
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 122
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
@@ -54,13 +54,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
     MCFOLD bool $isDye() const;
-
-    MCFOLD ::ItemColor $getItemColor() const;
 
     MCFOLD bool $isValidAuxValue(int auxValue) const;
 

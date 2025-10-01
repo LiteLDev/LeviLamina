@@ -15,6 +15,7 @@ class BlockDescriptor;
 class BlockPos;
 class BlockSource;
 class BlockType;
+class ComponentItem;
 class Container;
 class HashedString;
 class ItemStack;
@@ -49,7 +50,7 @@ public:
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
 
     // vIndex: 7
-    virtual void _initializeComponent() /*override*/;
+    virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
     // vIndex: 0
     virtual ~EntityPlacerItemComponent() /*override*/;
@@ -112,7 +113,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent(::ComponentItem& owner);
     // NOLINTEND
 
 public:

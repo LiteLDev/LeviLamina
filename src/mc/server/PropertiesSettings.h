@@ -99,6 +99,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                      mServerPublicIP;
     ::ll::TypedStorage<8, 24, ::std::vector<::MappedPorts>>                       mPortMappings;
     ::ll::TypedStorage<4, 8, ::Bedrock::Services::DiscoveryConfig>                mDiscoveryConfig;
+    ::ll::TypedStorage<1, 1, bool>                                                mRealmsStoriesEnabled;
     ::ll::TypedStorage<4, 4, ::EducationServicesEnvironment>                      mEducationServicesEnvironment;
     // NOLINTEND
 
@@ -113,8 +114,6 @@ public:
 
     MCAPI ::std::unordered_map<::std::string, ::std::string> getChangedValues() const;
 
-    MCAPI ::SharedTypes::Legacy::Difficulty getDifficulty() const;
-
     MCAPI ::CommandPermissionLevel getOpPermissionLevel() const;
 
     MCAPI ~PropertiesSettings();
@@ -124,6 +123,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool parseBoolValue(::std::string const& value);
+
+    MCAPI static ::SharedTypes::Legacy::Difficulty parseDifficulty(::std::string const& value);
 
     MCAPI static ::GameType parseGameMode(::std::string const& value);
 

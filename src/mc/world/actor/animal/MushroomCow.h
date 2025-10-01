@@ -14,10 +14,10 @@ class MushroomCow : public ::Animal {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 147
+    // vIndex: 148
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    // vIndex: 171
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
     // vIndex: 8

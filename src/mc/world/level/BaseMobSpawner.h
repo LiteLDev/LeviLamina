@@ -65,6 +65,8 @@ public:
 
     MCNAPI void _delay(::BlockSource& source);
 
+    MCNAPI ::ActorDefinitionIdentifier getSpawnTypeId() const;
+
     MCNAPI void removeDisplayEntity();
 
     MCNAPI void setEntityId(::ActorDefinitionIdentifier actorDefId);

@@ -53,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addFeature(
+    MCAPI void _addFeature(
         ::BlockVolume&                                   blocks,
         ::BiomeSource const&                             localBiomeSource,
         ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
@@ -64,7 +64,7 @@ public:
         ::WorldGenContext const&                         context
     );
 
-    MCNAPI void _addTunnel(
+    MCAPI void _addTunnel(
         ::BlockVolume&                                   blocks,
         ::BiomeSource const&                             localBiomeSource,
         ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
@@ -81,7 +81,7 @@ public:
         ::WorldGenContext const&                         context
     ) const;
 
-    MCNAPI void apply(
+    MCAPI void apply(
         ::BlockVolume&                                   blocks,
         ::ChunkPos const&                                pos,
         ::BiomeSource const&                             localBiomeSource,
@@ -95,7 +95,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $_carve(
+    MCAPI bool $_carve(
         ::BlockVolume&                                   blocks,
         ::BiomeSource const&                             localBiomeSource,
         ::CanyonFeatureUtils::CanyonConfiguration const& canyonConfig,
@@ -115,7 +115,7 @@ public:
         ::WorldGenContext const& context
     ) const;
 
-    MCNAPI bool $_isDiggable(::BlockType const& block) const;
+    MCAPI bool $_isDiggable(::BlockType const& block) const;
     // NOLINTEND
 
 public:

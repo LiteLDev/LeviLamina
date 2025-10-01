@@ -27,7 +27,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI void addWriteOperation(bool succeeded, uint64 numBytesWritten);
+
     MCNAPI void clear();
+
+    MCNAPI void notifyChangeInFileSize(int64 changeInSize, int64 changeInAllocatedSize);
     // NOLINTEND
 };
 

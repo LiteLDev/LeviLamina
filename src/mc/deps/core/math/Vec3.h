@@ -12,6 +12,10 @@ public:
     using floatN3::floatN3;
 
 public:
+    // prevent constructor by default
+    Vec3();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool isNan() const;
@@ -52,7 +56,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCAPI void* $ctor(float s);
 
     MCAPI void* $ctor(float x_, float y_, float z_);
     // NOLINTEND

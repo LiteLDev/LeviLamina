@@ -50,10 +50,10 @@ public:
     // vIndex: 0
     virtual ~VanillaGameModuleServer() /*override*/ = default;
 
-    // vIndex: 1
-    virtual void init(::Bedrock::NotNullNonOwnerPtr<::Level> const& level) /*override*/;
-
     // vIndex: 2
+    virtual void init(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level) /*override*/;
+
+    // vIndex: 3
     virtual void initializeBehaviorStack(
         ::Experiments const&                                            experiments,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
@@ -62,7 +62,7 @@ public:
         bool                                                            includeEditorPacks
     ) /*override*/;
 
-    // vIndex: 3
+    // vIndex: 4
     virtual void configureLevel(
         ::Bedrock::NotNullNonOwnerPtr<::Level>& level,
         ::Experiments const&                    experiments,
@@ -71,22 +71,22 @@ public:
         ::ServerScriptManager const*            scriptManager
     ) /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual void configureNewPlayer(::Player& player) /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void configureDocumentation(
         ::IGameModuleDocumentation& moduleDocumentation,
         ::ItemRegistryRef const     docItemRegistry
     ) /*override*/;
 
-    // vIndex: 6
+    // vIndex: 7
     virtual void tick() /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void setupCommands(::CommandRegistry& commandRegistry) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void configureServerNetworkHandler(
         ::ServerInstance&                                     server,
         ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> handler
@@ -107,13 +107,13 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
     );
 
-    MCNAPI void _registerListeners(::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
+    MCNAPI void _registerListeners(::Bedrock::NotNullNonOwnerPtr<::Level> const& level, bool realmsStoriesEnabled);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $init(::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
+    MCNAPI void $init(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
 
     MCNAPI void $initializeBehaviorStack(
         ::Experiments const&                                            experiments,

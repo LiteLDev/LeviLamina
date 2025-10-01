@@ -11,7 +11,7 @@ class LogMessagePayload : public ::Editor::Network::NetworkPayload<::Editor::Net
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 144> mUnk50f857;
+    ::ll::UntypedStorage<8, 136> mUnk50f857;
     // NOLINTEND
 
 public:

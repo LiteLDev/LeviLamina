@@ -10,7 +10,6 @@
 // clang-format off
 class Actor;
 class ActorInfoRegistry;
-class Agent;
 class Block;
 class BlockPos;
 class BlockSource;
@@ -22,7 +21,6 @@ class ItemDescriptor;
 class ItemRegistryRef;
 class ItemStack;
 class ItemStackBase;
-class Player;
 class Vec3;
 struct ResolvedItemIconInfo;
 namespace mce { class Color; }
@@ -36,18 +34,22 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ActorPlacerItem();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
     virtual void tearDown() /*override*/;
 
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
 
     // vIndex: 73
     virtual ::ActorDefinitionIdentifier getActorIdentifier(::ItemStack const&) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
     // vIndex: 48
@@ -56,7 +58,7 @@ public:
     // vIndex: 49
     virtual bool shouldInteractionWithBlockBypassLiquid(::Block const& block) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
@@ -75,7 +77,7 @@ public:
     // vIndex: 64
     virtual bool isActorPlacerItem() const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 122
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
@@ -87,6 +89,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ActorPlacerItem(::std::string const& name, int id, ::ActorDefinitionIdentifier const& actorID);
+
     MCAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
 
     MCAPI ::Actor* _spawnActorAt(
@@ -101,8 +105,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _setAgentOwner(::Player& owner, ::Agent& agent);
-
     MCAPI static void
     forEachCustomEgg(::ItemRegistryRef itemRegistry, ::std::function<void(::Item const&)> const& callback);
 
@@ -117,6 +119,12 @@ public:
     MCAPI static ::std::unordered_map<uint, ::std::string>& mCustomSpawnEggs();
 
     MCAPI static ::std::unordered_map<::HashedString, ::ResolvedItemIconInfo>& mEggTextureInfoMap();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::std::string const& name, int id, ::ActorDefinitionIdentifier const& actorID);
     // NOLINTEND
 
 public:

@@ -62,7 +62,7 @@ public:
     // vIndex: 32
     virtual bool canDestroySpecial(::Block const& block) const /*override*/;
 
-    // vIndex: 81
+    // vIndex: 83
     virtual float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const /*override*/;
 
     // vIndex: 8

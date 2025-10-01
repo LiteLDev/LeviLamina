@@ -29,15 +29,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     // vIndex: 50
     virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 109
+    // vIndex: 111
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& item, ::CompoundTag const* userData) const
         /*override*/;
 
@@ -49,7 +49,7 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 92
+    // vIndex: 94
     virtual bool inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const /*override*/;
 
     // vIndex: 39
@@ -62,6 +62,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::std::string const& getAuthor(::ItemStackBase const& book);
+
     MCAPI static ::PageContent getPage(::ItemStackBase const& book, int index);
 
     MCAPI static int getPageCount(::ItemStackBase const& book);
@@ -108,7 +110,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
     MCFOLD bool $requiresInteract() const;
 

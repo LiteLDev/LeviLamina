@@ -10,6 +10,5 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::ControlScheme::Scheme> mControlScheme;
-    ::ll::TypedStorage<1, 1, bool>                    mWasSetByServer;
     // NOLINTEND
 };

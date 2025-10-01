@@ -9,6 +9,7 @@
 // clang-format off
 class SemVersion;
 namespace Bedrock::Resources { struct BinaryHeader; }
+namespace Puv { class Logger; }
 // clang-format on
 
 namespace Bedrock::Resources {
@@ -18,9 +19,12 @@ public:
     // MinecraftDocumentInput inner types declare
     // clang-format off
     struct Binary;
+    struct NoPayloadCheck;
     // clang-format on
 
     // MinecraftDocumentInput inner types define
+    struct NoPayloadCheck {};
+
     struct Binary {
     public:
         // member variables
@@ -43,6 +47,7 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnkfdcb9e;
     ::ll::UntypedStorage<8, 32>  mUnkf8cada;
     ::ll::UntypedStorage<8, 104> mUnkb30b31;
+    ::ll::UntypedStorage<8, 80>  mUnk5f5319;
     // NOLINTEND
 
 public:
@@ -60,6 +65,9 @@ public:
     // vIndex: 2
     virtual ::Puv::Input::Data data() const /*override*/;
 
+    // vIndex: 3
+    virtual ::Puv::Logger const& getErrors() const /*override*/;
+
     // vIndex: 0
     virtual ~MinecraftDocumentInput() /*override*/;
     // NOLINTEND
@@ -67,17 +75,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MinecraftDocumentInput(::SemVersion const& minModernVersion, ::std::string data);
+    MCNAPI
+    MinecraftDocumentInput(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
 
-    MCNAPI void initAsBinary(::std::string data, ::Bedrock::Resources::BinaryHeader const& header);
+    MCNAPI MinecraftDocumentInput(
+        ::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck,
+        ::SemVersion const&,
+        ::std::string
+    );
 
-    MCNAPI void initAsJson(::std::string data);
+    MCNAPI void init(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
+
+    MCNAPI void
+    initAsBinary(::std::string_view payloadKey, ::std::string data, ::Bedrock::Resources::BinaryHeader const& header);
+
+    MCNAPI void initAsJson(::std::string_view payloadKey, ::std::string data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SemVersion const& minModernVersion, ::std::string data);
+    MCNAPI void* $ctor(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
+
+    MCNAPI void*
+    $ctor(::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck, ::SemVersion const&, ::std::string);
     // NOLINTEND
 
 public:
@@ -92,6 +113,8 @@ public:
     MCNAPI ::SemVersion $version() const;
 
     MCNAPI ::Puv::Input::Data $data() const;
+
+    MCNAPI ::Puv::Logger const& $getErrors() const;
     // NOLINTEND
 
 public:

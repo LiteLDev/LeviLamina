@@ -48,6 +48,17 @@ MCNAPI void singleSendActorLinkPacket(
         ::Optional<::ExitFromPassengerFlagComponent const>> passengerView,
     ::EntityModifier<::SendPacketsComponent>                modifier
 );
+
+MCNAPI void tickSendActorLinkPacket(
+    ::ViewT<::StrictEntityContext, ::ActorUniqueIDComponent const, ::RemovePassengersComponent> view,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Exclude<::SwitchingVehiclesFlagComponent>,
+        ::ActorUniqueIDComponent const,
+        ::Optional<::ActorIsBeingDestroyedFlagComponent const>,
+        ::Optional<::ExitFromPassengerFlagComponent const>> passengers,
+    ::EntityModifier<::SendPacketsComponent>                modifier
+);
 // NOLINTEND
 
 } // namespace SetActorLinkPacketSystemImpl

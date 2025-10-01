@@ -13,19 +13,18 @@ struct CraftingCatalogItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke5a53d;
+    ::ll::UntypedStorage<8, 32> mUnk98977b;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    CraftingCatalogItem& operator=(CraftingCatalogItem const&);
     CraftingCatalogItem(CraftingCatalogItem const&);
     CraftingCatalogItem();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogItem& operator=(::SharedTypes::v1_21_60::CraftingCatalogItem const&);
-
     MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogItem& operator=(::SharedTypes::v1_21_60::CraftingCatalogItem&&);
     // NOLINTEND
 

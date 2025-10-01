@@ -25,8 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BiomeSurfaceMaterialAdjustmentData(::BiomeSurfaceMaterialAdjustmentData&&);
-
     MCNAPI BiomeSurfaceMaterialAdjustmentData(::BiomeSurfaceMaterialAdjustmentData const&);
 
     MCNAPI ~BiomeSurfaceMaterialAdjustmentData();
@@ -41,8 +39,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BiomeSurfaceMaterialAdjustmentData&&);
-
     MCNAPI void* $ctor(::BiomeSurfaceMaterialAdjustmentData const&);
     // NOLINTEND
 

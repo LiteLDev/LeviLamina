@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk3fd471;
-    ::ll::UntypedStorage<4, 4>  mUnkc4dc5a;
+    ::ll::UntypedStorage<1, 1>  mUnkdfa805;
     ::ll::UntypedStorage<1, 1>  mUnk7acc0b;
     // NOLINTEND
 
@@ -20,12 +20,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BlockMenuCategory();
+    MCAPI ~BlockMenuCategory();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

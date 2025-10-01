@@ -52,8 +52,6 @@ public:
 
     MCNAPI void initialize(::IActorManagerConnector& actorManagerConnector);
 
-    MCNAPI void removeRuntimeActorEntity(::ActorRuntimeID actorRuntimeID);
-
     MCNAPI ~ActorRuntimeIDManager();
     // NOLINTEND
 

@@ -21,6 +21,7 @@ struct PlayerInteractWithEntityAfterEvent;
 struct PlayerInventoryItemChangeEvent;
 struct PlayerRespawnEvent;
 struct PlayerScriptInputEvent;
+struct PlayerSwingStartEvent;
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -45,13 +46,13 @@ public:
     // vIndex: 57
     virtual ::EventResult onEvent(::PlayerRespawnEvent const& respawnEvent) /*override*/;
 
-    // vIndex: 61
+    // vIndex: 62
     virtual ::EventResult onEvent(::PlayerInitialSpawnEvent const& initialSpawnEvent) /*override*/;
 
     // vIndex: 52
     virtual ::EventResult onEvent(::PlayerDimensionChangeAfterEvent const& playerDimensionChangeEvent) /*override*/;
 
-    // vIndex: 62
+    // vIndex: 63
     virtual ::EventResult onEvent(::PlayerInputModeChangeEvent const& playerInputModeChangeEvent) /*override*/;
 
     // vIndex: 45
@@ -78,6 +79,9 @@ public:
 
     // vIndex: 46
     virtual ::EventResult onEvent(::PlayerHotbarSelectedSlotChangeEvent const& e) /*override*/;
+
+    // vIndex: 58
+    virtual ::EventResult onEvent(::PlayerSwingStartEvent const& e) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptPlayerEventListener() /*override*/ = default;
@@ -109,6 +113,8 @@ public:
     MCNAPI ::EventResult $onEvent(::PlayerInventoryItemChangeEvent const& e);
 
     MCNAPI ::EventResult $onEvent(::PlayerHotbarSelectedSlotChangeEvent const& e);
+
+    MCNAPI ::EventResult $onEvent(::PlayerSwingStartEvent const& e);
     // NOLINTEND
 
 public:

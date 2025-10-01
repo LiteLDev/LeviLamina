@@ -12,11 +12,9 @@ class ComponentItem;
 class HashedString;
 class ScriptDeferredFlushTracker;
 struct ItemCustomComponentData;
-namespace Json { class Value; }
 namespace ScriptModuleMinecraft { class ScriptCustomComponentParameterCache; }
 namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
 namespace Scripting { class ModuleBindingBuilder; }
-namespace Scripting { struct ModuleDescriptor; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -39,28 +37,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 12
+    // vIndex: 13
     virtual void registerClosures(
         ::HashedString const&                                         componentName,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     ) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual void subscribeToItemForComponent(
         ::ComponentItem&                                item,
         ::std::vector<::ItemCustomComponentData> const& components
     ) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual void clear() /*override*/;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void onPreFlushAfterEvents() /*override*/;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void onPostFlushAfterEvents() /*override*/;
 
     // vIndex: 0
@@ -83,11 +81,6 @@ public:
     _getEventMetadata();
 
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
-
-    MCNAPI static void generateOrderDocumentationForVersion(
-        ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
-        ::Json::Value&                       eventOrderArray
-    );
     // NOLINTEND
 
 public:

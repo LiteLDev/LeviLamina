@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Http { struct Url; }
+namespace Bedrock::Services { class IDiscoveryService; }
 namespace Bedrock::Services { struct DiscoveryConfig; }
 // clang-format on
 
@@ -39,7 +40,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit DiscoveryHelper(::Bedrock::Services::DiscoveryConfig const& discoveryConfig);
+    MCNAPI DiscoveryHelper(
+        ::Bedrock::Services::DiscoveryConfig const&               discoveryConfig,
+        ::std::shared_ptr<::Bedrock::Services::IDiscoveryService> discoveryService
+    );
 
     MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Url> getURL(::std::string const& serviceName);
     // NOLINTEND
@@ -47,7 +51,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::Services::DiscoveryConfig const& discoveryConfig);
+    MCNAPI void* $ctor(
+        ::Bedrock::Services::DiscoveryConfig const&               discoveryConfig,
+        ::std::shared_ptr<::Bedrock::Services::IDiscoveryService> discoveryService
+    );
     // NOLINTEND
 
 public:

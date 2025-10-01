@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace Editor { class ProjectRegion; }
 namespace Editor::Selection { class SelectionContainerEntity; }
 namespace Editor::Selection { class SelectionContainerVolume; }
 // clang-format on
@@ -28,6 +32,9 @@ public:
 
     // vIndex: 4
     virtual ::Editor::Selection::SelectionContainerEntity& containerEntityNonConst() = 0;
+
+    // vIndex: 5
+    virtual ::WeakRef<::Editor::ProjectRegion> getVolumeRegion() const = 0;
     // NOLINTEND
 
 public:

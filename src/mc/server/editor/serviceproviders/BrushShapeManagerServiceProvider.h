@@ -3,12 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/DirectionalPlacementMode.h"
+#include "mc/editor/BrushFlattenMode.h"
+#include "mc/editor/DirectionalPlacementMode.h"
 #include "mc/editor/services/native_brush/BrushPaintCompletionState.h"
 #include "mc/editor/services/native_brush/BrushPaintMode.h"
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class Vec3;
 namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor::BlockMask { class BlockMaskList; }
@@ -63,28 +65,43 @@ public:
     virtual void setTerrainStrength(int const) = 0;
 
     // vIndex: 14
-    virtual void setFlattenHeight(int const) = 0;
+    virtual void setFlattenMode(::Editor::Brush::BrushFlattenMode) = 0;
 
     // vIndex: 15
-    virtual void setFlattenRadius(int const) = 0;
+    virtual void setFlattenSmoothing(int const) = 0;
 
     // vIndex: 16
-    virtual void setBrushShapeVisible(bool const) = 0;
+    virtual void setFloorBlockOverride(bool const) = 0;
 
     // vIndex: 17
-    virtual bool isBusy() = 0;
+    virtual void setBrushShapeVisible(bool const) = 0;
 
     // vIndex: 18
-    virtual void setDirectionalPlacementMode(::Editor::Brush::DirectionalPlacementMode) = 0;
+    virtual bool isBusy() = 0;
 
     // vIndex: 19
-    virtual ::Editor::Brush::DirectionalPlacementMode getDirectionalPlacementMode() const = 0;
+    virtual void setDirectionalPlacementMode(::Editor::Brush::DirectionalPlacementMode) = 0;
 
     // vIndex: 20
-    virtual void setInverseEraseMode(bool const) = 0;
+    virtual ::Editor::Brush::DirectionalPlacementMode getDirectionalPlacementMode() const = 0;
 
     // vIndex: 21
+    virtual void setInverseEraseMode(bool const) = 0;
+
+    // vIndex: 22
     virtual bool getInverseEraseMode() const = 0;
+
+    // vIndex: 23
+    virtual void setItemPlacement(::HashedString const&) = 0;
+
+    // vIndex: 24
+    virtual void pushBlockStateOverride(::HashedString const&, ::std::variant<int, ::std::string, bool> const&) = 0;
+
+    // vIndex: 25
+    virtual void clearBlockStateOverrides() = 0;
+
+    // vIndex: 26
+    virtual void setBlockFacePlacementBasedOnCamera(bool const) = 0;
     // NOLINTEND
 
 public:

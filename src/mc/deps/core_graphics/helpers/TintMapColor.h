@@ -11,16 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 64, ::std::array<::mce::Color, 4>> colors;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI TintMapColor();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
 };

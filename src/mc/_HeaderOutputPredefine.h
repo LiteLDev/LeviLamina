@@ -134,6 +134,7 @@
 #include "concurrentqueue.h" 
 
 struct HWND__;
+struct tagRECT;
 struct _TP_CALLBACK_INSTANCE;
 struct _TP_WAIT;
 struct _TP_WORK;

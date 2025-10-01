@@ -70,8 +70,6 @@ public:
         ::std::string const&                keyPrefix
     );
 
-    MCAPI bool get(::std::string const& id, ::std::string& out, ::std::vector<::std::string> const& params) const;
-
     MCAPI void loadFromPack(
         ::std::string const&                keyPrefix,
         ::PackAccessStrategy const&         accessStrategy,

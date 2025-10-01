@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/puv/LoadResult.h"
 #include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
+class LinkedAssetValidator;
 namespace Bedrock::Resources { class MinecraftDocumentInput; }
 namespace SharedTypes::v1_21_90 { struct CameraPresetFile; }
 namespace cereal { struct ReflectionCtx; }
@@ -17,7 +19,7 @@ class CameraPresetLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnk2ad549;
+    ::ll::UntypedStorage<8, 192> mUnkabfafd;
     // NOLINTEND
 
 public:
@@ -29,7 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CameraPresetLoader(::MolangVersion molangVersion, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI CameraPresetLoader(
+        ::MolangVersion                                    molangVersion,
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
 
     MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_90::CameraPresetFile>
     load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
@@ -40,7 +46,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::MolangVersion molangVersion, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI void* $ctor(
+        ::MolangVersion                                    molangVersion,
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
     // NOLINTEND
 
 public:

@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IPackIOProvider;
 struct DirectoryPackSourceOptions;
 struct PackSourceLoadOptions;
 struct PackSourceLoadResult;
@@ -61,7 +62,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void checkAndRemoveIncompletePacks(::Core::Path const& path);
+    MCNAPI static void checkAndRemoveIncompletePacks(
+        ::Core::Path const&      path,
+        ::IPackIOProvider const& io,
+        bool                     saveEncryptedWorldTemplatePacksAsZips
+    );
     // NOLINTEND
 
 public:

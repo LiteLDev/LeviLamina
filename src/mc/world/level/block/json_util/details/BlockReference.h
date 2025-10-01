@@ -20,21 +20,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockReference();
+    MCAPI BlockReference();
 
-    MCNAPI ~BlockReference();
+    MCAPI ~BlockReference();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

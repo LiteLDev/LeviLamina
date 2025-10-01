@@ -234,5 +234,6 @@ enum class MinecraftPacketIds : int {
     PlayerLocation                           = 326,
     ClientboundControlSchemeSetPacket        = 327,
     ServerScriptDebugDrawerPacket            = 328,
-    EndId                                    = 329,
+    ServerboundPackSettingChangePacket       = 329,
+    EndId                                    = 330,
 };

@@ -84,6 +84,8 @@ public:
 
     MCAPI void force(::Actor& entity, ::DimensionTransitionComponent const& portalEntranceComponent);
 
+    MCAPI bool portalRecordExists(::DimensionType dimensionType, ::PortalRecord const& record) const;
+
     MCAPI void removeMisalignedPortalRecords(
         ::BlockSource&        region,
         ::PortalShape const&  referenceShape,

@@ -13,6 +13,7 @@ public:
 
 public:
     // prevent constructor by default
+    MobEventFilter& operator=(MobEventFilter const&);
     MobEventFilter(MobEventFilter const&);
     MobEventFilter();
 
@@ -20,8 +21,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI MobEventFilter(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
-
-    MCNAPI ::SharedTypes::Legacy::Spawn::MobEventFilter& operator=(::SharedTypes::Legacy::Spawn::MobEventFilter const&);
 
     MCNAPI ::SharedTypes::Legacy::Spawn::MobEventFilter& operator=(::SharedTypes::Legacy::Spawn::MobEventFilter&&);
 

@@ -13,8 +13,8 @@ struct MissingModuleRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnke95a67;
-    ::ll::UntypedStorage<8, 104> mUnkf9e291;
+    ::ll::UntypedStorage<8, 96> mUnke95a67;
+    ::ll::UntypedStorage<8, 96> mUnkf9e291;
     // NOLINTEND
 
 public:

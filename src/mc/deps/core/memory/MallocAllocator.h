@@ -29,6 +29,9 @@ public:
     // vIndex: 6
     virtual void* _realloc(::gsl::not_null<void*> p, uint64 newSize) /*override*/;
 
+    // vIndex: 7
+    virtual void* _alignedRealloc(::gsl::not_null<void*> p, uint64 newSize, uint64 alignment) /*override*/;
+
     // vIndex: 0
     virtual ~MallocAllocator() /*override*/ = default;
     // NOLINTEND
@@ -47,6 +50,8 @@ public:
     MCNAPI uint64 $getUsableSize(void* ptr, bool alignedAllocation);
 
     MCNAPI void* $_realloc(::gsl::not_null<void*> p, uint64 newSize);
+
+    MCNAPI void* $_alignedRealloc(::gsl::not_null<void*> p, uint64 newSize, uint64 alignment);
     // NOLINTEND
 
 public:

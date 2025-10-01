@@ -62,7 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _prepareSpawn(
+    MCAPI bool _prepareSpawn(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         int                             treeHeight,
@@ -73,9 +73,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getTreeHeight(::Random& random) const;
+    MCAPI int $getTreeHeight(::Random& random) const;
 
-    MCNAPI ::std::optional<::BlockPos> $placeTrunk(
+    MCAPI ::std::optional<::BlockPos> $placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::Random&                       random,

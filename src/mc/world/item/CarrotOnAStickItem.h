@@ -28,7 +28,7 @@ public:
     // vIndex: 55
     virtual int getEnchantValue() const /*override*/;
 
-    // vIndex: 82
+    // vIndex: 84
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
     // vIndex: 0

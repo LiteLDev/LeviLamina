@@ -29,7 +29,6 @@ public:
 
 public:
     // prevent constructor by default
-    WidgetAddEntityComponentPayload& operator=(WidgetAddEntityComponentPayload const&);
     WidgetAddEntityComponentPayload(WidgetAddEntityComponentPayload const&);
     WidgetAddEntityComponentPayload();
 
@@ -60,6 +59,9 @@ public:
 
     MCNAPI ::Editor::Network::WidgetAddEntityComponentPayload&
     operator=(::Editor::Network::WidgetAddEntityComponentPayload&&);
+
+    MCNAPI ::Editor::Network::WidgetAddEntityComponentPayload&
+    operator=(::Editor::Network::WidgetAddEntityComponentPayload const&);
     // NOLINTEND
 
 public:

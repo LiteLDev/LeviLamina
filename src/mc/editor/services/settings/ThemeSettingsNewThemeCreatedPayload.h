@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    ThemeSettingsNewThemeCreatedPayload& operator=(ThemeSettingsNewThemeCreatedPayload const&);
     ThemeSettingsNewThemeCreatedPayload(ThemeSettingsNewThemeCreatedPayload const&);
     ThemeSettingsNewThemeCreatedPayload();
 
@@ -35,6 +34,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Editor::Network::ThemeSettingsNewThemeCreatedPayload&
     operator=(::Editor::Network::ThemeSettingsNewThemeCreatedPayload&&);
+
+    MCNAPI ::Editor::Network::ThemeSettingsNewThemeCreatedPayload&
+    operator=(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
     // NOLINTEND
 
 public:

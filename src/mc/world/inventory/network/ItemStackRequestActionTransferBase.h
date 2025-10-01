@@ -44,4 +44,10 @@ public:
 
     MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };

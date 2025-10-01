@@ -143,7 +143,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TickingArea(
+    MCAPI TickingArea(
         ::Dimension&          dimension,
         ::mce::UUID           uniqueId,
         ::std::string const&  name,
@@ -155,15 +155,15 @@ public:
         ::TickingAreaLoadMode loadMode
     );
 
-    MCNAPI void _center(::LevelStorage& levelStorage);
+    MCAPI void _center(::LevelStorage& levelStorage);
 
-    MCNAPI void _save(::LevelStorage& levelStorage);
+    MCAPI void _save(::LevelStorage& levelStorage);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Dimension&          dimension,
         ::mce::UUID           uniqueId,
         ::std::string const&  name,
@@ -179,62 +179,62 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::mce::UUID const& $getId() const;
+    MCFOLD ::mce::UUID const& $getId() const;
 
-    MCNAPI ::std::string const& $getName() const;
+    MCFOLD ::std::string const& $getName() const;
 
-    MCNAPI ::ActorUniqueID const& $getEntityId() const;
+    MCFOLD ::ActorUniqueID const& $getEntityId() const;
 
-    MCNAPI ::Bounds const& $getBounds() const;
+    MCAPI ::Bounds const& $getBounds() const;
 
-    MCNAPI bool $isEntityOwned() const;
+    MCAPI bool $isEntityOwned() const;
 
-    MCNAPI bool $isAlwaysActive() const;
+    MCFOLD bool $isAlwaysActive() const;
 
-    MCNAPI float $getMaxDistToPlayers() const;
+    MCAPI float $getMaxDistToPlayers() const;
 
-    MCNAPI ::ITickingAreaView const& $getView() const;
+    MCFOLD ::ITickingAreaView const& $getView() const;
 
-    MCNAPI ::ITickingAreaView& $getView();
+    MCFOLD ::ITickingAreaView& $getView();
 
-    MCNAPI ::WeakRef<::BlockSource> const $getBlockSource() const;
+    MCFOLD ::WeakRef<::BlockSource> const $getBlockSource() const;
 
-    MCNAPI ::WeakRef<::BlockSource> $getBlockSource();
+    MCFOLD ::WeakRef<::BlockSource> $getBlockSource();
 
-    MCNAPI ::TickingAreaDescription $getDescription() const;
+    MCAPI ::TickingAreaDescription $getDescription() const;
 
-    MCNAPI void $setLoadMode(::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage);
+    MCAPI void $setLoadMode(::TickingAreaLoadMode loadMode, ::LevelStorage& levelStorage);
 
-    MCNAPI bool $isPreloadDone() const;
+    MCAPI bool $isPreloadDone() const;
 
-    MCNAPI void $tick(::Tick const& currentTick, bool randomize);
+    MCAPI void $tick(::Tick const& currentTick, bool randomize);
 
-    MCNAPI void $tickSeasons(::Random& random);
+    MCAPI void $tickSeasons(::Random& random);
 
-    MCNAPI void $updatePosition(::Vec3 const& pos);
+    MCAPI void $updatePosition(::Vec3 const& pos);
 
-    MCNAPI void $updateAndCenter(::LevelStorage& levelStorage, ::Tick currentLevelTick);
+    MCAPI void $updateAndCenter(::LevelStorage& levelStorage, ::Tick currentLevelTick);
 
-    MCNAPI ::Actor* $findOwner(uchar& pendingChunks);
+    MCAPI ::Actor* $findOwner(uchar& pendingChunks);
 
-    MCNAPI bool $entityHasBeenFound() const;
+    MCAPI bool $entityHasBeenFound() const;
 
-    MCNAPI void $setEntityFound();
+    MCAPI void $setEntityFound();
 
-    MCNAPI bool $isRemoved();
+    MCAPI bool $isRemoved();
 
-    MCNAPI void $remove(::LevelStorage& levelStorage);
+    MCAPI void $remove(::LevelStorage& levelStorage);
 
-    MCNAPI void
+    MCAPI void
     $onComponentChanged(uint radius, float maxDistToPlayers, bool alwaysActive, ::LevelStorage& levelStorage);
 
-    MCNAPI void $updateBlockSourceCurrentTick(::Tick const& currentTick);
+    MCAPI void $updateBlockSourceCurrentTick(::Tick const& currentTick);
     // NOLINTEND
 
 public:

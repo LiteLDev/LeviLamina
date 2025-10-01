@@ -60,7 +60,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BlockPos _generateBranch(
+    MCAPI ::BlockPos _generateBranch(
         ::IBlockWorldGenAPI&            target,
         ::Block const&                  trunkBlock,
         ::Block const&                  sidewaysTrunkBlock,
@@ -77,9 +77,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getTreeHeight(::Random& random) const;
+    MCAPI int $getTreeHeight(::Random& random) const;
 
-    MCNAPI ::std::optional<::BlockPos> $placeTrunk(
+    MCAPI ::std::optional<::BlockPos> $placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::Random&                       random,

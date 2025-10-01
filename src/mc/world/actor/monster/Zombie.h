@@ -41,10 +41,10 @@ public:
     // vIndex: 2
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    // vIndex: 155
+    // vIndex: 156
     virtual int getArmorValue() const /*override*/;
 
     // vIndex: 8

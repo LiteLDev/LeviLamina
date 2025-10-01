@@ -104,10 +104,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 63
+    // vIndex: 64
     virtual ::EventResult onEvent(::PlayerFormResponseEvent const& formResponseEvent) /*override*/;
 
-    // vIndex: 64
+    // vIndex: 65
     virtual ::EventResult onEvent(::PlayerFormCloseEvent const& formCloseEvent) /*override*/;
 
     // vIndex: 0

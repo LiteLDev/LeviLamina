@@ -190,6 +190,12 @@ public:
     ) const;
 
     MCNAPI ::Scripting::Result<
+        ::ScriptModuleMinecraft::ScriptBiomeType,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    getBiome(::Vec3 const& location) const;
+
+    MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
@@ -284,6 +290,10 @@ public:
 
     MCNAPI ::std::string getId() const;
 
+    MCNAPI ::Scripting::
+        Result<int, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
+        getLightLevel(::Vec3 const& location) const;
+
     MCNAPI ::std::string getLocalizationKey() const;
 
     MCNAPI ::Scripting::Result<
@@ -296,6 +306,10 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerIterator>>
     getPlayers_V010(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
 
+    MCNAPI ::Scripting::
+        Result<int, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
+        getSkyLightLevel(::Vec3 const& location) const;
+
     MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
     getTopmostBlock(
@@ -305,6 +319,8 @@ public:
     ) const;
 
     MCNAPI ::ScriptModuleMinecraft::ScriptWeatherType getWeather() const;
+
+    MCNAPI bool isChunkLoaded(::Vec3 const& location) const;
 
     MCNAPI bool isEmpty_V010(::BlockPos const& position) const;
 

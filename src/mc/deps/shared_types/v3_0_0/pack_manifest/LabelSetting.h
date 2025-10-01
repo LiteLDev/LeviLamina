@@ -14,15 +14,13 @@ public:
 
 public:
     // prevent constructor by default
+    LabelSetting& operator=(LabelSetting const&);
     LabelSetting(LabelSetting const&);
     LabelSetting();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting const&);
-
     MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting&&);
 

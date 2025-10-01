@@ -40,11 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptCustomComponentNameError(
-        ::HashedString const&                                           componentName,
-        ::ScriptModuleMinecraft::ScriptCustomComponentNameError::Reason reason
-    );
-
     MCNAPI ~ScriptCustomComponentNameError();
     // NOLINTEND
 
@@ -58,13 +53,6 @@ public:
     MCNAPI static ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentNameError, ::Scripting::EngineError>
         validate(::HashedString const& componentName);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::HashedString const& componentName, ::ScriptModuleMinecraft::ScriptCustomComponentNameError::Reason reason);
     // NOLINTEND
 
 public:

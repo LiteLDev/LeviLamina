@@ -54,7 +54,7 @@ public:
 
     // vIndex: 8
     virtual void
-    OnConnectionRequestResponse(::cricket::StunRequest* request, ::cricket::StunMessage* response) /*override*/;
+    OnConnectionRequestResponse(::cricket::StunRequest* req, ::cricket::StunMessage* response) /*override*/;
     // NOLINTEND
 
 public:
@@ -108,7 +108,7 @@ public:
 
     MCNAPI int $GetError();
 
-    MCNAPI void $OnConnectionRequestResponse(::cricket::StunRequest* request, ::cricket::StunMessage* response);
+    MCNAPI void $OnConnectionRequestResponse(::cricket::StunRequest* req, ::cricket::StunMessage* response);
     // NOLINTEND
 
 public:

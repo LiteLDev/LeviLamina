@@ -88,9 +88,6 @@ public:
 
     MCNAPI int _tryAddItem(::ContainerValidationSlotInfo& slotInfo, int addCount, bool allowPartialSuccess);
 
-    MCNAPI bool
-    _tryMoveItem(::ContainerValidationSlotInfo& srcValidatorPair, ::ContainerValidationSlotInfo& dstValidatorPair);
-
     MCNAPI ::ItemStack _tryRemoveItem(::ContainerValidationSlotInfo& slotInfo, int amount);
 
     MCNAPI int _trySetItem(

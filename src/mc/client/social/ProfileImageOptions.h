@@ -17,9 +17,10 @@ public:
         MinecraftHeadshotByXuid      = 1,
         MinecraftHeadshotByPlayfabId = 2,
         MinecraftAvatarByXuid        = 3,
-        XboxLiveSmallGamerpicByXuid  = 4,
-        XboxLiveSmallGamerpicByUrl   = 5,
-        XboxLiveFullClubsImageByUrl  = 6,
+        MinecraftAvatarByPlayfabId   = 4,
+        XboxLiveSmallGamerpicByXuid  = 5,
+        XboxLiveSmallGamerpicByUrl   = 6,
+        XboxLiveFullClubsImageByUrl  = 7,
     };
 
 public:

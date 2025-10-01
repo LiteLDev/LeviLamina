@@ -51,13 +51,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~WeightedBlockReference();
+        MCAPI ~WeightedBlockReference();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -91,13 +91,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

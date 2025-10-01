@@ -43,6 +43,7 @@ public:
         ::ll::UntypedStorage<1, 1>  mUnkd1f2c4;
         ::ll::UntypedStorage<1, 1>  mUnkf0c77b;
         ::ll::UntypedStorage<1, 1>  mUnk7a6716;
+        ::ll::UntypedStorage<1, 1>  mUnk9d0dab;
         ::ll::UntypedStorage<1, 1>  mUnkeff0d7;
         ::ll::UntypedStorage<1, 1>  mUnkafa516;
         ::ll::UntypedStorage<1, 1>  mUnk4b7f87;
@@ -133,6 +134,9 @@ public:
     // vIndex: 30
     virtual bool isEduAIOn() const /*override*/;
 
+    // vIndex: 31
+    virtual bool isDedicatedServerOn() const /*override*/;
+
     // vIndex: 20
     virtual bool requireEduLevelSettings() const /*override*/;
 
@@ -163,13 +167,13 @@ public:
     // vIndex: 25
     virtual bool useEduDemoUpsellDialog() const /*override*/;
 
-    // vIndex: 32
+    // vIndex: 33
     virtual ::std::vector<::PackIdVersion> getAdditionalClientPacks(bool enteringLevel) const /*override*/;
 
-    // vIndex: 35
+    // vIndex: 36
     virtual ::std::string getFeedbackURL() const /*override*/;
 
-    // vIndex: 37
+    // vIndex: 38
     virtual void applyLevelDataOverride(::LevelData&) const /*override*/;
     // NOLINTEND
 

@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> _place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> _place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

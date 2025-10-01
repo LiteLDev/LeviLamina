@@ -45,11 +45,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $addValue(::CompoundTag const& tag);
+    MCAPI void $addValue(::CompoundTag const& tag);
 
-    MCNAPI void $match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const;
+    MCFOLD void $match(::CompoundTagUpdaterNodeBuilder& builder, uint64 index) const;
 
-    MCNAPI uint64 $valueCount() const;
+    MCFOLD uint64 $valueCount() const;
     // NOLINTEND
 
 public:

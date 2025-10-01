@@ -15,7 +15,6 @@ public:
 
 public:
     // prevent constructor by default
-    Dependency& operator=(Dependency const&);
     Dependency(Dependency const&);
     Dependency();
 
@@ -24,6 +23,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Dependency&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Dependency&&);
+
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Dependency&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Dependency const&);
     // NOLINTEND
 };
 

@@ -48,7 +48,7 @@ public:
         ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptTransferServiceDataResponse>,
         ::Scripting::Error,
         void>>
-    _requestData(::Scripting::ScriptObjectFactory& factory, ::std::string const& collectionName);
+    _requestData(::Scripting::ScriptObjectFactory& factory, ::std::string const& collectionName, bool useSnapshot);
 
     MCNAPI ::Scripting::Result_deprecated<void>
     _sendData(::std::string const& collectionName, ::std::string const& jsonData);

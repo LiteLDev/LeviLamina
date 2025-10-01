@@ -9,14 +9,14 @@
 // clang-format off
 class MinEngineVersion;
 class SemVersion;
-namespace SharedTypes::v1_21_100 { struct ActorDefinitions; }
+namespace SharedTypes::v1_21_110 { struct ActorDefinitions; }
 // clang-format on
 
 struct ActorDocumentDataParams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkb54d29;
+    ::ll::UntypedStorage<8, 8>  mUnkbc0d8e;
     ::ll::UntypedStorage<8, 24> mUnk4b99f1;
     ::ll::UntypedStorage<8, 32> mUnkd3c737;
     ::ll::UntypedStorage<1, 1>  mUnk6b732f;
@@ -34,7 +34,7 @@ public:
     MCNAPI ActorDocumentDataParams(::ActorDocumentDataParams const&);
 
     MCNAPI ActorDocumentDataParams(
-        ::SharedTypes::v1_21_100::ActorDefinitions& value,
+        ::SharedTypes::v1_21_110::ActorDefinitions& value,
         ::SemVersion const&                         formatVersion,
         ::MinEngineVersion const&                   minEngineVersion,
         bool                                        isBaseGamePack,
@@ -50,7 +50,7 @@ public:
     MCNAPI void* $ctor(::ActorDocumentDataParams const&);
 
     MCNAPI void* $ctor(
-        ::SharedTypes::v1_21_100::ActorDefinitions& value,
+        ::SharedTypes::v1_21_110::ActorDefinitions& value,
         ::SemVersion const&                         formatVersion,
         ::MinEngineVersion const&                   minEngineVersion,
         bool                                        isBaseGamePack,

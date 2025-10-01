@@ -48,18 +48,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
-    // vIndex: 148
+    // vIndex: 149
     virtual bool checkSpawnObstruction() const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
     // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 177
+    // vIndex: 178
     virtual ::SharedTypes::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const;
 
     // vIndex: 2
@@ -106,7 +106,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCFOLD bool $checkSpawnObstruction() const;
 

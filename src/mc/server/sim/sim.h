@@ -19,8 +19,6 @@ namespace sim {
 // NOLINTBEGIN
 MCAPI ::sim::LookAtIntent lookAt(::SimulatedPlayer& player, ::EntityContext& entity, ::sim::LookDuration duration);
 
-MCAPI ::sim::LookAtIntent lookAt(::SimulatedPlayer& player, ::glm::vec3 position, ::sim::LookDuration duration);
-
 MCAPI ::sim::BuildIntent startBuild(::SimulatedPlayer& player, ::BlockSource& region, int slot);
 // NOLINTEND
 

@@ -19,7 +19,7 @@ public:
     ::ll::UntypedStorage<1, 1>    mUnk9d9552;
     ::ll::UntypedStorage<8, 16>   mUnk9e3f64;
     ::ll::UntypedStorage<8, 16>   mUnkf97f14;
-    ::ll::UntypedStorage<8, 80>   mUnkad08df;
+    ::ll::UntypedStorage<8, 72>   mUnkad08df;
     // NOLINTEND
 
 public:
@@ -31,8 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TransactionFrameSourceTarget(::Core::PathView source, ::Core::PathView target);
-
     MCNAPI ~TransactionFrameSourceTarget();
     // NOLINTEND
 
@@ -45,12 +43,6 @@ public:
         ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> sameStorageAreaFunction,
         ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> differentStorageAreaFunction
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::PathView source, ::Core::PathView target);
     // NOLINTEND
 
 public:

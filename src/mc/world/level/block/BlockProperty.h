@@ -40,7 +40,6 @@ enum class BlockProperty : uint64 {
     Unwalkable                       = 1ull << 38,
     Hollow                           = 1ull << 40,
     OperatorBlock                    = 1ull << 41,
-    SupportedByFlowerPot             = 1ull << 42,
     PreventsJumping                  = 1ull << 43,
     ContainsHoney                    = 1ull << 44,
     Slime                            = 1ull << 45,

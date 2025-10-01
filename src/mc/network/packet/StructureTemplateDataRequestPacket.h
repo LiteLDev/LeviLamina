@@ -4,26 +4,24 @@
 
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
-#include "mc/network/NetworkBlockPosition.h"
 #include "mc/network/Packet.h"
-#include "mc/network/packet/StructureTemplateRequestOperation.h"
+#include "mc/network/packet/StructureTemplateDataRequestPacketPayload.h"
+#include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
-#include "mc/world/level/levelgen/structure/StructureSettings.h"
 
 // auto generated forward declare list
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class StructureTemplateDataRequestPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                      mStructureName;
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>             mStructureBlockPos;
-    ::ll::TypedStorage<8, 104, ::StructureSettings>               mStructureSettings;
-    ::ll::TypedStorage<1, 1, ::StructureTemplateRequestOperation> mRequestOperation;
+    ::ll::TypedStorage<8, 160, ::StructureTemplateDataRequestPacketPayload> mPayload;
+    ::ll::TypedStorage<4, 4, ::SerializationMode>                           mSerializationMode;
     // NOLINTEND
 
 public:
@@ -35,11 +33,44 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
+    // vIndex: 11
+    virtual ::SerializationMode getSerializationMode() const /*override*/;
+
+    // vIndex: 12
+    virtual void setSerializationMode(::SerializationMode mode) /*override*/;
+
+    // vIndex: 4
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
+
+    // vIndex: 6
+    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
+
     // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
+    // vIndex: 8
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+
+    // vIndex: 9
+    virtual bool disallowBatching() const /*override*/;
+
+    // vIndex: 10
+    virtual bool isValid() const /*override*/;
+
     // vIndex: 13
+    virtual ::std::string toString() const /*override*/;
+
+    // vIndex: 14
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    // vIndex: 15
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
     // vIndex: 0
     virtual ~StructureTemplateDataRequestPacket() /*override*/ = default;
@@ -64,9 +95,33 @@ public:
 
     MCAPI ::std::string $getName() const;
 
+    MCFOLD ::SerializationMode $getSerializationMode() const;
+
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
+
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
+
+    MCFOLD void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
     MCAPI void $write(::BinaryStream& stream) const;
 
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    MCFOLD bool $disallowBatching() const;
+
+    MCFOLD bool $isValid() const;
+
+    MCAPI ::std::string $toString() const;
+
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+
+    MCAPI ::Bedrock::Result<void>
+    $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:

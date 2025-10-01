@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/LogChannel.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/editor/LogChannel.h"
 #include "mc/editor/logging/LogLevel.h"
 
 // auto generated forward declare list
@@ -30,8 +30,8 @@ public:
         ::Player*,
         ::Editor::LogLevel,
         ::std::vector<::HashedString>&&,
-        ::std::optional<::Editor::LogChannel>,
-        ::std::optional<::std::string>&&) = 0;
+        ::Editor::LogChannel,
+        ::std::string) = 0;
 
     // vIndex: 2
     virtual void flush() = 0;

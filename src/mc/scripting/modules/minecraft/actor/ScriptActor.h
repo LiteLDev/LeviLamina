@@ -45,6 +45,7 @@ namespace ScriptModuleMinecraft { struct ScriptCommandError; }
 namespace ScriptModuleMinecraft { struct ScriptCommandResult; }
 namespace ScriptModuleMinecraft { struct ScriptEntityEffectOptions; }
 namespace ScriptModuleMinecraft { struct ScriptEntityRaycastOptions; }
+namespace ScriptModuleMinecraft { struct ScriptGetBlocksStandingOnOptions; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraft { struct ScriptPlayAnimationOptions; }
 namespace ScriptModuleMinecraft { struct ScriptTeleportOptions; }
@@ -120,58 +121,45 @@ public:
     // vIndex: 3
     virtual ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
-        clearVelocityStable(::Actor& self);
-
-    // vIndex: 4
-    virtual ::Scripting::
-        Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
         lookAt(::Actor& self, ::Vec3 const& targetLocation);
 
-    // vIndex: 5
+    // vIndex: 4
     virtual ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getNameTag(::Actor const& self) const;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual ::Scripting::Result_deprecated<::std::string> getNameTag_010(::Actor const& self) const;
 
-    // vIndex: 7
+    // vIndex: 6
     virtual ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     setNameTag(::Actor& self, ::std::string const& nameTag);
 
-    // vIndex: 8
+    // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> setNameTag_010(::Actor& self, ::std::string const& nameTag);
 
-    // vIndex: 9
+    // vIndex: 8
     virtual ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getSneaking(::Actor const& self) const;
 
-    // vIndex: 10
+    // vIndex: 9
     virtual ::Scripting::Result_deprecated<bool> getSneaking_010(::Actor const& self) const;
 
-    // vIndex: 11
+    // vIndex: 10
     virtual ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     setSneaking(::Actor& self, bool isSneaking);
 
-    // vIndex: 12
+    // vIndex: 11
     virtual ::Scripting::Result_deprecated<void> setSneaking_010(::Actor& self, bool isSneaking);
 
-    // vIndex: 13
-    virtual ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptInvalidActorError,
-        ::Scripting::ArgumentOutOfBoundsError,
-        ::Scripting::UnsupportedAPIError>
-    applyImpulseStable(::Actor& self, ::Vec3 const& vector);
-
-    // vIndex: 14
+    // vIndex: 12
     virtual ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
         remove(::Actor& self);
 
-    // vIndex: 15
+    // vIndex: 13
     virtual bool isValid() const;
 
-    // vIndex: 16
+    // vIndex: 14
     virtual ::ScoreboardId const& _getScoreboardId(::Scoreboard const& scoreboard) const;
     // NOLINTEND
 
@@ -261,7 +249,7 @@ public:
 
     MCAPI ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
-        applyImpulseBeta(::Actor& self, ::Vec3 const& vector);
+        applyImpulse(::Actor& self, ::Vec3 const& vector);
 
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     applyKnockback_V1(
@@ -278,10 +266,19 @@ public:
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     clearDynamicProperties(::Actor& self, ::Scripting::ContextConfig const& contextConfig);
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError> clearVelocityBeta(::Actor& self);
+    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError> clearVelocity(::Actor& self);
 
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     extinguishFire(::Actor& self, bool useEffects);
+
+    MCAPI ::Scripting::Result<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getAllBlocksStandingOn(
+        ::Actor const&                                                                    self,
+        ::Scripting::WeakLifetimeScope                                                    scope,
+        ::std::optional<::ScriptModuleMinecraft::ScriptGetBlocksStandingOnOptions> const& options
+    ) const;
 
     MCAPI ::Scripting::Result<
         ::std::optional<::ScriptModuleMinecraft::ScriptBlockRaycastHit>,
@@ -300,6 +297,15 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptBlockRaycastOptions> const& options
     ) const;
 
+    MCAPI ::Scripting::Result<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getBlockStandingOn(
+        ::Actor const&                                                                    self,
+        ::Scripting::WeakLifetimeScope                                                    scope,
+        ::std::optional<::ScriptModuleMinecraft::ScriptGetBlocksStandingOnOptions> const& options
+    ) const;
+
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>>
     getComponent(
         ::Scripting::WeakLifetimeScope scope,
@@ -315,14 +321,13 @@ public:
             factories
     );
 
-    MCFOLD ::Scripting::Result<
+    MCAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::EngineError>
     getDimension(::Actor const& self) const;
 
-    MCFOLD ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
+    MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
     getDimension_010(::Actor const& self) const;
 
     MCAPI ::Scripting::Result<
@@ -391,10 +396,10 @@ public:
     MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getLocalizationKey(::Actor const& self) const;
 
-    MCFOLD ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getLocation(::Actor const& self) const;
 
-    MCFOLD ::Scripting::Result_deprecated<::Vec3> getLocation_010(::Actor const& self) const;
+    MCAPI ::Scripting::Result_deprecated<::Vec3> getLocation_010(::Actor const& self) const;
 
     MCAPI ::Scripting::Result<
         ::std::optional<::std::variant<float, bool, ::std::string>>,
@@ -410,10 +415,10 @@ public:
     MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>>
     getScoreboardIdentity();
 
-    MCFOLD ::Scripting::Result<::std::vector<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCAPI ::Scripting::Result<::std::vector<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getTags(::Actor const& self) const;
 
-    MCFOLD ::Scripting::Result_deprecated<::std::vector<::std::string>> getTags_010(::Actor const& self) const;
+    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getTags_010(::Actor const& self) const;
 
     MCAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>,
@@ -444,10 +449,10 @@ public:
         ::std::string const& name
     );
 
-    MCFOLD ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     hasTag(::Actor const& self, ::std::string const& tag) const;
 
-    MCFOLD ::Scripting::Result_deprecated<bool> hasTag_010(::Actor const& self, ::std::string const& tag) const;
+    MCAPI ::Scripting::Result_deprecated<bool> hasTag_010(::Actor const& self, ::std::string const& tag) const;
 
     MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     isClimbing(::Actor const& self) const;
@@ -503,10 +508,10 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> const& effectType
     );
 
-    MCFOLD ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     removeTag(::Actor& self, ::std::string const& tag);
 
-    MCFOLD ::Scripting::Result_deprecated<bool> removeTag_010(::Actor& self, ::std::string const& tag);
+    MCAPI ::Scripting::Result_deprecated<bool> removeTag_010(::Actor& self, ::std::string const& tag);
 
     MCAPI ::Scripting::Result<
         ::std::variant<float, bool, ::std::string>,
@@ -669,38 +674,28 @@ public:
 
     MCAPI void $setUnloaded(::Actor& actor);
 
-    MCFOLD ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
-    $clearVelocityStable(::Actor& self);
-
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     $lookAt(::Actor& self, ::Vec3 const& targetLocation);
 
-    MCFOLD ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $getNameTag(::Actor const& self) const;
 
-    MCFOLD ::Scripting::Result_deprecated<::std::string> $getNameTag_010(::Actor const& self) const;
+    MCAPI ::Scripting::Result_deprecated<::std::string> $getNameTag_010(::Actor const& self) const;
 
     MCFOLD ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $setNameTag(::Actor& self, ::std::string const& nameTag);
 
     MCFOLD ::Scripting::Result_deprecated<void> $setNameTag_010(::Actor& self, ::std::string const& nameTag);
 
-    MCFOLD ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $getSneaking(::Actor const& self) const;
 
-    MCFOLD ::Scripting::Result_deprecated<bool> $getSneaking_010(::Actor const& self) const;
+    MCAPI ::Scripting::Result_deprecated<bool> $getSneaking_010(::Actor const& self) const;
 
     MCFOLD ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $setSneaking(::Actor& self, bool isSneaking);
 
     MCFOLD ::Scripting::Result_deprecated<void> $setSneaking_010(::Actor& self, bool isSneaking);
-
-    MCAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptInvalidActorError,
-        ::Scripting::ArgumentOutOfBoundsError,
-        ::Scripting::UnsupportedAPIError>
-    $applyImpulseStable(::Actor& self, ::Vec3 const& vector);
 
     MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     $remove(::Actor& self);

@@ -18,22 +18,22 @@ struct Constraint : public ::cereal::Constraint {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+    // vIndex: 1
     virtual void doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const /*override*/;
 
-    // vIndex: 2
+    // vIndex: 3
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
-    // vIndex: 1
+    // vIndex: 2
     virtual ~Constraint() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
+    MCAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
 
-    MCNAPI ::cereal::internal::ConstraintDescription $description() const;
+    MCFOLD ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 
 public:

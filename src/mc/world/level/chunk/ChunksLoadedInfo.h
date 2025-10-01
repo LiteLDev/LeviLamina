@@ -35,16 +35,5 @@ public:
         ::Tick             currentLevelTick,
         bool               allowNonTickingPlayerAndTickingAreaChunks
     );
-
-    MCNAPI static ::ChunksLoadedInfo calculateChunksLoadedInfo(
-        ::Dimension const& dimension,
-        ::ChunkSource&     source,
-        ::Bounds const&    bounds,
-        bool               isCircleArea,
-        ::Tick             currentLevelTick,
-        bool               allowUnloadedChunks,
-        bool               allowNonTickingPlayerAndTickingAreaChunks,
-        bool               allowPlayerChunks
-    );
     // NOLINTEND
 };

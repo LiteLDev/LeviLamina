@@ -11,14 +11,13 @@ public:
 
 public:
     // prevent constructor by default
+    ShowProfilePacketPayload& operator=(ShowProfilePacketPayload const&);
     ShowProfilePacketPayload(ShowProfilePacketPayload const&);
     ShowProfilePacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ShowProfilePacketPayload& operator=(::ShowProfilePacketPayload const&);
-
     MCFOLD ::ShowProfilePacketPayload& operator=(::ShowProfilePacketPayload&&);
 
     MCAPI ~ShowProfilePacketPayload();

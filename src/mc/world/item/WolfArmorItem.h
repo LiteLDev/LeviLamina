@@ -35,10 +35,10 @@ public:
     isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const
         /*override*/;
 
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    // vIndex: 110
+    // vIndex: 112
     virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const /*override*/;
 
     // vIndex: 52
@@ -49,7 +49,7 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
     // vIndex: 56

@@ -15,6 +15,7 @@ public:
 
 public:
     // prevent constructor by default
+    Subpack& operator=(Subpack const&);
     Subpack(Subpack const&);
     Subpack();
 
@@ -23,9 +24,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Subpack&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Subpack&&);
-
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Subpack&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Subpack const&);
     // NOLINTEND
 };
 

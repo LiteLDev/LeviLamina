@@ -22,12 +22,13 @@ public:
 public:
     // prevent constructor by default
     ActorInfo& operator=(ActorInfo const&);
-    ActorInfo(ActorInfo const&);
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ActorInfo();
+
+    MCNAPI ActorInfo(::ActorInfo const&);
 
     MCNAPI void load(::CompoundTag const* tag);
 
@@ -40,6 +41,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+
+    MCNAPI void* $ctor(::ActorInfo const&);
     // NOLINTEND
 
 public:

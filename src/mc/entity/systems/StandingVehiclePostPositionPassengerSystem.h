@@ -36,6 +36,21 @@ public:
             ::RenderPositionComponent const> horseView
     );
 
+    MCNAPI static void _tick(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::PositionPassengerRequestComponent>,
+            ::PassengerComponent const,
+            ::ActorSetPositionRequestComponent> view,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::HorseFlagComponent>,
+            ::StandAnimationComponent const,
+            ::RenderRotationComponent const,
+            ::Include<::VehicleComponent>,
+            ::RenderPositionComponent const> horseView
+    );
+
     MCNAPI static void _tickSingleEntity(
         ::StrictEntityContext const& entityContext,
         ::ViewT<

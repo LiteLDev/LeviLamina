@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/platform/Result.h"
 #include "mc/util/ThreadOwner.h"
-#include "mc/world/actor/player/persona/AnimatedTextureType.h"
 
 // auto generated forward declare list
 // clang-format off
-class ReadOnlyBinaryStream;
+class MinEngineVersion;
 class SerializedSkinImpl;
+namespace Json { class Value; }
+namespace mce { struct Image; }
 // clang-format on
 
 class SerializedSkin {
@@ -39,13 +39,31 @@ public:
     // NOLINTBEGIN
     MCAPI SerializedSkin();
 
-    MCAPI float getAnimationFrames(::persona::AnimatedTextureType animationType) const;
+    MCAPI SerializedSkin(
+        ::std::string const&      name,
+        ::std::string const&      playFabId,
+        ::std::string const&      resourcePatch,
+        ::mce::Image const&       skinImage,
+        ushort const&             skinImageWidth,
+        ushort const&             skinImageHeight,
+        ::mce::Image const&       capeImage,
+        ushort const&             capeImageWidth,
+        ushort const&             capeImageHeight,
+        ::Json::Value&&           geometryData,
+        ::MinEngineVersion const& geometryDataMinEngineVersion,
+        ::std::string const&      animationData,
+        ::std::string const&      capeId,
+        bool                      isTrustedSkin,
+        bool                      isPremium,
+        bool                      isPersona,
+        bool                      isPersonaCapeOnClassicSkin,
+        bool                      isPrimaryUser,
+        bool                      overridesPlayerAppearance
+    );
 
     MCFOLD ::SerializedSkin& operator=(::SerializedSkin&&);
 
     MCFOLD ::SerializedSkin& operator=(::SerializedSkin const&);
-
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
     MCAPI ~SerializedSkin();
     // NOLINTEND
@@ -54,6 +72,28 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+    MCAPI void* $ctor(
+        ::std::string const&      name,
+        ::std::string const&      playFabId,
+        ::std::string const&      resourcePatch,
+        ::mce::Image const&       skinImage,
+        ushort const&             skinImageWidth,
+        ushort const&             skinImageHeight,
+        ::mce::Image const&       capeImage,
+        ushort const&             capeImageWidth,
+        ushort const&             capeImageHeight,
+        ::Json::Value&&           geometryData,
+        ::MinEngineVersion const& geometryDataMinEngineVersion,
+        ::std::string const&      animationData,
+        ::std::string const&      capeId,
+        bool                      isTrustedSkin,
+        bool                      isPremium,
+        bool                      isPersona,
+        bool                      isPersonaCapeOnClassicSkin,
+        bool                      isPrimaryUser,
+        bool                      overridesPlayerAppearance
+    );
     // NOLINTEND
 
 public:

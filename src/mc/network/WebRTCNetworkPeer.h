@@ -55,12 +55,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void _updateConnectionStatus();
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_21_40/clientbiome/components/IClientBiomeJsonComponent.h"
+#include "mc/v1_21_40/clientbiome/components/ClientBiomeComponentVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +17,7 @@ struct FogAppearanceClientBiomeJsonComponent : public ::SharedTypes::v1_21_40::I
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf26d2a;
+    ::ll::UntypedStorage<8, 32> mUnk5c35d3;
     // NOLINTEND
 
 public:
@@ -28,6 +29,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
+    virtual ::ClientBiomeComponentVersion getType() const /*override*/;
+
     // vIndex: 0
     virtual ~FogAppearanceClientBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
@@ -44,6 +48,12 @@ public:
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI ::ClientBiomeComponentVersion $getType() const;
     // NOLINTEND
 
 public:

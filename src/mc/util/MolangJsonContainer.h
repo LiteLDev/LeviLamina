@@ -19,10 +19,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    MolangJsonContainer& operator=(MolangJsonContainer const&);
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI MolangJsonContainer();
@@ -30,6 +26,8 @@ public:
     MCNAPI MolangJsonContainer(::MolangJsonContainer const&);
 
     MCNAPI MolangJsonContainer(::MolangJsonContainer&&);
+
+    MCNAPI ::MolangJsonContainer& operator=(::MolangJsonContainer const&);
 
     MCNAPI ~MolangJsonContainer();
     // NOLINTEND

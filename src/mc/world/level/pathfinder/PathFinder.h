@@ -50,18 +50,18 @@ public:
     ::ll::TypedStorage<8, 32, ::BinaryHeap>                                       mOpenSet;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::PathfinderNode>> mNodes;
     ::ll::TypedStorage<8, 256, ::std::array<::PathfinderNode*, 32>>               mNeighbors;
-    ::ll::TypedStorage<1, 1, bool>                                                mCanPassDoors;
-    ::ll::TypedStorage<1, 1, bool>                                                mCanOpenDoors;
-    ::ll::TypedStorage<1, 1, bool>                                                mCanOpenIronDoors;
-    ::ll::TypedStorage<1, 1, bool>                                                mAvoidWater;
-    ::ll::TypedStorage<1, 1, bool>                                                mAvoidDamageBlocks;
-    ::ll::TypedStorage<1, 1, bool>                                                mCanFloat;
-    ::ll::TypedStorage<1, 1, bool>                                                mCanPathOverLava;
-    ::ll::TypedStorage<1, 1, bool>                                                mCanWalkInLava;
-    ::ll::TypedStorage<1, 1, bool>                                                mIsAmphibious;
-    ::ll::TypedStorage<1, 1, bool>                                                mAvoidPortals;
-    ::ll::TypedStorage<1, 1, bool>                                                mCanBreach;
-    ::ll::TypedStorage<1, 1, bool>                                                mCanJump;
+    bool                                                                          mCanPassDoors      : 1;
+    bool                                                                          mCanOpenDoors      : 1;
+    bool                                                                          mCanOpenIronDoors  : 1;
+    bool                                                                          mAvoidWater        : 1;
+    bool                                                                          mAvoidDamageBlocks : 1;
+    bool                                                                          mCanFloat          : 1;
+    bool                                                                          mCanPathOverLava   : 1;
+    bool                                                                          mCanWalkInLava     : 1;
+    bool                                                                          mIsAmphibious      : 1;
+    bool                                                                          mAvoidPortals      : 1;
+    bool                                                                          mCanBreach         : 1;
+    bool                                                                          mCanJump           : 1;
     // NOLINTEND
 
 public:
@@ -123,6 +123,8 @@ public:
         ::PathfinderNode const&   size,
         float                     maxDist
     );
+
+    MCNAPI ::AABB _getAABBForHeightComputation(::BlockPos const& pos, ::Block const& block) const;
 
     MCNAPI float _getHeightAboveBlock(::BlockPos const& blockPos, float mobHeight) const;
 

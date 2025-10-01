@@ -46,7 +46,7 @@ public:
     // vIndex: 2
     virtual ::ui::DirtyFlag tick() /*override*/;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual bool _doesScreenHaveExitBehavior() const /*override*/;
     // NOLINTEND
 

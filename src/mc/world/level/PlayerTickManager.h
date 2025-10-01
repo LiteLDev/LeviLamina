@@ -41,8 +41,6 @@ public:
 
     MCNAPI void processPlayerNetworking(::Tick const& currentTick);
 
-    MCNAPI void tick(::Tick const& currentTick);
-
     MCNAPI ~PlayerTickManager();
     // NOLINTEND
 

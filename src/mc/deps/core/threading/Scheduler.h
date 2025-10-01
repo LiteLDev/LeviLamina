@@ -32,6 +32,16 @@ public:
         ScopedChangeScheduler();
     };
 
+    enum class MinimumTimeBudget : int {
+        Yes = 0,
+        No  = 1,
+    };
+
+    enum class MaximumTimeBudget : int {
+        Yes = 0,
+        No  = 1,
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,11 +50,9 @@ public:
     ::ll::TypedStorage<4, 4, uint>                                    mPromotionFrames;
     ::ll::TypedStorage<4, 4, uint>                                    mTargetFPS;
     ::ll::TypedStorage<4, 4, uint>                                    mEffectiveFPS;
-    ::ll::TypedStorage<4, 4, uint>                                    mFramesOverBound;
-    ::ll::TypedStorage<8, 8, double>                                  mAverageCallbackDuration;
-    ::ll::TypedStorage<8, 8, double>                                  mTotalCoroutineDuration;
-    ::ll::TypedStorage<8, 8, uint64>                                  mTotalRunCoroutines;
-    ::ll::TypedStorage<8, 8, double>                                  mCoroutineTimeLimit;
+    ::ll::TypedStorage<4, 4, uint>                                    mTotalRunCoroutines;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>              mPredictedCoroutineDuration;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>              mTotalCoroutineDuration;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WorkerPool>>         mCoroutinePool;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mNextStarveCheckTime;
     ::ll::TypedStorage<4, 4, ::std::thread::id>                       mThreadID;
@@ -66,9 +74,24 @@ public:
     // NOLINTBEGIN
     MCNAPI Scheduler(::std::string name, uint FPS);
 
-    MCNAPI void processCoroutines(::std::chrono::nanoseconds timeSinceSwap, ::std::chrono::nanoseconds minTimeCap);
+    MCNAPI ::std::chrono::nanoseconds _calcBaseTimeBudget(
+        uint                           forFps,
+        ::std::chrono::nanoseconds     frameTimeSoFar,
+        ::Scheduler::MinimumTimeBudget ensureNonZeroRunTime,
+        ::Scheduler::MaximumTimeBudget limitMaxRunTime
+    );
+
+    MCNAPI bool _runCoroutines(::std::chrono::nanoseconds timeCap);
+
+    MCNAPI void processCoroutines(
+        ::std::chrono::nanoseconds     timeSinceSwap,
+        ::Scheduler::MinimumTimeBudget ensureNonZeroRunTime,
+        ::Scheduler::MaximumTimeBudget limitMaxRunTime
+    );
 
     MCNAPI void setTargetFPS(uint FPS);
+
+    MCNAPI void updateTargetFPS();
     // NOLINTEND
 
 public:

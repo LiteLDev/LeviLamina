@@ -19,34 +19,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                         mEncryptionDisabled;
     ::ll::TypedStorage<4, 4, ::DevConnectionQuality>       mDevConnectionQuality;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetworkSettingOptions();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI NetworkSettingOptions(
-        ushort                       threshold,
-        ::PacketCompressionAlgorithm algo,
-        uchar                        clientThrottleThreshold,
-        float                        clientThrottleScalar,
-        bool                         raknetJoinFloodProtectionEnabled,
-        bool                         encryptionDisabled
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ushort                       threshold,
-        ::PacketCompressionAlgorithm algo,
-        uchar                        clientThrottleThreshold,
-        float                        clientThrottleScalar,
-        bool                         raknetJoinFloodProtectionEnabled,
-        bool                         encryptionDisabled
-    );
-    // NOLINTEND
 };

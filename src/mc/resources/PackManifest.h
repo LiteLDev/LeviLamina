@@ -26,6 +26,7 @@ class ResourceInformation;
 struct LegacyPackIdVersion;
 struct ModuleIdentifier;
 namespace Json { class Value; }
+namespace SharedTypes::v3_0_0::PackManifestDefinition { struct DropdownSetting; }
 namespace SharedTypes::v3_0_0::PackManifestDefinition { struct LabelSetting; }
 namespace SharedTypes::v3_0_0::PackManifestDefinition { struct SliderSetting; }
 namespace SharedTypes::v3_0_0::PackManifestDefinition { struct ToggleSetting; }
@@ -56,6 +57,7 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                                  mSize;
     ::ll::TypedStorage<8, 32, ::std::string>                          mLastModifiedDate;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>           mLanguageCodesForPackKeywords;
+    ::ll::TypedStorage<1, 1, bool>                                    mFailsGameVersionMatch;
     ::ll::TypedStorage<1, 1, ::PackManifestFormat>                    mFormatVersion;
     ::ll::TypedStorage<1, 1, ::PackManifestFormat>                    mOriginalFormatVersion;
     ::ll::TypedStorage<8, 32, ::std::string>                          mName;
@@ -85,7 +87,8 @@ public:
         ::std::optional<::std::vector<::std::variant<
             ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting>>>>
+            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>>>>
                                                                                                  mPackSettingsDef;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::PackCapability::TrustLevel>> mCapabilities;
     ::ll::TypedStorage<8, 136, ::ResourceMetadata>                                               mMetadata;
@@ -133,6 +136,10 @@ public:
 
     MCAPI ::std::string getNameForTelemetry() const;
 
+    MCAPI ::std::string getNameWithVersionForTelemetry() const;
+
+    MCAPI ::std::optional<::std::vector<::std::string>> getPackSettingsLocKeys() const;
+
     MCAPI bool hasPackCapability(::std::string_view capability) const;
 
     MCAPI void serialize(::PackManifestFormat formatVersion, ::Json::Value& destination) const;
@@ -145,6 +152,8 @@ public:
 
     MCAPI void setLocalizedNameKeywords(::std::unordered_map<::std::string, ::std::string> const& localizationNameMap);
 
+    MCAPI void setMetadata(::ResourceMetadata const& metadata);
+
     MCAPI void setMinEngineVersion(::MinEngineVersion const& engineVersion);
 
     MCAPI void setName(::std::string const& name);
@@ -153,7 +162,8 @@ public:
         ::std::vector<::std::variant<
             ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting>> packSettingsDef
+            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
+            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>> packSettingsDef
     );
     // NOLINTEND
 

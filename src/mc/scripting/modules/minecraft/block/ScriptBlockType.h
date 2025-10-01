@@ -58,8 +58,6 @@ public:
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
     createDefaultBlockPermutationV010() const;
 
-    MCNAPI ::BlockType const& getBlock() const;
-
     MCNAPI ::std::string getId() const;
     // NOLINTEND
 

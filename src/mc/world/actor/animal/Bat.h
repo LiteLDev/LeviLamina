@@ -31,7 +31,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 175
+    // vIndex: 176
     virtual void newServerAiStep() /*override*/;
 
     // vIndex: 135
@@ -41,9 +41,9 @@ public:
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 137
-    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 147
     virtual void pushActors() /*override*/;
 
     // vIndex: 8
@@ -80,7 +80,7 @@ public:
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
     MCFOLD void $pushActors();
     // NOLINTEND

@@ -216,6 +216,12 @@ public:
         // NOLINTEND
 
     public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI bool operator==(::CameraInstruction::FadeInstruction const& other) const;
+        // NOLINTEND
+
+    public:
         // static functions
         // NOLINTBEGIN
         MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);

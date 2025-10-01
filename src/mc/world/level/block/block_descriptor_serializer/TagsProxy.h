@@ -13,27 +13,26 @@ public:
 
 public:
     // prevent constructor by default
+    TagsProxy& operator=(TagsProxy const&);
     TagsProxy(TagsProxy const&);
     TagsProxy();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void fromString(::std::string const& expression);
+    MCFOLD void fromString(::std::string const& expression);
 
-    MCNAPI ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy const&);
+    MCFOLD ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy&&);
 
-    MCNAPI ::BlockDescriptorSerializer::TagsProxy& operator=(::BlockDescriptorSerializer::TagsProxy&&);
+    MCFOLD ::std::string const& toString() const;
 
-    MCNAPI ::std::string const& toString() const;
-
-    MCNAPI ~TagsProxy();
+    MCAPI ~TagsProxy();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

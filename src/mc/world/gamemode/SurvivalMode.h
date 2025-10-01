@@ -34,10 +34,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 14
+    // vIndex: 15
     virtual bool attack(::Actor& entity) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual bool interact(::Actor& entity, ::Vec3 const& location) /*override*/;
 
     // vIndex: 2
@@ -56,6 +56,9 @@ public:
     virtual bool useItem(::ItemStack& item) /*override*/;
 
     // vIndex: 12
+    virtual bool useItemAsAttack(::ItemStack& item) /*override*/;
+
+    // vIndex: 13
     virtual ::InteractionResult useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
@@ -68,13 +71,13 @@ public:
     // vIndex: 9
     virtual void tick() /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual void setTrialMode(bool isEnabled) /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual bool isInTrialMode() /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual void registerUpsellScreenCallback(::std::function<void(bool)> callback) /*override*/;
 
     // vIndex: 0
@@ -84,35 +87,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _messagePlayers(::std::string message);
+    MCAPI void _messagePlayers(::std::string message);
 
-    MCNAPI void _showTrialReminder(bool force);
+    MCAPI void _showTrialReminder(bool force);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static bool& mTrialHasEnded();
+    MCAPI static bool& mTrialHasEnded();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $attack(::Actor& entity);
+    MCAPI bool $attack(::Actor& entity);
 
-    MCNAPI bool $interact(::Actor& entity, ::Vec3 const& location);
+    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location);
 
-    MCNAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
+    MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
 
-    MCNAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
+    MCAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
 
-    MCNAPI void $startBuildBlock(::BlockPos const& pos, uchar face);
+    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face);
 
-    MCNAPI bool $buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick);
+    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, bool const isSimTick);
 
-    MCNAPI bool $useItem(::ItemStack& item);
+    MCAPI bool $useItem(::ItemStack& item);
 
-    MCNAPI ::InteractionResult $useItemOn(
+    MCAPI bool $useItemAsAttack(::ItemStack& item);
+
+    MCAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
         uchar             face,
@@ -121,13 +126,13 @@ public:
         bool              isFirstEvent
     );
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $setTrialMode(bool isEnabled);
+    MCAPI void $setTrialMode(bool isEnabled);
 
-    MCNAPI bool $isInTrialMode();
+    MCAPI bool $isInTrialMode();
 
-    MCNAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+    MCAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
     // NOLINTEND
 
 public:

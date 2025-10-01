@@ -21,9 +21,9 @@ public:
     // vIndex: 33
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 122
     virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
     // vIndex: 13
@@ -39,7 +39,7 @@ public:
     MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
     MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
     MCFOLD bool $isCandle() const;
     // NOLINTEND

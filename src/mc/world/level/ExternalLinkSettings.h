@@ -19,15 +19,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ExternalLinkSettings(::ExternalLinkSettings&&);
+    MCNAPI ::ExternalLinkSettings& operator=(::ExternalLinkSettings&&);
 
     MCNAPI ~ExternalLinkSettings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ExternalLinkSettings&&);
     // NOLINTEND
 
 public:

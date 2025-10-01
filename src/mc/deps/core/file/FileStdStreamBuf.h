@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace Core { class File; }
+namespace Core { class FileOpenMode; }
+// clang-format on
+
 namespace Core {
 
 class FileStdStreamBuf : public ::std::streambuf {
@@ -9,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk2320e4;
-    ::ll::UntypedStorage<1, 1>  mUnka28c60;
+    ::ll::UntypedStorage<1, 2>  mUnka28c60;
     ::ll::UntypedStorage<8, 24> mUnkfe260d;
     ::ll::UntypedStorage<8, 8>  mUnk892e32;
     // NOLINTEND
@@ -33,10 +39,10 @@ public:
     virtual int overflow(int c) /*override*/;
 
     // vIndex: 10
-    virtual ::std::fpos<::_Mbstatet> seekoff(int64 off, int way, int openMode) /*override*/;
+    virtual ::std::fpos<::_Mbstatet> seekoff(int64 off, int way, int) /*override*/;
 
     // vIndex: 11
-    virtual ::std::fpos<::_Mbstatet> seekpos(::std::fpos<::_Mbstatet> pos, int openMode) /*override*/;
+    virtual ::std::fpos<::_Mbstatet> seekpos(::std::fpos<::_Mbstatet> pos, int) /*override*/;
 
     // vIndex: 13
     virtual int sync() /*override*/;
@@ -46,6 +52,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI int _flushoutput();
+
+    MCNAPI void open(::Core::File&& file, ::Core::FileOpenMode fileOpenMode);
     // NOLINTEND
 
 public:
@@ -67,9 +75,9 @@ public:
 
     MCNAPI int $overflow(int c);
 
-    MCNAPI ::std::fpos<::_Mbstatet> $seekoff(int64 off, int way, int openMode);
+    MCNAPI ::std::fpos<::_Mbstatet> $seekoff(int64 off, int way, int);
 
-    MCNAPI ::std::fpos<::_Mbstatet> $seekpos(::std::fpos<::_Mbstatet> pos, int openMode);
+    MCNAPI ::std::fpos<::_Mbstatet> $seekpos(::std::fpos<::_Mbstatet> pos, int);
 
     MCNAPI int $sync();
     // NOLINTEND

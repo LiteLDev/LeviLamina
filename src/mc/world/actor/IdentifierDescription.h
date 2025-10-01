@@ -14,6 +14,7 @@ public:
 
 public:
     // prevent constructor by default
+    IdentifierDescription& operator=(IdentifierDescription const&);
     IdentifierDescription(IdentifierDescription const&);
     IdentifierDescription();
 
@@ -25,12 +26,6 @@ public:
 
     // vIndex: 0
     virtual ~IdentifierDescription() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::IdentifierDescription& operator=(::IdentifierDescription const&);
     // NOLINTEND
 
 public:

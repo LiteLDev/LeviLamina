@@ -15,6 +15,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class ComponentItem;
 class HashedString;
 class Item;
 class ItemStack;
@@ -61,7 +62,7 @@ public:
     virtual ~FoodItemComponent() /*override*/ = default;
 
     // vIndex: 7
-    virtual void _initializeComponent() /*override*/;
+    virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
     // vIndex: 1
     virtual int getNutrition() const /*override*/;
@@ -112,7 +113,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent(::ComponentItem& owner);
 
     MCFOLD int $getNutrition() const;
 

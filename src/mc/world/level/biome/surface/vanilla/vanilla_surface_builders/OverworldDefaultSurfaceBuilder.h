@@ -17,9 +17,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void init(::Biome& biome, uint) /*override*/;
+    virtual void initBuilder(uint) /*override*/;
 
     // vIndex: 2
+    virtual void initBiomeSurface(::Biome& biome) const /*override*/;
+
+    // vIndex: 3
+    virtual bool isBestBuilder(::Biome const& biome) const /*override*/;
+
+    // vIndex: 4
     virtual void buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const /*override*/;
 
     // vIndex: 0
@@ -29,7 +35,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $init(::Biome& biome, uint);
+    MCNAPI void $initBuilder(uint);
+
+    MCNAPI void $initBiomeSurface(::Biome& biome) const;
+
+    MCNAPI bool $isBestBuilder(::Biome const& biome) const;
 
     MCNAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
     // NOLINTEND

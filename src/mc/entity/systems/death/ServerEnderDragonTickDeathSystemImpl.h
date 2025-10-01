@@ -18,18 +18,15 @@
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
-class BossComponent;
 class StrictEntityContext;
 struct ActorDataFlagComponent;
 struct ActorDefinitionIdentifierComponent;
 struct ActorTickedComponent;
 struct ActorUniqueIDComponent;
+struct BossComponent;
 struct DeathTickingComponent;
 struct DimensionTypeComponent;
 struct EnderDragonFlagComponent;
-struct ParticleEventDispatcherComponent;
-struct ParticleEventRequestQueueComponent;
-struct RandomComponent;
 struct RandomReferenceComponent;
 struct SoundEventPlayerComponent;
 struct SoundEventRequestQueueComponent;
@@ -51,7 +48,6 @@ struct ServerEnderDragonTickDeathSystemImpl
           ::SoundEventPlayerComponent>,
       ::Write<
           ::ActorOwnerComponent,
-          ::ParticleEventDispatcherComponent,
           ::RandomReferenceComponent,
           ::StateVectorComponent,
           ::WingFlapDataComponent,
@@ -76,7 +72,6 @@ public:
                 ::SoundEventPlayerComponent>,
             ::Write<
                 ::ActorOwnerComponent,
-                ::ParticleEventDispatcherComponent,
                 ::RandomReferenceComponent,
                 ::StateVectorComponent,
                 ::WingFlapDataComponent,
@@ -95,23 +90,19 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void _tick(
-        ::StrictEntityContext const&                                         entity,
-        ::ActorDataFlagComponent const&                                      actorFlags,
-        ::ActorDefinitionIdentifierComponent const&                          actorIdentifier,
-        ::ActorUniqueIDComponent const&                                      actorUniqueID,
-        ::DeathTickingComponent const&                                       deathTicking,
-        ::DimensionTypeComponent const&                                      dimensionType,
-        ::SoundEventPlayerComponent const&                                   soundEventPlayerComponent,
-        ::ActorOwnerComponent&                                               actorOwner,
-        ::ParticleEventDispatcherComponent&                                  particleEventDispatcherComponent,
-        ::RandomReferenceComponent&                                          randomReference,
-        ::StateVectorComponent&                                              stateVector,
-        ::WingFlapDataComponent&                                             wingFlapData,
-        ::Optional<::BossComponent>                                          boss,
-        ::SpawnExperienceOrbRequestQueueComponent&                           experienceOrbRequestQueueComponent,
-        ::ViewT<::StrictEntityContext, ::ParticleEventRequestQueueComponent> particleEventRequestQueueView,
-        ::ViewT<::StrictEntityContext, ::RandomComponent>                    randomView,
-        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>    soundRequestQueueView
+        ::StrictEntityContext const&                                      entity,
+        ::ActorDataFlagComponent const&                                   actorFlags,
+        ::ActorDefinitionIdentifierComponent const&                       actorIdentifier,
+        ::ActorUniqueIDComponent const&                                   actorUniqueID,
+        ::DeathTickingComponent const&                                    deathTicking,
+        ::DimensionTypeComponent const&                                   dimensionType,
+        ::SoundEventPlayerComponent const&                                soundEventPlayerComponent,
+        ::ActorOwnerComponent&                                            actorOwner,
+        ::StateVectorComponent&                                           stateVector,
+        ::WingFlapDataComponent&                                          wingFlapData,
+        ::Optional<::BossComponent>                                       boss,
+        ::SpawnExperienceOrbRequestQueueComponent&                        experienceOrbRequestQueueComponent,
+        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> soundRequestQueueView
     );
     // NOLINTEND
 
@@ -130,7 +121,6 @@ public:
                 ::SoundEventPlayerComponent>,
             ::Write<
                 ::ActorOwnerComponent,
-                ::ParticleEventDispatcherComponent,
                 ::RandomReferenceComponent,
                 ::StateVectorComponent,
                 ::WingFlapDataComponent,

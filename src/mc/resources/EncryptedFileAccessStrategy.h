@@ -91,7 +91,12 @@ public:
     MCNAPI static bool
     _getContentIdentityFromEncryptedStream(::std::string& stream, ::ContentIdentity& contentIdentity);
 
-    MCNAPI static void _transformStream(::std::string& stream, ::std::string const& key, uint64 offset);
+    MCNAPI static void _transformStream(
+        ::std::string&           stream,
+        ::std::string const&     key,
+        ::ContentIdentity const& contentIdentity,
+        uint64                   offset
+    );
 
     MCNAPI static bool isValidEncryptedPack(::Core::Path const& pathToPack, ::ContentIdentity& contentIdentity);
     // NOLINTEND

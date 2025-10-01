@@ -14,7 +14,7 @@ struct SurfaceBuilderComponent : public ::BiomeComponentBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ISurfaceBuilder*>> mSurfaceBuilder;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ISurfaceBuilder const*>> mSurfaceBuilder;
     // NOLINTEND
 
 public:

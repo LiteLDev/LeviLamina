@@ -173,15 +173,11 @@ public:
         ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError,
         ::Scripting::ArgumentOutOfBoundsError,
         ::Scripting::Error>
-    setLoreBeta(
+    setLore(
         ::std::optional<
             ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
             loreVariantList
     );
-
-    MCNAPI ::Scripting::
-        Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError, ::Scripting::ArgumentOutOfBoundsError>
-        setLoreStable(::std::optional<::std::vector<::std::string>> const& loreList);
 
     MCNAPI ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidContainerSlotError, ::Scripting::ArgumentOutOfBoundsError>

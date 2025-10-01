@@ -9,7 +9,7 @@ class DebugInfoPlayer : public ::Player {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
+    // vIndex: 8
     virtual ~DebugInfoPlayer() /*override*/ = default;
     // NOLINTEND
 };

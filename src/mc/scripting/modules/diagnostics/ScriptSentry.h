@@ -9,8 +9,10 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleDiagnostics { struct ScriptSentryAlreadyInitializedError; }
+namespace ScriptModuleDiagnostics { struct ScriptSentryCaptureContext; }
 namespace ScriptModuleDiagnostics { struct ScriptSentryOptions; }
 namespace ScriptModuleDiagnostics { struct ScriptSentryUninitializedError; }
+namespace Scripting { struct BaseError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct InvalidArgumentError; }
@@ -40,6 +42,11 @@ public:
 
     MCNAPI ::Scripting::Result<void, ::ScriptModuleDiagnostics::ScriptSentryUninitializedError>
     addTag(::std::string key, ::std::string value);
+
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleDiagnostics::ScriptSentryUninitializedError> captureException(
+        ::Scripting::BaseError const&                                           error,
+        ::std::optional<::ScriptModuleDiagnostics::ScriptSentryCaptureContext>& context
+    );
 
     MCNAPI ::Scripting::Result<
         ::std::unordered_map<::std::string, ::std::string>,

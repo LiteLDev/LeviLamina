@@ -44,7 +44,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Watchdog() /*override*/;
+    virtual ~Watchdog() /*override*/ = default;
 
     // vIndex: 1
     virtual void
@@ -95,12 +95,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::JSRuntime* rt, ::Scripting::WatchdogSettings settings);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

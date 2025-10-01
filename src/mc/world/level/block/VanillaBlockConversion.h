@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
 class BlockType;
 // clang-format on
 
@@ -15,10 +14,6 @@ namespace VanillaBlockConversion {
 // functions
 // NOLINTBEGIN
 MCAPI ::WeakPtr<::BlockType const> getBlockTypeFromLegacyId(uint id);
-
-MCAPI int getBlockTypeLegacyIdFromName(::std::string const& rawName);
-
-MCAPI ::Block const* tryGetLegacyState(uint id, uint data);
 // NOLINTEND
 
 } // namespace VanillaBlockConversion

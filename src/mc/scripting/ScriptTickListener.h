@@ -52,10 +52,10 @@ public:
     // vIndex: 7
     virtual ::EventResult onLevelTickEnd(::Level&) /*override*/;
 
-    // vIndex: 10
+    // vIndex: 11
     virtual void onScriptTickStart() /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual void onScriptTickEnd() /*override*/;
     // NOLINTEND
 

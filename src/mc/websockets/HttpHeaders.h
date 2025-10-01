@@ -42,8 +42,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool getHeader(::std::string const& name, ::std::string& outValue) const;
-
     MCNAPI ::std::string getStatusCode() const;
 
     MCNAPI ::HttpHeaders::ParseState parse(::RakNet::BitStream& data);

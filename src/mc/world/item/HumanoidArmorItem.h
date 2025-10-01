@@ -101,7 +101,7 @@ public:
     // vIndex: 57
     virtual int getToughnessValue() const /*override*/;
 
-    // vIndex: 121
+    // vIndex: 123
     virtual float getArmorKnockbackResistance() const;
 
     // vIndex: 67
@@ -122,16 +122,16 @@ public:
     // vIndex: 22
     virtual bool isTrimAllowed() const /*override*/;
 
-    // vIndex: 101
+    // vIndex: 103
     virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
 
-    // vIndex: 102
+    // vIndex: 104
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
     // vIndex: 61
     virtual int getDamageChance(int unbreaking) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
         /*override*/;
 
@@ -143,10 +143,10 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 82
+    // vIndex: 84
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
@@ -163,6 +163,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::std::string _buildAttributeText() const;
+
     MCAPI ::ItemInstance getTierItem() const;
     // NOLINTEND
 
@@ -222,8 +224,6 @@ public:
     MCAPI bool $isDyeable() const;
 
     MCAPI bool $isTrimAllowed() const;
-
-    MCAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 

@@ -18,12 +18,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ITreeCanopyWrapper();
+    MCAPI ~ITreeCanopyWrapper();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

@@ -40,19 +40,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LegacyIceFeature(::FeatureRegistry const& registry);
+    MCAPI explicit LegacyIceFeature(::FeatureRegistry const& registry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::FeatureRegistry const& registry);
+    MCAPI void* $ctor(::FeatureRegistry const& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
     // NOLINTEND
 
 public:

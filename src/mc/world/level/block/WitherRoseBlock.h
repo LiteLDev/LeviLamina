@@ -57,9 +57,6 @@ public:
 
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const&, ::Actor& entity) const;
 
-    MCFOLD bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
-
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCAPI ::std::string $buildDescriptionId(::Block const& block) const;

@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct LoaderConfig; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -28,13 +29,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NonStrictJsonLoader(::cereal::ReflectionCtx const&, ::cereal::ResultCode);
+    MCNAPI NonStrictJsonLoader(::cereal::ReflectionCtx const&, ::cereal::ResultCode, ::cereal::LoaderConfig const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const&, ::cereal::ResultCode);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const&, ::cereal::ResultCode, ::cereal::LoaderConfig const&);
     // NOLINTEND
 
 public:

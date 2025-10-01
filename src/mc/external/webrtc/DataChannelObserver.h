@@ -32,7 +32,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $IsOkToCallOnTheNetworkThread();
+
     // NOLINTEND
 };
 

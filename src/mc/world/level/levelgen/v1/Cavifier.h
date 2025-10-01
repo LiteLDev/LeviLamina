@@ -25,10 +25,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI float _getSpaghetti2d(::Vec3 worldPos) const;
+    MCAPI float _getSpaghetti2d(::Vec3 worldPos) const;
 
-    MCNAPI float _getSpaghetti3D(::Vec3 worldPos) const;
+    MCAPI float _getSpaghetti3D(::Vec3 worldPos) const;
 
-    MCNAPI float cavify(::Vec3 worldPos, int, float density) const;
+    MCAPI float cavify(::Vec3 worldPos, int, float density) const;
     // NOLINTEND
 };

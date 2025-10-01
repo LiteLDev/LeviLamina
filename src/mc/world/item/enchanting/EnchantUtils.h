@@ -12,6 +12,7 @@ class Actor;
 class ActorDamageSource;
 class BlockSource;
 class EnchantmentInstance;
+class HashedString;
 class Item;
 class ItemEnchants;
 class ItemInstance;
@@ -49,9 +50,6 @@ public:
 
     MCAPI static void doPostHurtEffects(::Mob& victim, ::Mob& attacker);
 
-    MCAPI static void
-    doPostItemHurtActorEffects(::Actor& victim, ::Actor& attacker, ::ItemEnchants const& preHurtEnchantments);
-
     MCAPI static ::ItemInstance generateEnchantedBook(::EnchantmentInstance const& enchant);
 
     MCAPI static ::std::vector<::std::pair<::EnchantmentInstance, int>>
@@ -71,9 +69,11 @@ public:
 
     MCAPI static ::std::vector<::Vec3> getEnchantingTablePositions(::BlockSource& source, ::Vec3 const& pos);
 
+    MCAPI static ::Enchant::Type getEnchantmentId(::HashedString const& stringId);
+
     MCAPI static ::std::string getLevelString(int level);
 
-    MCAPI static float getMeleeDamageBonus(::Actor const& victim, ::Actor& attacker);
+    MCAPI static float getMeleeDamageBonus(::Actor const& victim, ::Actor const& attacker);
 
     MCAPI static ::ItemStack const& getRandomDamagedItemWithMending(::Mob const& equipped);
 

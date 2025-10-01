@@ -144,8 +144,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit PackSource(::PackSourceOptions options);
 
-    MCNAPI ::PackSourceLoadResult _applyAndFinishLoadTask(::std::shared_ptr<::PackSource::PackTaskData> task);
-
     MCNAPI ::PackSourceLoadResult _createImmediateLoadResult();
 
     MCNAPI ::PackSourceLoadResult

@@ -13,7 +13,6 @@ struct JSValue;
 namespace Scripting { class LifetimeRegistry; }
 namespace Scripting { class StrongObjectHandle; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct FunctionBinding; }
 namespace Scripting { struct InterfaceBinding; }
 namespace Scripting { struct IteratorBinding; }
 namespace Scripting { struct ObjectFactory; }
@@ -55,8 +54,6 @@ MCNAPI ::JSValue CopyJSValueObjectToNativeAssociativeContainer(
 );
 
 MCNAPI ::Scripting::QuickJS::ArrayProxy CreateArrayProxy(::JSContext* ctx);
-
-MCNAPI ::Scripting::FunctionBinding CreateIteratorNextFunctionBinding(::Scripting::IteratorBinding& iteratorBinding);
 
 MCNAPI ::std::unique_ptr<::Scripting::ClassBinding>
 CreateIteratorReturnClassBinding(::Scripting::IteratorBinding& iteratorBinding);
@@ -130,6 +127,8 @@ MCNAPI ::std::string JSValueCStringToString(::JSContext* ctx, ::JSValue jsValue)
 MCNAPI bool JSValueIsInfinite(::JSValue const& value);
 
 MCNAPI bool JSValueIsNan(::JSValue const& value);
+
+MCNAPI ::entt::meta_any JSValueToBaseError(::JSContext* ctx, ::JSValue jsValue);
 
 MCNAPI ::std::variant<::entt::meta_any, ::JSValue>
 JSValueToNativeAny(::JSContext* ctx, ::JSValue jsValue, ::entt::meta_type const& type);
@@ -207,8 +206,6 @@ MCNAPI ::JSValue ThrowEngineErrorToJS(::JSContext* ctx, ::std::string const& msg
 MCNAPI ::JSValue ThrowJSTypeErrorWithContext(::JSContext*, ::Scripting::QuickJS::ContextUserData&, char const*, ...);
 
 MCNAPI ::JSTypedArrayEnum ToJSTypedArrayEnum(::entt::meta_type const& type);
-
-MCNAPI ::entt::meta_any WriteError(::JSContext* ctx, ::JSValue exceptionVal);
 
 MCNAPI ::std::string WriteObject(::JSContext* ctx, ::JSValue val);
 

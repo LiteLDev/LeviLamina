@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/schema/SchemaRWType.h"
 #include "mc/deps/cereal/schema/SchemaReader.h"
 #include "mc/platform/Result.h"
 
@@ -13,18 +14,9 @@ class ReadOnlyBinaryStream;
 
 class PacketSchemaReader : public ::cereal::SchemaReader {
 public:
-    // PacketSchemaReader inner types define
-    enum class ElemType : int {
-        None   = 0,
-        Object = 1,
-        Array  = 2,
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ReadOnlyBinaryStream&>        mStream;
-    ::ll::TypedStorage<4, 4, ::PacketSchemaReader::ElemType> mType;
+    ::ll::TypedStorage<8, 8, ::ReadOnlyBinaryStream&> mStream;
     // NOLINTEND
 
 public:
@@ -40,66 +32,69 @@ public:
     virtual bool isValid() const /*override*/;
 
     // vIndex: 2
-    virtual bool isObject() const /*override*/;
+    virtual ::cereal::SchemaRWType expectedType() const /*override*/;
 
     // vIndex: 3
-    virtual bool isArray() const /*override*/;
+    virtual ::Bedrock::Result<void> asNull() /*override*/;
 
     // vIndex: 4
-    virtual bool isNull() const /*override*/;
-
-    // vIndex: 5
     virtual ::Bedrock::Result<bool> asBool() /*override*/;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual ::Bedrock::Result<schar> asInt8() /*override*/;
 
-    // vIndex: 7
+    // vIndex: 6
     virtual ::Bedrock::Result<uchar> asUInt8() /*override*/;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual ::Bedrock::Result<short> asInt16() /*override*/;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual ::Bedrock::Result<ushort> asUInt16() /*override*/;
 
-    // vIndex: 10
+    // vIndex: 9
     virtual ::Bedrock::Result<int> asInt32() /*override*/;
 
-    // vIndex: 11
+    // vIndex: 10
     virtual ::Bedrock::Result<uint> asUInt32() /*override*/;
 
-    // vIndex: 12
+    // vIndex: 11
     virtual ::Bedrock::Result<int64> asInt64() /*override*/;
 
-    // vIndex: 13
+    // vIndex: 12
     virtual ::Bedrock::Result<uint64> asUInt64() /*override*/;
 
-    // vIndex: 14
+    // vIndex: 13
     virtual ::Bedrock::Result<float> asFloat() /*override*/;
 
-    // vIndex: 15
+    // vIndex: 14
     virtual ::Bedrock::Result<double> asDouble() /*override*/;
 
-    // vIndex: 16
+    // vIndex: 15
     virtual ::Bedrock::Result<::std::string> asString() /*override*/;
 
+    // vIndex: 16
+    virtual ::std::optional<bool> readValidityFlag() /*override*/;
+
     // vIndex: 17
-    virtual uint64 members() /*override*/;
+    virtual ::std::optional<uint> readControlValue() /*override*/;
 
     // vIndex: 18
-    virtual uint64 length() /*override*/;
+    virtual uint64 members() /*override*/;
 
     // vIndex: 19
-    virtual bool pushMember(::std::string_view const) /*override*/;
+    virtual uint64 length(uint64 expectedSize) /*override*/;
 
     // vIndex: 20
-    virtual ::std::string_view pushNextMember() /*override*/;
+    virtual bool pushMember(::std::string_view const) /*override*/;
 
     // vIndex: 21
-    virtual void pushElement(uint64) /*override*/;
+    virtual ::std::string_view pushNextMember() /*override*/;
 
     // vIndex: 22
+    virtual void pushElement(uint64) /*override*/;
+
+    // vIndex: 23
     virtual void pop() /*override*/;
 
     // vIndex: 0
@@ -111,11 +106,9 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isValid() const;
 
-    MCFOLD bool $isObject() const;
+    MCFOLD ::cereal::SchemaRWType $expectedType() const;
 
-    MCFOLD bool $isArray() const;
-
-    MCFOLD bool $isNull() const;
+    MCFOLD ::Bedrock::Result<void> $asNull();
 
     MCFOLD ::Bedrock::Result<bool> $asBool();
 
@@ -139,11 +132,15 @@ public:
 
     MCFOLD ::Bedrock::Result<double> $asDouble();
 
-    MCAPI ::Bedrock::Result<::std::string> $asString();
+    MCFOLD ::Bedrock::Result<::std::string> $asString();
+
+    MCFOLD ::std::optional<bool> $readValidityFlag();
+
+    MCFOLD ::std::optional<uint> $readControlValue();
 
     MCFOLD uint64 $members();
 
-    MCFOLD uint64 $length();
+    MCAPI uint64 $length(uint64 expectedSize);
 
     MCFOLD bool $pushMember(::std::string_view const);
 

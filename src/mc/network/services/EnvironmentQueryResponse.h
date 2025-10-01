@@ -27,9 +27,6 @@ public:
     // NOLINTBEGIN
     MCNAPI EnvironmentQueryResponse(::Bedrock::Services::EnvironmentQueryResponse const&);
 
-    MCNAPI ::std::map<::std::string, ::std::string> const*
-    GetServiceEnvironmentProperties(::std::string const& serviceName, ::std::string const& environmentName) const;
-
     MCNAPI void fromJsonShared(::Json::Value const& jsonValue);
     // NOLINTEND
 

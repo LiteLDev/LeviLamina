@@ -11,7 +11,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
+class BlockSource;
 class Mob;
+class Vec3;
 // clang-format on
 
 class TransportItemsGoal : public ::Goal {
@@ -51,12 +54,14 @@ public:
     ::ll::TypedStorage<8, 8, ::Mob&>                                                  mMob;
     ::ll::TypedStorage<8, 136, ::TransportItemsGoalSettings>                          mSettings;
     ::ll::TypedStorage<4, 4, ::TransportItemsGoal::State>                             mState;
+    ::ll::TypedStorage<4, 4, uint>                                                    mCountedPositions;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                              mVisitedPositions;
     ::ll::TypedStorage<8, 16, ::std::optional<::Tick>>                                mInteractEndTick;
     ::ll::TypedStorage<8, 16, ::std::optional<::Tick>>                                mCooldownEndTick;
     ::ll::TypedStorage<4, 16, ::std::optional<::BlockPos>>                            mTargetContainerPosition;
     ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                   mWasHoldingItemLastTick;
     ::ll::TypedStorage<8, 24, ::std::optional<::TransportItemsGoal::ContainerCloser>> mContainerCloser;
+    ::ll::TypedStorage<1, 1, bool>                                                    mCheckLineOfSight;
     // NOLINTEND
 
 public:
@@ -77,6 +82,9 @@ public:
     // vIndex: 4
     virtual void start() /*override*/;
 
+    // vIndex: 5
+    virtual void stop() /*override*/;
+
     // vIndex: 6
     virtual void tick() /*override*/;
 
@@ -90,6 +98,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool _canSeeTarget(::BlockPos const& targetPosition) const;
+
     MCAPI void _executeEvent(::TransportItemsGoal::Event event) const;
 
     MCAPI void _tickIdle();
@@ -100,6 +110,17 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static bool _canSeeTarget(
+        ::BlockSource const& region,
+        ::Vec3 const&        mobHeadPosition,
+        ::AABB const&        visualShape,
+        ::BlockPos const&    targetPosition
+    );
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI bool $canUse();
@@ -107,6 +128,8 @@ public:
     MCAPI bool $canContinueToUse();
 
     MCAPI void $start();
+
+    MCAPI void $stop();
 
     MCAPI void $tick();
 

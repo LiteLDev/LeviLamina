@@ -31,13 +31,15 @@ public:
 
     public:
         // prevent constructor by default
-        DryingOutTimerDefinition& operator=(DryingOutTimerDefinition const&);
         DryingOutTimerDefinition(DryingOutTimerDefinition const&);
         DryingOutTimerDefinition();
 
     public:
         // member functions
         // NOLINTBEGIN
+        MCNAPI ::DryingOutTimerComponent::DryingOutTimerDefinition&
+        operator=(::DryingOutTimerComponent::DryingOutTimerDefinition const&);
+
         MCNAPI ~DryingOutTimerDefinition();
         // NOLINTEND
 

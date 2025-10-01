@@ -22,6 +22,7 @@ class BlockTypeRegistryRWLock;
 class BlockTypeRegistryReadLock;
 class Experiments;
 class ServerScriptManager;
+namespace VoxelShapes { class VoxelShapeRegistry; }
 // clang-format on
 
 class BlockTypeRegistry {
@@ -116,8 +117,6 @@ public:
         MCAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, ::Block const* block);
 
         MCAPI LookupByNameImplReturnType(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
-
-        MCAPI ~LookupByNameImplReturnType();
         // NOLINTEND
 
     public:
@@ -128,12 +127,6 @@ public:
         MCAPI void* $ctor(::WeakPtr<::BlockType const> blockType, ::Block const* block);
 
         MCAPI void* $ctor(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -206,7 +199,7 @@ public:
 
     MCAPI void finalizeBlockCustomComponentEvents(::ServerScriptManager const& scriptManager);
 
-    MCAPI void forEachBlock(::brstd::function_ref<bool(::BlockType const&)> callback) const;
+    MCAPI void forEachBlockType(::brstd::function_ref<bool(::BlockType const&)> callback) const;
 
     MCAPI ::HashedString const& getBlockNameFromNameHash(uint64 hash) const;
 
@@ -238,6 +231,10 @@ public:
     );
 
     MCAPI void setupDirectAccessBlocks();
+
+    MCAPI void setupVoxelShapeRegistryAccessOnAllBlocks(
+        ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry> const& voxelShapeRegistry
+    ) const;
 
     MCAPI void unregisterBlock(::HashedString const& name);
 

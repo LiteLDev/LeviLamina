@@ -68,7 +68,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
 
     public:
@@ -117,7 +117,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI LazyTemplate(
+        MCAPI LazyTemplate(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                    manager,
             ::std::string const&                                                 location,
             ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* blockTagRules
@@ -127,7 +127,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static ::std::vector<::JigsawBlockInfo> _findJigsawBlocks(
+        MCAPI static ::std::vector<::JigsawBlockInfo> _findJigsawBlocks(
             ::std::vector<::JigsawStructureBlockInfo>&                           jigsawMarkers,
             ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* blockTagRules
         );
@@ -136,7 +136,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(
+        MCAPI void* $ctor(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                    manager,
             ::std::string const&                                                 location,
             ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* blockTagRules
@@ -146,11 +146,11 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::std::vector<::JigsawBlockInfo> const& $getJigsawMarkers() const;
+        MCFOLD ::std::vector<::JigsawBlockInfo> const& $getJigsawMarkers() const;
 
-        MCNAPI ::BlockPos $getSize(::Rotation rotation) const;
+        MCAPI ::BlockPos $getSize(::Rotation rotation) const;
 
-        MCNAPI bool $isLegacyStructure() const;
+        MCAPI bool $isLegacyStructure() const;
         // NOLINTEND
 
     public:

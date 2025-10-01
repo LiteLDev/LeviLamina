@@ -50,5 +50,23 @@ public:
         ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::MobBodyRotationComponent const> const& mobs,
         float                                                                                                  alpha
     );
+
+    MCNAPI static ::Vec3 getInterpolatedPosition(
+        ::StrictEntityContext const& entity,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::ActorRotationComponent const,
+            ::RenderRotationComponent const,
+            ::StateVectorComponent const,
+            ::ActorDataFlagComponent const,
+            ::ActorDataSeatOffsetComponent const> const& commonData,
+        float                                            alpha
+    );
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::Vec3 const& BASE_OFFSET();
     // NOLINTEND
 };

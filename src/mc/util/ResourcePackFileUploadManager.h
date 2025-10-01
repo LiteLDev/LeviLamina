@@ -69,8 +69,6 @@ public:
         ::ResourcePackPathLifetimeHelpers::ResourcePackPathCache&  resourcePackPathCache
     );
 
-    MCAPI void _addZipPath(::Core::PathBuffer<::std::string> const& resourceZipPath);
-
     MCAPI void _archiveAndUploadPackToRealmStorage(
         ::std::string const& uploadId,
         ::Core::Path const&  path,

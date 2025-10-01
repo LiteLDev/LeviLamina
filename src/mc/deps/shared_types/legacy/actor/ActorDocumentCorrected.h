@@ -23,11 +23,12 @@ public:
     // prevent constructor by default
     ActorDocumentCorrected& operator=(ActorDocumentCorrected const&);
     ActorDocumentCorrected(ActorDocumentCorrected const&);
-    ActorDocumentCorrected();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ActorDocumentCorrected();
+
     MCNAPI ActorDocumentCorrected(::SharedTypes::Legacy::ActorDocumentCorrected&&);
 
     MCNAPI ~ActorDocumentCorrected();
@@ -42,6 +43,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::SharedTypes::Legacy::ActorDocumentCorrected&&);
     // NOLINTEND
 

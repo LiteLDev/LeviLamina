@@ -59,7 +59,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int>                                           mTickCount;
     ::ll::TypedStorage<4, 4, int>                                           mRepairCost;
-    ::ll::TypedStorage<8, 8, ::Block const*>                                mBlock;
     ::ll::TypedStorage<4, 12, ::BlockPos>                                   mPosition;
     ::ll::TypedStorage<4, 24, ::AABB>                                       mBB;
     ::ll::TypedStorage<1, 1, ::BlockActorRendererId>                        mRendererId;
@@ -131,84 +130,85 @@ public:
     virtual void executeEvent(::BlockSource&, ::BlockPos const&, ::Block const&, ::std::string const&, ::Actor&);
 
     // vIndex: 18
-    virtual void clearCache();
-
-    // vIndex: 19
     virtual void onNeighborChanged(::BlockSource&, ::BlockPos const&);
 
-    // vIndex: 20
+    // vIndex: 19
     virtual float getShadowRadius(::BlockSource&) const;
 
-    // vIndex: 21
+    // vIndex: 20
     virtual bool hasAlphaLayer() const;
 
-    // vIndex: 22
+    // vIndex: 21
     virtual ::BlockActor* getCrackEntity(::BlockSource&, ::BlockPos const&);
 
-    // vIndex: 23
+    // vIndex: 22
     virtual ::AABB getCollisionShape(::IConstBlockSource const&) const;
 
-    // vIndex: 24
-    virtual void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
+    // vIndex: 23
+    virtual void getDebugText(
+        ::std::vector<::std::string>& outputInfo,
+        ::BlockPos const&             debugPos,
+        ::BlockSource const*          region
+    ) const;
 
-    // vIndex: 25
+    // vIndex: 24
     virtual ::Bedrock::Safety::RedactableString const& getCustomName() const;
 
-    // vIndex: 26
+    // vIndex: 25
     virtual ::std::string getName() const;
 
-    // vIndex: 27
+    // vIndex: 26
     virtual void setCustomName(::Bedrock::Safety::RedactableString const& name);
 
-    // vIndex: 28
+    // vIndex: 27
     virtual ::std::string getImmersiveReaderText(::BlockSource&);
 
-    // vIndex: 30
+    // vIndex: 29
     virtual ::PistonBlockActor* getOwningPiston(::BlockSource&);
 
-    // vIndex: 29
+    // vIndex: 28
     virtual ::PistonBlockActor const* getOwningPiston(::BlockSource&) const;
 
-    // vIndex: 32
+    // vIndex: 31
     virtual ::Container* getContainer();
 
-    // vIndex: 31
+    // vIndex: 30
     virtual ::Container const* getContainer() const;
 
-    // vIndex: 33
+    // vIndex: 32
     virtual void eraseLootTable();
 
-    // vIndex: 34
+    // vIndex: 33
     virtual void onChunkLoaded(::LevelChunk&);
 
-    // vIndex: 35
+    // vIndex: 34
     virtual void onChunkUnloaded(::LevelChunk&);
 
-    // vIndex: 36
+    // vIndex: 35
     virtual void onSubChunkLoaded(::LevelChunk&, short, bool);
 
-    // vIndex: 37
+    // vIndex: 36
     virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const&) const;
 
-    // vIndex: 38
+    // vIndex: 37
     virtual ::std::vector<::std::string> getFilteredUgcStrings(::CompoundTag const&) const;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual void setUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual void setFilteredUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
-    // vIndex: 41
+    // vIndex: 40
     virtual void fixupOnLoad(::LevelChunk&);
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&);
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&);
 
-    // vIndex: 44
+    // vIndex: 43
     virtual bool _playerCanUpdate(::Player const&) const;
     // NOLINTEND
 
@@ -278,8 +278,6 @@ public:
 
     MCFOLD void $executeEvent(::BlockSource&, ::BlockPos const&, ::Block const&, ::std::string const&, ::Actor&);
 
-    MCFOLD void $clearCache();
-
     MCFOLD void $onNeighborChanged(::BlockSource&, ::BlockPos const&);
 
     MCFOLD float $getShadowRadius(::BlockSource&) const;
@@ -290,7 +288,11 @@ public:
 
     MCAPI ::AABB $getCollisionShape(::IConstBlockSource const&) const;
 
-    MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
+    MCAPI void $getDebugText(
+        ::std::vector<::std::string>& outputInfo,
+        ::BlockPos const&             debugPos,
+        ::BlockSource const*          region
+    ) const;
 
     MCFOLD ::Bedrock::Safety::RedactableString const& $getCustomName() const;
 

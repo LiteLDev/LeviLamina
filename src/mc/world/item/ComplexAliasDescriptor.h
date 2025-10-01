@@ -71,46 +71,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ComplexAliasDescriptor(::std::string const& fullName);
+    MCAPI explicit ComplexAliasDescriptor(::std::string const& fullName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::std::unique_ptr<::ComplexAliasDescriptor>>
+    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ComplexAliasDescriptor>>
     deserialize(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& fullName);
+    MCAPI void* $ctor(::std::string const& fullName);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
+    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
 
-    MCNAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
+    MCAPI bool $sameItems(::ItemDescriptor::BaseDescriptor const& otherDescriptor, bool compareAux) const;
 
-    MCNAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const;
+    MCAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool) const;
 
-    MCNAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
+    MCAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
 
-    MCNAPI ::std::string $getFullName() const;
+    MCFOLD ::std::string $getFullName() const;
 
-    MCNAPI ::ItemDescriptor::ItemEntry $getItem() const;
+    MCAPI ::ItemDescriptor::ItemEntry $getItem() const;
 
-    MCNAPI ::std::map<::std::string, ::std::string> $toMap() const;
+    MCAPI ::std::map<::std::string, ::std::string> $toMap() const;
 
-    MCNAPI ::std::optional<::CompoundTag> $save() const;
+    MCAPI ::std::optional<::CompoundTag> $save() const;
 
-    MCNAPI void $serialize(::BinaryStream& stream) const;
+    MCAPI void $serialize(::BinaryStream& stream) const;
 
-    MCNAPI ::ItemDescriptor::InternalType $getType() const;
+    MCFOLD ::ItemDescriptor::InternalType $getType() const;
 
-    MCNAPI uint64 $getHash() const;
+    MCFOLD uint64 $getHash() const;
     // NOLINTEND
 
 public:

@@ -12,14 +12,13 @@ public:
 
 public:
     // prevent constructor by default
+    ToastRequestPacketPayload& operator=(ToastRequestPacketPayload const&);
     ToastRequestPacketPayload(ToastRequestPacketPayload const&);
     ToastRequestPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ToastRequestPacketPayload& operator=(::ToastRequestPacketPayload const&);
-
     MCFOLD ::ToastRequestPacketPayload& operator=(::ToastRequestPacketPayload&&);
 
     MCAPI ~ToastRequestPacketPayload();

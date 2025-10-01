@@ -11,10 +11,10 @@ class BlockTypeComponentStorageFinalizer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _finalizeBlockTriggerComponents(::BlockType& blockType);
+    MCAPI void _finalizeBlockTriggerComponents(::BlockType& blockType);
 
-    MCNAPI void _updateDestructionParticlesComponent(::BlockType& blockType);
+    MCAPI void _updateDestructionParticlesComponent(::BlockType& blockType);
 
-    MCNAPI void finalizeComponentData(::BlockType& blockType);
+    MCAPI void finalizeComponentData(::BlockType& blockType);
     // NOLINTEND
 };

@@ -31,6 +31,7 @@ public:
     ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator>   mClockSpriteCalc;
     ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mCompassSpriteCalc;
     ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mRecoveryCompassSpriteCalc;
+    ::ll::TypedStorage<1, 1, bool>                       mInstantClockCalculatorUpdate;
     ::ll::TypedStorage<8, 128, ::ItemInstance>           mItem;
     ::ll::TypedStorage<4, 4, float>                      mDropChance;
     ::ll::TypedStorage<4, 4, float>                      mRotation;
@@ -57,7 +58,7 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual float getShadowRadius(::BlockSource&) const /*override*/;
 
     // vIndex: 10
@@ -66,14 +67,14 @@ public:
     // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
-    virtual ~ItemFrameBlockActor() /*override*/ = default;
+    virtual ~ItemFrameBlockActor() /*override*/;
     // NOLINTEND
 
 public:
@@ -105,6 +106,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType type);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

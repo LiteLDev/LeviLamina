@@ -25,7 +25,6 @@ class Objective;
 class PacketSender;
 class Player;
 class ScoreboardIdentityRef;
-struct ActorUniqueID;
 struct PlayerScoreboardId;
 struct ScorePacketInfo;
 // clang-format on
@@ -128,7 +127,7 @@ public:
     MCAPI void
     _clearAllScoreTagsForObjective(::std::string const& displaySlotName, ::DisplayObjective const& displayObjective);
 
-    MCAPI ::Player* _getPlayer(::ActorUniqueID entityID) const;
+    MCAPI void _clearScoreTag(::ScoreboardId const& scoreboardId);
 
     MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
 

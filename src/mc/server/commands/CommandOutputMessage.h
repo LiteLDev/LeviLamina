@@ -24,12 +24,6 @@ public:
     // NOLINTBEGIN
     MCAPI CommandOutputMessage(::CommandOutputMessage&& rhs);
 
-    MCAPI CommandOutputMessage(
-        ::CommandOutputMessageType     type,
-        ::std::string const&           msgId,
-        ::std::vector<::std::string>&& params = {}
-    );
-
     MCAPI ~CommandOutputMessage();
     // NOLINTEND
 
@@ -37,9 +31,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::CommandOutputMessage&& rhs);
-
-    MCAPI void*
-    $ctor(::CommandOutputMessageType type, ::std::string const& msgId, ::std::vector<::std::string>&& params);
     // NOLINTEND
 
 public:

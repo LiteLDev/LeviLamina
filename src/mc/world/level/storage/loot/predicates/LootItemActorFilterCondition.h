@@ -27,11 +27,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~LootItemActorFilterCondition() /*override*/ = default;
-
     // vIndex: 1
     virtual bool applies(::Random&, ::LootTableContext&) /*override*/;
+
+    // vIndex: 0
+    virtual ~LootItemActorFilterCondition() /*override*/ = default;
     // NOLINTEND
 
 public:

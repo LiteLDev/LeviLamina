@@ -15,14 +15,13 @@ public:
 
 public:
     // prevent constructor by default
+    HasItemFilter& operator=(HasItemFilter const&);
     HasItemFilter(HasItemFilter const&);
     HasItemFilter();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::HasItemFilter& operator=(::HasItemFilter const&);
-
     MCNAPI ~HasItemFilter();
     // NOLINTEND
 

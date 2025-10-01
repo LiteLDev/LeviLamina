@@ -34,12 +34,12 @@ public:
     // NOLINTBEGIN
     MCAPI LayeredAbilities();
 
+    MCAPI void _handlePlayerPermissionsChange(::PlayerPermissionLevel from, ::PlayerPermissionLevel to);
+
     MCAPI void forEachAbility(
         ::std::function<void(::Ability const&, ::AbilitiesIndex)> const& callback,
         ::Ability::Options                                               requiredOptions
     ) const;
-
-    MCAPI void setPlayerPermissions(::PlayerPermissionLevel permissions);
     // NOLINTEND
 
 public:

@@ -35,6 +35,10 @@ public:
     // vIndex: 0
     virtual ~PacketSocketFactory() /*override*/ = default;
 
+    // vIndex: 1
+    virtual ::std::unique_ptr<::rtc::AsyncPacketSocket>
+    CreateUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port) /*override*/;
+
     // vIndex: 2
     virtual ::std::shared_ptr<::rtc::AsyncPacketSocket>
     CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort) /*override*/;
@@ -46,6 +50,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::unique_ptr<::rtc::AsyncPacketSocket>
+    $CreateUdpSocket(::rtc::SocketAddress const& address, ushort min_port, ushort max_port);
+
     MCNAPI ::std::shared_ptr<::rtc::AsyncPacketSocket>
     $CreateGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort);
 

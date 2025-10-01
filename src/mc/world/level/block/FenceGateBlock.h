@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/block/BlockType.h"
-#include "mc/world/level/block/WoodType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,10 +23,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
 class FenceGateBlock : public ::BlockType {
-public:
-    // prevent constructor by default
-    FenceGateBlock();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -85,8 +80,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FenceGateBlock(::std::string const& nameId, int id, ::WoodType);
-
     MCAPI void _setOpen(
         ::BlockSource&                  region,
         ::gsl::not_null<::Block const*> block,
@@ -109,12 +102,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::AABB const&
     _getShape(::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue, bool isCollisionShape);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::WoodType);
     // NOLINTEND
 
 public:

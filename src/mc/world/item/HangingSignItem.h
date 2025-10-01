@@ -17,11 +17,11 @@ class HangingSignItem : public ::SignItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 121
+    // vIndex: 123
     virtual ::Block const* getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const
         /*override*/;
 
-    // vIndex: 118
+    // vIndex: 120
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
 
     // vIndex: 0

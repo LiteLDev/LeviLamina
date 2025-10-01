@@ -12,25 +12,25 @@ class Random;
 namespace CaveFeatureUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI int getBiasRandomY_1_16(::Random& random, int heightLimit);
+MCAPI int getBiasRandomY_1_16(::Random& random, int heightLimit);
 
-MCNAPI int getDistance_1_16(::Random&);
+MCFOLD int getDistance_1_16(::Random&);
 
-MCNAPI int getDistance_1_18(::Random& random);
+MCAPI int getDistance_1_18(::Random& random);
 
-MCNAPI float getTunnelThickness_1_16(::Random& random);
+MCAPI float getTunnelThickness_1_16(::Random& random);
 
-MCNAPI float getTunnelThickness_1_18(::Random& random);
+MCAPI float getTunnelThickness_1_18(::Random& random);
 
-MCNAPI int getUniformRandomY_1_18(::Random& random, int heightLimit);
+MCAPI int getUniformRandomY_1_18(::Random& random, int heightLimit);
 
-MCNAPI bool isDiggable_1_16(::Block const& block, ::Block const& above);
+MCAPI bool isDiggable_1_16(::Block const& block, ::Block const& above);
 
-MCNAPI bool isDiggable_1_18(::Block const& block, ::Block const&);
+MCAPI bool isDiggable_1_18(::Block const& block, ::Block const&);
 
-MCNAPI bool isSurface_1_16(::BlockType const& blockType);
+MCAPI bool isSurface_1_16(::BlockType const& blockType);
 
-MCNAPI bool isSurface_1_18(::BlockType const& blockType);
+MCAPI bool isSurface_1_18(::BlockType const& blockType);
 // NOLINTEND
 
 } // namespace CaveFeatureUtils

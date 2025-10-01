@@ -32,6 +32,12 @@ public:
     DirectionSettings();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::SharedTypes::v1_20_80::DirectionSettings& operator=(::SharedTypes::v1_20_80::DirectionSettings&&);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);

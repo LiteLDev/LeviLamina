@@ -30,27 +30,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TradeTableDataLoader(
+    MCAPI TradeTableDataLoader(
         ::cereal::ReflectionCtx const&                     ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_30::TradeTableData>
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_30::TradeTableData>
     load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
-    MCNAPI ~TradeTableDataLoader();
+    MCAPI ~TradeTableDataLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

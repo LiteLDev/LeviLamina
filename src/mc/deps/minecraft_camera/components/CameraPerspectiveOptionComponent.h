@@ -5,14 +5,20 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_21_100/camera/PlayerViewMode.h"
 
-struct CameraPerspectiveOptionComponent {
-public:
-    // CameraPerspectiveOptionComponent inner types define
-    using PlayerViewMode = ::SharedTypes::v1_21_100::PlayerViewMode;
+namespace MinecraftCamera {
 
+struct CameraPerspectiveOptionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_100::PlayerViewMode> mActivateForViewMode;
+    ::ll::UntypedStorage<4, 4> mUnk99fc74;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CameraPerspectiveOptionComponent& operator=(CameraPerspectiveOptionComponent const&);
+    CameraPerspectiveOptionComponent(CameraPerspectiveOptionComponent const&);
+    CameraPerspectiveOptionComponent();
 };
+
+} // namespace MinecraftCamera

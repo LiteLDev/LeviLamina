@@ -15,14 +15,13 @@ public:
 
 public:
     // prevent constructor by default
+    NotificationEvent& operator=(NotificationEvent const&);
     NotificationEvent(NotificationEvent const&);
     NotificationEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptDebuggerMessages::NotificationEvent& operator=(::ScriptDebuggerMessages::NotificationEvent const&);
-
     MCNAPI ::ScriptDebuggerMessages::NotificationEvent& operator=(::ScriptDebuggerMessages::NotificationEvent&&);
 
     MCNAPI bool operator==(::ScriptDebuggerMessages::NotificationEvent const&) const;

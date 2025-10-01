@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class RenderParams;
 class StateAnimationVariable;
 // clang-format on
 
@@ -38,6 +39,8 @@ public:
     MCNAPI explicit ActorAnimationControllerState(::HashedString const& name);
 
     MCNAPI ::StateAnimationVariable& addVariable(::std::string const& variableName);
+
+    MCNAPI void setVariables(::RenderParams& renderParams) const;
 
     MCNAPI ~ActorAnimationControllerState();
     // NOLINTEND

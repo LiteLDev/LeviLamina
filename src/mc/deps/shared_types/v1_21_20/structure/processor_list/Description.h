@@ -8,20 +8,18 @@ struct Description {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk16210a;
+    ::ll::UntypedStorage<8, 32> mUnk199e9c;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    Description& operator=(Description const&);
     Description(Description const&);
     Description();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Description&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureProcessorList::Description const&);
-
     MCNAPI ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Description&
     operator=(::SharedTypes::v1_21_20::JigsawStructureProcessorList::Description&&);
 

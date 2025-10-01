@@ -25,14 +25,13 @@ public:
 public:
     // prevent constructor by default
     LeashableComponent& operator=(LeashableComponent const&);
+    LeashableComponent(LeashableComponent const&);
     LeashableComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI LeashableComponent(::LeashableComponent&&);
-
-    MCNAPI LeashableComponent(::LeashableComponent const&);
 
     MCNAPI ::LeashableComponent& operator=(::LeashableComponent&&);
 
@@ -43,8 +42,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::LeashableComponent&&);
-
-    MCNAPI void* $ctor(::LeashableComponent const&);
     // NOLINTEND
 
 public:

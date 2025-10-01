@@ -32,15 +32,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void finalize(::BlockEvents::BlockEventManager& manager);
+    MCAPI void finalize(::BlockEvents::BlockEventManager& manager);
 
-    MCNAPI void onTick(::BlockEvents::BlockRandomTickLegacyEvent const& eventData) const;
+    MCAPI void onTick(::BlockEvents::BlockRandomTickLegacyEvent const& eventData) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

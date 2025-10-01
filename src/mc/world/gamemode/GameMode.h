@@ -162,12 +162,15 @@ public:
     virtual void tick();
 
     // vIndex: 10
-    virtual float getPickRange(::InputMode const& currentInputMode, bool isVR);
+    virtual float getPickRange(::InputMode const& currentInputMode);
 
     // vIndex: 11
     virtual bool useItem(::ItemStack& item);
 
     // vIndex: 12
+    virtual bool useItemAsAttack(::ItemStack& item);
+
+    // vIndex: 13
     virtual ::InteractionResult useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
@@ -177,23 +180,23 @@ public:
         bool              isFirstEvent
     );
 
-    // vIndex: 13
+    // vIndex: 14
     virtual bool interact(::Actor& entity, ::Vec3 const& location);
 
-    // vIndex: 14
+    // vIndex: 15
     virtual bool attack(::Actor& entity);
 
-    // vIndex: 15
+    // vIndex: 16
     virtual void releaseUsingItem();
 
-    // vIndex: 16
-    virtual void setTrialMode(bool isEnabled);
-
     // vIndex: 17
-    virtual bool isInTrialMode();
+    virtual void setTrialMode(bool);
 
     // vIndex: 18
-    virtual void registerUpsellScreenCallback(::std::function<void(bool)> callback);
+    virtual bool isInTrialMode();
+
+    // vIndex: 19
+    virtual void registerUpsellScreenCallback(::std::function<void(bool)>);
     // NOLINTEND
 
 public:
@@ -209,13 +212,11 @@ public:
 
     MCAPI ::BlockPos _calculatePlacePos(::ItemStack& heldStack, ::BlockPos const& pos, uchar& face) const;
 
-    MCAPI bool _canDestroy(::BlockPos const& pos, uchar face);
+    MCAPI bool _canDestroy(::BlockPos const& pos, uchar);
 
     MCAPI bool _canUseBlock(::Block const& block);
 
     MCAPI bool _creativeDestroyBlock(::BlockPos const& pos, uchar face);
-
-    MCAPI void _destroyBlockInternal(::BlockPos const& pos, ::Block const& oldBlock, ::Block const& newBlock) const;
 
     MCAPI bool _enableBlockBreakDelay() const;
 
@@ -249,17 +250,13 @@ public:
 
     MCAPI bool baseUseItem(::ItemStack& item);
 
+    MCAPI bool baseUseItemAsAttack(::ItemStack& item);
+
     MCAPI void continueBuildBlockAction(::Player const& player, ::HitResult const& hr);
 
     MCAPI float getDestroyRate(::Block const& block);
 
     MCAPI float getMaxPickRange();
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& MIN_MOVING_NON_CREATIVE_BUILD_DELAY();
     // NOLINTEND
 
 public:
@@ -294,9 +291,11 @@ public:
 
     MCAPI void $tick();
 
-    MCAPI float $getPickRange(::InputMode const& currentInputMode, bool isVR);
+    MCAPI float $getPickRange(::InputMode const& currentInputMode);
 
     MCAPI bool $useItem(::ItemStack& item);
+
+    MCAPI bool $useItemAsAttack(::ItemStack& item);
 
     MCAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,
@@ -313,11 +312,11 @@ public:
 
     MCAPI void $releaseUsingItem();
 
-    MCFOLD void $setTrialMode(bool isEnabled);
+    MCFOLD void $setTrialMode(bool);
 
     MCFOLD bool $isInTrialMode();
 
-    MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+    MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)>);
     // NOLINTEND
 
 public:

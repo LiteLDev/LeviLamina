@@ -35,10 +35,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 121
+    // vIndex: 123
     virtual ::Potion::PotionType getPotionType() const;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
     // vIndex: 52
@@ -49,19 +49,19 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 88
+    // vIndex: 90
     virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const /*override*/;
 
     // vIndex: 63
     virtual bool uniqueAuxValues() const /*override*/;
 
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
 
     // vIndex: 76
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 81
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
 
@@ -114,8 +114,6 @@ public:
     MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
-
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
     MCAPI bool $isValidAuxValue(int auxValue) const;
 

@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/EditorRealmsServiceAvailability.h"
-#include "mc/common/editor/RealmsServiceStatus.h"
-#include "mc/common/editor/RealmsWorldUploadResult.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Promise.h"
+#include "mc/editor/EditorRealmsServiceAvailability.h"
+#include "mc/editor/RealmsServiceStatus.h"
+#include "mc/editor/RealmsWorldUploadResult.h"
 
 // auto generated forward declare list
 // clang-format off

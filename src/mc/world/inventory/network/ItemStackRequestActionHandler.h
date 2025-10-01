@@ -230,8 +230,6 @@ public:
         ::ContainerRuntimeId const&       containerRuntimeId
     );
 
-    MCAPI ::ItemStackRequestActionHandler::ScreenData* _tryGetCurrentScreenData() const;
-
     MCAPI ::ItemStackRequestHandlerSlotInfo
     _validateRequestSlot(::ItemStackRequestSlotInfo const& requestSlotInfo, bool isItemRequired, bool isHintSlot);
 
@@ -249,8 +247,6 @@ public:
     MCAPI ::std::vector<::std::string> const& getStrings(::ItemStackRequestId requestId) const;
 
     MCAPI ::ItemStackNetResult handleRequestAction(::ItemStackRequestAction const& requestAction);
-
-    MCAPI bool hasFilteredStrings(::ItemStackRequestId requestId) const;
 
     MCAPI void normalTick();
 

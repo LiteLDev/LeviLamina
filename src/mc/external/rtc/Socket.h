@@ -92,7 +92,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~Socket();
+    virtual ~Socket() = default;
 
     // vIndex: 1
     virtual ::rtc::SocketAddress GetLocalAddress() const = 0;
@@ -116,7 +116,7 @@ public:
     virtual int Recv(void*, uint64, int64*) = 0;
 
     // vIndex: 9
-    virtual int RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp);
+    virtual int RecvFrom(void*, uint64, ::rtc::SocketAddress*, int64*);
 
     // vIndex: 8
     virtual int RecvFrom(::rtc::Socket::ReceiveBuffer& buffer);
@@ -147,16 +147,8 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $RecvFrom(void* pv, uint64 cb, ::rtc::SocketAddress* paddr, int64* timestamp);
-
     MCNAPI int $RecvFrom(::rtc::Socket::ReceiveBuffer& buffer);
     // NOLINTEND
 

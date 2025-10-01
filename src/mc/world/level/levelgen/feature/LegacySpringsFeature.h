@@ -42,19 +42,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacySpringsFeature(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
+    MCAPI LegacySpringsFeature(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
+    MCAPI void* $ctor(::FeatureRegistry const& registry, ::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
     // NOLINTEND
 
 public:

@@ -8,7 +8,6 @@ namespace ScriptDebuggerMessages { struct NotificationEvent; }
 namespace ScriptDebuggerMessages { struct PrintEvent; }
 namespace ScriptDebuggerMessages { struct ProfilerCapture; }
 namespace ScriptDebuggerMessages { struct ProtocolEvent; }
-namespace ScriptDebuggerMessages { struct ProtocolResponse; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -30,8 +29,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::string receive();
-
-    MCNAPI bool receiveProtocolResponse(::ScriptDebuggerMessages::ProtocolResponse& protocolResponse);
 
     MCNAPI void send(::std::string const& message);
 

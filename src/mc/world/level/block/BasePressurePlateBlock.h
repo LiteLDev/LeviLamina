@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -17,7 +16,6 @@ class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
-namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
 // clang-format on
 
@@ -56,9 +54,6 @@ public:
     virtual bool isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const
         /*override*/;
 
-    // vIndex: 44
-    virtual bool isSignalSource() const /*override*/;
-
     // vIndex: 96
     virtual bool shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const
         /*override*/;
@@ -66,16 +61,8 @@ public:
     // vIndex: 146
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
-    // vIndex: 67
-    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
     // vIndex: 87
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
-
-    // vIndex: 54
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
         /*override*/;
 
     // vIndex: 118
@@ -117,8 +104,6 @@ public:
         int               newSignal
     ) const;
 
-    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
@@ -142,18 +127,11 @@ public:
 
     MCAPI bool $isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
 
-    MCFOLD bool $isSignalSource() const;
-
     MCAPI bool $shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
     MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
-
-    MCFOLD bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCFOLD int $getVariant(::Block const& block) const;
 
@@ -162,7 +140,5 @@ public:
     MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI ::AABB const $getSensitiveAABB(::BlockPos const& pos) const;
-
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 };

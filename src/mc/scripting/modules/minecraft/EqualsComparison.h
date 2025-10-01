@@ -25,6 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool operator==(::ScriptModuleMinecraft::EqualsComparison const& other) const;
+
     MCNAPI ~EqualsComparison();
     // NOLINTEND
 

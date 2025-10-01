@@ -23,20 +23,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::RuleSet& operator=(::RuleSet&&);
+    MCAPI ::RuleSet& operator=(::RuleSet&&);
 
-    MCNAPI ~RuleSet();
+    MCAPI ~RuleSet();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void filterDuplicates(::RuleSet& instance, ::std::vector<::DetectionRule> const& detectionRules);
+    MCAPI static void filterDuplicates(::RuleSet& instance, ::std::vector<::DetectionRule> const& detectionRules);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

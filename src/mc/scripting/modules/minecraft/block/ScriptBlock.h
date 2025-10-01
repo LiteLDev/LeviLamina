@@ -27,6 +27,7 @@ namespace ScriptModuleMinecraft { struct ScriptLocationInUnloadedChunkError; }
 namespace ScriptModuleMinecraft { struct ScriptLocationOutOfWorldBoundsError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
+namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -128,6 +129,10 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getItemStack(int amount, bool withData) const;
 
+    MCNAPI ::Scripting::
+        Result<int, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
+        getLightLevel() const;
+
     MCNAPI ::Scripting::Result<
         ::std::string,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
@@ -158,6 +163,10 @@ public:
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getRedstonePower() const;
+
+    MCNAPI ::Scripting::
+        Result<int, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
+        getSkyLightLevel() const;
 
     MCNAPI ::Scripting::Result<
         ::std::vector<::std::string>,

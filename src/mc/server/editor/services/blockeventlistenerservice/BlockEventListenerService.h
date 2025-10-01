@@ -57,6 +57,8 @@ public:
 
     MCNAPI ::std::vector<::Editor::Transactions::BlockChangedOperationData>
     _fillPlacedAction(::BlockSource const& region, ::BlockPos const& pos) const;
+
+    MCNAPI bool _shouldProcessPlayerEvent(::Player const& player);
     // NOLINTEND
 
 public:

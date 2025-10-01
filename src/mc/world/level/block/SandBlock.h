@@ -43,7 +43,7 @@ public:
         /*override*/;
 
     // vIndex: 46
-    virtual bool canBeOriginalSurface() const /*override*/;
+    virtual bool canBeOriginalSurface(bool) const /*override*/;
 
     // vIndex: 0
     virtual ~SandBlock() /*override*/ = default;
@@ -65,7 +65,7 @@ public:
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCFOLD bool $canBeOriginalSurface() const;
+    MCFOLD bool $canBeOriginalSurface(bool) const;
     // NOLINTEND
 
 public:

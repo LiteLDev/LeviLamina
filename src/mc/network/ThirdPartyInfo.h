@@ -15,13 +15,15 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ThirdPartyInfo& operator=(ThirdPartyInfo const&);
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ThirdPartyInfo();
 
     MCNAPI ThirdPartyInfo(::ThirdPartyInfo const&);
-
-    MCNAPI ::ThirdPartyInfo& operator=(::ThirdPartyInfo const&);
 
     MCNAPI ~ThirdPartyInfo();
     // NOLINTEND

@@ -70,22 +70,22 @@ public:
         ::std::string const&
     ) /*override*/;
 
-    // vIndex: 228
+    // vIndex: 229
     virtual void handle(::NetworkIdentifier const&, ::DisconnectPacket const&) /*override*/;
 
-    // vIndex: 68
+    // vIndex: 69
     virtual void handle(::NetworkIdentifier const&, ::NetworkStackLatencyPacket const&) /*override*/;
 
-    // vIndex: 221
+    // vIndex: 222
     virtual void handle(::NetworkIdentifier const&, ::ResourcePacksInfoPacket const&) /*override*/;
 
-    // vIndex: 220
+    // vIndex: 221
     virtual void handle(::NetworkIdentifier const&, ::ResourcePackStackPacket const&) /*override*/;
 
-    // vIndex: 222
+    // vIndex: 223
     virtual void handle(::NetworkIdentifier const&, ::ServerToClientHandshakePacket const&) /*override*/;
 
-    // vIndex: 213
+    // vIndex: 214
     virtual void handle(::NetworkIdentifier const&, ::StartGamePacket const&) /*override*/;
 
     // vIndex: 2

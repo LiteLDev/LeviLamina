@@ -16,13 +16,14 @@ public:
 
 public:
     // prevent constructor by default
-    ProtocolResponse& operator=(ProtocolResponse const&);
     ProtocolResponse(ProtocolResponse const&);
     ProtocolResponse();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::ScriptDebuggerMessages::ProtocolResponse& operator=(::ScriptDebuggerMessages::ProtocolResponse const&);
+
     MCNAPI ::ScriptDebuggerMessages::ProtocolResponse& operator=(::ScriptDebuggerMessages::ProtocolResponse&&);
 
     MCNAPI ~ProtocolResponse();

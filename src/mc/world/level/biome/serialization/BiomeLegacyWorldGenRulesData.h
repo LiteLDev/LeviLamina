@@ -26,8 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BiomeLegacyWorldGenRulesData(::BiomeLegacyWorldGenRulesData&&);
-
     MCNAPI ~BiomeLegacyWorldGenRulesData();
     // NOLINTEND
 
@@ -35,12 +33,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::Result<::BiomeLegacyWorldGenRulesData> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::BiomeLegacyWorldGenRulesData&&);
     // NOLINTEND
 
 public:

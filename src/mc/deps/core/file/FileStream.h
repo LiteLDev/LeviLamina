@@ -4,7 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class Path; }
+namespace Core { class FileOpenMode; }
+namespace Core { class PathView; }
 // clang-format on
 
 namespace Core {
@@ -33,15 +34,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FileStream(::Core::Path const& filename, int openMode);
+    MCNAPI FileStream(::Core::PathView filename, int openMode);
 
-    MCNAPI void open(::Core::Path const& filename, int om);
+    MCNAPI void open(::Core::PathView filename, ::Core::FileOpenMode openMode);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::Path const& filename, int openMode);
+    MCNAPI void* $ctor(::Core::PathView filename, int openMode);
     // NOLINTEND
 
 public:

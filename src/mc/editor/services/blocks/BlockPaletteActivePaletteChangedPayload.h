@@ -17,6 +17,7 @@ public:
 
 public:
     // prevent constructor by default
+    BlockPaletteActivePaletteChangedPayload& operator=(BlockPaletteActivePaletteChangedPayload const&);
     BlockPaletteActivePaletteChangedPayload(BlockPaletteActivePaletteChangedPayload const&);
     BlockPaletteActivePaletteChangedPayload();
 
@@ -25,13 +26,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~BlockPaletteActivePaletteChangedPayload() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::Network::BlockPaletteActivePaletteChangedPayload&
-    operator=(::Editor::Network::BlockPaletteActivePaletteChangedPayload const&);
     // NOLINTEND
 
 public:

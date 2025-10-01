@@ -30,17 +30,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
     // vIndex: 20
     virtual bool isThrowable() const /*override*/;
 
-    // vIndex: 77
+    // vIndex: 79
     virtual ::Actor*
     createProjectileActor(::BlockSource& region, ::ItemStack const&, ::Vec3 const& pos, ::Vec3 const& direction) const
         /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
@@ -63,7 +63,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
     MCFOLD bool $isThrowable() const;
 

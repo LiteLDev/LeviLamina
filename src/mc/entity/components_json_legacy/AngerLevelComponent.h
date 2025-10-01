@@ -108,14 +108,13 @@ public:
 public:
     // prevent constructor by default
     AngerLevelComponent& operator=(AngerLevelComponent const&);
+    AngerLevelComponent(AngerLevelComponent const&);
     AngerLevelComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI AngerLevelComponent(::AngerLevelComponent&&);
-
-    MCNAPI AngerLevelComponent(::AngerLevelComponent const&);
 
     MCNAPI void _createOrModifyAngerLevel(::Actor const& nuisanceSource, ::std::function<int(int)> const& modifyingFn);
 
@@ -153,8 +152,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::AngerLevelComponent&&);
-
-    MCNAPI void* $ctor(::AngerLevelComponent const&);
     // NOLINTEND
 
 public:

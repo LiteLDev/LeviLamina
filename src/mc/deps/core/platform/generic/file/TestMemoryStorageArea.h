@@ -16,6 +16,18 @@ namespace Bedrock {
 
 class TestMemoryStorageArea : public ::Core::MemoryFileStorageArea {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk794e65;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TestMemoryStorageArea& operator=(TestMemoryStorageArea const&);
+    TestMemoryStorageArea(TestMemoryStorageArea const&);
+    TestMemoryStorageArea();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
@@ -29,6 +41,19 @@ public:
 
     // vIndex: 4
     virtual uint64 getTotalSize() const /*override*/;
+
+    // vIndex: 13
+    virtual bool supportsExtendSize() const /*override*/;
+
+    // vIndex: 14
+    virtual bool canExtendSize() const /*override*/;
+
+    // vIndex: 18
+    virtual void preemptiveExtendSize(
+        uint64 const            expectedContentSize,
+        ::std::function<void()> successCallback,
+        ::std::function<void()> failureCallback
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~TestMemoryStorageArea() /*override*/ = default;

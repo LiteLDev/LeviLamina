@@ -12,13 +12,6 @@ struct BiomeJsonDocumentUpgrader {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void doUpgradeFrom_v1_12_To_v1_13(
-        ::rapidjson::GenericDocument<
-            ::rapidjson::UTF8<char>,
-            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-            ::rapidjson::CrtAllocator>& document
-    );
-
     MCNAPI static ::std::optional<::rapidjson::GenericDocument<
         ::rapidjson::UTF8<char>,
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,

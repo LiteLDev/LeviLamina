@@ -25,6 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Block const* getBlock(::BlockPos const& pos, ::Block const* fallback) const;
+    MCAPI ::Block const* getBlock(::BlockPos const& pos, ::Block const* fallback) const;
     // NOLINTEND
 };

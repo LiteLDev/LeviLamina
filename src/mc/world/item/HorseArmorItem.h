@@ -29,14 +29,14 @@ public:
         Iron    = 2,
         Gold    = 3,
         Diamond = 4,
-        Count   = 5,
+        Copper  = 5,
+        Count   = 6,
     };
 
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int const>              mDefense;
-    ::ll::TypedStorage<4, 4, int const>              mModelIndex;
     ::ll::TypedStorage<4, 4, ::HorseArmorItem::Tier> mTier;
     // NOLINTEND
 
@@ -61,7 +61,7 @@ public:
     // vIndex: 15
     virtual bool isDyeable() const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
         /*override*/;
 
@@ -81,14 +81,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool _tryEquipHorseArmor(::Actor* actor, ::ItemStack const& horseArmor);
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static ::mce::Color& DEFAULT_HORSE_LEATHER_COLOR();
-
-    MCAPI static ::std::add_lvalue_reference_t<int const[]> mHealthPerTier();
     // NOLINTEND
 
 public:

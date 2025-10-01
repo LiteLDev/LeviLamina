@@ -6,6 +6,7 @@
 // clang-format off
 class SemVersion;
 namespace Json { class Value; }
+namespace Puv { class Logger; }
 namespace cereal { class DynamicValue; }
 // clang-format on
 
@@ -45,12 +46,15 @@ public:
 
     // vIndex: 2
     virtual ::Puv::Input::Data data() const = 0;
+
+    // vIndex: 3
+    virtual ::Puv::Logger const& getErrors() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI ::Puv::Logger const& $getErrors() const;
     // NOLINTEND
 };
 

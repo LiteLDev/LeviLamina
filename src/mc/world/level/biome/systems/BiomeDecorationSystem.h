@@ -24,7 +24,7 @@ MCAPI void decorate(
     ::LevelChunk&                        lc,
     ::BlockSource&                       source,
     ::Random&                            random,
-    ::std::vector<::Biome const*>&       uniqueBiomes,
+    ::gsl::span<::Biome const*>          uniqueBiomes,
     ::std::string const&                 pass,
     ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider
 );

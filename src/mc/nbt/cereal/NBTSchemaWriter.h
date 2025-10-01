@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/schema/SchemaRWType.h"
 #include "mc/deps/cereal/schema/SchemaWriter.h"
 
 // auto generated forward declare list
@@ -101,18 +102,24 @@ public:
     virtual bool write(::std::string_view const value) /*override*/;
 
     // vIndex: 14
-    virtual bool pushMember(::std::string_view const memberName) /*override*/;
+    virtual void writeValidityFlag(bool) /*override*/;
 
     // vIndex: 15
-    virtual void popMember() /*override*/;
+    virtual void writeControlValue(uint) /*override*/;
 
     // vIndex: 16
-    virtual bool openObject() /*override*/;
+    virtual bool pushMember(::std::string_view const memberName) /*override*/;
 
     // vIndex: 17
-    virtual bool openArray(uint64) /*override*/;
+    virtual void popMember() /*override*/;
 
     // vIndex: 18
+    virtual ::cereal::SchemaRWType openObject() /*override*/;
+
+    // vIndex: 19
+    virtual ::cereal::SchemaRWType openArray(bool isDynamicExtent, uint64 length) /*override*/;
+
+    // vIndex: 20
     virtual void close() /*override*/;
 
     // vIndex: 0
@@ -154,13 +161,17 @@ public:
 
     MCNAPI bool $write(::std::string_view const value);
 
+    MCNAPI void $writeValidityFlag(bool);
+
+    MCNAPI void $writeControlValue(uint);
+
     MCNAPI bool $pushMember(::std::string_view const memberName);
 
     MCNAPI void $popMember();
 
-    MCNAPI bool $openObject();
+    MCNAPI ::cereal::SchemaRWType $openObject();
 
-    MCNAPI bool $openArray(uint64);
+    MCNAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
 
     MCNAPI void $close();
     // NOLINTEND

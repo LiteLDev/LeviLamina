@@ -25,11 +25,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BuoyancyComponent(BuoyancyComponent const&);
-    BuoyancyComponent();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool canFloat(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
@@ -38,7 +33,5 @@ public:
 
     MCNAPI bool
     needToResurface(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
-
-    MCNAPI ::BuoyancyComponent& operator=(::BuoyancyComponent const&);
     // NOLINTEND
 };

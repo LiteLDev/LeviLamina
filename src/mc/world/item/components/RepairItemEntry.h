@@ -18,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::RepairItemEntry& operator=(::RepairItemEntry const&);
+    MCAPI ::RepairItemEntry& operator=(::RepairItemEntry const&);
 
-    MCNAPI ~RepairItemEntry();
+    MCAPI ~RepairItemEntry();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

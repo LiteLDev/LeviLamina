@@ -11,9 +11,11 @@ namespace KnockbackRules { struct KnockbackAttackOptions; }
 namespace KnockbackRules {
 // functions
 // NOLINTBEGIN
-MCNAPI void doKnockbackAttack(::KnockbackRules::KnockbackAttackOptions& options);
+MCNAPI void doKnockbackAttack(::KnockbackRules::KnockbackAttackOptions const& options);
 
 MCNAPI float getScaledKnockbackForce(::Actor const& actor, float knockbackPower);
+
+MCNAPI bool isKnockbackResistant(::Actor const& actor);
 // NOLINTEND
 
 // static variables

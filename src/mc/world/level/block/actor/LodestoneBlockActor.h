@@ -38,10 +38,10 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -51,23 +51,23 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& sTagName_Handle();
+    MCAPI static ::std::string const& sTagName_Handle();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::BlockSource& region);
+    MCFOLD void $tick(::BlockSource& region);
 
-    MCNAPI void $onRemoved(::BlockSource& region);
+    MCAPI void $onRemoved(::BlockSource& region);
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
     // NOLINTEND
 
 public:

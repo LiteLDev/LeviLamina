@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 class Biome;
 class BiomeRegistry;
 class BlockPalette;
@@ -24,7 +23,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk7fbe74;
-    ::ll::UntypedStorage<8, 64> mUnk41c5ce;
+    ::ll::UntypedStorage<8, 64> mUnk9cfa41;
     ::ll::UntypedStorage<8, 64> mUnkfd048a;
     // NOLINTEND
 
@@ -44,7 +43,6 @@ public:
             bool,
             ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const&,
             ::FeatureRegistry const&,
-            ::BaseGameVersion const&,
             ::BiomeStringList&
         )> serializeToData,
         ::std::function<void(

@@ -32,32 +32,33 @@ public:
 
 public:
     // prevent constructor by default
-    ComponentItemData_Legacy& operator=(ComponentItemData_Legacy const&);
     ComponentItemData_Legacy();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ComponentItemData_Legacy(::ComponentItemData_Legacy const&);
+    MCAPI ComponentItemData_Legacy(::ComponentItemData_Legacy const&);
 
-    MCNAPI ComponentItemData_Legacy(::ComponentItemData_Legacy&&);
+    MCAPI ComponentItemData_Legacy(::ComponentItemData_Legacy&&);
 
-    MCNAPI ::ComponentItemData_Legacy& operator=(::ComponentItemData_Legacy&&);
+    MCAPI ::ComponentItemData_Legacy& operator=(::ComponentItemData_Legacy&&);
 
-    MCNAPI ~ComponentItemData_Legacy();
+    MCAPI ::ComponentItemData_Legacy& operator=(::ComponentItemData_Legacy const&);
+
+    MCAPI ~ComponentItemData_Legacy();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ComponentItemData_Legacy const&);
+    MCAPI void* $ctor(::ComponentItemData_Legacy const&);
 
-    MCNAPI void* $ctor(::ComponentItemData_Legacy&&);
+    MCAPI void* $ctor(::ComponentItemData_Legacy&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

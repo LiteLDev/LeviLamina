@@ -40,8 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptContainerRulesError(::std::string const& errorMessage);
-
     MCNAPI ~ScriptContainerRulesError();
     // NOLINTEND
 
@@ -51,12 +49,6 @@ public:
     MCNAPI static ::Scripting::ErrorBinding bind();
 
     MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& errorMessage);
     // NOLINTEND
 
 public:

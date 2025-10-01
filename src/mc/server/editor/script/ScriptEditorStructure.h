@@ -53,12 +53,12 @@ public:
         ::Scripting::InvalidArgumentError>
     getBlockPermutation(::Vec3 const& location) const;
 
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getDisplayName();
+
     MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
 
     MCNAPI ::Scripting::Result<::std::vector<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
     getTags();
-
-    MCNAPI bool isValid() const;
 
     MCNAPI ::Scripting::
         Result<bool, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError>

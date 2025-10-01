@@ -17,12 +17,13 @@ struct CameraAimAssistCategoryDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk9c5c13;
+    ::ll::UntypedStorage<8, 32>  mUnkd65ae8;
     ::ll::UntypedStorage<8, 144> mUnk779abf;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    CameraAimAssistCategoryDefinition& operator=(CameraAimAssistCategoryDefinition const&);
     CameraAimAssistCategoryDefinition(CameraAimAssistCategoryDefinition const&);
     CameraAimAssistCategoryDefinition();
 
@@ -33,9 +34,6 @@ public:
 
     MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
-
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&
-    operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&);
 
     MCNAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&) const;
 

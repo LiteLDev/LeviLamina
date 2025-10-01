@@ -76,6 +76,9 @@ public:
     virtual bool baseUseItem(::ItemStack& item) /*override*/;
 
     // vIndex: 14
+    virtual bool baseUseItemAsAttack(::ItemStack& item) /*override*/;
+
+    // vIndex: 15
     virtual ::InteractionResult useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
@@ -85,34 +88,34 @@ public:
         bool              isFirstEvent
     ) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual void resendBlocksAroundArea(::BlockPos const& pos, uchar facing) const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 17
     virtual void resendPlayerState() const /*override*/;
 
-    // vIndex: 17
+    // vIndex: 18
     virtual void sendPlayerInventory() const /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual bool isSneaking() const /*override*/;
 
     // vIndex: 3
     virtual ::Block const& unwrapBlock(uint const& block) const /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual ::Block const& getBlock(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual ::Block const& getExtraBlock(::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual bool isLastBuildBlockInteractive() const /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual void sendBlockInteractedWith(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual ::DepenetrationComponent& getDepenetrationComponent() /*override*/;
 
     // vIndex: 0
@@ -148,6 +151,8 @@ public:
     MCNAPI void $addExpectedAction(::InventoryAction const& action);
 
     MCNAPI bool $baseUseItem(::ItemStack& item);
+
+    MCNAPI bool $baseUseItemAsAttack(::ItemStack& item);
 
     MCNAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,

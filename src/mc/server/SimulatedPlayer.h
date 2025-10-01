@@ -15,6 +15,7 @@
 #include "mc/server/ServerPlayer.h"
 #include "mc/server/sim/BuildIntent.h"
 #include "mc/server/sim/LookAtIntent.h"
+#include "mc/server/sim/LookDuration.h"
 #include "mc/server/sim/MovementIntent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
 #include "mc/world/actor/player/PlayerMovementSettings.h"
@@ -95,7 +96,7 @@ public:
     ::ll::TypedStorage<4, 16, ::std::optional<::BlockPos>>                                mDestroyingBlockPos;
     ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                                      mDestroyingBlockFace;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper>> mGameTestHelper;
-    ::ll::TypedStorage<8, 8, uint64>                                                      mCooldownTick;
+    ::ll::TypedStorage<8, 16, ::std::optional<uint64>>                                    mCooldownTick;
     ::ll::TypedStorage<8, 64, ::PlayerMovementSettings>                                   mMovementSettings;
     ::ll::TypedStorage<4, 4, float>                                                       mBaseInputSpeed;
     ::ll::TypedStorage<8, 32, ::std::string>                                              mXuid;
@@ -113,16 +114,16 @@ public:
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 145
+    // vIndex: 146
     virtual void aiStep() /*override*/;
 
-    // vIndex: 232
+    // vIndex: 233
     virtual bool isSimulated() const /*override*/;
 
-    // vIndex: 233
+    // vIndex: 234
     virtual ::std::string getXuid() const /*override*/;
 
-    // vIndex: 234
+    // vIndex: 235
     virtual ::PlayerMovementSettings const& getMovementSettings() const /*override*/;
 
     // vIndex: 21
@@ -134,16 +135,16 @@ public:
         bool          keepVelocity
     ) /*override*/;
 
-    // vIndex: 242
+    // vIndex: 245
     virtual int _getSpawnChunkLimit() const /*override*/;
 
-    // vIndex: 238
+    // vIndex: 241
     virtual ::std::shared_ptr<::ChunkViewSource> _createChunkSource(::ChunkSource& mainChunkSource) /*override*/;
 
-    // vIndex: 243
+    // vIndex: 246
     virtual void _updateChunkPublisherView(::Vec3 const& position, float minDistance) /*override*/;
 
-    // vIndex: 0
+    // vIndex: 8
     virtual ~SimulatedPlayer() /*override*/;
     // NOLINTEND
 
@@ -177,6 +178,8 @@ public:
 
     MCAPI bool _trySwing();
 
+    MCAPI void _updateMovement();
+
     MCAPI void _updateRidingComponents();
 
     MCAPI void preAiStep();
@@ -193,9 +196,9 @@ public:
 
     MCAPI bool simulateJump();
 
-    MCAPI void simulateLocalMove(::Vec3 const& localDirection, float);
+    MCAPI void simulateLookAt(::BlockPos const& blockPos, ::sim::LookDuration lookType);
 
-    MCAPI void simulateMoveToLocation(::Vec3 const& position, float speed, bool faceTarget);
+    MCAPI void simulateLookAt(::Vec3 const& pos, ::sim::LookDuration lookType);
 
     MCAPI ::ScriptModuleGameTest::ScriptNavigationResult simulateNavigateToEntity(::Actor& actor, float speed);
 
@@ -216,22 +219,11 @@ public:
         ::ScriptModuleMinecraft::ScriptFacing face,
         ::Vec3 const&                         facePos
     );
-
-    MCAPI void simulateWorldMove(::Vec3 const& worldDirection, float);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SimulatedPlayer* create(
-        ::std::string const&                                  name,
-        ::Vec3 const&                                         spawnPos,
-        ::DimensionType                                       dimensionId,
-        ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> serverNetworkHandler,
-        ::std::string const&                                  xuid,
-        ::std::optional<::ActorUniqueID>                      idOverride
-    );
-
     MCAPI static ::SimulatedPlayer* create(
         ::std::string const&                                  name,
         ::Vec3 const&                                         spawnPos,

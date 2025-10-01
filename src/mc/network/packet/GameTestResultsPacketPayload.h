@@ -13,14 +13,13 @@ public:
 
 public:
     // prevent constructor by default
+    GameTestResultsPacketPayload& operator=(GameTestResultsPacketPayload const&);
     GameTestResultsPacketPayload(GameTestResultsPacketPayload const&);
     GameTestResultsPacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::GameTestResultsPacketPayload& operator=(::GameTestResultsPacketPayload const&);
-
     MCFOLD ::GameTestResultsPacketPayload& operator=(::GameTestResultsPacketPayload&&);
 
     MCAPI ~GameTestResultsPacketPayload();

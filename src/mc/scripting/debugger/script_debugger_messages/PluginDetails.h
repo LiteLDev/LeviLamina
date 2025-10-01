@@ -14,6 +14,7 @@ public:
 
 public:
     // prevent constructor by default
+    PluginDetails& operator=(PluginDetails const&);
     PluginDetails(PluginDetails const&);
     PluginDetails();
 
@@ -22,7 +23,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ScriptDebuggerMessages::PluginDetails& operator=(::ScriptDebuggerMessages::PluginDetails&&);
 
-    MCNAPI ::ScriptDebuggerMessages::PluginDetails& operator=(::ScriptDebuggerMessages::PluginDetails const&);
+    MCNAPI bool operator==(::ScriptDebuggerMessages::PluginDetails const&) const;
     // NOLINTEND
 };
 

@@ -27,12 +27,13 @@ public:
 public:
     // prevent constructor by default
     ShooterComponent& operator=(ShooterComponent const&);
-    ShooterComponent(ShooterComponent const&);
     ShooterComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ShooterComponent(::ShooterComponent const&);
+
     MCNAPI void _shootProjectile(::Actor& owner, ::ActorDefinitionIdentifier const& actorDef, int auxVal);
 
     MCNAPI void onShoot(::Actor& owner);
@@ -40,6 +41,12 @@ public:
     MCNAPI ::ShooterComponent& operator=(::ShooterComponent&&);
 
     MCNAPI ~ShooterComponent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ShooterComponent const&);
     // NOLINTEND
 
 public:

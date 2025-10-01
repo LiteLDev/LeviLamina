@@ -35,11 +35,6 @@ public:
         ::DBStorageFolderWatcher const&      folderWatcher,
         ::DBStorageFolderWatcherSnapshotKind kind
     ) const;
-
-    MCNAPI void fireEventWorldCorruptionCausedWorldShutdown(
-        ::std::string const&  reason,
-        ::std::optional<bool> isOutOfDiskSpace
-    ) const;
     // NOLINTEND
 
 public:

@@ -26,7 +26,7 @@ class ScriptPlayerGameplayHandler : public ::EventHandlerDispatcher<::PlayerGame
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 30
+    // vIndex: 31
     virtual ::HandlerResult handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent) /*override*/;
 
     // vIndex: 1

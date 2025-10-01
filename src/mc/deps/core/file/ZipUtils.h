@@ -10,7 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 namespace Core::ZipUtils { class UnzipSettings; }
 namespace Core::ZipUtils { class ZipProgress; }
@@ -20,16 +20,13 @@ namespace Core::ZipUtils { class ZipSettings; }
 namespace Core::ZipUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _zipEncodedPathToUTF8(::Core::Path const& path);
+MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _zipEncodedPathToUTF8(::Core::PathView path);
 
-MCNAPI bool exists(
-    ::Core::Path const&                    zipPath,
-    ::Core::Path const&                    relativePath,
-    ::Core::ZipUtils::UnzipSettings const& unzipSettings
-);
+MCNAPI bool
+exists(::Core::PathView zipPath, ::Core::PathView relativePath, ::Core::ZipUtils::UnzipSettings const& unzipSettings);
 
 MCNAPI bool getFilenames(
-    ::Core::Path const&                               zipPath,
+    ::Core::PathView                                  zipPath,
     ::std::vector<::Core::PathBuffer<::std::string>>& result,
     ::Core::ZipUtils::UnzipSettings const&            unzipSettings
 );
@@ -38,9 +35,12 @@ MCNAPI ::Core::ZipUtils::UnzipResult getTranslatedUnzipResult(int inputResult);
 
 MCNAPI ::Core::ZipUtils::ZipResult getTranslatedZipResult(int inputResult);
 
+MCNAPI ::Core::Result
+isFolderDepthValid(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& filePath, uint64 maxFileDepth);
+
 MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
-    ::Core::Path const&                    zipInputPath,
-    ::Core::Path const&                    outputFolderPath,
+    ::Core::PathView                       zipInputPath,
+    ::Core::PathView                       outputFolderPath,
     ::Core::ZipUtils::ZipProgress&         progress,
     bool                                   useLowMemMode,
     ::Core::ZipUtils::UnzipSettings const& unzipSettings,
@@ -48,8 +48,8 @@ MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
 );
 
 MCNAPI ::Core::ZipUtils::ZipResult
-zip(::Core::Path const&                  inputPathIn,
-    ::Core::Path const&                  zipOutputPath,
+zip(::Core::PathView                     inputPathIn,
+    ::Core::PathView                     zipOutputPath,
     ::Core::ZipUtils::ZipProgress&       progress,
     bool                                 useLowMemMode,
     ::Core::ZipUtils::ZipSettings const& zipSettings);

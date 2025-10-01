@@ -35,7 +35,7 @@ public:
     // vIndex: 12
     virtual ::Vec3 getFiringPos() const /*override*/;
 
-    // vIndex: 166
+    // vIndex: 167
     virtual float getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const /*override*/;
 
     // vIndex: 8

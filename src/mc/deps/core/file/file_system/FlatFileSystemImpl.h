@@ -40,6 +40,13 @@ public:
     MCNAPI ::Core::FlatFileSearchResult
     _findFileOrDirectoryEntry(::Core::PathView filePath, ::Core::PathView manifestPath, bool skipDeleted);
 
+    MCNAPI ::Core::Result _getSeekPositionAndSize(
+        ::Core::PathView filePath,
+        ::Core::PathView manifestPath,
+        uint64&          seekPositionOut,
+        uint64&          fileSizeOut
+    );
+
     MCNAPI ::Core::Result createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
     MCNAPI ::Core::Result deleteFileOrDirectory(

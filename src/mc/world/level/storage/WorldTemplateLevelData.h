@@ -24,12 +24,11 @@ public:
     // prevent constructor by default
     WorldTemplateLevelData& operator=(WorldTemplateLevelData const&);
     WorldTemplateLevelData(WorldTemplateLevelData const&);
+    WorldTemplateLevelData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WorldTemplateLevelData();
-
     MCNAPI WorldTemplateLevelData(
         bool                     isFromWorldTemplate,
         bool                     isWorldTemplateOptionLocked,
@@ -49,8 +48,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
-
     MCNAPI void* $ctor(
         bool                     isFromWorldTemplate,
         bool                     isWorldTemplateOptionLocked,

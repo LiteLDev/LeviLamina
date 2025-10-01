@@ -28,28 +28,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
     // vIndex: 60
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 112
+    // vIndex: 114
     virtual ::Brightness getLightEmission(int data) const /*override*/;
 
     // vIndex: 47
     virtual bool isDestructive(int auxValue) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 122
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
-    // vIndex: 118
+    // vIndex: 120
     virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const
         /*override*/;
 

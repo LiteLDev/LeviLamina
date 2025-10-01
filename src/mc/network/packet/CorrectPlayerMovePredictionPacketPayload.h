@@ -20,16 +20,4 @@ public:
     ::ll::TypedStorage<1, 1, bool>                   mOnGround;
     ::ll::TypedStorage<1, 1, ::RewindType>           mPredictionType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CorrectPlayerMovePredictionPacketPayload& operator=(CorrectPlayerMovePredictionPacketPayload const&);
-    CorrectPlayerMovePredictionPacketPayload(CorrectPlayerMovePredictionPacketPayload const&);
-    CorrectPlayerMovePredictionPacketPayload();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::CorrectPlayerMovePredictionPacketPayload& operator=(::CorrectPlayerMovePredictionPacketPayload&&);
-    // NOLINTEND
 };

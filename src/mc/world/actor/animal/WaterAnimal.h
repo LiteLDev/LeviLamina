@@ -20,7 +20,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 147
+    // vIndex: 148
     virtual bool checkSpawnRules(bool) /*override*/;
 
     // vIndex: 8

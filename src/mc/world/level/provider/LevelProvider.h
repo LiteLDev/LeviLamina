@@ -7,6 +7,7 @@
 class EntityContext;
 class EntityRegistry;
 class ILevel;
+class IMinecraftEventing;
 class IRandom;
 struct ExternalDataInterface;
 // clang-format on
@@ -14,7 +15,8 @@ struct ExternalDataInterface;
 namespace LevelProvider {
 // functions
 // NOLINTBEGIN
-MCNAPI void addLevelComponents(::EntityContext& levelEntity, ::IRandom& random, bool isClientSide);
+MCNAPI void
+addLevelComponents(::EntityContext& levelEntity, ::IRandom& random, bool isClientSide, ::IMinecraftEventing& eventing);
 
 MCNAPI void initializeGlobalComponents(::EntityRegistry& registry);
 

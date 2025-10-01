@@ -59,24 +59,24 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
+    virtual bool applies(::Random&, ::LootTableContext& context) /*override*/;
+
     // vIndex: 0
     virtual ~LootItemMatchToolCondition() /*override*/;
-
-    // vIndex: 1
-    virtual bool applies(::Random& random, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI LootItemMatchToolCondition(
-        ::IntRange                                                      count,
-        ::IntRange                                                      durability,
-        ::std::string                                                   itemName,
-        ::std::vector<::LootItemMatchToolCondition::EnchantInfo> const& enchantments,
-        ::std::vector<::ItemDescriptor> const&                          itemTagsAny,
-        ::std::vector<::ItemDescriptor> const&                          itemTagsAll,
-        ::std::vector<::ItemDescriptor> const&                          itemTagsNone
+        ::IntRange                                               count,
+        ::IntRange                                               durability,
+        ::std::string                                            itemName,
+        ::std::vector<::LootItemMatchToolCondition::EnchantInfo> enchantments,
+        ::std::vector<::ItemDescriptor>                          itemTagsAny,
+        ::std::vector<::ItemDescriptor>                          itemTagsAll,
+        ::std::vector<::ItemDescriptor>                          itemTagsNone
     );
 
     MCNAPI bool _doItemTagsMatch(::Item const& item) const;
@@ -85,20 +85,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value object);
+    MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value const& object);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::IntRange                                                      count,
-        ::IntRange                                                      durability,
-        ::std::string                                                   itemName,
-        ::std::vector<::LootItemMatchToolCondition::EnchantInfo> const& enchantments,
-        ::std::vector<::ItemDescriptor> const&                          itemTagsAny,
-        ::std::vector<::ItemDescriptor> const&                          itemTagsAll,
-        ::std::vector<::ItemDescriptor> const&                          itemTagsNone
+        ::IntRange                                               count,
+        ::IntRange                                               durability,
+        ::std::string                                            itemName,
+        ::std::vector<::LootItemMatchToolCondition::EnchantInfo> enchantments,
+        ::std::vector<::ItemDescriptor>                          itemTagsAny,
+        ::std::vector<::ItemDescriptor>                          itemTagsAll,
+        ::std::vector<::ItemDescriptor>                          itemTagsNone
     );
     // NOLINTEND
 
@@ -111,7 +111,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $applies(::Random& random, ::LootTableContext& context);
+    MCNAPI bool $applies(::Random&, ::LootTableContext& context);
     // NOLINTEND
 
 public:

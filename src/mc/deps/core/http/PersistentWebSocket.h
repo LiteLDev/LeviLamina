@@ -36,25 +36,25 @@ public:
     // vIndex: 0
     virtual ~PersistentWebSocket() /*override*/;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual bool shouldReconnect() const;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl() = 0;
 
-    // vIndex: 6
+    // vIndex: 7
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::HeaderCollection> getHeaders();
 
-    // vIndex: 7
+    // vIndex: 8
     virtual ::Bedrock::Http::RetryPolicy getReconnectPolicy();
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void onConnect();
 
-    // vIndex: 9
+    // vIndex: 10
     virtual void onDisconnect(bool, uint);
 
-    // vIndex: 3
+    // vIndex: 4
     virtual void onClose(uint status) /*override*/;
     // NOLINTEND
 

@@ -42,22 +42,22 @@ public:
     // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual bool checkSpawnRules(bool) /*override*/;
 
-    // vIndex: 155
+    // vIndex: 156
     virtual int getArmorValue() const /*override*/;
 
     // vIndex: 7
     virtual void _doInitialMove() /*override*/;
 
-    // vIndex: 174
+    // vIndex: 175
     virtual ::std::unique_ptr<::BodyControl> initBodyControl() /*override*/;
 
     // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 152
+    // vIndex: 153
     virtual float getMaxHeadXRot() /*override*/;
 
     // vIndex: 135

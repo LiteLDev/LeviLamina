@@ -26,8 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BiomeTagsData(::BiomeTagsData&&);
-
     MCNAPI ~BiomeTagsData();
     // NOLINTEND
 
@@ -35,12 +33,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::Result<::BiomeTagsData> read(::ReadOnlyBinaryStream& stream);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::BiomeTagsData&&);
     // NOLINTEND
 
 public:

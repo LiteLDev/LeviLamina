@@ -17,10 +17,10 @@ class SpyglassItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 80
+    // vIndex: 82
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 81
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
         /*override*/;
 

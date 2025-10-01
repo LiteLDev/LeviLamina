@@ -137,8 +137,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _hasAnyFace(::Block const& block);
-
     MCAPI static ::Block const& getBlockForPlacement(
         ::Block const&    oldBlock,
         ::Block const&    placementBlock,

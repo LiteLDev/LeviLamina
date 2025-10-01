@@ -11,12 +11,11 @@
 // clang-format off
 class Block;
 class BlockPos;
-class DefinitionTrigger;
+class ComponentItem;
 class HashedString;
 class ItemStack;
 class Mob;
 struct LegacyOnHitBlockTriggerItemComponentData;
-namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class LegacyOnHitBlockTriggerItemComponent : public ::LegacyTriggerItemComponent {
@@ -35,7 +34,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7
-    virtual void _initializeComponent() /*override*/;
+    virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
     // vIndex: 0
     virtual ~LegacyOnHitBlockTriggerItemComponent() /*override*/ = default;
@@ -64,7 +63,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent(::ComponentItem& owner);
     // NOLINTEND
 
 public:

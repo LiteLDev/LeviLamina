@@ -10,7 +10,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 struct AdventureSettings;
 // clang-format on
 
@@ -37,28 +36,30 @@ public:
     virtual bool isInWorldAndNotShowingAnyMenuScreens() const /*override*/;
 
     // vIndex: 2
-    virtual ::AdventureSettings const& getAdventureSettings() const /*override*/;
+    virtual bool isPausingGame() const /*override*/;
 
     // vIndex: 3
-    virtual ::ClientPlayMode getPlayMode() const /*override*/;
-
-    // vIndex: 6
-    virtual float getSmoothRotationSpeed() const /*override*/;
+    virtual ::AdventureSettings const& getAdventureSettings() const /*override*/;
 
     // vIndex: 4
-    virtual ::InputMode getInputMode() const /*override*/;
-
-    // vIndex: 5
-    virtual ::GameType getDefaultGameType() const /*override*/;
+    virtual ::ClientPlayMode getPlayMode() const /*override*/;
 
     // vIndex: 7
-    virtual ::Vec3 getWorldSpaceVRRealityGazeDir() const /*override*/;
+    virtual float getSmoothRotationSpeed() const /*override*/;
+
+    // vIndex: 5
+    virtual ::InputMode getInputMode() const /*override*/;
+
+    // vIndex: 6
+    virtual ::GameType getDefaultGameType() const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $isInWorldAndNotShowingAnyMenuScreens() const;
+
+    MCNAPI bool $isPausingGame() const;
 
     MCNAPI ::AdventureSettings const& $getAdventureSettings() const;
 
@@ -69,8 +70,6 @@ public:
     MCNAPI ::InputMode $getInputMode() const;
 
     MCNAPI ::GameType $getDefaultGameType() const;
-
-    MCNAPI ::Vec3 $getWorldSpaceVRRealityGazeDir() const;
     // NOLINTEND
 
 public:

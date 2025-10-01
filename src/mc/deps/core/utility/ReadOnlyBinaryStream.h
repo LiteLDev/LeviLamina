@@ -16,10 +16,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ReadOnlyBinaryStream();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -32,10 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ReadOnlyBinaryStream(::std::string_view buffer, bool copyBuffer);
-
-    MCAPI bool canReadBool() const;
-
     MCAPI ::Bedrock::Result<void> ensureReadCompleted() const;
 
     MCAPI ::Bedrock::Result<bool> getBool();
@@ -73,14 +65,6 @@ public:
     MCAPI ::Bedrock::Result<int> getVarInt();
 
     MCAPI ::Bedrock::Result<int64> getVarInt64();
-
-    MCAPI void setReadPointer(uint64 pos);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view buffer, bool copyBuffer);
     // NOLINTEND
 
 public:

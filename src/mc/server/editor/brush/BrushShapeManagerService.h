@@ -3,8 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/DirectionalPlacementMode.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/editor/BrushFlattenMode.h"
+#include "mc/editor/DirectionalPlacementMode.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 #include "mc/editor/services/native_brush/BrushPaintCompletionState.h"
@@ -13,6 +14,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 class Vec3;
 namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor::BlockMask { class BlockMaskList; }
@@ -34,11 +36,15 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk51d4db;
     ::ll::UntypedStorage<4, 12> mUnk37d1f3;
     ::ll::UntypedStorage<4, 4>  mUnkc4a1dd;
-    ::ll::UntypedStorage<4, 4>  mUnka8c474;
-    ::ll::UntypedStorage<4, 4>  mUnk55056d;
+    ::ll::UntypedStorage<4, 4>  mUnkbbaf84;
+    ::ll::UntypedStorage<4, 4>  mUnka573ba;
+    ::ll::UntypedStorage<1, 1>  mUnke46fbe;
     ::ll::UntypedStorage<1, 1>  mUnk97eafd;
     ::ll::UntypedStorage<4, 4>  mUnkca6267;
     ::ll::UntypedStorage<1, 1>  mUnk205ad5;
+    ::ll::UntypedStorage<1, 1>  mUnkb0f6de;
+    ::ll::UntypedStorage<8, 24> mUnkeaa4d2;
+    ::ll::UntypedStorage<1, 1>  mUnk718da0;
     // NOLINTEND
 
 public:
@@ -106,29 +112,47 @@ public:
     virtual void setTerrainStrength(int const terrainStrength) /*override*/;
 
     // vIndex: 14
-    virtual void setFlattenHeight(int const flattenHeight) /*override*/;
+    virtual void setFlattenMode(::Editor::Brush::BrushFlattenMode flattenMode) /*override*/;
 
     // vIndex: 15
-    virtual void setFlattenRadius(int const flattenRadius) /*override*/;
+    virtual void setFlattenSmoothing(int const flattenSmoothing) /*override*/;
 
     // vIndex: 16
-    virtual void setBrushShapeVisible(bool const visible) /*override*/;
+    virtual void setFloorBlockOverride(bool const floorBlockOverride) /*override*/;
 
     // vIndex: 17
-    virtual bool isBusy() /*override*/;
+    virtual void setBrushShapeVisible(bool const visible) /*override*/;
 
     // vIndex: 18
+    virtual bool isBusy() /*override*/;
+
+    // vIndex: 19
     virtual void
     setDirectionalPlacementMode(::Editor::Brush::DirectionalPlacementMode directionalPlacementMode) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual ::Editor::Brush::DirectionalPlacementMode getDirectionalPlacementMode() const /*override*/;
 
-    // vIndex: 20
+    // vIndex: 21
     virtual void setInverseEraseMode(bool const inverseErase) /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual bool getInverseEraseMode() const /*override*/;
+
+    // vIndex: 23
+    virtual void setItemPlacement(::HashedString const& itemName) /*override*/;
+
+    // vIndex: 24
+    virtual void pushBlockStateOverride(
+        ::HashedString const&                           stateName,
+        ::std::variant<int, ::std::string, bool> const& stateValue
+    ) /*override*/;
+
+    // vIndex: 25
+    virtual void clearBlockStateOverrides() /*override*/;
+
+    // vIndex: 26
+    virtual void setBlockFacePlacementBasedOnCamera(bool const enable) /*override*/;
     // NOLINTEND
 
 public:
@@ -184,9 +208,11 @@ public:
 
     MCNAPI void $setTerrainStrength(int const terrainStrength);
 
-    MCNAPI void $setFlattenHeight(int const flattenHeight);
+    MCNAPI void $setFlattenMode(::Editor::Brush::BrushFlattenMode flattenMode);
 
-    MCNAPI void $setFlattenRadius(int const flattenRadius);
+    MCNAPI void $setFlattenSmoothing(int const flattenSmoothing);
+
+    MCNAPI void $setFloorBlockOverride(bool const floorBlockOverride);
 
     MCNAPI void $setBrushShapeVisible(bool const visible);
 
@@ -199,6 +225,17 @@ public:
     MCNAPI void $setInverseEraseMode(bool const inverseErase);
 
     MCNAPI bool $getInverseEraseMode() const;
+
+    MCNAPI void $setItemPlacement(::HashedString const& itemName);
+
+    MCNAPI void $pushBlockStateOverride(
+        ::HashedString const&                           stateName,
+        ::std::variant<int, ::std::string, bool> const& stateValue
+    );
+
+    MCNAPI void $clearBlockStateOverrides();
+
+    MCNAPI void $setBlockFacePlacementBasedOnCamera(bool const enable);
     // NOLINTEND
 
 public:

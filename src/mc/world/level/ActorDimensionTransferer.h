@@ -28,10 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ActorDimensionTransferer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -52,24 +48,6 @@ public:
 
     // vIndex: 3
     virtual void transferActor(::Actor& actor, ::Dimension& toDimension, ::Vec3 const& targetPosition) /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ActorDimensionTransferer(
-        ::std::unique_ptr<::IActorDimensionTransferProxy> actorDimensionTransferProxy,
-        ::Bedrock::NotNullNonOwnerPtr<::ActorManager>     actorManager
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::IActorDimensionTransferProxy> actorDimensionTransferProxy,
-        ::Bedrock::NotNullNonOwnerPtr<::ActorManager>     actorManager
-    );
     // NOLINTEND
 
 public:

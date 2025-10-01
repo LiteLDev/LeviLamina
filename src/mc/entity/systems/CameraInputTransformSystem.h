@@ -12,6 +12,7 @@ class Vec3;
 struct ActorHeadRotationComponent;
 struct ActorMovementTickNeededComponent;
 struct ActorRotationComponent;
+struct ControlSchemeComponent;
 struct MoveInputComponent;
 struct TickingSystemWithInfo;
 // clang-format on
@@ -22,6 +23,7 @@ namespace CameraInputTransformSystem {
 MCNAPI void _tick(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::MoveInputComponent&         moveInputComponent,
+    ::ControlSchemeComponent&     controlSchemeComponent,
     ::ActorRotationComponent&     actorRotationComponent,
     ::ActorHeadRotationComponent& actorHeadRotationComponent
 );

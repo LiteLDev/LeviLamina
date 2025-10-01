@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ComponentItem;
 class HashedString;
 class SemVersion;
 namespace SharedTypes::v1_21_80 { struct IconItemComponent; }
@@ -19,7 +20,7 @@ class IconItemComponent : public ::NetworkedItemComponent<::IconItemComponent> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::SharedTypes::Reference<8>>> mTextures;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::SharedTypes::Reference<11>>> mTextures;
     // NOLINTEND
 
 public:
@@ -30,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7
-    virtual void _initializeComponent() /*override*/;
+    virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
     // vIndex: 0
     virtual ~IconItemComponent() /*override*/ = default;
@@ -67,7 +68,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent(::ComponentItem& owner);
     // NOLINTEND
 
 public:

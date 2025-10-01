@@ -10,15 +10,14 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
-struct ActiveCameraComponent;
 struct ActorMovementTickNeededComponent;
-struct CameraAttachComponent;
-struct CameraComponent;
-struct ControlSchemeComponent;
-struct DefaultInputCameraComponent;
 struct LocalPlayerComponent;
 struct MoveInputComponent;
 struct TickingSystemWithInfo;
+namespace MinecraftCamera { struct ActiveCameraComponent; }
+namespace MinecraftCamera { struct CameraAttachComponent; }
+namespace MinecraftCamera { struct CameraComponent; }
+namespace MinecraftCamera { struct DefaultInputCameraComponent; }
 // clang-format on
 
 namespace CameraInputTransferSystem {
@@ -27,27 +26,22 @@ namespace CameraInputTransferSystem {
 MCNAPI void _tickMoveInputUpdate(
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActiveCameraComponent>,
-        ::CameraComponent const,
-        ::CameraAttachComponent const> activeAttachedCameraView,
+        ::Include<::MinecraftCamera::ActiveCameraComponent>,
+        ::MinecraftCamera::CameraComponent const,
+        ::MinecraftCamera::CameraAttachComponent const> activeAttachedCameraView,
     ::ViewT<
         ::StrictEntityContext,
-        ::Include<::ActiveCameraComponent>,
-        ::Exclude<::CameraAttachComponent>,
-        ::CameraComponent const> activeDetachedCameraView,
-    ::ViewT<::StrictEntityContext, ::Include<::DefaultInputCameraComponent>, ::CameraAttachComponent const>
-        defaultInputCameraView,
+        ::Include<::MinecraftCamera::ActiveCameraComponent>,
+        ::Exclude<::MinecraftCamera::CameraAttachComponent>,
+        ::MinecraftCamera::CameraComponent const> activeDetachedCameraView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::MinecraftCamera::DefaultInputCameraComponent>,
+        ::MinecraftCamera::CameraAttachComponent const> defaultInputCameraView,
     ::ViewT<
         ::StrictEntityContext,
         ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent>,
-        ::MoveInputComponent,
-        ::ControlSchemeComponent> localPlayerView
-);
-
-MCNAPI void _transfer(
-    ::CameraComponent const&        cameraComponent,
-    ::ControlSchemeComponent const& controlSchemeComponent,
-    ::MoveInputComponent&           moveInputComponent
+        ::MoveInputComponent> localPlayerView
 );
 
 MCNAPI ::TickingSystemWithInfo createMoveInputUpdateSystem();

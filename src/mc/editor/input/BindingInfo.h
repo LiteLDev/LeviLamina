@@ -16,7 +16,6 @@ public:
 
 public:
     // prevent constructor by default
-    BindingInfo& operator=(BindingInfo const&);
     BindingInfo(BindingInfo const&);
     BindingInfo();
 
@@ -24,6 +23,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Editor::Input::BindingInfo& operator=(::Editor::Input::BindingInfo&&);
+
+    MCNAPI ::Editor::Input::BindingInfo& operator=(::Editor::Input::BindingInfo const&);
 
     MCNAPI ~BindingInfo();
     // NOLINTEND

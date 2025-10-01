@@ -24,6 +24,7 @@ class ObjectiveCriteria;
 class PacketSender;
 class Player;
 class ScoreboardIdentityRef;
+struct ActorUniqueID;
 struct PlayerScore;
 struct PlayerScoreboardId;
 struct ScoreInfo;
@@ -115,6 +116,8 @@ public:
     MCAPI ::Objective*
     addObjective(::std::string const& name, ::std::string const& displayName, ::ObjectiveCriteria const& criteria);
 
+    MCAPI void addScoreListener(::Player& player, ::std::string const& objective);
+
     MCAPI int applyPlayerOperation(
         ::ScoreboardOperationResult&   result,
         ::std::vector<::ScoreboardId>& sourceErrorIds,
@@ -124,8 +127,6 @@ public:
         ::Objective&                   objective,
         ::CommandOperator              opCode
     );
-
-    MCAPI bool clearScoreboardIdentity(::ScoreboardId const& scoreboardId);
 
     MCAPI ::ObjectiveCriteria const&
     createObjectiveCriteria(::std::string const& name, bool readOnly, ::ObjectiveRenderType renderType);
@@ -169,6 +170,9 @@ public:
     MCAPI ::ScoreboardIdentityRef const& registerScoreboardIdentity(::CompoundTag const& loadedData);
 
     MCAPI ::ScoreboardIdentityRef const&
+    registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::ActorUniqueID const& entityId);
+
+    MCAPI ::ScoreboardIdentityRef const&
     registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::std::string const& name);
 
     MCAPI ::ScoreboardIdentityRef const&
@@ -176,11 +180,11 @@ public:
 
     MCAPI bool removeObjective(::Objective* objective);
 
+    MCAPI void removeScoreListener(::Player const& player, ::std::string const& objective);
+
     MCAPI bool resetPlayerScore(::ScoreboardId const& id, ::Objective& objective);
 
     MCAPI void resetPlayerScore(::ScoreboardId const& id);
-
-    MCAPI ::std::optional<::ScoreInfo> tryGetIdScore(::ScoreboardId const& id, uint64 const& objectiveHash) const;
     // NOLINTEND
 
 public:

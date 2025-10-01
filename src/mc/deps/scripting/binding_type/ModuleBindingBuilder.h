@@ -17,12 +17,11 @@ namespace Scripting { struct ErrorBinding; }
 namespace Scripting { struct FunctionBinding; }
 namespace Scripting { struct InterfaceBinding; }
 namespace Scripting { struct ModuleBinding; }
-namespace Scripting { struct ModuleDependency; }
 namespace Scripting { struct ObjectFactory; }
 namespace Scripting { struct TaggedBinding; }
 namespace Scripting { struct TypeMapData; }
-namespace Scripting { struct UUID; }
 namespace Scripting { struct Version; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Scripting {
@@ -39,17 +38,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>   mUnk791e57;
-        ::ll::UntypedStorage<8, 104> mUnk7003d2;
-        ::ll::UntypedStorage<8, 24>  mUnk4eacd6;
-        ::ll::UntypedStorage<8, 24>  mUnk79fcda;
-        ::ll::UntypedStorage<8, 24>  mUnka08202;
-        ::ll::UntypedStorage<8, 24>  mUnk12ae0a;
-        ::ll::UntypedStorage<8, 24>  mUnk904f94;
-        ::ll::UntypedStorage<8, 24>  mUnkb1808e;
-        ::ll::UntypedStorage<8, 24>  mUnk7703db;
-        ::ll::UntypedStorage<8, 24>  mUnk6bcb57;
-        ::ll::UntypedStorage<8, 24>  mUnk8fa1fb;
+        ::ll::UntypedStorage<1, 1>  mUnk791e57;
+        ::ll::UntypedStorage<8, 96> mUnk7003d2;
+        ::ll::UntypedStorage<8, 24> mUnk4eacd6;
+        ::ll::UntypedStorage<8, 24> mUnk79fcda;
+        ::ll::UntypedStorage<8, 24> mUnka08202;
+        ::ll::UntypedStorage<8, 24> mUnk12ae0a;
+        ::ll::UntypedStorage<8, 24> mUnk904f94;
+        ::ll::UntypedStorage<8, 24> mUnkb1808e;
+        ::ll::UntypedStorage<8, 24> mUnk7703db;
+        ::ll::UntypedStorage<8, 24> mUnk6bcb57;
+        ::ll::UntypedStorage<8, 24> mUnk8fa1fb;
+        ::ll::UntypedStorage<8, 32> mUnk2ebd1a;
         // NOLINTEND
 
     public:
@@ -77,7 +77,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 328> mUnkd4febe;
+    ::ll::UntypedStorage<8, 352> mUnkd4febe;
     // NOLINTEND
 
 public:
@@ -90,7 +90,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ModuleBindingBuilder(
-        ::Scripting::UUID const&    id,
+        ::mce::UUID                 uuid,
         ::std::string const&        name,
         ::Scripting::Version const& version,
         bool                        importRestricted
@@ -150,8 +150,6 @@ public:
 
     MCNAPI ::Scripting::ModuleBindingBuilder& createTypeMap(::Scripting::TypeMapBuilder& typeMapBuilder);
 
-    MCNAPI ::Scripting::ModuleBindingBuilder& dependency(::std::vector<::Scripting::ModuleDependency> const& modules);
-
     MCNAPI ::Scripting::ModuleBindingBuilder& enumBinding(::Scripting::EnumBinding&& enumBinding);
 
     MCNAPI ::Scripting::ModuleBindingBuilder& errorBinding(::Scripting::ErrorBinding&& errorBinding);
@@ -200,12 +198,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Scripting::UUID const&    id,
-        ::std::string const&        name,
-        ::Scripting::Version const& version,
-        bool                        importRestricted
-    );
+    MCNAPI void*
+    $ctor(::mce::UUID uuid, ::std::string const& name, ::Scripting::Version const& version, bool importRestricted);
     // NOLINTEND
 
 public:

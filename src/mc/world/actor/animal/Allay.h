@@ -9,8 +9,11 @@
 
 // auto generated forward declare list
 // clang-format off
+class ActorDefinitionGroup;
 class CompoundTag;
 class DataLoadHelper;
+class EntityContext;
+struct ActorDefinitionIdentifier;
 struct VariantParameterList;
 // clang-format on
 
@@ -22,9 +25,13 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    Allay();
+
+public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 145
+    // vIndex: 146
     virtual void aiStep() /*override*/;
 
     // vIndex: 136
@@ -43,9 +50,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI Allay(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityId
+    );
+
     MCAPI bool hasDuplicationCooldown();
 
     MCAPI void setNewDuplicationCooldown();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityId
+    );
     // NOLINTEND
 
 public:

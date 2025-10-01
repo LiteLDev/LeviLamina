@@ -15,12 +15,19 @@ public:
     // prevent constructor by default
     CountTracker& operator=(CountTracker const&);
     CountTracker(CountTracker const&);
-    CountTracker();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI CountTracker();
+
     MCNAPI ~CountTracker();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

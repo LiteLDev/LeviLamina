@@ -14,6 +14,7 @@ public:
 
 public:
     // prevent constructor by default
+    RenderingRidingOffsetInfo& operator=(RenderingRidingOffsetInfo const&);
     RenderingRidingOffsetInfo();
 
 public:
@@ -21,7 +22,7 @@ public:
     // NOLINTBEGIN
     MCNAPI RenderingRidingOffsetInfo(::RenderingRidingOffsetInfo const&);
 
-    MCNAPI ::RenderingRidingOffsetInfo& operator=(::RenderingRidingOffsetInfo const&);
+    MCNAPI RenderingRidingOffsetInfo(::std::string const& baseLocator, ::std::string const& seatLocator);
 
     MCNAPI ~RenderingRidingOffsetInfo();
     // NOLINTEND
@@ -30,6 +31,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::RenderingRidingOffsetInfo const&);
+
+    MCNAPI void* $ctor(::std::string const& baseLocator, ::std::string const& seatLocator);
     // NOLINTEND
 
 public:

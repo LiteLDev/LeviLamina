@@ -17,13 +17,12 @@ public:
 public:
     // prevent constructor by default
     PackCapabilityRegistry& operator=(PackCapabilityRegistry const&);
+    PackCapabilityRegistry(PackCapabilityRegistry const&);
     PackCapabilityRegistry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackCapabilityRegistry(::PackCapabilityRegistry const&);
-
     MCNAPI explicit PackCapabilityRegistry(::std::initializer_list<::PackCapability> const& packCapabilities);
 
     MCNAPI ~PackCapabilityRegistry();
@@ -32,8 +31,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PackCapabilityRegistry const&);
-
     MCNAPI void* $ctor(::std::initializer_list<::PackCapability> const& packCapabilities);
     // NOLINTEND
 

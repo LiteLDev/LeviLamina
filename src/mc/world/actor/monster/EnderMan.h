@@ -38,7 +38,7 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 175
+    // vIndex: 176
     virtual void newServerAiStep() /*override*/;
 
     // vIndex: 144

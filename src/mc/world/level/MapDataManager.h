@@ -73,8 +73,6 @@ public:
 
     MCAPI void _onSaveLevelData(::LevelStorage& levelStorage);
 
-    MCAPI bool copyAndLockMap(::ActorUniqueID originalMapUuid, ::ActorUniqueID newMapUuid);
-
     MCAPI ::MapItemSavedData& createMapSavedData(
         ::std::vector<::ActorUniqueID> const& mapIds,
         ::BlockPos const&                     origin,
@@ -90,8 +88,6 @@ public:
     );
 
     MCAPI ::ActorUniqueID expandMapByID(::ActorUniqueID uuid, bool wasInit);
-
-    MCAPI ::MapItemSavedData* getMapSavedData(::ActorUniqueID uuid);
 
     MCAPI void registerOnSaveLevelDataSubscription(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 

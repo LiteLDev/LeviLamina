@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/nether_net/ContextProxy.h"
-#include "mc/deps/nether_net/ESendType.h"
 #include "mc/deps/nether_net/ESessionError.h"
 #include "mc/deps/nether_net/SignalingChannelId.h"
 #include "mc/external/webrtc/PeerConnectionInterface.h"
@@ -146,8 +145,6 @@ public:
         ::NetherNet::SignalingChannelId                          preference
     );
 
-    MCNAPI void InitializeOutgoing(::NetherNet::NetworkID remoteID);
-
     MCNAPI ::NetherNet::ESessionError IsDeadSession(::std::chrono::seconds negotiationTimeout);
 
     MCNAPI void MaybeProcessIceCandidates();
@@ -159,8 +156,6 @@ public:
     MCNAPI void ProcessSignal(::NetherNet::CandidateAdd const& signal);
 
     MCNAPI void ProcessSignal(::NetherNet::ConnectResponse const& signal);
-
-    MCNAPI void SendPacket(char const* pbData, uint cbData, ::NetherNet::ESendType eSendType);
 
     MCNAPI void TrySendSessionResponse();
 

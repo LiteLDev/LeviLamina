@@ -70,7 +70,7 @@ public:
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     // vIndex: 137
-    virtual void addAdditionalSaveData(::CompoundTag& tag) const /*override*/;
+    virtual void addAdditionalSaveData(::CompoundTag& entityTag) const /*override*/;
 
     // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
@@ -116,14 +116,14 @@ public:
 
     MCAPI ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCAPI ::ActorType $getOwnerEntityType();
+    MCFOLD ::ActorType $getOwnerEntityType();
 
     MCFOLD void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
-    MCFOLD void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCFOLD void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
     MCFOLD void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND

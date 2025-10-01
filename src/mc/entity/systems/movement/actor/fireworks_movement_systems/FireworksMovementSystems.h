@@ -15,6 +15,7 @@ class LocalSpatialEntityFetcher;
 class StrictEntityContext;
 struct ActorRotationComponent;
 struct ActorSetPositionRequestComponent;
+struct ActorUniqueID;
 struct MobFlagComponent;
 struct StateVectorComponent;
 struct SynchedActorDataComponent;
@@ -34,6 +35,15 @@ MCNAPI ::FireworksMovementSystems::RocketAttached fireworksRocketMoveClientEntit
 );
 
 MCNAPI void registerRocketMovementSystems(::EntitySystems& systemRegistry, bool isClientSide);
+
+MCNAPI void simulateAttachedRocket(
+    ::StrictEntityContext const& rocket,
+    ::ActorUniqueID const&       attachedID,
+    ::StateVectorComponent&      rocketStateVector,
+    ::LocalSpatialEntityFetcher& fetcher,
+    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> const& stateVectors,
+    ::EntityModifier<::ActorSetPositionRequestComponent>                                               modifier
+);
 // NOLINTEND
 
 } // namespace FireworksMovementSystems

@@ -13,7 +13,7 @@ class PerlinSimplexNoise;
 namespace FlowerHelper {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Block const&
+MCAPI ::Block const&
 getRandomFlowerBlock(::BlockSource& region, ::BlockPos const& pos, ::PerlinSimplexNoise const& biomeInfoNoise);
 // NOLINTEND
 

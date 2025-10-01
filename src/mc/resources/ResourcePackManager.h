@@ -66,9 +66,9 @@ public:
 
     // vIndex: 1
     virtual bool load(
-        ::ResourceLocationPair const&    resourceLocation,
+        ::ResourceLocationPair const&    resourceLocationPair,
         ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
 
     // vIndex: 4
@@ -92,7 +92,8 @@ public:
 
     // vIndex: 8
     virtual ::Core::PathBuffer<::std::string>
-    getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const /*override*/;
+    getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const
+        /*override*/;
 
     // vIndex: 11
     virtual ::Core::PathBuffer<::std::string>
@@ -101,13 +102,13 @@ public:
     // vIndex: 10
     virtual ::Core::PathBuffer<::std::string> getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
 
     // vIndex: 12
     virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
 
     // vIndex: 13
@@ -132,6 +133,8 @@ public:
         ::std::string const&         group,
         ::std::vector<::Core::Path>& resources
     ) const;
+
+    MCNAPI bool _shouldRebuildStack() const;
 
     MCNAPI void _updateLanguageSubpacks();
 
@@ -186,9 +189,9 @@ public:
     ) const;
 
     MCNAPI bool $load(
-        ::ResourceLocationPair const&    resourceLocation,
+        ::ResourceLocationPair const&    resourceLocationPair,
         ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
     MCNAPI bool $loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
@@ -205,19 +208,19 @@ public:
     MCNAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
 
     MCNAPI ::Core::PathBuffer<::std::string>
-    $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
+    $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const;
 
     MCNAPI ::Core::PathBuffer<::std::string>
     $getPathContainingResource(::ResourceLocation const& resourceLocation) const;
 
     MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
     MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
+        ::gsl::span<::std::string const> extensionList
     ) const;
 
     MCNAPI bool $hasCapability(::std::string_view requiredCapability) const;

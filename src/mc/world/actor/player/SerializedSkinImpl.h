@@ -61,9 +61,38 @@ public:
 
     MCAPI explicit SerializedSkinImpl(::SubClientConnectionRequest const& request);
 
+    MCAPI SerializedSkinImpl(
+        ::std::string const&      name,
+        ::std::string const&      playFabId,
+        ::std::string const&      resourcePatch,
+        ::mce::Image const&       skinImage,
+        ushort const&             skinImageWidth,
+        ushort const&             skinImageHeight,
+        ::mce::Image const&       capeImage,
+        ushort const&             capeImageWidth,
+        ushort const&             capeImageHeight,
+        ::Json::Value&&           geometryData,
+        ::MinEngineVersion const& geometryDataMinEngineVersion,
+        ::std::string const&      animationData,
+        ::std::string const&      capeId,
+        bool                      isTrustedSkin,
+        bool                      isPremium,
+        bool                      isPersona,
+        bool                      isPersonaCapeOnClassicSkin,
+        bool                      isPrimaryUser,
+        bool                      overridesPlayerAppearance
+    );
+
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
     MCAPI void setArmSizeFromString(::std::string const& armSizeStr);
+
+    MCAPI void setPersonaAppearanceData(
+        ::persona::ArmSize::Type const&                                   armSizeType,
+        ::mce::Color const&                                               skinColor,
+        ::std::vector<::SerializedPersonaPieceHandle>                     personaPieces,
+        ::std::unordered_map<::persona::PieceType, ::TintMapColor> const& pieceTintColors
+    );
 
     MCAPI void updateGeometryName();
 
@@ -80,6 +109,28 @@ public:
     MCAPI void* $ctor(::ConnectionRequest const& request);
 
     MCAPI void* $ctor(::SubClientConnectionRequest const& request);
+
+    MCAPI void* $ctor(
+        ::std::string const&      name,
+        ::std::string const&      playFabId,
+        ::std::string const&      resourcePatch,
+        ::mce::Image const&       skinImage,
+        ushort const&             skinImageWidth,
+        ushort const&             skinImageHeight,
+        ::mce::Image const&       capeImage,
+        ushort const&             capeImageWidth,
+        ushort const&             capeImageHeight,
+        ::Json::Value&&           geometryData,
+        ::MinEngineVersion const& geometryDataMinEngineVersion,
+        ::std::string const&      animationData,
+        ::std::string const&      capeId,
+        bool                      isTrustedSkin,
+        bool                      isPremium,
+        bool                      isPersona,
+        bool                      isPersonaCapeOnClassicSkin,
+        bool                      isPrimaryUser,
+        bool                      overridesPlayerAppearance
+    );
     // NOLINTEND
 
 public:

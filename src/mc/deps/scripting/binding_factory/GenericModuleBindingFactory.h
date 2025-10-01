@@ -11,8 +11,8 @@ namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDependency; }
-namespace Scripting { struct UUID; }
 namespace Scripting { struct Version; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Scripting {
@@ -55,8 +55,6 @@ public:
             ::std::vector<::Scripting::ModuleDependency>&& _dependencies,
             bool                                           _importRestricted
         );
-
-        MCNAPI ~ModuleData();
         // NOLINTEND
 
     public:
@@ -73,19 +71,13 @@ public:
             bool                                           _importRestricted
         );
         // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk474121;
-    ::ll::UntypedStorage<8, 32> mUnk399359;
+    ::ll::UntypedStorage<8, 16> mUnk13b033;
     ::ll::UntypedStorage<8, 24> mUnkafd931;
     // NOLINTEND
 
@@ -105,7 +97,7 @@ public:
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::UUID getUUID() const /*override*/;
+    virtual ::mce::UUID getUUID() const /*override*/;
 
     // vIndex: 3
     virtual bool hasAlias(::std::string const& alias) const /*override*/;
@@ -127,7 +119,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI GenericModuleBindingFactory(::std::string moduleName, ::Scripting::UUID moduleUUID);
+    MCNAPI GenericModuleBindingFactory(::std::string moduleName, ::mce::UUID moduleUUID);
 
     MCNAPI void _addRuntimeDependency(
         ::std::vector<::Scripting::ModuleDependency>& dependencies,
@@ -161,7 +153,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string moduleName, ::Scripting::UUID moduleUUID);
+    MCNAPI void* $ctor(::std::string moduleName, ::mce::UUID moduleUUID);
     // NOLINTEND
 
 public:
@@ -175,7 +167,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string $getName() const;
 
-    MCNAPI ::Scripting::UUID $getUUID() const;
+    MCNAPI ::mce::UUID $getUUID() const;
 
     MCNAPI bool $hasAlias(::std::string const& alias) const;
 

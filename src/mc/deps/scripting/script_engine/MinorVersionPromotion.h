@@ -8,10 +8,10 @@ struct MinorVersionPromotion {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnka26ca1;
-    ::ll::UntypedStorage<8, 104> mUnk3c4dad;
-    ::ll::UntypedStorage<8, 40>  mUnk762736;
-    ::ll::UntypedStorage<8, 40>  mUnk21cc95;
+    ::ll::UntypedStorage<8, 96> mUnka26ca1;
+    ::ll::UntypedStorage<8, 96> mUnk3c4dad;
+    ::ll::UntypedStorage<8, 40> mUnk762736;
+    ::ll::UntypedStorage<8, 40> mUnk21cc95;
     // NOLINTEND
 
 public:

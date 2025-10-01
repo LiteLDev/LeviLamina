@@ -34,6 +34,7 @@ namespace ScriptModuleMinecraft { struct ScriptMusicOptions; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptSoundOptions; }
 namespace ScriptModuleMinecraft { struct ScriptWorldSoundOptions; }
+namespace Scripting { class DependencyLocator; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
@@ -73,7 +74,9 @@ public:
     MCNAPI ScriptWorld(
         ::Scripting::WeakLifetimeScope const&                scope,
         ::gsl::not_null<::ServerLevel*>                      level,
-        ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners
+        ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners,
+        ::Scripting::DependencyLocator&                      locator,
+        ::Scripting::ContextConfig const&                    config
     );
 
     MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> _playOrQueueMusic(
@@ -148,6 +151,9 @@ public:
     getLootTableManager() const;
 
     MCNAPI ::MoonPhases getMoonPhase() const;
+
+    MCNAPI ::std::unordered_map<::std::string, ::std::variant<float, bool, ::std::string>>
+    getPackSettings(::Scripting::DependencyLocator& locator, ::Scripting::ContextConfig const& config) const;
 
     MCNAPI ::Scripting::Result<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>,
@@ -252,7 +258,9 @@ public:
     MCNAPI void* $ctor(
         ::Scripting::WeakLifetimeScope const&                scope,
         ::gsl::not_null<::ServerLevel*>                      level,
-        ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners
+        ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners,
+        ::Scripting::DependencyLocator&                      locator,
+        ::Scripting::ContextConfig const&                    config
     );
     // NOLINTEND
 

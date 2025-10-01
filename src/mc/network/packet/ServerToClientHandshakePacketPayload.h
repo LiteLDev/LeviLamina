@@ -11,14 +11,13 @@ public:
 
 public:
     // prevent constructor by default
+    ServerToClientHandshakePacketPayload& operator=(ServerToClientHandshakePacketPayload const&);
     ServerToClientHandshakePacketPayload(ServerToClientHandshakePacketPayload const&);
     ServerToClientHandshakePacketPayload();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ServerToClientHandshakePacketPayload& operator=(::ServerToClientHandshakePacketPayload const&);
-
     MCFOLD ::ServerToClientHandshakePacketPayload& operator=(::ServerToClientHandshakePacketPayload&&);
 
     MCAPI ~ServerToClientHandshakePacketPayload();

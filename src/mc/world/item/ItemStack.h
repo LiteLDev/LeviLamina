@@ -9,14 +9,12 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Block;
 class BlockPalette;
-class BlockType;
 class CompoundTag;
 class ILevel;
 class InteractionResult;
 class Item;
-class ItemInstance;
-class Mob;
 class NetworkItemStackDescriptor;
 class Vec3;
 struct ItemUsedOnEventContext;
@@ -33,7 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual void reinit(::BlockType const& block, int count) /*override*/;
+    virtual void reinit(::Block const& block, int count) /*override*/;
 
     // vIndex: 3
     virtual void reinit(::Item const& item, int count, int auxValue) /*override*/;
@@ -61,15 +59,11 @@ public:
 
     MCAPI ItemStack(::ItemStack const& rhs);
 
-    MCAPI explicit ItemStack(::ItemInstance const& rhs);
-
-    MCAPI ItemStack(::BlockType const& block, int count = 1);
+    MCAPI ItemStack(::Block const& block, int count, ::CompoundTag const* _userData);
 
     MCAPI ItemStack(::Item const& item, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
 
     MCAPI ItemStack(::std::string_view name, int count = 1, int auxValue = 0, ::CompoundTag const* _userData = nullptr);
-
-    MCAPI void _assignNetIdVariant(::ItemStack const& fromItem) const;
 
     MCAPI int getMaxUseDuration() const;
 
@@ -78,8 +72,6 @@ public:
     MCAPI bool matchesNetIdVariant(::ItemStack const& other) const;
 
     MCAPI ::ItemStack& operator=(::ItemStack const& rhs);
-
-    MCAPI void playSoundIncrementally(::Mob& mob) const;
 
     MCAPI bool sameItemAndAuxAndBlockData(::ItemStack const& otherItemStack) const;
 
@@ -122,9 +114,7 @@ public:
 
     MCAPI void* $ctor(::ItemStack const& rhs);
 
-    MCAPI void* $ctor(::ItemInstance const& rhs);
-
-    MCAPI void* $ctor(::BlockType const& block, int count);
+    MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
 
     MCAPI void* $ctor(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
@@ -140,7 +130,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reinit(::BlockType const& block, int count);
+    MCAPI void $reinit(::Block const& block, int count);
 
     MCAPI void $reinit(::Item const& item, int count, int auxValue);
 

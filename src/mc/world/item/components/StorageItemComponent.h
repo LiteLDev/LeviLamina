@@ -10,6 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ComponentItem;
 class FillingContainer;
 class HashedString;
 class IContainerRegistryAccess;
@@ -58,7 +59,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7
-    virtual void _initializeComponent() /*override*/;
+    virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
     // vIndex: 0
     virtual ~StorageItemComponent() /*override*/;
@@ -105,7 +106,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent(::ComponentItem& owner);
     // NOLINTEND
 
 public:

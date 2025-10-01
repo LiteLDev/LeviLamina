@@ -26,7 +26,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random&) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random&) const;
     // NOLINTEND
 
 public:

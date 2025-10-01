@@ -38,22 +38,22 @@ public:
     // vIndex: 20
     virtual int getContainerSize() const /*override*/;
 
-    // vIndex: 32
+    // vIndex: 31
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 31
+    // vIndex: 30
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 7
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
 
-    // vIndex: 26
+    // vIndex: 25
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 22
@@ -78,14 +78,14 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     ) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
-    virtual ~DispenserBlockActor() /*override*/;
+    virtual ~DispenserBlockActor() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -107,12 +107,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD int $getContainerSize() const;
@@ -123,7 +117,7 @@ public:
 
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCFOLD int $getMaxStackSize() const;
 

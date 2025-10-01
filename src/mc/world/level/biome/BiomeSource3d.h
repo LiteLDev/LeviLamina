@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/block/tessellation_pipeline/VolumeOf.h"
 #include "mc/world/level/biome/source/BiomeSource.h"
 #include "mc/world/level/biome/source/BiomeSourceType.h"
 
@@ -100,6 +101,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI BiomeSource3d(::BlendedMultiNoiseBiomeProvider biomeProvider, ::DimensionHeightRange dimensionHeight);
+
+    MCNAPI ::ClientBlockPipeline::VolumeOf<::Biome const*>
+    getBiomeVolumeToFill(::LevelChunk const& levelChunk, ::ChunkLocalNoiseCache const& chunkLocalNoiseCache) const;
     // NOLINTEND
 
 public:

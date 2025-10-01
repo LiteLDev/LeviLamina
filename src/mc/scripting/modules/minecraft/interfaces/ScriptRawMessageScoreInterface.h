@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptRawMessageScoreInterface& operator=(ScriptRawMessageScoreInterface const&);
     ScriptRawMessageScoreInterface(ScriptRawMessageScoreInterface const&);
     ScriptRawMessageScoreInterface();
 
@@ -28,6 +27,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
     operator=(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
+    operator=(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
 
     MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const& other) const;
 

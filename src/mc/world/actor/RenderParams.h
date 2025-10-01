@@ -110,8 +110,6 @@ public:
 
     MCAPI ::RenderParams& operator=(::RenderParams&&);
 
-    MCAPI float& operator[](uint64 i);
-
     MCAPI ~RenderParams();
     // NOLINTEND
 

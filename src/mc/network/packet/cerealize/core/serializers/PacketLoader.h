@@ -10,7 +10,7 @@ class PacketLoader : public ::cereal::BasicLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::PacketSchemaReader> mReader;
+    ::ll::TypedStorage<8, 24, ::PacketSchemaReader> mReader;
     // NOLINTEND
 
 public:

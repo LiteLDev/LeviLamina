@@ -14,6 +14,7 @@
 // clang-format off
 class BlockPos;
 namespace Bedrock::PubSub { class Subscription; }
+namespace Editor { class ProjectRegion; }
 namespace Editor::Cursor { class ServerCursor; }
 namespace Editor::Cursor { struct AttachmentProperties; }
 namespace Editor::Cursor { struct CursorState; }
@@ -30,6 +31,7 @@ class ServerCursorService : public ::Editor::Services::IEditorService,
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk34ac53;
     ::ll::UntypedStorage<8, 16> mUnkb8f196;
     ::ll::UntypedStorage<8, 16> mUnkcf80cc;
     ::ll::UntypedStorage<8, 24> mUnka7b08b;
@@ -80,7 +82,7 @@ public:
 
     // vIndex: 6
     virtual ::Scripting::Result_deprecated<void>
-    setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props) /*override*/;
+    setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& properties) /*override*/;
 
     // vIndex: 7
     virtual ::Scripting::Result_deprecated<::BlockPos> moveBy(::glm::ivec3 const& offset) /*override*/;
@@ -95,12 +97,17 @@ public:
         ::std::function<void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)>
             callback
     ) /*override*/;
+
+    // vIndex: 10
+    virtual ::WeakRef<::Editor::ProjectRegion> getRegion() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<::WeakRef<::Editor::Cursor::ServerCursor>> _createCursor();
+
+    MCNAPI void _createOrUpdateRegion(::BlockPos const& pos);
 
     MCNAPI void _handlePayloadPositionChange(::Editor::Network::CursorServicePositionChangePayload const& payload);
     // NOLINTEND
@@ -133,7 +140,7 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $setCursorState(::Editor::Cursor::CursorState&& state);
 
     MCNAPI ::Scripting::Result_deprecated<void>
-    $setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props);
+    $setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& properties);
 
     MCNAPI ::Scripting::Result_deprecated<::BlockPos> $moveBy(::glm::ivec3 const& offset);
 
@@ -145,6 +152,8 @@ public:
         ::std::function<void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)>
             callback
     );
+
+    MCNAPI ::WeakRef<::Editor::ProjectRegion> $getRegion() const;
     // NOLINTEND
 
 public:

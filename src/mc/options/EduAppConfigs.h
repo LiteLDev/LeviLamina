@@ -38,10 +38,10 @@ public:
     // vIndex: 16
     virtual ::EducationEditionOffer getEducationEditionOffering() const /*override*/;
 
-    // vIndex: 31
+    // vIndex: 32
     virtual void setCanAccessWorldCallback(::IMinecraftGame& minecraftGame) /*override*/;
 
-    // vIndex: 34
+    // vIndex: 35
     virtual ::std::unique_ptr<::IContentAccessibilityProvider>
     createContentAccessibility(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager) const
         /*override*/;

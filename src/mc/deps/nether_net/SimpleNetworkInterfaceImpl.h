@@ -100,7 +100,7 @@ public:
 
     // vIndex: 7
     virtual bool GetSessionState(
-        ::NetherNet::NetworkID     peerId,
+        ::NetherNet::NetworkID     networkIDRemote,
         uint64                     connectionId,
         ::NetherNet::SessionState* pConnectionState
     ) /*override*/;
@@ -208,8 +208,11 @@ public:
 
     MCNAPI bool $CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
 
-    MCNAPI bool
-    $GetSessionState(::NetherNet::NetworkID peerId, uint64 connectionId, ::NetherNet::SessionState* pConnectionState);
+    MCNAPI bool $GetSessionState(
+        ::NetherNet::NetworkID     networkIDRemote,
+        uint64                     connectionId,
+        ::NetherNet::SessionState* pConnectionState
+    );
 
     MCNAPI void
     $SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const& pWebRTCSignalingInterface);

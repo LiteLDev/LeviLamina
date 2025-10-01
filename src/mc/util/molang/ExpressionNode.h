@@ -22,7 +22,6 @@ struct MolangQueryFunction;
 struct MolangScriptArg;
 namespace Json { class Value; }
 namespace Molang::details { class IComplexExpression; }
-namespace Molang::details { class SourceTree; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -89,15 +88,13 @@ public:
 
     MCAPI ExpressionNode(::ExpressionNode const& rhs);
 
-    MCAPI explicit ExpressionNode(::Molang::details::SourceTree root);
-
-    MCAPI explicit ExpressionNode(float value);
-
     MCAPI ExpressionNode(::std::string const& expression, ::MolangVersion molangVersion);
 
     MCAPI ExpressionNode(::Json::Value const& value, ::MolangParseConfig const& config);
 
     MCAPI ExpressionNode(::MolangScriptArg const& value, ::ExpressionOp op);
+
+    MCAPI ::std::optional<::MolangScriptArg> _getValueIfConstant() const;
 
     MCAPI float evalAsFloat(::RenderParams& renderParams) const;
 
@@ -169,10 +166,6 @@ public:
     MCAPI void* $ctor(::ExpressionNode&&);
 
     MCAPI void* $ctor(::ExpressionNode const& rhs);
-
-    MCAPI void* $ctor(::Molang::details::SourceTree root);
-
-    MCAPI void* $ctor(float value);
 
     MCAPI void* $ctor(::std::string const& expression, ::MolangVersion molangVersion);
 

@@ -16,6 +16,7 @@ public:
 
 public:
     // prevent constructor by default
+    MobSpawnHerdInfo& operator=(MobSpawnHerdInfo const&);
     MobSpawnHerdInfo(MobSpawnHerdInfo const&);
     MobSpawnHerdInfo();
 
@@ -30,8 +31,6 @@ public:
         ::std::string const& herdEvent,
         uint                 herdEventSkipCount
     );
-
-    MCNAPI ::MobSpawnHerdInfo& operator=(::MobSpawnHerdInfo const&);
 
     MCNAPI ~MobSpawnHerdInfo();
     // NOLINTEND

@@ -14,15 +14,13 @@ public:
 
 public:
     // prevent constructor by default
+    AutomaticFeatureRuleConditions& operator=(AutomaticFeatureRuleConditions const&);
     AutomaticFeatureRuleConditions(AutomaticFeatureRuleConditions const&);
     AutomaticFeatureRuleConditions();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&
-    operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions const&);
-
     MCNAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&
     operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&&);
 

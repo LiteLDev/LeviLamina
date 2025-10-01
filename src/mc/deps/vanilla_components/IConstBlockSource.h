@@ -28,64 +28,61 @@ public:
     // vIndex: 0
     virtual ~IConstBlockSource() = default;
 
-    // vIndex: 3
-    virtual ::Block const& getBlock(int, int, int) const = 0;
-
     // vIndex: 2
     virtual ::Block const& getBlock(::BlockPos const&) const = 0;
 
     // vIndex: 1
     virtual ::Block const& getBlock(::BlockPos const&, uint) const = 0;
 
-    // vIndex: 4
+    // vIndex: 3
     virtual ::BlockActor const* getBlockEntity(::BlockPos const&) const = 0;
 
-    // vIndex: 5
+    // vIndex: 4
     virtual ::Block const& getExtraBlock(::BlockPos const&) const = 0;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual ::Block const& getLiquidBlock(::BlockPos const&) const = 0;
 
-    // vIndex: 7
+    // vIndex: 6
     virtual bool hasBlock(::BlockPos const&) const = 0;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual bool containsAnyLiquid(::AABB const&) const = 0;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual bool containsMaterial(::AABB const&, ::MaterialType) const = 0;
 
-    // vIndex: 10
+    // vIndex: 9
     virtual bool isInWall(::Vec3 const&) const = 0;
 
-    // vIndex: 11
+    // vIndex: 10
     virtual bool isUnderWater(::Vec3 const&, ::Block const&) const = 0;
 
-    // vIndex: 13
+    // vIndex: 12
     virtual ::Material const& getMaterial(::BlockPos const&) const = 0;
 
-    // vIndex: 12
+    // vIndex: 11
     virtual ::Material const& getMaterial(int, int, int) const = 0;
 
-    // vIndex: 14
+    // vIndex: 13
     virtual bool hasBorderBlock(::BlockPos const) const = 0;
 
-    // vIndex: 17
+    // vIndex: 16
     virtual bool hasChunksAt(::Bounds const&, bool) const = 0;
 
-    // vIndex: 16
+    // vIndex: 15
     virtual bool hasChunksAt(::BlockPos const&, int, bool) const = 0;
 
-    // vIndex: 15
+    // vIndex: 14
     virtual bool hasChunksAt(::AABB const&, bool) const = 0;
 
-    // vIndex: 18
+    // vIndex: 17
     virtual ::DimensionType getDimensionId() const = 0;
 
-    // vIndex: 19
+    // vIndex: 18
     virtual void fetchAABBs(::std::vector<::AABB>&, ::AABB const&, bool) const = 0;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual void fetchCollisionShapes(
         ::std::vector<::AABB>&,
         ::AABB const&,
@@ -94,7 +91,7 @@ public:
         ::std::vector<::AABB>*
     ) const = 0;
 
-    // vIndex: 21
+    // vIndex: 20
     virtual void fetchCollisionShapesAndBlocks(
         ::std::vector<::BlockSourceVisitor::CollisionShape>&,
         ::AABB const&,
@@ -103,21 +100,15 @@ public:
         ::std::vector<::AABB>*
     ) const = 0;
 
-    // vIndex: 22
+    // vIndex: 21
     virtual ::AABB
     getTallestCollisionShape(::AABB const&, float*, bool, ::optional_ref<::GetCollisionShapeInterface const>) const = 0;
 
-    // vIndex: 23
+    // vIndex: 22
     virtual float getBrightness(::BlockPos const&) const = 0;
 
-    // vIndex: 24
+    // vIndex: 23
     virtual float getVisualLiquidHeight(::Vec3 const&) const = 0;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI bool checkMaterial(::AABB const& box, ::MaterialType material) const;
     // NOLINTEND
 
 public:

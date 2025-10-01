@@ -24,6 +24,12 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class LightningRodBlock : public ::BlockType {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool> mFlashOnPowered;
+    // NOLINTEND
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 44
@@ -64,11 +70,14 @@ public:
     // vIndex: 22
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
 
+    // vIndex: 118
+    virtual int getVariant(::Block const& block) const /*override*/;
+
     // vIndex: 131
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
-    virtual ~LightningRodBlock() /*override*/ = default;
+    virtual ~LightningRodBlock() /*override*/;
     // NOLINTEND
 
 public:
@@ -77,6 +86,12 @@ public:
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
@@ -110,6 +125,8 @@ public:
     MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const;
+
+    MCAPI int $getVariant(::Block const& block) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND

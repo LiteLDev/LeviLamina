@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ComponentItem;
 class CompoundTag;
 class HashedString;
 class SemVersion;
@@ -25,6 +26,7 @@ public:
 
 public:
     // prevent constructor by default
+    InteractButtonItemComponent& operator=(InteractButtonItemComponent const&);
     InteractButtonItemComponent(InteractButtonItemComponent const&);
     InteractButtonItemComponent();
 
@@ -41,7 +43,7 @@ public:
     virtual bool initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx) /*override*/;
 
     // vIndex: 7
-    virtual void _initializeComponent() /*override*/;
+    virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
     // vIndex: 0
     virtual ~InteractButtonItemComponent() /*override*/ = default;
@@ -53,8 +55,6 @@ public:
     MCAPI explicit InteractButtonItemComponent(::SharedTypes::v1_20_50::InteractButtonItemComponent component);
 
     MCFOLD ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent&&);
-
-    MCFOLD ::InteractButtonItemComponent& operator=(::InteractButtonItemComponent const&);
     // NOLINTEND
 
 public:
@@ -84,7 +84,7 @@ public:
 
     MCAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent(::ComponentItem& owner);
     // NOLINTEND
 
 public:

@@ -16,7 +16,7 @@ class BarrelBlockActor : public ::ChestBlockActor {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 26
+    // vIndex: 25
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 11
@@ -28,11 +28,11 @@ public:
     // vIndex: 23
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 51
-    virtual ::SharedTypes::Legacy::LevelSoundEvent getOpenSound(::BlockSource const& region) const /*override*/;
+    // vIndex: 50
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getOpenSound() const /*override*/;
 
-    // vIndex: 52
-    virtual ::SharedTypes::Legacy::LevelSoundEvent getCloseSound(::BlockSource const& region) const /*override*/;
+    // vIndex: 51
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getCloseSound() const /*override*/;
 
     // vIndex: 0
     virtual ~BarrelBlockActor() /*override*/ = default;
@@ -49,9 +49,9 @@ public:
 
     MCAPI void $stopOpen(::Actor& actor);
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getOpenSound(::BlockSource const& region) const;
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getOpenSound() const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getCloseSound(::BlockSource const& region) const;
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getCloseSound() const;
     // NOLINTEND
 
 public:

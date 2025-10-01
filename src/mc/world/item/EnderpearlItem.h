@@ -22,11 +22,11 @@ public:
     // vIndex: 20
     virtual bool isThrowable() const /*override*/;
 
-    // vIndex: 94
-    virtual ::HashedString const& getCooldownType() const /*override*/;
+    // vIndex: 96
+    virtual ::HashedString const& getCooldownCategory() const /*override*/;
 
-    // vIndex: 95
-    virtual int getCooldownTime() const /*override*/;
+    // vIndex: 97
+    virtual int getCooldownDuration() const /*override*/;
 
     // vIndex: 0
     virtual ~EnderpearlItem() /*override*/ = default;
@@ -35,7 +35,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& ENDER_PEARL_COOLDOWN();
+    MCAPI static ::HashedString const& COOLDOWN();
     // NOLINTEND
 
 public:
@@ -45,9 +45,9 @@ public:
 
     MCFOLD bool $isThrowable() const;
 
-    MCAPI ::HashedString const& $getCooldownType() const;
+    MCAPI ::HashedString const& $getCooldownCategory() const;
 
-    MCFOLD int $getCooldownTime() const;
+    MCFOLD int $getCooldownDuration() const;
     // NOLINTEND
 
 public:

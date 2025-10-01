@@ -25,14 +25,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Json::Value toJson() const;
+    MCAPI FlatWorldPreset(::FlatWorldPreset&&);
 
-    MCNAPI ~FlatWorldPreset();
+    MCAPI ::Json::Value toJson() const;
+
+    MCAPI ~FlatWorldPreset();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::FlatWorldPreset&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

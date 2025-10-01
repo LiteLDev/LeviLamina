@@ -26,13 +26,18 @@ public:
 public:
     // prevent constructor by default
     ItemData& operator=(ItemData const&);
-    ItemData(ItemData const&);
     ItemData();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI ItemData(::ItemData&&);
+
+    MCAPI ItemData(::ItemData const& other);
+
+    MCAPI ::ItemData& operator=(::ItemData&&);
+
+    MCAPI bool operator==(::ItemData const&) const;
 
     MCAPI ~ItemData();
     // NOLINTEND
@@ -47,6 +52,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ItemData&&);
+
+    MCAPI void* $ctor(::ItemData const& other);
     // NOLINTEND
 
 public:

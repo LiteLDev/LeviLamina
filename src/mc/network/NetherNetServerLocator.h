@@ -14,6 +14,8 @@
 class AppPlatform;
 class BinaryStream;
 class ReadOnlyBinaryStream;
+class SignalingService;
+struct NetherNetConnector;
 struct PingedCompatibleServer;
 struct PortPair;
 namespace Bedrock::Threading { class Mutex; }
@@ -126,6 +128,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI NetherNetServerLocator(
+        ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&& connector,
+        ::Bedrock::NonOwnerPointer<::SignalingService>        signalingService
+    );
+
     MCNAPI void _cacheDiscoveryResponseData();
 
     MCNAPI void _onDiscoveryResponse(::NetherNet::NetworkID const& networkID, ::gsl::span<char const> responseData);
@@ -144,6 +151,15 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::PingedCompatibleServer
     _transformFrom(::NetherNet::NetworkID const& networkID, ::NetherNetServerLocator::ServerData&& serverData);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&& connector,
+        ::Bedrock::NonOwnerPointer<::SignalingService>        signalingService
+    );
     // NOLINTEND
 
 public:

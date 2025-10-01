@@ -10,157 +10,171 @@ class HashedString;
 namespace VanillaBlockTypeGroups {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& AliveCoralBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& AliveCoralBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& AllSlabIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& AllSlabIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& AnvilIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& AnvilIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CakeBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CandleBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CarpetBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CandleCakeBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ChemistryTableIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CarpetBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ChiseledCopperBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ChemistryTableIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CobblestoneWallIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ChiseledCopperBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ColoredTorchIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CobblestoneWallIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ConcreteBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ColoredTorchIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ConcretePowderIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ConcreteBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ConcretePowderIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperBulbBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperBarsBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperChestBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperDoorBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperBulbBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperGrateBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperChainBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperTrapdoorBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperChestBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoralBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperDoorBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoralFanIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperGolemStatueBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoralIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperGrateBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoralWallFanIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperLanternBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CutCopperBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperTrapdoorBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CutCopperSlabBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoralBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CutCopperStairsBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoralFanIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DeadCoralBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoralIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DeadCoralFanIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CoralWallFanIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DeadCoralWallFanIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CutCopperBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DirtIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CutCopperSlabBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DoubleCutCopperSlabBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CutCopperStairsBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DoublePlantIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DeadCoralBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& FenceBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DeadCoralFanIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& HardStainedGlassIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DeadCoralWallFanIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& HardStainedGlassPaneIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DirtIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& InfestedBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DoubleCutCopperSlabBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LeavesBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& DoublePlantIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LightBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& FenceBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LogAndStrippedLogBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& HardStainedGlassIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LogBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& HardStainedGlassPaneIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& MossBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& InfestedBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldLeavesBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LeavesBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldLogAndStrippedLogBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LightBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldLogBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LightningRodBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldPlanksBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LogAndStrippedLogBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldWoodAndStrippedWoodBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LogBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& PaleOakBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& MossBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& PrismarineIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldLeavesBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& PurpurBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldLogAndStrippedLogBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& QuartzIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldLogBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& RedSandstoneIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldPlanksBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& RemovedBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& OldWoodAndStrippedWoodBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SandIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& PaleOakBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SandstoneIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& PrismarineIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SaplingBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& PurpurBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ShulkerBoxIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& QuartzIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SkullIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& RedSandstoneIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SpongeIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& RemovedBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StainedGlassIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SandIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StainedGlassPaneIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SandstoneIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SaplingBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneBricksIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ShelfBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneDoubleSlab1Ids();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ShulkerBoxIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneDoubleSlab2Ids();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SkullIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneDoubleSlab3Ids();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& SpongeIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneDoubleSlab4Ids();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StainedGlassIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneSlab1Ids();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StainedGlassPaneIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneSlab2Ids();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneSlab3Ids();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneBricksIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneSlab4Ids();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneDoubleSlab1Ids();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TerracottaIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneDoubleSlab2Ids();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TntIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneDoubleSlab3Ids();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TulipIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneDoubleSlab4Ids();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoodAndStrippedWoodBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneSlab1Ids();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoodBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneSlab2Ids();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoodenDoubleSlabIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneSlab3Ids();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoodenSlabIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& StoneSlab4Ids();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoolIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TerracottaIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TntIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TulipIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoodAndStrippedWoodBlockIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoodBlockIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoodenDoubleSlabIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoodenSlabIds();
+
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& WoolIds();
 // NOLINTEND
 
 } // namespace VanillaBlockTypeGroups

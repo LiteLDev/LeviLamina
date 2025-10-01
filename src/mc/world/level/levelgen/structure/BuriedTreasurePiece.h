@@ -43,17 +43,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _buryChest(::BlockSource& region, ::Random& random, ::BlockPos& blockPos) const;
-
-    MCNAPI bool _isCovered(::BlockSource const& region, ::BlockPos const& blockPos) const;
+    MCAPI bool _isCovered(::BlockSource const& region, ::BlockPos const& blockPos) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:

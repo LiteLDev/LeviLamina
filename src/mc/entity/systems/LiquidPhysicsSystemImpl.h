@@ -20,5 +20,7 @@ public:
         ::IConstBlockSource const&               region,
         ::MaterialType                           liquidType
     );
+
+    MCNAPI static bool _hasFlowingBlock(::std::vector<::LiquidBlockEntry> const& liquidBlocks);
     // NOLINTEND
 };

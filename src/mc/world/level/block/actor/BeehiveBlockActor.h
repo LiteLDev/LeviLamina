@@ -42,13 +42,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Occupant(::ActorDefinitionIdentifier actorIdentifier, ::CompoundTag saveData, uint ticksLeftToStay);
+        MCAPI Occupant(::ActorDefinitionIdentifier actorIdentifier, ::CompoundTag saveData, uint ticksLeftToStay);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::ActorDefinitionIdentifier actorIdentifier, ::CompoundTag saveData, uint ticksLeftToStay);
+        MCAPI void* $ctor(::ActorDefinitionIdentifier actorIdentifier, ::CompoundTag saveData, uint ticksLeftToStay);
         // NOLINTEND
     };
 
@@ -72,7 +72,7 @@ public:
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 0
-    virtual ~BeehiveBlockActor() /*override*/ = default;
+    virtual ~BeehiveBlockActor() /*override*/;
     // NOLINTEND
 
 public:
@@ -89,6 +89,12 @@ public:
     MCAPI void saveUserData(::CompoundTag& tag) const;
 
     MCAPI bool tryAdmit(::Actor& actor);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

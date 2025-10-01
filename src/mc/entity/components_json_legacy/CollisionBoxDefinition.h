@@ -2,6 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace JsonUtil { class EmptyClass; }
+// clang-format on
+
 class CollisionBoxDefinition {
 public:
     // member variables
@@ -21,5 +29,13 @@ public:
     MCNAPI void setHeight(float const& height);
 
     MCNAPI void setWidth(float const& width);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::CollisionBoxDefinition>>& root
+    );
     // NOLINTEND
 };

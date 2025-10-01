@@ -55,17 +55,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
+    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI ::Block const& $getPlacementBlock(
+    MCAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -73,15 +73,15 @@ public:
         int               itemValue
     ) const;
 
-    MCNAPI int $getVariant(::Block const& block) const;
+    MCAPI int $getVariant(::Block const& block) const;
 
-    MCNAPI ::Block const& $getRenderBlock() const;
+    MCFOLD ::Block const& $getRenderBlock() const;
 
-    MCNAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
+    MCAPI uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCNAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
+    MCAPI ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

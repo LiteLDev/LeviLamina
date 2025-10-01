@@ -15,6 +15,7 @@ public:
 
 public:
     // prevent constructor by default
+    ProfilerCapture& operator=(ProfilerCapture const&);
     ProfilerCapture(ProfilerCapture const&);
     ProfilerCapture();
 
@@ -22,8 +23,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::ScriptDebuggerMessages::ProfilerCapture& operator=(::ScriptDebuggerMessages::ProfilerCapture&&);
-
-    MCNAPI ::ScriptDebuggerMessages::ProfilerCapture& operator=(::ScriptDebuggerMessages::ProfilerCapture const&);
 
     MCNAPI bool operator==(::ScriptDebuggerMessages::ProfilerCapture const&) const;
 

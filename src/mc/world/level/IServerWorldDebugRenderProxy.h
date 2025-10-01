@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Dimension;
-class Options;
+class IOptionsReader;
 class Player;
 // clang-format on
 
@@ -17,10 +17,10 @@ public:
     virtual ~IServerWorldDebugRenderProxy() = default;
 
     // vIndex: 1
-    virtual void renderActorsDebugServerState(::Options const&, ::Dimension const&) = 0;
+    virtual void renderActorsDebugServerState(::IOptionsReader const&, ::Dimension const&) = 0;
 
     // vIndex: 2
-    virtual void renderSimulatedPlayerDebugServerState(::Options const&, ::Player&) = 0;
+    virtual void renderSimulatedPlayerDebugServerState(::IOptionsReader const&, ::Player&) = 0;
 
     // vIndex: 3
     virtual void debugRenderDimension(::Dimension&) = 0;

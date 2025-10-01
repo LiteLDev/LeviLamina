@@ -160,8 +160,6 @@ public:
     registerPlayerNotificationCallback(::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback);
 
     MCNAPI void setClientUIContainer(::SparseContainerClient* clientUIContainer);
-
-    MCNAPI void setItemSource(int slot, ::SlotData const& srcSlot);
     // NOLINTEND
 
 public:

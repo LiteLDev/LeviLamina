@@ -40,13 +40,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _registerBlock(::std::string const& name, uint64 serIdHash);
+    MCAPI void _registerBlock(::std::string const& name, uint64 serIdHash);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Block const& $getUnknownBlock(::CompoundTag const& serId);
+    MCAPI ::Block const& $getUnknownBlock(::CompoundTag const& serId);
     // NOLINTEND
 
 public:

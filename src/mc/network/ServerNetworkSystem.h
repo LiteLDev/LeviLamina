@@ -21,7 +21,6 @@ class NetworkSessionOwner;
 class NetworkStatistics;
 class Scheduler;
 class SignalingService;
-class SignalingServiceSignInJob;
 struct ConnectionDefinition;
 struct NetworkSettingOptions;
 struct NetworkSystemToggles;
@@ -65,16 +64,11 @@ public:
         ::Bedrock::NonOwnerPointer<::NetworkDebugManager> const& networkDebugManager
     );
 
-    MCNAPI ::std::shared_ptr<::SignalingServiceSignInJob>
-    createSignalingServiceSigninJobIfNeeded(::Bedrock::NotNullNonOwnerPtr<::SignalingService> signalingService);
-
     MCNAPI ::NetworkIdentifier getLocalNetworkId() const;
 
+    MCNAPI ::std::string getMultiplayerCorrelationId() const;
+
     MCNAPI bool host(::ConnectionDefinition const& definition);
-
-    MCNAPI void onClientEnteredLoadingScreen(::NetworkIdentifier const& id);
-
-    MCNAPI void onClientExitedLoadingScreen(::NetworkIdentifier const& id);
 
     MCNAPI void reloadPacketLimitConfig(::PacketGroupDefinition::PacketGroupBuilder&& packetGroupBuilder);
     // NOLINTEND

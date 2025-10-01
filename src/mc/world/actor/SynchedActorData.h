@@ -11,6 +11,11 @@ class Vec3;
 
 class SynchedActorData {
 public:
+    // SynchedActorData inner types declare
+    // clang-format off
+    struct CopyableDataList;
+    // clang-format on
+
     // SynchedActorData inner types define
     using TypeInt8 = char;
 
@@ -29,6 +34,20 @@ public:
     using DataList = ::std::vector<::std::unique_ptr<::DataItem>>;
 
     using ID = ushort;
+
+    struct CopyableDataList {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnk6fe7f1;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        CopyableDataList& operator=(CopyableDataList const&);
+        CopyableDataList(CopyableDataList const&);
+        CopyableDataList();
+    };
 
 public:
     template <class T>
@@ -54,6 +73,13 @@ public:
     MCNAPI ::std::vector<::std::unique_ptr<::DataItem>> packDirty(::EntityContext& entity);
 
     MCNAPI ~SynchedActorData();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::vector<::std::unique_ptr<::DataItem>>
+    cloneDataList(::std::vector<::std::unique_ptr<::DataItem>> const& list);
     // NOLINTEND
 
 public:

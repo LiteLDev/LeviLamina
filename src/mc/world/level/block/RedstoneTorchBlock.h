@@ -72,7 +72,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _installCircuit(::BlockSource& source, ::BlockPos const& pos) const;
 
-    MCFOLD void onPlaceRedstoneTorchBlock(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCAPI void onPlaceRedstoneTorchBlock(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:

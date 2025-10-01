@@ -18,7 +18,7 @@ struct Structures {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bootstrap(
+    MCAPI static void bootstrap(
         ::br::worldgen::StructureRegistry& context,
         ::BaseGameVersion const&,
         ::Experiments const&                                                               experiments,
@@ -26,7 +26,7 @@ public:
         ::IWorldRegistriesProvider&                                                        registries
     );
 
-    MCNAPI static ::std::shared_ptr<::br::worldgen::JigsawStructure> makeTrailRuinsJigsaw();
+    MCAPI static ::std::shared_ptr<::br::worldgen::JigsawStructure> makeTrailRuinsJigsaw();
     // NOLINTEND
 };
 

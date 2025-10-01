@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ComponentItemDataLoader(
+    MCAPI ComponentItemDataLoader(
         ::SemVersion const&                                                      documentVersion,
         ::IPackLoadContext&                                                      packLoadContext,
         bool                                                                     isServer,
@@ -47,25 +47,25 @@ public:
         ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)> validatorFn
     );
 
-    MCNAPI ::Puv::LoadResult<::BetaItemComponentData>
+    MCAPI ::Puv::LoadResult<::BetaItemComponentData>
     _parseBeta(::Json::Value const& input, ::JsonBetaState canUseBeta) const;
 
-    MCNAPI ::Puv::LoadResult<::ComponentItemData_v1_21_90> _parseCereal(::Json::Value const& input) const;
+    MCAPI ::Puv::LoadResult<::ComponentItemData_v1_21_90> _parseCereal(::Json::Value const& input) const;
 
-    MCNAPI ::std::optional<::LegacyEventItemComponentData> _parseEvents(::Json::Value const& input) const;
+    MCAPI ::std::optional<::LegacyEventItemComponentData> _parseEvents(::Json::Value const& input) const;
 
-    MCNAPI ::std::pair<::ComponentItemData_Legacy, bool> _parseLegacyComponents(::Json::Value input) const;
+    MCAPI ::std::pair<::ComponentItemData_Legacy, bool> _parseLegacyComponents(::Json::Value input) const;
 
-    MCNAPI ::Puv::LoadResult<::ComponentItemDataAll_Latest>
+    MCAPI ::Puv::LoadResult<::ComponentItemDataAll_Latest>
     load(::Json::Value const& input, ::JsonBetaState canUseBeta) const;
 
-    MCNAPI ~ComponentItemDataLoader();
+    MCAPI ~ComponentItemDataLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::SemVersion const&                                                      documentVersion,
         ::IPackLoadContext&                                                      packLoadContext,
         bool                                                                     isServer,
@@ -77,6 +77,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

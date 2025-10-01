@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/molang/MolangVersion.h"
 #include "mc/server/commands/Command.h"
 
 // auto generated forward declare list
@@ -49,6 +50,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void setup(::CommandRegistry& registry);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static ::MolangVersion const& mStopExpressionVersion();
     // NOLINTEND
 
 public:

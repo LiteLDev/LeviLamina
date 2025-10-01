@@ -91,17 +91,17 @@ public:
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 145
+    // vIndex: 146
     virtual void aiStep() /*override*/;
 
-    // vIndex: 175
+    // vIndex: 176
     virtual void newServerAiStep() /*override*/;
 
     // vIndex: 85
     virtual bool canFreeze() const /*override*/;
 
     // vIndex: 105
-    virtual bool canBeAffected(uint id) const /*override*/;
+    virtual bool canBeAffected(uint effectId) const /*override*/;
 
     // vIndex: 106
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
@@ -118,7 +118,7 @@ public:
     // vIndex: 92
     virtual float causeFallDamageToActor(float, float, ::ActorDamageSource) /*override*/;
 
-    // vIndex: 155
+    // vIndex: 156
     virtual int getArmorValue() const /*override*/;
 
     // vIndex: 123
@@ -131,7 +131,7 @@ public:
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
     // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
@@ -139,7 +139,7 @@ public:
     // vIndex: 12
     virtual ::Vec3 getFiringPos() const /*override*/;
 
-    // vIndex: 173
+    // vIndex: 174
     virtual void tickDeath() /*override*/;
 
     // vIndex: 135
@@ -170,7 +170,7 @@ public:
 
     MCAPI void _performRangedAttack(int headID, ::Vec3 const& targetPos, bool dangerous);
 
-    MCAPI bool canShoot();
+    MCAPI ::ActorUniqueID getAlternativeTarget(int headIndex);
 
     MCAPI ::Vec3 getHeadPos(int headID) const;
 
@@ -216,7 +216,7 @@ public:
 
     MCFOLD bool $canFreeze() const;
 
-    MCAPI bool $canBeAffected(uint id) const;
+    MCAPI bool $canBeAffected(uint effectId) const;
 
     MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
@@ -236,7 +236,7 @@ public:
 
     MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 

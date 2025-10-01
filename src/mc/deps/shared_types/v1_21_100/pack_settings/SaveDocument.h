@@ -17,18 +17,6 @@ public:
     SaveDocument& operator=(SaveDocument const&);
     SaveDocument(SaveDocument const&);
     SaveDocument();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~SaveDocument();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_100::PackSettingsDefinition

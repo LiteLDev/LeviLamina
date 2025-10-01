@@ -29,10 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BurstReactionComponent();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -43,39 +39,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI BurstReactionComponent(
-        ::ParticleType        type,
-        ::Vec3 const&         dims,
-        ::Vec3 const&         dirRange,
-        int                   count,
-        int                   dataMin,
-        int                   dataMax,
-        bool                  dirOneWay,
-        ::HashedString const& newParticle
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::ParticleType        type,
-        ::Vec3 const&         dims,
-        ::Vec3 const&         dirRange,
-        int                   count,
-        int                   dataMin,
-        int                   dataMax,
-        bool                  dirOneWay,
-        ::HashedString const& newParticle
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
+    MCAPI void $_onEnd(::LabTableReaction& owner, ::BlockSource& region);
     // NOLINTEND
 
 public:

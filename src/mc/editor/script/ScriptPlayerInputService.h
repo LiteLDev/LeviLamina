@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/MouseActionCategory.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/editor/MouseActionCategory.h"
 #include "mc/editor/input/Modifier.h"
 
 // auto generated forward declare list

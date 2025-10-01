@@ -24,7 +24,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float>                           mSecondsBeforePickup;
-    ::ll::TypedStorage<4, 4, float>                           mTotalCoolDownSeconds;
+    ::ll::TypedStorage<4, 4, float>                           mTotalCooldownSeconds;
     ::ll::TypedStorage<4, 4, float>                           mDropItemChance;
     ::ll::TypedStorage<4, 4, float>                           mOfferingDistance;
     ::ll::TypedStorage<4, 4, float>                           mMinimumTeleportDistance;

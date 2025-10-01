@@ -27,6 +27,7 @@ public:
 
     public:
         // prevent constructor by default
+        StringRepresentation& operator=(StringRepresentation const&);
         StringRepresentation(StringRepresentation const&);
         StringRepresentation();
 
@@ -35,9 +36,6 @@ public:
         // NOLINTBEGIN
         MCNAPI ::SharedTypes::Legacy::ExpressionNode::StringRepresentation&
         operator=(::SharedTypes::Legacy::ExpressionNode::StringRepresentation&&);
-
-        MCNAPI ::SharedTypes::Legacy::ExpressionNode::StringRepresentation&
-        operator=(::SharedTypes::Legacy::ExpressionNode::StringRepresentation const&);
 
         MCNAPI ~StringRepresentation();
         // NOLINTEND
@@ -69,8 +67,6 @@ public:
     MCNAPI ExpressionNode(::SharedTypes::Legacy::ExpressionNode&&);
 
     MCNAPI ExpressionNode(::std::string string, short molangVersion);
-
-    MCNAPI ::SharedTypes::Legacy::ExpressionNode& operator=(::SharedTypes::Legacy::ExpressionNode&&);
 
     MCNAPI ~ExpressionNode();
     // NOLINTEND

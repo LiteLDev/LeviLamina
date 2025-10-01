@@ -18,6 +18,7 @@ public:
 
 public:
     // prevent constructor by default
+    Herd& operator=(Herd const&);
     Herd(Herd const&);
     Herd();
 
@@ -25,8 +26,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_60::Spawn::Herd& operator=(::SharedTypes::v1_21_60::Spawn::Herd&&);
-
-    MCNAPI ::SharedTypes::v1_21_60::Spawn::Herd& operator=(::SharedTypes::v1_21_60::Spawn::Herd const&);
 
     MCNAPI ~Herd();
     // NOLINTEND

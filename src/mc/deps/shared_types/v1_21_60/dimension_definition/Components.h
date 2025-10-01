@@ -14,6 +14,7 @@ public:
 
 public:
     // prevent constructor by default
+    Components& operator=(Components const&);
     Components(Components const&);
     Components();
 
@@ -22,9 +23,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::Components&
     operator=(::SharedTypes::v1_21_60::DimensionDefinition::Components&&);
-
-    MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::Components&
-    operator=(::SharedTypes::v1_21_60::DimensionDefinition::Components const&);
     // NOLINTEND
 };
 

@@ -72,8 +72,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void ClearPacketData(::NetherNet::NetworkID remoteId, uint64 connectionId);
-
     MCNAPI void CloseInactiveSessionsOnSignalThread(
         ::NetherNet::NetworkID remoteID,
         ::std::tuple<

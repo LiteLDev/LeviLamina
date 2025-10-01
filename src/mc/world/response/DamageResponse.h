@@ -41,12 +41,18 @@ public:
 
     // vIndex: 3
     virtual void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const /*override*/;
 
     // vIndex: 0
     virtual ~DamageResponse() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void repairOrHurtItem(int const& amount, ::RenderParams& params) const;
     // NOLINTEND
 
 public:
@@ -63,7 +69,7 @@ public:
     MCNAPI void $executeAction(::RenderParams& params) const;
 
     MCNAPI void $buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
         ::Factory<::EventResponse> const&                                                                       factory
     ) const;
     // NOLINTEND

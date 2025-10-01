@@ -36,13 +36,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 121
+    // vIndex: 123
     virtual ::Block const* getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const;
 
-    // vIndex: 118
+    // vIndex: 120
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 122
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
@@ -55,12 +55,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI SignItem(::std::string const& name, int id, ::SignBlock::SignType type);
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool calculatePlacePos(::Actor& entity, uchar& face, ::BlockPos& pos);
     // NOLINTEND
 
 public:

@@ -78,6 +78,8 @@ MCAPI ::GameEvent const& itemInteractStart();
 
 MCAPI ::GameEvent const& lightningStrike();
 
+MCAPI ::GameEvent const& multiItemSwap();
+
 MCAPI ::GameEvent const& noteBlockPlay();
 
 MCAPI ::GameEvent const& pistonContract();
@@ -127,6 +129,8 @@ MCAPI ::GameEvent const& sculkTouch();
 MCAPI ::GameEvent const& shear();
 
 MCAPI ::GameEvent const& shriek();
+
+MCAPI ::GameEvent const& singleItemSwap();
 
 MCAPI ::GameEvent const& splash();
 

@@ -6,6 +6,8 @@
 #include "mc/client/renderer/block/tessellation_pipeline/VolumeOf.h"
 #include "mc/common/BiomeIdType.h"
 #include "mc/common/BrightnessPair.h"
+#include "mc/deps/core/container/small_vector.h"
+#include "mc/deps/core/container/small_vector_base.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/network/packet/SubChunkPacket.h"
@@ -82,6 +84,8 @@ public:
     // clang-format on
 
     // LevelChunk inner types define
+    using BiomeSmallVector = ::Bedrock::small_vector<::Biome const*, 4>;
+
     enum class Finalization : int {
         NeedsInstaticking = 0,
         NeedsPopulation   = 1,
@@ -293,7 +297,7 @@ public:
     );
 
     MCAPI void _replaceBiomeStorage(
-        ushort                                                       biomeIndex,
+        ushort                                                       subChunkIndex,
         ::std::unique_ptr<::SubChunkStorage<::Biome>>                newStorage,
         ::Bedrock::Threading::UniqueLock<::std::shared_mutex> const& lock
     );
@@ -306,7 +310,7 @@ public:
 
     MCAPI void _setBiome(
         ::Biome const&                                               biome,
-        ushort                                                       biomeIndex,
+        ushort                                                       subChunkIndex,
         ushort                                                       storageIndex,
         ::Bedrock::Threading::UniqueLock<::std::shared_mutex> const& writeLock
     );
@@ -327,19 +331,9 @@ public:
 
     MCAPI void deserialize2DMaps(::IDataInput& stream);
 
-    MCAPI void deserialize2DMapsLegacy(::IDataInput& stream);
-
-    MCAPI void deserializeBiomeStates(::IDataInput& stream);
-
     MCAPI void deserializeBlockEntities(::IDataInput& stream);
 
-    MCAPI void deserializeConversionData(::IDataInput& stream);
-
-    MCAPI void deserializeFinalization(::IDataInput& stream);
-
     MCAPI bool deserializeKey(::std::string_view key, ::std::string_view value);
-
-    MCAPI void deserializeLoadedVersion(::IDataInput& stream);
 
     MCAPI void deserializeMetaDataHash(::IDataInput& stream);
 
@@ -350,7 +344,7 @@ public:
         ::std::optional<::DeserializationChanges*> deserializationChanges
     );
 
-    MCAPI void fetchBiomes(::std::vector<::Biome const*>& biomes) const;
+    MCAPI void fetchBiomes(::Bedrock::small_vector_base<::Biome const*>& output) const;
 
     MCAPI void fillBiomes(::BiomeChunkData const& biomeChunkData);
 
@@ -385,6 +379,8 @@ public:
     MCAPI ::Biome const& getBiome(::ChunkBlockPos const& pos) const;
 
     MCAPI ::Block const& getBlock(::ChunkBlockPos const& pos) const;
+
+    MCAPI ::BlockActor* getBlockEntity(::ChunkBlockPos const& localPos);
 
     MCAPI ::BrightnessPair getBrightness(::ChunkBlockPos const& pos) const;
 
@@ -435,8 +431,6 @@ public:
 
     MCAPI void recomputeHeightMap(bool resetLighting);
 
-    MCAPI ::std::shared_ptr<::BlockActor> removeBlockEntity(::BlockPos const& blockPos);
-
     MCAPI bool removeEntityFromChunk(::WeakEntityRef entityRef);
 
     MCAPI bool removeEntityFromWorld(::WeakEntityRef entityRef);
@@ -467,7 +461,7 @@ public:
 
     MCAPI void setAllBlockTypeIDAndData(::buffer_span<::BlockID> ids, ::buffer_span<::NibblePair> data);
 
-    MCAPI void setBiomeFromVolume(::ClientBlockPipeline::VolumeOf<::Biome const*> const& volume, uint yOffset);
+    MCAPI void setBiomeFromVolume(::ClientBlockPipeline::VolumeOf<::Biome const*> const& volume);
 
     MCAPI ::Block const& setBlock(
         ::ChunkBlockPos const&          pos,
@@ -477,8 +471,6 @@ public:
     );
 
     MCAPI void setBlockVolume(::BlockVolume const& box, uint yOffset);
-
-    MCAPI void setBorder(::ChunkBlockPos const& pos, bool val);
 
     MCAPI ::Block const&
     setExtraBlock(::ChunkBlockPos const& localPos, ::Block const& block, ::BlockSource* issuingSource);
@@ -511,12 +503,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::array<::BiomeChunkData, 256> _deserialize2DBiomesWithDataUpgrade(
-        ::IDataInput&                              stream,
-        ::std::optional<::LevelChunkFormat> const& lcFormat,
-        bool                                       isClientSide
-    );
-
     MCAPI static ::std::pair<ushort, ::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>>> deserialize3DBiomes(
         ::IDataInput&          stream,
         ::BiomeRegistry const& biomeRegistry,
@@ -535,6 +521,10 @@ public:
         ::std::function<void(::std::string const&)> addActorKeyCallback,
         ::std::function<void(::std::string const&)> addSerializedActor
     );
+
+    MCAPI static ::std::
+        tuple<::std::array<::ChunkLocalHeight, 256>, ::std::array<::BiomeChunkData, 256>, ::std::vector<::SubChunk>>
+        staticDeserializeLegacyTerrain(::IDataInput& stream, short minY, ushort dimensionSizeInSubchunks);
     // NOLINTEND
 
 public:

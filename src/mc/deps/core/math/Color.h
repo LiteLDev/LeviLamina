@@ -260,16 +260,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int toARGB() const;
-
     MCAPI ::std::string toHexString() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::mce::Color fromARGB(int col);
-
     MCAPI static ::mce::Color fromHexString(::std::string const& hexStr);
 
     MCAPI static ::mce::Color fromRGBHexString(::std::string const& hexStr);

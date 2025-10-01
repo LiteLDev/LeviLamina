@@ -21,7 +21,7 @@ public:
     // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 171
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
     // vIndex: 8

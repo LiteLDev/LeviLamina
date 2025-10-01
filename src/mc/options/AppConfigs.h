@@ -140,25 +140,28 @@ public:
     virtual bool isEduAIOn() const;
 
     // vIndex: 31
-    virtual void setCanAccessWorldCallback(::IMinecraftGame& minecraftGame);
+    virtual bool isDedicatedServerOn() const;
 
     // vIndex: 32
-    virtual ::std::vector<::PackIdVersion> getAdditionalClientPacks(bool enteringLevel) const;
+    virtual void setCanAccessWorldCallback(::IMinecraftGame& minecraftGame);
 
     // vIndex: 33
-    virtual ::std::unique_ptr<::IScreenCapabilities> getScreenCapabilities(::std::string const& screenName) const;
+    virtual ::std::vector<::PackIdVersion> getAdditionalClientPacks(bool enteringLevel) const;
 
     // vIndex: 34
+    virtual ::std::unique_ptr<::IScreenCapabilities> getScreenCapabilities(::std::string const& screenName) const;
+
+    // vIndex: 35
     virtual ::std::unique_ptr<::IContentAccessibilityProvider>
     createContentAccessibility(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager) const;
 
-    // vIndex: 35
+    // vIndex: 36
     virtual ::std::string getFeedbackURL() const;
 
-    // vIndex: 36
+    // vIndex: 37
     virtual ::std::string getHelpCenterURL() const;
 
-    // vIndex: 37
+    // vIndex: 38
     virtual void applyLevelDataOverride(::LevelData&) const;
     // NOLINTEND
 
@@ -242,6 +245,8 @@ public:
     MCNAPI bool $isSaveToCloudOn() const;
 
     MCNAPI bool $isEduAIOn() const;
+
+    MCNAPI bool $isDedicatedServerOn() const;
 
     MCNAPI void $setCanAccessWorldCallback(::IMinecraftGame& minecraftGame);
 

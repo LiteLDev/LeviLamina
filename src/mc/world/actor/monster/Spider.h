@@ -32,7 +32,7 @@ public:
     // vIndex: 105
     virtual bool canBeAffected(uint id) const /*override*/;
 
-    // vIndex: 178
+    // vIndex: 179
     virtual float getModelScale() const;
 
     // vIndex: 35

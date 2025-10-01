@@ -66,6 +66,8 @@ public:
 
     MCNAPI ::PropertySyncData packDirtySyncData();
 
+    MCNAPI ::std::optional<bool> tryGetBool(uint64 h) const;
+
     MCNAPI ::HashedString const* tryGetString(uint64 h) const;
     // NOLINTEND
 

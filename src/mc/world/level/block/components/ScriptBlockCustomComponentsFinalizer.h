@@ -24,15 +24,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     finalizeBlock(::BlockType& block, ::std::vector<::gsl::not_null<::BlockCustomComponentsComponent*>>& customComps);
 
-    MCNAPI ~ScriptBlockCustomComponentsFinalizer();
+    MCAPI ~ScriptBlockCustomComponentsFinalizer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

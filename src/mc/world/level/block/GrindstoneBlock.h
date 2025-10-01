@@ -54,8 +54,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Block const& _determineAttachment(::Actor const& by, ::BlockPos const& pos, uchar face) const;
-
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
     MCFOLD void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;

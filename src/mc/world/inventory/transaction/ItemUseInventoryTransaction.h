@@ -28,9 +28,10 @@ class ItemUseInventoryTransaction : public ::ComplexInventoryTransaction {
 public:
     // ItemUseInventoryTransaction inner types define
     enum class ActionType : int {
-        Place   = 0,
-        Use     = 1,
-        Destroy = 2,
+        Place       = 0,
+        Use         = 1,
+        Destroy     = 2,
+        UseAsAttack = 3,
     };
 
     enum class TriggerType : uchar {

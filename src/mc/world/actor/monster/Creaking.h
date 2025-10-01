@@ -12,7 +12,7 @@ public:
     // vIndex: 35
     virtual float getShadowRadius() const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual bool checkSpawnRules(bool) /*override*/;
 
     // vIndex: 8

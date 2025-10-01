@@ -25,6 +25,7 @@ public:
 
 public:
     // prevent constructor by default
+    WidgetComponentBasePayload& operator=(WidgetComponentBasePayload const&);
     WidgetComponentBasePayload(WidgetComponentBasePayload const&);
     WidgetComponentBasePayload();
 
@@ -32,9 +33,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Editor::Network::WidgetComponentBasePayload& operator=(::Editor::Network::WidgetComponentBasePayload&&);
-
-    MCNAPI ::Editor::Network::WidgetComponentBasePayload&
-    operator=(::Editor::Network::WidgetComponentBasePayload const&);
 
     MCNAPI ~WidgetComponentBasePayload();
     // NOLINTEND

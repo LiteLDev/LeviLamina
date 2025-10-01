@@ -23,6 +23,7 @@ public:
 
 public:
     // prevent constructor by default
+    ParticleCurveBezierChain& operator=(ParticleCurveBezierChain const&);
     ParticleCurveBezierChain(ParticleCurveBezierChain const&);
     ParticleCurveBezierChain();
 
@@ -37,9 +38,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ParticleCurveBezierChain(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
-
-    MCNAPI ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
-    operator=(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
 
     MCNAPI ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
     operator=(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);

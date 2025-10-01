@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockMaterialInstancesComponent(
+    MCAPI explicit BlockMaterialInstancesComponent(
         ::BlockMaterialInstancesDescription const& blockMaterialInstancesDescription
     );
     // NOLINTEND
@@ -31,6 +31,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockMaterialInstancesDescription const& blockMaterialInstancesDescription);
+    MCAPI void* $ctor(::BlockMaterialInstancesDescription const& blockMaterialInstancesDescription);
     // NOLINTEND
 };

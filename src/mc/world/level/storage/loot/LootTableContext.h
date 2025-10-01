@@ -12,7 +12,6 @@ class ActorDamageSource;
 class Dimension;
 class ILevel;
 class ItemStack;
-class LootTable;
 class Player;
 struct ActorUniqueID;
 // clang-format on
@@ -51,6 +50,8 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::LootTableContext create() const;
+
+        MCNAPI ::LootTableContext::Builder& withThisEntity(::Actor* actor);
 
         MCNAPI ~Builder();
         // NOLINTEND
@@ -98,10 +99,6 @@ public:
         ::DimensionType            dimensionId,
         ::ItemStack const*         tool
     );
-
-    MCNAPI void removeVisitedTable(::LootTable const* table);
-
-    MCNAPI void setOriginalItemName(::std::string const& originalItemName);
 
     MCNAPI ~LootTableContext();
     // NOLINTEND

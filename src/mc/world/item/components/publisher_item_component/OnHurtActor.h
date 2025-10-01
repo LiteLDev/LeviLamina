@@ -17,7 +17,7 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 
 namespace PublisherItemComponent {
 
-class OnHurtActor
+struct OnHurtActor
 : public ::ItemComponent,
   public ::Bedrock::PubSub::
       Publisher<void(::ItemStack&, ::Actor&, ::Mob&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {

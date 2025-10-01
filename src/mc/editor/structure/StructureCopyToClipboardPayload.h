@@ -17,6 +17,7 @@ public:
 
 public:
     // prevent constructor by default
+    StructureCopyToClipboardPayload& operator=(StructureCopyToClipboardPayload const&);
     StructureCopyToClipboardPayload(StructureCopyToClipboardPayload const&);
     StructureCopyToClipboardPayload();
 
@@ -25,13 +26,6 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~StructureCopyToClipboardPayload() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::Editor::Network::StructureCopyToClipboardPayload&
-    operator=(::Editor::Network::StructureCopyToClipboardPayload const&);
     // NOLINTEND
 
 public:

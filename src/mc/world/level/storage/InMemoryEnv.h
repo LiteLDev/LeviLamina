@@ -36,13 +36,12 @@ public:
     virtual ::leveldb::Status NewWritableFile(::std::string const& f, ::leveldb::WritableFile** r) /*override*/;
 
     // vIndex: 4
-    virtual ::leveldb::Status
-    NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
+    virtual ::leveldb::Status NewAppendableFile(::std::string const& f, ::leveldb::WritableFile** r) /*override*/;
 
     // vIndex: 7
-    virtual ::leveldb::Status DeleteFileA(::std::string const& f) /*override*/;
+    virtual ::leveldb::Status RemoveFile(::std::string const& fname) /*override*/;
 
-    // vIndex: 11
+    // vIndex: 13
     virtual ::leveldb::Status RenameFile(::std::string const& from, ::std::string const& to) /*override*/;
 
     // vIndex: 5
@@ -51,7 +50,7 @@ public:
     // vIndex: 6
     virtual ::leveldb::Status GetChildren(::std::string const& dir, ::std::vector<::std::string>* r) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 22
     virtual void flushToPermanentStorage() /*override*/;
     // NOLINTEND
 
@@ -70,9 +69,9 @@ public:
 
     MCNAPI ::leveldb::Status $NewWritableFile(::std::string const& f, ::leveldb::WritableFile** r);
 
-    MCNAPI ::leveldb::Status $NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result);
+    MCNAPI ::leveldb::Status $NewAppendableFile(::std::string const& f, ::leveldb::WritableFile** r);
 
-    MCNAPI ::leveldb::Status $DeleteFileA(::std::string const& f);
+    MCNAPI ::leveldb::Status $RemoveFile(::std::string const& fname);
 
     MCNAPI ::leveldb::Status $RenameFile(::std::string const& from, ::std::string const& to);
 

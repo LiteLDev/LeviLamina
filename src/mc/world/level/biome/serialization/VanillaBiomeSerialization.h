@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseGameVersion;
 class Biome;
 class BiomeRegistry;
 class BlockPalette;
@@ -38,7 +37,6 @@ MCNAPI void serializeBiomeToData(
     bool                                                                            clientSideChunkGen,
     ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const& tagRegistry,
     ::FeatureRegistry const&                                                        featureRegistry,
-    ::BaseGameVersion const&                                                        baseGameVersion,
     ::BiomeStringList&                                                              stringList
 );
 // NOLINTEND

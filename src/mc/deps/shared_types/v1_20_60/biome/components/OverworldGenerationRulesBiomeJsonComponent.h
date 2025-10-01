@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/util/Reference.h"
 #include "mc/deps/shared_types/v1_20_60/biome/components/IBiomeJsonComponent.h"
+#include "mc/v1_20_60/biome/components/BiomeComponentVersion.h"
 #include "mc/world/level/biome/BiomeTemperatureCategory.h"
 
 // auto generated forward declare list
@@ -28,7 +29,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 80> mUnkc0676f;
+        ::ll::UntypedStorage<8, 80> mUnk65a982;
         // NOLINTEND
 
     public:
@@ -48,7 +49,7 @@ public:
         // NOLINTBEGIN
         MCNAPI static void fromReference(
             ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeName& instance,
-            ::SharedTypes::Reference<1> const&                                                      ref
+            ::SharedTypes::Reference<3> const&                                                      ref
         );
         // NOLINTEND
 
@@ -79,7 +80,7 @@ public:
 
         MCNAPI static void fromReference(
             ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent::WeightedBiomeNameVector& instance,
-            ::SharedTypes::Reference<1> const&                                                            ref
+            ::SharedTypes::Reference<3> const&                                                            ref
         );
 
         MCNAPI static void fromVector(
@@ -128,6 +129,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
+    virtual ::BiomeComponentVersion getType() const /*override*/;
+
     // vIndex: 0
     virtual ~OverworldGenerationRulesBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
@@ -154,6 +158,12 @@ public:
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI ::BiomeComponentVersion $getType() const;
     // NOLINTEND
 
 public:

@@ -22,20 +22,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TropicalFishInfo(int color, int color2, int variant, int markVariant, ::std::string name);
+    MCAPI TropicalFishInfo(int color, int color2, int variant, int markVariant, ::std::string name);
 
-    MCNAPI ~TropicalFishInfo();
+    MCAPI ~TropicalFishInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(int color, int color2, int variant, int markVariant, ::std::string name);
+    MCAPI void* $ctor(int color, int color2, int variant, int markVariant, ::std::string name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

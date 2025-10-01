@@ -33,37 +33,37 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI explicit ScopedItemRegistry(::std::weak_ptr<::ItemRegistry> registry);
+        MCAPI explicit ScopedItemRegistry(::std::weak_ptr<::ItemRegistry> registry);
 
-        MCNAPI void construct(::ItemRegistryRef registryRef);
+        MCAPI void construct(::ItemRegistryRef registryRef);
 
-        MCNAPI ~ScopedItemRegistry();
+        MCAPI ~ScopedItemRegistry();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::std::weak_ptr<::ItemRegistry> registry);
+        MCAPI void* $ctor(::std::weak_ptr<::ItemRegistry> registry);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ItemRegistryRef getItemRegistry();
+    MCAPI static ::ItemRegistryRef getItemRegistry();
 
-    MCNAPI static void setItemRegistry(::ItemRegistryRef registryRef);
+    MCAPI static void setItemRegistry(::ItemRegistryRef registryRef);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::weak_ptr<::ItemRegistry>& mThreadLocalRegistry();
+    MCAPI static ::std::weak_ptr<::ItemRegistry>& mThreadLocalRegistry();
     // NOLINTEND
 };

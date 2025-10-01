@@ -12,7 +12,7 @@ class EntityContext;
 class Player;
 // clang-format on
 
-struct PlayerItemInUse {
+class PlayerItemInUse {
 public:
     // member variables
     // NOLINTBEGIN

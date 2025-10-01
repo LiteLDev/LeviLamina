@@ -4,8 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class Block;
-class CompoundTag;
 class IStructurePoolBlockTagPredicate;
 // clang-format on
 
@@ -25,19 +23,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructurePoolBlockTagRule(
+    MCAPI StructurePoolBlockTagRule(
         ::std::unique_ptr<::IStructurePoolBlockTagPredicate>&& sourceBlockTagPredicate,
         ::std::string                                          resultKey,
         ::std::string                                          resultValue
     );
-
-    MCNAPI bool processRule(::Block const& sourceBlock, ::CompoundTag& sourceTag) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::IStructurePoolBlockTagPredicate>&& sourceBlockTagPredicate,
         ::std::string                                          resultKey,
         ::std::string                                          resultValue

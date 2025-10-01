@@ -21,7 +21,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
         /*override*/;
 

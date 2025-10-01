@@ -15,6 +15,7 @@ class BlockPos;
 class BlockSource;
 class ChunkPos;
 class HashedString;
+class IMinecraftEventing;
 class IWorldRegistriesProvider;
 class ItemActor;
 class ItemStack;
@@ -40,6 +41,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Level&>                                        mLevel;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                           mEventing;
     ::ll::TypedStorage<8, 48, ::SpawnSettings>                                mSpawnSettings;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorSpawnRuleGroup>>        mActorSpawnRules;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SpawnGroupRegistry>>         mSpawnGroupRegistry;

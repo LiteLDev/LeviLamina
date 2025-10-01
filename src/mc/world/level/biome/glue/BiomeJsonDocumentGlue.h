@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class BiomeRegistry;
-namespace SharedTypes::v1_21_100 { struct BiomeJsonDocument; }
+namespace SharedTypes::v1_21_110 { struct BiomeJsonDocument; }
 // clang-format on
 
 struct BiomeJsonDocumentGlue {
@@ -92,7 +92,7 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::optional<::BiomeJsonDocumentGlue::ResolvedBiomeData> getResolvedBiomeData(
-        ::SharedTypes::v1_21_100::BiomeJsonDocument const& biomeJsonDocument,
+        ::SharedTypes::v1_21_110::BiomeJsonDocument const& biomeJsonDocument,
         ::BiomeRegistry const&                             biomeRegistry
     ) const;
     // NOLINTEND

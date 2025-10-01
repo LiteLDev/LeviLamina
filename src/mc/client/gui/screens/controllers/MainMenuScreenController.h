@@ -36,7 +36,7 @@ public:
     // vIndex: 6
     virtual void onOpen() /*override*/;
 
-    // vIndex: 52
+    // vIndex: 51
     virtual void showPickCustomSkinDialog(::std::function<void(::PickCustomSkinResult)>) /*override*/;
     // NOLINTEND
 

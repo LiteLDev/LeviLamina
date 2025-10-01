@@ -14,10 +14,10 @@ class EvocationIllager : public ::HumanoidMonster {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 153
+    // vIndex: 154
     virtual bool isAlliedTo(::Mob* other) /*override*/;
 
-    // vIndex: 155
+    // vIndex: 156
     virtual int getArmorValue() const /*override*/;
 
     // vIndex: 8

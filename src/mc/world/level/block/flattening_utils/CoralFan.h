@@ -11,9 +11,9 @@ namespace FlatteningUtils { struct Instance; }
 namespace FlatteningUtils::CoralFan {
 // functions
 // NOLINTBEGIN
-MCNAPI ::FlatteningUtils::Instance get();
+MCAPI ::FlatteningUtils::Instance get();
 
-MCNAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
+MCAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
 // NOLINTEND
 
 } // namespace FlatteningUtils::CoralFan

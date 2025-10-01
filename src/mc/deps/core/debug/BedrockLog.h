@@ -46,6 +46,8 @@ MCAPI void _openChannel(
 
 MCAPI ::std::string _processIdString();
 
+MCAPI ::std::string _threadIdString();
+
 MCAPI void closeAndResetAllLogs();
 
 MCAPI void createLog(

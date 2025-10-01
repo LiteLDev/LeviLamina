@@ -25,10 +25,10 @@ class LodestoneCompassItem : public ::AbstractCompassItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 110
+    // vIndex: 112
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const* item, bool) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 122
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;

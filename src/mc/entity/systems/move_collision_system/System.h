@@ -235,52 +235,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static auto createViews(
-        ::StrictExecutionContext<
-            ::Filter<
-                ::CanStandOnSnowFlagComponent,
-                ::HasLightweightFamilyFlagComponent,
-                ::HorseFlagComponent,
-                ::MobFlagComponent,
-                ::ParrotFlagComponent,
-                ::VehicleComponent,
-                ::CamelFlagComponent,
-                ::PlayerComponent,
-                ::CollidableMobFlagComponent,
-                ::FallingBlockFlagComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::MovementAbilitiesComponent,
-                ::ActorTypeComponent,
-                ::FallDistanceComponent,
-                ::PassengerComponent,
-                ::ActorGameTypeComponent,
-                ::ActorDataFlagComponent,
-                ::VehicleComponent,
-                ::ActorRotationComponent,
-                ::MobBodyRotationComponent,
-                ::RenderRotationComponent,
-                ::StandAnimationComponent,
-                ::OffsetsComponent,
-                ::VanillaOffsetComponent,
-                ::PassengerRenderingRidingOffsetComponent,
-                ::DimensionTypeComponent,
-                ::MaxAutoStepComponent,
-                ::CollidableMobNearFlagComponent>,
-            ::Write<::MoveRequestComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<
-                ::ExternalDataComponent,
-                ::LocalConstBlockSourceFactoryComponent,
-                ::LocalSpatialEntityFetcherFactoryComponent>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI void $tick(

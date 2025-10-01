@@ -2,4 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+namespace MinecraftCamera {
+
 struct CameraWorldSpaceRotationComponent {};
+
+} // namespace MinecraftCamera

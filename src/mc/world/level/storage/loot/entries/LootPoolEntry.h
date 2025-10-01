@@ -12,6 +12,15 @@ namespace Json { class Value; }
 
 class LootPoolEntry {
 public:
+    // LootPoolEntry inner types define
+    enum class EntryType : int {
+        LootItem           = 0,
+        EmptyLootItem      = 1,
+        LootTableEntry     = 2,
+        LootTableReference = 3,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4>  mUnk433823;
@@ -34,6 +43,9 @@ public:
 
     // vIndex: 1
     virtual ~LootPoolEntry();
+
+    // vIndex: 2
+    virtual ::LootPoolEntry::EntryType getEntryType() const = 0;
     // NOLINTEND
 
 public:

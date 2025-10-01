@@ -60,6 +60,9 @@ public:
             ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
     ) const;
 
+    MCNAPI ::Scripting::Result_deprecated<void>
+    setCameraWithEase(::std::string const& cameraPreset, ::ScriptModuleMinecraft::ScriptEaseOptions easeOptions);
+
     MCNAPI ::Scripting::Result_deprecated<void> setCamera_V1(
         ::std::string const&                                        cameraPreset,
         ::std::optional<::std::variant<

@@ -61,7 +61,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
             ::gsl::not_null<::Block const*> block,
             ::Actor const&                  by,
             ::BlockPos const&,
@@ -111,7 +111,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
             ::gsl::not_null<::Block const*> block,
             ::Actor const&                  by,
             ::BlockPos const&               pos,
@@ -145,13 +145,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+        MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static void fromStringVector(
+        MCAPI static void fromStringVector(
             ::BlockTrait::PlacementDirection::EnabledStates& instance,
             ::std::vector<::std::string> const&              states
         );
@@ -190,27 +190,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::BlockTrait::PlacementDirection CardinalDirection(float _yRotationOffset);
+    MCAPI static ::BlockTrait::PlacementDirection CardinalDirection(float _yRotationOffset);
 
-    MCNAPI static ::BlockTrait::PlacementDirection FacingDirection(float _yRotationOffset);
+    MCAPI static ::BlockTrait::PlacementDirection FacingDirection(float _yRotationOffset);
 
-    MCNAPI static ::std::string const& getName();
+    MCAPI static ::std::string const& getName();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag() const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag() const;
 
-    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag);
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag);
 
-    MCNAPI void $applyToBlockType(::BlockType& blockType) const;
+    MCAPI void $applyToBlockType(::BlockType& blockType) const;
     // NOLINTEND
 
 public:

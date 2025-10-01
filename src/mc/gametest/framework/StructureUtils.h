@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class BlockPos;
 class BlockSource;
 class BoundingBox;
@@ -44,7 +45,7 @@ FindStructureBlockContainingPos(::BlockPos const& pos, int searchRadius, ::Block
 MCAPI ::std::vector<::BlockPos>
 FindStructureBlocks(::BlockPos const& centerPos, int searchRadius, ::BlockSource& region);
 
-MCAPI ::BoundingBox GetStructureBoundingBox(::StructureBlockActor const& structureBlockActor);
+MCAPI ::AABB GetStructureBounds(::StructureBlockActor const& structureBlockActor);
 
 MCAPI ::StructureEditorData GetStructureEditorData(::StructureTemplate const& structure, ::Rotation const& rotation);
 

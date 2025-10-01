@@ -11,6 +11,6 @@ class ChemistryRecipes {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void addRecipes(::Recipes& r);
+    MCAPI static void addRecipes(::Recipes& r);
     // NOLINTEND
 };

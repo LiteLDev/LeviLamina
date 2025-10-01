@@ -36,7 +36,7 @@ enum class ActorEvent : uchar {
     PrimeTntcart                     = 31,
     PrimeCreeper                     = 32,
     AirSupply                        = 33,
-    AddPlayerLevels                  = 34,
+    DeprecatedAddPlayerLevels        = 34,
     GuardianMiningFatigue            = 35,
     AgentSwingArm                    = 36,
     DragonStartDeathAnim             = 37,

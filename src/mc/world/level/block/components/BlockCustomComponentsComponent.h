@@ -51,9 +51,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
+    MCAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
 
-    MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
+    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
         void>>
     tryGetComponentsToExecute(::BlockType const& baseBlock) const;

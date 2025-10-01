@@ -4,16 +4,21 @@
 
 // auto generated inclusion list
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/deps/scripting/runtime/Result.h"
 #include "mc/world/item/alchemy/Potion.h"
 
 // auto generated forward declare list
 // clang-format off
 class HashedString;
+class Potion;
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { class ScriptPotionDeliveryType; }
 namespace ScriptModuleMinecraft { class ScriptPotionEffectType; }
-namespace ScriptModuleMinecraft { class ScriptPotionLiquidType; }
-namespace ScriptModuleMinecraft { class ScriptPotionModifierType; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidPotionDeliveryTypeError; }
+namespace ScriptModuleMinecraft { struct ScriptInvalidPotionEffectTypeError; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct EngineError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -22,9 +27,8 @@ class ScriptPotions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkb5302a;
-    ::ll::UntypedStorage<8, 64> mUnk2bba6d;
-    ::ll::UntypedStorage<8, 64> mUnke6c4c9;
+    ::ll::UntypedStorage<8, 64> mUnk899fd5;
+    ::ll::UntypedStorage<8, 64> mUnke4d8fb;
     // NOLINTEND
 
 public:
@@ -40,21 +44,7 @@ public:
 
     MCNAPI ScriptPotions(::ScriptModuleMinecraft::ScriptPotions&&);
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>>
-    _getPotionEffectType(::Scripting::WeakLifetimeScope scope, ::Potion::PotionVariant potionVariant);
-
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionLiquidType>>
-    _getPotionLiquidType(::Scripting::WeakLifetimeScope scope, ::Potion::PotionType potionType);
-
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType>>
-    _getPotionModifierType(::Scripting::WeakLifetimeScope scope, int potionId);
-
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType>>
-    _getPotionModifierType(::Scripting::WeakLifetimeScope scope, ::std::string const& potionModifierId);
-
     MCNAPI ::ScriptModuleMinecraft::ScriptPotions& operator=(::ScriptModuleMinecraft::ScriptPotions&&);
-
-    MCNAPI ~ScriptPotions();
     // NOLINTEND
 
 public:
@@ -65,25 +55,42 @@ public:
 
     MCNAPI static ::Scripting::ClassBinding bind();
 
+    MCNAPI static ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionDeliveryType>>
+    getDeliveryTypes(::Scripting::WeakLifetimeScope scope);
+
+    MCNAPI static ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>>
+    getEffectTypes(::Scripting::WeakLifetimeScope scope);
+
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionDeliveryType>
+    getOrCreatePotionDeliveryType(::Potion::PotionType potionType, ::Scripting::WeakLifetimeScope scope);
+
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>
+    getOrCreatePotionEffectType(
+        ::gsl::not_null<::std::shared_ptr<::Potion const>> potion,
+        ::Scripting::WeakLifetimeScope                     scope
+    );
+
+    MCNAPI static ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionDeliveryType>>
+    getPotionDeliveryType(::Scripting::WeakLifetimeScope scope, ::std::string const& potionTypeId);
+
     MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>>
     getPotionEffectType(::Scripting::WeakLifetimeScope scope, ::std::string const& potionTypeId);
 
-    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>>
-    getPotionEffectType(::Scripting::WeakLifetimeScope scope, ::Potion::PotionVariant potionVariant);
-
-    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionLiquidType>>
-    getPotionLiquidType(::Scripting::WeakLifetimeScope scope, ::Potion::PotionType potionType);
-
-    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionLiquidType>>
-    getPotionLiquidType(::Scripting::WeakLifetimeScope scope, ::std::string const& potionTypeId);
-
-    MCNAPI static ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType>>
-    getPotionModifierType(::Scripting::WeakLifetimeScope scope, int potionId);
-
-    MCNAPI static ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionModifierType>>
-    getPotionModifierType(::Scripting::WeakLifetimeScope scope, ::std::string const& potionModifierId);
+    MCNAPI static ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>,
+        ::ScriptModuleMinecraft::ScriptInvalidPotionDeliveryTypeError,
+        ::ScriptModuleMinecraft::ScriptInvalidPotionEffectTypeError,
+        ::Scripting::EngineError>
+    resolve(
+        ::Scripting::WeakLifetimeScope scope,
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionEffectType>>& potionEffect,
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPotionDeliveryType>>& deliveryType
+    );
     // NOLINTEND
 
 public:
@@ -94,12 +101,6 @@ public:
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPotions const&);
 
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPotions&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

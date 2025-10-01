@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class Matrix;
 class Vec2;
 class Vec3;
 namespace Facing { class StringMap; }
@@ -17,6 +18,8 @@ namespace Facing { class StringMap; }
 namespace Facing {
 // functions
 // NOLINTBEGIN
+MCAPI uchar computeRotatedFacingID(::Matrix const& transformMatrix, uchar originalFacingID);
+
 MCAPI uchar fromVec3(::Vec3 const& dir);
 
 MCAPI ::std::vector<uchar>
@@ -27,12 +30,6 @@ MCAPI ::std::array<uchar, 6> getMostPrioritizedFacingDirectionFromViewVector(::V
 MCAPI uchar getOpposite(uchar face);
 
 MCAPI ::glm::mat3x3 getRotationMatrix(uchar facing, ::Facing::Rotation rotation);
-
-MCAPI int getStepX(uchar facing);
-
-MCAPI int getStepY(uchar facing);
-
-MCAPI int getStepZ(uchar facing);
 
 MCAPI ::std::array<uchar, 6> makeDirectionArray(uchar axis1, uchar axis2, uchar axis3);
 

@@ -37,10 +37,10 @@ public:
 
     // vIndex: 1
     virtual void _registerCompound(
-        ::std::vector<::ItemStack> const&,
-        ::ItemStack const&,
-        ::LabTableReactionType,
-        ::CompoundContainerType
+        ::std::vector<::ItemStack> const& input,
+        ::ItemStack const&                result,
+        ::LabTableReactionType            reaction,
+        ::CompoundContainerType           containerOverride
     );
     // NOLINTEND
 
@@ -88,7 +88,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-
+    MCNAPI void $_registerCompound(
+        ::std::vector<::ItemStack> const& input,
+        ::ItemStack const&                result,
+        ::LabTableReactionType            reaction,
+        ::CompoundContainerType           containerOverride
+    );
     // NOLINTEND
 
 public:

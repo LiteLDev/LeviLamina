@@ -48,42 +48,42 @@ public:
     GetChildren(::std::string const& dir, ::std::vector<::std::string>* pChildrenOut) /*override*/;
 
     // vIndex: 7
-    virtual ::leveldb::Status DeleteFileA(::std::string const& fname) /*override*/;
-
-    // vIndex: 8
-    virtual ::leveldb::Status CreateDir(::std::string const& path) /*override*/;
+    virtual ::leveldb::Status RemoveFile(::std::string const& fname) /*override*/;
 
     // vIndex: 9
-    virtual ::leveldb::Status DeleteDir(::std::string const& name) /*override*/;
+    virtual ::leveldb::Status CreateDir(::std::string const& path) /*override*/;
 
     // vIndex: 10
-    virtual ::leveldb::Status GetFileSize(::std::string const& fname, uint64* size) /*override*/;
-
-    // vIndex: 11
-    virtual ::leveldb::Status RenameFile(::std::string const& src, ::std::string const& target) /*override*/;
+    virtual ::leveldb::Status RemoveDir(::std::string const& name) /*override*/;
 
     // vIndex: 12
-    virtual ::leveldb::Status LockFile(::std::string const& fname, ::leveldb::FileLock** lock) /*override*/;
+    virtual ::leveldb::Status GetFileSize(::std::string const& fname, uint64* size) /*override*/;
 
     // vIndex: 13
-    virtual ::leveldb::Status UnlockFile(::leveldb::FileLock* lock) /*override*/;
+    virtual ::leveldb::Status RenameFile(::std::string const& src, ::std::string const& target) /*override*/;
 
     // vIndex: 14
-    virtual void Schedule(void (*function)(void*), void* arg) /*override*/;
+    virtual ::leveldb::Status LockFile(::std::string const& fname, ::leveldb::FileLock** lock) /*override*/;
 
     // vIndex: 15
-    virtual void StartThread(void (*function)(void*), void* arg) /*override*/;
+    virtual ::leveldb::Status UnlockFile(::leveldb::FileLock* lock) /*override*/;
 
     // vIndex: 16
-    virtual ::leveldb::Status GetTestDirectory(::std::string* result) /*override*/;
+    virtual void Schedule(void (*function)(void*), void* arg) /*override*/;
 
     // vIndex: 17
-    virtual ::leveldb::Status NewLogger(::std::string const& fname, ::leveldb::Logger** result) /*override*/;
+    virtual void StartThread(void (*function)(void*), void* arg) /*override*/;
 
     // vIndex: 18
-    virtual uint64 NowMicros() /*override*/;
+    virtual ::leveldb::Status GetTestDirectory(::std::string* result) /*override*/;
 
     // vIndex: 19
+    virtual ::leveldb::Status NewLogger(::std::string const& fname, ::leveldb::Logger** result) /*override*/;
+
+    // vIndex: 20
+    virtual uint64 NowMicros() /*override*/;
+
+    // vIndex: 21
     virtual void SleepForMicroseconds(int microseconds) /*override*/;
     // NOLINTEND
 
@@ -108,11 +108,11 @@ public:
 
     MCNAPI ::leveldb::Status $GetChildren(::std::string const& dir, ::std::vector<::std::string>* pChildrenOut);
 
-    MCNAPI ::leveldb::Status $DeleteFileA(::std::string const& fname);
+    MCNAPI ::leveldb::Status $RemoveFile(::std::string const& fname);
 
     MCNAPI ::leveldb::Status $CreateDir(::std::string const& path);
 
-    MCNAPI ::leveldb::Status $DeleteDir(::std::string const& name);
+    MCNAPI ::leveldb::Status $RemoveDir(::std::string const& name);
 
     MCNAPI ::leveldb::Status $GetFileSize(::std::string const& fname, uint64* size);
 

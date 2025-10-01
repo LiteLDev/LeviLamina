@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleDebugUtilities { struct ScriptPluginDetails; }
+namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace ScriptModuleDebugUtilities {
@@ -20,6 +21,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~ScriptPluginStats();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:

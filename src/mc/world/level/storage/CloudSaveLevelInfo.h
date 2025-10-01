@@ -21,17 +21,17 @@ public:
 
 public:
     // prevent constructor by default
-    CloudSaveLevelInfo(CloudSaveLevelInfo const&);
+    CloudSaveLevelInfo& operator=(CloudSaveLevelInfo const&);
     CloudSaveLevelInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI CloudSaveLevelInfo(::CloudSaveLevelInfo const&);
+
     MCNAPI CloudSaveLevelInfo(::CloudSaveLevelInfo&&);
 
     MCNAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
-
-    MCNAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo const&);
 
     MCNAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo&&);
 
@@ -43,6 +43,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::CloudSaveLevelInfo const&);
+
     MCNAPI void* $ctor(::CloudSaveLevelInfo&&);
 
     MCNAPI void* $ctor(::CompoundTag const& tag);

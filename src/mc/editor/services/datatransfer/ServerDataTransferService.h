@@ -115,7 +115,8 @@ public:
     // vIndex: 1
     virtual void requestData(
         ::std::string const& collectionName,
-        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback
+        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback,
+        bool                                                                                                 useSnapshot
     ) /*override*/;
 
     // vIndex: 2
@@ -177,7 +178,8 @@ public:
 
     MCNAPI void $requestData(
         ::std::string const& collectionName,
-        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback
+        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback,
+        bool                                                                                                 useSnapshot
     );
 
     MCNAPI ::Scripting::Result_deprecated<::std::string const> $requestSchema(::std::string const& collectionName);

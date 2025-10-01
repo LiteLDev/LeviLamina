@@ -21,13 +21,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~LoadResult();
+    MCAPI LoadResult(::CraftingItemCatalogPackStackLoadUtils::LoadResult&&);
+
+    MCAPI ~LoadResult();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::CraftingItemCatalogPackStackLoadUtils::LoadResult&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

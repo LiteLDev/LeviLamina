@@ -2,12 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/ecs/EntityId.h"
-#include "mc/deps/game_refs/WeakRef.h"
+namespace MinecraftCamera {
 
-class CameraBlendStateComponent {
+struct CameraBlendStateComponent {
 public:
     // CameraBlendStateComponent inner types declare
     // clang-format off
@@ -20,7 +17,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkae0ff8;
+        ::ll::UntypedStorage<4, 12> mUnkb15ad3;
         // NOLINTEND
 
     public:
@@ -34,10 +31,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk88816c;
-        ::ll::UntypedStorage<4, 4>  mUnk69e32f;
-        ::ll::UntypedStorage<4, 12> mUnk5271f0;
-        ::ll::UntypedStorage<4, 12> mUnk31ffed;
+        ::ll::UntypedStorage<4, 4>  mUnk9836a6;
+        ::ll::UntypedStorage<4, 4>  mUnk7c07aa;
+        ::ll::UntypedStorage<4, 12> mUnke2c2ba;
+        ::ll::UntypedStorage<4, 12> mUnka68579;
         // NOLINTEND
 
     public:
@@ -50,14 +47,22 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 36, ::std::optional<::CameraBlendStateComponent::EaseState>> mLastEaseState;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityId>>                                   mActiveCamera;
-    ::ll::TypedStorage<4, 4, float>                                                    mPercentage;
-    ::ll::TypedStorage<8, 64, ::std::function<float(float, float, float)>>             mEaseFunction;
-    ::ll::TypedStorage<4, 4, float>                                                    mBlendTime;
-    ::ll::TypedStorage<4, 4, float>                                                    mBlendStartFieldOfView;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                                  mBlendStartPosition;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                                  mBlendStartEulerAngles;
-    ::ll::TypedStorage<4, 12, ::CameraBlendStateComponent::SnapShotEaseValues>         mSnapShotEaseValues;
+    ::ll::UntypedStorage<4, 36> mUnkc7e2ad;
+    ::ll::UntypedStorage<8, 24> mUnkef16cf;
+    ::ll::UntypedStorage<4, 4>  mUnkbef08b;
+    ::ll::UntypedStorage<8, 64> mUnk324e43;
+    ::ll::UntypedStorage<4, 4>  mUnkb9fd6c;
+    ::ll::UntypedStorage<4, 4>  mUnka520a3;
+    ::ll::UntypedStorage<4, 12> mUnka943fa;
+    ::ll::UntypedStorage<4, 12> mUnk1bfa6b;
+    ::ll::UntypedStorage<4, 12> mUnkbc2cda;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CameraBlendStateComponent& operator=(CameraBlendStateComponent const&);
+    CameraBlendStateComponent(CameraBlendStateComponent const&);
+    CameraBlendStateComponent();
 };
+
+} // namespace MinecraftCamera

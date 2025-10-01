@@ -21,6 +21,7 @@ class CompoundTag;
 class ContainerCloseListener;
 class ContainerContentChangeListener;
 class ContainerSizeChangeListener;
+class ItemDescriptor;
 class ItemStack;
 class Random;
 class Vec3;
@@ -139,7 +140,7 @@ public:
     virtual ::ItemStack const& getItem(int) const = 0;
 
     // vIndex: 8
-    virtual bool hasRoomForItem(::ItemStack const& item);
+    virtual bool hasRoomForItem(::ItemStack const& item) const;
 
     // vIndex: 9
     virtual bool addItem(::ItemStack& item);
@@ -265,7 +266,7 @@ public:
     MCAPI void
     _serverInitId(int slot, ::ItemStack& item, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
-    MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
+    MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator) const;
 
     MCAPI int getRedstoneSignalFromContainer(::BlockSource& region);
 
@@ -280,6 +281,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::SharedTypes::Legacy::ContainerType getContainerTypeId(::std::string const& name);
+
+    MCAPI static ::std::function<bool(::ItemStack const&)> sameItemAndAuxComparator(::ItemDescriptor const& descriptor);
     // NOLINTEND
 
 public:
@@ -318,7 +321,7 @@ public:
 
     MCAPI bool $hasRemovedSubscribers() const;
 
-    MCAPI bool $hasRoomForItem(::ItemStack const& item);
+    MCAPI bool $hasRoomForItem(::ItemStack const& item) const;
 
     MCAPI bool $addItem(::ItemStack& item);
 

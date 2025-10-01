@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/ThemeSettingsColorKey.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/editor/ThemeSettingsColorKey.h"
 #include "mc/editor/services/settings/EditorSettingsService.h"
 #include "mc/options/GraphicsMode.h"
 

@@ -9,11 +9,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class WeakEntityRef;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
+namespace Scripting { struct Error; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -48,6 +50,14 @@ public:
         ::Scripting::WeakLifetimeScope const& context,
         ::std::string const&                  id
     );
+
+    MCNAPI ::Scripting::Error _functionError(::std::string_view functionName) const;
+
+    MCNAPI ::Scripting::Error _getPropertyError(::std::string_view propertyName) const;
+
+    MCNAPI ::Scripting::Error _setPropertyError(::std::string_view propertyName) const;
+
+    MCNAPI ::Actor* _tryGetOwner() const;
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> getEntityV1() const;
 

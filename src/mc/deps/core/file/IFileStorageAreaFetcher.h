@@ -5,7 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileStorageArea; }
-namespace Core { class Path; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 // clang-format on
 
@@ -20,7 +20,7 @@ public:
 
     // vIndex: 1
     virtual ::Core::Result
-    getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>&, ::Core::Path const&) const = 0;
+    getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>&, ::Core::PathView) const = 0;
     // NOLINTEND
 
 public:

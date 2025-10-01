@@ -25,14 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
-
-    MCNAPI void initializeFromNetwork(::CompoundTag const& tag);
+    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };

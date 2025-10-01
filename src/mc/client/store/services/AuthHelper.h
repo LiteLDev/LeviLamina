@@ -11,7 +11,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Services { class AzureGetTokenHttpCall; }
 namespace Bedrock::Services { struct AzureGetTokenHttpResponse; }
 namespace Bedrock::Threading { struct CachedAsyncRetry; }
 // clang-format on
@@ -48,17 +47,8 @@ public:
     // NOLINTBEGIN
     MCNAPI AuthHelper(::std::string applicationId, ::std::string applicationTenantId, int maxAuthRetryAttempts);
 
-    MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::std::string, ::Bedrock::Threading::CachedAsyncRetry>>
-    _getAuthToken(
-        int                                        retryCount,
-        ::Bedrock::Services::AzureGetTokenHttpCall azureTokenCall,
-        ::std::string const&                       serviceName
-    );
-
     MCNAPI ::nonstd::expected<::std::string, ::Bedrock::Threading::CachedAsyncRetry>
     _handleResponse(int retryCount, ::Bedrock::Services::AzureGetTokenHttpResponse responseInfo);
-
-    MCNAPI void clear(::std::string const& serviceName);
 
     MCNAPI ::Bedrock::Threading::Async<::std::string> getAuthToken(
         ::DiscoveryEnvironment                      environment,

@@ -29,8 +29,6 @@ public:
         ::DimensionConversionData const& data
     );
 
-    MCAPI static ::DimensionType fromSerializedInt(int i);
-
     MCAPI static ::Bedrock::Result<::DimensionType> fromSerializedInt(::Bedrock::Result<int>&& i);
 
     MCAPI static ::DimensionType fromString(::std::string const& name);

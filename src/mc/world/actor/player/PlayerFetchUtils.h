@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class EntityContext;
 class GameplayUserManager;
 class Player;
 struct ActorUniqueID;
@@ -17,7 +16,7 @@ MCNAPI ::Player*
 findActivePlayerByActorUniqueID(::GameplayUserManager const& gameplayUserManager, ::ActorUniqueID actorUniqueID);
 
 MCNAPI ::Player*
-findPlayer(::GameplayUserManager const& gameplayUserManager, ::std::function<bool(::EntityContext const&)> callback);
+findPlayer(::GameplayUserManager const& gameplayUserManager, ::std::function<bool(::Player const&)> callback);
 
 MCNAPI ::Player* findPlayerByName(::GameplayUserManager const& gameplayUserManager, ::std::string const& name);
 // NOLINTEND

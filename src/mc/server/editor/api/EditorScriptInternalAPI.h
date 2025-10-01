@@ -11,13 +11,11 @@
 
 // auto generated forward declare list
 // clang-format off
-class Vec3;
 namespace Editor::API { class EditorExtension; }
 namespace Editor::API { class EditorExtensionContext; }
 namespace Editor::API { struct EditorExtensionOptionalParameters; }
 namespace Editor::ScriptModule { class ScriptInternalPlayerServiceContext; }
 namespace ScriptModuleMinecraft { class ScriptPlayer; }
-namespace ScriptModuleMinecraft { class ScriptRGBA; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 // clang-format on
@@ -58,9 +56,6 @@ public:
         ::std::string const&                   eventName,
         ::std::string const&                   metadata
     );
-
-    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptRGBA>
-    getMapColorUnsafe(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer, ::Vec3 const& coordinate);
 
     MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>

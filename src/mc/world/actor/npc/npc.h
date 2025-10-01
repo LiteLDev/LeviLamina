@@ -32,7 +32,7 @@ public:
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 175
+    // vIndex: 176
     virtual void newServerAiStep() /*override*/;
 
     // vIndex: 123
@@ -59,7 +59,7 @@ public:
     // vIndex: 96
     virtual bool canBePulledIntoVehicle() const /*override*/;
 
-    // vIndex: 172
+    // vIndex: 173
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
     // vIndex: 135

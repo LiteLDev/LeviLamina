@@ -171,6 +171,8 @@ public:
 
     MCAPI ::std::unique_ptr<::Packet> getFullDataPacket() const;
 
+    MCAPI ::std::shared_ptr<::MapItemTrackedActor> getTrackedMapEntity(::Actor& entity);
+
     MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::Level&, ::BlockPos const& pos) const;
 
     MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const&, ::Level&, ::Actor& entity) const;

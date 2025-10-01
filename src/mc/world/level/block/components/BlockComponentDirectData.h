@@ -4,7 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/common/Brightness.h"
+#include "mc/world/level/block/BurnOdds.h"
 #include "mc/world/level/block/DetectionRule.h"
+#include "mc/world/level/block/FlameOdds.h"
+#include "mc/world/level/block/LavaFlammable.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -44,9 +47,10 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                        mIsOpaqueFullBlock;
     ::ll::TypedStorage<1, 1, ::Brightness>                                mLightEmission;
     ::ll::TypedStorage<1, 1, ::Brightness>                                mLight;
+    ::ll::TypedStorage<1, 1, ::LavaFlammable>                             mLavaFlammable;
+    ::ll::TypedStorage<2, 2, ::FlameOdds>                                 mFlameOdds;
+    ::ll::TypedStorage<2, 2, ::BurnOdds>                                  mBurnOdds;
     ::ll::TypedStorage<4, 4, float>                                       mExplosionResistance;
-    ::ll::TypedStorage<4, 4, int>                                         mBurnOdds;
-    ::ll::TypedStorage<4, 4, int>                                         mFlameOdds;
     ::ll::TypedStorage<4, 4, float>                                       mFriction;
     ::ll::TypedStorage<4, 4, float>                                       mDestroySpeed;
     ::ll::TypedStorage<1, 4, ::DetectionRule>                             mWaterDetectionRule;

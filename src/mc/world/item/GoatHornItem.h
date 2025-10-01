@@ -23,14 +23,14 @@ public:
     // vIndex: 76
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 113
+    // vIndex: 115
     virtual bool canBeCharged() const /*override*/;
 
-    // vIndex: 94
-    virtual ::HashedString const& getCooldownType() const /*override*/;
+    // vIndex: 96
+    virtual ::HashedString const& getCooldownCategory() const /*override*/;
 
-    // vIndex: 95
-    virtual int getCooldownTime() const /*override*/;
+    // vIndex: 97
+    virtual int getCooldownDuration() const /*override*/;
 
     // vIndex: 52
     virtual void appendFormattedHovertext(
@@ -57,9 +57,9 @@ public:
 
     MCFOLD bool $canBeCharged() const;
 
-    MCAPI ::HashedString const& $getCooldownType() const;
+    MCAPI ::HashedString const& $getCooldownCategory() const;
 
-    MCFOLD int $getCooldownTime() const;
+    MCFOLD int $getCooldownDuration() const;
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,

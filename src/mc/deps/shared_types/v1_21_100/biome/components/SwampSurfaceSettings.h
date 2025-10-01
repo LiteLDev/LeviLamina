@@ -9,6 +9,18 @@ namespace SharedTypes::v1_21_100::SurfaceBuilder {
 
 struct SwampSurfaceSettings : public ::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnk7a2a5a;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SwampSurfaceSettings& operator=(SwampSurfaceSettings const&);
+    SwampSurfaceSettings(SwampSurfaceSettings const&);
+    SwampSurfaceSettings();
+
+public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~SwampSurfaceSettings();

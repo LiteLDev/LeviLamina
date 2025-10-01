@@ -47,6 +47,18 @@ public:
         // NOLINTEND
 
     public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI explicit StreamFlusher(::Core::Path const& streamPath);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::Core::Path const& streamPath);
+        // NOLINTEND
+
+    public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI ::Core::Result $_flushBuffer(void const* data, uint64 amount);

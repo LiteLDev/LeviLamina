@@ -75,12 +75,16 @@ public:
 
     MCAPI void emitHoneyComb(::BlockSource& region, ::BlockPos const& pos) const;
 
+    MCAPI void evictAll(::BlockSource& region, ::BlockPos const& pos, bool angry) const;
+
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::BeehiveBlockActor* _getBeehiveBlockActor(::BlockSource& region, ::BlockPos const& pos);
+
     MCAPI static ::ItemStack
     getHiveItemWithOccupants(::Block const& block, ::BeehiveBlockActor const* beehiveBlockActor);
 

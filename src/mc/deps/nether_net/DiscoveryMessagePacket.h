@@ -21,12 +21,6 @@ public:
     DiscoveryMessagePacket& operator=(DiscoveryMessagePacket const&);
     DiscoveryMessagePacket(DiscoveryMessagePacket const&);
     DiscoveryMessagePacket();
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static uint64 const& PAYLOAD_SIZE_MAX();
-    // NOLINTEND
 };
 
 } // namespace NetherNet

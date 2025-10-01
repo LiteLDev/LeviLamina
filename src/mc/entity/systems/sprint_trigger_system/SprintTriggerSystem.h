@@ -44,7 +44,7 @@ MCNAPI ::TickingSystemWithInfo createIntentSystem();
 MCNAPI ::TickingSystemWithInfo createSetRequestSystem();
 
 MCNAPI void doIntentTick(
-    ::Optional<::ItemUseSlowdownModifierComponent const> itemInUse,
+    ::Optional<::ItemUseSlowdownModifierComponent const> slowedByItemInUse,
     ::Optional<::MobIsJumpingFlagComponent const>        isJumping,
     ::Optional<::OnGroundFlagComponent const> const&     onGround,
     ::Optional<::WasInWaterFlagComponent const> const&   wasInWater,
@@ -73,7 +73,7 @@ MCNAPI void doSetRequestTick(
 );
 
 MCNAPI void setSprinting(
-    ::StrictEntityContext const&                   e,
+    ::StrictEntityContext const&                   entityContext,
     ::EntityModifier<::AttributeRequestComponent>& modifier,
     ::ActorDataFlagComponent&                      actorData,
     ::ActorDataDirtyFlagsComponent&                dirtyFlags,

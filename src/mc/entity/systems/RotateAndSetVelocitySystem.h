@@ -8,7 +8,6 @@ struct LocalMoveVelocityComponent;
 struct MoveInputComponent;
 struct PlayerInputModeComponent;
 struct TickingSystemWithInfo;
-struct VRMoveAdjustAngleComponent;
 // clang-format on
 
 struct RotateAndSetVelocitySystem {
@@ -18,10 +17,9 @@ public:
     MCNAPI static ::TickingSystemWithInfo createSystem();
 
     MCNAPI static void doTick(
-        ::MoveInputComponent const&         input,
-        ::PlayerInputModeComponent const&   inputMode,
-        ::VRMoveAdjustAngleComponent const& adjAngle,
-        ::LocalMoveVelocityComponent&       localVelocity
+        ::MoveInputComponent const& input,
+        ::PlayerInputModeComponent const&,
+        ::LocalMoveVelocityComponent& localVelocity
     );
     // NOLINTEND
 };

@@ -14,6 +14,7 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class CampfireBlockActor;
 class Experiments;
 class ItemInstance;
 struct BlockAnimateTickData;
@@ -81,6 +82,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ::CampfireBlockActor* _getBlockActor(::BlockSource& region, ::BlockPos const& pos) const;
+
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;

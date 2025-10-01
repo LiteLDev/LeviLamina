@@ -51,25 +51,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI CachedLineData();
+        MCAPI CachedLineData();
 
-        MCNAPI CachedLineData(::SignBlockActor::CachedLineData&&);
+        MCAPI CachedLineData(::SignBlockActor::CachedLineData&&);
 
-        MCNAPI ~CachedLineData();
+        MCAPI ~CachedLineData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCFOLD void* $ctor();
 
-        MCNAPI void* $ctor(::SignBlockActor::CachedLineData&&);
+        MCAPI void* $ctor(::SignBlockActor::CachedLineData&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -134,8 +134,6 @@ public:
 
         MCAPI bool save(::CompoundTag& tag) const;
 
-        MCAPI void setEditedBy(::std::string const& playerXuid);
-
         MCAPI void setMessage(::TextObjectRoot message);
 
         MCAPI void setMessage(::std::string message);
@@ -183,7 +181,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~SignBlockActor() /*override*/ = default;
+    virtual ~SignBlockActor() /*override*/;
 
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
@@ -194,34 +192,34 @@ public:
     // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual float getShadowRadius(::BlockSource& region) const /*override*/;
 
-    // vIndex: 28
+    // vIndex: 27
     virtual ::std::string getImmersiveReaderText(::BlockSource& region) /*override*/;
 
     // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 37
+    // vIndex: 36
     virtual ::std::vector<::std::string> getUgcStrings(::CompoundTag const& tag) const /*override*/;
 
-    // vIndex: 38
+    // vIndex: 37
     virtual ::std::vector<::std::string> getFilteredUgcStrings(::CompoundTag const& tag) const /*override*/;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual void setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual void setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const /*override*/;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 43
     virtual bool _playerCanUpdate(::Player const& fromPlayer) const /*override*/;
     // NOLINTEND
 
@@ -243,6 +241,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

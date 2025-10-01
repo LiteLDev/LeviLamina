@@ -7,12 +7,6 @@
 
 namespace Bedrock::Threading {
 
-class Mutex : public ::Bedrock::Threading::ZeroInit, public ::std::mutex {
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-};
+class Mutex : public ::Bedrock::Threading::ZeroInit, public ::std::mutex {};
 
 } // namespace Bedrock::Threading

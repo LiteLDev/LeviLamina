@@ -7,8 +7,8 @@
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDependency; }
-namespace Scripting { struct UUID; }
 namespace Scripting { struct Version; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Scripting {
@@ -24,7 +24,7 @@ public:
     virtual ::std::string getName() const = 0;
 
     // vIndex: 2
-    virtual ::Scripting::UUID getUUID() const = 0;
+    virtual ::mce::UUID getUUID() const = 0;
 
     // vIndex: 3
     virtual bool hasAlias(::std::string const&) const = 0;

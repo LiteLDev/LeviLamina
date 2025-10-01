@@ -4,6 +4,9 @@
 
 namespace ui {
 
-enum class MousePointerType : uint {};
+enum class MousePointerType : int {
+    Arrow = 0,
+    Hand  = 1,
+};
 
 }

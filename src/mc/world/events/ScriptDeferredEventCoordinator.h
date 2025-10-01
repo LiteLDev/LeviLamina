@@ -76,6 +76,8 @@ public:
 
     MCAPI void _sendFlushEditorExtensionContextAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
+    MCAPI void _sendFlushEditorProjectAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+
     MCAPI void _sendFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
     MCAPI void _sendFlushSystemAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);

@@ -15,7 +15,7 @@ class HumanoidMonster : public ::Monster {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 149
+    // vIndex: 150
     virtual int getItemUseDuration() const /*override*/;
 
     // vIndex: 137

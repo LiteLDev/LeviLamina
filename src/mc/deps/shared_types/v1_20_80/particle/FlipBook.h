@@ -36,8 +36,6 @@ public:
     MCNAPI ::SharedTypes::v1_20_80::FlipBook& operator=(::SharedTypes::v1_20_80::FlipBook&&);
 
     MCNAPI ::SharedTypes::v1_20_80::FlipBook& operator=(::SharedTypes::v1_20_80::FlipBook const&);
-
-    MCNAPI ~FlipBook();
     // NOLINTEND
 
 public:
@@ -52,12 +50,6 @@ public:
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::FlipBook const&);
 
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::FlipBook&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> _findSnapPos(
+    MCAPI ::std::optional<::BlockPos> _findSnapPos(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::SnapToSurfaceFeature::Surface targetSurface
@@ -60,7 +60,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

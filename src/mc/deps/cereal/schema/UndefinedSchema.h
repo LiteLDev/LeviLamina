@@ -7,9 +7,9 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class SerializerContext; }
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
+namespace cereal::internal { struct LoadState; }
 // clang-format on
 
 namespace cereal::internal {
@@ -23,10 +23,10 @@ public:
         ::cereal::SchemaReader&,
         ::entt::meta_any&,
         ::entt::meta_any const&,
-        ::cereal::SerializerContext& context
+        ::cereal::internal::LoadState const& state
     ) const /*override*/;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual ::cereal::SchemaDescription
     makeDescription(::entt::meta_ctx const&, ::cereal::internal::BasicSchema::DescriptionMode) const /*override*/;
 
@@ -41,7 +41,7 @@ public:
         ::cereal::SchemaReader&,
         ::entt::meta_any&,
         ::entt::meta_any const&,
-        ::cereal::SerializerContext& context
+        ::cereal::internal::LoadState const& state
     ) const;
 
     MCNAPI ::cereal::SchemaDescription

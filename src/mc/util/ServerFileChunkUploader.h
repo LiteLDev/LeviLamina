@@ -62,7 +62,7 @@ public:
     virtual void uploadChunk(
         ::FileInfo const&           file,
         ::FileChunkInfo const&      chunk,
-        ::std::vector<uchar> const& data,
+        ::std::vector<uchar>        data,
         ::std::function<void(bool)> onCompleteCallback
     ) /*override*/;
 
@@ -109,7 +109,7 @@ public:
     MCNAPI void $uploadChunk(
         ::FileInfo const&           file,
         ::FileChunkInfo const&      chunk,
-        ::std::vector<uchar> const& data,
+        ::std::vector<uchar>        data,
         ::std::function<void(bool)> onCompleteCallback
     );
 

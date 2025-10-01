@@ -29,7 +29,5 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI void runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
-
-    MCNAPI void tick();
     // NOLINTEND
 };

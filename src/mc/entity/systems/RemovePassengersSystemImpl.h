@@ -38,6 +38,14 @@ MCNAPI void singleTickRemovePassenger(
         ::RecalculateControlledByLocalInstanceRequestComponent,
         ::PassengersChangedFlagComponent> modifier
 );
+
+MCNAPI void tickRemovePassengersSystem(
+    ::ViewT<::StrictEntityContext, ::RemovePassengersComponent, ::VehicleComponent> view,
+    ::EntityModifier<
+        ::VehicleComponent,
+        ::RecalculateControlledByLocalInstanceRequestComponent,
+        ::PassengersChangedFlagComponent> modifier
+);
 // NOLINTEND
 
 } // namespace RemovePassengersSystemImpl

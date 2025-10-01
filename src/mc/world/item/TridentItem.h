@@ -23,10 +23,10 @@ class TridentItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 80
+    // vIndex: 82
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
@@ -45,12 +45,12 @@ public:
     virtual int getEnchantValue() const /*override*/;
 
     // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 20
     virtual bool isThrowable() const /*override*/;
 
-    // vIndex: 82
+    // vIndex: 84
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
     // vIndex: 35
@@ -98,7 +98,7 @@ public:
 
     MCFOLD int $getEnchantValue() const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCFOLD bool $isThrowable() const;
 

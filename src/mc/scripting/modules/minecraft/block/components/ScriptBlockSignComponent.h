@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/scripting/modules/minecraft/block/components/BaseScriptBlockActorComponent.h"
 #include "mc/world/item/ItemColor.h"
@@ -10,9 +11,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class BlockSource;
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptRawTextInterface; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -54,6 +58,10 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+
+    MCNAPI static ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockSignComponent>>
+    tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

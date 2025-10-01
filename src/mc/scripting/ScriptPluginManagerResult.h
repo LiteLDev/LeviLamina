@@ -30,6 +30,8 @@ public:
 
     MCNAPI void logMessages() const;
 
+    MCNAPI void logPlugins() const;
+
     MCNAPI ~ScriptPluginManagerResult();
     // NOLINTEND
 

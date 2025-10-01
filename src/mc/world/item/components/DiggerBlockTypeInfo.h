@@ -12,24 +12,22 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DiggerBlockTypeInfo& operator=(DiggerBlockTypeInfo const&);
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DiggerBlockTypeInfo();
+    MCAPI DiggerBlockTypeInfo();
 
-    MCNAPI DiggerBlockTypeInfo(::DiggerBlockTypeInfo const&);
+    MCAPI DiggerBlockTypeInfo(::DiggerBlockTypeInfo const&);
 
-    MCNAPI ::DiggerBlockTypeInfo& operator=(::DiggerBlockTypeInfo&&);
+    MCAPI ::DiggerBlockTypeInfo& operator=(::DiggerBlockTypeInfo&&);
+
+    MCAPI ::DiggerBlockTypeInfo& operator=(::DiggerBlockTypeInfo const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::DiggerBlockTypeInfo const&);
+    MCAPI void* $ctor(::DiggerBlockTypeInfo const&);
     // NOLINTEND
 };

@@ -74,9 +74,6 @@ public:
         ushort            newGrowth,
         int               updateFlags
     ) const;
-
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
     // NOLINTEND
 
 public:

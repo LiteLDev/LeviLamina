@@ -107,7 +107,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _checkAchievements(::Player& player, ::BlockPos const& currentPos) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 

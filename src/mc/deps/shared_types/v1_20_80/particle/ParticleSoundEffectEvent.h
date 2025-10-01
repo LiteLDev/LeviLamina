@@ -13,15 +13,13 @@ public:
 
 public:
     // prevent constructor by default
+    ParticleSoundEffectEvent& operator=(ParticleSoundEffectEvent const&);
     ParticleSoundEffectEvent(ParticleSoundEffectEvent const&);
     ParticleSoundEffectEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_80::ParticleSoundEffectEvent&
-    operator=(::SharedTypes::v1_20_80::ParticleSoundEffectEvent const&);
-
     MCNAPI ::SharedTypes::v1_20_80::ParticleSoundEffectEvent&
     operator=(::SharedTypes::v1_20_80::ParticleSoundEffectEvent&&);
     // NOLINTEND

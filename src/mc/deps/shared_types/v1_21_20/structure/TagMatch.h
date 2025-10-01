@@ -13,6 +13,7 @@ public:
 
 public:
     // prevent constructor by default
+    TagMatch& operator=(TagMatch const&);
     TagMatch(TagMatch const&);
     TagMatch();
 
@@ -21,9 +22,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&
     operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&&);
-
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch&
-    operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::TagMatch const&);
 
     MCNAPI ~TagMatch();
     // NOLINTEND

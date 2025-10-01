@@ -33,13 +33,13 @@ public:
 
     MCAPI void operator+=(::Bedrock::Safety::RedactableString const& rhs);
 
+    MCFOLD ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString const&);
+
     MCAPI ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString&&);
 
     MCAPI ::Bedrock::Safety::RedactableString& operator=(::std::string&& unredactedString);
 
     MCAPI bool operator==(::Bedrock::Safety::RedactableString const& rhs) const;
-
-    MCAPI void set(::std::string const& unredactedString);
 
     MCAPI void set(::std::string&& unredactedString);
 

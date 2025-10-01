@@ -19,8 +19,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptDiagnosticsPayload& operator=(::ScriptDiagnosticsPayload&&);
-
     MCNAPI ~ScriptDiagnosticsPayload();
     // NOLINTEND
 

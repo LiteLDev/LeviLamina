@@ -10,7 +10,7 @@ namespace FlatteningUtils { struct Instance; }
 namespace FlatteningUtils::StoneBricks {
 // functions
 // NOLINTBEGIN
-MCNAPI ::FlatteningUtils::Instance get();
+MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
 } // namespace FlatteningUtils::StoneBricks

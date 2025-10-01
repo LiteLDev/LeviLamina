@@ -42,7 +42,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk77bcd9;
+    ::ll::UntypedStorage<1, 2> mUnk77bcd9;
     ::ll::UntypedStorage<8, 8> mUnkb78983;
     ::ll::UntypedStorage<8, 8> mUnk95d296;
     ::ll::UntypedStorage<1, 1> mUnk1f6afd;
@@ -113,6 +113,8 @@ public:
     MCNAPI ::Core::Result _writeOperation(::Core::Result&& result, uint64 numBytesWritten);
 
     MCNAPI ::Core::Result close();
+
+    MCNAPI void detachFromTransaction();
 
     MCNAPI ::Core::Result getPosition(uint64* pPosition);
 

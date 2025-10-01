@@ -18,7 +18,6 @@
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
-#include "mc/world/actor/VehicleUtils.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -63,6 +62,7 @@ struct StateVectorComponent;
 struct StopRidingRequestComponent;
 struct VanillaOffsetComponent;
 struct VehicleComponent;
+namespace VehicleUtils { struct VehicleDirections; }
 // clang-format on
 
 struct ExitVehicleSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
@@ -220,7 +220,7 @@ public:
             ::Exclude<::DoesServerAuthOnlyDismountFlagComponent>,
             ::StateVectorComponent const,
             ::ActorRotationComponent const,
-            ::Optional<::PostTickPositionDeltaComponent const>,
+            ::PostTickPositionDeltaComponent const,
             ::Optional<::MovementInterpolatorComponent const>> const& vehicleView,
         ::EntityModifier<::ActorSetPositionRequestComponent>&         modifier,
         ::StrictExecutionContext<

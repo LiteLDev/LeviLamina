@@ -26,7 +26,7 @@ class SkullItem : public ::BlockItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
     // vIndex: 43
@@ -35,7 +35,7 @@ public:
     // vIndex: 33
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
@@ -45,18 +45,18 @@ public:
     // vIndex: 54
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 101
+    // vIndex: 103
     virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
 
-    // vIndex: 102
+    // vIndex: 104
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 122
     virtual ::InteractionResult
     _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
         /*override*/;
 
-    // vIndex: 118
+    // vIndex: 120
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
 
     // vIndex: 0
@@ -67,6 +67,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
+
+    MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
 
     MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 

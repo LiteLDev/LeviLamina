@@ -69,7 +69,7 @@ public:
     virtual void informStorageAreaCopy(uint64 storageAreaSize) /*override*/;
 
     // vIndex: 29
-    virtual ::Core::Result setSaveDataIcon(::Core::PathView iconPath) /*override*/;
+    virtual ::Core::Result setSaveDataIcon(::Core::PathView) /*override*/;
 
     // vIndex: 27
     virtual ::Core::FileStorageArea::FlushableLevelDbEnvType getFlushableLevelDbEnvType() const /*override*/;
@@ -83,7 +83,7 @@ public:
     // vIndex: 25
     virtual bool checkCorrupt(bool handleCorruption) /*override*/;
 
-    // vIndex: 37
+    // vIndex: 38
     virtual void _onTeardown() /*override*/;
     // NOLINTEND
 

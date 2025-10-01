@@ -44,9 +44,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $appendResolvedAliases(::IRandom&, ::PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const;
+    MCAPI void $appendResolvedAliases(::IRandom&, ::PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const;
 
-    MCNAPI void $forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const;
+    MCAPI void $forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const;
     // NOLINTEND
 
 public:

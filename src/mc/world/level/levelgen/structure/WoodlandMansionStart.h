@@ -45,9 +45,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _create(::Dimension& dimension, ::Random& random, int x, int z);
+    MCAPI void _create(::Dimension& dimension, ::Random& random, int x, int z);
 
-    MCNAPI void _makeStairs(
+    MCAPI void _makeStairs(
         ::BlockPos const&    startPos,
         ::Block const&       stairBlock,
         uchar                xStepDir,
@@ -60,9 +60,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI ::std::string_view $getStructureName() const;
+    MCAPI ::std::string_view $getStructureName() const;
     // NOLINTEND
 
 public:

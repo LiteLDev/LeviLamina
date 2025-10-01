@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorAnimationInfo;
-class ActorSkeletalAnimationPtr;
 class HashedString;
 class MinEngineVersion;
 class PackStats;
@@ -49,8 +48,6 @@ public:
     MCNAPI ::std::shared_ptr<
         ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorAnimationGroupParseMetaData>>
     _buildAnimationFileSchema_v1_8(bool isPersonaPack);
-
-    MCNAPI ::ActorSkeletalAnimationPtr getActorAnimation(::HashedString const& name);
 
     MCNAPI ::std::shared_ptr<::ActorAnimationInfo> getActorAnimationInfo(::HashedString const& name);
 

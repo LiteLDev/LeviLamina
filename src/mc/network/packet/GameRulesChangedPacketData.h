@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::GameRulesChangedPacketData& operator=(::GameRulesChangedPacketData&&);
+    MCFOLD ::GameRulesChangedPacketData& operator=(::GameRulesChangedPacketData&&);
 
     MCAPI void setRules(::std::vector<::GameRule> rules);
 

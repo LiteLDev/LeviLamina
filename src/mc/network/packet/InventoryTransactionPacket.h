@@ -51,7 +51,7 @@ public:
     // vIndex: 5
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 15
+    // vIndex: 16
     virtual void handle(
         ::ServerPlayer&             player,
         ::BlockPalette&             blockPalette,
@@ -60,7 +60,7 @@ public:
         bool                        isAimAssist
     ) const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 

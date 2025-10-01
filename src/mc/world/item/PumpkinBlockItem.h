@@ -14,10 +14,10 @@ public:
     // vIndex: 54
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 101
+    // vIndex: 103
     virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
 
-    // vIndex: 102
+    // vIndex: 104
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
     // vIndex: 0

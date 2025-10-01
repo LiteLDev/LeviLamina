@@ -62,7 +62,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~ActiveTransfersManager() /*override*/;
+    virtual ~ActiveTransfersManager() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -70,18 +70,10 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob> dropBlobFor(::NetworkIdentifier const& client, uint64 id);
 
-    MCAPI void enableCacheFor(::NetworkIdentifier const& client);
-
     MCAPI bool isCacheEnabledFor(::NetworkIdentifier const& client) const;
 
     MCAPI ::std::shared_ptr<::ClientBlobCache::Server::Blob>
     rememberBlob(uint64 id, ::std::string& data, bool isChunkInTickRange);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:

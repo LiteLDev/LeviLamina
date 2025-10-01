@@ -27,30 +27,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TrialSpawnerConfig();
+    MCAPI TrialSpawnerConfig();
 
-    MCNAPI TrialSpawnerConfig(::TrialSpawnerConfig const&);
+    MCAPI TrialSpawnerConfig(::TrialSpawnerConfig const&);
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> asInlineConfig() const;
+    MCAPI ::std::unique_ptr<::CompoundTag> asInlineConfig() const;
 
-    MCNAPI void loadConfig(::CompoundTag const* data);
+    MCAPI void loadConfig(::CompoundTag const* data);
 
-    MCNAPI ::TrialSpawnerConfig& operator=(::TrialSpawnerConfig const&);
+    MCAPI ::TrialSpawnerConfig& operator=(::TrialSpawnerConfig const&);
 
-    MCNAPI ~TrialSpawnerConfig();
+    MCAPI ~TrialSpawnerConfig();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::TrialSpawnerConfig const&);
+    MCAPI void* $ctor(::TrialSpawnerConfig const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

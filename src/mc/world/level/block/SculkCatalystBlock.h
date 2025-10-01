@@ -33,21 +33,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bloom(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Random&);
+    MCAPI static void bloom(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Random&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getVariant(::Block const& block) const;
+    MCAPI int $getVariant(::Block const& block) const;
 
-    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
 
 public:

@@ -300,6 +300,8 @@ MCAPI ::BlockStateVariant<int> const& SculkSensorPhase();
 
 MCAPI ::BlockStateVariant<::SeagrassType> const& SeagrassType();
 
+MCAPI ::BlockStateVariant<int> const& ShelfConnectionType();
+
 MCAPI ::BlockStateVariant<int> const& Stability();
 
 MCAPI ::BlockStateVariant<bool> const& StabilityCheckBit();

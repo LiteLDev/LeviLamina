@@ -34,13 +34,13 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 177
+    // vIndex: 178
     virtual bool isDarkEnoughToSpawn() const;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
-    // vIndex: 171
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
     // vIndex: 135

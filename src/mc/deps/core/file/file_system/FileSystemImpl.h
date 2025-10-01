@@ -23,7 +23,6 @@ namespace Core { class PathView; }
 namespace Core { class Result; }
 namespace Core { struct DirectoryIterationItem; }
 namespace Core { struct ExcludedPath; }
-namespace Core { struct PendingWrite; }
 // clang-format on
 
 namespace Core {
@@ -63,7 +62,7 @@ public:
     virtual ::Core::Result copyTimeAndAccessRights(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
 
     // vIndex: 3
-    virtual void requestFlush(::std::vector<::Core::PendingWrite> const& writeRequests);
+    virtual void requestFlush();
 
     // vIndex: 4
     virtual bool shouldCommit();
@@ -293,9 +292,18 @@ public:
         uint64&          outBytesRemaining
     );
 
+    MCNAPI ::Core::Result copyFlatFile(
+        ::Core::PathView                           flatFileParentDirectory,
+        ::Core::PathView                           targetDirectory,
+        ::std::vector<::Core::ExcludedPath> const& excludedDirectories,
+        ::std::vector<::Core::ExcludedPath> const& excludedFiles
+    );
+
     MCNAPI ::Core::Result createDirectoryRecursively(::Core::PathView directoryPath);
 
     MCNAPI ::Core::Result createEmptyFile(::Core::PathView filePath);
+
+    MCNAPI ::Core::Result createFlatFile(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
     MCNAPI ::Core::Result createOneDirectory(::Core::PathView directoryPath);
 
@@ -312,6 +320,8 @@ public:
     MCNAPI ::Core::Result deleteFilePriority(::Core::PathView filePath);
 
     MCNAPI bool directoryExists(::Core::PathView directoryPath);
+
+    MCNAPI void enumerateFiles(::std::function<void(::Core::FileImpl*)> const& fx);
 
     MCNAPI bool fileExists(::Core::PathView filePath);
 
@@ -369,7 +379,7 @@ public:
 
     MCNAPI ::Core::Result $copyTimeAndAccessRights(::Core::PathView sourceFilePath, ::Core::PathView targetFilePath);
 
-    MCNAPI void $requestFlush(::std::vector<::Core::PendingWrite> const& writeRequests);
+    MCNAPI void $requestFlush();
 
     MCNAPI bool $shouldCommit();
 

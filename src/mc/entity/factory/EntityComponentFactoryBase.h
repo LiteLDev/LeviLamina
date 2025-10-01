@@ -23,8 +23,6 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void addComponents(::EntityContext& entity, ::DefinitionInstanceGroup const& definitionGroup);
-
-    MCNAPI static void removeComponents(::EntityContext& entity, ::DefinitionInstanceGroup const& definitionGroup);
     // NOLINTEND
 
 public:

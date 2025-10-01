@@ -31,6 +31,8 @@ public:
     // NOLINTBEGIN
     MCAPI BaseError(::Scripting::BaseError&&);
 
+    MCAPI BaseError(::std::string const& name_, ::std::string const& message_);
+
     MCAPI ::Scripting::BaseError& operator=(::Scripting::BaseError&&);
 
     MCAPI ::Scripting::BaseError& operator=(::Scripting::BaseError const&);
@@ -46,6 +48,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::Scripting::BaseError&&);
+
+    MCAPI void* $ctor(::std::string const& name_, ::std::string const& message_);
     // NOLINTEND
 
 public:

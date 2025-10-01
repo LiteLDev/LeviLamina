@@ -22,6 +22,7 @@ class IPacketSecurityController;
 class LatencyNetworkPeer;
 class NetworkPacketRecorder;
 class NetworkPeer;
+class PacketTraceNetworkPeer;
 class Scheduler;
 struct NetworkSettingOptions;
 // clang-format on
@@ -63,17 +64,18 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>                     mId;
-    ::ll::TypedStorage<4, 4, ::NetworkConnection::Type>                 mType;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::NetworkPacketRecorder>> mNetworkPacketRecorder;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::EncryptedNetworkPeer>>  mEncryptedPeer;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::CompressedNetworkPeer>> mCompressedPeer;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BatchedNetworkPeer>>    mBatchedPeer;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::LatencyNetworkPeer>>    mLatencyPeer;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::NetworkPeer>>         mPeer;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>   mLastPacketTime;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>   mClosedTime;
-    ::ll::TypedStorage<4, 4, ::std::bitset<2>>                          mPausedChannels;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>                      mId;
+    ::ll::TypedStorage<4, 4, ::NetworkConnection::Type>                  mType;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::NetworkPacketRecorder>>  mNetworkPacketRecorder;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::EncryptedNetworkPeer>>   mEncryptedPeer;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::CompressedNetworkPeer>>  mCompressedPeer;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::BatchedNetworkPeer>>     mBatchedPeer;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::LatencyNetworkPeer>>     mLatencyPeer;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::PacketTraceNetworkPeer>> mPacketTracePeer;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::NetworkPeer>>          mPeer;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>    mLastPacketTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>    mClosedTime;
+    ::ll::TypedStorage<4, 4, ::std::bitset<2>>                           mPausedChannels;
     ::ll::TypedStorage<
         8,
         40,

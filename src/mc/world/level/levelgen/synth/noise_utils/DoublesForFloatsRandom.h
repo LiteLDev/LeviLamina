@@ -21,13 +21,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $nextFloat();
+    MCAPI float $nextFloat();
     // NOLINTEND
 
 public:

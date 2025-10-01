@@ -88,28 +88,28 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Noises(::OverworldGeneratorMultinoise::Noises&&);
+        MCAPI Noises(::OverworldGeneratorMultinoise::Noises&&);
 
-        MCNAPI ~Noises();
+        MCAPI ~Noises();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static ::OverworldGeneratorMultinoise::Noises
+        MCAPI static ::OverworldGeneratorMultinoise::Noises
         make(::XoroshiroPositionalRandomFactory const& randomFactory);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::OverworldGeneratorMultinoise::Noises&&);
+        MCAPI void* $ctor(::OverworldGeneratorMultinoise::Noises&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

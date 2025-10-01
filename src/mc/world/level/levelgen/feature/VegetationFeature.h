@@ -39,14 +39,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool
+    MCAPI static bool
     placeBlock(::BlockSource& region, ::Block const& blockToPlace, ::BlockPos const& pos, ::Random& random);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

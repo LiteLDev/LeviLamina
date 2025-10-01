@@ -33,7 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~FlatFile() /*override*/ = default;
+    virtual ~FlatFile() /*override*/;
 
     // vIndex: 1
     virtual ::Core::PathBuffer<::std::string> _getPath() const /*override*/;
@@ -77,6 +77,12 @@ public:
 
     // vIndex: 14
     virtual ::Core::Result _getRemainingSize(uint64* pFileSize) /*override*/;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

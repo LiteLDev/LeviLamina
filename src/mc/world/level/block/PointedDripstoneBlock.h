@@ -112,8 +112,6 @@ public:
 
     MCAPI static bool _canTipGrow(::BlockSource& region, ::BlockPos const& tipPos);
 
-    MCAPI static void _createMergedTips(::BlockSource& region, ::Block const& tipBlock, ::BlockPos const& tipPos);
-
     MCAPI static ::std::optional<::BlockPos> _findBlockVertically(
         ::BlockSource&                                           region,
         ::BlockPos const&                                        pos,
@@ -129,10 +127,6 @@ public:
     MCAPI static ::std::optional<::BlockPos> _getBlockAboveStalactiteRoot(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void _grow(::BlockSource& region, ::BlockPos const& growFromPos, uchar growToDirection);
-
-    MCAPI static void _growStalagmiteBelow(::BlockSource& region, ::BlockPos const& growIntoPos);
-
-    MCAPI static bool _isStalactiteBase(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static bool _isValidPointedDripstonePlacement(::BlockSource& region, ::BlockPos const& pos, bool isHanging);
 
@@ -152,9 +146,6 @@ public:
     MCAPI static void growStalactite(::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void growStalagmite(::BlockSource& region, ::BlockPos const& pos);
-
-    MCAPI static ::std::optional<::ParticleType>
-    shouldDrip(::BlockSource& region, ::BlockPos const& pos, float randomValue);
     // NOLINTEND
 
 public:

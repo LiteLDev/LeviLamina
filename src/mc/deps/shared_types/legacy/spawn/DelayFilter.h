@@ -16,6 +16,7 @@ public:
 
 public:
     // prevent constructor by default
+    DelayFilter& operator=(DelayFilter const&);
     DelayFilter(DelayFilter const&);
     DelayFilter();
 
@@ -23,8 +24,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::Legacy::Spawn::DelayFilter& operator=(::SharedTypes::Legacy::Spawn::DelayFilter&&);
-
-    MCNAPI ::SharedTypes::Legacy::Spawn::DelayFilter& operator=(::SharedTypes::Legacy::Spawn::DelayFilter const&);
     // NOLINTEND
 };
 

@@ -27,6 +27,7 @@ public:
 
     public:
         // prevent constructor by default
+        Description& operator=(Description const&);
         Description(Description const&);
         Description();
 
@@ -35,9 +36,6 @@ public:
         // NOLINTBEGIN
         MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Description&
         operator=(::SharedTypes::v1_20_60::BlockCulling::Description&&);
-
-        MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Description&
-        operator=(::SharedTypes::v1_20_60::BlockCulling::Description const&);
 
         MCNAPI ~Description();
         // NOLINTEND
@@ -68,6 +66,7 @@ public:
 
         public:
             // prevent constructor by default
+            GeometryPart& operator=(GeometryPart const&);
             GeometryPart(GeometryPart const&);
             GeometryPart();
 
@@ -76,9 +75,6 @@ public:
             // NOLINTBEGIN
             MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&
             operator=(::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&&);
-
-            MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart&
-            operator=(::SharedTypes::v1_20_60::BlockCulling::Rule::GeometryPart const&);
             // NOLINTEND
         };
 
@@ -91,15 +87,13 @@ public:
 
     public:
         // prevent constructor by default
+        Rule& operator=(Rule const&);
         Rule(Rule const&);
         Rule();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Rule&
-        operator=(::SharedTypes::v1_20_60::BlockCulling::Rule const&);
-
         MCNAPI ::SharedTypes::v1_20_60::BlockCulling::Rule& operator=(::SharedTypes::v1_20_60::BlockCulling::Rule&&);
         // NOLINTEND
     };

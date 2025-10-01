@@ -40,9 +40,12 @@ public:
     virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getUrl() /*override*/;
 
     // vIndex: 2
-    virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() /*override*/;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Http::Url> getJsonRpcUrl() /*override*/;
 
     // vIndex: 3
+    virtual ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> getAuthToken() /*override*/;
+
+    // vIndex: 4
     virtual void reset() /*override*/;
     // NOLINTEND
 
@@ -70,6 +73,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Url> $getUrl();
+
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Url> $getJsonRpcUrl();
 
     MCNAPI ::Bedrock::Threading::Async<::ISignalingServiceConfigProvider::Token> $getAuthToken();
 

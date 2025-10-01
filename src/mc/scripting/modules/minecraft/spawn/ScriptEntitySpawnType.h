@@ -24,6 +24,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptEntitySpawnType& operator=(ScriptEntitySpawnType const&);
     ScriptEntitySpawnType(ScriptEntitySpawnType const&);
     ScriptEntitySpawnType();
 
@@ -34,9 +35,6 @@ public:
 
     MCNAPI bool
     _isBlockDangerous(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock> const& block) const;
-
-    MCNAPI ::ScriptModuleMinecraft::ScriptEntitySpawnType&
-    operator=(::ScriptModuleMinecraft::ScriptEntitySpawnType const&);
 
     MCNAPI ~ScriptEntitySpawnType();
     // NOLINTEND

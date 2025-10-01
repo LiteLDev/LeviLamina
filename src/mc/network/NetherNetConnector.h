@@ -214,6 +214,8 @@ public:
     );
 
     MCAPI void _prepareForNewSession();
+
+    MCAPI void _queueIncomingConnectionEvent(::NetherNet::NetworkID peerId, uint64 sessionId);
     // NOLINTEND
 
 public:

@@ -4,13 +4,13 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 namespace CryptoUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::string getFileChecksum(::Core::Path const& path);
+MCNAPI ::std::string getFileChecksum(::Core::PathView path);
 // NOLINTEND
 
 } // namespace CryptoUtils

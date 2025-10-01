@@ -111,13 +111,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CompoundTag serialize() const;
+    MCAPI ::CompoundTag serialize() const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

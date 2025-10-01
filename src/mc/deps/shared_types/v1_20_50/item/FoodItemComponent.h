@@ -22,12 +22,13 @@ public:
 public:
     // prevent constructor by default
     FoodItemComponent& operator=(FoodItemComponent const&);
-    FoodItemComponent(FoodItemComponent const&);
     FoodItemComponent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI FoodItemComponent(::SharedTypes::v1_20_50::FoodItemComponent const&);
+
     MCNAPI ~FoodItemComponent();
     // NOLINTEND
 
@@ -35,6 +36,12 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::FoodItemComponent const&);
     // NOLINTEND
 
 public:

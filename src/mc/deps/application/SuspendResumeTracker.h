@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/AppPlatformListener.h"
+#include "mc/deps/application/AppPlatformListener.h"
 
 class SuspendResumeTracker : public ::AppPlatformListener {
 public:

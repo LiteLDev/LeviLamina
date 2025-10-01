@@ -41,25 +41,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit HugeFungusFeature(bool isBlue);
+    MCAPI explicit HugeFungusFeature(bool isBlue);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(bool isBlue);
+    MCAPI void* $ctor(bool isBlue);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
     // NOLINTEND
 
 public:

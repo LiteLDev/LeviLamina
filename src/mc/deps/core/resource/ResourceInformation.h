@@ -2,6 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class SemVersion;
+namespace mce { class UUID; }
+// clang-format on
+
 class ResourceInformation {
 public:
     // ResourceInformation inner types define
@@ -37,6 +43,15 @@ public:
     // NOLINTBEGIN
     MCNAPI ResourceInformation(::ResourceInformation const&);
 
+    MCNAPI ResourceInformation(
+        ::std::string const&                description,
+        ::SemVersion const&                 version,
+        ::mce::UUID const&                  uuid,
+        ::ResourceInformation::ResourceType type,
+        ::std::string const&                language,
+        ::std::string const&                entry
+    );
+
     MCNAPI ~ResourceInformation();
     // NOLINTEND
 
@@ -50,6 +65,15 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ResourceInformation const&);
+
+    MCNAPI void* $ctor(
+        ::std::string const&                description,
+        ::SemVersion const&                 version,
+        ::mce::UUID const&                  uuid,
+        ::ResourceInformation::ResourceType type,
+        ::std::string const&                language,
+        ::std::string const&                entry
+    );
     // NOLINTEND
 
 public:

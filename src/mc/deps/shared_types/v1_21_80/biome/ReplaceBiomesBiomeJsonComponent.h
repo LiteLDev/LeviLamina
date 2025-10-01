@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/v1_20_60/biome/components/IBiomeJsonComponent.h"
+#include "mc/v1_20_60/biome/components/BiomeComponentVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,22 +26,20 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnkf6afd7;
-        ::ll::UntypedStorage<8, 24> mUnk8d85d3;
+        ::ll::UntypedStorage<8, 24> mUnkb5d95a;
         ::ll::UntypedStorage<4, 4>  mUnk6d510f;
         ::ll::UntypedStorage<4, 4>  mUnkbc3bd5;
         // NOLINTEND
 
     public:
         // prevent constructor by default
+        BiomeReplacement& operator=(BiomeReplacement const&);
         BiomeReplacement(BiomeReplacement const&);
         BiomeReplacement();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&
-        operator=(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement const&);
-
         MCNAPI ::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&
         operator=(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&&);
 
@@ -69,6 +68,9 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
+    virtual ::BiomeComponentVersion getType() const /*override*/;
+
     // vIndex: 0
     virtual ~ReplaceBiomesBiomeJsonComponent() /*override*/ = default;
     // NOLINTEND
@@ -85,6 +87,12 @@ public:
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
 
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI ::BiomeComponentVersion $getType() const;
     // NOLINTEND
 
 public:

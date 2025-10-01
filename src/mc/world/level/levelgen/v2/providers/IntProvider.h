@@ -42,23 +42,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::IntProvider& operator=(::IntProvider&&);
+    MCAPI ::IntProvider& operator=(::IntProvider&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $sample(::IRandom& random) const;
+    MCAPI int $sample(::IRandom& random) const;
 
-    MCNAPI int $maxValue() const;
+    MCAPI int $maxValue() const;
 
-    MCNAPI int $minValue() const;
+    MCAPI int $minValue() const;
     // NOLINTEND
 
 public:

@@ -17,14 +17,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Block const& getBlock(int id);
+    MCAPI ::Block const& getBlock(int id);
 
-    MCNAPI ~LegacyStructureBlockPalette();
+    MCAPI ~LegacyStructureBlockPalette();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

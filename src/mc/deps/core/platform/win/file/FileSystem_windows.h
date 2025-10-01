@@ -84,6 +84,9 @@ public:
     virtual ::Core::Result
     _copyTimeAndAccessRights(::Core::PathView sourceEntryPath, ::Core::PathView targetEntryPath) /*override*/;
 
+    // vIndex: 3
+    virtual void requestFlush() /*override*/;
+
     // vIndex: 0
     virtual ~FileSystem_windows() /*override*/ = default;
     // NOLINTEND
@@ -156,6 +159,8 @@ public:
     MCNAPI ::Core::Result $_getEntryType(::Core::PathView entryPath, ::Core::FileType& fileTypeOut);
 
     MCNAPI ::Core::Result $_copyTimeAndAccessRights(::Core::PathView sourceEntryPath, ::Core::PathView targetEntryPath);
+
+    MCNAPI void $requestFlush();
     // NOLINTEND
 
 public:

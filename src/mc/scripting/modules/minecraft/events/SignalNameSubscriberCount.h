@@ -21,15 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SignalNameSubscriberCount(::ScriptModuleMinecraft::SignalNameSubscriberCount&&);
-
     MCNAPI ~SignalNameSubscriberCount();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::SignalNameSubscriberCount&&);
     // NOLINTEND
 
 public:

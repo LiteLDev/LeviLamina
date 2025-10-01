@@ -77,8 +77,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BlockPosIterator begin() const;
-
     MCNAPI ::BlockPosIterator end() const;
     // NOLINTEND
 };

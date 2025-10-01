@@ -2,6 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+namespace MinecraftCamera {
+
 struct CameraTimeComponent {
 public:
     // CameraTimeComponent inner types declare
@@ -15,7 +17,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk247a34;
+        ::ll::UntypedStorage<4, 4> mUnk4cdc0e;
         // NOLINTEND
 
     public:
@@ -29,8 +31,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk1bf191;
-        ::ll::UntypedStorage<4, 8> mUnk1b6a1b;
+        ::ll::UntypedStorage<4, 4> mUnkbfa4b0;
+        ::ll::UntypedStorage<4, 8> mUnkef482d;
         // NOLINTEND
 
     public:
@@ -43,7 +45,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mUpdatedAt;
-    ::ll::TypedStorage<4, 4, float> mDeltaTime;
+    ::ll::UntypedStorage<4, 4> mUnk2563c1;
+    ::ll::UntypedStorage<4, 4> mUnkeddecf;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CameraTimeComponent& operator=(CameraTimeComponent const&);
+    CameraTimeComponent(CameraTimeComponent const&);
+    CameraTimeComponent();
 };
+
+} // namespace MinecraftCamera

@@ -10,79 +10,79 @@ class HashedString;
 namespace VanillaBlockGeometryIds {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::HashedString const& Beacon();
+MCAPI ::HashedString const& Beacon();
 
-MCNAPI ::HashedString const& BigDripleaf();
+MCAPI ::HashedString const& BigDripleaf();
 
-MCNAPI ::HashedString const& BigDripleafFullTilt();
+MCAPI ::HashedString const& BigDripleafFullTilt();
 
-MCNAPI ::HashedString const& BigDripleafPartialTilt();
+MCAPI ::HashedString const& BigDripleafPartialTilt();
 
-MCNAPI ::HashedString const& BigDripleafStem();
+MCAPI ::HashedString const& BigDripleafStem();
 
-MCNAPI ::HashedString const& Button();
+MCAPI ::HashedString const& Button();
 
-MCNAPI ::HashedString const& ButtonPressed();
+MCAPI ::HashedString const& ButtonPressed();
 
-MCNAPI ::HashedString const& Cross();
+MCAPI ::HashedString const& Cross();
 
-MCNAPI ::HashedString const& CubeColumnHorizontal();
+MCAPI ::HashedString const& CubeColumnHorizontal();
 
-MCNAPI ::HashedString const& DoorBottomLeft();
+MCAPI ::HashedString const& DoorBottomLeft();
 
-MCNAPI ::HashedString const& DoorBottomLeftOpen();
+MCAPI ::HashedString const& DoorBottomLeftOpen();
 
-MCNAPI ::HashedString const& DoorBottomRight();
+MCAPI ::HashedString const& DoorBottomRight();
 
-MCNAPI ::HashedString const& DoorBottomRightOpen();
+MCAPI ::HashedString const& DoorBottomRightOpen();
 
-MCNAPI ::HashedString const& DoorTopLeft();
+MCAPI ::HashedString const& DoorTopLeft();
 
-MCNAPI ::HashedString const& DoorTopLeftOpen();
+MCAPI ::HashedString const& DoorTopLeftOpen();
 
-MCNAPI ::HashedString const& DoorTopRight();
+MCAPI ::HashedString const& DoorTopRight();
 
-MCNAPI ::HashedString const& DoorTopRightOpen();
+MCAPI ::HashedString const& DoorTopRightOpen();
 
-MCNAPI ::HashedString const& Empty();
+MCAPI ::HashedString const& Empty();
 
-MCNAPI ::HashedString const& EnchantingTable();
+MCAPI ::HashedString const& EnchantingTable();
 
-MCNAPI ::HashedString const& FencePost();
+MCAPI ::HashedString const& FencePost();
 
-MCNAPI ::HashedString const& FullBlock();
+MCAPI ::HashedString const& FullBlock();
 
-MCNAPI ::HashedString const& Hopper();
+MCAPI ::HashedString const& Hopper();
 
-MCNAPI ::HashedString const& HopperSide();
+MCAPI ::HashedString const& HopperSide();
 
-MCNAPI ::HashedString const& Leaves();
+MCAPI ::HashedString const& Leaves();
 
-MCNAPI ::HashedString const& Lectern();
+MCAPI ::HashedString const& Lectern();
 
-MCNAPI ::HashedString const& PressurePlateDown();
+MCAPI ::HashedString const& PressurePlateDown();
 
-MCNAPI ::HashedString const& PressurePlateUp();
+MCAPI ::HashedString const& PressurePlateUp();
 
-MCNAPI ::HashedString const& Slab();
+MCAPI ::HashedString const& Slab();
 
-MCNAPI ::HashedString const& SlabTop();
+MCAPI ::HashedString const& SlabTop();
 
-MCNAPI ::HashedString const& Stairs();
+MCAPI ::HashedString const& Stairs();
 
-MCNAPI ::HashedString const& TemplateFenceGate();
+MCAPI ::HashedString const& TemplateFenceGate();
 
-MCNAPI ::HashedString const& TemplateFenceGateOpen();
+MCAPI ::HashedString const& TemplateFenceGateOpen();
 
-MCNAPI ::HashedString const& TemplateFenceGateWall();
+MCAPI ::HashedString const& TemplateFenceGateWall();
 
-MCNAPI ::HashedString const& TemplateFenceGateWallOpen();
+MCAPI ::HashedString const& TemplateFenceGateWallOpen();
 
-MCNAPI ::HashedString const& TemplateTrapdoorBottom();
+MCAPI ::HashedString const& TemplateTrapdoorBottom();
 
-MCNAPI ::HashedString const& TemplateTrapdoorOpen();
+MCAPI ::HashedString const& TemplateTrapdoorOpen();
 
-MCNAPI ::HashedString const& TemplateTrapdoorTop();
+MCAPI ::HashedString const& TemplateTrapdoorTop();
 // NOLINTEND
 
 } // namespace VanillaBlockGeometryIds

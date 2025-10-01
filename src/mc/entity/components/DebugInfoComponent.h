@@ -63,6 +63,7 @@ public:
 public:
     // prevent constructor by default
     DebugInfoComponent& operator=(DebugInfoComponent const&);
+    DebugInfoComponent(DebugInfoComponent const&);
     DebugInfoComponent();
 
 public:
@@ -80,8 +81,6 @@ public:
     // NOLINTBEGIN
     MCNAPI DebugInfoComponent(::DebugInfoComponent&&);
 
-    MCNAPI DebugInfoComponent(::DebugInfoComponent const&);
-
     MCNAPI ::DebugInfoComponent& operator=(::DebugInfoComponent&&);
     // NOLINTEND
 
@@ -89,8 +88,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::DebugInfoComponent&&);
-
-    MCNAPI void* $ctor(::DebugInfoComponent const&);
     // NOLINTEND
 
 public:

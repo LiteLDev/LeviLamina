@@ -18,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BlockPermutationDescription& operator=(::BlockPermutationDescription const&);
+    MCAPI ::BlockPermutationDescription& operator=(::BlockPermutationDescription const&);
 
-    MCNAPI ~BlockPermutationDescription();
+    MCAPI ~BlockPermutationDescription();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

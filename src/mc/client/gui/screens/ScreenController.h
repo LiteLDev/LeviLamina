@@ -18,7 +18,6 @@ class ScreenControllerProxy;
 class UIPropertyBag;
 struct ActorUniqueID;
 struct FocusMoveScreenEventData;
-struct HoloInputModeChangeScreenEventData;
 struct InputModeChangeScreenEventData;
 struct ItemRendererData;
 struct PointerHeldScreenEventData;
@@ -74,7 +73,6 @@ public:
     ::ll::UntypedStorage<8, 64>   mUnk8a2aa4;
     ::ll::UntypedStorage<8, 24>   mUnkef27f7;
     ::ll::UntypedStorage<8, 24>   mUnkdd0f55;
-    ::ll::UntypedStorage<8, 24>   mUnk6a6193;
     ::ll::UntypedStorage<8, 24>   mUnk1c1018;
     ::ll::UntypedStorage<8, 64>   mUnk60893a;
     ::ll::UntypedStorage<8, 64>   mUnk3c1132;
@@ -165,63 +163,60 @@ public:
     virtual void handleLicenseChanged();
 
     // vIndex: 21
-    virtual void onDictationEvent(::std::string const&);
-
-    // vIndex: 22
     virtual void setAssociatedBlockPos(::BlockPos const&);
 
-    // vIndex: 23
+    // vIndex: 22
     virtual void setAssociatedEntityUniqueID(::ActorUniqueID const);
 
-    // vIndex: 24
+    // vIndex: 23
     virtual void setSuspendInput(bool);
 
-    // vIndex: 25
+    // vIndex: 24
     virtual void setSuspendDirectionalInput(bool);
 
-    // vIndex: 26
+    // vIndex: 25
     virtual void setViewCommand(::ScreenViewCommand const&);
 
-    // vIndex: 27
+    // vIndex: 26
     virtual void addStaticScreenVars(::Json::Value&);
 
-    // vIndex: 28
+    // vIndex: 27
     virtual ::std::string getAdditionalScreenInfo() const;
 
-    // vIndex: 29
+    // vIndex: 28
     virtual ::std::string getTelemetryOverride() const;
 
-    // vIndex: 30
+    // vIndex: 29
     virtual void addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
 
-    // vIndex: 31
+    // vIndex: 30
     virtual ::ui::SceneType getSceneType() const;
 
-    // vIndex: 32
+    // vIndex: 31
     virtual int getScreenVersion() const;
 
-    // vIndex: 33
+    // vIndex: 32
     virtual uint getSceneId() const;
 
-    // vIndex: 34
+    // vIndex: 33
     virtual bool screenHandlesGamepadMenuButton() const;
 
-    // vIndex: 35
+    // vIndex: 34
     virtual ::ScreenControllerProxy* getProxy();
 
-    // vIndex: 36
+    // vIndex: 35
     virtual void onEntered();
 
-    // vIndex: 37
+    // vIndex: 36
     virtual void onScreenPushedAbove();
 
-    // vIndex: 38
+    // vIndex: 37
     virtual void onEntering();
 
-    // vIndex: 39
+    // vIndex: 38
     virtual bool _doesScreenHaveExitBehavior() const;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual bool _isContainerScreen() const;
     // NOLINTEND
 

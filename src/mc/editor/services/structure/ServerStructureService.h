@@ -25,6 +25,7 @@ namespace Editor::Network { class StructureFromClipboardPayload; }
 namespace Editor::Network { class StructureFromSelectionPayload; }
 namespace Editor::Network { class StructureQueryPayload; }
 namespace Editor::Network { class StructureReplaceFromClipboardPayload; }
+namespace Editor::Network { class StructureUpdateFromClipboardPayload; }
 namespace mce { class UUID; }
 // clang-format on
 
@@ -120,6 +121,9 @@ public:
 
     MCNAPI void
     _handleStructureReplaceFromClipboardPayload(::Editor::Network::StructureReplaceFromClipboardPayload const& payload);
+
+    MCNAPI void
+    _handleUpdateFromClipboardPayload(::Editor::Network::StructureUpdateFromClipboardPayload const& payload);
 
     MCNAPI void _makeStructureTemplateFromVolume(
         ::Editor::EditorStructureTemplate&             structureTemplate,

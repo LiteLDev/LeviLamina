@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/FileArchiver.h"
@@ -81,7 +82,9 @@ public:
         ::std::shared_ptr<::FileArchiver::ExportData>&                  exportData,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
         ::Bedrock::Threading::Async<void>&                              prevTaskHandle,
-        ::std::function<void(::LevelData&)>                             preExportCallback
+        ::std::function<void(::LevelData&)>                             preExportCallback,
+        ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>>
+            pathCallbacks
     ) /*override*/;
     // NOLINTEND
 
@@ -148,7 +151,9 @@ public:
         ::std::shared_ptr<::FileArchiver::ExportData>&                  exportData,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
         ::Bedrock::Threading::Async<void>&                              prevTaskHandle,
-        ::std::function<void(::LevelData&)>                             preExportCallback
+        ::std::function<void(::LevelData&)>                             preExportCallback,
+        ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>>
+            pathCallbacks
     );
     // NOLINTEND
 

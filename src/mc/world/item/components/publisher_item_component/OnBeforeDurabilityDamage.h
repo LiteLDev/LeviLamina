@@ -17,7 +17,7 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 
 namespace PublisherItemComponent {
 
-class OnBeforeDurabilityDamage
+struct OnBeforeDurabilityDamage
 : public ::ItemComponent,
   public ::Bedrock::PubSub::
       Publisher<void(int&, ::ItemStack&, ::Actor&, ::Mob&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {

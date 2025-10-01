@@ -32,18 +32,18 @@ class MapItem : public ::ComplexItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 92
+    // vIndex: 94
     virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const
         /*override*/;
 
-    // vIndex: 93
+    // vIndex: 95
     virtual void refreshedInContainer(::ItemStackBase const& stack, ::Level& level) const /*override*/;
 
-    // vIndex: 121
+    // vIndex: 123
     virtual ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const
         /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
@@ -55,16 +55,16 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 105
+    // vIndex: 107
     virtual bool hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const /*override*/;
 
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    // vIndex: 109
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    // vIndex: 96
+    // vIndex: 98
     virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const /*override*/;
 
     // vIndex: 0
@@ -87,7 +87,7 @@ public:
         ::std::shared_ptr<bool>         chunksRefCount
     );
 
-    MCAPI static bool doesDisplayPlayerMarkers(::ItemStack const& item);
+    MCAPI static bool doesDisplayPlayerMarkers(::ItemStackBase const& item);
 
     MCAPI static ::ActorUniqueID getMapId(::CompoundTag const* tag);
 
@@ -151,7 +151,7 @@ public:
 
     MCFOLD ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
     // NOLINTEND

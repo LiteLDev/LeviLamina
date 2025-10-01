@@ -23,6 +23,7 @@ public:
         RegistryReadOnly      = 3,
         NamespaceMismatch     = 4,
         EnumDependencyMissing = 5,
+        UnexpectedEnumName    = 6,
     };
 
 public:

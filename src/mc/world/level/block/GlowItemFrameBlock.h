@@ -24,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString $getSpawnedItemName() const;
+    MCAPI ::HashedString $getSpawnedItemName() const;
     // NOLINTEND
 
 public:

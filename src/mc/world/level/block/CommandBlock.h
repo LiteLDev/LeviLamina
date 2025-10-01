@@ -99,6 +99,12 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::CommandBlockActor* _getCommandBlockActor(::BlockSource& region, ::BlockPos const& pos);
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::std::add_lvalue_reference_t<int[]> mCBModeMap();

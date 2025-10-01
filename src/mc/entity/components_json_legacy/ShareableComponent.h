@@ -14,32 +14,28 @@ class ShareableComponent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI int _getItemPriority(::ShareableDefinition const& shareable, ::ItemStack const& item) const;
-
-    MCNAPI int _getMaxItemAmount(::ShareableDefinition const& shareable, ::ItemStack const& item) const;
-
-    MCNAPI int _getPickupLimitAmount(::ShareableDefinition const& shareable, ::ItemStack const& item) const;
-
-    MCNAPI bool _shouldReplaceItem(
-        ::ItemStack const&           itemToReplace,
-        ::ItemStack const&           newItem,
-        ::ShareableDefinition const& shareable,
-        bool                         canPickupAnyItem
-    ) const;
-
     MCNAPI int getCountToPickUp(::Actor const& owner, ::ItemStack const& item) const;
 
-    MCNAPI int getSlotToSwap(::Actor& owner, ::ItemActor const& itemActor) const;
+    MCNAPI int getSlotToSwap(::Actor const& owner, ::ItemActor const& itemActor) const;
 
-    MCNAPI int
-    hasSurplus(::Actor& owner, ::ItemStack const& item, ::ItemStack& resultStack, bool includeStackSizeofItem) const;
+    MCNAPI int hasSurplus(
+        ::Actor const&     owner,
+        ::ItemStack const& item,
+        ::ItemStack&       resultStack,
+        bool               includeStackSizeofItem
+    ) const;
 
-    MCNAPI bool itemBelongsInInventory(::Actor& owner, ::ItemStack const& item, bool canPickupToHandOrEquipment) const;
+    MCNAPI bool
+    itemBelongsInInventory(::Actor const& owner, ::ItemStack const& item, bool canPickupToHandOrEquipment) const;
 
     MCNAPI int wantsMore(::Actor const& owner, ::ItemStack const& item) const;
 
-    MCNAPI bool
-    willPickup(::Actor& owner, ::ItemStack const& item, bool canPickupAnyItem, bool canPickupToHandOrEquipment) const;
+    MCNAPI bool willPickup(
+        ::Actor const&     owner,
+        ::ItemStack const& item,
+        bool               canPickupAnyItem,
+        bool               canPickupToHandOrEquipment
+    ) const;
     // NOLINTEND
 
 public:
@@ -47,5 +43,12 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool
     _canPickupItem(::ItemStack const& item, ::ItemStack const& carriedItem, int maxAmount, bool singularPickupOnly);
+
+    MCNAPI static bool _shouldReplaceItem(
+        ::ItemStack const&           itemToReplace,
+        ::ItemStack const&           newItem,
+        ::ShareableDefinition const& shareable,
+        bool                         canPickupAnyItem
+    );
     // NOLINTEND
 };

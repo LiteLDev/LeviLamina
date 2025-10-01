@@ -42,9 +42,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI ::Block const& $getBlockToPlace(::Random& random) const;
+    MCAPI ::Block const& $getBlockToPlace(::Random& random) const;
     // NOLINTEND
 
 public:

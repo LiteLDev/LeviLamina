@@ -32,15 +32,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _replaceBaseBlockCircle(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
+    MCAPI void _replaceBaseBlockCircle(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
 
-    MCNAPI ~TreeParams();
+    MCAPI ~TreeParams();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

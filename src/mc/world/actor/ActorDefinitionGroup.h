@@ -7,7 +7,6 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/puv/LoadResult.h"
-#include "mc/deps/puv/SlicedLoader.h"
 #include "mc/resources/JsonBetaState.h"
 #include "mc/world/actor/ActorDefinitionParseStatus.h"
 
@@ -15,8 +14,6 @@
 // clang-format off
 class ActorDefinition;
 class ActorDefinitionPtr;
-class ActorMigratedDefinitionFactory;
-class BedrockLoadContext;
 class Experiments;
 class IMinecraftEventing;
 class IPackLoadContext;
@@ -25,12 +22,11 @@ class LinkedAssetValidator;
 class PackInstance;
 class ResourcePackManager;
 class SemVersion;
-struct ActorMigratedDefinitionCustomData;
 namespace Core { class Path; }
 namespace Json { class Value; }
 namespace Puv { class Input; }
-namespace SharedTypes::v1_21_100 { struct ActorDefinitions; }
-namespace SharedTypes::v1_21_100 { struct ActorDocument; }
+namespace SharedTypes::v1_21_110 { struct ActorDefinitions; }
+namespace SharedTypes::v1_21_110 { struct ActorDocument; }
 // clang-format on
 
 class ActorDefinitionGroup : public ::Bedrock::EnableNonOwnerReferences {
@@ -72,6 +68,7 @@ public:
         ::ll::UntypedStorage<4, 4>  mUnk185ad2;
         ::ll::UntypedStorage<8, 32> mUnkfdabe0;
         ::ll::UntypedStorage<1, 1>  mUnk725dc2;
+        ::ll::UntypedStorage<8, 32> mUnk48c042;
         // NOLINTEND
 
     public:
@@ -105,7 +102,6 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnkcf7ca4;
     ::ll::UntypedStorage<8, 8>  mUnk6ed894;
     ::ll::UntypedStorage<8, 72> mUnkc1236e;
-    ::ll::UntypedStorage<8, 8>  mUnkedf698;
     // NOLINTEND
 
 public:
@@ -134,7 +130,7 @@ public:
 
     MCNAPI void _getResources(::Level& level);
 
-    MCNAPI bool _initActorDefinition(
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_110::ActorDocument> _initActorDefinition(
         ::Puv::Input const&  input,
         ::SemVersion const&  formatVersion,
         ::IPackLoadContext&  packLoadContext,
@@ -154,7 +150,7 @@ public:
         ::LogArea                            logArea
     );
 
-    MCNAPI bool _loadDefinitionFromJSON(
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_110::ActorDocument> _loadDefinitionFromJSON(
         ::SemVersion const&  formatVersion,
         ::IPackLoadContext&  packLoadContext,
         ::std::string const& relativeResourceFilepath,
@@ -165,18 +161,10 @@ public:
         ::LogArea            logArea
     );
 
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_100::ActorDocument> _loadEntityNode(
-        ::Puv::Input const&                     input,
-        ::SemVersion const&                     formatVersion,
-        ::IPackLoadContext&                     packLoadContext,
-        ::JsonBetaState                         useBetaFeatures,
-        ::ActorMigratedDefinitionFactory const& factory
-    ) const;
-
     MCNAPI ::ActorDefinitionParseStatus _loadTemplates(
         ::Level&                                                                         level,
         ::std::string const&                                                             base,
-        ::std::unordered_map<::std::string, ::SharedTypes::v1_21_100::ActorDefinitions>& componentsGroup,
+        ::std::unordered_map<::std::string, ::SharedTypes::v1_21_110::ActorDefinitions>& componentsGroup,
         ::SemVersion const&                                                              formatVersion,
         ::IPackLoadContext const&                                                        packLoadContext,
         ::JsonBetaState                                                                  useBetaFeatures

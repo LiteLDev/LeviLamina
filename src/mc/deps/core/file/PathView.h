@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
-#include "mc/deps/core/string/BasicStackString.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -41,10 +40,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PathView(char const* src);
-
-    MCNAPI explicit PathView(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
-
     MCNAPI explicit PathView(::Core::Path const& src);
 
     MCNAPI explicit PathView(::Core::PathBuffer<::std::string> const&);
@@ -59,10 +54,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(char const* src);
-
-    MCNAPI void* $ctor(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const& src);
-
     MCNAPI void* $ctor(::Core::Path const& src);
 
     MCNAPI void* $ctor(::Core::PathBuffer<::std::string> const&);

@@ -26,6 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI float calculateContribution(::BlockPos const& pos) const;
+    MCAPI float calculateContribution(::BlockPos const& pos) const;
     // NOLINTEND
 };

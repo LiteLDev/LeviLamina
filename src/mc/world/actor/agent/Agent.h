@@ -73,13 +73,13 @@ public:
     virtual void knockback(::Actor*, int, float, float, float, float, float) /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 4
     virtual void
     initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
-    // vIndex: 167
+    // vIndex: 168
     virtual bool createAIGoals() /*override*/;
 
     // vIndex: 77
@@ -95,7 +95,7 @@ public:
     virtual void
     teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity) /*override*/;
 
-    // vIndex: 172
+    // vIndex: 173
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
     // vIndex: 50
@@ -108,12 +108,12 @@ public:
     virtual void kill() /*override*/;
 
     // vIndex: 55
-    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
+    virtual void setOwner(::ActorUniqueID const id) /*override*/;
 
     // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 174
+    // vIndex: 175
     virtual ::std::unique_ptr<::BodyControl> initBodyControl() /*override*/;
 
     // vIndex: 8
@@ -135,11 +135,7 @@ public:
 
     MCAPI float getMoveSpeedScalar() const;
 
-    MCAPI int getSwingAnimationDuration() const;
-
     MCAPI void handleAnimationEvent(::AgentAnimation anim);
-
-    MCAPI bool isArmSwinging() const;
 
     MCAPI bool isShrugging() const;
 
@@ -181,7 +177,7 @@ public:
 
     MCFOLD void $knockback(::Actor*, int, float, float, float, float, float);
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
@@ -203,7 +199,7 @@ public:
 
     MCAPI void $kill();
 
-    MCAPI void $setOwner(::ActorUniqueID const ownerId);
+    MCAPI void $setOwner(::ActorUniqueID const id);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 

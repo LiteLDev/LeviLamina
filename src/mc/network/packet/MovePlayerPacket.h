@@ -54,7 +54,7 @@ public:
     // vIndex: 10
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 13
+    // vIndex: 14
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0

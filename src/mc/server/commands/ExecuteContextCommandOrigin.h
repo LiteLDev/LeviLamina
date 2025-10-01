@@ -95,6 +95,14 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void setPositionEntity(::Actor const& entity);
+
+    MCNAPI void setRotationEntity(::Actor const& entity);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::ExecuteContextCommandOrigin> load(::CompoundTag const& tag, ::ServerLevel& level);

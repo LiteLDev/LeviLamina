@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
@@ -47,12 +46,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SetArmorTrimFunction(
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
-        ::HashedString const&                                  material,
-        ::HashedString const&                                  pattern
-    );
-
     MCNAPI void _apply(::ItemStackBase& item, ::LootTableContext const& context) const;
     // NOLINTEND
 
@@ -61,16 +54,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates,
-        ::HashedString const&                                  material,
-        ::HashedString const&                                  pattern
-    );
     // NOLINTEND
 
 public:

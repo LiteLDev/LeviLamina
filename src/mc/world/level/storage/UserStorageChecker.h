@@ -2,12 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
-
 // auto generated forward declare list
 // clang-format off
-class TaskResult;
+namespace Core { class PathView; }
 // clang-format on
 
 class UserStorageChecker {
@@ -27,6 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::TaskResult _checkUserStoragePath(::Core::PathBuffer<::std::string> const& storagePath) const;
+    MCNAPI void queueCheckUserStorage(::Core::PathView storagePath);
     // NOLINTEND
 };

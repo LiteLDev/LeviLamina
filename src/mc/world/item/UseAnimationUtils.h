@@ -11,6 +11,6 @@ class UseAnimationUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };

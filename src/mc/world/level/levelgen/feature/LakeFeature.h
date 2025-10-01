@@ -43,32 +43,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LakeFeature(
+    MCAPI LakeFeature(
         ::Block const&                                      block,
         ::std::optional<::XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory
     );
 
-    MCNAPI ::Block const*
+    MCAPI ::Block const*
     _getSolidBlockAroundLavaLake(::BlockPos blockPos, ::Block const& deepslate, ::Block const& stone) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
+    MCAPI void*
     $ctor(::Block const& block, ::std::optional<::XoroshiroPositionalRandomFactory> xoroshiroPositionalRandomFactory);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

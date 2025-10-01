@@ -13,16 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::std::deque<::InputEntry>> mQueuedUpdates;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ServerScriptInputPacketQueueComponent& operator=(ServerScriptInputPacketQueueComponent const&);
-    ServerScriptInputPacketQueueComponent(ServerScriptInputPacketQueueComponent const&);
-    ServerScriptInputPacketQueueComponent();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::ServerScriptInputPacketQueueComponent& operator=(::ServerScriptInputPacketQueueComponent&&);
-    // NOLINTEND
 };

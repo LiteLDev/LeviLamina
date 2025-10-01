@@ -35,16 +35,16 @@ public:
     // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
 
-    // vIndex: 177
+    // vIndex: 178
     virtual void setHorseEating(bool state);
 
-    // vIndex: 178
+    // vIndex: 179
     virtual float getStandAnim(float a) const;
 
-    // vIndex: 179
+    // vIndex: 180
     virtual bool isHorseEating() const;
 
-    // vIndex: 180
+    // vIndex: 181
     virtual bool isMouthOpen() const;
 
     // vIndex: 59
@@ -53,13 +53,13 @@ public:
     // vIndex: 58
     virtual void onFailedTame() /*override*/;
 
-    // vIndex: 181
+    // vIndex: 182
     virtual void makeMad();
 
     // vIndex: 91
     virtual ::ActorUniqueID getControllingPlayer() const /*override*/;
 
-    // vIndex: 182
+    // vIndex: 183
     virtual bool tameToPlayer(::Player& player, bool tamingParticles);
 
     // vIndex: 93

@@ -31,12 +31,13 @@ public:
 public:
     // prevent constructor by default
     DynamicValue& operator=(DynamicValue const&);
-    DynamicValue(DynamicValue const&);
     DynamicValue();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DynamicValue(::cereal::DynamicValue const&);
+
     MCNAPI DynamicValue(::cereal::DynamicValue&&);
 
     MCNAPI uint64 hash() const;
@@ -47,6 +48,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::cereal::DynamicValue const&);
+
     MCNAPI void* $ctor(::cereal::DynamicValue&&);
     // NOLINTEND
 

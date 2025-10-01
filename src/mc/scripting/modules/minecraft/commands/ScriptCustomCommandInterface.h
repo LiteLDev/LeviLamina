@@ -23,6 +23,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptCustomCommandInterface& operator=(ScriptCustomCommandInterface const&);
     ScriptCustomCommandInterface();
 
 public:
@@ -31,12 +32,6 @@ public:
     MCNAPI ScriptCustomCommandInterface(::ScriptModuleMinecraft::ScriptCustomCommandInterface&&);
 
     MCNAPI ScriptCustomCommandInterface(::ScriptModuleMinecraft::ScriptCustomCommandInterface const&);
-
-    MCNAPI ::ScriptModuleMinecraft::ScriptCustomCommandInterface&
-    operator=(::ScriptModuleMinecraft::ScriptCustomCommandInterface&&);
-
-    MCNAPI ::ScriptModuleMinecraft::ScriptCustomCommandInterface&
-    operator=(::ScriptModuleMinecraft::ScriptCustomCommandInterface const&);
 
     MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptCustomCommandInterface const& other) const;
 

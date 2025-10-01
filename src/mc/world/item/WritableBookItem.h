@@ -24,7 +24,7 @@ public:
     // vIndex: 50
     virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 109
+    // vIndex: 111
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
     // vIndex: 0

@@ -60,7 +60,6 @@ public:
     ::ll::TypedStorage<4, 4, int>                          mLoveTimer;
     ::ll::TypedStorage<4, 4, int>                          mBreedCooldown;
     ::ll::TypedStorage<4, 4, int>                          mBreedCooldownTime;
-    ::ll::TypedStorage<1, 1, bool>                         mInheritTamed;
     ::ll::TypedStorage<1, 1, bool>                         mCausesPregnancy;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID>              mLoveCause;
     // NOLINTEND

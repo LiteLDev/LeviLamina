@@ -46,25 +46,25 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string
     buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 108
+    // vIndex: 110
     virtual ::ResolvedItemIconInfo
     getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    // vIndex: 92
+    // vIndex: 94
     virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const
         /*override*/;
 
-    // vIndex: 107
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    // vIndex: 109
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
 
-    // vIndex: 112
+    // vIndex: 114
     virtual ::Brightness getLightEmission(int auxValue) const /*override*/;
 
     // vIndex: 0
@@ -88,7 +88,7 @@ public:
 
     MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCFOLD bool $isHandEquipped() const;
 

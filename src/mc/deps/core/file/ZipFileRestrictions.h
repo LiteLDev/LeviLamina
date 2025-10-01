@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 namespace Core::ZipUtils {
@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool allowFile(::Core::Path const& file) const;
+    MCNAPI bool allowFile(::Core::PathView file) const;
     // NOLINTEND
 };
 

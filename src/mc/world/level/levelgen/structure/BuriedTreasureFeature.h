@@ -74,18 +74,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit BuriedTreasureFeature(uint seed);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(uint seed);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD ::gsl::span<::BiomeIdType const> $getRequiredBiomes() const;

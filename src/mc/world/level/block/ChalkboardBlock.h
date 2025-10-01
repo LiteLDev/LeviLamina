@@ -16,6 +16,7 @@ class Block;
 class BlockActor;
 class BlockPos;
 class BlockSource;
+class ChalkboardBlockActor;
 class Experiments;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
@@ -87,6 +88,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static ::ChalkboardBlockActor* _getBaseChalkboard(::BlockSource& region, ::BlockPos const& pos);
+
     MCAPI static void _getShape(::ChalkboardSize size, bool isOnGround, int dir, ::AABB& bufferValue);
     // NOLINTEND
 

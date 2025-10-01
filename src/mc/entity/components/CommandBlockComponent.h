@@ -47,8 +47,6 @@ public:
 
     MCNAPI void
     readAdditionalSaveData(::Actor& owner, ::CompoundTag const& entityTag, ::DataLoadHelper& dataLoadHelper);
-
-    MCNAPI void setTrackOutput(::Actor& owner, bool trackOutput);
     // NOLINTEND
 
 public:

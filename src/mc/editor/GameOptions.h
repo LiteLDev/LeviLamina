@@ -74,7 +74,6 @@ public:
 
 public:
     // prevent constructor by default
-    GameOptions& operator=(GameOptions const&);
     GameOptions();
 
 public:
@@ -85,6 +84,8 @@ public:
     MCNAPI void _applyDayLightCycle(::DaylightCycle daylightCyle, ::LevelData& levelData) const;
 
     MCNAPI void applyToLevelData(::LevelData& levelData) const;
+
+    MCNAPI ::Editor::GameOptions& operator=(::Editor::GameOptions const&);
 
     MCNAPI ::Editor::GameOptions& operator=(::Editor::GameOptions&&);
 

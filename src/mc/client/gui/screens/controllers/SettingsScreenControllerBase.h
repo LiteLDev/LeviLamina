@@ -17,10 +17,10 @@ public:
     // vIndex: 0
     virtual ~SettingsScreenControllerBase() /*override*/ = default;
 
-    // vIndex: 27
+    // vIndex: 26
     virtual void addStaticScreenVars(::Json::Value&) /*override*/;
 
-    // vIndex: 55
+    // vIndex: 54
     virtual void _displayLockedWorldPopup();
     // NOLINTEND
 

@@ -11,7 +11,7 @@
 // clang-format off
 class Actor;
 class Block;
-class DefinitionTrigger;
+class ComponentItem;
 class HashedString;
 class ItemStack;
 class SemVersion;
@@ -41,7 +41,7 @@ public:
     virtual void handleVersionBasedInitialization(::SemVersion const& originalJsonVersion) /*override*/;
 
     // vIndex: 7
-    virtual void _initializeComponent() /*override*/;
+    virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
     // vIndex: 0
     virtual ~LegacyOnDigTriggerItemComponent() /*override*/;
@@ -78,7 +78,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent(::ComponentItem& owner);
     // NOLINTEND
 
 public:

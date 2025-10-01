@@ -9,7 +9,7 @@ public:
     ::ll::UntypedStorage<8, 8>     mUnk3e1fb5;
     ::ll::UntypedStorage<4, 4>     mUnka1e590;
     ::ll::UntypedStorage<4, 4>     mUnkec21fb;
-    ::ll::UntypedStorage<1, 1468>  mUnk7e80cf;
+    ::ll::UntypedStorage<1, 1500>  mUnkc2cd5b;
     ::ll::UntypedStorage<8, 2344>  mUnk69c5c5;
     ::ll::UntypedStorage<4, 49168> mUnkffc1fb;
     ::ll::UntypedStorage<8, 8208>  mUnkdf7fc0;

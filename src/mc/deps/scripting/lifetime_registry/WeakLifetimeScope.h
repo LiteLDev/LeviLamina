@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { class LifetimeRegistry; }
-// clang-format on
-
 namespace Scripting {
 
 class WeakLifetimeScope {
@@ -26,17 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WeakLifetimeScope(::Scripting::WeakLifetimeScope&& rhs);
-
-    MCNAPI ::Scripting::LifetimeRegistry* getLifetimeRegistry() const;
-
     MCNAPI ~WeakLifetimeScope();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope&& rhs);
     // NOLINTEND
 
 public:

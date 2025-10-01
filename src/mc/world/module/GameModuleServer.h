@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/application/app_extensions/AppExtensionsNonOwner.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
@@ -22,17 +23,17 @@ class ServerNetworkHandler;
 class ServerScriptManager;
 // clang-format on
 
-class GameModuleServer {
+class GameModuleServer : public ::AppExtensions::AppExtensionsNonOwner {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~GameModuleServer();
-
-    // vIndex: 1
-    virtual void init(::Bedrock::NotNullNonOwnerPtr<::Level> const&) = 0;
+    virtual ~GameModuleServer() /*override*/;
 
     // vIndex: 2
+    virtual void init(::ServerInstance&, ::Bedrock::NotNullNonOwnerPtr<::Level> const&) = 0;
+
+    // vIndex: 3
     virtual void initializeBehaviorStack(
         ::Experiments const&,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
@@ -41,7 +42,7 @@ public:
         bool
     ) = 0;
 
-    // vIndex: 3
+    // vIndex: 4
     virtual void configureLevel(
         ::Bedrock::NotNullNonOwnerPtr<::Level>&,
         ::Experiments const&,
@@ -50,19 +51,19 @@ public:
         ::ServerScriptManager const*
     ) = 0;
 
-    // vIndex: 4
+    // vIndex: 5
     virtual void configureNewPlayer(::Player&) = 0;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void configureDocumentation(::IGameModuleDocumentation&, ::ItemRegistryRef const) = 0;
 
-    // vIndex: 6
+    // vIndex: 7
     virtual void tick() = 0;
 
-    // vIndex: 7
+    // vIndex: 8
     virtual void setupCommands(::CommandRegistry&) = 0;
 
-    // vIndex: 8
+    // vIndex: 9
     virtual void
     configureServerNetworkHandler(::ServerInstance&, ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler>) = 0;
     // NOLINTEND

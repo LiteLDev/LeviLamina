@@ -79,6 +79,8 @@ public:
 
     MCNAPI static float const& INTERACTION_TIME();
 
+    MCNAPI static uint const& MAX_STACK_SIZE();
+
     MCNAPI static uint const& MAX_VISITED_CONTAINERS();
 
     MCNAPI static ::std::string_view const& NAME();

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/LogChannel.h"
+#include "mc/editor/LogChannel.h"
 #include "mc/editor/logging/LogLevel.h"
 #include "mc/editor/logging/LoggingService.h"
 
@@ -11,6 +11,7 @@
 // clang-format off
 class HashedString;
 class Player;
+namespace Editor { class IEditorPlayer; }
 namespace Editor { class LogMessage; }
 // clang-format on
 
@@ -38,12 +39,12 @@ public:
 
     // vIndex: 1
     virtual void
-    log(::std::string&&                       msg,
-        ::Player*                             player,
-        ::Editor::LogLevel                    level,
-        ::std::vector<::HashedString>&&       areaTags,
-        ::std::optional<::Editor::LogChannel> logChannelMask,
-        ::std::optional<::std::string>&&      subMsg) /*override*/;
+    log(::std::string&&                 msg,
+        ::Player*                       player,
+        ::Editor::LogLevel              level,
+        ::std::vector<::HashedString>&& areaTags,
+        ::Editor::LogChannel            logChannelMask,
+        ::std::string                   subMsg) /*override*/;
 
     // vIndex: 2
     virtual void flush() /*override*/;
@@ -56,17 +57,23 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _dispatchLogMessagePayload(::Editor::LogMessage message, ::Editor::IEditorPlayer* editorPlayer);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::std::string_view $getServiceName() const;
 
     MCNAPI void $log(
-        ::std::string&&                       msg,
-        ::Player*                             player,
-        ::Editor::LogLevel                    level,
-        ::std::vector<::HashedString>&&       areaTags,
-        ::std::optional<::Editor::LogChannel> logChannelMask,
-        ::std::optional<::std::string>&&      subMsg
+        ::std::string&&                 msg,
+        ::Player*                       player,
+        ::Editor::LogLevel              level,
+        ::std::vector<::HashedString>&& areaTags,
+        ::Editor::LogChannel            logChannelMask,
+        ::std::string                   subMsg
     );
 
     MCNAPI void $flush();

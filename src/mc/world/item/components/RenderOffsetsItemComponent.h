@@ -40,7 +40,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool operator==(::RenderOffsetsItemComponent::TRS const& other) const;
+        MCAPI bool operator==(::RenderOffsetsItemComponent::TRS const& other) const;
         // NOLINTEND
     };
 
@@ -61,7 +61,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool operator==(::RenderOffsetsItemComponent::ItemTransforms const& other) const;
+        MCAPI bool operator==(::RenderOffsetsItemComponent::ItemTransforms const& other) const;
         // NOLINTEND
     };
 

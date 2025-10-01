@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class ItemStack;
 class Player;
 // clang-format on
 
@@ -39,12 +38,6 @@ public:
 
     // vIndex: 0
     virtual ~BlockPlayerInteractEvent() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void setPlayerSelectedItem(::ItemStack& item);
     // NOLINTEND
 
 public:

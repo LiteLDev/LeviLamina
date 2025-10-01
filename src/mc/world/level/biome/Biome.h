@@ -5,8 +5,6 @@
 // auto generated inclusion list
 #include "mc/common/BiomeIdType.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/util/IDType.h"
-#include "mc/util/TagRegistry.h"
 #include "mc/util/WeightedRandomList.h"
 #include "mc/world/level/biome/OceanRuinConfiguration.h"
 #include "mc/world/level/biome/components/BiomeComponentStorage.h"
@@ -18,9 +16,6 @@ class BlockPos;
 class BlockSource;
 class LevelChunk;
 class MobSpawnerData;
-class WellKnownTagID;
-struct BiomeTagIDType;
-struct BiomeTagSetIDType;
 namespace br::worldgen { struct SpawnerData; }
 namespace mce { class Color; }
 // clang-format on
@@ -86,18 +81,6 @@ public:
     MCAPI float getTemperature(::BlockSource const& region, ::BlockPos const& pos) const;
 
     MCAPI ::Biome::BiomeTempCategory getTemperatureCategory() const;
-
-    MCAPI bool hasTag(::WellKnownTagID const& tagID) const;
-
-    MCAPI bool hasTag(
-        uint64                                                                          tagHash,
-        ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const& tagRegistry
-    ) const;
-
-    MCAPI bool hasTag(
-        ::IDType<::BiomeTagIDType> const&                                               tagID,
-        ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const& tagRegistry
-    ) const;
 
     MCAPI bool isHumid() const;
 

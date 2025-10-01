@@ -57,13 +57,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $updateDecayDelay(int const currentValue) const;
+    MCAPI int $updateDecayDelay(int const currentValue) const;
 
-    MCNAPI int $updateFacingData(int const currentValue, ::Block const&) const;
+    MCFOLD int $updateFacingData(int const currentValue, ::Block const&) const;
 
-    MCNAPI bool $canChangeBlockOnSpread() const;
+    MCFOLD bool $canChangeBlockOnSpread() const;
 
-    MCNAPI bool $attemptSpreadVeins(
+    MCAPI bool $attemptSpreadVeins(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
         ::Block const&       block,
@@ -71,7 +71,7 @@ public:
         ::SculkSpreader&
     ) const;
 
-    MCNAPI int $attemptUseCharge(
+    MCAPI int $attemptUseCharge(
         ::IBlockWorldGenAPI&,
         ::BlockSource*,
         ::BlockPos const&,
@@ -83,7 +83,7 @@ public:
         bool const
     ) const;
 
-    MCNAPI void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
+    MCFOLD void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
     // NOLINTEND
 
 public:

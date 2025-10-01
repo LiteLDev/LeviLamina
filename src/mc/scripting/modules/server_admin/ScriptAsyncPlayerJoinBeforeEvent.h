@@ -25,6 +25,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptAsyncPlayerJoinBeforeEvent& operator=(ScriptAsyncPlayerJoinBeforeEvent const&);
     ScriptAsyncPlayerJoinBeforeEvent(ScriptAsyncPlayerJoinBeforeEvent const&);
     ScriptAsyncPlayerJoinBeforeEvent();
 
@@ -44,9 +45,6 @@ public:
 
     MCNAPI ::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent&
     operator=(::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent&&);
-
-    MCNAPI ::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent&
-    operator=(::ScriptModuleServerAdmin::ScriptAsyncPlayerJoinBeforeEvent const&);
 
     MCNAPI ~ScriptAsyncPlayerJoinBeforeEvent();
     // NOLINTEND

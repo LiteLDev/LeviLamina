@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class FileSystem_windows; }
+namespace Core { class PathView; }
 namespace Core { class Result; }
 // clang-format on
 
@@ -74,6 +75,12 @@ public:
     // vIndex: 33
     virtual ::Core::FileStorageArea::StorageAreaSpaceInfo getStorageAreaSpaceInfo() /*override*/;
 
+    // vIndex: 35
+    virtual bool shouldRecordFileError(::Core::PathView path, ::std::error_code error) const /*override*/;
+
+    // vIndex: 22
+    virtual void flushImmediately() /*override*/;
+
     // vIndex: 0
     virtual ~StorageArea_windows() /*override*/ = default;
     // NOLINTEND
@@ -110,6 +117,10 @@ public:
     MCNAPI uint64 $getAvailableUserStorageSize();
 
     MCNAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
+
+    MCNAPI bool $shouldRecordFileError(::Core::PathView path, ::std::error_code error) const;
+
+    MCNAPI void $flushImmediately();
     // NOLINTEND
 
 public:

@@ -18,18 +18,6 @@ public:
     ContextIdFreeList& operator=(ContextIdFreeList const&);
     ContextIdFreeList(ContextIdFreeList const&);
     ContextIdFreeList();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~ContextIdFreeList();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace Scripting

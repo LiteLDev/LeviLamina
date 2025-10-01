@@ -9,9 +9,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPos;
+class BlockSource;
 namespace ScriptModuleMinecraft { class ScriptBlockInventoryComponentContainer; }
 namespace ScriptModuleMinecraft { class ScriptComponentTypeEnumBuilder; }
 namespace ScriptModuleMinecraft { class ScriptContainerWrapper; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -55,6 +58,10 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding
     bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+
+    MCNAPI static ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockInventoryComponent>>
+    tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:

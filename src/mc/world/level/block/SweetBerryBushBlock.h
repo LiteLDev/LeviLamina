@@ -34,10 +34,6 @@ public:
     };
 
 public:
-    // prevent constructor by default
-    SweetBerryBushBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 79
@@ -112,8 +108,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SweetBerryBushBlock(::std::string const& nameId, int id);
-
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
     MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
@@ -123,16 +117,7 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static bool
-    _growBush(::BlockSource& region, ::BlockPos const& pos, bool forceFullGrowth, ::Actor* sourceEntity);
-
-    MCAPI static bool
     _pickBerries(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor& sourceEntity);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:

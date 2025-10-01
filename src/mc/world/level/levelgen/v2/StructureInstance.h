@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class BlockSource;
-class HashedString;
 namespace br::worldgen { class StructureSection; }
 namespace br::worldgen { struct Structure; }
 // clang-format on
@@ -31,9 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void placeEntities(::BlockSource& region, ::BoundingBox const& chunkBB) const;
-
-    MCNAPI ::HashedString type() const;
+    MCAPI void placeEntities(::BlockSource& region, ::BoundingBox const& chunkBB) const;
     // NOLINTEND
 };
 

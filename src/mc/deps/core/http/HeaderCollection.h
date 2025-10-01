@@ -23,6 +23,8 @@ public:
 
     MCNAPI void _addHeader(::std::string const& headerName, ::std::string const& headerValue, bool setValue);
 
+    MCNAPI bool _isSingleValueHeader(::std::string const& headerName);
+
     MCNAPI void add(::std::string const& headerName, ::std::string const& headerValue);
 
     MCNAPI void addNoSafetyChecks(::std::string const& headerName, ::std::string const& headerValue);

@@ -38,28 +38,19 @@ public:
         ::RenderParams&                                           renderParams
     );
 
-    MCNAPI void _addDataToCompoundTag(::CompoundTag& compoundTag, ::PropertyMetadata const& propertyMetadata) const;
-
     MCNAPI bool _readValueFromTag(::PropertyMetadata const& propertyMetadata, ::Tag const& tag);
+
+    MCNAPI void addAdditionalSaveDataToCompoundTag(::CompoundTag& compoundTag) const;
 
     MCNAPI void addEntryToSyncData(::PropertyMetadata const& propMetadata, ::PropertySyncData& syncData) const;
 
     MCNAPI bool getMolangValue(uint64 propertyNameHash, ::MolangScriptArg& out) const;
-
-    MCNAPI ::std::optional<::std::variant<int, float, bool, ::std::string>>
-    getValueVariant(uint64 propertyNameHash) const;
-
-    MCNAPI void readLoadedProperties(::CompoundTag const& loadedPropertyTag);
 
     MCNAPI void setAliasProperties(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::Tag>> const& aliasProperties,
         ::std::string const&                                                  aliasName,
         ::std::string const&                                                  canonicalName
     );
-
-    MCNAPI void setFloatValue(uint64 floatArrayIndex, float value);
-
-    MCNAPI void setIntValue(uint64 intArrayIndex, int value);
     // NOLINTEND
 
 public:

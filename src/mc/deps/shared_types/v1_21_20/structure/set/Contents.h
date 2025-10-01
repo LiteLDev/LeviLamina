@@ -21,15 +21,13 @@ public:
 
 public:
     // prevent constructor by default
+    Contents& operator=(Contents const&);
     Contents(Contents const&);
     Contents();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Contents&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Contents const&);
-
     MCNAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Contents&&);
 

@@ -14,22 +14,24 @@ public:
 
 public:
     // prevent constructor by default
-    ColorProxy(ColorProxy const&);
+    ColorProxy& operator=(ColorProxy const&);
     ColorProxy();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy&
-    operator=(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const&);
-
-    MCNAPI ::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy&
-    operator=(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy&&);
+    MCNAPI ColorProxy(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const&);
 
     MCNAPI bool
     operator==(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const& other) const;
 
     MCNAPI ~ColorProxy();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleAppearanceTintingComponentHelper::ColorProxy const&);
     // NOLINTEND
 
 public:

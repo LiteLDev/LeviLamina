@@ -14,13 +14,14 @@ public:
 
 public:
     // prevent constructor by default
-    ProbabilityBlockPaletteItem& operator=(ProbabilityBlockPaletteItem const&);
     ProbabilityBlockPaletteItem(ProbabilityBlockPaletteItem const&);
     ProbabilityBlockPaletteItem();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::Editor::ProbabilityBlockPaletteItem& operator=(::Editor::ProbabilityBlockPaletteItem const&);
+
     MCNAPI ::Editor::ProbabilityBlockPaletteItem& operator=(::Editor::ProbabilityBlockPaletteItem&&);
 
     MCNAPI bool operator==(::Editor::ProbabilityBlockPaletteItem const& other) const;

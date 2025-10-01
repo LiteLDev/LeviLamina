@@ -294,7 +294,7 @@ public:
 
     MCAPI void $postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
 
-    MCAPI void $postProcessMobsAt(::BlockSource& region, ::BoundingBox const& chunkBB) const;
+    MCFOLD void $postProcessMobsAt(::BlockSource& region, ::BoundingBox const& chunkBB) const;
 
     MCAPI bool $saveLiveChunk(::LevelChunk& lc);
 

@@ -96,6 +96,13 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCAPI static ::Container*
+    getContainerHelper(::Player& player, ::BlockActorType blockActorType, ::BlockPos const& blockPos);
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(

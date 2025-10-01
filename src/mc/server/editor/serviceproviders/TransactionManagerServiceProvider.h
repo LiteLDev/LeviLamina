@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/EntityOperation.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/editor/EntityOperation.h"
 
 // auto generated forward declare list
 // clang-format off

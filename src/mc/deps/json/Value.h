@@ -358,6 +358,8 @@ public:
 
     MCFOLD ::Json::ValueIterator end();
 
+    MCAPI ::Json::Value get(uint index, ::Json::Value const& defaultValue) const;
+
     MCAPI ::Json::Value get(::std::string const& key, ::Json::Value const& defaultValue) const;
 
     MCAPI ::Json::Value get(char const* key, ::Json::Value const& defaultValue) const;

@@ -26,20 +26,20 @@ public:
     // vIndex: 20
     virtual bool isThrowable() const /*override*/;
 
-    // vIndex: 77
+    // vIndex: 79
     virtual ::Actor*
     createProjectileActor(::BlockSource& region, ::ItemStack const&, ::Vec3 const& pos, ::Vec3 const& direction) const
         /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
         /*override*/;
 
-    // vIndex: 94
-    virtual ::HashedString const& getCooldownType() const /*override*/;
+    // vIndex: 96
+    virtual ::HashedString const& getCooldownCategory() const /*override*/;
 
-    // vIndex: 95
-    virtual int getCooldownTime() const /*override*/;
+    // vIndex: 97
+    virtual int getCooldownDuration() const /*override*/;
 
     // vIndex: 0
     virtual ~IceBombItem() /*override*/ = default;
@@ -48,7 +48,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& ICE_BOMB_COOLDOWN();
+    MCAPI static ::HashedString const& COOLDOWN_CATEGORY();
     // NOLINTEND
 
 public:
@@ -63,9 +63,9 @@ public:
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI ::HashedString const& $getCooldownType() const;
+    MCAPI ::HashedString const& $getCooldownCategory() const;
 
-    MCFOLD int $getCooldownTime() const;
+    MCFOLD int $getCooldownDuration() const;
     // NOLINTEND
 
 public:

@@ -50,7 +50,7 @@ public:
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
-    virtual ~LanternBlock() /*override*/ = default;
+    virtual ~LanternBlock() /*override*/;
     // NOLINTEND
 
 public:
@@ -61,6 +61,12 @@ public:
     MCAPI bool _couldHang(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:

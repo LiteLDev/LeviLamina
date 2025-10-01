@@ -17,7 +17,7 @@ struct ParticleLifetimeExpireIfInBlocksComponent : public ::SharedTypes::v1_20_8
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk480844;
+    ::ll::UntypedStorage<8, 24> mUnk193949;
     // NOLINTEND
 
 public:

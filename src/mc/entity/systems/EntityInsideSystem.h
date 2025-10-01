@@ -12,7 +12,6 @@
 // clang-format off
 class Actor;
 class ActorOwnerComponent;
-class Block;
 class FreezingComponent;
 class LocalConstBlockSource;
 class StrictEntityContext;
@@ -47,8 +46,6 @@ namespace EntityInsideSystem {
 // functions
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createCleanupSystem();
-
-MCNAPI bool isAir(::Block const& block);
 
 MCNAPI void onBoatAboveBubbleColumn(::Actor& actor);
 

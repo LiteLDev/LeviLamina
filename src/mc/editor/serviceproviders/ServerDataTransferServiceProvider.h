@@ -22,7 +22,8 @@ public:
     // vIndex: 1
     virtual void requestData(
         ::std::string const&,
-        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const&
+        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const&,
+        bool
     ) = 0;
 
     // vIndex: 2

@@ -60,10 +60,10 @@ public:
 
     // vIndex: 6
     virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension&         dimension,
-        ::BiomeSource const& biomeSource,
-        ::Random&            random,
-        ::ChunkPos const&    chunkPos,
+        ::Dimension& dimension,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& chunkPos,
         ::IPreliminarySurfaceProvider const&
     ) /*override*/;
 
@@ -96,10 +96,10 @@ public:
     );
 
     MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension&         dimension,
-        ::BiomeSource const& biomeSource,
-        ::Random&            random,
-        ::ChunkPos const&    chunkPos,
+        ::Dimension& dimension,
+        ::BiomeSource const&,
+        ::Random&         random,
+        ::ChunkPos const& chunkPos,
         ::IPreliminarySurfaceProvider const&
     );
     // NOLINTEND

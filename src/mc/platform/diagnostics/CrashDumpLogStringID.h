@@ -93,5 +93,7 @@ enum class CrashDumpLogStringID : ushort {
     AppSurfaceDestroyed                     = 87,
     VirtualAllocatorOutOfMemory             = 88,
     MimallocOutOfMemory                     = 89,
-    Count                                   = 90,
+    FileOpenError                           = 90,
+    FileFlushFailed                         = 91,
+    Count                                   = 92,
 };

@@ -56,12 +56,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _placeRoot(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool _canPlaceRoot(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
 
-    MCNAPI ::std::vector<::BlockPos>
+    MCAPI void _placeRoot(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random) const;
+
+    MCAPI ::std::vector<::BlockPos>
     _potentialRootPositions(::BlockPos const& pos, uchar prevDir, ::Random& random, ::BlockPos const& origin) const;
 
-    MCNAPI bool _simulateRoots(
+    MCAPI bool _simulateRoots(
         ::IBlockWorldGenAPI&            target,
         ::Random&                       random,
         ::BlockPos const&               rootPos,
@@ -76,7 +78,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $placeRoots(
+    MCAPI ::std::optional<::BlockPos> $placeRoots(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
         ::Random&            random,

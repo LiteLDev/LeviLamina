@@ -19,12 +19,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockTypeRegistryRWLock();
+    MCAPI BlockTypeRegistryRWLock();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };

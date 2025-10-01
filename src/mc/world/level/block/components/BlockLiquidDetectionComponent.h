@@ -21,6 +21,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::set<::LiquidType> const& supportedLiquids();
+    MCAPI static ::std::set<::LiquidType> const& supportedLiquids();
     // NOLINTEND
 };

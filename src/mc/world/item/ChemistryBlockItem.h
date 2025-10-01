@@ -14,7 +14,7 @@ class ChemistryBlockItem : public ::BlockItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 97
+    // vIndex: 99
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
     // vIndex: 0

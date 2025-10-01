@@ -66,8 +66,6 @@ public:
 
     MCNAPI void _onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
 
-    MCNAPI bool _shouldDoSave() const;
-
     MCNAPI void registerForLevelChunkManagerEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
     MCNAPI ~LevelChunkSaveManager();

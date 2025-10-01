@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/file/FileAccessType.h"
-#include "mc/deps/core/file/LevelStorageState.h"
 #include "mc/deps/core/file/WriteOperation.h"
 #include "mc/deps/core/file/file_system/TransactionFlags.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -132,7 +131,7 @@ public:
     virtual void resetCanAttemptExtendSize();
 
     // vIndex: 16
-    virtual ::Core::Result getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
+    virtual ::Core::Result getExtendSizeThreshold(uint64&) const;
 
     // vIndex: 17
     virtual void attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
@@ -175,7 +174,7 @@ public:
     virtual uint64 getTransactionWriteSizeLimit() const;
 
     // vIndex: 29
-    virtual ::Core::Result setSaveDataIcon(::Core::PathView iconPath);
+    virtual ::Core::Result setSaveDataIcon(::Core::PathView);
 
     // vIndex: 30
     virtual bool shouldAllowCommit() const;
@@ -193,12 +192,15 @@ public:
     virtual ::std::optional<::std::string> getIntegrityResults() const;
 
     // vIndex: 35
-    virtual ::Core::Result _commit();
+    virtual bool shouldRecordFileError(::Core::PathView, ::std::error_code) const;
 
     // vIndex: 36
-    virtual ::Core::Result _onTransactionsEmpty(bool fromChild);
+    virtual ::Core::Result _commit();
 
     // vIndex: 37
+    virtual ::Core::Result _onTransactionsEmpty(bool fromChild);
+
+    // vIndex: 38
     virtual void _onTeardown();
     // NOLINTEND
 
@@ -221,15 +223,9 @@ public:
 
     MCNAPI ::Core::Result _endTransaction(::Core::FileSystemImpl* pTransaction, bool fromChild);
 
-    MCNAPI void _notifyEndWrite();
-
     MCNAPI bool canWrite() const;
 
     MCNAPI void checkUserStorage();
-
-    MCNAPI bool isOutOfDiskSpaceError() const;
-
-    MCNAPI void notifyCriticalDiskError(::Core::LevelStorageState const& errorCode);
     // NOLINTEND
 
 public:
@@ -296,7 +292,7 @@ public:
 
     MCNAPI void $resetCanAttemptExtendSize();
 
-    MCNAPI ::Core::Result $getExtendSizeThreshold(uint64& outExtendSizeThreshold) const;
+    MCNAPI ::Core::Result $getExtendSizeThreshold(uint64&) const;
 
     MCNAPI void $attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
 
@@ -326,7 +322,7 @@ public:
 
     MCNAPI uint64 $getTransactionWriteSizeLimit() const;
 
-    MCNAPI ::Core::Result $setSaveDataIcon(::Core::PathView iconPath);
+    MCNAPI ::Core::Result $setSaveDataIcon(::Core::PathView);
 
     MCNAPI bool $shouldAllowCommit() const;
 
@@ -337,6 +333,8 @@ public:
     MCNAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
 
     MCNAPI ::std::optional<::std::string> $getIntegrityResults() const;
+
+    MCNAPI bool $shouldRecordFileError(::Core::PathView, ::std::error_code) const;
 
     MCNAPI ::Core::Result $_commit();
 

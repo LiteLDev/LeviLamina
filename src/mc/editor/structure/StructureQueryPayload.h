@@ -11,14 +11,13 @@ class StructureQueryPayload : public ::Editor::Network::NetworkPayload<::Editor:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 168> mUnkb3cb5c;
+    ::ll::UntypedStorage<8, 176> mUnkb3cb5c;
     ::ll::UntypedStorage<1, 1>   mUnk279361;
     ::ll::UntypedStorage<8, 24>  mUnkdba03d;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    StructureQueryPayload& operator=(StructureQueryPayload const&);
     StructureQueryPayload(StructureQueryPayload const&);
     StructureQueryPayload();
 
@@ -27,6 +26,12 @@ public:
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~StructureQueryPayload() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Editor::Network::StructureQueryPayload& operator=(::Editor::Network::StructureQueryPayload const&);
     // NOLINTEND
 
 public:

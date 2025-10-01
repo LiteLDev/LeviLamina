@@ -14,15 +14,13 @@ public:
 
 public:
     // prevent constructor by default
+    RandomBlockStateMatch& operator=(RandomBlockStateMatch const&);
     RandomBlockStateMatch(RandomBlockStateMatch const&);
     RandomBlockStateMatch();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockStateMatch&
-    operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockStateMatch const&);
-
     MCNAPI ~RandomBlockStateMatch();
     // NOLINTEND
 

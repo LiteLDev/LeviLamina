@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/file/ZipProgress.h"
+#include "mc/deps/core/string/BasicStackString.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -139,12 +140,6 @@ public:
         // NOLINTEND
 
     public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void setProgressMessage(::std::string const& message);
-        // NOLINTEND
-
-    public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
@@ -170,6 +165,9 @@ public:
         // IWorldConverter inner types define
         using PreExportConvertedCallback = ::std::function<void(::LevelData&)>;
 
+        using InTaskFilePathCallBack =
+            ::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>;
+
     public:
         // virtual functions
         // NOLINTBEGIN
@@ -191,7 +189,8 @@ public:
             ::std::shared_ptr<::FileArchiver::ExportData>&,
             ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter>,
             ::Bedrock::Threading::Async<void>&,
-            ::std::function<void(::LevelData&)>
+            ::std::function<void(::LevelData&)>,
+            ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>>
         ) = 0;
         // NOLINTEND
 
@@ -320,7 +319,9 @@ public:
         ::FileArchiver::ShowToast                      showToast,
         ::Bedrock::Threading::Async<void>              preTaskHandle,
         ::std::function<void(::FileArchiver::Result&)> cleanupTask,
-        ::std::function<void(::LevelData&)>            convertPreExportCallback
+        ::std::function<void(::LevelData&)>            convertPreExportCallback,
+        ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>>
+            pathCallbacks
     );
 
     MCAPI void _exportLevelFiles(
@@ -354,8 +355,10 @@ public:
         ::Level*                            level,
         ::Core::Path const&                 exportFilePath,
         ::std::function<void(::LevelData&)> preExportConvertedCallback,
-        ::FileArchiver::ExportType          exportType,
-        ::FileArchiver::ShowToast           toast
+        ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>>
+                                   pathCallbacks,
+        ::FileArchiver::ExportType exportType,
+        ::FileArchiver::ShowToast  toast
     );
 
     MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result> exportCurrentLevel(

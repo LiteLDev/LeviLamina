@@ -36,7 +36,11 @@ MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(
 
 MCNAPI ::std::vector<::std::string> const getImportantFiles();
 
+MCNAPI ::std::string getLevelIDFromPath(::Core::Path const& levelRootPath, ::Core::Path const& worldsPath);
+
 MCNAPI bool isLevelMarkedForSync(::Core::Path const& directory);
+
+MCNAPI void makeReadableLevelnameFile(::Core::Path const& fullPath, ::std::string const& name);
 
 MCNAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
 

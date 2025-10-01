@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BiomeSource;
 class Dimension;
 class Random;
 // clang-format on
@@ -41,23 +40,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    BastionStart(::Dimension& generator, ::BiomeSource const& biomeSource, ::Random& random, int chunkX, int chunkZ);
+    MCAPI BastionStart(::Dimension& generator, ::Random& random, int chunkX, int chunkZ);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::Dimension& generator, ::BiomeSource const& biomeSource, ::Random& random, int chunkX, int chunkZ);
+    MCAPI void* $ctor(::Dimension& generator, ::Random& random, int chunkX, int chunkZ);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI ::std::string_view $getStructureName() const;
+    MCAPI ::std::string_view $getStructureName() const;
     // NOLINTEND
 
 public:

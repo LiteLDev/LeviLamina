@@ -37,8 +37,6 @@ public:
         ::CommandPermissionLevel               opCommandPermissionLevel
     );
 
-    MCNAPI bool fileExists() const;
-
     MCNAPI ::std::vector<::std::string> getXUIDsByPermission(::PlayerPermissionLevel permission) const;
 
     MCNAPI bool isPermissionsSet(::std::string const& xuid, ::PlayerPermissionLevel permission) const;

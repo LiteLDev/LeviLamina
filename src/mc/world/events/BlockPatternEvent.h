@@ -22,4 +22,21 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext> const>             mEntity;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle> const> mBlockSourceHandle;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BlockPatternEvent& operator=(BlockPatternEvent const&);
+    BlockPatternEvent();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI BlockPatternEvent(::BlockPatternEvent const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPatternEvent const&);
+    // NOLINTEND
 };

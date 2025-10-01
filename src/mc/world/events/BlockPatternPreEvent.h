@@ -7,22 +7,9 @@
 
 struct BlockPatternPreEvent : public ::BlockPatternEvent {
 public:
-    // prevent constructor by default
-    BlockPatternPreEvent& operator=(BlockPatternPreEvent const&);
-    BlockPatternPreEvent();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockPatternPreEvent(::BlockPatternPreEvent const&);
-
     MCAPI ~BlockPatternPreEvent();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor(::BlockPatternPreEvent const&);
     // NOLINTEND
 
 public:

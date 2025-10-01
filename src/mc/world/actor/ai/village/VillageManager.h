@@ -138,8 +138,6 @@ public:
 
     MCAPI void _loadPOIBlueprints();
 
-    MCAPI void _processNextUnclusteredPOIQuery();
-
     MCAPI void _removeEligibleVillages();
 
     MCAPI void _removeVillage(::Village& village);
@@ -162,8 +160,6 @@ public:
 
     MCAPI ::HashedString getPOIInitEventFromName(::HashedString const& name) const;
 
-    MCAPI ::HashedString const& getPOINameFromBlueprint(::Block const& block) const;
-
     MCAPI bool hasPOI(::BlockPos const& position, ::POIType type) const;
 
     MCAPI void
@@ -174,6 +170,10 @@ public:
     MCAPI bool isValidPOIType(::BlockPos const& pos, ::Block const& block) const;
 
     MCAPI void removePOI(::std::weak_ptr<::POIInstance> poi);
+
+    MCAPI void submitFindPOIQuery(::ActorUniqueID const& actorID);
+
+    MCAPI void tick(::Tick const& tick);
 
     MCAPI ::std::shared_ptr<::POIInstance> tryCreatePOI(::BlockPos const& position, ::Block const& block);
     // NOLINTEND

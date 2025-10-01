@@ -5,7 +5,7 @@
 namespace TickUtil {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::std::string const& TICKING_AREAS_PREFIX();
+MCAPI ::std::string const& TICKING_AREAS_PREFIX();
 // NOLINTEND
 
 } // namespace TickUtil

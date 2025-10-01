@@ -87,7 +87,7 @@ public:
     // vIndex: 24
     virtual void normalTick() /*override*/;
 
-    // vIndex: 146
+    // vIndex: 147
     virtual void pushActors() /*override*/;
 
     // vIndex: 64
@@ -117,8 +117,6 @@ public:
     MCAPI void _dropItem(::ItemStack const& item);
 
     MCAPI bool _trySwapItem(::Player& player, ::SharedTypes::Legacy::EquipmentSlot slot);
-
-    MCAPI void _updatePoseFromSynchedData();
 
     MCAPI void setPoseIndex(int poseIndex);
     // NOLINTEND

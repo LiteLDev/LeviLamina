@@ -50,34 +50,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ComponentItemComponentData_v1_20_40(::ComponentItemComponentData_v1_20_40 const&);
+    MCAPI ComponentItemComponentData_v1_20_40(::ComponentItemComponentData_v1_20_40 const&);
 
-    MCNAPI ComponentItemComponentData_v1_20_40(::ComponentItemComponentData_v1_20_40&&);
+    MCAPI ComponentItemComponentData_v1_20_40(::ComponentItemComponentData_v1_20_40&&);
 
-    MCNAPI ::ComponentItemComponentData_v1_20_40& operator=(::ComponentItemComponentData_v1_20_40&&);
+    MCAPI ::ComponentItemComponentData_v1_20_40& operator=(::ComponentItemComponentData_v1_20_40&&);
 
-    MCNAPI ::ComponentItemComponentData_v1_20_40& operator=(::ComponentItemComponentData_v1_20_40 const&);
+    MCAPI ::ComponentItemComponentData_v1_20_40& operator=(::ComponentItemComponentData_v1_20_40 const&);
 
-    MCNAPI ~ComponentItemComponentData_v1_20_40();
+    MCAPI ~ComponentItemComponentData_v1_20_40();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ComponentItemComponentData_v1_20_40 const&);
+    MCAPI void* $ctor(::ComponentItemComponentData_v1_20_40 const&);
 
-    MCNAPI void* $ctor(::ComponentItemComponentData_v1_20_40&&);
+    MCAPI void* $ctor(::ComponentItemComponentData_v1_20_40&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

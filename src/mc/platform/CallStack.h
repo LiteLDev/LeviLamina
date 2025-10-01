@@ -55,6 +55,9 @@ public:
         // NOLINTBEGIN
         MCAPI FrameWithContext(::Bedrock::CallStack::FrameWithContext&&);
 
+        MCAPI
+        FrameWithContext(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
+
         MCAPI ~FrameWithContext();
         // NOLINTEND
 
@@ -62,12 +65,15 @@ public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::Bedrock::CallStack::FrameWithContext&&);
+
+        MCAPI void*
+        $ctor(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

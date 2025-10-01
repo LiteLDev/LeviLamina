@@ -30,13 +30,5 @@ public:
     MCNAPI void _removeRef(::BehaviorTreeDefinitionPtr& ref);
 
     MCNAPI ::BehaviorTreeDefinitionPtr tryGetDefinition(::std::string const& defId);
-
-    MCNAPI ~AutomationBehaviorTreeGroup();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };

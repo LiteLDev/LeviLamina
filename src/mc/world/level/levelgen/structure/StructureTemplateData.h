@@ -35,51 +35,51 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StructureTemplateData();
+    MCAPI StructureTemplateData();
 
-    MCNAPI ::StructureLoadResult _parseBlockIndices(::CompoundTag const& structureTag);
+    MCAPI ::StructureLoadResult _parseBlockIndices(::CompoundTag const& structureTag);
 
-    MCNAPI ::StructureLoadResult _parseEntities(::CompoundTag const& structureTag);
+    MCAPI ::StructureLoadResult _parseEntities(::CompoundTag const& structureTag);
 
-    MCNAPI ::StructureLoadResult _parsePalettes(::CompoundTag const& structureTag);
+    MCAPI ::StructureLoadResult _parsePalettes(::CompoundTag const& structureTag);
 
-    MCNAPI ::StructureLoadResult _parseSize(::CompoundTag const& tag);
+    MCAPI ::StructureLoadResult _parseSize(::CompoundTag const& tag);
 
-    MCNAPI ::StructureLoadResult _parseStructureWorldOrigin(::CompoundTag const& tag);
+    MCAPI ::StructureLoadResult _parseStructureWorldOrigin(::CompoundTag const& tag);
 
-    MCNAPI void _saveBlockIndices(::CompoundTag& structureTag) const;
+    MCAPI void _saveBlockIndices(::CompoundTag& structureTag) const;
 
-    MCNAPI void _saveEntities(::CompoundTag& structureTag) const;
+    MCAPI void _saveEntities(::CompoundTag& structureTag) const;
 
-    MCNAPI void _savePalettes(::CompoundTag& structureTag) const;
+    MCAPI void _savePalettes(::CompoundTag& structureTag) const;
 
-    MCNAPI ::StructureBlockPalette const* getPalette(::std::string const& name) const;
+    MCAPI ::StructureBlockPalette const* getPalette(::std::string const& name) const;
 
-    MCNAPI bool load(::CompoundTag const& tag);
+    MCAPI bool load(::CompoundTag const& tag);
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> save() const;
+    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
-    MCNAPI void setBlockIndices(::std::vector<int> blockIndices);
+    MCAPI void setBlockIndices(::std::vector<int> blockIndices);
 
-    MCNAPI void setExtraBlockIndices(::std::vector<int> extraBlockIndices);
+    MCAPI void setExtraBlockIndices(::std::vector<int> extraBlockIndices);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& DEFAULT_PALETTE_NAME();
+    MCAPI static ::std::string const& DEFAULT_PALETTE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

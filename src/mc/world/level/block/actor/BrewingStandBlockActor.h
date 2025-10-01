@@ -52,7 +52,7 @@ public:
     // vIndex: 12
     virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
-    // vIndex: 26
+    // vIndex: 25
     virtual ::std::string getName() const /*override*/;
 
     // vIndex: 21
@@ -79,10 +79,10 @@ public:
     // vIndex: 33
     virtual bool canPullOutItem(int slot, int face, ::ItemStack const&) const /*override*/;
 
-    // vIndex: 32
+    // vIndex: 31
     virtual ::Container* getContainer() /*override*/;
 
-    // vIndex: 31
+    // vIndex: 30
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 1
@@ -111,51 +111,51 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void brew();
+    MCAPI void brew();
 
-    MCNAPI bool canBrew();
+    MCAPI bool canBrew();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCNAPI ::std::string $getName() const;
+    MCFOLD ::std::string $getName() const;
 
-    MCNAPI int $getMaxStackSize() const;
+    MCFOLD int $getMaxStackSize() const;
 
-    MCNAPI int $getContainerSize() const;
+    MCFOLD int $getContainerSize() const;
 
-    MCNAPI void $startOpen(::Actor&);
+    MCFOLD void $startOpen(::Actor&);
 
-    MCNAPI void $stopOpen(::Actor& actor);
+    MCFOLD void $stopOpen(::Actor& actor);
 
-    MCNAPI void $setContainerChanged(int slot);
+    MCFOLD void $setContainerChanged(int slot);
 
-    MCNAPI void $onRemoved(::BlockSource&);
+    MCFOLD void $onRemoved(::BlockSource&);
 
-    MCNAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
+    MCAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
 
-    MCNAPI bool $canPullOutItem(int slot, int face, ::ItemStack const&) const;
+    MCAPI bool $canPullOutItem(int slot, int face, ::ItemStack const&) const;
 
-    MCNAPI ::Container* $getContainer();
+    MCFOLD ::Container* $getContainer();
 
-    MCNAPI ::Container const* $getContainer() const;
+    MCFOLD ::Container const* $getContainer() const;
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
-    MCNAPI void $onChanged(::BlockSource& region);
+    MCAPI void $onChanged(::BlockSource& region);
 
-    MCNAPI void $onMove();
+    MCFOLD void $onMove();
 
-    MCNAPI void $serverInitItemStackIds(
+    MCAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged

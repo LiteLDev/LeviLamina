@@ -21,13 +21,14 @@ public:
 
 public:
     // prevent constructor by default
-    ParticleCurve& operator=(ParticleCurve const&);
     ParticleCurve();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ParticleCurve(::SharedTypes::v1_20_80::ParticleCurve const&);
+
+    MCNAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve const&);
 
     MCNAPI ::SharedTypes::v1_20_80::ParticleCurve& operator=(::SharedTypes::v1_20_80::ParticleCurve&&);
     // NOLINTEND

@@ -13,7 +13,6 @@ public:
 
 public:
     // prevent constructor by default
-    SentryEnvelopePayloadStacktraceFrame& operator=(SentryEnvelopePayloadStacktraceFrame const&);
     SentryEnvelopePayloadStacktraceFrame(SentryEnvelopePayloadStacktraceFrame const&);
     SentryEnvelopePayloadStacktraceFrame();
 
@@ -21,6 +20,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::SentryEnvelopePayloadStacktraceFrame& operator=(::SentryEnvelopePayloadStacktraceFrame&&);
+
+    MCNAPI ::SentryEnvelopePayloadStacktraceFrame& operator=(::SentryEnvelopePayloadStacktraceFrame const&);
 
     MCNAPI ~SentryEnvelopePayloadStacktraceFrame();
     // NOLINTEND

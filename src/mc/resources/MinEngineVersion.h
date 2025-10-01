@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class SemVersion;
-// clang-format on
-
 class MinEngineVersion {
 public:
     // member variables
@@ -26,8 +21,6 @@ public:
     // NOLINTBEGIN
     MCAPI MinEngineVersion(::MinEngineVersion const&);
 
-    MCAPI explicit MinEngineVersion(::SemVersion const& version);
-
     MCAPI ::MinEngineVersion& operator=(::MinEngineVersion&&);
 
     MCAPI ~MinEngineVersion();
@@ -43,8 +36,6 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::MinEngineVersion const&);
-
-    MCAPI void* $ctor(::SemVersion const& version);
     // NOLINTEND
 
 public:

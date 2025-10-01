@@ -31,8 +31,6 @@ public:
 
     MCNAPI explicit WebToken(::std::string token);
 
-    MCNAPI void _parse(::Json::Value& value, ::std::string const& data);
-
     MCNAPI ::std::string _signatureToDER() const;
 
     MCNAPI ::std::string toString() const;

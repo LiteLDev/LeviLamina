@@ -66,8 +66,6 @@ public:
 
     MCAPI void fillIn(::LayeredAbilities& layeredAbilities) const;
 
-    MCAPI ::SerializedAbilitiesData& operator=(::SerializedAbilitiesData&&);
-
     MCAPI ~SerializedAbilitiesData();
     // NOLINTEND
 
@@ -88,6 +86,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

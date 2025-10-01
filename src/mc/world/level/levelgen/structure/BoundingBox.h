@@ -77,11 +77,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BoundingBox(int _x0, int _y0, int _z0, int _x1, int _y1, int _z1);
-
     MCAPI void applyTransformation(::BlockPos const& pivot, ::Rotation rotationXZ, bool mirrorX, bool mirrorZ);
-
-    MCFOLD bool isValid() const;
     // NOLINTEND
 
 public:
@@ -101,13 +97,5 @@ public:
         int depth,
         int orientation
     );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCFOLD void* $ctor();
-
-    MCAPI void* $ctor(int _x0, int _y0, int _z0, int _x1, int _y1, int _z1);
     // NOLINTEND
 };

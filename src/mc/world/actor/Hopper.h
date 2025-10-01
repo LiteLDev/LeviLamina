@@ -30,10 +30,6 @@ public:
 
     MCAPI ::std::vector<::Container*> _getContainersAt(::BlockSource& region, ::Vec3 const& pos);
 
-    MCAPI bool _isEmptyContainer(::Container& container, int face);
-
-    MCAPI bool _isFullContainer(::Container& container, int);
-
     MCAPI bool
     _pushOutItems(::BlockSource& region, ::Container& fromContainer, ::Vec3 const& position, int attachedFace);
 

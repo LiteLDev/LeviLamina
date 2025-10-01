@@ -183,6 +183,8 @@ public:
 
     MCNAPI void _sendSmallFlame(::BlockSource& region, ::Vec3 center);
 
+    MCNAPI void _setUpdated(::BlockSource& region);
+
     MCNAPI void _spawnItemSpawner(::BlockSource& region, ::Vec3 pos, ::ItemStack const& itemToSpawn);
 
     MCNAPI ::std::optional<::ActorUniqueID> _spawnMob(::BlockSource& region, ::BlockPos blockActorPos, ::Vec3 spawnPos);
@@ -233,8 +235,6 @@ public:
     );
 
     MCNAPI static bool _isAllowedToSpawnInLevel(::Level& level);
-
-    MCNAPI static bool _isOminous(::BlockSource& region, ::BlockPos pos);
 
     MCNAPI static void _removeMobByGameplay(::Level& level, ::Actor& mob);
 

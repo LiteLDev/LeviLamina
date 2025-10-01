@@ -29,14 +29,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _setupMaterials();
+    MCAPI static void _setupMaterials();
 
-    MCNAPI static ::Material const& getMaterial(::MaterialType type);
+    MCAPI static ::Material const& getMaterial(::MaterialType type);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::std::unique_ptr<::Material>>& mMaterials();
+    MCAPI static ::std::vector<::std::unique_ptr<::Material>>& mMaterials();
     // NOLINTEND
 };

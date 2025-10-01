@@ -38,7 +38,6 @@ namespace ScriptModuleMinecraft { struct ScriptRawMessageInterface; }
 namespace ScriptModuleMinecraft { struct ScriptScreenDisplay; }
 namespace ScriptModuleMinecraft { struct ScriptSoundOptions; }
 namespace Scripting { class WeakLifetimeScope; }
-namespace Scripting { struct ArgumentOutOfBoundsError; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct ContextConfig; }
 namespace Scripting { struct Error; }
@@ -69,25 +68,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 4
+    // vIndex: 3
     virtual ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
         lookAt(::Actor& self, ::Vec3 const& targetLocation) /*override*/;
 
-    // vIndex: 13
-    virtual ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptInvalidActorError,
-        ::Scripting::ArgumentOutOfBoundsError,
-        ::Scripting::UnsupportedAPIError>
-    applyImpulseStable(::Actor& self, ::Vec3 const& vector) /*override*/;
-
-    // vIndex: 3
-    virtual ::Scripting::
-        Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
-        clearVelocityStable(::Actor& self) /*override*/;
-
-    // vIndex: 14
+    // vIndex: 12
     virtual ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
         remove(::Actor& self) /*override*/;
@@ -98,10 +84,10 @@ public:
     // vIndex: 1
     virtual void setLoading(::Actor const& actor) /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 16
+    // vIndex: 14
     virtual ::ScoreboardId const& _getScoreboardId(::Scoreboard const& scoreboard) const /*override*/;
 
     // vIndex: 0
@@ -303,16 +289,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     $lookAt(::Actor& self, ::Vec3 const& targetLocation);
-
-    MCNAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptInvalidActorError,
-        ::Scripting::ArgumentOutOfBoundsError,
-        ::Scripting::UnsupportedAPIError>
-    $applyImpulseStable(::Actor& self, ::Vec3 const& vector);
-
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
-    $clearVelocityStable(::Actor& self);
 
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     $remove(::Actor& self);

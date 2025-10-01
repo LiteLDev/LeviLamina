@@ -22,13 +22,14 @@ public:
 
 public:
     // prevent constructor by default
-    UV(UV const&);
     UV();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI UV(::SharedTypes::v1_20_80::UV&&);
+
+    MCNAPI UV(::SharedTypes::v1_20_80::UV const&);
 
     MCNAPI ::SharedTypes::v1_20_80::UV& operator=(::SharedTypes::v1_20_80::UV&&);
 
@@ -47,6 +48,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::UV&&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::UV const&);
     // NOLINTEND
 
 public:

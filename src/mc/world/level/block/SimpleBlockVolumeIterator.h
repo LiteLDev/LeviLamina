@@ -19,7 +19,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
     // NOLINTEND
 
 public:

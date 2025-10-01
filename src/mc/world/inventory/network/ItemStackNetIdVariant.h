@@ -24,17 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ItemStackNetIdVariant& operator=(ItemStackNetIdVariant const&);
-    ItemStackNetIdVariant(ItemStackNetIdVariant const&);
-    ItemStackNetIdVariant();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Bedrock::Result<void> deserialize(::ReadOnlyBinaryStream& stream);
-
-    MCNAPI ::ItemStackNetIdVariant& operator=(::ItemStackNetIdVariant&&);
 
     MCNAPI ::std::string toString() const;
 

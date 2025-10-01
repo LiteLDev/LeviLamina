@@ -12,7 +12,6 @@
 // clang-format off
 class BinaryStream;
 class BlockPalette;
-class EntityContext;
 class Player;
 class ReadOnlyBinaryStream;
 // clang-format on
@@ -60,8 +59,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _setDepenetrationOverride(::EntityContext& entity);
-
     MCAPI static ::std::unique_ptr<::ComplexInventoryTransaction>
     fromType(::ComplexInventoryTransaction::Type type, ::InventoryTransaction const& transaction);
     // NOLINTEND

@@ -26,8 +26,6 @@ public:
 
 public:
     // prevent constructor by default
-    EmitterLifetimeEventsComponent& operator=(EmitterLifetimeEventsComponent const&);
-    EmitterLifetimeEventsComponent(EmitterLifetimeEventsComponent const&);
     EmitterLifetimeEventsComponent();
 
 public:
@@ -45,8 +43,13 @@ public:
     // NOLINTBEGIN
     MCNAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
 
+    MCNAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
+
     MCNAPI ::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&
     operator=(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
+
+    MCNAPI ::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&
+    operator=(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
     // NOLINTEND
 
 public:
@@ -65,6 +68,8 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
     // NOLINTEND
 
 public:

@@ -59,13 +59,13 @@ public:
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual bool checkSpawnRules(bool) /*override*/;
 
     // vIndex: 51
     virtual void setTarget(::Actor* entity) /*override*/;
 
-    // vIndex: 152
+    // vIndex: 153
     virtual float getMaxHeadXRot() /*override*/;
 
     // vIndex: 137
@@ -74,7 +74,7 @@ public:
     // vIndex: 136
     virtual void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 177
+    // vIndex: 178
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
     // vIndex: 135

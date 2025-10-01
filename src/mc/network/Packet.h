@@ -137,11 +137,14 @@ public:
     // vIndex: 12
     virtual void setSerializationMode(::SerializationMode);
 
-    // vIndex: 14
+    // vIndex: 13
+    virtual ::std::string toString() const;
+
+    // vIndex: 15
     virtual ::Bedrock::Result<void>
     _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
-    // vIndex: 13
+    // vIndex: 14
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) = 0;
     // NOLINTEND
 
@@ -186,6 +189,8 @@ public:
     MCFOLD ::SerializationMode $getSerializationMode() const;
 
     MCFOLD void $setSerializationMode(::SerializationMode);
+
+    MCFOLD ::std::string $toString() const;
 
     MCFOLD ::Bedrock::Result<void>
     $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);

@@ -5,12 +5,16 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/actor/DefinitionTrigger.h"
+#include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/LegacyTriggerItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
-class DefinitionTrigger;
+class ComponentItem;
 class HashedString;
+class ItemStack;
+class Level;
+class Player;
 struct LegacyOnCompleteTriggerItemComponentData;
 namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
@@ -31,7 +35,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 7
-    virtual void _initializeComponent() /*override*/;
+    virtual void _initializeComponent(::ComponentItem& owner) /*override*/;
 
     // vIndex: 0
     virtual ~LegacyOnCompleteTriggerItemComponent() /*override*/ = default;
@@ -41,6 +45,14 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI explicit LegacyOnCompleteTriggerItemComponent(::LegacyOnCompleteTriggerItemComponentData&& componentData);
+
+    MCAPI void _onUseTimeDepleted(
+        ::ItemUseMethod& itemUseMethod,
+        ::ItemStack const&,
+        ::ItemStack& item,
+        ::Player&    player,
+        ::Level&     level
+    );
     // NOLINTEND
 
 public:
@@ -58,7 +70,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent();
+    MCAPI void $_initializeComponent(::ComponentItem& owner);
     // NOLINTEND
 
 public:

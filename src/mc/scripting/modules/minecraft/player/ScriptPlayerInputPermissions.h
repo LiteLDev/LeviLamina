@@ -38,6 +38,9 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void>
     _setPermissionCategoryV2(::ClientInputLockCategory category, bool isEnabled);
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerInputPermissions&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerInputPermissions&&);
     // NOLINTEND
 
 public:

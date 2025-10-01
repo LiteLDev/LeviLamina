@@ -28,7 +28,6 @@ class Vec3;
 struct ActorDefinitionIdentifier;
 struct ActorFactoryData;
 struct VanillaActorData;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ActorFactory {
@@ -40,7 +39,6 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::ActorDefinitionGroup>>      mDefinitions;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorFactoryData>> mFactoryFunctions;
     ::ll::TypedStorage<8, 16, ::std::set<::std::string>>                               mExperimentalEntities;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::cereal::ReflectionCtx*>>                mCerealContext;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorComponentFactory>>               mComponentFactory;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorGoalFactory>>                    mGoalFactory;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorMigratedDefinitionFactory>>      mActorMigratedFactory;
@@ -60,7 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorFactory(::cereal::ReflectionCtx& ctx, ::Bedrock::NotNullNonOwnerPtr<::Level> level);
+    MCAPI explicit ActorFactory(::Bedrock::NotNullNonOwnerPtr<::Level> level);
 
     MCAPI void _buildSummonableActorList(
         ::Experiments const&                                                   experiments,
@@ -166,7 +164,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx& ctx, ::Bedrock::NotNullNonOwnerPtr<::Level> level);
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Level> level);
     // NOLINTEND
 
 public:

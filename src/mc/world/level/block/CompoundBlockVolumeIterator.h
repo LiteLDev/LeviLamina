@@ -45,23 +45,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CompoundBlockVolumeIterator(::CompoundBlockVolume const& vol, bool begin);
+    MCAPI CompoundBlockVolumeIterator(::CompoundBlockVolume const& vol, bool begin);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CompoundBlockVolume const& vol, bool begin);
+    MCAPI void* $ctor(::CompoundBlockVolume const& vol, bool begin);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI void $_begin();
+    MCAPI void $_begin();
 
-    MCNAPI void $_end();
+    MCFOLD void $_end();
     // NOLINTEND
 
 public:

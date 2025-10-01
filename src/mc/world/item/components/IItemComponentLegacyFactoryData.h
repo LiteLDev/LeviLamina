@@ -19,22 +19,9 @@ public:
 
     public:
         // prevent constructor by default
+        Components& operator=(Components const&);
+        Components(Components const&);
         Components();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI Components(::IItemComponentLegacyFactoryData::Components const&);
-
-        MCNAPI ::IItemComponentLegacyFactoryData::Components&
-        operator=(::IItemComponentLegacyFactoryData::Components const&);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::IItemComponentLegacyFactoryData::Components const&);
-        // NOLINTEND
     };
 
 public:

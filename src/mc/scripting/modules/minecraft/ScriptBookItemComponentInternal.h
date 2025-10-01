@@ -30,9 +30,6 @@ MCNAPI ::Scripting::Result<::PageContent, ::ScriptModuleMinecraft::ScriptBookPag
         ::ScriptModuleMinecraft::ScriptRawMessageInterface,
         ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> text
 );
-
-MCNAPI ::Scripting::Result<::PageContent, ::ScriptModuleMinecraft::ScriptBookPageContentError>
-_makePageContent(int pageIndex, ::std::string const& text);
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft::ScriptBookItemComponentInternal

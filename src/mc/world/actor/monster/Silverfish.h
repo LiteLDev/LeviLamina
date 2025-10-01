@@ -16,18 +16,18 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
-    // vIndex: 177
+    // vIndex: 178
     virtual bool isDarkEnoughToSpawn() const /*override*/;
 
     // vIndex: 139
     virtual void spawnAnim() /*override*/;
 
-    // vIndex: 171
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
-    // vIndex: 147
+    // vIndex: 148
     virtual bool checkSpawnRules(bool fromSpawner) /*override*/;
 
     // vIndex: 8
@@ -37,7 +37,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCFOLD bool $isDarkEnoughToSpawn() const;
 

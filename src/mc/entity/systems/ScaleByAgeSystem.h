@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 class ActorOwnerComponent;
-class AgeableComponent;
 class BaseGameVersion;
 class EntitySystems;
 class ScaleByAgeComponent;
@@ -17,6 +16,7 @@ class StrictEntityContext;
 struct ActorDataBoundingBoxComponent;
 struct ActorDataDirtyFlagsComponent;
 struct ActorTickedComponent;
+struct AgeableComponent;
 struct ShouldUpdateBoundingBoxRequestComponent;
 // clang-format on
 

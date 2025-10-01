@@ -16,6 +16,8 @@ MCNAPI ::std::string anonymizeIPAddress(::std::string const& ipAddress);
 
 MCNAPI ::std::string anonymizeIPv6Address(::std::string const& ipAddress);
 
+MCNAPI ::std::string append(::std::string const& lhs, ::std::string const& rhs);
+
 MCNAPI bool isValidIP(::std::string_view ipAddrStr, bool considerIPv4Valid, bool considerIPv6Valid);
 
 MCNAPI ::Util::Url::ComponentsView parseUrl(::std::string_view url);

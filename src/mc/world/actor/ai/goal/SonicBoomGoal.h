@@ -4,71 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/actor/ai/util/ExpiringTick.h"
 
 // auto generated forward declare list
 // clang-format off
 class Mob;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class SonicBoomGoal : public ::Goal {
-public:
-    // SonicBoomGoal inner types declare
-    // clang-format off
-    class Definition;
-    // clang-format on
-
-    // SonicBoomGoal inner types define
-    class Definition : public ::BaseGoalDefinition {
-    public:
-        // Definition inner types define
-        using self = ::SonicBoomGoal::Definition;
-
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>          mDuration;
-        ::ll::TypedStorage<4, 4, float>          mSpeedMultiplier;
-        ::ll::TypedStorage<4, 4, float>          mAttackDamage;
-        ::ll::TypedStorage<4, 4, float>          mAttackRangeHorizontal;
-        ::ll::TypedStorage<4, 4, float>          mAttackRangeVertical;
-        ::ll::TypedStorage<4, 4, float>          mAttackCooldown;
-        ::ll::TypedStorage<4, 4, float>          mKnockbackHorizontalStrength;
-        ::ll::TypedStorage<4, 4, float>          mKnockbackVerticalStrength;
-        ::ll::TypedStorage<4, 4, float>          mKnockbackHeightCap;
-        ::ll::TypedStorage<4, 4, float>          mDurationUntilAttackSound;
-        ::ll::TypedStorage<8, 32, ::std::string> mAttackSound;
-        ::ll::TypedStorage<8, 32, ::std::string> mChargeSound;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~Definition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SonicBoomGoal::Definition>>&
-                root
-        );
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
 public:
     // member variables
     // NOLINTBEGIN

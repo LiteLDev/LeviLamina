@@ -38,12 +38,11 @@ public:
     // prevent constructor by default
     PlayerListEntry& operator=(PlayerListEntry const&);
     PlayerListEntry(PlayerListEntry const&);
+    PlayerListEntry();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerListEntry();
-
     MCAPI explicit PlayerListEntry(::Player const& player);
 
     MCAPI ::PlayerListEntry& operator=(::PlayerListEntry&&);
@@ -60,8 +59,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::Player const& player);
     // NOLINTEND
 

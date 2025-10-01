@@ -8,7 +8,6 @@ class EntityContext;
 class Vec2;
 struct ClientInputLockComponent;
 struct MoveInputState;
-struct Tick;
 // clang-format on
 
 namespace PlayerMovement {
@@ -19,8 +18,6 @@ MCNAPI void applyInputLocks(::ClientInputLockComponent const& lockComponent, ::M
 MCNAPI ::Vec2 calculateButtonMoveVector(::MoveInputState const& inputState);
 
 MCNAPI void initializePlayer(::EntityContext& provider);
-
-MCNAPI void setElytraFlightTimeTicks(::EntityContext& provider, ::Tick const& value);
 // NOLINTEND
 
 } // namespace PlayerMovement

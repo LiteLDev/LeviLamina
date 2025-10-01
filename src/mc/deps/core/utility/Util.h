@@ -25,11 +25,9 @@ MCNAPI ::std::string base64url_decode(::std::string encoded);
 
 MCNAPI ::std::string base64url_encode(::std::string str);
 
-MCNAPI bool compareNoCase(::std::string_view lhs, ::std::string_view rhs);
-
-MCNAPI ::std::string ensureNamespace(::std::string_view id, ::std::string_view defaultNamespace);
-
 MCNAPI ::std::string ensureNamespace(::std::string const& id, ::std::string_view defaultNamespace);
+
+MCNAPI bool equalIgnoreCase(::std::string_view lhs, ::std::string_view rhs);
 
 MCNAPI ::std::string formatTickDuration(int ticks);
 
@@ -41,11 +39,11 @@ MCNAPI ::std::string generateRandomId(int modifier);
 
 MCNAPI ::std::string_view getNameWithoutNamespace(::std::string_view name);
 
+MCNAPI uint hashCodeAsUtf16(::std::string_view sv);
+
 MCNAPI bool isValidNamespaceFormat(::std::string_view name);
 
-MCNAPI bool isValidPfid(::std::string const& inputStr);
-
-MCNAPI bool isValidUTF8(::std::string const& content);
+MCNAPI bool isValidUTF8(::std::string_view content);
 
 MCNAPI bool isVanillaNamespace(::std::string const& identifier);
 
@@ -80,8 +78,6 @@ splitStringAsViews(::std::string_view s, char delim, ::std::vector<::std::string
 
 MCNAPI ::std::vector<::std::string_view> splitToViews(::std::string_view view, char delim);
 
-MCNAPI bool startsWith(::std::string_view s, ::std::string_view start);
-
 MCNAPI ::std::string& stringReplace(::std::string& s, ::std::string const& src, ::std::string const& dst, int maxCount);
 
 MCNAPI ::std::string
@@ -97,11 +93,11 @@ MCNAPI ::std::string toCamelCase(::std::string const& src, char delimiter);
 
 MCNAPI ::Util::NumberConversionResult toIntWithMinMax(::std::string_view inputStr, int& destination, int min, int max);
 
-MCNAPI ::std::string toLower(char const* inString);
-
 MCNAPI ::std::string toLower(::std::string_view inString);
 
 MCNAPI ::std::string toStringWithPaddedZeroes(uint number, uchar digitCount);
+
+MCNAPI ::std::string toUpper(::std::string_view inString);
 
 MCNAPI int utf8len(::std::string_view str);
 

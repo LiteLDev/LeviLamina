@@ -20,8 +20,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk99229f;
-    ::ll::UntypedStorage<8, 32> mUnk887f7a;
+    ::ll::UntypedStorage<8, 32> mUnk65857f;
+    ::ll::UntypedStorage<8, 32> mUnke128b3;
     ::ll::UntypedStorage<4, 8>  mUnka17ee5;
     ::ll::UntypedStorage<4, 8>  mUnkb1a7ee;
     ::ll::UntypedStorage<4, 8>  mUnkb3f0f5;
@@ -56,6 +56,8 @@ public:
     MCNAPI ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset&&);
 
     MCNAPI ::SharedTypes::v1_21_70::CameraPreset& operator=(::SharedTypes::v1_21_70::CameraPreset const&);
+
+    MCNAPI void setVerticalRotationLimit(::std::optional<::std::array<float, 2>> opt);
 
     MCNAPI ~CameraPreset();
     // NOLINTEND

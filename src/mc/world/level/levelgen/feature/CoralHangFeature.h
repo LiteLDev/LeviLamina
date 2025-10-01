@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI uchar _randomDirection(::Random& random, ::BlockSource const& region, ::BlockPos const& pos) const;
+    MCAPI uchar _randomDirection(::Random& random, ::BlockSource const& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
     // NOLINTEND
 
 public:

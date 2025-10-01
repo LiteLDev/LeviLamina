@@ -32,7 +32,7 @@ class ShieldItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 92
+    // vIndex: 94
     virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int, bool selected) const
         /*override*/;
 
@@ -49,13 +49,13 @@ public:
     // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
 
-    // vIndex: 102
+    // vIndex: 104
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
-    // vIndex: 82
+    // vIndex: 84
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 98
+    // vIndex: 100
     virtual ::InHandUpdateType getInHandUpdateType(
         ::Player const&    player,
         ::ItemStack const& oldItem,
@@ -67,25 +67,25 @@ public:
     // vIndex: 76
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
         /*override*/;
 
-    // vIndex: 89
+    // vIndex: 91
     virtual void
     readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const
         /*override*/;
 
-    // vIndex: 90
+    // vIndex: 92
     virtual void writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const /*override*/;
 
-    // vIndex: 94
-    virtual ::HashedString const& getCooldownType() const /*override*/;
+    // vIndex: 96
+    virtual ::HashedString const& getCooldownCategory() const /*override*/;
 
-    // vIndex: 95
-    virtual int getCooldownTime() const /*override*/;
+    // vIndex: 97
+    virtual int getCooldownDuration() const /*override*/;
 
-    // vIndex: 87
+    // vIndex: 89
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 52
@@ -144,9 +144,9 @@ public:
 
     MCAPI void $writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const;
 
-    MCAPI ::HashedString const& $getCooldownType() const;
+    MCAPI ::HashedString const& $getCooldownCategory() const;
 
-    MCFOLD int $getCooldownTime() const;
+    MCFOLD int $getCooldownDuration() const;
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
 

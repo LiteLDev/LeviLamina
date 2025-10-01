@@ -41,6 +41,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                  mIsVoidWorld;
     ::ll::TypedStorage<8, 8, ::Biome const*>                        mBiome;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FixedBiomeSource>> mBiomeSource;
+    ::ll::TypedStorage<2, 2, short>                                 mMaxHeight;
     // NOLINTEND
 
 public:
@@ -72,11 +73,16 @@ public:
     ) /*override*/;
 
     // vIndex: 38
-    virtual void prepareHeights(::BlockVolume&, ::ChunkPos const&, bool) /*override*/;
+    virtual void prepareHeights(::BlockVolume& box, ::ChunkPos const&, bool) /*override*/;
 
     // vIndex: 39
-    virtual void
-    prepareAndComputeHeights(::BlockVolume&, ::ChunkPos const&, ::std::vector<short>&, bool, int) /*override*/;
+    virtual void prepareAndComputeHeights(
+        ::BlockVolume&        box,
+        ::ChunkPos const&     pos,
+        ::std::vector<short>& zxHeights,
+        bool,
+        int
+    ) /*override*/;
 
     // vIndex: 37
     virtual void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks) /*override*/;
@@ -111,7 +117,7 @@ public:
     // NOLINTBEGIN
     MCAPI FlatWorldGenerator(::Dimension& dimension, uint, ::Json::Value const& generationOptionsJSON);
 
-    MCAPI void _generatePrototypeBlockValues(::FlatWorldOptions const& layersDesc, short);
+    MCAPI void _generatePrototypeBlockValues(::FlatWorldOptions const& layersDesc, short minHeight);
     // NOLINTEND
 
 public:
@@ -139,9 +145,10 @@ public:
         ::std::optional<::HashedString> biomeTag
     );
 
-    MCFOLD void $prepareHeights(::BlockVolume&, ::ChunkPos const&, bool);
+    MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const&, bool);
 
-    MCFOLD void $prepareAndComputeHeights(::BlockVolume&, ::ChunkPos const&, ::std::vector<short>&, bool, int);
+    MCAPI void
+    $prepareAndComputeHeights(::BlockVolume& box, ::ChunkPos const& pos, ::std::vector<short>& zxHeights, bool, int);
 
     MCFOLD void $garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks);
 

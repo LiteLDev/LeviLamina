@@ -12,6 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
+namespace mce { class UUID; }
 // clang-format on
 
 struct ScriptSettings {
@@ -24,7 +25,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                          mEnableEditorModules;
     ::ll::TypedStorage<8, 32, ::BaseGameVersion>                                            mBaseGameVersion;
     ::ll::TypedStorage<8, 104, ::ScriptDebuggerSettings>                                    mDebuggerSettings;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                 mExcludedScriptModules;
+    ::ll::TypedStorage<8, 24, ::std::vector<::mce::UUID>>                                   mExcludedScriptModules;
     ::ll::TypedStorage<4, 36, ::std::optional<::Scripting::WatchdogSettings>>               mWatchdogSettings;
     ::ll::TypedStorage<1, 1, bool>                                                          mDiagnosticsAutoStart;
     ::ll::TypedStorage<4, 8, ::std::optional<uint>>                                         mMaxDiagnosticsCaptureFiles;

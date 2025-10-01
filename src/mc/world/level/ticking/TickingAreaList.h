@@ -14,11 +14,6 @@ class Vec3;
 
 class TickingAreaList : public ::TickingAreaListBase {
 public:
-    // prevent constructor by default
-    TickingAreaList& operator=(TickingAreaList const&);
-    TickingAreaList();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
@@ -33,27 +28,15 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI TickingAreaList(::TickingAreaList const&);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::TickingAreaList const&);
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $removeDistantEntityAreasAndCheckForRemoved(
+    MCAPI bool $removeDistantEntityAreasAndCheckForRemoved(
         ::std::vector<::Vec3> const&                 playerPositions,
         ::std::function<void(::ITickingArea const&)> requeue,
         ::LevelStorage&                              levelStorage

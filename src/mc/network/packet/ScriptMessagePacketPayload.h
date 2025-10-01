@@ -12,6 +12,7 @@ public:
 
 public:
     // prevent constructor by default
+    ScriptMessagePacketPayload& operator=(ScriptMessagePacketPayload const&);
     ScriptMessagePacketPayload(ScriptMessagePacketPayload const&);
     ScriptMessagePacketPayload();
 
@@ -19,8 +20,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCFOLD ::ScriptMessagePacketPayload& operator=(::ScriptMessagePacketPayload&&);
-
-    MCFOLD ::ScriptMessagePacketPayload& operator=(::ScriptMessagePacketPayload const&);
 
     MCAPI ~ScriptMessagePacketPayload();
     // NOLINTEND

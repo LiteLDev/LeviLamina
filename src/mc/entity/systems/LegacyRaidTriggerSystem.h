@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/Include.h"
+#include "mc/deps/ecs/strict/OptionalGlobal.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,6 +28,16 @@ public:
         ::StateVectorComponent const&    stateVectorComponent,
         ::ActorOwnerComponent&           actorOwnerComponent,
         ::VillageManagerComponent const& villageManagerComponent
+    );
+
+    MCNAPI static void _tickRaidTriggerSystem(
+        ::OptionalGlobal<::VillageManagerComponent const> villageManagerComponent,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorTickedComponent const, ::RaidTriggerComponent const>,
+            ::DimensionTypeComponent const,
+            ::StateVectorComponent const,
+            ::ActorOwnerComponent> view
     );
 
     MCNAPI static ::TickingSystemWithInfo createSystem();

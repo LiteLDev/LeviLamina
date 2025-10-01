@@ -108,9 +108,10 @@ public:
 
     // vIndex: 7
     virtual void loadLanguageKeywordsFromPack(
-        ::PackManifest const&               manifest,
-        ::PackAccessStrategy const&         accessStrategy,
-        ::std::vector<::std::string> const& languageCodes
+        ::PackManifest const&                                manifest,
+        ::PackAccessStrategy const&                          accessStrategy,
+        ::std::vector<::std::string> const&                  languageCodes,
+        ::std::optional<::std::vector<::std::string>> const& additionalLocKeys
     ) /*override*/;
 
     // vIndex: 9
@@ -215,6 +216,8 @@ public:
     MCAPI ::std::string& _getLocaleCodeFor(::std::string const& code);
 
     MCAPI void _notifyLanguagesLoaded();
+
+    MCAPI void _setLanguageSupportsHypenSplitting(::Localization const& localization);
     // NOLINTEND
 
 public:
@@ -253,9 +256,10 @@ public:
     $loadLanguageKeywordsFromPack(::PackManifest const& manifest, ::PackAccessStrategy const& accessStrategy);
 
     MCAPI void $loadLanguageKeywordsFromPack(
-        ::PackManifest const&               manifest,
-        ::PackAccessStrategy const&         accessStrategy,
-        ::std::vector<::std::string> const& languageCodes
+        ::PackManifest const&                                manifest,
+        ::PackAccessStrategy const&                          accessStrategy,
+        ::std::vector<::std::string> const&                  languageCodes,
+        ::std::optional<::std::vector<::std::string>> const& additionalLocKeys
     );
 
     MCAPI void $appendLanguageStringsFromPack(

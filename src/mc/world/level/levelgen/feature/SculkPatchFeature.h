@@ -45,13 +45,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _canSpreadFrom(::IBlockWorldGenAPI& target, ::BlockPos const& originPos) const;
+    MCAPI bool _canSpreadFrom(::IBlockWorldGenAPI& target, ::BlockPos const& originPos) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

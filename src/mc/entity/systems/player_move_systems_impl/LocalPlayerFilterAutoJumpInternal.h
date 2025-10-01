@@ -10,6 +10,7 @@
 #include "mc/deps/ecs/strict/GlobalRead.h"
 #include "mc/deps/ecs/strict/GlobalWrite.h"
 #include "mc/deps/ecs/strict/IStrictTickingSystem.h"
+#include "mc/deps/ecs/strict/OptionalGlobal.h"
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
@@ -229,6 +230,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCNAPI static bool _isAutoJumpEnabledGlobally(::OptionalGlobal<::ExternalDataComponent const> data);
+
     MCNAPI static void _setJumpingIfPlayerCanAutoJump(
         ::StrictEntityContext const&              entity,
         ::AABBShapeComponent const&               aabbShape,

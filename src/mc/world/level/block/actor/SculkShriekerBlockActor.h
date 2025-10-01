@@ -68,43 +68,49 @@ public:
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
     // vIndex: 0
-    virtual ~SculkShriekerBlockActor() /*override*/ = default;
+    virtual ~SculkShriekerBlockActor() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit SculkShriekerBlockActor(::BlockPos const& pos);
+    MCAPI explicit SculkShriekerBlockActor(::BlockPos const& pos);
 
-    MCNAPI void tryRespond(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI void tryRespond(::BlockSource& region, ::BlockPos const& pos);
 
-    MCNAPI bool tryShriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
+    MCAPI bool tryShriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _canRespond(::BlockSource const& region, ::BlockPos const& pos);
+    MCAPI static bool _canRespond(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCNAPI static ::Player* tryGetPlayerInHierarchy(::Actor* actor);
+    MCAPI static ::Player* tryGetPlayerInHierarchy(::Actor* actor);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos);
+    MCAPI void* $ctor(::BlockPos const& pos);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::BlockSource& region);
+    MCFOLD void $tick(::BlockSource& region);
 
-    MCNAPI void $onRemoved(::BlockSource& region);
+    MCFOLD void $onRemoved(::BlockSource& region);
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
     // NOLINTEND
 
 public:

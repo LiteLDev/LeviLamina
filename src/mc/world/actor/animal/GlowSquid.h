@@ -28,15 +28,15 @@ public:
     virtual void normalTick() /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
-    // vIndex: 171
+    // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
 
     // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
-    // vIndex: 177
+    // vIndex: 178
     virtual ::SharedTypes::Legacy::LevelSoundEvent _getInkSquirtSoundEvent() const /*override*/;
 
     // vIndex: 8
@@ -54,7 +54,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $normalTick();
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
 

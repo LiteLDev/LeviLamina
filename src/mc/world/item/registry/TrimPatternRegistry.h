@@ -25,6 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void initializeServer(::ItemRegistryRef itemRegistry);
+    MCAPI ::std::optional<::HashedString> getPatternIdByItem(::HashedString const& itemId) const;
+
+    MCAPI void initializeServer(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 };

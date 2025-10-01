@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_20_80 { struct ParticleEffectData; }
+namespace SharedTypes::v1_21_100 { struct CameraDocument; }
+namespace SharedTypes::v1_21_110 { struct VoxelShapeDocument; }
 // clang-format on
 
 namespace Bedrock::Resources {
@@ -33,6 +35,12 @@ public:
 
     // vIndex: 1
     virtual ::Puv::Loader<::SharedTypes::v1_20_80::ParticleEffectData> const& getParticleLoader() const = 0;
+
+    // vIndex: 2
+    virtual ::Puv::Loader<::SharedTypes::v1_21_100::CameraDocument> const& getCameraLoader() const = 0;
+
+    // vIndex: 3
+    virtual ::Puv::Loader<::SharedTypes::v1_21_110::VoxelShapeDocument> const& getVoxelShapeLoader() const = 0;
     // NOLINTEND
 
 public:

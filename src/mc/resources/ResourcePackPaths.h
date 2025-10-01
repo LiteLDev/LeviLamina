@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
+namespace ResourcePackPaths { struct AllPaths; }
 // clang-format on
 
 namespace ResourcePackPaths {
@@ -16,15 +17,15 @@ namespace ResourcePackPaths {
 MCNAPI ::Core::PathBuffer<::std::string>
     addServiceLocator(::Core::PathBuffer<::std::string> (*fn)(::AppPlatform const&));
 
-MCNAPI ::Core::PathBuffer<::std::string> getCachedBehaviorPacksPath();
+MCNAPI ::ResourcePackPaths::AllPaths getAllPaths(::AppPlatform& platform);
 
 MCNAPI ::Core::PathBuffer<::std::string> getCachedBehaviorPacksPath(::AppPlatform& platform);
 
 MCNAPI ::Core::PathBuffer<::std::string> getCachedResourcePacksPath(::AppPlatform& platform);
 
-MCNAPI ::Core::PathBuffer<::std::string> getPremiumBehaviorPackPath(::AppPlatform const& platform);
+MCNAPI ::Core::PathBuffer<::std::string> getGlobalResourcePacksPath();
 
-MCNAPI ::Core::PathBuffer<::std::string> getPremiumPackPath();
+MCNAPI ::Core::PathBuffer<::std::string> getPremiumBehaviorPackPath(::AppPlatform const& platform);
 
 MCNAPI ::Core::PathBuffer<::std::string> getPremiumPackPath(::AppPlatform const& platform);
 

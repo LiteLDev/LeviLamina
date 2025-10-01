@@ -28,6 +28,9 @@ public:
 
     // vIndex: 6
     virtual void* _realloc(::gsl::not_null<void*>, uint64) = 0;
+
+    // vIndex: 7
+    virtual void* _alignedRealloc(::gsl::not_null<void*>, uint64, uint64) = 0;
     // NOLINTEND
 
 public:

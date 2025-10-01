@@ -66,6 +66,8 @@ public:
     // NOLINTBEGIN
     MCAPI void addFamilyFilter(::InvertableFilter<::std::string> const& filter);
 
+    MCAPI void addFilter(::std::function<bool(::CommandOrigin const&, ::Actor const&)> filter);
+
     MCAPI void addHasItemFilter(
         ::std::string const&                 itemName,
         ::std::optional<int>                 auxValue,

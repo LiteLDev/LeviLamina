@@ -23,12 +23,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacyStructureActorInfo(::Vec3 const& pos, ::BlockPos const& blockPos, ::CompoundTag tag);
+    MCAPI LegacyStructureActorInfo(::Vec3 const& pos, ::BlockPos const& blockPos, ::CompoundTag tag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Vec3 const& pos, ::BlockPos const& blockPos, ::CompoundTag tag);
+    MCAPI void* $ctor(::Vec3 const& pos, ::BlockPos const& blockPos, ::CompoundTag tag);
     // NOLINTEND
 };

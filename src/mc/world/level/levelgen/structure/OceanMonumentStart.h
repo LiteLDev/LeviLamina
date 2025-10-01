@@ -42,15 +42,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void createMonument(::Dimension& dim, ::Random& random, int x, int z);
+    MCAPI void createMonument(::Dimension& dim, ::Random& random, int x, int z);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI ::std::string_view $getStructureName() const;
+    MCAPI ::std::string_view $getStructureName() const;
     // NOLINTEND
 
 public:

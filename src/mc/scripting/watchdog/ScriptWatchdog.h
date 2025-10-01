@@ -6,11 +6,11 @@ class ScriptWatchdog {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnkd7bdf5;
-    ::ll::UntypedStorage<8, 64>  mUnk7150c1;
-    ::ll::UntypedStorage<4, 4>   mUnkeb8210;
-    ::ll::UntypedStorage<4, 4>   mUnk7e0607;
-    ::ll::UntypedStorage<4, 4>   mUnkabaa0e;
+    ::ll::UntypedStorage<8, 96> mUnkd7bdf5;
+    ::ll::UntypedStorage<8, 64> mUnk7150c1;
+    ::ll::UntypedStorage<4, 4>  mUnkeb8210;
+    ::ll::UntypedStorage<4, 4>  mUnk7e0607;
+    ::ll::UntypedStorage<4, 4>  mUnkabaa0e;
     // NOLINTEND
 
 public:
@@ -24,6 +24,8 @@ public:
     MCNAPI ScriptWatchdog();
 
     MCNAPI ::ScriptWatchdog& operator=(::ScriptWatchdog&&);
+
+    MCNAPI ~ScriptWatchdog();
     // NOLINTEND
 
 public:
@@ -36,5 +38,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -23,12 +23,10 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    BaseGameVersion();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BaseGameVersion();
+
     MCAPI BaseGameVersion(::BaseGameVersion const& rhs);
 
     MCAPI BaseGameVersion(ushort major, uint minor, uint patch);
@@ -65,6 +63,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCFOLD void* $ctor();
+
     MCFOLD void* $ctor(::BaseGameVersion const& rhs);
 
     MCAPI void* $ctor(ushort major, uint minor, uint patch);

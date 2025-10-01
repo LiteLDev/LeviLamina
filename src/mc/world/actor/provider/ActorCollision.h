@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class EntityContext;
+struct ActorUniqueID;
 // clang-format on
 
 namespace ActorCollision {
@@ -12,7 +13,9 @@ namespace ActorCollision {
 // NOLINTBEGIN
 MCAPI float getPickRadius(::EntityContext const& provider);
 
-MCFOLD bool hasCollision(::EntityContext const& provider);
+MCAPI ::ActorUniqueID getPushedByID(::EntityContext const& provider);
+
+MCAPI bool hasCollision(::EntityContext const& provider);
 
 MCFOLD bool hasHorizontalCollision(::EntityContext const& provider);
 
@@ -40,7 +43,7 @@ MCAPI void setVerticalCollision(::EntityContext& provider, bool value);
 
 MCAPI void setWasOnGround(::EntityContext& provider, bool value);
 
-MCAPI bool wasOnGround(::EntityContext const& provider);
+MCFOLD bool wasOnGround(::EntityContext const& provider);
 // NOLINTEND
 
 } // namespace ActorCollision

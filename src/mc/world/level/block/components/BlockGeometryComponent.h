@@ -14,6 +14,33 @@ namespace ClientBlockPipeline { struct BlockSchematic; }
 
 struct BlockGeometryComponent {
 public:
+    // BlockGeometryComponent inner types declare
+    // clang-format off
+    struct DefaultPlusEmbeddedRenderer;
+    struct DefaultRenderer;
+    // clang-format on
+
+    // BlockGeometryComponent inner types define
+    struct DefaultRenderer {};
+
+    struct DefaultPlusEmbeddedRenderer {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 64> mUnkd0d89e;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DefaultPlusEmbeddedRenderer& operator=(DefaultPlusEmbeddedRenderer const&);
+        DefaultPlusEmbeddedRenderer(DefaultPlusEmbeddedRenderer const&);
+        DefaultPlusEmbeddedRenderer();
+    };
+
+    using Renderer = ::std::
+        variant<::BlockGeometryComponent::DefaultRenderer, ::BlockGeometryComponent::DefaultPlusEmbeddedRenderer>;
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 48, ::HashedString>                                           mGeometryName;
@@ -26,6 +53,12 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockGeometryDescription::SharedInitializationData>>
                                                                                 mSharedInitializationData;
     ::ll::TypedStorage<8, 24, ::std::variant<bool, ::std::set<::HashedString>>> mUVsLocked;
+    ::ll::TypedStorage<
+        4,
+        68,
+        ::std::
+            variant<::BlockGeometryComponent::DefaultRenderer, ::BlockGeometryComponent::DefaultPlusEmbeddedRenderer>>
+        mRenderer;
     // NOLINTEND
 
 public:
@@ -37,22 +70,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit BlockGeometryComponent(::BlockGeometryDescription const& blockGeometryDescription);
+    MCAPI explicit BlockGeometryComponent(::BlockGeometryDescription const& blockGeometryDescription);
 
-    MCNAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent&&);
+    MCAPI ::BlockGeometryComponent& operator=(::BlockGeometryComponent&&);
 
-    MCNAPI ~BlockGeometryComponent();
+    MCAPI ~BlockGeometryComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockGeometryDescription const& blockGeometryDescription);
+    MCAPI void* $ctor(::BlockGeometryDescription const& blockGeometryDescription);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

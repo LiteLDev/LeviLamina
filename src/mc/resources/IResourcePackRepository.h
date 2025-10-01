@@ -13,9 +13,9 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompositePackSource;
 class ContentIdentity;
 class IContentKeyProvider;
+class IContentSourceRepository;
 class PackInstance;
 class PackManifestFactory;
 class PackSettingsFactory;
@@ -43,7 +43,7 @@ public:
     getResourcePacksByPackId(::std::vector<::PackInstanceId> const&, ::std::vector<::PackInstance>&) const = 0;
 
     // vIndex: 2
-    virtual ::ResourcePack* getResourcePackForPackId(::PackIdVersion const&) const = 0;
+    virtual ::std::shared_ptr<::ResourcePack> getResourcePackForPackId(::PackIdVersion const&) const = 0;
 
     // vIndex: 3
     virtual ::ResourcePack* getResourcePackOfDifferentVersionForPackId(::PackIdVersion const&) const = 0;
@@ -58,7 +58,7 @@ public:
     virtual ::ResourcePack* getResourcePackForPackIdOwned(::PackIdVersion const&) const = 0;
 
     // vIndex: 7
-    virtual ::ResourcePack* getResourcePackSatisfiesPackId(::PackIdVersion const&, bool) const = 0;
+    virtual ::std::shared_ptr<::ResourcePack> getResourcePackSatisfiesPackId(::PackIdVersion const&, bool) const = 0;
 
     // vIndex: 8
     virtual ::ResourcePack* getResourcePackContainingModule(::PackIdVersion const&) const = 0;
@@ -74,10 +74,10 @@ public:
     virtual ::PackSourceReport const* getPackLoadingReport() const = 0;
 
     // vIndex: 12
-    virtual ::ResourcePack* getEditorPack() const = 0;
+    virtual ::std::shared_ptr<::ResourcePack> getEditorPack() const = 0;
 
     // vIndex: 13
-    virtual ::ResourcePack* getVanillaPack() const = 0;
+    virtual ::std::shared_ptr<::ResourcePack> getVanillaPack() const = 0;
 
     // vIndex: 14
     virtual bool setServicePacks(::std::vector<::PackIdVersion>) = 0;
@@ -158,43 +158,41 @@ public:
     virtual ::PackSourceFactory& getPackSourceFactory() = 0;
 
     // vIndex: 40
-    virtual ::CompositePackSource const* getWorldPackSource() const = 0;
-
-    // vIndex: 41
     virtual ::std::vector<::ResourcePack*> getPacksByResourceLocation(::PackOrigin) const = 0;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual ::std::vector<::ResourcePack*> getPacksByType(::PackType) const = 0;
 
-    // vIndex: 43
-    virtual ::std::vector<::ResourcePack*> getPacksByCategory(::PackCategory) const = 0;
+    // vIndex: 42
+    virtual ::std::vector<::gsl::not_null<::std::shared_ptr<::ResourcePack>>>
+        getPacksByCategory(::PackCategory) const = 0;
 
-    // vIndex: 44
+    // vIndex: 43
     virtual void forEachPack(::std::function<void(::ResourcePack const&)> const&) const = 0;
 
     // vIndex: 45
-    virtual void addInvalidPack(::ResourceLocation const&, ::PackType) = 0;
-
-    // vIndex: 47
     virtual ::std::vector<::ResourceLocation> const& getInvalidPacks(::PackType) const = 0;
 
-    // vIndex: 46
+    // vIndex: 44
     virtual ::std::vector<::ResourceLocation> getInvalidPacks(::InvalidPacksFilterGroup const&) const = 0;
 
-    // vIndex: 48
+    // vIndex: 46
     virtual void deletePack(::ResourceLocation const&) = 0;
 
-    // vIndex: 49
+    // vIndex: 47
     virtual void deletePackFiles(::ResourceLocation const&) = 0;
 
-    // vIndex: 50
+    // vIndex: 48
     virtual void postDeletePack(::ResourceLocation const&) = 0;
 
-    // vIndex: 51
+    // vIndex: 49
     virtual void untrackInvalidPack(::ResourceLocation const&) = 0;
 
-    // vIndex: 52
+    // vIndex: 50
     virtual bool isInitialized() const = 0;
+
+    // vIndex: 51
+    virtual ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> getContentSourceRepository() = 0;
     // NOLINTEND
 
 public:

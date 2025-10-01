@@ -23,11 +23,12 @@ public:
     // prevent constructor by default
     ActorDocument& operator=(ActorDocument const&);
     ActorDocument(ActorDocument const&);
-    ActorDocument();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ActorDocument();
+
     MCNAPI ActorDocument(::SharedTypes::v1_21_100::ActorDocument&&);
 
     MCNAPI ~ActorDocument();
@@ -42,6 +43,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::SharedTypes::v1_21_100::ActorDocument&&);
     // NOLINTEND
 

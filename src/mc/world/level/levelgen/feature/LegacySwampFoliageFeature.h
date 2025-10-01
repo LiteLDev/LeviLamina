@@ -43,19 +43,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LegacySwampFoliageFeature(::FeatureRegistry& registry);
+    MCAPI explicit LegacySwampFoliageFeature(::FeatureRegistry& registry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::FeatureRegistry& registry);
+    MCAPI void* $ctor(::FeatureRegistry& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
     // NOLINTEND
 
 public:

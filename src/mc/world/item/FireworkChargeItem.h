@@ -40,7 +40,7 @@ public:
         bool const                           showCategory
     ) const /*override*/;
 
-    // vIndex: 105
+    // vIndex: 107
     virtual bool hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const /*override*/;
 
     // vIndex: 15

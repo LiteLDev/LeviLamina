@@ -17,13 +17,6 @@ public:
     TemplatePoolElement& operator=(TemplatePoolElement const&);
     TemplatePoolElement(TemplatePoolElement const&);
     TemplatePoolElement();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::TemplatePoolElement&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::TemplatePoolElement&&);
-    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool

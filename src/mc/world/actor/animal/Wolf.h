@@ -31,13 +31,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 175
+    // vIndex: 176
     virtual void newServerAiStep() /*override*/;
 
     // vIndex: 82
     virtual bool load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 168
+    // vIndex: 169
     virtual void onBorn(::Actor&, ::Actor& parentRight) /*override*/;
 
     // vIndex: 93
@@ -47,9 +47,9 @@ public:
     virtual void setSitting(bool value) /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
 
-    // vIndex: 153
+    // vIndex: 154
     virtual bool isAlliedTo(::Mob* other) /*override*/;
 
     // vIndex: 63
@@ -85,7 +85,7 @@ public:
 
     MCFOLD void $setSitting(bool value);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCAPI bool $isAlliedTo(::Mob* other);
 

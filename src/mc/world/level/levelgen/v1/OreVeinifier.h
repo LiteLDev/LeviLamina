@@ -59,16 +59,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit OreVeinifier(::OreVeinifierNoises const& noiseSource);
+    MCAPI explicit OreVeinifier(::OreVeinifierNoises const& noiseSource);
 
-    MCNAPI void fillNoiseAtPos(::Vec3 const& worldPos, int bufferIndex, float noiseValue);
+    MCAPI void fillNoiseAtPos(::Vec3 const& worldPos, int bufferIndex, float noiseValue);
 
-    MCNAPI ::Block const* getVeinBlockOrFallback(::Vec3 worldPos, ::Block const* defaultBlock) const;
+    MCAPI ::Block const* getVeinBlockOrFallback(::Vec3 worldPos, ::Block const* defaultBlock) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::OreVeinifierNoises const& noiseSource);
+    MCAPI void* $ctor(::OreVeinifierNoises const& noiseSource);
     // NOLINTEND
 };

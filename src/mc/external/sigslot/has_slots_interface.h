@@ -28,13 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~has_slots_interface();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
+    virtual ~has_slots_interface() = default;
     // NOLINTEND
 
 public:

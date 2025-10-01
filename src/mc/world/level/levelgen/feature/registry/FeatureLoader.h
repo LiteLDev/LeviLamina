@@ -30,19 +30,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FeatureLoader(
+    MCAPI FeatureLoader(
         ::FeatureParserContext&                          context,
         ::std::vector<::SupportedFeatureSchema> const&   supportedSchemas,
         ::std::vector<::SupportedFeatureUpgrader> const& supportedUpgraders
     );
 
-    MCNAPI ::Puv::LoadResult<::FeatureResult> load(::Puv::Input const& input) const;
+    MCAPI ::Puv::LoadResult<::FeatureResult> load(::Puv::Input const& input) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::FeatureParserContext&                          context,
         ::std::vector<::SupportedFeatureSchema> const&   supportedSchemas,
         ::std::vector<::SupportedFeatureUpgrader> const& supportedUpgraders

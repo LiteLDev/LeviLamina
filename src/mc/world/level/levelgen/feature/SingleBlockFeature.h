@@ -57,13 +57,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~WeightedBlockDescriptor();
+        MCAPI ~WeightedBlockDescriptor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -101,22 +101,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Block const*
+    MCAPI ::Block const*
     _mayAttach(::BlockDescriptor const& blockDescriptor, ::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
 
-    MCNAPI bool _mayNotAttach(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
+    MCAPI bool _mayNotAttach(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
     // NOLINTEND
 
 public:

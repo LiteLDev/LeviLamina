@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI OceanMonumentPiece(
+    MCAPI OceanMonumentPiece(
         int                                 genDepth,
         int&                                orientation,
         ::std::shared_ptr<::RoomDefinition> roomDefinition,
@@ -63,9 +63,9 @@ public:
         int                                 roomDepth
     );
 
-    MCNAPI bool chunkIntersects(::BoundingBox const& chunkBB, int x0, int z0, int x1, int z1);
+    MCAPI bool chunkIntersects(::BoundingBox const& chunkBB, int x0, int z0, int x1, int z1);
 
-    MCNAPI void generateBoxOnFillOnly(
+    MCAPI void generateBoxOnFillOnly(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
         int                  x0,
@@ -77,34 +77,34 @@ public:
         ::Block const&       targetBlock
     );
 
-    MCNAPI void
+    MCAPI void
     generateDefaultFloor(::BlockSource& region, ::BoundingBox const& chunkBB, int xOff, int zOff, bool downOpening);
 
-    MCNAPI void spawnElder(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y, int z);
+    MCAPI void spawnElder(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y, int z);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static int& mGridroomLeftWingConnectIndex();
+    MCAPI static int& mGridroomLeftWingConnectIndex();
 
-    MCNAPI static int& mGridroomRightWingConnectIndex();
+    MCAPI static int& mGridroomRightWingConnectIndex();
 
-    MCNAPI static int& mGridroomSourceIndex();
+    MCAPI static int& mGridroomSourceIndex();
 
-    MCNAPI static int& mGridroomTopConnectIndex();
+    MCAPI static int& mGridroomTopConnectIndex();
 
-    MCNAPI static int const& mLeftWingIndex();
+    MCAPI static int const& mLeftWingIndex();
 
-    MCNAPI static int const& mPenthouseIndex();
+    MCAPI static int const& mPenthouseIndex();
 
-    MCNAPI static int const& mRightWingIndex();
+    MCAPI static int const& mRightWingIndex();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         int                                 genDepth,
         int&                                orientation,
         ::std::shared_ptr<::RoomDefinition> roomDefinition,
@@ -117,19 +117,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCFOLD void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI int $getWorldZ(int x, int z);
+    MCAPI int $getWorldZ(int x, int z);
 
-    MCNAPI int $getWorldX(int x, int z);
+    MCAPI int $getWorldX(int x, int z);
 
-    MCNAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+    MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
     // NOLINTEND
 
 public:

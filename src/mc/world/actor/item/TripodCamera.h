@@ -42,7 +42,7 @@ public:
     // vIndex: 50
     virtual bool isTargetable() const /*override*/;
 
-    // vIndex: 172
+    // vIndex: 173
     virtual bool canExistWhenDisallowMob() const /*override*/;
 
     // vIndex: 11

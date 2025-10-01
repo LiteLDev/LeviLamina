@@ -11,6 +11,7 @@
 class TaskGroup;
 namespace Screenshots { struct GallerySize; }
 namespace Screenshots { struct RawShowcasedScreenshot; }
+namespace Social { struct XUID; }
 // clang-format on
 
 namespace Screenshots {
@@ -24,11 +25,11 @@ public:
 
     // vIndex: 1
     virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<::Screenshots::RawShowcasedScreenshot>>>
-    getGallery(::TaskGroup&, ::std::string const&) = 0;
+    getGallery(::TaskGroup&, ::Social::XUID) = 0;
 
     // vIndex: 2
     virtual ::Bedrock::Threading::Async<::std::optional<::Screenshots::GallerySize>>
-    getGallerySize(::TaskGroup&, ::std::string const&) = 0;
+    getGallerySize(::TaskGroup&, ::Social::XUID) = 0;
 
     // vIndex: 3
     virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<uchar>>>
@@ -36,7 +37,7 @@ public:
 
     // vIndex: 4
     virtual ::Bedrock::Threading::Async<::std::optional<::std::vector<uchar>>>
-    getFeaturedImage(::TaskGroup&, ::std::string const&) = 0;
+    getFeaturedImage(::TaskGroup&, ::Social::XUID) = 0;
 
     // vIndex: 5
     virtual ::Bedrock::Threading::Async<::std::optional<::Screenshots::RawShowcasedScreenshot>>

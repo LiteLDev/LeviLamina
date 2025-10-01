@@ -106,8 +106,6 @@ public:
     ) const;
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
-
-    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
     // NOLINTEND
 
 public:

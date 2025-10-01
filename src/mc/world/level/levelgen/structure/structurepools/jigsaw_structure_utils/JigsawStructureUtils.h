@@ -19,23 +19,23 @@ namespace cereal { struct ReflectionCtx; }
 namespace JigsawStructureUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI bool canAttach(
+MCAPI bool canAttach(
     ::JigsawStructureUtils::JigsawBlockMetadataCacheHandle cacheHandle,
     ::JigsawStructureUtils::JigsawBlockMetadataCacheHandle rhsCacheHandle,
     ::Rotation                                             rotation,
     ::Rotation                                             rhsRotation
 );
 
-MCNAPI ::Puv::Loader<::SharedTypes::v1_21_80::JigsawStructureMetadataFile>
+MCAPI ::Puv::Loader<::SharedTypes::v1_21_80::JigsawStructureMetadataFile>
 createMetadataLoader(::cereal::ReflectionCtx const& ctx);
 
-MCNAPI ::BlockPos getPosition(
+MCAPI ::BlockPos getPosition(
     ::SharedTypes::v1_21_80::JigsawBlockMetadata const& metadata,
     ::BlockPos const&                                   offset,
     ::Rotation                                          rotation
 );
 
-MCNAPI ::std::string getSerializationIdString(::CompoundTag const& blockIdTag);
+MCAPI ::std::string getSerializationIdString(::CompoundTag const& blockIdTag);
 // NOLINTEND
 
 } // namespace JigsawStructureUtils

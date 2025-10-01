@@ -12,6 +12,7 @@ class ActorDamageSource;
 class ActorDefinitionGroup;
 class BlockPos;
 class BlockSource;
+class ChunkPos;
 class CompoundTag;
 class DataLoadHelper;
 class EntityContext;
@@ -97,7 +98,11 @@ public:
 
     MCAPI bool _canSurviveOnBlock(::BlockSource const& region, ::BlockPos const& blockPos, bool beingPlaced) const;
 
+    MCAPI bool _chunksLoaded3x3(::ChunkPos const& center);
+
     MCAPI bool _wouldSurvive(::BlockSource& region, ::BlockPos const& blockPos, bool beingPlaced);
+
+    MCAPI void doNormalTick();
     // NOLINTEND
 
 public:

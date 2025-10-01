@@ -10,6 +10,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class SculkSpreader;
 class Vec3;
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -35,6 +36,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::SculkSpreader* _getSculkSpreader() const;
+
     MCNAPI void addCursorsWithOffset(::Vec3 const& offset, int charge);
 
     MCNAPI ::Scripting::Result_deprecated<::Vec3> getCursorPosition(int index) const;

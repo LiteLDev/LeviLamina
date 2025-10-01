@@ -28,23 +28,23 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
+    virtual bool applies(::Random&, ::LootTableContext& context) /*override*/;
+
     // vIndex: 0
     virtual ~LootItemActorKilledCondition() /*override*/ = default;
-
-    // vIndex: 1
-    virtual bool applies(::Random& random, ::LootTableContext& context) /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value object);
+    MCNAPI static ::std::unique_ptr<::LootItemCondition> deserialize(::Json::Value const& object);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $applies(::Random& random, ::LootTableContext& context);
+    MCNAPI bool $applies(::Random&, ::LootTableContext& context);
     // NOLINTEND
 
 public:

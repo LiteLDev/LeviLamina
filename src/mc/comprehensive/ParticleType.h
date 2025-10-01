@@ -101,5 +101,6 @@ enum class ParticleType : int {
     PaleOakLeaves         = 95,
     EyeblossomOpen        = 96,
     EyeblossomClose       = 97,
-    Count                 = 98,
+    GreenFlame            = 98,
+    Count                 = 99,
 };

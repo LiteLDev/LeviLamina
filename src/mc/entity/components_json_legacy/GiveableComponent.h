@@ -13,7 +13,7 @@ class GiveableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mCoolDownTimeStamps;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mCooldownTimeStamps;
     // NOLINTEND
 
 public:

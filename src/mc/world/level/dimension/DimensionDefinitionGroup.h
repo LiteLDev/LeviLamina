@@ -3,12 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/puv/LoadResult.h"
 #include "mc/world/level/GeneratorType.h"
 
 // auto generated forward declare list
 // clang-format off
 class DimensionDataLoader;
+class IMinecraftEventing;
 class ResourcePackManager;
+namespace SharedTypes::v1_21_60::DimensionDefinition { struct DimensionDocument; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -47,11 +50,16 @@ public:
     // NOLINTBEGIN
     MCNAPI DimensionDefinitionGroup(::DimensionDefinitionGroup const&);
 
-    MCNAPI DimensionDefinitionGroup(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm);
+    MCNAPI DimensionDefinitionGroup(::DimensionDefinitionGroup&&);
 
-    MCNAPI ::DimensionDefinitionGroup& operator=(::DimensionDefinitionGroup&&);
+    MCNAPI DimensionDefinitionGroup(
+        ::cereal::ReflectionCtx const& ctx,
+        ::ResourcePackManager* const   rpm,
+        ::IMinecraftEventing&          eventing
+    );
 
-    MCNAPI bool tryAddDimensionDefinitionByString(
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
+    tryAddDimensionDefinitionByString(
         ::std::string const&  dimensionDefinitionJSON,
         ::DimensionDataLoader dimensionLoader
     );
@@ -64,7 +72,10 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::DimensionDefinitionGroup const&);
 
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm);
+    MCNAPI void* $ctor(::DimensionDefinitionGroup&&);
+
+    MCNAPI void*
+    $ctor(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/optional_ref.h"
-#include "mc/world/Direction.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -61,11 +60,8 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const /*override*/;
 
-    // vIndex: 67
-    virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
     // vIndex: 80
-    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
+    virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const /*override*/;
 
     // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -86,16 +82,8 @@ public:
     virtual bool isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const
         /*override*/;
 
-    // vIndex: 54
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
-        /*override*/;
-
     // vIndex: 136
     virtual bool isInteractiveBlock() const /*override*/;
-
-    // vIndex: 44
-    virtual bool isSignalSource() const /*override*/;
 
     // vIndex: 118
     virtual int getVariant(::Block const& block) const /*override*/;
@@ -174,9 +162,7 @@ public:
         ::std::vector<::AABB>&     inoutBoxes
     ) const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar facing) const;
 
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -194,12 +180,7 @@ public:
 
     MCAPI bool $isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
 
-    MCFOLD bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
-
     MCFOLD bool $isInteractiveBlock() const;
-
-    MCFOLD bool $isSignalSource() const;
 
     MCFOLD int $getVariant(::Block const& block) const;
 

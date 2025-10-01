@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/SessionResult.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
+#include "mc/editor/SessionResult.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/serviceproviders/EditorPlayerPlaytestServiceProvider.h"
 #include "mc/server/editor/serviceproviders/EditorPlaytestManagerServiceProvider.h"

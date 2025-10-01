@@ -56,12 +56,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _fillPillarDownOrChainUp(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
+    MCAPI void _fillPillarDownOrChainUp(::BlockSource& region, int x, int y, int z, ::BoundingBox const& chunkBB);
 
-    MCNAPI void
+    MCAPI void
     _placeCobWeb(::BlockSource& region, ::BoundingBox const& chunkBB, ::Random& random, float p, int x0, int y1, int z);
 
-    MCNAPI void _placeSupport(
+    MCAPI void _placeSupport(
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
         int                  x0,
@@ -76,7 +76,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::BoundingBox findCorridorSize(
+    MCAPI static ::BoundingBox findCorridorSize(
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
         int                                                 footX,
@@ -89,17 +89,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::StructurePieceType $getType() const;
+    MCAPI ::StructurePieceType $getType() const;
 
-    MCNAPI void $addChildren(
+    MCAPI void $addChildren(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random
     );
 
-    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:

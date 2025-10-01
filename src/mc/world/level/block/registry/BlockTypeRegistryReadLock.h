@@ -18,12 +18,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BlockTypeRegistryReadLock();
+    MCAPI ~BlockTypeRegistryReadLock();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

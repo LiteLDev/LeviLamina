@@ -11,9 +11,9 @@ class Experiments;
 namespace VanillaBlockTypes {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerBlockMappings();
+MCAPI void registerBlockMappings();
 
-MCNAPI void registerBlocks(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
+MCAPI void registerBlocks(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
 // NOLINTEND
 
 } // namespace VanillaBlockTypes

@@ -26,29 +26,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockDefinition();
+    MCAPI BlockDefinition();
 
-    MCNAPI BlockDefinition(::BlockDefinition const&);
+    MCAPI BlockDefinition(::BlockDefinition const&);
 
-    MCNAPI BlockDefinition(::BlockDefinition&&);
+    MCAPI BlockDefinition(::BlockDefinition&&);
 
-    MCNAPI ::BlockDefinition& operator=(::BlockDefinition&&);
+    MCAPI ::BlockDefinition& operator=(::BlockDefinition&&);
 
-    MCNAPI ::BlockDefinition& operator=(::BlockDefinition const&);
+    MCAPI ::BlockDefinition& operator=(::BlockDefinition const&);
 
-    MCNAPI ~BlockDefinition();
+    MCAPI ~BlockDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::CerealDocumentUpgrader* getCerealDocumentUpgrader(::cereal::ReflectionCtx const& ctx);
+    MCAPI static ::CerealDocumentUpgrader* getCerealDocumentUpgrader(::cereal::ReflectionCtx const& ctx);
 
-    MCNAPI static ::CerealDocumentUpgrader& initCerealDocumentUpgrader(::cereal::ReflectionCtx& ctx);
+    MCAPI static ::CerealDocumentUpgrader& initCerealDocumentUpgrader(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void registerBlockDefinitionTypes(::cereal::ReflectionCtx& ctx);
+    MCAPI static void registerBlockDefinitionTypes(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::std::pair<bool, ::SemVersion> upgradeJson(
+    MCAPI static ::std::pair<bool, ::SemVersion> upgradeJson(
         ::cereal::ReflectionCtx const& ctx,
         ::std::string&                 json,
         ::Core::Path const&            resourceName,
@@ -59,16 +59,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::BlockDefinition const&);
+    MCAPI void* $ctor(::BlockDefinition const&);
 
-    MCNAPI void* $ctor(::BlockDefinition&&);
+    MCAPI void* $ctor(::BlockDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

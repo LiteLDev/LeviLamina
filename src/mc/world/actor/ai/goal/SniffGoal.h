@@ -4,10 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/util/FloatRange.h"
-#include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/deps/shared_types/versionless/FloatRange.h"
 #include "mc/world/actor/ActorType.h"
-#include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/level/Tick.h"
 
@@ -15,62 +13,20 @@
 // clang-format off
 class Mob;
 struct DistanceSortedActor;
-namespace JsonUtil { class EmptyClass; }
 // clang-format on
 
 class SniffGoal : public ::Goal {
 public:
-    // SniffGoal inner types declare
-    // clang-format off
-    class Definition;
-    // clang-format on
-
-    // SniffGoal inner types define
-    class Definition : public ::BaseGoalDefinition {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>        mDuration;
-        ::ll::TypedStorage<4, 4, float>        mSniffingRadius;
-        ::ll::TypedStorage<4, 4, float>        mSuspicionRadiusHorizontal;
-        ::ll::TypedStorage<4, 4, float>        mSuspicionRadiusVertical;
-        ::ll::TypedStorage<4, 8, ::FloatRange> mCooldownRangeSeconds;
-        // NOLINTEND
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        // vIndex: 0
-        virtual ~Definition() /*override*/ = default;
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const&                                                                                  name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SniffGoal::Definition>>& root
-        );
-        // NOLINTEND
-
-    public:
-        // vftables
-        // NOLINTBEGIN
-        MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
-public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>       mMob;
-    ::ll::TypedStorage<4, 12, ::Vec3>      mSniffingRadius;
-    ::ll::TypedStorage<4, 8, ::FloatRange> mCooldownRangeSeconds;
-    ::ll::TypedStorage<2, 2, ushort>       mDurationTicks;
-    ::ll::TypedStorage<8, 8, ::Tick>       mEndTick;
-    ::ll::TypedStorage<8, 8, ::Tick>       mCooldownExpiryTick;
-    ::ll::TypedStorage<4, 4, float>        mSuspicionRadiusHorizontal;
-    ::ll::TypedStorage<4, 4, float>        mSuspicionRadiusVertical;
+    ::ll::TypedStorage<8, 8, ::Mob&>                    mMob;
+    ::ll::TypedStorage<4, 12, ::Vec3>                   mSniffingRadius;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mCooldownRangeSeconds;
+    ::ll::TypedStorage<2, 2, ushort>                    mDurationTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>                    mEndTick;
+    ::ll::TypedStorage<8, 8, ::Tick>                    mCooldownExpiryTick;
+    ::ll::TypedStorage<4, 4, float>                     mSuspicionRadiusHorizontal;
+    ::ll::TypedStorage<4, 4, float>                     mSuspicionRadiusVertical;
     // NOLINTEND
 
 public:
