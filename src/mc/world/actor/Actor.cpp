@@ -34,12 +34,10 @@
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/dimension/Dimension.h"
-// #include "mc/world/phys/HitDetection.h"
+#include "mc/world/phys/HitDetection.h"
 #include "mc/world/phys/HitResult.h"
 
-class EntityContext&       Actor::getEntityContext() { return *mEntityContext; }
-class EntityContext const& Actor::getEntityContext() const { return *mEntityContext; }
-void                       Actor::refresh() { _sendDirtyActorData(); }
+void Actor::refresh() { _sendDirtyActorData(); }
 
 optional_ref<Actor> Actor::clone(Vec3 const& pos, std::optional<DimensionType> dimId) const {
     StackRefResult<Dimension> dim{};
@@ -138,26 +136,16 @@ class HitResult Actor::traceRay(
         }
     }
     if (includeActor) {
-        float  resDistance = 0.0f;
-        Actor* resActor    = nullptr;
-        Vec3   resPos{};
-
-        // TODO: fix HitDetection
-        // HitDetection::searchActors(
-        //     rayDir,
-        //     tMax,
-        //     origin,
-        //     getAABB(),
-        //     (Actor*)(this),
-        //     (Player*)(this),
-        //     resDistance,
-        //     resActor,
-        //     resPos,
-        //     false
-        // );
-        // if (resActor != nullptr && resDistance >= 0 && resDistance <= tMax) {
-        //     result = HitResult{origin, rayDir, *resActor, resPos};
-        // }
+        auto actorHit = HitDetection::getClosestHitResult(
+            getDimensionBlockSource(),
+            (Actor*)this,
+            (Actor*)this,
+            origin,
+            origin + rayDir * tMax
+        );
+        if (actorHit.mType == HitResultType::Entity) {
+            result = actorHit;
+        }
     }
     return result;
 }
@@ -200,7 +188,6 @@ float Actor::evalMolang(std::string const& expression) {
         .evalAsFloat(getAnimationComponent().mRenderParams);
 }
 
-const AABB& Actor::getAABB() const { return mBuiltInComponents->mAABBShapeComponent->mAABB; }
 
 Actor* Actor::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
     return tryGetFromEntity(

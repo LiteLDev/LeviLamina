@@ -1,7 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/math/Vec3.h"
+#include "mc/world/phys/AABBHitResult.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"

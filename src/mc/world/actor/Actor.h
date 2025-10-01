@@ -106,8 +106,8 @@ public:
         ::std::function<void(::BlockSource&, ::Block const&, ::BlockPos const&, ::Actor&)>;
 
 public:
-    LLNDAPI class EntityContext&       getEntityContext();
-    LLNDAPI class EntityContext const& getEntityContext() const;
+    LLNDAPI class EntityContext&       getEntityContext() { return mEntityContext; }
+    LLNDAPI class EntityContext const& getEntityContext() const { return mEntityContext; }
 
     LLAPI void refresh();
 
@@ -152,7 +152,7 @@ public:
 
     LLNDAPI float evalMolang(std::string const& expression);
 
-    LLNDAPI const AABB& getAABB() const;
+    LLNDAPI AABB const& getAABB() const { return mBuiltInComponents->mAABBShapeComponent->mAABB; }
 
     LLAPI static ::Actor* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 
@@ -166,9 +166,7 @@ public:
         return mBuiltInComponents->mActorRotationComponent->mRotationDegree;
     }
 
-[[nodiscard]] bool hasCategory(ActorCategory category) const {
-        return (mCategories & category) == category;
-    }
+    [[nodiscard]] bool hasCategory(ActorCategory category) const { return (mCategories & category) == category; }
 
 public:
     // member variables

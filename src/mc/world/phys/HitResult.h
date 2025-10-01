@@ -1,9 +1,6 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/deps/core/math/Vec3.h"
-#include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
