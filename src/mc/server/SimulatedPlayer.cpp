@@ -78,7 +78,7 @@ void SimulatedPlayer::simulateStopMoving() {
         [&](auto& intent) {
             using T = std::decay_t<decltype(intent)>;
             if constexpr (!std::is_same_v<T, sim::VoidMoveIntent>) {
-                MobMovement::setLocalMoveVelocity(mEntityContext, 0, 0, 0);
+                MobMovement::setLocalMoveVelocity(mEntityContext, 0.0f, 0.0f, 0.0f);
             }
             if constexpr (std::is_same_v<T, sim::NavigateToEntityIntent>
                           || std::is_same_v<T, sim::NavigateToPositionsIntent>) {
