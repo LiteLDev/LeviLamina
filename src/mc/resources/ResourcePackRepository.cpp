@@ -7,9 +7,11 @@
 
 void ResourcePackRepository::addCustomResourcePackPath(std::filesystem::path const& path, PackType type) {
 
-    auto& DirectoryPackSource = getPackSourceFactory().createDirectoryPackSource(path, type, PackOrigin::Dev, false);
+    // TODO: rewrite this function
 
-    mPackSource.get()->mPackSources->push_back(&DirectoryPackSource);
+    // auto& DirectoryPackSource = getPackSourceFactory().createDirectoryPackSource(path, type, PackOrigin::Dev, false);
 
-    refreshPacks();
+    // mPackSource.get()->mPackSources->push_back(&DirectoryPackSource);
+
+    // refreshPacks();
 }

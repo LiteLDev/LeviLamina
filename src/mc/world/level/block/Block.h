@@ -50,12 +50,14 @@ public:
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, ushort legacyData);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, BlockStatesType const& states);
+    
+    [[nodiscard]] BlockType const& getBlockType() const { return *mBlockType; }
 
-    [[nodiscard]] inline std::string const& getTypeName() const { return getBlockType().getTypeName(); }
+    [[nodiscard]] std::string const& getTypeName() const { return getBlockType().getTypeName(); }
 
-    [[nodiscard]] inline short getBlockItemId() const { return getBlockType().getBlockItemId(); }
+    [[nodiscard]] short getBlockItemId() const { return getBlockType().getBlockItemId(); }
 
-    [[nodiscard]] inline ushort getData() const { return mData; }
+    [[nodiscard]] ushort getData() const { return mData; }
 
     template <typename T>
     std::optional<T> getState(uint64 id) const {

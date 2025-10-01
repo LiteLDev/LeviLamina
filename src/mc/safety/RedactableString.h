@@ -18,6 +18,7 @@ public:
 public:
     RedactableString()                                   = default;
     RedactableString& operator=(RedactableString const&) = default;
+    RedactableString& operator=(RedactableString&&)      = default;
     RedactableString(RedactableString const&)            = default;
 
 public:
@@ -32,10 +33,6 @@ public:
     MCAPI ::Bedrock::Safety::RedactableString& operator+=(::std::string const& unredactedSuffix);
 
     MCAPI void operator+=(::Bedrock::Safety::RedactableString const& rhs);
-
-    MCFOLD ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString const&);
-
-    MCAPI ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString&&);
 
     MCAPI ::Bedrock::Safety::RedactableString& operator=(::std::string&& unredactedString);
 

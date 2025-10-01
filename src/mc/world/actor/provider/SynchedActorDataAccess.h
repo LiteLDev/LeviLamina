@@ -11,6 +11,8 @@ class EntityContext;
 // clang-format on
 
 namespace SynchedActorDataAccess {
+
+LLAPI bool getActorFlag(::EntityContext const& entity, ::ActorFlags flag);
 // functions
 // NOLINTBEGIN
 MCAPI int getControllingSeatIndex(::EntityContext const& entity);

@@ -14,6 +14,15 @@ public:
     ::std::vector<::std::string> mParams;
     // NOLINTEND
 
+    CommandOutputMessage(
+        ::CommandOutputMessageType   type,
+        ::std::string                messageId,
+        ::std::vector<::std::string> params = {}
+    )
+    : mType(type),
+      mMessageId(std::move(messageId)),
+      mParams(std::move(params)) {}
+
 public:
     CommandOutputMessage& operator=(CommandOutputMessage const&) = default;
     CommandOutputMessage(CommandOutputMessage const&)            = default;

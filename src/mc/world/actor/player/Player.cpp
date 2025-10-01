@@ -79,8 +79,9 @@ std::string Player::getRealName() const {
 
 void Player::disconnect(std::string_view reason) const {
     ll::service::getServerNetworkHandler().and_then([&](auto& handler) {
-        handler.disconnectClient(
+        handler.disconnectClientWithMessage(
             getNetworkIdentifier(),
+            getClientSubId(),
             Connection::DisconnectFailReason::Unknown,
             std::string{reason},
             std::nullopt,

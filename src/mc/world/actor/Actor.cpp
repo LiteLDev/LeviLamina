@@ -34,7 +34,7 @@
 #include "mc/world/level/BlockSource.h"
 #include "mc/world/level/ShapeType.h"
 #include "mc/world/level/dimension/Dimension.h"
-#include "mc/world/phys/HitDetection.h"
+// #include "mc/world/phys/HitDetection.h"
 #include "mc/world/phys/HitResult.h"
 
 class EntityContext&       Actor::getEntityContext() { return *mEntityContext; }
@@ -142,21 +142,22 @@ class HitResult Actor::traceRay(
         Actor* resActor    = nullptr;
         Vec3   resPos{};
 
-        HitDetection::searchActors(
-            rayDir,
-            tMax,
-            origin,
-            getAABB(),
-            (Actor*)(this),
-            (Player*)(this),
-            resDistance,
-            resActor,
-            resPos,
-            false
-        );
-        if (resActor != nullptr && resDistance >= 0 && resDistance <= tMax) {
-            result = HitResult{origin, rayDir, *resActor, resPos};
-        }
+        // TODO: fix HitDetection
+        // HitDetection::searchActors(
+        //     rayDir,
+        //     tMax,
+        //     origin,
+        //     getAABB(),
+        //     (Actor*)(this),
+        //     (Player*)(this),
+        //     resDistance,
+        //     resActor,
+        //     resPos,
+        //     false
+        // );
+        // if (resActor != nullptr && resDistance >= 0 && resDistance <= tMax) {
+        //     result = HitResult{origin, rayDir, *resActor, resPos};
+        // }
     }
     return result;
 }

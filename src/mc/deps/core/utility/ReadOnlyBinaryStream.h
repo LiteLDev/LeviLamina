@@ -15,6 +15,16 @@ public:
     bool               mHasOverflowed;
     // NOLINTEND
 
+    ReadOnlyBinaryStream(::std::string_view buffer, bool copyBuffer)
+    : mView(buffer),
+      mReadPointer(0),
+      mHasOverflowed(false) {
+        if (copyBuffer) {
+            mOwnedBuffer = std::string(buffer);
+            mView        = mOwnedBuffer;
+        }
+    }
+
 public:
     // virtual functions
     // NOLINTBEGIN

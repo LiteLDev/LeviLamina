@@ -3,4 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 template <typename T0>
-class ActorDataComponentBase {};
+class ActorDataComponentBase {
+public:
+    T0 mValue;
+};

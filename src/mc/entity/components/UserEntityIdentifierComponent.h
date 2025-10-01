@@ -19,4 +19,10 @@ public:
     ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType>   mAuthenticationType;
     ::ll::TypedStorage<8, 272, ::PlayerAuthenticationInfo> mTrustedPlayerInfo;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    UserEntityIdentifierComponent& operator=(UserEntityIdentifierComponent const&);
+    UserEntityIdentifierComponent(UserEntityIdentifierComponent const&);
+    UserEntityIdentifierComponent();
 };

@@ -14,7 +14,7 @@ public:
     std::string_view mBuffer;
     // NOLINTEND
 
-    StringByteInput(std::string_view sv, size_t offset) noexcept : mIdx(offset), mBuffer(sv) {}
+    StringByteInput(std::string_view sv, size_t offset = 0) noexcept : mIdx(offset), mBuffer(sv) {}
 
 public:
     // virtual functions

@@ -158,6 +158,18 @@ public:
 
     [[nodiscard]] Level& getLevel() const { return *reinterpret_cast<Level*>(mLevel); }
 
+    [[nodiscard]] Vec3 const& getPosition() const { return mBuiltInComponents->mStateVectorComponent->mPos; }
+
+    [[nodiscard]] Vec3 const& getPosDelta() const { return mBuiltInComponents->mStateVectorComponent->mPosDelta; }
+
+    [[nodiscard]] Vec2 const& getRotation() const {
+        return mBuiltInComponents->mActorRotationComponent->mRotationDegree;
+    }
+
+[[nodiscard]] bool hasCategory(ActorCategory category) const {
+        return (mCategories & category) == category;
+    }
+
 public:
     // member variables
     // NOLINTBEGIN

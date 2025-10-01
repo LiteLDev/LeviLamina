@@ -33,3 +33,12 @@ enum class ActorCategory : uint {
     MinecartRidable         = Ridable | Minecart,
     BoatRideable            = Ridable | Boat,
 };
+
+constexpr ActorCategory operator|(ActorCategory a, ActorCategory b) {
+    using integer_type = std::underlying_type_t<ActorCategory>;
+    return static_cast<ActorCategory>(static_cast<integer_type>(a) | static_cast<integer_type>(b));
+}
+constexpr ActorCategory operator&(ActorCategory a, ActorCategory b) {
+    using integer_type = std::underlying_type_t<ActorCategory>;
+    return static_cast<ActorCategory>(static_cast<integer_type>(a) & static_cast<integer_type>(b));
+}

@@ -70,6 +70,11 @@ public:
     } catch (...) {
         return nullptr;
     }
+    void* _alignedRealloc(gsl::not_null<void*> ptr, uint64 newSize, uint64 alignment) override try {
+        return mi_realloc_aligned(ptr, newSize, alignment);
+    } catch (...) {
+        return nullptr;
+    }
 };
 
 class StdMemoryAllocator : public ::Bedrock::Memory::IMemoryAllocator {
@@ -96,6 +101,11 @@ public:
 
     void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) override try {
         return realloc(ptr, newSize);
+    } catch (...) {
+        return nullptr;
+    }
+    void* _alignedRealloc(gsl::not_null<void*> ptr, uint64 newSize, uint64 alignment) override try {
+        return _aligned_realloc(ptr, newSize, alignment);
     } catch (...) {
         return nullptr;
     }
@@ -160,6 +170,12 @@ public:
     void* _realloc(gsl::not_null<void*> ptr, uint64 newSize) override {
         getDebugMap()[LL_RETURN_ADDRESS].free(T::getUsableSize(ptr));
         auto res = T::_realloc(ptr, newSize);
+        getDebugMap()[LL_RETURN_ADDRESS].alloc(T::getUsableSize(res));
+        return res;
+    }
+    void* _alignedRealloc(gsl::not_null<void*> ptr, uint64 newSize, uint64 alignment) override {
+        getDebugMap()[LL_RETURN_ADDRESS].free(T::getUsableSize(ptr));
+        auto res = T::_alignedRealloc(ptr, newSize, alignment);
         getDebugMap()[LL_RETURN_ADDRESS].alloc(T::getUsableSize(res));
         return res;
     }

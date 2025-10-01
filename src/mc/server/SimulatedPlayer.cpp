@@ -26,7 +26,10 @@ SimulatedPlayer::create(std::string const& name, Vec3 const& pos, DimensionType 
     }
     auto player = create(
         name,
-        BlockPos{pos},
+        pos,
+        Vec3{0},
+        rotation,
+        false,
         dimId,
         *handler,
         std::to_string(ll::random_utils::rand<int64>(INT64_MIN, -1)),
@@ -75,7 +78,7 @@ void SimulatedPlayer::simulateStopMoving() {
         [&](auto& intent) {
             using T = std::decay_t<decltype(intent)>;
             if constexpr (!std::is_same_v<T, sim::VoidMoveIntent>) {
-                MobMovement::setLocalMoveVelocity(mEntityContext, 0);
+                MobMovement::setLocalMoveVelocity(mEntityContext, 0, 0, 0);
             }
             if constexpr (std::is_same_v<T, sim::NavigateToEntityIntent>
                           || std::is_same_v<T, sim::NavigateToPositionsIntent>) {
@@ -94,7 +97,7 @@ bool SimulatedPlayer::simulateAttack(Actor* target) {
         return false;
     }
     auto currentTick = getLevel().getCurrentServerTick().tickID;
-    if (currentTick - mCooldownTick < 10) {
+    if (*mCooldownTick && (currentTick - **mCooldownTick < 10)) {
         return false;
     }
     _trySwing();
@@ -140,15 +143,15 @@ bool SimulatedPlayer::simulateDropSelectedItem() {
 bool SimulatedPlayer::simulateInteract(Actor& actor) { return isAlive() && interact(actor, 0); }
 void SimulatedPlayer::simulateStopInteracting() { deleteContainerManager(); }
 bool SimulatedPlayer::isSimulatingDestroyingBlock() { return *mDestroyingBlockPos && *mDestroyingBlockFace; }
-void SimulatedPlayer::simulateLookAt(Vec3 const& pos, sim::LookDuration lookType) {
-    mLookAtIntent = sim::lookAt(*this, {pos.x, pos.y, pos.z}, lookType);
-}
+// void SimulatedPlayer::simulateLookAt(Vec3 const& pos, sim::LookDuration lookType) {
+//     mLookAtIntent = sim::lookAt(*this, {pos.x, pos.y, pos.z}, lookType);
+// }
 void SimulatedPlayer::simulateLookAt(Actor& actor, sim::LookDuration lookType) {
     mLookAtIntent = sim::lookAt(*this, actor.getEntityContext(), lookType);
 }
-void SimulatedPlayer::simulateLookAt(BlockPos const& blockPos, sim::LookDuration lookType) {
-    simulateLookAt(Vec3{blockPos} + 0.5f, lookType);
-}
+// void SimulatedPlayer::simulateLookAt(BlockPos const& blockPos, sim::LookDuration lookType) {
+//     simulateLookAt(Vec3{blockPos} + 0.5f, lookType);
+// }
 void SimulatedPlayer::simulateDisconnect() {
     disconnect();
     remove();
@@ -166,6 +169,22 @@ bool SimulatedPlayer::simulateRespawn() {
 }
 void SimulatedPlayer::simulateFly() { getAbilities().setAbility(AbilitiesIndex::Flying, true); }
 void SimulatedPlayer::simulateStopFlying() { getAbilities().setAbility(AbilitiesIndex::Flying, false); }
+
+void SimulatedPlayer::simulateWorldMove(::Vec3 const& worldDirection, float) {
+    simulateStopMoving();
+    auto dir = worldDirection.normalize();
+    mSimulatedMovement->mType->emplace<sim::MoveInDirectionIntent>(::glm::vec3{dir.x, dir.y, dir.z}, true);
+}
+void SimulatedPlayer::simulateLocalMove(::Vec3 const& localDirection, float) {
+    simulateStopMoving();
+    auto dir = localDirection.normalize();
+    mSimulatedMovement->mType->emplace<sim::MoveInDirectionIntent>(::glm::vec3{dir.x, dir.y, dir.z}, false);
+}
+void SimulatedPlayer::simulateMoveToLocation(::Vec3 const& position, float speed, bool faceTarget) {
+    simulateStopMoving();
+    mSimulatedMovement->mType
+        ->emplace<sim::MoveToPositionIntent>(::glm::vec3{position.x, position.y, position.z}, faceTarget, speed);
+}
 
 ::SimulatedPlayer* SimulatedPlayer::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
     auto result = static_cast<SimulatedPlayer*>(Player::tryGetFromEntity(entity, includeRemoved));

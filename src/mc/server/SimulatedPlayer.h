@@ -77,13 +77,16 @@ public:
     LLAPI bool simulateInteract(Actor& actor);
     LLAPI void simulateStopInteracting();
     LLAPI bool isSimulatingDestroyingBlock();
-    LLAPI void simulateLookAt(Vec3 const& pos, sim::LookDuration lookType = sim::LookDuration::Instant);
+    // LLAPI void simulateLookAt(Vec3 const& pos, sim::LookDuration lookType = sim::LookDuration::Instant);
     LLAPI void simulateLookAt(Actor& actor, sim::LookDuration lookType = sim::LookDuration::Instant);
-    LLAPI void simulateLookAt(BlockPos const& blockPos, sim::LookDuration lookType = sim::LookDuration::Instant);
+    // LLAPI void simulateLookAt(BlockPos const& blockPos, sim::LookDuration lookType = sim::LookDuration::Instant);
     LLAPI void simulateDisconnect();
     LLAPI bool simulateRespawn();
     LLAPI void simulateFly();
     LLAPI void simulateStopFlying();
+    LLAPI void simulateWorldMove(::Vec3 const& worldDirection, float = 1.0f);
+    LLAPI void simulateLocalMove(::Vec3 const& localDirection, float = 1.0f);
+    LLAPI void simulateMoveToLocation(::Vec3 const& position, float speed, bool faceTarget);
 
     LLAPI static ::SimulatedPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 
@@ -196,9 +199,9 @@ public:
 
     MCAPI bool simulateJump();
 
-    MCAPI void simulateLookAt(::BlockPos const& blockPos, ::sim::LookDuration lookType);
+    MCAPI void simulateLookAt(::BlockPos const& blockPos, ::sim::LookDuration lookType = sim::LookDuration::Instant);
 
-    MCAPI void simulateLookAt(::Vec3 const& pos, ::sim::LookDuration lookType);
+    MCAPI void simulateLookAt(::Vec3 const& pos, ::sim::LookDuration lookType = sim::LookDuration::Instant);
 
     MCAPI ::ScriptModuleGameTest::ScriptNavigationResult simulateNavigateToEntity(::Actor& actor, float speed);
 

@@ -106,8 +106,6 @@ public:
         ::Vec3&       intersectNorm
     ) const;
 
-    MCAPI bool intersects(::AABB const& c) const;
-
     MCAPI bool intersects(::Vec3 const& segmentBegin, ::Vec3 const& segmentEnd) const;
     // NOLINTEND
 

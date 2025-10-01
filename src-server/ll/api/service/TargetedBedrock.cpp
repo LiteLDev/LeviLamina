@@ -150,16 +150,17 @@ LL_TYPE_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::High, RakNet::RakPe
 // ResourcePackRepository
 static std::atomic<ResourcePackRepository*> resourcePackRepository;
 
-LL_TYPE_INSTANCE_HOOK(
-    ResourcePackRepositoryInit,
-    HookPriority::High,
-    ResourcePackRepository,
-    &ResourcePackRepository::_initialize,
-    void
-) {
-    resourcePackRepository = this;
-    origin();
-}
+// TODO: fix init hook
+// LL_TYPE_INSTANCE_HOOK(
+//     ResourcePackRepositoryInit,
+//     HookPriority::High,
+//     ResourcePackRepository,
+//     &ResourcePackRepository::_initialize,
+//     void
+// ) {
+//     resourcePackRepository = this;
+//     origin();
+// }
 LL_TYPE_INSTANCE_HOOK(
     ResourcePackRepositoryDestructor,
     HookPriority::High,
@@ -242,7 +243,7 @@ using HookReg = memory::HookRegistrar<
     LevelDestructor,
     RakNetRakPeerConstructor,
     RakNetRakPeerDestructor,
-    ResourcePackRepositoryInit,
+    // ResourcePackRepositoryInit,
     ResourcePackRepositoryDestructor,
     CommandRegistryConstructor,
     CommandRegistryDestructor,
