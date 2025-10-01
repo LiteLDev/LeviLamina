@@ -5,9 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/puv/LoadResult.h"
+#include "mc/deps/puv/SlicedLoader.h"
 
 // auto generated forward declare list
 // clang-format off
+class BedrockLoadContext;
 class LinkedAssetValidator;
 namespace Bedrock::Resources { class MinecraftDocumentInput; }
 namespace SharedTypes::v1_21_30 { struct TradeTableData; }
@@ -18,13 +20,15 @@ class TradeTableDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnk91c026;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::SlicedLoader<::SharedTypes::v1_21_30::TradeTableData, ::BedrockLoadContext, nullptr_t>>
+        mLoader;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    TradeTableDataLoader& operator=(TradeTableDataLoader const&);
-    TradeTableDataLoader(TradeTableDataLoader const&);
     TradeTableDataLoader();
 
 public:

@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class AquiferNoises;
+class Block;
 class ChunkPos;
 class SurfaceLevelCache;
 struct OverworldNoises3d;
@@ -46,8 +47,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk33b760;
-        ::ll::UntypedStorage<8, 8> mUnkeef3f1;
+        ::ll::TypedStorage<8, 8, ::Block const&> mWater;
+        ::ll::TypedStorage<8, 8, ::Block const&> mLava;
         // NOLINTEND
 
     public:

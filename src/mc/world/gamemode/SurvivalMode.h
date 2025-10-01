@@ -19,17 +19,11 @@ class SurvivalMode : public ::GameMode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnke69c28;
-    ::ll::UntypedStorage<1, 1>  mUnk3d88ec;
-    ::ll::UntypedStorage<4, 4>  mUnk812b7b;
-    ::ll::UntypedStorage<8, 64> mUnk7f623c;
+    ::ll::TypedStorage<1, 1, bool>                         mIsTrialMode;
+    ::ll::TypedStorage<1, 1, bool>                         mHasDisplayedIntro;
+    ::ll::TypedStorage<4, 4, int>                          mTrialEndedReminder;
+    ::ll::TypedStorage<8, 64, ::std::function<void(bool)>> mShowUpsellScreenCallback;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SurvivalMode& operator=(SurvivalMode const&);
-    SurvivalMode(SurvivalMode const&);
-    SurvivalMode();
 
 public:
     // virtual functions

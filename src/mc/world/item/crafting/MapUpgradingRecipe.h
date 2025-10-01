@@ -18,13 +18,11 @@ class MapUpgradingRecipe : public ::MultiRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2eabcc;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    MapUpgradingRecipe& operator=(MapUpgradingRecipe const&);
-    MapUpgradingRecipe(MapUpgradingRecipe const&);
     MapUpgradingRecipe();
 
 public:

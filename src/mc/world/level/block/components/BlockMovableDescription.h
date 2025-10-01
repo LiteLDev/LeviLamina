@@ -17,14 +17,12 @@ struct BlockMovableDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk37d400;
-    ::ll::UntypedStorage<1, 1> mUnk79867d;
+    ::ll::TypedStorage<1, 1, ::MovementType> mMovementType;
+    ::ll::TypedStorage<1, 1, ::StickyType>   mStickyType;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockMovableDescription& operator=(BlockMovableDescription const&);
-    BlockMovableDescription(BlockMovableDescription const&);
     BlockMovableDescription();
 
 public:

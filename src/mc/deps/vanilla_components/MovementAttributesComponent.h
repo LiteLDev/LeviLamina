@@ -21,6 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator==(::MovementAttributesComponent const& other) const;
+    MCAPI bool operator==(::MovementAttributesComponent const& other) const;
     // NOLINTEND
 };

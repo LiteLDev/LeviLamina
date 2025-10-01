@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ITreeRoot;
+// clang-format on
+
 class ITreeRootWrapper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka7337f;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ITreeRoot>> mPtr;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ITreeRootWrapper& operator=(ITreeRootWrapper const&);
-    ITreeRootWrapper(ITreeRootWrapper const&);
-    ITreeRootWrapper();
 };

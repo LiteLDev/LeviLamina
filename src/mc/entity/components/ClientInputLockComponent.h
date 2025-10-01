@@ -18,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _applyActiveCategoryLocks();
+    MCAPI void _applyActiveCategoryLocks();
     // NOLINTEND
 };

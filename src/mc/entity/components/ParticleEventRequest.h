@@ -111,19 +111,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ParticleEventRequest();
+    MCAPI ~ParticleEventRequest();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ParticleEventRequest
+    MCAPI static ::ParticleEventRequest
     addParticleEffect(::HashedString effect, ::Vec3 const& emitterPosition, ::MolangVariableMap molangVariables);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

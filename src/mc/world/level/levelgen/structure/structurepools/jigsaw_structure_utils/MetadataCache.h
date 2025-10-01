@@ -14,9 +14,9 @@ class MetadataCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk70ffba;
-    ::ll::UntypedStorage<8, 24> mUnkfe7328;
-    ::ll::UntypedStorage<8, 24> mUnkd8ad64;
+    ::ll::TypedStorage<8, 8, ::SharedTypes::v1_21_80::JigsawStructureMetadata const&> mMetadata;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>                          mBlockCache;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>                          mFinalBlockCache;
     // NOLINTEND
 
 public:

@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/components/ComponentItemDescriptionData_v1_20_20.h"
+#include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersionConstant;
@@ -13,15 +17,9 @@ struct ComponentItemData_v1_20_20 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96> mUnk3f7dc1;
-    ::ll::UntypedStorage<8, 16> mUnk576cbb;
+    ::ll::TypedStorage<8, 96, ::ComponentItemDescriptionData_v1_20_20>       mDescription;
+    ::ll::TypedStorage<8, 16, ::IItemComponentLegacyFactoryData::Components> mItemComponents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ComponentItemData_v1_20_20& operator=(ComponentItemData_v1_20_20 const&);
-    ComponentItemData_v1_20_20(ComponentItemData_v1_20_20 const&);
-    ComponentItemData_v1_20_20();
 
 public:
     // member functions

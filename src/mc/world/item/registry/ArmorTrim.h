@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
-class HashedString;
 class ItemStackBase;
 class Level;
 namespace Bedrock::Safety { class RedactableString; }
@@ -15,14 +17,12 @@ class ArmorTrim {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk9bfa43;
-    ::ll::UntypedStorage<8, 48> mUnkb7fbf8;
+    ::ll::TypedStorage<8, 48, ::HashedString> mPatternId;
+    ::ll::TypedStorage<8, 48, ::HashedString> mMaterialId;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ArmorTrim& operator=(ArmorTrim const&);
-    ArmorTrim(ArmorTrim const&);
     ArmorTrim();
 
 public:

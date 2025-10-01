@@ -3,7 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/molang/MolangVersion.h"
+#include "mc/world/effect/EffectDuration.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/IFoodItemComponent.h"
 
@@ -36,19 +39,13 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnkd4071e;
-        ::ll::UntypedStorage<8, 32> mUnk986c0d;
-        ::ll::UntypedStorage<8, 32> mUnk12392a;
-        ::ll::UntypedStorage<4, 4>  mUnk859cf2;
-        ::ll::UntypedStorage<4, 4>  mUnk7b370d;
-        ::ll::UntypedStorage<4, 4>  mUnk7abd7a;
+        ::ll::TypedStorage<4, 4, int>              id;
+        ::ll::TypedStorage<8, 32, ::std::string>   name;
+        ::ll::TypedStorage<8, 32, ::std::string>   descriptionId;
+        ::ll::TypedStorage<4, 4, ::EffectDuration> duration;
+        ::ll::TypedStorage<4, 4, int>              amplifier;
+        ::ll::TypedStorage<4, 4, float>            chance;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Effect& operator=(Effect const&);
-        Effect(Effect const&);
-        Effect();
 
     public:
         // member functions
@@ -66,17 +63,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf8f8b2;
-    ::ll::UntypedStorage<4, 4>  mUnkb8975a;
-    ::ll::UntypedStorage<4, 4>  mUnk7624e5;
-    ::ll::UntypedStorage<8, 32> mUnkd89237;
-    ::ll::UntypedStorage<4, 4>  mUnk53b0c6;
-    ::ll::UntypedStorage<4, 12> mUnk98d6f7;
-    ::ll::UntypedStorage<8, 48> mUnk752fe5;
-    ::ll::UntypedStorage<4, 4>  mUnkdc7a44;
-    ::ll::UntypedStorage<1, 1>  mUnk623916;
-    ::ll::UntypedStorage<8, 24> mUnk3def49;
-    ::ll::UntypedStorage<8, 24> mUnkb2b538;
+    ::ll::TypedStorage<8, 8, ::Item&>                                           mOwner;
+    ::ll::TypedStorage<4, 4, int>                                               mNutrition;
+    ::ll::TypedStorage<4, 4, float>                                             mSaturationModifier;
+    ::ll::TypedStorage<8, 32, ::std::string>                                    mUsingConvertsTo;
+    ::ll::TypedStorage<4, 4, ::FoodItemComponentLegacy::OnUseAction>            mOnUseAction;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                           mOnUseRange;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                   mCooldownCategory;
+    ::ll::TypedStorage<4, 4, int>                                               mCooldownDuration;
+    ::ll::TypedStorage<1, 1, bool>                                              mCanAlwaysEat;
+    ::ll::TypedStorage<8, 24, ::std::vector<::FoodItemComponentLegacy::Effect>> mEffects;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>>                              mRemoveEffects;
     // NOLINTEND
 
 public:

@@ -15,13 +15,11 @@ class AncientCityStart : public ::StructureStart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkda1791;
+    ::ll::TypedStorage<1, 1, bool> mValid;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    AncientCityStart& operator=(AncientCityStart const&);
-    AncientCityStart(AncientCityStart const&);
     AncientCityStart();
 
 public:

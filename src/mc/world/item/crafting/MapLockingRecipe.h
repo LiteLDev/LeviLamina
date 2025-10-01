@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/legacy/ActorUniqueID.h"
 #include "mc/world/item/crafting/MultiRecipe.h"
 
 // auto generated forward declare list
@@ -18,14 +19,12 @@ class MapLockingRecipe : public ::MultiRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk56c855;
-    ::ll::UntypedStorage<8, 8>  mUnkcdc078;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                mOriginalMapId;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    MapLockingRecipe& operator=(MapLockingRecipe const&);
-    MapLockingRecipe(MapLockingRecipe const&);
     MapLockingRecipe();
 
 public:

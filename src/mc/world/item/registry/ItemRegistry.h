@@ -5,9 +5,12 @@
 // auto generated inclusion list
 #include "mc/common/SharedPtr.h"
 #include "mc/common/WeakPtr.h"
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/deps/json/Value.h"
 #include "mc/resources/BaseGameVersion.h"
 
 // auto generated forward declare list
@@ -16,7 +19,6 @@ class ActorInfoRegistry;
 class BlockDefinitionGroup;
 class CreativeItemRegistry;
 class Experiments;
-class HashedString;
 class IContainerRegistryAccess;
 class IContainerRegistryTracker;
 class IDynamicContainerSerialization;
@@ -55,10 +57,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk3d8ae0;
-        ::ll::UntypedStorage<8, 24> mUnkb0fb71;
-        ::ll::UntypedStorage<8, 16> mUnk48eade;
-        ::ll::UntypedStorage<8, 32> mUnkb103c2;
+        ::ll::TypedStorage<8, 16, ::Json::Value>                         mUpgradedJsonRoot;
+        ::ll::TypedStorage<8, 24, ::SemVersion>                          mDocumentVersion;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IPackLoadContext>> mPackLoadContext;
+        ::ll::TypedStorage<8, 32, ::std::string>                         mLoadedPackName;
         // NOLINTEND
 
     public:
@@ -104,15 +106,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48> mUnk2254ff;
-        ::ll::UntypedStorage<8, 32> mUnk541114;
+        ::ll::TypedStorage<8, 48, ::HashedString>    currentName;
+        ::ll::TypedStorage<8, 32, ::BaseGameVersion> sinceVersion;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ItemAlias& operator=(ItemAlias const&);
-        ItemAlias(ItemAlias const&);
-        ItemAlias();
 
     public:
         // member functions
@@ -131,8 +127,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk627c3a;
-        ::ll::UntypedStorage<8, 32> mUnk99d309;
+        ::ll::TypedStorage<8, 8, uint64>             aliasName;
+        ::ll::TypedStorage<8, 32, ::BaseGameVersion> sinceVersion;
         // NOLINTEND
 
     public:
@@ -168,15 +164,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 96> mUnkbbb797;
-        ::ll::UntypedStorage<8, 32> mUnkb57c73;
+        ::ll::TypedStorage<8, 96, ::std::optional<::ItemRegistry::LoadedItemAsset>> mLoadedItemAsset;
+        ::ll::TypedStorage<8, 32, ::std::string>                                    mError;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ItemLoadResult& operator=(ItemLoadResult const&);
-        ItemLoadResult(ItemLoadResult const&);
-        ItemLoadResult();
 
     public:
         // member functions

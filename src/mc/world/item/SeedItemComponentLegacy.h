@@ -8,8 +8,11 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class Block;
+class BlockDescriptor;
 class BlockPos;
 class CompoundTag;
+class Item;
 class ItemStack;
 class Vec3;
 namespace Json { class Value; }
@@ -19,12 +22,12 @@ class SeedItemComponentLegacy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk3fb095;
-    ::ll::UntypedStorage<8, 8>  mUnk6a0e61;
-    ::ll::UntypedStorage<8, 24> mUnk1053b9;
-    ::ll::UntypedStorage<1, 1>  mUnkd08ce0;
-    ::ll::UntypedStorage<1, 1>  mUnk4cb68b;
-    ::ll::UntypedStorage<1, 1>  mUnk18829c;
+    ::ll::TypedStorage<8, 8, ::Item&>                           mOwner;
+    ::ll::TypedStorage<8, 8, ::Block const*>                    mResult;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mTargetLandBlocks;
+    ::ll::TypedStorage<1, 1, bool>                              mPlantAtAnyVisibleSolidSurface;
+    ::ll::TypedStorage<1, 1, bool>                              mIsPlanting;
+    ::ll::TypedStorage<1, 1, uchar>                             mFaceToPlantAt;
     // NOLINTEND
 
 public:

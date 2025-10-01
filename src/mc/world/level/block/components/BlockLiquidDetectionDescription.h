@@ -7,6 +7,7 @@
 #include "mc/world/level/block/LiquidReaction.h"
 #include "mc/world/level/block/LiquidType.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
+#include "mc/world/level/block/components/RuleSet.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,13 +21,11 @@ struct BlockLiquidDetectionDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka2862e;
+    ::ll::TypedStorage<8, 24, ::RuleSet> mDetectionRules;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockLiquidDetectionDescription& operator=(BlockLiquidDetectionDescription const&);
-    BlockLiquidDetectionDescription(BlockLiquidDetectionDescription const&);
     BlockLiquidDetectionDescription();
 
 public:

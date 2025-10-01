@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/platform/Result.h"
 #include "mc/world/item/ItemDescriptor.h"
 
@@ -18,14 +19,12 @@ struct ComplexAliasDescriptor : public ::ItemDescriptor::BaseDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkdc0e24;
-    ::ll::UntypedStorage<8, 16> mUnkeee21e;
+    ::ll::TypedStorage<8, 48, ::HashedString>              mFullName;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor::ItemEntry> mDefaultItem;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ComplexAliasDescriptor& operator=(ComplexAliasDescriptor const&);
-    ComplexAliasDescriptor(ComplexAliasDescriptor const&);
     ComplexAliasDescriptor();
 
 public:

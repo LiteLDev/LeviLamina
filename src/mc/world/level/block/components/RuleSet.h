@@ -11,7 +11,7 @@ struct RuleSet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk8ae233;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DetectionRule>> ruleSet;
     // NOLINTEND
 
 public:

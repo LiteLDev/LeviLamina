@@ -22,15 +22,13 @@ class PillagerOutpostFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk2efe6c;
-    ::ll::UntypedStorage<4, 4>  mUnk52e76e;
-    ::ll::UntypedStorage<8, 24> mUnkc8f87c;
+    ::ll::TypedStorage<4, 4, int const>                     OUTPOST_SPACING;
+    ::ll::TypedStorage<4, 4, int const>                     MIN_OUTPOST_SEPARATION;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PillagerOutpostFeature& operator=(PillagerOutpostFeature const&);
-    PillagerOutpostFeature(PillagerOutpostFeature const&);
     PillagerOutpostFeature();
 
 public:

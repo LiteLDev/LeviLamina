@@ -11,6 +11,7 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
+class BlockState;
 class CompoundTag;
 class ExpressionNode;
 namespace cereal { struct ReflectionCtx; }
@@ -68,15 +69,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk7353ba;
-        ::ll::UntypedStorage<4, 4> mUnkd8a867;
+        ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockState const*>> mBlockState;
+        ::ll::TypedStorage<4, 4, int>                                  mValue;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ResolvedState& operator=(ResolvedState const&);
-        ResolvedState(ResolvedState const&);
-        ResolvedState();
     };
 
     enum class CompareType : int {

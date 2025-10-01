@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Matrix.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/level/block/components/BlockGeometryDescription.h"
 
@@ -27,14 +28,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 64> mUnkd0d89e;
+        ::ll::TypedStorage<4, 64, ::Matrix> mTransformationMatrix;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DefaultPlusEmbeddedRenderer& operator=(DefaultPlusEmbeddedRenderer const&);
-        DefaultPlusEmbeddedRenderer(DefaultPlusEmbeddedRenderer const&);
-        DefaultPlusEmbeddedRenderer();
     };
 
     using Renderer = ::std::

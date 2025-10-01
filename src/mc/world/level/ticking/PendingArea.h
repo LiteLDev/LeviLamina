@@ -4,6 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/platform/UUID.h"
+#include "mc/util/Bounds.h"
+#include "mc/world/level/ticking/TickingAreaLoadMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,22 +20,16 @@ struct PendingArea {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnka15d3e;
-    ::ll::UntypedStorage<8, 32> mUnke345ff;
-    ::ll::UntypedStorage<8, 8>  mUnk31f2e8;
-    ::ll::UntypedStorage<4, 48> mUnk486d03;
-    ::ll::UntypedStorage<4, 4>  mUnkb10c27;
-    ::ll::UntypedStorage<1, 1>  mUnkea1855;
-    ::ll::UntypedStorage<1, 1>  mUnk945e68;
-    ::ll::UntypedStorage<1, 1>  mUnk30a5ed;
-    ::ll::UntypedStorage<1, 1>  mUnk361e2b;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>          mUID;
+    ::ll::TypedStorage<8, 32, ::std::string>        mName;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>       mEntityId;
+    ::ll::TypedStorage<4, 48, ::Bounds>             mBounds;
+    ::ll::TypedStorage<4, 4, float>                 mMaxDistToPlayers;
+    ::ll::TypedStorage<1, 1, bool>                  mIsCircle;
+    ::ll::TypedStorage<1, 1, bool>                  mAlwaysActive;
+    ::ll::TypedStorage<1, 1, ::TickingAreaLoadMode> mLoadMode;
+    ::ll::TypedStorage<1, 1, bool>                  mCreated;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PendingArea& operator=(PendingArea const&);
-    PendingArea(PendingArea const&);
-    PendingArea();
 
 public:
     // member functions

@@ -22,16 +22,14 @@ class OceanMonumentFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk2ae599;
-    ::ll::UntypedStorage<4, 4>  mUnke06b25;
-    ::ll::UntypedStorage<8, 24> mUnk65d813;
-    ::ll::UntypedStorage<8, 24> mUnk43c5e6;
+    ::ll::TypedStorage<4, 4, int>                           mMonumentSpacing;
+    ::ll::TypedStorage<4, 4, int>                           mMinMonumentSeparation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> allowedBiomes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> allowedSpawnBiomes;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    OceanMonumentFeature& operator=(OceanMonumentFeature const&);
-    OceanMonumentFeature(OceanMonumentFeature const&);
     OceanMonumentFeature();
 
 public:

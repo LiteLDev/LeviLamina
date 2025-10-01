@@ -11,6 +11,12 @@ class ItemStack;
 
 struct IGameModeMessenger {
 public:
+    // IGameModeMessenger inner types define
+    using BlockBreakCaptureToken = ::gsl::final_action<::std::function<void()>>;
+
+    using BlockBreakCallback = ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0

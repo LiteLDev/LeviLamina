@@ -3,13 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
+#include "mc/world/item/ItemContextType.h"
 #include "mc/world/item/ItemLockMode.h"
+#include "mc/world/item/ItemStack.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
+class BlockSource;
 class Container;
-class ItemStack;
 class Mob;
 class Vec3;
 struct ItemTag;
@@ -19,14 +23,14 @@ class ItemContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnka4dc0e;
-    ::ll::UntypedStorage<8, 8>   mUnk1b40db;
-    ::ll::UntypedStorage<4, 4>   mUnka18ec5;
-    ::ll::UntypedStorage<4, 4>   mUnkf522d2;
-    ::ll::UntypedStorage<8, 8>   mUnk593683;
-    ::ll::UntypedStorage<4, 12>  mUnk941ac7;
-    ::ll::UntypedStorage<8, 24>  mUnkf97e18;
-    ::ll::UntypedStorage<8, 160> mUnkcfbd62;
+    ::ll::TypedStorage<4, 4, ::ItemContextType>                    mItemContextType;
+    ::ll::TypedStorage<8, 8, ::Container*>                         mContainer;
+    ::ll::TypedStorage<4, 4, int>                                  mSlot;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::EquipmentSlot> mEquipmentSlot;
+    ::ll::TypedStorage<8, 8, ::BlockSource*>                       mBlockSource;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                          mBlockPos;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                     mEntityRef;
+    ::ll::TypedStorage<8, 160, ::std::optional<::ItemStack>>       mItemStackContainer;
     // NOLINTEND
 
 public:

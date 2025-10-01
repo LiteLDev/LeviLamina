@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/BlockVolumeBase.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseBlockLocationIterator;
-class BlockPos;
 class BoundingBox;
 class ChunkPos;
 namespace cereal { struct ReflectionCtx; }
@@ -34,18 +34,14 @@ public:
         BackTopRight     = 7,
     };
 
+    using CornerHandle = uchar;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk1a8f23;
-    ::ll::UntypedStorage<4, 12> mUnk3dd422;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mFrom;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mTo;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SimpleBlockVolume& operator=(SimpleBlockVolume const&);
-    SimpleBlockVolume(SimpleBlockVolume const&);
-    SimpleBlockVolume();
 
 public:
     // virtual functions

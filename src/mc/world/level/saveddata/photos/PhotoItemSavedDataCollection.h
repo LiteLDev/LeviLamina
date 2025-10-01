@@ -2,16 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class PhotoItemSavedData;
+struct ActorUniqueID;
+// clang-format on
+
 class PhotoItemSavedDataCollection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk76d90a;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::std::unique_ptr<::PhotoItemSavedData>>>
+        mPhotoData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PhotoItemSavedDataCollection& operator=(PhotoItemSavedDataCollection const&);
-    PhotoItemSavedDataCollection(PhotoItemSavedDataCollection const&);
-    PhotoItemSavedDataCollection();
 };

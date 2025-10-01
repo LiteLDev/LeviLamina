@@ -14,14 +14,8 @@ struct ConstantInt : public ::IntProviderType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk145d32;
+    ::ll::TypedStorage<4, 4, int> mConstant;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ConstantInt& operator=(ConstantInt const&);
-    ConstantInt(ConstantInt const&);
-    ConstantInt();
 
 public:
     // virtual functions

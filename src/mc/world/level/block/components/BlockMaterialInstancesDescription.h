@@ -6,13 +6,16 @@
 #include "mc/world/level/block/BlockRenderLayer.h"
 #include "mc/world/level/block/TintMethod.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
+#include "mc/world/level/block/components/BlockMaterialInstancePackedBools.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
 class Experiments;
+class HashedString;
 class SemVersion;
+struct BlockMaterialInstance;
 namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -30,40 +33,28 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkd404fa;
-        ::ll::UntypedStorage<4, 4>  mUnk560526;
-        ::ll::UntypedStorage<1, 1>  mUnkb5483c;
-        ::ll::UntypedStorage<1, 1>  mUnkc44bf0;
-        ::ll::UntypedStorage<1, 1>  mUnk4f7e4b;
+        ::ll::TypedStorage<8, 32, ::std::string>                     textureName;
+        ::ll::TypedStorage<4, 4, float>                              ambientOcclusion;
+        ::ll::TypedStorage<1, 1, ::BlockRenderLayer>                 renderLayer;
+        ::ll::TypedStorage<1, 1, ::TintMethod>                       tintMethod;
+        ::ll::TypedStorage<1, 1, ::BlockMaterialInstancePackedBools> packedBools;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockMaterialInstanceData& operator=(BlockMaterialInstanceData const&);
-        BlockMaterialInstanceData(BlockMaterialInstanceData const&);
-        BlockMaterialInstanceData();
     };
 
     struct BlockMaterialData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnke0dca5;
-        ::ll::UntypedStorage<8, 40> mUnk6be5e5;
+        ::ll::TypedStorage<8, 32, ::std::string>                                                  materialName;
+        ::ll::TypedStorage<8, 40, ::BlockMaterialInstancesDescription::BlockMaterialInstanceData> materialInstanceData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockMaterialData& operator=(BlockMaterialData const&);
-        BlockMaterialData(BlockMaterialData const&);
-        BlockMaterialData();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk98b178;
-    ::ll::UntypedStorage<8, 64> mUnkfaac49;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::BlockMaterialInstance>> mMaterials;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::string>>           mMaterialMappings;
     // NOLINTEND
 
 public:

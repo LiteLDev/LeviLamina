@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/platform/Result.h"
 #include "mc/world/item/ItemDescriptor.h"
+#include "mc/world/item/ItemTag.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,14 +20,8 @@ struct ItemTagDescriptor : public ::ItemDescriptor::BaseDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkcef01f;
+    ::ll::TypedStorage<8, 48, ::ItemTag> mItemTag;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ItemTagDescriptor& operator=(ItemTagDescriptor const&);
-    ItemTagDescriptor(ItemTagDescriptor const&);
-    ItemTagDescriptor();
 
 public:
     // virtual functions

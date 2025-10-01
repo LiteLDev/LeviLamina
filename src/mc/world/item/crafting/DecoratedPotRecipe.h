@@ -18,13 +18,11 @@ class DecoratedPotRecipe : public ::MultiRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk98b30e;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    DecoratedPotRecipe& operator=(DecoratedPotRecipe const&);
-    DecoratedPotRecipe(DecoratedPotRecipe const&);
     DecoratedPotRecipe();
 
 public:

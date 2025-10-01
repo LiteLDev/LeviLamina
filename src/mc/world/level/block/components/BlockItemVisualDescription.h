@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/components/BlockComponentDescription.h"
+#include "mc/world/level/block/components/BlockGeometryDescription.h"
+#include "mc/world/level/block/components/BlockMaterialInstancesDescription.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,15 +18,9 @@ struct BlockItemVisualDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnk5cb854;
-    ::ll::UntypedStorage<8, 144> mUnk9341c7;
+    ::ll::TypedStorage<8, 216, ::BlockGeometryDescription>          mGeometryDescription;
+    ::ll::TypedStorage<8, 144, ::BlockMaterialInstancesDescription> mMaterialInstanceDescription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockItemVisualDescription& operator=(BlockItemVisualDescription const&);
-    BlockItemVisualDescription(BlockItemVisualDescription const&);
-    BlockItemVisualDescription();
 
 public:
     // virtual functions

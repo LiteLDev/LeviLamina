@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/puv/LoadResult.h"
+#include "mc/deps/puv/Loader.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,13 +19,11 @@ class FeatureLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnk12e46a;
+    ::ll::TypedStorage<8, 104, ::Puv::Loader<::FeatureResult>> mLoader;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    FeatureLoader& operator=(FeatureLoader const&);
-    FeatureLoader(FeatureLoader const&);
     FeatureLoader();
 
 public:

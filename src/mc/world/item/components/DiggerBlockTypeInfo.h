@@ -2,13 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/legacy/BlockDescriptor.h"
+#include "mc/world/actor/DefinitionTrigger.h"
+
 struct DiggerBlockTypeInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80> mUnkd000a9;
-    ::ll::UntypedStorage<4, 4>  mUnkc68da9;
-    ::ll::UntypedStorage<8, 56> mUnk2f43e4;
+    ::ll::TypedStorage<8, 80, ::SharedTypes::Legacy::BlockDescriptor> filter;
+    ::ll::TypedStorage<4, 4, int>                                     destroySpeed;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger>                    onDig;
     // NOLINTEND
 
 public:

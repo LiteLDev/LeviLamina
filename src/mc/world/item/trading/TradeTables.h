@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/puv/puv_load_data/LoadResultWithTiming.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,15 +28,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkf6f6b4;
-        ::ll::UntypedStorage<8, 32> mUnk748cba;
+        ::ll::TypedStorage<8, 32, ::std::string>                       mPackName;
+        ::ll::TypedStorage<8, 32, ::PuvLoadData::LoadResultWithTiming> mLoadTime;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TradeTableLoadData& operator=(TradeTableLoadData const&);
-        TradeTableLoadData(TradeTableLoadData const&);
-        TradeTableLoadData();
 
     public:
         // member functions
@@ -53,14 +48,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk1d798d;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unique_ptr<::TradeTable>>> mTradeTables;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TradeTables& operator=(TradeTables const&);
-    TradeTables(TradeTables const&);
-    TradeTables();
 
 public:
     // member functions

@@ -16,14 +16,8 @@ struct BlockDisplayNameDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkcb95e3;
+    ::ll::TypedStorage<8, 32, ::std::string> mDisplayName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockDisplayNameDescription& operator=(BlockDisplayNameDescription const&);
-    BlockDisplayNameDescription(BlockDisplayNameDescription const&);
-    BlockDisplayNameDescription();
 
 public:
     // virtual functions

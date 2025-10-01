@@ -9,6 +9,7 @@
 // clang-format off
 class BlockPos;
 class BlockSource;
+class HashedString;
 class Random;
 // clang-format on
 
@@ -16,15 +17,9 @@ class NetherFossilFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk21717a;
-    ::ll::UntypedStorage<1, 1>  mUnkaf6255;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>> mValidGroundBlocks;
+    ::ll::TypedStorage<1, 1, bool>                           mMayPlaceInLava;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetherFossilFeature& operator=(NetherFossilFeature const&);
-    NetherFossilFeature(NetherFossilFeature const&);
-    NetherFossilFeature();
 
 public:
     // virtual functions

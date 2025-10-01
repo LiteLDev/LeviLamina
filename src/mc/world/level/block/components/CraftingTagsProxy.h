@@ -6,12 +6,6 @@ struct CraftingTagsProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk449993;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mTags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CraftingTagsProxy& operator=(CraftingTagsProxy const&);
-    CraftingTagsProxy(CraftingTagsProxy const&);
-    CraftingTagsProxy();
 };

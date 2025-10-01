@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/BlockVolumeBase.h"
 
 // auto generated forward declare list
 // clang-format off
 class BaseBlockLocationIterator;
-class BlockPos;
 class BoundingBox;
 class ChunkPos;
 class Vec3;
@@ -18,10 +18,10 @@ class ListBlockVolume : public ::BlockVolumeBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkbb5064;
-    ::ll::UntypedStorage<4, 12> mUnk531f0e;
-    ::ll::UntypedStorage<4, 12> mUnk33cf4c;
-    ::ll::UntypedStorage<8, 8>  mUnk7cf3db;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::BlockPos>> mBlockPositions;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                       mMin;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                       mMax;
+    ::ll::TypedStorage<8, 8, uint64>                            mChangeCount;
     // NOLINTEND
 
 public:

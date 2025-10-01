@@ -32,15 +32,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk378ab1;
-        ::ll::UntypedStorage<8, 24> mUnk790965;
+        ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mRecencyOrderedIndexes;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::CraftingContainer, ::std::vector<::ItemInstance>>>>
+            mCachedValues;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LruCache& operator=(LruCache const&);
-        LruCache(LruCache const&);
-        LruCache();
 
     public:
         // member functions

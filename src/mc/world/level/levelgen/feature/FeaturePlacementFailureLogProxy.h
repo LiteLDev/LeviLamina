@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class FeaturePlacementFailureLog;
 namespace Bedrock { class StaticOptimizedString; }
 // clang-format on
 
@@ -11,14 +12,8 @@ class FeaturePlacementFailureLogProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7afa1b;
+    ::ll::TypedStorage<8, 8, ::FeaturePlacementFailureLog*> mLogger;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FeaturePlacementFailureLogProxy& operator=(FeaturePlacementFailureLogProxy const&);
-    FeaturePlacementFailureLogProxy(FeaturePlacementFailureLogProxy const&);
-    FeaturePlacementFailureLogProxy();
 
 public:
     // member functions

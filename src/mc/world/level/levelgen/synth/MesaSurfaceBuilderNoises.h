@@ -15,16 +15,18 @@ class MesaSurfaceBuilderNoises {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnkbdec45;
-    ::ll::UntypedStorage<8, 56> mUnka2868c;
-    ::ll::UntypedStorage<8, 56> mUnk9779a7;
-    ::ll::UntypedStorage<8, 56> mUnkdedd67;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mClayBandsOffsetNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mSurfaceNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mPillarNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mPillarRoofNoise;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    MesaSurfaceBuilderNoises& operator=(MesaSurfaceBuilderNoises const&);
-    MesaSurfaceBuilderNoises(MesaSurfaceBuilderNoises const&);
     MesaSurfaceBuilderNoises();
 
 public:

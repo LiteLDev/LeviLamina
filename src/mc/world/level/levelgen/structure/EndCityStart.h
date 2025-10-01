@@ -16,14 +16,8 @@ class EndCityStart : public ::StructureStart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkbd36dc;
+    ::ll::TypedStorage<1, 1, bool> mIsValid;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EndCityStart& operator=(EndCityStart const&);
-    EndCityStart(EndCityStart const&);
-    EndCityStart();
 
 public:
     // virtual functions

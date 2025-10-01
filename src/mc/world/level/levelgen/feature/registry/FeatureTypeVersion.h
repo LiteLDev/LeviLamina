@@ -3,20 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/world/level/levelgen/feature/feature_loading/FeatureVersion.h"
 
 class FeatureTypeVersion {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk8bb473;
-    ::ll::UntypedStorage<1, 1>  mUnkbafaa0;
+    ::ll::TypedStorage<8, 24, ::SemVersion> mFormatVersion;
+    ::ll::TypedStorage<1, 1, bool>          mIsInternal;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    FeatureTypeVersion& operator=(FeatureTypeVersion const&);
-    FeatureTypeVersion(FeatureTypeVersion const&);
     FeatureTypeVersion();
 
 public:

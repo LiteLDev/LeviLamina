@@ -18,17 +18,13 @@ public:
         WrapAround   = 2,
     };
 
+    using SpreadTypes = ::std::vector<::MultifaceSpreader::SpreadType>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk693f7c;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MultifaceSpreader::SpreadType>> mSpreadTypes;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MultifaceSpreader& operator=(MultifaceSpreader const&);
-    MultifaceSpreader(MultifaceSpreader const&);
-    MultifaceSpreader();
 
 public:
     // virtual functions

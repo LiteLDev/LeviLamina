@@ -15,13 +15,11 @@ class StrongholdStart : public ::StructureStart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke64a2a;
+    ::ll::TypedStorage<1, 1, bool> mValid;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    StrongholdStart& operator=(StrongholdStart const&);
-    StrongholdStart(StrongholdStart const&);
     StrongholdStart();
 
 public:

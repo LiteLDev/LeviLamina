@@ -4,6 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/BlockDescriptor.h"
+#include "mc/world/level/block/block_descriptor_serializer/StatesProxy.h"
+#include "mc/world/level/block/block_descriptor_serializer/TagsProxy.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,9 +18,9 @@ struct BlockDescriptorProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk64c69c;
-    ::ll::UntypedStorage<8, 24> mUnk331105;
-    ::ll::UntypedStorage<8, 32> mUnk5e2bf7;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mName;
+    ::ll::TypedStorage<8, 24, ::BlockDescriptorSerializer::StatesProxy> mStates;
+    ::ll::TypedStorage<8, 32, ::BlockDescriptorSerializer::TagsProxy>   mTags;
     // NOLINTEND
 
 public:

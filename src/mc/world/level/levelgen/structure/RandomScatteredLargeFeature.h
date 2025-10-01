@@ -22,15 +22,13 @@ class RandomScatteredLargeFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk98de65;
-    ::ll::UntypedStorage<4, 4>  mUnk8f09d8;
-    ::ll::UntypedStorage<4, 4>  mUnke95172;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
+    ::ll::TypedStorage<4, 4, int>                           mSpacing;
+    ::ll::TypedStorage<4, 4, int>                           mMinSeparation;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    RandomScatteredLargeFeature& operator=(RandomScatteredLargeFeature const&);
-    RandomScatteredLargeFeature(RandomScatteredLargeFeature const&);
     RandomScatteredLargeFeature();
 
 public:

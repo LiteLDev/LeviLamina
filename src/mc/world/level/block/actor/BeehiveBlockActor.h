@@ -3,17 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/nbt/CompoundTag.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class BlockSource;
-class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class SaveContext;
-struct ActorDefinitionIdentifier;
 // clang-format on
 
 class BeehiveBlockActor : public ::BlockActor {
@@ -28,15 +28,13 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 176> mUnkda7ec5;
-        ::ll::UntypedStorage<8, 24>  mUnk5c198a;
-        ::ll::UntypedStorage<4, 4>   mUnk53aa96;
+        ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mActorIdentifier;
+        ::ll::TypedStorage<8, 24, ::CompoundTag>                mSaveData;
+        ::ll::TypedStorage<4, 4, uint>                          mTicksLeftToStay;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        Occupant& operator=(Occupant const&);
-        Occupant(Occupant const&);
         Occupant();
 
     public:

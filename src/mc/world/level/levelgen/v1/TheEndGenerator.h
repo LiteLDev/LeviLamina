@@ -13,6 +13,7 @@
 class Biome;
 class BiomeArea;
 class BiomeSource;
+class Block;
 class BlockPos;
 class BlockSource;
 class BlockVolume;
@@ -45,14 +46,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 262144> mUnk420483;
+        ::ll::TypedStorage<8, 262144, ::std::array<::Block const*, 32768>> blockBuffer;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ThreadData& operator=(ThreadData const&);
-        ThreadData(ThreadData const&);
-        ThreadData();
     };
 
 public:

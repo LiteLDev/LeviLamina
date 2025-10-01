@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/structure/MineshaftData.h"
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
 
 // auto generated forward declare list
@@ -11,21 +12,14 @@ class Block;
 class BlockSource;
 class BoundingBox;
 class Random;
-struct MineshaftData;
 // clang-format on
 
 class MineshaftPiece : public ::StructurePiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk1ccc77;
+    ::ll::TypedStorage<8, 32, ::MineshaftData> mMetadata;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MineshaftPiece& operator=(MineshaftPiece const&);
-    MineshaftPiece(MineshaftPiece const&);
-    MineshaftPiece();
 
 public:
     // virtual functions

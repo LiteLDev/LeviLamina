@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/nbt/CompoundTag.h"
 #include "mc/world/Direction.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 
 // auto generated forward declare list
@@ -14,7 +16,6 @@ class Block;
 class BlockActorDataPacket;
 class BlockPos;
 class BlockSource;
-class CompoundTag;
 class DataLoadHelper;
 class ILevel;
 class SaveContext;
@@ -34,15 +35,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 176> mUnk6e28f9;
-        ::ll::UntypedStorage<8, 24>  mUnk4d5cb5;
+        ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mActorIdentifier;
+        ::ll::TypedStorage<8, 24, ::CompoundTag>                mSaveData;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SerializedActor& operator=(SerializedActor const&);
-        SerializedActor(SerializedActor const&);
-        SerializedActor();
     };
 
 public:

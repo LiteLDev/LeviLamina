@@ -19,18 +19,16 @@ public:
     // clang-format on
 
     // PoolAliasBinding inner types define
+    using Ptr = ::std::shared_ptr<::PoolAliasBinding>;
+
+    using BoundAliasGroup = ::std::vector<::std::shared_ptr<::PoolAliasBinding>>;
+
     class PoolAliasLookup {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnkbb4557;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::std::string>>> mLookupTable;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PoolAliasLookup& operator=(PoolAliasLookup const&);
-        PoolAliasLookup(PoolAliasLookup const&);
-        PoolAliasLookup();
 
     public:
         // member functions

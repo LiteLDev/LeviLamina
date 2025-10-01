@@ -30,14 +30,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk55c338;
+        ::ll::TypedStorage<4, 4, int> threatLevel;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        QueuedResponse& operator=(QueuedResponse const&);
-        QueuedResponse(QueuedResponse const&);
-        QueuedResponse();
     };
 
 public:

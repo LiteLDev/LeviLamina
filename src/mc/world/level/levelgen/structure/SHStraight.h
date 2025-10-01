@@ -18,15 +18,9 @@ class SHStraight : public ::StrongholdPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke895dd;
-    ::ll::UntypedStorage<1, 1> mUnkd846d6;
+    ::ll::TypedStorage<1, 1, bool> leftChild;
+    ::ll::TypedStorage<1, 1, bool> rightChild;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SHStraight& operator=(SHStraight const&);
-    SHStraight(SHStraight const&);
-    SHStraight();
 
 public:
     // virtual functions

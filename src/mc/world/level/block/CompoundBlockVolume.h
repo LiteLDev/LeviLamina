@@ -4,11 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
+#include "mc/world/level/levelgen/structure/BoundingBox.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class CompoundBlockVolumeItem;
 class CompoundBlockVolumeIterator;
 // clang-format on
@@ -17,9 +18,9 @@ class CompoundBlockVolume : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka82ec2;
-    ::ll::UntypedStorage<4, 12> mUnkecccd4;
-    ::ll::UntypedStorage<4, 24> mUnk35e969;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CompoundBlockVolumeItem>> mVolumeList;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                               mOrigin;
+    ::ll::TypedStorage<4, 24, ::BoundingBox>                            mBounds;
     // NOLINTEND
 
 public:

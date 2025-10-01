@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/world/events/gameevents/VibrationListenerConfig.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class BlockPos;
 class BlockSource;
 class GameEvent;
 struct GameEventContext;
@@ -18,14 +18,8 @@ class SculkShriekerVibrationConfig : public ::VibrationListenerConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk321d05;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mPosition;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SculkShriekerVibrationConfig& operator=(SculkShriekerVibrationConfig const&);
-    SculkShriekerVibrationConfig(SculkShriekerVibrationConfig const&);
-    SculkShriekerVibrationConfig();
 
 public:
     // virtual functions

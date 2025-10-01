@@ -42,6 +42,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::DepenetrationComponent& operator=(::DepenetrationComponent&&);
+    MCAPI ::DepenetrationComponent& operator=(::DepenetrationComponent&&);
     // NOLINTEND
 };

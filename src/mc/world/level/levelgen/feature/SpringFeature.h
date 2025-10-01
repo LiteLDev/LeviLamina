@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class BlockSource;
 class BlockType;
@@ -17,7 +18,7 @@ class SpringFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc73c96;
+    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
     // NOLINTEND
 
 public:

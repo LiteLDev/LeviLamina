@@ -18,14 +18,8 @@ class SHRoomCrossing : public ::StrongholdPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5afa04;
+    ::ll::TypedStorage<4, 4, int> type;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SHRoomCrossing& operator=(SHRoomCrossing const&);
-    SHRoomCrossing(SHRoomCrossing const&);
-    SHRoomCrossing();
 
 public:
     // virtual functions

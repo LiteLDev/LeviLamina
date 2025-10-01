@@ -9,14 +9,8 @@ struct BlockedDirections {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk8fb8b9;
+    ::ll::TypedStorage<1, 1, uchar> mStopsFlowDirectionsMask;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockedDirections& operator=(BlockedDirections const&);
-    BlockedDirections(BlockedDirections const&);
-    BlockedDirections();
 
 public:
     // static functions

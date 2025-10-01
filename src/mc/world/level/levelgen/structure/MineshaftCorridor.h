@@ -18,17 +18,11 @@ class MineshaftCorridor : public ::MineshaftPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk191025;
-    ::ll::UntypedStorage<1, 1> mUnk3560e1;
-    ::ll::UntypedStorage<1, 1> mUnkce0fd5;
-    ::ll::UntypedStorage<4, 4> mUnkd87313;
+    ::ll::TypedStorage<1, 1, bool> hasRails;
+    ::ll::TypedStorage<1, 1, bool> spiderCorridor;
+    ::ll::TypedStorage<1, 1, bool> hasPlacedSpider;
+    ::ll::TypedStorage<4, 4, int>  numSections;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MineshaftCorridor& operator=(MineshaftCorridor const&);
-    MineshaftCorridor(MineshaftCorridor const&);
-    MineshaftCorridor();
 
 public:
     // virtual functions

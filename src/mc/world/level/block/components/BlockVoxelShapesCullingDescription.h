@@ -15,14 +15,8 @@ struct BlockVoxelShapesCullingDescription
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc9f7ef;
+    ::ll::TypedStorage<8, 32, ::std::string> mOcclusionShapeName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockVoxelShapesCullingDescription& operator=(BlockVoxelShapesCullingDescription const&);
-    BlockVoxelShapesCullingDescription(BlockVoxelShapesCullingDescription const&);
-    BlockVoxelShapesCullingDescription();
 
 public:
     // virtual functions

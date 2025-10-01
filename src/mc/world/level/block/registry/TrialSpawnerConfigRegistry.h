@@ -11,13 +11,8 @@ class TrialSpawnerConfigRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk2d6f91;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::TrialSpawnerConfig>> mAliasesToConfig;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TrialSpawnerConfigRegistry& operator=(TrialSpawnerConfigRegistry const&);
-    TrialSpawnerConfigRegistry(TrialSpawnerConfigRegistry const&);
 
 public:
     // member functions

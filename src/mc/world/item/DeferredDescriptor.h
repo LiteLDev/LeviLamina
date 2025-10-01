@@ -20,15 +20,9 @@ struct DeferredDescriptor : public ::ItemDescriptor::BaseDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd4971a;
-    ::ll::UntypedStorage<2, 2>  mUnk5e449c;
+    ::ll::TypedStorage<8, 32, ::std::string> mFullName;
+    ::ll::TypedStorage<2, 2, short>          mAuxValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DeferredDescriptor& operator=(DeferredDescriptor const&);
-    DeferredDescriptor(DeferredDescriptor const&);
-    DeferredDescriptor();
 
 public:
     // virtual functions

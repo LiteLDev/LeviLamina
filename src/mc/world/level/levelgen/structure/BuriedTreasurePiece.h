@@ -18,14 +18,8 @@ class BuriedTreasurePiece : public ::StructurePiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk34a6c1;
+    ::ll::TypedStorage<4, 4, int> mRadius;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BuriedTreasurePiece& operator=(BuriedTreasurePiece const&);
-    BuriedTreasurePiece(BuriedTreasurePiece const&);
-    BuriedTreasurePiece();
 
 public:
     // virtual functions

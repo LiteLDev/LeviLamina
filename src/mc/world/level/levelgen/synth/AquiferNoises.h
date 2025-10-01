@@ -3,23 +3,23 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/random/XoroshiroPositionalRandomFactory.h"
 #include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
 #include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
-
-// auto generated forward declare list
-// clang-format off
-class XoroshiroPositionalRandomFactory;
-// clang-format on
 
 class AquiferNoises {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnkaec99b;
-    ::ll::UntypedStorage<8, 56> mUnk5035c7;
-    ::ll::UntypedStorage<8, 56> mUnk5f57c3;
-    ::ll::UntypedStorage<8, 56> mUnk24710e;
-    ::ll::UntypedStorage<8, 24> mUnk2421f5;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mBarrierNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mFluidLevelFloodednessNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mLavaNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+                                                                        mFluidLevelSpreadNoise;
+    ::ll::TypedStorage<8, 24, ::XoroshiroPositionalRandomFactory const> mPositionalRandomFactory;
     // NOLINTEND
 
 public:

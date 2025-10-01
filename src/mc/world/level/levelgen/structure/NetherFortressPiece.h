@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockSource;
 class BoundingBox;
 class LevelChunk;
@@ -27,12 +28,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkae69c2;
-        ::ll::UntypedStorage<8, 8> mUnka4a86f;
-        ::ll::UntypedStorage<8, 8> mUnk34530d;
-        ::ll::UntypedStorage<8, 8> mUnk14c78e;
-        ::ll::UntypedStorage<8, 8> mUnk7c60a9;
-        ::ll::UntypedStorage<8, 8> mUnkc479fe;
+        ::ll::TypedStorage<8, 8, ::Block const&> mGlowstone;
+        ::ll::TypedStorage<8, 8, ::Block const&> mNetherBrick;
+        ::ll::TypedStorage<8, 8, ::Block const&> mNetherBrickFence;
+        ::ll::TypedStorage<8, 8, ::Block const&> mNetherWart;
+        ::ll::TypedStorage<8, 8, ::Block const&> mSoulSand;
+        ::ll::TypedStorage<8, 8, ::Block const&> mAirBlock;
         // NOLINTEND
 
     public:
@@ -45,13 +46,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk236a8b;
+    ::ll::TypedStorage<8, 48, ::NetherFortressPiece::LocalRegistry const> mLocalRegistry;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    NetherFortressPiece& operator=(NetherFortressPiece const&);
-    NetherFortressPiece(NetherFortressPiece const&);
     NetherFortressPiece();
 
 public:

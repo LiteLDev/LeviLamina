@@ -19,12 +19,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk652030;
-    ::ll::UntypedStorage<8, 40> mUnkd36fc2;
-    ::ll::UntypedStorage<8, 40> mUnk48af3a;
-    ::ll::UntypedStorage<8, 32> mUnk621f2a;
-    ::ll::UntypedStorage<8, 32> mUnk656ee8;
-    ::ll::UntypedStorage<8, 40> mUnk38d2eb;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mText;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mFilteredText;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mParsedFilteredText;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mParsedText;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mPhotoName;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mFilteredPhotoName;
     // NOLINTEND
 
 public:

@@ -31,26 +31,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AdmireItemComponent(::AdmireItemComponent&&);
+    MCAPI AdmireItemComponent(::AdmireItemComponent&&);
 
-    MCNAPI void onAdmireItemPickedUp(::Actor const& owner, ::ItemStack const& item, ::Actor* itemOwner);
+    MCAPI void onAdmireItemPickedUp(::Actor const& owner, ::ItemStack const& item, ::Actor* itemOwner);
 
-    MCNAPI ::AdmireItemComponent& operator=(::AdmireItemComponent&&);
+    MCAPI ::AdmireItemComponent& operator=(::AdmireItemComponent&&);
 
-    MCNAPI void stopAdmiring();
+    MCAPI void stopAdmiring();
 
-    MCNAPI ~AdmireItemComponent();
+    MCAPI ~AdmireItemComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::AdmireItemComponent&&);
+    MCAPI void* $ctor(::AdmireItemComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

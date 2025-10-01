@@ -6,12 +6,12 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 #include "mc/world/level/levelgen/structure/TemplateStructurePiece.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class BoundingBox;
 class Random;
@@ -39,20 +39,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk4d3f84;
-        ::ll::UntypedStorage<8, 32> mUnkcee1a3;
-        ::ll::UntypedStorage<1, 1>  mUnkf64aa2;
-        ::ll::UntypedStorage<1, 1>  mUnk42ba55;
-        ::ll::UntypedStorage<4, 12> mUnkb8937e;
-        ::ll::UntypedStorage<8, 24> mUnk1ce38c;
-        ::ll::UntypedStorage<8, 24> mUnk3a48b3;
-        ::ll::UntypedStorage<8, 24> mUnka40a15;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::StructureManager>> mStructureManager;
+        ::ll::TypedStorage<8, 32, ::std::string>                                     mTemplateName;
+        ::ll::TypedStorage<1, 1, ::Rotation>                                         mRotation;
+        ::ll::TypedStorage<1, 1, ::Mirror>                                           mMirror;
+        ::ll::TypedStorage<4, 12, ::BlockPos>                                        mPosition;
+        ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                         mVindicatorPositions;
+        ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                         mEvokerPositions;
+        ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                         mAllayGroupPositions;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        WoodlandMansionPiece& operator=(WoodlandMansionPiece const&);
-        WoodlandMansionPiece(WoodlandMansionPiece const&);
         WoodlandMansionPiece();
 
     public:
@@ -159,16 +157,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnk5be46d;
-        ::ll::UntypedStorage<4, 12> mUnkcebdae;
-        ::ll::UntypedStorage<8, 32> mUnkf5b1b8;
+        ::ll::TypedStorage<1, 1, ::Rotation>     mRotation;
+        ::ll::TypedStorage<4, 12, ::BlockPos>    mPosition;
+        ::ll::TypedStorage<8, 32, ::std::string> mWallType;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PlacementData& operator=(PlacementData const&);
-        PlacementData(PlacementData const&);
-        PlacementData();
 
     public:
         // member functions
@@ -187,12 +179,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkabbf84;
-        ::ll::UntypedStorage<8, 8>  mUnke92746;
-        ::ll::UntypedStorage<8, 24> mUnk29dd95;
-        ::ll::UntypedStorage<4, 4>  mUnkd065d7;
-        ::ll::UntypedStorage<4, 4>  mUnk9a0f18;
-        ::ll::UntypedStorage<8, 8>  mUnkec8509;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WoodlandMansionPieces::SimpleGrid>> mBaseGrid;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WoodlandMansionPieces::SimpleGrid>> mThirdFloorGrid;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::WoodlandMansionPieces::SimpleGrid>>> mFloorRooms;
+        ::ll::TypedStorage<4, 4, int>                                                                    mEntranceX;
+        ::ll::TypedStorage<4, 4, int>                                                                    mEntranceY;
+        ::ll::TypedStorage<8, 8, ::Random&>                                                              mRandom;
         // NOLINTEND
 
     public:
@@ -236,17 +228,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk357599;
-        ::ll::UntypedStorage<4, 4>  mUnk172802;
-        ::ll::UntypedStorage<4, 4>  mUnkeb4d1d;
-        ::ll::UntypedStorage<4, 4>  mUnk1e4614;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<int>>> mGrid;
+        ::ll::TypedStorage<4, 4, int>                                mWidth;
+        ::ll::TypedStorage<4, 4, int>                                mHeight;
+        ::ll::TypedStorage<4, 4, int>                                mValueIfOutside;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SimpleGrid& operator=(SimpleGrid const&);
-        SimpleGrid(SimpleGrid const&);
-        SimpleGrid();
 
     public:
         // member functions
@@ -301,10 +287,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnkda958b;
-        ::ll::UntypedStorage<8, 8>  mUnkc9fbcb;
-        ::ll::UntypedStorage<4, 4>  mUnk8d326a;
-        ::ll::UntypedStorage<4, 4>  mUnka4720e;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::StructureManager>> mStructureManager;
+        ::ll::TypedStorage<8, 8, ::Random&>                                          mRandom;
+        ::ll::TypedStorage<4, 4, int>                                                mStartX;
+        ::ll::TypedStorage<4, 4, int>                                                mStartY;
         // NOLINTEND
 
     public:

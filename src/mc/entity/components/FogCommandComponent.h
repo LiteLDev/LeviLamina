@@ -20,18 +20,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI ::std::vector<::std::string> getFogSettingsStack() const;
+    MCAPI ::std::vector<::std::string> getFogSettingsStack() const;
 
-    MCNAPI bool popFogSetting(::std::string const& userProvidedId);
+    MCAPI bool popFogSetting(::std::string const& userProvidedId);
 
-    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool isValidIdentifier(::std::string const& format);
+    MCAPI static bool isValidIdentifier(::std::string const& format);
     // NOLINTEND
 };

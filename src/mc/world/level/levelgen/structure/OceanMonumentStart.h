@@ -17,14 +17,8 @@ class OceanMonumentStart : public ::StructureStart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk1a186e;
+    ::ll::TypedStorage<1, 1, bool> isCreated;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OceanMonumentStart& operator=(OceanMonumentStart const&);
-    OceanMonumentStart(OceanMonumentStart const&);
-    OceanMonumentStart();
 
 public:
     // virtual functions

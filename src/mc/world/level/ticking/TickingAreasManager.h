@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/level/ticking/AddTickingAreaStatus.h"
 #include "mc/world/level/ticking/TickingAreaLoadMode.h"
 
@@ -34,21 +35,23 @@ public:
         ActiveAndPendingStandalone = 2,
     };
 
+    using ActivePerDimension = ::std::map<::DimensionType, ::std::shared_ptr<::TickingAreaList>>;
+
+    using PendingPerDimension = ::std::unordered_map<::DimensionType, ::std::vector<::PendingArea>>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkf7d085;
-    ::ll::UntypedStorage<8, 64> mUnk834614;
-    ::ll::UntypedStorage<1, 1>  mUnk6225fd;
-    ::ll::UntypedStorage<8, 24> mUnk85f8a0;
-    ::ll::UntypedStorage<8, 16> mUnk5486bd;
-    ::ll::UntypedStorage<8, 16> mUnkd3ead8;
+    ::ll::TypedStorage<8, 16, ::std::map<::DimensionType, ::std::shared_ptr<::TickingAreaList>>>   mActiveAreas;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::DimensionType, ::std::vector<::PendingArea>>> mPendingAreas;
+    ::ll::TypedStorage<1, 1, bool>                                                                 mIsPreloadDone;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LevelStorage> const>                    mLevelStorage;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPostReloadActorAdded;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnCanStartGameSaveTimerCheckSubscription;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    TickingAreasManager& operator=(TickingAreasManager const&);
-    TickingAreasManager(TickingAreasManager const&);
     TickingAreasManager();
 
 public:

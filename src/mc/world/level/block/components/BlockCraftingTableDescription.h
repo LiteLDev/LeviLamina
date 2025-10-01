@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/components/BlockComponentDescription.h"
+#include "mc/world/level/block/components/CraftingTagsProxy.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,16 +17,10 @@ struct BlockCraftingTableDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkae0efd;
-    ::ll::UntypedStorage<8, 32> mUnk3c89d2;
-    ::ll::UntypedStorage<8, 24> mUnk6a9be7;
+    ::ll::TypedStorage<4, 4, int>                  mGridSize;
+    ::ll::TypedStorage<8, 32, ::std::string>       mTableName;
+    ::ll::TypedStorage<8, 24, ::CraftingTagsProxy> mCraftingTags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockCraftingTableDescription& operator=(BlockCraftingTableDescription const&);
-    BlockCraftingTableDescription(BlockCraftingTableDescription const&);
-    BlockCraftingTableDescription();
 
 public:
     // virtual functions

@@ -2,19 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/components/BlockPlacementDirectionalFilter.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockDescriptor;
+// clang-format on
+
 struct BlockPlacementCondition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk164653;
-    ::ll::UntypedStorage<8, 24> mUnkaf5ea0;
+    ::ll::TypedStorage<1, 1, ::BlockPlacementDirectionalFilter> directionalFilter;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> blockFilter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockPlacementCondition& operator=(BlockPlacementCondition const&);
-    BlockPlacementCondition(BlockPlacementCondition const&);
-    BlockPlacementCondition();
 
 public:
     // member functions

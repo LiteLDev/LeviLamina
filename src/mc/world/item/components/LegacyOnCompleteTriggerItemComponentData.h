@@ -2,11 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/DefinitionTrigger.h"
+
 struct LegacyOnCompleteTriggerItemComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkc1becb;
+    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnComplete;
     // NOLINTEND
 
 public:

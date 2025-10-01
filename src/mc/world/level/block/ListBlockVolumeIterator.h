@@ -3,16 +3,24 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/BaseBlockLocationIterator.h"
+
+// auto generated forward declare list
+// clang-format off
+class ListBlockVolume;
+// clang-format on
 
 class ListBlockVolumeIterator : public ::BaseBlockLocationIterator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk32f57d;
-    ::ll::UntypedStorage<8, 8> mUnkf4343d;
-    ::ll::UntypedStorage<8, 8> mUnkeb63cd;
-    ::ll::UntypedStorage<8, 8> mUnkf7eb1b;
+    ::ll::TypedStorage<8, 8, ::ListBlockVolume const&> mListBlockVolume;
+    ::ll::TypedStorage<8, 8, ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::BlockPos>>>>
+        mCurrentIterator;
+    ::ll::TypedStorage<8, 8, ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::BlockPos>>>>
+                                     mEndIterator;
+    ::ll::TypedStorage<8, 8, uint64> mChangeCount;
     // NOLINTEND
 
 public:

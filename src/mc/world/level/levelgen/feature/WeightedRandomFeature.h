@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
@@ -22,28 +23,16 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk28dbe3;
-        ::ll::UntypedStorage<4, 4>  mUnkc6f26e;
+        ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeature;
+        ::ll::TypedStorage<4, 4, float>                  mWeight;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WeightedFeatureReference& operator=(WeightedFeatureReference const&);
-        WeightedFeatureReference(WeightedFeatureReference const&);
-        WeightedFeatureReference();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkcbe588;
+    ::ll::TypedStorage<8, 24, ::std::vector<::WeightedRandomFeature::WeightedFeatureReference>> mFeatureReferences;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WeightedRandomFeature& operator=(WeightedRandomFeature const&);
-    WeightedRandomFeature(WeightedRandomFeature const&);
-    WeightedRandomFeature();
 
 public:
     // virtual functions

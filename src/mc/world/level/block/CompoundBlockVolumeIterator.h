@@ -14,13 +14,11 @@ class CompoundBlockVolumeIterator : public ::BaseBlockLocationIterator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2ba183;
+    ::ll::TypedStorage<8, 8, ::CompoundBlockVolume const*> mCompoundVolume;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    CompoundBlockVolumeIterator& operator=(CompoundBlockVolumeIterator const&);
-    CompoundBlockVolumeIterator(CompoundBlockVolumeIterator const&);
     CompoundBlockVolumeIterator();
 
 public:

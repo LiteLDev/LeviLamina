@@ -12,12 +12,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~SwimParticleComponent();
+    MCAPI ~SwimParticleComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

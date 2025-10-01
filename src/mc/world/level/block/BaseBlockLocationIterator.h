@@ -2,26 +2,30 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class BlockPos;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
 
 class BaseBlockLocationIterator {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk5888e9;
-    ::ll::UntypedStorage<4, 12> mUnkab4ac1;
-    ::ll::UntypedStorage<4, 12> mUnk1e2df8;
-    ::ll::UntypedStorage<1, 1>  mUnkbed67c;
-    // NOLINTEND
+    // BaseBlockLocationIterator inner types define
+    using value_type = ::BlockPos;
+
+    using difference_type = int64;
+
+    using pointer = ::BlockPos*;
+
+    using reference = ::BlockPos;
+
+    using iterator_category = ::std::input_iterator_tag;
 
 public:
-    // prevent constructor by default
-    BaseBlockLocationIterator& operator=(BaseBlockLocationIterator const&);
-    BaseBlockLocationIterator(BaseBlockLocationIterator const&);
-    BaseBlockLocationIterator();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 12, ::BlockPos> mMin;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mMax;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mCurrent;
+    ::ll::TypedStorage<1, 1, bool>        mDone;
+    // NOLINTEND
 
 public:
     // virtual functions

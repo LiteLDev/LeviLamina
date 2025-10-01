@@ -24,11 +24,11 @@ class OceanRuinFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk6293aa;
-    ::ll::UntypedStorage<4, 4>  mUnk41ecdf;
-    ::ll::UntypedStorage<4, 4>  mUnk3ed8b4;
-    ::ll::UntypedStorage<8, 24> mUnk93efb0;
-    ::ll::UntypedStorage<8, 8>  mUnk539693;
+    ::ll::TypedStorage<1, 1, bool const>                    mUseTiltedSpacing;
+    ::ll::TypedStorage<4, 4, int const>                     mRuinSpacing;
+    ::ll::TypedStorage<4, 4, int const>                     mMinRuinSeparation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> allowedBiomes;
+    ::ll::TypedStorage<8, 8, ::OceanMonumentFeature&>       mMonument;
     // NOLINTEND
 
 public:

@@ -6,22 +6,23 @@
 #include "mc/world/level/levelgen/structure/SHStairsDown.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
+// auto generated forward declare list
+// clang-format off
+class PieceWeight;
+class SHPortalRoom;
+class StructurePiece;
+// clang-format on
+
 class SHStartPiece : public ::SHStairsDown {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka76256;
-    ::ll::UntypedStorage<8, 8>  mUnk7618fd;
-    ::ll::UntypedStorage<8, 32> mUnkbf6972;
-    ::ll::UntypedStorage<8, 32> mUnk1f9403;
-    ::ll::UntypedStorage<8, 24> mUnkad8592;
+    ::ll::TypedStorage<8, 24, ::std::vector<::StructurePiece*>> pendingChildren;
+    ::ll::TypedStorage<8, 8, ::SHPortalRoom*>                   portalRoom;
+    ::ll::TypedStorage<8, 32, ::std::string>                    imposedPiece;
+    ::ll::TypedStorage<8, 32, ::std::string>                    previousPiece;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PieceWeight>>     pieceWeights;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SHStartPiece& operator=(SHStartPiece const&);
-    SHStartPiece(SHStartPiece const&);
-    SHStartPiece();
 
 public:
     // virtual functions

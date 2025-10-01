@@ -53,7 +53,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void setup(::AgentComponents::Move& move, ::EntityContext& entity, ::AgentComponents::Direction dir);
+    MCAPI static void setup(::AgentComponents::Move& move, ::EntityContext& entity, ::AgentComponents::Direction dir);
     // NOLINTEND
 };
 

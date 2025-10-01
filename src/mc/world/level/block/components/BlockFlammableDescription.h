@@ -18,15 +18,13 @@ struct BlockFlammableDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5bafc8;
-    ::ll::UntypedStorage<4, 4> mUnk633d01;
-    ::ll::UntypedStorage<4, 4> mUnkeedb42;
+    ::ll::TypedStorage<1, 1, ::LavaFlammable> mLavaFlammable;
+    ::ll::TypedStorage<4, 4, int>             mCatchChanceModifier;
+    ::ll::TypedStorage<4, 4, int>             mDestroyChanceModifier;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockFlammableDescription& operator=(BlockFlammableDescription const&);
-    BlockFlammableDescription(BlockFlammableDescription const&);
     BlockFlammableDescription();
 
 public:

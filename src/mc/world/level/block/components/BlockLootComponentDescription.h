@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/util/FileReference.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
@@ -15,14 +16,8 @@ struct BlockLootComponentDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk92a039;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::FileReference<17>> mLootTable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockLootComponentDescription& operator=(BlockLootComponentDescription const&);
-    BlockLootComponentDescription(BlockLootComponentDescription const&);
-    BlockLootComponentDescription();
 
 public:
     // virtual functions

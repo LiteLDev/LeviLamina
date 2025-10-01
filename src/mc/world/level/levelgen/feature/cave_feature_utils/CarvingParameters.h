@@ -2,23 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+
 namespace CaveFeatureUtils {
 
 struct CarvingParameters {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk9cd8e7;
-    ::ll::UntypedStorage<4, 4>  mUnk507e8d;
-    ::ll::UntypedStorage<4, 4>  mUnkc30217;
-    ::ll::UntypedStorage<4, 12> mUnk2a627f;
+    ::ll::TypedStorage<4, 4, float>   mHorizontalRadiusMultiplier;
+    ::ll::TypedStorage<4, 4, float>   mVerticalRadiusMultiplier;
+    ::ll::TypedStorage<4, 4, float>   mFloorLevel;
+    ::ll::TypedStorage<4, 12, ::Vec3> mOriginalStartPos;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CarvingParameters& operator=(CarvingParameters const&);
-    CarvingParameters(CarvingParameters const&);
-    CarvingParameters();
 };
 
 } // namespace CaveFeatureUtils

@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class HashedString;
 struct BlockComponentDescription;
 namespace cereal { class DynamicValue; }
 namespace cereal { class SerializerContext; }
@@ -21,7 +22,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnka139a3;
+        ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::BlockComponentDescription>>>
+            mMap;
         // NOLINTEND
 
     public:
@@ -65,9 +67,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnke08dc0;
-    ::ll::UntypedStorage<8, 24> mUnkd8d4e6;
-    ::ll::UntypedStorage<8, 24> mUnkd642d2;
+    ::ll::TypedStorage<8, 64, ::BlockComponentGroupDescription::Components>                  mCerealDescriptions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>>                                 mTags;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::BlockComponentDescription>>> mDescriptions;
     // NOLINTEND
 
 public:

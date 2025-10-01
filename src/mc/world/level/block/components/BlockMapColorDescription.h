@@ -3,27 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/shared_types/versionless/Color255RGB.h"
 #include "mc/world/level/block/TintMethod.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
-namespace SharedTypes { struct Color255RGB; }
 // clang-format on
 
 struct BlockMapColorDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16> mUnk121012;
-    ::ll::UntypedStorage<1, 1>  mUnk3d9d2e;
+    ::ll::TypedStorage<4, 16, ::SharedTypes::Color255RGB> mMapColor;
+    ::ll::TypedStorage<1, 1, ::TintMethod>                mTintMethod;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockMapColorDescription& operator=(BlockMapColorDescription const&);
-    BlockMapColorDescription(BlockMapColorDescription const&);
     BlockMapColorDescription();
 
 public:

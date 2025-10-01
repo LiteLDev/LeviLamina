@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class BlockSource;
 class Random;
@@ -16,8 +17,8 @@ class MushroomFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk73cc93;
-    ::ll::UntypedStorage<4, 4> mUnkcb7dc0;
+    ::ll::TypedStorage<8, 8, ::Block const&> mMushroomBlock;
+    ::ll::TypedStorage<4, 4, int const>      mIterations;
     // NOLINTEND
 
 public:

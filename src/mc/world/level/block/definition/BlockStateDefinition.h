@@ -2,13 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/nbt/Tag.h"
+
+// auto generated forward declare list
+// clang-format off
+class ListTag;
+// clang-format on
+
 struct BlockStateDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk85fbc4;
-    ::ll::UntypedStorage<1, 1>  mUnk22ed63;
-    ::ll::UntypedStorage<8, 8>  mUnk5cc48c;
+    ::ll::TypedStorage<8, 32, ::std::string>               mName;
+    ::ll::TypedStorage<1, 1, ::Tag::Type>                  mType;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ListTag>> mEnumValues;
     // NOLINTEND
 
 public:

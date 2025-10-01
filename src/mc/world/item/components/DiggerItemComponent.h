@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/components/NetworkedItemComponent.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
@@ -26,15 +27,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 184> mUnka3c0df;
-        ::ll::UntypedStorage<4, 4>   mUnk19ad83;
+        ::ll::TypedStorage<8, 184, ::BlockDescriptor> filter;
+        ::ll::TypedStorage<4, 4, int>                 destroySpeed;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockInfo& operator=(BlockInfo const&);
-        BlockInfo(BlockInfo const&);
-        BlockInfo();
 
     public:
         // member functions

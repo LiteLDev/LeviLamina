@@ -4,9 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/world/level/levelgen/feature/Feature.h"
+#include "mc/world/level/levelgen/synth/PerlinSimplexNoise.h"
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class BlockSource;
 class Random;
@@ -16,15 +18,9 @@ class MeadowFlowerFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk53ec79;
-    ::ll::UntypedStorage<8, 64> mUnk6cb4f2;
+    ::ll::TypedStorage<8, 40, ::PerlinSimplexNoise const>            mBiomeInfoNoise;
+    ::ll::TypedStorage<8, 64, ::std::array<::Block const*, 8> const> mPossibleBlocks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MeadowFlowerFeature& operator=(MeadowFlowerFeature const&);
-    MeadowFlowerFeature(MeadowFlowerFeature const&);
-    MeadowFlowerFeature();
 
 public:
     // virtual functions

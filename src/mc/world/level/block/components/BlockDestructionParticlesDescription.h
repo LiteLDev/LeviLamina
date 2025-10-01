@@ -20,15 +20,13 @@ struct BlockDestructionParticlesDescription
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkfae2e8;
-    ::ll::UntypedStorage<1, 1>  mUnk290d49;
-    ::ll::UntypedStorage<4, 4>  mUnk860978;
+    ::ll::TypedStorage<8, 32, ::std::string> mTexture;
+    ::ll::TypedStorage<1, 1, ::TintMethod>   mTintMethod;
+    ::ll::TypedStorage<4, 4, int>            mParticleCount;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockDestructionParticlesDescription& operator=(BlockDestructionParticlesDescription const&);
-    BlockDestructionParticlesDescription(BlockDestructionParticlesDescription const&);
     BlockDestructionParticlesDescription();
 
 public:

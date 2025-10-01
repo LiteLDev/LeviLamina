@@ -26,14 +26,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::AmbientSoundServerComponent& operator=(::AmbientSoundServerComponent&&);
+    MCAPI ::AmbientSoundServerComponent& operator=(::AmbientSoundServerComponent&&);
 
-    MCNAPI ~AmbientSoundServerComponent();
+    MCAPI ~AmbientSoundServerComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

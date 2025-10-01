@@ -18,14 +18,8 @@ class FireworksRecipe : public ::MultiRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc13c5c;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResult;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FireworksRecipe& operator=(FireworksRecipe const&);
-    FireworksRecipe(FireworksRecipe const&);
-    FireworksRecipe();
 
 public:
     // virtual functions

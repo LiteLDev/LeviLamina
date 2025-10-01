@@ -32,24 +32,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ServerPlayerMovementComponent();
+    MCAPI ServerPlayerMovementComponent();
 
-    MCNAPI ServerPlayerMovementComponent(::ServerPlayerMovementComponent&&);
+    MCAPI ServerPlayerMovementComponent(::ServerPlayerMovementComponent&&);
 
-    MCNAPI bool addInventoryTransactionPacket(::std::shared_ptr<::InventoryPacket> packet);
+    MCAPI bool addInventoryTransactionPacket(::std::shared_ptr<::InventoryPacket> packet);
 
-    MCNAPI ::optional_ref<::MovementPackets> getOrCreate(::std::function<bool(::MovementPackets&)> const& fn);
+    MCAPI ::optional_ref<::MovementPackets> getOrCreate(::std::function<bool(::MovementPackets&)> const& fn);
 
-    MCNAPI uint64 getReadyToSimulateCount() const;
+    MCAPI uint64 getReadyToSimulateCount() const;
 
-    MCNAPI ::ServerPlayerMovementComponent& operator=(::ServerPlayerMovementComponent&&);
+    MCAPI ::ServerPlayerMovementComponent& operator=(::ServerPlayerMovementComponent&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ServerPlayerMovementComponent&&);
+    MCAPI void* $ctor(::ServerPlayerMovementComponent&&);
     // NOLINTEND
 };

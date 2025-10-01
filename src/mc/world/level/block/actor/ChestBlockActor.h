@@ -41,9 +41,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkb4cf5c;
-        ::ll::UntypedStorage<1, 1> mUnk53b96d;
-        ::ll::UntypedStorage<8, 8> mUnk3062dd;
+        ::ll::TypedStorage<8, 8, ::ChestBlockActor&> mChest;
+        ::ll::TypedStorage<1, 1, bool>               mIsUsed;
+        ::ll::TypedStorage<8, 8, ::ActorUniqueID>    mActorId;
         // NOLINTEND
 
     public:

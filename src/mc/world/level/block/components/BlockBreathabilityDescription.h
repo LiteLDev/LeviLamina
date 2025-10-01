@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/block/components/BlockComponentDescription.h"
+#include "mc/world/level/block/components/BreathingType.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,14 +16,8 @@ struct BlockBreathabilityDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk764d09;
+    ::ll::TypedStorage<4, 4, ::BreathingType> mType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockBreathabilityDescription& operator=(BlockBreathabilityDescription const&);
-    BlockBreathabilityDescription(BlockBreathabilityDescription const&);
-    BlockBreathabilityDescription();
 
 public:
     // virtual functions

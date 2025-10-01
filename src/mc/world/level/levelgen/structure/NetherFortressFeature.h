@@ -21,13 +21,11 @@ class NetherFortressFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb6b0cc;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    NetherFortressFeature& operator=(NetherFortressFeature const&);
-    NetherFortressFeature(NetherFortressFeature const&);
     NetherFortressFeature();
 
 public:

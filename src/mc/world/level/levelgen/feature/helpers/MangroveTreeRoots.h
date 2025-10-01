@@ -3,7 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/ChanceInformation.h"
+#include "mc/util/IntRange.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/helpers/ITreeRoot.h"
+#include "mc/world/level/levelgen/feature/helpers/tree_helper/AttachableDecoration.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,23 +22,17 @@ class MangroveTreeRoots : public ::ITreeRoot {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk42c689;
-    ::ll::UntypedStorage<4, 4>   mUnk4506dd;
-    ::ll::UntypedStorage<4, 8>   mUnk2f87a5;
-    ::ll::UntypedStorage<4, 12>  mUnk41e266;
-    ::ll::UntypedStorage<8, 184> mUnk6e7026;
-    ::ll::UntypedStorage<8, 184> mUnkab092a;
-    ::ll::UntypedStorage<8, 184> mUnk655a60;
-    ::ll::UntypedStorage<8, 184> mUnkd936ed;
-    ::ll::UntypedStorage<8, 24>  mUnk510b1f;
-    ::ll::UntypedStorage<8, 208> mUnkc555ee;
+    ::ll::TypedStorage<4, 4, int>                                  mMaxRootWidth;
+    ::ll::TypedStorage<4, 4, int>                                  mMaxRootLength;
+    ::ll::TypedStorage<4, 8, ::IntRange>                           mYOffset;
+    ::ll::TypedStorage<4, 12, ::ChanceInformation>                 mAboveRootBlockChance;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mRootBlockDescriptor;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mAboveRootBlockDescriptor;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mMuddyRootBlockDescriptor;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mMudBlockDescriptor;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>>    mRootsMayGrowThrough;
+    ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MangroveTreeRoots& operator=(MangroveTreeRoots const&);
-    MangroveTreeRoots(MangroveTreeRoots const&);
-    MangroveTreeRoots();
 
 public:
     // virtual functions

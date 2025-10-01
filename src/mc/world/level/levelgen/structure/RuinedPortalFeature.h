@@ -21,18 +21,12 @@ class RuinedPortalFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkf8ef32;
-    ::ll::UntypedStorage<4, 4> mUnke90a4d;
-    ::ll::UntypedStorage<4, 4> mUnk85f0e5;
-    ::ll::UntypedStorage<4, 4> mUnk44103c;
-    ::ll::UntypedStorage<4, 4> mUnk28ba39;
+    ::ll::TypedStorage<1, 1, bool const> mNether;
+    ::ll::TypedStorage<4, 4, int const>  mOverworldSpacing;
+    ::ll::TypedStorage<4, 4, int const>  mOverworldMinSeparation;
+    ::ll::TypedStorage<4, 4, int const>  mNetherSpacing;
+    ::ll::TypedStorage<4, 4, int const>  mNetherMinSeparation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RuinedPortalFeature& operator=(RuinedPortalFeature const&);
-    RuinedPortalFeature(RuinedPortalFeature const&);
-    RuinedPortalFeature();
 
 public:
     // virtual functions

@@ -20,13 +20,11 @@ class UserDataShapelessRecipe : public ::ShapelessRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3372c7;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    UserDataShapelessRecipe& operator=(UserDataShapelessRecipe const&);
-    UserDataShapelessRecipe(UserDataShapelessRecipe const&);
     UserDataShapelessRecipe();
 
 public:

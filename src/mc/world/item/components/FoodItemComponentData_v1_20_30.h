@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/ItemDescriptor.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
@@ -15,10 +16,10 @@ struct FoodItemComponentData_v1_20_30 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk7545a6;
-    ::ll::UntypedStorage<4, 4>  mUnk3dbd09;
-    ::ll::UntypedStorage<8, 16> mUnk7c1b29;
-    ::ll::UntypedStorage<1, 1>  mUnk84e887;
+    ::ll::TypedStorage<4, 4, int>               mNutrition;
+    ::ll::TypedStorage<4, 4, float>             mSaturationModifier;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor> mUsingConvertsTo;
+    ::ll::TypedStorage<1, 1, bool>              mCanAlwaysEat;
     // NOLINTEND
 
 public:

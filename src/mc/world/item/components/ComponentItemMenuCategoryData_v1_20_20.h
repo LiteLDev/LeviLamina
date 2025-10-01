@@ -14,9 +14,10 @@ struct ComponentItemMenuCategoryData_v1_20_20 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2>  mUnk1d1c56;
-    ::ll::UntypedStorage<8, 40> mUnkc1b1c6;
-    ::ll::UntypedStorage<1, 2>  mUnk6be431;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_19_40::ItemCategory::CreativeItemCategory>>
+                                                              mCreativeCategory;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mCreativeGroupName;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>           mIsHiddenInCommands;
     // NOLINTEND
 
 public:

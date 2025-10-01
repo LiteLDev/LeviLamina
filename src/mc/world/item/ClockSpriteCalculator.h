@@ -12,16 +12,10 @@ class ClockSpriteCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkae8f05;
-    ::ll::UntypedStorage<4, 4> mUnk650ca6;
-    ::ll::UntypedStorage<4, 4> mUnkfdca61;
+    ::ll::TypedStorage<4, 4, int>   mFrame;
+    ::ll::TypedStorage<4, 4, float> mRot;
+    ::ll::TypedStorage<4, 4, float> mRotA;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClockSpriteCalculator& operator=(ClockSpriteCalculator const&);
-    ClockSpriteCalculator(ClockSpriteCalculator const&);
-    ClockSpriteCalculator();
 
 public:
     // member functions

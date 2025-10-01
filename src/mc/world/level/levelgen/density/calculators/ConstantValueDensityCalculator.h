@@ -16,14 +16,8 @@ class ConstantValueDensityCalculator : public ::IDensityCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8340ed;
+    ::ll::TypedStorage<4, 4, float const> mValue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ConstantValueDensityCalculator& operator=(ConstantValueDensityCalculator const&);
-    ConstantValueDensityCalculator(ConstantValueDensityCalculator const&);
-    ConstantValueDensityCalculator();
 
 public:
     // virtual functions

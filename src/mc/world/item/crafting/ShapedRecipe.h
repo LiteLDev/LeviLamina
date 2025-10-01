@@ -17,14 +17,8 @@ class ShapedRecipe : public ::Recipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk8214d9;
+    ::ll::TypedStorage<1, 1, bool> mAssumeSymmetry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShapedRecipe& operator=(ShapedRecipe const&);
-    ShapedRecipe(ShapedRecipe const&);
-    ShapedRecipe();
 
 public:
     // virtual functions

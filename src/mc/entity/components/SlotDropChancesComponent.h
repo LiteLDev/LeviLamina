@@ -23,8 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void readAdditionalSaveData(::CompoundTag const& tag);
+    MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
     // NOLINTEND
 };

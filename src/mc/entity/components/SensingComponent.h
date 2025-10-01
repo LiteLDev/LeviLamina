@@ -27,16 +27,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool canSee(::Mob& owner, ::Actor const& target);
+    MCAPI bool canSee(::Mob& owner, ::Actor const& target);
 
-    MCNAPI bool withinFOV(::Mob& owner, ::Vec3 const& targetPosition, float fov);
+    MCAPI bool withinFOV(::Mob& owner, ::Vec3 const& targetPosition, float fov);
 
-    MCNAPI ~SensingComponent();
+    MCAPI ~SensingComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

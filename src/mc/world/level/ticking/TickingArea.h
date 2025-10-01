@@ -3,9 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/platform/UUID.h"
+#include "mc/world/level/chunk/ChunkViewSource.h"
 #include "mc/world/level/ticking/ITickingArea.h"
 #include "mc/world/level/ticking/TickingAreaLoadMode.h"
+#include "mc/world/level/ticking/TickingAreaView.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,39 +20,34 @@ class Dimension;
 class ITickingAreaView;
 class LevelStorage;
 class Random;
-class Vec3;
-struct ActorUniqueID;
 struct Bounds;
 struct Tick;
 struct TickingAreaDescription;
-namespace mce { class UUID; }
 // clang-format on
 
 class TickingArea : public ::ITickingArea {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk258e19;
-    ::ll::UntypedStorage<8, 32>  mUnk96bfbb;
-    ::ll::UntypedStorage<8, 8>   mUnk4f0f94;
-    ::ll::UntypedStorage<4, 4>   mUnk571af3;
-    ::ll::UntypedStorage<1, 1>   mUnk47dac5;
-    ::ll::UntypedStorage<1, 1>   mUnk8c189f;
-    ::ll::UntypedStorage<1, 1>   mUnk915919;
-    ::ll::UntypedStorage<1, 1>   mUnk533591;
-    ::ll::UntypedStorage<1, 1>   mUnkb9fc72;
-    ::ll::UntypedStorage<4, 12>  mUnk7fbfd4;
-    ::ll::UntypedStorage<4, 12>  mUnkada27f;
-    ::ll::UntypedStorage<4, 4>   mUnk61917d;
-    ::ll::UntypedStorage<8, 504> mUnk2afc18;
-    ::ll::UntypedStorage<8, 16>  mUnk532ae4;
-    ::ll::UntypedStorage<8, 32>  mUnk1f026f;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>              mUID;
+    ::ll::TypedStorage<8, 32, ::std::string>            mName;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>           mEntityId;
+    ::ll::TypedStorage<4, 4, float>                     mMaxDistToPlayers;
+    ::ll::TypedStorage<1, 1, bool>                      mAlwaysActive;
+    ::ll::TypedStorage<1, 1, bool>                      mEntityFound;
+    ::ll::TypedStorage<1, 1, bool>                      mSizeChanged;
+    ::ll::TypedStorage<1, 1, bool>                      mRemoved;
+    ::ll::TypedStorage<1, 1, ::TickingAreaLoadMode>     mLoadMode;
+    ::ll::TypedStorage<4, 12, ::Vec3>                   mLastChunkUpdatePos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                   mLastPos;
+    ::ll::TypedStorage<4, 4, uint>                      mLastRadius;
+    ::ll::TypedStorage<8, 504, ::ChunkViewSource>       mChunkSource;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::BlockSource>> mBlockSource;
+    ::ll::TypedStorage<8, 32, ::TickingAreaView>        mView;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    TickingArea& operator=(TickingArea const&);
-    TickingArea(TickingArea const&);
     TickingArea();
 
 public:

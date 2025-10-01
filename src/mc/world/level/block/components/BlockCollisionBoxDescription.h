@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
-class Vec3;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -17,15 +17,13 @@ struct BlockCollisionBoxDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnke75010;
-    ::ll::UntypedStorage<4, 12> mUnka4807b;
-    ::ll::UntypedStorage<4, 12> mUnk54e2ed;
+    ::ll::TypedStorage<1, 1, bool>    mEnabled;
+    ::ll::TypedStorage<4, 12, ::Vec3> mOrigin;
+    ::ll::TypedStorage<4, 12, ::Vec3> mSize;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockCollisionBoxDescription& operator=(BlockCollisionBoxDescription const&);
-    BlockCollisionBoxDescription(BlockCollisionBoxDescription const&);
     BlockCollisionBoxDescription();
 
 public:

@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/levelgen/feature/Feature.h"
+#include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,14 +18,8 @@ class LegacyForestRockFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc8300e;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mForestRockFeature;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyForestRockFeature& operator=(LegacyForestRockFeature const&);
-    LegacyForestRockFeature(LegacyForestRockFeature const&);
-    LegacyForestRockFeature();
 
 public:
     // virtual functions
