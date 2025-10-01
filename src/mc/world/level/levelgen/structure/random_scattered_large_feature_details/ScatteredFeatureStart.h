@@ -26,13 +26,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkbf1416;
+    ::ll::TypedStorage<4, 4, ::RandomScatteredLargeFeatureDetails::ScatteredFeatureStart::Type> type;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScatteredFeatureStart& operator=(ScatteredFeatureStart const&);
-    ScatteredFeatureStart(ScatteredFeatureStart const&);
     ScatteredFeatureStart();
 
 public:

@@ -20,13 +20,11 @@ class SmithingTransformRecipe : public ::ShapelessRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk45d773;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mRuntimeResults;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    SmithingTransformRecipe& operator=(SmithingTransformRecipe const&);
-    SmithingTransformRecipe(SmithingTransformRecipe const&);
     SmithingTransformRecipe();
 
 public:

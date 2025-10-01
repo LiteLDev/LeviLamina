@@ -2,24 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-class ChunkLocalNoiseCache;
-class SurfaceLevelCache;
-// clang-format on
+// auto generated inclusion list
+#include "mc/world/level/levelgen/v1/ChunkLocalNoiseCache.h"
+#include "mc/world/level/levelgen/v1/SurfaceLevelCache.h"
 
 class WorldGenCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkcf4614;
-    ::ll::UntypedStorage<8, 56> mUnkce6009;
+    ::ll::TypedStorage<8, 40, ::ChunkLocalNoiseCache> mChunkLocalNoiseCache;
+    ::ll::TypedStorage<8, 56, ::SurfaceLevelCache>    mSurfaceLevelCache;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    WorldGenCache& operator=(WorldGenCache const&);
-    WorldGenCache(WorldGenCache const&);
     WorldGenCache();
 
 public:

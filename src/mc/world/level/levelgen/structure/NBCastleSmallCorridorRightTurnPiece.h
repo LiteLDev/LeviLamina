@@ -18,14 +18,8 @@ class NBCastleSmallCorridorRightTurnPiece : public ::NetherFortressPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke05fa7;
+    ::ll::TypedStorage<1, 1, bool> shouldPlaceChest;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NBCastleSmallCorridorRightTurnPiece& operator=(NBCastleSmallCorridorRightTurnPiece const&);
-    NBCastleSmallCorridorRightTurnPiece(NBCastleSmallCorridorRightTurnPiece const&);
-    NBCastleSmallCorridorRightTurnPiece();
 
 public:
     // virtual functions

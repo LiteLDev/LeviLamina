@@ -3,16 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/resources/IPackLoadScoped.h"
+#include "mc/util/CerealSchemaUpgradeSet.h"
 #include "mc/util/Factory.h"
+#include "mc/util/json_util/JsonSchemaObjectNode.h"
 
 // auto generated forward declare list
 // clang-format off
 class Experiments;
 class IPackLoadContext;
-class SemVersion;
+class PackLoadRequirement;
 struct BlockComponentDescription;
+struct BlockComponentGroupDescription;
 namespace Json { class Value; }
+namespace JsonUtil { class EmptyClass; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -26,14 +31,25 @@ public:
     // BlockComponentFactory inner types define
     struct ComponentMetadata {
     public:
+        // ComponentMetadata inner types define
+        using ParseFunction =
+            ::std::function<bool(::Experiments const&, ::Json::Value const&, ::SemVersion const&, bool)>;
+
+        using Ctor = ::std::unique_ptr<::BlockComponentDescription> (*)();
+
+    public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnka06669;
-        ::ll::UntypedStorage<8, 24> mUnkfbf74d;
-        ::ll::UntypedStorage<8, 32> mUnk6beadb;
-        ::ll::UntypedStorage<8, 24> mUnk445a76;
-        ::ll::UntypedStorage<8, 64> mUnkeca053;
-        ::ll::UntypedStorage<1, 1>  mUnk5e7d13;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockComponentDescription> (*)()> makeUnique;
+        ::ll::TypedStorage<8, 24, ::std::vector<::PackLoadRequirement>>                requirements;
+        ::ll::TypedStorage<8, 32, ::std::optional<::SemVersion>>                       releasedMinFormatVersion;
+        ::ll::TypedStorage<8, 24, ::CerealSchemaUpgradeSet>                            versionUpgrades;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::function<bool(::Experiments const&, ::Json::Value const&, ::SemVersion const&, bool)>>
+                                       onParseCallback;
+        ::ll::TypedStorage<1, 1, bool> mIsCustomComponent;
         // NOLINTEND
 
     public:
@@ -57,10 +73,16 @@ public:
         // NOLINTEND
     };
 
+    using CerealComponentsMap = ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkb8c428;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>>>
+        mBlockComponentsSchema;
     // NOLINTEND
 
 public:

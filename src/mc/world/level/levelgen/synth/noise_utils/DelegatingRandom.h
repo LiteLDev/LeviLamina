@@ -11,7 +11,7 @@ class DelegatingRandom : public ::IRandom {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9d98e9;
+    ::ll::TypedStorage<8, 8, ::IRandom&> mRandom;
     // NOLINTEND
 
 public:

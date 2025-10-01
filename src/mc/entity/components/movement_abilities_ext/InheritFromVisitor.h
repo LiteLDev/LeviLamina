@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void operator()(float);
+    MCAPI void operator()(float);
     // NOLINTEND
 };
 

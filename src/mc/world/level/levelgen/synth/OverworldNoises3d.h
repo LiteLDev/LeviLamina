@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/level/DividedPos2d.h"
+#include "mc/world/level/biome/TerrainShaper.h"
 #include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
 #include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
 #include "mc/world/level/levelgen/v1/ChunkLocalNoiseCache.h"
@@ -19,14 +20,21 @@ struct OverworldNoises3d {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56>  mUnk366e4b;
-    ::ll::UntypedStorage<8, 56>  mUnk36ae34;
-    ::ll::UntypedStorage<8, 56>  mUnk26a2db;
-    ::ll::UntypedStorage<8, 56>  mUnk2f028d;
-    ::ll::UntypedStorage<8, 56>  mUnk8a04ce;
-    ::ll::UntypedStorage<8, 56>  mUnkd30937;
-    ::ll::UntypedStorage<8, 56>  mUnkd61cf8;
-    ::ll::UntypedStorage<8, 512> mUnk8c808d;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mTemperatureNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mHumidityNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mContinentalnessNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mErosionNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mWeirdnessNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mOffsetNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+                                                      mJaggedNoise;
+    ::ll::TypedStorage<8, 512, ::TerrainShaper const> mTerrainShaper;
     // NOLINTEND
 
 public:

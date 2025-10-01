@@ -19,14 +19,12 @@ class OceanMonumentPiece : public ::StructurePiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk6bd372;
-    ::ll::UntypedStorage<8, 16> mUnkc62c22;
+    ::ll::TypedStorage<1, 1, bool>                                 mDoFill;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RoomDefinition>> mRoomDefinition;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    OceanMonumentPiece& operator=(OceanMonumentPiece const&);
-    OceanMonumentPiece(OceanMonumentPiece const&);
     OceanMonumentPiece();
 
 public:

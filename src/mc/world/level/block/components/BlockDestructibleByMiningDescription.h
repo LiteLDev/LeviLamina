@@ -9,6 +9,7 @@
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
+struct ItemSpecificSpeed;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -16,14 +17,12 @@ struct BlockDestructibleByMiningDescription : public ::BlockComponentDescription
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkcb1fc6;
-    ::ll::UntypedStorage<8, 24> mUnk6d11f2;
+    ::ll::TypedStorage<4, 4, float>                               mSecondsToDestroy;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemSpecificSpeed>> mItemSpecificSpeeds;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockDestructibleByMiningDescription& operator=(BlockDestructibleByMiningDescription const&);
-    BlockDestructibleByMiningDescription(BlockDestructibleByMiningDescription const&);
     BlockDestructibleByMiningDescription();
 
 public:

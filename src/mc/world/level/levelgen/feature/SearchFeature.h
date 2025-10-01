@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,17 +27,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk51b175;
-    ::ll::UntypedStorage<4, 24> mUnk9a5d3d;
-    ::ll::UntypedStorage<4, 4>  mUnk8f538b;
-    ::ll::UntypedStorage<4, 4>  mUnk9c44bb;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>      mFeatureRef;
+    ::ll::TypedStorage<4, 24, ::AABB>                     mSearchVolume;
+    ::ll::TypedStorage<4, 4, ::SearchFeature::SearchAxis> mSearchAxis;
+    ::ll::TypedStorage<4, 4, int>                         mRequiredSuccesses;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SearchFeature& operator=(SearchFeature const&);
-    SearchFeature(SearchFeature const&);
-    SearchFeature();
 
 public:
     // virtual functions

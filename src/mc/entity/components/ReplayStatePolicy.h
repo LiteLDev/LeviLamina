@@ -11,7 +11,7 @@ struct ReplayStateConfig;
 namespace ReplayStatePolicy {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::unique_ptr<::IReplayStatePolicy> createServerContext(::ReplayStateConfig const& config);
+MCAPI ::std::unique_ptr<::IReplayStatePolicy> createServerContext(::ReplayStateConfig const& config);
 // NOLINTEND
 
 } // namespace ReplayStatePolicy

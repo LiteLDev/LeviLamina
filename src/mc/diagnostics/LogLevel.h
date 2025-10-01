@@ -25,24 +25,18 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk2a2a04;
-    ::ll::UntypedStorage<1, 1> mUnkd8648b;
+    ::ll::TypedStorage<1, 1, ::Bedrock::LogLevel::Type> mType;
+    ::ll::TypedStorage<1, 1, bool>                      mLogInPublish;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LogLevel& operator=(LogLevel const&);
-    LogLevel(LogLevel const&);
-    LogLevel();
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::LogLevel const& Error();
+    MCAPI static ::Bedrock::LogLevel const& Error();
 
-    MCNAPI static ::Bedrock::LogLevel const& Info();
+    MCAPI static ::Bedrock::LogLevel const& Info();
 
-    MCNAPI static ::Bedrock::LogLevel const& Warning();
+    MCAPI static ::Bedrock::LogLevel const& Warning();
     // NOLINTEND
 };
 

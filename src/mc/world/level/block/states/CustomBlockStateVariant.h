@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/BidirectionalUnorderedMap.h"
 #include "mc/world/level/block/states/BlockState.h"
 
 // auto generated forward declare list
@@ -15,14 +16,12 @@ class CustomBlockStateVariant : public ::BlockState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk4702d3;
-    ::ll::UntypedStorage<8, 128> mUnk84844b;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ListTag>>               mEnumValues;
+    ::ll::TypedStorage<8, 128, ::BidirectionalUnorderedMap<int, uint64>> mHashIndexMap;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    CustomBlockStateVariant& operator=(CustomBlockStateVariant const&);
-    CustomBlockStateVariant(CustomBlockStateVariant const&);
     CustomBlockStateVariant();
 
 public:

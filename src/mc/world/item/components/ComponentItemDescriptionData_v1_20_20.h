@@ -2,6 +2,10 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/util/Identifier.h"
+#include "mc/world/item/components/ComponentItemMenuCategoryData_v1_20_20.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace cereal { struct ReflectionCtx; }
@@ -11,8 +15,8 @@ struct ComponentItemDescriptionData_v1_20_20 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkaa7f11;
-    ::ll::UntypedStorage<8, 64> mUnk8d8747;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Identifier<10>>                             mIdentifier;
+    ::ll::TypedStorage<8, 64, ::std::optional<::ComponentItemMenuCategoryData_v1_20_20>> mCategory;
     // NOLINTEND
 
 public:

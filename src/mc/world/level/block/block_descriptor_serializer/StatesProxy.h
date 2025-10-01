@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/BlockDescriptor.h"
+#include "mc/world/level/block/BlockDescriptor.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,7 +17,7 @@ struct StatesProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk34053b;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor::State>> mBlockStates;
     // NOLINTEND
 
 public:

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Matrix.h"
+
 // auto generated forward declare list
 // clang-format off
 struct BlockBakedMaterialDataComponent;
@@ -21,16 +24,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk8530a9;
-        ::ll::UntypedStorage<8, 8>  mUnkb1fc8e;
-        ::ll::UntypedStorage<4, 64> mUnka6a88b;
+        ::ll::TypedStorage<8, 8, ::BlockGeometryComponent const*>          mGeometry;
+        ::ll::TypedStorage<8, 8, ::BlockBakedMaterialDataComponent const*> mBakedBlockMaterialData;
+        ::ll::TypedStorage<4, 64, ::Matrix const>                          mTransform;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Data& operator=(Data const&);
-        Data(Data const&);
-        Data();
     };
 
 public:

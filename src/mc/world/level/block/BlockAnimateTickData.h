@@ -2,13 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockSource;
+class Random;
+// clang-format on
+
 struct BlockAnimateTickData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnkd6c0fa;
-    ::ll::UntypedStorage<8, 8>  mUnkfd1e24;
-    ::ll::UntypedStorage<8, 8>  mUnk277d58;
+    ::ll::TypedStorage<4, 12, ::BlockPos const> mPos;
+    ::ll::TypedStorage<8, 8, ::BlockSource&>    mRegion;
+    ::ll::TypedStorage<8, 8, ::Random&>         mRandom;
     // NOLINTEND
 
 public:

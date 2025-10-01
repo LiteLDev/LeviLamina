@@ -21,14 +21,8 @@ struct BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke3e67a;
+    ::ll::TypedStorage<1, 1, bool> mInitializedFromCode;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockComponentDescription& operator=(BlockComponentDescription const&);
-    BlockComponentDescription(BlockComponentDescription const&);
-    BlockComponentDescription();
 
 public:
     // virtual functions

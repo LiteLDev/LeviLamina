@@ -18,14 +18,8 @@ class ShieldRecipe : public ::MultiRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5b7bbc;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResult;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShieldRecipe& operator=(ShieldRecipe const&);
-    ShieldRecipe(ShieldRecipe const&);
-    ShieldRecipe();
 
 public:
     // virtual functions

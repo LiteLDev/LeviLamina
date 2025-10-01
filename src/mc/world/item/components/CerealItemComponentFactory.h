@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/resources/JsonBetaState.h"
+#include "mc/util/CerealSchemaUpgradeSet.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -11,7 +13,7 @@ class CerealDocumentUpgrader;
 class Experiments;
 class IPackLoadContext;
 class ItemComponent;
-class SemVersion;
+class PackLoadRequirement;
 namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -26,14 +28,20 @@ public:
     // CerealItemComponentFactory inner types define
     struct ComponentMetadata {
     public:
+        // ComponentMetadata inner types define
+        using ParseFunction = ::std::function<bool(::Experiments const&, ::SemVersion const&)>;
+
+        using Ctor = ::std::unique_ptr<::ItemComponent> (*)();
+
+    public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkb980e4;
-        ::ll::UntypedStorage<8, 24> mUnkab866b;
-        ::ll::UntypedStorage<8, 32> mUnk144f3a;
-        ::ll::UntypedStorage<8, 32> mUnkd0f997;
-        ::ll::UntypedStorage<8, 24> mUnk236f7f;
-        ::ll::UntypedStorage<8, 64> mUnk25c34a;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemComponent> (*)()> makeUnique;
+        ::ll::TypedStorage<8, 24, ::std::vector<::PackLoadRequirement>>    requirements;
+        ::ll::TypedStorage<8, 32, ::std::optional<::SemVersion>>           releasedMinFormatVersion;
+        ::ll::TypedStorage<8, 32, ::std::optional<::SemVersion>>           deprecatedVersion;
+        ::ll::TypedStorage<8, 24, ::CerealSchemaUpgradeSet>                versionUpgrades;
+        ::ll::TypedStorage<8, 64, ::std::function<bool(::Experiments const&, ::SemVersion const&)>> onParseCallback;
         // NOLINTEND
 
     public:
@@ -68,15 +76,10 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk37c69b;
-    ::ll::UntypedStorage<8, 24> mUnk533ef0;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::CerealItemComponentFactory::ComponentMetadata>>
+                                            mRegisteredComponents;
+    ::ll::TypedStorage<8, 24, ::SemVersion> mReleasedMinFormatVersionForAnyComponent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CerealItemComponentFactory& operator=(CerealItemComponentFactory const&);
-    CerealItemComponentFactory(CerealItemComponentFactory const&);
-    CerealItemComponentFactory();
 
 public:
     // static functions

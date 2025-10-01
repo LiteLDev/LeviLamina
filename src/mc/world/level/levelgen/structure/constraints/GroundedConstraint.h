@@ -17,13 +17,11 @@ class GroundedConstraint : public ::IStructureConstraint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4168b7;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>> mFoundationOffsets;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    GroundedConstraint& operator=(GroundedConstraint const&);
-    GroundedConstraint(GroundedConstraint const&);
     GroundedConstraint();
 
 public:

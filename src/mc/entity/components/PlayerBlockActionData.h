@@ -28,6 +28,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::PlayerBlockActionData> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::PlayerBlockActionData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

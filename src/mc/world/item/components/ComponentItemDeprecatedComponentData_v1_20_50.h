@@ -4,13 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/world/item/components/ComponentItemDeprecatedComponentData_v1_20_40.h"
+#include "mc/world/item/components/LegacyOnCompleteTriggerItemComponentData.h"
+#include "mc/world/item/components/LegacyOnDigTriggerItemComponentData.h"
 
 struct ComponentItemDeprecatedComponentData_v1_20_50 : public ::ComponentItemDeprecatedComponentData_v1_20_40 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnka82b15;
-    ::ll::UntypedStorage<8, 96> mUnke61a10;
+    ::ll::TypedStorage<8, 72, ::std::optional<::LegacyOnCompleteTriggerItemComponentData>>
+        legacyOnCompleteTriggerItemComponent;
+    ::ll::TypedStorage<8, 96, ::std::optional<::LegacyOnDigTriggerItemComponentData>> legacyOnDigTriggerItemComponent;
     // NOLINTEND
 
 public:

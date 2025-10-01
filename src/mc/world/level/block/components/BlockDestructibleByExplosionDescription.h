@@ -14,13 +14,11 @@ struct BlockDestructibleByExplosionDescription : public ::BlockComponentDescript
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkae8417;
+    ::ll::TypedStorage<4, 4, float> mExplosionResistance;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockDestructibleByExplosionDescription& operator=(BlockDestructibleByExplosionDescription const&);
-    BlockDestructibleByExplosionDescription(BlockDestructibleByExplosionDescription const&);
     BlockDestructibleByExplosionDescription();
 
 public:

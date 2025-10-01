@@ -17,14 +17,8 @@ class RemovedStringState : public ::FlatteningUtils::RemovedState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk843fe7;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mValues;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RemovedStringState& operator=(RemovedStringState const&);
-    RemovedStringState(RemovedStringState const&);
-    RemovedStringState();
 
 public:
     // virtual functions

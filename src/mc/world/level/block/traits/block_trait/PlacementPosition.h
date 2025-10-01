@@ -108,15 +108,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk53c349;
-        ::ll::UntypedStorage<1, 1> mUnkee58d8;
+        ::ll::TypedStorage<1, 1, bool> mBlockFace;
+        ::ll::TypedStorage<1, 1, bool> mVerticalHalf;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        EnabledStates& operator=(EnabledStates const&);
-        EnabledStates(EnabledStates const&);
-        EnabledStates();
 
     public:
         // member functions
@@ -137,13 +131,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2> mUnk2d431d;
+    ::ll::TypedStorage<1, 2, ::BlockTrait::PlacementPosition::EnabledStates> mStates;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PlacementPosition& operator=(PlacementPosition const&);
-    PlacementPosition(PlacementPosition const&);
     PlacementPosition();
 
 public:

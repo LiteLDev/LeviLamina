@@ -9,6 +9,7 @@
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
+struct BlockCustomComponentData;
 namespace cereal { class DynamicValue; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -17,17 +18,11 @@ class BlockCustomComponentsComponentDescription : public ::BlockComponentDescrip
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2d324e;
-    ::ll::UntypedStorage<1, 1>  mUnkb0463b;
-    ::ll::UntypedStorage<1, 1>  mUnk9ef4ac;
-    ::ll::UntypedStorage<1, 1>  mUnk99a643;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockCustomComponentData>> mCustomComponentData;
+    ::ll::TypedStorage<1, 1, bool>                                       mIsCustomComponentsV1;
+    ::ll::TypedStorage<1, 1, bool>                                       mHasPlayerInteractEvent;
+    ::ll::TypedStorage<1, 1, bool>                                       mHasPlayerPlacingEvent;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockCustomComponentsComponentDescription& operator=(BlockCustomComponentsComponentDescription const&);
-    BlockCustomComponentsComponentDescription(BlockCustomComponentsComponentDescription const&);
-    BlockCustomComponentsComponentDescription();
 
 public:
     // virtual functions

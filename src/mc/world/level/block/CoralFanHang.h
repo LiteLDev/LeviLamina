@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/world/level/block/CoralFan.h"
 
 // auto generated forward declare list
@@ -22,14 +23,8 @@ class CoralFanHang : public ::CoralFan {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkc4f7de;
+    ::ll::TypedStorage<8, 48, ::HashedString const> mCoralFanVersion;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CoralFanHang& operator=(CoralFanHang const&);
-    CoralFanHang(CoralFanHang const&);
-    CoralFanHang();
 
 public:
     // virtual functions

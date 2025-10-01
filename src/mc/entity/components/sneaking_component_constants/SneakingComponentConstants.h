@@ -10,9 +10,9 @@ namespace SneakingComponentConstants { struct SneakingInfo; }
 namespace SneakingComponentConstants {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::SneakingComponentConstants::SneakingInfo const& SNEAK_V1();
+MCAPI ::SneakingComponentConstants::SneakingInfo const& SNEAK_V1();
 
-MCNAPI ::SneakingComponentConstants::SneakingInfo const& SNEAK_V2();
+MCAPI ::SneakingComponentConstants::SneakingInfo const& SNEAK_V2();
 // NOLINTEND
 
 } // namespace SneakingComponentConstants

@@ -2,19 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
 struct TrimPattern {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk39f162;
-    ::ll::UntypedStorage<8, 48> mUnkc3364d;
+    ::ll::TypedStorage<8, 48, ::HashedString> mPatternId;
+    ::ll::TypedStorage<8, 48, ::HashedString> mItemName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TrimPattern& operator=(TrimPattern const&);
-    TrimPattern(TrimPattern const&);
-    TrimPattern();
 
 public:
     // member functions

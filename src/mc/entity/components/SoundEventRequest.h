@@ -127,13 +127,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SoundEventRequest(::SoundEventRequest&&);
+    MCAPI SoundEventRequest(::SoundEventRequest&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
+    MCAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
         ::ActorDataFlagComponent const&        actorFlags,
         ::ActorDefinitionIdentifier const&     identifier,
         ::ActorUniqueID                        actorId,
@@ -144,7 +144,7 @@ public:
         bool                                   isGlobal
     );
 
-    MCNAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
+    MCAPI static ::std::optional<::SoundEventRequest> tryPlayPredictiveSynchronizedSound(
         ::ActorDataFlagComponent const&        actorFlags,
         ::ActorDefinitionIdentifier const&     identifier,
         ::ActorUniqueID                        actorId,
@@ -156,7 +156,7 @@ public:
         bool                                   isGlobal
     );
 
-    MCNAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
+    MCAPI static ::std::optional<::SoundEventRequest> tryPlaySound(
         ::ActorDataFlagComponent const&        actorFlags,
         ::ActorDefinitionIdentifier const&     identifier,
         ::ActorUniqueID                        actorId,
@@ -171,6 +171,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SoundEventRequest&&);
+    MCAPI void* $ctor(::SoundEventRequest&&);
     // NOLINTEND
 };

@@ -17,14 +17,8 @@ struct InternalItemDescriptor : public ::ItemDescriptor::BaseDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk6a1627;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor::ItemEntry> mItemEntry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    InternalItemDescriptor& operator=(InternalItemDescriptor const&);
-    InternalItemDescriptor(InternalItemDescriptor const&);
-    InternalItemDescriptor();
 
 public:
     // virtual functions

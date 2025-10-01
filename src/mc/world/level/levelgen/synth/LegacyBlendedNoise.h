@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/levelgen/synth/PerlinNoise.h"
+
 // auto generated forward declare list
 // clang-format off
 class IRandom;
@@ -11,16 +14,10 @@ class LegacyBlendedNoise {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkf32158;
-    ::ll::UntypedStorage<8, 40> mUnk53aefe;
-    ::ll::UntypedStorage<8, 40> mUnka4b47b;
+    ::ll::TypedStorage<8, 40, ::PerlinNoise const> minLimitNoise;
+    ::ll::TypedStorage<8, 40, ::PerlinNoise const> maxLimitNoise;
+    ::ll::TypedStorage<8, 40, ::PerlinNoise const> mainNoise;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyBlendedNoise& operator=(LegacyBlendedNoise const&);
-    LegacyBlendedNoise(LegacyBlendedNoise const&);
-    LegacyBlendedNoise();
 
 public:
     // member functions

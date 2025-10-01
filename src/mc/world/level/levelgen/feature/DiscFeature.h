@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class BlockSource;
 class Random;
@@ -16,8 +17,8 @@ class DiscFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7ecda7;
-    ::ll::UntypedStorage<4, 4> mUnk94cdd5;
+    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
+    ::ll::TypedStorage<4, 4, int>            mRadius;
     // NOLINTEND
 
 public:

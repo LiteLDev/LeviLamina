@@ -3,13 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/shared_types/v1_21_10/scatter_params/CoordinateEvaluationOrder.h"
+#include "mc/world/level/ScatterParams.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
-class ScatterParams;
 namespace SharedTypes::Legacy { struct ExpressionNode; }
 namespace SharedTypes::v1_21_10 { struct CoordinateRangeData; }
 namespace SharedTypes::v1_21_10 { struct ScatterChanceData; }
@@ -20,16 +21,10 @@ class ScatterFeature : public ::IFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnkdd3a61;
-    ::ll::UntypedStorage<8, 216> mUnk35a126;
-    ::ll::UntypedStorage<1, 1>   mUnk80a297;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeatureToScatter;
+    ::ll::TypedStorage<8, 216, ::ScatterParams>      mScatterParams;
+    ::ll::TypedStorage<1, 1, bool>                   mProjectInputToFloor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScatterFeature& operator=(ScatterFeature const&);
-    ScatterFeature(ScatterFeature const&);
-    ScatterFeature();
 
 public:
     // virtual functions

@@ -18,14 +18,8 @@ class SHLibrary : public ::StrongholdPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk76f366;
+    ::ll::TypedStorage<1, 1, bool> isTall;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SHLibrary& operator=(SHLibrary const&);
-    SHLibrary(SHLibrary const&);
-    SHLibrary();
 
 public:
     // virtual functions

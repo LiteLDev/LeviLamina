@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/actor/DefinitionTrigger.h"
 
 // auto generated forward declare list
@@ -15,14 +16,8 @@ class OnInteractTrigger : public ::DefinitionTrigger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnka2cc93;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mEventSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OnInteractTrigger& operator=(OnInteractTrigger const&);
-    OnInteractTrigger(OnInteractTrigger const&);
-    OnInteractTrigger();
 
 public:
     // virtual functions

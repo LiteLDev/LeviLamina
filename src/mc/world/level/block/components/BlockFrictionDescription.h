@@ -16,14 +16,8 @@ struct BlockFrictionDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2f9431;
+    ::ll::TypedStorage<4, 4, float> mFriction;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockFrictionDescription& operator=(BlockFrictionDescription const&);
-    BlockFrictionDescription(BlockFrictionDescription const&);
-    BlockFrictionDescription();
 
 public:
     // virtual functions

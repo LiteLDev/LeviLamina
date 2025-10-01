@@ -2,18 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class BlockTypeRegistryRWLock;
+// clang-format on
+
 class BlockTypeRegistryModificationsLock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkb60fac;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockTypeRegistryRWLock>> mLocker;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockTypeRegistryModificationsLock& operator=(BlockTypeRegistryModificationsLock const&);
-    BlockTypeRegistryModificationsLock(BlockTypeRegistryModificationsLock const&);
-    BlockTypeRegistryModificationsLock();
 
 public:
     // member functions

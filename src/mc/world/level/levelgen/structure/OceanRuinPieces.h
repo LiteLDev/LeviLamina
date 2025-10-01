@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/util/Rotation.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/biome/OceanTempCategory.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 #include "mc/world/level/levelgen/structure/TemplateStructurePiece.h"
@@ -12,12 +13,12 @@
 // auto generated forward declare list
 // clang-format off
 class Block;
-class BlockPos;
 class BlockSource;
 class BoundingBox;
 class Random;
 class StructureManager;
 class StructurePiece;
+class StructurePoolBlockRule;
 struct OceanRuinConfiguration;
 // clang-format on
 
@@ -33,20 +34,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnkedc396;
-        ::ll::UntypedStorage<8, 32> mUnke834c0;
-        ::ll::UntypedStorage<4, 4>  mUnkeae53e;
-        ::ll::UntypedStorage<4, 4>  mUnk3c1b82;
-        ::ll::UntypedStorage<1, 1>  mUnk82275a;
-        ::ll::UntypedStorage<1, 1>  mUnkd02750;
-        ::ll::UntypedStorage<4, 12> mUnk1647b1;
-        ::ll::UntypedStorage<8, 8>  mUnka09d74;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::StructureManager>> mStructureManager;
+        ::ll::TypedStorage<8, 32, ::std::string>                                     mTemplateName;
+        ::ll::TypedStorage<4, 4, ::OceanTempCategory>                                mBiomeType;
+        ::ll::TypedStorage<4, 4, float>                                              mIntegrity;
+        ::ll::TypedStorage<1, 1, bool>                                               mIsLarge;
+        ::ll::TypedStorage<1, 1, ::Rotation>                                         mRotation;
+        ::ll::TypedStorage<4, 12, ::BlockPos>                                        mPosition;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockRule>>>>
+            mPlaceArchySuspiciousBlocks;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        OceanRuinPiece& operator=(OceanRuinPiece const&);
-        OceanRuinPiece(OceanRuinPiece const&);
         OceanRuinPiece();
 
     public:

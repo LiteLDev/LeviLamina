@@ -14,15 +14,8 @@ class BlockEntityFallOnConfigurationComponentDescription : public ::BlockCompone
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk37c2c3;
+    ::ll::TypedStorage<4, 4, float> mMinimumFallDistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockEntityFallOnConfigurationComponentDescription&
-    operator=(BlockEntityFallOnConfigurationComponentDescription const&);
-    BlockEntityFallOnConfigurationComponentDescription(BlockEntityFallOnConfigurationComponentDescription const&);
-    BlockEntityFallOnConfigurationComponentDescription();
 
 public:
     // virtual functions

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/world/level/block/FoliageBlock.h"
 
@@ -15,7 +16,6 @@ class BlockPos;
 class BlockSource;
 class Experiments;
 class GetCollisionShapeInterface;
-class HashedString;
 class IConstBlockSource;
 namespace BlockEvents { class BlockPlaceEvent; }
 // clang-format on
@@ -24,13 +24,11 @@ class CoralFan : public ::FoliageBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnkd2b41a;
+    ::ll::TypedStorage<8, 48, ::HashedString const> mDeadVersion;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    CoralFan& operator=(CoralFan const&);
-    CoralFan(CoralFan const&);
     CoralFan();
 
 public:

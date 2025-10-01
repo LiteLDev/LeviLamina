@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/levelgen/feature/Feature.h"
+#include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,17 +19,15 @@ class LegacySwampFoliageFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkd50f04;
-    ::ll::UntypedStorage<8, 24> mUnk4a6f80;
-    ::ll::UntypedStorage<8, 24> mUnk2d9268;
-    ::ll::UntypedStorage<8, 24> mUnk5818d8;
-    ::ll::UntypedStorage<8, 24> mUnk66cd2b;
+    ::ll::TypedStorage<8, 64, ::std::function<::WeakRef<::IFeature>(::Random&)>> mGetTreeFeature;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>                             mSeagrassFeature;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>                             mTallGrassFeature;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>                             mHugeMushroomFeature;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>                             mSwampTreeFeature;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    LegacySwampFoliageFeature& operator=(LegacySwampFoliageFeature const&);
-    LegacySwampFoliageFeature(LegacySwampFoliageFeature const&);
     LegacySwampFoliageFeature();
 
 public:

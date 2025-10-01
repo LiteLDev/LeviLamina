@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class ItemRegistryRef;
+struct TradeTier;
 namespace Puv { class Logger; }
 namespace SharedTypes::v1_21_30 { struct TradeTableData; }
 // clang-format on
@@ -13,13 +14,11 @@ struct TradeTableData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3cbd02;
+    ::ll::TypedStorage<8, 24, ::std::vector<::TradeTier>> mTiers;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    TradeTableData& operator=(TradeTableData const&);
-    TradeTableData(TradeTableData const&);
     TradeTableData();
 
 public:

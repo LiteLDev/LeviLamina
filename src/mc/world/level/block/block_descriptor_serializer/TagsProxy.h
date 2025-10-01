@@ -8,7 +8,7 @@ struct TagsProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk45d9de;
+    ::ll::TypedStorage<8, 32, ::std::string> mTagExpression;
     // NOLINTEND
 
 public:

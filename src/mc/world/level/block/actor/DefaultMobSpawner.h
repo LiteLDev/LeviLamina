@@ -8,20 +8,15 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class MobSpawnerBlockActor;
 // clang-format on
 
 class DefaultMobSpawner : public ::BaseMobSpawner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk21360f;
+    ::ll::TypedStorage<8, 8, ::MobSpawnerBlockActor*> mOwner;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DefaultMobSpawner& operator=(DefaultMobSpawner const&);
-    DefaultMobSpawner(DefaultMobSpawner const&);
-    DefaultMobSpawner();
 
 public:
     // virtual functions

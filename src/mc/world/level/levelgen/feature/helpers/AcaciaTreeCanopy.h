@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/levelgen/feature/helpers/ITreeCanopy.h"
 
 // auto generated forward declare list
@@ -18,16 +19,10 @@ class AcaciaTreeCanopy : public ::ITreeCanopy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk327a62;
-    ::ll::UntypedStorage<1, 1>   mUnk4b9352;
-    ::ll::UntypedStorage<8, 184> mUnkfeff36;
+    ::ll::TypedStorage<4, 4, int>                 mCanopySize;
+    ::ll::TypedStorage<1, 1, bool>                mSimplePattern;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mLeavesBlockDescriptor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    AcaciaTreeCanopy& operator=(AcaciaTreeCanopy const&);
-    AcaciaTreeCanopy(AcaciaTreeCanopy const&);
-    AcaciaTreeCanopy();
 
 public:
     // virtual functions

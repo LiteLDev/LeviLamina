@@ -6,16 +6,22 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/file/PathBuffer.h"
+#include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/json/Value.h"
 #include "mc/deps/shared_types/v1_19_40/item/ItemCategory.h"
 #include "mc/resources/JsonBetaState.h"
+#include "mc/resources/MinEngineVersion.h"
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/world/level/block/definition/BlockDescription.h"
+#include "mc/world/level/block/traits/BlockTraitFactory.h"
 
 // auto generated forward declare list
 // clang-format off
 class Block;
 class BlockType;
 class CompoundTag;
+class DefinitionEvent;
 class Experiments;
 class IMinecraftEventing;
 class IPackLoadContext;
@@ -23,12 +29,9 @@ class Level;
 class LinkedAssetValidator;
 class PackLoadRequirement;
 class ResourcePackManager;
-class SemVersion;
 struct BlockComponentGroupDescription;
 struct BlockDefinition;
-struct BlockDescription;
 struct BlockPermutationDescription;
-namespace Json { class Value; }
 namespace JsonUtil { class EmptyClass; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -45,21 +48,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24>  mUnk66603e;
-        ::ll::UntypedStorage<8, 32>  mUnkf1018e;
-        ::ll::UntypedStorage<8, 24>  mUnkd4f5d9;
-        ::ll::UntypedStorage<8, 176> mUnk960d05;
-        ::ll::UntypedStorage<1, 1>   mUnkd6d7a8;
-        ::ll::UntypedStorage<8, 32>  mUnke5554e;
-        ::ll::UntypedStorage<8, 32>  mUnk597a19;
-        ::ll::UntypedStorage<8, 16>  mUnk9a0d89;
+        ::ll::TypedStorage<8, 24, ::SemVersion>        mFormatVersion;
+        ::ll::TypedStorage<8, 32, ::MinEngineVersion>  mMinEngineVersion;
+        ::ll::TypedStorage<8, 24, ::SemVersion>        mOriginalJsonVersion;
+        ::ll::TypedStorage<8, 176, ::BlockDescription> mDescription;
+        ::ll::TypedStorage<1, 1, ::JsonBetaState>      mIsBeta;
+        ::ll::TypedStorage<8, 32, ::std::string>       mResourcePackLocation;
+        ::ll::TypedStorage<8, 32, ::std::string>       mResourceFileLocation;
+        ::ll::TypedStorage<8, 16, ::Json::Value>       mRoot;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlockResource& operator=(BlockResource const&);
-        BlockResource(BlockResource const&);
-        BlockResource();
 
     public:
         // member functions
@@ -77,14 +74,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>  mUnk1b5f57;
-    ::ll::UntypedStorage<8, 64>  mUnkcd9897;
-    ::ll::UntypedStorage<8, 16>  mUnke67cd4;
-    ::ll::UntypedStorage<8, 128> mUnk255ed4;
-    ::ll::UntypedStorage<4, 4>   mUnka63e94;
-    ::ll::UntypedStorage<8, 24>  mUnkf2dec9;
-    ::ll::UntypedStorage<8, 24>  mUnk67f28b;
-    ::ll::UntypedStorage<8, 8>   mUnk4afa49;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DefinitionEvent>> mEventHandlers;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unique_ptr<::BlockDefinition>>>
+        mBlockDefinitions;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockDescription>>>
+                                                                                            mDescriptionSchema;
+    ::ll::TypedStorage<8, 128, ::BlockTraitFactory>                                         mTraitFactory;
+    ::ll::TypedStorage<4, 4, int>                                                           mLastBlockId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                 mBlockResourceGroupNames;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                                         mEventing;
     // NOLINTEND
 
 public:

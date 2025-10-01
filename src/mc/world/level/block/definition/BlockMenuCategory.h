@@ -2,20 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/shared_types/v1_19_40/item/ItemCategory.h"
+
 struct BlockMenuCategory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk3fd471;
-    ::ll::UntypedStorage<1, 1>  mUnkdfa805;
-    ::ll::UntypedStorage<1, 1>  mUnk7acc0b;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mCreativeGroupName;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v1_19_40::ItemCategory::CreativeItemCategory> mCreativeCategory;
+    ::ll::TypedStorage<1, 1, bool>                                                        mIsHiddenInCommands;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockMenuCategory& operator=(BlockMenuCategory const&);
-    BlockMenuCategory(BlockMenuCategory const&);
-    BlockMenuCategory();
 
 public:
     // member functions

@@ -10,6 +10,7 @@
 class BlockPos;
 class BlockVolume;
 class BoundingBox;
+class ChunkPos;
 class Dimension;
 class JigsawBlockInfo;
 class JigsawStructureRegistry;
@@ -23,18 +24,37 @@ struct JigsawJunction;
 
 class LegacyJigsawPlacement {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk4488b6;
-    ::ll::UntypedStorage<8, 64> mUnk50e36e;
-    ::ll::UntypedStorage<8, 64> mUnk113b09;
-    // NOLINTEND
+    // LegacyJigsawPlacement inner types define
+    using PieceFactory = ::std::function<::std::unique_ptr<::PoolElementStructurePiece>(
+        ::StructurePoolElement const&,
+        ::BlockPos const&,
+        ::Rotation const&,
+        int,
+        ::JigsawJunction&,
+        ::BoundingBox const&,
+        ::BlockPos const&
+    )>;
 
 public:
-    // prevent constructor by default
-    LegacyJigsawPlacement& operator=(LegacyJigsawPlacement const&);
-    LegacyJigsawPlacement(LegacyJigsawPlacement const&);
-    LegacyJigsawPlacement();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int const> mMaxDepth;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::function<::std::unique_ptr<::PoolElementStructurePiece>(
+            ::StructurePoolElement const&,
+            ::BlockPos const&,
+            ::Rotation const&,
+            int,
+            ::JigsawJunction&,
+            ::BoundingBox const&,
+            ::BlockPos const&
+        )>>
+        mFactory;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>>
+        mChunkHeightCache;
+    // NOLINTEND
 
 public:
     // member functions

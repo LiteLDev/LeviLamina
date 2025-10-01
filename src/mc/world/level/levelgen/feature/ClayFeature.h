@@ -16,14 +16,8 @@ class ClayFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk84065c;
+    ::ll::TypedStorage<4, 4, int const> mRadius;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ClayFeature& operator=(ClayFeature const&);
-    ClayFeature(ClayFeature const&);
-    ClayFeature();
 
 public:
     // virtual functions

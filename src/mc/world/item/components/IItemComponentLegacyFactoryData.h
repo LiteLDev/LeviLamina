@@ -14,14 +14,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnka5adbd;
+        ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::shared_ptr<::IItemComponentLegacyFactoryData>>> mMap;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Components& operator=(Components const&);
-        Components(Components const&);
-        Components();
     };
 
 public:

@@ -18,14 +18,8 @@ class SHFillerCorridor : public ::StrongholdPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk85234d;
+    ::ll::TypedStorage<4, 4, int> steps;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SHFillerCorridor& operator=(SHFillerCorridor const&);
-    SHFillerCorridor(SHFillerCorridor const&);
-    SHFillerCorridor();
 
 public:
     // virtual functions

@@ -12,14 +12,8 @@ class TrimMaterialRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk315430;
+    ::ll::TypedStorage<8, 24, ::std::vector<::TrimMaterial>> mTrimMaterials;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TrimMaterialRegistry& operator=(TrimMaterialRegistry const&);
-    TrimMaterialRegistry(TrimMaterialRegistry const&);
-    TrimMaterialRegistry();
 
 public:
     // member functions

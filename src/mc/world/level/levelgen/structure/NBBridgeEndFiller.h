@@ -18,14 +18,8 @@ class NBBridgeEndFiller : public ::NetherFortressPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk37234e;
+    ::ll::TypedStorage<4, 4, int> selfSeed;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NBBridgeEndFiller& operator=(NBBridgeEndFiller const&);
-    NBBridgeEndFiller(NBBridgeEndFiller const&);
-    NBBridgeEndFiller();
 
 public:
     // virtual functions

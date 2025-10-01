@@ -34,67 +34,43 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnk38ec72;
-        ::ll::UntypedStorage<1, 1>  mUnk4845fa;
-        ::ll::UntypedStorage<1, 1>  mUnk32747a;
-        ::ll::UntypedStorage<1, 1>  mUnk3919e7;
-        ::ll::UntypedStorage<4, 12> mUnk880e8e;
-        ::ll::UntypedStorage<4, 12> mUnk51ff9c;
-        ::ll::UntypedStorage<4, 12> mUnkb294b2;
-        ::ll::UntypedStorage<4, 12> mUnkcd43e4;
-        ::ll::UntypedStorage<1, 1>  mUnk451025;
+        ::ll::TypedStorage<1, 1, bool>        mHasBuildDirection;
+        ::ll::TypedStorage<1, 1, bool>        mHasLastBuiltPosition;
+        ::ll::TypedStorage<1, 1, bool>        mLastBuildBlockWasInteractive;
+        ::ll::TypedStorage<1, 1, bool>        mLastBuildBlockWasSnappable;
+        ::ll::TypedStorage<4, 12, ::BlockPos> mLastBuiltBlockPosition;
+        ::ll::TypedStorage<4, 12, ::BlockPos> mBuildDirection;
+        ::ll::TypedStorage<4, 12, ::BlockPos> mNextBuildPos;
+        ::ll::TypedStorage<4, 12, ::Vec3>     mInitialClickPos;
+        ::ll::TypedStorage<1, 1, uchar>       mContinueFacing;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BuildContext& operator=(BuildContext const&);
-        BuildContext(BuildContext const&);
-        BuildContext();
     };
 
     struct BuildDelay {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk178db0;
-        ::ll::UntypedStorage<8, 8> mUnk3546ef;
+        ::ll::TypedStorage<1, 1, bool>                                    mHasDelayElapsed;
+        ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mNewLastBuildTimeIfBlockIsBuilt;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BuildDelay& operator=(BuildDelay const&);
-        BuildDelay(BuildDelay const&);
-        BuildDelay();
     };
 
     struct ContinueBuildData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnk3d6f00;
-        ::ll::UntypedStorage<1, 1>  mUnkfca6f6;
+        ::ll::TypedStorage<4, 12, ::BlockPos const> mHit;
+        ::ll::TypedStorage<1, 1, uchar const>       mFacing;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ContinueBuildData& operator=(ContinueBuildData const&);
-        ContinueBuildData(ContinueBuildData const&);
-        ContinueBuildData();
     };
 
     struct BuildPlayerContext {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnk7ef549;
-        ::ll::UntypedStorage<1, 1>  mUnk655443;
+        ::ll::TypedStorage<4, 12, ::Vec3> mPosDelta;
+        ::ll::TypedStorage<1, 1, bool>    mIsSneaking;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BuildPlayerContext& operator=(BuildPlayerContext const&);
-        BuildPlayerContext(BuildPlayerContext const&);
-        BuildPlayerContext();
     };
 
 public:

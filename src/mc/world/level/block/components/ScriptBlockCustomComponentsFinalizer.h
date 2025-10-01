@@ -2,24 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/game_refs/StackRefResult.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlockCustomComponentsComponent;
 class BlockType;
+namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentsRegistry; }
 // clang-format on
 
 class ScriptBlockCustomComponentsFinalizer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk871957;
+    ::ll::TypedStorage<8, 16, ::StackRefResult<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry>> mRegistry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptBlockCustomComponentsFinalizer& operator=(ScriptBlockCustomComponentsFinalizer const&);
-    ScriptBlockCustomComponentsFinalizer(ScriptBlockCustomComponentsFinalizer const&);
-    ScriptBlockCustomComponentsFinalizer();
 
 public:
     // member functions

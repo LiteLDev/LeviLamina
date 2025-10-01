@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 class BlockSource;
 class Random;
@@ -16,16 +17,14 @@ class HugeFungusFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8c8f26;
-    ::ll::UntypedStorage<8, 8> mUnkf169b2;
-    ::ll::UntypedStorage<8, 8> mUnkc4e379;
-    ::ll::UntypedStorage<1, 1> mUnk3fd593;
+    ::ll::TypedStorage<8, 8, ::Block const*> mStemBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*> mHatBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*> mDecorBlock;
+    ::ll::TypedStorage<1, 1, bool const>     mAllowedToPlaceVines;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    HugeFungusFeature& operator=(HugeFungusFeature const&);
-    HugeFungusFeature(HugeFungusFeature const&);
     HugeFungusFeature();
 
 public:

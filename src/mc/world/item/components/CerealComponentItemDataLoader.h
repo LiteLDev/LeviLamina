@@ -2,10 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/deps/puv/SlicedLoader.h"
+
 // auto generated forward declare list
 // clang-format off
+class BedrockLoadContext;
 class IPackLoadContext;
-class SemVersion;
+struct ComponentItemData_v1_21_90;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -13,14 +18,13 @@ class CerealComponentItemDataLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnk71ecdf;
-    ::ll::UntypedStorage<8, 24>  mUnkaa5bf5;
+    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::ComponentItemData_v1_21_90, ::BedrockLoadContext, nullptr_t>>
+                                            mLoader;
+    ::ll::TypedStorage<8, 24, ::SemVersion> mDocumentVersion;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    CerealComponentItemDataLoader& operator=(CerealComponentItemDataLoader const&);
-    CerealComponentItemDataLoader(CerealComponentItemDataLoader const&);
     CerealComponentItemDataLoader();
 
 public:

@@ -2,18 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/block/components/BlockComponentStorage.h"
+
 class NetEaseBlockComponentStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnk5c2c89;
+    ::ll::TypedStorage<8, 104, ::BlockComponentStorage> mStorage;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetEaseBlockComponentStorage& operator=(NetEaseBlockComponentStorage const&);
-    NetEaseBlockComponentStorage(NetEaseBlockComponentStorage const&);
-    NetEaseBlockComponentStorage();
 
 public:
     // member functions

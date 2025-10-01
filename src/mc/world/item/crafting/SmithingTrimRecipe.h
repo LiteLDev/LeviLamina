@@ -19,13 +19,11 @@ class SmithingTrimRecipe : public ::ShapelessRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkda36da;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mRuntimeResults;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    SmithingTrimRecipe& operator=(SmithingTrimRecipe const&);
-    SmithingTrimRecipe(SmithingTrimRecipe const&);
     SmithingTrimRecipe();
 
 public:

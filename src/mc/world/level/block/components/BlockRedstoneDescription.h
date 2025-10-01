@@ -16,14 +16,12 @@ struct BlockRedstoneDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk608f05;
-    ::ll::UntypedStorage<1, 1> mUnked875b;
+    ::ll::TypedStorage<1, 1, bool> mRedstoneConductor;
+    ::ll::TypedStorage<1, 1, bool> mAllowsWireToStepDown;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockRedstoneDescription& operator=(BlockRedstoneDescription const&);
-    BlockRedstoneDescription(BlockRedstoneDescription const&);
     BlockRedstoneDescription();
 
 public:

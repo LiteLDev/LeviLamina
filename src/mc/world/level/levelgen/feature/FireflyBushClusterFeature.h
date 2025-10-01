@@ -16,14 +16,8 @@ class FireflyBushClusterFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnka77822;
+    ::ll::TypedStorage<1, 1, bool> mNeedsAdjacentWater;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FireflyBushClusterFeature& operator=(FireflyBushClusterFeature const&);
-    FireflyBushClusterFeature(FireflyBushClusterFeature const&);
-    FireflyBushClusterFeature();
 
 public:
     // virtual functions

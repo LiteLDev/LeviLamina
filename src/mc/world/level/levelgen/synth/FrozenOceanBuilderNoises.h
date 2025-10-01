@@ -3,28 +3,25 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/random/XoroshiroPositionalRandomFactory.h"
 #include "mc/world/level/levelgen/synth/MultiOctaveNoiseImpl.h"
 #include "mc/world/level/levelgen/synth/NormalNoiseImpl.h"
-
-// auto generated forward declare list
-// clang-format off
-class XoroshiroPositionalRandomFactory;
-// clang-format on
 
 class FrozenOceanBuilderNoises {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnk20daab;
-    ::ll::UntypedStorage<8, 56> mUnk4c8abb;
-    ::ll::UntypedStorage<8, 56> mUnk911d03;
-    ::ll::UntypedStorage<8, 24> mUnkb53a66;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mIcebergPillarNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+        mIcebergSurfaceNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
+                                                                        mIcebergPillarRoofNoise;
+    ::ll::TypedStorage<8, 24, ::XoroshiroPositionalRandomFactory const> mRandomFactory;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    FrozenOceanBuilderNoises& operator=(FrozenOceanBuilderNoises const&);
-    FrozenOceanBuilderNoises(FrozenOceanBuilderNoises const&);
     FrozenOceanBuilderNoises();
 
 public:

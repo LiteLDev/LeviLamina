@@ -87,7 +87,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::std::string $toString() const;
+        MCAPI ::std::string $toString() const;
         // NOLINTEND
 
     public:
@@ -145,19 +145,19 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI bool $isValidStartItem() const;
+        MCFOLD bool $isValidStartItem() const;
 
-        MCNAPI bool $isAddedActorItem() const;
+        MCFOLD bool $isAddedActorItem() const;
 
-        MCNAPI bool $isMotionHintItem() const;
+        MCFOLD bool $isMotionHintItem() const;
 
-        MCNAPI ::Vec3 const& $getPos() const;
+        MCFOLD ::Vec3 const& $getPos() const;
 
-        MCNAPI ::Vec2 const& $getRot() const;
+        MCAPI ::Vec2 const& $getRot() const;
 
-        MCNAPI float $getYHeadRot() const;
+        MCAPI float $getYHeadRot() const;
 
-        MCNAPI bool $isOnGround() const;
+        MCFOLD bool $isOnGround() const;
         // NOLINTEND
 
     public:
@@ -241,7 +241,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCNAPI static uint& mSequenceIdGenerator();
+        MCAPI static uint& mSequenceIdGenerator();
         // NOLINTEND
     };
 
@@ -264,16 +264,16 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void _addHistoryItem(::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& item);
+        MCAPI void _addHistoryItem(::std::shared_ptr<::PredictedMovementComponent::HistoryItem const> const& item);
 
-        MCNAPI void _clearHistory();
+        MCAPI void _clearHistory();
 
-        MCNAPI void addHistory(
+        MCAPI void addHistory(
             ::MoveActorAbsoluteData const&                 moveData,
             ::std::chrono::steady_clock::time_point const& receiveTimepoint
         );
 
-        MCNAPI ::std::string toString();
+        MCAPI ::std::string toString();
         // NOLINTEND
     };
 
@@ -334,7 +334,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void reset();
+        MCAPI void reset();
         // NOLINTEND
 
     public:
@@ -389,15 +389,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::std::string toString() const;
+        MCAPI ::std::string toString() const;
 
-        MCNAPI ~PredictionDbgData();
+        MCAPI ~PredictionDbgData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -422,26 +422,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _debugLog(
+    MCAPI void _debugLog(
         ::PredictedMovementSystemParams&                       params,
         ::PredictedMovementComponent::PredictionDbgData const& debugData
     ) const;
 
-    MCNAPI bool _tryInterpolate(
+    MCAPI bool _tryInterpolate(
         ::PredictedMovementSystemParams&               params,
         ::std::chrono::steady_clock::time_point const& renderTimepoint
     );
 
-    MCNAPI void reset();
+    MCAPI void reset();
 
-    MCNAPI void
+    MCAPI void
     tickNextPosition(::PredictedMovementSystemParams& params, ::std::chrono::steady_clock::time_point const& timepoint);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::PredictedMovementComponent::RuntimePredictionData>&
-    mGlobalRuntimePredictionData();
+    MCAPI static ::std::unique_ptr<::PredictedMovementComponent::RuntimePredictionData>& mGlobalRuntimePredictionData();
     // NOLINTEND
 };

@@ -17,13 +17,11 @@ class UnburiedConstraint : public ::IStructureConstraint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2ab619;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>> mCeilingOffsets;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    UnburiedConstraint& operator=(UnburiedConstraint const&);
-    UnburiedConstraint(UnburiedConstraint const&);
     UnburiedConstraint();
 
 public:

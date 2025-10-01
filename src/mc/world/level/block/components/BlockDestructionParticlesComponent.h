@@ -17,9 +17,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkf744bf;
-        ::ll::UntypedStorage<2, 2> mUnkb2ee17;
-        ::ll::UntypedStorage<1, 1> mUnk9eba7a;
+        ::ll::TypedStorage<8, 8, ::std::string const&> mTexture;
+        ::ll::TypedStorage<2, 2, ushort const>         mPreFlatteningAux;
+        ::ll::TypedStorage<1, 1, ::TintMethod const>   mTintMethod;
         // NOLINTEND
 
     public:

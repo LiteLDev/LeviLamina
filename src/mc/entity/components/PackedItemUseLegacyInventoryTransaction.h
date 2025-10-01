@@ -30,20 +30,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackedItemUseLegacyInventoryTransaction(::PackedItemUseLegacyInventoryTransaction&&);
+    MCAPI PackedItemUseLegacyInventoryTransaction(::PackedItemUseLegacyInventoryTransaction&&);
 
-    MCNAPI ~PackedItemUseLegacyInventoryTransaction();
+    MCAPI ~PackedItemUseLegacyInventoryTransaction();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PackedItemUseLegacyInventoryTransaction&&);
+    MCAPI void* $ctor(::PackedItemUseLegacyInventoryTransaction&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

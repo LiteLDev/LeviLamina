@@ -14,14 +14,8 @@ class RemovedState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk40dd8d;
+    ::ll::TypedStorage<8, 32, ::std::string const> mName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RemovedState& operator=(RemovedState const&);
-    RemovedState(RemovedState const&);
-    RemovedState();
 
 public:
     // virtual functions

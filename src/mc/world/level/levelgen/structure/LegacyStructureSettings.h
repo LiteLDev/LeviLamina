@@ -31,15 +31,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkeeba32;
-        ::ll::UntypedStorage<8, 8> mUnk45196e;
+        ::ll::TypedStorage<8, 8, uint64> mGroupIndex;
+        ::ll::TypedStorage<8, 8, uint64> mBlockIndex;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        IndexedName& operator=(IndexedName const&);
-        IndexedName(IndexedName const&);
-        IndexedName();
     };
 
 public:

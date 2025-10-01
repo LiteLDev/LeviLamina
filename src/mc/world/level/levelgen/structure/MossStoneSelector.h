@@ -23,28 +23,16 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk927816;
-        ::ll::UntypedStorage<8, 8> mUnk5492bf;
+        ::ll::TypedStorage<8, 8, ::Block const*> mCobblestone;
+        ::ll::TypedStorage<8, 8, ::Block const*> mMossyCobblestone;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LocalRegistry& operator=(LocalRegistry const&);
-        LocalRegistry(LocalRegistry const&);
-        LocalRegistry();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkd83ee1;
+    ::ll::TypedStorage<8, 16, ::MossStoneSelector::LocalRegistry> mLocalRegistry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MossStoneSelector& operator=(MossStoneSelector const&);
-    MossStoneSelector(MossStoneSelector const&);
-    MossStoneSelector();
 
 public:
     // virtual functions

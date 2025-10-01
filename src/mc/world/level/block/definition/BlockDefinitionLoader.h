@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/puv/LoadResult.h"
+#include "mc/deps/puv/SlicedLoader.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,13 +19,11 @@ class BlockDefinitionLoader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 192> mUnkdaeef1;
+    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::BlockDefinition, nullptr_t, nullptr_t>> mLoader;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BlockDefinitionLoader& operator=(BlockDefinitionLoader const&);
-    BlockDefinitionLoader(BlockDefinitionLoader const&);
     BlockDefinitionLoader();
 
 public:

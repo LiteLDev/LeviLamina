@@ -5,11 +5,18 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/puv/SlicedLoader.h"
 
 // auto generated forward declare list
 // clang-format off
+class BedrockLoadContext;
 class LinkedAssetValidator;
 class ResourcePackManager;
+namespace SharedTypes::v1_21_20 { struct JigsawStructureData; }
+namespace SharedTypes::v1_21_20::JigsawStructureDefinition { struct Contents; }
+namespace SharedTypes::v1_21_20::JigsawStructureProcessorList { struct Contents; }
+namespace SharedTypes::v1_21_20::JigsawStructureSet { struct Contents; }
+namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool { struct Contents; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -17,17 +24,38 @@ class JigsawStructureLoader : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk1ee9b7;
-    ::ll::UntypedStorage<8, 192> mUnkeb430c;
-    ::ll::UntypedStorage<8, 192> mUnk46b138;
-    ::ll::UntypedStorage<8, 192> mUnka24d43;
-    ::ll::UntypedStorage<8, 192> mUnkc54a45;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData>> mJigsawStructureData;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::SlicedLoader<
+            ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents,
+            ::BedrockLoadContext,
+            nullptr_t>>
+        mProcessorListLoader;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::SlicedLoader<
+            ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents,
+            ::BedrockLoadContext,
+            nullptr_t>>
+        mTemplatePoolLoader;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::
+            SlicedLoader<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents, ::BedrockLoadContext, nullptr_t>>
+        mJigsawDefinitionLoader;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::SlicedLoader<::SharedTypes::v1_21_20::JigsawStructureSet::Contents, ::BedrockLoadContext, nullptr_t>>
+        mJigsawSetLoader;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    JigsawStructureLoader& operator=(JigsawStructureLoader const&);
-    JigsawStructureLoader(JigsawStructureLoader const&);
     JigsawStructureLoader();
 
 public:

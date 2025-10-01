@@ -18,14 +18,8 @@ class RepairItemRecipe : public ::MultiRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5dae9c;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RepairItemRecipe& operator=(RepairItemRecipe const&);
-    RepairItemRecipe(RepairItemRecipe const&);
-    RepairItemRecipe();
 
 public:
     // virtual functions

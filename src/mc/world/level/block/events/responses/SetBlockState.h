@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ExpressionNode;
 class RenderParams;
 struct EventResponseCollection;
 namespace JsonUtil { class EmptyClass; }
@@ -18,14 +19,8 @@ class SetBlockState : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkabc2cc;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::ExpressionNode>>> mPropertyExpressions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SetBlockState& operator=(SetBlockState const&);
-    SetBlockState(SetBlockState const&);
-    SetBlockState();
 
 public:
     // virtual functions

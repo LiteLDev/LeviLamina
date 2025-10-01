@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 namespace FlatteningUtils { struct BlockNameRefAuxVariant; }
 // clang-format on
 
@@ -14,20 +16,18 @@ struct LegacyBlockInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk1723f7;
-    ::ll::UntypedStorage<8, 48> mUnkb8fa94;
-    ::ll::UntypedStorage<8, 48> mUnk6dcab8;
-    ::ll::UntypedStorage<1, 1>  mUnk16d5d5;
-    ::ll::UntypedStorage<4, 4>  mUnke432d5;
-    ::ll::UntypedStorage<8, 24> mUnk59a7f3;
-    ::ll::UntypedStorage<8, 24> mUnk1e6d21;
-    ::ll::UntypedStorage<8, 24> mUnk202ce6;
+    ::ll::TypedStorage<4, 4, int>                                                            legacyId;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                                legacyFullName;
+    ::ll::TypedStorage<8, 48, ::HashedString>                                                legacyRawName;
+    ::ll::TypedStorage<1, 1, uchar>                                                          maxAuxValue;
+    ::ll::TypedStorage<4, 4, int>                                                            startVariant;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::reference_wrapper<::HashedString const>>> newBlockFullNamesByAux;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::reference_wrapper<::HashedString const>>> newBlockFullNamesByVariant;
+    ::ll::TypedStorage<8, 24, ::std::vector<::FlatteningUtils::BlockNameRefAuxVariant>>      newBlockNameAuxVariants;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    LegacyBlockInfo& operator=(LegacyBlockInfo const&);
-    LegacyBlockInfo(LegacyBlockInfo const&);
     LegacyBlockInfo();
 
 public:

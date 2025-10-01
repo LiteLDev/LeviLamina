@@ -43,40 +43,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RaidBossComponent(::RaidBossComponent&&);
+    MCAPI RaidBossComponent(::RaidBossComponent&&);
 
-    MCNAPI void _broadcastBossEvent(::BossEventUpdateType type, ::Actor& owner);
+    MCAPI void _broadcastBossEvent(::BossEventUpdateType type, ::Actor& owner);
 
-    MCNAPI void _handleRegisterPlayers(::Actor& owner);
+    MCAPI void _handleRegisterPlayers(::Actor& owner);
 
-    MCNAPI void _sendBossEvent(::BossEventUpdateType type, ::Player& player);
+    MCAPI void _sendBossEvent(::BossEventUpdateType type, ::Player& player);
 
-    MCNAPI ::Bedrock::Safety::RedactableString getName();
+    MCAPI ::Bedrock::Safety::RedactableString getName();
 
-    MCNAPI bool isWithinRange(::Mob const& player);
+    MCAPI bool isWithinRange(::Mob const& player);
 
-    MCNAPI ::RaidBossComponent& operator=(::RaidBossComponent&&);
+    MCAPI ::RaidBossComponent& operator=(::RaidBossComponent&&);
 
-    MCNAPI void removeBossBar(::Actor& owner);
+    MCAPI void removeBossBar(::Actor& owner);
 
-    MCNAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
+    MCAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
 
-    MCNAPI void updateBossBarStats(::Actor& owner, ::Raid const& raid);
+    MCAPI void updateBossBarStats(::Actor& owner, ::Raid const& raid);
 
-    MCNAPI void updateHealthBarVisible(bool visible, ::Actor& owner);
+    MCAPI void updateHealthBarVisible(bool visible, ::Actor& owner);
 
-    MCNAPI ~RaidBossComponent();
+    MCAPI ~RaidBossComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::RaidBossComponent&&);
+    MCAPI void* $ctor(::RaidBossComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

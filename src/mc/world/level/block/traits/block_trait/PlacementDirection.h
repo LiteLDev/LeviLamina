@@ -32,14 +32,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk9a29dc;
+        ::ll::TypedStorage<4, 4, float const> mRotationOffset;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        UpdateCardinalGetPlacementBlockCallback& operator=(UpdateCardinalGetPlacementBlockCallback const&);
-        UpdateCardinalGetPlacementBlockCallback(UpdateCardinalGetPlacementBlockCallback const&);
-        UpdateCardinalGetPlacementBlockCallback();
 
     public:
         // virtual functions
@@ -82,14 +76,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkef4481;
+        ::ll::TypedStorage<4, 4, float const> mRotationOffset;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        UpdateFacingGetPlacementBlockCallback& operator=(UpdateFacingGetPlacementBlockCallback const&);
-        UpdateFacingGetPlacementBlockCallback(UpdateFacingGetPlacementBlockCallback const&);
-        UpdateFacingGetPlacementBlockCallback();
 
     public:
         // virtual functions
@@ -132,15 +120,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk7bcf13;
-        ::ll::UntypedStorage<1, 1> mUnk332cbb;
+        ::ll::TypedStorage<1, 1, bool> mCardinalDirection;
+        ::ll::TypedStorage<1, 1, bool> mFacingDirection;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        EnabledStates& operator=(EnabledStates const&);
-        EnabledStates(EnabledStates const&);
-        EnabledStates();
 
     public:
         // member functions
@@ -161,15 +143,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2> mUnk81c19d;
-    ::ll::UntypedStorage<4, 4> mUnk45914d;
+    ::ll::TypedStorage<1, 2, ::BlockTrait::PlacementDirection::EnabledStates> mStates;
+    ::ll::TypedStorage<4, 4, float>                                           mRotationOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlacementDirection& operator=(PlacementDirection const&);
-    PlacementDirection(PlacementDirection const&);
-    PlacementDirection();
 
 public:
     // virtual functions

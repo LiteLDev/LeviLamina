@@ -3,7 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/levelgen/v2/providers/ConstantInt.h"
 #include "mc/world/level/levelgen/v2/providers/IntProviderType.h"
+#include "mc/world/level/levelgen/v2/providers/UniformInt.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +16,7 @@ struct IntProvider : public ::IntProviderType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 24> mUnke97976;
+    ::ll::TypedStorage<4, 24, ::std::variant<::ConstantInt, ::UniformInt>> mProvider;
     // NOLINTEND
 
 public:

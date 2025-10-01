@@ -27,13 +27,11 @@ class FeaturePoolElement : public ::StructurePoolElement {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkba215a;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeature;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    FeaturePoolElement& operator=(FeaturePoolElement const&);
-    FeaturePoolElement(FeaturePoolElement const&);
     FeaturePoolElement();
 
 public:

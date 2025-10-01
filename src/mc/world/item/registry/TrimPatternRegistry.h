@@ -10,17 +10,17 @@ class ItemRegistryRef;
 
 class TrimPatternRegistry {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkc90b11;
-    ::ll::UntypedStorage<8, 64> mUnk54fbf2;
-    // NOLINTEND
+    // TrimPatternRegistry inner types define
+    using TemplateItemIdToPatternIdMap = ::std::unordered_map<::HashedString, ::HashedString>;
+
+    using PatternIdMapToTemplateItemId = ::std::unordered_map<::HashedString, ::HashedString>;
 
 public:
-    // prevent constructor by default
-    TrimPatternRegistry& operator=(TrimPatternRegistry const&);
-    TrimPatternRegistry(TrimPatternRegistry const&);
-    TrimPatternRegistry();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::HashedString>> mTemplateItemToPatternIdMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::HashedString>> mPatternIdToTemplateItemMap;
+    // NOLINTEND
 
 public:
     // member functions

@@ -2,12 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/ItemStack.h"
+
 struct RepairItemResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 152> mUnk4745cd;
-    ::ll::UntypedStorage<4, 4>   mUnk757275;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mResultItem;
+    ::ll::TypedStorage<4, 4, int>           mMaterialUsed;
     // NOLINTEND
 
 public:

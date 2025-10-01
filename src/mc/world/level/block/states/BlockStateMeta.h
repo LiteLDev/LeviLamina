@@ -2,15 +2,25 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/nbt/Tag.h"
+#include "mc/util/BidirectionalUnorderedMap.h"
+
+// auto generated forward declare list
+// clang-format off
+class BlockState;
+class ListTag;
+// clang-format on
+
 class BlockStateMeta {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk950d25;
-    ::ll::UntypedStorage<8, 8>   mUnk7ff3df;
-    ::ll::UntypedStorage<8, 128> mUnk564759;
-    ::ll::UntypedStorage<8, 8>   mUnk83d225;
-    ::ll::UntypedStorage<8, 32>  mUnke3cd6e;
+    ::ll::TypedStorage<1, 1, ::Tag::Type>                                mType;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ListTag>>               mEnumValues;
+    ::ll::TypedStorage<8, 128, ::BidirectionalUnorderedMap<int, uint64>> mHashIndexMap;
+    ::ll::TypedStorage<8, 8, ::BlockState const&>                        mBlockState;
+    ::ll::TypedStorage<8, 32, ::std::string>                             mName;
     // NOLINTEND
 
 public:

@@ -18,16 +18,14 @@ class MonumentBuilding : public ::OceanMonumentPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9fcf05;
-    ::ll::UntypedStorage<8, 24> mUnke9d97c;
-    ::ll::UntypedStorage<8, 16> mUnkea3ff3;
-    ::ll::UntypedStorage<8, 16> mUnk2fd715;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::OceanMonumentPiece>>> mChildPieces;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::RoomDefinition>>>     mRoomGrid;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RoomDefinition>>                    mSourceRoom;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RoomDefinition>>                    mCoreRoom;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    MonumentBuilding& operator=(MonumentBuilding const&);
-    MonumentBuilding(MonumentBuilding const&);
     MonumentBuilding();
 
 public:

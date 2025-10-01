@@ -2,13 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
+
 struct TrimMaterial {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk1da951;
-    ::ll::UntypedStorage<8, 32> mUnkf63464;
-    ::ll::UntypedStorage<8, 48> mUnk52693a;
+    ::ll::TypedStorage<8, 48, ::HashedString> mMaterialId;
+    ::ll::TypedStorage<8, 32, ::std::string>  mColor;
+    ::ll::TypedStorage<8, 48, ::HashedString> mItemName;
     // NOLINTEND
 
 public:

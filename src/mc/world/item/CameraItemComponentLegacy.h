@@ -26,26 +26,24 @@ public:
         Use   = 2,
     };
 
+    using PlaceCallback = ::std::function<void(::Vec3 const&, ::Player&)>;
+
+    using UseCallback = ::std::function<void(::Player&)>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2e2104;
-    ::ll::UntypedStorage<4, 4> mUnk1ca678;
-    ::ll::UntypedStorage<4, 4> mUnk709eb8;
-    ::ll::UntypedStorage<4, 4> mUnkd1fbd0;
-    ::ll::UntypedStorage<4, 4> mUnkf30ad0;
-    ::ll::UntypedStorage<4, 4> mUnk8bce76;
-    ::ll::UntypedStorage<1, 1> mUnk79abee;
-    ::ll::UntypedStorage<8, 8> mUnk1d226a;
-    ::ll::UntypedStorage<8, 8> mUnk853d69;
-    ::ll::UntypedStorage<8, 8> mUnkd3a209;
+    ::ll::TypedStorage<4, 4, float>              mBlackBarsDuration;
+    ::ll::TypedStorage<4, 4, float>              mBlackBarsScreenRatio;
+    ::ll::TypedStorage<4, 4, float>              mShutterScreenRatio;
+    ::ll::TypedStorage<4, 4, float>              mShutterDuration;
+    ::ll::TypedStorage<4, 4, float>              mPictureDuration;
+    ::ll::TypedStorage<4, 4, float>              mSlideAwayDuration;
+    ::ll::TypedStorage<1, 1, bool>               mPlacingTripod;
+    ::ll::TypedStorage<8, 8, uint64>             mPlacingTripodClientTick;
+    ::ll::TypedStorage<8, 8, uint64>             mPlacingTripodServerTick;
+    ::ll::TypedStorage<8, 8, ::CameraCallbacks*> mCallbacks;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CameraItemComponentLegacy& operator=(CameraItemComponentLegacy const&);
-    CameraItemComponentLegacy(CameraItemComponentLegacy const&);
-    CameraItemComponentLegacy();
 
 public:
     // virtual functions

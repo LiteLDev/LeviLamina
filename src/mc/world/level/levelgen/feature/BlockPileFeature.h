@@ -17,7 +17,7 @@ class BlockPileFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkec55b4;
+    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
     // NOLINTEND
 
 public:

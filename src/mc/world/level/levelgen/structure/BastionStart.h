@@ -15,13 +15,11 @@ class BastionStart : public ::StructureStart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkc60024;
+    ::ll::TypedStorage<1, 1, bool> mValid;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BastionStart& operator=(BastionStart const&);
-    BastionStart(BastionStart const&);
     BastionStart();
 
 public:

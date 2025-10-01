@@ -28,14 +28,8 @@ struct OnUseOn : public ::ItemComponent,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5f099d;
+    ::ll::TypedStorage<1, 1, bool> mAutoSucceedOnClient;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OnUseOn& operator=(OnUseOn const&);
-    OnUseOn(OnUseOn const&);
-    OnUseOn();
 
 public:
     // virtual functions

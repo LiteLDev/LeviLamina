@@ -18,15 +18,9 @@ class MineshaftCrossing : public ::MineshaftPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkde7251;
-    ::ll::UntypedStorage<1, 1> mUnke7588a;
+    ::ll::TypedStorage<4, 4, int>  direction;
+    ::ll::TypedStorage<1, 1, bool> isTwoFloored;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MineshaftCrossing& operator=(MineshaftCrossing const&);
-    MineshaftCrossing(MineshaftCrossing const&);
-    MineshaftCrossing();
 
 public:
     // virtual functions

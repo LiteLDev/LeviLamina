@@ -26,16 +26,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkd89f4c;
-        ::ll::UntypedStorage<8, 8> mUnk764ea6;
-        ::ll::UntypedStorage<4, 4> mUnk6eb8c8;
+        ::ll::TypedStorage<8, 8, uint64 const> mMainHash;
+        ::ll::TypedStorage<8, 8, uint64 const> mNameHash;
+        ::ll::TypedStorage<4, 4, uint const>   mVersion;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Key& operator=(Key const&);
-        Key(Key const&);
-        Key();
     };
 
     struct Comparator {};

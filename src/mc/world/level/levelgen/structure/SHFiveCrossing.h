@@ -18,17 +18,11 @@ class SHFiveCrossing : public ::StrongholdPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkff6a70;
-    ::ll::UntypedStorage<1, 1> mUnkd06ed4;
-    ::ll::UntypedStorage<1, 1> mUnke25ef6;
-    ::ll::UntypedStorage<1, 1> mUnk852500;
+    ::ll::TypedStorage<1, 1, bool> leftHigh;
+    ::ll::TypedStorage<1, 1, bool> leftLow;
+    ::ll::TypedStorage<1, 1, bool> rightHigh;
+    ::ll::TypedStorage<1, 1, bool> rightLow;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SHFiveCrossing& operator=(SHFiveCrossing const&);
-    SHFiveCrossing(SHFiveCrossing const&);
-    SHFiveCrossing();
 
 public:
     // virtual functions

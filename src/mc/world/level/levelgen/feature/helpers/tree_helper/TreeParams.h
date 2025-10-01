@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockDescriptor;
 class BlockPos;
 class IBlockWorldGenAPI;
 // clang-format on
@@ -14,20 +15,14 @@ struct TreeParams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkbb737c;
-    ::ll::UntypedStorage<4, 4>  mUnk257565;
-    ::ll::UntypedStorage<8, 24> mUnk193c4d;
-    ::ll::UntypedStorage<8, 24> mUnkf96cea;
-    ::ll::UntypedStorage<8, 24> mUnkff269a;
-    ::ll::UntypedStorage<8, 24> mUnka62789;
-    ::ll::UntypedStorage<8, 24> mUnk5307dc;
+    ::ll::TypedStorage<4, 4, int>                               mNumBaseClusters;
+    ::ll::TypedStorage<4, 4, int>                               mClusterRadius;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mValidBaseBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mBaseMayReplace;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mMayGrowOn;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mMayReplace;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mMayGrowThrough;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TreeParams& operator=(TreeParams const&);
-    TreeParams(TreeParams const&);
-    TreeParams();
 
 public:
     // member functions

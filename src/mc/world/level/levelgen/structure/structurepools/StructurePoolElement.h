@@ -23,11 +23,13 @@ class IRandom;
 class JigsawBlockInfo;
 class JigsawStructureBlockInfo;
 class LegacyStructureSettings;
+class LegacyStructureTemplate;
 class Random;
 class StructureManager;
 class StructurePoolActorRule;
 class StructurePoolBlockRule;
 class StructurePoolBlockTagRule;
+class StructureTemplate;
 struct ActorDefinitionIdentifier;
 struct StructureTemplateRegistrationContext;
 namespace SharedTypes::v1_21_80 { struct JigsawStructureMetadata; }
@@ -88,14 +90,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk127613;
-        ::ll::UntypedStorage<8, 24> mUnk5a0bbf;
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::std::variant<
+                ::std::reference_wrapper<::StructureTemplate>,
+                ::std::reference_wrapper<::LegacyStructureTemplate>>>
+                                                                    mStructureVariant;
+        ::ll::TypedStorage<8, 24, ::std::vector<::JigsawBlockInfo>> mJigsawMarkers;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        LazyTemplate& operator=(LazyTemplate const&);
-        LazyTemplate(LazyTemplate const&);
         LazyTemplate();
 
     public:

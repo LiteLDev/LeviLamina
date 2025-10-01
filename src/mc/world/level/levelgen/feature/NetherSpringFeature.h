@@ -17,8 +17,8 @@ class NetherSpringFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk95b2fc;
-    ::ll::UntypedStorage<1, 1> mUnk4595c4;
+    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
+    ::ll::TypedStorage<1, 1, bool>           mInsideRock;
     // NOLINTEND
 
 public:

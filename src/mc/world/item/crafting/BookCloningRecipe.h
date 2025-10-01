@@ -18,13 +18,11 @@ class BookCloningRecipe : public ::MultiRecipe {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke4c903;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    BookCloningRecipe& operator=(BookCloningRecipe const&);
-    BookCloningRecipe(BookCloningRecipe const&);
     BookCloningRecipe();
 
 public:

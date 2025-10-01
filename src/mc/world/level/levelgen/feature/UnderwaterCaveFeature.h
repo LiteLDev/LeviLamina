@@ -21,14 +21,8 @@ class UnderwaterCaveFeature : public ::CaveFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd4ebd0;
+    ::ll::TypedStorage<8, 8, ::Block const*> mAirReplacementBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UnderwaterCaveFeature& operator=(UnderwaterCaveFeature const&);
-    UnderwaterCaveFeature(UnderwaterCaveFeature const&);
-    UnderwaterCaveFeature();
 
 public:
     // virtual functions

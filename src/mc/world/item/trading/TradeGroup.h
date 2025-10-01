@@ -2,17 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct Trade;
+// clang-format on
+
 struct TradeGroup {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk4b07d9;
-    ::ll::UntypedStorage<8, 24> mUnkd696d3;
+    ::ll::TypedStorage<4, 4, int>                     mNumToSelect;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Trade>> mTrades;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TradeGroup& operator=(TradeGroup const&);
-    TradeGroup(TradeGroup const&);
-    TradeGroup();
 };

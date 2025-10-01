@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/actor/DefinitionTrigger.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
@@ -14,14 +15,8 @@ struct BlockRandomTickingDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 56> mUnk6ff9cd;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnTimeDown;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockRandomTickingDescription& operator=(BlockRandomTickingDescription const&);
-    BlockRandomTickingDescription(BlockRandomTickingDescription const&);
-    BlockRandomTickingDescription();
 
 public:
     // virtual functions

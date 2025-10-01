@@ -16,6 +16,10 @@ namespace BlockGeometrySerializer {
 
 struct Constraint : public ::cereal::Constraint {
 public:
+    // Constraint inner types define
+    using CastType = ::BlockGeometrySerializer::Proxy const;
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1

@@ -19,14 +19,8 @@ class OnFallOnTriggerDescription : public ::BlockTriggerDescription<::OnFallOnTr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk78c2e0;
+    ::ll::TypedStorage<4, 4, float> mMinimumFallDistance;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OnFallOnTriggerDescription& operator=(OnFallOnTriggerDescription const&);
-    OnFallOnTriggerDescription(OnFallOnTriggerDescription const&);
-    OnFallOnTriggerDescription();
 
 public:
     // virtual functions

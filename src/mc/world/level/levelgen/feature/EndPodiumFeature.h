@@ -16,14 +16,8 @@ class EndPodiumFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkb86daf;
+    ::ll::TypedStorage<1, 1, bool> mActive;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    EndPodiumFeature& operator=(EndPodiumFeature const&);
-    EndPodiumFeature(EndPodiumFeature const&);
-    EndPodiumFeature();
 
 public:
     // virtual functions

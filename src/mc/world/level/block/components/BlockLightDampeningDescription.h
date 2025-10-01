@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/Brightness.h"
 #include "mc/world/level/block/components/BlockComponentDescription.h"
 
 // auto generated forward declare list
@@ -16,14 +17,8 @@ struct BlockLightDampeningDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5d444a;
+    ::ll::TypedStorage<1, 1, ::Brightness> mLightLevel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockLightDampeningDescription& operator=(BlockLightDampeningDescription const&);
-    BlockLightDampeningDescription(BlockLightDampeningDescription const&);
-    BlockLightDampeningDescription();
 
 public:
     // virtual functions

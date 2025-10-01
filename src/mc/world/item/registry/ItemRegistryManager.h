@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/registry/ItemRegistryRef.h"
+
 // auto generated forward declare list
 // clang-format off
 class ItemRegistry;
-class ItemRegistryRef;
 // clang-format on
 
 class ItemRegistryManager {
@@ -20,14 +22,12 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnk7a3173;
-        ::ll::UntypedStorage<8, 16> mUnk2d4641;
+        ::ll::TypedStorage<1, 1, bool>               mIsSet;
+        ::ll::TypedStorage<8, 16, ::ItemRegistryRef> mPreviousRegistry;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        ScopedItemRegistry& operator=(ScopedItemRegistry const&);
-        ScopedItemRegistry(ScopedItemRegistry const&);
         ScopedItemRegistry();
 
     public:

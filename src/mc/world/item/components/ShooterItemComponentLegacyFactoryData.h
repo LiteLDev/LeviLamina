@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/ItemDescriptor.h"
 #include "mc/world/item/components/IItemComponentLegacyFactoryData.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -24,10 +25,10 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk6a36e6;
-        ::ll::UntypedStorage<1, 1>  mUnk900e5c;
-        ::ll::UntypedStorage<1, 1>  mUnkca2106;
-        ::ll::UntypedStorage<1, 1>  mUnkdbd154;
+        ::ll::TypedStorage<8, 16, ::ItemDescriptor> itemDesc;
+        ::ll::TypedStorage<1, 1, bool>              useOffhand;
+        ::ll::TypedStorage<1, 1, bool>              searchInventory;
+        ::ll::TypedStorage<1, 1, bool>              useInCreative;
         // NOLINTEND
 
     public:
@@ -53,17 +54,12 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk597ee5;
-    ::ll::UntypedStorage<4, 4>  mUnk6b3fc3;
-    ::ll::UntypedStorage<1, 1>  mUnkb19aba;
-    ::ll::UntypedStorage<1, 1>  mUnk2bb913;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ShooterItemComponentLegacyFactoryData::ShooterAmmunitionEntry>>
+                                    mAmmunition;
+    ::ll::TypedStorage<4, 4, float> mDrawDuration;
+    ::ll::TypedStorage<1, 1, bool>  mScalePowerByDrawDuration;
+    ::ll::TypedStorage<1, 1, bool>  mChargeOnDraw;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ShooterItemComponentLegacyFactoryData& operator=(ShooterItemComponentLegacyFactoryData const&);
-    ShooterItemComponentLegacyFactoryData(ShooterItemComponentLegacyFactoryData const&);
-    ShooterItemComponentLegacyFactoryData();
 
 public:
     // virtual functions

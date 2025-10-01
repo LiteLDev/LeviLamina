@@ -27,14 +27,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk91f3e3;
+        ::ll::TypedStorage<4, 4, int> mTickDelay;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TickingQueueData& operator=(TickingQueueData const&);
-        TickingQueueData(TickingQueueData const&);
-        TickingQueueData();
     };
 
     struct BlockPositionData {

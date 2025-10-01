@@ -32,16 +32,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _eraseGoals(bool (*condition)(::std::pair<ushort, ::PrioritizedGoal>&));
+    MCAPI void _eraseGoals(bool (*condition)(::std::pair<ushort, ::PrioritizedGoal>&));
 
-    MCNAPI void addGoal(int priority, ::std::unique_ptr<::Goal> goal);
+    MCAPI void addGoal(int priority, ::std::unique_ptr<::Goal> goal);
 
-    MCNAPI void buildDebugInfo(::std::string& out) const;
+    MCAPI void buildDebugInfo(::std::string& out) const;
 
-    MCNAPI ::GoalSelectorComponent& operator=(::GoalSelectorComponent&&);
+    MCAPI ::GoalSelectorComponent& operator=(::GoalSelectorComponent&&);
 
-    MCNAPI bool removeGoal(ushort typeId);
+    MCAPI bool removeGoal(ushort typeId);
 
-    MCNAPI void stopNonTargetedGoals();
+    MCAPI void stopNonTargetedGoals();
     // NOLINTEND
 };

@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/game_refs/WeakRef.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
@@ -14,15 +15,9 @@ class SurfaceRelativeThresholdFeature : public ::IFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4b6b61;
-    ::ll::UntypedStorage<4, 4>  mUnkdeeffa;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeatureToPlace;
+    ::ll::TypedStorage<4, 4, int>                    mMinimumDistanceBelowSurface;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SurfaceRelativeThresholdFeature& operator=(SurfaceRelativeThresholdFeature const&);
-    SurfaceRelativeThresholdFeature(SurfaceRelativeThresholdFeature const&);
-    SurfaceRelativeThresholdFeature();
 
 public:
     // virtual functions

@@ -5,12 +5,12 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/util/Rotation.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 #include "mc/world/level/levelgen/structure/TemplateStructurePiece.h"
 
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class BlockSource;
 class BoundingBox;
 class Random;
@@ -35,17 +35,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnkafe5f8;
-        ::ll::UntypedStorage<8, 32> mUnkbe039b;
-        ::ll::UntypedStorage<1, 1>  mUnkdf7620;
-        ::ll::UntypedStorage<1, 1>  mUnk83b5a9;
-        ::ll::UntypedStorage<8, 24> mUnk64d121;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::StructureManager>> mStructureManager;
+        ::ll::TypedStorage<8, 32, ::std::string>                                     mTemplateName;
+        ::ll::TypedStorage<1, 1, ::Rotation>                                         mRotation;
+        ::ll::TypedStorage<1, 1, bool>                                               mOverwrite;
+        ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                         mMobPositions;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        EndCityPiece& operator=(EndCityPiece const&);
-        EndCityPiece(EndCityPiece const&);
         EndCityPiece();
 
     public:
@@ -158,6 +156,8 @@ public:
         // NOLINTEND
     };
 
+    using Generators = ::std::vector<::std::unique_ptr<::EndCityPieces::SectionGenerator>>;
+
     enum class SectionType : ushort {
         SectionTower    = 0,
         SectionFatTower = 1,
@@ -249,14 +249,8 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnkd2a24c;
+        ::ll::TypedStorage<1, 1, bool> mShipCreated;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TowerBridgeGenerator& operator=(TowerBridgeGenerator const&);
-        TowerBridgeGenerator(TowerBridgeGenerator const&);
-        TowerBridgeGenerator();
 
     public:
         // virtual functions

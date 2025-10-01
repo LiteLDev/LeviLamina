@@ -9,6 +9,7 @@
 // clang-format off
 class BlockComponentStorage;
 class CompoundTag;
+struct BlockPlacementCondition;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -16,14 +17,8 @@ struct BlockPlacementFilterDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd479b0;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPlacementCondition>> conditions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockPlacementFilterDescription& operator=(BlockPlacementFilterDescription const&);
-    BlockPlacementFilterDescription(BlockPlacementFilterDescription const&);
-    BlockPlacementFilterDescription();
 
 public:
     // virtual functions

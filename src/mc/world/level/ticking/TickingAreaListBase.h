@@ -14,16 +14,14 @@ struct TickingAreaDescription;
 
 class TickingAreaListBase {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb205b3;
-    // NOLINTEND
+    // TickingAreaListBase inner types define
+    using RequeueAreaFunc = ::std::function<void(::ITickingArea const&)>;
 
 public:
-    // prevent constructor by default
-    TickingAreaListBase& operator=(TickingAreaListBase const&);
-    TickingAreaListBase(TickingAreaListBase const&);
-    TickingAreaListBase();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ITickingArea>>> mTickingAreas;
+    // NOLINTEND
 
 public:
     // virtual functions

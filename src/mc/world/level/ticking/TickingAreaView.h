@@ -24,17 +24,11 @@ class TickingAreaView : public ::ITickingAreaView {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk1b328e;
-    ::ll::UntypedStorage<4, 4>  mUnk941c0e;
-    ::ll::UntypedStorage<1, 1>  mUnkd4a7b3;
-    ::ll::UntypedStorage<1, 1>  mUnk632aaa;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkViewSource>> mTickingArea;
+    ::ll::TypedStorage<4, 4, uint>                                  mPolicyHandle;
+    ::ll::TypedStorage<1, 1, bool>                                  mInfluenceDirty;
+    ::ll::TypedStorage<1, 1, bool>                                  mDoneLoading;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TickingAreaView& operator=(TickingAreaView const&);
-    TickingAreaView(TickingAreaView const&);
-    TickingAreaView();
 
 public:
     // virtual functions

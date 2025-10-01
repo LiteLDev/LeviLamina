@@ -29,6 +29,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::InsideGenericBlockComponent& operator=(::InsideGenericBlockComponent&&);
+    MCAPI ::InsideGenericBlockComponent& operator=(::InsideGenericBlockComponent&&);
     // NOLINTEND
 };

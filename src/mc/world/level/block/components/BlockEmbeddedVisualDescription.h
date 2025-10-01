@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/block/components/BlockGeometryDescription.h"
+#include "mc/world/level/block/components/BlockMaterialInstancesDescription.h"
 #include "mc/world/level/block/components/NetworkedBlockComponentDescription.h"
 
 // auto generated forward declare list
@@ -14,15 +16,9 @@ struct BlockEmbeddedVisualDescription : public ::NetworkedBlockComponentDescript
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 216> mUnkc1a530;
-    ::ll::UntypedStorage<8, 144> mUnke61458;
+    ::ll::TypedStorage<8, 216, ::BlockGeometryDescription>          mGeometry;
+    ::ll::TypedStorage<8, 144, ::BlockMaterialInstancesDescription> mMaterialInstances;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BlockEmbeddedVisualDescription& operator=(BlockEmbeddedVisualDescription const&);
-    BlockEmbeddedVisualDescription(BlockEmbeddedVisualDescription const&);
-    BlockEmbeddedVisualDescription();
 
 public:
     // virtual functions

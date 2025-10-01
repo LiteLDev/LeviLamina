@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class ItemStack;
 class ItemStackBase;
 // clang-format on
 
@@ -14,21 +15,15 @@ class BannerPattern : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk7631b2;
-    ::ll::UntypedStorage<8, 24> mUnke9bbb7;
-    ::ll::UntypedStorage<8, 64> mUnkde0685;
-    ::ll::UntypedStorage<8, 32> mUnk69db4b;
-    ::ll::UntypedStorage<8, 32> mUnkd06989;
-    ::ll::UntypedStorage<2, 2>  mUnke8c0fd;
-    ::ll::UntypedStorage<1, 1>  mUnk17c315;
-    ::ll::UntypedStorage<1, 1>  mUnk294a91;
+    ::ll::TypedStorage<1, 1, uchar>                           mID;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>   mPattern;
+    ::ll::TypedStorage<8, 64, ::std::function<::ItemStack()>> mIngredientItemFunctor;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mNameID;
+    ::ll::TypedStorage<2, 2, short>                           mPatternItemType;
+    ::ll::TypedStorage<1, 1, bool>                            mIgnoreAux;
+    ::ll::TypedStorage<1, 1, bool>                            mHiddenFromCrafting;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BannerPattern& operator=(BannerPattern const&);
-    BannerPattern(BannerPattern const&);
-    BannerPattern();
 
 public:
     // virtual functions

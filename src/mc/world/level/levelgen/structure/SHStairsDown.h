@@ -18,14 +18,8 @@ class SHStairsDown : public ::StrongholdPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk630c43;
+    ::ll::TypedStorage<1, 1, bool> isSource;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SHStairsDown& operator=(SHStairsDown const&);
-    SHStairsDown(SHStairsDown const&);
-    SHStairsDown();
 
 public:
     // virtual functions

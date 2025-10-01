@@ -2,12 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/DefinitionTrigger.h"
+
+// auto generated forward declare list
+// clang-format off
+struct DiggerBlockDefinitionTrigger;
+// clang-format on
+
 struct LegacyOnDigTriggerItemComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkb10ef0;
-    ::ll::UntypedStorage<8, 24> mUnk466236;
+    ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>>          mOnDigDefault;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DiggerBlockDefinitionTrigger>> mOnDigTriggers;
     // NOLINTEND
 
 public:

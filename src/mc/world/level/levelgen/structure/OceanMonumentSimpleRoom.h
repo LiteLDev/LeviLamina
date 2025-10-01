@@ -17,14 +17,8 @@ class OceanMonumentSimpleRoom : public ::OceanMonumentPiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk9e8558;
+    ::ll::TypedStorage<4, 4, int> mMainDesign;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    OceanMonumentSimpleRoom& operator=(OceanMonumentSimpleRoom const&);
-    OceanMonumentSimpleRoom(OceanMonumentSimpleRoom const&);
-    OceanMonumentSimpleRoom();
 
 public:
     // virtual functions

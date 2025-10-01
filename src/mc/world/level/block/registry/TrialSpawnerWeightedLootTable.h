@@ -6,15 +6,9 @@ struct TrialSpawnerWeightedLootTable {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk34d990;
-    ::ll::UntypedStorage<4, 4>  mUnk3db40e;
+    ::ll::TypedStorage<8, 32, ::std::string> name;
+    ::ll::TypedStorage<4, 4, int>            weight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TrialSpawnerWeightedLootTable& operator=(TrialSpawnerWeightedLootTable const&);
-    TrialSpawnerWeightedLootTable(TrialSpawnerWeightedLootTable const&);
-    TrialSpawnerWeightedLootTable();
 
 public:
     // member functions

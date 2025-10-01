@@ -2,11 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/common/BiomeIdType.h"
+#include "mc/world/level/ChunkPos.h"
+#include "mc/world/level/ScalarOptional.h"
+
 // auto generated forward declare list
 // clang-format off
 class BlendingData;
 class ChunkBlender;
-class ChunkPos;
 class ChunkSource;
 namespace ChunkBlenderUtil { struct AttenuationData; }
 // clang-format on
@@ -24,37 +28,25 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>   mUnke0823b;
-        ::ll::UntypedStorage<4, 4>   mUnkfd4b42;
-        ::ll::UntypedStorage<4, 4>   mUnk28d476;
-        ::ll::UntypedStorage<4, 4>   mUnk6df328;
-        ::ll::UntypedStorage<4, 164> mUnk38de29;
-        ::ll::UntypedStorage<1, 41>  mUnke039d1;
-        ::ll::UntypedStorage<2, 192> mUnk79063d;
-        ::ll::UntypedStorage<1, 1>   mUnkad623c;
-        ::ll::UntypedStorage<1, 1>   mUnkcd6bd7;
+        ::ll::TypedStorage<4, 4, float>                                               mDistanceToBlendTarget;
+        ::ll::TypedStorage<4, 4, float>                                               mWeightedHeight;
+        ::ll::TypedStorage<4, 4, float>                                               mTotalHeightWeight;
+        ::ll::TypedStorage<4, 4, float>                                               mTotalDensityWeight;
+        ::ll::TypedStorage<4, 164, ::std::array<::ScalarOptional<float>, 41>>         mWeightedDensities;
+        ::ll::TypedStorage<1, 41, ::std::array<::ScalarOptional<schar>, 41>>          mBlockTypeWeights;
+        ::ll::TypedStorage<2, 192, ::std::array<::ScalarOptional<::BiomeIdType>, 96>> mBiome;
+        ::ll::TypedStorage<1, 1, bool>                                                mHaveBlockTypes;
+        ::ll::TypedStorage<1, 1, bool>                                                mSyncPoint;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        IntermediateAttenuationData& operator=(IntermediateAttenuationData const&);
-        IntermediateAttenuationData(IntermediateAttenuationData const&);
-        IntermediateAttenuationData();
     };
 
     struct BlendCheckEntry {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk4369c3;
-        ::ll::UntypedStorage<1, 1> mUnkb5ea4e;
+        ::ll::TypedStorage<8, 8, ::ChunkPos> checkPosition;
+        ::ll::TypedStorage<1, 1, bool>       adjacentChunk;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BlendCheckEntry& operator=(BlendCheckEntry const&);
-        BlendCheckEntry(BlendCheckEntry const&);
-        BlendCheckEntry();
     };
 
     using ChunkIntermediateAttenuationData =

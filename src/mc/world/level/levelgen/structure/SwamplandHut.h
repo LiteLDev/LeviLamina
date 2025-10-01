@@ -18,14 +18,8 @@ class SwamplandHut : public ::ScatteredFeaturePiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkbead7a;
+    ::ll::TypedStorage<1, 1, bool> mSpawnedWitch;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SwamplandHut& operator=(SwamplandHut const&);
-    SwamplandHut(SwamplandHut const&);
-    SwamplandHut();
 
 public:
     // virtual functions
