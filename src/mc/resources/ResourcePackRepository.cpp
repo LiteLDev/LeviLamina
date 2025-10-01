@@ -4,14 +4,13 @@
 #include "mc/resources/CompositePackSource.h"
 #include "mc/resources/DirectoryPackSource.h"
 #include "mc/resources/PackSourceFactory.h"
+#include "mc/resources/RepositorySources.h"
 
 void ResourcePackRepository::addCustomResourcePackPath(std::filesystem::path const& path, PackType type) {
 
-    // TODO: rewrite this function
+    auto& DirectoryPackSource = getPackSourceFactory().createDirectoryPackSource(path, type, PackOrigin::Dev, false);
 
-    // auto& DirectoryPackSource = getPackSourceFactory().createDirectoryPackSource(path, type, PackOrigin::Dev, false);
+    mSources->mPackSource->mPackSources->push_back(&DirectoryPackSource);
 
-    // mPackSource.get()->mPackSources->push_back(&DirectoryPackSource);
-
-    // refreshPacks();
+    refreshPacks();
 }
