@@ -7,6 +7,7 @@
 #include "mc/gameplayhandlers/ServerInstanceEventHandler.h"
 #include "mc/network/NetworkSystem.h"
 #include "mc/network/ServerNetworkHandler.h"
+#include "mc/resources/IRepositoryFactory.h"
 #include "mc/resources/ResourcePackRepository.h"
 #include "mc/server/DedicatedServer.h"
 #include "mc/server/PropertiesSettings.h"
@@ -150,17 +151,34 @@ LL_TYPE_INSTANCE_HOOK(RakNetRakPeerDestructor, HookPriority::High, RakNet::RakPe
 // ResourcePackRepository
 static std::atomic<ResourcePackRepository*> resourcePackRepository;
 
-// TODO: fix init hook
-// LL_TYPE_INSTANCE_HOOK(
-//     ResourcePackRepositoryInit,
-//     HookPriority::High,
-//     ResourcePackRepository,
-//     &ResourcePackRepository::_initialize,
-//     void
-// ) {
-//     resourcePackRepository = this;
-//     origin();
-// }
+LL_TYPE_INSTANCE_HOOK(
+    ResourcePackRepositoryInit,
+    HookPriority::High,
+    ResourcePackRepository,
+    &ResourcePackRepository::$ctor,
+    void*,
+    ::gsl::not_null<::std::shared_ptr<::RepositoryPacks>>                 repositoryPacks,
+    ::PackManifestFactory&                                                manifestFactory,
+    ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> const& contentAccessibility,
+    ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&         pathManager,
+    ::Bedrock::NonOwnerPointer<::PackCommand::IPackCommandPipeline>       commands,
+    ::PackSourceFactory&                                                  packSourceFactory,
+    bool                                                                  initAsync,
+    ::std::unique_ptr<::IRepositoryFactory>                               factory
+) {
+    auto res = origin(
+        std::move(repositoryPacks),
+        manifestFactory,
+        std::move(contentAccessibility),
+        std::move(pathManager),
+        std::move(commands),
+        packSourceFactory,
+        initAsync,
+        std::move(factory)
+    );
+    resourcePackRepository = this;
+    return res;
+}
 LL_TYPE_INSTANCE_HOOK(
     ResourcePackRepositoryDestructor,
     HookPriority::High,
