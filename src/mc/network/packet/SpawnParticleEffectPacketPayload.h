@@ -19,9 +19,8 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    SpawnParticleEffectPacketPayload(SpawnParticleEffectPacketPayload const&);
-    SpawnParticleEffectPacketPayload();
+    SpawnParticleEffectPacketPayload(SpawnParticleEffectPacketPayload const&) = default;
+    SpawnParticleEffectPacketPayload()                                        = default;
 
 public:
     // member functions

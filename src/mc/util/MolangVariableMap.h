@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/core/string/HashedString.h"
 
 // auto generated inclusion list
 #include "mc/util/MolangVariableIndex.h"
@@ -27,6 +28,11 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::MolangVariable>>> mVariables;
     ::ll::TypedStorage<1, 1, bool>                                                mHasPublicVariables;
     // NOLINTEND
+
+public:
+    void setMolangVariable(HashedString const& variableName, ::MolangScriptArg const& value) {
+        setMolangVariable(variableName.getHash(), variableName.c_str(), value);
+    }
 
 public:
     // prevent constructor by default
