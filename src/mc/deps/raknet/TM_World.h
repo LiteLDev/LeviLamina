@@ -4,10 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace RakNet { struct RakNetGUID; }
+namespace DataStructures { class Hash; }
+namespace RakNet { class TM_Team; }
+namespace RakNet { class TM_TeamMember; }
+namespace RakNet { class TeamManager; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on
 
@@ -25,40 +30,29 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk4ade50;
-        ::ll::UntypedStorage<4, 4> mUnkefe286;
-        ::ll::UntypedStorage<4, 4> mUnk392f57;
-        ::ll::UntypedStorage<4, 4> mUnk5742fd;
+        ::ll::TypedStorage<8, 8, uint64> whenRequestMade;
+        ::ll::TypedStorage<4, 4, uint>   teamMemberIndex;
+        ::ll::TypedStorage<4, 4, uint>   indexIntoTeamsRequested;
+        ::ll::TypedStorage<4, 4, uint>   requestIndex;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        JoinRequestHelper& operator=(JoinRequestHelper const&);
-        JoinRequestHelper(JoinRequestHelper const&);
-        JoinRequestHelper();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk971cef;
-    ::ll::UntypedStorage<8, 16> mUnkf009a0;
-    ::ll::UntypedStorage<8, 8>  mUnkbea5b8;
-    ::ll::UntypedStorage<8, 16> mUnke9bced;
-    ::ll::UntypedStorage<8, 16> mUnk90858a;
-    ::ll::UntypedStorage<8, 16> mUnkbf3b48;
-    ::ll::UntypedStorage<1, 1>  mUnkfcbf6f;
-    ::ll::UntypedStorage<8, 16> mUnkadffe6;
-    ::ll::UntypedStorage<1, 1>  mUnk3795d4;
-    ::ll::UntypedStorage<1, 1>  mUnk310f70;
-    ::ll::UntypedStorage<4, 4>  mUnkfa89be;
+    ::ll::TypedStorage<8, 16, ::DataStructures::Hash<uint64, ::RakNet::TM_Team*, 256, $unknown_type>> teamsHash;
+    ::ll::TypedStorage<8, 16, ::DataStructures::Hash<uint64, ::RakNet::TM_TeamMember*, 256, $unknown_type>>
+                                                                                teamMembersHash;
+    ::ll::TypedStorage<8, 8, ::RakNet::TeamManager*>                            teamManager;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::RakNetGUID>>     participants;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::TM_Team*>>       teams;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::TM_TeamMember*>> teamMembers;
+    ::ll::TypedStorage<1, 1, bool>                                              balanceTeamsIsActive;
+    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>                             hostGuid;
+    ::ll::TypedStorage<1, 1, uchar>                                             worldId;
+    ::ll::TypedStorage<1, 1, bool>                                              autoAddParticipants;
+    ::ll::TypedStorage<4, 4, int>                                               teamRequestIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TM_World& operator=(TM_World const&);
-    TM_World(TM_World const&);
-    TM_World();
 
 public:
     // virtual functions

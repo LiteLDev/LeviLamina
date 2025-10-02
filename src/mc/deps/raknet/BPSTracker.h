@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/data_structures/Queue.h"
+
 namespace RakNet {
 
 struct BPSTracker {
@@ -16,69 +19,59 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk3607c9;
-        ::ll::UntypedStorage<8, 8> mUnk83e56b;
+        ::ll::TypedStorage<8, 8, uint64> value1;
+        ::ll::TypedStorage<8, 8, uint64> time;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TimeAndValue2& operator=(TimeAndValue2 const&);
-        TimeAndValue2(TimeAndValue2 const&);
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI TimeAndValue2();
+        MCAPI TimeAndValue2();
 
-        MCNAPI ~TimeAndValue2();
+        MCAPI ~TimeAndValue2();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCFOLD void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk85e95b;
-    ::ll::UntypedStorage<8, 8>  mUnkfb361b;
-    ::ll::UntypedStorage<8, 24> mUnke01d2f;
+    ::ll::TypedStorage<8, 8, uint64>                                                        total1;
+    ::ll::TypedStorage<8, 8, uint64>                                                        lastSec1;
+    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::BPSTracker::TimeAndValue2>> dataQueue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BPSTracker& operator=(BPSTracker const&);
-    BPSTracker(BPSTracker const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BPSTracker();
+    MCAPI BPSTracker();
 
-    MCNAPI void Push1(uint64 time, uint64 value1);
+    MCAPI void Push1(uint64 time, uint64 value1);
 
-    MCNAPI ~BPSTracker();
+    MCAPI ~BPSTracker();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

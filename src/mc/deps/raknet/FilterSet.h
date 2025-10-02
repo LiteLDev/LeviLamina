@@ -2,32 +2,37 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace DataStructures { class OrderedList; }
+namespace RakNet { class RakPeerInterface; }
+namespace RakNet { class RakString; }
+namespace RakNet { struct AddressOrGUID; }
+// clang-format on
+
 namespace RakNet {
 
 struct FilterSet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk45546a;
-    ::ll::UntypedStorage<1, 1>   mUnk299061;
-    ::ll::UntypedStorage<1, 1>   mUnk7dc226;
-    ::ll::UntypedStorage<4, 4>   mUnk1b05ba;
-    ::ll::UntypedStorage<4, 4>   mUnk2e678f;
-    ::ll::UntypedStorage<4, 4>   mUnka07fa5;
-    ::ll::UntypedStorage<8, 8>   mUnk96fe07;
-    ::ll::UntypedStorage<8, 8>   mUnkccc0d9;
-    ::ll::UntypedStorage<8, 8>   mUnk8a4184;
-    ::ll::UntypedStorage<8, 8>   mUnke35cc6;
-    ::ll::UntypedStorage<4, 4>   mUnk41f36b;
-    ::ll::UntypedStorage<1, 256> mUnkf93fbd;
-    ::ll::UntypedStorage<8, 16>  mUnk7682bd;
+    ::ll::TypedStorage<1, 1, bool> banOnFilterTimeExceed;
+    ::ll::TypedStorage<1, 1, bool> kickOnDisallowedMessage;
+    ::ll::TypedStorage<1, 1, bool> banOnDisallowedMessage;
+    ::ll::TypedStorage<4, 4, uint> disallowedMessageBanTimeMS;
+    ::ll::TypedStorage<4, 4, uint> timeExceedBanTimeMS;
+    ::ll::TypedStorage<4, 4, uint> maxMemberTimeMS;
+    ::ll::TypedStorage<8, 8, void (*)(::RakNet::RakPeerInterface*, ::RakNet::AddressOrGUID, int, void*, uchar)>
+                                    invalidMessageCallback;
+    ::ll::TypedStorage<8, 8, void*> disallowedCallbackUserData;
+    ::ll::TypedStorage<8, 8, void (*)(::RakNet::RakPeerInterface*, ::RakNet::AddressOrGUID, int, void*)>
+                                          timeoutCallback;
+    ::ll::TypedStorage<8, 8, void*>       timeoutUserData;
+    ::ll::TypedStorage<4, 4, int>         filterSetID;
+    ::ll::TypedStorage<1, 256, bool[256]> allowedIDs;
+    ::ll::TypedStorage<8, 16, ::DataStructures::OrderedList<::RakNet::RakString, ::RakNet::RakString, $unknown_type>>
+        allowedRPC4;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    FilterSet& operator=(FilterSet const&);
-    FilterSet(FilterSet const&);
-    FilterSet();
 };
 
 } // namespace RakNet

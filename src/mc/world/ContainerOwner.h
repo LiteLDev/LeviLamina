@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ContainerModel;
+// clang-format on
+
 struct ContainerOwner {
 public:
     // ContainerOwner inner types declare
@@ -14,25 +19,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkff2cc5;
+        ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerModel>> mContainerModel;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        OwnedContainer& operator=(OwnedContainer const&);
-        OwnedContainer(OwnedContainer const&);
-        OwnedContainer();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~OwnedContainer();
+        MCAPI ~OwnedContainer();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

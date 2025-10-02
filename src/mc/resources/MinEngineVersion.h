@@ -2,13 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/molang/MolangVersion.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
+
 class MinEngineVersion {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkce6b03;
-    ::ll::UntypedStorage<4, 4>  mUnk7524e3;
-    ::ll::UntypedStorage<2, 2>  mUnk2c6d18;
+    ::ll::TypedStorage<8, 24, ::SemVersion>       mSemVersion;
+    ::ll::TypedStorage<4, 4, ::CurrentCmdVersion> mCommandVersion;
+    ::ll::TypedStorage<2, 2, ::MolangVersion>     mMolangVersion;
     // NOLINTEND
 
 public:

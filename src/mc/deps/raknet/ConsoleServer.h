@@ -2,23 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/data_structures/List.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace RakNet { class CommandParserInterface; }
+namespace RakNet { class TransportInterface; }
+// clang-format on
+
 namespace RakNet {
 
 class ConsoleServer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>    mUnk8c3396;
-    ::ll::UntypedStorage<8, 16>   mUnkd74dd2;
-    ::ll::UntypedStorage<8, 2048> mUnkf58585;
-    ::ll::UntypedStorage<8, 8>    mUnk295953;
+    ::ll::TypedStorage<8, 8, ::RakNet::TransportInterface*>                              transport;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::CommandParserInterface*>> commandParserList;
+    ::ll::TypedStorage<8, 2048, char* [256]>                                             password;
+    ::ll::TypedStorage<8, 8, char*>                                                      prompt;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ConsoleServer& operator=(ConsoleServer const&);
-    ConsoleServer(ConsoleServer const&);
-    ConsoleServer();
 };
 
 } // namespace RakNet

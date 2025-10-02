@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace RakNet { class SocketLayerOverride; }
 namespace RakNet { struct RNS2_BerkleyBindParameters; }
 namespace RakNet { struct RNS2_SendParameters; }
 // clang-format on
@@ -19,14 +20,8 @@ class RNS2_Windows : public ::RakNet::RNS2_Berkley, public ::RakNet::RNS2_Window
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka92e53;
+    ::ll::TypedStorage<8, 8, ::RakNet::SocketLayerOverride*> slo;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RNS2_Windows& operator=(RNS2_Windows const&);
-    RNS2_Windows(RNS2_Windows const&);
-    RNS2_Windows();
 
 public:
     // virtual functions
@@ -45,10 +40,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::RakNet::RNS2BindResult
+    MCAPI ::RakNet::RNS2BindResult
     $Bind(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line);
 
-    MCNAPI int $Send(::RakNet::RNS2_SendParameters* sendParameters, char const* file, uint line);
+    MCAPI int $Send(::RakNet::RNS2_SendParameters* sendParameters, char const* file, uint line);
     // NOLINTEND
 
 public:

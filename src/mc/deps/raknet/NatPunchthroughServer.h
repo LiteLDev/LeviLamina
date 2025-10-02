@@ -6,12 +6,15 @@
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/SystemAddress.h"
+#include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace DataStructures { class OrderedList; }
+namespace RakNet { struct NatPunchthroughServerDebugInterface; }
 namespace RakNet { struct Packet; }
-namespace RakNet { struct RakNetGUID; }
-namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -29,55 +32,49 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16>  mUnk553f33;
-        ::ll::UntypedStorage<8, 136> mUnk2e7bbe;
-        ::ll::UntypedStorage<2, 2>   mUnk84a59f;
-        ::ll::UntypedStorage<1, 1>   mUnk2f9d19;
-        ::ll::UntypedStorage<8, 16>  mUnk91a771;
-        ::ll::UntypedStorage<8, 16>  mUnkdcd054;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     guid;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
+        ::ll::TypedStorage<2, 2, ushort>                    mostRecentPort;
+        ::ll::TypedStorage<1, 1, bool>                      isReady;
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::DataStructures::OrderedList<::RakNet::RakNetGUID, ::RakNet::RakNetGUID, $unknown_type>>
+            groupPunchthroughRequests;
+        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::NatPunchthroughServer::ConnectionAttempt*>>
+            connectionAttempts;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        User& operator=(User const&);
-        User(User const&);
-        User();
     };
 
     struct ConnectionAttempt {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk76dcd7;
-        ::ll::UntypedStorage<8, 8> mUnkf4d438;
-        ::ll::UntypedStorage<2, 2> mUnk9f35dc;
-        ::ll::UntypedStorage<8, 8> mUnk256c45;
-        ::ll::UntypedStorage<4, 4> mUnk5d3658;
+        ::ll::TypedStorage<8, 8, ::RakNet::NatPunchthroughServer::User*> sender;
+        ::ll::TypedStorage<8, 8, ::RakNet::NatPunchthroughServer::User*> recipient;
+        ::ll::TypedStorage<2, 2, ushort>                                 sessionId;
+        ::ll::TypedStorage<8, 8, uint64>                                 startTime;
+        enum : int {
+            NotStarted         = 0,
+            GettingRecentPorts = 1,
+        } attemptPhase;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ConnectionAttempt& operator=(ConnectionAttempt const&);
-        ConnectionAttempt(ConnectionAttempt const&);
-        ConnectionAttempt();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>    mUnka1e774;
-    ::ll::UntypedStorage<8, 16>   mUnkc60876;
-    ::ll::UntypedStorage<2, 2>    mUnkc08f99;
-    ::ll::UntypedStorage<8, 8>    mUnk888e5f;
-    ::ll::UntypedStorage<8, 2720> mUnkf98e24;
-    ::ll::UntypedStorage<1, 1>    mUnk1b9a7c;
+    ::ll::TypedStorage<8, 8, uint64> lastUpdate;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::DataStructures::OrderedList<::RakNet::RakNetGUID, ::RakNet::NatPunchthroughServer::User*, $unknown_type>>
+                                                                             users;
+    ::ll::TypedStorage<2, 2, ushort>                                         sessionId;
+    ::ll::TypedStorage<8, 8, ::RakNet::NatPunchthroughServerDebugInterface*> natPunchthroughServerDebugInterface;
+    ::ll::TypedStorage<8, 2720, ::RakNet::SystemAddress[20]>                 boundAddresses;
+    ::ll::TypedStorage<1, 1, uchar>                                          boundAddressCount;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NatPunchthroughServer& operator=(NatPunchthroughServer const&);
-    NatPunchthroughServer(NatPunchthroughServer const&);
-    NatPunchthroughServer();
 
 public:
     // virtual functions

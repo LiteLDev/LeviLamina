@@ -2,21 +2,26 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/JoinTeamType.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace RakNet { class TM_Team; }
+// clang-format on
+
 namespace RakNet {
 
 struct TeamSelection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk90c24f;
-    ::ll::UntypedStorage<8, 8> mUnk410346;
+    ::ll::TypedStorage<4, 4, ::RakNet::JoinTeamType> joinTeamType;
+    union {
+        ::ll::TypedStorage<8, 8, ::RakNet::TM_Team*> specificTeamToJoin;
+        ::ll::TypedStorage<1, 8, uchar>              noTeamSubcategory;
+    } teamParameter;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TeamSelection& operator=(TeamSelection const&);
-    TeamSelection(TeamSelection const&);
-    TeamSelection();
 };
 
 } // namespace RakNet

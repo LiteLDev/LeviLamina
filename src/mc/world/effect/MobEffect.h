@@ -60,23 +60,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::MobEffect::FactorCalculationData& operator=(::MobEffect::FactorCalculationData const&);
+        MCAPI ::MobEffect::FactorCalculationData& operator=(::MobEffect::FactorCalculationData const&);
 
-        MCNAPI ::std::unique_ptr<::CompoundTag> save() const;
+        MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
-        MCNAPI ~FactorCalculationData();
+        MCAPI ~FactorCalculationData();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static ::MobEffect::FactorCalculationData load(::CompoundTag const* tag);
+        MCAPI static ::MobEffect::FactorCalculationData load(::CompoundTag const* tag);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 

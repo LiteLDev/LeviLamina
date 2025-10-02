@@ -2,6 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/DynDnsResultCode.h"
+#include "mc/deps/raknet/RakString.h"
+#include "mc/deps/raknet/SystemAddress.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace RakNet { class TCPInterface; }
+// clang-format on
+
 namespace RakNet {
 
 class DynDNS {
@@ -18,23 +28,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkf2974a;
-    ::ll::UntypedStorage<8, 8>   mUnk19e4c6;
-    ::ll::UntypedStorage<8, 136> mUnk5358bf;
-    ::ll::UntypedStorage<4, 4>   mUnkd697c9;
-    ::ll::UntypedStorage<8, 8>   mUnkefeab4;
-    ::ll::UntypedStorage<8, 8>   mUnkc3496a;
-    ::ll::UntypedStorage<8, 136> mUnk9b0b63;
-    ::ll::UntypedStorage<8, 8>   mUnk26117b;
-    ::ll::UntypedStorage<4, 4>   mUnk3348d7;
-    ::ll::UntypedStorage<1, 32>  mUnkcdc5b7;
+    ::ll::TypedStorage<8, 8, ::RakNet::TCPInterface*>        tcp;
+    ::ll::TypedStorage<8, 8, ::RakNet::RakString>            getString;
+    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>      serverAddress;
+    ::ll::TypedStorage<4, 4, ::RakNet::DynDNS::ConnectPhase> connectPhase;
+    ::ll::TypedStorage<8, 8, ::RakNet::RakString>            host;
+    ::ll::TypedStorage<8, 8, uint64>                         phaseTimeout;
+    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>      checkIpAddress;
+    ::ll::TypedStorage<8, 8, char const*>                    resultDescription;
+    ::ll::TypedStorage<4, 4, ::RakNet::DynDnsResultCode>     result;
+    ::ll::TypedStorage<1, 32, char[32]>                      myIPStr;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    DynDNS& operator=(DynDNS const&);
-    DynDNS(DynDNS const&);
-    DynDNS();
 };
 
 } // namespace RakNet

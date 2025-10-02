@@ -6,6 +6,7 @@
 // clang-format off
 class Container;
 class ItemStack;
+class LootPool;
 class LootTableContext;
 class Random;
 namespace Json { class Value; }
@@ -15,15 +16,9 @@ class LootTable {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkf60c26;
-    ::ll::UntypedStorage<8, 24> mUnkcc1980;
+    ::ll::TypedStorage<8, 32, ::std::string>                                mDir;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LootPool>>> mPools;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LootTable& operator=(LootTable const&);
-    LootTable(LootTable const&);
-    LootTable();
 
 public:
     // member functions

@@ -6,12 +6,16 @@
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
+#include "mc/deps/raknet/PunchthroughConfiguration.h"
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/SystemAddress.h"
+#include "mc/deps/raknet/data_structures/List.h"
+#include "mc/deps/raknet/data_structures/Queue.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace RakNet { struct NatPunchthroughDebugInterface; }
 namespace RakNet { struct Packet; }
-namespace RakNet { struct RakNetGUID; }
-namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -43,76 +47,57 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>    mUnk18a299;
-        ::ll::UntypedStorage<8, 136>  mUnk242bfd;
-        ::ll::UntypedStorage<8, 136>  mUnk3bbd25;
-        ::ll::UntypedStorage<8, 2720> mUnk357acc;
-        ::ll::UntypedStorage<8, 16>   mUnk558bb1;
-        ::ll::UntypedStorage<1, 1>    mUnk1a32d8;
-        ::ll::UntypedStorage<4, 4>    mUnk473bf6;
-        ::ll::UntypedStorage<4, 4>    mUnkd5a23b;
-        ::ll::UntypedStorage<4, 4>    mUnk3511c3;
-        ::ll::UntypedStorage<2, 2>    mUnk87cc06;
-        ::ll::UntypedStorage<1, 1>    mUnk14f9f5;
-        ::ll::UntypedStorage<4, 4>    mUnkeb2995;
+        ::ll::TypedStorage<8, 8, uint64>                                              nextActionTime;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>                           targetAddress;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>                           facilitator;
+        ::ll::TypedStorage<8, 2720, ::RakNet::SystemAddress[20]>                      internalIds;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>                               targetGuid;
+        ::ll::TypedStorage<1, 1, bool>                                                weAreSender;
+        ::ll::TypedStorage<4, 4, int>                                                 attemptCount;
+        ::ll::TypedStorage<4, 4, int>                                                 retryCount;
+        ::ll::TypedStorage<4, 4, int>                                                 punchingFixedPortAttempts;
+        ::ll::TypedStorage<2, 2, ushort>                                              sessionId;
+        ::ll::TypedStorage<1, 1, bool>                                                sentTTL;
+        ::ll::TypedStorage<4, 4, ::RakNet::NatPunchthroughClient::SendPing::TestMode> testMode;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SendPing& operator=(SendPing const&);
-        SendPing(SendPing const&);
-        SendPing();
     };
 
     struct AddrAndGuid {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 136> mUnk2032bb;
-        ::ll::UntypedStorage<8, 16>  mUnkcbce59;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> addr;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     guid;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        AddrAndGuid& operator=(AddrAndGuid const&);
-        AddrAndGuid(AddrAndGuid const&);
-        AddrAndGuid();
     };
 
     struct DSTAndFac {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16>  mUnk16424d;
-        ::ll::UntypedStorage<8, 136> mUnkdc19cd;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     destination;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> facilitator;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DSTAndFac& operator=(DSTAndFac const&);
-        DSTAndFac(DSTAndFac const&);
-        DSTAndFac();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 3040> mUnk54043f;
-    ::ll::UntypedStorage<2, 2>    mUnk240a98;
-    ::ll::UntypedStorage<8, 56>   mUnk79764a;
-    ::ll::UntypedStorage<8, 8>    mUnkb0db55;
-    ::ll::UntypedStorage<8, 16>   mUnk6c229b;
-    ::ll::UntypedStorage<8, 24>   mUnkf9a4b3;
-    ::ll::UntypedStorage<2, 2>    mUnka1a0e8;
-    ::ll::UntypedStorage<4, 4>    mUnk3fd151;
-    ::ll::UntypedStorage<8, 8>    mUnk49a337;
+    ::ll::TypedStorage<8, 3040, ::RakNet::NatPunchthroughClient::SendPing> sp;
+    ::ll::TypedStorage<2, 2, ushort>                                       mostRecentExternalPort;
+    ::ll::TypedStorage<8, 56, ::RakNet::PunchthroughConfiguration>         pc;
+    ::ll::TypedStorage<8, 8, ::RakNet::NatPunchthroughDebugInterface*>     natPunchthroughDebugInterface;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::NatPunchthroughClient::AddrAndGuid>> failedAttemptList;
+    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::NatPunchthroughClient::DSTAndFac>>  queuedOpenNat;
+    ::ll::TypedStorage<2, 2, ushort>                                                                portStride;
+    enum : int {
+        HasPortStride         = 0,
+        UnknownPortStride     = 1,
+        CalculatingPortStride = 2,
+        IncapablePortStride   = 3,
+    } hasPortStride;
+    ::ll::TypedStorage<8, 8, uint64> portStrideCalTimeout;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NatPunchthroughClient& operator=(NatPunchthroughClient const&);
-    NatPunchthroughClient(NatPunchthroughClient const&);
-    NatPunchthroughClient();
 
 public:
     // virtual functions

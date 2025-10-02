@@ -6,12 +6,16 @@
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
+#include "mc/deps/raknet/RakString.h"
+#include "mc/deps/raknet/UDPForwarder.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace DataStructures { class OrderedList; }
 namespace RakNet { struct Packet; }
 namespace RakNet { struct RakNetGUID; }
 namespace RakNet { struct SystemAddress; }
+namespace RakNet { struct UDPProxyServerResultHandler; }
 // clang-format on
 
 namespace RakNet {
@@ -20,19 +24,21 @@ class UDPProxyServer : public ::RakNet::PluginInterface2 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 384> mUnk85e882;
-    ::ll::UntypedStorage<8, 16>  mUnk973cd6;
-    ::ll::UntypedStorage<8, 16>  mUnk30a013;
-    ::ll::UntypedStorage<8, 8>   mUnkd4ed56;
-    ::ll::UntypedStorage<2, 2>   mUnk518285;
-    ::ll::UntypedStorage<8, 8>   mUnkf54107;
+    ::ll::TypedStorage<8, 384, ::RakNet::UDPForwarder> udpForwarder;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::DataStructures::OrderedList<::RakNet::SystemAddress, ::RakNet::SystemAddress, $unknown_type>>
+        loggingInCoordinators;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::DataStructures::OrderedList<::RakNet::SystemAddress, ::RakNet::SystemAddress, $unknown_type>>
+                                                                     loggedInCoordinators;
+    ::ll::TypedStorage<8, 8, ::RakNet::UDPProxyServerResultHandler*> resultHandler;
+    ::ll::TypedStorage<2, 2, ushort>                                 socketFamily;
+    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                    serverPublicIp;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UDPProxyServer& operator=(UDPProxyServer const&);
-    UDPProxyServer(UDPProxyServer const&);
-    UDPProxyServer();
 
 public:
     // virtual functions

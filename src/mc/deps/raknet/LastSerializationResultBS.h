@@ -2,21 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/BitStream.h"
+
 namespace RakNet {
 
 struct LastSerializationResultBS {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 4608> mUnk3b272c;
-    ::ll::UntypedStorage<1, 16>   mUnk7a5c40;
+    ::ll::TypedStorage<8, 4608, ::RakNet::BitStream[16]> bitStream;
+    ::ll::TypedStorage<1, 16, bool[16]>                  indicesToSend;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LastSerializationResultBS& operator=(LastSerializationResultBS const&);
-    LastSerializationResultBS(LastSerializationResultBS const&);
-    LastSerializationResultBS();
 };
 
 } // namespace RakNet

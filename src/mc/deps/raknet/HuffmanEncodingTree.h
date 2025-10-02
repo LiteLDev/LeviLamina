@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct HuffmanEncodingTreeNode;
+// clang-format on
+
 namespace RakNet {
 
 class HuffmanEncodingTree {
@@ -16,36 +21,24 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkb5d9ec;
-        ::ll::UntypedStorage<2, 2> mUnk85bf63;
+        ::ll::TypedStorage<8, 8, uchar*> encoding;
+        ::ll::TypedStorage<2, 2, ushort> bitLength;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CharacterEncoding& operator=(CharacterEncoding const&);
-        CharacterEncoding(CharacterEncoding const&);
-        CharacterEncoding();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>    mUnk9c3a19;
-    ::ll::UntypedStorage<8, 4096> mUnkffa0a4;
+    ::ll::TypedStorage<8, 8, ::HuffmanEncodingTreeNode*>                               root;
+    ::ll::TypedStorage<8, 4096, ::RakNet::HuffmanEncodingTree::CharacterEncoding[256]> encodingTable;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HuffmanEncodingTree& operator=(HuffmanEncodingTree const&);
-    HuffmanEncodingTree(HuffmanEncodingTree const&);
-    HuffmanEncodingTree();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void FreeMemory();
+    MCAPI void FreeMemory();
 
-    MCNAPI void GenerateFromFrequencyTable(uint* const frequencyTable);
+    MCAPI void GenerateFromFrequencyTable(uint* const frequencyTable);
     // NOLINTEND
 };
 

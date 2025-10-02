@@ -3,12 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/raknet/AddressOrGUID.h"
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
+#include "mc/deps/raknet/RakString.h"
+#include "mc/deps/raknet/data_structures/List.h"
+#include "mc/deps/raknet/data_structures/Queue.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace DataStructures { class Hash; }
 namespace RakNet { struct Packet; }
 namespace RakNet { struct RakNetGUID; }
 namespace RakNet { struct SystemAddress; }
@@ -30,65 +35,44 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>   mUnkc24a01;
-        ::ll::UntypedStorage<8, 152> mUnk64b3eb;
-        ::ll::UntypedStorage<8, 8>   mUnkc5550f;
-        ::ll::UntypedStorage<1, 1>   mUnkf2031a;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakString>       identifier;
+        ::ll::TypedStorage<8, 152, ::RakNet::AddressOrGUID> remoteSystem;
+        ::ll::TypedStorage<8, 8, uint64>                    time;
+        ::ll::TypedStorage<1, 1, bool>                      sentHash;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PendingChallenge& operator=(PendingChallenge const&);
-        PendingChallenge(PendingChallenge const&);
-        PendingChallenge();
     };
 
     struct NonceAndRemoteSystemRequest {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 20>  mUnkfeaf89;
-        ::ll::UntypedStorage<8, 152> mUnk9dab35;
-        ::ll::UntypedStorage<2, 2>   mUnk69c7e6;
-        ::ll::UntypedStorage<8, 8>   mUnk529beb;
+        ::ll::TypedStorage<1, 20, char[20]>                 nonce;
+        ::ll::TypedStorage<8, 152, ::RakNet::AddressOrGUID> remoteSystem;
+        ::ll::TypedStorage<2, 2, ushort>                    requestId;
+        ::ll::TypedStorage<8, 8, uint64>                    whenGenerated;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        NonceAndRemoteSystemRequest& operator=(NonceAndRemoteSystemRequest const&);
-        NonceAndRemoteSystemRequest(NonceAndRemoteSystemRequest const&);
-        NonceAndRemoteSystemRequest();
     };
 
     struct NonceGenerator {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk9b9289;
-        ::ll::UntypedStorage<2, 2>  mUnkbfbf68;
+        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::TwoWayAuthentication::NonceAndRemoteSystemRequest*>>
+                                         generatedNonces;
+        ::ll::TypedStorage<2, 2, ushort> nextRequestId;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        NonceGenerator& operator=(NonceGenerator const&);
-        NonceGenerator(NonceGenerator const&);
-        NonceGenerator();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke03c99;
-    ::ll::UntypedStorage<8, 16> mUnkb83d0d;
-    ::ll::UntypedStorage<8, 8>  mUnk3d901c;
-    ::ll::UntypedStorage<8, 24> mUnka8a766;
+    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::TwoWayAuthentication::PendingChallenge>>
+        outgoingChallenges;
+    ::ll::TypedStorage<8, 16, ::DataStructures::Hash<::RakNet::RakString, ::RakNet::RakString, 16, $unknown_type>>
+                                                                              passwords;
+    ::ll::TypedStorage<8, 8, uint64>                                          whenLastTimeoutCheck;
+    ::ll::TypedStorage<8, 24, ::RakNet::TwoWayAuthentication::NonceGenerator> nonceGenerator;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TwoWayAuthentication& operator=(TwoWayAuthentication const&);
-    TwoWayAuthentication(TwoWayAuthentication const&);
-    TwoWayAuthentication();
 
 public:
     // virtual functions

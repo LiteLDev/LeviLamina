@@ -3,15 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/raknet/BitStream.h"
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/RakString.h"
+#include "mc/deps/raknet/SystemAddress.h"
+#include "mc/deps/raknet/data_structures/List.h"
+#include "mc/deps/raknet/data_structures/Queue.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace DataStructures { class OrderedList; }
 namespace RakNet { struct Packet; }
-namespace RakNet { struct RakNetGUID; }
-namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -30,70 +35,55 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 136> mUnkd9141b;
-        ::ll::UntypedStorage<8, 16>  mUnkbff42f;
-        ::ll::UntypedStorage<8, 136> mUnk6bd4d5;
-        ::ll::UntypedStorage<8, 16>  mUnk6f1088;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> senderClientAddress;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     senderClientGuid;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> targetClientAddress;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     targetClientGuid;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SenderAndTargetAddress& operator=(SenderAndTargetAddress const&);
-        SenderAndTargetAddress(SenderAndTargetAddress const&);
-        SenderAndTargetAddress();
     };
 
     struct ServerWithPing {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2>   mUnk649c77;
-        ::ll::UntypedStorage<8, 136> mUnk836730;
+        ::ll::TypedStorage<2, 2, ushort>                    ping;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> serverAddress;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ServerWithPing& operator=(ServerWithPing const&);
-        ServerWithPing(ServerWithPing const&);
-        ServerWithPing();
     };
 
     struct ForwardingRequest {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>   mUnk4b79c9;
-        ::ll::UntypedStorage<4, 4>   mUnk3df61c;
-        ::ll::UntypedStorage<8, 304> mUnk50e688;
-        ::ll::UntypedStorage<8, 136> mUnk51e8d7;
-        ::ll::UntypedStorage<8, 136> mUnkc539e5;
-        ::ll::UntypedStorage<8, 24>  mUnk8d7b6b;
-        ::ll::UntypedStorage<8, 288> mUnkf688aa;
-        ::ll::UntypedStorage<8, 16>  mUnk6abcf0;
-        ::ll::UntypedStorage<8, 16>  mUnk274702;
-        ::ll::UntypedStorage<4, 4>   mUnkdea37e;
+        ::ll::TypedStorage<4, 4, uint>                                                    timeoutOnNoDataMS;
+        ::ll::TypedStorage<4, 4, uint>                                                    timeoutAfterSuccess;
+        ::ll::TypedStorage<8, 304, ::RakNet::UDPProxyCoordinator::SenderAndTargetAddress> sata;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>                               requestingAddress;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>                         currentlyAttemptedServerAddress;
+        ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::SystemAddress>> remainingServersToTry;
+        ::ll::TypedStorage<8, 288, ::RakNet::BitStream>                             serverSelectionBitstream;
+        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::UDPProxyCoordinator::ServerWithPing>>
+            sourceServerPings;
+        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::UDPProxyCoordinator::ServerWithPing>>
+                                       targetServerPings;
+        ::ll::TypedStorage<4, 4, uint> timeRequestedPings;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ForwardingRequest& operator=(ForwardingRequest const&);
-        ForwardingRequest(ForwardingRequest const&);
-        ForwardingRequest();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkdc8895;
-    ::ll::UntypedStorage<8, 16> mUnked7c82;
-    ::ll::UntypedStorage<8, 8>  mUnk32be00;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::SystemAddress>> serverList;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::DataStructures::OrderedList<
+            ::RakNet::UDPProxyCoordinator::SenderAndTargetAddress,
+            ::RakNet::UDPProxyCoordinator::ForwardingRequest*,
+            $unknown_type>>
+                                                  forwardingRequestList;
+    ::ll::TypedStorage<8, 8, ::RakNet::RakString> remoteLoginPassword;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UDPProxyCoordinator& operator=(UDPProxyCoordinator const&);
-    UDPProxyCoordinator(UDPProxyCoordinator const&);
-    UDPProxyCoordinator();
 
 public:
     // virtual functions

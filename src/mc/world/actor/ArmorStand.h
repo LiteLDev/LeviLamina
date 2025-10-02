@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 #include "mc/world/actor/Mob.h"
 
@@ -17,7 +18,6 @@ class DataLoadHelper;
 class EntityContext;
 class ItemStack;
 class Player;
-class Vec3;
 struct ActorDefinitionIdentifier;
 // clang-format on
 
@@ -33,20 +33,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnk3cebd2;
-        ::ll::UntypedStorage<4, 12> mUnkfb376b;
-        ::ll::UntypedStorage<4, 12> mUnk61848b;
-        ::ll::UntypedStorage<4, 12> mUnk1d0f70;
-        ::ll::UntypedStorage<4, 12> mUnk27eaa2;
-        ::ll::UntypedStorage<4, 12> mUnk2f3907;
-        ::ll::UntypedStorage<4, 12> mUnke58d73;
+        ::ll::TypedStorage<4, 12, ::Vec3> mHeadPose;
+        ::ll::TypedStorage<4, 12, ::Vec3> mBodyPose;
+        ::ll::TypedStorage<4, 12, ::Vec3> mRightArmPose;
+        ::ll::TypedStorage<4, 12, ::Vec3> mLeftArmPose;
+        ::ll::TypedStorage<4, 12, ::Vec3> mRightLegPose;
+        ::ll::TypedStorage<4, 12, ::Vec3> mLeftLegPose;
+        ::ll::TypedStorage<4, 12, ::Vec3> mRightItemPose;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Pose& operator=(Pose const&);
-        Pose(Pose const&);
-        Pose();
     };
 
 public:

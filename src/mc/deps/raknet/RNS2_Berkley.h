@@ -4,11 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/raknet/IRNS2_Berkley.h"
+#include "mc/deps/raknet/LocklessUint32_t.h"
 #include "mc/deps/raknet/RNS2BindResult.h"
+#include "mc/deps/raknet/RNS2_BerkleyBindParameters.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace RakNet { struct RNS2_BerkleyBindParameters; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on
 
@@ -18,17 +19,11 @@ class RNS2_Berkley : public ::RakNet::IRNS2_Berkley {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk55931b;
-    ::ll::UntypedStorage<8, 64> mUnk7a66ff;
-    ::ll::UntypedStorage<4, 4>  mUnka056d9;
-    ::ll::UntypedStorage<1, 1>  mUnk5cd8af;
+    ::ll::TypedStorage<4, 4, int>                                   rns2Socket;
+    ::ll::TypedStorage<8, 64, ::RakNet::RNS2_BerkleyBindParameters> binding;
+    ::ll::TypedStorage<4, 4, ::RakNet::LocklessUint32_t>            isRecvFromLoopThreadActive;
+    ::ll::TypedStorage<1, 1, bool volatile>                         endThreads;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RNS2_Berkley& operator=(RNS2_Berkley const&);
-    RNS2_Berkley(RNS2_Berkley const&);
-    RNS2_Berkley();
 
 public:
     // virtual functions
@@ -43,33 +38,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::RakNet::RNS2BindResult
+    MCAPI ::RakNet::RNS2BindResult
     BindShared(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line);
 
-    MCNAPI ::RakNet::RNS2BindResult
+    MCAPI ::RakNet::RNS2BindResult
     BindSharedIPV4And6(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line);
 
-    MCNAPI void BlockOnStopRecvPollingThread();
+    MCAPI void BlockOnStopRecvPollingThread();
 
-    MCNAPI int CreateRecvPollingThread(int threadPriority);
+    MCAPI int CreateRecvPollingThread(int threadPriority);
 
-    MCNAPI uint RecvFromLoopInt();
+    MCAPI uint RecvFromLoopInt();
 
-    MCNAPI void SetBroadcastSocket(int broadcast);
+    MCAPI void SetBroadcastSocket(int broadcast);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void GetSystemAddressIPV4And6(int rns2Socket, ::RakNet::SystemAddress* systemAddressOut);
+    MCAPI static void GetSystemAddressIPV4And6(int rns2Socket, ::RakNet::SystemAddress* systemAddressOut);
 
-    MCNAPI static uint RecvFromLoop(void* arguments);
+    MCAPI static uint RecvFromLoop(void* arguments);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $SetMulticastInterface(int interfaceIndex);
+    MCAPI void $SetMulticastInterface(int interfaceIndex);
     // NOLINTEND
 
 public:

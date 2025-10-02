@@ -87,13 +87,13 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCNAPI ~ReadBufferData();
+            MCAPI ~ReadBufferData();
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCNAPI void $dtor();
+            MCFOLD void $dtor();
             // NOLINTEND
         };
 
@@ -306,28 +306,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RakNetConnector(
+    MCAPI RakNetConnector(
         ::RakNetConnector::ConnectionCallbacks&          callbacks,
         ::RakPeerHelper::IPSupportInterface&             ipInterface,
         ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
         ::RakNet::RakPeerConfiguration const&            rakPeerConfig
     );
 
-    MCNAPI ::std::shared_ptr<::RakNetConnector::RakNetNetworkPeer> _createPeer(::NetworkIdentifier const& id);
+    MCAPI ::std::shared_ptr<::RakNetConnector::RakNetNetworkPeer> _createPeer(::NetworkIdentifier const& id);
 
-    MCNAPI ::std::vector<::std::string> _getLocalIps() const;
+    MCAPI ::std::vector<::std::string> _getLocalIps() const;
 
-    MCNAPI ::std::vector<::RakNet::SystemAddress> _getRefinedLocalIps() const;
+    MCAPI ::std::vector<::RakNet::SystemAddress> _getRefinedLocalIps() const;
 
-    MCNAPI void _storeLocalIP();
+    MCAPI void _storeLocalIP();
 
-    MCNAPI bool getStatistics(::RakNet::RakNetStatistics& rns);
+    MCAPI bool getStatistics(::RakNet::RakNetStatistics& rns);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::RakNetConnector::ConnectionCallbacks&          callbacks,
         ::RakPeerHelper::IPSupportInterface&             ipInterface,
         ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
@@ -338,58 +338,58 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $host(::ConnectionDefinition const& definition);
+    MCAPI bool $host(::ConnectionDefinition const& definition);
 
-    MCNAPI bool $connect(
+    MCAPI bool $connect(
         ::Social::GameConnectionInfo const& primaryConnection,
         ::Social::GameConnectionInfo const& backupConnection
     );
 
-    MCNAPI void $disconnect();
+    MCAPI void $disconnect();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
-    MCNAPI void $runEvents();
+    MCAPI void $runEvents();
 
-    MCNAPI void $closeNetworkConnection(::NetworkIdentifier const& id);
+    MCAPI void $closeNetworkConnection(::NetworkIdentifier const& id);
 
-    MCNAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const& id);
+    MCAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const& id);
 
-    MCNAPI bool $isServer() const;
+    MCAPI bool $isServer() const;
 
-    MCNAPI ::std::string $getLocalIp();
+    MCAPI ::std::string $getLocalIp();
 
-    MCNAPI ushort $getPort() const;
+    MCAPI ushort $getPort() const;
 
-    MCNAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
+    MCAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 
-    MCNAPI bool $isIPv4Supported() const;
+    MCAPI bool $isIPv4Supported() const;
 
-    MCNAPI bool $isIPv6Supported() const;
+    MCAPI bool $isIPv6Supported() const;
 
-    MCNAPI ushort $getIPv4Port() const;
+    MCAPI ushort $getIPv4Port() const;
 
-    MCNAPI ushort $getIPv6Port() const;
+    MCAPI ushort $getIPv6Port() const;
 
-    MCNAPI ::NetworkIdentifier $getNetworkIdentifier() const;
+    MCAPI ::NetworkIdentifier $getNetworkIdentifier() const;
 
-    MCNAPI ::RakNet::RakPeerInterface* $getPeer();
+    MCFOLD ::RakNet::RakPeerInterface* $getPeer();
 
-    MCNAPI ::RakNet::RakPeerInterface const* $getPeer() const;
+    MCFOLD ::RakNet::RakPeerInterface const* $getPeer() const;
 
-    MCNAPI ::TransportLayer $getNetworkType() const;
+    MCFOLD ::TransportLayer $getNetworkType() const;
 
-    MCNAPI void $setDisableLanSignaling(bool);
+    MCFOLD void $setDisableLanSignaling(bool);
 
-    MCNAPI void $_onDisable();
+    MCAPI void $_onDisable();
 
-    MCNAPI void $_onEnable();
+    MCAPI void $_onEnable();
     // NOLINTEND
 
 public:

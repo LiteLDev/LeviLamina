@@ -2,22 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace RakNet { class Replica3; }
+namespace RakNet { struct LastSerializationResultBS; }
+// clang-format on
+
 namespace RakNet {
 
 struct LastSerializationResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk806f70;
-    ::ll::UntypedStorage<8, 8> mUnk308560;
-    ::ll::UntypedStorage<8, 8> mUnk7ca5eb;
+    ::ll::TypedStorage<8, 8, ::RakNet::Replica3*>                  replica;
+    ::ll::TypedStorage<8, 8, uint64>                               whenLastSerialized;
+    ::ll::TypedStorage<8, 8, ::RakNet::LastSerializationResultBS*> lastSerializationResultBS;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LastSerializationResult& operator=(LastSerializationResult const&);
-    LastSerializationResult(LastSerializationResult const&);
-    LastSerializationResult();
 };
 
 } // namespace RakNet

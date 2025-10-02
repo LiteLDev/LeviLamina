@@ -180,8 +180,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftableForContainer();
+    MCAPI static void** $vftableForContainer();
 
-    MCNAPI static void** $vftableForBlockActor();
+    MCAPI static void** $vftableForBlockActor();
     // NOLINTEND
 };

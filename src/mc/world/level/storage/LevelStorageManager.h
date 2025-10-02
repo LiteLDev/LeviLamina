@@ -6,7 +6,10 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/world/level/storage/ILevelStorageManagerConnector.h"
+#include "mc/world/level/storage/SavedDataStorage.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,27 +21,49 @@ class IPlayerDeathManagerConnector;
 class LevelStorage;
 class Player;
 class UserStorageChecker;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class LevelStorageManager : public ::ILevelStorageManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnkeb6d54;
-    ::ll::UntypedStorage<8, 80>  mUnk6f5c89;
-    ::ll::UntypedStorage<8, 8>   mUnk24c5f1;
-    ::ll::UntypedStorage<8, 8>   mUnkf8c968;
-    ::ll::UntypedStorage<8, 128> mUnke50fcd;
-    ::ll::UntypedStorage<8, 128> mUnk689bfe;
-    ::ll::UntypedStorage<8, 128> mUnk5c2eaa;
-    ::ll::UntypedStorage<8, 128> mUnk9fc96a;
-    ::ll::UntypedStorage<8, 128> mUnke7857a;
-    ::ll::UntypedStorage<8, 128> mUnkeee9f5;
-    ::ll::UntypedStorage<8, 16>  mUnk4f2d81;
-    ::ll::UntypedStorage<8, 16>  mUnkd9bcd3;
-    ::ll::UntypedStorage<1, 1>   mUnkdde89a;
-    ::ll::UntypedStorage<8, 8>   mUnk1c1e6c;
-    ::ll::UntypedStorage<4, 4>   mUnk40512b;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::LevelStorage>> const> mLevelStorage;
+    ::ll::TypedStorage<8, 80, ::SavedDataStorage>                                                   mSavedDataStorage;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::GameDataSaveTimer>>>               mGameDataSaveTimer;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::UserStorageChecker>>>              mUserStorageChecker;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::LevelStorage&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mSavePublisher;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::LevelStorage&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mSaveGameDataPublisher;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::LevelStorage&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mSaveLevelDataPublisher;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(bool&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mCanStartSaveTimerCheckPublisher;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<void(::LevelStorage&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnStartLeaveGamePublisher;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+                                                               mOnAppSuspendPublisher;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlayerDeathSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnDimensionCreatedSubscription;
+    ::ll::TypedStorage<1, 1, bool>                             mIsLevelTearingDown;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>            mEventing;
+    ::ll::TypedStorage<4, 4, uint>                             mPollSaveGameStatisticsCount;
     // NOLINTEND
 
 public:

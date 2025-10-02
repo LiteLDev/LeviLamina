@@ -2,21 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace RakNet { class NetworkIDObject; }
+// clang-format on
+
 namespace RakNet {
 
 class NetworkIDManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8192> mUnkfcc08d;
-    ::ll::UntypedStorage<8, 8>    mUnk2bd39e;
+    ::ll::TypedStorage<8, 8192, ::RakNet::NetworkIDObject* [1024]> networkIdHash;
+    ::ll::TypedStorage<8, 8, uint64>                               startingOffset;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NetworkIDManager& operator=(NetworkIDManager const&);
-    NetworkIDManager(NetworkIDManager const&);
-    NetworkIDManager();
 
 public:
     // virtual functions

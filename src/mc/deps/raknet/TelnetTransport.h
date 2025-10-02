@@ -3,13 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/raknet/SystemAddress.h"
 #include "mc/deps/raknet/TransportInterface.h"
+#include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { class CommandParserInterface; }
+namespace RakNet { class TCPInterface; }
 namespace RakNet { struct Packet; }
-namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -26,33 +28,21 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 136>  mUnk8e815c;
-        ::ll::UntypedStorage<1, 2048> mUnk86bdac;
-        ::ll::UntypedStorage<1, 2048> mUnk76d7a7;
-        ::ll::UntypedStorage<4, 4>    mUnk494f83;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
+        ::ll::TypedStorage<1, 2048, char[2048]>             textInput;
+        ::ll::TypedStorage<1, 2048, char[2048]>             lastSentTextInput;
+        ::ll::TypedStorage<4, 4, uint>                      cursorPosition;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TelnetClient& operator=(TelnetClient const&);
-        TelnetClient(TelnetClient const&);
-        TelnetClient();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk23ba2b;
-    ::ll::UntypedStorage<8, 16> mUnkc1db1a;
-    ::ll::UntypedStorage<8, 8>  mUnkf54b15;
-    ::ll::UntypedStorage<8, 8>  mUnk447173;
+    ::ll::TypedStorage<8, 8, ::RakNet::TCPInterface*>                                           tcpInterface;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::TelnetTransport::TelnetClient*>> remoteClients;
+    ::ll::TypedStorage<8, 8, char*>                                                             sendSuffix;
+    ::ll::TypedStorage<8, 8, char*>                                                             sendPrefix;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TelnetTransport& operator=(TelnetTransport const&);
-    TelnetTransport(TelnetTransport const&);
-    TelnetTransport();
 
 public:
     // virtual functions

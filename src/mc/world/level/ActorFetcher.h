@@ -2,9 +2,13 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class DimensionManager;
 struct ActorUniqueID;
 // clang-format on
 
@@ -12,18 +16,12 @@ class ActorFetcher {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkb1e281;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager const> const> mDimensionManager;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorFetcher& operator=(ActorFetcher const&);
-    ActorFetcher(ActorFetcher const&);
-    ActorFetcher();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Actor* fetchActorAllDimensions(::ActorUniqueID actorId, bool getRemoved) const;
+    MCAPI ::Actor* fetchActorAllDimensions(::ActorUniqueID actorId, bool getRemoved) const;
     // NOLINTEND
 };

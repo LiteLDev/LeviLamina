@@ -2,44 +2,46 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace DataStructures { class Map; }
+namespace RakNet { class HuffmanEncodingTree; }
+// clang-format on
+
 namespace RakNet {
 
 class StringCompressor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk957c28;
+    ::ll::TypedStorage<8, 32, ::DataStructures::Map<int, ::RakNet::HuffmanEncodingTree*, $unknown_type>>
+        huffmanEncodingTrees;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    StringCompressor& operator=(StringCompressor const&);
-    StringCompressor(StringCompressor const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StringCompressor();
+    MCAPI StringCompressor();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void RemoveReference();
+    MCAPI static void RemoveReference();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::RakNet::StringCompressor*& instance();
+    MCAPI static ::RakNet::StringCompressor*& instance();
 
-    MCNAPI static int& referenceCount();
+    MCAPI static int& referenceCount();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };
 

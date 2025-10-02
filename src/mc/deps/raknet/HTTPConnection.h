@@ -2,6 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/RakString.h"
+#include "mc/deps/raknet/SystemAddress.h"
+#include "mc/deps/raknet/data_structures/Queue.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace RakNet { class TCPInterface; }
+// clang-format on
+
 namespace RakNet {
 
 class HTTPConnection {
@@ -23,32 +33,20 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk7904b7;
-        ::ll::UntypedStorage<4, 4> mUnk92d3c7;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakString> data;
+        ::ll::TypedStorage<4, 4, int>                 code;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BadResponse& operator=(BadResponse const&);
-        BadResponse(BadResponse const&);
-        BadResponse();
     };
 
     struct OutgoingCommand {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkb6a994;
-        ::ll::UntypedStorage<8, 8> mUnk9b7015;
-        ::ll::UntypedStorage<8, 8> mUnkb2dd45;
-        ::ll::UntypedStorage<1, 1> mUnk4c8300;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakString> remotePath;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakString> data;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakString> contentType;
+        ::ll::TypedStorage<1, 1, bool>                isPost;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        OutgoingCommand& operator=(OutgoingCommand const&);
-        OutgoingCommand(OutgoingCommand const&);
-        OutgoingCommand();
     };
 
     enum class ConnectionState : int {
@@ -62,23 +60,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnkd044b2;
-    ::ll::UntypedStorage<8, 32>  mUnkbbd660;
-    ::ll::UntypedStorage<8, 136> mUnk743409;
-    ::ll::UntypedStorage<8, 8>   mUnk23e7ef;
-    ::ll::UntypedStorage<8, 8>   mUnkd535f3;
-    ::ll::UntypedStorage<2, 2>   mUnk87465b;
-    ::ll::UntypedStorage<8, 24>  mUnk9d5f06;
-    ::ll::UntypedStorage<4, 4>   mUnk40017d;
-    ::ll::UntypedStorage<8, 8>   mUnk62032b;
-    ::ll::UntypedStorage<8, 24>  mUnka2f53f;
+    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::HTTPConnection::OutgoingCommand>> outgoingCommand;
+    ::ll::TypedStorage<8, 32, ::RakNet::HTTPConnection::OutgoingCommand>                      currentProcessingCommand;
+    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>                                       server;
+    ::ll::TypedStorage<8, 8, ::RakNet::TCPInterface*>                                         tcp;
+    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                             host;
+    ::ll::TypedStorage<2, 2, ushort>                                                          port;
+    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::HTTPConnection::BadResponse>> badResponses;
+    ::ll::TypedStorage<4, 4, ::RakNet::HTTPConnection::ConnectionState>                       connectionState;
+    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                             incomingData;
+    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::RakString>>                   results;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HTTPConnection& operator=(HTTPConnection const&);
-    HTTPConnection(HTTPConnection const&);
-    HTTPConnection();
 
 public:
     // virtual functions

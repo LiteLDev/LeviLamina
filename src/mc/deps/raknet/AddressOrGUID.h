@@ -24,23 +24,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit AddressOrGUID(::RakNet::RakNetGUID const& input);
+    MCAPI explicit AddressOrGUID(::RakNet::RakNetGUID const& input);
 
-    MCNAPI explicit AddressOrGUID(::RakNet::SystemAddress const& input);
+    MCAPI explicit AddressOrGUID(::RakNet::SystemAddress const& input);
 
-    MCNAPI AddressOrGUID(::RakNet::AddressOrGUID const& input);
+    MCAPI AddressOrGUID(::RakNet::AddressOrGUID const& input);
 
-    MCNAPI bool IsUndefined() const;
+    MCAPI bool IsUndefined() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::RakNet::RakNetGUID const& input);
+    MCAPI void* $ctor(::RakNet::RakNetGUID const& input);
 
-    MCNAPI void* $ctor(::RakNet::SystemAddress const& input);
+    MCAPI void* $ctor(::RakNet::SystemAddress const& input);
 
-    MCNAPI void* $ctor(::RakNet::AddressOrGUID const& input);
+    MCAPI void* $ctor(::RakNet::AddressOrGUID const& input);
     // NOLINTEND
 };
 
