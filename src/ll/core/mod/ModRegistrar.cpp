@@ -357,7 +357,22 @@ Expected<> ModRegistrar::loadMod(std::string_view name) noexcept {
             }
         }
     }
-    return reg.loadMod(std::move(manifest)).transform([&, this]() { impl->deps.emplace(std::string{name}); });
+    return reg.loadMod(std::move(manifest)).transform([&, this, name = std::string{name}]() {
+        impl->deps.emplace(name);
+
+        if (manifest.dependencies) {
+            for (auto& dependency : *manifest.dependencies) {
+                impl->deps.emplaceDependency(name, dependency.name);
+            }
+        }
+        if (manifest.optionalDependencies) {
+            for (auto& dependency : *manifest.optionalDependencies) {
+                if (auto mod = reg.getMod(dependency.name); mod && checkVersion(mod->getManifest(), dependency)) {
+                    impl->deps.emplaceDependency(name, dependency.name);
+                }
+            }
+        }
+    });
 }
 Expected<> ModRegistrar::unloadMod(std::string_view name) noexcept {
     std::lock_guard lock(impl->mutex);
