@@ -36,7 +36,7 @@ public:
 
 public:
     PlayerCommandOrigin(::Level& level, ::ActorUniqueID playerId) : mPlayerId(playerId), mLevel(level) {}
-    PlayerCommandOrigin(::Player& player) : mPlayerId(player.getOrCreateUniqueID()), mLevel(player.getLevel()) {}
+    // PlayerCommandOrigin(::Player& player) : mPlayerId(player.getOrCreateUniqueID()), mLevel(player.getLevel()) {}
 
 public:
     // virtual functions
