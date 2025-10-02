@@ -111,7 +111,7 @@ static HitResult getSubAABBHitResult(
     float     bestDistance = std::numeric_limits<float>::max();
     for (auto& aabb : subAABBs) {
         AABB extendedAABB{aabb.min - margin, aabb.max + margin};
-    
+
         if (extendedAABB.contains(from)) {
             return HitResult{from, direction, actor, from, extendedAABB};
         }
@@ -138,8 +138,8 @@ std::vector<HitResult> getHitResults(
     brstd::function_ref<float(Actor const&)>          getCollisionMargin
 ) {
     std::vector<HitResult> results;
-    Vec3 direction = to - from;
-    AABB fetchArea;
+    Vec3                   direction = to - from;
+    AABB                   fetchArea;
     if (source) {
         fetchArea = source->getAABB();
         if (direction.x < 0.0f) {
@@ -213,7 +213,7 @@ HitResult getClosestHitResult(
     brstd::function_ref<float(Actor const&)>          getCollisionMargin
 ) {
     HitResult result;
-    auto hitResults = getHitResults(region, source, owner, from, to, isValidHit, getCollisionMargin);
+    auto      hitResults = getHitResults(region, source, owner, from, to, isValidHit, getCollisionMargin);
 
     if (hitResults.empty()) {
         return result;

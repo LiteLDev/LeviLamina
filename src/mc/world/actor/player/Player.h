@@ -284,7 +284,7 @@ public:
 
     LLNDAPI optional_ref<EnderChestContainer> getEnderChestContainer() const;
 
-    LLNDAPI  Inventory& getInventory() const;
+    LLNDAPI Inventory& getInventory() const;
 
 public:
     // member variables

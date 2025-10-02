@@ -226,6 +226,6 @@ public:
     using PayloadType = PacketPayloadT;
 
     template <typename... Args>
-    PayloadPacket(Args&&... args) : Packet(), PacketPayloadT(std::forward<Args>(args)...) {}
-
+    PayloadPacket(Args&&... args) : Packet(),
+                                    PacketPayloadT(std::forward<Args>(args)...) {}
 };

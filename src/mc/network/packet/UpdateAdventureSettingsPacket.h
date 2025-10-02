@@ -19,8 +19,7 @@ namespace cereal { struct ReflectionCtx; }
 MC_NETWORK_PACKET_DECALARE(UpdateAdventureSettingsPacket) {
 
 public:
-    [[nodiscard]] explicit UpdateAdventureSettingsPacket(AdventureSettings const& settings)
-    : PayloadPacket(settings) {}
+    [[nodiscard]] explicit UpdateAdventureSettingsPacket(AdventureSettings const& settings) : PayloadPacket(settings) {}
 
 public:
     // virtual functions

@@ -368,15 +368,17 @@ Expected<> ModRegistrar::unloadMod(std::string_view name) noexcept {
     return impl->registry.unloadMod(name).transform([&, this]() { impl->deps.erase(std::string{name}); });
 }
 Expected<> ModRegistrar::enableMod(std::string_view name) noexcept {
-    std::lock_guard lock(impl->mutex);
-    auto&           registry   = impl->registry;
-    auto            dependents = impl->deps.dependentOn(std::string{name});
-    erase_if(dependents, [&](auto& name) {
-        if (auto ptr = registry.getMod(name); ptr) {
-            return ptr->isEnabled();
+    std::lock_guard                lock(impl->mutex);
+    auto&                          registry = impl->registry;
+    ll::SmallDenseSet<std::string> dependents;
+    auto&                          dependencies = registry.getMod(name)->getManifest().dependencies;
+    if (dependencies) {
+        for (auto& dep : *dependencies) {
+            if (auto ptr = registry.getMod(dep.name); !ptr || !ptr->isEnabled()) {
+                dependents.emplace(dep.name);
+            }
         }
-        return false;
-    });
+    }
     if (!dependents.empty()) {
         return makeStringError("Dependency {0} of {1} is not enabled"_tr(dependents, name));
     }
