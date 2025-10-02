@@ -24,7 +24,7 @@ public:
 
 public:
     template <typename... Args>
-    SetTitlePacket(Args && ... args) : SerializedPayloadPacket(std::forward<Args>(args)...) {}
+    SetTitlePacket(Args && ... args) : PayloadPacket(std::forward<Args>(args)...) {}
 
 public:
     // virtual functions

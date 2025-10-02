@@ -24,7 +24,7 @@ public:
 
 public:
     TransferPacket(std::string const& dest, ushort port, bool reloadWorld = false)
-    : SerializedPayloadPacket(dest, port, reloadWorld) {}
+    : PayloadPacket(dest, port, reloadWorld) {}
 
 public:
     // virtual functions
