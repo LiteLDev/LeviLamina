@@ -4,15 +4,22 @@
 
 // auto generated inclusion list
 #include "mc/deps/raknet/CloudAllocator.h"
+#include "mc/deps/raknet/CloudKey.h"
+#include "mc/deps/raknet/CloudQuery.h"
+#include "mc/deps/raknet/CloudQueryResult.h"
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/SystemAddress.h"
+#include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace DataStructures { class Hash; }
+namespace DataStructures { class OrderedList; }
+namespace RakNet { class CloudServerQueryFilter; }
 namespace RakNet { struct Packet; }
-namespace RakNet { struct RakNetGUID; }
-namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -36,161 +43,148 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 32>  mUnkf16be6;
-        ::ll::UntypedStorage<8, 8>   mUnke63fe5;
-        ::ll::UntypedStorage<8, 8>   mUnk394d17;
-        ::ll::UntypedStorage<4, 4>   mUnkd4a3aa;
-        ::ll::UntypedStorage<1, 1>   mUnke551b3;
-        ::ll::UntypedStorage<8, 136> mUnkad3f6c;
-        ::ll::UntypedStorage<8, 136> mUnk1eaa0a;
-        ::ll::UntypedStorage<8, 16>  mUnkd4497a;
-        ::ll::UntypedStorage<8, 16>  mUnk2ecedf;
-        ::ll::UntypedStorage<8, 16>  mUnk154e02;
+        ::ll::TypedStorage<1, 32, uchar[32]>                stackData;
+        ::ll::TypedStorage<8, 8, uchar*>                    allocatedData;
+        ::ll::TypedStorage<8, 8, uchar*>                    dataPtr;
+        ::ll::TypedStorage<4, 4, uint>                      dataLengthBytes;
+        ::ll::TypedStorage<1, 1, bool>                      isUploaded;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> serverSystemAddress;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> clientSystemAddress;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     serverGUID;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     clientGUID;
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::DataStructures::OrderedList<::RakNet::RakNetGUID, ::RakNet::RakNetGUID, $unknown_type>>
+            specificSubscribers;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CloudData& operator=(CloudData const&);
-        CloudData(CloudData const&);
-        CloudData();
     };
 
     struct CloudDataList {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk43b28f;
-        ::ll::UntypedStorage<4, 4>  mUnkca166c;
-        ::ll::UntypedStorage<8, 16> mUnkd41815;
-        ::ll::UntypedStorage<8, 16> mUnkc61baf;
-        ::ll::UntypedStorage<8, 16> mUnkb91dd9;
+        ::ll::TypedStorage<4, 4, uint>                uploaderCount;
+        ::ll::TypedStorage<4, 4, uint>                subscriberCount;
+        ::ll::TypedStorage<8, 16, ::RakNet::CloudKey> key;
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::DataStructures::OrderedList<::RakNet::RakNetGUID, ::RakNet::CloudServer::CloudData*, $unknown_type>>
+            keyData;
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::DataStructures::OrderedList<::RakNet::RakNetGUID, ::RakNet::RakNetGUID, $unknown_type>>
+            nonSpecificSubscribers;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CloudDataList& operator=(CloudDataList const&);
-        CloudDataList(CloudDataList const&);
-        CloudDataList();
     };
 
     struct KeySubscriberID {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk57ae32;
-        ::ll::UntypedStorage<8, 16> mUnk6d9f91;
+        ::ll::TypedStorage<8, 16, ::RakNet::CloudKey> key;
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::DataStructures::OrderedList<::RakNet::RakNetGUID, ::RakNet::RakNetGUID, $unknown_type>>
+            specificSystemsSubscribedTo;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        KeySubscriberID& operator=(KeySubscriberID const&);
-        KeySubscriberID(KeySubscriberID const&);
-        KeySubscriberID();
     };
 
     struct RemoteCloudClient {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkd95c6a;
-        ::ll::UntypedStorage<8, 16> mUnk6ff0e1;
-        ::ll::UntypedStorage<8, 8>  mUnkeab725;
+        ::ll::TypedStorage<8, 16, ::DataStructures::OrderedList<::RakNet::CloudKey, ::RakNet::CloudKey, $unknown_type>>
+            uploadedKeys;
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::DataStructures::OrderedList<::RakNet::CloudKey, ::RakNet::CloudServer::KeySubscriberID*, $unknown_type>>
+                                         subscribedKeys;
+        ::ll::TypedStorage<8, 8, uint64> uploadedBytes;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RemoteCloudClient& operator=(RemoteCloudClient const&);
-        RemoteCloudClient(RemoteCloudClient const&);
-        RemoteCloudClient();
     };
 
     struct RemoteServer {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk1d0fa8;
-        ::ll::UntypedStorage<8, 16> mUnkf200ed;
-        ::ll::UntypedStorage<8, 16> mUnkb7eb23;
-        ::ll::UntypedStorage<1, 1>  mUnkf589a6;
-        ::ll::UntypedStorage<1, 1>  mUnk88da0b;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID> serverAddress;
+        ::ll::TypedStorage<8, 16, ::DataStructures::OrderedList<::RakNet::CloudKey, ::RakNet::CloudKey, $unknown_type>>
+            subscribedKeys;
+        ::ll::TypedStorage<8, 16, ::DataStructures::OrderedList<::RakNet::CloudKey, ::RakNet::CloudKey, $unknown_type>>
+                                       uploadedKeys;
+        ::ll::TypedStorage<1, 1, bool> workingFlag;
+        ::ll::TypedStorage<1, 1, bool> gotSubscribedAndUploadedKeys;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RemoteServer& operator=(RemoteServer const&);
-        RemoteServer(RemoteServer const&);
-        RemoteServer();
     };
 
     struct BufferedGetResponseFromServer {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk7816d1;
-        ::ll::UntypedStorage<8, 72> mUnkd7e6c9;
-        ::ll::UntypedStorage<1, 1>  mUnk740942;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>       serverAddress;
+        ::ll::TypedStorage<8, 72, ::RakNet::CloudQueryResult> queryResult;
+        ::ll::TypedStorage<1, 1, bool>                        gotResult;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        BufferedGetResponseFromServer& operator=(BufferedGetResponseFromServer const&);
-        BufferedGetResponseFromServer(BufferedGetResponseFromServer const&);
-        BufferedGetResponseFromServer();
     };
 
     struct CloudQueryWithAddresses {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnkaf427c;
-        ::ll::UntypedStorage<8, 16> mUnke33067;
+        ::ll::TypedStorage<8, 32, ::RakNet::CloudQuery>                         cloudQuery;
+        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::RakNetGUID>> specificSystems;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        CloudQueryWithAddresses& operator=(CloudQueryWithAddresses const&);
-        CloudQueryWithAddresses(CloudQueryWithAddresses const&);
-        CloudQueryWithAddresses();
     };
 
     struct GetRequest {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48> mUnk33c3b1;
-        ::ll::UntypedStorage<8, 8>  mUnk656c97;
-        ::ll::UntypedStorage<4, 4>  mUnkc0d6cd;
-        ::ll::UntypedStorage<8, 16> mUnked6604;
-        ::ll::UntypedStorage<8, 16> mUnk1f848a;
+        ::ll::TypedStorage<8, 48, ::RakNet::CloudServer::CloudQueryWithAddresses> cloudQueryWithAddresses;
+        ::ll::TypedStorage<8, 8, uint64>                                          requestStartTime;
+        ::ll::TypedStorage<4, 4, uint>                                            requestId;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>                           requestingClient;
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::DataStructures::
+                OrderedList<::RakNet::RakNetGUID, ::RakNet::CloudServer::BufferedGetResponseFromServer*, $unknown_type>>
+            remoteServerResponses;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        GetRequest& operator=(GetRequest const&);
-        GetRequest(GetRequest const&);
-        GetRequest();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk27253f;
-    ::ll::UntypedStorage<8, 8>   mUnkd0a5af;
-    ::ll::UntypedStorage<8, 16>  mUnkcece0b;
-    ::ll::UntypedStorage<8, 16>  mUnk6a5163;
-    ::ll::UntypedStorage<8, 16>  mUnk6ffb76;
-    ::ll::UntypedStorage<8, 16>  mUnk46ff2b;
-    ::ll::UntypedStorage<8, 8>   mUnk291a22;
-    ::ll::UntypedStorage<4, 4>   mUnk515af2;
-    ::ll::UntypedStorage<8, 16>  mUnkfc3151;
-    ::ll::UntypedStorage<8, 136> mUnk4af8a3;
+    ::ll::TypedStorage<8, 8, uint64> maxUploadBytesPerClient;
+    ::ll::TypedStorage<8, 8, uint64> maxBytesPerDowload;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::DataStructures::OrderedList<::RakNet::CloudKey, ::RakNet::CloudServer::CloudDataList*, $unknown_type>>
+        dataRepository;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::DataStructures::Hash<::RakNet::RakNetGUID, ::RakNet::CloudServer::RemoteCloudClient*, 2048, $unknown_type>>
+        remoteSystems;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::DataStructures::OrderedList<::RakNet::RakNetGUID, ::RakNet::CloudServer::RemoteServer*, $unknown_type>>
+        remoteServers;
+    ::ll::TypedStorage<8, 16, ::DataStructures::OrderedList<uint, ::RakNet::CloudServer::GetRequest*, $unknown_type>>
+                                                                                         getRequests;
+    ::ll::TypedStorage<8, 8, uint64>                                                     nextGetRequestsCheck;
+    ::ll::TypedStorage<4, 4, uint>                                                       nextGetRequestId;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::CloudServerQueryFilter*>> queryFilters;
+    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>                                  forceAddress;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CloudServer& operator=(CloudServer const&);
-    CloudServer(CloudServer const&);
-    CloudServer();
 
 public:
     // virtual functions

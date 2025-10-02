@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace RakNet { class RakPeerInterface; }
 namespace RakNet { class TransportInterface; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on
@@ -17,14 +18,8 @@ class RakNetCommandParser : public ::RakNet::CommandParserInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3ff202;
+    ::ll::TypedStorage<8, 8, ::RakNet::RakPeerInterface*> peer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RakNetCommandParser& operator=(RakNetCommandParser const&);
-    RakNetCommandParser(RakNetCommandParser const&);
-    RakNetCommandParser();
 
 public:
     // virtual functions

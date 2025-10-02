@@ -8,14 +8,8 @@ struct uint24_t {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkaad864;
+    ::ll::TypedStorage<4, 4, uint> val;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    uint24_t& operator=(uint24_t const&);
-    uint24_t(uint24_t const&);
-    uint24_t();
 };
 
 } // namespace RakNet

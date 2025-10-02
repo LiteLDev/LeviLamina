@@ -8,32 +8,27 @@ class SimpleMutex {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkfaa54f;
+    ::ll::TypedStorage<8, 40, ::_RTL_CRITICAL_SECTION> criticalSection;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SimpleMutex& operator=(SimpleMutex const&);
-    SimpleMutex(SimpleMutex const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SimpleMutex();
+    MCAPI SimpleMutex();
 
-    MCNAPI ~SimpleMutex();
+    MCAPI ~SimpleMutex();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

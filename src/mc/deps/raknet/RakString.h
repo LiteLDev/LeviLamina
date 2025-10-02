@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/raknet/data_structures/List.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace RakNet { class SimpleMutex; }
+// clang-format on
+
 namespace RakNet {
 
 class RakString {
@@ -19,70 +24,59 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>   mUnka2f925;
-        ::ll::UntypedStorage<4, 4>   mUnk59de61;
-        ::ll::UntypedStorage<8, 8>   mUnk35e35d;
-        ::ll::UntypedStorage<8, 8>   mUnka4bdce;
-        ::ll::UntypedStorage<8, 8>   mUnke2527f;
-        ::ll::UntypedStorage<1, 100> mUnk58a7f9;
+        ::ll::TypedStorage<8, 8, ::RakNet::SimpleMutex*> refCountMutex;
+        ::ll::TypedStorage<4, 4, uint>                   refCount;
+        ::ll::TypedStorage<8, 8, uint64>                 bytesUsed;
+        ::ll::TypedStorage<8, 8, char*>                  bigString;
+        ::ll::TypedStorage<8, 8, char*>                  c_str;
+        ::ll::TypedStorage<1, 100, char[100]>            smallString;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SharedString& operator=(SharedString const&);
-        SharedString(SharedString const&);
-        SharedString();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk886291;
+    ::ll::TypedStorage<8, 8, ::RakNet::RakString::SharedString*> sharedString;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RakString& operator=(RakString const&);
-    RakString(RakString const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void Allocate(uint64 len);
+    MCAPI void Allocate(uint64 len);
 
-    MCNAPI void Assign(char const* str);
+    MCAPI void Assign(char const* str);
 
-    MCNAPI void Assign(char const* str, char* ap);
+    MCAPI void Assign(char const* str, char* ap);
 
-    MCNAPI void Free();
+    MCAPI void Free();
 
-    MCNAPI RakString();
+    MCAPI RakString();
 
-    MCNAPI RakString(char const*, ...);
+    MCAPI RakString(char const*, ...);
 
-    MCNAPI ~RakString();
+    MCAPI ~RakString();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::RakNet::RakString::SharedString& emptyString();
+    MCAPI static ::RakNet::RakString::SharedString& emptyString();
 
-    MCNAPI static ::DataStructures::List<::RakNet::RakString::SharedString*>& freeList();
+    MCAPI static ::DataStructures::List<::RakNet::RakString::SharedString*>& freeList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(char const*, ...);
+    MCAPI void* $ctor(char const*, ...);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

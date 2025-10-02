@@ -7,12 +7,16 @@
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
+#include "mc/deps/raknet/RakString.h"
+#include "mc/deps/raknet/SimpleMutex.h"
+#include "mc/deps/raknet/SystemAddress.h"
+#include "mc/deps/raknet/data_structures/List.h"
+#include "mc/deps/raknet/data_structures/Queue.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { struct Packet; }
 namespace RakNet { struct RakNetGUID; }
-namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -29,45 +33,33 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>   mUnk5d9dd1;
-        ::ll::UntypedStorage<8, 8>   mUnke096eb;
-        ::ll::UntypedStorage<8, 8>   mUnkfb5ed2;
-        ::ll::UntypedStorage<8, 136> mUnk76fb85;
-        ::ll::UntypedStorage<8, 136> mUnk4b91a1;
-        ::ll::UntypedStorage<2, 2>   mUnkfb4a76;
-        ::ll::UntypedStorage<1, 1>   mUnk6a6c57;
-        ::ll::UntypedStorage<4, 4>   mUnkdf4c59;
-        ::ll::UntypedStorage<4, 4>   mUnk3b251f;
-        ::ll::UntypedStorage<4, 4>   mUnkdb560f;
-        ::ll::UntypedStorage<8, 8>   mUnkeadb83;
-        ::ll::UntypedStorage<1, 1>   mUnk199ccd;
-        ::ll::UntypedStorage<8, 8>   mUnk8e7224;
-        ::ll::UntypedStorage<8, 8>   mUnka63d8c;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakString>       stringToTransmit;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakString>       stringReceived;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakString>       host;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> hostEstimatedAddress;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> hostCompletedAddress;
+        ::ll::TypedStorage<2, 2, ushort>                    port;
+        ::ll::TypedStorage<1, 1, bool>                      useSSL;
+        ::ll::TypedStorage<4, 4, int>                       contentOffset;
+        ::ll::TypedStorage<4, 4, int>                       contentLength;
+        ::ll::TypedStorage<4, 4, int>                       ipVersion;
+        ::ll::TypedStorage<8, 8, void*>                     userData;
+        ::ll::TypedStorage<1, 1, bool>                      chunked;
+        ::ll::TypedStorage<8, 8, uint64>                    thisChunkSize;
+        ::ll::TypedStorage<8, 8, uint64>                    bytesReadForThisChunk;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Request& operator=(Request const&);
-        Request(Request const&);
-        Request();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5a7ff0;
-    ::ll::UntypedStorage<8, 16> mUnke3cc12;
-    ::ll::UntypedStorage<8, 16> mUnkf0fe77;
-    ::ll::UntypedStorage<8, 40> mUnk4aeb40;
-    ::ll::UntypedStorage<8, 40> mUnkca0079;
-    ::ll::UntypedStorage<8, 40> mUnk333296;
+    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::HTTPConnection2::Request*>> pendingRequests;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::HTTPConnection2::Request*>>  sentRequests;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::HTTPConnection2::Request*>>  completedRequests;
+    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                                        pendingRequestsMutex;
+    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                                        sentRequestsMutex;
+    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                                        completedRequestsMutex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    HTTPConnection2& operator=(HTTPConnection2 const&);
-    HTTPConnection2(HTTPConnection2 const&);
-    HTTPConnection2();
 
 public:
     // virtual functions

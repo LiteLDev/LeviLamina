@@ -2,26 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/data_structures/List.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace RakNet { class TM_TeamMember; }
+namespace RakNet { class TM_World; }
+// clang-format on
+
 namespace RakNet {
 
 class TM_Team {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkdc023c;
-    ::ll::UntypedStorage<8, 8>  mUnkaa432f;
-    ::ll::UntypedStorage<8, 16> mUnk38aa40;
-    ::ll::UntypedStorage<1, 1>  mUnk29b4b9;
-    ::ll::UntypedStorage<1, 1>  mUnk3b7007;
-    ::ll::UntypedStorage<2, 2>  mUnk170740;
-    ::ll::UntypedStorage<8, 8>  mUnk689fc9;
+    ::ll::TypedStorage<8, 8, uint64>                                            ID;
+    ::ll::TypedStorage<8, 8, ::RakNet::TM_World*>                               world;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::TM_TeamMember*>> teamMembers;
+    ::ll::TypedStorage<1, 1, uchar>                                             joinPermissions;
+    ::ll::TypedStorage<1, 1, bool>                                              balancingApplies;
+    ::ll::TypedStorage<2, 2, ushort>                                            teamMemberLimit;
+    ::ll::TypedStorage<8, 8, void*>                                             owner;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TM_Team& operator=(TM_Team const&);
-    TM_Team(TM_Team const&);
-    TM_Team();
 
 public:
     // virtual functions

@@ -6,11 +6,12 @@
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { struct Packet; }
-namespace RakNet { struct RakNetGUID; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on
 
@@ -34,53 +35,35 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnkb62cdd;
-        ::ll::UntypedStorage<8, 8>  mUnka31673;
-        ::ll::UntypedStorage<1, 1>  mUnke76e24;
-        ::ll::UntypedStorage<1, 1>  mUnkbf4433;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID> memberGuid;
+        ::ll::TypedStorage<8, 8, uint64>                memberId;
+        ::ll::TypedStorage<1, 1, uchar>                 currentTeam;
+        ::ll::TypedStorage<1, 1, uchar>                 requestedTeam;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        TeamMember& operator=(TeamMember const&);
-        TeamMember(TeamMember const&);
-        TeamMember();
     };
 
     struct MyTeamMembers {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk12a3ab;
-        ::ll::UntypedStorage<1, 1> mUnkf3d3ae;
-        ::ll::UntypedStorage<1, 1> mUnk9d2edf;
+        ::ll::TypedStorage<8, 8, uint64> memberId;
+        ::ll::TypedStorage<1, 1, uchar>  currentTeam;
+        ::ll::TypedStorage<1, 1, uchar>  requestedTeam;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MyTeamMembers& operator=(MyTeamMembers const&);
-        MyTeamMembers(MyTeamMembers const&);
-        MyTeamMembers();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkb6544a;
-    ::ll::UntypedStorage<4, 4>  mUnka3287b;
-    ::ll::UntypedStorage<1, 1>  mUnk90570d;
-    ::ll::UntypedStorage<1, 1>  mUnk9de96e;
-    ::ll::UntypedStorage<8, 16> mUnk1b029e;
-    ::ll::UntypedStorage<8, 16> mUnkd3efd5;
-    ::ll::UntypedStorage<8, 16> mUnkd702bf;
-    ::ll::UntypedStorage<8, 16> mUnk85b0f4;
+    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>                                          hostGuid;
+    ::ll::TypedStorage<4, 4, ::RakNet::TeamBalancer::DefaultAssigmentAlgorithm>              defaultAssigmentAlgorithm;
+    ::ll::TypedStorage<1, 1, bool>                                                           forceTeamsToBeEven;
+    ::ll::TypedStorage<1, 1, bool>                                                           lockTeams;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::TeamBalancer::MyTeamMembers>> myTeamMembers;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<ushort>>                                teamLimits;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<ushort>>                                teamMemberCounts;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::TeamBalancer::TeamMember>>    teamMembers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TeamBalancer& operator=(TeamBalancer const&);
-    TeamBalancer(TeamBalancer const&);
-    TeamBalancer();
 
 public:
     // virtual functions

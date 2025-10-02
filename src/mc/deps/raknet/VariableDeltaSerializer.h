@@ -2,6 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/BitStream.h"
+#include "mc/deps/raknet/PacketReliability.h"
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/VariableListDeltaTracker.h"
+#include "mc/deps/raknet/data_structures/List.h"
+#include "mc/deps/raknet/data_structures/MemoryPool.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace DataStructures { class OrderedList; }
+// clang-format on
+
 namespace RakNet {
 
 class VariableDeltaSerializer {
@@ -19,86 +32,64 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnke5f75a;
-        ::ll::UntypedStorage<8, 24> mUnka949fe;
-        ::ll::UntypedStorage<8, 16> mUnk3fa945;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>               guid;
+        ::ll::TypedStorage<8, 24, ::RakNet::VariableListDeltaTracker> variableListDeltaTracker;
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::DataStructures::
+                OrderedList<uint, ::RakNet::VariableDeltaSerializer::ChangedVariablesList*, $unknown_type>>
+            updatedVariablesHistory;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RemoteSystemVariableHistory& operator=(RemoteSystemVariableHistory const&);
-        RemoteSystemVariableHistory(RemoteSystemVariableHistory const&);
-        RemoteSystemVariableHistory();
     };
 
     struct ChangedVariablesList {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk34ae0b;
-        ::ll::UntypedStorage<2, 2>  mUnk935bb4;
-        ::ll::UntypedStorage<1, 56> mUnk1e20ff;
+        ::ll::TypedStorage<4, 4, uint>       sendReceipt;
+        ::ll::TypedStorage<2, 2, ushort>     bitWriteIndex;
+        ::ll::TypedStorage<1, 56, uchar[56]> bitField;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ChangedVariablesList& operator=(ChangedVariablesList const&);
-        ChangedVariablesList(ChangedVariablesList const&);
-        ChangedVariablesList();
     };
 
     struct SerializationContext {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk6a0c80;
-        ::ll::UntypedStorage<8, 8>  mUnk46a485;
-        ::ll::UntypedStorage<4, 4>  mUnk9533de;
-        ::ll::UntypedStorage<8, 8>  mUnk1937a5;
-        ::ll::UntypedStorage<8, 8>  mUnk83e854;
-        ::ll::UntypedStorage<8, 8>  mUnk117ee0;
-        ::ll::UntypedStorage<8, 8>  mUnkb16c84;
-        ::ll::UntypedStorage<4, 4>  mUnkf4bcfa;
-        ::ll::UntypedStorage<4, 4>  mUnkf4b2de;
-        ::ll::UntypedStorage<1, 1>  mUnk91dc99;
-        ::ll::UntypedStorage<1, 1>  mUnk9d9f95;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>                                           guid;
+        ::ll::TypedStorage<8, 8, ::RakNet::BitStream*>                                            bitStream;
+        ::ll::TypedStorage<4, 4, uint>                                                            rakPeerSendReceipt;
+        ::ll::TypedStorage<8, 8, ::RakNet::VariableDeltaSerializer::RemoteSystemVariableHistory*> variableHistory;
+        ::ll::TypedStorage<8, 8, ::RakNet::VariableDeltaSerializer::RemoteSystemVariableHistory*>
+            variableHistoryIdentical;
+        ::ll::TypedStorage<8, 8, ::RakNet::VariableDeltaSerializer::RemoteSystemVariableHistory*> variableHistoryUnique;
+        ::ll::TypedStorage<8, 8, ::RakNet::VariableDeltaSerializer::ChangedVariablesList*>        changedVariables;
+        ::ll::TypedStorage<4, 4, uint>                                                            sendReceipt;
+        ::ll::TypedStorage<4, 4, ::PacketReliability>                                             serializationMode;
+        ::ll::TypedStorage<1, 1, bool>                                                            anyVariablesWritten;
+        ::ll::TypedStorage<1, 1, bool>                                                            newSystemSend;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SerializationContext& operator=(SerializationContext const&);
-        SerializationContext(SerializationContext const&);
-        SerializationContext();
     };
 
     struct DeserializationContext {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkde12c7;
+        ::ll::TypedStorage<8, 8, ::RakNet::BitStream*> bitStream;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DeserializationContext& operator=(DeserializationContext const&);
-        DeserializationContext(DeserializationContext const&);
-        DeserializationContext();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk3f861a;
-    ::ll::UntypedStorage<8, 32>  mUnkf4328f;
-    ::ll::UntypedStorage<1, 1>   mUnkad9ada;
-    ::ll::UntypedStorage<8, 288> mUnk94bf87;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::VariableDeltaSerializer::RemoteSystemVariableHistory*>>
+        remoteSystemVariableHistoryList;
+    ::ll::TypedStorage<8, 32, ::DataStructures::MemoryPool<::RakNet::VariableDeltaSerializer::ChangedVariablesList>>
+                                                    updatedVariablesMemoryPool;
+    ::ll::TypedStorage<1, 1, bool>                  didComparisonThisTick;
+    ::ll::TypedStorage<8, 288, ::RakNet::BitStream> identicalSerializationBs;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VariableDeltaSerializer& operator=(VariableDeltaSerializer const&);
-    VariableDeltaSerializer(VariableDeltaSerializer const&);
-    VariableDeltaSerializer();
 };
 
 } // namespace RakNet

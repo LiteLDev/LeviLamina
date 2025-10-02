@@ -8,14 +8,8 @@ class SignaledEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk673ff6;
+    ::ll::TypedStorage<8, 8, void*> eventList;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SignaledEvent& operator=(SignaledEvent const&);
-    SignaledEvent(SignaledEvent const&);
-    SignaledEvent();
 };
 
 } // namespace RakNet

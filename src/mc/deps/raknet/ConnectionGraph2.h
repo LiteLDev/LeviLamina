@@ -6,12 +6,13 @@
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/SystemAddress.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace DataStructures { class OrderedList; }
 namespace RakNet { struct Packet; }
-namespace RakNet { struct RakNetGUID; }
-namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -29,45 +30,38 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 136> mUnk8f578f;
-        ::ll::UntypedStorage<8, 16>  mUnke655b1;
-        ::ll::UntypedStorage<2, 2>   mUnk8a1226;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     guid;
+        ::ll::TypedStorage<2, 2, ushort>                    sendersPingToThatSystem;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SystemAddressAndGuid& operator=(SystemAddressAndGuid const&);
-        SystemAddressAndGuid(SystemAddressAndGuid const&);
-        SystemAddressAndGuid();
     };
 
     struct RemoteSystem {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk415487;
-        ::ll::UntypedStorage<8, 16> mUnk6d12f8;
+        ::ll::TypedStorage<
+            8,
+            16,
+            ::DataStructures::OrderedList<
+                ::RakNet::ConnectionGraph2::SystemAddressAndGuid,
+                ::RakNet::ConnectionGraph2::SystemAddressAndGuid,
+                $unknown_type>>
+                                                        remoteConnections;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID> guid;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RemoteSystem& operator=(RemoteSystem const&);
-        RemoteSystem(RemoteSystem const&);
-        RemoteSystem();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkaad4a5;
-    ::ll::UntypedStorage<1, 1>  mUnkd8d7a3;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::DataStructures::OrderedList<::RakNet::RakNetGUID, ::RakNet::ConnectionGraph2::RemoteSystem*, $unknown_type>>
+                                   remoteSystems;
+    ::ll::TypedStorage<1, 1, bool> autoProcessNewConnections;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ConnectionGraph2& operator=(ConnectionGraph2 const&);
-    ConnectionGraph2(ConnectionGraph2 const&);
-    ConnectionGraph2();
 
 public:
     // virtual functions

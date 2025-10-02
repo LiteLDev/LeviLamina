@@ -4,11 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/raknet/CommandParserInterface.h"
+#include "mc/deps/raknet/SystemAddress.h"
+#include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { class TransportInterface; }
-namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -25,30 +26,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 136> mUnkd6741f;
-        ::ll::UntypedStorage<4, 4>   mUnk9d3396;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
+        ::ll::TypedStorage<4, 4, uint>                      channels;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SystemAddressAndChannel& operator=(SystemAddressAndChannel const&);
-        SystemAddressAndChannel(SystemAddressAndChannel const&);
-        SystemAddressAndChannel();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk337f20;
-    ::ll::UntypedStorage<8, 256> mUnk31edf9;
-    ::ll::UntypedStorage<8, 8>   mUnkfce969;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::LogCommandParser::SystemAddressAndChannel>> remoteUsers;
+    ::ll::TypedStorage<8, 256, char const* [32]>                                                           channelNames;
+    ::ll::TypedStorage<8, 8, ::RakNet::TransportInterface*>                                                trans;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LogCommandParser& operator=(LogCommandParser const&);
-    LogCommandParser(LogCommandParser const&);
-    LogCommandParser();
 
 public:
     // virtual functions

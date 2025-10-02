@@ -14,15 +14,15 @@ class SocketLayer {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void GetMyAdapters(::RakNet::NetworkAdapter* const adapters);
+    MCAPI static void GetMyAdapters(::RakNet::NetworkAdapter* const adapters);
 
-    MCNAPI static ::RakNet::RakString GetSubNetForSocketAndIp(::RakNet::RakString inIpString);
+    MCAPI static ::RakNet::RakString GetSubNetForSocketAndIp(::RakNet::RakString inIpString);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::function<::std::vector<::std::string>()>& mPlatformAdapterOverride();
+    MCAPI static ::std::function<::std::vector<::std::string>()>& mPlatformAdapterOverride();
     // NOLINTEND
 };
 

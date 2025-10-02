@@ -3,12 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/raknet/LastSerializationResultBS.h"
 #include "mc/deps/raknet/NetworkIDObject.h"
 #include "mc/deps/raknet/RM3ActionOnPopConnection.h"
 #include "mc/deps/raknet/RM3ConstructionState.h"
 #include "mc/deps/raknet/RM3DestructionState.h"
 #include "mc/deps/raknet/RM3QuerySerializationResult.h"
 #include "mc/deps/raknet/RM3SerializationResult.h"
+#include "mc/deps/raknet/RakNetGUID.h"
 #include "mc/deps/raknet/Replica3P2PMode.h"
 
 // auto generated forward declare list
@@ -17,6 +19,7 @@ namespace RakNet { class BitStream; }
 namespace RakNet { class Connection_RM3; }
 namespace RakNet { class ReplicaManager3; }
 namespace RakNet { struct DeserializeParameters; }
+namespace RakNet { struct LastSerializationResult; }
 namespace RakNet { struct SerializeParameters; }
 // clang-format on
 
@@ -26,20 +29,14 @@ class Replica3 : public ::RakNet::NetworkIDObject {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>   mUnk3d9c16;
-    ::ll::UntypedStorage<8, 16>   mUnk9ca427;
-    ::ll::UntypedStorage<8, 8>    mUnk5a494c;
-    ::ll::UntypedStorage<8, 4624> mUnk2204c3;
-    ::ll::UntypedStorage<1, 1>    mUnk2e364c;
-    ::ll::UntypedStorage<8, 8>    mUnkd8b159;
-    ::ll::UntypedStorage<4, 4>    mUnk2eb728;
+    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>                  creatingSystemGUID;
+    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>                  deletingSystemGUID;
+    ::ll::TypedStorage<8, 8, ::RakNet::ReplicaManager3*>             replicaManager;
+    ::ll::TypedStorage<8, 4624, ::RakNet::LastSerializationResultBS> lastSentSerialization;
+    ::ll::TypedStorage<1, 1, bool>                                   forceSendUntilNextUpdate;
+    ::ll::TypedStorage<8, 8, ::RakNet::LastSerializationResult*>     lsr;
+    ::ll::TypedStorage<4, 4, uint>                                   referenceIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Replica3& operator=(Replica3 const&);
-    Replica3(Replica3 const&);
-    Replica3();
 
 public:
     // virtual functions

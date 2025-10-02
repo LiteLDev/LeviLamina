@@ -102,21 +102,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI RemoteSystemStruct();
+        MCAPI RemoteSystemStruct();
 
-        MCNAPI ~RemoteSystemStruct();
+        MCAPI ~RemoteSystemStruct();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor();
+        MCAPI void* $ctor();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

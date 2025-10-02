@@ -5,10 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
+#include "mc/deps/raknet/SystemAddress.h"
+#include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { struct Packet; }
+namespace RakNet { struct UDPProxyClientResultHandler; }
 // clang-format on
 
 namespace RakNet {
@@ -27,61 +30,37 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2>   mUnk5c59c4;
-        ::ll::UntypedStorage<8, 136> mUnka34e46;
+        ::ll::TypedStorage<2, 2, ushort>                    ping;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> serverAddress;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ServerWithPing& operator=(ServerWithPing const&);
-        ServerWithPing(ServerWithPing const&);
-        ServerWithPing();
     };
 
     struct SenderAndTargetAddress {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 136> mUnk29cc9a;
-        ::ll::UntypedStorage<8, 136> mUnk884631;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> senderClientAddress;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> targetClientAddress;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        SenderAndTargetAddress& operator=(SenderAndTargetAddress const&);
-        SenderAndTargetAddress(SenderAndTargetAddress const&);
-        SenderAndTargetAddress();
     };
 
     struct PingServerGroup {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 272> mUnkee4b18;
-        ::ll::UntypedStorage<4, 4>   mUnk238a65;
-        ::ll::UntypedStorage<8, 136> mUnk42a701;
-        ::ll::UntypedStorage<8, 16>  mUnk38a9ef;
+        ::ll::TypedStorage<8, 272, ::RakNet::UDPProxyClient::SenderAndTargetAddress> sata;
+        ::ll::TypedStorage<4, 4, uint>                                               startPingTime;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>                          coordinatorAddressForPings;
+        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::UDPProxyClient::ServerWithPing>> serversToPing;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PingServerGroup& operator=(PingServerGroup const&);
-        PingServerGroup(PingServerGroup const&);
-        PingServerGroup();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnka3de75;
-    ::ll::UntypedStorage<8, 8>  mUnk337ebd;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::UDPProxyClient::PingServerGroup*>> pingServerGroups;
+    ::ll::TypedStorage<8, 8, ::RakNet::UDPProxyClientResultHandler*>                              resultHandler;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    UDPProxyClient& operator=(UDPProxyClient const&);
-    UDPProxyClient(UDPProxyClient const&);
-    UDPProxyClient();
 
 public:
     // virtual functions

@@ -8,15 +8,9 @@ class RakWString {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk37de96;
-    ::ll::UntypedStorage<8, 8> mUnk89536d;
+    ::ll::TypedStorage<8, 8, wchar_t*> c_str;
+    ::ll::TypedStorage<8, 8, uint64>   c_strCharLength;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RakWString& operator=(RakWString const&);
-    RakWString(RakWString const&);
-    RakWString();
 };
 
 } // namespace RakNet

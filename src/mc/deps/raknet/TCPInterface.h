@@ -2,10 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/raknet/LocklessUint32_t.h"
+#include "mc/deps/raknet/SimpleMutex.h"
+#include "mc/deps/raknet/SystemAddress.h"
+#include "mc/deps/raknet/data_structures/List.h"
+#include "mc/deps/raknet/data_structures/Queue.h"
+#include "mc/deps/raknet/data_structures/ThreadsafeAllocatingQueue.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace RakNet { class PluginInterface2; }
 namespace RakNet { struct Packet; }
-namespace RakNet { struct SystemAddress; }
+namespace RakNet { struct RemoteClient; }
 // clang-format on
 
 namespace RakNet {
@@ -22,53 +31,44 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>   mUnk70c3af;
-        ::ll::UntypedStorage<8, 136> mUnke90360;
-        ::ll::UntypedStorage<1, 1>   mUnk676e05;
-        ::ll::UntypedStorage<1, 64>  mUnkbe89ff;
-        ::ll::UntypedStorage<2, 2>   mUnkdf850c;
+        ::ll::TypedStorage<8, 8, ::RakNet::TCPInterface*>   tcpInterface;
+        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
+        ::ll::TypedStorage<1, 1, bool>                      useSSL;
+        ::ll::TypedStorage<1, 64, char[64]>                 bindAddress;
+        ::ll::TypedStorage<2, 2, ushort>                    socketFamily;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ThisPtrPlusSysAddr& operator=(ThisPtrPlusSysAddr const&);
-        ThisPtrPlusSysAddr(ThisPtrPlusSysAddr const&);
-        ThisPtrPlusSysAddr();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk3cc6c5;
-    ::ll::UntypedStorage<4, 4>   mUnkf0fe21;
-    ::ll::UntypedStorage<4, 4>   mUnka96710;
-    ::ll::UntypedStorage<8, 8>   mUnka54868;
-    ::ll::UntypedStorage<2, 2>   mUnk60f7c0;
-    ::ll::UntypedStorage<2, 2>   mUnk4e52e4;
-    ::ll::UntypedStorage<2, 2>   mUnk91c0bd;
-    ::ll::UntypedStorage<8, 8>   mUnkec5a3a;
-    ::ll::UntypedStorage<8, 24>  mUnk757712;
-    ::ll::UntypedStorage<8, 24>  mUnk1826ac;
-    ::ll::UntypedStorage<8, 8>   mUnk637811;
-    ::ll::UntypedStorage<4, 4>   mUnk762ebf;
-    ::ll::UntypedStorage<8, 136> mUnk75578b;
-    ::ll::UntypedStorage<8, 136> mUnk992a86;
-    ::ll::UntypedStorage<8, 136> mUnk27b7a0;
-    ::ll::UntypedStorage<8, 136> mUnkb07421;
-    ::ll::UntypedStorage<8, 136> mUnka4fe43;
-    ::ll::UntypedStorage<8, 40>  mUnk6b6120;
-    ::ll::UntypedStorage<8, 40>  mUnk583ef4;
-    ::ll::UntypedStorage<8, 24>  mUnk128387;
-    ::ll::UntypedStorage<8, 24>  mUnk8e4b25;
-    ::ll::UntypedStorage<4, 4>   mUnka114bf;
-    ::ll::UntypedStorage<8, 16>  mUnked9328;
-    ::ll::UntypedStorage<8, 40>  mUnk279f01;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::PluginInterface2*>> messageHandlerList;
+    ::ll::TypedStorage<4, 4, ::RakNet::LocklessUint32_t>                           isStarted;
+    ::ll::TypedStorage<4, 4, ::RakNet::LocklessUint32_t>                           threadRunning;
+    ::ll::TypedStorage<8, 8, uint64>                                               listenSocket;
+    ::ll::TypedStorage<2, 2, ushort>                                               listenPort;
+    ::ll::TypedStorage<2, 2, ushort>                                               listenMaxIncomingConnections;
+    ::ll::TypedStorage<2, 2, ushort>                                               listenSocketFamily;
+    ::ll::TypedStorage<8, 8, char*>                                                listenHostAddress;
+    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::Packet*>>          headPush;
+    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::Packet*>>          tailPush;
+    ::ll::TypedStorage<8, 8, ::RakNet::RemoteClient*>                              remoteClients;
+    ::ll::TypedStorage<4, 4, int>                                                  remoteClientsLength;
+    ::ll::TypedStorage<8, 136, ::DataStructures::ThreadsafeAllocatingQueue<::RakNet::Packet>> incomingMessages;
+    ::ll::TypedStorage<8, 136, ::DataStructures::ThreadsafeAllocatingQueue<::RakNet::SystemAddress>>
+        newIncomingConnections;
+    ::ll::TypedStorage<8, 136, ::DataStructures::ThreadsafeAllocatingQueue<::RakNet::SystemAddress>> lostConnections;
+    ::ll::TypedStorage<8, 136, ::DataStructures::ThreadsafeAllocatingQueue<::RakNet::SystemAddress>>
+        requestedCloseConnections;
+    ::ll::TypedStorage<8, 136, ::DataStructures::ThreadsafeAllocatingQueue<::RakNet::RemoteClient*>> newRemoteClients;
+    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                            completedConnectionAttemptMutex;
+    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                            failedConnectionAttemptMutex;
+    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::SystemAddress>> completedConnectionAttempts;
+    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::SystemAddress>> failedConnectionAttempts;
+    ::ll::TypedStorage<4, 4, int>                                               threadPriority;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<uint64>>                   blockingSocketList;
+    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                            blockingSocketListMutex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TCPInterface& operator=(TCPInterface const&);
-    TCPInterface(TCPInterface const&);
 
 public:
     // virtual functions
@@ -101,29 +101,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void CloseConnection(::RakNet::SystemAddress systemAddress);
+    MCAPI void CloseConnection(::RakNet::SystemAddress systemAddress);
 
-    MCNAPI ::RakNet::SystemAddress
+    MCAPI ::RakNet::SystemAddress
     Connect(char const* host, ushort remotePort, bool block, ushort socketFamily, char const* bindAddress);
 
-    MCNAPI bool
+    MCAPI bool
     CreateListenSocket(ushort port, ushort maxIncomingConnections, ushort socketFamily, char const* bindAddress);
 
-    MCNAPI void GetConnectionList(::RakNet::SystemAddress* remoteSystems, ushort* numberOfSystems) const;
+    MCAPI void GetConnectionList(::RakNet::SystemAddress* remoteSystems, ushort* numberOfSystems) const;
 
-    MCNAPI uint GetOutgoingDataBufferSize(::RakNet::SystemAddress systemAddress) const;
+    MCAPI uint GetOutgoingDataBufferSize(::RakNet::SystemAddress systemAddress) const;
 
-    MCNAPI ::RakNet::SystemAddress HasCompletedConnectionAttempt();
+    MCAPI ::RakNet::SystemAddress HasCompletedConnectionAttempt();
 
-    MCNAPI ::RakNet::SystemAddress HasFailedConnectionAttempt();
+    MCAPI ::RakNet::SystemAddress HasFailedConnectionAttempt();
 
-    MCNAPI ::RakNet::SystemAddress HasLostConnection();
+    MCAPI ::RakNet::SystemAddress HasLostConnection();
 
-    MCNAPI ::RakNet::Packet* ReceiveInt();
+    MCAPI ::RakNet::Packet* ReceiveInt();
 
-    MCNAPI uint64 SocketConnect(char const* host, ushort remotePort, ushort socketFamily, char const* bindAddress);
+    MCAPI uint64 SocketConnect(char const* host, ushort remotePort, ushort socketFamily, char const* bindAddress);
 
-    MCNAPI bool Start(
+    MCAPI bool Start(
         ushort      port,
         ushort      maxIncomingConnections,
         ushort      maxConnections,
@@ -132,29 +132,29 @@ public:
         char const* bindAddress
     );
 
-    MCNAPI void Stop();
+    MCAPI void Stop();
 
-    MCNAPI TCPInterface();
+    MCAPI TCPInterface();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast);
+    MCAPI void $Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast);
 
-    MCNAPI bool $SendList(
+    MCAPI bool $SendList(
         char const**                   data,
         uint const*                    lengths,
         int const                      numParameters,
@@ -162,11 +162,11 @@ public:
         bool                           broadcast
     );
 
-    MCNAPI bool $ReceiveHasPackets();
+    MCAPI bool $ReceiveHasPackets();
 
-    MCNAPI ::RakNet::Packet* $Receive();
+    MCAPI ::RakNet::Packet* $Receive();
 
-    MCNAPI void $PushBackPacket(::RakNet::Packet* packet, bool pushAtHead);
+    MCAPI void $PushBackPacket(::RakNet::Packet* packet, bool pushAtHead);
     // NOLINTEND
 
 public:

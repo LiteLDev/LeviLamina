@@ -6,9 +6,12 @@
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
+#include "mc/deps/raknet/TMTopology.h"
+#include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace RakNet { class TM_World; }
 namespace RakNet { struct Packet; }
 namespace RakNet { struct RakNetGUID; }
 namespace RakNet { struct SystemAddress; }
@@ -20,17 +23,11 @@ class TeamManager : public ::RakNet::PluginInterface2 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 2040> mUnk1d9c6e;
-    ::ll::UntypedStorage<8, 16>   mUnkc70320;
-    ::ll::UntypedStorage<1, 1>    mUnk6ea09f;
-    ::ll::UntypedStorage<4, 4>    mUnk74c07d;
+    ::ll::TypedStorage<8, 2040, ::RakNet::TM_World* [255]>                 worldsArray;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::TM_World*>> worldsList;
+    ::ll::TypedStorage<1, 1, bool>                                         autoAddParticipants;
+    ::ll::TypedStorage<4, 4, ::RakNet::TMTopology>                         topology;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    TeamManager& operator=(TeamManager const&);
-    TeamManager(TeamManager const&);
-    TeamManager();
 
 public:
     // virtual functions

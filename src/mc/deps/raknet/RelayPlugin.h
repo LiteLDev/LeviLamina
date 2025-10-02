@@ -6,11 +6,14 @@
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
+#include "mc/deps/raknet/RakNetGUID.h"
+#include "mc/deps/raknet/RakString.h"
+#include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace DataStructures { class Hash; }
 namespace RakNet { struct Packet; }
-namespace RakNet { struct RakNetGUID; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on
 
@@ -30,62 +33,46 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk8f48d6;
-        ::ll::UntypedStorage<8, 16> mUnkc73f21;
-        ::ll::UntypedStorage<8, 8>  mUnk3039ae;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakString>   str;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID> guid;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakString>   currentRoom;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        StrAndGuidAndRoom& operator=(StrAndGuidAndRoom const&);
-        StrAndGuidAndRoom(StrAndGuidAndRoom const&);
-        StrAndGuidAndRoom();
     };
 
     struct StrAndGuid {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk8d469b;
-        ::ll::UntypedStorage<8, 16> mUnk86b3bb;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakString>   str;
+        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID> guid;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        StrAndGuid& operator=(StrAndGuid const&);
-        StrAndGuid(StrAndGuid const&);
-        StrAndGuid();
     };
 
     struct RP_Group {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkac78d8;
-        ::ll::UntypedStorage<8, 16> mUnk7d18f1;
+        ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                        roomName;
+        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::RelayPlugin::StrAndGuid>> usersInRoom;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        RP_Group& operator=(RP_Group const&);
-        RP_Group(RP_Group const&);
-        RP_Group();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk721270;
-    ::ll::UntypedStorage<8, 16> mUnk864903;
-    ::ll::UntypedStorage<8, 16> mUnk5bffef;
-    ::ll::UntypedStorage<1, 1>  mUnk5b7a2f;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::DataStructures::Hash<::RakNet::RakString, ::RakNet::RelayPlugin::StrAndGuidAndRoom*, 8096, $unknown_type>>
+        strToGuidHash;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::DataStructures::Hash<::RakNet::RakNetGUID, ::RakNet::RelayPlugin::StrAndGuidAndRoom*, 8096, $unknown_type>>
+                                                                                        guidToStrHash;
+    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::RelayPlugin::RP_Group*>> chatRooms;
+    ::ll::TypedStorage<1, 1, bool>                                                      acceptAddParticipantRequests;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RelayPlugin& operator=(RelayPlugin const&);
-    RelayPlugin(RelayPlugin const&);
-    RelayPlugin();
 
 public:
     // virtual functions

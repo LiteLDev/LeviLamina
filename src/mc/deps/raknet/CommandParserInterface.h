@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace DataStructures { class OrderedList; }
 namespace RakNet { class TransportInterface; }
 namespace RakNet { struct RegisteredCommand; }
 namespace RakNet { struct SystemAddress; }
@@ -15,14 +16,9 @@ class CommandParserInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkc6a11f;
+    ::ll::TypedStorage<8, 16, ::DataStructures::OrderedList<char const*, ::RakNet::RegisteredCommand, $unknown_type>>
+        commandList;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    CommandParserInterface& operator=(CommandParserInterface const&);
-    CommandParserInterface(CommandParserInterface const&);
-    CommandParserInterface();
 
 public:
     // virtual functions

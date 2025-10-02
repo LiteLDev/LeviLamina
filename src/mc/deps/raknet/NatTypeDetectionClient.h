@@ -7,13 +7,16 @@
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
 #include "mc/deps/raknet/RNS2EventHandler.h"
+#include "mc/deps/raknet/SimpleMutex.h"
+#include "mc/deps/raknet/SystemAddress.h"
+#include "mc/deps/raknet/data_structures/Queue.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace RakNet { class RakNetSocket2; }
 namespace RakNet { struct Packet; }
 namespace RakNet { struct RNS2RecvStruct; }
 namespace RakNet { struct RakNetGUID; }
-namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -22,17 +25,11 @@ class NatTypeDetectionClient : public ::RakNet::PluginInterface2, public ::RakNe
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk331e12;
-    ::ll::UntypedStorage<8, 40>  mUnk5f024d;
-    ::ll::UntypedStorage<8, 16>  mUnkd290ec;
-    ::ll::UntypedStorage<8, 136> mUnk5a2bf5;
+    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::RNS2RecvStruct*>> bufferedPackets;
+    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                              bufferedPacketsMutex;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RakNet::RakNetSocket2>>         c2;
+    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>                           serverAddress;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NatTypeDetectionClient& operator=(NatTypeDetectionClient const&);
-    NatTypeDetectionClient(NatTypeDetectionClient const&);
-    NatTypeDetectionClient();
 
 public:
     // virtual functions

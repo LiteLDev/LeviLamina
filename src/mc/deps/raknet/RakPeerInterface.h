@@ -367,13 +367,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static uint64 Get64BitUniqueRandomNumber();
+    MCAPI static uint64 Get64BitUniqueRandomNumber();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

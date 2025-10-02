@@ -26,17 +26,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool IsUndefined() const;
+    MCAPI bool IsUndefined() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::RakNet::RakNetGUID const& input);
+    MCAPI void* $ctor(::RakNet::RakNetGUID const& input);
 
-    MCNAPI void* $ctor(::RakNet::SystemAddress const& input);
+    MCAPI void* $ctor(::RakNet::SystemAddress const& input);
 
-    MCNAPI void* $ctor(::RakNet::AddressOrGUID const& input);
+    MCAPI void* $ctor(::RakNet::AddressOrGUID const& input);
     // NOLINTEND
 };
 
