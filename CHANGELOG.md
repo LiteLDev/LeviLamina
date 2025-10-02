@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.6.0] - 2025-10-02
+
+### Added
+
+- Enhanced SimulatedPlayer functionality with movement and interaction methods @OEOTYAN
+
+### Changed
+
+- Adapted to Minecraft 1.21.111.1 @OEOTYAN @ShrBox
+
+### Fixed
+
+- Use float literals for velocity in simulateStopMoving @OEOTYAN
+
 ## [1.5.2] - 2025-09-26
 
 ### Added
@@ -1098,7 +1112,8 @@ For lip and tooth-hub test only.
 [#1739]: https://github.com/LiteLDev/LeviLamina/issues/1739
 [#1747]: https://github.com/LiteLDev/LeviLamina/issues/1747
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.2...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.0...HEAD
+[1.6.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.2...v1.6.0
 [1.5.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.1...v1.5.2
 [1.5.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.4.4...v1.5.0
