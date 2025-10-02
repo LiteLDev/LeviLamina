@@ -196,3 +196,4 @@ Actor* Actor::tryGetFromEntity(::EntityContext& entity, bool includeRemoved) {
         includeRemoved
     );
 }
+::DimensionType Actor::getDimensionId() const { return getDimension().getDimensionId(); }

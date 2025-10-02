@@ -168,6 +168,8 @@ public:
 
     [[nodiscard]] bool hasCategory(ActorCategory category) const { return (mCategories & category) == category; }
 
+    LLNDAPI ::DimensionType getDimensionId() const;
+
 public:
     // member variables
     // NOLINTBEGIN
