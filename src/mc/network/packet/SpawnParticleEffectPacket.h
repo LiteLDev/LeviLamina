@@ -19,6 +19,10 @@ namespace cereal { struct ReflectionCtx; }
 MC_NETWORK_PACKET_DECALARE(SpawnParticleEffectPacket) {
 
 public:
+    template <typename... Args>
+    SpawnParticleEffectPacket(Args && ... args) : PayloadPacket(std::forward<Args>(args)...) {}
+
+public:
     // prevent constructor by default
     SpawnParticleEffectPacket();
 
