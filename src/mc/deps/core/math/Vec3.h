@@ -12,10 +12,6 @@ public:
     using floatN3::floatN3;
 
 public:
-    // prevent constructor by default
-    Vec3();
-
-public:
     // member functions
     // NOLINTBEGIN
     MCAPI bool isNan() const;

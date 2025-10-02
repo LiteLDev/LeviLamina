@@ -8,7 +8,7 @@ class SimpleMutex {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::_RTL_CRITICAL_SECTION> criticalSection;
+    ::ll::UntypedStorage<8, 40> criticalSection;
     // NOLINTEND
 
 public:

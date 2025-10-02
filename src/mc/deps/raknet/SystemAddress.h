@@ -9,9 +9,9 @@ public:
     // member variables
     // NOLINTBEGIN
     union {
-        ::ll::TypedStorage<8, 128, ::sockaddr_storage> sa_stor;
-        ::ll::TypedStorage<4, 128, ::sockaddr_in6>     addr6;
-        ::ll::TypedStorage<2, 128, ::sockaddr_in>      addr4;
+        ::ll::UntypedStorage<8, 128> sa_stor;
+        ::ll::UntypedStorage<4, 128> addr6;
+        ::ll::UntypedStorage<2, 128> addr4;
     } address;
     ::ll::TypedStorage<2, 2, ushort> debugPort;
     ::ll::TypedStorage<2, 2, ushort> systemIndex;
