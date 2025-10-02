@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/world/level/storage/LevelStorageEventing.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/file/PathBuffer.h"
@@ -37,10 +38,7 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DBStorageConfig& operator=(DBStorageConfig const&);
-    DBStorageConfig(DBStorageConfig const&);
-    DBStorageConfig();
+    DBStorageConfig(DBStorageConfig&&) = default;
 
 public:
     // member functions
