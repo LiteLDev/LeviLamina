@@ -4,16 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
-#include "mc/deps/raknet/PRO.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
-#include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { class Connection_RM3; }
-namespace RakNet { class NetworkIDManager; }
-namespace RakNet { class Replica3; }
 namespace RakNet { struct Packet; }
 namespace RakNet { struct RakNetGUID; }
 namespace RakNet { struct SystemAddress; }
@@ -33,26 +29,38 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::Connection_RM3*>> connectionList;
-        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::Replica3*>>       userReplicaList;
-        ::ll::TypedStorage<1, 1, uchar>                                              worldId;
-        ::ll::TypedStorage<8, 8, ::RakNet::NetworkIDManager*>                        networkIDManager;
+        ::ll::UntypedStorage<8, 16> mUnk7d05cb;
+        ::ll::UntypedStorage<8, 16> mUnk488ed8;
+        ::ll::UntypedStorage<1, 1>  mUnk276acd;
+        ::ll::UntypedStorage<8, 8>  mUnk897a58;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RM3World& operator=(RM3World const&);
+        RM3World(RM3World const&);
+        RM3World();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 16, ::RakNet::PRO>                                defaultSendParameters;
-    ::ll::TypedStorage<8, 8, uint64>                                        autoSerializeInterval;
-    ::ll::TypedStorage<8, 8, uint64>                                        lastAutoSerializeOccurance;
-    ::ll::TypedStorage<1, 1, bool>                                          autoCreateConnections;
-    ::ll::TypedStorage<1, 1, bool>                                          autoDestroyConnections;
-    ::ll::TypedStorage<8, 8, ::RakNet::Replica3*>                           currentlyDeallocatingReplica;
-    ::ll::TypedStorage<4, 4, uint>                                          nextReferenceIndex;
-    ::ll::TypedStorage<8, 2040, ::RakNet::ReplicaManager3::RM3World* [255]> worldsArray;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::ReplicaManager3::RM3World*>> worldsList;
+    ::ll::UntypedStorage<4, 16>   mUnke2a442;
+    ::ll::UntypedStorage<8, 8>    mUnk5a07cb;
+    ::ll::UntypedStorage<8, 8>    mUnkd01707;
+    ::ll::UntypedStorage<1, 1>    mUnk1afc11;
+    ::ll::UntypedStorage<1, 1>    mUnk4cf2be;
+    ::ll::UntypedStorage<8, 8>    mUnk699238;
+    ::ll::UntypedStorage<4, 4>    mUnk96de56;
+    ::ll::UntypedStorage<8, 2040> mUnka1f83b;
+    ::ll::UntypedStorage<8, 16>   mUnkc236ed;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ReplicaManager3& operator=(ReplicaManager3 const&);
+    ReplicaManager3(ReplicaManager3 const&);
+    ReplicaManager3();
 
 public:
     // virtual functions

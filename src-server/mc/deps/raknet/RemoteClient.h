@@ -2,24 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/SimpleMutex.h"
-#include "mc/deps/raknet/SystemAddress.h"
-#include "mc/deps/raknet/data_structures/ByteQueue.h"
-
 namespace RakNet {
 
 struct RemoteClient {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>                       socket;
-    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>    systemAddress;
-    ::ll::TypedStorage<8, 24, ::DataStructures::ByteQueue> outgoingData;
-    ::ll::TypedStorage<1, 1, bool>                         isActive;
-    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>       outgoingDataMutex;
-    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>       isActiveMutex;
+    ::ll::UntypedStorage<8, 8>   mUnk4c556f;
+    ::ll::UntypedStorage<8, 136> mUnk15dcb5;
+    ::ll::UntypedStorage<8, 24>  mUnk5eab4b;
+    ::ll::UntypedStorage<1, 1>   mUnk582874;
+    ::ll::UntypedStorage<8, 40>  mUnkdd2d6b;
+    ::ll::UntypedStorage<8, 40>  mUnke2d806;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RemoteClient& operator=(RemoteClient const&);
+    RemoteClient(RemoteClient const&);
 
 public:
     // member functions

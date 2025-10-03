@@ -11,8 +11,14 @@ class PacketFileLogger : public ::RakNet::PacketLogger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::_iobuf*> packetLogFile;
+    ::ll::UntypedStorage<8, 8> mUnkb542f8;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PacketFileLogger& operator=(PacketFileLogger const&);
+    PacketFileLogger(PacketFileLogger const&);
+    PacketFileLogger();
 
 public:
     // virtual functions

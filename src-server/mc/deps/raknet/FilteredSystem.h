@@ -2,20 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { struct FilterSet; }
-// clang-format on
-
 namespace RakNet {
 
 struct FilteredSystem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::RakNet::FilterSet*> filter;
-    ::ll::TypedStorage<4, 4, uint>                 timeEnteredThisSet;
+    ::ll::UntypedStorage<8, 8> mUnkedf821;
+    ::ll::UntypedStorage<4, 4> mUnkee4d85;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FilteredSystem& operator=(FilteredSystem const&);
+    FilteredSystem(FilteredSystem const&);
+    FilteredSystem();
 };
 
 } // namespace RakNet

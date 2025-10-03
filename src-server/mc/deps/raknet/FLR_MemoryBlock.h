@@ -8,8 +8,14 @@ struct FLR_MemoryBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, char*> flrMemoryBlock;
+    ::ll::UntypedStorage<8, 8> mUnkb30b49;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FLR_MemoryBlock& operator=(FLR_MemoryBlock const&);
+    FLR_MemoryBlock(FLR_MemoryBlock const&);
+    FLR_MemoryBlock();
 };
 
 } // namespace RakNet

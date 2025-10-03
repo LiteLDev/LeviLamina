@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/RakString.h"
-#include "mc/deps/raknet/data_structures/Queue.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace DataStructures { class Hash; }
-namespace DataStructures { class OrderedList; }
-// clang-format on
-
 namespace RakNet {
 
 class StatisticsHistory {
@@ -63,62 +53,83 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, uint64> time;
-        ::ll::TypedStorage<8, 8, double> val;
+        ::ll::UntypedStorage<8, 8> mUnkad983b;
+        ::ll::UntypedStorage<8, 8> mUnk8772bb;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TimeAndValue& operator=(TimeAndValue const&);
+        TimeAndValue(TimeAndValue const&);
+        TimeAndValue();
     };
 
     struct TimeAndValueQueue {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::StatisticsHistory::TimeAndValue>> values;
-        ::ll::TypedStorage<8, 8, uint64>                                                              timeToTrackValues;
-        ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                                 key;
-        ::ll::TypedStorage<8, 8, double>                                                              recentSum;
-        ::ll::TypedStorage<8, 8, double> recentSumOfSquares;
-        ::ll::TypedStorage<8, 8, double> longTermSum;
-        ::ll::TypedStorage<8, 8, double> longTermCount;
-        ::ll::TypedStorage<8, 8, double> longTermLowest;
-        ::ll::TypedStorage<8, 8, double> longTermHighest;
-        ::ll::TypedStorage<8, 8, double> sortValue;
+        ::ll::UntypedStorage<8, 24> mUnk1c5e51;
+        ::ll::UntypedStorage<8, 8>  mUnkb5853a;
+        ::ll::UntypedStorage<8, 8>  mUnk135809;
+        ::ll::UntypedStorage<8, 8>  mUnk13803d;
+        ::ll::UntypedStorage<8, 8>  mUnk647c66;
+        ::ll::UntypedStorage<8, 8>  mUnk4e4bba;
+        ::ll::UntypedStorage<8, 8>  mUnkdcb95f;
+        ::ll::UntypedStorage<8, 8>  mUnk8aa776;
+        ::ll::UntypedStorage<8, 8>  mUnkb37d56;
+        ::ll::UntypedStorage<8, 8>  mUnka6bf59;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TimeAndValueQueue& operator=(TimeAndValueQueue const&);
+        TimeAndValueQueue(TimeAndValueQueue const&);
+        TimeAndValueQueue();
     };
 
     struct TrackedObjectData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, uint64> objectId;
-        ::ll::TypedStorage<4, 4, int>    objectType;
-        ::ll::TypedStorage<8, 8, void*>  userData;
+        ::ll::UntypedStorage<8, 8> mUnk5c89ed;
+        ::ll::UntypedStorage<4, 4> mUnk70dedd;
+        ::ll::UntypedStorage<8, 8> mUnk599f02;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TrackedObjectData& operator=(TrackedObjectData const&);
+        TrackedObjectData(TrackedObjectData const&);
+        TrackedObjectData();
     };
 
     struct TrackedObject {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::RakNet::StatisticsHistory::TrackedObjectData> trackedObjectData;
-        ::ll::TypedStorage<
-            8,
-            16,
-            ::DataStructures::
-                Hash<::RakNet::RakString, ::RakNet::StatisticsHistory::TimeAndValueQueue*, 32, $unknown_type>>
-            dataQueues;
+        ::ll::UntypedStorage<8, 24> mUnk158e8b;
+        ::ll::UntypedStorage<8, 16> mUnk36d86c;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TrackedObject& operator=(TrackedObject const&);
+        TrackedObject(TrackedObject const&);
+        TrackedObject();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::DataStructures::OrderedList<uint64, ::RakNet::StatisticsHistory::TrackedObject*, $unknown_type>>
-                                     objects;
-    ::ll::TypedStorage<8, 8, uint64> timeToTrack;
+    ::ll::UntypedStorage<8, 16> mUnk710e99;
+    ::ll::UntypedStorage<8, 8>  mUnkb5f4a4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    StatisticsHistory& operator=(StatisticsHistory const&);
+    StatisticsHistory(StatisticsHistory const&);
+    StatisticsHistory();
 
 public:
     // virtual functions

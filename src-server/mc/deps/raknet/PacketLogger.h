@@ -17,12 +17,18 @@ class PacketLogger : public ::RakNet::PluginInterface2 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>        logDirectMessages;
-    ::ll::TypedStorage<1, 1, bool>        printId;
-    ::ll::TypedStorage<1, 1, bool>        printAcks;
-    ::ll::TypedStorage<1, 256, char[256]> prefix;
-    ::ll::TypedStorage<1, 256, char[256]> suffix;
+    ::ll::UntypedStorage<1, 1>   mUnka75ee5;
+    ::ll::UntypedStorage<1, 1>   mUnk6e7e17;
+    ::ll::UntypedStorage<1, 1>   mUnk72a124;
+    ::ll::UntypedStorage<1, 256> mUnk439e27;
+    ::ll::UntypedStorage<1, 256> mUnk2674b6;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PacketLogger& operator=(PacketLogger const&);
+    PacketLogger(PacketLogger const&);
+    PacketLogger();
 
 public:
     // virtual functions

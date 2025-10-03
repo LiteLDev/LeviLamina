@@ -8,8 +8,14 @@ class ReferenceCounter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> refCount;
+    ::ll::UntypedStorage<4, 4> mUnk14af39;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ReferenceCounter& operator=(ReferenceCounter const&);
+    ReferenceCounter(ReferenceCounter const&);
+    ReferenceCounter();
 };
 
 } // namespace RakNet

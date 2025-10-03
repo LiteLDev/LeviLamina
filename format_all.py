@@ -84,4 +84,6 @@ if __name__ == "__main__":
 
     print(f"开始 {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}")
     format_code_files("./src", clang_format_path)
+    format_code_files("./src-server", clang_format_path)
+    format_code_files("./src-client", clang_format_path)
     print(f"结束 {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}")

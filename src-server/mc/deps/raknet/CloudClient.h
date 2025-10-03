@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/raknet/CloudAllocator.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
 #include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace RakNet { class CloudAllocator; }
 namespace RakNet { class CloudClientCallback; }
 namespace RakNet { struct CloudKey; }
 namespace RakNet { struct CloudQuery; }
@@ -25,10 +25,16 @@ class CloudClient : public ::RakNet::PluginInterface2 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::RakNet::CloudClientCallback*> callback;
-    ::ll::TypedStorage<8, 8, ::RakNet::CloudAllocator*>      allocator;
-    ::ll::TypedStorage<1, 8, ::RakNet::CloudAllocator>       unsetDefaultAllocator;
+    ::ll::UntypedStorage<8, 8> mUnkdae1cb;
+    ::ll::UntypedStorage<8, 8> mUnkf7e494;
+    ::ll::UntypedStorage<1, 8> mUnkbd0590;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CloudClient& operator=(CloudClient const&);
+    CloudClient(CloudClient const&);
+    CloudClient();
 
 public:
     // virtual functions

@@ -6,12 +6,11 @@
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
-#include "mc/deps/raknet/RakNetGUID.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace DataStructures { class OrderedList; }
 namespace RakNet { struct Packet; }
+namespace RakNet { struct RakNetGUID; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on
 
@@ -30,33 +29,46 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, uchar>                 lastSentStatus;
-        ::ll::TypedStorage<1, 1, uchar>                 lastReceivedStatus;
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID> rakNetGuid;
+        ::ll::UntypedStorage<1, 1>  mUnk958ed8;
+        ::ll::UntypedStorage<1, 1>  mUnka18232;
+        ::ll::UntypedStorage<8, 16> mUnk728df4;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RemoteSystem& operator=(RemoteSystem const&);
+        RemoteSystem(RemoteSystem const&);
+        RemoteSystem();
     };
 
     struct ReadyEventNode {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>   eventId;
-        ::ll::TypedStorage<1, 1, uchar> eventStatus;
-        ::ll::TypedStorage<
-            8,
-            16,
-            ::DataStructures::OrderedList<::RakNet::RakNetGUID, ::RakNet::ReadyEvent::RemoteSystem, $unknown_type>>
-            systemList;
+        ::ll::UntypedStorage<4, 4>  mUnk813f84;
+        ::ll::UntypedStorage<1, 1>  mUnkd13a28;
+        ::ll::UntypedStorage<8, 16> mUnk95d354;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ReadyEventNode& operator=(ReadyEventNode const&);
+        ReadyEventNode(ReadyEventNode const&);
+        ReadyEventNode();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::DataStructures::OrderedList<int, ::RakNet::ReadyEvent::ReadyEventNode*, $unknown_type>>
-                                    readyEventNodeList;
-    ::ll::TypedStorage<1, 1, uchar> channel;
+    ::ll::UntypedStorage<8, 16> mUnkec8a46;
+    ::ll::UntypedStorage<1, 1>  mUnkf932a4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ReadyEvent& operator=(ReadyEvent const&);
+    ReadyEvent(ReadyEvent const&);
+    ReadyEvent();
 
 public:
     // virtual functions

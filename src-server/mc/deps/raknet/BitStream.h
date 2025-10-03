@@ -8,13 +8,19 @@ class BitStream {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>         numberOfBitsUsed;
-    ::ll::TypedStorage<4, 4, uint>         numberOfBitsAllocated;
-    ::ll::TypedStorage<4, 4, uint>         readOffset;
-    ::ll::TypedStorage<8, 8, uchar*>       data;
-    ::ll::TypedStorage<1, 1, bool>         copyData;
-    ::ll::TypedStorage<1, 256, uchar[256]> stackData;
+    ::ll::UntypedStorage<4, 4>   mUnk2f223f;
+    ::ll::UntypedStorage<4, 4>   mUnk9ced5a;
+    ::ll::UntypedStorage<4, 4>   mUnkb3cc97;
+    ::ll::UntypedStorage<8, 8>   mUnk87a405;
+    ::ll::UntypedStorage<1, 1>   mUnkb9b8cd;
+    ::ll::UntypedStorage<1, 256> mUnkb60a72;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BitStream& operator=(BitStream const&);
+    BitStream(BitStream const&);
+    BitStream();
 
 public:
     // member functions

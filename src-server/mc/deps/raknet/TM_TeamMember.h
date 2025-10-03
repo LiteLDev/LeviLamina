@@ -2,16 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/JoinTeamType.h"
-#include "mc/deps/raknet/data_structures/List.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { class TM_Team; }
-namespace RakNet { class TM_World; }
-// clang-format on
-
 namespace RakNet {
 
 class TM_TeamMember {
@@ -26,28 +16,40 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, uint64>             whenRequested;
-        ::ll::TypedStorage<4, 4, uint>               requestIndex;
-        ::ll::TypedStorage<8, 8, ::RakNet::TM_Team*> requested;
-        ::ll::TypedStorage<1, 1, bool>               isTeamSwitch;
-        ::ll::TypedStorage<8, 8, ::RakNet::TM_Team*> teamToLeave;
+        ::ll::UntypedStorage<8, 8> mUnk56ddf2;
+        ::ll::UntypedStorage<4, 4> mUnk7f8cd2;
+        ::ll::UntypedStorage<8, 8> mUnkc87d9c;
+        ::ll::UntypedStorage<1, 1> mUnka5b4fc;
+        ::ll::UntypedStorage<8, 8> mUnkf9e51e;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RequestedTeam& operator=(RequestedTeam const&);
+        RequestedTeam(RequestedTeam const&);
+        RequestedTeam();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>                                                          networkId;
-    ::ll::TypedStorage<8, 8, ::RakNet::TM_World*>                                             world;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::TM_Team*>>                     teams;
-    ::ll::TypedStorage<1, 1, uchar>                                                           noTeamSubcategory;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::TM_TeamMember::RequestedTeam>> teamsRequested;
-    ::ll::TypedStorage<4, 4, ::RakNet::JoinTeamType>                                          joinTeamType;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::TM_Team*>>                     lastTeams;
-    ::ll::TypedStorage<8, 8, uint64>                                                          whenJoinAnyRequested;
-    ::ll::TypedStorage<4, 4, uint>                                                            joinAnyRequestIndex;
-    ::ll::TypedStorage<8, 8, void*>                                                           owner;
+    ::ll::UntypedStorage<8, 8>  mUnk611b3f;
+    ::ll::UntypedStorage<8, 8>  mUnk25d0e1;
+    ::ll::UntypedStorage<8, 16> mUnkf7d8b1;
+    ::ll::UntypedStorage<1, 1>  mUnkc1fb03;
+    ::ll::UntypedStorage<8, 16> mUnk4b7d60;
+    ::ll::UntypedStorage<4, 4>  mUnkf6b4da;
+    ::ll::UntypedStorage<8, 16> mUnkdf4bdd;
+    ::ll::UntypedStorage<8, 8>  mUnkad3bd2;
+    ::ll::UntypedStorage<4, 4>  mUnkbe7baf;
+    ::ll::UntypedStorage<8, 8>  mUnk15589c;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    TM_TeamMember& operator=(TM_TeamMember const&);
+    TM_TeamMember(TM_TeamMember const&);
+    TM_TeamMember();
 
 public:
     // virtual functions

@@ -7,16 +7,12 @@
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
-#include "mc/deps/raknet/RakNetGUID.h"
-#include "mc/deps/raknet/SimpleMutex.h"
-#include "mc/deps/raknet/SystemAddress.h"
-#include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace RakNet { class UDPForwarder; }
 namespace RakNet { struct Packet; }
-namespace RakNet { struct Router2DebugInterface; }
+namespace RakNet { struct RakNetGUID; }
+namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -41,70 +37,99 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID> guid;
-        ::ll::TypedStorage<4, 4, int>                   pingToEndpoint;
-        ::ll::TypedStorage<2, 2, ushort>                usedForwardingEntries;
+        ::ll::UntypedStorage<8, 16> mUnk79af13;
+        ::ll::UntypedStorage<4, 4>  mUnk40b72f;
+        ::ll::UntypedStorage<2, 2>  mUnke2ee60;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ConnectionRequestSystem& operator=(ConnectionRequestSystem const&);
+        ConnectionRequestSystem(ConnectionRequestSystem const&);
+        ConnectionRequestSystem();
     };
 
     struct ConnnectRequest {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::Router2::ConnectionRequestSystem>>
-                                                                          connectionRequestSystems;
-        ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                  connectionRequestSystemsMutex;
-        ::ll::TypedStorage<4, 4, ::RakNet::Router2::Router2RequestStates> requestState;
-        ::ll::TypedStorage<4, 4, uint>                                    pingTimeout;
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>                   endpointGuid;
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>                   lastRequestedForwardingSystem;
-        ::ll::TypedStorage<1, 1, bool>                                    returnConnectionLostOnFailure;
+        ::ll::UntypedStorage<8, 16> mUnk8c362a;
+        ::ll::UntypedStorage<8, 40> mUnka6fe9e;
+        ::ll::UntypedStorage<4, 4>  mUnkd7eb17;
+        ::ll::UntypedStorage<4, 4>  mUnka4470f;
+        ::ll::UntypedStorage<8, 16> mUnk20d261;
+        ::ll::UntypedStorage<8, 16> mUnk8cb9d9;
+        ::ll::UntypedStorage<1, 1>  mUnk197687;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ConnnectRequest& operator=(ConnnectRequest const&);
+        ConnnectRequest(ConnnectRequest const&);
+        ConnnectRequest();
     };
 
     struct MiniPunchRequest {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     endpointGuid;
-        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> endpointAddress;
-        ::ll::TypedStorage<1, 1, bool>                      gotReplyFromEndpoint;
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     sourceGuid;
-        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> sourceAddress;
-        ::ll::TypedStorage<1, 1, bool>                      gotReplyFromSource;
-        ::ll::TypedStorage<4, 4, uint>                      timeout;
-        ::ll::TypedStorage<4, 4, uint>                      nextAction;
-        ::ll::TypedStorage<2, 2, ushort>                    forwardingPort;
-        ::ll::TypedStorage<8, 8, uint64>                    forwardingSocket;
+        ::ll::UntypedStorage<8, 16>  mUnk44df54;
+        ::ll::UntypedStorage<8, 136> mUnk4ec4f5;
+        ::ll::UntypedStorage<1, 1>   mUnke20bf0;
+        ::ll::UntypedStorage<8, 16>  mUnkf0d333;
+        ::ll::UntypedStorage<8, 136> mUnkbcf44f;
+        ::ll::UntypedStorage<1, 1>   mUnk4a22cf;
+        ::ll::UntypedStorage<4, 4>   mUnk7de0b2;
+        ::ll::UntypedStorage<4, 4>   mUnkfa08aa;
+        ::ll::UntypedStorage<2, 2>   mUnkdcc84a;
+        ::ll::UntypedStorage<8, 8>   mUnkefe69e;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        MiniPunchRequest& operator=(MiniPunchRequest const&);
+        MiniPunchRequest(MiniPunchRequest const&);
+        MiniPunchRequest();
     };
 
     struct ForwardedConnection {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     endpointGuid;
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     intermediaryGuid;
-        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> intermediaryAddress;
-        ::ll::TypedStorage<1, 1, bool>                      returnConnectionLostOnFailure;
-        ::ll::TypedStorage<1, 1, bool>                      weInitiatedForwarding;
+        ::ll::UntypedStorage<8, 16>  mUnk56a891;
+        ::ll::UntypedStorage<8, 16>  mUnk23fa29;
+        ::ll::UntypedStorage<8, 136> mUnkf5d213;
+        ::ll::UntypedStorage<1, 1>   mUnkee5cf2;
+        ::ll::UntypedStorage<1, 1>   mUnkd88e9a;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ForwardedConnection& operator=(ForwardedConnection const&);
+        ForwardedConnection(ForwardedConnection const&);
+        ForwardedConnection();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::RakNet::UDPForwarder*>                                      udpForwarder;
-    ::ll::TypedStorage<4, 4, int>                                                          maximumForwardingRequests;
-    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                                       connectionRequestsMutex;
-    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                                       miniPunchesInProgressMutex;
-    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                                       forwardedConnectionListMutex;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::Router2::ConnnectRequest*>> connectionRequests;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::Router2::MiniPunchRequest>> miniPunchesInProgress;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::Router2::ForwardedConnection>> forwardedConnectionList;
-    ::ll::TypedStorage<8, 8, ::RakNet::Router2DebugInterface*>                                debugInterface;
-    ::ll::TypedStorage<2, 2, ushort>                                                          socketFamily;
+    ::ll::UntypedStorage<8, 8>  mUnk5c003a;
+    ::ll::UntypedStorage<4, 4>  mUnk5aa39a;
+    ::ll::UntypedStorage<8, 40> mUnkd3d601;
+    ::ll::UntypedStorage<8, 40> mUnkf34110;
+    ::ll::UntypedStorage<8, 40> mUnkc92e56;
+    ::ll::UntypedStorage<8, 16> mUnk40f14f;
+    ::ll::UntypedStorage<8, 16> mUnk858659;
+    ::ll::UntypedStorage<8, 16> mUnkb59eef;
+    ::ll::UntypedStorage<8, 8>  mUnkf93660;
+    ::ll::UntypedStorage<2, 2>  mUnk894cdb;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Router2& operator=(Router2 const&);
+    Router2(Router2 const&);
+    Router2();
 
 public:
     // virtual functions

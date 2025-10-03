@@ -2,26 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/SystemAddress.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { class RakNetSocket2; }
-// clang-format on
-
 namespace RakNet {
 
 struct RNS2RecvStruct {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1600, char[1600]>             data;
-    ::ll::TypedStorage<4, 4, int>                       bytesRead;
-    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
-    ::ll::TypedStorage<8, 8, uint64>                    timeRead;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakNetSocket2*>  socket;
+    ::ll::UntypedStorage<1, 1600> mUnk32bfe3;
+    ::ll::UntypedStorage<4, 4>    mUnk475ecf;
+    ::ll::UntypedStorage<8, 136>  mUnk74fa55;
+    ::ll::UntypedStorage<8, 8>    mUnkf7b14d;
+    ::ll::UntypedStorage<8, 8>    mUnk209b03;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RNS2RecvStruct& operator=(RNS2RecvStruct const&);
+    RNS2RecvStruct(RNS2RecvStruct const&);
+    RNS2RecvStruct();
 };
 
 } // namespace RakNet

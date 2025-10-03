@@ -2,36 +2,32 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/SystemAddress.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace DataStructures { class Map; }
-namespace RakNet { class FileListTransferCBInterface; }
-namespace RakNet { struct FLR_MemoryBlock; }
-// clang-format on
-
 namespace RakNet {
 
 struct FileListReceiver {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::RakNet::FileListTransferCBInterface*> downloadHandler;
-    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>              allowedSender;
-    ::ll::TypedStorage<2, 2, ushort>                                 setID;
-    ::ll::TypedStorage<4, 4, uint>                                   setCount;
-    ::ll::TypedStorage<4, 4, uint>                                   setTotalCompressedTransmissionLength;
-    ::ll::TypedStorage<4, 4, uint>                                   setTotalFinalLength;
-    ::ll::TypedStorage<4, 4, uint>                                   setTotalDownloadedLength;
-    ::ll::TypedStorage<1, 1, bool>                                   gotSetHeader;
-    ::ll::TypedStorage<1, 1, bool>                                   deleteDownloadHandler;
-    ::ll::TypedStorage<1, 1, bool>                                   isCompressed;
-    ::ll::TypedStorage<4, 4, int>                                    filesReceived;
-    ::ll::TypedStorage<8, 32, ::DataStructures::Map<uint, ::RakNet::FLR_MemoryBlock, $unknown_type>> pushedFiles;
-    ::ll::TypedStorage<4, 4, uint>                                                                   partLength;
+    ::ll::UntypedStorage<8, 8>   mUnk3de840;
+    ::ll::UntypedStorage<8, 136> mUnk88f252;
+    ::ll::UntypedStorage<2, 2>   mUnk52efe1;
+    ::ll::UntypedStorage<4, 4>   mUnka593e7;
+    ::ll::UntypedStorage<4, 4>   mUnk766b2e;
+    ::ll::UntypedStorage<4, 4>   mUnk30df75;
+    ::ll::UntypedStorage<4, 4>   mUnk2f7b7f;
+    ::ll::UntypedStorage<1, 1>   mUnk6e0a93;
+    ::ll::UntypedStorage<1, 1>   mUnkc2fc97;
+    ::ll::UntypedStorage<1, 1>   mUnk63a1ed;
+    ::ll::UntypedStorage<4, 4>   mUnk5b6fd3;
+    ::ll::UntypedStorage<8, 32>  mUnkae8526;
+    ::ll::UntypedStorage<4, 4>   mUnk9b478d;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FileListReceiver& operator=(FileListReceiver const&);
+    FileListReceiver(FileListReceiver const&);
+    FileListReceiver();
 };
 
 } // namespace RakNet

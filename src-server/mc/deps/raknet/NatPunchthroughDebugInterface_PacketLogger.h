@@ -5,19 +5,20 @@
 // auto generated inclusion list
 #include "mc/deps/raknet/NatPunchthroughDebugInterface.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { class PacketLogger; }
-// clang-format on
-
 namespace RakNet {
 
 struct NatPunchthroughDebugInterface_PacketLogger : public ::RakNet::NatPunchthroughDebugInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::RakNet::PacketLogger*> pl;
+    ::ll::UntypedStorage<8, 8> mUnk34a73b;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    NatPunchthroughDebugInterface_PacketLogger& operator=(NatPunchthroughDebugInterface_PacketLogger const&);
+    NatPunchthroughDebugInterface_PacketLogger(NatPunchthroughDebugInterface_PacketLogger const&);
+    NatPunchthroughDebugInterface_PacketLogger();
 
 public:
     // virtual functions

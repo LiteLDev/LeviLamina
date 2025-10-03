@@ -3,19 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/raknet/BitStream.h"
 #include "mc/deps/raknet/PI2_FailedConnectionAttemptReason.h"
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
-#include "mc/deps/raknet/RakNetGUID.h"
-#include "mc/deps/raknet/RakString.h"
-#include "mc/deps/raknet/SystemAddress.h"
 #include "mc/deps/raknet/data_structures/List.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace RakNet { class BitStream; }
 namespace RakNet { struct Packet; }
+namespace RakNet { struct RakNetGUID; }
+namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -34,9 +33,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, int64>                 fcm2Guid;
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID> rakNetGuid;
+        ::ll::UntypedStorage<8, 8>  mUnkd3b800;
+        ::ll::UntypedStorage<8, 16> mUnka116e0;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FCM2Participant& operator=(FCM2Participant const&);
+        FCM2Participant(FCM2Participant const&);
+        FCM2Participant();
     };
 
     enum class JoinInProgressState : int {
@@ -50,42 +55,57 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>                          systemAddress;
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>                              guid;
-        ::ll::TypedStorage<4, 4, ::RakNet::FullyConnectedMesh2::JoinInProgressState> joinInProgressState;
-        ::ll::TypedStorage<8, 8, ::RakNet::BitStream*>                               userData;
-        ::ll::TypedStorage<1, 1, bool>                                               workingFlag;
+        ::ll::UntypedStorage<8, 136> mUnkd2dd5d;
+        ::ll::UntypedStorage<8, 16>  mUnkb562b3;
+        ::ll::UntypedStorage<4, 4>   mUnk99045d;
+        ::ll::UntypedStorage<8, 8>   mUnk775fe8;
+        ::ll::UntypedStorage<1, 1>   mUnke52207;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        VerifiedJoinInProgressMember& operator=(VerifiedJoinInProgressMember const&);
+        VerifiedJoinInProgressMember(VerifiedJoinInProgressMember const&);
+        VerifiedJoinInProgressMember();
     };
 
     struct VerifiedJoinInProgress {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID> requester;
-        ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::FullyConnectedMesh2::VerifiedJoinInProgressMember>>
-            vjipMembers;
+        ::ll::UntypedStorage<8, 16> mUnkf47efe;
+        ::ll::UntypedStorage<8, 16> mUnk8541f4;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        VerifiedJoinInProgress& operator=(VerifiedJoinInProgress const&);
+        VerifiedJoinInProgress(VerifiedJoinInProgress const&);
+        VerifiedJoinInProgress();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64> startupTime;
-    ::ll::TypedStorage<1, 1, bool>   autoParticipateConnections;
-    ::ll::TypedStorage<4, 4, uint>   totalConnectionCount;
-    ::ll::TypedStorage<8, 8, int64>  ourFCMGuid;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::FullyConnectedMesh2::FCM2Participant*>>
-                                                    fcm2ParticipantList;
-    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID> lastPushedHost;
-    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID> hostRakNetGuid;
-    ::ll::TypedStorage<8, 8, int64>                 hostFCM2Guid;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>   connectionPassword;
-    ::ll::TypedStorage<1, 1, bool>                  connectOnNewRemoteConnections;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::FullyConnectedMesh2::VerifiedJoinInProgress*>>
-                                                    joinsInProgress;
-    ::ll::TypedStorage<8, 288, ::RakNet::BitStream> myContext;
+    ::ll::UntypedStorage<8, 8>   mUnk181b6d;
+    ::ll::UntypedStorage<1, 1>   mUnkc7d6cb;
+    ::ll::UntypedStorage<4, 4>   mUnkaa2fc6;
+    ::ll::UntypedStorage<8, 8>   mUnk42ee15;
+    ::ll::UntypedStorage<8, 16>  mUnk86a935;
+    ::ll::UntypedStorage<8, 16>  mUnk232c51;
+    ::ll::UntypedStorage<8, 16>  mUnkde6ad5;
+    ::ll::UntypedStorage<8, 8>   mUnkaf1cc5;
+    ::ll::UntypedStorage<8, 8>   mUnkfc9908;
+    ::ll::UntypedStorage<1, 1>   mUnk316266;
+    ::ll::UntypedStorage<8, 16>  mUnk4f5886;
+    ::ll::UntypedStorage<8, 288> mUnke3777e;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FullyConnectedMesh2& operator=(FullyConnectedMesh2 const&);
+    FullyConnectedMesh2(FullyConnectedMesh2 const&);
+    FullyConnectedMesh2();
 
 public:
     // virtual functions

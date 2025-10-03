@@ -7,17 +7,13 @@
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
 #include "mc/deps/raknet/RNS2EventHandler.h"
-#include "mc/deps/raknet/RakNetGUID.h"
-#include "mc/deps/raknet/SimpleMutex.h"
-#include "mc/deps/raknet/SystemAddress.h"
-#include "mc/deps/raknet/data_structures/List.h"
-#include "mc/deps/raknet/data_structures/Queue.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace RakNet { class RakNetSocket2; }
 namespace RakNet { struct Packet; }
 namespace RakNet { struct RNS2RecvStruct; }
+namespace RakNet { struct RakNetGUID; }
+namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -47,28 +43,39 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>                           systemAddress;
-        ::ll::TypedStorage<4, 4, ::RakNet::NatTypeDetectionServer::NATDetectionState> detectionState;
-        ::ll::TypedStorage<4, 4, uint>                                                nextStateTime;
-        ::ll::TypedStorage<4, 4, uint>                                                timeBetweenAttempts;
-        ::ll::TypedStorage<2, 2, ushort>                                              c2Port;
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>                               guid;
+        ::ll::UntypedStorage<8, 136> mUnkdb18b7;
+        ::ll::UntypedStorage<4, 4>   mUnk35212e;
+        ::ll::UntypedStorage<4, 4>   mUnk49949a;
+        ::ll::UntypedStorage<4, 4>   mUnk469dad;
+        ::ll::UntypedStorage<2, 2>   mUnk54ccbd;
+        ::ll::UntypedStorage<8, 16>  mUnkd32b0b;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        NATDetectionAttempt& operator=(NATDetectionAttempt const&);
+        NATDetectionAttempt(NATDetectionAttempt const&);
+        NATDetectionAttempt();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::RNS2RecvStruct*>> bufferedPackets;
-    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                              bufferedPacketsMutex;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::NatTypeDetectionServer::NATDetectionAttempt>>
-                                                                          natDetectionAttempts;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RakNet::RakNetSocket2>> s1p2;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RakNet::RakNetSocket2>> s2p3;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RakNet::RakNetSocket2>> s3p4;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RakNet::RakNetSocket2>> s4p5;
-    ::ll::TypedStorage<1, 64, char[64]>                                   s3p4Address;
+    ::ll::UntypedStorage<8, 24> mUnk8248e3;
+    ::ll::UntypedStorage<8, 40> mUnkf6027a;
+    ::ll::UntypedStorage<8, 16> mUnk6255a4;
+    ::ll::UntypedStorage<8, 16> mUnk14b9c9;
+    ::ll::UntypedStorage<8, 16> mUnk618be4;
+    ::ll::UntypedStorage<8, 16> mUnk5db0b8;
+    ::ll::UntypedStorage<8, 16> mUnk485126;
+    ::ll::UntypedStorage<1, 64> mUnk502297;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    NatTypeDetectionServer& operator=(NatTypeDetectionServer const&);
+    NatTypeDetectionServer(NatTypeDetectionServer const&);
+    NatTypeDetectionServer();
 
 public:
     // virtual functions

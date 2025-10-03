@@ -4,12 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/deps/raknet/TCPInterface.h"
-#include "mc/deps/raknet/data_structures/Queue.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace DataStructures { class ByteQueue; }
-namespace DataStructures { class Map; }
 namespace RakNet { struct Packet; }
 namespace RakNet { struct SystemAddress; }
 // clang-format on
@@ -20,17 +17,19 @@ class PacketizedTCP : public ::RakNet::TCPInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::Packet*>> waitingPackets;
-    ::ll::TypedStorage<
-        8,
-        168,
-        ::DataStructures::Map<::RakNet::SystemAddress, ::DataStructures::ByteQueue*, $unknown_type>>
-                                                                                connections;
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::SystemAddress>> _newIncomingConnections;
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::SystemAddress>> _lostConnections;
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::SystemAddress>> _failedConnectionAttempts;
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::SystemAddress>> _completedConnectionAttempts;
+    ::ll::UntypedStorage<8, 24>  mUnke16eaa;
+    ::ll::UntypedStorage<8, 168> mUnk39e085;
+    ::ll::UntypedStorage<8, 24>  mUnk4117bd;
+    ::ll::UntypedStorage<8, 24>  mUnk1b82f1;
+    ::ll::UntypedStorage<8, 24>  mUnka9ed7b;
+    ::ll::UntypedStorage<8, 24>  mUnkccf08c;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PacketizedTCP& operator=(PacketizedTCP const&);
+    PacketizedTCP(PacketizedTCP const&);
+    PacketizedTCP();
 
 public:
     // virtual functions

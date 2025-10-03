@@ -3,22 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/raknet/RakNetGUID.h"
 #include "mc/deps/raknet/SendSerializeIfChangedResult.h"
-#include "mc/deps/raknet/SystemAddress.h"
 #include "mc/deps/raknet/data_structures/List.h"
-#include "mc/deps/raknet/data_structures/Queue.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace DataStructures { class OrderedList; }
 namespace RakNet { class BitStream; }
 namespace RakNet { class RakPeerInterface; }
 namespace RakNet { class Replica3; }
 namespace RakNet { class ReplicaManager3; }
 namespace RakNet { struct LastSerializationResult; }
 namespace RakNet { struct PRO; }
-namespace RakNet { struct Packet; }
 namespace RakNet { struct SerializeParameters; }
 // clang-format on
 
@@ -36,25 +31,27 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                      isValidated;
-    ::ll::TypedStorage<1, 1, bool>                      isFirstConstruction;
-    ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
-    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     guid;
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::DataStructures::OrderedList<::RakNet::Replica3*, ::RakNet::LastSerializationResult*, $unknown_type>>
-                                                                                          constructedReplicaList;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::LastSerializationResult*>> queryToConstructReplicaList;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::LastSerializationResult*>> queryToSerializeReplicaList;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::LastSerializationResult*>> queryToDestructReplicaList;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::Replica3*>>                constructedReplicasCulled;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::Replica3*>>                destroyedReplicasCulled;
-    ::ll::TypedStorage<1, 1, bool>                                                        groupConstructionAndSerialize;
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::Packet*>>                 downloadGroup;
-    ::ll::TypedStorage<1, 1, bool>                                                        gotDownloadComplete;
-    ::ll::TypedStorage<4, 4, ::RakNet::Connection_RM3::ConstructionMode>                  constructionMode;
+    ::ll::UntypedStorage<1, 1>   mUnk4719ed;
+    ::ll::UntypedStorage<1, 1>   mUnkbb7fd9;
+    ::ll::UntypedStorage<8, 136> mUnka34d2b;
+    ::ll::UntypedStorage<8, 16>  mUnk66208a;
+    ::ll::UntypedStorage<8, 16>  mUnk560121;
+    ::ll::UntypedStorage<8, 16>  mUnkc31f4d;
+    ::ll::UntypedStorage<8, 16>  mUnk249481;
+    ::ll::UntypedStorage<8, 16>  mUnka07060;
+    ::ll::UntypedStorage<8, 16>  mUnk8b273f;
+    ::ll::UntypedStorage<8, 16>  mUnk35727e;
+    ::ll::UntypedStorage<1, 1>   mUnkcb13c1;
+    ::ll::UntypedStorage<8, 24>  mUnkca9727;
+    ::ll::UntypedStorage<1, 1>   mUnke0417e;
+    ::ll::UntypedStorage<4, 4>   mUnk529875;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Connection_RM3& operator=(Connection_RM3 const&);
+    Connection_RM3(Connection_RM3 const&);
+    Connection_RM3();
 
 public:
     // virtual functions

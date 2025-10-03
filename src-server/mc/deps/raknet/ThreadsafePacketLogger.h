@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/raknet/PacketLogger.h"
-#include "mc/deps/raknet/data_structures/SingleProducerConsumer.h"
 
 namespace RakNet {
 
@@ -12,8 +11,14 @@ class ThreadsafePacketLogger : public ::RakNet::PacketLogger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::DataStructures::SingleProducerConsumer<char*>> logMessages;
+    ::ll::UntypedStorage<8, 40> mUnk7d3d8b;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ThreadsafePacketLogger& operator=(ThreadsafePacketLogger const&);
+    ThreadsafePacketLogger(ThreadsafePacketLogger const&);
+    ThreadsafePacketLogger();
 
 public:
     // virtual functions

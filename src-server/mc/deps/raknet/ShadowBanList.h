@@ -17,32 +17,36 @@ public:
     // clang-format on
 
     // ShadowBanList inner types define
-    using LoggingFunctor = ::std::function<void(::std::string const&)>;
-
-    using Time = ::std::chrono::seconds;
-
-    using Ip = ::std::array<::std::byte, 16>;
-
     struct Entry {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 16, ::std::array<::std::byte, 16>> ip;
-        ::ll::TypedStorage<8, 8, ::std::chrono::seconds>         banTime;
-        ::ll::TypedStorage<2, 2, ushort>                         count;
+        ::ll::UntypedStorage<1, 16> mUnkf16431;
+        ::ll::UntypedStorage<8, 8>  mUnke80799;
+        ::ll::UntypedStorage<2, 2>  mUnk309783;
         // NOLINTEND
-    };
 
-    using BanCallback = ::std::function<void(::std::string const&)>;
+    public:
+        // prevent constructor by default
+        Entry& operator=(Entry const&);
+        Entry(Entry const&);
+        Entry();
+    };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::chrono::seconds> banExpiryDuration;
-    ::ll::TypedStorage<8, 8, ::std::chrono::seconds> appHandshakeGracePeriod;
-    ::ll::TypedStorage<8, 10240, ::std::array<::std::optional<::RakNet::ShadowBanList::Entry>, 256>> mEntries;
-    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>>                           mBanCallback;
+    ::ll::UntypedStorage<8, 8>     mUnk36ad48;
+    ::ll::UntypedStorage<8, 8>     mUnk1af0c9;
+    ::ll::UntypedStorage<8, 10240> mUnk515729;
+    ::ll::UntypedStorage<8, 64>    mUnkade020;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ShadowBanList& operator=(ShadowBanList const&);
+    ShadowBanList(ShadowBanList const&);
+    ShadowBanList();
 
 public:
     // member functions
