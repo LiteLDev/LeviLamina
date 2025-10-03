@@ -52,6 +52,8 @@ public:
 public:
     LLNDAPI std::string getTypeName() const;
     LLNDAPI std::string getDescriptionName() const;
+    LLNDAPI bool isEnchanted() const;
+    LLNDAPI bool removeEnchants() const;
 
 public:
     // member variables
