@@ -300,6 +300,14 @@ template <size_t Align, size_t Size>
 struct TypedStorageImpl<Align, Size, ::sockaddr_storage> {
     using type = ::ll::UntypedStorage<Align, Size>;
 };
+template <size_t Align, size_t Size>
+struct TypedStorageImpl<Align, Size, ::sockaddr_in6> {
+    using type = ::ll::UntypedStorage<Align, Size>;
+};
+template <size_t Align, size_t Size>
+struct TypedStorageImpl<Align, Size, ::sockaddr_in> {
+    using type = ::ll::UntypedStorage<Align, Size>;
+};
 
 template <size_t Align, size_t Size, class T>
 using TypedStorage = typename TypedStorageImpl<Align, Size, T>::type;
