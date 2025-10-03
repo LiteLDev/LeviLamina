@@ -8,8 +8,14 @@ struct RakPeerConfiguration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> useJoinfloodProtection;
+    ::ll::UntypedStorage<1, 1> mUnkbd8bc4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RakPeerConfiguration& operator=(RakPeerConfiguration const&);
+    RakPeerConfiguration(RakPeerConfiguration const&);
+    RakPeerConfiguration();
 };
 
 } // namespace RakNet

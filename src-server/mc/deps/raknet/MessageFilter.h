@@ -9,11 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace DataStructures { class Hash; }
-namespace DataStructures { class OrderedList; }
-namespace RakNet { struct AddressOrGUID; }
-namespace RakNet { struct FilterSet; }
-namespace RakNet { struct FilteredSystem; }
 namespace RakNet { struct Packet; }
 namespace RakNet { struct RakNetGUID; }
 namespace RakNet { struct SystemAddress; }
@@ -25,15 +20,17 @@ class MessageFilter : public ::RakNet::PluginInterface2 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::DataStructures::OrderedList<int, ::RakNet::FilterSet*, $unknown_type>> filterList;
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::DataStructures::Hash<::RakNet::AddressOrGUID, ::RakNet::FilteredSystem, 2048, $unknown_type>>
-                                     systemList;
-    ::ll::TypedStorage<4, 4, int>    autoAddNewConnectionsToFilter;
-    ::ll::TypedStorage<8, 8, uint64> whenLastTimeoutCheck;
+    ::ll::UntypedStorage<8, 16> mUnk92036b;
+    ::ll::UntypedStorage<8, 16> mUnkf4cb8d;
+    ::ll::UntypedStorage<4, 4>  mUnkbffbe9;
+    ::ll::UntypedStorage<8, 8>  mUnk7ffeab;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    MessageFilter& operator=(MessageFilter const&);
+    MessageFilter(MessageFilter const&);
+    MessageFilter();
 
 public:
     // virtual functions

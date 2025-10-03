@@ -2,10 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/RakNetRandom.h"
-#include "mc/deps/raknet/data_structures/Queue.h"
-
 // auto generated forward declare list
 // clang-format off
 namespace RakNet { class BitStream; }
@@ -17,12 +13,18 @@ class RakNetRandomSync {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<uint>> usedValues;
-    ::ll::TypedStorage<4, 4, uint>                           seed;
-    ::ll::TypedStorage<4, 4, uint>                           callCount;
-    ::ll::TypedStorage<4, 4, uint>                           usedValueBufferCount;
-    ::ll::TypedStorage<8, 2520, ::RakNet::RakNetRandom>      rnr;
+    ::ll::UntypedStorage<8, 24>   mUnk29fa5e;
+    ::ll::UntypedStorage<4, 4>    mUnk8bb28b;
+    ::ll::UntypedStorage<4, 4>    mUnk5c3494;
+    ::ll::UntypedStorage<4, 4>    mUnk9c386f;
+    ::ll::UntypedStorage<8, 2520> mUnk804ec3;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RakNetRandomSync& operator=(RakNetRandomSync const&);
+    RakNetRandomSync(RakNetRandomSync const&);
+    RakNetRandomSync();
 
 public:
     // virtual functions

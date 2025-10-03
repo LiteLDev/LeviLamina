@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/raknet/data_structures/List.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { class SimpleMutex; }
-// clang-format on
-
 namespace RakNet {
 
 class RakString {
@@ -24,20 +19,31 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::RakNet::SimpleMutex*> refCountMutex;
-        ::ll::TypedStorage<4, 4, uint>                   refCount;
-        ::ll::TypedStorage<8, 8, uint64>                 bytesUsed;
-        ::ll::TypedStorage<8, 8, char*>                  bigString;
-        ::ll::TypedStorage<8, 8, char*>                  c_str;
-        ::ll::TypedStorage<1, 100, char[100]>            smallString;
+        ::ll::UntypedStorage<8, 8>   mUnka2f925;
+        ::ll::UntypedStorage<4, 4>   mUnk59de61;
+        ::ll::UntypedStorage<8, 8>   mUnk35e35d;
+        ::ll::UntypedStorage<8, 8>   mUnka4bdce;
+        ::ll::UntypedStorage<8, 8>   mUnke2527f;
+        ::ll::UntypedStorage<1, 100> mUnk58a7f9;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        SharedString& operator=(SharedString const&);
+        SharedString(SharedString const&);
+        SharedString();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString::SharedString*> sharedString;
+    ::ll::UntypedStorage<8, 8> mUnk886291;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RakString& operator=(RakString const&);
+    RakString(RakString const&);
 
 public:
     // member functions

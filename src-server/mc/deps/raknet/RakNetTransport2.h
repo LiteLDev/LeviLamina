@@ -7,7 +7,6 @@
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
 #include "mc/deps/raknet/TransportInterface.h"
-#include "mc/deps/raknet/data_structures/Queue.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,10 +22,16 @@ class RakNetTransport2 : public ::RakNet::TransportInterface, public ::RakNet::P
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::SystemAddress>> newConnections;
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::SystemAddress>> lostConnections;
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::Packet*>>       packetQueue;
+    ::ll::UntypedStorage<8, 24> mUnk976a69;
+    ::ll::UntypedStorage<8, 24> mUnkbc5159;
+    ::ll::UntypedStorage<8, 24> mUnke29746;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RakNetTransport2& operator=(RakNetTransport2 const&);
+    RakNetTransport2(RakNetTransport2 const&);
+    RakNetTransport2();
 
 public:
     // virtual functions

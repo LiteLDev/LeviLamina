@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/data_structures/List.h"
-
 namespace RakNet {
 
 class VariableListDeltaTracker {
@@ -19,19 +16,30 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, char*> lastData;
-        ::ll::TypedStorage<4, 4, uint>  byteLength;
-        ::ll::TypedStorage<1, 1, bool>  isDirty;
+        ::ll::UntypedStorage<8, 8> mUnk82316a;
+        ::ll::UntypedStorage<4, 4> mUnka2aeb1;
+        ::ll::UntypedStorage<1, 1> mUnk9c20eb;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        VariableLastValueNode& operator=(VariableLastValueNode const&);
+        VariableLastValueNode(VariableLastValueNode const&);
+        VariableLastValueNode();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::VariableListDeltaTracker::VariableLastValueNode>>
-                                   variableList;
-    ::ll::TypedStorage<4, 4, uint> nextWriteIndex;
+    ::ll::UntypedStorage<8, 16> mUnk60f868;
+    ::ll::UntypedStorage<4, 4>  mUnk8df975;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    VariableListDeltaTracker& operator=(VariableListDeltaTracker const&);
+    VariableListDeltaTracker(VariableListDeltaTracker const&);
+    VariableListDeltaTracker();
 };
 
 } // namespace RakNet

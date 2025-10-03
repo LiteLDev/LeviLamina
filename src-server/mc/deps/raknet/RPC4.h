@@ -3,15 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/raknet/BitStream.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace DataStructures { class Hash; }
-namespace DataStructures { class OrderedList; }
-namespace RakNet { class RakString; }
 namespace RakNet { struct Packet; }
 // clang-format on
 
@@ -31,64 +27,65 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, uchar> messageId;
-        ::ll::
-            TypedStorage<8, 16, ::DataStructures::OrderedList<::RakNet::RakString, ::RakNet::RakString, $unknown_type>>
-                functions;
+        ::ll::UntypedStorage<1, 1>  mUnk240e41;
+        ::ll::UntypedStorage<8, 16> mUnkf7d870;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LocalCallback& operator=(LocalCallback const&);
+        LocalCallback(LocalCallback const&);
+        LocalCallback();
     };
 
     struct LocalSlotObject {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, uint>                                              registrationCount;
-        ::ll::TypedStorage<4, 4, int>                                               callPriority;
-        ::ll::TypedStorage<8, 8, void (*)(::RakNet::BitStream*, ::RakNet::Packet*)> functionPointer;
+        ::ll::UntypedStorage<4, 4> mUnkcc2b71;
+        ::ll::UntypedStorage<4, 4> mUnkbb3b5e;
+        ::ll::UntypedStorage<8, 8> mUnkbcddf3;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LocalSlotObject& operator=(LocalSlotObject const&);
+        LocalSlotObject(LocalSlotObject const&);
+        LocalSlotObject();
     };
 
     struct LocalSlot {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<
-            8,
-            16,
-            ::DataStructures::
-                OrderedList<::RakNet::RPC4::LocalSlotObject, ::RakNet::RPC4::LocalSlotObject, $unknown_type>>
-            slotObjects;
+        ::ll::UntypedStorage<8, 16> mUnkb70826;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        LocalSlot& operator=(LocalSlot const&);
+        LocalSlot(LocalSlot const&);
+        LocalSlot();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::
-        TypedStorage<8, 16, ::DataStructures::Hash<::RakNet::RakString, ::RakNet::RPC4::LocalSlot*, 256, $unknown_type>>
-            localSlots;
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::DataStructures::
-            Hash<::RakNet::RakString, void (*)(::RakNet::BitStream*, ::RakNet::Packet*), 64, $unknown_type>>
-        registeredNonblockingFunctions;
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::DataStructures::Hash<
-            ::RakNet::RakString,
-            void (*)(::RakNet::BitStream*, ::RakNet::BitStream*, ::RakNet::Packet*),
-            64,
-            $unknown_type>>
-        registeredBlockingFunctions;
-    ::ll::TypedStorage<8, 16, ::DataStructures::OrderedList<uchar, ::RakNet::RPC4::LocalCallback*, $unknown_type>>
-                                                    localCallbacks;
-    ::ll::TypedStorage<8, 288, ::RakNet::BitStream> blockingReturnValue;
-    ::ll::TypedStorage<1, 1, bool>                  gotBlockingReturnValue;
-    ::ll::TypedStorage<4, 4, uint>                  nextSlotRegistrationCount;
-    ::ll::TypedStorage<1, 1, bool>                  interruptSignal;
+    ::ll::UntypedStorage<8, 16>  mUnkb1e8fd;
+    ::ll::UntypedStorage<8, 16>  mUnkef7cd3;
+    ::ll::UntypedStorage<8, 16>  mUnkf9a38e;
+    ::ll::UntypedStorage<8, 16>  mUnk271103;
+    ::ll::UntypedStorage<8, 288> mUnkb7232b;
+    ::ll::UntypedStorage<1, 1>   mUnk377221;
+    ::ll::UntypedStorage<4, 4>   mUnkd18367;
+    ::ll::UntypedStorage<1, 1>   mUnkf58128;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RPC4& operator=(RPC4 const&);
+    RPC4(RPC4 const&);
+    RPC4();
 
 public:
     // virtual functions

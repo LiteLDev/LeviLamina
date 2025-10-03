@@ -2,25 +2,23 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/data_structures/List.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { struct CloudKey; }
-// clang-format on
-
 namespace RakNet {
 
 struct CloudQuery {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::CloudKey>> keys;
-    ::ll::TypedStorage<4, 4, uint>                                        startingRowIndex;
-    ::ll::TypedStorage<4, 4, uint>                                        maxRowsToReturn;
-    ::ll::TypedStorage<1, 1, bool>                                        subscribeToResults;
+    ::ll::UntypedStorage<8, 16> mUnk675314;
+    ::ll::UntypedStorage<4, 4>  mUnk43fa99;
+    ::ll::UntypedStorage<4, 4>  mUnk3b64db;
+    ::ll::UntypedStorage<1, 1>  mUnk3dec7e;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    CloudQuery& operator=(CloudQuery const&);
+    CloudQuery(CloudQuery const&);
+    CloudQuery();
 };
 
 } // namespace RakNet

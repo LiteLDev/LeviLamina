@@ -3,30 +3,21 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/raknet/BPSTracker.h"
-#include "mc/deps/raknet/CCRakNetSlidingWindow.h"
 #include "mc/deps/raknet/PacketPriority.h"
 #include "mc/deps/raknet/PacketReliability.h"
-#include "mc/deps/raknet/RakNetStatistics.h"
-#include "mc/deps/raknet/data_structures/Heap.h"
 #include "mc/deps/raknet/data_structures/List.h"
-#include "mc/deps/raknet/data_structures/MemoryPool.h"
-#include "mc/deps/raknet/data_structures/Queue.h"
-#include "mc/deps/raknet/data_structures/RangeList.h"
-#include "mc/deps/raknet/uint24_t.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace DataStructures { class Heap; }
-namespace DataStructures { class OrderedList; }
 namespace RakNet { class BitStream; }
 namespace RakNet { class PluginInterface2; }
 namespace RakNet { class RakNetRandom; }
 namespace RakNet { class RakNetSocket2; }
 namespace RakNet { struct InternalPacket; }
-namespace RakNet { struct InternalPacketRefCountedData; }
+namespace RakNet { struct RakNetStatistics; }
 namespace RakNet { struct SplitPacketChannel; }
 namespace RakNet { struct SystemAddress; }
+namespace RakNet { struct uint24_t; }
 // clang-format on
 
 namespace RakNet {
@@ -45,99 +36,120 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::RakNet::uint24_t>                             messageNumber;
-        ::ll::TypedStorage<8, 8, ::RakNet::ReliabilityLayer::MessageNumberNode*> next;
+        ::ll::UntypedStorage<4, 4> mUnk3b91de;
+        ::ll::UntypedStorage<8, 8> mUnk470a41;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        MessageNumberNode& operator=(MessageNumberNode const&);
+        MessageNumberNode(MessageNumberNode const&);
+        MessageNumberNode();
     };
 
     struct DatagramHistoryNode {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::RakNet::ReliabilityLayer::MessageNumberNode*> head;
-        ::ll::TypedStorage<8, 8, uint64>                                         timeSent;
+        ::ll::UntypedStorage<8, 8> mUnkb2aca8;
+        ::ll::UntypedStorage<8, 8> mUnk187106;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DatagramHistoryNode& operator=(DatagramHistoryNode const&);
+        DatagramHistoryNode(DatagramHistoryNode const&);
+        DatagramHistoryNode();
     };
 
     struct UnreliableWithAckReceiptNode {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::RakNet::uint24_t> datagramNumber;
-        ::ll::TypedStorage<4, 4, uint>               sendReceiptSerial;
-        ::ll::TypedStorage<8, 8, uint64>             nextActionTime;
+        ::ll::UntypedStorage<4, 4> mUnkced6ba;
+        ::ll::UntypedStorage<4, 4> mUnkc09fef;
+        ::ll::UntypedStorage<8, 8> mUnk5e6576;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        UnreliableWithAckReceiptNode& operator=(UnreliableWithAckReceiptNode const&);
+        UnreliableWithAckReceiptNode(UnreliableWithAckReceiptNode const&);
+        UnreliableWithAckReceiptNode();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::InternalPacket*>> outputQueue;
-    ::ll::TypedStorage<4, 4, int>                                                 splitMessageProgressInterval;
-    ::ll::TypedStorage<8, 8, uint64>                                              unreliableTimeout;
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::ReliabilityLayer::DatagramHistoryNode>> datagramHistory;
-    ::ll::TypedStorage<8, 32, ::DataStructures::MemoryPool<::RakNet::ReliabilityLayer::MessageNumberNode>>
-        datagramHistoryMessagePool;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::ReliabilityLayer::UnreliableWithAckReceiptNode>>
-                                                                                      unreliableWithAckReceiptHistory;
-    ::ll::TypedStorage<4, 4, ::RakNet::uint24_t>                                      datagramHistoryPopCount;
-    ::ll::TypedStorage<8, 32, ::DataStructures::MemoryPool<::RakNet::InternalPacket>> internalPacketPool;
-    ::ll::TypedStorage<8, 4096, ::RakNet::InternalPacket* [512]>                      resendBuffer;
-    ::ll::TypedStorage<8, 8, ::RakNet::InternalPacket*>                               resendLinkedListHead;
-    ::ll::TypedStorage<8, 8, ::RakNet::InternalPacket*>                               unreliableLinkedListHead;
-    ::ll::TypedStorage<4, 4, uint>                                                    timeLastDatagramArrived;
-    ::ll::UntypedStorage<8, 24>                                                       outgoingPacketBuffer;
-    ::ll::TypedStorage<8, 32, uint64[4]>                                              outgoingPacketBufferNextWeights;
-    ::ll::UntypedStorage<8, 16>                                                       splitPacketChannelList;
-    ::ll::TypedStorage<4, 4, ::RakNet::uint24_t>                                      sendReliableMessageNumberIndex;
-    ::ll::TypedStorage<4, 4, ::RakNet::uint24_t>                                      internalOrderIndex;
-    ::ll::TypedStorage<1, 1, bool>                                                    deadConnection;
-    ::ll::TypedStorage<1, 1, bool>                                                    cheater;
-    ::ll::TypedStorage<2, 2, ushort>                                                  splitPacketId;
-    ::ll::TypedStorage<4, 4, uint>                                                    timeoutTime;
-    ::ll::TypedStorage<8, 224, ::RakNet::RakNetStatistics>                            statistics;
-    ::ll::TypedStorage<4, 128, ::RakNet::uint24_t[32]>                                orderedWriteIndex;
-    ::ll::TypedStorage<4, 128, ::RakNet::uint24_t[32]>                                sequencedWriteIndex;
-    ::ll::TypedStorage<4, 128, ::RakNet::uint24_t[32]>                                orderedReadIndex;
-    ::ll::TypedStorage<4, 128, ::RakNet::uint24_t[32]>                                highestSequencedReadIndex;
-    ::ll::UntypedStorage<8, 768>                                                      orderingHeaps;
-    ::ll::TypedStorage<4, 128, ::RakNet::uint24_t[32]>                                heapIndexOffsets;
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<bool>>                          hasReceivedPacketQueue;
-    ::ll::TypedStorage<4, 4, ::RakNet::uint24_t>                                      receivedPacketsBaseIndex;
-    ::ll::TypedStorage<1, 1, bool>                                                    resetReceivedPackets;
-    ::ll::TypedStorage<8, 8, uint64>                                                  lastUpdateTime;
-    ::ll::TypedStorage<8, 8, uint64>                                                  timeBetweenPackets;
-    ::ll::TypedStorage<8, 8, uint64>                                                  nextSendTime;
-    ::ll::TypedStorage<8, 8, uint64>                                                  ackPingSum;
-    ::ll::TypedStorage<1, 1, uchar>                                                   ackPingIndex;
-    ::ll::TypedStorage<8, 8, uint64>                                                  remoteSystemTime;
-    ::ll::TypedStorage<8, 8, uint64>                                                  nextAllowedThroughputSample;
-    ::ll::TypedStorage<1, 1, bool>                                                    bandwidthExceededStatistic;
-    ::ll::TypedStorage<8, 8, int64>                                                   throughputCapCountdown;
-    ::ll::TypedStorage<4, 4, uint>                                                    receivePacketCount;
-    ::ll::TypedStorage<8, 8, uint64>                                                  elapsedTimeSinceLastUpdate;
-    ::ll::TypedStorage<8, 8, uint64>                                                  nextAckTimeToSend;
-    ::ll::TypedStorage<8, 80, ::RakNet::CCRakNetSlidingWindow>                        congestionManager;
-    ::ll::TypedStorage<4, 4, uint>                                                    unacknowledgedBytes;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::InternalPacket*>>      packetsToSendThisUpdate;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<bool>>                           packetsToDeallocThisUpdate;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<uint>> packetsToSendThisUpdateDatagramBoundaries;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<bool>> datagramsToSendThisUpdateIsPair;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<uint>> datagramSizesInBytes;
-    ::ll::TypedStorage<4, 4, uint>                          datagramSizeSoFar;
-    ::ll::TypedStorage<4, 4, uint>                          allDatagramSizesSoFar;
-    ::ll::TypedStorage<8, 8, double>                        totalUserDataBytesAcked;
-    ::ll::TypedStorage<8, 8, uint64>                        timeOfLastContinualSend;
-    ::ll::TypedStorage<8, 8, uint64>                        timeToNextUnreliableCull;
-    ::ll::TypedStorage<8, 16, ::DataStructures::RangeList<::RakNet::uint24_t>> incomingAcks;
-    ::ll::TypedStorage<4, 4, int>                                              countdownToNextPacketPair;
-    ::ll::TypedStorage<8, 16, ::DataStructures::RangeList<::RakNet::uint24_t>> acknowlegements;
-    ::ll::TypedStorage<8, 16, ::DataStructures::RangeList<::RakNet::uint24_t>> NAKs;
-    ::ll::TypedStorage<1, 1, bool>                                             remoteSystemNeedsBAndAS;
-    ::ll::TypedStorage<8, 32, ::DataStructures::MemoryPool<::RakNet::InternalPacketRefCountedData>> refCountedDataPool;
-    ::ll::TypedStorage<8, 280, ::RakNet::BPSTracker[7]>                                             bpsMetrics;
-    ::ll::TypedStorage<8, 8, uint64>                                                                lastBpsClear;
+    ::ll::UntypedStorage<8, 24>   mUnkb712df;
+    ::ll::UntypedStorage<4, 4>    mUnk840b3d;
+    ::ll::UntypedStorage<8, 8>    mUnkbf4abf;
+    ::ll::UntypedStorage<8, 24>   mUnk4856bd;
+    ::ll::UntypedStorage<8, 32>   mUnk25ac52;
+    ::ll::UntypedStorage<8, 16>   mUnk65efb3;
+    ::ll::UntypedStorage<4, 4>    mUnke0d0e4;
+    ::ll::UntypedStorage<8, 32>   mUnk493899;
+    ::ll::UntypedStorage<8, 4096> mUnk98ff56;
+    ::ll::UntypedStorage<8, 8>    mUnkdbb8b1;
+    ::ll::UntypedStorage<8, 8>    mUnk42c756;
+    ::ll::UntypedStorage<4, 4>    mUnk4fce02;
+    ::ll::UntypedStorage<8, 24>   mUnk3028f9;
+    ::ll::UntypedStorage<8, 32>   mUnk5500c6;
+    ::ll::UntypedStorage<8, 16>   mUnk7b00f9;
+    ::ll::UntypedStorage<4, 4>    mUnk70b42d;
+    ::ll::UntypedStorage<4, 4>    mUnke5db24;
+    ::ll::UntypedStorage<1, 1>    mUnkd2c69a;
+    ::ll::UntypedStorage<1, 1>    mUnk2b126c;
+    ::ll::UntypedStorage<2, 2>    mUnked101a;
+    ::ll::UntypedStorage<4, 4>    mUnk25583b;
+    ::ll::UntypedStorage<8, 224>  mUnk312262;
+    ::ll::UntypedStorage<4, 128>  mUnk2d6c36;
+    ::ll::UntypedStorage<4, 128>  mUnkc9f6bc;
+    ::ll::UntypedStorage<4, 128>  mUnkb1cd4b;
+    ::ll::UntypedStorage<4, 128>  mUnk84e899;
+    ::ll::UntypedStorage<8, 768>  mUnk624080;
+    ::ll::UntypedStorage<4, 128>  mUnkf09dad;
+    ::ll::UntypedStorage<8, 24>   mUnka55249;
+    ::ll::UntypedStorage<4, 4>    mUnk4f040f;
+    ::ll::UntypedStorage<1, 1>    mUnk68c359;
+    ::ll::UntypedStorage<8, 8>    mUnkcaea37;
+    ::ll::UntypedStorage<8, 8>    mUnkbf33ec;
+    ::ll::UntypedStorage<8, 8>    mUnk1ea222;
+    ::ll::UntypedStorage<8, 8>    mUnk5452b1;
+    ::ll::UntypedStorage<1, 1>    mUnkc7aa05;
+    ::ll::UntypedStorage<8, 8>    mUnka206a5;
+    ::ll::UntypedStorage<8, 8>    mUnka0e4ac;
+    ::ll::UntypedStorage<1, 1>    mUnk1bb973;
+    ::ll::UntypedStorage<8, 8>    mUnkfd0cc0;
+    ::ll::UntypedStorage<4, 4>    mUnkb6e824;
+    ::ll::UntypedStorage<8, 8>    mUnka5fb46;
+    ::ll::UntypedStorage<8, 8>    mUnkf2e3ac;
+    ::ll::UntypedStorage<8, 80>   mUnkfdcab6;
+    ::ll::UntypedStorage<4, 4>    mUnk14e142;
+    ::ll::UntypedStorage<8, 16>   mUnkdd8076;
+    ::ll::UntypedStorage<8, 16>   mUnkbcf583;
+    ::ll::UntypedStorage<8, 16>   mUnkf29fc0;
+    ::ll::UntypedStorage<8, 16>   mUnk95919f;
+    ::ll::UntypedStorage<8, 16>   mUnk28c684;
+    ::ll::UntypedStorage<4, 4>    mUnked8b3a;
+    ::ll::UntypedStorage<4, 4>    mUnkce4201;
+    ::ll::UntypedStorage<8, 8>    mUnkcac138;
+    ::ll::UntypedStorage<8, 8>    mUnkf24c45;
+    ::ll::UntypedStorage<8, 8>    mUnkbdacd7;
+    ::ll::UntypedStorage<8, 16>   mUnkab6e9b;
+    ::ll::UntypedStorage<4, 4>    mUnk17b738;
+    ::ll::UntypedStorage<8, 16>   mUnk8683a4;
+    ::ll::UntypedStorage<8, 16>   mUnk7a400d;
+    ::ll::UntypedStorage<1, 1>    mUnk4ee7a5;
+    ::ll::UntypedStorage<8, 32>   mUnkb4cedf;
+    ::ll::UntypedStorage<8, 280>  mUnk1078b2;
+    ::ll::UntypedStorage<8, 8>    mUnkf5fac4;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ReliabilityLayer& operator=(ReliabilityLayer const&);
+    ReliabilityLayer(ReliabilityLayer const&);
 
 public:
     // member functions

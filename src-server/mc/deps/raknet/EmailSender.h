@@ -2,17 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/RakNetRandom.h"
-
 namespace RakNet {
 
 class EmailSender {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 2520, ::RakNet::RakNetRandom> rakNetRandom;
+    ::ll::UntypedStorage<8, 2520> mUnkebbdda;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    EmailSender& operator=(EmailSender const&);
+    EmailSender(EmailSender const&);
+    EmailSender();
 };
 
 } // namespace RakNet

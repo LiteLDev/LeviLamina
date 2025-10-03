@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/data_structures/Queue.h"
-
 namespace RakNet {
 
 struct BPSTracker {
@@ -19,9 +16,14 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, uint64> value1;
-        ::ll::TypedStorage<8, 8, uint64> time;
+        ::ll::UntypedStorage<8, 8> mUnk3607c9;
+        ::ll::UntypedStorage<8, 8> mUnk83e56b;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        TimeAndValue2& operator=(TimeAndValue2 const&);
+        TimeAndValue2(TimeAndValue2 const&);
 
     public:
         // member functions
@@ -47,10 +49,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>                                                        total1;
-    ::ll::TypedStorage<8, 8, uint64>                                                        lastSec1;
-    ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::BPSTracker::TimeAndValue2>> dataQueue;
+    ::ll::UntypedStorage<8, 8>  mUnk85e95b;
+    ::ll::UntypedStorage<8, 8>  mUnkfb361b;
+    ::ll::UntypedStorage<8, 24> mUnke01d2f;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BPSTracker& operator=(BPSTracker const&);
+    BPSTracker(BPSTracker const&);
 
 public:
     // member functions

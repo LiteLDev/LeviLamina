@@ -9,8 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace RakNet { class RakPeerInterface; }
-namespace RakNet { class TCPInterface; }
 namespace RakNet { struct InternalPacket; }
 namespace RakNet { struct Packet; }
 namespace RakNet { struct RakNetGUID; }
@@ -23,9 +21,15 @@ class PluginInterface2 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::RakNet::RakPeerInterface*> rakPeerInterface;
-    ::ll::TypedStorage<8, 8, ::RakNet::TCPInterface*>     tcpInterface;
+    ::ll::UntypedStorage<8, 8> mUnkd5879f;
+    ::ll::UntypedStorage<8, 8> mUnk57d580;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PluginInterface2& operator=(PluginInterface2 const&);
+    PluginInterface2(PluginInterface2 const&);
+    PluginInterface2();
 
 public:
     // virtual functions

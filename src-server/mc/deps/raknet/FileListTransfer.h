@@ -3,25 +3,15 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/raknet/FileListNode.h"
 #include "mc/deps/raknet/PI2_LostConnectionReason.h"
-#include "mc/deps/raknet/PacketPriority.h"
 #include "mc/deps/raknet/PluginInterface2.h"
 #include "mc/deps/raknet/PluginReceiveResult.h"
-#include "mc/deps/raknet/SimpleMutex.h"
-#include "mc/deps/raknet/SystemAddress.h"
-#include "mc/deps/raknet/ThreadPool.h"
-#include "mc/deps/raknet/data_structures/List.h"
-#include "mc/deps/raknet/data_structures/Queue.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace DataStructures { class Map; }
-namespace RakNet { class FileListProgress; }
-namespace RakNet { class IncrementalReadInterface; }
-namespace RakNet { struct FileListReceiver; }
 namespace RakNet { struct Packet; }
 namespace RakNet { struct RakNetGUID; }
+namespace RakNet { struct SystemAddress; }
 // clang-format on
 
 namespace RakNet {
@@ -40,50 +30,72 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 72, ::RakNet::FileListNode>             fileListNode;
-        ::ll::TypedStorage<4, 4, ::PacketPriority>                    packetPriority;
-        ::ll::TypedStorage<1, 1, char>                                orderingChannel;
-        ::ll::TypedStorage<4, 4, uint>                                currentOffset;
-        ::ll::TypedStorage<4, 4, uint>                                setIndex;
-        ::ll::TypedStorage<8, 8, ::RakNet::IncrementalReadInterface*> incrementalReadInterface;
-        ::ll::TypedStorage<4, 4, uint>                                chunkSize;
+        ::ll::UntypedStorage<8, 72> mUnk9b5537;
+        ::ll::UntypedStorage<4, 4>  mUnke652c3;
+        ::ll::UntypedStorage<1, 1>  mUnk644806;
+        ::ll::UntypedStorage<4, 4>  mUnkec54fe;
+        ::ll::UntypedStorage<4, 4>  mUnke2d929;
+        ::ll::UntypedStorage<8, 8>  mUnk194638;
+        ::ll::UntypedStorage<4, 4>  mUnkfd047b;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FileToPush& operator=(FileToPush const&);
+        FileToPush(FileToPush const&);
+        FileToPush();
     };
 
     struct FileToPushRecipient {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, uint>                                                              refCount;
-        ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                                            refCountMutex;
-        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>                                         systemAddress;
-        ::ll::TypedStorage<2, 2, ushort>                                                            setId;
-        ::ll::TypedStorage<8, 24, ::DataStructures::Queue<::RakNet::FileListTransfer::FileToPush*>> filesToPush;
+        ::ll::UntypedStorage<4, 4>   mUnkec1c56;
+        ::ll::UntypedStorage<8, 40>  mUnk12125b;
+        ::ll::UntypedStorage<8, 136> mUnka13636;
+        ::ll::UntypedStorage<2, 2>   mUnke71aad;
+        ::ll::UntypedStorage<8, 24>  mUnka47e1c;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FileToPushRecipient& operator=(FileToPushRecipient const&);
+        FileToPushRecipient(FileToPushRecipient const&);
+        FileToPushRecipient();
     };
 
     struct ThreadData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::RakNet::FileListTransfer*> fileListTransfer;
-        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>   systemAddress;
-        ::ll::TypedStorage<2, 2, ushort>                      setId;
+        ::ll::UntypedStorage<8, 8>   mUnkcd8a26;
+        ::ll::UntypedStorage<8, 136> mUnk232d6c;
+        ::ll::UntypedStorage<2, 2>   mUnk274b3d;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ThreadData& operator=(ThreadData const&);
+        ThreadData(ThreadData const&);
+        ThreadData();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::DataStructures::Map<ushort, ::RakNet::FileListReceiver*, $unknown_type>>
-                                                                                   fileListReceivers;
-    ::ll::TypedStorage<2, 2, ushort>                                               setId;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::FileListProgress*>> fileListProgressCallbacks;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::FileListTransfer::FileToPushRecipient*>>
-                                                                                          fileToPushRecipientList;
-    ::ll::TypedStorage<8, 40, ::RakNet::SimpleMutex>                                      fileToPushRecipientListMutex;
-    ::ll::TypedStorage<8, 328, ::ThreadPool<::RakNet::FileListTransfer::ThreadData, int>> threadPool;
+    ::ll::UntypedStorage<8, 24>  mUnkad0648;
+    ::ll::UntypedStorage<2, 2>   mUnk8fae7b;
+    ::ll::UntypedStorage<8, 16>  mUnk656737;
+    ::ll::UntypedStorage<8, 16>  mUnk30535d;
+    ::ll::UntypedStorage<8, 40>  mUnk3a0b5a;
+    ::ll::UntypedStorage<8, 328> mUnk76bc9d;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    FileListTransfer& operator=(FileListTransfer const&);
+    FileListTransfer(FileListTransfer const&);
+    FileListTransfer();
 
 public:
     // virtual functions

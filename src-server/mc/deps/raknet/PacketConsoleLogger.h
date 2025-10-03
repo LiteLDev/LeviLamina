@@ -16,8 +16,14 @@ class PacketConsoleLogger : public ::RakNet::PacketLogger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::RakNet::LogCommandParser*> logCommandParser;
+    ::ll::UntypedStorage<8, 8> mUnk422fd7;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PacketConsoleLogger& operator=(PacketConsoleLogger const&);
+    PacketConsoleLogger(PacketConsoleLogger const&);
+    PacketConsoleLogger();
 
 public:
     // virtual functions

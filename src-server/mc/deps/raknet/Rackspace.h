@@ -2,18 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/RackspaceOperationType.h"
-#include "mc/deps/raknet/RakString.h"
-#include "mc/deps/raknet/SystemAddress.h"
-#include "mc/deps/raknet/data_structures/List.h"
-
-// auto generated forward declare list
-// clang-format off
-namespace RakNet { class Rackspace2EventCallback; }
-namespace RakNet { class TCPInterface; }
-// clang-format on
-
 namespace RakNet {
 
 class Rackspace {
@@ -28,36 +16,48 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::RakNet::RackspaceOperationType> type;
-        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>        connectionAddress;
-        ::ll::TypedStorage<1, 1, bool>                             isPendingAuthentication;
-        ::ll::TypedStorage<8, 8, ::RakNet::RakString>              incomingStream;
-        ::ll::TypedStorage<8, 8, ::RakNet::RakString>              httpCommand;
-        ::ll::TypedStorage<8, 8, ::RakNet::RakString>              operation;
-        ::ll::TypedStorage<8, 8, ::RakNet::RakString>              xml;
+        ::ll::UntypedStorage<4, 4>   mUnk6b7959;
+        ::ll::UntypedStorage<8, 136> mUnk679649;
+        ::ll::UntypedStorage<1, 1>   mUnk564fba;
+        ::ll::UntypedStorage<8, 8>   mUnkb68378;
+        ::ll::UntypedStorage<8, 8>   mUnk29ea93;
+        ::ll::UntypedStorage<8, 8>   mUnk6b4c46;
+        ::ll::UntypedStorage<8, 8>   mUnkc8b06b;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        RackspaceOperation& operator=(RackspaceOperation const&);
+        RackspaceOperation(RackspaceOperation const&);
+        RackspaceOperation();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::Rackspace2EventCallback*>>      eventCallbacks;
-    ::ll::TypedStorage<8, 8, ::RakNet::TCPInterface*>                                          tcpInterface;
-    ::ll::TypedStorage<8, 16, ::DataStructures::List<::RakNet::Rackspace::RackspaceOperation>> operations;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                              serverManagementURL;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                              serverManagementDomain;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                              serverManagementPath;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                              storageURL;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                              storageDomain;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                              storagePath;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                              cdnManagementURL;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                              cdnManagementDomain;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                              cdnManagementPath;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                              storageToken;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                              authToken;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                              rackspaceCloudUsername;
-    ::ll::TypedStorage<8, 8, ::RakNet::RakString>                                              apiAccessKey;
+    ::ll::UntypedStorage<8, 16> mUnk52abb1;
+    ::ll::UntypedStorage<8, 8>  mUnk83d2fb;
+    ::ll::UntypedStorage<8, 16> mUnkbba7ef;
+    ::ll::UntypedStorage<8, 8>  mUnkc6399b;
+    ::ll::UntypedStorage<8, 8>  mUnk138b58;
+    ::ll::UntypedStorage<8, 8>  mUnk64b99f;
+    ::ll::UntypedStorage<8, 8>  mUnkca919f;
+    ::ll::UntypedStorage<8, 8>  mUnk211541;
+    ::ll::UntypedStorage<8, 8>  mUnk964d18;
+    ::ll::UntypedStorage<8, 8>  mUnk152aca;
+    ::ll::UntypedStorage<8, 8>  mUnk270542;
+    ::ll::UntypedStorage<8, 8>  mUnk19cd28;
+    ::ll::UntypedStorage<8, 8>  mUnk37db59;
+    ::ll::UntypedStorage<8, 8>  mUnkb42757;
+    ::ll::UntypedStorage<8, 8>  mUnkdf48f8;
+    ::ll::UntypedStorage<8, 8>  mUnka244d9;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Rackspace& operator=(Rackspace const&);
+    Rackspace(Rackspace const&);
+    Rackspace();
 };
 
 } // namespace RakNet

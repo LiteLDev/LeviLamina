@@ -13,11 +13,17 @@ class NetworkIDObject {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>                      networkID;
-    ::ll::TypedStorage<8, 8, ::RakNet::NetworkIDManager*> networkIDManager;
-    ::ll::TypedStorage<8, 8, void*>                       parent;
-    ::ll::TypedStorage<8, 8, ::RakNet::NetworkIDObject*>  nextInstanceForNetworkIDManager;
+    ::ll::UntypedStorage<8, 8> mUnk4d7ab7;
+    ::ll::UntypedStorage<8, 8> mUnk85a4bf;
+    ::ll::UntypedStorage<8, 8> mUnk1b8045;
+    ::ll::UntypedStorage<8, 8> mUnk84044f;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    NetworkIDObject& operator=(NetworkIDObject const&);
+    NetworkIDObject(NetworkIDObject const&);
+    NetworkIDObject();
 
 public:
     // virtual functions

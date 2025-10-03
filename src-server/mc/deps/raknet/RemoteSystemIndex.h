@@ -8,9 +8,15 @@ struct RemoteSystemIndex {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>                         index;
-    ::ll::TypedStorage<8, 8, ::RakNet::RemoteSystemIndex*> next;
+    ::ll::UntypedStorage<4, 4> mUnk154f4d;
+    ::ll::UntypedStorage<8, 8> mUnk17b45d;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    RemoteSystemIndex& operator=(RemoteSystemIndex const&);
+    RemoteSystemIndex(RemoteSystemIndex const&);
+    RemoteSystemIndex();
 };
 
 } // namespace RakNet

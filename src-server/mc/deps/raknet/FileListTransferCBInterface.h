@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/raknet/FileListNodeContext.h"
-#include "mc/deps/raknet/RakNetGUID.h"
-#include "mc/deps/raknet/SystemAddress.h"
-
 namespace RakNet {
 
 class FileListTransferCBInterface {
@@ -23,48 +18,66 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, uint>                      fileIndex;
-        ::ll::TypedStorage<1, 512, char[512]>               fileName;
-        ::ll::TypedStorage<8, 8, char*>                     fileData;
-        ::ll::TypedStorage<4, 4, uint>                      byteLengthOfThisFile;
-        ::ll::TypedStorage<4, 4, uint>                      bytesDownloadedForThisFile;
-        ::ll::TypedStorage<2, 2, ushort>                    setID;
-        ::ll::TypedStorage<4, 4, uint>                      numberOfFilesInThisSet;
-        ::ll::TypedStorage<4, 4, uint>                      byteLengthOfThisSet;
-        ::ll::TypedStorage<4, 4, uint>                      bytesDownloadedForThisSet;
-        ::ll::TypedStorage<8, 32, ::FileListNodeContext>    context;
-        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> senderSystemAddress;
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     senderGuid;
+        ::ll::UntypedStorage<4, 4>   mUnk189855;
+        ::ll::UntypedStorage<1, 512> mUnk10a86e;
+        ::ll::UntypedStorage<8, 8>   mUnk8e4b39;
+        ::ll::UntypedStorage<4, 4>   mUnkfb8816;
+        ::ll::UntypedStorage<4, 4>   mUnk3e8888;
+        ::ll::UntypedStorage<2, 2>   mUnkb49144;
+        ::ll::UntypedStorage<4, 4>   mUnkdadbe8;
+        ::ll::UntypedStorage<4, 4>   mUnkee02e4;
+        ::ll::UntypedStorage<4, 4>   mUnk7de848;
+        ::ll::UntypedStorage<8, 32>  mUnk2d60fb;
+        ::ll::UntypedStorage<8, 136> mUnk63b7d6;
+        ::ll::UntypedStorage<8, 16>  mUnk70cc82;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        OnFileStruct& operator=(OnFileStruct const&);
+        OnFileStruct(OnFileStruct const&);
+        OnFileStruct();
     };
 
     struct FileProgressStruct {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::RakNet::FileListTransferCBInterface::OnFileStruct*> onFileStruct;
-        ::ll::TypedStorage<4, 4, uint>                                                 partCount;
-        ::ll::TypedStorage<4, 4, uint>                                                 partTotal;
-        ::ll::TypedStorage<4, 4, uint>                                                 dataChunkLength;
-        ::ll::TypedStorage<8, 8, char*>                                                firstDataChunk;
-        ::ll::TypedStorage<8, 8, char*>                                                iriDataChunk;
-        ::ll::TypedStorage<4, 4, uint>                                                 iriWriteOffset;
-        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress>                            senderSystemAddress;
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>                                senderGuid;
-        ::ll::TypedStorage<1, 1, bool> allocateIrIDataChunkAutomatically;
+        ::ll::UntypedStorage<8, 8>   mUnk8436f4;
+        ::ll::UntypedStorage<4, 4>   mUnkc08ca7;
+        ::ll::UntypedStorage<4, 4>   mUnk2b06b0;
+        ::ll::UntypedStorage<4, 4>   mUnk23ad76;
+        ::ll::UntypedStorage<8, 8>   mUnk374533;
+        ::ll::UntypedStorage<8, 8>   mUnk9c5834;
+        ::ll::UntypedStorage<4, 4>   mUnk60af44;
+        ::ll::UntypedStorage<8, 136> mUnk960b5b;
+        ::ll::UntypedStorage<8, 16>  mUnkb7df68;
+        ::ll::UntypedStorage<1, 1>   mUnk4799a8;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        FileProgressStruct& operator=(FileProgressStruct const&);
+        FileProgressStruct(FileProgressStruct const&);
+        FileProgressStruct();
     };
 
     struct DownloadCompleteStruct {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<2, 2, ushort>                    setID;
-        ::ll::TypedStorage<4, 4, uint>                      numberOfFilesInThisSet;
-        ::ll::TypedStorage<4, 4, uint>                      byteLengthOfThisSet;
-        ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> senderSystemAddress;
-        ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     senderGuid;
+        ::ll::UntypedStorage<2, 2>   mUnkf4442c;
+        ::ll::UntypedStorage<4, 4>   mUnkcdd8e2;
+        ::ll::UntypedStorage<4, 4>   mUnkda73b5;
+        ::ll::UntypedStorage<8, 136> mUnk307aa2;
+        ::ll::UntypedStorage<8, 16>  mUnk825424;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        DownloadCompleteStruct& operator=(DownloadCompleteStruct const&);
+        DownloadCompleteStruct(DownloadCompleteStruct const&);
+        DownloadCompleteStruct();
     };
 
 public:
