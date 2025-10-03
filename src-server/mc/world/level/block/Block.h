@@ -51,6 +51,8 @@ public:
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, ushort legacyData);
     LLNDAPI static optional_ref<Block const> tryGetFromRegistry(std::string_view name, BlockStatesType const& states);
 
+    LLNDAPI bool isAir() const;
+
     [[nodiscard]] BlockType const& getBlockType() const { return *mBlockType; }
 
     [[nodiscard]] std::string const& getTypeName() const { return getBlockType().getTypeName(); }

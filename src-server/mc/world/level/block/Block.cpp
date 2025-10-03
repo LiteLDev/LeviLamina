@@ -4,10 +4,9 @@
 #include "mc/nbt/CompoundTag.h"
 #include "mc/server/ServerLevel.h"
 #include "mc/world/level/BlockPalette.h"
-#include "mc/world/level/block/VanillaBlockConversion.h"
+#include "mc/world/level/block/BedrockBlockNames.h"
 #include "mc/world/level/block/block_serialization_utils/BlockSerializationUtils.h"
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
-#include "mc/world/level/block/states/BlockState.h"
 
 #include "ll/api/service/Bedrock.h"
 
@@ -89,3 +88,5 @@ optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, ushor
 optional_ref<Block const> Block::tryGetFromRegistry(std::string_view name, BlockStatesType const& states) {
     return tryGetFromRegistry(HashedString{name}, states);
 }
+
+bool Block::isAir() const { return getBlockType().mNameInfo->mFullName->mStrHash == BedrockBlockNames::Air().mStrHash; }
