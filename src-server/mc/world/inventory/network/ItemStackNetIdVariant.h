@@ -26,16 +26,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Result<void> deserialize(::ReadOnlyBinaryStream& stream);
+    MCAPI ::Bedrock::Result<void> deserialize(::ReadOnlyBinaryStream& stream);
 
-    MCNAPI ::std::string toString() const;
+    MCAPI ::std::string toString() const;
 
-    MCNAPI ~ItemStackNetIdVariant();
+    MCAPI ~ItemStackNetIdVariant();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
