@@ -2,35 +2,38 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Actor;
+class BlockPos;
+class Mob;
+class Player;
+// clang-format on
+
 struct VariantParameterList {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk305e2c;
-    ::ll::UntypedStorage<8, 8> mUnk600d04;
-    ::ll::UntypedStorage<8, 8> mUnk3a6258;
-    ::ll::UntypedStorage<8, 8> mUnk2518ff;
-    ::ll::UntypedStorage<8, 8> mUnk4d051c;
-    ::ll::UntypedStorage<8, 8> mUnk1f7f43;
-    ::ll::UntypedStorage<8, 8> mUnk7b537e;
-    ::ll::UntypedStorage<8, 8> mUnkcb5bc4;
-    ::ll::UntypedStorage<8, 8> mUnkbcee5b;
+    ::ll::TypedStorage<8, 8, ::Actor*>          mSelf;
+    ::ll::TypedStorage<8, 8, ::Actor*>          mOther;
+    ::ll::TypedStorage<8, 8, ::Player*>         mPlayer;
+    ::ll::TypedStorage<8, 8, ::Actor*>          mTarget;
+    ::ll::TypedStorage<8, 8, ::Actor*>          mParent;
+    ::ll::TypedStorage<8, 8, ::Mob*>            mBaby;
+    ::ll::TypedStorage<8, 8, ::BlockPos const*> mBlock;
+    ::ll::TypedStorage<8, 8, ::Actor*>          mDamager;
+    ::ll::TypedStorage<8, 8, ::Actor*>          mHolder;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    VariantParameterList& operator=(VariantParameterList const&);
-    VariantParameterList(VariantParameterList const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI VariantParameterList();
+    MCAPI VariantParameterList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 };

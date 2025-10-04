@@ -13,12 +13,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~OptionalString();
+    MCAPI ~OptionalString();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
