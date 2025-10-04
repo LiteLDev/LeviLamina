@@ -19,8 +19,8 @@ namespace cereal { struct ReflectionCtx; }
 MC_NETWORK_PACKET_DECALARE(StopSoundPacket) {
 
 public:
-    // prevent constructor by default
-    StopSoundPacket();
+    StopSoundPacket(std::string const& name, bool stopAll = false, bool stopMusicLegacy = false)
+    : PayloadPacket(name, stopAll, stopMusicLegacy) {}
 
 public:
     // virtual functions
