@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.6.0] - 2025-10-02
+## [1.6.0] - 2025-10-04
 
 ### Added
 
@@ -15,11 +15,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Adapted to Minecraft 1.21.111.1 @OEOTYAN @ShrBox
+- Adapted to Minecraft 1.21.111.1 @OEOTYAN @ShrBox @Dofes
 
 ### Fixed
 
 - Use float literals for velocity in simulateStopMoving @OEOTYAN
+- Fixed optionalDependencies [#1672] @OEOTYAN
+- Enhanced loadMod to handle dependencies and optionalDependencies, fixed [#1728] @OEOTYAN
 
 ## [1.5.2] - 2025-09-26
 
@@ -1105,10 +1107,12 @@ For lip and tooth-hub test only.
 [#1669]: https://github.com/LiteLDev/LeviLamina/issues/1669
 [#1670]: https://github.com/LiteLDev/LeviLamina/issues/1670
 [#1671]: https://github.com/LiteLDev/LeviLamina/issues/1671
+[#1672]: https://github.com/LiteLDev/LeviLamina/issues/1672
 [#1673]: https://github.com/LiteLDev/LeviLamina/issues/1673
 [#1684]: https://github.com/LiteLDev/LeviLamina/issues/1684
 [#1706]: https://github.com/LiteLDev/LeviLamina/issues/1706
 [#1722]: https://github.com/LiteLDev/LeviLamina/issues/1722
+[#1728]: https://github.com/LiteLDev/LeviLamina/issues/1728
 [#1739]: https://github.com/LiteLDev/LeviLamina/issues/1739
 [#1747]: https://github.com/LiteLDev/LeviLamina/issues/1747
 
