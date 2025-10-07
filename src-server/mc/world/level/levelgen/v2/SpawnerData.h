@@ -57,8 +57,11 @@ public:
     // NOLINTEND
 
 public:
+    SpawnerData& operator=(SpawnerData&&)      = default;
+    SpawnerData& operator=(SpawnerData const&) = default;
+
+public:
     // prevent constructor by default
-    SpawnerData& operator=(SpawnerData const&);
     SpawnerData();
 
 public:
