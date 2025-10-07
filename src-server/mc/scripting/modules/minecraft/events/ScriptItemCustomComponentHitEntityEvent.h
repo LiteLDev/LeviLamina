@@ -3,15 +3,19 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentPubSubConnectors.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentAfterEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptItemCustomComponentIntermediateStorage.h"
+#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ItemStack;
 class Mob;
+namespace ScriptModuleMinecraft { class ScriptActor; }
+namespace ScriptModuleMinecraft { class ScriptItemStack; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -26,50 +30,56 @@ public:
     // clang-format on
 
     // ScriptItemCustomComponentHitEntityEvent inner types define
+    using EventConnectorsType =
+        ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<void(::ItemStack&, ::Actor&, ::Mob&), bool>;
+
     struct IntermediateStorage : public ::ScriptModuleMinecraft::ScriptItemCustomComponentIntermediateStorage {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 152> mUnk64ebca;
-        ::ll::UntypedStorage<8, 24>  mUnk27c880;
-        ::ll::UntypedStorage<8, 24>  mUnk1032c9;
-        ::ll::UntypedStorage<1, 1>   mUnk94310b;
+        ::ll::TypedStorage<8, 152, ::ItemStack const>    mItemStack;
+        ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mHitEntity;
+        ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mAttackingEntity;
+        ::ll::TypedStorage<1, 1, bool const>             mHadEffect;
         // NOLINTEND
 
     public:
         // prevent constructor by default
-        IntermediateStorage& operator=(IntermediateStorage const&);
-        IntermediateStorage(IntermediateStorage const&);
         IntermediateStorage();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI IntermediateStorage(::ItemStack& item, ::Actor& hitEntity, ::Mob& attackingEntity, bool hadEffect);
+        MCAPI IntermediateStorage(::ItemStack& item, ::Actor& hitEntity, ::Mob& attackingEntity, bool hadEffect);
 
-        MCNAPI ~IntermediateStorage();
+        MCAPI ~IntermediateStorage();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::ItemStack& item, ::Actor& hitEntity, ::Mob& attackingEntity, bool hadEffect);
+        MCAPI void* $ctor(::ItemStack& item, ::Actor& hitEntity, ::Mob& attackingEntity, bool hadEffect);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk49e435;
-    ::ll::UntypedStorage<8, 32> mUnkea70aa;
-    ::ll::UntypedStorage<8, 32> mUnk293f53;
-    ::ll::UntypedStorage<1, 1>  mUnk8323ae;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+                                                                                                          mScriptItem;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mHitEntity;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
+                                   mAttackingEntity;
+    ::ll::TypedStorage<1, 1, bool> mHadEffect;
     // NOLINTEND
 
 public:
@@ -87,12 +97,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
+    MCAPI
     ScriptItemCustomComponentHitEntityEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent const&);
 
-    MCNAPI ScriptItemCustomComponentHitEntityEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent&&);
+    MCAPI ScriptItemCustomComponentHitEntityEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent&&);
 
-    MCNAPI ScriptItemCustomComponentHitEntityEvent(
+    MCAPI ScriptItemCustomComponentHitEntityEvent(
         ::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent::IntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                        scope
     );
@@ -101,17 +111,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent const&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent&&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ScriptModuleMinecraft::ScriptItemCustomComponentHitEntityEvent::IntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                        scope
     );
@@ -120,7 +130,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

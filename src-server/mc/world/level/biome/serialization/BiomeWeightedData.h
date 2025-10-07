@@ -14,19 +14,13 @@ struct BiomeWeightedData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk8d0596;
-    ::ll::UntypedStorage<4, 4> mUnk5a34f9;
+    ::ll::TypedStorage<2, 2, ushort> mBiomeIdentifier;
+    ::ll::TypedStorage<4, 4, uint>   mWeight;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeWeightedData& operator=(BiomeWeightedData const&);
-    BiomeWeightedData(BiomeWeightedData const&);
-    BiomeWeightedData();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::BiomeWeightedData> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::BiomeWeightedData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

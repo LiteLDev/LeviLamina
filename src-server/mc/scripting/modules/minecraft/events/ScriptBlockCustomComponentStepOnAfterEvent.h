@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentAfterEvent.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { struct ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -18,21 +20,25 @@ namespace ScriptModuleMinecraft {
 struct ScriptBlockCustomComponentStepOnAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent,
                                                     public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
 public:
+    // ScriptBlockCustomComponentStepOnAfterEvent inner types define
+    using IntermediateStorage = ::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage;
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk14484f;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+            mEntity;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptBlockCustomComponentStepOnAfterEvent& operator=(ScriptBlockCustomComponentStepOnAfterEvent const&);
-    ScriptBlockCustomComponentStepOnAfterEvent(ScriptBlockCustomComponentStepOnAfterEvent const&);
     ScriptBlockCustomComponentStepOnAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockCustomComponentStepOnAfterEvent(
+    MCAPI ScriptBlockCustomComponentStepOnAfterEvent(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                         scope
     );
@@ -41,13 +47,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                         scope
     );

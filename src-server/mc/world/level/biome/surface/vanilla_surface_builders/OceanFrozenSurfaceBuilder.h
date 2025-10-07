@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class Biome;
+class Block;
+class FrozenOceanBuilderNoises;
 // clang-format on
 
 namespace VanillaSurfaceBuilders {
@@ -16,9 +18,9 @@ class OceanFrozenSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka08757;
-    ::ll::UntypedStorage<8, 8> mUnkfd090e;
-    ::ll::UntypedStorage<8, 8> mUnk72ae9e;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FrozenOceanBuilderNoises>> mNoises;
+    ::ll::TypedStorage<8, 8, ::Block const&>                                mPackedIceBlock;
+    ::ll::TypedStorage<8, 8, ::Block const&>                                mSnowBlock;
     // NOLINTEND
 
 public:
@@ -49,13 +51,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initBuilder(uint levelSeed);
+    MCAPI void $initBuilder(uint levelSeed);
 
-    MCNAPI void $initBiomeSurface(::Biome& biome) const;
+    MCFOLD void $initBiomeSurface(::Biome& biome) const;
 
-    MCNAPI bool $isBestBuilder(::Biome const& biome) const;
+    MCAPI bool $isBestBuilder(::Biome const& biome) const;
 
-    MCNAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
     // NOLINTEND
 
 public:

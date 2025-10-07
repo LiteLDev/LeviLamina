@@ -13,20 +13,14 @@ struct ScriptTickEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk87b2e4;
-    ::ll::UntypedStorage<4, 4> mUnkb1f82f;
+    ::ll::TypedStorage<4, 4, int>   mCurrentTick;
+    ::ll::TypedStorage<4, 4, float> mDeltaTime;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptTickEvent& operator=(ScriptTickEvent const&);
-    ScriptTickEvent(ScriptTickEvent const&);
-    ScriptTickEvent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 };
 

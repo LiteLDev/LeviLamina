@@ -17,21 +17,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockCustomComponentInterface(::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
+    MCAPI ScriptBlockCustomComponentInterface(::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
 
-    MCNAPI ~ScriptBlockCustomComponentInterface();
+    MCAPI ~ScriptBlockCustomComponentInterface();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

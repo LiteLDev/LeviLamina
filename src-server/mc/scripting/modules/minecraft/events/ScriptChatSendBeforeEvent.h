@@ -16,7 +16,7 @@ struct ScriptChatSendBeforeEvent : public ::ScriptModuleMinecraft::ScriptChatSen
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk920bb0;
+    ::ll::TypedStorage<1, 1, bool> mCancel;
     // NOLINTEND
 
 public:
@@ -27,24 +27,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptChatSendBeforeEvent(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
+    MCAPI ScriptChatSendBeforeEvent(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptChatSendBeforeEvent&
+    MCAPI ::ScriptModuleMinecraft::ScriptChatSendBeforeEvent&
     operator=(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptChatSendBeforeEvent const&);
     // NOLINTEND
 };
 

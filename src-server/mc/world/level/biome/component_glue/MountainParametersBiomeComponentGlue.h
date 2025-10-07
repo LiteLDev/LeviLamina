@@ -9,6 +9,7 @@
 // clang-format off
 class Biome;
 class BiomeRegistry;
+class Block;
 namespace SharedTypes::v1_20_60 { struct IBiomeJsonComponent; }
 // clang-format on
 
@@ -16,14 +17,8 @@ struct MountainParametersBiomeComponentGlue : public ::IBiomeComponentGlue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8c9b7b;
+    ::ll::TypedStorage<8, 8, ::Block const*> mSteepMaterialAdjustmentBlock;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MountainParametersBiomeComponentGlue& operator=(MountainParametersBiomeComponentGlue const&);
-    MountainParametersBiomeComponentGlue(MountainParametersBiomeComponentGlue const&);
-    MountainParametersBiomeComponentGlue();
 
 public:
     // virtual functions
@@ -46,10 +41,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool
+    MCAPI bool
     $resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent, ::BiomeRegistry const&);
 
-    MCNAPI void
+    MCAPI void
     $applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const;
     // NOLINTEND
 

@@ -21,19 +21,17 @@ struct ScriptItemCompleteUseAfterEvent : public ::ScriptModuleMinecraft::ScriptI
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk3a1231;
+    ::ll::TypedStorage<4, 4, int> mUseDuration;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptItemCompleteUseAfterEvent& operator=(ScriptItemCompleteUseAfterEvent const&);
-    ScriptItemCompleteUseAfterEvent(ScriptItemCompleteUseAfterEvent const&);
     ScriptItemCompleteUseAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemCompleteUseAfterEvent(
+    MCAPI ScriptItemCompleteUseAfterEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Player const&                                                                player,
         ::ItemCompleteUseEvent const&                                                  itemEvent,
@@ -44,15 +42,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Player const&                                                                player,
         ::ItemCompleteUseEvent const&                                                  itemEvent,

@@ -15,7 +15,7 @@ struct BiomeStringList;
 namespace BiomeChunkGenSerialization {
 // functions
 // NOLINTBEGIN
-MCNAPI void applySerializedChunkGenData(
+MCAPI void applySerializedChunkGenData(
     ::BiomeDefinitionChunkGenData const& data,
     ::Biome&                             biome,
     ::BlockPalette const&                blockPalette,
@@ -24,7 +24,7 @@ MCNAPI void applySerializedChunkGenData(
     ::BiomeStringList const&             stringList
 );
 
-MCNAPI void serializeChunkGenData(
+MCAPI void serializeChunkGenData(
     ::Biome const&                 biome,
     ::BiomeDefinitionChunkGenData& data,
     ::FeatureRegistry const&       featureRegistry,

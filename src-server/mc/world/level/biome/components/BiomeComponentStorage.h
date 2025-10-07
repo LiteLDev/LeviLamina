@@ -5,31 +5,34 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/typeid_t.h"
 
+// auto generated forward declare list
+// clang-format off
+struct BiomeComponentBase;
+// clang-format on
+
 class BiomeComponentStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd4e81d;
-    ::ll::UntypedStorage<1, 1>  mUnk18cb17;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::pair<::Bedrock::typeid_t<void>, ::std::unique_ptr<::BiomeComponentBase>>>>
+                                   mComponentList;
+    ::ll::TypedStorage<1, 1, bool> mAllowAddingComponents;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeComponentStorage& operator=(BiomeComponentStorage const&);
-    BiomeComponentStorage(BiomeComponentStorage const&);
-    BiomeComponentStorage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _removeComponent(::Bedrock::typeid_t<void> typeId);
+    MCAPI void _removeComponent(::Bedrock::typeid_t<void> typeId);
 
-    MCNAPI ~BiomeComponentStorage();
+    MCAPI ~BiomeComponentStorage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

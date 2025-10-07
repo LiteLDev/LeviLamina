@@ -15,16 +15,16 @@ struct BiomeIdType;
 namespace BiomeSourceUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI short determineDestinationHeight(::Dimension const& dimension, ::BlockPos const& destination);
+MCAPI short determineDestinationHeight(::Dimension const& dimension, ::BlockPos const& destination);
 
-MCNAPI ::BlockPos determineUndergroundDestinationForBiome(
+MCAPI ::BlockPos determineUndergroundDestinationForBiome(
     ::Dimension const& dimension,
     ::BlockPos const&  startDestination,
     ::BiomeIdType      biomeId,
     int                searchRadius
 );
 
-MCNAPI ::std::optional<::BlockPos> locateBiome(
+MCAPI ::std::optional<::BlockPos> locateBiome(
     ::std::function<bool(::Biome const&)> const& predicate,
     ::BiomeSource const&                         biomeSource,
     ::BlockPos const&                            center,

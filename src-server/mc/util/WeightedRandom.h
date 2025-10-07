@@ -14,13 +14,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnkcb04d8;
+        ::ll::TypedStorage<4, 4, int> mRandomWeight;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WeighedRandomItem& operator=(WeighedRandomItem const&);
-        WeighedRandomItem(WeighedRandomItem const&);
-        WeighedRandomItem();
     };
 };

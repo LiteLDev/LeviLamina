@@ -13,14 +13,14 @@ struct BiomeWeightedData;
 namespace BiomeWeightedSerialization {
 // functions
 // NOLINTBEGIN
-MCNAPI void applySerializedBiomeWeightedDataVector(
+MCAPI void applySerializedBiomeWeightedDataVector(
     ::std::vector<::BiomeWeightedData> const&         data,
     ::std::vector<::std::pair<::Biome const*, uint>>& weightedBiomeVector,
     ::BiomeRegistry const&                            biomeRegistry,
     ::BiomeStringList const&                          stringList
 );
 
-MCNAPI void serializeBiomeWeightedDataVector(
+MCAPI void serializeBiomeWeightedDataVector(
     ::std::vector<::std::pair<::Biome const*, uint>> const& weightedBiomeVector,
     ::std::vector<::BiomeWeightedData>&                     data,
     ::BiomeStringList&                                      stringList

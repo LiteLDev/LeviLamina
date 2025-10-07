@@ -2,31 +2,33 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
+// clang-format on
+
 namespace ScriptModuleMinecraft {
 
 struct ScriptPlayerInteractEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk4dc911;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayer;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptPlayerInteractEvent& operator=(ScriptPlayerInteractEvent const&);
-    ScriptPlayerInteractEvent(ScriptPlayerInteractEvent const&);
-    ScriptPlayerInteractEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ScriptPlayerInteractEvent();
+    MCAPI ~ScriptPlayerInteractEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

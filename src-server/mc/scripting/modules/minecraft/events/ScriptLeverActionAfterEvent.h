@@ -21,20 +21,18 @@ struct ScriptLeverActionAfterEvent : public ::ScriptModuleMinecraft::ScriptBlock
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk4a17dd;
-    ::ll::UntypedStorage<8, 32> mUnk259794;
+    ::ll::TypedStorage<1, 1, bool>                                                                         mIsPowered;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayer;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptLeverActionAfterEvent& operator=(ScriptLeverActionAfterEvent const&);
-    ScriptLeverActionAfterEvent(ScriptLeverActionAfterEvent const&);
     ScriptLeverActionAfterEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptLeverActionAfterEvent(
+    MCAPI ScriptLeverActionAfterEvent(
         ::LeverActionEvent const&                                                   leverActionEvent,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
         ::BlockPos const&,
@@ -45,13 +43,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::LeverActionEvent const&                                                   leverActionEvent,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
         ::BlockPos const&,

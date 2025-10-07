@@ -2,17 +2,21 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/util/IDType.h"
+#include "mc/util/TagRegistry.h"
+
+// auto generated forward declare list
+// clang-format off
+struct BiomeTagIDType;
+struct BiomeTagSetIDType;
+// clang-format on
+
 class WellKnownTagID {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk1609ee;
-    ::ll::UntypedStorage<8, 8>  mUnkc8f33b;
+    ::ll::TypedStorage<8, 16, ::IDType<::BiomeTagIDType>>                                               mTagID;
+    ::ll::TypedStorage<8, 8, ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>*> mTagRegistry;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WellKnownTagID& operator=(WellKnownTagID const&);
-    WellKnownTagID(WellKnownTagID const&);
-    WellKnownTagID();
 };

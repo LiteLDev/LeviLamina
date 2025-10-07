@@ -10,6 +10,7 @@
 class Player;
 struct ItemStopUseEvent;
 namespace ScriptModuleMinecraft { class ScriptItemStack; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -20,9 +21,13 @@ struct ScriptItemStopUseAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnka99d7d;
-    ::ll::UntypedStorage<8, 32> mUnkbc4830;
-    ::ll::UntypedStorage<4, 4>  mUnk2fb80f;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+                                                                                                           mScriptItem;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mSource;
+    ::ll::TypedStorage<4, 4, int>                                                                          mUseDuration;
     // NOLINTEND
 
 public:
@@ -33,32 +38,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemStopUseAfterEvent(::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent const&);
+    MCAPI ScriptItemStopUseAfterEvent(::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent const&);
 
-    MCNAPI ScriptItemStopUseAfterEvent(
+    MCAPI ScriptItemStopUseAfterEvent(
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item,
         ::Player const&                                                                                 player,
         ::ItemStopUseEvent const&                                                                       itemEvent,
         ::Scripting::WeakLifetimeScope const&                                                           scope
     );
 
-    MCNAPI ~ScriptItemStopUseAfterEvent();
+    MCAPI ~ScriptItemStopUseAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent const&);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptItemStopUseAfterEvent const&);
 
-    MCNAPI void* $ctor(
+    MCFOLD void* $ctor(
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> item,
         ::Player const&                                                                                 player,
         ::ItemStopUseEvent const&                                                                       itemEvent,
@@ -69,7 +74,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 
