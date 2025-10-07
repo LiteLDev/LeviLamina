@@ -20,6 +20,8 @@ public:
 
 public:
     Path(std::filesystem::path const& path) : Path(path.u8string()) {}
+    Path(std::u8string&& path) { mPathPart.mUtf8StdString = std::move(*reinterpret_cast<std::string*>(&path)); }
+    Path(std::string&& path) { mPathPart.mUtf8StdString = std::move(path); }
     Path(std::u8string const& path) { mPathPart.mUtf8StdString = *reinterpret_cast<std::string const*>(&path); }
     Path(std::string const& path) { mPathPart.mUtf8StdString = path; }
     Path(char const* path) { mPathPart.mUtf8StdString = path; }
