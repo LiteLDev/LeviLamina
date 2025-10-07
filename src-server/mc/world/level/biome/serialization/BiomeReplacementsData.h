@@ -2,16 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+struct BiomeReplacementData;
+// clang-format on
+
 struct BiomeReplacementsData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfdf058;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeReplacementData>> mBiomeReplacements;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeReplacementsData& operator=(BiomeReplacementsData const&);
-    BiomeReplacementsData(BiomeReplacementsData const&);
-    BiomeReplacementsData();
 };

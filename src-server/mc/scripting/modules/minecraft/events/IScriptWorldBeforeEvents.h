@@ -116,46 +116,46 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
+    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
     $onBeforeChat(::ChatEvent const&, ::Player const&);
 
-    MCNAPI void $onBeforeWorldInitialize(
+    MCFOLD void $onBeforeWorldInitialize(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockComponentRegistry> const&,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponentRegistry> const&
     );
 
-    MCNAPI ::std::optional<
+    MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
     $onBeforePlayerInteractWithEntity(::Player&, ::Actor&, ::PlayerInteractWithEntityBeforeEvent const&);
 
-    MCNAPI ::std::optional<
+    MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>>
     $onBeforePlayerInteractWithBlock(::Player&, ::PlayerInteractWithBlockBeforeEvent const&);
 
-    MCNAPI void $onBeforePlayerLeave(::Player const&);
+    MCFOLD void $onBeforePlayerLeave(::Player const&);
 
-    MCNAPI void $onBeforeActorRemove(::Actor const&);
+    MCFOLD void $onBeforeActorRemove(::Actor const&);
 
-    MCNAPI ::std::optional<
+    MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
     $onBeforeEffectAddedEventSend(::ActorAddEffectEvent&, ::Actor const&);
 
-    MCNAPI ::std::optional<
+    MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>>
     $onBeforeExplosion(::ExplosionStartedEvent const&);
 
-    MCNAPI ::std::optional<
+    MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent>>
     $onBeforePlayerBreakBlock(::Player const&, ::BlockTryDestroyByPlayerEvent const&);
 
-    MCNAPI ::std::optional<
+    MCFOLD ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent>>
     $onBeforePlayerPlaceBlock(::Player const&, ::BlockTryPlaceByPlayerEvent const&);
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
+    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
     $onBeforeItemUse(::Player const&, ::ItemUseEvent const&);
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
+    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     $onBeforeItemUseOn(::Player const&, ::ItemUseOnEvent const&);
     // NOLINTEND
 

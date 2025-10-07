@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
 struct GetBiomeOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk6631ba;
-    ::ll::UntypedStorage<1, 1>  mUnkf6a1c4;
+    ::ll::TypedStorage<4, 12, ::BlockPos const> mBlockPos;
+    ::ll::TypedStorage<1, 1, bool const>        mUseBlendingAttenuation;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GetBiomeOptions& operator=(GetBiomeOptions const&);
-    GetBiomeOptions(GetBiomeOptions const&);
-    GetBiomeOptions();
 };

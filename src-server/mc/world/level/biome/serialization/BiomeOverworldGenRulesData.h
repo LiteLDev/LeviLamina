@@ -9,19 +9,22 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
+struct BiomeConditionalTransformationData;
+struct BiomeWeightedData;
+struct BiomeWeightedTemperatureData;
 // clang-format on
 
 struct BiomeOverworldGenRulesData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnka6216e;
-    ::ll::UntypedStorage<8, 24> mUnk2c7578;
-    ::ll::UntypedStorage<8, 24> mUnke25af6;
-    ::ll::UntypedStorage<8, 24> mUnkcf3ff4;
-    ::ll::UntypedStorage<8, 24> mUnkece971;
-    ::ll::UntypedStorage<8, 24> mUnk304e08;
-    ::ll::UntypedStorage<8, 24> mUnk27d1cc;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>>                  mHillsTransformations;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>>                  mMutateTransformations;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>>                  mRiverTransformations;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>>                  mShoreTransformations;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeConditionalTransformationData>> mPreHillsEdge;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeConditionalTransformationData>> mPostShoreEdge;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedTemperatureData>>       mClimate;
     // NOLINTEND
 
 public:
@@ -32,34 +35,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BiomeOverworldGenRulesData(::BiomeOverworldGenRulesData const&);
+    MCAPI BiomeOverworldGenRulesData(::BiomeOverworldGenRulesData const&);
 
-    MCNAPI BiomeOverworldGenRulesData(::BiomeOverworldGenRulesData&&);
+    MCAPI BiomeOverworldGenRulesData(::BiomeOverworldGenRulesData&&);
 
-    MCNAPI ::BiomeOverworldGenRulesData& operator=(::BiomeOverworldGenRulesData&&);
+    MCAPI ::BiomeOverworldGenRulesData& operator=(::BiomeOverworldGenRulesData&&);
 
-    MCNAPI void write(::BinaryStream& stream) const;
+    MCAPI void write(::BinaryStream& stream) const;
 
-    MCNAPI ~BiomeOverworldGenRulesData();
+    MCAPI ~BiomeOverworldGenRulesData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::BiomeOverworldGenRulesData> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::BiomeOverworldGenRulesData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BiomeOverworldGenRulesData const&);
+    MCAPI void* $ctor(::BiomeOverworldGenRulesData const&);
 
-    MCNAPI void* $ctor(::BiomeOverworldGenRulesData&&);
+    MCFOLD void* $ctor(::BiomeOverworldGenRulesData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

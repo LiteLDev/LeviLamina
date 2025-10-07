@@ -18,8 +18,9 @@ struct ScriptItemCompleteUseEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk5ba2ff;
-    ::ll::UntypedStorage<8, 32> mUnk775e66;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
+                                                                                                           mScriptItem;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mSource;
     // NOLINTEND
 
 public:
@@ -30,28 +31,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemCompleteUseEvent(::ScriptModuleMinecraft::ScriptItemCompleteUseEvent const&);
+    MCAPI ScriptItemCompleteUseEvent(::ScriptModuleMinecraft::ScriptItemCompleteUseEvent const&);
 
-    MCNAPI ScriptItemCompleteUseEvent(
+    MCAPI ScriptItemCompleteUseEvent(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>    player
     );
 
-    MCNAPI ~ScriptItemCompleteUseEvent();
+    MCAPI ~ScriptItemCompleteUseEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCompleteUseEvent const&);
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptItemCompleteUseEvent const&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>    player
     );
@@ -60,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

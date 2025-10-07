@@ -2,33 +2,32 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Biome;
+// clang-format on
+
 struct BiomeReplacement {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk15accf;
-    ::ll::UntypedStorage<8, 32> mUnk75c51c;
-    ::ll::UntypedStorage<8, 24> mUnk2b932e;
-    ::ll::UntypedStorage<4, 4>  mUnkd7a5b9;
-    ::ll::UntypedStorage<4, 4>  mUnk75f18b;
-    ::ll::UntypedStorage<4, 4>  mUnke0a0ff;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Biome const*>>                 mReplacementBiome;
+    ::ll::TypedStorage<8, 32, ::std::string>                                  mDimension;
+    ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::Biome const*>>> mTargetBiomes;
+    ::ll::TypedStorage<4, 4, float>                                           mAmount;
+    ::ll::TypedStorage<4, 4, float>                                           mNoiseFrequencyScale;
+    ::ll::TypedStorage<4, 4, uint>                                            mReplacementIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeReplacement& operator=(BiomeReplacement const&);
-    BiomeReplacement(BiomeReplacement const&);
-    BiomeReplacement();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BiomeReplacement();
+    MCAPI ~BiomeReplacement();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

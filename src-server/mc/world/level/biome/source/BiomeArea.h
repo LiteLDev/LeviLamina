@@ -24,20 +24,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BiomeArea(::BoundingBox const& area, uint scale);
+    MCAPI BiomeArea(::BoundingBox const& area, uint scale);
 
-    MCNAPI ~BiomeArea();
+    MCAPI ~BiomeArea();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BoundingBox const& area, uint scale);
+    MCAPI void* $ctor(::BoundingBox const& area, uint scale);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

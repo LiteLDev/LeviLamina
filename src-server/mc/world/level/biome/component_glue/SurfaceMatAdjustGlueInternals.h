@@ -15,7 +15,7 @@ struct MolangJsonContainer;
 namespace SurfaceMatAdjustGlueInternals {
 // functions
 // NOLINTBEGIN
-MCNAPI bool resolveAndVerifyMolang(
+MCAPI bool resolveAndVerifyMolang(
     ::std::optional<::ExpressionNode>& expressionNode,
     ::MolangJsonContainer const&       molangJson,
     ::MolangVersion                    molangVersion,

@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -13,19 +17,13 @@ struct ScriptActorRemoveBeforeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkb81c95;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mRemovedActor;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptActorRemoveBeforeEvent& operator=(ScriptActorRemoveBeforeEvent const&);
-    ScriptActorRemoveBeforeEvent(ScriptActorRemoveBeforeEvent const&);
-    ScriptActorRemoveBeforeEvent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

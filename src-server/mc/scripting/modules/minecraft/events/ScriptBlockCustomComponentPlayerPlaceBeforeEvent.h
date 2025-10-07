@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
+#include "mc/scripting/modules/minecraft/ScriptFacing.h"
 #include "mc/scripting/modules/minecraft/events/ScriptBlockEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentBeforeEvent.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentToExecute.h"
@@ -11,6 +13,8 @@
 // clang-format off
 namespace BlockEvents { class BlockPlayerPlacingEvent; }
 namespace ScriptModuleMinecraft { class ScriptBlockCustomComponentInterface; }
+namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -23,10 +27,15 @@ struct ScriptBlockCustomComponentPlayerPlaceBeforeEvent
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkc7a6a3;
-    ::ll::UntypedStorage<8, 32> mUnk308d49;
-    ::ll::UntypedStorage<4, 4>  mUnk76faba;
-    ::ll::UntypedStorage<8, 40> mUnkfb6c67;
+    ::ll::TypedStorage<1, 1, bool> mCancel;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
+                                                                    mPermutationToPlace;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptFacing> mFace;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
+        mPlayer;
     // NOLINTEND
 
 public:
@@ -51,15 +60,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
+    MCAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&
     );
 
-    MCNAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
+    MCAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&
     );
 
-    MCNAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
+    MCAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
         ::BlockEvents::BlockPlayerPlacingEvent const& engineEvent,
         ::Scripting::WeakLifetimeScope const&         scope
     );
@@ -68,9 +77,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
+    MCAPI static ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
         void>>
     tryGetComponentsToExecute(::BlockEvents::BlockPlayerPlacingEvent const& eventData);
@@ -79,26 +88,26 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent&&);
 
-    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
 
-    MCNAPI void*
+    MCAPI void*
     $ctor(::BlockEvents::BlockPlayerPlacingEvent const& engineEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $updateEngineEvent(::BlockEvents::BlockPlayerPlacingEvent& engineEvent) const;
+    MCAPI void $updateEngineEvent(::BlockEvents::BlockPlayerPlacingEvent& engineEvent) const;
 
-    MCNAPI bool $shouldCancel() const;
+    MCFOLD bool $shouldCancel() const;
     // NOLINTEND
 
 public:

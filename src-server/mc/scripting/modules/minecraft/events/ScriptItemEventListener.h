@@ -3,6 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/scripting/lifetime_registry/TypedObjectHandle.h"
+#include "mc/deps/scripting/lifetime_registry/WeakLifetimeScope.h"
 #include "mc/world/events/EventListenerDispatcher.h"
 #include "mc/world/events/EventResult.h"
 #include "mc/world/events/ItemEventListener.h"
@@ -17,6 +19,7 @@ struct ItemStopUseEvent;
 struct ItemStopUseOnEvent;
 struct ItemUseEvent;
 struct ItemUsedOnEvent;
+namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -25,15 +28,10 @@ class ScriptItemEventListener : public ::EventListenerDispatcher<::ItemEventList
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk77a3ff;
-    ::ll::UntypedStorage<8, 16> mUnke24955;
+    ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
+                                                              mScriptEventsHandle;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptItemEventListener& operator=(ScriptItemEventListener const&);
-    ScriptItemEventListener(ScriptItemEventListener const&);
-    ScriptItemEventListener();
 
 public:
     // virtual functions
@@ -69,21 +67,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::EventResult $onEvent(::ItemUsedOnEvent const& itemEvent);
+    MCAPI ::EventResult $onEvent(::ItemUsedOnEvent const& itemEvent);
 
-    MCNAPI ::EventResult $onEvent(::ItemStartUseOnEvent const& itemEvent);
+    MCAPI ::EventResult $onEvent(::ItemStartUseOnEvent const& itemEvent);
 
-    MCNAPI ::EventResult $onEvent(::ItemStopUseOnEvent const& itemEvent);
+    MCAPI ::EventResult $onEvent(::ItemStopUseOnEvent const& itemEvent);
 
-    MCNAPI ::EventResult $onEvent(::ItemUseEvent const& itemEvent);
+    MCAPI ::EventResult $onEvent(::ItemUseEvent const& itemEvent);
 
-    MCNAPI ::EventResult $onEvent(::ItemStartUseEvent const& itemEvent);
+    MCAPI ::EventResult $onEvent(::ItemStartUseEvent const& itemEvent);
 
-    MCNAPI ::EventResult $onEvent(::ItemCompleteUseEvent const& itemEvent);
+    MCAPI ::EventResult $onEvent(::ItemCompleteUseEvent const& itemEvent);
 
-    MCNAPI ::EventResult $onEvent(::ItemReleaseUseEvent const& itemEvent);
+    MCAPI ::EventResult $onEvent(::ItemReleaseUseEvent const& itemEvent);
 
-    MCNAPI ::EventResult $onEvent(::ItemStopUseEvent const& itemEvent);
+    MCAPI ::EventResult $onEvent(::ItemStopUseEvent const& itemEvent);
     // NOLINTEND
 
 public:

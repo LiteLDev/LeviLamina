@@ -8,36 +8,31 @@
 // auto generated forward declare list
 // clang-format off
 class ReadOnlyBinaryStream;
+struct BiomeConditionalTransformationData;
 // clang-format on
 
 struct BiomeLegacyWorldGenRulesData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk28342a;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeConditionalTransformationData>> mLegacyPreHillsEdge;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeLegacyWorldGenRulesData& operator=(BiomeLegacyWorldGenRulesData const&);
-    BiomeLegacyWorldGenRulesData(BiomeLegacyWorldGenRulesData const&);
-    BiomeLegacyWorldGenRulesData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BiomeLegacyWorldGenRulesData();
+    MCAPI ~BiomeLegacyWorldGenRulesData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::BiomeLegacyWorldGenRulesData> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::BiomeLegacyWorldGenRulesData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

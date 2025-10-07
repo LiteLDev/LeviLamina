@@ -12,7 +12,7 @@ struct CappedSurfaceAttributes;
 namespace BiomeCappedSurfaceSerialization {
 // functions
 // NOLINTBEGIN
-MCNAPI void applySerializedCappedSurfaceData(
+MCAPI void applySerializedCappedSurfaceData(
     ::BiomeCappedSurfaceData const& data,
     ::CappedSurfaceAttributes&      cappedSurface,
     ::BlockPalette const&           blockPalette

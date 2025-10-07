@@ -16,21 +16,15 @@ struct ScriptItemUseBeforeEvent : public ::ScriptModuleMinecraft::ScriptItemUseA
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5a2182;
+    ::ll::TypedStorage<1, 1, bool> mCancel;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ScriptItemUseBeforeEvent& operator=(ScriptItemUseBeforeEvent const&);
-    ScriptItemUseBeforeEvent(ScriptItemUseBeforeEvent const&);
-    ScriptItemUseBeforeEvent();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind();
+    MCAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::ClassBinding bindV010();
+    MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 };
 

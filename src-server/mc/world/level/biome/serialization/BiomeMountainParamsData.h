@@ -14,23 +14,17 @@ struct BiomeMountainParamsData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka00c70;
-    ::ll::UntypedStorage<1, 1> mUnk260fe1;
-    ::ll::UntypedStorage<1, 1> mUnkc173f6;
-    ::ll::UntypedStorage<1, 1> mUnk340406;
-    ::ll::UntypedStorage<1, 1> mUnk42f546;
-    ::ll::UntypedStorage<1, 1> mUnk794df3;
+    ::ll::TypedStorage<4, 4, uint> mSteepBlock;
+    ::ll::TypedStorage<1, 1, bool> mNorthSlopes;
+    ::ll::TypedStorage<1, 1, bool> mSouthSlopes;
+    ::ll::TypedStorage<1, 1, bool> mWestSlopes;
+    ::ll::TypedStorage<1, 1, bool> mEastSlopes;
+    ::ll::TypedStorage<1, 1, bool> mTopSlideEnabled;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeMountainParamsData& operator=(BiomeMountainParamsData const&);
-    BiomeMountainParamsData(BiomeMountainParamsData const&);
-    BiomeMountainParamsData();
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::BiomeMountainParamsData> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::BiomeMountainParamsData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

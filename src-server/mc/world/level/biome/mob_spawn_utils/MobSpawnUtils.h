@@ -23,9 +23,9 @@ struct ActorDefinitionIdentifier;
 namespace MobSpawnUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI void onMobSpawned(::BlockPos const& pos, ::Level& level, ::Mob& mob);
+MCAPI void onMobSpawned(::BlockPos const& pos, ::Level& level, ::Mob& mob);
 
-MCNAPI ::OwnerPtr<::EntityContext> spawnIfSummonable(
+MCAPI ::OwnerPtr<::EntityContext> spawnIfSummonable(
     ::ActorDefinitionIdentifier const& actorIdentifier,
     ::ActorDefinitionGroup&            actorDefinitions,
     ::ActorFactory&                    actorFactory,
@@ -33,7 +33,7 @@ MCNAPI ::OwnerPtr<::EntityContext> spawnIfSummonable(
     ::Vec2 const&                      rotation
 );
 
-MCNAPI ::Mob* trySpawnMob(
+MCAPI ::Mob* trySpawnMob(
     ::BlockSource&                           region,
     ::ActorDefinitionIdentifier const&       actorDefinition,
     ::BlockPos                               start,

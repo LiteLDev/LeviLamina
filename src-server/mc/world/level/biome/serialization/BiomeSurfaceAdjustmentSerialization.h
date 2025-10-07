@@ -17,14 +17,14 @@ struct SurfaceMaterialAdjustmentAttributes;
 namespace BiomeSurfaceAdjustmentSerialization {
 // functions
 // NOLINTBEGIN
-MCNAPI void applySerializedSurfaceAdjustmentData(
+MCAPI void applySerializedSurfaceAdjustmentData(
     ::BiomeSurfaceMaterialAdjustmentData const& data,
     ::SurfaceMaterialAdjustmentAttributes&      surfaceAdjustments,
     ::BlockPalette const&                       blockPalette,
     ::BiomeStringList const&                    stringList
 );
 
-MCNAPI void serializeBiomeElementData(
+MCAPI void serializeBiomeElementData(
     ::SurfaceMaterialAdjustmentAttributes::Element const& adjustment,
     ::BiomeElementData&                                   data,
     ::BiomeStringList&                                    stringList

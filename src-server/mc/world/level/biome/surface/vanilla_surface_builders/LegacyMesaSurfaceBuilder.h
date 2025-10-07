@@ -4,10 +4,12 @@
 
 // auto generated inclusion list
 #include "mc/world/level/biome/surface/ISurfaceBuilder.h"
+#include "mc/world/level/block/BlockColor.h"
 
 // auto generated forward declare list
 // clang-format off
 class Biome;
+class PerlinSimplexNoise;
 class Random;
 // clang-format on
 
@@ -17,17 +19,11 @@ class LegacyMesaSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 64> mUnk25f178;
-    ::ll::UntypedStorage<8, 8>  mUnk80f733;
-    ::ll::UntypedStorage<8, 8>  mUnkc93024;
-    ::ll::UntypedStorage<8, 8>  mUnk71c973;
+    ::ll::TypedStorage<1, 64, ::std::array<::BlockColor, 64>>         mColorBands;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mPillarNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mPillarRoofNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mBandsNoise;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LegacyMesaSurfaceBuilder& operator=(LegacyMesaSurfaceBuilder const&);
-    LegacyMesaSurfaceBuilder(LegacyMesaSurfaceBuilder const&);
-    LegacyMesaSurfaceBuilder();
 
 public:
     // virtual functions
@@ -51,25 +47,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void generateBands(::Random& random);
+    MCAPI void generateBands(::Random& random);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initBuilder(uint levelSeed);
+    MCAPI void $initBuilder(uint levelSeed);
 
-    MCNAPI void $initBiomeSurface(::Biome& biome) const;
+    MCFOLD void $initBiomeSurface(::Biome& biome) const;
 
-    MCNAPI bool $isBestBuilder(::Biome const& biome) const;
+    MCFOLD bool $isBestBuilder(::Biome const& biome) const;
 
-    MCNAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
+    MCAPI void $buildSurfaceAt(::ISurfaceBuilder::BuildParameters const& parameters) const;
     // NOLINTEND
 
 public:

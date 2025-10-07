@@ -14,30 +14,24 @@ struct BiomeTagsData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkd3dcba;
+    ::ll::TypedStorage<8, 24, ::std::vector<ushort>> mTags;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BiomeTagsData& operator=(BiomeTagsData const&);
-    BiomeTagsData(BiomeTagsData const&);
-    BiomeTagsData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~BiomeTagsData();
+    MCAPI ~BiomeTagsData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Result<::BiomeTagsData> read(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::BiomeTagsData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
