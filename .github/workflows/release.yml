@@ -61,7 +61,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: matbour/setup-sentry-cli@v1
+      - uses: matbour/setup-sentry-cli@v2
         with:
           token: ${{ SECRETS.SENTRY_TOKEN }}
           organization: ${{ SECRETS.SENTRY_ORG }}
