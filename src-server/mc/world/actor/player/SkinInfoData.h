@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/player/SerializedSkin.h"
+
 // auto generated forward declare list
 // clang-format off
-class SerializedSkin;
 namespace mce { struct Image; }
 // clang-format on
 
@@ -12,17 +14,11 @@ class SkinInfoData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk104d2d;
-    ::ll::UntypedStorage<1, 1>  mUnkbcf085;
-    ::ll::UntypedStorage<1, 1>  mUnke33fb1;
-    ::ll::UntypedStorage<8, 16> mUnk451ea9;
+    ::ll::TypedStorage<8, 32, ::std::string>    mDefaultMeshName;
+    ::ll::TypedStorage<1, 1, bool>              mIsAlphaTest;
+    ::ll::TypedStorage<1, 1, bool>              mIsDirty;
+    ::ll::TypedStorage<8, 16, ::SerializedSkin> mSkin;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SkinInfoData& operator=(SkinInfoData const&);
-    SkinInfoData(SkinInfoData const&);
-    SkinInfoData();
 
 public:
     // virtual functions
@@ -43,7 +39,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool isValidSize(uint64 skinSize);
+    MCAPI static bool isValidSize(uint64 skinSize);
     // NOLINTEND
 
 public:

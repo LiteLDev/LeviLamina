@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/world/actor/npc/INpcDialogueData.h"
 
 // auto generated forward declare list
@@ -16,15 +17,9 @@ struct NpcComponentDialogueData : public ::INpcDialogueData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkfdaf47;
-    ::ll::UntypedStorage<1, 1>  mUnk4842f9;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mOwner;
+    ::ll::TypedStorage<1, 1, bool>             mIsRemoteFire;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NpcComponentDialogueData& operator=(NpcComponentDialogueData const&);
-    NpcComponentDialogueData(NpcComponentDialogueData const&);
-    NpcComponentDialogueData();
 
 public:
     // virtual functions

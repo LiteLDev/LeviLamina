@@ -4,16 +4,75 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/LogArea.h"
+#include "mc/deps/shared_types/v1_21_100/actor/TickWorldDefinition.h"
+#include "mc/entity/components/BehaviorTreeDescription.h"
+#include "mc/entity/components/BreakDoorAnnotationDescription.h"
+#include "mc/entity/components/CommandBlockDescription.h"
+#include "mc/entity/components/TripodCameraDescription.h"
+#include "mc/entity/components_json_legacy/BreakBlocksDescription.h"
+#include "mc/entity/components_json_legacy/BucketableDescription.h"
+#include "mc/entity/components_json_legacy/ContainerDescription.h"
+#include "mc/entity/components_json_legacy/DwellerDescription.h"
+#include "mc/entity/components_json_legacy/EconomyTradeableDescription.h"
+#include "mc/entity/components_json_legacy/HideDescription.h"
+#include "mc/entity/components_json_legacy/IllagerBeastBlockedDescription.h"
+#include "mc/entity/components_json_legacy/ManagedWanderingTraderDescription.h"
+#include "mc/entity/components_json_legacy/OpenDoorAnnotationDescription.h"
+#include "mc/entity/components_json_legacy/ProjectileDescription.h"
+#include "mc/entity/components_json_legacy/PushableDescription.h"
+#include "mc/entity/components_json_legacy/TeleportDescription.h"
+#include "mc/entity/components_json_legacy/TransformationDescription.h"
+#include "mc/entity/definitions/AmphibiousMoveControlDescription.h"
+#include "mc/entity/definitions/AttackDescription.h"
+#include "mc/entity/definitions/DynamicJumpControlDescription.h"
+#include "mc/entity/definitions/GenericMoveControlDescription.h"
+#include "mc/entity/definitions/GlideMoveControlDescription.h"
+#include "mc/entity/definitions/JumpControlDescription.h"
+#include "mc/entity/definitions/MobEffectChangeDescription.h"
+#include "mc/entity/definitions/MoveControlBasicDescription.h"
+#include "mc/entity/definitions/MoveControlDolphinDescription.h"
+#include "mc/entity/definitions/MoveControlFlyDescription.h"
+#include "mc/entity/definitions/MoveControlHoverDescription.h"
+#include "mc/entity/definitions/MoveControlSkipDescription.h"
+#include "mc/entity/definitions/MoveControlSwayDescription.h"
+#include "mc/entity/definitions/NavigationClimbDescription.h"
+#include "mc/entity/definitions/NavigationFloatDescription.h"
+#include "mc/entity/definitions/NavigationFlyDescription.h"
+#include "mc/entity/definitions/NavigationGenericDescription.h"
+#include "mc/entity/definitions/NavigationHoverDescription.h"
+#include "mc/entity/definitions/NavigationSwimDescription.h"
+#include "mc/entity/definitions/NavigationWalkDescription.h"
+#include "mc/entity/definitions/PersistentDescription.h"
+#include "mc/entity/definitions/PreferredPathDescription.h"
+#include "mc/entity/definitions/SlimeMoveControlDescription.h"
+#include "mc/entity/definitions/StrengthDescription.h"
+#include "mc/entity/definitions/TradeResupplyDescription.h"
+#include "mc/entity/definitions/TrailDescription.h"
+#include "mc/entity/definitions/TrustDescription.h"
 #include "mc/resources/JsonBetaState.h"
+#include "mc/server/commands/CurrentCmdVersion.h"
+#include "mc/world/actor/ActorAliasDescription.h"
+#include "mc/world/actor/ActorDefinitionDescriptor.h"
 #include "mc/world/actor/ActorDefinitionParseStatus.h"
+#include "mc/world/actor/ActorPropertiesDescription.h"
+#include "mc/world/actor/AnimationScriptsDescription.h"
+#include "mc/world/actor/AnimationsDescription.h"
+#include "mc/world/actor/IdentifierDescription.h"
+#include "mc/world/actor/IsSpawnableDescription.h"
+#include "mc/world/actor/IsSummonableDescription.h"
+#include "mc/world/actor/RuntimeIdentifierDescription.h"
+#include "mc/world/actor/SpawnCategoryDescription.h"
+#include "mc/world/persistence/DynamicPropertiesDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
-class ActorDefinitionDescriptor;
+class ActorDefinitionEvent;
 class ActorEventResponseFactory;
 class ActorFactory;
+class CommonResourceDefinitionMap;
 class MinEngineVersion;
 class SemVersion;
+struct ActorDefinitionAttribute;
 struct ActorDocumentDataParams;
 namespace cereal { class DynamicValue; }
 // clang-format on
@@ -22,96 +81,94 @@ class ActorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 968> mUnk6bda03;
-    ::ll::UntypedStorage<8, 40>  mUnkf17916;
-    ::ll::UntypedStorage<8, 40>  mUnk2d34b6;
-    ::ll::UntypedStorage<1, 16>  mUnk9b540f;
-    ::ll::UntypedStorage<1, 16>  mUnk8530f2;
-    ::ll::UntypedStorage<8, 72>  mUnk3f0bae;
-    ::ll::UntypedStorage<8, 32>  mUnk458bad;
-    ::ll::UntypedStorage<8, 24>  mUnkd3ce24;
-    ::ll::UntypedStorage<8, 32>  mUnkf5b708;
-    ::ll::UntypedStorage<4, 16>  mUnk354e24;
-    ::ll::UntypedStorage<8, 24>  mUnkaaad6c;
-    ::ll::UntypedStorage<8, 64>  mUnkdf86c2;
-    ::ll::UntypedStorage<8, 16>  mUnk918084;
-    ::ll::UntypedStorage<8, 32>  mUnk4054c9;
-    ::ll::UntypedStorage<4, 4>   mUnk61500a;
-    ::ll::UntypedStorage<8, 72>  mUnk8e6ffa;
-    ::ll::UntypedStorage<8, 56>  mUnk4b6801;
-    ::ll::UntypedStorage<8, 56>  mUnk729fdb;
-    ::ll::UntypedStorage<4, 16>  mUnkc7a35f;
-    ::ll::UntypedStorage<8, 40>  mUnk88800c;
-    ::ll::UntypedStorage<8, 72>  mUnk44bdc5;
-    ::ll::UntypedStorage<4, 16>  mUnk78cbde;
-    ::ll::UntypedStorage<1, 8>   mUnka41fad;
-    ::ll::UntypedStorage<4, 24>  mUnkbdc608;
-    ::ll::UntypedStorage<4, 24>  mUnke0c99f;
-    ::ll::UntypedStorage<8, 128> mUnk97487a;
-    ::ll::UntypedStorage<4, 16>  mUnkbd744c;
-    ::ll::UntypedStorage<4, 24>  mUnk360194;
-    ::ll::UntypedStorage<1, 8>   mUnkd54306;
-    ::ll::UntypedStorage<8, 40>  mUnkd8b5e3;
-    ::ll::UntypedStorage<1, 8>   mUnk26e3e6;
-    ::ll::UntypedStorage<4, 16>  mUnk6002e8;
-    ::ll::UntypedStorage<4, 16>  mUnk27ff04;
-    ::ll::UntypedStorage<4, 16>  mUnkf7ec50;
-    ::ll::UntypedStorage<4, 16>  mUnk9f658a;
-    ::ll::UntypedStorage<4, 16>  mUnka6b0c5;
-    ::ll::UntypedStorage<4, 24>  mUnkef3503;
-    ::ll::UntypedStorage<8, 88>  mUnka4add4;
-    ::ll::UntypedStorage<8, 88>  mUnk7d6dca;
-    ::ll::UntypedStorage<8, 88>  mUnkc10249;
-    ::ll::UntypedStorage<8, 88>  mUnk833e28;
-    ::ll::UntypedStorage<8, 88>  mUnk688e27;
-    ::ll::UntypedStorage<8, 120> mUnk9dcb37;
-    ::ll::UntypedStorage<8, 88>  mUnkb5ccfb;
-    ::ll::UntypedStorage<1, 8>   mUnk3bacaa;
-    ::ll::UntypedStorage<8, 48>  mUnk7aa225;
-    ::ll::UntypedStorage<8, 360> mUnk771d5a;
-    ::ll::UntypedStorage<1, 16>  mUnk57781e;
-    ::ll::UntypedStorage<4, 24>  mUnk93d38f;
-    ::ll::UntypedStorage<4, 24>  mUnk15a8c2;
-    ::ll::UntypedStorage<8, 136> mUnkad3901;
-    ::ll::UntypedStorage<4, 48>  mUnkca87dd;
-    ::ll::UntypedStorage<4, 12>  mUnk9dd6d5;
-    ::ll::UntypedStorage<1, 8>   mUnk8c3d25;
-    ::ll::UntypedStorage<1, 8>   mUnkd0a93b;
-    ::ll::UntypedStorage<8, 112> mUnkb07767;
-    ::ll::UntypedStorage<8, 320> mUnk8fdf38;
-    ::ll::UntypedStorage<4, 16>  mUnk39fb9e;
-    ::ll::UntypedStorage<4, 16>  mUnkeb97db;
-    ::ll::UntypedStorage<1, 8>   mUnke23d01;
-    ::ll::UntypedStorage<1, 8>   mUnk80e01d;
+    ::ll::TypedStorage<8, 968, ::ActorDefinitionDescriptor>                                mDescription;
+    ::ll::TypedStorage<8, 40, ::IdentifierDescription>                                     mIdentifier;
+    ::ll::TypedStorage<8, 40, ::RuntimeIdentifierDescription>                              mRuntimeIdentifier;
+    ::ll::TypedStorage<1, 16, ::IsSpawnableDescription>                                    mIsSpawnable;
+    ::ll::TypedStorage<1, 16, ::IsSummonableDescription>                                   mIsSummonable;
+    ::ll::TypedStorage<8, 72, ::AnimationsDescription>                                     mAnimationsDescription;
+    ::ll::TypedStorage<8, 32, ::AnimationScriptsDescription>                               mAnimationScriptsDescription;
+    ::ll::TypedStorage<8, 24, ::ActorPropertiesDescription>                                mActorPropertiesDescription;
+    ::ll::TypedStorage<8, 32, ::ActorAliasDescription>                                     mActorAliasDescription;
+    ::ll::TypedStorage<4, 16, ::SpawnCategoryDescription>                                  mSpawnCategoryDescription;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionAttribute>>                   mAttributes;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ActorDefinitionEvent>> mEventHandlers;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::CommonResourceDefinitionMap>>            mCommonResourceDefinitionMap;
+    ::ll::TypedStorage<8, 32, ::std::string>                                               mRelativeResourceFilepath;
+    ::ll::TypedStorage<4, 4, ::CurrentCmdVersion>                                          mCommandVersion;
+    ::ll::TypedStorage<8, 72, ::DynamicPropertiesDefinition>                               mDynamicPropertiesDefinition;
+    ::ll::TypedStorage<8, 56, ::AttackDescription>                                         mAttack;
+    ::ll::TypedStorage<8, 56, ::MobEffectChangeDescription>                                mMobEffects;
+    ::ll::TypedStorage<4, 16, ::AmphibiousMoveControlDescription>                          mAmphibiousMoveControl;
+    ::ll::TypedStorage<8, 40, ::BehaviorTreeDescription>                                   mBehavior;
+    ::ll::TypedStorage<8, 72, ::BreakBlocksDescription>                                    mBreakBlocks;
+    ::ll::TypedStorage<4, 16, ::BreakDoorAnnotationDescription>                            mBreakDoorAnnotation;
+    ::ll::TypedStorage<1, 8, ::BucketableDescription>                                      mBucketable;
+    ::ll::TypedStorage<4, 24, ::CommandBlockDescription>                                   mCommandBlock;
+    ::ll::TypedStorage<4, 24, ::ContainerDescription>                                      mContainer;
+    ::ll::TypedStorage<8, 128, ::DwellerDescription>                                       mDweller;
+    ::ll::TypedStorage<4, 16, ::GenericMoveControlDescription>                             mGenericMoveControl;
+    ::ll::TypedStorage<4, 24, ::GlideMoveControlDescription>                               mGlideMoveControl;
+    ::ll::TypedStorage<1, 8, ::HideDescription>                                            mHide;
+    ::ll::TypedStorage<8, 40, ::IllagerBeastBlockedDescription>                            mIllagerBeastBlocked;
+    ::ll::TypedStorage<1, 8, ::ManagedWanderingTraderDescription>                          mManagedWanderingTrader;
+    ::ll::TypedStorage<4, 16, ::MoveControlBasicDescription>                               mMoveControl;
+    ::ll::TypedStorage<4, 16, ::MoveControlDolphinDescription>                             mDolphinSwimControl;
+    ::ll::TypedStorage<4, 16, ::MoveControlFlyDescription>                                 mFlyControl;
+    ::ll::TypedStorage<4, 16, ::MoveControlSkipDescription>                                mHopControl;
+    ::ll::TypedStorage<4, 16, ::MoveControlHoverDescription>                               mHoverControl;
+    ::ll::TypedStorage<4, 24, ::MoveControlSwayDescription>                                mSwimControl;
+    ::ll::TypedStorage<8, 88, ::NavigationClimbDescription>                                mWallClimberNavigation;
+    ::ll::TypedStorage<8, 88, ::NavigationFloatDescription>                                mFloatNavigation;
+    ::ll::TypedStorage<8, 88, ::NavigationFlyDescription>                                  mFlyingNavigation;
+    ::ll::TypedStorage<8, 88, ::NavigationHoverDescription>                                mHoverNavigation;
+    ::ll::TypedStorage<8, 88, ::NavigationGenericDescription>                              mGenericNavigation;
+    ::ll::TypedStorage<8, 120, ::NavigationSwimDescription>                                mWaterboundNavigation;
+    ::ll::TypedStorage<8, 88, ::NavigationWalkDescription>                                 mNavigation;
+    ::ll::TypedStorage<1, 8, ::PersistentDescription>                                      mPersistent;
+    ::ll::TypedStorage<8, 48, ::PreferredPathDescription>                                  mPreferredPath;
+    ::ll::TypedStorage<8, 360, ::ProjectileDescription>                                    mProjectile;
+    ::ll::TypedStorage<1, 16, ::PushableDescription>                                       mPushable;
+    ::ll::TypedStorage<4, 24, ::SlimeMoveControlDescription>                               mSlimeMoveControl;
+    ::ll::TypedStorage<4, 24, ::StrengthDescription>                                       mStrength;
+    ::ll::TypedStorage<8, 136, ::TrailDescription>                                         mTrail;
+    ::ll::TypedStorage<4, 48, ::TeleportDescription>                                       mTeleport;
+    ::ll::TypedStorage<4, 12, ::SharedTypes::v1_21_100::TickWorldDefinition>               mTickWorld;
+    ::ll::TypedStorage<1, 8, ::TradeResupplyDescription>                                   mTradeResupply;
+    ::ll::TypedStorage<1, 8, ::TrustDescription>                                           mTrust;
+    ::ll::TypedStorage<8, 112, ::EconomyTradeableDescription>                              mEconomyTradeable;
+    ::ll::TypedStorage<8, 320, ::TransformationDescription>                                mTransformation;
+    ::ll::TypedStorage<4, 16, ::DynamicJumpControlDescription>                             mDynamicJumpControl;
+    ::ll::TypedStorage<4, 16, ::JumpControlDescription>                                    mJumpControl;
+    ::ll::TypedStorage<1, 8, ::OpenDoorAnnotationDescription>                              mOpenDoorAnnotation;
+    ::ll::TypedStorage<1, 8, ::TripodCameraDescription>                                    mTripodCamera;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ActorDefinition& operator=(ActorDefinition const&);
-    ActorDefinition(ActorDefinition const&);
     ActorDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ActorDefinition(::std::string const& id);
+    MCAPI explicit ActorDefinition(::std::string const& id);
 
-    MCNAPI ::ActorDefinitionParseStatus parse(
+    MCAPI ::ActorDefinitionParseStatus parse(
         ::ActorDocumentDataParams    deserializeDataParams,
         ::ActorDefinitionDescriptor& desc,
         ::ActorFactory&              actorFactory,
         ::LogArea                    logArea
     );
 
-    MCNAPI void parseAttributes(::ActorDocumentDataParams deserializeDataParams, ::ActorDefinitionDescriptor& desc);
+    MCAPI void parseAttributes(::ActorDocumentDataParams deserializeDataParams, ::ActorDefinitionDescriptor& desc);
 
-    MCNAPI void parseEntityDescription(
+    MCAPI void parseEntityDescription(
         ::cereal::DynamicValue const& description,
         ::SemVersion const&           formatVersion,
         ::MinEngineVersion const&     minEngineVersion
     );
 
-    MCNAPI void parseEvents(
+    MCAPI void parseEvents(
         ::cereal::DynamicValue const& root,
         ::MinEngineVersion const&     minEngineVersion,
         ::SemVersion const&           formatVersion,
@@ -119,18 +176,18 @@ public:
         ::JsonBetaState               useBetaFeatures
     );
 
-    MCNAPI ~ActorDefinition();
+    MCAPI ~ActorDefinition();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& id);
+    MCAPI void* $ctor(::std::string const& id);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

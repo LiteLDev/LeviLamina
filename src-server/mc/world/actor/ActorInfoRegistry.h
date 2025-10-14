@@ -11,33 +11,28 @@ class ActorInfoRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk57f6e9;
-    ::ll::UntypedStorage<8, 64> mUnk701a9e;
-    ::ll::UntypedStorage<4, 4>  mUnkc01a4f;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, uint>>      mActorInfoNameMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::ActorInfo>> mActorInfoMap;
+    ::ll::TypedStorage<4, 4, uint>                                     mLastId;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ActorInfoRegistry& operator=(ActorInfoRegistry const&);
-    ActorInfoRegistry(ActorInfoRegistry const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorInfoRegistry();
+    MCAPI ActorInfoRegistry();
 
-    MCNAPI uint getActorInfoId(uint64 const& name) const;
+    MCAPI uint getActorInfoId(uint64 const& name) const;
 
-    MCNAPI uint getActorInfoId(::std::string const& name) const;
+    MCAPI uint getActorInfoId(::std::string const& name) const;
 
-    MCNAPI bool isSpawnEggAvailable(::std::string identifier);
+    MCAPI bool isSpawnEggAvailable(::std::string identifier);
 
-    MCNAPI void registerActorInfo(::ActorInfo const& info);
+    MCAPI void registerActorInfo(::ActorInfo const& info);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 };

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,43 +19,41 @@ class WeatherManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk5cc1fc;
-    ::ll::UntypedStorage<8, 24> mUnk8f3ac3;
-    ::ll::UntypedStorage<8, 24> mUnk8c8cfe;
-    ::ll::UntypedStorage<8, 8>  mUnke11ee3;
-    ::ll::UntypedStorage<8, 16> mUnk76271e;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const>      mDimensionManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> const> mLevelEventCoordinator;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> const>     mLevelEventManager;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IWeatherManagerProxy>>>    mWeatherManagerProxy;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnWakeUpAllPlayersSubscription;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    WeatherManager& operator=(WeatherManager const&);
-    WeatherManager(WeatherManager const&);
     WeatherManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WeatherManager(
+    MCAPI WeatherManager(
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>      dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>     levelEventManager,
         ::std::unique_ptr<::IWeatherManagerProxy>              weatherManagerProxy
     );
 
-    MCNAPI void
+    MCAPI void
     registerWithServerPlayerSleepManager(::IServerPlayerSleepManagerConnector& serverPlayerSleepManagerConnector);
 
-    MCNAPI void stopWeather();
+    MCAPI void stopWeather();
 
-    MCNAPI void updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
+    MCAPI void updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
 
-    MCNAPI ~WeatherManager();
+    MCAPI ~WeatherManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>      dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>     levelEventManager,
@@ -65,6 +64,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

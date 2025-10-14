@@ -11,6 +11,7 @@ class BlockPos;
 class FallingBlock;
 class FallingBlockActor;
 class IBlockSource;
+namespace FallingBlockSystemOnLand { struct DelayDelegateData; }
 // clang-format on
 
 namespace FallingBlockSystemOnLand {
@@ -19,14 +20,8 @@ class SystemTickDelegate : public ::ITickDelegate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk3f25b4;
+    ::ll::TypedStorage<8, 24, ::std::vector<::FallingBlockSystemOnLand::DelayDelegateData>> mOnLandDataQueue;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SystemTickDelegate& operator=(SystemTickDelegate const&);
-    SystemTickDelegate(SystemTickDelegate const&);
-    SystemTickDelegate();
 
 public:
     // virtual functions
@@ -44,21 +39,21 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onLand(::FallingBlock const& block, ::IBlockSource& region, ::BlockPos const& pos);
+    MCAPI void $onLand(::FallingBlock const& block, ::IBlockSource& region, ::BlockPos const& pos);
 
-    MCNAPI void $breakBlock(::FallingBlockActor& fallingBlock);
+    MCAPI void $breakBlock(::FallingBlockActor& fallingBlock);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };
 

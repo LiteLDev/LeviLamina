@@ -143,36 +143,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptPluginResult(::ScriptPluginResult const&);
+    MCAPI ScriptPluginResult(::ScriptPluginResult const&);
 
-    MCNAPI ScriptPluginResult(::ScriptPluginResult&&);
+    MCAPI ScriptPluginResult(::ScriptPluginResult&&);
 
-    MCNAPI ScriptPluginResult(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
+    MCAPI ScriptPluginResult(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
 
-    MCNAPI void logError(::std::string const& error);
+    MCAPI void logError(::std::string const& error);
 
-    MCNAPI void logErrors(::std::vector<::std::string> const& errors);
+    MCAPI void logErrors(::std::vector<::std::string> const& errors);
 
-    MCNAPI void logInfo(::std::string const& info);
+    MCAPI void logInfo(::std::string const& info);
 
-    MCNAPI void logWarning(::std::string const& warning);
+    MCAPI void logWarning(::std::string const& warning);
 
-    MCNAPI ~ScriptPluginResult();
+    MCAPI ~ScriptPluginResult();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptPluginResult const&);
+    MCAPI void* $ctor(::ScriptPluginResult const&);
 
-    MCNAPI void* $ctor(::ScriptPluginResult&&);
+    MCAPI void* $ctor(::ScriptPluginResult&&);
 
-    MCNAPI void* $ctor(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
+    MCAPI void* $ctor(::PackIdVersion packId, ::Scripting::ModuleDescriptor const& descriptor);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

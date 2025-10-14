@@ -17,27 +17,27 @@ namespace npc { struct UrlAction; }
 namespace npc {
 // functions
 // NOLINTBEGIN
-MCNAPI void
+MCAPI void
 fillCommands(::npc::CommandAction& cmd, ::std::vector<::std::string_view> const& src, ::CurrentCmdVersion ver);
 
-MCNAPI ::std::optional<::std::variant<::npc::CommandAction, ::npc::UrlAction>> fromJson(::Json::Value const& root);
+MCAPI ::std::optional<::std::variant<::npc::CommandAction, ::npc::UrlAction>> fromJson(::Json::Value const& root);
 
-MCNAPI ::Json::Value toJson(::npc::CommandAction const& action);
+MCAPI ::Json::Value toJson(::npc::CommandAction const& action);
 
-MCNAPI ::Json::Value toJson(::npc::ActionContainer const& container);
+MCAPI ::Json::Value toJson(::npc::ActionContainer const& container);
 
-MCNAPI ::Json::Value toJson(::npc::UrlAction const& urlAction);
+MCAPI ::Json::Value toJson(::npc::UrlAction const& urlAction);
 
-MCNAPI ::std::string toString(::npc::ActionContainer const& container);
+MCAPI ::std::string toString(::npc::ActionContainer const& container);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCNAPI char const& COMMAND_DELIMITER();
+MCAPI char const& COMMAND_DELIMITER();
 
-MCNAPI ::CommandPermissionLevel const& COMMAND_PERMISSION();
+MCAPI ::CommandPermissionLevel const& COMMAND_PERMISSION();
 
-MCNAPI uint64 const& MAX_NAME_LENGTH();
+MCAPI uint64 const& MAX_NAME_LENGTH();
 // NOLINTEND
 
 } // namespace npc

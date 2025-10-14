@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
+#include "mc/network/packet/NpcDialoguePacketPayload.h"
 #include "mc/network/packet/cerealize/core/SerializationMode.h"
 #include "mc/platform/Result.h"
 
@@ -12,7 +13,6 @@
 // clang-format off
 class BinaryStream;
 class ReadOnlyBinaryStream;
-struct NpcDialoguePacketPayload;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,14 +20,12 @@ class NpcDialoguePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 144> mUnk752da1;
-    ::ll::UntypedStorage<4, 4>   mUnke28dc1;
+    ::ll::TypedStorage<8, 144, ::NpcDialoguePacketPayload> mPayload;
+    ::ll::TypedStorage<4, 4, ::SerializationMode>          mSerializationMode;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    NpcDialoguePacket& operator=(NpcDialoguePacket const&);
-    NpcDialoguePacket(NpcDialoguePacket const&);
     NpcDialoguePacket();
 
 public:

@@ -8,35 +8,30 @@ struct Button {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnke4ea12;
-    ::ll::UntypedStorage<8, 32> mUnk5635a5;
+    ::ll::TypedStorage<8, 32, ::std::string> mRawName;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    Button& operator=(Button const&);
-    Button(Button const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Button();
+    MCAPI Button();
 
-    MCNAPI ::npc::Button& operator=(::std::string_view newName);
+    MCAPI ::npc::Button& operator=(::std::string_view newName);
 
-    MCNAPI ~Button();
+    MCAPI ~Button();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCFOLD void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 

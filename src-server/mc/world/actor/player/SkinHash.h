@@ -6,13 +6,7 @@ struct SkinHash {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk53316a;
-    ::ll::UntypedStorage<8, 64> mUnk236293;
+    ::ll::TypedStorage<8, 8, uint64>     geoLength;
+    ::ll::TypedStorage<8, 64, uint64[8]> shaData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SkinHash& operator=(SkinHash const&);
-    SkinHash(SkinHash const&);
-    SkinHash();
 };

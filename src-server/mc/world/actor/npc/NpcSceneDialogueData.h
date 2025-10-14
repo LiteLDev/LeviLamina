@@ -59,29 +59,29 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string const& $getDialogueText() const;
+    MCAPI ::std::string const& $getDialogueText() const;
 
-    MCNAPI ::std::string const& $getSceneName() const;
+    MCFOLD ::std::string const& $getSceneName() const;
 
-    MCNAPI ::std::string const& $getNameText() const;
+    MCAPI ::std::string const& $getNameText() const;
 
-    MCNAPI ::std::string const& $getNameRawText() const;
+    MCAPI ::std::string const& $getNameRawText() const;
 
-    MCNAPI ::npc::ActionContainer* $getActionsContainer();
+    MCFOLD ::npc::ActionContainer* $getActionsContainer();
 
-    MCNAPI ::npc::ActionContainer const* $getActionsContainer() const;
+    MCFOLD ::npc::ActionContainer const* $getActionsContainer() const;
 
-    MCNAPI ::ActorUniqueID $getActorUniqueID();
+    MCAPI ::ActorUniqueID $getActorUniqueID();
 
-    MCNAPI ::Actor* $getActor();
+    MCFOLD ::Actor* $getActor();
 
-    MCNAPI ::Actor const* $getActor() const;
+    MCFOLD ::Actor const* $getActor() const;
     // NOLINTEND
 
 public:

@@ -2,19 +2,17 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/level/PlayerSleepStatus.h"
+
 class PlayerSleepManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk813b02;
-    ::ll::UntypedStorage<8, 16> mUnkb2ca62;
+    ::ll::TypedStorage<4, 12, ::PlayerSleepStatus>             mPlayerSleepStatus;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnAnyGameplayUsersRemovedSubscription;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    PlayerSleepManager& operator=(PlayerSleepManager const&);
-    PlayerSleepManager(PlayerSleepManager const&);
-    PlayerSleepManager();
 
 public:
     // virtual functions
@@ -29,13 +27,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $updateSleepingPlayerList();
+    MCFOLD void $updateSleepingPlayerList();
     // NOLINTEND
 
 public:

@@ -7,14 +7,12 @@
 
 class CommandRunStats {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkd02660;
-    // NOLINTEND
+    // CommandRunStats inner types define
+    using OriginToRunCountMap = ::std::unordered_map<::CommandOriginType, uint64>;
 
 public:
-    // prevent constructor by default
-    CommandRunStats& operator=(CommandRunStats const&);
-    CommandRunStats(CommandRunStats const&);
-    CommandRunStats();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::CommandOriginType, uint64>> mRunCountMap;
+    // NOLINTEND
 };

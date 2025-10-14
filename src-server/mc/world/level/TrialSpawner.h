@@ -4,16 +4,19 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/AutomaticID.h"
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
+#include "mc/world/item/ItemStack.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/block/registry/TrialSpawnerConfig.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class Block;
-class BlockPos;
 class BlockSource;
 class CompoundTag;
 class Dimension;
-class ItemStack;
 class Level;
 class Mob;
 class Random;
@@ -21,9 +24,7 @@ class SpawnData;
 class Tag;
 class TrialSpawnerConfigRegistry;
 class Vec3;
-struct ActorDefinitionIdentifier;
 struct ActorUniqueID;
-struct TrialSpawnerConfig;
 // clang-format on
 
 class TrialSpawner {
@@ -50,25 +51,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 152> mUnkcfe0d7;
+        ::ll::TypedStorage<8, 152, ::ItemStack> itemStack;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WeightedItemStack& operator=(WeightedItemStack const&);
-        WeightedItemStack(WeightedItemStack const&);
-        WeightedItemStack();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~WeightedItemStack();
+        MCAPI ~WeightedItemStack();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -76,41 +71,35 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24>  mUnkfde9b7;
-        ::ll::UntypedStorage<8, 24>  mUnk3306f2;
-        ::ll::UntypedStorage<8, 8>   mUnkc20a10;
-        ::ll::UntypedStorage<8, 8>   mUnk6b8548;
-        ::ll::UntypedStorage<4, 4>   mUnk8dd272;
-        ::ll::UntypedStorage<8, 8>   mUnkf9e7b7;
-        ::ll::UntypedStorage<8, 32>  mUnk5f3e43;
-        ::ll::UntypedStorage<4, 4>   mUnk3e0fdd;
-        ::ll::UntypedStorage<4, 4>   mUnkd5f05c;
-        ::ll::UntypedStorage<4, 4>   mUnkedc67a;
-        ::ll::UntypedStorage<8, 24>  mUnk3e65ea;
-        ::ll::UntypedStorage<8, 176> mUnkc735e9;
-        ::ll::UntypedStorage<8, 24>  mUnkdbeb48;
-        ::ll::UntypedStorage<4, 4>   mUnkdf9eb1;
-        ::ll::UntypedStorage<4, 4>   mUnk1ae719;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>>                   mDetectedPlayers;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>>                   mCurrentMobs;
+        ::ll::TypedStorage<8, 8, uint64>                                            mCooldownEndsAt;
+        ::ll::TypedStorage<8, 8, uint64>                                            mNextMobSpawnsAt;
+        ::ll::TypedStorage<4, 4, int>                                               mTotalMobsSpawned;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SpawnData>>                    mNextSpawnData;
+        ::ll::TypedStorage<8, 32, ::std::string>                                    mSelectedLootTableName;
+        ::ll::TypedStorage<4, 4, int>                                               mOpeningDelay;
+        ::ll::TypedStorage<4, 4, int>                                               mEjectionDelay;
+        ::ll::TypedStorage<4, 4, int>                                               mMaxDistance;
+        ::ll::TypedStorage<8, 24, ::std::vector<::TrialSpawner::WeightedItemStack>> mDispensing;
+        ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>                     mActorDefId;
+        ::ll::TypedStorage<8, 24, ::WeakEntityRef>                                  mDisplayEntity;
+        ::ll::TypedStorage<4, 4, float>                                             mCurrentSpinSpeed;
+        ::ll::TypedStorage<4, 4, float>                                             mPreviousSpinSpeed;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Data& operator=(Data const&);
-        Data(Data const&);
-        Data();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void reset();
+        MCAPI void reset();
 
-        MCNAPI ~Data();
+        MCAPI ~Data();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 
@@ -118,132 +107,124 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnk943899;
-        ::ll::UntypedStorage<8, 24> mUnk10a0ac;
+        ::ll::TypedStorage<1, 1, bool>                            haveTrialOmen;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>> foundPlayers;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PlayerScanResult& operator=(PlayerScanResult const&);
-        PlayerScanResult(PlayerScanResult const&);
-        PlayerScanResult();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~PlayerScanResult();
+        MCAPI ~PlayerScanResult();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12>  mUnkbe7b9a;
-    ::ll::UntypedStorage<4, 4>   mUnk57694f;
-    ::ll::UntypedStorage<8, 360> mUnk875e9a;
-    ::ll::UntypedStorage<8, 144> mUnk686b60;
-    ::ll::UntypedStorage<8, 144> mUnkbc6028;
-    ::ll::UntypedStorage<1, 1>   mUnk73169e;
-    ::ll::UntypedStorage<1, 1>   mUnk338f73;
+    ::ll::TypedStorage<4, 12, ::BlockPos const>      mPosition;
+    ::ll::TypedStorage<4, 4, int>                    mPlayerSearchRange;
+    ::ll::TypedStorage<8, 360, ::TrialSpawner::Data> mData;
+    ::ll::TypedStorage<8, 144, ::TrialSpawnerConfig> mNormalConfig;
+    ::ll::TypedStorage<8, 144, ::TrialSpawnerConfig> mOminousConfig;
+    ::ll::TypedStorage<1, 1, bool>                   mIsOminous;
+    ::ll::TypedStorage<1, 1, bool>                   hasSpawnedItemSpawner;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    TrialSpawner& operator=(TrialSpawner const&);
-    TrialSpawner(TrialSpawner const&);
     TrialSpawner();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit TrialSpawner(::BlockPos const& pos);
+    MCAPI explicit TrialSpawner(::BlockPos const& pos);
 
-    MCNAPI void _becomeOminous(::BlockSource& region, ::Block const& block);
+    MCAPI void _becomeOminous(::BlockSource& region, ::Block const& block);
 
-    MCNAPI void _dispenseItemAboveRandomCombatant(::BlockSource& region);
+    MCAPI void _dispenseItemAboveRandomCombatant(::BlockSource& region);
 
-    MCNAPI ::TrialSpawner::PlayerScanResult _doPlayerScan(::BlockSource& region);
+    MCAPI ::TrialSpawner::PlayerScanResult _doPlayerScan(::BlockSource& region);
 
-    MCNAPI ::std::vector<::TrialSpawner::WeightedItemStack>& _getDispensingItems(::BlockSource& region);
+    MCAPI ::std::vector<::TrialSpawner::WeightedItemStack>& _getDispensingItems(::BlockSource& region);
 
-    MCNAPI ::std::optional<::Vec3>
+    MCAPI ::std::optional<::Vec3>
     _getPositionToSpawnItemSpawner(::BlockSource& region, ::std::vector<::ActorUniqueID> const& eligibleActorIds) const;
 
-    MCNAPI bool _hasLineOfSight(::BlockSource const& region, ::Vec3 from, ::Vec3 to, float maxRange) const;
+    MCAPI bool _hasLineOfSight(::BlockSource const& region, ::Vec3 from, ::Vec3 to, float maxRange) const;
 
-    MCNAPI void _selectLootTable(::Level& level);
+    MCAPI void _selectLootTable(::Level& level);
 
-    MCNAPI void _sendParticlesForState(::BlockSource& region, ::BlockPos pos, ::TrialSpawner::SpawningLogicState state);
+    MCAPI void _sendParticlesForState(::BlockSource& region, ::BlockPos pos, ::TrialSpawner::SpawningLogicState state);
 
-    MCNAPI void _sendSmallFlame(::BlockSource& region, ::Vec3 center);
+    MCAPI void _sendSmallFlame(::BlockSource& region, ::Vec3 center);
 
-    MCNAPI void _setUpdated(::BlockSource& region);
+    MCAPI void _setUpdated(::BlockSource& region);
 
-    MCNAPI void _spawnItemSpawner(::BlockSource& region, ::Vec3 pos, ::ItemStack const& itemToSpawn);
+    MCAPI void _spawnItemSpawner(::BlockSource& region, ::Vec3 pos, ::ItemStack const& itemToSpawn);
 
-    MCNAPI ::std::optional<::ActorUniqueID> _spawnMob(::BlockSource& region, ::BlockPos blockActorPos, ::Vec3 spawnPos);
+    MCAPI ::std::optional<::ActorUniqueID> _spawnMob(::BlockSource& region, ::BlockPos blockActorPos, ::Vec3 spawnPos);
 
-    MCNAPI void _tryRegisterNewPlayers(::BlockSource& region, ::TrialSpawner::SpawningLogicState currentState);
+    MCAPI void _tryRegisterNewPlayers(::BlockSource& region, ::TrialSpawner::SpawningLogicState currentState);
 
-    MCNAPI void _updateStateMachine(::BlockSource& region);
+    MCAPI void _updateStateMachine(::BlockSource& region);
 
-    MCNAPI void applyUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
+    MCAPI void applyUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
 
-    MCNAPI ::Mob* createAndAddDisplayEntity(::BlockSource& region);
+    MCAPI ::Mob* createAndAddDisplayEntity(::BlockSource& region);
 
-    MCNAPI ::SpawnData const* getOrCreateNextSpawnData(::Random& random);
+    MCAPI ::SpawnData const* getOrCreateNextSpawnData(::Random& random);
 
-    MCNAPI ::TrialSpawner::SpawningLogicState getSpawningLogicState(::BlockSource& region) const;
+    MCAPI ::TrialSpawner::SpawningLogicState getSpawningLogicState(::BlockSource& region) const;
 
-    MCNAPI void load(::CompoundTag const& data, ::TrialSpawnerConfigRegistry const& configRegistry);
+    MCAPI void load(::CompoundTag const& data, ::TrialSpawnerConfigRegistry const& configRegistry);
 
-    MCNAPI void removeDisplayEntity();
+    MCAPI void removeDisplayEntity();
 
-    MCNAPI void save(::CompoundTag& tag);
+    MCAPI void save(::CompoundTag& tag);
 
-    MCNAPI void setEntityId(::ActorDefinitionIdentifier const& actorDefId, ::BlockSource& region);
+    MCAPI void setEntityId(::ActorDefinitionIdentifier const& actorDefId, ::BlockSource& region);
 
-    MCNAPI void tick(::BlockSource& region);
+    MCAPI void tick(::BlockSource& region);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _ejectItem(::BlockSource& region, ::Vec3 pos, ::ItemStack const& item);
+    MCAPI static void _ejectItem(::BlockSource& region, ::Vec3 pos, ::ItemStack const& item);
 
-    MCNAPI static void _ejectResultItems(
+    MCAPI static void _ejectResultItems(
         ::BlockSource&                    region,
         ::BlockPos                        blockPos,
         ::std::vector<::ItemStack> const& items,
         int                               lootCount
     );
 
-    MCNAPI static ::std::optional<::Vec3>
+    MCAPI static ::std::optional<::Vec3>
     _findFreePositionAbove(::BlockSource const& region, ::Vec3 const& from, int distance);
 
-    MCNAPI static ::std::vector<::ItemStack> _getRandomLootTableItems(
+    MCAPI static ::std::vector<::ItemStack> _getRandomLootTableItems(
         ::Level&             level,
         ::Random&            random,
         ::DimensionType      dimensionType,
         ::std::string const& lootTableName
     );
 
-    MCNAPI static bool _isAllowedToSpawnInLevel(::Level& level);
+    MCAPI static bool _isAllowedToSpawnInLevel(::Level& level);
 
-    MCNAPI static void _removeMobByGameplay(::Level& level, ::Actor& mob);
+    MCAPI static void _removeMobByGameplay(::Level& level, ::Actor& mob);
 
-    MCNAPI static ::std::unique_ptr<::Tag> _saveConfig(::TrialSpawnerConfig& config);
+    MCAPI static ::std::unique_ptr<::Tag> _saveConfig(::TrialSpawnerConfig& config);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockPos const& pos);
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 };

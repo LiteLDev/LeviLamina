@@ -2,21 +2,19 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/actor/npc/ActionContainer.h"
+
 struct NPCDialogueData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk9349ec;
-    ::ll::UntypedStorage<1, 1>  mUnk7d68c6;
-    ::ll::UntypedStorage<8, 32> mUnka3d7d9;
-    ::ll::UntypedStorage<8, 32> mUnk2a60d1;
-    ::ll::UntypedStorage<8, 32> mUnk6eaaa9;
-    ::ll::UntypedStorage<8, 48> mUnk1a1d89;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>        npcActor;
+    ::ll::TypedStorage<1, 1, bool>                    isRemoteFire;
+    ::ll::TypedStorage<8, 32, ::std::string>          overrideDialogue;
+    ::ll::TypedStorage<8, 32, ::std::string>          sceneName;
+    ::ll::TypedStorage<8, 32, ::std::string>          npcName;
+    ::ll::TypedStorage<8, 48, ::npc::ActionContainer> overrideActions;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NPCDialogueData& operator=(NPCDialogueData const&);
-    NPCDialogueData(NPCDialogueData const&);
-    NPCDialogueData();
 };

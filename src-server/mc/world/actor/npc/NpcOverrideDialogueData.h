@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/npc/INpcDialogueData.h"
+#include "mc/world/actor/npc/NPCDialogueData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,14 +17,8 @@ struct NpcOverrideDialogueData : public ::INpcDialogueData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 176> mUnk426edd;
+    ::ll::TypedStorage<8, 176, ::NPCDialogueData> mData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NpcOverrideDialogueData& operator=(NpcOverrideDialogueData const&);
-    NpcOverrideDialogueData(NpcOverrideDialogueData const&);
-    NpcOverrideDialogueData();
 
 public:
     // virtual functions

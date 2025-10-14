@@ -50,18 +50,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addSpawnRules(::std::string const& identifier, ::MobSpawnRules& spawnRules);
+    MCAPI void _addSpawnRules(::std::string const& identifier, ::MobSpawnRules& spawnRules);
 
-    MCNAPI void _getResources(
+    MCAPI void _getResources(
         ::ResourcePackManager& resourcePackManager,
         ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>
             callback
     );
 
-    MCNAPI ::Puv::LoadResult<::ActorSpawnRuleData>
+    MCAPI ::Puv::LoadResult<::ActorSpawnRuleData>
     _readJson(::std::string&& data, ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap);
 
-    MCNAPI void readResourceFiles(
+    MCAPI void readResourceFiles(
         ::ResourcePackManager&                                     resourcePackManager,
         ::std::unordered_map<::std::string, ::ActorSpawnRuleData>& dataMap
     );
@@ -70,6 +70,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

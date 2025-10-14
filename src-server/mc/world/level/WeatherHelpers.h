@@ -11,7 +11,7 @@ class BlockSource;
 namespace WeatherHelpers {
 // functions
 // NOLINTBEGIN
-MCNAPI bool shouldFreeze(::BlockSource& region, ::BlockPos const& pos, bool checkNeighbors);
+MCAPI bool shouldFreeze(::BlockSource& region, ::BlockPos const& pos, bool checkNeighbors);
 // NOLINTEND
 
 } // namespace WeatherHelpers

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/actor/ActorDefinitionIdentifier.h"
+
 // auto generated forward declare list
 // clang-format off
 class CompoundTag;
@@ -11,12 +14,12 @@ struct ActorInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkb087cb;
-    ::ll::UntypedStorage<8, 176> mUnkfab62c;
-    ::ll::UntypedStorage<8, 176> mUnkee4af0;
-    ::ll::UntypedStorage<1, 1>   mUnk84432a;
-    ::ll::UntypedStorage<1, 1>   mUnk830ac5;
-    ::ll::UntypedStorage<4, 8>   mUnkbb7427;
+    ::ll::TypedStorage<4, 4, uint>                          mRuntimeId;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mIdentifier;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mBaseIdentifier;
+    ::ll::TypedStorage<1, 1, bool>                          mHasSpawnEgg;
+    ::ll::TypedStorage<1, 1, bool>                          mIsSummonable;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>          mExperimentIndex;
     // NOLINTEND
 
 public:
@@ -26,28 +29,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorInfo();
+    MCAPI ActorInfo();
 
-    MCNAPI ActorInfo(::ActorInfo const&);
+    MCAPI ActorInfo(::ActorInfo const&);
 
-    MCNAPI void load(::CompoundTag const* tag);
+    MCAPI void load(::CompoundTag const* tag);
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> save() const;
+    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
-    MCNAPI ~ActorInfo();
+    MCAPI ~ActorInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ActorInfo const&);
+    MCAPI void* $ctor(::ActorInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -2,21 +2,24 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/json/Value.h"
+#include "mc/world/actor/ai/util/BossBarColor.h"
+
+// auto generated forward declare list
+// clang-format off
+struct ActorUniqueID;
+// clang-format on
+
 struct BossbarInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke74217;
-    ::ll::UntypedStorage<4, 4>  mUnk8a8a61;
-    ::ll::UntypedStorage<4, 4>  mUnk740b40;
-    ::ll::UntypedStorage<1, 1>  mUnk7d62fa;
-    ::ll::UntypedStorage<8, 16> mUnk918548;
-    ::ll::UntypedStorage<8, 24> mUnk633999;
+    ::ll::TypedStorage<4, 4, ::BossBarColor>                  mColor;
+    ::ll::TypedStorage<4, 4, int>                             mMax;
+    ::ll::TypedStorage<4, 4, int>                             mValue;
+    ::ll::TypedStorage<1, 1, bool>                            mVisible;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                  mName;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>> mPlayers;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BossbarInfo& operator=(BossbarInfo const&);
-    BossbarInfo(BossbarInfo const&);
-    BossbarInfo();
 };
