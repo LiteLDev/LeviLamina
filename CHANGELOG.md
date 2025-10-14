@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.6.1] - 2025-10-14
+
+### Added
+
+- Added move constructors for std::u8string and std::string in Path class @OEOTYAN
+- Implemented WeightedRandomList @OEOTYAN
+- Updated TypeWrapper.h [#1750] @LordBombardir
+
+### Changed
+
+- Bumped bedrock-runtime-data to v1.21.111-server.3
+- Updated headers
+
 ## [1.6.0] - 2025-10-04
 
 ### Added
@@ -1115,8 +1128,10 @@ For lip and tooth-hub test only.
 [#1728]: https://github.com/LiteLDev/LeviLamina/issues/1728
 [#1739]: https://github.com/LiteLDev/LeviLamina/issues/1739
 [#1747]: https://github.com/LiteLDev/LeviLamina/issues/1747
+[#1750]: https://github.com/LiteLDev/LeviLamina/issues/1750
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.1...HEAD
+[1.6.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.6.0...v1.6.1
 [1.6.0]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.2...v1.6.0
 [1.5.2]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.1...v1.5.2
 [1.5.1]: https://github.com/LiteLDev/LeviLamina/compare/v1.5.0...v1.5.1
