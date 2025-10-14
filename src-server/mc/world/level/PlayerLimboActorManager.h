@@ -22,60 +22,59 @@ class PlayerLimboActorManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk1709c4;
-    ::ll::UntypedStorage<8, 24> mUnk58ceda;
-    ::ll::UntypedStorage<8, 24> mUnkdecc3c;
-    ::ll::UntypedStorage<8, 24> mUnk6c8cc2;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::std::vector<::std::unique_ptr<::CompoundTag>>>>
+                                                                                   mOwnedActorsDimensionTransferLimbo;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelStorage> const> mLevelStorage;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ActorManager>>       mActorManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ActorFactory> const> mActorFactory;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PlayerLimboActorManager& operator=(PlayerLimboActorManager const&);
-    PlayerLimboActorManager(PlayerLimboActorManager const&);
     PlayerLimboActorManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerLimboActorManager(
+    MCAPI PlayerLimboActorManager(
         ::Bedrock::NotNullNonOwnerPtr<::LevelStorage> levelStorage,
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager> actorManager,
         ::Bedrock::NotNullNonOwnerPtr<::ActorFactory> actorFactory
     );
 
-    MCNAPI void clearOwnedEntityLimboForPlayer(::ActorUniqueID playerId);
+    MCAPI void clearOwnedEntityLimboForPlayer(::ActorUniqueID playerId);
 
-    MCNAPI void loadAllOwnedLimboActors();
+    MCAPI void loadAllOwnedLimboActors();
 
-    MCNAPI ::Actor* processOwnedAgentForPlayer(
+    MCAPI ::Actor* processOwnedAgentForPlayer(
         ::CompoundTag&                agentCompoundTag,
         ::IAddActorEntityProxy&       addActorEntityProxy,
         ::DimensionHeightRange const& heightRange,
         ::Vec3 const&                 spawnPosition
     );
 
-    MCNAPI void processOwnedEntityLimboForPlayer(
+    MCAPI void processOwnedEntityLimboForPlayer(
         ::ActorUniqueID               playerId,
         ::IAddActorEntityProxy&       addActorEntityProxy,
         ::DimensionHeightRange const& heightRange,
         ::Vec3 const&                 spawnPosition
     );
 
-    MCNAPI void saveOwnedLimboActorsForPlayer(::ActorUniqueID playerId) const;
+    MCAPI void saveOwnedLimboActorsForPlayer(::ActorUniqueID playerId) const;
 
-    MCNAPI ~PlayerLimboActorManager();
+    MCAPI ~PlayerLimboActorManager();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string getOwnedEntityLimboStorageKeyForPlayer(::ActorUniqueID playerId);
+    MCAPI static ::std::string getOwnedEntityLimboStorageKeyForPlayer(::ActorUniqueID playerId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::LevelStorage> levelStorage,
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager> actorManager,
         ::Bedrock::NotNullNonOwnerPtr<::ActorFactory> actorFactory
@@ -85,6 +84,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

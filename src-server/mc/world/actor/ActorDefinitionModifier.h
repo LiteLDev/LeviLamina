@@ -2,14 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ActorDefinitionTrigger;
+class ActorEventResponse;
+// clang-format on
+
 struct ActorDefinitionModifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnke73515;
-    ::ll::UntypedStorage<8, 24> mUnkad59e0;
-    ::ll::UntypedStorage<8, 24> mUnk6c0df0;
-    ::ll::UntypedStorage<8, 24> mUnk1cde44;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>               mAddGroups;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>               mRemoveGroups;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>>    mTriggers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorEventResponse const*>> mResponses;
     // NOLINTEND
 
 public:
@@ -19,24 +25,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorDefinitionModifier(::ActorDefinitionModifier const&);
+    MCAPI ActorDefinitionModifier(::ActorDefinitionModifier const&);
 
-    MCNAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier const&);
+    MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier const&);
 
-    MCNAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier&&);
+    MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier&&);
 
-    MCNAPI ~ActorDefinitionModifier();
+    MCAPI ~ActorDefinitionModifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActorDefinitionModifier const&);
+    MCAPI void* $ctor(::ActorDefinitionModifier const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

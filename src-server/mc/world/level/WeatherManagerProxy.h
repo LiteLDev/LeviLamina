@@ -3,20 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/level/IWeatherManagerProxy.h"
+
+// auto generated forward declare list
+// clang-format off
+class LevelData;
+// clang-format on
 
 class WeatherManagerProxy : public ::IWeatherManagerProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2bc75f;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelData> const> mLevelData;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WeatherManagerProxy& operator=(WeatherManagerProxy const&);
-    WeatherManagerProxy(WeatherManagerProxy const&);
-    WeatherManagerProxy();
 
 public:
     // virtual functions
@@ -52,21 +52,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $getRainLevel() const;
+    MCAPI float $getRainLevel() const;
 
-    MCNAPI float $getLightningLevel() const;
+    MCAPI float $getLightningLevel() const;
 
-    MCNAPI int $getRainTime() const;
+    MCAPI int $getRainTime() const;
 
-    MCNAPI int $getLightningTime() const;
+    MCAPI int $getLightningTime() const;
 
-    MCNAPI void $setRainLevel(float rainLevel);
+    MCAPI void $setRainLevel(float rainLevel);
 
-    MCNAPI void $setLightningLevel(float lightningLevel);
+    MCAPI void $setLightningLevel(float lightningLevel);
 
-    MCNAPI void $setRainTime(int rainTime);
+    MCAPI void $setRainTime(int rainTime);
 
-    MCNAPI void $setLightningTime(int lightningTime);
+    MCAPI void $setLightningTime(int lightningTime);
     // NOLINTEND
 
 public:

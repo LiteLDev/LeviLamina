@@ -3,26 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/util/Random.h"
 #include "mc/world/level/ILevelRandom.h"
 
 // auto generated forward declare list
 // clang-format off
 class IRandom;
-class Random;
 // clang-format on
 
 class LevelRandom : public ::ILevelRandom {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 2576> mUnkc36ce9;
+    ::ll::TypedStorage<8, 2576, ::Random> mRandom;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    LevelRandom& operator=(LevelRandom const&);
-    LevelRandom(LevelRandom const&);
-    LevelRandom();
 
 public:
     // virtual functions
@@ -43,11 +37,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::IRandom& $getIRandom();
+    MCFOLD ::IRandom& $getIRandom();
 
-    MCNAPI ::Random& $getRandom();
+    MCFOLD ::Random& $getRandom();
 
-    MCNAPI ::Random& $getThreadRandom();
+    MCFOLD ::Random& $getThreadRandom();
     // NOLINTEND
 
 public:

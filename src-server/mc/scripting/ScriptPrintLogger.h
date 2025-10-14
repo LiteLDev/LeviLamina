@@ -48,22 +48,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onInfo(::Scripting::ContextId, ::std::string_view message) const;
+    MCAPI void $onInfo(::Scripting::ContextId, ::std::string_view message) const;
 
-    MCNAPI void $onWarn(::Scripting::ContextId, ::std::string_view message) const;
+    MCAPI void $onWarn(::Scripting::ContextId, ::std::string_view message) const;
 
-    MCNAPI void $onError(::Scripting::ContextId, ::std::string_view message) const;
+    MCAPI void $onError(::Scripting::ContextId, ::std::string_view message) const;
 
-    MCNAPI void
-    $onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const;
+    MCAPI void $onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const;
 
-    MCNAPI bool $shouldPrintException(
+    MCAPI bool $shouldPrintException(
         ::Scripting::ContextId,
         ::Scripting::BaseError const&,
         ::entt::meta_any const& errorAny
     ) const;
 
-    MCNAPI void $onPromiseRejection(
+    MCAPI void $onPromiseRejection(
         ::Scripting::ContextId,
         ::Scripting::BaseError const& error,
         ::entt::meta_any const&,

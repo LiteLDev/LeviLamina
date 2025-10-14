@@ -11,39 +11,34 @@ struct NpcDialogueButton {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk886b6b;
-    ::ll::UntypedStorage<8, 24> mUnk575c95;
-    ::ll::UntypedStorage<8, 32> mUnkaa680b;
+    ::ll::TypedStorage<8, 32, ::std::string>                mButtonName;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mCommands;
+    ::ll::TypedStorage<8, 32, ::std::string>                mURL;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    NpcDialogueButton& operator=(NpcDialogueButton const&);
-    NpcDialogueButton(NpcDialogueButton const&);
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NpcDialogueButton();
+    MCAPI NpcDialogueButton();
 
-    MCNAPI ~NpcDialogueButton();
+    MCAPI ~NpcDialogueButton();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::NpcDialogueButton parse(::Json::Value const& root, ::std::string const& fileName, int);
+    MCAPI static ::NpcDialogueButton parse(::Json::Value const& root, ::std::string const& fileName, int);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

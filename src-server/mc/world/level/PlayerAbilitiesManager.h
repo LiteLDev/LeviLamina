@@ -4,52 +4,57 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 
 // auto generated forward declare list
 // clang-format off
 class GameplayUserManager;
 class LayeredAbilities;
+class PacketSender;
 class Player;
 struct ActorUniqueID;
+namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
 class PlayerAbilitiesManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkc638fa;
-    ::ll::UntypedStorage<8, 24> mUnkdac0ef;
-    ::ll::UntypedStorage<8, 24> mUnk9614c6;
-    ::ll::UntypedStorage<8, 48> mUnk537dd9;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::LayeredAbilities>>  mAbilitiesData;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> const> mGameplayUserManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>>                 mPacketSender;
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::Bedrock::PubSub::Publisher<void(::ActorUniqueID const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
+        mPlayerAbilitiesChanged;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    PlayerAbilitiesManager& operator=(PlayerAbilitiesManager const&);
-    PlayerAbilitiesManager(PlayerAbilitiesManager const&);
     PlayerAbilitiesManager();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PlayerAbilitiesManager(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
+    MCAPI explicit PlayerAbilitiesManager(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
 
-    MCNAPI ::LayeredAbilities* getPlayerAbilities(::ActorUniqueID const& playerId);
+    MCAPI ::LayeredAbilities* getPlayerAbilities(::ActorUniqueID const& playerId);
 
-    MCNAPI void sendAllPlayerAbilities(::Player const& playerReference);
+    MCAPI void sendAllPlayerAbilities(::Player const& playerReference);
 
-    MCNAPI ~PlayerAbilitiesManager();
+    MCAPI ~PlayerAbilitiesManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
