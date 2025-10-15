@@ -261,7 +261,7 @@ using HookReg = memory::HookRegistrar<
     LevelDestructor,
     RakNetRakPeerConstructor,
     RakNetRakPeerDestructor,
-    // ResourcePackRepositoryInit,
+    ResourcePackRepositoryInit,
     ResourcePackRepositoryDestructor,
     CommandRegistryConstructor,
     CommandRegistryDestructor,
