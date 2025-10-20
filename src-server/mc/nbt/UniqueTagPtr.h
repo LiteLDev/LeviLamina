@@ -147,7 +147,9 @@ public:
     }
     template <std::derived_from<Tag> T>
     T& emplace() {
-        reset(new T());
+        auto newptr = new T();
+        reset(newptr);
+        return *newptr;
     }
     template <std::derived_from<Tag> T>
     [[nodiscard]] bool contains(std::string_view key) const noexcept {

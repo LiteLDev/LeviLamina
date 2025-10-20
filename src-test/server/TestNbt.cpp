@@ -5,6 +5,7 @@
 
 #include "mc/deps/core/math/Color.h"
 #include "mc/nbt/CompoundTag.h"
+#include "mc/nbt/UniqueTagPtr.h"
 #include "mc/server/ServerInstance.h"
 #include "mc/util/ColorFormat.h"
 
@@ -201,4 +202,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(NbtTest, HookPriority::Normal, ServerInstance, &Serve
 
     ll::getLogger().debug("nbt {}\n{}", nbt11.toSnbt(), nbt12.toSnbt());
     ll::getLogger().debug("nbt {} {}", int{nbt11["a"]["b"]["c"]}, int{nbt12[0][0][0]});
+
+    UniqueTagPtr ptr;
+    ptr.emplace<CompoundTag>();
 }
