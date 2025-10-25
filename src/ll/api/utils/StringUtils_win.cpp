@@ -314,11 +314,11 @@ std::string toLowerCase(std::string_view str) {
 }
 
 Expected<bool> svtobool(std::string_view str) {
-    if (str.size() <= 4) {
+    if (str.size() <= 5) {
         auto lower = toLowerCase(str);
-        if (lower == "1" || lower == "y" || str == "yes" || lower == "true") {
+        if (lower == "true" || lower == "1" || lower == "y" || lower == "t" || str == "yes") {
             return true;
-        } else if (lower == "0" || lower == "n" || str == "no" || lower == "false") {
+        } else if (lower == "false" || lower == "0" || lower == "n" || lower == "f" || str == "no") {
             return false;
         }
     }
