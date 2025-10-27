@@ -43,7 +43,7 @@ jobs:
     #   - run: |
     #       xmake package -v -y
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: levilamina-${{ github.sha }}-${{ matrix.mode }}-windows-x64
           path: |
