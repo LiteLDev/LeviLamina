@@ -43,7 +43,7 @@ bool isValidHitDefault(Actor& actor, Actor* /*source*/, Actor* owner) {
             if (VehicleUtils::isPassengerOfActor(actor, owner->getOrCreateUniqueID())) {
                 return false;
             }
-            if (actor.getVehicle() == owner->getVehicle()) {
+            if (auto actorVehicle = actor.getVehicle(); actorVehicle && actorVehicle == owner->getVehicle()) {
                 return false;
             }
         }
