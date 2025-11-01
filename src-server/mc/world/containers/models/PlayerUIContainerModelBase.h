@@ -60,27 +60,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _refreshContainer(bool initial);
+    MCAPI void _refreshContainer(bool initial);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $postInit();
+    MCAPI void $postInit();
 
-    MCNAPI void $releaseResources();
+    MCAPI void $releaseResources();
 
-    MCNAPI void $containerContentChanged(int slot);
+    MCAPI void $containerContentChanged(int slot);
 
-    MCNAPI bool $isValid();
+    MCFOLD bool $isValid();
 
-    MCNAPI ::ContainerWeakRef $getContainerWeakRef() const;
+    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
 
-    MCNAPI int $_getContainerOffset() const;
+    MCFOLD int $_getContainerOffset() const;
 
-    MCNAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCNAPI ::Container* $_getContainer() const;
+    MCAPI ::Container* $_getContainer() const;
     // NOLINTEND
 
 public:
@@ -88,5 +88,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

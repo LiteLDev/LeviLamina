@@ -16,7 +16,6 @@ public:
     WriteQueue& operator=(WriteQueue const&);
     WriteQueue(WriteQueue const&);
     WriteQueue();
-
 };
 
-}
+} // namespace Core::Internal

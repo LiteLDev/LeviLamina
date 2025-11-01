@@ -32,5 +32,4 @@ public:
 
     MCNAPI ::EquippableComponent& operator=(::EquippableComponent&& other);
     // NOLINTEND
-
 };

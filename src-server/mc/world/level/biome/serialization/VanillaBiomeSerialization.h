@@ -21,9 +21,24 @@ struct BiomeTagSetIDType;
 namespace VanillaBiomeSerialization {
 // functions
 // NOLINTBEGIN
-MCAPI void applySerializedDataToBiome(::BiomeDefinitionData const& data, ::Biome& biome, ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& tagRegistry, ::BlockPalette const& blockPalette, ::BiomeRegistry const& biomeRegistry, ::FeatureRegistry& featureRegistry, ::BiomeStringList const& stringList);
+MCAPI void applySerializedDataToBiome(
+    ::BiomeDefinitionData const&                                              data,
+    ::Biome&                                                                  biome,
+    ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& tagRegistry,
+    ::BlockPalette const&                                                     blockPalette,
+    ::BiomeRegistry const&                                                    biomeRegistry,
+    ::FeatureRegistry&                                                        featureRegistry,
+    ::BiomeStringList const&                                                  stringList
+);
 
-MCAPI void serializeBiomeToData(::Biome const& biome, ::BiomeDefinitionData& data, bool clientSideChunkGen, ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const& tagRegistry, ::FeatureRegistry const& featureRegistry, ::BiomeStringList& stringList);
+MCAPI void serializeBiomeToData(
+    ::Biome const&                                                                  biome,
+    ::BiomeDefinitionData&                                                          data,
+    bool                                                                            clientSideChunkGen,
+    ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>> const& tagRegistry,
+    ::FeatureRegistry const&                                                        featureRegistry,
+    ::BiomeStringList&                                                              stringList
+);
 // NOLINTEND
 
-}
+} // namespace VanillaBiomeSerialization

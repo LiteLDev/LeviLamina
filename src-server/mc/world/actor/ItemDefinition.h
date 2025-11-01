@@ -15,5 +15,4 @@ public:
     ItemDefinition& operator=(ItemDefinition const&);
     ItemDefinition(ItemDefinition const&);
     ItemDefinition();
-
 };

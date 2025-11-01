@@ -45,25 +45,65 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ScriptCamera(::Player const& player);
 
-    MCNAPI ::Scripting::Result_deprecated<void> cameraFade(::std::optional<::ScriptModuleMinecraft::ScriptCameraFadeOptions> fadeOptions) const;
+    MCNAPI ::Scripting::Result_deprecated<void>
+    cameraFade(::std::optional<::ScriptModuleMinecraft::ScriptCameraFadeOptions> fadeOptions) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> clearCamera() const;
 
     MCNAPI ::ScriptModuleMinecraft::ScriptCamera& operator=(::ScriptModuleMinecraft::ScriptCamera&&);
 
-    MCNAPI ::Scripting::Result_deprecated<void> playAnimation(::std::variant<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCatmullRomSpline>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLinearSpline>> const& spline, ::ScriptModuleMinecraft::ScriptAnimationOptions animationOptions);
+    MCNAPI ::Scripting::Result_deprecated<void> playAnimation(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCatmullRomSpline>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLinearSpline>> const& spline,
+        ::ScriptModuleMinecraft::ScriptAnimationOptions                                               animationOptions
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void> setCamera(::std::string const& cameraPreset, ::std::optional<::std::variant<::ScriptModuleMinecraft::ScriptCameraSetFacingOptions, ::ScriptModuleMinecraft::ScriptCameraSetPositionOptions, ::ScriptModuleMinecraft::ScriptCameraSetRotationOptions, ::ScriptModuleMinecraft::ScriptCameraSetLocationOptions, ::ScriptModuleMinecraft::ScriptCameraDefaultOptions, ::ScriptModuleMinecraft::ScriptCameraTargetOptions, ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options) const;
+    MCNAPI ::Scripting::Result_deprecated<void> setCamera(
+        ::std::string const&                                        cameraPreset,
+        ::std::optional<::std::variant<
+            ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetPositionOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetRotationOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetLocationOptions,
+            ::ScriptModuleMinecraft::ScriptCameraDefaultOptions,
+            ::ScriptModuleMinecraft::ScriptCameraTargetOptions,
+            ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
+    ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setCameraWithEase(::std::string const& cameraPreset, ::ScriptModuleMinecraft::ScriptEaseOptions easeOptions);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    setCameraWithEase(::std::string const& cameraPreset, ::ScriptModuleMinecraft::ScriptEaseOptions easeOptions);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setCamera_V1(::std::string const& cameraPreset, ::std::optional<::std::variant<::ScriptModuleMinecraft::ScriptCameraSetFacingOptions, ::ScriptModuleMinecraft::ScriptCameraSetPositionOptions, ::ScriptModuleMinecraft::ScriptCameraSetRotationOptions, ::ScriptModuleMinecraft::ScriptCameraSetLocationOptions, ::ScriptModuleMinecraft::ScriptCameraDefaultOptions, ::ScriptModuleMinecraft::ScriptCameraTargetOptions, ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options) const;
+    MCNAPI ::Scripting::Result_deprecated<void> setCamera_V1(
+        ::std::string const&                                        cameraPreset,
+        ::std::optional<::std::variant<
+            ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetPositionOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetRotationOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetLocationOptions,
+            ::ScriptModuleMinecraft::ScriptCameraDefaultOptions,
+            ::ScriptModuleMinecraft::ScriptCameraTargetOptions,
+            ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
+    ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setCamera_V2(::std::string const& cameraPreset, ::std::optional<::std::variant<::ScriptModuleMinecraft::ScriptCameraSetFacingOptions, ::ScriptModuleMinecraft::ScriptCameraSetPositionOptions, ::ScriptModuleMinecraft::ScriptCameraSetRotationOptions, ::ScriptModuleMinecraft::ScriptCameraSetLocationOptions, ::ScriptModuleMinecraft::ScriptCameraTargetOptions, ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options) const;
+    MCNAPI ::Scripting::Result_deprecated<void> setCamera_V2(
+        ::std::string const&                                        cameraPreset,
+        ::std::optional<::std::variant<
+            ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetPositionOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetRotationOptions,
+            ::ScriptModuleMinecraft::ScriptCameraSetLocationOptions,
+            ::ScriptModuleMinecraft::ScriptCameraTargetOptions,
+            ::ScriptModuleMinecraft::ScriptCameraFixedBoomOptions>> options
+    ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setDefaultCamera(::std::string const& cameraPreset, ::std::optional<::ScriptModuleMinecraft::ScriptEaseOptions> easeOptions);
+    MCNAPI ::Scripting::Result_deprecated<void> setDefaultCamera(
+        ::std::string const&                                        cameraPreset,
+        ::std::optional<::ScriptModuleMinecraft::ScriptEaseOptions> easeOptions
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void> setFov(::std::optional<::ScriptModuleMinecraft::ScriptCameraFovOptions> fovOptions) const;
+    MCNAPI ::Scripting::Result_deprecated<void>
+    setFov(::std::optional<::ScriptModuleMinecraft::ScriptCameraFovOptions> fovOptions) const;
     // NOLINTEND
 
 public:
@@ -77,7 +117,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Player const& player);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

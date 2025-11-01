@@ -10,5 +10,4 @@ public:
     ::ll::TypedStorage<4, 4, int> mMouthCounter;
     ::ll::TypedStorage<4, 4, int> mTailCounter;
     // NOLINTEND
-
 };

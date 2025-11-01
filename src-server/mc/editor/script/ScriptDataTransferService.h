@@ -19,12 +19,13 @@ namespace Scripting { struct Error; }
 
 namespace Editor::ScriptModule {
 
-class ScriptDataTransferService : public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptDataTransferService> {
+class ScriptDataTransferService
+: public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptDataTransferService> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk9261c5;
-    ::ll::UntypedStorage<8, 8> mUnkdc66d5;
+    ::ll::UntypedStorage<8, 8>  mUnkdc66d5;
     // NOLINTEND
 
 public:
@@ -38,13 +39,19 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<void> _closeSession(::std::string const& collectionName);
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData>> _getRegisteredAccessors();
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData>>
+    _getRegisteredAccessors();
 
     MCNAPI ::Scripting::Result_deprecated<void> _openSession(::std::string const& collectionName);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptTransferServiceDataResponse>, ::Scripting::Error, void>> _requestData(::Scripting::ScriptObjectFactory& factory, ::std::string const& collectionName, bool useSnapshot);
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptTransferServiceDataResponse>,
+        ::Scripting::Error,
+        void>>
+    _requestData(::Scripting::ScriptObjectFactory& factory, ::std::string const& collectionName, bool useSnapshot);
 
-    MCNAPI ::Scripting::Result_deprecated<void> _sendData(::std::string const& collectionName, ::std::string const& jsonData);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _sendData(::std::string const& collectionName, ::std::string const& jsonData);
 
     MCNAPI ::Scripting::Result_deprecated<void> _sendDataToClipboard(::std::string const& jsonData);
     // NOLINTEND
@@ -54,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

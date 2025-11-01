@@ -13,4 +13,4 @@ namespace FlatteningUtils::LightBlock {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::LightBlock

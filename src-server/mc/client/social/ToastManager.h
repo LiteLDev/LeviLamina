@@ -13,29 +13,32 @@ class ResourcePackManager;
 class ToastMessage;
 // clang-format on
 
-class ToastManager : public ::IToastManager, public ::Bedrock::Threading::EnableQueueForMainThread, public ::ResourcePackListener, public ::std::enable_shared_from_this<::ToastManager> {
+class ToastManager : public ::IToastManager,
+                     public ::Bedrock::Threading::EnableQueueForMainThread,
+                     public ::ResourcePackListener,
+                     public ::std::enable_shared_from_this<::ToastManager> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke9d210;
-    ::ll::UntypedStorage<4, 4> mUnk358232;
-    ::ll::UntypedStorage<8, 24> mUnk90bfd0;
+    ::ll::UntypedStorage<8, 8>   mUnke9d210;
+    ::ll::UntypedStorage<4, 4>   mUnk358232;
+    ::ll::UntypedStorage<8, 24>  mUnk90bfd0;
     ::ll::UntypedStorage<8, 376> mUnke9901d;
-    ::ll::UntypedStorage<8, 24> mUnkc7d542;
-    ::ll::UntypedStorage<8, 24> mUnk991dfa;
-    ::ll::UntypedStorage<8, 24> mUnkb3e856;
-    ::ll::UntypedStorage<8, 8> mUnk325e63;
-    ::ll::UntypedStorage<8, 64> mUnk88e1c9;
-    ::ll::UntypedStorage<8, 64> mUnk71b4c8;
-    ::ll::UntypedStorage<1, 1> mUnk5a71b2;
-    ::ll::UntypedStorage<1, 1> mUnke8ff1a;
-    ::ll::UntypedStorage<1, 1> mUnk731ea6;
-    ::ll::UntypedStorage<1, 1> mUnk1421ff;
-    ::ll::UntypedStorage<8, 8> mUnkea87b6;
-    ::ll::UntypedStorage<8, 8> mUnk734cad;
-    ::ll::UntypedStorage<4, 4> mUnka694e6;
-    ::ll::UntypedStorage<8, 8> mUnk6b8fd9;
-    ::ll::UntypedStorage<8, 8> mUnkef29e2;
+    ::ll::UntypedStorage<8, 24>  mUnkc7d542;
+    ::ll::UntypedStorage<8, 24>  mUnk991dfa;
+    ::ll::UntypedStorage<8, 24>  mUnkb3e856;
+    ::ll::UntypedStorage<8, 8>   mUnk325e63;
+    ::ll::UntypedStorage<8, 64>  mUnk88e1c9;
+    ::ll::UntypedStorage<8, 64>  mUnk71b4c8;
+    ::ll::UntypedStorage<1, 1>   mUnk5a71b2;
+    ::ll::UntypedStorage<1, 1>   mUnke8ff1a;
+    ::ll::UntypedStorage<1, 1>   mUnk731ea6;
+    ::ll::UntypedStorage<1, 1>   mUnk1421ff;
+    ::ll::UntypedStorage<8, 8>   mUnkea87b6;
+    ::ll::UntypedStorage<8, 8>   mUnk734cad;
+    ::ll::UntypedStorage<4, 4>   mUnka694e6;
+    ::ll::UntypedStorage<8, 8>   mUnk6b8fd9;
+    ::ll::UntypedStorage<8, 8>   mUnkef29e2;
     // NOLINTEND
 
 public:
@@ -65,5 +68,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

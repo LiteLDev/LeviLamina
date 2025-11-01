@@ -12,7 +12,6 @@ namespace PlayerReportingSignal { struct JsonData; }
 
 namespace PlayerReportingSignal {
 
-class SetJson : public ::Bedrock::Signal<::PlayerReportingSignal::SetJson, ::PlayerReportingSignal::JsonData> {
-};
+class SetJson : public ::Bedrock::Signal<::PlayerReportingSignal::SetJson, ::PlayerReportingSignal::JsonData> {};
 
-}
+} // namespace PlayerReportingSignal

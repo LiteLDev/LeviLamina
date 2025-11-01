@@ -12,5 +12,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 49152, ::CrashDumpEventData[4096]> mEventData;
     // NOLINTEND
-
 };

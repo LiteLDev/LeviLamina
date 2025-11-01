@@ -43,7 +43,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomCommandOrigin> _createCustomCommandOrigin(::CommandOrigin const& origin, ::Scripting::WeakLifetimeScope const& scope) const;
+    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomCommandOrigin>
+    _createCustomCommandOrigin(::CommandOrigin const& origin, ::Scripting::WeakLifetimeScope const& scope) const;
     // NOLINTEND
 
 public:
@@ -65,7 +66,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

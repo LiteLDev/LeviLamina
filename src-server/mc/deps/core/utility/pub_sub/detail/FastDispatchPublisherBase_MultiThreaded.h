@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnk641a85;
-    ::ll::UntypedStorage<8, 8> mUnk467524;
+    ::ll::UntypedStorage<8, 8>  mUnk467524;
     // NOLINTEND
 
 public:
@@ -46,7 +46,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::PubSub::Detail

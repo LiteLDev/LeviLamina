@@ -4,7 +4,6 @@
 
 namespace cereal::internal {
 
-struct DeprecatedComponentTagT {
-};
+struct DeprecatedComponentTagT {};
 
-}
+} // namespace cereal::internal

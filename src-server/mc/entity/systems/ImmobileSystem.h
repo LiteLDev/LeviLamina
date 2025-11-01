@@ -25,9 +25,22 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void doImmobileSystem(::StrictEntityContext const& context, ::LocalMoveVelocityComponent& localMoveVelocityComponent, ::MobRotationComponent& mobRotationComponent, ::StateVectorComponent& stateVectorComponent, ::EntityModifier<::MobIsJumpingFlagComponent> mod);
+    MCNAPI static void doImmobileSystem(
+        ::StrictEntityContext const&                  context,
+        ::LocalMoveVelocityComponent&                 localMoveVelocityComponent,
+        ::MobRotationComponent&                       mobRotationComponent,
+        ::StateVectorComponent&                       stateVectorComponent,
+        ::EntityModifier<::MobIsJumpingFlagComponent> mod
+    );
 
-    MCNAPI static void tickImmobileSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::MobIsImmobileFlagComponent>, ::LocalMoveVelocityComponent, ::MobRotationComponent, ::StateVectorComponent> view, ::EntityModifier<::MobIsJumpingFlagComponent> mod);
+    MCNAPI static void tickImmobileSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::MobIsImmobileFlagComponent>,
+            ::LocalMoveVelocityComponent,
+            ::MobRotationComponent,
+            ::StateVectorComponent>                   view,
+        ::EntityModifier<::MobIsJumpingFlagComponent> mod
+    );
     // NOLINTEND
-
 };

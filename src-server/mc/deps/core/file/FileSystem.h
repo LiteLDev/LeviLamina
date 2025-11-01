@@ -31,44 +31,43 @@ public:
     struct BasicFileData;
     struct FileTransferProgress;
     // clang-format on
-    
+
     // FileSystem inner types define
     struct BasicFileData {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk698b95;
-        ::ll::UntypedStorage<8, 8> mUnk7ec39a;
+        ::ll::UntypedStorage<8, 8>  mUnk7ec39a;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         BasicFileData& operator=(BasicFileData const&);
         BasicFileData(BasicFileData const&);
         BasicFileData();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI BasicFileData(::Core::PathBuffer<::std::string> const& path, uint64 size);
-    
+
         MCNAPI ~BasicFileData();
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::Core::PathBuffer<::std::string> const& path, uint64 size);
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
     struct FileTransferProgress {
     public:
         // member variables
@@ -77,20 +76,20 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkd6dcba;
         ::ll::UntypedStorage<8, 8> mUnke8d3af;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         FileTransferProgress& operator=(FileTransferProgress const&);
         FileTransferProgress(FileTransferProgress const&);
         FileTransferProgress();
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Core::Result openFile(::Core::PathView, ::Core::File&, ::Core::FileOpenMode, ::Core::FileBufferingMode) = 0;
+    virtual ::Core::Result
+    openFile(::Core::PathView, ::Core::File&, ::Core::FileOpenMode, ::Core::FileBufferingMode) = 0;
 
     // vIndex: 2
     virtual bool fileExists(::Core::PathView) = 0;
@@ -144,16 +143,22 @@ public:
     virtual ::Core::Result renameDirectory(::Core::PathView, ::Core::PathView) = 0;
 
     // vIndex: 19
-    virtual ::Core::Result iterateOverDirectory(::Core::PathView, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>) = 0;
+    virtual ::Core::Result iterateOverDirectory(
+        ::Core::PathView,
+        ::Core::DirectoryIterationFlags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
+    ) = 0;
 
     // vIndex: 20
     virtual ::Core::Result getDirectoryFiles(::std::vector<::Core::PathBuffer<::std::string>>&, ::Core::PathView) = 0;
 
     // vIndex: 21
-    virtual ::Core::Result getDirectoryFilesAndSizes(::std::vector<::Core::FileSystem::BasicFileData>&, ::Core::PathView) = 0;
+    virtual ::Core::Result
+    getDirectoryFilesAndSizes(::std::vector<::Core::FileSystem::BasicFileData>&, ::Core::PathView) = 0;
 
     // vIndex: 22
-    virtual ::Core::Result getDirectoryFilesRecursively(::std::vector<::Core::PathBuffer<::std::string>>&, ::Core::PathView) = 0;
+    virtual ::Core::Result
+    getDirectoryFilesRecursively(::std::vector<::Core::PathBuffer<::std::string>>&, ::Core::PathView) = 0;
 
     // vIndex: 23
     virtual ::Core::Result getDirectoryFilesSizeRecursively(uint64&, ::Core::PathView) = 0;
@@ -198,7 +203,12 @@ public:
     virtual bool isDirectoryPathAFlatFile(::Core::PathView) = 0;
 
     // vIndex: 37
-    virtual ::Core::Result copyFlatFile(::Core::PathView, ::Core::PathView, ::std::vector<::Core::ExcludedPath> const&, ::std::vector<::Core::ExcludedPath> const&) = 0;
+    virtual ::Core::Result copyFlatFile(
+        ::Core::PathView,
+        ::Core::PathView,
+        ::std::vector<::Core::ExcludedPath> const&,
+        ::std::vector<::Core::ExcludedPath> const&
+    ) = 0;
 
     // vIndex: 38
     virtual ::Core::Result createDirectoryForFile(::Core::PathView) = 0;
@@ -207,10 +217,12 @@ public:
     virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> getUniqueFilePathForFile(::Core::PathView) = 0;
 
     // vIndex: 40
-    virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> getUniqueFilePathForDirectory(::Core::PathView) = 0;
+    virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+        getUniqueFilePathForDirectory(::Core::PathView) = 0;
 
     // vIndex: 41
-    virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> createUniquePathFromSeed(::Core::PathView, ::std::function<::std::string(int)>) = 0;
+    virtual ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+        createUniquePathFromSeed(::Core::PathView, ::std::function<::std::string(int)>) = 0;
 
     // vIndex: 42
     virtual ::std::vector<::Core::PathBuffer<::std::string>> splitPathIntoFullPathSegments(::Core::PathView) = 0;
@@ -219,10 +231,12 @@ public:
     virtual ::Core::Result readFileDataExt(::Core::PathView, uint64, uint64, ::std::vector<uchar>&, uint64&) = 0;
 
     // vIndex: 44
-    virtual ::Core::Result cleanPath_deprecated(::Core::PathBuffer<::Core::BasicStackString<char, 1024>>&, ::Core::PathView) = 0;
+    virtual ::Core::Result
+    cleanPath_deprecated(::Core::PathBuffer<::Core::BasicStackString<char, 1024>>&, ::Core::PathView) = 0;
 
     // vIndex: 45
-    virtual ::Core::Result cleanPathSeparators_deprecated(::Core::PathBuffer<::Core::BasicStackString<char, 1024>>&, ::Core::PathView) = 0;
+    virtual ::Core::Result
+    cleanPathSeparators_deprecated(::Core::PathBuffer<::Core::BasicStackString<char, 1024>>&, ::Core::PathView) = 0;
 
     // vIndex: 46
     virtual bool checkStorageCorrupt(::Core::PathView) = 0;
@@ -231,16 +245,38 @@ public:
     virtual ::std::unique_ptr<::Core::FileSizePresetToken> presetFileInitialSize(::Core::PathView, uint64) = 0;
 
     // vIndex: 48
-    virtual ::Core::Result _getDirectoriesAndFileSizesRecursively(::Core::PathView, ::std::vector<::Core::PathBuffer<::std::string>>&, ::std::vector<::Core::FileSystem::BasicFileData>&) = 0;
+    virtual ::Core::Result _getDirectoriesAndFileSizesRecursively(
+        ::Core::PathView,
+        ::std::vector<::Core::PathBuffer<::std::string>>&,
+        ::std::vector<::Core::FileSystem::BasicFileData>&
+    ) = 0;
 
     // vIndex: 49
-    virtual ::Core::Result _copyDirectoryStructure(::Core::PathView, ::Core::PathView, ::std::vector<::Core::PathBuffer<::std::string>> const&, ::Core::FileSystemImpl*) = 0;
+    virtual ::Core::Result _copyDirectoryStructure(
+        ::Core::PathView,
+        ::Core::PathView,
+        ::std::vector<::Core::PathBuffer<::std::string>> const&,
+        ::Core::FileSystemImpl*
+    ) = 0;
 
     // vIndex: 50
-    virtual ::Core::Result _copyFilesWithLimit(::Core::PathView, ::Core::PathView, ::std::vector<::Core::FileSystem::BasicFileData>&, uint64&, uint64 const, ::std::function<::Core::Result(::Core::PathView, ::Core::PathView, ::Core::FileSystem::FileTransferProgress&)> const&) = 0;
+    virtual ::Core::Result _copyFilesWithLimit(
+        ::Core::PathView,
+        ::Core::PathView,
+        ::std::vector<::Core::FileSystem::BasicFileData>&,
+        uint64&,
+        uint64 const,
+        ::std::function<
+            ::Core::Result(::Core::PathView, ::Core::PathView, ::Core::FileSystem::FileTransferProgress&)> const&
+    ) = 0;
 
     // vIndex: 51
-    virtual ::Core::Result _copyFlatFile(::Core::PathView, ::Core::PathView, ::std::vector<::Core::ExcludedPath> const&, ::std::vector<::Core::ExcludedPath> const&) = 0;
+    virtual ::Core::Result _copyFlatFile(
+        ::Core::PathView,
+        ::Core::PathView,
+        ::std::vector<::Core::ExcludedPath> const&,
+        ::std::vector<::Core::ExcludedPath> const&
+    ) = 0;
 
     // vIndex: 52
     virtual ::std::optional<uint64> _checkFileInitialSize(::Core::PathView) = 0;
@@ -266,7 +302,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

@@ -20,7 +20,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch& operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch&&);
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch&
+    operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::BlockMatch&&);
 
     MCNAPI ~BlockMatch();
     // NOLINTEND
@@ -30,7 +31,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_20::JigsawStructure::ProcessorRule

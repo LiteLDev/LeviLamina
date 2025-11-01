@@ -41,7 +41,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Bedrock::NonOwnerPointer<::AppExtensions::IAppExtensions> $tryGetExtensions() const;
     // NOLINTEND
-
 };
 
-}
+} // namespace AppExtensions

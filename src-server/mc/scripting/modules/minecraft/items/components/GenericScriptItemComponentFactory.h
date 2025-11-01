@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template<typename T0>
-class GenericScriptItemComponentFactory {
-};
+template <typename T0>
+class GenericScriptItemComponentFactory {};
 
-}
+} // namespace ScriptModuleMinecraft

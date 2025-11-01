@@ -39,7 +39,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_80::ParticleLifetimeExpressionComponent& operator=(::SharedTypes::v1_20_80::ParticleLifetimeExpressionComponent const&);
+    MCNAPI ::SharedTypes::v1_20_80::ParticleLifetimeExpressionComponent&
+    operator=(::SharedTypes::v1_20_80::ParticleLifetimeExpressionComponent const&);
     // NOLINTEND
 
 public:
@@ -71,7 +72,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

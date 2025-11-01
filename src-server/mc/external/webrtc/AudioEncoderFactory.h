@@ -27,7 +27,8 @@ public:
     virtual ::std::optional<::webrtc::AudioCodecInfo> QueryAudioEncoder(::webrtc::SdpAudioFormat const&) = 0;
 
     // vIndex: 5
-    virtual ::std::unique_ptr<::webrtc::AudioEncoder> MakeAudioEncoder(int, ::webrtc::SdpAudioFormat const&, ::std::optional<::webrtc::AudioCodecPairId>) = 0;
+    virtual ::std::unique_ptr<::webrtc::AudioEncoder>
+    MakeAudioEncoder(int, ::webrtc::SdpAudioFormat const&, ::std::optional<::webrtc::AudioCodecPairId>) = 0;
 
     // vIndex: 2
     virtual ~AudioEncoderFactory() /*override*/ = default;
@@ -38,7 +39,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

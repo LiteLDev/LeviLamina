@@ -2,9 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template<typename A, typename T>
-class AutomaticID {
-public:
+template <typename A, typename T>
+class AutomaticID {public:
     T id;
 
     using Type = A;

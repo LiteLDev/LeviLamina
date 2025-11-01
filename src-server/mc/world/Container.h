@@ -60,7 +60,6 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-
     };
 
     using ItemStackNetIdChangedCallback = ::std::function<void(int, ::ItemStack const&)>;
@@ -95,17 +94,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::SharedTypes::Legacy::ContainerType                    mContainerType;
-    ::SharedTypes::Legacy::ContainerType                    mGameplayContainerType;
+    ::SharedTypes::Legacy::ContainerType                                        mContainerType;
+    ::SharedTypes::Legacy::ContainerType                                        mGameplayContainerType;
     ::std::unordered_set<::ContainerContentChangeListener*> mContentChangeListeners;
-    ::std::unordered_set<::ContainerSizeChangeListener*>    mSizeChangeListeners;
-    ::std::unordered_set<::ContainerCloseListener*>         mCloseListeners;
-    ::Container::PublisherWrapper                           mRemovedPublisher;
+    ::std::unordered_set<::ContainerSizeChangeListener*>       mSizeChangeListeners;
+    ::std::unordered_set<::ContainerCloseListener*>                 mCloseListeners;
+    ::Container::PublisherWrapper                                                     mRemovedPublisher;
     ::std::deque<TransactionContext>                        mTransactionContextStack;
     ::Bedrock::Safety::RedactableString                     mName;
-    bool                                                    mCustomName;
-    ::ContainerOwner                                        mContainerOwner;
-    ::ContainerRuntimeId                                    mContainerRuntimeId;
+    bool                                                                                    mCustomName;
+    ::ContainerOwner                                                           mContainerOwner;
+    ::ContainerRuntimeId                                                    mContainerRuntimeId;
     // NOLINTEND
 
 public:
@@ -236,7 +235,10 @@ public:
     virtual void addAdditionalSaveData(::CompoundTag& tag);
 
     // vIndex: 40
-    virtual void createTransactionContext(::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback, ::std::function<void()> execute);
+    virtual void createTransactionContext(
+        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
+        ::std::function<void()>                                                          execute
+    );
 
     // vIndex: 41
     virtual void initializeContainerContents(::BlockSource& region);
@@ -257,9 +259,11 @@ public:
 
     MCAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
 
-    MCAPI void _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
+    MCAPI void
+    _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCAPI void _serverInitId(int slot, ::ItemStack& item, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCAPI void
+    _serverInitId(int slot, ::ItemStack& item, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator) const;
 
@@ -283,7 +287,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::SharedTypes::Legacy::ContainerType, ::std::string> const& containerTypeMap();
+    MCAPI static ::BidirectionalUnorderedMap<::SharedTypes::Legacy::ContainerType, ::std::string> const&
+    containerTypeMap();
     // NOLINTEND
 
 public:
@@ -371,7 +376,10 @@ public:
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag);
 
-    MCAPI void $createTransactionContext(::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback, ::std::function<void()> execute);
+    MCAPI void $createTransactionContext(
+        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
+        ::std::function<void()>                                                          execute
+    );
 
     MCFOLD void $initializeContainerContents(::BlockSource& region);
 
@@ -385,5 +393,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

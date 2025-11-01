@@ -27,8 +27,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 80, ::std::optional<::gsl::final_action<::std::function<void()>>>> mListenerRegistration;
-    ::ll::TypedStorage<8, 24, ::GameEvents::PositionSource> mPositionSource;
-    ::ll::TypedStorage<8, 64, ::SculkSpreader> mSculkSpreader;
+    ::ll::TypedStorage<8, 24, ::GameEvents::PositionSource>                                  mPositionSource;
+    ::ll::TypedStorage<8, 64, ::SculkSpreader>                                               mSculkSpreader;
     // NOLINTEND
 
 public:
@@ -51,7 +51,11 @@ public:
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 1
-    virtual void handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region) /*override*/;
+    virtual void handleGameEvent(
+        ::GameEvent const&        gameEvent,
+        ::GameEventContext const& gameEventContext,
+        ::BlockSource&            region
+    ) /*override*/;
 
     // vIndex: 2
     virtual ::GameEvents::PositionSource const& getPositionSource() const /*override*/;
@@ -103,7 +107,8 @@ public:
 
     MCAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
+    MCAPI void
+    $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
     MCFOLD ::GameEvents::PositionSource const& $getPositionSource() const;
 
@@ -119,5 +124,4 @@ public:
 
     MCNAPI static void** $vftableForGameEventListener();
     // NOLINTEND
-
 };

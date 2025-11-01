@@ -17,7 +17,9 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::optional<::std::vector<::Vec3>> calculateInterpolatedPoints(::std::vector<::Vec3> const& controlPoints, int const maxStepsPerControlSegment) const /*override*/;
+    virtual ::std::optional<::std::vector<::Vec3>>
+    calculateInterpolatedPoints(::std::vector<::Vec3> const& controlPoints, int const maxStepsPerControlSegment) const
+        /*override*/;
 
     // vIndex: 0
     virtual ~SplineHelperHermite() /*override*/ = default;
@@ -26,7 +28,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::std::vector<::Vec3>> $calculateInterpolatedPoints(::std::vector<::Vec3> const& controlPoints, int const maxStepsPerControlSegment) const;
+    MCNAPI ::std::optional<::std::vector<::Vec3>>
+    $calculateInterpolatedPoints(::std::vector<::Vec3> const& controlPoints, int const maxStepsPerControlSegment) const;
     // NOLINTEND
 
 public:
@@ -34,7 +37,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Widgets

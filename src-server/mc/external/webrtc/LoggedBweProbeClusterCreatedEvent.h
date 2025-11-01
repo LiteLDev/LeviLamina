@@ -20,7 +20,6 @@ public:
     LoggedBweProbeClusterCreatedEvent& operator=(LoggedBweProbeClusterCreatedEvent const&);
     LoggedBweProbeClusterCreatedEvent(LoggedBweProbeClusterCreatedEvent const&);
     LoggedBweProbeClusterCreatedEvent();
-
 };
 
-}
+} // namespace webrtc

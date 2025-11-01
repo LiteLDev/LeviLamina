@@ -17,7 +17,8 @@ struct ScriptPlayerJoinAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayerHandle;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
+                                             mPlayerHandle;
     ::ll::TypedStorage<8, 32, ::std::string> mPlayerName;
     ::ll::TypedStorage<8, 32, ::std::string> mPlayerId;
     // NOLINTEND
@@ -31,9 +32,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerJoinAfterEvent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle, ::std::string const& playerName, ::std::string const& playerId);
+    MCAPI ScriptPlayerJoinAfterEvent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle,
+        ::std::string const&                                                        playerName,
+        ::std::string const&                                                        playerId
+    );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent& operator=(::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&
+    operator=(::ScriptModuleMinecraft::ScriptPlayerJoinAfterEvent&&);
 
     MCAPI ~ScriptPlayerJoinAfterEvent();
     // NOLINTEND
@@ -49,7 +55,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle, ::std::string const& playerName, ::std::string const& playerId);
+    MCAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle,
+        ::std::string const&                                                        playerName,
+        ::std::string const&                                                        playerId
+    );
     // NOLINTEND
 
 public:
@@ -57,7 +67,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

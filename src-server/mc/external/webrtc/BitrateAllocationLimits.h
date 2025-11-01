@@ -18,7 +18,6 @@ public:
     BitrateAllocationLimits& operator=(BitrateAllocationLimits const&);
     BitrateAllocationLimits(BitrateAllocationLimits const&);
     BitrateAllocationLimits();
-
 };
 
-}
+} // namespace webrtc

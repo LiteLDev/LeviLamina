@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/platform/threading/Mutex.h"
-#include "mc/versionless/world/level/ChunkPos.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/DividedPos2d.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/levelgen/v1/IPreliminarySurfaceProvider.h"
@@ -34,7 +34,7 @@ public:
     // clang-format off
     struct BlockVolumeDimensions;
     // clang-format on
-    
+
     // WorldGenerator inner types define
     struct BlockVolumeDimensions {
     public:
@@ -44,17 +44,16 @@ public:
         ::ll::TypedStorage<4, 4, uint> mDepth;
         ::ll::TypedStorage<4, 4, uint> mHeight;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StructureFeatureRegistry>> mStructureFeatureRegistry;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mCreateStructuresAndVisitedPositionsMutex;
-    ::ll::TypedStorage<8, 72, ::std::condition_variable> mStructureInstanceWaitVar;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mActiveStructureInstanceCreateCount;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>> mVisitedPositions;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                  mCreateStructuresAndVisitedPositionsMutex;
+    ::ll::TypedStorage<8, 72, ::std::condition_variable>                    mStructureInstanceWaitVar;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>                            mActiveStructureInstanceCreateCount;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>>             mVisitedPositions;
     // NOLINTEND
 
 public:
@@ -74,7 +73,13 @@ public:
     virtual bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
 
     // vIndex: 39
-    virtual bool findNearestStructureFeature(::HashedString feature, ::BlockPos const& origin, ::BlockPos& pos, bool mustBeInNewChunks, ::std::optional<::HashedString> biomeTag);
+    virtual bool findNearestStructureFeature(
+        ::HashedString                  feature,
+        ::BlockPos const&               origin,
+        ::BlockPos&                     pos,
+        bool                            mustBeInNewChunks,
+        ::std::optional<::HashedString> biomeTag
+    );
 
     // vIndex: 40
     virtual ::StructureFeature* getStructureFeatureOfType(::HashedString type) const;
@@ -98,7 +103,8 @@ public:
     virtual ::BlockPos findSpawnPosition() const = 0;
 
     // vIndex: 16
-    virtual void postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random) /*override*/;
+    virtual void
+    postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random) /*override*/;
 
     // vIndex: 15
     virtual void postProcessMobsAt(::BlockSource& region, ::BoundingBox const& chunkBB) const /*override*/;
@@ -113,7 +119,13 @@ public:
     virtual void propagateCombinedChunkSource(::ChunkSource*);
 
     // vIndex: 49
-    virtual void decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const = 0;
+    virtual void decorateWorldGenLoadChunk(
+        ::Biome const&,
+        ::LevelChunk&,
+        ::BlockVolumeTarget&,
+        ::Random&,
+        ::ChunkPos const&
+    ) const = 0;
 
     // vIndex: 50
     virtual void decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const = 0;
@@ -122,7 +134,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldGenerator(::Dimension& dimension, ::std::unique_ptr<::StructureFeatureRegistry> structureFeatureRegistry);
+    MCAPI
+    WorldGenerator(::Dimension& dimension, ::std::unique_ptr<::StructureFeatureRegistry> structureFeatureRegistry);
 
     MCAPI void addHardcodedSpawnAreas(::LevelChunk& lc);
 
@@ -134,7 +147,12 @@ public:
 
     MCAPI void preProcessStructures(::Dimension& dimension, ::ChunkPos const& cp, ::BiomeSource const& biomeSource);
 
-    MCAPI void prepareStructureFeatureBlueprints(::Dimension& dimension, ::ChunkPos const& cp, ::BiomeSource const& biomeSource, ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider);
+    MCAPI void prepareStructureFeatureBlueprints(
+        ::Dimension&                         dimension,
+        ::ChunkPos const&                    cp,
+        ::BiomeSource const&                 biomeSource,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider
+    );
 
     MCAPI void waitForStructures();
     // NOLINTEND
@@ -164,7 +182,13 @@ public:
 
     MCAPI bool $isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
 
-    MCAPI bool $findNearestStructureFeature(::HashedString feature, ::BlockPos const& origin, ::BlockPos& pos, bool mustBeInNewChunks, ::std::optional<::HashedString> biomeTag);
+    MCAPI bool $findNearestStructureFeature(
+        ::HashedString                  feature,
+        ::BlockPos const&               origin,
+        ::BlockPos&                     pos,
+        bool                            mustBeInNewChunks,
+        ::std::optional<::HashedString> biomeTag
+    );
 
     MCAPI ::StructureFeature* $getStructureFeatureOfType(::HashedString type) const;
 
@@ -188,5 +212,4 @@ public:
 
     MCNAPI static void** $vftableForChunkSource();
     // NOLINTEND
-
 };

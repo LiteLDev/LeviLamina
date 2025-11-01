@@ -20,15 +20,15 @@ struct PendingArea {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::mce::UUID> mUID;
-    ::ll::TypedStorage<8, 32, ::std::string> mName;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityId;
-    ::ll::TypedStorage<4, 48, ::Bounds> mBounds;
-    ::ll::TypedStorage<4, 4, float> mMaxDistToPlayers;
-    ::ll::TypedStorage<1, 1, bool> mIsCircle;
-    ::ll::TypedStorage<1, 1, bool> mAlwaysActive;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>          mUID;
+    ::ll::TypedStorage<8, 32, ::std::string>        mName;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>       mEntityId;
+    ::ll::TypedStorage<4, 48, ::Bounds>             mBounds;
+    ::ll::TypedStorage<4, 4, float>                 mMaxDistToPlayers;
+    ::ll::TypedStorage<1, 1, bool>                  mIsCircle;
+    ::ll::TypedStorage<1, 1, bool>                  mAlwaysActive;
     ::ll::TypedStorage<1, 1, ::TickingAreaLoadMode> mLoadMode;
-    ::ll::TypedStorage<1, 1, bool> mCreated;
+    ::ll::TypedStorage<1, 1, bool>                  mCreated;
     // NOLINTEND
 
 public:
@@ -52,5 +52,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

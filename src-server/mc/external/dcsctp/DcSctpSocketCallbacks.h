@@ -70,13 +70,18 @@ public:
     virtual void OnConnectionRestarted() = 0;
 
     // vIndex: 15
-    virtual void OnStreamsResetFailed(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>, ::std::string_view) = 0;
+    virtual void OnStreamsResetFailed(
+        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>,
+        ::std::string_view
+    ) = 0;
 
     // vIndex: 16
-    virtual void OnStreamsResetPerformed(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>) = 0;
+    virtual void
+        OnStreamsResetPerformed(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>) = 0;
 
     // vIndex: 17
-    virtual void OnIncomingStreamsReset(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>) = 0;
+    virtual void
+        OnIncomingStreamsReset(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>) = 0;
 
     // vIndex: 18
     virtual void OnBufferedAmountLow(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id);
@@ -132,7 +137,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

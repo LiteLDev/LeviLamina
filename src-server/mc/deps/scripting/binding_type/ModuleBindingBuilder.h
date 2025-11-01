@@ -32,13 +32,13 @@ public:
     // clang-format off
     struct BuilderData;
     // clang-format on
-    
+
     // ModuleBindingBuilder inner types define
     struct BuilderData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk791e57;
+        ::ll::UntypedStorage<1, 1>  mUnk791e57;
         ::ll::UntypedStorage<8, 96> mUnk7003d2;
         ::ll::UntypedStorage<8, 24> mUnk4eacd6;
         ::ll::UntypedStorage<8, 24> mUnk79fcda;
@@ -51,29 +51,29 @@ public:
         ::ll::UntypedStorage<8, 24> mUnk8fa1fb;
         ::ll::UntypedStorage<8, 32> mUnk2ebd1a;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         BuilderData& operator=(BuilderData const&);
         BuilderData(BuilderData const&);
         BuilderData();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::Scripting::ModuleBindingBuilder::BuilderData& operator=(::Scripting::ModuleBindingBuilder::BuilderData&&);
-    
+        MCNAPI ::Scripting::ModuleBindingBuilder::BuilderData&
+        operator=(::Scripting::ModuleBindingBuilder::BuilderData&&);
+
         MCNAPI ~BuilderData();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -89,25 +89,62 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ModuleBindingBuilder(::mce::UUID uuid, ::std::string const& name, ::Scripting::Version const& version, bool importRestricted);
+    MCNAPI ModuleBindingBuilder(
+        ::mce::UUID                 uuid,
+        ::std::string const&        name,
+        ::Scripting::Version const& version,
+        bool                        importRestricted
+    );
 
-    MCNAPI bool _allowed(::std::vector<::Scripting::Release> const& releases, bool allowUntagged, ::std::vector<::std::string> const& additionalTags) const;
+    MCNAPI bool _allowed(
+        ::std::vector<::Scripting::Release> const& releases,
+        bool                                       allowUntagged,
+        ::std::vector<::std::string> const&        additionalTags
+    ) const;
 
-    MCNAPI ::std::vector<::Scripting::ClassBinding> _filterClassBindings(::std::vector<::Scripting::ClassBinding> const& classBindings, bool allowUntagged, ::std::vector<::std::string> const& additionalTags) const;
+    MCNAPI ::std::vector<::Scripting::ClassBinding> _filterClassBindings(
+        ::std::vector<::Scripting::ClassBinding> const& classBindings,
+        bool                                            allowUntagged,
+        ::std::vector<::std::string> const&             additionalTags
+    ) const;
 
-    MCNAPI ::std::vector<::Scripting::EnumBinding> _filterEnumBindings(::std::vector<::Scripting::EnumBinding> const& enumBindings, bool allowUntagged, ::std::vector<::std::string> const& additionalTags) const;
+    MCNAPI ::std::vector<::Scripting::EnumBinding> _filterEnumBindings(
+        ::std::vector<::Scripting::EnumBinding> const& enumBindings,
+        bool                                           allowUntagged,
+        ::std::vector<::std::string> const&            additionalTags
+    ) const;
 
-    MCNAPI ::std::vector<::Scripting::EnumBinding::EnumValue> _filterEnumValueMap(::std::vector<::Scripting::ConstantFactory> const& filteredConstants, ::std::vector<::Scripting::EnumBinding::EnumValue> const& valueMap) const;
+    MCNAPI ::std::vector<::Scripting::EnumBinding::EnumValue> _filterEnumValueMap(
+        ::std::vector<::Scripting::ConstantFactory> const&        filteredConstants,
+        ::std::vector<::Scripting::EnumBinding::EnumValue> const& valueMap
+    ) const;
 
-    MCNAPI ::std::vector<::Scripting::ErrorBinding> _filterErrorBindings(::std::vector<::Scripting::ErrorBinding> const& errorBindings, bool allowUnreleased, ::std::vector<::std::string> const& allowedTags) const;
+    MCNAPI ::std::vector<::Scripting::ErrorBinding> _filterErrorBindings(
+        ::std::vector<::Scripting::ErrorBinding> const& errorBindings,
+        bool                                            allowUnreleased,
+        ::std::vector<::std::string> const&             allowedTags
+    ) const;
 
-    MCNAPI ::std::vector<::Scripting::InterfaceBinding> _filterInterfaceBindings(::std::vector<::Scripting::InterfaceBinding> const& interfaceBindings, bool allowUntagged, ::std::vector<::std::string> const& additionalTags) const;
+    MCNAPI ::std::vector<::Scripting::InterfaceBinding> _filterInterfaceBindings(
+        ::std::vector<::Scripting::InterfaceBinding> const& interfaceBindings,
+        bool                                                allowUntagged,
+        ::std::vector<::std::string> const&                 additionalTags
+    ) const;
 
-    MCNAPI ::std::vector<::Scripting::TypeMapData> _filterTypeMaps(::std::vector<::Scripting::TypeMapData> const& typeMaps, bool allowUntagged, ::std::vector<::std::string> const& additionalTags) const;
+    MCNAPI ::std::vector<::Scripting::TypeMapData> _filterTypeMaps(
+        ::std::vector<::Scripting::TypeMapData> const& typeMaps,
+        bool                                           allowUntagged,
+        ::std::vector<::std::string> const&            additionalTags
+    ) const;
 
-    MCNAPI ::std::vector<::Scripting::ClassBinding> _orderClassBindingsByDependency(::std::vector<::Scripting::ClassBinding>& unorderedBindings) const;
+    MCNAPI ::std::vector<::Scripting::ClassBinding>
+    _orderClassBindingsByDependency(::std::vector<::Scripting::ClassBinding>& unorderedBindings) const;
 
-    MCNAPI ::Scripting::ModuleBinding build(bool allowUntagged, ::std::vector<::std::string> const& additionalTags, ::Scripting::RuntimeConditions const& currentRuntimeConditions);
+    MCNAPI ::Scripting::ModuleBinding build(
+        bool                                  allowUntagged,
+        ::std::vector<::std::string> const&   additionalTags,
+        ::Scripting::RuntimeConditions const& currentRuntimeConditions
+    );
 
     MCNAPI ::Scripting::ModuleBindingBuilder& classBinding(::Scripting::ClassBinding&& classBinding);
 
@@ -125,11 +162,23 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _assertClassMemberSymbolDoNotExist(::Scripting::ClassBinding const& classBinding, ::std::string const& name, ::Scripting::TaggedBinding const& binding);
+    MCNAPI static bool _assertClassMemberSymbolDoNotExist(
+        ::Scripting::ClassBinding const&  classBinding,
+        ::std::string const&              name,
+        ::Scripting::TaggedBinding const& binding
+    );
 
-    MCNAPI static bool _assertEnumMemberSymbolDoNotExist(::Scripting::EnumBinding const& enumBinding, ::std::string const& name, ::Scripting::TaggedBinding const& binding);
+    MCNAPI static bool _assertEnumMemberSymbolDoNotExist(
+        ::Scripting::EnumBinding const&   enumBinding,
+        ::std::string const&              name,
+        ::Scripting::TaggedBinding const& binding
+    );
 
-    MCNAPI static bool _assertModuleMemberSymbolDoNotExist(::Scripting::ModuleBinding const& moduleBinding, ::std::string const& name, ::Scripting::TaggedBinding const& binding);
+    MCNAPI static bool _assertModuleMemberSymbolDoNotExist(
+        ::Scripting::ModuleBinding const& moduleBinding,
+        ::std::string const&              name,
+        ::Scripting::TaggedBinding const& binding
+    );
 
     MCNAPI static void _validateClassConstructors(::Scripting::ModuleBinding const& moduleBinding);
 
@@ -149,7 +198,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::mce::UUID uuid, ::std::string const& name, ::Scripting::Version const& version, bool importRestricted);
+    MCNAPI void*
+    $ctor(::mce::UUID uuid, ::std::string const& name, ::Scripting::Version const& version, bool importRestricted);
     // NOLINTEND
 
 public:
@@ -157,7 +207,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

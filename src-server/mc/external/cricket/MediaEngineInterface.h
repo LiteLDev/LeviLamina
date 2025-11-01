@@ -38,7 +38,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

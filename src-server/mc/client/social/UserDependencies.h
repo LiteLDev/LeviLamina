@@ -4,7 +4,6 @@
 
 namespace Social {
 
-struct UserDependencies {
-};
+struct UserDependencies {};
 
-}
+} // namespace Social

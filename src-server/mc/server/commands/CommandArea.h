@@ -14,5 +14,4 @@ public:
     CommandArea& operator=(CommandArea const&);
     CommandArea(CommandArea const&);
     CommandArea();
-
 };

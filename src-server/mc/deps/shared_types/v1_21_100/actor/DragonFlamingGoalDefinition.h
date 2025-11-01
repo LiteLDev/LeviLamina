@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/versionless/actor/BaseGoalDefinition.h"
+#include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,12 +16,12 @@ struct DragonFlamingGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk534f24;
-    ::ll::UntypedStorage<4, 4> mUnk3f19db;
-    ::ll::UntypedStorage<4, 4> mUnk4cdb88;
-    ::ll::UntypedStorage<4, 4> mUnkfe3d3b;
-    ::ll::UntypedStorage<4, 4> mUnkc3b153;
-    ::ll::UntypedStorage<4, 4> mUnkbc99ff;
+    ::ll::UntypedStorage<4, 4>  mUnk534f24;
+    ::ll::UntypedStorage<4, 4>  mUnk3f19db;
+    ::ll::UntypedStorage<4, 4>  mUnk4cdb88;
+    ::ll::UntypedStorage<4, 4>  mUnkfe3d3b;
+    ::ll::UntypedStorage<4, 4>  mUnkc3b153;
+    ::ll::UntypedStorage<4, 4>  mUnkbc99ff;
     ::ll::UntypedStorage<8, 32> mUnkf188ba;
     // NOLINTEND
 
@@ -34,7 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_100::DragonFlamingGoalDefinition& operator=(::SharedTypes::v1_21_100::DragonFlamingGoalDefinition&&);
+    MCNAPI ::SharedTypes::v1_21_100::DragonFlamingGoalDefinition&
+    operator=(::SharedTypes::v1_21_100::DragonFlamingGoalDefinition&&);
 
     MCNAPI ~DragonFlamingGoalDefinition();
     // NOLINTEND
@@ -64,7 +65,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_100

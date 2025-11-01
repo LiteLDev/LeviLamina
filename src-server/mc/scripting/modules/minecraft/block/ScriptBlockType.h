@@ -22,7 +22,7 @@ public:
     // clang-format off
     struct Key;
     // clang-format on
-    
+
     // ScriptBlockType inner types define
     struct Key {
     public:
@@ -30,20 +30,19 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnkc3ff51;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Key& operator=(Key const&);
         Key(Key const&);
         Key();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk63c7cf;
-    ::ll::UntypedStorage<8, 8> mUnk317417;
+    ::ll::UntypedStorage<8, 8>  mUnk317417;
     // NOLINTEND
 
 public:
@@ -55,7 +54,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> createDefaultBlockPermutationV010() const;
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
+    createDefaultBlockPermutationV010() const;
 
     MCNAPI ::std::string getId() const;
     // NOLINTEND
@@ -65,11 +66,12 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType> getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockType const& block);
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>
+    getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockType const& block);
 
-    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>> tryGetHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockType const& block);
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    tryGetHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockType const& block);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

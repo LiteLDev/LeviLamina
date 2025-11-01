@@ -5,7 +5,7 @@
 namespace ScriptModuleMinecraft {
 
 enum class ScriptHeldItemOption : uchar {
-    NoItem = 0,
+    NoItem  = 0,
     AnyItem = 1,
 };
 

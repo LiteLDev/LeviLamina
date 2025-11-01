@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,10 +22,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::BlockPos> mPos;
-    ::ll::TypedStorage<4, 4, int> mCharge;
-    ::ll::TypedStorage<4, 4, int> mUpdateDelay;
-    ::ll::TypedStorage<4, 4, int> mDecayDelay;
-    ::ll::TypedStorage<4, 4, int> mFacingData;
+    ::ll::TypedStorage<4, 4, int>         mCharge;
+    ::ll::TypedStorage<4, 4, int>         mUpdateDelay;
+    ::ll::TypedStorage<4, 4, int>         mDecayDelay;
+    ::ll::TypedStorage<4, 4, int>         mFacingData;
     // NOLINTEND
 
 public:
@@ -33,7 +33,14 @@ public:
     // NOLINTBEGIN
     MCAPI void load(::CompoundTag const& tag);
 
-    MCAPI void update(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& originPos, ::Random& random, ::SculkSpreader& spreader, bool spreadVeins);
+    MCAPI void update(
+        ::IBlockWorldGenAPI& target,
+        ::BlockSource*       region,
+        ::BlockPos const&    originPos,
+        ::Random&            random,
+        ::SculkSpreader&     spreader,
+        bool                 spreadVeins
+    );
     // NOLINTEND
 
 public:
@@ -41,7 +48,8 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::array<::BlockPos, 18> _getNonCornerNeighborsOffsets(::Random& random);
 
-    MCAPI static bool _isMovementUnobstructed(::IBlockWorldGenAPI& target, ::BlockPos const& fromPos, ::BlockPos const& toPos);
+    MCAPI static bool
+    _isMovementUnobstructed(::IBlockWorldGenAPI& target, ::BlockPos const& fromPos, ::BlockPos const& toPos);
     // NOLINTEND
 
 public:
@@ -53,5 +61,4 @@ public:
 
     MCAPI static ::SculkVeinBlockBehavior const& sSculkVeinBlockBehavior();
     // NOLINTEND
-
 };

@@ -40,5 +40,4 @@ public:
 
     MCNAPI bool $requireEncryptedReads() const;
     // NOLINTEND
-
 };

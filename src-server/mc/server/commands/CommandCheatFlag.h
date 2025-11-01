@@ -4,6 +4,6 @@
 
 enum class CommandCheatFlag : ushort {
     // bitfield representation
-    Cheat = 0,
+    Cheat    = 0,
     NotCheat = 1 << 7,
 };

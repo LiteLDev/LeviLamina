@@ -30,5 +30,4 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::MovementEffectsComponent const&);
     // NOLINTEND
-
 };

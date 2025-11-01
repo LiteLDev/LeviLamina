@@ -38,7 +38,6 @@ public:
 
     MCNAPI static ::std::optional<::Potion::PotionType> tryResolvePotionType(::std::string const& potionTypeId);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

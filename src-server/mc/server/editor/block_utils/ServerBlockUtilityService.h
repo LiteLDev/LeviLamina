@@ -18,7 +18,8 @@ namespace Editor::BlockUtils { class CommonBlockUtilityServiceProvider; }
 
 namespace Editor::BlockUtils {
 
-class ServerBlockUtilityService : public ::Editor::BlockUtils::CommonBlockUtilityService, public ::Editor::BlockUtils::ServerBlockUtilityServiceProvider {
+class ServerBlockUtilityService : public ::Editor::BlockUtils::CommonBlockUtilityService,
+                                  public ::Editor::BlockUtils::ServerBlockUtilityServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,7 +30,13 @@ public:
     virtual ::Editor::BlockUtils::CommonBlockUtilityServiceProvider& getCommonInterface() /*override*/;
 
     // vIndex: 2
-    virtual void fillVolume(::std::variant<::BlockVolumeBase const*, ::CompoundBlockVolume const*, ::Editor::RelativeVolumeListBlockVolume const*> const volume, ::std::optional<::Block const*> const optBlock) /*override*/;
+    virtual void fillVolume(
+        ::std::variant<
+            ::BlockVolumeBase const*,
+            ::CompoundBlockVolume const*,
+            ::Editor::RelativeVolumeListBlockVolume const*> const volume,
+        ::std::optional<::Block const*> const                     optBlock
+    ) /*override*/;
 
     // vIndex: 7
     virtual ::Scripting::Result_deprecated<void> _implInit() /*override*/;
@@ -46,7 +53,13 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Editor::BlockUtils::CommonBlockUtilityServiceProvider& $getCommonInterface();
 
-    MCNAPI void $fillVolume(::std::variant<::BlockVolumeBase const*, ::CompoundBlockVolume const*, ::Editor::RelativeVolumeListBlockVolume const*> const volume, ::std::optional<::Block const*> const optBlock);
+    MCNAPI void $fillVolume(
+        ::std::variant<
+            ::BlockVolumeBase const*,
+            ::CompoundBlockVolume const*,
+            ::Editor::RelativeVolumeListBlockVolume const*> const volume,
+        ::std::optional<::Block const*> const                     optBlock
+    );
 
     MCNAPI ::Scripting::Result_deprecated<void> $_implInit();
 
@@ -64,7 +77,6 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::BlockUtils

@@ -18,7 +18,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 17
-    virtual void handle(::ServerPlayer&, ::BlockPalette&, ::MoveInputComponent const&, ::ActorRotationComponent&, bool) const = 0;
+    virtual void
+    handle(::ServerPlayer&, ::BlockPalette&, ::MoveInputComponent const&, ::ActorRotationComponent&, bool) const = 0;
 
     // vIndex: 0
     virtual ~InventoryPacket() /*override*/;
@@ -35,5 +36,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

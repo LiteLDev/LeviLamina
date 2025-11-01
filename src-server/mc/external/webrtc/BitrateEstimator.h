@@ -16,7 +16,7 @@ class BitrateEstimator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8e9e4b;
+    ::ll::UntypedStorage<4, 4>  mUnk8e9e4b;
     ::ll::UntypedStorage<8, 96> mUnk2c6877;
     ::ll::UntypedStorage<8, 96> mUnk43e25d;
     ::ll::UntypedStorage<8, 80> mUnk34b00d;
@@ -25,10 +25,10 @@ public:
     ::ll::UntypedStorage<8, 80> mUnk3e5322;
     ::ll::UntypedStorage<8, 80> mUnk6fa8cd;
     ::ll::UntypedStorage<8, 80> mUnk6b2c33;
-    ::ll::UntypedStorage<8, 8> mUnk52e947;
-    ::ll::UntypedStorage<8, 8> mUnk53aace;
-    ::ll::UntypedStorage<4, 4> mUnk275276;
-    ::ll::UntypedStorage<4, 4> mUnk41b53e;
+    ::ll::UntypedStorage<8, 8>  mUnk52e947;
+    ::ll::UntypedStorage<8, 8>  mUnk53aace;
+    ::ll::UntypedStorage<4, 4>  mUnk275276;
+    ::ll::UntypedStorage<4, 4>  mUnk41b53e;
     // NOLINTEND
 
 public:
@@ -90,7 +90,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

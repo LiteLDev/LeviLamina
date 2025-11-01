@@ -6,11 +6,11 @@ namespace rtc {
 
 enum class SSLProtocolVersion : int {
     NotGiven = -1,
-    Tls10 = 0,
-    Tls11 = 1,
-    Tls12 = 2,
-    Dtls10 = 1,
-    Dtls12 = 2,
+    Tls10    = 0,
+    Tls11    = 1,
+    Tls12    = 2,
+    Dtls10   = 1,
+    Dtls12   = 2,
 };
 
 }

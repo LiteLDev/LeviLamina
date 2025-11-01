@@ -32,13 +32,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MineshaftStart(::Dimension const& dimension, ::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& pos, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel);
+    MCAPI MineshaftStart(
+        ::Dimension const&                   dimension,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    pos,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension const& dimension, ::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& pos, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel);
+    MCAPI void* $ctor(
+        ::Dimension const&                   dimension,
+        ::BiomeSource const&                 biomeSource,
+        ::Random&                            random,
+        ::ChunkPos const&                    pos,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
     // NOLINTEND
 
 public:
@@ -52,5 +64,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

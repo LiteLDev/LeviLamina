@@ -15,9 +15,9 @@ struct IsRidingAnyEntityOfType {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::MolangScriptArg const& evaluateQuery(::RenderParams& renderParams, ::std::vector<::ExpressionNode> const& arguments);
+    MCNAPI static ::MolangScriptArg const&
+    evaluateQuery(::RenderParams& renderParams, ::std::vector<::ExpressionNode> const& arguments);
     // NOLINTEND
-
 };
 
-}
+} // namespace MolangQuery

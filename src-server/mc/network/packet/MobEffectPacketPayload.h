@@ -12,21 +12,20 @@ public:
     // MobEffectPacketPayload inner types define
     enum class Event : uchar {
         Invalid = 0,
-        Add = 1,
-        Update = 2,
-        Remove = 3,
+        Add     = 1,
+        Update  = 2,
+        Remove  = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
-    ::ll::TypedStorage<4, 4, ::EffectDuration> mEffectDurationTicks;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                mRuntimeId;
+    ::ll::TypedStorage<4, 4, ::EffectDuration>                mEffectDurationTicks;
     ::ll::TypedStorage<1, 1, ::MobEffectPacketPayload::Event> mEventId;
-    ::ll::TypedStorage<4, 4, int> mEffectId;
-    ::ll::TypedStorage<4, 4, int> mEffectAmplifier;
-    ::ll::TypedStorage<1, 1, bool> mShowParticles;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick> mTick;
+    ::ll::TypedStorage<4, 4, int>                             mEffectId;
+    ::ll::TypedStorage<4, 4, int>                             mEffectAmplifier;
+    ::ll::TypedStorage<1, 1, bool>                            mShowParticles;
+    ::ll::TypedStorage<8, 8, ::PlayerInputTick>               mTick;
     // NOLINTEND
-
 };

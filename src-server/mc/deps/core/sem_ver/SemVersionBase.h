@@ -6,8 +6,7 @@
 #include "mc/deps/core/string/StaticOptimizedString.h"
 
 template <typename T>
-class SemVersionBase {
-public:
+class SemVersionBase {public:
     uint16_t mMajor;
     uint16_t mMinor;
     uint16_t mPatch;

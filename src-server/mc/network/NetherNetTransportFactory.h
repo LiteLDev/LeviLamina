@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk78837c;
     ::ll::UntypedStorage<8, 56> mUnkdaf441;
-    ::ll::UntypedStorage<4, 4> mUnkda3cbc;
+    ::ll::UntypedStorage<4, 4>  mUnkda3cbc;
     // NOLINTEND
 
 public:
@@ -36,19 +36,33 @@ public:
     virtual ~NetherNetTransportFactory();
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::NetherNet::INetherNetTransportInterface, ::std::function<void(::NetherNet::INetherNetTransportInterface*)>> createTransport(::NetherNet::NetworkID const& id, ::NetherNet::INetherNetTransportInterfaceCallbacks* callbacks) const;
+    virtual ::std::unique_ptr<
+        ::NetherNet::INetherNetTransportInterface,
+        ::std::function<void(::NetherNet::INetherNetTransportInterface*)>>
+    createTransport(
+        ::NetherNet::NetworkID const&                       id,
+        ::NetherNet::INetherNetTransportInterfaceCallbacks* callbacks
+    ) const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NetherNetTransportFactory(::NetworkSystemToggles const& toggles, ::PortMappingInfo portMappingInfo, ::NetherNet::LogSeverity defaultLogSeverity);
+    MCNAPI NetherNetTransportFactory(
+        ::NetworkSystemToggles const& toggles,
+        ::PortMappingInfo             portMappingInfo,
+        ::NetherNet::LogSeverity      defaultLogSeverity
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::NetworkSystemToggles const& toggles, ::PortMappingInfo portMappingInfo, ::NetherNet::LogSeverity defaultLogSeverity);
+    MCNAPI void* $ctor(
+        ::NetworkSystemToggles const& toggles,
+        ::PortMappingInfo             portMappingInfo,
+        ::NetherNet::LogSeverity      defaultLogSeverity
+    );
     // NOLINTEND
 
 public:
@@ -60,7 +74,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::NetherNet::INetherNetTransportInterface, ::std::function<void(::NetherNet::INetherNetTransportInterface*)>> $createTransport(::NetherNet::NetworkID const& id, ::NetherNet::INetherNetTransportInterfaceCallbacks* callbacks) const;
+    MCNAPI ::std::unique_ptr<
+        ::NetherNet::INetherNetTransportInterface,
+        ::std::function<void(::NetherNet::INetherNetTransportInterface*)>>
+    $createTransport(
+        ::NetherNet::NetworkID const&                       id,
+        ::NetherNet::INetherNetTransportInterfaceCallbacks* callbacks
+    ) const;
     // NOLINTEND
 
 public:
@@ -68,5 +88,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -27,13 +27,14 @@ namespace Editor::Services { struct EditorRegistryFile; }
 
 namespace Editor::Services {
 
-class EditorJigsawService : public ::Editor::Services::IEditorService, public ::Editor::Services::EditorJigsawServiceProvider {
+class EditorJigsawService : public ::Editor::Services::IEditorService,
+                            public ::Editor::Services::EditorJigsawServiceProvider {
 public:
     // EditorJigsawService inner types declare
     // clang-format off
     struct TemplatePoolData;
     // clang-format on
-    
+
     // EditorJigsawService inner types define
     struct TemplatePoolData {
     public:
@@ -43,38 +44,37 @@ public:
         ::ll::UntypedStorage<8, 16> mUnk579187;
         ::ll::UntypedStorage<8, 16> mUnkd32fc7;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         TemplatePoolData& operator=(TemplatePoolData const&);
         TemplatePoolData(TemplatePoolData const&);
         TemplatePoolData();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~TemplatePoolData();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48> mUnk4fe173;
-    ::ll::UntypedStorage<8, 48> mUnkfffe35;
+    ::ll::UntypedStorage<8, 48>  mUnk4fe173;
+    ::ll::UntypedStorage<8, 48>  mUnkfffe35;
     ::ll::UntypedStorage<8, 520> mUnkdb7f4c;
-    ::ll::UntypedStorage<8, 16> mUnkfbc0d2;
-    ::ll::UntypedStorage<8, 24> mUnk2bc7d3;
-    ::ll::UntypedStorage<8, 16> mUnk16bb69;
-    ::ll::UntypedStorage<8, 32> mUnkecbd5c;
-    ::ll::UntypedStorage<8, 16> mUnkbab63e;
+    ::ll::UntypedStorage<8, 16>  mUnkfbc0d2;
+    ::ll::UntypedStorage<8, 24>  mUnk2bc7d3;
+    ::ll::UntypedStorage<8, 16>  mUnk16bb69;
+    ::ll::UntypedStorage<8, 32>  mUnkecbd5c;
+    ::ll::UntypedStorage<8, 16>  mUnkbab63e;
     // NOLINTEND
 
 public:
@@ -114,19 +114,37 @@ public:
     virtual ::JigsawStructureRegistry* getJigsawRegistry(::std::string const& registryName) /*override*/;
 
     // vIndex: 6
-    virtual ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> getJigsawRegistryJson(::std::string const& registryName) /*override*/;
+    virtual ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>
+    getJigsawRegistryJson(::std::string const& registryName) /*override*/;
 
     // vIndex: 5
-    virtual void setJigsawRegistry(::std::string const& registryName, ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> data, bool shouldSaveFiles) /*override*/;
+    virtual void setJigsawRegistry(
+        ::std::string const& registryName,
+        ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> data,
+        bool shouldSaveFiles
+    ) /*override*/;
 
     // vIndex: 7
-    virtual void generateJigsawPreview(::std::string const& registryName, ::std::string const& startPool, ::std::string const& startTarget, ::BlockPos const& seed, int const depth, int const maxHorizontalDistanceFromCenter, bool const validateRegistry, ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem, ::WeakEntityRef playerRef) /*override*/;
+    virtual void generateJigsawPreview(
+        ::std::string const&                               registryName,
+        ::std::string const&                               startPool,
+        ::std::string const&                               startTarget,
+        ::BlockPos const&                                  seed,
+        int const                                          depth,
+        int const                                          maxHorizontalDistanceFromCenter,
+        bool const                                         validateRegistry,
+        ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem,
+        ::WeakEntityRef                                    playerRef
+    ) /*override*/;
 
     // vIndex: 8
-    virtual ::Bedrock::PubSub::Subscription listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)> callback) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)> callback) /*override*/;
 
     // vIndex: 9
-    virtual ::Bedrock::PubSub::Subscription listenForGenerateJigsawPreview(::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)> callback) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription listenForGenerateJigsawPreview(
+        ::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)> callback
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -134,13 +152,23 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit EditorJigsawService(::Editor::ServiceProviderCollection& providers);
 
-    MCNAPI void _bootstrapJigsawRegistry(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager, ::FeatureRegistry& featureRegistry, ::JigsawStructureRegistry& jigsawStructureRegistry);
+    MCNAPI void _bootstrapJigsawRegistry(
+        ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager,
+        ::FeatureRegistry&                                         featureRegistry,
+        ::JigsawStructureRegistry&                                 jigsawStructureRegistry
+    );
 
-    MCNAPI void _saveFile(::Editor::Services::EditorRegistryFile& regFile, ::Core::PathBuffer<::std::string> jigsawPath, ::Editor::Services::JigsawJsonType fileType, ::std::vector<::std::string>& outErrors);
+    MCNAPI void _saveFile(
+        ::Editor::Services::EditorRegistryFile& regFile,
+        ::Core::PathBuffer<::std::string>       jigsawPath,
+        ::Editor::Services::JigsawJsonType      fileType,
+        ::std::vector<::std::string>&           outErrors
+    );
 
     MCNAPI void _saveJigsawRegistryFiles(::std::string const& registryName);
 
-    MCNAPI bool _validateRegistry(::std::string registryName, ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> editorPlayer);
+    MCNAPI bool
+    _validateRegistry(::std::string registryName, ::Bedrock::NonOwnerPointer<::Editor::IEditorPlayer> editorPlayer);
     // NOLINTEND
 
 public:
@@ -174,15 +202,33 @@ public:
 
     MCNAPI ::JigsawStructureRegistry* $getJigsawRegistry(::std::string const& registryName);
 
-    MCNAPI ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> $getJigsawRegistryJson(::std::string const& registryName);
+    MCNAPI ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>
+    $getJigsawRegistryJson(::std::string const& registryName);
 
-    MCNAPI void $setJigsawRegistry(::std::string const& registryName, ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> data, bool shouldSaveFiles);
+    MCNAPI void $setJigsawRegistry(
+        ::std::string const& registryName,
+        ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>> data,
+        bool shouldSaveFiles
+    );
 
-    MCNAPI void $generateJigsawPreview(::std::string const& registryName, ::std::string const& startPool, ::std::string const& startTarget, ::BlockPos const& seed, int const depth, int const maxHorizontalDistanceFromCenter, bool const validateRegistry, ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem, ::WeakEntityRef playerRef);
+    MCNAPI void $generateJigsawPreview(
+        ::std::string const&                               registryName,
+        ::std::string const&                               startPool,
+        ::std::string const&                               startTarget,
+        ::BlockPos const&                                  seed,
+        int const                                          depth,
+        int const                                          maxHorizontalDistanceFromCenter,
+        bool const                                         validateRegistry,
+        ::Editor::ScriptModule::ScriptClipboardItem const& clipboardItem,
+        ::WeakEntityRef                                    playerRef
+    );
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)> callback);
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $listenForSetJigsawRegistry(::std::function<void(::std::vector<::std::string>)> callback);
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForGenerateJigsawPreview(::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)> callback);
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForGenerateJigsawPreview(
+        ::std::function<void(::std::vector<::Editor::Services::EditorJigsawSection>)> callback
+    );
     // NOLINTEND
 
 public:
@@ -192,7 +238,6 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

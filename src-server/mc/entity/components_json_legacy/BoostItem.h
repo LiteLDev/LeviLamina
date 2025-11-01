@@ -11,7 +11,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::ItemDescriptor> mItemDescriptor;
     ::ll::TypedStorage<8, 16, ::ItemDescriptor> mReplacementItemDescriptor;
-    ::ll::TypedStorage<4, 4, int> mDamageAmount;
+    ::ll::TypedStorage<4, 4, int>               mDamageAmount;
     // NOLINTEND
 
 public:
@@ -40,5 +40,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

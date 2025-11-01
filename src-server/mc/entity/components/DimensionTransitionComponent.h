@@ -16,9 +16,9 @@ struct DimensionTransitionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3> mPortalEntrancePosition;
-    ::ll::TypedStorage<4, 4, ::DimensionType> mPortalEntranceDimension;
-    ::ll::TypedStorage<4, 4, ::PortalAxis> mPortalEntranceAxis;
+    ::ll::TypedStorage<4, 12, ::Vec3>                  mPortalEntrancePosition;
+    ::ll::TypedStorage<4, 4, ::DimensionType>          mPortalEntranceDimension;
+    ::ll::TypedStorage<4, 4, ::PortalAxis>             mPortalEntranceAxis;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mExisitingTargetPosition;
     // NOLINTEND
 
@@ -37,5 +37,4 @@ public:
 
     MCAPI static ::std::string const& POSITION_Z_TAG();
     // NOLINTEND
-
 };

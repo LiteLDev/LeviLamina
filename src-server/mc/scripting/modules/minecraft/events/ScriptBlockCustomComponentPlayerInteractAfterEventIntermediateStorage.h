@@ -9,12 +9,13 @@
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptBlockCustomComponentPlayerInteractAfterEventIntermediateStorage : public ::ScriptModuleMinecraft::ScriptBlockCustomComponentAfterEventIntermediateStorage {
+struct ScriptBlockCustomComponentPlayerInteractAfterEventIntermediateStorage
+: public ::ScriptModuleMinecraft::ScriptBlockCustomComponentAfterEventIntermediateStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mPlayer;
-    ::ll::TypedStorage<1, 1, uchar const> mFace;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef const>         mPlayer;
+    ::ll::TypedStorage<1, 1, uchar const>                    mFace;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3> const> mHit;
     // NOLINTEND
 
@@ -29,7 +30,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

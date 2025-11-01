@@ -4,7 +4,6 @@
 
 namespace Bedrock::detail {
 
-struct value_initialize_tag {
-};
+struct value_initialize_tag {};
 
-}
+} // namespace Bedrock::detail

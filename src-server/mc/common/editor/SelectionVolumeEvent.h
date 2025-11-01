@@ -8,15 +8,15 @@ struct SelectionVolumeEvent {
 public:
     // SelectionVolumeEvent inner types define
     enum class EventType : int {
-        Error = 0,
-        SetVolume = 1,
-        AddVolume = 2,
+        Error        = 0,
+        SetVolume    = 1,
+        AddVolume    = 2,
         RemoveVolume = 3,
-        Translate = 4,
-        Move = 5,
-        Clear = 6,
+        Translate    = 4,
+        Move         = 5,
+        Clear        = 6,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -29,7 +29,6 @@ public:
     SelectionVolumeEvent& operator=(SelectionVolumeEvent const&);
     SelectionVolumeEvent(SelectionVolumeEvent const&);
     SelectionVolumeEvent();
-
 };
 
-}
+} // namespace Editor::Selection

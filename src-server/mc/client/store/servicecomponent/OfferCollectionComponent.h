@@ -21,24 +21,24 @@ class OfferCollectionComponent : public ::StoreUIComponentWithStaticBinding<::Of
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::StoreCatalogItem&> mInvalidItem;
-    ::ll::TypedStorage<8, 72, ::StoreCatalogItemVisualLayer> mInvalidItemVisualLayer;
+    ::ll::TypedStorage<8, 8, ::StoreCatalogItem&>                                              mInvalidItem;
+    ::ll::TypedStorage<8, 72, ::StoreCatalogItemVisualLayer>                                   mInvalidItemVisualLayer;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::StoreCatalogItemVisualLayer>>> mOffers;
-    ::ll::TypedStorage<4, 4, uint> mVisibleOfferPerRow;
-    ::ll::TypedStorage<4, 4, uint> mMaxOffers;
-    ::ll::TypedStorage<4, 4, uint> mMaxOffersPerPage;
-    ::ll::TypedStorage<4, 4, uint> mPossibleOffers;
-    ::ll::TypedStorage<4, 4, uint> mFirstVisibleItemIndex;
-    ::ll::TypedStorage<8, 48, ::ImageTelemetryInfo> mImageTelemetryInfo;
-    ::ll::TypedStorage<1, 1, bool> mDirty;
-    ::ll::TypedStorage<8, 32, ::std::string> mLinksToPageId;
-    ::ll::TypedStorage<8, 368, ::LinksToStyle> mLinksToStyle;
-    ::ll::TypedStorage<1, 1, bool> mHasFetchedInitialImages;
-    ::ll::TypedStorage<1, 1, bool> mShowMoreButtonVisible;
-    ::ll::TypedStorage<1, 1, bool> mAreCycleButtonsVisible;
-    ::ll::TypedStorage<1, 1, bool> mHasMoreOffers;
-    ::ll::TypedStorage<8, 208, ::StyleData> mStyleData;
-    ::ll::TypedStorage<8, 16, ::Json::Value> mOfflineJson;
+    ::ll::TypedStorage<4, 4, uint>                                                             mVisibleOfferPerRow;
+    ::ll::TypedStorage<4, 4, uint>                                                             mMaxOffers;
+    ::ll::TypedStorage<4, 4, uint>                                                             mMaxOffersPerPage;
+    ::ll::TypedStorage<4, 4, uint>                                                             mPossibleOffers;
+    ::ll::TypedStorage<4, 4, uint>                                                             mFirstVisibleItemIndex;
+    ::ll::TypedStorage<8, 48, ::ImageTelemetryInfo>                                            mImageTelemetryInfo;
+    ::ll::TypedStorage<1, 1, bool>                                                             mDirty;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                   mLinksToPageId;
+    ::ll::TypedStorage<8, 368, ::LinksToStyle>                                                 mLinksToStyle;
+    ::ll::TypedStorage<1, 1, bool>                                                             mHasFetchedInitialImages;
+    ::ll::TypedStorage<1, 1, bool>                                                             mShowMoreButtonVisible;
+    ::ll::TypedStorage<1, 1, bool>                                                             mAreCycleButtonsVisible;
+    ::ll::TypedStorage<1, 1, bool>                                                             mHasMoreOffers;
+    ::ll::TypedStorage<8, 208, ::StyleData>                                                    mStyleData;
+    ::ll::TypedStorage<8, 16, ::Json::Value>                                                   mOfflineJson;
     // NOLINTEND
 
 public:
@@ -77,5 +77,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

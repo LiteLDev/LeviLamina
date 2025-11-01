@@ -32,7 +32,8 @@ class ScriptBlockEventListener : public ::EventListenerDispatcher<::BlockEventLi
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>> mScriptEventsHandle;
+    ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
+                                                              mScriptEventsHandle;
     ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
     // NOLINTEND
 
@@ -64,13 +65,29 @@ public:
     virtual ::EventResult onEvent(::ExplosionStartedEvent const& explosionStartedEvent) /*override*/;
 
     // vIndex: 1
-    virtual ::EventResult onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater) /*override*/;
+    virtual ::EventResult onBlockPlacedByPlayer(
+        ::Player&         player,
+        ::Block const&    placedBlock,
+        ::BlockPos const& pos,
+        bool              isUnderwater
+    ) /*override*/;
 
     // vIndex: 2
-    virtual ::EventResult onBlockDestroyedByPlayer(::Player& player, ::Block const& destroyedBlock, ::BlockPos const& pos, ::ItemStackBase const& currentItem, ::ItemStackBase const& itemBeforeBlockBreak) /*override*/;
+    virtual ::EventResult onBlockDestroyedByPlayer(
+        ::Player&              player,
+        ::Block const&         destroyedBlock,
+        ::BlockPos const&      pos,
+        ::ItemStackBase const& currentItem,
+        ::ItemStackBase const& itemBeforeBlockBreak
+    ) /*override*/;
 
     // vIndex: 6
-    virtual ::EventResult onBlockDestructionStarted(::Player& player, ::BlockPos const& pos, ::Block const& hitBlock, uchar const face) /*override*/;
+    virtual ::EventResult onBlockDestructionStarted(
+        ::Player&         player,
+        ::BlockPos const& pos,
+        ::Block const&    hitBlock,
+        uchar const       face
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptBlockEventListener() /*override*/ = default;
@@ -95,11 +112,19 @@ public:
 
     MCAPI ::EventResult $onEvent(::ExplosionStartedEvent const& explosionStartedEvent);
 
-    MCAPI ::EventResult $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+    MCAPI ::EventResult
+    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
-    MCAPI ::EventResult $onBlockDestroyedByPlayer(::Player& player, ::Block const& destroyedBlock, ::BlockPos const& pos, ::ItemStackBase const& currentItem, ::ItemStackBase const& itemBeforeBlockBreak);
+    MCAPI ::EventResult $onBlockDestroyedByPlayer(
+        ::Player&              player,
+        ::Block const&         destroyedBlock,
+        ::BlockPos const&      pos,
+        ::ItemStackBase const& currentItem,
+        ::ItemStackBase const& itemBeforeBlockBreak
+    );
 
-    MCAPI ::EventResult $onBlockDestructionStarted(::Player& player, ::BlockPos const& pos, ::Block const& hitBlock, uchar const face);
+    MCAPI ::EventResult
+    $onBlockDestructionStarted(::Player& player, ::BlockPos const& pos, ::Block const& hitBlock, uchar const face);
     // NOLINTEND
 
 public:
@@ -107,7 +132,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -20,13 +20,21 @@ public:
     virtual ~StructureDataCacheServiceProvider() = default;
 
     // vIndex: 1
-    virtual void registerStructureDataProvider(::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider>) = 0;
+    virtual void
+        registerStructureDataProvider(::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider>) = 0;
 
     // vIndex: 2
     virtual void informStructureDataRemoved(::mce::UUID const&) = 0;
 
     // vIndex: 3
-    virtual void informStructureDataUpdated(::mce::UUID const&, ::std::variant<::StructureTemplate const*, ::Editor::EditorStructureTemplate const*, ::std::shared_ptr<::StructureTemplate const>, ::std::shared_ptr<::Editor::EditorStructureTemplate const>> const&) = 0;
+    virtual void informStructureDataUpdated(
+        ::mce::UUID const&,
+        ::std::variant<
+            ::StructureTemplate const*,
+            ::Editor::EditorStructureTemplate const*,
+            ::std::shared_ptr<::StructureTemplate const>,
+            ::std::shared_ptr<::Editor::EditorStructureTemplate const>> const&
+    ) = 0;
     // NOLINTEND
 
 public:
@@ -34,7 +42,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

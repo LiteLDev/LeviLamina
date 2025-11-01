@@ -28,11 +28,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void Add(::std::string_view hostname, int family, ::std::vector<::rtc::IPAddress> const& result, ::std::chrono::steady_clock::time_point expiration);
+    MCNAPI void
+    Add(::std::string_view                      hostname,
+        int                                     family,
+        ::std::vector<::rtc::IPAddress> const&  result,
+        ::std::chrono::steady_clock::time_point expiration);
 
     MCNAPI bool TryGet(::std::string_view hostname, int family, ::std::vector<::rtc::IPAddress>* outResult);
     // NOLINTEND
-
 };
 
-}
+} // namespace NetherNet

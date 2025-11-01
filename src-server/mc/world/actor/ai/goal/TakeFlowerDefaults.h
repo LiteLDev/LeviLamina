@@ -13,4 +13,4 @@ namespace TakeFlowerDefaults {
 MCAPI ::Vec3 const& SEARCH_AREA();
 // NOLINTEND
 
-}
+} // namespace TakeFlowerDefaults

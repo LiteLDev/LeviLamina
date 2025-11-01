@@ -38,7 +38,10 @@ public:
 
     MCNAPI JSONSchema(::cereal::ext::JSONSchema&&);
 
-    MCNAPI void makeAndNormalizeDefs(::cereal::ext::internal::OutRefsMap& outRefs, ::std::vector<::cereal::SchemaDescription> const& descriptions);
+    MCNAPI void makeAndNormalizeDefs(
+        ::cereal::ext::internal::OutRefsMap&              outRefs,
+        ::std::vector<::cereal::SchemaDescription> const& descriptions
+    );
 
     MCNAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema&&);
 
@@ -50,7 +53,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::cereal::ext::JSONSchema fromDescriptions(::std::vector<::cereal::SchemaDescription> const& descriptions, uint64 pos);
+    MCNAPI static ::cereal::ext::JSONSchema
+    fromDescriptions(::std::vector<::cereal::SchemaDescription> const& descriptions, uint64 pos);
     // NOLINTEND
 
 public:
@@ -68,7 +72,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal::ext

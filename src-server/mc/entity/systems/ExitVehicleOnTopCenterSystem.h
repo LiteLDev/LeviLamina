@@ -35,13 +35,64 @@ MCNAPI ::TickingSystemWithInfo createMakeNonPlayerPassengerExitSystem();
 
 MCNAPI ::TickingSystemWithInfo createMakePlayerPassengerExitSystem();
 
-MCNAPI void makeNonPlayerPassengerExit(::StrictEntityContext const& entity, ::PassengerComponent const& passengerComponent, ::OffsetsComponent const& offsetsComponent, ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent, ::DoesServerAuthOnlyDismountFlagComponent>, ::RideableComponent const, ::AABBShapeComponent const> vehicleView, ::EntityModifier<::ActorSetPositionRequestComponent>& modifier);
+MCNAPI void makeNonPlayerPassengerExit(
+    ::StrictEntityContext const& entity,
+    ::PassengerComponent const&  passengerComponent,
+    ::OffsetsComponent const&    offsetsComponent,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::VehicleComponent, ::DoesServerAuthOnlyDismountFlagComponent>,
+        ::RideableComponent const,
+        ::AABBShapeComponent const>                       vehicleView,
+    ::EntityModifier<::ActorSetPositionRequestComponent>& modifier
+);
 
-MCNAPI void makePlayerPassengerExit(::StrictEntityContext const& entity, ::PassengerComponent const& passengerComponent, ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent, ::DoesServerAuthOnlyDismountFlagComponent>, ::RideableComponent const, ::AABBShapeComponent const> vehicleView, ::EntityModifier<::TeleportToRequestComponent>& modifier);
+MCNAPI void makePlayerPassengerExit(
+    ::StrictEntityContext const& entity,
+    ::PassengerComponent const&  passengerComponent,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::VehicleComponent, ::DoesServerAuthOnlyDismountFlagComponent>,
+        ::RideableComponent const,
+        ::AABBShapeComponent const>                 vehicleView,
+    ::EntityModifier<::TeleportToRequestComponent>& modifier
+);
 
-MCNAPI void tickNonPlayerPassengerSystem(::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent>, ::Exclude<::PlayerComponent, ::ActorIsBeingDestroyedFlagComponent, ::SwitchingVehiclesFlagComponent, ::IsBeingTeleportedFlagComponent>, ::PassengerComponent const, ::OffsetsComponent const> passengerView, ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent, ::DoesServerAuthOnlyDismountFlagComponent>, ::RideableComponent const, ::AABBShapeComponent const> vehicleView, ::EntityModifier<::ActorSetPositionRequestComponent> modifier);
+MCNAPI void tickNonPlayerPassengerSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent>,
+        ::Exclude<
+            ::PlayerComponent,
+            ::ActorIsBeingDestroyedFlagComponent,
+            ::SwitchingVehiclesFlagComponent,
+            ::IsBeingTeleportedFlagComponent>,
+        ::PassengerComponent const,
+        ::OffsetsComponent const> passengerView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::VehicleComponent, ::DoesServerAuthOnlyDismountFlagComponent>,
+        ::RideableComponent const,
+        ::AABBShapeComponent const>                      vehicleView,
+    ::EntityModifier<::ActorSetPositionRequestComponent> modifier
+);
 
-MCNAPI void tickPlayerPassengerSystem(::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent, ::PlayerComponent>, ::Exclude<::ActorIsBeingDestroyedFlagComponent, ::SwitchingVehiclesFlagComponent, ::IsBeingTeleportedFlagComponent>, ::PassengerComponent const> passengerView, ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent, ::DoesServerAuthOnlyDismountFlagComponent>, ::RideableComponent const, ::AABBShapeComponent const> vehicleView, ::EntityModifier<::TeleportToRequestComponent> modifier);
+MCNAPI void tickPlayerPassengerSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent, ::PlayerComponent>,
+        ::Exclude<
+            ::ActorIsBeingDestroyedFlagComponent,
+            ::SwitchingVehiclesFlagComponent,
+            ::IsBeingTeleportedFlagComponent>,
+        ::PassengerComponent const> passengerView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::VehicleComponent, ::DoesServerAuthOnlyDismountFlagComponent>,
+        ::RideableComponent const,
+        ::AABBShapeComponent const>                vehicleView,
+    ::EntityModifier<::TeleportToRequestComponent> modifier
+);
 // NOLINTEND
 
-}
+} // namespace ExitVehicleOnTopCenterSystem

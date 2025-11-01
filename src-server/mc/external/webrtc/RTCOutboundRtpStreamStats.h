@@ -26,29 +26,29 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk96d194;
     ::ll::UntypedStorage<8, 16> mUnk12309b;
     ::ll::UntypedStorage<8, 16> mUnkb3220d;
-    ::ll::UntypedStorage<4, 8> mUnkbfce3f;
-    ::ll::UntypedStorage<4, 8> mUnk8f9f59;
+    ::ll::UntypedStorage<4, 8>  mUnkbfce3f;
+    ::ll::UntypedStorage<4, 8>  mUnk8f9f59;
     ::ll::UntypedStorage<8, 16> mUnk4ed5d2;
     ::ll::UntypedStorage<8, 16> mUnk909146;
-    ::ll::UntypedStorage<4, 8> mUnk1bd55c;
-    ::ll::UntypedStorage<4, 8> mUnk5774f3;
+    ::ll::UntypedStorage<4, 8>  mUnk1bd55c;
+    ::ll::UntypedStorage<4, 8>  mUnk5774f3;
     ::ll::UntypedStorage<8, 16> mUnk8e9a6f;
-    ::ll::UntypedStorage<4, 8> mUnkd89704;
-    ::ll::UntypedStorage<4, 8> mUnkca9f4c;
+    ::ll::UntypedStorage<4, 8>  mUnkd89704;
+    ::ll::UntypedStorage<4, 8>  mUnkca9f4c;
     ::ll::UntypedStorage<8, 16> mUnk1204b1;
     ::ll::UntypedStorage<8, 40> mUnk83dbc5;
     ::ll::UntypedStorage<8, 24> mUnkcffb6d;
-    ::ll::UntypedStorage<4, 8> mUnke10955;
+    ::ll::UntypedStorage<4, 8>  mUnke10955;
     ::ll::UntypedStorage<8, 40> mUnk966fdd;
     ::ll::UntypedStorage<8, 40> mUnkf4560d;
-    ::ll::UntypedStorage<4, 8> mUnkaa25e5;
-    ::ll::UntypedStorage<4, 8> mUnkb7d5d9;
-    ::ll::UntypedStorage<4, 8> mUnkd35db1;
+    ::ll::UntypedStorage<4, 8>  mUnkaa25e5;
+    ::ll::UntypedStorage<4, 8>  mUnkb7d5d9;
+    ::ll::UntypedStorage<4, 8>  mUnkd35db1;
     ::ll::UntypedStorage<8, 16> mUnk8c2e77;
-    ::ll::UntypedStorage<1, 2> mUnkc05417;
-    ::ll::UntypedStorage<1, 2> mUnk4f7477;
+    ::ll::UntypedStorage<1, 2>  mUnkc05417;
+    ::ll::UntypedStorage<1, 2>  mUnk4f7477;
     ::ll::UntypedStorage<8, 40> mUnk5b4666;
-    ::ll::UntypedStorage<4, 8> mUnk1319d9;
+    ::ll::UntypedStorage<4, 8>  mUnk1319d9;
     // NOLINTEND
 
 public:
@@ -115,7 +115,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

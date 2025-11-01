@@ -15,8 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk66966d;
-    ::ll::UntypedStorage<4, 4> mUnkb5b83a;
-    ::ll::UntypedStorage<4, 4> mUnk78441e;
+    ::ll::UntypedStorage<4, 4>  mUnkb5b83a;
+    ::ll::UntypedStorage<4, 4>  mUnk78441e;
     // NOLINTEND
 
 public:
@@ -44,7 +44,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

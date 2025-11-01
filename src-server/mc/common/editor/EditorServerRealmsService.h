@@ -25,7 +25,7 @@ class EditorServerRealmsService : public ::Editor::Services::EditorRealmsService
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk41e743;
+    ::ll::UntypedStorage<8, 8>  mUnk41e743;
     ::ll::UntypedStorage<8, 64> mUnkec3b81;
     // NOLINTEND
 
@@ -57,7 +57,13 @@ public:
     virtual void beginLoadRealmSlots(::std::string const& worldId, ::WeakEntityRef playerRef) /*override*/;
 
     // vIndex: 13
-    virtual void beginUploadToRealms(::std::string realmsWorldId, int slotId, ::WeakEntityRef playerRef, ::Editor::GameOptions const& gameOptions, ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)> callback) /*override*/;
+    virtual void beginUploadToRealms(
+        ::std::string                                                             realmsWorldId,
+        int                                                                       slotId,
+        ::WeakEntityRef                                                           playerRef,
+        ::Editor::GameOptions const&                                              gameOptions,
+        ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)> callback
+    ) /*override*/;
 
     // vIndex: 9
     virtual void beginDownloadWorld(::std::string const& worldId, int slotId, ::WeakEntityRef playerRef) /*override*/;
@@ -68,7 +74,8 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit EditorServerRealmsService(::Editor::ServiceProviderCollection& providers);
 
-    MCNAPI void _handleIsRealmsServiceAvailablePayload(::Editor::Network::EditorIsRealmsServiceAvailablePayload const& payload);
+    MCNAPI void
+    _handleIsRealmsServiceAvailablePayload(::Editor::Network::EditorIsRealmsServiceAvailablePayload const& payload);
 
     MCNAPI void _handleRealmWorldDownloadResponse(::Editor::Network::RealmWorldDownloadResponsePayload const& payload);
 
@@ -98,7 +105,13 @@ public:
 
     MCNAPI void $beginLoadRealmSlots(::std::string const& worldId, ::WeakEntityRef playerRef);
 
-    MCNAPI void $beginUploadToRealms(::std::string realmsWorldId, int slotId, ::WeakEntityRef playerRef, ::Editor::GameOptions const& gameOptions, ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)> callback);
+    MCNAPI void $beginUploadToRealms(
+        ::std::string                                                             realmsWorldId,
+        int                                                                       slotId,
+        ::WeakEntityRef                                                           playerRef,
+        ::Editor::GameOptions const&                                              gameOptions,
+        ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)> callback
+    );
 
     MCNAPI void $beginDownloadWorld(::std::string const& worldId, int slotId, ::WeakEntityRef playerRef);
     // NOLINTEND
@@ -110,7 +123,6 @@ public:
 
     MCNAPI static void** $vftableForEditorRealmsServiceProvider();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

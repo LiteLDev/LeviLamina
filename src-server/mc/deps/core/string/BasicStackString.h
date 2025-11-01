@@ -4,8 +4,7 @@
 
 namespace Core {
 
-template<typename T0, int T1>
-class BasicStackString {
-};
+template <typename T0, int T1>
+class BasicStackString {};
 
-}
+} // namespace Core

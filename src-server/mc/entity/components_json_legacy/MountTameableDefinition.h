@@ -14,14 +14,14 @@ class MountTameableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkb8662d;
-    ::ll::UntypedStorage<4, 4> mUnk32ed73;
-    ::ll::UntypedStorage<4, 4> mUnk4a404b;
-    ::ll::UntypedStorage<8, 32> mUnk47e4c2;
-    ::ll::UntypedStorage<8, 32> mUnk800624;
+    ::ll::UntypedStorage<4, 4>   mUnkb8662d;
+    ::ll::UntypedStorage<4, 4>   mUnk32ed73;
+    ::ll::UntypedStorage<4, 4>   mUnk4a404b;
+    ::ll::UntypedStorage<8, 32>  mUnk47e4c2;
+    ::ll::UntypedStorage<8, 32>  mUnk800624;
     ::ll::UntypedStorage<8, 104> mUnkab2a53;
-    ::ll::UntypedStorage<8, 24> mUnk5507f5;
-    ::ll::UntypedStorage<8, 24> mUnk656954;
+    ::ll::UntypedStorage<8, 24>  mUnk5507f5;
+    ::ll::UntypedStorage<8, 24>  mUnk656954;
     // NOLINTEND
 
 public:
@@ -39,7 +39,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MountTameableDefinition>>& root);
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MountTameableDefinition>>& root
+    );
     // NOLINTEND
 
 public:
@@ -47,5 +49,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

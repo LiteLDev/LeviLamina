@@ -7,9 +7,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 840> mUnk6a83ab;
-    ::ll::UntypedStorage<8, 16> mUnk5b972a;
-    ::ll::UntypedStorage<1, 1> mUnk541c7c;
-    ::ll::UntypedStorage<1, 1> mUnkebaf06;
+    ::ll::UntypedStorage<8, 16>  mUnk5b972a;
+    ::ll::UntypedStorage<1, 1>   mUnk541c7c;
+    ::ll::UntypedStorage<1, 1>   mUnkebaf06;
     // NOLINTEND
 
 public:
@@ -29,5 +29,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

@@ -17,5 +17,4 @@ public:
     CommandFloatRange& operator=(CommandFloatRange const&);
     CommandFloatRange(CommandFloatRange const&);
     CommandFloatRange();
-
 };

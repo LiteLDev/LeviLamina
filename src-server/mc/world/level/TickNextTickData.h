@@ -5,7 +5,7 @@
 #include "mc/world/level/Tick.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list
@@ -17,10 +17,10 @@ class TickNextTickData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::BlockPos     pos;
+    ::BlockPos        pos;
     ::Block const* mBlock;
-    ::Tick         tick;
-    int            priorityOffset;
+    ::Tick                 tick;
+    int                       priorityOffset;
     // NOLINTEND
 
 public:

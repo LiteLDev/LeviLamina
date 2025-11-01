@@ -47,7 +47,6 @@ public:
         ::ll::TypedStorage<1, 1, bool> mCompareRelevantUserData;
         ::ll::TypedStorage<1, 1, bool> mCompareDamage;
         // NOLINTEND
-
     };
 
 public:
@@ -58,21 +57,21 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::WeakPtr<::Item>                       mItem;
-    ::std::unique_ptr<::CompoundTag>        mUserData;
-    ::Block const*                          mBlock;
-    short                                   mAuxValue;
-    uchar                                   mCount;
-    bool                                    mValid_DeprecatedSeeComment;
-    bool                                    mShowPickUp;
-    bool                                    mWasPickedUp;
+    ::WeakPtr<::Item>                                             mItem;
+    ::std::unique_ptr<::CompoundTag>               mUserData;
+    ::Block const*                                                   mBlock;
+    short                                                                     mAuxValue;
+    uchar                                                                     mCount;
+    bool                                                                       mValid_DeprecatedSeeComment;
+    bool                                                                       mShowPickUp;
+    bool                                                                       mWasPickedUp;
     ::std::chrono::steady_clock::time_point mPickupTime;
-    ::std::vector<::BlockType const*>       mCanPlaceOn;
-    uint64                                  mCanPlaceOnHash;
-    ::std::vector<::BlockType const*>       mCanDestroy;
-    uint64                                  mCanDestroyHash;
-    ::Tick                                  mBlockingTick;
-    ::std::unique_ptr<::ItemInstance>       mChargedItem;
+    ::std::vector<::BlockType const*>            mCanPlaceOn;
+    uint64                                                                   mCanPlaceOnHash;
+    ::std::vector<::BlockType const*>            mCanDestroy;
+    uint64                                                                   mCanDestroyHash;
+    ::Tick                                                                   mBlockingTick;
+    ::std::unique_ptr<::ItemInstance>             mChargedItem;
     // NOLINTEND
 
 public:
@@ -168,7 +167,8 @@ public:
 
     MCAPI ::std::unique_ptr<::DynamicProperties> getDynamicProperties() const;
 
-    MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
+    MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
+    getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
 
     MCAPI ::HashedString const& getFullNameHash() const;
 
@@ -228,9 +228,13 @@ public:
 
     MCAPI bool isNull() const;
 
-    MCAPI bool isOneOfBlockInstances(::std::vector<::std::reference_wrapper<::HashedString const>> const& blockTypeIds) const;
+    MCAPI bool
+    isOneOfBlockInstances(::std::vector<::std::reference_wrapper<::HashedString const>> const& blockTypeIds) const;
 
-    MCAPI bool isOneOfInstances(::std::initializer_list<::std::reference_wrapper<::HashedString const>> items, bool useItemLookup) const;
+    MCAPI bool isOneOfInstances(
+        ::std::initializer_list<::std::reference_wrapper<::HashedString const>> items,
+        bool                                                                    useItemLookup
+    ) const;
 
     MCAPI bool isPotionItem() const;
 
@@ -274,7 +278,11 @@ public:
 
     MCAPI void setDamageValue(short newDamage);
 
-    MCAPI void setDynamicProperty(::std::string const& key, ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value, ::std::string const& collectionName);
+    MCAPI void setDynamicProperty(
+        ::std::string const&                                              key,
+        ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value,
+        ::std::string const&                                              collectionName
+    );
 
     MCAPI void setRepairCost(int cost);
 
@@ -288,7 +296,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _loadBlocksForCanPlaceOnCanDestroy(::std::vector<::BlockType const*>& blockList, ::std::string const& blockName);
+    MCAPI static bool
+    _loadBlocksForCanPlaceOnCanDestroy(::std::vector<::BlockType const*>& blockList, ::std::string const& blockName);
     // NOLINTEND
 
 public:
@@ -360,5 +369,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

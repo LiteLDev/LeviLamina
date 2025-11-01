@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 128> mUnk88eb70;
-    ::ll::UntypedStorage<4, 4> mUnk6469d7;
+    ::ll::UntypedStorage<4, 4>   mUnk6469d7;
     // NOLINTEND
 
 public:
@@ -15,5 +15,4 @@ public:
     TemporaryItemCounter& operator=(TemporaryItemCounter const&);
     TemporaryItemCounter(TemporaryItemCounter const&);
     TemporaryItemCounter();
-
 };

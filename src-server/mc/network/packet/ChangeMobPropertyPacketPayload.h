@@ -9,11 +9,11 @@ struct ChangeMobPropertyPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mPropName;
-    ::ll::TypedStorage<1, 1, bool> mBoolComponentVal;
-    ::ll::TypedStorage<4, 4, float> mFloatComponentVal;
-    ::ll::TypedStorage<4, 4, int> mIntComponentVal;
-    ::ll::TypedStorage<8, 32, ::std::string> mStringComponentVal;
+    ::ll::TypedStorage<8, 32, ::std::string>  mPropName;
+    ::ll::TypedStorage<1, 1, bool>            mBoolComponentVal;
+    ::ll::TypedStorage<4, 4, float>           mFloatComponentVal;
+    ::ll::TypedStorage<4, 4, int>             mIntComponentVal;
+    ::ll::TypedStorage<8, 32, ::std::string>  mStringComponentVal;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mActorId;
     // NOLINTEND
 
@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

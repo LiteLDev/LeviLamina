@@ -4,7 +4,6 @@
 
 namespace SharedTypes::Legacy::Spawn {
 
-struct IsExperimental {
-};
+struct IsExperimental {};
 
-}
+} // namespace SharedTypes::Legacy::Spawn

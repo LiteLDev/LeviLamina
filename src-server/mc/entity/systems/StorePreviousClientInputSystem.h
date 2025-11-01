@@ -13,4 +13,4 @@ namespace StorePreviousClientInputSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace StorePreviousClientInputSystem

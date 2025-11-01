@@ -5,10 +5,10 @@
 namespace ui {
 
 enum class LayoutAxisOperation : int {
-    Add = 0,
+    Add      = 0,
     Subtract = 1,
-    None = 2,
-    Count = 3,
+    None     = 2,
+    Count    = 3,
 };
 
 }

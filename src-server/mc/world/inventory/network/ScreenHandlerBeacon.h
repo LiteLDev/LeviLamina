@@ -19,10 +19,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ContainerScreenContext const&> mScreenContext;
-    ::ll::TypedStorage<1, 1, bool> mIsPaymentAction;
-    ::ll::TypedStorage<4, 4, int> mPrimaryEffectId;
-    ::ll::TypedStorage<4, 4, int> mSecondaryEffectId;
-    ::ll::TypedStorage<8, 8, ::BeaconBlockActor*> mBeaconBlockActor;
+    ::ll::TypedStorage<1, 1, bool>                            mIsPaymentAction;
+    ::ll::TypedStorage<4, 4, int>                             mPrimaryEffectId;
+    ::ll::TypedStorage<4, 4, int>                             mSecondaryEffectId;
+    ::ll::TypedStorage<8, 8, ::BeaconBlockActor*>             mBeaconBlockActor;
     // NOLINTEND
 
 public:
@@ -68,5 +68,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

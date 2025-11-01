@@ -8,7 +8,7 @@ struct EditorStructureMetadataDeleteEditResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk96d95f;
+    ::ll::UntypedStorage<1, 1>  mUnk96d95f;
     ::ll::UntypedStorage<8, 40> mUnkbcccc8;
     // NOLINTEND
 
@@ -20,9 +20,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult& operator=(::Editor::EditorStructureMetadataDeleteEditResult const&);
+    MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult&
+    operator=(::Editor::EditorStructureMetadataDeleteEditResult const&);
 
-    MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult& operator=(::Editor::EditorStructureMetadataDeleteEditResult&&);
+    MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult&
+    operator=(::Editor::EditorStructureMetadataDeleteEditResult&&);
 
     MCNAPI ~EditorStructureMetadataDeleteEditResult();
     // NOLINTEND
@@ -32,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

@@ -13,4 +13,4 @@ namespace FlatteningUtils::Prismarine {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::Prismarine

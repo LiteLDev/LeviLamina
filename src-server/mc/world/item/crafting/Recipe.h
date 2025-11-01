@@ -33,79 +33,77 @@ public:
     struct ConstructionContext;
     class Results;
     // clang-format on
-    
+
     // Recipe inner types define
     using Ingredients = ::std::vector<::RecipeIngredient>;
-    
+
     using ResultList = ::std::vector<::ItemInstance>;
-    
+
     using UnloadedItemInstanceResultList = ::std::vector<::NetworkItemInstanceDescriptor>;
-    
+
     class Results {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool> mResultsAreLoaded;
-        ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mResults;
+        ::ll::TypedStorage<1, 1, bool>                                            mResultsAreLoaded;
+        ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>>                  mResults;
         ::ll::TypedStorage<8, 24, ::std::vector<::NetworkItemInstanceDescriptor>> mUnloadedResults;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~Results();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
     struct ConstructionContext {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string> recipeId;
+        ::ll::TypedStorage<8, 32, ::std::string>                     recipeId;
         ::ll::TypedStorage<8, 24, ::std::vector<::RecipeIngredient>> ingredients;
-        ::ll::TypedStorage<8, 56, ::Recipe::Results> results;
-        ::ll::TypedStorage<8, 48, ::HashedString> tag;
-        ::ll::TypedStorage<4, 4, int> priority;
-        ::ll::TypedStorage<8, 8, ::mce::UUID const*> uuid;
-        ::ll::TypedStorage<8, 32, ::RecipeUnlockingRequirement> unlockingRequirement;
-        ::ll::TypedStorage<8, 24, ::SemVersion> formatVersion;
+        ::ll::TypedStorage<8, 56, ::Recipe::Results>                 results;
+        ::ll::TypedStorage<8, 48, ::HashedString>                    tag;
+        ::ll::TypedStorage<4, 4, int>                                priority;
+        ::ll::TypedStorage<8, 8, ::mce::UUID const*>                 uuid;
+        ::ll::TypedStorage<8, 32, ::RecipeUnlockingRequirement>      unlockingRequirement;
+        ::ll::TypedStorage<8, 24, ::SemVersion>                      formatVersion;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~ConstructionContext();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mRecipeId;
-    ::ll::TypedStorage<8, 16, ::mce::UUID> mMyId;
-    ::ll::TypedStorage<4, 4, int> mWidth;
-    ::ll::TypedStorage<4, 4, int> mHeight;
-    ::ll::TypedStorage<4, 4, int> mPriority;
-    ::ll::TypedStorage<4, 4, ::RecipeNetId> mRecipeNetId;
+    ::ll::TypedStorage<8, 32, ::std::string>                     mRecipeId;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                       mMyId;
+    ::ll::TypedStorage<4, 4, int>                                mWidth;
+    ::ll::TypedStorage<4, 4, int>                                mHeight;
+    ::ll::TypedStorage<4, 4, int>                                mPriority;
+    ::ll::TypedStorage<4, 4, ::RecipeNetId>                      mRecipeNetId;
     ::ll::TypedStorage<8, 24, ::std::vector<::RecipeIngredient>> mMyIngredients;
-    ::ll::TypedStorage<8, 56, ::Recipe::Results> mResults;
-    ::ll::TypedStorage<8, 32, ::RecipeUnlockingRequirement> mUnlockingRequirement;
-    ::ll::TypedStorage<8, 24, ::SemVersion> mRecipeDataVersion;
-    ::ll::TypedStorage<8, 48, ::HashedString> mTag;
+    ::ll::TypedStorage<8, 56, ::Recipe::Results>                 mResults;
+    ::ll::TypedStorage<8, 32, ::RecipeUnlockingRequirement>      mUnlockingRequirement;
+    ::ll::TypedStorage<8, 24, ::SemVersion>                      mRecipeDataVersion;
+    ::ll::TypedStorage<8, 48, ::HashedString>                    mTag;
     // NOLINTEND
 
 public:
@@ -155,7 +153,8 @@ public:
     virtual bool itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const;
 
     // vIndex: 12
-    virtual bool itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs, ::CompoundTag const* rhsTag) const;
+    virtual bool
+    itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs, ::CompoundTag const* rhsTag) const;
 
     // vIndex: 14
     virtual uint64 getIngredientsHash() const;
@@ -216,5 +215,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

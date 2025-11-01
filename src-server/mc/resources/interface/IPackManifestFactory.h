@@ -22,7 +22,8 @@ public:
     virtual ~IPackManifestFactory() /*override*/;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::PackManifest> create(::PackAccessStrategy&, ::ResourceLocation const&, ::PackReport&, ::SubpackInfoCollection*) = 0;
+    virtual ::std::unique_ptr<::PackManifest>
+    create(::PackAccessStrategy&, ::ResourceLocation const&, ::PackReport&, ::SubpackInfoCollection*) = 0;
     // NOLINTEND
 
 public:
@@ -36,5 +37,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

@@ -13,8 +13,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 96> mUnk894ce9;
     ::ll::UntypedStorage<8, 96> mUnkc293f7;
-    ::ll::UntypedStorage<1, 1> mUnk80d642;
-    ::ll::UntypedStorage<1, 1> mUnk790130;
+    ::ll::UntypedStorage<1, 1>  mUnk80d642;
+    ::ll::UntypedStorage<1, 1>  mUnk790130;
     // NOLINTEND
 
 public:
@@ -24,9 +24,11 @@ public:
 
     MCNAPI MesaSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings const&);
 
-    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings& operator=(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings&&);
+    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings&
+    operator=(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings&&);
 
-    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings& operator=(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings const&);
+    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings&
+    operator=(::SharedTypes::v1_21_100::SurfaceBuilder::MesaSurfaceSettings const&);
 
     MCNAPI ~MesaSurfaceSettings();
     // NOLINTEND
@@ -44,7 +46,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_100::SurfaceBuilder

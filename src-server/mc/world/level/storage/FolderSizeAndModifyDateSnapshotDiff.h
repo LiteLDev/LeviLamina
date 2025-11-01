@@ -19,5 +19,4 @@ public:
     FolderSizeAndModifyDateSnapshotDiff& operator=(FolderSizeAndModifyDateSnapshotDiff const&);
     FolderSizeAndModifyDateSnapshotDiff(FolderSizeAndModifyDateSnapshotDiff const&);
     FolderSizeAndModifyDateSnapshotDiff();
-
 };

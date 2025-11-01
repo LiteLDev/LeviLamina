@@ -17,4 +17,4 @@ namespace VanillaDimensionFactory {
 MCNAPI void registerDimensionTypes(::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&>& dimensionFactory);
 // NOLINTEND
 
-}
+} // namespace VanillaDimensionFactory

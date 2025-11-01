@@ -30,7 +30,8 @@ public:
     virtual ::std::string getDustParticleName(::Block const& block) const /*override*/;
 
     // vIndex: 86
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
     // vIndex: 101
     virtual bool shouldStopFalling(::Actor& entity) const /*override*/;
@@ -74,5 +75,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

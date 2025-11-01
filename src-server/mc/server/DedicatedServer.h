@@ -49,43 +49,45 @@ class DedicatedServer : public ::IMinecraftApp, public ::Bedrock::AppIsland {
 public:
     // DedicatedServer inner types define
     enum class StartResult : int {
-        Success = 0,
-        PortOccupied = 1,
-        InvalidSettings = 2,
+        Success           = 0,
+        PortOccupied      = 1,
+        InvalidSettings   = 2,
         MissingDependency = 3,
-        RuntimeError = 4,
+        RuntimeError      = 4,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Minecraft>> mMinecraft;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Minecraft>>        mMinecraft;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Core::FileSystem>> mFileSystem;
-    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::ServerInstanceEventCoordinator>> mServerInstanceEventCoordinator;
-    ::ll::TypedStorage<1, 1, ::std::atomic<bool>> mWantsToQuit;
-    ::ll::TypedStorage<4, 4, ::std::atomic<::DedicatedServer::StartResult>> mResult;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConsoleInputReader>> mConsoleInputReader;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IGameModuleShared>> mGameModule;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AppConfigs>> mAppConfig;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::AppConfigs>> mAppConfigServiceRegistrationToken;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::ServerInstanceEventCoordinator>>
+                                                                                     mServerInstanceEventCoordinator;
+    ::ll::TypedStorage<1, 1, ::std::atomic<bool>>                                    mWantsToQuit;
+    ::ll::TypedStorage<4, 4, ::std::atomic<::DedicatedServer::StartResult>>          mResult;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConsoleInputReader>>                mConsoleInputReader;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IGameModuleShared>>                 mGameModule;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AppConfigs>>                        mAppConfig;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::AppConfigs>>               mAppConfigServiceRegistrationToken;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Http::DispatcherProcess>> mHttpDispatcher;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::Bedrock::Http::DispatcherInterface>> mHttpDispatcherServiceRegistrationToken;
-    ::ll::TypedStorage<8, 32, ::std::string> mSessionID;
-    ::ll::TypedStorage<8, 64, ::Bedrock::ScopeExit> mOnDestructioncloseAndResetAllLogs;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelDbEnv>> mLevelDbEnv;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::Bedrock::Http::DispatcherInterface>>
+                                                                         mHttpDispatcherServiceRegistrationToken;
+    ::ll::TypedStorage<8, 32, ::std::string>                             mSessionID;
+    ::ll::TypedStorage<8, 64, ::Bedrock::ScopeExit>                      mOnDestructioncloseAndResetAllLogs;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelDbEnv>>            mLevelDbEnv;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CodeBuilder::IManager>> mCodeBuilder;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::CodeBuilder::IManager>> mCodeBuilderRegistrationToken;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ImguiProfiler>> mImguiProfiler;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ImguiProfiler>> mImguiProfilerRegistrationToken;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FileArchiver>> mFileArchiver;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EditorBootstrapper>> mEditorBootstrapper;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CDNConfig>> mCDNConfig;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerTextSettings>> mServerTextSettings;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingService>> mSignalingService;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingServiceSignInJob>> mSignalingServiceSignInJob;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::CodeBuilder::IManager>>      mCodeBuilderRegistrationToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ImguiProfiler>>                       mImguiProfiler;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ImguiProfiler>>              mImguiProfilerRegistrationToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FileArchiver>>                        mFileArchiver;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EditorBootstrapper>>                  mEditorBootstrapper;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CDNConfig>>                           mCDNConfig;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerTextSettings>>                  mServerTextSettings;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingService>>                   mSignalingService;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SignalingServiceSignInJob>>          mSignalingServiceSignInJob;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Services::DiscoveryHelper>> mDiscoveryServiceHelper;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Services::AuthHelper>> mAuthServiceHelper;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IEDUSystems>> mEduSystems;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Services::AuthHelper>>      mAuthServiceHelper;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IEDUSystems>>                         mEduSystems;
     // NOLINTEND
 
 public:
@@ -140,15 +142,32 @@ public:
 
     MCAPI void initializeLogging(::TestConfig& testConfig);
 
-    MCAPI ::std::future<bool> initializeMultiplayerKeys(::Minecraft& minecraft, ::Bedrock::NonOwnerPointer<::Bedrock::Services::DiscoveryHelper> discovery, ::PropertiesSettings const& properties);
+    MCAPI ::std::future<bool> initializeMultiplayerKeys(
+        ::Minecraft&                                                     minecraft,
+        ::Bedrock::NonOwnerPointer<::Bedrock::Services::DiscoveryHelper> discovery,
+        ::PropertiesSettings const&                                      properties
+    );
 
-    MCAPI void initializeServices(::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing> minecraftEventing, ::PropertiesSettings& properties);
+    MCAPI void initializeServices(
+        ::Bedrock::NotNullNonOwnerPtr<::IMinecraftEventing> minecraftEventing,
+        ::PropertiesSettings&                               properties
+    );
 
-    MCAPI ::DedicatedServer::StartResult runDedicatedServerLoop(::Core::FilePathManager& filePathManager, ::PropertiesSettings& properties, ::LevelSettings& settings, ::AllowListFile& userAllowList, ::std::unique_ptr<::PermissionsFile>& permissionsFile, ::std::optional<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder, ::Bedrock::ActivationArguments const& args, ::TestConfig& testConfig);
+    MCAPI ::DedicatedServer::StartResult runDedicatedServerLoop(
+        ::Core::FilePathManager&                                     filePathManager,
+        ::PropertiesSettings&                                        properties,
+        ::LevelSettings&                                             settings,
+        ::AllowListFile&                                             userAllowList,
+        ::std::unique_ptr<::PermissionsFile>&                        permissionsFile,
+        ::std::optional<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder,
+        ::Bedrock::ActivationArguments const&                        args,
+        ::TestConfig&                                                testConfig
+    );
 
     MCAPI void shutdownServices();
 
-    MCAPI ::DedicatedServer::StartResult start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
+    MCAPI ::DedicatedServer::StartResult
+    start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
     // NOLINTEND
 
 public:
@@ -194,5 +213,4 @@ public:
 
     MCNAPI static void** $vftableForIMinecraftApp();
     // NOLINTEND
-
 };

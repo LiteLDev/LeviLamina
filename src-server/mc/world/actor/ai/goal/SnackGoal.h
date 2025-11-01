@@ -19,14 +19,14 @@ class SnackGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&>                           mMob;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mItems;
-    ::ll::TypedStorage<8, 8, uint64> mCooldown;
-    ::ll::TypedStorage<4, 4, int const> mSnackCooldownTotal;
-    ::ll::TypedStorage<4, 4, int const> mCooldownMin;
-    ::ll::TypedStorage<4, 4, int const> mStopChance;
-    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mTarget;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
+    ::ll::TypedStorage<8, 8, uint64>                           mCooldown;
+    ::ll::TypedStorage<4, 4, int const>                        mSnackCooldownTotal;
+    ::ll::TypedStorage<4, 4, int const>                        mCooldownMin;
+    ::ll::TypedStorage<4, 4, int const>                        mStopChance;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>             mTarget;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>        mPath;
     // NOLINTEND
 
 public:
@@ -102,5 +102,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

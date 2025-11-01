@@ -24,5 +24,4 @@ public:
     GridSectorizer& operator=(GridSectorizer const&);
     GridSectorizer(GridSectorizer const&);
     GridSectorizer();
-
 };

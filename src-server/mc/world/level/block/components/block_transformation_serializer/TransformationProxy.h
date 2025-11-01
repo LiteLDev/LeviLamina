@@ -17,19 +17,19 @@ struct TransformationProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3> mTranslation;
-    ::ll::TypedStorage<4, 12, ::Vec3> mScaleValue;
-    ::ll::TypedStorage<4, 12, ::Vec3> mScalePivot;
-    ::ll::TypedStorage<4, 12, ::Vec3> mRotationPivot;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                               mTranslation;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                               mScaleValue;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                               mScalePivot;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                               mRotationPivot;
     ::ll::TypedStorage<4, 12, ::BlockTransformationSerializer::RotationBindingType> mRotation;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void from(::BlockTransformationDescription& desc, ::BlockTransformationSerializer::TransformationProxy proxy);
+    MCAPI static void
+    from(::BlockTransformationDescription& desc, ::BlockTransformationSerializer::TransformationProxy proxy);
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockTransformationSerializer

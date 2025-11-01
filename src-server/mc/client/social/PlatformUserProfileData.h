@@ -4,7 +4,6 @@
 
 namespace Social {
 
-struct PlatformUserProfileData {
-};
+struct PlatformUserProfileData {};
 
-}
+} // namespace Social

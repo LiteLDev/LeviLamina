@@ -30,23 +30,49 @@ class DimensionTransitionSystem {
 public:
     // DimensionTransitionSystem inner types define
     using DimensionRequestHandler = ::std::function<bool(::Player&, ::ChangeDimensionRequest&)>;
-    
+
     using IsSuspended = ::std::function<bool(::Player&)>;
-    
+
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickPortalTransition(::ViewT<::StrictEntityContext, ::Exclude<::PassengerComponent, ::VehicleComponent>, ::ActorOwnerComponent, ::DimensionTransitionComponent const> view, ::EntityModifier<::DimensionTransitionComponent> mod);
+    MCAPI static void _tickPortalTransition(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Exclude<::PassengerComponent, ::VehicleComponent>,
+            ::ActorOwnerComponent,
+            ::DimensionTransitionComponent const>        view,
+        ::EntityModifier<::DimensionTransitionComponent> mod
+    );
 
-    MCAPI static void _tickVehicleDismount(::ViewT<::StrictEntityContext, ::Include<::PlayerChangeDimensionRequestComponent, ::PassengerComponent>> passengers, ::ViewT<::StrictEntityContext, ::Include<::PlayerChangeDimensionRequestComponent>, ::VehicleComponent const> vehicles, ::EntityModifier<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent> modifier);
+    MCAPI static void _tickVehicleDismount(
+        ::ViewT<::StrictEntityContext, ::Include<::PlayerChangeDimensionRequestComponent, ::PassengerComponent>>
+            passengers,
+        ::ViewT<::StrictEntityContext, ::Include<::PlayerChangeDimensionRequestComponent>, ::VehicleComponent const>
+                                                                                         vehicles,
+        ::EntityModifier<::StopRidingRequestComponent, ::ExitFromPassengerFlagComponent> modifier
+    );
 
     MCAPI static ::TickingSystemWithInfo createPortalTransition();
 
     MCAPI static ::TickingSystemWithInfo createVehicleDismount();
 
-    MCAPI static void requestPlayerChangeDimension(::StrictEntityContext const& player, ::ChangeDimensionRequest&& request, ::ViewT<::StrictEntityContext, ::DimensionStateComponent, ::StateVectorComponent> playerData, ::EntityModifier<::PlayerChangeDimensionRequestComponent> modifier);
+    MCAPI static void requestPlayerChangeDimension(
+        ::StrictEntityContext const&                                                      player,
+        ::ChangeDimensionRequest&&                                                        request,
+        ::ViewT<::StrictEntityContext, ::DimensionStateComponent, ::StateVectorComponent> playerData,
+        ::EntityModifier<::PlayerChangeDimensionRequestComponent>                         modifier
+    );
 
-    MCAPI static void tryHandleChangeDimensionRequestLevel(::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::PlayerChangeDimensionRequestComponent, ::ActorOwnerComponent> requests, ::EntityModifier<::PlayerChangeDimensionRequestComponent> modifier, ::std::function<bool(::Player&, ::ChangeDimensionRequest&)> const& callback, ::std::function<bool(::Player&)> const& isSuspended);
+    MCAPI static void tryHandleChangeDimensionRequestLevel(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::PlayerComponent>,
+            ::PlayerChangeDimensionRequestComponent,
+            ::ActorOwnerComponent>                                         requests,
+        ::EntityModifier<::PlayerChangeDimensionRequestComponent>          modifier,
+        ::std::function<bool(::Player&, ::ChangeDimensionRequest&)> const& callback,
+        ::std::function<bool(::Player&)> const&                            isSuspended
+    );
     // NOLINTEND
-
 };

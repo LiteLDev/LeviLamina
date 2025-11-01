@@ -26,10 +26,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk168348;
-    ::ll::UntypedStorage<1, 1> mUnk2436b9;
+    ::ll::UntypedStorage<1, 1>  mUnk2436b9;
     ::ll::UntypedStorage<8, 32> mUnkc3caa1;
     ::ll::UntypedStorage<8, 32> mUnk7dafe5;
-    ::ll::UntypedStorage<4, 4> mUnk8c70f8;
+    ::ll::UntypedStorage<4, 4>  mUnk8c70f8;
     // NOLINTEND
 
 public:
@@ -198,7 +198,8 @@ public:
     virtual ::Bedrock::Threading::Async<::Social::PlatformUserProfileData> getProfile(::std::string const&);
 
     // vIndex: 52
-    virtual ::Bedrock::Threading::Async<::std::vector<::Social::PlatformUserProfileData>> getProfiles(::std::vector<::std::string> const&);
+    virtual ::Bedrock::Threading::Async<::std::vector<::Social::PlatformUserProfileData>>
+    getProfiles(::std::vector<::std::string> const&);
 
     // vIndex: 53
     virtual ::Bedrock::Threading::Async<::std::vector<::Social::PlatformUserProfileData>> getFriendProfiles();
@@ -212,7 +213,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Social

@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::std::deque<::std::unique_ptr<::ItemStackNetManagerScreen>>> mStack;
     // NOLINTEND
-
 };

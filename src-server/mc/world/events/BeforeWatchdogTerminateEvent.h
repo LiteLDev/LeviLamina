@@ -11,7 +11,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-    ::ll::TypedStorage<4, 4, ::WatchdogTerminateReason> mWatchdogTerminateReason;
+    ::ll::TypedStorage<4, 4, ::WatchdogTerminateReason>       mWatchdogTerminateReason;
     // NOLINTEND
-
 };

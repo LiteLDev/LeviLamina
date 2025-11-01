@@ -4,7 +4,6 @@
 
 namespace details::ViewCandidateBuilder {
 
-struct EntityNoFilter {
-};
+struct EntityNoFilter {};
 
-}
+} // namespace details::ViewCandidateBuilder

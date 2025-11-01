@@ -20,7 +20,8 @@ namespace Scripting { struct ContextId; }
 
 namespace Editor::API {
 
-class EditorPlayerExtensionService : public ::Editor::Services::IEditorService, public ::Editor::API::EditorPlayerExtensionServiceProvider {
+class EditorPlayerExtensionService : public ::Editor::Services::IEditorService,
+                                     public ::Editor::API::EditorPlayerExtensionServiceProvider {
 public:
     // member variables
     // NOLINTBEGIN
@@ -56,28 +57,36 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<void> startExtensions(::std::optional<::Scripting::ContextId> optionalContextId) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    startExtensions(::std::optional<::Scripting::ContextId> optionalContextId) /*override*/;
 
     // vIndex: 2
     virtual ::Scripting::Result_deprecated<void> stopExtensions() /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result_deprecated<void> forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> forEachExtension(
+        ::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func
+    ) /*override*/;
 
     // vIndex: 4
-    virtual ::Scripting::Result_deprecated<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>> getInternalServiceContext(::Scripting::WeakLifetimeScope const& scope) /*override*/;
+    virtual ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
+    getInternalServiceContext(::Scripting::WeakLifetimeScope const& scope) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> _createAndStartExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _createAndStartExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
 
-    MCNAPI ::Scripting::Result_deprecated<void> _createExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _createExtensionContexts(::std::optional<::Scripting::ContextId> optionalContextId);
 
     MCNAPI ::Scripting::Result_deprecated<void> _destroyExtensionContexts();
 
-    MCNAPI ::Scripting::Result_deprecated<void> _handleStartExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _handleStartExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
     // NOLINTEND
 
 public:
@@ -97,13 +106,17 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> $startExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $startExtensions(::std::optional<::Scripting::ContextId> optionalContextId);
 
     MCNAPI ::Scripting::Result_deprecated<void> $stopExtensions();
 
-    MCNAPI ::Scripting::Result_deprecated<void> $forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $forEachExtension(::std::function<void(::Bedrock::NotNullNonOwnerPtr<::Editor::API::EditorExtension>)> func);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>> $getInternalServiceContext(::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptInternalPlayerServiceContext>>
+    $getInternalServiceContext(::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -113,7 +126,6 @@ public:
 
     MCNAPI static void** $vftableForEditorPlayerExtensionServiceProvider();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::API

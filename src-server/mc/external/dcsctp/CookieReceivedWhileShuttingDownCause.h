@@ -13,7 +13,9 @@ namespace dcsctp { struct CookieReceivedWhileShuttingDownCauseConfig; }
 
 namespace dcsctp {
 
-class CookieReceivedWhileShuttingDownCause : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::CookieReceivedWhileShuttingDownCauseConfig> {
+class CookieReceivedWhileShuttingDownCause
+: public ::dcsctp::Parameter,
+  public ::dcsctp::TLVTrait<::dcsctp::CookieReceivedWhileShuttingDownCauseConfig> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -30,7 +32,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::dcsctp::CookieReceivedWhileShuttingDownCause> Parse(::rtc::ArrayView<uchar const> data);
+    MCNAPI static ::std::optional<::dcsctp::CookieReceivedWhileShuttingDownCause>
+    Parse(::rtc::ArrayView<uchar const> data);
     // NOLINTEND
 
 public:
@@ -46,7 +49,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

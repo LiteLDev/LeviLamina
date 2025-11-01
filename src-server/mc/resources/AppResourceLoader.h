@@ -23,13 +23,20 @@ public:
     virtual bool load(::ResourceLocation const&, ::std::string&, ::gsl::span<::std::string const>) const /*override*/;
 
     // vIndex: 1
-    virtual bool load(::ResourceLocationPair const& resourceLocation, ::std::string& resourceStream, ::gsl::span<::std::string const> extensions) const /*override*/;
+    virtual bool load(
+        ::ResourceLocationPair const&    resourceLocation,
+        ::std::string&                   resourceStream,
+        ::gsl::span<::std::string const> extensions
+    ) const /*override*/;
 
     // vIndex: 5
     virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const&) const /*override*/;
 
     // vIndex: 12
-    virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const /*override*/;
+    virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
+        ::ResourceLocation const&        resourceLocation,
+        ::gsl::span<::std::string const> extensions
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~AppResourceLoader() /*override*/ = default;
@@ -40,5 +47,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

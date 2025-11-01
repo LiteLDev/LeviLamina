@@ -19,7 +19,6 @@ public:
     ExternalDataSwapper& operator=(ExternalDataSwapper const&);
     ExternalDataSwapper(ExternalDataSwapper const&);
     ExternalDataSwapper();
-
 };
 
-}
+} // namespace RewindSimulation

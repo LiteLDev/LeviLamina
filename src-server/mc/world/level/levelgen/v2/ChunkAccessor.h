@@ -19,10 +19,13 @@ class ChunkAccessor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Dimension*>> mDimension;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Dimension*>>         mDimension;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::BiomeSource const*>> mBiomeSource;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::unordered_map<::ChunkPos, ::br::worldgen::BlockVolumeCacheItem>>> mBlockCache;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>>> mChunkHeightCache;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::unordered_map<::ChunkPos, ::br::worldgen::BlockVolumeCacheItem>>>
+        mBlockCache;
+    ::ll::
+        TypedStorage<8, 8, ::std::unique_ptr<::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>>>
+            mChunkHeightCache;
     // NOLINTEND
 
 public:
@@ -50,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

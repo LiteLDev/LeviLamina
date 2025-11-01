@@ -14,5 +14,4 @@ public:
     JSRefCountHeader& operator=(JSRefCountHeader const&);
     JSRefCountHeader(JSRefCountHeader const&);
     JSRefCountHeader();
-
 };

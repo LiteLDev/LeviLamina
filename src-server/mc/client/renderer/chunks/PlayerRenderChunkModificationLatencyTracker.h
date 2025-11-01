@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/threading/Mutex.h"
-#include "mc/versionless/world/level/BlockPos.h"
-#include "mc/versionless/world/level/SubChunkPos.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/level/SubChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,50 +22,48 @@ public:
     struct TimeDelta;
     struct TimeMarker;
     // clang-format on
-    
+
     // PlayerRenderChunkModificationLatencyTracker inner types define
     struct TimeDelta {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk2fea42;
-        ::ll::UntypedStorage<4, 4> mUnk5a836e;
+        ::ll::UntypedStorage<4, 4>  mUnk5a836e;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         TimeDelta& operator=(TimeDelta const&);
         TimeDelta(TimeDelta const&);
         TimeDelta();
-    
     };
-    
+
     using TimeStamp = ::std::chrono::steady_clock::time_point;
-    
+
     struct TimeMarker {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnka1eac6;
-        ::ll::UntypedStorage<8, 8> mUnk654fbb;
+        ::ll::UntypedStorage<8, 8>  mUnk654fbb;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         TimeMarker& operator=(TimeMarker const&);
         TimeMarker(TimeMarker const&);
         TimeMarker();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mTimingIsActive;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mStartTime;
+    ::ll::TypedStorage<1, 1, bool>                                                                      mTimingIsActive;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                                   mStartTime;
     ::ll::TypedStorage<8, 24, ::std::vector<::PlayerRenderChunkModificationLatencyTracker::TimeMarker>> mTimeMarkers;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mBlockToTrack;
-    ::ll::TypedStorage<4, 12, ::SubChunkPos> mRenderChunkPosToTrack;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                                                               mBlockToTrack;
+    ::ll::TypedStorage<4, 12, ::SubChunkPos>               mRenderChunkPosToTrack;
     ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
     // NOLINTEND
 
@@ -75,5 +73,4 @@ public:
     // vIndex: 0
     virtual ~PlayerRenderChunkModificationLatencyTracker() /*override*/ = default;
     // NOLINTEND
-
 };

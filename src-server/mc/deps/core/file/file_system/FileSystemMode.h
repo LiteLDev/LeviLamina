@@ -4,5 +4,5 @@
 
 enum class FileSystemMode : int {
     ReadWrite = 0,
-    ReadOnly = 1,
+    ReadOnly  = 1,
 };

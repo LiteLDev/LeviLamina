@@ -8,13 +8,13 @@ class ProcessingConfig {
 public:
     // ProcessingConfig inner types define
     enum class StreamName : int {
-        KInputStream = 0,
-        KOutputStream = 1,
-        KReverseInputStream = 2,
+        KInputStream         = 0,
+        KOutputStream        = 1,
+        KReverseInputStream  = 2,
         KReverseOutputStream = 3,
-        KNumStreamNames = 4,
+        KNumStreamNames      = 4,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -26,7 +26,6 @@ public:
     ProcessingConfig& operator=(ProcessingConfig const&);
     ProcessingConfig(ProcessingConfig const&);
     ProcessingConfig();
-
 };
 
-}
+} // namespace webrtc

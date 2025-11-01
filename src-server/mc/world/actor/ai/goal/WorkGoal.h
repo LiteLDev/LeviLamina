@@ -18,16 +18,16 @@ class WorkGoal : public ::MoveToPOIGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::POIType> mPOIType;
-    ::ll::TypedStorage<8, 152, ::WorkDefinition> mDefinition;
-    ::ll::TypedStorage<4, 4, int> mCooldownTick;
-    ::ll::TypedStorage<4, 4, int> mActiveTick;
-    ::ll::TypedStorage<4, 4, int> mSoundTick;
-    ::ll::TypedStorage<4, 4, int> mSoundTickMax;
-    ::ll::TypedStorage<1, 1, bool> mCanRainAtLocation;
-    ::ll::TypedStorage<4, 4, int> mRainCheckCooldownTick;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnArrival;
-    ::ll::TypedStorage<1, 1, bool> mHasEverReachedJobsite;
+    ::ll::TypedStorage<4, 4, ::POIType>                              mPOIType;
+    ::ll::TypedStorage<8, 152, ::WorkDefinition>                     mDefinition;
+    ::ll::TypedStorage<4, 4, int>                                    mCooldownTick;
+    ::ll::TypedStorage<4, 4, int>                                    mActiveTick;
+    ::ll::TypedStorage<4, 4, int>                                    mSoundTick;
+    ::ll::TypedStorage<4, 4, int>                                    mSoundTickMax;
+    ::ll::TypedStorage<1, 1, bool>                                   mCanRainAtLocation;
+    ::ll::TypedStorage<4, 4, int>                                    mRainCheckCooldownTick;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mOnArrival;
+    ::ll::TypedStorage<1, 1, bool>                                   mHasEverReachedJobsite;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
     // NOLINTEND
 
@@ -108,5 +108,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

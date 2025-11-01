@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkf67777;
-    ::ll::UntypedStorage<2, 2> mUnk444ddb;
+    ::ll::UntypedStorage<2, 2>  mUnk444ddb;
     ::ll::UntypedStorage<8, 64> mUnk4eb2d9;
     // NOLINTEND
 
@@ -38,5 +38,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

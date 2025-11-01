@@ -17,7 +17,6 @@ public:
     EditorBlockPaletteEventSelectedItemIndexChanged& operator=(EditorBlockPaletteEventSelectedItemIndexChanged const&);
     EditorBlockPaletteEventSelectedItemIndexChanged(EditorBlockPaletteEventSelectedItemIndexChanged const&);
     EditorBlockPaletteEventSelectedItemIndexChanged();
-
 };
 
-}
+} // namespace Editor

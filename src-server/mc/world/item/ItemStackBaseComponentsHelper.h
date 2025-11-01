@@ -16,5 +16,4 @@ public:
 
     MCAPI static bool updateComponent(::ItemStackBase& item, ::std::string const& name, ::Json::Value const& data);
     // NOLINTEND
-
 };

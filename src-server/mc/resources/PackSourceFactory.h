@@ -36,22 +36,26 @@ public:
     // clang-format off
     template<typename T0> struct SourcesList;
     // clang-format on
-    
+
     // PackSourceFactory inner types define
-    template<typename T0>
-    struct SourcesList {
-    };
-    
+    template <typename T0>
+    struct SourcesList {};
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::TreatmentPackSource>>> mTreatmentPackSources;
-    ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::DirectoryPackSource>>> mDirectoryPackSources;
-    ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::InPackagePackSource>>> mInPackagePackSources;
-    ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::WorldHistoryPackSource>>> mWorldHistoryPackSources;
-    ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::WorldTemplatePackSource>>> mWorldTemplatePackSources;
-    ::ll::TypedStorage<8, 16, ::RealmsUnknownPackSources> mRealmsUnknownPackSources;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IInPackagePacks>> mInPackagePacksProvider;
+    ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::TreatmentPackSource>>>
+        mTreatmentPackSources;
+    ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::DirectoryPackSource>>>
+        mDirectoryPackSources;
+    ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::InPackagePackSource>>>
+        mInPackagePackSources;
+    ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::WorldHistoryPackSource>>>
+        mWorldHistoryPackSources;
+    ::ll::TypedStorage<8, 104, ::PackSourceFactory::SourcesList<::std::unique_ptr<::WorldTemplatePackSource>>>
+                                                                         mWorldTemplatePackSources;
+    ::ll::TypedStorage<8, 16, ::RealmsUnknownPackSources>                mRealmsUnknownPackSources;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IInPackagePacks>>      mInPackagePacksProvider;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPackIOProvider> const> mIO;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::PackCommand::IPackCommandPipeline>> mCommands;
     // NOLINTEND
@@ -67,19 +71,36 @@ public:
     virtual ~PackSourceFactory() /*override*/;
 
     // vIndex: 2
-    virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager, ::mce::UUID const& worldTemplateId, ::PackType packType, ::PackOrigin packOrigin) /*override*/;
+    virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
+        ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager,
+        ::mce::UUID const&                                                  worldTemplateId,
+        ::PackType                                                          packType,
+        ::PackOrigin                                                        packOrigin
+    ) /*override*/;
 
     // vIndex: 1
-    virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(::std::unique_ptr<::WorldTemplateCollectionView> view, ::mce::UUID const& worldTemplateId, ::PackType packType, ::PackOrigin packOrigin) /*override*/;
+    virtual ::WorldTemplatePackSource& createWorldTemplatePackSource(
+        ::std::unique_ptr<::WorldTemplateCollectionView> view,
+        ::mce::UUID const&                               worldTemplateId,
+        ::PackType                                       packType,
+        ::PackOrigin                                     packOrigin
+    ) /*override*/;
 
     // vIndex: 3
-    virtual ::WorldTemplatePackSource* getWorldTemplatePackSource(::mce::UUID const& worldTemplateId, ::PackType packType) const /*override*/;
+    virtual ::WorldTemplatePackSource*
+    getWorldTemplatePackSource(::mce::UUID const& worldTemplateId, ::PackType packType) const /*override*/;
 
     // vIndex: 4
-    virtual ::DirectoryPackSource& createDirectoryPackSource(::Core::Path const& path, ::PackType packType, ::PackOrigin packOrigin, bool isDevDirectory) /*override*/;
+    virtual ::DirectoryPackSource& createDirectoryPackSource(
+        ::Core::Path const& path,
+        ::PackType          packType,
+        ::PackOrigin        packOrigin,
+        bool                isDevDirectory
+    ) /*override*/;
 
     // vIndex: 5
-    virtual ::DirectoryPackSource* getDirectoryPackSource(::Core::Path const& path, ::PackType packType) const /*override*/;
+    virtual ::DirectoryPackSource* getDirectoryPackSource(::Core::Path const& path, ::PackType packType) const
+        /*override*/;
 
     // vIndex: 6
     virtual ::InPackagePackSource& createInPackagePackSource(::PackType packType) /*override*/;
@@ -88,10 +109,12 @@ public:
     virtual ::InPackagePackSource* getInPackagePackSource(::PackType packType) /*override*/;
 
     // vIndex: 8
-    virtual ::WorldHistoryPackSource& createWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) /*override*/;
+    virtual ::WorldHistoryPackSource&
+    createWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) /*override*/;
 
     // vIndex: 9
-    virtual ::WorldHistoryPackSource* getWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) const /*override*/;
+    virtual ::WorldHistoryPackSource*
+    getWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) const /*override*/;
 
     // vIndex: 11
     virtual ::DirectoryPackSource* getDirectoryPackSourceContaining(::PackIdVersion const& packId) const /*override*/;
@@ -100,24 +123,42 @@ public:
     virtual void removeFromDirectoryPackSource(::Core::Path const& fullPathToPack) /*override*/;
 
     // vIndex: 13
-    virtual ::std::unique_ptr<::Realms::RealmsServicePackSource> createRealmsServicePackSource(int64 realmId, ::PackType packType, ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData) /*override*/;
+    virtual ::std::unique_ptr<::Realms::RealmsServicePackSource> createRealmsServicePackSource(
+        int64                                                       realmId,
+        ::PackType                                                  packType,
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
+    ) /*override*/;
 
     // vIndex: 10
-    virtual ::std::unique_ptr<::CompositePackSource> createCompositePackSource(::std::vector<::PackSource*> sources) /*override*/;
+    virtual ::std::unique_ptr<::CompositePackSource>
+    createCompositePackSource(::std::vector<::PackSource*> sources) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackSourceFactory(::gsl::not_null<::std::shared_ptr<::IInPackagePacks> const> inPackagePacks, ::std::unique_ptr<::IPackIOProvider> io, ::Bedrock::NotNullNonOwnerPtr<::PackCommand::IPackCommandPipeline> commands);
+    MCNAPI PackSourceFactory(
+        ::gsl::not_null<::std::shared_ptr<::IInPackagePacks> const>        inPackagePacks,
+        ::std::unique_ptr<::IPackIOProvider>                               io,
+        ::Bedrock::NotNullNonOwnerPtr<::PackCommand::IPackCommandPipeline> commands
+    );
 
-    MCNAPI ::std::unique_ptr<::DirectoryPackSource> createOwnedDirectoryPackSource(::Core::Path const& path, ::PackType packType, ::PackOrigin packOrigin, bool isDevDirectory);
+    MCNAPI ::std::unique_ptr<::DirectoryPackSource> createOwnedDirectoryPackSource(
+        ::Core::Path const& path,
+        ::PackType          packType,
+        ::PackOrigin        packOrigin,
+        bool                isDevDirectory
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::IInPackagePacks> const> inPackagePacks, ::std::unique_ptr<::IPackIOProvider> io, ::Bedrock::NotNullNonOwnerPtr<::PackCommand::IPackCommandPipeline> commands);
+    MCNAPI void* $ctor(
+        ::gsl::not_null<::std::shared_ptr<::IInPackagePacks> const>        inPackagePacks,
+        ::std::unique_ptr<::IPackIOProvider>                               io,
+        ::Bedrock::NotNullNonOwnerPtr<::PackCommand::IPackCommandPipeline> commands
+    );
     // NOLINTEND
 
 public:
@@ -129,13 +170,29 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager, ::mce::UUID const& worldTemplateId, ::PackType packType, ::PackOrigin packOrigin);
+    MCNAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(
+        ::Bedrock::NotNullNonOwnerPtr<::IWorldTemplateManager const> const& worldTemplateManager,
+        ::mce::UUID const&                                                  worldTemplateId,
+        ::PackType                                                          packType,
+        ::PackOrigin                                                        packOrigin
+    );
 
-    MCNAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(::std::unique_ptr<::WorldTemplateCollectionView> view, ::mce::UUID const& worldTemplateId, ::PackType packType, ::PackOrigin packOrigin);
+    MCNAPI ::WorldTemplatePackSource& $createWorldTemplatePackSource(
+        ::std::unique_ptr<::WorldTemplateCollectionView> view,
+        ::mce::UUID const&                               worldTemplateId,
+        ::PackType                                       packType,
+        ::PackOrigin                                     packOrigin
+    );
 
-    MCNAPI ::WorldTemplatePackSource* $getWorldTemplatePackSource(::mce::UUID const& worldTemplateId, ::PackType packType) const;
+    MCNAPI ::WorldTemplatePackSource*
+    $getWorldTemplatePackSource(::mce::UUID const& worldTemplateId, ::PackType packType) const;
 
-    MCNAPI ::DirectoryPackSource& $createDirectoryPackSource(::Core::Path const& path, ::PackType packType, ::PackOrigin packOrigin, bool isDevDirectory);
+    MCNAPI ::DirectoryPackSource& $createDirectoryPackSource(
+        ::Core::Path const& path,
+        ::PackType          packType,
+        ::PackOrigin        packOrigin,
+        bool                isDevDirectory
+    );
 
     MCNAPI ::DirectoryPackSource* $getDirectoryPackSource(::Core::Path const& path, ::PackType packType) const;
 
@@ -143,15 +200,21 @@ public:
 
     MCNAPI ::InPackagePackSource* $getInPackagePackSource(::PackType packType);
 
-    MCNAPI ::WorldHistoryPackSource& $createWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType);
+    MCNAPI ::WorldHistoryPackSource&
+    $createWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType);
 
-    MCNAPI ::WorldHistoryPackSource* $getWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) const;
+    MCNAPI ::WorldHistoryPackSource*
+    $getWorldHistoryPackSource(::Core::Path const& pathToWorld, ::PackType packType) const;
 
     MCNAPI ::DirectoryPackSource* $getDirectoryPackSourceContaining(::PackIdVersion const& packId) const;
 
     MCNAPI void $removeFromDirectoryPackSource(::Core::Path const& fullPathToPack);
 
-    MCNAPI ::std::unique_ptr<::Realms::RealmsServicePackSource> $createRealmsServicePackSource(int64 realmId, ::PackType packType, ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData);
+    MCNAPI ::std::unique_ptr<::Realms::RealmsServicePackSource> $createRealmsServicePackSource(
+        int64                                                       realmId,
+        ::PackType                                                  packType,
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& servicePackData
+    );
 
     MCNAPI ::std::unique_ptr<::CompositePackSource> $createCompositePackSource(::std::vector<::PackSource*> sources);
     // NOLINTEND
@@ -161,5 +224,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

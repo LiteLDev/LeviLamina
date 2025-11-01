@@ -6,7 +6,7 @@ namespace Editor::Input {
 
 enum class KeyInputType : int {
     Invalid = 0,
-    Press = 1,
+    Press   = 1,
     Release = 2,
 };
 

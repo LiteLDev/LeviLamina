@@ -18,11 +18,11 @@ class JumpControlComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mJumping;
-    ::ll::TypedStorage<1, 1, bool> mSwimming;
-    ::ll::TypedStorage<4, 4, float> mJumpPower;
-    ::ll::TypedStorage<4, 4, ::JumpType> mJumpType;
-    ::ll::TypedStorage<4, 64, ::JumpInfo[4]> mJumpInfo;
+    ::ll::TypedStorage<1, 1, bool>                             mJumping;
+    ::ll::TypedStorage<1, 1, bool>                             mSwimming;
+    ::ll::TypedStorage<4, 4, float>                            mJumpPower;
+    ::ll::TypedStorage<4, 4, ::JumpType>                       mJumpType;
+    ::ll::TypedStorage<4, 64, ::JumpInfo[4]>                   mJumpInfo;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::JumpControl>> mJumpControl;
     // NOLINTEND
 
@@ -54,5 +54,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

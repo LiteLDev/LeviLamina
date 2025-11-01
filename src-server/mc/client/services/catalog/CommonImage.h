@@ -19,5 +19,4 @@ public:
     CommonImage& operator=(CommonImage const&);
     CommonImage(CommonImage const&);
     CommonImage();
-
 };

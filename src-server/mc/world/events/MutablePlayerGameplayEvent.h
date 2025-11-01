@@ -5,8 +5,7 @@
 #include "mc/world/events/EventVariantImpl.h"
 #include "mc/world/events/PlayerGameModeChangeEvent.h"
 
-template<typename Return>
+template <typename Return>
 struct MutablePlayerGameplayEvent;
 template <>
-struct MutablePlayerGameplayEvent<CoordinatorResult> : MutableEventVariant<PlayerGameModeChangeEvent> {
-};
+struct MutablePlayerGameplayEvent<CoordinatorResult> : MutableEventVariant<PlayerGameModeChangeEvent> {};

@@ -21,7 +21,7 @@ class ScriptWidgetComponentGridOptions : public ::Editor::ScriptModule::ScriptWi
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk2977f6;
+    ::ll::UntypedStorage<4, 8>  mUnk2977f6;
     ::ll::UntypedStorage<4, 32> mUnk2527e5;
     ::ll::UntypedStorage<4, 12> mUnk66bf43;
     ::ll::UntypedStorage<4, 12> mUnk92986b;
@@ -37,7 +37,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<void> validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
 
     // vIndex: 0
     virtual ~ScriptWidgetComponentGridOptions() /*override*/;
@@ -46,9 +47,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentGridOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentGridOptions&&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentGridOptions&
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentGridOptions&&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentGridOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentGridOptions const&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentGridOptions&
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentGridOptions const&);
     // NOLINTEND
 
 public:
@@ -96,7 +99,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
     // NOLINTEND
 
 public:
@@ -104,7 +108,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

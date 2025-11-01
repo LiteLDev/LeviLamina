@@ -26,10 +26,12 @@ public:
     virtual ~PrefabDBServerPlayerServiceProvider() = default;
 
     // vIndex: 1
-    virtual ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>> getInstancesInChunk(::DimensionType const&, ::ChunkPos const&) const = 0;
+    virtual ::std::vector<::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance>>
+    getInstancesInChunk(::DimensionType const&, ::ChunkPos const&) const = 0;
 
     // vIndex: 2
-    virtual ::std::optional<::Editor::Prefabs::VisiblePrefabInstance> fetchVisibleInstance(::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance const>) const = 0;
+    virtual ::std::optional<::Editor::Prefabs::VisiblePrefabInstance>
+        fetchVisibleInstance(::WeakRef<::Editor::Prefabs::PrefabDBPrefabInstance const>) const = 0;
 
     // vIndex: 4
     virtual ::WeakRef<::Editor::Prefabs::PrefabDBTemplate const> getTemplate(::mce::UUID const&) const = 0;
@@ -43,7 +45,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Prefabs

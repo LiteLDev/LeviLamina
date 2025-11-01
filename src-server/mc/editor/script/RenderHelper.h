@@ -15,4 +15,4 @@ MCNAPI ::Scripting::EnumBinding bindPrimitiveTypeEnums();
 MCNAPI ::Scripting::EnumBinding bindSplineEnums();
 // NOLINTEND
 
-}
+} // namespace Editor::ScriptModule::RenderHelper

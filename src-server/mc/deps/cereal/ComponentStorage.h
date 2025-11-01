@@ -33,7 +33,6 @@ public:
 
     MCNAPI bool removeComponent(::std::string_view name);
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal

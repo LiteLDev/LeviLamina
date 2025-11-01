@@ -21,15 +21,40 @@ struct ActorLoaderTraits {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void upgrade_v1_21_100(::Puv::CerealUpgrader<::SharedTypes::v1_21_90::ActorDocument, ::SharedTypes::v1_21_100::ActorDocument, ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader);
+    MCNAPI static void upgrade_v1_21_100(
+        ::Puv::CerealUpgrader<
+            ::SharedTypes::v1_21_90::ActorDocument,
+            ::SharedTypes::v1_21_100::ActorDocument,
+            ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader
+    );
 
-    MCNAPI static void upgrade_v1_21_110(::Puv::CerealUpgrader<::SharedTypes::v1_21_100::ActorDocument, ::SharedTypes::v1_21_110::ActorDocument, ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader);
+    MCNAPI static void upgrade_v1_21_110(
+        ::Puv::CerealUpgrader<
+            ::SharedTypes::v1_21_100::ActorDocument,
+            ::SharedTypes::v1_21_110::ActorDocument,
+            ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader
+    );
 
-    MCNAPI static void upgrade_v1_21_120(::Puv::CerealUpgrader<::SharedTypes::v1_21_110::ActorDocument, ::SharedTypes::v1_21_120::ActorDocument, ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader);
+    MCNAPI static void upgrade_v1_21_120(
+        ::Puv::CerealUpgrader<
+            ::SharedTypes::v1_21_110::ActorDocument,
+            ::SharedTypes::v1_21_120::ActorDocument,
+            ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader
+    );
 
-    MCNAPI static void upgrade_v1_21_89(::Puv::CerealUpgrader<::SharedTypes::Legacy::ActorDocument, ::SharedTypes::Legacy::ActorDocumentCorrected, ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader);
+    MCNAPI static void upgrade_v1_21_89(
+        ::Puv::CerealUpgrader<
+            ::SharedTypes::Legacy::ActorDocument,
+            ::SharedTypes::Legacy::ActorDocumentCorrected,
+            ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader
+    );
 
-    MCNAPI static void upgrade_v1_21_90(::Puv::CerealUpgrader<::SharedTypes::Legacy::ActorDocumentCorrected, ::SharedTypes::v1_21_90::ActorDocument, ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader);
+    MCNAPI static void upgrade_v1_21_90(
+        ::Puv::CerealUpgrader<
+            ::SharedTypes::Legacy::ActorDocumentCorrected,
+            ::SharedTypes::v1_21_90::ActorDocument,
+            ::ActorMigratedUtils::CustomUpgradeData const&>& upgrader
+    );
     // NOLINTEND
 
 public:
@@ -37,7 +62,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::ActorMigratedDefinitionFactory const*& mFactoryPtr();
     // NOLINTEND
-
 };
 
-}
+} // namespace ActorMigratedUtils

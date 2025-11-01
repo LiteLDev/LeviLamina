@@ -8,7 +8,6 @@
 #include "mc/deps/shared_types/legacy/actor/ArmorSlot.h"
 #include "mc/deps/shared_types/legacy/item/EquipmentSlot.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/actor/Actor.h"
 #include "mc/world/actor/ActorEvent.h"
 #include "mc/world/actor/ActorInitializationMethod.h"
@@ -18,6 +17,7 @@
 #include "mc/world/actor/TravelType.h"
 #include "mc/world/item/ClockSpriteCalculator.h"
 #include "mc/world/item/CompassSpriteCalculator.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -53,29 +53,29 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mHurtDir;
-    ::ll::TypedStorage<4, 4, float> mOTilt;
-    ::ll::TypedStorage<4, 4, float> mTilt;
+    ::ll::TypedStorage<4, 4, float>                      mHurtDir;
+    ::ll::TypedStorage<4, 4, float>                      mOTilt;
+    ::ll::TypedStorage<4, 4, float>                      mTilt;
     ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mCompassSpriteCalc;
     ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mRecoveryCompassSpriteCalc;
-    ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator> mClockSpriteCalc;
-    ::ll::TypedStorage<4, 4, float> mAttackAnim;
-    ::ll::TypedStorage<4, 4, int> mSwingTime;
-    ::ll::TypedStorage<8, 24, ::BuiltInMobComponents> mBuiltInMobComponents;
-    ::ll::TypedStorage<4, 4, float> mMovementComponentCurrentSpeed;
-    ::ll::TypedStorage<1, 1, bool> mSwinging;
-    ::ll::TypedStorage<1, 1, bool> mSurfaceMob;
-    ::ll::TypedStorage<1, 1, bool> mNaturallySpawned;
-    ::ll::TypedStorage<1, 1, bool> mWantsToBeJockey;
-    ::ll::TypedStorage<1, 1, bool> mHasBoundOrigin;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mActuallyDoKnockbackOrNotReallyBadHackDoNotUse;
-    ::ll::TypedStorage<1, 1, ::MobSpawnMethod> mSpawnMethod;
-    ::ll::TypedStorage<1, 1, bool> mCreateAiOnReload;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mCaravanHead;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mCaravanTail;
-    ::ll::TypedStorage<4, 4, float> mOAttackAnim;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mBoundOrigin;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mTargetCaptainId;
+    ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator>   mClockSpriteCalc;
+    ::ll::TypedStorage<4, 4, float>                      mAttackAnim;
+    ::ll::TypedStorage<4, 4, int>                        mSwingTime;
+    ::ll::TypedStorage<8, 24, ::BuiltInMobComponents>    mBuiltInMobComponents;
+    ::ll::TypedStorage<4, 4, float>                      mMovementComponentCurrentSpeed;
+    ::ll::TypedStorage<1, 1, bool>                       mSwinging;
+    ::ll::TypedStorage<1, 1, bool>                       mSurfaceMob;
+    ::ll::TypedStorage<1, 1, bool>                       mNaturallySpawned;
+    ::ll::TypedStorage<1, 1, bool>                       mWantsToBeJockey;
+    ::ll::TypedStorage<1, 1, bool>                       mHasBoundOrigin;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>      mActuallyDoKnockbackOrNotReallyBadHackDoNotUse;
+    ::ll::TypedStorage<1, 1, ::MobSpawnMethod>           mSpawnMethod;
+    ::ll::TypedStorage<1, 1, bool>                       mCreateAiOnReload;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>            mCaravanHead;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>            mCaravanTail;
+    ::ll::TypedStorage<4, 4, float>                      mOAttackAnim;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                mBoundOrigin;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>            mTargetCaptainId;
     // NOLINTEND
 
 public:
@@ -86,7 +86,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
-    virtual void initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void
+    initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 3
     virtual void reloadHardcodedClient(::ActorInitializationMethod method) /*override*/;
@@ -98,7 +99,8 @@ public:
     virtual ~Mob() /*override*/;
 
     // vIndex: 138
-    virtual void knockback(::Actor*, int, float xd, float zd, float horizontalPower, float verticalPower, float heightCap);
+    virtual void
+    knockback(::Actor*, int, float xd, float zd, float horizontalPower, float verticalPower, float heightCap);
 
     // vIndex: 122
     virtual void kill() /*override*/;
@@ -200,7 +202,7 @@ public:
     virtual void blockedByShield(::ActorDamageSource const& source, ::Actor& blocker) /*override*/;
 
     // vIndex: 51
-    virtual void setTarget(::Actor* target) /*override*/;
+    virtual void setTarget(::Actor* entity) /*override*/;
 
     // vIndex: 53
     virtual bool attack(::Actor&, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
@@ -299,7 +301,13 @@ public:
     virtual bool canChangeDimensionsUsingPortal() const /*override*/;
 
     // vIndex: 21
-    virtual void teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity) /*override*/;
+    virtual void teleportTo(
+        ::Vec3 const& pos,
+        bool          shouldStopRiding,
+        int           cause,
+        int           sourceEntityType,
+        bool          keepVelocity
+    ) /*override*/;
 
     // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const&);
@@ -353,7 +361,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Mob(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI
+    Mob(::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext);
 
     MCAPI ::BuiltInMobComponents _addBuiltInMobComponents();
 
@@ -373,7 +384,8 @@ public:
 
     MCAPI void _verifyAttributes();
 
-    MCAPI void addSpeedModifier(::mce::UUID const& attributeID, ::std::string const& attributeName, float speedModifier);
+    MCAPI void
+    addSpeedModifier(::mce::UUID const& attributeID, ::std::string const& attributeName, float speedModifier);
 
     MCAPI float calcMoveRelativeSpeed(::TravelType travelType);
 
@@ -505,7 +517,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -523,7 +539,8 @@ public:
 
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $knockback(::Actor*, int, float xd, float zd, float horizontalPower, float verticalPower, float heightCap);
+    MCAPI void
+    $knockback(::Actor*, int, float xd, float zd, float horizontalPower, float verticalPower, float heightCap);
 
     MCAPI void $kill();
 
@@ -591,7 +608,7 @@ public:
 
     MCAPI void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
 
-    MCAPI void $setTarget(::Actor* target);
+    MCAPI void $setTarget(::Actor* entity);
 
     MCFOLD bool $isAlliedTo(::Mob*);
 
@@ -643,7 +660,8 @@ public:
 
     MCAPI bool $canChangeDimensionsUsingPortal() const;
 
-    MCAPI void $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+    MCAPI void
+    $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
     MCFOLD float $_getWalkTargetValue(::BlockPos const&);
 
@@ -683,5 +701,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

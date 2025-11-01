@@ -4,8 +4,7 @@
 
 namespace webrtc {
 
-template<typename T0>
-class VideoTrackProxyWithInternal {
-};
+template <typename T0>
+class VideoTrackProxyWithInternal {};
 
-}
+} // namespace webrtc

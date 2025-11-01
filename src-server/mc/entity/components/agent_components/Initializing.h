@@ -4,7 +4,6 @@
 
 namespace AgentComponents {
 
-struct Initializing {
-};
+struct Initializing {};
 
-}
+} // namespace AgentComponents

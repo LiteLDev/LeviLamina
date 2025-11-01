@@ -11,7 +11,7 @@ public:
     ::ll::UntypedStorage<4, 12> mUnk490ef7;
     ::ll::UntypedStorage<8, 32> mUnk7b8770;
     ::ll::UntypedStorage<4, 24> mUnk8a67b2;
-    ::ll::UntypedStorage<1, 1> mUnk3b1636;
+    ::ll::UntypedStorage<1, 1>  mUnk3b1636;
     // NOLINTEND
 
 public:
@@ -33,7 +33,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

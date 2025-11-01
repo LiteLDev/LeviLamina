@@ -25,5 +25,4 @@ public:
 
     MCAPI void setPlayerMovementSettings(::PlayerMovementSettings const& settings);
     // NOLINTEND
-
 };

@@ -3,14 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/crypto/asymmetric/System.h"
+#include "mc/deps/crypto/asymmetric/system/System.h"
 
 class KeyManager {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk7b15d6;
-    ::ll::UntypedStorage<8, 8> mUnk1f4472;
+    ::ll::UntypedStorage<8, 8>  mUnk1f4472;
     // NOLINTEND
 
 public:
@@ -58,5 +58,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -21,20 +21,20 @@ class DropItemForGoal : public ::BaseMoveToBlockGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mHasDroppedItem;
-    ::ll::TypedStorage<4, 4, int> mCooldownRemaining;
-    ::ll::TypedStorage<4, 4, int> mTicksBeforePickup;
-    ::ll::TypedStorage<4, 4, int> mTotalCooldownTicks;
-    ::ll::TypedStorage<4, 4, float> mDropItemChance;
-    ::ll::TypedStorage<4, 4, float> mPreferredSquareDistance;
-    ::ll::TypedStorage<4, 4, float> mMinimumTeleportDistance;
-    ::ll::TypedStorage<4, 4, float> mLookAtTargetMaxHeadHeight;
-    ::ll::TypedStorage<8, 32, ::std::string> mLootTable;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mDropForID;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnDropAttempt;
-    ::ll::TypedStorage<4, 8, ::FloatRange> mTimeOfDayRange;
-    ::ll::TypedStorage<4, 12, ::Vec3> mTargetRange;
-    ::ll::TypedStorage<4, 12, ::Vec3> mTeleportDistanceFromTarget;
+    ::ll::TypedStorage<1, 1, bool>                            mHasDroppedItem;
+    ::ll::TypedStorage<4, 4, int>                             mCooldownRemaining;
+    ::ll::TypedStorage<4, 4, int>                             mTicksBeforePickup;
+    ::ll::TypedStorage<4, 4, int>                             mTotalCooldownTicks;
+    ::ll::TypedStorage<4, 4, float>                           mDropItemChance;
+    ::ll::TypedStorage<4, 4, float>                           mPreferredSquareDistance;
+    ::ll::TypedStorage<4, 4, float>                           mMinimumTeleportDistance;
+    ::ll::TypedStorage<4, 4, float>                           mLookAtTargetMaxHeadHeight;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mLootTable;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                 mDropForID;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>      mOnDropAttempt;
+    ::ll::TypedStorage<4, 8, ::FloatRange>                    mTimeOfDayRange;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mTargetRange;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mTeleportDistanceFromTarget;
     ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mTargetFilter;
     // NOLINTEND
 
@@ -110,5 +110,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

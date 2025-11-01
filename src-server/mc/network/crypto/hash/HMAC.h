@@ -17,8 +17,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Crypto::Hash::IHash>> mHash;
-    ::ll::TypedStorage<8, 32, ::std::string> mKey;
-    ::ll::TypedStorage<4, 4, int> mResultSize;
+    ::ll::TypedStorage<8, 32, ::std::string>                           mKey;
+    ::ll::TypedStorage<4, 4, int>                                      mResultSize;
     // NOLINTEND
 
 public:
@@ -40,7 +40,6 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::Crypto::Hash::HashType type, ::std::string const& key, int resultSize);
     // NOLINTEND
-
 };
 
-}
+} // namespace Crypto::Hash

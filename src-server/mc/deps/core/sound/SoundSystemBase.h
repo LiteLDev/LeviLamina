@@ -22,7 +22,7 @@ class SoundSystemBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka195be;
+    ::ll::UntypedStorage<4, 4>  mUnka195be;
     ::ll::UntypedStorage<8, 64> mUnk9cb548;
     // NOLINTEND
 
@@ -138,10 +138,26 @@ public:
     virtual uint64 playEventAt(::SoundEvent const&, ::std::string const&, float, float, float, float, float);
 
     // vIndex: 34
-    virtual uint64 playAt(::Core::Path const&, ::SoundEvent const*, ::std::string const&, uint64, float, float, float, float, float, bool, float, float, bool, bool);
+    virtual uint64 playAt(
+        ::Core::Path const&,
+        ::SoundEvent const*,
+        ::std::string const&,
+        uint64,
+        float,
+        float,
+        float,
+        float,
+        float,
+        bool,
+        float,
+        float,
+        bool,
+        bool
+    );
 
     // vIndex: 35
-    virtual uint64 playEventAttached(::SoundEvent const&, ::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&);
+    virtual uint64
+    playEventAttached(::SoundEvent const&, ::std::string const&, ::std::function<void(::SoundInstanceProperties&)>&&);
 
     // vIndex: 36
     virtual bool isPlayingSound(uint64) const;
@@ -198,7 +214,14 @@ public:
     virtual void update(float);
 
     // vIndex: 54
-    virtual uint64 registerLoop(::SoundItem const&, ::std::weak_ptr<::SoundEvent> const, ::std::string const&, ::std::function<void(::LoopingSoundState&)>, float, float);
+    virtual uint64 registerLoop(
+        ::SoundItem const&,
+        ::std::weak_ptr<::SoundEvent> const,
+        ::std::string const&,
+        ::std::function<void(::LoopingSoundState&)>,
+        float,
+        float
+    );
 
     // vIndex: 55
     virtual void unregisterLoop(uint64, bool);
@@ -230,5 +253,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

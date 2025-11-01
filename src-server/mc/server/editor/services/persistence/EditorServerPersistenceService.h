@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnke0f2d7;
-    ::ll::UntypedStorage<1, 1> mUnkedb2c6;
+    ::ll::UntypedStorage<1, 1>  mUnkedb2c6;
     // NOLINTEND
 
 public:
@@ -51,7 +51,8 @@ public:
     virtual ::std::string const& getPlayerSaveId() const /*override*/;
 
     // vIndex: 7
-    virtual void _removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) /*override*/;
+    virtual void
+    _removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) /*override*/;
 
     // vIndex: 8
     virtual void _tick(::Editor::ServiceProviderCollection& serviceProvider) /*override*/;
@@ -100,7 +101,6 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

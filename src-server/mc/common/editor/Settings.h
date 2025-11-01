@@ -13,4 +13,4 @@ namespace Editor::Settings {
 MCNAPI bool operator==(::Editor::Settings::GraphicsProps const& lhs, ::Editor::Settings::GraphicsProps const& rhs);
 // NOLINTEND
 
-}
+} // namespace Editor::Settings

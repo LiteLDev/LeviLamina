@@ -23,10 +23,10 @@ class ActorAnimationControllerStatePlayer : public ::ActorAnimationPlayer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5832d5;
+    ::ll::UntypedStorage<8, 8>  mUnk5832d5;
     ::ll::UntypedStorage<8, 16> mUnkc95601;
     ::ll::UntypedStorage<8, 24> mUnkede714;
-    ::ll::UntypedStorage<4, 4> mUnk711489;
+    ::ll::UntypedStorage<4, 4>  mUnk711489;
     // NOLINTEND
 
 public:
@@ -39,7 +39,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void applyToPose(::RenderParams& renderParams, ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap, float blendWeight) /*override*/;
+    virtual void applyToPose(
+        ::RenderParams&                                                                   renderParams,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
+        float                                                                             blendWeight
+    ) /*override*/;
 
     // vIndex: 2
     virtual void resetAnimation() /*override*/;
@@ -48,7 +52,8 @@ public:
     virtual void bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&) /*override*/;
 
     // vIndex: 5
-    virtual void bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap) /*override*/;
+    virtual void
+    bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap) /*override*/;
 
     // vIndex: 6
     virtual bool hasAnimationFinished() const /*override*/;
@@ -72,19 +77,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorAnimationControllerStatePlayer(::HashedString const& friendlyName, ::ActorAnimationControllerPlayer& owner, ::std::shared_ptr<::ActorAnimationControllerState> animationControllerState, ::AnimationComponent& animationComponent, ::ExpressionNode const& blendExpression, ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack);
+    MCNAPI ActorAnimationControllerStatePlayer(
+        ::HashedString const&                                    friendlyName,
+        ::ActorAnimationControllerPlayer&                        owner,
+        ::std::shared_ptr<::ActorAnimationControllerState>       animationControllerState,
+        ::AnimationComponent&                                    animationComponent,
+        ::ExpressionNode const&                                  blendExpression,
+        ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::HashedString const& friendlyName, ::ActorAnimationControllerPlayer& owner, ::std::shared_ptr<::ActorAnimationControllerState> animationControllerState, ::AnimationComponent& animationComponent, ::ExpressionNode const& blendExpression, ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack);
+    MCNAPI void* $ctor(
+        ::HashedString const&                                    friendlyName,
+        ::ActorAnimationControllerPlayer&                        owner,
+        ::std::shared_ptr<::ActorAnimationControllerState>       animationControllerState,
+        ::AnimationComponent&                                    animationComponent,
+        ::ExpressionNode const&                                  blendExpression,
+        ::std::set<::HashedString, ::std::hash<::HashedString>>& animationControllerNameStack
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $applyToPose(::RenderParams& renderParams, ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap, float blendWeight);
+    MCNAPI void $applyToPose(
+        ::RenderParams&                                                                   renderParams,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>& destBoneOrientationsMap,
+        float                                                                             blendWeight
+    );
 
     MCNAPI void $resetAnimation();
 
@@ -108,5 +131,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

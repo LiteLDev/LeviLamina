@@ -18,7 +18,6 @@ public:
     PlatformData& operator=(PlatformData const&);
     PlatformData(PlatformData const&);
     PlatformData();
-
 };
 
-}
+} // namespace Bedrock::PlatformUtils

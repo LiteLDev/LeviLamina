@@ -17,7 +17,6 @@ public:
     NetworkAvailability& operator=(NetworkAvailability const&);
     NetworkAvailability(NetworkAvailability const&);
     NetworkAvailability();
-
 };
 
-}
+} // namespace webrtc

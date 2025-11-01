@@ -16,8 +16,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 136> mUnk1c34b7;
     ::ll::UntypedStorage<8, 136> mUnk8defd0;
-    ::ll::UntypedStorage<8, 16> mUnk41fb9b;
-    ::ll::UntypedStorage<8, 16> mUnk9429f5;
+    ::ll::UntypedStorage<8, 16>  mUnk41fb9b;
+    ::ll::UntypedStorage<8, 16>  mUnk9429f5;
     // NOLINTEND
 
 public:
@@ -35,7 +35,9 @@ public:
 
     MCNAPI void _removeIfActorMatches(::Actor const& actor);
 
-    MCNAPI void initialize(::IActorManagerConnector& actorManagerConnector, ::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCNAPI void initialize(
+        ::IActorManagerConnector&        actorManagerConnector,
+        ::IGameplayUserManagerConnector& gameplayUserManagerConnector
+    );
     // NOLINTEND
-
 };

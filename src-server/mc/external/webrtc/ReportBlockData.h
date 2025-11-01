@@ -38,11 +38,14 @@ public:
     // NOLINTBEGIN
     MCNAPI void AddRoundTripTimeSample(::webrtc::TimeDelta rtt);
 
-    MCNAPI void SetReportBlock(uint sender_ssrc, ::webrtc::rtcp::ReportBlock const& report_block, ::webrtc::Timestamp report_block_timestamp_utc);
+    MCNAPI void SetReportBlock(
+        uint                               sender_ssrc,
+        ::webrtc::rtcp::ReportBlock const& report_block,
+        ::webrtc::Timestamp                report_block_timestamp_utc
+    );
 
     MCNAPI ::webrtc::TimeDelta jitter(int rtp_clock_rate_hz) const;
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

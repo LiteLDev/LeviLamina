@@ -17,5 +17,4 @@ public:
     FrustumEdges& operator=(FrustumEdges const&);
     FrustumEdges(FrustumEdges const&);
     FrustumEdges();
-
 };

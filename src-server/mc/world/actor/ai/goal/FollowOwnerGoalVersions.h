@@ -15,4 +15,4 @@ MCAPI ::BaseGameVersion const& KEEP_FOLLOWING_AFTER_TELEPORTING();
 MCAPI ::BaseGameVersion const& RANDOMIZE_AND_CHECK_FOR_CLEARANCE_WHEN_TELEPORTING();
 // NOLINTEND
 
-}
+} // namespace FollowOwnerGoalVersions

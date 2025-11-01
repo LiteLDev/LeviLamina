@@ -17,4 +17,4 @@ MCAPI ::ActorUniqueID const tryGetActorUniqueId(::WeakEntityRef const& ref);
 MCAPI ::NpcDialogueScene* tryGetScene(::WeakEntityRef const& entityRef, ::std::string const& scene);
 // NOLINTEND
 
-}
+} // namespace NpcHelpers

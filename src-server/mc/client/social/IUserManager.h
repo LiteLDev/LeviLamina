@@ -54,7 +54,11 @@ public:
     virtual void setSecondaryUserCreationAllowed(int) = 0;
 
     // vIndex: 6
-    virtual ::Bedrock::Threading::Async<void> addSecondaryUserAsync(int, ::std::shared_ptr<::Options>, ::std::function<void(::Social::UserPlatformConnectionResult)>) = 0;
+    virtual ::Bedrock::Threading::Async<void> addSecondaryUserAsync(
+        int,
+        ::std::shared_ptr<::Options>,
+        ::std::function<void(::Social::UserPlatformConnectionResult)>
+    ) = 0;
 
     // vIndex: 7
     virtual bool controllerChanged(int&, int&) = 0;
@@ -123,10 +127,14 @@ public:
     virtual bool hasPlatformProfileCards() const = 0;
 
     // vIndex: 29
-    virtual void getLinkedXuids(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) const = 0;
+    virtual void
+    getLinkedXuids(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) const = 0;
 
     // vIndex: 30
-    virtual void getLinkedPlatformIds(::std::function<void(::std::string, ::std::string)>, ::std::vector<::std::string> const&) const = 0;
+    virtual void getLinkedPlatformIds(
+        ::std::function<void(::std::string, ::std::string)>,
+        ::std::vector<::std::string> const&
+    ) const = 0;
 
     // vIndex: 31
     virtual void onAppResumed() = 0;
@@ -165,13 +173,19 @@ public:
     virtual void registerSignInListener(::Core::CallbackListeners<int, ::Social::SignInResult>::Listener const&) = 0;
 
     // vIndex: 43
-    virtual ::Bedrock::PubSub::Subscription registerIdentitySignInCallback(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription
+        registerIdentitySignInCallback(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>) = 0;
 
     // vIndex: 44
-    virtual ::Bedrock::PubSub::Subscription registerIdentitySignOutCallback(::Social::IdentityType, ::std::function<void(uint, ::Social::IdentityType)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerIdentitySignOutCallback(
+        ::Social::IdentityType,
+        ::std::function<void(uint, ::Social::IdentityType)>
+    ) = 0;
 
     // vIndex: 45
-    virtual ::Bedrock::PubSub::Subscription registerProfileImageChangedCallback(::std::function<void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerProfileImageChangedCallback(
+        ::std::function<void(::Social::ProfileImageOptions, ::std::shared_ptr<::mce::Image>)>
+    ) = 0;
 
     // vIndex: 46
     virtual bool needGamepadDisconnectScreen(int) = 0;
@@ -230,7 +244,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Social

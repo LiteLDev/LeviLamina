@@ -6,7 +6,7 @@ namespace rtc::internal {
 
 enum class DstSign : int {
     Unsigned = 0,
-    Signed = 1,
+    Signed   = 1,
 };
 
 }

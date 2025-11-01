@@ -18,7 +18,6 @@ public:
     LoggedRouteChangeEvent& operator=(LoggedRouteChangeEvent const&);
     LoggedRouteChangeEvent(LoggedRouteChangeEvent const&);
     LoggedRouteChangeEvent();
-
 };
 
-}
+} // namespace webrtc

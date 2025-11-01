@@ -35,7 +35,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CrossbowEnchant(::Enchant::Type type, ::Enchant::Frequency frequency, ::std::string_view stringId, ::std::string_view description, ::Enchant::VillagerTrading isAvailableForVillagerTraining, int primarySlots, int secondarySlots);
+    MCAPI CrossbowEnchant(
+        ::Enchant::Type            type,
+        ::Enchant::Frequency       frequency,
+        ::std::string_view         stringId,
+        ::std::string_view         description,
+        ::Enchant::VillagerTrading isAvailableForVillagerTraining,
+        int                        primarySlots,
+        int                        secondarySlots
+    );
     // NOLINTEND
 
 public:
@@ -47,7 +55,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Enchant::Type type, ::Enchant::Frequency frequency, ::std::string_view stringId, ::std::string_view description, ::Enchant::VillagerTrading isAvailableForVillagerTraining, int primarySlots, int secondarySlots);
+    MCAPI void* $ctor(
+        ::Enchant::Type            type,
+        ::Enchant::Frequency       frequency,
+        ::std::string_view         stringId,
+        ::std::string_view         description,
+        ::Enchant::VillagerTrading isAvailableForVillagerTraining,
+        int                        primarySlots,
+        int                        secondarySlots
+    );
     // NOLINTEND
 
 public:
@@ -69,5 +85,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

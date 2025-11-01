@@ -15,5 +15,4 @@ public:
     JSPropertyEnum& operator=(JSPropertyEnum const&);
     JSPropertyEnum(JSPropertyEnum const&);
     JSPropertyEnum();
-
 };

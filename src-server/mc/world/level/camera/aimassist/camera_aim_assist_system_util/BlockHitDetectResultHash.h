@@ -4,7 +4,6 @@
 
 namespace CameraAimAssistSystemUtil {
 
-struct BlockHitDetectResultHash {
-};
+struct BlockHitDetectResultHash {};
 
-}
+} // namespace CameraAimAssistSystemUtil

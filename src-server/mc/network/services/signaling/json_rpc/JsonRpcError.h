@@ -8,7 +8,7 @@ class JsonRpcError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd02ce6;
+    ::ll::UntypedStorage<4, 4>  mUnkd02ce6;
     ::ll::UntypedStorage<8, 32> mUnkfeb3df;
     // NOLINTEND
 
@@ -29,7 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace JsonRpc

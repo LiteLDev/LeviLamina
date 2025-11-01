@@ -21,7 +21,7 @@ struct ScriptBlockHitInformation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptFacing> mFace;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptFacing>                                       mFace;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>> mBlock;
     ::ll::TypedStorage<4, 12, ::Vec3> mFaceLocationAbsolute;
     ::ll::TypedStorage<4, 12, ::Vec3> mFaceLocationRelative;
@@ -34,7 +34,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockHitInformation(::ProjectileHitEvent const& projectileHitEvent, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptBlockHitInformation(
+        ::ProjectileHitEvent const&           projectileHitEvent,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
 
     MCAPI ~ScriptBlockHitInformation();
     // NOLINTEND
@@ -56,7 +59,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

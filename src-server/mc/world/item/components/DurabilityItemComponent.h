@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/versionless/IntRange.h"
+#include "mc/deps/shared_types/shared_types/IntRange.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -19,7 +19,7 @@ class DurabilityItemComponent : public ::NetworkedItemComponent<::DurabilityItem
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mMaxDamage;
+    ::ll::TypedStorage<4, 4, int>                     mMaxDamage;
     ::ll::TypedStorage<4, 8, ::SharedTypes::IntRange> mDamageChance;
     // NOLINTEND
 
@@ -33,7 +33,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -43,5 +47,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

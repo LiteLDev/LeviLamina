@@ -21,17 +21,17 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::PerlinSimplexNoise> mNoise;
-    ::ll::TypedStorage<4, 4, int> mTick;
-    ::ll::TypedStorage<4, 4, float> mOldRainLevel;
-    ::ll::TypedStorage<4, 4, float> mRainLevel;
-    ::ll::TypedStorage<4, 4, float> mTargetRainLevel;
-    ::ll::TypedStorage<4, 4, float> mOldLightningLevel;
-    ::ll::TypedStorage<4, 4, float> mLightningLevel;
-    ::ll::TypedStorage<4, 4, float> mTargetLightningLevel;
-    ::ll::TypedStorage<4, 4, float> mFogLevel;
-    ::ll::TypedStorage<4, 4, int> mSkyFlashTime;
-    ::ll::TypedStorage<8, 8, ::Dimension&> mDimension;
-    ::ll::TypedStorage<8, 8, ::IRandom&> mRandom;
+    ::ll::TypedStorage<4, 4, int>                   mTick;
+    ::ll::TypedStorage<4, 4, float>                 mOldRainLevel;
+    ::ll::TypedStorage<4, 4, float>                 mRainLevel;
+    ::ll::TypedStorage<4, 4, float>                 mTargetRainLevel;
+    ::ll::TypedStorage<4, 4, float>                 mOldLightningLevel;
+    ::ll::TypedStorage<4, 4, float>                 mLightningLevel;
+    ::ll::TypedStorage<4, 4, float>                 mTargetLightningLevel;
+    ::ll::TypedStorage<4, 4, float>                 mFogLevel;
+    ::ll::TypedStorage<4, 4, int>                   mSkyFlashTime;
+    ::ll::TypedStorage<8, 8, ::Dimension&>          mDimension;
+    ::ll::TypedStorage<8, 8, ::IRandom&>            mRandom;
     // NOLINTEND
 
 public:
@@ -55,7 +55,13 @@ public:
     // NOLINTBEGIN
     MCAPI int calcSnowBlockDepth(::BlockSource& region, ::BlockPos const& pos, int maxLayerDepth) const;
 
-    MCAPI bool canPlaceTopSnow(::BlockSource& region, ::BlockPos const& pos, bool fromFallingSnow, bool checkSnowDepthLevel, int* newHeightAfterPlacement) const;
+    MCAPI bool canPlaceTopSnow(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        bool              fromFallingSnow,
+        bool              checkSnowDepthLevel,
+        int*              newHeightAfterPlacement
+    ) const;
 
     MCAPI bool isPrecipitatingAt(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -65,7 +71,8 @@ public:
 
     MCAPI void stop();
 
-    MCAPI bool tryToPlaceTopSnow(::BlockSource& region, ::BlockPos const& pos, bool fromFallingSnow, bool fillLowerNeighborsFirst);
+    MCAPI bool
+    tryToPlaceTopSnow(::BlockSource& region, ::BlockPos const& pos, bool fromFallingSnow, bool fillLowerNeighborsFirst);
     // NOLINTEND
 
 public:
@@ -89,5 +96,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

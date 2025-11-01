@@ -16,7 +16,6 @@ public:
     BasicContextOwner& operator=(BasicContextOwner const&);
     BasicContextOwner(BasicContextOwner const&);
     BasicContextOwner();
-
 };
 
-}
+} // namespace cereal

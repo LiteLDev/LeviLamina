@@ -19,7 +19,6 @@ public:
     FieldParameters& operator=(FieldParameters const&);
     FieldParameters(FieldParameters const&);
     FieldParameters();
-
 };
 
-}
+} // namespace webrtc

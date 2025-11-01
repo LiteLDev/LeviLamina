@@ -19,7 +19,7 @@ public:
     ::ll::UntypedStorage<8, 40> mUnkf0c4a1;
     ::ll::UntypedStorage<8, 16> mUnk789004;
     ::ll::UntypedStorage<8, 16> mUnkbafc0e;
-    ::ll::UntypedStorage<1, 2> mUnk8435d8;
+    ::ll::UntypedStorage<1, 2>  mUnk8435d8;
     ::ll::UntypedStorage<8, 16> mUnkebc71f;
     ::ll::UntypedStorage<8, 16> mUnk8a0316;
     ::ll::UntypedStorage<8, 16> mUnk46888a;
@@ -64,7 +64,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal::internal

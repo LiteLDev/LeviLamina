@@ -21,9 +21,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkbc6895;
-    ::ll::UntypedStorage<1, 1> mUnk712674;
+    ::ll::UntypedStorage<1, 1>  mUnk712674;
     ::ll::UntypedStorage<8, 24> mUnk4f8c50;
-    ::ll::UntypedStorage<1, 1> mUnkb16dc9;
+    ::ll::UntypedStorage<1, 1>  mUnkb16dc9;
     // NOLINTEND
 
 public:
@@ -51,7 +51,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addPackFromHistoryPack(::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>& packs, ::WorldPackHistory const& worldPackHistory) const;
+    MCNAPI void _addPackFromHistoryPack(
+        ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>& packs,
+        ::WorldPackHistory const&                                  worldPackHistory
+    ) const;
 
     MCNAPI ::std::unique_ptr<::Pack> _createPackFromHistoryPack(::WorldPackHistory const& worldPackHistory) const;
 
@@ -73,5 +76,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

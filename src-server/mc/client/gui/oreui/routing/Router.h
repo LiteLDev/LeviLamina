@@ -4,7 +4,6 @@
 
 namespace OreUI {
 
-class Router {
-};
+class Router {};
 
-}
+} // namespace OreUI

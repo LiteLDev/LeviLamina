@@ -23,20 +23,20 @@ class ActorMigratedDefinitionFactory {
 public:
     // ActorMigratedDefinitionFactory inner types define
     enum class InitResult : int {
-        Success = 0,
+        Success                = 0,
         BetaFeaturesNotEnabled = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 120> mUnkc17365;
-    ::ll::UntypedStorage<8, 64> mUnk322222;
-    ::ll::UntypedStorage<8, 24> mUnk43953f;
-    ::ll::UntypedStorage<8, 24> mUnk24e3b7;
-    ::ll::UntypedStorage<8, 96> mUnke046e6;
-    ::ll::UntypedStorage<8, 16> mUnka1ca7f;
-    ::ll::UntypedStorage<8, 8> mUnk77c2be;
+    ::ll::UntypedStorage<8, 64>  mUnk322222;
+    ::ll::UntypedStorage<8, 24>  mUnk43953f;
+    ::ll::UntypedStorage<8, 24>  mUnk24e3b7;
+    ::ll::UntypedStorage<8, 96>  mUnke046e6;
+    ::ll::UntypedStorage<8, 16>  mUnka1ca7f;
+    ::ll::UntypedStorage<8, 8>   mUnk77c2be;
     // NOLINTEND
 
 public:
@@ -57,7 +57,8 @@ public:
 
     MCNAPI void resetLoader();
 
-    MCNAPI void setLoaderCustomData(::BedrockLoadContext customParseData, ::DeserializeDataSettings customUpgradeData) const;
+    MCNAPI void
+    setLoaderCustomData(::BedrockLoadContext customParseData, ::DeserializeDataSettings customUpgradeData) const;
 
     MCNAPI ~ActorMigratedDefinitionFactory();
     // NOLINTEND
@@ -65,7 +66,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::LegacyGoalDefinition _parseLegacyGoalDefinition(::std::string name, ::cereal::DynamicValue const& def, ::DeserializeDataSettings const& settings);
+    MCNAPI static ::LegacyGoalDefinition _parseLegacyGoalDefinition(
+        ::std::string                    name,
+        ::cereal::DynamicValue const&    def,
+        ::DeserializeDataSettings const& settings
+    );
     // NOLINTEND
 
 public:
@@ -79,5 +84,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

@@ -28,7 +28,8 @@ public:
     virtual ::WorldTemplateInfo const* findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const&) const = 0;
 
     // vIndex: 3
-    virtual ::Bedrock::PubSub::Subscription registerModifiedCallback(::std::function<void(::std::pair<::std::string, bool> const&)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription
+        registerModifiedCallback(::std::function<void(::std::pair<::std::string, bool> const&)>) = 0;
 
     // vIndex: 4
     virtual ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& getLocalTemplates() const = 0;
@@ -69,5 +70,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

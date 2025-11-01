@@ -12,5 +12,4 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mOriginalMapId;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mNewMapId;
     // NOLINTEND
-
 };

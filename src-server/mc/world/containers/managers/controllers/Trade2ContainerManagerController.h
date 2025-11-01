@@ -24,9 +24,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Trade2ContainerManagerModel>> mTradeContainerManagerModel;
-    ::ll::TypedStorage<1, 1, bool> mSelectBestTradeOnItemPlace;
-    ::ll::TypedStorage<8, 40, ::SlotData const> mCreatedItemOutputSlot;
-    ::ll::TypedStorage<8, 128, ::ItemInstance> mResultPreviewItem;
+    ::ll::TypedStorage<1, 1, bool>                                            mSelectBestTradeOnItemPlace;
+    ::ll::TypedStorage<8, 40, ::SlotData const>                               mCreatedItemOutputSlot;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>                                mResultPreviewItem;
     // NOLINTEND
 
 public:
@@ -39,7 +39,12 @@ public:
     virtual bool isOutputSlot(::std::string const&) const /*override*/;
 
     // vIndex: 15
-    virtual int handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/;
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
 
     // vIndex: 8
     virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
@@ -63,7 +68,8 @@ public:
     virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
 
     // vIndex: 29
-    virtual ::CreateContainerItemScope _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
+    virtual ::CreateContainerItemScope
+    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -71,5 +77,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

@@ -17,7 +17,7 @@ class RequestInterpreter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2fd027;
+    ::ll::UntypedStorage<8, 8>  mUnk2fd027;
     ::ll::UntypedStorage<8, 16> mUnka1a369;
     // NOLINTEND
 
@@ -31,7 +31,12 @@ public:
     // NOLINTBEGIN
     MCNAPI RequestInterpreter();
 
-    MCNAPI void process(::CodeBuilder::IRequestHandler& sender, ::CodeBuilder::RequestHeader const& header, ::Json::Value const& body, ::IMinecraftEventing* eventing) const;
+    MCNAPI void process(
+        ::CodeBuilder::IRequestHandler&     sender,
+        ::CodeBuilder::RequestHeader const& header,
+        ::Json::Value const&                body,
+        ::IMinecraftEventing*               eventing
+    ) const;
 
     MCNAPI ~RequestInterpreter();
     // NOLINTEND
@@ -53,7 +58,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace CodeBuilder

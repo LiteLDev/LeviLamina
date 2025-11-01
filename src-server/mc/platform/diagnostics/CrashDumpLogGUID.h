@@ -17,5 +17,4 @@ public:
     CrashDumpLogGUID& operator=(CrashDumpLogGUID const&);
     CrashDumpLogGUID(CrashDumpLogGUID const&);
     CrashDumpLogGUID();
-
 };

@@ -35,9 +35,11 @@ public:
 
     MCNAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition& operator=(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
+    operator=(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition& operator=(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
+    operator=(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
 
     MCNAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&) const;
 
@@ -51,7 +53,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition>
+    read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
@@ -69,7 +72,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_50

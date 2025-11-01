@@ -32,7 +32,24 @@ namespace ClientInteractStopRidingServerAuthSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void tick(::entt::type_list<::Include<::LocalPlayerComponent, ::StopRidingRequestComponent>, ::Exclude<::ActorRemovedFlagComponent, ::ActorIsBeingDestroyedFlagComponent, ::SwitchingVehiclesFlagComponent, ::IsBeingTeleportedFlagComponent, ::WasStopRidingServerInitiatedFlagComponent>>, ::StrictEntityContext const& entity, ::PassengerComponent const& passengerComponent, ::StateVectorComponent const& stateVectorComponent, ::EntityModifier<::SendPacketsComponent, ::StopRidingRequestComponent> modifier, ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent, ::DoesServerAuthOnlyDismountFlagComponent>, ::RuntimeIDComponent const> vehicleView);
+MCNAPI void tick(
+    ::entt::type_list<
+        ::Include<::LocalPlayerComponent, ::StopRidingRequestComponent>,
+        ::Exclude<
+            ::ActorRemovedFlagComponent,
+            ::ActorIsBeingDestroyedFlagComponent,
+            ::SwitchingVehiclesFlagComponent,
+            ::IsBeingTeleportedFlagComponent,
+            ::WasStopRidingServerInitiatedFlagComponent>>,
+    ::StrictEntityContext const&                                           entity,
+    ::PassengerComponent const&                                            passengerComponent,
+    ::StateVectorComponent const&                                          stateVectorComponent,
+    ::EntityModifier<::SendPacketsComponent, ::StopRidingRequestComponent> modifier,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::VehicleComponent, ::DoesServerAuthOnlyDismountFlagComponent>,
+        ::RuntimeIDComponent const> vehicleView
+);
 // NOLINTEND
 
-}
+} // namespace ClientInteractStopRidingServerAuthSystem

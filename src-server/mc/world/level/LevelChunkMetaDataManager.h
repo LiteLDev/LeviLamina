@@ -25,8 +25,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelChunkMetaDataDictionary>> mLevelChunkMetaDataDictionary;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnNewDimensionCreatedSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnChunkLoadedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mOnNewDimensionCreatedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                   mOnChunkLoadedSubscription;
     // NOLINTEND
 
 public:
@@ -42,7 +42,11 @@ public:
 
     MCNAPI void registerOnNewDimensionCreated(::IDimensionManagerConnector& dimensionManagerConnector);
 
-    MCNAPI void updateLevelChunkMetaDataForSaving(::LevelChunk& lc, ::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper, ::DimensionHeightRange const& dimensionHeightRange);
+    MCNAPI void updateLevelChunkMetaDataForSaving(
+        ::LevelChunk&                                     lc,
+        ::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper,
+        ::DimensionHeightRange const&                     dimensionHeightRange
+    );
 
     MCNAPI ~LevelChunkMetaDataManager();
     // NOLINTEND
@@ -50,11 +54,32 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void inferInitialMetaDataAfterDeserialization(::LevelChunk& lc, ::LevelSeed64 generationSeed, ::GeneratorType generatorType, ::std::string const& dimensionName, ::DimensionType dimensionId, ::DimensionHeightRange const& dimensionHeightRange, ::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper, ::LevelChunkMetaData& metaData);
+    MCNAPI static void inferInitialMetaDataAfterDeserialization(
+        ::LevelChunk&                                     lc,
+        ::LevelSeed64                                     generationSeed,
+        ::GeneratorType                                   generatorType,
+        ::std::string const&                              dimensionName,
+        ::DimensionType                                   dimensionId,
+        ::DimensionHeightRange const&                     dimensionHeightRange,
+        ::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper,
+        ::LevelChunkMetaData&                             metaData
+    );
 
-    MCNAPI static void inferTargetMetaData(::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper, ::DimensionType dimensionID, ::LevelChunkMetaData& metaData);
+    MCNAPI static void inferTargetMetaData(
+        ::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper,
+        ::DimensionType                                   dimensionID,
+        ::LevelChunkMetaData&                             metaData
+    );
 
-    MCNAPI static ::std::shared_ptr<::LevelChunkMetaData> initializeLevelChunkMetaData(::DimensionType dimensionId, ::std::string const& dimensionName, ::DimensionHeightRange const& dimensionHeightRange, bool use3DBiomeMaps, ::LevelSeed64 levelSeed, ::GeneratorType generatorType, ::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper);
+    MCNAPI static ::std::shared_ptr<::LevelChunkMetaData> initializeLevelChunkMetaData(
+        ::DimensionType                                   dimensionId,
+        ::std::string const&                              dimensionName,
+        ::DimensionHeightRange const&                     dimensionHeightRange,
+        bool                                              use3DBiomeMaps,
+        ::LevelSeed64                                     levelSeed,
+        ::GeneratorType                                   generatorType,
+        ::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper
+    );
     // NOLINTEND
 
 public:
@@ -62,5 +87,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

@@ -19,7 +19,6 @@ public:
     AudioParameters& operator=(AudioParameters const&);
     AudioParameters(AudioParameters const&);
     AudioParameters();
-
 };
 
-}
+} // namespace webrtc

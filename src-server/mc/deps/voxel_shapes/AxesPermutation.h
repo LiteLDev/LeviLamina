@@ -52,7 +52,6 @@ public:
 
     MCNAPI static ::VoxelShapes::AxesPermutation const& RotateZ90();
     // NOLINTEND
-
 };
 
-}
+} // namespace VoxelShapes

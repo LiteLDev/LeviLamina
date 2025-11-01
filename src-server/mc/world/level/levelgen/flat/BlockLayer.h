@@ -12,7 +12,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
-    ::ll::TypedStorage<4, 4, int> mNumLayers;
+    ::ll::TypedStorage<4, 4, int>            mNumLayers;
     // NOLINTEND
-
 };

@@ -77,7 +77,6 @@ public:
 
     MCNAPI static void** $vftableForEditorServiceList();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

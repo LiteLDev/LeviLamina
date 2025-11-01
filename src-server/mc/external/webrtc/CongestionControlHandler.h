@@ -16,10 +16,10 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnke5dece;
     ::ll::UntypedStorage<8, 80> mUnkaa1b40;
-    ::ll::UntypedStorage<1, 1> mUnk42e9c0;
-    ::ll::UntypedStorage<1, 1> mUnk9786bc;
-    ::ll::UntypedStorage<8, 8> mUnk8ff9ea;
-    ::ll::UntypedStorage<1, 1> mUnkcf6552;
+    ::ll::UntypedStorage<1, 1>  mUnk42e9c0;
+    ::ll::UntypedStorage<1, 1>  mUnk9786bc;
+    ::ll::UntypedStorage<8, 8>  mUnk8ff9ea;
+    ::ll::UntypedStorage<1, 1>  mUnkcf6552;
     // NOLINTEND
 
 public:
@@ -39,7 +39,6 @@ public:
 
     MCNAPI void SetTargetRate(::webrtc::TargetTransferRate new_target_rate);
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

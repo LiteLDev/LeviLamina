@@ -12,7 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::HashedString const&> mBlockName;
-    ::ll::TypedStorage<4, 4, int const> mWeight;
+    ::ll::TypedStorage<4, 4, int const>             mWeight;
     // NOLINTEND
 
 public:
@@ -20,5 +20,4 @@ public:
     WeightedBlockName& operator=(WeightedBlockName const&);
     WeightedBlockName(WeightedBlockName const&);
     WeightedBlockName();
-
 };

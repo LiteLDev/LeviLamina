@@ -16,5 +16,4 @@ public:
     MessagePatchnoteData& operator=(MessagePatchnoteData const&);
     MessagePatchnoteData(MessagePatchnoteData const&);
     MessagePatchnoteData();
-
 };

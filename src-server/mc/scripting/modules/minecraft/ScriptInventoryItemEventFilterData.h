@@ -19,7 +19,6 @@ public:
     ScriptInventoryItemEventFilterData& operator=(ScriptInventoryItemEventFilterData const&);
     ScriptInventoryItemEventFilterData(ScriptInventoryItemEventFilterData const&);
     ScriptInventoryItemEventFilterData();
-
 };
 
-}
+} // namespace ScriptModuleMinecraft::EventFilters

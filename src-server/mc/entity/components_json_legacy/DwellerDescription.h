@@ -17,12 +17,12 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkf036a4;
     ::ll::UntypedStorage<8, 32> mUnk3529fc;
     ::ll::UntypedStorage<8, 32> mUnkfe2924;
-    ::ll::UntypedStorage<4, 4> mUnk8fd1ac;
-    ::ll::UntypedStorage<4, 4> mUnkaa8e91;
-    ::ll::UntypedStorage<4, 4> mUnkf76660;
-    ::ll::UntypedStorage<4, 4> mUnk9a8b16;
-    ::ll::UntypedStorage<1, 1> mUnk10f73f;
-    ::ll::UntypedStorage<1, 1> mUnked0174;
+    ::ll::UntypedStorage<4, 4>  mUnk8fd1ac;
+    ::ll::UntypedStorage<4, 4>  mUnkaa8e91;
+    ::ll::UntypedStorage<4, 4>  mUnkf76660;
+    ::ll::UntypedStorage<4, 4>  mUnk9a8b16;
+    ::ll::UntypedStorage<1, 1>  mUnk10f73f;
+    ::ll::UntypedStorage<1, 1>  mUnked0174;
     // NOLINTEND
 
 public:
@@ -63,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

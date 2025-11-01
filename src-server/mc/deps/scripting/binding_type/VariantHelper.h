@@ -8,4 +8,4 @@ namespace Scripting::VariantHelper {
 MCNAPI bool isVariantAny(::entt::meta_type const& type);
 // NOLINTEND
 
-}
+} // namespace Scripting::VariantHelper

@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct Data;
     // clang-format on
-    
+
     // AudioSinkInterface inner types define
     struct Data {
     public:
@@ -22,15 +22,14 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk46c8af;
         ::ll::UntypedStorage<4, 4> mUnkea96b4;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Data& operator=(Data const&);
         Data(Data const&);
         Data();
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -58,7 +57,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

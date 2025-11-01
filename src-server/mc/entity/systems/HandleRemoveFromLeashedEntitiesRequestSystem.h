@@ -16,9 +16,17 @@ struct RemoveFromLeashedEntitiesRequestComponent;
 namespace HandleRemoveFromLeashedEntitiesRequestSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickEntity(::StrictEntityContext const& context, ::RemoveFromLeashedEntitiesRequestComponent const& removeFromLeashedEntitiesRequestComponent, ::LeashedEntitiesComponent& leashedEntitiesComponent, ::EntityModifier<::LeashedEntitiesComponent>& leashedEntitiesComponentModifier);
+MCNAPI void tickEntity(
+    ::StrictEntityContext const&                       context,
+    ::RemoveFromLeashedEntitiesRequestComponent const& removeFromLeashedEntitiesRequestComponent,
+    ::LeashedEntitiesComponent&                        leashedEntitiesComponent,
+    ::EntityModifier<::LeashedEntitiesComponent>&      leashedEntitiesComponentModifier
+);
 
-MCNAPI void tickView(::ViewT<::StrictEntityContext, ::RemoveFromLeashedEntitiesRequestComponent const, ::LeashedEntitiesComponent> view, ::EntityModifier<::LeashedEntitiesComponent> leashedEntitiesComponentModifier);
+MCNAPI void tickView(
+    ::ViewT<::StrictEntityContext, ::RemoveFromLeashedEntitiesRequestComponent const, ::LeashedEntitiesComponent> view,
+    ::EntityModifier<::LeashedEntitiesComponent> leashedEntitiesComponentModifier
+);
 // NOLINTEND
 
-}
+} // namespace HandleRemoveFromLeashedEntitiesRequestSystem

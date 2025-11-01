@@ -17,14 +17,14 @@ class SendEventGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mCaster;
-    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mTarget;
+    ::ll::TypedStorage<8, 8, ::Mob&>                          mCaster;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>            mTarget;
     ::ll::TypedStorage<8, 24, ::std::vector<::SendEventData>> mSpells;
-    ::ll::TypedStorage<4, 4, int> mCurrentTick;
-    ::ll::TypedStorage<4, 4, int> mCastTicksRemaining;
-    ::ll::TypedStorage<4, 4, int> mCurrentSpellIndex;
-    ::ll::TypedStorage<4, 4, int> mCurrentSpellStage;
-    ::ll::TypedStorage<8, 8, uint64> mCooldownStopTick;
+    ::ll::TypedStorage<4, 4, int>                             mCurrentTick;
+    ::ll::TypedStorage<4, 4, int>                             mCastTicksRemaining;
+    ::ll::TypedStorage<4, 4, int>                             mCurrentSpellIndex;
+    ::ll::TypedStorage<4, 4, int>                             mCurrentSpellStage;
+    ::ll::TypedStorage<8, 8, uint64>                          mCooldownStopTick;
     // NOLINTEND
 
 public:
@@ -91,5 +91,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

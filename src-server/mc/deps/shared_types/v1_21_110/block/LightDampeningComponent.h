@@ -22,7 +22,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& NameId();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_110::BlockDefinition

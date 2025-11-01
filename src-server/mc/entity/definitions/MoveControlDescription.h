@@ -38,5 +38,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $deserializeData(::DeserializeDataParams deserializeDataParams);
     // NOLINTEND
-
 };

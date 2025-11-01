@@ -18,7 +18,6 @@ public:
     GoogCcFactoryConfig& operator=(GoogCcFactoryConfig const&);
     GoogCcFactoryConfig(GoogCcFactoryConfig const&);
     GoogCcFactoryConfig();
-
 };
 
-}
+} // namespace webrtc

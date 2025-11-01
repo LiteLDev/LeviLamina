@@ -16,7 +16,6 @@ public:
     ScriptCustomComponentParameterCacheHandle& operator=(ScriptCustomComponentParameterCacheHandle const&);
     ScriptCustomComponentParameterCacheHandle(ScriptCustomComponentParameterCacheHandle const&);
     ScriptCustomComponentParameterCacheHandle();
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

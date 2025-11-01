@@ -8,7 +8,7 @@ class ScopedLoadTimeSection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk8f5ef2;
+    ::ll::UntypedStorage<8, 8>  mUnk8f5ef2;
     ::ll::UntypedStorage<8, 48> mUnk517b73;
     // NOLINTEND
 
@@ -17,7 +17,6 @@ public:
     ScopedLoadTimeSection& operator=(ScopedLoadTimeSection const&);
     ScopedLoadTimeSection(ScopedLoadTimeSection const&);
     ScopedLoadTimeSection();
-
 };
 
-}
+} // namespace Core

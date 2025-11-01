@@ -15,9 +15,9 @@ class RemoveActorPacket : public ::SerializedPayloadPacket<::RemoveActorPacketIn
 public:
     // RemoveActorPacket inner types define
     using PayloadType = ::RemoveActorPacketPayload;
-    
+
     using PacketInfo = ::RemoveActorPacketInfo;
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

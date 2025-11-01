@@ -12,7 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mFeatureName;
-    ::ll::TypedStorage<8, 8, ::IFeature*> mFeature;
+    ::ll::TypedStorage<8, 8, ::IFeature*>    mFeature;
     // NOLINTEND
 
 public:
@@ -26,5 +26,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

@@ -8,4 +8,4 @@ namespace SlotDropChancesComponentInternal {
 MCAPI ::std::string const& TAG_KEY();
 // NOLINTEND
 
-}
+} // namespace SlotDropChancesComponentInternal

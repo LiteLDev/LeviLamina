@@ -17,10 +17,10 @@ class FlatFile : public ::Core::FileImpl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkc183e8;
+    ::ll::UntypedStorage<8, 8>  mUnkc183e8;
     ::ll::UntypedStorage<8, 32> mUnkb8624e;
-    ::ll::UntypedStorage<8, 8> mUnk4bee19;
-    ::ll::UntypedStorage<8, 8> mUnk7e387d;
+    ::ll::UntypedStorage<8, 8>  mUnk4bee19;
+    ::ll::UntypedStorage<8, 8>  mUnk7e387d;
     // NOLINTEND
 
 public:
@@ -57,7 +57,8 @@ public:
     virtual ::Core::Result _skip(uint64 numBytes) /*override*/;
 
     // vIndex: 8
-    virtual ::Core::Result _readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead) /*override*/;
+    virtual ::Core::Result
+    _readAtPosition(uint64 position, void* pBuf, uint64 numBytes, uint64* pNumBytesRead) /*override*/;
 
     // vIndex: 9
     virtual ::Core::Result _getPosition(uint64* pPosition) /*override*/;
@@ -121,7 +122,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

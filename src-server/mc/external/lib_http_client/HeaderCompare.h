@@ -13,7 +13,6 @@ public:
     // NOLINTBEGIN
     MCNAPI bool operator()(::http_string const& l, ::http_string const& r) const;
     // NOLINTEND
-
 };
 
-}
+} // namespace xbox::httpclient

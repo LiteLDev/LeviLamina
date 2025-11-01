@@ -4,7 +4,6 @@
 
 namespace rtc::internal {
 
-class RaceCheckerScopeDoNothing {
-};
+class RaceCheckerScopeDoNothing {};
 
-}
+} // namespace rtc::internal

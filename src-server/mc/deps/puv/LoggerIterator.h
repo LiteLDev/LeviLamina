@@ -4,8 +4,7 @@
 
 namespace Puv {
 
-template<typename T0>
-class LoggerIterator {
-};
+template <typename T0>
+class LoggerIterator {};
 
-}
+} // namespace Puv

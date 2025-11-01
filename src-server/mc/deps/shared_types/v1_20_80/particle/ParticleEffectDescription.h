@@ -26,7 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_80::ParticleEffectDescription& operator=(::SharedTypes::v1_20_80::ParticleEffectDescription&&);
+    MCNAPI ::SharedTypes::v1_20_80::ParticleEffectDescription&
+    operator=(::SharedTypes::v1_20_80::ParticleEffectDescription&&);
 
     MCNAPI ~ParticleEffectDescription();
     // NOLINTEND
@@ -42,7 +43,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

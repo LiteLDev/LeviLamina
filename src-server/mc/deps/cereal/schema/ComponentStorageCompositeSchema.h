@@ -22,10 +22,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6
-    virtual void doLoad(::cereal::SchemaReader& reader, ::entt::meta_any& any, ::entt::meta_any const& udata, ::cereal::internal::LoadState const& state) const /*override*/;
+    virtual void doLoad(
+        ::cereal::SchemaReader&              reader,
+        ::entt::meta_any&                    any,
+        ::entt::meta_any const&              udata,
+        ::cereal::internal::LoadState const& state
+    ) const /*override*/;
 
     // vIndex: 7
-    virtual void doSave(::cereal::SchemaWriter& writer, ::entt::meta_any const& any, ::cereal::internal::SaveState const& state) const /*override*/;
+    virtual void doSave(
+        ::cereal::SchemaWriter&              writer,
+        ::entt::meta_any const&              any,
+        ::cereal::internal::SaveState const& state
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~ComponentStorageCompositeSchema() /*override*/ = default;
@@ -34,23 +43,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::cereal::SchemaDescription makeDescriptionForComponents(::entt::meta_ctx const& ctx, ::entt::meta_type const& type, ::cereal::internal::BasicSchema::DescriptionMode mode) const;
+    MCNAPI ::cereal::SchemaDescription makeDescriptionForComponents(
+        ::entt::meta_ctx const&                          ctx,
+        ::entt::meta_type const&                         type,
+        ::cereal::internal::BasicSchema::DescriptionMode mode
+    ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::entt::meta_data findComponentData(::entt::meta_type const& type, uint componentId, bool serializeDeprecated);
+    MCNAPI static ::entt::meta_data
+    findComponentData(::entt::meta_type const& type, uint componentId, bool serializeDeprecated);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $doLoad(::cereal::SchemaReader& reader, ::entt::meta_any& any, ::entt::meta_any const& udata, ::cereal::internal::LoadState const& state) const;
+    MCNAPI void $doLoad(
+        ::cereal::SchemaReader&              reader,
+        ::entt::meta_any&                    any,
+        ::entt::meta_any const&              udata,
+        ::cereal::internal::LoadState const& state
+    ) const;
 
-    MCNAPI void $doSave(::cereal::SchemaWriter& writer, ::entt::meta_any const& any, ::cereal::internal::SaveState const& state) const;
+    MCNAPI void $doSave(
+        ::cereal::SchemaWriter&              writer,
+        ::entt::meta_any const&              any,
+        ::cereal::internal::SaveState const& state
+    ) const;
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal::internal

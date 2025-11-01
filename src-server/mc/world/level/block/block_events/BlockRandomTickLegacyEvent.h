@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::BlockSource&> mRegion;
-    ::ll::TypedStorage<8, 8, ::Random&> mRandom;
+    ::ll::TypedStorage<8, 8, ::Random&>      mRandom;
     // NOLINTEND
 
 public:
@@ -54,7 +54,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockEvents

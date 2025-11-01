@@ -29,7 +29,8 @@ public:
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     // vIndex: 57
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
+        /*override*/;
 
     // vIndex: 111
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
@@ -57,7 +58,8 @@ public:
     // NOLINTBEGIN
     MCAPI static void _addToRandomTickingQueue(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static void _spawnParticles(::SharedTypes::Legacy::LevelEvent particleEvent, ::BlockSource& region, ::BlockPos const& pos);
+    MCAPI static void
+    _spawnParticles(::SharedTypes::Legacy::LevelEvent particleEvent, ::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -81,5 +83,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

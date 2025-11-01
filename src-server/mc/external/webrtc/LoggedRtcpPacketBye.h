@@ -8,7 +8,7 @@ struct LoggedRtcpPacketBye {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk223cb8;
+    ::ll::UntypedStorage<8, 8>  mUnk223cb8;
     ::ll::UntypedStorage<8, 72> mUnk82ad7f;
     // NOLINTEND
 
@@ -17,7 +17,6 @@ public:
     LoggedRtcpPacketBye& operator=(LoggedRtcpPacketBye const&);
     LoggedRtcpPacketBye(LoggedRtcpPacketBye const&);
     LoggedRtcpPacketBye();
-
 };
 
-}
+} // namespace webrtc

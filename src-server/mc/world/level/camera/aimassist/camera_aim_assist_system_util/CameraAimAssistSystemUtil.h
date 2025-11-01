@@ -22,9 +22,23 @@ namespace CameraAimAssistSystemUtil {
 // NOLINTBEGIN
 MCNAPI void clearAimAssistForServerPlayer(::ServerPlayer& player);
 
-MCNAPI ::std::optional<::CameraAimAssistPacketPayload::TargetMode> getPacketTargetMode(::CameraAimAssist::TargetMode targetMode);
+MCNAPI ::std::optional<::CameraAimAssistPacketPayload::TargetMode>
+getPacketTargetMode(::CameraAimAssist::TargetMode targetMode);
 
-MCNAPI ::Bedrock::Result<void, ::std::variant<::CameraAimAssistErrorType::UnknownPresetId, ::CameraAimAssistErrorType::UnknownCategoryId, ::CameraAimAssistErrorType::MissingDependencies>> setAimAssistForServerPlayer(::ServerPlayer& player, ::HashedString const& presetId, ::CameraAimAssist::TargetMode targetMode, ::Vec2 const& viewAngle, float distance, bool showDebugRender);
+MCNAPI ::Bedrock::Result<
+    void,
+    ::std::variant<
+        ::CameraAimAssistErrorType::UnknownPresetId,
+        ::CameraAimAssistErrorType::UnknownCategoryId,
+        ::CameraAimAssistErrorType::MissingDependencies>>
+setAimAssistForServerPlayer(
+    ::ServerPlayer&               player,
+    ::HashedString const&         presetId,
+    ::CameraAimAssist::TargetMode targetMode,
+    ::Vec2 const&                 viewAngle,
+    float                         distance,
+    bool                          showDebugRender
+);
 // NOLINTEND
 
-}
+} // namespace CameraAimAssistSystemUtil

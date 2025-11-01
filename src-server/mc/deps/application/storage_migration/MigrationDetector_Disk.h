@@ -22,7 +22,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk195b5b;
     ::ll::UntypedStorage<8, 16> mUnk1689de;
     ::ll::UntypedStorage<8, 16> mUnke0be58;
-    ::ll::UntypedStorage<1, 1> mUnk86b830;
+    ::ll::UntypedStorage<1, 1>  mUnk86b830;
     // NOLINTEND
 
 public:
@@ -49,7 +49,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::StorageMigration

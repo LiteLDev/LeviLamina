@@ -2,5 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ScopedAutoreleasePool {
-};
+class ScopedAutoreleasePool {};

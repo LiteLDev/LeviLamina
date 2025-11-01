@@ -42,7 +42,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace RideableComponentHelpers

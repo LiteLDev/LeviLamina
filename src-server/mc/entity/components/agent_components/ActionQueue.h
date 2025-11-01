@@ -16,11 +16,10 @@ public:
     // clang-format off
     class Definition;
     // clang-format on
-    
+
     // ActionQueue inner types define
-    class Definition {
-    };
-    
+    class Definition {};
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -44,7 +43,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void schedule(::EntityContext& entity, ::AgentComponents::Actions::QueueItem item);
     // NOLINTEND
-
 };
 
-}
+} // namespace AgentComponents

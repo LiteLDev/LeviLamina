@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::FurnaceContainerManagerModel>> mFurnaceContainerManagerModel;
-    ::ll::TypedStorage<1, 1, ::ContainerEnumName const> mIngredientName;
+    ::ll::TypedStorage<1, 1, ::ContainerEnumName const>                        mIngredientName;
     // NOLINTEND
 
 public:
@@ -43,5 +43,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

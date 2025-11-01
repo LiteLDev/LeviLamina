@@ -15,7 +15,7 @@ class DisplayObjective {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Objective const*> mObjective;
+    ::ll::TypedStorage<8, 8, ::Objective const*>   mObjective;
     ::ll::TypedStorage<1, 1, ::ObjectiveSortOrder> mSortOrder;
     // NOLINTEND
 
@@ -24,5 +24,4 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string const getBelowNameStringForId(::ScoreboardId const& scoreboardId) const;
     // NOLINTEND
-
 };

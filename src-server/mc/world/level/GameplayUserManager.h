@@ -23,20 +23,20 @@ class GameplayUserManager : public ::IGameplayUserManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkc721ae;
-    ::ll::UntypedStorage<8, 24> mUnk9fd09f;
-    ::ll::UntypedStorage<8, 24> mUnk6fd064;
-    ::ll::UntypedStorage<8, 24> mUnk3bf0f4;
+    ::ll::UntypedStorage<8, 24>  mUnkc721ae;
+    ::ll::UntypedStorage<8, 24>  mUnk9fd09f;
+    ::ll::UntypedStorage<8, 24>  mUnk6fd064;
+    ::ll::UntypedStorage<8, 24>  mUnk3bf0f4;
     ::ll::UntypedStorage<8, 128> mUnk23e74c;
     ::ll::UntypedStorage<8, 128> mUnk43ee2f;
     ::ll::UntypedStorage<8, 128> mUnkc38a56;
     ::ll::UntypedStorage<8, 128> mUnk4e383a;
     ::ll::UntypedStorage<8, 128> mUnk42962d;
     ::ll::UntypedStorage<8, 128> mUnk14c0db;
-    ::ll::UntypedStorage<8, 16> mUnk123f52;
-    ::ll::UntypedStorage<8, 16> mUnkb8339f;
-    ::ll::UntypedStorage<8, 16> mUnke29cfe;
-    ::ll::UntypedStorage<8, 8> mUnkd3857d;
+    ::ll::UntypedStorage<8, 16>  mUnk123f52;
+    ::ll::UntypedStorage<8, 16>  mUnkb8339f;
+    ::ll::UntypedStorage<8, 16>  mUnke29cfe;
+    ::ll::UntypedStorage<8, 8>   mUnkd3857d;
     // NOLINTEND
 
 public:
@@ -58,7 +58,8 @@ public:
     virtual ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& getGameplayUserResumedConnector() /*override*/;
 
     // vIndex: 2
-    virtual ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& getGameplayUserSuspendedConnector() /*override*/;
+    virtual ::Bedrock::PubSub::Connector<void(::EntityContext const&)>&
+    getGameplayUserSuspendedConnector() /*override*/;
 
     // vIndex: 3
     virtual ::Bedrock::PubSub::Connector<void(::Player const&)>& getPlayerRenamedConnector() /*override*/;
@@ -141,5 +142,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

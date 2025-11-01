@@ -17,4 +17,4 @@ MCNAPI ::Scripting::Error getPropertyError(::std::string_view propertyName);
 MCNAPI ::Scripting::Error setPropertyError(::std::string_view propertyName);
 // NOLINTEND
 
-}
+} // namespace ScriptUtils

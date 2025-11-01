@@ -16,11 +16,11 @@ struct FeatureRootParseContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::std::string>> mFeatureName;
-    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::IWorldRegistriesProvider>> mRegistryProvider;
-    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::ResourcePackManager const>> mPackManager;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::std::string>>                    mFeatureName;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::IWorldRegistriesProvider>>       mRegistryProvider;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::ResourcePackManager const>>      mPackManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FeatureLoading::AbstractFeatureHolder>> mFeatureHolder;
-    ::ll::TypedStorage<8, 8, ::IFeature*> mFeature;
+    ::ll::TypedStorage<8, 8, ::IFeature*>                                                mFeature;
     // NOLINTEND
 
 public:
@@ -34,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace FeatureLoading

@@ -4,8 +4,7 @@
 
 namespace sigslot {
 
-template<typename T0>
-class has_slots {
-};
+template <typename T0>
+class has_slots {};
 
-}
+} // namespace sigslot

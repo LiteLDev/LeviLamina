@@ -15,7 +15,8 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockPrecipitationInteractionsComponent : public ::ScriptModuleMinecraft::BaseScriptBlockDefinitionalComponent {
+class ScriptBlockPrecipitationInteractionsComponent
+: public ::ScriptModuleMinecraft::BaseScriptBlockDefinitionalComponent {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -26,9 +27,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> accumulatesSnow() const;
+    MCNAPI ::Scripting::Result<
+        bool,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    accumulatesSnow() const;
 
-    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> obstructsRain() const;
+    MCNAPI ::Scripting::Result<
+        bool,
+        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
+        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
+    obstructsRain() const;
     // NOLINTEND
 
 public:
@@ -48,7 +57,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

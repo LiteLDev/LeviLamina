@@ -13,4 +13,4 @@ namespace ActorPermission {
 MCNAPI void initialize(::EntityContext& provider);
 // NOLINTEND
 
-}
+} // namespace ActorPermission

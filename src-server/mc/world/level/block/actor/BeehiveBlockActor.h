@@ -22,40 +22,39 @@ public:
     // clang-format off
     struct Occupant;
     // clang-format on
-    
+
     // BeehiveBlockActor inner types define
     struct Occupant {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mActorIdentifier;
-        ::ll::TypedStorage<8, 24, ::CompoundTag> mSaveData;
-        ::ll::TypedStorage<4, 4, uint> mTicksLeftToStay;
+        ::ll::TypedStorage<8, 24, ::CompoundTag>                mSaveData;
+        ::ll::TypedStorage<4, 4, uint>                          mTicksLeftToStay;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Occupant();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI Occupant(::ActorDefinitionIdentifier actorIdentifier, ::CompoundTag saveData, uint ticksLeftToStay);
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::ActorDefinitionIdentifier actorIdentifier, ::CompoundTag saveData, uint ticksLeftToStay);
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::BeehiveBlockActor::Occupant>> mOccupants;
-    ::ll::TypedStorage<1, 1, bool> mShouldSpawnBees;
+    ::ll::TypedStorage<1, 1, bool>                                          mShouldSpawnBees;
     // NOLINTEND
 
 public:
@@ -111,5 +110,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

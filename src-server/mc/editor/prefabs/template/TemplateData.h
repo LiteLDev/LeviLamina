@@ -24,9 +24,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData& operator=(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData const&);
+    MCNAPI ::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData&
+    operator=(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData const&);
 
-    MCNAPI ::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData& operator=(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData&&);
+    MCNAPI ::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData&
+    operator=(::Editor::Prefabs::PrefabDBTemplateLoader::v1::TemplateData&&);
 
     MCNAPI ~TemplateData();
     // NOLINTEND
@@ -36,7 +38,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Prefabs::PrefabDBTemplateLoader::v1

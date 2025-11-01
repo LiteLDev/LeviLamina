@@ -14,5 +14,4 @@ public:
     WireframeQueue& operator=(WireframeQueue const&);
     WireframeQueue(WireframeQueue const&);
     WireframeQueue();
-
 };

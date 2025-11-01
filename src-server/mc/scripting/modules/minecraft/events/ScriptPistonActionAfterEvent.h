@@ -21,7 +21,8 @@ struct ScriptPistonActionAfterEvent : public ::ScriptModuleMinecraft::ScriptBloc
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent>> mPiston;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent>>
+                                   mPiston;
     ::ll::TypedStorage<1, 1, bool> mIsExpanding;
     // NOLINTEND
 
@@ -32,7 +33,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPistonActionAfterEvent(::PistonActionEvent const& pistonActionEvent, ::BlockSourceHandle& blockSourceHandle, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent> piston, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptPistonActionAfterEvent(
+        ::PistonActionEvent const&                                                                pistonActionEvent,
+        ::BlockSourceHandle&                                                                      blockSourceHandle,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent> piston,
+        ::Scripting::WeakLifetimeScope const&                                                     scope
+    );
     // NOLINTEND
 
 public:
@@ -44,9 +50,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PistonActionEvent const& pistonActionEvent, ::BlockSourceHandle& blockSourceHandle, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent> piston, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI void* $ctor(
+        ::PistonActionEvent const&                                                                pistonActionEvent,
+        ::BlockSourceHandle&                                                                      blockSourceHandle,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent> piston,
+        ::Scripting::WeakLifetimeScope const&                                                     scope
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

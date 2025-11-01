@@ -21,22 +21,22 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk2dfd6e;
     ::ll::UntypedStorage<8, 48> mUnk76b8b7;
-    ::ll::UntypedStorage<8, 8> mUnk4726cc;
-    ::ll::UntypedStorage<8, 8> mUnkf0926e;
+    ::ll::UntypedStorage<8, 8>  mUnk4726cc;
+    ::ll::UntypedStorage<8, 8>  mUnkf0926e;
     ::ll::UntypedStorage<8, 32> mUnkd76b9c;
     ::ll::UntypedStorage<8, 32> mUnk60ca47;
     ::ll::UntypedStorage<4, 32> mUnke2612e;
-    ::ll::UntypedStorage<4, 4> mUnk2ee3f0;
+    ::ll::UntypedStorage<4, 4>  mUnk2ee3f0;
     ::ll::UntypedStorage<8, 32> mUnkdfe543;
     ::ll::UntypedStorage<8, 24> mUnk2ac563;
-    ::ll::UntypedStorage<4, 4> mUnkdc5778;
-    ::ll::UntypedStorage<1, 1> mUnk44d2a9;
-    ::ll::UntypedStorage<4, 4> mUnka99825;
-    ::ll::UntypedStorage<4, 4> mUnkf929bb;
-    ::ll::UntypedStorage<4, 4> mUnk9a3926;
-    ::ll::UntypedStorage<1, 1> mUnk3e1bdb;
-    ::ll::UntypedStorage<2, 2> mUnkfd3be7;
-    ::ll::UntypedStorage<4, 4> mUnk3e48ba;
+    ::ll::UntypedStorage<4, 4>  mUnkdc5778;
+    ::ll::UntypedStorage<1, 1>  mUnk44d2a9;
+    ::ll::UntypedStorage<4, 4>  mUnka99825;
+    ::ll::UntypedStorage<4, 4>  mUnkf929bb;
+    ::ll::UntypedStorage<4, 4>  mUnk9a3926;
+    ::ll::UntypedStorage<1, 1>  mUnk3e1bdb;
+    ::ll::UntypedStorage<2, 2>  mUnkfd3be7;
+    ::ll::UntypedStorage<4, 4>  mUnk3e48ba;
     // NOLINTEND
 
 public:
@@ -54,7 +54,13 @@ public:
 
     MCNAPI ::webrtc::MdnsResponderInterface* GetMdnsResponder() const;
 
-    MCNAPI Network(::std::string_view name, ::std::string_view desc, ::rtc::IPAddress const& prefix, int prefix_length, ::rtc::AdapterType type);
+    MCNAPI Network(
+        ::std::string_view      name,
+        ::std::string_view      desc,
+        ::rtc::IPAddress const& prefix,
+        int                     prefix_length,
+        ::rtc::AdapterType      type
+    );
 
     MCNAPI bool SetIPs(::std::vector<::rtc::InterfaceAddress> const& ips, bool changed);
 
@@ -72,7 +78,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view name, ::std::string_view desc, ::rtc::IPAddress const& prefix, int prefix_length, ::rtc::AdapterType type);
+    MCNAPI void* $ctor(
+        ::std::string_view      name,
+        ::std::string_view      desc,
+        ::rtc::IPAddress const& prefix,
+        int                     prefix_length,
+        ::rtc::AdapterType      type
+    );
     // NOLINTEND
 
 public:
@@ -80,7 +92,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

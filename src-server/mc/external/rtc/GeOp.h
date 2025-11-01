@@ -4,7 +4,6 @@
 
 namespace rtc::safe_cmp_impl {
 
-struct GeOp {
-};
+struct GeOp {};
 
-}
+} // namespace rtc::safe_cmp_impl

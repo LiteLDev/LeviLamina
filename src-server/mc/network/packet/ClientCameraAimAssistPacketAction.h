@@ -4,6 +4,6 @@
 
 enum class ClientCameraAimAssistPacketAction : uchar {
     SetFromCameraPreset = 0,
-    Clear = 1,
-    Count = 2,
+    Clear               = 1,
+    Count               = 2,
 };

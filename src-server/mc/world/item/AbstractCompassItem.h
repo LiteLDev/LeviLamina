@@ -17,21 +17,22 @@ struct ResolvedItemIconInfo;
 class AbstractCompassItem : public ::Item {
 public:
     // AbstractCompassItem inner types define
-    using GetSpriteCalculatorFunction = ::CompassSpriteCalculator(*) (::Mob&);
-    
+    using GetSpriteCalculatorFunction = ::CompassSpriteCalculator (*)(::Mob&);
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mAtlasWidth;
-    ::ll::TypedStorage<4, 4, int> mAtlasHeight;
-    ::ll::TypedStorage<8, 8, ::CompassSpriteCalculator(*) (::Mob&)> mGetSpriteCalculator;
+    ::ll::TypedStorage<4, 4, int>                                   mAtlasWidth;
+    ::ll::TypedStorage<4, 4, int>                                   mAtlasHeight;
+    ::ll::TypedStorage<8, 8, ::CompassSpriteCalculator (*)(::Mob&)> mGetSpriteCalculator;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 111
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+    virtual ::ResolvedItemIconInfo
+    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     // vIndex: 113
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const /*override*/;
@@ -46,11 +47,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCAPI ::ResolvedItemIconInfo
+    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const;
 
     MCAPI int $getEnchantSlot() const;
     // NOLINTEND
-
 };

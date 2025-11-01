@@ -11,7 +11,6 @@ public:
     // vIndex: 0
     virtual ~ServerPrefabPlayerServiceProvider() = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Prefabs

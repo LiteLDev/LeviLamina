@@ -29,5 +29,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::OwnerPtr<::UniqueIDManager> setupUniqueIDManager(::LevelData& levelData, bool isClientSide);
     // NOLINTEND
-
 };

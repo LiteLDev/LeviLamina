@@ -11,7 +11,8 @@ struct VibrationListenerComponent;
 namespace VibrationListenerSystemInternal {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::VibrationListenerComponent& vibrationListenerComponent);
+MCNAPI void
+tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::VibrationListenerComponent& vibrationListenerComponent);
 // NOLINTEND
 
-}
+} // namespace VibrationListenerSystemInternal

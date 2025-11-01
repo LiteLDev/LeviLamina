@@ -15,4 +15,4 @@ MCNAPI void bindHelpers(::cereal::ReflectionCtx& ctx);
 MCNAPI void bindNetworPayloadTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-}
+} // namespace Editor::CerealHelpers

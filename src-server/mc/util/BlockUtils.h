@@ -29,4 +29,4 @@ MCAPI bool isLiquidSource(::Block const& block);
 MCAPI bool isWaterSource(::Block const& block);
 // NOLINTEND
 
-}
+} // namespace BlockUtils

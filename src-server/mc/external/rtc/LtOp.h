@@ -4,7 +4,6 @@
 
 namespace rtc::safe_cmp_impl {
 
-struct LtOp {
-};
+struct LtOp {};
 
-}
+} // namespace rtc::safe_cmp_impl

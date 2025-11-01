@@ -25,5 +25,4 @@ public:
 
     MCNAPI void nameEntity(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
     // NOLINTEND
-
 };

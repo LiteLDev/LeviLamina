@@ -7,8 +7,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 128> mUnkdfe4c8;
-    ::ll::UntypedStorage<4, 4> mUnkc9b0f5;
-    ::ll::UntypedStorage<8, 32> mUnk14079b;
+    ::ll::UntypedStorage<4, 4>   mUnkc9b0f5;
+    ::ll::UntypedStorage<8, 32>  mUnk14079b;
     // NOLINTEND
 
 public:
@@ -16,5 +16,4 @@ public:
     ExpandoModelElement& operator=(ExpandoModelElement const&);
     ExpandoModelElement(ExpandoModelElement const&);
     ExpandoModelElement();
-
 };

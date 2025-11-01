@@ -23,54 +23,57 @@ public:
     // clang-format off
     class Definition;
     // clang-format on
-    
+
     // GoAndGiveItemsToOwnerGoal inner types define
     class Definition : public ::BaseGoalDefinition {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float> mRunSpeed;
-        ::ll::TypedStorage<4, 4, float> mReachMobDistance;
-        ::ll::TypedStorage<4, 4, float> mThrowForce;
-        ::ll::TypedStorage<4, 4, float> mVerticalThrowMul;
-        ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mThrowSound;
+        ::ll::TypedStorage<4, 4, float>                                    mRunSpeed;
+        ::ll::TypedStorage<4, 4, float>                                    mReachMobDistance;
+        ::ll::TypedStorage<4, 4, float>                                    mThrowForce;
+        ::ll::TypedStorage<4, 4, float>                                    mVerticalThrowMul;
+        ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>   mThrowSound;
         ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mOnItemThrowTriggers;
         // NOLINTEND
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
         // NOLINTEND
-    
+
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoAndGiveItemsToOwnerGoal::Definition>>& root);
+        MCAPI static void buildSchema(
+            ::std::string const& name,
+            ::std::shared_ptr<
+                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoAndGiveItemsToOwnerGoal::Definition>>& root
+        );
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
     enum class State : int {
         GoToOwner = 0,
-        Done = 1,
+        Done      = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                   mMob;
     ::ll::TypedStorage<8, 64, ::GoAndGiveItemsToOwnerGoal::Definition> mDefinition;
-    ::ll::TypedStorage<4, 4, ::GoAndGiveItemsToOwnerGoal::State> mState;
-    ::ll::TypedStorage<8, 8, ::Tick> mLastPathCalculationTick;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
+    ::ll::TypedStorage<4, 4, ::GoAndGiveItemsToOwnerGoal::State>       mState;
+    ::ll::TypedStorage<8, 8, ::Tick>                                   mLastPathCalculationTick;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>                mPath;
     // NOLINTEND
 
 public:
@@ -137,5 +140,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

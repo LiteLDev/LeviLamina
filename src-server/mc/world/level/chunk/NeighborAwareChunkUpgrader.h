@@ -19,10 +19,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::NeighborAwareBlockUpdateType getUpdateType(::Block const& block, ::NeighborAwareBlockUpgradeVersionType neighborAwareUpgradeVersion) const /*override*/;
+    virtual ::NeighborAwareBlockUpdateType
+    getUpdateType(::Block const& block, ::NeighborAwareBlockUpgradeVersionType neighborAwareUpgradeVersion) const
+        /*override*/;
 
     // vIndex: 2
-    virtual void doLevelChunkNeighborAwareUpgrade(::NeighborAwareBlockUpdateType updateType, ::BlockSource& region, ::Block const& block, ::BlockPos const& blockPos) const /*override*/;
+    virtual void doLevelChunkNeighborAwareUpgrade(
+        ::NeighborAwareBlockUpdateType updateType,
+        ::BlockSource&                 region,
+        ::Block const&                 block,
+        ::BlockPos const&              blockPos
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~NeighborAwareChunkUpgrader() /*override*/;
@@ -37,9 +44,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::NeighborAwareBlockUpdateType $getUpdateType(::Block const& block, ::NeighborAwareBlockUpgradeVersionType neighborAwareUpgradeVersion) const;
+    MCNAPI ::NeighborAwareBlockUpdateType
+    $getUpdateType(::Block const& block, ::NeighborAwareBlockUpgradeVersionType neighborAwareUpgradeVersion) const;
 
-    MCNAPI void $doLevelChunkNeighborAwareUpgrade(::NeighborAwareBlockUpdateType updateType, ::BlockSource& region, ::Block const& block, ::BlockPos const& blockPos) const;
+    MCNAPI void $doLevelChunkNeighborAwareUpgrade(
+        ::NeighborAwareBlockUpdateType updateType,
+        ::BlockSource&                 region,
+        ::Block const&                 block,
+        ::BlockPos const&              blockPos
+    ) const;
     // NOLINTEND
 
 public:
@@ -47,5 +60,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

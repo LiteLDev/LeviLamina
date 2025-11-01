@@ -17,15 +17,20 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptBlockCustomComponentEntityFallOnAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent, public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
+struct ScriptBlockCustomComponentEntityFallOnAfterEvent
+: public ::ScriptModuleMinecraft::ScriptBlockEvent,
+  public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
 public:
     // ScriptBlockCustomComponentEntityFallOnAfterEvent inner types define
-    using IntermediateStorage = ::ScriptModuleMinecraft::ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage;
-    
+    using IntermediateStorage =
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> mEntity;
+    ::ll::
+        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+                                          mEntity;
     ::ll::TypedStorage<4, 4, float const> mFallDistance;
     // NOLINTEND
 
@@ -36,7 +41,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentEntityFallOnAfterEvent(::ScriptModuleMinecraft::ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage const& eventData, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptBlockCustomComponentEntityFallOnAfterEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                               scope
+    );
     // NOLINTEND
 
 public:
@@ -48,9 +56,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage const& eventData, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI void* $ctor(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage const& eventData,
+        ::Scripting::WeakLifetimeScope const&                                                               scope
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

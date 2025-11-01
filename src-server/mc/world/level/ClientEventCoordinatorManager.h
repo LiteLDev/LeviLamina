@@ -19,9 +19,12 @@ class ClientEventCoordinatorManager : public ::EventCoordinatorManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ClientLevelEventCoordinator>>> mClientLevelEventCoordinator;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::PlayerEventCoordinator>>> mRemotePlayerEventCoordinator;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ClientPlayerEventCoordinator>>> mClientPlayerEventCoordinator;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ClientLevelEventCoordinator>>>
+        mClientLevelEventCoordinator;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::PlayerEventCoordinator>>>
+        mRemotePlayerEventCoordinator;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ClientPlayerEventCoordinator>>>
+        mClientPlayerEventCoordinator;
     // NOLINTEND
 
 public:
@@ -67,5 +70,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

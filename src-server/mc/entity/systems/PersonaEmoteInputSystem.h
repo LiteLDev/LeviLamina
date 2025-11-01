@@ -21,11 +21,24 @@ class PersonaEmoteInputSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _personaEmoteInputSystem(::StrictEntityContext const& entity, ::EventingDispatcherComponent const& eventingDispatcherComponent, ::EmotePlayedTelemetryDataComponent const& emotePlayedTelemetryDataComponent, ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView, ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier);
+    MCNAPI static void _personaEmoteInputSystem(
+        ::StrictEntityContext const&                                    entity,
+        ::EventingDispatcherComponent const&                            eventingDispatcherComponent,
+        ::EmotePlayedTelemetryDataComponent const&                      emotePlayedTelemetryDataComponent,
+        ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView,
+        ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier
+    );
 
-    MCNAPI static void _tickPersonaEmoteInputSystem(::ViewT<::StrictEntityContext, ::Include<::ShouldStopEmotingRequestComponent>, ::EventingDispatcherComponent const, ::EmotePlayedTelemetryDataComponent const> view, ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent> requestQueueView, ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier);
+    MCNAPI static void _tickPersonaEmoteInputSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ShouldStopEmotingRequestComponent>,
+            ::EventingDispatcherComponent const,
+            ::EmotePlayedTelemetryDataComponent const>                                             view,
+        ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent>                            requestQueueView,
+        ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> modifier
+    );
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
-
 };

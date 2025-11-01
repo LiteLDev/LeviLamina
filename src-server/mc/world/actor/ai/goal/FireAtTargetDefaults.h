@@ -13,4 +13,4 @@ namespace FireAtTargetDefaults {
 MCAPI ::Vec3 const& OFFSET();
 // NOLINTEND
 
-}
+} // namespace FireAtTargetDefaults

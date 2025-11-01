@@ -12,4 +12,4 @@ MCNAPI ::std::string const& SuiteDefault();
 MCNAPI ::std::string const& SuiteDisabled();
 // NOLINTEND
 
-}
+} // namespace gametest::tags

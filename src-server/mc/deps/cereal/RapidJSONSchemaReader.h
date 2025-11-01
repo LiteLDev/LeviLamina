@@ -15,7 +15,7 @@ public:
     // clang-format off
     struct State;
     // clang-format on
-    
+
     // RapidJSONSchemaReader inner types define
     struct State {
     public:
@@ -24,15 +24,14 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk616037;
         ::ll::UntypedStorage<8, 8> mUnkc13d3e;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         State& operator=(State const&);
         State(State const&);
         State();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -127,7 +126,11 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit RapidJSONSchemaReader(::std::string const& data);
 
-    MCNAPI explicit RapidJSONSchemaReader(::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value);
+    MCNAPI explicit RapidJSONSchemaReader(
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+    );
     // NOLINTEND
 
 public:
@@ -135,7 +138,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string const& data);
 
-    MCNAPI void* $ctor(::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value);
+    MCNAPI void* $ctor(
+        ::rapidjson::GenericValue<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
+    );
     // NOLINTEND
 
 public:
@@ -199,7 +206,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal

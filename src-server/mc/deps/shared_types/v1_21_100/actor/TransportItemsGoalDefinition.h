@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/versionless/actor/BaseGoalDefinition.h"
+#include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -18,29 +18,29 @@ public:
     // TransportItemsGoalDefinition inner types define
     enum class SearchStrategy : int {
         Nearest = 0,
-        Random = 1,
+        Random  = 1,
     };
-    
+
     enum class PlaceStrategy : int {
-        Any = 0,
-        WithMatching = 1,
+        Any                 = 0,
+        WithMatching        = 1,
         WithMatchingOrEmpty = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkf89a5b;
     ::ll::UntypedStorage<8, 24> mUnk1aea4a;
-    ::ll::UntypedStorage<4, 4> mUnkfc48cb;
-    ::ll::UntypedStorage<4, 4> mUnk1a3881;
-    ::ll::UntypedStorage<1, 1> mUnk8bb02d;
-    ::ll::UntypedStorage<4, 4> mUnk42aeb8;
-    ::ll::UntypedStorage<4, 8> mUnkf08f48;
-    ::ll::UntypedStorage<4, 4> mUnkbd2c3e;
-    ::ll::UntypedStorage<4, 4> mUnk8d6e39;
-    ::ll::UntypedStorage<4, 4> mUnkd7b3cb;
-    ::ll::UntypedStorage<4, 4> mUnk43df3e;
+    ::ll::UntypedStorage<4, 4>  mUnkfc48cb;
+    ::ll::UntypedStorage<4, 4>  mUnk1a3881;
+    ::ll::UntypedStorage<1, 1>  mUnk8bb02d;
+    ::ll::UntypedStorage<4, 4>  mUnk42aeb8;
+    ::ll::UntypedStorage<4, 8>  mUnkf08f48;
+    ::ll::UntypedStorage<4, 4>  mUnkbd2c3e;
+    ::ll::UntypedStorage<4, 4>  mUnk8d6e39;
+    ::ll::UntypedStorage<4, 4>  mUnkd7b3cb;
+    ::ll::UntypedStorage<4, 4>  mUnk43df3e;
     ::ll::UntypedStorage<8, 24> mUnk29bf78;
     ::ll::UntypedStorage<8, 24> mUnk79bee2;
     // NOLINTEND
@@ -56,7 +56,8 @@ public:
     // NOLINTBEGIN
     MCNAPI TransportItemsGoalDefinition(::SharedTypes::v1_21_100::TransportItemsGoalDefinition&&);
 
-    MCNAPI ::SharedTypes::v1_21_100::TransportItemsGoalDefinition& operator=(::SharedTypes::v1_21_100::TransportItemsGoalDefinition&&);
+    MCNAPI ::SharedTypes::v1_21_100::TransportItemsGoalDefinition&
+    operator=(::SharedTypes::v1_21_100::TransportItemsGoalDefinition&&);
 
     MCNAPI ~TransportItemsGoalDefinition();
     // NOLINTEND
@@ -98,7 +99,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_100

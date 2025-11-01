@@ -4,7 +4,6 @@
 
 namespace ActorMigratedUtils {
 
-struct NoRuntimeTypeTag {
-};
+struct NoRuntimeTypeTag {};
 
-}
+} // namespace ActorMigratedUtils

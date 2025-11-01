@@ -20,14 +20,20 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::ChunksLoadedStatus> mStatus;
-    ::ll::TypedStorage<8, 8, ::Player*> mPlayer;
-    ::ll::TypedStorage<8, 8, ::ITickingAreaView*> mTickingAreaView;
+    ::ll::TypedStorage<8, 8, ::Player*>            mPlayer;
+    ::ll::TypedStorage<8, 8, ::ITickingAreaView*>  mTickingAreaView;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ChunksLoadedStatus areAllChunksLoadedAndTicking(::Dimension const& dimension, ::ChunkSource& source, ::Bounds const& bounds, bool isCircleArea, ::Tick currentLevelTick, bool allowNonTickingPlayerAndTickingAreaChunks);
+    MCNAPI static ::ChunksLoadedStatus areAllChunksLoadedAndTicking(
+        ::Dimension const& dimension,
+        ::ChunkSource&     source,
+        ::Bounds const&    bounds,
+        bool               isCircleArea,
+        ::Tick             currentLevelTick,
+        bool               allowNonTickingPlayerAndTickingAreaChunks
+    );
     // NOLINTEND
-
 };

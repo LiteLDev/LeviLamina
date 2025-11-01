@@ -13,7 +13,8 @@
 struct PlayerDamageEvent;
 // clang-format on
 
-class VanillaNetworkEventListener : public ::EventListenerDispatcher<::ActorEventListener>, public ::EventListenerDispatcher<::PlayerEventListener> {
+class VanillaNetworkEventListener : public ::EventListenerDispatcher<::ActorEventListener>,
+                                    public ::EventListenerDispatcher<::PlayerEventListener> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,5 +30,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

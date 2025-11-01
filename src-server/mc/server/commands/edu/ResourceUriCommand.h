@@ -18,15 +18,15 @@ class ResourceUriCommand : public ::Command {
 public:
     // ResourceUriCommand inner types define
     enum class ActionType : int {
-        Clear = 0,
+        Clear   = 0,
         UriOnly = 1,
-        Named = 2,
+        Named   = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd0b0ba;
+    ::ll::UntypedStorage<4, 4>  mUnkd0b0ba;
     ::ll::UntypedStorage<8, 32> mUnk4094e9;
     ::ll::UntypedStorage<8, 32> mUnk9a446b;
     // NOLINTEND
@@ -74,5 +74,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

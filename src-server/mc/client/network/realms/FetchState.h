@@ -5,10 +5,10 @@
 namespace Realms {
 
 enum class FetchState : int {
-    DoFetch = 0,
+    DoFetch  = 0,
     Fetching = 1,
-    Failed = 2,
-    Done = 3,
+    Failed   = 2,
+    Done     = 3,
 };
 
 }

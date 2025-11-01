@@ -4,7 +4,6 @@
 
 namespace bgfx {
 
-struct Init {
-};
+struct Init {};
 
-}
+} // namespace bgfx

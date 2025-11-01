@@ -30,21 +30,21 @@ class AddActorPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ActorLink>> mLinks;
-    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
-    ::ll::TypedStorage<4, 12, ::Vec3> mVelocity;
-    ::ll::TypedStorage<4, 8, ::Vec2> mRot;
-    ::ll::TypedStorage<4, 4, float> mYHeadRotation;
-    ::ll::TypedStorage<4, 4, float> mYBodyRotation;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityId;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorLink>>                   mLinks;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mVelocity;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                        mRot;
+    ::ll::TypedStorage<4, 4, float>                                         mYHeadRotation;
+    ::ll::TypedStorage<4, 4, float>                                         mYBodyRotation;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                               mEntityId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                              mRuntimeId;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mData;
-    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mType;
-    ::ll::TypedStorage<8, 24, ::std::vector<::SyncedAttribute>> mAttributes;
-    ::ll::TypedStorage<8, 48, ::PropertySyncData> mSynchedProperties;
-    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeInstanceHandle>> mAttributeHandles;
-    ::ll::TypedStorage<8, 8, ::BaseAttributeMap const*> mMap;
-    ::ll::TypedStorage<8, 8, ::SynchedActorDataEntityWrapper*> mEntityData;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>                 mType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SyncedAttribute>>             mAttributes;
+    ::ll::TypedStorage<8, 48, ::PropertySyncData>                           mSynchedProperties;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeInstanceHandle>>     mAttributeHandles;
+    ::ll::TypedStorage<8, 8, ::BaseAttributeMap const*>                     mMap;
+    ::ll::TypedStorage<8, 8, ::SynchedActorDataEntityWrapper*>              mEntityData;
     // NOLINTEND
 
 public:
@@ -105,5 +105,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

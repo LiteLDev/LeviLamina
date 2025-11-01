@@ -33,32 +33,36 @@ public:
     // clang-format off
     struct ThreadData;
     // clang-format on
-    
+
     // NetherGenerator inner types define
     using NoiseBuffer = ::Util::MultidimensionalArray<float, 5, 5, 17>;
-    
+
     struct ThreadData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 2576, ::Random> random;
+        ::ll::TypedStorage<8, 2576, ::Random>                              random;
         ::ll::TypedStorage<8, 262144, ::std::array<::Block const*, 32768>> blockBuffer;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>> lperlinNoise1;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>> lperlinNoise2;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>> perlinNoise1;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>> perlinNoise2;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>> scaleNoise;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>> depthNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>>        lperlinNoise1;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>>        lperlinNoise2;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>>        perlinNoise1;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>>        perlinNoise2;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>>        scaleNoise;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinNoise>>        depthNoise;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> surfaceNoise;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mMaterialAdjNoise;
-    ::ll::TypedStorage<8, 168, ::Bedrock::Threading::InstancedThreadLocal<::NetherGenerator::ThreadData, ::std::allocator<::NetherGenerator::ThreadData>>> generatorHelpersPool;
+    ::ll::TypedStorage<
+        8,
+        168,
+        ::Bedrock::Threading::
+            InstancedThreadLocal<::NetherGenerator::ThreadData, ::std::allocator<::NetherGenerator::ThreadData>>>
+                                                               generatorHelpersPool;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeSource>> mBiomeSource;
     // NOLINTEND
 
@@ -82,7 +86,12 @@ public:
     virtual bool decorationPostProcessChunk(::ChunkViewSource& neighborhood) /*override*/;
 
     // vIndex: 42
-    virtual void prepareHeights(::BlockVolume& box, ::ChunkPos const& chunkPos, ::std::vector<short>* ZXheights, bool factorInBeardsAndShavers) /*override*/;
+    virtual void prepareHeights(
+        ::BlockVolume&        box,
+        ::ChunkPos const&     chunkPos,
+        ::std::vector<short>* ZXheights,
+        bool                  factorInBeardsAndShavers
+    ) /*override*/;
 
     // vIndex: 43
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
@@ -97,10 +106,18 @@ public:
     virtual ::BlockPos findSpawnPosition() const /*override*/;
 
     // vIndex: 49
-    virtual void decorateWorldGenLoadChunk(::Biome const& biome, ::LevelChunk& lc, ::BlockVolumeTarget& target, ::Random& random, ::ChunkPos const& pos) const /*override*/;
+    virtual void decorateWorldGenLoadChunk(
+        ::Biome const&       biome,
+        ::LevelChunk&        lc,
+        ::BlockVolumeTarget& target,
+        ::Random&            random,
+        ::ChunkPos const&    pos
+    ) const /*override*/;
 
     // vIndex: 50
-    virtual void decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const /*override*/;
+    virtual void
+    decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
+        /*override*/;
     // NOLINTEND
 
 public:
@@ -136,7 +153,12 @@ public:
 
     MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
 
-    MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const& chunkPos, ::std::vector<short>* ZXheights, bool factorInBeardsAndShavers);
+    MCAPI void $prepareHeights(
+        ::BlockVolume&        box,
+        ::ChunkPos const&     chunkPos,
+        ::std::vector<short>* ZXheights,
+        bool                  factorInBeardsAndShavers
+    );
 
     MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
@@ -146,9 +168,16 @@ public:
 
     MCAPI ::BlockPos $findSpawnPosition() const;
 
-    MCFOLD void $decorateWorldGenLoadChunk(::Biome const& biome, ::LevelChunk& lc, ::BlockVolumeTarget& target, ::Random& random, ::ChunkPos const& pos) const;
+    MCFOLD void $decorateWorldGenLoadChunk(
+        ::Biome const&       biome,
+        ::LevelChunk&        lc,
+        ::BlockVolumeTarget& target,
+        ::Random&            random,
+        ::ChunkPos const&    pos
+    ) const;
 
-    MCFOLD void $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
+    MCFOLD void
+    $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
     // NOLINTEND
 
 public:
@@ -158,5 +187,4 @@ public:
 
     MCNAPI static void** $vftableForChunkSource();
     // NOLINTEND
-
 };

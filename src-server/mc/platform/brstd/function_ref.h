@@ -4,7 +4,7 @@
 
 namespace brstd {
 
-template<auto V>
+template <auto V>
 struct nontype_t {
     explicit nontype_t() = default;
 };
@@ -180,4 +180,4 @@ struct nontype_obj_deduction_guide<M G::*, T> {
 template <auto V, class T>
 function_ref(nontype_t<V>, T&&) -> function_ref<typename nontype_obj_deduction_guide<decltype(V), T&>::type>;
 
-}
+} // namespace brstd

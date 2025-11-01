@@ -33,10 +33,10 @@ class LevelListCache : public ::ILevelListCache, public ::Bedrock::Threading::En
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7be6fa;
+    ::ll::UntypedStorage<8, 8>  mUnk7be6fa;
     ::ll::UntypedStorage<8, 64> mUnkc5bca8;
     ::ll::UntypedStorage<8, 64> mUnke93906;
-    ::ll::UntypedStorage<1, 1> mUnk233d85;
+    ::ll::UntypedStorage<1, 1>  mUnk233d85;
     ::ll::UntypedStorage<8, 32> mUnk92414e;
     ::ll::UntypedStorage<8, 80> mUnk9c4eaf;
     ::ll::UntypedStorage<8, 24> mUnk728a82;
@@ -74,13 +74,21 @@ public:
     virtual void renameLevel(::std::string const& levelId, ::std::string const& newLevelName) /*override*/;
 
     // vIndex: 7
-    virtual void renameAndSaveLevelData(::std::string const& levelId, ::std::string const& newLevelName, ::LevelData const& levelData) /*override*/;
+    virtual void renameAndSaveLevelData(
+        ::std::string const& levelId,
+        ::std::string const& newLevelName,
+        ::LevelData const&   levelData
+    ) /*override*/;
 
     // vIndex: 8
     virtual void saveLevelData(::std::string const& levelId, ::LevelData const& levelData) /*override*/;
 
     // vIndex: 9
-    virtual void createBackupCopyOfWorld(::std::string const& levelId, ::std::string const& newLevelId, ::std::string const& newName) /*override*/;
+    virtual void createBackupCopyOfWorld(
+        ::std::string const& levelId,
+        ::std::string const& newLevelId,
+        ::std::string const& newName
+    ) /*override*/;
 
     // vIndex: 10
     virtual bool hasLevelWithId(::std::string const& levelId) /*override*/;
@@ -95,10 +103,22 @@ public:
     virtual void removeObserver(::LevelListCacheObserver& observer) /*override*/;
 
     // vIndex: 14
-    virtual ::Bedrock::UniqueOwnerPointer<::LevelStorage> createLevelStorage(::Scheduler& scheduler, ::std::string const& levelId, ::ContentIdentity const& contentIdentity, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider, ::std::chrono::nanoseconds const& writeFlushInterval, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv, ::std::unique_ptr<::LevelStorageEventing> levelStorageEventing) /*override*/;
+    virtual ::Bedrock::UniqueOwnerPointer<::LevelStorage> createLevelStorage(
+        ::Scheduler&                                                      scheduler,
+        ::std::string const&                                              levelId,
+        ::ContentIdentity const&                                          contentIdentity,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        ::std::chrono::nanoseconds const&                                 writeFlushInterval,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv,
+        ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing
+    ) /*override*/;
 
     // vIndex: 15
-    virtual ::std::unique_ptr<::LevelLooseFileStorage> createLevelLooseStorage(::std::string const& levelId, ::ContentIdentity const& contentIdentity, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider) /*override*/;
+    virtual ::std::unique_ptr<::LevelLooseFileStorage> createLevelLooseStorage(
+        ::std::string const&                                              levelId,
+        ::ContentIdentity const&                                          contentIdentity,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
+    ) /*override*/;
 
     // vIndex: 16
     virtual ::LevelSummary* getLevelSummary(::std::string const& levelId) /*override*/;
@@ -113,13 +133,19 @@ public:
     virtual ::LevelData* getLevelData(::std::string const& levelId) /*override*/;
 
     // vIndex: 20
-    virtual ::Bedrock::NonOwnerPointer<::LevelData> getLevelDataNonOwnerPointer(::std::string const& levelId) /*override*/;
+    virtual ::Bedrock::NonOwnerPointer<::LevelData>
+    getLevelDataNonOwnerPointer(::std::string const& levelId) /*override*/;
 
     // vIndex: 21
     virtual ::LevelSummary* getShallowLevelSummary(::std::string const& levelId) /*override*/;
 
     // vIndex: 22
-    virtual void getLevelList(::std::vector<::LevelSummary>& dest, bool includeShallowSummaries, bool includePartiallyCopiedLevels, bool includeBetaRetailLevels) /*override*/;
+    virtual void getLevelList(
+        ::std::vector<::LevelSummary>& dest,
+        bool                           includeShallowSummaries,
+        bool                           includePartiallyCopiedLevels,
+        bool                           includeBetaRetailLevels
+    ) /*override*/;
 
     // vIndex: 23
     virtual bool hasCachedLevels(bool includeShallowSummaries) const /*override*/;
@@ -143,7 +169,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LevelListCache(::LevelStorageSource& levelStorageSource, ::Bedrock::NotNullNonOwnerPtr<::AppPlatform const> appPlatform, ::std::function<bool()>&& checkIsSafeToFlushCache);
+    MCNAPI LevelListCache(
+        ::LevelStorageSource&                              levelStorageSource,
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform const> appPlatform,
+        ::std::function<bool()>&&                          checkIsSafeToFlushCache
+    );
 
     MCNAPI ::LevelCache* _addOrReplaceCache(::Core::Path const& path);
 
@@ -165,7 +195,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LevelStorageSource& levelStorageSource, ::Bedrock::NotNullNonOwnerPtr<::AppPlatform const> appPlatform, ::std::function<bool()>&& checkIsSafeToFlushCache);
+    MCNAPI void* $ctor(
+        ::LevelStorageSource&                              levelStorageSource,
+        ::Bedrock::NotNullNonOwnerPtr<::AppPlatform const> appPlatform,
+        ::std::function<bool()>&&                          checkIsSafeToFlushCache
+    );
     // NOLINTEND
 
 public:
@@ -189,11 +223,19 @@ public:
 
     MCNAPI void $renameLevel(::std::string const& levelId, ::std::string const& newLevelName);
 
-    MCNAPI void $renameAndSaveLevelData(::std::string const& levelId, ::std::string const& newLevelName, ::LevelData const& levelData);
+    MCNAPI void $renameAndSaveLevelData(
+        ::std::string const& levelId,
+        ::std::string const& newLevelName,
+        ::LevelData const&   levelData
+    );
 
     MCNAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& levelData);
 
-    MCNAPI void $createBackupCopyOfWorld(::std::string const& levelId, ::std::string const& newLevelId, ::std::string const& newName);
+    MCNAPI void $createBackupCopyOfWorld(
+        ::std::string const& levelId,
+        ::std::string const& newLevelId,
+        ::std::string const& newName
+    );
 
     MCNAPI bool $hasLevelWithId(::std::string const& levelId);
 
@@ -203,9 +245,21 @@ public:
 
     MCNAPI void $removeObserver(::LevelListCacheObserver& observer);
 
-    MCNAPI ::Bedrock::UniqueOwnerPointer<::LevelStorage> $createLevelStorage(::Scheduler& scheduler, ::std::string const& levelId, ::ContentIdentity const& contentIdentity, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider, ::std::chrono::nanoseconds const& writeFlushInterval, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv, ::std::unique_ptr<::LevelStorageEventing> levelStorageEventing);
+    MCNAPI ::Bedrock::UniqueOwnerPointer<::LevelStorage> $createLevelStorage(
+        ::Scheduler&                                                      scheduler,
+        ::std::string const&                                              levelId,
+        ::ContentIdentity const&                                          contentIdentity,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        ::std::chrono::nanoseconds const&                                 writeFlushInterval,
+        ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv,
+        ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing
+    );
 
-    MCNAPI ::std::unique_ptr<::LevelLooseFileStorage> $createLevelLooseStorage(::std::string const& levelId, ::ContentIdentity const& contentIdentity, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider);
+    MCNAPI ::std::unique_ptr<::LevelLooseFileStorage> $createLevelLooseStorage(
+        ::std::string const&                                              levelId,
+        ::ContentIdentity const&                                          contentIdentity,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
+    );
 
     MCNAPI ::LevelSummary* $getLevelSummary(::std::string const& levelId);
 
@@ -219,7 +273,12 @@ public:
 
     MCNAPI ::LevelSummary* $getShallowLevelSummary(::std::string const& levelId);
 
-    MCNAPI void $getLevelList(::std::vector<::LevelSummary>& dest, bool includeShallowSummaries, bool includePartiallyCopiedLevels, bool includeBetaRetailLevels);
+    MCNAPI void $getLevelList(
+        ::std::vector<::LevelSummary>& dest,
+        bool                           includeShallowSummaries,
+        bool                           includePartiallyCopiedLevels,
+        bool                           includeBetaRetailLevels
+    );
 
     MCNAPI bool $hasCachedLevels(bool includeShallowSummaries) const;
 
@@ -241,5 +300,4 @@ public:
 
     MCNAPI static void** $vftableForEnableQueueForMainThread();
     // NOLINTEND
-
 };

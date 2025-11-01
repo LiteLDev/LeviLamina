@@ -25,14 +25,15 @@ class InventoryTransactionPacket : public ::InventoryPacket {
 public:
     // InventoryTransactionPacket inner types define
     using LegacySetSlot = ::std::pair<::ContainerEnumName, ::std::vector<uchar>>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 16, ::ItemStackLegacyRequestId> mLegacyRequestId;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ContainerEnumName, ::std::vector<uchar>>>> mLegacySetItemSlots;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ContainerEnumName, ::std::vector<uchar>>>>
+                                                                               mLegacySetItemSlots;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ComplexInventoryTransaction>> mTransaction;
-    ::ll::TypedStorage<1, 1, bool> mIsClientSide;
+    ::ll::TypedStorage<1, 1, bool>                                             mIsClientSide;
     // NOLINTEND
 
 public:
@@ -51,7 +52,13 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 17
-    virtual void handle(::ServerPlayer& player, ::BlockPalette& blockPalette, ::MoveInputComponent const& moveInput, ::ActorRotationComponent& actorRotation, bool isAimAssist) const /*override*/;
+    virtual void handle(
+        ::ServerPlayer&             player,
+        ::BlockPalette&             blockPalette,
+        ::MoveInputComponent const& moveInput,
+        ::ActorRotationComponent&   actorRotation,
+        bool                        isAimAssist
+    ) const /*override*/;
 
     // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
@@ -72,7 +79,13 @@ public:
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI void $handle(::ServerPlayer& player, ::BlockPalette& blockPalette, ::MoveInputComponent const& moveInput, ::ActorRotationComponent& actorRotation, bool isAimAssist) const;
+    MCAPI void $handle(
+        ::ServerPlayer&             player,
+        ::BlockPalette&             blockPalette,
+        ::MoveInputComponent const& moveInput,
+        ::ActorRotationComponent&   actorRotation,
+        bool                        isAimAssist
+    ) const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
@@ -82,5 +95,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

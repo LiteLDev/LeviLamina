@@ -10,10 +10,10 @@ class InventorySource {
 public:
     // InventorySource inner types define
     enum class InventorySourceFlags : uint {
-        NoFlag = 0,
+        NoFlag                 = 0,
         WorldInteractionRandom = 1,
     };
-    
+
 public:
     bool operator==(InventorySource const& rhs) const {
         if (mType != rhs.mType) {
@@ -28,9 +28,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::InventorySourceType> mType;
-    ::ll::TypedStorage<1, 1, ::ContainerID> mContainerId;
+    ::ll::TypedStorage<4, 4, ::InventorySourceType>                   mType;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                           mContainerId;
     ::ll::TypedStorage<4, 4, ::InventorySource::InventorySourceFlags> mFlags;
     // NOLINTEND
-
 };

@@ -22,9 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_100::PackSettingsDefinition::Settings& operator=(::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&&);
+    MCNAPI ::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&
+    operator=(::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&&);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_100::PackSettingsDefinition

@@ -8,11 +8,11 @@ class BitStream {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2f223f;
-    ::ll::UntypedStorage<4, 4> mUnk9ced5a;
-    ::ll::UntypedStorage<4, 4> mUnkb3cc97;
-    ::ll::UntypedStorage<8, 8> mUnk87a405;
-    ::ll::UntypedStorage<1, 1> mUnkb9b8cd;
+    ::ll::UntypedStorage<4, 4>   mUnk2f223f;
+    ::ll::UntypedStorage<4, 4>   mUnk9ced5a;
+    ::ll::UntypedStorage<4, 4>   mUnkb3cc97;
+    ::ll::UntypedStorage<8, 8>   mUnk87a405;
+    ::ll::UntypedStorage<1, 1>   mUnkb9b8cd;
     ::ll::UntypedStorage<1, 256> mUnkb60a72;
     // NOLINTEND
 
@@ -69,7 +69,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

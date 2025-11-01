@@ -8,11 +8,11 @@ struct NetworkRoute {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk1d5644;
+    ::ll::UntypedStorage<1, 1>  mUnk1d5644;
     ::ll::UntypedStorage<4, 12> mUnk583452;
     ::ll::UntypedStorage<4, 12> mUnk71e972;
-    ::ll::UntypedStorage<4, 4> mUnkba21fa;
-    ::ll::UntypedStorage<4, 4> mUnk6841bb;
+    ::ll::UntypedStorage<4, 4>  mUnkba21fa;
+    ::ll::UntypedStorage<4, 4>  mUnk6841bb;
     // NOLINTEND
 
 public:
@@ -28,7 +28,6 @@ public:
 
     MCNAPI bool operator==(::rtc::NetworkRoute const& other) const;
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

@@ -18,4 +18,4 @@ MCNAPI void registerSystems(::EntitySystems& registry, bool isClientSide);
 MCNAPI ::std::string const& JEB_NAME();
 // NOLINTEND
 
-}
+} // namespace SheepAnimationSystems

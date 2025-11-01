@@ -77,7 +77,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 namespace ll::inline literals::inline nbt_literals {
 [[nodiscard]] inline Int64Tag operator""_l(uint64 num) noexcept { return Int64Tag{(int64)num}; }

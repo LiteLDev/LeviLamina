@@ -29,17 +29,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorJigsawStructureLoader(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCNAPI EditorJigsawStructureLoader(
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
 
-    MCNAPI ::std::map<::Editor::Services::JigsawJsonType, ::std::string> createEmptyJigsawFiles(::cereal::ReflectionCtx& ctx);
+    MCNAPI ::std::map<::Editor::Services::JigsawJsonType, ::std::string>
+    createEmptyJigsawFiles(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI void loadJigsawStructureData(::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>& data);
+    MCNAPI void loadJigsawStructureData(
+        ::std::map<::Editor::Services::JigsawJsonType, ::std::vector<::Editor::Services::EditorRegistryFile>>& data
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCNAPI void*
+    $ctor(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
     // NOLINTEND
 
 public:
@@ -53,5 +60,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

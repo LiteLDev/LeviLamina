@@ -16,10 +16,10 @@ class AsyncDnsResolverResultImpl : public ::webrtc::AsyncDnsResolverResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk600c9e;
+    ::ll::UntypedStorage<1, 1>  mUnk600c9e;
     ::ll::UntypedStorage<8, 80> mUnk69ac6e;
     ::ll::UntypedStorage<8, 24> mUnke8633b;
-    ::ll::UntypedStorage<4, 4> mUnk997dd5;
+    ::ll::UntypedStorage<4, 4>  mUnk997dd5;
     // NOLINTEND
 
 public:
@@ -54,7 +54,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

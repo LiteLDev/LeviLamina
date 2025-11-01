@@ -16,16 +16,18 @@ class ActorDefinitionDiffList {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorDefinitionGroup&> mDefinitions;
-    ::ll::TypedStorage<8, 24, ::std::vector<::DiffListPair>> mDefinitionStack;
+    ::ll::TypedStorage<8, 8, ::ActorDefinitionGroup&>                        mDefinitions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::DiffListPair>>                 mDefinitionStack;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorDefinitionDescriptor>> mChangedDescription;
-    ::ll::TypedStorage<1, 1, bool> mChanged;
-    ::ll::TypedStorage<8, 72, ::DefinitionInstanceGroup> mAddedDefinitionGroup;
-    ::ll::TypedStorage<8, 72, ::DefinitionInstanceGroup> mRemovedDefinitionGroup;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::variant<int, float, bool, uint64>>> mPendingPropertyChanges;
-    ::ll::TypedStorage<1, 1, bool> mLockedChanges;
+    ::ll::TypedStorage<1, 1, bool>                                           mChanged;
+    ::ll::TypedStorage<8, 72, ::DefinitionInstanceGroup>                     mAddedDefinitionGroup;
+    ::ll::TypedStorage<8, 72, ::DefinitionInstanceGroup>                     mRemovedDefinitionGroup;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::variant<int, float, bool, uint64>>>
+                                                                               mPendingPropertyChanges;
+    ::ll::TypedStorage<1, 1, bool>                                             mLockedChanges;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<bool, ::std::string>>> mPendingChanges;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::variant<int, float, bool, uint64>>> mDeferredPropertyChanges;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::variant<int, float, bool, uint64>>>
+        mDeferredPropertyChanges;
     // NOLINTEND
 
 public:
@@ -69,5 +71,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

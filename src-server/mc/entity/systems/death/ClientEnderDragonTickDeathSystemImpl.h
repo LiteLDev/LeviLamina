@@ -30,12 +30,39 @@ struct TickDeathNeededComponent;
 struct WingFlapDataComponent;
 // clang-format on
 
-struct ClientEnderDragonTickDeathSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>, ::Read<::DeathTickingComponent>, ::Write<::ActorOwnerComponent, ::ParticleEventDispatcherComponent, ::RandomReferenceComponent, ::StateVectorComponent, ::WingFlapDataComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
+struct ClientEnderDragonTickDeathSystemImpl
+: public ::IStrictTickingSystem<::StrictExecutionContext<
+      ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
+      ::Read<::DeathTickingComponent>,
+      ::Write<
+          ::ActorOwnerComponent,
+          ::ParticleEventDispatcherComponent,
+          ::RandomReferenceComponent,
+          ::StateVectorComponent,
+          ::WingFlapDataComponent>,
+      ::AddRemove<>,
+      ::GlobalRead<>,
+      ::GlobalWrite<>,
+      ::EntityFactoryT<>>> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>, ::Read<::DeathTickingComponent>, ::Write<::ActorOwnerComponent, ::ParticleEventDispatcherComponent, ::RandomReferenceComponent, ::StateVectorComponent, ::WingFlapDataComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& context) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
+            ::Read<::DeathTickingComponent>,
+            ::Write<
+                ::ActorOwnerComponent,
+                ::ParticleEventDispatcherComponent,
+                ::RandomReferenceComponent,
+                ::StateVectorComponent,
+                ::WingFlapDataComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~ClientEnderDragonTickDeathSystemImpl() /*override*/ = default;
@@ -44,13 +71,37 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tick(::StrictEntityContext const&, ::DeathTickingComponent const& deathTicking, ::ActorOwnerComponent& actorOwner, ::ParticleEventDispatcherComponent& particleEventDispatcherComponent, ::RandomReferenceComponent& randomReference, ::StateVectorComponent& stateVector, ::WingFlapDataComponent& wingFlapData, ::ViewT<::StrictEntityContext, ::RandomComponent> randomView, ::ViewT<::StrictEntityContext, ::ParticleEventRequestQueueComponent> particleEventRequestQueueView);
+    MCNAPI static void _tick(
+        ::StrictEntityContext const&,
+        ::DeathTickingComponent const&                                       deathTicking,
+        ::ActorOwnerComponent&                                               actorOwner,
+        ::ParticleEventDispatcherComponent&                                  particleEventDispatcherComponent,
+        ::RandomReferenceComponent&                                          randomReference,
+        ::StateVectorComponent&                                              stateVector,
+        ::WingFlapDataComponent&                                             wingFlapData,
+        ::ViewT<::StrictEntityContext, ::RandomComponent>                    randomView,
+        ::ViewT<::StrictEntityContext, ::ParticleEventRequestQueueComponent> particleEventRequestQueueView
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>, ::Read<::DeathTickingComponent>, ::Write<::ActorOwnerComponent, ::ParticleEventDispatcherComponent, ::RandomReferenceComponent, ::StateVectorComponent, ::WingFlapDataComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
+            ::Read<::DeathTickingComponent>,
+            ::Write<
+                ::ActorOwnerComponent,
+                ::ParticleEventDispatcherComponent,
+                ::RandomReferenceComponent,
+                ::StateVectorComponent,
+                ::WingFlapDataComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
     // NOLINTEND
 
 public:
@@ -58,5 +109,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

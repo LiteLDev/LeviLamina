@@ -19,9 +19,9 @@ class ScriptWidgetComponentGizmoOptions : public ::Editor::ScriptModule::ScriptW
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkf908c4;
-    ::ll::UntypedStorage<1, 2> mUnkee317e;
-    ::ll::UntypedStorage<4, 16> mUnkbe5c2a;
+    ::ll::UntypedStorage<4, 8>   mUnkf908c4;
+    ::ll::UntypedStorage<1, 2>   mUnkee317e;
+    ::ll::UntypedStorage<4, 16>  mUnkbe5c2a;
     ::ll::UntypedStorage<8, 256> mUnk250a0a;
     // NOLINTEND
 
@@ -34,7 +34,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<void> validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
 
     // vIndex: 0
     virtual ~ScriptWidgetComponentGizmoOptions() /*override*/;
@@ -45,7 +46,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptWidgetComponentGizmoOptions(::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions const&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions&&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions&
+    operator=(::Editor::ScriptModule::ScriptWidgetComponentGizmoOptions&&);
     // NOLINTEND
 
 public:
@@ -69,7 +71,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
     // NOLINTEND
 
 public:
@@ -77,7 +80,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

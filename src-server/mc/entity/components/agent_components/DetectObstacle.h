@@ -18,7 +18,7 @@ public:
     // clang-format off
     class Definition;
     // clang-format on
-    
+
     // DetectObstacle inner types define
     class Definition {
     public:
@@ -26,15 +26,14 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1> mUnkf551f8;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
         Definition();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -50,9 +49,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static void setup(::AgentComponents::DetectObstacle& detect, ::EntityContext& entity, ::AgentComponents::Direction dir);
+    MCFOLD static void
+    setup(::AgentComponents::DetectObstacle& detect, ::EntityContext& entity, ::AgentComponents::Direction dir);
     // NOLINTEND
-
 };
 
-}
+} // namespace AgentComponents

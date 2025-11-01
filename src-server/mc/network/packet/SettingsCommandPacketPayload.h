@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mCommandString;
-    ::ll::TypedStorage<1, 1, bool> mSuppressOutput;
+    ::ll::TypedStorage<1, 1, bool>           mSuppressOutput;
     // NOLINTEND
 
 public:
@@ -29,5 +29,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

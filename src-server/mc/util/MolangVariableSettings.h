@@ -10,8 +10,7 @@ struct MolangVariableSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<2, 2, ::MolangVariableIndex> mIndex;
+    ::ll::TypedStorage<2, 2, ::MolangVariableIndex>                   mIndex;
     ::ll::TypedStorage<4, 4, ::MolangVariableSetting_AccessSpecifier> mAccessSpecifier;
     // NOLINTEND
-
 };

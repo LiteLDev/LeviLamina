@@ -21,34 +21,41 @@ public:
     // clang-format off
     struct DocumentableEventExecution;
     // clang-format on
-    
+
     // ScriptDeferredEventCoordinator inner types define
     struct DocumentableEventExecution {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, void(::ScriptDeferredEventCoordinator::*) (::ScriptDeferredFlushTracker&)> mExecuteEventsFn;
-        ::ll::TypedStorage<8, 64, ::std::function<void(::Scripting::ModuleDescriptor const&, ::Json::Value&)>> mDocumentationGenerationFn;
+        ::ll::TypedStorage<8, 8, void (::ScriptDeferredEventCoordinator::*)(::ScriptDeferredFlushTracker&)>
+            mExecuteEventsFn;
+        ::ll::TypedStorage<8, 64, ::std::function<void(::Scripting::ModuleDescriptor const&, ::Json::Value&)>>
+            mDocumentationGenerationFn;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~DocumentableEventExecution();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(::ScriptDeferredFlushTracker&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>> mFlushCoroutinePublisher;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<
+            ::Bedrock::PubSub::
+                Publisher<void(::ScriptDeferredFlushTracker&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>>
+        mFlushCoroutinePublisher;
     // NOLINTEND
 
 public:
@@ -81,7 +88,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ScriptDeferredEventCoordinator::DocumentableEventExecution> const& sEventExecutionOrder();
+    MCAPI static ::std::vector<::ScriptDeferredEventCoordinator::DocumentableEventExecution> const&
+    sEventExecutionOrder();
     // NOLINTEND
 
 public:
@@ -95,5 +103,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

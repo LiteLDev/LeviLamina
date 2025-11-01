@@ -4,8 +4,7 @@
 
 namespace webrtc {
 
-template<typename T0, typename T1>
-class AlwaysValidPointer {
-};
+template <typename T0, typename T1>
+class AlwaysValidPointer {};
 
-}
+} // namespace webrtc

@@ -4,8 +4,7 @@
 
 namespace webrtc {
 
-template<typename T0>
-class MediaStreamTrack {
-};
+template <typename T0>
+class MediaStreamTrack {};
 
-}
+} // namespace webrtc

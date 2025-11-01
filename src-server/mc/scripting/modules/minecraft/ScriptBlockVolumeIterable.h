@@ -11,7 +11,6 @@ public:
     // vIndex: 0
     virtual ~ScriptBlockVolumeIterable() = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

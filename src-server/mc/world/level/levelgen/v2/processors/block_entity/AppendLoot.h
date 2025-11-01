@@ -25,7 +25,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom& random, ::CompoundTag const* existingTag) const /*override*/;
+    virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom& random, ::CompoundTag const* existingTag) const
+        /*override*/;
 
     // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
@@ -59,7 +60,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen::processors::BlockEntity

@@ -16,9 +16,9 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnke07e5e;
     ::ll::UntypedStorage<8, 32> mUnk13d64f;
-    ::ll::UntypedStorage<1, 1> mUnke96949;
-    ::ll::UntypedStorage<1, 1> mUnke6009a;
-    ::ll::UntypedStorage<1, 1> mUnk771b18;
+    ::ll::UntypedStorage<1, 1>  mUnke96949;
+    ::ll::UntypedStorage<1, 1>  mUnke6009a;
+    ::ll::UntypedStorage<1, 1>  mUnk771b18;
     // NOLINTEND
 
 public:
@@ -30,7 +30,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::LegacyTradeableDefinition>>& root);
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::LegacyTradeableDefinition>>& root
+    );
     // NOLINTEND
-
 };

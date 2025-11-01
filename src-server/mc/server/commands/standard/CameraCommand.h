@@ -21,74 +21,74 @@ class CameraCommand : public ::Command {
 public:
     // CameraCommand inner types define
     enum class CameraCommandOption : uchar {
-        None = 0,
-        Set = 1,
-        Ease = 2,
-        Pos = 3,
-        Rot = 4,
-        FovSet = 5,
-        FovClear = 6,
-        Facing = 7,
-        AttachToEntity = 8,
+        None             = 0,
+        Set              = 1,
+        Ease             = 2,
+        Pos              = 3,
+        Rot              = 4,
+        FovSet           = 5,
+        FovClear         = 6,
+        Facing           = 7,
+        AttachToEntity   = 8,
         DetachFromEntity = 9,
-        TargetEntity = 10,
-        TargetOffset = 11,
-        RemoveTarget = 12,
-        ViewOffset = 13,
-        EntityOffset = 14,
-        Default = 15,
-        Clear = 16,
-        Fade = 17,
-        Time = 18,
-        Color = 19,
+        TargetEntity     = 10,
+        TargetOffset     = 11,
+        RemoveTarget     = 12,
+        ViewOffset       = 13,
+        EntityOffset     = 14,
+        Default          = 15,
+        Clear            = 16,
+        Fade             = 17,
+        Time             = 18,
+        Color            = 19,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 200> mUnk822547;
-    ::ll::UntypedStorage<1, 1> mUnk6d2b15;
-    ::ll::UntypedStorage<8, 32> mUnk602621;
-    ::ll::UntypedStorage<1, 1> mUnk43793e;
-    ::ll::UntypedStorage<4, 4> mUnk76eb2f;
-    ::ll::UntypedStorage<4, 4> mUnkda0689;
-    ::ll::UntypedStorage<1, 1> mUnk49b356;
-    ::ll::UntypedStorage<4, 16> mUnk717385;
-    ::ll::UntypedStorage<1, 1> mUnkbe461d;
-    ::ll::UntypedStorage<4, 8> mUnkc0d6b9;
-    ::ll::UntypedStorage<4, 8> mUnk79bee7;
-    ::ll::UntypedStorage<1, 1> mUnk221b02;
+    ::ll::UntypedStorage<1, 1>   mUnk6d2b15;
+    ::ll::UntypedStorage<8, 32>  mUnk602621;
+    ::ll::UntypedStorage<1, 1>   mUnk43793e;
+    ::ll::UntypedStorage<4, 4>   mUnk76eb2f;
+    ::ll::UntypedStorage<4, 4>   mUnkda0689;
+    ::ll::UntypedStorage<1, 1>   mUnk49b356;
+    ::ll::UntypedStorage<4, 16>  mUnk717385;
+    ::ll::UntypedStorage<1, 1>   mUnkbe461d;
+    ::ll::UntypedStorage<4, 8>   mUnkc0d6b9;
+    ::ll::UntypedStorage<4, 8>   mUnk79bee7;
+    ::ll::UntypedStorage<1, 1>   mUnk221b02;
     ::ll::UntypedStorage<8, 200> mUnkbcf156;
-    ::ll::UntypedStorage<4, 16> mUnk6890a2;
-    ::ll::UntypedStorage<1, 1> mUnkb51868;
-    ::ll::UntypedStorage<1, 1> mUnk87851f;
-    ::ll::UntypedStorage<1, 1> mUnkcf4eac;
-    ::ll::UntypedStorage<4, 4> mUnk124698;
-    ::ll::UntypedStorage<4, 4> mUnkf530ad;
-    ::ll::UntypedStorage<1, 1> mUnkac13f3;
-    ::ll::UntypedStorage<4, 4> mUnked6be8;
-    ::ll::UntypedStorage<4, 4> mUnk5b206e;
-    ::ll::UntypedStorage<4, 4> mUnk8f6909;
-    ::ll::UntypedStorage<1, 1> mUnk9cd0bc;
+    ::ll::UntypedStorage<4, 16>  mUnk6890a2;
+    ::ll::UntypedStorage<1, 1>   mUnkb51868;
+    ::ll::UntypedStorage<1, 1>   mUnk87851f;
+    ::ll::UntypedStorage<1, 1>   mUnkcf4eac;
+    ::ll::UntypedStorage<4, 4>   mUnk124698;
+    ::ll::UntypedStorage<4, 4>   mUnkf530ad;
+    ::ll::UntypedStorage<1, 1>   mUnkac13f3;
+    ::ll::UntypedStorage<4, 4>   mUnked6be8;
+    ::ll::UntypedStorage<4, 4>   mUnk5b206e;
+    ::ll::UntypedStorage<4, 4>   mUnk8f6909;
+    ::ll::UntypedStorage<1, 1>   mUnk9cd0bc;
     ::ll::UntypedStorage<8, 200> mUnk79bdc0;
-    ::ll::UntypedStorage<1, 1> mUnk3233d4;
-    ::ll::UntypedStorage<1, 1> mUnk18245b;
+    ::ll::UntypedStorage<1, 1>   mUnk3233d4;
+    ::ll::UntypedStorage<1, 1>   mUnk18245b;
     ::ll::UntypedStorage<8, 200> mUnk90b622;
-    ::ll::UntypedStorage<4, 4> mUnkf3ad95;
-    ::ll::UntypedStorage<4, 4> mUnk48d083;
-    ::ll::UntypedStorage<4, 4> mUnkc0d44c;
-    ::ll::UntypedStorage<1, 1> mUnk46fd0d;
-    ::ll::UntypedStorage<4, 4> mUnk623384;
-    ::ll::UntypedStorage<4, 4> mUnk6220be;
-    ::ll::UntypedStorage<4, 4> mUnk811594;
-    ::ll::UntypedStorage<1, 1> mUnk626e12;
-    ::ll::UntypedStorage<4, 4> mUnkcb9bf0;
-    ::ll::UntypedStorage<4, 4> mUnk1be6e3;
-    ::ll::UntypedStorage<4, 4> mUnk7df88a;
-    ::ll::UntypedStorage<1, 1> mUnkcf2ab3;
-    ::ll::UntypedStorage<4, 4> mUnkecea45;
-    ::ll::UntypedStorage<4, 4> mUnk55454d;
-    ::ll::UntypedStorage<4, 4> mUnk647e26;
+    ::ll::UntypedStorage<4, 4>   mUnkf3ad95;
+    ::ll::UntypedStorage<4, 4>   mUnk48d083;
+    ::ll::UntypedStorage<4, 4>   mUnkc0d44c;
+    ::ll::UntypedStorage<1, 1>   mUnk46fd0d;
+    ::ll::UntypedStorage<4, 4>   mUnk623384;
+    ::ll::UntypedStorage<4, 4>   mUnk6220be;
+    ::ll::UntypedStorage<4, 4>   mUnk811594;
+    ::ll::UntypedStorage<1, 1>   mUnk626e12;
+    ::ll::UntypedStorage<4, 4>   mUnkcb9bf0;
+    ::ll::UntypedStorage<4, 4>   mUnk1be6e3;
+    ::ll::UntypedStorage<4, 4>   mUnk7df88a;
+    ::ll::UntypedStorage<1, 1>   mUnkcf2ab3;
+    ::ll::UntypedStorage<4, 4>   mUnkecea45;
+    ::ll::UntypedStorage<4, 4>   mUnk55454d;
+    ::ll::UntypedStorage<4, 4>   mUnk647e26;
     // NOLINTEND
 
 public:
@@ -111,9 +111,19 @@ public:
     // NOLINTBEGIN
     MCAPI CameraCommand();
 
-    MCAPI void forEachSelectedPlayersCameraStates(::CommandOrigin const& origin, ::std::function<void(::ServerCameraStatesComponent&)> callback) const;
+    MCAPI void forEachSelectedPlayersCameraStates(
+        ::CommandOrigin const&                                origin,
+        ::std::function<void(::ServerCameraStatesComponent&)> callback
+    ) const;
 
-    MCAPI bool prepareInstruction(::CameraInstruction& cameraInstruction, ::CameraPresets const& cameraPresets, ::CommandOrigin const& origin, ::CommandOutput& output, ::Experiments const& experiments, ::BaseGameVersion const& baseGameVersion) const;
+    MCAPI bool prepareInstruction(
+        ::CameraInstruction&     cameraInstruction,
+        ::CameraPresets const&   cameraPresets,
+        ::CommandOrigin const&   origin,
+        ::CommandOutput&         output,
+        ::Experiments const&     experiments,
+        ::BaseGameVersion const& baseGameVersion
+    ) const;
     // NOLINTEND
 
 public:
@@ -221,5 +231,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

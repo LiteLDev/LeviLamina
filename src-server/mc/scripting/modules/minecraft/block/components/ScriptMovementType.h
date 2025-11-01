@@ -5,9 +5,9 @@
 namespace ScriptModuleMinecraft {
 
 enum class ScriptMovementType : uchar {
-    PushPull = 0,
-    Push = 1,
-    Popped = 2,
+    PushPull  = 0,
+    Push      = 1,
+    Popped    = 2,
     Immovable = 3,
 };
 

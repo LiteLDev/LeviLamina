@@ -10,7 +10,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, char const*> str_;
     // NOLINTEND
-
 };
 
-}
+} // namespace Json

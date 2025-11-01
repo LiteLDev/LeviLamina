@@ -5,5 +5,5 @@
 enum class OpenCodeMethod : int {
     TouchHUD = 0,
     Keypress = 1,
-    Command = 2,
+    Command  = 2,
 };

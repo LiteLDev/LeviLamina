@@ -22,8 +22,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk92036b;
     ::ll::UntypedStorage<8, 16> mUnkf4cb8d;
-    ::ll::UntypedStorage<4, 4> mUnkbffbe9;
-    ::ll::UntypedStorage<8, 8> mUnk7ffeab;
+    ::ll::UntypedStorage<4, 4>  mUnkbffbe9;
+    ::ll::UntypedStorage<8, 8>  mUnk7ffeab;
     // NOLINTEND
 
 public:
@@ -48,7 +48,11 @@ public:
     virtual void OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool) /*override*/;
 
     // vIndex: 7
-    virtual void OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason) /*override*/;
+    virtual void OnClosedConnection(
+        ::RakNet::SystemAddress const&,
+        ::RakNet::RakNetGUID,
+        ::RakNet::PI2_LostConnectionReason
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -56,7 +60,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

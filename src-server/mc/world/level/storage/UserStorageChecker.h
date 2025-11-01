@@ -29,5 +29,4 @@ public:
 
     MCNAPI void queueCheckUserStorage(::Core::PathView storagePath);
     // NOLINTEND
-
 };

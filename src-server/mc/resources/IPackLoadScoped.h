@@ -9,5 +9,4 @@ public:
     // vIndex: 0
     virtual ~IPackLoadScoped() = default;
     // NOLINTEND
-
 };

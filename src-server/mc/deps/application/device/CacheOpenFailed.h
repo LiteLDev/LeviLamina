@@ -4,7 +4,6 @@
 
 namespace Bedrock::DeviceIdErrorType {
 
-struct CacheOpenFailed {
-};
+struct CacheOpenFailed {};
 
-}
+} // namespace Bedrock::DeviceIdErrorType

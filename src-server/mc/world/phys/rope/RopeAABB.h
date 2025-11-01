@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/phys/AABB.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,13 +16,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 24, ::AABB> mBB;
-    ::ll::TypedStorage<1, 1, bool> mDenyListed;
+    ::ll::TypedStorage<1, 1, bool>    mDenyListed;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool getContactPoint(::Vec3 const& nodePos, float nodeSize, ::AABBContactPoint& result) const;
+    MCAPI bool getContactPoint(::Vec3 const& nodePos, float nodeSize, ::AABBContactPoint& result) const;
     // NOLINTEND
-
 };

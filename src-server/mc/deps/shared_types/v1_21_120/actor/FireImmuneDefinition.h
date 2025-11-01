@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/versionless/actor/ActorFlagCustomInitDefinition.h"
+#include "mc/deps/shared_types/actor/ActorFlagCustomInitDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -12,7 +12,8 @@ class SemVersionConstant;
 
 namespace SharedTypes::v1_21_120 {
 
-struct FireImmuneDefinition : public ::SharedTypes::ActorFlagCustomInitDefinition<::SharedTypes::v1_21_120::FireImmuneDefinition> {
+struct FireImmuneDefinition
+: public ::SharedTypes::ActorFlagCustomInitDefinition<::SharedTypes::v1_21_120::FireImmuneDefinition> {
 public:
     // static variables
     // NOLINTBEGIN
@@ -22,7 +23,6 @@ public:
 
     MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_120

@@ -5,5 +5,4 @@
 // auto generated inclusion list
 #include "mc/entity/components/FloatComponent.h"
 
-struct RidingHeightComponent : public ::FloatComponent {
-};
+struct RidingHeightComponent : public ::FloatComponent {};

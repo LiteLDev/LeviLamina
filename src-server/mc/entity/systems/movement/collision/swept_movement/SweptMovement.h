@@ -12,7 +12,12 @@ namespace SweptMovement { struct MoveResult; }
 namespace SweptMovement {
 // functions
 // NOLINTBEGIN
-MCNAPI ::SweptMovement::MoveResult computeMoveWithDepenetration(::gsl::span<::Vec3 const> steps, ::AABB const& mover, ::std::vector<::AABB> const& collisionShapes, ::Vec3 const& maxDepenetration);
+MCNAPI ::SweptMovement::MoveResult computeMoveWithDepenetration(
+    ::gsl::span<::Vec3 const>    steps,
+    ::AABB const&                mover,
+    ::std::vector<::AABB> const& collisionShapes,
+    ::Vec3 const&                maxDepenetration
+);
 // NOLINTEND
 
-}
+} // namespace SweptMovement

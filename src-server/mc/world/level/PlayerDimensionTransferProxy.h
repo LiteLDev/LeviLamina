@@ -26,7 +26,11 @@ public:
     virtual ~PlayerDimensionTransferProxy() /*override*/ = default;
 
     // vIndex: 1
-    virtual void playerDimensionChangedEvent(::Player& player, ::DimensionType fromDimensionId, ::DimensionType toDimensionId) /*override*/;
+    virtual void playerDimensionChangedEvent(
+        ::Player&       player,
+        ::DimensionType fromDimensionId,
+        ::DimensionType toDimensionId
+    ) /*override*/;
 
     // vIndex: 2
     virtual ::Actor* getAgent(::Player& player) /*override*/;
@@ -62,7 +66,9 @@ public:
     virtual void prepareRegion(::Player& player, ::Dimension const& dimension) /*override*/;
 
     // vIndex: 13
-    virtual ::MovePlayerPacket createMovePlayerPacket(::Player const& player, ::PlayerPositionModeComponent::PositionMode resetPosition) const /*override*/;
+    virtual ::MovePlayerPacket
+    createMovePlayerPacket(::Player const& player, ::PlayerPositionModeComponent::PositionMode resetPosition) const
+        /*override*/;
 
     // vIndex: 14
     virtual void setAgent(::Player& player, ::Actor& agent) /*override*/;
@@ -74,7 +80,8 @@ public:
     virtual bool isRespawnReady(::Player const& player) const /*override*/;
 
     // vIndex: 17
-    virtual ::std::pair<bool, ::std::optional<::SubChunkPos>> hasSubChunksAt(::Player const& player, ::BlockPos const& min, ::BlockPos const& max) const /*override*/;
+    virtual ::std::pair<bool, ::std::optional<::SubChunkPos>>
+    hasSubChunksAt(::Player const& player, ::BlockPos const& min, ::BlockPos const& max) const /*override*/;
 
     // vIndex: 18
     virtual void transferTickingArea(::Actor& actor, ::Dimension& dimension) /*override*/;
@@ -83,7 +90,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $playerDimensionChangedEvent(::Player& player, ::DimensionType fromDimensionId, ::DimensionType toDimensionId);
+    MCAPI void
+    $playerDimensionChangedEvent(::Player& player, ::DimensionType fromDimensionId, ::DimensionType toDimensionId);
 
     MCAPI ::Actor* $getAgent(::Player& player);
 
@@ -107,7 +115,8 @@ public:
 
     MCAPI void $prepareRegion(::Player& player, ::Dimension const& dimension);
 
-    MCAPI ::MovePlayerPacket $createMovePlayerPacket(::Player const& player, ::PlayerPositionModeComponent::PositionMode resetPosition) const;
+    MCAPI ::MovePlayerPacket
+    $createMovePlayerPacket(::Player const& player, ::PlayerPositionModeComponent::PositionMode resetPosition) const;
 
     MCAPI void $setAgent(::Player& player, ::Actor& agent);
 
@@ -115,7 +124,8 @@ public:
 
     MCAPI bool $isRespawnReady(::Player const& player) const;
 
-    MCAPI ::std::pair<bool, ::std::optional<::SubChunkPos>> $hasSubChunksAt(::Player const& player, ::BlockPos const& min, ::BlockPos const& max) const;
+    MCAPI ::std::pair<bool, ::std::optional<::SubChunkPos>>
+    $hasSubChunksAt(::Player const& player, ::BlockPos const& min, ::BlockPos const& max) const;
 
     MCFOLD void $transferTickingArea(::Actor& actor, ::Dimension& dimension);
     // NOLINTEND
@@ -125,5 +135,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

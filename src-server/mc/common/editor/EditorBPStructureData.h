@@ -29,7 +29,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorBPStructureData(::std::string strucNamespace, ::std::string name, ::PackIdVersion idVersion, ::std::string path);
+    MCNAPI EditorBPStructureData(
+        ::std::string   strucNamespace,
+        ::std::string   name,
+        ::PackIdVersion idVersion,
+        ::std::string   path
+    );
 
     MCNAPI ~EditorBPStructureData();
     // NOLINTEND
@@ -45,7 +50,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

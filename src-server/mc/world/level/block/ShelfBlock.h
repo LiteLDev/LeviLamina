@@ -29,30 +29,30 @@ class ShelfBlock : public ::ActorBlock {
 public:
     // ShelfBlock inner types define
     enum class SlotState : uchar {
-        Free = 0,
+        Free     = 0,
         Occupied = 1,
-        Invalid = 2,
+        Invalid  = 2,
     };
-    
+
     enum class PoweredType : int {
         Unconnected = 0,
-        Right = 1,
-        Center = 2,
-        Left = 3,
-        Count = 4,
+        Right       = 1,
+        Center      = 2,
+        Left        = 3,
+        Count       = 4,
     };
-    
+
     enum class NeighborDirection : uchar {
         Right = 0,
-        Left = 1,
+        Left  = 1,
     };
-    
+
     enum class SwapItemResult : int {
         NoItemsTransferred = 0,
         SingleItemTransfer = 1,
-        TwoItemsSwapped = 2,
+        TwoItemsSwapped    = 2,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -60,28 +60,43 @@ public:
     virtual void movedByPiston(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 86
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
     // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 61
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const /*override*/;
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
 
     // vIndex: 104
     virtual bool hasComparatorSignal() const /*override*/;
 
     // vIndex: 105
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const /*override*/;
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
     // vIndex: 5
-    virtual ::AABB getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const /*override*/;
+    virtual ::AABB getCollisionShape(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const /*override*/;
 
     // vIndex: 9
-    virtual ::AABB const& getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const /*override*/;
+    virtual ::AABB const&
+    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
+        /*override*/;
 
     // vIndex: 10
-    virtual ::AABB const& getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferAABB) const /*override*/;
+    virtual ::AABB const& getVisualShapeInWorld(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
+        ::AABB&           bufferAABB
+    ) const /*override*/;
 
     // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
@@ -93,7 +108,11 @@ public:
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const /*override*/;
 
     // vIndex: 18
-    virtual bool liquidCanFlowIntoFromDirection(uchar flowIntoFacing, ::std::function<::Block const&(::BlockPos const&)> const& getBlock, ::BlockPos const& pos) const /*override*/;
+    virtual bool liquidCanFlowIntoFromDirection(
+        uchar                                                     flowIntoFacing,
+        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
+        ::BlockPos const&                                         pos
+    ) const /*override*/;
 
     // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -105,29 +124,62 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _blockHasPoweredShelfType(::BlockSource const& region, ::BlockPos const& pos, ::ShelfBlock::PoweredType type) const;
+    MCAPI bool
+    _blockHasPoweredShelfType(::BlockSource const& region, ::BlockPos const& pos, ::ShelfBlock::PoweredType type) const;
 
-    MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*> _getPoweredShelfBlockActors(::BlockPos const& pos, ::BlockSource& region) const;
+    MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
+    _getPoweredShelfBlockActors(::BlockPos const& pos, ::BlockSource& region) const;
 
-    MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*> _getPoweredShelfBlockActorsForDoubleShelf(::BlockSource& region, ::BlockPos const& shelfLeft, ::BlockPos const& shelfRight) const;
+    MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
+    _getPoweredShelfBlockActorsForDoubleShelf(
+        ::BlockSource&    region,
+        ::BlockPos const& shelfLeft,
+        ::BlockPos const& shelfRight
+    ) const;
 
-    MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*> _getPoweredShelfBlockActorsForTripleShelf(::BlockSource& region, ::BlockPos const& shelfLeft, ::BlockPos const& shelfCenter, ::BlockPos const& shelfRight) const;
+    MCAPI ::std::tuple<::ShelfBlockActor*, ::ShelfBlockActor*, ::ShelfBlockActor*>
+    _getPoweredShelfBlockActorsForTripleShelf(
+        ::BlockSource&    region,
+        ::BlockPos const& shelfLeft,
+        ::BlockPos const& shelfCenter,
+        ::BlockPos const& shelfRight
+    ) const;
 
-    MCAPI ::ShelfBlock::SwapItemResult _getSwapItemWithHandResult(::ShelfBlockActor& shelfActor, int hitSlot, ::Player const& player) const;
+    MCAPI ::ShelfBlock::SwapItemResult
+    _getSwapItemWithHandResult(::ShelfBlockActor& shelfActor, int hitSlot, ::Player const& player) const;
 
-    MCAPI bool _isMatchingPoweredShelfInMatchingDirection(::BlockSource const& region, ::BlockPos const& pos, ::BlockPos const& neighbor) const;
+    MCAPI bool _isMatchingPoweredShelfInMatchingDirection(
+        ::BlockSource const& region,
+        ::BlockPos const&    pos,
+        ::BlockPos const&    neighbor
+    ) const;
 
     MCAPI void _powerOnAndTryConnectNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void _setShelfData(::BlockSource& region, ::BlockPos const& pos, bool powered, ::ShelfBlock::PoweredType type) const;
+    MCAPI void
+    _setShelfData(::BlockSource& region, ::BlockPos const& pos, bool powered, ::ShelfBlock::PoweredType type) const;
 
-    MCAPI void _swapItemWithHand(::ShelfBlockActor& shelfActor, int hitSlot, ::Player& player, ::BlockSource const& region) const;
+    MCAPI void
+    _swapItemWithHand(::ShelfBlockActor& shelfActor, int hitSlot, ::Player& player, ::BlockSource const& region) const;
 
-    MCAPI ::ShelfBlock::SwapItemResult _swapItemsWithHotbar(::ShelfBlockActor& shelfActor, int shelfSlot, ::Player& player, int inventorySlot, ::BlockSource const& region) const;
+    MCAPI ::ShelfBlock::SwapItemResult _swapItemsWithHotbar(
+        ::ShelfBlockActor&   shelfActor,
+        int                  shelfSlot,
+        ::Player&            player,
+        int                  inventorySlot,
+        ::BlockSource const& region
+    ) const;
 
     MCAPI bool _swapItemsWithPoweredShelf(::Player& player, ::BlockPos const& pos, ::BlockSource& region) const;
 
-    MCAPI bool _swapItemsWithUnpoweredShelf(::Player& player, ::BlockPos const& pos, ::BlockSource& region, ::ShelfBlockActor& blockActor, ::Vec3 const& blockHit, uchar hitFace) const;
+    MCAPI bool _swapItemsWithUnpoweredShelf(
+        ::Player&          player,
+        ::BlockPos const&  pos,
+        ::BlockSource&     region,
+        ::ShelfBlockActor& blockActor,
+        ::Vec3 const&      blockHit,
+        uchar              hitFace
+    ) const;
 
     MCAPI void _unpowerAndDisconnectFromNeighbors(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -163,11 +215,22 @@ public:
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI ::AABB $getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const;
+    MCAPI ::AABB $getCollisionShape(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
+        ::optional_ref<::GetCollisionShapeInterface const>
+    ) const;
 
-    MCFOLD ::AABB const& $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    MCFOLD ::AABB const&
+    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCFOLD ::AABB const& $getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferAABB) const;
+    MCFOLD ::AABB const& $getVisualShapeInWorld(
+        ::Block const& block,
+        ::IConstBlockSource const&,
+        ::BlockPos const& pos,
+        ::AABB&           bufferAABB
+    ) const;
 
     MCFOLD bool $isInteractiveBlock() const;
 
@@ -175,7 +238,11 @@ public:
 
     MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
 
-    MCAPI bool $liquidCanFlowIntoFromDirection(uchar flowIntoFacing, ::std::function<::Block const&(::BlockPos const&)> const& getBlock, ::BlockPos const& pos) const;
+    MCAPI bool $liquidCanFlowIntoFromDirection(
+        uchar                                                     flowIntoFacing,
+        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
+        ::BlockPos const&                                         pos
+    ) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
@@ -185,5 +252,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

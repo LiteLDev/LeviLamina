@@ -17,7 +17,15 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::Vec3> mMaxDepenetrationMagnitude;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::StrictEntityContext, ::AABB, ::StrictEntityContext::Hash, ::std::equal_to<::StrictEntityContext>>> mNearbyColliders;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<
+            ::StrictEntityContext,
+            ::AABB,
+            ::StrictEntityContext::Hash,
+            ::std::equal_to<::StrictEntityContext>>>
+        mNearbyColliders;
     // NOLINTEND
 
 public:
@@ -42,5 +50,4 @@ public:
 
     MCAPI void* $ctor(::IsSolidMobNearbyComponent&&);
     // NOLINTEND
-
 };

@@ -6,9 +6,9 @@ namespace dcsctp {
 
 enum class SctpImplementation : int {
     KUnknown = 0,
-    KDcsctp = 1,
+    KDcsctp  = 1,
     KUsrSctp = 2,
-    KOther = 3,
+    KOther   = 3,
 };
 
 }

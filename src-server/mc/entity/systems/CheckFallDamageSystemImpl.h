@@ -16,7 +16,13 @@ struct OnGroundFlagComponent;
 namespace CheckFallDamageSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void checkFallDamage(::ActorOwnerComponent& actorComponent, ::MoveRequestComponent const& request, ::Optional<::OnGroundFlagComponent const> onGround, ::Optional<::ActorTickedComponent const> actorTickedComponent, bool forceRecheckLiquid);
+MCNAPI void checkFallDamage(
+    ::ActorOwnerComponent&                    actorComponent,
+    ::MoveRequestComponent const&             request,
+    ::Optional<::OnGroundFlagComponent const> onGround,
+    ::Optional<::ActorTickedComponent const>  actorTickedComponent,
+    bool                                      forceRecheckLiquid
+);
 // NOLINTEND
 
-}
+} // namespace CheckFallDamageSystemImpl

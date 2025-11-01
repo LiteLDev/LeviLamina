@@ -20,7 +20,6 @@ public:
     PerCascadeParameters& operator=(PerCascadeParameters const&);
     PerCascadeParameters(PerCascadeParameters const&);
     PerCascadeParameters();
-
 };
 
-}
+} // namespace mce::framebuilder

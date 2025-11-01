@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mStorageKey;
     ::ll::TypedStorage<8, 32, ::std::string> mLastSerializedActorState;
-    ::ll::TypedStorage<1, 1, bool> mDirtyFromNonSerializedState;
+    ::ll::TypedStorage<1, 1, bool>           mDirtyFromNonSerializedState;
     // NOLINTEND
 
 public:
@@ -22,5 +22,4 @@ public:
     // NOLINTBEGIN
     MCFOLD ::EntityStorageKeyComponent& operator=(::EntityStorageKeyComponent&&);
     // NOLINTEND
-
 };

@@ -21,8 +21,8 @@ class SetBannerDetailsFunction : public ::LootItemFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke809d9;
-    ::ll::UntypedStorage<1, 1> mUnkd8feda;
+    ::ll::UntypedStorage<4, 4>  mUnke809d9;
+    ::ll::UntypedStorage<1, 1>  mUnkd8feda;
     ::ll::UntypedStorage<8, 24> mUnkc9e1fc;
     // NOLINTEND
 
@@ -57,9 +57,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _parseBannerPattern(::std::vector<::std::pair<uchar, ::ItemColor>>& patternVec, ::Json::Value const& object);
+    MCNAPI static void
+    _parseBannerPattern(::std::vector<::std::pair<uchar, ::ItemColor>>& patternVec, ::Json::Value const& object);
 
-    MCNAPI static ::std::unique_ptr<::LootItemFunction> deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    MCNAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
@@ -77,5 +79,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

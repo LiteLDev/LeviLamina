@@ -15,39 +15,39 @@ public:
     // clang-format off
     struct Ammunition;
     // clang-format on
-    
+
     // ShooterItemComponent inner types define
     struct Ammunition {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnk28c2a6;
-        ::ll::UntypedStorage<1, 1> mUnk9dd73d;
-        ::ll::UntypedStorage<1, 1> mUnkdd8904;
-        ::ll::UntypedStorage<1, 1> mUnk2506ee;
+        ::ll::UntypedStorage<1, 1>  mUnk9dd73d;
+        ::ll::UntypedStorage<1, 1>  mUnkdd8904;
+        ::ll::UntypedStorage<1, 1>  mUnk2506ee;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Ammunition& operator=(Ammunition const&);
         Ammunition(Ammunition const&);
         Ammunition();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_20_50::ShooterItemComponent::Ammunition& operator=(::SharedTypes::v1_20_50::ShooterItemComponent::Ammunition&&);
+        MCNAPI ::SharedTypes::v1_20_50::ShooterItemComponent::Ammunition&
+        operator=(::SharedTypes::v1_20_50::ShooterItemComponent::Ammunition&&);
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk228070;
-    ::ll::UntypedStorage<4, 4> mUnk646763;
-    ::ll::UntypedStorage<1, 1> mUnk80b53f;
-    ::ll::UntypedStorage<1, 1> mUnk5c8cfa;
+    ::ll::UntypedStorage<4, 4>  mUnk646763;
+    ::ll::UntypedStorage<1, 1>  mUnk80b53f;
+    ::ll::UntypedStorage<1, 1>  mUnk5c8cfa;
     // NOLINTEND
 
 public:
@@ -61,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_50

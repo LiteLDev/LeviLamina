@@ -15,11 +15,9 @@ public:
     // clang-format off
     struct iterator;
     // clang-format on
-    
+
     // no_mapped_container_t inner types define
-    struct iterator {
-    };
-    
+    struct iterator {};
 };
 
-}
+} // namespace brstd

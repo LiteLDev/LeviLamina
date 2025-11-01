@@ -7,7 +7,8 @@
 
 namespace Editor::Network {
 
-class DataTransferServiceSendDataPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::DataTransferServiceSendDataPayload> {
+class DataTransferServiceSendDataPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::DataTransferServiceSendDataPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,7 +40,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

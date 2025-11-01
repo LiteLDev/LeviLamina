@@ -13,4 +13,4 @@ namespace ModuleLibraryUtils {
 MCNAPI ::std::optional<::std::string> LoadScript(::ResourceLoader& resourceLoader, ::std::string const& versionPath);
 // NOLINTEND
 
-}
+} // namespace ModuleLibraryUtils

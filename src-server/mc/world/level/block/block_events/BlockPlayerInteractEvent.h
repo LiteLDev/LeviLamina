@@ -18,10 +18,10 @@ class BlockPlayerInteractEvent : public ::BlockEvents::BlockEventBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mSuccessful;
+    ::ll::TypedStorage<8, 8, ::Player&>                      mPlayer;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>          mSuccessful;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3> const> mHit;
-    ::ll::TypedStorage<1, 1, uchar const> mFace;
+    ::ll::TypedStorage<1, 1, uchar const>                    mFace;
     // NOLINTEND
 
 public:
@@ -57,7 +57,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockEvents

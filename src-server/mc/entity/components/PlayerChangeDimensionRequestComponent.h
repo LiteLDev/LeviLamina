@@ -9,15 +9,14 @@ struct PlayerChangeDimensionRequestComponent {
 public:
     // PlayerChangeDimensionRequestComponent inner types define
     enum class State : uchar {
-        AwaitingECSTick = 0,
+        AwaitingECSTick     = 0,
         ECSTransferComplete = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::PlayerChangeDimensionRequestComponent::State> mState;
-    ::ll::TypedStorage<8, 48, ::ChangeDimensionRequest> mRequest;
+    ::ll::TypedStorage<8, 48, ::ChangeDimensionRequest>                      mRequest;
     // NOLINTEND
-
 };

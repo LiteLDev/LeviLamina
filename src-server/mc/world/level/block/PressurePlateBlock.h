@@ -17,10 +17,10 @@ public:
     // PressurePlateBlock inner types define
     enum class Sensitivity : int {
         Everything = 0,
-        Mobs = 1,
-        Players = 2,
+        Mobs       = 1,
+        Players    = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -63,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -4,8 +4,7 @@
 
 namespace OperationNodeFilters {
 
-template<typename T0>
-class FilteredTransformation {
-};
+template <typename T0>
+class FilteredTransformation {};
 
-}
+} // namespace OperationNodeFilters

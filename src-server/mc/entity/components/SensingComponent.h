@@ -16,7 +16,7 @@ class SensingComponent {
 public:
     // SensingComponent inner types define
     using ActorSet = ::std::unordered_set<::ActorUniqueID>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,5 +39,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

@@ -11,16 +11,16 @@ namespace KnockbackRules { struct KnockbackAttackOptions; }
 namespace KnockbackRules {
 // functions
 // NOLINTBEGIN
-MCNAPI void doKnockbackAttack(::KnockbackRules::KnockbackAttackOptions const& options);
+MCAPI void doKnockbackAttack(::KnockbackRules::KnockbackAttackOptions const& options);
 
-MCNAPI float getScaledKnockbackForce(::Actor const& actor, float knockbackPower);
+MCAPI float getScaledKnockbackForce(::Actor const& actor, float knockbackPower);
 
-MCNAPI bool isKnockbackResistant(::Actor const& actor);
+MCAPI bool isKnockbackResistant(::Actor const& actor);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCNAPI float const& KNOCKBACK_DAMPENING();
+MCAPI float const& KNOCKBACK_DAMPENING();
 // NOLINTEND
 
-}
+} // namespace KnockbackRules

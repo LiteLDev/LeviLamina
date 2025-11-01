@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mEventSubscription;
-    ::ll::TypedStorage<4, 4, float> mMinimumFallDistance;
+    ::ll::TypedStorage<4, 4, float>                            mMinimumFallDistance;
     // NOLINTEND
 
 public:
@@ -46,5 +46,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

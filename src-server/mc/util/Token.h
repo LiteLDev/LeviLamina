@@ -8,9 +8,9 @@ public:
     enum class Type : int {
         String = 0,
         Number = 1,
-        Bool = 2,
+        Bool   = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -56,5 +56,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

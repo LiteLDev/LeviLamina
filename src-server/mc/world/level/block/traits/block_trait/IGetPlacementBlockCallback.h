@@ -20,7 +20,13 @@ public:
     virtual ~IGetPlacementBlockCallback() = default;
 
     // vIndex: 1
-    virtual ::gsl::not_null<::Block const*> getPlacementBlock(::gsl::not_null<::Block const*>, ::Actor const&, ::BlockPos const&, uchar, ::Vec3 const&) const = 0;
+    virtual ::gsl::not_null<::Block const*> getPlacementBlock(
+        ::gsl::not_null<::Block const*>,
+        ::Actor const&,
+        ::BlockPos const&,
+        uchar,
+        ::Vec3 const&
+    ) const = 0;
     // NOLINTEND
 
 public:
@@ -34,7 +40,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace BlockTrait

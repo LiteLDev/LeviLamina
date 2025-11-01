@@ -16,7 +16,6 @@ public:
     ActorAdapterComponent& operator=(ActorAdapterComponent const&);
     ActorAdapterComponent(ActorAdapterComponent const&);
     ActorAdapterComponent();
-
 };
 
-}
+} // namespace VanillaSystems

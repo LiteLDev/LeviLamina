@@ -34,13 +34,19 @@ public:
 
     MCNAPI void _generateAllBlockHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI void _registerBlockTypeAlias(::std::string blockName, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType> blockHandle);
+    MCNAPI void _registerBlockTypeAlias(
+        ::std::string                                                                  blockName,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType> blockHandle
+    );
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>> get(::Scripting::WeakLifetimeScope& scope, ::std::string const& blockName);
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    get(::Scripting::WeakLifetimeScope& scope, ::std::string const& blockName);
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>> getAllBlockTypes(::Scripting::WeakLifetimeScope& scope);
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    getAllBlockTypes(::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>> get_V010(::Scripting::WeakLifetimeScope& scope, ::std::string const& blockName);
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
+    get_V010(::Scripting::WeakLifetimeScope& scope, ::std::string const& blockName);
 
     MCNAPI ::ScriptModuleMinecraft::ScriptBlockTypes& operator=(::ScriptModuleMinecraft::ScriptBlockTypes&&);
     // NOLINTEND
@@ -58,7 +64,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

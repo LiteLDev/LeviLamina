@@ -11,9 +11,9 @@ struct ProfileTypeConverter {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string_view getStringFromProfileType(::persona::ProfileType typeToGetStringFor, bool nonLegacyStrDesired);
+    MCNAPI static ::std::string_view
+    getStringFromProfileType(::persona::ProfileType typeToGetStringFor, bool nonLegacyStrDesired);
     // NOLINTEND
-
 };
 
-}
+} // namespace persona

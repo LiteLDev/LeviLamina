@@ -17,12 +17,12 @@ class AsyncOperationBase : public ::PositionTrackingDB::OperationBase {
 public:
     // AsyncOperationBase inner types define
     enum class InternalState : int {
-        Init = 0,
-        Tick = 1,
-        Quit = 2,
+        Init     = 0,
+        Tick     = 1,
+        Quit     = 2,
         Complete = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,7 +40,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord& record) /*override*/;
+    virtual bool tick(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::PositionTrackingDB::TrackingRecord&                           record
+    ) /*override*/;
 
     // vIndex: 3
     virtual bool isAsync() const /*override*/;
@@ -49,13 +52,18 @@ public:
     virtual bool isComplete() const /*override*/;
 
     // vIndex: 5
-    virtual bool _init(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
+    virtual bool
+    _init(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
     // vIndex: 6
-    virtual bool _tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
+    virtual bool
+    _tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
     // vIndex: 7
-    virtual bool _quit(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord&);
+    virtual bool _quit(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::PositionTrackingDB::TrackingRecord&
+    );
 
     // vIndex: 0
     virtual ~AsyncOperationBase() /*override*/ = default;
@@ -64,15 +72,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord& record);
+    MCNAPI bool $tick(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::PositionTrackingDB::TrackingRecord&                           record
+    );
 
     MCNAPI bool $isAsync() const;
 
     MCNAPI bool $isComplete() const;
 
-    MCNAPI bool $_quit(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord&);
+    MCNAPI bool $_quit(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::PositionTrackingDB::TrackingRecord&
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace PositionTrackingDB

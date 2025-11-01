@@ -12,7 +12,7 @@ namespace PlayerReportingSignal { struct ReportFunctionData; }
 
 namespace PlayerReportingSignal {
 
-class SendReport : public ::Bedrock::Signal<::PlayerReportingSignal::SendReport, ::PlayerReportingSignal::ReportFunctionData> {
-};
+class SendReport
+: public ::Bedrock::Signal<::PlayerReportingSignal::SendReport, ::PlayerReportingSignal::ReportFunctionData> {};
 
-}
+} // namespace PlayerReportingSignal

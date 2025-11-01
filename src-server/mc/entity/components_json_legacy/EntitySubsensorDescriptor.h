@@ -6,12 +6,12 @@ struct EntitySubsensorDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk378f1b;
-    ::ll::UntypedStorage<4, 4> mUnkc56d21;
-    ::ll::UntypedStorage<1, 1> mUnkc272c6;
-    ::ll::UntypedStorage<4, 4> mUnkd28fc0;
-    ::ll::UntypedStorage<4, 4> mUnke1ba9f;
-    ::ll::UntypedStorage<4, 4> mUnk2f5a0f;
+    ::ll::UntypedStorage<4, 8>  mUnk378f1b;
+    ::ll::UntypedStorage<4, 4>  mUnkc56d21;
+    ::ll::UntypedStorage<1, 1>  mUnkc272c6;
+    ::ll::UntypedStorage<4, 4>  mUnkd28fc0;
+    ::ll::UntypedStorage<4, 4>  mUnke1ba9f;
+    ::ll::UntypedStorage<4, 4>  mUnk2f5a0f;
     ::ll::UntypedStorage<8, 32> mUnke372ff;
     ::ll::UntypedStorage<8, 64> mUnkd6ee8e;
     // NOLINTEND
@@ -33,5 +33,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

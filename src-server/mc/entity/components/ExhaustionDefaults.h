@@ -24,4 +24,4 @@ MCAPI float const& EXHAUSTION_SWIM();
 MCAPI float const& EXHAUSTION_WALK();
 // NOLINTEND
 
-}
+} // namespace ExhaustionDefaults

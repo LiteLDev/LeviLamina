@@ -6,10 +6,9 @@
 #include "mc/world/events/ActorDefinitionStartedEvent.h"
 #include "mc/world/events/EventVariantImpl.h"
 
-template<typename Result>
+template <typename Result>
 struct MutableActorGameplayEvent;
 
 template <>
 struct MutableActorGameplayEvent<CoordinatorResult>
-: MutableEventVariant<ActorDefinitionStartedEvent, ActorAddEffectEvent> {
-};
+: MutableEventVariant<ActorDefinitionStartedEvent, ActorAddEffectEvent> {};

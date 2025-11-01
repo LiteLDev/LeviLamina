@@ -33,19 +33,20 @@ namespace mce { class Color; }
 
 namespace Editor::Services {
 
-class EditorSettingsService : public ::Editor::Services::IEditorService, public ::Editor::Services::EditorSettingsServiceProvider {
+class EditorSettingsService : public ::Editor::Services::IEditorService,
+                              public ::Editor::Services::EditorSettingsServiceProvider {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk10c8b1;
     ::ll::UntypedStorage<8, 48> mUnk416e07;
-    ::ll::UntypedStorage<8, 8> mUnkcd6c8d;
+    ::ll::UntypedStorage<8, 8>  mUnkcd6c8d;
     ::ll::UntypedStorage<8, 16> mUnk9c3dd4;
     ::ll::UntypedStorage<8, 48> mUnke91689;
-    ::ll::UntypedStorage<8, 8> mUnkc9079a;
+    ::ll::UntypedStorage<8, 8>  mUnkc9079a;
     ::ll::UntypedStorage<8, 16> mUnk5cae67;
     ::ll::UntypedStorage<8, 48> mUnk9c041c;
-    ::ll::UntypedStorage<8, 8> mUnk901f2d;
+    ::ll::UntypedStorage<8, 8>  mUnk901f2d;
     ::ll::UntypedStorage<8, 16> mUnk5fc265;
     ::ll::UntypedStorage<8, 48> mUnk2415fc;
     ::ll::UntypedStorage<8, 16> mUnk1bc51d;
@@ -56,7 +57,7 @@ public:
     ::ll::UntypedStorage<8, 48> mUnkc7ac71;
     ::ll::UntypedStorage<8, 16> mUnkc01e6e;
     ::ll::UntypedStorage<8, 48> mUnk42fa03;
-    ::ll::UntypedStorage<8, 8> mUnk86ce36;
+    ::ll::UntypedStorage<8, 8>  mUnk86ce36;
     // NOLINTEND
 
 public:
@@ -102,28 +103,40 @@ public:
     virtual ::Editor::Settings::Theme const& getThemeSettings() const /*override*/;
 
     // vIndex: 3
-    virtual ::Bedrock::PubSub::Subscription listenForAudioSettingsChanged(::std::function<void(::Editor::Settings::AudioProps const&)> func) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    listenForAudioSettingsChanged(::std::function<void(::Editor::Settings::AudioProps const&)> func) /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForGraphicsSettingsChanged(::std::function<void(::Editor::Settings::GraphicsProps const&)> func) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    listenForGraphicsSettingsChanged(::std::function<void(::Editor::Settings::GraphicsProps const&)> func) /*override*/;
 
     // vIndex: 9
-    virtual ::Bedrock::PubSub::Subscription listenForSpeedSettingsChanged(::std::function<void(::Editor::Settings::SpeedProps const&)> func) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    listenForSpeedSettingsChanged(::std::function<void(::Editor::Settings::SpeedProps const&)> func) /*override*/;
 
     // vIndex: 12
-    virtual ::Bedrock::PubSub::Subscription listenForThemeSettingsChanged(::std::function<void(::Editor::Settings::ThemeProps const&)> func) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    listenForThemeSettingsChanged(::std::function<void(::Editor::Settings::ThemeProps const&)> func) /*override*/;
 
     // vIndex: 13
-    virtual ::Bedrock::PubSub::Subscription listenForCurrentThemeChanged(::std::function<void(::std::string const&)> func) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    listenForCurrentThemeChanged(::std::function<void(::std::string const&)> func) /*override*/;
 
     // vIndex: 14
-    virtual ::Bedrock::PubSub::Subscription listenForNewThemeCreated(::std::function<void(::std::string const&, ::std::optional<::std::string> const&, ::std::optional<::std::string> const&)> func) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription listenForNewThemeCreated(
+        ::std::function<
+            void(::std::string const&, ::std::optional<::std::string> const&, ::std::optional<::std::string> const&)>
+            func
+    ) /*override*/;
 
     // vIndex: 15
-    virtual ::Bedrock::PubSub::Subscription listenForThemeColorUpdated(::std::function<void(::std::string const&, ::Editor::Settings::ThemeSettingsColorKey, ::mce::Color const&)> func) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription listenForThemeColorUpdated(
+        ::std::function<void(::std::string const&, ::Editor::Settings::ThemeSettingsColorKey, ::mce::Color const&)> func
+    ) /*override*/;
 
     // vIndex: 16
-    virtual ::Bedrock::PubSub::Subscription listenForThemeDeleted(::std::function<void(::std::string const&)> func) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    listenForThemeDeleted(::std::function<void(::std::string const&)> func) /*override*/;
 
     // vIndex: 7
     virtual void _handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const&);
@@ -138,13 +151,16 @@ public:
     virtual void _handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const&);
 
     // vIndex: 11
-    virtual void _handleThemeSettingsCurrentThemeChangedPayload(::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const&);
+    virtual void
+    _handleThemeSettingsCurrentThemeChangedPayload(::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const&);
 
     // vIndex: 12
-    virtual void _handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
+    virtual void
+    _handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
 
     // vIndex: 13
-    virtual void _handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const&);
+    virtual void
+    _handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const&);
 
     // vIndex: 14
     virtual void _handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const&);
@@ -191,19 +207,30 @@ public:
 
     MCNAPI ::Editor::Settings::Theme const& $getThemeSettings() const;
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForAudioSettingsChanged(::std::function<void(::Editor::Settings::AudioProps const&)> func);
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $listenForAudioSettingsChanged(::std::function<void(::Editor::Settings::AudioProps const&)> func);
 
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForGraphicsSettingsChanged(::std::function<void(::Editor::Settings::GraphicsProps const&)> func);
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
+    $listenForGraphicsSettingsChanged(::std::function<void(::Editor::Settings::GraphicsProps const&)> func);
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForSpeedSettingsChanged(::std::function<void(::Editor::Settings::SpeedProps const&)> func);
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $listenForSpeedSettingsChanged(::std::function<void(::Editor::Settings::SpeedProps const&)> func);
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForThemeSettingsChanged(::std::function<void(::Editor::Settings::ThemeProps const&)> func);
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $listenForThemeSettingsChanged(::std::function<void(::Editor::Settings::ThemeProps const&)> func);
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForCurrentThemeChanged(::std::function<void(::std::string const&)> func);
+    MCNAPI ::Bedrock::PubSub::Subscription
+    $listenForCurrentThemeChanged(::std::function<void(::std::string const&)> func);
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForNewThemeCreated(::std::function<void(::std::string const&, ::std::optional<::std::string> const&, ::std::optional<::std::string> const&)> func);
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForNewThemeCreated(
+        ::std::function<
+            void(::std::string const&, ::std::optional<::std::string> const&, ::std::optional<::std::string> const&)>
+            func
+    );
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForThemeColorUpdated(::std::function<void(::std::string const&, ::Editor::Settings::ThemeSettingsColorKey, ::mce::Color const&)> func);
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForThemeColorUpdated(
+        ::std::function<void(::std::string const&, ::Editor::Settings::ThemeSettingsColorKey, ::mce::Color const&)> func
+    );
 
     MCNAPI ::Bedrock::PubSub::Subscription $listenForThemeDeleted(::std::function<void(::std::string const&)> func);
 
@@ -215,11 +242,14 @@ public:
 
     MCNAPI void $_handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const&);
 
-    MCNAPI void $_handleThemeSettingsCurrentThemeChangedPayload(::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const&);
+    MCNAPI void
+    $_handleThemeSettingsCurrentThemeChangedPayload(::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const&);
 
-    MCNAPI void $_handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
+    MCNAPI void
+    $_handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
 
-    MCNAPI void $_handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const&);
+    MCNAPI void
+    $_handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const&);
 
     MCNAPI void $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const&);
     // NOLINTEND
@@ -231,7 +261,6 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

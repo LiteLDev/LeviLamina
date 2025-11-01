@@ -32,38 +32,38 @@ class Options : public ::BaseOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf5f65e;
+    ::ll::UntypedStorage<8, 8>  mUnkf5f65e;
     ::ll::UntypedStorage<8, 32> mUnka6468d;
-    ::ll::UntypedStorage<1, 1> mUnk97d4f1;
-    ::ll::UntypedStorage<1, 1> mUnkbadb16;
-    ::ll::UntypedStorage<1, 1> mUnk5ef96a;
-    ::ll::UntypedStorage<4, 4> mUnkf32118;
-    ::ll::UntypedStorage<4, 4> mUnka00782;
-    ::ll::UntypedStorage<8, 8> mUnk3ecb86;
-    ::ll::UntypedStorage<8, 8> mUnk82d36f;
-    ::ll::UntypedStorage<4, 4> mUnk8a8948;
-    ::ll::UntypedStorage<4, 4> mUnkf44041;
-    ::ll::UntypedStorage<4, 4> mUnk24eb7d;
-    ::ll::UntypedStorage<4, 4> mUnk8f9ddd;
-    ::ll::UntypedStorage<4, 4> mUnkf45021;
+    ::ll::UntypedStorage<1, 1>  mUnk97d4f1;
+    ::ll::UntypedStorage<1, 1>  mUnkbadb16;
+    ::ll::UntypedStorage<1, 1>  mUnk5ef96a;
+    ::ll::UntypedStorage<4, 4>  mUnkf32118;
+    ::ll::UntypedStorage<4, 4>  mUnka00782;
+    ::ll::UntypedStorage<8, 8>  mUnk3ecb86;
+    ::ll::UntypedStorage<8, 8>  mUnk82d36f;
+    ::ll::UntypedStorage<4, 4>  mUnk8a8948;
+    ::ll::UntypedStorage<4, 4>  mUnkf44041;
+    ::ll::UntypedStorage<4, 4>  mUnk24eb7d;
+    ::ll::UntypedStorage<4, 4>  mUnk8f9ddd;
+    ::ll::UntypedStorage<4, 4>  mUnkf45021;
     ::ll::UntypedStorage<8, 24> mUnkdc670b;
     ::ll::UntypedStorage<8, 24> mUnk727e15;
     ::ll::UntypedStorage<8, 24> mUnked4d9d;
-    ::ll::UntypedStorage<4, 4> mUnk15219e;
+    ::ll::UntypedStorage<4, 4>  mUnk15219e;
     ::ll::UntypedStorage<8, 24> mUnk11e2d9;
-    ::ll::UntypedStorage<8, 8> mUnk9db756;
+    ::ll::UntypedStorage<8, 8>  mUnk9db756;
     ::ll::UntypedStorage<8, 24> mUnk69f7a9;
     ::ll::UntypedStorage<8, 32> mUnkcb61a0;
-    ::ll::UntypedStorage<8, 8> mUnkd903f8;
-    ::ll::UntypedStorage<1, 1> mUnk7cacd9;
-    ::ll::UntypedStorage<1, 1> mUnk9cd155;
+    ::ll::UntypedStorage<8, 8>  mUnkd903f8;
+    ::ll::UntypedStorage<1, 1>  mUnk7cacd9;
+    ::ll::UntypedStorage<1, 1>  mUnk9cd155;
     ::ll::UntypedStorage<8, 24> mUnkfd7ff2;
     ::ll::UntypedStorage<8, 24> mUnk261e43;
     ::ll::UntypedStorage<8, 24> mUnkfaadd9;
     ::ll::UntypedStorage<8, 24> mUnkda32c3;
     ::ll::UntypedStorage<8, 24> mUnk227c67;
-    ::ll::UntypedStorage<1, 1> mUnkf9748f;
-    ::ll::UntypedStorage<4, 4> mUnk6814ff;
+    ::ll::UntypedStorage<1, 1>  mUnkf9748f;
+    ::ll::UntypedStorage<4, 4>  mUnk6814ff;
     // NOLINTEND
 
 public:
@@ -100,7 +100,8 @@ public:
     virtual bool getPrimaryUserStatus() const /*override*/;
 
     // vIndex: 23
-    virtual void setClientInstanceCoordinator(::Bedrock::NonOwnerPointer<::ClientInstanceEventCoordinator> const&) /*override*/;
+    virtual void
+    setClientInstanceCoordinator(::Bedrock::NonOwnerPointer<::ClientInstanceEventCoordinator> const&) /*override*/;
 
     // vIndex: 62
     virtual ::FileStorageDirectory getFileStorageLocation() const /*override*/;
@@ -240,5 +241,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

@@ -22,25 +22,25 @@ public:
     // clang-format off
     struct ExecutableComponent;
     // clang-format on
-    
+
     // BlockCustomComponentsComponent inner types define
     struct ExecutableComponent {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::HashedString const&> mName;
+        ::ll::TypedStorage<8, 8, ::HashedString const&>                                                     mName;
         ::ll::TypedStorage<8, 16, ::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle const> mData;
-        ::ll::TypedStorage<8, 8, ::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>> mComponent;
+        ::ll::TypedStorage<8, 8, ::gsl::not_null<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const*>>
+            mComponent;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ExecutableComponent& operator=(ExecutableComponent const&);
         ExecutableComponent(ExecutableComponent const&);
         ExecutableComponent();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -56,7 +56,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
 
-    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&, void>> tryGetComponentsToExecute(::BlockType const& baseBlock) const;
+    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
+        void>>
+    tryGetComponentsToExecute(::BlockType const& baseBlock) const;
     // NOLINTEND
-
 };

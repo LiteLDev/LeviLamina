@@ -13,7 +13,7 @@ struct CooldownItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnke83815;
+    ::ll::UntypedStorage<4, 4>  mUnke83815;
     ::ll::UntypedStorage<8, 32> mUnk5653b7;
     // NOLINTEND
 
@@ -48,7 +48,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_50

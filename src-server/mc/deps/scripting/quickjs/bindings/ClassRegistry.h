@@ -28,11 +28,10 @@ public:
     // clang-format off
     struct TypeHash;
     // clang-format on
-    
+
     // ClassRegistry inner types define
-    struct TypeHash {
-    };
-    
+    struct TypeHash {};
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -55,9 +54,21 @@ public:
     // NOLINTBEGIN
     MCNAPI ClassRegistry();
 
-    MCNAPI void _collectAllInterfaceProperties(::std::unordered_set<::Scripting::PropertyBinding, ::Scripting::HashPropertyBinding, ::Scripting::EqualPropertyBinding>& allProperties, ::Scripting::InterfaceBinding const& interfaceBinding);
+    MCNAPI void _collectAllInterfaceProperties(
+        ::std::unordered_set<
+            ::Scripting::PropertyBinding,
+            ::Scripting::HashPropertyBinding,
+            ::Scripting::EqualPropertyBinding>& allProperties,
+        ::Scripting::InterfaceBinding const&    interfaceBinding
+    );
 
-    MCNAPI void _collectAllProperties(::std::unordered_set<::Scripting::PropertyBinding, ::Scripting::HashPropertyBinding, ::Scripting::EqualPropertyBinding>& allProperties, ::Scripting::ClassBinding const& classBinding);
+    MCNAPI void _collectAllProperties(
+        ::std::unordered_set<
+            ::Scripting::PropertyBinding,
+            ::Scripting::HashPropertyBinding,
+            ::Scripting::EqualPropertyBinding>& allProperties,
+        ::Scripting::ClassBinding const&        classBinding
+    );
 
     MCNAPI void _registerBakedProperties(::Scripting::ClassBinding const& classBinding);
 
@@ -69,15 +80,22 @@ public:
 
     MCNAPI ::Scripting::QuickJS::RegisteredInterface* findInterfaceByType(::entt::meta_type const& type) const;
 
-    MCNAPI ::std::optional<::Scripting::TypeNameInfo> getNameForType(::Scripting::QuickJS::ResolvedTypes const& resolvedTypes, ::entt::meta_type const& type, bool allowUnknownTypes) const;
+    MCNAPI ::std::optional<::Scripting::TypeNameInfo> getNameForType(
+        ::Scripting::QuickJS::ResolvedTypes const& resolvedTypes,
+        ::entt::meta_type const&                   type,
+        bool                                       allowUnknownTypes
+    ) const;
 
-    MCNAPI ::Scripting::QuickJS::RegisteredClass& registerClass(::JSContext* ctx, ::Scripting::ClassBinding const& classBinding, bool forModule);
+    MCNAPI ::Scripting::QuickJS::RegisteredClass&
+    registerClass(::JSContext* ctx, ::Scripting::ClassBinding const& classBinding, bool forModule);
 
     MCNAPI void registerEnum(::JSContext* ctx, ::Scripting::EnumBinding const& enumBinding);
 
-    MCNAPI ::Scripting::QuickJS::RegisteredError& registerError(::JSContext* ctx, ::Scripting::ErrorBinding const& errorBinding);
+    MCNAPI ::Scripting::QuickJS::RegisteredError&
+    registerError(::JSContext* ctx, ::Scripting::ErrorBinding const& errorBinding);
 
-    MCNAPI ::Scripting::QuickJS::RegisteredInterface& registerInterface(::JSContext* ctx, ::Scripting::InterfaceBinding const& interfaceBinding);
+    MCNAPI ::Scripting::QuickJS::RegisteredInterface&
+    registerInterface(::JSContext* ctx, ::Scripting::InterfaceBinding const& interfaceBinding);
 
     MCNAPI ~ClassRegistry();
     // NOLINTEND
@@ -93,7 +111,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting::QuickJS

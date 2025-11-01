@@ -17,7 +17,7 @@ class ClientInstanceEventListener {
 public:
     // ClientInstanceEventListener inner types define
     using EventType = ::ClientInstanceNotificationEvent;
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -60,5 +60,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

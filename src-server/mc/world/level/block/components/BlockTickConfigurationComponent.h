@@ -10,5 +10,4 @@ public:
     ::ll::TypedStorage<4, 4, uint> mDelayIntervalMaxTicks;
     ::ll::TypedStorage<1, 1, bool> mLooping;
     // NOLINTEND
-
 };

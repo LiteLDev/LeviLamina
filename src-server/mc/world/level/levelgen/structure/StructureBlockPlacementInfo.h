@@ -12,5 +12,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::variant<::BlockPlacementType, ::PlacedConnectionBlock>> mPlacementInfo;
     // NOLINTEND
-
 };

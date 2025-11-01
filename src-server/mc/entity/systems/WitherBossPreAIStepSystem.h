@@ -21,9 +21,12 @@ class WitherBossPreAIStepSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doWitherBossPreAIStepSystem(::StrictEntityContext& context, ::ActorOwnerComponent& actorOwnerComponent, ::EntityModifier<::WitherBossPreAIStepResultComponent> mod);
+    MCNAPI static void _doWitherBossPreAIStepSystem(
+        ::StrictEntityContext&                                 context,
+        ::ActorOwnerComponent&                                 actorOwnerComponent,
+        ::EntityModifier<::WitherBossPreAIStepResultComponent> mod
+    );
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
-
 };

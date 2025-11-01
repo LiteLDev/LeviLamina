@@ -77,7 +77,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 namespace ll::inline literals::inline nbt_literals {
 [[nodiscard]] inline ShortTag operator""_s(uint64 num) noexcept { return ShortTag{(short)num}; }

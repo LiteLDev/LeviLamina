@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::std::queue<::ParticleEventRequest, ::std::deque<::ParticleEventRequest>>> mRequests;
     // NOLINTEND
-
 };

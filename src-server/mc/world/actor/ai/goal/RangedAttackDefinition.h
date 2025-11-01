@@ -15,11 +15,11 @@ class RangedAttackDefinition : public ::BaseGoalDefinition {
 public:
     // RangedAttackDefinition inner types define
     using self = ::RangedAttackDefinition;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mBurstShots;
+    ::ll::TypedStorage<4, 4, int>   mBurstShots;
     ::ll::TypedStorage<4, 4, float> mTargetInSightTime;
     ::ll::TypedStorage<4, 4, float> mBurstCooldownTime;
     ::ll::TypedStorage<4, 4, float> mChargeReadyTime;
@@ -32,8 +32,8 @@ public:
     ::ll::TypedStorage<4, 4, float> mMaxHeadRotationY;
     ::ll::TypedStorage<4, 4, float> mRangedFov;
     ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
-    ::ll::TypedStorage<1, 1, bool> mSetPersistent;
-    ::ll::TypedStorage<1, 1, bool> mSwing;
+    ::ll::TypedStorage<1, 1, bool>  mSetPersistent;
+    ::ll::TypedStorage<1, 1, bool>  mSwing;
     // NOLINTEND
 
 public:
@@ -46,7 +46,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RangedAttackDefinition>>& root);
+    MCAPI static void buildSchema(
+        ::std::string const&                                                                                   name,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RangedAttackDefinition>>& root
+    );
     // NOLINTEND
 
 public:
@@ -54,5 +57,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

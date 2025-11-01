@@ -29,19 +29,65 @@ struct WitherBossFlagComponent;
 namespace BlockMovementSlowdownMultiplierSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void adjustFallDistance(::ViewT<::StrictEntityContext, ::BlockMovementSlowdownAppliedComponent const, ::FallDistanceComponent> view);
+MCNAPI void adjustFallDistance(
+    ::ViewT<::StrictEntityContext, ::BlockMovementSlowdownAppliedComponent const, ::FallDistanceComponent> view
+);
 
-MCNAPI void applySlowdownOnMove(::ViewT<::StrictEntityContext, ::BlockMovementSlowdownMultiplierComponent, ::MoveRequestComponent, ::StateVectorComponent> view);
+MCNAPI void applySlowdownOnMove(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::BlockMovementSlowdownMultiplierComponent,
+        ::MoveRequestComponent,
+        ::StateVectorComponent> view
+);
 
-MCNAPI void applySlowdownOnMoveSingleEntity(::StrictEntityContext const& context, ::ViewT<::StrictEntityContext, ::BlockMovementSlowdownMultiplierComponent, ::MoveRequestComponent, ::StateVectorComponent> view);
+MCNAPI void applySlowdownOnMoveSingleEntity(
+    ::StrictEntityContext const& context,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::BlockMovementSlowdownMultiplierComponent,
+        ::MoveRequestComponent,
+        ::StateVectorComponent> view
+);
 
-MCNAPI void immunePlayer(::ViewT<::StrictEntityContext, ::BlockMovementSlowdownMultiplierComponent, ::Include<::BlockMovementSlowdownAppliedComponent>, ::MovementAbilitiesComponent const> view, ::EntityModifier<::BlockMovementSlowdownAppliedComponent> modifier);
+MCNAPI void immunePlayer(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::BlockMovementSlowdownMultiplierComponent,
+        ::Include<::BlockMovementSlowdownAppliedComponent>,
+        ::MovementAbilitiesComponent const>                   view,
+    ::EntityModifier<::BlockMovementSlowdownAppliedComponent> modifier
+);
 
-MCNAPI void immuneSpider(::ViewT<::StrictEntityContext, ::BlockMovementSlowdownMultiplierComponent, ::Include<::SpiderFlagComponent, ::InsideWebBlockComponent, ::BlockMovementSlowdownAppliedComponent>, ::Exclude<::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>, ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>>> view, ::EntityModifier<::BlockMovementSlowdownAppliedComponent> modifier);
+MCNAPI void immuneSpider(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::BlockMovementSlowdownMultiplierComponent,
+        ::Include<::SpiderFlagComponent, ::InsideWebBlockComponent, ::BlockMovementSlowdownAppliedComponent>,
+        ::Exclude<
+            ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+            ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>>> view,
+    ::EntityModifier<::BlockMovementSlowdownAppliedComponent>                  modifier
+);
 
-MCNAPI void immuneWitherBoss(::ViewT<::StrictEntityContext, ::BlockMovementSlowdownMultiplierComponent, ::Include<::WitherBossFlagComponent, ::BlockMovementSlowdownAppliedComponent>> witherInWebView, ::EntityModifier<::BlockMovementSlowdownAppliedComponent> modifier);
+MCNAPI void immuneWitherBoss(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::BlockMovementSlowdownMultiplierComponent,
+        ::Include<::WitherBossFlagComponent, ::BlockMovementSlowdownAppliedComponent>> witherInWebView,
+    ::EntityModifier<::BlockMovementSlowdownAppliedComponent>                          modifier
+);
 
-MCNAPI void weavingMob(::ViewT<::StrictEntityContext, ::BlockMovementSlowdownMultiplierComponent, ::MobEffectsComponent const, ::Include<::InsideWebBlockComponent, ::BlockMovementSlowdownAppliedComponent>, ::Exclude<::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>, ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>>> view);
+MCNAPI void weavingMob(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::BlockMovementSlowdownMultiplierComponent,
+        ::MobEffectsComponent const,
+        ::Include<::InsideWebBlockComponent, ::BlockMovementSlowdownAppliedComponent>,
+        ::Exclude<
+            ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
+            ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>>> view
+);
 // NOLINTEND
 
-}
+} // namespace BlockMovementSlowdownMultiplierSystemImpl

@@ -23,7 +23,7 @@ class LegacyOnCompleteTriggerItemComponent : public ::LegacyTriggerItemComponent
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseTimeDepletedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnUseTimeDepletedSubscription;
     ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnComplete;
     // NOLINTEND
 
@@ -46,7 +46,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit LegacyOnCompleteTriggerItemComponent(::LegacyOnCompleteTriggerItemComponentData&& componentData);
 
-    MCAPI void _onUseTimeDepleted(::ItemUseMethod& itemUseMethod, ::ItemStack const&, ::ItemStack& item, ::Player& player, ::Level& level);
+    MCAPI void _onUseTimeDepleted(
+        ::ItemUseMethod& itemUseMethod,
+        ::ItemStack const&,
+        ::ItemStack& item,
+        ::Player&    player,
+        ::Level&     level
+    );
     // NOLINTEND
 
 public:
@@ -72,5 +78,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

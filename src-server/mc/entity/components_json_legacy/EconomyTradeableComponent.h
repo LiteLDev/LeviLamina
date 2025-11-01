@@ -26,16 +26,16 @@ class EconomyTradeableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mLastTradingPlayer;
-    ::ll::TypedStorage<4, 4, int> mUpdateMerchantTimer;
-    ::ll::TypedStorage<1, 1, bool> mAddRecipeOnUpdate;
-    ::ll::TypedStorage<4, 4, int> mRiches;
-    ::ll::TypedStorage<8, 8, ::Actor&> mOwner;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                         mLastTradingPlayer;
+    ::ll::TypedStorage<4, 4, int>                                     mUpdateMerchantTimer;
+    ::ll::TypedStorage<1, 1, bool>                                    mAddRecipeOnUpdate;
+    ::ll::TypedStorage<4, 4, int>                                     mRiches;
+    ::ll::TypedStorage<8, 8, ::Actor&>                                mOwner;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MerchantRecipeList>> mOffers;
-    ::ll::TypedStorage<8, 32, ::std::string> mDisplayName;
-    ::ll::TypedStorage<8, 32, ::std::string> mGeneratedTablePath;
-    ::ll::TypedStorage<1, 1, bool> mConvertedFromVillagerV1;
-    ::ll::TypedStorage<4, 4, int> mDiscountDegradationTimeStamp;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mDisplayName;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mGeneratedTablePath;
+    ::ll::TypedStorage<1, 1, bool>                                    mConvertedFromVillagerV1;
+    ::ll::TypedStorage<4, 4, int>                                     mDiscountDegradationTimeStamp;
     // NOLINTEND
 
 public:
@@ -47,7 +47,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _calculateDemandPrices(int lowTierDiscount, int highTierDiscount, int nearbyCuredDiscount, int heroEffectAmplifier, bool hasHeroOfTheVillage, ::BaseGameVersion baseGameVersion);
+    MCNAPI void _calculateDemandPrices(
+        int               lowTierDiscount,
+        int               highTierDiscount,
+        int               nearbyCuredDiscount,
+        int               heroEffectAmplifier,
+        bool              hasHeroOfTheVillage,
+        ::BaseGameVersion baseGameVersion
+    );
 
     MCNAPI bool _generateTrades();
 
@@ -97,5 +104,4 @@ public:
 
     MCNAPI void tryToTransferOldOffers(::MerchantRecipeList* oldOffers);
     // NOLINTEND
-
 };

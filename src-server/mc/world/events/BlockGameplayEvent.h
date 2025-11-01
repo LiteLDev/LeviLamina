@@ -21,7 +21,7 @@
 template <typename Result>
 struct BlockGameplayEvent;
 
-template<>
+template <>
 struct BlockGameplayEvent<void> : ConstEventVariant<BlockPatternPostEvent> {};
 
 template <>
@@ -42,5 +42,4 @@ struct BlockGameplayEvent<CoordinatorResult> : ConstEventVariant<
                                                    > {};
 
 template <>
-struct BlockGameplayEvent<std::optional<std::string>> : ConstEventVariant<CraftUISetResultNameEvent> {
-};
+struct BlockGameplayEvent<std::optional<std::string>> : ConstEventVariant<CraftUISetResultNameEvent> {};

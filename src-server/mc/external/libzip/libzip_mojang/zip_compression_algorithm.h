@@ -23,5 +23,4 @@ public:
     zip_compression_algorithm& operator=(zip_compression_algorithm const&);
     zip_compression_algorithm(zip_compression_algorithm const&);
     zip_compression_algorithm();
-
 };

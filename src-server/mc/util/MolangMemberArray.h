@@ -62,7 +62,12 @@ public:
 
     MCAPI MolangMemberArray(::MolangStruct_UV, float u, float v);
 
-    MCAPI MolangMemberArray(::MolangStruct_TRS, ::MolangMemberArray&& translation, ::MolangMemberArray&& rotation, ::MolangMemberArray&& scale);
+    MCAPI MolangMemberArray(
+        ::MolangStruct_TRS,
+        ::MolangMemberArray&& translation,
+        ::MolangMemberArray&& rotation,
+        ::MolangMemberArray&& scale
+    );
 
     MCAPI void add(::HashedString const& name, ::MolangScriptArg const& value);
 
@@ -96,7 +101,12 @@ public:
 
     MCAPI void* $ctor(::MolangStruct_UV, float u, float v);
 
-    MCAPI void* $ctor(::MolangStruct_TRS, ::MolangMemberArray&& translation, ::MolangMemberArray&& rotation, ::MolangMemberArray&& scale);
+    MCAPI void* $ctor(
+        ::MolangStruct_TRS,
+        ::MolangMemberArray&& translation,
+        ::MolangMemberArray&& rotation,
+        ::MolangMemberArray&& scale
+    );
     // NOLINTEND
 
 public:
@@ -104,5 +114,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

@@ -27,7 +27,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void _addVersions();
 
-    MCNAPI ::Scripting::ModuleBinding _generateBindings(::Scripting::ModuleBindingBuilder& moduleBuilder, bool allowUntagged, ::std::vector<::std::string> const& allowedTags);
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Scripting::ModuleBindingBuilder&  moduleBuilder,
+        bool                                allowUntagged,
+        ::std::vector<::std::string> const& allowedTags
+    );
     // NOLINTEND
 
 public:
@@ -43,7 +47,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

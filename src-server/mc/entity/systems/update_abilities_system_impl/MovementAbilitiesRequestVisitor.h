@@ -23,7 +23,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void operator()(float value) const;
     // NOLINTEND
-
 };
 
-}
+} // namespace UpdateAbilitiesSystemImpl

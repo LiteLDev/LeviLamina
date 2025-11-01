@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::PerlinNoise const> mNoise;
-    ::ll::TypedStorage<4, 12, ::Vec3 const> mScale;
+    ::ll::TypedStorage<4, 12, ::Vec3 const>        mScale;
     // NOLINTEND
 
 public:
@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

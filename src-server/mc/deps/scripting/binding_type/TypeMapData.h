@@ -13,7 +13,7 @@ public:
     // clang-format off
     struct Mapping;
     // clang-format on
-    
+
     // TypeMapData inner types define
     struct Mapping {
     public:
@@ -24,27 +24,26 @@ public:
         ::ll::UntypedStorage<8, 24> mUnkfa06dc;
         ::ll::UntypedStorage<8, 24> mUnk4f6347;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Mapping& operator=(Mapping const&);
         Mapping(Mapping const&);
         Mapping();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~Mapping();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -77,7 +76,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

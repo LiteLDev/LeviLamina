@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/LegacyStructureSettings.h"
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
 
@@ -19,10 +19,10 @@ class TemplateStructurePiece : public ::StructurePiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::LegacyStructureTemplate*> mTemplate;
+    ::ll::TypedStorage<8, 8, ::LegacyStructureTemplate*>  mTemplate;
     ::ll::TypedStorage<8, 192, ::LegacyStructureSettings> mSettings;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mTemplatePosition;
-    ::ll::TypedStorage<1, 1, bool> mPostProcessed;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                 mTemplatePosition;
+    ::ll::TypedStorage<1, 1, bool>                        mPostProcessed;
     // NOLINTEND
 
 public:
@@ -39,7 +39,8 @@ public:
     virtual void moveBoundingBox(int dx, int dy, int dz) /*override*/;
 
     // vIndex: 13
-    virtual void _handleDataMarker(::std::string const&, ::BlockPos const&, ::BlockSource&, ::Random&, ::BoundingBox const&) = 0;
+    virtual void
+    _handleDataMarker(::std::string const&, ::BlockPos const&, ::BlockSource&, ::Random&, ::BoundingBox const&) = 0;
 
     // vIndex: 0
     virtual ~TemplateStructurePiece() /*override*/;
@@ -78,5 +79,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

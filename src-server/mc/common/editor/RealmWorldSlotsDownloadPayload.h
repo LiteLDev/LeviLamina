@@ -7,12 +7,13 @@
 
 namespace Editor::Network {
 
-class RealmWorldSlotsDownloadPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::RealmWorldSlotsDownloadPayload> {
+class RealmWorldSlotsDownloadPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::RealmWorldSlotsDownloadPayload> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk5a2810;
-    ::ll::UntypedStorage<4, 4> mUnka21459;
+    ::ll::UntypedStorage<4, 4>  mUnka21459;
     // NOLINTEND
 
 public:
@@ -33,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

@@ -24,4 +24,4 @@ MCNAPI ::Json::Value serializeScriptArg(::MolangScriptArg const& scriptArg);
 MCNAPI ::Json::Value serializeVariableMap(::MolangVariableMap const& variableMap);
 // NOLINTEND
 
-}
+} // namespace MolangSerializer

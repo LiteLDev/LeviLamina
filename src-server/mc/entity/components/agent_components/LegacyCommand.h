@@ -4,7 +4,6 @@
 
 namespace AgentComponents {
 
-struct LegacyCommand {
-};
+struct LegacyCommand {};
 
-}
+} // namespace AgentComponents

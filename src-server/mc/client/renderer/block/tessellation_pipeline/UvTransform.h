@@ -9,10 +9,10 @@ public:
     // UvTransform inner types define
     enum class BoxType : uchar {
         CustomBoxWithLegacyTopRotation = 0,
-        CustomBoxNoLegacyTopRotation = 1,
-        MinecraftFullBlock = 2,
+        CustomBoxNoLegacyTopRotation   = 1,
+        MinecraftFullBlock             = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -24,7 +24,6 @@ public:
     UvTransform& operator=(UvTransform const&);
     UvTransform(UvTransform const&);
     UvTransform();
-
 };
 
-}
+} // namespace ClientBlockPipeline

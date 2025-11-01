@@ -17,15 +17,15 @@ class MoveToRandomBlockGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
     ::ll::TypedStorage<4, 12, ::Vec3> mDestination;
     ::ll::TypedStorage<4, 12, ::Vec3> mLastPos;
-    ::ll::TypedStorage<4, 4, int> mFailedPathing;
-    ::ll::TypedStorage<4, 4, int> mTotalFailedPathing;
-    ::ll::TypedStorage<4, 4, float> mSpeedModifier;
-    ::ll::TypedStorage<4, 4, float> mRadiusSq;
-    ::ll::TypedStorage<4, 4, float> mBlockDistance;
-    ::ll::TypedStorage<4, 4, int> mCooldownTimer;
+    ::ll::TypedStorage<4, 4, int>     mFailedPathing;
+    ::ll::TypedStorage<4, 4, int>     mTotalFailedPathing;
+    ::ll::TypedStorage<4, 4, float>   mSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>   mRadiusSq;
+    ::ll::TypedStorage<4, 4, float>   mBlockDistance;
+    ::ll::TypedStorage<4, 4, int>     mCooldownTimer;
     // NOLINTEND
 
 public:
@@ -86,5 +86,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

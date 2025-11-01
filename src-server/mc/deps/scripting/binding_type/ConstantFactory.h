@@ -16,10 +16,10 @@ struct ConstantFactory : public ::Scripting::TaggedBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk56382c;
+    ::ll::UntypedStorage<8, 32>  mUnk56382c;
     ::ll::UntypedStorage<8, 160> mUnk2f1d92;
-    ::ll::UntypedStorage<1, 1> mUnk35e387;
-    ::ll::UntypedStorage<8, 64> mUnk88f6ea;
+    ::ll::UntypedStorage<1, 1>   mUnk35e387;
+    ::ll::UntypedStorage<8, 64>  mUnk88f6ea;
     // NOLINTEND
 
 public:
@@ -33,7 +33,12 @@ public:
     // NOLINTBEGIN
     MCNAPI ConstantFactory(::Scripting::ConstantFactory&&);
 
-    MCNAPI ConstantFactory(::std::string name_, ::entt::meta_type type_, bool primitive_, ::std::function<::entt::meta_any(::Scripting::WeakLifetimeScope&)> func_);
+    MCNAPI ConstantFactory(
+        ::std::string                                                      name_,
+        ::entt::meta_type                                                  type_,
+        bool                                                               primitive_,
+        ::std::function<::entt::meta_any(::Scripting::WeakLifetimeScope&)> func_
+    );
 
     MCNAPI ~ConstantFactory();
     // NOLINTEND
@@ -43,7 +48,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Scripting::ConstantFactory&&);
 
-    MCNAPI void* $ctor(::std::string name_, ::entt::meta_type type_, bool primitive_, ::std::function<::entt::meta_any(::Scripting::WeakLifetimeScope&)> func_);
+    MCNAPI void* $ctor(
+        ::std::string                                                      name_,
+        ::entt::meta_type                                                  type_,
+        bool                                                               primitive_,
+        ::std::function<::entt::meta_any(::Scripting::WeakLifetimeScope&)> func_
+    );
     // NOLINTEND
 
 public:
@@ -51,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

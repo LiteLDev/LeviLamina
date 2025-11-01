@@ -67,7 +67,6 @@ public:
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-
     };
 
     class RakNetNetworkPeer : public ::NetworkPeer {
@@ -83,7 +82,7 @@ public:
             // member variables
             // NOLINTBEGIN
             ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mTimepoint;
-            ::ll::TypedStorage<8, 32, ::std::string> mReadBuffer;
+            ::ll::TypedStorage<8, 32, ::std::string>                          mReadBuffer;
             // NOLINTEND
 
         public:
@@ -97,15 +96,14 @@ public:
             // NOLINTBEGIN
             MCFOLD void $dtor();
             // NOLINTEND
-
         };
 
     public:
         // member variables
         // NOLINTBEGIN
-        ::RakNet::RakPeerInterface&   mRakPeer;
-        ::NetworkIdentifier           mId;
-        ::std::string                 mSendBuffer;
+        ::RakNet::RakPeerInterface&                                            mRakPeer;
+        ::NetworkIdentifier                                                          mId;
+        ::std::string                                                                       mSendBuffer;
         ::std::vector<ReadBufferData> mReadBufferDatas;
         int                           mApproximateMaxBps;
         int                           mLastPing;
@@ -122,11 +120,13 @@ public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
-        virtual void sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility) /*override*/;
-
+        virtual void
+        sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility) /*override*/;
         // vIndex: 7
-        virtual ::NetworkPeer::DataStatus _receivePacket(::std::string& outData, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr) /*override*/;
-
+        virtual ::NetworkPeer::DataStatus _receivePacket(
+            ::std::string&                                                    outData,
+            ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+        ) /*override*/;
         // vIndex: 2
         virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
@@ -162,8 +162,8 @@ public:
         // NOLINTBEGIN
         MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
 
-        MCAPI ::NetworkPeer::DataStatus $_receivePacket(::std::string& outData, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr);
-
+        MCAPI ::NetworkPeer::DataStatus $_receivePacket(::std::string& outData, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
+);
         MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
         MCAPI void $update();
@@ -178,39 +178,42 @@ public:
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-
     };
 
     struct PingCallbackData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string> mAddress;
+        ::ll::TypedStorage<8, 32, ::std::string>               mAddress;
         ::ll::TypedStorage<8, 64, ::std::function<void(uint)>> mAction;
         // NOLINTEND
-
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::NetworkIdentifier> mNATPunchServerId;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>          mNATPunchServerId;
     ::ll::TypedStorage<8, 472, ::Social::GameConnectionInfo> mBackupGameConnection;
-    ::ll::TypedStorage<1, 1, bool> mTryBackupConnection;
-    ::ll::TypedStorage<8, 16, ::std::unique_ptr<::RakNet::RakPeerInterface, void(*) (::RakNet::RakPeerInterface*)>> mRakPeer;
-    ::ll::TypedStorage<8, 176, ::NetworkIdentifier> mServerId;
-    ::ll::TypedStorage<8, 24, ::RakPeerHelper> mPeerHelper;
+    ::ll::TypedStorage<1, 1, bool>                           mTryBackupConnection;
+    ::ll::TypedStorage<8, 16, ::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>>
+                                                                   mRakPeer;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>                mServerId;
+    ::ll::TypedStorage<8, 24, ::RakPeerHelper>                     mPeerHelper;
     ::ll::TypedStorage<8, 8, ::RakPeerHelper::IPSupportInterface&> mIPSupportInterface;
-    ::ll::TypedStorage<1, 1, bool> mIsAwaitingNatClient;
-    ::ll::TypedStorage<1, 1, bool> mIsServer;
-    ::ll::TypedStorage<1, 1, bool> mIsDisconnecting;
-    ::ll::TypedStorage<1, 1, bool> mConnectingToClient;
-    ::ll::TypedStorage<8, 472, ::Social::GameConnectionInfo> mConnectedGameInfo;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::NetworkIdentifier, ::std::weak_ptr<::RakNetConnector::RakNetNetworkPeer>>> mPeers;
-    ::ll::TypedStorage<1, 1, bool> mWasHostWhenSuspended;
-    ::ll::TypedStorage<4, 20, ::ConnectionDefinition> mPreviousConnectionDefinition;
-    ::ll::TypedStorage<8, 32, ::std::string> mResolvedIP;
-    ::ll::TypedStorage<8, 24, ::std::vector<::RakNetConnector::PingCallbackData>> mPingTimeCallbacks;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsAwaitingNatClient;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsServer;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsDisconnecting;
+    ::ll::TypedStorage<1, 1, bool>                                 mConnectingToClient;
+    ::ll::TypedStorage<8, 472, ::Social::GameConnectionInfo>       mConnectedGameInfo;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::NetworkIdentifier, ::std::weak_ptr<::RakNetConnector::RakNetNetworkPeer>>>
+                                                                                      mPeers;
+    ::ll::TypedStorage<1, 1, bool>                                                    mWasHostWhenSuspended;
+    ::ll::TypedStorage<4, 20, ::ConnectionDefinition>                                 mPreviousConnectionDefinition;
+    ::ll::TypedStorage<8, 32, ::std::string>                                          mResolvedIP;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RakNetConnector::PingCallbackData>>     mPingTimeCallbacks;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MPMCQueue<::std::function<void()>>>> mOwnedThreadWork;
     // NOLINTEND
 
@@ -230,7 +233,10 @@ public:
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
 
     // vIndex: 10
-    virtual bool connect(::Social::GameConnectionInfo const& primaryConnection, ::Social::GameConnectionInfo const& backupConnection) /*override*/;
+    virtual bool connect(
+        ::Social::GameConnectionInfo const& primaryConnection,
+        ::Social::GameConnectionInfo const& backupConnection
+    ) /*override*/;
 
     // vIndex: 11
     virtual void disconnect() /*override*/;
@@ -296,7 +302,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RakNetConnector(::RakNetConnector::ConnectionCallbacks& callbacks, ::RakPeerHelper::IPSupportInterface& ipInterface, ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform, ::RakNet::RakPeerConfiguration const& rakPeerConfig);
+    MCAPI RakNetConnector(
+        ::RakNetConnector::ConnectionCallbacks&          callbacks,
+        ::RakPeerHelper::IPSupportInterface&             ipInterface,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
+        ::RakNet::RakPeerConfiguration const&            rakPeerConfig
+    );
 
     MCAPI ::std::shared_ptr<::RakNetConnector::RakNetNetworkPeer> _createPeer(::NetworkIdentifier const& id);
 
@@ -312,7 +323,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::RakNetConnector::ConnectionCallbacks& callbacks, ::RakPeerHelper::IPSupportInterface& ipInterface, ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform, ::RakNet::RakPeerConfiguration const& rakPeerConfig);
+    MCAPI void* $ctor(
+        ::RakNetConnector::ConnectionCallbacks&          callbacks,
+        ::RakPeerHelper::IPSupportInterface&             ipInterface,
+        ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
+        ::RakNet::RakPeerConfiguration const&            rakPeerConfig
+    );
     // NOLINTEND
 
 public:
@@ -326,7 +342,10 @@ public:
     // NOLINTBEGIN
     MCAPI bool $host(::ConnectionDefinition const& definition);
 
-    MCAPI bool $connect(::Social::GameConnectionInfo const& primaryConnection, ::Social::GameConnectionInfo const& backupConnection);
+    MCAPI bool $connect(
+        ::Social::GameConnectionInfo const& primaryConnection,
+        ::Social::GameConnectionInfo const& backupConnection
+    );
 
     MCAPI void $disconnect();
 
@@ -378,5 +397,4 @@ public:
 
     MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
-
 };

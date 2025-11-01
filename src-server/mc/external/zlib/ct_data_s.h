@@ -15,5 +15,4 @@ public:
     ct_data_s& operator=(ct_data_s const&);
     ct_data_s(ct_data_s const&);
     ct_data_s();
-
 };

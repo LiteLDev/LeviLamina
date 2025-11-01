@@ -11,5 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 152, ::ItemStack> mItem;
     // NOLINTEND
-
 };

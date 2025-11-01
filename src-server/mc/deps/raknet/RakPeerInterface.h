@@ -73,10 +73,21 @@ public:
     virtual void GetIncomingPassword(char*, int*) = 0;
 
     // vIndex: 13
-    virtual ::RakNet::ConnectionAttemptResult Connect(char const*, ushort, char const*, int, ::RakNet::PublicKey*, uint, uint, uint, uint) = 0;
+    virtual ::RakNet::ConnectionAttemptResult
+    Connect(char const*, ushort, char const*, int, ::RakNet::PublicKey*, uint, uint, uint, uint) = 0;
 
     // vIndex: 14
-    virtual ::RakNet::ConnectionAttemptResult ConnectWithSocket(char const*, ushort, char const*, int, ::RakNet::RakNetSocket2*, ::RakNet::PublicKey*, uint, uint, uint) = 0;
+    virtual ::RakNet::ConnectionAttemptResult ConnectWithSocket(
+        char const*,
+        ushort,
+        char const*,
+        int,
+        ::RakNet::RakNetSocket2*,
+        ::RakNet::PublicKey*,
+        uint,
+        uint,
+        uint
+    ) = 0;
 
     // vIndex: 15
     virtual void Shutdown(uint, uchar, ::PacketPriority) = 0;
@@ -97,16 +108,43 @@ public:
     virtual uint IncrementNextSendReceipt() = 0;
 
     // vIndex: 22
-    virtual uint Send(char const*, int const, ::PacketPriority, ::PacketReliability, char, ::RakNet::AddressOrGUID const, bool, uint) = 0;
+    virtual uint Send(
+        char const*,
+        int const,
+        ::PacketPriority,
+        ::PacketReliability,
+        char,
+        ::RakNet::AddressOrGUID const,
+        bool,
+        uint
+    ) = 0;
 
     // vIndex: 21
-    virtual uint Send(::RakNet::BitStream const*, ::PacketPriority, ::PacketReliability, char, ::RakNet::AddressOrGUID const, bool, uint) = 0;
+    virtual uint Send(
+        ::RakNet::BitStream const*,
+        ::PacketPriority,
+        ::PacketReliability,
+        char,
+        ::RakNet::AddressOrGUID const,
+        bool,
+        uint
+    ) = 0;
 
     // vIndex: 23
     virtual void SendLoopback(char const*, int const) = 0;
 
     // vIndex: 24
-    virtual uint SendList(char const**, int const*, int const, ::PacketPriority, ::PacketReliability, char, ::RakNet::AddressOrGUID const, bool, uint) = 0;
+    virtual uint SendList(
+        char const**,
+        int const*,
+        int const,
+        ::PacketPriority,
+        ::PacketReliability,
+        char,
+        ::RakNet::AddressOrGUID const,
+        bool,
+        uint
+    ) = 0;
 
     // vIndex: 25
     virtual ::RakNet::Packet* Receive() = 0;
@@ -136,7 +174,10 @@ public:
     virtual ::RakNet::RakNetGUID GetGUIDFromIndex(uint) = 0;
 
     // vIndex: 34
-    virtual void GetSystemList(::DataStructures::List<::RakNet::SystemAddress>&, ::DataStructures::List<::RakNet::RakNetGUID>&) const = 0;
+    virtual void GetSystemList(
+        ::DataStructures::List<::RakNet::SystemAddress>&,
+        ::DataStructures::List<::RakNet::RakNetGUID>&
+    ) const = 0;
 
     // vIndex: 35
     virtual void AddToBanList(char const*, uint) = 0;
@@ -286,10 +327,10 @@ public:
     virtual void WriteOutOfBandHeader(::RakNet::BitStream*) = 0;
 
     // vIndex: 84
-    virtual void SetUserUpdateThread(void(*) (::RakNet::RakPeerInterface*, void*), void*) = 0;
+    virtual void SetUserUpdateThread(void (*)(::RakNet::RakPeerInterface*, void*), void*) = 0;
 
     // vIndex: 85
-    virtual void SetIncomingDatagramEventHandler(bool(*) (::RakNet::RNS2RecvStruct*)) = 0;
+    virtual void SetIncomingDatagramEventHandler(bool (*)(::RakNet::RNS2RecvStruct*)) = 0;
 
     // vIndex: 86
     virtual void ApplyNetworkSimulator(float, ushort, ushort) = 0;
@@ -307,7 +348,11 @@ public:
     virtual bool GetStatistics(uint const, ::RakNet::RakNetStatistics*) = 0;
 
     // vIndex: 91
-    virtual void GetStatisticsList(::DataStructures::List<::RakNet::SystemAddress>&, ::DataStructures::List<::RakNet::RakNetGUID>&, ::DataStructures::List<::RakNet::RakNetStatistics>&) = 0;
+    virtual void GetStatisticsList(
+        ::DataStructures::List<::RakNet::SystemAddress>&,
+        ::DataStructures::List<::RakNet::RakNetGUID>&,
+        ::DataStructures::List<::RakNet::RakNetStatistics>&
+    ) = 0;
 
     // vIndex: 92
     virtual uint GetReceiveBufferSize() = 0;
@@ -342,7 +387,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

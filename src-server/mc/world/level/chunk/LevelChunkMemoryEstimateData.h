@@ -18,5 +18,4 @@ public:
     ::ll::TypedStorage<8, 8, double> mAverageBiomePaletteSize;
     ::ll::TypedStorage<8, 8, uint64> mMaxBiomePaletteSize;
     // NOLINTEND
-
 };

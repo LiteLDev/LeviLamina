@@ -53,7 +53,8 @@ public:
     virtual ::std::unique_ptr<::CompoundTag> save() const /*override*/;
 
     // vIndex: 7
-    virtual ::BoundingBox getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const /*override*/;
+    virtual ::BoundingBox
+    getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const /*override*/;
 
     // vIndex: 8
     virtual void fillEmpty(::BlockPos const& size) /*override*/;
@@ -74,15 +75,40 @@ public:
 
     MCNAPI explicit EditorStructureTemplate(::std::string_view name);
 
-    MCNAPI void _editorFillBlockInfo(::BlockSource& region, ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator, ::BlockPos const& posMin, ::BlockPos const& size, ::BlockPos const& structureOffset);
+    MCNAPI void _editorFillBlockInfo(
+        ::BlockSource&                                 region,
+        ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator,
+        ::BlockPos const&                              posMin,
+        ::BlockPos const&                              size,
+        ::BlockPos const&                              structureOffset
+    );
 
-    MCNAPI void editorFillFromWorld(::BlockSource& region, ::StructureSettings const& structureSettings, ::BlockVolumeBase const& volume);
+    MCNAPI void editorFillFromWorld(
+        ::BlockSource&             region,
+        ::StructureSettings const& structureSettings,
+        ::BlockVolumeBase const&   volume
+    );
 
-    MCNAPI void editorFillFromWorld(::BlockSource& region, ::StructureSettings const& structureSettings, ::Editor::RelativeVolumeListBlockVolume const& volume);
+    MCNAPI void editorFillFromWorld(
+        ::BlockSource&                                 region,
+        ::StructureSettings const&                     structureSettings,
+        ::Editor::RelativeVolumeListBlockVolume const& volume
+    );
 
-    MCNAPI void editorFillFromWorld(::BlockSource& region, ::StructureSettings const& structureSettings, ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator, ::BlockPos const& posMin, ::BlockPos const& span);
+    MCNAPI void editorFillFromWorld(
+        ::BlockSource&                                 region,
+        ::StructureSettings const&                     structureSettings,
+        ::std::unique_ptr<::BaseBlockLocationIterator> locationIterator,
+        ::BlockPos const&                              posMin,
+        ::BlockPos const&                              span
+    );
 
-    MCNAPI void placeStructureTemplateInWorldForEditor(::BlockSource& region, ::BlockPalette const& globalBlockPalette, ::BoundingBox const& transformedBounds, ::StructureSettings const& structureSettings) const;
+    MCNAPI void placeStructureTemplateInWorldForEditor(
+        ::BlockSource&             region,
+        ::BlockPalette const&      globalBlockPalette,
+        ::BoundingBox const&       transformedBounds,
+        ::StructureSettings const& structureSettings
+    ) const;
 
     MCNAPI bool setNormalizedOrigin(::Vec3 newOrigin);
     // NOLINTEND
@@ -112,7 +138,8 @@ public:
 
     MCNAPI ::std::unique_ptr<::CompoundTag> $save() const;
 
-    MCNAPI ::BoundingBox $getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;
+    MCNAPI ::BoundingBox
+    $getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;
 
     MCNAPI void $fillEmpty(::BlockPos const& size);
 
@@ -126,7 +153,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

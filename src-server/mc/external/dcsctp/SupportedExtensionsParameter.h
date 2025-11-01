@@ -13,7 +13,8 @@ namespace dcsctp { struct SupportedExtensionsParameterConfig; }
 
 namespace dcsctp {
 
-class SupportedExtensionsParameter : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::SupportedExtensionsParameterConfig> {
+class SupportedExtensionsParameter : public ::dcsctp::Parameter,
+                                     public ::dcsctp::TLVTrait<::dcsctp::SupportedExtensionsParameterConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,7 +65,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

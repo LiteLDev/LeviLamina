@@ -12,12 +12,12 @@ class PushableComponent {
 public:
     // PushableComponent inner types define
     using PushVectors = ::std::pair<::Vec3, ::Vec3>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mIsPushable;
-    ::ll::TypedStorage<1, 1, bool> mIsPushableByPiston;
+    ::ll::TypedStorage<1, 1, bool>  mIsPushable;
+    ::ll::TypedStorage<1, 1, bool>  mIsPushableByPiston;
     ::ll::TypedStorage<4, 4, float> mPushThrough;
     // NOLINTEND
 
@@ -40,5 +40,4 @@ public:
 
     MCAPI static bool skipPush(::Actor& owner, ::Actor& other);
     // NOLINTEND
-
 };

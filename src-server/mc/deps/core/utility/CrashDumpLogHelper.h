@@ -8,4 +8,4 @@ namespace CrashDumpLogHelper {
 MCNAPI void writeStringsToBuffer(::std::vector<::std::string> const& strings, char* buffer, uint64 bufferSize);
 // NOLINTEND
 
-}
+} // namespace CrashDumpLogHelper

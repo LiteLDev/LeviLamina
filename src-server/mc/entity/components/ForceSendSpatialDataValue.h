@@ -5,5 +5,4 @@
 // auto generated inclusion list
 #include "mc/util/NewType.h"
 
-struct ForceSendSpatialDataValue : public ::NewType<uint> {
-};
+struct ForceSendSpatialDataValue : public ::NewType<uint> {};

@@ -5,10 +5,10 @@
 namespace TitleInfo {
 
 enum class TitleId : int {
-    Unknown = -1,
+    Unknown        = -1,
     BedrockVanilla = 0,
-    Earth = 1,
-    Edu = 2,
+    Earth          = 1,
+    Edu            = 2,
 };
 
 }

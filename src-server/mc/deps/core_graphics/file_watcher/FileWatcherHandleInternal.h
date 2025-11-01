@@ -4,7 +4,6 @@
 
 namespace mce::detail {
 
-struct FileWatcherHandleInternal {
-};
+struct FileWatcherHandleInternal {};
 
-}
+} // namespace mce::detail

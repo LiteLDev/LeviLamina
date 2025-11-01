@@ -17,5 +17,4 @@ public:
     JSMallocFunctions& operator=(JSMallocFunctions const&);
     JSMallocFunctions(JSMallocFunctions const&);
     JSMallocFunctions();
-
 };

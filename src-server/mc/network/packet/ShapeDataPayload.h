@@ -23,15 +23,25 @@ struct ShapeDataPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64> mNetworkId;
+    ::ll::TypedStorage<8, 8, uint64>                                                              mNetworkId;
     ::ll::TypedStorage<1, 2, ::std::optional<::ScriptModuleDebugUtilities::ScriptDebugShapeType>> mShapeType;
-    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mLocation;
-    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mRotation;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>> mScale;
-    ::ll::TypedStorage<4, 20, ::std::optional<::mce::Color>> mColor;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>> mTimeLeftTotalSec;
-    ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionId;
-    ::ll::TypedStorage<8, 48, ::std::variant<::cereal::NullType, ::ArrowDataPayload, ::TextDataPayload, ::BoxDataPayload, ::LineDataPayload, ::SphereDataPayload>> mExtraDataPayload;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>>                                            mLocation;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>>                                            mRotation;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                                              mScale;
+    ::ll::TypedStorage<4, 20, ::std::optional<::mce::Color>>                                      mColor;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>                                              mTimeLeftTotalSec;
+    ::ll::TypedStorage<4, 4, ::DimensionType>                                                     mDimensionId;
+    ::ll::TypedStorage<
+        8,
+        48,
+        ::std::variant<
+            ::cereal::NullType,
+            ::ArrowDataPayload,
+            ::TextDataPayload,
+            ::BoxDataPayload,
+            ::LineDataPayload,
+            ::SphereDataPayload>>
+        mExtraDataPayload;
     // NOLINTEND
 
 public:
@@ -50,5 +60,4 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ShapeDataPayload const&);
     // NOLINTEND
-
 };

@@ -18,27 +18,27 @@ public:
     // clang-format off
     struct Stats;
     // clang-format on
-    
+
     // AudioDeviceModule inner types define
     enum class AudioLayer : int {
-        KPlatformDefaultAudio = 0,
-        KWindowsCoreAudio = 1,
-        KWindowsCoreAudio2 = 2,
-        KLinuxAlsaAudio = 3,
-        KLinuxPulseAudio = 4,
-        KAndroidJavaAudio = 5,
-        KAndroidOpenSLESAudio = 6,
+        KPlatformDefaultAudio                   = 0,
+        KWindowsCoreAudio                       = 1,
+        KWindowsCoreAudio2                      = 2,
+        KLinuxAlsaAudio                         = 3,
+        KLinuxPulseAudio                        = 4,
+        KAndroidJavaAudio                       = 5,
+        KAndroidOpenSLESAudio                   = 6,
         KAndroidJavaInputAndOpenSLESOutputAudio = 7,
-        KAndroidAAudioAudio = 8,
-        KAndroidJavaInputAndAAudioOutputAudio = 9,
-        KDummyAudio = 10,
+        KAndroidAAudioAudio                     = 8,
+        KAndroidJavaInputAndAAudioOutputAudio   = 9,
+        KDummyAudio                             = 10,
     };
-    
+
     enum class WindowsDeviceType : int {
         KDefaultCommunicationDevice = -1,
-        KDefaultDevice = -2,
+        KDefaultDevice              = -2,
     };
-    
+
     struct Stats {
     public:
         // member variables
@@ -49,15 +49,14 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk98d5a9;
         ::ll::UntypedStorage<8, 8> mUnka88a3f;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Stats& operator=(Stats const&);
         Stats(Stats const&);
         Stats();
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -250,7 +249,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

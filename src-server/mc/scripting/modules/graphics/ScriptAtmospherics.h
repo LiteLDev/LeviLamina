@@ -21,7 +21,6 @@ public:
     ScriptAtmospherics& operator=(ScriptAtmospherics const&);
     ScriptAtmospherics(ScriptAtmospherics const&);
     ScriptAtmospherics();
-
 };
 
-}
+} // namespace ScriptModuleServerGraphics

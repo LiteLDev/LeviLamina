@@ -8,12 +8,11 @@ public:
     enum class BlockType : int {
         Anvil = 0,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::CraftUISetResultNameEvent::BlockType const> mType;
-    ::ll::TypedStorage<8, 32, ::std::string const> mName;
+    ::ll::TypedStorage<8, 32, ::std::string const>                         mName;
     // NOLINTEND
-
 };

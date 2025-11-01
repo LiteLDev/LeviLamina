@@ -7,8 +7,7 @@ template <typename T>
 class SharedPtr;
 
 template <typename T>
-class WeakPtr {
-public:
+class WeakPtr {public:
     [[nodiscard]] WeakPtr() noexcept : counter(nullptr) {}
     [[nodiscard]] WeakPtr(std::nullptr_t) noexcept : counter(nullptr) {}
 

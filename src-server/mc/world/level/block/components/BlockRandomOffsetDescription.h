@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/versionless/FloatRange.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/world/level/block/components/NetworkedBlockComponentDescription.h"
 
 // auto generated forward declare list
@@ -18,18 +18,17 @@ public:
     // clang-format off
     struct RangeAndSteps;
     // clang-format on
-    
+
     // BlockRandomOffsetDescription inner types define
     struct RangeAndSteps {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mRange;
-        ::ll::TypedStorage<4, 4, uint> mSteps;
+        ::ll::TypedStorage<4, 4, uint>                      mSteps;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -81,5 +80,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

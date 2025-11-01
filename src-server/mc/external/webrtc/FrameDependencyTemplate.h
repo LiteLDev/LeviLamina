@@ -8,8 +8,8 @@ struct FrameDependencyTemplate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkec2d84;
-    ::ll::UntypedStorage<4, 4> mUnk3efd77;
+    ::ll::UntypedStorage<4, 4>  mUnkec2d84;
+    ::ll::UntypedStorage<4, 4>  mUnk3efd77;
     ::ll::UntypedStorage<8, 48> mUnkd5416e;
     ::ll::UntypedStorage<8, 24> mUnkd96b60;
     ::ll::UntypedStorage<8, 24> mUnkd2fcc7;
@@ -39,7 +39,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

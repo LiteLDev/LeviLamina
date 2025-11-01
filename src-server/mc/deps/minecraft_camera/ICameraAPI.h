@@ -21,45 +21,43 @@ public:
     struct CameraMovementData;
     struct ShakeParameters;
     // clang-format on
-    
+
     // ICameraAPI inner types define
     struct ShakeParameters {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 12> mUnkb19a92;
-        ::ll::UntypedStorage<1, 1> mUnk3780d8;
+        ::ll::UntypedStorage<1, 1>  mUnk3780d8;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ShakeParameters& operator=(ShakeParameters const&);
         ShakeParameters(ShakeParameters const&);
         ShakeParameters();
-    
     };
-    
+
     enum class CameraMovementSpeed : int {
         Fast = 0,
         Slow = 1,
     };
-    
+
     struct CameraMovementData {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 12> mUnkaa59b5;
-        ::ll::UntypedStorage<4, 4> mUnka686c9;
+        ::ll::UntypedStorage<4, 4>  mUnka686c9;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         CameraMovementData& operator=(CameraMovementData const&);
         CameraMovementData(CameraMovementData const&);
         CameraMovementData();
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -67,7 +65,8 @@ public:
     virtual ~ICameraAPI() = default;
 
     // vIndex: 1
-    virtual ::std::optional<::Vec3> tryGetActorRelativeLocation(::WeakRef<::EntityContext> const, ::SharedTypes::Legacy::ActorLocation) const = 0;
+    virtual ::std::optional<::Vec3>
+    tryGetActorRelativeLocation(::WeakRef<::EntityContext> const, ::SharedTypes::Legacy::ActorLocation) const = 0;
 
     // vIndex: 2
     virtual ::std::optional<::Vec3> tryGetActorInterpolatedPosition(::WeakRef<::EntityContext>, float) const = 0;
@@ -79,7 +78,8 @@ public:
     virtual ::std::optional<::Vec3> tryGetActorPositionDelta(::WeakRef<::EntityContext>) const = 0;
 
     // vIndex: 5
-    virtual ::std::optional<::ICameraAPI::ShakeParameters> tryGetShakeParameters(::WeakRef<::EntityContext>, float, float, float) const = 0;
+    virtual ::std::optional<::ICameraAPI::ShakeParameters>
+    tryGetShakeParameters(::WeakRef<::EntityContext>, float, float, float) const = 0;
 
     // vIndex: 6
     virtual ::std::optional<float> tryGetFOV() const = 0;
@@ -120,5 +120,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

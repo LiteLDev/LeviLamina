@@ -20,7 +20,10 @@ namespace ScriptModuleMinecraftNet { class IScriptNetworkBeforeEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
-class ScriptServerNetworkEventHandler : public ::EventHandlerDispatcher<::ServerNetworkEventHandler>, public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents>, public ::ScriptEventHandler<::ScriptModuleMinecraftNet::IScriptNetworkBeforeEvents> {
+class ScriptServerNetworkEventHandler
+: public ::EventHandlerDispatcher<::ServerNetworkEventHandler>,
+  public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents>,
+  public ::ScriptEventHandler<::ScriptModuleMinecraftNet::IScriptNetworkBeforeEvents> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -40,11 +43,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _handleChat(::ChatEvent& chatEvent, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> eventHandler) const;
+    MCAPI bool _handleChat(
+        ::ChatEvent&                                                                      chatEvent,
+        ::Scripting::WeakLifetimeScope const&                                             scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> eventHandler
+    ) const;
 
-    MCAPI bool _handleIncomingPacket(::IncomingPacketEvent& packetEvent, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraftNet::IScriptNetworkBeforeEvents> eventHandler) const;
+    MCAPI bool _handleIncomingPacket(
+        ::IncomingPacketEvent&                                                                 packetEvent,
+        ::Scripting::WeakLifetimeScope const&                                                  scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraftNet::IScriptNetworkBeforeEvents> eventHandler
+    ) const;
 
-    MCAPI bool _handleOutgoingPacket(::OutgoingPacketEvent& packetEvent, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraftNet::IScriptNetworkBeforeEvents> eventHandler) const;
+    MCAPI bool _handleOutgoingPacket(
+        ::OutgoingPacketEvent&                                                                 packetEvent,
+        ::Scripting::WeakLifetimeScope const&                                                  scope,
+        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraftNet::IScriptNetworkBeforeEvents> eventHandler
+    ) const;
     // NOLINTEND
 
 public:
@@ -62,5 +77,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

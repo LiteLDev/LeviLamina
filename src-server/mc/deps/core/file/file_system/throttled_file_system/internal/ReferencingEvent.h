@@ -4,8 +4,7 @@
 
 namespace Core::Internal {
 
-template<typename T0>
-class ReferencingEvent {
-};
+template <typename T0>
+class ReferencingEvent {};
 
-}
+} // namespace Core::Internal

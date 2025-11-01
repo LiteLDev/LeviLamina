@@ -23,7 +23,6 @@ public:
 
     MCNAPI bool operator==(::Bedrock::PubSub::SubscriptionBase const& other) const;
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::PubSub

@@ -23,11 +23,30 @@ struct ServerPlayerCurrentMovementComponent;
 namespace ValidateClientPlayerActionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void comparePlayerActionComponent(::StrictEntityContext const& entity, ::PlayerActionComponent const& serverPlayerAction, ::ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovement, ::ActorDataDirtyFlagsComponent& actorDataDirtyFlags, ::AttributesComponent& attributes, ::Optional<::ActorUniqueIDComponent const> const& actorUniqueId, ::Optional<::AbilitiesComponent const> const& abilities, ::EntityModifier<::SendPacketsComponent> modifier);
+MCNAPI void comparePlayerActionComponent(
+    ::StrictEntityContext const&                      entity,
+    ::PlayerActionComponent const&                    serverPlayerAction,
+    ::ServerPlayerCurrentMovementComponent const&     serverPlayerCurrentMovement,
+    ::ActorDataDirtyFlagsComponent&                   actorDataDirtyFlags,
+    ::AttributesComponent&                            attributes,
+    ::Optional<::ActorUniqueIDComponent const> const& actorUniqueId,
+    ::Optional<::AbilitiesComponent const> const&     abilities,
+    ::EntityModifier<::SendPacketsComponent>          modifier
+);
 
 MCNAPI void registerServerSystems(::EntitySystems& systemRegistry);
 
-MCNAPI void tickPlayerActionComparison(::ViewT<::StrictEntityContext, ::PlayerActionComponent const, ::ServerPlayerCurrentMovementComponent const, ::ActorDataDirtyFlagsComponent, ::AttributesComponent, ::Optional<::ActorUniqueIDComponent const>, ::Optional<::AbilitiesComponent const>> view, ::EntityModifier<::SendPacketsComponent> modifier);
+MCNAPI void tickPlayerActionComparison(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::PlayerActionComponent const,
+        ::ServerPlayerCurrentMovementComponent const,
+        ::ActorDataDirtyFlagsComponent,
+        ::AttributesComponent,
+        ::Optional<::ActorUniqueIDComponent const>,
+        ::Optional<::AbilitiesComponent const>> view,
+    ::EntityModifier<::SendPacketsComponent>    modifier
+);
 // NOLINTEND
 
-}
+} // namespace ValidateClientPlayerActionSystem

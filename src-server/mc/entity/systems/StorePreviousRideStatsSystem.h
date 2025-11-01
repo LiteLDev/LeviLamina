@@ -21,11 +21,20 @@ class StorePreviousRideStatsSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _storePreviousRideStats(::StrictEntityContext const&, ::StateVectorComponent const& stateVectorComponent, ::VanillaClientGameplayComponent& vanillaClientGameplayComponent);
+    MCNAPI static void _storePreviousRideStats(
+        ::StrictEntityContext const&,
+        ::StateVectorComponent const&     stateVectorComponent,
+        ::VanillaClientGameplayComponent& vanillaClientGameplayComponent
+    );
 
-    MCNAPI static void _tickStorePreviousRideStatsSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent, ::PassengerComponent>, ::StateVectorComponent const, ::VanillaClientGameplayComponent> view);
+    MCNAPI static void _tickStorePreviousRideStatsSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::LocalPlayerComponent, ::PassengerComponent>,
+            ::StateVectorComponent const,
+            ::VanillaClientGameplayComponent> view
+    );
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
-
 };

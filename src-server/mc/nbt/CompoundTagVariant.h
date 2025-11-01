@@ -147,7 +147,6 @@ public:
 
     using iterator       = Iterator<false>;
     using const_iterator = Iterator<true>;
-
 public:
     // member variables
     Variant mTagStorage;

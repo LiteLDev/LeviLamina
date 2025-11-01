@@ -30,7 +30,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void onSignalReceive(::BlockSource& region, ::BlockPos const& vibrationSourcePos, ::GameEvent const& gameEvent, ::Actor*, float, uint, ::Actor*) /*override*/;
+    virtual void onSignalReceive(
+        ::BlockSource&     region,
+        ::BlockPos const&  vibrationSourcePos,
+        ::GameEvent const& gameEvent,
+        ::Actor*,
+        float,
+        uint,
+        ::Actor*
+    ) /*override*/;
 
     // vIndex: 2
     virtual bool isValidVibration(::GameEvent const& gameEvent) /*override*/;
@@ -57,7 +65,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onSignalReceive(::BlockSource& region, ::BlockPos const& vibrationSourcePos, ::GameEvent const& gameEvent, ::Actor*, float, uint, ::Actor*);
+    MCAPI void $onSignalReceive(
+        ::BlockSource&     region,
+        ::BlockPos const&  vibrationSourcePos,
+        ::GameEvent const& gameEvent,
+        ::Actor*,
+        float,
+        uint,
+        ::Actor*
+    );
 
     MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
@@ -69,5 +85,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

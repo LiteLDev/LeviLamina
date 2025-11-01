@@ -21,7 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkb9070f;
-    ::ll::UntypedStorage<8, 8> mUnk721893;
+    ::ll::UntypedStorage<8, 8>  mUnk721893;
     ::ll::UntypedStorage<8, 32> mUnk271982;
     ::ll::UntypedStorage<8, 32> mUnke39011;
     // NOLINTEND
@@ -38,13 +38,16 @@ public:
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::Scripting::NumberRange> const getBonusRolls() const;
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemCondition>> getConditions();
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemCondition>>
+    getConditions();
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootPoolEntry>> getEntries();
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootPoolEntry>>
+    getEntries();
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::Scripting::NumberRange> const getRolls() const;
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootPoolTiers>> const getTiers() const;
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootPoolTiers>> const
+    getTiers() const;
     // NOLINTEND
 
 public:
@@ -58,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptLootPool const&);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

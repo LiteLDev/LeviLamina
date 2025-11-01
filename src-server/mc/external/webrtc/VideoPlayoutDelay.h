@@ -34,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::TimeDelta min, ::webrtc::TimeDelta max);
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

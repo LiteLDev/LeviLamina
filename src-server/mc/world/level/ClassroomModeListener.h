@@ -28,7 +28,17 @@ public:
     virtual void onEntityRemoved(::Actor& entity) /*override*/;
 
     // vIndex: 4
-    virtual void onBlockChanged(::BlockSource& source, ::BlockPos const& pos, uint layer, ::Block const& block, ::Block const& oldBlock, int updateFlags, ::ActorBlockSyncMessage const* syncMsg, ::BlockChangedEventTarget eventTarget, ::Actor* blockChangeSource) /*override*/;
+    virtual void onBlockChanged(
+        ::BlockSource&                 source,
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            updateFlags,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget      eventTarget,
+        ::Actor*                       blockChangeSource
+    ) /*override*/;
 
     // vIndex: 3
     virtual void onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max) /*override*/;
@@ -50,7 +60,17 @@ public:
 
     MCNAPI void $onEntityRemoved(::Actor& entity);
 
-    MCNAPI void $onBlockChanged(::BlockSource& source, ::BlockPos const& pos, uint layer, ::Block const& block, ::Block const& oldBlock, int updateFlags, ::ActorBlockSyncMessage const* syncMsg, ::BlockChangedEventTarget eventTarget, ::Actor* blockChangeSource);
+    MCNAPI void $onBlockChanged(
+        ::BlockSource&                 source,
+        ::BlockPos const&              pos,
+        uint                           layer,
+        ::Block const&                 block,
+        ::Block const&                 oldBlock,
+        int                            updateFlags,
+        ::ActorBlockSyncMessage const* syncMsg,
+        ::BlockChangedEventTarget      eventTarget,
+        ::Actor*                       blockChangeSource
+    );
 
     MCNAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
@@ -64,5 +84,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

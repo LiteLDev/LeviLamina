@@ -4,7 +4,6 @@
 
 namespace RakNet {
 
-class TableSerializer {
-};
+class TableSerializer {};
 
-}
+} // namespace RakNet

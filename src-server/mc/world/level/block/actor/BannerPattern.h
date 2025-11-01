@@ -15,14 +15,14 @@ class BannerPattern : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar> mID;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mPattern;
+    ::ll::TypedStorage<1, 1, uchar>                           mID;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>   mPattern;
     ::ll::TypedStorage<8, 64, ::std::function<::ItemStack()>> mIngredientItemFunctor;
-    ::ll::TypedStorage<8, 32, ::std::string> mName;
-    ::ll::TypedStorage<8, 32, ::std::string> mNameID;
-    ::ll::TypedStorage<2, 2, short> mPatternItemType;
-    ::ll::TypedStorage<1, 1, bool> mIgnoreAux;
-    ::ll::TypedStorage<1, 1, bool> mHiddenFromCrafting;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                  mNameID;
+    ::ll::TypedStorage<2, 2, short>                           mPatternItemType;
+    ::ll::TypedStorage<1, 1, bool>                            mIgnoreAux;
+    ::ll::TypedStorage<1, 1, bool>                            mHiddenFromCrafting;
     // NOLINTEND
 
 public:
@@ -63,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -19,7 +19,13 @@ namespace MoveTowardsClosestSpaceSystem {
 // NOLINTBEGIN
 MCNAPI ::std::array<::TickingSystemWithInfo, 2> createSystems(bool isClientSide);
 
-MCNAPI void moveTowardsClosestSpace(::AABB const& aabb, ::std::vector<::AABB> const& oneWayPhysicsBlocks, ::IConstBlockSource const& region, ::optional_ref<::GetCollisionShapeInterface const> collisionShape, ::Vec3& posDelta);
+MCNAPI void moveTowardsClosestSpace(
+    ::AABB const&                                      aabb,
+    ::std::vector<::AABB> const&                       oneWayPhysicsBlocks,
+    ::IConstBlockSource const&                         region,
+    ::optional_ref<::GetCollisionShapeInterface const> collisionShape,
+    ::Vec3&                                            posDelta
+);
 // NOLINTEND
 
-}
+} // namespace MoveTowardsClosestSpaceSystem

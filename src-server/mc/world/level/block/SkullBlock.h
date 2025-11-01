@@ -25,17 +25,17 @@ class SkullBlock : public ::ActorBlock {
 public:
     // SkullBlock inner types define
     enum class SkullType : int {
-        Unset = -1,
+        Unset    = -1,
         Skeleton = 0,
-        Wither = 1,
-        Zombie = 2,
-        Char = 3,
-        Creeper = 4,
-        Dragon = 5,
-        Piglin = 6,
-        Count = 7,
+        Wither   = 1,
+        Zombie   = 2,
+        Char     = 3,
+        Creeper  = 4,
+        Dragon   = 5,
+        Piglin   = 6,
+        Count    = 7,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -49,7 +49,9 @@ public:
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 91
-    virtual ::Block const& getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const /*override*/;
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
 
     // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -87,7 +89,13 @@ public:
 
     MCFOLD bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const;
+    MCAPI ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -101,5 +109,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -28,96 +28,96 @@ class PlayerAuthInputPacket : public ::Packet {
 public:
     // PlayerAuthInputPacket inner types define
     enum class InputData : int {
-        Ascend = 0,
-        Descend = 1,
-        NorthJumpDeprecated = 2,
-        JumpDown = 3,
-        SprintDown = 4,
-        ChangeHeight = 5,
-        Jumping = 6,
-        AutoJumpingInWater = 7,
-        Sneaking = 8,
-        SneakDown = 9,
-        Up = 10,
-        Down = 11,
-        Left = 12,
-        Right = 13,
-        UpLeft = 14,
-        UpRight = 15,
-        WantUp = 16,
-        WantDown = 17,
-        WantDownSlow = 18,
-        WantUpSlow = 19,
-        Sprinting = 20,
-        AscendBlock = 21,
-        DescendBlock = 22,
-        SneakToggleDown = 23,
-        PersistSneak = 24,
-        StartSprinting = 25,
-        StopSprinting = 26,
-        StartSneaking = 27,
-        StopSneaking = 28,
-        StartSwimming = 29,
-        StopSwimming = 30,
-        StartJumping = 31,
-        StartGliding = 32,
-        StopGliding = 33,
-        PerformItemInteraction = 34,
-        PerformBlockActions = 35,
-        PerformItemStackRequest = 36,
-        HandledTeleport = 37,
-        Emoting = 38,
-        MissedSwing = 39,
-        StartCrawling = 40,
-        StopCrawling = 41,
-        StartFlying = 42,
-        StopFlying = 43,
-        ClientAckServerData = 44,
-        IsInClientPredictedVehicle = 45,
-        PaddlingLeft = 46,
-        PaddlingRight = 47,
-        BlockBreakingDelayEnabled = 48,
-        HorizontalCollision = 49,
-        VerticalCollision = 50,
-        DownLeft = 51,
-        DownRight = 52,
-        StartUsingItem = 53,
+        Ascend                                    = 0,
+        Descend                                   = 1,
+        NorthJumpDeprecated                       = 2,
+        JumpDown                                  = 3,
+        SprintDown                                = 4,
+        ChangeHeight                              = 5,
+        Jumping                                   = 6,
+        AutoJumpingInWater                        = 7,
+        Sneaking                                  = 8,
+        SneakDown                                 = 9,
+        Up                                        = 10,
+        Down                                      = 11,
+        Left                                      = 12,
+        Right                                     = 13,
+        UpLeft                                    = 14,
+        UpRight                                   = 15,
+        WantUp                                    = 16,
+        WantDown                                  = 17,
+        WantDownSlow                              = 18,
+        WantUpSlow                                = 19,
+        Sprinting                                 = 20,
+        AscendBlock                               = 21,
+        DescendBlock                              = 22,
+        SneakToggleDown                           = 23,
+        PersistSneak                              = 24,
+        StartSprinting                            = 25,
+        StopSprinting                             = 26,
+        StartSneaking                             = 27,
+        StopSneaking                              = 28,
+        StartSwimming                             = 29,
+        StopSwimming                              = 30,
+        StartJumping                              = 31,
+        StartGliding                              = 32,
+        StopGliding                               = 33,
+        PerformItemInteraction                    = 34,
+        PerformBlockActions                       = 35,
+        PerformItemStackRequest                   = 36,
+        HandledTeleport                           = 37,
+        Emoting                                   = 38,
+        MissedSwing                               = 39,
+        StartCrawling                             = 40,
+        StopCrawling                              = 41,
+        StartFlying                               = 42,
+        StopFlying                                = 43,
+        ClientAckServerData                       = 44,
+        IsInClientPredictedVehicle                = 45,
+        PaddlingLeft                              = 46,
+        PaddlingRight                             = 47,
+        BlockBreakingDelayEnabled                 = 48,
+        HorizontalCollision                       = 49,
+        VerticalCollision                         = 50,
+        DownLeft                                  = 51,
+        DownRight                                 = 52,
+        StartUsingItem                            = 53,
         IsCameraRelativeMovementEnabledDeprecated = 54,
-        IsRotControlledByMoveDirectionDeprecated = 55,
-        StartSpinAttack = 56,
-        StopSpinAttack = 57,
-        IsHotbarOnlyTouch = 58,
-        JumpReleasedRaw = 59,
-        JumpPressedRaw = 60,
-        JumpCurrentRaw = 61,
-        SneakReleasedRaw = 62,
-        SneakPressedRaw = 63,
-        SneakCurrentRaw = 64,
-        InputNum = 65,
+        IsRotControlledByMoveDirectionDeprecated  = 55,
+        StartSpinAttack                           = 56,
+        StopSpinAttack                            = 57,
+        IsHotbarOnlyTouch                         = 58,
+        JumpReleasedRaw                           = 59,
+        JumpPressedRaw                            = 60,
+        JumpCurrentRaw                            = 61,
+        SneakReleasedRaw                          = 62,
+        SneakPressedRaw                           = 63,
+        SneakCurrentRaw                           = 64,
+        InputNum                                  = 65,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::Vec2> mRot;
-    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
-    ::ll::TypedStorage<4, 4, float> mYHeadRot;
-    ::ll::TypedStorage<4, 12, ::Vec3> mPosDelta;
-    ::ll::TypedStorage<4, 8, ::Vec2> mVehicleRot;
-    ::ll::TypedStorage<4, 8, ::Vec2> mAnalogMoveVector;
-    ::ll::TypedStorage<4, 8, ::Vec2> mMove;
-    ::ll::TypedStorage<4, 8, ::Vec2> mInteractRotation;
-    ::ll::TypedStorage<4, 12, ::Vec3> mCameraOrientation;
-    ::ll::TypedStorage<4, 8, ::Vec2> mRawMoveVector;
-    ::ll::TypedStorage<8, 16, ::std::bitset<65>> mInputData;
-    ::ll::TypedStorage<4, 4, ::InputMode> mInputMode;
-    ::ll::TypedStorage<4, 4, ::ClientPlayMode> mPlayMode;
-    ::ll::TypedStorage<4, 4, ::NewInteractionModel> mNewInteractionModel;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick> mClientTick;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mRot;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mPos;
+    ::ll::TypedStorage<4, 4, float>                                                        mYHeadRot;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mPosDelta;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mVehicleRot;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mAnalogMoveVector;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mMove;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mInteractRotation;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                                      mCameraOrientation;
+    ::ll::TypedStorage<4, 8, ::Vec2>                                                       mRawMoveVector;
+    ::ll::TypedStorage<8, 16, ::std::bitset<65>>                                           mInputData;
+    ::ll::TypedStorage<4, 4, ::InputMode>                                                  mInputMode;
+    ::ll::TypedStorage<4, 4, ::ClientPlayMode>                                             mPlayMode;
+    ::ll::TypedStorage<4, 4, ::NewInteractionModel>                                        mNewInteractionModel;
+    ::ll::TypedStorage<8, 8, ::PlayerInputTick>                                            mClientTick;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackedItemUseLegacyInventoryTransaction>> mItemUseTransaction;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestData>> mItemStackRequest;
-    ::ll::TypedStorage<8, 24, ::PlayerBlockActions> mPlayerBlockActions;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mClientPredictedVehicle;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestData>>                    mItemStackRequest;
+    ::ll::TypedStorage<8, 24, ::PlayerBlockActions>                                        mPlayerBlockActions;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                              mClientPredictedVehicle;
     // NOLINTEND
 
 public:
@@ -189,5 +189,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -4,5 +4,5 @@
 
 enum class CommandOutputMessageType : int {
     Success = 0,
-    Error = 1,
+    Error   = 1,
 };

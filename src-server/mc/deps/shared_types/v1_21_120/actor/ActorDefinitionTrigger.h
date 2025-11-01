@@ -13,8 +13,8 @@ struct ActorDefinitionTrigger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk8f57eb;
-    ::ll::UntypedStorage<2, 2> mUnkaaf8a1;
+    ::ll::UntypedStorage<8, 32>  mUnk8f57eb;
+    ::ll::UntypedStorage<2, 2>   mUnkaaf8a1;
     ::ll::UntypedStorage<8, 328> mUnka841d9;
     // NOLINTEND
 
@@ -27,7 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_120::ActorDefinitionTrigger& operator=(::SharedTypes::v1_21_120::ActorDefinitionTrigger&&);
+    MCNAPI ::SharedTypes::v1_21_120::ActorDefinitionTrigger&
+    operator=(::SharedTypes::v1_21_120::ActorDefinitionTrigger&&);
 
     MCNAPI ~ActorDefinitionTrigger();
     // NOLINTEND
@@ -43,7 +44,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_120

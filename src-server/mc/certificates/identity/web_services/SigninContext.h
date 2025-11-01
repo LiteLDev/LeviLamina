@@ -5,8 +5,8 @@
 namespace WebServices {
 
 enum class SigninContext : uchar {
-    Demo = 0,
-    Education = 1,
+    Demo       = 0,
+    Education  = 1,
     Commercial = 2,
 };
 

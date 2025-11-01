@@ -16,5 +16,4 @@ public:
     ExecModuleList& operator=(ExecModuleList const&);
     ExecModuleList(ExecModuleList const&);
     ExecModuleList();
-
 };

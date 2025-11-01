@@ -14,7 +14,7 @@ struct RopePointsRef {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::RopePoints const&> mPoints;
+    ::ll::TypedStorage<8, 8, ::RopePoints const&>                                    mPoints;
     ::ll::TypedStorage<8, 16, ::Bedrock::Threading::SharedLock<::std::shared_mutex>> mPointsSharedLock;
     // NOLINTEND
 
@@ -23,5 +23,4 @@ public:
     RopePointsRef& operator=(RopePointsRef const&);
     RopePointsRef(RopePointsRef const&);
     RopePointsRef();
-
 };

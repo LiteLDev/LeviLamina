@@ -16,7 +16,6 @@ public:
     MutexImpl& operator=(MutexImpl const&);
     MutexImpl(MutexImpl const&);
     MutexImpl();
-
 };
 
-}
+} // namespace webrtc

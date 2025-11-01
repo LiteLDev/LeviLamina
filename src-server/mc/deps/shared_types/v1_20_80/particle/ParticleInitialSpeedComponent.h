@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 144> mUnk9564db;
-    ::ll::UntypedStorage<1, 1> mUnk70623a;
+    ::ll::UntypedStorage<1, 1>   mUnk70623a;
     // NOLINTEND
 
 public:
@@ -66,7 +66,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

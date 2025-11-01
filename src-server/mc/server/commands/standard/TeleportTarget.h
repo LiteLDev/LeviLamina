@@ -15,8 +15,8 @@ class TeleportTarget {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mRotation;
-    ::ll::TypedStorage<4, 28, ::std::optional<::TeleportData>> mData;
+    ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>>                    mRotation;
+    ::ll::TypedStorage<4, 28, ::std::optional<::TeleportData>>            mData;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChangeDimensionRequest>> mChangeRequest;
     // NOLINTEND
 
@@ -31,5 +31,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

@@ -17,7 +17,6 @@ public:
     InheritedReference& operator=(InheritedReference const&);
     InheritedReference(InheritedReference const&);
     InheritedReference();
-
 };
 
-}
+} // namespace CerealHelpers

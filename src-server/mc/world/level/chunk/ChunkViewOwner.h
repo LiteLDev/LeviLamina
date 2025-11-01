@@ -11,7 +11,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 176, ::NetworkIdentifier> mNetworkIdentifier;
-    ::ll::TypedStorage<1, 1, ::SubClientId> mSubClientId;
+    ::ll::TypedStorage<1, 1, ::SubClientId>         mSubClientId;
     // NOLINTEND
-
 };

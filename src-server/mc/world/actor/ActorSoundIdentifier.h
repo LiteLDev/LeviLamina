@@ -17,10 +17,10 @@ class ActorSoundIdentifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9699ae;
+    ::ll::UntypedStorage<8, 8>  mUnk9699ae;
     ::ll::UntypedStorage<8, 24> mUnk9b5ddf;
-    ::ll::UntypedStorage<8, 8> mUnk45de13;
-    ::ll::UntypedStorage<1, 1> mUnkdcfc8e;
+    ::ll::UntypedStorage<8, 8>  mUnk45de13;
+    ::ll::UntypedStorage<1, 1>  mUnkdcfc8e;
     // NOLINTEND
 
 public:
@@ -34,7 +34,12 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ActorSoundIdentifier(::Actor const& actor);
 
-    MCNAPI ActorSoundIdentifier(::Bedrock::NotNullNonOwnerPtr<::ActorFetcher const> actorFetcher, ::ActorDefinitionIdentifier const& identifier, ::ActorUniqueID actorid, bool isBaby);
+    MCNAPI ActorSoundIdentifier(
+        ::Bedrock::NotNullNonOwnerPtr<::ActorFetcher const> actorFetcher,
+        ::ActorDefinitionIdentifier const&                  identifier,
+        ::ActorUniqueID                                     actorid,
+        bool                                                isBaby
+    );
 
     MCNAPI ~ActorSoundIdentifier();
     // NOLINTEND
@@ -44,7 +49,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Actor const& actor);
 
-    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ActorFetcher const> actorFetcher, ::ActorDefinitionIdentifier const& identifier, ::ActorUniqueID actorid, bool isBaby);
+    MCNAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::ActorFetcher const> actorFetcher,
+        ::ActorDefinitionIdentifier const&                  identifier,
+        ::ActorUniqueID                                     actorid,
+        bool                                                isBaby
+    );
     // NOLINTEND
 
 public:
@@ -52,5 +62,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

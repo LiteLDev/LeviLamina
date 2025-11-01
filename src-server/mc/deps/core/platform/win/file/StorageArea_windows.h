@@ -59,10 +59,15 @@ public:
     virtual ::Core::Result getExtendSizeThreshold(uint64& outExtendSizeThreshold) const /*override*/;
 
     // vIndex: 17
-    virtual void attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback) /*override*/;
+    virtual void
+    attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback) /*override*/;
 
     // vIndex: 18
-    virtual void preemptiveExtendSize(uint64 const expectedContentSize, ::std::function<void()> successCallback, ::std::function<void()> failureCallback) /*override*/;
+    virtual void preemptiveExtendSize(
+        uint64 const            expectedContentSize,
+        ::std::function<void()> successCallback,
+        ::std::function<void()> failureCallback
+    ) /*override*/;
 
     // vIndex: 19
     virtual uint64 getAvailableUserStorageSize() /*override*/;
@@ -100,7 +105,11 @@ public:
 
     MCNAPI void $attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
 
-    MCNAPI void $preemptiveExtendSize(uint64 const expectedContentSize, ::std::function<void()> successCallback, ::std::function<void()> failureCallback);
+    MCNAPI void $preemptiveExtendSize(
+        uint64 const            expectedContentSize,
+        ::std::function<void()> successCallback,
+        ::std::function<void()> failureCallback
+    );
 
     MCNAPI uint64 $getAvailableUserStorageSize();
 
@@ -114,7 +123,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

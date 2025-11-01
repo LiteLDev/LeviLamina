@@ -23,5 +23,4 @@ public:
 
     MCAPI static ::std::vector<::GameEventPair> const& mGameEventPairs();
     // NOLINTEND
-
 };

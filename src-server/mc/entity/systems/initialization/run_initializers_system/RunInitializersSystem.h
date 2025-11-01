@@ -17,4 +17,4 @@ MCNAPI ::TickingSystemWithInfo create(::EntitySystems& systems);
 MCNAPI void gatherCombinedDependencies(::EntitySystems& systems, ::SystemInfo& resultInfo);
 // NOLINTEND
 
-}
+} // namespace RunInitializersSystem

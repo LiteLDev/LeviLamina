@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk4b85c8;
     ::ll::UntypedStorage<8, 48> mUnk95b3b0;
-    ::ll::UntypedStorage<4, 8> mUnkfd7467;
+    ::ll::UntypedStorage<4, 8>  mUnkfd7467;
     // NOLINTEND
 
 public:
@@ -40,7 +40,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

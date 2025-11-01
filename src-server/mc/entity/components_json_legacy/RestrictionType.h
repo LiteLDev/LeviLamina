@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class RestrictionType : int {
-    None = 0,
+    None           = 0,
     RandomMovement = 1,
-    AllMovement = 2,
+    AllMovement    = 2,
 };

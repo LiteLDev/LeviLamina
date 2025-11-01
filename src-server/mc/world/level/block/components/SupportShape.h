@@ -4,6 +4,6 @@
 
 enum class SupportShape : int {
     Invalid = -1,
-    Fence = 0,
-    Stair = 1,
+    Fence   = 0,
+    Stair   = 1,
 };

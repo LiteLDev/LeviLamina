@@ -22,7 +22,7 @@ public:
     // clang-format off
     struct LocalRegistry;
     // clang-format on
-    
+
     // NetherFortressPiece inner types define
     struct LocalRegistry {
     public:
@@ -35,15 +35,14 @@ public:
         ::ll::TypedStorage<8, 8, ::Block const&> mSoulSand;
         ::ll::TypedStorage<8, 8, ::Block const&> mAirBlock;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         LocalRegistry& operator=(LocalRegistry const&);
         LocalRegistry(LocalRegistry const&);
         LocalRegistry();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -72,17 +71,67 @@ public:
     // NOLINTBEGIN
     MCAPI explicit NetherFortressPiece(int genDepth);
 
-    MCAPI ::std::unique_ptr<::NetherFortressPiece> findAndCreateBridgePieceFactory(::std::string const& pieceClass, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random, int footX, int footY, int footZ, int direction, int depth);
+    MCAPI ::std::unique_ptr<::NetherFortressPiece> findAndCreateBridgePieceFactory(
+        ::std::string const&                                pieceClass,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction,
+        int                                                 depth
+    );
 
-    MCAPI ::StructurePiece* generateAndAddPiece(::NBStartPiece& startPiece, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random, int footX, int footY, int footZ, int direction, int depth, bool isCastle);
+    MCAPI ::StructurePiece* generateAndAddPiece(
+        ::NBStartPiece&                                     startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction,
+        int                                                 depth,
+        bool                                                isCastle
+    );
 
-    MCAPI ::StructurePiece* generateChildForward(::NBStartPiece& startPiece, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random, int xOff, int yOff, bool isCastle);
+    MCAPI ::StructurePiece* generateChildForward(
+        ::NBStartPiece&                                     startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 xOff,
+        int                                                 yOff,
+        bool                                                isCastle
+    );
 
-    MCAPI ::StructurePiece* generateChildLeft(::NBStartPiece& startPiece, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random, int yOff, int zOff, bool isCastle);
+    MCAPI ::StructurePiece* generateChildLeft(
+        ::NBStartPiece&                                     startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 yOff,
+        int                                                 zOff,
+        bool                                                isCastle
+    );
 
-    MCAPI ::StructurePiece* generateChildRight(::NBStartPiece& startPiece, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random, int yOff, int zOff, bool isCastle);
+    MCAPI ::StructurePiece* generateChildRight(
+        ::NBStartPiece&                                     startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 yOff,
+        int                                                 zOff,
+        bool                                                isCastle
+    );
 
-    MCAPI ::std::unique_ptr<::NetherFortressPiece> generatePiece(::NBStartPiece& startPiece, ::std::vector<::PieceWeight>& currentPieces, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random, int footX, int footY, int footZ, int direction, int depth);
+    MCAPI ::std::unique_ptr<::NetherFortressPiece> generatePiece(
+        ::NBStartPiece&                                     startPiece,
+        ::std::vector<::PieceWeight>&                       currentPieces,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction,
+        int                                                 depth
+    );
     // NOLINTEND
 
 public:
@@ -110,5 +159,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

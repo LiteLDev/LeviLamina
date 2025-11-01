@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
-
 };

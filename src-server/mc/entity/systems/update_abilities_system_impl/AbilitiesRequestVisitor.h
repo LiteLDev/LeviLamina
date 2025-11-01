@@ -17,7 +17,6 @@ public:
     AbilitiesRequestVisitor& operator=(AbilitiesRequestVisitor const&);
     AbilitiesRequestVisitor(AbilitiesRequestVisitor const&);
     AbilitiesRequestVisitor();
-
 };
 
-}
+} // namespace UpdateAbilitiesSystemImpl

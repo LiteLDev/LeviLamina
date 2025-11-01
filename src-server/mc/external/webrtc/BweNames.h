@@ -5,11 +5,11 @@
 namespace webrtc {
 
 enum class BweNames : int {
-    KReceiverNoExtension = 0,
-    KReceiverTOffset = 1,
-    KReceiverAbsSendTime = 2,
+    KReceiverNoExtension     = 0,
+    KReceiverTOffset         = 1,
+    KReceiverAbsSendTime     = 2,
     KSendSideTransportSeqNum = 3,
-    KBweNamesMax = 4,
+    KBweNamesMax             = 4,
 };
 
 }

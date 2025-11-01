@@ -4,7 +4,6 @@
 
 namespace MinecraftCamera {
 
-struct CameraWorldSpaceRotationComponent {
-};
+struct CameraWorldSpaceRotationComponent {};
 
-}
+} // namespace MinecraftCamera

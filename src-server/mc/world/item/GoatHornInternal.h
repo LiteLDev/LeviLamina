@@ -13,4 +13,4 @@ namespace GoatHornInternal {
 MCAPI ::HashedString const& COOLDOWN_CATEGORY();
 // NOLINTEND
 
-}
+} // namespace GoatHornInternal

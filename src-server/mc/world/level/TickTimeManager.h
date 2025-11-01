@@ -12,10 +12,10 @@ class TickTimeManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk5276d2;
-    ::ll::UntypedStorage<8, 8> mUnk2e2b89;
+    ::ll::UntypedStorage<1, 1>  mUnk5276d2;
+    ::ll::UntypedStorage<8, 8>  mUnk2e2b89;
     ::ll::UntypedStorage<8, 24> mUnkf1c29a;
-    ::ll::UntypedStorage<8, 8> mUnkda5959;
+    ::ll::UntypedStorage<8, 8>  mUnkda5959;
     ::ll::UntypedStorage<8, 16> mUnk27d19c;
     ::ll::UntypedStorage<8, 16> mUnkcc65d5;
     // NOLINTEND
@@ -35,7 +35,8 @@ public:
 
     MCNAPI void registerForGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCNAPI void registerForPlayerSleepManagerEvents(::IServerPlayerSleepManagerConnector& serverPlayerSleepManagerConnector);
+    MCNAPI void
+    registerForPlayerSleepManagerEvents(::IServerPlayerSleepManagerConnector& serverPlayerSleepManagerConnector);
 
     MCNAPI ~TickTimeManager();
     // NOLINTEND
@@ -45,5 +46,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

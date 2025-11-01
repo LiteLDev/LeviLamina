@@ -46,12 +46,78 @@ struct WasInWaterFlagComponent;
 
 namespace FoodExhaustionSystemImpl {
 
-struct FoodExhaustionSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent, ::PassengerComponent, ::PlayerComponent, ::HorseFlagComponent, ::MobFlagComponent, ::ParrotFlagComponent, ::VehicleComponent, ::CamelFlagComponent>, ::Read<::DimensionTypeComponent, ::ExhaustionComponent, ::OnGroundFlagComponent, ::ActorGameTypeComponent, ::ServerPlayerCurrentMovementComponent, ::StateVectorComponent, ::ActorDataFlagComponent, ::WasInWaterFlagComponent, ::ActorRotationComponent, ::MobBodyRotationComponent, ::PassengerComponent, ::RenderRotationComponent, ::StandAnimationComponent, ::AABBShapeComponent, ::OffsetsComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent>, ::Write<>, ::AddRemove<::AttributeRequestComponent>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent, ::ExternalDataComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
+struct FoodExhaustionSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
+                                      ::Filter<
+                                          ::ActorMovementTickNeededComponent,
+                                          ::PassengerComponent,
+                                          ::PlayerComponent,
+                                          ::HorseFlagComponent,
+                                          ::MobFlagComponent,
+                                          ::ParrotFlagComponent,
+                                          ::VehicleComponent,
+                                          ::CamelFlagComponent>,
+                                      ::Read<
+                                          ::DimensionTypeComponent,
+                                          ::ExhaustionComponent,
+                                          ::OnGroundFlagComponent,
+                                          ::ActorGameTypeComponent,
+                                          ::ServerPlayerCurrentMovementComponent,
+                                          ::StateVectorComponent,
+                                          ::ActorDataFlagComponent,
+                                          ::WasInWaterFlagComponent,
+                                          ::ActorRotationComponent,
+                                          ::MobBodyRotationComponent,
+                                          ::PassengerComponent,
+                                          ::RenderRotationComponent,
+                                          ::StandAnimationComponent,
+                                          ::AABBShapeComponent,
+                                          ::OffsetsComponent,
+                                          ::VanillaOffsetComponent,
+                                          ::PassengerRenderingRidingOffsetComponent>,
+                                      ::Write<>,
+                                      ::AddRemove<::AttributeRequestComponent>,
+                                      ::GlobalRead<::LocalConstBlockSourceFactoryComponent, ::ExternalDataComponent>,
+                                      ::GlobalWrite<>,
+                                      ::EntityFactoryT<>>> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent, ::PassengerComponent, ::PlayerComponent, ::HorseFlagComponent, ::MobFlagComponent, ::ParrotFlagComponent, ::VehicleComponent, ::CamelFlagComponent>, ::Read<::DimensionTypeComponent, ::ExhaustionComponent, ::OnGroundFlagComponent, ::ActorGameTypeComponent, ::ServerPlayerCurrentMovementComponent, ::StateVectorComponent, ::ActorDataFlagComponent, ::WasInWaterFlagComponent, ::ActorRotationComponent, ::MobBodyRotationComponent, ::PassengerComponent, ::RenderRotationComponent, ::StandAnimationComponent, ::AABBShapeComponent, ::OffsetsComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent>, ::Write<>, ::AddRemove<::AttributeRequestComponent>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent, ::ExternalDataComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::PassengerComponent,
+                ::PlayerComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::ExhaustionComponent,
+                ::OnGroundFlagComponent,
+                ::ActorGameTypeComponent,
+                ::ServerPlayerCurrentMovementComponent,
+                ::StateVectorComponent,
+                ::ActorDataFlagComponent,
+                ::WasInWaterFlagComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::PassengerComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::AABBShapeComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<>,
+            ::AddRemove<::AttributeRequestComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent, ::ExternalDataComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~FoodExhaustionSystemImpl() /*override*/ = default;
@@ -60,7 +126,41 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent, ::PassengerComponent, ::PlayerComponent, ::HorseFlagComponent, ::MobFlagComponent, ::ParrotFlagComponent, ::VehicleComponent, ::CamelFlagComponent>, ::Read<::DimensionTypeComponent, ::ExhaustionComponent, ::OnGroundFlagComponent, ::ActorGameTypeComponent, ::ServerPlayerCurrentMovementComponent, ::StateVectorComponent, ::ActorDataFlagComponent, ::WasInWaterFlagComponent, ::ActorRotationComponent, ::MobBodyRotationComponent, ::PassengerComponent, ::RenderRotationComponent, ::StandAnimationComponent, ::AABBShapeComponent, ::OffsetsComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent>, ::Write<>, ::AddRemove<::AttributeRequestComponent>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent, ::ExternalDataComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::PassengerComponent,
+                ::PlayerComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent>,
+            ::Read<
+                ::DimensionTypeComponent,
+                ::ExhaustionComponent,
+                ::OnGroundFlagComponent,
+                ::ActorGameTypeComponent,
+                ::ServerPlayerCurrentMovementComponent,
+                ::StateVectorComponent,
+                ::ActorDataFlagComponent,
+                ::WasInWaterFlagComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::PassengerComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::AABBShapeComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent>,
+            ::Write<>,
+            ::AddRemove<::AttributeRequestComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent, ::ExternalDataComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
     // NOLINTEND
 
 public:
@@ -68,7 +168,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace FoodExhaustionSystemImpl

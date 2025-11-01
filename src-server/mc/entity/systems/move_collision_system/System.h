@@ -52,14 +52,52 @@ namespace BlockSourceVisitor { struct CollisionShape; }
 
 namespace MoveCollisionSystem {
 
-struct System : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::CanStandOnSnowFlagComponent, ::HasLightweightFamilyFlagComponent, ::HorseFlagComponent, ::MobFlagComponent, ::ParrotFlagComponent, ::VehicleComponent, ::CamelFlagComponent, ::PlayerComponent, ::CollidableMobFlagComponent, ::FallingBlockFlagComponent>, ::Read<::AABBShapeComponent, ::MovementAbilitiesComponent, ::ActorTypeComponent, ::FallDistanceComponent, ::PassengerComponent, ::ActorGameTypeComponent, ::ActorDataFlagComponent, ::VehicleComponent, ::ActorRotationComponent, ::MobBodyRotationComponent, ::RenderRotationComponent, ::StandAnimationComponent, ::OffsetsComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent, ::DimensionTypeComponent, ::MaxAutoStepComponent, ::CollidableMobNearFlagComponent>, ::Write<::MoveRequestComponent>, ::AddRemove<>, ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent, ::LocalSpatialEntityFetcherFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
+struct System : public ::IStrictTickingSystem<::StrictExecutionContext<
+                    ::Filter<
+                        ::CanStandOnSnowFlagComponent,
+                        ::HasLightweightFamilyFlagComponent,
+                        ::HorseFlagComponent,
+                        ::MobFlagComponent,
+                        ::ParrotFlagComponent,
+                        ::VehicleComponent,
+                        ::CamelFlagComponent,
+                        ::PlayerComponent,
+                        ::CollidableMobFlagComponent,
+                        ::FallingBlockFlagComponent>,
+                    ::Read<
+                        ::AABBShapeComponent,
+                        ::MovementAbilitiesComponent,
+                        ::ActorTypeComponent,
+                        ::FallDistanceComponent,
+                        ::PassengerComponent,
+                        ::ActorGameTypeComponent,
+                        ::ActorDataFlagComponent,
+                        ::VehicleComponent,
+                        ::ActorRotationComponent,
+                        ::MobBodyRotationComponent,
+                        ::RenderRotationComponent,
+                        ::StandAnimationComponent,
+                        ::OffsetsComponent,
+                        ::VanillaOffsetComponent,
+                        ::PassengerRenderingRidingOffsetComponent,
+                        ::DimensionTypeComponent,
+                        ::MaxAutoStepComponent,
+                        ::CollidableMobNearFlagComponent>,
+                    ::Write<::MoveRequestComponent>,
+                    ::AddRemove<>,
+                    ::GlobalRead<
+                        ::ExternalDataComponent,
+                        ::LocalConstBlockSourceFactoryComponent,
+                        ::LocalSpatialEntityFetcherFactoryComponent>,
+                    ::GlobalWrite<>,
+                    ::EntityFactoryT<>>> {
 public:
     // System inner types declare
     // clang-format off
     struct SpatialQueries;
     struct SpatialQueryFactories;
     // clang-format on
-    
+
     // System inner types define
     struct SpatialQueryFactories {
     public:
@@ -68,15 +106,14 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkd29fef;
         ::ll::UntypedStorage<8, 8> mUnkb8d19a;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         SpatialQueryFactories& operator=(SpatialQueryFactories const&);
         SpatialQueryFactories(SpatialQueryFactories const&);
         SpatialQueryFactories();
-    
     };
-    
+
     struct SpatialQueries {
     public:
         // member variables
@@ -84,27 +121,26 @@ public:
         ::ll::UntypedStorage<8, 280> mUnkc11b11;
         ::ll::UntypedStorage<8, 280> mUnk3c19d0;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         SpatialQueries& operator=(SpatialQueries const&);
         SpatialQueries(SpatialQueries const&);
         SpatialQueries();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~SpatialQueries();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -123,10 +159,91 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<::Filter<::CanStandOnSnowFlagComponent, ::HasLightweightFamilyFlagComponent, ::HorseFlagComponent, ::MobFlagComponent, ::ParrotFlagComponent, ::VehicleComponent, ::CamelFlagComponent, ::PlayerComponent, ::CollidableMobFlagComponent, ::FallingBlockFlagComponent>, ::Read<::AABBShapeComponent, ::MovementAbilitiesComponent, ::ActorTypeComponent, ::FallDistanceComponent, ::PassengerComponent, ::ActorGameTypeComponent, ::ActorDataFlagComponent, ::VehicleComponent, ::ActorRotationComponent, ::MobBodyRotationComponent, ::RenderRotationComponent, ::StandAnimationComponent, ::OffsetsComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent, ::DimensionTypeComponent, ::MaxAutoStepComponent, ::CollidableMobNearFlagComponent>, ::Write<::MoveRequestComponent>, ::AddRemove<>, ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent, ::LocalSpatialEntityFetcherFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::CollidableMobFlagComponent,
+                ::FallingBlockFlagComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::DimensionTypeComponent,
+                ::MaxAutoStepComponent,
+                ::CollidableMobNearFlagComponent>,
+            ::Write<::MoveRequestComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<
+                ::ExternalDataComponent,
+                ::LocalConstBlockSourceFactoryComponent,
+                ::LocalSpatialEntityFetcherFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    ) /*override*/;
 
     // vIndex: 6
-    virtual void singleTick(::StrictExecutionContext<::Filter<::CanStandOnSnowFlagComponent, ::HasLightweightFamilyFlagComponent, ::HorseFlagComponent, ::MobFlagComponent, ::ParrotFlagComponent, ::VehicleComponent, ::CamelFlagComponent, ::PlayerComponent, ::CollidableMobFlagComponent, ::FallingBlockFlagComponent>, ::Read<::AABBShapeComponent, ::MovementAbilitiesComponent, ::ActorTypeComponent, ::FallDistanceComponent, ::PassengerComponent, ::ActorGameTypeComponent, ::ActorDataFlagComponent, ::VehicleComponent, ::ActorRotationComponent, ::MobBodyRotationComponent, ::RenderRotationComponent, ::StandAnimationComponent, ::OffsetsComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent, ::DimensionTypeComponent, ::MaxAutoStepComponent, ::CollidableMobNearFlagComponent>, ::Write<::MoveRequestComponent>, ::AddRemove<>, ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent, ::LocalSpatialEntityFetcherFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext, ::StrictEntityContext& entityContext) /*override*/;
+    virtual void singleTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::CollidableMobFlagComponent,
+                ::FallingBlockFlagComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::DimensionTypeComponent,
+                ::MaxAutoStepComponent,
+                ::CollidableMobNearFlagComponent>,
+            ::Write<::MoveRequestComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<
+                ::ExternalDataComponent,
+                ::LocalConstBlockSourceFactoryComponent,
+                ::LocalSpatialEntityFetcherFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~System() /*override*/;
@@ -141,9 +258,90 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<::Filter<::CanStandOnSnowFlagComponent, ::HasLightweightFamilyFlagComponent, ::HorseFlagComponent, ::MobFlagComponent, ::ParrotFlagComponent, ::VehicleComponent, ::CamelFlagComponent, ::PlayerComponent, ::CollidableMobFlagComponent, ::FallingBlockFlagComponent>, ::Read<::AABBShapeComponent, ::MovementAbilitiesComponent, ::ActorTypeComponent, ::FallDistanceComponent, ::PassengerComponent, ::ActorGameTypeComponent, ::ActorDataFlagComponent, ::VehicleComponent, ::ActorRotationComponent, ::MobBodyRotationComponent, ::RenderRotationComponent, ::StandAnimationComponent, ::OffsetsComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent, ::DimensionTypeComponent, ::MaxAutoStepComponent, ::CollidableMobNearFlagComponent>, ::Write<::MoveRequestComponent>, ::AddRemove<>, ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent, ::LocalSpatialEntityFetcherFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::CollidableMobFlagComponent,
+                ::FallingBlockFlagComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::DimensionTypeComponent,
+                ::MaxAutoStepComponent,
+                ::CollidableMobNearFlagComponent>,
+            ::Write<::MoveRequestComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<
+                ::ExternalDataComponent,
+                ::LocalConstBlockSourceFactoryComponent,
+                ::LocalSpatialEntityFetcherFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
 
-    MCNAPI void $singleTick(::StrictExecutionContext<::Filter<::CanStandOnSnowFlagComponent, ::HasLightweightFamilyFlagComponent, ::HorseFlagComponent, ::MobFlagComponent, ::ParrotFlagComponent, ::VehicleComponent, ::CamelFlagComponent, ::PlayerComponent, ::CollidableMobFlagComponent, ::FallingBlockFlagComponent>, ::Read<::AABBShapeComponent, ::MovementAbilitiesComponent, ::ActorTypeComponent, ::FallDistanceComponent, ::PassengerComponent, ::ActorGameTypeComponent, ::ActorDataFlagComponent, ::VehicleComponent, ::ActorRotationComponent, ::MobBodyRotationComponent, ::RenderRotationComponent, ::StandAnimationComponent, ::OffsetsComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent, ::DimensionTypeComponent, ::MaxAutoStepComponent, ::CollidableMobNearFlagComponent>, ::Write<::MoveRequestComponent>, ::AddRemove<>, ::GlobalRead<::ExternalDataComponent, ::LocalConstBlockSourceFactoryComponent, ::LocalSpatialEntityFetcherFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext, ::StrictEntityContext& entityContext);
+    MCNAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::CanStandOnSnowFlagComponent,
+                ::HasLightweightFamilyFlagComponent,
+                ::HorseFlagComponent,
+                ::MobFlagComponent,
+                ::ParrotFlagComponent,
+                ::VehicleComponent,
+                ::CamelFlagComponent,
+                ::PlayerComponent,
+                ::CollidableMobFlagComponent,
+                ::FallingBlockFlagComponent>,
+            ::Read<
+                ::AABBShapeComponent,
+                ::MovementAbilitiesComponent,
+                ::ActorTypeComponent,
+                ::FallDistanceComponent,
+                ::PassengerComponent,
+                ::ActorGameTypeComponent,
+                ::ActorDataFlagComponent,
+                ::VehicleComponent,
+                ::ActorRotationComponent,
+                ::MobBodyRotationComponent,
+                ::RenderRotationComponent,
+                ::StandAnimationComponent,
+                ::OffsetsComponent,
+                ::VanillaOffsetComponent,
+                ::PassengerRenderingRidingOffsetComponent,
+                ::DimensionTypeComponent,
+                ::MaxAutoStepComponent,
+                ::CollidableMobNearFlagComponent>,
+            ::Write<::MoveRequestComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<
+                ::ExternalDataComponent,
+                ::LocalConstBlockSourceFactoryComponent,
+                ::LocalSpatialEntityFetcherFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -151,7 +349,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace MoveCollisionSystem

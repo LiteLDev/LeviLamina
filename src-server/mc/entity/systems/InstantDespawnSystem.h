@@ -27,7 +27,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::InstantDespawnComponent& instantDespawnComponent);
+    MCNAPI static void
+    _tickComponent(::ActorOwnerComponent& actorOwnerComponent, ::InstantDespawnComponent& instantDespawnComponent);
 
     MCNAPI static ::TickingSystemWithInfo createInstantDespawningPlayerCleanupSystem();
     // NOLINTEND
@@ -43,5 +44,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -13,4 +13,4 @@ namespace ScriptModuleIdentity::Betas {
 MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-}
+} // namespace ScriptModuleIdentity::Betas

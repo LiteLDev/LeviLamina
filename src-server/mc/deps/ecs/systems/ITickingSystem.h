@@ -36,5 +36,4 @@ public:
 
     MCNAPI void $singleTick(::EntityRegistry& registry, ::StrictEntityContext& entityContext);
     // NOLINTEND
-
 };

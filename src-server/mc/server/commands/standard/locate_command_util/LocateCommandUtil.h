@@ -12,7 +12,11 @@ class Dimension;
 namespace LocateCommandUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::optional<::BlockPos> locateNearbyBiomeByPredicate(::BlockPos position, ::Dimension* dimension, ::std::function<bool(::Biome const&)> const& predicate);
+MCNAPI ::std::optional<::BlockPos> locateNearbyBiomeByPredicate(
+    ::BlockPos                                   position,
+    ::Dimension*                                 dimension,
+    ::std::function<bool(::Biome const&)> const& predicate
+);
 // NOLINTEND
 
-}
+} // namespace LocateCommandUtil

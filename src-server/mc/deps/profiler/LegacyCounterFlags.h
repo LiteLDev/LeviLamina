@@ -5,8 +5,8 @@
 namespace Core::Profile {
 
 enum class LegacyCounterFlags : uchar {
-    None = 0,
-    Detailed = 1,
+    None          = 0,
+    Detailed      = 1,
     DetailedGraph = 2,
 };
 

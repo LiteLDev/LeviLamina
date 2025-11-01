@@ -26,10 +26,24 @@ public:
     virtual ~IScriptItemCustomComponentWriter() = default;
 
     // vIndex: 1
-    virtual ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError, ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError, ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError, ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError, ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError> tryRegisterComponentV1(::HashedString const&, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&) = 0;
+    virtual ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
+    tryRegisterComponentV1(::HashedString const&, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&) = 0;
 
     // vIndex: 2
-    virtual ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError, ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError, ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError, ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError, ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError> tryRegisterComponent(::HashedString const&, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&) = 0;
+    virtual ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentAlreadyRegisteredError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadVersionError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewEventError,
+        ::ScriptModuleMinecraft::ScriptItemCustomComponentReloadNewComponentError>
+    tryRegisterComponent(::HashedString const&, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&) = 0;
     // NOLINTEND
 
 public:
@@ -43,7 +57,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

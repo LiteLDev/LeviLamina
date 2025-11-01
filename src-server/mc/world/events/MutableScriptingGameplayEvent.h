@@ -5,9 +5,8 @@
 #include "mc/world/events/BeforeWatchdogTerminateEvent.h"
 #include "mc/world/events/EventVariantImpl.h"
 
-template<typename Result>
+template <typename Result>
 struct MutableScriptingGameplayEvent;
 
 template <>
-struct MutableScriptingGameplayEvent<CoordinatorResult> : MutableEventVariant<BeforeWatchdogTerminateEvent> {
-};
+struct MutableScriptingGameplayEvent<CoordinatorResult> : MutableEventVariant<BeforeWatchdogTerminateEvent> {};

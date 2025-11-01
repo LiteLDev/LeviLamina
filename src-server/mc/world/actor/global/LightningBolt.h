@@ -18,8 +18,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, uint> mSeed;
-    ::ll::TypedStorage<4, 4, int> mLife;
-    ::ll::TypedStorage<4, 4, int> mFlashes;
+    ::ll::TypedStorage<4, 4, int>  mLife;
+    ::ll::TypedStorage<4, 4, int>  mFlashes;
     ::ll::TypedStorage<1, 1, bool> mCanHurt;
     ::ll::TypedStorage<1, 1, bool> mHasTriedToHurt;
     // NOLINTEND
@@ -81,5 +81,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

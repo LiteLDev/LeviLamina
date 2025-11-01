@@ -17,25 +17,24 @@ public:
     // clang-format off
     struct FurnaceRecipe;
     // clang-format on
-    
+
     // RecipesForCommand inner types define
     struct FurnaceRecipe {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48> mUnkb0eeeb;
+        ::ll::UntypedStorage<8, 48>  mUnkb0eeeb;
         ::ll::UntypedStorage<8, 128> mUnkb274ac;
         ::ll::UntypedStorage<8, 128> mUnk999f6d;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         FurnaceRecipe& operator=(FurnaceRecipe const&);
         FurnaceRecipe(FurnaceRecipe const&);
         FurnaceRecipe();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -63,5 +62,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

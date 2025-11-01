@@ -16,5 +16,4 @@ public:
     XTaskQueuePortObject& operator=(XTaskQueuePortObject const&);
     XTaskQueuePortObject(XTaskQueuePortObject const&);
     XTaskQueuePortObject();
-
 };

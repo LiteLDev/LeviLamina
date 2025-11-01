@@ -6,9 +6,9 @@ namespace persona {
 
 enum class CollectorType : uchar {
     Featured = 0,
-    General = 1,
-    Owned = 2,
-    None = 3,
+    General  = 1,
+    Owned    = 2,
+    None     = 3,
 };
 
 }

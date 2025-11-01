@@ -23,7 +23,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> ownerId;
-    ::ll::TypedStorage<1, 1, bool> mInGround;
+    ::ll::TypedStorage<1, 1, bool>            mInGround;
     // NOLINTEND
 
 public:
@@ -64,7 +64,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Fireball(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI Fireball(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
 
     MCAPI void _setPower(::Vec3 const& power);
     // NOLINTEND
@@ -72,7 +76,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -106,5 +114,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

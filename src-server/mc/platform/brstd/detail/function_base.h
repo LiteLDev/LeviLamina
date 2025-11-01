@@ -6,7 +6,7 @@
 
 namespace brstd::detail::function {
 
-template<DerivedType, class Base>
+template <DerivedType, class Base>
 class function_base : public Base {
 protected:
     function_base() { this->construct_empty(); }
@@ -80,7 +80,6 @@ protected:
             }
         }
         return *this;
-    }
-};
+    }};
 
-}
+} // namespace brstd::detail::function

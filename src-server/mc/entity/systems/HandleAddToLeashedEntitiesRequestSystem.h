@@ -17,9 +17,19 @@ struct LeashedEntitiesComponent;
 namespace HandleAddToLeashedEntitiesRequestSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickEntity(::StrictEntityContext const& context, ::ActorOwnerComponent const& actorOwnerComponent, ::AddToLeashedEntitiesRequestComponent const& addToLeashedEntitiesRequestComponent, ::EntityModifier<::LeashedEntitiesComponent>& leashedEntitiesComponentModifier, ::EntityModifier<::AddToLeashedEntitiesRequestComponent>& addToLeashedEntitiesRequestComponentModifier);
+MCNAPI void tickEntity(
+    ::StrictEntityContext const&                              context,
+    ::ActorOwnerComponent const&                              actorOwnerComponent,
+    ::AddToLeashedEntitiesRequestComponent const&             addToLeashedEntitiesRequestComponent,
+    ::EntityModifier<::LeashedEntitiesComponent>&             leashedEntitiesComponentModifier,
+    ::EntityModifier<::AddToLeashedEntitiesRequestComponent>& addToLeashedEntitiesRequestComponentModifier
+);
 
-MCNAPI void tickView(::ViewT<::StrictEntityContext, ::ActorOwnerComponent const, ::AddToLeashedEntitiesRequestComponent const> view, ::EntityModifier<::LeashedEntitiesComponent> leashedEntitiesComponentModifier, ::EntityModifier<::AddToLeashedEntitiesRequestComponent> addToLeashedEntitiesRequestComponentModifier);
+MCNAPI void tickView(
+    ::ViewT<::StrictEntityContext, ::ActorOwnerComponent const, ::AddToLeashedEntitiesRequestComponent const> view,
+    ::EntityModifier<::LeashedEntitiesComponent>             leashedEntitiesComponentModifier,
+    ::EntityModifier<::AddToLeashedEntitiesRequestComponent> addToLeashedEntitiesRequestComponentModifier
+);
 // NOLINTEND
 
-}
+} // namespace HandleAddToLeashedEntitiesRequestSystem

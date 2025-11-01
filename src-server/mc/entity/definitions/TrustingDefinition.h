@@ -14,8 +14,8 @@ class TrustingDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk8b60f5;
-    ::ll::UntypedStorage<8, 16> mUnkc2c83e;
+    ::ll::UntypedStorage<4, 4>   mUnk8b60f5;
+    ::ll::UntypedStorage<8, 16>  mUnkc2c83e;
     ::ll::UntypedStorage<8, 104> mUnk907038;
     // NOLINTEND
 
@@ -36,7 +36,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TrustingDefinition>>& root);
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TrustingDefinition>>& root
+    );
     // NOLINTEND
 
 public:
@@ -44,5 +46,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

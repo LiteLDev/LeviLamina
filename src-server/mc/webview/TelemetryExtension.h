@@ -17,8 +17,8 @@ class TelemetryExtension : public ::Webview::Extension {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk23041c;
-    ::ll::UntypedStorage<8, 64> mUnkf89661;
+    ::ll::UntypedStorage<8, 64>  mUnk23041c;
+    ::ll::UntypedStorage<8, 64>  mUnkf89661;
     ::ll::UntypedStorage<8, 112> mUnk584b82;
     // NOLINTEND
 
@@ -38,7 +38,8 @@ public:
     virtual bool shouldProcessMessage(::std::string const&, ::std::string const&) /*override*/;
 
     // vIndex: 3
-    virtual bool onMessageReceived(::std::string const&, ::std::string const&, ::std::optional<::Json::Value>) /*override*/;
+    virtual bool
+    onMessageReceived(::std::string const&, ::std::string const&, ::std::optional<::Json::Value>) /*override*/;
 
     // vIndex: 6
     virtual void onLoadingBegin(::std::function<void(::std::string)>) /*override*/;
@@ -52,7 +53,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Webview

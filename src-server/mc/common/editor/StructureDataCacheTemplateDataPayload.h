@@ -13,7 +13,8 @@ namespace mce { class UUID; }
 
 namespace Editor::Network {
 
-class StructureDataCacheTemplateDataPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::StructureDataCacheTemplateDataPayload> {
+class StructureDataCacheTemplateDataPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::StructureDataCacheTemplateDataPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -70,7 +71,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

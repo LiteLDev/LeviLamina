@@ -5,10 +5,10 @@
 namespace DateHelper {
 
 enum class DurationFormat : int {
-    NotLocalized = 0,
+    NotLocalized              = 0,
     LocalizedAbbreviated3Char = 1,
     LocalizedAbbreviated1Char = 2,
-    LocalizedNotAbbreviated = 3,
+    LocalizedNotAbbreviated   = 3,
 };
 
 }

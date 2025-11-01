@@ -5,7 +5,7 @@
 namespace CodeBuilder {
 
 enum class EncryptionCipherMode : uchar {
-    Cfb8 = 0,
+    Cfb8   = 0,
     Cfb128 = 1,
 };
 

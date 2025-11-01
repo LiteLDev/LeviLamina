@@ -25,19 +25,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void constraintDescriptionIfAny(::cereal::SchemaDescription& description, ::cereal::Constraint const* constraint) const;
+    MCNAPI void
+    constraintDescriptionIfAny(::cereal::SchemaDescription& description, ::cereal::Constraint const* constraint) const;
 
-    MCNAPI ::cereal::internal::VariantPriorityLevel findMinVariantPriorityLevel(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
+    MCNAPI ::cereal::internal::VariantPriorityLevel
+    findMinVariantPriorityLevel(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
 
     MCNAPI bool isGreedyCheck(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
 
-    MCNAPI void iterateMembers(::entt::meta_ctx const& ctx, ::entt::meta_type const& type, ::std::function<void(uint, ::entt::meta_data)> cb) const;
+    MCNAPI void iterateMembers(
+        ::entt::meta_ctx const&                        ctx,
+        ::entt::meta_type const&                       type,
+        ::std::function<void(uint, ::entt::meta_data)> cb
+    ) const;
 
-    MCNAPI ::cereal::SchemaDescription makeDescriptionForType(::entt::meta_ctx const& ctx, ::entt::meta_type const& type, ::cereal::internal::BasicSchema::DescriptionMode mode) const;
+    MCNAPI ::cereal::SchemaDescription makeDescriptionForType(
+        ::entt::meta_ctx const&                          ctx,
+        ::entt::meta_type const&                         type,
+        ::cereal::internal::BasicSchema::DescriptionMode mode
+    ) const;
 
-    MCNAPI ::cereal::internal::BasicSchema::MemberDescriptor const* memberDescriptor(::entt::meta_type const& type, uint memberId) const;
+    MCNAPI ::cereal::internal::BasicSchema::MemberDescriptor const*
+    memberDescriptor(::entt::meta_type const& type, uint memberId) const;
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal::internal

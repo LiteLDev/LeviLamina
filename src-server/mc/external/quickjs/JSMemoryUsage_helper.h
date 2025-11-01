@@ -21,5 +21,4 @@ public:
     JSMemoryUsage_helper& operator=(JSMemoryUsage_helper const&);
     JSMemoryUsage_helper(JSMemoryUsage_helper const&);
     JSMemoryUsage_helper();
-
 };

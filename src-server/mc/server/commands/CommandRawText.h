@@ -8,5 +8,4 @@ public:
     // NOLINTBEGIN
     ::std::string mText;
     // NOLINTEND
-
 };

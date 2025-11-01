@@ -77,4 +77,4 @@ constexpr inline std::string_view WHITE = "§f";
 constexpr inline std::string_view YELLOW = "§e";
 // NOLINTEND
 
-}
+} // namespace ColorFormat

@@ -29,7 +29,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeatureLoader(::FeatureParserContext& context, ::std::vector<::SupportedFeatureSchema> const& supportedSchemas, ::std::vector<::SupportedFeatureUpgrader> const& supportedUpgraders);
+    MCAPI FeatureLoader(
+        ::FeatureParserContext&                          context,
+        ::std::vector<::SupportedFeatureSchema> const&   supportedSchemas,
+        ::std::vector<::SupportedFeatureUpgrader> const& supportedUpgraders
+    );
 
     MCAPI ::Puv::LoadResult<::FeatureResult> load(::Puv::Input const& input) const;
     // NOLINTEND
@@ -37,7 +41,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FeatureParserContext& context, ::std::vector<::SupportedFeatureSchema> const& supportedSchemas, ::std::vector<::SupportedFeatureUpgrader> const& supportedUpgraders);
+    MCAPI void* $ctor(
+        ::FeatureParserContext&                          context,
+        ::std::vector<::SupportedFeatureSchema> const&   supportedSchemas,
+        ::std::vector<::SupportedFeatureUpgrader> const& supportedUpgraders
+    );
     // NOLINTEND
-
 };

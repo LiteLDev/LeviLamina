@@ -78,7 +78,8 @@ public:
     virtual ::std::vector<::webrtc::RtpHeaderExtensionCapability> GetNegotiatedHeaderExtensions() const = 0;
 
     // vIndex: 21
-    virtual ::webrtc::RTCError SetHeaderExtensionsToNegotiate(::rtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const>) = 0;
+    virtual ::webrtc::RTCError
+        SetHeaderExtensionsToNegotiate(::rtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const>) = 0;
 
     // vIndex: 2
     virtual ~RtpTransceiverInterface() /*override*/;
@@ -97,7 +98,6 @@ public:
 
     MCNAPI void $Stop();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

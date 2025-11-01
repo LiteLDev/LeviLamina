@@ -17,7 +17,6 @@ public:
     RegisteredError& operator=(RegisteredError const&);
     RegisteredError(RegisteredError const&);
     RegisteredError();
-
 };
 
-}
+} // namespace Scripting::QuickJS

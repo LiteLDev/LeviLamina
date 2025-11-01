@@ -21,5 +21,4 @@ public:
     PacketViolationHandlerSettings& operator=(PacketViolationHandlerSettings const&);
     PacketViolationHandlerSettings(PacketViolationHandlerSettings const&);
     PacketViolationHandlerSettings();
-
 };

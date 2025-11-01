@@ -5,5 +5,4 @@
 // auto generated inclusion list
 #include "mc/util/NewType.h"
 
-struct ProductSku : public ::NewType<::std::string> {
-};
+struct ProductSku : public ::NewType<::std::string> {};

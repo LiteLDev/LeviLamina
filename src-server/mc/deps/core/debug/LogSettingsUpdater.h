@@ -99,7 +99,8 @@ public:
     virtual void setDevLogPriorityFilter(::std::string const&) = 0;
 
     // vIndex: 29
-    virtual ::Bedrock::PubSub::Subscription registerDevLogPriorityObserver(::std::function<void(::std::string const&)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription
+        registerDevLogPriorityObserver(::std::function<void(::std::string const&)>) = 0;
     // NOLINTEND
 
 public:
@@ -107,5 +108,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

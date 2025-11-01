@@ -27,5 +27,4 @@ public:
 
     MCNAPI void setTickDeathSettings(::TickDeathSettings const& settings) const;
     // NOLINTEND
-
 };

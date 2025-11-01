@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::PlayerListEntry>> mEntries;
-    ::ll::TypedStorage<1, 1, ::PlayerListPacketType> mAction;
+    ::ll::TypedStorage<1, 1, ::PlayerListPacketType>            mAction;
     // NOLINTEND
 
 public:
@@ -39,7 +39,7 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 8
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream) /*override*/;
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
@@ -60,7 +60,7 @@ public:
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCFOLD ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
+    MCFOLD ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& stream);
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
@@ -70,5 +70,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -4,8 +4,7 @@
 
 namespace cereal {
 
-template<typename T0>
-class ConstraintHandle {
-};
+template <typename T0>
+class ConstraintHandle {};
 
-}
+} // namespace cereal

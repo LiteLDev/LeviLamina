@@ -19,7 +19,12 @@ class LavaTravelSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickLavaTravelSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::LavaTravelFlagComponent>, ::MovementAttributesComponent const, ::MobTravelComponent> view);
+    MCNAPI static void tickLavaTravelSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::LavaTravelFlagComponent>,
+            ::MovementAttributesComponent const,
+            ::MobTravelComponent> view
+    );
     // NOLINTEND
-
 };

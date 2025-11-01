@@ -15,5 +15,4 @@ public:
     srtp_debug_module_t& operator=(srtp_debug_module_t const&);
     srtp_debug_module_t(srtp_debug_module_t const&);
     srtp_debug_module_t();
-
 };

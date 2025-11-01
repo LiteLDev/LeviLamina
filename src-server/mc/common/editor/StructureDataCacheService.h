@@ -20,7 +20,9 @@ namespace mce { class UUID; }
 
 namespace Editor::Services {
 
-class StructureDataCacheService : public ::Editor::Services::IEditorService, public ::Editor::Services::StructureDataCacheServiceProvider, public ::Editor::Services::PayloadStoreHelper {
+class StructureDataCacheService : public ::Editor::Services::IEditorService,
+                                  public ::Editor::Services::StructureDataCacheServiceProvider,
+                                  public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
@@ -50,21 +52,34 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 1
-    virtual void registerStructureDataProvider(::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider> providerRef) /*override*/;
+    virtual void registerStructureDataProvider(
+        ::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider> providerRef
+    ) /*override*/;
 
     // vIndex: 2
     virtual void informStructureDataRemoved(::mce::UUID const& id) /*override*/;
 
     // vIndex: 3
-    virtual void informStructureDataUpdated(::mce::UUID const& id, ::std::variant<::StructureTemplate const*, ::Editor::EditorStructureTemplate const*, ::std::shared_ptr<::StructureTemplate const>, ::std::shared_ptr<::Editor::EditorStructureTemplate const>> const& data) /*override*/;
+    virtual void informStructureDataUpdated(
+        ::mce::UUID const& id,
+        ::std::variant<
+            ::StructureTemplate const*,
+            ::Editor::EditorStructureTemplate const*,
+            ::std::shared_ptr<::StructureTemplate const>,
+            ::std::shared_ptr<::Editor::EditorStructureTemplate const>> const& data
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _handleStructureDataCacheReleaseStructurePayload(::Editor::Network::StructureDataCacheReleaseStructurePayload const& payload);
+    MCNAPI void _handleStructureDataCacheReleaseStructurePayload(
+        ::Editor::Network::StructureDataCacheReleaseStructurePayload const& payload
+    );
 
-    MCNAPI void _handleStructureDataCacheRequestStructurePayload(::Editor::Network::StructureDataCacheRequestStructurePayload const& payload);
+    MCNAPI void _handleStructureDataCacheRequestStructurePayload(
+        ::Editor::Network::StructureDataCacheRequestStructurePayload const& payload
+    );
 
     MCNAPI void _recordClientOwnership(::mce::UUID const& structureId, ::mce::UUID const& clientId);
 
@@ -86,11 +101,19 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI void $registerStructureDataProvider(::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider> providerRef);
+    MCNAPI void
+    $registerStructureDataProvider(::std::weak_ptr<::Editor::StructureDataCache::IStructureDataProvider> providerRef);
 
     MCNAPI void $informStructureDataRemoved(::mce::UUID const& id);
 
-    MCNAPI void $informStructureDataUpdated(::mce::UUID const& id, ::std::variant<::StructureTemplate const*, ::Editor::EditorStructureTemplate const*, ::std::shared_ptr<::StructureTemplate const>, ::std::shared_ptr<::Editor::EditorStructureTemplate const>> const& data);
+    MCNAPI void $informStructureDataUpdated(
+        ::mce::UUID const& id,
+        ::std::variant<
+            ::StructureTemplate const*,
+            ::Editor::EditorStructureTemplate const*,
+            ::std::shared_ptr<::StructureTemplate const>,
+            ::std::shared_ptr<::Editor::EditorStructureTemplate const>> const& data
+    );
     // NOLINTEND
 
 public:
@@ -100,7 +123,6 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

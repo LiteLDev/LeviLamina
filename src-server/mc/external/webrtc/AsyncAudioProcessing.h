@@ -13,7 +13,7 @@ public:
     // clang-format off
     class Factory;
     // clang-format on
-    
+
     // AsyncAudioProcessing inner types define
     class Factory : public ::webrtc::RefCountInterface {
     public:
@@ -23,29 +23,28 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkcdedf9;
         ::ll::UntypedStorage<8, 8> mUnk11974f;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Factory& operator=(Factory const&);
         Factory(Factory const&);
         Factory();
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 2
         virtual ~Factory() /*override*/ = default;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnkacc244;
-    ::ll::UntypedStorage<8, 8> mUnk2c476e;
-    ::ll::UntypedStorage<8, 8> mUnke7cf71;
-    ::ll::UntypedStorage<8, 8> mUnkbf2f68;
+    ::ll::UntypedStorage<8, 8>  mUnk2c476e;
+    ::ll::UntypedStorage<8, 8>  mUnke7cf71;
+    ::ll::UntypedStorage<8, 8>  mUnkbf2f68;
     // NOLINTEND
 
 public:
@@ -53,7 +52,6 @@ public:
     AsyncAudioProcessing& operator=(AsyncAudioProcessing const&);
     AsyncAudioProcessing(AsyncAudioProcessing const&);
     AsyncAudioProcessing();
-
 };
 
-}
+} // namespace webrtc

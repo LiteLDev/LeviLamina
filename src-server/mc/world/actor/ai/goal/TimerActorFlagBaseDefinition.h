@@ -17,12 +17,12 @@ class TimerActorFlagBaseDefinition : public ::BaseGoalDefinition {
 public:
     // TimerActorFlagBaseDefinition inner types define
     using self = ::TimerActorFlagBaseDefinition;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::FloatRange> mDurationRangeSeconds;
-    ::ll::TypedStorage<4, 8, ::FloatRange> mCooldownRangeSeconds;
+    ::ll::TypedStorage<4, 8, ::FloatRange>               mDurationRangeSeconds;
+    ::ll::TypedStorage<4, 8, ::FloatRange>               mCooldownRangeSeconds;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnStartEvent;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnEndEvent;
     // NOLINTEND
@@ -51,5 +51,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnka60ff2;
-    ::ll::UntypedStorage<8, 8> mUnk1188df;
+    ::ll::UntypedStorage<8, 8>  mUnk1188df;
     // NOLINTEND
 
 public:
@@ -35,7 +35,8 @@ public:
 
     MCNAPI ::std::string getPayload(::std::string id) const;
 
-    MCNAPI ::std::optional<::std::variant<float, bool, ::std::string>> getProperty(::std::string id, ::std::string property) const;
+    MCNAPI ::std::optional<::std::variant<float, bool, ::std::string>>
+    getProperty(::std::string id, ::std::string property) const;
 
     MCNAPI bool hasPayload(::std::string id) const;
 
@@ -49,7 +50,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

@@ -12,7 +12,10 @@ struct DataStoreSyncPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::variant<::Bedrock::DDUI::DataStoreChange, ::Bedrock::DDUI::DataStoreRemoval>>> mUpdate;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::std::vector<::std::variant<::Bedrock::DDUI::DataStoreChange, ::Bedrock::DDUI::DataStoreRemoval>>>
+        mUpdate;
     // NOLINTEND
-
 };

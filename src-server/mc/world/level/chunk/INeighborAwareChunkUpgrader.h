@@ -21,10 +21,16 @@ public:
     virtual ~INeighborAwareChunkUpgrader() = default;
 
     // vIndex: 1
-    virtual ::NeighborAwareBlockUpdateType getUpdateType(::Block const&, ::NeighborAwareBlockUpgradeVersionType) const = 0;
+    virtual ::NeighborAwareBlockUpdateType
+    getUpdateType(::Block const&, ::NeighborAwareBlockUpgradeVersionType) const = 0;
 
     // vIndex: 2
-    virtual void doLevelChunkNeighborAwareUpgrade(::NeighborAwareBlockUpdateType, ::BlockSource&, ::Block const&, ::BlockPos const&) const = 0;
+    virtual void doLevelChunkNeighborAwareUpgrade(
+        ::NeighborAwareBlockUpdateType,
+        ::BlockSource&,
+        ::Block const&,
+        ::BlockPos const&
+    ) const = 0;
     // NOLINTEND
 
 public:
@@ -38,5 +44,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

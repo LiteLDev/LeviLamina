@@ -13,4 +13,4 @@ namespace LookedAtSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace LookedAtSystem

@@ -29,7 +29,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void _applyEffects(::Actor& owner, ::std::vector<::FeedItem::Effect> const& effects);
 
-    MCNAPI static bool _canHeal(::Actor& owner, ::ItemStack const& item, ::HealableDefinition const* healableDefinition);
+    MCNAPI static bool
+    _canHeal(::Actor& owner, ::ItemStack const& item, ::HealableDefinition const* healableDefinition);
     // NOLINTEND
-
 };

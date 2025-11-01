@@ -11,7 +11,7 @@ struct JigsawSpace {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 24, ::BoundingBox> mMySpace;
+    ::ll::TypedStorage<4, 24, ::BoundingBox>                mMySpace;
     ::ll::TypedStorage<8, 24, ::std::vector<::BoundingBox>> mChildrensSpace;
     // NOLINTEND
 
@@ -28,7 +28,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

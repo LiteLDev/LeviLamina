@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Block const&> mMushroomBlock;
-    ::ll::TypedStorage<4, 4, int const> mIterations;
+    ::ll::TypedStorage<4, 4, int const>      mIterations;
     // NOLINTEND
 
 public:
@@ -54,5 +54,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

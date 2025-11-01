@@ -4,6 +4,6 @@
 
 enum class HorseInventoryEnum : int {
     SlotSaddle = 0,
-    SlotArmor = 1,
-    BaseCount = 2,
+    SlotArmor  = 1,
+    BaseCount  = 2,
 };

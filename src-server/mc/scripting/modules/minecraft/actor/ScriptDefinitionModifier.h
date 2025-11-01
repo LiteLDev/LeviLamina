@@ -18,7 +18,6 @@ public:
 
     MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

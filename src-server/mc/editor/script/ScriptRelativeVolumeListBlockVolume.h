@@ -43,7 +43,8 @@ public:
     virtual ~ScriptRelativeVolumeListBlockVolume() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator> getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) /*override*/;
+    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
+    getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) /*override*/;
 
     // vIndex: 2
     virtual ::std::unique_ptr<::BaseBlockLocationIterator> createBlockLocationIterator() /*override*/;
@@ -56,7 +57,13 @@ public:
 
     MCNAPI explicit ScriptRelativeVolumeListBlockVolume(::Editor::RelativeVolumeListBlockVolume const& rhs);
 
-    MCNAPI void add(::std::variant<::Vec3 const, ::std::vector<::Vec3> const, ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toAdd);
+    MCNAPI void
+    add(::std::variant<
+        ::Vec3 const,
+        ::std::vector<::Vec3> const,
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toAdd);
 
     MCNAPI void clear();
 
@@ -64,7 +71,8 @@ public:
 
     MCNAPI int getVolumeCount() const;
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume>> getVolumes(::Scripting::WeakLifetimeScope scope) const;
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume>>
+    getVolumes(::Scripting::WeakLifetimeScope scope) const;
 
     MCNAPI bool hasAdjacent(::Vec3 const& pos, ::Vec3 const& offset) const;
 
@@ -72,9 +80,22 @@ public:
 
     MCNAPI void moveTo(::Vec3 const& location);
 
-    MCNAPI void remove(::std::variant<::Vec3 const, ::std::vector<::Vec3> const, ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toRemove);
+    MCNAPI void remove(
+        ::std::variant<
+            ::Vec3 const,
+            ::std::vector<::Vec3> const,
+            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toRemove
+    );
 
-    MCNAPI void set(::std::variant<::Vec3 const, ::std::vector<::Vec3> const, ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toSet);
+    MCNAPI void
+    set(::std::variant<
+        ::Vec3 const,
+        ::std::vector<::Vec3> const,
+        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toSet);
 
     MCNAPI void setOrigin(::std::optional<::Vec3 const>& optOrigin);
 
@@ -98,7 +119,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator> $getBlockLocationIterator(::Scripting::WeakLifetimeScope scope);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
+    $getBlockLocationIterator(::Scripting::WeakLifetimeScope scope);
 
     MCNAPI ::std::unique_ptr<::BaseBlockLocationIterator> $createBlockLocationIterator();
     // NOLINTEND
@@ -108,7 +130,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

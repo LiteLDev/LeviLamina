@@ -15,11 +15,11 @@ class FollowParentGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&>             mMob;
     ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>> mParent;
-    ::ll::TypedStorage<4, 4, float> mSpeed;
-    ::ll::TypedStorage<4, 4, int> mTimeToRecalcPath;
-    ::ll::TypedStorage<1, 1, bool const> mStopNavigationOnStop;
+    ::ll::TypedStorage<4, 4, float>              mSpeed;
+    ::ll::TypedStorage<4, 4, int>                mTimeToRecalcPath;
+    ::ll::TypedStorage<1, 1, bool const>         mStopNavigationOnStop;
     // NOLINTEND
 
 public:
@@ -74,5 +74,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

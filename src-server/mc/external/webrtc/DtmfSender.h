@@ -19,14 +19,14 @@ class DtmfSender : public ::webrtc::DtmfSenderInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd6bd47;
-    ::ll::UntypedStorage<8, 8> mUnk21b030;
-    ::ll::UntypedStorage<8, 8> mUnkbf0747;
+    ::ll::UntypedStorage<8, 8>  mUnkd6bd47;
+    ::ll::UntypedStorage<8, 8>  mUnk21b030;
+    ::ll::UntypedStorage<8, 8>  mUnkbf0747;
     ::ll::UntypedStorage<8, 32> mUnk6cc6ab;
-    ::ll::UntypedStorage<4, 4> mUnk608050;
-    ::ll::UntypedStorage<4, 4> mUnk1254b5;
-    ::ll::UntypedStorage<4, 4> mUnk272c56;
-    ::ll::UntypedStorage<8, 8> mUnk5ce99e;
+    ::ll::UntypedStorage<4, 4>  mUnk608050;
+    ::ll::UntypedStorage<4, 4>  mUnk1254b5;
+    ::ll::UntypedStorage<4, 4>  mUnk272c56;
+    ::ll::UntypedStorage<8, 8>  mUnk5ce99e;
     // NOLINTEND
 
 public:
@@ -83,7 +83,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::scoped_refptr<::webrtc::DtmfSender> Create(::webrtc::TaskQueueBase* signaling_thread, ::webrtc::DtmfProviderInterface* provider);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::DtmfSender>
+    Create(::webrtc::TaskQueueBase* signaling_thread, ::webrtc::DtmfProviderInterface* provider);
     // NOLINTEND
 
 public:
@@ -123,7 +124,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

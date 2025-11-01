@@ -17,7 +17,6 @@ public:
     FeedbackRequest& operator=(FeedbackRequest const&);
     FeedbackRequest(FeedbackRequest const&);
     FeedbackRequest();
-
 };
 
-}
+} // namespace webrtc

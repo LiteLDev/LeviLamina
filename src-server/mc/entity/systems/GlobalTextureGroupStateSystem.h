@@ -12,5 +12,4 @@ public:
     // vIndex: 0
     virtual ~GlobalTextureGroupStateSystem() /*override*/ = default;
     // NOLINTEND
-
 };

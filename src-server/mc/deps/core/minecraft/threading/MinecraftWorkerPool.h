@@ -15,9 +15,9 @@ public:
     // MinecraftWorkerPool inner types define
     enum class UseAsyncOrDiskPoolForLoading : int {
         Async = 0,
-        Disk = 1,
+        Disk  = 1,
     };
-    
+
 public:
     // static functions
     // NOLINTBEGIN
@@ -57,5 +57,4 @@ public:
 
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& WATCHDOG();
     // NOLINTEND
-
 };

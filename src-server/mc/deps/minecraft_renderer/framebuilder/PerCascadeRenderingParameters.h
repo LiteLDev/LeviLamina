@@ -9,7 +9,8 @@
 
 namespace mce::framebuilder {
 
-struct PerCascadeRenderingParameters : public ::mce::framebuilder::PerCascadeDrawingParameters, public ::mce::framebuilder::PerCascadeSamplingParameters, public ::mce::framebuilder::PerCascadeUpdateParameters {
-};
+struct PerCascadeRenderingParameters : public ::mce::framebuilder::PerCascadeDrawingParameters,
+                                       public ::mce::framebuilder::PerCascadeSamplingParameters,
+                                       public ::mce::framebuilder::PerCascadeUpdateParameters {};
 
-}
+} // namespace mce::framebuilder

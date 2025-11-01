@@ -17,5 +17,4 @@ public:
     LevelDataOverrideValues& operator=(LevelDataOverrideValues const&);
     LevelDataOverrideValues(LevelDataOverrideValues const&);
     LevelDataOverrideValues();
-
 };

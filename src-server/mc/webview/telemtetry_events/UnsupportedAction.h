@@ -16,7 +16,6 @@ public:
     UnsupportedAction& operator=(UnsupportedAction const&);
     UnsupportedAction(UnsupportedAction const&);
     UnsupportedAction();
-
 };
 
-}
+} // namespace TelemtetryEvents

@@ -13,4 +13,4 @@ namespace ResetTargetSystem {
 MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
-}
+} // namespace ResetTargetSystem

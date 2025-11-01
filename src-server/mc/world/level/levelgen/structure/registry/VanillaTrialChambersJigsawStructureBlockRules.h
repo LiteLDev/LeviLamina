@@ -14,4 +14,4 @@ namespace VanillaTrialChambersJigsawStructureBlockRules {
 MCAPI void initialize(::StructureTemplateRegistrationContext&, ::JigsawStructureRegistry& registry);
 // NOLINTEND
 
-}
+} // namespace VanillaTrialChambersJigsawStructureBlockRules

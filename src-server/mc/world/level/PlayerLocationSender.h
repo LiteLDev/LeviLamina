@@ -23,38 +23,35 @@ public:
     struct ActorUniqueIDPairCompare;
     struct PlayerLocationData;
     // clang-format on
-    
+
     // PlayerLocationSender inner types define
     struct PlayerLocationData {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 16> mUnk59c9c9;
-        ::ll::UntypedStorage<4, 4> mUnkb0af90;
-        ::ll::UntypedStorage<1, 1> mUnk8c20f1;
+        ::ll::UntypedStorage<4, 4>  mUnkb0af90;
+        ::ll::UntypedStorage<1, 1>  mUnk8c20f1;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PlayerLocationData& operator=(PlayerLocationData const&);
         PlayerLocationData(PlayerLocationData const&);
         PlayerLocationData();
-    
     };
-    
-    struct ActorUniqueIDCompare {
-    };
-    
-    struct ActorUniqueIDPairCompare {
-    };
-    
+
+    struct ActorUniqueIDCompare {};
+
+    struct ActorUniqueIDPairCompare {};
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 56> mUnkb41d2f;
     ::ll::UntypedStorage<8, 56> mUnkff8b2b;
     ::ll::UntypedStorage<8, 24> mUnkbabe0d;
-    ::ll::UntypedStorage<4, 4> mUnkd651b8;
+    ::ll::UntypedStorage<4, 4>  mUnkd651b8;
     // NOLINTEND
 
 public:
@@ -66,11 +63,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _checkPlayerPairAndMaybeSendPacket(::UserEntityIdentifierComponent const& userIdentifier, ::Player const& viewingPlayer, ::Player const& observedPlayer);
+    MCNAPI void _checkPlayerPairAndMaybeSendPacket(
+        ::UserEntityIdentifierComponent const& userIdentifier,
+        ::Player const&                        viewingPlayer,
+        ::Player const&                        observedPlayer
+    );
 
-    MCNAPI void _forEachClientPlayerPair(::std::vector<::WeakEntityRef> const& gameplayUsers, ::std::function<void(::UserEntityIdentifierComponent const&, ::Player const&, ::Player const&)> action);
+    MCNAPI void _forEachClientPlayerPair(
+        ::std::vector<::WeakEntityRef> const&                                                           gameplayUsers,
+        ::std::function<void(::UserEntityIdentifierComponent const&, ::Player const&, ::Player const&)> action
+    );
 
-    MCNAPI bool _shouldSendPositionPacket(::Vec3 const& viewingPlayerPosition, ::DimensionType const& viewingPlayerDimension, bool viewingPlayerIsSpectator, ::std::optional<::Vec3> const& observedPlayerPosPrev, ::PlayerLocationSender::PlayerLocationData const& observedPlayerPositionNew) const;
+    MCNAPI bool _shouldSendPositionPacket(
+        ::Vec3 const&                                     viewingPlayerPosition,
+        ::DimensionType const&                            viewingPlayerDimension,
+        bool                                              viewingPlayerIsSpectator,
+        ::std::optional<::Vec3> const&                    observedPlayerPosPrev,
+        ::PlayerLocationSender::PlayerLocationData const& observedPlayerPositionNew
+    ) const;
 
     MCNAPI void _updatePlayerData(::Player const& player);
 
@@ -92,5 +102,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

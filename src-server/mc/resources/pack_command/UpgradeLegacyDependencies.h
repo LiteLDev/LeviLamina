@@ -16,7 +16,6 @@ public:
     UpgradeLegacyDependencies& operator=(UpgradeLegacyDependencies const&);
     UpgradeLegacyDependencies(UpgradeLegacyDependencies const&);
     UpgradeLegacyDependencies();
-
 };
 
-}
+} // namespace PackCommand

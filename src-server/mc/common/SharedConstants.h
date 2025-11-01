@@ -72,4 +72,4 @@ MCAPI int const& RevisionVersion();
 MCAPI ::std::add_lvalue_reference_t<char const[]> RevisionVersionStringFormated();
 // NOLINTEND
 
-}
+} // namespace SharedConstants

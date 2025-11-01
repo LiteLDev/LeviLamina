@@ -24,7 +24,8 @@ public:
     virtual ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> makePromise() = 0;
 
     // vIndex: 2
-    virtual ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType> makeDataBuffer(uchar const*, uint64, ::entt::meta_type const&) = 0;
+    virtual ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType>
+    makeDataBuffer(uchar const*, uint64, ::entt::meta_type const&) = 0;
     // NOLINTEND
 
 public:
@@ -32,7 +33,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

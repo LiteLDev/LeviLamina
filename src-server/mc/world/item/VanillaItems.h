@@ -24,9 +24,23 @@ public:
     // NOLINTBEGIN
     MCAPI static void registerHardCodedItemTags(::ItemRegistryRef itemRegistry);
 
-    MCAPI static void registerItems(::cereal::ReflectionCtx& ctx, ::ItemRegistryRef itemRegistry, ::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
+    MCAPI static void registerItems(
+        ::cereal::ReflectionCtx& ctx,
+        ::ItemRegistryRef        itemRegistry,
+        ::BaseGameVersion const& baseGameVersion,
+        ::Experiments const&     experiments
+    );
 
-    MCAPI static void serverInitCreativeItemsCallback(::ItemRegistryRef itemRegistry, ::BlockDefinitionGroup const& blockDefinitionGroup, ::CreativeItemRegistry* creativeItemRegistry, ::BaseGameVersion const& worldVersion, ::Experiments const& experiments, ::ResourcePackManager const& resourcePackManager, ::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator, ::IMinecraftEventing& eventing);
+    MCAPI static void serverInitCreativeItemsCallback(
+        ::ItemRegistryRef                                  itemRegistry,
+        ::BlockDefinitionGroup const&                      blockDefinitionGroup,
+        ::CreativeItemRegistry*                            creativeItemRegistry,
+        ::BaseGameVersion const&                           worldVersion,
+        ::Experiments const&                               experiments,
+        ::ResourcePackManager const&                       resourcePackManager,
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
+        ::IMinecraftEventing&                              eventing
+    );
     // NOLINTEND
-
 };

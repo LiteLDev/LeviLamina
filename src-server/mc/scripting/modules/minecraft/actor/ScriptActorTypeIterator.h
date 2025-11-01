@@ -14,13 +14,17 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptActorTypeIterator : public ::ScriptModuleMinecraft::ScriptMapValueIterator<::ScriptModuleMinecraft::ScriptActorTypeIterator, ::std::unordered_map<::std::string, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>> {
+class ScriptActorTypeIterator
+: public ::ScriptModuleMinecraft::ScriptMapValueIterator<
+      ::ScriptModuleMinecraft::ScriptActorTypeIterator,
+      ::std::unordered_map<
+          ::std::string,
+          ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>>> {
 public:
     // static functions
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

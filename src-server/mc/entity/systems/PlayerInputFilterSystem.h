@@ -13,4 +13,4 @@ namespace PlayerInputFilterSystem {
 MCNAPI ::TickingSystemWithInfo create(bool isClientSide);
 // NOLINTEND
 
-}
+} // namespace PlayerInputFilterSystem

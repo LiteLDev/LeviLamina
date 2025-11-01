@@ -17,17 +17,17 @@ class ValueIterator : public ::Json::ValueIteratorBase {
 public:
     // ValueIterator inner types define
     using size_t = uint;
-    
+
     using difference_type = int;
-    
+
     using reference = ::Json::Value&;
-    
+
     using pointer = ::Json::Value*;
-    
+
     using SelfType = ::Json::ValueIterator;
-    
+
     using value_type = ::Json::Value;
-    
+
 public:
     // prevent constructor by default
     ValueIterator();
@@ -51,7 +51,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Json

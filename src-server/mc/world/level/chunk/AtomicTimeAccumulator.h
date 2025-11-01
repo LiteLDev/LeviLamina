@@ -16,5 +16,4 @@ public:
     AtomicTimeAccumulator& operator=(AtomicTimeAccumulator const&);
     AtomicTimeAccumulator(AtomicTimeAccumulator const&);
     AtomicTimeAccumulator();
-
 };

@@ -17,7 +17,6 @@ public:
     BufferSpan& operator=(BufferSpan const&);
     BufferSpan(BufferSpan const&);
     BufferSpan();
-
 };
 
-}
+} // namespace cg

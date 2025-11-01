@@ -4,7 +4,6 @@
 
 namespace VanillaSystemCategories {
 
-struct MobJumpFromGround {
-};
+struct MobJumpFromGround {};
 
-}
+} // namespace VanillaSystemCategories

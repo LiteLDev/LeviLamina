@@ -24,21 +24,21 @@ class DecoratedPotBlockActor : public ::RandomizableBlockActorContainer {
 public:
     // DecoratedPotBlockActor inner types define
     using SherdList = ::std::array<::std::string, 4>;
-    
+
     enum class PotFace : uint64 {
-        Back = 0,
-        Left = 1,
+        Back  = 0,
+        Left  = 1,
         Right = 2,
         Front = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 128, ::std::array<::std::string, 4>> mSherdItemNames;
-    ::ll::TypedStorage<8, 152, ::ItemStack> mContainedItem;
-    ::ll::TypedStorage<1, 1, ::DecoratedPotAnimation> mAnimation;
-    ::ll::TypedStorage<4, 4, int> mAnimationTick;
+    ::ll::TypedStorage<8, 152, ::ItemStack>                    mContainedItem;
+    ::ll::TypedStorage<1, 1, ::DecoratedPotAnimation>          mAnimation;
+    ::ll::TypedStorage<4, 4, int>                              mAnimationTick;
     // NOLINTEND
 
 public:
@@ -58,7 +58,11 @@ public:
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
+    virtual void serverInitItemStackIds(
+        int containerSlot,
+        int,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
     // vIndex: 20
     virtual int getContainerSize() const /*override*/;
@@ -103,7 +107,8 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::optional<::std::array<::std::string, 4>> _tryGetSherdsFromItem(::ItemStackBase const& item);
 
-    MCAPI static void saveSherdsToTag(::CompoundTag& tag, ::std::array<::std::string, 4> const& sherds, bool forceSaveDefaultSherds);
+    MCAPI static void
+    saveSherdsToTag(::CompoundTag& tag, ::std::array<::std::string, 4> const& sherds, bool forceSaveDefaultSherds);
 
     MCAPI static ::DecoratedPotBlockActor* tryGet(::BlockSource& region, ::BlockPos const& pos);
 
@@ -131,7 +136,8 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCAPI void
+    $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCFOLD int $getContainerSize() const;
 
@@ -153,5 +159,4 @@ public:
 
     MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
-
 };

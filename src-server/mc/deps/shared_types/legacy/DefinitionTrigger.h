@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkf8b01d;
-    ::ll::UntypedStorage<2, 2> mUnkd0d821;
+    ::ll::UntypedStorage<2, 2>  mUnkd0d821;
     ::ll::UntypedStorage<8, 48> mUnk69c51b;
     // NOLINTEND
 
@@ -18,7 +18,6 @@ public:
     DefinitionTrigger& operator=(DefinitionTrigger const&);
     DefinitionTrigger(DefinitionTrigger const&);
     DefinitionTrigger();
-
 };
 
-}
+} // namespace SharedTypes::Legacy

@@ -5,8 +5,7 @@
 #include "mc/platform/threading/PrioritizeSharedOwnership.h"
 
 template <typename T>
-class ServiceReference {
-public:
+class ServiceReference {public:
     std::shared_lock<Bedrock::Threading::PrioritizeSharedOwnership> mLock;
     Bedrock::NonOwnerPointer<T>                                     mService;
 

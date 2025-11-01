@@ -17,5 +17,4 @@ public:
     CrashDumpGameplayDataArray& operator=(CrashDumpGameplayDataArray const&);
     CrashDumpGameplayDataArray(CrashDumpGameplayDataArray const&);
     CrashDumpGameplayDataArray();
-
 };

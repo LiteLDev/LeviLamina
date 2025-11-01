@@ -23,7 +23,17 @@ struct EditorFilterPausedSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickAddEditorPaused(::ViewT<::StrictEntityContext, ::Exclude<::EditorActorPausedComponent, ::EditorActorUnpausableComponent, ::PlayerComponent, ::FallingBlockFlagComponent, ::EditorWidgetDisplayEntityComponent>, ::Include<::ActorComponent const>> view, ::EntityModifier<::EditorActorPausedComponent> entityModifier);
+    MCNAPI static void _tickAddEditorPaused(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Exclude<
+                ::EditorActorPausedComponent,
+                ::EditorActorUnpausableComponent,
+                ::PlayerComponent,
+                ::FallingBlockFlagComponent,
+                ::EditorWidgetDisplayEntityComponent>,
+            ::Include<::ActorComponent const>>         view,
+        ::EntityModifier<::EditorActorPausedComponent> entityModifier
+    );
     // NOLINTEND
-
 };

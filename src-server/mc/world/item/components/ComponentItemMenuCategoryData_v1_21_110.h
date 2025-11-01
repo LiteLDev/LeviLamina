@@ -16,8 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory> mCreativeCategory;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mCreativeGroupName;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mIsHiddenInCommands;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                              mCreativeGroupName;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                        mIsHiddenInCommands;
     // NOLINTEND
 
 public:
@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void upgrade(::ComponentItemMenuCategoryData_v1_21_60& oldData, ::ComponentItemMenuCategoryData_v1_21_110& newData);
+    MCAPI static void
+    upgrade(::ComponentItemMenuCategoryData_v1_21_60& oldData, ::ComponentItemMenuCategoryData_v1_21_110& newData);
     // NOLINTEND
-
 };

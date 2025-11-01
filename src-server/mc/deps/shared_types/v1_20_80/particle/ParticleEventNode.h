@@ -13,12 +13,12 @@ struct ParticleEventNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk31bd55;
-    ::ll::UntypedStorage<8, 32> mUnk6465a8;
-    ::ll::UntypedStorage<8, 48> mUnkba62cf;
+    ::ll::UntypedStorage<8, 32>  mUnk31bd55;
+    ::ll::UntypedStorage<8, 32>  mUnk6465a8;
+    ::ll::UntypedStorage<8, 48>  mUnkba62cf;
     ::ll::UntypedStorage<8, 104> mUnkbba4b0;
-    ::ll::UntypedStorage<8, 40> mUnka4b01b;
-    ::ll::UntypedStorage<8, 32> mUnkf13dab;
+    ::ll::UntypedStorage<8, 40>  mUnka4b01b;
+    ::ll::UntypedStorage<8, 32>  mUnkf13dab;
     // NOLINTEND
 
 public:
@@ -58,7 +58,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

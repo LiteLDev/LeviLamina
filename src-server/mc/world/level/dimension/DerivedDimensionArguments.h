@@ -16,7 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ILevel&> mLevel;
-    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<::std::unique_ptr<::TaskGroup>(::std::string_view)>> mCreateTaskGroup;
+    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<::std::unique_ptr<::TaskGroup>(::std::string_view)>>
+        mCreateTaskGroup;
     // NOLINTEND
 
 public:
@@ -36,5 +37,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

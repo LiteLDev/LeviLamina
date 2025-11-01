@@ -12,18 +12,30 @@ class Vec3;
 namespace ActorOffset {
 // functions
 // NOLINTBEGIN
-MCNAPI void initializePlayer(::EntityContext& entity);
+MCAPI void initializePlayer(::EntityContext& entity);
 
-MCNAPI void setAABBRelativeScaling(::EntityContext& entity, ::std::optional<::Vec2> headScalar, ::std::optional<::Vec2> eyeScalar, ::std::optional<::Vec2> breathingScalar, ::std::optional<::Vec2> mouthScalar);
+MCAPI void setAABBRelativeScaling(
+    ::EntityContext&        entity,
+    ::std::optional<::Vec2> headScalar,
+    ::std::optional<::Vec2> eyeScalar,
+    ::std::optional<::Vec2> breathingScalar,
+    ::std::optional<::Vec2> mouthScalar
+);
 
-MCNAPI void setAABBRelativeScalingAndScaleNow(::EntityContext& entity, ::std::optional<::Vec2> headScalar, ::std::optional<::Vec2> eyeScalar, ::std::optional<::Vec2> breathingScalar, ::std::optional<::Vec2> mouthScalar);
+MCAPI void setAABBRelativeScalingAndScaleNow(
+    ::EntityContext&        entity,
+    ::std::optional<::Vec2> headScalar,
+    ::std::optional<::Vec2> eyeScalar,
+    ::std::optional<::Vec2> breathingScalar,
+    ::std::optional<::Vec2> mouthScalar
+);
 
-MCNAPI void setHeightOffset(::EntityContext& entity, float heightOffset);
+MCAPI void setHeightOffset(::EntityContext& entity, float heightOffset);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCNAPI ::Vec3 const& DEFAULT_DROP_OFFSET();
+MCAPI ::Vec3 const& DEFAULT_DROP_OFFSET();
 // NOLINTEND
 
-}
+} // namespace ActorOffset

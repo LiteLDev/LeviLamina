@@ -16,7 +16,6 @@ public:
     CryptString& operator=(CryptString const&);
     CryptString(CryptString const&);
     CryptString();
-
 };
 
-}
+} // namespace rtc

@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct Description;
     // clang-format on
-    
+
     // CameraDocument inner types define
     struct Description {
     public:
@@ -18,15 +18,14 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk6051ff;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Description& operator=(Description const&);
         Description(Description const&);
         Description();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,7 +38,6 @@ public:
     CameraDocument& operator=(CameraDocument const&);
     CameraDocument(CameraDocument const&);
     CameraDocument();
-
 };
 
-}
+} // namespace SharedTypes::v1_21_100

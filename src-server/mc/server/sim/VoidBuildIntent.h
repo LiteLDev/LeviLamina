@@ -4,7 +4,6 @@
 
 namespace sim {
 
-struct VoidBuildIntent {
-};
+struct VoidBuildIntent {};
 
-}
+} // namespace sim

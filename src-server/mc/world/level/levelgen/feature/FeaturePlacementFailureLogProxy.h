@@ -20,5 +20,4 @@ public:
     // NOLINTBEGIN
     MCAPI void logFailure(::Bedrock::StaticOptimizedString source, ::Bedrock::StaticOptimizedString message) const;
     // NOLINTEND
-
 };

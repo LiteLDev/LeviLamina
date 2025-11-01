@@ -4,8 +4,7 @@
 
 namespace webrtc {
 
-template<typename T0>
-class scoped_refptr {
-};
+template <typename T0>
+class scoped_refptr {};
 
-}
+} // namespace webrtc

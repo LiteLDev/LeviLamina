@@ -14,10 +14,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::HashedString const>> newBlockName;
-    ::ll::TypedStorage<4, 4, int> aux;
-    ::ll::TypedStorage<4, 4, int> variant;
+    ::ll::TypedStorage<4, 4, int>                                            aux;
+    ::ll::TypedStorage<4, 4, int>                                            variant;
     // NOLINTEND
-
 };
 
-}
+} // namespace FlatteningUtils

@@ -14,4 +14,4 @@ namespace FeatureTerrainAdjustmentsUtil {
 MCNAPI ::std::vector<::ChunkPos> _findIntersectingChunks(::BlockPos const& bbMin, ::BlockPos const& bbMax);
 // NOLINTEND
 
-}
+} // namespace FeatureTerrainAdjustmentsUtil

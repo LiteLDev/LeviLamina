@@ -7,12 +7,13 @@
 
 namespace Editor::Network {
 
-class BlockPaletteItemChangedPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::BlockPaletteItemChangedPayload> {
+class BlockPaletteItemChangedPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::BlockPaletteItemChangedPayload> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnkd19120;
-    ::ll::UntypedStorage<4, 4> mUnk809142;
+    ::ll::UntypedStorage<4, 4>  mUnk809142;
     ::ll::UntypedStorage<8, 72> mUnk16be73;
     // NOLINTEND
 
@@ -31,7 +32,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Network::BlockPaletteItemChangedPayload& operator=(::Editor::Network::BlockPaletteItemChangedPayload const&);
+    MCNAPI ::Editor::Network::BlockPaletteItemChangedPayload&
+    operator=(::Editor::Network::BlockPaletteItemChangedPayload const&);
     // NOLINTEND
 
 public:
@@ -45,7 +47,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

@@ -13,4 +13,4 @@ namespace AgeableSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace AgeableSystem

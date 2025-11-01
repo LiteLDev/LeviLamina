@@ -29,23 +29,36 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 class ContainerManagerModel : public ::IContainerManager {
 public:
     // ContainerManagerModel inner types define
-    using DynamicContainerPublisher = ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>;
-    
+    using DynamicContainerPublisher =
+        ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>;
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::PlayerContainerRefresher>>> mContainerRefresher;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::DynamicContainerTracker>>> mDynamicContainerTracker;
-    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryAccess>> mRegistryAccess;
-    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mLastSlots;
-    ::ll::TypedStorage<1, 1, ::ContainerID> mContainerId;
-    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mContainerType;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(::SharedTypes::Legacy::ContainerType), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>> mContainerTypeSubscribers;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContainerManagerController const*, ::std::function<void(::ContainerManagerModel&)>>> mInformControllerOfDestructionCallbacks;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryAccess>>                         mRegistryAccess;
+    ::ll::TypedStorage<8, 8, ::Player&>                                                      mPlayer;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>                                    mLastSlots;
+    ::ll::TypedStorage<1, 1, ::ContainerID>                                                  mContainerId;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType>                           mContainerType;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::Bedrock::PubSub::Publisher<
+            void(::SharedTypes::Legacy::ContainerType),
+            ::Bedrock::PubSub::ThreadModel::SingleThreaded,
+            0>>>
+        mContainerTypeSubscribers;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::std::unordered_map<::ContainerManagerController const*, ::std::function<void(::ContainerManagerModel&)>>>
+                                                        mInformControllerOfDestructionCallbacks;
     ::ll::TypedStorage<8, 40, ::ContainerScreenContext> mScreenContext;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::ContainerModel>>> mContainers;
-    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mOnDynamicContainerChangePublisher;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+        mOnDynamicContainerChangePublisher;
     // NOLINTEND
 
 public:
@@ -76,7 +89,9 @@ public:
     virtual void setContainerType(::SharedTypes::Legacy::ContainerType type) /*override*/;
 
     // vIndex: 5
-    virtual ::Bedrock::PubSub::Subscription registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const /*override*/;
+    virtual ::Bedrock::PubSub::Subscription
+    registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const
+        /*override*/;
 
     // vIndex: 15
     virtual void debitPlayerLevels(int levels);
@@ -97,7 +112,8 @@ public:
     virtual void serverInitItemStackIds() /*override*/;
 
     // vIndex: 11
-    virtual void setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool) /*override*/;
+    virtual void
+    setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool) /*override*/;
 
     // vIndex: 12
     virtual ::ItemStack const& getFullContainerSlot(int slot, ::FullContainerName const& name) const /*override*/;
@@ -148,7 +164,8 @@ public:
 
     MCAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
 
-    MCAPI ::Bedrock::PubSub::Subscription $registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const;
+    MCAPI ::Bedrock::PubSub::Subscription
+    $registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const;
 
     MCAPI void $debitPlayerLevels(int levels);
 
@@ -174,5 +191,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

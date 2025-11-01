@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createBase();
     // NOLINTEND
-
 };

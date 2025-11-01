@@ -11,7 +11,7 @@ public:
     struct Iterator;
     struct StartPoint;
     // clang-format on
-    
+
     // IterableIndexMerger inner types define
     struct Iterator {
     public:
@@ -21,21 +21,20 @@ public:
         ::ll::UntypedStorage<1, 2> mUnk25401a;
         ::ll::UntypedStorage<4, 4> mUnkc36fe4;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Iterator& operator=(Iterator const&);
         Iterator(Iterator const&);
         Iterator();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::VoxelShapes::IterableIndexMerger::Iterator& operator++();
         // NOLINTEND
-    
     };
-    
+
     struct StartPoint {
     public:
         // member variables
@@ -44,15 +43,14 @@ public:
         ::ll::UntypedStorage<1, 1> mUnkee14f3;
         ::ll::UntypedStorage<4, 4> mUnk87f8b9;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         StartPoint& operator=(StartPoint const&);
         StartPoint(StartPoint const&);
         StartPoint();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -75,7 +73,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::VoxelShapes::IterableIndexMerger::StartPoint findStart() const;
     // NOLINTEND
-
 };
 
-}
+} // namespace VoxelShapes

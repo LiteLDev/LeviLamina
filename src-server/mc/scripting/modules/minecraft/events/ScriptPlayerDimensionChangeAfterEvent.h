@@ -19,10 +19,13 @@ struct ScriptPlayerDimensionChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayerHandle;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>> mFromDimension;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
+        mPlayerHandle;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
+                                      mFromDimension;
     ::ll::TypedStorage<4, 12, ::Vec3> mFromLocation;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>> mToDimension;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
+                                      mToDimension;
     ::ll::TypedStorage<4, 12, ::Vec3> mToLocation;
     // NOLINTEND
 
@@ -36,7 +39,13 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptPlayerDimensionChangeAfterEvent(::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent const&);
 
-    MCAPI ScriptPlayerDimensionChangeAfterEvent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> fromDimension, ::Vec3 fromLocation, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> toDimension, ::Vec3 toLocation);
+    MCAPI ScriptPlayerDimensionChangeAfterEvent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>    playerHandle,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> fromDimension,
+        ::Vec3                                                                         fromLocation,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> toDimension,
+        ::Vec3                                                                         toLocation
+    );
 
     MCAPI ~ScriptPlayerDimensionChangeAfterEvent();
     // NOLINTEND
@@ -52,7 +61,13 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerDimensionChangeAfterEvent const&);
 
-    MCAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> playerHandle, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> fromDimension, ::Vec3 fromLocation, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> toDimension, ::Vec3 toLocation);
+    MCAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>    playerHandle,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> fromDimension,
+        ::Vec3                                                                         fromLocation,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension> toDimension,
+        ::Vec3                                                                         toLocation
+    );
     // NOLINTEND
 
 public:
@@ -60,7 +75,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

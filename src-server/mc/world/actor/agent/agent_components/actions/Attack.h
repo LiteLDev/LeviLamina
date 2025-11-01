@@ -16,7 +16,6 @@ public:
     Attack& operator=(Attack const&);
     Attack(Attack const&);
     Attack();
-
 };
 
-}
+} // namespace AgentComponents::Actions

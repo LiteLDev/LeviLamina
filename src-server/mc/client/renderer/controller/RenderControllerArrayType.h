@@ -5,6 +5,6 @@
 enum class RenderControllerArrayType : int {
     Geometry = 0,
     Material = 1,
-    Texture = 2,
-    Count = 3,
+    Texture  = 2,
+    Count    = 3,
 };

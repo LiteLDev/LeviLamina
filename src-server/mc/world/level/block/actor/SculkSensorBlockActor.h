@@ -22,7 +22,7 @@ class SculkSensorBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::VibrationListener> mVibrationListener;
+    ::ll::TypedStorage<8, 200, ::VibrationListener>                                          mVibrationListener;
     ::ll::TypedStorage<8, 80, ::std::optional<::gsl::final_action<::std::function<void()>>>> mListenerRegistration;
     // NOLINTEND
 
@@ -54,7 +54,12 @@ public:
     // NOLINTBEGIN
     MCAPI explicit SculkSensorBlockActor(::BlockPos const& pos);
 
-    MCAPI SculkSensorBlockActor(::BlockActorType type, ::BlockPos const& pos, uint listenerRange, ::std::unique_ptr<::SculkSensorVibrationConfig>&& vibrationConfig);
+    MCAPI SculkSensorBlockActor(
+        ::BlockActorType                                  type,
+        ::BlockPos const&                                 pos,
+        uint                                              listenerRange,
+        ::std::unique_ptr<::SculkSensorVibrationConfig>&& vibrationConfig
+    );
     // NOLINTEND
 
 public:
@@ -62,7 +67,12 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos const& pos);
 
-    MCAPI void* $ctor(::BlockActorType type, ::BlockPos const& pos, uint listenerRange, ::std::unique_ptr<::SculkSensorVibrationConfig>&& vibrationConfig);
+    MCAPI void* $ctor(
+        ::BlockActorType                                  type,
+        ::BlockPos const&                                 pos,
+        uint                                              listenerRange,
+        ::std::unique_ptr<::SculkSensorVibrationConfig>&& vibrationConfig
+    );
     // NOLINTEND
 
 public:
@@ -88,5 +98,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

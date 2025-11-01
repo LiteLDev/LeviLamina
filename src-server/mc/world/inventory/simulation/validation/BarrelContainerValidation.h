@@ -16,7 +16,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 9
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
+        /*override*/;
 
     // vIndex: 0
     virtual ~BarrelContainerValidation() /*override*/ = default;
@@ -33,5 +34,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

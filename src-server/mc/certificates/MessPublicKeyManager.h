@@ -9,11 +9,11 @@ class MessPublicKeyManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // MessPublicKeyManager inner types define
     enum class PublicKeysEndpoint : ushort {
-        Login = 0,
-        Signing = 1,
+        Login      = 0,
+        Signing    = 1,
         Encryption = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -38,5 +38,4 @@ public:
     // vIndex: 0
     virtual ~MessPublicKeyManager() /*override*/ = default;
     // NOLINTEND
-
 };

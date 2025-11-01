@@ -6,8 +6,7 @@ struct ModalFormRequestPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    uint          mFormId;
+    uint                    mFormId;
     ::std::string mFormJSON;
     // NOLINTEND
-
 };

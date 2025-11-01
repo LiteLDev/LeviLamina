@@ -19,7 +19,8 @@ MCAPI ::std::set<::Block const*> generateSculkReplaceableBlocks();
 
 MCAPI ::std::set<::Block const*> generateSculkReplaceableBlocksWorldgen();
 
-MCAPI void requestChargeEffects(::IBlockWorldGenAPI&, ::BlockSource* region, ::BlockPos const& pos, int charge, int facingData);
+MCAPI void
+requestChargeEffects(::IBlockWorldGenAPI&, ::BlockSource* region, ::BlockPos const& pos, int charge, int facingData);
 // NOLINTEND
 
-}
+} // namespace SculkUtils

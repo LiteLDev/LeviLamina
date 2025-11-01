@@ -7,7 +7,6 @@
 
 namespace Editor::Brush {
 
-struct ItemPlacementSettings : public ::Editor::Brush::CommonPlacementSettings {
-};
+struct ItemPlacementSettings : public ::Editor::Brush::CommonPlacementSettings {};
 
-}
+} // namespace Editor::Brush

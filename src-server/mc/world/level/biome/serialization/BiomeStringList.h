@@ -14,12 +14,12 @@ struct BiomeStringList {
 public:
     // BiomeStringList inner types define
     using BiomeStringIndex = ushort;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ushort>> mAllStrings;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mStrings;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                mStrings;
     // NOLINTEND
 
 public:
@@ -53,5 +53,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

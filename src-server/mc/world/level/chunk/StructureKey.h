@@ -13,7 +13,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::br::ChunkEntity> id;
     // NOLINTEND
-
 };
 
-}
+} // namespace br

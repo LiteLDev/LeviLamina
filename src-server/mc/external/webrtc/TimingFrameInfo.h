@@ -41,7 +41,6 @@ public:
 
     MCNAPI ::std::string ToString() const;
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

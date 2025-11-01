@@ -4,8 +4,7 @@
 
 namespace Bedrock::PubSub::Detail {
 
-template<typename T0>
-struct ReturnPolicy_AggregateUntilCancelled {
-};
+template <typename T0>
+struct ReturnPolicy_AggregateUntilCancelled {};
 
-}
+} // namespace Bedrock::PubSub::Detail

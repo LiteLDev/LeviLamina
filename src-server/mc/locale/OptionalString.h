@@ -6,7 +6,7 @@ struct OptionalString {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> valid;
+    ::ll::TypedStorage<1, 1, bool>           valid;
     ::ll::TypedStorage<8, 32, ::std::string> string;
     // NOLINTEND
 
@@ -21,5 +21,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

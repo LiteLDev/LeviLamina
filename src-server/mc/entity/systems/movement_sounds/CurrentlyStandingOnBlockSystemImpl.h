@@ -27,12 +27,29 @@ struct ShouldPlayMovementSoundComponent;
 struct StateVectorComponent;
 // clang-format on
 
-struct CurrentlyStandingOnBlockSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::ShouldPlayMovementSoundComponent>, ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>, ::Write<>, ::AddRemove<::CurrentlyStandingOnBlockComponent>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
+struct CurrentlyStandingOnBlockSystemImpl
+: public ::IStrictTickingSystem<::StrictExecutionContext<
+      ::Filter<::ShouldPlayMovementSoundComponent>,
+      ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>,
+      ::Write<>,
+      ::AddRemove<::CurrentlyStandingOnBlockComponent>,
+      ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+      ::GlobalWrite<>,
+      ::EntityFactoryT<>>> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<::Filter<::ShouldPlayMovementSoundComponent>, ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>, ::Write<>, ::AddRemove<::CurrentlyStandingOnBlockComponent>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::ShouldPlayMovementSoundComponent>,
+            ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>,
+            ::Write<>,
+            ::AddRemove<::CurrentlyStandingOnBlockComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~CurrentlyStandingOnBlockSystemImpl() /*override*/ = default;
@@ -41,13 +58,29 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void doCurrentlyStandingOnBlockSystem(::StrictEntityContext const& entity, ::ActorOwnerComponent const& actorOwnerComponent, ::StateVectorComponent const& stateVectorComponent, ::AABBShapeComponent const& aabbShapeComponent, ::EntityModifier<::CurrentlyStandingOnBlockComponent> entityModifier, ::IConstBlockSource const& region);
+    MCNAPI static void doCurrentlyStandingOnBlockSystem(
+        ::StrictEntityContext const&                          entity,
+        ::ActorOwnerComponent const&                          actorOwnerComponent,
+        ::StateVectorComponent const&                         stateVectorComponent,
+        ::AABBShapeComponent const&                           aabbShapeComponent,
+        ::EntityModifier<::CurrentlyStandingOnBlockComponent> entityModifier,
+        ::IConstBlockSource const&                            region
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<::Filter<::ShouldPlayMovementSoundComponent>, ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>, ::Write<>, ::AddRemove<::CurrentlyStandingOnBlockComponent>, ::GlobalRead<::LocalConstBlockSourceFactoryComponent>, ::GlobalWrite<>, ::EntityFactoryT<>>& context);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::ShouldPlayMovementSoundComponent>,
+            ::Read<::ActorOwnerComponent, ::DimensionTypeComponent, ::StateVectorComponent, ::AABBShapeComponent>,
+            ::Write<>,
+            ::AddRemove<::CurrentlyStandingOnBlockComponent>,
+            ::GlobalRead<::LocalConstBlockSourceFactoryComponent>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& context
+    );
     // NOLINTEND
 
 public:
@@ -55,5 +88,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

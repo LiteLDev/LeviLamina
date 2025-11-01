@@ -4,7 +4,6 @@
 
 namespace Scripting {
 
-struct ArgumentBindingBuilderValidator {
-};
+struct ArgumentBindingBuilderValidator {};
 
-}
+} // namespace Scripting

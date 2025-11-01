@@ -19,7 +19,7 @@ class ScriptMinecraftModuleFactory : public ::Scripting::GenericModuleBindingFac
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk2bf29c;
+    ::ll::UntypedStorage<8, 8>  mUnk2bf29c;
     ::ll::UntypedStorage<8, 16> mUnkebd543;
     ::ll::UntypedStorage<8, 16> mUnkcb6454;
     // NOLINTEND
@@ -42,7 +42,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void _addVersions();
 
-    MCNAPI ::Scripting::ModuleBinding _generateBindings(::Scripting::ModuleBindingBuilder& moduleBuilder, ::std::string const& versionPath);
+    MCNAPI ::Scripting::ModuleBinding
+    _generateBindings(::Scripting::ModuleBindingBuilder& moduleBuilder, ::std::string const& versionPath);
     // NOLINTEND
 
 public:
@@ -70,5 +71,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

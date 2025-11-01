@@ -19,7 +19,7 @@ public:
     // clang-format off
     class Definition;
     // clang-format on
-    
+
     // EquipItemGoal inner types define
     class Definition : public ::BaseGoalDefinition {
     public:
@@ -28,19 +28,18 @@ public:
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&>                       mMob;
     ::ll::TypedStorage<4, 16, ::EquipItemGoal::Definition> mDefinition;
     // NOLINTEND
 
@@ -94,5 +93,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

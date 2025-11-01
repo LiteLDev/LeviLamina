@@ -18,7 +18,9 @@ struct MobTravelTeleportedFilterSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tick(::ViewT<::StrictEntityContext, ::Include<::HasTeleportedFlagComponent, ::MobTravelComponent>> view, ::EntityModifier<::MobTravelComponent> mod);
+    MCNAPI static void tick(
+        ::ViewT<::StrictEntityContext, ::Include<::HasTeleportedFlagComponent, ::MobTravelComponent>> view,
+        ::EntityModifier<::MobTravelComponent>                                                        mod
+    );
     // NOLINTEND
-
 };

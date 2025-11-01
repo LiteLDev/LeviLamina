@@ -9,5 +9,4 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> mJsonIdentifier;
     ::ll::TypedStorage<8, 32, ::std::string> mInstanceName;
     // NOLINTEND
-
 };

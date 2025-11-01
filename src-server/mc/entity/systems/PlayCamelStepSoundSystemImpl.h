@@ -23,7 +23,17 @@ struct SoundEventRequestQueueComponent;
 namespace PlayCamelStepSoundSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tick(::entt::type_list<::Include<::ShouldPlayStepSoundComponent, ::CamelFlagComponent>>, ::StrictEntityContext const& entity, ::ActorDataFlagComponent const& actorFlags, ::ActorDefinitionIdentifierComponent const& actorIdentifier, ::ActorUniqueIDComponent const& actorUniqueID, ::DimensionTypeComponent const& dimensionType, ::CurrentlyStandingOnBlockComponent const& currentlyStandingOnBlockComponent, ::SoundEventPlayerComponent const& soundEventPlayerComponent, ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& requestQueueView);
+MCNAPI void tick(
+    ::entt::type_list<::Include<::ShouldPlayStepSoundComponent, ::CamelFlagComponent>>,
+    ::StrictEntityContext const&                                       entity,
+    ::ActorDataFlagComponent const&                                    actorFlags,
+    ::ActorDefinitionIdentifierComponent const&                        actorIdentifier,
+    ::ActorUniqueIDComponent const&                                    actorUniqueID,
+    ::DimensionTypeComponent const&                                    dimensionType,
+    ::CurrentlyStandingOnBlockComponent const&                         currentlyStandingOnBlockComponent,
+    ::SoundEventPlayerComponent const&                                 soundEventPlayerComponent,
+    ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& requestQueueView
+);
 // NOLINTEND
 
-}
+} // namespace PlayCamelStepSoundSystemImpl

@@ -10,8 +10,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mErrorParameters;
-    ::ll::TypedStorage<4, 4, int> mErrorValue;
-    ::ll::TypedStorage<4, 4, ::PackErrorType> mPackErrorType;
+    ::ll::TypedStorage<4, 4, int>                           mErrorValue;
+    ::ll::TypedStorage<4, 4, ::PackErrorType>               mPackErrorType;
     // NOLINTEND
 
 public:
@@ -41,5 +41,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

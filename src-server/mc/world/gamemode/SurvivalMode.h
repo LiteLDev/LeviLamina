@@ -19,9 +19,9 @@ class SurvivalMode : public ::GameMode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mIsTrialMode;
-    ::ll::TypedStorage<1, 1, bool> mHasDisplayedIntro;
-    ::ll::TypedStorage<4, 4, int> mTrialEndedReminder;
+    ::ll::TypedStorage<1, 1, bool>                         mIsTrialMode;
+    ::ll::TypedStorage<1, 1, bool>                         mHasDisplayedIntro;
+    ::ll::TypedStorage<4, 4, int>                          mTrialEndedReminder;
     ::ll::TypedStorage<8, 64, ::std::function<void(bool)>> mShowUpsellScreenCallback;
     // NOLINTEND
 
@@ -53,7 +53,14 @@ public:
     virtual bool useItemAsAttack(::ItemStack& item) /*override*/;
 
     // vIndex: 13
-    virtual ::InteractionResult useItemOn(::ItemStack& item, ::BlockPos const& at, uchar face, ::Vec3 const& hit, ::Block const* targetBlock, bool isFirstEvent) /*override*/;
+    virtual ::InteractionResult useItemOn(
+        ::ItemStack&      item,
+        ::BlockPos const& at,
+        uchar             face,
+        ::Vec3 const&     hit,
+        ::Block const*    targetBlock,
+        bool              isFirstEvent
+    ) /*override*/;
 
     // vIndex: 9
     virtual void tick() /*override*/;
@@ -104,7 +111,14 @@ public:
 
     MCAPI bool $useItemAsAttack(::ItemStack& item);
 
-    MCAPI ::InteractionResult $useItemOn(::ItemStack& item, ::BlockPos const& at, uchar face, ::Vec3 const& hit, ::Block const* targetBlock, bool isFirstEvent);
+    MCAPI ::InteractionResult $useItemOn(
+        ::ItemStack&      item,
+        ::BlockPos const& at,
+        uchar             face,
+        ::Vec3 const&     hit,
+        ::Block const*    targetBlock,
+        bool              isFirstEvent
+    );
 
     MCAPI void $tick();
 
@@ -120,5 +134,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

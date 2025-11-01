@@ -13,11 +13,11 @@ public:
     // MediaSourceInterface inner types define
     enum class SourceState : int {
         KInitializing = 0,
-        KLive = 1,
-        KEnded = 2,
-        KMuted = 3,
+        KLive         = 1,
+        KEnded        = 2,
+        KMuted        = 3,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -36,7 +36,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

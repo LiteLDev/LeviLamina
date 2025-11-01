@@ -4,7 +4,6 @@
 
 namespace LevelChunkTicking {
 
-struct DimensionSource {
-};
+struct DimensionSource {};
 
-}
+} // namespace LevelChunkTicking

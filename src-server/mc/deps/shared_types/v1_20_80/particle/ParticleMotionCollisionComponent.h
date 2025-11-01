@@ -18,10 +18,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk14c1ac;
-    ::ll::UntypedStorage<4, 4> mUnk265bfe;
-    ::ll::UntypedStorage<4, 4> mUnk92daee;
-    ::ll::UntypedStorage<4, 4> mUnkf972d4;
-    ::ll::UntypedStorage<1, 1> mUnk7508e5;
+    ::ll::UntypedStorage<4, 4>  mUnk265bfe;
+    ::ll::UntypedStorage<4, 4>  mUnk92daee;
+    ::ll::UntypedStorage<4, 4>  mUnkf972d4;
+    ::ll::UntypedStorage<1, 1>  mUnk7508e5;
     ::ll::UntypedStorage<8, 32> mUnk86681f;
     // NOLINTEND
 
@@ -70,7 +70,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

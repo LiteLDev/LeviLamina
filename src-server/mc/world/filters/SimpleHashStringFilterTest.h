@@ -49,5 +49,4 @@ public:
 
     MCNAPI ::Json::Value $_serializeValue() const;
     // NOLINTEND
-
 };

@@ -18,29 +18,29 @@ class StalkAndPounceOnTargetGoal : public ::Goal {
 public:
     // StalkAndPounceOnTargetGoal inner types define
     enum class StalkAndPounceState : uchar {
-        Stalking = 0,
+        Stalking   = 0,
         Interested = 1,
-        Pouncing = 2,
-        Stuck = 3,
-        Done = 4,
+        Pouncing   = 2,
+        Stuck      = 3,
+        Done       = 4,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mStalkSpeed;
-    ::ll::TypedStorage<4, 4, float> mStalkingMaxDistanceSqr;
-    ::ll::TypedStorage<4, 4, float> mLeapHeight;
-    ::ll::TypedStorage<4, 4, float> mLeapDistance;
-    ::ll::TypedStorage<4, 4, float> mMaxPounceDistanceSqr;
-    ::ll::TypedStorage<4, 4, float> mStrikeDistanceSqr;
-    ::ll::TypedStorage<4, 4, int> mInterestedTicks;
-    ::ll::TypedStorage<4, 4, int> mStuckTicks;
-    ::ll::TypedStorage<8, 8, ::Tick> mEndTimestamp;
-    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mStuckBlockList;
+    ::ll::TypedStorage<4, 4, float>                                             mStalkSpeed;
+    ::ll::TypedStorage<4, 4, float>                                             mStalkingMaxDistanceSqr;
+    ::ll::TypedStorage<4, 4, float>                                             mLeapHeight;
+    ::ll::TypedStorage<4, 4, float>                                             mLeapDistance;
+    ::ll::TypedStorage<4, 4, float>                                             mMaxPounceDistanceSqr;
+    ::ll::TypedStorage<4, 4, float>                                             mStrikeDistanceSqr;
+    ::ll::TypedStorage<4, 4, int>                                               mInterestedTicks;
+    ::ll::TypedStorage<4, 4, int>                                               mStuckTicks;
+    ::ll::TypedStorage<8, 8, ::Tick>                                            mEndTimestamp;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                               mStuckBlockList;
     ::ll::TypedStorage<1, 1, ::StalkAndPounceOnTargetGoal::StalkAndPounceState> mState;
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<1, 1, bool> mSetPersistent;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                            mMob;
+    ::ll::TypedStorage<1, 1, bool>                                              mSetPersistent;
     // NOLINTEND
 
 public:
@@ -116,5 +116,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

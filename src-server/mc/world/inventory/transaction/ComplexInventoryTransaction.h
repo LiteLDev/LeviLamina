@@ -20,18 +20,18 @@ class ComplexInventoryTransaction {
 public:
     // ComplexInventoryTransaction inner types define
     enum class Type : uint {
-        NormalTransaction = 0,
-        InventoryMismatch = 1,
-        ItemUseTransaction = 2,
+        NormalTransaction          = 0,
+        InventoryMismatch          = 1,
+        ItemUseTransaction         = 2,
         ItemUseOnEntityTransaction = 3,
-        ItemReleaseTransaction = 4,
+        ItemReleaseTransaction     = 4,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::ComplexInventoryTransaction::Type> mType;
-    ::ll::TypedStorage<8, 88, ::InventoryTransaction> mTransaction;
+    ::ll::TypedStorage<8, 88, ::InventoryTransaction>             mTransaction;
     // NOLINTEND
 
 public:
@@ -59,13 +59,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::ComplexInventoryTransaction> fromType(::ComplexInventoryTransaction::Type type, ::InventoryTransaction const& transaction);
+    MCAPI static ::std::unique_ptr<::ComplexInventoryTransaction>
+    fromType(::ComplexInventoryTransaction::Type type, ::InventoryTransaction const& transaction);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::ComplexInventoryTransaction::Type, ::std::string> const& transactionTypeMap();
+    MCAPI static ::BidirectionalUnorderedMap<::ComplexInventoryTransaction::Type, ::std::string> const&
+    transactionTypeMap();
     // NOLINTEND
 
 public:
@@ -93,5 +95,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

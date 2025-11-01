@@ -19,5 +19,4 @@ public:
     StringBuffer& operator=(StringBuffer const&);
     StringBuffer(StringBuffer const&);
     StringBuffer();
-
 };

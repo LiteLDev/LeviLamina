@@ -12,7 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 136> mUnka2c8a6;
-    ::ll::UntypedStorage<8, 8> mUnk268ea1;
+    ::ll::UntypedStorage<8, 8>   mUnk268ea1;
     // NOLINTEND
 
 public:
@@ -53,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc::rtcp

@@ -4,7 +4,7 @@
 
 namespace brstd {
 
-template<class Signature>
+template <class Signature>
 class move_only_function
 : public detail::function::function_invoke<detail::function::DerivedType::MoveOnly, Signature> {
     using base = detail::function::function_invoke<detail::function::DerivedType::MoveOnly, Signature>;
@@ -24,4 +24,4 @@ public:
     }
     friend void swap(move_only_function& f1, move_only_function& f2) noexcept { f1.swap(f2); }
 };
-}
+} // namespace brstd

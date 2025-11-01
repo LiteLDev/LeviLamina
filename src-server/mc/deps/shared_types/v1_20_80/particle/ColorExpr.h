@@ -35,7 +35,10 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void fromExprArrayRGB(::SharedTypes::v1_20_80::ColorExpr& instance, ::std::array<::SharedTypes::Legacy::ExpressionNode, 3> exprRGB);
+    MCNAPI static void fromExprArrayRGB(
+        ::SharedTypes::v1_20_80::ColorExpr&                    instance,
+        ::std::array<::SharedTypes::Legacy::ExpressionNode, 3> exprRGB
+    );
 
     MCNAPI static void fromString(::SharedTypes::v1_20_80::ColorExpr& instance, ::std::string str);
     // NOLINTEND
@@ -45,7 +48,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

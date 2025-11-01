@@ -16,8 +16,8 @@ struct EntitySensorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk57b5ee;
-    ::ll::UntypedStorage<1, 1> mUnk4d0751;
+    ::ll::UntypedStorage<1, 1>  mUnk57b5ee;
+    ::ll::UntypedStorage<1, 1>  mUnk4d0751;
     ::ll::UntypedStorage<8, 64> mUnk55c54d;
     ::ll::UntypedStorage<8, 24> mUnkd3a7f9;
     // NOLINTEND
@@ -37,7 +37,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EntitySensorDefinition>>& root);
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EntitySensorDefinition>>& root
+    );
     // NOLINTEND
-
 };

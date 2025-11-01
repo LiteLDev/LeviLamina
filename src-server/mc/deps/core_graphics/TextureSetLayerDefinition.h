@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 120> mUnkd9360c;
-    ::ll::UntypedStorage<1, 1> mUnkf64bec;
+    ::ll::UntypedStorage<1, 1>   mUnkf64bec;
     // NOLINTEND
 
 public:
@@ -34,7 +34,6 @@ public:
     // vIndex: 0
     virtual ~TextureSetLayerDefinition() /*override*/ = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace cg

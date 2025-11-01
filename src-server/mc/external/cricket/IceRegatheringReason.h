@@ -5,10 +5,10 @@
 namespace cricket {
 
 enum class IceRegatheringReason : int {
-    NetworkChange = 0,
-    NetworkFailure = 1,
+    NetworkChange     = 0,
+    NetworkFailure    = 1,
     OccasionalRefresh = 2,
-    MaxValue = 3,
+    MaxValue          = 3,
 };
 
 }

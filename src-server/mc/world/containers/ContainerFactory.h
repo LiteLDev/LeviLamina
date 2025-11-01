@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::FullContainerName const& INVALID_FULL_CONTAINER_ENUM_NAME();
     // NOLINTEND
-
 };

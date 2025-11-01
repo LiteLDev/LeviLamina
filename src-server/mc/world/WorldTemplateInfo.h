@@ -33,7 +33,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::WorldTemplateData buildTemplateData(::WorldTemplatePackManifest const& manifest, ::Bedrock::NonOwnerPointer<::IFileAccess> fileAccess);
+    MCNAPI static ::WorldTemplateData buildTemplateData(
+        ::WorldTemplatePackManifest const&        manifest,
+        ::Bedrock::NonOwnerPointer<::IFileAccess> fileAccess
+    );
 
     MCNAPI static ::WorldTemplateInfo const& getInvalid();
     // NOLINTEND
@@ -43,5 +46,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::WorldTemplateInfo const&);
     // NOLINTEND
-
 };

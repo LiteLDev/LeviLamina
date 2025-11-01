@@ -17,14 +17,14 @@ struct ScriptContainerRulesError : public ::Scripting::BaseError {
 public:
     // ScriptContainerRulesError inner types define
     enum class Reason : int {
-        OverWeightLimit = 0,
-        NotAllowedItem = 1,
-        BannedItem = 2,
+        OverWeightLimit   = 0,
+        NotAllowedItem    = 1,
+        BannedItem        = 2,
         NestedStorageItem = 3,
-        ZeroWeightItem = 4,
-        Invalid = 5,
+        ZeroWeightItem    = 4,
+        Invalid           = 5,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -56,7 +56,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

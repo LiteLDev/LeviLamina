@@ -6,7 +6,7 @@ struct ReceiptData_Sony {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk2be27d;
+    ::ll::UntypedStorage<4, 4>  mUnk2be27d;
     ::ll::UntypedStorage<8, 32> mUnk598676;
     ::ll::UntypedStorage<8, 32> mUnk102b06;
     ::ll::UntypedStorage<8, 32> mUnkf0efbb;
@@ -19,5 +19,4 @@ public:
     ReceiptData_Sony& operator=(ReceiptData_Sony const&);
     ReceiptData_Sony(ReceiptData_Sony const&);
     ReceiptData_Sony();
-
 };

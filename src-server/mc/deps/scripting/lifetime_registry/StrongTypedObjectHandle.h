@@ -4,8 +4,7 @@
 
 namespace Scripting {
 
-template<typename T0>
-class StrongTypedObjectHandle {
-};
+template <typename T0>
+class StrongTypedObjectHandle {};
 
-}
+} // namespace Scripting

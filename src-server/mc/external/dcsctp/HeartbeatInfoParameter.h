@@ -13,7 +13,8 @@ namespace dcsctp { struct HeartbeatInfoParameterConfig; }
 
 namespace dcsctp {
 
-class HeartbeatInfoParameter : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::HeartbeatInfoParameterConfig> {
+class HeartbeatInfoParameter : public ::dcsctp::Parameter,
+                               public ::dcsctp::TLVTrait<::dcsctp::HeartbeatInfoParameterConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,7 +65,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

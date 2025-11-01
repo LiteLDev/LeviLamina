@@ -16,11 +16,11 @@ class DrinkMilkGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mMaxCooldownTicks;
+    ::ll::TypedStorage<4, 4, int>                 mMaxCooldownTicks;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<8, 8, ::Tick> mNextStartTick;
-    ::ll::TypedStorage<8, 8, ::Tick> mFinishUsingItemTick;
+    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
+    ::ll::TypedStorage<8, 8, ::Tick>              mNextStartTick;
+    ::ll::TypedStorage<8, 8, ::Tick>              mFinishUsingItemTick;
     // NOLINTEND
 
 public:
@@ -75,5 +75,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

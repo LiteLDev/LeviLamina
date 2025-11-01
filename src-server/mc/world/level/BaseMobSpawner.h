@@ -14,23 +14,23 @@ class BaseMobSpawner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd2dbeb;
-    ::ll::UntypedStorage<4, 4> mUnk2f3a7a;
-    ::ll::UntypedStorage<4, 4> mUnk4b3eed;
+    ::ll::UntypedStorage<4, 4>   mUnkd2dbeb;
+    ::ll::UntypedStorage<4, 4>   mUnk2f3a7a;
+    ::ll::UntypedStorage<4, 4>   mUnk4b3eed;
     ::ll::UntypedStorage<8, 176> mUnk940170;
-    ::ll::UntypedStorage<8, 24> mUnka1c2c0;
-    ::ll::UntypedStorage<8, 8> mUnkf3fbaa;
-    ::ll::UntypedStorage<4, 4> mUnk91d28a;
-    ::ll::UntypedStorage<4, 4> mUnk242bd7;
-    ::ll::UntypedStorage<4, 4> mUnkb155c4;
-    ::ll::UntypedStorage<8, 24> mUnkb9b5e0;
-    ::ll::UntypedStorage<4, 4> mUnk40445d;
-    ::ll::UntypedStorage<4, 4> mUnk345749;
-    ::ll::UntypedStorage<4, 4> mUnk8b3a4b;
-    ::ll::UntypedStorage<1, 1> mUnkdc1334;
-    ::ll::UntypedStorage<4, 4> mUnk1f4926;
-    ::ll::UntypedStorage<4, 4> mUnk3cea86;
-    ::ll::UntypedStorage<4, 4> mUnkb02a14;
+    ::ll::UntypedStorage<8, 24>  mUnka1c2c0;
+    ::ll::UntypedStorage<8, 8>   mUnkf3fbaa;
+    ::ll::UntypedStorage<4, 4>   mUnk91d28a;
+    ::ll::UntypedStorage<4, 4>   mUnk242bd7;
+    ::ll::UntypedStorage<4, 4>   mUnkb155c4;
+    ::ll::UntypedStorage<8, 24>  mUnkb9b5e0;
+    ::ll::UntypedStorage<4, 4>   mUnk40445d;
+    ::ll::UntypedStorage<4, 4>   mUnk345749;
+    ::ll::UntypedStorage<4, 4>   mUnk8b3a4b;
+    ::ll::UntypedStorage<1, 1>   mUnkdc1334;
+    ::ll::UntypedStorage<4, 4>   mUnk1f4926;
+    ::ll::UntypedStorage<4, 4>   mUnk3cea86;
+    ::ll::UntypedStorage<4, 4>   mUnkb02a14;
     // NOLINTEND
 
 public:
@@ -93,5 +93,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

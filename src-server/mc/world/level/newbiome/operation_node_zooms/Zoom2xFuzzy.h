@@ -7,7 +7,6 @@
 
 namespace OperationNodeZooms {
 
-class Zoom2xFuzzy : public ::OperationNodeZooms::ZoomBase<1, 0> {
-};
+class Zoom2xFuzzy : public ::OperationNodeZooms::ZoomBase<1, 0> {};
 
-}
+} // namespace OperationNodeZooms

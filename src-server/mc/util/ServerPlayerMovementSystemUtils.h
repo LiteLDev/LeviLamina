@@ -18,7 +18,14 @@ struct ServerPlayerCurrentMovementComponent;
 namespace ServerPlayerMovementSystemUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickServerPlayerMovementFinalSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::ServerPlayerCurrentMovementComponent const, ::ActorRotationComponent, ::MovementInterpolatorComponent> view);
+MCNAPI void _tickServerPlayerMovementFinalSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent>,
+        ::ServerPlayerCurrentMovementComponent const,
+        ::ActorRotationComponent,
+        ::MovementInterpolatorComponent> view
+);
 // NOLINTEND
 
-}
+} // namespace ServerPlayerMovementSystemUtils

@@ -5,5 +5,5 @@
 enum class PhotoType : uchar {
     Portfolio = 0,
     PhotoItem = 1,
-    Book = 2,
+    Book      = 2,
 };

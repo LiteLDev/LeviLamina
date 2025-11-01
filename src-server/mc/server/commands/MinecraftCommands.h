@@ -34,13 +34,13 @@ class MinecraftCommands {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ICommandsContextProvider&> mContextProvider;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRegistry>> mRegistry;
+    ::ll::TypedStorage<8, 8, ::ICommandsContextProvider&>              mContextProvider;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandRegistry>>     mRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOutputSender>> mOutputSender;
-    ::ll::TypedStorage<1, 1, ::CommandPermissionLevel> mOpPermissionLevel;
-    ::ll::TypedStorage<8, 64, ::std::function<bool()>> mChatPermissionsCallback;
+    ::ll::TypedStorage<1, 1, ::CommandPermissionLevel>                 mOpPermissionLevel;
+    ::ll::TypedStorage<8, 64, ::std::function<bool()>>                 mChatPermissionsCallback;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::unique_ptr<::Command>>> mCompiledCommandMap;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DeferredCommandBase>>> mDeferredCommands;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DeferredCommandBase>>>            mDeferredCommands;
     ::ll::TypedStorage<8, 8, uint64> mDeferredScriptCommandCount;
     // NOLINTEND
 
@@ -60,19 +60,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MinecraftCommands(::ICommandsContextProvider& contextProvider, ::std::unique_ptr<::CommandRegistry>&& registry);
+    MCAPI
+    MinecraftCommands(::ICommandsContextProvider& contextProvider, ::std::unique_ptr<::CommandRegistry>&& registry);
 
-    MCAPI ::Command* compileCommand(::HashedString const& commandStr, ::CommandOrigin& origin, ::CurrentCmdVersion commandVersion, ::std::function<void(::std::string const&)> onParserError);
+    MCAPI ::Command* compileCommand(
+        ::HashedString const&                       commandStr,
+        ::CommandOrigin&                            origin,
+        ::CurrentCmdVersion                         commandVersion,
+        ::std::function<void(::std::string const&)> onParserError
+    );
 
-    MCAPI void enqueueDeferredCommand(::std::unique_ptr<::CommandContext> context, bool suppressOutput, bool isRequest, ::std::function<void(::MCRESULT)> callback);
+    MCAPI void enqueueDeferredCommand(
+        ::std::unique_ptr<::CommandContext> context,
+        bool                                suppressOutput,
+        bool                                isRequest,
+        ::std::function<void(::MCRESULT)>   callback
+    );
 
     MCAPI ::MCRESULT executeCommand(::CommandContext& context, bool suppressOutput) const;
 
     MCAPI void handleOutput(::CommandOrigin const& origin, ::CommandOutput const& output) const;
 
-    MCAPI void initCoreEnums(::ItemRegistryRef itemRegistry, ::Level const& level, ::ActorFactory const& actorFactory, ::Experiments const& experiments, ::BaseGameVersion const& worldBaseGameVersion);
+    MCAPI void initCoreEnums(
+        ::ItemRegistryRef        itemRegistry,
+        ::Level const&           level,
+        ::ActorFactory const&    actorFactory,
+        ::Experiments const&     experiments,
+        ::BaseGameVersion const& worldBaseGameVersion
+    );
 
-    MCAPI void initCoreEnumsServer(::ActorDefinitionGroup const& actorDefinitionGroup, ::CameraPresets const& cameraPresets, ::Recipes const& recipes);
+    MCAPI void initCoreEnumsServer(
+        ::ActorDefinitionGroup const& actorDefinitionGroup,
+        ::CameraPresets const&        cameraPresets,
+        ::Recipes const&              recipes
+    );
 
     MCAPI ::MCRESULT requestCommandExecution(::CommandContext& context, bool suppressOutput);
     // NOLINTEND
@@ -84,15 +105,24 @@ public:
 
     MCAPI static void initBlockEnum(::CommandRegistry& registry, ::BaseGameVersion const& worldBaseGameVersion);
 
-    MCAPI static void initEntityEnum(::CommandRegistry& registry, ::ActorFactory const& actorFactory, ::Experiments const& experiments);
+    MCAPI static void
+    initEntityEnum(::CommandRegistry& registry, ::ActorFactory const& actorFactory, ::Experiments const& experiments);
 
     MCAPI static void initEntityPropertyEnum(::CommandRegistry& registry, ::Level const& level);
 
-    MCAPI static void initItemEnum(::ItemRegistryRef itemRegistry, ::CommandRegistry& registry, ::BaseGameVersion const& worldBaseGameVersion);
+    MCAPI static void initItemEnum(
+        ::ItemRegistryRef        itemRegistry,
+        ::CommandRegistry&       registry,
+        ::BaseGameVersion const& worldBaseGameVersion
+    );
 
     MCAPI static void initItemTagEnum(::ItemRegistryRef itemRegistry, ::CommandRegistry& registry);
 
-    MCAPI static void initStructureFeatureEnum(::CommandRegistry& registry, ::Experiments const& experiments, ::br::worldgen::StructureRegistry const& structureRegistry);
+    MCAPI static void initStructureFeatureEnum(
+        ::CommandRegistry&                       registry,
+        ::Experiments const&                     experiments,
+        ::br::worldgen::StructureRegistry const& structureRegistry
+    );
 
     MCAPI static void initUnlockableRecipesEnum(::CommandRegistry& registry, ::Recipes const& recipes);
 
@@ -116,5 +146,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

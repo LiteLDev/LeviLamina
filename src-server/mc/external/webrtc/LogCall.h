@@ -4,7 +4,6 @@
 
 namespace rtc::webrtc_logging_impl {
 
-class LogCall {
-};
+class LogCall {};
 
-}
+} // namespace rtc::webrtc_logging_impl

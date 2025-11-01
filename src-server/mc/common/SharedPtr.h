@@ -105,5 +105,4 @@ public:
         }
     }
 
-    SharedCounter<T>* counter;
-};
+    SharedCounter<T>* counter;};

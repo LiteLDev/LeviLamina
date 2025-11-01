@@ -7,9 +7,9 @@ namespace EduCloud {
 enum class ConflictResolutionStatus : int {
     CloudChange = 0,
     LocalChange = 1,
-    BothChange = 2,
-    NoChange = 3,
-    Error = 4,
+    BothChange  = 2,
+    NoChange    = 3,
+    Error       = 4,
 };
 
 }

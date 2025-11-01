@@ -19,7 +19,6 @@ public:
     SliceSize& operator=(SliceSize const&);
     SliceSize(SliceSize const&);
     SliceSize();
-
 };
 
-}
+} // namespace ui

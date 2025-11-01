@@ -23,14 +23,14 @@ public:
     struct TerminationData;
     struct TerminationEntry;
     // clang-format on
-    
+
     // TaskQueueImpl inner types define
     enum class TerminationLevel : int {
-        None = 0,
-        Work = 1,
+        None       = 0,
+        Work       = 1,
         Completion = 2,
     };
-    
+
     struct TerminationEntry {
     public:
         // member variables
@@ -41,43 +41,41 @@ public:
         ::ll::UntypedStorage<8, 8> mUnke0684a;
         ::ll::UntypedStorage<8, 8> mUnk286c7a;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         TerminationEntry& operator=(TerminationEntry const&);
         TerminationEntry(TerminationEntry const&);
         TerminationEntry();
-    
     };
-    
+
     struct TerminationData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnkd13164;
-        ::ll::UntypedStorage<1, 1> mUnk809a2c;
+        ::ll::UntypedStorage<1, 1>  mUnkd13164;
+        ::ll::UntypedStorage<1, 1>  mUnk809a2c;
         ::ll::UntypedStorage<8, 80> mUnk684968;
         ::ll::UntypedStorage<8, 72> mUnkbbdbec;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         TerminationData& operator=(TerminationData const&);
         TerminationData(TerminationData const&);
         TerminationData();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkb063f3;
+    ::ll::UntypedStorage<8, 16>   mUnkb063f3;
     ::ll::UntypedStorage<8, 1656> mUnk3ef46e;
     ::ll::UntypedStorage<8, 2976> mUnk765306;
-    ::ll::UntypedStorage<8, 160> mUnka865be;
-    ::ll::UntypedStorage<8, 56> mUnkf550d3;
-    ::ll::UntypedStorage<8, 56> mUnkead70c;
-    ::ll::UntypedStorage<1, 1> mUnka16436;
+    ::ll::UntypedStorage<8, 160>  mUnka865be;
+    ::ll::UntypedStorage<8, 56>   mUnkf550d3;
+    ::ll::UntypedStorage<8, 56>   mUnkead70c;
+    ::ll::UntypedStorage<1, 1>    mUnka16436;
     // NOLINTEND
 
 public:
@@ -98,13 +96,23 @@ public:
     virtual HRESULT GetPortContext(::XTaskQueuePort port, ::ITaskQueuePortContext** portContext) /*override*/;
 
     // vIndex: 5
-    virtual HRESULT RegisterWaitHandle(::XTaskQueuePort port, void* waitHandle, void* callbackContext, void(*callback) (void*, bool), ::XTaskQueueRegistrationToken* token) /*override*/;
+    virtual HRESULT RegisterWaitHandle(
+        ::XTaskQueuePort port,
+        void*            waitHandle,
+        void*            callbackContext,
+        void (*callback)(void*, bool),
+        ::XTaskQueueRegistrationToken* token
+    ) /*override*/;
 
     // vIndex: 6
     virtual void UnregisterWaitHandle(::XTaskQueueRegistrationToken token) /*override*/;
 
     // vIndex: 7
-    virtual HRESULT RegisterSubmitCallback(void* context, void(*callback) (void*, ::XTaskQueueObject*, ::XTaskQueuePort), ::XTaskQueueRegistrationToken* token) /*override*/;
+    virtual HRESULT RegisterSubmitCallback(
+        void* context,
+        void (*callback)(void*, ::XTaskQueueObject*, ::XTaskQueuePort),
+        ::XTaskQueueRegistrationToken* token
+    ) /*override*/;
 
     // vIndex: 8
     virtual void UnregisterSubmitCallback(::XTaskQueueRegistrationToken token) /*override*/;
@@ -116,7 +124,7 @@ public:
     virtual bool CanClose() /*override*/;
 
     // vIndex: 11
-    virtual HRESULT Terminate(bool wait, void* callbackContext, void(*callback) (void*)) /*override*/;
+    virtual HRESULT Terminate(bool wait, void* callbackContext, void (*callback)(void*)) /*override*/;
 
     // vIndex: 14
     virtual void RundownObject() /*override*/;
@@ -127,7 +135,12 @@ public:
     // NOLINTBEGIN
     MCNAPI long Initialize(::XTaskQueuePortObject* workPort, ::XTaskQueuePortObject* completionPort);
 
-    MCNAPI long Initialize(::XTaskQueueDispatchMode workMode, ::XTaskQueueDispatchMode completionMode, bool allowTermination, bool allowClose);
+    MCNAPI long Initialize(
+        ::XTaskQueueDispatchMode workMode,
+        ::XTaskQueueDispatchMode completionMode,
+        bool                     allowTermination,
+        bool                     allowClose
+    );
 
     MCNAPI TaskQueueImpl();
     // NOLINTEND
@@ -151,11 +164,21 @@ public:
 
     MCNAPI HRESULT $GetPortContext(::XTaskQueuePort port, ::ITaskQueuePortContext** portContext);
 
-    MCNAPI HRESULT $RegisterWaitHandle(::XTaskQueuePort port, void* waitHandle, void* callbackContext, void(*callback) (void*, bool), ::XTaskQueueRegistrationToken* token);
+    MCNAPI HRESULT $RegisterWaitHandle(
+        ::XTaskQueuePort port,
+        void*            waitHandle,
+        void*            callbackContext,
+        void (*callback)(void*, bool),
+        ::XTaskQueueRegistrationToken* token
+    );
 
     MCNAPI void $UnregisterWaitHandle(::XTaskQueueRegistrationToken token);
 
-    MCNAPI HRESULT $RegisterSubmitCallback(void* context, void(*callback) (void*, ::XTaskQueueObject*, ::XTaskQueuePort), ::XTaskQueueRegistrationToken* token);
+    MCNAPI HRESULT $RegisterSubmitCallback(
+        void* context,
+        void (*callback)(void*, ::XTaskQueueObject*, ::XTaskQueuePort),
+        ::XTaskQueueRegistrationToken* token
+    );
 
     MCNAPI void $UnregisterSubmitCallback(::XTaskQueueRegistrationToken token);
 
@@ -163,7 +186,7 @@ public:
 
     MCNAPI bool $CanClose();
 
-    MCNAPI HRESULT $Terminate(bool wait, void* callbackContext, void(*callback) (void*));
+    MCNAPI HRESULT $Terminate(bool wait, void* callbackContext, void (*callback)(void*));
 
     MCNAPI void $RundownObject();
     // NOLINTEND
@@ -173,5 +196,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

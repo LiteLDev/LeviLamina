@@ -10,7 +10,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 144, ::std::array<::std::pair<::std::string_view, uchar>, 6>> mArray;
     // NOLINTEND
-
 };
 
-}
+} // namespace Facing

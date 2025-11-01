@@ -4,6 +4,6 @@
 
 enum class GraphicsQualityPresetMode : uchar {
     Performance = 0,
-    Visual = 1,
-    Custom = 2,
+    Visual      = 1,
+    Custom      = 2,
 };

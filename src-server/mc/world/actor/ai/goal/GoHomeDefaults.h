@@ -12,4 +12,4 @@ MCAPI float const& GOAL_RADIUS();
 MCAPI float const& SPEED_MULTIPLIER();
 // NOLINTEND
 
-}
+} // namespace GoHomeDefaults

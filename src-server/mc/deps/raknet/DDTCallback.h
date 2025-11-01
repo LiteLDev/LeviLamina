@@ -9,9 +9,9 @@ class DDTCallback : public ::RakNet::FileListTransferCBInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk6d9c0f;
+    ::ll::UntypedStorage<4, 4>   mUnk6d9c0f;
     ::ll::UntypedStorage<1, 512> mUnkf2a0df;
-    ::ll::UntypedStorage<8, 8> mUnkc103dd;
+    ::ll::UntypedStorage<8, 8>   mUnkc103dd;
     // NOLINTEND
 
 public:
@@ -41,5 +41,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

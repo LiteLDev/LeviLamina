@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkc2cf82;
-    ::ll::UntypedStorage<8, 8> mUnk705dd3;
+    ::ll::UntypedStorage<8, 8>  mUnk705dd3;
     // NOLINTEND
 
 public:
@@ -15,5 +15,4 @@ public:
     AccessTokenInfo& operator=(AccessTokenInfo const&);
     AccessTokenInfo(AccessTokenInfo const&);
     AccessTokenInfo();
-
 };

@@ -14,7 +14,10 @@ namespace ServerMovement {
 // NOLINTBEGIN
 MCAPI void notifyOfServerInitiatedMotion(::EntityContext& entity);
 
-MCAPI void notifyOfServerInitiatedPlayerMotion(::ActorOwnerComponent& actorOwnerComponent, ::ClientAcceptanceThresholdsComponent* clientAcceptanceThresholdsComponent);
+MCAPI void notifyOfServerInitiatedPlayerMotion(
+    ::ActorOwnerComponent&                 actorOwnerComponent,
+    ::ClientAcceptanceThresholdsComponent* clientAcceptanceThresholdsComponent
+);
 // NOLINTEND
 
-}
+} // namespace ServerMovement

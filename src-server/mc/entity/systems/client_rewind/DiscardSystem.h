@@ -29,12 +29,38 @@ struct ReplayStateTrackerComponent;
 
 namespace ClientRewind {
 
-struct DiscardSystem : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent>, ::Read<::ActorDataFlagComponent, ::ActorDataHorseFlagComponent, ::ActorDataJumpDurationComponent, ::ActorDataBoundingBoxComponent, ::ActorDataSeatOffsetComponent>, ::Write<::ReplayStateTrackerComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
+struct DiscardSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
+                           ::Filter<::ActorMovementTickNeededComponent>,
+                           ::Read<
+                               ::ActorDataFlagComponent,
+                               ::ActorDataHorseFlagComponent,
+                               ::ActorDataJumpDurationComponent,
+                               ::ActorDataBoundingBoxComponent,
+                               ::ActorDataSeatOffsetComponent>,
+                           ::Write<::ReplayStateTrackerComponent>,
+                           ::AddRemove<>,
+                           ::GlobalRead<>,
+                           ::GlobalWrite<>,
+                           ::EntityFactoryT<>>> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent>, ::Read<::ActorDataFlagComponent, ::ActorDataHorseFlagComponent, ::ActorDataJumpDurationComponent, ::ActorDataBoundingBoxComponent, ::ActorDataSeatOffsetComponent>, ::Write<::ReplayStateTrackerComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::ActorMovementTickNeededComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDataHorseFlagComponent,
+                ::ActorDataJumpDurationComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataSeatOffsetComponent>,
+            ::Write<::ReplayStateTrackerComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~DiscardSystem() /*override*/ = default;
@@ -43,13 +69,37 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickEntity(::StrictEntityContext const& entity, ::ReplayStateTrackerComponent& tracker, ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorDataHorseFlagComponent const>, ::Optional<::ActorDataJumpDurationComponent const>, ::Optional<::ActorDataBoundingBoxComponent const>, ::Optional<::ActorDataSeatOffsetComponent const>> const& tracked);
+    MCNAPI static void tickEntity(
+        ::StrictEntityContext const&   entity,
+        ::ReplayStateTrackerComponent& tracker,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::ActorDataFlagComponent const,
+            ::Optional<::ActorDataHorseFlagComponent const>,
+            ::Optional<::ActorDataJumpDurationComponent const>,
+            ::Optional<::ActorDataBoundingBoxComponent const>,
+            ::Optional<::ActorDataSeatOffsetComponent const>> const& tracked
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent>, ::Read<::ActorDataFlagComponent, ::ActorDataHorseFlagComponent, ::ActorDataJumpDurationComponent, ::ActorDataBoundingBoxComponent, ::ActorDataSeatOffsetComponent>, ::Write<::ReplayStateTrackerComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::ActorMovementTickNeededComponent>,
+            ::Read<
+                ::ActorDataFlagComponent,
+                ::ActorDataHorseFlagComponent,
+                ::ActorDataJumpDurationComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataSeatOffsetComponent>,
+            ::Write<::ReplayStateTrackerComponent>,
+            ::AddRemove<>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    );
     // NOLINTEND
 
 public:
@@ -57,7 +107,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ClientRewind

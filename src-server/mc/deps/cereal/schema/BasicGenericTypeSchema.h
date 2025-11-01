@@ -24,9 +24,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void doLoadWithSchema(::entt::meta_type const& type, ::cereal::SchemaReader& value, ::entt::meta_any& any, ::entt::meta_any const& udata, ::cereal::internal::LoadState const& state, ::entt::type_info const& info) const;
+    MCNAPI void doLoadWithSchema(
+        ::entt::meta_type const&             type,
+        ::cereal::SchemaReader&              value,
+        ::entt::meta_any&                    any,
+        ::entt::meta_any const&              udata,
+        ::cereal::internal::LoadState const& state,
+        ::entt::type_info const&             info
+    ) const;
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal::internal

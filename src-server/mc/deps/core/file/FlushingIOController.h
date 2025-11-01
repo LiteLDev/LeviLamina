@@ -15,7 +15,7 @@ public:
     // clang-format off
     class Flusher;
     // clang-format on
-    
+
     // FlushingIOController inner types define
     class Flusher {
     public:
@@ -23,31 +23,30 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Flusher();
-    
+
         // vIndex: 1
         virtual ::Core::Result _flushBuffer(void const*, uint64) = 0;
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
-    
+
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -70,7 +69,6 @@ public:
 
     MCNAPI ::Core::Result write(void const* data, uint64 byteCount);
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock

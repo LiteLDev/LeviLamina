@@ -38,25 +38,25 @@ class RtpTransceiver : public ::webrtc::RtpTransceiverInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb3b0d4;
-    ::ll::UntypedStorage<1, 1> mUnk4e5aea;
-    ::ll::UntypedStorage<4, 4> mUnk4a1147;
-    ::ll::UntypedStorage<8, 8> mUnkc61ef0;
+    ::ll::UntypedStorage<8, 8>  mUnkb3b0d4;
+    ::ll::UntypedStorage<1, 1>  mUnk4e5aea;
+    ::ll::UntypedStorage<4, 4>  mUnk4a1147;
+    ::ll::UntypedStorage<8, 8>  mUnkc61ef0;
     ::ll::UntypedStorage<8, 24> mUnka2faf0;
     ::ll::UntypedStorage<8, 24> mUnk1139b7;
-    ::ll::UntypedStorage<1, 1> mUnkbefaf8;
-    ::ll::UntypedStorage<1, 1> mUnk1d970c;
-    ::ll::UntypedStorage<1, 1> mUnk4c7d32;
-    ::ll::UntypedStorage<4, 4> mUnk6ff740;
-    ::ll::UntypedStorage<4, 8> mUnk64689d;
-    ::ll::UntypedStorage<4, 8> mUnk1d60d3;
+    ::ll::UntypedStorage<1, 1>  mUnkbefaf8;
+    ::ll::UntypedStorage<1, 1>  mUnk1d970c;
+    ::ll::UntypedStorage<1, 1>  mUnk4c7d32;
+    ::ll::UntypedStorage<4, 4>  mUnk6ff740;
+    ::ll::UntypedStorage<4, 8>  mUnk64689d;
+    ::ll::UntypedStorage<4, 8>  mUnk1d60d3;
     ::ll::UntypedStorage<8, 40> mUnk18ca3c;
     ::ll::UntypedStorage<8, 16> mUnk713c90;
-    ::ll::UntypedStorage<1, 1> mUnk536c35;
-    ::ll::UntypedStorage<1, 1> mUnk225bd1;
-    ::ll::UntypedStorage<1, 1> mUnk3bde7d;
-    ::ll::UntypedStorage<8, 8> mUnk40057c;
-    ::ll::UntypedStorage<8, 8> mUnk986261;
+    ::ll::UntypedStorage<1, 1>  mUnk536c35;
+    ::ll::UntypedStorage<1, 1>  mUnk225bd1;
+    ::ll::UntypedStorage<1, 1>  mUnk3bde7d;
+    ::ll::UntypedStorage<8, 8>  mUnk40057c;
+    ::ll::UntypedStorage<8, 8>  mUnk986261;
     ::ll::UntypedStorage<8, 24> mUnk892afe;
     ::ll::UntypedStorage<8, 24> mUnka13df3;
     ::ll::UntypedStorage<8, 24> mUnk80fe36;
@@ -112,7 +112,8 @@ public:
     virtual void StopInternal() /*override*/;
 
     // vIndex: 17
-    virtual ::webrtc::RTCError SetCodecPreferences(::rtc::ArrayView<::webrtc::RtpCodecCapability> codec_capabilities) /*override*/;
+    virtual ::webrtc::RTCError
+    SetCodecPreferences(::rtc::ArrayView<::webrtc::RtpCodecCapability> codec_capabilities) /*override*/;
 
     // vIndex: 18
     virtual ::std::vector<::webrtc::RtpCodecCapability> codec_preferences() const /*override*/;
@@ -124,19 +125,34 @@ public:
     virtual ::std::vector<::webrtc::RtpHeaderExtensionCapability> GetNegotiatedHeaderExtensions() const /*override*/;
 
     // vIndex: 21
-    virtual ::webrtc::RTCError SetHeaderExtensionsToNegotiate(::rtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const> header_extensions) /*override*/;
+    virtual ::webrtc::RTCError SetHeaderExtensionsToNegotiate(
+        ::rtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const> header_extensions
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddReceiver(::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> receiver);
+    MCNAPI void AddReceiver(
+        ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> receiver
+    );
 
-    MCNAPI void AddSender(::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>> sender);
+    MCNAPI void
+    AddSender(::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>> sender);
 
     MCNAPI void ClearChannel();
 
-    MCNAPI ::webrtc::RTCError CreateChannel(::std::string_view mid, ::webrtc::Call* call_ptr, ::cricket::MediaConfig const& media_config, bool srtp_required, ::webrtc::CryptoOptions crypto_options, ::cricket::AudioOptions const& audio_options, ::cricket::VideoOptions const& video_options, ::webrtc::VideoBitrateAllocatorFactory* video_bitrate_allocator_factory, ::std::function<::webrtc::RtpTransportInternal*(::std::string_view)> transport_lookup);
+    MCNAPI ::webrtc::RTCError CreateChannel(
+        ::std::string_view                                                   mid,
+        ::webrtc::Call*                                                      call_ptr,
+        ::cricket::MediaConfig const&                                        media_config,
+        bool                                                                 srtp_required,
+        ::webrtc::CryptoOptions                                              crypto_options,
+        ::cricket::AudioOptions const&                                       audio_options,
+        ::cricket::VideoOptions const&                                       video_options,
+        ::webrtc::VideoBitrateAllocatorFactory*                              video_bitrate_allocator_factory,
+        ::std::function<::webrtc::RtpTransportInternal*(::std::string_view)> transport_lookup
+    );
 
     MCNAPI void OnFirstPacketReceived();
 
@@ -150,9 +166,18 @@ public:
 
     MCNAPI RtpTransceiver(::cricket::MediaType media_type, ::webrtc::ConnectionContext* context);
 
-    MCNAPI RtpTransceiver(::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>> sender, ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> receiver, ::webrtc::ConnectionContext* context, ::std::vector<::webrtc::RtpHeaderExtensionCapability> header_extensions_to_negotiate, ::std::function<void()> on_negotiation_needed);
+    MCNAPI RtpTransceiver(
+        ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>     sender,
+        ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> receiver,
+        ::webrtc::ConnectionContext*                                                                   context,
+        ::std::vector<::webrtc::RtpHeaderExtensionCapability> header_extensions_to_negotiate,
+        ::std::function<void()>                               on_negotiation_needed
+    );
 
-    MCNAPI void SetChannel(::std::unique_ptr<::cricket::ChannelInterface> channel, ::std::function<::webrtc::RtpTransportInternal*(::std::string const&)> transport_lookup);
+    MCNAPI void SetChannel(
+        ::std::unique_ptr<::cricket::ChannelInterface>                         channel,
+        ::std::function<::webrtc::RtpTransportInternal*(::std::string const&)> transport_lookup
+    );
 
     MCNAPI void SetPeerConnectionClosed();
 
@@ -164,7 +189,8 @@ public:
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::RtpSenderInternal> sender_internal() const;
 
-    MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>> senders() const;
+    MCNAPI ::std::vector<::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>>
+    senders() const;
 
     MCNAPI void set_current_direction(::webrtc::RtpTransceiverDirection direction);
 
@@ -178,7 +204,13 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::cricket::MediaType media_type, ::webrtc::ConnectionContext* context);
 
-    MCNAPI void* $ctor(::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>> sender, ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> receiver, ::webrtc::ConnectionContext* context, ::std::vector<::webrtc::RtpHeaderExtensionCapability> header_extensions_to_negotiate, ::std::function<void()> on_negotiation_needed);
+    MCNAPI void* $ctor(
+        ::webrtc::scoped_refptr<::webrtc::RtpSenderProxyWithInternal<::webrtc::RtpSenderInternal>>     sender,
+        ::webrtc::scoped_refptr<::webrtc::RtpReceiverProxyWithInternal<::webrtc::RtpReceiverInternal>> receiver,
+        ::webrtc::ConnectionContext*                                                                   context,
+        ::std::vector<::webrtc::RtpHeaderExtensionCapability> header_extensions_to_negotiate,
+        ::std::function<void()>                               on_negotiation_needed
+    );
     // NOLINTEND
 
 public:
@@ -222,7 +254,8 @@ public:
 
     MCNAPI ::std::vector<::webrtc::RtpHeaderExtensionCapability> $GetNegotiatedHeaderExtensions() const;
 
-    MCNAPI ::webrtc::RTCError $SetHeaderExtensionsToNegotiate(::rtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const> header_extensions);
+    MCNAPI ::webrtc::RTCError
+    $SetHeaderExtensionsToNegotiate(::rtc::ArrayView<::webrtc::RtpHeaderExtensionCapability const> header_extensions);
     // NOLINTEND
 
 public:
@@ -230,7 +263,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

@@ -5,9 +5,9 @@
 namespace Bedrock {
 
 enum class ActivationArgumentType : uint {
-    Launch = 0,
+    Launch   = 0,
     Protocol = 1,
-    File = 2,
+    File     = 2,
 };
 
 }

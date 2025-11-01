@@ -6,11 +6,11 @@ class PackWriteStrategy {
 public:
     // PackWriteStrategy inner types define
     enum class FileName : uchar {
-        Manifest = 0,
+        Manifest     = 0,
         ContentsJSON = 1,
         TexturesList = 2,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -26,5 +26,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

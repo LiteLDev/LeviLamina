@@ -16,7 +16,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::unique_ptr<::gametest::BaseGameTestHelper> createGameTestHelper(::gametest::BaseGameTestInstance& testInstance) /*override*/;
+    virtual ::std::unique_ptr<::gametest::BaseGameTestHelper>
+    createGameTestHelper(::gametest::BaseGameTestInstance& testInstance) /*override*/;
 
     // vIndex: 2
     virtual ::std::unique_ptr<::gametest::IGameTestHelperProvider> clone() /*override*/;
@@ -28,7 +29,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::gametest::BaseGameTestHelper> $createGameTestHelper(::gametest::BaseGameTestInstance& testInstance);
+    MCNAPI ::std::unique_ptr<::gametest::BaseGameTestHelper>
+    $createGameTestHelper(::gametest::BaseGameTestInstance& testInstance);
 
     MCNAPI ::std::unique_ptr<::gametest::IGameTestHelperProvider> $clone();
     // NOLINTEND
@@ -38,5 +40,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

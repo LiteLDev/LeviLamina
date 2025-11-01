@@ -14,7 +14,8 @@ class IConstBlockSource;
 namespace PlayerTravelledEvent {
 // functions
 // NOLINTBEGIN
-MCNAPI ::PlayerTravelledEvent::TravelMethod getTravelledMethod(::EntityContext const& entity, ::IConstBlockSource const& region);
+MCNAPI ::PlayerTravelledEvent::TravelMethod
+getTravelledMethod(::EntityContext const& entity, ::IConstBlockSource const& region);
 // NOLINTEND
 
-}
+} // namespace PlayerTravelledEvent

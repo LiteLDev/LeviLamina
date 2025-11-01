@@ -4,7 +4,6 @@
 
 namespace Scripting {
 
-struct DataBufferHandleType {
-};
+struct DataBufferHandleType {};
 
-}
+} // namespace Scripting

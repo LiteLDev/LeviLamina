@@ -13,36 +13,35 @@ public:
     // clang-format off
     struct AudioProcessorStatistics;
     // clang-format on
-    
+
     // AudioProcessorInterface inner types define
     struct AudioProcessorStatistics {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk6c30eb;
+        ::ll::UntypedStorage<1, 1>   mUnk6c30eb;
         ::ll::UntypedStorage<8, 112> mUnk5c571e;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         AudioProcessorStatistics& operator=(AudioProcessorStatistics const&);
         AudioProcessorStatistics(AudioProcessorStatistics const&);
         AudioProcessorStatistics();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~AudioProcessorStatistics();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -58,7 +57,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

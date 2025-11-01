@@ -11,10 +11,9 @@ struct BlockRendererDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::BlockRendererName> mName;
-    ::ll::TypedStorage<4, 12, ::Vec3> mOffset;
+    ::ll::TypedStorage<1, 1, ::BlockRendererName>                           mName;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mOffset;
     ::ll::TypedStorage<4, 24, ::BlockTransformationComponent::RotationType> mRotation;
-    ::ll::TypedStorage<4, 12, ::Vec3> mScale;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                       mScale;
     // NOLINTEND
-
 };

@@ -11,5 +11,4 @@ public:
     ::ll::TypedStorage<4, 4, float> mFlapSpeed;
     ::ll::TypedStorage<4, 4, float> mFlapping;
     // NOLINTEND
-
 };

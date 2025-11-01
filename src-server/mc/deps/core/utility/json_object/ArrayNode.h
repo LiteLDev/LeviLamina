@@ -19,18 +19,16 @@ public:
     // clang-format off
     template<int T0> class iterator_base;
     // clang-format on
-    
+
     // ArrayNode inner types define
-    template<int T0>
-    class iterator_base {
-    };
-    
+    template <int T0>
+    class iterator_base {};
+
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool setContents(::Bedrock::JSONObject::ValueWrapper const& contents);
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::JSONObject

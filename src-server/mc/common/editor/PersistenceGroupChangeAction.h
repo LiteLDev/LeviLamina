@@ -5,7 +5,7 @@
 namespace Editor::Services {
 
 enum class PersistenceGroupChangeAction : int {
-    Added = 0,
+    Added   = 0,
     Deleted = 1,
 };
 

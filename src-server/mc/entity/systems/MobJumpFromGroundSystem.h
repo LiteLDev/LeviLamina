@@ -15,4 +15,4 @@ MCNAPI ::TickingSystemWithInfo createCleanupFilterJumpRequestSystem();
 MCNAPI ::TickingSystemWithInfo createCleanupTriggerJumpRequestSystem();
 // NOLINTEND
 
-}
+} // namespace MobJumpFromGroundSystem

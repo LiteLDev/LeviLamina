@@ -4,7 +4,6 @@
 
 namespace OreUI {
 
-struct RouteAction {
-};
+struct RouteAction {};
 
-}
+} // namespace OreUI

@@ -42,7 +42,8 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptSphereShape(::ScriptModuleDebugUtilities::ScriptSphereShape const&);
 
-    MCFOLD ::ScriptModuleDebugUtilities::ScriptSphereShape& operator=(::ScriptModuleDebugUtilities::ScriptSphereShape const&);
+    MCFOLD ::ScriptModuleDebugUtilities::ScriptSphereShape&
+    operator=(::ScriptModuleDebugUtilities::ScriptSphereShape const&);
     // NOLINTEND
 
 public:
@@ -76,7 +77,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleDebugUtilities

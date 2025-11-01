@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Json::Value> mJsonValue;
-    ::ll::TypedStorage<4, 4, int> mChangeVersion;
+    ::ll::TypedStorage<4, 4, int>            mChangeVersion;
     // NOLINTEND
 
 public:
@@ -18,5 +18,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::PropertyBag& EMPTY();
     // NOLINTEND
-
 };

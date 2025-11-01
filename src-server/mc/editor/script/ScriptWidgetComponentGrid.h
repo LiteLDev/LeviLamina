@@ -28,11 +28,11 @@ class ScriptWidgetComponentGrid : public ::Editor::ScriptModule::ScriptWidgetCom
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk807d84;
+    ::ll::UntypedStorage<4, 4>  mUnk807d84;
     ::ll::UntypedStorage<4, 24> mUnk41e8fa;
-    ::ll::UntypedStorage<4, 8> mUnk3010d0;
-    ::ll::UntypedStorage<4, 8> mUnk93b547;
-    ::ll::UntypedStorage<4, 8> mUnkc7a48b;
+    ::ll::UntypedStorage<4, 8>  mUnk3010d0;
+    ::ll::UntypedStorage<4, 8>  mUnk93b547;
+    ::ll::UntypedStorage<4, 8>  mUnkc7a48b;
     // NOLINTEND
 
 public:
@@ -55,23 +55,39 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptWidgetComponentGrid(::Editor::ScriptModule::ScriptWidgetComponentGrid const&);
 
-    MCNAPI ScriptWidgetComponentGrid(::Editor::ServiceProviderCollection& serviceProviders, ::mce::UUID const& componentId, ::std::string const& componentName, ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner, ::Editor::ScriptModule::ScriptWidgetService& parentService, ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentGridOptions> options);
+    MCNAPI ScriptWidgetComponentGrid(
+        ::Editor::ServiceProviderCollection&                                      serviceProviders,
+        ::mce::UUID const&                                                        componentId,
+        ::std::string const&                                                      componentName,
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>  owner,
+        ::Editor::ScriptModule::ScriptWidgetService&                              parentService,
+        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentGridOptions> options
+    );
 
-    MCNAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptRGBA, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent> _getGridColor() const;
+    MCNAPI ::Scripting::
+        Result<::ScriptModuleMinecraft::ScriptRGBA, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+        _getGridColor() const;
 
-    MCNAPI ::Scripting::Result<::Vec2, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent> _getGridCount() const;
+    MCNAPI ::Scripting::Result<::Vec2, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getGridCount() const;
 
-    MCNAPI ::Scripting::Result<::Vec2, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent> _getGridSize() const;
+    MCNAPI ::Scripting::Result<::Vec2, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getGridSize() const;
 
-    MCNAPI ::Scripting::Result<::Scripting::Plane, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent> _getPlane() const;
+    MCNAPI ::Scripting::Result<::Scripting::Plane, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getPlane() const;
 
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent> _setGridColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _setGridColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent> _setGridCount(::Vec2 const& gridCount);
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _setGridCount(::Vec2 const& gridCount);
 
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent> _setGridSize(::Vec2 const& gridSize);
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _setGridSize(::Vec2 const& gridSize);
 
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent> _setPlane(::Scripting::Plane plane);
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _setPlane(::Scripting::Plane plane);
     // NOLINTEND
 
 public:
@@ -85,7 +101,14 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentGrid const&);
 
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::mce::UUID const& componentId, ::std::string const& componentName, ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner, ::Editor::ScriptModule::ScriptWidgetService& parentService, ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentGridOptions> options);
+    MCNAPI void* $ctor(
+        ::Editor::ServiceProviderCollection&                                      serviceProviders,
+        ::mce::UUID const&                                                        componentId,
+        ::std::string const&                                                      componentName,
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>  owner,
+        ::Editor::ScriptModule::ScriptWidgetService&                              parentService,
+        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentGridOptions> options
+    );
     // NOLINTEND
 
 public:
@@ -99,7 +122,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

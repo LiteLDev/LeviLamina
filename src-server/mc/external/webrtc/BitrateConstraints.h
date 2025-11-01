@@ -18,7 +18,6 @@ public:
     BitrateConstraints& operator=(BitrateConstraints const&);
     BitrateConstraints(BitrateConstraints const&);
     BitrateConstraints();
-
 };
 
-}
+} // namespace webrtc

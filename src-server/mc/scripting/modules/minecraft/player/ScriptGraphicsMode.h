@@ -22,7 +22,6 @@ public:
 
     MCNAPI static ::std::string getModeName(::GraphicsMode mode);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

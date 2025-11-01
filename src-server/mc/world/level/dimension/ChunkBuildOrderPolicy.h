@@ -19,44 +19,43 @@ public:
     // clang-format off
     struct Influence;
     // clang-format on
-    
+
     // ChunkBuildOrderPolicy inner types define
     enum class HintType : int {
-        Player = 0,
-        TickingAreaBox = 1,
+        Player            = 0,
+        TickingAreaBox    = 1,
         TickingAreaCircle = 2,
     };
-    
+
     struct Influence {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk6eb64a;
+        ::ll::UntypedStorage<8, 8>  mUnk6eb64a;
         ::ll::UntypedStorage<4, 12> mUnk2033fc;
-        ::ll::UntypedStorage<4, 4> mUnkc7237f;
+        ::ll::UntypedStorage<4, 4>  mUnkc7237f;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Influence& operator=(Influence const&);
         Influence(Influence const&);
         Influence();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI int getPriority(::ChunkPos const& cp) const;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::ChunkBuildOrderPolicy::Influence>> mPositionMap;
-    ::ll::TypedStorage<8, 32, ::SpinLockImpl> mChunkPosAsyncSpinLock;
+    ::ll::TypedStorage<8, 32, ::SpinLockImpl>                                                 mChunkPosAsyncSpinLock;
     ::ll::TypedStorage<8, 24, ::std::vector<::ChunkBuildOrderPolicy::Influence>> mChunkPosAndDirectionAsync;
-    ::ll::TypedStorage<4, 4, uint> mLastHandle;
+    ::ll::TypedStorage<4, 4, uint>                                               mLastHandle;
     // NOLINTEND
 
 public:
@@ -75,10 +74,21 @@ public:
     virtual void unregisterForUpdates(uint handle) /*override*/;
 
     // vIndex: 4
-    virtual void setPlayerInfluence(uint handle, ::ChunkPos const& playerPosition, ::Vec3 const& playerMovementDirection) /*override*/;
+    virtual void setPlayerInfluence(
+        uint              handle,
+        ::ChunkPos const& playerPosition,
+        ::Vec3 const&     playerMovementDirection
+    ) /*override*/;
 
     // vIndex: 5
-    virtual void setTickingAreaInfluence(uint handle, ::ChunkPos const& tickingAreaPosition, int sizeX, int sizeZ, bool isCircle, bool preload) /*override*/;
+    virtual void setTickingAreaInfluence(
+        uint              handle,
+        ::ChunkPos const& tickingAreaPosition,
+        int               sizeX,
+        int               sizeZ,
+        bool              isCircle,
+        bool              preload
+    ) /*override*/;
 
     // vIndex: 6
     virtual void updateInfluences() /*override*/;
@@ -93,9 +103,17 @@ public:
 
     MCNAPI void $unregisterForUpdates(uint handle);
 
-    MCNAPI void $setPlayerInfluence(uint handle, ::ChunkPos const& playerPosition, ::Vec3 const& playerMovementDirection);
+    MCNAPI void
+    $setPlayerInfluence(uint handle, ::ChunkPos const& playerPosition, ::Vec3 const& playerMovementDirection);
 
-    MCNAPI void $setTickingAreaInfluence(uint handle, ::ChunkPos const& tickingAreaPosition, int sizeX, int sizeZ, bool isCircle, bool preload);
+    MCNAPI void $setTickingAreaInfluence(
+        uint              handle,
+        ::ChunkPos const& tickingAreaPosition,
+        int               sizeX,
+        int               sizeZ,
+        bool              isCircle,
+        bool              preload
+    );
 
     MCNAPI void $updateInfluences();
     // NOLINTEND
@@ -105,5 +123,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

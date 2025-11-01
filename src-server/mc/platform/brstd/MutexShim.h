@@ -17,7 +17,6 @@ public:
     MutexShim& operator=(MutexShim const&);
     MutexShim(MutexShim const&);
     MutexShim();
-
 };
 
-}
+} // namespace brstd::detail

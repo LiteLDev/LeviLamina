@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
-    ::ll::TypedStorage<4, 4, int> mExperienceValue;
+    ::ll::TypedStorage<4, 4, int>                         mExperienceValue;
     // NOLINTEND
 
 public:
@@ -29,5 +29,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

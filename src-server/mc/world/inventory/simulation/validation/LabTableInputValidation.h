@@ -17,10 +17,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual bool isItemAllowedInSlot(::ContainerScreenContext const& screenContext, int const slot, ::ItemStackBase const& item, int const amount, bool) const /*override*/;
+    virtual bool isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
+        bool
+    ) const /*override*/;
 
     // vIndex: 9
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
+        /*override*/;
 
     // vIndex: 7
     virtual bool canDestroy(::ContainerScreenContext const& screenContext) const /*override*/;
@@ -32,7 +39,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isItemAllowedInSlot(::ContainerScreenContext const& screenContext, int const slot, ::ItemStackBase const& item, int const amount, bool) const;
+    MCNAPI bool $isItemAllowedInSlot(
+        ::ContainerScreenContext const& screenContext,
+        int const                       slot,
+        ::ItemStackBase const&          item,
+        int const                       amount,
+        bool
+    ) const;
 
     MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
@@ -44,5 +57,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

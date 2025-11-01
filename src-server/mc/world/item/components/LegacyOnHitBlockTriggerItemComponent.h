@@ -22,7 +22,7 @@ class LegacyOnHitBlockTriggerItemComponent : public ::LegacyTriggerItemComponent
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnHitBlockSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnHitBlockSubscription;
     ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnHitBlock;
     // NOLINTEND
 
@@ -71,5 +71,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

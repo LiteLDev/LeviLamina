@@ -4,8 +4,7 @@
 
 namespace Bedrock::Threading {
 
-template<typename T0>
-class WhenAll {
-};
+template <typename T0>
+class WhenAll {};
 
-}
+} // namespace Bedrock::Threading

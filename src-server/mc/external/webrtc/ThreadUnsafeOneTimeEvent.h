@@ -16,7 +16,6 @@ public:
     ThreadUnsafeOneTimeEvent& operator=(ThreadUnsafeOneTimeEvent const&);
     ThreadUnsafeOneTimeEvent(ThreadUnsafeOneTimeEvent const&);
     ThreadUnsafeOneTimeEvent();
-
 };
 
-}
+} // namespace webrtc

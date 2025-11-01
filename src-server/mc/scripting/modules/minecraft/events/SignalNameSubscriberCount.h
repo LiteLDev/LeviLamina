@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> name;
-    ::ll::TypedStorage<8, 8, uint64> count;
+    ::ll::TypedStorage<8, 8, uint64>         count;
     // NOLINTEND
 
 public:
@@ -23,7 +23,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

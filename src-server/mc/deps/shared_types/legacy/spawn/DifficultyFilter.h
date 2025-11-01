@@ -17,7 +17,6 @@ public:
     DifficultyFilter& operator=(DifficultyFilter const&);
     DifficultyFilter(DifficultyFilter const&);
     DifficultyFilter();
-
 };
 
-}
+} // namespace SharedTypes::Legacy::Spawn

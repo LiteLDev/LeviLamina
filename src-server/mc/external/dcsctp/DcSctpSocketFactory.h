@@ -20,7 +20,12 @@ public:
     virtual ~DcSctpSocketFactory();
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::dcsctp::DcSctpSocketInterface> Create(::std::string_view log_prefix, ::dcsctp::DcSctpSocketCallbacks& callbacks, ::std::unique_ptr<::dcsctp::PacketObserver> packet_observer, ::dcsctp::DcSctpOptions const& options);
+    virtual ::std::unique_ptr<::dcsctp::DcSctpSocketInterface> Create(
+        ::std::string_view                          log_prefix,
+        ::dcsctp::DcSctpSocketCallbacks&            callbacks,
+        ::std::unique_ptr<::dcsctp::PacketObserver> packet_observer,
+        ::dcsctp::DcSctpOptions const&              options
+    );
     // NOLINTEND
 
 public:
@@ -32,7 +37,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::dcsctp::DcSctpSocketInterface> $Create(::std::string_view log_prefix, ::dcsctp::DcSctpSocketCallbacks& callbacks, ::std::unique_ptr<::dcsctp::PacketObserver> packet_observer, ::dcsctp::DcSctpOptions const& options);
+    MCNAPI ::std::unique_ptr<::dcsctp::DcSctpSocketInterface> $Create(
+        ::std::string_view                          log_prefix,
+        ::dcsctp::DcSctpSocketCallbacks&            callbacks,
+        ::std::unique_ptr<::dcsctp::PacketObserver> packet_observer,
+        ::dcsctp::DcSctpOptions const&              options
+    );
     // NOLINTEND
 
 public:
@@ -40,7 +50,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

@@ -4,8 +4,7 @@
 
 namespace rtc {
 
-template<typename T0>
-class WeakPtr {
-};
+template <typename T0>
+class WeakPtr {};
 
-}
+} // namespace rtc

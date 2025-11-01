@@ -28,7 +28,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string const& str);
     // NOLINTEND
-
 };
 
-}
+} // namespace PlayerMessaging

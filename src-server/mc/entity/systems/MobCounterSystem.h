@@ -22,7 +22,12 @@ namespace MobCounterSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void getMobCount(::ViewT<::StrictEntityContext, ::Include<::ActorTickedComponent, ::MobFlagComponent>, ::Exclude<::ActorRemovedFlagComponent, ::PlayerComponent>> view);
+MCNAPI void getMobCount(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorTickedComponent, ::MobFlagComponent>,
+        ::Exclude<::ActorRemovedFlagComponent, ::PlayerComponent>> view
+);
 // NOLINTEND
 
-}
+} // namespace MobCounterSystem

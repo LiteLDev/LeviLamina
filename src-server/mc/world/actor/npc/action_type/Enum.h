@@ -5,7 +5,7 @@
 namespace npc::_ActionType {
 
 enum class Enum : uchar {
-    Url = 0,
+    Url     = 0,
     Command = 1,
     Invalid = 2,
 };

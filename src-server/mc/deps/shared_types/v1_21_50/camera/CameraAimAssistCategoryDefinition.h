@@ -17,7 +17,7 @@ struct CameraAimAssistCategoryDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkd65ae8;
+    ::ll::UntypedStorage<8, 32>  mUnkd65ae8;
     ::ll::UntypedStorage<8, 144> mUnk779abf;
     // NOLINTEND
 
@@ -32,7 +32,8 @@ public:
     // NOLINTBEGIN
     MCNAPI CameraAimAssistCategoryDefinition(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
 
-    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition& operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&
+    operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
 
     MCNAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&) const;
 
@@ -44,7 +45,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition>
+    read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
@@ -58,7 +60,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_50

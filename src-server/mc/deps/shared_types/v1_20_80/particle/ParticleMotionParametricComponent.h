@@ -19,7 +19,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 152> mUnkb116c9;
     ::ll::UntypedStorage<8, 152> mUnk5853e9;
-    ::ll::UntypedStorage<8, 56> mUnkab6481;
+    ::ll::UntypedStorage<8, 56>  mUnkab6481;
     // NOLINTEND
 
 public:
@@ -42,7 +42,8 @@ public:
     // NOLINTBEGIN
     MCNAPI ParticleMotionParametricComponent(::SharedTypes::v1_20_80::ParticleMotionParametricComponent&&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ParticleMotionParametricComponent& operator=(::SharedTypes::v1_20_80::ParticleMotionParametricComponent const&);
+    MCNAPI ::SharedTypes::v1_20_80::ParticleMotionParametricComponent&
+    operator=(::SharedTypes::v1_20_80::ParticleMotionParametricComponent const&);
     // NOLINTEND
 
 public:
@@ -80,7 +81,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_80

@@ -19,23 +19,23 @@ class ProjectCommand : public ::ServerCommand {
 public:
     // ProjectCommand inner types define
     enum class Subcommand : int {
-        None = 0,
+        None   = 0,
         Export = 1,
     };
-    
+
     enum class ExportSubcommandTypes : int {
-        None = 0,
-        Project = 1,
-        World = 2,
+        None     = 0,
+        Project  = 1,
+        World    = 2,
         Template = 3,
     };
-    
+
     enum class TaskState : int {
-        Running = 0,
+        Running  = 0,
         Complete = 1,
-        Error = 2,
+        Error    = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,15 +64,43 @@ public:
     // NOLINTBEGIN
     MCAPI static void _cleanupOutputDirOnExportFailure(::Core::PathBuffer<::std::string> const& pathToOutputDir);
 
-    MCAPI static void _exportSubcommand(::CommandOrigin const&, ::CommandOutput& output, ::ProjectCommand::ExportSubcommandTypes commandExportType, ::ActorUniqueID callingPlayerUniqueId);
+    MCAPI static void _exportSubcommand(
+        ::CommandOrigin const&,
+        ::CommandOutput&                        output,
+        ::ProjectCommand::ExportSubcommandTypes commandExportType,
+        ::ActorUniqueID                         callingPlayerUniqueId
+    );
 
-    MCAPI static ::Core::PathBuffer<::std::string> _getLevelExportPath(::ActorUniqueID callingPlayerUniqueId, ::Level* level, ::std::string const& exportFileExtension);
+    MCAPI static ::Core::PathBuffer<::std::string> _getLevelExportPath(
+        ::ActorUniqueID      callingPlayerUniqueId,
+        ::Level*             level,
+        ::std::string const& exportFileExtension
+    );
 
-    MCAPI static void _outputFormattedCommand(::ActorUniqueID callingPlayerUniqueId, ::Level* level, ::std::string const& prefix, ::std::string const& commandType, ::std::string const& msg, ::std::vector<::std::string> const& args);
+    MCAPI static void _outputFormattedCommand(
+        ::ActorUniqueID                     callingPlayerUniqueId,
+        ::Level*                            level,
+        ::std::string const&                prefix,
+        ::std::string const&                commandType,
+        ::std::string const&                msg,
+        ::std::vector<::std::string> const& args
+    );
 
-    MCAPI static void _reportErrorToUser(::ActorUniqueID callingPlayerUniqueId, ::Level* level, ::std::string const& commandType, ::std::string const& msg, ::std::vector<::std::string> const& args);
+    MCAPI static void _reportErrorToUser(
+        ::ActorUniqueID                     callingPlayerUniqueId,
+        ::Level*                            level,
+        ::std::string const&                commandType,
+        ::std::string const&                msg,
+        ::std::vector<::std::string> const& args
+    );
 
-    MCAPI static void _reportToUser(::ActorUniqueID callingPlayerUniqueId, ::Level* level, ::std::string const& commandType, ::std::string const& msg, ::std::vector<::std::string> const& args);
+    MCAPI static void _reportToUser(
+        ::ActorUniqueID                     callingPlayerUniqueId,
+        ::Level*                            level,
+        ::std::string const&                commandType,
+        ::std::string const&                msg,
+        ::std::vector<::std::string> const& args
+    );
 
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
@@ -88,5 +116,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

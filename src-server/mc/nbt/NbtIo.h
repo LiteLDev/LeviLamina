@@ -27,4 +27,4 @@ MCAPI ::std::unique_ptr<::CompoundTag> readOrGetEmpty(::IDataInput& dis);
 MCAPI void write(::CompoundTag const* tag, ::IDataOutput& dos);
 // NOLINTEND
 
-}
+} // namespace NbtIo

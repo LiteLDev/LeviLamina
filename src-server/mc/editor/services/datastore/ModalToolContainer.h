@@ -56,9 +56,17 @@ public:
 
     MCNAPI ::Json::Value getDataPayload(::Editor::DataStore::PayloadDescription const& desc) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> handleDataEvent(::Editor::DataStore::EventType eventType, ::Json::Value const& payload, ::Editor::DataStore::PayloadDescription const& desc);
+    MCNAPI ::Scripting::Result_deprecated<void> handleDataEvent(
+        ::Editor::DataStore::EventType                 eventType,
+        ::Json::Value const&                           payload,
+        ::Editor::DataStore::PayloadDescription const& desc
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void> handleSelectedToolEvent(::Editor::DataStore::EventType eventType, ::Json::Value const& payload, bool isNetworkEvent);
+    MCNAPI ::Scripting::Result_deprecated<void> handleSelectedToolEvent(
+        ::Editor::DataStore::EventType eventType,
+        ::Json::Value const&           payload,
+        bool                           isNetworkEvent
+    );
     // NOLINTEND
 
 public:
@@ -80,7 +88,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::DataStore

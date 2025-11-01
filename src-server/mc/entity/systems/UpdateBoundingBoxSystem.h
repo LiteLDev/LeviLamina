@@ -14,5 +14,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createSystem(::BaseGameVersion const& version, bool isClientSide);
     // NOLINTEND
-
 };

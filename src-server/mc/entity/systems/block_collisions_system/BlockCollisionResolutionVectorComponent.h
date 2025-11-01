@@ -16,7 +16,6 @@ public:
     BlockCollisionResolutionVectorComponent& operator=(BlockCollisionResolutionVectorComponent const&);
     BlockCollisionResolutionVectorComponent(BlockCollisionResolutionVectorComponent const&);
     BlockCollisionResolutionVectorComponent();
-
 };
 
-}
+} // namespace BlockCollisionsSystem

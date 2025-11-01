@@ -17,7 +17,12 @@ namespace cereal { struct ReflectionCtx; }
 namespace CraftingItemCatalogPackStackLoadUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::CraftingItemCatalogPackStackLoadUtils::LoadResult> load(::ResourcePackStack const& packStack, ::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator, ::IMinecraftEventing& eventing);
+MCAPI ::std::vector<::CraftingItemCatalogPackStackLoadUtils::LoadResult> load(
+    ::ResourcePackStack const&                         packStack,
+    ::cereal::ReflectionCtx const&                     ctx,
+    ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator,
+    ::IMinecraftEventing&                              eventing
+);
 // NOLINTEND
 
-}
+} // namespace CraftingItemCatalogPackStackLoadUtils

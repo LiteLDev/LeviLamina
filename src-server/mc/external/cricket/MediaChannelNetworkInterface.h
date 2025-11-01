@@ -17,10 +17,10 @@ class MediaChannelNetworkInterface {
 public:
     // MediaChannelNetworkInterface inner types define
     enum class SocketType : int {
-        Rtp = 0,
+        Rtp  = 0,
         Rtcp = 1,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -54,7 +54,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

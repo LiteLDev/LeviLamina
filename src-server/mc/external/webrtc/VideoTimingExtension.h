@@ -27,7 +27,6 @@ public:
 
     MCNAPI static uchar const& kPacketizationFinishDeltaOffset();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

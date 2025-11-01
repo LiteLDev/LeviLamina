@@ -8,9 +8,9 @@ class VideoBitrateAllocation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnka9dff0;
+    ::ll::UntypedStorage<4, 4>   mUnka9dff0;
     ::ll::UntypedStorage<4, 160> mUnk83ac0d;
-    ::ll::UntypedStorage<1, 1> mUnk31ebe8;
+    ::ll::UntypedStorage<1, 1>   mUnk31ebe8;
     // NOLINTEND
 
 public:
@@ -45,7 +45,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

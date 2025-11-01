@@ -14,5 +14,4 @@ public:
     LoadingScreenIdManager& operator=(LoadingScreenIdManager const&);
     LoadingScreenIdManager(LoadingScreenIdManager const&);
     LoadingScreenIdManager();
-
 };

@@ -7,13 +7,14 @@
 
 namespace Editor::Network {
 
-class MouseBindingRegisterPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::MouseBindingRegisterPayload> {
+class MouseBindingRegisterPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::MouseBindingRegisterPayload> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk7135e9;
     ::ll::UntypedStorage<8, 48> mUnk192cd4;
-    ::ll::UntypedStorage<4, 4> mUnkf381c3;
+    ::ll::UntypedStorage<4, 4>  mUnkf381c3;
     // NOLINTEND
 
 public:
@@ -40,7 +41,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

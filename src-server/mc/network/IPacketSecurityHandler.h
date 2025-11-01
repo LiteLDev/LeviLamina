@@ -12,7 +12,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::PacketViolationResponse checkForViolation(::MinecraftPacketIds, ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const&, bool*) = 0;
+    virtual ::PacketViolationResponse checkForViolation(
+        ::MinecraftPacketIds,
+        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const&,
+        bool*
+    ) = 0;
 
     // vIndex: 1
     virtual uint getTelemetryData() = 0;
@@ -38,5 +42,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -10,4 +10,4 @@ MCNAPI ::std::add_lvalue_reference_t<char const[]> CHILDREN();
 MCNAPI ::std::add_lvalue_reference_t<char const[]> ID();
 // NOLINTEND
 
-}
+} // namespace Editor::DataStore::PropName

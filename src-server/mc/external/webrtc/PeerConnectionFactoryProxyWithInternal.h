@@ -4,8 +4,7 @@
 
 namespace webrtc {
 
-template<typename T0>
-class PeerConnectionFactoryProxyWithInternal {
-};
+template <typename T0>
+class PeerConnectionFactoryProxyWithInternal {};
 
-}
+} // namespace webrtc

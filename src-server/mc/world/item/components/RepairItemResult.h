@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 152, ::ItemStack> mResultItem;
-    ::ll::TypedStorage<4, 4, int> mMaterialUsed;
+    ::ll::TypedStorage<4, 4, int>           mMaterialUsed;
     // NOLINTEND
 
 public:
@@ -39,5 +39,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

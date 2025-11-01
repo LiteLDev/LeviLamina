@@ -25,7 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleServerAdmin::ScriptTransferPlayerNetherNetOptions& operator=(::ScriptModuleServerAdmin::ScriptTransferPlayerNetherNetOptions&&);
+    MCNAPI ::ScriptModuleServerAdmin::ScriptTransferPlayerNetherNetOptions&
+    operator=(::ScriptModuleServerAdmin::ScriptTransferPlayerNetherNetOptions&&);
 
     MCNAPI ~ScriptTransferPlayerNetherNetOptions();
     // NOLINTEND
@@ -41,7 +42,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleServerAdmin

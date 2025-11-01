@@ -13,7 +13,8 @@ struct ActorDataJumpDurationComponent;
 
 namespace ActorData {
 
-struct ActorDataJumpDurationOperations : public ::ActorData::ActorDataSimpleOperations<::ReplayStateValueDiff<schar>, ::ActorDataJumpDurationComponent, schar> {
-};
+struct ActorDataJumpDurationOperations
+: public ::ActorData::
+      ActorDataSimpleOperations<::ReplayStateValueDiff<schar>, ::ActorDataJumpDurationComponent, schar> {};
 
-}
+} // namespace ActorData

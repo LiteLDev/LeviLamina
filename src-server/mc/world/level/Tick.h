@@ -21,5 +21,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Tick const& MAX();
     // NOLINTEND
-
 };

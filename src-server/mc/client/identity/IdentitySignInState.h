@@ -6,9 +6,9 @@ namespace Social {
 
 enum class IdentitySignInState : int {
     NotSignedIn = 0,
-    SigningIn = 1,
-    SignedIn = 2,
-    Count = 3,
+    SigningIn   = 1,
+    SignedIn    = 2,
+    Count       = 3,
 };
 
 }

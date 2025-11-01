@@ -14,8 +14,7 @@ struct BiomeNoiseTarget {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Biome const*> data;
+    ::ll::TypedStorage<8, 8, ::Biome const*>        data;
     ::ll::TypedStorage<8, 216, ::ClimateParameters> climateParameters;
     // NOLINTEND
-
 };

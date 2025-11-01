@@ -4,5 +4,5 @@
 
 enum class EventResult : int {
     StopProcessing = 0,
-    KeepGoing = 1,
+    KeepGoing      = 1,
 };

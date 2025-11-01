@@ -27,5 +27,4 @@ public:
     // MCAPI void processEvent(EventFuncPtr);
 
     // // ActorEventListener
-    // MCAPI void unregisterListener(gsl::not_null<T0*>);
-};
+    // MCAPI void unregisterListener(gsl::not_null<T0*>);};

@@ -25,5 +25,4 @@ public:
     // NOLINTBEGIN
     MCAPI ::PlayerArmorDamagePacketPayload& operator=(::PlayerArmorDamagePacketPayload&&);
     // NOLINTEND
-
 };

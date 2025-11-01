@@ -27,5 +27,4 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeMountainParamsData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
-
 };

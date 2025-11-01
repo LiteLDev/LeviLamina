@@ -51,7 +51,6 @@ public:
 
     MCNAPI ::webrtc::scoped_refptr<::webrtc::AudioProcessorInterface> $GetAudioProcessor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

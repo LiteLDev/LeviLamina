@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-struct ForwardTsnSupportedParameterConfig {
-};
+struct ForwardTsnSupportedParameterConfig {};
 
-}
+} // namespace dcsctp

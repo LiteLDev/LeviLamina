@@ -27,7 +27,7 @@ public:
     // clang-format off
     struct Pose;
     // clang-format on
-    
+
     // ArmorStand inner types define
     struct Pose {
     public:
@@ -41,14 +41,13 @@ public:
         ::ll::TypedStorage<4, 12, ::Vec3> mLeftLegPose;
         ::ll::TypedStorage<4, 12, ::Vec3> mRightItemPose;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, uint64> mLastHit;
-    ::ll::TypedStorage<4, 4, int> mLastCircuitStrength;
+    ::ll::TypedStorage<4, 4, int>    mLastCircuitStrength;
     // NOLINTEND
 
 public:
@@ -95,7 +94,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ArmorStand(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI ArmorStand(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
 
     MCAPI void _causeDamage(float dmg);
 
@@ -145,7 +148,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -177,5 +184,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

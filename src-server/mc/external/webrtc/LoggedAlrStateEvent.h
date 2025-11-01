@@ -17,7 +17,6 @@ public:
     LoggedAlrStateEvent& operator=(LoggedAlrStateEvent const&);
     LoggedAlrStateEvent(LoggedAlrStateEvent const&);
     LoggedAlrStateEvent();
-
 };
 
-}
+} // namespace webrtc

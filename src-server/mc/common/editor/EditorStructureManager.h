@@ -20,10 +20,10 @@ class EditorStructureManager : public ::IStructureTemplateManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnkc32dd8;
-    ::ll::UntypedStorage<8, 80> mUnk95a7de;
-    ::ll::UntypedStorage<8, 8> mUnka9f656;
-    ::ll::UntypedStorage<8, 64> mUnka91f3a;
+    ::ll::UntypedStorage<8, 64>  mUnkc32dd8;
+    ::ll::UntypedStorage<8, 80>  mUnk95a7de;
+    ::ll::UntypedStorage<8, 8>   mUnka9f656;
+    ::ll::UntypedStorage<8, 64>  mUnka91f3a;
     ::ll::UntypedStorage<8, 280> mUnk1c5bc9;
     // NOLINTEND
 
@@ -40,7 +40,8 @@ public:
     virtual ~EditorStructureManager() /*override*/;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> getOrCreateJigsawStructureMetadata(::StructurePoolElement const& structurePoolElement) /*override*/;
+    virtual ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata>
+    getOrCreateJigsawStructureMetadata(::StructurePoolElement const& structurePoolElement) /*override*/;
 
     // vIndex: 2
     virtual ::StructureTemplate& getOrCreate(::std::string const& structureName) /*override*/;
@@ -78,7 +79,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> $getOrCreateJigsawStructureMetadata(::StructurePoolElement const& structurePoolElement);
+    MCNAPI ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata>
+    $getOrCreateJigsawStructureMetadata(::StructurePoolElement const& structurePoolElement);
 
     MCNAPI ::StructureTemplate& $getOrCreate(::std::string const& structureName);
 
@@ -94,7 +96,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

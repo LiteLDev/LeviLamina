@@ -24,8 +24,8 @@ public:
     ::ll::TypedStorage<4, 4, float> mShakeAnimO;
     ::ll::TypedStorage<4, 4, float> mInterestedAngle;
     ::ll::TypedStorage<4, 4, float> mInterestedAngleO;
-    ::ll::TypedStorage<1, 1, bool> mIsWet;
-    ::ll::TypedStorage<1, 1, bool> mIsShaking;
+    ::ll::TypedStorage<1, 1, bool>  mIsWet;
+    ::ll::TypedStorage<1, 1, bool>  mIsShaking;
     // NOLINTEND
 
 public:
@@ -47,7 +47,7 @@ public:
     virtual void setSitting(bool value) /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 154
     virtual bool isAlliedTo(::Mob* other) /*override*/;
@@ -85,7 +85,7 @@ public:
 
     MCFOLD void $setSitting(bool value);
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI bool $isAlliedTo(::Mob* other);
 
@@ -99,5 +99,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

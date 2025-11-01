@@ -21,5 +21,4 @@ public:
     zlib_filefunc_def_s& operator=(zlib_filefunc_def_s const&);
     zlib_filefunc_def_s(zlib_filefunc_def_s const&);
     zlib_filefunc_def_s();
-
 };

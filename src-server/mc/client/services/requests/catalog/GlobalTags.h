@@ -14,5 +14,4 @@ public:
     GlobalTags& operator=(GlobalTags const&);
     GlobalTags(GlobalTags const&);
     GlobalTags();
-
 };

@@ -15,5 +15,4 @@ public:
     ColumnCachedData& operator=(ColumnCachedData const&);
     ColumnCachedData(ColumnCachedData const&);
     ColumnCachedData();
-
 };

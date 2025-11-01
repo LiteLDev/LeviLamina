@@ -18,16 +18,16 @@ class MobSpawnerData : public ::WeightedRandom::WeighedRandomItem {
 public:
     // MobSpawnerData inner types define
     using OnSpawnHerd = ::std::function<void(::std::vector<::Mob*>&, ::Random&)>;
-    
+
     using OnSelectActor = ::std::function<::ActorDefinitionIdentifier(::Random&)>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mIdentifier;
-    ::ll::TypedStorage<8, 392, ::MobSpawnRules> mSpawnRules;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>                             mIdentifier;
+    ::ll::TypedStorage<8, 392, ::MobSpawnRules>                                         mSpawnRules;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::vector<::Mob*>&, ::Random&)>> mOnSpawnHerd;
-    ::ll::TypedStorage<8, 64, ::std::function<::ActorDefinitionIdentifier(::Random&)>> mOnSelectEntity;
+    ::ll::TypedStorage<8, 64, ::std::function<::ActorDefinitionIdentifier(::Random&)>>  mOnSelectEntity;
     // NOLINTEND
 
 public:
@@ -47,5 +47,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

@@ -4,7 +4,6 @@
 
 namespace ScriptModuleMinecraft {
 
-class ScriptItemUtilities {
-};
+class ScriptItemUtilities {};
 
-}
+} // namespace ScriptModuleMinecraft

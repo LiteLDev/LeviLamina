@@ -17,7 +17,6 @@ public:
     WorldAgeFilter& operator=(WorldAgeFilter const&);
     WorldAgeFilter(WorldAgeFilter const&);
     WorldAgeFilter();
-
 };
 
-}
+} // namespace SharedTypes::Legacy::Spawn

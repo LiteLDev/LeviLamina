@@ -6,7 +6,7 @@ struct AsyncJoinDeny {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke49edf;
+    ::ll::UntypedStorage<1, 1>  mUnke49edf;
     ::ll::UntypedStorage<8, 40> mUnkd6385c;
     // NOLINTEND
 
@@ -27,5 +27,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

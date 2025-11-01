@@ -44,13 +44,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ProxyConnection(::rtc::WeakPtr<::cricket::PortInterface> port, uint64 index, ::cricket::Candidate const& remote_candidate);
+    MCNAPI ProxyConnection(
+        ::rtc::WeakPtr<::cricket::PortInterface> port,
+        uint64                                   index,
+        ::cricket::Candidate const&              remote_candidate
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::rtc::WeakPtr<::cricket::PortInterface> port, uint64 index, ::cricket::Candidate const& remote_candidate);
+    MCNAPI void*
+    $ctor(::rtc::WeakPtr<::cricket::PortInterface> port, uint64 index, ::cricket::Candidate const& remote_candidate);
     // NOLINTEND
 
 public:
@@ -66,7 +71,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

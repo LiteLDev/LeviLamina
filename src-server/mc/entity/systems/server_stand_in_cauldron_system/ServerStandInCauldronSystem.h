@@ -13,4 +13,4 @@ namespace ServerStandInCauldronSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace ServerStandInCauldronSystem

@@ -3,6 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class TargetRenderAPI : uchar {
-    Default = 0,
+    Default      = 0,
     Experimental = 1,
 };

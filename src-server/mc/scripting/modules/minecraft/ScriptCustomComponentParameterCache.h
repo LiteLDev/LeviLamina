@@ -23,7 +23,7 @@ public:
     struct CachedHandle;
     struct ParameterCache;
     // clang-format on
-    
+
     // ScriptCustomComponentParameterCache inner types define
     struct CachedHandle {
     public:
@@ -32,27 +32,26 @@ public:
         ::ll::UntypedStorage<8, 16> mUnk902597;
         ::ll::UntypedStorage<8, 32> mUnk109ec1;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         CachedHandle& operator=(CachedHandle const&);
         CachedHandle(CachedHandle const&);
         CachedHandle();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~CachedHandle();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
     struct ParameterCache {
     public:
         // member variables
@@ -60,27 +59,26 @@ public:
         ::ll::UntypedStorage<8, 24> mUnk15aef4;
         ::ll::UntypedStorage<8, 32> mUnk6c3885;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ParameterCache& operator=(ParameterCache const&);
         ParameterCache(ParameterCache const&);
         ParameterCache();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~ParameterCache();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -100,11 +98,20 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ScriptCustomComponentParameterCache(::ServerScriptManagerEvents& events);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const& _getOrCreatePayload(::ScriptModuleMinecraft::ScriptCustomComponentParameterCache::ParameterCache& cache, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+    _getOrCreatePayload(
+        ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache::ParameterCache& cache,
+        ::Scripting::WeakLifetimeScope const&                                         scope
+    );
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const& getOrCreateParameterPayload(::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle const& handle, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+    getOrCreateParameterPayload(
+        ::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle const& handle,
+        ::Scripting::WeakLifetimeScope const&                                     scope
+    );
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle registerParameterPayload(::cereal::DynamicValue const& payload);
+    MCNAPI ::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle
+    registerParameterPayload(::cereal::DynamicValue const& payload);
     // NOLINTEND
 
 public:
@@ -112,7 +119,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ServerScriptManagerEvents& events);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -24,11 +24,38 @@ namespace RemoveAllPassengersSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createRideableComponentRemovalSystem();
 
-MCNAPI void removeAllPassengers(::VehicleComponent const& vehicleComponent, bool actorIsBeingDestroyed, bool exitFromPassenger, ::EntityModifier<::ActorIsBeingDestroyedFlagComponent, ::ExitFromPassengerFlagComponent, ::StopRidingRequestComponent>& modifier);
+MCNAPI void removeAllPassengers(
+    ::VehicleComponent const& vehicleComponent,
+    bool                      actorIsBeingDestroyed,
+    bool                      exitFromPassenger,
+    ::EntityModifier<
+        ::ActorIsBeingDestroyedFlagComponent,
+        ::ExitFromPassengerFlagComponent,
+        ::StopRidingRequestComponent>& modifier
+);
 
-MCNAPI void removeAllPassengersRequestProcess(::ViewT<::StrictEntityContext, ::Include<::RemoveAllPassengersRequestComponent>, ::VehicleComponent const, ::Optional<::ActorIsBeingDestroyedFlagComponent>> view, ::EntityModifier<::ActorIsBeingDestroyedFlagComponent, ::ExitFromPassengerFlagComponent, ::StopRidingRequestComponent> mainModifier, ::EntityModifier<::RemoveAllPassengersRequestComponent> requestModifier);
+MCNAPI void removeAllPassengersRequestProcess(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::RemoveAllPassengersRequestComponent>,
+        ::VehicleComponent const,
+        ::Optional<::ActorIsBeingDestroyedFlagComponent>> view,
+    ::EntityModifier<
+        ::ActorIsBeingDestroyedFlagComponent,
+        ::ExitFromPassengerFlagComponent,
+        ::StopRidingRequestComponent>                       mainModifier,
+    ::EntityModifier<::RemoveAllPassengersRequestComponent> requestModifier
+);
 
-MCNAPI void tickRemoveAllPassengers(::StrictEntityContext&, ::VehicleComponent const& vehicleComponent, ::Optional<::ActorIsBeingDestroyedFlagComponent> actorIsBeingDestroyed, ::EntityModifier<::ActorIsBeingDestroyedFlagComponent, ::ExitFromPassengerFlagComponent, ::StopRidingRequestComponent> modifier);
+MCNAPI void tickRemoveAllPassengers(
+    ::StrictEntityContext&,
+    ::VehicleComponent const&                        vehicleComponent,
+    ::Optional<::ActorIsBeingDestroyedFlagComponent> actorIsBeingDestroyed,
+    ::EntityModifier<
+        ::ActorIsBeingDestroyedFlagComponent,
+        ::ExitFromPassengerFlagComponent,
+        ::StopRidingRequestComponent> modifier
+);
 // NOLINTEND
 
-}
+} // namespace RemoveAllPassengersSystem

@@ -17,5 +17,4 @@ public:
     BreakingItemParticleData& operator=(BreakingItemParticleData const&);
     BreakingItemParticleData(BreakingItemParticleData const&);
     BreakingItemParticleData();
-
 };

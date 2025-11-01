@@ -14,8 +14,8 @@ class ParticlesBlockExplosionEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mRadius;
-    ::ll::TypedStorage<4, 12, ::Vec3> mOrigin;
+    ::ll::TypedStorage<4, 4, float>                  mRadius;
+    ::ll::TypedStorage<4, 12, ::Vec3>                mOrigin;
     ::ll::TypedStorage<8, 24, ::std::vector<::Vec3>> mPositions;
     // NOLINTEND
 
@@ -32,5 +32,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

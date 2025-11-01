@@ -150,7 +150,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
 #include "mc/nbt/CompoundTagVariant.h"

@@ -16,8 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>> mTransformsInto;
-    ::ll::TypedStorage<2, 2, ushort> mConditionJson;
-    ::ll::TypedStorage<4, 4, uint> mMinPassingNeighbors;
+    ::ll::TypedStorage<2, 2, ushort>                              mConditionJson;
+    ::ll::TypedStorage<4, 4, uint>                                mMinPassingNeighbors;
     // NOLINTEND
 
 public:
@@ -51,5 +51,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

@@ -14,7 +14,8 @@ struct ActorDataSeatOffsetComponent;
 
 namespace ActorData {
 
-struct ActorDataSeatOffsetOperations : public ::ActorData::ActorDataSimpleOperations<::ReplayStateValueDiff<::Vec3>, ::ActorDataSeatOffsetComponent, ::Vec3> {
-};
+struct ActorDataSeatOffsetOperations
+: public ::ActorData::
+      ActorDataSimpleOperations<::ReplayStateValueDiff<::Vec3>, ::ActorDataSeatOffsetComponent, ::Vec3> {};
 
-}
+} // namespace ActorData

@@ -21,4 +21,4 @@ MCNAPI ::HashedString const& ROLLED_UP_UNROLLING();
 MCNAPI ::HashedString const& UNROLLED();
 // NOLINTEND
 
-}
+} // namespace ArmadilloState

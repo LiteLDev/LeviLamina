@@ -15,7 +15,7 @@ struct ActorKilledEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mActorContext;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>             mActorContext;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorDamageSource>> mSource;
     // NOLINTEND
 
@@ -30,5 +30,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

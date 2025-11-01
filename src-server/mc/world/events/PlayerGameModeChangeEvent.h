@@ -11,8 +11,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
-    ::ll::TypedStorage<4, 4, ::GameType> mFromGameMode;
-    ::ll::TypedStorage<4, 4, ::GameType> mToGameMode;
+    ::ll::TypedStorage<4, 4, ::GameType>       mFromGameMode;
+    ::ll::TypedStorage<4, 4, ::GameType>       mToGameMode;
     // NOLINTEND
 
 public:
@@ -26,5 +26,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

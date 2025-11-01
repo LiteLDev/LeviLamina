@@ -25,9 +25,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface& operator=(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
+    operator=(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface& operator=(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageScoreInterface&
+    operator=(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const&);
 
     MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageScoreInterface const& other) const;
 
@@ -45,7 +47,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

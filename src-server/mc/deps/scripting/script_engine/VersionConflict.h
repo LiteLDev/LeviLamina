@@ -31,7 +31,13 @@ public:
     // NOLINTBEGIN
     MCNAPI VersionConflict(::Scripting::VersionConflict&&);
 
-    MCNAPI VersionConflict(::Scripting::ModuleDescriptor const& conflictModule_, ::Scripting::ModuleDescriptor const& requestedByA_, ::Scripting::ModuleDescriptor const& requestedByB_, ::Scripting::ModuleDescriptor const& versionWantedByA_, ::Scripting::ModuleDescriptor const& versionWantedByB_);
+    MCNAPI VersionConflict(
+        ::Scripting::ModuleDescriptor const& conflictModule_,
+        ::Scripting::ModuleDescriptor const& requestedByA_,
+        ::Scripting::ModuleDescriptor const& requestedByB_,
+        ::Scripting::ModuleDescriptor const& versionWantedByA_,
+        ::Scripting::ModuleDescriptor const& versionWantedByB_
+    );
 
     MCNAPI ~VersionConflict();
     // NOLINTEND
@@ -41,7 +47,13 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Scripting::VersionConflict&&);
 
-    MCNAPI void* $ctor(::Scripting::ModuleDescriptor const& conflictModule_, ::Scripting::ModuleDescriptor const& requestedByA_, ::Scripting::ModuleDescriptor const& requestedByB_, ::Scripting::ModuleDescriptor const& versionWantedByA_, ::Scripting::ModuleDescriptor const& versionWantedByB_);
+    MCNAPI void* $ctor(
+        ::Scripting::ModuleDescriptor const& conflictModule_,
+        ::Scripting::ModuleDescriptor const& requestedByA_,
+        ::Scripting::ModuleDescriptor const& requestedByB_,
+        ::Scripting::ModuleDescriptor const& versionWantedByA_,
+        ::Scripting::ModuleDescriptor const& versionWantedByB_
+    );
     // NOLINTEND
 
 public:
@@ -49,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

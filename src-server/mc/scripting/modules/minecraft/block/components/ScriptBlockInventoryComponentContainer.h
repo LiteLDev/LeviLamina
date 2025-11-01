@@ -19,9 +19,9 @@ class ScriptBlockInventoryComponentContainer : public ::ScriptModuleMinecraft::S
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka24892;
+    ::ll::UntypedStorage<8, 8>  mUnka24892;
     ::ll::UntypedStorage<4, 12> mUnk743c06;
-    ::ll::UntypedStorage<8, 8> mUnkf22c88;
+    ::ll::UntypedStorage<8, 8>  mUnkf22c88;
     // NOLINTEND
 
 public:
@@ -48,7 +48,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockInventoryComponentContainer(::ScriptModuleMinecraft::ScriptBlockInventoryComponentContainer const&);
+    MCNAPI
+    ScriptBlockInventoryComponentContainer(::ScriptModuleMinecraft::ScriptBlockInventoryComponentContainer const&);
     // NOLINTEND
 
 public:
@@ -78,7 +79,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

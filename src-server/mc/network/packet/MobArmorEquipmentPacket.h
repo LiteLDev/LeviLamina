@@ -25,7 +25,7 @@ public:
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mLegs;
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mFeet;
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mBody;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>              mRuntimeId;
     // NOLINTEND
 
 public:
@@ -86,5 +86,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

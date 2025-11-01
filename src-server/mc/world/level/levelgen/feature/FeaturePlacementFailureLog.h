@@ -11,7 +11,7 @@ public:
     // clang-format off
     struct SourceMessagePair;
     // clang-format on
-    
+
     // FeaturePlacementFailureLog inner types define
     struct SourceMessagePair {
     public:
@@ -20,23 +20,22 @@ public:
         ::ll::TypedStorage<8, 8, ::Bedrock::StaticOptimizedString> source;
         ::ll::TypedStorage<8, 8, ::Bedrock::StaticOptimizedString> message;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~SourceMessagePair();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
     using Log = ::std::vector<::FeaturePlacementFailureLog::SourceMessagePair>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -56,5 +55,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

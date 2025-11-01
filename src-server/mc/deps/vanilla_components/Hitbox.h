@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/versionless/world/phys/AABB.h"
+#include "mc/world/phys/AABB.h"
 
 struct Hitbox {
 public:
@@ -13,5 +13,4 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3> mPivot;
     ::ll::TypedStorage<4, 24, ::AABB> mAabb;
     // NOLINTEND
-
 };

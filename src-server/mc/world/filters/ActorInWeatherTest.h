@@ -16,13 +16,13 @@ class ActorInWeatherTest : public ::FilterTest {
 public:
     // ActorInWeatherTest inner types define
     enum class WeatherType : int {
-        Undefined = -1,
-        Clear = 0,
-        Rain = 1,
-        Snow = 2,
+        Undefined    = -1,
+        Clear        = 0,
+        Rain         = 1,
+        Snow         = 2,
         Thunderstorm = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -76,5 +76,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

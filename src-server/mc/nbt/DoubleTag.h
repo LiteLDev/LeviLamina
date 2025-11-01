@@ -70,7 +70,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 namespace ll::inline literals::inline nbt_literals {
 [[nodiscard]] inline DoubleTag operator""_d(ldouble num) noexcept { return DoubleTag{(double)num}; }

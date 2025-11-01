@@ -17,7 +17,10 @@ namespace Core { class Path; }
 namespace PlayerDataSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void forEachIdByPrecedence(::PlayerStorageIds const& ids, ::std::function<bool(::std::string const&, ::std::string const&)> callback);
+MCAPI void forEachIdByPrecedence(
+    ::PlayerStorageIds const&                                         ids,
+    ::std::function<bool(::std::string const&, ::std::string const&)> callback
+);
 
 MCAPI ::Core::PathBuffer<::std::string> getPlayerFilename(::Core::Path const& fullPath, ::std::string const& fn);
 
@@ -27,7 +30,8 @@ MCAPI ::std::string legacyConsolePlayerKey(::std::string const& str);
 
 MCAPI ::std::unique_ptr<::CompoundTag> legacyLoadPlayer(::LevelStorage& storage, ::std::string const& clientUniqueName);
 
-MCAPI ::std::unique_ptr<::CompoundTag> loadPlayerData(::LevelStorage& storage, ::PlayerStorageIds const& playerIds, bool isHostingPlayer);
+MCAPI ::std::unique_ptr<::CompoundTag>
+loadPlayerData(::LevelStorage& storage, ::PlayerStorageIds const& playerIds, bool isHostingPlayer);
 
 MCAPI ::std::unique_ptr<::CompoundTag> loadPlayerDataFromTag(::LevelStorage& storage, ::std::string_view saveTag);
 
@@ -38,4 +42,4 @@ MCAPI ::std::string serverKey(::LevelStorage& storage, ::Player const& p);
 MCAPI ::std::string serverKey(::LevelStorage& storage, ::std::string_view uniqueName);
 // NOLINTEND
 
-}
+} // namespace PlayerDataSystem

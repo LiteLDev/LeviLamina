@@ -8,7 +8,9 @@
 
 namespace Editor::Network {
 
-class WidgetAddGuideSensorComponentPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetAddGuideSensorComponentPayload>, public ::Editor::Network::WidgetComponentBasePayload {
+class WidgetAddGuideSensorComponentPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetAddGuideSensorComponentPayload>,
+  public ::Editor::Network::WidgetComponentBasePayload {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -27,7 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

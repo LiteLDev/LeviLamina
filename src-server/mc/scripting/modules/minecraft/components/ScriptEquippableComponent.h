@@ -34,21 +34,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> getEquipment(::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
+    MCNAPI ::Scripting::Result_deprecated<
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
+    getEquipment(::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerSlot>> getEquipmentSlot(::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerSlot>>
+    getEquipmentSlot(::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
 
     MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidActorError> getTotalArmor();
 
     MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidActorError> getTotalToughness();
 
-    MCNAPI ::Scripting::Result_deprecated<bool> setEquipment(::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::std::optional<::ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack);
+    MCNAPI ::Scripting::Result_deprecated<bool> setEquipment(
+        ::SharedTypes::Legacy::EquipmentSlot                             equipmentSlot,
+        ::std::optional<::ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack
+    );
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
@@ -68,7 +76,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

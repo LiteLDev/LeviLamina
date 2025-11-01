@@ -4,7 +4,7 @@
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,9 +33,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::BaseCircuitComponent*> mRawComponentPtr;
+        ::ll::TypedStorage<8, 8, ::BaseCircuitComponent*>                   mRawComponentPtr;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BaseCircuitComponent>> mComponent;
-        ::ll::TypedStorage<4, 12, ::BlockPos> mPos;
+        ::ll::TypedStorage<4, 12, ::BlockPos>                               mPos;
         // NOLINTEND
 
     public:
@@ -49,7 +49,6 @@ public:
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
-
     };
 
 public:
@@ -61,7 +60,7 @@ public:
     ::std::unordered_map<::BlockPos, ::CircuitSceneGraph::PendingEntry> mPendingAdds;
     ::std::unordered_map<::BlockPos, ::CircuitSceneGraph::PendingEntry> mPendingUpdates;
     ::std::unordered_map<::BlockPos, ::std::vector<::BlockPos>>         mComponentsToReEvaluate;
-    ::std::vector<::CircuitSceneGraph::PendingEntry>                    mPendingRemoves;
+    ::std::vector<::CircuitSceneGraph::PendingEntry>                               mPendingRemoves;
     // NOLINTEND
 
 public:
@@ -101,5 +100,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

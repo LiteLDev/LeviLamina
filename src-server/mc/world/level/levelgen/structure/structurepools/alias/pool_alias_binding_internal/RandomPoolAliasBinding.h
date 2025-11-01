@@ -17,7 +17,7 @@ class RandomPoolAliasBinding : public ::PoolAliasBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mId;
+    ::ll::TypedStorage<8, 32, ::std::string>                                             mId;
     ::ll::TypedStorage<8, 24, ::std::vector<::Core::SimpleWeightedEntry<::std::string>>> mTargets;
     // NOLINTEND
 
@@ -25,10 +25,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual void appendResolvedAliases(::IRandom& random, ::PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const /*override*/;
+    virtual void
+    appendResolvedAliases(::IRandom& random, ::PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const
+        /*override*/;
 
     // vIndex: 1
-    virtual void forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const /*override*/;
+    virtual void forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const
+        /*override*/;
 
     // vIndex: 2
     virtual ~RandomPoolAliasBinding() /*override*/ = default;
@@ -37,7 +40,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendResolvedAliases(::IRandom& random, ::PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const;
+    MCAPI void
+    $appendResolvedAliases(::IRandom& random, ::PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const;
 
     MCAPI void $forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const;
     // NOLINTEND
@@ -47,7 +51,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace PoolAliasBindingInternal

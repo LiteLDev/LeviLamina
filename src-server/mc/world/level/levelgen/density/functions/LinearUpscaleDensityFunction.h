@@ -17,7 +17,7 @@ class LinearUpscaleDensityFunction : public ::IDensityFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::DensityFunctionPtr const> mInput;
+    ::ll::TypedStorage<8, 16, ::DensityFunctionPtr const>       mInput;
     ::ll::TypedStorage<2, 6, ::DensityVolume::Dimensions const> mSampleResolution;
     // NOLINTEND
 
@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

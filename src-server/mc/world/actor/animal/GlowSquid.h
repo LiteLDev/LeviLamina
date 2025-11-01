@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mStartTime;
-    ::ll::TypedStorage<1, 1, bool> mGoingDark;
+    ::ll::TypedStorage<1, 1, bool>                                    mGoingDark;
     // NOLINTEND
 
 public:
@@ -28,7 +28,7 @@ public:
     virtual void normalTick() /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
@@ -54,7 +54,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $normalTick();
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCFOLD float $_getWalkTargetValue(::BlockPos const& pos);
 
@@ -68,5 +68,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

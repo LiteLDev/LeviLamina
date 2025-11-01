@@ -4,8 +4,7 @@
 
 namespace webrtc {
 
-template<typename T0>
-class FieldTrialConstrained {
-};
+template <typename T0>
+class FieldTrialConstrained {};
 
-}
+} // namespace webrtc

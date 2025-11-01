@@ -37,7 +37,14 @@ public:
 
     MCNAPI explicit DtlsTransportInformation(::webrtc::DtlsTransportState state);
 
-    MCNAPI DtlsTransportInformation(::webrtc::DtlsTransportState state, ::std::optional<::webrtc::DtlsTransportTlsRole> role, ::std::optional<int> tls_version, ::std::optional<int> ssl_cipher_suite, ::std::optional<int> srtp_cipher_suite, ::std::unique_ptr<::rtc::SSLCertChain> remote_ssl_certificates);
+    MCNAPI DtlsTransportInformation(
+        ::webrtc::DtlsTransportState                    state,
+        ::std::optional<::webrtc::DtlsTransportTlsRole> role,
+        ::std::optional<int>                            tls_version,
+        ::std::optional<int>                            ssl_cipher_suite,
+        ::std::optional<int>                            srtp_cipher_suite,
+        ::std::unique_ptr<::rtc::SSLCertChain>          remote_ssl_certificates
+    );
 
     MCNAPI ~DtlsTransportInformation();
     // NOLINTEND
@@ -49,7 +56,14 @@ public:
 
     MCNAPI void* $ctor(::webrtc::DtlsTransportState state);
 
-    MCNAPI void* $ctor(::webrtc::DtlsTransportState state, ::std::optional<::webrtc::DtlsTransportTlsRole> role, ::std::optional<int> tls_version, ::std::optional<int> ssl_cipher_suite, ::std::optional<int> srtp_cipher_suite, ::std::unique_ptr<::rtc::SSLCertChain> remote_ssl_certificates);
+    MCNAPI void* $ctor(
+        ::webrtc::DtlsTransportState                    state,
+        ::std::optional<::webrtc::DtlsTransportTlsRole> role,
+        ::std::optional<int>                            tls_version,
+        ::std::optional<int>                            ssl_cipher_suite,
+        ::std::optional<int>                            srtp_cipher_suite,
+        ::std::unique_ptr<::rtc::SSLCertChain>          remote_ssl_certificates
+    );
     // NOLINTEND
 
 public:
@@ -57,7 +71,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

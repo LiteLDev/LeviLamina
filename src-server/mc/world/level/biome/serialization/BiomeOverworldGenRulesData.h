@@ -18,13 +18,13 @@ struct BiomeOverworldGenRulesData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>> mHillsTransformations;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>> mMutateTransformations;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>> mRiverTransformations;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>> mShoreTransformations;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>>                  mHillsTransformations;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>>                  mMutateTransformations;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>>                  mRiverTransformations;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>>                  mShoreTransformations;
     ::ll::TypedStorage<8, 24, ::std::vector<::BiomeConditionalTransformationData>> mPreHillsEdge;
     ::ll::TypedStorage<8, 24, ::std::vector<::BiomeConditionalTransformationData>> mPostShoreEdge;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedTemperatureData>> mClimate;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedTemperatureData>>       mClimate;
     // NOLINTEND
 
 public:
@@ -65,5 +65,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

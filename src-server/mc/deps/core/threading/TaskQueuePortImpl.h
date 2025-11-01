@@ -24,30 +24,29 @@ public:
     struct TerminationEntry;
     struct WaitRegistration;
     // clang-format on
-    
+
     // TaskQueuePortImpl inner types define
     struct WaitRegistration {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk9c4ca3;
-        ::ll::UntypedStorage<8, 8> mUnk93cc78;
-        ::ll::UntypedStorage<8, 8> mUnkf8cd32;
-        ::ll::UntypedStorage<8, 8> mUnk8aeb0a;
+        ::ll::UntypedStorage<8, 8>  mUnk9c4ca3;
+        ::ll::UntypedStorage<8, 8>  mUnk93cc78;
+        ::ll::UntypedStorage<8, 8>  mUnkf8cd32;
+        ::ll::UntypedStorage<8, 8>  mUnk8aeb0a;
         ::ll::UntypedStorage<8, 48> mUnk2d35dc;
-        ::ll::UntypedStorage<4, 4> mUnk8d0460;
-        ::ll::UntypedStorage<4, 4> mUnk303c8b;
-        ::ll::UntypedStorage<1, 1> mUnkb34bd1;
+        ::ll::UntypedStorage<4, 4>  mUnk8d0460;
+        ::ll::UntypedStorage<4, 4>  mUnk303c8b;
+        ::ll::UntypedStorage<1, 1>  mUnkb34bd1;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         WaitRegistration& operator=(WaitRegistration const&);
         WaitRegistration(WaitRegistration const&);
         WaitRegistration();
-    
     };
-    
+
     struct QueueEntry {
     public:
         // member variables
@@ -59,15 +58,14 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkeffd76;
         ::ll::UntypedStorage<8, 8> mUnkf64fb0;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         QueueEntry& operator=(QueueEntry const&);
         QueueEntry(QueueEntry const&);
         QueueEntry();
-    
     };
-    
+
     struct TerminationEntry {
     public:
         // member variables
@@ -77,36 +75,35 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkfaaf35;
         ::ll::UntypedStorage<8, 8> mUnkff496d;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         TerminationEntry& operator=(TerminationEntry const&);
         TerminationEntry(TerminationEntry const&);
         TerminationEntry();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk934f42;
-    ::ll::UntypedStorage<4, 4> mUnk769562;
+    ::ll::UntypedStorage<8, 24>  mUnk934f42;
+    ::ll::UntypedStorage<4, 4>   mUnk769562;
     ::ll::UntypedStorage<8, 136> mUnkfa4e09;
-    ::ll::UntypedStorage<4, 4> mUnk500b9b;
-    ::ll::UntypedStorage<8, 72> mUnk7302f0;
-    ::ll::UntypedStorage<8, 80> mUnke94bfc;
-    ::ll::UntypedStorage<8, 8> mUnk233445;
-    ::ll::UntypedStorage<8, 8> mUnk929b5d;
-    ::ll::UntypedStorage<8, 8> mUnk279d00;
-    ::ll::UntypedStorage<8, 8> mUnk3bba68;
-    ::ll::UntypedStorage<8, 8> mUnk89a610;
-    ::ll::UntypedStorage<8, 8> mUnk8c66f0;
-    ::ll::UntypedStorage<8, 8> mUnk3df8d0;
-    ::ll::UntypedStorage<8, 8> mUnkb70277;
-    ::ll::UntypedStorage<1, 1> mUnk67421d;
+    ::ll::UntypedStorage<4, 4>   mUnk500b9b;
+    ::ll::UntypedStorage<8, 72>  mUnk7302f0;
+    ::ll::UntypedStorage<8, 80>  mUnke94bfc;
+    ::ll::UntypedStorage<8, 8>   mUnk233445;
+    ::ll::UntypedStorage<8, 8>   mUnk929b5d;
+    ::ll::UntypedStorage<8, 8>   mUnk279d00;
+    ::ll::UntypedStorage<8, 8>   mUnk3bba68;
+    ::ll::UntypedStorage<8, 8>   mUnk89a610;
+    ::ll::UntypedStorage<8, 8>   mUnk8c66f0;
+    ::ll::UntypedStorage<8, 8>   mUnk3df8d0;
+    ::ll::UntypedStorage<8, 8>   mUnkb70277;
+    ::ll::UntypedStorage<1, 1>   mUnk67421d;
     ::ll::UntypedStorage<8, 488> mUnkf3d0e8;
     ::ll::UntypedStorage<8, 496> mUnk8c2eb0;
-    ::ll::UntypedStorage<8, 8> mUnk92e0b4;
+    ::ll::UntypedStorage<8, 8>   mUnk92e0b4;
     // NOLINTEND
 
 public:
@@ -124,16 +121,32 @@ public:
     virtual ::XTaskQueuePortObject* GetHandle() /*override*/;
 
     // vIndex: 4
-    virtual HRESULT QueueItem(::ITaskQueuePortContext* portContext, uint waitMs, void* callbackContext, void(*callback) (void*, bool)) /*override*/;
+    virtual HRESULT QueueItem(
+        ::ITaskQueuePortContext* portContext,
+        uint                     waitMs,
+        void*                    callbackContext,
+        void (*callback)(void*, bool)
+    ) /*override*/;
 
     // vIndex: 5
-    virtual HRESULT RegisterWaitHandle(::ITaskQueuePortContext* portContext, void* waitHandle, void* callbackContext, void(*callback) (void*, bool), ::XTaskQueueRegistrationToken* token) /*override*/;
+    virtual HRESULT RegisterWaitHandle(
+        ::ITaskQueuePortContext* portContext,
+        void*                    waitHandle,
+        void*                    callbackContext,
+        void (*callback)(void*, bool),
+        ::XTaskQueueRegistrationToken* token
+    ) /*override*/;
 
     // vIndex: 6
     virtual void UnregisterWaitHandle(::XTaskQueueRegistrationToken token) /*override*/;
 
     // vIndex: 7
-    virtual HRESULT PrepareTerminate(::ITaskQueuePortContext* portContext, void* callbackContext, void(*callback) (void*), void** token) /*override*/;
+    virtual HRESULT PrepareTerminate(
+        ::ITaskQueuePortContext* portContext,
+        void*                    callbackContext,
+        void (*callback)(void*),
+        void** token
+    ) /*override*/;
 
     // vIndex: 8
     virtual void CancelTermination(void* token) /*override*/;
@@ -202,7 +215,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static void EraseQueue(::LocklessQueue<::TaskQueuePortImpl::QueueEntry>* queue);
 
-    MCNAPI static void WaitCallback(::_TP_CALLBACK_INSTANCE* instance, void* context, ::_TP_WAIT* wait, ulong waitResult);
+    MCNAPI static void
+    WaitCallback(::_TP_CALLBACK_INSTANCE* instance, void* context, ::_TP_WAIT* wait, ulong waitResult);
     // NOLINTEND
 
 public:
@@ -222,13 +236,25 @@ public:
     // NOLINTBEGIN
     MCNAPI ::XTaskQueuePortObject* $GetHandle();
 
-    MCNAPI HRESULT $QueueItem(::ITaskQueuePortContext* portContext, uint waitMs, void* callbackContext, void(*callback) (void*, bool));
+    MCNAPI HRESULT
+    $QueueItem(::ITaskQueuePortContext* portContext, uint waitMs, void* callbackContext, void (*callback)(void*, bool));
 
-    MCNAPI HRESULT $RegisterWaitHandle(::ITaskQueuePortContext* portContext, void* waitHandle, void* callbackContext, void(*callback) (void*, bool), ::XTaskQueueRegistrationToken* token);
+    MCNAPI HRESULT $RegisterWaitHandle(
+        ::ITaskQueuePortContext* portContext,
+        void*                    waitHandle,
+        void*                    callbackContext,
+        void (*callback)(void*, bool),
+        ::XTaskQueueRegistrationToken* token
+    );
 
     MCNAPI void $UnregisterWaitHandle(::XTaskQueueRegistrationToken token);
 
-    MCNAPI HRESULT $PrepareTerminate(::ITaskQueuePortContext* portContext, void* callbackContext, void(*callback) (void*), void** token);
+    MCNAPI HRESULT $PrepareTerminate(
+        ::ITaskQueuePortContext* portContext,
+        void*                    callbackContext,
+        void (*callback)(void*),
+        void** token
+    );
 
     MCNAPI void $CancelTermination(void* token);
 
@@ -258,5 +284,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

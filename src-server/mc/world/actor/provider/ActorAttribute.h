@@ -13,4 +13,4 @@ namespace ActorAttribute {
 MCAPI int getHealth(::EntityContext const& provider);
 // NOLINTEND
 
-}
+} // namespace ActorAttribute

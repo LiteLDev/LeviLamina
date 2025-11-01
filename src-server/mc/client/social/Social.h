@@ -13,4 +13,4 @@ namespace Social {
 MCNAPI ::Social::GameConnectionInfo const& INVALID_CONNECTION();
 // NOLINTEND
 
-}
+} // namespace Social

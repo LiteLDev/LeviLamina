@@ -22,7 +22,7 @@ class LogBlock : public ::RotatedPillarBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>> mStrippedBlockType;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>>          mStrippedBlockType;
     ::ll::TypedStorage<4, 36, ::std::optional<::LogBlockMapColors>> mMapColors;
     // NOLINTEND
 
@@ -33,7 +33,8 @@ public:
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 143
-    virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const /*override*/;
+    virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
+        /*override*/;
 
     // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -63,5 +64,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

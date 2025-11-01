@@ -6,8 +6,8 @@
 #include "mc/deps/core/resource/PackType.h"
 #include "mc/deps/core/utility/BedrockLoadContext.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/molang/MolangVersion.h"
 #include "mc/resources/IPackLoadContext.h"
-#include "mc/versionless/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,11 +25,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkf67099;
-    ::ll::UntypedStorage<1, 1> mUnk6aa892;
-    ::ll::UntypedStorage<1, 1> mUnk4164b4;
+    ::ll::UntypedStorage<1, 1>  mUnk6aa892;
+    ::ll::UntypedStorage<1, 1>  mUnk4164b4;
     ::ll::UntypedStorage<8, 16> mUnk36beeb;
     ::ll::UntypedStorage<8, 72> mUnk8a75c5;
-    ::ll::UntypedStorage<1, 1> mUnk30bb35;
+    ::ll::UntypedStorage<1, 1>  mUnk30bb35;
     ::ll::UntypedStorage<8, 64> mUnk6abfbf;
     // NOLINTEND
 
@@ -82,7 +82,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackLoadContext(::PackInstance const& pack, ::Experiments const& experiments, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCNAPI PackLoadContext(
+        ::PackInstance const&                              pack,
+        ::Experiments const&                               experiments,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
     // NOLINTEND
 
 public:
@@ -94,7 +98,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::PackInstance const& pack, ::Experiments const& experiments, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCNAPI void* $ctor(
+        ::PackInstance const&                              pack,
+        ::Experiments const&                               experiments,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
     // NOLINTEND
 
 public:
@@ -134,5 +142,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

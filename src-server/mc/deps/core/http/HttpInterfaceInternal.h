@@ -22,13 +22,18 @@ public:
     virtual ~HttpInterfaceInternal() /*override*/ = default;
 
     // vIndex: 1
-    virtual void send(::gsl::not_null<::HC_CALL*> call, ::gsl::not_null<::XAsyncBlock*> asyncBlock, ::HC_PERFORM_ENV* env) /*override*/;
+    virtual void send(
+        ::gsl::not_null<::HC_CALL*>     call,
+        ::gsl::not_null<::XAsyncBlock*> asyncBlock,
+        ::HC_PERFORM_ENV*               env
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $send(::gsl::not_null<::HC_CALL*> call, ::gsl::not_null<::XAsyncBlock*> asyncBlock, ::HC_PERFORM_ENV* env);
+    MCNAPI void
+    $send(::gsl::not_null<::HC_CALL*> call, ::gsl::not_null<::XAsyncBlock*> asyncBlock, ::HC_PERFORM_ENV* env);
     // NOLINTEND
 
 public:
@@ -36,7 +41,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Http

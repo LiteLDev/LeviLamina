@@ -14,7 +14,7 @@ class VanillaBlockData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mBlockID;
+    ::ll::TypedStorage<4, 4, int>            mBlockID;
     ::ll::TypedStorage<4, 4, ::MaterialType> mMaterial;
     // NOLINTEND
 
@@ -23,5 +23,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
-
 };

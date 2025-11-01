@@ -10,5 +10,4 @@ public:
     ::ll::TypedStorage<1, 1, bool> mAssignedToMap;
     ::ll::TypedStorage<1, 1, bool> mSentToServer;
     // NOLINTEND
-
 };

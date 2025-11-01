@@ -12,5 +12,4 @@ public:
     // vIndex: 0
     virtual ~CrafterContainerScreenValidator() /*override*/ = default;
     // NOLINTEND
-
 };

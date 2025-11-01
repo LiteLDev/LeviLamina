@@ -20,7 +20,6 @@ public:
     MallocFunctions& operator=(MallocFunctions const&);
     MallocFunctions(MallocFunctions const&);
     MallocFunctions();
-
 };
 
-}
+} // namespace Scripting::QuickJS

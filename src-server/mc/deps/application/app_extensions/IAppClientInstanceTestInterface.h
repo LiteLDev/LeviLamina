@@ -4,7 +4,6 @@
 
 namespace AppExtensions {
 
-class IAppClientInstanceTestInterface {
-};
+class IAppClientInstanceTestInterface {};
 
-}
+} // namespace AppExtensions

@@ -13,4 +13,4 @@ namespace MobTravelIntentSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace MobTravelIntentSystem

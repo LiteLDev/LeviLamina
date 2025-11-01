@@ -16,7 +16,7 @@ class NoSurfaceOreFeature : public ::IFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::IntRange> mCount;
+    ::ll::TypedStorage<4, 8, ::IntRange>          mCount;
     ::ll::TypedStorage<8, 184, ::BlockDescriptor> mPlaceBlock;
     ::ll::TypedStorage<8, 184, ::BlockDescriptor> mReplaceBlock;
     ::ll::TypedStorage<8, 184, ::BlockDescriptor> mAvoidsBlock;
@@ -43,5 +43,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

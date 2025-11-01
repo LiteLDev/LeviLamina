@@ -22,9 +22,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 512, ::ItemInstance[4]> mCookingItem;
-    ::ll::TypedStorage<4, 16, int[4]> mCookingTime;
-    ::ll::TypedStorage<1, 1, bool> mWasLit;
-    ::ll::TypedStorage<4, 4, int> mNextSmokeParticleTick;
+    ::ll::TypedStorage<4, 16, int[4]>             mCookingTime;
+    ::ll::TypedStorage<1, 1, bool>                mWasLit;
+    ::ll::TypedStorage<4, 4, int>                 mNextSmokeParticleTick;
     // NOLINTEND
 
 public:
@@ -88,5 +88,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

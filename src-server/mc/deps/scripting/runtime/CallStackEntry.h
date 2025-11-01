@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> functionName;
     ::ll::TypedStorage<8, 32, ::std::string> fileName;
-    ::ll::TypedStorage<4, 4, int> lineNumber;
+    ::ll::TypedStorage<4, 4, int>            lineNumber;
     // NOLINTEND
 
 public:
@@ -30,7 +30,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

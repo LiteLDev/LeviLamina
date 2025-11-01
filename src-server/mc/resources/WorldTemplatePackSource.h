@@ -22,9 +22,9 @@ class WorldTemplatePackSource : public ::DirectoryPackSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk871116;
+    ::ll::UntypedStorage<8, 8>  mUnk871116;
     ::ll::UntypedStorage<8, 16> mUnk866f94;
-    ::ll::UntypedStorage<1, 1> mUnkedfcff;
+    ::ll::UntypedStorage<1, 1>  mUnkedfcff;
     // NOLINTEND
 
 public:
@@ -48,7 +48,13 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit WorldTemplatePackSource(::WorldTemplatePackSourceOptions options);
 
-    MCNAPI ::PackSourceReport _tryLoadFromZip(::std::shared_ptr<::PackSource::PackTaskData> data, ::IPackManifestFactory& manifestFactory, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider, ::Core::PathBuffer<::std::string> const& worldTemplatePath, ::std::string const& subDir);
+    MCNAPI ::PackSourceReport _tryLoadFromZip(
+        ::std::shared_ptr<::PackSource::PackTaskData>                     data,
+        ::IPackManifestFactory&                                           manifestFactory,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        ::Core::PathBuffer<::std::string> const&                          worldTemplatePath,
+        ::std::string const&                                              subDir
+    );
     // NOLINTEND
 
 public:
@@ -68,5 +74,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

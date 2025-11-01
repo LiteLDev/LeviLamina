@@ -16,7 +16,6 @@ public:
     InspectItemDetail& operator=(InspectItemDetail const&);
     InspectItemDetail(InspectItemDetail const&);
     InspectItemDetail();
-
 };
 
-}
+} // namespace AgentComponents::Actions

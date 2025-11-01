@@ -15,7 +15,7 @@ class DataItem {
 public:
     // DataItem inner types define
     using ID = ushort;
-    
+
 public:
     using TypeList = ll::meta::TypeList<schar, short, int, float, std::string, CompoundTag, BlockPos, int64, Vec3>;
 
@@ -72,7 +72,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
 #include "mc/world/actor/DataItem2.h"

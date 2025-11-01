@@ -4,5 +4,5 @@
 
 enum class MultiNoiseLegacyMode : int {
     CompatibleWith117 = 0,
-    None = 1,
+    None              = 1,
 };

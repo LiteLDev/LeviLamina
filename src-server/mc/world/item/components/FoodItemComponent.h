@@ -31,15 +31,22 @@ class FoodItemComponent : public ::NetworkedItemComponent<::FoodItemComponent>, 
 public:
     // FoodItemComponent inner types define
     using ConsumeSignature = void(::ItemStack const&, ::ItemStack&, ::Actor&);
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mNutrition;
-    ::ll::TypedStorage<4, 4, float> mSaturationModifier;
+    ::ll::TypedStorage<4, 4, int>               mNutrition;
+    ::ll::TypedStorage<4, 4, float>             mSaturationModifier;
     ::ll::TypedStorage<8, 16, ::ItemDescriptor> mUsingConvertsTo;
-    ::ll::TypedStorage<1, 1, bool> mCanAlwaysEat;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(::ItemStack const&, ::ItemStack&, ::Actor&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>> mOnConsumePublisher;
+    ::ll::TypedStorage<1, 1, bool>              mCanAlwaysEat;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::unique_ptr<::Bedrock::PubSub::Publisher<
+            void(::ItemStack const&, ::ItemStack&, ::Actor&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>>
+                                                               mOnConsumePublisher;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseTimeDepletedSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseSubscription;
     // NOLINTEND
@@ -73,7 +80,8 @@ public:
     virtual void use(bool& result, ::ItemStack& item, ::Player& player) /*override*/;
 
     // vIndex: 6
-    virtual ::Item const* useTimeDepleted(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&) /*override*/;
+    virtual ::Item const*
+    useTimeDepleted(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&) /*override*/;
     // NOLINTEND
 
 public:
@@ -87,7 +95,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -121,5 +133,4 @@ public:
 
     MCNAPI static void** $vftableForIFoodItemComponent();
     // NOLINTEND
-
 };

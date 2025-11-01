@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>> mOnBred;
     ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>> mOnDeath;
-    ::ll::TypedStorage<1, 1, bool> mIsExperienceDropEnabled;
+    ::ll::TypedStorage<1, 1, bool>                             mIsExperienceDropEnabled;
     // NOLINTEND
 
 public:
@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

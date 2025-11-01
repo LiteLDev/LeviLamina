@@ -15,5 +15,4 @@ public:
     ContentTierInfo& operator=(ContentTierInfo const&);
     ContentTierInfo(ContentTierInfo const&);
     ContentTierInfo();
-
 };

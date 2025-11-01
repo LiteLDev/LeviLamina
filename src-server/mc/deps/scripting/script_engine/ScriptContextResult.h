@@ -8,8 +8,8 @@ struct ScriptContextResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnk748fa8;
-    ::ll::UntypedStorage<8, 40> mUnkb1c759;
+    ::ll::UntypedStorage<8, 40>  mUnk748fa8;
+    ::ll::UntypedStorage<8, 40>  mUnkb1c759;
     ::ll::UntypedStorage<8, 120> mUnkd0c8cb;
     // NOLINTEND
 
@@ -30,7 +30,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

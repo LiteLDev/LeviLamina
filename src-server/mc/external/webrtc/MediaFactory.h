@@ -24,7 +24,8 @@ public:
     virtual ::std::unique_ptr<::webrtc::Call> CreateCall(::webrtc::CallConfig const&) = 0;
 
     // vIndex: 2
-    virtual ::std::unique_ptr<::cricket::MediaEngineInterface> CreateMediaEngine(::webrtc::Environment const&, ::webrtc::PeerConnectionFactoryDependencies&) = 0;
+    virtual ::std::unique_ptr<::cricket::MediaEngineInterface>
+    CreateMediaEngine(::webrtc::Environment const&, ::webrtc::PeerConnectionFactoryDependencies&) = 0;
     // NOLINTEND
 
 public:
@@ -32,7 +33,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

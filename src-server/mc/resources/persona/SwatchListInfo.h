@@ -17,7 +17,6 @@ public:
     SwatchListInfo& operator=(SwatchListInfo const&);
     SwatchListInfo(SwatchListInfo const&);
     SwatchListInfo();
-
 };
 
-}
+} // namespace persona::color

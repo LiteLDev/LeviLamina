@@ -12,5 +12,4 @@ public:
     ::ll::TypedStorage<8, 8, uint64> mMissingVariableOrActorIndexStackSize;
     ::ll::TypedStorage<8, 8, uint64> mPublicAccessModeStackSize;
     // NOLINTEND
-
 };

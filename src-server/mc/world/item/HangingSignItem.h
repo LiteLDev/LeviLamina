@@ -18,7 +18,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 124
-    virtual ::Block const* getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const /*override*/;
+    virtual ::Block const* getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const
+        /*override*/;
 
     // vIndex: 121
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
@@ -30,9 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Block const* _getCeilingHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
+    MCAPI ::Block const*
+    _getCeilingHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
 
-    MCAPI ::Block const* _getWallHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
+    MCAPI ::Block const*
+    _getWallHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
@@ -48,5 +51,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

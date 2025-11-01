@@ -9,5 +9,4 @@ public:
     ::ll::TypedStorage<1, 1, bool> mNormalTick;
     ::ll::TypedStorage<1, 1, bool> mSingleTick;
     // NOLINTEND
-
 };

@@ -11,7 +11,7 @@ public:
         // bitfield representation
         KMaxSize = 1 << 6,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -45,7 +45,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

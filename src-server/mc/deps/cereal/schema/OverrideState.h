@@ -17,7 +17,6 @@ public:
     OverrideState& operator=(OverrideState const&);
     OverrideState(OverrideState const&);
     OverrideState();
-
 };
 
-}
+} // namespace cereal::internal

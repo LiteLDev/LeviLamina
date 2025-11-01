@@ -18,5 +18,4 @@ public:
     JSCFunctionDataRecord& operator=(JSCFunctionDataRecord const&);
     JSCFunctionDataRecord(JSCFunctionDataRecord const&);
     JSCFunctionDataRecord();
-
 };

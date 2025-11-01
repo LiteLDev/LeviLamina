@@ -18,11 +18,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 128> mUnk23c850;
-    ::ll::UntypedStorage<8, 8> mUnk640833;
-    ::ll::UntypedStorage<4, 4> mUnkcb966c;
-    ::ll::UntypedStorage<2, 2> mUnk4771d0;
-    ::ll::UntypedStorage<1, 1> mUnk65ee2d;
-    ::ll::UntypedStorage<1, 1> mUnk4d1a0b;
+    ::ll::UntypedStorage<8, 8>   mUnk640833;
+    ::ll::UntypedStorage<4, 4>   mUnkcb966c;
+    ::ll::UntypedStorage<2, 2>   mUnk4771d0;
+    ::ll::UntypedStorage<1, 1>   mUnk65ee2d;
+    ::ll::UntypedStorage<1, 1>   mUnk4d1a0b;
     // NOLINTEND
 
 public:
@@ -71,7 +71,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Molang::details

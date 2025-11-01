@@ -16,7 +16,8 @@ namespace webrtc { class AudioTrackSinkInterface; }
 
 namespace webrtc {
 
-class AudioTrack : public ::webrtc::MediaStreamTrack<::webrtc::AudioTrackInterface>, public ::webrtc::ObserverInterface {
+class AudioTrack : public ::webrtc::MediaStreamTrack<::webrtc::AudioTrackInterface>,
+                   public ::webrtc::ObserverInterface {
 public:
     // member variables
     // NOLINTBEGIN
@@ -61,7 +62,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::scoped_refptr<::webrtc::AudioTrack> Create(::std::string_view id, ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface> const& source);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::AudioTrack>
+    Create(::std::string_view id, ::webrtc::scoped_refptr<::webrtc::AudioSourceInterface> const& source);
     // NOLINTEND
 
 public:
@@ -99,7 +101,6 @@ public:
 
     MCNAPI static void** $vftableForRefCountInterface();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

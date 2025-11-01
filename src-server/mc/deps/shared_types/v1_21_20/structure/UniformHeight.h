@@ -17,7 +17,6 @@ public:
     UniformHeight& operator=(UniformHeight const&);
     UniformHeight(UniformHeight const&);
     UniformHeight();
-
 };
 
-}
+} // namespace SharedTypes::v1_21_20

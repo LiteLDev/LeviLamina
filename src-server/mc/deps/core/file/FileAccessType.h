@@ -5,9 +5,9 @@
 namespace Core {
 
 enum class FileAccessType : int {
-    ReadOnly = 0,
+    ReadOnly  = 0,
     ReadWrite = 1,
-    Flush = 2,
+    Flush     = 2,
 };
 
 }

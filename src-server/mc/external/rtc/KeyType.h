@@ -5,9 +5,9 @@
 namespace rtc {
 
 enum class KeyType : int {
-    Rsa = 0,
-    Ecdsa = 1,
-    Last = 2,
+    Rsa     = 0,
+    Ecdsa   = 1,
+    Last    = 2,
     Default = 1,
 };
 

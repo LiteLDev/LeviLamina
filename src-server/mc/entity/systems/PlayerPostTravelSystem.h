@@ -22,9 +22,24 @@ struct StateVectorComponent;
 namespace PlayerPostTravelSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void doServerPlayerPostTravel(::ActorDataFlagComponent const& synchedActorData, ::ElytraFlightTimeTicksComponent const& elytraFlightTimeTicks, ::StateVectorComponent const& stateVector, ::ActorOwnerComponent& actorOwner, ::CurrentTickComponent const& currentTick);
+MCNAPI void doServerPlayerPostTravel(
+    ::ActorDataFlagComponent const&         synchedActorData,
+    ::ElytraFlightTimeTicksComponent const& elytraFlightTimeTicks,
+    ::StateVectorComponent const&           stateVector,
+    ::ActorOwnerComponent&                  actorOwner,
+    ::CurrentTickComponent const&           currentTick
+);
 
-MCNAPI void tickServerPlayerPostTravel(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::ServerPlayerComponent>, ::ActorDataFlagComponent const, ::ElytraFlightTimeTicksComponent const, ::StateVectorComponent const, ::ActorOwnerComponent> view, ::OptionalGlobal<::CurrentTickComponent const> currentTick);
+MCNAPI void tickServerPlayerPostTravel(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::ServerPlayerComponent>,
+        ::ActorDataFlagComponent const,
+        ::ElytraFlightTimeTicksComponent const,
+        ::StateVectorComponent const,
+        ::ActorOwnerComponent>                     view,
+    ::OptionalGlobal<::CurrentTickComponent const> currentTick
+);
 // NOLINTEND
 
-}
+} // namespace PlayerPostTravelSystem

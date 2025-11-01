@@ -4,7 +4,6 @@
 
 namespace AgentComponents {
 
-struct Executing {
-};
+struct Executing {};
 
-}
+} // namespace AgentComponents

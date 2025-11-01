@@ -16,4 +16,4 @@ MCAPI char const*& RANGE_KEY();
 MCAPI char const*& VALUE_KEY();
 // NOLINTEND
 
-}
+} // namespace AmbientSoundInternals

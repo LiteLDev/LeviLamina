@@ -6,7 +6,7 @@ namespace ScriptModuleMinecraftServerUI {
 
 enum class ScriptFormCancelationReason : int {
     UserClosed = 0,
-    UserBusy = 1,
+    UserBusy   = 1,
 };
 
 }

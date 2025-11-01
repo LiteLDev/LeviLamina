@@ -14,7 +14,7 @@ struct ItemStackResponseContainerInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::FullContainerName> mFullContainerName;
+    ::ll::TypedStorage<4, 12, ::FullContainerName>                        mFullContainerName;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStackResponseSlotInfo>> mSlots;
     // NOLINTEND
 
@@ -29,5 +29,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

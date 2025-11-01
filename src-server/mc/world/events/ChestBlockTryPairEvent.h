@@ -15,8 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle> const> mBlockSourceHandle;
-    ::ll::TypedStorage<4, 12, ::Vec3 const> mBlockPos;
-    ::ll::TypedStorage<4, 12, ::Vec3 const> mOtherBlockPos;
+    ::ll::TypedStorage<4, 12, ::Vec3 const>                                 mBlockPos;
+    ::ll::TypedStorage<4, 12, ::Vec3 const>                                 mOtherBlockPos;
     // NOLINTEND
 
 public:
@@ -30,5 +30,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

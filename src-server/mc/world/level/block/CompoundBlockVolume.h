@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/CompoundBlockVolumePositionRelativity.h"
 #include "mc/world/level/levelgen/structure/BoundingBox.h"
 
@@ -19,8 +19,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::CompoundBlockVolumeItem>> mVolumeList;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mOrigin;
-    ::ll::TypedStorage<4, 24, ::BoundingBox> mBounds;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                               mOrigin;
+    ::ll::TypedStorage<4, 24, ::BoundingBox>                            mBounds;
     // NOLINTEND
 
 public:
@@ -52,7 +52,8 @@ public:
 
     MCAPI bool operator==(::CompoundBlockVolume const& other) const;
 
-    MCAPI ::std::optional<::CompoundBlockVolumeItem> peekLastVolume(::std::optional<::CompoundBlockVolumePositionRelativity> optRelativity) const;
+    MCAPI ::std::optional<::CompoundBlockVolumeItem>
+    peekLastVolume(::std::optional<::CompoundBlockVolumePositionRelativity> optRelativity) const;
     // NOLINTEND
 
 public:
@@ -66,5 +67,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

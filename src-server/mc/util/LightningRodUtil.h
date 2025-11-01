@@ -14,4 +14,4 @@ namespace LightningRodUtil {
 MCNAPI void emitLightningRodParticles(::BlockSource& region, ::BlockPos const& pos, int sparkCount);
 // NOLINTEND
 
-}
+} // namespace LightningRodUtil

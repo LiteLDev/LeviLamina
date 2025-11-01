@@ -32,13 +32,20 @@ MCNAPI bool StringToUint4(char const* begin, char const* end, uint64& v, int bas
 
 MCNAPI void TraceToDebugger(char const* areaName, ::HCTraceLevel traceLevel, char const* message);
 
-MCNAPI ::http_wstring flatten_http_headers(::std::map<::http_string, ::http_string, ::xbox::httpclient::HeaderCompare, ::http_stl_allocator<::std::pair<::http_string const, ::http_string>>> const& headers);
+MCNAPI ::http_wstring flatten_http_headers(
+    ::std::map<
+        ::http_string,
+        ::http_string,
+        ::xbox::httpclient::HeaderCompare,
+        ::http_stl_allocator<::std::pair<::http_string const, ::http_string>>> const& headers
+);
 
 MCNAPI ::std::shared_ptr<::xbox::httpclient::http_singleton> get_http_singleton();
 
-MCNAPI ::xbox::httpclient::proxy_type get_ie_proxy_info(::xbox::httpclient::proxy_protocol protocol, ::xbox::httpclient::Uri& proxyUri);
+MCNAPI ::xbox::httpclient::proxy_type
+get_ie_proxy_info(::xbox::httpclient::proxy_protocol protocol, ::xbox::httpclient::Uri& proxyUri);
 
 MCNAPI void trim_whitespace(::http_wstring& str);
 // NOLINTEND
 
-}
+} // namespace xbox::httpclient

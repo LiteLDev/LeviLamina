@@ -14,7 +14,8 @@ namespace Core { class SingleThreadedLock; }
 
 namespace CodeBuilder {
 
-class CommandOutputObserver : public ::Core::Observer<::CodeBuilder::CommandOutputObserver, ::Core::SingleThreadedLock> {
+class CommandOutputObserver
+: public ::Core::Observer<::CodeBuilder::CommandOutputObserver, ::Core::SingleThreadedLock> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -30,7 +31,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace CodeBuilder

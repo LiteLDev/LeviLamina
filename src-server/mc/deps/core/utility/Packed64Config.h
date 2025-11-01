@@ -4,8 +4,7 @@
 
 namespace Bedrock::PackedPointer::Detail {
 
-template<int T0>
-struct Packed64Config {
-};
+template <int T0>
+struct Packed64Config {};
 
-}
+} // namespace Bedrock::PackedPointer::Detail

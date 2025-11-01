@@ -19,7 +19,8 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptRideableComponent : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::RideableComponent, ::RideableDefinition> {
+class ScriptRideableComponent
+: public ::ScriptModuleMinecraft::ECSScriptActorComponent<::RideableComponent, ::RideableDefinition> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -30,9 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<bool> addPassenger(::ScriptModuleMinecraft::ScriptActor& scriptPassenger) const;
+    MCNAPI ::Scripting::Result_deprecated<bool>
+    addPassenger(::ScriptModuleMinecraft::ScriptActor& scriptPassenger) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> ejectPassenger(::ScriptModuleMinecraft::ScriptActor& scriptPassenger) const;
+    MCNAPI ::Scripting::Result_deprecated<void>
+    ejectPassenger(::ScriptModuleMinecraft::ScriptActor& scriptPassenger) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> ejectPassengers() const;
 
@@ -50,7 +53,9 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> getPullInEntities() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> getRiders() const;
+    MCNAPI ::Scripting::Result_deprecated<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+    getRiders() const;
 
     MCNAPI ::Scripting::Result_deprecated<int> getSeatCount() const;
 
@@ -60,7 +65,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding
+    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
@@ -74,7 +80,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

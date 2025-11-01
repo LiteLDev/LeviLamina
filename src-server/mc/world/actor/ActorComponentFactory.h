@@ -21,11 +21,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _initializeComponentDefinitions(::Experiments const& experiments);
+    MCAPI void _initializeComponentDefinitions(::Experiments const& experiments);
 
-    MCNAPI void _initializePropertyDefinitions(::Experiments const& experiments);
+    MCAPI void _initializePropertyDefinitions(::Experiments const& experiments);
 
-    MCNAPI void _initializeTriggerDefinitions(::Experiments const& experiments);
+    MCAPI void _initializeTriggerDefinitions(::Experiments const& experiments);
     // NOLINTEND
 
 public:
@@ -33,5 +33,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

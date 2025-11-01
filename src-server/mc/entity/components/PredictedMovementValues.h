@@ -15,5 +15,4 @@ public:
     PredictedMovementValues& operator=(PredictedMovementValues const&);
     PredictedMovementValues(PredictedMovementValues const&);
     PredictedMovementValues();
-
 };

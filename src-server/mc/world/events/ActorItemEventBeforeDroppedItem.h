@@ -16,9 +16,9 @@ struct ActorItemEventBeforeDroppedItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mActor;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>             mActor;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ActorDamageSource>> mSource;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>             mItems;
     // NOLINTEND
 
 public:
@@ -32,5 +32,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

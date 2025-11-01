@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> document_;
-    ::ll::TypedStorage<1, 1, bool> yamlCompatiblityEnabled_;
+    ::ll::TypedStorage<1, 1, bool>           yamlCompatiblityEnabled_;
     // NOLINTEND
 
 public:
@@ -61,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Json

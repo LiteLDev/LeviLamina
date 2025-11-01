@@ -28,7 +28,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk1b31b5;
     ::ll::UntypedStorage<8, 24> mUnkdf74db;
     ::ll::UntypedStorage<8, 24> mUnk9e54a2;
-    ::ll::UntypedStorage<8, 8> mUnkeca0b7;
+    ::ll::UntypedStorage<8, 8>  mUnkeca0b7;
     // NOLINTEND
 
 public:
@@ -59,16 +59,20 @@ public:
     virtual bool isTrusted() const /*override*/;
 
     // vIndex: 6
-    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const /*override*/;
+    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
+        /*override*/;
 
     // vIndex: 7
     virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
     // vIndex: 8
-    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const /*override*/;
+    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
+        /*override*/;
 
     // vIndex: 9
-    virtual void forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool) const /*override*/;
+    virtual void
+    forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool) const
+        /*override*/;
 
     // vIndex: 11
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
@@ -89,7 +93,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DirectoryPackWithEncryptionAccessStrategy(::ResourceLocation const& packLocation, ::ResourceLocation const& encryptedContentLocation, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider, ::IFileAccess& fileAccess);
+    MCNAPI DirectoryPackWithEncryptionAccessStrategy(
+        ::ResourceLocation const&                                         packLocation,
+        ::ResourceLocation const&                                         encryptedContentLocation,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        ::IFileAccess&                                                    fileAccess
+    );
 
     MCNAPI bool _getUnencryptedAsset(::Core::Path const& packRelativePath, ::std::string& result) const;
     // NOLINTEND
@@ -97,7 +106,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ResourceLocation const& packLocation, ::ResourceLocation const& encryptedContentLocation, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider, ::IFileAccess& fileAccess);
+    MCNAPI void* $ctor(
+        ::ResourceLocation const&                                         packLocation,
+        ::ResourceLocation const&                                         encryptedContentLocation,
+        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
+        ::IFileAccess&                                                    fileAccess
+    );
     // NOLINTEND
 
 public:
@@ -125,7 +139,8 @@ public:
 
     MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
-    MCNAPI void $forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool) const;
+    MCNAPI void
+    $forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool) const;
 
     MCNAPI ::PackAccessStrategyType $getStrategyType() const;
 
@@ -143,5 +158,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

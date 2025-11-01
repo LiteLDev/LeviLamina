@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/versionless/BiomeTypes.h"
+#include "mc/deps/shared_types/shared_types/BiomeTypes.h"
 #include "mc/world/level/biome/components/BiomeComponentBase.h"
 
 struct BiomeTypeComponent : public ::BiomeComponentBase {
@@ -19,5 +19,4 @@ public:
     // vIndex: 0
     virtual ~BiomeTypeComponent() /*override*/ = default;
     // NOLINTEND
-
 };

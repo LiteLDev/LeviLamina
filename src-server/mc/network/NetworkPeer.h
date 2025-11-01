@@ -11,51 +11,50 @@ public:
     // clang-format off
     struct NetworkStatus;
     // clang-format on
-    
+
     // NetworkPeer inner types define
     using PacketRecvTimepoint = ::std::chrono::steady_clock::time_point;
-    
+
     using PacketRecvTimepointPtr = ::std::shared_ptr<::std::chrono::steady_clock::time_point>;
-    
+
     enum class Reliability : int {
-        Reliable = 0,
-        ReliableOrdered = 1,
-        Unreliable = 2,
+        Reliable            = 0,
+        ReliableOrdered     = 1,
+        Unreliable          = 2,
         UnreliableSequenced = 3,
     };
-    
+
     enum class DataStatus : int {
-        HasData = 0,
-        NoData = 1,
+        HasData    = 0,
+        NoData     = 1,
         BrokenData = 2,
     };
-    
+
     enum class NetworkLoad : int {
         Unrestricted = 0,
-        Low = 1,
-        Medium = 2,
-        High = 3,
+        Low          = 1,
+        Medium       = 2,
+        High         = 3,
     };
-    
+
     struct NetworkStatus {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, ::NetworkPeer::NetworkLoad> mLoad;
-        ::ll::TypedStorage<4, 4, int> mCurrentPing;
-        ::ll::TypedStorage<4, 4, int> mAveragePing;
-        ::ll::TypedStorage<4, 4, int> mApproximateMaxBps;
-        ::ll::TypedStorage<4, 4, float> mCurrentPacketLoss;
-        ::ll::TypedStorage<4, 4, float> mAveragePacketLoss;
-        ::ll::TypedStorage<8, 8, uint64> mTotalBytesReceived;
-        ::ll::TypedStorage<8, 8, uint64> mTotalBytesSent;
-        ::ll::TypedStorage<8, 8, uint64> mCurrentBytesSendBuffer;
-        ::ll::TypedStorage<4, 4, int> mICEState;
-        ::ll::TypedStorage<1, 1, bool> mUsingRelays;
+        ::ll::TypedStorage<4, 4, int>                        mCurrentPing;
+        ::ll::TypedStorage<4, 4, int>                        mAveragePing;
+        ::ll::TypedStorage<4, 4, int>                        mApproximateMaxBps;
+        ::ll::TypedStorage<4, 4, float>                      mCurrentPacketLoss;
+        ::ll::TypedStorage<4, 4, float>                      mAveragePacketLoss;
+        ::ll::TypedStorage<8, 8, uint64>                     mTotalBytesReceived;
+        ::ll::TypedStorage<8, 8, uint64>                     mTotalBytesSent;
+        ::ll::TypedStorage<8, 8, uint64>                     mCurrentBytesSendBuffer;
+        ::ll::TypedStorage<4, 4, int>                        mICEState;
+        ::ll::TypedStorage<1, 1, bool>                       mUsingRelays;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -87,7 +86,8 @@ public:
     virtual bool isEncrypted() const;
 
     // vIndex: 7
-    virtual ::NetworkPeer::DataStatus _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) = 0;
+    virtual ::NetworkPeer::DataStatus
+    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) = 0;
     // NOLINTEND
 
 public:
@@ -113,5 +113,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

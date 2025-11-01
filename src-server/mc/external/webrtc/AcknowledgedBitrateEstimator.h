@@ -21,8 +21,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnke05fee;
-    ::ll::UntypedStorage<1, 1> mUnk11ba18;
-    ::ll::UntypedStorage<8, 8> mUnkac515b;
+    ::ll::UntypedStorage<1, 1>  mUnk11ba18;
+    ::ll::UntypedStorage<8, 8>  mUnkac515b;
     // NOLINTEND
 
 public:
@@ -38,7 +38,8 @@ public:
     virtual ~AcknowledgedBitrateEstimator() /*override*/;
 
     // vIndex: 1
-    virtual void IncomingPacketFeedbackVector(::std::vector<::webrtc::PacketResult> const& packet_feedback_vector) /*override*/;
+    virtual void
+    IncomingPacketFeedbackVector(::std::vector<::webrtc::PacketResult> const& packet_feedback_vector) /*override*/;
 
     // vIndex: 2
     virtual ::std::optional<::webrtc::DataRate> bitrate() const /*override*/;
@@ -58,7 +59,10 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit AcknowledgedBitrateEstimator(::webrtc::FieldTrialsView const* key_value_config);
 
-    MCNAPI AcknowledgedBitrateEstimator(::webrtc::FieldTrialsView const* key_value_config, ::std::unique_ptr<::webrtc::BitrateEstimator> bitrate_estimator);
+    MCNAPI AcknowledgedBitrateEstimator(
+        ::webrtc::FieldTrialsView const*              key_value_config,
+        ::std::unique_ptr<::webrtc::BitrateEstimator> bitrate_estimator
+    );
     // NOLINTEND
 
 public:
@@ -66,7 +70,10 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::FieldTrialsView const* key_value_config);
 
-    MCNAPI void* $ctor(::webrtc::FieldTrialsView const* key_value_config, ::std::unique_ptr<::webrtc::BitrateEstimator> bitrate_estimator);
+    MCNAPI void* $ctor(
+        ::webrtc::FieldTrialsView const*              key_value_config,
+        ::std::unique_ptr<::webrtc::BitrateEstimator> bitrate_estimator
+    );
     // NOLINTEND
 
 public:
@@ -94,7 +101,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

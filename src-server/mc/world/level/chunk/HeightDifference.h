@@ -15,5 +15,4 @@ public:
     HeightDifference& operator=(HeightDifference const&);
     HeightDifference(HeightDifference const&);
     HeightDifference();
-
 };

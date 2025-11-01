@@ -17,10 +17,10 @@ class WanderingTraderScheduler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Level&> mLevel;
-    ::ll::TypedStorage<8, 8, uint64> mTickToCheckIfSpawning;
-    ::ll::TypedStorage<1, 1, bool> mSpawnWanderingTrader;
-    ::ll::TypedStorage<4, 4, int> mDaysSinceLastSpawn;
+    ::ll::TypedStorage<8, 8, ::Level&>        mLevel;
+    ::ll::TypedStorage<8, 8, uint64>          mTickToCheckIfSpawning;
+    ::ll::TypedStorage<1, 1, bool>            mSpawnWanderingTrader;
+    ::ll::TypedStorage<4, 4, int>             mDaysSinceLastSpawn;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mWanderingTraderUUID;
     // NOLINTEND
 
@@ -41,11 +41,17 @@ public:
 
     MCAPI ::std::optional<::BlockPos> _findValidSpawnPosUnder(::BlockPos const& pos, ::BlockSource& region) const;
 
-    MCAPI ::BlockPos _getRandomHeightmapPosAroundOrigin(::BlockSource const& region, ::BlockPos const& origin, int distFromOrigin, bool exactDist);
+    MCAPI ::BlockPos _getRandomHeightmapPosAroundOrigin(
+        ::BlockSource const& region,
+        ::BlockPos const&    origin,
+        int                  distFromOrigin,
+        bool                 exactDist
+    );
 
     MCAPI ::Actor* _getRandomPlayerInOverworld() const;
 
-    MCAPI ::std::optional<::BlockPos> _getSpawnPosFromNearestVillageToPlayerPos(::BlockPos const& playerPos, ::BlockSource& region);
+    MCAPI ::std::optional<::BlockPos>
+    _getSpawnPosFromNearestVillageToPlayerPos(::BlockPos const& playerPos, ::BlockSource& region);
 
     MCAPI void _spawnWanderingTraderAtPos(::BlockPos const& pos, ::BlockSource& region);
 
@@ -61,5 +67,4 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::vector<float> const& CHANCE_TO_SPAWN_PER_DAY();
     // NOLINTEND
-
 };

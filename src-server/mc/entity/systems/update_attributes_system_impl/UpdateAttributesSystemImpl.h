@@ -15,7 +15,11 @@ struct MovementAttributesComponent;
 namespace UpdateAttributesSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickUpdateAttributesSystem(::entt::type_list<::Include<::ActorMovementTickNeededComponent>>, ::AttributesComponent const& attributes, ::MovementAttributesComponent& movementAttributes);
+MCNAPI void tickUpdateAttributesSystem(
+    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
+    ::AttributesComponent const&   attributes,
+    ::MovementAttributesComponent& movementAttributes
+);
 // NOLINTEND
 
-}
+} // namespace UpdateAttributesSystemImpl

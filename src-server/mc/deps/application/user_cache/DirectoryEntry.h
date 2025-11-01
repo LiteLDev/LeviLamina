@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk52d55b;
-    ::ll::UntypedStorage<8, 8> mUnk3689d0;
+    ::ll::UntypedStorage<8, 8>  mUnk3689d0;
     // NOLINTEND
 
 public:
@@ -17,7 +17,6 @@ public:
     DirectoryEntry& operator=(DirectoryEntry const&);
     DirectoryEntry(DirectoryEntry const&);
     DirectoryEntry();
-
 };
 
-}
+} // namespace Bedrock

@@ -14,12 +14,12 @@ class BehaviorNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk4a15a7;
+    ::ll::UntypedStorage<8, 8>  mUnk4a15a7;
     ::ll::UntypedStorage<8, 16> mUnk4a26a4;
-    ::ll::UntypedStorage<8, 8> mUnk6ebe2a;
-    ::ll::UntypedStorage<8, 8> mUnk29cd9b;
-    ::ll::UntypedStorage<8, 8> mUnkc05c61;
-    ::ll::UntypedStorage<4, 4> mUnk99df5c;
+    ::ll::UntypedStorage<8, 8>  mUnk6ebe2a;
+    ::ll::UntypedStorage<8, 8>  mUnk29cd9b;
+    ::ll::UntypedStorage<8, 8>  mUnkc05c61;
+    ::ll::UntypedStorage<4, 4>  mUnk99df5c;
     // NOLINTEND
 
 public:
@@ -58,5 +58,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

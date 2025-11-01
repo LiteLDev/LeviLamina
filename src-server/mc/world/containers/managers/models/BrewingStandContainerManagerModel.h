@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,9 +20,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
-    ::ll::TypedStorage<4, 4, int> mLastTickCount;
-    ::ll::TypedStorage<4, 4, int> mLastFuelAmount;
-    ::ll::TypedStorage<4, 4, int> mLastFuelTotal;
+    ::ll::TypedStorage<4, 4, int>         mLastTickCount;
+    ::ll::TypedStorage<4, 4, int>         mLastFuelAmount;
+    ::ll::TypedStorage<4, 4, int>         mLastFuelTotal;
     // NOLINTEND
 
 public:
@@ -94,5 +94,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

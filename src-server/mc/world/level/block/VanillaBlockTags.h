@@ -95,4 +95,4 @@ MCAPI ::HashedString const& Wood();
 MCAPI ::HashedString const& WoodDiggable();
 // NOLINTEND
 
-}
+} // namespace VanillaBlockTags

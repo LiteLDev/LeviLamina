@@ -21,19 +21,19 @@ public:
     // ExecuteCommand inner types define
     enum class Mode : int {
         Execute = 0,
-        Detect = 1,
+        Detect  = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 200> mUnkd8ebd0;
-    ::ll::UntypedStorage<4, 16> mUnk246ddb;
-    ::ll::UntypedStorage<4, 16> mUnkdedb9e;
-    ::ll::UntypedStorage<8, 8> mUnk826bb1;
-    ::ll::UntypedStorage<4, 4> mUnk1a4708;
-    ::ll::UntypedStorage<4, 4> mUnkce1560;
-    ::ll::UntypedStorage<8, 8> mUnke6d6bd;
+    ::ll::UntypedStorage<4, 16>  mUnk246ddb;
+    ::ll::UntypedStorage<4, 16>  mUnkdedb9e;
+    ::ll::UntypedStorage<8, 8>   mUnk826bb1;
+    ::ll::UntypedStorage<4, 4>   mUnk1a4708;
+    ::ll::UntypedStorage<4, 4>   mUnkce1560;
+    ::ll::UntypedStorage<8, 8>   mUnke6d6bd;
     // NOLINTEND
 
 public:
@@ -55,7 +55,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ExecuteCommandPositionData getExecutePositionData(int version, ::Actor& actor, ::CommandPositionFloat const& commandPosition, ::CommandPosition const& detectCommandPosition, ::ExecuteCommand::Mode mode);
+    MCAPI static ::ExecuteCommandPositionData getExecutePositionData(
+        int                           version,
+        ::Actor&                      actor,
+        ::CommandPositionFloat const& commandPosition,
+        ::CommandPosition const&      detectCommandPosition,
+        ::ExecuteCommand::Mode        mode
+    );
 
     MCAPI static void setup(::CommandRegistry& registry, bool isLegacyActive, int newExecuteStartVersion);
     // NOLINTEND
@@ -71,5 +77,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

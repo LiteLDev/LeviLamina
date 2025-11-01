@@ -24,19 +24,19 @@ class HorseArmorItem : public ::Item {
 public:
     // HorseArmorItem inner types define
     enum class Tier : int {
-        None = 0,
+        None    = 0,
         Leather = 1,
-        Iron = 2,
-        Gold = 3,
+        Iron    = 2,
+        Gold    = 3,
         Diamond = 4,
-        Copper = 5,
-        Count = 6,
+        Copper  = 5,
+        Count   = 6,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int const> mDefense;
+    ::ll::TypedStorage<4, 4, int const>              mDefense;
     ::ll::TypedStorage<4, 4, ::HorseArmorItem::Tier> mTier;
     // NOLINTEND
 
@@ -62,10 +62,16 @@ public:
     virtual bool isDyeable() const /*override*/;
 
     // vIndex: 81
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const /*override*/;
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
+        /*override*/;
 
     // vIndex: 53
-    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~HorseArmorItem() /*override*/ = default;
@@ -94,7 +100,12 @@ public:
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
     // NOLINTEND
 
 public:
@@ -102,5 +113,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

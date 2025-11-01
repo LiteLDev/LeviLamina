@@ -10,4 +10,4 @@ MCNAPI float const& DAMAGE_MODIFIER();
 MCNAPI float const& DAMAGE_MULTIPLIER();
 // NOLINTEND
 
-}
+} // namespace DamageSensor::Defaults

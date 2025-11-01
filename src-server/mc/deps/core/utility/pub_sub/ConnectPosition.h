@@ -5,7 +5,7 @@
 namespace Bedrock::PubSub {
 
 enum class ConnectPosition : int {
-    AtBack = 0,
+    AtBack  = 0,
     AtFront = 1,
 };
 

@@ -20,9 +20,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::Generation& operator=(::SharedTypes::v1_21_60::DimensionDefinition::Generation&&);
+    MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::Generation&
+    operator=(::SharedTypes::v1_21_60::DimensionDefinition::Generation&&);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_60::DimensionDefinition

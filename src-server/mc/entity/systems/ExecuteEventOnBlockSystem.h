@@ -13,4 +13,4 @@ namespace ExecuteEventOnBlockSystem {
 MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
-}
+} // namespace ExecuteEventOnBlockSystem

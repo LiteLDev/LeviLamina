@@ -7,7 +7,6 @@
 
 namespace Bedrock::PubSub {
 
-class DeferredSubscription : public ::Bedrock::PubSub::SubscriptionBase {
-};
+class DeferredSubscription : public ::Bedrock::PubSub::SubscriptionBase {};
 
-}
+} // namespace Bedrock::PubSub

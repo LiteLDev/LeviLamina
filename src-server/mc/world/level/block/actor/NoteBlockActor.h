@@ -21,7 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, uchar> mNote;
-    ::ll::TypedStorage<1, 1, bool> mOn;
+    ::ll::TypedStorage<1, 1, bool>  mOn;
     // NOLINTEND
 
 public:
@@ -62,5 +62,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

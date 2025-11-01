@@ -27,7 +27,12 @@ public:
     virtual void fireEditorScriptEvent(::std::string const&, ::std::string const&, ::std::string const&) = 0;
 
     // vIndex: 6
-    virtual void fireTutorialEvent(::std::string_view, ::std::optional<::std::string> const&, ::std::string const&, ::std::optional<::std::string> const&) = 0;
+    virtual void fireTutorialEvent(
+        ::std::string_view,
+        ::std::optional<::std::string> const&,
+        ::std::string const&,
+        ::std::optional<::std::string> const&
+    ) = 0;
     // NOLINTEND
 
 public:
@@ -35,7 +40,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

@@ -4,7 +4,6 @@
 
 namespace Realms {
 
-class SubscriptionService {
-};
+class SubscriptionService {};
 
-}
+} // namespace Realms

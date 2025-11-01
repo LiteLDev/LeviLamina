@@ -4,7 +4,6 @@
 
 namespace Util {
 
-struct CaseInsensitiveHash {
-};
+struct CaseInsensitiveHash {};
 
-}
+} // namespace Util

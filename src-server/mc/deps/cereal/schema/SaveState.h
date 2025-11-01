@@ -17,7 +17,6 @@ public:
     SaveState& operator=(SaveState const&);
     SaveState(SaveState const&);
     SaveState();
-
 };
 
-}
+} // namespace cereal::internal

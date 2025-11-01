@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnkf77010;
-    ::ll::UntypedStorage<1, 2> mUnkbf53bd;
+    ::ll::UntypedStorage<1, 2>  mUnkbf53bd;
     // NOLINTEND
 
 public:
@@ -29,7 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Settings

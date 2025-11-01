@@ -28,7 +28,6 @@ public:
     CCRakNetSlidingWindow& operator=(CCRakNetSlidingWindow const&);
     CCRakNetSlidingWindow(CCRakNetSlidingWindow const&);
     CCRakNetSlidingWindow();
-
 };
 
-}
+} // namespace RakNet

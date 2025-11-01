@@ -4,7 +4,6 @@
 
 namespace Realms {
 
-class RealmsServices {
-};
+class RealmsServices {};
 
-}
+} // namespace Realms

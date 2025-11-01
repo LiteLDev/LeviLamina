@@ -20,5 +20,4 @@ public:
         } else {
             return StackRefResult<T>{*this};
         }
-    }
-};
+    }};

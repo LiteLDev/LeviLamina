@@ -23,16 +23,28 @@ public:
     virtual ~CloudServerQueryFilter() = default;
 
     // vIndex: 1
-    virtual bool OnPostRequest(::RakNet::RakNetGUID, ::RakNet::SystemAddress, ::RakNet::CloudKey, uint, char const*) = 0;
+    virtual bool
+    OnPostRequest(::RakNet::RakNetGUID, ::RakNet::SystemAddress, ::RakNet::CloudKey, uint, char const*) = 0;
 
     // vIndex: 2
-    virtual bool OnReleaseRequest(::RakNet::RakNetGUID, ::RakNet::SystemAddress, ::DataStructures::List<::RakNet::CloudKey>&) = 0;
+    virtual bool
+    OnReleaseRequest(::RakNet::RakNetGUID, ::RakNet::SystemAddress, ::DataStructures::List<::RakNet::CloudKey>&) = 0;
 
     // vIndex: 3
-    virtual bool OnGetRequest(::RakNet::RakNetGUID, ::RakNet::SystemAddress, ::RakNet::CloudQuery&, ::DataStructures::List<::RakNet::RakNetGUID>&) = 0;
+    virtual bool OnGetRequest(
+        ::RakNet::RakNetGUID,
+        ::RakNet::SystemAddress,
+        ::RakNet::CloudQuery&,
+        ::DataStructures::List<::RakNet::RakNetGUID>&
+    ) = 0;
 
     // vIndex: 4
-    virtual bool OnUnsubscribeRequest(::RakNet::RakNetGUID, ::RakNet::SystemAddress, ::DataStructures::List<::RakNet::CloudKey>&, ::DataStructures::List<::RakNet::RakNetGUID>&) = 0;
+    virtual bool OnUnsubscribeRequest(
+        ::RakNet::RakNetGUID,
+        ::RakNet::SystemAddress,
+        ::DataStructures::List<::RakNet::CloudKey>&,
+        ::DataStructures::List<::RakNet::RakNetGUID>&
+    ) = 0;
     // NOLINTEND
 
 public:
@@ -40,7 +52,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

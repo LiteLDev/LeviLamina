@@ -19,55 +19,56 @@ namespace mce { class UUID; }
 
 namespace Editor::Services {
 
-class EditorPlaytestManagerService : public ::Editor::Services::IEditorService, public ::Editor::Services::EditorPlaytestManagerServiceProvider, public ::Editor::Services::EditorPlayerPlaytestServiceProvider {
+class EditorPlaytestManagerService : public ::Editor::Services::IEditorService,
+                                     public ::Editor::Services::EditorPlaytestManagerServiceProvider,
+                                     public ::Editor::Services::EditorPlayerPlaytestServiceProvider {
 public:
     // EditorPlaytestManagerService inner types declare
     // clang-format off
     struct PlayerSessionInfo;
     // clang-format on
-    
+
     // EditorPlaytestManagerService inner types define
     enum class SessionState : int {
-        Idle = 0,
-        Archiving = 1,
-        ArchiveComplete = 2,
+        Idle                     = 0,
+        Archiving                = 1,
+        ArchiveComplete          = 2,
         AwaitingTransferResponse = 3,
-        ExecutingTransfer = 4,
-        ReturningToEditor = 5,
+        ExecutingTransfer        = 4,
+        ReturningToEditor        = 5,
     };
-    
+
     struct PlayerSessionInfo {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk4b5298;
-        ::ll::UntypedStorage<4, 4> mUnka73670;
-        ::ll::UntypedStorage<4, 4> mUnkcbf064;
+        ::ll::UntypedStorage<4, 4>  mUnka73670;
+        ::ll::UntypedStorage<4, 4>  mUnkcbf064;
         ::ll::UntypedStorage<8, 32> mUnka39940;
         ::ll::UntypedStorage<8, 32> mUnkf32514;
         ::ll::UntypedStorage<8, 64> mUnk87fe44;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PlayerSessionInfo& operator=(PlayerSessionInfo const&);
         PlayerSessionInfo(PlayerSessionInfo const&);
         PlayerSessionInfo();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~PlayerSessionInfo();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -99,16 +100,24 @@ public:
     virtual ::Editor::Playtest::SessionResult getPlaytestSessionAvailability(::WeakEntityRef playerRef) /*override*/;
 
     // vIndex: 2
-    virtual void beginPlaytestSession(::WeakEntityRef playerRef, ::Editor::GameOptions const& options, ::std::function<void(::Editor::Playtest::SessionResult const&)> callback) /*override*/;
+    virtual void beginPlaytestSession(
+        ::WeakEntityRef                                                 playerRef,
+        ::Editor::GameOptions const&                                    options,
+        ::std::function<void(::Editor::Playtest::SessionResult const&)> callback
+    ) /*override*/;
 
     // vIndex: 3
-    virtual void _handlePlayersSessionTransferResponse(::WeakEntityRef playerRef, ::Editor::Network::PlaytestBeginSessionTransferResponsePayload const& payload) /*override*/;
+    virtual void _handlePlayersSessionTransferResponse(
+        ::WeakEntityRef                                                       playerRef,
+        ::Editor::Network::PlaytestBeginSessionTransferResponsePayload const& payload
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Services::EditorPlaytestManagerService::PlayerSessionInfo* _createSessionInfo(::mce::UUID const& clientUUID);
+    MCNAPI ::Editor::Services::EditorPlaytestManagerService::PlayerSessionInfo*
+    _createSessionInfo(::mce::UUID const& clientUUID);
     // NOLINTEND
 
 public:
@@ -122,9 +131,16 @@ public:
 
     MCNAPI ::Editor::Playtest::SessionResult $getPlaytestSessionAvailability(::WeakEntityRef playerRef);
 
-    MCNAPI void $beginPlaytestSession(::WeakEntityRef playerRef, ::Editor::GameOptions const& options, ::std::function<void(::Editor::Playtest::SessionResult const&)> callback);
+    MCNAPI void $beginPlaytestSession(
+        ::WeakEntityRef                                                 playerRef,
+        ::Editor::GameOptions const&                                    options,
+        ::std::function<void(::Editor::Playtest::SessionResult const&)> callback
+    );
 
-    MCNAPI void $_handlePlayersSessionTransferResponse(::WeakEntityRef playerRef, ::Editor::Network::PlaytestBeginSessionTransferResponsePayload const& payload);
+    MCNAPI void $_handlePlayersSessionTransferResponse(
+        ::WeakEntityRef                                                       playerRef,
+        ::Editor::Network::PlaytestBeginSessionTransferResponsePayload const& payload
+    );
     // NOLINTEND
 
 public:
@@ -136,7 +152,6 @@ public:
 
     MCNAPI static void** $vftableForEditorPlayerPlaytestServiceProvider();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

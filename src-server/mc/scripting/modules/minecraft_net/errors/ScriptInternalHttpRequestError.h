@@ -44,7 +44,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::error_code const& error);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraftNet

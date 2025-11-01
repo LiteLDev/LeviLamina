@@ -4,9 +4,8 @@
 
 namespace Details {
 
-template<typename T>
-class ValueOrRef {
-public:
+template <typename T>
+class ValueOrRef {public:
     ValueOrRef(std::reference_wrapper<T> ref) : is_pointer_(true), variant_(&ref.get()) {}
 
     ~ValueOrRef() {
@@ -40,4 +39,4 @@ private:
     const bool is_pointer_;
 };
 
-}
+} // namespace Details

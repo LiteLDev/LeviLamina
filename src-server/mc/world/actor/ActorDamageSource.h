@@ -56,7 +56,8 @@ public:
     virtual bool isFallDamage() const;
 
     // vIndex: 10
-    virtual ::std::pair<::std::string, ::std::vector<::std::string>> getDeathMessage(::std::string deadName, ::Actor* dead) const;
+    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
+    getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
     // vIndex: 11
     virtual bool getIsCreative() const;
@@ -95,13 +96,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::pair<::std::string, ::SharedTypes::Legacy::ActorDamageCause>> generateDamageCauseCommandEnum(::std::optional<::Scripting::Version> scriptVersion);
+    MCAPI static ::std::vector<::std::pair<::std::string, ::SharedTypes::Legacy::ActorDamageCause>>
+    generateDamageCauseCommandEnum(::std::optional<::Scripting::Version> scriptVersion);
 
-    MCAPI static ::std::vector<::std::pair<::std::string, ::SharedTypes::Legacy::ActorDamageCause>> generateNewDamageCauseCommandEnum(::std::optional<::Scripting::Version> scriptVersion);
+    MCAPI static ::std::vector<::std::pair<::std::string, ::SharedTypes::Legacy::ActorDamageCause>>
+    generateNewDamageCauseCommandEnum(::std::optional<::Scripting::Version> scriptVersion);
 
     MCAPI static ::std::vector<::VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
 
-    MCAPI static ::SharedTypes::Legacy::ActorDamageCause getCauseMapVersionCutoffInclusive(::Scripting::Version scriptingVersion);
+    MCAPI static ::SharedTypes::Legacy::ActorDamageCause
+    getCauseMapVersionCutoffInclusive(::Scripting::Version scriptingVersion);
 
     MCAPI static ::SharedTypes::Legacy::ActorDamageCause lookupCause(::std::string const& name);
 
@@ -129,7 +133,8 @@ public:
 
     MCAPI bool $isFallDamage() const;
 
-    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>> $getDeathMessage(::std::string deadName, ::Actor* dead) const;
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
     MCFOLD bool $getIsCreative() const;
 
@@ -159,5 +164,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

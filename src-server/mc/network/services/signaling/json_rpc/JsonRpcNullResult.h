@@ -8,9 +8,9 @@ class JsonRpcNullResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk53a833;
+    ::ll::UntypedStorage<4, 4>  mUnk53a833;
     ::ll::UntypedStorage<8, 32> mUnk23a12f;
-    ::ll::UntypedStorage<1, 1> mUnk6f97cf;
+    ::ll::UntypedStorage<1, 1>  mUnk6f97cf;
     // NOLINTEND
 
 public:
@@ -30,7 +30,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace JsonRpc

@@ -28,4 +28,4 @@ MCAPI ::SharedTypes::Legacy::SlotWithDropChance nbtKeyToSlotWithDropChance(::std
 MCAPI ::std::string slotWithDropChanceToNbtKey(::SharedTypes::Legacy::SlotWithDropChance slot);
 // NOLINTEND
 
-}
+} // namespace EquipmentSlots

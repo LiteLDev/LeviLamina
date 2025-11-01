@@ -5,7 +5,7 @@
 namespace Scripting::Reflection {
 
 enum class ReturnPolicy : uchar {
-    Copy = 0,
+    Copy  = 0,
     Baked = 1,
 };
 

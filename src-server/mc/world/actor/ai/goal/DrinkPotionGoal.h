@@ -18,12 +18,12 @@ class DrinkPotionGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 4, float const> mWalkSpeedModifier;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                  mMob;
+    ::ll::TypedStorage<4, 4, float const>                             mWalkSpeedModifier;
     ::ll::TypedStorage<8, 24, ::std::vector<::DrinkPotionData> const> mDrinkPotionData;
-    ::ll::TypedStorage<4, 4, int> mThrottleCooldown;
-    ::ll::TypedStorage<8, 8, ::Tick> mFinishUsingItemTick;
-    ::ll::TypedStorage<8, 80, ::AttributeModifier> mSpeedAttributeModifier;
+    ::ll::TypedStorage<4, 4, int>                                     mThrottleCooldown;
+    ::ll::TypedStorage<8, 8, ::Tick>                                  mFinishUsingItemTick;
+    ::ll::TypedStorage<8, 80, ::AttributeModifier>                    mSpeedAttributeModifier;
     // NOLINTEND
 
 public:
@@ -98,5 +98,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

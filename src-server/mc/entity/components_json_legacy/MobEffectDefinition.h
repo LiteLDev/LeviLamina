@@ -16,10 +16,10 @@ class MobEffectDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mEffectRange;
-    ::ll::TypedStorage<4, 4, int> mEffectId;
-    ::ll::TypedStorage<4, 4, ::EffectDuration> mEffectTime;
-    ::ll::TypedStorage<4, 4, int> mCooldownTicks;
+    ::ll::TypedStorage<4, 4, float>               mEffectRange;
+    ::ll::TypedStorage<4, 4, int>                 mEffectId;
+    ::ll::TypedStorage<4, 4, ::EffectDuration>    mEffectTime;
+    ::ll::TypedStorage<4, 4, int>                 mCooldownTicks;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mEntityFilter;
     // NOLINTEND
 
@@ -38,7 +38,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MobEffectDefinition>>& root);
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MobEffectDefinition>>& root
+    );
     // NOLINTEND
-
 };

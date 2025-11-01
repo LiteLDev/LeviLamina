@@ -19,7 +19,6 @@ public:
     PRO& operator=(PRO const&);
     PRO(PRO const&);
     PRO();
-
 };
 
-}
+} // namespace RakNet

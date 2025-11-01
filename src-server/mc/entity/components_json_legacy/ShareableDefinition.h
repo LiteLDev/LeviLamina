@@ -16,11 +16,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk757b5b;
-    ::ll::UntypedStorage<1, 1> mUnk5fb624;
-    ::ll::UntypedStorage<4, 4> mUnk3db088;
-    ::ll::UntypedStorage<4, 4> mUnkc2f82b;
-    ::ll::UntypedStorage<4, 4> mUnke24a76;
-    ::ll::UntypedStorage<1, 1> mUnk9e52b9;
+    ::ll::UntypedStorage<1, 1>  mUnk5fb624;
+    ::ll::UntypedStorage<4, 4>  mUnk3db088;
+    ::ll::UntypedStorage<4, 4>  mUnkc2f82b;
+    ::ll::UntypedStorage<4, 4>  mUnke24a76;
+    ::ll::UntypedStorage<1, 1>  mUnk9e52b9;
     // NOLINTEND
 
 public:
@@ -40,7 +40,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ShareableDefinition>>& root);
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ShareableDefinition>>& root
+    );
     // NOLINTEND
-
 };

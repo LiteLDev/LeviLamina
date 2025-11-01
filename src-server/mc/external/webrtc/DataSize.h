@@ -7,7 +7,6 @@
 
 namespace webrtc {
 
-class DataSize : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::DataSize> {
-};
+class DataSize : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::DataSize> {};
 
-}
+} // namespace webrtc

@@ -15,13 +15,13 @@ struct ChatEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mMessage;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mFilteredMessage;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mSender;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mMessage;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                             mFilteredMessage;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                                 mSender;
     ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::WeakRef<::EntityContext>>>> mTargets;
-    ::ll::TypedStorage<8, 32, ::std::string> mAuthor;
-    ::ll::TypedStorage<1, 1, bool> mMessageValid;
-    ::ll::TypedStorage<1, 1, bool> mAllowFiltering;
+    ::ll::TypedStorage<8, 32, ::std::string>                                              mAuthor;
+    ::ll::TypedStorage<1, 1, bool>                                                        mMessageValid;
+    ::ll::TypedStorage<1, 1, bool>                                                        mAllowFiltering;
     // NOLINTEND
 
 public:
@@ -56,5 +56,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

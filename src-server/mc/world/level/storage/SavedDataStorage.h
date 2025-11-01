@@ -12,7 +12,7 @@ class SavedDataStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::LevelStorage*> levelStorage;
+    ::ll::TypedStorage<8, 8, ::LevelStorage*>                                    levelStorage;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::SavedData*>> savedDatas;
     // NOLINTEND
 
@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

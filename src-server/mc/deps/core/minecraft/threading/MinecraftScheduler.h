@@ -19,5 +19,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::Scheduler>& mInstance();
     // NOLINTEND
-
 };

@@ -16,16 +16,16 @@ class MobEffectInstance {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint> mId;
-    ::ll::TypedStorage<4, 4, ::EffectDuration> mDuration;
-    ::ll::TypedStorage<4, 8, ::std::optional<::EffectDuration>> mDurationEasy;
-    ::ll::TypedStorage<4, 8, ::std::optional<::EffectDuration>> mDurationNormal;
-    ::ll::TypedStorage<4, 8, ::std::optional<::EffectDuration>> mDurationHard;
-    ::ll::TypedStorage<4, 4, int> mAmplifier;
-    ::ll::TypedStorage<1, 1, bool> mDisplayOnScreenTextureAnimation;
-    ::ll::TypedStorage<1, 1, bool> mIsCounterPausedThisTick;
-    ::ll::TypedStorage<1, 1, bool> mAmbient;
-    ::ll::TypedStorage<1, 1, bool> mEffectVisible;
+    ::ll::TypedStorage<4, 4, uint>                                mId;
+    ::ll::TypedStorage<4, 4, ::EffectDuration>                    mDuration;
+    ::ll::TypedStorage<4, 8, ::std::optional<::EffectDuration>>   mDurationEasy;
+    ::ll::TypedStorage<4, 8, ::std::optional<::EffectDuration>>   mDurationNormal;
+    ::ll::TypedStorage<4, 8, ::std::optional<::EffectDuration>>   mDurationHard;
+    ::ll::TypedStorage<4, 4, int>                                 mAmplifier;
+    ::ll::TypedStorage<1, 1, bool>                                mDisplayOnScreenTextureAnimation;
+    ::ll::TypedStorage<1, 1, bool>                                mIsCounterPausedThisTick;
+    ::ll::TypedStorage<1, 1, bool>                                mAmbient;
+    ::ll::TypedStorage<1, 1, bool>                                mEffectVisible;
     ::ll::TypedStorage<8, 96, ::MobEffect::FactorCalculationData> mFactorCalculationData;
     // NOLINTEND
 
@@ -86,5 +86,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

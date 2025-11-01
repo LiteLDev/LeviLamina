@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-class TimeMsTag {
-};
+class TimeMsTag {};
 
-}
+} // namespace dcsctp

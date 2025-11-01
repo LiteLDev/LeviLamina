@@ -19,7 +19,7 @@ public:
     ::ll::UntypedStorage<8, 40> mUnk5ed659;
     ::ll::UntypedStorage<8, 16> mUnk59d779;
     ::ll::UntypedStorage<8, 16> mUnk6160b9;
-    ::ll::UntypedStorage<1, 2> mUnk2f06e7;
+    ::ll::UntypedStorage<1, 2>  mUnk2f06e7;
     ::ll::UntypedStorage<8, 16> mUnkf06836;
     ::ll::UntypedStorage<8, 16> mUnk26a133;
     // NOLINTEND
@@ -32,7 +32,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::cereal::ext::internal::JSONSchemaValidation& operator=(::cereal::ext::internal::JSONSchemaValidation const&);
+    MCNAPI ::cereal::ext::internal::JSONSchemaValidation&
+    operator=(::cereal::ext::internal::JSONSchemaValidation const&);
 
     MCNAPI ~JSONSchemaValidation();
     // NOLINTEND
@@ -42,7 +43,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal::ext::internal

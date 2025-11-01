@@ -11,9 +11,9 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPassenger;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mVehicle;
-    ::ll::TypedStorage<1, 1, bool> exitFromPassenger;
-    ::ll::TypedStorage<1, 1, bool> actorIsBeingDestroyed;
-    ::ll::TypedStorage<1, 1, bool> switchingVehicles;
+    ::ll::TypedStorage<1, 1, bool>             exitFromPassenger;
+    ::ll::TypedStorage<1, 1, bool>             actorIsBeingDestroyed;
+    ::ll::TypedStorage<1, 1, bool>             switchingVehicles;
     // NOLINTEND
 
 public:
@@ -27,5 +27,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

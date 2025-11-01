@@ -11,11 +11,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SubChunkBlockPos> mPos;
-    ::ll::TypedStorage<1, 1, ::Brightness> mOldBrightness;
-    ::ll::TypedStorage<1, 1, ::Brightness> mNewBrightness;
-    ::ll::TypedStorage<1, 1, ::Brightness> mOldAbsorption;
-    ::ll::TypedStorage<1, 1, ::Brightness> mNewAbsorption;
-    ::ll::TypedStorage<1, 1, bool> mIsSkyLight;
+    ::ll::TypedStorage<1, 1, ::Brightness>       mOldBrightness;
+    ::ll::TypedStorage<1, 1, ::Brightness>       mNewBrightness;
+    ::ll::TypedStorage<1, 1, ::Brightness>       mOldAbsorption;
+    ::ll::TypedStorage<1, 1, ::Brightness>       mNewAbsorption;
+    ::ll::TypedStorage<1, 1, bool>               mIsSkyLight;
     // NOLINTEND
-
 };

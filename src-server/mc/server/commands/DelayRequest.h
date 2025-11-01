@@ -6,8 +6,8 @@ class DelayRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk777e90;
-    ::ll::UntypedStorage<8, 8> mUnkb1c5bd;
+    ::ll::UntypedStorage<8, 8>  mUnk777e90;
+    ::ll::UntypedStorage<8, 8>  mUnkb1c5bd;
     ::ll::UntypedStorage<8, 32> mUnk2164de;
     // NOLINTEND
 
@@ -30,5 +30,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

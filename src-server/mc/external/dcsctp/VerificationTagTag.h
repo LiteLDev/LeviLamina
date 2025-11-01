@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-class VerificationTagTag {
-};
+class VerificationTagTag {};
 
-}
+} // namespace dcsctp

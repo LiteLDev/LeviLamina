@@ -22,8 +22,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnkd5fe13;
     ::ll::UntypedStorage<8, 16> mUnkad5060;
-    ::ll::UntypedStorage<1, 1> mUnk923d16;
-    ::ll::UntypedStorage<1, 1> mUnkdcf6cd;
+    ::ll::UntypedStorage<1, 1>  mUnk923d16;
+    ::ll::UntypedStorage<1, 1>  mUnkdcf6cd;
     // NOLINTEND
 
 public:
@@ -39,7 +39,11 @@ public:
     virtual ~ActorAnimationPlayer();
 
     // vIndex: 1
-    virtual void applyToPose(::RenderParams&, ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>&, float) = 0;
+    virtual void applyToPose(
+        ::RenderParams&,
+        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>&,
+        float
+    ) = 0;
 
     // vIndex: 2
     virtual void resetAnimation() = 0;
@@ -104,5 +108,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

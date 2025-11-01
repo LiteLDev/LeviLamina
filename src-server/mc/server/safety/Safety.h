@@ -15,7 +15,12 @@ namespace Safety {
 // NOLINTBEGIN
 MCNAPI ::std::unordered_map<::std::string, ::Safety::ChatFloodingAction> const& ChatFloodingActionEnumMap();
 
-MCNAPI ::std::unordered_map<::Safety::ChatFloodingAction, ::std::string, ::Safety::ChatFloodingActionEnumHasher, ::std::equal_to<::Safety::ChatFloodingAction>> const& ChatFloodingActionEnumToStringMap();
+MCNAPI ::std::unordered_map<
+    ::Safety::ChatFloodingAction,
+    ::std::string,
+    ::Safety::ChatFloodingActionEnumHasher,
+    ::std::equal_to<::Safety::ChatFloodingAction>> const&
+ChatFloodingActionEnumToStringMap();
 // NOLINTEND
 
-}
+} // namespace Safety

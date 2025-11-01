@@ -21,7 +21,7 @@ public:
     // clang-format off
     struct Options;
     // clang-format on
-    
+
     // AnyDataChunk inner types define
     struct Options {
     public:
@@ -32,21 +32,20 @@ public:
         ::ll::UntypedStorage<1, 1> mUnkd0fd09;
         ::ll::UntypedStorage<1, 1> mUnkb34b5e;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Options& operator=(Options const&);
         Options(Options const&);
         Options();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk141880;
+    ::ll::UntypedStorage<4, 4>  mUnk141880;
     ::ll::UntypedStorage<8, 48> mUnke2d7e9;
-    ::ll::UntypedStorage<1, 1> mUnk5986f0;
+    ::ll::UntypedStorage<1, 1>  mUnk5986f0;
     // NOLINTEND
 
 public:
@@ -79,7 +78,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

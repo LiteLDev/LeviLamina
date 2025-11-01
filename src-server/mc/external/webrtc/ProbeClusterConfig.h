@@ -20,7 +20,6 @@ public:
     ProbeClusterConfig& operator=(ProbeClusterConfig const&);
     ProbeClusterConfig(ProbeClusterConfig const&);
     ProbeClusterConfig();
-
 };
 
-}
+} // namespace webrtc

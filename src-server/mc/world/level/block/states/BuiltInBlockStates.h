@@ -27,4 +27,4 @@ MCAPI ::BuiltInBlockStateVariant<uchar> const& FacingDirection();
 MCAPI ::BuiltInBlockStateVariant<::VerticalHalfEnum> const& VerticalHalf();
 // NOLINTEND
 
-}
+} // namespace BuiltInBlockStates

@@ -21,7 +21,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 86
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
+        /*override*/;
 
     // vIndex: 145
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
@@ -38,13 +39,24 @@ public:
     // NOLINTBEGIN
     MCAPI int _getSlopeDistance(::BlockSource& region, ::BlockPos const& pos, int pass, int from) const;
 
-    MCAPI bool _isLiquidBlocking(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& flowFromPos, uchar flowFromDirection) const;
+    MCAPI bool _isLiquidBlocking(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::BlockPos const& flowFromPos,
+        uchar             flowFromDirection
+    ) const;
 
     MCAPI void _spread(::BlockSource& region, ::BlockPos const& pos, int depth, bool preserveExisting) const;
 
     MCAPI bool _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool onlyDetectStatic) const;
 
-    MCAPI void _trySpreadTo(::BlockSource& region, ::BlockPos const& pos, int neighbor, ::BlockPos const& flowFromPos, uchar flowFromDirection) const;
+    MCAPI void _trySpreadTo(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        int               neighbor,
+        ::BlockPos const& flowFromPos,
+        uchar             flowFromDirection
+    ) const;
 
     MCAPI ::std::array<bool, 4> getSpread(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -68,5 +80,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

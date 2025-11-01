@@ -17,7 +17,6 @@ public:
     H264ProfileLevelId& operator=(H264ProfileLevelId const&);
     H264ProfileLevelId(H264ProfileLevelId const&);
     H264ProfileLevelId();
-
 };
 
-}
+} // namespace webrtc

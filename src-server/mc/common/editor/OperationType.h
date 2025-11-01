@@ -6,8 +6,8 @@ namespace Editor::BlockMask {
 
 enum class OperationType : int {
     Disabled = 0,
-    Replace = 1,
-    Mask = 2,
+    Replace  = 1,
+    Mask     = 2,
 };
 
 }

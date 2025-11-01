@@ -36,7 +36,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string_view spec);
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

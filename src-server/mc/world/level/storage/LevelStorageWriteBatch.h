@@ -18,55 +18,55 @@ public:
     struct BatchEntry;
     class PerfContext;
     // clang-format on
-    
+
     // LevelStorageWriteBatch inner types define
     class PerfContext {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, uint64> mOperation;
-        ::ll::TypedStorage<8, 8, uint64> mSize;
+        ::ll::TypedStorage<8, 8, uint64>         mOperation;
+        ::ll::TypedStorage<8, 8, uint64>         mSize;
         ::ll::TypedStorage<8, 32, ::std::string> mKey;
-        ::ll::TypedStorage<8, 8, char const*> mReason;
+        ::ll::TypedStorage<8, 8, char const*>    mReason;
         // NOLINTEND
-    
     };
-    
+
     struct BatchEntry {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::std::string>> mLatestValue;
-        ::ll::TypedStorage<1, 1, bool> mDeleted;
-        ::ll::TypedStorage<4, 4, ::DBHelpers::Category> mCategory;
+        ::ll::TypedStorage<1, 1, bool>                              mDeleted;
+        ::ll::TypedStorage<4, 4, ::DBHelpers::Category>             mCategory;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~BatchEntry();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
-    
     };
-    
+
     using BatchContainerType = ::std::map<::std::string, ::LevelStorageWriteBatch::BatchEntry>;
-    
-    using iterator = ::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::LevelStorageWriteBatch::BatchEntry>>>>;
-    
-    using const_iterator = ::std::_Tree_const_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::std::string const, ::LevelStorageWriteBatch::BatchEntry>>>>;
-    
+
+    using iterator = ::std::_Tree_iterator<::std::_Tree_val<
+        ::std::_Tree_simple_types<::std::pair<::std::string const, ::LevelStorageWriteBatch::BatchEntry>>>>;
+
+    using const_iterator = ::std::_Tree_const_iterator<::std::_Tree_val<
+        ::std::_Tree_simple_types<::std::pair<::std::string const, ::LevelStorageWriteBatch::BatchEntry>>>>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>> mFlushCallbacks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>>                          mFlushCallbacks;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::LevelStorageWriteBatch::BatchEntry>> mBatch;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mFlushCallbacksMutex;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                                     mFlushCallbacksMutex;
     // NOLINTEND
 
 public:
@@ -90,7 +90,8 @@ public:
     virtual void putKey(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
 
     // vIndex: 1
-    virtual void putKey(::std::string const& key, ::std::shared_ptr<::std::string> data, ::DBHelpers::Category category);
+    virtual void
+    putKey(::std::string const& key, ::std::shared_ptr<::std::string> data, ::DBHelpers::Category category);
 
     // vIndex: 5
     virtual void deleteKey(::std::string const& key, ::DBHelpers::Category category);
@@ -144,5 +145,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

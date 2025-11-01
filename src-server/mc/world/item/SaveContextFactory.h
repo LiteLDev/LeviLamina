@@ -18,4 +18,4 @@ MCAPI ::std::unique_ptr<::SaveContext> createDiskSaveContext();
 MCAPI ::std::unique_ptr<::SaveContext> createNetworkSaveContext();
 // NOLINTEND
 
-}
+} // namespace SaveContextFactory

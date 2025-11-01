@@ -29,13 +29,13 @@ public:
     // clang-format off
     struct CurrentLanguageInfo;
     // clang-format on
-    
+
     // I18nImpl inner types define
     enum class NotifyMode : uchar {
-        Always = 0,
+        Always        = 0,
         LocaleChanged = 1,
     };
-    
+
     struct CurrentLanguageInfo {
     public:
         // member variables
@@ -43,26 +43,32 @@ public:
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ImmutableLocalization const>> mCurrentLanguage;
         ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ImmutableLocalization const>> mCurrentPackMetaLanguage;
         // NOLINTEND
-    
     };
-    
-    using LockedCurrentLanguageInfo = ::Bedrock::Threading::SharedLockbox<::I18nImpl::CurrentLanguageInfo, ::std::shared_mutex>;
-    
+
+    using LockedCurrentLanguageInfo =
+        ::Bedrock::Threading::SharedLockbox<::I18nImpl::CurrentLanguageInfo, ::std::shared_mutex>;
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Localization const>> mEmptyLanguage;
-    ::ll::TypedStorage<8, 40, ::Bedrock::Threading::SharedLockbox<::I18nImpl::CurrentLanguageInfo, ::std::shared_mutex>> mCurrentLanguageInfo;
+    ::ll::TypedStorage<8, 40, ::Bedrock::Threading::SharedLockbox<::I18nImpl::CurrentLanguageInfo, ::std::shared_mutex>>
+                                                                                         mCurrentLanguageInfo;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ImmutableLocalization>>> mLanguages;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mLanguageCodes;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mLanguageNames;
-    ::ll::TypedStorage<8, 32, ::Bedrock::Threading::SharedLockbox<::std::vector<::std::shared_ptr<::ImmutableLocalization>>, ::std::shared_mutex>> mPackKeywordLanguages;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string> const> mPackReservedKeys;
-    ::ll::TypedStorage<1, 1, bool> mLanguageSupportsHypenSplitting;
-    ::ll::TypedStorage<8, 8, ::ResourcePackManager*> mResourcePackManager;
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex> mAdditionalTranslationsBackupMutex;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                              mLanguageCodes;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>>        mLanguageNames;
+    ::ll::TypedStorage<
+        8,
+        32,
+        ::Bedrock::Threading::
+            SharedLockbox<::std::vector<::std::shared_ptr<::ImmutableLocalization>>, ::std::shared_mutex>>
+                                                                      mPackKeywordLanguages;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string> const>     mPackReservedKeys;
+    ::ll::TypedStorage<1, 1, bool>                                    mLanguageSupportsHypenSplitting;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager*>                  mResourcePackManager;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                     mAdditionalTranslationsBackupMutex;
     ::ll::TypedStorage<8, 24, ::std::vector<::ImmutableLocalization>> mAdditionalTranslationsBackup;
-    ::ll::TypedStorage<8, 8, ::std::shared_mutex> mLocalizationMutex;
+    ::ll::TypedStorage<8, 8, ::std::shared_mutex>                     mLocalizationMutex;
     ::ll::TypedStorage<8, 104, ::Core::Subject<::I18nObserver, ::Bedrock::Threading::Mutex>> mSubject;
     // NOLINTEND
 
@@ -73,37 +79,61 @@ public:
     virtual void clearLanguages() /*override*/;
 
     // vIndex: 2
-    virtual ::std::vector<::std::string> findAvailableLanguages(::ResourcePackManager& resourcePackManager) /*override*/;
+    virtual ::std::vector<::std::string>
+    findAvailableLanguages(::ResourcePackManager& resourcePackManager) /*override*/;
 
     // vIndex: 3
-    virtual ::std::unordered_map<::std::string, ::std::string> findAvailableLanguageNames(::ResourcePackManager& resourcePackManager) /*override*/;
+    virtual ::std::unordered_map<::std::string, ::std::string>
+    findAvailableLanguageNames(::ResourcePackManager& resourcePackManager) /*override*/;
 
     // vIndex: 4
-    virtual ::Bedrock::Threading::Async<void> loadLanguages(::ResourcePackManager& resourcePackManager, ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager, ::std::string const& initLang) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> loadLanguages(
+        ::ResourcePackManager&                               resourcePackManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
+        ::std::string const&                                 initLang
+    ) /*override*/;
 
     // vIndex: 5
     virtual void loadAllLanguages(::ResourcePackManager& resourcePackManager) /*override*/;
 
     // vIndex: 6
-    virtual ::std::vector<::std::string> getLanguageCodesFromPack(::PackAccessStrategy const& accessStrategy) /*override*/;
+    virtual ::std::vector<::std::string>
+    getLanguageCodesFromPack(::PackAccessStrategy const& accessStrategy) /*override*/;
 
     // vIndex: 8
-    virtual void loadLanguageKeywordsFromPack(::PackManifest const& manifest, ::PackAccessStrategy const& accessStrategy) /*override*/;
+    virtual void loadLanguageKeywordsFromPack(
+        ::PackManifest const&       manifest,
+        ::PackAccessStrategy const& accessStrategy
+    ) /*override*/;
 
     // vIndex: 7
-    virtual void loadLanguageKeywordsFromPack(::PackManifest const& manifest, ::PackAccessStrategy const& accessStrategy, ::std::vector<::std::string> const& languageCodes, ::std::optional<::std::vector<::std::string>> const& additionalLocKeys) /*override*/;
+    virtual void loadLanguageKeywordsFromPack(
+        ::PackManifest const&                                manifest,
+        ::PackAccessStrategy const&                          accessStrategy,
+        ::std::vector<::std::string> const&                  languageCodes,
+        ::std::optional<::std::vector<::std::string>> const& additionalLocKeys
+    ) /*override*/;
 
     // vIndex: 9
-    virtual void appendLanguageStringsFromPack(::PackManifest const& manifest, ::std::multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& localizationMapping) /*override*/;
+    virtual void appendLanguageStringsFromPack(
+        ::PackManifest const&                                                            manifest,
+        ::std::multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& localizationMapping
+    ) /*override*/;
 
     // vIndex: 10
-    virtual ::std::unordered_map<::std::string, ::std::string> getLanguageKeywordsFromPack(::PackManifest const& manifest, ::std::string const& keyword) /*override*/;
+    virtual ::std::unordered_map<::std::string, ::std::string>
+    getLanguageKeywordsFromPack(::PackManifest const& manifest, ::std::string const& keyword) /*override*/;
 
     // vIndex: 11
-    virtual void loadLangaugesByLocale(::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& storeLocalization) /*override*/;
+    virtual void loadLangaugesByLocale(
+        ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& storeLocalization
+    ) /*override*/;
 
     // vIndex: 12
-    virtual void appendAdditionalTranslations(::std::unordered_map<::std::string, ::std::string> const& translations, ::std::string const& keyPrefix) /*override*/;
+    virtual void appendAdditionalTranslations(
+        ::std::unordered_map<::std::string, ::std::string> const& translations,
+        ::std::string const&                                      keyPrefix
+    ) /*override*/;
 
     // vIndex: 13
     virtual void appendLanguageStrings(::PackAccessStrategy* accessStrategy) /*override*/;
@@ -115,16 +145,21 @@ public:
     virtual void chooseLanguage(::std::string const& code) /*override*/;
 
     // vIndex: 17
-    virtual ::std::string get(::std::string const& id, ::std::vector<::std::string> const& params, ::std::shared_ptr<::Localization const> const locale) /*override*/;
+    virtual ::std::string
+    get(::std::string const&                          id,
+        ::std::vector<::std::string> const&           params,
+        ::std::shared_ptr<::Localization const> const locale) /*override*/;
 
     // vIndex: 16
-    virtual ::std::string get(::std::string const& langString, ::std::shared_ptr<::Localization const> const locale) /*override*/;
+    virtual ::std::string
+    get(::std::string const& langString, ::std::shared_ptr<::Localization const> const locale) /*override*/;
 
     // vIndex: 18
     virtual ::std::string getPackKeywordValue(::PackManifest const& manifest, ::std::string const& key) /*override*/;
 
     // vIndex: 19
-    virtual ::std::string getPackKeywordValueForTelemetry(::PackManifest const& manifest, ::std::string const& key) /*override*/;
+    virtual ::std::string
+    getPackKeywordValueForTelemetry(::PackManifest const& manifest, ::std::string const& key) /*override*/;
 
     // vIndex: 20
     virtual bool hasPackKeyEntry(::PackManifest const& manifest, ::std::string const& key) /*override*/;
@@ -148,7 +183,10 @@ public:
     virtual bool languageSupportsHypenSplitting() /*override*/;
 
     // vIndex: 27
-    virtual ::std::string getLocalizedAssetFileWithFallback(::std::string const& fileNamePrefix, ::std::string const& fileNameSuffix) /*override*/;
+    virtual ::std::string getLocalizedAssetFileWithFallback(
+        ::std::string const& fileNamePrefix,
+        ::std::string const& fileNameSuffix
+    ) /*override*/;
 
     // vIndex: 28
     virtual bool isPackKeyword(::std::string const& key) /*override*/;
@@ -164,7 +202,10 @@ public:
 
     MCAPI void _chooseLanguage(::std::shared_ptr<::ImmutableLocalization> chosen, ::I18nImpl::NotifyMode notify);
 
-    MCAPI void _findAvailableLanguageNames(::Json::Value const& root, ::std::unordered_map<::std::string, ::std::string>& destination);
+    MCAPI void _findAvailableLanguageNames(
+        ::Json::Value const&                                root,
+        ::std::unordered_map<::std::string, ::std::string>& destination
+    );
 
     MCAPI void _findAvailableLanguages(::Json::Value const& root, ::std::vector<::std::string>& destination);
 
@@ -198,25 +239,45 @@ public:
 
     MCAPI ::std::vector<::std::string> $findAvailableLanguages(::ResourcePackManager& resourcePackManager);
 
-    MCAPI ::std::unordered_map<::std::string, ::std::string> $findAvailableLanguageNames(::ResourcePackManager& resourcePackManager);
+    MCAPI ::std::unordered_map<::std::string, ::std::string>
+    $findAvailableLanguageNames(::ResourcePackManager& resourcePackManager);
 
-    MCAPI ::Bedrock::Threading::Async<void> $loadLanguages(::ResourcePackManager& resourcePackManager, ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager, ::std::string const& initLang);
+    MCAPI ::Bedrock::Threading::Async<void> $loadLanguages(
+        ::ResourcePackManager&                               resourcePackManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
+        ::std::string const&                                 initLang
+    );
 
     MCAPI void $loadAllLanguages(::ResourcePackManager& resourcePackManager);
 
     MCAPI ::std::vector<::std::string> $getLanguageCodesFromPack(::PackAccessStrategy const& accessStrategy);
 
-    MCAPI void $loadLanguageKeywordsFromPack(::PackManifest const& manifest, ::PackAccessStrategy const& accessStrategy);
+    MCAPI void
+    $loadLanguageKeywordsFromPack(::PackManifest const& manifest, ::PackAccessStrategy const& accessStrategy);
 
-    MCAPI void $loadLanguageKeywordsFromPack(::PackManifest const& manifest, ::PackAccessStrategy const& accessStrategy, ::std::vector<::std::string> const& languageCodes, ::std::optional<::std::vector<::std::string>> const& additionalLocKeys);
+    MCAPI void $loadLanguageKeywordsFromPack(
+        ::PackManifest const&                                manifest,
+        ::PackAccessStrategy const&                          accessStrategy,
+        ::std::vector<::std::string> const&                  languageCodes,
+        ::std::optional<::std::vector<::std::string>> const& additionalLocKeys
+    );
 
-    MCAPI void $appendLanguageStringsFromPack(::PackManifest const& manifest, ::std::multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& localizationMapping);
+    MCAPI void $appendLanguageStringsFromPack(
+        ::PackManifest const&                                                            manifest,
+        ::std::multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& localizationMapping
+    );
 
-    MCAPI ::std::unordered_map<::std::string, ::std::string> $getLanguageKeywordsFromPack(::PackManifest const& manifest, ::std::string const& keyword);
+    MCAPI ::std::unordered_map<::std::string, ::std::string>
+    $getLanguageKeywordsFromPack(::PackManifest const& manifest, ::std::string const& keyword);
 
-    MCAPI void $loadLangaugesByLocale(::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& storeLocalization);
+    MCAPI void $loadLangaugesByLocale(
+        ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& storeLocalization
+    );
 
-    MCAPI void $appendAdditionalTranslations(::std::unordered_map<::std::string, ::std::string> const& translations, ::std::string const& keyPrefix);
+    MCAPI void $appendAdditionalTranslations(
+        ::std::unordered_map<::std::string, ::std::string> const& translations,
+        ::std::string const&                                      keyPrefix
+    );
 
     MCAPI void $appendLanguageStrings(::PackAccessStrategy* accessStrategy);
 
@@ -224,7 +285,11 @@ public:
 
     MCAPI void $chooseLanguage(::std::string const& code);
 
-    MCAPI ::std::string $get(::std::string const& id, ::std::vector<::std::string> const& params, ::std::shared_ptr<::Localization const> const locale);
+    MCAPI ::std::string $get(
+        ::std::string const&                          id,
+        ::std::vector<::std::string> const&           params,
+        ::std::shared_ptr<::Localization const> const locale
+    );
 
     MCAPI ::std::string $get(::std::string const& langString, ::std::shared_ptr<::Localization const> const locale);
 
@@ -246,7 +311,8 @@ public:
 
     MCFOLD bool $languageSupportsHypenSplitting();
 
-    MCAPI ::std::string $getLocalizedAssetFileWithFallback(::std::string const& fileNamePrefix, ::std::string const& fileNameSuffix);
+    MCAPI ::std::string
+    $getLocalizedAssetFileWithFallback(::std::string const& fileNamePrefix, ::std::string const& fileNameSuffix);
 
     MCAPI bool $isPackKeyword(::std::string const& key);
     // NOLINTEND
@@ -256,5 +322,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

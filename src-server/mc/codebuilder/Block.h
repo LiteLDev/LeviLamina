@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkdd3fad;
-    ::ll::UntypedStorage<8, 8> mUnk668a41;
+    ::ll::UntypedStorage<8, 8>  mUnk668a41;
     ::ll::UntypedStorage<8, 32> mUnkc71233;
     // NOLINTEND
 
@@ -30,7 +30,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace CodeBuilder

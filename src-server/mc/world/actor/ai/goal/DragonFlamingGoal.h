@@ -16,16 +16,16 @@ class DragonFlamingGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::EnderDragon&> mDragon;
-    ::ll::TypedStorage<4, 4, int> mGroundFlameAttackCount;
-    ::ll::TypedStorage<4, 4, int> mCooldownTicks;
-    ::ll::TypedStorage<4, 4, int> mFlameTicks;
-    ::ll::TypedStorage<4, 4, int> mFlameDurationTicks;
-    ::ll::TypedStorage<4, 4, int> mRoarTicks;
-    ::ll::TypedStorage<4, 4, int> mRoarDurationTicks;
+    ::ll::TypedStorage<8, 8, ::EnderDragon&>   mDragon;
+    ::ll::TypedStorage<4, 4, int>              mGroundFlameAttackCount;
+    ::ll::TypedStorage<4, 4, int>              mCooldownTicks;
+    ::ll::TypedStorage<4, 4, int>              mFlameTicks;
+    ::ll::TypedStorage<4, 4, int>              mFlameDurationTicks;
+    ::ll::TypedStorage<4, 4, int>              mRoarTicks;
+    ::ll::TypedStorage<4, 4, int>              mRoarDurationTicks;
     ::ll::TypedStorage<4, 4, ::EffectDuration> mSmokeDurationTicks;
-    ::ll::TypedStorage<4, 4, float> mSmokeRadius;
-    ::ll::TypedStorage<4, 16, ::mce::Color> mSmokeColor;
+    ::ll::TypedStorage<4, 4, float>            mSmokeRadius;
+    ::ll::TypedStorage<4, 16, ::mce::Color>    mSmokeColor;
     // NOLINTEND
 
 public:
@@ -80,5 +80,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

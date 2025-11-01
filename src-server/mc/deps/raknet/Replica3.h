@@ -26,13 +26,13 @@ class Replica3 : public ::RakNet::NetworkIDObject {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk3d9c16;
-    ::ll::UntypedStorage<8, 16> mUnk9ca427;
-    ::ll::UntypedStorage<8, 8> mUnk5a494c;
+    ::ll::UntypedStorage<8, 16>   mUnk3d9c16;
+    ::ll::UntypedStorage<8, 16>   mUnk9ca427;
+    ::ll::UntypedStorage<8, 8>    mUnk5a494c;
     ::ll::UntypedStorage<8, 4624> mUnk2204c3;
-    ::ll::UntypedStorage<1, 1> mUnk2e364c;
-    ::ll::UntypedStorage<8, 8> mUnkd8b159;
-    ::ll::UntypedStorage<4, 4> mUnk2eb728;
+    ::ll::UntypedStorage<1, 1>    mUnk2e364c;
+    ::ll::UntypedStorage<8, 8>    mUnkd8b159;
+    ::ll::UntypedStorage<4, 4>    mUnk2eb728;
     // NOLINTEND
 
 public:
@@ -132,19 +132,23 @@ public:
     virtual bool QueryRemoteConstruction_ServerConstruction(::RakNet::Connection_RM3*, bool);
 
     // vIndex: 35
-    virtual ::RakNet::RM3ConstructionState QueryConstruction_PeerToPeer(::RakNet::Connection_RM3*, ::RakNet::Replica3P2PMode);
+    virtual ::RakNet::RM3ConstructionState
+    QueryConstruction_PeerToPeer(::RakNet::Connection_RM3*, ::RakNet::Replica3P2PMode);
 
     // vIndex: 36
     virtual bool QueryRemoteConstruction_PeerToPeer(::RakNet::Connection_RM3*);
 
     // vIndex: 37
-    virtual ::RakNet::RM3QuerySerializationResult QuerySerialization_ClientSerializable(::RakNet::Connection_RM3*, bool);
+    virtual ::RakNet::RM3QuerySerializationResult
+    QuerySerialization_ClientSerializable(::RakNet::Connection_RM3*, bool);
 
     // vIndex: 38
-    virtual ::RakNet::RM3QuerySerializationResult QuerySerialization_ServerSerializable(::RakNet::Connection_RM3*, bool);
+    virtual ::RakNet::RM3QuerySerializationResult
+    QuerySerialization_ServerSerializable(::RakNet::Connection_RM3*, bool);
 
     // vIndex: 39
-    virtual ::RakNet::RM3QuerySerializationResult QuerySerialization_PeerToPeer(::RakNet::Connection_RM3*, ::RakNet::Replica3P2PMode);
+    virtual ::RakNet::RM3QuerySerializationResult
+    QuerySerialization_PeerToPeer(::RakNet::Connection_RM3*, ::RakNet::Replica3P2PMode);
 
     // vIndex: 40
     virtual ::RakNet::RM3ActionOnPopConnection QueryActionOnPopConnection_Client(::RakNet::Connection_RM3*) const;
@@ -164,7 +168,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

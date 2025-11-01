@@ -4,8 +4,7 @@
 
 namespace rtc {
 
-template<typename T0>
-class RefCountedObject {
-};
+template <typename T0>
+class RefCountedObject {};
 
-}
+} // namespace rtc

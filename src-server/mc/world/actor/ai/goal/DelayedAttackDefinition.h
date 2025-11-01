@@ -16,12 +16,12 @@ class DelayedAttackDefinition : public ::MeleeAttackDefinition {
 public:
     // DelayedAttackDefinition inner types define
     using self = ::DelayedAttackDefinition;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mAttackDuration;
-    ::ll::TypedStorage<4, 4, float> mHitDelayPercent;
+    ::ll::TypedStorage<4, 4, float>                                  mAttackDuration;
+    ::ll::TypedStorage<4, 4, float>                                  mHitDelayPercent;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSound;
     // NOLINTEND
 
@@ -35,7 +35,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DelayedAttackDefinition>>& root);
+    MCAPI static void buildSchema(
+        ::std::string const&                                                                                    name,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::DelayedAttackDefinition>>& root
+    );
     // NOLINTEND
 
 public:
@@ -43,5 +46,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

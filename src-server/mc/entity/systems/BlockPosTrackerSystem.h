@@ -14,4 +14,4 @@ namespace BlockPosTrackerSystem {
 MCNAPI void _tickBlockPosTrackerComponent(::Actor& actor, ::BlockPosTrackerComponent& blockPosTrackerComponent);
 // NOLINTEND
 
-}
+} // namespace BlockPosTrackerSystem

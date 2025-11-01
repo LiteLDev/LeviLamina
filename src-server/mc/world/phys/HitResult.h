@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/versionless/world/level/BlockPos.h"
-#include "mc/versionless/world/phys/AABB.h"
+#include "mc/world/level/BlockPos.h"
+#include "mc/world/phys/AABB.h"
 #include "mc/world/phys/HitResultType.h"
 
 // auto generated forward declare list
@@ -25,19 +25,19 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::Vec3          mStartPos;
-    ::Vec3          mRayDir;
-    ::HitResultType mType;
-    uchar           mFacing;
-    ::BlockPos      mBlock;
-    ::Vec3          mPos;
+    ::Vec3                   mStartPos;
+    ::Vec3                   mRayDir;
+    ::HitResultType  mType;
+    uchar                      mFacing;
+    ::BlockPos           mBlock;
+    ::Vec3                   mPos;
     ::WeakEntityRef mEntity;
-    ::AABB          mEntityAABB;
-    bool            mIsHitLiquid;
-    uchar           mLiquidFacing;
-    ::BlockPos      mLiquid;
-    ::Vec3          mLiquidPos;
-    bool            mIndirectHit;
+    ::AABB                   mEntityAABB;
+    bool                        mIsHitLiquid;
+    uchar                      mLiquidFacing;
+    ::BlockPos           mLiquid;
+    ::Vec3                   mLiquidPos;
+    bool                        mIndirectHit;
     // NOLINTEND
 
 public:
@@ -47,7 +47,13 @@ public:
 
     MCAPI HitResult(::HitResult const&);
 
-    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos, ::AABB const& entityAABB);
+    MCAPI HitResult(
+        ::Vec3 const& startPos,
+        ::Vec3 const& rayDir,
+        ::Actor&      entity,
+        ::Vec3 const& pos,
+        ::AABB const& entityAABB
+    );
 
     MCAPI ::Actor* getEntity() const;
 
@@ -67,7 +73,8 @@ public:
 
     MCAPI void* $ctor(::HitResult const&);
 
-    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos, ::AABB const& entityAABB);
+    MCAPI void*
+    $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos, ::AABB const& entityAABB);
     // NOLINTEND
 
 public:
@@ -75,5 +82,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

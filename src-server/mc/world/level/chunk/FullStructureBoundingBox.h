@@ -4,7 +4,6 @@
 
 namespace br {
 
-struct FullStructureBoundingBox {
-};
+struct FullStructureBoundingBox {};
 
-}
+} // namespace br

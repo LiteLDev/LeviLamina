@@ -11,5 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 24, ::BoundingBox> mCachedPieceBounds;
     // NOLINTEND
-
 };

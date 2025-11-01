@@ -16,7 +16,6 @@ public:
     LntfConfig& operator=(LntfConfig const&);
     LntfConfig(LntfConfig const&);
     LntfConfig();
-
 };
 
-}
+} // namespace webrtc

@@ -16,7 +16,7 @@ class ActorBoolPropertyTest : public ::FilterTest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnkd44aea;
+    ::ll::UntypedStorage<1, 1>  mUnkd44aea;
     ::ll::UntypedStorage<8, 48> mUnkd0515d;
     // NOLINTEND
 
@@ -83,5 +83,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

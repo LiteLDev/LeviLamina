@@ -12,14 +12,14 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnkffe8e6;
-    ::ll::UntypedStorage<4, 4> mUnk53a4e8;
-    ::ll::UntypedStorage<4, 4> mUnka2353f;
-    ::ll::UntypedStorage<1, 1> mUnke1cd25;
+    ::ll::UntypedStorage<4, 4>  mUnk53a4e8;
+    ::ll::UntypedStorage<4, 4>  mUnka2353f;
+    ::ll::UntypedStorage<1, 1>  mUnke1cd25;
     ::ll::UntypedStorage<8, 16> mUnk42e630;
-    ::ll::UntypedStorage<1, 1> mUnkd0eb9e;
-    ::ll::UntypedStorage<4, 4> mUnk5c0f68;
-    ::ll::UntypedStorage<4, 8> mUnk1e8344;
-    ::ll::UntypedStorage<4, 8> mUnk3c1f72;
+    ::ll::UntypedStorage<1, 1>  mUnkd0eb9e;
+    ::ll::UntypedStorage<4, 4>  mUnk5c0f68;
+    ::ll::UntypedStorage<4, 8>  mUnk1e8344;
+    ::ll::UntypedStorage<4, 8>  mUnk3c1f72;
     // NOLINTEND
 
 public:
@@ -61,5 +61,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

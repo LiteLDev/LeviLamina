@@ -32,7 +32,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::unique_ptr<::cricket::SctpTransportInternal> CreateSctpTransport(::webrtc::Environment const& env, ::rtc::PacketTransportInternal* transport) /*override*/;
+    virtual ::std::unique_ptr<::cricket::SctpTransportInternal>
+    CreateSctpTransport(::webrtc::Environment const& env, ::rtc::PacketTransportInternal* transport) /*override*/;
 
     // vIndex: 0
     virtual ~SctpTransportFactory() /*override*/ = default;
@@ -53,7 +54,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::cricket::SctpTransportInternal> $CreateSctpTransport(::webrtc::Environment const& env, ::rtc::PacketTransportInternal* transport);
+    MCNAPI ::std::unique_ptr<::cricket::SctpTransportInternal>
+    $CreateSctpTransport(::webrtc::Environment const& env, ::rtc::PacketTransportInternal* transport);
     // NOLINTEND
 
 public:
@@ -61,7 +63,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

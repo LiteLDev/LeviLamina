@@ -12,7 +12,7 @@ namespace Puv { class Logger; }
 namespace SpawnGroupsLegacyParser {
 // functions
 // NOLINTBEGIN
-MCNAPI ::ActorSpawnRuleData parseSpawnRulesData(::Puv::Input const& input, ::Puv::Logger& logger);
+MCAPI ::ActorSpawnRuleData parseSpawnRulesData(::Puv::Input const& input, ::Puv::Logger& logger);
 // NOLINTEND
 
-}
+} // namespace SpawnGroupsLegacyParser

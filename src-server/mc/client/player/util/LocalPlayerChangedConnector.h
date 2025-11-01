@@ -15,5 +15,4 @@ public:
     LocalPlayerChangedConnector& operator=(LocalPlayerChangedConnector const&);
     LocalPlayerChangedConnector(LocalPlayerChangedConnector const&);
     LocalPlayerChangedConnector();
-
 };

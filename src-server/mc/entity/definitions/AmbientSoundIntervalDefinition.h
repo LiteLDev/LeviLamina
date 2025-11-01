@@ -17,8 +17,8 @@ struct AmbientSoundIntervalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc810b5;
-    ::ll::UntypedStorage<4, 4> mUnkae8549;
+    ::ll::UntypedStorage<4, 4>  mUnkc810b5;
+    ::ll::UntypedStorage<4, 4>  mUnkae8549;
     ::ll::UntypedStorage<8, 32> mUnke1c8c2;
     ::ll::UntypedStorage<8, 24> mUnk21c040;
     // NOLINTEND
@@ -42,7 +42,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AmbientSoundIntervalDefinition>>& root);
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AmbientSoundIntervalDefinition>>&
+            root
+    );
     // NOLINTEND
 
 public:
@@ -50,5 +53,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

@@ -17,5 +17,4 @@ public:
     MERSUniformData& operator=(MERSUniformData const&);
     MERSUniformData(MERSUniformData const&);
     MERSUniformData();
-
 };

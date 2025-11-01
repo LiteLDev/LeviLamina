@@ -6,25 +6,25 @@ struct PingedCompatibleServer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnk2ea269;
-    ::ll::UntypedStorage<8, 32> mUnkb8a0f9;
-    ::ll::UntypedStorage<4, 4> mUnke564b6;
-    ::ll::UntypedStorage<4, 4> mUnk130f1b;
-    ::ll::UntypedStorage<8, 32> mUnk3ec1fb;
-    ::ll::UntypedStorage<4, 4> mUnk3ea2c9;
-    ::ll::UntypedStorage<4, 4> mUnkd9f37a;
-    ::ll::UntypedStorage<8, 32> mUnk499929;
+    ::ll::UntypedStorage<8, 32>  mUnk2ea269;
+    ::ll::UntypedStorage<8, 32>  mUnkb8a0f9;
+    ::ll::UntypedStorage<4, 4>   mUnke564b6;
+    ::ll::UntypedStorage<4, 4>   mUnk130f1b;
+    ::ll::UntypedStorage<8, 32>  mUnk3ec1fb;
+    ::ll::UntypedStorage<4, 4>   mUnk3ea2c9;
+    ::ll::UntypedStorage<4, 4>   mUnkd9f37a;
+    ::ll::UntypedStorage<8, 32>  mUnk499929;
     ::ll::UntypedStorage<8, 136> mUnke52a42;
-    ::ll::UntypedStorage<4, 4> mUnkbc1dd6;
-    ::ll::UntypedStorage<4, 4> mUnk3ce443;
-    ::ll::UntypedStorage<8, 16> mUnk1289fb;
-    ::ll::UntypedStorage<8, 8> mUnkb0d1a5;
-    ::ll::UntypedStorage<8, 24> mUnk59a07a;
-    ::ll::UntypedStorage<4, 4> mUnk702444;
-    ::ll::UntypedStorage<2, 2> mUnk89225c;
-    ::ll::UntypedStorage<8, 8> mUnkf06804;
-    ::ll::UntypedStorage<1, 1> mUnk317f91;
-    ::ll::UntypedStorage<1, 1> mUnk30edaa;
+    ::ll::UntypedStorage<4, 4>   mUnkbc1dd6;
+    ::ll::UntypedStorage<4, 4>   mUnk3ce443;
+    ::ll::UntypedStorage<8, 16>  mUnk1289fb;
+    ::ll::UntypedStorage<8, 8>   mUnkb0d1a5;
+    ::ll::UntypedStorage<8, 24>  mUnk59a07a;
+    ::ll::UntypedStorage<4, 4>   mUnk702444;
+    ::ll::UntypedStorage<2, 2>   mUnk89225c;
+    ::ll::UntypedStorage<8, 8>   mUnkf06804;
+    ::ll::UntypedStorage<1, 1>   mUnk317f91;
+    ::ll::UntypedStorage<1, 1>   mUnk30edaa;
     // NOLINTEND
 
 public:
@@ -58,5 +58,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

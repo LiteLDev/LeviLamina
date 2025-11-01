@@ -27,10 +27,10 @@ class SetActorDataPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ActorRuntimeID                             mId;
+    ::ActorRuntimeID                                                          mId;
     ::std::vector<::std::unique_ptr<::DataItem>> mPackedItems;
-    ::PropertySyncData                           mSynchedProperties;
-    ::PlayerInputTick                            mTick;
+    ::PropertySyncData                                                     mSynchedProperties;
+    ::PlayerInputTick                                                        mTick;
     // NOLINTEND
 
 public:
@@ -59,13 +59,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SetActorDataPacket(::ActorRuntimeID id, ::SynchedActorDataEntityWrapper& entityData, ::PropertyComponent* propertyComponent, uint64 tick, bool packAll);
+    MCAPI SetActorDataPacket(
+        ::ActorRuntimeID                 id,
+        ::SynchedActorDataEntityWrapper& entityData,
+        ::PropertyComponent*             propertyComponent,
+        uint64                           tick,
+        bool                             packAll
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorRuntimeID id, ::SynchedActorDataEntityWrapper& entityData, ::PropertyComponent* propertyComponent, uint64 tick, bool packAll);
+    MCAPI void* $ctor(
+        ::ActorRuntimeID                 id,
+        ::SynchedActorDataEntityWrapper& entityData,
+        ::PropertyComponent*             propertyComponent,
+        uint64                           tick,
+        bool                             packAll
+    );
     // NOLINTEND
 
 public:
@@ -91,5 +103,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

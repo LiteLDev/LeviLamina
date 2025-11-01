@@ -15,9 +15,9 @@ class CraftingContainerController : public ::ContainerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Recipe const*> mCurrentRecipe;
-    ::ll::TypedStorage<4, 4, int> mGridSize;
-    ::ll::TypedStorage<1, 1, bool> mDisplayOnlyGhostItems;
+    ::ll::TypedStorage<8, 8, ::Recipe const*>                mCurrentRecipe;
+    ::ll::TypedStorage<4, 4, int>                            mGridSize;
+    ::ll::TypedStorage<1, 1, bool>                           mDisplayOnlyGhostItems;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mGhostItems;
     // NOLINTEND
 
@@ -51,5 +51,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

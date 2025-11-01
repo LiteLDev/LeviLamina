@@ -44,7 +44,8 @@ public:
     virtual void flushLevelChunkGarbageCollector() = 0;
 
     // vIndex: 6
-    virtual void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector) = 0;
+    virtual void
+    initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector) = 0;
 
     // vIndex: 8
     virtual ::BiomeRegistry& getBiomeRegistry() = 0;
@@ -65,7 +66,11 @@ public:
     virtual ::BlockSource& getBlockSourceFromMainChunkSource() const = 0;
 
     // vIndex: 13
-    virtual void buildPlayersForPositionPacket(::BlockPos const&, ::Player const*, ::std::vector<::NetworkIdentifierWithSubId>&) const = 0;
+    virtual void buildPlayersForPositionPacket(
+        ::BlockPos const&,
+        ::Player const*,
+        ::std::vector<::NetworkIdentifierWithSubId>&
+    ) const = 0;
     // NOLINTEND
 
 public:
@@ -85,5 +90,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

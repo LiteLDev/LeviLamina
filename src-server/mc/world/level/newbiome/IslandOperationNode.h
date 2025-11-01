@@ -17,7 +17,11 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
-    virtual void _fillArea(::OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>& operationNodeData, ::Pos2d const& origin, ::Pos2d const& size) const /*override*/;
+    virtual void _fillArea(
+        ::OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>& operationNodeData,
+        ::Pos2d const&                                                             origin,
+        ::Pos2d const&                                                             size
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~IslandOperationNode() /*override*/ = default;
@@ -26,7 +30,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_fillArea(::OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>& operationNodeData, ::Pos2d const& origin, ::Pos2d const& size) const;
+    MCNAPI void $_fillArea(
+        ::OperationNodeDetails::WorkingData<::OperationNodeValues::Terrain, char>& operationNodeData,
+        ::Pos2d const&                                                             origin,
+        ::Pos2d const&                                                             size
+    ) const;
     // NOLINTEND
 
 public:
@@ -34,5 +42,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

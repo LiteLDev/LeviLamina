@@ -5,7 +5,7 @@
 namespace Editor::Widgets {
 
 enum class WidgetCollisionType : int {
-    None = 0,
+    None   = 0,
     Radius = 1,
     Bounds = 2,
 };

@@ -14,5 +14,4 @@ public:
     ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mBreathingScalar;
     ::ll::TypedStorage<4, 12, ::std::optional<::Vec2>> mMouthScalar;
     // NOLINTEND
-
 };

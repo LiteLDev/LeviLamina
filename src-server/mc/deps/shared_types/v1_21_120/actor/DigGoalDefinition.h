@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/versionless/actor/BaseGoalDefinition.h"
+#include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,12 +16,12 @@ struct DigGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk3d08ce;
-    ::ll::UntypedStorage<4, 4> mUnkbacc0d;
-    ::ll::UntypedStorage<1, 1> mUnkfc9c7c;
-    ::ll::UntypedStorage<1, 1> mUnk5a21e2;
-    ::ll::UntypedStorage<1, 1> mUnkcde5ca;
-    ::ll::UntypedStorage<1, 1> mUnk8e7256;
+    ::ll::UntypedStorage<4, 4>   mUnk3d08ce;
+    ::ll::UntypedStorage<4, 4>   mUnkbacc0d;
+    ::ll::UntypedStorage<1, 1>   mUnkfc9c7c;
+    ::ll::UntypedStorage<1, 1>   mUnk5a21e2;
+    ::ll::UntypedStorage<1, 1>   mUnkcde5ca;
+    ::ll::UntypedStorage<1, 1>   mUnk8e7256;
     ::ll::UntypedStorage<8, 368> mUnk6b3205;
     // NOLINTEND
 
@@ -75,7 +75,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_120

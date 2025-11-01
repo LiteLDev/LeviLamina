@@ -46,7 +46,11 @@ public:
     virtual void initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
     // vIndex: 6
-    virtual void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>>& componentSchema, ::BlockComponentFactory const& factory) const;
+    virtual void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>>&
+                                       componentSchema,
+        ::BlockComponentFactory const& factory
+    ) const;
 
     // vIndex: 7
     virtual bool isNetworkComponent() const;
@@ -80,7 +84,11 @@ public:
 
     MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCFOLD void $buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>>& componentSchema, ::BlockComponentFactory const& factory) const;
+    MCFOLD void $buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>>&
+                                       componentSchema,
+        ::BlockComponentFactory const& factory
+    ) const;
 
     MCFOLD bool $isNetworkComponent() const;
 
@@ -96,5 +104,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

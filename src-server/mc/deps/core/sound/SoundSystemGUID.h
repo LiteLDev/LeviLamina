@@ -17,5 +17,4 @@ public:
     SoundSystemGUID& operator=(SoundSystemGUID const&);
     SoundSystemGUID(SoundSystemGUID const&);
     SoundSystemGUID();
-
 };

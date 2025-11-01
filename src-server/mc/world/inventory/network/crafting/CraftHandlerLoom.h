@@ -19,7 +19,8 @@ public:
     virtual ~CraftHandlerLoom() /*override*/ = default;
 
     // vIndex: 4
-    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
+    virtual ::ItemStackNetResult
+    _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
     // NOLINTEND
 
 public:
@@ -33,5 +34,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -18,9 +18,20 @@ struct SendPacketsComponent;
 namespace SendPacketsSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void sendPacketsSystem(::ActorOwnerComponent const& actorOwnerComponent, ::Optional<::UserEntityIdentifierComponent const> userEntityIdentifierComponent, ::SendPacketsComponent& sendPacketsComponent);
+MCNAPI void sendPacketsSystem(
+    ::ActorOwnerComponent const&                      actorOwnerComponent,
+    ::Optional<::UserEntityIdentifierComponent const> userEntityIdentifierComponent,
+    ::SendPacketsComponent&                           sendPacketsComponent
+);
 
-MCNAPI void tick(::ViewT<::StrictEntityContext, ::ActorOwnerComponent const, ::Optional<::UserEntityIdentifierComponent const>, ::SendPacketsComponent> view, ::EntityModifier<::SendPacketsComponent> modifier);
+MCNAPI void tick(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::ActorOwnerComponent const,
+        ::Optional<::UserEntityIdentifierComponent const>,
+        ::SendPacketsComponent>              view,
+    ::EntityModifier<::SendPacketsComponent> modifier
+);
 // NOLINTEND
 
-}
+} // namespace SendPacketsSystemImpl

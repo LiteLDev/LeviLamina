@@ -17,7 +17,10 @@ class UpgradeToBodySlotSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _upgrade(::StrictEntityContext& strictEntityContext, ::ActorOwnerComponent& actorOwnerComponent, ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent>& modifier);
+    MCNAPI static void _upgrade(
+        ::StrictEntityContext& strictEntityContext,
+        ::ActorOwnerComponent& actorOwnerComponent,
+        ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent>& modifier
+    );
     // NOLINTEND
-
 };

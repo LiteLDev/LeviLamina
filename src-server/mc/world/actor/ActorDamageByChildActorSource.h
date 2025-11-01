@@ -19,12 +19,12 @@ class ActorDamageByChildActorSource : public ::ActorDamageByActorSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mDamagingActorIsWorldBuilder;
-    ::ll::TypedStorage<1, 1, bool> mDamagingActorIsCreative;
+    ::ll::TypedStorage<1, 1, bool>            mDamagingActorIsWorldBuilder;
+    ::ll::TypedStorage<1, 1, bool>            mDamagingActorIsCreative;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mDamagingActorId;
-    ::ll::TypedStorage<4, 4, ::ActorType> mDamagingActorType;
+    ::ll::TypedStorage<4, 4, ::ActorType>     mDamagingActorType;
     ::ll::TypedStorage<4, 4, ::ActorCategory> mDamagingActorCategories;
-    ::ll::TypedStorage<8, 32, ::std::string> mDamagingActorNameTag;
+    ::ll::TypedStorage<8, 32, ::std::string>  mDamagingActorNameTag;
     // NOLINTEND
 
 public:
@@ -38,7 +38,8 @@ public:
     virtual bool isChildEntitySource() const /*override*/;
 
     // vIndex: 10
-    virtual ::std::pair<::std::string, ::std::vector<::std::string>> getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
+    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
+    getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
 
     // vIndex: 16
     virtual bool getDamagingEntityIsCreative() const /*override*/;
@@ -65,7 +66,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDamageByChildActorSource(::Actor const& childActor, ::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
+    MCAPI ActorDamageByChildActorSource(
+        ::Actor const&                          childActor,
+        ::Actor const&                          actor,
+        ::SharedTypes::Legacy::ActorDamageCause cause
+    );
     // NOLINTEND
 
 public:
@@ -85,7 +90,8 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isChildEntitySource() const;
 
-    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>> $getDeathMessage(::std::string deadName, ::Actor* dead) const;
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
     MCFOLD bool $getDamagingEntityIsCreative() const;
 
@@ -105,5 +111,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

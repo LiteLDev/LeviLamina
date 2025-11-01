@@ -26,7 +26,7 @@ public:
     // clang-format off
     struct PendingRegistrations;
     // clang-format on
-    
+
     // CustomCommandRegistry inner types define
     struct PendingRegistrations {
     public:
@@ -34,37 +34,36 @@ public:
         // clang-format off
         struct CommandData;
         // clang-format on
-        
+
         // PendingRegistrations inner types define
         struct CommandData {
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 40> mUnkcc381b;
+            ::ll::UntypedStorage<8, 40>  mUnkcc381b;
             ::ll::UntypedStorage<8, 136> mUnkfa69c6;
             ::ll::UntypedStorage<8, 248> mUnk89e32f;
             // NOLINTEND
-        
+
         public:
             // prevent constructor by default
             CommandData& operator=(CommandData const&);
             CommandData(CommandData const&);
             CommandData();
-        
+
         public:
             // member functions
             // NOLINTBEGIN
             MCNAPI ~CommandData();
             // NOLINTEND
-        
+
         public:
             // destructor thunk
             // NOLINTBEGIN
             MCNAPI void $dtor();
             // NOLINTEND
-        
         };
-        
+
     public:
         // member variables
         // NOLINTBEGIN
@@ -72,39 +71,38 @@ public:
         ::ll::UntypedStorage<8, 64> mUnkdf9c46;
         ::ll::UntypedStorage<8, 64> mUnkd6a7d8;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PendingRegistrations& operator=(PendingRegistrations const&);
         PendingRegistrations(PendingRegistrations const&);
         PendingRegistrations();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI PendingRegistrations(::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations&&);
-    
+
         MCNAPI ~PendingRegistrations();
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations&&);
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk383c50;
+    ::ll::UntypedStorage<8, 8>  mUnk383c50;
     ::ll::UntypedStorage<8, 64> mUnk34d4c0;
     ::ll::UntypedStorage<8, 64> mUnk823e0c;
     ::ll::UntypedStorage<8, 24> mUnk2d5f71;
@@ -132,9 +130,13 @@ public:
     // NOLINTBEGIN
     MCNAPI CustomCommandRegistry(::ServerScriptManagerEvents& events, ::CommandRegistry& commandRegistry);
 
-    MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandError> _checkNamespaceConsistency(::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations const& registrations, ::std::string_view newNamespace) const;
+    MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandError> _checkNamespaceConsistency(
+        ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations const& registrations,
+        ::std::string_view                                                          newNamespace
+    ) const;
 
-    MCNAPI ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations& _getOrCreatePendingRegistrationsForPack(::std::string const& packUUID, ::std::string_view newNamespace);
+    MCNAPI ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations&
+    _getOrCreatePendingRegistrationsForPack(::std::string const& packUUID, ::std::string_view newNamespace);
 
     MCNAPI void _processRegistrations();
 
@@ -142,11 +144,32 @@ public:
 
     MCNAPI ::std::optional<::std::string> _tryClaimAlias(::std::string const& commandName);
 
-    MCNAPI ::std::optional<::std::string> _validateEnumDependencies(::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations const& registrations, ::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface) const;
+    MCNAPI ::std::optional<::std::string> _validateEnumDependencies(
+        ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations const& registrations,
+        ::ScriptModuleMinecraft::ScriptCustomCommandInterface const&                commandInterface
+    ) const;
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::ScriptModuleMinecraft::ScriptCustomCommandError, ::Scripting::EngineError> addPendingCommand(::std::string const& packUUID, ::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface, ::Scripting::ClosureGeneric<::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandResult>>&& closure);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
+        ::ScriptModuleMinecraft::ScriptCustomCommandError,
+        ::Scripting::EngineError>
+    addPendingCommand(
+        ::std::string const&                                         packUUID,
+        ::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface,
+        ::Scripting::ClosureGeneric<::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandResult>>&& closure
+    );
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::ScriptModuleMinecraft::ScriptCustomCommandError, ::Scripting::EngineError> addPendingEnum(::std::string const& packUUID, ::std::string const& name, ::std::vector<::std::string> const& values);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
+        ::ScriptModuleMinecraft::ScriptCustomCommandError,
+        ::Scripting::EngineError>
+    addPendingEnum(
+        ::std::string const&                packUUID,
+        ::std::string const&                name,
+        ::std::vector<::std::string> const& values
+    );
     // NOLINTEND
 
 public:
@@ -172,7 +195,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

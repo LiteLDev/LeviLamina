@@ -13,4 +13,4 @@ namespace BlockTraitConversionUtils::FacingDirectionToBlockFace {
 MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20U2();
 // NOLINTEND
 
-}
+} // namespace BlockTraitConversionUtils::FacingDirectionToBlockFace

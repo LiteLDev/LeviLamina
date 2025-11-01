@@ -5,11 +5,11 @@
 namespace Util {
 
 enum class NumberConversionResult : int {
-    Succeed = 0,
-    Invalid = 1,
+    Succeed  = 0,
+    Invalid  = 1,
     TooSmall = 2,
     TooLarge = 3,
-    Count = 4,
+    Count    = 4,
 };
 
 }

@@ -44,7 +44,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::rtc::KeyType key_type);
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

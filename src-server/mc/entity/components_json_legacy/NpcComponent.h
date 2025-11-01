@@ -26,21 +26,21 @@ class NpcComponent {
 public:
     // NpcComponent inner types define
     using TextFilter = ::std::function<::std::string(::std::string const&)>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mCurrentSkin;
-    ::ll::TypedStorage<4, 36, ::NpcGUIOffset> mPortraitOffsets;
-    ::ll::TypedStorage<4, 36, ::NpcGUIOffset> mPickerOffsets;
-    ::ll::TypedStorage<8, 24, ::std::vector<::SkinData>> mNPCSkins;
-    ::ll::TypedStorage<8, 48, ::npc::ActionContainer> mActionsContainer;
+    ::ll::TypedStorage<4, 4, int>                                                   mCurrentSkin;
+    ::ll::TypedStorage<4, 36, ::NpcGUIOffset>                                       mPortraitOffsets;
+    ::ll::TypedStorage<4, 36, ::NpcGUIOffset>                                       mPickerOffsets;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SkinData>>                            mNPCSkins;
+    ::ll::TypedStorage<8, 48, ::npc::ActionContainer>                               mActionsContainer;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::std::string>> mPlayerSceneState;
-    ::ll::TypedStorage<8, 32, ::std::string> mDefaultSceneId;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mInteractText;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mDefaultSceneId;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                       mInteractText;
     ::ll::TypedStorage<8, 64, ::std::function<::std::string(::std::string const&)>> mInteractTextFilter;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NpcI18nObserver>> mNpcI18nObserver;
-    ::ll::TypedStorage<1, 1, bool> mIsGloballyAccessed;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NpcI18nObserver>>                  mNpcI18nObserver;
+    ::ll::TypedStorage<1, 1, bool>                                                  mIsGloballyAccessed;
     // NOLINTEND
 
 public:
@@ -72,7 +72,8 @@ public:
 
     MCAPI void executeClosingCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
 
-    MCAPI void executeCommandAction(::Actor& owner, ::Player& sourcePlayer, int actionIndex, ::std::string const& sceneName);
+    MCAPI void
+    executeCommandAction(::Actor& owner, ::Player& sourcePlayer, int actionIndex, ::std::string const& sceneName);
 
     MCAPI void executeOpeningCommands(::Actor& owner, ::Player& sourcePlayer, ::std::string const& sceneName);
 
@@ -98,7 +99,8 @@ public:
 
     MCAPI ::std::string sanitizeRawText(::std::string const& rawText) const;
 
-    MCAPI void setActions(::Actor& owner, ::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& newActions);
+    MCAPI void
+    setActions(::Actor& owner, ::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>&& newActions);
 
     MCAPI bool setDialogueScene(::Actor& owner, ::std::string const& sceneName);
 
@@ -146,5 +148,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

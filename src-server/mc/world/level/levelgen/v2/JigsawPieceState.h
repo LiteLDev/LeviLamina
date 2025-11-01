@@ -12,10 +12,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::br::worldgen::JigsawSectionDataKey> mPieceKey;
-    ::ll::TypedStorage<8, 8, uint64> mSpaceKey;
-    ::ll::TypedStorage<4, 4, int> mDepth;
+    ::ll::TypedStorage<8, 8, uint64>                               mSpaceKey;
+    ::ll::TypedStorage<4, 4, int>                                  mDepth;
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

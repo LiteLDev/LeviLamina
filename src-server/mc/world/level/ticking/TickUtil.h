@@ -8,4 +8,4 @@ namespace TickUtil {
 MCAPI ::std::string const& TICKING_AREAS_PREFIX();
 // NOLINTEND
 
-}
+} // namespace TickUtil

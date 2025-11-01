@@ -22,7 +22,7 @@ public:
       mLastMatch(nullptr) {}
 
     [[nodiscard]] constexpr HashedString(std::string_view mStr) noexcept
-    : mStrHash(computeHash(mStr)),
+    :                mStrHash(computeHash(mStr)),
       mStr(mStr),
       mLastMatch(nullptr) {}
 
@@ -156,7 +156,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
 namespace std {

@@ -24,15 +24,44 @@ struct TickingSystemWithInfo;
 namespace MobMovementClimb {
 // functions
 // NOLINTBEGIN
-MCNAPI bool canAutoClimbNow(::ActorDataFlagComponent const& synchedActorData, ::AABBShapeComponent const& aabbShape, ::StateVectorComponent const& stateVector, bool canClimbInPowderSnow, ::IConstBlockSource const& region);
+MCNAPI bool canAutoClimbNow(
+    ::ActorDataFlagComponent const& synchedActorData,
+    ::AABBShapeComponent const&     aabbShape,
+    ::StateVectorComponent const&   stateVector,
+    bool                            canClimbInPowderSnow,
+    ::IConstBlockSource const&      region
+);
 
 MCNAPI void forAutoClimbSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCNAPI ::Block const& getBlockAtFeet(::AABBShapeComponent const& aabbShape, ::StateVectorComponent const& stateVector, ::IConstBlockSource const& constBlockSource);
+MCNAPI ::Block const& getBlockAtFeet(
+    ::AABBShapeComponent const&   aabbShape,
+    ::StateVectorComponent const& stateVector,
+    ::IConstBlockSource const&    constBlockSource
+);
 
-MCNAPI void tickAutoClimbingMob(::StrictEntityContext const& entity, ::Optional<::CanStandOnSnowFlagComponent const> canStandOnSnow, ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamily, ::ActorDataFlagComponent const& synchedActorData, ::AABBShapeComponent const& aabbShape, ::StateVectorComponent& stateVector, ::EntityModifier<::AutoClimbTravelFlagComponent> climbModifier, ::IConstBlockSource const& region);
+MCNAPI void tickAutoClimbingMob(
+    ::StrictEntityContext const&                          entity,
+    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnow,
+    ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamily,
+    ::ActorDataFlagComponent const&                       synchedActorData,
+    ::AABBShapeComponent const&                           aabbShape,
+    ::StateVectorComponent&                               stateVector,
+    ::EntityModifier<::AutoClimbTravelFlagComponent>      climbModifier,
+    ::IConstBlockSource const&                            region
+);
 
-MCNAPI void tickAutoClimbingMobInLava(::StrictEntityContext const& entity, ::NavigationComponent const& navigation, ::Optional<::CanStandOnSnowFlagComponent const> canStandOnSnow, ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamily, ::ActorDataFlagComponent const& synchedActorData, ::AABBShapeComponent const& aabbShape, ::StateVectorComponent& stateVector, ::EntityModifier<::AutoClimbTravelFlagComponent> climbModifier, ::IConstBlockSource const& region);
+MCNAPI void tickAutoClimbingMobInLava(
+    ::StrictEntityContext const&                          entity,
+    ::NavigationComponent const&                          navigation,
+    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnow,
+    ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamily,
+    ::ActorDataFlagComponent const&                       synchedActorData,
+    ::AABBShapeComponent const&                           aabbShape,
+    ::StateVectorComponent&                               stateVector,
+    ::EntityModifier<::AutoClimbTravelFlagComponent>      climbModifier,
+    ::IConstBlockSource const&                            region
+);
 // NOLINTEND
 
-}
+} // namespace MobMovementClimb

@@ -20,5 +20,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::ColorChannel const& INVALID();
     // NOLINTEND
-
 };

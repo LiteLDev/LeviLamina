@@ -24,10 +24,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ElementConstructorContainerManagerModel>> mModel;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CraftableElements>> mElements;
-    ::ll::TypedStorage<8, 64, ::std::function<void(int, int, int)>> mSetParticles;
-    ::ll::TypedStorage<8, 40, ::SlotData const> mCreatedItemOutputSlot;
-    ::ll::TypedStorage<8, 128, ::ItemInstance> mResultItemPreview;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CraftableElements>>                      mElements;
+    ::ll::TypedStorage<8, 64, ::std::function<void(int, int, int)>>                       mSetParticles;
+    ::ll::TypedStorage<8, 40, ::SlotData const>                                           mCreatedItemOutputSlot;
+    ::ll::TypedStorage<8, 128, ::ItemInstance>                                            mResultItemPreview;
     // NOLINTEND
 
 public:
@@ -46,7 +46,12 @@ public:
     virtual void handleTakeHalf(::SlotData const&, ::SlotData const&) /*override*/;
 
     // vIndex: 15
-    virtual int handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/;
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
 
     // vIndex: 25
     virtual void handleAddToStack(::SlotData const&, ::SlotData const&, ::ItemTakeType) /*override*/;
@@ -58,7 +63,8 @@ public:
     virtual bool isOutputSlot(::std::string const&) const /*override*/;
 
     // vIndex: 29
-    virtual ::CreateContainerItemScope _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
+    virtual ::CreateContainerItemScope
+    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -66,5 +72,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

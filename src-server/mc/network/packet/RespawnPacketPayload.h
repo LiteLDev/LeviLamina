@@ -11,9 +11,8 @@ struct RespawnPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
+    ::ll::TypedStorage<4, 12, ::Vec3>              mPos;
     ::ll::TypedStorage<1, 1, ::PlayerRespawnState> mState;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>     mRuntimeId;
     // NOLINTEND
-
 };

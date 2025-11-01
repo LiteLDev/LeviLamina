@@ -11,4 +11,4 @@ namespace VoxelShapes {
 MCNAPI ::std::array<::VoxelShapes::Axis, 3> const& axes();
 // NOLINTEND
 
-}
+} // namespace VoxelShapes

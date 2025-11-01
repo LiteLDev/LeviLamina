@@ -8,7 +8,7 @@ struct FileReadingData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk1f142a;
+    ::ll::UntypedStorage<8, 8>  mUnk1f142a;
     ::ll::UntypedStorage<8, 24> mUnkfce92d;
     // NOLINTEND
 
@@ -17,7 +17,6 @@ public:
     FileReadingData& operator=(FileReadingData const&);
     FileReadingData(FileReadingData const&);
     FileReadingData();
-
 };
 
-}
+} // namespace gif

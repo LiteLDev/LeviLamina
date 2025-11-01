@@ -13,4 +13,4 @@ namespace Editor::ScriptModule::ScriptWidgetComponentType {
 MCNAPI ::Scripting::EnumBinding bindEnums();
 // NOLINTEND
 
-}
+} // namespace Editor::ScriptModule::ScriptWidgetComponentType

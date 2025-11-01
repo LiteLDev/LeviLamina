@@ -20,20 +20,20 @@ class EffectCommand : public ::Command {
 public:
     // EffectCommand inner types define
     enum class Mode : int {
-        Add = 0,
-        Clear = 1,
+        Add         = 0,
+        Clear       = 1,
         AddInfinite = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 200> mUnk85cfae;
-    ::ll::UntypedStorage<4, 4> mUnkf69413;
-    ::ll::UntypedStorage<8, 8> mUnkf22c7d;
-    ::ll::UntypedStorage<4, 4> mUnkfd7f67;
-    ::ll::UntypedStorage<4, 4> mUnk1dc2c6;
-    ::ll::UntypedStorage<1, 1> mUnkfc96bd;
+    ::ll::UntypedStorage<4, 4>   mUnkf69413;
+    ::ll::UntypedStorage<8, 8>   mUnkf22c7d;
+    ::ll::UntypedStorage<4, 4>   mUnkfd7f67;
+    ::ll::UntypedStorage<4, 4>   mUnk1dc2c6;
+    ::ll::UntypedStorage<1, 1>   mUnkfc96bd;
     // NOLINTEND
 
 public:
@@ -55,7 +55,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _add(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output, ::EffectDuration duration) const;
+    MCAPI void
+    _add(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output, ::EffectDuration duration) const;
 
     MCAPI bool _checkIsValidAmplifierRange(::CommandOutput& output) const;
 
@@ -63,7 +64,12 @@ public:
 
     MCAPI void _clearAllEffects(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output) const;
 
-    MCAPI void _clearEffect(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output, ::MobEffect const& effect, bool throwsErrorOnNoEffect) const;
+    MCAPI void _clearEffect(
+        ::CommandSelectorResults<::Actor>& targets,
+        ::CommandOutput&                   output,
+        ::MobEffect const&                 effect,
+        bool                               throwsErrorOnNoEffect
+    ) const;
     // NOLINTEND
 
 public:
@@ -83,5 +89,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

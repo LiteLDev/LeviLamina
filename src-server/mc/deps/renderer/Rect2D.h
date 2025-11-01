@@ -19,5 +19,4 @@ public:
     Rect2D& operator=(Rect2D const&);
     Rect2D(Rect2D const&);
     Rect2D();
-
 };

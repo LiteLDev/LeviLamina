@@ -16,5 +16,4 @@ public:
     srtp_kernel_cipher_type& operator=(srtp_kernel_cipher_type const&);
     srtp_kernel_cipher_type(srtp_kernel_cipher_type const&);
     srtp_kernel_cipher_type();
-
 };

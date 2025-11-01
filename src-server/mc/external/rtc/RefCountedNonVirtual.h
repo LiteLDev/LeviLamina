@@ -4,8 +4,7 @@
 
 namespace rtc {
 
-template<typename T0>
-class RefCountedNonVirtual {
-};
+template <typename T0>
+class RefCountedNonVirtual {};
 
-}
+} // namespace rtc

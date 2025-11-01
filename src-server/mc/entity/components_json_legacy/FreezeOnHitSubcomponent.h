@@ -16,10 +16,10 @@ class FreezeOnHitSubcomponent : public ::OnHitSubcomponent {
 public:
     // FreezeOnHitSubcomponent inner types define
     enum class Shape : uchar {
-        Cube = 0,
+        Cube   = 0,
         Sphere = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -70,5 +70,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

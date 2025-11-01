@@ -14,9 +14,9 @@ struct PlayerBlockActionData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk9285fa;
+    ::ll::UntypedStorage<4, 4>  mUnk9285fa;
     ::ll::UntypedStorage<4, 12> mUnk742f8b;
-    ::ll::UntypedStorage<4, 4> mUnk74d969;
+    ::ll::UntypedStorage<4, 4>  mUnk74d969;
     // NOLINTEND
 
 public:
@@ -30,5 +30,4 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::PlayerBlockActionData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
-
 };

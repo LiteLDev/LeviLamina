@@ -9,13 +9,13 @@ struct PauseScreenCapabilities : public ::TypedScreenCapabilities<::PauseScreenC
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk28e16e;
-    ::ll::UntypedStorage<1, 1> mUnkace38a;
-    ::ll::UntypedStorage<1, 1> mUnk12ffaf;
-    ::ll::UntypedStorage<1, 1> mUnk8cf950;
-    ::ll::UntypedStorage<1, 1> mUnk972427;
+    ::ll::UntypedStorage<1, 1>  mUnk28e16e;
+    ::ll::UntypedStorage<1, 1>  mUnkace38a;
+    ::ll::UntypedStorage<1, 1>  mUnk12ffaf;
+    ::ll::UntypedStorage<1, 1>  mUnk8cf950;
+    ::ll::UntypedStorage<1, 1>  mUnk972427;
     ::ll::UntypedStorage<8, 32> mUnk36e250;
-    ::ll::UntypedStorage<1, 1> mUnkc36dc1;
+    ::ll::UntypedStorage<1, 1>  mUnkc36dc1;
     // NOLINTEND
 
 public:
@@ -42,5 +42,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

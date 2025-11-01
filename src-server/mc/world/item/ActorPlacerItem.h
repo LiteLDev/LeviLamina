@@ -59,7 +59,8 @@ public:
     virtual bool shouldInteractionWithBlockBypassLiquid(::Block const& block) const /*override*/;
 
     // vIndex: 81
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const /*override*/;
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
+        /*override*/;
 
     // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
@@ -77,7 +78,9 @@ public:
     virtual bool isActorPlacerItem() const /*override*/;
 
     // vIndex: 123
-    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
+    virtual ::InteractionResult
+    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
+        /*override*/;
 
     // vIndex: 0
     virtual ~ActorPlacerItem() /*override*/ = default;
@@ -90,13 +93,20 @@ public:
 
     MCAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
 
-    MCAPI ::Actor* _spawnActorAt(::BlockSource& region, ::Vec3 const& pos, ::Vec3 const& playerFeetPos, ::ItemStack const& item, ::Actor* spawner) const;
+    MCAPI ::Actor* _spawnActorAt(
+        ::BlockSource&     region,
+        ::Vec3 const&      pos,
+        ::Vec3 const&      playerFeetPos,
+        ::ItemStack const& item,
+        ::Actor*           spawner
+    ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void forEachCustomEgg(::ItemRegistryRef itemRegistry, ::std::function<void(::Item const&)> const& callback);
+    MCAPI static void
+    forEachCustomEgg(::ItemRegistryRef itemRegistry, ::std::function<void(::Item const&)> const& callback);
 
     MCAPI static void registerCustomEggs(::ItemRegistryRef itemRegistry, ::ActorInfoRegistry const& registry);
 
@@ -144,7 +154,8 @@ public:
 
     MCFOLD bool $isActorPlacerItem() const;
 
-    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult
+    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -152,5 +163,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

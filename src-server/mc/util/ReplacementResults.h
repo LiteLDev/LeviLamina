@@ -19,7 +19,6 @@ public:
     ReplacementResults& operator=(ReplacementResults const&);
     ReplacementResults(ReplacementResults const&);
     ReplacementResults();
-
 };
 
-}
+} // namespace Util

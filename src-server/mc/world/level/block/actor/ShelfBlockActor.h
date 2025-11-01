@@ -26,14 +26,14 @@ class ShelfBlockActor : public ::BlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator> mClockSpriteCalc;
-    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mCompassSpriteCalc;
-    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mRecoveryCompassSpriteCalc;
-    ::ll::TypedStorage<1, 1, bool> mUpdateCalculators;
+    ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator>    mClockSpriteCalc;
+    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator>  mCompassSpriteCalc;
+    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator>  mRecoveryCompassSpriteCalc;
+    ::ll::TypedStorage<1, 1, bool>                        mUpdateCalculators;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
-    ::ll::TypedStorage<1, 1, bool> mIgnoreLighting;
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mDisplayEntity;
-    ::ll::TypedStorage<1, 1, bool> mEmitSingleItemSwapVibration;
+    ::ll::TypedStorage<1, 1, bool>                        mIgnoreLighting;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>            mDisplayEntity;
+    ::ll::TypedStorage<1, 1, bool>                        mEmitSingleItemSwapVibration;
     // NOLINTEND
 
 public:
@@ -80,7 +80,11 @@ public:
     virtual void stopOpen(::Actor& actor) /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
@@ -149,7 +153,11 @@ public:
 
     MCFOLD void $stopOpen(::Actor& actor);
 
-    MCAPI void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    );
 
     MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
@@ -167,5 +175,4 @@ public:
 
     MCNAPI static void** $vftableForContainer();
     // NOLINTEND
-
 };

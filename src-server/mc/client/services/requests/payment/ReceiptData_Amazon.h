@@ -15,5 +15,4 @@ public:
     ReceiptData_Amazon& operator=(ReceiptData_Amazon const&);
     ReceiptData_Amazon(ReceiptData_Amazon const&);
     ReceiptData_Amazon();
-
 };

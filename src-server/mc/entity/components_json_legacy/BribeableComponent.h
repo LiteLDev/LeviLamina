@@ -15,9 +15,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::BribeableDefinition const*> mStaticData;
-    ::ll::TypedStorage<4, 4, int> mBribeTimer;
-    ::ll::TypedStorage<4, 4, int> mBribeCooldown;
-    ::ll::TypedStorage<4, 4, int> mBribeCooldownTime;
+    ::ll::TypedStorage<4, 4, int>                          mBribeTimer;
+    ::ll::TypedStorage<4, 4, int>                          mBribeCooldown;
+    ::ll::TypedStorage<4, 4, int>                          mBribeCooldownTime;
     // NOLINTEND
 
 public:
@@ -29,5 +29,4 @@ public:
 
     MCNAPI bool clientBribeCheck(::Actor& owner);
     // NOLINTEND
-
 };

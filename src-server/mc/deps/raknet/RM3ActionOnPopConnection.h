@@ -5,10 +5,10 @@
 namespace RakNet {
 
 enum class RM3ActionOnPopConnection : int {
-    DoNothing = 0,
-    DeleteReplica = 1,
+    DoNothing                            = 0,
+    DeleteReplica                        = 1,
     DeleteReplicaAndBroadcastDestruction = 2,
-    Max = 3,
+    Max                                  = 3,
 };
 
 }

@@ -18,9 +18,18 @@ struct WaterlilyBlockFlag;
 namespace InsideWaterlilyBlockSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void destroyWaterlilySystem(::ViewT<::StrictEntityContext, ::Include<::BoatFlagComponent>, ::InsideBlockWithPosComponent<::WaterlilyBlockFlag> const, ::ActorOwnerComponent> view);
+MCNAPI void destroyWaterlilySystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::BoatFlagComponent>,
+        ::InsideBlockWithPosComponent<::WaterlilyBlockFlag> const,
+        ::ActorOwnerComponent> view
+);
 
-MCNAPI void tickDestroyWaterlily(::InsideBlockWithPosComponent<::WaterlilyBlockFlag> const& insideWaterlilyBlockComponent, ::ActorOwnerComponent& actorOwnerComponent);
+MCNAPI void tickDestroyWaterlily(
+    ::InsideBlockWithPosComponent<::WaterlilyBlockFlag> const& insideWaterlilyBlockComponent,
+    ::ActorOwnerComponent&                                     actorOwnerComponent
+);
 // NOLINTEND
 
-}
+} // namespace InsideWaterlilyBlockSystemImpl

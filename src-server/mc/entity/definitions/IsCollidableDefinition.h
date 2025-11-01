@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void initialize(::EntityContext& entity) const;
     // NOLINTEND
-
 };

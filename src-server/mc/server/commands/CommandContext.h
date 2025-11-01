@@ -11,9 +11,9 @@ class CommandContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::std::string                      mCommand;
+    ::std::string                                          mCommand;
     ::std::unique_ptr<::CommandOrigin> mOrigin;
-    int                                mVersion;
+    int                                                               mVersion;
     // NOLINTEND
 
 public:
@@ -27,5 +27,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

@@ -2,6 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template<typename T0>
-class EventCoordinator {
-};
+template <typename T0>
+class EventCoordinator {};

@@ -25,7 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_50::DisplayNameItemComponent& operator=(::SharedTypes::v1_20_50::DisplayNameItemComponent&&);
+    MCNAPI ::SharedTypes::v1_20_50::DisplayNameItemComponent&
+    operator=(::SharedTypes::v1_20_50::DisplayNameItemComponent&&);
     // NOLINTEND
 
 public:
@@ -33,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_50

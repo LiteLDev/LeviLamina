@@ -19,12 +19,20 @@ namespace br::worldgen::processors::PosRules {
 struct Test : public ::br::worldgen::processors::PosRules::TestType {
 public:
     // Test inner types define
-    using Type = ::std::variant<::br::worldgen::processors::PosRules::AlwaysTrue, ::br::worldgen::processors::PosRules::AxisAlignedLinear>;
-    
+    using Type = ::std::variant<
+        ::br::worldgen::processors::PosRules::AlwaysTrue,
+        ::br::worldgen::processors::PosRules::AxisAlignedLinear>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 40, ::std::variant<::br::worldgen::processors::PosRules::AlwaysTrue, ::br::worldgen::processors::PosRules::AxisAlignedLinear>> mData;
+    ::ll::TypedStorage<
+        4,
+        40,
+        ::std::variant<
+            ::br::worldgen::processors::PosRules::AlwaysTrue,
+            ::br::worldgen::processors::PosRules::AxisAlignedLinear>>
+        mData;
     // NOLINTEND
 
 public:
@@ -36,7 +44,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool test(::BlockPos inTemplatePos, ::BlockPos worldPos, ::BlockPos worldReference, ::IRandom& random) const /*override*/;
+    virtual bool test(::BlockPos inTemplatePos, ::BlockPos worldPos, ::BlockPos worldReference, ::IRandom& random) const
+        /*override*/;
 
     // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
@@ -76,7 +85,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen::processors::PosRules

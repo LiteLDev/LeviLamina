@@ -20,7 +20,6 @@ public:
     AxisAlignedLinear& operator=(AxisAlignedLinear const&);
     AxisAlignedLinear(AxisAlignedLinear const&);
     AxisAlignedLinear();
-
 };
 
-}
+} // namespace SharedTypes::v1_21_20::JigsawStructure::ProcessorRule

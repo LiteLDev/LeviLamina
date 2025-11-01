@@ -19,7 +19,14 @@ struct OnGroundFlagComponent;
 namespace AutoStepFilterSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doAutoStepFilterSystem(::StrictEntityContext const& context, ::MoveRequestComponent const& moveRequestComponent, ::MaxAutoStepComponent const& maxAutoStepComponent, ::Optional<::OnGroundFlagComponent const> onGroundFlagComponent, ::Optional<::MovementAbilitiesComponent const> abilitiesComponent, ::EntityModifier<::AutoStepRequestFlagComponent> mod);
+MCNAPI void doAutoStepFilterSystem(
+    ::StrictEntityContext const&                     context,
+    ::MoveRequestComponent const&                    moveRequestComponent,
+    ::MaxAutoStepComponent const&                    maxAutoStepComponent,
+    ::Optional<::OnGroundFlagComponent const>        onGroundFlagComponent,
+    ::Optional<::MovementAbilitiesComponent const>   abilitiesComponent,
+    ::EntityModifier<::AutoStepRequestFlagComponent> mod
+);
 // NOLINTEND
 
-}
+} // namespace AutoStepFilterSystemImpl

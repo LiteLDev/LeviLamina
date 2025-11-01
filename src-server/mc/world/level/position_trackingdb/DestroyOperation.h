@@ -36,10 +36,16 @@ public:
     virtual char const* getDescription() const /*override*/;
 
     // vIndex: 5
-    virtual bool _init(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord& record) /*override*/;
+    virtual bool _init(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::PositionTrackingDB::TrackingRecord&                           record
+    ) /*override*/;
 
     // vIndex: 6
-    virtual bool _tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord&) /*override*/;
+    virtual bool _tick(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::PositionTrackingDB::TrackingRecord&
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -47,9 +53,15 @@ public:
     // NOLINTBEGIN
     MCNAPI char const* $getDescription() const;
 
-    MCNAPI bool $_init(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord& record);
+    MCNAPI bool $_init(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::PositionTrackingDB::TrackingRecord&                           record
+    );
 
-    MCNAPI bool $_tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr, ::PositionTrackingDB::TrackingRecord&);
+    MCNAPI bool $_tick(
+        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
+        ::PositionTrackingDB::TrackingRecord&
+    );
     // NOLINTEND
 
 public:
@@ -57,7 +69,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace PositionTrackingDB

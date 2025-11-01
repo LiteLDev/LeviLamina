@@ -4,7 +4,6 @@
 
 namespace Bedrock::Http {
 
-struct Method {
-};
+struct Method {};
 
-}
+} // namespace Bedrock::Http

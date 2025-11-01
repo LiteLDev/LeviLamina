@@ -13,4 +13,4 @@ namespace Editor::ScriptModule::ScriptWorldGeneratorType {
 MCNAPI ::Scripting::EnumBinding bindGeneratorTypeEnum();
 // NOLINTEND
 
-}
+} // namespace Editor::ScriptModule::ScriptWorldGeneratorType

@@ -28,7 +28,13 @@ public:
     virtual bool isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 10
-    virtual bool canBeReplaced(::BlockSource& region, int const x, int const y, int const z, ::BoundingBox const& chunkBB) /*override*/;
+    virtual bool canBeReplaced(
+        ::BlockSource&       region,
+        int const            x,
+        int const            y,
+        int const            z,
+        ::BoundingBox const& chunkBB
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~MineshaftPiece() /*override*/;
@@ -37,9 +43,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::StructurePiece> createRandomShaftPiece(::MineshaftData& metadata, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random, int footX, int footY, int footZ, int direction, int genDepth);
+    MCAPI ::std::unique_ptr<::StructurePiece> createRandomShaftPiece(
+        ::MineshaftData&                                    metadata,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction,
+        int                                                 genDepth
+    );
 
-    MCAPI ::StructurePiece* generateAndAddPiece(::StructurePiece& startPiece, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random, int footX, int footY, int footZ, int direction, int depth);
+    MCAPI ::StructurePiece* generateAndAddPiece(
+        ::StructurePiece&                                   startPiece,
+        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
+        ::Random&                                           random,
+        int                                                 footX,
+        int                                                 footY,
+        int                                                 footZ,
+        int                                                 direction,
+        int                                                 depth
+    );
 
     MCAPI void setPlanksBlock(::BlockSource& region, ::Block const& planksBlock, int x, int y, int z);
     // NOLINTEND
@@ -55,7 +79,8 @@ public:
     // NOLINTBEGIN
     MCAPI bool $isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB);
 
-    MCAPI bool $canBeReplaced(::BlockSource& region, int const x, int const y, int const z, ::BoundingBox const& chunkBB);
+    MCAPI bool
+    $canBeReplaced(::BlockSource& region, int const x, int const y, int const z, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:
@@ -63,5 +88,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

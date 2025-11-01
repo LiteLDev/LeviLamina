@@ -21,7 +21,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mIsPowered;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> mSources;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
+        mSources;
     // NOLINTEND
 
 public:
@@ -31,7 +32,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTripWireTripAfterEvent(::TripWireTripEvent const& tripWireTripEvent, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptTripWireTripAfterEvent(
+        ::TripWireTripEvent const&            tripWireTripEvent,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 
 public:
@@ -45,7 +49,6 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::TripWireTripEvent const& tripWireTripEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

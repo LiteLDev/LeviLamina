@@ -17,7 +17,6 @@ public:
     CameraEntityStateComponent& operator=(CameraEntityStateComponent const&);
     CameraEntityStateComponent(CameraEntityStateComponent const&);
     CameraEntityStateComponent();
-
 };
 
-}
+} // namespace MinecraftCamera

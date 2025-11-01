@@ -14,5 +14,4 @@ public:
     FriendlySize& operator=(FriendlySize const&);
     FriendlySize(FriendlySize const&);
     FriendlySize();
-
 };

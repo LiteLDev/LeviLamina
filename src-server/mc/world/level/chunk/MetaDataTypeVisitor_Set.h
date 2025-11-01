@@ -14,5 +14,4 @@ public:
     // NOLINTBEGIN
     MCNAPI ::CompoundTag operator()(::DimensionHeightRange const& value) const;
     // NOLINTEND
-
 };

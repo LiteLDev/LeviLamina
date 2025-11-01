@@ -8,7 +8,7 @@ public:
     // clang-format off
     struct Configs;
     // clang-format on
-    
+
     // UpscalingConfiguration inner types define
     struct Configs {
     public:
@@ -23,15 +23,14 @@ public:
         ::ll::UntypedStorage<4, 52> mUnk1e3773;
         ::ll::UntypedStorage<4, 52> mUnk173aec;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Configs& operator=(Configs const&);
         Configs(Configs const&);
         Configs();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -43,5 +42,4 @@ public:
     UpscalingConfiguration& operator=(UpscalingConfiguration const&);
     UpscalingConfiguration(UpscalingConfiguration const&);
     UpscalingConfiguration();
-
 };

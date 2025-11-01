@@ -5,9 +5,8 @@
 
 namespace Core {
 
-template<class ObserverType, class LockType>
-class Subject {
-public:
+template <class ObserverType, class LockType>
+class Subject {public:
     LockType                                  mLock;
     std::vector<gsl::not_null<ObserverType*>> mObservers;
 
@@ -24,4 +23,4 @@ public:
     Subject& operator=(Subject const&) = delete;
 };
 
-}
+} // namespace Core

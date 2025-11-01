@@ -19,7 +19,6 @@ public:
 
     MCNAPI static ::std::string serialize(::Json::Value const& payload);
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::DataStore

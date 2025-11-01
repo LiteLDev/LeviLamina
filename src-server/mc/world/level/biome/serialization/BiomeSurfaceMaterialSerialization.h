@@ -12,9 +12,16 @@ struct SurfaceMaterialAttributes;
 namespace BiomeSurfaceMaterialSerialization {
 // functions
 // NOLINTBEGIN
-MCAPI void applySerializedSurfaceMaterialAttributeData(::BiomeSurfaceMaterialData const& data, ::SurfaceMaterialAttributes& surfaceMaterialAttributes, ::BlockPalette const& blockPalette);
+MCAPI void applySerializedSurfaceMaterialAttributeData(
+    ::BiomeSurfaceMaterialData const& data,
+    ::SurfaceMaterialAttributes&      surfaceMaterialAttributes,
+    ::BlockPalette const&             blockPalette
+);
 
-MCAPI void serializeSurfaceMaterialAttributeData(::SurfaceMaterialAttributes const& surfaceMaterialAttributes, ::BiomeSurfaceMaterialData& data);
+MCAPI void serializeSurfaceMaterialAttributeData(
+    ::SurfaceMaterialAttributes const& surfaceMaterialAttributes,
+    ::BiomeSurfaceMaterialData&        data
+);
 // NOLINTEND
 
-}
+} // namespace BiomeSurfaceMaterialSerialization

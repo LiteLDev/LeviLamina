@@ -6,18 +6,18 @@ struct SentryEnvelopePayloadExceptionMechanism {
 public:
     // SentryEnvelopePayloadExceptionMechanism inner types define
     enum class Type : int {
-        Unknown = 0,
-        UnhandledException = 1,
+        Unknown                   = 0,
+        UnhandledException        = 1,
         UnhandledPromiseRejection = 2,
-        CapturedException = 3,
+        CapturedException         = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7efe5d;
+    ::ll::UntypedStorage<4, 4>  mUnk7efe5d;
     ::ll::UntypedStorage<8, 40> mUnkbb8876;
-    ::ll::UntypedStorage<1, 1> mUnkee412c;
+    ::ll::UntypedStorage<1, 1>  mUnkee412c;
     ::ll::UntypedStorage<8, 72> mUnk789526;
     // NOLINTEND
 
@@ -48,5 +48,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

@@ -25,7 +25,12 @@ public:
     virtual bool isCraftingImplemented() /*override*/;
 
     // vIndex: 3
-    virtual ::ContainerValidationCraftResult getCraftResult(::ContainerScreenContext const& screenContext, ::ContainerScreenValidation& screenValidation, ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts) /*override*/;
+    virtual ::ContainerValidationCraftResult getCraftResult(
+        ::ContainerScreenContext const&                     screenContext,
+        ::ContainerScreenValidation&                        screenValidation,
+        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
+        uchar const                                         numCrafts
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~StoneCutterContainerScreenValidator() /*override*/ = default;
@@ -34,9 +39,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ItemInstance _getResultFromId(::ContainerScreenContext const& screenContext, ::RecipeNetId const& recipeNetId);
+    MCNAPI ::ItemInstance
+    _getResultFromId(::ContainerScreenContext const& screenContext, ::RecipeNetId const& recipeNetId);
 
-    MCNAPI bool _recipeMatches(::ContainerScreenContext const& screenContext, ::RecipeNetId const& recipeNetId, ::ItemStack const& inputStack) const;
+    MCNAPI bool _recipeMatches(
+        ::ContainerScreenContext const& screenContext,
+        ::RecipeNetId const&            recipeNetId,
+        ::ItemStack const&              inputStack
+    ) const;
     // NOLINTEND
 
 public:
@@ -44,7 +54,12 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $isCraftingImplemented();
 
-    MCNAPI ::ContainerValidationCraftResult $getCraftResult(::ContainerScreenContext const& screenContext, ::ContainerScreenValidation& screenValidation, ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
+    MCNAPI ::ContainerValidationCraftResult $getCraftResult(
+        ::ContainerScreenContext const&                     screenContext,
+        ::ContainerScreenValidation&                        screenValidation,
+        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
+        uchar const                                         numCrafts
+    );
     // NOLINTEND
 
 public:
@@ -52,5 +67,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

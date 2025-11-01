@@ -12,5 +12,4 @@ public:
     // vIndex: 1
     virtual ~AttributeDescription() /*override*/ = default;
     // NOLINTEND
-
 };

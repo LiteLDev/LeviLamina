@@ -24,7 +24,6 @@ public:
     // NOLINTBEGIN
     MCAPI void operator()(float);
     // NOLINTEND
-
 };
 
-}
+} // namespace MovementAbilitiesExt

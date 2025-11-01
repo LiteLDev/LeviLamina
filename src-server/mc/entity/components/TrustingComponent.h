@@ -14,7 +14,7 @@ struct TrustingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mChance;
+    ::ll::TypedStorage<4, 4, float>                      mChance;
     ::ll::TypedStorage<8, 16, ::std::set<::Item const*>> mTrustItems;
     // NOLINTEND
 
@@ -25,5 +25,4 @@ public:
 
     MCAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
-
 };

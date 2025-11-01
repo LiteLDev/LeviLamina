@@ -15,4 +15,4 @@ namespace CropUtils {
 MCAPI float getGrowthSpeed(::BlockType const& blockType, ::BlockSource const& region, ::BlockPos const& pos);
 // NOLINTEND
 
-}
+} // namespace CropUtils

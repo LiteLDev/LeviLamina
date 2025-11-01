@@ -30,7 +30,8 @@ public:
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 61
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const /*override*/;
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
+        /*override*/;
 
     // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
@@ -127,5 +128,4 @@ public:
 
     MCAPI int $getTurnOffDelay(::Block const& block) const;
     // NOLINTEND
-
 };

@@ -37,7 +37,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void _addVersions();
 
-    MCNAPI ::Scripting::ModuleBinding _generateBindings(::Scripting::ModuleBindingBuilder& moduleBuilder, ::std::string const& versionPath);
+    MCNAPI ::Scripting::ModuleBinding
+    _generateBindings(::Scripting::ModuleBindingBuilder& moduleBuilder, ::std::string const& versionPath);
     // NOLINTEND
 
 public:
@@ -55,5 +56,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

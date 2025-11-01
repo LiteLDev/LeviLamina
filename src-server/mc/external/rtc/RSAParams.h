@@ -17,7 +17,6 @@ public:
     RSAParams& operator=(RSAParams const&);
     RSAParams(RSAParams const&);
     RSAParams();
-
 };
 
-}
+} // namespace rtc

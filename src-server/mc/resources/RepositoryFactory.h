@@ -17,7 +17,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::shared_ptr<::RepositorySources> createSources(::IResourcePackRepository const& repository) const /*override*/;
+    virtual ::std::shared_ptr<::RepositorySources> createSources(::IResourcePackRepository const& repository) const
+        /*override*/;
 
     // vIndex: 2
     virtual ::std::unique_ptr<::IPackIOProvider> createIO() const /*override*/;
@@ -39,5 +40,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

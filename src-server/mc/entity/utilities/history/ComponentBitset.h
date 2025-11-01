@@ -8,7 +8,6 @@
 
 namespace History {
 
-struct ComponentBitset : public ::Bedrock::EnumSet<::History::ComponentBits, 17> {
-};
+struct ComponentBitset : public ::Bedrock::EnumSet<::History::ComponentBits, 17> {};
 
-}
+} // namespace History

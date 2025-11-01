@@ -11,9 +11,9 @@ class CompoundBlockVolumeItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::CompoundBlockVolumeAction> mAction;
+    ::ll::TypedStorage<4, 4, ::CompoundBlockVolumeAction>             mAction;
     ::ll::TypedStorage<4, 4, ::CompoundBlockVolumePositionRelativity> mRelativity;
-    ::ll::TypedStorage<4, 32, ::SimpleBlockVolume> mVolume;
+    ::ll::TypedStorage<4, 32, ::SimpleBlockVolume>                    mVolume;
     // NOLINTEND
 
 public:
@@ -27,5 +27,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

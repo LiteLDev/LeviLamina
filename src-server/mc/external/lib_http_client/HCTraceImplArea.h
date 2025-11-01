@@ -15,5 +15,4 @@ public:
     HCTraceImplArea& operator=(HCTraceImplArea const&);
     HCTraceImplArea(HCTraceImplArea const&);
     HCTraceImplArea();
-
 };

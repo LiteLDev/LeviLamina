@@ -4,8 +4,7 @@
 
 namespace BlockEvents {
 
-template<typename T0>
-class BlockEventExecutor {
-};
+template <typename T0>
+class BlockEventExecutor {};
 
-}
+} // namespace BlockEvents

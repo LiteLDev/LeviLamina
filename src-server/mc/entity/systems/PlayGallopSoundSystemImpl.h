@@ -29,7 +29,22 @@ struct VehicleComponent;
 namespace PlayGallopSoundSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tick(::entt::type_list<::Include<::ShouldPlayStepSoundComponent, ::HorseFlagComponent>>, ::StrictEntityContext const& entity, ::ActorDataFlagComponent const& actorFlags, ::ActorDefinitionIdentifierComponent const& actorIdentifier, ::ActorUniqueIDComponent const& actorUniqueID, ::DimensionTypeComponent const& dimensionType, ::ActorDataHorseTypeComponent const& actorDataHorseTypeComponent, ::CurrentlyStandingOnBlockComponent const& currentlyStandingOnBlockComponent, ::RandomReferenceComponent const& randomReferenceComponent, ::SoundEventPlayerComponent const& soundEventPlayerComponent, ::GallopSoundCounterComponent& gallopSoundCounterComponent, ::Optional<::VehicleComponent const> vehicleComponent, ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& requestQueueView, ::ViewT<::StrictEntityContext, ::RandomComponent>& randomView);
+MCNAPI void tick(
+    ::entt::type_list<::Include<::ShouldPlayStepSoundComponent, ::HorseFlagComponent>>,
+    ::StrictEntityContext const&                                       entity,
+    ::ActorDataFlagComponent const&                                    actorFlags,
+    ::ActorDefinitionIdentifierComponent const&                        actorIdentifier,
+    ::ActorUniqueIDComponent const&                                    actorUniqueID,
+    ::DimensionTypeComponent const&                                    dimensionType,
+    ::ActorDataHorseTypeComponent const&                               actorDataHorseTypeComponent,
+    ::CurrentlyStandingOnBlockComponent const&                         currentlyStandingOnBlockComponent,
+    ::RandomReferenceComponent const&                                  randomReferenceComponent,
+    ::SoundEventPlayerComponent const&                                 soundEventPlayerComponent,
+    ::GallopSoundCounterComponent&                                     gallopSoundCounterComponent,
+    ::Optional<::VehicleComponent const>                               vehicleComponent,
+    ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& requestQueueView,
+    ::ViewT<::StrictEntityContext, ::RandomComponent>&                 randomView
+);
 // NOLINTEND
 
-}
+} // namespace PlayGallopSoundSystemImpl

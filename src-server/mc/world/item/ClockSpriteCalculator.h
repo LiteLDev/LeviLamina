@@ -12,7 +12,7 @@ class ClockSpriteCalculator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mFrame;
+    ::ll::TypedStorage<4, 4, int>   mFrame;
     ::ll::TypedStorage<4, 4, float> mRot;
     ::ll::TypedStorage<4, 4, float> mRotA;
     // NOLINTEND
@@ -22,5 +22,4 @@ public:
     // NOLINTBEGIN
     MCAPI int update(::BlockSource const& region, ::Vec3 const& pos, bool instant);
     // NOLINTEND
-
 };

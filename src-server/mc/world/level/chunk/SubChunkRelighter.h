@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/ChunkPos.h"
+#include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/chunk/SubChunkBrightnessStorage.h"
 
 // auto generated forward declare list
@@ -26,29 +26,29 @@ public:
     // SubChunkRelighter inner types define
     enum class SubChunkToDoBitsClearMode : int {
         AllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits = 0,
-        SetOuterEdgeOfComputationBits = 1,
+        SetOuterEdgeOfComputationBits                            = 1,
     };
-    
+
     using LightPair = ::SubChunkBrightnessStorage::LightPair;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mNeedToResetToDoBits;
-    ::ll::TypedStorage<8, 24576, ::std::bitset<196608>> mToDo;
-    ::ll::TypedStorage<1, 4096, ::std::array<uchar, 4096>> mOldAbsorption;
+    ::ll::TypedStorage<1, 1, bool>                                         mNeedToResetToDoBits;
+    ::ll::TypedStorage<8, 24576, ::std::bitset<196608>>                    mToDo;
+    ::ll::TypedStorage<1, 4096, ::std::array<uchar, 4096>>                 mOldAbsorption;
     ::ll::TypedStorage<8, 768, ::std::vector<::SubChunkLightIndex>[2][16]> mAdditiveBlocksToProcess;
-    ::ll::TypedStorage<8, 384, ::std::vector<::SubChunkLightIndex>[16]> mEdgeBlocksToProcess;
-    ::ll::TypedStorage<8, 384, ::std::vector<::SubChunkLightIndex>[16]> mBlocksToProcess;
-    ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkLightIndex>> mAbsorptionBlocksToProcess;
-    ::ll::TypedStorage<8, 48, ::std::vector<::SubtractiveLightInfo>[2]> mSubtractiveBlocks;
-    ::ll::TypedStorage<8, 384, ::SubChunk*[3][4][4]> mSubChunkPtrArray;
-    ::ll::TypedStorage<1, 48, bool[3][4][4]> mSubChunkTouched;
-    ::ll::TypedStorage<8, 8, ::ChunkPos> mCenterChunkPos;
-    ::ll::TypedStorage<8, 8, uint64> mCenterSubChunkIndex;
-    ::ll::TypedStorage<1, 1, bool> mOriginalLighting;
-    ::ll::TypedStorage<1, 1, bool> mIsClientSide;
-    ::ll::TypedStorage<1, 1, ::SubChunkBrightnessStorage::LightPair> mDefaultLightPair;
+    ::ll::TypedStorage<8, 384, ::std::vector<::SubChunkLightIndex>[16]>    mEdgeBlocksToProcess;
+    ::ll::TypedStorage<8, 384, ::std::vector<::SubChunkLightIndex>[16]>    mBlocksToProcess;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkLightIndex>>         mAbsorptionBlocksToProcess;
+    ::ll::TypedStorage<8, 48, ::std::vector<::SubtractiveLightInfo>[2]>    mSubtractiveBlocks;
+    ::ll::TypedStorage<8, 384, ::SubChunk* [3][4][4]>                      mSubChunkPtrArray;
+    ::ll::TypedStorage<1, 48, bool[3][4][4]>                               mSubChunkTouched;
+    ::ll::TypedStorage<8, 8, ::ChunkPos>                                   mCenterChunkPos;
+    ::ll::TypedStorage<8, 8, uint64>                                       mCenterSubChunkIndex;
+    ::ll::TypedStorage<1, 1, bool>                                         mOriginalLighting;
+    ::ll::TypedStorage<1, 1, bool>                                         mIsClientSide;
+    ::ll::TypedStorage<1, 1, ::SubChunkBrightnessStorage::LightPair>       mDefaultLightPair;
     // NOLINTEND
 
 public:
@@ -58,7 +58,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SubChunkRelighter(::IBlockSource& source, uint64 centerSubChunkIndex, ::ChunkPos const& centerChunkPos, bool isClientSide, bool originalLighting, bool useFullyDarkSubchunk);
+    MCNAPI SubChunkRelighter(
+        ::IBlockSource&   source,
+        uint64            centerSubChunkIndex,
+        ::ChunkPos const& centerChunkPos,
+        bool              isClientSide,
+        bool              originalLighting,
+        bool              useFullyDarkSubchunk
+    );
 
     MCNAPI void _checkEdgeForSubtractiveBlockLightProcessing(::SubChunkLightIndex const& coordIndex);
 
@@ -66,9 +73,15 @@ public:
 
     MCNAPI ::SubChunk* _dirtySubChunk(::SubChunkLightIndex coordIndex, uint& subChunkIndex);
 
-    MCNAPI ::SubChunk* _getBlock(::SubChunkLightIndex coordIndex, ::Block const*& block, ::Block const*& extraBlock) const;
+    MCNAPI ::SubChunk*
+    _getBlock(::SubChunkLightIndex coordIndex, ::Block const*& block, ::Block const*& extraBlock) const;
 
-    MCNAPI ::SubChunk* _getBlock(::SubChunkLightIndex coordIndex, ::Block const*& block, ::Block const*& extraBlock, uint& subChunkIndex) const;
+    MCNAPI ::SubChunk* _getBlock(
+        ::SubChunkLightIndex coordIndex,
+        ::Block const*&      block,
+        ::Block const*&      extraBlock,
+        uint&                subChunkIndex
+    ) const;
 
     MCNAPI ::SubChunkBrightnessStorage::LightPair _getLightPair(::SubChunkLightIndex coordIndex) const;
 
@@ -88,17 +101,41 @@ public:
 
     MCNAPI void _propagateSubtractiveSkyLight(::SubChunkLightIndex coordIndex, uchar effectiveBrightness);
 
-    MCNAPI void _setLightHelper(::SubChunkLightIndex coordIndex, ::Brightness oldBrightness, ::Brightness newBrightness, ::Brightness oldAbsorption, ::Brightness newAbsorption, uint lightType, uint subChunkIndex);
+    MCNAPI void _setLightHelper(
+        ::SubChunkLightIndex coordIndex,
+        ::Brightness         oldBrightness,
+        ::Brightness         newBrightness,
+        ::Brightness         oldAbsorption,
+        ::Brightness         newAbsorption,
+        uint                 lightType,
+        uint                 subChunkIndex
+    );
 
     MCNAPI void _setPropagatedBlockLightValue(::SubChunkLightIndex coordIndex, uchar brightness);
 
     MCNAPI void _setPropagatedSkyLightValue(::SubChunkLightIndex coordIndex, uchar brightness);
 
-    MCNAPI void _setSkyLight(::SubChunkLightIndex coordIndex, ::Brightness oldBrightness, ::Brightness newBrightness, ::Brightness oldAbsorption, ::Brightness newAbsorption);
+    MCNAPI void _setSkyLight(
+        ::SubChunkLightIndex coordIndex,
+        ::Brightness         oldBrightness,
+        ::Brightness         newBrightness,
+        ::Brightness         oldAbsorption,
+        ::Brightness         newAbsorption
+    );
 
-    MCNAPI void relightSubChunk(::LevelChunk const& levelChunk, ::std::vector<::SubChunkLightUpdate> const& alteredBlockList, ::std::vector<::BlockPos>& brightnessChangedList);
+    MCNAPI void relightSubChunk(
+        ::LevelChunk const&                         levelChunk,
+        ::std::vector<::SubChunkLightUpdate> const& alteredBlockList,
+        ::std::vector<::BlockPos>&                  brightnessChangedList
+    );
 
-    MCNAPI void setBlockLight(::Pos const& pos, ::Brightness oldBrightness, ::Brightness newBrightness, ::Brightness oldAbsorption, ::Brightness newAbsorption);
+    MCNAPI void setBlockLight(
+        ::Pos const& pos,
+        ::Brightness oldBrightness,
+        ::Brightness newBrightness,
+        ::Brightness oldAbsorption,
+        ::Brightness newAbsorption
+    );
 
     MCNAPI ~SubChunkRelighter();
     // NOLINTEND
@@ -132,7 +169,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::IBlockSource& source, uint64 centerSubChunkIndex, ::ChunkPos const& centerChunkPos, bool isClientSide, bool originalLighting, bool useFullyDarkSubchunk);
+    MCNAPI void* $ctor(
+        ::IBlockSource&   source,
+        uint64            centerSubChunkIndex,
+        ::ChunkPos const& centerChunkPos,
+        bool              isClientSide,
+        bool              originalLighting,
+        bool              useFullyDarkSubchunk
+    );
     // NOLINTEND
 
 public:
@@ -140,5 +184,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

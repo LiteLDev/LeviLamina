@@ -17,7 +17,7 @@ class NetworkItemInstanceDescriptor : public ::ItemDescriptorCount {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint> mBlockRuntimeId;
+    ::ll::TypedStorage<4, 4, uint>           mBlockRuntimeId;
     ::ll::TypedStorage<8, 32, ::std::string> mUserDataBuffer;
     // NOLINTEND
 
@@ -65,5 +65,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

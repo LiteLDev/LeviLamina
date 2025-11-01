@@ -17,7 +17,6 @@ public:
     IceRecheckEvent& operator=(IceRecheckEvent const&);
     IceRecheckEvent(IceRecheckEvent const&);
     IceRecheckEvent();
-
 };
 
-}
+} // namespace cricket

@@ -8,5 +8,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::list<::std::vector<char>>& mPleaseLeakMemory();
     // NOLINTEND
-
 };

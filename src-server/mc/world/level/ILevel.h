@@ -216,7 +216,14 @@ public:
     virtual ~ILevel() /*override*/;
 
     // vIndex: 1
-    virtual bool initialize(::std::string const&, ::LevelSettings const&, ::Experiments const&, ::std::string const*, ::std::optional<::std::reference_wrapper<::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>) = 0;
+    virtual bool initialize(
+        ::std::string const&,
+        ::LevelSettings const&,
+        ::Experiments const&,
+        ::std::string const*,
+        ::std::optional<::std::reference_wrapper<
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+    ) = 0;
 
     // vIndex: 2
     virtual void startLeaveGame() = 0;
@@ -519,7 +526,8 @@ public:
     virtual ::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&>& getDimensionFactory() = 0;
 
     // vIndex: 103
-    virtual ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&> const& getLightTextureImageBuilderFactory() const = 0;
+    virtual ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&> const&
+    getLightTextureImageBuilderFactory() const = 0;
 
     // vIndex: 102
     virtual ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&>& getLightTextureImageBuilderFactory() = 0;
@@ -753,7 +761,8 @@ public:
     virtual void sendServerLegacyParticle(::ParticleType, ::Vec3 const&, ::Vec3 const&, int) = 0;
 
     // vIndex: 184
-    virtual void playSound(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool) = 0;
+    virtual void
+    playSound(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool) = 0;
 
     // vIndex: 183
     virtual void playSound(::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, float const, float const) = 0;
@@ -762,10 +771,24 @@ public:
     virtual void playSound(::std::string const&, ::Vec3 const&, float, float) = 0;
 
     // vIndex: 181
-    virtual void playSound(::IConstBlockSource const&, ::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool) = 0;
+    virtual void playSound(
+        ::IConstBlockSource const&,
+        ::SharedTypes::Legacy::LevelSoundEvent,
+        ::Vec3 const&,
+        int,
+        ::ActorSoundIdentifier const&,
+        bool
+    ) = 0;
 
     // vIndex: 180
-    virtual void playSound(::DimensionType, ::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool) = 0;
+    virtual void playSound(
+        ::DimensionType,
+        ::SharedTypes::Legacy::LevelSoundEvent,
+        ::Vec3 const&,
+        int,
+        ::ActorSoundIdentifier const&,
+        bool
+    ) = 0;
 
     // vIndex: 185
     virtual ::PlayerEventCoordinator& getRemotePlayerEventCoordinator() = 0;
@@ -816,25 +839,56 @@ public:
     virtual void handleStopMusicEvent() = 0;
 
     // vIndex: 202
-    virtual void broadcastLevelEvent(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int, ::UserEntityIdentifierComponent const*) = 0;
+    virtual void broadcastLevelEvent(
+        ::SharedTypes::Legacy::LevelEvent,
+        ::Vec3 const&,
+        int,
+        ::UserEntityIdentifierComponent const*
+    ) = 0;
 
     // vIndex: 201
-    virtual void broadcastLevelEvent(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&, ::UserEntityIdentifierComponent const*) = 0;
+    virtual void broadcastLevelEvent(
+        ::SharedTypes::Legacy::LevelEvent,
+        ::CompoundTag const&,
+        ::UserEntityIdentifierComponent const*
+    ) = 0;
 
     // vIndex: 204
     virtual void broadcastLocalEvent(::BlockSource&, ::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int) = 0;
 
     // vIndex: 203
-    virtual void broadcastLocalEvent(::BlockSource&, ::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, ::Block const&) = 0;
+    virtual void
+    broadcastLocalEvent(::BlockSource&, ::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, ::Block const&) = 0;
 
     // vIndex: 207
-    virtual void broadcastSoundEvent(::BlockSource&, ::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, ::Block const&, ::ActorSoundIdentifier const&, bool) = 0;
+    virtual void broadcastSoundEvent(
+        ::BlockSource&,
+        ::SharedTypes::Legacy::LevelSoundEvent,
+        ::Vec3 const&,
+        ::Block const&,
+        ::ActorSoundIdentifier const&,
+        bool
+    ) = 0;
 
     // vIndex: 206
-    virtual void broadcastSoundEvent(::BlockSource&, ::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool) = 0;
+    virtual void broadcastSoundEvent(
+        ::BlockSource&,
+        ::SharedTypes::Legacy::LevelSoundEvent,
+        ::Vec3 const&,
+        int,
+        ::ActorSoundIdentifier const&,
+        bool
+    ) = 0;
 
     // vIndex: 205
-    virtual void broadcastSoundEvent(::Dimension&, ::SharedTypes::Legacy::LevelSoundEvent, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool) = 0;
+    virtual void broadcastSoundEvent(
+        ::Dimension&,
+        ::SharedTypes::Legacy::LevelSoundEvent,
+        ::Vec3 const&,
+        int,
+        ::ActorSoundIdentifier const&,
+        bool
+    ) = 0;
 
     // vIndex: 208
     virtual void broadcastActorEvent(::Actor&, ::ActorEvent, int) const = 0;
@@ -963,10 +1017,16 @@ public:
     virtual void addTerrainSlideEffect(::BlockPos const&, ::Block const&, ::Vec3 const&, float, float, float) = 0;
 
     // vIndex: 250
-    virtual void addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&) = 0;
+    virtual void
+    addBreakingItemParticleEffect(::Vec3 const&, ::BreakingItemParticleData const&, ::ResolvedItemIconInfo const&) = 0;
 
     // vIndex: 251
-    virtual void addBiomeTintedParticleEffect(::HashedString const&, ::BlockPos const&, ::Block const&, ::std::optional<::mce::Color>) = 0;
+    virtual void addBiomeTintedParticleEffect(
+        ::HashedString const&,
+        ::BlockPos const&,
+        ::Block const&,
+        ::std::optional<::mce::Color>
+    ) = 0;
 
     // vIndex: 252
     virtual ::ActorUniqueID getNewUniqueID() = 0;
@@ -1017,7 +1077,8 @@ public:
     virtual ::MapItemSavedData& createMapSavedData(::ActorUniqueID const&, ::BlockPos const&, ::DimensionType, int) = 0;
 
     // vIndex: 267
-    virtual ::MapItemSavedData& createMapSavedData(::std::vector<::ActorUniqueID> const&, ::BlockPos const&, ::DimensionType, int) = 0;
+    virtual ::MapItemSavedData&
+    createMapSavedData(::std::vector<::ActorUniqueID> const&, ::BlockPos const&, ::DimensionType, int) = 0;
 
     // vIndex: 269
     virtual ::Core::PathBuffer<::std::string> getScreenshotsFolder() const = 0;
@@ -1044,10 +1105,16 @@ public:
     virtual ::TradeTables* getTradeTables();
 
     // vIndex: 277
-    virtual void decrementTagCache(::std::string const&, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&) = 0;
+    virtual void decrementTagCache(
+        ::std::string const&,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+    ) = 0;
 
     // vIndex: 278
-    virtual void incrementTagCache(::std::string const&, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&) = 0;
+    virtual void incrementTagCache(
+        ::std::string const&,
+        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
+    ) = 0;
 
     // vIndex: 279
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() = 0;
@@ -1083,7 +1150,8 @@ public:
     virtual ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> tryGetVolumeEntityManagerServer() const = 0;
 
     // vIndex: 291
-    virtual void runCommand(::HashedString const&, ::CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion const) = 0;
+    virtual void
+    runCommand(::HashedString const&, ::CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion const) = 0;
 
     // vIndex: 290
     virtual void runCommand(::Command&, ::CommandOrigin&, ::CommandOriginSystem) = 0;
@@ -1104,7 +1172,8 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager> getPlayerMovementSettingsManager() = 0;
 
     // vIndex: 296
-    virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager const> getPlayerMovementSettingsManager() const = 0;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager const>
+    getPlayerMovementSettingsManager() const = 0;
 
     // vIndex: 298
     virtual ::TickDeathSettings const& getTickDeathSettings() const = 0;
@@ -1236,7 +1305,13 @@ public:
     virtual bool getTearingDown() const = 0;
 
     // vIndex: 341
-    virtual void takePicture(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&, ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>) = 0;
+    virtual void takePicture(
+        ::cg::ImageBuffer&,
+        ::Actor*,
+        ::Actor*,
+        ::ScreenshotOptions&,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
+    ) = 0;
 
     // vIndex: 342
     virtual ::LevelSoundManager& getLevelSoundManager() = 0;
@@ -1394,5 +1469,4 @@ public:
     // NOLINTBEGIN
     MCNAPI ::MultiPlayerLevel* $asMultiPlayerLevel();
     // NOLINTEND
-
 };

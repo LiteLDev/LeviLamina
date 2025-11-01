@@ -17,5 +17,4 @@ public:
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>> mBlock;
     ::ll::TypedStorage<4, 4, ::PlacementConnectionHandleType> mType;
     // NOLINTEND
-
 };

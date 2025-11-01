@@ -5,9 +5,9 @@
 namespace webrtc {
 
 enum class SdpType : int {
-    KOffer = 0,
+    KOffer    = 0,
     KPrAnswer = 1,
-    KAnswer = 2,
+    KAnswer   = 2,
     KRollback = 3,
 };
 

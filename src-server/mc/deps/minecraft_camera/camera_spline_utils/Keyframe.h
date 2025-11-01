@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnkcd48b3;
-    ::ll::UntypedStorage<4, 4> mUnkdc2dbc;
+    ::ll::UntypedStorage<4, 4>  mUnkdc2dbc;
     // NOLINTEND
 
 public:
@@ -17,7 +17,6 @@ public:
     Keyframe& operator=(Keyframe const&);
     Keyframe(Keyframe const&);
     Keyframe();
-
 };
 
-}
+} // namespace CameraSplineUtils

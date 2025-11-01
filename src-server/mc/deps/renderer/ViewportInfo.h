@@ -19,7 +19,6 @@ public:
     ViewportInfo& operator=(ViewportInfo const&);
     ViewportInfo(ViewportInfo const&);
     ViewportInfo();
-
 };
 
-}
+} // namespace mce

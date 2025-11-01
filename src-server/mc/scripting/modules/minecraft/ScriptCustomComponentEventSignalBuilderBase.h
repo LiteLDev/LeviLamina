@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft::CustomComponentEventHelpers {
 
-template<typename T0, typename T1, typename... T2>
-class ScriptCustomComponentEventSignalBuilderBase {
-};
+template <typename T0, typename T1, typename... T2>
+class ScriptCustomComponentEventSignalBuilderBase {};
 
-}
+} // namespace ScriptModuleMinecraft::CustomComponentEventHelpers

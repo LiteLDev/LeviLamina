@@ -22,7 +22,8 @@ public:
     // NOLINTBEGIN
     MCNAPI PersistenceGroupDataCollection(::Editor::Services::PersistenceGroupDataCollection const&);
 
-    MCNAPI ::Editor::Services::PersistenceGroupDataCollection& operator=(::Editor::Services::PersistenceGroupDataCollection&&);
+    MCNAPI ::Editor::Services::PersistenceGroupDataCollection&
+    operator=(::Editor::Services::PersistenceGroupDataCollection&&);
 
     MCNAPI ~PersistenceGroupDataCollection();
     // NOLINTEND
@@ -38,7 +39,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

@@ -7,12 +7,13 @@
 
 namespace Editor::Network {
 
-class ThumbnailCacheStorePayload : public ::Editor::Network::NetworkPayload<::Editor::Network::ThumbnailCacheStorePayload> {
+class ThumbnailCacheStorePayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::ThumbnailCacheStorePayload> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk661b15;
-    ::ll::UntypedStorage<4, 4> mUnkf1d7b1;
+    ::ll::UntypedStorage<4, 4>  mUnkf1d7b1;
     ::ll::UntypedStorage<8, 40> mUnk396070;
     // NOLINTEND
 
@@ -34,7 +35,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

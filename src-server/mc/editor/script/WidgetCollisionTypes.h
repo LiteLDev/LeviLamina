@@ -13,4 +13,4 @@ namespace Editor::ScriptModule::WidgetCollisionTypes {
 MCNAPI ::Scripting::EnumBinding bindEnums();
 // NOLINTEND
 
-}
+} // namespace Editor::ScriptModule::WidgetCollisionTypes

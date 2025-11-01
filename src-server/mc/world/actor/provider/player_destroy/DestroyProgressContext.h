@@ -24,7 +24,6 @@ public:
     DestroyProgressContext& operator=(DestroyProgressContext const&);
     DestroyProgressContext(DestroyProgressContext const&);
     DestroyProgressContext();
-
 };
 
-}
+} // namespace PlayerDestroy

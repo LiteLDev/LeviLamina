@@ -14,12 +14,12 @@ struct NbtStructureTemplateBlockPalette {
 public:
     // NbtStructureTemplateBlockPalette inner types define
     using Data = ::std::vector<::LegacyStructureBlockInfo>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::vector<::LegacyStructureBlockInfo> const*> mNbt;
-    ::ll::TypedStorage<8, 8, uint64> mIndex;
+    ::ll::TypedStorage<8, 8, uint64>                                           mIndex;
     // NOLINTEND
 
 public:
@@ -27,7 +27,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> next();
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

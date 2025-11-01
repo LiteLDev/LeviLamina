@@ -4,7 +4,6 @@
 
 namespace Memory {
 
-class ScopedMemoryTrackingTag {
-};
+class ScopedMemoryTrackingTag {};
 
-}
+} // namespace Memory

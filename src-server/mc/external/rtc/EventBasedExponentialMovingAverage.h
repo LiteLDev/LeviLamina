@@ -8,10 +8,10 @@ class EventBasedExponentialMovingAverage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf67673;
-    ::ll::UntypedStorage<8, 8> mUnk4e1360;
-    ::ll::UntypedStorage<8, 8> mUnk97c007;
-    ::ll::UntypedStorage<8, 8> mUnk92a72d;
+    ::ll::UntypedStorage<8, 8>  mUnkf67673;
+    ::ll::UntypedStorage<8, 8>  mUnk4e1360;
+    ::ll::UntypedStorage<8, 8>  mUnk97c007;
+    ::ll::UntypedStorage<8, 8>  mUnk92a72d;
     ::ll::UntypedStorage<8, 16> mUnkc63ba8;
     // NOLINTEND
 
@@ -38,7 +38,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(int half_time);
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

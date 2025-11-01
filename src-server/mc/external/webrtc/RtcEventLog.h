@@ -14,19 +14,19 @@ class RtcEventLog {
 public:
     // RtcEventLog inner types define
     enum class EncodingType : int {
-        Legacy = 0,
+        Legacy    = 0,
         NewFormat = 1,
         ProtoFree = 2,
     };
-    
+
     enum : int64 {
         KImmediateOutput = 0,
     };
-    
+
     enum : uint64 {
         KUnlimitedOutput = 0,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -51,7 +51,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $StopLogging(::std::function<void()> callback);
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

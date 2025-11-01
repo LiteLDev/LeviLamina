@@ -17,9 +17,18 @@ struct InsideGenericBlockComponent;
 namespace InsideGenericBlockSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void insideGenericBlockSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::InsideGenericBlockComponent, ::ActorOwnerComponent> view);
+MCNAPI void insideGenericBlockSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent>,
+        ::InsideGenericBlockComponent,
+        ::ActorOwnerComponent> view
+);
 
-MCNAPI void tickInsideGenericBlock(::InsideGenericBlockComponent& insideGenericBlockComponent, ::ActorOwnerComponent& actorOwnerComponent);
+MCNAPI void tickInsideGenericBlock(
+    ::InsideGenericBlockComponent& insideGenericBlockComponent,
+    ::ActorOwnerComponent&         actorOwnerComponent
+);
 // NOLINTEND
 
-}
+} // namespace InsideGenericBlockSystemImpl

@@ -53,16 +53,25 @@ public:
     virtual void beginDownloadWorld(::std::string const&, int, ::WeakEntityRef) = 0;
 
     // vIndex: 10
-    virtual ::Bedrock::PubSub::Subscription listenForRealmsWorldListLoaded(::std::function<void(::std::vector<::Editor::Services::EditorRealmsWorld>)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription
+        listenForRealmsWorldListLoaded(::std::function<void(::std::vector<::Editor::Services::EditorRealmsWorld>)>) = 0;
 
     // vIndex: 11
-    virtual ::Bedrock::PubSub::Subscription listenForRealmsWorldSlotsLoaded(::std::function<void(::std::vector<::Editor::Services::EditorRealmsWorldSlot>)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription listenForRealmsWorldSlotsLoaded(
+        ::std::function<void(::std::vector<::Editor::Services::EditorRealmsWorldSlot>)>
+    ) = 0;
 
     // vIndex: 12
     virtual ::Bedrock::PubSub::Subscription listenForRealmsWorldDownload(::std::function<void(bool)>) = 0;
 
     // vIndex: 13
-    virtual void beginUploadToRealms(::std::string, int, ::WeakEntityRef, ::Editor::GameOptions const&, ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)>) = 0;
+    virtual void beginUploadToRealms(
+        ::std::string,
+        int,
+        ::WeakEntityRef,
+        ::Editor::GameOptions const&,
+        ::std::function<void(::Editor::Services::RealmsWorldUploadResult const&)>
+    ) = 0;
 
     // vIndex: 14
     virtual bool const canUploadWorld() const = 0;
@@ -76,7 +85,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

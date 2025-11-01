@@ -15,5 +15,4 @@ public:
     SynchedActorDataReader& operator=(SynchedActorDataReader const&);
     SynchedActorDataReader(SynchedActorDataReader const&);
     SynchedActorDataReader();
-
 };

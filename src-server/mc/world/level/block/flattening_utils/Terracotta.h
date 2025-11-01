@@ -13,4 +13,4 @@ namespace FlatteningUtils::Terracotta {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::Terracotta

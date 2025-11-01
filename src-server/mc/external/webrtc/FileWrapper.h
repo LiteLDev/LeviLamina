@@ -16,7 +16,6 @@ public:
     FileWrapper& operator=(FileWrapper const&);
     FileWrapper(FileWrapper const&);
     FileWrapper();
-
 };
 
-}
+} // namespace webrtc

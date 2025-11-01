@@ -23,7 +23,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkdd25c5;
     ::ll::UntypedStorage<8, 32> mUnkfd71f3;
     ::ll::UntypedStorage<8, 64> mUnk39ec3c;
-    ::ll::UntypedStorage<1, 1> mUnk5799dd;
+    ::ll::UntypedStorage<1, 1>  mUnk5799dd;
     // NOLINTEND
 
 public:
@@ -54,19 +54,27 @@ public:
     virtual bool isTrusted() const /*override*/;
 
     // vIndex: 6
-    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const /*override*/;
+    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
+        /*override*/;
 
     // vIndex: 7
     virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
     // vIndex: 8
-    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const /*override*/;
+    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
+        /*override*/;
 
     // vIndex: 9
-    virtual void forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool recurseAnyways) const /*override*/;
+    virtual void forEachIn(
+        ::Core::Path const&                        packRelativePath,
+        ::std::function<void(::Core::Path const&)> callback,
+        bool                                       recurseAnyways
+    ) const /*override*/;
 
     // vIndex: 10
-    virtual void forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const /*override*/;
+    virtual void
+    forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const
+        /*override*/;
 
     // vIndex: 11
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
@@ -81,26 +89,46 @@ public:
     virtual void unload() /*override*/;
 
     // vIndex: 21
-    virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> _loadArchive(::Core::Path const& packRelativePath) const /*override*/;
+    virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
+    _loadArchive(::Core::Path const& packRelativePath) const /*override*/;
 
     // vIndex: 22
-    virtual ::std::vector<::Bedrock::Resources::PreloadedPathHandle> _preloadSubFolders(::Core::Path const& packRelativePath) const /*override*/;
+    virtual ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
+    _preloadSubFolders(::Core::Path const& packRelativePath) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DirectoryPackAccessStrategy(::ResourceLocation const& packLocation, bool recurse, ::std::function<::std::string(::Core::Path const&)> reader);
+    MCNAPI DirectoryPackAccessStrategy(
+        ::ResourceLocation const&                           packLocation,
+        bool                                                recurse,
+        ::std::function<::std::string(::Core::Path const&)> reader
+    );
 
-    MCNAPI DirectoryPackAccessStrategy(::std::unique_ptr<::PackAssetSet>&& assetSet, ::ResourceLocation const& packLocation, bool recurse, ::std::function<::std::string(::Core::Path const&)> reader);
+    MCNAPI DirectoryPackAccessStrategy(
+        ::std::unique_ptr<::PackAssetSet>&&                 assetSet,
+        ::ResourceLocation const&                           packLocation,
+        bool                                                recurse,
+        ::std::function<::std::string(::Core::Path const&)> reader
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ResourceLocation const& packLocation, bool recurse, ::std::function<::std::string(::Core::Path const&)> reader);
+    MCNAPI void* $ctor(
+        ::ResourceLocation const&                           packLocation,
+        bool                                                recurse,
+        ::std::function<::std::string(::Core::Path const&)> reader
+    );
 
-    MCNAPI void* $ctor(::std::unique_ptr<::PackAssetSet>&& assetSet, ::ResourceLocation const& packLocation, bool recurse, ::std::function<::std::string(::Core::Path const&)> reader);
+    MCNAPI void* $ctor(
+        ::std::unique_ptr<::PackAssetSet>&&                 assetSet,
+        ::ResourceLocation const&                           packLocation,
+        bool                                                recurse,
+        ::std::function<::std::string(::Core::Path const&)> reader
+    );
     // NOLINTEND
 
 public:
@@ -128,9 +156,14 @@ public:
 
     MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
-    MCNAPI void $forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool recurseAnyways) const;
+    MCNAPI void $forEachIn(
+        ::Core::Path const&                        packRelativePath,
+        ::std::function<void(::Core::Path const&)> callback,
+        bool                                       recurseAnyways
+    ) const;
 
-    MCNAPI void $forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const;
+    MCNAPI void
+    $forEachInAssetSet(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback) const;
 
     MCNAPI ::PackAccessStrategyType $getStrategyType() const;
 
@@ -140,9 +173,11 @@ public:
 
     MCNAPI void $unload();
 
-    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const& packRelativePath) const;
+    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader>
+    $_loadArchive(::Core::Path const& packRelativePath) const;
 
-    MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle> $_preloadSubFolders(::Core::Path const& packRelativePath) const;
+    MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
+    $_preloadSubFolders(::Core::Path const& packRelativePath) const;
     // NOLINTEND
 
 public:
@@ -150,5 +185,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

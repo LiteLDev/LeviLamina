@@ -13,4 +13,4 @@ namespace GlidingMoveFinalizeSystem {
 MCNAPI ::TickingSystemWithInfo createCollisionDamageCalculateSystem();
 // NOLINTEND
 
-}
+} // namespace GlidingMoveFinalizeSystem

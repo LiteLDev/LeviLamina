@@ -18,12 +18,15 @@ class ScriptGlobalEventListeners {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorEventCoordinator&> mActorEventCoordinator;
-    ::ll::TypedStorage<8, 8, ::BlockEventCoordinator&> mBlockEventCoordinator;
+    ::ll::TypedStorage<8, 8, ::ActorEventCoordinator&>     mActorEventCoordinator;
+    ::ll::TypedStorage<8, 8, ::BlockEventCoordinator&>     mBlockEventCoordinator;
     ::ll::TypedStorage<8, 8, ::ScriptingEventCoordinator&> mScriptingEventCoordinator;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptActorGlobalEventListener>> mActorEventListener;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptBlockGlobalEventListener>> mBlockEventListener;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptScriptingGlobalEventListener>> mScriptingEventListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptActorGlobalEventListener>>
+        mActorEventListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptBlockGlobalEventListener>>
+        mBlockEventListener;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptScriptingGlobalEventListener>>
+        mScriptingEventListener;
     // NOLINTEND
 
 public:
@@ -35,7 +38,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptGlobalEventListeners(::ActorEventCoordinator& actorEventCoordinator, ::BlockEventCoordinator& blockEventCoordinator, ::ScriptingEventCoordinator& scriptEventCoordinator);
+    MCAPI ScriptGlobalEventListeners(
+        ::ActorEventCoordinator&     actorEventCoordinator,
+        ::BlockEventCoordinator&     blockEventCoordinator,
+        ::ScriptingEventCoordinator& scriptEventCoordinator
+    );
 
     MCAPI ~ScriptGlobalEventListeners();
     // NOLINTEND
@@ -43,7 +50,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorEventCoordinator& actorEventCoordinator, ::BlockEventCoordinator& blockEventCoordinator, ::ScriptingEventCoordinator& scriptEventCoordinator);
+    MCAPI void* $ctor(
+        ::ActorEventCoordinator&     actorEventCoordinator,
+        ::BlockEventCoordinator&     blockEventCoordinator,
+        ::ScriptingEventCoordinator& scriptEventCoordinator
+    );
     // NOLINTEND
 
 public:
@@ -51,7 +62,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

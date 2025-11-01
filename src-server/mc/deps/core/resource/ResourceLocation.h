@@ -15,10 +15,10 @@ class ResourceLocation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ResourceFileSystem> mFileSystem;
+    ::ll::TypedStorage<4, 4, ::ResourceFileSystem>               mFileSystem;
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mPath;
-    ::ll::TypedStorage<8, 8, uint64> mPathHash;
-    ::ll::TypedStorage<8, 8, uint64> mFullHash;
+    ::ll::TypedStorage<8, 8, uint64>                             mPathHash;
+    ::ll::TypedStorage<8, 8, uint64>                             mFullHash;
     // NOLINTEND
 
 public:
@@ -46,5 +46,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

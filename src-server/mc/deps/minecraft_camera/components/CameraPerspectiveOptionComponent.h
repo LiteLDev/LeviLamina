@@ -19,7 +19,6 @@ public:
     CameraPerspectiveOptionComponent& operator=(CameraPerspectiveOptionComponent const&);
     CameraPerspectiveOptionComponent(CameraPerspectiveOptionComponent const&);
     CameraPerspectiveOptionComponent();
-
 };
 
-}
+} // namespace MinecraftCamera

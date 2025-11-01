@@ -18,8 +18,8 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkf9f17c;
     ::ll::UntypedStorage<8, 16> mUnk860b01;
     ::ll::UntypedStorage<8, 64> mUnk3a8e04;
-    ::ll::UntypedStorage<1, 1> mUnk9b171a;
-    ::ll::UntypedStorage<4, 4> mUnkc8951a;
+    ::ll::UntypedStorage<1, 1>  mUnk9b171a;
+    ::ll::UntypedStorage<4, 4>  mUnkc8951a;
     // NOLINTEND
 
 public:
@@ -31,7 +31,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::RakWebSocketDataFrame> _failReadFrame(::std::string const& error, ::CloseStatusCode code);
+    MCNAPI ::std::shared_ptr<::RakWebSocketDataFrame>
+    _failReadFrame(::std::string const& error, ::CloseStatusCode code);
 
     MCNAPI ::std::shared_ptr<::RakWebSocketDataFrame> readFrame(::RakNet::BitStream& data);
 
@@ -43,5 +44,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

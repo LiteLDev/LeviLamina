@@ -12,7 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 128> mUnk8881a1;
-    ::ll::UntypedStorage<4, 4> mUnke00fc5;
+    ::ll::UntypedStorage<4, 4>   mUnke00fc5;
     // NOLINTEND
 
 public:
@@ -39,7 +39,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

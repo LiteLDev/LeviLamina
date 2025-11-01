@@ -4,7 +4,7 @@
 
 enum class ItemSetType : int {
     Place = 0,
-    Swap = 1,
-    Add = 2,
-    None = 3,
+    Swap  = 1,
+    Add   = 2,
+    None  = 3,
 };

@@ -15,38 +15,38 @@ public:
     // clang-format off
     struct StringRepresentation;
     // clang-format on
-    
+
     // ExpressionNode inner types define
     struct StringRepresentation {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnkbe3c14;
-        ::ll::UntypedStorage<2, 2> mUnk31d04e;
+        ::ll::UntypedStorage<2, 2>  mUnk31d04e;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         StringRepresentation& operator=(StringRepresentation const&);
         StringRepresentation(StringRepresentation const&);
         StringRepresentation();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::Legacy::ExpressionNode::StringRepresentation& operator=(::SharedTypes::Legacy::ExpressionNode::StringRepresentation&&);
-    
+        MCNAPI ::SharedTypes::Legacy::ExpressionNode::StringRepresentation&
+        operator=(::SharedTypes::Legacy::ExpressionNode::StringRepresentation&&);
+
         MCNAPI ~StringRepresentation();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -94,7 +94,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::Legacy

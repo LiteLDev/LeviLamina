@@ -16,7 +16,6 @@ public:
     ProfileSectionCPU& operator=(ProfileSectionCPU const&);
     ProfileSectionCPU(ProfileSectionCPU const&);
     ProfileSectionCPU();
-
 };
 
-}
+} // namespace Core::Profile

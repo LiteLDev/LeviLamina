@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::DensityFunctionPtr const> mInput;
-    ::ll::TypedStorage<4, 4, float const> mScale;
+    ::ll::TypedStorage<4, 4, float const>                 mScale;
     // NOLINTEND
 
 public:
@@ -35,5 +35,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

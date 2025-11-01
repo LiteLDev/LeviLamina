@@ -16,7 +16,6 @@ public:
     ContextCommandVersion& operator=(ContextCommandVersion const&);
     ContextCommandVersion(ContextCommandVersion const&);
     ContextCommandVersion();
-
 };
 
-}
+} // namespace Scripting

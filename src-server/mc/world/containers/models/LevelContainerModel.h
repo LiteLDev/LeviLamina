@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/models/ContainerCategory.h"
 #include "mc/world/containers/models/ContainerModel.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
@@ -23,10 +23,10 @@ class LevelContainerModel : public ::ContainerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
-    ::ll::TypedStorage<1, 1, ::BlockActorType> mBlockEntityType;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityUniqueId;
+    ::ll::TypedStorage<8, 8, ::Player&>                        mPlayer;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                      mBlockPos;
+    ::ll::TypedStorage<1, 1, ::BlockActorType>                 mBlockEntityType;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                  mEntityUniqueId;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mContainerRemovedSubscription;
     // NOLINTEND
 
@@ -73,9 +73,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelContainerModel(::ContainerEnumName containerName, int containerSize, ::Player& player, ::ActorUniqueID entityId, ::ContainerCategory category);
+    MCAPI LevelContainerModel(
+        ::ContainerEnumName containerName,
+        int                 containerSize,
+        ::Player&           player,
+        ::ActorUniqueID     entityId,
+        ::ContainerCategory category
+    );
 
-    MCAPI LevelContainerModel(::ContainerEnumName containerName, int containerSize, ::Player& player, ::BlockActorType type, ::BlockPos const& blockPos, ::ContainerCategory category);
+    MCAPI LevelContainerModel(
+        ::ContainerEnumName containerName,
+        int                 containerSize,
+        ::Player&           player,
+        ::BlockActorType    type,
+        ::BlockPos const&   blockPos,
+        ::ContainerCategory category
+    );
 
     MCAPI void _refreshSlot(int modelSlot);
 
@@ -85,15 +98,29 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Container* getContainerHelper(::Player& player, ::BlockActorType blockActorType, ::BlockPos const& blockPos);
+    MCAPI static ::Container*
+    getContainerHelper(::Player& player, ::BlockActorType blockActorType, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerEnumName containerName, int containerSize, ::Player& player, ::ActorUniqueID entityId, ::ContainerCategory category);
+    MCAPI void* $ctor(
+        ::ContainerEnumName containerName,
+        int                 containerSize,
+        ::Player&           player,
+        ::ActorUniqueID     entityId,
+        ::ContainerCategory category
+    );
 
-    MCAPI void* $ctor(::ContainerEnumName containerName, int containerSize, ::Player& player, ::BlockActorType type, ::BlockPos const& blockPos, ::ContainerCategory category);
+    MCAPI void* $ctor(
+        ::ContainerEnumName containerName,
+        int                 containerSize,
+        ::Player&           player,
+        ::BlockActorType    type,
+        ::BlockPos const&   blockPos,
+        ::ContainerCategory category
+    );
     // NOLINTEND
 
 public:
@@ -123,5 +150,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

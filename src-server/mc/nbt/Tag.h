@@ -50,13 +50,13 @@ public:
         Int64     = 0x4,
         Float     = 0x5,
         Double    = 0x6,
-        ByteArray = 0x7,
+        ByteArray   = 0x7,
         String    = 0x8,
         List      = 0x9,
         Compound  = 0xA,
         IntArray  = 0xB,
     };
-    using enum Type;
+using enum Type;
 
     template <std::derived_from<Tag> T>
     T const* as_ptr() const {
@@ -152,5 +152,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

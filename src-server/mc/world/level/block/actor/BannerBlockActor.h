@@ -23,11 +23,11 @@ class BannerBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mDirtyBounds;
-    ::ll::TypedStorage<1, 1, uchar> mBaseColor;
+    ::ll::TypedStorage<1, 1, bool>                  mDirtyBounds;
+    ::ll::TypedStorage<1, 1, uchar>                 mBaseColor;
     ::ll::TypedStorage<8, 24, ::std::vector<uchar>> mPatterns;
     ::ll::TypedStorage<8, 24, ::std::vector<uchar>> mColors;
-    ::ll::TypedStorage<4, 4, ::BannerBlockType> mBannerType;
+    ::ll::TypedStorage<4, 4, ::BannerBlockType>     mBannerType;
     // NOLINTEND
 
 public:
@@ -130,5 +130,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

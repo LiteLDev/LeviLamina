@@ -4,6 +4,6 @@
 
 struct StopSoundPacketPayload {
     ::std::string mName;
-    bool          mStopAll;
+    bool                    mStopAll;
     bool          mStopMusicLegacy;
 };

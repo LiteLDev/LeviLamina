@@ -14,11 +14,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool Available();
 
-    MCNAPI static void CompressToGzip(uchar*, uint64, ::HCCompressionLevel, ::std::vector<uchar, ::http_stl_allocator<uchar>>&);
+    MCNAPI static void
+    CompressToGzip(uchar*, uint64, ::HCCompressionLevel, ::std::vector<uchar, ::http_stl_allocator<uchar>>&);
 
     MCNAPI static void DecompressFromGzip(uchar*, uint64, ::std::vector<uchar, ::http_stl_allocator<uchar>>&);
     // NOLINTEND
-
 };
 
-}
+} // namespace xbox::httpclient

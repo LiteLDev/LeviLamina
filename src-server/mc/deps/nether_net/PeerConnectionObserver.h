@@ -18,7 +18,8 @@ namespace webrtc { class RTCStatsReport; }
 
 namespace NetherNet {
 
-class PeerConnectionObserver : public ::rtc::RefCountedObject<::webrtc::RTCStatsCollectorCallback>, public ::webrtc::PeerConnectionObserver {
+class PeerConnectionObserver : public ::rtc::RefCountedObject<::webrtc::RTCStatsCollectorCallback>,
+                               public ::webrtc::PeerConnectionObserver {
 public:
     // member variables
     // NOLINTBEGIN
@@ -57,7 +58,13 @@ public:
     virtual void OnIceCandidate(::webrtc::IceCandidateInterface const* candidate) /*override*/;
 
     // vIndex: 12
-    virtual void OnIceCandidateError(::std::string const& address, int port, ::std::string const& url, int errorCode, ::std::string const& errorMessage) /*override*/;
+    virtual void OnIceCandidateError(
+        ::std::string const& address,
+        int                  port,
+        ::std::string const& url,
+        int                  error_code,
+        ::std::string const& error_text
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~PeerConnectionObserver() /*override*/ = default;
@@ -90,7 +97,13 @@ public:
 
     MCNAPI void $OnIceCandidate(::webrtc::IceCandidateInterface const* candidate);
 
-    MCNAPI void $OnIceCandidateError(::std::string const& address, int port, ::std::string const& url, int errorCode, ::std::string const& errorMessage);
+    MCNAPI void $OnIceCandidateError(
+        ::std::string const& address,
+        int                  port,
+        ::std::string const& url,
+        int                  error_code,
+        ::std::string const& error_text
+    );
     // NOLINTEND
 
 public:
@@ -100,7 +113,6 @@ public:
 
     MCNAPI static void** $vftableForRefCountedObject();
     // NOLINTEND
-
 };
 
-}
+} // namespace NetherNet

@@ -17,5 +17,4 @@ public:
     ActorGoalFactory& operator=(ActorGoalFactory const&);
     ActorGoalFactory(ActorGoalFactory const&);
     ActorGoalFactory();
-
 };

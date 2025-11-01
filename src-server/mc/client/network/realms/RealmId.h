@@ -7,7 +7,6 @@
 
 namespace Realms {
 
-struct RealmId : public ::NewType<int64> {
-};
+struct RealmId : public ::NewType<int64> {};
 
-}
+} // namespace Realms

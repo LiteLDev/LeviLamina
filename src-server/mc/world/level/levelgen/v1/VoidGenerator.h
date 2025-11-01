@@ -28,12 +28,12 @@ class VoidGenerator : public ::WorldGenerator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Biome const*> mBiome;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeSource>> mBiomeSource;
+    ::ll::TypedStorage<8, 8, ::Biome const*>                          mBiome;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BiomeSource>>        mBiomeSource;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mNoise;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>> mPrototypeBlocks;
-    ::ll::TypedStorage<8, 40, ::BlockVolume> mPrototype;
-    ::ll::TypedStorage<1, 1, bool> mIsLegacyWorld;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>          mPrototypeBlocks;
+    ::ll::TypedStorage<8, 40, ::BlockVolume>                          mPrototype;
+    ::ll::TypedStorage<1, 1, bool>                                    mIsLegacyWorld;
     // NOLINTEND
 
 public:
@@ -62,7 +62,12 @@ public:
     virtual bool decorationPostProcessChunk(::ChunkViewSource&) /*override*/;
 
     // vIndex: 42
-    virtual void prepareHeights(::BlockVolume& box, ::ChunkPos const& chunkPos, ::std::vector<short>* ZXheights, bool factorInBeardsAndShavers) /*override*/;
+    virtual void prepareHeights(
+        ::BlockVolume&        box,
+        ::ChunkPos const&     chunkPos,
+        ::std::vector<short>* ZXheights,
+        bool                  factorInBeardsAndShavers
+    ) /*override*/;
 
     // vIndex: 43
     virtual ::BiomeArea getBiomeArea(::BoundingBox const& area, uint scale) const /*override*/;
@@ -71,10 +76,18 @@ public:
     virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const /*override*/;
 
     // vIndex: 50
-    virtual void decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const /*override*/;
+    virtual void
+    decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const
+        /*override*/;
 
     // vIndex: 49
-    virtual void decorateWorldGenLoadChunk(::Biome const& biome, ::LevelChunk& lc, ::BlockVolumeTarget& target, ::Random& random, ::ChunkPos const& pos) const /*override*/;
+    virtual void decorateWorldGenLoadChunk(
+        ::Biome const&       biome,
+        ::LevelChunk&        lc,
+        ::BlockVolumeTarget& target,
+        ::Random&            random,
+        ::ChunkPos const&    pos
+    ) const /*override*/;
     // NOLINTEND
 
 public:
@@ -102,15 +115,27 @@ public:
 
     MCFOLD bool $decorationPostProcessChunk(::ChunkViewSource&);
 
-    MCFOLD void $prepareHeights(::BlockVolume& box, ::ChunkPos const& chunkPos, ::std::vector<short>* ZXheights, bool factorInBeardsAndShavers);
+    MCFOLD void $prepareHeights(
+        ::BlockVolume&        box,
+        ::ChunkPos const&     chunkPos,
+        ::std::vector<short>* ZXheights,
+        bool                  factorInBeardsAndShavers
+    );
 
     MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
     MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 
-    MCFOLD void $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
+    MCFOLD void
+    $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
-    MCFOLD void $decorateWorldGenLoadChunk(::Biome const& biome, ::LevelChunk& lc, ::BlockVolumeTarget& target, ::Random& random, ::ChunkPos const& pos) const;
+    MCFOLD void $decorateWorldGenLoadChunk(
+        ::Biome const&       biome,
+        ::LevelChunk&        lc,
+        ::BlockVolumeTarget& target,
+        ::Random&            random,
+        ::ChunkPos const&    pos
+    ) const;
     // NOLINTEND
 
 public:
@@ -120,5 +145,4 @@ public:
 
     MCNAPI static void** $vftableForIPreliminarySurfaceProvider();
     // NOLINTEND
-
 };

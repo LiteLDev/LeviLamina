@@ -6,7 +6,7 @@ struct ClientInputLockCategoryAPIMetadata {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk6f9dc3;
+    ::ll::UntypedStorage<1, 1>  mUnk6f9dc3;
     ::ll::UntypedStorage<8, 24> mUnk604d0b;
     ::ll::UntypedStorage<8, 32> mUnk915cd8;
     ::ll::UntypedStorage<8, 32> mUnk324092;
@@ -38,5 +38,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

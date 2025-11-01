@@ -12,8 +12,8 @@ struct ActorDefinitionStartedEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Actor&> mActor;
-    ::ll::TypedStorage<8, 32, ::std::string const> mEvent;
+    ::ll::TypedStorage<8, 8, ::Actor&>                                  mActor;
+    ::ll::TypedStorage<8, 32, ::std::string const>                      mEvent;
     ::ll::TypedStorage<8, 8, ::std::vector<::ActorDefinitionModifier>&> mDefinitionModifiers;
     // NOLINTEND
 
@@ -34,5 +34,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

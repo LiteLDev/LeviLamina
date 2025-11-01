@@ -4,7 +4,7 @@
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,11 +24,11 @@ public:
         // member variables
         // NOLINTBEGIN
         ::BaseCircuitComponent* mComponent;
-        int                     mDampening;
-        ::BlockPos              mPos;
-        uchar                   mDirection;
-        bool                    mDirectlyPowered;
-        int                     mData;
+        int                                         mDampening;
+        ::BlockPos                          mPos;
+        uchar                                     mDirection;
+        bool                                       mDirectlyPowered;
+        int                                         mData;
         // NOLINTEND
 
     };
@@ -50,5 +50,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

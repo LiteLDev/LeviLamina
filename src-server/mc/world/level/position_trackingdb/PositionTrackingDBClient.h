@@ -30,9 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::PositionTrackingDB::ResultCode findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
+    MCNAPI ::PositionTrackingDB::ResultCode
+    findTracker(::PositionTrackingId const& id, ::PositionTrackingDB::TrackingRecord** outRecord);
     // NOLINTEND
-
 };
 
-}
+} // namespace PositionTrackingDB

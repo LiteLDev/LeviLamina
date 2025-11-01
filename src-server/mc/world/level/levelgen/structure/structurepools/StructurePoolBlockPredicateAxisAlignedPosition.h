@@ -20,8 +20,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float const> mMinChance;
     ::ll::TypedStorage<4, 4, float const> mMaxChance;
-    ::ll::TypedStorage<4, 4, int const> mMinDist;
-    ::ll::TypedStorage<4, 4, int const> mMaxDist;
+    ::ll::TypedStorage<4, 4, int const>   mMinDist;
+    ::ll::TypedStorage<4, 4, int const>   mMaxDist;
     ::ll::TypedStorage<1, 1, uchar const> mAxis;
     // NOLINTEND
 
@@ -61,5 +61,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

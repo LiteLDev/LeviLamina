@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template<typename T0, typename T1>
-class ECSScriptComponentFactory {
-};
+template <typename T0, typename T1>
+class ECSScriptComponentFactory {};
 
-}
+} // namespace ScriptModuleMinecraft

@@ -8,15 +8,15 @@ class RtpGenericFrameDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk7e76b5;
-    ::ll::UntypedStorage<1, 1> mUnk7fa768;
-    ::ll::UntypedStorage<2, 2> mUnk79078e;
-    ::ll::UntypedStorage<1, 1> mUnke2b268;
-    ::ll::UntypedStorage<1, 1> mUnkbc3ac0;
-    ::ll::UntypedStorage<8, 8> mUnk98b5a2;
+    ::ll::UntypedStorage<1, 1>  mUnk7e76b5;
+    ::ll::UntypedStorage<1, 1>  mUnk7fa768;
+    ::ll::UntypedStorage<2, 2>  mUnk79078e;
+    ::ll::UntypedStorage<1, 1>  mUnke2b268;
+    ::ll::UntypedStorage<1, 1>  mUnkbc3ac0;
+    ::ll::UntypedStorage<8, 8>  mUnk98b5a2;
     ::ll::UntypedStorage<2, 16> mUnkab9d29;
-    ::ll::UntypedStorage<4, 4> mUnk1ae93d;
-    ::ll::UntypedStorage<4, 4> mUnk5f909e;
+    ::ll::UntypedStorage<4, 4>  mUnk1ae93d;
+    ::ll::UntypedStorage<4, 4>  mUnk5f909e;
     // NOLINTEND
 
 public:
@@ -61,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

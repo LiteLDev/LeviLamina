@@ -20,7 +20,6 @@ public:
     ProbeMetadataDeltaTriggers& operator=(ProbeMetadataDeltaTriggers const&);
     ProbeMetadataDeltaTriggers(ProbeMetadataDeltaTriggers const&);
     ProbeMetadataDeltaTriggers();
-
 };
 
-}
+} // namespace mce::framebuilder

@@ -4,7 +4,6 @@
 
 namespace Social::Events {
 
-class OneDSEventHelper {
-};
+class OneDSEventHelper {};
 
-}
+} // namespace Social::Events

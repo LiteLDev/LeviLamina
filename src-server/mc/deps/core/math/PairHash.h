@@ -4,7 +4,6 @@
 
 namespace mce::Math {
 
-struct PairHash {
-};
+struct PairHash {};
 
-}
+} // namespace mce::Math

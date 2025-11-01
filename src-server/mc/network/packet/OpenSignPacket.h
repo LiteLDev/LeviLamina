@@ -20,7 +20,7 @@ class OpenSignPacket : public ::Packet, public ::OpenSignPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
+    ::ll::TypedStorage<4, 4, ::SerializationMode>      mSerializationMode;
     // NOLINTEND
 
 public:
@@ -39,7 +39,11 @@ public:
     virtual void setSerializationMode(::SerializationMode mode) /*override*/;
 
     // vIndex: 5
-    virtual void writeWithSerializationMode(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx, ::std::optional<::SerializationMode> overrideMode) const /*override*/;
+    virtual void writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const /*override*/;
 
     // vIndex: 7
     virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
@@ -48,7 +52,8 @@ public:
     virtual void write(::BinaryStream& stream) const /*override*/;
 
     // vIndex: 9
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    virtual ::Bedrock::Result<void>
+    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
     // vIndex: 10
     virtual bool disallowBatching() const /*override*/;
@@ -66,7 +71,8 @@ public:
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 16
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    virtual ::Bedrock::Result<void>
+    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
     // vIndex: 0
     virtual ~OpenSignPacket() /*override*/;
@@ -89,13 +95,18 @@ public:
 
     MCFOLD void $setSerializationMode(::SerializationMode mode);
 
-    MCAPI void $writeWithSerializationMode(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx, ::std::optional<::SerializationMode> overrideMode) const;
+    MCAPI void $writeWithSerializationMode(
+        ::BinaryStream&                      stream,
+        ::cereal::ReflectionCtx const&       reflectionCtx,
+        ::std::optional<::SerializationMode> overrideMode
+    ) const;
 
     MCFOLD void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCAPI ::Bedrock::Result<void>
+    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
     MCFOLD bool $disallowBatching() const;
 
@@ -107,7 +118,8 @@ public:
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCAPI ::Bedrock::Result<void>
+    $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:
@@ -115,5 +127,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

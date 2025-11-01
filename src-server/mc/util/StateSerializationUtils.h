@@ -11,4 +11,4 @@ namespace StateSerializationUtils {
 MCNAPI ::WallConnectionType fromJavaNbtString(::std::string const& tag);
 // NOLINTEND
 
-}
+} // namespace StateSerializationUtils

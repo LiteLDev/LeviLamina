@@ -18,7 +18,6 @@ public:
     Collection& operator=(Collection const&);
     Collection(Collection const&);
     Collection();
-
 };
 
-}
+} // namespace Bedrock::JSONObject

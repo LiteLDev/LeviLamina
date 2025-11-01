@@ -18,10 +18,10 @@ public:
     // ScriptBookError inner types define
     enum class Reason : uchar {
         ExceedsMaxPageLength = 0,
-        ExceedsMaxPages = 1,
-        ExceedsTitleLength = 2,
+        ExceedsMaxPages      = 1,
+        ExceedsTitleLength   = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -61,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -10,7 +10,7 @@ public:
     // clang-format off
     class Sink;
     // clang-format on
-    
+
     // AudioSource inner types define
     class Sink {
     public:
@@ -18,25 +18,24 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual void OnData(void const*, int, int, uint64, uint64, ::std::optional<int64>) = 0;
-    
+
         // vIndex: 1
         virtual void OnClose() = 0;
-    
+
         // vIndex: 2
         virtual int NumPreferredChannels() const = 0;
-    
+
         // vIndex: 3
         virtual ~Sink() = default;
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
-    
+
         // NOLINTEND
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -58,7 +57,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

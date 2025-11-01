@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk919191;
     ::ll::UntypedStorage<8, 24> mUnk87584e;
-    ::ll::UntypedStorage<8, 8> mUnk8c7ba1;
+    ::ll::UntypedStorage<8, 8>  mUnk8c7ba1;
     ::ll::UntypedStorage<8, 16> mUnke1eb64;
     // NOLINTEND
 
@@ -33,7 +33,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TagCacheManager(::Bedrock::NonOwnerPointer<::CommandManager> commandManager, ::std::unique_ptr<::IDeregisterTagsFromActorProxy> deregisterTagsFromActorProxy);
+    MCNAPI TagCacheManager(
+        ::Bedrock::NonOwnerPointer<::CommandManager>       commandManager,
+        ::std::unique_ptr<::IDeregisterTagsFromActorProxy> deregisterTagsFromActorProxy
+    );
 
     MCNAPI void _deregisterTagsFromActor(::Actor& actor);
 
@@ -47,7 +50,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::CommandManager> commandManager, ::std::unique_ptr<::IDeregisterTagsFromActorProxy> deregisterTagsFromActorProxy);
+    MCNAPI void* $ctor(
+        ::Bedrock::NonOwnerPointer<::CommandManager>       commandManager,
+        ::std::unique_ptr<::IDeregisterTagsFromActorProxy> deregisterTagsFromActorProxy
+    );
     // NOLINTEND
-
 };

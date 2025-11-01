@@ -12,8 +12,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk213744;
-    ::ll::UntypedStorage<8, 8> mUnka09fff;
-    ::ll::UntypedStorage<8, 8> mUnk81cf47;
+    ::ll::UntypedStorage<8, 8>  mUnka09fff;
+    ::ll::UntypedStorage<8, 8>  mUnk81cf47;
     // NOLINTEND
 
 public:
@@ -21,7 +21,6 @@ public:
     DataSegment& operator=(DataSegment const&);
     DataSegment(DataSegment const&);
     DataSegment();
-
 };
 
-}
+} // namespace Core::Internal

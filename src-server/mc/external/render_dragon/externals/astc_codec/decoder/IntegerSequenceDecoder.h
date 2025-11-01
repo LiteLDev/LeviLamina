@@ -7,7 +7,6 @@
 
 namespace astc_codec {
 
-class IntegerSequenceDecoder : public ::astc_codec::IntegerSequenceCodec {
-};
+class IntegerSequenceDecoder : public ::astc_codec::IntegerSequenceCodec {};
 
-}
+} // namespace astc_codec

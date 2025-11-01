@@ -4,7 +4,6 @@
 
 namespace NetherNet {
 
-class RunOnce {
-};
+class RunOnce {};
 
-}
+} // namespace NetherNet

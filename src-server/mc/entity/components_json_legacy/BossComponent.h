@@ -21,16 +21,16 @@ struct BossComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mName;
-    ::ll::TypedStorage<1, 1, bool> mHealthBarVisible;
-    ::ll::TypedStorage<4, 4, float> mHealthPercent;
-    ::ll::TypedStorage<1, 1, bool> mShouldDarkenSky;
-    ::ll::TypedStorage<1, 1, bool> mCreateWorldFog;
-    ::ll::TypedStorage<4, 4, ::BossBarColor> mColor;
-    ::ll::TypedStorage<4, 4, ::BossBarOverlay> mOverlay;
-    ::ll::TypedStorage<4, 4, int> mPlayersRegistered;
-    ::ll::TypedStorage<4, 4, int> mLastHealth;
-    ::ll::TypedStorage<4, 4, int> mHudRangeSquared;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>    mName;
+    ::ll::TypedStorage<1, 1, bool>                                    mHealthBarVisible;
+    ::ll::TypedStorage<4, 4, float>                                   mHealthPercent;
+    ::ll::TypedStorage<1, 1, bool>                                    mShouldDarkenSky;
+    ::ll::TypedStorage<1, 1, bool>                                    mCreateWorldFog;
+    ::ll::TypedStorage<4, 4, ::BossBarColor>                          mColor;
+    ::ll::TypedStorage<4, 4, ::BossBarOverlay>                        mOverlay;
+    ::ll::TypedStorage<4, 4, int>                                     mPlayersRegistered;
+    ::ll::TypedStorage<4, 4, int>                                     mLastHealth;
+    ::ll::TypedStorage<4, 4, int>                                     mHudRangeSquared;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastPlayerUpdate;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::mce::UUID, int>> mPlayerParty;
     // NOLINTEND
@@ -43,41 +43,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BossComponent();
+    MCAPI BossComponent();
 
-    MCNAPI BossComponent(::BossComponent&&);
+    MCAPI BossComponent(::BossComponent&&);
 
-    MCNAPI void _sendBossEvent(::Actor& owner, ::BossEventUpdateType type, ::Player* player);
+    MCAPI void _sendBossEvent(::Actor& owner, ::BossEventUpdateType type, ::Player* player);
 
-    MCNAPI void broadcastBossEvent(::Actor& owner, ::BossEventUpdateType type);
+    MCAPI void broadcastBossEvent(::Actor& owner, ::BossEventUpdateType type);
 
-    MCNAPI void handleRegisterPlayers(::Actor& owner);
+    MCAPI void handleRegisterPlayers(::Actor& owner);
 
-    MCNAPI ::BossComponent& operator=(::BossComponent&&);
+    MCAPI ::BossComponent& operator=(::BossComponent&&);
 
-    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void sendDeathTelemetry(::Actor& owner);
+    MCAPI void sendDeathTelemetry(::Actor& owner);
 
-    MCNAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
+    MCAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
 
-    MCNAPI void unRegisterPlayer(::Actor& owner, ::Player* player);
+    MCAPI void unRegisterPlayer(::Actor& owner, ::Player* player);
 
-    MCNAPI ~BossComponent();
+    MCAPI ~BossComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::BossComponent&&);
+    MCAPI void* $ctor(::BossComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
-
 };

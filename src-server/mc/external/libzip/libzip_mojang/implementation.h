@@ -16,5 +16,4 @@ public:
     implementation& operator=(implementation const&);
     implementation(implementation const&);
     implementation();
-
 };

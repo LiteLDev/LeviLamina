@@ -7,7 +7,6 @@
 
 namespace webrtc {
 
-class Frequency : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::Frequency> {
-};
+class Frequency : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::Frequency> {};
 
-}
+} // namespace webrtc

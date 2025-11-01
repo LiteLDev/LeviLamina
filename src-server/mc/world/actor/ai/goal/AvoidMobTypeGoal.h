@@ -6,7 +6,7 @@
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
-#include "mc/deps/shared_types/versionless/FloatRange.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/ai/goal/Goal.h"
 #include "mc/world/level/Tick.h"
@@ -23,27 +23,27 @@ class AvoidMobTypeGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<1, 1, bool> mIgnoreVisibility;
-    ::ll::TypedStorage<8, 32, ::std::string> mAvoidIdentifier;
-    ::ll::TypedStorage<4, 4, int> mAvoidTargetPositionXZDistance;
-    ::ll::TypedStorage<4, 4, int> mAvoidTargetPositionYDistance;
-    ::ll::TypedStorage<4, 4, float> mMaximumDistance;
-    ::ll::TypedStorage<4, 4, float> mMaximumFlee;
-    ::ll::TypedStorage<4, 4, float> mProbabilityPerStrength;
-    ::ll::TypedStorage<4, 4, float> mRiverSpeedModifier;
-    ::ll::TypedStorage<4, 4, float> mSprintDistanceSquared;
-    ::ll::TypedStorage<4, 4, float> mSprintSpeedModifier;
-    ::ll::TypedStorage<4, 4, float> mWalkSpeedModifier;
-    ::ll::TypedStorage<1, 1, bool> mRemoveTarget;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnEscapeTrigger;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<1, 1, bool>                                   mIgnoreVisibility;
+    ::ll::TypedStorage<8, 32, ::std::string>                         mAvoidIdentifier;
+    ::ll::TypedStorage<4, 4, int>                                    mAvoidTargetPositionXZDistance;
+    ::ll::TypedStorage<4, 4, int>                                    mAvoidTargetPositionYDistance;
+    ::ll::TypedStorage<4, 4, float>                                  mMaximumDistance;
+    ::ll::TypedStorage<4, 4, float>                                  mMaximumFlee;
+    ::ll::TypedStorage<4, 4, float>                                  mProbabilityPerStrength;
+    ::ll::TypedStorage<4, 4, float>                                  mRiverSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                                  mSprintDistanceSquared;
+    ::ll::TypedStorage<4, 4, float>                                  mSprintSpeedModifier;
+    ::ll::TypedStorage<4, 4, float>                                  mWalkSpeedModifier;
+    ::ll::TypedStorage<1, 1, bool>                                   mRemoveTarget;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>             mOnEscapeTrigger;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
-    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mSoundIntervalRange;
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mToAvoid;
-    ::ll::TypedStorage<4, 12, ::Vec3> mPosition;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
-    ::ll::TypedStorage<8, 8, ::Tick> mNextSoundEventTick;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mAvoidMobs;
+    ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange>              mSoundIntervalRange;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                       mToAvoid;
+    ::ll::TypedStorage<4, 12, ::Vec3>                                mPosition;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>              mPath;
+    ::ll::TypedStorage<8, 8, ::Tick>                                 mNextSoundEventTick;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>>        mAvoidMobs;
     // NOLINTEND
 
 public:
@@ -112,5 +112,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

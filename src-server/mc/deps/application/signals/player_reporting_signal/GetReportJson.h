@@ -12,7 +12,8 @@ namespace PlayerReportingSignal { struct GetReportJsonFunctionData; }
 
 namespace PlayerReportingSignal {
 
-class GetReportJson : public ::Bedrock::Signal<::PlayerReportingSignal::GetReportJson, ::PlayerReportingSignal::GetReportJsonFunctionData> {
+class GetReportJson
+: public ::Bedrock::Signal<::PlayerReportingSignal::GetReportJson, ::PlayerReportingSignal::GetReportJsonFunctionData> {
 };
 
-}
+} // namespace PlayerReportingSignal

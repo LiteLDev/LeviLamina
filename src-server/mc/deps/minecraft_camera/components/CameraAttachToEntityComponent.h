@@ -16,7 +16,6 @@ public:
     CameraAttachToEntityComponent& operator=(CameraAttachToEntityComponent const&);
     CameraAttachToEntityComponent(CameraAttachToEntityComponent const&);
     CameraAttachToEntityComponent();
-
 };
 
-}
+} // namespace MinecraftCamera

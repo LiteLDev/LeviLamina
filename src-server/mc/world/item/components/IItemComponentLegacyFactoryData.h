@@ -8,7 +8,7 @@ public:
     // clang-format off
     struct Components;
     // clang-format on
-    
+
     // IItemComponentLegacyFactoryData inner types define
     struct Components {
     public:
@@ -16,14 +16,12 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::shared_ptr<::IItemComponentLegacyFactoryData>>> mMap;
         // NOLINTEND
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~IItemComponentLegacyFactoryData() = default;
     // NOLINTEND
-
 };

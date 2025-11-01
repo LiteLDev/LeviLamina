@@ -23,7 +23,7 @@ class MesaSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 192, ::std::array<::BlockColor, 192>> mColorBands;
+    ::ll::TypedStorage<1, 192, ::std::array<::BlockColor, 192>>             mColorBands;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MesaSurfaceBuilderNoises>> mNoises;
     // NOLINTEND
 
@@ -49,7 +49,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _buildSurface(::BlockPos const& pos, float depthValue, ::Random& random, ::BlockVolume& blockVolume, int lowerLimit, short seaLevel, ::MesaSurfaceBlocks const& mesaPalette, ::SurfaceMaterialBlocks const& blockPalette, float extensionTop) const;
+    MCAPI void _buildSurface(
+        ::BlockPos const&              pos,
+        float                          depthValue,
+        ::Random&                      random,
+        ::BlockVolume&                 blockVolume,
+        int                            lowerLimit,
+        short                          seaLevel,
+        ::MesaSurfaceBlocks const&     mesaPalette,
+        ::SurfaceMaterialBlocks const& blockPalette,
+        float                          extensionTop
+    ) const;
 
     MCAPI void _init(uint levelSeed);
 
@@ -73,7 +83,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace VanillaSurfaceBuilders

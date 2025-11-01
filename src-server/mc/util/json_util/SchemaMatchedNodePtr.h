@@ -4,8 +4,7 @@
 
 namespace JsonUtil {
 
-template<typename T0, typename T1>
-struct SchemaMatchedNodePtr {
-};
+template <typename T0, typename T1>
+struct SchemaMatchedNodePtr {};
 
-}
+} // namespace JsonUtil

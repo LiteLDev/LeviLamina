@@ -18,12 +18,11 @@ struct RuntimeContextData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> scope;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>    scope;
     ::ll::TypedStorage<8, 168, ::Scripting::ModuleBindingBundle> bindings;
-    ::ll::TypedStorage<8, 8, ::Scripting::IDependencyLoader*> loader;
-    ::ll::TypedStorage<8, 8, ::Scripting::IPrinter*> printer;
+    ::ll::TypedStorage<8, 8, ::Scripting::IDependencyLoader*>    loader;
+    ::ll::TypedStorage<8, 8, ::Scripting::IPrinter*>             printer;
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

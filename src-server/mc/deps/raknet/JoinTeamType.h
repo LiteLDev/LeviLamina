@@ -6,8 +6,8 @@ namespace RakNet {
 
 enum class JoinTeamType : int {
     AnyAvailableTeam = 0,
-    SpecificTeam = 1,
-    NoTeam = 2,
+    SpecificTeam     = 1,
+    NoTeam           = 2,
 };
 
 }

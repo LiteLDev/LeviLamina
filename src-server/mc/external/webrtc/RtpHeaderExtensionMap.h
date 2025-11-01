@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<1, 21> mUnkda6daf;
-    ::ll::UntypedStorage<1, 1> mUnkd35303;
+    ::ll::UntypedStorage<1, 1>  mUnkd35303;
     // NOLINTEND
 
 public:
@@ -52,7 +52,6 @@ public:
 
     MCNAPI void* $ctor(bool extmap_allow_mixed);
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

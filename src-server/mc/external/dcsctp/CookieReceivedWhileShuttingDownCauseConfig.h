@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-struct CookieReceivedWhileShuttingDownCauseConfig {
-};
+struct CookieReceivedWhileShuttingDownCauseConfig {};
 
-}
+} // namespace dcsctp

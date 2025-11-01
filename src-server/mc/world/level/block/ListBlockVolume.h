@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/BlockVolumeBase.h"
 
 // auto generated forward declare list
@@ -19,9 +19,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::BlockPos>> mBlockPositions;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mMin;
-    ::ll::TypedStorage<4, 12, ::BlockPos> mMax;
-    ::ll::TypedStorage<8, 8, uint64> mChangeCount;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                       mMin;
+    ::ll::TypedStorage<4, 12, ::BlockPos>                       mMax;
+    ::ll::TypedStorage<8, 8, uint64>                            mChangeCount;
     // NOLINTEND
 
 public:
@@ -118,5 +118,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

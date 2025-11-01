@@ -23,4 +23,4 @@ MCNAPI ::Scripting::Version const& V1_3_0();
 MCNAPI ::Scripting::Version const& V2_0_0();
 // NOLINTEND
 
-}
+} // namespace ScriptModuleMinecraftServerUI::Releases

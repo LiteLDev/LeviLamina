@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnk562d63;
-    ::ll::UntypedStorage<1, 1> mUnkb7b492;
+    ::ll::UntypedStorage<1, 1>  mUnkb7b492;
     // NOLINTEND
 
 public:
@@ -26,7 +26,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptDataStoreModalToolActivationChangedEvent& operator=(::Editor::ScriptModule::ScriptDataStoreModalToolActivationChangedEvent&&);
+    MCNAPI ::Editor::ScriptModule::ScriptDataStoreModalToolActivationChangedEvent&
+    operator=(::Editor::ScriptModule::ScriptDataStoreModalToolActivationChangedEvent&&);
     // NOLINTEND
 
 public:
@@ -34,7 +35,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

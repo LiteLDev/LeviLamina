@@ -24,9 +24,27 @@ namespace MobMovementFriction {
 // NOLINTBEGIN
 MCNAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCNAPI void tickLavaWalkFriction(::StrictEntityContext const&, ::NavigationComponent const& navigationComponent, ::Optional<::MovementAbilitiesComponent const>, ::Optional<::PlayerInputModeComponent const>, ::Optional<::VexFlagComponent const> vexFlagComponent, ::FrictionModifierComponent const& frictionModifierComponent, ::ActorDataFlagComponent const&, ::StateVectorComponent& stateVectorComponent);
+MCNAPI void tickLavaWalkFriction(
+    ::StrictEntityContext const&,
+    ::NavigationComponent const& navigationComponent,
+    ::Optional<::MovementAbilitiesComponent const>,
+    ::Optional<::PlayerInputModeComponent const>,
+    ::Optional<::VexFlagComponent const> vexFlagComponent,
+    ::FrictionModifierComponent const&   frictionModifierComponent,
+    ::ActorDataFlagComponent const&,
+    ::StateVectorComponent& stateVectorComponent
+);
 
-MCNAPI void tickNormalFriction(::StrictEntityContext const&, ::MobTravelComponent const& mobTravelComponent, ::Optional<::MovementAbilitiesComponent const>, ::Optional<::PlayerInputModeComponent const>, ::Optional<::VexFlagComponent const> vexFlagComponent, ::FrictionModifierComponent const& frictionModifierComponent, ::ActorDataFlagComponent const&, ::StateVectorComponent& stateVectorComponent);
+MCNAPI void tickNormalFriction(
+    ::StrictEntityContext const&,
+    ::MobTravelComponent const& mobTravelComponent,
+    ::Optional<::MovementAbilitiesComponent const>,
+    ::Optional<::PlayerInputModeComponent const>,
+    ::Optional<::VexFlagComponent const> vexFlagComponent,
+    ::FrictionModifierComponent const&   frictionModifierComponent,
+    ::ActorDataFlagComponent const&,
+    ::StateVectorComponent& stateVectorComponent
+);
 // NOLINTEND
 
-}
+} // namespace MobMovementFriction

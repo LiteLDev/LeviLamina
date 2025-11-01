@@ -25,11 +25,11 @@ class CauldronBlockActor : public ::BlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mPotionId;
+    ::ll::TypedStorage<4, 4, int>                  mPotionId;
     ::ll::TypedStorage<4, 4, ::Potion::PotionType> mPotionType;
-    ::ll::TypedStorage<1, 1, bool> mHasCustomColor;
-    ::ll::TypedStorage<4, 4, int> mCustomColor;
-    ::ll::TypedStorage<8, 1520, ::ItemStack[10]> mItems;
+    ::ll::TypedStorage<1, 1, bool>                 mHasCustomColor;
+    ::ll::TypedStorage<4, 4, int>                  mCustomColor;
+    ::ll::TypedStorage<8, 1520, ::ItemStack[10]>   mItems;
     // NOLINTEND
 
 public:
@@ -46,7 +46,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 25
     virtual ::std::string getName() const /*override*/;
@@ -82,7 +82,11 @@ public:
     virtual void onChanged(::BlockSource& region) /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
     // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
@@ -124,7 +128,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCAPI ::std::string $getName() const;
 
@@ -148,7 +152,11 @@ public:
 
     MCFOLD void $onChanged(::BlockSource& region);
 
-    MCAPI void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    );
 
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
@@ -162,5 +170,4 @@ public:
 
     MCNAPI static void** $vftableForContainer();
     // NOLINTEND
-
 };

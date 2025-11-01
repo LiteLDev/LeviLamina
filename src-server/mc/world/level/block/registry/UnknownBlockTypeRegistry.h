@@ -18,11 +18,11 @@ class UnknownBlockTypeRegistry : public ::IUnknownBlockTypeRegistry {
 public:
     // UnknownBlockTypeRegistry inner types define
     using UnknownBlockLookupMap = ::std::map<uint64, ::SharedPtr<::BlockType>>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                  mMutex;
     ::ll::TypedStorage<8, 16, ::std::map<uint64, ::SharedPtr<::BlockType>>> mUnknownBlockLookupMap;
     // NOLINTEND
 
@@ -53,5 +53,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

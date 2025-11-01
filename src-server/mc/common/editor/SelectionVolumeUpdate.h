@@ -16,18 +16,18 @@ class SelectionVolumeUpdate : public ::Editor::Network::NetworkPayload<::Editor:
 public:
     // SelectionVolumeUpdate inner types define
     enum class Action : int {
-        Set = 0,
-        Add = 1,
-        Remove = 2,
-        Clear = 3,
+        Set       = 0,
+        Add       = 1,
+        Remove    = 2,
+        Clear     = 3,
         Translate = 4,
-        Move = 5,
+        Move      = 5,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk83f8d2;
+    ::ll::UntypedStorage<4, 4>   mUnk83f8d2;
     ::ll::UntypedStorage<8, 104> mUnkead264;
     // NOLINTEND
 
@@ -61,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

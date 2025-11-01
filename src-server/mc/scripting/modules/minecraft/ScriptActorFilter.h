@@ -13,17 +13,17 @@ class ScriptActorFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkca00de;
-    ::ll::UntypedStorage<4, 8> mUnkf2e62c;
-    ::ll::UntypedStorage<4, 8> mUnk3a68a5;
-    ::ll::UntypedStorage<4, 8> mUnkb51740;
-    ::ll::UntypedStorage<4, 8> mUnkadb959;
-    ::ll::UntypedStorage<4, 8> mUnkabce4a;
+    ::ll::UntypedStorage<4, 8>  mUnkca00de;
+    ::ll::UntypedStorage<4, 8>  mUnkf2e62c;
+    ::ll::UntypedStorage<4, 8>  mUnk3a68a5;
+    ::ll::UntypedStorage<4, 8>  mUnkb51740;
+    ::ll::UntypedStorage<4, 8>  mUnkadb959;
+    ::ll::UntypedStorage<4, 8>  mUnkabce4a;
     ::ll::UntypedStorage<8, 40> mUnk4a7187;
     ::ll::UntypedStorage<8, 32> mUnk9f91ec;
     ::ll::UntypedStorage<8, 32> mUnk3e4f93;
     ::ll::UntypedStorage<8, 40> mUnk236f47;
-    ::ll::UntypedStorage<4, 8> mUnk87bfb7;
+    ::ll::UntypedStorage<4, 8>  mUnk87bfb7;
     ::ll::UntypedStorage<8, 32> mUnke28c0f;
     ::ll::UntypedStorage<8, 32> mUnk3820c7;
     ::ll::UntypedStorage<8, 32> mUnk9a2af1;
@@ -70,7 +70,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

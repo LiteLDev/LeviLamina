@@ -4,7 +4,6 @@
 
 namespace bgfx {
 
-struct Encoder {
-};
+struct Encoder {};
 
-}
+} // namespace bgfx

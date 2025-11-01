@@ -20,19 +20,28 @@ class StructureFeatureRegistry {
 public:
     // StructureFeatureRegistry inner types define
     using StructureFeatureContainer = ::std::vector<::std::unique_ptr<::StructureFeature>>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::br::worldgen::ChunkGeneratorStructureState> mGeneratorState;
+    ::ll::TypedStorage<8, 48, ::br::worldgen::ChunkGeneratorStructureState>         mGeneratorState;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::StructureFeature>>> mStructureFeatures;
-    ::ll::TypedStorage<8, 136, ::br::worldgen::StructureCache> mStructureCache;
+    ::ll::TypedStorage<8, 136, ::br::worldgen::StructureCache>                      mStructureCache;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool findNearestStructureFeature(::Dimension& dimension, ::IPreliminarySurfaceProvider& surfaceProvider, ::HashedString feature, ::BlockPos const& origin, ::BlockPos& pos, ::BiomeSource const& biomeSource, bool mustBeInNewChunks, ::std::optional<::HashedString> biomeTag);
+    MCAPI bool findNearestStructureFeature(
+        ::Dimension&                    dimension,
+        ::IPreliminarySurfaceProvider&  surfaceProvider,
+        ::HashedString                  feature,
+        ::BlockPos const&               origin,
+        ::BlockPos&                     pos,
+        ::BiomeSource const&            biomeSource,
+        bool                            mustBeInNewChunks,
+        ::std::optional<::HashedString> biomeTag
+    );
 
     MCAPI ::HashedString findStructureFeatureTypeAt(::BlockPos const& pos);
 
@@ -40,5 +49,4 @@ public:
 
     MCAPI bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
     // NOLINTEND
-
 };

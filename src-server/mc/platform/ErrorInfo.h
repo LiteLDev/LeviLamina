@@ -5,9 +5,8 @@
 
 namespace Bedrock {
 
-template<typename E = std::error_code>
-struct ErrorInfo {
-public:
+template <typename E = std::error_code>
+struct ErrorInfo {public:
     ErrorInfo() = default;
 
     [[nodiscard]] constexpr E&       code() { return mError; }
@@ -18,4 +17,4 @@ public:
     std::vector<ErrorInfo> mStackErrors;
 };
 
-}
+} // namespace Bedrock

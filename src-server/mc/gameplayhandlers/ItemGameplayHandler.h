@@ -21,7 +21,8 @@ public:
     virtual ::HandlerResult handleEvent(::ItemGameplayEvent<void> const&) = 0;
 
     // vIndex: 1
-    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::MutableItemGameplayEvent<::CoordinatorResult>&) = 0;
+    virtual ::GameplayHandlerResult<::CoordinatorResult>
+    handleEvent(::MutableItemGameplayEvent<::CoordinatorResult>&) = 0;
     // NOLINTEND
 
 public:
@@ -29,5 +30,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

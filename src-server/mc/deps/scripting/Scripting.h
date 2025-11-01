@@ -15,7 +15,8 @@ MCNAPI uint GetInjectedArgCount(::Scripting::Reflection::IFunction* function);
 
 MCNAPI ::std::vector<::std::string> _versionSplit(::std::string const& str, char delim);
 
-MCNAPI ::std::vector<::Scripting::ModuleDescriptor> sortDependencies(::std::vector<::Scripting::ModuleDescriptor> const& unsortedDependencies);
+MCNAPI ::std::vector<::Scripting::ModuleDescriptor>
+sortDependencies(::std::vector<::Scripting::ModuleDescriptor> const& unsortedDependencies);
 // NOLINTEND
 
-}
+} // namespace Scripting

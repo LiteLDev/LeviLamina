@@ -21,9 +21,22 @@ class PreventMobEjectionFromLegacyVehicleSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _preventEjectionIfNeeded(::StrictEntityContext& strictEntityContext, ::PassengerComponent const& passengerComponent, ::AABBShapeComponent const& aabbShapeComponent, ::ViewT<::StrictEntityContext, ::RideableComponent const> const& vehicleView, ::EntityModifier<::KeepRidingEvenIfTooLargeForVehicleFlagComponent>& modifier);
+    MCNAPI static void _preventEjectionIfNeeded(
+        ::StrictEntityContext&                                               strictEntityContext,
+        ::PassengerComponent const&                                          passengerComponent,
+        ::AABBShapeComponent const&                                          aabbShapeComponent,
+        ::ViewT<::StrictEntityContext, ::RideableComponent const> const&     vehicleView,
+        ::EntityModifier<::KeepRidingEvenIfTooLargeForVehicleFlagComponent>& modifier
+    );
 
-    MCNAPI static void _tick(::ViewT<::StrictEntityContext, ::Include<::EntityNeedsInitializeFlagComponent>, ::PassengerComponent const, ::AABBShapeComponent const> passengerView, ::ViewT<::StrictEntityContext, ::RideableComponent const> vehicleView, ::EntityModifier<::KeepRidingEvenIfTooLargeForVehicleFlagComponent> modifier);
+    MCNAPI static void _tick(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::EntityNeedsInitializeFlagComponent>,
+            ::PassengerComponent const,
+            ::AABBShapeComponent const>                                     passengerView,
+        ::ViewT<::StrictEntityContext, ::RideableComponent const>           vehicleView,
+        ::EntityModifier<::KeepRidingEvenIfTooLargeForVehicleFlagComponent> modifier
+    );
     // NOLINTEND
-
 };

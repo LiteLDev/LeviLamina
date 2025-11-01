@@ -22,13 +22,18 @@ namespace Core { class Result; }
 namespace ExternalFileLevelStorage {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Bedrock::Result<void> _readLevelDataFromFile(::Core::Path const& datFilename, ::std::string const& worldID, ::LevelData& levelData);
+MCNAPI ::Bedrock::Result<void>
+_readLevelDataFromFile(::Core::Path const& datFilename, ::std::string const& worldID, ::LevelData& levelData);
 
 MCNAPI bool _writeLevelDat(::Core::Path const& datFilename, ::LevelData const& levelData);
 
 MCNAPI void copyLevelInfoToDiskCache(::Core::Path const& levelRootPath, bool onlyIfNotExisting);
 
-MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(::Core::Path const& levelDirectory, ::ContentIdentity const& contentIdentity, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider);
+MCNAPI ::std::unique_ptr<::PackAccessStrategy> getAccessStrategy(
+    ::Core::Path const&                                               levelDirectory,
+    ::ContentIdentity const&                                          contentIdentity,
+    ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
+);
 
 MCNAPI ::std::vector<::std::string> const getImportantFiles();
 
@@ -40,15 +45,34 @@ MCNAPI void makeReadableLevelnameFile(::Core::Path const& fullPath, ::std::strin
 
 MCNAPI ::Core::Result readLevelDataFromData(::std::string const& dataStr, ::LevelData& levelData);
 
-MCNAPI ::Bedrock::Result<bool> readLevelDataFromFile(::Core::Path const& directory, ::std::string const& levelId, ::LevelData& levelData, ::IMinecraftEventing* eventing);
+MCNAPI ::Bedrock::Result<bool> readLevelDataFromFile(
+    ::Core::Path const&   directory,
+    ::std::string const&  levelId,
+    ::LevelData&          levelData,
+    ::IMinecraftEventing* eventing
+);
 
-MCNAPI bool readShallowLevelSummaryFromSyncFile(::Core::Path const& directory, ::std::string const& levelId, ::LevelSummary& summary);
+MCNAPI bool readShallowLevelSummaryFromSyncFile(
+    ::Core::Path const&  directory,
+    ::std::string const& levelId,
+    ::LevelSummary&      summary
+);
 
-MCNAPI void saveLevelData(::Core::Path const& levelPath, ::std::string const& levelId, ::LevelData const& levelData, bool ignoreCache);
+MCNAPI void saveLevelData(
+    ::Core::Path const&  levelPath,
+    ::std::string const& levelId,
+    ::LevelData const&   levelData,
+    bool                 ignoreCache
+);
 
-MCNAPI void saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelId, ::LevelData const& levelData);
+MCNAPI void
+saveLevelDataToPath(::Core::Path const& fullPath, ::std::string const& levelId, ::LevelData const& levelData);
 
-MCNAPI void saveLevelDisplayDataToCache(::std::string const& levelId, ::LevelData const& levelData, ::gsl::not_null<::TaskGroup*> taskGroup);
+MCNAPI void saveLevelDisplayDataToCache(
+    ::std::string const&          levelId,
+    ::LevelData const&            levelData,
+    ::gsl::not_null<::TaskGroup*> taskGroup
+);
 
 MCNAPI ::Core::Result validateLevelDat(::Core::Path filePath);
 // NOLINTEND
@@ -64,4 +88,4 @@ MCNAPI char const* const& FN_LEVEL_DAT();
 MCNAPI ::std::atomic<bool>& writingToCache();
 // NOLINTEND
 
-}
+} // namespace ExternalFileLevelStorage

@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct State;
     // clang-format on
-    
+
     // XXHash inner types define
     struct State {
     public:
@@ -18,15 +18,14 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 88> mUnk1110b4;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         State& operator=(State const&);
         State(State const&);
         State();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -50,7 +49,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Util

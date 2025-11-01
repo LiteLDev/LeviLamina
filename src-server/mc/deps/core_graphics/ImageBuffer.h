@@ -22,7 +22,6 @@ public:
     ImageBuffer& operator=(ImageBuffer const&);
     ImageBuffer(ImageBuffer const&);
     ImageBuffer();
-
 };
 
-}
+} // namespace cg

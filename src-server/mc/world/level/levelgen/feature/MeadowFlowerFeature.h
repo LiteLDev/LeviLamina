@@ -18,7 +18,7 @@ class MeadowFlowerFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::PerlinSimplexNoise const> mBiomeInfoNoise;
+    ::ll::TypedStorage<8, 40, ::PerlinSimplexNoise const>            mBiomeInfoNoise;
     ::ll::TypedStorage<8, 64, ::std::array<::Block const*, 8> const> mPossibleBlocks;
     // NOLINTEND
 
@@ -43,5 +43,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -4,7 +4,6 @@
 
 namespace ScriptModuleServerGraphics {
 
-class ScriptAtmosphericsFactory {
-};
+class ScriptAtmosphericsFactory {};
 
-}
+} // namespace ScriptModuleServerGraphics

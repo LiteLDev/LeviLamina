@@ -12,9 +12,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 128, ::std::array<::Block const*, 16>> mClayMaterials;
-    ::ll::TypedStorage<8, 8, ::Block const*> mHardClayMaterial;
-    ::ll::TypedStorage<1, 1, bool const> mBrycePillars;
-    ::ll::TypedStorage<1, 1, bool const> mHasForest;
+    ::ll::TypedStorage<8, 8, ::Block const*>                     mHardClayMaterial;
+    ::ll::TypedStorage<1, 1, bool const>                         mBrycePillars;
+    ::ll::TypedStorage<1, 1, bool const>                         mHasForest;
     // NOLINTEND
 
 public:
@@ -22,5 +22,4 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::array<::Block const*, 16> buildClayMaterials(::Block const& base);
     // NOLINTEND
-
 };

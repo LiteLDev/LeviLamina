@@ -4,7 +4,6 @@
 
 namespace com::mojang::protocol {
 
-class MetricReport {
-};
+class MetricReport {};
 
-}
+} // namespace com::mojang::protocol

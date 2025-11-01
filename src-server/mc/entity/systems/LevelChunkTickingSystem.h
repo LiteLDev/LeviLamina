@@ -19,7 +19,7 @@ class LevelChunkTickingSystem : public ::ITickingSystem {
 public:
     // LevelChunkTickingSystem inner types define
     using LevelChunks = ::std::vector<::std::shared_ptr<::LevelChunk>>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,13 +40,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _tickLevelChunksAroundActor(::Actor& actor, ::BlockSource& region, ::LoadedChunksComponent& loadedChunksComponent);
+    MCNAPI void
+    _tickLevelChunksAroundActor(::Actor& actor, ::BlockSource& region, ::LoadedChunksComponent& loadedChunksComponent);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _determineLevelChunksToTick(::Actor const& actor, ::BlockSource& region, ::LoadedChunksComponent& loadedChunksComponent, ::std::vector<::std::shared_ptr<::LevelChunk>>& levelChunksToTick, ::std::vector<::std::shared_ptr<::LevelChunk>>& levelChunksBlockEntitiesToTick, ::Tick const& currentTick);
+    MCNAPI static void _determineLevelChunksToTick(
+        ::Actor const&                                  actor,
+        ::BlockSource&                                  region,
+        ::LoadedChunksComponent&                        loadedChunksComponent,
+        ::std::vector<::std::shared_ptr<::LevelChunk>>& levelChunksToTick,
+        ::std::vector<::std::shared_ptr<::LevelChunk>>& levelChunksBlockEntitiesToTick,
+        ::Tick const&                                   currentTick
+    );
     // NOLINTEND
 
 public:
@@ -60,5 +68,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

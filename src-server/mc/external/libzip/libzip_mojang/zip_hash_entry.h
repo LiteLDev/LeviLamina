@@ -18,5 +18,4 @@ public:
     zip_hash_entry& operator=(zip_hash_entry const&);
     zip_hash_entry(zip_hash_entry const&);
     zip_hash_entry();
-
 };

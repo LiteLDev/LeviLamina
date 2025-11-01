@@ -13,7 +13,7 @@ class BakeTool {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 72> mUnke09763;
+    ::ll::UntypedStorage<8, 72>  mUnke09763;
     ::ll::UntypedStorage<8, 928> mUnkbaae44;
     // NOLINTEND
 
@@ -28,7 +28,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::SemVersionConstant const& PACK_OPTIMIZATION_VERSION();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Resources

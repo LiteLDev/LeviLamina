@@ -25,7 +25,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void WriteBytes(char const* in, uint length, char const* file, uint line);
     // NOLINTEND
-
 };
 
-}
+} // namespace DataStructures

@@ -49,5 +49,4 @@ public:
 
     MCAPI void $stop();
     // NOLINTEND
-
 };

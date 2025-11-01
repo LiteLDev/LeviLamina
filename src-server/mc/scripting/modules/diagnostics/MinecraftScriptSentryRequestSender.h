@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 120> mUnkfa069e;
-    ::ll::UntypedStorage<8, 32> mUnk646b87;
+    ::ll::UntypedStorage<8, 32>  mUnk646b87;
     // NOLINTEND
 
 public:
@@ -47,7 +47,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleDiagnostics

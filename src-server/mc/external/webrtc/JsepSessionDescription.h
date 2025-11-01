@@ -20,10 +20,10 @@ class JsepSessionDescription : public ::webrtc::SessionDescriptionInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9fe00b;
+    ::ll::UntypedStorage<8, 8>  mUnk9fe00b;
     ::ll::UntypedStorage<8, 32> mUnke3092f;
     ::ll::UntypedStorage<8, 32> mUnka36c00;
-    ::ll::UntypedStorage<4, 4> mUnk429f56;
+    ::ll::UntypedStorage<4, 4>  mUnk429f56;
     ::ll::UntypedStorage<8, 24> mUnk88d7a1;
     // NOLINTEND
 
@@ -83,11 +83,20 @@ public:
 
     MCNAPI int GetMediasectionIndex(::cricket::Candidate const& candidate);
 
-    MCNAPI bool Initialize(::std::unique_ptr<::cricket::SessionDescription> description, ::std::string const& session_id, ::std::string const& session_version);
+    MCNAPI bool Initialize(
+        ::std::unique_ptr<::cricket::SessionDescription> description,
+        ::std::string const&                             session_id,
+        ::std::string const&                             session_version
+    );
 
     MCNAPI explicit JsepSessionDescription(::webrtc::SdpType type);
 
-    MCNAPI JsepSessionDescription(::webrtc::SdpType type, ::std::unique_ptr<::cricket::SessionDescription> description, ::std::string_view session_id, ::std::string_view session_version);
+    MCNAPI JsepSessionDescription(
+        ::webrtc::SdpType                                type,
+        ::std::unique_ptr<::cricket::SessionDescription> description,
+        ::std::string_view                               session_id,
+        ::std::string_view                               session_version
+    );
     // NOLINTEND
 
 public:
@@ -95,7 +104,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::SdpType type);
 
-    MCNAPI void* $ctor(::webrtc::SdpType type, ::std::unique_ptr<::cricket::SessionDescription> description, ::std::string_view session_id, ::std::string_view session_version);
+    MCNAPI void* $ctor(
+        ::webrtc::SdpType                                type,
+        ::std::unique_ptr<::cricket::SessionDescription> description,
+        ::std::string_view                               session_id,
+        ::std::string_view                               session_version
+    );
     // NOLINTEND
 
 public:
@@ -137,7 +151,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

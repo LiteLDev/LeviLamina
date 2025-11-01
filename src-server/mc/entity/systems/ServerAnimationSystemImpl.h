@@ -23,9 +23,17 @@ namespace ServerAnimationSystemImpl {
 // NOLINTBEGIN
 MCNAPI void tickAnimationSystem(::ActorOwnerComponent& actorOwnerComponent);
 
-MCNAPI void tickServerInputDependentActorsAnimationSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::ActorOwnerComponent> view);
+MCNAPI void tickServerInputDependentActorsAnimationSystem(
+    ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::ActorOwnerComponent> view
+);
 
-MCNAPI void tickServerInputIndependentAnimationSystem(::ViewT<::StrictEntityContext, ::Include<::ServerPlayerComponent, ::IsDeadFlagComponent, ::ActorTickedComponent>, ::Exclude<::ActorMovementTickNeededComponent, ::SimulatedPlayerFlagComponent>, ::ActorOwnerComponent> deadPlayerViews);
+MCNAPI void tickServerInputIndependentAnimationSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ServerPlayerComponent, ::IsDeadFlagComponent, ::ActorTickedComponent>,
+        ::Exclude<::ActorMovementTickNeededComponent, ::SimulatedPlayerFlagComponent>,
+        ::ActorOwnerComponent> deadPlayerViews
+);
 // NOLINTEND
 
-}
+} // namespace ServerAnimationSystemImpl

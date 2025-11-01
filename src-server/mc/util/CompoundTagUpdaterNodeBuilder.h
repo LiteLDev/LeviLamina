@@ -23,7 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::CompoundTagUpdaterNodeBuilder& edit(::std::string const& tagName, ::std::function<void(::CompoundTagEditHelper&)>&& update);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder&
+    edit(::std::string const& tagName, ::std::function<void(::CompoundTagEditHelper&)>&& update);
 
     MCNAPI void fork(uint64 size, ::std::function<void(::CompoundTagUpdaterNodeBuilder&, uint64)>&& function);
 
@@ -39,9 +40,9 @@ public:
 
     MCNAPI ::CompoundTagUpdaterNodeBuilder& rename(::std::string const& tagName, ::std::string const& newTagName);
 
-    MCNAPI ::CompoundTagUpdaterNodeBuilder& tryEdit(::std::string const& tagName, ::std::function<void(::CompoundTagEditHelper&)>&& update);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder&
+    tryEdit(::std::string const& tagName, ::std::function<void(::CompoundTagEditHelper&)>&& update);
 
     MCNAPI ::CompoundTagUpdaterNodeBuilder& visit(::std::string const& tagName);
     // NOLINTEND
-
 };

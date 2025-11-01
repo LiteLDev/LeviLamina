@@ -7,7 +7,8 @@
 
 namespace Editor::Network {
 
-class PersistenceSharedGroupPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::PersistenceSharedGroupPayload> {
+class PersistenceSharedGroupPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::PersistenceSharedGroupPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -38,7 +39,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

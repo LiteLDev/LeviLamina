@@ -4,7 +4,6 @@
 
 namespace VanillaSystems {
 
-class ActorMoveSystem {
-};
+class ActorMoveSystem {};
 
-}
+} // namespace VanillaSystems

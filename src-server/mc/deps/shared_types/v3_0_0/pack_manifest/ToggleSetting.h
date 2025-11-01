@@ -13,10 +13,10 @@ struct ToggleSetting {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk641fc3;
+    ::ll::UntypedStorage<1, 1>  mUnk641fc3;
     ::ll::UntypedStorage<8, 32> mUnk29ecba;
     ::ll::UntypedStorage<8, 32> mUnkbf0ec7;
-    ::ll::UntypedStorage<1, 1> mUnkba2101;
+    ::ll::UntypedStorage<1, 1>  mUnkba2101;
     // NOLINTEND
 
 public:
@@ -28,7 +28,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting& operator=(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&&);
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting&&);
 
     MCNAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting const&) const;
 
@@ -52,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v3_0_0::PackManifestDefinition

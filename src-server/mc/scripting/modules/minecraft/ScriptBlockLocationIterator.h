@@ -17,12 +17,13 @@ namespace Scripting { struct EngineError; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockLocationIterator : public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptBlockLocationIterator> {
+class ScriptBlockLocationIterator
+: public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptBlockLocationIterator> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk38fd69;
-    ::ll::UntypedStorage<8, 8> mUnkdea65b;
+    ::ll::UntypedStorage<8, 8>  mUnkdea65b;
     // NOLINTEND
 
 public:
@@ -34,7 +35,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptBlockLocationIterator(::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable> strongTypedIterableHandle);
+    MCNAPI ScriptBlockLocationIterator(
+        ::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable>
+            strongTypedIterableHandle
+    );
 
     MCNAPI ::Scripting::Result<bool, ::Scripting::EngineError> isValid() const;
     // NOLINTEND
@@ -48,9 +53,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable> strongTypedIterableHandle);
+    MCNAPI void* $ctor(
+        ::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable>
+            strongTypedIterableHandle
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -21,15 +21,15 @@ class LayEggGoal : public ::BaseMoveToBlockGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor> const> mTargetBlocks;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MaterialType> const> mTargetMaterialsAboveBlock;
-    ::ll::TypedStorage<1, 1, bool const> mAllowLayingFromBelow;
-    ::ll::TypedStorage<1, 1, bool const> mUseDefaultAnimation;
-    ::ll::TypedStorage<4, 4, float const> mLaySeconds;
-    ::ll::TypedStorage<8, 16, ::ItemDescriptor const> mEggType;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const> mOnLay;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor> const>       mTargetBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MaterialType> const>         mTargetMaterialsAboveBlock;
+    ::ll::TypedStorage<1, 1, bool const>                                   mAllowLayingFromBelow;
+    ::ll::TypedStorage<1, 1, bool const>                                   mUseDefaultAnimation;
+    ::ll::TypedStorage<4, 4, float const>                                  mLaySeconds;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor const>                      mEggType;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const>             mOnLay;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent const> mLayEggSound;
-    ::ll::TypedStorage<4, 4, int> mLayEggCounter;
+    ::ll::TypedStorage<4, 4, int>                                          mLayEggCounter;
     // NOLINTEND
 
 public:
@@ -70,7 +70,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LayEggGoal(::Mob& mob, float speedModifier, int searchRange, int searchHeight, float goalRadius, ::std::vector<::ItemDescriptor> const& targetBlocks, ::std::vector<::MaterialType> const& targetMaterialsAboveBlock, bool allowLayingFromBelow, bool useDefaultAnimation, float laySeconds, ::ItemDescriptor const& eggType, ::ActorDefinitionTrigger const& onLay, ::std::string const& layEggSound);
+    MCAPI LayEggGoal(
+        ::Mob&                                 mob,
+        float                                  speedModifier,
+        int                                    searchRange,
+        int                                    searchHeight,
+        float                                  goalRadius,
+        ::std::vector<::ItemDescriptor> const& targetBlocks,
+        ::std::vector<::MaterialType> const&   targetMaterialsAboveBlock,
+        bool                                   allowLayingFromBelow,
+        bool                                   useDefaultAnimation,
+        float                                  laySeconds,
+        ::ItemDescriptor const&                eggType,
+        ::ActorDefinitionTrigger const&        onLay,
+        ::std::string const&                   layEggSound
+    );
 
     MCAPI bool _isTargetBlock(::BlockType const& block) const;
     // NOLINTEND
@@ -78,7 +92,21 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, float speedModifier, int searchRange, int searchHeight, float goalRadius, ::std::vector<::ItemDescriptor> const& targetBlocks, ::std::vector<::MaterialType> const& targetMaterialsAboveBlock, bool allowLayingFromBelow, bool useDefaultAnimation, float laySeconds, ::ItemDescriptor const& eggType, ::ActorDefinitionTrigger const& onLay, ::std::string const& layEggSound);
+    MCAPI void* $ctor(
+        ::Mob&                                 mob,
+        float                                  speedModifier,
+        int                                    searchRange,
+        int                                    searchHeight,
+        float                                  goalRadius,
+        ::std::vector<::ItemDescriptor> const& targetBlocks,
+        ::std::vector<::MaterialType> const&   targetMaterialsAboveBlock,
+        bool                                   allowLayingFromBelow,
+        bool                                   useDefaultAnimation,
+        float                                  laySeconds,
+        ::ItemDescriptor const&                eggType,
+        ::ActorDefinitionTrigger const&        onLay,
+        ::std::string const&                   layEggSound
+    );
     // NOLINTEND
 
 public:
@@ -112,5 +140,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

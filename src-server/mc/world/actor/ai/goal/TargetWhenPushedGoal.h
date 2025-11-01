@@ -15,8 +15,8 @@ class TargetWhenPushedGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mSelf;
-    ::ll::TypedStorage<4, 4, float> mPercentChance;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                mSelf;
+    ::ll::TypedStorage<4, 4, float>                                 mPercentChance;
     ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor> const> mTargetTypes;
     // NOLINTEND
 
@@ -72,5 +72,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

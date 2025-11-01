@@ -17,8 +17,8 @@ class NetherReactorBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mIsInitialized;
-    ::ll::TypedStorage<1, 1, bool> mHasFinished;
+    ::ll::TypedStorage<1, 1, bool>  mIsInitialized;
+    ::ll::TypedStorage<1, 1, bool>  mHasFinished;
     ::ll::TypedStorage<2, 2, short> mProgress;
     // NOLINTEND
 
@@ -48,5 +48,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

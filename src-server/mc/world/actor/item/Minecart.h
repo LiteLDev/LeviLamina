@@ -27,11 +27,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mDisplayBlockSerId;
-    ::ll::TypedStorage<1, 1, bool> mFlipped;
-    ::ll::TypedStorage<4, 4, float> mRailRenderRot;
-    ::ll::TypedStorage<8, 8, uint64> mBaseLoop;
-    ::ll::TypedStorage<8, 8, uint64> mRidingLoop;
-    ::ll::TypedStorage<4, 4, float> mSmoothSpeed;
+    ::ll::TypedStorage<1, 1, bool>                             mFlipped;
+    ::ll::TypedStorage<4, 4, float>                            mRailRenderRot;
+    ::ll::TypedStorage<8, 8, uint64>                           mBaseLoop;
+    ::ll::TypedStorage<8, 8, uint64>                           mRidingLoop;
+    ::ll::TypedStorage<4, 4, float>                            mSmoothSpeed;
     // NOLINTEND
 
 public:
@@ -96,7 +96,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Minecart(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI Minecart(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
 
     MCAPI void _registerLoopingSounds();
 
@@ -112,7 +116,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -160,5 +168,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

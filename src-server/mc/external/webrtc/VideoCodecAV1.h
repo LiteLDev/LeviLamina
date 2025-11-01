@@ -16,7 +16,6 @@ public:
     VideoCodecAV1& operator=(VideoCodecAV1 const&);
     VideoCodecAV1(VideoCodecAV1 const&);
     VideoCodecAV1();
-
 };
 
-}
+} // namespace webrtc

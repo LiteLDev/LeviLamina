@@ -13,7 +13,8 @@ struct ActorDataControllingSeatIndexComponent;
 
 namespace ActorData {
 
-struct ActorDataControllingSeatIndexOperations : public ::ActorData::ActorDataSimpleOperations<::ReplayStateValueDiff<schar>, ::ActorDataControllingSeatIndexComponent, schar> {
-};
+struct ActorDataControllingSeatIndexOperations
+: public ::ActorData::
+      ActorDataSimpleOperations<::ReplayStateValueDiff<schar>, ::ActorDataControllingSeatIndexComponent, schar> {};
 
-}
+} // namespace ActorData

@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,8 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle>> mBlockSourceHandle;
-    ::ll::TypedStorage<4, 12, ::BlockPos const> mButtonBlockPos;
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mSource;
+    ::ll::TypedStorage<4, 12, ::BlockPos const>                       mButtonBlockPos;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                        mSource;
     // NOLINTEND
 
 public:
@@ -31,5 +31,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

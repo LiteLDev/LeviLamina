@@ -15,4 +15,4 @@ MCAPI ::BlockRandomOffsetComponent const& XYZ();
 MCAPI ::BlockRandomOffsetComponent const& XZ();
 // NOLINTEND
 
-}
+} // namespace BlockRandomOffsetDefaults

@@ -20,7 +20,7 @@ public:
     struct SurfaceMaterialAdjustment;
     struct SurfaceMaterialAdjustmentMaterials;
     // clang-format on
-    
+
     // SurfaceMaterialAdjustmentsBiomeJsonComponent inner types define
     struct SurfaceMaterialAdjustmentMaterials {
     public:
@@ -32,67 +32,80 @@ public:
         ::ll::UntypedStorage<8, 104> mUnk3287a9;
         ::ll::UntypedStorage<8, 104> mUnka93f5e;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         SurfaceMaterialAdjustmentMaterials& operator=(SurfaceMaterialAdjustmentMaterials const&);
         SurfaceMaterialAdjustmentMaterials();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI SurfaceMaterialAdjustmentMaterials(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials const&);
-    
-        MCNAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials& operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials&&);
-    
+        MCNAPI SurfaceMaterialAdjustmentMaterials(
+            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+                SurfaceMaterialAdjustmentMaterials const&
+        );
+
+        MCNAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+            SurfaceMaterialAdjustmentMaterials&
+            operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+                          SurfaceMaterialAdjustmentMaterials&&);
+
         MCNAPI ~SurfaceMaterialAdjustmentMaterials();
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials const&);
+        MCNAPI void* $ctor(
+            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+                SurfaceMaterialAdjustmentMaterials const&
+        );
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
     struct SurfaceMaterialAdjustment {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 520> mUnk4506f2;
-        ::ll::UntypedStorage<4, 12> mUnkd193f0;
-        ::ll::UntypedStorage<8, 88> mUnk46aed7;
-        ::ll::UntypedStorage<4, 8> mUnk57152d;
+        ::ll::UntypedStorage<4, 12>  mUnkd193f0;
+        ::ll::UntypedStorage<8, 88>  mUnk46aed7;
+        ::ll::UntypedStorage<4, 8>   mUnk57152d;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         SurfaceMaterialAdjustment(SurfaceMaterialAdjustment const&);
         SurfaceMaterialAdjustment();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI SurfaceMaterialAdjustment(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&&);
-    
-        MCNAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment& operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment const&);
+        MCNAPI SurfaceMaterialAdjustment(
+            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&&
+        );
+
+        MCNAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&
+        operator=(
+            ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment const&
+        );
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&&);
+        MCNAPI void*
+        $ctor(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustment&&);
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -140,7 +153,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_60

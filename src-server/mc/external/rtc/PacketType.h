@@ -5,12 +5,12 @@
 namespace rtc {
 
 enum class PacketType : int {
-    KUnknown = 0,
-    KData = 1,
-    KIceConnectivityCheck = 2,
+    KUnknown                      = 0,
+    KData                         = 1,
+    KIceConnectivityCheck         = 2,
     KIceConnectivityCheckResponse = 3,
-    KStunMessage = 4,
-    KTurnMessage = 5,
+    KStunMessage                  = 4,
+    KTurnMessage                  = 5,
 };
 
 }

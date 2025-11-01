@@ -23,5 +23,4 @@ public:
 
     MCAPI static ::std::array<::ItemColor, 20> const& mColorMap();
     // NOLINTEND
-
 };

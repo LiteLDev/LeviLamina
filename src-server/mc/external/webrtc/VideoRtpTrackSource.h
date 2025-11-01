@@ -21,7 +21,7 @@ public:
     // clang-format off
     class Callback;
     // clang-format on
-    
+
     // VideoRtpTrackSource inner types define
     class Callback {
     public:
@@ -29,30 +29,29 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Callback() = default;
-    
+
         // vIndex: 1
         virtual void OnGenerateKeyFrame() = 0;
-    
+
         // vIndex: 2
         virtual void OnEncodedSinkEnabled(bool) = 0;
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
-    
+
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnke99678;
+    ::ll::UntypedStorage<1, 1>   mUnke99678;
     ::ll::UntypedStorage<8, 200> mUnk6819ed;
-    ::ll::UntypedStorage<8, 40> mUnkdd4fc5;
-    ::ll::UntypedStorage<8, 24> mUnkac4663;
-    ::ll::UntypedStorage<8, 8> mUnk544369;
+    ::ll::UntypedStorage<8, 40>  mUnkdd4fc5;
+    ::ll::UntypedStorage<8, 24>  mUnkac4663;
+    ::ll::UntypedStorage<8, 8>   mUnk544369;
     // NOLINTEND
 
 public:
@@ -130,7 +129,6 @@ public:
 
     MCNAPI static void** $vftableForNotifierInterface();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

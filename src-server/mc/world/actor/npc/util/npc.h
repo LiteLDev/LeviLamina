@@ -17,7 +17,8 @@ namespace npc { struct UrlAction; }
 namespace npc {
 // functions
 // NOLINTBEGIN
-MCAPI void fillCommands(::npc::CommandAction& cmd, ::std::vector<::std::string_view> const& src, ::CurrentCmdVersion ver);
+MCAPI void
+fillCommands(::npc::CommandAction& cmd, ::std::vector<::std::string_view> const& src, ::CurrentCmdVersion ver);
 
 MCAPI ::std::optional<::std::variant<::npc::CommandAction, ::npc::UrlAction>> fromJson(::Json::Value const& root);
 
@@ -39,4 +40,4 @@ MCAPI ::CommandPermissionLevel const& COMMAND_PERMISSION();
 MCAPI uint64 const& MAX_NAME_LENGTH();
 // NOLINTEND
 
-}
+} // namespace npc

@@ -17,13 +17,13 @@ class SculkSpreader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mIsWorldGen;
-    ::ll::TypedStorage<4, 4, int> mGrowthSpawnCost;
-    ::ll::TypedStorage<4, 4, int> mNoGrowthRadius;
-    ::ll::TypedStorage<4, 4, int> mChargeDecayRate;
-    ::ll::TypedStorage<4, 4, int> mAdditionalDecayRate;
+    ::ll::TypedStorage<1, 1, bool>                                mIsWorldGen;
+    ::ll::TypedStorage<4, 4, int>                                 mGrowthSpawnCost;
+    ::ll::TypedStorage<4, 4, int>                                 mNoGrowthRadius;
+    ::ll::TypedStorage<4, 4, int>                                 mChargeDecayRate;
+    ::ll::TypedStorage<4, 4, int>                                 mAdditionalDecayRate;
     ::ll::TypedStorage<8, 24, ::std::vector<::SculkChargeCursor>> mCursors;
-    ::ll::TypedStorage<8, 16, ::std::set<::Block const*>> mSculkReplaceableBlocks;
+    ::ll::TypedStorage<8, 16, ::std::set<::Block const*>>         mSculkReplaceableBlocks;
     // NOLINTEND
 
 public:
@@ -33,7 +33,13 @@ public:
 
     MCAPI void save(::CompoundTag& tag) const;
 
-    MCAPI void updateCursors(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& originPos, ::Random& random, bool spreadVeins);
+    MCAPI void updateCursors(
+        ::IBlockWorldGenAPI& target,
+        ::BlockSource*       region,
+        ::BlockPos const&    originPos,
+        ::Random&            random,
+        bool                 spreadVeins
+    );
 
     MCAPI ~SculkSpreader();
     // NOLINTEND
@@ -43,5 +49,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

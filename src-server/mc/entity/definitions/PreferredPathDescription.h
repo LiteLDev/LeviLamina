@@ -14,9 +14,9 @@ struct PreferredPathDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk761312;
-    ::ll::UntypedStorage<4, 4> mUnk6123b9;
-    ::ll::UntypedStorage<4, 4> mUnkaf5690;
+    ::ll::UntypedStorage<4, 4>  mUnk761312;
+    ::ll::UntypedStorage<4, 4>  mUnk6123b9;
+    ::ll::UntypedStorage<4, 4>  mUnkaf5690;
     ::ll::UntypedStorage<8, 24> mUnk402455;
     // NOLINTEND
 
@@ -58,5 +58,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

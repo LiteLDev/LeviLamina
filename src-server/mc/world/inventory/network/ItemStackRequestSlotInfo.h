@@ -12,8 +12,8 @@ struct ItemStackRequestSlotInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::FullContainerName     mFullContainerName;
-    uchar                   mSlot;
+    ::FullContainerName         mFullContainerName;
+    uchar                                      mSlot;
     ::ItemStackNetIdVariant mNetIdVariant;
     // NOLINTEND
 
@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

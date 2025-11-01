@@ -31,4 +31,4 @@ MCNAPI void bindVec2(::cereal::ReflectionCtx& ctx);
 MCNAPI void bindVec3(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-}
+} // namespace SharedTypes

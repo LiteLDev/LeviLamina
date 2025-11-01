@@ -25,24 +25,25 @@ public:
     struct CrimsonNyliumBlockVegetationProbabilities;
     struct WarpedNyliumBlockVegetationProbabilities;
     // clang-format on
-    
+
     // NyliumBlock inner types define
     using RandomPlantProvider = ::std::function<::Block const&(::Randomize const&)>;
-    
-    struct WarpedNyliumBlockVegetationProbabilities {
-    };
-    
-    struct CrimsonNyliumBlockVegetationProbabilities {
-    };
-    
+
+    struct WarpedNyliumBlockVegetationProbabilities {};
+
+    struct CrimsonNyliumBlockVegetationProbabilities {};
+
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 75
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const /*override*/;
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
+        /*override*/;
 
     // vIndex: 73
-    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const /*override*/;
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const
+        /*override*/;
 
     // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -54,7 +55,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _scatterVegetation(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::std::function<::Block const&(::Randomize const&)> plantProvider) const;
+    MCAPI bool _scatterVegetation(
+        ::BlockSource&                                      region,
+        ::BlockPos const&                                   pos,
+        ::Random&                                           random,
+        ::std::function<::Block const&(::Randomize const&)> plantProvider
+    ) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
@@ -76,7 +82,8 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
@@ -86,5 +93,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

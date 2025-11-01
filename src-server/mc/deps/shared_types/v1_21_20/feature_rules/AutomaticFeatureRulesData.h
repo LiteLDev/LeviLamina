@@ -14,7 +14,7 @@ struct AutomaticFeatureRulesData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk9d116f;
+    ::ll::UntypedStorage<8, 64>  mUnk9d116f;
     ::ll::UntypedStorage<8, 368> mUnk23771f;
     ::ll::UntypedStorage<8, 664> mUnk745e58;
     // NOLINTEND
@@ -48,7 +48,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_20

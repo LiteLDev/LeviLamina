@@ -24,64 +24,61 @@ public:
     struct StrAndGuid;
     struct StrAndGuidAndRoom;
     // clang-format on
-    
+
     // RelayPlugin inner types define
     struct StrAndGuidAndRoom {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk8f48d6;
+        ::ll::UntypedStorage<8, 8>  mUnk8f48d6;
         ::ll::UntypedStorage<8, 16> mUnkc73f21;
-        ::ll::UntypedStorage<8, 8> mUnk3039ae;
+        ::ll::UntypedStorage<8, 8>  mUnk3039ae;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         StrAndGuidAndRoom& operator=(StrAndGuidAndRoom const&);
         StrAndGuidAndRoom(StrAndGuidAndRoom const&);
         StrAndGuidAndRoom();
-    
     };
-    
+
     struct StrAndGuid {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk8d469b;
+        ::ll::UntypedStorage<8, 8>  mUnk8d469b;
         ::ll::UntypedStorage<8, 16> mUnk86b3bb;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         StrAndGuid& operator=(StrAndGuid const&);
         StrAndGuid(StrAndGuid const&);
         StrAndGuid();
-    
     };
-    
+
     struct RP_Group {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkac78d8;
+        ::ll::UntypedStorage<8, 8>  mUnkac78d8;
         ::ll::UntypedStorage<8, 16> mUnk7d18f1;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         RP_Group& operator=(RP_Group const&);
         RP_Group(RP_Group const&);
         RP_Group();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk721270;
     ::ll::UntypedStorage<8, 16> mUnk864903;
     ::ll::UntypedStorage<8, 16> mUnk5bffef;
-    ::ll::UntypedStorage<1, 1> mUnk5b7a2f;
+    ::ll::UntypedStorage<1, 1>  mUnk5b7a2f;
     // NOLINTEND
 
 public:
@@ -100,7 +97,11 @@ public:
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
     // vIndex: 7
-    virtual void OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason) /*override*/;
+    virtual void OnClosedConnection(
+        ::RakNet::SystemAddress const&,
+        ::RakNet::RakNetGUID,
+        ::RakNet::PI2_LostConnectionReason
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -108,7 +109,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

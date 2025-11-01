@@ -25,9 +25,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation& operator=(::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation&&);
+    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation&
+    operator=(::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation&&);
 
-    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation& operator=(::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation const&);
+    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation&
+    operator=(::SharedTypes::v1_21_110::BlockDefinition::BlockPermutation const&);
     // NOLINTEND
 
 public:
@@ -35,7 +37,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_110::BlockDefinition

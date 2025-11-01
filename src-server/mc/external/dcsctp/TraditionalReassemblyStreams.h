@@ -29,7 +29,7 @@ public:
     class StreamBase;
     class UnorderedStream;
     // clang-format on
-    
+
     // TraditionalReassemblyStreams inner types define
     class StreamBase {
     public:
@@ -37,87 +37,108 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk58f649;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         StreamBase& operator=(StreamBase const&);
         StreamBase(StreamBase const&);
         StreamBase();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI uint64 AssembleMessage(::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const, ::dcsctp::Data>>>> start, ::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const, ::dcsctp::Data>>>> end);
-    
-        MCNAPI uint64 AssembleMessage(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data);
+        MCNAPI uint64 AssembleMessage(
+            ::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<
+                ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const,
+                ::dcsctp::Data>>>> start,
+            ::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<
+                ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const,
+                ::dcsctp::Data>>>> end
+        );
+
+        MCNAPI uint64 AssembleMessage(
+            ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn,
+            ::dcsctp::Data                                                                   data
+        );
         // NOLINTEND
-    
     };
-    
+
     class UnorderedStream : public ::dcsctp::TraditionalReassemblyStreams::StreamBase {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk3eedb6;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         UnorderedStream& operator=(UnorderedStream const&);
         UnorderedStream(UnorderedStream const&);
         UnorderedStream();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI int Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data);
-    
+        MCNAPI int
+        Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data);
+
         MCNAPI uint64 EraseTo(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn);
-    
-        MCNAPI uint64 TryToAssembleMessage(::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const, ::dcsctp::Data>>>> iter);
+
+        MCNAPI uint64 TryToAssembleMessage(
+            ::std::_Tree_iterator<::std::_Tree_val<::std::_Tree_simple_types<::std::pair<
+                ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const,
+                ::dcsctp::Data>>>> iter
+        );
         // NOLINTEND
-    
     };
-    
+
     class OrderedStream : public ::dcsctp::TraditionalReassemblyStreams::StreamBase {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk8a9c6a;
         ::ll::UntypedStorage<8, 16> mUnk83bda9;
-        ::ll::UntypedStorage<8, 8> mUnkdb6cd9;
+        ::ll::UntypedStorage<8, 8>  mUnkdb6cd9;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         OrderedStream& operator=(OrderedStream const&);
         OrderedStream(OrderedStream const&);
         OrderedStream();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI int Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data);
-    
+        MCNAPI int
+        Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data);
+
         MCNAPI uint64 EraseTo(::webrtc::StrongAlias<::dcsctp::SSNTag, ushort> ssn);
-    
-        MCNAPI OrderedStream(::dcsctp::TraditionalReassemblyStreams* parent, ::webrtc::StrongAlias<::dcsctp::SSNTag, ushort> next_ssn);
-    
+
+        MCNAPI OrderedStream(
+            ::dcsctp::TraditionalReassemblyStreams*         parent,
+            ::webrtc::StrongAlias<::dcsctp::SSNTag, ushort> next_ssn
+        );
+
         MCNAPI uint64 TryToAssembleMessage();
-    
+
         MCNAPI uint64 TryToAssembleMessages();
-    
-        MCNAPI uint64 TryToAssembleMessagesFastpath(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::SSNTag, ushort>> ssn, ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data);
+
+        MCNAPI uint64 TryToAssembleMessagesFastpath(
+            ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::SSNTag, ushort>> ssn,
+            ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>   tsn,
+            ::dcsctp::Data                                                                     data
+        );
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(::dcsctp::TraditionalReassemblyStreams* parent, ::webrtc::StrongAlias<::dcsctp::SSNTag, ushort> next_ssn);
+        MCNAPI void*
+        $ctor(::dcsctp::TraditionalReassemblyStreams* parent, ::webrtc::StrongAlias<::dcsctp::SSNTag, ushort> next_ssn);
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -137,13 +158,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual int Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data) /*override*/;
+    virtual int
+    Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn,
+        ::dcsctp::Data                                                                   data) /*override*/;
 
     // vIndex: 2
-    virtual uint64 HandleForwardTsn(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> new_cumulative_ack_tsn, ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const> skipped_streams) /*override*/;
+    virtual uint64 HandleForwardTsn(
+        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> new_cumulative_ack_tsn,
+        ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>              skipped_streams
+    ) /*override*/;
 
     // vIndex: 3
-    virtual void ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> stream_ids) /*override*/;
+    virtual void
+    ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> stream_ids) /*override*/;
 
     // vIndex: 4
     virtual ::dcsctp::HandoverReadinessStatus GetHandoverReadiness() const /*override*/;
@@ -161,21 +188,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TraditionalReassemblyStreams(::std::string_view log_prefix, ::std::function<void(::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const>, ::dcsctp::DcSctpMessage)> on_assembled_message);
+    MCNAPI TraditionalReassemblyStreams(
+        ::std::string_view log_prefix,
+        ::std::function<void(
+            ::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const>,
+            ::dcsctp::DcSctpMessage
+        )>                 on_assembled_message
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view log_prefix, ::std::function<void(::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const>, ::dcsctp::DcSctpMessage)> on_assembled_message);
+    MCNAPI void* $ctor(
+        ::std::string_view log_prefix,
+        ::std::function<void(
+            ::rtc::ArrayView<::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> const>,
+            ::dcsctp::DcSctpMessage
+        )>                 on_assembled_message
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data);
+    MCNAPI int
+    $Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> tsn, ::dcsctp::Data data);
 
-    MCNAPI uint64 $HandleForwardTsn(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> new_cumulative_ack_tsn, ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const> skipped_streams);
+    MCNAPI uint64 $HandleForwardTsn(
+        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>> new_cumulative_ack_tsn,
+        ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>              skipped_streams
+    );
 
     MCNAPI void $ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> stream_ids);
 
@@ -191,7 +234,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

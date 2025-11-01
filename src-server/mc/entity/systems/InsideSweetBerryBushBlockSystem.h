@@ -13,4 +13,4 @@ namespace InsideSweetBerryBushBlockSystem {
 MCNAPI ::TickingSystemWithInfo createReplayInputSystem();
 // NOLINTEND
 
-}
+} // namespace InsideSweetBerryBushBlockSystem

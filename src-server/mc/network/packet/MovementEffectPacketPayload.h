@@ -11,10 +11,9 @@ struct MovementEffectPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>     mRuntimeId;
     ::ll::TypedStorage<4, 4, ::MovementEffectType> mEffectType;
-    ::ll::TypedStorage<4, 4, int> mEffectDuration;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick> mTick;
+    ::ll::TypedStorage<4, 4, int>                  mEffectDuration;
+    ::ll::TypedStorage<8, 8, ::PlayerInputTick>    mTick;
     // NOLINTEND
-
 };

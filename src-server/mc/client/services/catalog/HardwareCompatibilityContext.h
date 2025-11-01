@@ -18,5 +18,4 @@ public:
     HardwareCompatibilityContext& operator=(HardwareCompatibilityContext const&);
     HardwareCompatibilityContext(HardwareCompatibilityContext const&);
     HardwareCompatibilityContext();
-
 };

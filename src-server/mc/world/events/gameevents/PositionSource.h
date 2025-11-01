@@ -18,11 +18,13 @@ class PositionSource {
 public:
     // PositionSource inner types define
     using ActorWithAttachPos = ::std::pair<::ActorUniqueID, ::SharedTypes::Legacy::ActorLocation>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::variant<::std::pair<::ActorUniqueID, ::SharedTypes::Legacy::ActorLocation>, ::Vec3>> mVariant;
+    ::ll::
+        TypedStorage<8, 24, ::std::variant<::std::pair<::ActorUniqueID, ::SharedTypes::Legacy::ActorLocation>, ::Vec3>>
+            mVariant;
     // NOLINTEND
 
 public:
@@ -30,7 +32,6 @@ public:
     // NOLINTBEGIN
     MCAPI void serializeTo(::CompoundTag& tag) const;
     // NOLINTEND
-
 };
 
-}
+} // namespace GameEvents

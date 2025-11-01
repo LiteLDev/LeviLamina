@@ -17,8 +17,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, uint64> mSignalHashCode;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::IScriptAfterEventSignal>> mSignal;
-    ::ll::TypedStorage<8, 8, uint64> mInstanceHashCode;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::IScriptAfterEventSignal>>
+                                                   mSignal;
+    ::ll::TypedStorage<8, 8, uint64>               mInstanceHashCode;
     ::ll::TypedStorage<8, 32, ::std::string const> mEventTypeName;
     // NOLINTEND
 
@@ -33,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

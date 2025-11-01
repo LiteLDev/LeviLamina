@@ -15,7 +15,7 @@ public:
     // clang-format off
     struct PlayerAtChunk;
     // clang-format on
-    
+
     // ActorReplication inner types define
     struct PlayerAtChunk {
     public:
@@ -24,15 +24,14 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkab1853;
         ::ll::UntypedStorage<2, 2> mUnk604313;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         PlayerAtChunk& operator=(PlayerAtChunk const&);
         PlayerAtChunk(PlayerAtChunk const&);
         PlayerAtChunk();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -50,7 +49,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void processReplicationForPlayers(::std::vector<::WeakEntityRef> const& playerList, ::Level const& level, ::ChunkSource& chunkSource);
+    MCNAPI void processReplicationForPlayers(
+        ::std::vector<::WeakEntityRef> const& playerList,
+        ::Level const&                        level,
+        ::ChunkSource&                        chunkSource
+    );
 
     MCNAPI ~ActorReplication();
     // NOLINTEND
@@ -60,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

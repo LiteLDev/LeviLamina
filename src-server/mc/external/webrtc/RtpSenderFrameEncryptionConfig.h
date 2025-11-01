@@ -17,7 +17,6 @@ public:
     RtpSenderFrameEncryptionConfig& operator=(RtpSenderFrameEncryptionConfig const&);
     RtpSenderFrameEncryptionConfig(RtpSenderFrameEncryptionConfig const&);
     RtpSenderFrameEncryptionConfig();
-
 };
 
-}
+} // namespace webrtc

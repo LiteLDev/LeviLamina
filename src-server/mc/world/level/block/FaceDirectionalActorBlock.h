@@ -19,7 +19,7 @@ class FaceDirectionalActorBlock : public ::ActorBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mHorizontalOnly;
+    ::ll::TypedStorage<1, 1, bool>  mHorizontalOnly;
     ::ll::TypedStorage<4, 4, float> mYRotOffset;
     // NOLINTEND
 
@@ -36,7 +36,9 @@ public:
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
     // vIndex: 91
-    virtual ::Block const& getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const /*override*/;
+    virtual ::Block const&
+    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
+        /*override*/;
 
     // vIndex: 0
     virtual ~FaceDirectionalActorBlock() /*override*/ = default;
@@ -51,7 +53,12 @@ public:
 
     MCFOLD ::Flip $getFaceFlip(uchar face, ::Block const& block) const;
 
-    MCFOLD ::Block const& $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const;
+    MCFOLD ::Block const& $getPlacementBlock(
+        ::Actor const&    by,
+        ::BlockPos const& pos,
+        uchar             face,
+        ::Vec3 const&     clickPos,
+        int               itemValue
+    ) const;
     // NOLINTEND
-
 };

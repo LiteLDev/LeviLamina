@@ -18,7 +18,7 @@ class AbortChunk : public ::dcsctp::Chunk, public ::dcsctp::TLVTrait<::dcsctp::A
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk871dc6;
+    ::ll::UntypedStorage<1, 1>  mUnk871dc6;
     ::ll::UntypedStorage<8, 24> mUnk543052;
     // NOLINTEND
 
@@ -78,7 +78,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

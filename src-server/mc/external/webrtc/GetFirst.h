@@ -4,7 +4,6 @@
 
 namespace webrtc::flat_containers_internal {
 
-struct GetFirst {
-};
+struct GetFirst {};
 
-}
+} // namespace webrtc::flat_containers_internal

@@ -20,7 +20,15 @@ struct SubBBsComponent;
 namespace AutoStepSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void doAutoStepSystemImpl(::entt::type_list<::Include<::AutoStepRequestFlagComponent>>, ::StrictEntityContext const& entity, ::MaxAutoStepComponent const& maxAutoStepComponent, ::MoveRequestComponent& moveRequestComponent, ::AABBShapeComponent& aabbShapeComponent, ::SubBBsComponent& subBBsComponent, ::EntityModifier<::HasAutoSteppedComponent> mod);
+MCNAPI void doAutoStepSystemImpl(
+    ::entt::type_list<::Include<::AutoStepRequestFlagComponent>>,
+    ::StrictEntityContext const&                entity,
+    ::MaxAutoStepComponent const&               maxAutoStepComponent,
+    ::MoveRequestComponent&                     moveRequestComponent,
+    ::AABBShapeComponent&                       aabbShapeComponent,
+    ::SubBBsComponent&                          subBBsComponent,
+    ::EntityModifier<::HasAutoSteppedComponent> mod
+);
 // NOLINTEND
 
-}
+} // namespace AutoStepSystem

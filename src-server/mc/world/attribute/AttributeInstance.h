@@ -17,14 +17,14 @@ class AttributeInstance {
 public:
     // AttributeInstance inner types define
     using ModifierVector = ::std::vector<::AttributeModifier>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Attribute const*> mAttribute;
-    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeModifier>> mModifierList;
-    ::ll::TypedStorage<8, 24, ::std::vector<::TemporalAttributeBuff>> mTemporalBuffs;
-    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeInstanceHandle>> mListeners;
+    ::ll::TypedStorage<8, 8, ::Attribute const*>                              mAttribute;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeModifier>>             mModifierList;
+    ::ll::TypedStorage<8, 24, ::std::vector<::TemporalAttributeBuff>>         mTemporalBuffs;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeInstanceHandle>>       mListeners;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AttributeInstanceDelegate>> mDelegate;
     union {
         ::ll::TypedStorage<4, 12, float[3]> mDefaultValues;
@@ -112,5 +112,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

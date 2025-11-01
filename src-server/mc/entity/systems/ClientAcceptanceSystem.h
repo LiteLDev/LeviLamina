@@ -25,13 +25,33 @@ struct VehicleInputIntentComponent;
 namespace ClientAcceptanceSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void adjustMotion(::Vec3 const& amount, ::ServerPlayerCurrentMovementComponent const& input, ::MoveRequestComponent& moveRequest, ::AABBShapeComponent& shape, ::ClientAcceptanceConfig const& config);
+MCNAPI void adjustMotion(
+    ::Vec3 const&                                 amount,
+    ::ServerPlayerCurrentMovementComponent const& input,
+    ::MoveRequestComponent&                       moveRequest,
+    ::AABBShapeComponent&                         shape,
+    ::ClientAcceptanceConfig const&               config
+);
 
 MCNAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& mode);
 
-MCNAPI void tickClientAcceptance(::ServerPlayerCurrentMovementComponent const& currentMove, ::StateVectorComponent const& stateVector, ::MoveRequestComponent& moveRequest, ::ClientAcceptanceThresholdsComponent& thresholds, ::AABBShapeComponent& shape);
+MCNAPI void tickClientAcceptance(
+    ::ServerPlayerCurrentMovementComponent const& currentMove,
+    ::StateVectorComponent const&                 stateVector,
+    ::MoveRequestComponent&                       moveRequest,
+    ::ClientAcceptanceThresholdsComponent&        thresholds,
+    ::AABBShapeComponent&                         shape
+);
 
-MCNAPI void tickPlayerOrVehicle(::StrictEntityContext const& player, ::ServerPlayerCurrentMovementComponent const& input, ::ClientAcceptanceThresholdsComponent& acceptance, ::Optional<::PassengerComponent const> passenger, ::ViewT<::StrictEntityContext, ::MoveRequestComponent, ::AABBShapeComponent, ::StateVectorComponent const> moveRequests, ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent const>& vehicleView);
+MCNAPI void tickPlayerOrVehicle(
+    ::StrictEntityContext const&                  player,
+    ::ServerPlayerCurrentMovementComponent const& input,
+    ::ClientAcceptanceThresholdsComponent&        acceptance,
+    ::Optional<::PassengerComponent const>        passenger,
+    ::ViewT<::StrictEntityContext, ::MoveRequestComponent, ::AABBShapeComponent, ::StateVectorComponent const>
+                                                                         moveRequests,
+    ::ViewT<::StrictEntityContext, ::VehicleInputIntentComponent const>& vehicleView
+);
 // NOLINTEND
 
-}
+} // namespace ClientAcceptanceSystem

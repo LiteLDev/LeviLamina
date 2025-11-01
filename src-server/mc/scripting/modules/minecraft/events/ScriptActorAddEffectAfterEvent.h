@@ -20,13 +20,14 @@ struct ScriptActorAddEffectAfterEvent {
 public:
     // ScriptActorAddEffectAfterEvent inner types define
     using QueueType = ::ScriptModuleMinecraft::ScriptActorAddEffectAfterEventIntermediateData;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>                                             mScope;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mActor;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMobEffectInstance>> mEffect;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMobEffectInstance>>
+        mEffect;
     // NOLINTEND
 
 public:
@@ -59,7 +60,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -16,12 +16,12 @@ class ListDCommand : public ::ServerCommand {
 public:
     // ListDCommand inner types define
     enum class DetailMode : int {
-        None = 0,
-        IDs = 1,
+        None  = 0,
+        IDs   = 1,
         UUIDs = 2,
         Stats = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -61,5 +61,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

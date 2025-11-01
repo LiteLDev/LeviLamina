@@ -14,5 +14,4 @@ public:
     DefaultLookAngleDefinition& operator=(DefaultLookAngleDefinition const&);
     DefaultLookAngleDefinition(DefaultLookAngleDefinition const&);
     DefaultLookAngleDefinition();
-
 };

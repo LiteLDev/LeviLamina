@@ -84,7 +84,6 @@ public:
 
     MCNAPI static void** $vftableForHasSlots();
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

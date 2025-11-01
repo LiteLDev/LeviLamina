@@ -2,5 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ItemListSerializer {
-};
+class ItemListSerializer {};

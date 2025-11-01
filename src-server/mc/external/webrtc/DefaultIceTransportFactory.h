@@ -22,13 +22,18 @@ public:
     virtual ~DefaultIceTransportFactory() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::webrtc::scoped_refptr<::webrtc::IceTransportInterface> CreateIceTransport(::std::string const& transport_name, int component, ::webrtc::IceTransportInit init) /*override*/;
+    virtual ::webrtc::scoped_refptr<::webrtc::IceTransportInterface> CreateIceTransport(
+        ::std::string const&       transport_name,
+        int                        component,
+        ::webrtc::IceTransportInit init
+    ) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::webrtc::scoped_refptr<::webrtc::IceTransportInterface> $CreateIceTransport(::std::string const& transport_name, int component, ::webrtc::IceTransportInit init);
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::IceTransportInterface>
+    $CreateIceTransport(::std::string const& transport_name, int component, ::webrtc::IceTransportInit init);
     // NOLINTEND
 
 public:
@@ -36,7 +41,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

@@ -4,8 +4,8 @@
 
 enum class AttachmentType : int {
     Standing = 0,
-    Hanging = 1,
-    Side = 2,
+    Hanging  = 1,
+    Side     = 2,
     Multiple = 3,
-    Count = 4,
+    Count    = 4,
 };

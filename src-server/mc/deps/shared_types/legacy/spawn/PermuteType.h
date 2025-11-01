@@ -8,8 +8,8 @@ struct PermuteType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk1ca512;
-    ::ll::UntypedStorage<4, 4> mUnk8a25aa;
+    ::ll::UntypedStorage<4, 4>  mUnk1ca512;
+    ::ll::UntypedStorage<4, 4>  mUnk8a25aa;
     ::ll::UntypedStorage<8, 32> mUnk36fe86;
     // NOLINTEND
 
@@ -32,7 +32,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::Legacy::Spawn

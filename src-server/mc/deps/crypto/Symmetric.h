@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/crypto/symmetric/ISystemInterface.h"
-#include "mc/deps/crypto/symmetric/OperationMode.h"
-#include "mc/deps/crypto/symmetric/System.h"
+#include "mc/deps/crypto/OperationMode.h"
+#include "mc/deps/crypto/symmetric/system/ISystemInterface.h"
+#include "mc/deps/crypto/symmetric/system/System.h"
 
 namespace Crypto::Symmetric {
 
@@ -47,7 +47,8 @@ public:
     virtual uint64 getEncryptionBufferSize(uint64 inputSize) const /*override*/;
 
     // vIndex: 7
-    virtual bool encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) /*override*/;
+    virtual bool
+    encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) /*override*/;
     // NOLINTEND
 
 public:
@@ -91,7 +92,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Crypto::Symmetric

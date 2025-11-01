@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/certificates/KeyManager.h"
-#include "mc/deps/crypto/asymmetric/System.h"
+#include "mc/deps/crypto/asymmetric/system/System.h"
 
 class PrivateKeyManager : public ::KeyManager {
 public:
@@ -60,5 +60,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

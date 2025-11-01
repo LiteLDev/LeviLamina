@@ -28,7 +28,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 760, ::ItemStack[5]> mItems;
-    ::ll::TypedStorage<8, 8, ::Tick> mLastTick;
+    ::ll::TypedStorage<8, 8, ::Tick>           mLastTick;
     // NOLINTEND
 
 public:
@@ -87,7 +87,11 @@ public:
     virtual void onMove() /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
     // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
@@ -160,7 +164,11 @@ public:
 
     MCFOLD void $onMove();
 
-    MCAPI void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    );
 
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
@@ -174,5 +182,4 @@ public:
 
     MCAPI static void** $vftableForContainer();
     // NOLINTEND
-
 };

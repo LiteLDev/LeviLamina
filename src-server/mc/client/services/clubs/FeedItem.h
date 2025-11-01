@@ -4,7 +4,6 @@
 
 namespace Clubs {
 
-struct FeedItem {
-};
+struct FeedItem {};
 
-}
+} // namespace Clubs

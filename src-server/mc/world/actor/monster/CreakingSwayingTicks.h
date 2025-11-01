@@ -13,4 +13,4 @@ namespace CreakingSwayingTicks {
 MCNAPI ::HashedString const& PROPERTY_NAME();
 // NOLINTEND
 
-}
+} // namespace CreakingSwayingTicks

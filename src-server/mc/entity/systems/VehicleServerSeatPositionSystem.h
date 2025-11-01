@@ -26,7 +26,23 @@ class VehicleServerSeatPositionSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _setSeatDescriptionToActorDataSystem(::ViewT<::StrictEntityContext, ::PassengerComponent const, ::PositionPassengerRequestComponent const, ::OffsetsComponent const, ::ActorDataFlagComponent, ::ActorDataSeatOffsetComponent, ::ActorDataDirtyFlagsComponent, ::SynchedActorDataComponent> passengerView, ::ViewT<::StrictEntityContext, ::VehicleComponent const, ::ActorDataBoundingBoxComponent const, ::RideableComponent const> vehicleView, ::ViewT<::StrictEntityContext, ::RidingHeightComponent const> ridingHeightView, ::ViewT<::StrictEntityContext, ::AdultRidingHeightOffsetComponent const> adultRidingHeightOffsetView);
+    MCNAPI static void _setSeatDescriptionToActorDataSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::PassengerComponent const,
+            ::PositionPassengerRequestComponent const,
+            ::OffsetsComponent const,
+            ::ActorDataFlagComponent,
+            ::ActorDataSeatOffsetComponent,
+            ::ActorDataDirtyFlagsComponent,
+            ::SynchedActorDataComponent> passengerView,
+        ::ViewT<
+            ::StrictEntityContext,
+            ::VehicleComponent const,
+            ::ActorDataBoundingBoxComponent const,
+            ::RideableComponent const>                                           vehicleView,
+        ::ViewT<::StrictEntityContext, ::RidingHeightComponent const>            ridingHeightView,
+        ::ViewT<::StrictEntityContext, ::AdultRidingHeightOffsetComponent const> adultRidingHeightOffsetView
+    );
     // NOLINTEND
-
 };

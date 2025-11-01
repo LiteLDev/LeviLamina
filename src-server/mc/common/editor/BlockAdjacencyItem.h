@@ -16,7 +16,6 @@ public:
     BlockAdjacencyItem& operator=(BlockAdjacencyItem const&);
     BlockAdjacencyItem(BlockAdjacencyItem const&);
     BlockAdjacencyItem();
-
 };
 
-}
+} // namespace Editor

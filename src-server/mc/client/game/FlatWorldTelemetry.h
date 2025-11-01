@@ -15,4 +15,4 @@ MCNAPI ::Json::Value toFlatWorldTelemetryOptions(::Json::Value const& flatWorldO
 MCNAPI uint64 toFlatWorldTelemetryOptionsHash(::Json::Value const& flatWorldTelemetryOptions);
 // NOLINTEND
 
-}
+} // namespace FlatWorldTelemetry

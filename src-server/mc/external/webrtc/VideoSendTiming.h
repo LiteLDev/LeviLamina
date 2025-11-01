@@ -13,12 +13,12 @@ struct VideoSendTiming {
 public:
     // VideoSendTiming inner types define
     enum class TimingFrameFlags : uchar {
-        KNotTriggered = 0,
+        KNotTriggered     = 0,
         KTriggeredByTimer = 1,
-        KTriggeredBySize = 2,
-        KInvalid = 255,
+        KTriggeredBySize  = 2,
+        KInvalid          = 255,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -44,7 +44,6 @@ public:
 
     MCNAPI static ushort GetDeltaCappedMs(int64 base_ms, int64 time_ms);
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

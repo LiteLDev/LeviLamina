@@ -7,7 +7,6 @@
 
 namespace mce::framebuilder {
 
-struct ShadowParameters : public ::mce::framebuilder::ShadowParametersImpl<1, 21, 60> {
-};
+struct ShadowParameters : public ::mce::framebuilder::ShadowParametersImpl<1, 21, 60> {};
 
-}
+} // namespace mce::framebuilder

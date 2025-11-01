@@ -35,4 +35,4 @@ MCNAPI void bindStructurePayloadTypes(::cereal::ReflectionCtx& ctx);
 MCNAPI void bindThumbnailCachePayloadTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-}
+} // namespace Editor::Network

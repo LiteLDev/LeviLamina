@@ -4,7 +4,6 @@
 
 namespace RopeDetails {
 
-struct AABBPred {
-};
+struct AABBPred {};
 
-}
+} // namespace RopeDetails

@@ -13,4 +13,4 @@ namespace FlatteningUtils::Sponge {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::Sponge

@@ -8,7 +8,7 @@ public:
     // clang-format off
     struct Expressions;
     // clang-format on
-    
+
     // ActorSkeletalAnimation inner types define
     struct Expressions {
     public:
@@ -19,22 +19,21 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkde8778;
         ::ll::UntypedStorage<8, 8> mUnk7c3a25;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Expressions& operator=(Expressions const&);
         Expressions(Expressions const&);
         Expressions();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnkb8cb8b;
-    ::ll::UntypedStorage<4, 4> mUnk195089;
-    ::ll::UntypedStorage<4, 4> mUnk9e60dd;
-    ::ll::UntypedStorage<1, 1> mUnk1a1b73;
+    ::ll::UntypedStorage<4, 4>  mUnk195089;
+    ::ll::UntypedStorage<4, 4>  mUnk9e60dd;
+    ::ll::UntypedStorage<1, 1>  mUnk1a1b73;
     ::ll::UntypedStorage<8, 16> mUnk5f9b7c;
     ::ll::UntypedStorage<8, 16> mUnkeb2e2d;
     ::ll::UntypedStorage<8, 16> mUnk3fe41b;
@@ -73,5 +72,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

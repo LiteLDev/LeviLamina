@@ -20,7 +20,11 @@ MCNAPI ::ScriptRuntimeType GetRuntimeType(::std::string const& runtimeName);
 
 MCNAPI ::ScriptRuntimeType GetRuntimeTypeFromFileExtension(::std::string const& fileExt);
 
-MCNAPI ::std::string JavaScriptModuleNameNormalizer(::std::string_view baseName, ::std::string const& moduleName, ::std::vector<::std::string> const& knownModuleNames);
+MCNAPI ::std::string JavaScriptModuleNameNormalizer(
+    ::std::string_view                  baseName,
+    ::std::string const&                moduleName,
+    ::std::vector<::std::string> const& knownModuleNames
+);
 
 MCNAPI ::std::string SanitizeRuntimeName(::std::string const& runtimeName);
 
@@ -28,7 +32,8 @@ MCNAPI ::Scripting::Version SemVersionToScriptVer(::SemVersion const& semVer);
 
 MCNAPI ::std::vector<::std::string> ValidatePlugin(::ScriptPlugin const& plugin);
 
-MCNAPI ::std::string_view VersionSelectorToPreReleaseTag(::SharedTypes::v3_0_0::PackManifestDefinition::VersionSelectType versionSelector);
+MCNAPI ::std::string_view
+VersionSelectorToPreReleaseTag(::SharedTypes::v3_0_0::PackManifestDefinition::VersionSelectType versionSelector);
 // NOLINTEND
 
 // static variables
@@ -44,4 +49,4 @@ MCNAPI ::std::string const& JAVA_SCRIPT_RUNTIME_IDENTIFIER_V2();
 MCNAPI ::std::string const& JAVA_SCRIPT_RUNTIME_NAME();
 // NOLINTEND
 
-}
+} // namespace ScriptPluginUtils

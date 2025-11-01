@@ -11,9 +11,8 @@ struct SetActorMotionPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
-    ::ll::TypedStorage<4, 12, ::Vec3> mMotion;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>  mRuntimeId;
+    ::ll::TypedStorage<4, 12, ::Vec3>           mMotion;
     ::ll::TypedStorage<8, 8, ::PlayerInputTick> mTick;
     // NOLINTEND
-
 };

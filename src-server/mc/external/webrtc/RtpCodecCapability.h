@@ -11,7 +11,7 @@ struct RtpCodecCapability : public ::webrtc::RtpCodec {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk5fda99;
+    ::ll::UntypedStorage<4, 8>  mUnk5fda99;
     ::ll::UntypedStorage<8, 48> mUnk490082;
     // NOLINTEND
 
@@ -53,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

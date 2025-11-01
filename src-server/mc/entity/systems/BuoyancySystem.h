@@ -22,11 +22,25 @@ struct StateVectorComponent;
 namespace BuoyancySystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void checkAndAddFloatRequest(::StrictEntityContext const& entity, ::StateVectorComponent const& stateVectorComponent, ::BuoyancyComponent& buoyancyComponent, ::EntityModifier<::BuoyancyFloatRequestComponent>& mod, ::IConstBlockSource const& region);
+MCNAPI void checkAndAddFloatRequest(
+    ::StrictEntityContext const&                       entity,
+    ::StateVectorComponent const&                      stateVectorComponent,
+    ::BuoyancyComponent&                               buoyancyComponent,
+    ::EntityModifier<::BuoyancyFloatRequestComponent>& mod,
+    ::IConstBlockSource const&                         region
+);
 
 MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 
-MCNAPI void tickBuoyancyFloatSystem(::ViewT<::StrictEntityContext, ::BuoyancyComponent, ::BuoyancyFloatRequestComponent, ::StateVectorComponent, ::ActorDataFlagComponent> view, ::OptionalGlobal<::BaseGameVersionComponent const> baseGameVersion);
+MCNAPI void tickBuoyancyFloatSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::BuoyancyComponent,
+        ::BuoyancyFloatRequestComponent,
+        ::StateVectorComponent,
+        ::ActorDataFlagComponent>                      view,
+    ::OptionalGlobal<::BaseGameVersionComponent const> baseGameVersion
+);
 // NOLINTEND
 
-}
+} // namespace BuoyancySystem

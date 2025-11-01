@@ -12,7 +12,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 48, ::HashedString> mName;
-    ::ll::TypedStorage<8, 80, ::std::variant<::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle, ::cereal::DynamicValue>> mData;
+    ::ll::TypedStorage<
+        8,
+        80,
+        ::std::variant<::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle, ::cereal::DynamicValue>>
+        mData;
     // NOLINTEND
 
 public:
@@ -35,5 +39,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

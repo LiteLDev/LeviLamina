@@ -23,17 +23,31 @@ struct TickingSystemWithInfo;
 namespace ServerPlayerInputSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickPlayerMovement(::StrictEntityContext& entity, ::ServerPlayerMovementComponent& serverPlayerMovement, ::EntityModifier<::ServerPlayerCurrentMovementComponent, ::ServerPlayerInventoryTransactionComponent, ::ServerPlayerInteractComponent> modifier);
+MCAPI void _tickPlayerMovement(
+    ::StrictEntityContext&           entity,
+    ::ServerPlayerMovementComponent& serverPlayerMovement,
+    ::EntityModifier<
+        ::ServerPlayerCurrentMovementComponent,
+        ::ServerPlayerInventoryTransactionComponent,
+        ::ServerPlayerInteractComponent> modifier
+);
 
-MCAPI void _tickServerPlayerInputSystem(::ViewT<::StrictEntityContext, ::ActorMovementTickNeededComponent const, ::ServerPlayerMovementComponent> view, ::EntityModifier<::ServerPlayerCurrentMovementComponent, ::ServerPlayerInventoryTransactionComponent, ::ServerPlayerInteractComponent> modifier);
+MCAPI void _tickServerPlayerInputSystem(
+    ::ViewT<::StrictEntityContext, ::ActorMovementTickNeededComponent const, ::ServerPlayerMovementComponent> view,
+    ::EntityModifier<
+        ::ServerPlayerCurrentMovementComponent,
+        ::ServerPlayerInventoryTransactionComponent,
+        ::ServerPlayerInteractComponent> modifier
+);
 
 MCAPI ::TickingSystemWithInfo create();
 
 MCAPI bool onInteractPacket(::ServerPlayerMovementComponent& component, ::InteractPacket const& packet);
 
-MCAPI bool onInventoryTransactionPacket(::ServerPlayerMovementComponent& component, ::std::shared_ptr<::InventoryPacket> packet);
+MCAPI bool
+onInventoryTransactionPacket(::ServerPlayerMovementComponent& component, ::std::shared_ptr<::InventoryPacket> packet);
 
 MCAPI bool onPlayerAuthInputPacket(::ServerPlayerMovementComponent& component, ::PlayerAuthInputPacket const& packet);
 // NOLINTEND
 
-}
+} // namespace ServerPlayerInputSystem

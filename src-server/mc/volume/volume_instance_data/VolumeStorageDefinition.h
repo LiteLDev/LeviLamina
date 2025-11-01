@@ -12,7 +12,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkd5307d;
     ::ll::UntypedStorage<4, 12> mUnk531db0;
     ::ll::UntypedStorage<4, 12> mUnk71dbde;
-    ::ll::UntypedStorage<4, 4> mUnk5328d3;
+    ::ll::UntypedStorage<4, 4>  mUnk5328d3;
     // NOLINTEND
 
 public:
@@ -20,7 +20,6 @@ public:
     VolumeStorageDefinition& operator=(VolumeStorageDefinition const&);
     VolumeStorageDefinition(VolumeStorageDefinition const&);
     VolumeStorageDefinition();
-
 };
 
-}
+} // namespace VolumeInstanceData

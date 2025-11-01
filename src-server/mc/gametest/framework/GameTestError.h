@@ -18,7 +18,7 @@ struct GameTestError : public ::Scripting::BaseError {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7154fb;
+    ::ll::UntypedStorage<4, 4>  mUnk7154fb;
     ::ll::UntypedStorage<8, 24> mUnka9c735;
     ::ll::UntypedStorage<4, 32> mUnk5e1f8c;
     // NOLINTEND
@@ -37,9 +37,18 @@ public:
 
     MCNAPI GameTestError(::gametest::GameTestErrorType type_, ::std::string const& message_);
 
-    MCNAPI GameTestError(::gametest::GameTestErrorType type_, ::std::string const& message_, ::std::vector<::std::string> params_);
+    MCNAPI GameTestError(
+        ::gametest::GameTestErrorType type_,
+        ::std::string const&          message_,
+        ::std::vector<::std::string>  params_
+    );
 
-    MCNAPI GameTestError(::gametest::GameTestErrorType type_, ::std::string const& message_, ::std::vector<::std::string> params_, ::std::optional<::gametest::GameTestErrorContext> context_);
+    MCNAPI GameTestError(
+        ::gametest::GameTestErrorType                     type_,
+        ::std::string const&                              message_,
+        ::std::vector<::std::string>                      params_,
+        ::std::optional<::gametest::GameTestErrorContext> context_
+    );
 
     MCNAPI ~GameTestError();
     // NOLINTEND
@@ -59,9 +68,15 @@ public:
 
     MCNAPI void* $ctor(::gametest::GameTestErrorType type_, ::std::string const& message_);
 
-    MCNAPI void* $ctor(::gametest::GameTestErrorType type_, ::std::string const& message_, ::std::vector<::std::string> params_);
+    MCNAPI void*
+    $ctor(::gametest::GameTestErrorType type_, ::std::string const& message_, ::std::vector<::std::string> params_);
 
-    MCNAPI void* $ctor(::gametest::GameTestErrorType type_, ::std::string const& message_, ::std::vector<::std::string> params_, ::std::optional<::gametest::GameTestErrorContext> context_);
+    MCNAPI void* $ctor(
+        ::gametest::GameTestErrorType                     type_,
+        ::std::string const&                              message_,
+        ::std::vector<::std::string>                      params_,
+        ::std::optional<::gametest::GameTestErrorContext> context_
+    );
     // NOLINTEND
 
 public:
@@ -69,7 +84,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace gametest

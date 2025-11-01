@@ -9,7 +9,7 @@ struct DebugInfoPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mData;
+    ::ll::TypedStorage<8, 32, ::std::string>  mData;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mActorId;
     // NOLINTEND
 
@@ -32,5 +32,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

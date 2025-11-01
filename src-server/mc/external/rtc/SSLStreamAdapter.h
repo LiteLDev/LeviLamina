@@ -60,7 +60,8 @@ public:
     virtual int StartSSL() = 0;
 
     // vIndex: 13
-    virtual bool SetPeerCertificateDigest(::std::string_view, uchar const*, uint64, ::rtc::SSLPeerCertificateDigestError*) = 0;
+    virtual bool
+    SetPeerCertificateDigest(::std::string_view, uchar const*, uint64, ::rtc::SSLPeerCertificateDigestError*) = 0;
 
     // vIndex: 14
     virtual ::std::unique_ptr<::rtc::SSLCertChain> GetPeerSSLCertChain() const = 0;
@@ -75,7 +76,14 @@ public:
     virtual bool GetSslVersionBytes(int*) const = 0;
 
     // vIndex: 18
-    virtual bool ExportKeyingMaterial(::std::string_view label, uchar const* context, uint64 context_len, bool use_context, uchar* result, uint64 result_len);
+    virtual bool ExportKeyingMaterial(
+        ::std::string_view label,
+        uchar const*       context,
+        uint64             context_len,
+        bool               use_context,
+        uchar*             result,
+        uint64             result_len
+    );
 
     // vIndex: 19
     virtual ushort GetPeerSignatureAlgorithm() const = 0;
@@ -93,7 +101,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::rtc::SSLStreamAdapter> Create(::std::unique_ptr<::rtc::StreamInterface> stream, ::absl::AnyInvocable<void(::rtc::SSLHandshakeError)> handshake_error);
+    MCNAPI static ::std::unique_ptr<::rtc::SSLStreamAdapter> Create(
+        ::std::unique_ptr<::rtc::StreamInterface>            stream,
+        ::absl::AnyInvocable<void(::rtc::SSLHandshakeError)> handshake_error
+    );
 
     MCNAPI static ::std::string SslCipherSuiteToName(int cipher_suite);
     // NOLINTEND
@@ -109,7 +120,14 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $GetSslCipherSuite(int* cipher_suite);
 
-    MCNAPI bool $ExportKeyingMaterial(::std::string_view label, uchar const* context, uint64 context_len, bool use_context, uchar* result, uint64 result_len);
+    MCNAPI bool $ExportKeyingMaterial(
+        ::std::string_view label,
+        uchar const*       context,
+        uint64             context_len,
+        bool               use_context,
+        uchar*             result,
+        uint64             result_len
+    );
 
     MCNAPI bool $SetDtlsSrtpCryptoSuites(::std::vector<int> const& crypto_suites);
 
@@ -121,7 +139,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

@@ -24,9 +24,24 @@ namespace UpdateHorizontalPoseSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void tick(::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Include<::PlayerComponent, ::ActorMovementTickNeededComponent>> tickNeededView, ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Include<::ShouldUpdateBoundingBoxRequestComponent>, ::Exclude<::ActorMovementTickNeededComponent>> updateBBView, ::EntityModifier<::IsHorizontalPoseFlagComponent> modifier);
+MCNAPI void tick(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::ActorDataFlagComponent const,
+        ::Include<::PlayerComponent, ::ActorMovementTickNeededComponent>> tickNeededView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::ActorDataFlagComponent const,
+        ::Include<::ShouldUpdateBoundingBoxRequestComponent>,
+        ::Exclude<::ActorMovementTickNeededComponent>> updateBBView,
+    ::EntityModifier<::IsHorizontalPoseFlagComponent>  modifier
+);
 
-MCNAPI void update(::StrictEntityContext const& entity, ::ActorDataFlagComponent const& flags, ::EntityModifier<::IsHorizontalPoseFlagComponent>& modifier);
+MCNAPI void update(
+    ::StrictEntityContext const&                       entity,
+    ::ActorDataFlagComponent const&                    flags,
+    ::EntityModifier<::IsHorizontalPoseFlagComponent>& modifier
+);
 // NOLINTEND
 
-}
+} // namespace UpdateHorizontalPoseSystem

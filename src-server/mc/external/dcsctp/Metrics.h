@@ -30,7 +30,6 @@ public:
     Metrics& operator=(Metrics const&);
     Metrics(Metrics const&);
     Metrics();
-
 };
 
-}
+} // namespace dcsctp

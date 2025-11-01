@@ -30,15 +30,53 @@ struct SynchedActorDataComponent;
 namespace FireworksMovementSystems {
 // functions
 // NOLINTBEGIN
-MCNAPI void fireworksRocketMoveClient(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::FireworksRocketFlagComponent>, ::SynchedActorDataComponent const, ::StateVectorComponent, ::ActorRotationComponent> view, ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> stateVectors, ::ViewT<::StrictEntityContext, ::DimensionTypeComponent const> dimensions, ::EntityModifier<::ActorSetPositionRequestComponent> modifier, ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent> factoryComponent);
+MCNAPI void fireworksRocketMoveClient(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::FireworksRocketFlagComponent>,
+        ::SynchedActorDataComponent const,
+        ::StateVectorComponent,
+        ::ActorRotationComponent>                                                               view,
+    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> stateVectors,
+    ::ViewT<::StrictEntityContext, ::DimensionTypeComponent const>                              dimensions,
+    ::EntityModifier<::ActorSetPositionRequestComponent>                                        modifier,
+    ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent>                               factoryComponent
+);
 
-MCNAPI ::FireworksMovementSystems::RocketAttached fireworksRocketMoveClientEntity(::StrictEntityContext const& rocket, ::SynchedActorDataComponent const& rocketData, ::StateVectorComponent& rocketStateVector, ::ActorRotationComponent& rocketRotation, ::LocalSpatialEntityFetcher& fetcher, ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> const& stateVectors, ::EntityModifier<::ActorSetPositionRequestComponent> modifier);
+MCNAPI ::FireworksMovementSystems::RocketAttached fireworksRocketMoveClientEntity(
+    ::StrictEntityContext const&       rocket,
+    ::SynchedActorDataComponent const& rocketData,
+    ::StateVectorComponent&            rocketStateVector,
+    ::ActorRotationComponent&          rocketRotation,
+    ::LocalSpatialEntityFetcher&       fetcher,
+    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> const& stateVectors,
+    ::EntityModifier<::ActorSetPositionRequestComponent>                                               modifier
+);
 
-MCNAPI void fireworksRocketMoveServer(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::FireworksRocketFlagComponent>, ::SynchedActorDataComponent const, ::StateVectorComponent, ::ActorRotationComponent> view, ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> stateVectors, ::ViewT<::StrictEntityContext, ::DimensionTypeComponent const> dimensions, ::EntityModifier<::ActorSetPositionRequestComponent> clientModifier, ::EntityModifier<::MoveRequestComponent> serverModifier, ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent> factoryComponent);
+MCNAPI void fireworksRocketMoveServer(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::FireworksRocketFlagComponent>,
+        ::SynchedActorDataComponent const,
+        ::StateVectorComponent,
+        ::ActorRotationComponent>                                                               view,
+    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> stateVectors,
+    ::ViewT<::StrictEntityContext, ::DimensionTypeComponent const>                              dimensions,
+    ::EntityModifier<::ActorSetPositionRequestComponent>                                        clientModifier,
+    ::EntityModifier<::MoveRequestComponent>                                                    serverModifier,
+    ::OptionalGlobal<::LocalSpatialEntityFetcherFactoryComponent>                               factoryComponent
+);
 
 MCNAPI void registerRocketMovementSystems(::EntitySystems& systemRegistry, bool isClientSide);
 
-MCNAPI void simulateAttachedRocket(::StrictEntityContext const& rocket, ::ActorUniqueID const& attachedID, ::StateVectorComponent& rocketStateVector, ::LocalSpatialEntityFetcher& fetcher, ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> const& stateVectors, ::EntityModifier<::ActorSetPositionRequestComponent> modifier);
+MCNAPI void simulateAttachedRocket(
+    ::StrictEntityContext const& rocket,
+    ::ActorUniqueID const&       attachedID,
+    ::StateVectorComponent&      rocketStateVector,
+    ::LocalSpatialEntityFetcher& fetcher,
+    ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::StateVectorComponent const> const& stateVectors,
+    ::EntityModifier<::ActorSetPositionRequestComponent>                                               modifier
+);
 // NOLINTEND
 
-}
+} // namespace FireworksMovementSystems

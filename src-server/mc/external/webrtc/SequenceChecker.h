@@ -14,7 +14,6 @@ public:
         KDetached = 0,
         KAttached = 1,
     };
-    
 };
 
-}
+} // namespace webrtc

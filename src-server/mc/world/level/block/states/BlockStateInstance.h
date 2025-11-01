@@ -18,12 +18,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint> mEndBit;
-    ::ll::TypedStorage<4, 4, uint> mNumBits;
-    ::ll::TypedStorage<4, 4, uint> mVariationCount;
-    ::ll::TypedStorage<4, 4, uint> mMask;
-    ::ll::TypedStorage<1, 1, bool> mInitialized;
+    ::ll::TypedStorage<4, 4, uint>                mEndBit;
+    ::ll::TypedStorage<4, 4, uint>                mNumBits;
+    ::ll::TypedStorage<4, 4, uint>                mVariationCount;
+    ::ll::TypedStorage<4, 4, uint>                mMask;
+    ::ll::TypedStorage<1, 1, bool>                mInitialized;
     ::ll::TypedStorage<8, 8, ::BlockState const*> mState;
     // NOLINTEND
-
 };

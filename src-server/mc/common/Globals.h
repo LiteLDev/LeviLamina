@@ -134,7 +134,8 @@ namespace mce { class UUID; }
 // NOLINTBEGIN
 MCAPI void BedrockLogOut(uint, char const*, ...);
 
-MCAPI ::CreativeItemCategory CreativeItemCategoryComprehensiveToRuntime(::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory category);
+MCAPI ::CreativeItemCategory
+CreativeItemCategoryComprehensiveToRuntime(::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory category);
 
 MCAPI ::CreativeItemCategory CreativeItemCategoryFromString(::std::string const& str);
 
@@ -174,7 +175,10 @@ MCAPI ::MaterialType MaterialTypeFromString(::std::string const& materialType);
 
 MCAPI bool Mock_Internal_HCHttpCallPerformAsync(::HC_CALL* originalCall);
 
-MCAPI long Mock_Internal_ReadRequestBodyIntoMemory(::HC_CALL* originalCall, ::std::vector<uchar, ::http_stl_allocator<uchar>>* bodyBytes);
+MCAPI long Mock_Internal_ReadRequestBodyIntoMemory(
+    ::HC_CALL*                                         originalCall,
+    ::std::vector<uchar, ::http_stl_allocator<uchar>>* bodyBytes
+);
 
 MCAPI ::std::optional<::NetherNet::LogSeverity> NetherNetLogSeverityFromString(::std::string const& str);
 
@@ -182,7 +186,11 @@ MCAPI ::PackType PackTypeFromString(::std::string const& value);
 
 MCAPI void PlatformBedrockLogOut(uint _priority, char const* buf, uint64 nullTerminatorPos);
 
-MCAPI void PushCircularReference(::std::unordered_map<::BlockPos, ::RedstoneTorchCapacitor*>& relatedTorches, ::BlockPos const& pos, ::std::queue<::RedstoneTorchCapacitor*, ::std::deque<::RedstoneTorchCapacitor*>>& list);
+MCAPI void PushCircularReference(
+    ::std::unordered_map<::BlockPos, ::RedstoneTorchCapacitor*>&                      relatedTorches,
+    ::BlockPos const&                                                                 pos,
+    ::std::queue<::RedstoneTorchCapacitor*, ::std::deque<::RedstoneTorchCapacitor*>>& list
+);
 
 MCAPI ::std::string StringFromMaterialType(::MaterialType const& materialType);
 
@@ -190,9 +198,23 @@ MCAPI ::std::string const& StringFromPackType(::PackType value);
 
 MCAPI ::SharedTypes::Legacy::UseAnimation UseAnimationFromString(::std::string const& str);
 
-MCAPI void _addEnvironmentSubfilter(::std::string const& legacyPredicate, ::FilterGroup::CollectionType type, ::std::string const& filterName, ::SharedTypes::Legacy::FilterSubject subject, ::FilterOperator op, ::ActorFilterGroup::Processing process);
+MCAPI void _addEnvironmentSubfilter(
+    ::std::string const&                 legacyPredicate,
+    ::FilterGroup::CollectionType        type,
+    ::std::string const&                 filterName,
+    ::SharedTypes::Legacy::FilterSubject subject,
+    ::FilterOperator                     op,
+    ::ActorFilterGroup::Processing       process
+);
 
-MCAPI void _addLegacyFilterDefinition(::std::string const& legacyPredicate, ::FilterGroup::CollectionType type, ::std::string const& filterName, ::SharedTypes::Legacy::FilterSubject subject, ::FilterOperator op, ::ActorFilterGroup::Processing process);
+MCAPI void _addLegacyFilterDefinition(
+    ::std::string const&                 legacyPredicate,
+    ::FilterGroup::CollectionType        type,
+    ::std::string const&                 filterName,
+    ::SharedTypes::Legacy::FilterSubject subject,
+    ::FilterOperator                     op,
+    ::ActorFilterGroup::Processing       process
+);
 
 MCAPI void _checkTickedActorsForOutOfWorld(::ActorOwnerComponent& actorOwnerComponent);
 
@@ -204,19 +226,30 @@ MCAPI ::ScatterParamsMolangVariableIndices& _getScatterParamsMolangVariableIndic
 
 MCAPI ::Block const* _loadLayerBlock(::Json::Value const& layer);
 
-MCAPI ::std::optional<::BlockPos> _locateBiome(::std::function<bool(::Biome const&)> const& predicate, ::BiomeArea const& biomeArea, ::BlockPos worldCenter, ::BoundingBox worldBounds, uint resolution);
+MCAPI ::std::optional<::BlockPos> _locateBiome(
+    ::std::function<bool(::Biome const&)> const& predicate,
+    ::BiomeArea const&                           biomeArea,
+    ::BlockPos                                   worldCenter,
+    ::BoundingBox                                worldBounds,
+    uint                                         resolution
+);
 
-MCAPI ::std::optional<::std::vector<::BlockLayer>> _parseLayersV3(::Json::Value const& root, ::LevelData const& levelData);
+MCAPI ::std::optional<::std::vector<::BlockLayer>>
+_parseLayersV3(::Json::Value const& root, ::LevelData const& levelData);
 
-MCAPI ::std::optional<::std::vector<::BlockLayer>> _parseLayersV4(::Json::Value const& root, ::LevelData const& levelData);
+MCAPI ::std::optional<::std::vector<::BlockLayer>>
+_parseLayersV4(::Json::Value const& root, ::LevelData const& levelData);
 
-MCAPI ::std::optional<::std::vector<::BlockLayer>> _parseLayersV5(::Json::Value const& root, ::LevelData const& levelData);
+MCAPI ::std::optional<::std::vector<::BlockLayer>>
+_parseLayersV5(::Json::Value const& root, ::LevelData const& levelData);
 
-MCAPI ::std::optional<::std::vector<::BlockLayer>> _parseLayersV6(::Json::Value const& root, ::LevelData const& levelData, ::WorldVersion worldVersion);
+MCAPI ::std::optional<::std::vector<::BlockLayer>>
+_parseLayersV6(::Json::Value const& root, ::LevelData const& levelData, ::WorldVersion worldVersion);
 
 MCAPI ::std::unique_ptr<::ListTag> _saveBlockList(::std::vector<::BlockType const*> const& blockList);
 
-MCAPI void _tickBribeableComponent(::ActorOwnerComponent& actorOwnerComponent, ::BribeableComponent& bribeableComponent);
+MCAPI void
+_tickBribeableComponent(::ActorOwnerComponent& actorOwnerComponent, ::BribeableComponent& bribeableComponent);
 
 MCAPI void bindCreativeItemCategoryType(::cereal::ReflectionCtx& ctx);
 
@@ -224,11 +257,24 @@ MCAPI void bindMaterialType(::cereal::ReflectionCtx& ctx);
 
 MCAPI char const* blockSlotToString(::BlockSlot slot);
 
-MCAPI ::KeyOrNameResult buildActorDisplayName(::ActorType actorType, ::std::string const& nameTag, ::Actor const* actor);
+MCAPI ::KeyOrNameResult
+buildActorDisplayName(::ActorType actorType, ::std::string const& nameTag, ::Actor const* actor);
 
-MCAPI void checkComponent(::CircuitSceneGraph& graph, ::CircuitComponentList& powerAssociationMap, ::CircuitComponentType typeId, uchar id, ::BlockPos const& otherPos, ::CircuitTrackingInfo& info, ::std::queue<::CircuitTrackingInfo, ::std::deque<::CircuitTrackingInfo>>& positions, bool goingDown);
+MCAPI void checkComponent(
+    ::CircuitSceneGraph&                                                      graph,
+    ::CircuitComponentList&                                                   powerAssociationMap,
+    ::CircuitComponentType                                                    typeId,
+    uchar                                                                     id,
+    ::BlockPos const&                                                         otherPos,
+    ::CircuitTrackingInfo&                                                    info,
+    ::std::queue<::CircuitTrackingInfo, ::std::deque<::CircuitTrackingInfo>>& positions,
+    bool                                                                      goingDown
+);
 
-MCAPI bool checkTypeFilter(::ActorDefinitionIdentifier const& entityIdentifier, ::ActorDefinitionIdentifier const& identifierFilter);
+MCAPI bool checkTypeFilter(
+    ::ActorDefinitionIdentifier const& entityIdentifier,
+    ::ActorDefinitionIdentifier const& identifierFilter
+);
 
 MCAPI void compoundBlockVolumeActionBindType(::cereal::ReflectionCtx& ctx);
 
@@ -236,9 +282,14 @@ MCAPI void compoundBlockVolumePositionRelativityBindType(::cereal::ReflectionCtx
 
 MCAPI ::TorchFacing convertTorchDirection(::Facing::Name facing);
 
-MCAPI ::std::unique_ptr<::RakNet::RakPeerInterface, void(*) (::RakNet::RakPeerInterface*)> createUniqueRakPeer(::RakNet::RakPeerConfiguration const& config);
+MCAPI ::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>
+createUniqueRakPeer(::RakNet::RakPeerConfiguration const& config);
 
-MCAPI ::Bedrock::NonOwnerPointer<::WorkerPool> createWorkerPool(::std::string_view name, ::WorkerConfiguration const& config, ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>& destHandle);
+MCAPI ::Bedrock::NonOwnerPointer<::WorkerPool> createWorkerPool(
+    ::std::string_view                                       name,
+    ::WorkerConfiguration const&                             config,
+    ::std::shared_ptr<::Bedrock::WorkerPoolHandleInterface>& destHandle
+);
 
 MCAPI ::ActorCategory entityCategoriesFromString(::std::string const& str);
 
@@ -262,15 +313,35 @@ MCAPI int fclose(::Core::File& file);
 
 MCAPI ::std::optional<::FlatWorldPresetID> flatWorldPresetIDFromString(::std::string const& str);
 
-MCAPI void forEachEntityType(::std::function<bool(::ActorType, ::std::string const&)> callback, ::ActorTypeNamespaceRules namespaceRule);
+MCAPI void forEachEntityType(
+    ::std::function<bool(::ActorType, ::std::string const&)> callback,
+    ::ActorTypeNamespaceRules                                namespaceRule
+);
 
 MCAPI uint64 fread(void* buffer, uint64 size, uint64 count, ::Core::File& file);
 
-MCAPI ::std::tuple<::std::string, ::std::unique_ptr<::StructurePoolElement>> from(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::EmptyPoolElement const&, ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager, ::JigsawStructureRegistry&, ::FeatureRegistry const&);
+MCAPI ::std::tuple<::std::string, ::std::unique_ptr<::StructurePoolElement>> from(
+    ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::EmptyPoolElement const&,
+    ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager,
+    ::JigsawStructureRegistry&,
+    ::FeatureRegistry const&
+);
 
-MCAPI ::std::tuple<::std::string, ::std::unique_ptr<::StructurePoolElement>> from(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const& element, ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager, ::JigsawStructureRegistry& registry, ::FeatureRegistry const&);
+MCAPI ::std::tuple<::std::string, ::std::unique_ptr<::StructurePoolElement>> from(
+    ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const& element,
+    ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager>                     structureManager,
+    ::JigsawStructureRegistry&                                                     registry,
+    ::FeatureRegistry const&
+);
 
-MCAPI ::std::tuple<::std::string, ::std::unique_ptr<::StructurePoolElement>> from(::std::variant<::SharedTypes::v1_21_20::JigsawStructureTemplatePool::EmptyPoolElement, ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement> const& element, ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structures, ::JigsawStructureRegistry& registry, ::FeatureRegistry const& features);
+MCAPI ::std::tuple<::std::string, ::std::unique_ptr<::StructurePoolElement>> from(
+    ::std::variant<
+        ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::EmptyPoolElement,
+        ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement> const& element,
+    ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager>                          structures,
+    ::JigsawStructureRegistry&                                                          registry,
+    ::FeatureRegistry const&                                                            features
+);
 
 MCAPI int fseek(::Core::File& file, int64 offset, int origin);
 
@@ -296,7 +367,11 @@ MCAPI ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeEvent
 
 MCAPI ::std::unordered_map<int, ::std::string> const& getPackParseErrorTypeLOCMapAccess();
 
-MCAPI ::Scripting::Result<::ScriptModuleGameTest::ScriptPlayerSkinData, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptInvalidActorError> getPlayerSkin(::ScriptModuleMinecraft::ScriptPlayer const& player);
+MCAPI ::Scripting::Result<
+    ::ScriptModuleGameTest::ScriptPlayerSkinData,
+    ::Scripting::InvalidArgumentError,
+    ::ScriptModuleMinecraft::ScriptInvalidActorError>
+getPlayerSkin(::ScriptModuleMinecraft::ScriptPlayer const& player);
 
 MCAPI ::AllWorkerConfigurations getWorkerConfiguration(uint highPowerCores, uint totalCores);
 
@@ -314,15 +389,28 @@ MCAPI ::mce::UUID makeGuestUUID(::mce::UUID const& hostUuid, ::SubClientId subcl
 
 MCAPI ::mce::UUID makePlayerUUIDForXUID(::std::string const& xuid);
 
-MCAPI ::std::shared_ptr<::Bedrock::Services::IDiscoveryService> makeServerDiscoveryService(::Bedrock::Services::DiscoveryConfig const& discoveryConfig);
+MCAPI ::std::shared_ptr<::Bedrock::Services::IDiscoveryService>
+makeServerDiscoveryService(::Bedrock::Services::DiscoveryConfig const& discoveryConfig);
 
-MCAPI bool operator!=(::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs, ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs);
+MCAPI bool operator!=(
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
+);
 
-MCAPI bool operator<(::SemVersionBase<::std::string_view> const& lhs, ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs);
+MCAPI bool operator<(
+    ::SemVersionBase<::std::string_view> const&               lhs,
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
+);
 
-MCAPI bool operator<(::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs, ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs);
+MCAPI bool operator<(
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
+);
 
-MCAPI bool operator<(::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs, ::SemVersionBase<::std::string_view> const& rhs);
+MCAPI bool operator<(
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
+    ::SemVersionBase<::std::string_view> const&               rhs
+);
 
 MCAPI bool operator==(::DefinitionTrigger const& a, ::DefinitionTrigger const& b);
 
@@ -330,15 +418,35 @@ MCAPI bool operator==(::ExpressionNode const& lhs, ::ExpressionNode const& rhs);
 
 MCAPI bool operator==(::BlockMaterialInstance const& lhs, ::BlockMaterialInstance const& rhs);
 
-MCAPI bool operator==(::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs, ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs);
+MCAPI bool operator==(
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& rhs
+);
 
-MCAPI bool operator==(::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs, ::SemVersionBase<::std::string_view> const& rhs);
+MCAPI bool operator==(
+    ::SemVersionBase<::Bedrock::StaticOptimizedString> const& lhs,
+    ::SemVersionBase<::std::string_view> const&               rhs
+);
 
 MCAPI ::BlockProperty operator|(::BlockProperty lhs, ::BlockProperty b);
 
-MCAPI void renderMapChunk(::Dimension& dimension, ::buffer_span_mut<uint> pixels, uint scale, ::BlockPos const& origin, ::MapItemSavedData::ChunkBounds pixelsBB);
+MCAPI void renderMapChunk(
+    ::Dimension&                    dimension,
+    ::buffer_span_mut<uint>         pixels,
+    uint                            scale,
+    ::BlockPos const&               origin,
+    ::MapItemSavedData::ChunkBounds pixelsBB
+);
 
-MCAPI ::Scripting::Result<::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSimulatedPlayer>, ::Scripting::EngineError> spawnSimulatedPlayer(::Scripting::WeakLifetimeScope const& scope, ::ScriptModuleMinecraft::ScriptDimensionLocation const& location, ::std::string const& name, ::GameType gameMode);
+MCAPI ::Scripting::Result<
+    ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSimulatedPlayer>,
+    ::Scripting::EngineError>
+spawnSimulatedPlayer(
+    ::Scripting::WeakLifetimeScope const&                   scope,
+    ::ScriptModuleMinecraft::ScriptDimensionLocation const& location,
+    ::std::string const&                                    name,
+    ::GameType                                              gameMode
+);
 
 MCAPI ::DiscoveryEnvironment stringToDiscoveryEnvironment(::std::string const& str);
 
@@ -365,7 +473,12 @@ MCAPI ::http_string utf8_from_utf16(wchar_t const* utf16, uint64 size);
 // NOLINTBEGIN
 MCAPI ::std::vector<::HudElement> const& ALL_HUD_ELEMENTS();
 
-MCAPI ::std::unordered_map<::glTF::Accessor::Type, ::std::string, ::AccessorTypeEnumHasher, ::std::equal_to<::glTF::Accessor::Type>> const& AccessorTypeEnumMap();
+MCAPI ::std::unordered_map<
+    ::glTF::Accessor::Type,
+    ::std::string,
+    ::AccessorTypeEnumHasher,
+    ::std::equal_to<::glTF::Accessor::Type>> const&
+AccessorTypeEnumMap();
 
 MCAPI ::HashedString const& BLAST_FURNACE_TAG();
 
@@ -385,7 +498,12 @@ MCAPI char const*& IPV4_LOOPBACK();
 
 MCAPI char const*& IPV6_LOOPBACK();
 
-MCAPI ::std::unordered_map<::glTF::Image::ImageMimeType, ::std::string, ::ImageMimeTypeEnumHasher, ::std::equal_to<::glTF::Image::ImageMimeType>> const& ImageMimeTypeEnumMap();
+MCAPI ::std::unordered_map<
+    ::glTF::Image::ImageMimeType,
+    ::std::string,
+    ::ImageMimeTypeEnumHasher,
+    ::std::equal_to<::glTF::Image::ImageMimeType>> const&
+ImageMimeTypeEnumMap();
 
 MCAPI ::MCRESULT const& MCRESULT_AllTargetsWillFail();
 
@@ -443,7 +561,12 @@ MCAPI ::MCRESULT const& MCRESULT_VersionMismatch();
 
 MCAPI ::SemVersionConstant const& MIN_ENGINE_VERSION_MINIMUM_V2();
 
-MCAPI ::std::unordered_map<::glTF::Material::AlphaMode, ::std::string, ::MaterialAlphaModeEnumHasher, ::std::equal_to<::glTF::Material::AlphaMode>> const& MaterialAlphaModeEnumMap();
+MCAPI ::std::unordered_map<
+    ::glTF::Material::AlphaMode,
+    ::std::string,
+    ::MaterialAlphaModeEnumHasher,
+    ::std::equal_to<::glTF::Material::AlphaMode>> const&
+MaterialAlphaModeEnumMap();
 
 MCAPI ::std::bitset<38> const& PLAYER_ACTION_MOVEMENT_BITSET();
 
@@ -455,11 +578,16 @@ MCAPI ::HashedString const& SMOKER_TAG();
 
 MCAPI ::HashedString const& SOUL_CAMPFIRE_TAG();
 
-MCAPI ::std::add_lvalue_reference_t<bool(*) (::AssertHandlerContext const&)> TEST_HANDLER();
+MCAPI ::std::add_lvalue_reference_t<bool (*)(::AssertHandlerContext const&)> TEST_HANDLER();
 
-MCAPI ::std::add_lvalue_reference_t<bool(*) (::AssertHandlerContext const&)> TEST_HANDLER_NO_THROW();
+MCAPI ::std::add_lvalue_reference_t<bool (*)(::AssertHandlerContext const&)> TEST_HANDLER_NO_THROW();
 
-MCAPI ::std::unordered_map<::TextProcessingEventOrigin, ::std::string, ::TextProcessingEventOriginEnumHasher, ::std::equal_to<::TextProcessingEventOrigin>> const& TextProcessingEventOriginEnumMap();
+MCAPI ::std::unordered_map<
+    ::TextProcessingEventOrigin,
+    ::std::string,
+    ::TextProcessingEventOriginEnumHasher,
+    ::std::equal_to<::TextProcessingEventOrigin>> const&
+TextProcessingEventOriginEnumMap();
 
 MCAPI ::std::array<::HashedString, 17> const& VanillaStructureFeatureTypes();
 
@@ -489,9 +617,9 @@ MCAPI ::SubChunkDelayedDeleter<::SubChunkBrightnessStorage>& gLightStorageGC();
 
 MCAPI ::std::vector<::std::string>& gPriorityFilters();
 
-MCAPI ::std::add_lvalue_reference_t<void*(*) (uint64, uint)> g_memAllocFunc();
+MCAPI ::std::add_lvalue_reference_t<void* (*)(uint64, uint)> g_memAllocFunc();
 
-MCAPI ::std::add_lvalue_reference_t<void(*) (void*, uint)> g_memFreeFunc();
+MCAPI ::std::add_lvalue_reference_t<void (*)(void*, uint)> g_memFreeFunc();
 
 MCAPI ::HCTraceImplArea& g_traceHTTPCLIENT();
 
@@ -499,13 +627,13 @@ MCAPI ::HCTraceImplArea& g_traceWEBSOCKET();
 
 MCAPI ::EducationServicesEnvironment& mCachedServicesEnvironment();
 
-MCAPI ::std::add_lvalue_reference_t<void(*) (char const*, long)> notifyOutOfMemory();
+MCAPI ::std::add_lvalue_reference_t<void (*)(char const*, long)> notifyOutOfMemory();
 
-MCAPI ::std::add_lvalue_reference_t<void(*) (void*, char const*, uint)> rakFree_Ex();
+MCAPI ::std::add_lvalue_reference_t<void (*)(void*, char const*, uint)> rakFree_Ex();
 
-MCAPI ::std::add_lvalue_reference_t<void*(*) (uint64, char const*, uint)> rakMalloc_Ex();
+MCAPI ::std::add_lvalue_reference_t<void* (*)(uint64, char const*, uint)> rakMalloc_Ex();
 
-MCAPI ::std::add_lvalue_reference_t<void*(*) (void*, uint64, char const*, uint)> rakRealloc_Ex();
+MCAPI ::std::add_lvalue_reference_t<void* (*)(void*, uint64, char const*, uint)> rakRealloc_Ex();
 
 MCAPI ::std::add_lvalue_reference_t<::DynDnsResult[]> resultTable();
 
@@ -519,4 +647,3 @@ MCAPI ::__m128i& stbir__s32_32768();
 
 MCAPI ::std::add_lvalue_reference_t<::TypeMapping[]> typeMappings();
 // NOLINTEND
-

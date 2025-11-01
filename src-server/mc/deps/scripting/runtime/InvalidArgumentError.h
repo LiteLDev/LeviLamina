@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::Scripting::InvalidArgumentErrorType> type;
-    ::ll::TypedStorage<4, 4, int> index;
+    ::ll::TypedStorage<4, 4, int>                                   index;
     // NOLINTEND
 
 public:
@@ -34,7 +34,8 @@ public:
 
     MCAPI InvalidArgumentError(::std::string const& argTypeName, int index_);
 
-    MCAPI InvalidArgumentError(::std::string const& argTypeName, ::Scripting::InvalidArgumentErrorType type_, int index_);
+    MCAPI
+    InvalidArgumentError(::std::string const& argTypeName, ::Scripting::InvalidArgumentErrorType type_, int index_);
 
     MCAPI ~InvalidArgumentError();
     // NOLINTEND
@@ -62,7 +63,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

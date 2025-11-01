@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-    ::ll::TypedStorage<4, 4, float> mMaxDistanceFromPlayer;
+    ::ll::TypedStorage<4, 4, float>               mMaxDistanceFromPlayer;
     // NOLINTEND
 
 public:
@@ -30,7 +30,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TradeWithPlayerDefinition>>& root);
+    MCAPI static void buildSchema(
+        ::std::string const&                                                                                      name,
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::TradeWithPlayerDefinition>>& root
+    );
     // NOLINTEND
 
 public:
@@ -38,5 +41,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

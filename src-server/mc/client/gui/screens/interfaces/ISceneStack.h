@@ -24,31 +24,30 @@ public:
     // clang-format off
     struct SceneElement;
     // clang-format on
-    
+
     // ISceneStack inner types define
     struct SceneElement {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnkd48a2c;
-        ::ll::UntypedStorage<1, 1> mUnk2f3afb;
+        ::ll::UntypedStorage<1, 1>  mUnk2f3afb;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         SceneElement& operator=(SceneElement const&);
         SceneElement(SceneElement const&);
         SceneElement();
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~SceneElement() = default;
         // NOLINTEND
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -74,7 +73,10 @@ public:
     virtual void unregisterPrePushSceneCallback(void*) = 0;
 
     // vIndex: 7
-    virtual void registerPushSceneCallback(void*, ::std::function<void(::std::shared_ptr<::AbstractScene>, ::std::optional<::OreUI::RouteAction>)>) = 0;
+    virtual void registerPushSceneCallback(
+        void*,
+        ::std::function<void(::std::shared_ptr<::AbstractScene>, ::std::optional<::OreUI::RouteAction>)>
+    ) = 0;
 
     // vIndex: 8
     virtual void unregisterPushSceneCallback(void*) = 0;
@@ -86,7 +88,10 @@ public:
     virtual void unregisterPrePopSceneCallback(void*) = 0;
 
     // vIndex: 11
-    virtual void registerPopSceneCallback(void*, ::std::function<void(::std::shared_ptr<::AbstractScene>, bool, ::std::optional<::OreUI::RouteAction>)>) = 0;
+    virtual void registerPopSceneCallback(
+        void*,
+        ::std::function<void(::std::shared_ptr<::AbstractScene>, bool, ::std::optional<::OreUI::RouteAction>)>
+    ) = 0;
 
     // vIndex: 12
     virtual void unregisterPopSceneCallback(void*) = 0;
@@ -101,7 +106,8 @@ public:
     virtual void forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)>, bool) const = 0;
 
     // vIndex: 16
-    virtual void forEachAlwaysAcceptInputScreen(::brstd::function_ref<void(::AbstractScene&)>, ::AbstractScene const*) = 0;
+    virtual void
+    forEachAlwaysAcceptInputScreen(::brstd::function_ref<void(::AbstractScene&)>, ::AbstractScene const*) = 0;
 
     // vIndex: 17
     virtual void forEachAlwaysAcceptInputScreenWithTop(::brstd::function_ref<void(::AbstractScene&)>) = 0;
@@ -250,5 +256,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

@@ -11,5 +11,4 @@ public:
     ::ll::TypedStorage<4, 4, uint> mRotationEditCount;
     ::ll::TypedStorage<4, 4, uint> mMirrorEditCount;
     // NOLINTEND
-
 };

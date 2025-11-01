@@ -5,5 +5,4 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 
-struct OnWakeWithOwnerDefinition : public ::ActorDefinitionTrigger {
-};
+struct OnWakeWithOwnerDefinition : public ::ActorDefinitionTrigger {};

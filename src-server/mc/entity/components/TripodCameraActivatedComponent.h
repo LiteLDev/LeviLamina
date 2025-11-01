@@ -16,7 +16,7 @@ public:
     // clang-format off
     class Definition;
     // clang-format on
-    
+
     // TripodCameraActivatedComponent inner types define
     class Definition {
     public:
@@ -24,20 +24,18 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4> mUnkfb31c2;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Definition& operator=(Definition const&);
         Definition(Definition const&);
         Definition();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mSubject;
-    ::ll::TypedStorage<4, 4, int> mCountdown;
+    ::ll::TypedStorage<4, 4, int>                         mCountdown;
     // NOLINTEND
-
 };

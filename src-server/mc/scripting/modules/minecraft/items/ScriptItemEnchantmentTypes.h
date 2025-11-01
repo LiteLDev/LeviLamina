@@ -35,7 +35,8 @@ public:
 
     MCNAPI void _generateRemainingEnchantmentTypeHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>> get(::Scripting::WeakLifetimeScope& scope, ::std::string const& enchantmentId);
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>>
+    get(::Scripting::WeakLifetimeScope& scope, ::std::string const& enchantmentId);
     // NOLINTEND
 
 public:
@@ -43,7 +44,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

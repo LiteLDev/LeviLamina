@@ -30,10 +30,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual bool matches(::CraftingContainer const& craftingContainer, ::CraftingContext const& craftingContext) const /*override*/;
+    virtual bool matches(::CraftingContainer const& craftingContainer, ::CraftingContext const& craftingContext) const
+        /*override*/;
 
     // vIndex: 1
-    virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftingContainer, ::CraftingContext& craftingContext) const /*override*/;
+    virtual ::std::vector<::ItemInstance> const&
+    assemble(::CraftingContainer& craftingContainer, ::CraftingContext& craftingContext) const /*override*/;
 
     // vIndex: 10
     virtual bool hasDataDrivenResult() const /*override*/;
@@ -45,7 +47,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SmithingTrimRecipe(::std::string const& recipeId, ::RecipeIngredient const& templateIngredient, ::RecipeIngredient const& baseIngredient, ::RecipeIngredient const& additionIngredient, ::HashedString const& tag);
+    MCAPI SmithingTrimRecipe(
+        ::std::string const&      recipeId,
+        ::RecipeIngredient const& templateIngredient,
+        ::RecipeIngredient const& baseIngredient,
+        ::RecipeIngredient const& additionIngredient,
+        ::HashedString const&     tag
+    );
     // NOLINTEND
 
 public:
@@ -57,7 +65,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& recipeId, ::RecipeIngredient const& templateIngredient, ::RecipeIngredient const& baseIngredient, ::RecipeIngredient const& additionIngredient, ::HashedString const& tag);
+    MCAPI void* $ctor(
+        ::std::string const&      recipeId,
+        ::RecipeIngredient const& templateIngredient,
+        ::RecipeIngredient const& baseIngredient,
+        ::RecipeIngredient const& additionIngredient,
+        ::HashedString const&     tag
+    );
     // NOLINTEND
 
 public:
@@ -65,7 +79,8 @@ public:
     // NOLINTBEGIN
     MCAPI bool $matches(::CraftingContainer const& craftingContainer, ::CraftingContext const& craftingContext) const;
 
-    MCAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftingContainer, ::CraftingContext& craftingContext) const;
+    MCAPI ::std::vector<::ItemInstance> const&
+    $assemble(::CraftingContainer& craftingContainer, ::CraftingContext& craftingContext) const;
 
     MCFOLD bool $hasDataDrivenResult() const;
     // NOLINTEND
@@ -75,5 +90,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

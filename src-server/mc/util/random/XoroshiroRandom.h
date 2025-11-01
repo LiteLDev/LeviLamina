@@ -126,5 +126,4 @@ public:
 
     MCNAPI static void** $vftableForIRandomSeeded();
     // NOLINTEND
-
 };

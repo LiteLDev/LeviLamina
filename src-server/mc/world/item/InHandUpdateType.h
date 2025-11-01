@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class InHandUpdateType : schar {
-    None = 0,
+    None   = 0,
     Update = 1,
-    Swap = 2,
+    Swap   = 2,
 };

@@ -23,7 +23,6 @@ public:
     GlobalConfiguration& operator=(GlobalConfiguration const&);
     GlobalConfiguration(GlobalConfiguration const&);
     GlobalConfiguration();
-
 };
 
-}
+} // namespace NetherNet

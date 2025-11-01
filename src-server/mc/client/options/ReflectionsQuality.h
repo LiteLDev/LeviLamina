@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ReflectionsQuality : uchar {
-    Off = 0,
-    Low = 1,
+    Off    = 0,
+    Low    = 1,
     Medium = 2,
-    High = 3,
-    Ultra = 4,
+    High   = 3,
+    Ultra  = 4,
 };

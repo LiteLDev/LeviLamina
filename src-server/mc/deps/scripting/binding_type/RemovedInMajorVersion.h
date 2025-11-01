@@ -16,7 +16,6 @@ public:
     RemovedInMajorVersion& operator=(RemovedInMajorVersion const&);
     RemovedInMajorVersion(RemovedInMajorVersion const&);
     RemovedInMajorVersion();
-
 };
 
-}
+} // namespace Scripting

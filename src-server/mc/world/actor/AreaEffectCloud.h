@@ -26,14 +26,14 @@ class AreaEffectCloud : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mOwnerId;
-    ::ll::TypedStorage<1, 1, bool> mAffectOwner;
-    ::ll::TypedStorage<8, 8, int64> mSpawnTickClient;
-    ::ll::TypedStorage<4, 4, int> mReapplicationDelay;
-    ::ll::TypedStorage<4, 4, ::EffectDuration> mDurationOnUse;
-    ::ll::TypedStorage<4, 4, int> mLocalPickupCount;
-    ::ll::TypedStorage<4, 4, float> mRadiusOnUse;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>> mMobAreaEffects;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                             mOwnerId;
+    ::ll::TypedStorage<1, 1, bool>                                        mAffectOwner;
+    ::ll::TypedStorage<8, 8, int64>                                       mSpawnTickClient;
+    ::ll::TypedStorage<4, 4, int>                                         mReapplicationDelay;
+    ::ll::TypedStorage<4, 4, ::EffectDuration>                            mDurationOnUse;
+    ::ll::TypedStorage<4, 4, int>                                         mLocalPickupCount;
+    ::ll::TypedStorage<4, 4, float>                                       mRadiusOnUse;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>>         mMobAreaEffects;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, int>> mVictims;
     // NOLINTEND
 
@@ -48,7 +48,7 @@ public:
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 55
-    virtual void setOwner(::ActorUniqueID const ownerID) /*override*/;
+    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
@@ -69,7 +69,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AreaEffectCloud(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI AreaEffectCloud(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
 
     MCAPI void _spawnParticles(::Random& random, uint numParticles, float radius);
 
@@ -97,7 +101,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -105,7 +113,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $setOwner(::ActorUniqueID const ownerID);
+    MCAPI void $setOwner(::ActorUniqueID const ownerId);
 
     MCAPI void $normalTick();
 
@@ -121,5 +129,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

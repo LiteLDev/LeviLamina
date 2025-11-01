@@ -18,7 +18,6 @@ public:
     UlpfecConfig& operator=(UlpfecConfig const&);
     UlpfecConfig(UlpfecConfig const&);
     UlpfecConfig();
-
 };
 
-}
+} // namespace webrtc

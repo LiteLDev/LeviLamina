@@ -16,9 +16,13 @@ struct Structures {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bootstrap(::br::worldgen::StructureRegistry& context, ::BaseGameVersion const&, ::std::vector<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents> const* jigsawDefinitions, ::IWorldRegistriesProvider& registries);
+    MCAPI static void bootstrap(
+        ::br::worldgen::StructureRegistry& context,
+        ::BaseGameVersion const&,
+        ::std::vector<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents> const* jigsawDefinitions,
+        ::IWorldRegistriesProvider&                                                        registries
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

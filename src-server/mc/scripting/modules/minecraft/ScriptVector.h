@@ -29,9 +29,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector> divide(::Vec3 const& a, ::std::variant<float, ::Vec3> const& b);
+    MCNAPI static ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector>
+    divide(::Vec3 const& a, ::std::variant<float, ::Vec3> const& b);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

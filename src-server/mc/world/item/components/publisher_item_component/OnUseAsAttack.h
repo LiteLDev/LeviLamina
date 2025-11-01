@@ -16,7 +16,9 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 
 namespace PublisherItemComponent {
 
-struct OnUseAsAttack : public ::ItemComponent, public ::Bedrock::PubSub::Publisher<void(::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
+struct OnUseAsAttack : public ::ItemComponent,
+                       public ::Bedrock::PubSub::
+                           Publisher<void(::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -29,7 +31,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
-
 };
 
-}
+} // namespace PublisherItemComponent

@@ -13,9 +13,13 @@ namespace BlockDefinitionCrossComponentValidation::Detail {
 // NOLINTBEGIN
 MCAPI void constrainRandomOffsetToCollisionBox(::BlockComponentGroupDescription const& blockComponentGroupDescription);
 
-MCAPI bool validateGeometryAndMaterialComponents(::BlockComponentGroupDescription const& description, ::SemVersion const& originalJsonVersion);
+MCAPI bool validateGeometryAndMaterialComponents(
+    ::BlockComponentGroupDescription const& description,
+    ::SemVersion const&                     originalJsonVersion
+);
 
-MCAPI bool validateNoRandomOffsetComponentIfFullCubeGeo(::BlockComponentGroupDescription const& blockComponentGroupDescription);
+MCAPI bool
+validateNoRandomOffsetComponentIfFullCubeGeo(::BlockComponentGroupDescription const& blockComponentGroupDescription);
 // NOLINTEND
 
-}
+} // namespace BlockDefinitionCrossComponentValidation::Detail

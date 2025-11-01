@@ -20,5 +20,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void addFamilyName(::std::string const& name);
     // NOLINTEND
-
 };

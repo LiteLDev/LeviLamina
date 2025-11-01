@@ -4,7 +4,6 @@
 
 namespace glTF {
 
-struct Animation {
-};
+struct Animation {};
 
-}
+} // namespace glTF

@@ -14,7 +14,7 @@ public:
     // clang-format off
     struct NetSerializationCallbacks;
     // clang-format on
-    
+
     // ComponentNetRelevancyRegistry inner types define
     struct NetSerializationCallbacks {
     public:
@@ -24,15 +24,14 @@ public:
         ::ll::UntypedStorage<8, 64> mUnk155c88;
         ::ll::UntypedStorage<8, 64> mUnk426685;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         NetSerializationCallbacks& operator=(NetSerializationCallbacks const&);
         NetSerializationCallbacks(NetSerializationCallbacks const&);
         NetSerializationCallbacks();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -48,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool serializeComponentDefinitionsForClient(::DefinitionInstanceGroup const& definitionGroup, ::CompoundTag& tag) const;
+    MCNAPI bool
+    serializeComponentDefinitionsForClient(::DefinitionInstanceGroup const& definitionGroup, ::CompoundTag& tag) const;
     // NOLINTEND
-
 };

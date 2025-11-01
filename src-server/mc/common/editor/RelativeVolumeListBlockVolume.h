@@ -25,10 +25,10 @@ public:
     ::ll::UntypedStorage<4, 12> mUnk77850e;
     ::ll::UntypedStorage<4, 12> mUnkfe2614;
     ::ll::UntypedStorage<8, 24> mUnk942c8a;
-    ::ll::UntypedStorage<4, 4> mUnk6756a4;
-    ::ll::UntypedStorage<4, 4> mUnkd8738a;
+    ::ll::UntypedStorage<4, 4>  mUnk6756a4;
+    ::ll::UntypedStorage<4, 4>  mUnkd8738a;
     ::ll::UntypedStorage<4, 16> mUnkbfff20;
-    ::ll::UntypedStorage<8, 8> mUnkba4444;
+    ::ll::UntypedStorage<8, 8>  mUnkba4444;
     // NOLINTEND
 
 public:
@@ -82,7 +82,10 @@ public:
 
     MCNAPI RelativeVolumeListBlockVolume(::Editor::RelativeVolumeListBlockVolume const& rhs);
 
-    MCNAPI RelativeVolumeListBlockVolume(::std::vector<::Vec3> const& blockPositions, ::std::optional<::BlockPos> const& origin);
+    MCNAPI RelativeVolumeListBlockVolume(
+        ::std::vector<::Vec3> const&       blockPositions,
+        ::std::optional<::BlockPos> const& origin
+    );
 
     MCNAPI void add(::SimpleBlockVolume const& _relativeVolume);
 
@@ -90,7 +93,8 @@ public:
 
     MCNAPI void add(::Vec3 const& pos);
 
-    MCNAPI ::std::vector<::SimpleBlockVolume> calculateVolumetricDifference(::SimpleBlockVolume const& volA, ::SimpleBlockVolume const& volB);
+    MCNAPI ::std::vector<::SimpleBlockVolume>
+    calculateVolumetricDifference(::SimpleBlockVolume const& volA, ::SimpleBlockVolume const& volB);
 
     MCNAPI void clear();
 
@@ -170,7 +174,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

@@ -21,7 +21,6 @@ public:
     BitrateAllocationUpdate& operator=(BitrateAllocationUpdate const&);
     BitrateAllocationUpdate(BitrateAllocationUpdate const&);
     BitrateAllocationUpdate();
-
 };
 
-}
+} // namespace webrtc

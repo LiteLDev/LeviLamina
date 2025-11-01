@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-class TimeoutTag {
-};
+class TimeoutTag {};
 
-}
+} // namespace dcsctp

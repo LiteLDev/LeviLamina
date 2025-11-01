@@ -17,7 +17,6 @@ public:
     CameraAvoidanceRay& operator=(CameraAvoidanceRay const&);
     CameraAvoidanceRay(CameraAvoidanceRay const&);
     CameraAvoidanceRay();
-
 };
 
-}
+} // namespace SharedTypes::v1_21_100

@@ -5,7 +5,7 @@
 namespace webrtc {
 
 enum class NetworkState : int {
-    KNetworkUp = 0,
+    KNetworkUp   = 0,
     KNetworkDown = 1,
 };
 

@@ -16,4 +16,4 @@ MCAPI ::AABB getTargetHitbox(::Actor const& target);
 MCAPI bool isInSunlight(::Actor const& actor);
 // NOLINTEND
 
-}
+} // namespace AttackGoalUtility

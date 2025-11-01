@@ -37,7 +37,6 @@ public:
 
     MCNAPI static float const& DEFAULT_USE_DURATION();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_20_50

@@ -20,12 +20,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::BlockSource const&> mRegion;
-    ::ll::TypedStorage<1, 1, bool> mIsWorldBuilder;
-    ::ll::TypedStorage<1, 1, bool> mIsCreative;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityID;
-    ::ll::TypedStorage<4, 4, ::ActorType> mEntityType;
-    ::ll::TypedStorage<4, 4, ::ActorCategory> mEntityCategories;
-    ::ll::TypedStorage<8, 32, ::std::string> mEntityNameTag;
+    ::ll::TypedStorage<1, 1, bool>                 mIsWorldBuilder;
+    ::ll::TypedStorage<1, 1, bool>                 mIsCreative;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>      mEntityID;
+    ::ll::TypedStorage<4, 4, ::ActorType>          mEntityType;
+    ::ll::TypedStorage<4, 4, ::ActorCategory>      mEntityCategories;
+    ::ll::TypedStorage<8, 32, ::std::string>       mEntityNameTag;
     // NOLINTEND
 
 public:
@@ -41,7 +41,8 @@ public:
     virtual bool isEntitySource() const /*override*/;
 
     // vIndex: 10
-    virtual ::std::pair<::std::string, ::std::vector<::std::string>> getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
+    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
+    getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
 
     // vIndex: 11
     virtual bool getIsCreative() const /*override*/;
@@ -94,7 +95,8 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isEntitySource() const;
 
-    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>> $getDeathMessage(::std::string deadName, ::Actor* dead) const;
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    $getDeathMessage(::std::string deadName, ::Actor* dead) const;
 
     MCFOLD bool $getIsCreative() const;
 
@@ -118,5 +120,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

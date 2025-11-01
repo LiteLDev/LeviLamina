@@ -13,4 +13,4 @@ namespace FlatteningUtils::StoneBricks {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::StoneBricks

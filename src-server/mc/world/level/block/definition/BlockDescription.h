@@ -18,7 +18,7 @@ public:
     // clang-format off
     struct BlockTraits;
     // clang-format on
-    
+
     // BlockDescription inner types define
     struct BlockTraits {
     public:
@@ -26,29 +26,28 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::BlockTrait::ITrait>>> mMap;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         BlockTraits(BlockTraits const&);
         BlockTraits();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCFOLD ::BlockDescription::BlockTraits& operator=(::BlockDescription::BlockTraits const&);
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
-    ::ll::TypedStorage<4, 8, ::VanillaBlockData> mVanillaBlockData;
+    ::ll::TypedStorage<8, 32, ::std::string>                         mIdentifier;
+    ::ll::TypedStorage<4, 8, ::VanillaBlockData>                     mVanillaBlockData;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockStateDefinition>> mStates;
-    ::ll::TypedStorage<8, 40, ::BlockMenuCategory> mMenuCategory;
-    ::ll::TypedStorage<8, 64, ::BlockDescription::BlockTraits> mTraits;
-    ::ll::TypedStorage<1, 1, bool> mIsBaseGameBlock;
+    ::ll::TypedStorage<8, 40, ::BlockMenuCategory>                   mMenuCategory;
+    ::ll::TypedStorage<8, 64, ::BlockDescription::BlockTraits>       mTraits;
+    ::ll::TypedStorage<1, 1, bool>                                   mIsBaseGameBlock;
     // NOLINTEND
 
 public:
@@ -82,5 +81,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

@@ -10,8 +10,7 @@ struct ScoreboardIdentityPacketInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::ScoreboardId> mScoreboardId;
+    ::ll::TypedStorage<8, 16, ::ScoreboardId>      mScoreboardId;
     ::ll::TypedStorage<8, 8, ::PlayerScoreboardId> mPlayerId;
     // NOLINTEND
-
 };

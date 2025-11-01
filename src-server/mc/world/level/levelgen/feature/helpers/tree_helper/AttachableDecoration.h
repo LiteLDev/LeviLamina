@@ -22,14 +22,14 @@ public:
     // clang-format off
     struct DirectionMask;
     // clang-format on
-    
+
     // AttachableDecoration inner types define
     enum class GrowthDirection : int {
         Down = 0,
-        Up = 1,
-        Out = 2,
+        Up   = 1,
+        Out  = 2,
     };
-    
+
     struct DirectionMask {
     public:
         // member variables
@@ -39,24 +39,33 @@ public:
         ::ll::TypedStorage<1, 1, bool> mNorth;
         ::ll::TypedStorage<1, 1, bool> mSouth;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::ChanceInformation> mDecorationChance;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mDecorationBlock;
-    ::ll::TypedStorage<4, 4, int> mNumSteps;
+    ::ll::TypedStorage<4, 12, ::ChanceInformation>                                mDecorationChance;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                                 mDecorationBlock;
+    ::ll::TypedStorage<4, 4, int>                                                 mNumSteps;
     ::ll::TypedStorage<4, 4, ::TreeHelper::AttachableDecoration::GrowthDirection> mDirection;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _placeMultiDecoration(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, ::BlockPos const& origin) const;
+    MCAPI void _placeMultiDecoration(
+        ::IBlockWorldGenAPI& target,
+        ::BlockPos const&    pos,
+        ::Block const&       block,
+        ::BlockPos const&    origin
+    ) const;
 
-    MCAPI void placeDecoration(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::TreeHelper::AttachableDecoration::DirectionMask const& mask) const;
+    MCAPI void placeDecoration(
+        ::IBlockWorldGenAPI&                                     target,
+        ::BlockPos const&                                        pos,
+        ::Random&                                                random,
+        ::TreeHelper::AttachableDecoration::DirectionMask const& mask
+    ) const;
 
     MCAPI ~AttachableDecoration();
     // NOLINTEND
@@ -66,7 +75,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace TreeHelper

@@ -17,14 +17,14 @@ class BreathableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk9bca87;
-    ::ll::UntypedStorage<4, 4> mUnk8d5226;
-    ::ll::UntypedStorage<4, 4> mUnk49df1f;
-    ::ll::UntypedStorage<1, 1> mUnkac26b1;
-    ::ll::UntypedStorage<1, 1> mUnke2dc21;
-    ::ll::UntypedStorage<1, 1> mUnk84ea54;
-    ::ll::UntypedStorage<1, 1> mUnk642d65;
-    ::ll::UntypedStorage<1, 1> mUnk1390a4;
+    ::ll::UntypedStorage<4, 4>  mUnk9bca87;
+    ::ll::UntypedStorage<4, 4>  mUnk8d5226;
+    ::ll::UntypedStorage<4, 4>  mUnk49df1f;
+    ::ll::UntypedStorage<1, 1>  mUnkac26b1;
+    ::ll::UntypedStorage<1, 1>  mUnke2dc21;
+    ::ll::UntypedStorage<1, 1>  mUnk84ea54;
+    ::ll::UntypedStorage<1, 1>  mUnk642d65;
+    ::ll::UntypedStorage<1, 1>  mUnk1390a4;
     ::ll::UntypedStorage<8, 24> mUnk72afc4;
     ::ll::UntypedStorage<8, 24> mUnk23a5f5;
     // NOLINTEND
@@ -50,7 +50,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BreathableDefinition>>& root);
+    MCNAPI static void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BreathableDefinition>>& root
+    );
     // NOLINTEND
 
 public:
@@ -58,5 +60,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

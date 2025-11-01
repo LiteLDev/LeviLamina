@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnkbc2888;
-    ::ll::UntypedStorage<4, 4> mUnk12f1cf;
+    ::ll::UntypedStorage<4, 4>  mUnk12f1cf;
     // NOLINTEND
 
 public:
@@ -29,7 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal::ext::internal

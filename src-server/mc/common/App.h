@@ -50,5 +50,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

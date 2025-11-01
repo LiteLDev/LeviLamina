@@ -13,7 +13,9 @@ namespace dcsctp { struct ZeroChecksumAcceptableChunkParameterConfig; }
 
 namespace dcsctp {
 
-class ZeroChecksumAcceptableChunkParameter : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::ZeroChecksumAcceptableChunkParameterConfig> {
+class ZeroChecksumAcceptableChunkParameter
+: public ::dcsctp::Parameter,
+  public ::dcsctp::TLVTrait<::dcsctp::ZeroChecksumAcceptableChunkParameterConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,7 +44,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::dcsctp::ZeroChecksumAcceptableChunkParameter> Parse(::rtc::ArrayView<uchar const> data);
+    MCNAPI static ::std::optional<::dcsctp::ZeroChecksumAcceptableChunkParameter>
+    Parse(::rtc::ArrayView<uchar const> data);
     // NOLINTEND
 
 public:
@@ -58,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

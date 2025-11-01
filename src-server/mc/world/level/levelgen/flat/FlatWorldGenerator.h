@@ -32,16 +32,16 @@ class FlatWorldGenerator : public ::WorldGenerator {
 public:
     // FlatWorldGenerator inner types define
     using LayerList = ::std::vector<::Block const*>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>> mPrototypeBlocks;
-    ::ll::TypedStorage<8, 40, ::BlockVolume> mPrototype;
-    ::ll::TypedStorage<1, 1, bool> mIsVoidWorld;
-    ::ll::TypedStorage<8, 8, ::Biome const*> mBiome;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>        mPrototypeBlocks;
+    ::ll::TypedStorage<8, 40, ::BlockVolume>                        mPrototype;
+    ::ll::TypedStorage<1, 1, bool>                                  mIsVoidWorld;
+    ::ll::TypedStorage<8, 8, ::Biome const*>                        mBiome;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FixedBiomeSource>> mBiomeSource;
-    ::ll::TypedStorage<2, 2, short> mMaxHeight;
+    ::ll::TypedStorage<2, 2, short>                                 mMaxHeight;
     // NOLINTEND
 
 public:
@@ -67,10 +67,17 @@ public:
     virtual bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const /*override*/;
 
     // vIndex: 39
-    virtual bool findNearestStructureFeature(::HashedString feature, ::BlockPos const& origin, ::BlockPos& pos, bool mustBeInNewChunks, ::std::optional<::HashedString> biomeTag) /*override*/;
+    virtual bool findNearestStructureFeature(
+        ::HashedString                  feature,
+        ::BlockPos const&               origin,
+        ::BlockPos&                     pos,
+        bool                            mustBeInNewChunks,
+        ::std::optional<::HashedString> biomeTag
+    ) /*override*/;
 
     // vIndex: 42
-    virtual void prepareHeights(::BlockVolume& box, ::ChunkPos const&, ::std::vector<short>* zxHeights, bool) /*override*/;
+    virtual void
+    prepareHeights(::BlockVolume& box, ::ChunkPos const&, ::std::vector<short>* zxHeights, bool) /*override*/;
 
     // vIndex: 41
     virtual void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks) /*override*/;
@@ -88,10 +95,13 @@ public:
     virtual ::WorldGenerator::BlockVolumeDimensions getBlockVolumeDimensions() const /*override*/;
 
     // vIndex: 49
-    virtual void decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const /*override*/;
+    virtual void
+    decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const
+        /*override*/;
 
     // vIndex: 50
-    virtual void decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const /*override*/;
+    virtual void decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const
+        /*override*/;
 
     // vIndex: 0
     virtual ~FlatWorldGenerator() /*override*/ = default;
@@ -124,7 +134,13 @@ public:
 
     MCAPI bool $isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
 
-    MCAPI bool $findNearestStructureFeature(::HashedString feature, ::BlockPos const& origin, ::BlockPos& pos, bool mustBeInNewChunks, ::std::optional<::HashedString> biomeTag);
+    MCAPI bool $findNearestStructureFeature(
+        ::HashedString                  feature,
+        ::BlockPos const&               origin,
+        ::BlockPos&                     pos,
+        bool                            mustBeInNewChunks,
+        ::std::optional<::HashedString> biomeTag
+    );
 
     MCAPI void $prepareHeights(::BlockVolume& box, ::ChunkPos const&, ::std::vector<short>* zxHeights, bool);
 
@@ -138,7 +154,8 @@ public:
 
     MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 
-    MCFOLD void $decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const;
+    MCFOLD void
+    $decorateWorldGenLoadChunk(::Biome const&, ::LevelChunk&, ::BlockVolumeTarget&, ::Random&, ::ChunkPos const&) const;
 
     MCFOLD void $decorateWorldGenPostProcess(::Biome const&, ::LevelChunk&, ::BlockSource&, ::Random&) const;
     // NOLINTEND
@@ -150,5 +167,4 @@ public:
 
     MCNAPI static void** $vftableForChunkSource();
     // NOLINTEND
-
 };

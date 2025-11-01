@@ -25,7 +25,18 @@ namespace SwimTriggerSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void doTick(::StrictEntityContext const&, ::AABBShapeComponent const& aabb, ::MovementAbilitiesComponent const& abilities, ::ActorRotationComponent const& rotation, ::ActorDataFlagComponent const& actorData, ::PlayerInputRequestComponent const& request, ::PlayerActionComponent& playerAction, ::Optional<::ActorHeadInWaterFlagComponent const> headInWater, ::Optional<::WasInWaterFlagComponent const> wasInWater, ::IConstBlockSource const& region);
+MCNAPI void doTick(
+    ::StrictEntityContext const&,
+    ::AABBShapeComponent const&                       aabb,
+    ::MovementAbilitiesComponent const&               abilities,
+    ::ActorRotationComponent const&                   rotation,
+    ::ActorDataFlagComponent const&                   actorData,
+    ::PlayerInputRequestComponent const&              request,
+    ::PlayerActionComponent&                          playerAction,
+    ::Optional<::ActorHeadInWaterFlagComponent const> headInWater,
+    ::Optional<::WasInWaterFlagComponent const>       wasInWater,
+    ::IConstBlockSource const&                        region
+);
 // NOLINTEND
 
-}
+} // namespace SwimTriggerSystem

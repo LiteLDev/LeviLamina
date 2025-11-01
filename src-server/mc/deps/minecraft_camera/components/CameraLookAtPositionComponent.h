@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnk540e66;
-    ::ll::UntypedStorage<4, 8> mUnk52e5ea;
+    ::ll::UntypedStorage<4, 8>  mUnk52e5ea;
     // NOLINTEND
 
 public:
@@ -17,7 +17,6 @@ public:
     CameraLookAtPositionComponent& operator=(CameraLookAtPositionComponent const&);
     CameraLookAtPositionComponent(CameraLookAtPositionComponent const&);
     CameraLookAtPositionComponent();
-
 };
 
-}
+} // namespace MinecraftCamera

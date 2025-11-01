@@ -8,7 +8,7 @@
 
 namespace OperationNodeFilters {
 
-struct RemoveTooMuchOcean : public ::OperationNodeFilters::FilterBase<3, 3, ::OperationNodeValues::Terrain, ::OperationNodeValues::Terrain> {
-};
+struct RemoveTooMuchOcean
+: public ::OperationNodeFilters::FilterBase<3, 3, ::OperationNodeValues::Terrain, ::OperationNodeValues::Terrain> {};
 
-}
+} // namespace OperationNodeFilters

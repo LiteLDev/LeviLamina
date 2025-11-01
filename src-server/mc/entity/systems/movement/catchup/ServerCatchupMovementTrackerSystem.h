@@ -13,4 +13,4 @@ namespace ServerCatchupMovementTrackerSystem {
 MCNAPI void registerSystems(::EntitySystems& systems);
 // NOLINTEND
 
-}
+} // namespace ServerCatchupMovementTrackerSystem

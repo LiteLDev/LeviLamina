@@ -37,9 +37,11 @@ public:
 
     MCNAPI void _generateAllBiomeTypeHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>> get(::std::string const& biomeName, ::Scripting::WeakLifetimeScope& scope);
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
+    get(::std::string const& biomeName, ::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>> getAllBiomeTypes(::Scripting::WeakLifetimeScope& scope);
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>>
+    getAllBiomeTypes(::Scripting::WeakLifetimeScope& scope);
 
     MCNAPI ::ScriptModuleMinecraft::ScriptBiomeTypes& operator=(::ScriptModuleMinecraft::ScriptBiomeTypes&&);
     // NOLINTEND
@@ -55,7 +57,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::BiomeRegistry> registry);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

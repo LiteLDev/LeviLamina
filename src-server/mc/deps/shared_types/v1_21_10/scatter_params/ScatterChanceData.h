@@ -13,8 +13,8 @@ struct ScatterChanceData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk5a15ad;
-    ::ll::UntypedStorage<4, 4> mUnk55abf5;
+    ::ll::UntypedStorage<4, 4>  mUnk5a15ad;
+    ::ll::UntypedStorage<4, 4>  mUnk55abf5;
     ::ll::UntypedStorage<8, 56> mUnk111f8c;
     // NOLINTEND
 
@@ -54,7 +54,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_10

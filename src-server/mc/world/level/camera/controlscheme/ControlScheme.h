@@ -20,4 +20,4 @@ MCNAPI void bindControlSchemeType(::cereal::ReflectionCtx& ctx);
 MCNAPI ::Bedrock::Result<::ControlScheme::Scheme> readControlScheme(::ReadOnlyBinaryStream& stream);
 // NOLINTEND
 
-}
+} // namespace ControlScheme

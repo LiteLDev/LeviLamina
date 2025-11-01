@@ -2,6 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template<typename T0, typename T1>
-struct TypeWrapper {
-};
+template <typename T0, typename T1>
+struct TypeWrapper {};

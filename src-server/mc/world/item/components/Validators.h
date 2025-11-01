@@ -20,4 +20,4 @@ MCAPI void foodItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& l
 MCAPI void shooterItemComponent(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
 // NOLINTEND
 
-}
+} // namespace Validators

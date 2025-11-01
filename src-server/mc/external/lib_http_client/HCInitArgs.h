@@ -14,5 +14,4 @@ public:
     HCInitArgs& operator=(HCInitArgs const&);
     HCInitArgs(HCInitArgs const&);
     HCInitArgs();
-
 };

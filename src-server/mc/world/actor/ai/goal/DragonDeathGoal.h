@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::EnderDragon&> mDragon;
-    ::ll::TypedStorage<4, 4, int> mTime;
+    ::ll::TypedStorage<4, 4, int>            mTime;
     // NOLINTEND
 
 public:
@@ -70,5 +70,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

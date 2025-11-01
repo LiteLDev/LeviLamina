@@ -48,13 +48,24 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptWidgetComponentEntity(::Editor::ScriptModule::ScriptWidgetComponentEntity const&);
 
-    MCNAPI ScriptWidgetComponentEntity(::Editor::ServiceProviderCollection& serviceProviders, ::mce::UUID const& componentId, ::std::string const& componentName, ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner, ::Editor::ScriptModule::ScriptWidgetService& parentService, ::std::string const& actorNameId, ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentEntityOptions> options);
+    MCNAPI ScriptWidgetComponentEntity(
+        ::Editor::ServiceProviderCollection&                                        serviceProviders,
+        ::mce::UUID const&                                                          componentId,
+        ::std::string const&                                                        componentName,
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>    owner,
+        ::Editor::ScriptModule::ScriptWidgetService&                                parentService,
+        ::std::string const&                                                        actorNameId,
+        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentEntityOptions> options
+    );
 
-    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent> _getClickable() const;
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _getClickable() const;
 
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent> _playAnimation(::std::string const& animationName);
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _playAnimation(::std::string const& animationName);
 
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent> _setClickable(bool clickable);
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent>
+    _setClickable(bool clickable);
     // NOLINTEND
 
 public:
@@ -68,7 +79,15 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentEntity const&);
 
-    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::mce::UUID const& componentId, ::std::string const& componentName, ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner, ::Editor::ScriptModule::ScriptWidgetService& parentService, ::std::string const& actorNameId, ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentEntityOptions> options);
+    MCNAPI void* $ctor(
+        ::Editor::ServiceProviderCollection&                                        serviceProviders,
+        ::mce::UUID const&                                                          componentId,
+        ::std::string const&                                                        componentName,
+        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>    owner,
+        ::Editor::ScriptModule::ScriptWidgetService&                                parentService,
+        ::std::string const&                                                        actorNameId,
+        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentEntityOptions> options
+    );
     // NOLINTEND
 
 public:
@@ -82,7 +101,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

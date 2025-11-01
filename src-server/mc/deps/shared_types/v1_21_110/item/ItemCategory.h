@@ -13,37 +13,41 @@ struct ItemCategory {
 public:
     // ItemCategory inner types define
     enum class CreativeItemCategory : uchar {
-        All = 0,
-        Construction = 1,
-        Nature = 2,
-        Equipment = 3,
-        Items = 4,
+        All             = 0,
+        Construction    = 1,
+        Nature          = 2,
+        Equipment       = 3,
+        Items           = 4,
         ItemCommandOnly = 5,
-        Undefined = 6,
-        Count = 7,
+        Undefined       = 6,
+        Count           = 7,
     };
-    
+
     enum class CreativeItemCategoryStringError : uchar {
         EmptyString = 0,
-        NotFound = 1,
+        NotFound    = 1,
     };
-    
+
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindCreativeItemCategoryType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::nonstd::expected<::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory, ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategoryStringError> creativeItemCategoryFromString(::std::string_view str);
+    MCNAPI static ::nonstd::expected<
+        ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory,
+        ::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategoryStringError>
+    creativeItemCategoryFromString(::std::string_view str);
 
-    MCNAPI static ::std::string stringFromCreativeItemCategory(::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory category);
+    MCNAPI static ::std::string
+    stringFromCreativeItemCategory(::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory category);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::initializer_list<::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory> const& CREATIVE_ITEM_CATEGORY_MAPPING();
+    MCNAPI static ::std::initializer_list<::SharedTypes::v1_21_110::ItemCategory::CreativeItemCategory> const&
+    CREATIVE_ITEM_CATEGORY_MAPPING();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_110

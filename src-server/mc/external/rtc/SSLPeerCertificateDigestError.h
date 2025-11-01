@@ -5,9 +5,9 @@
 namespace rtc {
 
 enum class SSLPeerCertificateDigestError : int {
-    None = 0,
-    UnknownAlgorithm = 1,
-    InvalidLength = 2,
+    None               = 0,
+    UnknownAlgorithm   = 1,
+    InvalidLength      = 2,
     VerificationFailed = 3,
 };
 

@@ -4,7 +4,6 @@
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptActorTypesRegistry {
-};
+struct ScriptActorTypesRegistry {};
 
-}
+} // namespace ScriptModuleMinecraft

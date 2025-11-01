@@ -21,13 +21,14 @@ public:
     virtual ::std::unique_ptr<::DataItem> serialize(::EntityContext const&) const = 0;
 
     // vIndex: 2
-    virtual ::SynchedActorDataSerializer::DeserializeResult deserialize(::DataItem const&, ::SynchedActorDataSerializer::DeserializeArgs&) const = 0;
+    virtual ::SynchedActorDataSerializer::DeserializeResult
+    deserialize(::DataItem const&, ::SynchedActorDataSerializer::DeserializeArgs&) const = 0;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ISynchedActorDataAdapter const* getSyncInfo(ushort actorDataId);
+    MCAPI static ::ISynchedActorDataAdapter const* getSyncInfo(ushort actorDataId);
     // NOLINTEND
 
 public:
@@ -35,5 +36,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

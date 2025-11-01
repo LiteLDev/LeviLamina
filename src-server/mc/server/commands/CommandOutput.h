@@ -20,11 +20,11 @@ class CommandOutput {
 public:
     // member variables
     // NOLINTBEGIN
-    CommandOutputType                   mType;
+    CommandOutputType                                       mType;
     std::unique_ptr<CommandPropertyBag> mBag;
-    std::vector<CommandOutputMessage>   mMessages;
-    int                                 mSuccessCount;
-    bool                                mHasPlayerText;
+    std::vector<CommandOutputMessage>    mMessages;
+    int                                                                     mSuccessCount;
+    bool                                                                   mHasPlayerText;
     // NOLINTEND
 
     template <class First, class... Args>
@@ -75,7 +75,11 @@ public:
 
     MCAPI explicit CommandOutput(::CommandOutputType type);
 
-    MCAPI void addMessage(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params, ::CommandOutputMessageType type);
+    MCAPI void addMessage(
+        ::std::string const&                           msgId,
+        ::std::vector<::CommandOutputParameter> const& params,
+        ::CommandOutputMessageType                     type
+    );
 
     MCAPI void addToResultList(::std::string const& key, ::Actor const& element);
 
@@ -101,5 +105,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

@@ -13,4 +13,4 @@ namespace ItemUseTickDurationSystem {
 MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
-}
+} // namespace ItemUseTickDurationSystem

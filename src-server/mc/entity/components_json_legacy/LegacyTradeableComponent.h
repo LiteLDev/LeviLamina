@@ -23,16 +23,16 @@ class LegacyTradeableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mAddRecipeOnUpdate;
-    ::ll::TypedStorage<1, 1, bool> mResetLockedOnFirstTrade;
-    ::ll::TypedStorage<1, 1, bool> mWillingToBreed;
-    ::ll::TypedStorage<4, 4, int> mRiches;
-    ::ll::TypedStorage<4, 4, int> mTradeTier;
-    ::ll::TypedStorage<4, 4, int> mUpdateMerchantTimer;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mLastPlayerTradeID;
+    ::ll::TypedStorage<1, 1, bool>                                    mAddRecipeOnUpdate;
+    ::ll::TypedStorage<1, 1, bool>                                    mResetLockedOnFirstTrade;
+    ::ll::TypedStorage<1, 1, bool>                                    mWillingToBreed;
+    ::ll::TypedStorage<4, 4, int>                                     mRiches;
+    ::ll::TypedStorage<4, 4, int>                                     mTradeTier;
+    ::ll::TypedStorage<4, 4, int>                                     mUpdateMerchantTimer;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                         mLastPlayerTradeID;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MerchantRecipeList>> mOffers;
-    ::ll::TypedStorage<8, 32, ::std::string> mDisplayName;
-    ::ll::TypedStorage<8, 24, ::std::vector<int>> mTradeRecipeFirstTime;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mDisplayName;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>>                     mTradeRecipeFirstTime;
     // NOLINTEND
 
 public:
@@ -78,5 +78,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

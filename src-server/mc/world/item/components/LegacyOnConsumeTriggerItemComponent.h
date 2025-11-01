@@ -21,7 +21,7 @@ class LegacyOnConsumeTriggerItemComponent : public ::LegacyTriggerItemComponent 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnConsumeSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnConsumeSubscription;
     ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnConsumeTrigger;
     // NOLINTEND
 
@@ -70,5 +70,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

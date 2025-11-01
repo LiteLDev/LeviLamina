@@ -8,9 +8,9 @@ struct ScopedLogger {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk5d9f89;
+    ::ll::UntypedStorage<8, 8>  mUnk5d9f89;
     ::ll::UntypedStorage<8, 80> mUnk45a0a2;
-    ::ll::UntypedStorage<1, 1> mUnk1f5128;
+    ::ll::UntypedStorage<1, 1>  mUnk1f5128;
     // NOLINTEND
 
 public:
@@ -32,7 +32,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Puv::internal

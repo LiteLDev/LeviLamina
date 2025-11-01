@@ -19,7 +19,7 @@ public:
     // clang-format off
     struct GrassColorMapContainer;
     // clang-format on
-    
+
     // GrassAppearanceClientBiomeJsonComponent inner types define
     struct GrassColorMapContainer {
     public:
@@ -27,34 +27,33 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4> mUnk935649;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         GrassColorMapContainer& operator=(GrassColorMapContainer const&);
         GrassColorMapContainer(GrassColorMapContainer const&);
         GrassColorMapContainer();
-    
+
     public:
         // static functions
         // NOLINTBEGIN
         MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
-    
+
     public:
         // static variables
         // NOLINTBEGIN
         MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_HELP();
-    
+
         MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 24> mUnkbb1b7c;
-    ::ll::UntypedStorage<1, 1> mUnk7f7add;
+    ::ll::UntypedStorage<1, 1>  mUnk7f7add;
     // NOLINTEND
 
 public:
@@ -98,7 +97,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_100

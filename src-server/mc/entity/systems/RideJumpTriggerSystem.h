@@ -29,7 +29,21 @@ MCNAPI ::TickingSystemWithInfo createPassengerSystem();
 
 MCNAPI ::TickingSystemWithInfo createVehicleSystem();
 
-MCNAPI void tickPassengerJumpTriggerSystem(::entt::type_list<::Include<::PlayerInputRequestComponent>>, ::StrictEntityContext const& context, ::MoveInputComponent const& moveInputComponent, ::PassengerComponent const& passengerComponent, ::JumpRidingScaleComponent& jumpRidingScaleComponent, ::VanillaClientGameplayComponent& state, ::ViewT<::StrictEntityContext, ::VehicleComponent const, ::ActorDataFlagComponent const, ::VehicleInputIntentComponent, ::Optional<::OnGroundFlagComponent const>, ::Optional<::PassengerComponent const>> const& vehicleView);
+MCNAPI void tickPassengerJumpTriggerSystem(
+    ::entt::type_list<::Include<::PlayerInputRequestComponent>>,
+    ::StrictEntityContext const&      context,
+    ::MoveInputComponent const&       moveInputComponent,
+    ::PassengerComponent const&       passengerComponent,
+    ::JumpRidingScaleComponent&       jumpRidingScaleComponent,
+    ::VanillaClientGameplayComponent& state,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::VehicleComponent const,
+        ::ActorDataFlagComponent const,
+        ::VehicleInputIntentComponent,
+        ::Optional<::OnGroundFlagComponent const>,
+        ::Optional<::PassengerComponent const>> const& vehicleView
+);
 // NOLINTEND
 
-}
+} // namespace RideJumpTriggerSystem

@@ -17,7 +17,6 @@ public:
     DiscoveryConfig& operator=(DiscoveryConfig const&);
     DiscoveryConfig(DiscoveryConfig const&);
     DiscoveryConfig();
-
 };
 
-}
+} // namespace Bedrock::Services

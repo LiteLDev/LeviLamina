@@ -10,7 +10,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string const& name();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Http::MethodType

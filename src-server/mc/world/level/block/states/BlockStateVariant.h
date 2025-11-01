@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/block/states/BlockState.h"
 
-template<typename T0>
+template <typename T0>
 class BlockStateVariant : public ::BlockState {
 public:
     using Type = T0;
@@ -19,5 +19,4 @@ public:
 
     // vIndex: 2
     virtual bool fromNBT(::CompoundTag const&, int&) const /*override*/;
-    // NOLINTEND
-};
+    // NOLINTEND};

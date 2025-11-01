@@ -17,7 +17,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::std::unique_ptr<::DynamicContainerManager> createContainerManager(::FullContainerName const&, ::ItemStack const&, ::StorageItemComponent*, ::StorageWeightLimitItemComponent*) = 0;
+    virtual ::std::unique_ptr<::DynamicContainerManager> createContainerManager(
+        ::FullContainerName const&,
+        ::ItemStack const&,
+        ::StorageItemComponent*,
+        ::StorageWeightLimitItemComponent*
+    ) = 0;
 
     // vIndex: 1
     virtual uint generateNewID() = 0;
@@ -52,5 +57,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

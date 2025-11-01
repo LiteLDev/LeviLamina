@@ -13,8 +13,8 @@ public:
     ::ll::UntypedStorage<8, 40> mUnka6558f;
     ::ll::UntypedStorage<8, 40> mUnkeffe77;
     ::ll::UntypedStorage<8, 40> mUnkc8f5c7;
-    ::ll::UntypedStorage<4, 8> mUnkefbac6;
-    ::ll::UntypedStorage<1, 2> mUnk194cee;
+    ::ll::UntypedStorage<4, 8>  mUnkefbac6;
+    ::ll::UntypedStorage<1, 2>  mUnk194cee;
     // NOLINTEND
 
 public:
@@ -48,7 +48,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

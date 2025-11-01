@@ -13,7 +13,7 @@ struct CameraOffsetDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkc308aa;
+    ::ll::UntypedStorage<4, 8>  mUnkc308aa;
     ::ll::UntypedStorage<4, 12> mUnk653314;
     // NOLINTEND
 
@@ -34,7 +34,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_100

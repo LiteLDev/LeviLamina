@@ -7,13 +7,14 @@
 
 namespace Editor::Network {
 
-class NativeBrushBlockChangeListPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::NativeBrushBlockChangeListPayload> {
+class NativeBrushBlockChangeListPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::NativeBrushBlockChangeListPayload> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk498d75;
     ::ll::UntypedStorage<8, 24> mUnk6cf873;
-    ::ll::UntypedStorage<1, 1> mUnk29149f;
+    ::ll::UntypedStorage<1, 1>  mUnk29149f;
     ::ll::UntypedStorage<4, 12> mUnkd964fb;
     // NOLINTEND
 
@@ -35,7 +36,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

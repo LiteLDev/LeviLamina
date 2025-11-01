@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 96> mUnk4b8325;
-    ::ll::UntypedStorage<4, 4> mUnk7bf44e;
+    ::ll::UntypedStorage<4, 4>  mUnk7bf44e;
     // NOLINTEND
 
 public:
@@ -29,7 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_20::JigsawStructure::ProcessorRule

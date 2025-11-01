@@ -10,9 +10,8 @@ struct DurabilityThreshold {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mDurability;
-    ::ll::TypedStorage<4, 4, ::ParticleType> mParticleType;
+    ::ll::TypedStorage<4, 4, int>                                    mDurability;
+    ::ll::TypedStorage<4, 4, ::ParticleType>                         mParticleType;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
     // NOLINTEND
-
 };

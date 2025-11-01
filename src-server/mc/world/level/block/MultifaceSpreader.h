@@ -14,12 +14,12 @@ public:
     // MultifaceSpreader inner types define
     enum class SpreadType : uchar {
         SamePosition = 0,
-        SamePlane = 1,
-        WrapAround = 2,
+        SamePlane    = 1,
+        WrapAround   = 2,
     };
-    
+
     using SpreadTypes = ::std::vector<::MultifaceSpreader::SpreadType>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -36,7 +36,12 @@ public:
     virtual bool _canSpreadFrom(::Block const& block, uchar const facing) const;
 
     // vIndex: 2
-    virtual bool _canSpreadInto(::IBlockWorldGenAPI& target, ::Block const& self, ::BlockPos const& pos, uchar const placementDirection) const;
+    virtual bool _canSpreadInto(
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::BlockPos const&    pos,
+        uchar const          placementDirection
+    ) const;
 
     // vIndex: 3
     virtual bool _isOtherBlockValidAsSource(::Block const&) const;
@@ -45,13 +50,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::pair<::BlockPos const, uchar const>> _getSpreadWrappingAround(::IBlockWorldGenAPI& target, ::Block const& self, ::BlockPos const& pos, uchar startingFace, uchar spreadDirection) const;
+    MCAPI ::std::optional<::std::pair<::BlockPos const, uchar const>> _getSpreadWrappingAround(
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::BlockPos const&    pos,
+        uchar                startingFace,
+        uchar                spreadDirection
+    ) const;
 
-    MCAPI ::std::optional<::std::pair<::BlockPos const, uchar const>> getSpreadFromFaceTowardDirection(::IBlockWorldGenAPI& target, ::Block const& self, ::Block const& block, ::BlockPos const& pos, uchar startingFace, uchar spreadDirection) const;
+    MCAPI ::std::optional<::std::pair<::BlockPos const, uchar const>> getSpreadFromFaceTowardDirection(
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::Block const&       block,
+        ::BlockPos const&    pos,
+        uchar                startingFace,
+        uchar                spreadDirection
+    ) const;
 
-    MCAPI int spreadFromAllFacesTowardAllDirections(::IBlockWorldGenAPI& target, ::Block const& self, ::Block const& block, ::BlockPos const& pos) const;
+    MCAPI int spreadFromAllFacesTowardAllDirections(
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::Block const&       block,
+        ::BlockPos const&    pos
+    ) const;
 
-    MCAPI bool spreadFromFaceTowardRandomDirection(::IBlockWorldGenAPI& target, ::Block const& self, ::Block const& block, ::BlockPos const& pos, uchar startingFace) const;
+    MCAPI bool spreadFromFaceTowardRandomDirection(
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::Block const&       block,
+        ::BlockPos const&    pos,
+        uchar                startingFace
+    ) const;
     // NOLINTEND
 
 public:
@@ -67,7 +96,12 @@ public:
     // NOLINTBEGIN
     MCAPI bool $_canSpreadFrom(::Block const& block, uchar const facing) const;
 
-    MCAPI bool $_canSpreadInto(::IBlockWorldGenAPI& target, ::Block const& self, ::BlockPos const& pos, uchar const placementDirection) const;
+    MCAPI bool $_canSpreadInto(
+        ::IBlockWorldGenAPI& target,
+        ::Block const&       self,
+        ::BlockPos const&    pos,
+        uchar const          placementDirection
+    ) const;
 
     MCFOLD bool $_isOtherBlockValidAsSource(::Block const&) const;
     // NOLINTEND
@@ -77,5 +111,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

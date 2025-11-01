@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 96> mUnk6741b6;
-    ::ll::UntypedStorage<8, 8> mUnke426ee;
+    ::ll::UntypedStorage<8, 8>  mUnke426ee;
     // NOLINTEND
 
 public:
@@ -99,7 +99,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal

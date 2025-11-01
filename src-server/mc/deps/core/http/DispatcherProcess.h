@@ -7,7 +7,8 @@
 
 namespace Bedrock::Http {
 
-class DispatcherProcess : public ::Bedrock::Http::DispatcherInterface, public ::std::enable_shared_from_this<::Bedrock::Http::DispatcherProcess> {
+class DispatcherProcess : public ::Bedrock::Http::DispatcherInterface,
+                          public ::std::enable_shared_from_this<::Bedrock::Http::DispatcherProcess> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -62,7 +63,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Http

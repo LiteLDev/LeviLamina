@@ -19,4 +19,4 @@ MCNAPI bool isSupported(::Level const& level, ::BaseGameVersion version);
 MCNAPI ::BaseGameVersion const& EXCLUDE_ILLAGERBANNER_VERSION();
 // NOLINTEND
 
-}
+} // namespace EquipItemDefinitionVersioning

@@ -16,11 +16,13 @@ namespace gametest { struct GameTestError; }
 namespace ScriptResultUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Scripting::Result<::Vec3, ::gametest::GameTestError> GametestResultToScriptingValueResult(::std::variant<::gametest::GameTestError, ::Vec3> const& result);
+MCNAPI ::Scripting::Result<::Vec3, ::gametest::GameTestError>
+GametestResultToScriptingValueResult(::std::variant<::gametest::GameTestError, ::Vec3> const& result);
 
-MCNAPI ::Scripting::Result<::Vec3, ::gametest::GameTestError> GametestResultToScriptingValueResult(::std::variant<::gametest::GameTestError, ::BlockPos> const& result);
+MCNAPI ::Scripting::Result<::Vec3, ::gametest::GameTestError>
+GametestResultToScriptingValueResult(::std::variant<::gametest::GameTestError, ::BlockPos> const& result);
 
 MCNAPI ::std::optional<::gametest::GameTestError> ScriptingResultToGameTestResult(::Scripting::ResultAny const& result);
 // NOLINTEND
 
-}
+} // namespace ScriptResultUtil

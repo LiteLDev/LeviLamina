@@ -19,14 +19,14 @@ struct AddVolumeEntityPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::CompoundTag> mComponents;
-    ::ll::TypedStorage<8, 32, ::std::string> mJsonIdentifier;
-    ::ll::TypedStorage<8, 32, ::std::string> mInstanceName;
+    ::ll::TypedStorage<8, 24, ::CompoundTag>          mComponents;
+    ::ll::TypedStorage<8, 32, ::std::string>          mJsonIdentifier;
+    ::ll::TypedStorage<8, 32, ::std::string>          mInstanceName;
     ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mMinBounds;
     ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mMaxBounds;
-    ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
-    ::ll::TypedStorage<8, 32, ::MinEngineVersion> mMinEngineVersion;
-    ::ll::TypedStorage<4, 4, ::EntityNetId> mEntityNetId;
+    ::ll::TypedStorage<4, 4, ::DimensionType>         mDimensionType;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion>     mMinEngineVersion;
+    ::ll::TypedStorage<4, 4, ::EntityNetId>           mEntityNetId;
     // NOLINTEND
 
 public:
@@ -38,7 +38,11 @@ public:
 
     MCAPI AddVolumeEntityPacketPayload(::AddVolumeEntityPacketPayload const& other);
 
-    MCAPI AddVolumeEntityPacketPayload(::EntityContext const& entity, ::CompoundTag components, ::MinEngineVersion const& minEngineVersion);
+    MCAPI AddVolumeEntityPacketPayload(
+        ::EntityContext const&    entity,
+        ::CompoundTag             components,
+        ::MinEngineVersion const& minEngineVersion
+    );
 
     MCAPI ::AddVolumeEntityPacketPayload& operator=(::AddVolumeEntityPacketPayload&&);
 
@@ -56,7 +60,8 @@ public:
 
     MCAPI void* $ctor(::AddVolumeEntityPacketPayload const& other);
 
-    MCAPI void* $ctor(::EntityContext const& entity, ::CompoundTag components, ::MinEngineVersion const& minEngineVersion);
+    MCAPI void*
+    $ctor(::EntityContext const& entity, ::CompoundTag components, ::MinEngineVersion const& minEngineVersion);
     // NOLINTEND
 
 public:
@@ -64,5 +69,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

@@ -16,33 +16,33 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorUniqueID>> mNeighborhood;
-    ::ll::TypedStorage<4, 12, ::Vec3> mCenterOfMass;
-    ::ll::TypedStorage<4, 12, ::Vec3> mGroupVelocity;
-    ::ll::TypedStorage<4, 12, ::Vec3> mGoalHeading;
-    ::ll::TypedStorage<4, 12, ::Vec3> mCurrentHeading;
-    ::ll::TypedStorage<1, 1, bool> mInWater;
-    ::ll::TypedStorage<1, 1, bool> mMatchVariant;
-    ::ll::TypedStorage<1, 1, bool> mUseCenterOfMass;
-    ::ll::TypedStorage<1, 1, bool> mIsLeader;
-    ::ll::TypedStorage<1, 1, bool> mInFlock;
-    ::ll::TypedStorage<1, 1, bool> mIsEnabled;
-    ::ll::TypedStorage<1, 1, bool> mHasTargetGoal;
-    ::ll::TypedStorage<1, 1, bool> mUsingDirection;
-    ::ll::TypedStorage<4, 4, int> mFlockLimit;
-    ::ll::TypedStorage<4, 4, float> mLonerChance;
-    ::ll::TypedStorage<4, 4, float> mGoalWeight;
-    ::ll::TypedStorage<4, 4, float> mInfluenceRadius;
-    ::ll::TypedStorage<4, 4, float> mBreachInfluence;
-    ::ll::TypedStorage<4, 4, float> mSeparationWeight;
-    ::ll::TypedStorage<4, 4, float> mSeparationThreshold;
-    ::ll::TypedStorage<4, 4, float> mCohesionWeight;
-    ::ll::TypedStorage<4, 4, float> mCohesionThreshold;
-    ::ll::TypedStorage<4, 4, float> mInnerCohesionThreshold;
-    ::ll::TypedStorage<4, 4, float> mMinHeight;
-    ::ll::TypedStorage<4, 4, float> mMaxHeight;
-    ::ll::TypedStorage<4, 4, float> mBlockDist;
-    ::ll::TypedStorage<4, 4, float> mBlockWeight;
-    ::ll::TypedStorage<1, 1, bool> mOverspeedRequired;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mCenterOfMass;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mGroupVelocity;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mGoalHeading;
+    ::ll::TypedStorage<4, 12, ::Vec3>                         mCurrentHeading;
+    ::ll::TypedStorage<1, 1, bool>                            mInWater;
+    ::ll::TypedStorage<1, 1, bool>                            mMatchVariant;
+    ::ll::TypedStorage<1, 1, bool>                            mUseCenterOfMass;
+    ::ll::TypedStorage<1, 1, bool>                            mIsLeader;
+    ::ll::TypedStorage<1, 1, bool>                            mInFlock;
+    ::ll::TypedStorage<1, 1, bool>                            mIsEnabled;
+    ::ll::TypedStorage<1, 1, bool>                            mHasTargetGoal;
+    ::ll::TypedStorage<1, 1, bool>                            mUsingDirection;
+    ::ll::TypedStorage<4, 4, int>                             mFlockLimit;
+    ::ll::TypedStorage<4, 4, float>                           mLonerChance;
+    ::ll::TypedStorage<4, 4, float>                           mGoalWeight;
+    ::ll::TypedStorage<4, 4, float>                           mInfluenceRadius;
+    ::ll::TypedStorage<4, 4, float>                           mBreachInfluence;
+    ::ll::TypedStorage<4, 4, float>                           mSeparationWeight;
+    ::ll::TypedStorage<4, 4, float>                           mSeparationThreshold;
+    ::ll::TypedStorage<4, 4, float>                           mCohesionWeight;
+    ::ll::TypedStorage<4, 4, float>                           mCohesionThreshold;
+    ::ll::TypedStorage<4, 4, float>                           mInnerCohesionThreshold;
+    ::ll::TypedStorage<4, 4, float>                           mMinHeight;
+    ::ll::TypedStorage<4, 4, float>                           mMaxHeight;
+    ::ll::TypedStorage<4, 4, float>                           mBlockDist;
+    ::ll::TypedStorage<4, 4, float>                           mBlockWeight;
+    ::ll::TypedStorage<1, 1, bool>                            mOverspeedRequired;
     // NOLINTEND
 
 public:
@@ -78,5 +78,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::FlockingComponent&&);
     // NOLINTEND
-
 };

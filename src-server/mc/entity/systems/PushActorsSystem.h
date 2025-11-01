@@ -21,11 +21,16 @@ struct PushActorsSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickPushActors(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent, ::PushActorsRequestComponent>, ::ActorOwnerComponent> view, ::EntityModifier<::PushActorsRequestComponent> mod);
+    MCNAPI static void _tickPushActors(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent, ::PushActorsRequestComponent>,
+            ::ActorOwnerComponent>                     view,
+        ::EntityModifier<::PushActorsRequestComponent> mod
+    );
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
 
     MCNAPI static void pushActors(::ActorOwnerComponent& actorOwnerComponent);
     // NOLINTEND
-
 };

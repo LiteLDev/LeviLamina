@@ -18,5 +18,4 @@ public:
     static_tree_desc_s& operator=(static_tree_desc_s const&);
     static_tree_desc_s(static_tree_desc_s const&);
     static_tree_desc_s();
-
 };

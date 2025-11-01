@@ -18,15 +18,15 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk73e31d;
     ::ll::UntypedStorage<8, 32> mUnkd9e0be;
     ::ll::UntypedStorage<8, 32> mUnk75e1ba;
-    ::ll::UntypedStorage<4, 4> mUnk12f3aa;
-    ::ll::UntypedStorage<1, 1> mUnk14e1df;
-    ::ll::UntypedStorage<1, 1> mUnk77e735;
-    ::ll::UntypedStorage<1, 1> mUnkf648a5;
-    ::ll::UntypedStorage<4, 4> mUnk4f9869;
-    ::ll::UntypedStorage<1, 1> mUnkbf14b3;
-    ::ll::UntypedStorage<1, 1> mUnkd6ad32;
-    ::ll::UntypedStorage<1, 1> mUnk5f585e;
-    ::ll::UntypedStorage<1, 1> mUnk14e377;
+    ::ll::UntypedStorage<4, 4>  mUnk12f3aa;
+    ::ll::UntypedStorage<1, 1>  mUnk14e1df;
+    ::ll::UntypedStorage<1, 1>  mUnk77e735;
+    ::ll::UntypedStorage<1, 1>  mUnkf648a5;
+    ::ll::UntypedStorage<4, 4>  mUnk4f9869;
+    ::ll::UntypedStorage<1, 1>  mUnkbf14b3;
+    ::ll::UntypedStorage<1, 1>  mUnkd6ad32;
+    ::ll::UntypedStorage<1, 1>  mUnk5f585e;
+    ::ll::UntypedStorage<1, 1>  mUnk14e377;
     // NOLINTEND
 
 public:
@@ -34,5 +34,4 @@ public:
     ModalScreenData& operator=(ModalScreenData const&);
     ModalScreenData(ModalScreenData const&);
     ModalScreenData();
-
 };

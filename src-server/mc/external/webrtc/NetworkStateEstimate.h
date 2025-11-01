@@ -32,7 +32,6 @@ public:
     NetworkStateEstimate& operator=(NetworkStateEstimate const&);
     NetworkStateEstimate(NetworkStateEstimate const&);
     NetworkStateEstimate();
-
 };
 
-}
+} // namespace webrtc

@@ -17,7 +17,14 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::Bedrock::PubSub::Connector<void(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&, ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>)>& getPictureTakenConnector() = 0;
+    virtual ::Bedrock::PubSub::Connector<void(
+        ::cg::ImageBuffer&,
+        ::Actor*,
+        ::Actor*,
+        ::ScreenshotOptions&,
+        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
+    )>&
+    getPictureTakenConnector() = 0;
     // NOLINTEND
 
 public:
@@ -25,5 +32,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

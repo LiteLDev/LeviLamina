@@ -22,9 +22,26 @@ struct StateVectorComponent;
 namespace UpdateServerPlayerInputSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void _handlePlayerAuthInputPacket(::StateVectorComponent const& stateVector, ::ActorHeadRotationComponent& actorHeadRotationComponent, ::ActorRotationComponent& actorRotationComponent, ::PlayerInputModeComponent& playerInputModeComponent, ::PlayerInteractionModelComponent& playerInteractionModelComponent, ::ServerPlayerCurrentMovementComponent& serverPlayerCurrentMovementComponent);
+MCAPI void _handlePlayerAuthInputPacket(
+    ::StateVectorComponent const&           stateVector,
+    ::ActorHeadRotationComponent&           actorHeadRotationComponent,
+    ::ActorRotationComponent&               actorRotationComponent,
+    ::PlayerInputModeComponent&             playerInputModeComponent,
+    ::PlayerInteractionModelComponent&      playerInteractionModelComponent,
+    ::ServerPlayerCurrentMovementComponent& serverPlayerCurrentMovementComponent
+);
 
-MCAPI void _tickUpdateServerPlayerInputSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>, ::StateVectorComponent const, ::ActorHeadRotationComponent, ::ActorRotationComponent, ::PlayerInputModeComponent, ::PlayerInteractionModelComponent, ::ServerPlayerCurrentMovementComponent> view);
+MCAPI void _tickUpdateServerPlayerInputSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>,
+        ::StateVectorComponent const,
+        ::ActorHeadRotationComponent,
+        ::ActorRotationComponent,
+        ::PlayerInputModeComponent,
+        ::PlayerInteractionModelComponent,
+        ::ServerPlayerCurrentMovementComponent> view
+);
 // NOLINTEND
 
-}
+} // namespace UpdateServerPlayerInputSystemImpl

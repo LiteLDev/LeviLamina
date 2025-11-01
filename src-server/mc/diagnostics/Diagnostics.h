@@ -12,7 +12,16 @@ namespace Bedrock::Diagnostics {
 // NOLINTBEGIN
 MCNAPI bool handleAssert(char const*, char const*, int, char const*, char const*, ...);
 
-MCNAPI void log(::BedrockLog::LogCategory, ::std::bitset<3>, ::BedrockLog::LogRule, ::LogAreaID, uint, char const*, int, char const*, ...);
+MCNAPI void
+log(::BedrockLog::LogCategory,
+    ::std::bitset<3>,
+    ::BedrockLog::LogRule,
+    ::LogAreaID,
+    uint,
+    char const*,
+    int,
+    char const*,
+    ...);
 // NOLINTEND
 
-}
+} // namespace Bedrock::Diagnostics

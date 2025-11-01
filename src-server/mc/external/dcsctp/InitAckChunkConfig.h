@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-struct InitAckChunkConfig {
-};
+struct InitAckChunkConfig {};
 
-}
+} // namespace dcsctp

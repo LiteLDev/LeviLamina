@@ -10,8 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::EnchantResultType> result;
-    ::ll::TypedStorage<8, 8, uint64> enchantIdx;
-    ::ll::TypedStorage<4, 4, int> level;
+    ::ll::TypedStorage<8, 8, uint64>              enchantIdx;
+    ::ll::TypedStorage<4, 4, int>                 level;
     // NOLINTEND
-
 };

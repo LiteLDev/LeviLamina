@@ -19,5 +19,4 @@ public:
 
     MCAPI static ::Vec2 const& ZERO();
     // NOLINTEND
-
 };

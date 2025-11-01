@@ -7,12 +7,11 @@
 #include "mc/world/events/ScriptModuleShutdownEvent.h"
 #include "mc/world/events/ScriptModuleStartupEvent.h"
 
-template<typename Result>
+template <typename Result>
 struct ScriptingGameplayEvent;
 
 template <>
 struct ScriptingGameplayEvent<CoordinatorResult>
 : ConstEventVariant<ScriptCommandMessageEvent, ScriptModuleStartupEvent, ScriptModuleShutdownEvent> {
     using ConstEventVariant<ScriptCommandMessageEvent, ScriptModuleStartupEvent, ScriptModuleShutdownEvent>::
-        ConstEventVariant;
-};
+        ConstEventVariant;};

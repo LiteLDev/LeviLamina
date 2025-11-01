@@ -4,8 +4,7 @@
 
 namespace Scripting {
 
-template<typename T0>
-struct TypedObjectHandle {
-};
+template <typename T0>
+struct TypedObjectHandle {};
 
-}
+} // namespace Scripting

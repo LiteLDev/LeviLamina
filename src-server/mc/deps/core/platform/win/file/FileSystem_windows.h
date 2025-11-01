@@ -32,7 +32,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6
-    virtual ::Core::Result _openFile(::std::unique_ptr<::Core::FileImpl>& uptFileOut, ::Core::PathView filename, ::Core::FileOpenMode fileOpenMode, ::Core::FileBufferingMode bufferingMode) /*override*/;
+    virtual ::Core::Result _openFile(
+        ::std::unique_ptr<::Core::FileImpl>& uptFileOut,
+        ::Core::PathView                     filename,
+        ::Core::FileOpenMode                 fileOpenMode,
+        ::Core::FileBufferingMode            bufferingMode
+    ) /*override*/;
 
     // vIndex: 7
     virtual bool _fileExists(::Core::PathView filePath) /*override*/;
@@ -56,10 +61,15 @@ public:
     virtual bool _directoryExists(::Core::PathView directoryPath) /*override*/;
 
     // vIndex: 24
-    virtual ::Core::Result _renameDirectory(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath) /*override*/;
+    virtual ::Core::Result
+    _renameDirectory(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath) /*override*/;
 
     // vIndex: 25
-    virtual ::Core::Result _iterateOverDirectory(::Core::PathView directoryPath, ::Core::DirectoryIterationFlags flags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> fx) /*override*/;
+    virtual ::Core::Result _iterateOverDirectory(
+        ::Core::PathView                                                             directoryPath,
+        ::Core::DirectoryIterationFlags                                              flags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> fx
+    ) /*override*/;
 
     // vIndex: 31
     virtual bool _fileOrDirectoryExists(::Core::PathView entryPath) /*override*/;
@@ -71,7 +81,8 @@ public:
     virtual ::Core::Result _getEntryType(::Core::PathView entryPath, ::Core::FileType& fileTypeOut) /*override*/;
 
     // vIndex: 45
-    virtual ::Core::Result _copyTimeAndAccessRights(::Core::PathView sourceEntryPath, ::Core::PathView targetEntryPath) /*override*/;
+    virtual ::Core::Result
+    _copyTimeAndAccessRights(::Core::PathView sourceEntryPath, ::Core::PathView targetEntryPath) /*override*/;
 
     // vIndex: 0
     virtual ~FileSystem_windows() /*override*/ = default;
@@ -80,21 +91,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FileSystem_windows(::Core::FileAccessType accessType, ::std::shared_ptr<::Core::FileStorageArea> storageArea, ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker);
+    MCNAPI FileSystem_windows(
+        ::Core::FileAccessType                             accessType,
+        ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
+        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
+    );
 
-    MCNAPI ::Core::Result _makeFailureFromFileSystemResult(::std::error_code const& errorCode, char const* function, char const* fileContext);
+    MCNAPI ::Core::Result
+    _makeFailureFromFileSystemResult(::std::error_code const& errorCode, char const* function, char const* fileContext);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::FileAccessType accessType, ::std::shared_ptr<::Core::FileStorageArea> storageArea, ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker);
+    MCNAPI void* $ctor(
+        ::Core::FileAccessType                             accessType,
+        ::std::shared_ptr<::Core::FileStorageArea>         storageArea,
+        ::std::shared_ptr<::Core::FlatFileManifestTracker> manifestTracker
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Core::Result $_openFile(::std::unique_ptr<::Core::FileImpl>& uptFileOut, ::Core::PathView filename, ::Core::FileOpenMode fileOpenMode, ::Core::FileBufferingMode bufferingMode);
+    MCNAPI ::Core::Result $_openFile(
+        ::std::unique_ptr<::Core::FileImpl>& uptFileOut,
+        ::Core::PathView                     filename,
+        ::Core::FileOpenMode                 fileOpenMode,
+        ::Core::FileBufferingMode            bufferingMode
+    );
 
     MCNAPI bool $_fileExists(::Core::PathView filePath);
 
@@ -112,7 +137,11 @@ public:
 
     MCNAPI ::Core::Result $_renameDirectory(::Core::PathView sourceDirectoryPath, ::Core::PathView targetDirectoryPath);
 
-    MCNAPI ::Core::Result $_iterateOverDirectory(::Core::PathView directoryPath, ::Core::DirectoryIterationFlags flags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> fx);
+    MCNAPI ::Core::Result $_iterateOverDirectory(
+        ::Core::PathView                                                             directoryPath,
+        ::Core::DirectoryIterationFlags                                              flags,
+        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)> fx
+    );
 
     MCNAPI bool $_fileOrDirectoryExists(::Core::PathView entryPath);
 
@@ -128,7 +157,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

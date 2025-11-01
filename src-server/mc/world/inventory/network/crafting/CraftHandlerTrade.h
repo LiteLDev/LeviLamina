@@ -23,9 +23,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ContainerScreenContext const&> mScreenContext;
-    ::ll::TypedStorage<1, 1, bool> mIsTrade2;
-    ::ll::TypedStorage<8, 16, ::std::optional<uint64>> mTradeIndex;
-    ::ll::TypedStorage<4, 4, int> mNumCrafts;
+    ::ll::TypedStorage<1, 1, bool>                            mIsTrade2;
+    ::ll::TypedStorage<8, 16, ::std::optional<uint64>>        mTradeIndex;
+    ::ll::TypedStorage<4, 4, int>                             mNumCrafts;
     // NOLINTEND
 
 public:
@@ -41,10 +41,15 @@ public:
     virtual ~CraftHandlerTrade() /*override*/ = default;
 
     // vIndex: 4
-    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
+    virtual ::ItemStackNetResult
+    _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
     // vIndex: 1
-    virtual ::ItemStackNetResult handleConsumedItem(::FullContainerName const& openContainerNetId, uchar const slot, ::ItemStack const& consumedItem) /*override*/;
+    virtual ::ItemStackNetResult handleConsumedItem(
+        ::FullContainerName const& openContainerNetId,
+        uchar const                slot,
+        ::ItemStack const&         consumedItem
+    ) /*override*/;
 
     // vIndex: 5
     virtual void _postCraftRequest(bool const wasSuccess) /*override*/;
@@ -53,7 +58,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::tuple<::ItemStackNetResult, ::MerchantRecipe const*> _getMerchantRecipeFromNetId(::RecipeNetId const& tradeRecipeNetId);
+    MCAPI ::std::tuple<::ItemStackNetResult, ::MerchantRecipe const*>
+    _getMerchantRecipeFromNetId(::RecipeNetId const& tradeRecipeNetId);
 
     MCAPI ::ItemStackNetResult _handleTrade1(::ItemStackRequestActionCraft<::RecipeNetId, 12> const& requestAction);
 
@@ -67,7 +73,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCAPI ::ItemStackNetResult $handleConsumedItem(::FullContainerName const& openContainerNetId, uchar const slot, ::ItemStack const& consumedItem);
+    MCAPI ::ItemStackNetResult $handleConsumedItem(
+        ::FullContainerName const& openContainerNetId,
+        uchar const                slot,
+        ::ItemStack const&         consumedItem
+    );
 
     MCAPI void $_postCraftRequest(bool const wasSuccess);
     // NOLINTEND
@@ -77,5 +87,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

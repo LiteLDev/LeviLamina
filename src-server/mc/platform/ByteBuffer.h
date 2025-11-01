@@ -4,8 +4,7 @@
 
 namespace Bedrock::Uninitialized {
 
-template<int T0>
-struct ByteBuffer {
-};
+template <int T0>
+struct ByteBuffer {};
 
-}
+} // namespace Bedrock::Uninitialized

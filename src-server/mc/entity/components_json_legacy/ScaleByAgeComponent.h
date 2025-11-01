@@ -9,5 +9,4 @@ public:
     ::ll::TypedStorage<4, 4, float> mStartScale;
     ::ll::TypedStorage<4, 4, float> mEndScale;
     // NOLINTEND
-
 };

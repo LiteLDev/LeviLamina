@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI long Initialize(void* context, void(*callback) (void*, ::OS::ThreadPoolActionStatus&));
+    MCNAPI long Initialize(void* context, void (*callback)(void*, ::OS::ThreadPoolActionStatus&));
 
     MCNAPI void Submit();
 
@@ -46,7 +46,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace OS

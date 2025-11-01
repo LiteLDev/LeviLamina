@@ -22,16 +22,16 @@ class SetItemDataFunction : public ::LootItemFunction {
 public:
     // SetItemDataFunction inner types define
     enum class ApplyForComplexAliasBlockResult : uchar {
-        NotComplexAliasBlock = 0,
+        NotComplexAliasBlock           = 0,
         FailedToRemapComplexAliasBlock = 1,
-        Success = 2,
+        Success                        = 2,
     };
-    
+
     enum class ApplyForItemResult : uchar {
-        AsNewItem = 0,
+        AsNewItem   = 0,
         SetAuxValue = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,9 +64,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(::Item const*& inOutItemDef, ::std::string const& originalItemName, ::Random& random, int& outResultAux);
+    MCNAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(
+        ::Item const*&       inOutItemDef,
+        ::std::string const& originalItemName,
+        ::Random&            random,
+        int&                 outResultAux
+    );
 
-    MCNAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(::std::string const& originalItemName, ::std::string const& itemRawNameId, ::Random& random, int& outAux, ::WeakPtr<::Item>& outItem);
+    MCNAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(
+        ::std::string const& originalItemName,
+        ::std::string const& itemRawNameId,
+        ::Random&            random,
+        int&                 outAux,
+        ::WeakPtr<::Item>&   outItem
+    );
 
     MCNAPI void _applyImplForNormalBlock(::Block const*& inOutBlock, ::Random& random);
     // NOLINTEND
@@ -74,7 +85,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemFunction> deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    MCNAPI static ::std::unique_ptr<::LootItemFunction>
+    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
@@ -92,5 +104,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -5,9 +5,8 @@
 #include "mc/util/IDType.h"
 #include "mc/util/IndexSet.h"
 
-template<typename TagID, typename TagSetID>
-class TagRegistry {
-public:
+template <typename TagID, typename TagSetID>
+class TagRegistry {public:
     std::unordered_map<HashedString, uint64> mTagIndexMap;
     std::vector<std::string>                 mTags;
     std::vector<IndexSet>                    mSets;

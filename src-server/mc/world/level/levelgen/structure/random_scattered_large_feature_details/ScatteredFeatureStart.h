@@ -18,11 +18,11 @@ public:
     // ScatteredFeatureStart inner types define
     enum class Type : int {
         JunglePyramid = 0,
-        SwamplandHut = 1,
+        SwamplandHut  = 1,
         DesertPyramid = 2,
-        Igloo = 3,
+        Igloo         = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -49,13 +49,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScatteredFeatureStart(::BiomeSource const& source, short seaLevel, int chunkX, int chunkZ, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel);
+    MCAPI ScatteredFeatureStart(
+        ::BiomeSource const&                 source,
+        short                                seaLevel,
+        int                                  chunkX,
+        int                                  chunkZ,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeSource const& source, short seaLevel, int chunkX, int chunkZ, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel);
+    MCAPI void* $ctor(
+        ::BiomeSource const&                 source,
+        short                                seaLevel,
+        int                                  chunkX,
+        int                                  chunkZ,
+        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
+    );
     // NOLINTEND
 
 public:
@@ -71,7 +83,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace RandomScatteredLargeFeatureDetails

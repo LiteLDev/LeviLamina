@@ -19,8 +19,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::LavaFlammable> mLavaFlammable;
-    ::ll::TypedStorage<4, 4, int> mCatchChanceModifier;
-    ::ll::TypedStorage<4, 4, int> mDestroyChanceModifier;
+    ::ll::TypedStorage<4, 4, int>             mCatchChanceModifier;
+    ::ll::TypedStorage<4, 4, int>             mDestroyChanceModifier;
     // NOLINTEND
 
 public:
@@ -46,7 +46,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockFlammableDescription(::FlameOdds catchChanceModifier, ::BurnOdds destroyChanceModifier, ::LavaFlammable lavaFlammable);
+    MCAPI BlockFlammableDescription(
+        ::FlameOdds     catchChanceModifier,
+        ::BurnOdds      destroyChanceModifier,
+        ::LavaFlammable lavaFlammable
+    );
     // NOLINTEND
 
 public:
@@ -88,5 +92,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

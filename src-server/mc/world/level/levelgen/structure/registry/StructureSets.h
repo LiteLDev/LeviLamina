@@ -16,9 +16,13 @@ struct StructureSets {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bootstrap(::br::worldgen::StructureRegistry const& structures, ::br::worldgen::StructureSetRegistry& context, ::BaseGameVersion const& baseGameVersion, ::std::vector<::SharedTypes::v1_21_20::JigsawStructureSet::Contents> const* structureSetsData);
+    MCAPI static void bootstrap(
+        ::br::worldgen::StructureRegistry const&                                    structures,
+        ::br::worldgen::StructureSetRegistry&                                       context,
+        ::BaseGameVersion const&                                                    baseGameVersion,
+        ::std::vector<::SharedTypes::v1_21_20::JigsawStructureSet::Contents> const* structureSetsData
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace br::worldgen

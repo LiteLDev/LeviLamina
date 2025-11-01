@@ -8,8 +8,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkf991c7;
     ::ll::UntypedStorage<8, 16> mUnk7a0f65;
-    ::ll::UntypedStorage<1, 1> mUnk89f4ee;
-    ::ll::UntypedStorage<1, 1> mUnk17390f;
+    ::ll::UntypedStorage<1, 1>  mUnk89f4ee;
+    ::ll::UntypedStorage<1, 1>  mUnk17390f;
     // NOLINTEND
 
 public:
@@ -17,5 +17,4 @@ public:
     JSProxyData& operator=(JSProxyData const&);
     JSProxyData(JSProxyData const&);
     JSProxyData();
-
 };

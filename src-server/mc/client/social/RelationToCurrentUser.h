@@ -5,12 +5,12 @@
 namespace Social {
 
 enum class RelationToCurrentUser : int {
-    Self = 0,
+    Self         = 0,
     TwoWayFriend = 1,
-    Following = 2,
-    Follower = 3,
-    Stranger = 4,
-    Unknown = 5,
+    Following    = 2,
+    Follower     = 3,
+    Stranger     = 4,
+    Unknown      = 5,
 };
 
 }

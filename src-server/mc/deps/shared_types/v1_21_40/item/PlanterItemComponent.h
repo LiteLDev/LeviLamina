@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkfad5ea;
     ::ll::UntypedStorage<8, 24> mUnk81fc40;
-    ::ll::UntypedStorage<1, 1> mUnkd6fad7;
+    ::ll::UntypedStorage<1, 1>  mUnkd6fad7;
     // NOLINTEND
 
 public:
@@ -38,7 +38,10 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void upgrade(::std::optional<::SharedTypes::v1_20_50::PlanterItemComponent>& oldDefinition, ::std::optional<::SharedTypes::v1_21_40::PlanterItemComponent>& newDefinition);
+    MCNAPI static void upgrade(
+        ::std::optional<::SharedTypes::v1_20_50::PlanterItemComponent>& oldDefinition,
+        ::std::optional<::SharedTypes::v1_21_40::PlanterItemComponent>& newDefinition
+    );
     // NOLINTEND
 
 public:
@@ -46,7 +49,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_40

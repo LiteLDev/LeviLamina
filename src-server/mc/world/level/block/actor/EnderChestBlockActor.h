@@ -45,5 +45,4 @@ public:
 
     MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
-
 };

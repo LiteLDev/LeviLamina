@@ -35,7 +35,8 @@ public:
     virtual void send(void const*) /*override*/;
 
     // vIndex: 2
-    virtual ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)> getConnectOp(::std::function<void(void const*)>&&) /*override*/;
+    virtual ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)>
+    getConnectOp(::std::function<void(void const*)>&&) /*override*/;
 
     // vIndex: 0
     virtual ~GeneralSignalPublisher() /*override*/ = default;
@@ -46,7 +47,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Detail

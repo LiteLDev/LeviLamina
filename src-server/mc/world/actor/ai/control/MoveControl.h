@@ -33,9 +33,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI float calculateMoveSpeed(::MoveControlComponent const& parent, ::Mob& mob, ::Vec3 const& endPosition, float maxMoveSpeed);
+    MCAPI float
+    calculateMoveSpeed(::MoveControlComponent const& parent, ::Mob& mob, ::Vec3 const& endPosition, float maxMoveSpeed);
 
-    MCAPI float calculateYRotation(::MoveControlComponent const& parent, ::Mob const& mob, ::Vec3 const& positionDifference, float maxMoveSpeed);
+    MCAPI float calculateYRotation(
+        ::MoveControlComponent const& parent,
+        ::Mob const&                  mob,
+        ::Vec3 const&                 positionDifference,
+        float                         maxMoveSpeed
+    );
     // NOLINTEND
 
 public:
@@ -67,5 +73,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -23,7 +23,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Editor::Services::EditorRealmsWorld& operator=(::Editor::Services::EditorRealmsWorld&&);
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

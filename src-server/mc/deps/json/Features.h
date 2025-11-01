@@ -17,7 +17,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Json::Features strictMode();
     // NOLINTEND
-
 };
 
-}
+} // namespace Json

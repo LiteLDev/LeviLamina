@@ -12,7 +12,9 @@ namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemCustomComponentIntermediateStorage : public ::ScriptModuleMinecraft::ScriptCustomComponentPubSubAdapterStorage<::ScriptModuleMinecraft::ScriptItemCustomComponentInterface> {
+struct ScriptItemCustomComponentIntermediateStorage
+: public ::ScriptModuleMinecraft::ScriptCustomComponentPubSubAdapterStorage<
+      ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface> {
 public:
     // member functions
     // NOLINTBEGIN
@@ -24,7 +26,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

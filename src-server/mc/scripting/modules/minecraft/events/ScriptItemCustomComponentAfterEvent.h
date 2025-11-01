@@ -12,14 +12,15 @@ namespace ScriptModuleMinecraft { class ScriptItemCustomComponentInterface; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemCustomComponentAfterEvent : public ::ScriptModuleMinecraft::ScriptCustomComponentPubSubAdapterAfterEvent<::ScriptModuleMinecraft::ScriptItemCustomComponentInterface> {
+struct ScriptItemCustomComponentAfterEvent
+: public ::ScriptModuleMinecraft::ScriptCustomComponentPubSubAdapterAfterEvent<
+      ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
     virtual ~ScriptItemCustomComponentAfterEvent() /*override*/ = default;
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

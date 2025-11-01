@@ -27,7 +27,7 @@ class TheEndDimension : public ::Dimension {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EndDragonFight>> mDragonFight;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EndDragonFight>>       mDragonFight;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EndChaosLightManager>> mEndChaosLightManager;
     // NOLINTEND
 
@@ -84,7 +84,8 @@ public:
     virtual float getTimeOfDay(int time, float a) const /*override*/;
 
     // vIndex: 17
-    virtual ::std::unique_ptr<::WorldGenerator> createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
+    virtual ::std::unique_ptr<::WorldGenerator>
+    createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
     // vIndex: 20
     virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
@@ -99,13 +100,16 @@ public:
     virtual ::Dimension::DirectionalLightState getDimensionDirectionalLightSourceState(float a) const /*override*/;
 
     // vIndex: 30
-    virtual void setDimensionDirectionalLightControls(::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls) /*override*/;
+    virtual void setDimensionDirectionalLightControls(
+        ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
+    ) /*override*/;
 
     // vIndex: 41
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
     // vIndex: 42
-    virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource>, ::StorageVersion) /*override*/;
+    virtual ::std::unique_ptr<::ChunkSource>
+        _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource>, ::StorageVersion) /*override*/;
     // NOLINTEND
 
 public:
@@ -151,7 +155,8 @@ public:
 
     MCFOLD float $getTimeOfDay(int time, float a) const;
 
-    MCAPI ::std::unique_ptr<::WorldGenerator> $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
+    MCAPI ::std::unique_ptr<::WorldGenerator>
+    $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
     MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
@@ -161,7 +166,9 @@ public:
 
     MCAPI ::Dimension::DirectionalLightState $getDimensionDirectionalLightSourceState(float a) const;
 
-    MCAPI void $setDimensionDirectionalLightControls(::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls);
+    MCAPI void $setDimensionDirectionalLightControls(
+        ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
+    );
 
     MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
     // NOLINTEND
@@ -177,5 +184,4 @@ public:
 
     MCNAPI static void** $vftableForLevelListener();
     // NOLINTEND
-
 };

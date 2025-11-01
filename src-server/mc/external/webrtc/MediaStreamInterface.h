@@ -87,7 +87,6 @@ public:
 
     MCNAPI bool $RemoveTrack(::webrtc::VideoTrackInterface* track);
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

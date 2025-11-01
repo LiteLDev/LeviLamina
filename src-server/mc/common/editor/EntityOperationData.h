@@ -18,7 +18,6 @@ public:
     EntityOperationData& operator=(EntityOperationData const&);
     EntityOperationData(EntityOperationData const&);
     EntityOperationData();
-
 };
 
-}
+} // namespace Editor::Transactions

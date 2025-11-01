@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>> mValidGroundBlocks;
-    ::ll::TypedStorage<1, 1, bool> mMayPlaceInLava;
+    ::ll::TypedStorage<1, 1, bool>                           mMayPlaceInLava;
     // NOLINTEND
 
 public:
@@ -34,7 +34,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _tryPlaceDriedGhastBlock(::BlockSource& region, ::BlockPos const& aabbMin, ::BlockPos const& aabbMax, int fossilHeight, ::Random& random) const;
+    MCAPI void _tryPlaceDriedGhastBlock(
+        ::BlockSource&    region,
+        ::BlockPos const& aabbMin,
+        ::BlockPos const& aabbMax,
+        int               fossilHeight,
+        ::Random&         random
+    ) const;
     // NOLINTEND
 
 public:
@@ -54,5 +60,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

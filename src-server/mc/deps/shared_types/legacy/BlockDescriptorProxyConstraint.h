@@ -14,7 +14,8 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 namespace SharedTypes::Legacy::BlockDescriptorSerializer {
 
-class BlockDescriptorProxyConstraint : public ::cereal::ConstraintHandle<::SharedTypes::Legacy::BlockDescriptorSerializer::BlockDescriptorProxyConstraint> {
+class BlockDescriptorProxyConstraint
+: public ::cereal::ConstraintHandle<::SharedTypes::Legacy::BlockDescriptorSerializer::BlockDescriptorProxyConstraint> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -28,7 +29,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void validateValue(::SharedTypes::Legacy::BlockDescriptorSerializer::BlockDescriptorProxy const& proxy, ::cereal::SerializerContext& context) const;
+    MCNAPI void validateValue(
+        ::SharedTypes::Legacy::BlockDescriptorSerializer::BlockDescriptorProxy const& proxy,
+        ::cereal::SerializerContext&                                                  context
+    ) const;
     // NOLINTEND
 
 public:
@@ -42,7 +46,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::Legacy::BlockDescriptorSerializer

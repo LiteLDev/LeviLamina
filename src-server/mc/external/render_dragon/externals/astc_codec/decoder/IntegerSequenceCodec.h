@@ -8,11 +8,11 @@ class IntegerSequenceCodec {
 public:
     // IntegerSequenceCodec inner types define
     enum class EncodingMode : int {
-        KTritEncoding = 0,
+        KTritEncoding  = 0,
         KQuintEncoding = 1,
-        KBitEncoding = 2,
+        KBitEncoding   = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -25,7 +25,6 @@ public:
     IntegerSequenceCodec& operator=(IntegerSequenceCodec const&);
     IntegerSequenceCodec(IntegerSequenceCodec const&);
     IntegerSequenceCodec();
-
 };
 
-}
+} // namespace astc_codec

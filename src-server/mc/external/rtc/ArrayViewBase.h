@@ -4,7 +4,6 @@
 
 namespace rtc::array_view_internal {
 
-class ArrayViewBase {
-};
+class ArrayViewBase {};
 
-}
+} // namespace rtc::array_view_internal

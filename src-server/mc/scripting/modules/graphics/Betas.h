@@ -13,4 +13,4 @@ namespace ScriptModuleServerGraphics::Betas {
 MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-}
+} // namespace ScriptModuleServerGraphics::Betas

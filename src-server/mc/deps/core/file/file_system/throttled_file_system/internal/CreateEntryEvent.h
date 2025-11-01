@@ -4,8 +4,7 @@
 
 namespace Core::Internal {
 
-template<typename T0>
-class CreateEntryEvent {
-};
+template <typename T0>
+class CreateEntryEvent {};
 
-}
+} // namespace Core::Internal

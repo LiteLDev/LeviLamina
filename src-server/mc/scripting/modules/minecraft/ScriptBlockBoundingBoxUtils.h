@@ -37,7 +37,6 @@ public:
 
     MCNAPI static ::BoundingBox translate(::BoundingBox const& box, ::Vec3 const& delta);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

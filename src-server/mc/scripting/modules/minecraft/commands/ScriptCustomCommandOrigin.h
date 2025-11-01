@@ -13,7 +13,7 @@ class ScriptCustomCommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkd57353;
+    ::ll::UntypedStorage<4, 4>  mUnkd57353;
     ::ll::UntypedStorage<8, 40> mUnk5a2d82;
     ::ll::UntypedStorage<8, 40> mUnk74d2d5;
     ::ll::UntypedStorage<8, 40> mUnk9a2832;
@@ -53,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -21,52 +21,51 @@ public:
     // clang-format off
     class State;
     // clang-format on
-    
+
     // AsyncDnsResolver inner types define
     class State : public ::rtc::RefCountedBase {
     public:
         // State inner types define
         enum class Status : int {
-            KActive = 0,
+            KActive   = 0,
             KFinished = 1,
-            KDead = 2,
+            KDead     = 2,
         };
-        
+
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 40> mUnk2d94c8;
-        ::ll::UntypedStorage<4, 4> mUnk4288d0;
+        ::ll::UntypedStorage<4, 4>  mUnk4288d0;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         State& operator=(State const&);
         State(State const&);
         State();
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~State() /*override*/ = default;
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkfbf043;
-    ::ll::UntypedStorage<8, 8> mUnk7ea644;
+    ::ll::UntypedStorage<8, 8>   mUnkfbf043;
+    ::ll::UntypedStorage<8, 8>   mUnk7ea644;
     ::ll::UntypedStorage<8, 128> mUnkeb6b56;
-    ::ll::UntypedStorage<8, 32> mUnk1f0e61;
+    ::ll::UntypedStorage<8, 32>  mUnk1f0e61;
     // NOLINTEND
 
 public:
@@ -84,7 +83,8 @@ public:
     virtual void Start(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
 
     // vIndex: 1
-    virtual void Start(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
+    virtual void
+    Start(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
 
     // vIndex: 3
     virtual ::webrtc::AsyncDnsResolverResult const& result() const /*override*/;
@@ -123,7 +123,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

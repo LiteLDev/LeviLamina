@@ -14,9 +14,9 @@ struct BlockChangeIntentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7d81fc;
-    ::ll::UntypedStorage<4, 4> mUnkfd388c;
-    ::ll::UntypedStorage<8, 8> mUnka51523;
+    ::ll::UntypedStorage<4, 4>  mUnk7d81fc;
+    ::ll::UntypedStorage<4, 4>  mUnkfd388c;
+    ::ll::UntypedStorage<8, 8>  mUnka51523;
     ::ll::UntypedStorage<4, 12> mUnka242ca;
     // NOLINTEND
 
@@ -29,7 +29,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockChangeIntentData(uint blockRuntimeId, uint extraBlockRuntimeId, ::BlockActor const* blockActor, ::BlockPos const& pos);
+    MCNAPI BlockChangeIntentData(
+        uint                blockRuntimeId,
+        uint                extraBlockRuntimeId,
+        ::BlockActor const* blockActor,
+        ::BlockPos const&   pos
+    );
 
     MCNAPI ~BlockChangeIntentData();
     // NOLINTEND
@@ -37,7 +42,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(uint blockRuntimeId, uint extraBlockRuntimeId, ::BlockActor const* blockActor, ::BlockPos const& pos);
+    MCNAPI void*
+    $ctor(uint blockRuntimeId, uint extraBlockRuntimeId, ::BlockActor const* blockActor, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -45,7 +51,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Transactions

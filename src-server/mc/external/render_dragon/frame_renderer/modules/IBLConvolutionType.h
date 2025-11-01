@@ -5,7 +5,7 @@
 namespace dragon::framerenderer::modules {
 
 enum class IBLConvolutionType : int {
-    MipChain = 0,
+    MipChain                   = 0,
     SpecularImportanceSampling = 1,
 };
 

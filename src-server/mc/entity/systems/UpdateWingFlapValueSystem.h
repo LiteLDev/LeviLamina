@@ -13,4 +13,4 @@ namespace UpdateWingFlapValueSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace UpdateWingFlapValueSystem

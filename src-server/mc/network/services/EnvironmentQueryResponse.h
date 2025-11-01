@@ -35,7 +35,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Bedrock::Services::EnvironmentQueryResponse const&);
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Services

@@ -25,7 +25,16 @@ class HorsePreTravelSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickHorsePreTravelSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::HorseFlagComponent>, ::Optional<::VehicleComponent>, ::ActorDataFlagComponent const, ::AirSpeedComponent> mainView, ::ViewT<::StrictEntityContext, ::MobFlagComponent const> mobCheck, ::ViewT<::StrictEntityContext, ::OnGroundFlagComponent const> onGroundCheck, ::EntityModifier<::HorseWasOnGroundPreTravelComponent> mod);
+    MCNAPI static void tickHorsePreTravelSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::HorseFlagComponent>,
+            ::Optional<::VehicleComponent>,
+            ::ActorDataFlagComponent const,
+            ::AirSpeedComponent>                                      mainView,
+        ::ViewT<::StrictEntityContext, ::MobFlagComponent const>      mobCheck,
+        ::ViewT<::StrictEntityContext, ::OnGroundFlagComponent const> onGroundCheck,
+        ::EntityModifier<::HorseWasOnGroundPreTravelComponent>        mod
+    );
     // NOLINTEND
-
 };

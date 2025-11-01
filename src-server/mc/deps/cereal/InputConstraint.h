@@ -16,7 +16,6 @@ public:
     InputConstraint& operator=(InputConstraint const&);
     InputConstraint(InputConstraint const&);
     InputConstraint();
-
 };
 
-}
+} // namespace cereal::internal

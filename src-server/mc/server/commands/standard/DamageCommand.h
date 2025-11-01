@@ -19,18 +19,18 @@ class DamageCommand : public ::Command {
 public:
     // DamageCommand inner types define
     enum class DamageOrigin : uchar {
-        None = 0,
+        None  = 0,
         Actor = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 200> mUnk643088;
     ::ll::UntypedStorage<8, 200> mUnk250bbd;
-    ::ll::UntypedStorage<4, 4> mUnk79080c;
-    ::ll::UntypedStorage<4, 4> mUnk598fc7;
-    ::ll::UntypedStorage<1, 1> mUnk507f07;
+    ::ll::UntypedStorage<4, 4>   mUnk79080c;
+    ::ll::UntypedStorage<4, 4>   mUnk598fc7;
+    ::ll::UntypedStorage<1, 1>   mUnk507f07;
     // NOLINTEND
 
 public:
@@ -53,7 +53,11 @@ public:
     // NOLINTBEGIN
     MCAPI DamageCommand();
 
-    MCAPI void _applyDamage(::CommandSelectorResults<::Actor>& targets, ::ActorDamageSource const& source, ::CommandOutput& output) const;
+    MCAPI void _applyDamage(
+        ::CommandSelectorResults<::Actor>& targets,
+        ::ActorDamageSource const&         source,
+        ::CommandOutput&                   output
+    ) const;
     // NOLINTEND
 
 public:
@@ -79,5 +83,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

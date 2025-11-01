@@ -24,30 +24,34 @@ class VibrationListener : public ::GameEventListener {
 public:
     // VibrationListener inner types define
     enum class OwnerType : int {
-        SculkSensor = 0,
+        SculkSensor   = 0,
         SculkShrieker = 1,
-        Warden = 2,
-        Allay = 3,
+        Warden        = 2,
+        Allay         = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::VibrationSelector> mVibrationSelector;
+    ::ll::TypedStorage<8, 72, ::VibrationSelector>                         mVibrationSelector;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VibrationListenerConfig>> mConfig;
-    ::ll::TypedStorage<8, 24, ::GameEvents::PositionSource> mPositionSource;
-    ::ll::TypedStorage<4, 4, ::VibrationListener::OwnerType> mOwnerType;
-    ::ll::TypedStorage<4, 4, uint> mRange;
-    ::ll::TypedStorage<8, 64, ::std::optional<::VibrationInfo>> mInFlightVibrationInfo;
-    ::ll::TypedStorage<4, 4, int> mInFlightVibrationTicks;
-    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::GameEvent const>> mLatestReceivedVibration;
+    ::ll::TypedStorage<8, 24, ::GameEvents::PositionSource>                mPositionSource;
+    ::ll::TypedStorage<4, 4, ::VibrationListener::OwnerType>               mOwnerType;
+    ::ll::TypedStorage<4, 4, uint>                                         mRange;
+    ::ll::TypedStorage<8, 64, ::std::optional<::VibrationInfo>>            mInFlightVibrationInfo;
+    ::ll::TypedStorage<4, 4, int>                                          mInFlightVibrationTicks;
+    ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::GameEvent const>>  mLatestReceivedVibration;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region) /*override*/;
+    virtual void handleGameEvent(
+        ::GameEvent const&        gameEvent,
+        ::GameEventContext const& gameEventContext,
+        ::BlockSource&            region
+    ) /*override*/;
 
     // vIndex: 3
     virtual uint getRange() const /*override*/;
@@ -66,7 +70,12 @@ public:
 
     MCAPI bool _tryAdvanceInFlightVibration(::BlockSource& region);
 
-    MCAPI void _trySendSneakCloseToSculkSensorEventPacket(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::Vec3 const& sensorPos);
+    MCAPI void _trySendSneakCloseToSculkSensorEventPacket(
+        ::BlockSource&            region,
+        ::GameEvent const&        gameEvent,
+        ::GameEventContext const& gameEventContext,
+        ::Vec3 const&             sensorPos
+    );
 
     MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
@@ -78,13 +87,18 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _shouldIgnoreVibration(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
+    MCAPI static bool _shouldIgnoreVibration(
+        ::BlockSource&            region,
+        ::GameEvent const&        gameEvent,
+        ::GameEventContext const& gameEventContext
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
+    MCAPI void
+    $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
     MCFOLD uint $getRange() const;
 
@@ -96,5 +110,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

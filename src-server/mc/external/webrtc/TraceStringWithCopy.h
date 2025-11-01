@@ -16,7 +16,6 @@ public:
     TraceStringWithCopy& operator=(TraceStringWithCopy const&);
     TraceStringWithCopy(TraceStringWithCopy const&);
     TraceStringWithCopy();
-
 };
 
-}
+} // namespace webrtc::trace_event_internal

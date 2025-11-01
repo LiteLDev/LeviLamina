@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk4d68f8;
     ::ll::UntypedStorage<8, 32> mUnk254533;
-    ::ll::UntypedStorage<4, 4> mUnk488ed9;
+    ::ll::UntypedStorage<4, 4>  mUnk488ed9;
     ::ll::UntypedStorage<8, 72> mUnk91b5ae;
     // NOLINTEND
 
@@ -35,7 +35,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::DDUI

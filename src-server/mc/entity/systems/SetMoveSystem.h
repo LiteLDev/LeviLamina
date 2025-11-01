@@ -15,4 +15,4 @@ MCNAPI ::TickingSystemWithInfo createClientSystem();
 MCNAPI ::TickingSystemWithInfo createCommonSystem();
 // NOLINTEND
 
-}
+} // namespace SetMoveSystem

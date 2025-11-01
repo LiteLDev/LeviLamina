@@ -22,5 +22,4 @@ public:
 
     MCAPI static ::std::string const& TAG_PHOTO_UUID();
     // NOLINTEND
-
 };

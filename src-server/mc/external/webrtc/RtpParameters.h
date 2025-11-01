@@ -14,7 +14,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnkd29d10;
     ::ll::UntypedStorage<8, 24> mUnk8c5271;
     ::ll::UntypedStorage<8, 48> mUnk3ed62a;
-    ::ll::UntypedStorage<4, 8> mUnkf57cbc;
+    ::ll::UntypedStorage<4, 8>  mUnkf57cbc;
     // NOLINTEND
 
 public:
@@ -42,7 +42,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

@@ -18,9 +18,10 @@ struct ScriptPlayerInputPermissionCategoryChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayerHandle;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
+                                                        mPlayerHandle;
     ::ll::TypedStorage<1, 1, ::ClientInputLockCategory> mCategory;
-    ::ll::TypedStorage<1, 1, bool> mEnabled;
+    ::ll::TypedStorage<1, 1, bool>                      mEnabled;
     // NOLINTEND
 
 public:
@@ -28,7 +29,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

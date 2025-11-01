@@ -31,7 +31,11 @@ MCNAPI ::Scripting::EnumBinding bindScriptMouseActionCategory();
 
 MCNAPI ::Scripting::EnumBinding bindStructureSourceEnum();
 
-MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette> convertServicePaletteToScriptPalette(::Editor::EditorBlockPalette const& servicePalette, ::Scripting::WeakLifetimeScope const& scope);
+MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptBlockPalette>
+convertServicePaletteToScriptPalette(
+    ::Editor::EditorBlockPalette const&   servicePalette,
+    ::Scripting::WeakLifetimeScope const& scope
+);
 // NOLINTEND
 
-}
+} // namespace Editor::ScriptModule

@@ -17,11 +17,11 @@ class RelativeVolumeListBlockVolumeIterator : public ::BaseBlockLocationIterator
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk82407f;
-    ::ll::UntypedStorage<8, 8> mUnk565035;
-    ::ll::UntypedStorage<8, 8> mUnk56686a;
-    ::ll::UntypedStorage<8, 8> mUnk1aedac;
-    ::ll::UntypedStorage<8, 8> mUnk7c50b4;
+    ::ll::UntypedStorage<8, 8>  mUnk82407f;
+    ::ll::UntypedStorage<8, 8>  mUnk565035;
+    ::ll::UntypedStorage<8, 8>  mUnk56686a;
+    ::ll::UntypedStorage<8, 8>  mUnk1aedac;
+    ::ll::UntypedStorage<8, 8>  mUnk7c50b4;
     ::ll::UntypedStorage<4, 12> mUnk6fb7da;
     // NOLINTEND
 
@@ -50,13 +50,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RelativeVolumeListBlockVolumeIterator(::Editor::RelativeVolumeListBlockVolume const& volume, ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::SimpleBlockVolume>>> currentVolumeIterator, ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::SimpleBlockVolume>>> endVolumeIterator, bool begin);
+    MCNAPI RelativeVolumeListBlockVolumeIterator(
+        ::Editor::RelativeVolumeListBlockVolume const& volume,
+        ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::SimpleBlockVolume>>>
+            currentVolumeIterator,
+        ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::SimpleBlockVolume>>> endVolumeIterator,
+        bool                                                                                         begin
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Editor::RelativeVolumeListBlockVolume const& volume, ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::SimpleBlockVolume>>> currentVolumeIterator, ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::SimpleBlockVolume>>> endVolumeIterator, bool begin);
+    MCNAPI void* $ctor(
+        ::Editor::RelativeVolumeListBlockVolume const& volume,
+        ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::SimpleBlockVolume>>>
+            currentVolumeIterator,
+        ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::SimpleBlockVolume>>> endVolumeIterator,
+        bool                                                                                         begin
+    );
     // NOLINTEND
 
 public:
@@ -74,7 +86,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

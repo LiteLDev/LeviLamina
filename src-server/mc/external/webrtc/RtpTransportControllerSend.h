@@ -46,13 +46,15 @@ namespace webrtc::rtcp { class TransportFeedback; }
 
 namespace webrtc {
 
-class RtpTransportControllerSend : public ::webrtc::RtpTransportControllerSendInterface, public ::webrtc::NetworkLinkRtcpObserver, public ::webrtc::NetworkStateEstimateObserver {
+class RtpTransportControllerSend : public ::webrtc::RtpTransportControllerSendInterface,
+                                   public ::webrtc::NetworkLinkRtcpObserver,
+                                   public ::webrtc::NetworkStateEstimateObserver {
 public:
     // RtpTransportControllerSend inner types declare
     // clang-format off
     struct LossReport;
     // clang-format on
-    
+
     // RtpTransportControllerSend inner types define
     struct LossReport {
     public:
@@ -61,51 +63,50 @@ public:
         ::ll::UntypedStorage<4, 4> mUnk902914;
         ::ll::UntypedStorage<4, 4> mUnkf095fc;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         LossReport& operator=(LossReport const&);
         LossReport(LossReport const&);
         LossReport();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 40> mUnkc6453a;
-    ::ll::UntypedStorage<1, 1> mUnk70273c;
-    ::ll::UntypedStorage<8, 8> mUnk5feadf;
-    ::ll::UntypedStorage<8, 264> mUnkc4ccb7;
-    ::ll::UntypedStorage<8, 24> mUnkaa9ec7;
-    ::ll::UntypedStorage<8, 56> mUnk25fb43;
-    ::ll::UntypedStorage<8, 16> mUnkd0c00c;
-    ::ll::UntypedStorage<1, 1> mUnk4acc8b;
-    ::ll::UntypedStorage<1, 1> mUnk2af1ae;
+    ::ll::UntypedStorage<8, 40>   mUnkc6453a;
+    ::ll::UntypedStorage<1, 1>    mUnk70273c;
+    ::ll::UntypedStorage<8, 8>    mUnk5feadf;
+    ::ll::UntypedStorage<8, 264>  mUnkc4ccb7;
+    ::ll::UntypedStorage<8, 24>   mUnkaa9ec7;
+    ::ll::UntypedStorage<8, 56>   mUnk25fb43;
+    ::ll::UntypedStorage<8, 16>   mUnkd0c00c;
+    ::ll::UntypedStorage<1, 1>    mUnk4acc8b;
+    ::ll::UntypedStorage<1, 1>    mUnk2af1ae;
     ::ll::UntypedStorage<8, 1040> mUnk33f103;
-    ::ll::UntypedStorage<8, 8> mUnk9afb80;
-    ::ll::UntypedStorage<8, 72> mUnk6a6f0b;
-    ::ll::UntypedStorage<8, 136> mUnk7c1ecc;
-    ::ll::UntypedStorage<8, 8> mUnkf715ad;
-    ::ll::UntypedStorage<8, 8> mUnkdf5e8b;
-    ::ll::UntypedStorage<8, 8> mUnk7ab5ce;
-    ::ll::UntypedStorage<8, 8> mUnk4df048;
-    ::ll::UntypedStorage<8, 8> mUnk56e9e1;
-    ::ll::UntypedStorage<8, 16> mUnkb564b9;
-    ::ll::UntypedStorage<8, 8> mUnk8df24d;
-    ::ll::UntypedStorage<8, 152> mUnk76ebad;
-    ::ll::UntypedStorage<8, 80> mUnkebfb3e;
-    ::ll::UntypedStorage<1, 1> mUnk782b23;
-    ::ll::UntypedStorage<1, 1> mUnk3e0443;
-    ::ll::UntypedStorage<8, 80> mUnk7341dc;
-    ::ll::UntypedStorage<8, 8> mUnk6073aa;
-    ::ll::UntypedStorage<1, 1> mUnka9dac7;
-    ::ll::UntypedStorage<8, 8> mUnk5926b7;
-    ::ll::UntypedStorage<8, 8> mUnk5fbed4;
-    ::ll::UntypedStorage<8, 8> mUnk826305;
-    ::ll::UntypedStorage<1, 1> mUnk777a52;
-    ::ll::UntypedStorage<8, 152> mUnkbbdc9a;
-    ::ll::UntypedStorage<8, 8> mUnkd01d6f;
+    ::ll::UntypedStorage<8, 8>    mUnk9afb80;
+    ::ll::UntypedStorage<8, 72>   mUnk6a6f0b;
+    ::ll::UntypedStorage<8, 136>  mUnk7c1ecc;
+    ::ll::UntypedStorage<8, 8>    mUnkf715ad;
+    ::ll::UntypedStorage<8, 8>    mUnkdf5e8b;
+    ::ll::UntypedStorage<8, 8>    mUnk7ab5ce;
+    ::ll::UntypedStorage<8, 8>    mUnk4df048;
+    ::ll::UntypedStorage<8, 8>    mUnk56e9e1;
+    ::ll::UntypedStorage<8, 16>   mUnkb564b9;
+    ::ll::UntypedStorage<8, 8>    mUnk8df24d;
+    ::ll::UntypedStorage<8, 152>  mUnk76ebad;
+    ::ll::UntypedStorage<8, 80>   mUnkebfb3e;
+    ::ll::UntypedStorage<1, 1>    mUnk782b23;
+    ::ll::UntypedStorage<1, 1>    mUnk3e0443;
+    ::ll::UntypedStorage<8, 80>   mUnk7341dc;
+    ::ll::UntypedStorage<8, 8>    mUnk6073aa;
+    ::ll::UntypedStorage<1, 1>    mUnka9dac7;
+    ::ll::UntypedStorage<8, 8>    mUnk5926b7;
+    ::ll::UntypedStorage<8, 8>    mUnk5fbed4;
+    ::ll::UntypedStorage<8, 8>    mUnk826305;
+    ::ll::UntypedStorage<1, 1>    mUnk777a52;
+    ::ll::UntypedStorage<8, 152>  mUnkbbdc9a;
+    ::ll::UntypedStorage<8, 8>    mUnkd01d6f;
     // NOLINTEND
 
 public:
@@ -121,7 +122,17 @@ public:
     virtual ~RtpTransportControllerSend() /*override*/;
 
     // vIndex: 2
-    virtual ::webrtc::RtpVideoSenderInterface* CreateRtpVideoSender(::std::map<uint, ::webrtc::RtpState> const& suspended_ssrcs, ::std::map<uint, ::webrtc::RtpPayloadState> const& states, ::webrtc::RtpConfig const& rtp_config, int rtcp_report_interval_ms, ::webrtc::Transport* send_transport, ::webrtc::RtpSenderObservers const& observers, ::std::unique_ptr<::webrtc::FecController> fec_controller, ::webrtc::RtpSenderFrameEncryptionConfig const& frame_encryption_config, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer) /*override*/;
+    virtual ::webrtc::RtpVideoSenderInterface* CreateRtpVideoSender(
+        ::std::map<uint, ::webrtc::RtpState> const&                  suspended_ssrcs,
+        ::std::map<uint, ::webrtc::RtpPayloadState> const&           states,
+        ::webrtc::RtpConfig const&                                   rtp_config,
+        int                                                          rtcp_report_interval_ms,
+        ::webrtc::Transport*                                         send_transport,
+        ::webrtc::RtpSenderObservers const&                          observers,
+        ::std::unique_ptr<::webrtc::FecController>                   fec_controller,
+        ::webrtc::RtpSenderFrameEncryptionConfig const&              frame_encryption_config,
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
+    ) /*override*/;
 
     // vIndex: 3
     virtual void DestroyRtpVideoSender(::webrtc::RtpVideoSenderInterface* rtp_video_sender) /*override*/;
@@ -160,7 +171,8 @@ public:
     virtual void RegisterTargetTransferRateObserver(::webrtc::TargetTransferRateObserver* observer) /*override*/;
 
     // vIndex: 14
-    virtual void OnNetworkRouteChanged(::std::string_view transport_name, ::rtc::NetworkRoute const& network_route) /*override*/;
+    virtual void
+    OnNetworkRouteChanged(::std::string_view transport_name, ::rtc::NetworkRoute const& network_route) /*override*/;
 
     // vIndex: 15
     virtual void OnNetworkAvailability(bool network_available) /*override*/;
@@ -202,16 +214,23 @@ public:
     virtual void EnsureStarted() /*override*/;
 
     // vIndex: 2
-    virtual void OnReceiverEstimatedMaxBitrate(::webrtc::Timestamp receive_time, ::webrtc::DataRate bitrate) /*override*/;
+    virtual void
+    OnReceiverEstimatedMaxBitrate(::webrtc::Timestamp receive_time, ::webrtc::DataRate bitrate) /*override*/;
 
     // vIndex: 3
-    virtual void OnReport(::webrtc::Timestamp receive_time, ::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks) /*override*/;
+    virtual void OnReport(
+        ::webrtc::Timestamp                               receive_time,
+        ::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks
+    ) /*override*/;
 
     // vIndex: 4
     virtual void OnRttUpdate(::webrtc::Timestamp receive_time, ::webrtc::TimeDelta rtt) /*override*/;
 
     // vIndex: 1
-    virtual void OnTransportFeedback(::webrtc::Timestamp receive_time, ::webrtc::rtcp::TransportFeedback const& feedback) /*override*/;
+    virtual void OnTransportFeedback(
+        ::webrtc::Timestamp                      receive_time,
+        ::webrtc::rtcp::TransportFeedback const& feedback
+    ) /*override*/;
 
     // vIndex: 0
     virtual void OnRemoteNetworkEstimate(::webrtc::NetworkStateEstimate estimate) /*override*/;
@@ -228,7 +247,8 @@ public:
 
     MCNAPI void MaybeCreateControllers();
 
-    MCNAPI void NotifyBweOfPacedSentPacket(::webrtc::RtpPacketToSend const& packet, ::webrtc::PacedPacketInfo const& pacing_info);
+    MCNAPI void
+    NotifyBweOfPacedSentPacket(::webrtc::RtpPacketToSend const& packet, ::webrtc::PacedPacketInfo const& pacing_info);
 
     MCNAPI void PostUpdates(::webrtc::NetworkControlUpdate update);
 
@@ -270,7 +290,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::webrtc::RtpVideoSenderInterface* $CreateRtpVideoSender(::std::map<uint, ::webrtc::RtpState> const& suspended_ssrcs, ::std::map<uint, ::webrtc::RtpPayloadState> const& states, ::webrtc::RtpConfig const& rtp_config, int rtcp_report_interval_ms, ::webrtc::Transport* send_transport, ::webrtc::RtpSenderObservers const& observers, ::std::unique_ptr<::webrtc::FecController> fec_controller, ::webrtc::RtpSenderFrameEncryptionConfig const& frame_encryption_config, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer);
+    MCNAPI ::webrtc::RtpVideoSenderInterface* $CreateRtpVideoSender(
+        ::std::map<uint, ::webrtc::RtpState> const&                  suspended_ssrcs,
+        ::std::map<uint, ::webrtc::RtpPayloadState> const&           states,
+        ::webrtc::RtpConfig const&                                   rtp_config,
+        int                                                          rtcp_report_interval_ms,
+        ::webrtc::Transport*                                         send_transport,
+        ::webrtc::RtpSenderObservers const&                          observers,
+        ::std::unique_ptr<::webrtc::FecController>                   fec_controller,
+        ::webrtc::RtpSenderFrameEncryptionConfig const&              frame_encryption_config,
+        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
+    );
 
     MCNAPI void $DestroyRtpVideoSender(::webrtc::RtpVideoSenderInterface* rtp_video_sender);
 
@@ -326,11 +356,13 @@ public:
 
     MCNAPI void $OnReceiverEstimatedMaxBitrate(::webrtc::Timestamp receive_time, ::webrtc::DataRate bitrate);
 
-    MCNAPI void $OnReport(::webrtc::Timestamp receive_time, ::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks);
+    MCNAPI void
+    $OnReport(::webrtc::Timestamp receive_time, ::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks);
 
     MCNAPI void $OnRttUpdate(::webrtc::Timestamp receive_time, ::webrtc::TimeDelta rtt);
 
-    MCNAPI void $OnTransportFeedback(::webrtc::Timestamp receive_time, ::webrtc::rtcp::TransportFeedback const& feedback);
+    MCNAPI void
+    $OnTransportFeedback(::webrtc::Timestamp receive_time, ::webrtc::rtcp::TransportFeedback const& feedback);
 
     MCNAPI void $OnRemoteNetworkEstimate(::webrtc::NetworkStateEstimate estimate);
     // NOLINTEND
@@ -344,7 +376,6 @@ public:
 
     MCNAPI static void** $vftableForNetworkStateEstimateObserver();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

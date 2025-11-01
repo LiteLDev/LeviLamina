@@ -16,9 +16,9 @@ struct AdmireItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mIsAdmiring;
-    ::ll::TypedStorage<8, 152, ::ItemStack> mAdmireItem;
-    ::ll::TypedStorage<8, 8, ::Tick> mAdmireUntil;
+    ::ll::TypedStorage<1, 1, bool>             mIsAdmiring;
+    ::ll::TypedStorage<8, 152, ::ItemStack>    mAdmireItem;
+    ::ll::TypedStorage<8, 8, ::Tick>           mAdmireUntil;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mItemOwnerRef;
     // NOLINTEND
 
@@ -53,5 +53,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

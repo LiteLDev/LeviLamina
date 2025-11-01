@@ -36,5 +36,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::glm::qua<float> const& q);
     // NOLINTEND
-
 };

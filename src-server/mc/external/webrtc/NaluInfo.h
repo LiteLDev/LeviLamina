@@ -18,7 +18,6 @@ public:
     NaluInfo& operator=(NaluInfo const&);
     NaluInfo(NaluInfo const&);
     NaluInfo();
-
 };
 
-}
+} // namespace webrtc

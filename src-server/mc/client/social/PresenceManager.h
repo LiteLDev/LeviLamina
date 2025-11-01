@@ -4,7 +4,6 @@
 
 namespace Social {
 
-class PresenceManager {
-};
+class PresenceManager {};
 
-}
+} // namespace Social

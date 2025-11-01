@@ -5,9 +5,9 @@
 namespace Editor {
 
 enum class ProjectExportStatus : int {
-    Idle = 0,
+    Idle       = 0,
     Processing = 1,
-    Completed = 2,
+    Completed  = 2,
 };
 
 }

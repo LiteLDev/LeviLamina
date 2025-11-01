@@ -39,7 +39,12 @@ public:
     virtual ::NetworkIdentifier getLocalNetworkId() const /*override*/;
 
     // vIndex: 3
-    virtual void onCommandExecuted(::MCRESULT result, ::CommandOriginType originType, ::std::string const& commandName, ::std::string const& commandString) /*override*/;
+    virtual void onCommandExecuted(
+        ::MCRESULT           result,
+        ::CommandOriginType  originType,
+        ::std::string const& commandName,
+        ::std::string const& commandString
+    ) /*override*/;
     // NOLINTEND
 
 public:
@@ -49,7 +54,12 @@ public:
 
     MCNAPI ::NetworkIdentifier $getLocalNetworkId() const;
 
-    MCNAPI void $onCommandExecuted(::MCRESULT result, ::CommandOriginType originType, ::std::string const& commandName, ::std::string const& commandString);
+    MCNAPI void $onCommandExecuted(
+        ::MCRESULT           result,
+        ::CommandOriginType  originType,
+        ::std::string const& commandName,
+        ::std::string const& commandString
+    );
     // NOLINTEND
 
 public:
@@ -57,5 +67,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

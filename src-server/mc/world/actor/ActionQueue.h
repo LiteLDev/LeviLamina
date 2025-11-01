@@ -14,5 +14,4 @@ public:
     ActionQueue& operator=(ActionQueue const&);
     ActionQueue(ActionQueue const&);
     ActionQueue();
-
 };

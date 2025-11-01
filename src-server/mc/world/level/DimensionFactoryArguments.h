@@ -21,8 +21,14 @@ struct DimensionFactoryArguments {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<::OwnerPtr<::Dimension>(::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&> const&, ::std::string const&)const>> mCreate;
-    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void(::Dimension&)const>> mInit;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::brstd::move_only_function<::OwnerPtr<
+            ::Dimension>(::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&> const&, ::std::string const&)
+                                        const>>
+                                                                                     mCreate;
+    ::ll::TypedStorage<8, 64, ::brstd::move_only_function<void(::Dimension&) const>> mInit;
     // NOLINTEND
 
 public:
@@ -34,7 +40,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::DimensionFactoryArguments create(::Bedrock::NotNullNonOwnerPtr<::ILevel> level, ::Bedrock::NotNullNonOwnerPtr<::Scheduler> scheduler, ::br::worldgen::StructureSetRegistry const& structureSetRegistry);
+    MCNAPI static ::DimensionFactoryArguments create(
+        ::Bedrock::NotNullNonOwnerPtr<::ILevel>     level,
+        ::Bedrock::NotNullNonOwnerPtr<::Scheduler>  scheduler,
+        ::br::worldgen::StructureSetRegistry const& structureSetRegistry
+    );
     // NOLINTEND
 
 public:
@@ -42,5 +52,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

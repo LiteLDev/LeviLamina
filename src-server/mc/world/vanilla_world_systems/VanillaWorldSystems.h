@@ -18,7 +18,13 @@ namespace VanillaWorldSystems { class Impl; }
 namespace VanillaWorldSystems {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::shared_ptr<::VanillaWorldSystems::Impl> init(::Bedrock::NonOwnerPointer<::Level> const& level, ::Experiments const& experiments, ::BaseGameVersion const& baseGameVersion, ::ItemRegistryRef itemRegistry, ::ServerScriptManager const* scriptManager);
+MCAPI ::std::shared_ptr<::VanillaWorldSystems::Impl> init(
+    ::Bedrock::NonOwnerPointer<::Level> const& level,
+    ::Experiments const&                       experiments,
+    ::BaseGameVersion const&                   baseGameVersion,
+    ::ItemRegistryRef                          itemRegistry,
+    ::ServerScriptManager const*               scriptManager
+);
 // NOLINTEND
 
-}
+} // namespace VanillaWorldSystems

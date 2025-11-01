@@ -13,7 +13,8 @@ namespace Json { class Value; }
 
 namespace NetherNet {
 
-struct NetworkID : public ::std::variant<::std::monostate, ::NetherNet::P2P::NetworkID, ::NetherNet::Realms::NetworkID> {
+struct NetworkID
+: public ::std::variant<::std::monostate, ::NetherNet::P2P::NetworkID, ::NetherNet::Realms::NetworkID> {
 public:
     // prevent constructor by default
     NetworkID();
@@ -41,7 +42,6 @@ public:
 
     MCNAPI void* $ctor(::Json::Value const& value);
     // NOLINTEND
-
 };
 
-}
+} // namespace NetherNet

@@ -48,7 +48,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::Bedrock::Http::Request> _buildRequest(::std::string const& url, ::std::string const& clientId, ::std::string const& scope, ::Bedrock::Services::ClientAssertion const& clientAssertionAuth);
+    MCNAPI static ::std::optional<::Bedrock::Http::Request> _buildRequest(
+        ::std::string const&                        url,
+        ::std::string const&                        clientId,
+        ::std::string const&                        scope,
+        ::Bedrock::Services::ClientAssertion const& clientAssertionAuth
+    );
 
     MCNAPI static ::Bedrock::Services::AzureGetTokenHttpResponse _parseResponse(::Bedrock::Http::Response response);
     // NOLINTEND
@@ -64,7 +69,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Services

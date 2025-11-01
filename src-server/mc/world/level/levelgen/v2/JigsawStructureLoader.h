@@ -25,10 +25,33 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData>> mJigsawStructureData;
-    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents, ::BedrockLoadContext, nullptr_t>> mProcessorListLoader;
-    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents, ::BedrockLoadContext, nullptr_t>> mTemplatePoolLoader;
-    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents, ::BedrockLoadContext, nullptr_t>> mJigsawDefinitionLoader;
-    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::SharedTypes::v1_21_20::JigsawStructureSet::Contents, ::BedrockLoadContext, nullptr_t>> mJigsawSetLoader;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::SlicedLoader<
+            ::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents,
+            ::BedrockLoadContext,
+            nullptr_t>>
+        mProcessorListLoader;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::SlicedLoader<
+            ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents,
+            ::BedrockLoadContext,
+            nullptr_t>>
+        mTemplatePoolLoader;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::
+            SlicedLoader<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents, ::BedrockLoadContext, nullptr_t>>
+        mJigsawDefinitionLoader;
+    ::ll::TypedStorage<
+        8,
+        192,
+        ::Puv::SlicedLoader<::SharedTypes::v1_21_20::JigsawStructureSet::Contents, ::BedrockLoadContext, nullptr_t>>
+        mJigsawSetLoader;
     // NOLINTEND
 
 public:
@@ -45,7 +68,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawStructureLoader(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCAPI JigsawStructureLoader(
+        ::cereal::ReflectionCtx const&                     ctx,
+        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
+    );
 
     MCAPI void _parseJigsawDefinitionData(::std::string_view fileWithExtension, ::std::string&& fileData);
 
@@ -75,5 +101,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

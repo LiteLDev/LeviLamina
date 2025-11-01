@@ -21,4 +21,4 @@ MCNAPI int const& LAST_HURT_BY_PLAYER_TIMEOUT();
 MCNAPI ::Vec3 const& LAVA_AABB_SHRINK_AMOUNT();
 // NOLINTEND
 
-}
+} // namespace ActorConstants

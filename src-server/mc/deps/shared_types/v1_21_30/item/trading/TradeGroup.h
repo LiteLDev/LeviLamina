@@ -8,7 +8,7 @@ struct TradeGroup {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkc3f4d7;
+    ::ll::UntypedStorage<4, 4>  mUnkc3f4d7;
     ::ll::UntypedStorage<8, 24> mUnke33751;
     // NOLINTEND
 
@@ -31,7 +31,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_30

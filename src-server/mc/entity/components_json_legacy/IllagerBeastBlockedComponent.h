@@ -14,5 +14,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void onBlocked(::Actor& owner, ::ActorDamageSource const& source, ::Actor& blocker);
     // NOLINTEND
-
 };

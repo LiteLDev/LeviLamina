@@ -25,7 +25,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptOperationPayload(::std::string const& payload, ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo, ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnRedo);
+    MCNAPI ScriptOperationPayload(
+        ::std::string const&                                                        payload,
+        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo,
+        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnRedo
+    );
 
     MCNAPI ~ScriptOperationPayload();
     // NOLINTEND
@@ -33,7 +37,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& payload, ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo, ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnRedo);
+    MCNAPI void* $ctor(
+        ::std::string const&                                                        payload,
+        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnUndo,
+        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)> fnRedo
+    );
     // NOLINTEND
 
 public:
@@ -41,7 +49,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Transactions

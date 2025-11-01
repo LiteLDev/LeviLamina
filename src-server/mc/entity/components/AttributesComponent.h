@@ -29,5 +29,4 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::AttributesComponent&&);
     // NOLINTEND
-
 };

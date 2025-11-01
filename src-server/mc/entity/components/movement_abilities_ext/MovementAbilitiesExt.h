@@ -14,4 +14,4 @@ namespace MovementAbilitiesExt {
 MCAPI void inheritFrom(::MovementAbilitiesComponent& destination, ::AbilitiesComponent const& abilities);
 // NOLINTEND
 
-}
+} // namespace MovementAbilitiesExt

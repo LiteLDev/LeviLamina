@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk227ce4;
-    ::ll::UntypedStorage<8, 8> mUnk63f893;
+    ::ll::UntypedStorage<8, 8>  mUnk63f893;
     ::ll::UntypedStorage<8, 32> mUnk79d519;
     // NOLINTEND
 
@@ -32,7 +32,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEnchantInfo>> getEnchantments();
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEnchantInfo>>
+    getEnchantments();
 
     MCNAPI ::std::vector<::std::string> const getItemTagsAll();
 
@@ -46,7 +47,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

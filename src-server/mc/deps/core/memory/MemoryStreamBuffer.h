@@ -22,5 +22,4 @@ public:
     // vIndex: 0
     virtual ~MemoryStreamBuffer() /*override*/ = default;
     // NOLINTEND
-
 };

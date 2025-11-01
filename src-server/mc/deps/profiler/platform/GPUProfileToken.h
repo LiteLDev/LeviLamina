@@ -7,7 +7,6 @@
 
 namespace Core::Profile {
 
-class GPUProfileToken : public ::Core::Profile::GPUProfileTokenMarker {
-};
+class GPUProfileToken : public ::Core::Profile::GPUProfileTokenMarker {};
 
-}
+} // namespace Core::Profile

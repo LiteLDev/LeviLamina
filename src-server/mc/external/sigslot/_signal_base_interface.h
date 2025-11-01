@@ -22,7 +22,6 @@ public:
     _signal_base_interface& operator=(_signal_base_interface const&);
     _signal_base_interface(_signal_base_interface const&);
     _signal_base_interface();
-
 };
 
-}
+} // namespace sigslot

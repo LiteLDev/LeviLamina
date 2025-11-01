@@ -18,5 +18,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $registerEvents(::entt::dispatcher& dispatcher);
     // NOLINTEND
-
 };

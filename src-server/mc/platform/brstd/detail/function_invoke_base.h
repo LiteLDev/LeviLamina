@@ -8,7 +8,7 @@
 
 namespace brstd::detail::function {
 
-template<DerivedType Type, class Signature>
+template <DerivedType Type, class Signature>
 class function_invoke_base;
 
 template <DerivedType Type, class Return, class... Xs>
@@ -210,7 +210,6 @@ public:
 
     Return operator()(Xs... args) const&& noexcept {
         return this->get_invoke()(this->mStorage, std::forward<Xs>(args)...);
-    }
-};
+    }};
 
-}
+} // namespace brstd::detail::function

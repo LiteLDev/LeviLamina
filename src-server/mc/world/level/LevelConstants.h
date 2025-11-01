@@ -12,4 +12,4 @@ MCNAPI ::std::add_lvalue_reference_t<char const[]> OVERWORLD_PLAYER_COUNT_TAG();
 MCNAPI ::std::add_lvalue_reference_t<char const[]> SLEEPING_PLAYER_COUNT_TAG();
 // NOLINTEND
 
-}
+} // namespace LevelConstants

@@ -56,9 +56,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::EntityRegistry&                   mRegistry;
+    ::EntityRegistry&                                     mRegistry;
     ::entt::basic_registry<::EntityId>& mEnTTRegistry;
-    ::EntityId const                    mEntity;
+    ::EntityId const                                       mEntity;
     // NOLINTEND
 
 public:
@@ -66,5 +66,4 @@ public:
     // NOLINTBEGIN
     MCAPI ::WeakRef<::EntityContext> getWeakRef() const;
     // NOLINTEND
-
 };

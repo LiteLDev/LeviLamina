@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct InstanceList;
     // clang-format on
-    
+
     // PrefabDBServiceInstanceStore inner types define
     struct InstanceList {
     public:
@@ -18,15 +18,14 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnkfe3976;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         InstanceList& operator=(InstanceList const&);
         InstanceList(InstanceList const&);
         InstanceList();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -38,7 +37,6 @@ public:
     PrefabDBServiceInstanceStore& operator=(PrefabDBServiceInstanceStore const&);
     PrefabDBServiceInstanceStore(PrefabDBServiceInstanceStore const&);
     PrefabDBServiceInstanceStore();
-
 };
 
-}
+} // namespace Editor::Prefabs

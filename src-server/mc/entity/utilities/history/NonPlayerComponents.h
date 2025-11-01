@@ -17,7 +17,6 @@ public:
     NonPlayerComponents& operator=(NonPlayerComponents const&);
     NonPlayerComponents(NonPlayerComponents const&);
     NonPlayerComponents();
-
 };
 
-}
+} // namespace History

@@ -17,11 +17,11 @@ class TerrainBurstReactionComponent : public ::LabTableReactionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mData;
+    ::ll::TypedStorage<4, 4, int>     mData;
     ::ll::TypedStorage<4, 12, ::Vec3> mDims;
     ::ll::TypedStorage<4, 12, ::Vec3> mDirRange;
-    ::ll::TypedStorage<4, 4, int> mCount;
-    ::ll::TypedStorage<1, 1, bool> mDirOneWay;
+    ::ll::TypedStorage<4, 4, int>     mCount;
+    ::ll::TypedStorage<1, 1, bool>    mDirOneWay;
     // NOLINTEND
 
 public:
@@ -45,5 +45,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

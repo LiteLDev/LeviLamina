@@ -24,91 +24,88 @@ public:
     struct DSTAndFac;
     struct SendPing;
     // clang-format on
-    
+
     // NatPunchthroughClient inner types define
     struct SendPing {
     public:
         // SendPing inner types define
         enum class TestMode : int {
-            TestingInternalIps = 0,
-            WaitingForInternalIpsResponse = 1,
+            TestingInternalIps                                 = 0,
+            WaitingForInternalIpsResponse                      = 1,
             TestingExternalIpsFacilitatorPortToFacilitatorPort = 2,
-            TestingExternalIps1024ToFacilitatorPort = 3,
-            TestingExternalIpsFacilitatorPortTo1024 = 4,
-            TestingExternalIps1024To1024 = 5,
-            WaitingAfterAllAttempts = 6,
-            PunchingFixedPort = 7,
+            TestingExternalIps1024ToFacilitatorPort            = 3,
+            TestingExternalIpsFacilitatorPortTo1024            = 4,
+            TestingExternalIps1024To1024                       = 5,
+            WaitingAfterAllAttempts                            = 6,
+            PunchingFixedPort                                  = 7,
         };
-        
+
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk18a299;
-        ::ll::UntypedStorage<8, 136> mUnk242bfd;
-        ::ll::UntypedStorage<8, 136> mUnk3bbd25;
+        ::ll::UntypedStorage<8, 8>    mUnk18a299;
+        ::ll::UntypedStorage<8, 136>  mUnk242bfd;
+        ::ll::UntypedStorage<8, 136>  mUnk3bbd25;
         ::ll::UntypedStorage<8, 2720> mUnk357acc;
-        ::ll::UntypedStorage<8, 16> mUnk558bb1;
-        ::ll::UntypedStorage<1, 1> mUnk1a32d8;
-        ::ll::UntypedStorage<4, 4> mUnk473bf6;
-        ::ll::UntypedStorage<4, 4> mUnkd5a23b;
-        ::ll::UntypedStorage<4, 4> mUnk3511c3;
-        ::ll::UntypedStorage<2, 2> mUnk87cc06;
-        ::ll::UntypedStorage<1, 1> mUnk14f9f5;
-        ::ll::UntypedStorage<4, 4> mUnkeb2995;
+        ::ll::UntypedStorage<8, 16>   mUnk558bb1;
+        ::ll::UntypedStorage<1, 1>    mUnk1a32d8;
+        ::ll::UntypedStorage<4, 4>    mUnk473bf6;
+        ::ll::UntypedStorage<4, 4>    mUnkd5a23b;
+        ::ll::UntypedStorage<4, 4>    mUnk3511c3;
+        ::ll::UntypedStorage<2, 2>    mUnk87cc06;
+        ::ll::UntypedStorage<1, 1>    mUnk14f9f5;
+        ::ll::UntypedStorage<4, 4>    mUnkeb2995;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         SendPing& operator=(SendPing const&);
         SendPing(SendPing const&);
         SendPing();
-    
     };
-    
+
     struct AddrAndGuid {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 136> mUnk2032bb;
-        ::ll::UntypedStorage<8, 16> mUnkcbce59;
+        ::ll::UntypedStorage<8, 16>  mUnkcbce59;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         AddrAndGuid& operator=(AddrAndGuid const&);
         AddrAndGuid(AddrAndGuid const&);
         AddrAndGuid();
-    
     };
-    
+
     struct DSTAndFac {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16> mUnk16424d;
+        ::ll::UntypedStorage<8, 16>  mUnk16424d;
         ::ll::UntypedStorage<8, 136> mUnkdc19cd;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         DSTAndFac& operator=(DSTAndFac const&);
         DSTAndFac(DSTAndFac const&);
         DSTAndFac();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 3040> mUnk54043f;
-    ::ll::UntypedStorage<2, 2> mUnk240a98;
-    ::ll::UntypedStorage<8, 56> mUnk79764a;
-    ::ll::UntypedStorage<8, 8> mUnkb0db55;
-    ::ll::UntypedStorage<8, 16> mUnk6c229b;
-    ::ll::UntypedStorage<8, 24> mUnkf9a4b3;
-    ::ll::UntypedStorage<2, 2> mUnka1a0e8;
-    ::ll::UntypedStorage<4, 4> mUnk3fd151;
-    ::ll::UntypedStorage<8, 8> mUnk49a337;
+    ::ll::UntypedStorage<2, 2>    mUnk240a98;
+    ::ll::UntypedStorage<8, 56>   mUnk79764a;
+    ::ll::UntypedStorage<8, 8>    mUnkb0db55;
+    ::ll::UntypedStorage<8, 16>   mUnk6c229b;
+    ::ll::UntypedStorage<8, 24>   mUnkf9a4b3;
+    ::ll::UntypedStorage<2, 2>    mUnka1a0e8;
+    ::ll::UntypedStorage<4, 4>    mUnk3fd151;
+    ::ll::UntypedStorage<8, 8>    mUnk49a337;
     // NOLINTEND
 
 public:
@@ -133,7 +130,11 @@ public:
     virtual void OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool) /*override*/;
 
     // vIndex: 7
-    virtual void OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason) /*override*/;
+    virtual void OnClosedConnection(
+        ::RakNet::SystemAddress const&,
+        ::RakNet::RakNetGUID,
+        ::RakNet::PI2_LostConnectionReason
+    ) /*override*/;
 
     // vIndex: 1
     virtual void OnAttach() /*override*/;
@@ -150,7 +151,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

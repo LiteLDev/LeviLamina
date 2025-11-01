@@ -15,11 +15,11 @@ class SparseContainerClient : public ::SparseContainer {
 public:
     // SparseContainerClient inner types define
     enum class PushSlotPredictionResult : int {
-        Succeeded = 0,
+        Succeeded                  = 0,
         FailedWithFuturePrediction = 1,
-        FailedWithError = 2,
+        FailedWithError            = 2,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -36,7 +36,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BidirectionalUnorderedMap<::SparseContainerClient::PushSlotPredictionResult, ::std::string> const& pushSlotPredictionResultMap();
+    MCNAPI static ::BidirectionalUnorderedMap<::SparseContainerClient::PushSlotPredictionResult, ::std::string> const&
+    pushSlotPredictionResultMap();
     // NOLINTEND
-
 };

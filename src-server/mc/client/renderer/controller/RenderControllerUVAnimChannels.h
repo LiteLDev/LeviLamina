@@ -5,7 +5,7 @@
 enum class RenderControllerUVAnimChannels : int {
     OffsetX = 0,
     OffsetY = 1,
-    ScaleX = 2,
-    ScaleY = 3,
-    Count = 4,
+    ScaleX  = 2,
+    ScaleY  = 3,
+    Count   = 4,
 };

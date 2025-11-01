@@ -4,7 +4,6 @@
 
 namespace Scripting {
 
-struct ClosureType {
-};
+struct ClosureType {};
 
-}
+} // namespace Scripting

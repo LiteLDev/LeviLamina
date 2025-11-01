@@ -12,5 +12,4 @@ public:
     ::ll::TypedStorage<4, 16, ::mce::Color> mTopColor;
     ::ll::TypedStorage<4, 16, ::mce::Color> mSideColor;
     // NOLINTEND
-
 };

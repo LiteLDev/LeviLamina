@@ -11,7 +11,9 @@
 class PackManifest;
 // clang-format on
 
-class StoreLocalizationDictionary : public ::ILocalizationDictionary, public ::I18nObserver, public ::std::enable_shared_from_this<::StoreLocalizationDictionary> {
+class StoreLocalizationDictionary : public ::ILocalizationDictionary,
+                                    public ::I18nObserver,
+                                    public ::std::enable_shared_from_this<::StoreLocalizationDictionary> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -55,5 +57,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

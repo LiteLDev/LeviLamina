@@ -13,5 +13,4 @@ public:
     ::ll::TypedStorage<4, 4, int> toItemId;
     ::ll::TypedStorage<4, 4, int> toItemAux;
     // NOLINTEND
-
 };

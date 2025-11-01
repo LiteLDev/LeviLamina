@@ -19,7 +19,6 @@ public:
     BytePool& operator=(BytePool const&);
     BytePool(BytePool const&);
     BytePool();
-
 };
 
-}
+} // namespace DataStructures

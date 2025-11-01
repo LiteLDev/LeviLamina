@@ -18,7 +18,7 @@ class ScriptSettingsSpeed {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk4d8299;
+    ::ll::UntypedStorage<8, 8>  mUnk4d8299;
     ::ll::UntypedStorage<8, 16> mUnka710cb;
     // NOLINTEND
 
@@ -35,9 +35,11 @@ public:
 
     MCNAPI ::std::unordered_map<::std::string, ::std::optional<::std::variant<float>>> getAll() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> set(::Editor::ScriptModule::ScriptSettingsSpeedPropType prop, ::std::variant<float> const& value);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    set(::Editor::ScriptModule::ScriptSettingsSpeedPropType prop, ::std::variant<float> const& value);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setAll(::std::unordered_map<::std::string, ::std::optional<::std::variant<float>>> const& props);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    setAll(::std::unordered_map<::std::string, ::std::optional<::std::variant<float>>> const& props);
     // NOLINTEND
 
 public:
@@ -47,7 +49,6 @@ public:
 
     MCNAPI static ::Scripting::EnumBinding bindScriptPropsEnum();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

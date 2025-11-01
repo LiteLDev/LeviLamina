@@ -8,7 +8,7 @@ struct EditorJigsawRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9d4627;
+    ::ll::UntypedStorage<8, 8>  mUnk9d4627;
     ::ll::UntypedStorage<8, 16> mUnk559a9c;
     // NOLINTEND
 
@@ -29,7 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

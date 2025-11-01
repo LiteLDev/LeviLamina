@@ -21,7 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk107f9a;
-    ::ll::UntypedStorage<8, 8> mUnkdd38d7;
+    ::ll::UntypedStorage<8, 8>  mUnkdd38d7;
     // NOLINTEND
 
 public:
@@ -45,7 +45,8 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::Vec3> moveBy(::glm::ivec3 const& offset);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setProperties(::Editor::ScriptModule::ScriptCursorProperties const& properties);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    setProperties(::Editor::ScriptModule::ScriptCursorProperties const& properties);
 
     MCNAPI ::Scripting::Result_deprecated<void> setVisible(bool value);
     // NOLINTEND
@@ -55,7 +56,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

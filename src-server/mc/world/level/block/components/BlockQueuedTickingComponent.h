@@ -18,10 +18,10 @@ struct BlockQueuedTickingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mLooping;
-    ::ll::TypedStorage<4, 4, uint> mDelayIntervalMinTicks;
-    ::ll::TypedStorage<4, 4, uint> mDelayIntervalMaxTicks;
-    ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnTimeDown;
+    ::ll::TypedStorage<1, 1, bool>                             mLooping;
+    ::ll::TypedStorage<4, 4, uint>                             mDelayIntervalMinTicks;
+    ::ll::TypedStorage<4, 4, uint>                             mDelayIntervalMaxTicks;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger>             mOnTimeDown;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mEventSubscription;
     // NOLINTEND
 
@@ -51,5 +51,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -18,7 +18,7 @@ public:
     struct DebugSendRateModifiers;
     struct DebugSpatialPacketModifiers;
     // clang-format on
-    
+
     // SpatialActorNetworkData inner types define
     struct DebugSendRateModifiers {
     public:
@@ -28,23 +28,22 @@ public:
         ::ll::UntypedStorage<4, 4> mUnkd1ec5e;
         ::ll::UntypedStorage<1, 1> mUnk2a008d;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         DebugSendRateModifiers& operator=(DebugSendRateModifiers const&);
         DebugSendRateModifiers(DebugSendRateModifiers const&);
         DebugSendRateModifiers();
-    
+
     public:
         // static variables
         // NOLINTBEGIN
         MCNAPI static int& DEFAULT_DROP_PACKET_CHANCE();
-    
+
         MCNAPI static int& DEFAULT_SEND_EVERY_N_PACKETS();
         // NOLINTEND
-    
     };
-    
+
     struct DebugSpatialPacketModifiers {
     public:
         // member variables
@@ -59,24 +58,23 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk70a9cd;
         ::ll::UntypedStorage<1, 1> mUnk529cf2;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         DebugSpatialPacketModifiers& operator=(DebugSpatialPacketModifiers const&);
         DebugSpatialPacketModifiers(DebugSpatialPacketModifiers const&);
         DebugSpatialPacketModifiers();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk3d576d;
-    ::ll::UntypedStorage<1, 1> mUnk61c3eb;
-    ::ll::UntypedStorage<1, 1> mUnkf6f1aa;
+    ::ll::UntypedStorage<8, 8>  mUnk3d576d;
+    ::ll::UntypedStorage<1, 1>  mUnk61c3eb;
+    ::ll::UntypedStorage<1, 1>  mUnkf6f1aa;
     ::ll::UntypedStorage<8, 32> mUnk662955;
     ::ll::UntypedStorage<8, 32> mUnk4f87d7;
-    ::ll::UntypedStorage<4, 4> mUnkec90d2;
+    ::ll::UntypedStorage<4, 4>  mUnkec90d2;
     ::ll::UntypedStorage<8, 64> mUnk5ce137;
     // NOLINTEND
 
@@ -113,5 +111,4 @@ public:
 
     MCNAPI static ::SpatialActorNetworkData::DebugSpatialPacketModifiers& mDebugSpatialPacketModifiers();
     // NOLINTEND
-
 };

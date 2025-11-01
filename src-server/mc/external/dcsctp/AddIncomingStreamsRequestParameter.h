@@ -13,7 +13,9 @@ namespace dcsctp { struct AddIncomingStreamsRequestParameterConfig; }
 
 namespace dcsctp {
 
-class AddIncomingStreamsRequestParameter : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::AddIncomingStreamsRequestParameterConfig> {
+class AddIncomingStreamsRequestParameter
+: public ::dcsctp::Parameter,
+  public ::dcsctp::TLVTrait<::dcsctp::AddIncomingStreamsRequestParameterConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -45,7 +47,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

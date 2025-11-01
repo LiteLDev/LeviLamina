@@ -16,4 +16,4 @@ MCAPI ::FlatteningUtils::Instance get();
 MCAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::Leaves2

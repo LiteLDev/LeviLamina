@@ -23,10 +23,15 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent, ::BiomeRegistry const& registry) /*override*/;
+    virtual bool resolveAndValidate(
+        ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent,
+        ::BiomeRegistry const&                              registry
+    ) /*override*/;
 
     // vIndex: 2
-    virtual void applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const /*override*/;
+    virtual void
+    applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const
+        /*override*/;
 
     // vIndex: 0
     virtual ~ReplaceBiomesBiomeComponentGlue() /*override*/ = default;
@@ -35,9 +40,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent, ::BiomeRegistry const& registry);
+    MCAPI bool $resolveAndValidate(
+        ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent,
+        ::BiomeRegistry const&                              registry
+    );
 
-    MCAPI void $applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const;
+    MCAPI void
+    $applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& biomeJsonComponent) const;
     // NOLINTEND
 
 public:
@@ -45,5 +54,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

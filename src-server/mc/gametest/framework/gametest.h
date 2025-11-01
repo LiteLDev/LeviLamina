@@ -15,4 +15,4 @@ MCNAPI ::Scripting::EnumBinding bindGameTestCompletedErrorReason();
 MCNAPI ::Scripting::EnumBinding bindGameTestErrorType();
 // NOLINTEND
 
-}
+} // namespace gametest

@@ -9,8 +9,8 @@ class InMemoryEnv : public ::FlushableEnv {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnka7132a;
-    ::ll::UntypedStorage<8, 32> mUnk67ea58;
+    ::ll::UntypedStorage<8, 8>   mUnka7132a;
+    ::ll::UntypedStorage<8, 32>  mUnk67ea58;
     ::ll::UntypedStorage<8, 136> mUnk787769;
     // NOLINTEND
 
@@ -36,7 +36,8 @@ public:
     virtual ::leveldb::Status NewWritableFile(::std::string const& f, ::leveldb::WritableFile** r) /*override*/;
 
     // vIndex: 4
-    virtual ::leveldb::Status NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
+    virtual ::leveldb::Status
+    NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
 
     // vIndex: 7
     virtual ::leveldb::Status RemoveFile(::std::string const& fname) /*override*/;
@@ -87,5 +88,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

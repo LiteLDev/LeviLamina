@@ -15,5 +15,4 @@ public:
     DateRange& operator=(DateRange const&);
     DateRange(DateRange const&);
     DateRange();
-
 };

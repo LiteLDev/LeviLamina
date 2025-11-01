@@ -18,9 +18,9 @@ public:
     // TransactionContext inner types define
     enum class OperationErrorHandling : int {
         ContinueOnError = 0,
-        StopOnError = 1,
+        StopOnError     = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -28,7 +28,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk95977f;
     ::ll::UntypedStorage<8, 24> mUnkcc2a0c;
     ::ll::UntypedStorage<8, 24> mUnk4549ce;
-    ::ll::UntypedStorage<4, 4> mUnk1afd03;
+    ::ll::UntypedStorage<4, 4>  mUnk1afd03;
     // NOLINTEND
 
 public:
@@ -40,7 +40,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TransactionContext(::std::string name, ::Editor::Transactions::TransactionContext::OperationErrorHandling errorHandling);
+    MCNAPI TransactionContext(
+        ::std::string                                                      name,
+        ::Editor::Transactions::TransactionContext::OperationErrorHandling errorHandling
+    );
 
     MCNAPI ::Scripting::Result_deprecated<void> _redo(::Editor::ServiceProviderCollection& serviceProviders) const;
 
@@ -54,7 +57,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string name, ::Editor::Transactions::TransactionContext::OperationErrorHandling errorHandling);
+    MCNAPI void*
+    $ctor(::std::string name, ::Editor::Transactions::TransactionContext::OperationErrorHandling errorHandling);
     // NOLINTEND
 
 public:
@@ -62,7 +66,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Transactions

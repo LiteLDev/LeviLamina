@@ -22,7 +22,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void finalizeBlock(::BlockType& block, ::std::vector<::gsl::not_null<::BlockCustomComponentsComponent*>>& customComps);
+    MCAPI void
+    finalizeBlock(::BlockType& block, ::std::vector<::gsl::not_null<::BlockCustomComponentsComponent*>>& customComps);
 
     MCAPI ~ScriptBlockCustomComponentsFinalizer();
     // NOLINTEND
@@ -32,5 +33,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

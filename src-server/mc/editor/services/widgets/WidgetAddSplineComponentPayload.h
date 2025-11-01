@@ -13,12 +13,14 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace Editor::Network {
 
-class WidgetAddSplineComponentPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetAddSplineComponentPayload>, public ::Editor::Network::WidgetComponentBasePayload {
+class WidgetAddSplineComponentPayload
+: public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetAddSplineComponentPayload>,
+  public ::Editor::Network::WidgetComponentBasePayload {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk4296eb;
-    ::ll::UntypedStorage<4, 4> mUnk69b4a7;
+    ::ll::UntypedStorage<4, 4>  mUnk69b4a7;
     // NOLINTEND
 
 public:
@@ -51,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

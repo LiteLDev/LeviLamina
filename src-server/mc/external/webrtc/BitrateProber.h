@@ -19,40 +19,39 @@ public:
     // clang-format off
     struct ProbeCluster;
     // clang-format on
-    
+
     // BitrateProber inner types define
     enum class ProbingState : int {
         KDisabled = 0,
         KInactive = 1,
-        KActive = 2,
+        KActive   = 2,
     };
-    
+
     struct ProbeCluster {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnk3b2d0c;
-        ::ll::UntypedStorage<4, 4> mUnk56aafd;
-        ::ll::UntypedStorage<4, 4> mUnk401b67;
-        ::ll::UntypedStorage<8, 8> mUnk910fab;
-        ::ll::UntypedStorage<8, 8> mUnkae7620;
-        ::ll::UntypedStorage<4, 4> mUnkf56bb5;
+        ::ll::UntypedStorage<4, 4>  mUnk56aafd;
+        ::ll::UntypedStorage<4, 4>  mUnk401b67;
+        ::ll::UntypedStorage<8, 8>  mUnk910fab;
+        ::ll::UntypedStorage<8, 8>  mUnkae7620;
+        ::ll::UntypedStorage<4, 4>  mUnkf56bb5;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ProbeCluster& operator=(ProbeCluster const&);
         ProbeCluster(ProbeCluster const&);
         ProbeCluster();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7c484e;
-    ::ll::UntypedStorage<8, 40> mUnk608b4c;
-    ::ll::UntypedStorage<8, 8> mUnk85d646;
+    ::ll::UntypedStorage<4, 4>   mUnk7c484e;
+    ::ll::UntypedStorage<8, 40>  mUnk608b4c;
+    ::ll::UntypedStorage<8, 8>   mUnk85d646;
     ::ll::UntypedStorage<8, 248> mUnkfed707;
     // NOLINTEND
 
@@ -103,7 +102,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

@@ -19,8 +19,8 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkf29c21;
     ::ll::UntypedStorage<8, 32> mUnk9d3ecd;
     ::ll::UntypedStorage<4, 12> mUnke462d2;
-    ::ll::UntypedStorage<1, 1> mUnka46064;
-    ::ll::UntypedStorage<1, 1> mUnk63992d;
+    ::ll::UntypedStorage<1, 1>  mUnka46064;
+    ::ll::UntypedStorage<1, 1>  mUnk63992d;
     // NOLINTEND
 
 public:
@@ -48,7 +48,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Network

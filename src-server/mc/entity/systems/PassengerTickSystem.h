@@ -21,9 +21,18 @@ struct PassengerTickSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickMob(::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PassengerComponent>, ::FallDistanceComponent> view);
+    MCNAPI static void tickMob(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PassengerComponent>,
+            ::FallDistanceComponent> view
+    );
 
-    MCNAPI static void tickPlayer(::ViewT<::StrictEntityContext, ::Include<::PlayerComponent, ::ActorMovementTickNeededComponent, ::PassengerComponent>, ::ActorOwnerComponent> view);
+    MCNAPI static void tickPlayer(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::PlayerComponent, ::ActorMovementTickNeededComponent, ::PassengerComponent>,
+            ::ActorOwnerComponent> view
+    );
     // NOLINTEND
-
 };

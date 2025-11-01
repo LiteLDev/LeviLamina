@@ -21,7 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk603a03;
-    ::ll::UntypedStorage<1, 2> mUnka7b984;
+    ::ll::UntypedStorage<1, 2>  mUnka7b984;
     ::ll::UntypedStorage<8, 64> mUnk8a71cb;
     // NOLINTEND
 
@@ -34,7 +34,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption& operator=(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&
+    operator=(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&&);
     // NOLINTEND
 
 public:
@@ -42,7 +43,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -13,4 +13,4 @@ namespace FlatteningUtils::WoodenDoubleSlab {
 MCAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::WoodenDoubleSlab

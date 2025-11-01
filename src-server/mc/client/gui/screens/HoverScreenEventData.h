@@ -12,7 +12,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::UIPropertyBag*> properties;
-    ::ll::TypedStorage<1, 1, bool> hover;
+    ::ll::TypedStorage<1, 1, bool>             hover;
     // NOLINTEND
-
 };

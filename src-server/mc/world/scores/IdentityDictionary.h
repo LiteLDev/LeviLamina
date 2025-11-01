@@ -15,8 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::PlayerScoreboardId, ::ScoreboardId>> mPlayers;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::ScoreboardId>> mEntities;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ScoreboardId>> mFakes;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::ScoreboardId>>      mEntities;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ScoreboardId>>        mFakes;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ScoreboardId, ::IdentityDefinition>> mIdentityDefs;
     // NOLINTEND
 
@@ -27,7 +27,8 @@ public:
 
     MCAPI bool clearIdentity(::ScoreboardId const& scoreboardId);
 
-    MCAPI ::ScoreboardId const& convertFakeToReal(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
+    MCAPI ::ScoreboardId const&
+    convertFakeToReal(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
 
     MCAPI ~IdentityDictionary();
     // NOLINTEND
@@ -43,5 +44,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

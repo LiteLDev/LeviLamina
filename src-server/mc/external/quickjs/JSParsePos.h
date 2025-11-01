@@ -17,5 +17,4 @@ public:
     JSParsePos& operator=(JSParsePos const&);
     JSParsePos(JSParsePos const&);
     JSParsePos();
-
 };

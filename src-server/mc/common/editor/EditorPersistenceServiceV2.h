@@ -22,14 +22,16 @@ namespace Editor::Services { struct PersistenceGroupManifest; }
 
 namespace Editor::Services {
 
-class EditorPersistenceServiceV2 : public ::Editor::Services::IEditorService, public ::Editor::Services::EditorPersistenceServiceV2Provider, public ::Editor::Services::PayloadStoreHelper {
+class EditorPersistenceServiceV2 : public ::Editor::Services::IEditorService,
+                                   public ::Editor::Services::EditorPersistenceServiceV2Provider,
+                                   public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke2c956;
+    ::ll::UntypedStorage<8, 8>  mUnke2c956;
     ::ll::UntypedStorage<8, 24> mUnk1d7142;
     ::ll::UntypedStorage<8, 24> mUnk66e0d5;
-    ::ll::UntypedStorage<8, 8> mUnk831bec;
+    ::ll::UntypedStorage<8, 8>  mUnk831bec;
     // NOLINTEND
 
 public:
@@ -57,16 +59,30 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> getGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version) /*override*/;
+    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> getGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    ) /*override*/;
 
     // vIndex: 5
-    virtual ::Scripting::Result_deprecated<void> deleteGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> deleteGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    ) /*override*/;
 
     // vIndex: 4
-    virtual ::Scripting::Result_deprecated<void> deleteGroup(::StackRefResult<::Editor::Services::PersistenceGroup> const group) /*override*/;
+    virtual ::Scripting::Result_deprecated<void>
+    deleteGroup(::StackRefResult<::Editor::Services::PersistenceGroup> const group) /*override*/;
 
     // vIndex: 6
-    virtual ::std::vector<::StackRefResult<::Editor::Services::PersistenceGroup>> fetchGroups(::std::optional<::std::string> groupNamespace, ::std::optional<::std::string> namespacedName, ::std::optional<::Editor::Services::PersistenceScope> scope, ::std::optional<int> version) /*override*/;
+    virtual ::std::vector<::StackRefResult<::Editor::Services::PersistenceGroup>> fetchGroups(
+        ::std::optional<::std::string>                        groupNamespace,
+        ::std::optional<::std::string>                        namespacedName,
+        ::std::optional<::Editor::Services::PersistenceScope> scope,
+        ::std::optional<int>                                  version
+    ) /*override*/;
 
     // vIndex: 7
     virtual bool _validateScope(::Editor::Services::PersistenceScope) const = 0;
@@ -78,17 +94,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::WeakRef<::Editor::Services::PersistenceGroup> _createCacheGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, int version, ::Editor::Services::PersistenceGroupType groupType);
+    MCNAPI ::WeakRef<::Editor::Services::PersistenceGroup> _createCacheGroup(
+        ::std::string const&                     namespacedName,
+        ::Editor::Services::PersistenceScope     scope,
+        int                                      version,
+        ::Editor::Services::PersistenceGroupType groupType
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> _createGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version, ::Editor::Services::PersistenceGroupType groupType);
+    MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> _createGroup(
+        ::std::string const&                     namespacedName,
+        ::Editor::Services::PersistenceScope     scope,
+        ::std::optional<int>                     version,
+        ::Editor::Services::PersistenceGroupType groupType
+    );
 
-    MCNAPI ::StackRefResult<::Editor::Services::PersistenceGroup> _getGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version);
+    MCNAPI ::StackRefResult<::Editor::Services::PersistenceGroup> _getGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    );
 
-    MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _getManifestFilePath(::Editor::Services::PersistenceScope scope);
+    MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>
+    _getManifestFilePath(::Editor::Services::PersistenceScope scope);
 
     MCNAPI int _getMaxVersion(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope);
 
-    MCNAPI ::Core::PathBuffer<::std::string> _getPath(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version) const;
+    MCNAPI ::Core::PathBuffer<::std::string> _getPath(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    ) const;
 
     MCNAPI void _loadGroupMetaData(::Editor::Services::PersistenceScope scope);
 
@@ -114,13 +149,27 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> $getGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version);
+    MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> $getGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void> $deleteGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version);
+    MCNAPI ::Scripting::Result_deprecated<void> $deleteGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void> $deleteGroup(::StackRefResult<::Editor::Services::PersistenceGroup> const group);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $deleteGroup(::StackRefResult<::Editor::Services::PersistenceGroup> const group);
 
-    MCNAPI ::std::vector<::StackRefResult<::Editor::Services::PersistenceGroup>> $fetchGroups(::std::optional<::std::string> groupNamespace, ::std::optional<::std::string> namespacedName, ::std::optional<::Editor::Services::PersistenceScope> scope, ::std::optional<int> version);
+    MCNAPI ::std::vector<::StackRefResult<::Editor::Services::PersistenceGroup>> $fetchGroups(
+        ::std::optional<::std::string>                        groupNamespace,
+        ::std::optional<::std::string>                        namespacedName,
+        ::std::optional<::Editor::Services::PersistenceScope> scope,
+        ::std::optional<int>                                  version
+    );
     // NOLINTEND
 
 public:
@@ -130,7 +179,6 @@ public:
 
     MCNAPI static void** $vftableForEditorPersistenceServiceV2Provider();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

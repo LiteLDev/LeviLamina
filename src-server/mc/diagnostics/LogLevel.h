@@ -10,24 +10,23 @@ public:
     // clang-format off
     struct InPublishT;
     // clang-format on
-    
+
     // LogLevel inner types define
     enum class Type : uchar {
         // bitfield representation
         Verbose = 1 << 0,
-        Info = 1 << 1,
+        Info    = 1 << 1,
         Warning = 1 << 2,
-        Error = 1 << 3,
+        Error   = 1 << 3,
     };
-    
-    struct InPublishT {
-    };
-    
+
+    struct InPublishT {};
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::Bedrock::LogLevel::Type> mType;
-    ::ll::TypedStorage<1, 1, bool> mLogInPublish;
+    ::ll::TypedStorage<1, 1, bool>                      mLogInPublish;
     // NOLINTEND
 
 public:
@@ -39,7 +38,6 @@ public:
 
     MCAPI static ::Bedrock::LogLevel const& Warning();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock

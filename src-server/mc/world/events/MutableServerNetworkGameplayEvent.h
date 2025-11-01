@@ -7,7 +7,7 @@
 #include "mc/world/events/IncomingPacketEvent.h"
 #include "mc/world/events/OutgoingPacketEvent.h"
 
-template<typename Return>
+template <typename Return>
 struct MutableServerNetworkGameplayEvent;
 
 template <>

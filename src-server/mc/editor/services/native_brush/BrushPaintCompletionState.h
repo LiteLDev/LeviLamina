@@ -5,9 +5,9 @@
 namespace Editor::Brush {
 
 enum class BrushPaintCompletionState : int {
-    Success = 0,
+    Success  = 0,
     Canceled = 1,
-    Failed = 2,
+    Failed   = 2,
 };
 
 }

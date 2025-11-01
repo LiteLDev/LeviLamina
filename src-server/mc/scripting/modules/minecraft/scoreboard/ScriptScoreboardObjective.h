@@ -37,31 +37,69 @@ public:
     // NOLINTBEGIN
     MCNAPI bool _isValid() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> _modifyScore(::std::variant<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>, ::std::string>& participant, ::PlayerScoreSetFunction setFunction, int score);
+    MCNAPI ::Scripting::Result_deprecated<int> _modifyScore(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+            ::std::string>&      participant,
+        ::PlayerScoreSetFunction setFunction,
+        int                      score
+    );
 
     MCNAPI ::ScriptModuleMinecraft::ScriptScoreboard* _tryGetScoreboard() const;
 
-    MCNAPI ::Scripting::Result_deprecated<int> addScore(::std::variant<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>, ::std::string>& participant, int scoreToAdd);
+    MCNAPI ::Scripting::Result_deprecated<int> addScore(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+            ::std::string>& participant,
+        int                 scoreToAdd
+    );
 
     MCNAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::string> getObjectiveId() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>>> getParticipants() const;
+    MCNAPI ::Scripting::Result_deprecated<
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>>>
+    getParticipants() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<int>> getScore(::std::variant<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>, ::std::string> const& participant) const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<int>> getScore(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+            ::std::string> const& participant
+    ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::ScriptModuleMinecraft::ScriptScoreboardScoreInfo>> getScores() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::ScriptModuleMinecraft::ScriptScoreboardScoreInfo>>
+    getScores() const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> hasParticipant(::std::variant<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>, ::std::string> const& participant) const;
+    MCNAPI ::Scripting::Result_deprecated<bool> hasParticipant(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+            ::std::string> const& participant
+    ) const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptScoreboardObjective& operator=(::ScriptModuleMinecraft::ScriptScoreboardObjective&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptScoreboardObjective&
+    operator=(::ScriptModuleMinecraft::ScriptScoreboardObjective&&);
 
     MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptScoreboardObjective const& other) const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool> removeParticipant(::std::variant<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>, ::std::string>& participant);
+    MCNAPI ::Scripting::Result_deprecated<bool> removeParticipant(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+            ::std::string>& participant
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void> setScore(::std::variant<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>, ::std::string>& participant, int score);
+    MCNAPI ::Scripting::Result_deprecated<void> setScore(
+        ::std::variant<
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+            ::std::string>& participant,
+        int                 score
+    );
     // NOLINTEND
 
 public:
@@ -69,7 +107,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

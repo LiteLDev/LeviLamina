@@ -39,5 +39,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(uint spawnRadius, ::XoroshiroRandom& random);
     // NOLINTEND
-
 };

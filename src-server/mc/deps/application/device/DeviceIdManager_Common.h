@@ -79,7 +79,6 @@ public:
 
     MCNAPI bool $isDeviceIdValid() const;
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock

@@ -21,7 +21,6 @@ public:
     TimeStep& operator=(TimeStep const&);
     TimeStep(TimeStep const&);
     TimeStep();
-
 };
 
-}
+} // namespace mce

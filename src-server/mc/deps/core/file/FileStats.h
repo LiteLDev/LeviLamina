@@ -33,7 +33,6 @@ public:
 
     MCNAPI void notifyChangeInFileSize(int64 changeInSize, int64 changeInAllocatedSize);
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

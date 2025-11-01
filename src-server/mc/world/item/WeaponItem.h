@@ -23,7 +23,7 @@ class WeaponItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mDamage;
+    ::ll::TypedStorage<4, 4, int>               mDamage;
     ::ll::TypedStorage<8, 8, ::ItemTier const&> mTier;
     // NOLINTEND
 
@@ -55,7 +55,11 @@ public:
     virtual bool canDestroySpecial(::Block const& block) const /*override*/;
 
     // vIndex: 54
-    virtual bool isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const /*override*/;
+    virtual bool isValidRepairItem(
+        ::ItemStackBase const&,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const /*override*/;
 
     // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
@@ -64,7 +68,12 @@ public:
     virtual int getEnchantValue() const /*override*/;
 
     // vIndex: 53
-    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
     // vIndex: 47
     virtual bool canDestroyInCreative() const /*override*/;
@@ -94,13 +103,22 @@ public:
 
     MCAPI bool $canDestroySpecial(::Block const& block) const;
 
-    MCAPI bool $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const;
+    MCAPI bool $isValidRepairItem(
+        ::ItemStackBase const&,
+        ::ItemStackBase const&   repairItem,
+        ::BaseGameVersion const& baseGameVersion
+    ) const;
 
     MCFOLD int $getEnchantSlot() const;
 
     MCAPI int $getEnchantValue() const;
 
-    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
 
     MCFOLD bool $canDestroyInCreative() const;
     // NOLINTEND
@@ -110,5 +128,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

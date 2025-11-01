@@ -18,9 +18,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkf88096;
-    ::ll::UntypedStorage<8, 8> mUnk16164e;
+    ::ll::UntypedStorage<8, 8>  mUnk16164e;
     ::ll::UntypedStorage<8, 32> mUnk12984e;
-    ::ll::UntypedStorage<1, 1> mUnk517e55;
+    ::ll::UntypedStorage<1, 1>  mUnk517e55;
     // NOLINTEND
 
 public:
@@ -36,19 +36,22 @@ public:
 
     MCNAPI ::std::string getToolPayload(::std::string id) const;
 
-    MCNAPI ::std::optional<::std::variant<float, bool, ::std::string>> getToolProperty(::std::string id, ::std::string property) const;
+    MCNAPI ::std::optional<::std::variant<float, bool, ::std::string>>
+    getToolProperty(::std::string id, ::std::string property) const;
 
     MCNAPI bool hasToolPayload(::std::string id) const;
 
     MCNAPI bool hasToolProperty(::std::string id, ::std::string property) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> registerTool(::Scripting::ContextConfig const& contextConfig, ::std::string id, ::std::string const& payload);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    registerTool(::Scripting::ContextConfig const& contextConfig, ::std::string id, ::std::string const& payload);
 
     MCNAPI ::Scripting::Result_deprecated<void> unregisterTool(::std::string id);
 
     MCNAPI ::Scripting::Result_deprecated<void> updateRegisteredTool(::std::string id, ::std::string const& payload);
 
-    MCNAPI ::Scripting::Result_deprecated<void> updateRegisteredToolProperty(::std::string id, ::std::string const& payload, ::std::string const& prop);
+    MCNAPI ::Scripting::Result_deprecated<void>
+    updateRegisteredToolProperty(::std::string id, ::std::string const& payload, ::std::string const& prop);
 
     MCNAPI ::Scripting::Result_deprecated<void> updateSelectedTool(::std::optional<::std::string> toolId);
     // NOLINTEND
@@ -58,7 +61,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

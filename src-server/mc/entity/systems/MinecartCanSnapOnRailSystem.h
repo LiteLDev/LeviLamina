@@ -21,7 +21,11 @@ struct MinecartCanSnapOnRailSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _checkCanSnapOnRail(::StrictEntityContext const& context, ::StateVectorComponent const& stateVectorComponent, ::EntityModifier<::SnapOnRailComponent> mod, ::IConstBlockSource const& constBlockSource);
+    MCNAPI static void _checkCanSnapOnRail(
+        ::StrictEntityContext const&            context,
+        ::StateVectorComponent const&           stateVectorComponent,
+        ::EntityModifier<::SnapOnRailComponent> mod,
+        ::IConstBlockSource const&              constBlockSource
+    );
     // NOLINTEND
-
 };

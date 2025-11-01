@@ -15,25 +15,25 @@ class ConsoleChunkBlender {
 public:
     // ConsoleChunkBlender inner types define
     enum class BlenderMode : int {
-        None = 0,
-        Overworld4J = 1,
+        None                    = 0,
+        Overworld4J             = 1,
         OverworldCliffsAndCaves = 2,
-        Nether4J = 3,
-        NetherUpdate = 4,
-        End4J = 5,
+        Nether4J                = 3,
+        NetherUpdate            = 4,
+        End4J                   = 5,
     };
-    
+
     enum class ShiftBlockTypes : int {
-        ConsoleBlend = 0,
+        ConsoleBlend      = 0,
         TerrainGenChanged = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mConversionBlendNoise;
-    ::ll::TypedStorage<4, 16, float[2][2]> mInterpCorners;
-    ::ll::TypedStorage<4, 1024, float[16][16]> mInterpTable;
+    ::ll::TypedStorage<4, 16, float[2][2]>                            mInterpCorners;
+    ::ll::TypedStorage<4, 1024, float[16][16]>                        mInterpTable;
     // NOLINTEND
 
 public:
@@ -45,19 +45,43 @@ public:
 
     MCNAPI void _blendChunkNether4J(::LevelChunk& generatedChunk, ::LevelChunk& lc);
 
-    MCNAPI void _blendChunkOverworld(::LevelChunk& generatedChunk, ::LevelChunk& lc, ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType);
+    MCNAPI void _blendChunkOverworld(
+        ::LevelChunk&                          generatedChunk,
+        ::LevelChunk&                          lc,
+        ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType
+    );
 
     MCNAPI void _copyColumnFromGeneratedChunkNether(::LevelChunk& generatedChunk, ::LevelChunk& lc, int x, int z);
 
-    MCNAPI void _copyColumnFromGeneratedChunkOverworld(::LevelChunk& generatedChunk, ::LevelChunk& lc, int x, int z, ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType);
+    MCNAPI void _copyColumnFromGeneratedChunkOverworld(
+        ::LevelChunk&                          generatedChunk,
+        ::LevelChunk&                          lc,
+        int                                    x,
+        int                                    z,
+        ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType
+    );
 
     MCNAPI ::ChunkLocalHeight _findHighestStoneOrBedrockHeight(::LevelChunk& lc, int x, int z);
 
-    MCNAPI ::ChunkLocalHeight _findTopMostWaterHeight(::LevelChunk& lc, int x, int z, ::std::unordered_set<::BlockType const*> const& waterBlocks);
+    MCNAPI ::ChunkLocalHeight _findTopMostWaterHeight(
+        ::LevelChunk&                                   lc,
+        int                                             x,
+        int                                             z,
+        ::std::unordered_set<::BlockType const*> const& waterBlocks
+    );
 
     MCNAPI void _prepInterpTable();
 
-    MCNAPI void _shiftColumnBySetBlocks(::LevelChunk& lc, int x, int z, int adj, bool isSeaBlock, ::ChunkLocalHeight topSeaBlockHeight, ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType, ::OverworldBlendRules const& blendRules);
+    MCNAPI void _shiftColumnBySetBlocks(
+        ::LevelChunk&                          lc,
+        int                                    x,
+        int                                    z,
+        int                                    adj,
+        bool                                   isSeaBlock,
+        ::ChunkLocalHeight                     topSeaBlockHeight,
+        ::ConsoleChunkBlender::ShiftBlockTypes shiftBlockType,
+        ::OverworldBlendRules const&           blendRules
+    );
 
     MCNAPI ~ConsoleChunkBlender();
     // NOLINTEND
@@ -73,5 +97,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

@@ -17,11 +17,11 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 32> mUnk21a870;
     ::ll::UntypedStorage<4, 32> mUnka36c7d;
-    ::ll::UntypedStorage<4, 8> mUnk5cb736;
-    ::ll::UntypedStorage<4, 8> mUnk8b2361;
-    ::ll::UntypedStorage<1, 2> mUnka9244a;
-    ::ll::UntypedStorage<4, 8> mUnk85fa97;
-    ::ll::UntypedStorage<1, 2> mUnk7e4713;
+    ::ll::UntypedStorage<4, 8>  mUnk5cb736;
+    ::ll::UntypedStorage<4, 8>  mUnk8b2361;
+    ::ll::UntypedStorage<1, 2>  mUnka9244a;
+    ::ll::UntypedStorage<4, 8>  mUnk85fa97;
+    ::ll::UntypedStorage<1, 2>  mUnk7e4713;
     // NOLINTEND
 
 public:
@@ -36,7 +36,8 @@ public:
 
     MCNAPI ::Editor::ScriptModule::ScriptCursorProperties& operator=(::Editor::ScriptModule::ScriptCursorProperties&&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptCursorProperties& operator=(::Editor::ScriptModule::ScriptCursorProperties const&);
+    MCNAPI ::Editor::ScriptModule::ScriptCursorProperties&
+    operator=(::Editor::ScriptModule::ScriptCursorProperties const&);
 
     MCNAPI ~ScriptCursorProperties();
     // NOLINTEND
@@ -62,7 +63,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

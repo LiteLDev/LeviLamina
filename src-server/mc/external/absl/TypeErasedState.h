@@ -4,6 +4,5 @@
 
 namespace absl::internal_any_invocable {
 
-union TypeErasedState {
-};
-}
+union TypeErasedState {};
+} // namespace absl::internal_any_invocable

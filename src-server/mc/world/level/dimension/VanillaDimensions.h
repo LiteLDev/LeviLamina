@@ -21,7 +21,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool convertPointBetweenDimensions(::Vec3 const& startingPosition, ::Vec3& outputPosition, ::DimensionType fromID, ::DimensionType toID, ::DimensionConversionData const& data);
+    MCAPI static bool convertPointBetweenDimensions(
+        ::Vec3 const&                    startingPosition,
+        ::Vec3&                          outputPosition,
+        ::DimensionType                  fromID,
+        ::DimensionType                  toID,
+        ::DimensionConversionData const& data
+    );
 
     MCAPI static ::Bedrock::Result<::DimensionType> fromSerializedInt(::Bedrock::Result<int>&& i);
 
@@ -43,5 +49,4 @@ public:
 
     MCAPI static ::DimensionType const& Undefined();
     // NOLINTEND
-
 };

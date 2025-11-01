@@ -33,11 +33,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _buildSchema(::JsonUtil::JsonSchemaObjectNode<::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>, ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode);
+    MCAPI static void _buildSchema(
+        ::JsonUtil::JsonSchemaObjectNode<
+            ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
+            ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode
+    );
 
-    MCAPI static void _buildVanillaCanopyVariants(::JsonUtil::JsonSchemaObjectNode<::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>, ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode, ::std::function<::ITreeCanopyWrapper&(::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>*)> canopyAccessor);
+    MCAPI static void _buildVanillaCanopyVariants(
+        ::JsonUtil::JsonSchemaObjectNode<
+            ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
+            ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode,
+        ::std::function<::ITreeCanopyWrapper&(::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>*)>
+            canopyAccessor
+    );
 
-    MCAPI static void _buildVanillaTrunkVariants(::JsonUtil::JsonSchemaObjectNode<::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>, ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode, ::std::function<::ITreeTrunkWrapper&(::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>*)> trunkAccessor);
+    MCAPI static void _buildVanillaTrunkVariants(
+        ::JsonUtil::JsonSchemaObjectNode<
+            ::JsonUtil::JsonParseState<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>,
+            ::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>>& schemaNode,
+        ::std::function<::ITreeTrunkWrapper&(::FeatureLoading::ConcreteFeatureHolder<::VanillaTreeFeature>*)>
+            trunkAccessor
+    );
     // NOLINTEND
 
 public:
@@ -51,5 +67,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

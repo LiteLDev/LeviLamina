@@ -43,7 +43,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void placeCauldron(::BlockSource& region, ::Random& random, int x, int y, int z, ::BoundingBox const& chunkBB);
+    MCAPI void
+    placeCauldron(::BlockSource& region, ::Random& random, int x, int y, int z, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:
@@ -63,5 +64,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

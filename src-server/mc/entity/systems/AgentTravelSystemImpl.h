@@ -19,7 +19,13 @@ namespace AgentTravelSystemImpl {
 // NOLINTBEGIN
 MCNAPI void doClientAgentTravel(::ActorOwnerComponent& actorOwnerComponent, ::AbilitiesComponent& abilitiesComponent);
 
-MCNAPI void doServerAgentTravel(::StrictEntityContext const& entity, ::ActorOwnerComponent& actorOwnerComponent, ::AbilitiesComponent& abilitiesComponent, ::StateVectorComponent& stateVectorComponent, ::EntityModifier<::MoveRequestComponent> mod);
+MCNAPI void doServerAgentTravel(
+    ::StrictEntityContext const&             entity,
+    ::ActorOwnerComponent&                   actorOwnerComponent,
+    ::AbilitiesComponent&                    abilitiesComponent,
+    ::StateVectorComponent&                  stateVectorComponent,
+    ::EntityModifier<::MoveRequestComponent> mod
+);
 // NOLINTEND
 
-}
+} // namespace AgentTravelSystemImpl

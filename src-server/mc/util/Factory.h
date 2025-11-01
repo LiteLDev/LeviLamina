@@ -2,6 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template<typename... T0>
-class Factory {
-};
+template <typename... T0>
+class Factory {};

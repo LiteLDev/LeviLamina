@@ -26,5 +26,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void setPromise(::std::variant<::std::monostate, ::AsyncJoinAllow, ::AsyncJoinDeny> verdict);
     // NOLINTEND
-
 };

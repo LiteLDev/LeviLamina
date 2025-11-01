@@ -17,4 +17,4 @@ MCNAPI bool hasMissingDependencies(::RepositoryPacks const& source, ::PackManife
 MCNAPI bool isNativeModule(::mce::UUID const& uuid);
 // NOLINTEND
 
-}
+} // namespace PackDependencyManager

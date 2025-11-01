@@ -40,7 +40,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Prefabs::PrefabDBInstanceLoader::CurrentVersion

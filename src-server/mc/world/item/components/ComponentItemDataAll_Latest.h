@@ -12,9 +12,9 @@ struct ComponentItemDataAll_Latest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 2024, ::ComponentItemData_v1_21_110> mCerealData;
-    ::ll::TypedStorage<1, 2, ::std::optional<::BetaItemComponentData>> mBetaData;
-    ::ll::TypedStorage<8, 192, ::ComponentItemData_Legacy> mLegacyData;
+    ::ll::TypedStorage<8, 2024, ::ComponentItemData_v1_21_110>                 mCerealData;
+    ::ll::TypedStorage<1, 2, ::std::optional<::BetaItemComponentData>>         mBetaData;
+    ::ll::TypedStorage<8, 192, ::ComponentItemData_Legacy>                     mLegacyData;
     ::ll::TypedStorage<8, 32, ::std::optional<::LegacyEventItemComponentData>> mEvents;
     // NOLINTEND
 
@@ -43,5 +43,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

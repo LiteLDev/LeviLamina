@@ -38,9 +38,9 @@ class IBlockSource : public ::IConstBlockSource {
 public:
     // IBlockSource inner types define
     using Listener = ::BlockSourceListener;
-    
+
     using ListenerVector = ::std::vector<::BlockSourceListener*>;
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -48,7 +48,8 @@ public:
     virtual ::std::vector<::AABB>& fetchAABBs(::AABB const&, bool) = 0;
 
     // vIndex: 26
-    virtual ::std::vector<::AABB>& fetchCollisionShapes(::AABB const&, bool, ::std::optional<::EntityContext const>, ::std::vector<::AABB>*) = 0;
+    virtual ::std::vector<::AABB>&
+    fetchCollisionShapes(::AABB const&, bool, ::std::optional<::EntityContext const>, ::std::vector<::AABB>*) = 0;
 
     // vIndex: 27
     virtual ::WeakRef<::BlockSource> getWeakRef() = 0;
@@ -63,10 +64,12 @@ public:
     virtual ::gsl::span<::gsl::not_null<::Actor*>> fetchEntities(::Actor const*, ::AABB const&, bool, bool) = 0;
 
     // vIndex: 30
-    virtual ::gsl::span<::gsl::not_null<::Actor*>> fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) = 0;
+    virtual ::gsl::span<::gsl::not_null<::Actor*>>
+    fetchEntities(::ActorType, ::AABB const&, ::Actor const*, ::std::function<bool(::Actor*)>) = 0;
 
     // vIndex: 32
-    virtual bool setBlock(::BlockPos const&, ::Block const&, int, ::ActorBlockSyncMessage const*, ::BlockChangeContext const&) = 0;
+    virtual bool
+    setBlock(::BlockPos const&, ::Block const&, int, ::ActorBlockSyncMessage const*, ::BlockChangeContext const&) = 0;
 
     // vIndex: 33
     virtual bool setExtraBlock(::BlockPos const&, ::Block const&, int) = 0;
@@ -120,7 +123,18 @@ public:
     virtual short getHeight(::std::function<bool(::Block const&)> const&, int, int) const = 0;
 
     // vIndex: 51
-    virtual ::HitResult clip(::Vec3 const&, ::Vec3 const&, bool, ::ShapeType, int, bool, bool, ::Actor*, ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const&, bool) const = 0;
+    virtual ::HitResult clip(
+        ::Vec3 const&,
+        ::Vec3 const&,
+        bool,
+        ::ShapeType,
+        int,
+        bool,
+        bool,
+        ::Actor*,
+        ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const&,
+        bool
+    ) const = 0;
 
     // vIndex: 50
     virtual ::HitResult clip(::ClipParameters const&) const = 0;
@@ -156,7 +170,16 @@ public:
     virtual void postGameEvent(::Actor*, ::GameEvent const&, ::BlockPos const&, ::Block const*) = 0;
 
     // vIndex: 62
-    virtual void fireBlockChanged(::BlockPos const&, uint, ::Block const&, ::Block const&, int, ::BlockChangedEventTarget, ::ActorBlockSyncMessage const*, ::Actor*) = 0;
+    virtual void fireBlockChanged(
+        ::BlockPos const&,
+        uint,
+        ::Block const&,
+        ::Block const&,
+        int,
+        ::BlockChangedEventTarget,
+        ::ActorBlockSyncMessage const*,
+        ::Actor*
+    ) = 0;
 
     // vIndex: 63
     virtual void blockEvent(::BlockPos const&, int, int) = 0;
@@ -170,5 +193,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

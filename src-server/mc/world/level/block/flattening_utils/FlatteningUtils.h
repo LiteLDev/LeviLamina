@@ -17,11 +17,18 @@ namespace FlatteningUtils { struct LegacyBlockInfo; }
 namespace FlatteningUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void addUpdate(::CompoundTagUpdaterContext& context, uchar const* const version, ::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, ::std::vector<::std::shared_ptr<::FlatteningUtils::RemovedState>> const& removedStates);
+MCAPI void addUpdate(
+    ::CompoundTagUpdaterContext&                                             context,
+    uchar const* const                                                       version,
+    ::FlatteningUtils::LegacyBlockInfo const&                                legacyBlockInfo,
+    ::std::vector<::std::shared_ptr<::FlatteningUtils::RemovedState>> const& removedStates
+);
 
-MCAPI ::std::vector<::WeakPtr<::BlockType const>> getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
+MCAPI ::std::vector<::WeakPtr<::BlockType const>>
+getComplexAliasBlocks(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
 
-MCAPI ::std::function<::Block const*(int)> getSimpleBlockComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
+MCAPI ::std::function<::Block const*(int)>
+getSimpleBlockComplexAliasCallback(::FlatteningUtils::LegacyBlockInfo const& legacyBlockInfo, uint64 expectedCount);
 // NOLINTEND
 
 // static variables
@@ -151,4 +158,4 @@ MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoodenSlabInfo();
 MCAPI ::FlatteningUtils::LegacyBlockInfo const& LegacyWoolInfo();
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils

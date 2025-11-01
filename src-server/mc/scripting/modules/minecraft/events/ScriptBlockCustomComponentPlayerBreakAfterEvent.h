@@ -17,16 +17,24 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptBlockCustomComponentPlayerBreakAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent, public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
+struct ScriptBlockCustomComponentPlayerBreakAfterEvent
+: public ::ScriptModuleMinecraft::ScriptBlockEvent,
+  public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
 public:
     // ScriptBlockCustomComponentPlayerBreakAfterEvent inner types define
-    using IntermediateStorage = ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerBreakAfterEventIntermediateStorage;
-    
+    using IntermediateStorage =
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerBreakAfterEventIntermediateStorage;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>> mPlayer;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> mPermutation;
+    ::ll::TypedStorage<
+        8,
+        40,
+        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
+        mPlayer;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
+        mPermutation;
     // NOLINTEND
 
 public:
@@ -37,9 +45,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentPlayerBreakAfterEvent(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerBreakAfterEvent const&);
+    MCAPI ScriptBlockCustomComponentPlayerBreakAfterEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerBreakAfterEvent const&
+    );
 
-    MCAPI ScriptBlockCustomComponentPlayerBreakAfterEvent(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerBreakAfterEvent&&);
+    MCAPI ScriptBlockCustomComponentPlayerBreakAfterEvent(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerBreakAfterEvent&&
+    );
 
     MCAPI ~ScriptBlockCustomComponentPlayerBreakAfterEvent();
     // NOLINTEND
@@ -65,7 +77,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

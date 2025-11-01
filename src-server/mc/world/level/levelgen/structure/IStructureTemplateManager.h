@@ -21,7 +21,8 @@ public:
     virtual ~IStructureTemplateManager() /*override*/;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> getOrCreateJigsawStructureMetadata(::StructurePoolElement const&) = 0;
+    virtual ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata>
+    getOrCreateJigsawStructureMetadata(::StructurePoolElement const&) = 0;
 
     // vIndex: 2
     virtual ::StructureTemplate& getOrCreate(::std::string const&) = 0;
@@ -47,5 +48,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

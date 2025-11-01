@@ -21,9 +21,8 @@ class CommandPositionFloat;
 
 namespace Bedrock {
 
-template<typename Category>
-class typeid_t {
-public:
+template <typename Category>
+class typeid_t {public:
     ushort value{};
     [[nodiscard]] constexpr typeid_t(typeid_t const& other) : value(other.value) {}
     constexpr typeid_t& operator=(typeid_t const& other) {
@@ -60,7 +59,7 @@ typeid_t<Category> type_id() {
         static typeid_t<Category> id{++typeid_t<Category>::_getCounter()};
         return id;
     }
-}
+} // namespace Bedrock
 
 }; // namespace Bedrock
 

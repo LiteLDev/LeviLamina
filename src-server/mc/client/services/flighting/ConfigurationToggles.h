@@ -4,7 +4,6 @@
 
 namespace flighting {
 
-class ConfigurationToggles {
-};
+class ConfigurationToggles {};
 
-}
+} // namespace flighting

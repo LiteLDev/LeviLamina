@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::WatchdogTerminateReason> mTerminateReason;
-    ::ll::TypedStorage<1, 1, bool> mCancel;
+    ::ll::TypedStorage<1, 1, bool>                      mCancel;
     // NOLINTEND
 
 public:
@@ -25,7 +25,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

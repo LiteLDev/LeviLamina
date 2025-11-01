@@ -54,7 +54,9 @@ public:
 
     MCNAPI void moveTo(::Vec3 const& location, ::Editor::Selection::EventSource eventSource);
 
-    MCNAPI ::Bedrock::PubSub::Subscription registerSelectionVolumeEventListener(::std::function<void(::Editor::Selection::SelectionVolumeEvent const&)> callback);
+    MCNAPI ::Bedrock::PubSub::Subscription registerSelectionVolumeEventListener(
+        ::std::function<void(::Editor::Selection::SelectionVolumeEvent const&)> callback
+    );
 
     MCNAPI void translate(::Vec3 const& offset, ::Editor::Selection::EventSource eventSource);
     // NOLINTEND
@@ -70,7 +72,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Selection

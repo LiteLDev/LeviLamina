@@ -34,7 +34,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError> buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
+    virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
+    buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
 
     // vIndex: 0
     virtual ~LabelControl() /*override*/ = default;
@@ -43,7 +44,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LabelControl(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> text);
+    MCNAPI explicit LabelControl(
+        ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> text
+    );
     // NOLINTEND
 
 public:
@@ -55,7 +58,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError> $buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
+    $buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
     // NOLINTEND
 
 public:
@@ -63,7 +67,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraftServerUI

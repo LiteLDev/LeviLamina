@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::ItemDescriptor> mItem;
-    ::ll::TypedStorage<4, 4, float> mBlockDestroySpeed;
+    ::ll::TypedStorage<4, 4, float>             mBlockDestroySpeed;
     // NOLINTEND
 
 public:
@@ -38,5 +38,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

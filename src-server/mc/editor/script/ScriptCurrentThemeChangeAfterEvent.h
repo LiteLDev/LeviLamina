@@ -25,7 +25,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent& operator=(::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent&&);
+    MCNAPI ::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent&
+    operator=(::Editor::ScriptModule::ScriptCurrentThemeChangeAfterEvent&&);
 
     MCNAPI ~ScriptCurrentThemeChangeAfterEvent();
     // NOLINTEND
@@ -41,7 +42,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

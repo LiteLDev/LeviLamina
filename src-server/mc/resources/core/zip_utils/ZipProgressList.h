@@ -17,7 +17,6 @@ public:
     ZipProgressList& operator=(ZipProgressList const&);
     ZipProgressList(ZipProgressList const&);
     ZipProgressList();
-
 };
 
-}
+} // namespace Core::ZipUtils

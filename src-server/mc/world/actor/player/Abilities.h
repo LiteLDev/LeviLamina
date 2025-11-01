@@ -48,5 +48,4 @@ public:
 
     MCAPI static ::std::string const& SERIALIZATION_TAG();
     // NOLINTEND
-
 };

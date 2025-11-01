@@ -21,18 +21,18 @@ class CommandBlockUpdatePacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mBlockPos;
-    ::ll::TypedStorage<2, 2, ::CommandBlockMode> mMode;
-    ::ll::TypedStorage<1, 1, bool> mRedstoneMode;
-    ::ll::TypedStorage<1, 1, bool> mIsConditional;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mEntityId;
-    ::ll::TypedStorage<8, 32, ::std::string> mCommand;
-    ::ll::TypedStorage<8, 32, ::std::string> mLastOutput;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>              mBlockPos;
+    ::ll::TypedStorage<2, 2, ::CommandBlockMode>                   mMode;
+    ::ll::TypedStorage<1, 1, bool>                                 mRedstoneMode;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsConditional;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                     mEntityId;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mCommand;
+    ::ll::TypedStorage<8, 32, ::std::string>                       mLastOutput;
     ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mName;
-    ::ll::TypedStorage<4, 4, int> mTickDelay;
-    ::ll::TypedStorage<1, 1, bool> mTrackOutput;
-    ::ll::TypedStorage<1, 1, bool> mExecuteOnFirstTick;
-    ::ll::TypedStorage<1, 1, bool> mIsBlock;
+    ::ll::TypedStorage<4, 4, int>                                  mTickDelay;
+    ::ll::TypedStorage<1, 1, bool>                                 mTrackOutput;
+    ::ll::TypedStorage<1, 1, bool>                                 mExecuteOnFirstTick;
+    ::ll::TypedStorage<1, 1, bool>                                 mIsBlock;
     // NOLINTEND
 
 public:
@@ -94,5 +94,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

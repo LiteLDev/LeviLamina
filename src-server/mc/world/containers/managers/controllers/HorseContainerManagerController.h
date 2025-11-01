@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::HorseContainerManagerModel>> mHorseContainerManagerModel;
-    ::ll::TypedStorage<1, 1, bool> mIsEquipTabOpen;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsEquipTabOpen;
     // NOLINTEND
 
 public:
@@ -35,5 +35,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

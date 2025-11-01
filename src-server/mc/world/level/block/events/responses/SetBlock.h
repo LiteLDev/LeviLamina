@@ -32,7 +32,10 @@ public:
     virtual void executeAction(::RenderParams& params) const /*override*/;
 
     // vIndex: 3
-    virtual void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema, ::Factory<::EventResponse> const& factory) const /*override*/;
+    virtual void buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
+        ::Factory<::EventResponse> const&                                                                       factory
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~SetBlock() /*override*/ = default;
@@ -51,7 +54,10 @@ public:
 
     MCAPI void $executeAction(::RenderParams& params) const;
 
-    MCAPI void $buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema, ::Factory<::EventResponse> const& factory) const;
+    MCAPI void $buildSchema(
+        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
+        ::Factory<::EventResponse> const&                                                                       factory
+    ) const;
     // NOLINTEND
 
 public:
@@ -59,5 +65,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

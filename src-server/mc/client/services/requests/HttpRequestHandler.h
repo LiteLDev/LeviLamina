@@ -16,30 +16,30 @@ class HttpRequestHandler : public ::std::enable_shared_from_this<::HttpRequestHa
 public:
     // HttpRequestHandler inner types define
     enum class WaitForSignIn : uint {
-        None = 0,
+        None    = 0,
         PlayFab = 1,
     };
-    
+
     enum class RequestStatus : int {
         NotStarted = 0,
         InProgress = 1,
-        Completed = 2,
-        Canceled = 3,
-        TimeOut = 4,
+        Completed  = 2,
+        Canceled   = 3,
+        TimeOut    = 4,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk314b76;
-    ::ll::UntypedStorage<8, 8> mUnkd4a64f;
-    ::ll::UntypedStorage<8, 8> mUnk54cbd7;
-    ::ll::UntypedStorage<1, 1> mUnk811043;
-    ::ll::UntypedStorage<4, 4> mUnk2aee14;
-    ::ll::UntypedStorage<8, 8> mUnkdd4ce8;
-    ::ll::UntypedStorage<4, 4> mUnk5dc8c9;
+    ::ll::UntypedStorage<8, 8>  mUnk314b76;
+    ::ll::UntypedStorage<8, 8>  mUnkd4a64f;
+    ::ll::UntypedStorage<8, 8>  mUnk54cbd7;
+    ::ll::UntypedStorage<1, 1>  mUnk811043;
+    ::ll::UntypedStorage<4, 4>  mUnk2aee14;
+    ::ll::UntypedStorage<8, 8>  mUnkdd4ce8;
+    ::ll::UntypedStorage<4, 4>  mUnk5dc8c9;
     ::ll::UntypedStorage<8, 32> mUnk72fca6;
-    ::ll::UntypedStorage<4, 4> mUnkf010d4;
+    ::ll::UntypedStorage<4, 4>  mUnkf010d4;
     // NOLINTEND
 
 public:
@@ -87,5 +87,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

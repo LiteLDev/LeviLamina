@@ -30,24 +30,49 @@ public:
     virtual ~CerealSchemaUpgrade();
 
     // vIndex: 1
-    virtual bool previousSchema(::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&) const = 0;
+    virtual bool previousSchema(
+        ::rapidjson::
+            GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
+    ) const = 0;
 
     // vIndex: 2
-    virtual void upgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>&, ::SemVersion const&) const;
+    virtual void upgradeToNext(
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>&,
+        ::SemVersion const&
+    ) const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CerealSchemaUpgrade(::std::string_view fileType, ::SemVersion targetVersion, ::std::string const& schemaKey, ::std::string const& jsonMemberName);
+    MCNAPI CerealSchemaUpgrade(
+        ::std::string_view   fileType,
+        ::SemVersion         targetVersion,
+        ::std::string const& schemaKey,
+        ::std::string const& jsonMemberName
+    );
 
-    MCNAPI bool checkAndUpgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>& document, ::SemVersion const& documentOriginalVersion) const;
+    MCNAPI bool checkAndUpgradeToNext(
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>& document,
+        ::SemVersion const&             documentOriginalVersion
+    ) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view fileType, ::SemVersion targetVersion, ::std::string const& schemaKey, ::std::string const& jsonMemberName);
+    MCNAPI void* $ctor(
+        ::std::string_view   fileType,
+        ::SemVersion         targetVersion,
+        ::std::string const& schemaKey,
+        ::std::string const& jsonMemberName
+    );
     // NOLINTEND
 
 public:
@@ -59,7 +84,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $upgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>&, ::SemVersion const&) const;
+    MCNAPI void $upgradeToNext(
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>&,
+        ::SemVersion const&
+    ) const;
     // NOLINTEND
 
 public:
@@ -67,5 +98,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

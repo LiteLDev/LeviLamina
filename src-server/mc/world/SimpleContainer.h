@@ -15,7 +15,7 @@ class SimpleContainer : public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mSize;
+    ::ll::TypedStorage<4, 4, int>                         mSize;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
     // NOLINTEND
 
@@ -41,7 +41,11 @@ public:
     virtual void stopOpen(::Actor& actor) /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
+    virtual void serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~SimpleContainer() /*override*/;
@@ -68,7 +72,11 @@ public:
 
     MCFOLD void $stopOpen(::Actor& actor);
 
-    MCAPI void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCAPI void $serverInitItemStackIds(
+        int                                            containerSlot,
+        int                                            count,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    );
     // NOLINTEND
 
 public:
@@ -76,5 +84,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

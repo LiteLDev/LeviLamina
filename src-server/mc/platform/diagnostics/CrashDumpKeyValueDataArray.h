@@ -17,5 +17,4 @@ public:
     CrashDumpKeyValueDataArray& operator=(CrashDumpKeyValueDataArray const&);
     CrashDumpKeyValueDataArray(CrashDumpKeyValueDataArray const&);
     CrashDumpKeyValueDataArray();
-
 };

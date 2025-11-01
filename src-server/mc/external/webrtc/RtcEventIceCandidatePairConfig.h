@@ -17,8 +17,8 @@ class RtcEventIceCandidatePairConfig : public ::webrtc::RtcEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk3705a5;
-    ::ll::UntypedStorage<4, 4> mUnkaa2561;
+    ::ll::UntypedStorage<4, 4>  mUnk3705a5;
+    ::ll::UntypedStorage<4, 4>  mUnkaa2561;
     ::ll::UntypedStorage<4, 28> mUnkb7afb3;
     // NOLINTEND
 
@@ -44,13 +44,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RtcEventIceCandidatePairConfig(::webrtc::IceCandidatePairConfigType type, uint candidate_pair_id, ::webrtc::IceCandidatePairDescription const& candidate_pair_desc);
+    MCNAPI RtcEventIceCandidatePairConfig(
+        ::webrtc::IceCandidatePairConfigType         type,
+        uint                                         candidate_pair_id,
+        ::webrtc::IceCandidatePairDescription const& candidate_pair_desc
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::IceCandidatePairConfigType type, uint candidate_pair_id, ::webrtc::IceCandidatePairDescription const& candidate_pair_desc);
+    MCNAPI void* $ctor(
+        ::webrtc::IceCandidatePairConfigType         type,
+        uint                                         candidate_pair_id,
+        ::webrtc::IceCandidatePairDescription const& candidate_pair_desc
+    );
     // NOLINTEND
 
 public:
@@ -72,7 +80,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

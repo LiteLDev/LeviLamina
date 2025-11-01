@@ -8,7 +8,7 @@ struct EventEnvelope {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnka1b3f6;
+    ::ll::UntypedStorage<8, 32>  mUnka1b3f6;
     ::ll::UntypedStorage<8, 104> mUnk58698e;
     // NOLINTEND
 
@@ -29,7 +29,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptDebuggerMessages

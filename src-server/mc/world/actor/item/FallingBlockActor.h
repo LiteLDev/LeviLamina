@@ -25,25 +25,25 @@ class FallingBlockActor : public ::PredictableProjectile {
 public:
     // FallingBlockActor inner types define
     enum class State : int {
-        Falling = 0,
+        Falling     = 0,
         WaitRemoval = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mCreative;
-    ::ll::TypedStorage<4, 4, ::FallingBlockActor::State> mState;
-    ::ll::TypedStorage<4, 4, int> mWaitTicks;
-    ::ll::TypedStorage<4, 4, int> mTime;
-    ::ll::TypedStorage<1, 1, bool> mCancelDrop;
-    ::ll::TypedStorage<1, 1, bool> mHurtEntities;
-    ::ll::TypedStorage<4, 4, int> mFallDamageMax;
-    ::ll::TypedStorage<4, 4, float> mFallDamageAmount;
-    ::ll::TypedStorage<4, 12, ::Vec3> mRenderOffset;
+    ::ll::TypedStorage<1, 1, bool>                             mCreative;
+    ::ll::TypedStorage<4, 4, ::FallingBlockActor::State>       mState;
+    ::ll::TypedStorage<4, 4, int>                              mWaitTicks;
+    ::ll::TypedStorage<4, 4, int>                              mTime;
+    ::ll::TypedStorage<1, 1, bool>                             mCancelDrop;
+    ::ll::TypedStorage<1, 1, bool>                             mHurtEntities;
+    ::ll::TypedStorage<4, 4, int>                              mFallDamageMax;
+    ::ll::TypedStorage<4, 4, float>                            mFallDamageAmount;
+    ::ll::TypedStorage<4, 12, ::Vec3>                          mRenderOffset;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mFallingBlockSerId;
-    ::ll::TypedStorage<2, 2, ::NewBlockID> mFallingBlockId;
-    ::ll::TypedStorage<2, 2, ushort> mFallingBlockData;
+    ::ll::TypedStorage<2, 2, ::NewBlockID>                     mFallingBlockId;
+    ::ll::TypedStorage<2, 2, ushort>                           mFallingBlockData;
     // NOLINTEND
 
 public:
@@ -66,7 +66,13 @@ public:
     virtual float causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source) /*override*/;
 
     // vIndex: 21
-    virtual void teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity) /*override*/;
+    virtual void teleportTo(
+        ::Vec3 const& pos,
+        bool          shouldStopRiding,
+        int           cause,
+        int           sourceEntityType,
+        bool          keepVelocity
+    ) /*override*/;
 
     // vIndex: 88
     virtual bool canChangeDimensionsUsingPortal() const /*override*/;
@@ -90,7 +96,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FallingBlockActor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI FallingBlockActor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
 
     MCAPI void breakBlock();
 
@@ -104,7 +114,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -118,7 +132,8 @@ public:
 
     MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
-    MCFOLD void $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+    MCFOLD void
+    $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
     MCAPI bool $canChangeDimensionsUsingPortal() const;
 
@@ -136,5 +151,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -8,7 +8,7 @@ public:
     // clang-format off
     struct FilePaths;
     // clang-format on
-    
+
     // PersonaPiece inner types define
     struct FilePaths {
     public:
@@ -19,31 +19,30 @@ public:
         ::ll::UntypedStorage<8, 1032> mUnkb9ac85;
         ::ll::UntypedStorage<8, 1032> mUnk272256;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         FilePaths& operator=(FilePaths const&);
         FilePaths(FilePaths const&);
         FilePaths();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkf52e84;
     ::ll::UntypedStorage<8, 16> mUnka7a426;
     ::ll::UntypedStorage<8, 48> mUnk78487f;
-    ::ll::UntypedStorage<4, 4> mUnk76043e;
-    ::ll::UntypedStorage<4, 4> mUnkf108ff;
-    ::ll::UntypedStorage<1, 1> mUnk8e2a79;
-    ::ll::UntypedStorage<1, 1> mUnkf5bc1d;
+    ::ll::UntypedStorage<4, 4>  mUnk76043e;
+    ::ll::UntypedStorage<4, 4>  mUnkf108ff;
+    ::ll::UntypedStorage<1, 1>  mUnk8e2a79;
+    ::ll::UntypedStorage<1, 1>  mUnkf5bc1d;
     ::ll::UntypedStorage<8, 16> mUnkc81d51;
     ::ll::UntypedStorage<8, 32> mUnkd17429;
     ::ll::UntypedStorage<8, 32> mUnkaa1444;
     ::ll::UntypedStorage<8, 32> mUnkde2edb;
     ::ll::UntypedStorage<8, 32> mUnk98a333;
-    ::ll::UntypedStorage<8, 8> mUnk49eb0e;
+    ::ll::UntypedStorage<8, 8>  mUnk49eb0e;
     ::ll::UntypedStorage<8, 16> mUnk998630;
     ::ll::UntypedStorage<8, 32> mUnk523c0d;
     ::ll::UntypedStorage<8, 16> mUnk61b564;
@@ -84,5 +83,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

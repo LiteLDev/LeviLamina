@@ -18,10 +18,10 @@ class DelayedAttackGoal : public ::MeleeAttackGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mAttackDurationTicks;
-    ::ll::TypedStorage<4, 4, int> mPostPathingTicks;
-    ::ll::TypedStorage<4, 4, int> mHitDelayTicks;
-    ::ll::TypedStorage<4, 4, ::ActorFlags> mAttackFlag;
+    ::ll::TypedStorage<4, 4, int>                                    mAttackDurationTicks;
+    ::ll::TypedStorage<4, 4, int>                                    mPostPathingTicks;
+    ::ll::TypedStorage<4, 4, int>                                    mHitDelayTicks;
+    ::ll::TypedStorage<4, 4, ::ActorFlags>                           mAttackFlag;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSound;
     // NOLINTEND
 
@@ -94,5 +94,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -14,14 +14,14 @@ class InsideBlockEventMap {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnEnteredBlock;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnExitedBlock;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>      mOnEnteredBlock;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>      mOnExitedBlock;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>> mBlock;
-    ::ll::TypedStorage<1, 1, bool> mWatchEnter;
-    ::ll::TypedStorage<1, 1, bool> mWatchExit;
-    ::ll::TypedStorage<1, 1, bool> mCurrentlyInside;
-    ::ll::TypedStorage<1, 1, bool> mWasInside;
-    ::ll::TypedStorage<1, 1, bool> mIgnoreStates;
+    ::ll::TypedStorage<1, 1, bool>                            mWatchEnter;
+    ::ll::TypedStorage<1, 1, bool>                            mWatchExit;
+    ::ll::TypedStorage<1, 1, bool>                            mCurrentlyInside;
+    ::ll::TypedStorage<1, 1, bool>                            mWasInside;
+    ::ll::TypedStorage<1, 1, bool>                            mIgnoreStates;
     // NOLINTEND
 
 public:
@@ -33,7 +33,14 @@ public:
     // NOLINTBEGIN
     MCAPI InsideBlockEventMap(::InsideBlockEventMap const&);
 
-    MCAPI InsideBlockEventMap(::Block const& block, bool watchEnter, bool watchExit, bool ignoreStates, ::ActorDefinitionTrigger const& enteredEvent, ::ActorDefinitionTrigger const& exitedEvent);
+    MCAPI InsideBlockEventMap(
+        ::Block const&                  block,
+        bool                            watchEnter,
+        bool                            watchExit,
+        bool                            ignoreStates,
+        ::ActorDefinitionTrigger const& enteredEvent,
+        ::ActorDefinitionTrigger const& exitedEvent
+    );
 
     MCAPI ::InsideBlockEventMap& operator=(::InsideBlockEventMap const&);
 
@@ -45,7 +52,14 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::InsideBlockEventMap const&);
 
-    MCAPI void* $ctor(::Block const& block, bool watchEnter, bool watchExit, bool ignoreStates, ::ActorDefinitionTrigger const& enteredEvent, ::ActorDefinitionTrigger const& exitedEvent);
+    MCAPI void* $ctor(
+        ::Block const&                  block,
+        bool                            watchEnter,
+        bool                            watchExit,
+        bool                            ignoreStates,
+        ::ActorDefinitionTrigger const& enteredEvent,
+        ::ActorDefinitionTrigger const& exitedEvent
+    );
     // NOLINTEND
 
 public:
@@ -53,5 +67,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

@@ -16,14 +16,15 @@ class StructurePoolBlockTagPredicateBlockTagStringMatches : public ::IStructureP
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
+    ::ll::TypedStorage<8, 8, ::Block const&>       mBlock;
     ::ll::TypedStorage<8, 32, ::std::string const> mTagKey;
     ::ll::TypedStorage<8, 32, ::std::string const> mTagValue;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    StructurePoolBlockTagPredicateBlockTagStringMatches& operator=(StructurePoolBlockTagPredicateBlockTagStringMatches const&);
+    StructurePoolBlockTagPredicateBlockTagStringMatches&
+    operator=(StructurePoolBlockTagPredicateBlockTagStringMatches const&);
     StructurePoolBlockTagPredicateBlockTagStringMatches(StructurePoolBlockTagPredicateBlockTagStringMatches const&);
     StructurePoolBlockTagPredicateBlockTagStringMatches();
 
@@ -43,7 +44,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructurePoolBlockTagPredicateBlockTagStringMatches(::Block const& block, ::std::string tag, ::std::string value);
+    MCAPI
+    StructurePoolBlockTagPredicateBlockTagStringMatches(::Block const& block, ::std::string tag, ::std::string value);
     // NOLINTEND
 
 public:
@@ -65,5 +67,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

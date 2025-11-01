@@ -26,7 +26,8 @@ public:
     virtual bool IsSupportedDecoder(::webrtc::SdpAudioFormat const&) = 0;
 
     // vIndex: 5
-    virtual ::std::unique_ptr<::webrtc::AudioDecoder> MakeAudioDecoder(::webrtc::SdpAudioFormat const&, ::std::optional<::webrtc::AudioCodecPairId>) = 0;
+    virtual ::std::unique_ptr<::webrtc::AudioDecoder>
+    MakeAudioDecoder(::webrtc::SdpAudioFormat const&, ::std::optional<::webrtc::AudioCodecPairId>) = 0;
 
     // vIndex: 2
     virtual ~AudioDecoderFactory() /*override*/ = default;
@@ -37,7 +38,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

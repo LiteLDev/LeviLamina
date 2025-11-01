@@ -48,5 +48,4 @@ public:
 
     MCNAPI void $onDownloadCanceled(::WebviewDownloadInfo const& downloadInfo);
     // NOLINTEND
-
 };

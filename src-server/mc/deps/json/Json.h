@@ -19,4 +19,4 @@ MCAPI ::std::string valueToString(int64 value);
 MCAPI ::std::string valueToString(double value);
 // NOLINTEND
 
-}
+} // namespace Json

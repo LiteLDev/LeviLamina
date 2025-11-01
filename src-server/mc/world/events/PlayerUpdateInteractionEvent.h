@@ -15,14 +15,14 @@ public:
     // PlayerUpdateInteractionEvent inner types define
     enum class ActionType : int {
         ApproachEntity = 0,
-        LeaveEntity = 1,
+        LeaveEntity    = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mEntity;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                mPlayer;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                mEntity;
     ::ll::TypedStorage<4, 4, ::PlayerUpdateInteractionEvent::ActionType> mAction;
     // NOLINTEND
 
@@ -37,5 +37,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

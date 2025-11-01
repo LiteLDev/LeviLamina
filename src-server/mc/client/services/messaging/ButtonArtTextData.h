@@ -17,5 +17,4 @@ public:
     ButtonArtTextData& operator=(ButtonArtTextData const&);
     ButtonArtTextData(ButtonArtTextData const&);
     ButtonArtTextData();
-
 };

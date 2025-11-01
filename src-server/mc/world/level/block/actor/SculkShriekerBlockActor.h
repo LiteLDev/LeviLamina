@@ -24,7 +24,7 @@ public:
     // clang-format off
     struct QueuedResponse;
     // clang-format on
-    
+
     // SculkShriekerBlockActor inner types define
     struct QueuedResponse {
     public:
@@ -32,15 +32,14 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, int> threatLevel;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 200, ::VibrationListener> mVibrationListener;
+    ::ll::TypedStorage<8, 200, ::VibrationListener>                                          mVibrationListener;
     ::ll::TypedStorage<8, 80, ::std::optional<::gsl::final_action<::std::function<void()>>>> mListenerRegistration;
-    ::ll::TypedStorage<4, 8, ::std::optional<::SculkShriekerBlockActor::QueuedResponse>> mQueuedResponse;
+    ::ll::TypedStorage<4, 8, ::std::optional<::SculkShriekerBlockActor::QueuedResponse>>     mQueuedResponse;
     // NOLINTEND
 
 public:
@@ -113,5 +112,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -18,9 +18,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mActor;
-    ::ll::TypedStorage<8, 32, ::std::string> mEvent;
-    ::ll::TypedStorage<1, 1, bool> mCancel;
-    ::ll::TypedStorage<8, 8, ::std::vector<::ActorDefinitionModifier>&> mModifiers;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                              mEvent;
+    ::ll::TypedStorage<1, 1, bool>                                                                        mCancel;
+    ::ll::TypedStorage<8, 8, ::std::vector<::ActorDefinitionModifier>&>                                   mModifiers;
     // NOLINTEND
 
 public:
@@ -28,7 +28,6 @@ public:
     ScriptDataDrivenActorTriggerBeforeEvent& operator=(ScriptDataDrivenActorTriggerBeforeEvent const&);
     ScriptDataDrivenActorTriggerBeforeEvent(ScriptDataDrivenActorTriggerBeforeEvent const&);
     ScriptDataDrivenActorTriggerBeforeEvent();
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

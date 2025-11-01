@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/molang/MolangVersion.h"
 #include "mc/util/molang/CompiledExpressionWithoutContentScope.h"
-#include "mc/versionless/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,13 +46,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CompiledExpressionWithContentScope(::Molang::details::Program instructions, ::Bedrock::StaticOptimizedString expressionString, ::MolangVersion version, bool hasVariableAssignments);
+    MCNAPI CompiledExpressionWithContentScope(
+        ::Molang::details::Program       instructions,
+        ::Bedrock::StaticOptimizedString expressionString,
+        ::MolangVersion                  version,
+        bool                             hasVariableAssignments
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Molang::details::Program instructions, ::Bedrock::StaticOptimizedString expressionString, ::MolangVersion version, bool hasVariableAssignments);
+    MCNAPI void* $ctor(
+        ::Molang::details::Program       instructions,
+        ::Bedrock::StaticOptimizedString expressionString,
+        ::MolangVersion                  version,
+        bool                             hasVariableAssignments
+    );
     // NOLINTEND
 
 public:
@@ -68,7 +78,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Molang::details

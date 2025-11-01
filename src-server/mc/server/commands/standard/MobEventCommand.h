@@ -18,7 +18,7 @@ public:
     // clang-format off
     struct InitProxy;
     // clang-format on
-    
+
     // MobEventCommand inner types define
     struct InitProxy {
     public:
@@ -26,21 +26,20 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk50c0de;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         InitProxy& operator=(InitProxy const&);
         InitProxy(InitProxy const&);
         InitProxy();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mMobEventName;
-    ::ll::TypedStorage<1, 1, bool> mValue;
-    ::ll::TypedStorage<1, 1, bool> mValueWasSet;
+    ::ll::TypedStorage<1, 1, bool>           mValue;
+    ::ll::TypedStorage<1, 1, bool>           mValueWasSet;
     // NOLINTEND
 
 public:
@@ -70,5 +69,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

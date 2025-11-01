@@ -18,12 +18,12 @@ class DefinitionEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mProbability;
-    ::ll::TypedStorage<8, 16, ::ExpressionNode> mCondition;
-    ::ll::TypedStorage<4, 4, ::DefinitionEventType> mType;
-    ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mTrigger;
+    ::ll::TypedStorage<4, 4, float>                             mProbability;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>                 mCondition;
+    ::ll::TypedStorage<4, 4, ::DefinitionEventType>             mType;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger>              mTrigger;
     ::ll::TypedStorage<8, 24, ::std::vector<::DefinitionEvent>> mChildren;
-    ::ll::TypedStorage<8, 24, ::EventResponseCollection> mResponses;
+    ::ll::TypedStorage<8, 24, ::EventResponseCollection>        mResponses;
     // NOLINTEND
 
 public:
@@ -57,5 +57,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

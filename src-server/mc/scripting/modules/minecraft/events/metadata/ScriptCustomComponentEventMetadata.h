@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template<typename T0>
-class ScriptCustomComponentEventMetadata {
-};
+template <typename T0>
+class ScriptCustomComponentEventMetadata {};
 
-}
+} // namespace ScriptModuleMinecraft

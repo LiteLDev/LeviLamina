@@ -11,7 +11,7 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk2b8141;
     ::ll::UntypedStorage<8, 64> mUnk4c8cde;
     ::ll::UntypedStorage<8, 64> mUnkd85a48;
-    ::ll::UntypedStorage<8, 8> mUnkb7a486;
+    ::ll::UntypedStorage<8, 8>  mUnkb7a486;
     ::ll::UntypedStorage<8, 32> mUnk8ded69;
     // NOLINTEND
 
@@ -32,7 +32,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

@@ -23,7 +23,6 @@ public:
     RTPVideoHeaderVP8& operator=(RTPVideoHeaderVP8 const&);
     RTPVideoHeaderVP8(RTPVideoHeaderVP8 const&);
     RTPVideoHeaderVP8();
-
 };
 
-}
+} // namespace webrtc

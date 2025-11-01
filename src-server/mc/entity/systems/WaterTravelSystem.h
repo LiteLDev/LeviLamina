@@ -26,7 +26,18 @@ class WaterTravelSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickWaterTravelSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent const, ::WaterTravelFlagComponent const>, ::MovementAttributesComponent const, ::MovementSpeedComponent const, ::SwimSpeedMultiplierComponent const, ::WaterWalkSpeedEnchantComponent const, ::MobTravelComponent, ::Optional<::DolphinFlagComponent const>, ::Optional<::OnGroundFlagComponent const>> view, ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>> players);
+    MCNAPI static void tickWaterTravelSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent const, ::WaterTravelFlagComponent const>,
+            ::MovementAttributesComponent const,
+            ::MovementSpeedComponent const,
+            ::SwimSpeedMultiplierComponent const,
+            ::WaterWalkSpeedEnchantComponent const,
+            ::MobTravelComponent,
+            ::Optional<::DolphinFlagComponent const>,
+            ::Optional<::OnGroundFlagComponent const>>               view,
+        ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>> players
+    );
     // NOLINTEND
-
 };

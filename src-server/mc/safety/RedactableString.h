@@ -11,7 +11,7 @@ class RedactableString {
 public:
     // member variables
     // NOLINTBEGIN
-    ::std::string                  mUnredactedString;
+    ::std::string                                   mUnredactedString;
     ::std::optional<::std::string> mRedactedString;
     // NOLINTEND
 
@@ -54,7 +54,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Safety

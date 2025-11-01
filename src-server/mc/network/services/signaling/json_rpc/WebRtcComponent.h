@@ -21,7 +21,7 @@ class WebRtcComponent : public ::IJsonRpcComponent, public ::std::enable_shared_
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkb87f51;
+    ::ll::UntypedStorage<8, 8>  mUnkb87f51;
     ::ll::UntypedStorage<8, 24> mUnkb025a5;
     ::ll::UntypedStorage<8, 80> mUnkcc2ad6;
     ::ll::UntypedStorage<8, 64> mUnk2d2bc1;
@@ -50,11 +50,17 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit WebRtcComponent(::std::shared_ptr<::ISignalingJsonRpcInterop> interop);
 
-    MCNAPI void _sendDeliveryNotification(::PlayerMessaging::NetworkID const& toPlayerId, ::std::string const& messageId);
+    MCNAPI void
+    _sendDeliveryNotification(::PlayerMessaging::NetworkID const& toPlayerId, ::std::string const& messageId);
 
     MCNAPI void parseJsonRpcClientMessage(::JsonRpc::ReceiveClientMessageResult const& result);
 
-    MCNAPI void sendJsonRpcSignal(::NetherNet::NetworkID networkIDTo, ::NetherNet::NetworkID networkIDFrom, ::std::string const& message, ::std::function<void(::NetherNet::ESessionError)>&& onComplete);
+    MCNAPI void sendJsonRpcSignal(
+        ::NetherNet::NetworkID                              networkIDTo,
+        ::NetherNet::NetworkID                              networkIDFrom,
+        ::std::string const&                                message,
+        ::std::function<void(::NetherNet::ESessionError)>&& onComplete
+    );
 
     MCNAPI void sendTurnConfigRequest();
     // NOLINTEND
@@ -82,7 +88,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace JsonRpc

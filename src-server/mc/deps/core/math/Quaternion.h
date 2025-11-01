@@ -14,5 +14,4 @@ public:
     Quaternion& operator=(Quaternion const&);
     Quaternion(Quaternion const&);
     Quaternion();
-
 };

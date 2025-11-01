@@ -17,7 +17,6 @@ public:
     LoggedDtlsTransportState& operator=(LoggedDtlsTransportState const&);
     LoggedDtlsTransportState(LoggedDtlsTransportState const&);
     LoggedDtlsTransportState();
-
 };
 
-}
+} // namespace webrtc

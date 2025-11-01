@@ -10,7 +10,7 @@ public:
     // clang-format off
     class ReceiveTimeOrder;
     // clang-format on
-    
+
     // PacketResult inner types define
     class ReceiveTimeOrder {
     public:
@@ -18,14 +18,13 @@ public:
         // NOLINTBEGIN
         MCNAPI bool operator()(::webrtc::PacketResult const& lhs, ::webrtc::PacketResult const& rhs);
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 72> mUnk4a5522;
-    ::ll::UntypedStorage<8, 8> mUnkf44e81;
+    ::ll::UntypedStorage<8, 8>  mUnkf44e81;
     // NOLINTEND
 
 public:
@@ -55,7 +54,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

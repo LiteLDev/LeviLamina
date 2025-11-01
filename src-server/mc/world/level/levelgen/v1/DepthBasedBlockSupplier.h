@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::XoroshiroPositionalRandomFactory const> mRandomFactory;
-    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*>                            mBlock;
     // NOLINTEND
 
 public:
@@ -24,5 +24,4 @@ public:
     // NOLINTBEGIN
     MCAPI ::Block const* getBlock(::BlockPos const& pos, ::Block const* fallback) const;
     // NOLINTEND
-
 };

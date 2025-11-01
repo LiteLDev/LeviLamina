@@ -20,7 +20,7 @@ public:
     // clang-format off
     struct LoadedCache;
     // clang-format on
-    
+
     // CachedHttpRequest inner types define
     struct LoadedCache {
     public:
@@ -28,15 +28,14 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk729aef;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         LoadedCache& operator=(LoadedCache const&);
         LoadedCache(LoadedCache const&);
         LoadedCache();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -45,11 +44,11 @@ public:
     ::ll::UntypedStorage<8, 80> mUnkbb851d;
     ::ll::UntypedStorage<8, 80> mUnkdcd461;
     ::ll::UntypedStorage<8, 32> mUnk99697a;
-    ::ll::UntypedStorage<8, 8> mUnk3619db;
+    ::ll::UntypedStorage<8, 8>  mUnk3619db;
     ::ll::UntypedStorage<8, 24> mUnk86e2d3;
-    ::ll::UntypedStorage<1, 1> mUnk1f00ca;
-    ::ll::UntypedStorage<1, 1> mUnkb0fe83;
-    ::ll::UntypedStorage<1, 1> mUnk8d43f1;
+    ::ll::UntypedStorage<1, 1>  mUnk1f00ca;
+    ::ll::UntypedStorage<1, 1>  mUnkb0fe83;
+    ::ll::UntypedStorage<1, 1>  mUnk8d43f1;
     // NOLINTEND
 
 public:
@@ -100,5 +99,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

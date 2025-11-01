@@ -26,10 +26,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 152, ::ItemStack> mRecord;
-    ::ll::TypedStorage<4, 4, int> mCount;
-    ::ll::TypedStorage<1, 1, bool> mRecordingFinished;
-    ::ll::TypedStorage<4, 4, int> mTicksPlaying;
-    ::ll::TypedStorage<1, 1, bool> mPostBlockChangeGameEvent;
+    ::ll::TypedStorage<4, 4, int>           mCount;
+    ::ll::TypedStorage<1, 1, bool>          mRecordingFinished;
+    ::ll::TypedStorage<4, 4, int>           mTicksPlaying;
+    ::ll::TypedStorage<1, 1, bool>          mPostBlockChangeGameEvent;
     // NOLINTEND
 
 public:
@@ -64,7 +64,7 @@ public:
     virtual ::ItemStack const& getItem(int) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 22
     virtual void startOpen(::Actor&) /*override*/;
@@ -82,7 +82,11 @@ public:
     virtual void onChanged(::BlockSource& region) /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
+    virtual void serverInitItemStackIds(
+        int containerSlot,
+        int,
+        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
+    ) /*override*/;
 
     // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
@@ -135,7 +139,7 @@ public:
 
     MCAPI ::ItemStack const& $getItem(int) const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCFOLD void $startOpen(::Actor&);
 
@@ -147,7 +151,8 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCAPI void
+    $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
@@ -161,5 +166,4 @@ public:
 
     MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
-
 };

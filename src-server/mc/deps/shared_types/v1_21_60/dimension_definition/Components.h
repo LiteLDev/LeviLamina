@@ -8,7 +8,7 @@ struct Components {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnk4d43db;
+    ::ll::UntypedStorage<4, 8>  mUnk4d43db;
     ::ll::UntypedStorage<8, 32> mUnk450f4f;
     // NOLINTEND
 
@@ -21,9 +21,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::Components& operator=(::SharedTypes::v1_21_60::DimensionDefinition::Components&&);
+    MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::Components&
+    operator=(::SharedTypes::v1_21_60::DimensionDefinition::Components&&);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_60::DimensionDefinition

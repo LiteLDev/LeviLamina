@@ -4,8 +4,7 @@
 
 namespace rtc {
 
-template<typename T0>
-class WeakPtrFactory {
-};
+template <typename T0>
+class WeakPtrFactory {};
 
-}
+} // namespace rtc

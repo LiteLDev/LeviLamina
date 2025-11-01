@@ -33,19 +33,27 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 95
-    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const /*override*/;
+    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const
+        /*override*/;
 
     // vIndex: 96
     virtual void refreshedInContainer(::ItemStackBase const& stack, ::Level& level) const /*override*/;
 
     // vIndex: 124
-    virtual ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const /*override*/;
+    virtual ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const
+        /*override*/;
 
     // vIndex: 90
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    virtual ::std::string
+    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 53
-    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
     // vIndex: 108
     virtual bool hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const /*override*/;
@@ -54,7 +62,7 @@ public:
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
     // vIndex: 110
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
     // vIndex: 99
     virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const /*override*/;
@@ -72,7 +80,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _scheduleMapChunkRendering(::Dimension& dimension, ::MapItemSavedData const& original, ::MapItemSavedData::ChunkBounds bb, ::std::shared_ptr<bool> chunksRefCount);
+    MCAPI static void _scheduleMapChunkRendering(
+        ::Dimension&                    dimension,
+        ::MapItemSavedData const&       original,
+        ::MapItemSavedData::ChunkBounds bb,
+        ::std::shared_ptr<bool>         chunksRefCount
+    );
 
     MCAPI static bool doesDisplayPlayerMarkers(::ItemStackBase const& item);
 
@@ -82,7 +95,17 @@ public:
 
     MCAPI static void renderBiomePreviewMap(::Dimension& dimension, ::MapItemSavedData& data);
 
-    MCAPI static bool sampleMapData(::BlockSource& region, int blocksPerTexel, ::BlockPos const& worldOrigin, ::BlockPos const& updateOrigin, int imageWidth, int imageHeight, ::std::vector<::MapSample>* output, ::MapItemSavedData* mapData, ::std::vector<::ClientTerrainPixel>* clientPixels);
+    MCAPI static bool sampleMapData(
+        ::BlockSource&                       region,
+        int                                  blocksPerTexel,
+        ::BlockPos const&                    worldOrigin,
+        ::BlockPos const&                    updateOrigin,
+        int                                  imageWidth,
+        int                                  imageHeight,
+        ::std::vector<::MapSample>*          output,
+        ::MapItemSavedData*                  mapData,
+        ::std::vector<::ClientTerrainPixel>* clientPixels
+    );
 
     MCAPI static void serializeMapData(::std::vector<::MapSample> const& mapSamples, ::std::string& output);
     // NOLINTEND
@@ -114,15 +137,21 @@ public:
 
     MCAPI ::std::unique_ptr<::Packet> $getUpdatePacket(::ItemStack const& item, ::Level& level, ::Actor& player) const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string
+    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
 
     MCAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
 
     MCFOLD ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
     // NOLINTEND
@@ -132,5 +161,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

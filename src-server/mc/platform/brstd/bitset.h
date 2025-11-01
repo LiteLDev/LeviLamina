@@ -4,8 +4,7 @@
 
 namespace brstd {
 
-template<int T0, typename T1>
-class bitset {
-};
+template <int T0, typename T1>
+class bitset {};
 
-}
+} // namespace brstd

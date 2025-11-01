@@ -27,5 +27,4 @@ public:
 
     MCAPI static void setOnFireNoEffects(::Actor& actor, int seconds);
     // NOLINTEND
-
 };

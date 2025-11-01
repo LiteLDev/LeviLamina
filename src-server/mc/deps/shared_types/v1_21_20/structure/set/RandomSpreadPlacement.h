@@ -20,7 +20,6 @@ public:
     RandomSpreadPlacement& operator=(RandomSpreadPlacement const&);
     RandomSpreadPlacement(RandomSpreadPlacement const&);
     RandomSpreadPlacement();
-
 };
 
-}
+} // namespace SharedTypes::v1_21_20::JigsawStructureSet

@@ -28,7 +28,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6
-    virtual bool carveEllipsoidVolume(::IBlockWorldGenAPI& target, ::CaveFeatureUtils::CarverConfiguration const&, ::Random& random, ::ChunkPos const& pos, ::Vec3 const& startPos, ::BoundingBox const& volume, float rad, float yRad, ::CaveFeatureUtils::CarvingParameters const& carveValues) const /*override*/;
+    virtual bool carveEllipsoidVolume(
+        ::IBlockWorldGenAPI& target,
+        ::CaveFeatureUtils::CarverConfiguration const&,
+        ::Random&                                    random,
+        ::ChunkPos const&                            pos,
+        ::Vec3 const&                                startPos,
+        ::BoundingBox const&                         volume,
+        float                                        rad,
+        float                                        yRad,
+        ::CaveFeatureUtils::CarvingParameters const& carveValues
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~UnderwaterCaveFeature() /*override*/ = default;
@@ -43,7 +53,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $carveEllipsoidVolume(::IBlockWorldGenAPI& target, ::CaveFeatureUtils::CarverConfiguration const&, ::Random& random, ::ChunkPos const& pos, ::Vec3 const& startPos, ::BoundingBox const& volume, float rad, float yRad, ::CaveFeatureUtils::CarvingParameters const& carveValues) const;
+    MCAPI bool $carveEllipsoidVolume(
+        ::IBlockWorldGenAPI& target,
+        ::CaveFeatureUtils::CarverConfiguration const&,
+        ::Random&                                    random,
+        ::ChunkPos const&                            pos,
+        ::Vec3 const&                                startPos,
+        ::BoundingBox const&                         volume,
+        float                                        rad,
+        float                                        yRad,
+        ::CaveFeatureUtils::CarvingParameters const& carveValues
+    ) const;
     // NOLINTEND
 
 public:
@@ -51,5 +71,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

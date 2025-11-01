@@ -18,7 +18,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindInterface();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

@@ -4,7 +4,6 @@
 
 namespace Scripting {
 
-class WeakFromThisBase {
-};
+class WeakFromThisBase {};
 
-}
+} // namespace Scripting

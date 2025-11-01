@@ -33,29 +33,30 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    int                                                                          mVersion{};
-    ::CommandSelectionType                                                       mType{};
-    ::CommandSelectionOrder                                                      mOrder{};
-    ::std::vector<::InvertableFilter<::std::string>>                             mNameFilters{};
+    int                                                                                                                                      mVersion{};
+    ::CommandSelectionType                                                                                                mType{};
+    ::CommandSelectionOrder                                                                                              mOrder{};
+    ::std::vector<::InvertableFilter<::std::string>>                                           mNameFilters{};
     ::std::vector<::InvertableFilter<::ActorDefinitionIdentifier>>               mTypeFilters{};
-    ::std::vector<::InvertableFilter<::HashedString>>                            mFamilyFilters{};
-    ::std::vector<::InvertableFilter<::std::string>>                             mTagFilters{};
-    ::std::vector<::std::function<bool(::CommandOrigin const&, ::Actor const&)>> mFilterChain{};
+    ::std::vector<::InvertableFilter<::HashedString>>                                         mFamilyFilters{};
+    ::std::vector<::InvertableFilter<::std::string>>                                           mTagFilters{};
+    ::std::vector<::std::function<bool(::CommandOrigin const&, ::Actor const&)>>
+                                                 mFilterChain{};
     ::CommandPosition                                                            mPosition{};
-    ::Vec3                                                                       mBoxDeltas{};
-    float                                                                        mRadiusMinSqr{0.0f};
-    float  mRadiusMaxSqr{std::numeric_limits<float>::max()};
-    uint64 mCount{std::numeric_limits<uint>::max()};
-    bool   mIncludeDeadPlayers{};
-    bool   mIsPositionBound{};
-    bool   mDistanceFiltered{};
-    bool   mPositionFiltered{};
-    bool   mCountFiltered{};
-    bool   mHaveDeltas{};
-    bool   mForcePlayer{};
-    bool   mExcludeAgents{};
-    bool   mIsExplicitIdSelector{};
-    bool   mForceDimensionFiltering{};
+    ::Vec3                                                                                  mBoxDeltas{};
+    float                                                                                     mRadiusMinSqr{0.0f};
+    float               mRadiusMaxSqr{std::numeric_limits<float>::max()};
+    uint64             mCount{std::numeric_limits<uint>::max()};
+    bool                 mIncludeDeadPlayers{};
+    bool                 mIsPositionBound{};
+    bool                 mDistanceFiltered{};
+    bool                 mPositionFiltered{};
+    bool                 mCountFiltered{};
+    bool                 mHaveDeltas{};
+    bool                 mForcePlayer{};
+    bool                 mExcludeAgents{};
+    bool                 mIsExplicitIdSelector{};
+    bool                 mForceDimensionFiltering{};
     // NOLINTEND
 
     CommandSelectorBase() = default;
@@ -68,13 +69,27 @@ public:
 
     MCAPI void addFilter(::std::function<bool(::CommandOrigin const&, ::Actor const&)> filter);
 
-    MCAPI void addHasItemFilter(::std::string const& itemName, ::std::optional<int> auxValue, ::CommandIntegerRange const& quantity, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::CommandIntegerRange const& slot);
+    MCAPI void addHasItemFilter(
+        ::std::string const&                 itemName,
+        ::std::optional<int>                 auxValue,
+        ::CommandIntegerRange const&         quantity,
+        ::SharedTypes::Legacy::EquipmentSlot equipmentSlot,
+        ::CommandIntegerRange const&         slot
+    );
 
     MCAPI void addHasPermissionFilters(::std::vector<::HasPermissionFilter> const& filters);
 
-    MCAPI void addHasPropertyFilter(::HashedString const& propertyName, bool inverted, ::std::optional<::std::variant<::CommandRationalRange, bool, ::std::string>> const& optionalValue);
+    MCAPI void addHasPropertyFilter(
+        ::HashedString const&                                                               propertyName,
+        bool                                                                                inverted,
+        ::std::optional<::std::variant<::CommandRationalRange, bool, ::std::string>> const& optionalValue
+    );
 
-    MCAPI void addScoreFilter(::std::string const& objName, ::CommandIntegerRange const& range, ::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback);
+    MCAPI void addScoreFilter(
+        ::std::string const&                                              objName,
+        ::CommandIntegerRange const&                                      range,
+        ::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback
+    );
 
     MCAPI void addTypeFilter(::InvertableFilter<::std::string> const& filter);
 
@@ -114,5 +129,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

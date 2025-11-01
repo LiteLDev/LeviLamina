@@ -14,12 +14,12 @@ struct InteractionParticle {
 public:
     // InteractionParticle inner types define
     enum class CopperEventType : uchar {
-        None = 0,
-        WaxOn = 1,
+        None   = 0,
+        WaxOn  = 1,
         WaxOff = 2,
         Scrape = 3,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,7 +42,7 @@ public:
 
     MCNAPI void setParticleType(::std::string const& name);
 
-    MCNAPI void spawnParticle(::BlockSource& region, ::Actor& owner, ::Player& player, ::ItemStack const& usedItemCopy) const;
+    MCNAPI void
+    spawnParticle(::BlockSource& region, ::Actor& owner, ::Player& player, ::ItemStack const& usedItemCopy) const;
     // NOLINTEND
-
 };

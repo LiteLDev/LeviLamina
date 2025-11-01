@@ -12,7 +12,13 @@ class SimpleContainer;
 namespace DamageAbsorptionItemComponentUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI bool tryAbsorbDamageWithItemInSlot(::Mob& mob, ::SimpleContainer const& armorContainer, int slot, ::ActorDamageSource const& source, float damage);
+MCNAPI bool tryAbsorbDamageWithItemInSlot(
+    ::Mob&                     mob,
+    ::SimpleContainer const&   armorContainer,
+    int                        slot,
+    ::ActorDamageSource const& source,
+    float                      damage
+);
 // NOLINTEND
 
-}
+} // namespace DamageAbsorptionItemComponentUtils

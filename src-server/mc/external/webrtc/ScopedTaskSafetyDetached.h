@@ -16,7 +16,6 @@ public:
     ScopedTaskSafetyDetached& operator=(ScopedTaskSafetyDetached const&);
     ScopedTaskSafetyDetached(ScopedTaskSafetyDetached const&);
     ScopedTaskSafetyDetached();
-
 };
 
-}
+} // namespace webrtc

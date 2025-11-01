@@ -21,7 +21,7 @@ struct ScriptLeverActionAfterEvent : public ::ScriptModuleMinecraft::ScriptBlock
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mIsPowered;
+    ::ll::TypedStorage<1, 1, bool>                                                                         mIsPowered;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayer;
     // NOLINTEND
 
@@ -32,7 +32,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptLeverActionAfterEvent(::LeverActionEvent const& leverActionEvent, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::BlockPos const&, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI ScriptLeverActionAfterEvent(
+        ::LeverActionEvent const&                                                   leverActionEvent,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
+        ::BlockPos const&,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
 
 public:
@@ -44,9 +49,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LeverActionEvent const& leverActionEvent, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::BlockPos const&, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI void* $ctor(
+        ::LeverActionEvent const&                                                   leverActionEvent,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
+        ::BlockPos const&,
+        ::Scripting::WeakLifetimeScope const& scope
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

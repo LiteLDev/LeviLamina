@@ -27,9 +27,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptHotbarEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
 
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter& operator=(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter&&);
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter&
+    operator=(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter&&);
 
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter& operator=(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter&
+    operator=(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
 
     MCNAPI ~ScriptHotbarEventFilter();
     // NOLINTEND
@@ -51,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft::EventFilters

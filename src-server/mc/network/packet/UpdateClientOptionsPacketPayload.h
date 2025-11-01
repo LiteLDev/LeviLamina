@@ -11,5 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 2, ::SyncedClientOptionsUpdate> mUpdate;
     // NOLINTEND
-
 };

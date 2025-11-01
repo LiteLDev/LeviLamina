@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk406cef;
-    ::ll::UntypedStorage<8, 8> mUnkf2ff95;
+    ::ll::UntypedStorage<8, 8>  mUnkf2ff95;
     // NOLINTEND
 
 public:
@@ -15,5 +15,4 @@ public:
     GameTestRegistrationBuilderFactory& operator=(GameTestRegistrationBuilderFactory const&);
     GameTestRegistrationBuilderFactory(GameTestRegistrationBuilderFactory const&);
     GameTestRegistrationBuilderFactory();
-
 };

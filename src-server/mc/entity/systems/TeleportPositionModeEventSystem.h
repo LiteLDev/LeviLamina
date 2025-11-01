@@ -18,12 +18,21 @@ struct PlayerPositionModeComponent;
 class TeleportPositionModeEventSystem {
 public:
     // TeleportPositionModeEventSystem inner types define
-    using ViewType = ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>, ::ActorOwnerComponent, ::PlayerPositionModeComponent const>;
-    
+    using ViewType = ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>,
+        ::ActorOwnerComponent,
+        ::PlayerPositionModeComponent const>;
+
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickTeleportPositionModeEventSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>, ::ActorOwnerComponent, ::PlayerPositionModeComponent const> view);
+    MCNAPI static void tickTeleportPositionModeEventSystem(
+        ::ViewT<
+            ::StrictEntityContext,
+            ::Include<::ActorMovementTickNeededComponent, ::PlayerComponent>,
+            ::ActorOwnerComponent,
+            ::PlayerPositionModeComponent const> view
+    );
     // NOLINTEND
-
 };

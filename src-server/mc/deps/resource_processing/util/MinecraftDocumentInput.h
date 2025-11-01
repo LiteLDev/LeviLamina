@@ -21,11 +21,10 @@ public:
     struct Binary;
     struct NoPayloadCheck;
     // clang-format on
-    
+
     // MinecraftDocumentInput inner types define
-    struct NoPayloadCheck {
-    };
-    
+    struct NoPayloadCheck {};
+
     struct Binary {
     public:
         // member variables
@@ -33,23 +32,22 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk236c17;
         ::ll::UntypedStorage<8, 16> mUnk863df5;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Binary& operator=(Binary const&);
         Binary(Binary const&);
         Binary();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnkbde5d3;
-    ::ll::UntypedStorage<8, 24> mUnkfdcb9e;
-    ::ll::UntypedStorage<8, 32> mUnkf8cada;
+    ::ll::UntypedStorage<8, 24>  mUnkbde5d3;
+    ::ll::UntypedStorage<8, 24>  mUnkfdcb9e;
+    ::ll::UntypedStorage<8, 32>  mUnkf8cada;
     ::ll::UntypedStorage<8, 104> mUnkb30b31;
-    ::ll::UntypedStorage<8, 80> mUnk5f5319;
+    ::ll::UntypedStorage<8, 80>  mUnk5f5319;
     // NOLINTEND
 
 public:
@@ -77,13 +75,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MinecraftDocumentInput(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
+    MCNAPI
+    MinecraftDocumentInput(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
 
-    MCNAPI MinecraftDocumentInput(::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck, ::SemVersion const&, ::std::string);
+    MCNAPI MinecraftDocumentInput(
+        ::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck,
+        ::SemVersion const&,
+        ::std::string
+    );
 
     MCNAPI void init(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
 
-    MCNAPI void initAsBinary(::std::string_view payloadKey, ::std::string data, ::Bedrock::Resources::BinaryHeader const& header);
+    MCNAPI void
+    initAsBinary(::std::string_view payloadKey, ::std::string data, ::Bedrock::Resources::BinaryHeader const& header);
 
     MCNAPI void initAsJson(::std::string_view payloadKey, ::std::string data);
     // NOLINTEND
@@ -93,7 +97,8 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string_view payloadKey, ::SemVersion const& minModernVersion, ::std::string data);
 
-    MCNAPI void* $ctor(::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck, ::SemVersion const&, ::std::string);
+    MCNAPI void*
+    $ctor(::Bedrock::Resources::MinecraftDocumentInput::NoPayloadCheck, ::SemVersion const&, ::std::string);
     // NOLINTEND
 
 public:
@@ -117,7 +122,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Resources

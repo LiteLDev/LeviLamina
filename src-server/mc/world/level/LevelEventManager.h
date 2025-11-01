@@ -24,11 +24,25 @@ class LevelEventManager : public ::ILevelEventManagerCoordinator {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool const> mIsClientSide;
+    ::ll::TypedStorage<1, 1, bool const>                                                    mIsClientSide;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> const> mLevelEventCoordinator;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>> mPacketSender;
-    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mLevelEventDataPublisher;
-    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mLevelEventCompoundTagPublisher;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>>                   mPacketSender;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+        mLevelEventDataPublisher;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+        mLevelEventCompoundTagPublisher;
     // NOLINTEND
 
 public:
@@ -42,22 +56,35 @@ public:
     virtual ~LevelEventManager() /*override*/;
 
     // vIndex: 1
-    virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>& getLevelEventDataConnector() /*override*/;
+    virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
+    getLevelEventDataConnector() /*override*/;
 
     // vIndex: 2
-    virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>& getLevelEventCompoundTagConnector() /*override*/;
+    virtual ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
+    getLevelEventCompoundTagConnector() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LevelEventManager(bool isClientSide, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator);
+    MCNAPI
+    LevelEventManager(bool isClientSide, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator);
 
-    MCNAPI void broadcastLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& tag, ::UserEntityIdentifierComponent const* userIdentifierToExclude);
+    MCNAPI void broadcastLevelEvent(
+        ::SharedTypes::Legacy::LevelEvent      type,
+        ::CompoundTag const&                   tag,
+        ::UserEntityIdentifierComponent const* userIdentifierToExclude
+    );
 
-    MCNAPI void broadcastLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data, ::UserEntityIdentifierComponent const* userIdentifierToExclude);
+    MCNAPI void broadcastLevelEvent(
+        ::SharedTypes::Legacy::LevelEvent      type,
+        ::Vec3 const&                          pos,
+        int                                    data,
+        ::UserEntityIdentifierComponent const* userIdentifierToExclude
+    );
 
-    MCNAPI void broadcastLocalEvent(::IDimension& dimension, ::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
+    MCNAPI void
+    broadcastLocalEvent(::IDimension& dimension, ::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
     // NOLINTEND
 
 public:
@@ -75,9 +102,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>& $getLevelEventDataConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
+    $getLevelEventDataConnector();
 
-    MCNAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>& $getLevelEventCompoundTagConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
+    $getLevelEventCompoundTagConnector();
     // NOLINTEND
 
 public:
@@ -85,5 +114,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

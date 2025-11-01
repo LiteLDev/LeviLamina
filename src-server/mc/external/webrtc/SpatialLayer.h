@@ -24,7 +24,6 @@ public:
     SpatialLayer& operator=(SpatialLayer const&);
     SpatialLayer(SpatialLayer const&);
     SpatialLayer();
-
 };
 
-}
+} // namespace webrtc

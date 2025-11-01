@@ -8,7 +8,7 @@ struct ArgumentDetails {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk64a1c3;
+    ::ll::UntypedStorage<8, 8>   mUnk64a1c3;
     ::ll::UntypedStorage<8, 208> mUnk574b18;
     ::ll::UntypedStorage<8, 208> mUnkcd9943;
     ::ll::UntypedStorage<8, 208> mUnk8d35f7;
@@ -42,7 +42,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

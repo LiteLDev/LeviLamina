@@ -6,7 +6,7 @@ struct SentryEnvelopePayloadBreadcrumb {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkb35040;
+    ::ll::UntypedStorage<4, 8>  mUnkb35040;
     ::ll::UntypedStorage<8, 40> mUnkfa0007;
     ::ll::UntypedStorage<8, 40> mUnkef16dd;
     ::ll::UntypedStorage<8, 16> mUnke46afa;
@@ -32,5 +32,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

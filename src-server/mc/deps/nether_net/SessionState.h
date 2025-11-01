@@ -27,7 +27,6 @@ public:
     SessionState& operator=(SessionState const&);
     SessionState(SessionState const&);
     SessionState();
-
 };
 
-}
+} // namespace NetherNet

@@ -23,7 +23,8 @@ public:
     virtual ~IControl();
 
     // vIndex: 1
-    virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError> buildJson(::Player&, ::CurrentCmdVersion) const = 0;
+    virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
+    buildJson(::Player&, ::CurrentCmdVersion) const = 0;
     // NOLINTEND
 
 public:
@@ -43,7 +44,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraftServerUI

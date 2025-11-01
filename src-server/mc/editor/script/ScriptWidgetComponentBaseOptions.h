@@ -19,8 +19,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 16> mUnk46e19c;
-    ::ll::UntypedStorage<1, 2> mUnkf44423;
-    ::ll::UntypedStorage<1, 2> mUnk2a2509;
+    ::ll::UntypedStorage<1, 2>  mUnkf44423;
+    ::ll::UntypedStorage<1, 2>  mUnk2a2509;
     // NOLINTEND
 
 public:
@@ -36,7 +36,8 @@ public:
     virtual ~ScriptWidgetComponentBaseOptions() = default;
 
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<void> validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const&) const;
+    virtual ::Scripting::Result_deprecated<void>
+    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const&) const;
     // NOLINTEND
 
 public:
@@ -48,7 +49,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const&) const;
+    MCNAPI ::Scripting::Result_deprecated<void>
+    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const&) const;
     // NOLINTEND
 
 public:
@@ -56,7 +58,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

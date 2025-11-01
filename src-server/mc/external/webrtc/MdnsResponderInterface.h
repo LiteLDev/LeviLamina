@@ -17,7 +17,10 @@ public:
     virtual ~MdnsResponderInterface() = default;
 
     // vIndex: 1
-    virtual void CreateNameForAddress(::rtc::IPAddress const&, ::std::function<void(::rtc::IPAddress const&, ::std::string_view)>) = 0;
+    virtual void CreateNameForAddress(
+        ::rtc::IPAddress const&,
+        ::std::function<void(::rtc::IPAddress const&, ::std::string_view)>
+    ) = 0;
 
     // vIndex: 2
     virtual void RemoveNameForAddress(::rtc::IPAddress const&, ::std::function<void(bool)>) = 0;
@@ -28,7 +31,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

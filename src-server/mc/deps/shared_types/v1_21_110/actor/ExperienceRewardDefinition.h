@@ -35,7 +35,8 @@ public:
 
     MCNAPI void addDeathExpressionNode(::SharedTypes::Legacy::ExpressionNode const& expr);
 
-    MCNAPI ::SharedTypes::v1_21_110::ExperienceRewardDefinition& operator=(::SharedTypes::v1_21_110::ExperienceRewardDefinition&&);
+    MCNAPI ::SharedTypes::v1_21_110::ExperienceRewardDefinition&
+    operator=(::SharedTypes::v1_21_110::ExperienceRewardDefinition&&);
 
     MCNAPI ~ExperienceRewardDefinition();
     // NOLINTEND
@@ -63,7 +64,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_110

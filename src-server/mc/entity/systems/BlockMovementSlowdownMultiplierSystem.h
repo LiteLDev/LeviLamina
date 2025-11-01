@@ -27,15 +27,35 @@ MCNAPI ::TickingSystemWithInfo createCleanupSystem();
 
 MCNAPI ::TickingSystemWithInfo createWeavingMobSystem();
 
-MCNAPI void tickAdjustFallDistance(::BlockMovementSlowdownAppliedComponent const& applied, ::FallDistanceComponent& fallDistanceComponent);
+MCNAPI void tickAdjustFallDistance(
+    ::BlockMovementSlowdownAppliedComponent const& applied,
+    ::FallDistanceComponent&                       fallDistanceComponent
+);
 
-MCNAPI void tickApplySlowdownOnMove(::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent, ::MoveRequestComponent& moveRequestComponent, ::StateVectorComponent& stateComponent);
+MCNAPI void tickApplySlowdownOnMove(
+    ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
+    ::MoveRequestComponent&                     moveRequestComponent,
+    ::StateVectorComponent&                     stateComponent
+);
 
-MCNAPI void tickImmunePlayer(::StrictEntityContext const& entity, ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent, ::MovementAbilitiesComponent const& abilitiesComponent, ::EntityModifier<::BlockMovementSlowdownAppliedComponent> modifier);
+MCNAPI void tickImmunePlayer(
+    ::StrictEntityContext const&                              entity,
+    ::BlockMovementSlowdownMultiplierComponent&               blockMovementSlowdownMultiplierComponent,
+    ::MovementAbilitiesComponent const&                       abilitiesComponent,
+    ::EntityModifier<::BlockMovementSlowdownAppliedComponent> modifier
+);
 
-MCNAPI void tickImmuneSlowdown(::StrictEntityContext const& entity, ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent, ::EntityModifier<::BlockMovementSlowdownAppliedComponent> modifier);
+MCNAPI void tickImmuneSlowdown(
+    ::StrictEntityContext const&                              entity,
+    ::BlockMovementSlowdownMultiplierComponent&               blockMovementSlowdownMultiplierComponent,
+    ::EntityModifier<::BlockMovementSlowdownAppliedComponent> modifier
+);
 
-MCNAPI void tickWeavingSlowdownOverride(::StrictEntityContext const&, ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent, ::MobEffectsComponent const& mobEffectsComponent);
+MCNAPI void tickWeavingSlowdownOverride(
+    ::StrictEntityContext const&,
+    ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
+    ::MobEffectsComponent const&                mobEffectsComponent
+);
 // NOLINTEND
 
-}
+} // namespace BlockMovementSlowdownMultiplierSystem

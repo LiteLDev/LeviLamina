@@ -6,8 +6,8 @@ namespace cricket {
 
 enum class IceRole : int {
     Controlling = 0,
-    Controlled = 1,
-    Unknown = 2,
+    Controlled  = 1,
+    Unknown     = 2,
 };
 
 }

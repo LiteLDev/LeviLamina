@@ -10,9 +10,8 @@ struct CachedComponentData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::Brightness> mEmissiveBrightness;
-    ::ll::TypedStorage<1, 1, bool> mIsSolid;
+    ::ll::TypedStorage<1, 1, ::Brightness>         mEmissiveBrightness;
+    ::ll::TypedStorage<1, 1, bool>                 mIsSolid;
     ::ll::TypedStorage<4, 4, ::BlockOcclusionType> mOcclusionType;
     // NOLINTEND
-
 };

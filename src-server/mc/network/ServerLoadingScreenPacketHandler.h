@@ -17,7 +17,13 @@ class ServerboundLoadingScreenPacket;
 namespace ServerLoadingScreenPacketHandler {
 // functions
 // NOLINTBEGIN
-MCNAPI void handleLoadingScreenPacket(::NetworkIdentifier const& source, ::ServerboundLoadingScreenPacket const& packet, ::EntityContext& entity, ::brstd::function_ref<void(::NetworkIdentifier const&, ::SubClientId, ::Connection::DisconnectFailReason)> const& disconnectClient);
+MCNAPI void handleLoadingScreenPacket(
+    ::NetworkIdentifier const&              source,
+    ::ServerboundLoadingScreenPacket const& packet,
+    ::EntityContext&                        entity,
+    ::brstd::function_ref<void(::NetworkIdentifier const&, ::SubClientId, ::Connection::DisconnectFailReason)> const&
+        disconnectClient
+);
 // NOLINTEND
 
-}
+} // namespace ServerLoadingScreenPacketHandler

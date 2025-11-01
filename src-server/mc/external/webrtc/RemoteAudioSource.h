@@ -23,60 +23,59 @@ public:
     // clang-format off
     class AudioDataProxy;
     // clang-format on
-    
+
     // RemoteAudioSource inner types define
     enum class OnAudioChannelGoneAction : int {
         KSurvive = 0,
-        KEnd = 1,
+        KEnd     = 1,
     };
-    
+
     class AudioDataProxy : public ::webrtc::AudioSinkInterface {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk707b79;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         AudioDataProxy& operator=(AudioDataProxy const&);
         AudioDataProxy(AudioDataProxy const&);
         AudioDataProxy();
-    
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~AudioDataProxy() /*override*/ = default;
-    
+
         // vIndex: 1
         virtual void OnData(::webrtc::AudioSinkInterface::Data const& audio) /*override*/;
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $OnData(::webrtc::AudioSinkInterface::Data const& audio);
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkf74eb3;
-    ::ll::UntypedStorage<8, 8> mUnk9d8e30;
-    ::ll::UntypedStorage<4, 4> mUnkf9ba77;
+    ::ll::UntypedStorage<8, 8>  mUnkf74eb3;
+    ::ll::UntypedStorage<8, 8>  mUnk9d8e30;
+    ::ll::UntypedStorage<4, 4>  mUnkf9ba77;
     ::ll::UntypedStorage<8, 16> mUnkaccb09;
     ::ll::UntypedStorage<8, 40> mUnkd75021;
     ::ll::UntypedStorage<8, 16> mUnk49be8f;
-    ::ll::UntypedStorage<4, 4> mUnka3c4c2;
+    ::ll::UntypedStorage<4, 4>  mUnka3c4c2;
     // NOLINTEND
 
 public:
@@ -120,7 +119,10 @@ public:
 
     MCNAPI void OnData(::webrtc::AudioSinkInterface::Data const& audio);
 
-    MCNAPI RemoteAudioSource(::webrtc::TaskQueueBase* worker_thread, ::webrtc::RemoteAudioSource::OnAudioChannelGoneAction on_audio_channel_gone_action);
+    MCNAPI RemoteAudioSource(
+        ::webrtc::TaskQueueBase*                              worker_thread,
+        ::webrtc::RemoteAudioSource::OnAudioChannelGoneAction on_audio_channel_gone_action
+    );
 
     MCNAPI void SetState(::webrtc::MediaSourceInterface::SourceState new_state);
 
@@ -132,7 +134,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::TaskQueueBase* worker_thread, ::webrtc::RemoteAudioSource::OnAudioChannelGoneAction on_audio_channel_gone_action);
+    MCNAPI void* $ctor(
+        ::webrtc::TaskQueueBase*                              worker_thread,
+        ::webrtc::RemoteAudioSource::OnAudioChannelGoneAction on_audio_channel_gone_action
+    );
     // NOLINTEND
 
 public:
@@ -166,7 +171,6 @@ public:
 
     MCNAPI static void** $vftableForRefCountInterface();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

@@ -13,4 +13,4 @@ namespace TickAttributesSystem {
 MCNAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
-}
+} // namespace TickAttributesSystem

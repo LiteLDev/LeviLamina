@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Vec3& mDummy();
     // NOLINTEND
-
 };

@@ -16,7 +16,6 @@ public:
     SignaledEvent& operator=(SignaledEvent const&);
     SignaledEvent(SignaledEvent const&);
     SignaledEvent();
-
 };
 
-}
+} // namespace RakNet

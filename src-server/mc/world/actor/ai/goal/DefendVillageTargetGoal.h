@@ -11,7 +11,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPotentialTarget;
-    ::ll::TypedStorage<4, 4, float> mAttackChance;
+    ::ll::TypedStorage<4, 4, float>            mAttackChance;
     // NOLINTEND
 
 public:
@@ -50,5 +50,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

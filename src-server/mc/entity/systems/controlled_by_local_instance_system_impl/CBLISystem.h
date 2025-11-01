@@ -33,7 +33,19 @@ struct VehicleComponent;
 
 namespace ControlledByLocalInstanceSystemImpl {
 
-struct CBLISystem : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent, ::BoatFlagComponent, ::HorseFlagComponent, ::PlayerComponent, ::RecalculateControlledByLocalInstanceRequestComponent>, ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>, ::Write<>, ::AddRemove<::ControlledByLocalInstanceComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
+struct CBLISystem : public ::IStrictTickingSystem<::StrictExecutionContext<
+                        ::Filter<
+                            ::ActorMovementTickNeededComponent,
+                            ::BoatFlagComponent,
+                            ::HorseFlagComponent,
+                            ::PlayerComponent,
+                            ::RecalculateControlledByLocalInstanceRequestComponent>,
+                        ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+                        ::Write<>,
+                        ::AddRemove<::ControlledByLocalInstanceComponent>,
+                        ::GlobalRead<>,
+                        ::GlobalWrite<>,
+                        ::EntityFactoryT<>>> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -53,10 +65,39 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent, ::BoatFlagComponent, ::HorseFlagComponent, ::PlayerComponent, ::RecalculateControlledByLocalInstanceRequestComponent>, ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>, ::Write<>, ::AddRemove<::ControlledByLocalInstanceComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& strictContext) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::HorseFlagComponent,
+                ::PlayerComponent,
+                ::RecalculateControlledByLocalInstanceRequestComponent>,
+            ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+            ::Write<>,
+            ::AddRemove<::ControlledByLocalInstanceComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext
+    ) /*override*/;
 
     // vIndex: 6
-    virtual void singleTick(::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent, ::BoatFlagComponent, ::HorseFlagComponent, ::PlayerComponent, ::RecalculateControlledByLocalInstanceRequestComponent>, ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>, ::Write<>, ::AddRemove<::ControlledByLocalInstanceComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& strictContext, ::StrictEntityContext& entity) /*override*/;
+    virtual void singleTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::HorseFlagComponent,
+                ::PlayerComponent,
+                ::RecalculateControlledByLocalInstanceRequestComponent>,
+            ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+            ::Write<>,
+            ::AddRemove<::ControlledByLocalInstanceComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext,
+        ::StrictEntityContext&   entity
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~CBLISystem() /*override*/ = default;
@@ -65,9 +106,38 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent, ::BoatFlagComponent, ::HorseFlagComponent, ::PlayerComponent, ::RecalculateControlledByLocalInstanceRequestComponent>, ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>, ::Write<>, ::AddRemove<::ControlledByLocalInstanceComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& strictContext);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::HorseFlagComponent,
+                ::PlayerComponent,
+                ::RecalculateControlledByLocalInstanceRequestComponent>,
+            ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+            ::Write<>,
+            ::AddRemove<::ControlledByLocalInstanceComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext
+    );
 
-    MCNAPI void $singleTick(::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent, ::BoatFlagComponent, ::HorseFlagComponent, ::PlayerComponent, ::RecalculateControlledByLocalInstanceRequestComponent>, ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>, ::Write<>, ::AddRemove<::ControlledByLocalInstanceComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& strictContext, ::StrictEntityContext& entity);
+    MCNAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<
+                ::ActorMovementTickNeededComponent,
+                ::BoatFlagComponent,
+                ::HorseFlagComponent,
+                ::PlayerComponent,
+                ::RecalculateControlledByLocalInstanceRequestComponent>,
+            ::Read<::VehicleComponent, ::ActorDataFlagComponent, ::LocalPlayerComponent>,
+            ::Write<>,
+            ::AddRemove<::ControlledByLocalInstanceComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& strictContext,
+        ::StrictEntityContext&   entity
+    );
     // NOLINTEND
 
 public:
@@ -75,7 +145,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ControlledByLocalInstanceSystemImpl

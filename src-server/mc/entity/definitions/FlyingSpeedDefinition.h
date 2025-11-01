@@ -14,5 +14,4 @@ public:
     FlyingSpeedDefinition& operator=(FlyingSpeedDefinition const&);
     FlyingSpeedDefinition(FlyingSpeedDefinition const&);
     FlyingSpeedDefinition();
-
 };

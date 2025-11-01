@@ -27,13 +27,32 @@ namespace BlockSourceVisitor { struct CollisionShape; }
 namespace MoveCollisionSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void addCollisionShapes(::std::vector<::BlockSourceVisitor::CollisionShape> const& tempCollisionShapes, ::AABB const& terrainIntersectTestBox, ::MoveRequestComponent& request);
+MCNAPI void addCollisionShapes(
+    ::std::vector<::BlockSourceVisitor::CollisionShape> const& tempCollisionShapes,
+    ::AABB const&                                              terrainIntersectTestBox,
+    ::MoveRequestComponent&                                    request
+);
 
 MCNAPI ::TickingSystemWithInfo createCollisionShapesCopySystem();
 
-MCNAPI void fetchCollisionShapes(::StrictEntityContext const& entity, ::AABBShapeComponent const& aabb, ::MaxAutoStepComponent const& autoStep, ::Optional<::CollidableMobNearFlagComponent const> collidableMobNear, ::MoveRequestComponent& request, ::ViewT<::StrictEntityContext, ::Include<::CollidableMobFlagComponent>, ::AABBShapeComponent const> const& collidableMobs, ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> const& fallingBlocks, ::IConstBlockSource const& region, ::LocalSpatialEntityFetcher& fetcher, ::GetCollisionShapeInterface const& collisionShape, ::std::vector<::BlockSourceVisitor::CollisionShape>& tempCollisionShapes, ::std::vector<::BlockSourceVisitor::CollisionShape>& scratchCollisionShapes, ::std::vector<::AABB>& tempShapes);
+MCNAPI void fetchCollisionShapes(
+    ::StrictEntityContext const&                       entity,
+    ::AABBShapeComponent const&                        aabb,
+    ::MaxAutoStepComponent const&                      autoStep,
+    ::Optional<::CollidableMobNearFlagComponent const> collidableMobNear,
+    ::MoveRequestComponent&                            request,
+    ::ViewT<::StrictEntityContext, ::Include<::CollidableMobFlagComponent>, ::AABBShapeComponent const> const&
+                                                                                  collidableMobs,
+    ::ViewT<::StrictEntityContext, ::Include<::FallingBlockFlagComponent>> const& fallingBlocks,
+    ::IConstBlockSource const&                                                    region,
+    ::LocalSpatialEntityFetcher&                                                  fetcher,
+    ::GetCollisionShapeInterface const&                                           collisionShape,
+    ::std::vector<::BlockSourceVisitor::CollisionShape>&                          tempCollisionShapes,
+    ::std::vector<::BlockSourceVisitor::CollisionShape>&                          scratchCollisionShapes,
+    ::std::vector<::AABB>&                                                        tempShapes
+);
 
 MCNAPI ::std::vector<::AABB> getFetchBoxSubtraction(::AABB const& newBox, ::AABB const& oldBox);
 // NOLINTEND
 
-}
+} // namespace MoveCollisionSystem

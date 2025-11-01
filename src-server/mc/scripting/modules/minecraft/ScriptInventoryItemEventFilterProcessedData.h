@@ -24,9 +24,12 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptInventoryItemEventFilterProcessedData();
 
-    MCNAPI ScriptInventoryItemEventFilterProcessedData(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&);
+    MCNAPI ScriptInventoryItemEventFilterProcessedData(
+        ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&
+    );
 
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData& operator=(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&&);
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&
+    operator=(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&&);
 
     MCNAPI ~ScriptInventoryItemEventFilterProcessedData();
     // NOLINTEND
@@ -44,7 +47,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft::EventFilters

@@ -35,5 +35,4 @@ public:
     ::ll::TypedStorage<8, 24, ::WellKnownTagID> PALE_GARDEN_TAG_ID;
     ::ll::TypedStorage<8, 24, ::WellKnownTagID> MEADOW_TAG_ID;
     // NOLINTEND
-
 };

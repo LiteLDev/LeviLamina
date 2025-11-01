@@ -17,5 +17,4 @@ public:
 
     MCAPI static void digestPlayerInputPacket(::MoveInputComponent& input, ::PlayerAuthInputPacket const& packet);
     // NOLINTEND
-
 };

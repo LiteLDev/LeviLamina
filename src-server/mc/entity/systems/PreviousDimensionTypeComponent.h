@@ -16,5 +16,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 8, ::std::optional<::DimensionType>> mLastDimensionType;
     // NOLINTEND
-
 };

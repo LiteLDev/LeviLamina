@@ -15,5 +15,4 @@ public:
     unz_file_pos_s& operator=(unz_file_pos_s const&);
     unz_file_pos_s(unz_file_pos_s const&);
     unz_file_pos_s();
-
 };

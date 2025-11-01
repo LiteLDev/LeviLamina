@@ -4,8 +4,7 @@
 
 namespace Bedrock {
 
-template<typename T0, typename T1>
-class DenseEnumMapIterator {
-};
+template <typename T0, typename T1>
+class DenseEnumMapIterator {};
 
-}
+} // namespace Bedrock

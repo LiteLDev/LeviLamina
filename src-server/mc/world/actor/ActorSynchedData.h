@@ -29,4 +29,4 @@ MCNAPI void updateNameTag(::Actor& actor);
 MCNAPI void updateRuntimeID(::Actor& actor);
 // NOLINTEND
 
-}
+} // namespace ActorSynchedData

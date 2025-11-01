@@ -15,8 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::SharedTypes::v1_21_80::JigsawStructureMetadata const&> mMetadata;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>> mBlockCache;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>> mFinalBlockCache;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>                          mBlockCache;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Block const*>>                          mFinalBlockCache;
     // NOLINTEND
 
 public:
@@ -46,7 +46,6 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace JigsawStructureUtils

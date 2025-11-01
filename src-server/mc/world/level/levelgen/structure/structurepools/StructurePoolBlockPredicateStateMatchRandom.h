@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
-    ::ll::TypedStorage<4, 4, float const> mProbability;
+    ::ll::TypedStorage<4, 4, float const>    mProbability;
     // NOLINTEND
 
 public:
@@ -48,5 +48,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

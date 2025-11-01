@@ -20,38 +20,45 @@ class SuspiciousStewItem : public ::Item {
 public:
     // SuspiciousStewItem inner types define
     enum class SuspiciousStewType : uint {
-        Poppy = 0,
-        Cornflower = 1,
-        Tulip = 2,
-        AzureBluet = 3,
-        LilyOfTheValley = 4,
-        Dandelion = 5,
-        BlueOrchid = 6,
-        Allium = 7,
-        OxeyeDaisy = 8,
-        WitherRose = 9,
-        Torchflower = 10,
-        OpenEyeblossom = 11,
+        Poppy            = 0,
+        Cornflower       = 1,
+        Tulip            = 2,
+        AzureBluet       = 3,
+        LilyOfTheValley  = 4,
+        Dandelion        = 5,
+        BlueOrchid       = 6,
+        Allium           = 7,
+        OxeyeDaisy       = 8,
+        WitherRose       = 9,
+        Torchflower      = 10,
+        OpenEyeblossom   = 11,
         ClosedEyeblossom = 12,
-        Count = 13,
+        Count            = 13,
     };
-    
+
     using StewEffects = ::std::array<::MobEffectInstance, 13>;
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 82
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const /*override*/;
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
+        /*override*/;
 
     // vIndex: 64
     virtual bool uniqueAuxValues() const /*override*/;
 
     // vIndex: 53
-    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
     // vIndex: 91
-    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool const playerIsCreative) const /*override*/;
+    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool const playerIsCreative) const
+        /*override*/;
 
     // vIndex: 0
     virtual ~SuspiciousStewItem() /*override*/ = default;
@@ -70,7 +77,12 @@ public:
 
     MCFOLD bool $uniqueAuxValues() const;
 
-    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
 
     MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool const playerIsCreative) const;
     // NOLINTEND
@@ -80,5 +92,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

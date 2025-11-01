@@ -18,7 +18,6 @@ public:
     Drop& operator=(Drop const&);
     Drop(Drop const&);
     Drop();
-
 };
 
-}
+} // namespace AgentComponents::Actions

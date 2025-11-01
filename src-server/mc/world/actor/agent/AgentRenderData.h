@@ -15,5 +15,4 @@ public:
     AgentRenderData& operator=(AgentRenderData const&);
     AgentRenderData(AgentRenderData const&);
     AgentRenderData();
-
 };

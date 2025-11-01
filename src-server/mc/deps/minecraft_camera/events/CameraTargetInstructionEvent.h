@@ -11,5 +11,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::CameraInstruction::TargetInstruction> mCameraTargetInstruction;
     // NOLINTEND
-
 };

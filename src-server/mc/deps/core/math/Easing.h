@@ -8,7 +8,7 @@
 namespace Easing {
 // functions
 // NOLINTBEGIN
-MCNAPI auto getEasingFunction(::EasingType easingType) -> float(*) (float, float, float);
+MCNAPI auto getEasingFunction(::EasingType easingType) -> float (*)(float, float, float);
 // NOLINTEND
 
-}
+} // namespace Easing

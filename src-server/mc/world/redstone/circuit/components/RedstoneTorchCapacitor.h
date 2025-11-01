@@ -22,7 +22,7 @@ public:
     // clang-format off
     struct State;
     // clang-format on
-    
+
     // RedstoneTorchCapacitor inner types define
     struct State {
     public:
@@ -32,17 +32,16 @@ public:
         ::ll::TypedStorage<1, 1, bool> mHalfFrame;
         ::ll::TypedStorage<1, 1, bool> mChanged;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::RedstoneTorchCapacitor*> mNextOrder;
-    ::ll::TypedStorage<4, 4, int> mSelfPowerCount;
+    ::ll::TypedStorage<8, 8, ::RedstoneTorchCapacitor*>          mNextOrder;
+    ::ll::TypedStorage<4, 4, int>                                mSelfPowerCount;
     ::ll::TypedStorage<1, 6, ::RedstoneTorchCapacitor::State[2]> mState;
-    ::ll::TypedStorage<1, 1, bool> mCanReigniteFromBurnout;
-    ::ll::TypedStorage<8, 8, ::CircuitComponentType const> mCircuitComponentType;
+    ::ll::TypedStorage<1, 1, bool>                               mCanReigniteFromBurnout;
+    ::ll::TypedStorage<8, 8, ::CircuitComponentType const>       mCircuitComponentType;
     // NOLINTEND
 
 public:
@@ -55,10 +54,16 @@ public:
     virtual uchar getPoweroutDirection() const /*override*/;
 
     // vIndex: 12
-    virtual bool allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
+    virtual bool
+    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     // vIndex: 11
-    virtual bool addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered) /*override*/;
+    virtual bool addSource(
+        ::CircuitSceneGraph&         graph,
+        ::CircuitTrackingInfo const& info,
+        int&                         dampening,
+        bool&                        bDirectlyPowered
+    ) /*override*/;
 
     // vIndex: 10
     virtual void removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent) /*override*/;
@@ -98,7 +103,8 @@ public:
 
     MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    MCAPI bool $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    MCAPI bool
+    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 
@@ -122,5 +128,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

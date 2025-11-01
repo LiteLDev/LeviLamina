@@ -21,11 +21,11 @@ class ClientMovementPredictionSyncPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::ActorDataFlagComponent> mActorDataFlag;
+    ::ll::TypedStorage<8, 16, ::ActorDataFlagComponent>        mActorDataFlag;
     ::ll::TypedStorage<4, 12, ::ActorDataBoundingBoxComponent> mActorBoundingBox;
-    ::ll::TypedStorage<4, 48, ::MovementAttributesComponent> mMovementAttributes;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mActorID;
-    ::ll::TypedStorage<1, 1, bool> mIsFlying;
+    ::ll::TypedStorage<4, 48, ::MovementAttributesComponent>   mMovementAttributes;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                  mActorID;
+    ::ll::TypedStorage<1, 1, bool>                             mIsFlying;
     // NOLINTEND
 
 public:
@@ -64,5 +64,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -17,47 +17,46 @@ public:
     // clang-format off
     class DeleteFileEntry;
     // clang-format on
-    
+
     // SnapshotEnv inner types define
     class DeleteFileEntry {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk526abe;
-        ::ll::UntypedStorage<1, 1> mUnk67b7f6;
+        ::ll::UntypedStorage<1, 1>  mUnk67b7f6;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         DeleteFileEntry& operator=(DeleteFileEntry const&);
         DeleteFileEntry(DeleteFileEntry const&);
         DeleteFileEntry();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::leveldb::Status execute(::leveldb::Env* targetEnv);
-    
+
         MCNAPI ~DeleteFileEntry();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk953b73;
+    ::ll::UntypedStorage<8, 8>  mUnk953b73;
     ::ll::UntypedStorage<8, 80> mUnk840b69;
-    ::ll::UntypedStorage<8, 8> mUnkfaff08;
+    ::ll::UntypedStorage<8, 8>  mUnkfaff08;
     ::ll::UntypedStorage<8, 80> mUnk2eddae;
     ::ll::UntypedStorage<8, 80> mUnk287ed3;
-    ::ll::UntypedStorage<1, 1> mUnk270131;
+    ::ll::UntypedStorage<1, 1>  mUnk270131;
     ::ll::UntypedStorage<8, 24> mUnk3d0f16;
     ::ll::UntypedStorage<8, 80> mUnk5736a3;
     // NOLINTEND
@@ -81,7 +80,8 @@ public:
     virtual ::leveldb::Status NewWritableFile(::std::string const& f, ::leveldb::WritableFile** r) /*override*/;
 
     // vIndex: 4
-    virtual ::leveldb::Status NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
+    virtual ::leveldb::Status
+    NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
 
     // vIndex: 7
     virtual ::leveldb::Status RemoveFile(::std::string const& f) /*override*/;
@@ -126,5 +126,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -18,7 +18,7 @@ public:
     // clang-format off
     struct InterfaceInfo;
     // clang-format on
-    
+
     // NetworkMonitorInterface inner types define
     struct InterfaceInfo {
     public:
@@ -29,15 +29,14 @@ public:
         ::ll::UntypedStorage<4, 4> mUnk462e85;
         ::ll::UntypedStorage<1, 1> mUnk5be5dc;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         InterfaceInfo& operator=(InterfaceInfo const&);
         InterfaceInfo(InterfaceInfo const&);
         InterfaceInfo();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -77,7 +76,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace rtc

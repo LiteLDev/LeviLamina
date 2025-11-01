@@ -23,9 +23,9 @@ class StructureBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 216, ::StructureEditorData> mStructureEditorData;
+    ::ll::TypedStorage<8, 216, ::StructureEditorData>         mStructureEditorData;
     ::ll::TypedStorage<4, 16, ::StructureTelemetryServerData> mTelemetryServerData;
-    ::ll::TypedStorage<1, 1, bool> mIsPowered;
+    ::ll::TypedStorage<1, 1, bool>                            mIsPowered;
     // NOLINTEND
 
 public:
@@ -93,5 +93,4 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };

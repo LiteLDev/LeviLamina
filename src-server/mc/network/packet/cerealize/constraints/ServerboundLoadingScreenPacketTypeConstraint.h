@@ -10,7 +10,8 @@
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
-class ServerboundLoadingScreenPacketTypeConstraint : public ::cereal::ConstraintHandle<::ServerboundLoadingScreenPacketTypeConstraint> {
+class ServerboundLoadingScreenPacketTypeConstraint
+: public ::cereal::ConstraintHandle<::ServerboundLoadingScreenPacketTypeConstraint> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,5 +33,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
-    ::ll::TypedStorage<8, 32, ::std::string> mMessage;
+    ::ll::TypedStorage<8, 32, ::std::string>              mMessage;
     // NOLINTEND
 
 public:
@@ -29,5 +29,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

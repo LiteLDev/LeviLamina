@@ -25,10 +25,10 @@ class Throwable : public ::PredictableProjectile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mInGround;
+    ::ll::TypedStorage<1, 1, bool>            mInGround;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mOwnerId;
-    ::ll::TypedStorage<4, 4, int> mShakeTime;
-    ::ll::TypedStorage<4, 4, int> mLife;
+    ::ll::TypedStorage<4, 4, int>             mShakeTime;
+    ::ll::TypedStorage<4, 4, int>             mLife;
     // NOLINTEND
 
 public:
@@ -39,7 +39,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
-    virtual void initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void
+    initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 22
     virtual void lerpMotion(::Vec3 const& delta) /*override*/;
@@ -69,7 +70,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Throwable(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI Throwable(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
 
     MCAPI void shoot(::Mob& shooter);
 
@@ -85,7 +90,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -119,5 +128,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

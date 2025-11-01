@@ -25,7 +25,6 @@ public:
     AddMushroomIsland& operator=(AddMushroomIsland const&);
     AddMushroomIsland(AddMushroomIsland const&);
     AddMushroomIsland();
-
 };
 
-}
+} // namespace OperationNodeFilters

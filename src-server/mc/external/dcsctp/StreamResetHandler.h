@@ -31,39 +31,38 @@ public:
     // clang-format off
     class CurrentRequest;
     // clang-format on
-    
+
     // StreamResetHandler inner types define
     class CurrentRequest {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 8> mUnk7526ed;
-        ::ll::UntypedStorage<4, 4> mUnk6407d2;
+        ::ll::UntypedStorage<4, 8>  mUnk7526ed;
+        ::ll::UntypedStorage<4, 4>  mUnk6407d2;
         ::ll::UntypedStorage<8, 24> mUnk639e19;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         CurrentRequest& operator=(CurrentRequest const&);
         CurrentRequest(CurrentRequest const&);
         CurrentRequest();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkf1ba99;
-    ::ll::UntypedStorage<8, 8> mUnkd12b18;
-    ::ll::UntypedStorage<8, 8> mUnk512da3;
-    ::ll::UntypedStorage<8, 8> mUnk429750;
-    ::ll::UntypedStorage<8, 8> mUnkfc9914;
+    ::ll::UntypedStorage<8, 8>  mUnkd12b18;
+    ::ll::UntypedStorage<8, 8>  mUnk512da3;
+    ::ll::UntypedStorage<8, 8>  mUnk429750;
+    ::ll::UntypedStorage<8, 8>  mUnkfc9914;
     ::ll::UntypedStorage<8, 16> mUnkb30ce0;
-    ::ll::UntypedStorage<8, 8> mUnk724ccd;
-    ::ll::UntypedStorage<4, 4> mUnkc24295;
+    ::ll::UntypedStorage<8, 8>  mUnk724ccd;
+    ::ll::UntypedStorage<4, 4>  mUnkc24295;
     ::ll::UntypedStorage<8, 48> mUnk541a8a;
-    ::ll::UntypedStorage<8, 8> mUnk5bba38;
-    ::ll::UntypedStorage<4, 4> mUnk174adc;
+    ::ll::UntypedStorage<8, 8>  mUnk5bba38;
+    ::ll::UntypedStorage<4, 4>  mUnk174adc;
     // NOLINTEND
 
 public:
@@ -81,9 +80,15 @@ public:
 
     MCNAPI void HandleReConfig(::dcsctp::ReConfigChunk chunk);
 
-    MCNAPI void HandleResetIncoming(::dcsctp::ParameterDescriptor const& descriptor, ::std::vector<::dcsctp::ReconfigurationResponseParameter>& responses);
+    MCNAPI void HandleResetIncoming(
+        ::dcsctp::ParameterDescriptor const&                       descriptor,
+        ::std::vector<::dcsctp::ReconfigurationResponseParameter>& responses
+    );
 
-    MCNAPI void HandleResetOutgoing(::dcsctp::ParameterDescriptor const& descriptor, ::std::vector<::dcsctp::ReconfigurationResponseParameter>& responses);
+    MCNAPI void HandleResetOutgoing(
+        ::dcsctp::ParameterDescriptor const&                       descriptor,
+        ::std::vector<::dcsctp::ReconfigurationResponseParameter>& responses
+    );
 
     MCNAPI void HandleResponse(::dcsctp::ParameterDescriptor const& descriptor);
 
@@ -93,15 +98,28 @@ public:
 
     MCNAPI ::webrtc::TimeDelta OnReconfigTimerExpiry();
 
-    MCNAPI ::std::optional<::std::vector<::dcsctp::ReconfigurationResponseParameter>> Process(::dcsctp::ReConfigChunk const& chunk);
+    MCNAPI ::std::optional<::std::vector<::dcsctp::ReconfigurationResponseParameter>>
+    Process(::dcsctp::ReConfigChunk const& chunk);
 
-    MCNAPI void ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams);
+    MCNAPI void
+    ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams);
 
-    MCNAPI StreamResetHandler(::std::string_view log_prefix, ::dcsctp::Context* context, ::dcsctp::TimerManager* timer_manager, ::dcsctp::DataTracker* data_tracker, ::dcsctp::ReassemblyQueue* reassembly_queue, ::dcsctp::RetransmissionQueue* retransmission_queue, ::dcsctp::DcSctpSocketHandoverState const* handover_state);
+    MCNAPI StreamResetHandler(
+        ::std::string_view                         log_prefix,
+        ::dcsctp::Context*                         context,
+        ::dcsctp::TimerManager*                    timer_manager,
+        ::dcsctp::DataTracker*                     data_tracker,
+        ::dcsctp::ReassemblyQueue*                 reassembly_queue,
+        ::dcsctp::RetransmissionQueue*             retransmission_queue,
+        ::dcsctp::DcSctpSocketHandoverState const* handover_state
+    );
 
     MCNAPI bool Validate(::dcsctp::ReConfigChunk const& chunk);
 
-    MCNAPI bool ValidateReqSeqNbr(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::ReconfigRequestSNTag, uint>> req_seq_nbr, ::std::vector<::dcsctp::ReconfigurationResponseParameter>& responses);
+    MCNAPI bool ValidateReqSeqNbr(
+        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::ReconfigRequestSNTag, uint>> req_seq_nbr,
+        ::std::vector<::dcsctp::ReconfigurationResponseParameter>&                                     responses
+    );
 
     MCNAPI ~StreamResetHandler();
     // NOLINTEND
@@ -109,7 +127,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string_view log_prefix, ::dcsctp::Context* context, ::dcsctp::TimerManager* timer_manager, ::dcsctp::DataTracker* data_tracker, ::dcsctp::ReassemblyQueue* reassembly_queue, ::dcsctp::RetransmissionQueue* retransmission_queue, ::dcsctp::DcSctpSocketHandoverState const* handover_state);
+    MCNAPI void* $ctor(
+        ::std::string_view                         log_prefix,
+        ::dcsctp::Context*                         context,
+        ::dcsctp::TimerManager*                    timer_manager,
+        ::dcsctp::DataTracker*                     data_tracker,
+        ::dcsctp::ReassemblyQueue*                 reassembly_queue,
+        ::dcsctp::RetransmissionQueue*             retransmission_queue,
+        ::dcsctp::DcSctpSocketHandoverState const* handover_state
+    );
     // NOLINTEND
 
 public:
@@ -117,7 +143,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

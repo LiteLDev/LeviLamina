@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> name;
-    ::ll::TypedStorage<1, 1, bool> showInAutoComplete;
+    ::ll::TypedStorage<1, 1, bool>           showInAutoComplete;
     // NOLINTEND
 
 public:
@@ -21,5 +21,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

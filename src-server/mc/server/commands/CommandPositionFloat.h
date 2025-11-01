@@ -5,7 +5,6 @@
 // auto generated inclusion list
 #include "mc/server/commands/CommandPosition.h"
 
-class CommandPositionFloat : public ::CommandPosition {
-public:
+class CommandPositionFloat : public ::CommandPosition {public:
     using CommandPosition::CommandPosition;
 };

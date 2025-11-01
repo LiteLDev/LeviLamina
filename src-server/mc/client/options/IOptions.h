@@ -40,11 +40,11 @@ class IOptions : public ::IOptionsReader {
 public:
     // IOptions inner types define
     enum class SaveRequestMode : int {
-        None = 0,
-        Save = 1,
+        None           = 0,
+        Save           = 1,
         ForceCloudSave = 2,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -1056,5 +1056,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

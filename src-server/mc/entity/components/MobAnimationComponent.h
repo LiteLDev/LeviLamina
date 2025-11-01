@@ -5,5 +5,4 @@
 // auto generated inclusion list
 #include "mc/entity/components/FloatComponent.h"
 
-struct MobAnimationComponent : public ::FloatComponent {
-};
+struct MobAnimationComponent : public ::FloatComponent {};

@@ -22,4 +22,4 @@ MCNAPI ::std::string_view const& TOP_SLIDE();
 MCNAPI ::std::string_view const& WEST_SLOPES();
 // NOLINTEND
 
-}
+} // namespace SharedTypes::v1_20_60::MountainParametersInternals

@@ -16,5 +16,4 @@ public:
     CommonSearchResults& operator=(CommonSearchResults const&);
     CommonSearchResults(CommonSearchResults const&);
     CommonSearchResults();
-
 };

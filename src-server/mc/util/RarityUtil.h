@@ -16,4 +16,4 @@ MCNAPI ::Rarity getRarityFromName(::std::string const& name);
 MCNAPI ::std::unordered_map<::std::string, ::Rarity> const& NAME_TO_ENUM();
 // NOLINTEND
 
-}
+} // namespace RarityUtil

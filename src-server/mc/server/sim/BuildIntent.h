@@ -14,7 +14,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 2, ::std::variant<::sim::VoidBuildIntent, ::sim::ContinuousBuildIntent>> mType;
     // NOLINTEND
-
 };
 
-}
+} // namespace sim

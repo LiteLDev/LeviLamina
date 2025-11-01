@@ -15,7 +15,13 @@ namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft::ScriptScoreboardObjectiveInternal {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::string getErrorMessage(::ScoreboardOperationResult result, ::std::variant<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>, ::std::string> const& participant);
+MCNAPI ::std::string getErrorMessage(
+    ::ScoreboardOperationResult result,
+    ::std::variant<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
+        ::std::string> const& participant
+);
 // NOLINTEND
 
-}
+} // namespace ScriptModuleMinecraft::ScriptScoreboardObjectiveInternal

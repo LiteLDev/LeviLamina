@@ -40,15 +40,15 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk278e66;
-    ::ll::UntypedStorage<8, 8> mUnkdea4d9;
-    ::ll::UntypedStorage<8, 8> mUnk4da832;
-    ::ll::UntypedStorage<8, 8> mUnk18457a;
+    ::ll::UntypedStorage<8, 8>  mUnkdea4d9;
+    ::ll::UntypedStorage<8, 8>  mUnk4da832;
+    ::ll::UntypedStorage<8, 8>  mUnk18457a;
     ::ll::UntypedStorage<8, 16> mUnk56df9e;
     ::ll::UntypedStorage<8, 16> mUnk63617a;
     ::ll::UntypedStorage<8, 16> mUnk99e6d6;
     ::ll::UntypedStorage<8, 40> mUnk6cb535;
-    ::ll::UntypedStorage<8, 8> mUnkb47a00;
-    ::ll::UntypedStorage<8, 8> mUnk127318;
+    ::ll::UntypedStorage<8, 8>  mUnkb47a00;
+    ::ll::UntypedStorage<8, 8>  mUnk127318;
     ::ll::UntypedStorage<8, 16> mUnk6b0c93;
     // NOLINTEND
 
@@ -65,7 +65,14 @@ public:
     virtual ~MultiPlayerLevel() /*override*/ = default;
 
     // vIndex: 1
-    virtual bool initialize(::std::string const&, ::LevelSettings const&, ::Experiments const&, ::std::string const*, ::std::optional<::std::reference_wrapper<::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>) /*override*/;
+    virtual bool initialize(
+        ::std::string const&,
+        ::LevelSettings const&,
+        ::Experiments const&,
+        ::std::string const*,
+        ::std::optional<::std::reference_wrapper<
+            ::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>
+    ) /*override*/;
 
     // vIndex: 77
     virtual ::Tick const getCurrentServerTick() const /*override*/;
@@ -110,7 +117,8 @@ public:
     virtual ::Bedrock::NonOwnerPointer<::SubChunkManager> getSubChunkManager() /*override*/;
 
     // vIndex: 300
-    virtual bool canUseSkin(::SerializedSkin const&, ::NetworkIdentifier const&, ::ActorUniqueID const&) const /*override*/;
+    virtual bool canUseSkin(::SerializedSkin const&, ::NetworkIdentifier const&, ::ActorUniqueID const&) const
+        /*override*/;
 
     // vIndex: 301
     virtual ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> getTrustedSkinHelper() const /*override*/;
@@ -148,5 +156,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

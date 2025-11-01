@@ -9,11 +9,10 @@ class CommandRunStats {
 public:
     // CommandRunStats inner types define
     using OriginToRunCountMap = ::std::unordered_map<::CommandOriginType, uint64>;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::CommandOriginType, uint64>> mRunCountMap;
     // NOLINTEND
-
 };

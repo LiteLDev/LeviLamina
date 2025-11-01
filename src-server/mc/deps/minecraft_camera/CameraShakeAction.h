@@ -3,6 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class CameraShakeAction : uchar {
-    Add = 0,
+    Add  = 0,
     Stop = 1,
 };

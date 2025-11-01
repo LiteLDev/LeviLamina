@@ -13,4 +13,4 @@ namespace ServerContentKeyProvider {
 MCNAPI ::std::unique_ptr<::IContentAccessibilityProvider> create();
 // NOLINTEND
 
-}
+} // namespace ServerContentKeyProvider

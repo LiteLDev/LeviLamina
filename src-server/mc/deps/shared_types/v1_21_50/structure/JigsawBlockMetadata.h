@@ -18,10 +18,10 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk38b683;
     ::ll::UntypedStorage<8, 32> mUnkf43b56;
     ::ll::UntypedStorage<8, 32> mUnk9ae597;
-    ::ll::UntypedStorage<1, 1> mUnkaacd71;
+    ::ll::UntypedStorage<1, 1>  mUnkaacd71;
     ::ll::UntypedStorage<4, 12> mUnk208d7d;
-    ::ll::UntypedStorage<4, 4> mUnkddac54;
-    ::ll::UntypedStorage<4, 4> mUnk42c11d;
+    ::ll::UntypedStorage<4, 4>  mUnkddac54;
+    ::ll::UntypedStorage<4, 4>  mUnk42c11d;
     // NOLINTEND
 
 public:
@@ -52,7 +52,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_50

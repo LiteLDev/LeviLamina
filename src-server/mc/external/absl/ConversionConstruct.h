@@ -4,7 +4,6 @@
 
 namespace absl::internal_any_invocable {
 
-struct ConversionConstruct {
-};
+struct ConversionConstruct {};
 
-}
+} // namespace absl::internal_any_invocable

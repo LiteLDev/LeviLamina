@@ -16,5 +16,4 @@ public:
     ExportedNameEntry& operator=(ExportedNameEntry const&);
     ExportedNameEntry(ExportedNameEntry const&);
     ExportedNameEntry();
-
 };

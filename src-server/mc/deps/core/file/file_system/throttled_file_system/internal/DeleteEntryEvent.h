@@ -4,8 +4,7 @@
 
 namespace Core::Internal {
 
-template<int T0>
-class DeleteEntryEvent {
-};
+template <int T0>
+class DeleteEntryEvent {};
 
-}
+} // namespace Core::Internal

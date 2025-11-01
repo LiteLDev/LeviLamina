@@ -33,4 +33,4 @@ MCAPI bool isSurface_1_16(::BlockType const& blockType);
 MCAPI bool isSurface_1_18(::BlockType const& blockType);
 // NOLINTEND
 
-}
+} // namespace CaveFeatureUtils

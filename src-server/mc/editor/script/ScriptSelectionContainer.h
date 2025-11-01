@@ -12,12 +12,13 @@ namespace Scripting { struct ClassBinding; }
 
 namespace Editor::ScriptModule {
 
-class ScriptSelectionContainer : public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptSelectionContainer> {
+class ScriptSelectionContainer
+: public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptSelectionContainer> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk59bf9f;
-    ::ll::UntypedStorage<8, 8> mUnk581b01;
+    ::ll::UntypedStorage<8, 8>  mUnk581b01;
     // NOLINTEND
 
 public:
@@ -44,7 +45,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

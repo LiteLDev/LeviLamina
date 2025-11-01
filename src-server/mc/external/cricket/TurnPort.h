@@ -42,70 +42,69 @@ public:
     // clang-format off
     class CallbacksForTest;
     // clang-format on
-    
+
     // TurnPort inner types define
     enum class PortState : int {
-        Connecting = 0,
-        Connected = 1,
-        Ready = 2,
-        Receiveonly = 3,
+        Connecting   = 0,
+        Connected    = 1,
+        Ready        = 2,
+        Receiveonly  = 3,
         Disconnected = 4,
     };
-    
+
     class CallbacksForTest {
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~CallbacksForTest() = default;
-    
+
         // vIndex: 1
         virtual void OnTurnCreatePermissionResult(int) = 0;
-    
+
         // vIndex: 2
         virtual void OnTurnRefreshResult(int) = 0;
-    
+
         // vIndex: 3
         virtual void OnTurnPortClosed() = 0;
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
-    
+
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 88> mUnkd723ff;
     ::ll::UntypedStorage<8, 32> mUnka57938;
-    ::ll::UntypedStorage<4, 4> mUnkc0797c;
+    ::ll::UntypedStorage<4, 4>  mUnkc0797c;
     ::ll::UntypedStorage<8, 24> mUnk2ccf8e;
     ::ll::UntypedStorage<8, 24> mUnk9438eb;
-    ::ll::UntypedStorage<8, 8> mUnke2e245;
+    ::ll::UntypedStorage<8, 8>  mUnke2e245;
     ::ll::UntypedStorage<8, 64> mUnkc5a0cb;
     ::ll::UntypedStorage<8, 16> mUnke47f49;
     ::ll::UntypedStorage<8, 16> mUnk192bee;
     ::ll::UntypedStorage<8, 16> mUnkd29c5b;
-    ::ll::UntypedStorage<8, 8> mUnk6c54d1;
-    ::ll::UntypedStorage<4, 4> mUnke2b901;
-    ::ll::UntypedStorage<4, 4> mUnk5455ec;
+    ::ll::UntypedStorage<8, 8>  mUnk6c54d1;
+    ::ll::UntypedStorage<4, 4>  mUnke2b901;
+    ::ll::UntypedStorage<4, 4>  mUnk5455ec;
     ::ll::UntypedStorage<8, 88> mUnkc6ed9f;
     ::ll::UntypedStorage<8, 32> mUnk3f6826;
     ::ll::UntypedStorage<8, 32> mUnk339372;
     ::ll::UntypedStorage<8, 32> mUnka14dac;
-    ::ll::UntypedStorage<4, 4> mUnkc64656;
+    ::ll::UntypedStorage<4, 4>  mUnkc64656;
     ::ll::UntypedStorage<8, 24> mUnk4af9a5;
-    ::ll::UntypedStorage<4, 4> mUnkf1b1e6;
-    ::ll::UntypedStorage<4, 4> mUnk65e0d2;
-    ::ll::UntypedStorage<8, 8> mUnk51b81e;
-    ::ll::UntypedStorage<8, 8> mUnkcab8e3;
+    ::ll::UntypedStorage<4, 4>  mUnkf1b1e6;
+    ::ll::UntypedStorage<4, 4>  mUnk65e0d2;
+    ::ll::UntypedStorage<8, 8>  mUnk51b81e;
+    ::ll::UntypedStorage<8, 8>  mUnkcab8e3;
     ::ll::UntypedStorage<8, 32> mUnke82c96;
-    ::ll::UntypedStorage<8, 8> mUnk4bc6f5;
-    ::ll::UntypedStorage<8, 8> mUnk61b827;
+    ::ll::UntypedStorage<8, 8>  mUnk4bc6f5;
+    ::ll::UntypedStorage<8, 8>  mUnk61b827;
     // NOLINTEND
 
 public:
@@ -139,10 +138,19 @@ public:
     virtual void PrepareAddress() /*override*/;
 
     // vIndex: 11
-    virtual ::cricket::Connection* CreateConnection(::cricket::Candidate const& remote_candidate, ::cricket::PortInterface::CandidateOrigin origin) /*override*/;
+    virtual ::cricket::Connection* CreateConnection(
+        ::cricket::Candidate const&               remote_candidate,
+        ::cricket::PortInterface::CandidateOrigin origin
+    ) /*override*/;
 
     // vIndex: 17
-    virtual int SendTo(void const* data, uint64 size, ::rtc::SocketAddress const& addr, ::rtc::PacketOptions const& options, bool payload) /*override*/;
+    virtual int SendTo(
+        void const*                 data,
+        uint64                      size,
+        ::rtc::SocketAddress const& addr,
+        ::rtc::PacketOptions const& options,
+        bool                        payload
+    ) /*override*/;
 
     // vIndex: 12
     virtual int SetOption(::rtc::Socket::Option opt, int value) /*override*/;
@@ -154,13 +162,19 @@ public:
     virtual int GetError() /*override*/;
 
     // vIndex: 41
-    virtual bool HandleIncomingPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet) /*override*/;
+    virtual bool
+    HandleIncomingPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet) /*override*/;
 
     // vIndex: 42
     virtual bool CanHandleIncomingPacketsFrom(::rtc::SocketAddress const& addr) const /*override*/;
 
     // vIndex: 18
-    virtual void SendBindingErrorResponse(::cricket::StunMessage* message, ::rtc::SocketAddress const& addr, int error_code, ::std::string_view reason) /*override*/;
+    virtual void SendBindingErrorResponse(
+        ::cricket::StunMessage*     message,
+        ::rtc::SocketAddress const& addr,
+        int                         error_code,
+        ::std::string_view          reason
+    ) /*override*/;
 
     // vIndex: 50
     virtual void OnReadPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet);
@@ -192,7 +206,13 @@ public:
 
     MCNAPI bool CreateTurnClientSocket();
 
-    MCNAPI void DispatchPacket(char const* data, uint64 size, ::rtc::SocketAddress const& remote_addr, ::cricket::ProtocolType proto, int64 packet_time_us);
+    MCNAPI void DispatchPacket(
+        char const*                 data,
+        uint64                      size,
+        ::rtc::SocketAddress const& remote_addr,
+        ::cricket::ProtocolType     proto,
+        int64                       packet_time_us
+    );
 
     MCNAPI bool FailAndPruneConnection(::rtc::SocketAddress const& address);
 
@@ -252,9 +272,40 @@ public:
 
     MCNAPI void TurnCustomizerMaybeModifyOutgoingStunMessage(::cricket::StunMessage* message);
 
-    MCNAPI TurnPort(::webrtc::TaskQueueBase* thread, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ::std::shared_ptr<::rtc::AsyncPacketSocket> socket, ::std::string_view username, ::std::string_view password, ::cricket::ProtocolAddress const& server_address, ::cricket::RelayCredentials const& credentials, int server_priority, ::std::vector<::std::string> const& tls_alpn_protocols, ::std::vector<::std::string> const& tls_elliptic_curves, ::webrtc::TurnCustomizer* customizer, ::rtc::SSLCertificateVerifier* tls_cert_verifier, ::webrtc::FieldTrialsView const* field_trials);
+    MCNAPI TurnPort(
+        ::webrtc::TaskQueueBase*                    thread,
+        ::rtc::PacketSocketFactory*                 factory,
+        ::rtc::Network const*                       network,
+        ::std::shared_ptr<::rtc::AsyncPacketSocket> socket,
+        ::std::string_view                          username,
+        ::std::string_view                          password,
+        ::cricket::ProtocolAddress const&           server_address,
+        ::cricket::RelayCredentials const&          credentials,
+        int                                         server_priority,
+        ::std::vector<::std::string> const&         tls_alpn_protocols,
+        ::std::vector<::std::string> const&         tls_elliptic_curves,
+        ::webrtc::TurnCustomizer*                   customizer,
+        ::rtc::SSLCertificateVerifier*              tls_cert_verifier,
+        ::webrtc::FieldTrialsView const*            field_trials
+    );
 
-    MCNAPI TurnPort(::webrtc::TaskQueueBase* thread, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ushort min_port, ushort max_port, ::std::string_view username, ::std::string_view password, ::cricket::ProtocolAddress const& server_address, ::cricket::RelayCredentials const& credentials, int server_priority, ::std::vector<::std::string> const& tls_alpn_protocols, ::std::vector<::std::string> const& tls_elliptic_curves, ::webrtc::TurnCustomizer* customizer, ::rtc::SSLCertificateVerifier* tls_cert_verifier, ::webrtc::FieldTrialsView const* field_trials);
+    MCNAPI TurnPort(
+        ::webrtc::TaskQueueBase*            thread,
+        ::rtc::PacketSocketFactory*         factory,
+        ::rtc::Network const*               network,
+        ushort                              min_port,
+        ushort                              max_port,
+        ::std::string_view                  username,
+        ::std::string_view                  password,
+        ::cricket::ProtocolAddress const&   server_address,
+        ::cricket::RelayCredentials const&  credentials,
+        int                                 server_priority,
+        ::std::vector<::std::string> const& tls_alpn_protocols,
+        ::std::vector<::std::string> const& tls_elliptic_curves,
+        ::webrtc::TurnCustomizer*           customizer,
+        ::rtc::SSLCertificateVerifier*      tls_cert_verifier,
+        ::webrtc::FieldTrialsView const*    field_trials
+    );
 
     MCNAPI void UpdateHash();
 
@@ -270,7 +321,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool AllowedTurnPort(int port, ::webrtc::FieldTrialsView const* field_trials);
 
-    MCNAPI static ::std::unique_ptr<::cricket::TurnPort> Create(::cricket::CreateRelayPortArgs const& args, ::std::shared_ptr<::rtc::AsyncPacketSocket> socket);
+    MCNAPI static ::std::unique_ptr<::cricket::TurnPort>
+    Create(::cricket::CreateRelayPortArgs const& args, ::std::shared_ptr<::rtc::AsyncPacketSocket> socket);
 
     MCNAPI static bool Validate(::cricket::CreateRelayPortArgs const& args);
     // NOLINTEND
@@ -278,9 +330,40 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::TaskQueueBase* thread, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ::std::shared_ptr<::rtc::AsyncPacketSocket> socket, ::std::string_view username, ::std::string_view password, ::cricket::ProtocolAddress const& server_address, ::cricket::RelayCredentials const& credentials, int server_priority, ::std::vector<::std::string> const& tls_alpn_protocols, ::std::vector<::std::string> const& tls_elliptic_curves, ::webrtc::TurnCustomizer* customizer, ::rtc::SSLCertificateVerifier* tls_cert_verifier, ::webrtc::FieldTrialsView const* field_trials);
+    MCNAPI void* $ctor(
+        ::webrtc::TaskQueueBase*                    thread,
+        ::rtc::PacketSocketFactory*                 factory,
+        ::rtc::Network const*                       network,
+        ::std::shared_ptr<::rtc::AsyncPacketSocket> socket,
+        ::std::string_view                          username,
+        ::std::string_view                          password,
+        ::cricket::ProtocolAddress const&           server_address,
+        ::cricket::RelayCredentials const&          credentials,
+        int                                         server_priority,
+        ::std::vector<::std::string> const&         tls_alpn_protocols,
+        ::std::vector<::std::string> const&         tls_elliptic_curves,
+        ::webrtc::TurnCustomizer*                   customizer,
+        ::rtc::SSLCertificateVerifier*              tls_cert_verifier,
+        ::webrtc::FieldTrialsView const*            field_trials
+    );
 
-    MCNAPI void* $ctor(::webrtc::TaskQueueBase* thread, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ushort min_port, ushort max_port, ::std::string_view username, ::std::string_view password, ::cricket::ProtocolAddress const& server_address, ::cricket::RelayCredentials const& credentials, int server_priority, ::std::vector<::std::string> const& tls_alpn_protocols, ::std::vector<::std::string> const& tls_elliptic_curves, ::webrtc::TurnCustomizer* customizer, ::rtc::SSLCertificateVerifier* tls_cert_verifier, ::webrtc::FieldTrialsView const* field_trials);
+    MCNAPI void* $ctor(
+        ::webrtc::TaskQueueBase*            thread,
+        ::rtc::PacketSocketFactory*         factory,
+        ::rtc::Network const*               network,
+        ushort                              min_port,
+        ushort                              max_port,
+        ::std::string_view                  username,
+        ::std::string_view                  password,
+        ::cricket::ProtocolAddress const&   server_address,
+        ::cricket::RelayCredentials const&  credentials,
+        int                                 server_priority,
+        ::std::vector<::std::string> const& tls_alpn_protocols,
+        ::std::vector<::std::string> const& tls_elliptic_curves,
+        ::webrtc::TurnCustomizer*           customizer,
+        ::rtc::SSLCertificateVerifier*      tls_cert_verifier,
+        ::webrtc::FieldTrialsView const*    field_trials
+    );
     // NOLINTEND
 
 public:
@@ -304,9 +387,16 @@ public:
 
     MCNAPI void $PrepareAddress();
 
-    MCNAPI ::cricket::Connection* $CreateConnection(::cricket::Candidate const& remote_candidate, ::cricket::PortInterface::CandidateOrigin origin);
+    MCNAPI ::cricket::Connection*
+    $CreateConnection(::cricket::Candidate const& remote_candidate, ::cricket::PortInterface::CandidateOrigin origin);
 
-    MCNAPI int $SendTo(void const* data, uint64 size, ::rtc::SocketAddress const& addr, ::rtc::PacketOptions const& options, bool payload);
+    MCNAPI int $SendTo(
+        void const*                 data,
+        uint64                      size,
+        ::rtc::SocketAddress const& addr,
+        ::rtc::PacketOptions const& options,
+        bool                        payload
+    );
 
     MCNAPI int $SetOption(::rtc::Socket::Option opt, int value);
 
@@ -318,7 +408,12 @@ public:
 
     MCNAPI bool $CanHandleIncomingPacketsFrom(::rtc::SocketAddress const& addr) const;
 
-    MCNAPI void $SendBindingErrorResponse(::cricket::StunMessage* message, ::rtc::SocketAddress const& addr, int error_code, ::std::string_view reason);
+    MCNAPI void $SendBindingErrorResponse(
+        ::cricket::StunMessage*     message,
+        ::rtc::SocketAddress const& addr,
+        int                         error_code,
+        ::std::string_view          reason
+    );
 
     MCNAPI void $OnReadPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet);
 
@@ -340,7 +435,6 @@ public:
 
     MCNAPI static void** $vftableForPortInterface();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

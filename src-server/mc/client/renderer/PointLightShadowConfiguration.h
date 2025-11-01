@@ -17,5 +17,4 @@ public:
     PointLightShadowConfiguration& operator=(PointLightShadowConfiguration const&);
     PointLightShadowConfiguration(PointLightShadowConfiguration const&);
     PointLightShadowConfiguration();
-
 };

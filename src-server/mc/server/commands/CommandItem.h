@@ -15,8 +15,8 @@ public:
     union {
         struct {
             ::ll::TypedStorage<2, 2, short> mVersion;
-            ::ll::TypedStorage<1, 1, bool> mOverrideAux;
-            ::ll::TypedStorage<4, 4, int> mId;
+            ::ll::TypedStorage<1, 1, bool>  mOverrideAux;
+            ::ll::TypedStorage<4, 4, int>   mId;
         };
         ::ll::TypedStorage<8, 8, uint64> mVersionId;
     };
@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::ItemInstance> createInstance(int count, int aux, ::CommandOutput& output, bool requireExactAux) const;
+    MCAPI ::std::optional<::ItemInstance>
+    createInstance(int count, int aux, ::CommandOutput& output, bool requireExactAux) const;
     // NOLINTEND
-
 };

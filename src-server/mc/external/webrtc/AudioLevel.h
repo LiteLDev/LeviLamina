@@ -17,7 +17,6 @@ public:
     AudioLevel& operator=(AudioLevel const&);
     AudioLevel(AudioLevel const&);
     AudioLevel();
-
 };
 
-}
+} // namespace webrtc

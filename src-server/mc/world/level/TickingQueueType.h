@@ -4,5 +4,5 @@
 
 enum class TickingQueueType : uchar {
     Internal = 0,
-    Random = 1,
+    Random   = 1,
 };

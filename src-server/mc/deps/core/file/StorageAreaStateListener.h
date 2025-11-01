@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Core::FileStorageArea>> mFileStorageArea;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMutex;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                mMutex;
     // NOLINTEND
 
 public:
@@ -28,7 +28,12 @@ public:
     virtual ~StorageAreaStateListener();
 
     // vIndex: 1
-    virtual void onExtendDiskSpace(bool const bSet, ::std::weak_ptr<::Core::FileStorageArea> const& fileStorageAreaWeakPtr, uint64 freeSpace, ::std::function<void()> onHandledEventCallback);
+    virtual void onExtendDiskSpace(
+        bool const                                      bSet,
+        ::std::weak_ptr<::Core::FileStorageArea> const& fileStorageAreaWeakPtr,
+        uint64                                          freeSpace,
+        ::std::function<void()>                         onHandledEventCallback
+    );
 
     // vIndex: 2
     virtual void onLowDiskSpace(bool const bSet);
@@ -57,7 +62,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onExtendDiskSpace(bool const bSet, ::std::weak_ptr<::Core::FileStorageArea> const& fileStorageAreaWeakPtr, uint64 freeSpace, ::std::function<void()> onHandledEventCallback);
+    MCNAPI void $onExtendDiskSpace(
+        bool const                                      bSet,
+        ::std::weak_ptr<::Core::FileStorageArea> const& fileStorageAreaWeakPtr,
+        uint64                                          freeSpace,
+        ::std::function<void()>                         onHandledEventCallback
+    );
 
     MCNAPI void $onLowDiskSpace(bool const bSet);
 
@@ -71,7 +81,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Core

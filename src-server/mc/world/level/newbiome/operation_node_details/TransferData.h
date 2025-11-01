@@ -4,8 +4,7 @@
 
 namespace OperationNodeDetails {
 
-template<typename T0>
-class TransferData {
-};
+template <typename T0>
+class TransferData {};
 
-}
+} // namespace OperationNodeDetails

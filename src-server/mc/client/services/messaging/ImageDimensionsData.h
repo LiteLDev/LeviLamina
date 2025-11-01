@@ -9,5 +9,4 @@ public:
     ::ll::TypedStorage<4, 4, uint> mWidth;
     ::ll::TypedStorage<4, 4, uint> mHeight;
     // NOLINTEND
-
 };

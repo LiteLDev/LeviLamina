@@ -26,36 +26,36 @@ public:
     // clang-format off
     class LruCache;
     // clang-format on
-    
+
     // CrafterBlockActor inner types define
     class LruCache {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mRecencyOrderedIndexes;
-        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::CraftingContainer, ::std::vector<::ItemInstance>>>> mCachedValues;
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::CraftingContainer, ::std::vector<::ItemInstance>>>>
+            mCachedValues;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~LruCache();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::std::bitset<9>> mDisabledSlots;
+    ::ll::TypedStorage<4, 4, ::std::bitset<9>>               mDisabledSlots;
     ::ll::TypedStorage<8, 48, ::CrafterBlockActor::LruCache> mCraftedRecipesCache;
-    ::ll::TypedStorage<4, 4, int> mTicksLeftInCraftingState;
+    ::ll::TypedStorage<4, 4, int>                            mTicksLeftInCraftingState;
     // NOLINTEND
 
 public:
@@ -98,7 +98,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::Recipe const*> _getRecipesForCraftingGrid(::Level& level, ::CraftingContainer& craftingContainer);
+    MCAPI static ::std::vector<::Recipe const*>
+    _getRecipesForCraftingGrid(::Level& level, ::CraftingContainer& craftingContainer);
 
     MCAPI static ::std::vector<::ItemInstance> getCraftableItem(::CraftingContainer& craftingGrid, ::Level& level);
     // NOLINTEND
@@ -130,5 +131,4 @@ public:
 
     MCNAPI static void** $vftableForContainer();
     // NOLINTEND
-
 };

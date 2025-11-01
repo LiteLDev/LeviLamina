@@ -5,10 +5,10 @@
 namespace SprintTriggerSystem {
 
 enum class IntentSprintType : int {
-    SprintInput = 0,
+    SprintInput     = 0,
     SprintDoubleTap = 1,
-    DoubleTapReset = 2,
-    NoIntent = 3,
+    DoubleTapReset  = 2,
+    NoIntent        = 3,
 };
 
 }

@@ -20,7 +20,6 @@ public:
     NetworkEstimate& operator=(NetworkEstimate const&);
     NetworkEstimate(NetworkEstimate const&);
     NetworkEstimate();
-
 };
 
-}
+} // namespace webrtc

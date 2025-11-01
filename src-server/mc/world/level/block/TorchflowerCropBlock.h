@@ -28,13 +28,26 @@ public:
     virtual int getVariant(::Block const& block) const /*override*/;
 
     // vIndex: 9
-    virtual ::AABB const& getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const /*override*/;
+    virtual ::AABB const& getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const /*override*/;
 
     // vIndex: 148
-    virtual ::Block const& setGrowth(::BlockSource& region, ::BlockPos const& pos, ::Block const& baseBlock, ushort newGrowth, int updateFlags) const /*override*/;
+    virtual ::Block const& setGrowth(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Block const&    baseBlock,
+        ushort            newGrowth,
+        int               updateFlags
+    ) const /*override*/;
 
     // vIndex: 73
-    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const /*override*/;
+    virtual bool
+    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
+        /*override*/;
 
     // vIndex: 0
     virtual ~TorchflowerCropBlock() /*override*/ = default;
@@ -47,11 +60,23 @@ public:
 
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI ::AABB const& $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    MCAPI ::AABB const& $getOutline(
+        ::Block const&             block,
+        ::IConstBlockSource const& region,
+        ::BlockPos const&          pos,
+        ::AABB&                    bufferValue
+    ) const;
 
-    MCAPI ::Block const& $setGrowth(::BlockSource& region, ::BlockPos const& pos, ::Block const& baseBlock, ushort newGrowth, int updateFlags) const;
+    MCAPI ::Block const& $setGrowth(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Block const&    baseBlock,
+        ushort            newGrowth,
+        int               updateFlags
+    ) const;
 
-    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool
+    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
     // NOLINTEND
 
 public:
@@ -59,5 +84,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

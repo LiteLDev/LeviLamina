@@ -21,34 +21,33 @@ public:
     // clang-format off
     struct BlockInfo;
     // clang-format on
-    
+
     // DiggerItemComponent inner types define
     struct BlockInfo {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 184, ::BlockDescriptor> filter;
-        ::ll::TypedStorage<4, 4, int> destroySpeed;
+        ::ll::TypedStorage<4, 4, int>                 destroySpeed;
         // NOLINTEND
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~BlockInfo();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool> mUseEfficiency;
+    ::ll::TypedStorage<1, 1, bool>                                             mUseEfficiency;
     ::ll::TypedStorage<8, 24, ::std::vector<::DiggerItemComponent::BlockInfo>> mDestroySpeeds;
     // NOLINTEND
 
@@ -72,7 +71,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -88,5 +91,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

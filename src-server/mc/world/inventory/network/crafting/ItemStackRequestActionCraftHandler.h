@@ -23,11 +23,11 @@ class ItemStackRequestActionCraftHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ItemStackRequestActionHandler&> mRequestActionHandler;
-    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CraftHandlerBase>> mCraftHandler;
-    ::ll::TypedStorage<1, 1, bool> mIsCraftRequest;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SimpleSparseContainer>> mCreatedOutputSparseContainer;
+    ::ll::TypedStorage<8, 8, ::ItemStackRequestActionHandler&>                  mRequestActionHandler;
+    ::ll::TypedStorage<8, 8, ::Player&>                                         mPlayer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CraftHandlerBase>>             mCraftHandler;
+    ::ll::TypedStorage<1, 1, bool>                                              mIsCraftRequest;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SimpleSparseContainer>>       mCreatedOutputSparseContainer;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemInstance, uint>>> mCraftResults;
     // NOLINTEND
 
@@ -47,7 +47,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::ContainerValidationCraftInputs> _createCraftInputs(::ItemStackRequestActionCraftBase const& requestAction);
+    MCNAPI ::std::unique_ptr<::ContainerValidationCraftInputs>
+    _createCraftInputs(::ItemStackRequestActionCraftBase const& requestAction);
 
     MCNAPI ::ItemStackNetResult _initCraftResults(::std::vector<::ItemInstance> const& results, uchar numCrafts);
 
@@ -61,7 +62,8 @@ public:
 
     MCNAPI ::ItemStackNetResult handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCNAPI ::ItemStackNetResult handleCraftResults(::ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const& requestAction);
+    MCNAPI ::ItemStackNetResult
+    handleCraftResults(::ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const& requestAction);
 
     MCNAPI void onContainerScreenOpen(::ContainerScreenContext const& screenContext);
     // NOLINTEND
@@ -71,5 +73,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

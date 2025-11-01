@@ -11,12 +11,12 @@ class AttributeModifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float> mAmount;
+    ::ll::TypedStorage<4, 4, float>                        mAmount;
     ::ll::TypedStorage<4, 4, ::AttributeModifierOperation> mOperation;
-    ::ll::TypedStorage<4, 4, ::AttributeOperands> mOperand;
-    ::ll::TypedStorage<8, 32, ::std::string> mName;
-    ::ll::TypedStorage<8, 16, ::mce::UUID> mId;
-    ::ll::TypedStorage<1, 1, bool> mSerialize;
+    ::ll::TypedStorage<4, 4, ::AttributeOperands>          mOperand;
+    ::ll::TypedStorage<8, 32, ::std::string>               mName;
+    ::ll::TypedStorage<8, 16, ::mce::UUID>                 mId;
+    ::ll::TypedStorage<1, 1, bool>                         mSerialize;
     // NOLINTEND
 
 public:
@@ -70,5 +70,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

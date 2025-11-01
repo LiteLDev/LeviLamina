@@ -24,9 +24,26 @@ struct VehicleComponent;
 namespace ActorStopRidingEventSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickHandlerEvent(::entt::type_list<::Include<::StopRidingRequestComponent>>, ::StrictEntityContext const& entity, ::ActorOwnerComponent const& actorOwnerComponent, ::PassengerComponent const& passengerComponent, ::Optional<::ActorIsBeingDestroyedFlagComponent const> actorIsBeingDestroyedFlagComponent, ::Optional<::ExitFromPassengerFlagComponent const> exitFromPassengerFlagComponent, ::Optional<::SwitchingVehiclesFlagComponent const> switchingVehiclesFlagComponent, ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::ActorOwnerComponent const> vehicles, ::EntityModifier<::StopRidingRequestComponent> modifier);
+MCNAPI void tickHandlerEvent(
+    ::entt::type_list<::Include<::StopRidingRequestComponent>>,
+    ::StrictEntityContext const&                           entity,
+    ::ActorOwnerComponent const&                           actorOwnerComponent,
+    ::PassengerComponent const&                            passengerComponent,
+    ::Optional<::ActorIsBeingDestroyedFlagComponent const> actorIsBeingDestroyedFlagComponent,
+    ::Optional<::ExitFromPassengerFlagComponent const>     exitFromPassengerFlagComponent,
+    ::Optional<::SwitchingVehiclesFlagComponent const>     switchingVehiclesFlagComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::ActorOwnerComponent const> vehicles,
+    ::EntityModifier<::StopRidingRequestComponent>                                             modifier
+);
 
-MCNAPI void tickListenerEvent(::entt::type_list<::Include<::StopRidingRequestComponent>>, ::ActorOwnerComponent const& actorOwnerComponent, ::Optional<::LocalPlayerComponent const> localPlayerFlag, ::Optional<::ActorIsBeingDestroyedFlagComponent const> actorIsBeingDestroyedFlag, ::Optional<::ExitFromPassengerFlagComponent const> exitFromPassengerFlag, ::Optional<::SwitchingVehiclesFlagComponent const> switchingVehiclesFlag);
+MCNAPI void tickListenerEvent(
+    ::entt::type_list<::Include<::StopRidingRequestComponent>>,
+    ::ActorOwnerComponent const&                           actorOwnerComponent,
+    ::Optional<::LocalPlayerComponent const>               localPlayerFlag,
+    ::Optional<::ActorIsBeingDestroyedFlagComponent const> actorIsBeingDestroyedFlag,
+    ::Optional<::ExitFromPassengerFlagComponent const>     exitFromPassengerFlag,
+    ::Optional<::SwitchingVehiclesFlagComponent const>     switchingVehiclesFlag
+);
 // NOLINTEND
 
-}
+} // namespace ActorStopRidingEventSystemImpl

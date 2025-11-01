@@ -19,22 +19,23 @@ struct MolangEvalParams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint> mPC;
-    ::ll::TypedStorage<8, 8, ::MolangScriptArg const*> mRet;
-    ::ll::TypedStorage<8, 56, ::MolangVariableMap> mTempVariables;
-    ::ll::TypedStorage<8, 56, ::MolangVariableMap> mContextVariables;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mContinueIndexStack;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mBreakIndexStack;
+    ::ll::TypedStorage<4, 4, uint>                              mPC;
+    ::ll::TypedStorage<8, 8, ::MolangScriptArg const*>          mRet;
+    ::ll::TypedStorage<8, 56, ::MolangVariableMap>              mTempVariables;
+    ::ll::TypedStorage<8, 56, ::MolangVariableMap>              mContextVariables;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>            mContinueIndexStack;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>            mBreakIndexStack;
     ::ll::TypedStorage<8, 24, ::std::vector<::MolangScriptArg>> mDataStack;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mMissingVariableOrActorIndexStack;
-    ::ll::TypedStorage<8, 8, uint64> mPublicAccessModeStack;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::RenderParams*>> mRenderParams;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>            mMissingVariableOrActorIndexStack;
+    ::ll::TypedStorage<8, 8, uint64>                            mPublicAccessModeStack;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::RenderParams*>>  mRenderParams;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Actor* getActorPtrFromPushedArray(uint64 arrayStackOffset, uint64 arrayElementOffset, bool& outOfElements) const;
+    MCNAPI ::Actor*
+    getActorPtrFromPushedArray(uint64 arrayStackOffset, uint64 arrayElementOffset, bool& outOfElements) const;
 
     MCNAPI ::Actor* popActor();
 
@@ -60,5 +61,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

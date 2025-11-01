@@ -12,7 +12,13 @@ class Vec3;
 namespace CreakingHeartParticlesUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI void requestTrailParticles(::BlockSource& region, ::BlockPos const& creakingHeartPos, ::Vec3 const& creakingPos, int toCreakingAmount, int toCreakingHeartAmount);
+MCNAPI void requestTrailParticles(
+    ::BlockSource&    region,
+    ::BlockPos const& creakingHeartPos,
+    ::Vec3 const&     creakingPos,
+    int               toCreakingAmount,
+    int               toCreakingHeartAmount
+);
 // NOLINTEND
 
-}
+} // namespace CreakingHeartParticlesUtils

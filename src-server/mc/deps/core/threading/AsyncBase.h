@@ -4,7 +4,6 @@
 
 namespace Bedrock::Threading {
 
-class AsyncBase : public ::std::enable_shared_from_this<::Bedrock::Threading::AsyncBase> {
-};
+class AsyncBase : public ::std::enable_shared_from_this<::Bedrock::Threading::AsyncBase> {};
 
-}
+} // namespace Bedrock::Threading

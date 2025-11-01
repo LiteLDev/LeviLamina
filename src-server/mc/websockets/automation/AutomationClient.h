@@ -26,14 +26,14 @@ class AutomationClient : public ::CodeBuilder::IClient, public ::UriListener, pu
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkd8f49d;
-    ::ll::UntypedStorage<8, 8> mUnk133ab6;
-    ::ll::UntypedStorage<8, 8> mUnk9e65e2;
-    ::ll::UntypedStorage<4, 4> mUnkde21bd;
-    ::ll::UntypedStorage<1, 1> mUnkc2550d;
-    ::ll::UntypedStorage<1, 1> mUnkda283b;
-    ::ll::UntypedStorage<4, 4> mUnk94c7c4;
-    ::ll::UntypedStorage<1, 1> mUnk60f2b9;
+    ::ll::UntypedStorage<8, 8>  mUnkd8f49d;
+    ::ll::UntypedStorage<8, 8>  mUnk133ab6;
+    ::ll::UntypedStorage<8, 8>  mUnk9e65e2;
+    ::ll::UntypedStorage<4, 4>  mUnkde21bd;
+    ::ll::UntypedStorage<1, 1>  mUnkc2550d;
+    ::ll::UntypedStorage<1, 1>  mUnkda283b;
+    ::ll::UntypedStorage<4, 4>  mUnk94c7c4;
+    ::ll::UntypedStorage<1, 1>  mUnk60f2b9;
     ::ll::UntypedStorage<8, 24> mUnkcee0c9;
     ::ll::UntypedStorage<8, 16> mUnk731e86;
     ::ll::UntypedStorage<8, 64> mUnk66f7fc;
@@ -137,7 +137,6 @@ public:
 
     MCNAPI static void** $vftableForLevelListener();
     // NOLINTEND
-
 };
 
-}
+} // namespace Automation

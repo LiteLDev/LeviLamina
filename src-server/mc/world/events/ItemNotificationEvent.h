@@ -33,7 +33,19 @@ struct ItemUsedOnEvent;
 struct ShapedRecipeTriggeredEvent;
 // clang-format on
 
-struct ItemNotificationEvent : public ::EventVariantImpl<::ShapedRecipeTriggeredEvent const, ::CraftUpdateResultItemClientEvent const, ::ItemDefinitionEventTriggeredEvent const, ::ItemUseOnEvent const, ::ItemUseEvent const, ::ItemUsedOnEvent const, ::ItemStartUseOnEvent const, ::ItemStopUseOnEvent const, ::ItemStartUseEvent const, ::ItemCompleteUseEvent const, ::ItemReleaseUseEvent const, ::ItemStopUseEvent const> {
+struct ItemNotificationEvent : public ::EventVariantImpl<
+                                   ::ShapedRecipeTriggeredEvent const,
+                                   ::CraftUpdateResultItemClientEvent const,
+                                   ::ItemDefinitionEventTriggeredEvent const,
+                                   ::ItemUseOnEvent const,
+                                   ::ItemUseEvent const,
+                                   ::ItemUsedOnEvent const,
+                                   ::ItemStartUseOnEvent const,
+                                   ::ItemStopUseOnEvent const,
+                                   ::ItemStartUseEvent const,
+                                   ::ItemCompleteUseEvent const,
+                                   ::ItemReleaseUseEvent const,
+                                   ::ItemStopUseEvent const> {
 public:
     // member functions
     // NOLINTBEGIN
@@ -45,5 +57,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

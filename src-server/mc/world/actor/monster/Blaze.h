@@ -18,12 +18,12 @@ class Blaze : public ::Monster {
 public:
     // Blaze inner types define
     using DataFlagIdType = char;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, float> mAllowedHeightOffset;
-    ::ll::TypedStorage<4, 4, int> mNextHeightOffsetChangeTick;
+    ::ll::TypedStorage<4, 4, int>   mNextHeightOffsetChangeTick;
     // NOLINTEND
 
 public:
@@ -58,7 +58,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Blaze(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI Blaze(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
 
     MCAPI void preTravel();
     // NOLINTEND
@@ -66,7 +70,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    MCAPI void* $ctor(
+        ::ActorDefinitionGroup*            definitions,
+        ::ActorDefinitionIdentifier const& definitionName,
+        ::EntityContext&                   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -90,5 +98,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

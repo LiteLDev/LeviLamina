@@ -18,10 +18,10 @@ struct FoodItemComponentLegacyFactoryData : public ::IItemComponentLegacyFactory
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int> mNutrition;
-    ::ll::TypedStorage<4, 4, float> mSaturationModifier;
-    ::ll::TypedStorage<8, 16, ::ItemDescriptor> mUsingConvertsTo;
-    ::ll::TypedStorage<1, 1, bool> mCanAlwaysEat;
+    ::ll::TypedStorage<4, 4, int>                  mNutrition;
+    ::ll::TypedStorage<4, 4, float>                mSaturationModifier;
+    ::ll::TypedStorage<8, 16, ::ItemDescriptor>    mUsingConvertsTo;
+    ::ll::TypedStorage<1, 1, bool>                 mCanAlwaysEat;
     ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnConsume;
     // NOLINTEND
 
@@ -46,7 +46,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
+    MCAPI static void bindType(
+        ::cereal::ReflectionCtx&               ctx,
+        ::std::vector<::AllExperiments> const& requiredToggles,
+        ::std::optional<::SemVersion>          releasedMinFormatVersion
+    );
     // NOLINTEND
 
 public:
@@ -60,5 +64,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

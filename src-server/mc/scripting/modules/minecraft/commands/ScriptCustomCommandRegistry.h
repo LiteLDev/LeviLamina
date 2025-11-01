@@ -35,9 +35,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::ScriptModuleMinecraft::ScriptCustomCommandError, ::Scripting::EngineError> registerCommand(::Scripting::ContextConfig const& config, ::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface, ::Scripting::ClosureGeneric<::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandResult>> closure);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
+        ::ScriptModuleMinecraft::ScriptCustomCommandError,
+        ::Scripting::EngineError>
+    registerCommand(
+        ::Scripting::ContextConfig const&                            config,
+        ::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface,
+        ::Scripting::ClosureGeneric<::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandResult>> closure
+    );
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::ScriptModuleMinecraft::ScriptCustomCommandError, ::Scripting::EngineError> registerEnum(::Scripting::ContextConfig const& config, ::std::string const& name, ::std::vector<::std::string> const& values);
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
+        ::ScriptModuleMinecraft::ScriptCustomCommandError,
+        ::Scripting::EngineError>
+    registerEnum(
+        ::Scripting::ContextConfig const&   config,
+        ::std::string const&                name,
+        ::std::vector<::std::string> const& values
+    );
     // NOLINTEND
 
 public:
@@ -45,7 +63,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

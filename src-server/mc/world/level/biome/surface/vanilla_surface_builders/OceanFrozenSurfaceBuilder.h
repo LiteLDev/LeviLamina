@@ -19,8 +19,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FrozenOceanBuilderNoises>> mNoises;
-    ::ll::TypedStorage<8, 8, ::Block const&> mPackedIceBlock;
-    ::ll::TypedStorage<8, 8, ::Block const&> mSnowBlock;
+    ::ll::TypedStorage<8, 8, ::Block const&>                                mPackedIceBlock;
+    ::ll::TypedStorage<8, 8, ::Block const&>                                mSnowBlock;
     // NOLINTEND
 
 public:
@@ -65,7 +65,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace VanillaSurfaceBuilders

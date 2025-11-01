@@ -12,7 +12,8 @@ namespace Scripting { struct ClassBinding; }
 
 namespace Editor::ScriptModule {
 
-class ScriptWidgetComponentRenderPrimType_Line : public ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimTypeBase {
+class ScriptWidgetComponentRenderPrimType_Line
+: public ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimTypeBase {
 public:
     // member variables
     // NOLINTBEGIN
@@ -45,7 +46,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

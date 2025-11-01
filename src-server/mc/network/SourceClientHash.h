@@ -14,5 +14,4 @@ public:
     SourceClientHash& operator=(SourceClientHash const&);
     SourceClientHash(SourceClientHash const&);
     SourceClientHash();
-
 };

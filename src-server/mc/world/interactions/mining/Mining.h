@@ -13,7 +13,12 @@ namespace Interactions::Mining { struct FinishMiningDependencies; }
 namespace Interactions::Mining {
 // functions
 // NOLINTBEGIN
-MCNAPI void doFinishMiningHeldItemTypeEffects(::Interactions::Mining::FinishMiningDependencies& dependencies, ::EntityContext& actor, ::ItemStack& item, ::Block const& minedBlock);
+MCNAPI void doFinishMiningHeldItemTypeEffects(
+    ::Interactions::Mining::FinishMiningDependencies& dependencies,
+    ::EntityContext&                                  actor,
+    ::ItemStack&                                      item,
+    ::Block const&                                    minedBlock
+);
 // NOLINTEND
 
-}
+} // namespace Interactions::Mining

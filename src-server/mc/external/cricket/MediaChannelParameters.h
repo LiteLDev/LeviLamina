@@ -10,8 +10,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkbcb723;
     ::ll::UntypedStorage<8, 24> mUnk9c8bef;
-    ::ll::UntypedStorage<1, 1> mUnk54612f;
-    ::ll::UntypedStorage<1, 2> mUnk353a07;
+    ::ll::UntypedStorage<1, 1>  mUnk54612f;
+    ::ll::UntypedStorage<1, 2>  mUnk353a07;
     // NOLINTEND
 
 public:
@@ -47,7 +47,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

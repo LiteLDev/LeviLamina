@@ -37,11 +37,11 @@ class Port : public ::cricket::PortInterface, public ::sigslot::has_slots<::sigs
 public:
     // Port inner types define
     enum class State : int {
-        Init = 0,
+        Init                 = 0,
         KeepAliveUntilPruned = 1,
-        Pruned = 2,
+        Pruned               = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -49,32 +49,32 @@ public:
     ::ll::UntypedStorage<8, 48> mUnk32b903;
     ::ll::UntypedStorage<8, 48> mUnkfb6f17;
     ::ll::UntypedStorage<8, 48> mUnkd8690d;
-    ::ll::UntypedStorage<8, 8> mUnk1f5d40;
-    ::ll::UntypedStorage<8, 8> mUnkef78fb;
+    ::ll::UntypedStorage<8, 8>  mUnk1f5d40;
+    ::ll::UntypedStorage<8, 8>  mUnkef78fb;
     ::ll::UntypedStorage<8, 16> mUnkee3bac;
-    ::ll::UntypedStorage<4, 4> mUnk2e7652;
-    ::ll::UntypedStorage<1, 1> mUnka1e9f2;
-    ::ll::UntypedStorage<8, 8> mUnk6a65ff;
-    ::ll::UntypedStorage<2, 2> mUnka89da2;
-    ::ll::UntypedStorage<2, 2> mUnkd9b8ef;
+    ::ll::UntypedStorage<4, 4>  mUnk2e7652;
+    ::ll::UntypedStorage<1, 1>  mUnka1e9f2;
+    ::ll::UntypedStorage<8, 8>  mUnk6a65ff;
+    ::ll::UntypedStorage<2, 2>  mUnka89da2;
+    ::ll::UntypedStorage<2, 2>  mUnkd9b8ef;
     ::ll::UntypedStorage<8, 32> mUnk72604c;
-    ::ll::UntypedStorage<4, 4> mUnk3fbd2d;
-    ::ll::UntypedStorage<4, 4> mUnkf89ead;
+    ::ll::UntypedStorage<4, 4>  mUnk3fbd2d;
+    ::ll::UntypedStorage<4, 4>  mUnkf89ead;
     ::ll::UntypedStorage<8, 32> mUnk91f197;
     ::ll::UntypedStorage<8, 32> mUnk4c6b73;
     ::ll::UntypedStorage<8, 24> mUnkd50e06;
     ::ll::UntypedStorage<8, 16> mUnkd49eb3;
-    ::ll::UntypedStorage<4, 4> mUnkd69d7a;
-    ::ll::UntypedStorage<1, 1> mUnk54ba3b;
-    ::ll::UntypedStorage<4, 4> mUnk63f381;
-    ::ll::UntypedStorage<8, 8> mUnk1da110;
-    ::ll::UntypedStorage<1, 1> mUnk2c9e2c;
+    ::ll::UntypedStorage<4, 4>  mUnkd69d7a;
+    ::ll::UntypedStorage<1, 1>  mUnk54ba3b;
+    ::ll::UntypedStorage<4, 4>  mUnk63f381;
+    ::ll::UntypedStorage<8, 8>  mUnk1da110;
+    ::ll::UntypedStorage<1, 1>  mUnk2c9e2c;
     ::ll::UntypedStorage<8, 32> mUnk56e09d;
-    ::ll::UntypedStorage<1, 1> mUnk74a12f;
-    ::ll::UntypedStorage<2, 2> mUnk69b322;
-    ::ll::UntypedStorage<4, 4> mUnkdb5cc3;
-    ::ll::UntypedStorage<8, 8> mUnkde22e1;
-    ::ll::UntypedStorage<4, 4> mUnkb0ecc0;
+    ::ll::UntypedStorage<1, 1>  mUnk74a12f;
+    ::ll::UntypedStorage<2, 2>  mUnk69b322;
+    ::ll::UntypedStorage<4, 4>  mUnkdb5cc3;
+    ::ll::UntypedStorage<8, 8>  mUnkde22e1;
+    ::ll::UntypedStorage<4, 4>  mUnkb0ecc0;
     ::ll::UntypedStorage<8, 32> mUnk637d1b;
     ::ll::UntypedStorage<8, 16> mUnk6b24c4;
     // NOLINTEND
@@ -152,7 +152,12 @@ public:
     virtual bool CanHandleIncomingPacketsFrom(::rtc::SocketAddress const&) const;
 
     // vIndex: 18
-    virtual void SendBindingErrorResponse(::cricket::StunMessage* message, ::rtc::SocketAddress const& addr, int error_code, ::std::string_view reason) /*override*/;
+    virtual void SendBindingErrorResponse(
+        ::cricket::StunMessage*     message,
+        ::rtc::SocketAddress const& addr,
+        int                         error_code,
+        ::std::string_view          reason
+    ) /*override*/;
 
     // vIndex: 27
     virtual ::std::string const& user_agent() /*override*/;
@@ -167,13 +172,21 @@ public:
     virtual ::std::string ToString() const /*override*/;
 
     // vIndex: 37
-    virtual bool ParseStunUsername(::cricket::StunMessage const* stun_msg, ::std::string* local_ufrag, ::std::string* remote_ufrag) const /*override*/;
+    virtual bool ParseStunUsername(
+        ::cricket::StunMessage const* stun_msg,
+        ::std::string*                local_ufrag,
+        ::std::string*                remote_ufrag
+    ) const /*override*/;
 
     // vIndex: 38
     virtual ::std::string CreateStunUsername(::std::string_view remote_username) const /*override*/;
 
     // vIndex: 39
-    virtual bool MaybeIceRoleConflict(::rtc::SocketAddress const& addr, ::cricket::IceMessage* stun_msg, ::std::string_view remote_ufrag) /*override*/;
+    virtual bool MaybeIceRoleConflict(
+        ::rtc::SocketAddress const& addr,
+        ::cricket::IceMessage*      stun_msg,
+        ::std::string_view          remote_ufrag
+    ) /*override*/;
 
     // vIndex: 43
     virtual void OnSentPacket(::rtc::AsyncPacketSocket*, ::rtc::SentPacket const&) = 0;
@@ -194,7 +207,13 @@ public:
     virtual void PostAddAddress(bool is_final);
 
     // vIndex: 36
-    virtual bool GetStunMessage(char const* data, uint64 size, ::rtc::SocketAddress const& addr, ::std::unique_ptr<::cricket::IceMessage>* out_msg, ::std::string* out_username) /*override*/;
+    virtual bool GetStunMessage(
+        char const*                               data,
+        uint64                                    size,
+        ::rtc::SocketAddress const&               addr,
+        ::std::unique_ptr<::cricket::IceMessage>* out_msg,
+        ::std::string*                            out_username
+    ) /*override*/;
 
     // vIndex: 35
     virtual ::rtc::DiffServCodePoint StunDscpValue() const /*override*/;
@@ -206,7 +225,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddAddress(::rtc::SocketAddress const& address, ::rtc::SocketAddress const& base_address, ::rtc::SocketAddress const& related_address, ::std::string_view protocol, ::std::string_view relay_protocol, ::std::string_view tcptype, ::webrtc::IceCandidateType type, uint type_preference, uint relay_preference, ::std::string_view url, bool is_final);
+    MCNAPI void AddAddress(
+        ::rtc::SocketAddress const& address,
+        ::rtc::SocketAddress const& base_address,
+        ::rtc::SocketAddress const& related_address,
+        ::std::string_view          protocol,
+        ::std::string_view          relay_protocol,
+        ::std::string_view          tcptype,
+        ::webrtc::IceCandidateType  type,
+        uint                        type_preference,
+        uint                        relay_preference,
+        ::std::string_view          url,
+        bool                        is_final
+    );
 
     MCNAPI void AddOrReplaceConnection(::cricket::Connection* conn);
 
@@ -240,9 +271,28 @@ public:
 
     MCNAPI void OnReadyToSend();
 
-    MCNAPI Port(::webrtc::TaskQueueBase* thread, ::webrtc::IceCandidateType type, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ::std::string_view username_fragment, ::std::string_view password, ::webrtc::FieldTrialsView const* field_trials);
+    MCNAPI Port(
+        ::webrtc::TaskQueueBase*         thread,
+        ::webrtc::IceCandidateType       type,
+        ::rtc::PacketSocketFactory*      factory,
+        ::rtc::Network const*            network,
+        ::std::string_view               username_fragment,
+        ::std::string_view               password,
+        ::webrtc::FieldTrialsView const* field_trials
+    );
 
-    MCNAPI Port(::webrtc::TaskQueueBase* thread, ::webrtc::IceCandidateType type, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ushort min_port, ushort max_port, ::std::string_view username_fragment, ::std::string_view password, ::webrtc::FieldTrialsView const* field_trials, bool shared_socket);
+    MCNAPI Port(
+        ::webrtc::TaskQueueBase*         thread,
+        ::webrtc::IceCandidateType       type,
+        ::rtc::PacketSocketFactory*      factory,
+        ::rtc::Network const*            network,
+        ushort                           min_port,
+        ushort                           max_port,
+        ::std::string_view               username_fragment,
+        ::std::string_view               password,
+        ::webrtc::FieldTrialsView const* field_trials,
+        bool                             shared_socket
+    );
 
     MCNAPI void PostDestroyIfDead(bool delayed);
 
@@ -250,7 +300,11 @@ public:
 
     MCNAPI void SendPortDestroyed(::cricket::Port* port);
 
-    MCNAPI void SendUnknownAttributesErrorResponse(::cricket::StunMessage* message, ::rtc::SocketAddress const& addr, ::std::vector<ushort> const& unknown_types);
+    MCNAPI void SendUnknownAttributesErrorResponse(
+        ::cricket::StunMessage*      message,
+        ::rtc::SocketAddress const&  addr,
+        ::std::vector<ushort> const& unknown_types
+    );
 
     MCNAPI void SetIceParameters(int component, ::std::string_view username_fragment, ::std::string_view password);
 
@@ -262,9 +316,28 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::webrtc::TaskQueueBase* thread, ::webrtc::IceCandidateType type, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ::std::string_view username_fragment, ::std::string_view password, ::webrtc::FieldTrialsView const* field_trials);
+    MCNAPI void* $ctor(
+        ::webrtc::TaskQueueBase*         thread,
+        ::webrtc::IceCandidateType       type,
+        ::rtc::PacketSocketFactory*      factory,
+        ::rtc::Network const*            network,
+        ::std::string_view               username_fragment,
+        ::std::string_view               password,
+        ::webrtc::FieldTrialsView const* field_trials
+    );
 
-    MCNAPI void* $ctor(::webrtc::TaskQueueBase* thread, ::webrtc::IceCandidateType type, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ushort min_port, ushort max_port, ::std::string_view username_fragment, ::std::string_view password, ::webrtc::FieldTrialsView const* field_trials, bool shared_socket);
+    MCNAPI void* $ctor(
+        ::webrtc::TaskQueueBase*         thread,
+        ::webrtc::IceCandidateType       type,
+        ::rtc::PacketSocketFactory*      factory,
+        ::rtc::Network const*            network,
+        ushort                           min_port,
+        ushort                           max_port,
+        ::std::string_view               username_fragment,
+        ::std::string_view               password,
+        ::webrtc::FieldTrialsView const* field_trials,
+        bool                             shared_socket
+    );
     // NOLINTEND
 
 public:
@@ -316,7 +389,12 @@ public:
 
     MCNAPI bool $CanHandleIncomingPacketsFrom(::rtc::SocketAddress const&) const;
 
-    MCNAPI void $SendBindingErrorResponse(::cricket::StunMessage* message, ::rtc::SocketAddress const& addr, int error_code, ::std::string_view reason);
+    MCNAPI void $SendBindingErrorResponse(
+        ::cricket::StunMessage*     message,
+        ::rtc::SocketAddress const& addr,
+        int                         error_code,
+        ::std::string_view          reason
+    );
 
     MCNAPI ::std::string const& $user_agent();
 
@@ -326,11 +404,19 @@ public:
 
     MCNAPI ::std::string $ToString() const;
 
-    MCNAPI bool $ParseStunUsername(::cricket::StunMessage const* stun_msg, ::std::string* local_ufrag, ::std::string* remote_ufrag) const;
+    MCNAPI bool $ParseStunUsername(
+        ::cricket::StunMessage const* stun_msg,
+        ::std::string*                local_ufrag,
+        ::std::string*                remote_ufrag
+    ) const;
 
     MCNAPI ::std::string $CreateStunUsername(::std::string_view remote_username) const;
 
-    MCNAPI bool $MaybeIceRoleConflict(::rtc::SocketAddress const& addr, ::cricket::IceMessage* stun_msg, ::std::string_view remote_ufrag);
+    MCNAPI bool $MaybeIceRoleConflict(
+        ::rtc::SocketAddress const& addr,
+        ::cricket::IceMessage*      stun_msg,
+        ::std::string_view          remote_ufrag
+    );
 
     MCNAPI void $AddPrflxCandidate(::cricket::Candidate const& local);
 
@@ -342,7 +428,13 @@ public:
 
     MCNAPI void $PostAddAddress(bool is_final);
 
-    MCNAPI bool $GetStunMessage(char const* data, uint64 size, ::rtc::SocketAddress const& addr, ::std::unique_ptr<::cricket::IceMessage>* out_msg, ::std::string* out_username);
+    MCNAPI bool $GetStunMessage(
+        char const*                               data,
+        uint64                                    size,
+        ::rtc::SocketAddress const&               addr,
+        ::std::unique_ptr<::cricket::IceMessage>* out_msg,
+        ::std::string*                            out_username
+    );
 
     MCNAPI ::rtc::DiffServCodePoint $StunDscpValue() const;
 
@@ -356,7 +448,6 @@ public:
 
     MCNAPI static void** $vftableForPortInterface();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

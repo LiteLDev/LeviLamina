@@ -22,8 +22,8 @@ public:
     ::ll::UntypedStorage<8, 24> mUnke64bef;
     ::ll::UntypedStorage<8, 24> mUnk417d8a;
     ::ll::UntypedStorage<8, 24> mUnkfe2896;
-    ::ll::UntypedStorage<4, 4> mUnk9e054b;
-    ::ll::UntypedStorage<1, 1> mUnke3e683;
+    ::ll::UntypedStorage<4, 4>  mUnk9e054b;
+    ::ll::UntypedStorage<1, 1>  mUnke3e683;
     // NOLINTEND
 
 public:
@@ -35,9 +35,20 @@ public:
     // NOLINTBEGIN
     MCNAPI void AddContent(::cricket::ContentInfo&& content);
 
-    MCNAPI void AddContent(::std::string const& name, ::cricket::MediaProtocolType type, bool rejected, ::std::unique_ptr<::cricket::MediaContentDescription> description);
+    MCNAPI void AddContent(
+        ::std::string const&                                  name,
+        ::cricket::MediaProtocolType                          type,
+        bool                                                  rejected,
+        ::std::unique_ptr<::cricket::MediaContentDescription> description
+    );
 
-    MCNAPI void AddContent(::std::string const& name, ::cricket::MediaProtocolType type, bool rejected, bool bundle_only, ::std::unique_ptr<::cricket::MediaContentDescription> description);
+    MCNAPI void AddContent(
+        ::std::string const&                                  name,
+        ::cricket::MediaProtocolType                          type,
+        bool                                                  rejected,
+        bool                                                  bundle_only,
+        ::std::unique_ptr<::cricket::MediaContentDescription> description
+    );
 
     MCNAPI void AddTransportInfo(::cricket::TransportInfo const& transport_info);
 
@@ -75,7 +86,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace cricket

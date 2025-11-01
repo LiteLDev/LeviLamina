@@ -12,11 +12,13 @@ struct ActorUniqueID;
 namespace PlayerFetchUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Player* findActivePlayerByActorUniqueID(::GameplayUserManager const& gameplayUserManager, ::ActorUniqueID actorUniqueID);
+MCNAPI ::Player*
+findActivePlayerByActorUniqueID(::GameplayUserManager const& gameplayUserManager, ::ActorUniqueID actorUniqueID);
 
-MCNAPI ::Player* findPlayer(::GameplayUserManager const& gameplayUserManager, ::std::function<bool(::Player const&)> callback);
+MCNAPI ::Player*
+findPlayer(::GameplayUserManager const& gameplayUserManager, ::std::function<bool(::Player const&)> callback);
 
 MCNAPI ::Player* findPlayerByName(::GameplayUserManager const& gameplayUserManager, ::std::string const& name);
 // NOLINTEND
 
-}
+} // namespace PlayerFetchUtils

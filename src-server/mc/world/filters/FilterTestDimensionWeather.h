@@ -16,12 +16,12 @@ class FilterTestDimensionWeather : public ::FilterTest {
 public:
     // FilterTestDimensionWeather inner types define
     enum class WeatherType : int {
-        Undefined = -1,
-        Clear = 0,
+        Undefined     = -1,
+        Clear         = 0,
         Precipitation = 1,
-        Thunderstorm = 2,
+        Thunderstorm  = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -69,5 +69,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

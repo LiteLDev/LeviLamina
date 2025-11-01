@@ -35,7 +35,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _compositeLoadChildrenBehaviors(::Json::Value value, ::std::vector<::std::unique_ptr<::BehaviorDefinition>>& childList, ::BehaviorFactory const& factory, ::BehaviorTreeDefinitionPtr ptr);
+    MCNAPI static void _compositeLoadChildrenBehaviors(
+        ::Json::Value                                           value,
+        ::std::vector<::std::unique_ptr<::BehaviorDefinition>>& childList,
+        ::BehaviorFactory const&                                factory,
+        ::BehaviorTreeDefinitionPtr                             ptr
+    );
     // NOLINTEND
 
 public:
@@ -43,5 +48,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

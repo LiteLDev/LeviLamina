@@ -15,5 +15,4 @@ public:
     ExpiringTick& operator=(ExpiringTick const&);
     ExpiringTick(ExpiringTick const&);
     ExpiringTick();
-
 };

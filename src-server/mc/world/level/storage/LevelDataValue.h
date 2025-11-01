@@ -8,7 +8,7 @@ public:
     // clang-format off
     struct Tag;
     // clang-format on
-    
+
     // LevelDataValue inner types define
     struct Tag {
     public:
@@ -16,34 +16,33 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnkfd2e2a;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Tag& operator=(Tag const&);
         Tag(Tag const&);
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI Tag();
-    
+
         MCNAPI ~Tag();
         // NOLINTEND
-    
+
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -67,5 +66,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

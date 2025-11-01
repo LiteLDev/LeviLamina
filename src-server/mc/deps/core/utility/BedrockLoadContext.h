@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/versionless/molang/MolangVersion.h"
+#include "mc/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,7 +15,7 @@ class BedrockLoadContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2> mUnk7888ec;
+    ::ll::UntypedStorage<2, 2>  mUnk7888ec;
     ::ll::UntypedStorage<8, 24> mUnk8ae26c;
     // NOLINTEND
 
@@ -28,7 +28,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BedrockLoadContext(::MolangVersion molangVersion, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCNAPI
+    BedrockLoadContext(::MolangVersion molangVersion, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
 
     MCNAPI ::BedrockLoadContext& operator=(::BedrockLoadContext&&);
 
@@ -46,5 +47,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

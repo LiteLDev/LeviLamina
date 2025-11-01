@@ -16,7 +16,6 @@ public:
     MinSizeConstraint& operator=(MinSizeConstraint const&);
     MinSizeConstraint(MinSizeConstraint const&);
     MinSizeConstraint();
-
 };
 
-}
+} // namespace cereal::internal

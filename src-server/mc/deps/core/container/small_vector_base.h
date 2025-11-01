@@ -4,8 +4,7 @@
 
 namespace Bedrock {
 
-template<typename T0>
-class small_vector_base {
-};
+template <typename T0>
+class small_vector_base {};
 
-}
+} // namespace Bedrock

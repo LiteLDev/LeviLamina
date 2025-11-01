@@ -13,5 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ExecuteEventOnBlockRequest>> mRequests;
     // NOLINTEND
-
 };

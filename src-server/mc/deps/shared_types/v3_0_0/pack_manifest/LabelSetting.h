@@ -8,7 +8,7 @@ struct LabelSetting {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk9f3393;
+    ::ll::UntypedStorage<1, 1>  mUnk9f3393;
     ::ll::UntypedStorage<8, 32> mUnk2d45b2;
     // NOLINTEND
 
@@ -21,7 +21,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting& operator=(::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting&&);
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting&
+    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting&&);
 
     MCNAPI ~LabelSetting();
     // NOLINTEND
@@ -37,7 +38,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v3_0_0::PackManifestDefinition

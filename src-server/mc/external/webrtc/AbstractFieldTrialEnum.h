@@ -11,7 +11,7 @@ class AbstractFieldTrialEnum : public ::webrtc::FieldTrialParameterInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7884cb;
+    ::ll::UntypedStorage<4, 4>  mUnk7884cb;
     ::ll::UntypedStorage<8, 16> mUnkfd8710;
     ::ll::UntypedStorage<8, 16> mUnka16f82;
     // NOLINTEND
@@ -37,7 +37,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

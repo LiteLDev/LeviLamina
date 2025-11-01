@@ -61,7 +61,7 @@ public:
     virtual ::webrtc::RTCError SetParameters(::webrtc::RtpParameters const& parameters) = 0;
 
     // vIndex: 14
-    virtual void SetParametersAsync(::webrtc::RtpParameters const&, ::absl::AnyInvocable<void(::webrtc::RTCError)&&>);
+    virtual void SetParametersAsync(::webrtc::RtpParameters const&, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>);
 
     // vIndex: 15
     virtual ::webrtc::scoped_refptr<::webrtc::DtmfSenderInterface> GetDtmfSender() const = 0;
@@ -73,7 +73,8 @@ public:
     virtual ::webrtc::scoped_refptr<::webrtc::FrameEncryptorInterface> GetFrameEncryptor() const = 0;
 
     // vIndex: 18
-    virtual void SetEncoderToPacketizerFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>) = 0;
+    virtual void
+        SetEncoderToPacketizerFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>) = 0;
 
     // vIndex: 19
     virtual void SetEncoderSelector(::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface>) = 0;
@@ -87,7 +88,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

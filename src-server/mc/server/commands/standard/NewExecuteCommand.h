@@ -34,171 +34,172 @@ public:
     // clang-format off
     class ExecuteChainedSubcommand;
     // clang-format on
-    
+
     // NewExecuteCommand inner types define
     class ExecuteChainedSubcommand : public ::CommandChainedSubcommand {
     public:
         // ExecuteChainedSubcommand inner types define
         enum class Subcommand : int {
-            None = 0,
-            As = 1,
-            At = 2,
-            In = 3,
+            None       = 0,
+            As         = 1,
+            At         = 2,
+            In         = 3,
             Positioned = 4,
-            Rotated = 5,
-            Facing = 6,
-            Entity = 7,
-            Align = 8,
-            Anchored = 9,
-            If = 10,
-            Unless = 11,
-            Run = 12,
+            Rotated    = 5,
+            Facing     = 6,
+            Entity     = 7,
+            Align      = 8,
+            Anchored   = 9,
+            If         = 10,
+            Unless     = 11,
+            Run        = 12,
         };
-        
+
         enum class ConditionSubcommand : int {
-            None = 0,
-            Block = 1,
+            None   = 0,
+            Block  = 1,
             Blocks = 2,
             Entity = 3,
-            Score = 4,
+            Score  = 4,
         };
-        
+
         enum class ScanMode : int {
-            All = 0,
+            All    = 0,
             Masked = 1,
         };
-        
+
         enum class ScoreRangeMode : int {
             Off = 0,
-            On = 1,
+            On  = 1,
         };
-        
+
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
         virtual ::std::string getCommandName() const /*override*/;
-    
+
         // vIndex: 0
         virtual ~ExecuteChainedSubcommand() /*override*/ = default;
         // NOLINTEND
-    
+
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static ::std::string getSubcommandName(::NewExecuteCommand::ExecuteChainedSubcommand::Subcommand subcommand);
-    
+        MCNAPI static ::std::string
+        getSubcommandName(::NewExecuteCommand::ExecuteChainedSubcommand::Subcommand subcommand);
+
         MCNAPI static void setup(::CommandRegistry& registry);
         // NOLINTEND
-    
+
     public:
         // static variables
         // NOLINTBEGIN
         MCNAPI static char const*& CHAINED_OPTION_0();
-    
+
         MCNAPI static char const*& CONDITION_SUBCOMMAND_OPTION_BLOCK();
-    
+
         MCNAPI static char const*& CONDITION_SUBCOMMAND_OPTION_BLOCKS();
-    
+
         MCNAPI static char const*& CONDITION_SUBCOMMAND_OPTION_ENTITY();
-    
+
         MCNAPI static char const*& CONDITION_SUBCOMMAND_OPTION_SCORE();
-    
+
         MCNAPI static char const*& SUBCOMMAND_ALIGN();
-    
+
         MCNAPI static char const*& SUBCOMMAND_ANCHORED();
-    
+
         MCNAPI static char const*& SUBCOMMAND_AS();
-    
+
         MCNAPI static char const*& SUBCOMMAND_AT();
-    
+
         MCNAPI static char const*& SUBCOMMAND_BLOCK();
-    
+
         MCNAPI static char const*& SUBCOMMAND_BLOCKS();
-    
+
         MCNAPI static char const*& SUBCOMMAND_ENTITY();
-    
+
         MCNAPI static char const*& SUBCOMMAND_FACING();
-    
+
         MCNAPI static char const*& SUBCOMMAND_IF();
-    
+
         MCNAPI static char const*& SUBCOMMAND_IN();
-    
+
         MCNAPI static char const*& SUBCOMMAND_OPTION_ALIGN();
-    
+
         MCNAPI static char const*& SUBCOMMAND_OPTION_ANCHORED();
-    
+
         MCNAPI static char const*& SUBCOMMAND_OPTION_AS();
-    
+
         MCNAPI static char const*& SUBCOMMAND_OPTION_AT();
-    
+
         MCNAPI static char const*& SUBCOMMAND_OPTION_ENTITY();
-    
+
         MCNAPI static char const*& SUBCOMMAND_OPTION_FACING();
-    
+
         MCNAPI static char const*& SUBCOMMAND_OPTION_IF_UNLESS();
-    
+
         MCNAPI static char const*& SUBCOMMAND_OPTION_IN();
-    
+
         MCNAPI static char const*& SUBCOMMAND_OPTION_POSITIONED();
-    
+
         MCNAPI static char const*& SUBCOMMAND_OPTION_ROTATED();
-    
+
         MCNAPI static char const*& SUBCOMMAND_OPTION_RUN();
-    
+
         MCNAPI static char const*& SUBCOMMAND_POSITIONED();
-    
+
         MCNAPI static char const*& SUBCOMMAND_ROTATED();
-    
+
         MCNAPI static char const*& SUBCOMMAND_RUN();
-    
+
         MCNAPI static char const*& SUBCOMMAND_SCORE();
-    
+
         MCNAPI static char const*& SUBCOMMAND_UNLESS();
         // NOLINTEND
-    
+
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI ::std::string $getCommandName() const;
         // NOLINTEND
-    
+
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::NewExecuteCommand::ExecuteChainedSubcommand::Subcommand> mSubcommandOption;
     ::ll::TypedStorage<4, 4, ::NewExecuteCommand::ExecuteChainedSubcommand::Subcommand> mSecondarySubcommandOption;
-    ::ll::TypedStorage<4, 4, ::NewExecuteCommand::ExecuteChainedSubcommand::ConditionSubcommand> mConditionSubcommandOption;
-    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mTargets;
-    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mSources;
-    ::ll::TypedStorage<8, 32, ::std::string> mAxesAlignment;
-    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorLocation> mActorLocation;
-    ::ll::TypedStorage<4, 16, ::CommandPositionFloat> mPosition;
-    ::ll::TypedStorage<4, 16, ::CommandPosition> mBlockPosition;
-    ::ll::TypedStorage<4, 16, ::CommandPosition> mEndPosition;
-    ::ll::TypedStorage<4, 16, ::CommandPosition> mDestination;
-    ::ll::TypedStorage<4, 8, ::RelativeFloat> mRotationX;
-    ::ll::TypedStorage<4, 8, ::RelativeFloat> mRotationY;
-    ::ll::TypedStorage<4, 4, ::DimensionType> mTargetDimension;
-    ::ll::TypedStorage<8, 8, ::CommandBlockName> mBlock;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockStateCommandParam>> mBlockStates;
-    ::ll::TypedStorage<4, 4, int> mBlockData;
-    ::ll::TypedStorage<4, 4, ::NewExecuteCommand::ExecuteChainedSubcommand::ScanMode> mScanMode;
-    ::ll::TypedStorage<8, 32, ::std::string> mTargetScoreObjective;
-    ::ll::TypedStorage<8, 32, ::std::string> mSourceScoreObjective;
-    ::ll::TypedStorage<1, 1, ::CommandCompareOperator> mCompareOperator;
+    ::ll::TypedStorage<4, 4, ::NewExecuteCommand::ExecuteChainedSubcommand::ConditionSubcommand>
+                                                                                            mConditionSubcommandOption;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>                                  mTargets;
+    ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>>                                  mSources;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                mAxesAlignment;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorLocation>                          mActorLocation;
+    ::ll::TypedStorage<4, 16, ::CommandPositionFloat>                                       mPosition;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                                            mBlockPosition;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                                            mEndPosition;
+    ::ll::TypedStorage<4, 16, ::CommandPosition>                                            mDestination;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>                                               mRotationX;
+    ::ll::TypedStorage<4, 8, ::RelativeFloat>                                               mRotationY;
+    ::ll::TypedStorage<4, 4, ::DimensionType>                                               mTargetDimension;
+    ::ll::TypedStorage<8, 8, ::CommandBlockName>                                            mBlock;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockStateCommandParam>>                      mBlockStates;
+    ::ll::TypedStorage<4, 4, int>                                                           mBlockData;
+    ::ll::TypedStorage<4, 4, ::NewExecuteCommand::ExecuteChainedSubcommand::ScanMode>       mScanMode;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                mTargetScoreObjective;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                mSourceScoreObjective;
+    ::ll::TypedStorage<1, 1, ::CommandCompareOperator>                                      mCompareOperator;
     ::ll::TypedStorage<4, 4, ::NewExecuteCommand::ExecuteChainedSubcommand::ScoreRangeMode> mRangeMode;
-    ::ll::TypedStorage<4, 12, ::CommandIntegerRange> mRange;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Command>> mCommand;
-    ::ll::TypedStorage<8, 16, ::NewExecuteCommand::ExecuteChainedSubcommand> mChainedCommand;
+    ::ll::TypedStorage<4, 12, ::CommandIntegerRange>                                        mRange;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Command>>                                  mCommand;
+    ::ll::TypedStorage<8, 16, ::NewExecuteCommand::ExecuteChainedSubcommand>                mChainedCommand;
     // NOLINTEND
 
 public:
@@ -220,11 +221,26 @@ public:
 
     MCAPI void _commandOutputSuccess(::CommandOutput& output, ::std::optional<int> const& testPassCount) const;
 
-    MCAPI bool _detectConditionSubcommand(::CommandOrigin const& origin, ::CommandOutput& output, ::std::optional<int>& testPassCount) const;
+    MCAPI bool _detectConditionSubcommand(
+        ::CommandOrigin const& origin,
+        ::CommandOutput&       output,
+        ::std::optional<int>&  testPassCount
+    ) const;
 
-    MCAPI ::std::optional<::ScoreInfo> _getScoreFromSelectorOnObjective(::Scoreboard const& scoreboard, ::CommandSelector<::Actor> const& selector, ::std::string const& objectiveName, ::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCAPI ::std::optional<::ScoreInfo> _getScoreFromSelectorOnObjective(
+        ::Scoreboard const&               scoreboard,
+        ::CommandSelector<::Actor> const& selector,
+        ::std::string const&              objectiveName,
+        ::CommandOrigin const&            origin,
+        ::CommandOutput&                  output
+    ) const;
 
-    MCAPI ::std::optional<::ScoreboardId> _getScoreboardIdForSelector(::Scoreboard const& scoreboard, ::CommandSelector<::Actor> const& selector, ::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCAPI ::std::optional<::ScoreboardId> _getScoreboardIdForSelector(
+        ::Scoreboard const&               scoreboard,
+        ::CommandSelector<::Actor> const& selector,
+        ::CommandOrigin const&            origin,
+        ::CommandOutput&                  output
+    ) const;
     // NOLINTEND
 
 public:
@@ -256,5 +272,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

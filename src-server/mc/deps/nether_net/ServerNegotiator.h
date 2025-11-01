@@ -51,7 +51,8 @@ public:
     virtual void _onSetRemoteDescription(::webrtc::RTCError result) /*override*/;
 
     // vIndex: 14
-    virtual void _onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const& answerOrError) /*override*/;
+    virtual void
+    _onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const& answerOrError) /*override*/;
 
     // vIndex: 15
     virtual void _onSetLocalDescription(::webrtc::RTCError result) /*override*/;
@@ -69,17 +70,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ServerNegotiator(::NetherNet::ContextProxy const& ctx, ::webrtc::scoped_refptr<::webrtc::PeerConnectionFactory> factory, ::webrtc::scoped_refptr<::NetherNet::PeerConnectionObserver> observer, ::brstd::move_only_function<void(::std::variant<::NetherNet::ConnectRequest, ::NetherNet::ConnectResponse, ::NetherNet::ConnectError, ::NetherNet::CandidateAdd> const&)const> sendMessage, uint64 sessionId);
+    MCNAPI ServerNegotiator(
+        ::NetherNet::ContextProxy const&                                           ctx,
+        ::webrtc::scoped_refptr<::webrtc::PeerConnectionFactory>                   factory,
+        ::webrtc::scoped_refptr<::NetherNet::PeerConnectionObserver>               observer,
+        ::brstd::move_only_function<void(::std::variant<
+                                         ::NetherNet::ConnectRequest,
+                                         ::NetherNet::ConnectResponse,
+                                         ::NetherNet::ConnectError,
+                                         ::NetherNet::CandidateAdd> const&) const> sendMessage,
+        uint64                                                                     sessionId
+    );
 
     MCNAPI void _onIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState newState);
 
-    MCNAPI void createAnswer(::webrtc::PeerConnectionInterface::RTCConfiguration const& config, ::NetherNet::ConnectRequest const& offer, ::brstd::move_only_function<void(::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError>)>&& onComplete);
+    MCNAPI void createAnswer(
+        ::webrtc::PeerConnectionInterface::RTCConfiguration const& config,
+        ::NetherNet::ConnectRequest const&                         offer,
+        ::brstd::move_only_function<void(
+            ::Bedrock::Result<::webrtc::scoped_refptr<::webrtc::PeerConnectionInterface>, ::NetherNet::ESessionError>
+        )>&&                                                       onComplete
+    );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::NetherNet::ContextProxy const& ctx, ::webrtc::scoped_refptr<::webrtc::PeerConnectionFactory> factory, ::webrtc::scoped_refptr<::NetherNet::PeerConnectionObserver> observer, ::brstd::move_only_function<void(::std::variant<::NetherNet::ConnectRequest, ::NetherNet::ConnectResponse, ::NetherNet::ConnectError, ::NetherNet::CandidateAdd> const&)const> sendMessage, uint64 sessionId);
+    MCNAPI void* $ctor(
+        ::NetherNet::ContextProxy const&                                           ctx,
+        ::webrtc::scoped_refptr<::webrtc::PeerConnectionFactory>                   factory,
+        ::webrtc::scoped_refptr<::NetherNet::PeerConnectionObserver>               observer,
+        ::brstd::move_only_function<void(::std::variant<
+                                         ::NetherNet::ConnectRequest,
+                                         ::NetherNet::ConnectResponse,
+                                         ::NetherNet::ConnectError,
+                                         ::NetherNet::CandidateAdd> const&) const> sendMessage,
+        uint64                                                                     sessionId
+    );
     // NOLINTEND
 
 public:
@@ -107,7 +134,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace NetherNet

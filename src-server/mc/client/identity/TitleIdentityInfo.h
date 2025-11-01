@@ -4,7 +4,6 @@
 
 namespace Social {
 
-class TitleIdentityInfo {
-};
+class TitleIdentityInfo {};
 
-}
+} // namespace Social

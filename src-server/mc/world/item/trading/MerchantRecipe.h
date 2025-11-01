@@ -24,17 +24,17 @@ public:
     ::ll::TypedStorage<8, 128, ::ItemInstance> mBuyA;
     ::ll::TypedStorage<8, 128, ::ItemInstance> mBuyB;
     ::ll::TypedStorage<8, 128, ::ItemInstance> mSell;
-    ::ll::TypedStorage<4, 4, int> mTier;
-    ::ll::TypedStorage<4, 4, int> mUses;
-    ::ll::TypedStorage<4, 4, int> mMaxUses;
-    ::ll::TypedStorage<4, 4, uint> mTraderExp;
-    ::ll::TypedStorage<1, 1, bool> mRewardExp;
-    ::ll::TypedStorage<4, 4, int> mDemand;
-    ::ll::TypedStorage<4, 4, int> mBuyCountA;
-    ::ll::TypedStorage<4, 4, int> mBuyCountB;
-    ::ll::TypedStorage<4, 4, float> mPriceMultiplierA;
-    ::ll::TypedStorage<4, 4, float> mPriceMultiplierB;
-    ::ll::TypedStorage<4, 4, ::RecipeNetId> mRecipeNetId;
+    ::ll::TypedStorage<4, 4, int>              mTier;
+    ::ll::TypedStorage<4, 4, int>              mUses;
+    ::ll::TypedStorage<4, 4, int>              mMaxUses;
+    ::ll::TypedStorage<4, 4, uint>             mTraderExp;
+    ::ll::TypedStorage<1, 1, bool>             mRewardExp;
+    ::ll::TypedStorage<4, 4, int>              mDemand;
+    ::ll::TypedStorage<4, 4, int>              mBuyCountA;
+    ::ll::TypedStorage<4, 4, int>              mBuyCountB;
+    ::ll::TypedStorage<4, 4, float>            mPriceMultiplierA;
+    ::ll::TypedStorage<4, 4, float>            mPriceMultiplierB;
+    ::ll::TypedStorage<4, 4, ::RecipeNetId>    mRecipeNetId;
     // NOLINTEND
 
 public:
@@ -54,7 +54,14 @@ public:
 
     MCAPI MerchantRecipe(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
 
-    MCAPI void calculateDemandPrices(int minorPositiveGossip, int majorPositiveGossip, int nearbyCuredDiscount, int heroEffectAmplifier, bool hasHeroOfTheVillage, ::BaseGameVersion baseGameVersion);
+    MCAPI void calculateDemandPrices(
+        int               minorPositiveGossip,
+        int               majorPositiveGossip,
+        int               nearbyCuredDiscount,
+        int               heroEffectAmplifier,
+        bool              hasHeroOfTheVillage,
+        ::BaseGameVersion baseGameVersion
+    );
 
     MCAPI ::std::unique_ptr<::CompoundTag> createTag(bool includeNetInfo, ::SaveContext const& saveContext) const;
 
@@ -88,5 +95,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

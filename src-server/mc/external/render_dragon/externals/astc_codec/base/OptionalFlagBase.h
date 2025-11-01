@@ -16,7 +16,6 @@ public:
     OptionalFlagBase& operator=(OptionalFlagBase const&);
     OptionalFlagBase(OptionalFlagBase const&);
     OptionalFlagBase();
-
 };
 
-}
+} // namespace astc_codec::base::details

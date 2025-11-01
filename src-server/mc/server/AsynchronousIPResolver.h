@@ -8,24 +8,23 @@ public:
     // clang-format off
     struct ResolvedIp;
     // clang-format on
-    
+
     // AsynchronousIPResolver inner types define
     struct ResolvedIp {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk2835c4;
-        ::ll::UntypedStorage<1, 1> mUnkcaa023;
+        ::ll::UntypedStorage<1, 1>  mUnkcaa023;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ResolvedIp& operator=(ResolvedIp const&);
         ResolvedIp(ResolvedIp const&);
         ResolvedIp();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -61,5 +60,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };

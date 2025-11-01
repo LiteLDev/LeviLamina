@@ -4,7 +4,6 @@
 
 namespace Social {
 
-class FriendList {
-};
+class FriendList {};
 
-}
+} // namespace Social

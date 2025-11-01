@@ -161,4 +161,4 @@ public:
     explicit operator bool() const noexcept { return mStorage.vfptr != nullptr; }
 };
 
-}
+} // namespace brstd::detail::function

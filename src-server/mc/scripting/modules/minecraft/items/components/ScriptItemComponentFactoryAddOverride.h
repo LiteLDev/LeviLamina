@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template<typename T0>
-class ScriptItemComponentFactoryAddOverride {
-};
+template <typename T0>
+class ScriptItemComponentFactoryAddOverride {};
 
-}
+} // namespace ScriptModuleMinecraft

@@ -15,36 +15,35 @@ public:
     // clang-format off
     struct State;
     // clang-format on
-    
+
     // JSONCppSchemaReaderBase inner types define
     struct State {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnke8c05a;
+        ::ll::UntypedStorage<8, 8>  mUnke8c05a;
         ::ll::UntypedStorage<8, 16> mUnka2d671;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         State& operator=(State const&);
         State(State const&);
         State();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~State();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -228,7 +227,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace cereal

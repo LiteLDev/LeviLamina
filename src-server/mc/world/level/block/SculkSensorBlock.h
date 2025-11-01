@@ -45,7 +45,9 @@ public:
     virtual bool isSignalSource() const /*override*/;
 
     // vIndex: 54
-    virtual bool shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const /*override*/;
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
 
     // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
@@ -60,10 +62,15 @@ public:
     virtual bool hasComparatorSignal() const /*override*/;
 
     // vIndex: 105
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const /*override*/;
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
+        /*override*/;
 
     // vIndex: 18
-    virtual bool liquidCanFlowIntoFromDirection(uchar flowIntoFacing, ::std::function<::Block const&(::BlockPos const&)> const& getBlock, ::BlockPos const& pos) const /*override*/;
+    virtual bool liquidCanFlowIntoFromDirection(
+        uchar                                                     flowIntoFacing,
+        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
+        ::BlockPos const&                                         pos
+    ) const /*override*/;
 
     // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -87,9 +94,16 @@ public:
 
     MCAPI static void _setInactivePhase(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
-    MCAPI static void _tryResonateVibration(::BlockSource& region, ::BlockPos const& pos, ::Actor* source, int vibrationFrequency);
+    MCAPI static void
+    _tryResonateVibration(::BlockSource& region, ::BlockPos const& pos, ::Actor* source, int vibrationFrequency);
 
-    MCAPI static void setActivePhase(::BlockSource& region, ::BlockPos const& pos, ::Actor* source, int redstoneStrength, int vibrationFrequency);
+    MCAPI static void setActivePhase(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor*          source,
+        int               redstoneStrength,
+        int               vibrationFrequency
+    );
     // NOLINTEND
 
 public:
@@ -103,7 +117,8 @@ public:
 
     MCFOLD bool $isSignalSource() const;
 
-    MCFOLD bool $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+    MCFOLD bool
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
@@ -115,7 +130,11 @@ public:
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCFOLD bool $liquidCanFlowIntoFromDirection(uchar flowIntoFacing, ::std::function<::Block const&(::BlockPos const&)> const& getBlock, ::BlockPos const& pos) const;
+    MCFOLD bool $liquidCanFlowIntoFromDirection(
+        uchar                                                     flowIntoFacing,
+        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
+        ::BlockPos const&                                         pos
+    ) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
@@ -125,5 +144,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

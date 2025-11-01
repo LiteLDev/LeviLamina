@@ -25,5 +25,4 @@ public:
     // vIndex: 0
     virtual ~HC_MOCK_CALL() /*override*/ = default;
     // NOLINTEND
-
 };

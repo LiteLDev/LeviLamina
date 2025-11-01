@@ -14,8 +14,8 @@ struct MolangProgramBuildState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk9b2202;
-    ::ll::UntypedStorage<1, 1> mUnkae9e01;
+    ::ll::UntypedStorage<8, 8>  mUnk9b2202;
+    ::ll::UntypedStorage<1, 1>  mUnkae9e01;
     ::ll::UntypedStorage<8, 24> mUnk15adb4;
     // NOLINTEND
 
@@ -32,7 +32,13 @@ public:
 
     MCNAPI void emplaceInstruction(::std::unique_ptr<::Molang::details::IInstruction> instruction);
 
-    MCNAPI void insertJumpWithMaddAtIndex(uint64 instructionIndexToPutThisInstruction, uint64 instructionToJumpTo, float mulValue, float addValue, ::brstd::source_location source);
+    MCNAPI void insertJumpWithMaddAtIndex(
+        uint64                   instructionIndexToPutThisInstruction,
+        uint64                   instructionToJumpTo,
+        float                    mulValue,
+        float                    addValue,
+        ::brstd::source_location source
+    );
 
     MCNAPI uint64 numInstructions() const;
 
@@ -40,7 +46,13 @@ public:
 
     MCNAPI void popLoopScope(uint64 instructionIndex);
 
-    MCNAPI void pushLoopScope(uint64 loopScopeInitializationInstructionIndex, uint64 loopRepeatLogicInstructionIndex, uint64 loopCleanupInstructionIndex, uint64 nextStatementIndex, ::brstd::source_location source);
+    MCNAPI void pushLoopScope(
+        uint64                   loopScopeInitializationInstructionIndex,
+        uint64                   loopRepeatLogicInstructionIndex,
+        uint64                   loopCleanupInstructionIndex,
+        uint64                   nextStatementIndex,
+        ::brstd::source_location source
+    );
 
     MCNAPI void pushReturnValue(::brstd::source_location source);
 
@@ -54,7 +66,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Molang::details

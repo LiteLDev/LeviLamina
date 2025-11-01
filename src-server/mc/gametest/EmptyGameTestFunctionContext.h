@@ -12,5 +12,4 @@ public:
     // vIndex: 0
     virtual ~EmptyGameTestFunctionContext() /*override*/ = default;
     // NOLINTEND
-
 };

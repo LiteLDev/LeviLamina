@@ -18,7 +18,6 @@ public:
     PersistenceGroupCreationOptions& operator=(PersistenceGroupCreationOptions const&);
     PersistenceGroupCreationOptions(PersistenceGroupCreationOptions const&);
     PersistenceGroupCreationOptions();
-
 };
 
-}
+} // namespace Editor::Services

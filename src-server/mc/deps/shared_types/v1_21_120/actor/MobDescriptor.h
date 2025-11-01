@@ -14,17 +14,17 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 328> mUnk5d1c1c;
-    ::ll::UntypedStorage<4, 4> mUnk3f04ac;
-    ::ll::UntypedStorage<4, 4> mUnka8872d;
-    ::ll::UntypedStorage<4, 4> mUnk898ff4;
-    ::ll::UntypedStorage<4, 4> mUnkad3e37;
-    ::ll::UntypedStorage<4, 4> mUnk76d8cd;
-    ::ll::UntypedStorage<1, 1> mUnkcbdf3e;
-    ::ll::UntypedStorage<1, 1> mUnkaf6d67;
-    ::ll::UntypedStorage<4, 4> mUnk6ddb4b;
-    ::ll::UntypedStorage<4, 4> mUnk9beac5;
-    ::ll::UntypedStorage<1, 2> mUnkdc827c;
-    ::ll::UntypedStorage<4, 4> mUnkeb6de0;
+    ::ll::UntypedStorage<4, 4>   mUnk3f04ac;
+    ::ll::UntypedStorage<4, 4>   mUnka8872d;
+    ::ll::UntypedStorage<4, 4>   mUnk898ff4;
+    ::ll::UntypedStorage<4, 4>   mUnkad3e37;
+    ::ll::UntypedStorage<4, 4>   mUnk76d8cd;
+    ::ll::UntypedStorage<1, 1>   mUnkcbdf3e;
+    ::ll::UntypedStorage<1, 1>   mUnkaf6d67;
+    ::ll::UntypedStorage<4, 4>   mUnk6ddb4b;
+    ::ll::UntypedStorage<4, 4>   mUnk9beac5;
+    ::ll::UntypedStorage<1, 2>   mUnkdc827c;
+    ::ll::UntypedStorage<4, 4>   mUnkeb6de0;
     // NOLINTEND
 
 public:
@@ -60,7 +60,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_120

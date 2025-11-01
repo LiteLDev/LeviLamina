@@ -26,7 +26,12 @@ public:
     virtual ~IEntitySystemsCollection() = default;
 
     // vIndex: 1
-    virtual void registerTickingSystem(::gsl::span<::Bedrock::typeid_t<::SystemCategory> const>, ::std::unique_ptr<::ITickingSystem>, ::SystemInfo const&, ::EntitySystemTickingMode) = 0;
+    virtual void registerTickingSystem(
+        ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const>,
+        ::std::unique_ptr<::ITickingSystem>,
+        ::SystemInfo const&,
+        ::EntitySystemTickingMode
+    ) = 0;
 
     // vIndex: 2
     virtual void registerSystem(::std::unique_ptr<::ISystem>, ::SystemInfo const&) = 0;
@@ -35,10 +40,18 @@ public:
     virtual void foreachSystem(::std::function<void(::ISystem&)> const&) = 0;
 
     // vIndex: 4
-    virtual void foreachTickingSystem(::EntitySystemsFilter const&, ::std::function<void(::ITickingSystem&, ::TickingSystemId)> const&, bool) = 0;
+    virtual void foreachTickingSystem(
+        ::EntitySystemsFilter const&,
+        ::std::function<void(::ITickingSystem&, ::TickingSystemId)> const&,
+        bool
+    ) = 0;
 
     // vIndex: 5
-    virtual void foreachSingleTickingSystem(::EntitySystemsFilter const&, ::std::function<void(::ITickingSystem&, ::TickingSystemId)> const&, bool) = 0;
+    virtual void foreachSingleTickingSystem(
+        ::EntitySystemsFilter const&,
+        ::std::function<void(::ITickingSystem&, ::TickingSystemId)> const&,
+        bool
+    ) = 0;
 
     // vIndex: 6
     virtual ::SystemInfo const* getSystemInfoForTickingSystemId(::TickingSystemId) const = 0;
@@ -64,5 +77,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

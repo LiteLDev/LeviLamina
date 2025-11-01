@@ -13,4 +13,4 @@ namespace ClimbingLadderBlockSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-}
+} // namespace ClimbingLadderBlockSystem

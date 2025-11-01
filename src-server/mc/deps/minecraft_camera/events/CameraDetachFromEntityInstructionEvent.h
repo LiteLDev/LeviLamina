@@ -2,5 +2,4 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct CameraDetachFromEntityInstructionEvent {
-};
+struct CameraDetachFromEntityInstructionEvent {};

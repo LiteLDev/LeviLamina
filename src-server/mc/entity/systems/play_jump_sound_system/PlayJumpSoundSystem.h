@@ -16,4 +16,4 @@ namespace PlayJumpSoundSystem {
 MCNAPI ::TickingSystemWithInfo createSystem(::PlayJumpSoundSystem::SoundType jumpType);
 // NOLINTEND
 
-}
+} // namespace PlayJumpSoundSystem

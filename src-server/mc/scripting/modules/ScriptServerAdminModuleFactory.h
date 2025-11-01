@@ -41,9 +41,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptServerAdminModuleFactory(::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager, ::Level* level);
+    MCNAPI ScriptServerAdminModuleFactory(
+        ::Bedrock::NonOwnerPointer<::ScriptPackConfigurationManager> packConfigManager,
+        ::Level*                                                     level
+    );
 
-    MCNAPI ::Scripting::ModuleBinding _generateBindings(::Scripting::ModuleBindingBuilder& moduleBuilder, ::std::optional<::Scripting::ContextConfig> contextConfig, bool allowUntagged, ::std::vector<::std::string> const& allowedTags, ::Level* level);
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(
+        ::Scripting::ModuleBindingBuilder&          moduleBuilder,
+        ::std::optional<::Scripting::ContextConfig> contextConfig,
+        bool                                        allowUntagged,
+        ::std::vector<::std::string> const&         allowedTags,
+        ::Level*                                    level
+    );
     // NOLINTEND
 
 public:
@@ -71,5 +80,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

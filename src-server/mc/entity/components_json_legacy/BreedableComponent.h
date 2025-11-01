@@ -25,7 +25,7 @@ public:
     // clang-format off
     struct MatingResult;
     // clang-format on
-    
+
     // BreedableComponent inner types define
     struct MatingResult {
     public:
@@ -33,36 +33,35 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnk464dae;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         MatingResult& operator=(MatingResult const&);
         MatingResult(MatingResult const&);
         MatingResult();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~MatingResult();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::BreedableDefinition const*> mStaticData;
-    ::ll::TypedStorage<4, 4, int> mLoveTimer;
-    ::ll::TypedStorage<4, 4, int> mBreedCooldown;
-    ::ll::TypedStorage<4, 4, int> mBreedCooldownTime;
-    ::ll::TypedStorage<1, 1, bool> mCausesPregnancy;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mLoveCause;
+    ::ll::TypedStorage<4, 4, int>                          mLoveTimer;
+    ::ll::TypedStorage<4, 4, int>                          mBreedCooldown;
+    ::ll::TypedStorage<4, 4, int>                          mBreedCooldownTime;
+    ::ll::TypedStorage<1, 1, bool>                         mCausesPregnancy;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID>              mLoveCause;
     // NOLINTEND
 
 public:
@@ -96,7 +95,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void setOffspringAttributesWithParentCentricBlending(::MutableAttributeWithContext& offspring, ::AttributeInstance const& owner, ::AttributeInstance const& partner, ::IRandom& random, float attributeRangeMin, float attributeRangeMax);
+    MCNAPI static void setOffspringAttributesWithParentCentricBlending(
+        ::MutableAttributeWithContext& offspring,
+        ::AttributeInstance const&     owner,
+        ::AttributeInstance const&     partner,
+        ::IRandom&                     random,
+        float                          attributeRangeMin,
+        float                          attributeRangeMax
+    );
     // NOLINTEND
-
 };

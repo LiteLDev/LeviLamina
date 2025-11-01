@@ -5,7 +5,7 @@
 namespace AgentMoveSystem {
 
 enum class MoveResult : int {
-    Moving = 0,
+    Moving  = 0,
     Blocked = 1,
     Reached = 2,
 };

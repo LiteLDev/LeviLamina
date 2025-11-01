@@ -22,7 +22,6 @@ public:
     BandwidthEstimationInfo& operator=(BandwidthEstimationInfo const&);
     BandwidthEstimationInfo(BandwidthEstimationInfo const&);
     BandwidthEstimationInfo();
-
 };
 
-}
+} // namespace cricket

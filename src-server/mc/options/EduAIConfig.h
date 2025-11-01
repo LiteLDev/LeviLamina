@@ -14,5 +14,4 @@ public:
     EduAIConfig& operator=(EduAIConfig const&);
     EduAIConfig(EduAIConfig const&);
     EduAIConfig();
-
 };

@@ -18,5 +18,4 @@ public:
     Paddle& operator=(Paddle const&);
     Paddle(Paddle const&);
     Paddle();
-
 };

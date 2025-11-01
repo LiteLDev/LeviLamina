@@ -16,14 +16,14 @@ struct ScriptWeatherChangedBeforeEvent {
 public:
     // ScriptWeatherChangedBeforeEvent inner types define
     using WeatherType = ::ScriptModuleMinecraft::ScriptWeatherType;
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptWeatherType const> mPreviousWeatherType;
-    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptWeatherType> mNewWeatherType;
-    ::ll::TypedStorage<4, 4, int> mDuration;
-    ::ll::TypedStorage<1, 1, bool> mCancel;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptWeatherType>       mNewWeatherType;
+    ::ll::TypedStorage<4, 4, int>                                              mDuration;
+    ::ll::TypedStorage<1, 1, bool>                                             mCancel;
     // NOLINTEND
 
 public:
@@ -31,7 +31,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -22,7 +22,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string getBytes(uint amount);
     // NOLINTEND
-
 };
 
-}
+} // namespace Crypto::Random

@@ -23,7 +23,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::SharedTypes::v1_21_20::PoolAliases::Random& operator=(::SharedTypes::v1_21_20::PoolAliases::Random&&);
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_20::PoolAliases

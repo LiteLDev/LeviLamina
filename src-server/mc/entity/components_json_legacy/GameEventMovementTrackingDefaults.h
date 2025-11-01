@@ -12,4 +12,4 @@ MCNAPI bool const& EMIT_MOVE();
 MCNAPI bool const& EMIT_SWIM();
 // NOLINTEND
 
-}
+} // namespace GameEventMovementTrackingDefaults

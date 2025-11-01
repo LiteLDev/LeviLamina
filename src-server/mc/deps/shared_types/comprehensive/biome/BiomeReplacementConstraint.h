@@ -14,7 +14,8 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 namespace SharedTypes::Comprehensive {
 
-class BiomeReplacementConstraint : public ::cereal::ConstraintHandle<::SharedTypes::Comprehensive::BiomeReplacementConstraint> {
+class BiomeReplacementConstraint
+: public ::cereal::ConstraintHandle<::SharedTypes::Comprehensive::BiomeReplacementConstraint> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -28,7 +29,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void validateValue(::std::vector<::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement> const& biomeReplacements, ::cereal::SerializerContext& context) const;
+    MCNAPI void validateValue(
+        ::std::vector<::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement> const&
+                                     biomeReplacements,
+        ::cereal::SerializerContext& context
+    ) const;
     // NOLINTEND
 
 public:
@@ -42,7 +47,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::Comprehensive

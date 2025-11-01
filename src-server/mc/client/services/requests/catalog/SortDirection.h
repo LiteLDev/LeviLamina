@@ -5,7 +5,7 @@
 namespace catalog {
 
 enum class SortDirection : uint {
-    Ascending = 0,
+    Ascending  = 0,
     Descending = 1,
 };
 

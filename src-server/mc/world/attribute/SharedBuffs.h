@@ -11,25 +11,24 @@ class SharedBuffs {
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::shared_ptr<::AttributeBuff>& ABSORPTION();
+    MCAPI static ::std::shared_ptr<::AttributeBuff>& ABSORPTION();
 
-    MCNAPI static ::std::shared_ptr<::AttributeBuff>& FATAL_POISON();
+    MCAPI static ::std::shared_ptr<::AttributeBuff>& FATAL_POISON();
 
-    MCNAPI static ::std::shared_ptr<::AttributeBuff>& FOOD_POSIONING();
+    MCAPI static ::std::shared_ptr<::AttributeBuff>& FOOD_POSIONING();
 
-    MCNAPI static ::std::shared_ptr<::AttributeBuff>& HARM();
+    MCAPI static ::std::shared_ptr<::AttributeBuff>& HARM();
 
-    MCNAPI static ::std::shared_ptr<::AttributeBuff>& HEAL();
+    MCAPI static ::std::shared_ptr<::AttributeBuff>& HEAL();
 
-    MCNAPI static ::std::shared_ptr<::AttributeBuff>& POISON();
+    MCAPI static ::std::shared_ptr<::AttributeBuff>& POISON();
 
-    MCNAPI static ::std::shared_ptr<::AttributeBuff>& PUFFER_POSIONING();
+    MCAPI static ::std::shared_ptr<::AttributeBuff>& PUFFER_POSIONING();
 
-    MCNAPI static ::std::shared_ptr<::AttributeBuff>& REGENERATION();
+    MCAPI static ::std::shared_ptr<::AttributeBuff>& REGENERATION();
 
-    MCNAPI static ::std::shared_ptr<::AttributeBuff>& SATURATION();
+    MCAPI static ::std::shared_ptr<::AttributeBuff>& SATURATION();
 
-    MCNAPI static ::std::shared_ptr<::AttributeBuff>& WITHER();
+    MCAPI static ::std::shared_ptr<::AttributeBuff>& WITHER();
     // NOLINTEND
-
 };

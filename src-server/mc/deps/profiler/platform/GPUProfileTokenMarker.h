@@ -4,7 +4,6 @@
 
 namespace Core::Profile {
 
-struct GPUProfileTokenMarker {
-};
+struct GPUProfileTokenMarker {};
 
-}
+} // namespace Core::Profile

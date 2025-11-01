@@ -16,5 +16,4 @@ public:
     PhysicsDefinition& operator=(PhysicsDefinition const&);
     PhysicsDefinition(PhysicsDefinition const&);
     PhysicsDefinition();
-
 };

@@ -8,10 +8,10 @@ struct Description {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkeae628;
-    ::ll::UntypedStorage<8, 64> mUnk1a9e51;
+    ::ll::UntypedStorage<8, 32>  mUnkeae628;
+    ::ll::UntypedStorage<8, 64>  mUnk1a9e51;
     ::ll::UntypedStorage<8, 256> mUnk6ca56c;
-    ::ll::UntypedStorage<8, 56> mUnk385ede;
+    ::ll::UntypedStorage<8, 56>  mUnk385ede;
     // NOLINTEND
 
 public:
@@ -23,9 +23,11 @@ public:
     // NOLINTBEGIN
     MCNAPI Description(::SharedTypes::v1_21_110::BlockDefinition::Description const&);
 
-    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::Description& operator=(::SharedTypes::v1_21_110::BlockDefinition::Description&&);
+    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::Description&
+    operator=(::SharedTypes::v1_21_110::BlockDefinition::Description&&);
 
-    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::Description& operator=(::SharedTypes::v1_21_110::BlockDefinition::Description const&);
+    MCNAPI ::SharedTypes::v1_21_110::BlockDefinition::Description&
+    operator=(::SharedTypes::v1_21_110::BlockDefinition::Description const&);
 
     MCNAPI ~Description();
     // NOLINTEND
@@ -41,7 +43,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace SharedTypes::v1_21_110::BlockDefinition

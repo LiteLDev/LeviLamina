@@ -16,8 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mSender;
-    ::ll::TypedStorage<4, 4, ::MinecraftPacketIds> mPacketId;
-    ::ll::TypedStorage<8, 8, uint64> mPacketSize;
+    ::ll::TypedStorage<4, 4, ::MinecraftPacketIds>        mPacketId;
+    ::ll::TypedStorage<8, 8, uint64>                      mPacketSize;
     // NOLINTEND
 
 public:
@@ -31,5 +31,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

@@ -28,10 +28,13 @@ public:
     virtual bool isSignalSource() const /*override*/;
 
     // vIndex: 54
-    virtual bool shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const /*override*/;
+    virtual bool
+    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
+        /*override*/;
 
     // vIndex: 16
-    virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const /*override*/;
+    virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const
+        /*override*/;
 
     // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
@@ -43,7 +46,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _processHitByProjectileAtPos(::Vec3 const& hitPos, ::BlockSource& region, ::BlockPos const& blockPos, ::Actor const& projectile) const;
+    MCAPI void _processHitByProjectileAtPos(
+        ::Vec3 const&     hitPos,
+        ::BlockSource&    region,
+        ::BlockPos const& blockPos,
+        ::Actor const&    projectile
+    ) const;
 
     MCFOLD void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
@@ -57,7 +65,8 @@ public:
 
     MCFOLD bool $isSignalSource() const;
 
-    MCFOLD bool $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+    MCFOLD bool
+    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const;
 
@@ -69,5 +78,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

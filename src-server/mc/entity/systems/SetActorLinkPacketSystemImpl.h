@@ -23,11 +23,42 @@ struct SwitchingVehiclesFlagComponent;
 namespace SetActorLinkPacketSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void sendActorLinkPacket(::StrictEntityContext const& vehicleEntity, ::ActorUniqueIDComponent const& actorUniqueIDComponent, ::RemovePassengersComponent const& removePassengersComponent, ::ViewT<::StrictEntityContext, ::Exclude<::SwitchingVehiclesFlagComponent>, ::ActorUniqueIDComponent const, ::Optional<::ActorIsBeingDestroyedFlagComponent const>, ::Optional<::ExitFromPassengerFlagComponent const>> passengers, ::EntityModifier<::SendPacketsComponent> modifier);
+MCNAPI void sendActorLinkPacket(
+    ::StrictEntityContext const&       vehicleEntity,
+    ::ActorUniqueIDComponent const&    actorUniqueIDComponent,
+    ::RemovePassengersComponent const& removePassengersComponent,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Exclude<::SwitchingVehiclesFlagComponent>,
+        ::ActorUniqueIDComponent const,
+        ::Optional<::ActorIsBeingDestroyedFlagComponent const>,
+        ::Optional<::ExitFromPassengerFlagComponent const>> passengers,
+    ::EntityModifier<::SendPacketsComponent>                modifier
+);
 
-MCNAPI void singleSendActorLinkPacket(::StrictEntityContext const& passengerEntity, ::PassengerComponent const& passengerComponent, ::ViewT<::StrictEntityContext, ::ActorUniqueIDComponent const, ::RemovePassengersComponent> vehicleView, ::ViewT<::StrictEntityContext, ::Exclude<::SwitchingVehiclesFlagComponent>, ::ActorUniqueIDComponent const, ::Optional<::ActorIsBeingDestroyedFlagComponent const>, ::Optional<::ExitFromPassengerFlagComponent const>> passengerView, ::EntityModifier<::SendPacketsComponent> modifier);
+MCNAPI void singleSendActorLinkPacket(
+    ::StrictEntityContext const&                                                                passengerEntity,
+    ::PassengerComponent const&                                                                 passengerComponent,
+    ::ViewT<::StrictEntityContext, ::ActorUniqueIDComponent const, ::RemovePassengersComponent> vehicleView,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Exclude<::SwitchingVehiclesFlagComponent>,
+        ::ActorUniqueIDComponent const,
+        ::Optional<::ActorIsBeingDestroyedFlagComponent const>,
+        ::Optional<::ExitFromPassengerFlagComponent const>> passengerView,
+    ::EntityModifier<::SendPacketsComponent>                modifier
+);
 
-MCNAPI void tickSendActorLinkPacket(::ViewT<::StrictEntityContext, ::ActorUniqueIDComponent const, ::RemovePassengersComponent> view, ::ViewT<::StrictEntityContext, ::Exclude<::SwitchingVehiclesFlagComponent>, ::ActorUniqueIDComponent const, ::Optional<::ActorIsBeingDestroyedFlagComponent const>, ::Optional<::ExitFromPassengerFlagComponent const>> passengers, ::EntityModifier<::SendPacketsComponent> modifier);
+MCNAPI void tickSendActorLinkPacket(
+    ::ViewT<::StrictEntityContext, ::ActorUniqueIDComponent const, ::RemovePassengersComponent> view,
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Exclude<::SwitchingVehiclesFlagComponent>,
+        ::ActorUniqueIDComponent const,
+        ::Optional<::ActorIsBeingDestroyedFlagComponent const>,
+        ::Optional<::ExitFromPassengerFlagComponent const>> passengers,
+    ::EntityModifier<::SendPacketsComponent>                modifier
+);
 // NOLINTEND
 
-}
+} // namespace SetActorLinkPacketSystemImpl

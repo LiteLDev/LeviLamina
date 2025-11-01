@@ -186,185 +186,187 @@ namespace mce { struct ViewportInfo; }
 namespace ui { class ScreenTechStackSelector; }
 // clang-format on
 
-class ClientInstance : public ::IClientInstance, public ::Core::StorageAreaStateListener, public ::GameCallbacks, public ::PlayerListener, public ::std::enable_shared_from_this<::ClientInstance> {
+class ClientInstance : public ::IClientInstance,
+                       public ::Core::StorageAreaStateListener,
+                       public ::GameCallbacks,
+                       public ::PlayerListener,
+                       public ::std::enable_shared_from_this<::ClientInstance> {
 public:
     // ClientInstance inner types declare
     // clang-format off
     struct ClientDestroyBlockState;
     struct ClientRenderResources;
     // clang-format on
-    
+
     // ClientInstance inner types define
     struct ClientRenderResources {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnk9600de;
+        ::ll::UntypedStorage<8, 8>  mUnk9600de;
         ::ll::UntypedStorage<8, 32> mUnkc84d55;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ClientRenderResources& operator=(ClientRenderResources const&);
         ClientRenderResources(ClientRenderResources const&);
         ClientRenderResources();
-    
     };
-    
+
     struct ClientDestroyBlockState {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkff7778;
-        ::ll::UntypedStorage<8, 8> mUnk241918;
-        ::ll::UntypedStorage<1, 1> mUnkb9c8a1;
-        ::ll::UntypedStorage<8, 8> mUnk4fdef3;
+        ::ll::UntypedStorage<8, 8>  mUnkff7778;
+        ::ll::UntypedStorage<8, 8>  mUnk241918;
+        ::ll::UntypedStorage<1, 1>  mUnkb9c8a1;
+        ::ll::UntypedStorage<8, 8>  mUnk4fdef3;
         ::ll::UntypedStorage<8, 64> mUnk4fd828;
         ::ll::UntypedStorage<8, 64> mUnk738e7f;
         ::ll::UntypedStorage<8, 64> mUnk525e8f;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ClientDestroyBlockState& operator=(ClientDestroyBlockState const&);
         ClientDestroyBlockState(ClientDestroyBlockState const&);
         ClientDestroyBlockState();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnkeb8701;
-    ::ll::UntypedStorage<8, 8> mUnk40ac05;
-    ::ll::UntypedStorage<8, 8> mUnk9379d1;
-    ::ll::UntypedStorage<8, 24> mUnk421768;
-    ::ll::UntypedStorage<8, 8> mUnke2a76f;
-    ::ll::UntypedStorage<8, 8> mUnk599652;
-    ::ll::UntypedStorage<1, 1> mUnk13fce4;
-    ::ll::UntypedStorage<8, 8> mUnkd1e630;
-    ::ll::UntypedStorage<8, 8> mUnk703d29;
-    ::ll::UntypedStorage<8, 8> mUnk6d90fa;
-    ::ll::UntypedStorage<8, 8> mUnkace9a6;
-    ::ll::UntypedStorage<8, 8> mUnk59f993;
-    ::ll::UntypedStorage<8, 8> mUnk5310df;
-    ::ll::UntypedStorage<8, 8> mUnk12a970;
-    ::ll::UntypedStorage<8, 16> mUnk3a3d21;
-    ::ll::UntypedStorage<8, 8> mUnk9fe1ff;
-    ::ll::UntypedStorage<8, 8> mUnk29790b;
-    ::ll::UntypedStorage<8, 24> mUnk10018d;
-    ::ll::UntypedStorage<8, 24> mUnk6d935d;
-    ::ll::UntypedStorage<8, 24> mUnk9bcffe;
-    ::ll::UntypedStorage<8, 48> mUnk586e60;
-    ::ll::UntypedStorage<8, 8> mUnkba00d2;
-    ::ll::UntypedStorage<4, 4> mUnkfbfba1;
-    ::ll::UntypedStorage<1, 1> mUnkd6f5bb;
-    ::ll::UntypedStorage<1, 1> mUnkc69553;
-    ::ll::UntypedStorage<1, 1> mUnk20b577;
-    ::ll::UntypedStorage<1, 1> mUnka7e48d;
-    ::ll::UntypedStorage<1, 4> mUnk9e92ce;
-    ::ll::UntypedStorage<8, 32> mUnkdbed7b;
-    ::ll::UntypedStorage<1, 1> mUnk48d2a2;
-    ::ll::UntypedStorage<1, 1> mUnk44a215;
-    ::ll::UntypedStorage<8, 64> mUnkc2143d;
-    ::ll::UntypedStorage<8, 8> mUnkfe7255;
-    ::ll::UntypedStorage<4, 24> mUnk8d7d51;
-    ::ll::UntypedStorage<8, 40> mUnk4418d8;
-    ::ll::UntypedStorage<8, 8> mUnkd8008b;
+    ::ll::UntypedStorage<4, 4>   mUnkeb8701;
+    ::ll::UntypedStorage<8, 8>   mUnk40ac05;
+    ::ll::UntypedStorage<8, 8>   mUnk9379d1;
+    ::ll::UntypedStorage<8, 24>  mUnk421768;
+    ::ll::UntypedStorage<8, 8>   mUnke2a76f;
+    ::ll::UntypedStorage<8, 8>   mUnk599652;
+    ::ll::UntypedStorage<1, 1>   mUnk13fce4;
+    ::ll::UntypedStorage<8, 8>   mUnkd1e630;
+    ::ll::UntypedStorage<8, 8>   mUnk703d29;
+    ::ll::UntypedStorage<8, 8>   mUnk6d90fa;
+    ::ll::UntypedStorage<8, 8>   mUnkace9a6;
+    ::ll::UntypedStorage<8, 8>   mUnk59f993;
+    ::ll::UntypedStorage<8, 8>   mUnk5310df;
+    ::ll::UntypedStorage<8, 8>   mUnk12a970;
+    ::ll::UntypedStorage<8, 16>  mUnk3a3d21;
+    ::ll::UntypedStorage<8, 8>   mUnk9fe1ff;
+    ::ll::UntypedStorage<8, 8>   mUnk29790b;
+    ::ll::UntypedStorage<8, 24>  mUnk10018d;
+    ::ll::UntypedStorage<8, 24>  mUnk6d935d;
+    ::ll::UntypedStorage<8, 24>  mUnk9bcffe;
+    ::ll::UntypedStorage<8, 48>  mUnk586e60;
+    ::ll::UntypedStorage<8, 8>   mUnkba00d2;
+    ::ll::UntypedStorage<4, 4>   mUnkfbfba1;
+    ::ll::UntypedStorage<1, 1>   mUnkd6f5bb;
+    ::ll::UntypedStorage<1, 1>   mUnkc69553;
+    ::ll::UntypedStorage<1, 1>   mUnk20b577;
+    ::ll::UntypedStorage<1, 1>   mUnka7e48d;
+    ::ll::UntypedStorage<1, 4>   mUnk9e92ce;
+    ::ll::UntypedStorage<8, 32>  mUnkdbed7b;
+    ::ll::UntypedStorage<1, 1>   mUnk48d2a2;
+    ::ll::UntypedStorage<1, 1>   mUnk44a215;
+    ::ll::UntypedStorage<8, 64>  mUnkc2143d;
+    ::ll::UntypedStorage<8, 8>   mUnkfe7255;
+    ::ll::UntypedStorage<4, 24>  mUnk8d7d51;
+    ::ll::UntypedStorage<8, 40>  mUnk4418d8;
+    ::ll::UntypedStorage<8, 8>   mUnkd8008b;
     ::ll::UntypedStorage<8, 512> mUnk2b811b;
-    ::ll::UntypedStorage<4, 20> mUnk6f5e44;
-    ::ll::UntypedStorage<4, 20> mUnk76317a;
-    ::ll::UntypedStorage<4, 12> mUnkd1e9b9;
-    ::ll::UntypedStorage<8, 32> mUnk445360;
-    ::ll::UntypedStorage<8, 16> mUnke10317;
-    ::ll::UntypedStorage<4, 4> mUnk47ffc0;
-    ::ll::UntypedStorage<8, 8> mUnk1052cb;
-    ::ll::UntypedStorage<8, 8> mUnkc24d28;
-    ::ll::UntypedStorage<8, 8> mUnkadcd43;
-    ::ll::UntypedStorage<8, 16> mUnkdb25a3;
-    ::ll::UntypedStorage<8, 16> mUnked2a78;
-    ::ll::UntypedStorage<8, 8> mUnkdcfcea;
-    ::ll::UntypedStorage<8, 8> mUnk82dfd0;
-    ::ll::UntypedStorage<8, 8> mUnk984c7a;
-    ::ll::UntypedStorage<8, 16> mUnkb79e26;
-    ::ll::UntypedStorage<8, 8> mUnk149f78;
-    ::ll::UntypedStorage<8, 8> mUnk5a8bdb;
-    ::ll::UntypedStorage<8, 8> mUnk8fed4e;
-    ::ll::UntypedStorage<8, 8> mUnk269b14;
-    ::ll::UntypedStorage<8, 8> mUnk32b0ff;
-    ::ll::UntypedStorage<8, 8> mUnkbbb9b5;
-    ::ll::UntypedStorage<8, 8> mUnk2b5396;
-    ::ll::UntypedStorage<8, 16> mUnk5da2d9;
-    ::ll::UntypedStorage<1, 1> mUnkfa0970;
-    ::ll::UntypedStorage<8, 8> mUnkf4ba26;
-    ::ll::UntypedStorage<8, 8> mUnk79da84;
-    ::ll::UntypedStorage<8, 8> mUnk8d9725;
-    ::ll::UntypedStorage<8, 8> mUnkbc94b5;
-    ::ll::UntypedStorage<1, 1> mUnk563a7c;
-    ::ll::UntypedStorage<8, 8> mUnkda37dc;
-    ::ll::UntypedStorage<4, 4> mUnk97285b;
-    ::ll::UntypedStorage<4, 4> mUnke5e0bf;
-    ::ll::UntypedStorage<8, 16> mUnk968bec;
-    ::ll::UntypedStorage<1, 1> mUnk343fce;
-    ::ll::UntypedStorage<1, 1> mUnkbca286;
-    ::ll::UntypedStorage<1, 1> mUnk7610a3;
-    ::ll::UntypedStorage<1, 1> mUnk3a5c32;
-    ::ll::UntypedStorage<1, 1> mUnk3430d4;
-    ::ll::UntypedStorage<1, 1> mUnk9f2b54;
-    ::ll::UntypedStorage<1, 1> mUnk962bb4;
+    ::ll::UntypedStorage<4, 20>  mUnk6f5e44;
+    ::ll::UntypedStorage<4, 20>  mUnk76317a;
+    ::ll::UntypedStorage<4, 12>  mUnkd1e9b9;
+    ::ll::UntypedStorage<8, 32>  mUnk445360;
+    ::ll::UntypedStorage<8, 16>  mUnke10317;
+    ::ll::UntypedStorage<4, 4>   mUnk47ffc0;
+    ::ll::UntypedStorage<8, 8>   mUnk1052cb;
+    ::ll::UntypedStorage<8, 8>   mUnkc24d28;
+    ::ll::UntypedStorage<8, 8>   mUnkadcd43;
+    ::ll::UntypedStorage<8, 16>  mUnkdb25a3;
+    ::ll::UntypedStorage<8, 16>  mUnked2a78;
+    ::ll::UntypedStorage<8, 8>   mUnkdcfcea;
+    ::ll::UntypedStorage<8, 8>   mUnk82dfd0;
+    ::ll::UntypedStorage<8, 8>   mUnk984c7a;
+    ::ll::UntypedStorage<8, 16>  mUnkb79e26;
+    ::ll::UntypedStorage<8, 8>   mUnk149f78;
+    ::ll::UntypedStorage<8, 8>   mUnk5a8bdb;
+    ::ll::UntypedStorage<8, 8>   mUnk8fed4e;
+    ::ll::UntypedStorage<8, 8>   mUnk269b14;
+    ::ll::UntypedStorage<8, 8>   mUnk32b0ff;
+    ::ll::UntypedStorage<8, 8>   mUnkbbb9b5;
+    ::ll::UntypedStorage<8, 8>   mUnk2b5396;
+    ::ll::UntypedStorage<8, 16>  mUnk5da2d9;
+    ::ll::UntypedStorage<1, 1>   mUnkfa0970;
+    ::ll::UntypedStorage<8, 8>   mUnkf4ba26;
+    ::ll::UntypedStorage<8, 8>   mUnk79da84;
+    ::ll::UntypedStorage<8, 8>   mUnk8d9725;
+    ::ll::UntypedStorage<8, 8>   mUnkbc94b5;
+    ::ll::UntypedStorage<1, 1>   mUnk563a7c;
+    ::ll::UntypedStorage<8, 8>   mUnkda37dc;
+    ::ll::UntypedStorage<4, 4>   mUnk97285b;
+    ::ll::UntypedStorage<4, 4>   mUnke5e0bf;
+    ::ll::UntypedStorage<8, 16>  mUnk968bec;
+    ::ll::UntypedStorage<1, 1>   mUnk343fce;
+    ::ll::UntypedStorage<1, 1>   mUnkbca286;
+    ::ll::UntypedStorage<1, 1>   mUnk7610a3;
+    ::ll::UntypedStorage<1, 1>   mUnk3a5c32;
+    ::ll::UntypedStorage<1, 1>   mUnk3430d4;
+    ::ll::UntypedStorage<1, 1>   mUnk9f2b54;
+    ::ll::UntypedStorage<1, 1>   mUnk962bb4;
     ::ll::UntypedStorage<8, 480> mUnkcc66f1;
-    ::ll::UntypedStorage<1, 1> mUnke203b0;
-    ::ll::UntypedStorage<1, 1> mUnk1ef4d7;
-    ::ll::UntypedStorage<1, 1> mUnk29fbcb;
-    ::ll::UntypedStorage<4, 4> mUnkc07c6b;
-    ::ll::UntypedStorage<1, 1> mUnk923860;
-    ::ll::UntypedStorage<8, 8> mUnk108e78;
-    ::ll::UntypedStorage<4, 4> mUnk7d3d83;
-    ::ll::UntypedStorage<8, 40> mUnke83ed9;
-    ::ll::UntypedStorage<8, 40> mUnk3e9e2f;
-    ::ll::UntypedStorage<8, 16> mUnkcf1108;
-    ::ll::UntypedStorage<8, 64> mUnk393002;
-    ::ll::UntypedStorage<8, 16> mUnk1e3691;
-    ::ll::UntypedStorage<8, 8> mUnkbe2831;
-    ::ll::UntypedStorage<8, 8> mUnke03b83;
-    ::ll::UntypedStorage<8, 8> mUnkee44b0;
-    ::ll::UntypedStorage<8, 8> mUnka8bb72;
-    ::ll::UntypedStorage<8, 8> mUnk5e2ef9;
-    ::ll::UntypedStorage<8, 16> mUnkf8f09a;
-    ::ll::UntypedStorage<4, 8> mUnk973753;
-    ::ll::UntypedStorage<4, 8> mUnk600c92;
-    ::ll::UntypedStorage<4, 4> mUnk737de1;
-    ::ll::UntypedStorage<8, 8> mUnk6aa9fd;
-    ::ll::UntypedStorage<8, 8> mUnkd40519;
-    ::ll::UntypedStorage<8, 24> mUnk5c4c80;
-    ::ll::UntypedStorage<8, 8> mUnk1f7c97;
-    ::ll::UntypedStorage<8, 16> mUnk52193b;
-    ::ll::UntypedStorage<8, 8> mUnk8d9ec3;
-    ::ll::UntypedStorage<8, 8> mUnkc5b1ea;
-    ::ll::UntypedStorage<8, 8> mUnkb1ffcd;
-    ::ll::UntypedStorage<8, 24> mUnk7ffd34;
-    ::ll::UntypedStorage<8, 16> mUnk99ef24;
-    ::ll::UntypedStorage<8, 16> mUnk6182e1;
-    ::ll::UntypedStorage<8, 8> mUnkc5852d;
-    ::ll::UntypedStorage<8, 8> mUnkc94ec9;
+    ::ll::UntypedStorage<1, 1>   mUnke203b0;
+    ::ll::UntypedStorage<1, 1>   mUnk1ef4d7;
+    ::ll::UntypedStorage<1, 1>   mUnk29fbcb;
+    ::ll::UntypedStorage<4, 4>   mUnkc07c6b;
+    ::ll::UntypedStorage<1, 1>   mUnk923860;
+    ::ll::UntypedStorage<8, 8>   mUnk108e78;
+    ::ll::UntypedStorage<4, 4>   mUnk7d3d83;
+    ::ll::UntypedStorage<8, 40>  mUnke83ed9;
+    ::ll::UntypedStorage<8, 40>  mUnk3e9e2f;
+    ::ll::UntypedStorage<8, 16>  mUnkcf1108;
+    ::ll::UntypedStorage<8, 64>  mUnk393002;
+    ::ll::UntypedStorage<8, 16>  mUnk1e3691;
+    ::ll::UntypedStorage<8, 8>   mUnkbe2831;
+    ::ll::UntypedStorage<8, 8>   mUnke03b83;
+    ::ll::UntypedStorage<8, 8>   mUnkee44b0;
+    ::ll::UntypedStorage<8, 8>   mUnka8bb72;
+    ::ll::UntypedStorage<8, 8>   mUnk5e2ef9;
+    ::ll::UntypedStorage<8, 16>  mUnkf8f09a;
+    ::ll::UntypedStorage<4, 8>   mUnk973753;
+    ::ll::UntypedStorage<4, 8>   mUnk600c92;
+    ::ll::UntypedStorage<4, 4>   mUnk737de1;
+    ::ll::UntypedStorage<8, 8>   mUnk6aa9fd;
+    ::ll::UntypedStorage<8, 8>   mUnkd40519;
+    ::ll::UntypedStorage<8, 24>  mUnk5c4c80;
+    ::ll::UntypedStorage<8, 8>   mUnk1f7c97;
+    ::ll::UntypedStorage<8, 16>  mUnk52193b;
+    ::ll::UntypedStorage<8, 8>   mUnk8d9ec3;
+    ::ll::UntypedStorage<8, 8>   mUnkc5b1ea;
+    ::ll::UntypedStorage<8, 8>   mUnkb1ffcd;
+    ::ll::UntypedStorage<8, 24>  mUnk7ffd34;
+    ::ll::UntypedStorage<8, 16>  mUnk99ef24;
+    ::ll::UntypedStorage<8, 16>  mUnk6182e1;
+    ::ll::UntypedStorage<8, 8>   mUnkc5852d;
+    ::ll::UntypedStorage<8, 8>   mUnkc94ec9;
     ::ll::UntypedStorage<8, 136> mUnkea7af0;
-    ::ll::UntypedStorage<8, 16> mUnk8b8d16;
-    ::ll::UntypedStorage<8, 16> mUnk2caa57;
-    ::ll::UntypedStorage<8, 8> mUnkf8bdff;
-    ::ll::UntypedStorage<8, 24> mUnkfbc948;
-    ::ll::UntypedStorage<8, 24> mUnk5bb96b;
-    ::ll::UntypedStorage<8, 24> mUnk1e1098;
-    ::ll::UntypedStorage<1, 1> mUnkc75c08;
-    ::ll::UntypedStorage<4, 4> mUnkcef468;
-    ::ll::UntypedStorage<4, 4> mUnk573d1d;
-    ::ll::UntypedStorage<8, 16> mUnkdc75f9;
-    ::ll::UntypedStorage<8, 80> mUnk3892fa;
-    ::ll::UntypedStorage<8, 16> mUnka5c62e;
-    ::ll::UntypedStorage<8, 16> mUnk7dafcc;
-    ::ll::UntypedStorage<8, 8> mUnk513b4d;
-    ::ll::UntypedStorage<8, 24> mUnk7433ce;
-    ::ll::UntypedStorage<8, 8> mUnk4efc95;
-    ::ll::UntypedStorage<8, 16> mUnk3ae8c5;
+    ::ll::UntypedStorage<8, 16>  mUnk8b8d16;
+    ::ll::UntypedStorage<8, 16>  mUnk2caa57;
+    ::ll::UntypedStorage<8, 8>   mUnkf8bdff;
+    ::ll::UntypedStorage<8, 24>  mUnkfbc948;
+    ::ll::UntypedStorage<8, 24>  mUnk5bb96b;
+    ::ll::UntypedStorage<8, 24>  mUnk1e1098;
+    ::ll::UntypedStorage<1, 1>   mUnkc75c08;
+    ::ll::UntypedStorage<4, 4>   mUnkcef468;
+    ::ll::UntypedStorage<4, 4>   mUnk573d1d;
+    ::ll::UntypedStorage<8, 16>  mUnkdc75f9;
+    ::ll::UntypedStorage<8, 80>  mUnk3892fa;
+    ::ll::UntypedStorage<8, 16>  mUnka5c62e;
+    ::ll::UntypedStorage<8, 16>  mUnk7dafcc;
+    ::ll::UntypedStorage<8, 8>   mUnk513b4d;
+    ::ll::UntypedStorage<8, 24>  mUnk7433ce;
+    ::ll::UntypedStorage<8, 8>   mUnk4efc95;
+    ::ll::UntypedStorage<8, 16>  mUnk3ae8c5;
     // NOLINTEND
 
 public:
@@ -386,10 +388,19 @@ public:
     virtual void onDestroyMinecraftGame() /*override*/;
 
     // vIndex: 3
-    virtual void init(::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&, ::ClientNetworkSystem&, ::Timer&, ::Timer&, ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&, int, ::IGameModuleApp&) /*override*/;
+    virtual void init(
+        ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> const&,
+        ::ClientNetworkSystem&,
+        ::Timer&,
+        ::Timer&,
+        ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&,
+        int,
+        ::IGameModuleApp&
+    ) /*override*/;
 
     // vIndex: 4
-    virtual void initSceneFactory(::std::unique_ptr<::SceneFactory>, ::std::unique_ptr<::OreUI::SceneProvider>) /*override*/;
+    virtual void
+        initSceneFactory(::std::unique_ptr<::SceneFactory>, ::std::unique_ptr<::OreUI::SceneProvider>) /*override*/;
 
     // vIndex: 5
     virtual void setUiRouter(::std::unique_ptr<::OreUI::Router>) /*override*/;
@@ -413,7 +424,15 @@ public:
     virtual ::std::optional<::Social::GameConnectionInfo> getGameConnectionInfo() /*override*/;
 
     // vIndex: 12
-    virtual void onStartJoinGame(bool, ::std::string const&, ::std::string const&, ::std::string const&, ::NetworkType, ::Social::MultiplayerServiceIdentifier, bool) /*override*/;
+    virtual void onStartJoinGame(
+        bool,
+        ::std::string const&,
+        ::std::string const&,
+        ::std::string const&,
+        ::NetworkType,
+        ::Social::MultiplayerServiceIdentifier,
+        bool
+    ) /*override*/;
 
     // vIndex: 13
     virtual void onCancelJoinGame() /*override*/;
@@ -461,10 +480,15 @@ public:
     virtual float getFrameAlpha() /*override*/;
 
     // vIndex: 28
-    virtual void startSubClientLateJoin(bool, ::std::unique_ptr<::GameModuleClient>, ::std::optional<::PlayerJoinWorldTelemetryInfo>) /*override*/;
+    virtual void startSubClientLateJoin(
+        bool,
+        ::std::unique_ptr<::GameModuleClient>,
+        ::std::optional<::PlayerJoinWorldTelemetryInfo>
+    ) /*override*/;
 
     // vIndex: 29
-    virtual ::Bedrock::Threading::Async<::ClientGameSetupResult> setupClientGame(bool, ::std::unique_ptr<::GameModuleClient>) /*override*/;
+    virtual ::Bedrock::Threading::Async<::ClientGameSetupResult>
+    setupClientGame(bool, ::std::unique_ptr<::GameModuleClient>) /*override*/;
 
     // vIndex: 30
     virtual ::BlockSource* getRegion() /*override*/;
@@ -662,7 +686,8 @@ public:
     virtual ::Bedrock::NotNullNonOwnerPtr<::BlockCullingGroup> getBlockCullingGroup() const /*override*/;
 
     // vIndex: 95
-    virtual ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> getMultiplayerServiceManager() const /*override*/;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> getMultiplayerServiceManager() const
+        /*override*/;
 
     // vIndex: 96
     virtual ::IResourcePackRepository& getResourcePackRepository() const /*override*/;
@@ -731,7 +756,8 @@ public:
     virtual bool isMarketplaceDisabled() const /*override*/;
 
     // vIndex: 118
-    virtual ::std::pair<::StoreErrorCodes, ::std::string> const getMarketplaceDisabledReasonWithErrorCode() const /*override*/;
+    virtual ::std::pair<::StoreErrorCodes, ::std::string> const getMarketplaceDisabledReasonWithErrorCode() const
+        /*override*/;
 
     // vIndex: 119
     virtual void linkToOffer(::std::string const&, bool) /*override*/;
@@ -800,7 +826,10 @@ public:
     virtual void stopDestroying() /*override*/;
 
     // vIndex: 141
-    virtual void onClientCreatedLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>>, ::OwnerPtr<::EntityContext>) /*override*/;
+    virtual void onClientCreatedLevel(
+        ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>>,
+        ::OwnerPtr<::EntityContext>
+    ) /*override*/;
 
     // vIndex: 142
     virtual ::PlayerAuthentication& getPlayerAuthentication() /*override*/;
@@ -1052,7 +1081,8 @@ public:
     virtual ::ToastManager& getToastManager() /*override*/;
 
     // vIndex: 225
-    virtual ::ClipboardProxy<::ApplicationSignal::ClipboardCopy, ::ApplicationSignal::ClipboardPasteRequest>& getClipboardManager() /*override*/;
+    virtual ::ClipboardProxy<::ApplicationSignal::ClipboardCopy, ::ApplicationSignal::ClipboardPasteRequest>&
+    getClipboardManager() /*override*/;
 
     // vIndex: 227
     virtual ::AbstractScene* getTopScene() /*override*/;
@@ -1112,7 +1142,8 @@ public:
     virtual ::WeakRef<::OreUI::UIBlockThumbnailAtlasManager> getOreUIBlockThumbnailAtlasManager() const /*override*/;
 
     // vIndex: 245
-    virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> prepareSceneFor(::ui::SceneType const, ::std::function<::std::shared_ptr<::AbstractScene>()>) /*override*/;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ISceneStack>
+    prepareSceneFor(::ui::SceneType const, ::std::function<::std::shared_ptr<::AbstractScene>()>) /*override*/;
 
     // vIndex: 246
     virtual ::CachedScenes& getCachedScenes() /*override*/;
@@ -1154,7 +1185,8 @@ public:
     virtual bool updateSceneStack() /*override*/;
 
     // vIndex: 259
-    virtual void forEachAlwaysAcceptInputScreen(::std::function<void(::AbstractScene&)>, ::AbstractScene const*) /*override*/;
+    virtual void
+    forEachAlwaysAcceptInputScreen(::std::function<void(::AbstractScene&)>, ::AbstractScene const*) /*override*/;
 
     // vIndex: 260
     virtual void forEachAlwaysAcceptInputScreenWithTop(::std::function<void(::AbstractScene&)>) /*override*/;
@@ -1172,7 +1204,11 @@ public:
     virtual ::Vec2 getSafeZoneScale() const /*override*/;
 
     // vIndex: 265
-    virtual void verifySkinApproval(::std::string const&, ::std::function<void(::std::string)> const&, ::std::function<void()> const&) const /*override*/;
+    virtual void verifySkinApproval(
+        ::std::string const&,
+        ::std::function<void(::std::string)> const&,
+        ::std::function<void()> const&
+    ) const /*override*/;
 
     // vIndex: 266
     virtual ::InputMode getCurrentInputMode() const /*override*/;
@@ -1379,7 +1415,11 @@ public:
     virtual void startExternalNetworkWorld(::Social::GameConnectionInfo, ::std::string const&, bool) /*override*/;
 
     // vIndex: 333
-    virtual void connectToExperience(::std::string const&, ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)>, ::std::function<void(::World::JoinServerWorldResult)>) /*override*/;
+    virtual void connectToExperience(
+        ::std::string const&,
+        ::std::function<void(::std::unique_ptr<::ProgressHandler>, bool)>,
+        ::std::function<void(::World::JoinServerWorldResult)>
+    ) /*override*/;
 
     // vIndex: 335
     virtual bool isReadyToReconnect() const /*override*/;
@@ -1409,19 +1449,28 @@ public:
     virtual ::Core::PathBuffer<::std::string> requestScreenshot(::ScreenshotOptions&) /*override*/;
 
     // vIndex: 343
-    virtual ::Core::PathBuffer<::std::string> requestScreenshotAndCreateEncryptedChecksumFile(::ScreenshotOptions&) /*override*/;
+    virtual ::Core::PathBuffer<::std::string>
+    requestScreenshotAndCreateEncryptedChecksumFile(::ScreenshotOptions&) /*override*/;
 
     // vIndex: 344
     virtual ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger> getDevConsoleLogger() const /*override*/;
 
     // vIndex: 345
-    virtual ::std::shared_ptr<::FileDataRequest> requestImageFromUrl(::std::string const&, ::std::function<void(::Bedrock::Http::Status, ::Core::Path const&, uint64)>) /*override*/;
+    virtual ::std::shared_ptr<::FileDataRequest> requestImageFromUrl(
+        ::std::string const&,
+        ::std::function<void(::Bedrock::Http::Status, ::Core::Path const&, uint64)>
+    ) /*override*/;
 
     // vIndex: 386
     virtual void setActiveFileStorageArea(::std::shared_ptr<::Core::FileStorageArea>) /*override*/;
 
     // vIndex: 1
-    virtual void onExtendDiskSpace(bool const bSet, ::std::weak_ptr<::Core::FileStorageArea> const& fileStorageAreaWeakPtr, uint64 freeSpace, ::std::function<void()> onHandledEventCallback) /*override*/;
+    virtual void onExtendDiskSpace(
+        bool const                                      bSet,
+        ::std::weak_ptr<::Core::FileStorageArea> const& fileStorageAreaWeakPtr,
+        uint64                                          freeSpace,
+        ::std::function<void()>                         onHandledEventCallback
+    ) /*override*/;
 
     // vIndex: 2
     virtual void onLowDiskSpace(bool const bSet) /*override*/;
@@ -1478,10 +1527,12 @@ public:
     virtual void onAppResumed() /*override*/;
 
     // vIndex: 351
-    virtual void onActiveResourcePacksChanged(::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const&) /*override*/;
+    virtual void
+    onActiveResourcePacksChanged(::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const&) /*override*/;
 
     // vIndex: 352
-    virtual void reloadEntityRenderers(::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const&) /*override*/;
+    virtual void
+    reloadEntityRenderers(::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const&) /*override*/;
 
     // vIndex: 353
     virtual ::BlockTessellator& getBlockTessellator() /*override*/;
@@ -1526,7 +1577,8 @@ public:
     virtual ::std::shared_ptr<::ITTSEventManager> getTTSEventManager() /*override*/;
 
     // vIndex: 367
-    virtual void addTTSMessage(::std::string const&, ::ProfanityFilterContext, bool, ::std::string const&, bool, bool) /*override*/;
+    virtual void
+    addTTSMessage(::std::string const&, ::ProfanityFilterContext, bool, ::std::string const&, bool, bool) /*override*/;
 
     // vIndex: 368
     virtual void initCommands() /*override*/;
@@ -1601,7 +1653,8 @@ public:
     virtual ::PlayerCapabilities::IClientController const& getClientCapabilities() const /*override*/;
 
     // vIndex: 393
-    virtual ::cg::math::Rect<float> calculateViewPortModifiers(::SubClientId const, uint64 const, ::SplitScreenDirection const) const /*override*/;
+    virtual ::cg::math::Rect<float>
+    calculateViewPortModifiers(::SubClientId const, uint64 const, ::SplitScreenDirection const) const /*override*/;
 
     // vIndex: 394
     virtual ::std::weak_ptr<::IClientInstance> getWeakPtrToThis() /*override*/;
@@ -1628,7 +1681,8 @@ public:
     virtual ::ItemRegistryRef getItemRegistry() const /*override*/;
 
     // vIndex: 402
-    virtual ::Bedrock::NotNullNonOwnerPtr<::DisconnectionRequestHandler> getDisconnectionRequestHandler() const /*override*/;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::DisconnectionRequestHandler> getDisconnectionRequestHandler() const
+        /*override*/;
 
     // vIndex: 403
     virtual float getRemoteServerTimeMs() const /*override*/;
@@ -1705,5 +1759,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

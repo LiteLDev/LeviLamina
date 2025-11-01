@@ -10,12 +10,12 @@ class NetworkPacketRecorder : public ::NetworkPeer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke97719;
-    ::ll::UntypedStorage<1, 1> mUnkdac53a;
+    ::ll::UntypedStorage<8, 8>  mUnke97719;
+    ::ll::UntypedStorage<1, 1>  mUnkdac53a;
     ::ll::UntypedStorage<8, 16> mUnk15c0b2;
-    ::ll::UntypedStorage<1, 1> mUnkb36a7d;
-    ::ll::UntypedStorage<1, 1> mUnk85f337;
-    ::ll::UntypedStorage<1, 1> mUnk4bc6fb;
+    ::ll::UntypedStorage<1, 1>  mUnkb36a7d;
+    ::ll::UntypedStorage<1, 1>  mUnk85f337;
+    ::ll::UntypedStorage<1, 1>  mUnk4bc6fb;
     ::ll::UntypedStorage<8, 24> mUnk2a9aea;
     // NOLINTEND
 
@@ -35,7 +35,8 @@ public:
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
     // vIndex: 7
-    virtual ::NetworkPeer::DataStatus _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
+    virtual ::NetworkPeer::DataStatus
+    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
 
     // vIndex: 0
     virtual ~NetworkPacketRecorder() /*override*/ = default;
@@ -46,5 +47,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

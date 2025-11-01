@@ -14,7 +14,13 @@ struct MovementAttributeEntry;
 namespace MovementAttributesComponentExt {
 // functions
 // NOLINTBEGIN
-MCAPI ::brstd::flat_map<::HashedString, ::MovementAttributeEntry, ::std::less<::HashedString>, ::std::vector<::HashedString>, ::std::vector<::MovementAttributeEntry>> const& getAttributeMap();
+MCAPI ::brstd::flat_map<
+    ::HashedString,
+    ::MovementAttributeEntry,
+    ::std::less<::HashedString>,
+    ::std::vector<::HashedString>,
+    ::std::vector<::MovementAttributeEntry>> const&
+getAttributeMap();
 // NOLINTEND
 
-}
+} // namespace MovementAttributesComponentExt

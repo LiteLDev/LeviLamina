@@ -5,5 +5,5 @@
 enum class TrustedSkinFlag : schar {
     Unset = 0,
     False = 1,
-    True = 2,
+    True  = 2,
 };

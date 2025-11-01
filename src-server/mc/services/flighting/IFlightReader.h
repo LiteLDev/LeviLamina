@@ -82,16 +82,24 @@ public:
     virtual void visit(::std::function<void(::FlightingToggleMetadata const&)> const&) const = 0;
 
     // vIndex: 21
-    virtual void registerEnableMemoryTrackerObserver(::Bedrock::PubSub::Subscription&, ::std::function<void(bool)>) const = 0;
+    virtual void
+    registerEnableMemoryTrackerObserver(::Bedrock::PubSub::Subscription&, ::std::function<void(bool)>) const = 0;
 
     // vIndex: 22
-    virtual void registerFriendsDrawerOnMultipleScreensObserver(::Bedrock::PubSub::Subscription&, ::std::function<void(bool)>) const = 0;
+    virtual void registerFriendsDrawerOnMultipleScreensObserver(
+        ::Bedrock::PubSub::Subscription&,
+        ::std::function<void(bool)>
+    ) const = 0;
 
     // vIndex: 23
     virtual bool isEnabled(::FlightingTreatmentId) const = 0;
 
     // vIndex: 24
-    virtual void registerOptionObserverCallback(::Bedrock::PubSub::Subscription&, ::FlightingTreatmentId, ::std::function<void(bool)>) const = 0;
+    virtual void registerOptionObserverCallback(
+        ::Bedrock::PubSub::Subscription&,
+        ::FlightingTreatmentId,
+        ::std::function<void(bool)>
+    ) const = 0;
     // NOLINTEND
 
 public:
@@ -99,7 +107,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace flighting

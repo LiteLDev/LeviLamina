@@ -22,8 +22,9 @@ class SmithingTableContainerManagerController : public ::ContainerManagerControl
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::SmithingTableContainerManagerModel>> mSmithingTableContainerManagerModel;
-    ::ll::TypedStorage<8, 40, ::SlotData const> mCreatedItemOutputSlot;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::SmithingTableContainerManagerModel>>
+                                                    mSmithingTableContainerManagerModel;
+    ::ll::TypedStorage<8, 40, ::SlotData const>     mCreatedItemOutputSlot;
     ::ll::TypedStorage<8, 136, ::ItemResultPreview> mResultPreview;
     // NOLINTEND
 
@@ -49,13 +50,19 @@ public:
     virtual void handleTakeHalf(::SlotData const&, ::SlotData const&) /*override*/;
 
     // vIndex: 15
-    virtual int handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/;
+    virtual int handleAutoPlace(
+        ::SlotData const&,
+        int,
+        ::std::vector<::AutoPlaceItem> const&,
+        ::std::vector<::AutoPlaceResult>&
+    ) /*override*/;
 
     // vIndex: 32
     virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
 
     // vIndex: 29
-    virtual ::CreateContainerItemScope _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
+    virtual ::CreateContainerItemScope
+    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
     // NOLINTEND
 
 public:
@@ -63,5 +70,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

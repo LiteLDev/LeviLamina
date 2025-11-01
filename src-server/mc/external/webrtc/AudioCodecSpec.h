@@ -17,7 +17,6 @@ public:
     AudioCodecSpec& operator=(AudioCodecSpec const&);
     AudioCodecSpec(AudioCodecSpec const&);
     AudioCodecSpec();
-
 };
 
-}
+} // namespace webrtc

@@ -19,9 +19,9 @@ class SimulatedPlayerPostAIStepSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doSimulatedPlayerPostAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
+    MCNAPI static void
+    _doSimulatedPlayerPostAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
-
 };

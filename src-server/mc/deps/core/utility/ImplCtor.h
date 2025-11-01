@@ -4,7 +4,6 @@
 
 namespace Bedrock {
 
-struct ImplCtor {
-};
+struct ImplCtor {};
 
-}
+} // namespace Bedrock

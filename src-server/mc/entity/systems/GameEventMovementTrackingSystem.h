@@ -29,9 +29,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickGameEventMovementTrackingComponent(::ActorOwnerComponent& actorOwnerComponent, ::GameEventMovementTrackingComponent& gameEventMovementTrackingComponent, ::Optional<::RailMovementComponent const> railMovementComponent);
+    MCNAPI static void _tickGameEventMovementTrackingComponent(
+        ::ActorOwnerComponent&                    actorOwnerComponent,
+        ::GameEventMovementTrackingComponent&     gameEventMovementTrackingComponent,
+        ::Optional<::RailMovementComponent const> railMovementComponent
+    );
 
-    MCNAPI static void _trackMovement(::Actor& actor, ::GameEventMovementTrackingComponent& component, ::Optional<::RailMovementComponent const> railMovementComponent);
+    MCNAPI static void _trackMovement(
+        ::Actor&                                  actor,
+        ::GameEventMovementTrackingComponent&     component,
+        ::Optional<::RailMovementComponent const> railMovementComponent
+    );
     // NOLINTEND
 
 public:
@@ -45,5 +53,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -31,7 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool apply(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>& document, ::SemVersion const& documentVersion) const;
+    MCNAPI bool apply(
+        ::rapidjson::GenericDocument<
+            ::rapidjson::UTF8<char>,
+            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
+            ::rapidjson::CrtAllocator>& document,
+        ::SemVersion const&             documentVersion
+    ) const;
     // NOLINTEND
 
 public:
@@ -45,5 +51,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -47,7 +47,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::RateControlSettings ParseFromKeyValueConfig(::webrtc::FieldTrialsView const* const key_value_config);
+    MCNAPI static ::webrtc::RateControlSettings
+    ParseFromKeyValueConfig(::webrtc::FieldTrialsView const* const key_value_config);
     // NOLINTEND
 
 public:
@@ -61,7 +62,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

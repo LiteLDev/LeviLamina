@@ -17,7 +17,6 @@ public:
     RtpFecParameters& operator=(RtpFecParameters const&);
     RtpFecParameters(RtpFecParameters const&);
     RtpFecParameters();
-
 };
 
-}
+} // namespace webrtc

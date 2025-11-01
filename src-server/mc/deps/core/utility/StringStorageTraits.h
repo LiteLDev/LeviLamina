@@ -4,7 +4,6 @@
 
 namespace Util::Detail {
 
-class StringStorageTraits {
-};
+class StringStorageTraits {};
 
-}
+} // namespace Util::Detail

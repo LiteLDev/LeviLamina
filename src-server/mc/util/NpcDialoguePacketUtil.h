@@ -16,4 +16,4 @@ namespace NpcDialoguePacketUtil {
 MCNAPI ::Bedrock::Result<::NpcDialoguePacketPayload> verifyJson(::NpcDialoguePacketPayload const& payload);
 // NOLINTEND
 
-}
+} // namespace NpcDialoguePacketUtil

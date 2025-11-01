@@ -4,8 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-template<typename T0>
-class ScriptCustomComponentAfterEventSignal {
-};
+template <typename T0>
+class ScriptCustomComponentAfterEventSignal {};
 
-}
+} // namespace ScriptModuleMinecraft

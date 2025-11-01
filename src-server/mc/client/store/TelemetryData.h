@@ -4,7 +4,6 @@
 
 namespace storeSearch {
 
-struct TelemetryData {
-};
+struct TelemetryData {};
 
-}
+} // namespace storeSearch

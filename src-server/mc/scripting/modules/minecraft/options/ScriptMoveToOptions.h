@@ -47,7 +47,6 @@ public:
 
     MCNAPI static float const& SPEED_MIN();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleGameTest

@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 184, ::BlockDescriptor> mOreBlockDescriptor;
-    ::ll::TypedStorage<4, 4, int> mMaxEmptyCorners;
+    ::ll::TypedStorage<4, 4, int>                 mMaxEmptyCorners;
     // NOLINTEND
 
 public:
@@ -48,5 +48,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

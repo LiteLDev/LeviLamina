@@ -26,9 +26,33 @@ struct WasInWaterFlagComponent;
 namespace ServerMoveInputHandlerSystemUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickServerMoveInputHandler(::StrictEntityContext&, ::MovementAbilitiesComponent const& abilitiesComponent, ::ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovementComponent, ::ClientInputLockComponent& lockComponent, ::MoveInputComponent& input, ::ActorDataFlagComponent& actorDataFlag, ::ActorDataDirtyFlagsComponent& actorDataDirtyFlags, ::VanillaClientGameplayComponent& vanillaClientGameplayComponent, ::Optional<::SneakingComponent const> sneakingComponent, ::Optional<::WasInWaterFlagComponent const> isInWater);
+MCAPI void _tickServerMoveInputHandler(
+    ::StrictEntityContext&,
+    ::MovementAbilitiesComponent const&           abilitiesComponent,
+    ::ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovementComponent,
+    ::ClientInputLockComponent&                   lockComponent,
+    ::MoveInputComponent&                         input,
+    ::ActorDataFlagComponent&                     actorDataFlag,
+    ::ActorDataDirtyFlagsComponent&               actorDataDirtyFlags,
+    ::VanillaClientGameplayComponent&             vanillaClientGameplayComponent,
+    ::Optional<::SneakingComponent const>         sneakingComponent,
+    ::Optional<::WasInWaterFlagComponent const>   isInWater
+);
 
-MCAPI void _tickServerMoveInputHandlerSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent const, ::PlayerComponent const>, ::MovementAbilitiesComponent const, ::ServerPlayerCurrentMovementComponent const, ::ClientInputLockComponent, ::MoveInputComponent, ::ActorDataFlagComponent, ::ActorDataDirtyFlagsComponent, ::VanillaClientGameplayComponent, ::Optional<::SneakingComponent const>, ::Optional<::WasInWaterFlagComponent const>> view);
+MCAPI void _tickServerMoveInputHandlerSystem(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::ActorMovementTickNeededComponent const, ::PlayerComponent const>,
+        ::MovementAbilitiesComponent const,
+        ::ServerPlayerCurrentMovementComponent const,
+        ::ClientInputLockComponent,
+        ::MoveInputComponent,
+        ::ActorDataFlagComponent,
+        ::ActorDataDirtyFlagsComponent,
+        ::VanillaClientGameplayComponent,
+        ::Optional<::SneakingComponent const>,
+        ::Optional<::WasInWaterFlagComponent const>> view
+);
 // NOLINTEND
 
-}
+} // namespace ServerMoveInputHandlerSystemUtils

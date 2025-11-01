@@ -16,5 +16,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::WeakRef<::EcsEventDispatcher>> mDispatcher;
     // NOLINTEND
-
 };

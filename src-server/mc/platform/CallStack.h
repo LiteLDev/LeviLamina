@@ -22,20 +22,19 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        uint64             mFilenameHash;
+        uint64                          mFilenameHash;
         ::std::string_view mFilename;
-        uint               mLine;
+        uint                              mLine;
         // NOLINTEND
-
     };
 
     struct Context {
     public:
         // member variables
         // NOLINTBEGIN
-        ::std::string                        mValue;
+        ::std::string                                              mValue;
         ::std::optional<::Bedrock::LogLevel> mLogLevel;
-        ::std::optional<::LogAreaID>         mLogArea;
+        ::std::optional<::LogAreaID>                 mLogArea;
         // NOLINTEND
 
     public:
@@ -63,14 +62,13 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-
     };
 
     struct FrameWithContext {
     public:
         // member variables
         // NOLINTBEGIN
-        ::Bedrock::CallStack::Frame                    mFrame;
+        ::Bedrock::CallStack::Frame                                       mFrame;
         ::std::optional<::Bedrock::CallStack::Context> mContext;
         // NOLINTEND
 
@@ -84,15 +82,16 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FrameWithContext(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
-
+        MCAPI
+        FrameWithContext(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
         MCAPI ~FrameWithContext();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
+        MCAPI void*
+        $ctor(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
         // NOLINTEND
 
     public:
@@ -100,7 +99,6 @@ public:
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
-
     };
 
 public:
@@ -128,7 +126,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock

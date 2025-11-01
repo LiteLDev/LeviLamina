@@ -13,10 +13,10 @@ struct CongestionWindowConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8> mUnkd02f2e;
-    ::ll::UntypedStorage<4, 8> mUnk9fef24;
+    ::ll::UntypedStorage<4, 8>  mUnkd02f2e;
+    ::ll::UntypedStorage<4, 8>  mUnk9fef24;
     ::ll::UntypedStorage<8, 16> mUnkfc898b;
-    ::ll::UntypedStorage<1, 1> mUnk923699;
+    ::ll::UntypedStorage<1, 1>  mUnk923699;
     // NOLINTEND
 
 public:
@@ -42,7 +42,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::add_lvalue_reference_t<char const[]> kKey();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

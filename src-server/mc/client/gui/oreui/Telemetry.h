@@ -32,7 +32,12 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void fireEvent(::std::string const&, ::std::vector<::Social::Events::Property> const&, ::std::vector<::Social::Events::Measurement> const&, bool) /*override*/;
+    virtual void fireEvent(
+        ::std::string const&,
+        ::std::vector<::Social::Events::Property> const&,
+        ::std::vector<::Social::Events::Measurement> const&,
+        bool
+    ) /*override*/;
 
     // vIndex: 2
     virtual void fireEventOreUIScreenLoadFailed() /*override*/;
@@ -44,16 +49,22 @@ public:
     virtual void fireEventOreUIScreenPerformance(::OreUI::DataTracker const&) /*override*/;
 
     // vIndex: 5
-    virtual void fireEventButtonPressed(::std::string const&, ::std::unordered_map<::std::string, ::std::string> const&) /*override*/;
+    virtual void fireEventButtonPressed(
+        ::std::string const&,
+        ::std::unordered_map<::std::string, ::std::string> const&
+    ) /*override*/;
 
     // vIndex: 7
-    virtual void fireEventModalShown(::std::string const&, ::std::unordered_map<::std::string, ::std::string> const&) /*override*/;
+    virtual void
+    fireEventModalShown(::std::string const&, ::std::unordered_map<::std::string, ::std::string> const&) /*override*/;
 
     // vIndex: 6
-    virtual void fireEventOptionsChanged(::std::string const&, ::std::unordered_map<::std::string, int> const&) /*override*/;
+    virtual void
+    fireEventOptionsChanged(::std::string const&, ::std::unordered_map<::std::string, int> const&) /*override*/;
 
     // vIndex: 8
-    virtual void fireEventRealmsStoriesOptIn(::std::string const&, ::std::string const&, ::std::string const&, bool) /*override*/;
+    virtual void
+    fireEventRealmsStoriesOptIn(::std::string const&, ::std::string const&, ::std::string const&, bool) /*override*/;
 
     // vIndex: 0
     virtual ~Telemetry() /*override*/ = default;
@@ -64,7 +75,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace OreUI

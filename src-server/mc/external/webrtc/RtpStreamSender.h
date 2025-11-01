@@ -29,7 +29,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RtpStreamSender(::std::unique_ptr<::webrtc::ModuleRtpRtcpImpl2> rtp_rtcp, ::std::unique_ptr<::webrtc::RTPSenderVideo> sender_video, ::std::unique_ptr<::webrtc::VideoFecGenerator> fec_generator);
+    MCNAPI RtpStreamSender(
+        ::std::unique_ptr<::webrtc::ModuleRtpRtcpImpl2> rtp_rtcp,
+        ::std::unique_ptr<::webrtc::RTPSenderVideo>     sender_video,
+        ::std::unique_ptr<::webrtc::VideoFecGenerator>  fec_generator
+    );
 
     MCNAPI ~RtpStreamSender();
     // NOLINTEND
@@ -37,7 +41,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::unique_ptr<::webrtc::ModuleRtpRtcpImpl2> rtp_rtcp, ::std::unique_ptr<::webrtc::RTPSenderVideo> sender_video, ::std::unique_ptr<::webrtc::VideoFecGenerator> fec_generator);
+    MCNAPI void* $ctor(
+        ::std::unique_ptr<::webrtc::ModuleRtpRtcpImpl2> rtp_rtcp,
+        ::std::unique_ptr<::webrtc::RTPSenderVideo>     sender_video,
+        ::std::unique_ptr<::webrtc::VideoFecGenerator>  fec_generator
+    );
     // NOLINTEND
 
 public:
@@ -45,7 +53,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc::webrtc_internal_rtp_video_sender

@@ -14,4 +14,4 @@ namespace EconomyTradeableComponentInternal {
 MCNAPI int _filterTrades(::Actor& owner, ::std::vector<::TradeItem>& tradeItems);
 // NOLINTEND
 
-}
+} // namespace EconomyTradeableComponentInternal

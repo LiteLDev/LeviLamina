@@ -11,7 +11,7 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/Owner.h"
 #include "mc/platform/brstd/function_ref.h"
-#include "mc/versionless/util/BaseGameVersion.h"
+#include "mc/util/BaseGameVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -42,10 +42,9 @@ public:
 
     struct BlockComplexAliasBlockState {
     public:
-        BlockComplexAliasBlockState(HashedString const& stateName, int value) noexcept
+        BlockComplexAliasBlockState(HashedString const& stateName, int             value) noexcept
         : stateName(stateName),
           value(value) {}
-
     public:
         // member variables
         // NOLINTBEGIN
@@ -68,9 +67,9 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 64, ::std::function<::Block const*(int)>> mCallback;
-        ::ll::TypedStorage<8, 32, ::BaseGameVersion> mMinRequiredVersion;
-        ::ll::TypedStorage<8, 24, ::SemVersion> mFlattenedInBlocksJsonVersion;
-        ::ll::TypedStorage<4, 4, int> mStartVariant;
+        ::ll::TypedStorage<8, 32, ::BaseGameVersion>                    mMinRequiredVersion;
+        ::ll::TypedStorage<8, 24, ::SemVersion>                         mFlattenedInBlocksJsonVersion;
+        ::ll::TypedStorage<4, 4, int>                                   mStartVariant;
         // NOLINTEND
 
     public:
@@ -94,7 +93,6 @@ public:
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-
     };
 
     using BlockComplexAliasLookupMap = ::entt::dense_map<::HashedString, ::BlockTypeRegistry::BlockComplexAliasContent>;
@@ -104,7 +102,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>> mBlockType;
-        ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
+        ::ll::TypedStorage<8, 8, ::Block const*>               mBlock;
         // NOLINTEND
 
     public:
@@ -130,13 +128,12 @@ public:
 
         MCAPI void* $ctor(::WeakPtr<::BlockType const> blockType, int data, bool resolveBlock);
         // NOLINTEND
-
     };
 
     using BlockComplexAliasPostSplitBlockNames = ::std::vector<::std::reference_wrapper<::HashedString const>>;
 
-    using BlockComplexAliasPostSplitBlockNamesList = ::std::vector<::std::vector<::std::reference_wrapper<::HashedString const>>>;
-
+    using BlockComplexAliasPostSplitBlockNamesList =
+        ::std::vector<::std::vector<::std::reference_wrapper<::HashedString const>>>;
     using BlockComplexAliasPostSplitBlockNamesLookupMap = ::entt::dense_map<uint64, uint64>;
 
     using BlockNameHashToHashedStringMap = ::entt::dense_map<uint64, ::HashedString>;
@@ -153,12 +150,11 @@ public:
         DirectAccessBlocks& operator=(DirectAccessBlocks const&);
         DirectAccessBlocks(DirectAccessBlocks const&);
         DirectAccessBlocks();
-
     };
 
     enum class LookupByNameImplResolve : int {
         BlockType = 0,
-        Block = 1,
+        Block     = 1,
     };
 
 public:
@@ -166,14 +162,16 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::SharedPtr<::BlockType>>> mBlockLookupMap;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::HashedString>> mBlockAliasLookupMap;
-    ::ll::TypedStorage<8, 72, ::entt::dense_map<::HashedString, ::BlockTypeRegistry::BlockComplexAliasContent>> mBlockComplexAliasLookupMap;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::std::reference_wrapper<::HashedString const>>>> mBlockComplexAliasPostSplitBlockNamesList;
+    ::ll::TypedStorage<8, 72, ::entt::dense_map<::HashedString, ::BlockTypeRegistry::BlockComplexAliasContent>>
+        mBlockComplexAliasLookupMap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::std::reference_wrapper<::HashedString const>>>>
+                                                                 mBlockComplexAliasPostSplitBlockNamesList;
     ::ll::TypedStorage<8, 72, ::entt::dense_map<uint64, uint64>> mBlockComplexAliasPostSplitBlockNamesLookupMap;
     ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::HashedString>> mBlockComplexAliasPreSplitBlockNamesLookupMap;
-    ::ll::TypedStorage<8, 16, ::std::set<::std::string>> mKnownNamespaces;
-    ::ll::TypedStorage<8, 72, ::entt::dense_map<uint64, ::HashedString>> mBlockNameHashToStringMap;
+    ::ll::TypedStorage<8, 16, ::std::set<::std::string>>                  mKnownNamespaces;
+    ::ll::TypedStorage<8, 72, ::entt::dense_map<uint64, ::HashedString>>  mBlockNameHashToStringMap;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTypeRegistry::DirectAccessBlocks>> mDirectAccessBlocks;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockTypeRegistryRWLock>> mRWLock;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockTypeRegistryRWLock>>              mRWLock;
     // NOLINTEND
 
 public:
@@ -204,7 +202,8 @@ public:
 
     MCAPI ::HashedString const& getBlockNameFromNameHash(uint64 hash) const;
 
-    MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& getComplexAliasPostSplitBlockNames(::HashedString const& oldName) const;
+    MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
+    getComplexAliasPostSplitBlockNames(::HashedString const& oldName) const;
 
     MCAPI ::Block const& getDefaultBlockState(::HashedString const& name, bool logNotFound = false) const;
 
@@ -220,11 +219,21 @@ public:
 
     MCAPI void registerAlias(::HashedString const& alias, ::HashedString const& name);
 
-    MCAPI void registerComplexAlias(::HashedString const& alias, ::std::function<::Block const*(int)> callback, ::std::vector<::std::reference_wrapper<::HashedString const>> const& postSplitBlockNames, ::BaseGameVersion const& minRequiredVersion, ::SemVersion const& blocksJsonFormatVersion, ::HashedString defaultNewBlockName, int startVariant);
+    MCAPI void registerComplexAlias(
+        ::HashedString const&                                                alias,
+        ::std::function<::Block const*(int)>                                 callback,
+        ::std::vector<::std::reference_wrapper<::HashedString const>> const& postSplitBlockNames,
+        ::BaseGameVersion const&                                             minRequiredVersion,
+        ::SemVersion const&                                                  blocksJsonFormatVersion,
+        ::HashedString                                                       defaultNewBlockName,
+        int                                                                  startVariant
+    );
 
     MCAPI void setupDirectAccessBlocks();
 
-    MCAPI void setupVoxelShapeRegistryAccessOnAllBlocks(::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry> const& voxelShapeRegistry) const;
+    MCAPI void setupVoxelShapeRegistryAccessOnAllBlocks(
+        ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry> const& voxelShapeRegistry
+    ) const;
 
     MCAPI void unregisterBlock(::HashedString const& name);
 
@@ -258,5 +267,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

@@ -15,7 +15,9 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::optional<::std::string> validatePlayerName(::std::string const& playerName, ::GameplayUserManager const& gameplayUserManager) const /*override*/;
+    virtual ::std::optional<::std::string>
+    validatePlayerName(::std::string const& playerName, ::GameplayUserManager const& gameplayUserManager) const
+        /*override*/;
 
     // vIndex: 2
     virtual bool shouldGeneratePlayerIndex() const /*override*/;
@@ -27,7 +29,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::std::string> $validatePlayerName(::std::string const& playerName, ::GameplayUserManager const& gameplayUserManager) const;
+    MCNAPI ::std::optional<::std::string>
+    $validatePlayerName(::std::string const& playerName, ::GameplayUserManager const& gameplayUserManager) const;
 
     MCNAPI bool $shouldGeneratePlayerIndex() const;
     // NOLINTEND
@@ -37,5 +40,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

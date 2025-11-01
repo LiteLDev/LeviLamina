@@ -20,5 +20,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::BaseGameVersion const& FRICTION_FIX_VERSION();
     // NOLINTEND
-
 };

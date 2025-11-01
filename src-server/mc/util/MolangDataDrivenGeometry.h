@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DataDrivenGeometry>> mGeometry;
-    ::ll::TypedStorage<8, 48, ::HashedString> mName;
+    ::ll::TypedStorage<8, 48, ::HashedString>                        mName;
     // NOLINTEND
 
 public:
@@ -31,5 +31,4 @@ public:
 
     MCFOLD bool operator==(::MolangDataDrivenGeometry const& rhs) const;
     // NOLINTEND
-
 };

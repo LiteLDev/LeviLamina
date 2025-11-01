@@ -39,33 +39,91 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ScriptScreenDisplay(::Player const& player);
 
-    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageError> _getJsonString(::Player& player, ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface, ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& text) const;
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageError> _getJsonString(
+        ::Player& player,
+        ::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+            text
+    ) const;
 
     MCNAPI bool _isValid() const;
 
-    MCNAPI ::Scripting::Result<::std::vector<::HudElement>, ::ScriptModuleMinecraft::ScriptInvalidActorError> getHiddenHudElements();
+    MCNAPI ::Scripting::Result<::std::vector<::HudElement>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    getHiddenHudElements();
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError> hideAllExcept(::std::optional<::std::vector<::HudElement>> hudElement);
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    hideAllExcept(::std::optional<::std::vector<::HudElement>> hudElement);
 
-    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError> isForcedHidden(::HudElement hudElement);
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    isForcedHidden(::HudElement hudElement);
 
     MCNAPI ::ScriptModuleMinecraft::ScriptScreenDisplay& operator=(::ScriptModuleMinecraft::ScriptScreenDisplay&&);
 
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError> resetHudElements();
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::ScriptModuleMinecraft::ScriptInvalidActorError> setActionBar(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface, ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& text) const;
+    MCNAPI ::Scripting::
+        Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+        setActionBar(
+            ::std::variant<
+                ::std::string,
+                ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+                ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+                text
+        ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setActionBar_V010(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface, ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& text) const;
+    MCNAPI ::Scripting::Result_deprecated<void> setActionBar_V010(
+        ::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+            text
+    ) const;
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError> setHudVisibility(::HudVisibility visible, ::std::optional<::std::vector<::HudElement>> hudElement);
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    setHudVisibility(::HudVisibility visible, ::std::optional<::std::vector<::HudElement>> hudElement);
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError> setTitle(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface, ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& title, ::std::optional<::ScriptModuleMinecraft::ScriptTitleDisplayOptions> options) const;
+    MCNAPI ::Scripting::Result<
+        void,
+        ::ScriptModuleMinecraft::ScriptRawMessageError,
+        ::ScriptModuleMinecraft::ScriptInvalidActorError,
+        ::Scripting::ArgumentOutOfBoundsError>
+    setTitle(
+        ::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+                                                                            title,
+        ::std::optional<::ScriptModuleMinecraft::ScriptTitleDisplayOptions> options
+    ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> setTitle_V010(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface, ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& title, ::std::optional<::ScriptModuleMinecraft::ScriptTitleDisplayOptions> options) const;
+    MCNAPI ::Scripting::Result_deprecated<void> setTitle_V010(
+        ::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+                                                                            title,
+        ::std::optional<::ScriptModuleMinecraft::ScriptTitleDisplayOptions> options
+    ) const;
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::ScriptModuleMinecraft::ScriptInvalidActorError> updateSubtitle(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface, ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& subtitle) const;
+    MCNAPI ::Scripting::
+        Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+        updateSubtitle(
+            ::std::variant<
+                ::std::string,
+                ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+                ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+                subtitle
+        ) const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> updateSubtitle_V010(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface, ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& subtitle) const;
+    MCNAPI ::Scripting::Result_deprecated<void> updateSubtitle_V010(
+        ::std::variant<
+            ::std::string,
+            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
+            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const&
+            subtitle
+    ) const;
     // NOLINTEND
 
 public:
@@ -79,7 +137,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Player const& player);
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

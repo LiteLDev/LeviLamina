@@ -17,10 +17,17 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual bool isItemAllowedInSlot(::ContainerScreenContext const&, int const slot, ::ItemStackBase const& item, int const amount, bool) const /*override*/;
+    virtual bool isItemAllowedInSlot(
+        ::ContainerScreenContext const&,
+        int const              slot,
+        ::ItemStackBase const& item,
+        int const              amount,
+        bool
+    ) const /*override*/;
 
     // vIndex: 9
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
+        /*override*/;
 
     // vIndex: 0
     virtual ~ShulkerBoxContainerValidation() /*override*/ = default;
@@ -29,7 +36,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isItemAllowedInSlot(::ContainerScreenContext const&, int const slot, ::ItemStackBase const& item, int const amount, bool) const;
+    MCNAPI bool $isItemAllowedInSlot(
+        ::ContainerScreenContext const&,
+        int const              slot,
+        ::ItemStackBase const& item,
+        int const              amount,
+        bool
+    ) const;
 
     MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
     // NOLINTEND
@@ -39,5 +52,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

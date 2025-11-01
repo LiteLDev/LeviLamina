@@ -10,7 +10,7 @@ class EntityContext;
 namespace ActorLifecycle {
 // functions
 // NOLINTBEGIN
-MCNAPI bool isFirstTick(::EntityContext const& entity);
+MCAPI bool isFirstTick(::EntityContext const& entity);
 // NOLINTEND
 
-}
+} // namespace ActorLifecycle

@@ -5,7 +5,7 @@
 namespace cricket {
 
 enum class TlsCertPolicy : int {
-    Secure = 0,
+    Secure          = 0,
     InsecureNoCheck = 1,
 };
 

@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct Profile;
     // clang-format on
-    
+
     // Asset inner types define
     struct Profile {
     public:
@@ -19,15 +19,14 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk9f8679;
         ::ll::UntypedStorage<8, 32> mUnk481e49;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Profile& operator=(Profile const&);
         Profile(Profile const&);
         Profile();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,7 +41,6 @@ public:
     Asset& operator=(Asset const&);
     Asset(Asset const&);
     Asset();
-
 };
 
-}
+} // namespace glTF

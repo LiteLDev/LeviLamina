@@ -21,7 +21,12 @@ public:
     virtual bool isCraftingImplemented() /*override*/;
 
     // vIndex: 3
-    virtual ::ContainerValidationCraftResult getCraftResult(::ContainerScreenContext const& screenContext, ::ContainerScreenValidation& screenValidation, ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts) /*override*/;
+    virtual ::ContainerValidationCraftResult getCraftResult(
+        ::ContainerScreenContext const&                     screenContext,
+        ::ContainerScreenValidation&                        screenValidation,
+        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
+        uchar const                                         numCrafts
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~CartographyContainerScreenValidator() /*override*/ = default;
@@ -32,7 +37,12 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $isCraftingImplemented();
 
-    MCNAPI ::ContainerValidationCraftResult $getCraftResult(::ContainerScreenContext const& screenContext, ::ContainerScreenValidation& screenValidation, ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
+    MCNAPI ::ContainerValidationCraftResult $getCraftResult(
+        ::ContainerScreenContext const&                     screenContext,
+        ::ContainerScreenValidation&                        screenValidation,
+        ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
+        uchar const                                         numCrafts
+    );
     // NOLINTEND
 
 public:
@@ -40,5 +50,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

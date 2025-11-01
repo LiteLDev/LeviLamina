@@ -5,11 +5,11 @@
 namespace RakNet {
 
 enum class RNS2RecvFromResultCheck : int {
-    PassReceivedDataToApp = 1,
-    HandleReceivedEmptyUdpPacket = 0,
+    PassReceivedDataToApp         = 1,
+    HandleReceivedEmptyUdpPacket  = 0,
     HandleGracefullyClosedTcpConn = -1,
-    HandleEnetdownNeterror = -2,
-    HandleOtherNeterrors = -101,
+    HandleEnetdownNeterror        = -2,
+    HandleOtherNeterrors          = -101,
 };
 
 }

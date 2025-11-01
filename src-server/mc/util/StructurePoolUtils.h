@@ -15,7 +15,11 @@ class JigsawStructureRegistry;
 namespace StructurePoolUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerDataDrivenStructures(::JigsawStructureRegistry& jigsawStructureRegistry, ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager, ::FeatureRegistry const& features);
+MCNAPI void registerDataDrivenStructures(
+    ::JigsawStructureRegistry&                                 jigsawStructureRegistry,
+    ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager,
+    ::FeatureRegistry const&                                   features
+);
 // NOLINTEND
 
-}
+} // namespace StructurePoolUtils

@@ -42,7 +42,9 @@ public:
     virtual ::Scripting::Result_deprecated<bool> setCurrent(float const& value) const;
 
     // vIndex: 6
-    virtual ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError> setCurrentV2(float const& value) const;
+    virtual ::Scripting::
+        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
+        setCurrentV2(float const& value) const;
 
     // vIndex: 7
     virtual ::Scripting::Result_deprecated<float> getValue() const;
@@ -79,7 +81,9 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> $setCurrent(float const& value) const;
 
-    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError> $setCurrentV2(float const& value) const;
+    MCNAPI ::Scripting::
+        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
+        $setCurrentV2(float const& value) const;
 
     MCNAPI ::Scripting::Result_deprecated<float> $getValue() const;
 
@@ -101,7 +105,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

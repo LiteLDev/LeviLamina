@@ -39,7 +39,12 @@ public:
     // NOLINTBEGIN
     MCNAPI bool CanSendPaddingOnMediaSsrc() const;
 
-    MCNAPI PacketSequencer(uint media_ssrc, ::std::optional<uint> rtx_ssrc, bool require_marker_before_media_padding, ::webrtc::Clock* clock);
+    MCNAPI PacketSequencer(
+        uint                  media_ssrc,
+        ::std::optional<uint> rtx_ssrc,
+        bool                  require_marker_before_media_padding,
+        ::webrtc::Clock*      clock
+    );
 
     MCNAPI void PopulatePaddingFields(::webrtc::RtpPacketToSend& packet);
 
@@ -55,9 +60,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(uint media_ssrc, ::std::optional<uint> rtx_ssrc, bool require_marker_before_media_padding, ::webrtc::Clock* clock);
+    MCNAPI void* $ctor(
+        uint                  media_ssrc,
+        ::std::optional<uint> rtx_ssrc,
+        bool                  require_marker_before_media_padding,
+        ::webrtc::Clock*      clock
+    );
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

@@ -19,9 +19,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkc1c2ef;
-    ::ll::UntypedStorage<1, 1> mUnka762cb;
-    ::ll::UntypedStorage<1, 1> mUnk3f7be4;
-    ::ll::UntypedStorage<4, 4> mUnk4d998f;
+    ::ll::UntypedStorage<1, 1>  mUnka762cb;
+    ::ll::UntypedStorage<1, 1>  mUnk3f7be4;
+    ::ll::UntypedStorage<4, 4>  mUnk4d998f;
     // NOLINTEND
 
 public:
@@ -40,7 +40,11 @@ public:
     virtual void Update() /*override*/;
 
     // vIndex: 7
-    virtual void OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason) /*override*/;
+    virtual void OnClosedConnection(
+        ::RakNet::SystemAddress const&,
+        ::RakNet::RakNetGUID,
+        ::RakNet::PI2_LostConnectionReason
+    ) /*override*/;
 
     // vIndex: 8
     virtual void OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool) /*override*/;
@@ -51,7 +55,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

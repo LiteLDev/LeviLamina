@@ -23,10 +23,17 @@ public:
     virtual ~IScriptItemCustomComponentReader() = default;
 
     // vIndex: 1
-    virtual ::std::vector<::std::string_view> getValidComponentsForItem(::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>) const = 0;
+    virtual ::std::vector<::std::string_view> getValidComponentsForItem(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>
+    ) const = 0;
 
     // vIndex: 2
-    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const& tryGetCustomComponentParametersForItem(::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>, ::std::string_view, ::Scripting::WeakLifetimeScope const&) const = 0;
+    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+    tryGetCustomComponentParametersForItem(
+        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>,
+        ::std::string_view,
+        ::Scripting::WeakLifetimeScope const&
+    ) const = 0;
     // NOLINTEND
 
 public:
@@ -40,7 +47,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

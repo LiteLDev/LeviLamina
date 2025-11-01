@@ -17,12 +17,12 @@ class IApplicationDataStores : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // IApplicationDataStores inner types define
     enum class DataStores : int {
-        GlobalSettings = 0,
-        UserSettings = 1,
+        GlobalSettings    = 0,
+        UserSettings      = 1,
         BootstrapSettings = 2,
-        Count = 3,
+        Count             = 3,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -33,10 +33,12 @@ public:
     virtual void init() = 0;
 
     // vIndex: 3
-    virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore> getDataStore(::Bedrock::IApplicationDataStores::DataStores) = 0;
+    virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
+        getDataStore(::Bedrock::IApplicationDataStores::DataStores) = 0;
 
     // vIndex: 2
-    virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const> getDataStore(::Bedrock::IApplicationDataStores::DataStores) const = 0;
+    virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
+        getDataStore(::Bedrock::IApplicationDataStores::DataStores) const = 0;
     // NOLINTEND
 
 public:
@@ -50,7 +52,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock

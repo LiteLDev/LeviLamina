@@ -32,7 +32,7 @@ public:
     virtual void populatePacketData(::ShapeDataPayload& packetShapeData) const /*override*/;
 
     // vIndex: 2
-    virtual void applyUpdatedData(::ShapeDataPayload const& existing) /*override*/;
+    virtual void applyUpdatedData(::ShapeDataPayload const& packet) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptLineShape() /*override*/;
@@ -43,7 +43,8 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptLineShape(::ScriptModuleDebugUtilities::ScriptLineShape const&);
 
-    MCFOLD ::ScriptModuleDebugUtilities::ScriptLineShape& operator=(::ScriptModuleDebugUtilities::ScriptLineShape const&);
+    MCFOLD ::ScriptModuleDebugUtilities::ScriptLineShape&
+    operator=(::ScriptModuleDebugUtilities::ScriptLineShape const&);
     // NOLINTEND
 
 public:
@@ -69,7 +70,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $populatePacketData(::ShapeDataPayload& packetShapeData) const;
 
-    MCAPI void $applyUpdatedData(::ShapeDataPayload const& existing);
+    MCAPI void $applyUpdatedData(::ShapeDataPayload const& packet);
     // NOLINTEND
 
 public:
@@ -77,7 +78,6 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleDebugUtilities

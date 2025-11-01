@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-struct CookieEchoChunkConfig {
-};
+struct CookieEchoChunkConfig {};
 
-}
+} // namespace dcsctp

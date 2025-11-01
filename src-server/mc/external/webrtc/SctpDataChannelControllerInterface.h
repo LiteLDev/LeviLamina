@@ -21,7 +21,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::webrtc::RTCError SendData(::webrtc::StreamId, ::webrtc::SendDataParams const&, ::rtc::CopyOnWriteBuffer const&) = 0;
+    virtual ::webrtc::RTCError
+    SendData(::webrtc::StreamId, ::webrtc::SendDataParams const&, ::rtc::CopyOnWriteBuffer const&) = 0;
 
     // vIndex: 1
     virtual void AddSctpDataStream(::webrtc::StreamId) = 0;
@@ -62,7 +63,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

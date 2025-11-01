@@ -13,7 +13,7 @@ class RegistryManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkfe9f34;
+    ::ll::UntypedStorage<8, 32>   mUnkfe9f34;
     ::ll::UntypedStorage<8, 4080> mUnk15b833;
     // NOLINTEND
 
@@ -28,7 +28,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::Scripting::LifetimeRegistry> createLifetimeRegistry();
     // NOLINTEND
-
 };
 
-}
+} // namespace Scripting

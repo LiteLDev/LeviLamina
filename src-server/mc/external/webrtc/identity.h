@@ -4,7 +4,6 @@
 
 namespace webrtc {
 
-struct identity {
-};
+struct identity {};
 
-}
+} // namespace webrtc

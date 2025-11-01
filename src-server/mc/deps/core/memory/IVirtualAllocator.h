@@ -14,7 +14,7 @@ public:
     struct Flags;
     struct ReservationInfo;
     // clang-format on
-    
+
     // IVirtualAllocator inner types define
     struct Flags {
     public:
@@ -24,15 +24,14 @@ public:
         uint mUnk8510aa : 1;
         uint mUnkd8880b : 1;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Flags& operator=(Flags const&);
         Flags(Flags const&);
         Flags();
-    
     };
-    
+
     struct ReservationInfo {
     public:
         // member variables
@@ -40,20 +39,20 @@ public:
         ::ll::UntypedStorage<8, 8> mUnke61f86;
         ::ll::UntypedStorage<8, 8> mUnk54d9ce;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         ReservationInfo& operator=(ReservationInfo const&);
         ReservationInfo(ReservationInfo const&);
         ReservationInfo();
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::Bedrock::Result<::Bedrock::Memory::IVirtualAllocator::ReservationInfo> reserve(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64, uint64) = 0;
+    virtual ::Bedrock::Result<::Bedrock::Memory::IVirtualAllocator::ReservationInfo>
+    reserve(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64, uint64) = 0;
 
     // vIndex: 1
     virtual ::Bedrock::Result<void> commit(::Bedrock::Memory::IVirtualAllocator::Flags, void*, uint64, uint64, int) = 0;
@@ -73,7 +72,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::Memory

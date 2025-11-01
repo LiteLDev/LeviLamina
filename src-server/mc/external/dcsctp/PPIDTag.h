@@ -4,7 +4,6 @@
 
 namespace dcsctp {
 
-class PPIDTag {
-};
+class PPIDTag {};
 
-}
+} // namespace dcsctp

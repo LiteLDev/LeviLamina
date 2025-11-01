@@ -21,19 +21,24 @@ class FireworkChargeItem : public ::Item {
 public:
     // FireworkChargeItem inner types define
     enum class Shape : int {
-        None = 0,
-        LargeBall = 1,
-        Star = 2,
+        None        = 0,
+        LargeBall   = 1,
+        Star        = 2,
         HeadCreeper = 3,
-        Burst = 4,
-        Count = 5,
+        Burst       = 4,
+        Count       = 5,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 53
-    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
+    virtual void appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const /*override*/;
 
     // vIndex: 108
     virtual bool hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const /*override*/;
@@ -54,15 +59,41 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _initFireworkChargeItem(::ItemStackBase& itemInstance, ::FireworkChargeItem::Shape shape, ::std::vector<uchar> colors, ::std::vector<uchar> fadeColors, bool hasTrail, bool hasFlicker);
+    MCAPI static void _initFireworkChargeItem(
+        ::ItemStackBase&            itemInstance,
+        ::FireworkChargeItem::Shape shape,
+        ::std::vector<uchar>        colors,
+        ::std::vector<uchar>        fadeColors,
+        bool                        hasTrail,
+        bool                        hasFlicker
+    );
 
-    MCAPI static void appendColors(::Bedrock::Safety::RedactableString& hovertext, ::std::vector<uchar> const& colorList);
+    MCAPI static void
+    appendColors(::Bedrock::Safety::RedactableString& hovertext, ::std::vector<uchar> const& colorList);
 
-    MCAPI static void getFormattedHoverText(::CompoundTag const& explosion, ::Bedrock::Safety::RedactableString& hovertext, ::std::string const& indent);
+    MCAPI static void getFormattedHoverText(
+        ::CompoundTag const&                 explosion,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        ::std::string const&                 indent
+    );
 
-    MCAPI static ::ItemInstance const& initFireworkChargeItem(::ItemInstance& itemInstance, ::FireworkChargeItem::Shape shape, ::std::vector<uchar> colors, ::std::vector<uchar> fadeColors, bool hasTrail, bool hasFlicker);
+    MCAPI static ::ItemInstance const& initFireworkChargeItem(
+        ::ItemInstance&             itemInstance,
+        ::FireworkChargeItem::Shape shape,
+        ::std::vector<uchar>        colors,
+        ::std::vector<uchar>        fadeColors,
+        bool                        hasTrail,
+        bool                        hasFlicker
+    );
 
-    MCAPI static ::ItemStack const& initFireworkChargeItem(::ItemStack& item, ::FireworkChargeItem::Shape shape, ::std::vector<uchar> colors, ::std::vector<uchar> fadeColors, bool hasTrail, bool hasFlicker);
+    MCAPI static ::ItemStack const& initFireworkChargeItem(
+        ::ItemStack&                item,
+        ::FireworkChargeItem::Shape shape,
+        ::std::vector<uchar>        colors,
+        ::std::vector<uchar>        fadeColors,
+        bool                        hasTrail,
+        bool                        hasFlicker
+    );
 
     MCAPI static void setColor(::ItemStackBase& instance);
     // NOLINTEND
@@ -86,7 +117,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
+    MCAPI void $appendFormattedHovertext(
+        ::ItemStackBase const&               stack,
+        ::Level&                             level,
+        ::Bedrock::Safety::RedactableString& hovertext,
+        bool const                           showCategory
+    ) const;
 
     MCAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
 
@@ -102,5 +138,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

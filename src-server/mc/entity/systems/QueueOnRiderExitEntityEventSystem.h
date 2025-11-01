@@ -25,9 +25,21 @@ namespace QueueOnRiderExitEntityEventSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void queueRequest(::PassengerComponent const& passengerComponent, ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::RideableComponent const> vehicleView, ::EntityModifier<::ExecuteEntityEventRequestComponent> modifier);
+MCNAPI void queueRequest(
+    ::PassengerComponent const&                                                              passengerComponent,
+    ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::RideableComponent const> vehicleView,
+    ::EntityModifier<::ExecuteEntityEventRequestComponent>                                   modifier
+);
 
-MCNAPI void tick(::ViewT<::StrictEntityContext, ::Include<::StopRidingRequestComponent>, ::Exclude<::ActorIsBeingDestroyedFlagComponent>, ::PassengerComponent const> passengerView, ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::RideableComponent const> vehicleView, ::EntityModifier<::ExecuteEntityEventRequestComponent> modifier);
+MCNAPI void tick(
+    ::ViewT<
+        ::StrictEntityContext,
+        ::Include<::StopRidingRequestComponent>,
+        ::Exclude<::ActorIsBeingDestroyedFlagComponent>,
+        ::PassengerComponent const>                                                          passengerView,
+    ::ViewT<::StrictEntityContext, ::Include<::VehicleComponent>, ::RideableComponent const> vehicleView,
+    ::EntityModifier<::ExecuteEntityEventRequestComponent>                                   modifier
+);
 // NOLINTEND
 
-}
+} // namespace QueueOnRiderExitEntityEventSystem

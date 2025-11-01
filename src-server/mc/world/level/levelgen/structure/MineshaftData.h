@@ -14,7 +14,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Block const&> mLogBlock;
     ::ll::TypedStorage<8, 8, ::Block const&> mPlankBlock;
     ::ll::TypedStorage<8, 8, ::Block const&> mFenceBlock;
-    ::ll::TypedStorage<4, 4, float> roomChance;
+    ::ll::TypedStorage<4, 4, float>          roomChance;
     // NOLINTEND
 
 public:
@@ -22,5 +22,4 @@ public:
     MineshaftData& operator=(MineshaftData const&);
     MineshaftData(MineshaftData const&);
     MineshaftData();
-
 };

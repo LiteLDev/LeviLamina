@@ -59,5 +59,4 @@ public:
 
     MCAPI void $writeLongLong(int64 v);
     // NOLINTEND
-
 };

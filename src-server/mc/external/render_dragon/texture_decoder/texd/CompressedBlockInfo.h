@@ -18,7 +18,6 @@ public:
     CompressedBlockInfo& operator=(CompressedBlockInfo const&);
     CompressedBlockInfo(CompressedBlockInfo const&);
     CompressedBlockInfo();
-
 };
 
-}
+} // namespace texd

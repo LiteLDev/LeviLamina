@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/dataloadhelper/DataLoadHelper.h"
 #include "mc/dataloadhelper/DataLoadHelperType.h"
-#include "mc/versionless/util/Mirror.h"
-#include "mc/versionless/util/Rotation.h"
+#include "mc/util/Mirror.h"
+#include "mc/util/Rotation.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/InternalComponentRegistry.h"
 
@@ -23,7 +23,7 @@ class NewUniqueIdsDataLoadHelper : public ::DataLoadHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ILevel*> mLevel;
+    ::ll::TypedStorage<8, 8, ::ILevel*>                                               mLevel;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::ActorUniqueID>> mOldIDToNewID;
     // NOLINTEND
 
@@ -73,7 +73,10 @@ public:
     virtual ::ActorUniqueID loadOwnerID(::ActorUniqueID id) /*override*/;
 
     // vIndex: 15
-    virtual ::InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry, ::std::string const& componentName) /*override*/;
+    virtual ::InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(
+        ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
+        ::std::string const&                                                                    componentName
+    ) /*override*/;
 
     // vIndex: 17
     virtual bool shouldResetTime() /*override*/;
@@ -122,7 +125,10 @@ public:
 
     MCFOLD ::ActorUniqueID $loadOwnerID(::ActorUniqueID id);
 
-    MCFOLD ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry, ::std::string const& componentName);
+    MCFOLD ::InternalComponentRegistry::ComponentInfo const* $loadActorInternalComponentInfo(
+        ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const& registry,
+        ::std::string const&                                                                    componentName
+    );
 
     MCFOLD bool $shouldResetTime();
 
@@ -134,5 +140,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

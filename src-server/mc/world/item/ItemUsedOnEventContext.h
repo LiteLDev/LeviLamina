@@ -10,7 +10,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::NotifyItemUsedOnEvent> mNotify;
-    ::ll::TypedStorage<1, 1, bool> mIsFirstEvent;
+    ::ll::TypedStorage<1, 1, bool>                    mIsFirstEvent;
     // NOLINTEND
-
 };

@@ -11,9 +11,9 @@ struct StructureTemplateDataRequestPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string> mStructureName;
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mStructureBlockPos;
-    ::ll::TypedStorage<8, 104, ::StructureSettings> mStructureSettings;
+    ::ll::TypedStorage<8, 32, ::std::string>                      mStructureName;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>             mStructureBlockPos;
+    ::ll::TypedStorage<8, 104, ::StructureSettings>               mStructureSettings;
     ::ll::TypedStorage<1, 1, ::StructureTemplateRequestOperation> mRequestOperation;
     // NOLINTEND
 
@@ -48,5 +48,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

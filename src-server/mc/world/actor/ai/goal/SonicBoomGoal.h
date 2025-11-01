@@ -16,23 +16,23 @@ class SonicBoomGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
-    ::ll::TypedStorage<4, 4, float> mAttackDamage;
-    ::ll::TypedStorage<4, 4, float> mAttackRangeHorizontal;
-    ::ll::TypedStorage<4, 4, float> mAttackRangeVertical;
-    ::ll::TypedStorage<4, 4, float> mKnockbackHorizontalStrength;
-    ::ll::TypedStorage<4, 4, float> mKnockbackVerticalStrength;
-    ::ll::TypedStorage<4, 4, float> mKnockbackHeightCap;
-    ::ll::TypedStorage<2, 2, ushort> mAttackCooldownTicks;
-    ::ll::TypedStorage<2, 2, ushort> mDurationTicks;
-    ::ll::TypedStorage<2, 2, ushort> mDurationTicksUntilAttackSound;
+    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<4, 4, float>                                  mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, float>                                  mAttackDamage;
+    ::ll::TypedStorage<4, 4, float>                                  mAttackRangeHorizontal;
+    ::ll::TypedStorage<4, 4, float>                                  mAttackRangeVertical;
+    ::ll::TypedStorage<4, 4, float>                                  mKnockbackHorizontalStrength;
+    ::ll::TypedStorage<4, 4, float>                                  mKnockbackVerticalStrength;
+    ::ll::TypedStorage<4, 4, float>                                  mKnockbackHeightCap;
+    ::ll::TypedStorage<2, 2, ushort>                                 mAttackCooldownTicks;
+    ::ll::TypedStorage<2, 2, ushort>                                 mDurationTicks;
+    ::ll::TypedStorage<2, 2, ushort>                                 mDurationTicksUntilAttackSound;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mAttackSound;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mChargeSound;
-    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mAnimationLength;
-    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mSoundCooldown;
-    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mSoundDelay;
-    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mSonicBoomCooldown;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>>       mAnimationLength;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>>       mSoundCooldown;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>>       mSoundDelay;
+    ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>>       mSonicBoomCooldown;
     // NOLINTEND
 
 public:
@@ -87,5 +87,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

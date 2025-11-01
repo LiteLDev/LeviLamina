@@ -13,7 +13,7 @@ class Seasons {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnk7e578e;
+    ::ll::UntypedStorage<8, 8>  mUnk7e578e;
     ::ll::UntypedStorage<8, 40> mUnk88ff00;
     // NOLINTEND
 
@@ -28,5 +28,4 @@ public:
     // NOLINTBEGIN
     MCNAPI void postProcess(::LevelChunk& levelChunk, ::BlockSource& region, ::ChunkPos const& chunkPos);
     // NOLINTEND
-
 };

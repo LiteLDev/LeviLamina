@@ -12,13 +12,24 @@ namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 namespace VanillaSystemsRegistration::VehicleManagement {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerActorPositionPassenger(::EntitySystems& systemRegistry, ::VanillaSystemsRegistration::RegistrationOptions const& options);
+MCAPI void registerActorPositionPassenger(
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
+);
 
-MCNAPI void registerExitVehicle(::EntitySystems& systemRegistry, ::VanillaSystemsRegistration::RegistrationOptions const& options);
+MCAPI void
+registerExitVehicle(::EntitySystems& systemRegistry, ::VanillaSystemsRegistration::RegistrationOptions const& options);
 
-MCNAPI void registerPassengerTick(::EntitySystems& systemRegistry, ::VanillaSystemsRegistration::RegistrationOptions const& options);
+MCAPI void registerPassengerTick(
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options
+);
 
-MCNAPI void registerRemovePassengerSystems(::EntitySystems& systemRegistry, ::VanillaSystemsRegistration::RegistrationOptions const& options, ::EntitySystemTickingMode tickingMode);
+MCAPI void registerRemovePassengerSystems(
+    ::EntitySystems&                                         systemRegistry,
+    ::VanillaSystemsRegistration::RegistrationOptions const& options,
+    ::EntitySystemTickingMode                                tickingMode
+);
 // NOLINTEND
 
-}
+} // namespace VanillaSystemsRegistration::VehicleManagement

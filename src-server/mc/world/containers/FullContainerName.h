@@ -9,22 +9,21 @@ struct FullContainerName {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerEnumName> mName;
+    ::ll::TypedStorage<1, 1, ::ContainerEnumName>   mName;
     ::ll::TypedStorage<4, 8, ::std::optional<uint>> mDynamicId;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool operator==(::FullContainerName const& rhs) const;
+    MCAPI bool operator==(::FullContainerName const& rhs) const;
 
-    MCNAPI ::std::string toString() const;
+    MCAPI ::std::string toString() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<uint> const& NON_DYNAMIC_ID();
+    MCAPI static ::std::optional<uint> const& NON_DYNAMIC_ID();
     // NOLINTEND
-
 };

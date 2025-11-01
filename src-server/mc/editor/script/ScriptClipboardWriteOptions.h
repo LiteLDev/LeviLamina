@@ -13,8 +13,8 @@ class ScriptClipboardWriteOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2> mUnkb3cdaf;
-    ::ll::UntypedStorage<1, 2> mUnk400dae;
+    ::ll::UntypedStorage<1, 2>  mUnkb3cdaf;
+    ::ll::UntypedStorage<1, 2>  mUnk400dae;
     ::ll::UntypedStorage<4, 16> mUnk738760;
     ::ll::UntypedStorage<4, 16> mUnke5eb3e;
     // NOLINTEND
@@ -30,7 +30,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::ScriptModule

@@ -9,16 +9,16 @@ public:
     // Shader inner types define
     enum class Type : int {
         FragmentShader = 35632,
-        VertexShader = 35633,
+        VertexShader   = 35633,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk73bba4;
-    ::ll::UntypedStorage<4, 4> mUnk38e2d1;
+    ::ll::UntypedStorage<4, 4>  mUnk38e2d1;
     ::ll::UntypedStorage<8, 32> mUnk98f018;
-    ::ll::UntypedStorage<4, 4> mUnk34516e;
+    ::ll::UntypedStorage<4, 4>  mUnk34516e;
     // NOLINTEND
 
 public:
@@ -26,7 +26,6 @@ public:
     Shader& operator=(Shader const&);
     Shader(Shader const&);
     Shader();
-
 };
 
-}
+} // namespace glTF

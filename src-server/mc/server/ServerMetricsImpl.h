@@ -16,7 +16,7 @@ public:
     // clang-format off
     struct DataTransferred;
     // clang-format on
-    
+
     // ServerMetricsImpl inner types define
     struct DataTransferred {
     public:
@@ -25,22 +25,21 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk6f732d;
         ::ll::UntypedStorage<8, 8> mUnk7d4a71;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         DataTransferred& operator=(DataTransferred const&);
         DataTransferred(DataTransferred const&);
         DataTransferred();
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnke1d394;
-    ::ll::UntypedStorage<8, 64> mUnka9d3a6;
-    ::ll::UntypedStorage<8, 8> mUnk6262f1;
-    ::ll::UntypedStorage<1, 1> mUnk2cff8a;
+    ::ll::UntypedStorage<8, 8>   mUnke1d394;
+    ::ll::UntypedStorage<8, 64>  mUnka9d3a6;
+    ::ll::UntypedStorage<8, 8>   mUnk6262f1;
+    ::ll::UntypedStorage<1, 1>   mUnk2cff8a;
     ::ll::UntypedStorage<8, 616> mUnkd52975;
     // NOLINTEND
 
@@ -87,5 +86,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

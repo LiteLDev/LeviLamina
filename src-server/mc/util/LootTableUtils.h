@@ -27,15 +27,29 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::string convertFromJavaLootTableName(::std::string const& lootTableName);
 
-    MCAPI static void fillContainer(::Level& level, ::Container& container, ::Random& random, ::std::string const& tableName, ::DimensionType dimensionId, ::Actor* entity);
+    MCAPI static void fillContainer(
+        ::Level&             level,
+        ::Container&         container,
+        ::Random&            random,
+        ::std::string const& tableName,
+        ::DimensionType      dimensionId,
+        ::Actor*             entity
+    );
 
-    MCAPI static ::std::vector<::ItemStack> generateRandomDeathLoot(::LootTable const& table, ::Actor& lootSourceEntity, ::ActorDamageSource const* damageSource, ::ItemStack const* tool, ::Player* killer, float luck);
+    MCAPI static ::std::vector<::ItemStack> generateRandomDeathLoot(
+        ::LootTable const&         table,
+        ::Actor&                   lootSourceEntity,
+        ::ActorDamageSource const* damageSource,
+        ::ItemStack const*         tool,
+        ::Player*                  killer,
+        float                      luck
+    );
 
-    MCAPI static ::std::vector<::ItemStack> getRandomItems(::std::string const& tableName, ::Random& random, ::LootTableContext& context);
+    MCAPI static ::std::vector<::ItemStack>
+    getRandomItems(::std::string const& tableName, ::Random& random, ::LootTableContext& context);
 
     MCAPI static int givePlayer(::Player& player, ::std::vector<::ItemStack>& items, bool shouldAddWhenFull);
     // NOLINTEND
-
 };
 
-}
+} // namespace Util

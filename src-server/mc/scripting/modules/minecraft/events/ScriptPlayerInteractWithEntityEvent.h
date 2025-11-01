@@ -31,7 +31,10 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptPlayerInteractWithEntityEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityEvent const&);
 
-    MCAPI ScriptPlayerInteractWithEntityEvent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> target);
+    MCAPI ScriptPlayerInteractWithEntityEvent(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>  target
+    );
 
     MCAPI ~ScriptPlayerInteractWithEntityEvent();
     // NOLINTEND
@@ -41,7 +44,10 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityEvent const&);
 
-    MCAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> target);
+    MCAPI void* $ctor(
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>  target
+    );
     // NOLINTEND
 
 public:
@@ -49,7 +55,6 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace ScriptModuleMinecraft

@@ -1113,4 +1113,4 @@ MCAPI ::HashedString const& ZombieSpawnEgg();
 MCAPI ::HashedString const& ZombieVillagerSpawnEgg();
 // NOLINTEND
 
-}
+} // namespace VanillaItemNames

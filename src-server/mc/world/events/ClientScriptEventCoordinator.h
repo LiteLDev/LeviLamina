@@ -17,5 +17,4 @@ public:
     // vIndex: 0
     virtual ~ClientScriptEventCoordinator() /*override*/ = default;
     // NOLINTEND
-
 };

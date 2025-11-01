@@ -48,7 +48,6 @@ public:
 
     MCNAPI static void** $vftableForModeServiceProvider();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

@@ -36,16 +36,28 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual HRESULT ConnectAsync(::http_string const& uri, ::http_string const& subprotocol, ::HC_WEBSOCKET_OBSERVER* websocketHandle, ::XAsyncBlock* async) /*override*/;
+    virtual HRESULT ConnectAsync(
+        ::http_string const&     uri,
+        ::http_string const&     subprotocol,
+        ::HC_WEBSOCKET_OBSERVER* websocketHandle,
+        ::XAsyncBlock*           async
+    ) /*override*/;
 
     // vIndex: 2
-    virtual HRESULT SendAsync(::HC_WEBSOCKET_OBSERVER* websocketHandle, char const* message, ::XAsyncBlock* async) /*override*/;
+    virtual HRESULT
+    SendAsync(::HC_WEBSOCKET_OBSERVER* websocketHandle, char const* message, ::XAsyncBlock* async) /*override*/;
 
     // vIndex: 3
-    virtual HRESULT SendBinaryAsync(::HC_WEBSOCKET_OBSERVER* websocketHandle, uchar const* payloadBytes, uint payloadSize, ::XAsyncBlock* async) /*override*/;
+    virtual HRESULT SendBinaryAsync(
+        ::HC_WEBSOCKET_OBSERVER* websocketHandle,
+        uchar const*             payloadBytes,
+        uint                     payloadSize,
+        ::XAsyncBlock*           async
+    ) /*override*/;
 
     // vIndex: 4
-    virtual HRESULT Disconnect(::HC_WEBSOCKET_OBSERVER* websocketHandle, ::HCWebSocketCloseStatus closeStatus) /*override*/;
+    virtual HRESULT
+    Disconnect(::HC_WEBSOCKET_OBSERVER* websocketHandle, ::HCWebSocketCloseStatus closeStatus) /*override*/;
 
     // vIndex: 0
     virtual ~ExternalWebSocketProvider() /*override*/ = default;
@@ -66,11 +78,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI HRESULT $ConnectAsync(::http_string const& uri, ::http_string const& subprotocol, ::HC_WEBSOCKET_OBSERVER* websocketHandle, ::XAsyncBlock* async);
+    MCNAPI HRESULT $ConnectAsync(
+        ::http_string const&     uri,
+        ::http_string const&     subprotocol,
+        ::HC_WEBSOCKET_OBSERVER* websocketHandle,
+        ::XAsyncBlock*           async
+    );
 
     MCNAPI HRESULT $SendAsync(::HC_WEBSOCKET_OBSERVER* websocketHandle, char const* message, ::XAsyncBlock* async);
 
-    MCNAPI HRESULT $SendBinaryAsync(::HC_WEBSOCKET_OBSERVER* websocketHandle, uchar const* payloadBytes, uint payloadSize, ::XAsyncBlock* async);
+    MCNAPI HRESULT $SendBinaryAsync(
+        ::HC_WEBSOCKET_OBSERVER* websocketHandle,
+        uchar const*             payloadBytes,
+        uint                     payloadSize,
+        ::XAsyncBlock*           async
+    );
 
     MCNAPI HRESULT $Disconnect(::HC_WEBSOCKET_OBSERVER* websocketHandle, ::HCWebSocketCloseStatus closeStatus);
     // NOLINTEND
@@ -80,7 +102,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace xbox::httpclient

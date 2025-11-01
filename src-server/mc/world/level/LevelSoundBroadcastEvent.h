@@ -11,8 +11,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent const> mType;
-    ::ll::TypedStorage<4, 12, ::Vec3 const> mPos;
-    ::ll::TypedStorage<4, 4, int const> mData;
+    ::ll::TypedStorage<4, 12, ::Vec3 const>                                mPos;
+    ::ll::TypedStorage<4, 4, int const>                                    mData;
     // NOLINTEND
-
 };

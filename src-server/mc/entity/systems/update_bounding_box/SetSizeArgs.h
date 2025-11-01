@@ -23,7 +23,6 @@ public:
     SetSizeArgs& operator=(SetSizeArgs const&);
     SetSizeArgs(SetSizeArgs const&);
     SetSizeArgs();
-
 };
 
-}
+} // namespace UpdateBoundingBox

@@ -17,7 +17,6 @@ public:
     CompressedImageBuffer& operator=(CompressedImageBuffer const&);
     CompressedImageBuffer(CompressedImageBuffer const&);
     CompressedImageBuffer();
-
 };
 
-}
+} // namespace cg

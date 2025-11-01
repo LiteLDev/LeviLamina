@@ -29,7 +29,19 @@ struct ShulkerFlagComponent;
 
 namespace UpdateBoundingBox {
 
-struct SystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>, ::Read<>, ::Write<::AABBShapeComponent, ::ActorDataBoundingBoxComponent, ::ActorDataDirtyFlagsComponent, ::DepenetrationComponent, ::OffsetsComponent>, ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
+struct SystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
+                        ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+                        ::Read<>,
+                        ::Write<
+                            ::AABBShapeComponent,
+                            ::ActorDataBoundingBoxComponent,
+                            ::ActorDataDirtyFlagsComponent,
+                            ::DepenetrationComponent,
+                            ::OffsetsComponent>,
+                        ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+                        ::GlobalRead<>,
+                        ::GlobalWrite<>,
+                        ::EntityFactoryT<>>> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -47,10 +59,39 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(::StrictExecutionContext<::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>, ::Read<>, ::Write<::AABBShapeComponent, ::ActorDataBoundingBoxComponent, ::ActorDataDirtyFlagsComponent, ::DepenetrationComponent, ::OffsetsComponent>, ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext) /*override*/;
+    virtual void tick(
+        ::StrictExecutionContext<
+            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+            ::Read<>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataDirtyFlagsComponent,
+                ::DepenetrationComponent,
+                ::OffsetsComponent>,
+            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    ) /*override*/;
 
     // vIndex: 6
-    virtual void singleTick(::StrictExecutionContext<::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>, ::Read<>, ::Write<::AABBShapeComponent, ::ActorDataBoundingBoxComponent, ::ActorDataDirtyFlagsComponent, ::DepenetrationComponent, ::OffsetsComponent>, ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext, ::StrictEntityContext& entityContext) /*override*/;
+    virtual void singleTick(
+        ::StrictExecutionContext<
+            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+            ::Read<>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataDirtyFlagsComponent,
+                ::DepenetrationComponent,
+                ::OffsetsComponent>,
+            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
+    ) /*override*/;
 
     // vIndex: 0
     virtual ~SystemImpl() /*override*/ = default;
@@ -59,9 +100,38 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::StrictExecutionContext<::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>, ::Read<>, ::Write<::AABBShapeComponent, ::ActorDataBoundingBoxComponent, ::ActorDataDirtyFlagsComponent, ::DepenetrationComponent, ::OffsetsComponent>, ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext);
+    MCNAPI void $tick(
+        ::StrictExecutionContext<
+            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+            ::Read<>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataDirtyFlagsComponent,
+                ::DepenetrationComponent,
+                ::OffsetsComponent>,
+            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext
+    );
 
-    MCNAPI void $singleTick(::StrictExecutionContext<::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>, ::Read<>, ::Write<::AABBShapeComponent, ::ActorDataBoundingBoxComponent, ::ActorDataDirtyFlagsComponent, ::DepenetrationComponent, ::OffsetsComponent>, ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext, ::StrictEntityContext& entityContext);
+    MCNAPI void $singleTick(
+        ::StrictExecutionContext<
+            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
+            ::Read<>,
+            ::Write<
+                ::AABBShapeComponent,
+                ::ActorDataBoundingBoxComponent,
+                ::ActorDataDirtyFlagsComponent,
+                ::DepenetrationComponent,
+                ::OffsetsComponent>,
+            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
+            ::GlobalRead<>,
+            ::GlobalWrite<>,
+            ::EntityFactoryT<>>& executionContext,
+        ::StrictEntityContext&   entityContext
+    );
     // NOLINTEND
 
 public:
@@ -69,7 +139,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace UpdateBoundingBox

@@ -69,7 +69,6 @@ public:
 
     MCNAPI static void** $vftableForSocket();
     // NOLINTEND
-
 };
 
-}
+} // namespace NetherNet

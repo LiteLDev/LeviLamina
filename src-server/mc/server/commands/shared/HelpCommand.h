@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk563408;
-    ::ll::UntypedStorage<4, 4> mUnk3dee5d;
+    ::ll::UntypedStorage<4, 4>  mUnk3dee5d;
     // NOLINTEND
 
 public:
@@ -39,9 +39,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void getCommandHelp(::CommandRegistry const& registry, ::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCAPI void
+    getCommandHelp(::CommandRegistry const& registry, ::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-    MCAPI void getHelpPage(::CommandRegistry const& registry, ::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCAPI void
+    getHelpPage(::CommandRegistry const& registry, ::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
@@ -61,5 +63,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -18,14 +18,14 @@ struct BiomeScatterParamData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeCoordinateData>> mCoordinates;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BiomeCoordinateData>>              mCoordinates;
     ::ll::TypedStorage<4, 4, ::SharedTypes::v1_21_10::CoordinateEvaluationOrder> mEvalOrder;
-    ::ll::TypedStorage<2, 2, ::ExpressionOp> mChancePercentType;
-    ::ll::TypedStorage<2, 2, ushort> mChancePercent;
-    ::ll::TypedStorage<4, 4, int> mChanceNumerator;
-    ::ll::TypedStorage<4, 4, int> mChanceDenominator;
-    ::ll::TypedStorage<2, 2, ::ExpressionOp> mIterationsType;
-    ::ll::TypedStorage<2, 2, ushort> mIterations;
+    ::ll::TypedStorage<2, 2, ::ExpressionOp>                                     mChancePercentType;
+    ::ll::TypedStorage<2, 2, ushort>                                             mChancePercent;
+    ::ll::TypedStorage<4, 4, int>                                                mChanceNumerator;
+    ::ll::TypedStorage<4, 4, int>                                                mChanceDenominator;
+    ::ll::TypedStorage<2, 2, ::ExpressionOp>                                     mIterationsType;
+    ::ll::TypedStorage<2, 2, ushort>                                             mIterations;
     // NOLINTEND
 
 public:
@@ -47,5 +47,4 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
-
 };

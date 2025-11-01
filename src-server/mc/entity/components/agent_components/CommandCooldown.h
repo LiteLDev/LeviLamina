@@ -16,7 +16,6 @@ public:
     CommandCooldown& operator=(CommandCooldown const&);
     CommandCooldown(CommandCooldown const&);
     CommandCooldown();
-
 };
 
-}
+} // namespace AgentComponents

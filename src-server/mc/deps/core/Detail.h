@@ -19,7 +19,12 @@ namespace Bedrock::Detail {
 // NOLINTBEGIN
 MCNAPI ::Bedrock::CallStack::Context createContext(::std::string value);
 
-MCNAPI ::Bedrock::CallStack::Context createContext(::Bedrock::AssertLevel assertLevel, ::LogAreaID logArea, ::std::string value, ::Bedrock::CallStack::Frame frame);
+MCNAPI ::Bedrock::CallStack::Context createContext(
+    ::Bedrock::AssertLevel      assertLevel,
+    ::LogAreaID                 logArea,
+    ::std::string               value,
+    ::Bedrock::CallStack::Frame frame
+);
 
 MCNAPI ::Bedrock::Detail::ErrorInfoBuilder<::std::error_code> createError(::std::errc errc);
 
@@ -29,9 +34,10 @@ MCNAPI ::std::optional<::std::string> defaultDataStoreLoad(::Core::Path const& p
 
 MCNAPI void defaultDataStoreSave(::Core::Path const& path, ::std::string_view data);
 
-MCNAPI ::std::back_insert_iterator<::std::string> formatCallStackContexts(::std::back_insert_iterator<::std::string> it, ::Bedrock::CallStack const& callStack);
+MCNAPI ::std::back_insert_iterator<::std::string>
+formatCallStackContexts(::std::back_insert_iterator<::std::string> it, ::Bedrock::CallStack const& callStack);
 
 MCNAPI ::Bedrock::Detail::ErrorInfoBuilder<::std::error_code> hresultToError(long hr);
 // NOLINTEND
 
-}
+} // namespace Bedrock::Detail

@@ -19,7 +19,6 @@ public:
     PacerConfig& operator=(PacerConfig const&);
     PacerConfig(PacerConfig const&);
     PacerConfig();
-
 };
 
-}
+} // namespace webrtc

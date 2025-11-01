@@ -18,5 +18,4 @@ public:
     JSClassDef& operator=(JSClassDef const&);
     JSClassDef(JSClassDef const&);
     JSClassDef();
-
 };

@@ -31,7 +31,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mPlayerId;
-    ::ll::TypedStorage<8, 8, ::Level&> mLevel;
+    ::ll::TypedStorage<8, 8, ::Level&>        mLevel;
     // NOLINTEND
 
 public:
@@ -166,5 +166,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

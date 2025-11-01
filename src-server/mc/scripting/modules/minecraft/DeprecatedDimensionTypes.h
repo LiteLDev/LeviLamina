@@ -4,7 +4,6 @@
 
 namespace ScriptModuleMinecraft {
 
-struct DeprecatedDimensionTypes {
-};
+struct DeprecatedDimensionTypes {};
 
-}
+} // namespace ScriptModuleMinecraft

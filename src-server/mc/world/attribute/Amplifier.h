@@ -22,11 +22,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI float $getAmount(int amplification, float scale) const;
+    MCFOLD float $getAmount(int amplification, float scale) const;
 
-    MCNAPI bool $shouldBuff(int remainingDuration, int amplification) const;
+    MCFOLD bool $shouldBuff(int remainingDuration, int amplification) const;
 
-    MCNAPI int $getTickInterval(int amplification) const;
+    MCFOLD int $getTickInterval(int amplification) const;
     // NOLINTEND
 
 public:
@@ -34,5 +34,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

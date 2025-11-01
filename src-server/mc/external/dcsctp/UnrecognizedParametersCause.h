@@ -13,7 +13,8 @@ namespace dcsctp { struct UnrecognizedParametersCauseConfig; }
 
 namespace dcsctp {
 
-class UnrecognizedParametersCause : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::UnrecognizedParametersCauseConfig> {
+class UnrecognizedParametersCause : public ::dcsctp::Parameter,
+                                    public ::dcsctp::TLVTrait<::dcsctp::UnrecognizedParametersCauseConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,7 +59,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace dcsctp

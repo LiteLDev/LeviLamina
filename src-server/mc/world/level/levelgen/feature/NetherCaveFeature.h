@@ -23,7 +23,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::Vec3 const> EMPTY_VEC;
-    ::ll::TypedStorage<4, 4, int const> HELL_CAVE_COUNT_BASE_FACTOR;
+    ::ll::TypedStorage<4, 4, int const>     HELL_CAVE_COUNT_BASE_FACTOR;
     // NOLINTEND
 
 public:
@@ -33,13 +33,44 @@ public:
     virtual ::std::optional<::BlockPos> place(::IFeature::PlacementContext const& context) const /*override*/;
 
     // vIndex: 4
-    virtual void addRoom(::IBlockWorldGenAPI& target, ::CaveFeatureUtils::CarverConfiguration const& configuration, ::Random& random, ::ChunkPos const& chunkPos, ::Vec3 const& startPos, ::RenderParams& renderParams, ::CaveFeatureUtils::CarvingParameters const& carvingParameters, ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations) const /*override*/;
+    virtual void addRoom(
+        ::IBlockWorldGenAPI&                                                target,
+        ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
+        ::Random&                                                           random,
+        ::ChunkPos const&                                                   chunkPos,
+        ::Vec3 const&                                                       startPos,
+        ::RenderParams&                                                     renderParams,
+        ::CaveFeatureUtils::CarvingParameters const&                        carvingParameters,
+        ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
+    ) const /*override*/;
 
     // vIndex: 5
-    virtual void addTunnel(::IBlockWorldGenAPI& target, ::CaveFeatureUtils::CarverConfiguration const& configuration, ::Random& random, ::ChunkPos const& chunkPos, ::Vec3 const& startPos, float thickness, float horizontalRotation, float verticalRotation, int step, int dist, float yScale, ::RenderParams& renderParams, ::CaveFeatureUtils::CarvingParameters const& carvingParameters, ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations) const /*override*/;
+    virtual void addTunnel(
+        ::IBlockWorldGenAPI&                                                target,
+        ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
+        ::Random&                                                           random,
+        ::ChunkPos const&                                                   chunkPos,
+        ::Vec3 const&                                                       startPos,
+        float                                                               thickness,
+        float                                                               horizontalRotation,
+        float                                                               verticalRotation,
+        int                                                                 step,
+        int                                                                 dist,
+        float                                                               yScale,
+        ::RenderParams&                                                     renderParams,
+        ::CaveFeatureUtils::CarvingParameters const&                        carvingParameters,
+        ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
+    ) const /*override*/;
 
     // vIndex: 7
-    virtual void addFeature(::IBlockWorldGenAPI& target, ::ChunkPos const& pos, ::Random& random, ::ChunkPos const& startChunk, ::RenderParams& renderParams, ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations) const /*override*/;
+    virtual void addFeature(
+        ::IBlockWorldGenAPI&                                                target,
+        ::ChunkPos const&                                                   pos,
+        ::Random&                                                           random,
+        ::ChunkPos const&                                                   startChunk,
+        ::RenderParams&                                                     renderParams,
+        ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
+    ) const /*override*/;
 
     // vIndex: 0
     virtual ~NetherCaveFeature() /*override*/ = default;
@@ -50,11 +81,42 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
-    MCAPI void $addRoom(::IBlockWorldGenAPI& target, ::CaveFeatureUtils::CarverConfiguration const& configuration, ::Random& random, ::ChunkPos const& chunkPos, ::Vec3 const& startPos, ::RenderParams& renderParams, ::CaveFeatureUtils::CarvingParameters const& carvingParameters, ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations) const;
+    MCAPI void $addRoom(
+        ::IBlockWorldGenAPI&                                                target,
+        ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
+        ::Random&                                                           random,
+        ::ChunkPos const&                                                   chunkPos,
+        ::Vec3 const&                                                       startPos,
+        ::RenderParams&                                                     renderParams,
+        ::CaveFeatureUtils::CarvingParameters const&                        carvingParameters,
+        ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
+    ) const;
 
-    MCAPI void $addTunnel(::IBlockWorldGenAPI& target, ::CaveFeatureUtils::CarverConfiguration const& configuration, ::Random& random, ::ChunkPos const& chunkPos, ::Vec3 const& startPos, float thickness, float horizontalRotation, float verticalRotation, int step, int dist, float yScale, ::RenderParams& renderParams, ::CaveFeatureUtils::CarvingParameters const& carvingParameters, ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations) const;
+    MCAPI void $addTunnel(
+        ::IBlockWorldGenAPI&                                                target,
+        ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
+        ::Random&                                                           random,
+        ::ChunkPos const&                                                   chunkPos,
+        ::Vec3 const&                                                       startPos,
+        float                                                               thickness,
+        float                                                               horizontalRotation,
+        float                                                               verticalRotation,
+        int                                                                 step,
+        int                                                                 dist,
+        float                                                               yScale,
+        ::RenderParams&                                                     renderParams,
+        ::CaveFeatureUtils::CarvingParameters const&                        carvingParameters,
+        ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
+    ) const;
 
-    MCAPI void $addFeature(::IBlockWorldGenAPI& target, ::ChunkPos const& pos, ::Random& random, ::ChunkPos const& startChunk, ::RenderParams& renderParams, ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations) const;
+    MCAPI void $addFeature(
+        ::IBlockWorldGenAPI&                                                target,
+        ::ChunkPos const&                                                   pos,
+        ::Random&                                                           random,
+        ::ChunkPos const&                                                   startChunk,
+        ::RenderParams&                                                     renderParams,
+        ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
+    ) const;
     // NOLINTEND
 
 public:
@@ -62,5 +124,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

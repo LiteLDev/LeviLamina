@@ -20,7 +20,6 @@ public:
     // NOLINTBEGIN
     uint64 rawID;
     // NOLINTEND
-
 };
 
 namespace std {

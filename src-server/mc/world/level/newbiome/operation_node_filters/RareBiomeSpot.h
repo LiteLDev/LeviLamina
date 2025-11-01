@@ -26,7 +26,6 @@ public:
     RareBiomeSpot& operator=(RareBiomeSpot const&);
     RareBiomeSpot(RareBiomeSpot const&);
     RareBiomeSpot();
-
 };
 
-}
+} // namespace OperationNodeFilters

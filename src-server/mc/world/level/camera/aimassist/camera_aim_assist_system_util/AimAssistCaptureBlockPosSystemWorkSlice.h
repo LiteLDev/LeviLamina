@@ -5,7 +5,7 @@
 namespace CameraAimAssistSystemUtil {
 
 enum class AimAssistCaptureBlockPosSystemWorkSlice : int {
-    ClearResultsAndScanTopHalf = 0,
+    ClearResultsAndScanTopHalf      = 0,
     ScanBottomHalfAccumulateResults = 1,
 };
 

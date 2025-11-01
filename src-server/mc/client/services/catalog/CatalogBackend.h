@@ -66,7 +66,8 @@ public:
     virtual void addETagHeader(::Bedrock::Http::RequestBuilder&, ::std::string const&) const = 0;
 
     // vIndex: 11
-    virtual void setItemIdPostBody(::Bedrock::Http::RequestBuilder&, ::std::string const&, ::std::string const&) const = 0;
+    virtual void
+    setItemIdPostBody(::Bedrock::Http::RequestBuilder&, ::std::string const&, ::std::string const&) const = 0;
 
     // vIndex: 12
     virtual void setCreateReviewBody(::Bedrock::Http::RequestBuilder&, ::CreateReviewParams const&) const = 0;
@@ -104,5 +105,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

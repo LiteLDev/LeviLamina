@@ -45,7 +45,11 @@ public:
     virtual ::Scripting::Result_deprecated<void> setSelectedPaletteItemIndex(int index) /*override*/;
 
     // vIndex: 8
-    virtual ::Scripting::Result_deprecated<void> setPaletteItem(::HashedString const& paletteId, int index, ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> setPaletteItem(
+        ::HashedString const&                                                                          paletteId,
+        int                                                                                            index,
+        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
+    ) /*override*/;
 
     // vIndex: 9
     virtual ::Scripting::Result_deprecated<void> pickBlock(::Block const&) /*override*/;
@@ -60,25 +64,37 @@ public:
     virtual ::Scripting::Result_deprecated<void> setActivePalette(::HashedString const& paletteId) /*override*/;
 
     // vIndex: 8
-    virtual void _handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const& payload) /*override*/;
+    virtual void _handleBlockPaletteItemChangedPayload(
+        ::Editor::Network::BlockPaletteItemChangedPayload const& payload
+    ) /*override*/;
 
     // vIndex: 9
-    virtual void _handleBlockPaletteSelectedIndexChangedPayload(::Editor::Network::BlockPaletteSelectedIndexChangedPayload const& payload) /*override*/;
+    virtual void _handleBlockPaletteSelectedIndexChangedPayload(
+        ::Editor::Network::BlockPaletteSelectedIndexChangedPayload const& payload
+    ) /*override*/;
 
     // vIndex: 7
-    virtual void _handleBlockPaletteActivePaletteChangedPayload(::Editor::Network::BlockPaletteActivePaletteChangedPayload const& payload) /*override*/;
+    virtual void _handleBlockPaletteActivePaletteChangedPayload(
+        ::Editor::Network::BlockPaletteActivePaletteChangedPayload const& payload
+    ) /*override*/;
 
     // vIndex: 10
-    virtual void _handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const& payload) /*override*/;
+    virtual void
+    _handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const& payload) /*override*/;
 
     // vIndex: 11
-    virtual void _handleBlockPaletteRemovedPayload(::Editor::Network::BlockPaletteRemovedPayload const& payload) /*override*/;
+    virtual void
+    _handleBlockPaletteRemovedPayload(::Editor::Network::BlockPaletteRemovedPayload const& payload) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> _updateAndSyncPaletteItem(::HashedString const& paletteId, int index, ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item);
+    MCNAPI ::Scripting::Result_deprecated<void> _updateAndSyncPaletteItem(
+        ::HashedString const&                                                                          paletteId,
+        int                                                                                            index,
+        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
+    );
     // NOLINTEND
 
 public:
@@ -94,7 +110,11 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $setSelectedPaletteItemIndex(int index);
 
-    MCNAPI ::Scripting::Result_deprecated<void> $setPaletteItem(::HashedString const& paletteId, int index, ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item);
+    MCNAPI ::Scripting::Result_deprecated<void> $setPaletteItem(
+        ::HashedString const&                                                                          paletteId,
+        int                                                                                            index,
+        ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& item
+    );
 
     MCNAPI ::Scripting::Result_deprecated<void> $pickBlock(::Block const&);
 
@@ -104,11 +124,16 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $setActivePalette(::HashedString const& paletteId);
 
-    MCNAPI void $_handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const& payload);
+    MCNAPI void
+    $_handleBlockPaletteItemChangedPayload(::Editor::Network::BlockPaletteItemChangedPayload const& payload);
 
-    MCNAPI void $_handleBlockPaletteSelectedIndexChangedPayload(::Editor::Network::BlockPaletteSelectedIndexChangedPayload const& payload);
+    MCNAPI void $_handleBlockPaletteSelectedIndexChangedPayload(
+        ::Editor::Network::BlockPaletteSelectedIndexChangedPayload const& payload
+    );
 
-    MCNAPI void $_handleBlockPaletteActivePaletteChangedPayload(::Editor::Network::BlockPaletteActivePaletteChangedPayload const& payload);
+    MCNAPI void $_handleBlockPaletteActivePaletteChangedPayload(
+        ::Editor::Network::BlockPaletteActivePaletteChangedPayload const& payload
+    );
 
     MCNAPI void $_handleBlockPaletteChangedPayload(::Editor::Network::BlockPaletteChangedPayload const& payload);
 
@@ -122,7 +147,6 @@ public:
 
     MCNAPI static void** $vftableForEditorBlockPaletteServiceProvider();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

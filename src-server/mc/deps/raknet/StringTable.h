@@ -24,7 +24,6 @@ public:
 
     MCAPI static int& referenceCount();
     // NOLINTEND
-
 };
 
-}
+} // namespace RakNet

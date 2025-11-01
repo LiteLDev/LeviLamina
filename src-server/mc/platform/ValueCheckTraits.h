@@ -4,8 +4,7 @@
 
 namespace Bedrock {
 
-template<typename T0, typename T1>
-struct ValueCheckTraits {
-};
+template <typename T0, typename T1>
+struct ValueCheckTraits {};
 
-}
+} // namespace Bedrock

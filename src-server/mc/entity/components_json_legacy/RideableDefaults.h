@@ -16,4 +16,4 @@ MCNAPI int const& SEAT_COUNT();
 MCNAPI bool const& SKIP_INTERACT_IF_CROUCHING();
 // NOLINTEND
 
-}
+} // namespace RideableDefaults

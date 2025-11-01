@@ -16,17 +16,17 @@ class TestForBlocksCommand : public ::Command {
 public:
     // TestForBlocksCommand inner types define
     enum class Mode : int {
-        All = 0,
+        All    = 0,
         Masked = 1,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 16> mUnk210dfe;
     ::ll::UntypedStorage<4, 16> mUnka177b2;
     ::ll::UntypedStorage<4, 16> mUnkbc7407;
-    ::ll::UntypedStorage<4, 4> mUnk2063c2;
+    ::ll::UntypedStorage<4, 4>  mUnk2063c2;
     // NOLINTEND
 
 public:
@@ -62,5 +62,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

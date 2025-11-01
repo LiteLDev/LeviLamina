@@ -39,13 +39,18 @@ public:
     virtual bool hasKey(::std::string_view, ::DBHelpers::Category) const /*override*/;
 
     // vIndex: 5
-    virtual void forEachKeyWithPrefix(::std::string_view, ::DBHelpers::Category, ::std::function<void(::std::string_view, ::std::string_view)> const&) const /*override*/;
+    virtual void forEachKeyWithPrefix(
+        ::std::string_view,
+        ::DBHelpers::Category,
+        ::std::function<void(::std::string_view, ::std::string_view)> const&
+    ) const /*override*/;
 
     // vIndex: 6
     virtual bool loadLevelData(::LevelData&) /*override*/;
 
     // vIndex: 7
-    virtual ::std::unique_ptr<::ChunkSource> createChunkStorage(::std::unique_ptr<::ChunkSource>, ::StorageVersion) /*override*/;
+    virtual ::std::unique_ptr<::ChunkSource>
+        createChunkStorage(::std::unique_ptr<::ChunkSource>, ::StorageVersion) /*override*/;
 
     // vIndex: 8
     virtual void saveLevelData(::LevelData const&) /*override*/;
@@ -54,7 +59,8 @@ public:
     virtual ::Core::PathBuffer<::std::string> const& getFullPath() const /*override*/;
 
     // vIndex: 11
-    virtual ::Bedrock::Threading::Async<void> saveData(::std::string const&, ::std::string&&, ::DBHelpers::Category) /*override*/;
+    virtual ::Bedrock::Threading::Async<void>
+    saveData(::std::string const&, ::std::string&&, ::DBHelpers::Category) /*override*/;
 
     // vIndex: 10
     virtual ::Bedrock::Threading::Async<void> saveData(::LevelStorageWriteBatch const&) /*override*/;
@@ -116,5 +122,4 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };

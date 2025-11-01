@@ -15,29 +15,29 @@ struct SubChunkRequestTrackingData : public ::Bedrock::EnableNonOwnerReferences 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mRequestsMadeCount;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mRequestsTooFar;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mRequestsInFlightCount;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mRequestsReceivedByServerCount;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mRequestBatchesReceivedByServerCount;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mResponseReceivedByClientCount;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mResponseBatchesReceivedByClientCount;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mClientSubChunksBeingProcessed;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mClientSubChunksFinished;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mClientSubChunksDiscarded;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mClientSubChunkTimeOut;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mClientSubChunksReusedFromCache;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mClientSubChunksWaitingForCache;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mClientSubChunksCacheAbort;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mClientSubChunksNotProcessed;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mClientInsertManagerLevelChunkDoesntExist;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mSubChunkResponseSuccess;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mSubChunkResponseSuccessAllAir;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mSubChunkLevelChunkDoesntExist;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mSubChunkServerWrongDimension;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mSubChunkClientWrongDimension;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mSubChunkPlayerDoesnExist;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mSubChunkIndexOutOfBounds;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mRequestsMadeCount;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mRequestsTooFar;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mRequestsInFlightCount;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mRequestsReceivedByServerCount;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mRequestBatchesReceivedByServerCount;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mResponseReceivedByClientCount;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mResponseBatchesReceivedByClientCount;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mClientSubChunksBeingProcessed;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mClientSubChunksFinished;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mClientSubChunksDiscarded;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mClientSubChunkTimeOut;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mClientSubChunksReusedFromCache;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mClientSubChunksWaitingForCache;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mClientSubChunksCacheAbort;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mClientSubChunksNotProcessed;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mClientInsertManagerLevelChunkDoesntExist;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mSubChunkResponseSuccess;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mSubChunkResponseSuccessAllAir;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mSubChunkLevelChunkDoesntExist;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mSubChunkServerWrongDimension;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mSubChunkClientWrongDimension;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mSubChunkPlayerDoesnExist;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mSubChunkIndexOutOfBounds;
     ::ll::TypedStorage<8, 24, ::AtomicTimeAccumulator> mClientSubChunkProcessingTime;
     ::ll::TypedStorage<8, 24, ::AtomicTimeAccumulator> mClientSubChunkInsertTime;
     ::ll::TypedStorage<8, 24, ::AtomicTimeAccumulator> mClientSubChunkDeserializeBlocksTime;
@@ -48,10 +48,10 @@ public:
     ::ll::TypedStorage<8, 24, ::AtomicTimeAccumulator> mClientSubChunkCacheCheckTime;
     ::ll::TypedStorage<8, 24, ::AtomicTimeAccumulator> mClientSubChunkCacheMissWaitTime;
     ::ll::TypedStorage<8, 24, ::AtomicTimeAccumulator> mRequestToResponseTime;
-    ::ll::TypedStorage<4, 4, ::std::atomic<int>> mInFlightTasks;
-    ::ll::TypedStorage<8, 8, uint64> mMaxTasksInFlightAllowed;
-    ::ll::TypedStorage<8, 8, uint64> mTaskQueueSize;
-    ::ll::TypedStorage<8, 8, uint64> mTaskGroupCount;
+    ::ll::TypedStorage<4, 4, ::std::atomic<int>>       mInFlightTasks;
+    ::ll::TypedStorage<8, 8, uint64>                   mMaxTasksInFlightAllowed;
+    ::ll::TypedStorage<8, 8, uint64>                   mTaskQueueSize;
+    ::ll::TypedStorage<8, 8, uint64>                   mTaskGroupCount;
     // NOLINTEND
 
 public:
@@ -60,5 +60,4 @@ public:
     // vIndex: 0
     virtual ~SubChunkRequestTrackingData() /*override*/ = default;
     // NOLINTEND
-
 };

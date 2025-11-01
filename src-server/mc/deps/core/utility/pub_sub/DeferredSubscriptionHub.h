@@ -17,11 +17,11 @@ class DeferredSubscriptionHub {
 public:
     // DeferredSubscriptionHub inner types define
     enum class HubType : int {
-        Priority = 0,
-        Fifo = 1,
+        Priority      = 0,
+        Fifo          = 1,
         RecursiveFIFO = 2,
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -70,7 +70,6 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };
 
-}
+} // namespace Bedrock::PubSub

@@ -16,23 +16,23 @@ class InputPermissionCommand : public ::Command {
 public:
     // InputPermissionCommand inner types define
     enum class CommandActionType : int {
-        Set = 0,
+        Set   = 0,
         Query = 1,
     };
-    
+
     enum class CommandValueType : int {
         Undefined = 0,
-        Enabled = 1,
-        Disabled = 2,
+        Enabled   = 1,
+        Disabled  = 2,
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk917993;
+    ::ll::UntypedStorage<4, 4>   mUnk917993;
     ::ll::UntypedStorage<8, 200> mUnk5149e7;
-    ::ll::UntypedStorage<1, 1> mUnk3497ac;
-    ::ll::UntypedStorage<4, 4> mUnk493fc3;
+    ::ll::UntypedStorage<1, 1>   mUnk3497ac;
+    ::ll::UntypedStorage<4, 4>   mUnk493fc3;
     // NOLINTEND
 
 public:
@@ -78,5 +78,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

@@ -8,4 +8,4 @@ namespace Util::Detail {
 MCNAPI int compareIgnoreCase(char const* lhs, char const* rhs, uint64 size);
 // NOLINTEND
 
-}
+} // namespace Util::Detail

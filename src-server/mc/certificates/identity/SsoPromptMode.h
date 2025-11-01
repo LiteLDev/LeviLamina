@@ -6,7 +6,7 @@ namespace Identity {
 
 enum class SsoPromptMode : uchar {
     ForcePrompt = 0,
-    Silent = 1,
+    Silent      = 1,
 };
 
 }

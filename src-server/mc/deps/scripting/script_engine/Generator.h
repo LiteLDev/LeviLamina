@@ -4,8 +4,7 @@
 
 namespace Scripting {
 
-template<typename T0, typename T1, typename T2>
-class Generator {
-};
+template <typename T0, typename T1, typename T2>
+class Generator {};
 
-}
+} // namespace Scripting

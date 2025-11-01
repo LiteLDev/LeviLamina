@@ -13,10 +13,10 @@ public:
 
 public:
     // prevent constructor by default
-    SeatCameraRelaxDistanceSmoothingOverrideComponent& operator=(SeatCameraRelaxDistanceSmoothingOverrideComponent const&);
+    SeatCameraRelaxDistanceSmoothingOverrideComponent&
+    operator=(SeatCameraRelaxDistanceSmoothingOverrideComponent const&);
     SeatCameraRelaxDistanceSmoothingOverrideComponent(SeatCameraRelaxDistanceSmoothingOverrideComponent const&);
     SeatCameraRelaxDistanceSmoothingOverrideComponent();
-
 };
 
-}
+} // namespace MinecraftCamera

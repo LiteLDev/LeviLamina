@@ -16,7 +16,6 @@ public:
     ThreadAttributes& operator=(ThreadAttributes const&);
     ThreadAttributes(ThreadAttributes const&);
     ThreadAttributes();
-
 };
 
-}
+} // namespace rtc

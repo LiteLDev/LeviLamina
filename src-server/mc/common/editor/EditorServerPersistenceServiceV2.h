@@ -57,16 +57,31 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> getOrCreateGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version, ::std::optional<::Editor::Services::PersistenceGroupType> groupType) /*override*/;
+    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> getOrCreateGroup(
+        ::std::string const&                                      namespacedName,
+        ::Editor::Services::PersistenceScope                      scope,
+        ::std::optional<int>                                      version,
+        ::std::optional<::Editor::Services::PersistenceGroupType> groupType
+    ) /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> createGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version, ::std::optional<::Editor::Services::PersistenceGroupType> groupType) /*override*/;
+    virtual ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> createGroup(
+        ::std::string const&                                      namespacedName,
+        ::Editor::Services::PersistenceScope                      scope,
+        ::std::optional<int>                                      version,
+        ::std::optional<::Editor::Services::PersistenceGroupType> groupType
+    ) /*override*/;
 
     // vIndex: 5
-    virtual ::Scripting::Result_deprecated<void> deleteGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> deleteGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    ) /*override*/;
 
     // vIndex: 8
-    virtual ::Core::PathBuffer<::std::string> _getGroupRootPath(::Editor::Services::PersistenceScope scope) const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> _getGroupRootPath(::Editor::Services::PersistenceScope scope) const
+        /*override*/;
 
     // vIndex: 7
     virtual bool _validateScope(::Editor::Services::PersistenceScope scope) const /*override*/;
@@ -77,15 +92,30 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit EditorServerPersistenceServiceV2(::Editor::ServiceProviderCollection& providers);
 
-    MCNAPI ::Editor::Services::PersistenceGroupMetadata _createMetadata(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version);
+    MCNAPI ::Editor::Services::PersistenceGroupMetadata _createMetadata(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    );
 
-    MCNAPI void _dispatchGroupItemsToClient(::Editor::Services::PersistenceGroupItemMetadata item, ::Editor::Services::PersistenceGroupItemChangeAction action);
+    MCNAPI void _dispatchGroupItemsToClient(
+        ::Editor::Services::PersistenceGroupItemMetadata     item,
+        ::Editor::Services::PersistenceGroupItemChangeAction action
+    );
 
-    MCNAPI void _dispatchGroupToClients(::Editor::Services::PersistenceGroupChangeAction action, ::Editor::Services::PersistenceGroupMetadata groupMetadata);
+    MCNAPI void _dispatchGroupToClients(
+        ::Editor::Services::PersistenceGroupChangeAction action,
+        ::Editor::Services::PersistenceGroupMetadata     groupMetadata
+    );
 
     MCNAPI ::std::string _getGroupItemKey(::std::string groupVersionName, ::Editor::Services::PersistenceScope scope);
 
-    MCNAPI void _handleGroupItemChange(::std::string key, ::Editor::Services::PersistenceScope scope, ::Editor::Services::PersistenceGroupItemChangeAction action, ::StackRefResult<::Editor::Services::PersistenceItem>& item);
+    MCNAPI void _handleGroupItemChange(
+        ::std::string                                          key,
+        ::Editor::Services::PersistenceScope                   scope,
+        ::Editor::Services::PersistenceGroupItemChangeAction   action,
+        ::StackRefResult<::Editor::Services::PersistenceItem>& item
+    );
 
     MCNAPI void _handleQuerySharedGroupPayload(::Editor::Network::PersistenceQuerySharedGroupPayload const& payload);
     // NOLINTEND
@@ -107,11 +137,25 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> $getOrCreateGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version, ::std::optional<::Editor::Services::PersistenceGroupType> groupType);
+    MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> $getOrCreateGroup(
+        ::std::string const&                                      namespacedName,
+        ::Editor::Services::PersistenceScope                      scope,
+        ::std::optional<int>                                      version,
+        ::std::optional<::Editor::Services::PersistenceGroupType> groupType
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> $createGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version, ::std::optional<::Editor::Services::PersistenceGroupType> groupType);
+    MCNAPI ::Scripting::Result_deprecated<::StackRefResult<::Editor::Services::PersistenceGroup>> $createGroup(
+        ::std::string const&                                      namespacedName,
+        ::Editor::Services::PersistenceScope                      scope,
+        ::std::optional<int>                                      version,
+        ::std::optional<::Editor::Services::PersistenceGroupType> groupType
+    );
 
-    MCNAPI ::Scripting::Result_deprecated<void> $deleteGroup(::std::string const& namespacedName, ::Editor::Services::PersistenceScope scope, ::std::optional<int> version);
+    MCNAPI ::Scripting::Result_deprecated<void> $deleteGroup(
+        ::std::string const&                 namespacedName,
+        ::Editor::Services::PersistenceScope scope,
+        ::std::optional<int>                 version
+    );
 
     MCNAPI ::Core::PathBuffer<::std::string> $_getGroupRootPath(::Editor::Services::PersistenceScope scope) const;
 
@@ -125,7 +169,6 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor::Services

@@ -25,7 +25,6 @@ public:
     PointLightShadowParameters& operator=(PointLightShadowParameters const&);
     PointLightShadowParameters(PointLightShadowParameters const&);
     PointLightShadowParameters();
-
 };
 
-}
+} // namespace mce::framebuilder

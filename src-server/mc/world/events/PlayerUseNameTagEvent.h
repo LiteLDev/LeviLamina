@@ -15,10 +15,10 @@ struct PlayerUseNameTagEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mEntityNamed;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                           mPlayer;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                           mEntityNamed;
     ::ll::TypedStorage<8, 80, ::std::optional<::Bedrock::Safety::RedactableString>> mPreviousName;
-    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mNewName;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>                  mNewName;
     // NOLINTEND
 
 public:
@@ -45,5 +45,4 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
-
 };

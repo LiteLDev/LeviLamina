@@ -6,7 +6,7 @@ namespace Editor::Prefabs {
 
 enum class PrefabSource : int {
     Project = 0,
-    Global = 1,
+    Global  = 1,
     Unknown = 2,
 };
 

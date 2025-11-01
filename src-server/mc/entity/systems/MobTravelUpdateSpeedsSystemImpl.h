@@ -23,7 +23,18 @@ struct VehicleComponent;
 namespace MobTravelUpdateSpeedsSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doUpdateMovementSpeed(::StrictEntityContext const& context, ::ActorDataFlagComponent const& actorDataFlagComponent, ::ActorDataControllingSeatIndexComponent const& controllingSeatIndexComponent, ::VehicleComponent const& vehicleComponent, ::AirSpeedComponent& flySpeedComponent, ::MovementAttributesComponent const& movementAttributesComponent, ::MovementSpeedComponent& movementSpeedComponent, ::Optional<::CanVehicleSprintFlagComponent const> canVehicleSprintFlag, ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>> players, ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const> actorDataView);
+MCNAPI void doUpdateMovementSpeed(
+    ::StrictEntityContext const&                                   context,
+    ::ActorDataFlagComponent const&                                actorDataFlagComponent,
+    ::ActorDataControllingSeatIndexComponent const&                controllingSeatIndexComponent,
+    ::VehicleComponent const&                                      vehicleComponent,
+    ::AirSpeedComponent&                                           flySpeedComponent,
+    ::MovementAttributesComponent const&                           movementAttributesComponent,
+    ::MovementSpeedComponent&                                      movementSpeedComponent,
+    ::Optional<::CanVehicleSprintFlagComponent const>              canVehicleSprintFlag,
+    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>>   players,
+    ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const> actorDataView
+);
 // NOLINTEND
 
-}
+} // namespace MobTravelUpdateSpeedsSystemImpl

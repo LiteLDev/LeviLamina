@@ -10,10 +10,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 24, ::BoundingBox> mPieceBounds;
-    ::ll::TypedStorage<4, 4, int> mPieceBaseY;
-    ::ll::TypedStorage<4, 4, int> mXCenter;
-    ::ll::TypedStorage<4, 4, int> mZCenter;
-    ::ll::TypedStorage<4, 4, float> mMaxRadius;
+    ::ll::TypedStorage<4, 4, int>            mPieceBaseY;
+    ::ll::TypedStorage<4, 4, int>            mXCenter;
+    ::ll::TypedStorage<4, 4, int>            mZCenter;
+    ::ll::TypedStorage<4, 4, float>          mMaxRadius;
     // NOLINTEND
-
 };

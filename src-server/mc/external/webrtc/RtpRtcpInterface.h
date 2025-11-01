@@ -32,70 +32,69 @@ public:
     struct NonSenderRttStats;
     struct SenderReportStats;
     // clang-format on
-    
+
     // RtpRtcpInterface inner types define
     struct Configuration {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnka78adf;
-        ::ll::UntypedStorage<1, 1> mUnkaee14f;
-        ::ll::UntypedStorage<8, 8> mUnkcfff30;
-        ::ll::UntypedStorage<8, 8> mUnkf899be;
-        ::ll::UntypedStorage<8, 8> mUnkf4e0c9;
-        ::ll::UntypedStorage<8, 8> mUnk40ee54;
-        ::ll::UntypedStorage<8, 8> mUnk8c652a;
-        ::ll::UntypedStorage<8, 8> mUnkf205e4;
-        ::ll::UntypedStorage<8, 8> mUnk566305;
-        ::ll::UntypedStorage<8, 8> mUnkc4dbf5;
-        ::ll::UntypedStorage<8, 8> mUnk28f816;
-        ::ll::UntypedStorage<8, 8> mUnk3a26bf;
-        ::ll::UntypedStorage<8, 8> mUnk4c17db;
-        ::ll::UntypedStorage<8, 8> mUnk17e23a;
-        ::ll::UntypedStorage<8, 8> mUnka20af1;
-        ::ll::UntypedStorage<8, 8> mUnkce9c79;
-        ::ll::UntypedStorage<8, 8> mUnk308036;
-        ::ll::UntypedStorage<8, 8> mUnk800d0a;
-        ::ll::UntypedStorage<8, 8> mUnkd7423e;
-        ::ll::UntypedStorage<8, 8> mUnk627d15;
-        ::ll::UntypedStorage<8, 8> mUnka40e19;
-        ::ll::UntypedStorage<8, 8> mUnk36d3c9;
-        ::ll::UntypedStorage<4, 4> mUnk703513;
-        ::ll::UntypedStorage<1, 1> mUnk3bb62b;
-        ::ll::UntypedStorage<8, 8> mUnkfb4202;
-        ::ll::UntypedStorage<8, 8> mUnkd1a451;
-        ::ll::UntypedStorage<1, 1> mUnk1f0933;
-        ::ll::UntypedStorage<1, 1> mUnk340253;
-        ::ll::UntypedStorage<1, 1> mUnk3d3cd8;
-        ::ll::UntypedStorage<8, 8> mUnkab83f9;
-        ::ll::UntypedStorage<4, 4> mUnkd28b07;
-        ::ll::UntypedStorage<4, 8> mUnkbcc29e;
-        ::ll::UntypedStorage<1, 1> mUnk2ab222;
-        ::ll::UntypedStorage<1, 1> mUnkd00a00;
+        ::ll::UntypedStorage<1, 1>  mUnka78adf;
+        ::ll::UntypedStorage<1, 1>  mUnkaee14f;
+        ::ll::UntypedStorage<8, 8>  mUnkcfff30;
+        ::ll::UntypedStorage<8, 8>  mUnkf899be;
+        ::ll::UntypedStorage<8, 8>  mUnkf4e0c9;
+        ::ll::UntypedStorage<8, 8>  mUnk40ee54;
+        ::ll::UntypedStorage<8, 8>  mUnk8c652a;
+        ::ll::UntypedStorage<8, 8>  mUnkf205e4;
+        ::ll::UntypedStorage<8, 8>  mUnk566305;
+        ::ll::UntypedStorage<8, 8>  mUnkc4dbf5;
+        ::ll::UntypedStorage<8, 8>  mUnk28f816;
+        ::ll::UntypedStorage<8, 8>  mUnk3a26bf;
+        ::ll::UntypedStorage<8, 8>  mUnk4c17db;
+        ::ll::UntypedStorage<8, 8>  mUnk17e23a;
+        ::ll::UntypedStorage<8, 8>  mUnka20af1;
+        ::ll::UntypedStorage<8, 8>  mUnkce9c79;
+        ::ll::UntypedStorage<8, 8>  mUnk308036;
+        ::ll::UntypedStorage<8, 8>  mUnk800d0a;
+        ::ll::UntypedStorage<8, 8>  mUnkd7423e;
+        ::ll::UntypedStorage<8, 8>  mUnk627d15;
+        ::ll::UntypedStorage<8, 8>  mUnka40e19;
+        ::ll::UntypedStorage<8, 8>  mUnk36d3c9;
+        ::ll::UntypedStorage<4, 4>  mUnk703513;
+        ::ll::UntypedStorage<1, 1>  mUnk3bb62b;
+        ::ll::UntypedStorage<8, 8>  mUnkfb4202;
+        ::ll::UntypedStorage<8, 8>  mUnkd1a451;
+        ::ll::UntypedStorage<1, 1>  mUnk1f0933;
+        ::ll::UntypedStorage<1, 1>  mUnk340253;
+        ::ll::UntypedStorage<1, 1>  mUnk3d3cd8;
+        ::ll::UntypedStorage<8, 8>  mUnkab83f9;
+        ::ll::UntypedStorage<4, 4>  mUnkd28b07;
+        ::ll::UntypedStorage<4, 8>  mUnkbcc29e;
+        ::ll::UntypedStorage<1, 1>  mUnk2ab222;
+        ::ll::UntypedStorage<1, 1>  mUnkd00a00;
         ::ll::UntypedStorage<8, 32> mUnk5dfaa7;
-        ::ll::UntypedStorage<1, 1> mUnkafbb52;
+        ::ll::UntypedStorage<1, 1>  mUnkafbb52;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         Configuration& operator=(Configuration const&);
         Configuration(Configuration const&);
         Configuration();
-    
+
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~Configuration();
         // NOLINTEND
-    
+
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-    
     };
-    
+
     struct SenderReportStats {
     public:
         // member variables
@@ -107,32 +106,30 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkddfc83;
         ::ll::UntypedStorage<8, 8> mUnkbd873e;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         SenderReportStats& operator=(SenderReportStats const&);
         SenderReportStats(SenderReportStats const&);
         SenderReportStats();
-    
     };
-    
+
     struct NonSenderRttStats {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnka33d58;
-        ::ll::UntypedStorage<8, 8> mUnke18230;
-        ::ll::UntypedStorage<4, 4> mUnkaa4286;
+        ::ll::UntypedStorage<8, 8>  mUnke18230;
+        ::ll::UntypedStorage<4, 4>  mUnkaa4286;
         // NOLINTEND
-    
+
     public:
         // prevent constructor by default
         NonSenderRttStats& operator=(NonSenderRttStats const&);
         NonSenderRttStats(NonSenderRttStats const&);
         NonSenderRttStats();
-    
     };
-    
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -281,7 +278,8 @@ public:
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GeneratePadding(uint64) = 0;
 
     // vIndex: 52
-    virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info> GetSentRtpPacketInfos(::rtc::ArrayView<ushort const>) const = 0;
+    virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
+        GetSentRtpPacketInfos(::rtc::ArrayView<ushort const>) const = 0;
 
     // vIndex: 53
     virtual uint64 ExpectedPerPacketOverhead() const = 0;
@@ -349,7 +347,6 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
-
 };
 
-}
+} // namespace webrtc

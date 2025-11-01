@@ -12,7 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkca1e14;
-    ::ll::UntypedStorage<4, 4> mUnka20bd4;
+    ::ll::UntypedStorage<4, 4>  mUnka20bd4;
     // NOLINTEND
 
 public:
@@ -38,7 +38,6 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
-
 };
 
-}
+} // namespace Editor

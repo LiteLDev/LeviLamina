@@ -4,8 +4,7 @@
 
 namespace brstd {
 
-template<typename T0, int T1>
-class simple_circular_queue {
-};
+template <typename T0, int T1>
+class simple_circular_queue {};
 
-}
+} // namespace brstd

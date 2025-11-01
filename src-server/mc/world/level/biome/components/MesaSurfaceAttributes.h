@@ -16,8 +16,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Block const*> mClayMaterial;
     ::ll::TypedStorage<8, 8, ::Block const*> mHardClayMaterial;
-    ::ll::TypedStorage<1, 1, bool> mBrycePillars;
-    ::ll::TypedStorage<1, 1, bool> mHasForest;
+    ::ll::TypedStorage<1, 1, bool>           mBrycePillars;
+    ::ll::TypedStorage<1, 1, bool>           mHasForest;
     // NOLINTEND
 
 public:
@@ -32,5 +32,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

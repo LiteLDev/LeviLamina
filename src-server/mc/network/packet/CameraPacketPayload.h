@@ -12,5 +12,4 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mCameraId;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mTargetPlayerId;
     // NOLINTEND
-
 };

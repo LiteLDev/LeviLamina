@@ -13,4 +13,4 @@ namespace FlatteningUtils::Concrete {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-}
+} // namespace FlatteningUtils::Concrete

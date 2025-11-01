@@ -27,36 +27,34 @@ public:
     struct BlockMaterialData;
     struct BlockMaterialInstanceData;
     // clang-format on
-    
+
     // BlockMaterialInstancesDescription inner types define
     struct BlockMaterialInstanceData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string> textureName;
-        ::ll::TypedStorage<4, 4, float> ambientOcclusion;
-        ::ll::TypedStorage<1, 1, ::BlockRenderLayer> renderLayer;
-        ::ll::TypedStorage<1, 1, ::TintMethod> tintMethod;
+        ::ll::TypedStorage<8, 32, ::std::string>                     textureName;
+        ::ll::TypedStorage<4, 4, float>                              ambientOcclusion;
+        ::ll::TypedStorage<1, 1, ::BlockRenderLayer>                 renderLayer;
+        ::ll::TypedStorage<1, 1, ::TintMethod>                       tintMethod;
         ::ll::TypedStorage<1, 1, ::BlockMaterialInstancePackedBools> packedBools;
         // NOLINTEND
-    
     };
-    
+
     struct BlockMaterialData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string> materialName;
+        ::ll::TypedStorage<8, 32, ::std::string>                                                  materialName;
         ::ll::TypedStorage<8, 40, ::BlockMaterialInstancesDescription::BlockMaterialInstanceData> materialInstanceData;
         // NOLINTEND
-    
     };
-    
+
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::BlockMaterialInstance>> mMaterials;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::string>> mMaterialMappings;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::string>>           mMaterialMappings;
     // NOLINTEND
 
 public:
@@ -94,7 +92,17 @@ public:
 
     MCAPI BlockMaterialInstancesDescription(::BlockMaterialInstancesDescription const&);
 
-    MCAPI BlockMaterialInstancesDescription(::std::string const& textureName, ::BlockRenderLayer renderLayer, float ambientOcclusion, bool faceDimming, ::TintMethod tintMethod, bool randomizeUVRotation, bool supportsTextureVariations, bool alphaMaskedTint, bool emissive);
+    MCAPI BlockMaterialInstancesDescription(
+        ::std::string const& textureName,
+        ::BlockRenderLayer   renderLayer,
+        float                ambientOcclusion,
+        bool                 faceDimming,
+        ::TintMethod         tintMethod,
+        bool                 randomizeUVRotation,
+        bool                 supportsTextureVariations,
+        bool                 alphaMaskedTint,
+        bool                 emissive
+    );
 
     MCAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription const&);
 
@@ -106,7 +114,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static bool postParseConstraint(::Experiments const& experiments, ::Json::Value const& componentJson, ::SemVersion const& jsonVersion);
+    MCAPI static bool postParseConstraint(
+        ::Experiments const& experiments,
+        ::Json::Value const& componentJson,
+        ::SemVersion const&  jsonVersion
+    );
     // NOLINTEND
 
 public:
@@ -122,7 +134,17 @@ public:
 
     MCAPI void* $ctor(::BlockMaterialInstancesDescription const&);
 
-    MCAPI void* $ctor(::std::string const& textureName, ::BlockRenderLayer renderLayer, float ambientOcclusion, bool faceDimming, ::TintMethod tintMethod, bool randomizeUVRotation, bool supportsTextureVariations, bool alphaMaskedTint, bool emissive);
+    MCAPI void* $ctor(
+        ::std::string const& textureName,
+        ::BlockRenderLayer   renderLayer,
+        float                ambientOcclusion,
+        bool                 faceDimming,
+        ::TintMethod         tintMethod,
+        bool                 randomizeUVRotation,
+        bool                 supportsTextureVariations,
+        bool                 alphaMaskedTint,
+        bool                 emissive
+    );
     // NOLINTEND
 
 public:
@@ -154,5 +176,4 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
-
 };

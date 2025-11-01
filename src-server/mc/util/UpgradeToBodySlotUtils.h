@@ -14,4 +14,4 @@ namespace UpgradeToBodySlotUtils {
 MCNAPI void tryAddSkipBodySlotUpgradeSaveData(::CompoundTag& tag, ::Mob const& mob);
 // NOLINTEND
 
-}
+} // namespace UpgradeToBodySlotUtils
