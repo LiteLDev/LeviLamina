@@ -19,11 +19,7 @@ class EventResponseFactory : public ::Factory<::EventResponse> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>>
-        mSchema;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>> mSchema;
     // NOLINTEND
 
 public:
@@ -62,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

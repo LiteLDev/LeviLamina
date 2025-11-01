@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Block const*> mBlockToRemove;
-    ::ll::TypedStorage<4, 4, int>            mTicksSinceReachedGoal;
+    ::ll::TypedStorage<4, 4, int> mTicksSinceReachedGoal;
     // NOLINTEND
 
 public:
@@ -91,4 +91,5 @@ public:
 
     MCAPI bool $_canReach(::BlockPos const& pos);
     // NOLINTEND
+
 };

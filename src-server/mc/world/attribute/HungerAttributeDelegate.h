@@ -16,9 +16,9 @@ class HungerAttributeDelegate : public ::AttributeInstanceDelegate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>       mActionTickTimer;
-    ::ll::TypedStorage<4, 4, int>       mTickCounter;
-    ::ll::TypedStorage<4, 4, float>     mLastFoodLevel;
+    ::ll::TypedStorage<4, 4, int> mActionTickTimer;
+    ::ll::TypedStorage<4, 4, int> mTickCounter;
+    ::ll::TypedStorage<4, 4, float> mLastFoodLevel;
     ::ll::TypedStorage<8, 8, ::Player*> mPlayer;
     // NOLINTEND
 
@@ -54,4 +54,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

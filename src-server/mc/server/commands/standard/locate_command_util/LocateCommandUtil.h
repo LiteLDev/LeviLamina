@@ -2,11 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/server/commands/standard/locate_command_util/Biomes.h"
-
 // auto generated forward declare list
 // clang-format off
+class Biome;
 class BlockPos;
 class Dimension;
 // clang-format on
@@ -14,8 +12,7 @@ class Dimension;
 namespace LocateCommandUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::optional<::BlockPos>
-locateNearbyBiome(::BlockPos position, ::Dimension* dimension, ::LocateCommandUtil::Biomes biome);
+MCNAPI ::std::optional<::BlockPos> locateNearbyBiomeByPredicate(::BlockPos position, ::Dimension* dimension, ::std::function<bool(::Biome const&)> const& predicate);
 // NOLINTEND
 
-} // namespace LocateCommandUtil
+}

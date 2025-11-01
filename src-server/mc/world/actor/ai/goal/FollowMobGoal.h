@@ -17,15 +17,15 @@ class FollowMobGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>>  mFollowingMob;
-    ::ll::TypedStorage<8, 32, ::std::string>      mPreferredActorType;
-    ::ll::TypedStorage<4, 4, float>               mSpeedMultiplier;
-    ::ll::TypedStorage<4, 4, float>               mStopDistance;
-    ::ll::TypedStorage<4, 4, int>                 mTimeToRecalcPath;
-    ::ll::TypedStorage<4, 4, int>                 mSearchRange;
-    ::ll::TypedStorage<1, 1, bool>                mUseHomePositionRestriction;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>> mFollowingMob;
+    ::ll::TypedStorage<8, 32, ::std::string> mPreferredActorType;
+    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, float> mStopDistance;
+    ::ll::TypedStorage<4, 4, int> mTimeToRecalcPath;
+    ::ll::TypedStorage<4, 4, int> mSearchRange;
+    ::ll::TypedStorage<1, 1, bool> mUseHomePositionRestriction;
     // NOLINTEND
 
 public:
@@ -88,4 +88,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

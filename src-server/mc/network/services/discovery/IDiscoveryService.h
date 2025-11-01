@@ -21,8 +21,7 @@ public:
     virtual ~IDiscoveryService() = default;
 
     // vIndex: 1
-    virtual ::Bedrock::Threading::CachedAsync<::std::shared_ptr<::Bedrock::Services::EnvironmentQueryResponse const>>
-    getServiceEndpoints() const = 0;
+    virtual ::Bedrock::Threading::CachedAsync<::std::shared_ptr<::Bedrock::Services::EnvironmentQueryResponse const>> getServiceEndpoints() const = 0;
 
     // vIndex: 2
     virtual void reset() = 0;
@@ -36,6 +35,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Services
+}

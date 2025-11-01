@@ -18,6 +18,7 @@ public:
     FormatCryptString& operator=(FormatCryptString const&);
     FormatCryptString(FormatCryptString const&);
     FormatCryptString();
+
 };
 
-} // namespace rtc
+}

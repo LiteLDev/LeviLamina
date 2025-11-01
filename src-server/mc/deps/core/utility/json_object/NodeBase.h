@@ -7,14 +7,13 @@
 
 namespace Bedrock::JSONObject {
 
-class NodeBase : public ::Bedrock::Intrusive::
-                     list_standard_operations<::Bedrock::JSONObject::NodeBase, ::Bedrock::JSONObject::NodeBase> {
+class NodeBase : public ::Bedrock::Intrusive::list_standard_operations<::Bedrock::JSONObject::NodeBase, ::Bedrock::JSONObject::NodeBase> {
 public:
     // NodeBase inner types declare
     // clang-format off
     class Offset;
     // clang-format on
-
+    
     // NodeBase inner types define
     class Offset {
     public:
@@ -25,14 +24,15 @@ public:
             ::ll::UntypedStorage<2, 2> mUnk5228a0;
         };
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Offset& operator=(Offset const&);
         Offset(Offset const&);
         Offset();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -53,6 +53,7 @@ public:
     NodeBase& operator=(NodeBase const&);
     NodeBase(NodeBase const&);
     NodeBase();
+
 };
 
-} // namespace Bedrock::JSONObject
+}

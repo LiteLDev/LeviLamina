@@ -12,8 +12,9 @@
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/optional_ref.h"
 #include "mc/platform/brstd/function_ref.h"
-#include "mc/resources/BaseGameVersion.h"
 #include "mc/util/IntRange.h"
+#include "mc/versionless/util/BaseGameVersion.h"
+#include "mc/versionless/world/phys/AABB.h"
 #include "mc/world/Direction.h"
 #include "mc/world/Flip.h"
 #include "mc/world/item/CreativeItemCategory.h"
@@ -29,7 +30,6 @@
 #include "mc/world/level/block/block_events/BlockEventManager.h"
 #include "mc/world/level/block/components/BlockComponentStorage.h"
 #include "mc/world/level/block/components/NetEaseBlockComponentStorage.h"
-#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -87,39 +87,40 @@ public:
     struct RearrangedStateCollection;
     struct RemovedStateCollection;
     // clang-format on
-
+    
     // BlockType inner types define
     struct NameInfo {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 48, ::HashedString> mRawName;
-        ::ll::TypedStorage<8, 32, ::std::string>  mNamespaceName;
+        ::ll::TypedStorage<8, 32, ::std::string> mNamespaceName;
         ::ll::TypedStorage<8, 48, ::HashedString> mFullName;
         ::ll::TypedStorage<8, 48, ::HashedString> mPreFlatteningName;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         NameInfo& operator=(NameInfo const&);
         NameInfo(NameInfo const&);
         NameInfo();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::BlockType::NameInfo& operator=(::BlockType::NameInfo&&);
-
+    
         MCAPI ~NameInfo();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct HorizontalDirectionBits {
     public:
         // member variables
@@ -129,248 +130,235 @@ public:
         ::ll::TypedStorage<1, 1, bool> mSouth;
         ::ll::TypedStorage<1, 1, bool> mWest;
         // NOLINTEND
+    
     };
-
+    
     struct AlteredStateCollection {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::BlockState const>> mBlockState;
         // NOLINTEND
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ::std::optional<int> getState(::BlockType const&, int) const = 0;
-
+    
         // vIndex: 1
         virtual ::Block const* setState(::BlockType const&, int, int) const = 0;
-
+    
         // vIndex: 2
         virtual ~AlteredStateCollection() = default;
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
         MCAPI static bool _checkVersioningRequirements(::SemVersion const& removedSupportVersion);
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
-
+    
         // NOLINTEND
+    
     };
-
+    
     struct RemovedStateCollection : public ::BlockType::AlteredStateCollection {
     public:
         // RemovedStateCollection inner types declare
         // clang-format off
         struct SplitBlock;
         // clang-format on
-
+        
         // RemovedStateCollection inner types define
         struct SplitBlock {
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::TypedStorage<4, 4, int>                                   mData;
+            ::ll::TypedStorage<4, 4, int> mData;
             ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::BlockType>> mBlockType;
             // NOLINTEND
+        
         };
-
+        
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<::BlockType::RemovedStateCollection::SplitBlock>> mSplitBlocks;
         // NOLINTEND
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ::std::optional<int> getState(::BlockType const& blockType, int) const /*override*/;
-
+    
         // vIndex: 1
         virtual ::Block const* setState(::BlockType const& blockType, int blockData, int stateData) const /*override*/;
-
+    
         // vIndex: 2
         virtual ~RemovedStateCollection() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void
-        add(::BlockState const&                                              stateRef,
-            ::std::vector<::BlockType::RemovedStateCollection::SplitBlock>&& splitBlocks,
-            ::SemVersion const&                                              removedSupportVersion);
+        MCAPI static void add(::BlockState const& stateRef, ::std::vector<::BlockType::RemovedStateCollection::SplitBlock>&& splitBlocks, ::SemVersion const& removedSupportVersion);
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI ::std::optional<int> $getState(::BlockType const& blockType, int) const;
-
+    
         MCAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
     struct RearrangedStateCollection : public ::BlockType::AlteredStateCollection {
     public:
         // RearrangedStateCollection inner types define
         using GetterType = ::std::function<::std::optional<int>(::BlockType const&, int)>;
-
+        
         using SetterType = ::std::function<::Block const*(::BlockType const&, int, int)>;
-
+        
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 64, ::std::function<::std::optional<int>(::BlockType const&, int)>> mGetter;
-        ::ll::TypedStorage<8, 64, ::std::function<::Block const*(::BlockType const&, int, int)>>  mSetter;
+        ::ll::TypedStorage<8, 64, ::std::function<::Block const*(::BlockType const&, int, int)>> mSetter;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         RearrangedStateCollection();
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ::std::optional<int> getState(::BlockType const& blockType, int blockData) const /*override*/;
-
+    
         // vIndex: 1
         virtual ::Block const* setState(::BlockType const& blockType, int blockData, int stateData) const /*override*/;
-
+    
         // vIndex: 2
         virtual ~RearrangedStateCollection() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI RearrangedStateCollection(
-            ::BlockState const&                                            stateRef,
-            ::std::function<::std::optional<int>(::BlockType const&, int)> getter,
-            ::std::function<::Block const*(::BlockType const&, int, int)>  setter
-        );
+        MCAPI RearrangedStateCollection(::BlockState const& stateRef, ::std::function<::std::optional<int>(::BlockType const&, int)> getter, ::std::function<::Block const*(::BlockType const&, int, int)> setter);
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void
-        add(::BlockType&                                                   blockType,
-            ::BlockState const&                                            stateRef,
-            ::std::function<::std::optional<int>(::BlockType const&, int)> getter,
-            ::std::function<::Block const*(::BlockType const&, int, int)>  setter,
-            ::SemVersion const&                                            removedSupportVersion);
+        MCAPI static void add(::BlockType& blockType, ::BlockState const& stateRef, ::std::function<::std::optional<int>(::BlockType const&, int)> getter, ::std::function<::Block const*(::BlockType const&, int, int)> setter, ::SemVersion const& removedSupportVersion);
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
-            ::BlockState const&                                            stateRef,
-            ::std::function<::std::optional<int>(::BlockType const&, int)> getter,
-            ::std::function<::Block const*(::BlockType const&, int, int)>  setter
-        );
+        MCAPI void* $ctor(::BlockState const& stateRef, ::std::function<::std::optional<int>(::BlockType const&, int)> getter, ::std::function<::Block const*(::BlockType const&, int, int)> setter);
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCAPI ::std::optional<int> $getState(::BlockType const& blockType, int blockData) const;
-
+    
         MCAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                 mDescriptionId;
-    ::ll::TypedStorage<8, 104, ::BlockComponentStorage>      mComponents;
-    ::ll::TypedStorage<8, 176, ::BlockType::NameInfo>        mNameInfo;
-    ::ll::TypedStorage<8, 8, ::BlockProperty>                mProperties;
-    ::ll::TypedStorage<1, 1, bool>                           mFancy;
-    ::ll::TypedStorage<1, 1, ::BlockRenderLayer>             mRenderLayer;
-    ::ll::TypedStorage<1, 1, bool>                           mRenderLayerCanRenderAsOpaque;
-    ::ll::TypedStorage<1, 1, ::BlockActorType>               mBlockEntityType;
-    ::ll::TypedStorage<4, 4, float>                          mThickness;
-    ::ll::TypedStorage<1, 1, bool>                           mCanSlide;
-    ::ll::TypedStorage<1, 1, bool>                           mCanReactToNeighborsDuringInstatick;
-    ::ll::TypedStorage<1, 1, bool>                           mIsInteraction;
-    ::ll::TypedStorage<4, 4, float>                          mGravity;
-    ::ll::TypedStorage<8, 8, ::Material const&>              mMaterial;
-    ::ll::TypedStorage<1, 1, bool>                           mFalling;
-    ::ll::TypedStorage<4, 4, float>                          mParticleQuantityScalar;
-    ::ll::TypedStorage<4, 4, ::CreativeItemCategory>         mCreativeCategory;
-    ::ll::TypedStorage<8, 32, ::std::string>                 mCreativeGroup;
-    ::ll::TypedStorage<1, 1, bool>                           mIsHiddenInCommands;
-    ::ll::TypedStorage<1, 1, bool>                           mAllowsRunes;
-    ::ll::TypedStorage<1, 1, bool>                           mCanBeBrokenFromFalling;
-    ::ll::TypedStorage<1, 1, bool>                           mCanBeOriginalSurface;
-    ::ll::TypedStorage<1, 1, bool>                           mSolid;
-    ::ll::TypedStorage<1, 1, bool>                           mPushesOutItems;
-    ::ll::TypedStorage<1, 1, bool>                           mIgnoreBlockForInsideCubeRenderer;
-    ::ll::TypedStorage<1, 1, bool>                           mIsTrapdoor;
-    ::ll::TypedStorage<1, 1, bool>                           mIsDoor;
-    ::ll::TypedStorage<1, 1, bool>                           mIsOpaqueFullBlock;
-    ::ll::TypedStorage<4, 4, float>                          mTranslucency;
-    ::ll::TypedStorage<1, 1, bool>                           mShouldRandomTickExtraLayer;
-    ::ll::TypedStorage<1, 1, bool>                           mIsMobPiece;
-    ::ll::TypedStorage<1, 1, bool>                           mCanBeExtraBlock;
-    ::ll::TypedStorage<1, 1, bool>                           mCanPropagateBrightness;
-    ::ll::TypedStorage<1, 1, ::Brightness>                   mLightBlock;
-    ::ll::TypedStorage<1, 1, ::Brightness>                   mLightEmission;
-    ::ll::TypedStorage<4, 16, ::mce::Color>                  mMapColor;
-    ::ll::TypedStorage<4, 4, float>                          mFriction;
-    ::ll::TypedStorage<4, 4, ::NoteBlockInstrument>          mNoteBlockInstrument;
-    ::ll::TypedStorage<1, 1, ::TintMethod>                   mTintMethod;
-    ::ll::TypedStorage<1, 1, bool>                           mReturnDefaultBlockOnUnidentifiedBlockState;
-    ::ll::TypedStorage<2, 2, ::NewBlockID>                   mID;
-    ::ll::TypedStorage<8, 32, ::BaseGameVersion>             mMinRequiredBaseGameVersion;
-    ::ll::TypedStorage<1, 1, bool>                           mIsVanilla;
+    ::ll::TypedStorage<8, 32, ::std::string> mDescriptionId;
+    ::ll::TypedStorage<8, 104, ::BlockComponentStorage> mComponents;
+    ::ll::TypedStorage<8, 176, ::BlockType::NameInfo> mNameInfo;
+    ::ll::TypedStorage<8, 8, ::BlockProperty> mProperties;
+    ::ll::TypedStorage<1, 1, bool> mFancy;
+    ::ll::TypedStorage<1, 1, ::BlockRenderLayer> mRenderLayer;
+    ::ll::TypedStorage<1, 1, bool> mRenderLayerCanRenderAsOpaque;
+    ::ll::TypedStorage<1, 1, ::BlockActorType> mBlockEntityType;
+    ::ll::TypedStorage<4, 4, float> mThickness;
+    ::ll::TypedStorage<1, 1, bool> mCanSlide;
+    ::ll::TypedStorage<1, 1, bool> mCanReactToNeighborsDuringInstatick;
+    ::ll::TypedStorage<1, 1, bool> mIsInteraction;
+    ::ll::TypedStorage<4, 4, float> mGravity;
+    ::ll::TypedStorage<8, 8, ::Material const&> mMaterial;
+    ::ll::TypedStorage<1, 1, bool> mFalling;
+    ::ll::TypedStorage<4, 4, float> mParticleQuantityScalar;
+    ::ll::TypedStorage<4, 4, ::CreativeItemCategory> mCreativeCategory;
+    ::ll::TypedStorage<8, 32, ::std::string> mCreativeGroup;
+    ::ll::TypedStorage<1, 1, bool> mIsHiddenInCommands;
+    ::ll::TypedStorage<1, 1, bool> mAllowsRunes;
+    ::ll::TypedStorage<1, 1, bool> mCanBeBrokenFromFalling;
+    ::ll::TypedStorage<1, 1, bool> mCanBeOriginalSurface;
+    ::ll::TypedStorage<1, 1, bool> mSolid;
+    ::ll::TypedStorage<1, 1, bool> mPushesOutItems;
+    ::ll::TypedStorage<1, 1, bool> mIgnoreBlockForInsideCubeRenderer;
+    ::ll::TypedStorage<1, 1, bool> mIsTrapdoor;
+    ::ll::TypedStorage<1, 1, bool> mIsDoor;
+    ::ll::TypedStorage<1, 1, bool> mIsOpaqueFullBlock;
+    ::ll::TypedStorage<4, 4, float> mTranslucency;
+    ::ll::TypedStorage<1, 1, bool> mShouldRandomTickExtraLayer;
+    ::ll::TypedStorage<1, 1, bool> mIsMobPiece;
+    ::ll::TypedStorage<1, 1, bool> mCanBeExtraBlock;
+    ::ll::TypedStorage<1, 1, bool> mCanPropagateBrightness;
+    ::ll::TypedStorage<1, 1, ::Brightness> mLightBlock;
+    ::ll::TypedStorage<1, 1, ::Brightness> mLightEmission;
+    ::ll::TypedStorage<4, 16, ::mce::Color> mMapColor;
+    ::ll::TypedStorage<4, 4, float> mFriction;
+    ::ll::TypedStorage<4, 4, ::NoteBlockInstrument> mNoteBlockInstrument;
+    ::ll::TypedStorage<1, 1, ::TintMethod> mTintMethod;
+    ::ll::TypedStorage<1, 1, bool> mReturnDefaultBlockOnUnidentifiedBlockState;
+    ::ll::TypedStorage<2, 2, ::NewBlockID> mID;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion> mMinRequiredBaseGameVersion;
+    ::ll::TypedStorage<1, 1, bool> mIsVanilla;
     ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>> mTags;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DefinitionEvent>> mEventHandlers;
-    ::ll::TypedStorage<1, 1, bool>                                          mDataDrivenVanillaBlocksAndItemsEnabled;
-    ::ll::TypedStorage<4, 24, ::AABB>                                       mVisualShape;
-    ::ll::TypedStorage<4, 4, uint>                                          mBitsUsed;
-    ::ll::TypedStorage<4, 4, uint>                                          mTotalBitsUsed;
-    ::ll::TypedStorage<8, 16, ::std::map<uint64, ::BlockStateInstance>>     mStates;
+    ::ll::TypedStorage<1, 1, bool> mDataDrivenVanillaBlocksAndItemsEnabled;
+    ::ll::TypedStorage<4, 24, ::AABB> mVisualShape;
+    ::ll::TypedStorage<4, 4, uint> mBitsUsed;
+    ::ll::TypedStorage<4, 4, uint> mTotalBitsUsed;
+    ::ll::TypedStorage<8, 16, ::std::map<uint64, ::BlockStateInstance>> mStates;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, uint64>> mStateNameMap;
-    ::ll::TypedStorage<8, 8, uint64>                                        mCreativeEnumState;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Block>>>    mBlockPermutations;
-    ::ll::TypedStorage<8, 8, ::Block const*>                                mDefaultState;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::BlockTrait::IGetPlacementBlockCallback>>>
-                                                                                     mGetPlacementBlockCallbacks;
+    ::ll::TypedStorage<8, 8, uint64> mCreativeEnumState;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Block>>> mBlockPermutations;
+    ::ll::TypedStorage<8, 8, ::Block const*> mDefaultState;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::BlockTrait::IGetPlacementBlockCallback>>> mGetPlacementBlockCallbacks;
     ::ll::TypedStorage<8, 72, ::Core::Cache<ushort, ::Block const*, ::Block const*>> mLegacyDataLookupTable;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockStateGroup>>                   mBlockStateGroup;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IResourceDropsStrategy>>            mResourceDropsStrategy;
-    ::ll::TypedStorage<4, 8, ::IntRange>                                             mExperienceDropRange;
-    ::ll::TypedStorage<1, 1, bool>                                                   mRequiresCorrectToolForDrops;
-    ::ll::TypedStorage<8, 104, ::NetEaseBlockComponentStorage>                       mNetEaseComponentStorage;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::BlockType::AlteredStateCollection>>>
-                                                                                      mAlteredStateCollections;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockStateGroup>> mBlockStateGroup;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IResourceDropsStrategy>> mResourceDropsStrategy;
+    ::ll::TypedStorage<4, 8, ::IntRange> mExperienceDropRange;
+    ::ll::TypedStorage<1, 1, bool> mRequiresCorrectToolForDrops;
+    ::ll::TypedStorage<8, 104, ::NetEaseBlockComponentStorage> mNetEaseComponentStorage;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::BlockType::AlteredStateCollection>>> mAlteredStateCollections;
     ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockClientPredictionOverrides, 7>> mClientPredictionOverrides;
-    ::ll::TypedStorage<8, 32, ::BlockEvents::BlockEventManager>                       mEventManager;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry>>   mShapeRegistry;
+    ::ll::TypedStorage<8, 32, ::BlockEvents::BlockEventManager> mEventManager;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry>> mShapeRegistry;
     // NOLINTEND
 
 public:
@@ -392,66 +380,28 @@ public:
     virtual ::Block const* getNextBlockPermutation(::Block const& currentBlock) const;
 
     // vIndex: 3
-    virtual bool
-    hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
+    virtual bool hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
 
     // vIndex: 4
-    virtual ::HitResult clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
+    virtual ::HitResult clip(::Block const& block, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::ShapeType shapeType, ::optional_ref<::GetCollisionShapeInterface const> entity) const;
 
     // vIndex: 5
-    virtual ::AABB getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
+    virtual ::AABB getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
     // vIndex: 6
-    virtual bool getCollisionShapeForCamera(
-        ::AABB&                    outAABB,
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos
-    ) const;
+    virtual bool getCollisionShapeForCamera(::AABB& outAABB, ::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos) const;
 
     // vIndex: 7
-    virtual bool addCollisionShapes(
-        ::Block const&                                     block,
-        ::IConstBlockSource const&                         region,
-        ::BlockPos const&                                  pos,
-        ::AABB const*                                      intersectTestBox,
-        ::std::vector<::AABB>&                             inoutBoxes,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
+    virtual bool addCollisionShapes(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes, ::optional_ref<::GetCollisionShapeInterface const> entity) const;
 
     // vIndex: 8
-    virtual void addAABBs(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB const*              intersectTestBox,
-        ::std::vector<::AABB>&     inoutBoxes
-    ) const;
+    virtual void addAABBs(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes) const;
 
     // vIndex: 9
-    virtual ::AABB const&
-    getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    virtual ::AABB const& getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
     // vIndex: 10
-    virtual ::AABB const& getVisualShapeInWorld(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::AABB& bufferAABB
-    ) const;
+    virtual ::AABB const& getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const;
 
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const&, ::AABB&) const;
@@ -460,8 +410,7 @@ public:
     virtual ::AABB const& getUIShape(::Block const& block, ::AABB& bufferAABB) const;
 
     // vIndex: 13
-    virtual bool
-    getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
+    virtual bool getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
     // vIndex: 14
     virtual bool isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const;
@@ -476,11 +425,7 @@ public:
     virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
     // vIndex: 18
-    virtual bool liquidCanFlowIntoFromDirection(
-        uchar                                                     flowIntoFacing,
-        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
-        ::BlockPos const&                                         pos
-    ) const;
+    virtual bool liquidCanFlowIntoFromDirection(uchar flowIntoFacing, ::std::function<::Block const&(::BlockPos const&)> const& getBlock, ::BlockPos const& pos) const;
 
     // vIndex: 19
     virtual bool hasVariableLighting() const;
@@ -492,7 +437,7 @@ public:
     virtual ::Block const& getStrippedBlock(::Block const& srcBlock) const;
 
     // vIndex: 22
-    virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
     // vIndex: 23
     virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const;
@@ -588,12 +533,10 @@ public:
     virtual ::std::optional<::HashedString> getRequiredMedium() const;
 
     // vIndex: 54
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+    virtual bool shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     // vIndex: 55
-    virtual void
-    handlePrecipitation(::BlockSource& region, ::BlockPos const& pos, float downfallAmount, float temperature) const;
+    virtual void handlePrecipitation(::BlockSource& region, ::BlockPos const& pos, float downfallAmount, float temperature) const;
 
     // vIndex: 56
     virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
@@ -608,8 +551,7 @@ public:
     virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
     // vIndex: 60
-    virtual void
-    transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const;
+    virtual void transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const;
 
     // vIndex: 61
     virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
@@ -627,272 +569,243 @@ public:
     virtual void onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     // vIndex: 66
-    virtual void onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
-
-    // vIndex: 67
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 68
+    // vIndex: 67
     virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
-    // vIndex: 69
+    // vIndex: 68
     virtual bool isBounceBlock() const;
 
-    // vIndex: 70
+    // vIndex: 69
     virtual bool isPreservingMediumWhenPlaced(::BlockType const* medium) const;
 
-    // vIndex: 71
+    // vIndex: 70
     virtual bool isFilteredOut(::BlockRenderLayer) const;
 
-    // vIndex: 72
+    // vIndex: 71
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const;
 
-    // vIndex: 73
+    // vIndex: 72
     virtual bool ignoreEntitiesOnPistonMove(::Block const& block) const;
 
-    // vIndex: 74
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    // vIndex: 73
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    // vIndex: 75
+    // vIndex: 74
     virtual bool mayConsumeFertilizer(::BlockSource& region) const;
 
-    // vIndex: 76
+    // vIndex: 75
     virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    // vIndex: 78
+    // vIndex: 77
     virtual bool mayPick() const;
 
-    // vIndex: 77
+    // vIndex: 76
     virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
-    // vIndex: 80
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 81
+    // vIndex: 80
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 82
-    virtual bool tryToPlace(
-        ::BlockSource&                 region,
-        ::BlockPos const&              pos,
-        ::Block const&                 block,
-        ::ActorBlockSyncMessage const* syncMsg
-    ) const;
+    // vIndex: 81
+    virtual bool tryToPlace(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::ActorBlockSyncMessage const* syncMsg) const;
 
-    // vIndex: 83
+    // vIndex: 82
     virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    // vIndex: 85
-    virtual void
-    destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
+    // vIndex: 84
+    virtual void destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
 
-    // vIndex: 86
+    // vIndex: 85
     virtual bool getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const;
 
-    // vIndex: 87
+    // vIndex: 86
     virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    // vIndex: 88
+    // vIndex: 87
     virtual bool getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
-    // vIndex: 89
+    // vIndex: 88
     virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const;
 
+    // vIndex: 90
+    virtual void spawnAfterBreak(::BlockSource&, ::Block const&, ::BlockPos const&, ::ResourceDropsContext const&) const;
+
     // vIndex: 91
-    virtual void
-    spawnAfterBreak(::BlockSource&, ::Block const&, ::BlockPos const&, ::ResourceDropsContext const&) const;
+    virtual ::Block const& getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const;
 
     // vIndex: 92
-    virtual ::Block const& getPlacementBlock(
-        ::Actor const&    by,
-        ::BlockPos const& pos,
-        uchar             face,
-        ::Vec3 const&     clickPos,
-        int               itemValue
-    ) const;
-
-    // vIndex: 93
     virtual int calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
 
-    // vIndex: 94
+    // vIndex: 93
     virtual bool isAttachedTo(::BlockSource& region, ::BlockPos const& pos, ::BlockPos& outAttachedTo) const;
 
-    // vIndex: 95
+    // vIndex: 94
     virtual bool attack(::Player* player, ::BlockPos const& pos) const;
 
-    // vIndex: 96
+    // vIndex: 95
     virtual bool shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    // vIndex: 98
-    virtual bool canBeBuiltOver(
-        ::Block const&     block,
-        ::BlockSource&     region,
-        ::BlockPos const&  pos,
-        ::BlockItem const& newItem
-    ) const;
-
     // vIndex: 97
+    virtual bool canBeBuiltOver(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const;
+
+    // vIndex: 96
     virtual bool canBeBuiltOver(::Block const& block, ::BlockSource&, ::BlockPos const&) const;
 
-    // vIndex: 99
+    // vIndex: 98
     virtual void triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
 
-    // vIndex: 100
-    virtual void executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const;
+    // vIndex: 99
+    virtual void executeEvent(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& eventName, ::Actor& sourceEntity) const;
 
-    // vIndex: 101
+    // vIndex: 100
     virtual ::MobSpawnerData const* getMobToSpawn(::SpawnConditions const& conditions, ::BlockSource& region) const;
 
-    // vIndex: 102
+    // vIndex: 101
     virtual bool shouldStopFalling(::Actor& entity) const;
 
-    // vIndex: 103
+    // vIndex: 102
     virtual bool pushesUpFallingBlocks() const;
 
-    // vIndex: 104
+    // vIndex: 103
     virtual bool canHaveExtraData() const;
 
-    // vIndex: 105
+    // vIndex: 104
     virtual bool hasComparatorSignal() const;
 
-    // vIndex: 106
-    virtual int
-    getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    // vIndex: 105
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    // vIndex: 107
+    // vIndex: 106
     virtual bool canSlide(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 108
+    // vIndex: 107
     virtual bool canInstatick() const;
 
-    // vIndex: 109
+    // vIndex: 108
     virtual bool canSpawnAt(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    // vIndex: 110
+    // vIndex: 109
     virtual void notifySpawnedAt(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 111
+    // vIndex: 110
     virtual bool causesFreezeEffect() const;
 
-    // vIndex: 112
+    // vIndex: 111
     virtual ::std::string buildDescriptionId(::Block const&) const;
 
-    // vIndex: 113
+    // vIndex: 112
     virtual bool isAuxValueRelevantForPicking() const;
 
-    // vIndex: 114
+    // vIndex: 113
     virtual bool isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const;
 
-    // vIndex: 115
+    // vIndex: 114
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
-    // vIndex: 116
+    // vIndex: 115
     virtual float getShadeBrightness(::Block const& block) const;
 
-    // vIndex: 117
+    // vIndex: 116
     virtual int telemetryVariant(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const;
 
-    // vIndex: 119
+    // vIndex: 118
     virtual bool canSpawnOn(::Actor*) const;
 
-    // vIndex: 120
+    // vIndex: 119
     virtual ::Block const& getRenderBlock() const;
 
-    // vIndex: 121
+    // vIndex: 120
     virtual uchar getMappedFace(uchar face, ::Block const& block) const;
 
-    // vIndex: 122
+    // vIndex: 121
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const&) const;
 
-    // vIndex: 124
+    // vIndex: 123
     virtual void animateTick(::BlockAnimateTickData const&) const;
 
-    // vIndex: 125
+    // vIndex: 124
     virtual ::BlockType& init();
 
-    // vIndex: 126
+    // vIndex: 125
     virtual ::Brightness getLightEmission(::Block const&) const;
 
-    // vIndex: 127
+    // vIndex: 126
     virtual ::Block const* tryLegacyUpgrade(ushort) const;
 
-    // vIndex: 128
+    // vIndex: 127
     virtual bool dealsContactDamage(::Actor const& actor, ::Block const& block, bool isPathFinding) const;
 
-    // vIndex: 129
+    // vIndex: 128
     virtual ::Block const* tryGetInfested(::Block const&) const;
 
-    // vIndex: 130
+    // vIndex: 129
     virtual ::Block const* tryGetUninfested(::Block const&) const;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&);
 
-    // vIndex: 132
+    // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 133
+    // vIndex: 132
     virtual void onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
 
-    // vIndex: 134
+    // vIndex: 133
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    // vIndex: 135
+    // vIndex: 134
     virtual bool shouldTickOnSetBlock() const;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const;
 
-    // vIndex: 137
+    // vIndex: 136
     virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 139
+    // vIndex: 138
     virtual ::BlockRenderLayer getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
 
-    // vIndex: 140
+    // vIndex: 139
     virtual int getExtraRenderLayers() const;
 
-    // vIndex: 141
+    // vIndex: 140
     virtual ::HashedString const& getCullingLayer() const;
 
-    // vIndex: 142
+    // vIndex: 141
     virtual ::Brightness getLight(::Block const&) const;
 
-    // vIndex: 143
+    // vIndex: 142
     virtual ::Brightness getEmissiveBrightness(::Block const&) const;
 
-    // vIndex: 144
+    // vIndex: 143
     virtual ::mce::Color getMapColor(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
-    // vIndex: 145
+    // vIndex: 144
     virtual void _onHitByActivatingAttack(::BlockSource&, ::BlockPos const&, ::Actor*) const;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor&) const;
     // NOLINTEND
 
@@ -901,11 +814,7 @@ public:
     // NOLINTBEGIN
     MCAPI BlockType(::std::string const& nameId, int id, ::Material const& material);
 
-    MCAPI void _executeEvent(
-        ::std::string const&                                                  name,
-        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
-        ::RenderParams&                                                       params
-    ) const;
+    MCAPI void _executeEvent(::std::string const& name, ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack, ::RenderParams& params) const;
 
     MCAPI bool addAABB(::AABB const& shape, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes) const;
 
@@ -943,11 +852,7 @@ public:
 
     MCAPI void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
 
-    MCAPI ::ResourceDrops getResourceDrops(
-        ::Block const&                block,
-        ::Randomize&                  randomize,
-        ::ResourceDropsContext const& resourceDropsContext
-    ) const;
+    MCAPI ::ResourceDrops getResourceDrops(::Block const& block, ::Randomize& randomize, ::ResourceDropsContext const& resourceDropsContext) const;
 
     MCAPI ::Block const& getStateFromLegacyData(ushort data) const;
 
@@ -955,12 +860,7 @@ public:
 
     MCAPI bool hasTag(::HashedString const& tag) const;
 
-    MCAPI bool isValidSpawn(
-        ::BlockSource&                 region,
-        ::Block const&                 state,
-        ::BlockPos                     pos,
-        ::br::spawn::EntityType const& entityType
-    ) const;
+    MCAPI bool isValidSpawn(::BlockSource& region, ::Block const& state, ::BlockPos pos, ::br::spawn::EntityType const& entityType) const;
 
     MCAPI void onFallOnBase(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
 
@@ -984,9 +884,7 @@ public:
 
     MCAPI ::BlockType& setIsHiddenInCommands(bool isHiddenInCommands);
 
-    MCAPI ::BlockType& setIsValidSpawn(
-        bool (*predicate)(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&)
-    );
+    MCAPI ::BlockType& setIsValidSpawn(bool(*predicate) (::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const&));
 
     MCAPI ::BlockType& setLightBlock(::Brightness brightness);
 
@@ -1008,26 +906,11 @@ public:
 
     MCAPI bool shouldTriggerOnStandOn(::Actor& entity, ::BlockPos const& pos) const;
 
-    MCAPI void spawnResources(
-        ::BlockSource&                region,
-        ::BlockPos const&             pos,
-        ::Block const&                block,
-        ::Randomize&                  randomize,
-        ::ResourceDropsContext const& resourceDropsContext
-    ) const;
+    MCAPI void spawnResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Randomize& randomize, ::ResourceDropsContext const& resourceDropsContext) const;
 
     MCAPI ::Block const* tryGetStateFromLegacyData(ushort data) const;
 
-    MCAPI bool updateTallestCollisionShape(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::AABB const&                                      intersectTestBox,
-        ::optional_ref<::GetCollisionShapeInterface const> entity,
-        ::AABB&                                            result,
-        ::Vec3 const&                                      posToMinimizeDistanceToIfMatchingHeight,
-        float&                                             currentDistanceSqr
-    ) const;
+    MCAPI bool updateTallestCollisionShape(::Block const& block, ::BlockSource const& region, ::BlockPos const& pos, ::AABB const& intersectTestBox, ::optional_ref<::GetCollisionShapeInterface const> entity, ::AABB& result, ::Vec3 const& posToMinimizeDistanceToIfMatchingHeight, float& currentDistanceSqr) const;
     // NOLINTEND
 
 public:
@@ -1037,15 +920,11 @@ public:
 
     MCAPI static ::BlockType::NameInfo extractBlockNameInfo(::std::string const& name);
 
-    MCAPI static ::BlockType::HorizontalDirectionBits
-    getConnectedDirections(::Block const& thisBlock, ::BlockPos const& pos, ::IConstBlockSource const& region);
-
     MCAPI static uchar getPlacementFacingAll(::Actor const& entity, ::BlockPos const& pos, float yRotOffsetDegree);
 
     MCAPI static ::ItemActor* popResource(::BlockSource& region, ::BlockPos const& pos, ::ItemStack const& item);
 
-    MCAPI static ::ItemActor*
-    popResource(::BlockSource& region, ::BlockPos const& pos, ::ItemInstance const& itemInstance);
+    MCAPI static ::ItemActor* popResource(::BlockSource& region, ::BlockPos const& pos, ::ItemInstance const& itemInstance);
     // NOLINTEND
 
 public:
@@ -1075,66 +954,27 @@ public:
 
     MCAPI ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
 
-    MCFOLD bool
-    $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
+    MCFOLD bool $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
 
-    MCAPI ::HitResult $clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
+    MCAPI ::HitResult $clip(::Block const& block, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::ShapeType shapeType, ::optional_ref<::GetCollisionShapeInterface const> entity) const;
 
-    MCAPI ::AABB $getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
+    MCAPI ::AABB $getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
-    MCAPI bool $getCollisionShapeForCamera(
-        ::AABB&                    outAABB,
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos
-    ) const;
+    MCAPI bool $getCollisionShapeForCamera(::AABB& outAABB, ::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $addCollisionShapes(
-        ::Block const&                                     block,
-        ::IConstBlockSource const&                         region,
-        ::BlockPos const&                                  pos,
-        ::AABB const*                                      intersectTestBox,
-        ::std::vector<::AABB>&                             inoutBoxes,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
+    MCAPI bool $addCollisionShapes(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes, ::optional_ref<::GetCollisionShapeInterface const> entity) const;
 
-    MCAPI void $addAABBs(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB const*              intersectTestBox,
-        ::std::vector<::AABB>&     inoutBoxes
-    ) const;
+    MCAPI void $addAABBs(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes) const;
 
-    MCAPI ::AABB const&
-    $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    MCAPI ::AABB const& $getOutline(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCFOLD ::AABB const& $getVisualShapeInWorld(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::AABB& bufferAABB
-    ) const;
+    MCFOLD ::AABB const& $getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const&, ::AABB&) const;
 
     MCAPI ::AABB const& $getUIShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI bool
-    $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
+    MCAPI bool $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
     MCAPI bool $isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const;
 
@@ -1144,11 +984,7 @@ public:
 
     MCFOLD void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $liquidCanFlowIntoFromDirection(
-        uchar                                                     flowIntoFacing,
-        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
-        ::BlockPos const&                                         pos
-    ) const;
+    MCFOLD bool $liquidCanFlowIntoFromDirection(uchar flowIntoFacing, ::std::function<::Block const&(::BlockPos const&)> const& getBlock, ::BlockPos const& pos) const;
 
     MCFOLD bool $hasVariableLighting() const;
 
@@ -1156,7 +992,7 @@ public:
 
     MCFOLD ::Block const& $getStrippedBlock(::Block const& srcBlock) const;
 
-    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
+    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
 
     MCAPI bool $canProvideMultifaceSupport(::Block const& block, uchar face) const;
 
@@ -1220,11 +1056,9 @@ public:
 
     MCAPI ::std::optional<::HashedString> $getRequiredMedium() const;
 
-    MCFOLD bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+    MCFOLD bool $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCFOLD void
-    $handlePrecipitation(::BlockSource& region, ::BlockPos const& pos, float downfallAmount, float temperature) const;
+    MCFOLD void $handlePrecipitation(::BlockSource& region, ::BlockPos const& pos, float downfallAmount, float temperature) const;
 
     MCAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
@@ -1234,8 +1068,7 @@ public:
 
     MCFOLD bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCFOLD void
-    $transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const;
+    MCFOLD void $transformOnFall(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, float fallDistance) const;
 
     MCFOLD void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
@@ -1246,8 +1079,6 @@ public:
     MCFOLD void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
-
-    MCFOLD void $onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -1263,8 +1094,7 @@ public:
 
     MCFOLD bool $ignoreEntitiesOnPistonMove(::Block const& block) const;
 
-    MCFOLD bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCFOLD bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
     MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
 
@@ -1280,23 +1110,17 @@ public:
 
     MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $tryToPlace(
-        ::BlockSource&                 region,
-        ::BlockPos const&              pos,
-        ::Block const&                 block,
-        ::ActorBlockSyncMessage const* syncMsg
-    ) const;
+    MCAPI bool $tryToPlace(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::ActorBlockSyncMessage const* syncMsg) const;
 
     MCFOLD bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
 
     MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCFOLD void
-    $destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
+    MCFOLD void $destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
 
     MCFOLD bool $getIgnoresDestroyPermissions(::Actor& entity, ::BlockPos const& pos) const;
 
-    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCFOLD bool $getSecondPart(::IConstBlockSource const& region, ::BlockPos const& pos, ::BlockPos& out) const;
 
@@ -1304,16 +1128,9 @@ public:
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCFOLD void
-    $spawnAfterBreak(::BlockSource&, ::Block const&, ::BlockPos const&, ::ResourceDropsContext const&) const;
+    MCFOLD void $spawnAfterBreak(::BlockSource&, ::Block const&, ::BlockPos const&, ::ResourceDropsContext const&) const;
 
-    MCAPI ::Block const& $getPlacementBlock(
-        ::Actor const&    by,
-        ::BlockPos const& pos,
-        uchar             face,
-        ::Vec3 const&     clickPos,
-        int               itemValue
-    ) const;
+    MCAPI ::Block const& $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const;
 
     MCAPI int $calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
 
@@ -1323,24 +1140,13 @@ public:
 
     MCAPI bool $shouldTriggerEntityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCAPI bool $canBeBuiltOver(
-        ::Block const&     block,
-        ::BlockSource&     region,
-        ::BlockPos const&  pos,
-        ::BlockItem const& newItem
-    ) const;
+    MCAPI bool $canBeBuiltOver(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::BlockItem const& newItem) const;
 
     MCAPI bool $canBeBuiltOver(::Block const& block, ::BlockSource&, ::BlockPos const&) const;
 
     MCFOLD void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int b0, int b1) const;
 
-    MCAPI void $executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const;
+    MCAPI void $executeEvent(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& eventName, ::Actor& sourceEntity) const;
 
     MCAPI ::MobSpawnerData const* $getMobToSpawn(::SpawnConditions const& conditions, ::BlockSource& region) const;
 
@@ -1352,8 +1158,7 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCFOLD int
-    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCFOLD int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCAPI bool $canSlide(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -1441,4 +1246,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -7,6 +7,7 @@
 
 namespace Bedrock::Threading {
 
-class Mutex : public ::Bedrock::Threading::ZeroInit, public ::std::mutex {};
+class Mutex : public ::Bedrock::Threading::ZeroInit, public ::std::mutex {
+};
 
-} // namespace Bedrock::Threading
+}

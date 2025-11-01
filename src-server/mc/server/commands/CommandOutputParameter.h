@@ -18,12 +18,12 @@ public:
     enum class NoCountType : int {
         NoCount = 0,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mString;
-    ::ll::TypedStorage<4, 4, int>            mCount;
+    ::ll::TypedStorage<4, 4, int> mCount;
     // NOLINTEND
 
 public:
@@ -77,4 +77,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

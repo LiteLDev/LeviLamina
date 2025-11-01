@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 48, ::HashedString const> mHashedName;
-    ::ll::TypedStorage<8, 8, ::GameEvent const&>    mGameEvent;
+    ::ll::TypedStorage<8, 8, ::GameEvent const&> mGameEvent;
     // NOLINTEND
 
 public:
@@ -35,4 +35,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

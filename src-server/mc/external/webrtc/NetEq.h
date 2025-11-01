@@ -21,83 +21,85 @@ public:
     struct Config;
     struct DecoderFormat;
     // clang-format on
-
+    
     // NetEq inner types define
     struct Config {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk8f2462;
-        ::ll::UntypedStorage<8, 8>  mUnk691870;
-        ::ll::UntypedStorage<4, 4>  mUnk96af64;
-        ::ll::UntypedStorage<4, 4>  mUnk5bb63b;
-        ::ll::UntypedStorage<1, 1>  mUnk19fd7b;
-        ::ll::UntypedStorage<1, 1>  mUnk322ecb;
-        ::ll::UntypedStorage<1, 1>  mUnkc289c8;
+        ::ll::UntypedStorage<4, 4> mUnk8f2462;
+        ::ll::UntypedStorage<8, 8> mUnk691870;
+        ::ll::UntypedStorage<4, 4> mUnk96af64;
+        ::ll::UntypedStorage<4, 4> mUnk5bb63b;
+        ::ll::UntypedStorage<1, 1> mUnk19fd7b;
+        ::ll::UntypedStorage<1, 1> mUnk322ecb;
+        ::ll::UntypedStorage<1, 1> mUnkc289c8;
         ::ll::UntypedStorage<8, 16> mUnk7adb24;
-        ::ll::UntypedStorage<1, 1>  mUnkf8cecb;
+        ::ll::UntypedStorage<1, 1> mUnkf8cecb;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Config& operator=(Config const&);
         Config(Config const&);
         Config();
+    
     };
-
+    
     enum class ReturnCodes : int {
-        KOK   = 0,
+        KOK = 0,
         KFail = -1,
     };
-
+    
     enum class Operation : int {
-        KNormal             = 0,
-        KMerge              = 1,
-        KExpand             = 2,
-        KAccelerate         = 3,
-        KFastAccelerate     = 4,
-        KPreemptiveExpand   = 5,
-        KRfc3389Cng         = 6,
+        KNormal = 0,
+        KMerge = 1,
+        KExpand = 2,
+        KAccelerate = 3,
+        KFastAccelerate = 4,
+        KPreemptiveExpand = 5,
+        KRfc3389Cng = 6,
         KRfc3389CngNoPacket = 7,
-        KCodecInternalCng   = 8,
-        KDtmf               = 9,
-        KUndefined          = 10,
+        KCodecInternalCng = 8,
+        KDtmf = 9,
+        KUndefined = 10,
     };
-
+    
     enum class Mode : int {
-        KNormal                    = 0,
-        KExpand                    = 1,
-        KMerge                     = 2,
-        KAccelerateSuccess         = 3,
-        KAccelerateLowEnergy       = 4,
-        KAccelerateFail            = 5,
-        KPreemptiveExpandSuccess   = 6,
+        KNormal = 0,
+        KExpand = 1,
+        KMerge = 2,
+        KAccelerateSuccess = 3,
+        KAccelerateLowEnergy = 4,
+        KAccelerateFail = 5,
+        KPreemptiveExpandSuccess = 6,
         KPreemptiveExpandLowEnergy = 7,
-        KPreemptiveExpandFail      = 8,
-        KRfc3389Cng                = 9,
-        KCodecInternalCng          = 10,
-        KCodecPlc                  = 11,
-        KDtmf                      = 12,
-        KError                     = 13,
-        KUndefined                 = 14,
+        KPreemptiveExpandFail = 8,
+        KRfc3389Cng = 9,
+        KCodecInternalCng = 10,
+        KCodecPlc = 11,
+        KDtmf = 12,
+        KError = 13,
+        KUndefined = 14,
     };
-
+    
     struct DecoderFormat {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk4cdcd3;
-        ::ll::UntypedStorage<4, 4>  mUnkdf1c40;
+        ::ll::UntypedStorage<4, 4> mUnk4cdcd3;
+        ::ll::UntypedStorage<4, 4> mUnkdf1c40;
         ::ll::UntypedStorage<8, 64> mUnk81b817;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         DecoderFormat& operator=(DecoderFormat const&);
         DecoderFormat(DecoderFormat const&);
         DecoderFormat();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -185,6 +187,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

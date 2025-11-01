@@ -9,7 +9,7 @@ struct REExecState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::REExecStateEnum          mUnk7b966c : 8;
+    ::REExecStateEnum mUnk7b966c : 8;
     ::ll::UntypedStorage<1, 1> mUnk52151a;
     ::ll::UntypedStorage<8, 8> mUnkb90657;
     ::ll::UntypedStorage<8, 8> mUnke4b628;
@@ -22,4 +22,5 @@ public:
     REExecState& operator=(REExecState const&);
     REExecState(REExecState const&);
     REExecState();
+
 };

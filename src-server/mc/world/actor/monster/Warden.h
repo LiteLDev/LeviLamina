@@ -18,7 +18,7 @@ class Warden : public ::Monster {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Tick>                           mTouchAngerCooldownExpiryTick;
+    ::ll::TypedStorage<8, 8, ::Tick> mTouchAngerCooldownExpiryTick;
     ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mSonicBoomCooldown;
     // NOLINTEND
 
@@ -53,7 +53,7 @@ public:
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
 
     // vIndex: 155
-    virtual bool doHurtTarget(::Actor*, ::SharedTypes::Legacy::ActorDamageCause const&) /*override*/;
+    virtual bool doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause) /*override*/;
 
     // vIndex: 8
     virtual ~Warden() /*override*/ = default;
@@ -79,6 +79,8 @@ public:
     MCAPI bool $checkSpawnObstruction() const;
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
+
+    MCAPI bool $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
     // NOLINTEND
 
 public:
@@ -86,4 +88,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

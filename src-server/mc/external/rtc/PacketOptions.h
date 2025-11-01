@@ -11,13 +11,13 @@ struct PacketOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke3b5b7;
-    ::ll::UntypedStorage<1, 1>  mUnk9a4de0;
-    ::ll::UntypedStorage<8, 8>  mUnkb11f57;
+    ::ll::UntypedStorage<4, 4> mUnke3b5b7;
+    ::ll::UntypedStorage<1, 1> mUnk9a4de0;
+    ::ll::UntypedStorage<8, 8> mUnkb11f57;
     ::ll::UntypedStorage<8, 48> mUnk16e8ef;
     ::ll::UntypedStorage<8, 40> mUnk7cf9c7;
-    ::ll::UntypedStorage<1, 1>  mUnkdf2e4f;
-    ::ll::UntypedStorage<1, 1>  mUnkbb1c2f;
+    ::ll::UntypedStorage<1, 1> mUnkdf2e4f;
+    ::ll::UntypedStorage<1, 1> mUnkbb1c2f;
     // NOLINTEND
 
 public:
@@ -51,6 +51,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

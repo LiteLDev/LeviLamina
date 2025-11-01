@@ -6,8 +6,8 @@ namespace cg {
 
 enum class ColorSpace : uchar {
     Unknown = 0,
-    SRGB    = 1,
-    Linear  = 2,
+    SRGB = 1,
+    Linear = 2,
 };
 
 }

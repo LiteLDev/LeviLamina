@@ -7,6 +7,7 @@
 
 namespace PlayerReportingSignal {
 
-class ResetAll : public ::Bedrock::Signal<::PlayerReportingSignal::ResetAll, void> {};
+class ResetAll : public ::Bedrock::Signal<::PlayerReportingSignal::ResetAll, void> {
+};
 
-} // namespace PlayerReportingSignal
+}

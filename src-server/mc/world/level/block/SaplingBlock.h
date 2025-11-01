@@ -33,19 +33,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 74
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
-        /*override*/;
+    // vIndex: 73
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const /*override*/;
 
-    // vIndex: 76
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    // vIndex: 75
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
@@ -55,35 +52,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SaplingBlock(
-        ::std::string const&           nameId,
-        int                            id,
-        ::std::optional<::std::string> singleSaplingTree,
-        ::std::optional<::std::string> singleSaplingTreeWithBeehive,
-        ::std::optional<::std::string> quadrupleSaplingTree
-    );
+    MCAPI SaplingBlock(::std::string const& nameId, int id, ::std::optional<::std::string> singleSaplingTree, ::std::optional<::std::string> singleSaplingTreeWithBeehive, ::std::optional<::std::string> quadrupleSaplingTree);
 
     MCAPI bool _age(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI ::std::optional<::BlockPos>
-    _getQuadrupleSaplingOffset(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCAPI ::std::optional<::BlockPos> _getQuadrupleSaplingOffset(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI bool _placeFeature(
-        ::BlockSource&              region,
-        ::BlockPos const&           pos,
-        ::std::optional<::BlockPos> quadrupleSaplingOffset,
-        ::std::string const&        featureName,
-        ::Random&                   random
-    ) const;
+    MCAPI bool _placeFeature(::BlockSource& region, ::BlockPos const& pos, ::std::optional<::BlockPos> quadrupleSaplingOffset, ::std::string const& featureName, ::Random& random) const;
 
     MCAPI bool _placeTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void _setBlockNoUpdate(
-        ::BlockSource&              region,
-        ::BlockPos const&           pos,
-        ::std::optional<::BlockPos> quadrupleSaplingOffset,
-        ::Block const&              block
-    ) const;
+    MCAPI void _setBlockNoUpdate(::BlockSource& region, ::BlockPos const& pos, ::std::optional<::BlockPos> quadrupleSaplingOffset, ::Block const& block) const;
 
     MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
@@ -91,13 +70,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&           nameId,
-        int                            id,
-        ::std::optional<::std::string> singleSaplingTree,
-        ::std::optional<::std::string> singleSaplingTreeWithBeehive,
-        ::std::optional<::std::string> quadrupleSaplingTree
-    );
+    MCAPI void* $ctor(::std::string const& nameId, int id, ::std::optional<::std::string> singleSaplingTree, ::std::optional<::std::string> singleSaplingTreeWithBeehive, ::std::optional<::std::string> quadrupleSaplingTree);
     // NOLINTEND
 
 public:
@@ -105,8 +78,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fertilizerType) const;
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
@@ -118,4 +90,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

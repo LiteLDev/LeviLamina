@@ -3,6 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class JSExportTypeEnum : int {
-    Local    = 0,
+    Local = 0,
     Indirect = 1,
 };

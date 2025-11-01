@@ -4,6 +4,7 @@
 
 namespace MSGraph::Models {
 
-struct GraphError {};
+struct GraphError {
+};
 
-} // namespace MSGraph::Models
+}

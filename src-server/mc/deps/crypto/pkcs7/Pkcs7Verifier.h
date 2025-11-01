@@ -35,6 +35,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Crypto::Pkcs7
+}

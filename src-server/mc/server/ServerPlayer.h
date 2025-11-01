@@ -56,6 +56,7 @@ struct PlayerAuthenticationInfo;
 struct PlayerMovementSettings;
 struct SyncedClientOptionsComponent;
 struct VariantParameterList;
+namespace Bedrock::DDUI { class DataStoreSyncServer; }
 namespace ClientBlobCache::Server { class ActiveTransfersManager; }
 namespace Editor { class IEditorManager; }
 namespace Editor { class IEditorPlayer; }
@@ -68,53 +69,55 @@ public:
     // clang-format off
     struct NearbyActor;
     // clang-format on
-
+    
     // ServerPlayer inner types define
     using OnPlayerLoadedCallback = ::std::function<void(::ServerPlayer&)>;
-
+    
     struct NearbyActor {
     public:
         // NearbyActor inner types define
         enum class State : int {
-            Unknown  = 0,
-            New      = 1,
-            Exist    = 2,
+            Unknown = 0,
+            New = 1,
+            Exist = 2,
             DidExist = 3,
         };
-
+        
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>                               isAutonomous;
+        ::ll::TypedStorage<1, 1, bool> isAutonomous;
         ::ll::TypedStorage<4, 4, ::ServerPlayer::NearbyActor::State> state;
-        ::ll::TypedStorage<8, 8, ::Actor*>                           tempActor;
+        ::ll::TypedStorage<8, 8, ::Actor*> tempActor;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::PlatformType>                          mPlatformType;
-    ::ll::TypedStorage<8, 8, ::ServerNetworkSystem&>                  mNetwork;
+    ::ll::TypedStorage<4, 4, ::PlatformType> mPlatformType;
+    ::ll::TypedStorage<8, 8, ::ServerNetworkSystem&> mNetwork;
     ::ll::TypedStorage<8, 64, ::std::function<void(::ServerPlayer&)>> mOnPlayerLoadedCallback;
-    ::ll::TypedStorage<8, 112, ::InventoryMenu>                       mInventoryMenu;
-    ::ll::TypedStorage<1, 1, ::ContainerID>                           mContainerCounter;
-    ::ll::TypedStorage<4, 4, uint>                                    mMaxChunkRadius;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsInitialPlayerLoadHappening;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsTeacher;
-    ::ll::TypedStorage<1, 1, bool>                                    mLocalPlayerInitialized;
-    ::ll::TypedStorage<1, 1, bool>                                    mWaitingForTickingAreasPreload;
-    ::ll::TypedStorage<8, 8, ::Tick>                                  mPrevShieldBlockingTick;
-    ::ll::TypedStorage<4, 4, uint>                                    mClientViewRadius;
-    ::ll::TypedStorage<4, 4, uint>                                    mClientRequestedRadius;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsCompatibleWithClientSideChunkGen;
-    ::ll::TypedStorage<4, 4, int>                                     mRemainingStructureRefreshTicks;
-    ::ll::TypedStorage<8, 48, ::HashedString>                         mCurrentStructureFeature;
+    ::ll::TypedStorage<8, 112, ::InventoryMenu> mInventoryMenu;
+    ::ll::TypedStorage<1, 1, ::ContainerID> mContainerCounter;
+    ::ll::TypedStorage<4, 4, uint> mMaxChunkRadius;
+    ::ll::TypedStorage<1, 1, bool> mIsInitialPlayerLoadHappening;
+    ::ll::TypedStorage<1, 1, bool> mIsTeacher;
+    ::ll::TypedStorage<1, 1, bool> mLocalPlayerInitialized;
+    ::ll::TypedStorage<1, 1, bool> mWaitingForTickingAreasPreload;
+    ::ll::TypedStorage<8, 8, ::Tick> mPrevShieldBlockingTick;
+    ::ll::TypedStorage<4, 4, uint> mClientViewRadius;
+    ::ll::TypedStorage<4, 4, uint> mClientRequestedRadius;
+    ::ll::TypedStorage<1, 1, bool> mIsCompatibleWithClientSideChunkGen;
+    ::ll::TypedStorage<4, 4, int> mRemainingStructureRefreshTicks;
+    ::ll::TypedStorage<8, 48, ::HashedString> mCurrentStructureFeature;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::ServerPlayer::NearbyActor>> mNearbyActors;
-    ::ll::TypedStorage<8, 16, ::CallbackToken>                                                    mCloseContainerToken;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Editor::IEditorPlayer>>                          mEditorServerPlayer;
-    ::ll::TypedStorage<1, 1, bool>                                                                mHasQueuedViewMove;
-    ::ll::TypedStorage<1, 1, bool>                                                                mIsPendingDisconnect;
+    ::ll::TypedStorage<8, 16, ::CallbackToken> mCloseContainerToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Editor::IEditorPlayer>> mEditorServerPlayer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::DDUI::DataStoreSyncServer>> mDataStoreSync;
+    ::ll::TypedStorage<1, 1, bool> mHasQueuedViewMove;
+    ::ll::TypedStorage<1, 1, bool> mIsPendingDisconnect;
     ::ll::TypedStorage<4, 52, ::std::array<::HudVisibility, 13>> mHudElementsVisibilityState;
     // NOLINTEND
 
@@ -131,8 +134,7 @@ public:
     virtual ~ServerPlayer() /*override*/;
 
     // vIndex: 4
-    virtual void
-    initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 146
     virtual void aiStep() /*override*/;
@@ -141,15 +143,7 @@ public:
     virtual void normalTick() /*override*/;
 
     // vIndex: 138
-    virtual void knockback(
-        ::Actor* source,
-        int      dmg,
-        float    xd,
-        float    zd,
-        float    horizontalPower,
-        float    verticalPower,
-        float    heightCap
-    ) /*override*/;
+    virtual void knockback(::Actor* source, int dmg, float xd, float zd, float horizontalPower, float verticalPower, float heightCap) /*override*/;
 
     // vIndex: 123
     virtual void die(::ActorDamageSource const& source) /*override*/;
@@ -158,7 +152,7 @@ public:
     virtual void moveView() /*override*/;
 
     // vIndex: 187
-    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType) /*override*/;
+    virtual void moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension) /*override*/;
 
     // vIndex: 184
     virtual void frameUpdate(::FrameUpdateContextBase&) /*override*/;
@@ -170,8 +164,7 @@ public:
     virtual bool swing() /*override*/;
 
     // vIndex: 157
-    virtual void
-    hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots) /*override*/;
+    virtual void hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots) /*override*/;
 
     // vIndex: 159
     virtual void sendArmorDamage(::std::bitset<5> const damagedSlots) /*override*/;
@@ -180,7 +173,7 @@ public:
     virtual void sendArmor(::std::bitset<5> const armorSlots) /*override*/;
 
     // vIndex: 158
-    virtual void setDamagedArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) /*override*/;
+    virtual void setDamagedArmor(::SharedTypes::Legacy::ArmorSlot, ::ItemStack const&) /*override*/;
 
     // vIndex: 166
     virtual void sendInventory(bool shouldSelectSlot) /*override*/;
@@ -189,41 +182,22 @@ public:
     virtual void sendInventoryTransaction(::InventoryTransaction const& transaction) const /*override*/;
 
     // vIndex: 230
-    virtual void sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction> transaction) const
-        /*override*/;
+    virtual void sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction> transaction) const /*override*/;
 
     // vIndex: 231
     virtual void sendNetworkPacket(::Packet& packet) const /*override*/;
 
     // vIndex: 202
-    virtual void displayTextObjectMessage(
-        ::TextObjectRoot const& textObject,
-        ::std::string const&    fromXuid,
-        ::std::string const&    fromPlatformId
-    ) /*override*/;
+    virtual void displayTextObjectMessage(::TextObjectRoot const& textObject, ::std::string const& fromXuid, ::std::string const& fromPlatformId) /*override*/;
 
     // vIndex: 204
-    virtual void displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
-        ::std::string const&        xuid,
-        ::std::string const&        platformId
-    ) /*override*/;
+    virtual void displayTextObjectWhisperMessage(::ResolvedTextObject const& textObject, ::std::string const& xuid, ::std::string const& platformId) /*override*/;
 
     // vIndex: 203
-    virtual void displayTextObjectWhisperMessage(
-        ::std::string const& message,
-        ::std::string const& xuid,
-        ::std::string const& platformId
-    ) /*override*/;
+    virtual void displayTextObjectWhisperMessage(::std::string const& message, ::std::string const& xuid, ::std::string const& platformId) /*override*/;
 
     // vIndex: 205
-    virtual void displayWhisperMessage(
-        ::std::string const&                 author,
-        ::std::string const&                 message,
-        ::std::optional<::std::string> const filteredMessage,
-        ::std::string const&                 xuid,
-        ::std::string const&                 platformId
-    ) /*override*/;
+    virtual void displayWhisperMessage(::std::string const& author, ::std::string const& message, ::std::optional<::std::string> const filteredMessage, ::std::string const& xuid, ::std::string const& platformId) /*override*/;
 
     // vIndex: 196
     virtual void openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen) /*override*/;
@@ -256,14 +230,7 @@ public:
     virtual void setContainerData(::IContainerManager& menu, int id, int value) /*override*/;
 
     // vIndex: 222
-    virtual void slotChanged(
-        ::IContainerManager& menu,
-        ::Container&         container,
-        int                  slot,
-        ::ItemStack const&   oldItem,
-        ::ItemStack const&   newItem,
-        bool                 isResultSlot
-    ) /*override*/;
+    virtual void slotChanged(::IContainerManager& menu, ::Container& container, int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem, bool isResultSlot) /*override*/;
 
     // vIndex: 223
     virtual void refreshContainer(::IContainerManager& menu) /*override*/;
@@ -350,36 +317,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerPlayer(
-        ::Level&                                           level,
-        ::PacketSender&                                    packetSender,
-        ::ServerNetworkSystem&                             network,
-        ::ClientBlobCache::Server::ActiveTransfersManager& clientCacheMirror,
-        ::GameType                                         playerGameType,
-        bool                                               isHostingPlayer,
-        ::NetworkIdentifier const&                         owner,
-        ::SubClientId                                      subid,
-        ::std::function<void(::ServerPlayer&)>             onPlayerLoadedCallback,
-        ::mce::UUID                                        uuid,
-        ::std::string const&                               deviceId,
-        ::PlayerAuthenticationType                         authType,
-        ::PlayerAuthenticationInfo const&                  authInfo,
-        int                                                maxChunkRadius,
-        bool                                               enableItemStackNetManager,
-        ::EntityContext&                                   entityContext,
-        ::PlatformType                                     platformType,
-        ::InputMode                                        inputMode,
-        ::SyncedClientOptionsComponent                     clientOptions
-    );
+    MCAPI ServerPlayer(::Level& level, ::PacketSender& packetSender, ::ServerNetworkSystem& network, ::ClientBlobCache::Server::ActiveTransfersManager& clientCacheMirror, ::GameType playerGameType, bool isHostingPlayer, ::NetworkIdentifier const& owner, ::SubClientId subid, ::std::function<void(::ServerPlayer&)> onPlayerLoadedCallback, ::mce::UUID uuid, ::std::string const& deviceId, ::PlayerAuthenticationType authType, ::PlayerAuthenticationInfo const& authInfo, int maxChunkRadius, bool enableItemStackNetManager, ::EntityContext& entityContext, ::PlatformType platformType, ::InputMode inputMode, ::SyncedClientOptionsComponent clientOptions);
 
     MCAPI bool _checkForLoadedTickingAreas() const;
 
-    MCAPI void _logCDEvent(
-        ::CrashDumpLogStringID option1,
-        ::CrashDumpLogStringID option2,
-        ::CrashDumpLogStringID option3,
-        ::CrashDumpLogStringID option4
-    );
+    MCAPI void _logCDEvent(::CrashDumpLogStringID option1, ::CrashDumpLogStringID option2, ::CrashDumpLogStringID option3, ::CrashDumpLogStringID option4);
 
     MCAPI void _removeNearbyEntities();
 
@@ -415,10 +357,7 @@ public:
 
     MCAPI void setClientChunkRadius(uint requestedRadius, uchar clientMaxChunkRadius);
 
-    MCAPI void setHudVisibilityState(
-        ::HudVisibility                                     hudVisibility,
-        ::std::optional<::std::vector<::HudElement>> const& hudElements
-    );
+    MCAPI void setHudVisibilityState(::HudVisibility hudVisibility, ::std::optional<::std::vector<::HudElement>> const& hudElements);
     // NOLINTEND
 
 public:
@@ -432,27 +371,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Level&                                           level,
-        ::PacketSender&                                    packetSender,
-        ::ServerNetworkSystem&                             network,
-        ::ClientBlobCache::Server::ActiveTransfersManager& clientCacheMirror,
-        ::GameType                                         playerGameType,
-        bool                                               isHostingPlayer,
-        ::NetworkIdentifier const&                         owner,
-        ::SubClientId                                      subid,
-        ::std::function<void(::ServerPlayer&)>             onPlayerLoadedCallback,
-        ::mce::UUID                                        uuid,
-        ::std::string const&                               deviceId,
-        ::PlayerAuthenticationType                         authType,
-        ::PlayerAuthenticationInfo const&                  authInfo,
-        int                                                maxChunkRadius,
-        bool                                               enableItemStackNetManager,
-        ::EntityContext&                                   entityContext,
-        ::PlatformType                                     platformType,
-        ::InputMode                                        inputMode,
-        ::SyncedClientOptionsComponent                     clientOptions
-    );
+    MCAPI void* $ctor(::Level& level, ::PacketSender& packetSender, ::ServerNetworkSystem& network, ::ClientBlobCache::Server::ActiveTransfersManager& clientCacheMirror, ::GameType playerGameType, bool isHostingPlayer, ::NetworkIdentifier const& owner, ::SubClientId subid, ::std::function<void(::ServerPlayer&)> onPlayerLoadedCallback, ::mce::UUID uuid, ::std::string const& deviceId, ::PlayerAuthenticationType authType, ::PlayerAuthenticationInfo const& authInfo, int maxChunkRadius, bool enableItemStackNetManager, ::EntityContext& entityContext, ::PlatformType platformType, ::InputMode inputMode, ::SyncedClientOptionsComponent clientOptions);
     // NOLINTEND
 
 public:
@@ -470,21 +389,13 @@ public:
 
     MCAPI void $normalTick();
 
-    MCAPI void $knockback(
-        ::Actor* source,
-        int      dmg,
-        float    xd,
-        float    zd,
-        float    horizontalPower,
-        float    verticalPower,
-        float    heightCap
-    );
+    MCAPI void $knockback(::Actor* source, int dmg, float xd, float zd, float horizontalPower, float verticalPower, float heightCap);
 
     MCAPI void $die(::ActorDamageSource const& source);
 
     MCAPI void $moveView();
 
-    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimensionType);
+    MCAPI void $moveSpawnView(::Vec3 const& spawnPosition, ::DimensionType dimension);
 
     MCFOLD void $frameUpdate(::FrameUpdateContextBase&);
 
@@ -492,7 +403,7 @@ public:
 
     MCAPI bool $swing();
 
-    MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots);
+    MCAPI void $hurtArmorSlots(::ActorDamageSource const& source, int damage, ::std::bitset<5> const hurtSlots);
 
     MCAPI void $sendArmorDamage(::std::bitset<5> const damagedSlots);
 
@@ -506,31 +417,13 @@ public:
 
     MCAPI void $sendNetworkPacket(::Packet& packet) const;
 
-    MCAPI void $displayTextObjectMessage(
-        ::TextObjectRoot const& textObject,
-        ::std::string const&    fromXuid,
-        ::std::string const&    fromPlatformId
-    );
+    MCAPI void $displayTextObjectMessage(::TextObjectRoot const& textObject, ::std::string const& fromXuid, ::std::string const& fromPlatformId);
 
-    MCAPI void $displayTextObjectWhisperMessage(
-        ::ResolvedTextObject const& resolvedTextObject,
-        ::std::string const&        xuid,
-        ::std::string const&        platformId
-    );
+    MCAPI void $displayTextObjectWhisperMessage(::ResolvedTextObject const& textObject, ::std::string const& xuid, ::std::string const& platformId);
 
-    MCAPI void $displayTextObjectWhisperMessage(
-        ::std::string const& message,
-        ::std::string const& xuid,
-        ::std::string const& platformId
-    );
+    MCAPI void $displayTextObjectWhisperMessage(::std::string const& message, ::std::string const& xuid, ::std::string const& platformId);
 
-    MCAPI void $displayWhisperMessage(
-        ::std::string const&                 author,
-        ::std::string const&                 message,
-        ::std::optional<::std::string> const filteredMessage,
-        ::std::string const&                 xuid,
-        ::std::string const&                 platformId
-    );
+    MCAPI void $displayWhisperMessage(::std::string const& author, ::std::string const& message, ::std::optional<::std::string> const filteredMessage, ::std::string const& xuid, ::std::string const& platformId);
 
     MCAPI void $openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen);
 
@@ -552,14 +445,7 @@ public:
 
     MCAPI void $setContainerData(::IContainerManager& menu, int id, int value);
 
-    MCAPI void $slotChanged(
-        ::IContainerManager& menu,
-        ::Container&         container,
-        int                  slot,
-        ::ItemStack const&   oldItem,
-        ::ItemStack const&   newItem,
-        bool                 isResultSlot
-    );
+    MCAPI void $slotChanged(::IContainerManager& menu, ::Container& container, int slot, ::ItemStack const& oldItem, ::ItemStack const& newItem, bool isResultSlot);
 
     MCAPI void $refreshContainer(::IContainerManager& menu);
 
@@ -619,4 +505,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

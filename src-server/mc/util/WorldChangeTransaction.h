@@ -15,7 +15,7 @@ public:
     // clang-format off
     struct Data;
     // clang-format on
-
+    
     // WorldChangeTransaction inner types define
     struct Data {
     public:
@@ -23,18 +23,19 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 64> mUnkb19e91;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Data& operator=(Data const&);
         Data(Data const&);
         Data();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::IBlockWorldGenAPI&>                              mTarget;
+    ::ll::TypedStorage<8, 8, ::IBlockWorldGenAPI&> mTarget;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WorldChangeTransaction::Data>> mData;
     // NOLINTEND
 
@@ -65,4 +66,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

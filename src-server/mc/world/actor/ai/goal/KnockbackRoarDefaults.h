@@ -20,4 +20,4 @@ MCAPI float const& MAX_ROAR_DURATION_SECONDS();
 MCAPI float const& MAX_SECONDS_UNTIL_ATTACK();
 // NOLINTEND
 
-} // namespace KnockbackRoarDefaults
+}

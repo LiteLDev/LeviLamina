@@ -11,9 +11,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::CommandOriginType> mType;
-    ::ll::TypedStorage<8, 16, ::mce::UUID>        mUUID;
-    ::ll::TypedStorage<8, 32, ::std::string>      mRequestId;
-    ::ll::TypedStorage<8, 8, int64>               mPlayerId;
+    ::ll::TypedStorage<8, 16, ::mce::UUID> mUUID;
+    ::ll::TypedStorage<8, 32, ::std::string> mRequestId;
+    ::ll::TypedStorage<8, 8, int64> mPlayerId;
     // NOLINTEND
 
 public:
@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

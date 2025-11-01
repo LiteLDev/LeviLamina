@@ -5,9 +5,9 @@
 namespace NetherNet::RunLoop {
 
 enum class ThreadState : int {
-    Running   = 0,
+    Running = 0,
     Suspended = 1,
-    Stopped   = 2,
+    Stopped = 2,
 };
 
 }

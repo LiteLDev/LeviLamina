@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/application/app_extensions/AppExtensionsNonOwner.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,22 +35,10 @@ public:
     virtual void init(::ServerInstance&, ::Bedrock::NotNullNonOwnerPtr<::Level> const&) = 0;
 
     // vIndex: 3
-    virtual void initializeBehaviorStack(
-        ::Experiments const&,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&,
-        ::ResourcePackStack&,
-        ::BaseGameVersion const&,
-        bool
-    ) = 0;
+    virtual void initializeBehaviorStack(::Experiments const&, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const&, ::ResourcePackStack&, ::BaseGameVersion const&, bool) = 0;
 
     // vIndex: 4
-    virtual void configureLevel(
-        ::Bedrock::NotNullNonOwnerPtr<::Level>&,
-        ::Experiments const&,
-        ::ResourcePackManager&,
-        ::BaseGameVersion const&,
-        ::ServerScriptManager const*
-    ) = 0;
+    virtual void configureLevel(::Bedrock::NotNullNonOwnerPtr<::Level>&, ::Experiments const&, ::ResourcePackManager&, ::BaseGameVersion const&, ::ServerScriptManager const*, ::std::optional<::std::reference_wrapper<::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>>) = 0;
 
     // vIndex: 5
     virtual void configureNewPlayer(::Player&) = 0;
@@ -64,8 +53,7 @@ public:
     virtual void setupCommands(::CommandRegistry&) = 0;
 
     // vIndex: 9
-    virtual void
-    configureServerNetworkHandler(::ServerInstance&, ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler>) = 0;
+    virtual void configureServerNetworkHandler(::ServerInstance&, ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler>) = 0;
     // NOLINTEND
 
 public:
@@ -85,4 +73,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -38,7 +38,7 @@ public:
     // clang-format off
     struct Stats;
     // clang-format on
-
+    
     // Call inner types define
     struct Stats {
     public:
@@ -50,14 +50,15 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk70bc50;
         ::ll::UntypedStorage<8, 8> mUnk8d7733;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Stats& operator=(Stats const&);
         Stats(Stats const&);
         Stats();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -68,36 +69,28 @@ public:
     virtual void DestroyAudioSendStream(::webrtc::AudioSendStream*) = 0;
 
     // vIndex: 2
-    virtual ::webrtc::AudioReceiveStreamInterface*
-    CreateAudioReceiveStream(::webrtc::AudioReceiveStreamInterface::Config const&) = 0;
+    virtual ::webrtc::AudioReceiveStreamInterface* CreateAudioReceiveStream(::webrtc::AudioReceiveStreamInterface::Config const&) = 0;
 
     // vIndex: 3
     virtual void DestroyAudioReceiveStream(::webrtc::AudioReceiveStreamInterface*) = 0;
 
     // vIndex: 5
-    virtual ::webrtc::VideoSendStream*
-        CreateVideoSendStream(::webrtc::VideoSendStream::Config, ::webrtc::VideoEncoderConfig) = 0;
+    virtual ::webrtc::VideoSendStream* CreateVideoSendStream(::webrtc::VideoSendStream::Config, ::webrtc::VideoEncoderConfig) = 0;
 
     // vIndex: 4
-    virtual ::webrtc::VideoSendStream* CreateVideoSendStream(
-        ::webrtc::VideoSendStream::Config,
-        ::webrtc::VideoEncoderConfig,
-        ::std::unique_ptr<::webrtc::FecController>
-    );
+    virtual ::webrtc::VideoSendStream* CreateVideoSendStream(::webrtc::VideoSendStream::Config, ::webrtc::VideoEncoderConfig, ::std::unique_ptr<::webrtc::FecController>);
 
     // vIndex: 6
     virtual void DestroyVideoSendStream(::webrtc::VideoSendStream*) = 0;
 
     // vIndex: 7
-    virtual ::webrtc::VideoReceiveStreamInterface*
-        CreateVideoReceiveStream(::webrtc::VideoReceiveStreamInterface::Config) = 0;
+    virtual ::webrtc::VideoReceiveStreamInterface* CreateVideoReceiveStream(::webrtc::VideoReceiveStreamInterface::Config) = 0;
 
     // vIndex: 8
     virtual void DestroyVideoReceiveStream(::webrtc::VideoReceiveStreamInterface*) = 0;
 
     // vIndex: 9
-    virtual ::webrtc::FlexfecReceiveStream*
-    CreateFlexfecReceiveStream(::webrtc::FlexfecReceiveStream::Config const) = 0;
+    virtual ::webrtc::FlexfecReceiveStream* CreateFlexfecReceiveStream(::webrtc::FlexfecReceiveStream::Config const) = 0;
 
     // vIndex: 10
     virtual void DestroyFlexfecReceiveStream(::webrtc::FlexfecReceiveStream*) = 0;
@@ -156,6 +149,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

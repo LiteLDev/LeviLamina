@@ -46,11 +46,9 @@ public:
 
     MCNAPI ParticleCurveSimpleBase(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ParticleCurveSimpleBase&
-    operator=(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
+    MCNAPI ::SharedTypes::v1_20_80::ParticleCurveSimpleBase& operator=(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ParticleCurveSimpleBase&
-    operator=(::SharedTypes::v1_20_80::ParticleCurveSimpleBase&&);
+    MCNAPI ::SharedTypes::v1_20_80::ParticleCurveSimpleBase& operator=(::SharedTypes::v1_20_80::ParticleCurveSimpleBase&&);
 
     MCNAPI void validateNodeListSize();
     // NOLINTEND
@@ -88,6 +86,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_80
+}

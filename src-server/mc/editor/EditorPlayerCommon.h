@@ -27,21 +27,18 @@ namespace Editor { class ServiceProviderCollection; }
 
 namespace Editor {
 
-class EditorPlayerCommon : public ::Editor::IEditorPlayer,
-                           public ::Editor::EditorPlayerServiceProvider,
-                           public ::Editor::Services::EditorServiceList,
-                           public ::EventListenerDispatcher<::PlayerEventListener> {
+class EditorPlayerCommon : public ::Editor::IEditorPlayer, public ::Editor::EditorPlayerServiceProvider, public ::Editor::Services::EditorServiceList, public ::EventListenerDispatcher<::PlayerEventListener> {
 public:
     // EditorPlayerCommon inner types define
     enum class InitializationState : int {
-        Uninitialized  = 0,
-        Initializing   = 1,
-        Initialized    = 2,
-        Readying       = 3,
-        Ready          = 4,
+        Uninitialized = 0,
+        Initializing = 1,
+        Initialized = 2,
+        Readying = 3,
+        Ready = 4,
         Deinitializing = 5,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -49,7 +46,7 @@ public:
     ::ll::UntypedStorage<8, 48> mUnk6374b5;
     ::ll::UntypedStorage<8, 48> mUnkc284f0;
     ::ll::UntypedStorage<8, 24> mUnk6b14f6;
-    ::ll::UntypedStorage<4, 4>  mUnk2b7012;
+    ::ll::UntypedStorage<4, 4> mUnk2b7012;
     // NOLINTEND
 
 public:
@@ -61,7 +58,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 52
+    // vIndex: 54
     virtual ::EventResult onEvent(::PlayerDimensionChangeAfterEvent const& evt) /*override*/;
 
     // vIndex: 0
@@ -80,12 +77,10 @@ public:
     virtual ::Editor::ServiceProviderCollection& getServiceProviders() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-    registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)> fnTick) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)> fnTick) /*override*/;
 
     // vIndex: 3
-    virtual ::Bedrock::PubSub::Subscription
-    registerDimensionChange(::std::function<void(::DimensionType, ::DimensionType)> fn) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription registerDimensionChange(::std::function<void(::DimensionType, ::DimensionType)> fn) /*override*/;
 
     // vIndex: 1
     virtual ::Player* getPlayer() const /*override*/;
@@ -93,7 +88,7 @@ public:
     // vIndex: 6
     virtual ::optional_ref<::PlayerEventCoordinator> getPlayerEventCoordinator() = 0;
 
-    // vIndex: 19
+    // vIndex: 21
     virtual ::EventResult onPlayerTick(::Player& player) /*override*/;
 
     // vIndex: 5
@@ -131,11 +126,9 @@ public:
 
     MCNAPI ::Editor::ServiceProviderCollection& $getServiceProviders();
 
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-    $registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)> fnTick);
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)> fnTick);
 
-    MCNAPI ::Bedrock::PubSub::Subscription
-    $registerDimensionChange(::std::function<void(::DimensionType, ::DimensionType)> fn);
+    MCNAPI ::Bedrock::PubSub::Subscription $registerDimensionChange(::std::function<void(::DimensionType, ::DimensionType)> fn);
 
     MCNAPI ::Player* $getPlayer() const;
 
@@ -155,6 +148,7 @@ public:
 
     MCNAPI static void** $vftableForIEditorPlayer();
     // NOLINTEND
+
 };
 
-} // namespace Editor
+}

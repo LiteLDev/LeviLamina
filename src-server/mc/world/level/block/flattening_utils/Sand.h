@@ -13,4 +13,4 @@ namespace FlatteningUtils::Sand {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-} // namespace FlatteningUtils::Sand
+}

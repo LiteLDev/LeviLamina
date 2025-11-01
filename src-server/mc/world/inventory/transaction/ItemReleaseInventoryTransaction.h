@@ -23,16 +23,16 @@ public:
     // ItemReleaseInventoryTransaction inner types define
     enum class ActionType : int {
         Release = 0,
-        Use     = 1,
+        Use = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::ItemReleaseInventoryTransaction::ActionType> mActionType;
-    ::ll::TypedStorage<4, 4, int>                                           mSlot;
-    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                 mItem;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                       mFromPos;
+    ::ll::TypedStorage<4, 4, int> mSlot;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mItem;
+    ::ll::TypedStorage<4, 12, ::Vec3> mFromPos;
     // NOLINTEND
 
 public:
@@ -82,4 +82,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

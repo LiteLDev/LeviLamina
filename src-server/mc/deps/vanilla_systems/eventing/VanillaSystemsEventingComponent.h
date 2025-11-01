@@ -16,6 +16,7 @@ public:
     VanillaSystemsEventingComponent& operator=(VanillaSystemsEventingComponent const&);
     VanillaSystemsEventingComponent(VanillaSystemsEventingComponent const&);
     VanillaSystemsEventingComponent();
+
 };
 
-} // namespace VanillaSystems
+}

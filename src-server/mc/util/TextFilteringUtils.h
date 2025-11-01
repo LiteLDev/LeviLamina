@@ -16,11 +16,7 @@ class TextFilteringUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool checkIfTextProcessorIsUnhealthyAndSendChat(
-        ::std::vector<::Safety::TextFilteringEvent> const& events,
-        ::gsl::not_null<::PacketSender*>                   packetSender,
-        ::NetworkIdentifier const&                         source,
-        ::SubClientId const&                               subClientId
-    );
+    MCNAPI static bool checkIfTextProcessorIsUnhealthyAndSendChat(::std::vector<::Safety::TextFilteringEvent> const& events, ::gsl::not_null<::PacketSender*> packetSender, ::NetworkIdentifier const& source, ::SubClientId const& subClientId);
     // NOLINTEND
+
 };

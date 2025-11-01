@@ -4,7 +4,8 @@
 
 namespace DataStructures {
 
-template <typename T0>
-class Queue {};
+template<typename T0>
+class Queue {
+};
 
-} // namespace DataStructures
+}

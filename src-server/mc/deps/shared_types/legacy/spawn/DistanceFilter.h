@@ -17,6 +17,7 @@ public:
     DistanceFilter& operator=(DistanceFilter const&);
     DistanceFilter(DistanceFilter const&);
     DistanceFilter();
+
 };
 
-} // namespace SharedTypes::Legacy::Spawn
+}

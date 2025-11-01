@@ -15,8 +15,8 @@ class ChargeHeldItemGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                           mMob;
-    ::ll::TypedStorage<4, 4, int>                              mUsingTime;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, int> mUsingTime;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mChargeItemList;
     // NOLINTEND
 
@@ -72,4 +72,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -19,7 +19,7 @@ public:
     // clang-format off
     struct PayloadSizeLimits;
     // clang-format on
-
+    
     // RtpPacketizer inner types define
     struct PayloadSizeLimits {
     public:
@@ -30,14 +30,15 @@ public:
         ::ll::UntypedStorage<4, 4> mUnk632476;
         ::ll::UntypedStorage<4, 4> mUnk97dacf;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         PayloadSizeLimits& operator=(PayloadSizeLimits const&);
         PayloadSizeLimits(PayloadSizeLimits const&);
         PayloadSizeLimits();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -54,15 +55,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::webrtc::RtpPacketizer> Create(
-        ::std::optional<::webrtc::VideoCodecType>  type,
-        ::rtc::ArrayView<uchar const>              payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
-        ::webrtc::RTPVideoHeader const&            rtp_video_header
-    );
+    MCNAPI static ::std::unique_ptr<::webrtc::RtpPacketizer> Create(::std::optional<::webrtc::VideoCodecType> type, ::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits, ::webrtc::RTPVideoHeader const& rtp_video_header);
 
-    MCNAPI static ::std::vector<int>
-    SplitAboutEqually(int payload_len, ::webrtc::RtpPacketizer::PayloadSizeLimits const& limits);
+    MCNAPI static ::std::vector<int> SplitAboutEqually(int payload_len, ::webrtc::RtpPacketizer::PayloadSizeLimits const& limits);
     // NOLINTEND
 
 public:
@@ -70,6 +65,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

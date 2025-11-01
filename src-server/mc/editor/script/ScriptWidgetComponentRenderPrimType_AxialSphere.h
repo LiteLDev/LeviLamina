@@ -12,14 +12,13 @@ namespace Scripting { struct ClassBinding; }
 
 namespace Editor::ScriptModule {
 
-class ScriptWidgetComponentRenderPrimType_AxialSphere
-: public ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimTypeBase {
+class ScriptWidgetComponentRenderPrimType_AxialSphere : public ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimTypeBase {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 32> mUnk46ccae;
     ::ll::UntypedStorage<4, 12> mUnk799ee6;
-    ::ll::UntypedStorage<4, 4>  mUnk1d30da;
+    ::ll::UntypedStorage<4, 4> mUnk1d30da;
     // NOLINTEND
 
 public:
@@ -37,11 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere const&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere& operator=(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere const&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere& operator=(::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere&&);
     // NOLINTEND
 
 public:
@@ -61,6 +58,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

@@ -19,20 +19,20 @@ class FollowOwnerGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>             mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>> mOwner;
-    ::ll::TypedStorage<4, 4, int>                mTimeToRecalculatePath;
-    ::ll::TypedStorage<4, 4, float>              mSpeed;
-    ::ll::TypedStorage<4, 4, float>              mStartDistance;
-    ::ll::TypedStorage<4, 4, float>              mStopDistance;
-    ::ll::TypedStorage<4, 4, float>              mMaxDistance;
-    ::ll::TypedStorage<1, 1, bool>               mOldAvoidWater;
-    ::ll::TypedStorage<1, 1, bool>               mOldAvoidPortals;
-    ::ll::TypedStorage<1, 1, bool>               mCanTeleport;
-    ::ll::TypedStorage<1, 1, bool>               mIgnoreVibrations;
-    ::ll::TypedStorage<4, 4, int>                mPostTeleportDistance;
-    ::ll::TypedStorage<1, 1, bool>               mRandomizeAndCheckForClearanceWhenTeleporting;
-    ::ll::TypedStorage<1, 1, bool>               mKeepFollowingAfterTeleporting;
+    ::ll::TypedStorage<4, 4, int> mTimeToRecalculatePath;
+    ::ll::TypedStorage<4, 4, float> mSpeed;
+    ::ll::TypedStorage<4, 4, float> mStartDistance;
+    ::ll::TypedStorage<4, 4, float> mStopDistance;
+    ::ll::TypedStorage<4, 4, float> mMaxDistance;
+    ::ll::TypedStorage<1, 1, bool> mOldAvoidWater;
+    ::ll::TypedStorage<1, 1, bool> mOldAvoidPortals;
+    ::ll::TypedStorage<1, 1, bool> mCanTeleport;
+    ::ll::TypedStorage<1, 1, bool> mIgnoreVibrations;
+    ::ll::TypedStorage<4, 4, int> mPostTeleportDistance;
+    ::ll::TypedStorage<1, 1, bool> mRandomizeAndCheckForClearanceWhenTeleporting;
+    ::ll::TypedStorage<1, 1, bool> mKeepFollowingAfterTeleporting;
     // NOLINTEND
 
 public:
@@ -63,8 +63,7 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 9
-    virtual void
-    onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension) /*override*/;
+    virtual void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension) /*override*/;
 
     // vIndex: 0
     virtual ~FollowOwnerGoal() /*override*/ = default;
@@ -73,16 +72,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FollowOwnerGoal(
-        ::Mob& mob,
-        float  speed,
-        float  startDistance,
-        float  stopDistance,
-        bool   canTeleport,
-        int    postTeleportDistance,
-        bool   ignoreVibrations,
-        float  maxDistance
-    );
+    MCAPI FollowOwnerGoal(::Mob& mob, float speed, float startDistance, float stopDistance, bool canTeleport, int postTeleportDistance, bool ignoreVibrations, float maxDistance);
 
     MCAPI bool _canReachOwner(::Mob& owner, ::NavigationComponent& navigationComponent) const;
     // NOLINTEND
@@ -90,16 +80,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob& mob,
-        float  speed,
-        float  startDistance,
-        float  stopDistance,
-        bool   canTeleport,
-        int    postTeleportDistance,
-        bool   ignoreVibrations,
-        float  maxDistance
-    );
+    MCAPI void* $ctor(::Mob& mob, float speed, float startDistance, float stopDistance, bool canTeleport, int postTeleportDistance, bool ignoreVibrations, float maxDistance);
     // NOLINTEND
 
 public:
@@ -125,4 +106,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

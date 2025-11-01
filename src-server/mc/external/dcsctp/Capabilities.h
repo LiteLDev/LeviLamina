@@ -21,6 +21,7 @@ public:
     Capabilities& operator=(Capabilities const&);
     Capabilities(Capabilities const&);
     Capabilities();
+
 };
 
-} // namespace dcsctp
+}

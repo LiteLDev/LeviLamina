@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnke85ec7;
-    ::ll::UntypedStorage<1, 1>  mUnk40717f;
+    ::ll::UntypedStorage<1, 1> mUnk40717f;
     // NOLINTEND
 
 public:
@@ -17,6 +17,7 @@ public:
     ExcludedPath& operator=(ExcludedPath const&);
     ExcludedPath(ExcludedPath const&);
     ExcludedPath();
+
 };
 
-} // namespace Core
+}

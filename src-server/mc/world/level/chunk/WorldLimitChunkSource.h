@@ -31,27 +31,25 @@ public:
     virtual ~WorldLimitChunkSource() /*override*/ = default;
 
     // vIndex: 7
-    virtual ::std::shared_ptr<::LevelChunk>
-    createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
+    virtual ::std::shared_ptr<::LevelChunk> createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
 
     // vIndex: 3
     virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const& cp) /*override*/;
 
-    // vIndex: 24
+    // vIndex: 27
     virtual bool isWithinWorldLimit(::ChunkPos const& cp) const /*override*/;
 
-    // vIndex: 28
+    // vIndex: 31
     virtual bool canCreateViews() const /*override*/;
 
-    // vIndex: 25
+    // vIndex: 28
     virtual ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* getChunkMap() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    WorldLimitChunkSource(::std::unique_ptr<::ChunkSource> storage, ::BlockPos const& center, int width, int depth);
+    MCNAPI WorldLimitChunkSource(::std::unique_ptr<::ChunkSource> storage, ::BlockPos const& center, int width, int depth);
     // NOLINTEND
 
 public:
@@ -63,8 +61,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::LevelChunk>
-    $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    MCNAPI ::std::shared_ptr<::LevelChunk> $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
     MCNAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& cp);
 
@@ -80,4 +77,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

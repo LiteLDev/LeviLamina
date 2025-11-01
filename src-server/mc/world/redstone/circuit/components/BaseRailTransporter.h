@@ -19,13 +19,13 @@ public:
     // BaseRailTransporter inner types define
     enum class RailType : int {
         Activator = 0,
-        Power     = 1,
+        Power = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::CircuitComponentType const>    mCircuitComponentType;
+    ::ll::TypedStorage<8, 8, ::CircuitComponentType const> mCircuitComponentType;
     ::ll::TypedStorage<4, 4, ::BaseRailTransporter::RailType> mRailType;
     // NOLINTEND
 
@@ -33,16 +33,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 12
-    virtual bool
-    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
+    virtual bool allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     // vIndex: 11
-    virtual bool addSource(
-        ::CircuitSceneGraph&         graph,
-        ::CircuitTrackingInfo const& info,
-        int&                         dampening,
-        bool&                        bDirectlyPowered
-    ) /*override*/;
+    virtual bool addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered) /*override*/;
 
     // vIndex: 14
     virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
@@ -59,8 +53,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    MCAPI bool
-    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    MCAPI bool $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
@@ -72,4 +65,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

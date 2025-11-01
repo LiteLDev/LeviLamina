@@ -14,13 +14,13 @@ struct TradeItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                                   itemId;
-    ::ll::TypedStorage<4, 4, int>                                                   itemAux;
-    ::ll::TypedStorage<4, 4, int>                                                   count_min;
-    ::ll::TypedStorage<4, 4, int>                                                   count_max;
-    ::ll::TypedStorage<4, 4, float>                                                 price_multiplier;
-    ::ll::TypedStorage<8, 32, ::std::string>                                        originalName;
-    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>                                   filter;
+    ::ll::TypedStorage<4, 4, int> itemId;
+    ::ll::TypedStorage<4, 4, int> itemAux;
+    ::ll::TypedStorage<4, 4, int> count_min;
+    ::ll::TypedStorage<4, 4, int> count_max;
+    ::ll::TypedStorage<4, 4, float> price_multiplier;
+    ::ll::TypedStorage<8, 32, ::std::string> originalName;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> filter;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LootItemFunction>>> functions;
     // NOLINTEND
 
@@ -51,4 +51,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

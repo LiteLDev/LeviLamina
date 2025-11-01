@@ -27,8 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Direction::Type
-    _getDirection(::BlockSource& region, ::BlockPos const& blockPos, int offsetX, int offsetZ) const;
+    MCAPI ::Direction::Type _getDirection(::BlockSource& region, ::BlockPos const& blockPos, int offsetX, int offsetZ) const;
     // NOLINTEND
 
 public:
@@ -42,4 +41,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

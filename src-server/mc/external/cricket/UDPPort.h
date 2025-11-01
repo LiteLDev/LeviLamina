@@ -36,48 +36,41 @@ public:
     // clang-format off
     class AddressResolver;
     // clang-format on
-
+    
     // UDPPort inner types define
     class AddressResolver {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnka195d6;
+        ::ll::UntypedStorage<8, 8> mUnka195d6;
         ::ll::UntypedStorage<8, 64> mUnk793108;
         ::ll::UntypedStorage<8, 16> mUnkb399b3;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         AddressResolver& operator=(AddressResolver const&);
         AddressResolver(AddressResolver const&);
         AddressResolver();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI AddressResolver(
-            ::rtc::PacketSocketFactory*                             factory,
-            ::std::function<void(::rtc::SocketAddress const&, int)> done_callback
-        );
-
-        MCNAPI bool
-        GetResolvedAddress(::rtc::SocketAddress const& input, int family, ::rtc::SocketAddress* output) const;
-
-        MCNAPI void
-        Resolve(::rtc::SocketAddress const& address, int family, ::webrtc::FieldTrialsView const& field_trials);
+        MCNAPI AddressResolver(::rtc::PacketSocketFactory* factory, ::std::function<void(::rtc::SocketAddress const&, int)> done_callback);
+    
+        MCNAPI bool GetResolvedAddress(::rtc::SocketAddress const& input, int family, ::rtc::SocketAddress* output) const;
+    
+        MCNAPI void Resolve(::rtc::SocketAddress const& address, int family, ::webrtc::FieldTrialsView const& field_trials);
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(
-            ::rtc::PacketSocketFactory*                             factory,
-            ::std::function<void(::rtc::SocketAddress const&, int)> done_callback
-        );
+        MCNAPI void* $ctor(::rtc::PacketSocketFactory* factory, ::std::function<void(::rtc::SocketAddress const&, int)> done_callback);
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -87,16 +80,16 @@ public:
     ::ll::UntypedStorage<8, 88> mUnka4b56d;
     ::ll::UntypedStorage<8, 24> mUnkcaca4f;
     ::ll::UntypedStorage<8, 16> mUnk25aa4a;
-    ::ll::UntypedStorage<4, 4>  mUnk2b5421;
-    ::ll::UntypedStorage<4, 4>  mUnkd369e5;
-    ::ll::UntypedStorage<8, 8>  mUnk97aa4e;
-    ::ll::UntypedStorage<1, 1>  mUnk925be5;
-    ::ll::UntypedStorage<4, 4>  mUnke81ffc;
-    ::ll::UntypedStorage<4, 4>  mUnkcc71f3;
-    ::ll::UntypedStorage<4, 4>  mUnk3072d4;
+    ::ll::UntypedStorage<4, 4> mUnk2b5421;
+    ::ll::UntypedStorage<4, 4> mUnkd369e5;
+    ::ll::UntypedStorage<8, 8> mUnk97aa4e;
+    ::ll::UntypedStorage<1, 1> mUnk925be5;
+    ::ll::UntypedStorage<4, 4> mUnke81ffc;
+    ::ll::UntypedStorage<4, 4> mUnkcc71f3;
+    ::ll::UntypedStorage<4, 4> mUnk3072d4;
     ::ll::UntypedStorage<8, 24> mUnk6d7703;
-    ::ll::UntypedStorage<1, 1>  mUnkb6d855;
-    ::ll::UntypedStorage<1, 1>  mUnk6d449a;
+    ::ll::UntypedStorage<1, 1> mUnkb6d855;
+    ::ll::UntypedStorage<1, 1> mUnk6d449a;
     // NOLINTEND
 
 public:
@@ -115,10 +108,7 @@ public:
     virtual void PrepareAddress() /*override*/;
 
     // vIndex: 11
-    virtual ::cricket::Connection* CreateConnection(
-        ::cricket::Candidate const&               address,
-        ::cricket::PortInterface::CandidateOrigin origin
-    ) /*override*/;
+    virtual ::cricket::Connection* CreateConnection(::cricket::Candidate const& address, ::cricket::PortInterface::CandidateOrigin origin) /*override*/;
 
     // vIndex: 12
     virtual int SetOption(::rtc::Socket::Option opt, int value) /*override*/;
@@ -130,8 +120,7 @@ public:
     virtual int GetError() /*override*/;
 
     // vIndex: 41
-    virtual bool
-    HandleIncomingPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet) /*override*/;
+    virtual bool HandleIncomingPacket(::rtc::AsyncPacketSocket* socket, ::rtc::ReceivedPacket const& packet) /*override*/;
 
     // vIndex: 8
     virtual bool SupportsProtocol(::std::string_view protocol) const /*override*/;
@@ -143,13 +132,7 @@ public:
     virtual void GetStunStats(::std::optional<::cricket::StunStats>* stats) /*override*/;
 
     // vIndex: 17
-    virtual int SendTo(
-        void const*                 data,
-        uint64                      size,
-        ::rtc::SocketAddress const& addr,
-        ::rtc::PacketOptions const& options,
-        bool                        payload
-    ) /*override*/;
+    virtual int SendTo(void const* data, uint64 size, ::rtc::SocketAddress const& addr, ::rtc::PacketOptions const& options, bool payload) /*override*/;
 
     // vIndex: 34
     virtual void UpdateNetworkCost() /*override*/;
@@ -187,17 +170,9 @@ public:
 
     MCNAPI void OnSendPacket(void const* data, uint64 size, ::cricket::StunRequest* req);
 
-    MCNAPI void OnStunBindingOrResolveRequestFailed(
-        ::rtc::SocketAddress const& stun_server_addr,
-        int                         error_code,
-        ::std::string_view          reason
-    );
+    MCNAPI void OnStunBindingOrResolveRequestFailed(::rtc::SocketAddress const& stun_server_addr, int error_code, ::std::string_view reason);
 
-    MCNAPI void OnStunBindingRequestSucceeded(
-        int                         rtt_ms,
-        ::rtc::SocketAddress const& stun_server_addr,
-        ::rtc::SocketAddress const& stun_reflected_addr
-    );
+    MCNAPI void OnStunBindingRequestSucceeded(int rtt_ms, ::rtc::SocketAddress const& stun_server_addr, ::rtc::SocketAddress const& stun_reflected_addr);
 
     MCNAPI void ResolveStunAddress(::rtc::SocketAddress const& stun_addr);
 
@@ -205,30 +180,9 @@ public:
 
     MCNAPI void SendStunBindingRequests();
 
-    MCNAPI UDPPort(
-        ::rtc::Thread*                              thread,
-        ::webrtc::IceCandidateType                  type,
-        ::rtc::PacketSocketFactory*                 factory,
-        ::rtc::Network const*                       network,
-        ::std::shared_ptr<::rtc::AsyncPacketSocket> socket,
-        ::std::string_view                          username,
-        ::std::string_view                          password,
-        bool                                        emit_local_for_anyaddress,
-        ::webrtc::FieldTrialsView const*            field_trials
-    );
+    MCNAPI UDPPort(::rtc::Thread* thread, ::webrtc::IceCandidateType type, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ::std::shared_ptr<::rtc::AsyncPacketSocket> socket, ::std::string_view username, ::std::string_view password, bool emit_local_for_anyaddress, ::webrtc::FieldTrialsView const* field_trials);
 
-    MCNAPI UDPPort(
-        ::rtc::Thread*                   thread,
-        ::webrtc::IceCandidateType       type,
-        ::rtc::PacketSocketFactory*      factory,
-        ::rtc::Network const*            network,
-        ushort                           min_port,
-        ushort                           max_port,
-        ::std::string_view               username,
-        ::std::string_view               password,
-        bool                             emit_local_for_anyaddress,
-        ::webrtc::FieldTrialsView const* field_trials
-    );
+    MCNAPI UDPPort(::rtc::Thread* thread, ::webrtc::IceCandidateType type, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ushort min_port, ushort max_port, ::std::string_view username, ::std::string_view password, bool emit_local_for_anyaddress, ::webrtc::FieldTrialsView const* field_trials);
 
     MCNAPI void set_stun_keepalive_delay(::std::optional<int> const& delay);
     // NOLINTEND
@@ -236,30 +190,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::rtc::Thread*                              thread,
-        ::webrtc::IceCandidateType                  type,
-        ::rtc::PacketSocketFactory*                 factory,
-        ::rtc::Network const*                       network,
-        ::std::shared_ptr<::rtc::AsyncPacketSocket> socket,
-        ::std::string_view                          username,
-        ::std::string_view                          password,
-        bool                                        emit_local_for_anyaddress,
-        ::webrtc::FieldTrialsView const*            field_trials
-    );
+    MCNAPI void* $ctor(::rtc::Thread* thread, ::webrtc::IceCandidateType type, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ::std::shared_ptr<::rtc::AsyncPacketSocket> socket, ::std::string_view username, ::std::string_view password, bool emit_local_for_anyaddress, ::webrtc::FieldTrialsView const* field_trials);
 
-    MCNAPI void* $ctor(
-        ::rtc::Thread*                   thread,
-        ::webrtc::IceCandidateType       type,
-        ::rtc::PacketSocketFactory*      factory,
-        ::rtc::Network const*            network,
-        ushort                           min_port,
-        ushort                           max_port,
-        ::std::string_view               username,
-        ::std::string_view               password,
-        bool                             emit_local_for_anyaddress,
-        ::webrtc::FieldTrialsView const* field_trials
-    );
+    MCNAPI void* $ctor(::rtc::Thread* thread, ::webrtc::IceCandidateType type, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ushort min_port, ushort max_port, ::std::string_view username, ::std::string_view password, bool emit_local_for_anyaddress, ::webrtc::FieldTrialsView const* field_trials);
     // NOLINTEND
 
 public:
@@ -273,8 +206,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $PrepareAddress();
 
-    MCNAPI ::cricket::Connection*
-    $CreateConnection(::cricket::Candidate const& address, ::cricket::PortInterface::CandidateOrigin origin);
+    MCNAPI ::cricket::Connection* $CreateConnection(::cricket::Candidate const& address, ::cricket::PortInterface::CandidateOrigin origin);
 
     MCNAPI int $SetOption(::rtc::Socket::Option opt, int value);
 
@@ -290,13 +222,7 @@ public:
 
     MCNAPI void $GetStunStats(::std::optional<::cricket::StunStats>* stats);
 
-    MCNAPI int $SendTo(
-        void const*                 data,
-        uint64                      size,
-        ::rtc::SocketAddress const& addr,
-        ::rtc::PacketOptions const& options,
-        bool                        payload
-    );
+    MCNAPI int $SendTo(void const* data, uint64 size, ::rtc::SocketAddress const& addr, ::rtc::PacketOptions const& options, bool payload);
 
     MCNAPI void $UpdateNetworkCost();
 
@@ -314,6 +240,7 @@ public:
 
     MCNAPI static void** $vftableForHasSlots();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

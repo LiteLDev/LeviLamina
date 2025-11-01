@@ -14,14 +14,14 @@ struct TimerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                       mTime;
-    ::ll::TypedStorage<8, 8, uint64>                    mTimeStamp;
-    ::ll::TypedStorage<1, 1, bool>                      mHasExecuted;
-    ::ll::TypedStorage<1, 1, bool>                      mLooping;
-    ::ll::TypedStorage<4, 4, int>                       mStartTime;
-    ::ll::TypedStorage<1, 1, bool>                      mRandomInterval;
-    ::ll::TypedStorage<4, 4, int>                       mMinTime;
-    ::ll::TypedStorage<4, 4, int>                       mMaxTime;
+    ::ll::TypedStorage<4, 4, int> mTime;
+    ::ll::TypedStorage<8, 8, uint64> mTimeStamp;
+    ::ll::TypedStorage<1, 1, bool> mHasExecuted;
+    ::ll::TypedStorage<1, 1, bool> mLooping;
+    ::ll::TypedStorage<4, 4, int> mStartTime;
+    ::ll::TypedStorage<1, 1, bool> mRandomInterval;
+    ::ll::TypedStorage<4, 4, int> mMinTime;
+    ::ll::TypedStorage<4, 4, int> mMaxTime;
     ::ll::TypedStorage<8, 24, ::WeightedChoices<float>> mTimeChoices;
     // NOLINTEND
 
@@ -38,4 +38,5 @@ public:
 
     MCAPI ::TimerComponent& operator=(::TimerComponent&&);
     // NOLINTEND
+
 };

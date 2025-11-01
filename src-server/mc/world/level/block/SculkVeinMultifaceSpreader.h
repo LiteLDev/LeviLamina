@@ -17,12 +17,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual bool _canSpreadInto(
-        ::IBlockWorldGenAPI& target,
-        ::Block const&       self,
-        ::BlockPos const&    pos,
-        uchar const          placementDirection
-    ) const /*override*/;
+    virtual bool _canSpreadInto(::IBlockWorldGenAPI& target, ::Block const& self, ::BlockPos const& pos, uchar const placementDirection) const /*override*/;
 
     // vIndex: 1
     virtual bool _canSpreadFrom(::Block const& block, uchar const facing) const /*override*/;
@@ -43,12 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_canSpreadInto(
-        ::IBlockWorldGenAPI& target,
-        ::Block const&       self,
-        ::BlockPos const&    pos,
-        uchar const          placementDirection
-    ) const;
+    MCAPI bool $_canSpreadInto(::IBlockWorldGenAPI& target, ::Block const& self, ::BlockPos const& pos, uchar const placementDirection) const;
 
     MCAPI bool $_canSpreadFrom(::Block const& block, uchar const facing) const;
 
@@ -60,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

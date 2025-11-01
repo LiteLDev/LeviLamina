@@ -15,11 +15,11 @@ struct ContainerDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                  mSize;
-    ::ll::TypedStorage<1, 1, bool>                                 mCanBesiphonedFrom;
-    ::ll::TypedStorage<1, 1, bool>                                 mPrivate;
-    ::ll::TypedStorage<1, 1, bool>                                 mRestrictToOwner;
-    ::ll::TypedStorage<4, 4, int>                                  mSlotsPerStrength;
+    ::ll::TypedStorage<4, 4, int> mSize;
+    ::ll::TypedStorage<1, 1, bool> mCanBesiphonedFrom;
+    ::ll::TypedStorage<1, 1, bool> mPrivate;
+    ::ll::TypedStorage<1, 1, bool> mRestrictToOwner;
+    ::ll::TypedStorage<4, 4, int> mSlotsPerStrength;
     ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mContainerType;
     // NOLINTEND
 
@@ -55,4 +55,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

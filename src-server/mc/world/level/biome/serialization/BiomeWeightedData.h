@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ushort> mBiomeIdentifier;
-    ::ll::TypedStorage<4, 4, uint>   mWeight;
+    ::ll::TypedStorage<4, 4, uint> mWeight;
     // NOLINTEND
 
 public:
@@ -23,4 +23,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeWeightedData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
+
 };

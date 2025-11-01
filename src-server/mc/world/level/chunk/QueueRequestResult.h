@@ -4,5 +4,5 @@
 
 enum class QueueRequestResult : uchar {
     Executed = 0,
-    Queued   = 1,
+    Queued = 1,
 };

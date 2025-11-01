@@ -8,4 +8,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, uint64> mValue;
     // NOLINTEND
+
 };

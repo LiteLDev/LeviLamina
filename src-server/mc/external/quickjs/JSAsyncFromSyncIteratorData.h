@@ -15,4 +15,5 @@ public:
     JSAsyncFromSyncIteratorData& operator=(JSAsyncFromSyncIteratorData const&);
     JSAsyncFromSyncIteratorData(JSAsyncFromSyncIteratorData const&);
     JSAsyncFromSyncIteratorData();
+
 };

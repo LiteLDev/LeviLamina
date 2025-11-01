@@ -17,6 +17,7 @@ public:
     LoggedDtlsWritableState& operator=(LoggedDtlsWritableState const&);
     LoggedDtlsWritableState(LoggedDtlsWritableState const&);
     LoggedDtlsWritableState();
+
 };
 
-} // namespace webrtc
+}

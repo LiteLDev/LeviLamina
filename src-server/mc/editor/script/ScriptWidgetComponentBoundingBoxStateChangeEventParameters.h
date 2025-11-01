@@ -15,25 +15,21 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk6f4b77;
     ::ll::UntypedStorage<8, 32> mUnk9c4560;
-    ::ll::UntypedStorage<4, 4>  mUnk8c0d68;
+    ::ll::UntypedStorage<4, 4> mUnk8c0d68;
     ::ll::UntypedStorage<4, 16> mUnk6f3b80;
     ::ll::UntypedStorage<4, 16> mUnk116917;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptWidgetComponentBoundingBoxStateChangeEventParameters&
-    operator=(ScriptWidgetComponentBoundingBoxStateChangeEventParameters const&);
-    ScriptWidgetComponentBoundingBoxStateChangeEventParameters(
-        ScriptWidgetComponentBoundingBoxStateChangeEventParameters const&
-    );
+    ScriptWidgetComponentBoundingBoxStateChangeEventParameters& operator=(ScriptWidgetComponentBoundingBoxStateChangeEventParameters const&);
+    ScriptWidgetComponentBoundingBoxStateChangeEventParameters(ScriptWidgetComponentBoundingBoxStateChangeEventParameters const&);
     ScriptWidgetComponentBoundingBoxStateChangeEventParameters();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxStateChangeEventParameters&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxStateChangeEventParameters&&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxStateChangeEventParameters& operator=(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxStateChangeEventParameters&&);
     // NOLINTEND
 
 public:
@@ -41,6 +37,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

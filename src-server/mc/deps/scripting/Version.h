@@ -8,23 +8,24 @@ struct Version {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2>  mUnk9c04c2;
-    ::ll::UntypedStorage<2, 2>  mUnk59edf9;
-    ::ll::UntypedStorage<2, 2>  mUnk82270a;
+    ::ll::UntypedStorage<2, 2> mUnk9c04c2;
+    ::ll::UntypedStorage<2, 2> mUnk59edf9;
+    ::ll::UntypedStorage<2, 2> mUnk82270a;
     ::ll::UntypedStorage<8, 32> mUnk4d580f;
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    Version& operator=(Version const&);
-    Version();
-
-public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI Version();
+
     MCNAPI Version(::Scripting::Version const&);
 
+    MCNAPI Version(ushort major_, ushort minor_, ushort patch_, ::std::string preRelease_);
+
     MCNAPI bool operator<(::Scripting::Version const& rhs) const;
+
+    MCNAPI ::Scripting::Version& operator=(::Scripting::Version const&);
 
     MCNAPI ::Scripting::Version& operator=(::Scripting::Version&&);
 
@@ -40,7 +41,11 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor();
+
     MCNAPI void* $ctor(::Scripting::Version const&);
+
+    MCNAPI void* $ctor(ushort major_, ushort minor_, ushort patch_, ::std::string preRelease_);
     // NOLINTEND
 
 public:
@@ -48,6 +53,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

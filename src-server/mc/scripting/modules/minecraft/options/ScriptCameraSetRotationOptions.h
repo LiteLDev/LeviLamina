@@ -13,7 +13,7 @@ struct ScriptCameraSetRotationOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnk99a05c;
+    ::ll::UntypedStorage<4, 8> mUnk99a05c;
     ::ll::UntypedStorage<4, 16> mUnkf25e78;
     ::ll::UntypedStorage<4, 20> mUnk46d1e5;
     // NOLINTEND
@@ -35,6 +35,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

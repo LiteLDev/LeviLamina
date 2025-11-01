@@ -40,16 +40,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::rtc::SSLFingerprint>
-    Create(::std::string_view algorithm, ::rtc::SSLCertificate const& cert);
+    MCNAPI static ::std::unique_ptr<::rtc::SSLFingerprint> Create(::std::string_view algorithm, ::rtc::SSLCertificate const& cert);
 
     MCNAPI static ::std::unique_ptr<::rtc::SSLFingerprint> CreateFromCertificate(::rtc::RTCCertificate const& cert);
 
-    MCNAPI static ::std::unique_ptr<::rtc::SSLFingerprint>
-    CreateUnique(::std::string_view algorithm, ::rtc::SSLIdentity const& identity);
+    MCNAPI static ::std::unique_ptr<::rtc::SSLFingerprint> CreateUnique(::std::string_view algorithm, ::rtc::SSLIdentity const& identity);
 
-    MCNAPI static ::std::unique_ptr<::rtc::SSLFingerprint>
-    CreateUniqueFromRfc4572(::std::string_view algorithm, ::std::string_view fingerprint);
+    MCNAPI static ::std::unique_ptr<::rtc::SSLFingerprint> CreateUniqueFromRfc4572(::std::string_view algorithm, ::std::string_view fingerprint);
     // NOLINTEND
 
 public:
@@ -57,6 +54,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string_view algorithm, ::rtc::ArrayView<uchar const> digest_view);
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

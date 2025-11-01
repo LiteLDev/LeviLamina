@@ -4,7 +4,8 @@
 
 namespace Bedrock {
 
-template <int T0>
-class FlushingIOBuffer {};
+template<int T0>
+class FlushingIOBuffer {
+};
 
-} // namespace Bedrock
+}

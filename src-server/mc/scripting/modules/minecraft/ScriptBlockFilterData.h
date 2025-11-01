@@ -16,6 +16,7 @@ public:
     ScriptBlockFilterData& operator=(ScriptBlockFilterData const&);
     ScriptBlockFilterData(ScriptBlockFilterData const&);
     ScriptBlockFilterData();
+
 };
 
-} // namespace ScriptModuleMinecraft::EventFilters
+}

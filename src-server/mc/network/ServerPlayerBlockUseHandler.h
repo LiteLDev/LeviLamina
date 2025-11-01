@@ -21,17 +21,11 @@ struct PlayerBlockActionData;
 namespace ServerPlayerBlockUseHandler {
 // functions
 // NOLINTBEGIN
-MCAPI ::ServerPlayerBlockUseHandler::PredictionValidationError
-getErrorForRejectedRequest(::ServerPlayer& player, ::ItemStackRequestActionMineBlock const& request);
+MCAPI ::ServerPlayerBlockUseHandler::PredictionValidationError getErrorForRejectedRequest(::ServerPlayer& player, ::ItemStackRequestActionMineBlock const& request);
 
 MCAPI void onAbortDestroyBlock(::ServerPlayer& player, ::BlockPos const& pos, int face);
 
-MCAPI void onBeforeMovementSimulation(
-    ::ServerPlayer&                                      player,
-    ::PlayerBlockActions const&                          blockActions,
-    ::std::unique_ptr<::ItemStackRequestData>            itemStackRequest,
-    ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilter
-);
+MCAPI void onBeforeMovementSimulation(::ServerPlayer& player, ::PlayerBlockActions const& blockActions, ::std::unique_ptr<::ItemStackRequestData> itemStackRequest, ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilter);
 
 MCAPI void onCrackBlock(::ServerPlayer& player, ::BlockPos const& pos, int data);
 
@@ -41,14 +35,7 @@ MCAPI void onStopDestroyBlock(::ServerPlayer& player);
 
 MCAPI void serverTickBlockBreaking(::ServerPlayer& player, ::BlockPos const& destroyBlockPos, int facing);
 
-MCAPI ::ServerPlayerBlockUseHandler::PredictionValidationError validateClientBlockBreakPrediction(
-    ::ServerPlayer&                          player,
-    ::ItemStackRequestActionMineBlock const* mineRequest,
-    ::BlockPos const&                        serverDestroyedBlock,
-    ::ItemStack const&                       oldItem,
-    ::ItemStack const&                       newItem,
-    ::PlayerBlockActionData const*           clientDestroyPrediction
-);
+MCAPI ::ServerPlayerBlockUseHandler::PredictionValidationError validateClientBlockBreakPrediction(::ServerPlayer& player, ::ItemStackRequestActionMineBlock const* mineRequest, ::BlockPos const& serverDestroyedBlock, ::ItemStack const& oldItem, ::ItemStack const& newItem, ::PlayerBlockActionData const* clientDestroyPrediction);
 // NOLINTEND
 
-} // namespace ServerPlayerBlockUseHandler
+}

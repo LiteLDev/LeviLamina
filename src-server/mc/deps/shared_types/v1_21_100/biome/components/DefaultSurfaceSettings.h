@@ -8,7 +8,7 @@ struct DefaultSurfaceSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk873e5a;
+    ::ll::UntypedStorage<4, 4> mUnk873e5a;
     ::ll::UntypedStorage<8, 96> mUnk8cf14a;
     ::ll::UntypedStorage<8, 96> mUnk99836e;
     ::ll::UntypedStorage<8, 96> mUnk81d696;
@@ -23,8 +23,7 @@ public:
 
     MCNAPI DefaultSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings const&);
 
-    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings&
-    operator=(::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings const&);
+    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings& operator=(::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings const&);
 
     MCNAPI ~DefaultSurfaceSettings();
     // NOLINTEND
@@ -42,6 +41,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_100::SurfaceBuilder
+}

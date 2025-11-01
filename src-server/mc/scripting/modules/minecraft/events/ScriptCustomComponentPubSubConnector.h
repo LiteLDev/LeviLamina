@@ -4,7 +4,8 @@
 
 namespace ScriptModuleMinecraft {
 
-template <typename... T0>
-struct ScriptCustomComponentPubSubConnector {};
+template<typename... T0>
+struct ScriptCustomComponentPubSubConnector {
+};
 
-} // namespace ScriptModuleMinecraft
+}

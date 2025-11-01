@@ -15,7 +15,7 @@ class StunRequestManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkcf5cbe;
+    ::ll::UntypedStorage<8, 8> mUnkcf5cbe;
     ::ll::UntypedStorage<8, 16> mUnkeafb20;
     ::ll::UntypedStorage<8, 64> mUnkcf4e95;
     // NOLINTEND
@@ -43,10 +43,7 @@ public:
 
     MCNAPI void SendPacket(void const* data, uint64 size, ::cricket::StunRequest* request);
 
-    MCNAPI StunRequestManager(
-        ::webrtc::TaskQueueBase*                                            thread,
-        ::std::function<void(void const*, uint64, ::cricket::StunRequest*)> send_packet
-    );
+    MCNAPI StunRequestManager(::webrtc::TaskQueueBase* thread, ::std::function<void(void const*, uint64, ::cricket::StunRequest*)> send_packet);
 
     MCNAPI ~StunRequestManager();
     // NOLINTEND
@@ -54,10 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::webrtc::TaskQueueBase*                                            thread,
-        ::std::function<void(void const*, uint64, ::cricket::StunRequest*)> send_packet
-    );
+    MCNAPI void* $ctor(::webrtc::TaskQueueBase* thread, ::std::function<void(void const*, uint64, ::cricket::StunRequest*)> send_packet);
     // NOLINTEND
 
 public:
@@ -65,6 +59,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

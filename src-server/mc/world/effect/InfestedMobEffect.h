@@ -16,8 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const
-        /*override*/;
+    virtual void onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const /*override*/;
 
     // vIndex: 0
     virtual ~InfestedMobEffect() /*override*/ = default;
@@ -34,4 +33,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

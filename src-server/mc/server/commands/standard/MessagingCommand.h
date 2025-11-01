@@ -44,11 +44,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool checkIfTextProcessorIsHealthyAndSendChatIfNot(
-        ::CommandOriginIdentity const&                     identity,
-        ::Level const&                                     level,
-        ::std::vector<::Safety::TextFilteringEvent> const& events
-    );
+    MCAPI static bool checkIfTextProcessorIsHealthyAndSendChatIfNot(::CommandOriginIdentity const& identity, ::Level const& level, ::std::vector<::Safety::TextFilteringEvent> const& events);
     // NOLINTEND
 
 public:
@@ -56,4 +52,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

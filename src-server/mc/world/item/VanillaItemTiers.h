@@ -32,4 +32,4 @@ MCAPI ::ItemTier const& STONE();
 MCAPI ::ItemTier const& WOOD();
 // NOLINTEND
 
-} // namespace VanillaItemTiers
+}

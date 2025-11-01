@@ -4,5 +4,5 @@
 
 enum class ObjectiveRenderType : uchar {
     Integer = 0,
-    Hearts  = 1,
+    Hearts = 1,
 };

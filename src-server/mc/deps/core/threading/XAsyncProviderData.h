@@ -17,4 +17,5 @@ public:
     XAsyncProviderData& operator=(XAsyncProviderData const&);
     XAsyncProviderData(XAsyncProviderData const&);
     XAsyncProviderData();
+
 };

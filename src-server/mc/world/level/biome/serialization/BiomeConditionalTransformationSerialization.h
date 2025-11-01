@@ -13,24 +13,11 @@ struct PossibleTransformation;
 namespace BiomeConditionalTransformationSerialization {
 // functions
 // NOLINTBEGIN
-MCAPI void applySerializedBiomeConditionalTransformationDataVector(
-    ::std::vector<::BiomeConditionalTransformationData> const& data,
-    ::std::vector<::PossibleTransformation>&                   conditionalTransformations,
-    ::BiomeRegistry const&                                     biomeRegistry,
-    ::BiomeStringList const&                                   stringList
-);
+MCAPI void applySerializedBiomeConditionalTransformationDataVector(::std::vector<::BiomeConditionalTransformationData> const& data, ::std::vector<::PossibleTransformation>& conditionalTransformations, ::BiomeRegistry const& biomeRegistry, ::BiomeStringList const& stringList);
 
-MCAPI void serializeBiomeConditionalTransformationData(
-    ::PossibleTransformation const&       conditionalTransformation,
-    ::BiomeConditionalTransformationData& data,
-    ::BiomeStringList&                    stringList
-);
+MCAPI void serializeBiomeConditionalTransformationData(::PossibleTransformation const& conditionalTransformation, ::BiomeConditionalTransformationData& data, ::BiomeStringList& stringList);
 
-MCAPI void serializeBiomeConditionalTransformationDataVector(
-    ::std::vector<::PossibleTransformation> const&       conditionalTransformations,
-    ::std::vector<::BiomeConditionalTransformationData>& data,
-    ::BiomeStringList&                                   stringList
-);
+MCAPI void serializeBiomeConditionalTransformationDataVector(::std::vector<::PossibleTransformation> const& conditionalTransformations, ::std::vector<::BiomeConditionalTransformationData>& data, ::BiomeStringList& stringList);
 // NOLINTEND
 
-} // namespace BiomeConditionalTransformationSerialization
+}

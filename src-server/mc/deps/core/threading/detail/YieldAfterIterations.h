@@ -18,6 +18,7 @@ public:
     YieldAfterIterations& operator=(YieldAfterIterations const&);
     YieldAfterIterations(YieldAfterIterations const&);
     YieldAfterIterations();
+
 };
 
-} // namespace Bedrock::Threading::Detail
+}

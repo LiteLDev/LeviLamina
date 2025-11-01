@@ -11,6 +11,7 @@ public:
     ::ll::TypedStorage<1, 1, uchar> mPatternId;
     ::ll::TypedStorage<1, 1, uchar> mColor;
     // NOLINTEND
+
 };
 
-} // namespace PatternUtil
+}

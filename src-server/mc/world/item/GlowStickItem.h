@@ -17,14 +17,13 @@ class GlowStickItem : public ::ChemistryStickItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 114
+    // vIndex: 115
     virtual ::Brightness getLightEmission(int auxValue) const /*override*/;
 
-    // vIndex: 89
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    // vIndex: 90
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 60
+    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
     // vIndex: 0
@@ -42,8 +41,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::Brightness $getLightEmission(int auxValue) const;
 
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
     MCAPI bool $isValidAuxValue(int auxValue) const;
     // NOLINTEND
@@ -53,4 +51,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

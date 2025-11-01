@@ -47,8 +47,7 @@ public:
 
     MCNAPI void PlayerTeleported(::Player& player, float metersTravelled, int cause, int sourceType);
 
-    MCNAPI void
-    PlayerTravelled(::Player const& player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome);
+    MCNAPI void PlayerTravelled(::Player const& player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome);
     // NOLINTEND
 
 public:
@@ -62,6 +61,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
     // NOLINTEND
+
 };
 
-} // namespace Social::Events
+}

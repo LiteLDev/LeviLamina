@@ -15,4 +15,5 @@ public:
     BlockDifference& operator=(BlockDifference const&);
     BlockDifference(BlockDifference const&);
     BlockDifference();
+
 };

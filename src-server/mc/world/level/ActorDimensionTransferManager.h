@@ -21,8 +21,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IActorDimensionTransferer>>> mActorDimensionTransferer;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const>        mDimensionManager;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::PortalForcer> const>            mPortalForcer;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const> mDimensionManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::PortalForcer> const> mPortalForcer;
     // NOLINTEND
 
 public:
@@ -32,11 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDimensionTransferManager(
-        ::std::unique_ptr<::IActorDimensionTransferer>    actorDimensionTransferer,
-        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager,
-        ::Bedrock::NotNullNonOwnerPtr<::PortalForcer>     portalForcer
-    );
+    MCAPI ActorDimensionTransferManager(::std::unique_ptr<::IActorDimensionTransferer> actorDimensionTransferer, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager, ::Bedrock::NotNullNonOwnerPtr<::PortalForcer> portalForcer);
 
     MCAPI void actorChangeDimension(::Actor& actor, ::DimensionType toId, ::std::optional<::Vec3> const& actorPosition);
 
@@ -48,11 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::IActorDimensionTransferer>    actorDimensionTransferer,
-        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager,
-        ::Bedrock::NotNullNonOwnerPtr<::PortalForcer>     portalForcer
-    );
+    MCAPI void* $ctor(::std::unique_ptr<::IActorDimensionTransferer> actorDimensionTransferer, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager, ::Bedrock::NotNullNonOwnerPtr<::PortalForcer> portalForcer);
     // NOLINTEND
 
 public:
@@ -60,4 +52,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

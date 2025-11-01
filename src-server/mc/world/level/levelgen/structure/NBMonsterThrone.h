@@ -31,15 +31,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::NetherFortressPiece> createPiece(
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        int                                                 footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction,
-        int                                                 genDepth
-    );
+    MCAPI static ::std::unique_ptr<::NetherFortressPiece> createPiece(::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random, int footX, int footY, int footZ, int direction, int genDepth);
     // NOLINTEND
 
 public:
@@ -55,4 +47,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

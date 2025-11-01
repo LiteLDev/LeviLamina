@@ -20,8 +20,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 336> mUnk37dac7;
-    ::ll::UntypedStorage<8, 16>  mUnk2c1ded;
-    ::ll::UntypedStorage<4, 8>   mUnk6bcbe3;
+    ::ll::UntypedStorage<8, 16> mUnk2c1ded;
+    ::ll::UntypedStorage<4, 8> mUnk6bcbe3;
+    ::ll::UntypedStorage<8, 64> mUnk85ea61;
     // NOLINTEND
 
 public:
@@ -34,16 +35,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~DiscoveryHelper() /*override*/ = default;
+    virtual ~DiscoveryHelper() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DiscoveryHelper(
-        ::Bedrock::Services::DiscoveryConfig const&               discoveryConfig,
-        ::std::shared_ptr<::Bedrock::Services::IDiscoveryService> discoveryService
-    );
+    MCNAPI DiscoveryHelper(::Bedrock::Services::DiscoveryConfig const& discoveryConfig, ::std::shared_ptr<::Bedrock::Services::IDiscoveryService> discoveryService, ::std::unordered_map<::std::string, ::std::string> serviceOverrides);
 
     MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Url> getURL(::std::string const& serviceName);
     // NOLINTEND
@@ -51,10 +49,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Bedrock::Services::DiscoveryConfig const&               discoveryConfig,
-        ::std::shared_ptr<::Bedrock::Services::IDiscoveryService> discoveryService
-    );
+    MCNAPI void* $ctor(::Bedrock::Services::DiscoveryConfig const& discoveryConfig, ::std::shared_ptr<::Bedrock::Services::IDiscoveryService> discoveryService, ::std::unordered_map<::std::string, ::std::string> serviceOverrides);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -62,6 +63,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Services
+}

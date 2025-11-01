@@ -25,6 +25,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void operator()(::ShouldUpdateBoundingBoxRequestComponent::UpdateFromValue const& data);
     // NOLINTEND
+
 };
 
-} // namespace UpdateBoundingBox
+}

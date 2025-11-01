@@ -11,11 +11,11 @@ class ContainerValidationCommitObject {
 public:
     // ContainerValidationCommitObject inner types define
     enum class Type : int {
-        DropItem         = 0,
-        ExperienceCost   = 1,
+        DropItem = 0,
+        ExperienceCost = 1,
         ExperienceReward = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -41,10 +41,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void append(
-        ::std::shared_ptr<::ContainerValidationCommitObject>                 commitObject,
-        ::std::vector<::std::shared_ptr<::ContainerValidationCommitObject>>& objectList
-    );
+    MCNAPI static void append(::std::shared_ptr<::ContainerValidationCommitObject> commitObject, ::std::vector<::std::shared_ptr<::ContainerValidationCommitObject>>& objectList);
     // NOLINTEND
 
 public:
@@ -52,4 +49,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

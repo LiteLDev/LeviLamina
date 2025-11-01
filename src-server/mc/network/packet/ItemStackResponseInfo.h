@@ -16,15 +16,29 @@ struct ItemStackResponseInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ItemStackNetResult>                             mResult;
-    ::ll::TypedStorage<4, 16, ::ItemStackRequestId>                            mClientRequestId;
+    ::ll::TypedStorage<1, 1, ::ItemStackNetResult> mResult;
+    ::ll::TypedStorage<4, 16, ::ItemStackRequestId> mClientRequestId;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStackResponseContainerInfo>> mContainers;
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ItemStackResponseInfo& operator=(ItemStackResponseInfo const&);
+    ItemStackResponseInfo(ItemStackResponseInfo const&);
+    ItemStackResponseInfo();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI ItemStackResponseInfo(::ItemStackResponseInfo&&);
+
     MCAPI ~ItemStackResponseInfo();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::ItemStackResponseInfo&&);
     // NOLINTEND
 
 public:
@@ -32,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

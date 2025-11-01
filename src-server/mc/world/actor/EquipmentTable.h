@@ -37,8 +37,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::vector<::EquipmentTableDropChance> _createDropChancesFromTag(::Tag const& tag);
 
-    MCNAPI static ::std::unique_ptr<::CompoundTag>
-    _createTagFromDropChances(::std::vector<::EquipmentTableDropChance> const& dropChances);
+    MCNAPI static ::std::unique_ptr<::CompoundTag> _createTagFromDropChances(::std::vector<::EquipmentTableDropChance> const& dropChances);
     // NOLINTEND
 
 public:
@@ -52,4 +51,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

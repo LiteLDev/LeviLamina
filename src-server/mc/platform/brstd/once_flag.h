@@ -16,6 +16,7 @@ public:
     once_flag& operator=(once_flag const&);
     once_flag(once_flag const&);
     once_flag();
+
 };
 
-} // namespace brstd
+}

@@ -16,8 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
-    ::ll::TypedStorage<4, 4, ::InputMode>                 mNewInputModeUsed;
-    ::ll::TypedStorage<4, 4, ::InputMode>                 mPreviousInputModeUsed;
+    ::ll::TypedStorage<4, 4, ::InputMode> mNewInputModeUsed;
+    ::ll::TypedStorage<4, 4, ::InputMode> mPreviousInputModeUsed;
     // NOLINTEND
 
 public:
@@ -31,4 +31,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

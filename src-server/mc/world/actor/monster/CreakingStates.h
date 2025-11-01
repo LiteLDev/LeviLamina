@@ -23,4 +23,4 @@ MCNAPI ::HashedString const& PROPERTY_NAME();
 MCNAPI ::HashedString const& TWITCHING();
 // NOLINTEND
 
-} // namespace CreakingStates
+}

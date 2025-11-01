@@ -20,8 +20,7 @@ public:
     virtual ::mce::UUID const& getId() const /*override*/;
 
     // vIndex: 5
-    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const
-        /*override*/;
+    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const /*override*/;
 
     // vIndex: 0
     virtual ~ShapelessChemistryRecipe() /*override*/ = default;
@@ -46,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

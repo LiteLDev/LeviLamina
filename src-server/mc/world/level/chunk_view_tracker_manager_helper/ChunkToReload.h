@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 48> mUnk2c570b;
     ::ll::UntypedStorage<8, 16> mUnkbf7030;
-    ::ll::UntypedStorage<1, 1>  mUnk966956;
+    ::ll::UntypedStorage<1, 1> mUnk966956;
     // NOLINTEND
 
 public:
@@ -30,6 +30,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ChunkViewTrackerManagerHelper
+}

@@ -26,7 +26,6 @@ struct PassengerComponent;
 struct PlayerActionComponent;
 struct PlayerInputModeComponent;
 struct PlayerInputRequestComponent;
-struct PlayerLastPosComponent;
 struct StateVectorComponent;
 struct TickingSystemWithInfo;
 struct VanillaClientGameplayComponent;
@@ -43,42 +42,11 @@ MCNAPI ::TickingSystemWithInfo createIntentSystem();
 
 MCNAPI ::TickingSystemWithInfo createSetRequestSystem();
 
-MCNAPI void doIntentTick(
-    ::Optional<::ItemUseSlowdownModifierComponent const> slowedByItemInUse,
-    ::Optional<::MobIsJumpingFlagComponent const>        isJumping,
-    ::Optional<::OnGroundFlagComponent const> const&     onGround,
-    ::Optional<::WasInWaterFlagComponent const> const&   wasInWater,
-    ::MovementAbilitiesComponent const&                  abilities,
-    ::MobEffectsComponent const&                         mobEffects,
-    ::MoveInputComponent const&                          moveInput,
-    ::PlayerInputModeComponent const&                    playerInputMode,
-    ::StateVectorComponent const&                        stateVector,
-    ::PlayerLastPosComponent const&                      playerLastPos,
-    ::ActorDataFlagComponent const&                      synchedActorData,
-    ::PlayerInputRequestComponent&                       playerInputRequest,
-    ::VanillaClientGameplayComponent&                    vanillaClientGameplay,
-    ::PlayerActionComponent&                             playerAction
-);
+MCNAPI void doIntentTick(::Optional<::ItemUseSlowdownModifierComponent const> slowedByItemInUse, ::Optional<::MobIsJumpingFlagComponent const> isJumping, ::Optional<::OnGroundFlagComponent const> const& onGround, ::Optional<::WasInWaterFlagComponent const> const& wasInWater, ::MovementAbilitiesComponent const& abilities, ::MobEffectsComponent const& mobEffects, ::MoveInputComponent const& moveInput, ::PlayerInputModeComponent const& playerInputMode, ::StateVectorComponent const& stateVector, ::ActorDataFlagComponent const& synchedActorData, ::PlayerInputRequestComponent& playerInputRequest, ::VanillaClientGameplayComponent& vanillaClientGameplay, ::PlayerActionComponent& playerAction);
 
-MCNAPI void doSetRequestTick(
-    ::StrictEntityContext const&                  entity,
-    ::Optional<::PassengerComponent const> const& passenger,
-    ::MovementAttributesComponent const&          attributes,
-    ::PlayerInputRequestComponent&                playerInputRequest,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::VehicleComponent,
-        ::ActorDataControllingSeatIndexComponent const,
-        ::Optional<::CanVehicleSprintFlagComponent>> const& vehicleView
-);
+MCNAPI void doSetRequestTick(::StrictEntityContext const& entity, ::Optional<::PassengerComponent const> const& passenger, ::MovementAttributesComponent const& attributes, ::PlayerInputRequestComponent& playerInputRequest, ::ViewT<::StrictEntityContext, ::VehicleComponent, ::ActorDataControllingSeatIndexComponent const, ::Optional<::CanVehicleSprintFlagComponent>> const& vehicleView);
 
-MCNAPI void setSprinting(
-    ::StrictEntityContext const&                   entityContext,
-    ::EntityModifier<::AttributeRequestComponent>& modifier,
-    ::ActorDataFlagComponent&                      actorData,
-    ::ActorDataDirtyFlagsComponent&                dirtyFlags,
-    bool                                           shouldSprint
-);
+MCNAPI void setSprinting(::StrictEntityContext const& entityContext, ::EntityModifier<::AttributeRequestComponent>& modifier, ::ActorDataFlagComponent& actorData, ::ActorDataDirtyFlagsComponent& dirtyFlags, bool shouldSprint);
 // NOLINTEND
 
-} // namespace SprintTriggerSystem
+}

@@ -10,9 +10,11 @@ public:
     // clang-format off
     class NullMutex;
     // clang-format on
-
+    
     // SingleThreaded inner types define
-    class NullMutex {};
+    class NullMutex {
+    };
+    
 };
 
-} // namespace Bedrock::PubSub::ThreadModel
+}

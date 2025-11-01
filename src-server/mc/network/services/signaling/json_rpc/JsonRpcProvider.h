@@ -3,81 +3,97 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/threading/Async.h"
+#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
+class IJsonRpcComponent;
+class ISignalingJsonRpcInterop;
 namespace Json { class Value; }
-namespace NetherNet { struct NetworkID; }
-namespace cereal { struct ReflectionCtx; }
+namespace JsonRpc { class IResultHandler; }
+namespace JsonRpc { class JsonRpcError; }
 // clang-format on
 
 namespace JsonRpc {
 
-class JsonRpcProvider {
+class JsonRpcProvider : public ::std::enable_shared_from_this<::JsonRpc::JsonRpcProvider> {
+public:
+    // JsonRpcProvider inner types declare
+    // clang-format off
+    struct JsonRpcPendingResult;
+    // clang-format on
+    
+    // JsonRpcProvider inner types define
+    struct JsonRpcPendingResult {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk319d42;
+        ::ll::UntypedStorage<8, 16> mUnk16e763;
+        // NOLINTEND
+    
+    public:
+        // prevent constructor by default
+        JsonRpcPendingResult& operator=(JsonRpcPendingResult const&);
+        JsonRpcPendingResult(JsonRpcPendingResult const&);
+        JsonRpcPendingResult();
+    
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~JsonRpcPendingResult();
+        // NOLINTEND
+    
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    
+    };
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk5861b3;
-    ::ll::UntypedStorage<8, 64>  mUnk803b0b;
-    ::ll::UntypedStorage<8, 64>  mUnk43ee0e;
-    ::ll::UntypedStorage<8, 72>  mUnk824719;
+    ::ll::UntypedStorage<8, 8> mUnk5861b3;
+    ::ll::UntypedStorage<8, 64> mUnkee8ec5;
+    ::ll::UntypedStorage<8, 80> mUnk1a0d61;
+    ::ll::UntypedStorage<8, 64> mUnke31280;
     ::ll::UntypedStorage<8, 120> mUnk4502ec;
+    ::ll::UntypedStorage<8, 8> mUnkeb1c6f;
+    ::ll::UntypedStorage<8, 24> mUnk2d6f06;
+    ::ll::UntypedStorage<8, 8> mUnkaeebe0;
+    ::ll::UntypedStorage<8, 16> mUnk63ee1e;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     JsonRpcProvider& operator=(JsonRpcProvider const&);
     JsonRpcProvider(JsonRpcProvider const&);
-
-public:
-    // virtual functions
-    // NOLINTBEGIN
-    // vIndex: 0
-    virtual ~JsonRpcProvider();
-
-    // vIndex: 1
-    virtual ::Bedrock::Threading::Async<::nonstd::expected<::Json::Value, ::Json::Value>>
-    sendJsonRpcTo(::NetherNet::NetworkID, ::std::optional<::std::string> const&, ::std::string const&) const = 0;
-
-    // vIndex: 2
-    virtual ::Bedrock::Threading::Async<::nonstd::expected<::Json::Value, ::Json::Value>>
-    sendJsonRpc(::std::string const&) const = 0;
-
-    // vIndex: 3
-    virtual ::Bedrock::Threading::Async<::nonstd::expected<::Json::Value, ::Json::Value>> sendPing() const = 0;
-
-    // vIndex: 4
-    virtual ::Bedrock::Threading::Async<::nonstd::expected<::Json::Value, ::Json::Value>> sendTurnConfigRequest() = 0;
-
-    // vIndex: 5
-    virtual ::cereal::ReflectionCtx& getReflectionContext() = 0;
-
-    // vIndex: 6
-    virtual ::std::unique_ptr<::std::string, ::std::function<void(::std::string*)>>
-        registerJsonRpcMethod(::std::string, ::std::function<void(::std::string, ::Json::Value const&)>) = 0;
-
-    // vIndex: 7
-    virtual void dispatchJsonRpc(::std::string const&, ::Json::Value const&) = 0;
-
-    // vIndex: 8
-    virtual void
-    handleJsonRpcResult(::std::string id, ::nonstd::expected<::Json::Value, ::Json::Value> const& result) = 0;
-
-    // vIndex: 9
-    virtual void _unregisterJsonRpcMethod(::std::string) = 0;
-    // NOLINTEND
+    JsonRpcProvider();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI JsonRpcProvider();
+    MCNAPI JsonRpcProvider(::std::shared_ptr<::ISignalingJsonRpcInterop> signalingServiceInterop, ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> components);
+
+    MCNAPI void _expirePendingResult(::std::string const& id);
+
+    MCNAPI void dispatchJsonRpc(::std::string const& method, ::Json::Value const& params);
+
+    MCNAPI void handleJsonRpcResult(::std::string const& id, ::Bedrock::Result<::Json::Value, ::JsonRpc::JsonRpcError>&& result);
+
+    MCNAPI void onMessage(::std::string_view incomingMessage);
+
+    MCNAPI ::std::unique_ptr<::std::string, ::std::function<void(::std::string*)>> registerJsonRpcMethod(::std::string method, ::std::unique_ptr<::JsonRpc::IResultHandler> handler);
+
+    MCNAPI ~JsonRpcProvider();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(::std::shared_ptr<::ISignalingJsonRpcInterop> signalingServiceInterop, ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> components);
     // NOLINTEND
 
 public:
@@ -86,17 +102,6 @@ public:
     MCNAPI void $dtor();
     // NOLINTEND
 
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };
 
-} // namespace JsonRpc
+}

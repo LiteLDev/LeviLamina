@@ -18,13 +18,7 @@ struct TintColorComponent;
 namespace SheepAnimationSystemsImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickJebification(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::SheepFlagComponent>>,
-    ::TintColorComponent&              tintColorComponent,
-    ::SynchedActorDataComponent const& synchedActorDataComponent,
-    ::ActorUniqueIDComponent&          actorUniqueIDComponent,
-    ::ActorOwnerComponent&             actorOwnerForTickCountOnly
-);
+MCNAPI void tickJebification(::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::SheepFlagComponent>>, ::TintColorComponent& tintColorComponent, ::SynchedActorDataComponent const& synchedActorDataComponent, ::ActorUniqueIDComponent& actorUniqueIDComponent, ::ActorOwnerComponent& actorOwnerForTickCountOnly);
 // NOLINTEND
 
-} // namespace SheepAnimationSystemsImpl
+}

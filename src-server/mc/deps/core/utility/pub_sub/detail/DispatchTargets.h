@@ -14,9 +14,9 @@ class DispatchTargets {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnkdc642f;
-    ::ll::UntypedStorage<8, 8>   mUnkaf5e3c;
-    ::ll::UntypedStorage<8, 8>   mUnk1bf9fe;
+    ::ll::UntypedStorage<8, 16> mUnkdc642f;
+    ::ll::UntypedStorage<8, 8> mUnkaf5e3c;
+    ::ll::UntypedStorage<8, 8> mUnk1bf9fe;
     ::ll::UntypedStorage<8, 520> mUnk906c03;
     // NOLINTEND
 
@@ -39,6 +39,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::PubSub::Detail
+}

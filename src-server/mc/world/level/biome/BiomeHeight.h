@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mDepth;
     ::ll::TypedStorage<4, 4, float> mScale;
     // NOLINTEND
+
 };

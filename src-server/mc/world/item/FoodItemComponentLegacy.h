@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/string/HashedString.h"
-#include "mc/molang/MolangVersion.h"
+#include "mc/versionless/molang/MolangVersion.h"
 #include "mc/world/effect/EffectDuration.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/IFoodItemComponent.h"
@@ -27,53 +27,54 @@ public:
     // clang-format off
     struct Effect;
     // clang-format on
-
+    
     // FoodItemComponentLegacy inner types define
     enum class OnUseAction : int {
-        None                 = -1,
-        ChorusTeleport       = 0,
+        None = -1,
+        ChorusTeleport = 0,
         SuspiciousStewEffect = 1,
     };
-
+    
     struct Effect {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>              id;
-        ::ll::TypedStorage<8, 32, ::std::string>   name;
-        ::ll::TypedStorage<8, 32, ::std::string>   descriptionId;
+        ::ll::TypedStorage<4, 4, int> id;
+        ::ll::TypedStorage<8, 32, ::std::string> name;
+        ::ll::TypedStorage<8, 32, ::std::string> descriptionId;
         ::ll::TypedStorage<4, 4, ::EffectDuration> duration;
-        ::ll::TypedStorage<4, 4, int>              amplifier;
-        ::ll::TypedStorage<4, 4, float>            chance;
+        ::ll::TypedStorage<4, 4, int> amplifier;
+        ::ll::TypedStorage<4, 4, float> chance;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~Effect();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Item&>                                           mOwner;
-    ::ll::TypedStorage<4, 4, int>                                               mNutrition;
-    ::ll::TypedStorage<4, 4, float>                                             mSaturationModifier;
-    ::ll::TypedStorage<8, 32, ::std::string>                                    mUsingConvertsTo;
-    ::ll::TypedStorage<4, 4, ::FoodItemComponentLegacy::OnUseAction>            mOnUseAction;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                           mOnUseRange;
-    ::ll::TypedStorage<8, 48, ::HashedString>                                   mCooldownCategory;
-    ::ll::TypedStorage<4, 4, int>                                               mCooldownDuration;
-    ::ll::TypedStorage<1, 1, bool>                                              mCanAlwaysEat;
+    ::ll::TypedStorage<8, 8, ::Item&> mOwner;
+    ::ll::TypedStorage<4, 4, int> mNutrition;
+    ::ll::TypedStorage<4, 4, float> mSaturationModifier;
+    ::ll::TypedStorage<8, 32, ::std::string> mUsingConvertsTo;
+    ::ll::TypedStorage<4, 4, ::FoodItemComponentLegacy::OnUseAction> mOnUseAction;
+    ::ll::TypedStorage<4, 12, ::Vec3> mOnUseRange;
+    ::ll::TypedStorage<8, 48, ::HashedString> mCooldownCategory;
+    ::ll::TypedStorage<4, 4, int> mCooldownDuration;
+    ::ll::TypedStorage<1, 1, bool> mCanAlwaysEat;
     ::ll::TypedStorage<8, 24, ::std::vector<::FoodItemComponentLegacy::Effect>> mEffects;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint>>                              mRemoveEffects;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>> mRemoveEffects;
     // NOLINTEND
 
 public:
@@ -101,13 +102,7 @@ public:
     virtual void use(bool& result, ::ItemStack& item, ::Player& player) /*override*/;
 
     // vIndex: 6
-    virtual ::Item const* useTimeDepleted(
-        ::ItemUseMethod& itemUseMethod,
-        ::ItemStack const&,
-        ::ItemStack& instance,
-        ::Player&    player,
-        ::Level&     level
-    ) /*override*/;
+    virtual ::Item const* useTimeDepleted(::ItemUseMethod& itemUseMethod, ::ItemStack const&, ::ItemStack& instance, ::Player& player, ::Level& level) /*override*/;
 
     // vIndex: 0
     virtual ~FoodItemComponentLegacy() /*override*/;
@@ -152,13 +147,7 @@ public:
 
     MCAPI void $use(bool& result, ::ItemStack& item, ::Player& player);
 
-    MCAPI ::Item const* $useTimeDepleted(
-        ::ItemUseMethod& itemUseMethod,
-        ::ItemStack const&,
-        ::ItemStack& instance,
-        ::Player&    player,
-        ::Level&     level
-    );
+    MCAPI ::Item const* $useTimeDepleted(::ItemUseMethod& itemUseMethod, ::ItemStack const&, ::ItemStack& instance, ::Player& player, ::Level& level);
     // NOLINTEND
 
 public:
@@ -166,4 +155,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

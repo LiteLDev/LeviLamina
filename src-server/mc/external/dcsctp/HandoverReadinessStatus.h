@@ -12,6 +12,7 @@ namespace dcsctp { class HandoverReadinessStatusTag; }
 
 namespace dcsctp {
 
-class HandoverReadinessStatus : public ::webrtc::StrongAlias<::dcsctp::HandoverReadinessStatusTag, uint> {};
+class HandoverReadinessStatus : public ::webrtc::StrongAlias<::dcsctp::HandoverReadinessStatusTag, uint> {
+};
 
-} // namespace dcsctp
+}

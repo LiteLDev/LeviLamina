@@ -13,8 +13,9 @@ struct ContainerWeakRefData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Container*>  mContainer;
-    ::ll::TypedStorage<8, 8, ::Actor*>      mActor;
+    ::ll::TypedStorage<8, 8, ::Container*> mContainer;
+    ::ll::TypedStorage<8, 8, ::Actor*> mActor;
     ::ll::TypedStorage<8, 8, ::BlockActor*> mBlockActor;
     // NOLINTEND
+
 };

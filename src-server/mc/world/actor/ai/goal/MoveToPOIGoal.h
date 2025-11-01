@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/versionless/world/phys/AABB.h"
 #include "mc/world/actor/ai/goal/BaseMoveToGoal.h"
 #include "mc/world/actor/ai/village/POIType.h"
-#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,10 +21,10 @@ class MoveToPOIGoal : public ::BaseMoveToGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::POIType>                 mPOIType;
-    ::ll::TypedStorage<4, 24, ::AABB>                   mPOIBoundingBox;
-    ::ll::TypedStorage<1, 1, bool>                      mUsingBoundingBox;
-    ::ll::TypedStorage<1, 1, bool>                      mRequireSameY;
+    ::ll::TypedStorage<4, 4, ::POIType> mPOIType;
+    ::ll::TypedStorage<4, 24, ::AABB> mPOIBoundingBox;
+    ::ll::TypedStorage<1, 1, bool> mUsingBoundingBox;
+    ::ll::TypedStorage<1, 1, bool> mRequireSameY;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
     // NOLINTEND
 
@@ -112,4 +112,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

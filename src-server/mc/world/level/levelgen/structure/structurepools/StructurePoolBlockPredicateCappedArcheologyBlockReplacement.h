@@ -12,8 +12,7 @@ class BlockSource;
 class IRandom;
 // clang-format on
 
-class StructurePoolBlockPredicateCappedArcheologyBlockReplacement
-: public ::StructurePoolBlockPredicateCappedRandomBlockReplacement {
+class StructurePoolBlockPredicateCappedArcheologyBlockReplacement : public ::StructurePoolBlockPredicateCappedRandomBlockReplacement {
 public:
     // member variables
     // NOLINTBEGIN
@@ -57,4 +56,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

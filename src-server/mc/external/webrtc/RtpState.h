@@ -21,6 +21,7 @@ public:
     RtpState& operator=(RtpState const&);
     RtpState(RtpState const&);
     RtpState();
+
 };
 
-} // namespace webrtc
+}

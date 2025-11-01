@@ -17,7 +17,7 @@ class LevelEventListener {
 public:
     // LevelEventListener inner types define
     using EventType = ::LevelNotificationEvent;
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -73,4 +73,5 @@ public:
 
     MCFOLD ::EventResult $onEvent(::LevelNotificationEvent const& event);
     // NOLINTEND
+
 };

@@ -22,4 +22,5 @@ public:
     CodeContext& operator=(CodeContext const&);
     CodeContext(CodeContext const&);
     CodeContext();
+
 };

@@ -25,9 +25,7 @@ public:
     virtual ::Scripting::Result_deprecated<bool> setCurrent(float const& value) const /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::
-        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
-        setCurrentV2(float const& value) const /*override*/;
+    virtual ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError> setCurrentV2(float const& value) const /*override*/;
 
     // vIndex: 10
     virtual ::Scripting::Result_deprecated<void> resetToMinValue() const /*override*/;
@@ -51,8 +49,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
@@ -66,9 +63,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<bool> $setCurrent(float const& value) const;
 
-    MCNAPI ::Scripting::
-        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
-        $setCurrentV2(float const& value) const;
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError> $setCurrentV2(float const& value) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> $resetToMinValue() const;
 
@@ -82,6 +77,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

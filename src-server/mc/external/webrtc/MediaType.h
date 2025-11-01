@@ -5,10 +5,10 @@
 namespace webrtc {
 
 enum class MediaType : int {
-    Any   = 0,
+    Any = 0,
     Audio = 1,
     Video = 2,
-    Data  = 3,
+    Data = 3,
 };
 
 }

@@ -14,19 +14,19 @@ class LootPoolEntry {
 public:
     // LootPoolEntry inner types define
     enum class EntryType : int {
-        LootItem           = 0,
-        EmptyLootItem      = 1,
-        LootTableEntry     = 2,
+        LootItem = 0,
+        EmptyLootItem = 1,
+        LootTableEntry = 2,
         LootTableReference = 3,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk433823;
-    ::ll::UntypedStorage<4, 4>  mUnk950a69;
+    ::ll::UntypedStorage<4, 4> mUnk433823;
+    ::ll::UntypedStorage<4, 4> mUnk950a69;
     ::ll::UntypedStorage<8, 24> mUnkce176b;
-    ::ll::UntypedStorage<8, 8>  mUnkcdf4f9;
+    ::ll::UntypedStorage<8, 8> mUnkcdf4f9;
     // NOLINTEND
 
 public:
@@ -51,8 +51,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootPoolEntry>
-    deserialize(::Json::Value const& entryJson, bool usingUpcomingCreatorFeaturesExperiment);
+    MCNAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(::Json::Value const& entryJson, bool usingUpcomingCreatorFeaturesExperiment);
     // NOLINTEND
 
 public:
@@ -72,4 +71,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

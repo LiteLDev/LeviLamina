@@ -10,9 +10,27 @@ struct UpdateSubChunkNetworkBlockInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>  mPos;
-    ::ll::TypedStorage<4, 4, uint>                     mRuntimeId;
-    ::ll::TypedStorage<1, 1, uchar>                    mUpdateFlags;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
+    ::ll::TypedStorage<4, 4, uint> mRuntimeId;
+    ::ll::TypedStorage<1, 1, uchar> mUpdateFlags;
     ::ll::TypedStorage<8, 16, ::ActorBlockSyncMessage> mSyncMessage;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    UpdateSubChunkNetworkBlockInfo& operator=(UpdateSubChunkNetworkBlockInfo const&);
+    UpdateSubChunkNetworkBlockInfo();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI UpdateSubChunkNetworkBlockInfo(::UpdateSubChunkNetworkBlockInfo const&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::UpdateSubChunkNetworkBlockInfo const&);
+    // NOLINTEND
+
 };

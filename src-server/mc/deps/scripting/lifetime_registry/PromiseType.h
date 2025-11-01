@@ -4,6 +4,7 @@
 
 namespace Scripting {
 
-struct PromiseType {};
+struct PromiseType {
+};
 
-} // namespace Scripting
+}

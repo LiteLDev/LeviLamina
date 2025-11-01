@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/world/level/block/components/BlockAABBComponentData.h"
 
-struct BlockCollisionBoxComponent : public ::BlockAABBComponentData {};
+struct BlockCollisionBoxComponent : public ::BlockAABBComponentData {
+};

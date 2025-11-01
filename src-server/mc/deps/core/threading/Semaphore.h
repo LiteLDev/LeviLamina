@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 72> mUnkaccacd;
     ::ll::UntypedStorage<8, 80> mUnk111c2d;
-    ::ll::UntypedStorage<4, 4>  mUnkf2eecf;
+    ::ll::UntypedStorage<4, 4> mUnkf2eecf;
     // NOLINTEND
 
 public:
@@ -16,4 +16,5 @@ public:
     Semaphore& operator=(Semaphore const&);
     Semaphore(Semaphore const&);
     Semaphore();
+
 };

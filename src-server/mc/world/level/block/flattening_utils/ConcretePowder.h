@@ -13,4 +13,4 @@ namespace FlatteningUtils::ConcretePowder {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-} // namespace FlatteningUtils::ConcretePowder
+}

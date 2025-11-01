@@ -30,7 +30,7 @@ public:
     ::ll::UntypedStorage<8, 40> mUnkb2d680;
     ::ll::UntypedStorage<8, 40> mUnk15671e;
     ::ll::UntypedStorage<8, 40> mUnk9cafa4;
-    ::ll::UntypedStorage<4, 8>  mUnk1e8445;
+    ::ll::UntypedStorage<4, 8> mUnk1e8445;
     ::ll::UntypedStorage<8, 40> mUnk21c436;
     ::ll::UntypedStorage<8, 40> mUnkb63ce6;
     ::ll::UntypedStorage<8, 40> mUnk20e1b5;
@@ -100,6 +100,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

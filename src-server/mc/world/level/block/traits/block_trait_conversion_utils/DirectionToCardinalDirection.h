@@ -17,4 +17,4 @@ MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20U3();
 MCAPI ::BlockTraitConversionUtils::ConvertedSet& R21U6();
 // NOLINTEND
 
-} // namespace BlockTraitConversionUtils::DirectionToCardinalDirection
+}

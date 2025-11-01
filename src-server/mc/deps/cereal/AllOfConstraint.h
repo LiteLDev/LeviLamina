@@ -4,7 +4,8 @@
 
 namespace cereal {
 
-template <int T0>
-class AllOfConstraint {};
+template<typename T0, typename... T1>
+class AllOfConstraint {
+};
 
-} // namespace cereal
+}

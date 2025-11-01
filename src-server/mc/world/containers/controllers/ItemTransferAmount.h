@@ -7,10 +7,10 @@ public:
     // ItemTransferAmount inner types define
     enum class ItemTransferAmountTag : int {
         RequestAmount = 0,
-        TakeType      = 1,
-        PlaceType     = 2,
+        TakeType = 1,
+        PlaceType = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -24,4 +24,5 @@ public:
     ItemTransferAmount& operator=(ItemTransferAmount const&);
     ItemTransferAmount(ItemTransferAmount const&);
     ItemTransferAmount();
+
 };

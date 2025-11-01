@@ -18,4 +18,5 @@ public:
     config_s& operator=(config_s const&);
     config_s(config_s const&);
     config_s();
+
 };

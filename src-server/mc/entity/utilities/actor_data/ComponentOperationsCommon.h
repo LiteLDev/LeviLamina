@@ -4,6 +4,7 @@
 
 namespace ActorData {
 
-struct ComponentOperationsCommon {};
+struct ComponentOperationsCommon {
+};
 
-} // namespace ActorData
+}

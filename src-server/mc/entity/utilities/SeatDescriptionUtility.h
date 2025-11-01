@@ -15,13 +15,7 @@ struct SeatDescriptionUtility {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void setValuesToSynchedActorData(
-        ::ActorDataSeatOffsetComponent& seatOffsetComponent,
-        ::ActorDataDirtyFlagsComponent& dirtyFlagsComponent,
-        ::SynchedActorDataWriter        synchedActorData,
-        ::Vec3 const&                   offset,
-        ::SeatDescription const&        seat,
-        float                           seatRotation
-    );
+    MCNAPI static void setValuesToSynchedActorData(::ActorDataSeatOffsetComponent& seatOffsetComponent, ::ActorDataDirtyFlagsComponent& dirtyFlagsComponent, ::SynchedActorDataWriter synchedActorData, ::Vec3 const& offset, ::SeatDescription const& seat, float seatRotation);
     // NOLINTEND
+
 };

@@ -11,7 +11,7 @@ struct ScoreboardId {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, int64>                 mRawID;
+    ::ll::TypedStorage<8, 8, int64> mRawID;
     ::ll::TypedStorage<8, 8, ::IdentityDefinition*> mIdentityDef;
     // NOLINTEND
 
@@ -20,4 +20,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::ScoreboardId& INVALID();
     // NOLINTEND
+
 };

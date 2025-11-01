@@ -26,8 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&&);
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption& operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption&&);
 
     MCNAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&) const;
     // NOLINTEND
@@ -37,6 +36,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v3_0_0::PackManifestDefinition
+}

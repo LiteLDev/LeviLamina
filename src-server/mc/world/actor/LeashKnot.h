@@ -55,13 +55,7 @@ public:
     virtual bool getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location) /*override*/;
 
     // vIndex: 21
-    virtual void teleportTo(
-        ::Vec3 const& pos,
-        bool          shouldStopRiding,
-        int           cause,
-        int           sourceEntityType,
-        bool          keepVelocity
-    ) /*override*/;
+    virtual void teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity) /*override*/;
 
     // vIndex: 8
     virtual ~LeashKnot() /*override*/ = default;
@@ -92,8 +86,7 @@ public:
 
     MCAPI bool $getInteraction(::Player& player, ::ActorInteraction& interaction, ::Vec3 const& location);
 
-    MCAPI void
-    $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
+    MCAPI void $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
     // NOLINTEND
 
 public:
@@ -101,4 +94,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

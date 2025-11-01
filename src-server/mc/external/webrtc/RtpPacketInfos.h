@@ -18,7 +18,7 @@ public:
     // clang-format off
     class Data;
     // clang-format on
-
+    
     // RtpPacketInfos inner types define
     class Data : public ::rtc::RefCountedNonVirtual<::webrtc::RtpPacketInfos::Data> {
     public:
@@ -26,14 +26,15 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnkc17317;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Data& operator=(Data const&);
         Data(Data const&);
         Data();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -57,6 +58,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

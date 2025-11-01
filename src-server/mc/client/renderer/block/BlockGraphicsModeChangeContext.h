@@ -18,4 +18,5 @@ public:
     BlockGraphicsModeChangeContext& operator=(BlockGraphicsModeChangeContext const&);
     BlockGraphicsModeChangeContext(BlockGraphicsModeChangeContext const&);
     BlockGraphicsModeChangeContext();
+
 };

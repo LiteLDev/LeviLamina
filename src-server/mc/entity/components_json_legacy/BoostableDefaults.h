@@ -10,4 +10,4 @@ MCNAPI float const& MAX_BOOST_TIME();
 MCNAPI float const& SPEED_MODIFIER();
 // NOLINTEND
 
-} // namespace BoostableDefaults
+}

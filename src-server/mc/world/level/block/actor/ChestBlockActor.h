@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/level/block/ChestType.h"
 #include "mc/world/level/block/actor/BlockActorRendererId.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
@@ -35,48 +35,49 @@ public:
     // clang-format off
     class ChestCloser;
     // clang-format on
-
+    
     // ChestBlockActor inner types define
     class ChestCloser {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::ChestBlockActor&> mChest;
-        ::ll::TypedStorage<1, 1, bool>               mIsUsed;
-        ::ll::TypedStorage<8, 8, ::ActorUniqueID>    mActorId;
+        ::ll::TypedStorage<1, 1, bool> mIsUsed;
+        ::ll::TypedStorage<8, 8, ::ActorUniqueID> mActorId;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ChestCloser& operator=(ChestCloser const&);
         ChestCloser(ChestCloser const&);
         ChestCloser();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                                  mSpeed;
-    ::ll::TypedStorage<1, 1, bool>                                   mIsGlobalChest;
-    ::ll::TypedStorage<1, 1, bool>                                   mUsesLegacyBlockDetection;
-    ::ll::TypedStorage<4, 4, float>                                  mObstructionHeight;
-    bool                                                             mPairLead : 1;
-    ::ll::TypedStorage<4, 4, float>                                  mOpenness;
-    ::ll::TypedStorage<4, 4, float>                                  mOldOpenness;
-    ::ll::TypedStorage<1, 1, bool>                                   mIsOpen;
-    ::ll::TypedStorage<4, 4, int>                                    mTickInterval;
-    bool                                                             mPairingChanged   : 1;
-    bool                                                             mAlongX           : 1;
-    bool                                                             mDeferredPairLoad : 1;
-    bool                                                             mConverted        : 1;
-    ::ll::TypedStorage<4, 4, int>                                    mDeferredPairX;
-    ::ll::TypedStorage<4, 4, int>                                    mDeferredPairZ;
-    ::ll::TypedStorage<8, 8, ::ChestBlockActor*>                     mLargeChestPaired;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                            mLargeChestPairedPosition;
-    ::ll::TypedStorage<1, 2, ::std::optional<::ChestType>>           mChestType;
-    ::ll::TypedStorage<1, 1, bool>                                   mIsFindable;
+    ::ll::TypedStorage<4, 4, float> mSpeed;
+    ::ll::TypedStorage<1, 1, bool> mIsGlobalChest;
+    ::ll::TypedStorage<1, 1, bool> mUsesLegacyBlockDetection;
+    ::ll::TypedStorage<4, 4, float> mObstructionHeight;
+    bool mPairLead : 1;
+    ::ll::TypedStorage<4, 4, float> mOpenness;
+    ::ll::TypedStorage<4, 4, float> mOldOpenness;
+    ::ll::TypedStorage<1, 1, bool> mIsOpen;
+    ::ll::TypedStorage<4, 4, int> mTickInterval;
+    bool mPairingChanged : 1;
+    bool mAlongX : 1;
+    bool mDeferredPairLoad : 1;
+    bool mConverted : 1;
+    ::ll::TypedStorage<4, 4, int> mDeferredPairX;
+    ::ll::TypedStorage<4, 4, int> mDeferredPairZ;
+    ::ll::TypedStorage<8, 8, ::ChestBlockActor*> mLargeChestPaired;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mLargeChestPairedPosition;
+    ::ll::TypedStorage<1, 2, ::std::optional<::ChestType>> mChestType;
+    ::ll::TypedStorage<1, 1, bool> mIsFindable;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>> mOpenedByIds;
-    ::ll::TypedStorage<4, 4, int>                                    mUpdateFlags;
+    ::ll::TypedStorage<4, 4, int> mUpdateFlags;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ChestBlockActor::ChestCloser>>> mChestClosers;
     // NOLINTEND
 
@@ -109,19 +110,15 @@ public:
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual void loadItems(::CompoundTag const& base, ::ILevel& level);
 
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 46
     virtual bool saveItems(::CompoundTag& base, ::SaveContext const& saveContext) const;
 
     // vIndex: 2
@@ -169,7 +166,7 @@ public:
     // vIndex: 11
     virtual void onPlace(::BlockSource& region) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 47
     virtual void openBy(::Player& p);
 
     // vIndex: 34
@@ -182,11 +179,7 @@ public:
     virtual bool canPullOutItem(int, int, ::ItemStack const&) const /*override*/;
 
     // vIndex: 23
-    virtual void getDebugText(
-        ::std::vector<::std::string>& outputInfo,
-        ::BlockPos const&             debugPos,
-        ::BlockSource const*          region
-    ) const /*override*/;
+    virtual void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos, ::BlockSource const* region) const /*override*/;
 
     // vIndex: 3
     virtual void addContentChangeListener(::ContainerContentChangeListener* listener) /*override*/;
@@ -197,37 +190,32 @@ public:
     // vIndex: 41
     virtual void initializeContainerContents(::BlockSource& region) /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual bool _canOpenThis(::BlockSource& region) const;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual ::AABB getObstructionAABB() const;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual bool _detectEntityObstruction(::BlockSource& region) const;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual ::SharedTypes::Legacy::LevelSoundEvent getOpenSound() const;
 
-    // vIndex: 51
+    // vIndex: 52
     virtual ::SharedTypes::Legacy::LevelSoundEvent getCloseSound() const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChestBlockActor(
-        ::BlockActorType             type,
-        ::BlockActorRendererId       renderId,
-        ::std::optional<::ChestType> chestType,
-        ::BlockPos const&            pos
-    );
+    MCAPI ChestBlockActor(::BlockActorType type, ::BlockActorRendererId renderId, ::std::optional<::ChestType> chestType, ::BlockPos const& pos);
 
     MCAPI void _closeChest(::BlockSource& region, ::Actor* actor);
 
@@ -251,8 +239,6 @@ public:
 
     MCAPI ::std::weak_ptr<::ChestBlockActor::ChestCloser> getChestCloser(::Actor& closingActor);
 
-    MCAPI void pairWithLeadChest(::ChestBlockActor* leadChest, ::BlockSource& region);
-
     MCAPI void playCloseSound(::BlockSource& region);
 
     MCAPI void playOpenSound(::BlockSource& region);
@@ -265,12 +251,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BlockActorType             type,
-        ::BlockActorRendererId       renderId,
-        ::std::optional<::ChestType> chestType,
-        ::BlockPos const&            pos
-    );
+    MCAPI void* $ctor(::BlockActorType type, ::BlockActorRendererId renderId, ::std::optional<::ChestType> chestType, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -294,11 +275,7 @@ public:
 
     MCFOLD void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
-    MCAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
+    MCAPI void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCAPI void $loadItems(::CompoundTag const& base, ::ILevel& level);
 
@@ -344,11 +321,7 @@ public:
 
     MCFOLD bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
-    MCAPI void $getDebugText(
-        ::std::vector<::std::string>& outputInfo,
-        ::BlockPos const&             debugPos,
-        ::BlockSource const*          region
-    ) const;
+    MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos, ::BlockSource const* region) const;
 
     MCAPI void $addContentChangeListener(::ContainerContentChangeListener* listener);
 
@@ -378,4 +351,5 @@ public:
 
     MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
+
 };

@@ -19,6 +19,7 @@ public:
     TextureAtlasTileUVs& operator=(TextureAtlasTileUVs const&);
     TextureAtlasTileUVs(TextureAtlasTileUVs const&);
     TextureAtlasTileUVs();
+
 };
 
-} // namespace cg
+}

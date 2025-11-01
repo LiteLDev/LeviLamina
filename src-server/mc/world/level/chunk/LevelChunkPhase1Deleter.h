@@ -13,4 +13,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void operator()(::LevelChunk* lc);
     // NOLINTEND
+
 };

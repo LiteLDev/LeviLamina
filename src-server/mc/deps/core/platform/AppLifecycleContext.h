@@ -17,4 +17,5 @@ public:
     AppLifecycleContext& operator=(AppLifecycleContext const&);
     AppLifecycleContext(AppLifecycleContext const&);
     AppLifecycleContext();
+
 };

@@ -17,12 +17,14 @@ class NetworkItemInstanceDescriptor : public ::ItemDescriptorCount {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>           mBlockRuntimeId;
+    ::ll::TypedStorage<4, 4, uint> mBlockRuntimeId;
     ::ll::TypedStorage<8, 32, ::std::string> mUserDataBuffer;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    NetworkItemInstanceDescriptor& operator=(NetworkItemInstanceDescriptor const&);
+    NetworkItemInstanceDescriptor(NetworkItemInstanceDescriptor const&);
     NetworkItemInstanceDescriptor();
 
 public:
@@ -35,6 +37,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NetworkItemInstanceDescriptor(::NetworkItemInstanceDescriptor&&);
+
     MCAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
 
     MCAPI ::ItemInstance getItemInstance(::BlockPalette const& blockPalette) const;
@@ -45,6 +49,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCAPI void* $ctor(::NetworkItemInstanceDescriptor&&);
+
     MCAPI void* $ctor(::ItemInstance const& item);
     // NOLINTEND
 
@@ -59,4 +65,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

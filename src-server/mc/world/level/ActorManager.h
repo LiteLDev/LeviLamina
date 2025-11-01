@@ -30,14 +30,14 @@ class ActorManager : public ::IActorManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnkdbad9c;
-    ::ll::UntypedStorage<8, 8>   mUnk2cdcd8;
-    ::ll::UntypedStorage<8, 24>  mUnkea18e6;
+    ::ll::UntypedStorage<8, 24> mUnkdbad9c;
+    ::ll::UntypedStorage<8, 8> mUnk2cdcd8;
+    ::ll::UntypedStorage<8, 24> mUnkea18e6;
     ::ll::UntypedStorage<8, 128> mUnk9f3dde;
     ::ll::UntypedStorage<8, 128> mUnkf0ea9f;
     ::ll::UntypedStorage<8, 128> mUnkb48e44;
-    ::ll::UntypedStorage<1, 1>   mUnk583438;
-    ::ll::UntypedStorage<8, 16>  mUnkfd3a24;
+    ::ll::UntypedStorage<1, 1> mUnk583438;
+    ::ll::UntypedStorage<8, 16> mUnkfd3a24;
     // NOLINTEND
 
 public:
@@ -56,39 +56,26 @@ public:
     virtual ::Bedrock::PubSub::Connector<void(::Actor&)>& getRegisterEntityAddedConnector() /*override*/;
 
     // vIndex: 1
-    virtual ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
-    getRegisterPostReloadActorConnector() /*override*/;
+    virtual ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>& getRegisterPostReloadActorConnector() /*override*/;
 
     // vIndex: 2
-    virtual ::Bedrock::PubSub::Connector<void(::Actor&)>&
-    getRegisterOnRemoveActorEntityReferenceConnector() /*override*/;
+    virtual ::Bedrock::PubSub::Connector<void(::Actor&)>& getRegisterOnRemoveActorEntityReferenceConnector() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorManager(
-        ::std::unique_ptr<::IActorManagerProxy>                actorManagerProxy,
-        ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> actorGarbageCollector
-    );
+    MCNAPI ActorManager(::std::unique_ptr<::IActorManagerProxy> actorManagerProxy, ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> actorGarbageCollector);
 
     MCNAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
 
-    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
-    addActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError> addActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
 
-    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
-    addActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError> addActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
 
-    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError> addActorEntity(
-        ::Dimension&                dimension,
-        ::ActorUniqueID             actorUniqueID,
-        ::ActorRuntimeID            actorRuntimeID,
-        ::OwnerPtr<::EntityContext> entity
-    );
+    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError> addActorEntity(::Dimension& dimension, ::ActorUniqueID actorUniqueID, ::ActorRuntimeID actorRuntimeID, ::OwnerPtr<::EntityContext> entity);
 
-    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
-    addGlobalActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError> addGlobalActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
 
     MCNAPI void cleanupActorEntityReferencesGarbageCollect(::OwnerPtr<::EntityContext> entity);
 
@@ -112,10 +99,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::unique_ptr<::IActorManagerProxy>                actorManagerProxy,
-        ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> actorGarbageCollector
-    );
+    MCNAPI void* $ctor(::std::unique_ptr<::IActorManagerProxy> actorManagerProxy, ::Bedrock::NotNullNonOwnerPtr<::ActorGarbageCollector> actorGarbageCollector);
     // NOLINTEND
 
 public:
@@ -129,8 +113,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterEntityAddedConnector();
 
-    MCNAPI ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>&
-    $getRegisterPostReloadActorConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::Actor&, ::ActorInitializationMethod)>& $getRegisterPostReloadActorConnector();
 
     MCNAPI ::Bedrock::PubSub::Connector<void(::Actor&)>& $getRegisterOnRemoveActorEntityReferenceConnector();
     // NOLINTEND
@@ -140,4 +123,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

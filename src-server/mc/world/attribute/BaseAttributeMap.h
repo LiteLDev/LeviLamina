@@ -15,11 +15,15 @@ struct MutableAttributeWithContext;
 
 class BaseAttributeMap {
 public:
+    // BaseAttributeMap inner types define
+    using UnderlyingMapContainer = ::std::unordered_map<uint, ::AttributeInstance>;
+    
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::AttributeInstance>>         mInstanceMap;
-    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeInstanceHandle>>                mDirtyAttributes;
-    ::ll::TypedStorage<8, 8, void (::BaseAttributeMap::*)(::AttributeInstance const&)> mOnAttributeModified;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::AttributeInstance>> mInstanceMap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AttributeInstanceHandle>> mDirtyAttributes;
+    ::ll::TypedStorage<8, 8, void(::BaseAttributeMap::*) (::AttributeInstance const&)> mOnAttributeModified;
     // NOLINTEND
 
 public:
@@ -51,11 +55,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void updateAttribute(
-        ::AttributeData const&          attributeData,
-        ::AttributeInstance&            attributeInstance,
-        ::AttributeModificationContext& context
-    );
+    MCAPI static void updateAttribute(::AttributeData const& attributeData, ::AttributeInstance& attributeInstance, ::AttributeModificationContext& context);
     // NOLINTEND
 
 public:
@@ -73,4 +73,5 @@ public:
 
     MCAPI static ::AttributeInstance& mInvalidInstance();
     // NOLINTEND
+
 };

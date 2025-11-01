@@ -33,19 +33,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::cricket::TransportDescription> CreateAnswer(
-        ::cricket::TransportDescription const* offer,
-        ::cricket::TransportOptions const&     options,
-        bool                                   require_transport_attributes,
-        ::cricket::TransportDescription const* current_description,
-        ::cricket::IceCredentialsIterator*     ice_credentials
-    ) const;
+    MCNAPI ::std::unique_ptr<::cricket::TransportDescription> CreateAnswer(::cricket::TransportDescription const* offer, ::cricket::TransportOptions const& options, bool require_transport_attributes, ::cricket::TransportDescription const* current_description, ::cricket::IceCredentialsIterator* ice_credentials) const;
 
-    MCNAPI ::std::unique_ptr<::cricket::TransportDescription> CreateOffer(
-        ::cricket::TransportOptions const&     options,
-        ::cricket::TransportDescription const* current_description,
-        ::cricket::IceCredentialsIterator*     ice_credentials
-    ) const;
+    MCNAPI ::std::unique_ptr<::cricket::TransportDescription> CreateOffer(::cricket::TransportOptions const& options, ::cricket::TransportDescription const* current_description, ::cricket::IceCredentialsIterator* ice_credentials) const;
 
     MCNAPI bool SetSecurityInfo(::cricket::TransportDescription* desc, ::cricket::ConnectionRole role) const;
 
@@ -65,6 +55,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

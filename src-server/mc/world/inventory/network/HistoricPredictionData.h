@@ -9,7 +9,8 @@ struct HistoricPredictionData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>           slot;
+    ::ll::TypedStorage<4, 4, int> slot;
     ::ll::TypedStorage<8, 152, ::ItemStack> item;
     // NOLINTEND
+
 };

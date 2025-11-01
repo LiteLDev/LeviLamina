@@ -12,4 +12,4 @@ MCNAPI long StdExceptionToResult(::std::exception const& e, char const* file, ui
 MCNAPI long UnknownExceptionToResult(char const* file, uint line);
 // NOLINTEND
 
-} // namespace xbox::httpclient::detail
+}

@@ -17,8 +17,7 @@ namespace JsonUtil::details {
 // NOLINTBEGIN
 MCNAPI ::Block const* _getBlockDefaultState(::std::string const& blockTypeName);
 
-MCNAPI ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::JsonUtil::details::BlockReference>>
-_getOrMakeBlockReferenceSchema();
+MCNAPI ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::JsonUtil::details::BlockReference>> _getOrMakeBlockReferenceSchema();
 // NOLINTEND
 
-} // namespace JsonUtil::details
+}

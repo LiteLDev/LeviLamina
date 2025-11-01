@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::CompoundTag> mBinaryPayload;
-    ::ll::TypedStorage<1, 1, bool>           mRouteToManager;
+    ::ll::TypedStorage<1, 1, bool> mRouteToManager;
     // NOLINTEND
 
 public:
@@ -32,4 +32,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

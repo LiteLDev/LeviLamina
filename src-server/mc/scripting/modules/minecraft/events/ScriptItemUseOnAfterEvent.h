@@ -26,7 +26,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mSource;
-    ::ll::TypedStorage<1, 1, bool>    mIsFirstEvent;
+    ::ll::TypedStorage<1, 1, bool> mIsFirstEvent;
     ::ll::TypedStorage<4, 12, ::Vec3> mBlockPositionV010;
     // NOLINTEND
 
@@ -38,20 +38,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemUseOnAfterEvent(
-        ::ItemUseOnEvent const&                                                        itemEvent,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Player const&                                                                player,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
+    MCAPI ScriptItemUseOnAfterEvent(::ItemUseOnEvent const& itemEvent, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
 
     MCAPI ::Scripting::Result_deprecated<::BlockPos> getBlockLocation_V010() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent& operator=(::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent const&);
+    MCAPI ::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent& operator=(::ScriptModuleMinecraft::ScriptItemUseOnAfterEvent const&);
     // NOLINTEND
 
 public:
@@ -65,13 +58,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ItemUseOnEvent const&                                                        itemEvent,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Player const&                                                                player,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
+    MCAPI void* $ctor(::ItemUseOnEvent const& itemEvent, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

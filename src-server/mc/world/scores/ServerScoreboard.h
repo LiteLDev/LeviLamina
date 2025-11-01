@@ -35,21 +35,22 @@ public:
     // clang-format off
     struct unit_test_ctor_t;
     // clang-format on
-
+    
     // ServerScoreboard inner types define
-    struct unit_test_ctor_t {};
-
+    struct unit_test_ctor_t {
+    };
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BasicTimer>>                             mSaveTimer;
-    ::ll::TypedStorage<8, 8, ::LevelStorage*>                                             mLevelStorage;
-    ::ll::TypedStorage<1, 1, bool>                                                        mIsDirty;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BasicTimer>> mSaveTimer;
+    ::ll::TypedStorage<8, 8, ::LevelStorage*> mLevelStorage;
+    ::ll::TypedStorage<1, 1, bool> mIsDirty;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> const> mGameplayUserManager;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Objective const*>>                          mTrackedObjectives;
-    ::ll::TypedStorage<8, 8, ::PacketSender*>                                             mPacketSender;
-    ::ll::TypedStorage<8, 16, ::ScoreboardId>                                             mLastUniqueSBID;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                            mOnSaveSubscription;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Objective const*>> mTrackedObjectives;
+    ::ll::TypedStorage<8, 8, ::PacketSender*> mPacketSender;
+    ::ll::TypedStorage<8, 16, ::ScoreboardId> mLastUniqueSBID;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnSaveSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnLevelStorageManagerStartLeaveGameSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnRemoveActorEntityReferencesSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserRemovedSubscription;
@@ -81,11 +82,7 @@ public:
     virtual void setPacketSender(::PacketSender* sender) /*override*/;
 
     // vIndex: 1
-    virtual ::DisplayObjective const* setDisplayObjective(
-        ::std::string const&       displaySlotName,
-        ::Objective const&         objective,
-        ::ObjectiveSortOrder const order
-    ) /*override*/;
+    virtual ::DisplayObjective const* setDisplayObjective(::std::string const& displaySlotName, ::Objective const& objective, ::ObjectiveSortOrder const order) /*override*/;
 
     // vIndex: 2
     virtual ::Objective* clearDisplayObjective(::std::string const& displaySlotName) /*override*/;
@@ -118,14 +115,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerScoreboard(
-        ::CommandSoftEnumRegistry                            registry,
-        ::LevelStorage*                                      levelStorage,
-        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager
-    );
+    MCAPI ServerScoreboard(::CommandSoftEnumRegistry registry, ::LevelStorage* levelStorage, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
 
-    MCAPI void
-    _clearAllScoreTagsForObjective(::std::string const& displaySlotName, ::DisplayObjective const& displayObjective);
+    MCAPI void _clearAllScoreTagsForObjective(::std::string const& displaySlotName, ::DisplayObjective const& displayObjective);
 
     MCAPI void _clearScoreTag(::ScoreboardId const& scoreboardId);
 
@@ -135,21 +127,15 @@ public:
 
     MCAPI void _onSaveEvent(::LevelStorage&);
 
-    MCAPI ::ScorePacketInfo _unpackIdentityDefToScorePacket(
-        ::ScoreboardIdentityRef const& identityDef,
-        ::std::string const&           objName,
-        int                            score
-    );
+    MCAPI ::ScorePacketInfo _unpackIdentityDefToScorePacket(::ScoreboardIdentityRef const& identityDef, ::std::string const& objName, int score);
 
-    MCAPI void
-    _updateAllScoreTagsForObjective(::std::string const& displaySlotName, ::DisplayObjective const& displayObjective);
+    MCAPI void _updateAllScoreTagsForObjective(::std::string const& displaySlotName, ::DisplayObjective const& displayObjective);
 
     MCAPI void _updateScoreTag(::ScoreboardId const& scoreboardId, bool assertOnFakePlayer);
 
     MCAPI void deserialize(::std::unique_ptr<::CompoundTag> root);
 
-    MCAPI void
-    initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+    MCAPI void initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
     MCAPI void intializeWithActorManager(::IActorManagerConnector& actorManagerConnector);
 
@@ -159,11 +145,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::CommandSoftEnumRegistry                            registry,
-        ::LevelStorage*                                      levelStorage,
-        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager
-    );
+    MCAPI void* $ctor(::CommandSoftEnumRegistry registry, ::LevelStorage* levelStorage, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
     // NOLINTEND
 
 public:
@@ -185,11 +167,7 @@ public:
 
     MCAPI void $setPacketSender(::PacketSender* sender);
 
-    MCAPI ::DisplayObjective const* $setDisplayObjective(
-        ::std::string const&       displaySlotName,
-        ::Objective const&         objective,
-        ::ObjectiveSortOrder const order
-    );
+    MCAPI ::DisplayObjective const* $setDisplayObjective(::std::string const& displaySlotName, ::Objective const& objective, ::ObjectiveSortOrder const order);
 
     MCAPI ::Objective* $clearDisplayObjective(::std::string const& displaySlotName);
 
@@ -215,4 +193,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

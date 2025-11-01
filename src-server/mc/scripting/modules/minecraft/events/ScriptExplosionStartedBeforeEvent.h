@@ -24,9 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setImpactedBlocks(
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>> const& blocks
-    );
+    MCAPI void setImpactedBlocks(::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>> const& blocks);
     // NOLINTEND
 
 public:
@@ -34,6 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

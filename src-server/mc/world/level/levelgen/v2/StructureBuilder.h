@@ -4,7 +4,8 @@
 
 namespace br::worldgen {
 
-template <typename T0>
-class StructureBuilder {};
+template<typename T0>
+class StructureBuilder {
+};
 
-} // namespace br::worldgen
+}

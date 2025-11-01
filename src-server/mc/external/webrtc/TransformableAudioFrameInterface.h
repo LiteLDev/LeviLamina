@@ -11,11 +11,11 @@ class TransformableAudioFrameInterface : public ::webrtc::TransformableFrameInte
 public:
     // TransformableAudioFrameInterface inner types define
     enum class FrameType : int {
-        KEmptyFrame       = 0,
+        KEmptyFrame = 0,
         KAudioFrameSpeech = 1,
-        KAudioFrameCN     = 2,
+        KAudioFrameCN = 2,
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -40,6 +40,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

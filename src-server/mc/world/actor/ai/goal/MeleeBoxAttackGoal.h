@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class AABB;
 class Actor;
 class Mob;
 // clang-format on
@@ -33,12 +32,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::AABB _getTargetHitBox(::Actor const& target) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
     MCFOLD static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
@@ -57,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

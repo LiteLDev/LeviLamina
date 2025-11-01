@@ -16,10 +16,10 @@ struct ActorDefinitionIdentifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>  mNamespace;
-    ::ll::TypedStorage<8, 32, ::std::string>  mIdentifier;
-    ::ll::TypedStorage<8, 32, ::std::string>  mInitEvent;
-    ::ll::TypedStorage<8, 32, ::std::string>  mFullName;
+    ::ll::TypedStorage<8, 32, ::std::string> mNamespace;
+    ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
+    ::ll::TypedStorage<8, 32, ::std::string> mInitEvent;
+    ::ll::TypedStorage<8, 32, ::std::string> mFullName;
     ::ll::TypedStorage<8, 48, ::HashedString> mCanonicalName;
     // NOLINTEND
 
@@ -50,11 +50,7 @@ public:
 
     MCAPI bool operator==(::ActorDefinitionIdentifier const& other) const;
 
-    MCAPI void setter(
-        ::std::string const&               str,
-        ::BedrockLoadContext               context,
-        ::cereal::SerializerContext const& serializerContext
-    );
+    MCAPI void setter(::std::string const& str, ::BedrockLoadContext context, ::cereal::SerializerContext const& serializerContext);
 
     MCAPI ~ActorDefinitionIdentifier();
     // NOLINTEND
@@ -90,4 +86,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

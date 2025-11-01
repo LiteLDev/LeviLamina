@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnkdcbc69;
     ::ll::UntypedStorage<4, 12> mUnk144395;
-    ::ll::UntypedStorage<4, 4>  mUnk2a25a2;
+    ::ll::UntypedStorage<4, 4> mUnk2a25a2;
     // NOLINTEND
 
 public:
@@ -29,6 +29,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace gametest
+}

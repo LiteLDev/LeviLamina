@@ -14,7 +14,7 @@ class BlockBreakSensorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke74226;
+    ::ll::UntypedStorage<4, 4> mUnke74226;
     ::ll::UntypedStorage<8, 24> mUnk71c6a4;
     ::ll::UntypedStorage<8, 24> mUnk60d9dd;
     // NOLINTEND
@@ -34,9 +34,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockBreakSensorDefinition>>& root
-    );
+    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockBreakSensorDefinition>>& root);
     // NOLINTEND
 
 public:
@@ -44,4 +42,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

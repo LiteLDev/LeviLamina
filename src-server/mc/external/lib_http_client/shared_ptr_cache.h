@@ -4,6 +4,7 @@
 
 namespace xbox::httpclient {
 
-class shared_ptr_cache {};
+class shared_ptr_cache {
+};
 
-} // namespace xbox::httpclient
+}

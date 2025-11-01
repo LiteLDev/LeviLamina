@@ -13,8 +13,9 @@ struct BlockItemVisualComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockGeometryComponent>>          mGeometryComponent;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockGeometryComponent>> mGeometryComponent;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockMaterialInstancesComponent>> mMaterialInstanceComponent;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockBakedMaterialDataComponent>> mBakedBlockMaterialData;
     // NOLINTEND
+
 };

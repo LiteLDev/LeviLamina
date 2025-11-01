@@ -25,6 +25,7 @@ public:
 
     MCNAPI bool operator==(::ScriptDebuggerMessages::PluginDetails const&) const;
     // NOLINTEND
+
 };
 
-} // namespace ScriptDebuggerMessages
+}

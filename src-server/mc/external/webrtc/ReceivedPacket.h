@@ -18,6 +18,7 @@ public:
     ReceivedPacket& operator=(ReceivedPacket const&);
     ReceivedPacket(ReceivedPacket const&);
     ReceivedPacket();
+
 };
 
-} // namespace webrtc
+}

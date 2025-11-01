@@ -18,16 +18,16 @@ public:
     virtual ~BarrierBlock() /*override*/ = default;
 
     // vIndex: 24
-    virtual bool canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const /*override*/;
+    virtual bool canConnect(::Block const&, uchar, ::Block const&) const /*override*/;
 
-    // vIndex: 116
+    // vIndex: 115
     virtual float getShadeBrightness(::Block const& block) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
+    MCFOLD bool $canConnect(::Block const&, uchar, ::Block const&) const;
 
     MCFOLD float $getShadeBrightness(::Block const& block) const;
     // NOLINTEND
@@ -37,4 +37,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-class StreamPriorityTag {};
+class StreamPriorityTag {
+};
 
-} // namespace dcsctp
+}

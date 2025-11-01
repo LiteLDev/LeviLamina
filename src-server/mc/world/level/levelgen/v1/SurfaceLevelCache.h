@@ -10,10 +10,10 @@ class SurfaceLevelCache : public ::IPreliminarySurfaceProvider {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>                               mBufferSizeXZ;
-    ::ll::TypedStorage<4, 8, ::DividedPos2d<4> const>              mMinPos;
+    ::ll::TypedStorage<8, 8, uint64> mBufferSizeXZ;
+    ::ll::TypedStorage<4, 8, ::DividedPos2d<4> const> mMinPos;
     ::ll::TypedStorage<8, 8, ::IPreliminarySurfaceProvider const&> mPreliminarySurfaceProvider;
-    ::ll::TypedStorage<8, 24, ::std::vector<short>>                mSurfaceLevelBuffer;
+    ::ll::TypedStorage<8, 24, ::std::vector<short>> mSurfaceLevelBuffer;
     // NOLINTEND
 
 public:
@@ -33,26 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SurfaceLevelCache(
-        ::DividedPos2d<4>                    startPos,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider,
-        uint64                               bufferSizeXZ
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::DividedPos2d<4>                    startPos,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider,
-        uint64                               bufferSizeXZ
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
@@ -69,4 +49,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

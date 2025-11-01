@@ -12,8 +12,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 152> mUnk2f2909;
-    ::ll::UntypedStorage<4, 4>   mUnk9a64b6;
-    ::ll::UntypedStorage<1, 1>   mUnk2bf38a;
+    ::ll::UntypedStorage<4, 4> mUnk9a64b6;
+    ::ll::UntypedStorage<1, 1> mUnk2bf38a;
     // NOLINTEND
 
 public:
@@ -48,6 +48,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace AgentCommands
+}

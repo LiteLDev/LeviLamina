@@ -16,7 +16,7 @@ class EnderEyeItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 76
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 20
@@ -45,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnkdbefcc;
-    ::ll::UntypedStorage<4, 8>  mUnk734c64;
+    ::ll::UntypedStorage<4, 8> mUnk734c64;
     // NOLINTEND
 
 public:
@@ -34,6 +34,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_100
+}

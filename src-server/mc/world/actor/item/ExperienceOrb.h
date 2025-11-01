@@ -26,20 +26,20 @@ class ExperienceOrb : public ::Actor {
 public:
     // ExperienceOrb inner types define
     enum class DropType : uchar {
-        NoType     = 0,
-        FromBlock  = 1,
-        FromMob    = 2,
+        NoType = 0,
+        FromBlock = 1,
+        FromMob = 2,
         FromPlayer = 3,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mFollowingPlayer;
-    ::ll::TypedStorage<4, 4, int>             mFollowingTime;
-    ::ll::TypedStorage<4, 4, int>             mAge;
-    ::ll::TypedStorage<4, 4, int>             mHealth;
-    ::ll::TypedStorage<4, 4, int>             mRandomPickupValue;
+    ::ll::TypedStorage<4, 4, int> mFollowingTime;
+    ::ll::TypedStorage<4, 4, int> mAge;
+    ::ll::TypedStorage<4, 4, int> mHealth;
+    ::ll::TypedStorage<4, 4, int> mRandomPickupValue;
     // NOLINTEND
 
 public:
@@ -80,11 +80,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExperienceOrb(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI ExperienceOrb(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCAPI void _handleMending(::Player& player);
 
@@ -102,23 +98,13 @@ public:
 
     MCAPI static bool _tryMergeIntoExistingOrbs(::BlockSource& region, ::Vec3 const& pos, int xpValue);
 
-    MCAPI static void spawnOrbs(
-        ::BlockSource&            region,
-        ::Vec3 const&             pos,
-        int                       xpValue,
-        ::ExperienceOrb::DropType dropType,
-        ::Player*                 owner
-    );
+    MCAPI static void spawnOrbs(::BlockSource& region, ::Vec3 const& pos, int xpValue, ::ExperienceOrb::DropType dropType, ::Player* owner);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -146,4 +132,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

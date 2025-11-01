@@ -42,4 +42,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
     // NOLINTEND
+
 };

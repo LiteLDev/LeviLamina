@@ -18,18 +18,17 @@ class EmptyMapItem : public ::ComplexItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 76
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 111
+    // vIndex: 112
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    // vIndex: 89
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
-        /*override*/;
+    // vIndex: 90
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const /*override*/;
 
     // vIndex: 0
     virtual ~EmptyMapItem() /*override*/ = default;
@@ -60,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

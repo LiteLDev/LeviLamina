@@ -29,4 +29,5 @@ public:
 
     MCNAPI void tryInitPropertiesOnActor(::Actor& actor) const;
     // NOLINTEND
+
 };

@@ -24,19 +24,19 @@ public:
     enum class BindState : int {
         Unbound = 0,
         Binding = 1,
-        Bound   = 2,
+        Bound = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk867c01;
-    ::ll::UntypedStorage<8, 8>  mUnk66a73a;
-    ::ll::UntypedStorage<4, 4>  mUnk9f1139;
+    ::ll::UntypedStorage<8, 8> mUnk66a73a;
+    ::ll::UntypedStorage<4, 4> mUnk9f1139;
     ::ll::UntypedStorage<8, 80> mUnk671904;
-    ::ll::UntypedStorage<4, 4>  mUnkae7e22;
+    ::ll::UntypedStorage<4, 4> mUnkae7e22;
     ::ll::UntypedStorage<8, 24> mUnkdb6095;
-    ::ll::UntypedStorage<8, 8>  mUnkf7eaf5;
+    ::ll::UntypedStorage<8, 8> mUnkf7eaf5;
     // NOLINTEND
 
 public:
@@ -97,6 +97,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

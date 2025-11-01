@@ -26,38 +26,19 @@ namespace RepositoryLoading { struct PackModifications; }
 namespace RepositoryLoading {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Bedrock::Threading::Async<void>
-initialize(::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData> taskData);
+MCNAPI ::Bedrock::Threading::Async<void> initialize(::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData> taskData);
 
-MCNAPI ::Bedrock::Threading::Async<::PackSourceLoadResult> loadAndUpgradePacks(
-    ::PackSource&                        packSource,
-    ::IPackManifestFactory&              manifestFactory,
-    ::IContentKeyProvider const&         keyProvider,
-    ::PackCommand::IPackCommandPipeline& commands
-);
+MCNAPI ::Bedrock::Threading::Async<::PackSourceLoadResult> loadAndUpgradePacks(::PackSource& packSource, ::IPackManifestFactory& manifestFactory, ::IContentKeyProvider const& keyProvider, ::PackCommand::IPackCommandPipeline& commands);
 
-MCNAPI ::Bedrock::Threading::Async<::RepositoryLoading::PackModifications>
-loadPacks(::TaskGroup& taskGroup, ::RepositoryLoading::LoadTaskData& data);
+MCNAPI ::Bedrock::Threading::Async<::RepositoryLoading::PackModifications> loadPacks(::TaskGroup& taskGroup, ::RepositoryLoading::LoadTaskData& data);
 
-MCNAPI void processReportErrors(
-    ::std::vector<::RepositoryLoading::PackModifications::ReportError> const& errors,
-    ::InvalidPacks&                                                           invalid
-);
+MCNAPI void processReportErrors(::std::vector<::RepositoryLoading::PackModifications::ReportError> const& errors, ::InvalidPacks& invalid);
 
-MCNAPI ::Bedrock::Threading::Async<void>
-refreshPacks(::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData> taskData);
+MCNAPI ::Bedrock::Threading::Async<void> refreshPacks(::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData> taskData);
 
-MCNAPI ::Bedrock::Threading::Async<void> reloadUserPacks(
-    ::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData> taskData,
-    ::std::shared_ptr<::RepositoryPacks const>                 originalPacks
-);
+MCNAPI ::Bedrock::Threading::Async<void> reloadUserPacks(::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData> taskData, ::std::shared_ptr<::RepositoryPacks const> originalPacks);
 
-MCNAPI ::Bedrock::Threading::Async<void> removePacksIf(
-    ::brstd::function_ref<bool(::ResourcePack const&)> callback,
-    ::RepositoryPacks&                                 packs,
-    ::TaskGroup&                                       taskGroup,
-    ::PackCommand::IPackCommandPipeline&               commands
-);
+MCNAPI ::Bedrock::Threading::Async<void> removePacksIf(::brstd::function_ref<bool(::ResourcePack const&)> callback, ::RepositoryPacks& packs, ::TaskGroup& taskGroup, ::PackCommand::IPackCommandPipeline& commands);
 // NOLINTEND
 
-} // namespace RepositoryLoading
+}

@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/deps/vanilla_components/ActorDataComponentBaseInt8.h"
 
-struct ActorDataJumpDurationComponent : public ::ActorDataComponentBaseInt8 {};
+struct ActorDataJumpDurationComponent : public ::ActorDataComponentBaseInt8 {
+};

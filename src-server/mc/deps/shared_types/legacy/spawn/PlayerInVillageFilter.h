@@ -17,6 +17,7 @@ public:
     PlayerInVillageFilter& operator=(PlayerInVillageFilter const&);
     PlayerInVillageFilter(PlayerInVillageFilter const&);
     PlayerInVillageFilter();
+
 };
 
-} // namespace SharedTypes::Legacy::Spawn
+}

@@ -30,79 +30,77 @@ public:
     // clang-format off
     struct FactorCalculationData;
     // clang-format on
-
+    
     // MobEffect inner types define
     using AttributeBuffPair = ::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeBuff>>;
-
+    
     using AttributeModPair = ::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeModifier>>;
-
+    
     struct FactorCalculationData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>   mPaddingDuration;
+        ::ll::TypedStorage<4, 4, int> mPaddingDuration;
         ::ll::TypedStorage<4, 4, float> mFactorStart;
         ::ll::TypedStorage<4, 4, float> mFactorTarget;
         ::ll::TypedStorage<4, 4, float> mFactorCurrent;
-        ::ll::TypedStorage<8, 64, ::std::function<void(::MobEffect::FactorCalculationData&, ::EffectDuration)>>
-                                        mUpdateFn;
-        ::ll::TypedStorage<4, 4, int>   mTicksActive;
+        ::ll::TypedStorage<8, 64, ::std::function<void(::MobEffect::FactorCalculationData&, ::EffectDuration)>> mUpdateFn;
+        ::ll::TypedStorage<4, 4, int> mTicksActive;
         ::ll::TypedStorage<4, 4, float> mFactorPreviousFrame;
-        ::ll::TypedStorage<1, 1, bool>  mHadEffectLastTick;
-        ::ll::TypedStorage<1, 1, bool>  mHadApplied;
+        ::ll::TypedStorage<1, 1, bool> mHadEffectLastTick;
+        ::ll::TypedStorage<1, 1, bool> mHadApplied;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         FactorCalculationData(FactorCalculationData const&);
         FactorCalculationData();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::MobEffect::FactorCalculationData& operator=(::MobEffect::FactorCalculationData const&);
-
+    
         MCAPI ::std::unique_ptr<::CompoundTag> save() const;
-
+    
         MCAPI ~FactorCalculationData();
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
         MCAPI static ::MobEffect::FactorCalculationData load(::CompoundTag const* tag);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint const>                                              mId;
-    ::ll::TypedStorage<1, 1, bool>                                                    mIsHarmful;
-    ::ll::TypedStorage<4, 16, ::mce::Color>                                           mColor;
-    ::ll::TypedStorage<8, 48, ::HashedString>                                         mParticleEffectId;
-    ::ll::TypedStorage<8, 48, ::HashedString>                                         mParticleEffectAmbientId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                          mDescriptionId;
-    ::ll::TypedStorage<4, 4, int>                                                     mIcon;
-    ::ll::TypedStorage<4, 4, float>                                                   mDurationModifier;
-    ::ll::TypedStorage<1, 1, bool>                                                    mIsDisabled;
-    ::ll::TypedStorage<8, 32, ::std::string>                                          mResourceName;
-    ::ll::TypedStorage<8, 32, ::std::string>                                          mIconName;
-    ::ll::TypedStorage<1, 1, bool>                                                    mEffectVisible;
+    ::ll::TypedStorage<4, 4, uint const> mId;
+    ::ll::TypedStorage<1, 1, bool> mIsHarmful;
+    ::ll::TypedStorage<4, 16, ::mce::Color> mColor;
+    ::ll::TypedStorage<8, 48, ::HashedString> mParticleEffectId;
+    ::ll::TypedStorage<8, 48, ::HashedString> mParticleEffectAmbientId;
+    ::ll::TypedStorage<8, 32, ::std::string> mDescriptionId;
+    ::ll::TypedStorage<4, 4, int> mIcon;
+    ::ll::TypedStorage<4, 4, float> mDurationModifier;
+    ::ll::TypedStorage<1, 1, bool> mIsDisabled;
+    ::ll::TypedStorage<8, 32, ::std::string> mResourceName;
+    ::ll::TypedStorage<8, 32, ::std::string> mIconName;
+    ::ll::TypedStorage<1, 1, bool> mEffectVisible;
     ::ll::TypedStorage<4, 8, ::std::optional<::SharedTypes::Legacy::LevelSoundEvent>> mOnApplySound;
-    ::ll::TypedStorage<8, 48, ::HashedString>                                         mComponentName;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>>                         mValueAmplifier;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>>                         mDurationAmplifier;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeBuff>>>>
-        mAttributeBuffs;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeModifier>>>>
-                                                                  mAttributeModifiers;
+    ::ll::TypedStorage<8, 48, ::HashedString> mComponentName;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>> mValueAmplifier;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Amplifier>> mDurationAmplifier;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeBuff>>>> mAttributeBuffs;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Attribute const*, ::std::shared_ptr<::AttributeModifier>>>> mAttributeModifiers;
     ::ll::TypedStorage<8, 96, ::MobEffect::FactorCalculationData> mFactorCalculationData;
     // NOLINTEND
 
@@ -132,8 +130,7 @@ public:
     virtual void onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
 
     // vIndex: 6
-    virtual void
-    applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
+    virtual void applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
 
     // vIndex: 7
     virtual bool isInstantaneous() const;
@@ -145,22 +142,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobEffect(
-        uint                 id,
-        ::std::string const& resourceName,
-        ::std::string const& locName,
-        bool                 isHarmful,
-        int                  color,
-        int                  icon,
-        ::std::string const& iconName,
-        bool                 drawParticles
-    );
+    MCAPI MobEffect(uint id, ::std::string const& resourceName, ::std::string const& locName, bool isHarmful, int color, int icon, ::std::string const& iconName, bool drawParticles);
 
-    MCAPI ::InstantaneousAttributeBuff
-    _createInstantBuff(::AttributeBuff const& baseBuff, int amplification, float scale) const;
+    MCAPI ::InstantaneousAttributeBuff _createInstantBuff(::AttributeBuff const& baseBuff, int amplification, float scale) const;
 
-    MCAPI ::TemporalAttributeBuff
-    _createTemporalBuff(::AttributeBuff const& baseBuff, ::EffectDuration duration, int amplification) const;
+    MCAPI ::TemporalAttributeBuff _createTemporalBuff(::AttributeBuff const& baseBuff, ::EffectDuration duration, int amplification) const;
 
     MCAPI void _setParticleEffectIds(char const* particleEffectId, char const* particleEffectAmbientId);
 
@@ -168,11 +154,7 @@ public:
 
     MCAPI void addAttributeModifier(::Attribute const& attribute, ::std::shared_ptr<::AttributeModifier> modifier);
 
-    MCAPI void applyModsAndBuffs(
-        ::BaseAttributeMap& attributeMapToRemoveFrom,
-        ::EffectDuration    durationTicks,
-        int                 amplification
-    ) const;
+    MCAPI void applyModsAndBuffs(::BaseAttributeMap& attributeMapToRemoveFrom, ::EffectDuration durationTicks, int amplification) const;
 
     MCAPI void setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
@@ -180,18 +162,13 @@ public:
 
     MCAPI void setValueAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
-    MCAPI void updateModsAndBuffs(
-        ::BaseAttributeMap& attributeMapToRemoveFrom,
-        ::EffectDuration    durationTicks,
-        int                 amplification
-    ) const;
+    MCAPI void updateModsAndBuffs(::BaseAttributeMap& attributeMapToRemoveFrom, ::EffectDuration durationTicks, int amplification) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    darknessEffectFactorUpdate(::MobEffect::FactorCalculationData& factorCalculationData, ::EffectDuration duration);
+    MCAPI static void darknessEffectFactorUpdate(::MobEffect::FactorCalculationData& factorCalculationData, ::EffectDuration duration);
 
     MCAPI static ::MobEffect* getByName(::std::string const& name);
 
@@ -285,16 +262,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        uint                 id,
-        ::std::string const& resourceName,
-        ::std::string const& locName,
-        bool                 isHarmful,
-        int                  color,
-        int                  icon,
-        ::std::string const& iconName,
-        bool                 drawParticles
-    );
+    MCAPI void* $ctor(uint id, ::std::string const& resourceName, ::std::string const& locName, bool isHarmful, int color, int icon, ::std::string const& iconName, bool drawParticles);
     // NOLINTEND
 
 public:
@@ -316,8 +284,7 @@ public:
 
     MCFOLD void $onActorHurt(::Actor&, int, ::ActorDamageSource const&, float) const;
 
-    MCAPI void
-    $applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
+    MCAPI void $applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
 
     MCFOLD bool $isInstantaneous() const;
 
@@ -329,4 +296,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

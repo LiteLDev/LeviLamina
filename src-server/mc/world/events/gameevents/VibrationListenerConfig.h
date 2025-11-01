@@ -19,8 +19,7 @@ public:
     virtual ~VibrationListenerConfig() = default;
 
     // vIndex: 1
-    virtual void
-    onSignalReceive(::BlockSource&, ::BlockPos const&, ::GameEvent const&, ::Actor*, float, uint, ::Actor*) = 0;
+    virtual void onSignalReceive(::BlockSource&, ::BlockPos const&, ::GameEvent const&, ::Actor*, float, uint, ::Actor*) = 0;
 
     // vIndex: 2
     virtual bool isValidVibration(::GameEvent const& gameEvent);
@@ -44,4 +43,5 @@ public:
 
     MCFOLD bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
     // NOLINTEND
+
 };

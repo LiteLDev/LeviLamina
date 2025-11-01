@@ -18,4 +18,4 @@ MCNAPI bool _mobHoldingItem(::ActorTargetFilter const& condition, ::Actor& entit
 MCNAPI bool _mobWearingArmor(::ActorTargetFilter const& condition, ::Actor& entity);
 // NOLINTEND
 
-} // namespace MobPredicates
+}

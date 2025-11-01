@@ -75,12 +75,10 @@ public:
     virtual void SetFrameEncryptor(uint, ::webrtc::scoped_refptr<::webrtc::FrameEncryptorInterface>) = 0;
 
     // vIndex: 15
-    virtual ::webrtc::RTCError
-    SetRtpSendParameters(uint, ::webrtc::RtpParameters const&, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>) = 0;
+    virtual ::webrtc::RTCError SetRtpSendParameters(uint, ::webrtc::RtpParameters const&, ::absl::AnyInvocable<void(::webrtc::RTCError)&&>) = 0;
 
     // vIndex: 16
-    virtual void
-        SetEncoderToPacketizerFrameTransformer(uint, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>) = 0;
+    virtual void SetEncoderToPacketizerFrameTransformer(uint, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface>) = 0;
 
     // vIndex: 17
     virtual void SetEncoderSelector(uint, ::webrtc::VideoEncoderFactory::EncoderSelectorInterface*);
@@ -103,6 +101,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

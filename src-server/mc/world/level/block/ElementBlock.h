@@ -28,16 +28,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 144
+    // vIndex: 143
     virtual ::mce::Color getMapColor(::BlockSource&, ::BlockPos const&, ::Block const& block) const /*override*/;
 
-    // vIndex: 112
+    // vIndex: 111
     virtual ::std::string buildDescriptionId(::Block const& block) const /*override*/;
 
     // vIndex: 56
-    virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
+    virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
-    // vIndex: 127
+    // vIndex: 126
     virtual ::Block const* tryLegacyUpgrade(ushort extraData) const /*override*/;
 
     // vIndex: 0
@@ -69,7 +69,7 @@ public:
 
     MCAPI ::std::string $buildDescriptionId(::Block const& block) const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
+    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
     MCAPI ::Block const* $tryLegacyUpgrade(ushort extraData) const;
     // NOLINTEND
@@ -79,4 +79,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

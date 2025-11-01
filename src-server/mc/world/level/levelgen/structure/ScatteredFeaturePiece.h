@@ -18,7 +18,7 @@ public:
     // clang-format off
     struct LocalRegistry;
     // clang-format on
-
+    
     // ScatteredFeaturePiece inner types define
     struct LocalRegistry {
     public:
@@ -45,21 +45,22 @@ public:
         ::ll::TypedStorage<8, 8, ::Block const&> mCobblestone;
         ::ll::TypedStorage<8, 8, ::Block const&> mAirBlock;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         LocalRegistry& operator=(LocalRegistry const&);
         LocalRegistry(LocalRegistry const&);
         LocalRegistry();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                      mWidth;
-    ::ll::TypedStorage<4, 4, int>                                      mHeight;
-    ::ll::TypedStorage<4, 4, int>                                      mDepth;
-    ::ll::TypedStorage<4, 4, int>                                      mHeightPosition;
+    ::ll::TypedStorage<4, 4, int> mWidth;
+    ::ll::TypedStorage<4, 4, int> mHeight;
+    ::ll::TypedStorage<4, 4, int> mDepth;
+    ::ll::TypedStorage<4, 4, int> mHeightPosition;
     ::ll::TypedStorage<8, 160, ::ScatteredFeaturePiece::LocalRegistry> mLocalRegistry;
     // NOLINTEND
 
@@ -81,8 +82,7 @@ public:
 
     MCAPI bool updateAverageGroundHeight(::BlockSource& region, ::BoundingBox const& chunkBB, int offset);
 
-    MCAPI bool
-    updateHeightPositionToLowestGroundHeight(::BlockSource& region, ::BoundingBox const& chunkBB, int offset);
+    MCAPI bool updateHeightPositionToLowestGroundHeight(::BlockSource& region, ::BoundingBox const& chunkBB, int offset);
     // NOLINTEND
 
 public:
@@ -102,4 +102,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

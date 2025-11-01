@@ -14,8 +14,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ContainerModel*> mContainer;
-    ::ll::TypedStorage<8, 8, uint64>            mContainerIndex;
+    ::ll::TypedStorage<8, 8, uint64> mContainerIndex;
     // NOLINTEND
+
 };
 
-} // namespace RecipeIngredientSearchResultsUtil
+}

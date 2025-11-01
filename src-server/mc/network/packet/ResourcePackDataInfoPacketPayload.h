@@ -10,12 +10,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mResourceName;
-    ::ll::TypedStorage<4, 4, uint>           mChunkSize;
-    ::ll::TypedStorage<4, 4, int>            mNbChunks;
-    ::ll::TypedStorage<8, 8, uint64>         mFileSize;
+    ::ll::TypedStorage<4, 4, uint> mChunkSize;
+    ::ll::TypedStorage<4, 4, int> mNbChunks;
+    ::ll::TypedStorage<8, 8, uint64> mFileSize;
     ::ll::TypedStorage<8, 32, ::std::string> mFileHash;
-    ::ll::TypedStorage<1, 1, ::PackType>     mPackType;
-    ::ll::TypedStorage<1, 1, bool>           mIsPremium;
+    ::ll::TypedStorage<1, 1, ::PackType> mPackType;
+    ::ll::TypedStorage<1, 1, bool> mIsPremium;
     // NOLINTEND
 
 public:
@@ -37,4 +37,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

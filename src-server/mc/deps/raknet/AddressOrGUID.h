@@ -12,7 +12,7 @@ struct AddressOrGUID {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID>     rakNetGuid;
+    ::ll::TypedStorage<8, 16, ::RakNet::RakNetGUID> rakNetGuid;
     ::ll::TypedStorage<8, 136, ::RakNet::SystemAddress> systemAddress;
     // NOLINTEND
 
@@ -42,6 +42,7 @@ public:
 
     MCAPI void* $ctor(::RakNet::AddressOrGUID const& input);
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

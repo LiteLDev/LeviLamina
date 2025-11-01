@@ -16,7 +16,7 @@ struct ComponentItemData_v1_20 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::ComponentItemDescriptionData_v1_20>          mDescription;
+    ::ll::TypedStorage<8, 40, ::ComponentItemDescriptionData_v1_20> mDescription;
     ::ll::TypedStorage<8, 16, ::IItemComponentLegacyFactoryData::Components> mItemComponents;
     // NOLINTEND
 
@@ -43,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

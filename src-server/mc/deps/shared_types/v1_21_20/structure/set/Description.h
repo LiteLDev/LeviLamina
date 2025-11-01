@@ -20,8 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Description&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Description&&);
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Description& operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Description&&);
 
     MCNAPI ~Description();
     // NOLINTEND
@@ -31,6 +30,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_20::JigsawStructureSet
+}

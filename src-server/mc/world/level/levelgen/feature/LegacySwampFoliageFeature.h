@@ -20,10 +20,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<::WeakRef<::IFeature>(::Random&)>> mGetTreeFeature;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>                             mSeagrassFeature;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>                             mTallGrassFeature;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>                             mHugeMushroomFeature;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>                             mSwampTreeFeature;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mSeagrassFeature;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mTallGrassFeature;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mHugeMushroomFeature;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mSwampTreeFeature;
     // NOLINTEND
 
 public:
@@ -63,4 +63,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

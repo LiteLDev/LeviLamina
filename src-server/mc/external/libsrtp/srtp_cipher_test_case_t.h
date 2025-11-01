@@ -24,4 +24,5 @@ public:
     srtp_cipher_test_case_t& operator=(srtp_cipher_test_case_t const&);
     srtp_cipher_test_case_t(srtp_cipher_test_case_t const&);
     srtp_cipher_test_case_t();
+
 };

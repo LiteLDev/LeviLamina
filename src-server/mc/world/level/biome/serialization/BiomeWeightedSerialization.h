@@ -13,18 +13,9 @@ struct BiomeWeightedData;
 namespace BiomeWeightedSerialization {
 // functions
 // NOLINTBEGIN
-MCAPI void applySerializedBiomeWeightedDataVector(
-    ::std::vector<::BiomeWeightedData> const&         data,
-    ::std::vector<::std::pair<::Biome const*, uint>>& weightedBiomeVector,
-    ::BiomeRegistry const&                            biomeRegistry,
-    ::BiomeStringList const&                          stringList
-);
+MCAPI void applySerializedBiomeWeightedDataVector(::std::vector<::BiomeWeightedData> const& data, ::std::vector<::std::pair<::Biome const*, uint>>& weightedBiomeVector, ::BiomeRegistry const& biomeRegistry, ::BiomeStringList const& stringList);
 
-MCAPI void serializeBiomeWeightedDataVector(
-    ::std::vector<::std::pair<::Biome const*, uint>> const& weightedBiomeVector,
-    ::std::vector<::BiomeWeightedData>&                     data,
-    ::BiomeStringList&                                      stringList
-);
+MCAPI void serializeBiomeWeightedDataVector(::std::vector<::std::pair<::Biome const*, uint>> const& weightedBiomeVector, ::std::vector<::BiomeWeightedData>& data, ::BiomeStringList& stringList);
 // NOLINTEND
 
-} // namespace BiomeWeightedSerialization
+}

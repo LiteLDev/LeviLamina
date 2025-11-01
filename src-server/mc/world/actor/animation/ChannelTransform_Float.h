@@ -14,4 +14,5 @@ public:
     ChannelTransform_Float& operator=(ChannelTransform_Float const&);
     ChannelTransform_Float(ChannelTransform_Float const&);
     ChannelTransform_Float();
+
 };

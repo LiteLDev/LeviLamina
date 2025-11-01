@@ -22,9 +22,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::OverworldNoises3d const&> mOverworldNoises;
-    ::ll::TypedStorage<8, 192, ::ParameterList>          mParameterList;
-    ::ll::TypedStorage<8, 8, ::ChunkBlenderFactory&>     mAttenuationFactory;
-    ::ll::TypedStorage<8, 8, ::BiomeRegistry const&>     mBiomeRegistry;
+    ::ll::TypedStorage<8, 192, ::ParameterList> mParameterList;
+    ::ll::TypedStorage<8, 8, ::ChunkBlenderFactory&> mAttenuationFactory;
+    ::ll::TypedStorage<8, 8, ::BiomeRegistry const&> mBiomeRegistry;
     // NOLINTEND
 
 public:
@@ -40,11 +40,7 @@ public:
 
     MCAPI ::Biome const* tryGetBiome(::GetBiomeOptions const& getBiomeOptions) const;
 
-    MCAPI ::Biome const* tryGetBiome(
-        ::GetBiomeOptions const&                  getBiomeOptions,
-        ::ChunkLocalNoiseCache::CacheEntry const& xzCacheEntry,
-        ::RTree::Hint*                            hint
-    ) const;
+    MCAPI ::Biome const* tryGetBiome(::GetBiomeOptions const& getBiomeOptions, ::ChunkLocalNoiseCache::CacheEntry const& xzCacheEntry, ::RTree::Hint* hint) const;
 
     MCAPI ~BlendedMultiNoiseBiomeProvider();
     // NOLINTEND
@@ -54,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

@@ -13,10 +13,11 @@ public:
     // clang-format off
     struct Params;
     // clang-format on
-
+    
     // JsonRpcTurnConfigRequest inner types define
-    struct Params {};
-
+    struct Params {
+    };
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,6 +41,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace JsonRpc
+}

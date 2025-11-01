@@ -26,26 +26,24 @@ public:
     virtual ::std::shared_ptr<::LevelChunk> getExistingChunk(::ChunkPos const& cp) /*override*/;
 
     // vIndex: 7
-    virtual ::std::shared_ptr<::LevelChunk>
-    createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
+    virtual ::std::shared_ptr<::LevelChunk> createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
 
     // vIndex: 8
-    virtual ::std::shared_ptr<::LevelChunk>
-    getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
+    virtual ::std::shared_ptr<::LevelChunk> getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 23
     virtual void acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr) /*override*/;
 
-    // vIndex: 26
+    // vIndex: 29
     virtual ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const& getStorage() const /*override*/;
 
-    // vIndex: 25
+    // vIndex: 28
     virtual ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* getChunkMap() /*override*/;
 
-    // vIndex: 28
+    // vIndex: 31
     virtual bool canCreateViews() const /*override*/;
 
-    // vIndex: 32
+    // vIndex: 35
     virtual bool canLaunchTasks() const /*override*/;
 
     // vIndex: 0
@@ -57,11 +55,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& cp);
 
-    MCNAPI ::std::shared_ptr<::LevelChunk>
-    $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    MCNAPI ::std::shared_ptr<::LevelChunk> $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    MCNAPI ::std::shared_ptr<::LevelChunk>
-    $getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
+    MCNAPI ::std::shared_ptr<::LevelChunk> $getOrLoadChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
     MCNAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
@@ -79,4 +75,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

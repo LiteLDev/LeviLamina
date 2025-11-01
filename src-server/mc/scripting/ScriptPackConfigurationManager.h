@@ -17,9 +17,9 @@ class ScriptPackConfigurationManager : public ::Bedrock::EnableNonOwnerReference
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::std::optional<::Core::PathBuffer<::std::string>> const>       mConfigDirectory;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Core::PathBuffer<::std::string>> const> mConfigDirectory;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::ScriptPackConfiguration>> mPackConfigurations;
-    ::ll::TypedStorage<8, 224, ::ScriptPackConfiguration>                                     mDefaultPackConfiguration;
+    ::ll::TypedStorage<8, 224, ::ScriptPackConfiguration> mDefaultPackConfiguration;
     ::ll::TypedStorage<8, 104, ::std::optional<::CommandsRegistryConfiguration>> mCommandsRegistryConfiguration;
     // NOLINTEND
 
@@ -46,7 +46,7 @@ public:
 
     MCNAPI ::ScriptPackConfiguration const& getPackConfiguration(::std::string const& packIdentifier) const;
 
-    MCNAPI void loadConfigs(::cereal::ReflectionCtx ctx);
+    MCNAPI void loadConfigs(::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
@@ -76,4 +76,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

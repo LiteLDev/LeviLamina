@@ -18,9 +18,9 @@ class LegacyEventItemComponent : public ::ItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>>         mTriggerSubscriptions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>> mTriggerSubscriptions;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DefinitionEvent>> mEventHandlers;
-    ::ll::TypedStorage<8, 8, ::ILegacyItemTriggerHandler*>                            mTriggerHandler;
+    ::ll::TypedStorage<8, 8, ::ILegacyItemTriggerHandler*> mTriggerHandler;
     // NOLINTEND
 
 public:
@@ -60,4 +60,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

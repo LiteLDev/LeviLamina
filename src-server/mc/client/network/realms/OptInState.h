@@ -5,9 +5,9 @@
 namespace Realms {
 
 enum class OptInState : int {
-    OptIn  = 0,
+    OptIn = 0,
     OptOut = 1,
-    None   = 2,
+    None = 2,
 };
 
 }

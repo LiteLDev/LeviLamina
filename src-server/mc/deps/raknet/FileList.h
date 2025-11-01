@@ -17,6 +17,7 @@ public:
     FileList& operator=(FileList const&);
     FileList(FileList const&);
     FileList();
+
 };
 
-} // namespace RakNet
+}

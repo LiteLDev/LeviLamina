@@ -4,6 +4,6 @@
 
 enum class JSAutoInitIDEnum : int {
     Prototype = 0,
-    ModuleNs  = 1,
-    Prop      = 2,
+    ModuleNs = 1,
+    Prop = 2,
 };

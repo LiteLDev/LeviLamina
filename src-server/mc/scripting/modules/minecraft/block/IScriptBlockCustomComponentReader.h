@@ -23,13 +23,7 @@ public:
     virtual ~IScriptBlockCustomComponentReader() = default;
 
     // vIndex: 1
-    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
-    tryGetCustomComponentParametersForItem(
-        ::IBlockSource const&,
-        ::BlockPos,
-        ::std::string_view,
-        ::Scripting::WeakLifetimeScope const&
-    ) const = 0;
+    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const& tryGetCustomComponentParametersForItem(::IBlockSource const&, ::BlockPos, ::std::string_view, ::Scripting::WeakLifetimeScope const&) const = 0;
     // NOLINTEND
 
 public:
@@ -43,6 +37,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -15,4 +15,5 @@ public:
     zip_dostime& operator=(zip_dostime const&);
     zip_dostime(zip_dostime const&);
     zip_dostime();
+
 };

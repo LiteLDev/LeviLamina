@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mVehicleRelativeSeatRotation;
     ::ll::TypedStorage<4, 4, float> mPassengerRelativeSeatRotation;
     // NOLINTEND
+
 };

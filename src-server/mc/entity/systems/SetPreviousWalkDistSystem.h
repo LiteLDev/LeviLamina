@@ -18,10 +18,9 @@ class SetPreviousWalkDistSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickWalkDistPrevSystem(
-        ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::WalkDistComponent> view
-    );
+    MCNAPI static void _tickWalkDistPrevSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::WalkDistComponent> view);
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
+
 };

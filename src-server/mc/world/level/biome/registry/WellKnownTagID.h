@@ -16,7 +16,8 @@ class WellKnownTagID {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::IDType<::BiomeTagIDType>>                                               mTagID;
+    ::ll::TypedStorage<8, 16, ::IDType<::BiomeTagIDType>> mTagID;
     ::ll::TypedStorage<8, 8, ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>*> mTagRegistry;
     // NOLINTEND
+
 };

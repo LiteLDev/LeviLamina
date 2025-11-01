@@ -16,16 +16,16 @@ class RideableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk52fcc9;
-    ::ll::UntypedStorage<4, 4>  mUnkb8db96;
-    ::ll::UntypedStorage<1, 1>  mUnk51f749;
+    ::ll::UntypedStorage<4, 4> mUnk52fcc9;
+    ::ll::UntypedStorage<4, 4> mUnkb8db96;
+    ::ll::UntypedStorage<1, 1> mUnk51f749;
     ::ll::UntypedStorage<8, 24> mUnk5a76ed;
     ::ll::UntypedStorage<8, 16> mUnk2ea79a;
     ::ll::UntypedStorage<8, 32> mUnk1b65e3;
-    ::ll::UntypedStorage<1, 1>  mUnk1a2df4;
-    ::ll::UntypedStorage<1, 1>  mUnk26e121;
-    ::ll::UntypedStorage<4, 4>  mUnk3e3757;
-    ::ll::UntypedStorage<1, 1>  mUnk4cd163;
+    ::ll::UntypedStorage<1, 1> mUnk1a2df4;
+    ::ll::UntypedStorage<1, 1> mUnk26e121;
+    ::ll::UntypedStorage<4, 4> mUnk3e3757;
+    ::ll::UntypedStorage<1, 1> mUnk4cd163;
     ::ll::UntypedStorage<8, 32> mUnk2a85ad;
     ::ll::UntypedStorage<8, 32> mUnk1c982d;
     // NOLINTEND
@@ -51,9 +51,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RideableDefinition>>& root
-    );
+    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RideableDefinition>>& root);
     // NOLINTEND
 
 public:
@@ -61,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

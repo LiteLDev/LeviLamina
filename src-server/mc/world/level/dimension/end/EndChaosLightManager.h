@@ -25,4 +25,5 @@ public:
     EndChaosLightManager& operator=(EndChaosLightManager const&);
     EndChaosLightManager(EndChaosLightManager const&);
     EndChaosLightManager();
+
 };

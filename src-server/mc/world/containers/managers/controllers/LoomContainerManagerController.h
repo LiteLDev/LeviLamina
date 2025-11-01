@@ -23,12 +23,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::LoomContainerManagerModel>> mLoomContainerManagerModel;
-    ::ll::TypedStorage<8, 24, ::std::vector<int>>                           mFilteredPatterns;
-    ::ll::TypedStorage<4, 4, int>                                           mSelectedPatternIndex;
-    ::ll::TypedStorage<1, 1, bool>                                          mCurrentlyCrafting;
-    ::ll::TypedStorage<8, 40, ::SlotData const>                             mCreatedItemOutputSlot;
-    ::ll::TypedStorage<8, 128, ::ItemInstance>                              mResultItemPreview;
-    ::ll::TypedStorage<8, 32, ::std::string>                                mResultPatternNameId;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>> mFilteredPatterns;
+    ::ll::TypedStorage<4, 4, int> mSelectedPatternIndex;
+    ::ll::TypedStorage<1, 1, bool> mCurrentlyCrafting;
+    ::ll::TypedStorage<8, 40, ::SlotData const> mCreatedItemOutputSlot;
+    ::ll::TypedStorage<8, 128, ::ItemInstance> mResultItemPreview;
+    ::ll::TypedStorage<8, 32, ::std::string> mResultPatternNameId;
     // NOLINTEND
 
 public:
@@ -56,19 +56,13 @@ public:
     virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
 
     // vIndex: 15
-    virtual int handleAutoPlace(
-        ::SlotData const&,
-        int,
-        ::std::vector<::AutoPlaceItem> const&,
-        ::std::vector<::AutoPlaceResult>&
-    ) /*override*/;
+    virtual int handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/;
 
     // vIndex: 8
     virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
 
     // vIndex: 29
-    virtual ::CreateContainerItemScope
-    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
+    virtual ::CreateContainerItemScope _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
 
     // vIndex: 32
     virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
@@ -79,4 +73,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

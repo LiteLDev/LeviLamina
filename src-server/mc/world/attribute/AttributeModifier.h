@@ -11,17 +11,16 @@ class AttributeModifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                        mAmount;
+    ::ll::TypedStorage<4, 4, float> mAmount;
     ::ll::TypedStorage<4, 4, ::AttributeModifierOperation> mOperation;
-    ::ll::TypedStorage<4, 4, ::AttributeOperands>          mOperand;
-    ::ll::TypedStorage<8, 32, ::std::string>               mName;
-    ::ll::TypedStorage<8, 16, ::mce::UUID>                 mId;
-    ::ll::TypedStorage<1, 1, bool>                         mSerialize;
+    ::ll::TypedStorage<4, 4, ::AttributeOperands> mOperand;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<8, 16, ::mce::UUID> mId;
+    ::ll::TypedStorage<1, 1, bool> mSerialize;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    AttributeModifier(AttributeModifier const&);
     AttributeModifier();
 
 public:
@@ -37,6 +36,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI AttributeModifier(::AttributeModifier const&);
+
     MCAPI ::AttributeModifier& operator=(::AttributeModifier const& rhs);
     // NOLINTEND
 
@@ -44,6 +45,12 @@ public:
     // static variables
     // NOLINTBEGIN
     MCAPI static ::mce::UUID const& mInvalidUUID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::AttributeModifier const&);
     // NOLINTEND
 
 public:
@@ -63,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

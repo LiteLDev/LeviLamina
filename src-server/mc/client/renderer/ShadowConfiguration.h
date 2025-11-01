@@ -17,4 +17,5 @@ public:
     ShadowConfiguration& operator=(ShadowConfiguration const&);
     ShadowConfiguration(ShadowConfiguration const&);
     ShadowConfiguration();
+
 };

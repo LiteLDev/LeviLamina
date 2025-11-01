@@ -16,6 +16,7 @@ public:
     Animating& operator=(Animating const&);
     Animating(Animating const&);
     Animating();
+
 };
 
-} // namespace AgentComponents
+}

@@ -16,6 +16,7 @@ public:
     DetectObstacle& operator=(DetectObstacle const&);
     DetectObstacle(DetectObstacle const&);
     DetectObstacle();
+
 };
 
-} // namespace AgentComponents::Actions
+}

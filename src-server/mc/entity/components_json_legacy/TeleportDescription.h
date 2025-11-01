@@ -14,14 +14,14 @@ struct TeleportDescription : public ::ActorComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk9b16a1;
-    ::ll::UntypedStorage<4, 4>  mUnkd7f130;
-    ::ll::UntypedStorage<4, 4>  mUnk50bb43;
+    ::ll::UntypedStorage<1, 1> mUnk9b16a1;
+    ::ll::UntypedStorage<4, 4> mUnkd7f130;
+    ::ll::UntypedStorage<4, 4> mUnk50bb43;
     ::ll::UntypedStorage<4, 12> mUnkd0b638;
-    ::ll::UntypedStorage<4, 4>  mUnkce79a1;
-    ::ll::UntypedStorage<4, 4>  mUnk3c9360;
-    ::ll::UntypedStorage<4, 4>  mUnkb3e45b;
-    ::ll::UntypedStorage<4, 4>  mUnk5f2e62;
+    ::ll::UntypedStorage<4, 4> mUnkce79a1;
+    ::ll::UntypedStorage<4, 4> mUnk3c9360;
+    ::ll::UntypedStorage<4, 4> mUnkb3e45b;
+    ::ll::UntypedStorage<4, 4> mUnk5f2e62;
     // NOLINTEND
 
 public:
@@ -62,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

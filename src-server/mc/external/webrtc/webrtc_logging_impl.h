@@ -11,4 +11,4 @@ namespace rtc::webrtc_logging_impl {
 MCNAPI void Log(::rtc::webrtc_logging_impl::LogArgType const*, ...);
 // NOLINTEND
 
-} // namespace rtc::webrtc_logging_impl
+}

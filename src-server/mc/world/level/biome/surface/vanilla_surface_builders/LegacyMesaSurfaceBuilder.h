@@ -19,7 +19,7 @@ class LegacyMesaSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 64, ::std::array<::BlockColor, 64>>         mColorBands;
+    ::ll::TypedStorage<1, 64, ::std::array<::BlockColor, 64>> mColorBands;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mPillarNoise;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mPillarRoofNoise;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mBandsNoise;
@@ -73,6 +73,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace VanillaSurfaceBuilders
+}

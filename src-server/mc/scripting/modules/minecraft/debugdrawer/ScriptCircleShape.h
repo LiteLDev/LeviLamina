@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct ShapeDataPayload;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -14,12 +15,24 @@ namespace ScriptModuleDebugUtilities {
 
 class ScriptCircleShape : public ::ScriptModuleDebugUtilities::ScriptDebugShape {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int> mSegments;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     ScriptCircleShape();
 
 public:
     // virtual functions
     // NOLINTBEGIN
+    // vIndex: 1
+    virtual void populatePacketData(::ShapeDataPayload& packetShapeData) const /*override*/;
+
+    // vIndex: 2
+    virtual void applyUpdatedData(::ShapeDataPayload const& existing) /*override*/;
+
     // vIndex: 0
     virtual ~ScriptCircleShape() /*override*/;
     // NOLINTEND
@@ -29,8 +42,7 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptCircleShape(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
 
-    MCFOLD ::ScriptModuleDebugUtilities::ScriptCircleShape&
-    operator=(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
+    MCFOLD ::ScriptModuleDebugUtilities::ScriptCircleShape& operator=(::ScriptModuleDebugUtilities::ScriptCircleShape const&);
     // NOLINTEND
 
 public:
@@ -52,10 +64,19 @@ public:
     // NOLINTEND
 
 public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCFOLD void $populatePacketData(::ShapeDataPayload& packetShapeData) const;
+
+    MCFOLD void $applyUpdatedData(::ShapeDataPayload const& existing);
+    // NOLINTEND
+
+public:
     // vftables
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleDebugUtilities
+}

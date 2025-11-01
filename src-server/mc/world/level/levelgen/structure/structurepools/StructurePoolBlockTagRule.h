@@ -12,8 +12,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IStructurePoolBlockTagPredicate> const> mSourcePredicate;
-    ::ll::TypedStorage<8, 32, ::std::string const>                                       mResultKey;
-    ::ll::TypedStorage<8, 32, ::std::string const>                                       mResultValue;
+    ::ll::TypedStorage<8, 32, ::std::string const> mResultKey;
+    ::ll::TypedStorage<8, 32, ::std::string const> mResultValue;
     // NOLINTEND
 
 public:
@@ -23,20 +23,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructurePoolBlockTagRule(
-        ::std::unique_ptr<::IStructurePoolBlockTagPredicate>&& sourceBlockTagPredicate,
-        ::std::string                                          resultKey,
-        ::std::string                                          resultValue
-    );
+    MCAPI StructurePoolBlockTagRule(::std::unique_ptr<::IStructurePoolBlockTagPredicate>&& sourceBlockTagPredicate, ::std::string resultKey, ::std::string resultValue);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::IStructurePoolBlockTagPredicate>&& sourceBlockTagPredicate,
-        ::std::string                                          resultKey,
-        ::std::string                                          resultValue
-    );
+    MCAPI void* $ctor(::std::unique_ptr<::IStructurePoolBlockTagPredicate>&& sourceBlockTagPredicate, ::std::string resultKey, ::std::string resultValue);
     // NOLINTEND
+
 };

@@ -14,8 +14,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::BlockState const*> ptr;
-    ::ll::TypedStorage<4, 4, int>                 mapVersion;
+    ::ll::TypedStorage<4, 4, int> mapVersion;
     // NOLINTEND
+
 };
 
-} // namespace VanillaStates
+}

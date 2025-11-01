@@ -18,4 +18,4 @@ MCAPI ::std::string_view const& ON_VIS_LOST_INSIDE_RANGE();
 MCAPI ::std::string_view const& OUTSIDE_RANGE();
 // NOLINTEND
 
-} // namespace TargetNearbyProperties
+}

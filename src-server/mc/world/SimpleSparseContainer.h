@@ -19,15 +19,15 @@ class SimpleSparseContainer : public ::Container, public ::ContainerContentChang
 public:
     // SimpleSparseContainer inner types define
     using SparseContainerData = ::std::unordered_map<int, ::ItemStack>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Container&>                                     mBackingContainer;
-    ::ll::TypedStorage<4, 4, ::SparseContainerBackingSetType const>            mBackingSetType;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::ItemStack>>          mItems;
+    ::ll::TypedStorage<8, 8, ::Container&> mBackingContainer;
+    ::ll::TypedStorage<4, 4, ::SparseContainerBackingSetType const> mBackingSetType;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::ItemStack>> mItems;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ISparseContainerSetListener>> mSparseContainerSetListener;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPlayerContainerSetter>>      mPlayerSetter;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPlayerContainerSetter>> mPlayerSetter;
     // NOLINTEND
 
 public:
@@ -46,7 +46,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 22
     virtual void startOpen(::Actor& actor) /*override*/;
@@ -64,22 +64,13 @@ public:
     virtual void containerContentChanged(int slot) /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SimpleSparseContainer(
-        ::Container&                                     backingContainer,
-        ::SparseContainerBackingSetType                  backingSetType,
-        ::std::unique_ptr<::ISparseContainerSetListener> sparseContainerSetListener,
-        ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
-    );
+    MCNAPI SimpleSparseContainer(::Container& backingContainer, ::SparseContainerBackingSetType backingSetType, ::std::unique_ptr<::ISparseContainerSetListener> sparseContainerSetListener, ::std::unique_ptr<::IPlayerContainerSetter> playerSetter);
 
     MCNAPI void _setBackingContainerSlot(int slot, ::ItemStack const& newItem);
     // NOLINTEND
@@ -87,12 +78,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Container&                                     backingContainer,
-        ::SparseContainerBackingSetType                  backingSetType,
-        ::std::unique_ptr<::ISparseContainerSetListener> sparseContainerSetListener,
-        ::std::unique_ptr<::IPlayerContainerSetter>      playerSetter
-    );
+    MCNAPI void* $ctor(::Container& backingContainer, ::SparseContainerBackingSetType backingSetType, ::std::unique_ptr<::ISparseContainerSetListener> sparseContainerSetListener, ::std::unique_ptr<::IPlayerContainerSetter> playerSetter);
     // NOLINTEND
 
 public:
@@ -100,7 +86,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCNAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCNAPI void $startOpen(::Actor& actor);
 
@@ -112,11 +98,7 @@ public:
 
     MCNAPI void $containerContentChanged(int slot);
 
-    MCNAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
+    MCNAPI void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
     // NOLINTEND
 
 public:
@@ -126,4 +108,5 @@ public:
 
     MCNAPI static void** $vftableForContainer();
     // NOLINTEND
+
 };

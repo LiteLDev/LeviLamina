@@ -5,8 +5,8 @@
 namespace webrtc {
 
 enum class InterLayerPredMode : int {
-    KOff      = 0,
-    KOn       = 1,
+    KOff = 0,
+    KOn = 1,
     KOnKeyPic = 2,
 };
 

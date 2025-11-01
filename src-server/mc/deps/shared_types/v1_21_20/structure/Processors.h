@@ -13,4 +13,4 @@ namespace SharedTypes::v1_21_20::JigsawStructure::Processors {
 MCNAPI void bindTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-} // namespace SharedTypes::v1_21_20::JigsawStructure::Processors
+}

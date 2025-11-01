@@ -9,7 +9,7 @@ struct FullContainerName {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerEnumName>   mName;
+    ::ll::TypedStorage<1, 1, ::ContainerEnumName> mName;
     ::ll::TypedStorage<4, 8, ::std::optional<uint>> mDynamicId;
     // NOLINTEND
 
@@ -26,4 +26,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::optional<uint> const& NON_DYNAMIC_ID();
     // NOLINTEND
+
 };

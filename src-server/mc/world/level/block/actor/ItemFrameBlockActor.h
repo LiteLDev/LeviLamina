@@ -28,18 +28,18 @@ class ItemFrameBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator>   mClockSpriteCalc;
+    ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator> mClockSpriteCalc;
     ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mCompassSpriteCalc;
     ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mRecoveryCompassSpriteCalc;
-    ::ll::TypedStorage<1, 1, bool>                       mInstantClockCalculatorUpdate;
-    ::ll::TypedStorage<8, 128, ::ItemInstance>           mItem;
-    ::ll::TypedStorage<4, 4, float>                      mDropChance;
-    ::ll::TypedStorage<4, 4, float>                      mRotation;
-    ::ll::TypedStorage<1, 1, bool>                       mUpgradeMapBit;
-    ::ll::TypedStorage<1, 1, bool>                       mUpgradePhotoBit;
-    ::ll::TypedStorage<1, 1, bool>                       mRefreshMap;
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>           mDisplayEntity;
-    ::ll::TypedStorage<1, 1, bool>                       mIgnoreLighting;
+    ::ll::TypedStorage<1, 1, bool> mInstantClockCalculatorUpdate;
+    ::ll::TypedStorage<8, 128, ::ItemInstance> mItem;
+    ::ll::TypedStorage<4, 4, float> mDropChance;
+    ::ll::TypedStorage<4, 4, float> mRotation;
+    ::ll::TypedStorage<1, 1, bool> mUpgradeMapBit;
+    ::ll::TypedStorage<1, 1, bool> mUpgradePhotoBit;
+    ::ll::TypedStorage<1, 1, bool> mRefreshMap;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mDisplayEntity;
+    ::ll::TypedStorage<1, 1, bool> mIgnoreLighting;
     // NOLINTEND
 
 public:
@@ -67,10 +67,10 @@ public:
     // vIndex: 13
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -84,8 +84,7 @@ public:
 
     MCAPI void _checkMapRemoval(::BlockSource& region, ::ItemInstance& item);
 
-    MCAPI void
-    _updateBit(::BlockSource& region, ::BlockStateVariant<bool> const& vanillaState, ::HashedString const& itemName);
+    MCAPI void _updateBit(::BlockSource& region, ::BlockStateVariant<bool> const& vanillaState, ::HashedString const& itemName);
 
     MCAPI void actuallyDropItem(::BlockSource& region, bool dropItem, ::Actor* entitySource);
 
@@ -139,4 +138,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

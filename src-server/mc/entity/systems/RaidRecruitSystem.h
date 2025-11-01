@@ -13,4 +13,4 @@ namespace RaidRecruitSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace RaidRecruitSystem
+}

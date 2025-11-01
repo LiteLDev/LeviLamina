@@ -18,6 +18,7 @@ public:
     small_vector_header& operator=(small_vector_header const&);
     small_vector_header(small_vector_header const&);
     small_vector_header();
+
 };
 
-} // namespace Bedrock::detail
+}

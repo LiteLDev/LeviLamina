@@ -31,14 +31,13 @@ namespace mce { class UUID; }
 
 namespace Editor::Services {
 
-class ServerStructureService : public ::Editor::Services::IEditorService,
-                               public ::Editor::Services::ServerStructureServiceProvider,
-                               public ::Editor::Services::PayloadStoreHelper {
+class ServerStructureService : public ::Editor::Services::IEditorService, public ::Editor::Services::ServerStructureServiceProvider, public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk8a3486;
+    ::ll::UntypedStorage<1, 1> mUnk8a3486;
     ::ll::UntypedStorage<8, 24> mUnkb9858c;
+    ::ll::UntypedStorage<8, 520> mUnked4f75;
     // NOLINTEND
 
 public:
@@ -66,38 +65,25 @@ public:
     virtual ::std::optional<::Editor::EditorStructureTemplate> loadStructure(::std::string const& id) /*override*/;
 
     // vIndex: 2
-    virtual ::std::optional<::std::string> createNewEditorProjectStructure(
-        ::Editor::EditorStructureTemplate const& editorStructure,
-        ::mce::UUID const&                       guid,
-        ::std::string const&                     structureName
-    ) /*override*/;
+    virtual ::std::optional<::std::string> createNewEditorProjectStructure(::Editor::EditorStructureTemplate const& editorStructure, ::mce::UUID const& guid, ::std::string const& structureName) /*override*/;
 
     // vIndex: 3
-    virtual ::std::vector<::Editor::EditorStructureDBMetadata> queryDB(
-        ::Editor::EditorStructureMetadataQueryParams const& params,
-        bool const                                          reprocessLevelStructures
-    ) /*override*/;
+    virtual ::std::vector<::Editor::EditorStructureDBMetadata> queryDB(::Editor::EditorStructureMetadataQueryParams const& params, bool const reprocessLevelStructures) /*override*/;
 
     // vIndex: 4
-    virtual ::Editor::EditorStructureMetadataDeleteEditResult const
-    editStructureMetadata(::Editor::EditorStructureMetadataEditParams& params) /*override*/;
+    virtual ::Editor::EditorStructureMetadataDeleteEditResult const editStructureMetadata(::Editor::EditorStructureMetadataEditParams& params) /*override*/;
 
     // vIndex: 5
-    virtual bool replaceMCStructureFromTemplate(
-        ::mce::UUID const&                       guid,
-        ::Editor::EditorStructureTemplate const& structureTemplate
-    ) /*override*/;
+    virtual bool replaceMCStructureFromTemplate(::mce::UUID const& guid, ::Editor::EditorStructureTemplate const& structureTemplate) /*override*/;
 
     // vIndex: 6
     virtual ::std::optional<::Editor::EditorStructureTemplate> load(::mce::UUID const& guid) /*override*/;
 
     // vIndex: 7
-    virtual ::std::optional<::Editor::EditorStructureDBMetadata> const
-    getMetadataByGuid(::mce::UUID const& guid) /*override*/;
+    virtual ::std::optional<::Editor::EditorStructureDBMetadata> const getMetadataByGuid(::mce::UUID const& guid) /*override*/;
 
     // vIndex: 8
-    virtual ::Editor::EditorStructureMetadataDeleteEditResult const
-    deleteEditorStructure(::mce::UUID const& guid) /*override*/;
+    virtual ::Editor::EditorStructureMetadataDeleteEditResult const deleteEditorStructure(::mce::UUID const& guid) /*override*/;
     // NOLINTEND
 
 public:
@@ -119,17 +105,11 @@ public:
 
     MCNAPI void _handleStructureFromSelectionPayload(::Editor::Network::StructureFromSelectionPayload const& payload);
 
-    MCNAPI void
-    _handleStructureReplaceFromClipboardPayload(::Editor::Network::StructureReplaceFromClipboardPayload const& payload);
+    MCNAPI void _handleStructureReplaceFromClipboardPayload(::Editor::Network::StructureReplaceFromClipboardPayload const& payload);
 
-    MCNAPI void
-    _handleUpdateFromClipboardPayload(::Editor::Network::StructureUpdateFromClipboardPayload const& payload);
+    MCNAPI void _handleUpdateFromClipboardPayload(::Editor::Network::StructureUpdateFromClipboardPayload const& payload);
 
-    MCNAPI void _makeStructureTemplateFromVolume(
-        ::Editor::EditorStructureTemplate&             structureTemplate,
-        ::BlockSource*                                 region,
-        ::Editor::RelativeVolumeListBlockVolume const& volume
-    );
+    MCNAPI void _makeStructureTemplateFromVolume(::Editor::EditorStructureTemplate& structureTemplate, ::BlockSource* region, ::Editor::RelativeVolumeListBlockVolume const& volume);
     // NOLINTEND
 
 public:
@@ -149,22 +129,13 @@ public:
 
     MCNAPI ::std::optional<::Editor::EditorStructureTemplate> $loadStructure(::std::string const& id);
 
-    MCNAPI ::std::optional<::std::string> $createNewEditorProjectStructure(
-        ::Editor::EditorStructureTemplate const& editorStructure,
-        ::mce::UUID const&                       guid,
-        ::std::string const&                     structureName
-    );
+    MCNAPI ::std::optional<::std::string> $createNewEditorProjectStructure(::Editor::EditorStructureTemplate const& editorStructure, ::mce::UUID const& guid, ::std::string const& structureName);
 
-    MCNAPI ::std::vector<::Editor::EditorStructureDBMetadata>
-    $queryDB(::Editor::EditorStructureMetadataQueryParams const& params, bool const reprocessLevelStructures);
+    MCNAPI ::std::vector<::Editor::EditorStructureDBMetadata> $queryDB(::Editor::EditorStructureMetadataQueryParams const& params, bool const reprocessLevelStructures);
 
-    MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult const
-    $editStructureMetadata(::Editor::EditorStructureMetadataEditParams& params);
+    MCNAPI ::Editor::EditorStructureMetadataDeleteEditResult const $editStructureMetadata(::Editor::EditorStructureMetadataEditParams& params);
 
-    MCNAPI bool $replaceMCStructureFromTemplate(
-        ::mce::UUID const&                       guid,
-        ::Editor::EditorStructureTemplate const& structureTemplate
-    );
+    MCNAPI bool $replaceMCStructureFromTemplate(::mce::UUID const& guid, ::Editor::EditorStructureTemplate const& structureTemplate);
 
     MCNAPI ::std::optional<::Editor::EditorStructureTemplate> $load(::mce::UUID const& guid);
 
@@ -180,6 +151,7 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

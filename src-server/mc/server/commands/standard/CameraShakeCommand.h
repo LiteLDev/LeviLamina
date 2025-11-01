@@ -16,12 +16,12 @@ class CameraShakeCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk588e30;
-    ::ll::UntypedStorage<1, 1>   mUnkda2e74;
+    ::ll::UntypedStorage<1, 1> mUnk588e30;
+    ::ll::UntypedStorage<1, 1> mUnkda2e74;
     ::ll::UntypedStorage<8, 200> mUnkc960d1;
-    ::ll::UntypedStorage<4, 4>   mUnka372c6;
-    ::ll::UntypedStorage<4, 4>   mUnkdf3560;
-    ::ll::UntypedStorage<1, 1>   mUnk53b7e6;
+    ::ll::UntypedStorage<4, 4> mUnka372c6;
+    ::ll::UntypedStorage<4, 4> mUnkdf3560;
+    ::ll::UntypedStorage<1, 1> mUnk53b7e6;
     // NOLINTEND
 
 public:
@@ -65,4 +65,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

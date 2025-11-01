@@ -19,10 +19,10 @@ struct AxisAlignedLinear : public ::br::worldgen::processors::PosRules::TestType
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>          mMinChance;
-    ::ll::TypedStorage<4, 4, float>          mMaxChance;
-    ::ll::TypedStorage<4, 4, int>            mMinDist;
-    ::ll::TypedStorage<4, 4, int>            mMaxDist;
+    ::ll::TypedStorage<4, 4, float> mMinChance;
+    ::ll::TypedStorage<4, 4, float> mMaxChance;
+    ::ll::TypedStorage<4, 4, int> mMinDist;
+    ::ll::TypedStorage<4, 4, int> mMaxDist;
     ::ll::TypedStorage<4, 4, ::Facing::Axis> mAxis;
     // NOLINTEND
 
@@ -52,6 +52,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen::processors::PosRules
+}

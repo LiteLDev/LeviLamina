@@ -34,6 +34,7 @@ public:
     // vIndex: 0
     virtual ~TextureSetImageContainer() /*override*/ = default;
     // NOLINTEND
+
 };
 
-} // namespace cg
+}

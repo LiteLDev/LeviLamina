@@ -27,6 +27,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::EnumBinding bindScript();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

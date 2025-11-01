@@ -14,4 +14,5 @@ public:
     StringHash& operator=(StringHash const&);
     StringHash(StringHash const&);
     StringHash();
+
 };

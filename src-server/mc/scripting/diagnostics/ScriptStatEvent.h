@@ -11,8 +11,8 @@ class ScriptStatEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>                       mTick;
-    ::ll::TypedStorage<8, 32, ::std::string>               mType;
+    ::ll::TypedStorage<8, 8, uint64> mTick;
+    ::ll::TypedStorage<8, 32, ::std::string> mType;
     ::ll::TypedStorage<8, 24, ::std::vector<::ScriptStat>> mStats;
     // NOLINTEND
 
@@ -35,4 +35,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

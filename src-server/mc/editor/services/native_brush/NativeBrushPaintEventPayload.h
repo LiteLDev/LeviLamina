@@ -7,8 +7,7 @@
 
 namespace Editor::Network {
 
-class NativeBrushPaintEventPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::NativeBrushPaintEventPayload> {
+class NativeBrushPaintEventPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::NativeBrushPaintEventPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -38,6 +37,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

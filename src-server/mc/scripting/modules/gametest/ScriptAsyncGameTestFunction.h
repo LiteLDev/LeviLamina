@@ -36,8 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
-    run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext& fnContext) const /*override*/;
+    virtual ::std::unique_ptr<::gametest::IGameTestFunctionRunResult> run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext& fnContext) const /*override*/;
 
     // vIndex: 0
     virtual ~ScriptAsyncGameTestFunction() /*override*/ = default;
@@ -46,32 +45,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptAsyncGameTestFunction(
-        ::Scripting::WeakLifetimeScope scope,
-        ::Scripting::Closure<
-            ::Scripting::Future<void>(::Scripting::TypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestHelper>)>
-                             functionHandle,
-        ::std::string const& testName
-    );
+    MCNAPI ScriptAsyncGameTestFunction(::Scripting::WeakLifetimeScope scope, ::Scripting::Closure<::Scripting::Future<void>(::Scripting::TypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestHelper>)> functionHandle, ::std::string const& testName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Scripting::WeakLifetimeScope scope,
-        ::Scripting::Closure<
-            ::Scripting::Future<void>(::Scripting::TypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestHelper>)>
-                             functionHandle,
-        ::std::string const& testName
-    );
+    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::Scripting::Closure<::Scripting::Future<void>(::Scripting::TypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestHelper>)> functionHandle, ::std::string const& testName);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
-    $run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext& fnContext) const;
+    MCNAPI ::std::unique_ptr<::gametest::IGameTestFunctionRunResult> $run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext& fnContext) const;
     // NOLINTEND
 
 public:
@@ -79,6 +65,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleGameTest
+}

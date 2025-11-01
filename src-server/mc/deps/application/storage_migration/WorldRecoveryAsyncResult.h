@@ -14,8 +14,7 @@ namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 
 namespace Bedrock {
 
-class WorldRecoveryAsyncResult
-: public ::Bedrock::Threading::AsyncResultBase<::Bedrock::WorldRecovery::RecoveryResult> {
+class WorldRecoveryAsyncResult : public ::Bedrock::Threading::AsyncResultBase<::Bedrock::WorldRecovery::RecoveryResult> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -34,6 +33,7 @@ public:
     // vIndex: 0
     virtual ~WorldRecoveryAsyncResult() /*override*/ = default;
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

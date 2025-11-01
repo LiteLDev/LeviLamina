@@ -19,11 +19,11 @@ public:
     ::ll::UntypedStorage<8, 80> mUnk3f66ed;
     ::ll::UntypedStorage<8, 24> mUnk8c1936;
     ::ll::UntypedStorage<8, 24> mUnka146d9;
-    ::ll::UntypedStorage<8, 8>  mUnk159c8c;
+    ::ll::UntypedStorage<8, 8> mUnk159c8c;
     ::ll::UntypedStorage<8, 40> mUnk55a990;
     ::ll::UntypedStorage<8, 40> mUnkfe6265;
-    ::ll::UntypedStorage<8, 8>  mUnk326b69;
-    ::ll::UntypedStorage<1, 1>  mUnkc9755b;
+    ::ll::UntypedStorage<8, 8> mUnk326b69;
+    ::ll::UntypedStorage<1, 1> mUnkc9755b;
     ::ll::UntypedStorage<8, 32> mUnk78c02e;
     // NOLINTEND
 
@@ -40,8 +40,7 @@ public:
     virtual ~ServiceClient() /*override*/ = default;
 
     // vIndex: 2
-    virtual ::Bedrock::Threading::Async<::std::string>
-    getAuthorizationHeader(::std::shared_ptr<::Social::User>, ::std::string const&) const;
+    virtual ::Bedrock::Threading::Async<::std::string> getAuthorizationHeader(::std::shared_ptr<::Social::User>, ::std::string const&) const;
 
     // vIndex: 1
     virtual ::Bedrock::Threading::Async<::std::string> getAuthorizationHeader(::std::string const&) const;
@@ -58,4 +57,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

@@ -15,11 +15,14 @@ class EmptyChunkSource : public ::ChunkSource {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 11
+    // vIndex: 14
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
     // vIndex: 9
-    virtual bool postProcess(::ChunkViewSource& neighborhood) /*override*/;
+    virtual bool structurePostProcessChunk(::ChunkViewSource&) /*override*/;
+
+    // vIndex: 10
+    virtual bool decorationPostProcessChunk(::ChunkViewSource&) /*override*/;
 
     // vIndex: 0
     virtual ~EmptyChunkSource() /*override*/ = default;
@@ -30,4 +33,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

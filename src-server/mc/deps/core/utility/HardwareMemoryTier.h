@@ -9,4 +9,5 @@ enum class HardwareMemoryTier : uchar {
     Tier3 = 3,
     Tier4 = 4,
     Tier5 = 5,
+    Count = 6,
 };

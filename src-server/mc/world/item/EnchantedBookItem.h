@@ -20,10 +20,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 54
+    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 55
+    // vIndex: 56
     virtual int getEnchantValue() const /*override*/;
 
     // vIndex: 39
@@ -48,4 +48,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

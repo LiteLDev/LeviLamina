@@ -18,13 +18,11 @@ class SharedAttributes {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::AttributeInstance*
-    _legacyGetInstance(::BaseAttributeMap& attributes, ::std::string const& attributeName);
+    MCAPI static ::AttributeInstance* _legacyGetInstance(::BaseAttributeMap& attributes, ::std::string const& attributeName);
 
     MCAPI static ::std::string const& _legacyGetName(::std::string const& attributeName);
 
-    MCAPI static void
-    _loadAttribute(::AttributeInstance& instance, ::CompoundTag const* tag, ::AttributeModificationContext& context);
+    MCAPI static void _loadAttribute(::AttributeInstance& instance, ::CompoundTag const* tag, ::AttributeModificationContext& context);
 
     MCAPI static ::std::unique_ptr<::CompoundTag> _saveAttribute(::AttributeInstance const& instance);
 
@@ -62,4 +60,5 @@ public:
 
     MCAPI static ::Attribute const& UNDERWATER_MOVEMENT_SPEED();
     // NOLINTEND
+
 };

@@ -14,4 +14,5 @@ public:
     PushThroughDefinition& operator=(PushThroughDefinition const&);
     PushThroughDefinition(PushThroughDefinition const&);
     PushThroughDefinition();
+
 };

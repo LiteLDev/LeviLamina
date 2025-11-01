@@ -33,4 +33,4 @@ MCNAPI ::std::map<::ResourceFileSystem, ::std::unique_ptr<::ResourceLoader>>& lo
 MCNAPI ::std::vector<::std::string> const& supportedImageExtensions();
 // NOLINTEND
 
-} // namespace ResourceLoaders
+}

@@ -15,4 +15,5 @@ public:
     unz_global_info64_s& operator=(unz_global_info64_s const&);
     unz_global_info64_s(unz_global_info64_s const&);
     unz_global_info64_s();
+
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,19 +17,17 @@ struct ScriptBlockCustomComponentAfterEventIntermediateStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const&>       mBlock;
-    ::ll::TypedStorage<4, 12, ::BlockPos const>    mPos;
+    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
+    ::ll::TypedStorage<4, 12, ::BlockPos const> mPos;
     ::ll::TypedStorage<8, 8, ::BlockSource const&> mRegion;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    ScriptBlockCustomComponentAfterEventIntermediateStorage&
-    operator=(ScriptBlockCustomComponentAfterEventIntermediateStorage const&);
-    ScriptBlockCustomComponentAfterEventIntermediateStorage(
-        ScriptBlockCustomComponentAfterEventIntermediateStorage const&
-    );
+    ScriptBlockCustomComponentAfterEventIntermediateStorage& operator=(ScriptBlockCustomComponentAfterEventIntermediateStorage const&);
+    ScriptBlockCustomComponentAfterEventIntermediateStorage(ScriptBlockCustomComponentAfterEventIntermediateStorage const&);
     ScriptBlockCustomComponentAfterEventIntermediateStorage();
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::set<::Block const*>> mReplacable;
-    ::ll::TypedStorage<4, 4, float const>                 mProbability;
+    ::ll::TypedStorage<4, 4, float const> mProbability;
     // NOLINTEND
 
 public:
@@ -58,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

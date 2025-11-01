@@ -21,10 +21,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>> mBlock;
-    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptFacing>                                       mBlockFace;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptFacing> mBlockFace;
     ::ll::TypedStorage<4, 12, ::Vec3> mFaceLocationAbsolute;
     ::ll::TypedStorage<4, 12, ::Vec3> mFaceLocationRelative;
-    ::ll::TypedStorage<1, 1, bool>    mIsFirstEvent;
+    ::ll::TypedStorage<1, 1, bool> mIsFirstEvent;
     // NOLINTEND
 
 public:
@@ -37,13 +37,7 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptPlayerInteractWithBlockEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockEvent const&);
 
-    MCAPI ScriptPlayerInteractWithBlockEvent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>  block,
-        ::ScriptModuleMinecraft::ScriptFacing                                       blockFace,
-        ::Vec3                                                                      faceLocation,
-        bool                                                                        isFirstEvent
-    );
+    MCAPI ScriptPlayerInteractWithBlockEvent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock> block, ::ScriptModuleMinecraft::ScriptFacing blockFace, ::Vec3 faceLocation, bool isFirstEvent);
 
     MCAPI ~ScriptPlayerInteractWithBlockEvent();
     // NOLINTEND
@@ -53,13 +47,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockEvent const&);
 
-    MCAPI void* $ctor(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>  block,
-        ::ScriptModuleMinecraft::ScriptFacing                                       blockFace,
-        ::Vec3                                                                      faceLocation,
-        bool                                                                        isFirstEvent
-    );
+    MCAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock> block, ::ScriptModuleMinecraft::ScriptFacing blockFace, ::Vec3 faceLocation, bool isFirstEvent);
     // NOLINTEND
 
 public:
@@ -67,6 +55,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

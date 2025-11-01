@@ -35,30 +35,11 @@ MCNAPI ::TickingSystemWithInfo createActionSystem();
 
 MCNAPI ::TickingSystemWithInfo createIntentSystem();
 
-MCNAPI ::SneakTriggerSystem::PlayerStatusTransitions
-determineStatus(::SneakTriggerSystem::DetermineStatusArgs const& args);
+MCNAPI ::SneakTriggerSystem::PlayerStatusTransitions determineStatus(::SneakTriggerSystem::DetermineStatusArgs const& args);
 
-MCNAPI void doActionTick(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::StrictEntityContext const&                                 entity,
-    ::PlayerActionComponent const&                               actions,
-    ::ActorDataFlagComponent&                                    actorData,
-    ::ActorDataDirtyFlagsComponent&                              dirtyFlags,
-    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent>& modifier
-);
+MCNAPI void doActionTick(::entt::type_list<::Include<::ActorMovementTickNeededComponent>>, ::StrictEntityContext const& entity, ::PlayerActionComponent const& actions, ::ActorDataFlagComponent& actorData, ::ActorDataDirtyFlagsComponent& dirtyFlags, ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent>& modifier);
 
-MCNAPI void doIntentTick(
-    ::StrictEntityContext const&,
-    ::MoveInputComponent const&                        moveInput,
-    ::ActorGameTypeComponent const&                    actorGameType,
-    ::PlayerInputRequestComponent const&               playerInputRequest,
-    ::ActorDataFlagComponent const&                    actorDataFlag,
-    ::PlayerActionComponent&                           actions,
-    ::Optional<::WasInWaterFlagComponent const>        wasInWaterFlag,
-    ::Optional<::PassengerComponent const>             passenger,
-    ::OptionalGlobal<::BaseGameVersionComponent const> baseGameVersion,
-    ::ExternalDataInterface const&                     externalDataInterface
-);
+MCNAPI void doIntentTick(::StrictEntityContext const&, ::MoveInputComponent const& moveInput, ::ActorGameTypeComponent const& actorGameType, ::PlayerInputRequestComponent const& playerInputRequest, ::ActorDataFlagComponent const& actorDataFlag, ::PlayerActionComponent& actions, ::Optional<::WasInWaterFlagComponent const> wasInWaterFlag, ::Optional<::PassengerComponent const> passenger, ::OptionalGlobal<::BaseGameVersionComponent const> baseGameVersion, ::ExternalDataInterface const& externalDataInterface);
 // NOLINTEND
 
-} // namespace SneakTriggerSystem
+}

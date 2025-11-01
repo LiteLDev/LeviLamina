@@ -4,7 +4,8 @@
 
 namespace mce {
 
-template <typename T0>
-struct ResourcePointerHelper {};
+template<typename T0>
+struct ResourcePointerHelper {
+};
 
-} // namespace mce
+}

@@ -19,7 +19,7 @@ public:
     // clang-format off
     struct Config;
     // clang-format on
-
+    
     // AudioState inner types define
     struct Config {
     public:
@@ -30,14 +30,15 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk5a3514;
         ::ll::UntypedStorage<8, 8> mUnk6f7e11;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Config& operator=(Config const&);
         Config(Config const&);
         Config();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -65,6 +66,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

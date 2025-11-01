@@ -4,6 +4,7 @@
 
 namespace MinecraftCamera {
 
-struct ActiveCameraComponent {};
+struct ActiveCameraComponent {
+};
 
-} // namespace MinecraftCamera
+}

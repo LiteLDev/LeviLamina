@@ -29,20 +29,20 @@ class ItemStackNetManagerBase {
 public:
     // ItemStackNetManagerBase inner types define
     using LegacyRequestScope = ::gsl::final_action<::std::function<void()>>;
-
+    
     using BaseContainerSetter = ::std::function<void(::ItemStack const&)>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool const>                                          mIsEnabled;
-    ::ll::TypedStorage<1, 1, bool const>                                          mIsClientSide;
-    ::ll::TypedStorage<8, 8, ::Player&>                                           mPlayer;
-    ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry>>                        mLevelWeakRegistry;
-    ::ll::TypedStorage<8, 16, ::OwnerPtr<::EntityRegistry>>                       mEntityRegistry;
+    ::ll::TypedStorage<1, 1, bool const> mIsEnabled;
+    ::ll::TypedStorage<1, 1, bool const> mIsClientSide;
+    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry>> mLevelWeakRegistry;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::EntityRegistry>> mEntityRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackNetManagerScreenStack>> mScreenStack;
-    ::ll::TypedStorage<1, 1, bool>                                                mCurrentRequestHasCraftAction;
-    ::ll::TypedStorage<4, 16, ::ItemStackLegacyRequestId>                         mLegacyTransactionRequestId;
+    ::ll::TypedStorage<1, 1, bool> mCurrentRequestHasCraftAction;
+    ::ll::TypedStorage<4, 16, ::ItemStackLegacyRequestId> mLegacyTransactionRequestId;
     // NOLINTEND
 
 public:
@@ -82,11 +82,7 @@ public:
     virtual ::SparseContainer* initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
 
     // vIndex: 9
-    virtual void _addLegacyTransactionRequestSetItemSlot(
-        ::ItemStackNetManagerScreen&,
-        ::SharedTypes::Legacy::ContainerType containerType,
-        int                                  slot
-    );
+    virtual void _addLegacyTransactionRequestSetItemSlot(::ItemStackNetManagerScreen&, ::SharedTypes::Legacy::ContainerType containerType, int slot);
 
     // vIndex: 10
     virtual void _initScreen(::ItemStackNetManagerScreen&);
@@ -109,14 +105,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::gsl::final_action<::std::function<void()>> _tryBeginClientLegacyTransactionRequest(::Player* player);
 
-    MCAPI static bool setPlayerContainer(
-        ::Player&                                        player,
-        ::SharedTypes::Legacy::ContainerType             containerType,
-        int                                              slot,
-        ::ItemStack const&                               item,
-        ::ItemStack&                                     slotItem,
-        ::std::function<void(::ItemStack const&)> const& callback
-    );
+    MCAPI static bool setPlayerContainer(::Player& player, ::SharedTypes::Legacy::ContainerType containerType, int slot, ::ItemStack const& item, ::ItemStack& slotItem, ::std::function<void(::ItemStack const&)> const& callback);
     // NOLINTEND
 
 public:
@@ -146,11 +135,7 @@ public:
 
     MCFOLD ::SparseContainer* $initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);
 
-    MCFOLD void $_addLegacyTransactionRequestSetItemSlot(
-        ::ItemStackNetManagerScreen&,
-        ::SharedTypes::Legacy::ContainerType containerType,
-        int                                  slot
-    );
+    MCFOLD void $_addLegacyTransactionRequestSetItemSlot(::ItemStackNetManagerScreen&, ::SharedTypes::Legacy::ContainerType containerType, int slot);
 
     MCFOLD void $_initScreen(::ItemStackNetManagerScreen&);
     // NOLINTEND
@@ -160,4 +145,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

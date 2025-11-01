@@ -39,13 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _getWaterHeights(
-        ::BlockPos testPos,
-        short&     groundLevel,
-        float&     waterLevel,
-        float&     minHeight,
-        float&     maxHeight
-    ) const;
+    MCAPI void _getWaterHeights(::BlockPos testPos, short& groundLevel, float& waterLevel, float& minHeight, float& maxHeight) const;
     // NOLINTEND
 
 public:
@@ -65,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

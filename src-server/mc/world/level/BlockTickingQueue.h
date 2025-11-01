@@ -28,46 +28,48 @@ public:
     struct HashBlockTick;
     class TickDataSet;
     // clang-format on
-
+    
     // BlockTickingQueue inner types define
     class BlockTick {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>                mIsRemoved;
+        ::ll::TypedStorage<1, 1, bool> mIsRemoved;
         ::ll::TypedStorage<8, 40, ::TickNextTickData> mData;
         // NOLINTEND
+    
     };
-
-    struct HashBlockTick {};
-
-    class TickDataSet
-    : public ::MovePriorityQueue<::BlockTickingQueue::BlockTick, ::std::greater<::BlockTickingQueue::BlockTick>> {
+    
+    struct HashBlockTick {
+    };
+    
+    class TickDataSet : public ::MovePriorityQueue<::BlockTickingQueue::BlockTick, ::std::greater<::BlockTickingQueue::BlockTick>> {
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI void _pruneQueueForMemory();
-
+    
         MCAPI ~TickDataSet();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::LevelChunk*>                     mOwningChunk;
-    ::ll::TypedStorage<8, 8, ::Tick>                            mCurrentTick;
+    ::ll::TypedStorage<8, 8, ::LevelChunk*> mOwningChunk;
+    ::ll::TypedStorage<8, 8, ::Tick> mCurrentTick;
     ::ll::TypedStorage<8, 24, ::BlockTickingQueue::TickDataSet> mNextTickQueue;
     ::ll::TypedStorage<8, 24, ::BlockTickingQueue::TickDataSet> mActiveTickQueue;
     ::ll::TypedStorage<8, 24, ::BlockTickingQueue::TickDataSet> mDeferredTicks;
-    ::ll::TypedStorage<1, 1, ::TickingQueueType>                mQueueType;
-    ::ll::TypedStorage<1, 1, bool>                              mInstaTick;
+    ::ll::TypedStorage<1, 1, ::TickingQueueType> mQueueType;
+    ::ll::TypedStorage<1, 1, bool> mInstaTick;
     // NOLINTEND
 
 public:
@@ -81,16 +83,9 @@ public:
 
     MCAPI void _saveQueue(::ListTag& list, ::BlockTickingQueue::TickDataSet const& queue) const;
 
-    MCAPI void
-    add(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
+    MCAPI void add(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
 
-    MCAPI void addTickToLevelChunk(
-        ::LevelChunk&     lc,
-        ::BlockPos const& pos,
-        ::Block const&    block,
-        int               tickDelay,
-        int               priorityOffset
-    );
+    MCAPI void addTickToLevelChunk(::LevelChunk& lc, ::BlockPos const& pos, ::Block const& block, int tickDelay, int priorityOffset);
 
     MCAPI void eliminateDuplicatesOf(::BlockType const& block);
 
@@ -116,4 +111,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

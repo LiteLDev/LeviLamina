@@ -21,6 +21,7 @@ public:
     ActorReplacementParams& operator=(ActorReplacementParams const&);
     ActorReplacementParams(ActorReplacementParams const&);
     ActorReplacementParams();
+
 };
 
-} // namespace Util
+}

@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct ReadResult;
     // clang-format on
-
+    
     // IRequestBody inner types define
     struct ReadResult {
     public:
@@ -19,14 +19,15 @@ public:
         ::ll::UntypedStorage<1, 1> mUnkb4d25b;
         ::ll::UntypedStorage<8, 8> mUnk659573;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ReadResult& operator=(ReadResult const&);
         ReadResult(ReadResult const&);
         ReadResult();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -60,6 +61,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Http::Internal
+}

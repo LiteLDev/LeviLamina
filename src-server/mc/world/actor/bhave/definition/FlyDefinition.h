@@ -15,9 +15,9 @@ class FlyDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3d66b9;
+    ::ll::UntypedStorage<1, 1> mUnk3d66b9;
     ::ll::UntypedStorage<8, 32> mUnkabca45;
-    ::ll::UntypedStorage<1, 1>  mUnk83f7e7;
+    ::ll::UntypedStorage<1, 1> mUnk83f7e7;
     ::ll::UntypedStorage<8, 32> mUnkfe353c;
     // NOLINTEND
 
@@ -48,4 +48,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

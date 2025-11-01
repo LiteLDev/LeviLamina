@@ -15,11 +15,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static uint64 CalcMinBitrateBps(::std::vector<::webrtc::rtcp::TmmbItem> const& candidates);
 
-    MCNAPI static ::std::vector<::webrtc::rtcp::TmmbItem>
-    FindBoundingSet(::std::vector<::webrtc::rtcp::TmmbItem> candidates);
+    MCNAPI static ::std::vector<::webrtc::rtcp::TmmbItem> FindBoundingSet(::std::vector<::webrtc::rtcp::TmmbItem> candidates);
 
     MCNAPI static bool IsOwner(::std::vector<::webrtc::rtcp::TmmbItem> const& bounding, uint ssrc);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

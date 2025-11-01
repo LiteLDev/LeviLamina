@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mVertical;
     ::ll::TypedStorage<4, 4, float> mHorizontal;
     // NOLINTEND
+
 };

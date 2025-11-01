@@ -6,7 +6,7 @@
 #include "mc/common/WeakPtr.h"
 #include "mc/deps/core/utility/AutomaticID.h"
 #include "mc/entity/components_json_legacy/RestrictionType.h"
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,14 +22,14 @@ class HomeComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::RestrictionType>                            mRestrictionType;
-    ::ll::TypedStorage<4, 4, int>                                          mRestrictionRadius;
-    ::ll::TypedStorage<4, 4, int>                                          mRestrictionRadiusSqr;
-    ::ll::TypedStorage<4, 4, int>                                          mCooldownTicksMax;
-    ::ll::TypedStorage<4, 4, int>                                          mCooldownTicks;
+    ::ll::TypedStorage<4, 4, ::RestrictionType> mRestrictionType;
+    ::ll::TypedStorage<4, 4, int> mRestrictionRadius;
+    ::ll::TypedStorage<4, 4, int> mRestrictionRadiusSqr;
+    ::ll::TypedStorage<4, 4, int> mCooldownTicksMax;
+    ::ll::TypedStorage<4, 4, int> mCooldownTicks;
     ::ll::TypedStorage<8, 24, ::std::vector<::WeakPtr<::BlockType const>>> mHomeBlocks;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                                  mHomePos;
-    ::ll::TypedStorage<4, 4, ::DimensionType>                              mDimensionId;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mHomePos;
+    ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionId;
     // NOLINTEND
 
 public:
@@ -49,4 +49,5 @@ public:
 
     MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
+
 };

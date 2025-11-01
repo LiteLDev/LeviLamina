@@ -12,7 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk327de1;
-    ::ll::UntypedStorage<8, 8>  mUnk5eb88c;
+    ::ll::UntypedStorage<8, 8> mUnk5eb88c;
     ::ll::UntypedStorage<4, 24> mUnkc921a0;
     ::ll::UntypedStorage<8, 32> mUnkc0ba01;
     // NOLINTEND
@@ -40,4 +40,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string const& TICKING_AREA_PREFIX();
     // NOLINTEND
+
 };

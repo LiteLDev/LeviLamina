@@ -16,7 +16,7 @@ class IntArrayTag : public ::Tag {
 public:
     // IntArrayTag inner types define
     using ArrayData = ::std::vector<int>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -86,4 +86,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

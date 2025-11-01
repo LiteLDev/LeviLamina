@@ -23,19 +23,19 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk8092d9;
-    ::ll::UntypedStorage<8, 8>  mUnkfe375f;
-    ::ll::UntypedStorage<8, 8>  mUnkfea983;
-    ::ll::UntypedStorage<8, 8>  mUnkd385e7;
-    ::ll::UntypedStorage<8, 8>  mUnk62d06f;
-    ::ll::UntypedStorage<4, 8>  mUnk69d279;
-    ::ll::UntypedStorage<4, 8>  mUnk129ed6;
+    ::ll::UntypedStorage<8, 8> mUnkfe375f;
+    ::ll::UntypedStorage<8, 8> mUnkfea983;
+    ::ll::UntypedStorage<8, 8> mUnkd385e7;
+    ::ll::UntypedStorage<8, 8> mUnk62d06f;
+    ::ll::UntypedStorage<4, 8> mUnk69d279;
+    ::ll::UntypedStorage<4, 8> mUnk129ed6;
     ::ll::UntypedStorage<8, 24> mUnk109469;
     ::ll::UntypedStorage<8, 24> mUnk904e8c;
-    ::ll::UntypedStorage<1, 1>  mUnkcc3a05;
-    ::ll::UntypedStorage<1, 1>  mUnke5116d;
-    ::ll::UntypedStorage<4, 4>  mUnkc2972a;
-    ::ll::UntypedStorage<4, 4>  mUnk917354;
-    ::ll::UntypedStorage<8, 8>  mUnkd42084;
+    ::ll::UntypedStorage<1, 1> mUnkcc3a05;
+    ::ll::UntypedStorage<1, 1> mUnke5116d;
+    ::ll::UntypedStorage<4, 4> mUnkc2972a;
+    ::ll::UntypedStorage<4, 4> mUnk917354;
+    ::ll::UntypedStorage<8, 8> mUnkd42084;
     // NOLINTEND
 
 public:
@@ -51,12 +51,10 @@ public:
     virtual ~SrtpTransport() /*override*/;
 
     // vIndex: 8
-    virtual bool
-    SendRtpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
+    virtual bool SendRtpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
 
     // vIndex: 9
-    virtual bool
-    SendRtcpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
+    virtual bool SendRtcpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
 
     // vIndex: 11
     virtual bool IsSrtpActive() const /*override*/;
@@ -97,27 +95,9 @@ public:
 
     MCNAPI void ResetParams();
 
-    MCNAPI bool SetRtcpParams(
-        int                       send_crypto_suite,
-        uchar const*              send_key,
-        int                       send_key_len,
-        ::std::vector<int> const& send_extension_ids,
-        int                       recv_crypto_suite,
-        uchar const*              recv_key,
-        int                       recv_key_len,
-        ::std::vector<int> const& recv_extension_ids
-    );
+    MCNAPI bool SetRtcpParams(int send_crypto_suite, uchar const* send_key, int send_key_len, ::std::vector<int> const& send_extension_ids, int recv_crypto_suite, uchar const* recv_key, int recv_key_len, ::std::vector<int> const& recv_extension_ids);
 
-    MCNAPI bool SetRtpParams(
-        int                       send_crypto_suite,
-        uchar const*              send_key,
-        int                       send_key_len,
-        ::std::vector<int> const& send_extension_ids,
-        int                       recv_crypto_suite,
-        uchar const*              recv_key,
-        int                       recv_key_len,
-        ::std::vector<int> const& recv_extension_ids
-    );
+    MCNAPI bool SetRtpParams(int send_crypto_suite, uchar const* send_key, int send_key_len, ::std::vector<int> const& send_extension_ids, int recv_crypto_suite, uchar const* recv_key, int recv_key_len, ::std::vector<int> const& recv_extension_ids);
 
     MCNAPI SrtpTransport(bool rtcp_mux_enabled, ::webrtc::FieldTrialsView const& field_trials);
 
@@ -165,6 +145,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

@@ -11,31 +11,31 @@ struct SentryEnvelopePayload {
 public:
     // SentryEnvelopePayload inner types define
     enum class Level : int {
-        Error   = 0,
+        Error = 0,
         Warning = 1,
-        Info    = 2,
-        Debug   = 3,
-        Fatal   = 4,
+        Info = 2,
+        Debug = 3,
+        Fatal = 4,
     };
-
+    
     enum class Platform : int {
         JavaScript = 0,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk4574db;
-    ::ll::UntypedStorage<4, 4>   mUnk944e53;
-    ::ll::UntypedStorage<4, 4>   mUnk5c270b;
-    ::ll::UntypedStorage<8, 32>  mUnk67f142;
-    ::ll::UntypedStorage<8, 72>  mUnk868980;
-    ::ll::UntypedStorage<8, 32>  mUnk6df929;
-    ::ll::UntypedStorage<8, 32>  mUnk48f1e6;
-    ::ll::UntypedStorage<8, 32>  mUnk53b6cc;
-    ::ll::UntypedStorage<8, 32>  mUnk9b93e2;
+    ::ll::UntypedStorage<8, 8> mUnk4574db;
+    ::ll::UntypedStorage<4, 4> mUnk944e53;
+    ::ll::UntypedStorage<4, 4> mUnk5c270b;
+    ::ll::UntypedStorage<8, 32> mUnk67f142;
+    ::ll::UntypedStorage<8, 72> mUnk868980;
+    ::ll::UntypedStorage<8, 32> mUnk6df929;
+    ::ll::UntypedStorage<8, 32> mUnk48f1e6;
+    ::ll::UntypedStorage<8, 32> mUnk53b6cc;
+    ::ll::UntypedStorage<8, 32> mUnk9b93e2;
     ::ll::UntypedStorage<8, 128> mUnk76bb58;
-    ::ll::UntypedStorage<8, 48>  mUnk3aee66;
+    ::ll::UntypedStorage<8, 48> mUnk3aee66;
     // NOLINTEND
 
 public:
@@ -75,4 +75,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

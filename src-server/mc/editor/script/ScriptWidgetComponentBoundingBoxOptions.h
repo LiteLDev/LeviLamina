@@ -6,8 +6,8 @@
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBaseOptions.h"
 #include "mc/scripting/Axis.h"
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
+#include "mc/versionless/util/Mirror.h"
+#include "mc/versionless/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,17 +23,17 @@ class ScriptWidgetComponentBoundingBoxOptions : public ::Editor::ScriptModule::S
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 32>  mUnke9bb00;
-    ::ll::UntypedStorage<4, 32>  mUnk6eab3d;
-    ::ll::UntypedStorage<1, 2>   mUnk2099d3;
-    ::ll::UntypedStorage<1, 2>   mUnk1b40a6;
-    ::ll::UntypedStorage<4, 16>  mUnk65fd14;
-    ::ll::UntypedStorage<4, 16>  mUnkc9c127;
-    ::ll::UntypedStorage<1, 2>   mUnk204909;
-    ::ll::UntypedStorage<1, 2>   mUnk47735e;
-    ::ll::UntypedStorage<4, 8>   mUnk772774;
-    ::ll::UntypedStorage<4, 16>  mUnk90f1b2;
-    ::ll::UntypedStorage<4, 16>  mUnka43e75;
+    ::ll::UntypedStorage<4, 32> mUnke9bb00;
+    ::ll::UntypedStorage<4, 32> mUnk6eab3d;
+    ::ll::UntypedStorage<1, 2> mUnk2099d3;
+    ::ll::UntypedStorage<1, 2> mUnk1b40a6;
+    ::ll::UntypedStorage<4, 16> mUnk65fd14;
+    ::ll::UntypedStorage<4, 16> mUnkc9c127;
+    ::ll::UntypedStorage<1, 2> mUnk204909;
+    ::ll::UntypedStorage<1, 2> mUnk47735e;
+    ::ll::UntypedStorage<4, 8> mUnk772774;
+    ::ll::UntypedStorage<4, 16> mUnk90f1b2;
+    ::ll::UntypedStorage<4, 16> mUnka43e75;
     ::ll::UntypedStorage<8, 256> mUnk75e5be;
     // NOLINTEND
 
@@ -45,8 +45,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<void>
-    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
+    virtual ::Scripting::Result_deprecated<void> validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
 
     // vIndex: 0
     virtual ~ScriptWidgetComponentBoundingBoxOptions() /*override*/;
@@ -55,16 +54,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    ScriptWidgetComponentBoundingBoxOptions(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions const&);
+    MCNAPI ScriptWidgetComponentBoundingBoxOptions(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions const&);
 
     MCNAPI ScriptWidgetComponentBoundingBoxOptions(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions const&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions const&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentBoundingBoxOptions&&);
     // NOLINTEND
 
 public:
@@ -76,11 +72,9 @@ public:
 
     MCNAPI static ::Scripting::Result_deprecated<void> validateOriginValues(::Vec3 const& origin);
 
-    MCNAPI static ::Scripting::Result_deprecated<void>
-    validateSizeLimitValues(::Vec3 const& minSize, ::Vec3 const& maxSize);
+    MCNAPI static ::Scripting::Result_deprecated<void> validateSizeLimitValues(::Vec3 const& minSize, ::Vec3 const& maxSize);
 
-    MCNAPI static ::Scripting::Result_deprecated<void>
-    validateSizeValues(::Vec3 const& size, ::Vec3 const& minSize, ::Vec3 const& maxSize);
+    MCNAPI static ::Scripting::Result_deprecated<void> validateSizeValues(::Vec3 const& size, ::Vec3 const& minSize, ::Vec3 const& maxSize);
     // NOLINTEND
 
 public:
@@ -122,8 +116,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
+    MCNAPI ::Scripting::Result_deprecated<void> $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
     // NOLINTEND
 
 public:
@@ -131,6 +124,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

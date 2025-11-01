@@ -10,9 +10,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> name;
-    ::ll::TypedStorage<4, 4, float>          min;
-    ::ll::TypedStorage<4, 4, float>          max;
-    ::ll::TypedStorage<4, 8, ::FloatRange>   value;
+    ::ll::TypedStorage<4, 4, float> min;
+    ::ll::TypedStorage<4, 4, float> max;
+    ::ll::TypedStorage<4, 8, ::FloatRange> value;
     // NOLINTEND
 
 public:
@@ -26,4 +26,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

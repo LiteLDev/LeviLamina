@@ -4,7 +4,8 @@
 
 namespace Bedrock::Threading {
 
-template <typename T0>
-class AsyncPromise {};
+template<typename T0>
+class AsyncPromise {
+};
 
-} // namespace Bedrock::Threading
+}

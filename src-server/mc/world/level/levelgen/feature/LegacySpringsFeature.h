@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mWaterSpringFeature;
     ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mLavaSpringFeature;
-    ::ll::TypedStorage<1, 1, bool>                   mIsCavesAndCliffsUpdate;
+    ::ll::TypedStorage<1, 1, bool> mIsCavesAndCliffsUpdate;
     // NOLINTEND
 
 public:
@@ -62,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

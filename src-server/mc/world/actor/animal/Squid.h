@@ -24,20 +24,20 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 16, ::mce::Color> mInkColor;
-    ::ll::TypedStorage<4, 4, float>         mSpeed;
-    ::ll::TypedStorage<4, 4, float>         mTentacleSpeed;
-    ::ll::TypedStorage<4, 4, float>         mRotateSpeed;
-    ::ll::TypedStorage<4, 4, float>         mXBodyRot;
-    ::ll::TypedStorage<4, 4, float>         mXBodyRotO;
-    ::ll::TypedStorage<4, 4, float>         mZBodyRot;
-    ::ll::TypedStorage<4, 4, float>         mZBodyRotO;
-    ::ll::TypedStorage<4, 4, float>         mTx;
-    ::ll::TypedStorage<4, 4, float>         mTy;
-    ::ll::TypedStorage<4, 4, float>         mTz;
-    ::ll::TypedStorage<4, 4, float>         mTentacleMovement;
-    ::ll::TypedStorage<4, 4, float>         mOldTentacleMovement;
-    ::ll::TypedStorage<4, 4, float>         mTentacleAngle;
-    ::ll::TypedStorage<4, 4, float>         mOldTentacleAngle;
+    ::ll::TypedStorage<4, 4, float> mSpeed;
+    ::ll::TypedStorage<4, 4, float> mTentacleSpeed;
+    ::ll::TypedStorage<4, 4, float> mRotateSpeed;
+    ::ll::TypedStorage<4, 4, float> mXBodyRot;
+    ::ll::TypedStorage<4, 4, float> mXBodyRotO;
+    ::ll::TypedStorage<4, 4, float> mZBodyRot;
+    ::ll::TypedStorage<4, 4, float> mZBodyRotO;
+    ::ll::TypedStorage<4, 4, float> mTx;
+    ::ll::TypedStorage<4, 4, float> mTy;
+    ::ll::TypedStorage<4, 4, float> mTz;
+    ::ll::TypedStorage<4, 4, float> mTentacleMovement;
+    ::ll::TypedStorage<4, 4, float> mOldTentacleMovement;
+    ::ll::TypedStorage<4, 4, float> mTentacleAngle;
+    ::ll::TypedStorage<4, 4, float> mOldTentacleAngle;
     // NOLINTEND
 
 public:
@@ -72,12 +72,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Squid(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext,
-        ::mce::Color const&                inkParticleColor
-    );
+    MCAPI Squid(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext, ::mce::Color const& inkParticleColor);
 
     MCAPI ::Vec3 _randomInkDir();
 
@@ -89,12 +84,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext,
-        ::mce::Color const&                inkParticleColor
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext, ::mce::Color const& inkParticleColor);
     // NOLINTEND
 
 public:
@@ -124,4 +114,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

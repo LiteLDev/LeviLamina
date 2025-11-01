@@ -4,7 +4,8 @@
 
 namespace BlockEvents::Detail {
 
-template <typename T0, typename T1>
-class BlockEventPublishingExecutor {};
+template<typename T0, typename T1>
+class BlockEventPublishingExecutor {
+};
 
-} // namespace BlockEvents::Detail
+}

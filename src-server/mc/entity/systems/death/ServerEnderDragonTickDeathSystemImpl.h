@@ -36,51 +36,12 @@ struct TickDeathNeededComponent;
 struct WingFlapDataComponent;
 // clang-format on
 
-struct ServerEnderDragonTickDeathSystemImpl
-: public ::IStrictTickingSystem<::StrictExecutionContext<
-      ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
-      ::Read<
-          ::ActorDataFlagComponent,
-          ::ActorDefinitionIdentifierComponent,
-          ::ActorUniqueIDComponent,
-          ::DeathTickingComponent,
-          ::DimensionTypeComponent,
-          ::SoundEventPlayerComponent>,
-      ::Write<
-          ::ActorOwnerComponent,
-          ::RandomReferenceComponent,
-          ::StateVectorComponent,
-          ::WingFlapDataComponent,
-          ::BossComponent>,
-      ::AddRemove<>,
-      ::GlobalRead<>,
-      ::GlobalWrite<::SpawnExperienceOrbRequestQueueComponent>,
-      ::EntityFactoryT<>>> {
+struct ServerEnderDragonTickDeathSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>, ::Read<::ActorDataFlagComponent, ::ActorDefinitionIdentifierComponent, ::ActorUniqueIDComponent, ::DeathTickingComponent, ::DimensionTypeComponent, ::SoundEventPlayerComponent>, ::Write<::ActorOwnerComponent, ::RandomReferenceComponent, ::StateVectorComponent, ::WingFlapDataComponent, ::BossComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<::SpawnExperienceOrbRequestQueueComponent>, ::EntityFactoryT<>>> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(
-        ::StrictExecutionContext<
-            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
-            ::Read<
-                ::ActorDataFlagComponent,
-                ::ActorDefinitionIdentifierComponent,
-                ::ActorUniqueIDComponent,
-                ::DeathTickingComponent,
-                ::DimensionTypeComponent,
-                ::SoundEventPlayerComponent>,
-            ::Write<
-                ::ActorOwnerComponent,
-                ::RandomReferenceComponent,
-                ::StateVectorComponent,
-                ::WingFlapDataComponent,
-                ::BossComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<::SpawnExperienceOrbRequestQueueComponent>,
-            ::EntityFactoryT<>>& context
-    ) /*override*/;
+    virtual void tick(::StrictExecutionContext<::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>, ::Read<::ActorDataFlagComponent, ::ActorDefinitionIdentifierComponent, ::ActorUniqueIDComponent, ::DeathTickingComponent, ::DimensionTypeComponent, ::SoundEventPlayerComponent>, ::Write<::ActorOwnerComponent, ::RandomReferenceComponent, ::StateVectorComponent, ::WingFlapDataComponent, ::BossComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<::SpawnExperienceOrbRequestQueueComponent>, ::EntityFactoryT<>>& context) /*override*/;
 
     // vIndex: 0
     virtual ~ServerEnderDragonTickDeathSystemImpl() /*override*/ = default;
@@ -89,47 +50,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tick(
-        ::StrictEntityContext const&                                      entity,
-        ::ActorDataFlagComponent const&                                   actorFlags,
-        ::ActorDefinitionIdentifierComponent const&                       actorIdentifier,
-        ::ActorUniqueIDComponent const&                                   actorUniqueID,
-        ::DeathTickingComponent const&                                    deathTicking,
-        ::DimensionTypeComponent const&                                   dimensionType,
-        ::SoundEventPlayerComponent const&                                soundEventPlayerComponent,
-        ::ActorOwnerComponent&                                            actorOwner,
-        ::StateVectorComponent&                                           stateVector,
-        ::WingFlapDataComponent&                                          wingFlapData,
-        ::Optional<::BossComponent>                                       boss,
-        ::SpawnExperienceOrbRequestQueueComponent&                        experienceOrbRequestQueueComponent,
-        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> soundRequestQueueView
-    );
+    MCNAPI static void _tick(::StrictEntityContext const& entity, ::ActorDataFlagComponent const& actorFlags, ::ActorDefinitionIdentifierComponent const& actorIdentifier, ::ActorUniqueIDComponent const& actorUniqueID, ::DeathTickingComponent const& deathTicking, ::DimensionTypeComponent const& dimensionType, ::SoundEventPlayerComponent const& soundEventPlayerComponent, ::ActorOwnerComponent& actorOwner, ::StateVectorComponent& stateVector, ::WingFlapDataComponent& wingFlapData, ::Optional<::BossComponent> boss, ::SpawnExperienceOrbRequestQueueComponent& experienceOrbRequestQueueComponent, ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent> soundRequestQueueView);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
-        ::StrictExecutionContext<
-            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>,
-            ::Read<
-                ::ActorDataFlagComponent,
-                ::ActorDefinitionIdentifierComponent,
-                ::ActorUniqueIDComponent,
-                ::DeathTickingComponent,
-                ::DimensionTypeComponent,
-                ::SoundEventPlayerComponent>,
-            ::Write<
-                ::ActorOwnerComponent,
-                ::RandomReferenceComponent,
-                ::StateVectorComponent,
-                ::WingFlapDataComponent,
-                ::BossComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<::SpawnExperienceOrbRequestQueueComponent>,
-            ::EntityFactoryT<>>& context
-    );
+    MCNAPI void $tick(::StrictExecutionContext<::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::EnderDragonFlagComponent>, ::Read<::ActorDataFlagComponent, ::ActorDefinitionIdentifierComponent, ::ActorUniqueIDComponent, ::DeathTickingComponent, ::DimensionTypeComponent, ::SoundEventPlayerComponent>, ::Write<::ActorOwnerComponent, ::RandomReferenceComponent, ::StateVectorComponent, ::WingFlapDataComponent, ::BossComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<::SpawnExperienceOrbRequestQueueComponent>, ::EntityFactoryT<>>& context);
     // NOLINTEND
 
 public:
@@ -137,4 +64,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

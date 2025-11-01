@@ -12,12 +12,13 @@ struct CorrectPlayerMovePredictionPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3>                mPos;
-    ::ll::TypedStorage<4, 12, ::Vec3>                mPosDelta;
-    ::ll::TypedStorage<4, 8, ::Vec2>                 mVehicleRotation;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPosDelta;
+    ::ll::TypedStorage<4, 8, ::Vec2> mVehicleRotation;
     ::ll::TypedStorage<4, 8, ::std::optional<float>> mVehicleAngularVelocity;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick>      mTick;
-    ::ll::TypedStorage<1, 1, bool>                   mOnGround;
-    ::ll::TypedStorage<1, 1, ::RewindType>           mPredictionType;
+    ::ll::TypedStorage<8, 8, ::PlayerInputTick> mTick;
+    ::ll::TypedStorage<1, 1, bool> mOnGround;
+    ::ll::TypedStorage<1, 1, ::RewindType> mPredictionType;
     // NOLINTEND
+
 };

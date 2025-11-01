@@ -16,4 +16,5 @@ public:
     gzFile_s& operator=(gzFile_s const&);
     gzFile_s(gzFile_s const&);
     gzFile_s();
+
 };

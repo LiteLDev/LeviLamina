@@ -31,24 +31,7 @@ struct MobTravelImmobileFilterSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tick(
-        ::ViewT<::StrictEntityContext, ::Include<::MobTravelComponent>> mainView,
-        ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorIsImmobileFlagComponent const>>
-            actorView,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::MobFlagComponent>,
-            ::MovementAttributesComponent const,
-            ::Optional<::ActorIsKnockedBackOnDeathFlagComponent const>> mobView,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::ActorDataFlagComponent const,
-            ::Optional<::VehicleInputIntentComponent const>,
-            ::Include<::OnGroundFlagComponent, ::HorseFlagComponent>,
-            ::Exclude<::MobAllowStandSlidingFlagComponent, ::MobIsJumpingFlagComponent>>               horseView,
-        ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>>                                onlyHorseView,
-        ::ViewT<::StrictEntityContext, ::PlayerIsSleepingFlagComponent const, ::PlayerComponent const> playerView,
-        ::EntityModifier<::MobTravelComponent>                                                         mod
-    );
+    MCNAPI static void tick(::ViewT<::StrictEntityContext, ::Include<::MobTravelComponent>> mainView, ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorIsImmobileFlagComponent const>> actorView, ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::MovementAttributesComponent const, ::Optional<::ActorIsKnockedBackOnDeathFlagComponent const>> mobView, ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::VehicleInputIntentComponent const>, ::Include<::OnGroundFlagComponent, ::HorseFlagComponent>, ::Exclude<::MobAllowStandSlidingFlagComponent, ::MobIsJumpingFlagComponent>> horseView, ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>> onlyHorseView, ::ViewT<::StrictEntityContext, ::PlayerIsSleepingFlagComponent const, ::PlayerComponent const> playerView, ::EntityModifier<::MobTravelComponent> mod);
     // NOLINTEND
+
 };

@@ -18,24 +18,24 @@ public:
         KAudio = 0,
         KVideo = 1,
     };
-
+    
     enum class ResiliencyType : int {
-        KNone    = 0,
-        KRed     = 1,
-        KUlpfec  = 2,
+        KNone = 0,
+        KRed = 1,
+        KUlpfec = 2,
         KFlexfec = 3,
-        KRtx     = 4,
+        KRtx = 4,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk5f1c96;
-    ::ll::UntypedStorage<4, 4>  mUnk98a0b7;
+    ::ll::UntypedStorage<4, 4> mUnk5f1c96;
+    ::ll::UntypedStorage<4, 4> mUnk98a0b7;
     ::ll::UntypedStorage<8, 32> mUnka5c2d4;
-    ::ll::UntypedStorage<4, 4>  mUnkfa2b23;
-    ::ll::UntypedStorage<4, 4>  mUnk554d30;
-    ::ll::UntypedStorage<8, 8>  mUnkff3fb9;
+    ::ll::UntypedStorage<4, 4> mUnkfa2b23;
+    ::ll::UntypedStorage<4, 4> mUnk554d30;
+    ::ll::UntypedStorage<8, 8> mUnkff3fb9;
     ::ll::UntypedStorage<8, 40> mUnkb80ab5;
     ::ll::UntypedStorage<8, 48> mUnk89b0fc;
     ::ll::UntypedStorage<8, 40> mUnka1b7da;
@@ -126,6 +126,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

@@ -16,18 +16,18 @@ class DialogueCommand : public ::Command {
 public:
     // DialogueCommand inner types define
     enum class Action : int {
-        Open   = 0,
+        Open = 0,
         Change = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkcd0c80;
+    ::ll::UntypedStorage<4, 4> mUnkcd0c80;
     ::ll::UntypedStorage<8, 200> mUnk724f5e;
     ::ll::UntypedStorage<8, 200> mUnkbc8e8d;
-    ::ll::UntypedStorage<8, 32>  mUnk95f4fd;
-    ::ll::UntypedStorage<1, 1>   mUnk8ba152;
+    ::ll::UntypedStorage<8, 32> mUnk95f4fd;
+    ::ll::UntypedStorage<1, 1> mUnk8ba152;
     // NOLINTEND
 
 public:
@@ -74,4 +74,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

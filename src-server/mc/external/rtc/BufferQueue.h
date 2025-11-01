@@ -8,9 +8,9 @@ class BufferQueue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk2626b0;
-    ::ll::UntypedStorage<8, 8>  mUnke0588c;
-    ::ll::UntypedStorage<8, 8>  mUnkf617f2;
+    ::ll::UntypedStorage<1, 1> mUnk2626b0;
+    ::ll::UntypedStorage<8, 8> mUnke0588c;
+    ::ll::UntypedStorage<8, 8> mUnkf617f2;
     ::ll::UntypedStorage<8, 40> mUnk410391;
     ::ll::UntypedStorage<8, 24> mUnkb5c058;
     // NOLINTEND
@@ -48,6 +48,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

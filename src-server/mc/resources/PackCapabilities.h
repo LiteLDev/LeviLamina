@@ -14,10 +14,7 @@ class PackCapabilityRegistry;
 namespace PackCapabilities {
 // functions
 // NOLINTBEGIN
-MCNAPI ::PackCapabilityRegistry createRegistry(
-    ::Bedrock::NonOwnerPointer<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
-    ::PackCapabilityRegistry                               additionalCapabilities
-);
+MCNAPI ::PackCapabilityRegistry createRegistry(::Bedrock::NonOwnerPointer<::IAdvancedGraphicsOptions> advancedGraphicsOptions, ::PackCapabilityRegistry additionalCapabilities);
 // NOLINTEND
 
-} // namespace PackCapabilities
+}

@@ -29,11 +29,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static void cleanUp(::EntityContext& agent, float cooldownTime);
 
-    MCNAPI static void
-    initialize(::EntityContext& entity, ::AgentComponents::ActionDetails& details, ::AgentComponents::Move& moveComp);
+    MCNAPI static void initialize(::EntityContext& entity, ::AgentComponents::ActionDetails& details, ::AgentComponents::Move& moveComp);
 
-    MCNAPI static void
-    tickMove(::EntityContext& entity, ::AgentComponents::ActionDetails& details, ::AgentComponents::Move& moveComp);
+    MCNAPI static void tickMove(::EntityContext& entity, ::AgentComponents::ActionDetails& details, ::AgentComponents::Move& moveComp);
     // NOLINTEND
 
 public:
@@ -47,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

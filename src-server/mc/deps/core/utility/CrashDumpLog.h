@@ -54,4 +54,5 @@ public:
 
     MCNAPI static ::Bedrock::Threading::Mutex& mRenderDataMutex();
     // NOLINTEND
+
 };

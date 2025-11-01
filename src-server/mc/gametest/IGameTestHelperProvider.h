@@ -18,8 +18,7 @@ public:
     virtual ~IGameTestHelperProvider() = default;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::gametest::BaseGameTestHelper>
-    createGameTestHelper(::gametest::BaseGameTestInstance&) = 0;
+    virtual ::std::unique_ptr<::gametest::BaseGameTestHelper> createGameTestHelper(::gametest::BaseGameTestInstance&) = 0;
 
     // vIndex: 2
     virtual ::std::unique_ptr<::gametest::IGameTestHelperProvider> clone() = 0;
@@ -30,6 +29,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace gametest
+}

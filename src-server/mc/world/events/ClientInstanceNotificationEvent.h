@@ -11,5 +11,5 @@ struct PlayerViewPerspectiveChangedEvent;
 struct ScreenSizeChangedEvent;
 // clang-format on
 
-struct ClientInstanceNotificationEvent
-: public ::EventVariantImpl<::PlayerViewPerspectiveChangedEvent const, ::ScreenSizeChangedEvent const> {};
+struct ClientInstanceNotificationEvent : public ::EventVariantImpl<::PlayerViewPerspectiveChangedEvent const, ::ScreenSizeChangedEvent const> {
+};

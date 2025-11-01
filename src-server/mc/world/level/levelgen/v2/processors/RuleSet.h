@@ -18,10 +18,10 @@ struct RuleSet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::br::worldgen::processors::BlockRules::Test>      mInputPredicate;
-    ::ll::TypedStorage<8, 72, ::br::worldgen::processors::BlockRules::Test>      mLocPredicate;
-    ::ll::TypedStorage<4, 48, ::br::worldgen::processors::PosRules::Test>        mPosPredicate;
-    ::ll::TypedStorage<8, 8, ::Block const*>                                     mOutputState;
+    ::ll::TypedStorage<8, 72, ::br::worldgen::processors::BlockRules::Test> mInputPredicate;
+    ::ll::TypedStorage<8, 72, ::br::worldgen::processors::BlockRules::Test> mLocPredicate;
+    ::ll::TypedStorage<4, 48, ::br::worldgen::processors::PosRules::Test> mPosPredicate;
+    ::ll::TypedStorage<8, 8, ::Block const*> mOutputState;
     ::ll::TypedStorage<8, 56, ::br::worldgen::processors::BlockEntity::Modifier> mBlockEntityModifier;
     // NOLINTEND
 
@@ -51,8 +51,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::processors::RuleSet
-    from(::br::worldgen::processors::BlockRules::Test input, ::Block const& output);
+    MCAPI static ::br::worldgen::processors::RuleSet from(::br::worldgen::processors::BlockRules::Test input, ::Block const& output);
     // NOLINTEND
 
 public:
@@ -68,6 +67,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen::processors
+}

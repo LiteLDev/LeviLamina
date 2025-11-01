@@ -26,8 +26,7 @@ public:
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob) /*override*/;
 
     // vIndex: 3
-    virtual void
-    setWantedPosition(::MoveControlComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed) /*override*/;
+    virtual void setWantedPosition(::MoveControlComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed) /*override*/;
 
     // vIndex: 0
     virtual ~HopMoveControl() /*override*/ = default;
@@ -46,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

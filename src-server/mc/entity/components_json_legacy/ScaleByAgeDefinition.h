@@ -15,4 +15,5 @@ public:
     ScaleByAgeDefinition& operator=(ScaleByAgeDefinition const&);
     ScaleByAgeDefinition(ScaleByAgeDefinition const&);
     ScaleByAgeDefinition();
+
 };

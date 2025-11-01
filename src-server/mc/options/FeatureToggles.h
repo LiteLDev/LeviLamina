@@ -21,66 +21,67 @@ public:
     // clang-format off
     struct FeatureToggle;
     // clang-format on
-
+    
     // FeatureToggles inner types define
     using SetupFunction = ::std::function<void(::Option&)>;
-
+    
     using LockFunction = ::std::function<void(bool&)>;
-
+    
     using ExpectedDisabled = ::std::vector<::FeatureOptionID>;
-
+    
     using ExpectedEnabled = ::std::vector<::FeatureOptionID>;
-
+    
     struct FeatureToggle {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::FeatureOptionID>                 featureID;
-        ::ll::TypedStorage<4, 4, ::FeatureOptionID>                 dependencyFeatureID;
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Option>>       option;
+        ::ll::TypedStorage<4, 4, ::FeatureOptionID> featureID;
+        ::ll::TypedStorage<4, 4, ::FeatureOptionID> dependencyFeatureID;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Option>> option;
         ::ll::TypedStorage<8, 64, ::std::function<void(::Option&)>> setup;
-        ::ll::TypedStorage<8, 64, ::std::function<void(bool&)>>     lock;
-        ::ll::TypedStorage<4, 4, ::FeatureOptionTabID>              tabID;
+        ::ll::TypedStorage<8, 64, ::std::function<void(bool&)>> lock;
+        ::ll::TypedStorage<4, 4, ::FeatureOptionTabID> tabID;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         FeatureToggle& operator=(FeatureToggle const&);
         FeatureToggle(FeatureToggle const&);
         FeatureToggle();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI FeatureToggle(::FeatureToggles::FeatureToggle&&);
-
+    
         MCAPI ::FeatureToggles::FeatureToggle& operator=(::FeatureToggles::FeatureToggle&&);
-
+    
         MCAPI ~FeatureToggle();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::FeatureToggles::FeatureToggle&&);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     using FeatureTogglesArray = ::std::vector<::FeatureToggles::FeatureToggle>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::FeatureToggles::FeatureToggle>> mFeatures;
     ::ll::TypedStorage<8, 24, ::std::vector<::Bedrock::PubSub::Subscription>> mOptionLockSubscriptions;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>              mFilePath;
-    ::ll::TypedStorage<1, 1, bool>                                            mIsInGame;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mFilePath;
+    ::ll::TypedStorage<1, 1, bool> mIsInGame;
     // NOLINTEND
 
 public:
@@ -93,34 +94,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::function<void(::Option&)>
-    _getDisableIfOtherOptionDisabledSetupCallback(::FeatureOptionID optionIdToCheck) const;
+    MCAPI ::std::function<void(::Option&)> _getDisableIfOtherOptionDisabledSetupCallback(::FeatureOptionID optionIdToCheck) const;
 
-    MCAPI ::std::function<void(::Option&)> _getDisabledIfOptionExpectationsNotMetSetupCallback(
-        ::std::vector<::FeatureOptionID> expectedDisabledOptions,
-        ::std::vector<::FeatureOptionID> expectedEnabledOptions
-    );
+    MCAPI ::std::function<void(::Option&)> _getDisabledIfOptionExpectationsNotMetSetupCallback(::std::vector<::FeatureOptionID> expectedDisabledOptions, ::std::vector<::FeatureOptionID> expectedEnabledOptions);
 
-    MCAPI ::std::function<void(bool&)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(
-        ::std::vector<::FeatureOptionID> expectedDisabledOptions,
-        ::std::vector<::FeatureOptionID> expectedEnabledOptions
-    );
+    MCAPI ::std::function<void(bool&)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(::std::vector<::FeatureOptionID> expectedDisabledOptions, ::std::vector<::FeatureOptionID> expectedEnabledOptions);
 
-    MCAPI ::std::function<void(bool&)>
-    _getLockIfOtherOptionDisabledLockCallback(::FeatureOptionID optionIdToCheck) const;
+    MCAPI ::std::function<void(bool&)> _getLockIfOtherOptionDisabledLockCallback(::FeatureOptionID optionIdToCheck) const;
 
     MCAPI void _initialize(::AppPlatform& appPlatform);
 
-    MCAPI void _registerFeature(
-        ::FeatureOptionTabID             tabID,
-        ::FeatureOptionID                featureID,
-        ::std::string const&             locName,
-        ::std::string const&             saveName,
-        bool                             defaultValue,
-        ::FeatureOptionID                dependencyFeatureID,
-        ::std::function<void(::Option&)> setup,
-        ::std::function<void(bool&)>     lock
-    );
+    MCAPI void _registerFeature(::FeatureOptionTabID tabID, ::FeatureOptionID featureID, ::std::string const& locName, ::std::string const& saveName, bool defaultValue, ::FeatureOptionID dependencyFeatureID, ::std::function<void(::Option&)> setup, ::std::function<void(bool&)> lock);
 
     MCAPI void _registerFeatures();
 
@@ -146,4 +130,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -11,9 +11,9 @@ class ActorInfoRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, uint>>      mActorInfoNameMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, uint>> mActorInfoNameMap;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint, ::ActorInfo>> mActorInfoMap;
-    ::ll::TypedStorage<4, 4, uint>                                     mLastId;
+    ::ll::TypedStorage<4, 4, uint> mLastId;
     // NOLINTEND
 
 public:
@@ -35,4 +35,5 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
     // NOLINTEND
+
 };

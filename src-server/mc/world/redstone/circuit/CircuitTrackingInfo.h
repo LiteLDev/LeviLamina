@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/redstone/circuit/components/CircuitComponentType.h"
 
 // auto generated forward declare list
@@ -17,19 +17,20 @@ public:
     // clang-format off
     class Entry;
     // clang-format on
-
+    
     // CircuitTrackingInfo inner types define
     class Entry {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::BaseCircuitComponent*> mComponent;
-        ::ll::TypedStorage<4, 12, ::BlockPos>             mPos;
-        ::ll::TypedStorage<1, 1, uchar>                   mDirection;
-        ::ll::TypedStorage<8, 8, ::CircuitComponentType>  mTypeID;
+        ::ll::TypedStorage<4, 12, ::BlockPos> mPos;
+        ::ll::TypedStorage<1, 1, uchar> mDirection;
+        ::ll::TypedStorage<8, 8, ::CircuitComponentType> mTypeID;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -37,9 +38,9 @@ public:
     ::ll::TypedStorage<8, 32, ::CircuitTrackingInfo::Entry> mPower;
     ::ll::TypedStorage<8, 32, ::CircuitTrackingInfo::Entry> mNearest;
     ::ll::TypedStorage<8, 32, ::CircuitTrackingInfo::Entry> m2ndNearest;
-    ::ll::TypedStorage<4, 4, int>                           mDampening;
-    ::ll::TypedStorage<1, 1, bool>                          mDirectlyPowered;
-    ::ll::TypedStorage<4, 4, int>                           mData;
+    ::ll::TypedStorage<4, 4, int> mDampening;
+    ::ll::TypedStorage<1, 1, bool> mDirectlyPowered;
+    ::ll::TypedStorage<4, 4, int> mData;
     // NOLINTEND
 
 public:
@@ -57,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::gsl::not_null<::BaseCircuitComponent*> component, ::BlockPos const& pos, int dampening);
     // NOLINTEND
+
 };

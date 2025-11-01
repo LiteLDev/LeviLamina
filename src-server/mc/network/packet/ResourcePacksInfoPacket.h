@@ -36,10 +36,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -49,25 +49,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePacksInfoPacket(
-        bool                           resourcePackRequired,
-        ::std::vector<::PackInfoData>& resourcePacks,
-        bool                           hasAddonPacks,
-        ::PackIdVersion const&         worldTemplateIdVersion,
-        bool                           forceDisableVibrantVisuals
-    );
+    MCAPI ResourcePacksInfoPacket(bool resourcePackRequired, ::std::vector<::PackInfoData>& resourcePacks, bool hasAddonPacks, ::PackIdVersion const& worldTemplateIdVersion, bool forceDisableVibrantVisuals);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        bool                           resourcePackRequired,
-        ::std::vector<::PackInfoData>& resourcePacks,
-        bool                           hasAddonPacks,
-        ::PackIdVersion const&         worldTemplateIdVersion,
-        bool                           forceDisableVibrantVisuals
-    );
+    MCAPI void* $ctor(bool resourcePackRequired, ::std::vector<::PackInfoData>& resourcePacks, bool hasAddonPacks, ::PackIdVersion const& worldTemplateIdVersion, bool forceDisableVibrantVisuals);
     // NOLINTEND
 
 public:
@@ -93,4 +81,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

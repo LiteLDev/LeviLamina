@@ -8,4 +8,4 @@ namespace VolumeInstanceData {
 MCNAPI ::std::string const& VOLUME_INSTANCE_DATA_PREFIX();
 // NOLINTEND
 
-} // namespace VolumeInstanceData
+}

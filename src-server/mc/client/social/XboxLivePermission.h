@@ -17,6 +17,7 @@ public:
     XboxLivePermission& operator=(XboxLivePermission const&);
     XboxLivePermission(XboxLivePermission const&);
     XboxLivePermission();
+
 };
 
-} // namespace Social
+}

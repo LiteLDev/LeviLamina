@@ -17,9 +17,9 @@ struct ActorGriefingBlockEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>             mActorContext;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>>         mBlock;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                 mPos;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mActorContext;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::Block const*>> mBlock;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockSourceHandle>> mBlockSourceHandle;
     // NOLINTEND
 
@@ -34,4 +34,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

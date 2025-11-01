@@ -17,4 +17,5 @@ public:
     RectangleArea& operator=(RectangleArea const&);
     RectangleArea(RectangleArea const&);
     RectangleArea();
+
 };

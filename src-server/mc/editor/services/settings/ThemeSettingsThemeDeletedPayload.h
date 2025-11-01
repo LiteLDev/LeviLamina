@@ -7,8 +7,7 @@
 
 namespace Editor::Network {
 
-class ThemeSettingsThemeDeletedPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::ThemeSettingsThemeDeletedPayload> {
+class ThemeSettingsThemeDeletedPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::ThemeSettingsThemeDeletedPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,6 +38,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

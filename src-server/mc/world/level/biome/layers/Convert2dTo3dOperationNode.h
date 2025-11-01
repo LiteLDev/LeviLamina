@@ -27,8 +27,7 @@ public:
     virtual void init(int64 seed) /*override*/;
 
     // vIndex: 2
-    virtual ::OperationNodeDetails::TransferData<::Biome*>
-    _allocateAndFill(uint64, ::BlockPos const&, ::BlockPos const&) const /*override*/;
+    virtual ::OperationNodeDetails::TransferData<::Biome*> _allocateAndFill(uint64, ::BlockPos const&, ::BlockPos const&) const /*override*/;
 
     // vIndex: 0
     virtual ~Convert2dTo3dOperationNode() /*override*/ = default;
@@ -39,4 +38,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

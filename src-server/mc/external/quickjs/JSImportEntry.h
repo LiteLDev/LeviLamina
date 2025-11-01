@@ -16,4 +16,5 @@ public:
     JSImportEntry& operator=(JSImportEntry const&);
     JSImportEntry(JSImportEntry const&);
     JSImportEntry();
+
 };

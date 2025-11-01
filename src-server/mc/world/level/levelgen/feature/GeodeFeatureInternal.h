@@ -11,4 +11,4 @@ namespace GeodeFeatureInternal {
 MCAPI ::std::vector<::MaterialType>& geodeInvalidMaterials();
 // NOLINTEND
 
-} // namespace GeodeFeatureInternal
+}

@@ -30,12 +30,10 @@ public:
     virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const;
 
     // vIndex: 5
-    virtual bool
-    shouldPrintException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const;
+    virtual bool shouldPrintException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const;
 
     // vIndex: 6
-    virtual void
-    onPromiseRejection(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&, bool) const;
+    virtual void onPromiseRejection(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&, bool) const;
     // NOLINTEND
 
 public:
@@ -47,9 +45,9 @@ public:
 
     MCFOLD void $onError(::Scripting::ContextId, ::std::string_view) const;
 
-    MCFOLD bool
-    $shouldPrintException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const;
+    MCFOLD bool $shouldPrintException(::Scripting::ContextId, ::Scripting::BaseError const&, ::entt::meta_any const&) const;
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

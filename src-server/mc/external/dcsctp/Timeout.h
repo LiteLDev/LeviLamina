@@ -35,6 +35,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $Restart(::dcsctp::DurationMs duration, ::webrtc::StrongAlias<::dcsctp::TimeoutTag, uint64> timeout_id);
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

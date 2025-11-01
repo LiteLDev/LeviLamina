@@ -13,20 +13,19 @@ struct FileInfo;
 namespace Bedrock::Http { class Request; }
 // clang-format on
 
-class StreamFileDownloader : public ::IFileChunkDownloader,
-                             public ::std::enable_shared_from_this<::StreamFileDownloader> {
+class StreamFileDownloader : public ::IFileChunkDownloader, public ::std::enable_shared_from_this<::StreamFileDownloader> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnka211d4;
-    ::ll::UntypedStorage<8, 8>   mUnkd71e6f;
-    ::ll::UntypedStorage<8, 64>  mUnkfb46b6;
-    ::ll::UntypedStorage<8, 64>  mUnk82ed74;
-    ::ll::UntypedStorage<8, 8>   mUnk402616;
-    ::ll::UntypedStorage<8, 8>   mUnk89347f;
-    ::ll::UntypedStorage<8, 8>   mUnk238343;
-    ::ll::UntypedStorage<1, 1>   mUnk1c4b1c;
-    ::ll::UntypedStorage<1, 1>   mUnkcb17b4;
+    ::ll::UntypedStorage<8, 32> mUnka211d4;
+    ::ll::UntypedStorage<8, 8> mUnkd71e6f;
+    ::ll::UntypedStorage<8, 64> mUnkfb46b6;
+    ::ll::UntypedStorage<8, 64> mUnk82ed74;
+    ::ll::UntypedStorage<8, 8> mUnk402616;
+    ::ll::UntypedStorage<8, 8> mUnk89347f;
+    ::ll::UntypedStorage<8, 8> mUnk238343;
+    ::ll::UntypedStorage<1, 1> mUnk1c4b1c;
+    ::ll::UntypedStorage<1, 1> mUnkcb17b4;
     ::ll::UntypedStorage<8, 336> mUnk6e3666;
     // NOLINTEND
 
@@ -46,32 +45,13 @@ public:
     virtual void update() /*override*/;
 
     // vIndex: 2
-    virtual void initRealmsFileDownloader(
-        ::std::string const&,
-        int const,
-        ::std::string const&,
-        ::FileInfo const&,
-        uint64,
-        ::std::string const&,
-        ::std::function<void(::DownloaderResult)>
-    ) /*override*/;
+    virtual void initRealmsFileDownloader(::std::string const&, int const, ::std::string const&, ::FileInfo const&, uint64, ::std::string const&, ::std::function<void(::DownloaderResult)>) /*override*/;
 
     // vIndex: 3
-    virtual void initFileDownloader(
-        ::std::string const&,
-        ::std::string const&,
-        ::FileInfo const&,
-        uint64,
-        uint64,
-        ::std::string const&,
-        ::std::function<void(::DownloaderResult)>
-    ) /*override*/;
+    virtual void initFileDownloader(::std::string const&, ::std::string const&, ::FileInfo const&, uint64, uint64, ::std::string const&, ::std::function<void(::DownloaderResult)>) /*override*/;
 
     // vIndex: 4
-    virtual void downloadFile(
-        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>,
-        ::std::function<void(::DownloaderState)>
-    ) /*override*/;
+    virtual void downloadFile(::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>, ::std::function<void(::DownloaderState)>) /*override*/;
 
     // vIndex: 5
     virtual bool canCancelDownload() const /*override*/;
@@ -97,4 +77,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

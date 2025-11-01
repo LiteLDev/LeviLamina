@@ -12,7 +12,7 @@ class ServerCommunicationInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk921281;
+    ::ll::UntypedStorage<8, 8> mUnk921281;
     ::ll::UntypedStorage<8, 136> mUnkd080df;
     // NOLINTEND
 
@@ -27,13 +27,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void communicate(::std::string const& method, ::Json::Value const& params);
 
-    MCNAPI void sendBandwidthMetric(
-        uint64               connectionTotalBytesReceived,
-        uint64               connectionTotalBytesSent,
-        uint64               playerDeltaBytesReceived,
-        uint64               playerDeltaBytesSent,
-        ::std::string const& xuid
-    );
+    MCNAPI void sendBandwidthMetric(uint64 connectionTotalBytesReceived, uint64 connectionTotalBytesSent, uint64 playerDeltaBytesReceived, uint64 playerDeltaBytesSent, ::std::string const& xuid);
 
     MCNAPI void sendServerStarted();
     // NOLINTEND
@@ -43,4 +37,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::ServerCommunicationInterface> create(::NetworkAddress const& address);
     // NOLINTEND
+
 };

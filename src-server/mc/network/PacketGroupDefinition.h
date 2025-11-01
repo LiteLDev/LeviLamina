@@ -16,7 +16,7 @@ public:
     // clang-format off
     struct PacketGroupBuilder;
     // clang-format on
-
+    
     // PacketGroupDefinition inner types define
     struct PacketGroupBuilder {
     public:
@@ -24,62 +24,60 @@ public:
         // clang-format off
         struct AlgorithmEntry;
         // clang-format on
-
+        
         // PacketGroupBuilder inner types define
         struct AlgorithmEntry {
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::TypedStorage<8, 24, ::std::vector<::MinecraftPacketIds>>       packetIds;
+            ::ll::TypedStorage<8, 24, ::std::vector<::MinecraftPacketIds>> packetIds;
             ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPacketLimitAlgorithm>> algorithm;
             // NOLINTEND
+        
         };
-
+        
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<
-            8,
-            64,
-            ::std::unordered_map<::MinecraftPacketIds, ::std::vector<::std::unique_ptr<::IPacketLimitAlgorithm>>>>
-                                                                             mBasicPacketGroups;
+        ::ll::TypedStorage<8, 64, ::std::unordered_map<::MinecraftPacketIds, ::std::vector<::std::unique_ptr<::IPacketLimitAlgorithm>>>> mBasicPacketGroups;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPacketLimitAlgorithm>> mDefaultAlgorithm;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         PacketGroupBuilder& operator=(PacketGroupBuilder const&);
         PacketGroupBuilder(PacketGroupBuilder const&);
         PacketGroupBuilder();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI PacketGroupBuilder(::PacketGroupDefinition::PacketGroupBuilder&&);
-
+    
         MCAPI ::std::unique_ptr<::PacketGroupDefinition> createGroupDefinition() const;
-
+    
         MCAPI ~PacketGroupBuilder();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::PacketGroupDefinition::PacketGroupBuilder&&);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::MinecraftPacketIds, ::std::unique_ptr<::IPacketLimitAlgorithm>>>
-                                                                         mPacketGroups;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::MinecraftPacketIds, ::std::unique_ptr<::IPacketLimitAlgorithm>>> mPacketGroups;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPacketLimitAlgorithm>> mDefaultAlgorithm;
     // NOLINTEND
+
 };

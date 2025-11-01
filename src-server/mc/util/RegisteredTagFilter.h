@@ -15,4 +15,5 @@ public:
     RegisteredTagFilter& operator=(RegisteredTagFilter const&);
     RegisteredTagFilter(RegisteredTagFilter const&);
     RegisteredTagFilter();
+
 };

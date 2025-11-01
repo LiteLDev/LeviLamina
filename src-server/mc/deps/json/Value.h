@@ -20,114 +20,115 @@ public:
     class CZString;
     struct CZStringCompare;
     // clang-format on
-
+    
     // Value inner types define
     using Members = ::std::vector<::std::string>;
-
+    
     using iterator = ::Json::ValueIterator;
-
+    
     using const_iterator = ::Json::ValueConstIterator;
-
+    
     using UInt = uint;
-
+    
     using Int = int;
-
+    
     using UInt64 = uint64;
-
+    
     using Int64 = int64;
-
+    
     using LargestInt = int64;
-
+    
     using LargestUInt = uint64;
-
+    
     using ArrayIndex = uint;
-
+    
     class CZString {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, char*> cstr_;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         CZString& operator=(CZString const&);
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI CZString();
-
+    
         MCAPI explicit CZString(char const* cstr);
-
+    
         MCAPI CZString(::Json::Value::CZString const& other);
-
+    
         MCAPI CZString(::Json::Value::CZString&& other);
-
+    
         MCAPI CZString(char* cstr, bool duplicate);
-
+    
         MCFOLD char const* c_str() const;
-
+    
         MCAPI ~CZString();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCFOLD void* $ctor();
-
+    
         MCAPI void* $ctor(char const* cstr);
-
+    
         MCAPI void* $ctor(::Json::Value::CZString const& other);
-
+    
         MCAPI void* $ctor(::Json::Value::CZString&& other);
-
+    
         MCAPI void* $ctor(char* cstr, bool duplicate);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct CZStringCompare {
     public:
         // CZStringCompare inner types define
         using is_transparent = void;
-
+        
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI bool operator()(::Json::Value::CZString const& czstring1, ::Json::Value::CZString const& czstring2) const;
         // NOLINTEND
+    
     };
-
+    
     using ObjectValues = ::std::map<::Json::Value::CZString, ::Json::Value, ::Json::Value::CZStringCompare>;
-
+    
     using ArrayValues = ::std::vector<::Json::Value*>;
-
+    
     union ValueHolder {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, int64>                    int_;
-        ::ll::TypedStorage<8, 8, uint64>                   uint_;
-        ::ll::TypedStorage<8, 8, double>                   real_;
-        ::ll::TypedStorage<1, 8, bool>                     bool_;
+        ::ll::TypedStorage<8, 8, int64> int_;
+        ::ll::TypedStorage<8, 8, uint64> uint_;
+        ::ll::TypedStorage<8, 8, double> real_;
+        ::ll::TypedStorage<1, 8, bool> bool_;
         ::ll::TypedStorage<8, 8, ::Json::Value::CZString*> string_;
-        ::ll::TypedStorage<8, 8, ::std::map<::Json::Value::CZString, ::Json::Value, ::Json::Value::CZStringCompare>*>
-                                                                 map_;
+        ::ll::TypedStorage<8, 8, ::std::map<::Json::Value::CZString, ::Json::Value, ::Json::Value::CZStringCompare>*> map_;
         ::ll::TypedStorage<8, 8, ::std::vector<::Json::Value*>*> array_;
         // NOLINTEND
+    
     };
-
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Json::Value::ValueHolder> value_;
-    ::ll::TypedStorage<1, 1, ::Json::ValueType>          type_;
+    ::ll::TypedStorage<1, 1, ::Json::ValueType> type_;
     // NOLINTEND
 
 public:
@@ -339,6 +340,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Json
+}

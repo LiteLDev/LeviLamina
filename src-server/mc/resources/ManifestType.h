@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ManifestType : schar {
-    Pack          = 0,
+    Pack = 0,
     WorldTemplate = 1,
-    Catalog       = 2,
+    Catalog = 2,
 };

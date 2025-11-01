@@ -18,7 +18,7 @@ class InventoryMenu : public ::BaseContainerMenu {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Container*>                           mContainer;
+    ::ll::TypedStorage<8, 8, ::Container*> mContainer;
     ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryAccess>> mContainerRegistryAccess;
     // NOLINTEND
 
@@ -38,8 +38,7 @@ public:
     virtual void removeSlot(int slot, int count) /*override*/;
 
     // vIndex: 11
-    virtual void
-    setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool) /*override*/;
+    virtual void setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool) /*override*/;
 
     // vIndex: 12
     virtual ::ItemStack const& getFullContainerSlot(int slot, ::FullContainerName const& name) const /*override*/;
@@ -87,4 +86,5 @@ public:
 
     MCNAPI static void** $vftableForIContainerManager();
     // NOLINTEND
+
 };

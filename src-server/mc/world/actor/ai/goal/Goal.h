@@ -16,8 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mDebugName;
-    ::ll::TypedStorage<4, 4, int>            mRequiredControlFlags;
-    ::ll::TypedStorage<2, 2, ushort>         mTypeId;
+    ::ll::TypedStorage<4, 4, int> mRequiredControlFlags;
+    ::ll::TypedStorage<2, 2, ushort> mTypeId;
     // NOLINTEND
 
 public:
@@ -83,4 +83,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

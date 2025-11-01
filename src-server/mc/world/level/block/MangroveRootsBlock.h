@@ -5,26 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/level/block/BlockType.h"
 
-// auto generated forward declare list
-// clang-format off
-class Block;
-// clang-format on
-
 class MangroveRootsBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 24
-    virtual bool canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const /*override*/;
-
     // vIndex: 0
     virtual ~MangroveRootsBlock() /*override*/ = default;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCFOLD bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
     // NOLINTEND
 
 public:
@@ -32,4 +18,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -4,6 +4,7 @@
 
 namespace Safety {
 
-struct ChatFloodingActionEnumHasher {};
+struct ChatFloodingActionEnumHasher {
+};
 
-} // namespace Safety
+}

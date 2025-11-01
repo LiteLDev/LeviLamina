@@ -18,8 +18,8 @@ class Debugger : public ::Scripting::IDebuggerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkae28c9;
-    ::ll::UntypedStorage<8, 8>  mUnke101ac;
+    ::ll::UntypedStorage<8, 8> mUnkae28c9;
+    ::ll::UntypedStorage<8, 8> mUnke101ac;
     ::ll::UntypedStorage<8, 64> mUnk84399a;
     ::ll::UntypedStorage<8, 64> mUnk142c77;
     ::ll::UntypedStorage<8, 64> mUnkbbe543;
@@ -38,11 +38,7 @@ public:
     virtual ~Debugger() /*override*/ = default;
 
     // vIndex: 1
-    virtual bool attach(
-        bool                                      performHandshake,
-        ::std::optional<::std::string>            targetModuleUuid,
-        ::std::function<void(::std::string_view)> handler
-    ) /*override*/;
+    virtual bool attach(bool performHandshake, ::std::optional<::std::string> targetModuleUuid, ::std::function<void(::std::string_view)> handler) /*override*/;
 
     // vIndex: 2
     virtual void detach() /*override*/;
@@ -79,11 +75,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $attach(
-        bool                                      performHandshake,
-        ::std::optional<::std::string>            targetModuleUuid,
-        ::std::function<void(::std::string_view)> handler
-    );
+    MCNAPI bool $attach(bool performHandshake, ::std::optional<::std::string> targetModuleUuid, ::std::function<void(::std::string_view)> handler);
 
     MCNAPI void $detach();
 
@@ -97,6 +89,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting::QuickJS
+}

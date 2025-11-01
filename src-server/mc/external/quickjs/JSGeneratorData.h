@@ -15,4 +15,5 @@ public:
     JSGeneratorData& operator=(JSGeneratorData const&);
     JSGeneratorData(JSGeneratorData const&);
     JSGeneratorData();
+
 };

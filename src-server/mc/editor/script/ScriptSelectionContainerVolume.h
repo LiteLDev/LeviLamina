@@ -42,21 +42,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _add(
-        ::std::variant<
-            ::Vec3 const,
-            ::std::vector<::Vec3> const,
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toAdd
-    );
+    MCNAPI void _add(::std::variant<::Vec3 const, ::std::vector<::Vec3> const, ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toAdd);
 
     MCNAPI ::Scripting::Result_deprecated<::BoundingBox> _bounds() const;
 
     MCNAPI void _clear();
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume>
-    _get() const;
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> _get() const;
 
     MCNAPI int _getVolumeCount() const;
 
@@ -64,23 +56,9 @@ public:
 
     MCNAPI void _moveTo(::Vec3 const& location);
 
-    MCNAPI void _remove(
-        ::std::variant<
-            ::Vec3 const,
-            ::std::vector<::Vec3> const,
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toRemove
-    );
+    MCNAPI void _remove(::std::variant<::Vec3 const, ::std::vector<::Vec3> const, ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toRemove);
 
-    MCNAPI void _set(
-        ::std::variant<
-            ::Vec3 const,
-            ::std::vector<::Vec3> const,
-            ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toSet
-    );
+    MCNAPI void _set(::std::variant<::Vec3 const, ::std::vector<::Vec3> const, ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptRelativeVolumeListBlockVolume> const, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSimpleBlockVolume> const, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeBase> const> const& toSet);
 
     MCNAPI void _translate(::Vec3 const& offset);
     // NOLINTEND
@@ -96,6 +74,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

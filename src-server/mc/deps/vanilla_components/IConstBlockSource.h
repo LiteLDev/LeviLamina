@@ -15,6 +15,7 @@ class BlockActor;
 class BlockPos;
 class Dimension;
 class GetCollisionShapeInterface;
+class LevelChunk;
 class Material;
 class Vec3;
 struct Bounds;
@@ -56,7 +57,7 @@ public:
     virtual bool isInWall(::Vec3 const&) const = 0;
 
     // vIndex: 10
-    virtual bool isUnderWater(::Vec3 const&, ::Block const&) const = 0;
+    virtual bool isUnderWater(::BlockPos const&, ::Block const&) const = 0;
 
     // vIndex: 12
     virtual ::Material const& getMaterial(::BlockPos const&) const = 0;
@@ -80,34 +81,24 @@ public:
     virtual ::DimensionType getDimensionId() const = 0;
 
     // vIndex: 18
-    virtual void fetchAABBs(::std::vector<::AABB>&, ::AABB const&, bool) const = 0;
+    virtual bool shouldFireEvents(::LevelChunk const&) const = 0;
 
     // vIndex: 19
-    virtual void fetchCollisionShapes(
-        ::std::vector<::AABB>&,
-        ::AABB const&,
-        bool,
-        ::optional_ref<::GetCollisionShapeInterface const>,
-        ::std::vector<::AABB>*
-    ) const = 0;
+    virtual void fetchAABBs(::std::vector<::AABB>&, ::AABB const&, bool) const = 0;
 
     // vIndex: 20
-    virtual void fetchCollisionShapesAndBlocks(
-        ::std::vector<::BlockSourceVisitor::CollisionShape>&,
-        ::AABB const&,
-        bool,
-        ::optional_ref<::GetCollisionShapeInterface const>,
-        ::std::vector<::AABB>*
-    ) const = 0;
+    virtual void fetchCollisionShapes(::std::vector<::AABB>&, ::AABB const&, bool, ::optional_ref<::GetCollisionShapeInterface const>, ::std::vector<::AABB>*) const = 0;
 
     // vIndex: 21
-    virtual ::AABB
-    getTallestCollisionShape(::AABB const&, float*, bool, ::optional_ref<::GetCollisionShapeInterface const>) const = 0;
+    virtual void fetchCollisionShapesAndBlocks(::std::vector<::BlockSourceVisitor::CollisionShape>&, ::AABB const&, bool, ::optional_ref<::GetCollisionShapeInterface const>, ::std::vector<::AABB>*) const = 0;
 
     // vIndex: 22
-    virtual float getBrightness(::BlockPos const&) const = 0;
+    virtual ::AABB getTallestCollisionShape(::AABB const&, float*, bool, ::optional_ref<::GetCollisionShapeInterface const>) const = 0;
 
     // vIndex: 23
+    virtual float getBrightness(::BlockPos const&) const = 0;
+
+    // vIndex: 24
     virtual float getVisualLiquidHeight(::Vec3 const&) const = 0;
     // NOLINTEND
 
@@ -116,4 +107,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

@@ -16,13 +16,13 @@ class RandomHoverGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                    mMob;
-    ::ll::TypedStorage<4, 4, float const>               mSpeedModifier;
-    ::ll::TypedStorage<4, 4, int const>                 mInterval;
-    ::ll::TypedStorage<4, 4, float const>               mXZDist;
-    ::ll::TypedStorage<4, 4, float const>               mYDist;
-    ::ll::TypedStorage<4, 4, float>                     mYOffset;
-    ::ll::TypedStorage<4, 8, ::IntRange>                mHoverHeight;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, float const> mSpeedModifier;
+    ::ll::TypedStorage<4, 4, int const> mInterval;
+    ::ll::TypedStorage<4, 4, float const> mXZDist;
+    ::ll::TypedStorage<4, 4, float const> mYDist;
+    ::ll::TypedStorage<4, 4, float> mYOffset;
+    ::ll::TypedStorage<4, 8, ::IntRange> mHoverHeight;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
     // NOLINTEND
 
@@ -85,4 +85,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -11,7 +11,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 48, ::UpdateSubChunkBlocksChangedInfo> mBlocksChanged;
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>            mSubChunkBlockPosition;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mSubChunkBlockPosition;
     // NOLINTEND
 
 public:
@@ -33,4 +33,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

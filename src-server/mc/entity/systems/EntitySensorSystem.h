@@ -21,22 +21,11 @@ class EntitySensorSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tick(
-        ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::ActorTickedComponent const>,
-            ::ActorOwnerComponent,
-            ::EntitySensorComponent> view
-    );
+    MCNAPI static void _tick(::OptionalGlobal<::CurrentTickComponent const> currentTickComponent, ::ViewT<::StrictEntityContext, ::Include<::ActorTickedComponent const>, ::ActorOwnerComponent, ::EntitySensorComponent> view);
 
-    MCNAPI static void _tickEntitySensorComponent(
-        ::StrictEntityContext&,
-        ::ActorOwnerComponent&        actorOwnerComponent,
-        ::EntitySensorComponent&      entitySensorComponent,
-        ::CurrentTickComponent const& currentTickComponent
-    );
+    MCNAPI static void _tickEntitySensorComponent(::StrictEntityContext&, ::ActorOwnerComponent& actorOwnerComponent, ::EntitySensorComponent& entitySensorComponent, ::CurrentTickComponent const& currentTickComponent);
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
+
 };

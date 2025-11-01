@@ -34,11 +34,7 @@ public:
     virtual bool postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
     // vIndex: 3
-    virtual void addChildren(
-        ::StructurePiece&                                   startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random
-    ) /*override*/;
+    virtual void addChildren(::StructurePiece& startPiece, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random) /*override*/;
 
     // vIndex: 0
     virtual ~SHFiveCrossing() /*override*/ = default;
@@ -47,15 +43,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        int                                                 footX,
-        int                                                 footY,
-        int                                                 footZ,
-        int                                                 direction,
-        int                                                 genDepth
-    );
+    MCAPI static ::std::unique_ptr<::StrongholdPiece> createPiece(::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random, int footX, int footY, int footZ, int direction, int genDepth);
     // NOLINTEND
 
 public:
@@ -65,11 +53,7 @@ public:
 
     MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void $addChildren(
-        ::StructurePiece&                                   startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random
-    );
+    MCAPI void $addChildren(::StructurePiece& startPiece, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random);
     // NOLINTEND
 
 public:
@@ -77,4 +61,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

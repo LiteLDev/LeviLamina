@@ -29,4 +29,5 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ServerCameraDefaultControlSchemesComponent&&);
     // NOLINTEND
+
 };

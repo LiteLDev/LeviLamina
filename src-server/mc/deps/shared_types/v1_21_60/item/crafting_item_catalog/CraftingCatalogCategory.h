@@ -13,7 +13,7 @@ struct CraftingCatalogCategory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnka4f5d6;
+    ::ll::UntypedStorage<4, 4> mUnka4f5d6;
     ::ll::UntypedStorage<8, 24> mUnk280005;
     // NOLINTEND
 
@@ -26,8 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogCategory&
-    operator=(::SharedTypes::v1_21_60::CraftingCatalogCategory&&);
+    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogCategory& operator=(::SharedTypes::v1_21_60::CraftingCatalogCategory&&);
     // NOLINTEND
 
 public:
@@ -35,6 +34,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_60
+}

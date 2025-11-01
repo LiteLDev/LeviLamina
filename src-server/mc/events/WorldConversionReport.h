@@ -4,6 +4,7 @@
 
 namespace Legacy {
 
-struct WorldConversionReport {};
+struct WorldConversionReport {
+};
 
-} // namespace Legacy
+}

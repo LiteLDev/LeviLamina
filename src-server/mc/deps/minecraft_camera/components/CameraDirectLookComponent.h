@@ -20,6 +20,7 @@ public:
     CameraDirectLookComponent& operator=(CameraDirectLookComponent const&);
     CameraDirectLookComponent(CameraDirectLookComponent const&);
     CameraDirectLookComponent();
+
 };
 
-} // namespace MinecraftCamera
+}

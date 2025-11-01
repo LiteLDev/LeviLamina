@@ -79,22 +79,13 @@ public:
 
     MCAPI void useAsFuel();
 
-    MCAPI ::InteractionResult useOn(
-        ::Actor&                 entity,
-        int                      x,
-        int                      y,
-        int                      z,
-        uchar                    face,
-        ::Vec3 const&            clickPos,
-        ::ItemUsedOnEventContext itemUsedOnEventContext
-    );
+    MCAPI ::InteractionResult useOn(::Actor& entity, int x, int y, int z, uchar face, ::Vec3 const& clickPos, ::ItemUsedOnEventContext itemUsedOnEventContext);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ItemStack
-    fromDescriptor(::NetworkItemStackDescriptor const& descriptor, ::BlockPalette& blockPalette, bool isClientSide);
+    MCAPI static ::ItemStack fromDescriptor(::NetworkItemStackDescriptor const& descriptor, ::BlockPalette& blockPalette, bool isClientSide);
 
     MCAPI static ::ItemStack fromTag(::CompoundTag const& tag);
 
@@ -148,4 +139,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

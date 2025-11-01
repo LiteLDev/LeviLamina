@@ -13,4 +13,4 @@ namespace MobSuffocationDamageSystem {
 MCNAPI ::TickingSystemWithInfo create();
 // NOLINTEND
 
-} // namespace MobSuffocationDamageSystem
+}

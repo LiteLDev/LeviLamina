@@ -4,6 +4,7 @@
 
 namespace TextureSetHelpers {
 
-class TextureSetLayerDefinitionParser {};
+class TextureSetLayerDefinitionParser {
+};
 
-} // namespace TextureSetHelpers
+}

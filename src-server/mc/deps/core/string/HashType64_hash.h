@@ -2,4 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct HashType64_hash {};
+struct HashType64_hash {
+};

@@ -17,6 +17,7 @@ public:
     VehicleDirections& operator=(VehicleDirections const&);
     VehicleDirections(VehicleDirections const&);
     VehicleDirections();
+
 };
 
-} // namespace VehicleUtils
+}

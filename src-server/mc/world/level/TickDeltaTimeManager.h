@@ -15,4 +15,5 @@ public:
     TickDeltaTimeManager& operator=(TickDeltaTimeManager const&);
     TickDeltaTimeManager(TickDeltaTimeManager const&);
     TickDeltaTimeManager();
+
 };

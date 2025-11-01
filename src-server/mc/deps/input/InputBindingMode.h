@@ -3,8 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class InputBindingMode : uint {
-    Undefined        = 0,
+    Undefined = 0,
     MouseAndKeyboard = 1,
-    Gamepad          = 2,
-    MotionController = 3,
+    Gamepad = 2,
 };

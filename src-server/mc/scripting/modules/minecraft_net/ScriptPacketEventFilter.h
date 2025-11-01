@@ -26,8 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraftNet::EventFilters::ScriptPacketEventFilter&
-    operator=(::ScriptModuleMinecraftNet::EventFilters::ScriptPacketEventFilter const&);
+    MCNAPI ::ScriptModuleMinecraftNet::EventFilters::ScriptPacketEventFilter& operator=(::ScriptModuleMinecraftNet::EventFilters::ScriptPacketEventFilter const&);
 
     MCNAPI ~ScriptPacketEventFilter();
     // NOLINTEND
@@ -43,6 +42,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraftNet::EventFilters
+}

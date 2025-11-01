@@ -15,4 +15,5 @@ public:
     JSPromiseFunctionDataResolved& operator=(JSPromiseFunctionDataResolved const&);
     JSPromiseFunctionDataResolved(JSPromiseFunctionDataResolved const&);
     JSPromiseFunctionDataResolved();
+
 };

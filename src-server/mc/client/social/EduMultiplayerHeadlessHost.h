@@ -13,17 +13,16 @@ class EduMultiplayerHeadlessHost : public ::Social::IEduMultiplayerHeadless {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk4fafae;
-    ::ll::UntypedStorage<8, 32>  mUnkcce7e7;
-    ::ll::UntypedStorage<4, 4>   mUnk180685;
-    ::ll::UntypedStorage<8, 8>   mUnk875a0a;
-    ::ll::UntypedStorage<1, 1>   mUnke34628;
-    ::ll::UntypedStorage<8, 24>  mUnk7ac4d5;
-    ::ll::UntypedStorage<8, 64>  mUnkaa09a6;
+    ::ll::UntypedStorage<8, 32> mUnk4fafae;
+    ::ll::UntypedStorage<8, 32> mUnkcce7e7;
+    ::ll::UntypedStorage<4, 4> mUnk180685;
+    ::ll::UntypedStorage<8, 8> mUnk875a0a;
+    ::ll::UntypedStorage<1, 1> mUnke34628;
+    ::ll::UntypedStorage<8, 24> mUnk7ac4d5;
+    ::ll::UntypedStorage<8, 64> mUnkaa09a6;
     ::ll::UntypedStorage<8, 336> mUnk84517e;
-    ::ll::UntypedStorage<8, 56>  mUnk708ffb;
-    ::ll::UntypedStorage<8, 40>  mUnk8327b6;
-    ::ll::UntypedStorage<8, 16>  mUnkfac924;
+    ::ll::UntypedStorage<8, 56> mUnk6ade59;
+    ::ll::UntypedStorage<8, 16> mUnkfac924;
     // NOLINTEND
 
 public:
@@ -42,7 +41,7 @@ public:
     virtual void hostServer() /*override*/;
 
     // vIndex: 2
-    virtual ::Social::EduJoinerResponse tryAcceptJoinerNonce(::std::string const&) /*override*/;
+    virtual ::Social::EduJoinerResponse tryAcceptJoiner(::std::string const&, ::std::string const&) /*override*/;
 
     // vIndex: 3
     virtual ::std::string getHostToJoinerNonce(::std::string const&) const /*override*/;
@@ -56,6 +55,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Social
+}

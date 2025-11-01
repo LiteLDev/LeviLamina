@@ -16,7 +16,7 @@ class LootTable {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                                mDir;
+    ::ll::TypedStorage<8, 32, ::std::string> mDir;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LootPool>>> mPools;
     // NOLINTEND
 
@@ -33,4 +33,5 @@ public:
 
     MCAPI void shuffleAndSplitItems(::std::vector<::ItemStack>& result, int availableSlots, ::Random& random);
     // NOLINTEND
+
 };

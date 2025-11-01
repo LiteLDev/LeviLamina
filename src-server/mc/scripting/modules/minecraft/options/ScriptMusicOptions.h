@@ -53,6 +53,7 @@ public:
 
     MCNAPI static float const& VOLUME_MIN();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

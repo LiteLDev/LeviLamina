@@ -22,13 +22,13 @@ public:
     // clang-format off
     struct Stats;
     // clang-format on
-
+    
     // NetworkManager inner types define
     enum class EnumerationPermission : int {
         Allowed = 0,
         Blocked = 1,
     };
-
+    
     struct Stats {
     public:
         // member variables
@@ -36,14 +36,15 @@ public:
         ::ll::UntypedStorage<4, 4> mUnka7cbe9;
         ::ll::UntypedStorage<4, 4> mUnk6126d7;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Stats& operator=(Stats const&);
         Stats(Stats const&);
         Stats();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -123,6 +124,7 @@ public:
 
     MCNAPI static void** $vftableForDefaultLocalAddressProvider();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

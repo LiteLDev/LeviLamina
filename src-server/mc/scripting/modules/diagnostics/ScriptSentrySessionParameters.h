@@ -14,9 +14,9 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk930490;
     ::ll::UntypedStorage<8, 32> mUnk7fe0ca;
     ::ll::UntypedStorage<8, 32> mUnk70ff2b;
-    ::ll::UntypedStorage<1, 1>  mUnk40264f;
-    ::ll::UntypedStorage<4, 4>  mUnka89359;
-    ::ll::UntypedStorage<1, 1>  mUnke7958c;
+    ::ll::UntypedStorage<1, 1> mUnk40264f;
+    ::ll::UntypedStorage<4, 4> mUnka89359;
+    ::ll::UntypedStorage<1, 1> mUnke7958c;
     // NOLINTEND
 
 public:
@@ -44,6 +44,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleDiagnostics
+}

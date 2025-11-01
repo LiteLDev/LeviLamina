@@ -35,8 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool
-    DoSetKey(int type, int crypto_suite, uchar const* key, uint64 len, ::std::vector<int> const& extension_ids);
+    MCNAPI bool DoSetKey(int type, int crypto_suite, uchar const* key, uint64 len, ::std::vector<int> const& extension_ids);
 
     MCNAPI void DumpPacket(void const* buf, int len, bool outbound);
 
@@ -54,8 +53,7 @@ public:
 
     MCNAPI bool RemoveSsrcFromSession(uint ssrc);
 
-    MCNAPI bool
-    SetKey(int type, int crypto_suite, uchar const* key, uint64 len, ::std::vector<int> const& extension_ids);
+    MCNAPI bool SetKey(int type, int crypto_suite, uchar const* key, uint64 len, ::std::vector<int> const& extension_ids);
 
     MCNAPI bool SetRecv(int crypto_suite, uchar const* key, uint64 len, ::std::vector<int> const& extension_ids);
 
@@ -67,8 +65,7 @@ public:
 
     MCNAPI bool UnprotectRtp(void* p, int in_len, int* out_len);
 
-    MCNAPI bool
-    UpdateKey(int type, int crypto_suite, uchar const* key, uint64 len, ::std::vector<int> const& extension_ids);
+    MCNAPI bool UpdateKey(int type, int crypto_suite, uchar const* key, uint64 len, ::std::vector<int> const& extension_ids);
 
     MCNAPI bool UpdateRecv(int crypto_suite, uchar const* key, uint64 len, ::std::vector<int> const& extension_ids);
 
@@ -94,6 +91,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

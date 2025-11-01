@@ -5,11 +5,11 @@
 namespace webrtc {
 
 enum class BandwidthLimitedCause : int {
-    KLossLimitedBweIncreasing        = 0,
-    KLossLimitedBwe                  = 1,
-    KDelayBasedLimited               = 2,
+    KLossLimitedBweIncreasing = 0,
+    KLossLimitedBwe = 1,
+    KDelayBasedLimited = 2,
     KDelayBasedLimitedDelayIncreased = 3,
-    KRttBasedBackOffHighRtt          = 4,
+    KRttBasedBackOffHighRtt = 4,
 };
 
 }

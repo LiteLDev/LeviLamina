@@ -13,9 +13,9 @@ class ScreenFlow {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk639462;
+    ::ll::UntypedStorage<8, 8> mUnk639462;
     ::ll::UntypedStorage<8, 16> mUnk890a72;
-    ::ll::UntypedStorage<8, 8>  mUnk7be49c;
+    ::ll::UntypedStorage<8, 8> mUnk7be49c;
     ::ll::UntypedStorage<8, 32> mUnk990b26;
     ::ll::UntypedStorage<8, 32> mUnk675043;
     ::ll::UntypedStorage<8, 64> mUnk5d55ec;
@@ -30,16 +30,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void AddScreen(
-        ::std::string const&                                      screenName,
-        double                                                    timestamp,
-        double                                                    seconds,
-        ::std::unordered_map<::std::string, ::std::string> const& additionalProperties,
-        bool                                                      isDeepLink
-    );
+    MCNAPI void AddScreen(::std::string const& screenName, double timestamp, double seconds, ::std::unordered_map<::std::string, ::std::string> const& additionalProperties, bool isDeepLink);
 
     MCNAPI void PopulateEvent(::Social::Events::Event& event, bool clear);
     // NOLINTEND
+
 };
 
-} // namespace Social::Events
+}

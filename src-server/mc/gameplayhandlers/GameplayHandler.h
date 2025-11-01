@@ -9,4 +9,5 @@ public:
     // vIndex: 0
     virtual ~GameplayHandler() = default;
     // NOLINTEND
+
 };

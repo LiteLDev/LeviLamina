@@ -4,7 +4,8 @@
 
 namespace Bedrock::PubSub::Deferred::Detail {
 
-template <int T0, typename T1>
-struct TupleTraits {};
+template<int T0, typename T1>
+struct TupleTraits {
+};
 
-} // namespace Bedrock::PubSub::Deferred::Detail
+}

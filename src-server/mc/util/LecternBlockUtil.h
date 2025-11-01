@@ -15,4 +15,4 @@ MCAPI ::Vec3 const& LECTERN_AABB_ORIGIN();
 MCAPI ::Vec3 const& LECTERN_AABB_SIZE();
 // NOLINTEND
 
-} // namespace LecternBlockUtil
+}

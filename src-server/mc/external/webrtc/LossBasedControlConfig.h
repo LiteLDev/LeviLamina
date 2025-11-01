@@ -13,7 +13,7 @@ struct LossBasedControlConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkf699da;
+    ::ll::UntypedStorage<1, 1> mUnkf699da;
     ::ll::UntypedStorage<8, 80> mUnkb1b434;
     ::ll::UntypedStorage<8, 80> mUnk52eedc;
     ::ll::UntypedStorage<8, 80> mUnke91eb4;
@@ -57,6 +57,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

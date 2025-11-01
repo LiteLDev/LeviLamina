@@ -17,7 +17,7 @@ class CraftHandlerAnvil : public ::CraftHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>       mAnvilCost;
+    ::ll::TypedStorage<4, 4, int> mAnvilCost;
     ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
     // NOLINTEND
 
@@ -48,4 +48,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

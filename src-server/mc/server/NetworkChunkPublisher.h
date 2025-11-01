@@ -6,7 +6,7 @@
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/buffer_span.h"
 #include "mc/network/NetworkIdentifier.h"
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -29,33 +29,24 @@ class NetworkChunkPublisher {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Level&>                                           mLevel;
-    ::ll::TypedStorage<8, 8, ::ServerNetworkSystem*>                             mNetwork;
-    ::ll::TypedStorage<8, 176, ::NetworkIdentifier>                              mOwner;
+    ::ll::TypedStorage<8, 8, ::Level&> mLevel;
+    ::ll::TypedStorage<8, 8, ::ServerNetworkSystem*> mNetwork;
+    ::ll::TypedStorage<8, 176, ::NetworkIdentifier> mOwner;
     ::ll::TypedStorage<8, 8, ::ClientBlobCache::Server::ActiveTransfersManager*> mClientCache;
-    ::ll::TypedStorage<1, 1, ::SubClientId>                                      mSubClientId;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                                        mLastChunkUpdatePosition;
-    ::ll::TypedStorage<4, 4, uint>                                               mLastChunkUpdateRadius;
-    ::ll::TypedStorage<4, 4, uint>                                               mHandleForChunkBuildOrderUpdates;
-    ::ll::TypedStorage<4, 4, int>                                                mChunksSentSinceStart;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkViewSource>>               mSource;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkSource>>                  mNetworkChunkSource;
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)>>
-                                             mAddCallback;
+    ::ll::TypedStorage<1, 1, ::SubClientId> mSubClientId;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mLastChunkUpdatePosition;
+    ::ll::TypedStorage<4, 4, uint> mLastChunkUpdateRadius;
+    ::ll::TypedStorage<4, 4, uint> mHandleForChunkBuildOrderUpdates;
+    ::ll::TypedStorage<4, 4, int> mChunksSentSinceStart;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkViewSource>> mSource;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ChunkSource>> mNetworkChunkSource;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::buffer_span_mut<::std::shared_ptr<::LevelChunk>>, ::buffer_span<uint>)>> mAddCallback;
     ::ll::TypedStorage<8, 32, ::std::string> mCacheSerializeBuffer;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPositionAndDimension, ::std::weak_ptr<::LevelChunk>>>
-                                                                      mQueuedChunks;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPositionAndDimension, ::std::weak_ptr<::LevelChunk>>> mQueuedChunks;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastGenerationRequestQueued;
-    ::ll::TypedStorage<1, 1, bool>                                    mWaitingForServerChunks;
-    ::ll::TypedStorage<1, 1, bool>                                    mInitialSpawnDone;
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::queue<::ClientGenerationRequestHandler, ::std::deque<::ClientGenerationRequestHandler>>>
-        mGenerationRequests;
+    ::ll::TypedStorage<1, 1, bool> mWaitingForServerChunks;
+    ::ll::TypedStorage<1, 1, bool> mInitialSpawnDone;
+    ::ll::TypedStorage<8, 40, ::std::queue<::ClientGenerationRequestHandler, ::std::deque<::ClientGenerationRequestHandler>>> mGenerationRequests;
     // NOLINTEND
 
 public:
@@ -78,16 +69,9 @@ public:
 
     MCAPI bool _isWaitingForFullyBuiltChunks() const;
 
-    MCAPI bool _sendQueuedChunk(
-        ::ChunkPositionAndDimension const&          queuedChunk,
-        ::ClientBlobCache::Server::TransferBuilder* cachedTransfer
-    );
+    MCAPI bool _sendQueuedChunk(::ChunkPositionAndDimension const& queuedChunk, ::ClientBlobCache::Server::TransferBuilder* cachedTransfer);
 
-    MCAPI void _serializeAndCache(
-        ::LevelChunkPacket&                          packet,
-        ::ClientBlobCache::Server::TransferBuilder&  transfer,
-        ::std::function<void(::VarIntDataOutput&)>&& serialize
-    );
+    MCAPI void _serializeAndCache(::LevelChunkPacket& packet, ::ClientBlobCache::Server::TransferBuilder& transfer, ::std::function<void(::VarIntDataOutput&)>&& serialize);
 
     MCAPI void clearRegion();
 
@@ -109,4 +93,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

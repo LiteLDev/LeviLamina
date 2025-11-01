@@ -18,6 +18,7 @@ public:
     LoggedBweDelayBasedUpdate& operator=(LoggedBweDelayBasedUpdate const&);
     LoggedBweDelayBasedUpdate(LoggedBweDelayBasedUpdate const&);
     LoggedBweDelayBasedUpdate();
+
 };
 
-} // namespace webrtc
+}

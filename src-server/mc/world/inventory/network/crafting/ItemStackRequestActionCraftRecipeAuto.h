@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::RecipeIngredient>> mIngredients;
-    ::ll::TypedStorage<1, 1, uchar>                              mNumIngredients;
+    ::ll::TypedStorage<1, 1, uchar> mNumIngredients;
     // NOLINTEND
 
 public:
@@ -49,4 +49,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

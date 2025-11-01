@@ -17,6 +17,7 @@ public:
     PackAssociations& operator=(PackAssociations const&);
     PackAssociations(PackAssociations const&);
     PackAssociations();
+
 };
 
-} // namespace PackCommand
+}

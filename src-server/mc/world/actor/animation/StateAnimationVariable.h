@@ -16,4 +16,5 @@ public:
     StateAnimationVariable& operator=(StateAnimationVariable const&);
     StateAnimationVariable(StateAnimationVariable const&);
     StateAnimationVariable();
+
 };

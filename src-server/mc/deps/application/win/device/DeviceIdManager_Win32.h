@@ -31,6 +31,7 @@ public:
 
     MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

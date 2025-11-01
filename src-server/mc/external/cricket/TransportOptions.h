@@ -18,6 +18,7 @@ public:
     TransportOptions& operator=(TransportOptions const&);
     TransportOptions(TransportOptions const&);
     TransportOptions();
+
 };
 
-} // namespace cricket
+}

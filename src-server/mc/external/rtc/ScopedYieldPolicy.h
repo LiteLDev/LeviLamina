@@ -22,6 +22,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void YieldExecution();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

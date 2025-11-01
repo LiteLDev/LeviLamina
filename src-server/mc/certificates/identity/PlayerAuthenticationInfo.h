@@ -17,7 +17,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> NintendoName;
     ::ll::TypedStorage<8, 32, ::std::string> PlayStationName;
     ::ll::TypedStorage<8, 32, ::std::string> PublicKey;
-    ::ll::TypedStorage<8, 16, ::mce::UUID>   AuthenticatedUuid;
+    ::ll::TypedStorage<8, 16, ::mce::UUID> AuthenticatedUuid;
     // NOLINTEND
 
 public:
@@ -50,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

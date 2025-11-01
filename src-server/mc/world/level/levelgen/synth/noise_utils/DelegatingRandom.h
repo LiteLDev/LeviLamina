@@ -73,6 +73,7 @@ public:
 
     MCAPI ::std::unique_ptr<::IRandom> $fork();
     // NOLINTEND
+
 };
 
-} // namespace NoiseUtils
+}

@@ -33,39 +33,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
-    createV010(
-        ::std::string const&                  componentName,
-        ::BlockSource&                        region,
-        ::BlockPos                            position,
-        ::Scripting::WeakLifetimeScope const& scope
-    ) const;
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>> createV010(::std::string const& componentName, ::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope) const;
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
-    createV1(
-        ::std::string const&                  componentName,
-        ::BlockSource&                        region,
-        ::BlockPos                            position,
-        ::Scripting::WeakLifetimeScope const& scope
-    ) const;
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>> createV1(::std::string const& componentName, ::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope) const;
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>>
-    createV2(
-        ::std::string const&                  componentName,
-        ::BlockSource&                        region,
-        ::BlockPos                            position,
-        ::Scripting::WeakLifetimeScope const& scope
-    ) const;
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::BaseScriptBlockComponent>> createV2(::std::string const& componentName, ::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void bind(
-        ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
-        ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& blockComponentTypeEnumBuilder
-    );
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& blockComponentTypeEnumBuilder);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

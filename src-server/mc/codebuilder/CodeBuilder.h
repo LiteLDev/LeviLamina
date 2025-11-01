@@ -49,4 +49,4 @@ MCNAPI ::std::string serialize(::CodeBuilder::ChatMessage const& message, ::std:
 MCNAPI ::std::string toString(::CodeBuilder::ResponsePurpose purpose);
 // NOLINTEND
 
-} // namespace CodeBuilder
+}

@@ -4,6 +4,7 @@
 
 namespace webrtc {
 
-struct TaskQueueDeleter {};
+struct TaskQueueDeleter {
+};
 
-} // namespace webrtc
+}

@@ -32,4 +32,4 @@ MCAPI ::std::string const& USE_AABB();
 MCAPI ::std::string const& WEIGHT();
 // NOLINTEND
 
-} // namespace POIInstanceTags
+}

@@ -31,10 +31,7 @@ MCAPI void _addCommonVanillaMetadata(::Json::Value& jsonRoot, char const* type);
 
 MCAPI void _addPrivilegeToArray(::Json::Value& arr, ::Scripting::Privilege privilege);
 
-MCAPI void _generateAfterEventsOrderingDocumentation(
-    ::Scripting::ScriptEngine const& scriptEngine,
-    ::Core::Path const&              docsFolder
-);
+MCAPI void _generateAfterEventsOrderingDocumentation(::Scripting::ScriptEngine const& scriptEngine, ::Core::Path const& docsFolder);
 
 MCAPI ::Json::Value _generateBiomeMetadataJson(::BiomeRegistry const& biomes);
 
@@ -50,9 +47,7 @@ MCAPI ::Json::Value _generateEffectsMetadataJson();
 
 MCAPI ::Json::Value _generateEnchantmentsMetadataJson();
 
-MCAPI ::Json::Value _generateEntitiesMetadataJson(
-    ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList
-);
+MCAPI ::Json::Value _generateEntitiesMetadataJson(::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList);
 
 MCAPI ::Json::Value _generateItemsMetadataJson(::ItemRegistryRef itemRegistry);
 
@@ -60,17 +55,11 @@ MCAPI ::Json::Value _generatePotionDeliveryTypesMetadataJson();
 
 MCAPI ::Json::Value _generatePotionEffectsMetadataJson();
 
-MCAPI ::Json::Value _generateScriptingModuleMetadataJson(
-    ::Scripting::ModuleBinding const&          moduleToBind,
-    ::Scripting::SupportedBindingModule const& moduleDescriptor,
-    ::Scripting::ModuleBindingBundle const&    loadedModules
-);
+MCAPI ::Json::Value _generateScriptingModuleMetadataJson(::Scripting::ModuleBinding const& moduleToBind, ::Scripting::SupportedBindingModule const& moduleDescriptor, ::Scripting::ModuleBindingBundle const& loadedModules);
 
 MCAPI ::Json::Value _generateStructureFeatureMetadataJson();
 
-MCAPI ::std::unordered_map<::std::string, ::std::string> _getPropertyToEntityNameMap(
-    ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList
-);
+MCAPI ::std::unordered_map<::std::string, ::std::string> _getPropertyToEntityNameMap(::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList);
 
 MCAPI void generateCommandsDocumentation(::CommandRegistry& commandRegistry, ::Core::Path const& docsFolder);
 
@@ -82,13 +71,7 @@ MCAPI void generateSchemaDataDocumentation(::Core::Path const& schemaDataFolder)
 
 MCAPI void generateScriptingDocumentation(::Scripting::ScriptEngine& scriptEngine, ::Core::Path const& docsFolder);
 
-MCAPI void generateVanillaDataDocumentation(
-    ::Core::Path const&                                                              docsFolder,
-    ::ItemRegistryRef                                                                itemRegistry,
-    ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList,
-    ::CameraPresets const&                                                           presets,
-    ::BiomeRegistry const&                                                           biomes
-);
+MCAPI void generateVanillaDataDocumentation(::Core::Path const& docsFolder, ::ItemRegistryRef itemRegistry, ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList, ::CameraPresets const& presets, ::BiomeRegistry const& biomes);
 
 MCAPI ::std::string getGameSemVersionAsString();
 
@@ -96,14 +79,9 @@ MCAPI ::std::initializer_list<::AllExperiments> getRequiredExperimentsForMetadat
 
 MCAPI ::std::string scriptingVersionToString(::Scripting::Version const& version);
 
-MCAPI bool validateVariantResolution(
-    ::Scripting::ModuleBinding const&       moduleToBind,
-    ::entt::meta_type const&                variantType,
-    ::Scripting::ModuleBindingBundle const& loadedModules,
-    ::std::string const&                    bindingName
-);
+MCAPI bool validateVariantResolution(::Scripting::ModuleBinding const& moduleToBind, ::entt::meta_type const& variantType, ::Scripting::ModuleBindingBundle const& loadedModules, ::std::string const& bindingName);
 
 MCAPI bool writeJsonMetadataToFile(::Json::Value const& json, ::Core::Path const& filepath);
 // NOLINTEND
 
-} // namespace CreatorMetadataUtils
+}

@@ -15,7 +15,7 @@ struct ValidMutableAttributeWithContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::AttributeInstance* const>           mInstance;
+    ::ll::TypedStorage<8, 8, ::AttributeInstance* const> mInstance;
     ::ll::TypedStorage<8, 8, ::AttributeModificationContext const> mContext;
     // NOLINTEND
 
@@ -24,4 +24,5 @@ public:
     // NOLINTBEGIN
     MCNAPI ::AttributeInstanceForwarder* operator->();
     // NOLINTEND
+
 };

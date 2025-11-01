@@ -22,4 +22,5 @@ public:
 
     MCNAPI void checkPath(::Mob& mob);
     // NOLINTEND
+
 };

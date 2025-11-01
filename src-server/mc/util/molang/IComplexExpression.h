@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/molang/MolangVersion.h"
 #include "mc/util/molang/ExpressionOp.h"
+#include "mc/versionless/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -76,6 +76,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Molang::details
+}

@@ -33,6 +33,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::EntityContext const& entity);
     // NOLINTEND
+
 };
 
-} // namespace MovementDataExtractionUtility
+}

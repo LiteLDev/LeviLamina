@@ -10,6 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 56, ::std::array<int64, 7>> mParams;
     // NOLINTEND
+
 };
 
-} // namespace ClimateUtils
+}

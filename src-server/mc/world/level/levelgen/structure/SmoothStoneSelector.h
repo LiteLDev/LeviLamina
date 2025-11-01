@@ -17,7 +17,7 @@ public:
     // clang-format off
     struct LocalRegistry;
     // clang-format on
-
+    
     // SmoothStoneSelector inner types define
     struct LocalRegistry {
     public:
@@ -29,8 +29,9 @@ public:
         ::ll::TypedStorage<8, 8, ::Block const*> mCrackedStoneBrick;
         ::ll::TypedStorage<8, 8, ::Block const*> mMossyStoneBrick;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,4 +65,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

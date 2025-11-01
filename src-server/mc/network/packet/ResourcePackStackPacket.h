@@ -6,7 +6,7 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
-#include "mc/resources/BaseGameVersion.h"
+#include "mc/versionless/util/BaseGameVersion.h"
 #include "mc/world/level/storage/ExperimentStorage.h"
 
 // auto generated forward declare list
@@ -23,10 +23,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>> mAddOnIdsAndVersions;
     ::ll::TypedStorage<8, 24, ::std::vector<::PackInstanceId>> mTexturePackIdsAndVersions;
-    ::ll::TypedStorage<8, 32, ::BaseGameVersion>               mBaseGameVersion;
-    ::ll::TypedStorage<1, 1, bool>                             mTexturePackRequired;
-    ::ll::TypedStorage<8, 72, ::ExperimentStorage>             mExperiments;
-    ::ll::TypedStorage<1, 1, bool>                             mIncludeEditorPacks;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion> mBaseGameVersion;
+    ::ll::TypedStorage<1, 1, bool> mTexturePackRequired;
+    ::ll::TypedStorage<8, 72, ::ExperimentStorage> mExperiments;
+    ::ll::TypedStorage<1, 1, bool> mIncludeEditorPacks;
     // NOLINTEND
 
 public:
@@ -38,10 +38,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -53,14 +53,7 @@ public:
     // NOLINTBEGIN
     MCAPI ResourcePackStackPacket();
 
-    MCAPI ResourcePackStackPacket(
-        ::std::vector<::PackInstanceId> addOnIdsAndVersions,
-        ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
-        ::BaseGameVersion const&        baseGameVersion,
-        bool                            texturePackRequired,
-        ::Experiments const&            experiments,
-        bool                            includeEditorPacks
-    );
+    MCAPI ResourcePackStackPacket(::std::vector<::PackInstanceId> addOnIdsAndVersions, ::std::vector<::PackInstanceId> texturePackIdsAndVersions, ::BaseGameVersion const& baseGameVersion, bool texturePackRequired, ::Experiments const& experiments, bool includeEditorPacks);
     // NOLINTEND
 
 public:
@@ -68,14 +61,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(
-        ::std::vector<::PackInstanceId> addOnIdsAndVersions,
-        ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
-        ::BaseGameVersion const&        baseGameVersion,
-        bool                            texturePackRequired,
-        ::Experiments const&            experiments,
-        bool                            includeEditorPacks
-    );
+    MCAPI void* $ctor(::std::vector<::PackInstanceId> addOnIdsAndVersions, ::std::vector<::PackInstanceId> texturePackIdsAndVersions, ::BaseGameVersion const& baseGameVersion, bool texturePackRequired, ::Experiments const& experiments, bool includeEditorPacks);
     // NOLINTEND
 
 public:
@@ -101,4 +87,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

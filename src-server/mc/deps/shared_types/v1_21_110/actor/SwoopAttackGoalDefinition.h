@@ -36,8 +36,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static float const& DEFAULT_DAMAGE_REACH();
+
+    MCNAPI static float const& DEFAULT_SPEED_MULTIPLIER();
+
     MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_110
+}

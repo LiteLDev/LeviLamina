@@ -10,4 +10,4 @@ MCNAPI ::std::string const& Day();
 MCNAPI ::std::string const& Night();
 // NOLINTEND
 
-} // namespace DefaultGameTestBatches
+}

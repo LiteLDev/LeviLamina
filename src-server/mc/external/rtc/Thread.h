@@ -25,7 +25,7 @@ public:
     struct DelayedMessage;
     class ScopedDisallowBlockingCalls;
     // clang-format on
-
+    
     // Thread inner types define
     class ScopedDisallowBlockingCalls {
     public:
@@ -34,33 +34,34 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk87b273;
         ::ll::UntypedStorage<1, 1> mUnke79f5b;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ScopedDisallowBlockingCalls& operator=(ScopedDisallowBlockingCalls const&);
         ScopedDisallowBlockingCalls(ScopedDisallowBlockingCalls const&);
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ScopedDisallowBlockingCalls();
-
+    
         MCNAPI ~ScopedDisallowBlockingCalls();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     class CurrentThreadSetter : public ::webrtc::TaskQueueBase::CurrentTaskQueueSetter {
     public:
         // member variables
@@ -68,72 +69,74 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk94fbad;
         ::ll::UntypedStorage<8, 8> mUnkc6b42f;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         CurrentThreadSetter& operator=(CurrentThreadSetter const&);
         CurrentThreadSetter(CurrentThreadSetter const&);
         CurrentThreadSetter();
+    
     };
-
+    
     struct DelayedMessage {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkba6587;
-        ::ll::UntypedStorage<8, 8>  mUnk49bc5c;
-        ::ll::UntypedStorage<4, 4>  mUnk5008f4;
+        ::ll::UntypedStorage<8, 8> mUnkba6587;
+        ::ll::UntypedStorage<8, 8> mUnk49bc5c;
+        ::ll::UntypedStorage<4, 4> mUnk5008f4;
         ::ll::UntypedStorage<8, 32> mUnka140ed;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         DelayedMessage& operator=(DelayedMessage const&);
         DelayedMessage(DelayedMessage const&);
         DelayedMessage();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI DelayedMessage(::rtc::Thread::DelayedMessage&&);
-
+    
         MCNAPI ::rtc::Thread::DelayedMessage& operator=(::rtc::Thread::DelayedMessage&&);
-
+    
         MCNAPI ~DelayedMessage();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::rtc::Thread::DelayedMessage&&);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnk23b40c;
     ::ll::UntypedStorage<8, 32> mUnk2935e8;
-    ::ll::UntypedStorage<4, 4>  mUnk4f2a6e;
+    ::ll::UntypedStorage<4, 4> mUnk4f2a6e;
     ::ll::UntypedStorage<8, 40> mUnk648296;
-    ::ll::UntypedStorage<1, 1>  mUnk25f44b;
-    ::ll::UntypedStorage<1, 1>  mUnkf57265;
-    ::ll::UntypedStorage<4, 4>  mUnk79285e;
-    ::ll::UntypedStorage<8, 8>  mUnk4b183f;
-    ::ll::UntypedStorage<8, 8>  mUnk5600e1;
+    ::ll::UntypedStorage<1, 1> mUnk25f44b;
+    ::ll::UntypedStorage<1, 1> mUnkf57265;
+    ::ll::UntypedStorage<4, 4> mUnk79285e;
+    ::ll::UntypedStorage<8, 8> mUnk4b183f;
+    ::ll::UntypedStorage<8, 8> mUnk5600e1;
     ::ll::UntypedStorage<8, 32> mUnkdbbfb5;
-    ::ll::UntypedStorage<8, 8>  mUnk83b044;
-    ::ll::UntypedStorage<4, 4>  mUnkde0ec4;
-    ::ll::UntypedStorage<1, 1>  mUnk18c0bc;
-    ::ll::UntypedStorage<1, 1>  mUnkc07e48;
-    ::ll::UntypedStorage<8, 8>  mUnka43441;
-    ::ll::UntypedStorage<4, 4>  mUnkadc8c4;
+    ::ll::UntypedStorage<8, 8> mUnk83b044;
+    ::ll::UntypedStorage<4, 4> mUnkde0ec4;
+    ::ll::UntypedStorage<1, 1> mUnk18c0bc;
+    ::ll::UntypedStorage<1, 1> mUnkc07e48;
+    ::ll::UntypedStorage<8, 8> mUnka43441;
+    ::ll::UntypedStorage<4, 4> mUnkadc8c4;
     // NOLINTEND
 
 public:
@@ -173,19 +176,10 @@ public:
     virtual void Delete() /*override*/;
 
     // vIndex: 1
-    virtual void PostTaskImpl(
-        ::absl::AnyInvocable<void() &&>                task,
-        ::webrtc::TaskQueueBase::PostTaskTraits const& traits,
-        ::webrtc::Location const&                      location
-    ) /*override*/;
+    virtual void PostTaskImpl(::absl::AnyInvocable<void()&&> task, ::webrtc::TaskQueueBase::PostTaskTraits const& traits, ::webrtc::Location const& location) /*override*/;
 
     // vIndex: 2
-    virtual void PostDelayedTaskImpl(
-        ::absl::AnyInvocable<void() &&>                       task,
-        ::webrtc::TimeDelta                                   delay,
-        ::webrtc::TaskQueueBase::PostDelayedTaskTraits const& traits,
-        ::webrtc::Location const&                             location
-    ) /*override*/;
+    virtual void PostDelayedTaskImpl(::absl::AnyInvocable<void()&&> task, ::webrtc::TimeDelta delay, ::webrtc::TaskQueueBase::PostDelayedTaskTraits const& traits, ::webrtc::Location const& location) /*override*/;
 
     // vIndex: 11
     virtual void BlockingCallImpl(::rtc::FunctionView<void()> functor, ::webrtc::Location const& location);
@@ -200,7 +194,7 @@ public:
 
     MCNAPI void DisallowAllInvokes();
 
-    MCNAPI void Dispatch(::absl::AnyInvocable<void() &&> task);
+    MCNAPI void Dispatch(::absl::AnyInvocable<void()&&> task);
 
     MCNAPI void DoDestroy();
 
@@ -208,7 +202,7 @@ public:
 
     MCNAPI void EnsureIsCurrentTaskQueue();
 
-    MCNAPI ::absl::AnyInvocable<void() &&> Get(int cmsWait);
+    MCNAPI ::absl::AnyInvocable<void()&&> Get(int cmsWait);
 
     MCNAPI bool IsCurrent() const;
 
@@ -292,18 +286,9 @@ public:
 
     MCNAPI void $Delete();
 
-    MCNAPI void $PostTaskImpl(
-        ::absl::AnyInvocable<void() &&>                task,
-        ::webrtc::TaskQueueBase::PostTaskTraits const& traits,
-        ::webrtc::Location const&                      location
-    );
+    MCNAPI void $PostTaskImpl(::absl::AnyInvocable<void()&&> task, ::webrtc::TaskQueueBase::PostTaskTraits const& traits, ::webrtc::Location const& location);
 
-    MCNAPI void $PostDelayedTaskImpl(
-        ::absl::AnyInvocable<void() &&>                       task,
-        ::webrtc::TimeDelta                                   delay,
-        ::webrtc::TaskQueueBase::PostDelayedTaskTraits const& traits,
-        ::webrtc::Location const&                             location
-    );
+    MCNAPI void $PostDelayedTaskImpl(::absl::AnyInvocable<void()&&> task, ::webrtc::TimeDelta delay, ::webrtc::TaskQueueBase::PostDelayedTaskTraits const& traits, ::webrtc::Location const& location);
 
     MCNAPI void $BlockingCallImpl(::rtc::FunctionView<void()> functor, ::webrtc::Location const& location);
     // NOLINTEND
@@ -313,6 +298,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

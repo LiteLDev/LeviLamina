@@ -36,174 +36,179 @@ public:
     struct StateChangeRequestData;
     struct SuspendStateData;
     // clang-format on
-
+    
     // RakNetServerLocator inner types define
     enum class protocolVersion : int {
         Ipv4 = 4,
         Ipv6 = 6,
     };
-
+    
     class PingRateRecorder {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnk4c52e9;
-        ::ll::UntypedStorage<4, 4>  mUnke4ceed;
-        ::ll::UntypedStorage<4, 4>  mUnkafd9c7;
-        ::ll::UntypedStorage<4, 4>  mUnkc2e940;
-        ::ll::UntypedStorage<4, 4>  mUnk7e5467;
-        ::ll::UntypedStorage<4, 4>  mUnk55e198;
-        ::ll::UntypedStorage<4, 4>  mUnk4b04bf;
-        ::ll::UntypedStorage<1, 1>  mUnk762855;
-        ::ll::UntypedStorage<1, 1>  mUnkca8a9c;
+        ::ll::UntypedStorage<4, 4> mUnke4ceed;
+        ::ll::UntypedStorage<4, 4> mUnkafd9c7;
+        ::ll::UntypedStorage<4, 4> mUnkc2e940;
+        ::ll::UntypedStorage<4, 4> mUnk7e5467;
+        ::ll::UntypedStorage<4, 4> mUnk55e198;
+        ::ll::UntypedStorage<4, 4> mUnk4b04bf;
+        ::ll::UntypedStorage<1, 1> mUnk762855;
+        ::ll::UntypedStorage<1, 1> mUnkca8a9c;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         PingRateRecorder& operator=(PingRateRecorder const&);
         PingRateRecorder(PingRateRecorder const&);
         PingRateRecorder();
+    
     };
-
+    
     class NatHolePuncherFunctor {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1> mUnk4e485b;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         NatHolePuncherFunctor& operator=(NatHolePuncherFunctor const&);
         NatHolePuncherFunctor(NatHolePuncherFunctor const&);
         NatHolePuncherFunctor();
+    
     };
-
+    
     struct AnnounceServerData {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnkf568e7;
         ::ll::UntypedStorage<8, 32> mUnk59b4c0;
-        ::ll::UntypedStorage<4, 4>  mUnka30b10;
-        ::ll::UntypedStorage<4, 4>  mUnk7f5665;
-        ::ll::UntypedStorage<4, 4>  mUnk9c0fab;
-        ::ll::UntypedStorage<1, 1>  mUnk8d0484;
-        ::ll::UntypedStorage<1, 1>  mUnk43329d;
-        ::ll::UntypedStorage<1, 1>  mUnka62802;
+        ::ll::UntypedStorage<4, 4> mUnka30b10;
+        ::ll::UntypedStorage<4, 4> mUnk7f5665;
+        ::ll::UntypedStorage<4, 4> mUnk9c0fab;
+        ::ll::UntypedStorage<1, 1> mUnk8d0484;
+        ::ll::UntypedStorage<1, 1> mUnk43329d;
+        ::ll::UntypedStorage<1, 1> mUnka62802;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         AnnounceServerData& operator=(AnnounceServerData const&);
         AnnounceServerData();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI AnnounceServerData(::RakNetServerLocator::AnnounceServerData const& announceData);
-
+    
         MCNAPI ~AnnounceServerData();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::RakNetServerLocator::AnnounceServerData const& announceData);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct StateChangeRequestData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnkf1839a;
+        ::ll::UntypedStorage<4, 4> mUnkf1839a;
         ::ll::UntypedStorage<8, 80> mUnkaf330a;
-        ::ll::UntypedStorage<4, 8>  mUnk315143;
+        ::ll::UntypedStorage<4, 8> mUnk315143;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         StateChangeRequestData& operator=(StateChangeRequestData const&);
         StateChangeRequestData(StateChangeRequestData const&);
         StateChangeRequestData();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~StateChangeRequestData();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct SuspendStateData {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 80> mUnke8e0f9;
-        ::ll::UntypedStorage<4, 4>  mUnk5cca28;
-        ::ll::UntypedStorage<4, 8>  mUnk163ab6;
+        ::ll::UntypedStorage<4, 4> mUnk5cca28;
+        ::ll::UntypedStorage<4, 8> mUnk163ab6;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         SuspendStateData& operator=(SuspendStateData const&);
         SuspendStateData(SuspendStateData const&);
         SuspendStateData();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~SuspendStateData();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk89c4ef;
     ::ll::UntypedStorage<8, 64> mUnkf49aaa;
     ::ll::UntypedStorage<8, 64> mUnk51cf3f;
-    ::ll::UntypedStorage<8, 8>  mUnk2218c2;
+    ::ll::UntypedStorage<8, 8> mUnk2218c2;
     ::ll::UntypedStorage<8, 16> mUnk5f4202;
     ::ll::UntypedStorage<8, 24> mUnkd55261;
     ::ll::UntypedStorage<8, 64> mUnk2876ef;
     ::ll::UntypedStorage<8, 24> mUnkaa5135;
-    ::ll::UntypedStorage<1, 1>  mUnkfa3d98;
-    ::ll::UntypedStorage<4, 4>  mUnk7ebf28;
-    ::ll::UntypedStorage<4, 8>  mUnkc145b0;
-    ::ll::UntypedStorage<4, 4>  mUnk3962a5;
-    ::ll::UntypedStorage<4, 4>  mUnk3d87f2;
+    ::ll::UntypedStorage<1, 1> mUnkfa3d98;
+    ::ll::UntypedStorage<4, 4> mUnk7ebf28;
+    ::ll::UntypedStorage<4, 8> mUnkc145b0;
+    ::ll::UntypedStorage<4, 4> mUnk3962a5;
+    ::ll::UntypedStorage<4, 4> mUnk3d87f2;
     ::ll::UntypedStorage<8, 24> mUnk5bfbd1;
     ::ll::UntypedStorage<8, 24> mUnk73f382;
     ::ll::UntypedStorage<8, 40> mUnk5a36d6;
-    ::ll::UntypedStorage<1, 1>  mUnk2c445a;
+    ::ll::UntypedStorage<1, 1> mUnk2c445a;
     ::ll::UntypedStorage<8, 64> mUnkc78041;
     ::ll::UntypedStorage<8, 32> mUnkf39ac9;
-    ::ll::UntypedStorage<4, 4>  mUnk8bcebb;
+    ::ll::UntypedStorage<4, 4> mUnk8bcebb;
     ::ll::UntypedStorage<8, 80> mUnkd855a4;
     ::ll::UntypedStorage<8, 80> mUnk518100;
-    ::ll::UntypedStorage<4, 4>  mUnk5542ff;
-    ::ll::UntypedStorage<4, 4>  mUnkf403ed;
+    ::ll::UntypedStorage<4, 4> mUnk5542ff;
+    ::ll::UntypedStorage<4, 4> mUnkf403ed;
     ::ll::UntypedStorage<8, 96> mUnk8970d6;
-    ::ll::UntypedStorage<4, 4>  mUnk8d92b1;
+    ::ll::UntypedStorage<4, 4> mUnk8d92b1;
     ::ll::UntypedStorage<8, 40> mUnk2f8047;
     // NOLINTEND
 
@@ -220,17 +225,7 @@ public:
     virtual ~RakNetServerLocator() /*override*/;
 
     // vIndex: 3
-    virtual void startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                gameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
-    ) /*override*/;
+    virtual void startAnnouncingServer(::std::string const& playerName, ::std::string const& worldName, ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform, ::GameType gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore) /*override*/;
 
     // vIndex: 4
     virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform) /*override*/;
@@ -260,11 +255,7 @@ public:
     virtual float getPingTimeForGUID(::std::string const& guid) /*override*/;
 
     // vIndex: 13
-    virtual void checkCanConnectToCustomServerAsync(
-        ::std::string                                         hostIpAddress,
-        int                                                   port,
-        ::std::function<void(::ServerConnectivityTestResult)> callback
-    ) /*override*/;
+    virtual void checkCanConnectToCustomServerAsync(::std::string hostIpAddress, int port, ::std::function<void(::ServerConnectivityTestResult)> callback) /*override*/;
 
     // vIndex: 1
     virtual void _onDisable() /*override*/;
@@ -276,18 +267,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RakNetServerLocator(
-        ::RakNetConnector&                               rakNetConnector,
-        ::RakPeerHelper::IPSupportInterface&             ipInterface,
-        ::std::vector<::std::string>                     overrideBroadcastAddresses,
-        bool                                             isServer,
-        ::RakNetServerLANVisibility                      serverLanVisibility,
-        ::PermissionLAN                                  permissionLAN,
-        ::PermissionIPv6                                 permissionIPv6,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
-        ::std::function<::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>()>
-            createUniqueRakPeerFunc
-    );
+    MCNAPI RakNetServerLocator(::RakNetConnector& rakNetConnector, ::RakPeerHelper::IPSupportInterface& ipInterface, ::std::vector<::std::string> overrideBroadcastAddresses, bool isServer, ::RakNetServerLANVisibility serverLanVisibility, ::PermissionLAN permissionLAN, ::PermissionIPv6 permissionIPv6, ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform, ::std::function<::std::unique_ptr<::RakNet::RakPeerInterface, void(*) (::RakNet::RakPeerInterface*)>()> createUniqueRakPeerFunc);
 
     MCNAPI void _activate();
 
@@ -297,29 +277,19 @@ public:
 
     MCNAPI bool _addCustomServerV6(::AsynchronousIPResolver const& futureIP, int port);
 
-    MCNAPI void _enqueueStateChangeRequest(
-        ::LocatorStateChangeRequest               newState,
-        ::RakNetServerLocator::AnnounceServerData newAnnounceData,
-        ::PortPair                                newPorts
-    );
+    MCNAPI void _enqueueStateChangeRequest(::LocatorStateChangeRequest newState, ::RakNetServerLocator::AnnounceServerData newAnnounceData, ::PortPair newPorts);
 
     MCNAPI ::std::string _getHostGuid(::std::string const& address, int port);
 
     MCNAPI void _getServerOriginalAddress(::std::string& originalAddressToSet, ::std::string const& ip);
 
-    MCNAPI bool _handleUnconnectedPong(
-        ::std::string const&    data,
-        ::RakNet::Packet const* p,
-        bool                    insertAtBeginning,
-        uint64                  readTime
-    );
+    MCNAPI bool _handleUnconnectedPong(::std::string const& data, ::RakNet::Packet const* p, bool insertAtBeginning, uint64 readTime);
 
     MCNAPI void _initializeBroadcastAddresses();
 
     MCNAPI void _onPingSend(::std::string const& guid, ::std::string const& addr, int ipVersion);
 
-    MCNAPI bool
-    _onPongReceive(float& latencyToSet, ::RakNet::RakNetGUID const& guid, uint const& receivedTime, int ipVersion);
+    MCNAPI bool _onPongReceive(float& latencyToSet, ::RakNet::RakNetGUID const& guid, uint const& receivedTime, int ipVersion);
 
     MCNAPI void _setPingResponder(::RakNetServerLocator::AnnounceServerData const& serverData);
 
@@ -341,25 +311,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool
-    parseUnconnectedPongPacketData(::std::string const& data, ::std::vector<::std::string>& extraData);
+    MCNAPI static bool parseUnconnectedPongPacketData(::std::string const& data, ::std::vector<::std::string>& extraData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::RakNetConnector&                               rakNetConnector,
-        ::RakPeerHelper::IPSupportInterface&             ipInterface,
-        ::std::vector<::std::string>                     overrideBroadcastAddresses,
-        bool                                             isServer,
-        ::RakNetServerLANVisibility                      serverLanVisibility,
-        ::PermissionLAN                                  permissionLAN,
-        ::PermissionIPv6                                 permissionIPv6,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform,
-        ::std::function<::std::unique_ptr<::RakNet::RakPeerInterface, void (*)(::RakNet::RakPeerInterface*)>()>
-            createUniqueRakPeerFunc
-    );
+    MCNAPI void* $ctor(::RakNetConnector& rakNetConnector, ::RakPeerHelper::IPSupportInterface& ipInterface, ::std::vector<::std::string> overrideBroadcastAddresses, bool isServer, ::RakNetServerLANVisibility serverLanVisibility, ::PermissionLAN permissionLAN, ::PermissionIPv6 permissionIPv6, ::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform, ::std::function<::std::unique_ptr<::RakNet::RakPeerInterface, void(*) (::RakNet::RakPeerInterface*)>()> createUniqueRakPeerFunc);
     // NOLINTEND
 
 public:
@@ -371,17 +329,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                gameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
-    );
+    MCNAPI void $startAnnouncingServer(::std::string const& playerName, ::std::string const& worldName, ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform, ::GameType gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore);
 
     MCNAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
 
@@ -401,11 +349,7 @@ public:
 
     MCNAPI float $getPingTimeForGUID(::std::string const& guid);
 
-    MCNAPI void $checkCanConnectToCustomServerAsync(
-        ::std::string                                         hostIpAddress,
-        int                                                   port,
-        ::std::function<void(::ServerConnectivityTestResult)> callback
-    );
+    MCNAPI void $checkCanConnectToCustomServerAsync(::std::string hostIpAddress, int port, ::std::function<void(::ServerConnectivityTestResult)> callback);
 
     MCNAPI void $_onDisable();
 
@@ -417,4 +361,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

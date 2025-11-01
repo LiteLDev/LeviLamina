@@ -17,11 +17,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
-    ::ll::TypedStorage<4, 12, ::Vec3>                     mBlockLocation;
-    ::ll::TypedStorage<1, 1, uchar>                       mBlockFace;
-    ::ll::TypedStorage<4, 12, ::Vec3>                     mFaceLocation;
-    ::ll::TypedStorage<8, 152, ::ItemStack>               mItem;
-    ::ll::TypedStorage<1, 1, bool>                        mIsFirstEvent;
+    ::ll::TypedStorage<4, 12, ::Vec3> mBlockLocation;
+    ::ll::TypedStorage<1, 1, uchar> mBlockFace;
+    ::ll::TypedStorage<4, 12, ::Vec3> mFaceLocation;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mItem;
+    ::ll::TypedStorage<1, 1, bool> mIsFirstEvent;
     // NOLINTEND
 
 public:
@@ -48,4 +48,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

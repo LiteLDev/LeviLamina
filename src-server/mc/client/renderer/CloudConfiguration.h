@@ -17,4 +17,5 @@ public:
     CloudConfiguration& operator=(CloudConfiguration const&);
     CloudConfiguration(CloudConfiguration const&);
     CloudConfiguration();
+
 };

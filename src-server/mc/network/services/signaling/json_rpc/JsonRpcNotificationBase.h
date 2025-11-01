@@ -17,6 +17,21 @@ public:
     JsonRpcNotificationBase& operator=(JsonRpcNotificationBase const&);
     JsonRpcNotificationBase(JsonRpcNotificationBase const&);
     JsonRpcNotificationBase();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::JsonRpc::JsonRpcNotificationBase& operator=(::JsonRpc::JsonRpcNotificationBase&&);
+
+    MCNAPI ~JsonRpcNotificationBase();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
 };
 
-} // namespace JsonRpc
+}

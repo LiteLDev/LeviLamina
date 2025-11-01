@@ -30,4 +30,4 @@ MCNAPI ::Json::Value createTraderObject(::Actor const& trader);
 MCNAPI ::std::vector<::std::string> translate(::std::vector<::std::string> const& in);
 // NOLINTEND
 
-} // namespace Util::CodeBuilder
+}

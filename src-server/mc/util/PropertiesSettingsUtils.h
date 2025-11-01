@@ -8,4 +8,4 @@ namespace PropertiesSettingsUtils {
 MCNAPI ::std::optional<ushort> parsePort(::std::string_view toParse);
 // NOLINTEND
 
-} // namespace PropertiesSettingsUtils
+}

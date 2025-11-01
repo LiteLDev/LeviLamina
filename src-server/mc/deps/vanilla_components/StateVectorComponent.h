@@ -13,4 +13,5 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3> mPosPrev;
     ::ll::TypedStorage<4, 12, ::Vec3> mPosDelta;
     // NOLINTEND
+
 };

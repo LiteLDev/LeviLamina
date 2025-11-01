@@ -27,8 +27,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::NetherNet::ConnectError>
-    TryParse(::std::array<::std::string_view, 3> const& tokens);
+    MCNAPI static ::std::optional<::NetherNet::ConnectError> TryParse(::std::array<::std::string_view, 3> const& tokens);
     // NOLINTEND
 
 public:
@@ -36,6 +35,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string_view const& kIdentifier();
     // NOLINTEND
+
 };
 
-} // namespace NetherNet
+}

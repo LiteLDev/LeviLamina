@@ -39,17 +39,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptIntBlockProperty(
-        ::std::string                                                                         name,
-        ::BlockState const&                                                                   blockState,
-        ::std::vector<int>                                                                    validValues,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
-    );
+    MCNAPI ScriptIntBlockProperty(::std::string name, ::BlockState const& blockState, ::std::vector<int> validValues, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation);
 
     MCNAPI ::Scripting::Result_deprecated<int> getState() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptIntBlockProperty&
-    operator=(::ScriptModuleMinecraft::ScriptIntBlockProperty&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptIntBlockProperty& operator=(::ScriptModuleMinecraft::ScriptIntBlockProperty&&);
 
     MCNAPI ::Scripting::Result_deprecated<void> setState(int state);
     // NOLINTEND
@@ -63,12 +57,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::string                                                                         name,
-        ::BlockState const&                                                                   blockState,
-        ::std::vector<int>                                                                    validValues,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
-    );
+    MCNAPI void* $ctor(::std::string name, ::BlockState const& blockState, ::std::vector<int> validValues, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation);
     // NOLINTEND
 
 public:
@@ -76,6 +65,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

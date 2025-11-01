@@ -8,7 +8,7 @@ class ProfileSectionCPU {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkcb8da3;
+    ::ll::UntypedStorage<8, 8> mUnkd93fa5;
     // NOLINTEND
 
 public:
@@ -16,6 +16,7 @@ public:
     ProfileSectionCPU& operator=(ProfileSectionCPU const&);
     ProfileSectionCPU(ProfileSectionCPU const&);
     ProfileSectionCPU();
+
 };
 
-} // namespace Core::Profile
+}

@@ -4,6 +4,7 @@
 
 namespace rtc {
 
-class ScopedAllowBaseSyncPrimitives {};
+class ScopedAllowBaseSyncPrimitives {
+};
 
-} // namespace rtc
+}

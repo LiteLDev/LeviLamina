@@ -16,7 +16,7 @@ class ScriptItemCustomComponentInterface : public ::ScriptModuleMinecraft::Scrip
 public:
     // ScriptItemCustomComponentInterface inner types define
     using Flags = ::ScriptModuleMinecraft::ScriptItemCustomComponentClosureFlags;
-
+    
 public:
     // prevent constructor by default
     ScriptItemCustomComponentInterface& operator=(ScriptItemCustomComponentInterface const&);
@@ -42,6 +42,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

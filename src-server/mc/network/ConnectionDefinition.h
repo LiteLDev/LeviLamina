@@ -7,9 +7,9 @@ public:
     // ConnectionDefinition inner types define
     enum class PortBusyFallbackPolicy : int {
         UseRandom = 0,
-        Fail      = 1,
+        Fail = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -27,4 +27,5 @@ public:
     ConnectionDefinition& operator=(ConnectionDefinition const&);
     ConnectionDefinition(ConnectionDefinition const&);
     ConnectionDefinition();
+
 };

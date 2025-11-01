@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCNAPI bool roll(::Random& random) const;
     // NOLINTEND
+
 };

@@ -14,9 +14,7 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptActorIterator : public ::ScriptModuleMinecraft::ScriptVectorIterator<
-                                ::ScriptModuleMinecraft::ScriptActorIterator,
-                                ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> {
+class ScriptActorIterator : public ::ScriptModuleMinecraft::ScriptVectorIterator<::ScriptModuleMinecraft::ScriptActorIterator, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> {
 public:
     // prevent constructor by default
     ScriptActorIterator& operator=(ScriptActorIterator const&);
@@ -34,6 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

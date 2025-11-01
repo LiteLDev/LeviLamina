@@ -6,7 +6,7 @@ namespace sim {
 
 enum class ExecutionResult : uchar {
     Executing = 0,
-    Complete  = 1,
+    Complete = 1,
 };
 
 }

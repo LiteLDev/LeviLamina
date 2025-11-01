@@ -6,7 +6,7 @@ namespace SharedTypes::v1_21_20 {
 
 enum class IntProviderType : int {
     Constant = 0,
-    Uniform  = 1,
+    Uniform = 1,
 };
 
 }

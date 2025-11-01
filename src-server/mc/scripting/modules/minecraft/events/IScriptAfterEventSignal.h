@@ -44,6 +44,7 @@ public:
 
     MCFOLD bool $isActorSignal() const;
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkbbff58;
-    ::ll::UntypedStorage<1, 1>  mUnk6df0be;
+    ::ll::UntypedStorage<1, 1> mUnk6df0be;
     // NOLINTEND
 
 public:
@@ -17,6 +17,7 @@ public:
     DeviceIdRecord& operator=(DeviceIdRecord const&);
     DeviceIdRecord(DeviceIdRecord const&);
     DeviceIdRecord();
+
 };
 
-} // namespace Bedrock
+}

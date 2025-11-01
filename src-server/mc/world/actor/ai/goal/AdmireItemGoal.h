@@ -22,14 +22,14 @@ class AdmireItemGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
-    ::ll::TypedStorage<4, 8, ::FloatRange>                           mSoundIntervalRange;
-    ::ll::TypedStorage<8, 8, ::Tick>                                 mNextSoundEventTick;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const>       mOnStartEvent;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const>       mOnStopEvent;
-    ::ll::TypedStorage<8, 152, ::ItemStack>                          mItemStackPicked;
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                       mItemOwner;
+    ::ll::TypedStorage<4, 8, ::FloatRange> mSoundIntervalRange;
+    ::ll::TypedStorage<8, 8, ::Tick> mNextSoundEventTick;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const> mOnStartEvent;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger const> mOnStopEvent;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mItemStackPicked;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mItemOwner;
     // NOLINTEND
 
 public:
@@ -66,30 +66,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AdmireItemGoal(
-        ::Mob&                                 mob,
-        ::SharedTypes::Legacy::LevelSoundEvent sound,
-        ::FloatRange                           soundIntervalRange,
-        ::ActorDefinitionTrigger const&        onAdmireItemStart,
-        ::ActorDefinitionTrigger const&        onAdmireItemStop
-    );
+    MCAPI AdmireItemGoal(::Mob& mob, ::SharedTypes::Legacy::LevelSoundEvent sound, ::FloatRange soundIntervalRange, ::ActorDefinitionTrigger const& onAdmireItemStart, ::ActorDefinitionTrigger const& onAdmireItemStop);
 
     MCAPI void _removeItemFromOffhandSlot() const;
 
-    MCAPI void
-    _tryPlaceItemInInventory(::ContainerComponent& containerComponent, ::ShareableComponent const& shareableComponent);
+    MCAPI void _tryPlaceItemInInventory(::ContainerComponent& containerComponent, ::ShareableComponent const& shareableComponent);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                 mob,
-        ::SharedTypes::Legacy::LevelSoundEvent sound,
-        ::FloatRange                           soundIntervalRange,
-        ::ActorDefinitionTrigger const&        onAdmireItemStart,
-        ::ActorDefinitionTrigger const&        onAdmireItemStop
-    );
+    MCAPI void* $ctor(::Mob& mob, ::SharedTypes::Legacy::LevelSoundEvent sound, ::FloatRange soundIntervalRange, ::ActorDefinitionTrigger const& onAdmireItemStart, ::ActorDefinitionTrigger const& onAdmireItemStop);
     // NOLINTEND
 
 public:
@@ -119,4 +106,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

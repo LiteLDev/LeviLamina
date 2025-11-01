@@ -31,8 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual bool _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const
-        /*override*/;
+    virtual bool _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const /*override*/;
 
     // vIndex: 1
     virtual ~LootTableReference() /*override*/ = default;
@@ -44,12 +43,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(
-        ::Json::Value                                          entry,
-        int                                                    weight,
-        int                                                    quality,
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& conditions
-    );
+    MCNAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(::Json::Value entry, int weight, int quality, ::std::vector<::std::unique_ptr<::LootItemCondition>>& conditions);
     // NOLINTEND
 
 public:
@@ -65,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

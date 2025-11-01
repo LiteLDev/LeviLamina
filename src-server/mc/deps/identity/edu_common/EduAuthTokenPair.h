@@ -8,7 +8,7 @@ struct EduAuthTokenPair {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80>  mUnkb21695;
+    ::ll::UntypedStorage<8, 80> mUnkb21695;
     ::ll::UntypedStorage<8, 136> mUnk3fc98a;
     // NOLINTEND
 
@@ -29,6 +29,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Identity
+}

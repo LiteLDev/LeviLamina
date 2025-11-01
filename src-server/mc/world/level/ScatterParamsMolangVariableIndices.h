@@ -9,9 +9,9 @@ struct ScatterParamsMolangVariableIndices {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<2, 2, ::MolangVariableIndex>    mVariableOriginXIndex;
-    ::ll::TypedStorage<2, 2, ::MolangVariableIndex>    mVariableOriginYIndex;
-    ::ll::TypedStorage<2, 2, ::MolangVariableIndex>    mVariableOriginZIndex;
+    ::ll::TypedStorage<2, 2, ::MolangVariableIndex> mVariableOriginXIndex;
+    ::ll::TypedStorage<2, 2, ::MolangVariableIndex> mVariableOriginYIndex;
+    ::ll::TypedStorage<2, 2, ::MolangVariableIndex> mVariableOriginZIndex;
     ::ll::TypedStorage<2, 6, ::MolangVariableIndex[3]> mVariableWorldIndex;
     // NOLINTEND
 
@@ -20,4 +20,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void initialize();
     // NOLINTEND
+
 };

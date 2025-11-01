@@ -4,6 +4,6 @@
 
 enum class SplitScreenDirection : int {
     Horizontal = 0,
-    Vertical   = 1,
-    Count      = 2,
+    Vertical = 1,
+    Count = 2,
 };

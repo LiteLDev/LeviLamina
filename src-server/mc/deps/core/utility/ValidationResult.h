@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk225015;
-    ::ll::UntypedStorage<4, 4>  mUnkbfca40;
+    ::ll::UntypedStorage<4, 4> mUnkbfca40;
     // NOLINTEND
 
 public:
@@ -29,6 +29,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Util::ResourceUri
+}

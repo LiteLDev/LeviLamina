@@ -19,12 +19,12 @@ class BlockEventDispatcher : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // BlockEventDispatcher inner types define
     using CallbackFunction = ::std::function<void(::BlockPos const&, uint, ::Block const&, ::Actor*)>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::unique_ptr<::ListenerInfo>>> mRegisteredListeners;
-    ::ll::TypedStorage<4, 4, int>                                                           mHandleCounter;
+    ::ll::TypedStorage<4, 4, int> mHandleCounter;
     // NOLINTEND
 
 public:
@@ -37,11 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockEventDispatcherToken registerListener(
-        ::Vec3 const&                                                            shapePos,
-        float                                                                    shapeRadius,
-        ::std::function<void(::BlockPos const&, uint, ::Block const&, ::Actor*)> callback
-    );
+    MCAPI ::BlockEventDispatcherToken registerListener(::Vec3 const& shapePos, float shapeRadius, ::std::function<void(::BlockPos const&, uint, ::Block const&, ::Actor*)> callback);
     // NOLINTEND
 
 public:
@@ -49,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

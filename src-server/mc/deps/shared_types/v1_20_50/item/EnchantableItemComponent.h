@@ -13,7 +13,7 @@ struct EnchantableItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2>  mUnkbb22ad;
+    ::ll::UntypedStorage<2, 2> mUnkbb22ad;
     ::ll::UntypedStorage<8, 32> mUnk7b4f14;
     // NOLINTEND
 
@@ -26,8 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_50::EnchantableItemComponent&
-    operator=(::SharedTypes::v1_20_50::EnchantableItemComponent&&);
+    MCNAPI ::SharedTypes::v1_20_50::EnchantableItemComponent& operator=(::SharedTypes::v1_20_50::EnchantableItemComponent&&);
     // NOLINTEND
 
 public:
@@ -35,6 +34,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_50
+}

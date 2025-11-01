@@ -14,9 +14,9 @@ struct NpcDialogueScene {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>          mSceneName;
-    ::ll::TypedStorage<8, 32, ::std::string>          mText;
-    ::ll::TypedStorage<8, 32, ::std::string>          mNPCName;
+    ::ll::TypedStorage<8, 32, ::std::string> mSceneName;
+    ::ll::TypedStorage<8, 32, ::std::string> mText;
+    ::ll::TypedStorage<8, 32, ::std::string> mNPCName;
     ::ll::TypedStorage<8, 48, ::npc::ActionContainer> mActionsContainer;
     // NOLINTEND
 
@@ -37,8 +37,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NpcDialogueScene
-    parse(::Json::Value const& sceneNode, ::std::string const& fileName, int packCommandVersion);
+    MCAPI static ::NpcDialogueScene parse(::Json::Value const& sceneNode, ::std::string const& fileName, int packCommandVersion);
     // NOLINTEND
 
 public:
@@ -46,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

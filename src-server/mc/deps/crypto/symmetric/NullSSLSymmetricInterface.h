@@ -53,6 +53,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Crypto::Symmetric
+}

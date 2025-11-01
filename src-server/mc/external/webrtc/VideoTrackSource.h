@@ -53,10 +53,7 @@ public:
     virtual bool GetStats(::webrtc::VideoTrackSourceInterface::Stats* stats) /*override*/;
 
     // vIndex: 1
-    virtual void AddOrUpdateSink(
-        ::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink,
-        ::rtc::VideoSinkWants const&                     wants
-    ) /*override*/;
+    virtual void AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants) /*override*/;
 
     // vIndex: 2
     virtual void RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink) /*override*/;
@@ -113,8 +110,7 @@ public:
 
     MCNAPI bool $GetStats(::webrtc::VideoTrackSourceInterface::Stats* stats);
 
-    MCNAPI void
-    $AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants);
+    MCNAPI void $AddOrUpdateSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink, ::rtc::VideoSinkWants const& wants);
 
     MCNAPI void $RemoveSink(::rtc::VideoSinkInterface<::webrtc::VideoFrame>* sink);
 
@@ -136,6 +132,7 @@ public:
 
     MCNAPI static void** $vftableForNotifierInterface();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

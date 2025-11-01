@@ -29,17 +29,17 @@ class RtpTransport : public ::webrtc::RtpTransportInternal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk8562fd;
-    ::ll::UntypedStorage<8, 8>   mUnkb8d2f7;
-    ::ll::UntypedStorage<8, 8>   mUnk10d3d3;
-    ::ll::UntypedStorage<1, 1>   mUnk97e80b;
-    ::ll::UntypedStorage<1, 1>   mUnkae4dea;
-    ::ll::UntypedStorage<1, 1>   mUnk267e0f;
+    ::ll::UntypedStorage<1, 1> mUnk8562fd;
+    ::ll::UntypedStorage<8, 8> mUnkb8d2f7;
+    ::ll::UntypedStorage<8, 8> mUnk10d3d3;
+    ::ll::UntypedStorage<1, 1> mUnk97e80b;
+    ::ll::UntypedStorage<1, 1> mUnkae4dea;
+    ::ll::UntypedStorage<1, 1> mUnk267e0f;
     ::ll::UntypedStorage<8, 248> mUnkdfc999;
-    ::ll::UntypedStorage<1, 22>  mUnk8b2dfc;
-    ::ll::UntypedStorage<1, 1>   mUnkb355f1;
-    ::ll::UntypedStorage<1, 1>   mUnk86a616;
-    ::ll::UntypedStorage<8, 8>   mUnkf5a1f2;
+    ::ll::UntypedStorage<1, 22> mUnk8b2dfc;
+    ::ll::UntypedStorage<1, 1> mUnkb355f1;
+    ::ll::UntypedStorage<1, 1> mUnk86a616;
+    ::ll::UntypedStorage<8, 8> mUnkf5a1f2;
     // NOLINTEND
 
 public:
@@ -73,25 +73,19 @@ public:
     virtual bool IsWritable(bool rtcp) const /*override*/;
 
     // vIndex: 8
-    virtual bool
-    SendRtpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
+    virtual bool SendRtpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
 
     // vIndex: 9
-    virtual bool
-    SendRtcpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
+    virtual bool SendRtcpPacket(::rtc::CopyOnWriteBuffer* packet, ::rtc::PacketOptions const& options, int flags) /*override*/;
 
     // vIndex: 11
     virtual bool IsSrtpActive() const /*override*/;
 
     // vIndex: 10
-    virtual void
-    UpdateRtpHeaderExtensionMap(::std::vector<::webrtc::RtpExtension> const& header_extensions) /*override*/;
+    virtual void UpdateRtpHeaderExtensionMap(::std::vector<::webrtc::RtpExtension> const& header_extensions) /*override*/;
 
     // vIndex: 12
-    virtual bool RegisterRtpDemuxerSink(
-        ::webrtc::RtpDemuxerCriteria const& criteria,
-        ::webrtc::RtpPacketSinkInterface*   sink
-    ) /*override*/;
+    virtual bool RegisterRtpDemuxerSink(::webrtc::RtpDemuxerCriteria const& criteria, ::webrtc::RtpPacketSinkInterface* sink) /*override*/;
 
     // vIndex: 13
     virtual bool UnregisterRtpDemuxerSink(::webrtc::RtpPacketSinkInterface* sink) /*override*/;
@@ -117,9 +111,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void DemuxPacket(::rtc::CopyOnWriteBuffer packet, ::webrtc::Timestamp arrival_time, ::rtc::EcnMarking ecn);
 
-    MCNAPI ::webrtc::flat_containers_internal::
-        flat_tree<uint, ::webrtc::identity, ::std::less<void>, ::std::vector<uint>>
-        GetSsrcsForSink(::webrtc::RtpPacketSinkInterface* sink);
+    MCNAPI ::webrtc::flat_containers_internal::flat_tree<uint, ::webrtc::identity, ::std::less<void>, ::std::vector<uint>> GetSsrcsForSink(::webrtc::RtpPacketSinkInterface* sink);
 
     MCNAPI bool IsTransportWritable();
 
@@ -171,8 +163,7 @@ public:
 
     MCNAPI void $UpdateRtpHeaderExtensionMap(::std::vector<::webrtc::RtpExtension> const& header_extensions);
 
-    MCNAPI bool
-    $RegisterRtpDemuxerSink(::webrtc::RtpDemuxerCriteria const& criteria, ::webrtc::RtpPacketSinkInterface* sink);
+    MCNAPI bool $RegisterRtpDemuxerSink(::webrtc::RtpDemuxerCriteria const& criteria, ::webrtc::RtpPacketSinkInterface* sink);
 
     MCNAPI bool $UnregisterRtpDemuxerSink(::webrtc::RtpPacketSinkInterface* sink);
 
@@ -190,6 +181,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

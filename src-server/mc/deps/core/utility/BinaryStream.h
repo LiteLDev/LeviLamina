@@ -12,18 +12,19 @@ public:
     // clang-format off
     struct ConditionBlock;
     // clang-format on
-
+    
     // BinaryStream inner types define
     struct ConditionBlock {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>                                          controlValue;
+        ::ll::TypedStorage<1, 1, bool> controlValue;
         ::ll::TypedStorage<8, 16, ::brstd::function_ref<void(::BinaryStream&)>> writeCondition;
-        ::ll::TypedStorage<8, 8, char const*>                                   docFieldName;
+        ::ll::TypedStorage<8, 8, char const*> docFieldName;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -97,52 +98,25 @@ public:
     virtual void writeString(::std::string_view value, char const* docFieldName, char const* docFieldNotes);
 
     // vIndex: 20
-    virtual void writeIf(
-        bool                                                                 controlValue,
-        char const*                                                          docFieldName,
-        ::brstd::function_ref<void(::BinaryStream&)> const&                  writeIfTrue,
-        ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeIfFalse
-    );
+    virtual void writeIf(bool controlValue, char const* docFieldName, ::brstd::function_ref<void(::BinaryStream&)> const& writeIfTrue, ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeIfFalse);
 
     // vIndex: 21
-    virtual void writeConditional(
-        char const*                                                          docFieldName,
-        ::std::initializer_list<::BinaryStream::ConditionBlock>&&            conditions,
-        ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeDefault
-    );
+    virtual void writeConditional(char const* docFieldName, ::std::initializer_list<::BinaryStream::ConditionBlock>&& conditions, ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeDefault);
 
     // vIndex: 23
-    virtual void branchingWrite_DEPRECATED(
-        ::std::function<void(::BinaryStream&, int)>&& branchWriter,
-        int                                           controlValue,
-        int                                           docRangeBegin,
-        int                                           docRangeEnd,
-        char const*                                   controlDocFieldName
-    );
+    virtual void branchingWrite_DEPRECATED(::std::function<void(::BinaryStream&, int)>&& branchWriter, int controlValue, int docRangeBegin, int docRangeEnd, char const* controlDocFieldName);
 
     // vIndex: 22
-    virtual void branchingWrite_DEPRECATED(
-        ::std::function<void(::BinaryStream&, int)>&& branchWriter,
-        int                                           controlValue,
-        ::std::vector<int> const&                     docControlSet,
-        char const*                                   controlDocFieldName
-    );
+    virtual void branchingWrite_DEPRECATED(::std::function<void(::BinaryStream&, int)>&& branchWriter, int controlValue, ::std::vector<int> const& docControlSet, char const* controlDocFieldName);
 
     // vIndex: 24
-    virtual void _writeArray(
-        ::std::function<void(::BinaryStream&)>&& sizeWriter,
-        ::std::function<void(::BinaryStream&)>&& writer,
-        char const*                              docFieldName,
-        char const*                              docFieldNotes
-    );
+    virtual void _writeArray(::std::function<void(::BinaryStream&)>&& sizeWriter, ::std::function<void(::BinaryStream&)>&& writer, char const* docFieldName, char const* docFieldNotes);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI BinaryStream(::std::string& buffer, bool copyBuffer);
-
-    MCAPI void write(void const* origin, uint64 num);
     // NOLINTEND
 
 public:
@@ -196,40 +170,15 @@ public:
 
     MCAPI void $writeString(::std::string_view value, char const* docFieldName, char const* docFieldNotes);
 
-    MCAPI void $writeIf(
-        bool                                                                 controlValue,
-        char const*                                                          docFieldName,
-        ::brstd::function_ref<void(::BinaryStream&)> const&                  writeIfTrue,
-        ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeIfFalse
-    );
+    MCAPI void $writeIf(bool controlValue, char const* docFieldName, ::brstd::function_ref<void(::BinaryStream&)> const& writeIfTrue, ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeIfFalse);
 
-    MCAPI void $writeConditional(
-        char const*                                                          docFieldName,
-        ::std::initializer_list<::BinaryStream::ConditionBlock>&&            conditions,
-        ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeDefault
-    );
+    MCAPI void $writeConditional(char const* docFieldName, ::std::initializer_list<::BinaryStream::ConditionBlock>&& conditions, ::std::optional<::brstd::function_ref<void(::BinaryStream&)>> const& writeDefault);
 
-    MCFOLD void $branchingWrite_DEPRECATED(
-        ::std::function<void(::BinaryStream&, int)>&& branchWriter,
-        int                                           controlValue,
-        int                                           docRangeBegin,
-        int                                           docRangeEnd,
-        char const*                                   controlDocFieldName
-    );
+    MCFOLD void $branchingWrite_DEPRECATED(::std::function<void(::BinaryStream&, int)>&& branchWriter, int controlValue, int docRangeBegin, int docRangeEnd, char const* controlDocFieldName);
 
-    MCFOLD void $branchingWrite_DEPRECATED(
-        ::std::function<void(::BinaryStream&, int)>&& branchWriter,
-        int                                           controlValue,
-        ::std::vector<int> const&                     docControlSet,
-        char const*                                   controlDocFieldName
-    );
+    MCFOLD void $branchingWrite_DEPRECATED(::std::function<void(::BinaryStream&, int)>&& branchWriter, int controlValue, ::std::vector<int> const& docControlSet, char const* controlDocFieldName);
 
-    MCAPI void $_writeArray(
-        ::std::function<void(::BinaryStream&)>&& sizeWriter,
-        ::std::function<void(::BinaryStream&)>&& writer,
-        char const*                              docFieldName,
-        char const*                              docFieldNotes
-    );
+    MCAPI void $_writeArray(::std::function<void(::BinaryStream&)>&& sizeWriter, ::std::function<void(::BinaryStream&)>&& writer, char const* docFieldName, char const* docFieldNotes);
     // NOLINTEND
 
 public:
@@ -237,4 +186,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

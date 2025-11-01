@@ -41,13 +41,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _sendMessage(
-        ::std::string const&           message,
-        ::std::optional<::std::string> filteredMessage,
-        ::std::string const&           sender,
-        ::CommandOriginIdentity const& identity,
-        ::Level&                       level
-    );
+    MCAPI static void _sendMessage(::std::string const& message, ::std::optional<::std::string> filteredMessage, ::std::string const& sender, ::CommandOriginIdentity const& identity, ::Level& level);
 
     MCAPI static bool _trySendSayCommandEvent(::Player const& player, ::Level& level, ::std::string const& message);
 
@@ -65,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

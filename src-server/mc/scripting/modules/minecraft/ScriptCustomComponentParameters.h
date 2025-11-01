@@ -25,8 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptCustomComponentParameters&
-    operator=(::ScriptModuleMinecraft::ScriptCustomComponentParameters&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptCustomComponentParameters& operator=(::ScriptModuleMinecraft::ScriptCustomComponentParameters&&);
     // NOLINTEND
 
 public:
@@ -34,6 +33,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

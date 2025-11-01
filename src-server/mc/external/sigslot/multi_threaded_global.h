@@ -4,6 +4,7 @@
 
 namespace sigslot {
 
-class multi_threaded_global {};
+class multi_threaded_global {
+};
 
-} // namespace sigslot
+}

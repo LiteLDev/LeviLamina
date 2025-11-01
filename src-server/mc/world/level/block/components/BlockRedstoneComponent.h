@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<1, 1, bool> mRedstoneConductor;
     ::ll::TypedStorage<1, 1, bool> mAllowsWireToStepDown;
     // NOLINTEND
+
 };

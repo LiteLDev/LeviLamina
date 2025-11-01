@@ -26,10 +26,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 152, ::ItemStack> mRecord;
-    ::ll::TypedStorage<4, 4, int>           mCount;
-    ::ll::TypedStorage<1, 1, bool>          mRecordingFinished;
-    ::ll::TypedStorage<4, 4, int>           mTicksPlaying;
-    ::ll::TypedStorage<1, 1, bool>          mPostBlockChangeGameEvent;
+    ::ll::TypedStorage<4, 4, int> mCount;
+    ::ll::TypedStorage<1, 1, bool> mRecordingFinished;
+    ::ll::TypedStorage<4, 4, int> mTicksPlaying;
+    ::ll::TypedStorage<1, 1, bool> mPostBlockChangeGameEvent;
     // NOLINTEND
 
 public:
@@ -82,16 +82,12 @@ public:
     virtual void onChanged(::BlockSource& region) /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(
-        int containerSlot,
-        int,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
-
-    // vIndex: 41
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual void serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
 
     // vIndex: 42
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -151,8 +147,7 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void
-    $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCAPI void $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
@@ -166,4 +161,5 @@ public:
 
     MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
+
 };

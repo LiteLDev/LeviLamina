@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::Block const&>> mBlockChangesMap;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::Block const&>> mExtraBlockChangesMap;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                      mMapMutex;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mMapMutex;
     // NOLINTEND
 
 public:
@@ -32,17 +32,7 @@ public:
     virtual ~BlockEventTracker() /*override*/ = default;
 
     // vIndex: 4
-    virtual void onBlockChanged(
-        ::BlockSource&                 source,
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 oldBlock,
-        int                            updateFlags,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget      eventTarget,
-        ::Actor*                       blockChangeSource
-    ) /*override*/;
+    virtual void onBlockChanged(::BlockSource& source, ::BlockPos const& pos, uint layer, ::Block const& block, ::Block const& oldBlock, int updateFlags, ::ActorBlockSyncMessage const* syncMsg, ::BlockChangedEventTarget eventTarget, ::Actor* blockChangeSource) /*override*/;
     // NOLINTEND
 
 public:
@@ -50,4 +40,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

@@ -2,4 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct VillagerV2FlagComponent {};
+struct VillagerV2FlagComponent {
+};

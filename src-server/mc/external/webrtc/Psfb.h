@@ -34,6 +34,7 @@ public:
 
     MCNAPI void ParseCommonFeedback(uchar const* payload);
     // NOLINTEND
+
 };
 
-} // namespace webrtc::rtcp
+}

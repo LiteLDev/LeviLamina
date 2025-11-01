@@ -16,4 +16,5 @@ public:
     // NOLINTBEGIN
     MCAPI static bool isInstanceOf(::Actor const& inEntity, ::ActorType type);
     // NOLINTEND
+
 };

@@ -28,6 +28,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::array<::BlockBreadthFirst::BlockNeighbor, 6> operator()(::BlockPos const& pos);
     // NOLINTEND
+
 };
 
-} // namespace BlockBreadthFirst
+}

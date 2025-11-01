@@ -71,4 +71,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::CompoundTagUpdaterContext>& mContext();
     // NOLINTEND
+
 };

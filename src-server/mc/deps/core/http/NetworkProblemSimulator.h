@@ -19,8 +19,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 336> mUnk939894;
-    ::ll::UntypedStorage<8, 8>   mUnk67c27a;
-    ::ll::UntypedStorage<8, 64>  mUnkfb80a5;
+    ::ll::UntypedStorage<8, 8> mUnk67c27a;
+    ::ll::UntypedStorage<8, 64> mUnkfb80a5;
     // NOLINTEND
 
 public:
@@ -50,6 +50,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Http
+}

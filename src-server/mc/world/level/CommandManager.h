@@ -30,4 +30,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
     // NOLINTEND
+
 };

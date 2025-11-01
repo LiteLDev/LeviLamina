@@ -12,11 +12,11 @@ struct UpdateEquipPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerID>                        mContainerId;
+    ::ll::TypedStorage<1, 1, ::ContainerID> mContainerId;
     ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mType;
-    ::ll::TypedStorage<4, 4, int>                                  mSize;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mEntityUniqueID;
-    ::ll::TypedStorage<8, 24, ::CompoundTag>                       mData;
+    ::ll::TypedStorage<4, 4, int> mSize;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityUniqueID;
+    ::ll::TypedStorage<8, 24, ::CompoundTag> mData;
     // NOLINTEND
 
 public:
@@ -38,4 +38,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

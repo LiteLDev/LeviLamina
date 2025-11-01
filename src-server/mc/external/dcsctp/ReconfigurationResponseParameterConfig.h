@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct ReconfigurationResponseParameterConfig {};
+struct ReconfigurationResponseParameterConfig {
+};
 
-} // namespace dcsctp
+}

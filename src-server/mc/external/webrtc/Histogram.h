@@ -4,6 +4,7 @@
 
 namespace webrtc::metrics {
 
-class Histogram {};
+class Histogram {
+};
 
-} // namespace webrtc::metrics
+}

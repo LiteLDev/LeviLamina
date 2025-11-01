@@ -15,8 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 4, int>    mLayDownStartChance;
-    ::ll::TypedStorage<4, 4, int>    mLayDownStopChance;
+    ::ll::TypedStorage<4, 4, int> mLayDownStartChance;
+    ::ll::TypedStorage<4, 4, int> mLayDownStopChance;
     // NOLINTEND
 
 public:
@@ -71,4 +71,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

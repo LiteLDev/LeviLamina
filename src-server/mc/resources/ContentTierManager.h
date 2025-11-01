@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk44461e;
-    ::ll::UntypedStorage<1, 1>  mUnkf4791a;
+    ::ll::UntypedStorage<1, 1> mUnkf4791a;
     // NOLINTEND
 
 public:
@@ -29,6 +29,9 @@ public:
     // NOLINTBEGIN
     // vIndex: 1
     virtual ::ContentTierInfo getContentTierInfo() const /*override*/;
+
+    // vIndex: 2
+    virtual bool shouldDeviceAllowAnimation() const /*override*/;
 
     // vIndex: 0
     virtual ~ContentTierManager() /*override*/;
@@ -56,6 +59,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::ContentTierInfo $getContentTierInfo() const;
+
+    MCNAPI bool $shouldDeviceAllowAnimation() const;
     // NOLINTEND
 
 public:
@@ -63,4 +68,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -7,8 +7,7 @@
 
 namespace Editor::Network {
 
-class ReloadEditorClientPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::ReloadEditorClientPayload> {
+class ReloadEditorClientPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::ReloadEditorClientPayload> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -21,6 +20,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

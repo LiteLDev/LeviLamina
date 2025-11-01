@@ -13,13 +13,13 @@ class ScriptQuickExtrudeProperties {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnk3da723;
-    ::ll::UntypedStorage<4, 8>  mUnk634a6a;
+    ::ll::UntypedStorage<4, 8> mUnk3da723;
+    ::ll::UntypedStorage<4, 8> mUnk634a6a;
     ::ll::UntypedStorage<4, 16> mUnk3e89bd;
-    ::ll::UntypedStorage<1, 2>  mUnk890042;
-    ::ll::UntypedStorage<1, 2>  mUnk1dd814;
-    ::ll::UntypedStorage<4, 8>  mUnk20eff2;
-    ::ll::UntypedStorage<4, 8>  mUnkda9405;
+    ::ll::UntypedStorage<1, 2> mUnk890042;
+    ::ll::UntypedStorage<1, 2> mUnk1dd814;
+    ::ll::UntypedStorage<4, 8> mUnk20eff2;
+    ::ll::UntypedStorage<4, 8> mUnkda9405;
     ::ll::UntypedStorage<8, 32> mUnk162e57;
     // NOLINTEND
 
@@ -31,11 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptQuickExtrudeProperties&
-    operator=(::Editor::ScriptModule::ScriptQuickExtrudeProperties const&);
+    MCNAPI ::Editor::ScriptModule::ScriptQuickExtrudeProperties& operator=(::Editor::ScriptModule::ScriptQuickExtrudeProperties const&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptQuickExtrudeProperties&
-    operator=(::Editor::ScriptModule::ScriptQuickExtrudeProperties&&);
+    MCNAPI ::Editor::ScriptModule::ScriptQuickExtrudeProperties& operator=(::Editor::ScriptModule::ScriptQuickExtrudeProperties&&);
 
     MCNAPI ~ScriptQuickExtrudeProperties();
     // NOLINTEND
@@ -51,6 +49,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

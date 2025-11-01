@@ -22,20 +22,17 @@ struct PlayerDamageEvent;
 struct PlayerOpenContainerEvent;
 // clang-format on
 
-class VanillaServerGameplayEventListener : public ::EventListenerDispatcher<::ActorEventListener>,
-                                           public ::EventListenerDispatcher<::BlockEventListener>,
-                                           public ::EventListenerDispatcher<::PlayerEventListener>,
-                                           public ::EventListenerDispatcher<::LevelEventListener> {
+class VanillaServerGameplayEventListener : public ::EventListenerDispatcher<::ActorEventListener>, public ::EventListenerDispatcher<::BlockEventListener>, public ::EventListenerDispatcher<::PlayerEventListener>, public ::EventListenerDispatcher<::LevelEventListener> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 34
     virtual ::EventResult onEvent(::ActorHurtEvent const& actorHurtEvent) /*override*/;
 
-    // vIndex: 67
+    // vIndex: 70
     virtual ::EventResult onEvent(::PlayerDamageEvent const& playerDamageEvent) /*override*/;
 
-    // vIndex: 61
+    // vIndex: 64
     virtual ::EventResult onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent) /*override*/;
 
     // vIndex: 8
@@ -48,12 +45,7 @@ public:
     virtual ::EventResult onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos) /*override*/;
 
     // vIndex: 1
-    virtual ::EventResult onBlockPlacedByPlayer(
-        ::Player&         player,
-        ::Block const&    placedBlock,
-        ::BlockPos const& pos,
-        bool              isUnderwater
-    ) /*override*/;
+    virtual ::EventResult onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater) /*override*/;
 
     // vIndex: 0
     virtual ~VanillaServerGameplayEventListener() /*override*/ = default;
@@ -74,8 +66,7 @@ public:
 
     MCAPI ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 
-    MCAPI ::EventResult
-    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+    MCAPI ::EventResult $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
     // NOLINTEND
 
 public:
@@ -89,4 +80,5 @@ public:
 
     MCNAPI static void** $vftableForEventListenerDispatcherPlayerEventListener();
     // NOLINTEND
+
 };

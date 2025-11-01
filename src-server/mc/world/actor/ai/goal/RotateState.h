@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, int const> SETTLE_TICKS;
-    ::ll::TypedStorage<4, 4, int>       mSettleTicks;
+    ::ll::TypedStorage<4, 4, int> mSettleTicks;
     // NOLINTEND
 
 public:
@@ -34,4 +34,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

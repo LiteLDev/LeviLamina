@@ -42,174 +42,168 @@ public:
     class ConnectionRequest;
     struct SentPing;
     // clang-format on
-
+    
     // Connection inner types define
     struct SentPing {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk3678cf;
-        ::ll::UntypedStorage<8, 8>  mUnkb88b47;
-        ::ll::UntypedStorage<4, 4>  mUnkdf6945;
+        ::ll::UntypedStorage<8, 8> mUnkb88b47;
+        ::ll::UntypedStorage<4, 4> mUnkdf6945;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         SentPing& operator=(SentPing const&);
         SentPing(SentPing const&);
         SentPing();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~SentPing();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     enum class WriteState : int {
-        Writable        = 0,
+        Writable = 0,
         WriteUnreliable = 1,
-        WriteInit       = 2,
-        WriteTimeout    = 3,
+        WriteInit = 2,
+        WriteTimeout = 3,
     };
-
+    
     class ConnectionRequest : public ::cricket::StunRequest {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk496778;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ConnectionRequest& operator=(ConnectionRequest const&);
         ConnectionRequest(ConnectionRequest const&);
         ConnectionRequest();
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 2
         virtual void OnResponse(::cricket::StunMessage* response) /*override*/;
-
+    
         // vIndex: 3
         virtual void OnErrorResponse(::cricket::StunMessage* response) /*override*/;
-
+    
         // vIndex: 5
         virtual void OnTimeout() /*override*/;
-
+    
         // vIndex: 6
         virtual void OnSent() /*override*/;
-
+    
         // vIndex: 7
         virtual int resend_delay() /*override*/;
-
+    
         // vIndex: 0
         virtual ~ConnectionRequest() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ConnectionRequest(
-            ::cricket::StunRequestManager&           manager,
-            ::cricket::Connection*                   connection,
-            ::std::unique_ptr<::cricket::IceMessage> message
-        );
+        MCNAPI ConnectionRequest(::cricket::StunRequestManager& manager, ::cricket::Connection* connection, ::std::unique_ptr<::cricket::IceMessage> message);
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(
-            ::cricket::StunRequestManager&           manager,
-            ::cricket::Connection*                   connection,
-            ::std::unique_ptr<::cricket::IceMessage> message
-        );
+        MCNAPI void* $ctor(::cricket::StunRequestManager& manager, ::cricket::Connection* connection, ::std::unique_ptr<::cricket::IceMessage> message);
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $OnResponse(::cricket::StunMessage* response);
-
+    
         MCNAPI void $OnErrorResponse(::cricket::StunMessage* response);
-
+    
         MCNAPI void $OnTimeout();
-
+    
         MCNAPI void $OnSent();
-
+    
         MCNAPI int $resend_delay();
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48>   mUnk3f0a0b;
-    ::ll::UntypedStorage<8, 48>   mUnk5c9268;
-    ::ll::UntypedStorage<8, 48>   mUnk5a1415;
-    ::ll::UntypedStorage<8, 48>   mUnke47184;
-    ::ll::UntypedStorage<8, 8>    mUnk3ccaad;
-    ::ll::UntypedStorage<4, 4>    mUnka4e8b3;
-    ::ll::UntypedStorage<8, 16>   mUnk4b5d48;
-    ::ll::UntypedStorage<8, 528>  mUnkfd2318;
-    ::ll::UntypedStorage<8, 528>  mUnke86cd7;
+    ::ll::UntypedStorage<8, 48> mUnk3f0a0b;
+    ::ll::UntypedStorage<8, 48> mUnk5c9268;
+    ::ll::UntypedStorage<8, 48> mUnk5a1415;
+    ::ll::UntypedStorage<8, 48> mUnke47184;
+    ::ll::UntypedStorage<8, 8> mUnk3ccaad;
+    ::ll::UntypedStorage<4, 4> mUnka4e8b3;
+    ::ll::UntypedStorage<8, 16> mUnk4b5d48;
+    ::ll::UntypedStorage<8, 528> mUnkfd2318;
+    ::ll::UntypedStorage<8, 528> mUnke86cd7;
     ::ll::UntypedStorage<8, 1264> mUnk9bba3d;
-    ::ll::UntypedStorage<8, 64>   mUnk11421d;
-    ::ll::UntypedStorage<8, 64>   mUnk45bb40;
-    ::ll::UntypedStorage<8, 8>    mUnkf2e0f7;
-    ::ll::UntypedStorage<4, 4>    mUnkd84a4f;
-    ::ll::UntypedStorage<1, 1>    mUnka7b348;
-    ::ll::UntypedStorage<1, 1>    mUnk8063e7;
-    ::ll::UntypedStorage<1, 1>    mUnk2a3bb6;
-    ::ll::UntypedStorage<1, 1>    mUnk86144b;
-    ::ll::UntypedStorage<1, 1>    mUnkc42684;
-    ::ll::UntypedStorage<4, 4>    mUnk31ab71;
-    ::ll::UntypedStorage<4, 4>    mUnkad8260;
-    ::ll::UntypedStorage<4, 4>    mUnk9e0f85;
-    ::ll::UntypedStorage<8, 88>   mUnka2cf48;
-    ::ll::UntypedStorage<4, 4>    mUnk505d39;
-    ::ll::UntypedStorage<4, 4>    mUnkadc045;
-    ::ll::UntypedStorage<8, 8>    mUnk88f318;
-    ::ll::UntypedStorage<8, 8>    mUnk5462c6;
-    ::ll::UntypedStorage<4, 8>    mUnkf61de6;
-    ::ll::UntypedStorage<8, 8>    mUnkb7f01c;
-    ::ll::UntypedStorage<8, 8>    mUnk493c56;
-    ::ll::UntypedStorage<8, 8>    mUnk229f6a;
-    ::ll::UntypedStorage<8, 8>    mUnkfe8645;
-    ::ll::UntypedStorage<8, 8>    mUnke55350;
-    ::ll::UntypedStorage<8, 24>   mUnka4e57f;
-    ::ll::UntypedStorage<8, 40>   mUnk3637f3;
-    ::ll::UntypedStorage<4, 8>    mUnka9dcaa;
-    ::ll::UntypedStorage<4, 8>    mUnk3b3c10;
-    ::ll::UntypedStorage<4, 8>    mUnk31a8d0;
-    ::ll::UntypedStorage<4, 4>    mUnk2826e3;
-    ::ll::UntypedStorage<4, 8>    mUnke7b4da;
-    ::ll::UntypedStorage<8, 8>    mUnk576994;
-    ::ll::UntypedStorage<8, 8>    mUnkddf605;
-    ::ll::UntypedStorage<4, 4>    mUnk9009ab;
-    ::ll::UntypedStorage<4, 32>   mUnk458f0c;
-    ::ll::UntypedStorage<8, 8>    mUnk8ee217;
-    ::ll::UntypedStorage<1, 2>    mUnk8ecc94;
-    ::ll::UntypedStorage<8, 8>    mUnk71a997;
-    ::ll::UntypedStorage<8, 8>    mUnk2c3072;
-    ::ll::UntypedStorage<8, 48>   mUnk61f319;
-    ::ll::UntypedStorage<8, 72>   mUnk327e9d;
-    ::ll::UntypedStorage<8, 72>   mUnke0cb71;
-    ::ll::UntypedStorage<8, 32>   mUnk412384;
+    ::ll::UntypedStorage<8, 64> mUnk11421d;
+    ::ll::UntypedStorage<8, 64> mUnk45bb40;
+    ::ll::UntypedStorage<8, 8> mUnkf2e0f7;
+    ::ll::UntypedStorage<4, 4> mUnkd84a4f;
+    ::ll::UntypedStorage<1, 1> mUnka7b348;
+    ::ll::UntypedStorage<1, 1> mUnk8063e7;
+    ::ll::UntypedStorage<1, 1> mUnk2a3bb6;
+    ::ll::UntypedStorage<1, 1> mUnk86144b;
+    ::ll::UntypedStorage<1, 1> mUnkc42684;
+    ::ll::UntypedStorage<4, 4> mUnk31ab71;
+    ::ll::UntypedStorage<4, 4> mUnkad8260;
+    ::ll::UntypedStorage<4, 4> mUnk9e0f85;
+    ::ll::UntypedStorage<8, 88> mUnka2cf48;
+    ::ll::UntypedStorage<4, 4> mUnk505d39;
+    ::ll::UntypedStorage<4, 4> mUnkadc045;
+    ::ll::UntypedStorage<8, 8> mUnk88f318;
+    ::ll::UntypedStorage<8, 8> mUnk5462c6;
+    ::ll::UntypedStorage<4, 8> mUnkf61de6;
+    ::ll::UntypedStorage<8, 8> mUnkb7f01c;
+    ::ll::UntypedStorage<8, 8> mUnk493c56;
+    ::ll::UntypedStorage<8, 8> mUnk229f6a;
+    ::ll::UntypedStorage<8, 8> mUnkfe8645;
+    ::ll::UntypedStorage<8, 8> mUnke55350;
+    ::ll::UntypedStorage<8, 24> mUnka4e57f;
+    ::ll::UntypedStorage<8, 40> mUnk3637f3;
+    ::ll::UntypedStorage<4, 8> mUnka9dcaa;
+    ::ll::UntypedStorage<4, 8> mUnk3b3c10;
+    ::ll::UntypedStorage<4, 8> mUnk31a8d0;
+    ::ll::UntypedStorage<4, 4> mUnk2826e3;
+    ::ll::UntypedStorage<4, 8> mUnke7b4da;
+    ::ll::UntypedStorage<8, 8> mUnk576994;
+    ::ll::UntypedStorage<8, 8> mUnkddf605;
+    ::ll::UntypedStorage<4, 4> mUnk9009ab;
+    ::ll::UntypedStorage<4, 32> mUnk458f0c;
+    ::ll::UntypedStorage<8, 8> mUnk8ee217;
+    ::ll::UntypedStorage<1, 2> mUnk8ecc94;
+    ::ll::UntypedStorage<8, 8> mUnk71a997;
+    ::ll::UntypedStorage<8, 8> mUnk2c3072;
+    ::ll::UntypedStorage<8, 48> mUnk61f319;
+    ::ll::UntypedStorage<8, 72> mUnk327e9d;
+    ::ll::UntypedStorage<8, 72> mUnke0cb71;
+    ::ll::UntypedStorage<8, 32> mUnk412384;
     // NOLINTEND
 
 public:
@@ -252,16 +246,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::cricket::IceMessage>
-    BuildPingRequest(::std::unique_ptr<::cricket::StunByteStringAttribute> delta);
+    MCNAPI ::std::unique_ptr<::cricket::IceMessage> BuildPingRequest(::std::unique_ptr<::cricket::StunByteStringAttribute> delta);
 
     MCNAPI uint ComputeNetworkCost() const;
 
-    MCNAPI Connection(
-        ::rtc::WeakPtr<::cricket::PortInterface> port,
-        uint64                                   index,
-        ::cricket::Candidate const&              remote_candidate
-    );
+    MCNAPI Connection(::rtc::WeakPtr<::cricket::PortInterface> port, uint64 index, ::cricket::Candidate const& remote_candidate);
 
     MCNAPI void DeregisterReceivedPacketCallback();
 
@@ -285,10 +274,7 @@ public:
 
     MCNAPI void MaybeUpdatePeerReflexiveCandidate(::cricket::Candidate const& new_candidate);
 
-    MCNAPI void OnConnectionRequestErrorResponse(
-        ::cricket::Connection::ConnectionRequest* request,
-        ::cricket::StunMessage*                   response
-    );
+    MCNAPI void OnConnectionRequestErrorResponse(::cricket::Connection::ConnectionRequest* request, ::cricket::StunMessage* response);
 
     MCNAPI void OnConnectionRequestSent(::cricket::Connection::ConnectionRequest* request);
 
@@ -310,9 +296,7 @@ public:
 
     MCNAPI void ReceivedPingResponse(int rtt, ::std::string_view request_id, ::std::optional<uint> const& nomination);
 
-    MCNAPI void RegisterReceivedPacketCallback(
-        ::absl::AnyInvocable<void(::cricket::Connection*, ::rtc::ReceivedPacket const&)> received_packet_callback
-    );
+    MCNAPI void RegisterReceivedPacketCallback(::absl::AnyInvocable<void(::cricket::Connection*, ::rtc::ReceivedPacket const&)> received_packet_callback);
 
     MCNAPI void SendGoogPingResponse(::cricket::StunMessage const* message);
 
@@ -324,11 +308,7 @@ public:
 
     MCNAPI void SetLocalCandidateNetworkCost(ushort cost);
 
-    MCNAPI void SetStunDictConsumer(
-        ::std::function<::std::unique_ptr<::cricket::StunAttribute>(::cricket::StunByteStringAttribute const*)>
-                                                                                           goog_delta_consumer,
-        ::std::function<void(::webrtc::RTCErrorOr<::cricket::StunUInt64Attribute const*>)> goog_delta_ack_consumer
-    );
+    MCNAPI void SetStunDictConsumer(::std::function<::std::unique_ptr<::cricket::StunAttribute>(::cricket::StunByteStringAttribute const*)> goog_delta_consumer, ::std::function<void(::webrtc::RTCErrorOr<::cricket::StunUInt64Attribute const*>)> goog_delta_ack_consumer);
 
     MCNAPI bool ShouldSendGoogPing(::cricket::StunMessage const* message);
 
@@ -342,8 +322,7 @@ public:
 
     MCNAPI bool TooManyOutstandingPings(::std::optional<int> const& max_outstanding_pings) const;
 
-    MCNAPI void
-    UpdateLocalIceParameters(int component, ::std::string_view username_fragment, ::std::string_view password);
+    MCNAPI void UpdateLocalIceParameters(int component, ::std::string_view username_fragment, ::std::string_view password);
 
     MCNAPI void UpdateReceiving(int64 now);
 
@@ -441,8 +420,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::rtc::WeakPtr<::cricket::PortInterface> port, uint64 index, ::cricket::Candidate const& remote_candidate);
+    MCNAPI void* $ctor(::rtc::WeakPtr<::cricket::PortInterface> port, uint64 index, ::cricket::Candidate const& remote_candidate);
     // NOLINTEND
 
 public:
@@ -472,6 +450,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

@@ -16,7 +16,7 @@ struct BlockRandomTickingComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 56, ::DefinitionTrigger>             mOnTimeDown;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnTimeDown;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mEventSubscription;
     // NOLINTEND
 
@@ -46,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -22,4 +22,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::PersonaAnimationDefinition const& INVALID_ANIMATION_DEFINITION();
     // NOLINTEND
+
 };

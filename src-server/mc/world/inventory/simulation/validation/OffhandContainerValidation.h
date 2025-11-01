@@ -16,17 +16,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual bool isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const                       slot,
-        ::ItemStackBase const&          item,
-        int const                       amount,
-        bool
-    ) const /*override*/;
+    virtual bool isItemAllowedInSlot(::ContainerScreenContext const& screenContext, int const slot, ::ItemStackBase const& item, int const amount, bool) const /*override*/;
 
     // vIndex: 5
-    virtual bool isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const
-        /*override*/;
+    virtual bool isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const /*override*/;
 
     // vIndex: 6
     virtual bool canItemMoveToContainer(::ItemStackBase const& item) const /*override*/;
@@ -41,16 +34,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const                       slot,
-        ::ItemStackBase const&          item,
-        int const                       amount,
-        bool
-    ) const;
+    MCNAPI bool $isItemAllowedInSlot(::ContainerScreenContext const& screenContext, int const slot, ::ItemStackBase const& item, int const amount, bool) const;
 
-    MCNAPI bool
-    $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
+    MCNAPI bool $isItemAllowedToRemove(::ContainerScreenContext const& screenContext, ::ItemStackBase const& item) const;
 
     MCNAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
@@ -62,4 +48,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

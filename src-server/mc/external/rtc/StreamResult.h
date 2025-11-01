@@ -5,10 +5,10 @@
 namespace rtc {
 
 enum class StreamResult : int {
-    Error   = 0,
+    Error = 0,
     Success = 1,
-    Block   = 2,
-    Eos     = 3,
+    Block = 2,
+    Eos = 3,
 };
 
 }

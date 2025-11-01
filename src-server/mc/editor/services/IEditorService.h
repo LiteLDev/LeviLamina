@@ -13,10 +13,10 @@ public:
     // IEditorService inner types define
     enum class State : int {
         Uninitialized = 0,
-        Initialized   = 1,
-        Ready         = 2,
+        Initialized = 1,
+        Ready = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -76,6 +76,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

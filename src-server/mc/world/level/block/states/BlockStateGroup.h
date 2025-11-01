@@ -19,11 +19,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::CustomBlockStateVariant>>> mRegisteredBlockStates;
-    ::ll::TypedStorage<8, 128, ::BidirectionalUnorderedMap<uint64, ::std::string>>         mHashNames;
-    ::ll::TypedStorage<8, 128, ::BidirectionalUnorderedMap<int, uint64>>                   mIdNames;
-    ::ll::TypedStorage<8, 16, ::std::map<int, ::std::unique_ptr<::BlockStateMeta>>>        mBlockStates;
-    ::ll::TypedStorage<8, 16, ::std::map<int, ::std::unique_ptr<::BlockStateMeta>>>        mJsonBlockStates;
-    ::ll::TypedStorage<8, 8, uint64>                                                       lastStateID;
+    ::ll::TypedStorage<8, 128, ::BidirectionalUnorderedMap<uint64, ::std::string>> mHashNames;
+    ::ll::TypedStorage<8, 128, ::BidirectionalUnorderedMap<int, uint64>> mIdNames;
+    ::ll::TypedStorage<8, 16, ::std::map<int, ::std::unique_ptr<::BlockStateMeta>>> mBlockStates;
+    ::ll::TypedStorage<8, 16, ::std::map<int, ::std::unique_ptr<::BlockStateMeta>>> mJsonBlockStates;
+    ::ll::TypedStorage<8, 8, uint64> lastStateID;
     // NOLINTEND
 
 public:
@@ -41,8 +41,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool
-    loadBlockStateFromJson(::BlockStateDefinition& blockState, ::std::string const& name, ::Json::Value const& root);
+    MCAPI static bool loadBlockStateFromJson(::BlockStateDefinition& blockState, ::std::string const& name, ::Json::Value const& root);
     // NOLINTEND
 
 public:
@@ -56,4 +55,5 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
     // NOLINTEND
+
 };

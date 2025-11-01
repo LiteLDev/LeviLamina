@@ -6,11 +6,11 @@ struct TrackerStat {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk9416ad;
-    ::ll::UntypedStorage<4, 4>  mUnk9c82e2;
-    ::ll::UntypedStorage<4, 4>  mUnkff9a49;
-    ::ll::UntypedStorage<4, 4>  mUnkcec4f8;
-    ::ll::UntypedStorage<4, 4>  mUnk4894a5;
+    ::ll::UntypedStorage<4, 4> mUnk9416ad;
+    ::ll::UntypedStorage<4, 4> mUnk9c82e2;
+    ::ll::UntypedStorage<4, 4> mUnkff9a49;
+    ::ll::UntypedStorage<4, 4> mUnkcec4f8;
+    ::ll::UntypedStorage<4, 4> mUnk4894a5;
     ::ll::UntypedStorage<8, 64> mUnk3d6211;
     ::ll::UntypedStorage<8, 64> mUnkd1c357;
     // NOLINTEND
@@ -32,4 +32,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

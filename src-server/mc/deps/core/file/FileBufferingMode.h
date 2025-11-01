@@ -5,7 +5,7 @@
 namespace Core {
 
 enum class FileBufferingMode : int {
-    Buffered   = 0,
+    Buffered = 0,
     Unbuffered = 1,
 };
 

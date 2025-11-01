@@ -6,8 +6,8 @@ class HashedString {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>                mStrHash;
-    ::ll::TypedStorage<8, 32, ::std::string>        mStr;
+    ::ll::TypedStorage<8, 8, uint64> mStrHash;
+    ::ll::TypedStorage<8, 32, ::std::string> mStr;
     ::ll::TypedStorage<8, 8, ::HashedString const*> mLastMatch;
     // NOLINTEND
 
@@ -76,4 +76,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

@@ -4,6 +4,7 @@
 
 namespace cricket {
 
-struct StreamInterfaceChannel {};
+struct StreamInterfaceChannel {
+};
 
-} // namespace cricket
+}

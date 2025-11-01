@@ -23,4 +23,4 @@ MCNAPI ::LeashKnot* trySpawn(::BlockSource& region, ::BlockPos const& pos, ::Ite
 MCNAPI bool tryTranferLeashedActors(::Actor& holderActor, ::BlockPos const& pos, ::ItemInstance* itemUsed);
 // NOLINTEND
 
-} // namespace LeashKnotUtility
+}

@@ -16,11 +16,11 @@ class DedicatedServerGameTestRunnerListener : public ::gametest::IGameTestListen
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk783d08;
+    ::ll::UntypedStorage<8, 8> mUnk783d08;
     ::ll::UntypedStorage<8, 168> mUnkc8cbaf;
-    ::ll::UntypedStorage<8, 8>   mUnk3c6b68;
-    ::ll::UntypedStorage<8, 8>   mUnkca4f45;
-    ::ll::UntypedStorage<8, 64>  mUnk79a256;
+    ::ll::UntypedStorage<8, 8> mUnk3c6b68;
+    ::ll::UntypedStorage<8, 8> mUnkca4f45;
+    ::ll::UntypedStorage<8, 64> mUnk79a256;
     // NOLINTEND
 
 public:
@@ -48,27 +48,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DedicatedServerGameTestRunnerListener(
-        ::GameTestReport&                    report,
-        ::std::unordered_set<::std::string>& failedGameTests,
-        ::std::unordered_set<::std::string>& passedGameTests
-    );
+    MCNAPI DedicatedServerGameTestRunnerListener(::GameTestReport& report, ::std::unordered_set<::std::string>& failedGameTests, ::std::unordered_set<::std::string>& passedGameTests);
 
-    MCNAPI void _addTestResult(
-        ::std::string const&                       testName,
-        ::std::string const&                       result,
-        ::std::optional<::gametest::GameTestError> error
-    );
+    MCNAPI void _addTestResult(::std::string const& testName, ::std::string const& result, ::std::optional<::gametest::GameTestError> error);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::GameTestReport&                    report,
-        ::std::unordered_set<::std::string>& failedGameTests,
-        ::std::unordered_set<::std::string>& passedGameTests
-    );
+    MCNAPI void* $ctor(::GameTestReport& report, ::std::unordered_set<::std::string>& failedGameTests, ::std::unordered_set<::std::string>& passedGameTests);
     // NOLINTEND
 
 public:
@@ -86,4 +74,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

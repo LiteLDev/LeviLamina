@@ -19,12 +19,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
+    virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
+    virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
 
     // vIndex: 3
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> Create() /*override*/;
@@ -36,11 +34,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    $CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback);
+    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback);
 
-    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    $CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
+    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
 
     MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $Create();
     // NOLINTEND
@@ -50,6 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

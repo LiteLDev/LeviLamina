@@ -4,6 +4,7 @@
 
 namespace SharedTypes::Legacy::Spawn {
 
-struct SpawnUnderwater {};
+struct SpawnUnderwater {
+};
 
-} // namespace SharedTypes::Legacy::Spawn
+}

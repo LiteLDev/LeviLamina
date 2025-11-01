@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkc85f7c;
-    ::ll::UntypedStorage<4, 4>  mUnk32c4a4;
+    ::ll::UntypedStorage<4, 4> mUnk32c4a4;
     // NOLINTEND
 
 public:
@@ -40,12 +40,18 @@ public:
     virtual ::std::string_view getName() const /*override*/;
 
     // vIndex: 6
-    virtual ::Json::Value _serializeValue() const /*override*/;
+    virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getValue() const /*override*/;
 
     // vIndex: 5
-    virtual ::Json::Value _serializeDomain() const /*override*/;
+    virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getDomain() const /*override*/;
+
+    // vIndex: 8
+    virtual ::Json::Value _serializeValue() const /*override*/;
 
     // vIndex: 7
+    virtual ::Json::Value _serializeDomain() const /*override*/;
+
+    // vIndex: 9
     virtual bool _isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const;
 
     // vIndex: 0
@@ -67,6 +73,10 @@ public:
 
     MCNAPI ::std::string_view $getName() const;
 
+    MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getValue() const;
+
+    MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getDomain() const;
+
     MCNAPI ::Json::Value $_serializeValue() const;
 
     MCNAPI ::Json::Value $_serializeDomain() const;
@@ -79,4 +89,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

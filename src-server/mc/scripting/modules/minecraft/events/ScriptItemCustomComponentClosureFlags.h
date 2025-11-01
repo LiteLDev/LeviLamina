@@ -10,6 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ushort> mValue;
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

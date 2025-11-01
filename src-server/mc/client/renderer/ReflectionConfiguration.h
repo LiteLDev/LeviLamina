@@ -17,4 +17,5 @@ public:
     ReflectionConfiguration& operator=(ReflectionConfiguration const&);
     ReflectionConfiguration(ReflectionConfiguration const&);
     ReflectionConfiguration();
+
 };

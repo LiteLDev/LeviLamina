@@ -4,7 +4,8 @@
 
 namespace JsonUtil {
 
-template <typename T0, typename T1>
-class JsonSchemaChildOptionBase {};
+template<typename T0, typename T1>
+class JsonSchemaChildOptionBase {
+};
 
-} // namespace JsonUtil
+}

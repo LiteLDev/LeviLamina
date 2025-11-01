@@ -27,8 +27,7 @@ public:
     virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&&) = 0;
 
     // vIndex: 2
-    virtual ::PackCommand::PackCommandHandle
-    submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&) = 0;
+    virtual ::PackCommand::PackCommandHandle submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&) = 0;
 
     // vIndex: 3
     virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&&) = 0;
@@ -42,6 +41,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace PackCommand
+}

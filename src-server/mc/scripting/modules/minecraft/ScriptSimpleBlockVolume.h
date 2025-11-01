@@ -24,8 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
-    getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) /*override*/;
+    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator> getBlockLocationIterator(::Scripting::WeakLifetimeScope scope) /*override*/;
 
     // vIndex: 2
     virtual ::std::unique_ptr<::BaseBlockLocationIterator> createBlockLocationIterator() /*override*/;
@@ -51,11 +50,9 @@ public:
 
     MCNAPI ::Vec3 getTo() const;
 
-    MCNAPI ::SimpleBlockVolume::IntersectionResult
-    intersects(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& other);
+    MCNAPI ::SimpleBlockVolume::IntersectionResult intersects(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& other);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptSimpleBlockVolume&
-    operator=(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
+    MCNAPI ::ScriptModuleMinecraft::ScriptSimpleBlockVolume& operator=(::ScriptModuleMinecraft::ScriptSimpleBlockVolume const& rhs);
 
     MCNAPI void setFrom(::Vec3 const& from);
 
@@ -83,8 +80,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
-    $getBlockLocationIterator(::Scripting::WeakLifetimeScope scope);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator> $getBlockLocationIterator(::Scripting::WeakLifetimeScope scope);
 
     MCNAPI ::std::unique_ptr<::BaseBlockLocationIterator> $createBlockLocationIterator();
     // NOLINTEND
@@ -94,6 +90,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -13,9 +13,9 @@ struct ScriptDataStorePayloadUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::std::variant<float, bool, ::std::string>>
-    getScriptPayload(::Json::Value const& payload);
+    MCNAPI static ::std::optional<::std::variant<float, bool, ::std::string>> getScriptPayload(::Json::Value const& payload);
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

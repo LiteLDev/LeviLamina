@@ -33,48 +33,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    batch(::std::string batchName);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> batch(::std::string batchName);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    maxAttempts(int maxAttempts);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> maxAttempts(int maxAttempts);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    maxTicks(int maxTicks);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> maxTicks(int maxTicks);
 
-    MCNAPI ::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&
-    operator=(::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&);
+    MCNAPI ::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder& operator=(::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder&&);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    padding(int blockPadding);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> padding(int blockPadding);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    required(bool required);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> required(bool required);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    requiredSuccessfulAttempts(int requiredSuccessfulAttempts);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> requiredSuccessfulAttempts(int requiredSuccessfulAttempts);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    rotate(bool rotate);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> rotate(bool rotate);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    setupTicks(int setupTicks);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> setupTicks(int setupTicks);
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>,
-        ::Scripting::InvalidArgumentError,
-        ::Scripting::EngineError>
-    structureLocation(
-        ::Vec3                                                                                       structureLocation,
-        ::std::optional<::std::variant<::ScriptModuleMinecraft::ScriptDimensionType, ::std::string>> dimensionTypeVar
-    );
+    MCNAPI ::Scripting::Result<::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>, ::Scripting::InvalidArgumentError, ::Scripting::EngineError> structureLocation(::Vec3 structureLocation, ::std::optional<::std::variant<::ScriptModuleMinecraft::ScriptDimensionType, ::std::string>> dimensionTypeVar);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    structureName(::std::string structureName);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> structureName(::std::string structureName);
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder>
-    tag(::std::string tag);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestRegistrationBuilder> tag(::std::string tag);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleGameTest
+}

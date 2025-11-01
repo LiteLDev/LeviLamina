@@ -30,4 +30,4 @@ MCAPI void setBoundingBoxScale(::EntityContext& entity, float scale);
 MCAPI void setHorseType(::EntityContext& entity, int type);
 // NOLINTEND
 
-} // namespace SynchedActorDataAccess
+}

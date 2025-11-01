@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,12 +15,12 @@ class LevelChunkBlockActorStorage {
 public:
     // LevelChunkBlockActorStorage inner types define
     enum class TrackingMode : int {
-        None                = 0,
+        None = 0,
         PermanentlyRendered = 1,
     };
-
+    
     using sub_type = ::std::unordered_map<::ChunkBlockPos, ::std::shared_ptr<::BlockActor>>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,15 +40,9 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit LevelChunkBlockActorStorage(::LevelChunkBlockActorStorage::TrackingMode trackingMode);
 
-    MCNAPI ::std::pair<
-        ::std::_List_const_iterator<::std::_List_val<
-            ::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>>,
-        bool>
-    emplace(::ChunkBlockPos pos, ::std::shared_ptr<::BlockActor> blockActor);
+    MCNAPI ::std::pair<::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>>, bool> emplace(::ChunkBlockPos pos, ::std::shared_ptr<::BlockActor> blockActor);
 
-    MCNAPI ::std::_List_const_iterator<::std::_List_val<
-        ::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>>
-    find(::ChunkBlockPos const& pos) const;
+    MCNAPI ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>> find(::ChunkBlockPos const& pos) const;
 
     MCNAPI ::LevelChunkBlockActorStorage& operator=(::LevelChunkBlockActorStorage&& other);
 
@@ -66,4 +60,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

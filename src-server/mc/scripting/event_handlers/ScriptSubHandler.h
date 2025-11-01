@@ -2,5 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <typename T0>
-struct ScriptSubHandler {};
+template<typename T0>
+struct ScriptSubHandler {
+};

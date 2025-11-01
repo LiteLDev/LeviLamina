@@ -10,6 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnk98e970;
+    ::ll::UntypedStorage<4, 4> mUnkfe3fa7;
     // NOLINTEND
 
 public:
@@ -25,27 +26,22 @@ public:
     virtual ~LevelDbEnv() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::leveldb::Status
-    NewSequentialFile(::std::string const& fname, ::leveldb::SequentialFile** result) /*override*/;
+    virtual ::leveldb::Status NewSequentialFile(::std::string const& fname, ::leveldb::SequentialFile** result) /*override*/;
 
     // vIndex: 2
-    virtual ::leveldb::Status
-    NewRandomAccessFile(::std::string const& fname, ::leveldb::RandomAccessFile** result) /*override*/;
+    virtual ::leveldb::Status NewRandomAccessFile(::std::string const& fname, ::leveldb::RandomAccessFile** result) /*override*/;
 
     // vIndex: 3
-    virtual ::leveldb::Status
-    NewWritableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
+    virtual ::leveldb::Status NewWritableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
 
     // vIndex: 4
-    virtual ::leveldb::Status
-    NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
+    virtual ::leveldb::Status NewAppendableFile(::std::string const& fname, ::leveldb::WritableFile** result) /*override*/;
 
     // vIndex: 5
     virtual bool FileExists(::std::string const& fname) /*override*/;
 
     // vIndex: 6
-    virtual ::leveldb::Status
-    GetChildren(::std::string const& dir, ::std::vector<::std::string>* pChildrenOut) /*override*/;
+    virtual ::leveldb::Status GetChildren(::std::string const& dir, ::std::vector<::std::string>* pChildrenOut) /*override*/;
 
     // vIndex: 7
     virtual ::leveldb::Status RemoveFile(::std::string const& fname) /*override*/;
@@ -69,10 +65,10 @@ public:
     virtual ::leveldb::Status UnlockFile(::leveldb::FileLock* lock) /*override*/;
 
     // vIndex: 16
-    virtual void Schedule(void (*function)(void*), void* arg) /*override*/;
+    virtual void Schedule(void(*function) (void*), void* arg) /*override*/;
 
     // vIndex: 17
-    virtual void StartThread(void (*function)(void*), void* arg) /*override*/;
+    virtual void StartThread(void(*function) (void*), void* arg) /*override*/;
 
     // vIndex: 18
     virtual ::leveldb::Status GetTestDirectory(::std::string* result) /*override*/;
@@ -122,9 +118,9 @@ public:
 
     MCNAPI ::leveldb::Status $UnlockFile(::leveldb::FileLock* lock);
 
-    MCNAPI void $Schedule(void (*function)(void*), void* arg);
+    MCNAPI void $Schedule(void(*function) (void*), void* arg);
 
-    MCNAPI void $StartThread(void (*function)(void*), void* arg);
+    MCNAPI void $StartThread(void(*function) (void*), void* arg);
 
     MCNAPI ::leveldb::Status $GetTestDirectory(::std::string* result);
 
@@ -142,4 +138,5 @@ public:
 
     MCNAPI static void** $vftableForEnv();
     // NOLINTEND
+
 };

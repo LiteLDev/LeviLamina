@@ -6,20 +6,20 @@ struct REParseState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48>  mUnk1cb521;
-    ::ll::UntypedStorage<8, 8>   mUnkbfdab8;
-    ::ll::UntypedStorage<8, 8>   mUnk75f771;
-    ::ll::UntypedStorage<8, 8>   mUnk4b6e45;
-    ::ll::UntypedStorage<4, 4>   mUnk94ca3e;
-    ::ll::UntypedStorage<4, 4>   mUnk319be7;
-    ::ll::UntypedStorage<4, 4>   mUnk6a57d0;
-    ::ll::UntypedStorage<4, 4>   mUnkb98a7b;
-    ::ll::UntypedStorage<4, 4>   mUnk233c1b;
-    ::ll::UntypedStorage<4, 4>   mUnkf303ba;
-    ::ll::UntypedStorage<4, 4>   mUnkc9ffbb;
-    ::ll::UntypedStorage<8, 8>   mUnk565139;
-    ::ll::UntypedStorage<8, 48>  mUnkb55a78;
-    ::ll::UntypedStorage<1, 128> mUnke6e3b8;
+    ::ll::UntypedStorage<8, 48> mUnk1cb521;
+    ::ll::UntypedStorage<8, 8> mUnkbfdab8;
+    ::ll::UntypedStorage<8, 8> mUnk75f771;
+    ::ll::UntypedStorage<8, 8> mUnk4b6e45;
+    ::ll::UntypedStorage<4, 4> mUnk94ca3e;
+    ::ll::UntypedStorage<4, 4> mUnk319be7;
+    ::ll::UntypedStorage<4, 4> mUnk6a57d0;
+    ::ll::UntypedStorage<4, 4> mUnkb98a7b;
+    ::ll::UntypedStorage<4, 4> mUnk233c1b;
+    ::ll::UntypedStorage<4, 4> mUnkf303ba;
+    ::ll::UntypedStorage<4, 4> mUnkc9ffbb;
+    ::ll::UntypedStorage<8, 8> mUnk565139;
+    ::ll::UntypedStorage<8, 48> mUnkb55a78;
+    ::ll::UntypedStorage<1, 128> mUnke0b72d;
     // NOLINTEND
 
 public:
@@ -27,4 +27,5 @@ public:
     REParseState& operator=(REParseState const&);
     REParseState(REParseState const&);
     REParseState();
+
 };

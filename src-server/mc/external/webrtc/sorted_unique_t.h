@@ -4,6 +4,7 @@
 
 namespace webrtc {
 
-struct sorted_unique_t {};
+struct sorted_unique_t {
+};
 
-} // namespace webrtc
+}

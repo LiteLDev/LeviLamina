@@ -5,13 +5,13 @@
 namespace cricket {
 
 enum class StunErrorCode : int {
-    TryAlternate     = 300,
-    BadRequest       = 400,
-    Unauthorized     = 401,
+    TryAlternate = 300,
+    BadRequest = 400,
+    Unauthorized = 401,
     UnknownAttribute = 420,
-    StaleNonce       = 438,
-    ServerError      = 500,
-    GlobalFailure    = 600,
+    StaleNonce = 438,
+    ServerError = 500,
+    GlobalFailure = 600,
 };
 
 }

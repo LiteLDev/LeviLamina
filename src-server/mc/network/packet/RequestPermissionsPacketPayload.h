@@ -12,22 +12,22 @@ public:
     // RequestPermissionsPacketPayload inner types define
     enum class CustomPermissions : ushort {
         // bitfield representation
-        Build            = 1 << 0,
-        Mine             = 1 << 1,
+        Build = 1 << 0,
+        Mine = 1 << 1,
         DoorsAndSwitches = 1 << 2,
-        OpenContainers   = 1 << 3,
-        AttackPlayers    = 1 << 4,
-        AttackMobs       = 1 << 5,
+        OpenContainers = 1 << 3,
+        AttackPlayers = 1 << 4,
+        AttackMobs = 1 << 5,
         OperatorCommands = 1 << 6,
-        Teleport         = 1 << 7,
+        Teleport = 1 << 7,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>         mTargetPlayerId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mTargetPlayerId;
     ::ll::TypedStorage<1, 1, ::PlayerPermissionLevel> mPlayerPermissions;
-    ::ll::TypedStorage<2, 2, ushort>                  mCustomPermissionFlags;
+    ::ll::TypedStorage<2, 2, ushort> mCustomPermissionFlags;
     // NOLINTEND
 
 public:
@@ -35,4 +35,5 @@ public:
     // NOLINTBEGIN
     MCAPI bool getCustomAbilityValue(::AbilitiesIndex ability) const;
     // NOLINTEND
+
 };

@@ -23,23 +23,11 @@ class LegacyRaidTriggerSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doRaidTriggerSystem(
-        ::DimensionTypeComponent const&  dimensionTypeComponent,
-        ::StateVectorComponent const&    stateVectorComponent,
-        ::ActorOwnerComponent&           actorOwnerComponent,
-        ::VillageManagerComponent const& villageManagerComponent
-    );
+    MCNAPI static void _doRaidTriggerSystem(::DimensionTypeComponent const& dimensionTypeComponent, ::StateVectorComponent const& stateVectorComponent, ::ActorOwnerComponent& actorOwnerComponent, ::VillageManagerComponent const& villageManagerComponent);
 
-    MCNAPI static void _tickRaidTriggerSystem(
-        ::OptionalGlobal<::VillageManagerComponent const> villageManagerComponent,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::ActorTickedComponent const, ::RaidTriggerComponent const>,
-            ::DimensionTypeComponent const,
-            ::StateVectorComponent const,
-            ::ActorOwnerComponent> view
-    );
+    MCNAPI static void _tickRaidTriggerSystem(::OptionalGlobal<::VillageManagerComponent const> villageManagerComponent, ::ViewT<::StrictEntityContext, ::Include<::ActorTickedComponent const, ::RaidTriggerComponent const>, ::DimensionTypeComponent const, ::StateVectorComponent const, ::ActorOwnerComponent> view);
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
+
 };

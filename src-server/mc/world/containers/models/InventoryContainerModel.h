@@ -47,13 +47,13 @@ public:
     // vIndex: 7
     virtual ::ContainerWeakRef getContainerWeakRef() const /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual int _getContainerOffset() const /*override*/;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual void _onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem) /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual ::Container* _getContainer() const /*override*/;
     // NOLINTEND
 
@@ -82,4 +82,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

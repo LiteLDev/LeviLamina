@@ -15,15 +15,15 @@ class FertilizeFarmBlockDefinition : public ::BaseGoalDefinition {
 public:
     // FertilizeFarmBlockDefinition inner types define
     using self = ::FertilizeFarmBlockDefinition;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>   mMaxFertilizerUsage;
+    ::ll::TypedStorage<4, 4, int> mMaxFertilizerUsage;
     ::ll::TypedStorage<4, 4, float> mSearchCooldownMaximumSeconds;
-    ::ll::TypedStorage<4, 4, int>   mSearchCount;
-    ::ll::TypedStorage<4, 4, int>   mSearchHeight;
-    ::ll::TypedStorage<4, 4, int>   mSearchRange;
+    ::ll::TypedStorage<4, 4, int> mSearchCount;
+    ::ll::TypedStorage<4, 4, int> mSearchHeight;
+    ::ll::TypedStorage<4, 4, int> mSearchRange;
     ::ll::TypedStorage<4, 4, float> mGoalRadius;
     ::ll::TypedStorage<4, 4, float> mSpeedModifier;
     // NOLINTEND
@@ -38,11 +38,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        ::std::string const& name,
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FertilizeFarmBlockDefinition>>&
-            root
-    );
+    MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FertilizeFarmBlockDefinition>>& root);
     // NOLINTEND
 
 public:
@@ -50,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -27,12 +27,7 @@ public:
     virtual void removeActorFromLevelChunk(::Actor& actor) const /*override*/;
 
     // vIndex: 3
-    virtual void transferActorToDimension(
-        ::Actor const&                   actor,
-        ::Dimension&                     dimension,
-        ::Vec3 const&                    targetPosition,
-        ::std::unique_ptr<::CompoundTag> saveTag
-    ) const /*override*/;
+    virtual void transferActorToDimension(::Actor const& actor, ::Dimension& dimension, ::Vec3 const& targetPosition, ::std::unique_ptr<::CompoundTag> saveTag) const /*override*/;
     // NOLINTEND
 
 public:
@@ -42,12 +37,7 @@ public:
 
     MCNAPI void $removeActorFromLevelChunk(::Actor& actor) const;
 
-    MCNAPI void $transferActorToDimension(
-        ::Actor const&                   actor,
-        ::Dimension&                     dimension,
-        ::Vec3 const&                    targetPosition,
-        ::std::unique_ptr<::CompoundTag> saveTag
-    ) const;
+    MCNAPI void $transferActorToDimension(::Actor const& actor, ::Dimension& dimension, ::Vec3 const& targetPosition, ::std::unique_ptr<::CompoundTag> saveTag) const;
     // NOLINTEND
 
 public:
@@ -55,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

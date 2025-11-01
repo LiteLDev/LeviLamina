@@ -3,11 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/molang/MolangVersion.h"
 #include "mc/platform/brstd/bitset.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/util/MolangCompileResult.h"
 #include "mc/util/molang/ExpressionOp.h"
+#include "mc/versionless/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -27,9 +27,9 @@ class ExpressionNode {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2>  mUnkf560f0;
-    ::ll::UntypedStorage<4, 4>  mUnk4e6e98;
-    ::ll::UntypedStorage<4, 4>  mUnk56c08e;
+    ::ll::UntypedStorage<2, 2> mUnkf560f0;
+    ::ll::UntypedStorage<4, 4> mUnk4e6e98;
+    ::ll::UntypedStorage<4, 4> mUnk56c08e;
     ::ll::UntypedStorage<8, 88> mUnka6816f;
     ::ll::UntypedStorage<8, 24> mUnk58ba9b;
     // NOLINTEND
@@ -45,7 +45,7 @@ public:
 
     MCNAPI ExpressionNode(::Molang::details::ExpressionNode&&);
 
-    MCNAPI bool _buildTree(::brstd::bitset<78, uint64> const& usedTokenFlags, ::MolangVersion molangVersion);
+    MCNAPI bool _buildTree(::brstd::bitset<109, uint64> const& usedTokenFlags, ::MolangVersion molangVersion);
 
     MCNAPI bool _checkAllOperationsAreValid() const;
 
@@ -89,14 +89,9 @@ public:
 
     MCNAPI bool optimizeFunctionCallParams();
 
-    MCNAPI bool parse(
-        ::std::string_view           inputExpression,
-        ::MolangParseConfig const&   config,
-        ::brstd::bitset<78, uint64>& usedTokenFlags
-    );
+    MCNAPI bool parse(::std::string_view inputExpression, ::MolangParseConfig const& config, ::brstd::bitset<109, uint64>& usedTokenFlags);
 
-    MCNAPI bool
-    parse(::Json::Value const& value, ::MolangParseConfig const& config, ::brstd::bitset<78, uint64>& usedTokenFlags);
+    MCNAPI bool parse(::Json::Value const& value, ::MolangParseConfig const& config, ::brstd::bitset<109, uint64>& usedTokenFlags);
 
     MCNAPI bool processArrays();
 
@@ -126,30 +121,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::MolangCompileResult _buildProgram(
-        ::Molang::details::MolangProgramBuildState& buildState,
-        ::Molang::details::ExpressionNode const*    node,
-        ::MolangVersion                             molangVersion
-    );
+    MCNAPI static ::MolangCompileResult _buildProgram(::Molang::details::MolangProgramBuildState& buildState, ::Molang::details::ExpressionNode const* node, ::MolangVersion molangVersion);
 
-    MCNAPI static ::MolangScriptArg* _getOrCreateReferencedMemberVariableScriptArg(
-        ::MolangEvalParams&                      state,
-        ::Molang::details::ExpressionNode const& memberAccessorNode
-    );
+    MCNAPI static ::MolangScriptArg* _getOrCreateReferencedMemberVariableScriptArg(::MolangEvalParams& state, ::Molang::details::ExpressionNode const& memberAccessorNode);
 
-    MCNAPI static ::std::optional<::MolangScriptArg>
-    _getQueryFunctionAccessor(::std::string const& functionName, ::MolangParseConfig const& parseConfig);
+    MCNAPI static ::std::optional<::MolangScriptArg> _getQueryFunctionAccessor(::std::string const& functionName, ::MolangParseConfig const& parseConfig);
 
-    MCNAPI static ::MolangScriptArg const* _getReferencedMemberVariableScriptArg(
-        ::MolangEvalParams&                      state,
-        ::Molang::details::ExpressionNode const& memberAccessorNode
-    );
+    MCNAPI static ::MolangScriptArg const* _getReferencedMemberVariableScriptArg(::MolangEvalParams& state, ::Molang::details::ExpressionNode const& memberAccessorNode);
 
-    MCNAPI static void _writeScriptArgToMemberAccessedVariable(
-        ::MolangEvalParams&                      state,
-        ::Molang::details::ExpressionNode const& memberAccessorNode,
-        ::MolangScriptArg const&                 value
-    );
+    MCNAPI static void _writeScriptArgToMemberAccessedVariable(::MolangEvalParams& state, ::Molang::details::ExpressionNode const& memberAccessorNode, ::MolangScriptArg const& value);
 
     MCNAPI static char const* getOpFriendlyName(::ExpressionOp op);
     // NOLINTEND
@@ -167,6 +147,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Molang::details
+}

@@ -4,7 +4,8 @@
 
 namespace Bedrock::Threading {
 
-template <typename T0>
-class LockGuard {};
+template<typename T0>
+class LockGuard {
+};
 
-} // namespace Bedrock::Threading
+}

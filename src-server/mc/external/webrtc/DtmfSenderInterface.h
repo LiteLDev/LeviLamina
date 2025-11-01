@@ -58,6 +58,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $InsertDtmf(::std::string const& tones, int duration, int inter_tone_gap);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

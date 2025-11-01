@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk7ad488;
     ::ll::UntypedStorage<8, 24> mUnk7007bb;
-    ::ll::UntypedStorage<8, 8>  mUnk599322;
+    ::ll::UntypedStorage<8, 8> mUnk599322;
     // NOLINTEND
 
 public:
@@ -30,6 +30,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Scripting::QuickJS
+}

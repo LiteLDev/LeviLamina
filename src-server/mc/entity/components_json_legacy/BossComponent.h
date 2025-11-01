@@ -21,16 +21,16 @@ struct BossComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>    mName;
-    ::ll::TypedStorage<1, 1, bool>                                    mHealthBarVisible;
-    ::ll::TypedStorage<4, 4, float>                                   mHealthPercent;
-    ::ll::TypedStorage<1, 1, bool>                                    mShouldDarkenSky;
-    ::ll::TypedStorage<1, 1, bool>                                    mCreateWorldFog;
-    ::ll::TypedStorage<4, 4, ::BossBarColor>                          mColor;
-    ::ll::TypedStorage<4, 4, ::BossBarOverlay>                        mOverlay;
-    ::ll::TypedStorage<4, 4, int>                                     mPlayersRegistered;
-    ::ll::TypedStorage<4, 4, int>                                     mLastHealth;
-    ::ll::TypedStorage<4, 4, int>                                     mHudRangeSquared;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mName;
+    ::ll::TypedStorage<1, 1, bool> mHealthBarVisible;
+    ::ll::TypedStorage<4, 4, float> mHealthPercent;
+    ::ll::TypedStorage<1, 1, bool> mShouldDarkenSky;
+    ::ll::TypedStorage<1, 1, bool> mCreateWorldFog;
+    ::ll::TypedStorage<4, 4, ::BossBarColor> mColor;
+    ::ll::TypedStorage<4, 4, ::BossBarOverlay> mOverlay;
+    ::ll::TypedStorage<4, 4, int> mPlayersRegistered;
+    ::ll::TypedStorage<4, 4, int> mLastHealth;
+    ::ll::TypedStorage<4, 4, int> mHudRangeSquared;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastPlayerUpdate;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::mce::UUID, int>> mPlayerParty;
     // NOLINTEND
@@ -79,4 +79,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

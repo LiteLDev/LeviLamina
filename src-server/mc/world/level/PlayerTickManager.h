@@ -19,8 +19,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk5744d2;
     ::ll::UntypedStorage<8, 24> mUnk4a6113;
-    ::ll::UntypedStorage<8, 8>  mUnk9e7dd0;
-    ::ll::UntypedStorage<1, 1>  mUnk17a4af;
+    ::ll::UntypedStorage<8, 8> mUnk9e7dd0;
+    ::ll::UntypedStorage<1, 1> mUnk17a4af;
     // NOLINTEND
 
 public:
@@ -32,12 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerTickManager(
-        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
-        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
-        ::std::unique_ptr<::IPlayerTickProxy>                playerTickProxy,
-        bool                                                 isClientSide
-    );
+    MCNAPI PlayerTickManager(::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager, ::std::unique_ptr<::IPlayerTickProxy> playerTickProxy, bool isClientSide);
 
     MCNAPI void processPlayerNetworking(::Tick const& currentTick);
 
@@ -47,12 +42,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
-        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
-        ::std::unique_ptr<::IPlayerTickProxy>                playerTickProxy,
-        bool                                                 isClientSide
-    );
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager, ::std::unique_ptr<::IPlayerTickProxy> playerTickProxy, bool isClientSide);
     // NOLINTEND
 
 public:
@@ -60,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

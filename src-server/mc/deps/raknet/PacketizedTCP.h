@@ -17,12 +17,12 @@ class PacketizedTCP : public ::RakNet::TCPInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnke16eaa;
+    ::ll::UntypedStorage<8, 24> mUnke16eaa;
     ::ll::UntypedStorage<8, 168> mUnk39e085;
-    ::ll::UntypedStorage<8, 24>  mUnk4117bd;
-    ::ll::UntypedStorage<8, 24>  mUnk1b82f1;
-    ::ll::UntypedStorage<8, 24>  mUnka9ed7b;
-    ::ll::UntypedStorage<8, 24>  mUnkccf08c;
+    ::ll::UntypedStorage<8, 24> mUnk4117bd;
+    ::ll::UntypedStorage<8, 24> mUnk1b82f1;
+    ::ll::UntypedStorage<8, 24> mUnka9ed7b;
+    ::ll::UntypedStorage<8, 24> mUnkccf08c;
     // NOLINTEND
 
 public:
@@ -38,17 +38,10 @@ public:
     virtual ~PacketizedTCP() /*override*/ = default;
 
     // vIndex: 1
-    virtual void
-    Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast) /*override*/;
+    virtual void Send(char const* data, uint length, ::RakNet::SystemAddress const& systemAddress, bool broadcast) /*override*/;
 
     // vIndex: 2
-    virtual bool SendList(
-        char const**                   data,
-        uint const*                    lengths,
-        int const                      numParameters,
-        ::RakNet::SystemAddress const& systemAddress,
-        bool                           broadcast
-    ) /*override*/;
+    virtual bool SendList(char const** data, uint const* lengths, int const numParameters, ::RakNet::SystemAddress const& systemAddress, bool broadcast) /*override*/;
 
     // vIndex: 4
     virtual ::RakNet::Packet* Receive() /*override*/;
@@ -59,6 +52,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

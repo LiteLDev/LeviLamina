@@ -15,4 +15,5 @@ public:
     MarsagliaPolarGaussian& operator=(MarsagliaPolarGaussian const&);
     MarsagliaPolarGaussian(MarsagliaPolarGaussian const&);
     MarsagliaPolarGaussian();
+
 };

@@ -17,6 +17,7 @@ public:
     VideoCodecH264& operator=(VideoCodecH264 const&);
     VideoCodecH264(VideoCodecH264 const&);
     VideoCodecH264();
+
 };
 
-} // namespace webrtc
+}

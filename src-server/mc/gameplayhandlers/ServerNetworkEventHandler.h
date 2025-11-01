@@ -12,13 +12,12 @@ class ServerNetworkEventHandler : public ::GameplayHandler {
 public:
     // ServerNetworkEventHandler inner types define
     using EventTypes = ::entt::type_list<::MutableServerNetworkGameplayEvent<::CoordinatorResult>>;
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::MutableServerNetworkGameplayEvent<::CoordinatorResult>&) = 0;
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::MutableServerNetworkGameplayEvent<::CoordinatorResult>&) = 0;
 
     // vIndex: 0
     virtual ~ServerNetworkEventHandler() /*override*/ = default;
@@ -29,4 +28,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

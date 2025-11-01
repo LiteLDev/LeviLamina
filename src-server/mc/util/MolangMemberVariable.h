@@ -10,7 +10,7 @@ struct MolangMemberVariable {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString>    mName;
+    ::ll::TypedStorage<8, 48, ::HashedString> mName;
     ::ll::TypedStorage<8, 88, ::MolangScriptArg> mData;
     // NOLINTEND
 
@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

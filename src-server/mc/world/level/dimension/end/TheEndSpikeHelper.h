@@ -16,4 +16,4 @@ namespace TheEndSpikeHelper {
 MCNAPI ::std::vector<::SpikeFeature::EndSpike> getSpikesForLevel(::Level& level);
 // NOLINTEND
 
-} // namespace TheEndSpikeHelper
+}

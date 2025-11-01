@@ -28,37 +28,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 76
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 81
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
-        /*override*/;
+    // vIndex: 82
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const /*override*/;
 
-    // vIndex: 63
+    // vIndex: 64
     virtual bool uniqueAuxValues() const /*override*/;
 
-    // vIndex: 94
-    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const
-        /*override*/;
+    // vIndex: 95
+    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const /*override*/;
 
     // vIndex: 25
     virtual ::Item& setMaxDamage(int maxDamage) /*override*/;
 
-    // vIndex: 84
+    // vIndex: 85
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 53
-    virtual bool isValidRepairItem(
-        ::ItemStackBase const&   source,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const /*override*/;
+    // vIndex: 54
+    virtual bool isValidRepairItem(::ItemStackBase const& source, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual bool showsDurabilityInCreative() const /*override*/;
 
-    // vIndex: 99
+    // vIndex: 100
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
     // vIndex: 0
@@ -100,14 +94,11 @@ public:
 
     MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCFOLD bool $isValidRepairItem(
-        ::ItemStackBase const&   source,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const;
+    MCFOLD bool $isValidRepairItem(::ItemStackBase const& source, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const;
 
     MCFOLD bool $showsDurabilityInCreative() const;
 
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
     // NOLINTEND
+
 };

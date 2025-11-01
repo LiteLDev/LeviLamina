@@ -10,10 +10,7 @@ struct EmitParticleRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::brstd::flat_set<::ParticleType, ::std::less<::ParticleType>, ::std::vector<::ParticleType>>>
-        mParticles;
+    ::ll::TypedStorage<8, 40, ::brstd::flat_set<::ParticleType, ::std::less<::ParticleType>, ::std::vector<::ParticleType>>> mParticles;
     // NOLINTEND
+
 };

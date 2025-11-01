@@ -7,8 +7,7 @@
 
 namespace Editor::Network {
 
-class StructureFromClipboardPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::StructureFromClipboardPayload> {
+class StructureFromClipboardPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::StructureFromClipboardPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -31,8 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Network::StructureFromClipboardPayload&
-    operator=(::Editor::Network::StructureFromClipboardPayload const&);
+    MCNAPI ::Editor::Network::StructureFromClipboardPayload& operator=(::Editor::Network::StructureFromClipboardPayload const&);
     // NOLINTEND
 
 public:
@@ -40,6 +38,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

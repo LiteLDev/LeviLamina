@@ -19,4 +19,5 @@ public:
     JSClass& operator=(JSClass const&);
     JSClass(JSClass const&);
     JSClass();
+
 };

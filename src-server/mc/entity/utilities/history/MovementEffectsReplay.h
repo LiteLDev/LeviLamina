@@ -18,8 +18,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk5ab740;
-    ::ll::UntypedStorage<4, 4>  mUnk5c62aa;
-    ::ll::UntypedStorage<4, 4>  mUnk12db08;
+    ::ll::UntypedStorage<4, 4> mUnk5c62aa;
+    ::ll::UntypedStorage<4, 4> mUnk12db08;
     // NOLINTEND
 
 public:
@@ -49,6 +49,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace History
+}

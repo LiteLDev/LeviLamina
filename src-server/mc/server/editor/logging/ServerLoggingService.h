@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/editor/LogChannel.h"
+#include "mc/common/editor/LogChannel.h"
 #include "mc/editor/logging/LogLevel.h"
 #include "mc/editor/logging/LoggingService.h"
 
@@ -21,7 +21,7 @@ class ServerLoggingService : public ::Editor::Services::LoggingService {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7b780e;
+    ::ll::UntypedStorage<8, 8> mUnk7b780e;
     ::ll::UntypedStorage<8, 24> mUnkbc876c;
     // NOLINTEND
 
@@ -38,13 +38,7 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 1
-    virtual void
-    log(::std::string&&                 msg,
-        ::Player*                       player,
-        ::Editor::LogLevel              level,
-        ::std::vector<::HashedString>&& areaTags,
-        ::Editor::LogChannel            logChannelMask,
-        ::std::string                   subMsg) /*override*/;
+    virtual void log(::std::string&& msg, ::Player* player, ::Editor::LogLevel level, ::std::vector<::HashedString>&& areaTags, ::Editor::LogChannel logChannelMask, ::std::string subMsg) /*override*/;
 
     // vIndex: 2
     virtual void flush() /*override*/;
@@ -67,14 +61,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI void $log(
-        ::std::string&&                 msg,
-        ::Player*                       player,
-        ::Editor::LogLevel              level,
-        ::std::vector<::HashedString>&& areaTags,
-        ::Editor::LogChannel            logChannelMask,
-        ::std::string                   subMsg
-    );
+    MCNAPI void $log(::std::string&& msg, ::Player* player, ::Editor::LogLevel level, ::std::vector<::HashedString>&& areaTags, ::Editor::LogChannel logChannelMask, ::std::string subMsg);
 
     MCNAPI void $flush();
 
@@ -88,6 +75,7 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

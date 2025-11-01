@@ -14,7 +14,9 @@ class ContentIdentity;
 class IContentKeyProvider;
 class PackAccessStrategy;
 class ResourceLocation;
+namespace Bedrock::Resources::Archive { class Reader; }
 namespace Core { class Path; }
+namespace Core { class PathView; }
 // clang-format on
 
 class EncryptedFileAccessStrategy : public ::DirectoryPackAccessStrategy {
@@ -44,12 +46,10 @@ public:
     virtual bool isWritable() const /*override*/;
 
     // vIndex: 6
-    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
-        /*override*/;
+    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const /*override*/;
 
     // vIndex: 8
-    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
-        /*override*/;
+    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const /*override*/;
 
     // vIndex: 14
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
@@ -63,11 +63,14 @@ public:
     // vIndex: 19
     virtual ::ContentIdentity readContentIdentity() const /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual ::std::string _getContentsFile();
 
-    // vIndex: 23
+    // vIndex: 24
     virtual ::std::string _getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
+
+    // vIndex: 21
+    virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> _loadArchive(::Core::Path const& packRelativePath) const /*override*/;
 
     // vIndex: 0
     virtual ~EncryptedFileAccessStrategy() /*override*/;
@@ -76,27 +79,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EncryptedFileAccessStrategy(
-        ::ResourceLocation const&                                          resourceLocation,
-        ::ContentIdentity const&                                           contentIdentity,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&  keyProvider,
-        bool                                                               canRecurse,
-        ::std::optional<::std::unordered_map<::Core::Path, ::std::string>> assetSet
-    );
+    MCNAPI EncryptedFileAccessStrategy(::ResourceLocation const& resourceLocation, ::ContentIdentity const& contentIdentity, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider, bool canRecurse, ::std::optional<::std::unordered_map<::Core::Path, ::std::string>> assetSet);
+
+    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> _loadArchive(::Core::PathView packRelativeArchiveFile, ::std::string const& key) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool
-    _getContentIdentityFromEncryptedStream(::std::string& stream, ::ContentIdentity& contentIdentity);
+    MCNAPI static bool _getContentIdentityFromEncryptedStream(::std::string& stream, ::ContentIdentity& contentIdentity);
 
-    MCNAPI static void _transformStream(
-        ::std::string&           stream,
-        ::std::string const&     key,
-        ::ContentIdentity const& contentIdentity,
-        uint64                   offset
-    );
+    MCNAPI static void _transformStream(::std::string& stream, ::std::string const& key, ::ContentIdentity const& contentIdentity, uint64 offset);
 
     MCNAPI static bool isValidEncryptedPack(::Core::Path const& pathToPack, ::ContentIdentity& contentIdentity);
     // NOLINTEND
@@ -104,13 +97,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::ResourceLocation const&                                          resourceLocation,
-        ::ContentIdentity const&                                           contentIdentity,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&  keyProvider,
-        bool                                                               canRecurse,
-        ::std::optional<::std::unordered_map<::Core::Path, ::std::string>> assetSet
-    );
+    MCNAPI void* $ctor(::ResourceLocation const& resourceLocation, ::ContentIdentity const& contentIdentity, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider, bool canRecurse, ::std::optional<::std::unordered_map<::Core::Path, ::std::string>> assetSet);
     // NOLINTEND
 
 public:
@@ -143,6 +130,8 @@ public:
     MCNAPI ::std::string $_getContentsFile();
 
     MCNAPI ::std::string $_getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
+
+    MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const& packRelativePath) const;
     // NOLINTEND
 
 public:
@@ -150,4 +139,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

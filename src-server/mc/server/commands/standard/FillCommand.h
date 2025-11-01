@@ -18,23 +18,23 @@ public:
     enum class FillMode : int {
         Replace = 0,
         Destroy = 1,
-        Hollow  = 2,
+        Hollow = 2,
         Outline = 3,
-        Keep    = 4,
+        Keep = 4,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 16> mUnkd4781f;
     ::ll::UntypedStorage<4, 16> mUnk684e91;
-    ::ll::UntypedStorage<8, 8>  mUnk4fb7fe;
-    ::ll::UntypedStorage<8, 8>  mUnk4a3805;
+    ::ll::UntypedStorage<8, 8> mUnk4fb7fe;
+    ::ll::UntypedStorage<8, 8> mUnk4a3805;
     ::ll::UntypedStorage<8, 24> mUnk2f9ed1;
     ::ll::UntypedStorage<8, 24> mUnk487324;
-    ::ll::UntypedStorage<4, 4>  mUnkb7c541;
-    ::ll::UntypedStorage<4, 4>  mUnk70585d;
-    ::ll::UntypedStorage<4, 4>  mUnk741113;
+    ::ll::UntypedStorage<4, 4> mUnkb7c541;
+    ::ll::UntypedStorage<4, 4> mUnk70585d;
+    ::ll::UntypedStorage<4, 4> mUnk741113;
     // NOLINTEND
 
 public:
@@ -70,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

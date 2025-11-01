@@ -19,21 +19,21 @@ class ComparatorCapacitor : public ::SidePoweredComponent {
 public:
     // ComparatorCapacitor inner types define
     enum class Mode : int {
-        CompareMode  = 0,
+        CompareMode = 0,
         SubtractMode = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                          mRearAnalogStrength;
-    ::ll::TypedStorage<4, 4, int>                          mSideAnalogStrengthRight;
-    ::ll::TypedStorage<4, 4, int>                          mSideAnalogStrengthLeft;
-    ::ll::TypedStorage<4, 4, int>                          mOldStrength;
-    ::ll::TypedStorage<4, 4, ::ComparatorCapacitor::Mode>  mMode;
-    ::ll::TypedStorage<4, 4, int>                          mRearStrength;
-    ::ll::TypedStorage<4, 4, int>                          mSideStrengths;
-    ::ll::TypedStorage<1, 1, bool>                         mHasAnalogBeenSet;
+    ::ll::TypedStorage<4, 4, int> mRearAnalogStrength;
+    ::ll::TypedStorage<4, 4, int> mSideAnalogStrengthRight;
+    ::ll::TypedStorage<4, 4, int> mSideAnalogStrengthLeft;
+    ::ll::TypedStorage<4, 4, int> mOldStrength;
+    ::ll::TypedStorage<4, 4, ::ComparatorCapacitor::Mode> mMode;
+    ::ll::TypedStorage<4, 4, int> mRearStrength;
+    ::ll::TypedStorage<4, 4, int> mSideStrengths;
+    ::ll::TypedStorage<1, 1, bool> mHasAnalogBeenSet;
     ::ll::TypedStorage<8, 8, ::CircuitComponentType const> mCircuitComponentType;
     // NOLINTEND
 
@@ -41,12 +41,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11
-    virtual bool addSource(
-        ::CircuitSceneGraph&         graph,
-        ::CircuitTrackingInfo const& info,
-        int&                         dampening,
-        bool&                        bDirectlyPowered
-    ) /*override*/;
+    virtual bool addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered) /*override*/;
 
     // vIndex: 14
     virtual bool evaluate(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
@@ -70,8 +65,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
-    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    MCAPI bool $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
@@ -89,4 +83,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

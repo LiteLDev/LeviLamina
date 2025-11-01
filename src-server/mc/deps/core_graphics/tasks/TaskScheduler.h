@@ -4,7 +4,8 @@
 
 namespace cg {
 
-template <typename T0>
-class TaskScheduler {};
+template<typename T0>
+class TaskScheduler {
+};
 
-} // namespace cg
+}

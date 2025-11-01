@@ -18,6 +18,7 @@ public:
     FecProtectionParams& operator=(FecProtectionParams const&);
     FecProtectionParams(FecProtectionParams const&);
     FecProtectionParams();
+
 };
 
-} // namespace webrtc
+}

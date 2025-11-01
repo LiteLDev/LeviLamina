@@ -17,8 +17,8 @@ class SeagrassFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int const>      mIterations;
-    ::ll::TypedStorage<4, 4, float const>    mTallSeagrassChance;
+    ::ll::TypedStorage<4, 4, int const> mIterations;
+    ::ll::TypedStorage<4, 4, float const> mTallSeagrassChance;
     ::ll::TypedStorage<8, 8, ::Block const&> mSeagrassBlock;
     // NOLINTEND
 
@@ -41,8 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
-    _tryPlaceSeagrass(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool isColdEnoughForIce) const;
+    MCAPI void _tryPlaceSeagrass(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool isColdEnoughForIce) const;
 
     MCAPI void _tryPlaceTallSeagrass(::BlockSource& region, ::BlockPos const& pos, bool isColdEnoughForIce) const;
     // NOLINTEND
@@ -58,4 +57,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

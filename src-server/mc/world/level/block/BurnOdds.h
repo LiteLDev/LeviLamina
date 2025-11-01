@@ -4,8 +4,8 @@
 
 enum class BurnOdds : ushort {
     Instant = 100,
-    Easy    = 60,
-    Medium  = 20,
-    Hard    = 5,
-    Never   = 0,
+    Easy = 60,
+    Medium = 20,
+    Hard = 5,
+    Never = 0,
 };

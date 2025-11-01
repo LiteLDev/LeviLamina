@@ -22,12 +22,7 @@ public:
     virtual ~IEntitySystems() = default;
 
     // vIndex: 1
-    virtual void registerTickingSystem(
-        ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const>,
-        ::std::unique_ptr<::ITickingSystem>,
-        ::SystemInfo const&,
-        ::EntitySystemTickingMode
-    ) = 0;
+    virtual void registerTickingSystem(::gsl::span<::Bedrock::typeid_t<::SystemCategory> const>, ::std::unique_ptr<::ITickingSystem>, ::SystemInfo const&, ::EntitySystemTickingMode) = 0;
 
     // vIndex: 2
     virtual bool _hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const) const = 0;
@@ -42,12 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void registerTickingSystem(
-        ::std::initializer_list<::Bedrock::typeid_t<::SystemCategory>> categories,
-        ::std::unique_ptr<::ITickingSystem>                            system,
-        ::SystemInfo const&                                            info,
-        ::EntitySystemTickingMode                                      tickingMode
-    );
+    MCNAPI void registerTickingSystem(::std::initializer_list<::Bedrock::typeid_t<::SystemCategory>> categories, ::std::unique_ptr<::ITickingSystem> system, ::SystemInfo const& info, ::EntitySystemTickingMode tickingMode);
     // NOLINTEND
 
 public:
@@ -61,4 +51,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -4,7 +4,8 @@
 
 namespace webrtc {
 
-template <typename T0, int T1>
-class SeqNumUnwrapper {};
+template<typename T0, int T1>
+class SeqNumUnwrapper {
+};
 
-} // namespace webrtc
+}

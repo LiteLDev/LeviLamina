@@ -4,5 +4,5 @@
 
 enum class ScriptingInputButtonState : uint {
     Released = 0,
-    Pressed  = 1,
+    Pressed = 1,
 };

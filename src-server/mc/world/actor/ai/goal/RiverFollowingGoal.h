@@ -15,10 +15,10 @@ class RiverFollowingGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     ::ll::TypedStorage<4, 12, ::Vec3> mHeading;
-    ::ll::TypedStorage<4, 4, float>   mLookAhead;
-    ::ll::TypedStorage<4, 4, float>   mSpeed;
+    ::ll::TypedStorage<4, 4, float> mLookAhead;
+    ::ll::TypedStorage<4, 4, float> mSpeed;
     // NOLINTEND
 
 public:
@@ -79,4 +79,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 16, ::CameraInstruction::FovInstruction> mCameraSetFovInstruction;
     // NOLINTEND
+
 };

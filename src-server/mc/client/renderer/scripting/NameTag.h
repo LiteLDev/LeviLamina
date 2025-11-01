@@ -18,6 +18,7 @@ public:
     NameTag& operator=(NameTag const&);
     NameTag(NameTag const&);
     NameTag();
+
 };
 
-} // namespace Scripting::RenderHelper
+}

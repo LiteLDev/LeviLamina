@@ -11,13 +11,13 @@ struct LevelSoundEventPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                         mActorIdentifier;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                        mActor;
+    ::ll::TypedStorage<8, 32, ::std::string> mActorIdentifier;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mActor;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mEventId;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                mPos;
-    ::ll::TypedStorage<4, 4, int>                                    mData;
-    ::ll::TypedStorage<1, 1, bool>                                   mIsGlobal;
-    ::ll::TypedStorage<1, 1, bool>                                   mIsBaby;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
+    ::ll::TypedStorage<4, 4, int> mData;
+    ::ll::TypedStorage<1, 1, bool> mIsGlobal;
+    ::ll::TypedStorage<1, 1, bool> mIsBaby;
     // NOLINTEND
 
 public:
@@ -39,4 +39,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

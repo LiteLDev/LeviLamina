@@ -7,46 +7,82 @@
 namespace mce { struct Degree; }
 // clang-format on
 
-namespace mce {
+namespace mce::Math {
+// functions
+// NOLINTBEGIN
+MCNAPI float clamp(float v, float low, float high);
 
-class Math {
-public:
-    // Math inner types declare
-    // clang-format off
-    struct PairHash;
-    struct TupleHash;
-    // clang-format on
+MCNAPI int clamp(int v, int low, int high);
 
-    // Math inner types define
-    struct PairHash {};
+MCNAPI float clampRotate(float current, float target, float maxDelta);
 
-    struct TupleHash {};
+MCNAPI float easeInBack(float from, float to, float alpha);
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static float clamp(float v, float low, float high);
+MCNAPI float easeInBounce(float from, float to, float alpha);
 
-    MCNAPI static int clamp(int v, int low, int high);
+MCNAPI float easeInCirc(float from, float to, float alpha);
 
-    MCNAPI static float clampRotate(float current, float target, float maxDelta);
+MCNAPI float easeInCubic(float from, float to, float alpha);
 
-    MCNAPI static float lerpRotate(float from, float to, float a);
+MCNAPI float easeInElastic(float from, float to, float alpha);
 
-    MCNAPI static float wrapDegrees(float input);
+MCNAPI float easeInExpo(float from, float to, float alpha);
 
-    MCNAPI static ::mce::Degree wrapDegrees(::mce::Degree input);
+MCNAPI float easeInOutBack(float from, float to, float alpha);
 
-    MCNAPI static float wrapRadians(float angle);
-    // NOLINTEND
+MCNAPI float easeInOutBounce(float from, float to, float alpha);
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::add_lvalue_reference_t<float[]> mSin();
+MCNAPI float easeInOutCirc(float from, float to, float alpha);
 
-    MCNAPI static float const& mSinScale();
-    // NOLINTEND
-};
+MCNAPI float easeInOutCubic(float from, float to, float alpha);
 
-} // namespace mce
+MCNAPI float easeInOutElastic(float from, float to, float alpha);
+
+MCNAPI float easeInOutExpo(float from, float to, float alpha);
+
+MCNAPI float easeInOutQuad(float from, float to, float alpha);
+
+MCNAPI float easeInOutQuart(float from, float to, float alpha);
+
+MCNAPI float easeInOutQuint(float from, float to, float alpha);
+
+MCNAPI float easeInOutSine(float from, float to, float alpha);
+
+MCNAPI float easeInQuad(float from, float to, float alpha);
+
+MCNAPI float easeInQuart(float from, float to, float alpha);
+
+MCNAPI float easeInQuint(float from, float to, float alpha);
+
+MCNAPI float easeInSine(float from, float to, float alpha);
+
+MCNAPI float easeOutBack(float from, float to, float alpha);
+
+MCNAPI float easeOutBounce(float from, float to, float alpha);
+
+MCNAPI float easeOutCirc(float from, float to, float alpha);
+
+MCNAPI float easeOutCubic(float from, float to, float alpha);
+
+MCNAPI float easeOutElastic(float from, float to, float alpha);
+
+MCNAPI float easeOutExpo(float from, float to, float alpha);
+
+MCNAPI float easeOutQuad(float from, float to, float alpha);
+
+MCNAPI float easeOutQuart(float from, float to, float alpha);
+
+MCNAPI float easeOutQuint(float from, float to, float alpha);
+
+MCNAPI float easeOutSine(float from, float to, float alpha);
+
+MCNAPI float lerpRotate(float from, float to, float alpha);
+
+MCNAPI float wrapDegrees(float input);
+
+MCNAPI ::mce::Degree wrapDegrees(::mce::Degree input);
+
+MCNAPI float wrapRadians(float angle);
+// NOLINTEND
+
+}

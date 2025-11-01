@@ -36,6 +36,9 @@ public:
 
     // vIndex: 6
     virtual bool tryNavigateToSafeZoneScreenOnFirstSignin() = 0;
+
+    // vIndex: 7
+    virtual bool leaveScreen(::std::string, bool) = 0;
     // NOLINTEND
 
 public:
@@ -43,4 +46,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mItemCategory;
-    ::ll::TypedStorage<4, 4, int>            mDurationTicks;
+    ::ll::TypedStorage<4, 4, int> mDurationTicks;
     // NOLINTEND
 
 public:
@@ -29,4 +29,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

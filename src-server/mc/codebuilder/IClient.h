@@ -50,6 +50,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace CodeBuilder
+}

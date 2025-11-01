@@ -13,7 +13,7 @@ struct ScriptPackSettingChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                              mSettingName;
+    ::ll::TypedStorage<8, 32, ::std::string> mSettingName;
     ::ll::TypedStorage<8, 40, ::std::variant<float, bool, ::std::string>> mSettingValue;
     // NOLINTEND
 
@@ -26,8 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent& operator=(::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent&&);
 
     MCAPI ~ScriptPackSettingChangeAfterEvent();
     // NOLINTEND
@@ -43,6 +42,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

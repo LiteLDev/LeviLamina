@@ -14,4 +14,5 @@ public:
     ReviewSummaryParams& operator=(ReviewSummaryParams const&);
     ReviewSummaryParams(ReviewSummaryParams const&);
     ReviewSummaryParams();
+
 };

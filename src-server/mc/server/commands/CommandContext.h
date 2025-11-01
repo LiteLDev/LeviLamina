@@ -11,9 +11,9 @@ class CommandContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                     mCommand;
+    ::ll::TypedStorage<8, 32, ::std::string> mCommand;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandOrigin>> mOrigin;
-    ::ll::TypedStorage<4, 4, int>                                mVersion;
+    ::ll::TypedStorage<4, 4, int> mVersion;
     // NOLINTEND
 
 public:
@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

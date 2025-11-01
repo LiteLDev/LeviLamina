@@ -4,6 +4,7 @@
 
 namespace cereal {
 
-struct NullType {};
+struct NullType {
+};
 
-} // namespace cereal
+}

@@ -30,41 +30,36 @@ public:
     // clang-format off
     struct AutomaticFeatureRule;
     // clang-format on
-
+    
     // AutomaticFeatureRules inner types define
     struct AutomaticFeatureRule {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 328, ::BiomeDecorationFeature> mAutoFeature;
-        ::ll::TypedStorage<8, 64, ::BiomeFilterGroup>        mBiomeFilter;
+        ::ll::TypedStorage<8, 64, ::BiomeFilterGroup> mBiomeFilter;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~AutomaticFeatureRule();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
+    
     };
-
-    using AutomaticFeaturePriorityList = ::std::unordered_map<
-        ::std::string,
-        ::std::unordered_map<::HashedString, ::AutomaticFeatureRules::AutomaticFeatureRule>>;
-
+    
+    using AutomaticFeaturePriorityList = ::std::unordered_map<::std::string, ::std::unordered_map<::HashedString, ::AutomaticFeatureRules::AutomaticFeatureRule>>;
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        192,
-        ::Puv::SlicedLoader<::SharedTypes::v1_21_20::AutomaticFeatureRulesData, ::BedrockLoadContext, nullptr_t>>
-                                                    mLoader;
+    ::ll::TypedStorage<8, 192, ::Puv::SlicedLoader<::SharedTypes::v1_21_20::AutomaticFeatureRulesData, ::BedrockLoadContext, nullptr_t>> mLoader;
     ::ll::TypedStorage<8, 8, ::IMinecraftEventing&> mEventing;
     // NOLINTEND
 
@@ -79,38 +74,13 @@ public:
     // NOLINTBEGIN
     MCAPI AutomaticFeatureRules(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
 
-    MCAPI void _applyAutomaticFeatureRuleDefinition(
-        ::AutomaticFeatureRules::AutomaticFeatureRule&            automaticFeatureRule,
-        ::SharedTypes::v1_21_20::AutomaticFeatureRulesData const& automaticFeatureRulesData,
-        ::MinEngineVersion const&                                 minEngineVersion,
-        ::FeatureRegistry&                                        featureRegistry
-    ) const;
+    MCAPI void _applyAutomaticFeatureRuleDefinition(::AutomaticFeatureRules::AutomaticFeatureRule& automaticFeatureRule, ::SharedTypes::v1_21_20::AutomaticFeatureRulesData const& automaticFeatureRulesData, ::MinEngineVersion const& minEngineVersion, ::FeatureRegistry& featureRegistry) const;
 
-    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_20::AutomaticFeatureRulesData> _parseAndInsertUnsorted(
-        ::std::string const&        filename,
-        ::std::string&&             data,
-        ::MinEngineVersion const&   minEngineVersion,
-        ::IWorldRegistriesProvider& worldRegistries,
-        ::std::unordered_map<
-            ::std::string,
-            ::std::unordered_map<::HashedString, ::AutomaticFeatureRules::AutomaticFeatureRule>>& bucketedFeatures,
-        bool                                                                                      isBasePack
-    ) const;
+    MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_20::AutomaticFeatureRulesData> _parseAndInsertUnsorted(::std::string const& filename, ::std::string&& data, ::MinEngineVersion const& minEngineVersion, ::IWorldRegistriesProvider& worldRegistries, ::std::unordered_map<::std::string, ::std::unordered_map<::HashedString, ::AutomaticFeatureRules::AutomaticFeatureRule>>& bucketedFeatures, bool isBasePack) const;
 
-    MCAPI void attachAutomaticFeatures(
-        ::ResourcePackManager&                                          resourcePackManager,
-        ::IWorldRegistriesProvider&                                     worldRegistries,
-        ::std::unordered_map<::HashedString, ::BiomeDecorationFeature>& biomeDecorationFeatureMap
-    ) const;
+    MCAPI void attachAutomaticFeatures(::ResourcePackManager& resourcePackManager, ::IWorldRegistriesProvider& worldRegistries, ::std::unordered_map<::HashedString, ::BiomeDecorationFeature>& biomeDecorationFeatureMap) const;
 
-    MCAPI ::std::unordered_map<
-        ::std::string,
-        ::std::unordered_map<::HashedString, ::AutomaticFeatureRules::AutomaticFeatureRule>>
-    parseAutomaticFeatures(
-        ::ServiceReference<::AppPlatform> appPlatform,
-        ::ResourcePackManager&            resourcePackManager,
-        ::IWorldRegistriesProvider&       worldRegistries
-    ) const;
+    MCAPI ::std::unordered_map<::std::string, ::std::unordered_map<::HashedString, ::AutomaticFeatureRules::AutomaticFeatureRule>> parseAutomaticFeatures(::ServiceReference<::AppPlatform> appPlatform, ::ResourcePackManager& resourcePackManager, ::IWorldRegistriesProvider& worldRegistries) const;
     // NOLINTEND
 
 public:
@@ -124,4 +94,5 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
     // NOLINTEND
+
 };

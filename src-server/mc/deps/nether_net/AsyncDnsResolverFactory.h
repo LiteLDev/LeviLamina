@@ -18,7 +18,7 @@ class AsyncDnsResolverFactory : public ::webrtc::AsyncDnsResolverFactoryInterfac
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc5eabb;
+    ::ll::UntypedStorage<8, 8> mUnkc5eabb;
     ::ll::UntypedStorage<8, 16> mUnk700614;
     // NOLINTEND
 
@@ -38,12 +38,10 @@ public:
     virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> Create() /*override*/;
 
     // vIndex: 2
-    virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
+    virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback) /*override*/;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
+    virtual ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback) /*override*/;
     // NOLINTEND
 
 public:
@@ -51,11 +49,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $Create();
 
-    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    $CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback);
+    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $CreateAndResolve(::rtc::SocketAddress const& addr, ::absl::AnyInvocable<void()> callback);
 
-    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface>
-    $CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
+    MCNAPI ::std::unique_ptr<::webrtc::AsyncDnsResolverInterface> $CreateAndResolve(::rtc::SocketAddress const& addr, int family, ::absl::AnyInvocable<void()> callback);
     // NOLINTEND
 
 public:
@@ -63,6 +59,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace NetherNet
+}

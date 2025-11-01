@@ -47,6 +47,7 @@ public:
 
     MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_110
+}

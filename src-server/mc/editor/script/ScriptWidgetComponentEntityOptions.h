@@ -16,7 +16,7 @@ class ScriptWidgetComponentEntityOptions : public ::Editor::ScriptModule::Script
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2>  mUnk5d2487;
+    ::ll::UntypedStorage<1, 2> mUnk5d2487;
     ::ll::UntypedStorage<8, 40> mUnk681d5f;
     ::ll::UntypedStorage<8, 40> mUnk7e3143;
     // NOLINTEND
@@ -36,11 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentEntityOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentEntityOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions const&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentEntityOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentEntityOptions const&);
     // NOLINTEND
 
 public:
@@ -60,6 +58,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

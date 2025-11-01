@@ -27,4 +27,5 @@ public:
     // vIndex: 0
     virtual ~GameRelightingTestData() /*override*/ = default;
     // NOLINTEND
+
 };

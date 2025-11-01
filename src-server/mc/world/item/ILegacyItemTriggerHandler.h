@@ -18,12 +18,7 @@ public:
     virtual ~ILegacyItemTriggerHandler() = default;
 
     // vIndex: 1
-    virtual bool executeTrigger(
-        ::std::unordered_map<::std::string, ::DefinitionEvent> const&,
-        ::ItemStackBase&,
-        ::DefinitionTrigger const&,
-        ::RenderParams&
-    ) const = 0;
+    virtual bool executeTrigger(::std::unordered_map<::std::string, ::DefinitionEvent> const&, ::ItemStackBase&, ::DefinitionTrigger const&, ::RenderParams&) const = 0;
     // NOLINTEND
 
 public:
@@ -31,4 +26,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

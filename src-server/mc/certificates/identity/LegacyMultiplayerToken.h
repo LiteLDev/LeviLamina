@@ -13,10 +13,10 @@ class LegacyMultiplayerToken {
 public:
     // LegacyMultiplayerToken inner types define
     enum class VerificationOptions : int {
-        Default         = 0,
+        Default = 0,
         IgnoreTimestamp = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

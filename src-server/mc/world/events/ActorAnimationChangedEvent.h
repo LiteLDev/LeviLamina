@@ -11,8 +11,9 @@ struct ActorAnimationChangedEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>      mEntity;
-    ::ll::TypedStorage<4, 4, ::AnimationEventType>  mType;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
+    ::ll::TypedStorage<4, 4, ::AnimationEventType> mType;
     ::ll::TypedStorage<4, 4, ::AnimationEventState> mState;
     // NOLINTEND
+
 };

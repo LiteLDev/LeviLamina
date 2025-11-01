@@ -15,4 +15,5 @@ public:
     NibblePair& operator=(NibblePair const&);
     NibblePair(NibblePair const&);
     NibblePair();
+
 };

@@ -20,12 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemEnchantmentLevelOutOfBoundsError(
-        ::std::string const& details,
-        ::std::string const& typeName,
-        int                  level,
-        int                  maxLevel
-    );
+    MCNAPI ScriptItemEnchantmentLevelOutOfBoundsError(::std::string const& details, ::std::string const& typeName, int level, int maxLevel);
     // NOLINTEND
 
 public:
@@ -39,6 +34,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string const& details, ::std::string const& typeName, int level, int maxLevel);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

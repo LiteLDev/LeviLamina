@@ -8,7 +8,7 @@
 #include "mc/network/Packet.h"
 #include "mc/network/packet/SubChunkPacket.h"
 #include "mc/platform/Result.h"
-#include "mc/world/level/SubChunkPos.h"
+#include "mc/versionless/world/level/SubChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,12 +21,12 @@ class SubChunkRequestPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::DimensionType>                                     mDimensionType;
-    ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkPos>>                       mSubChunkPos;
+    ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkPos>> mSubChunkPos;
     ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkPacket::SubChunkPosOffset>> mSubChunkPosOffsets;
-    ::ll::TypedStorage<4, 4, uint>                                                mRequestCount;
-    ::ll::TypedStorage<4, 12, ::SubChunkPos>                                      mCenterPos;
-    ::ll::TypedStorage<1, 1, bool>                                                mArePositionsAbsolute;
+    ::ll::TypedStorage<4, 4, uint> mRequestCount;
+    ::ll::TypedStorage<4, 12, ::SubChunkPos> mCenterPos;
+    ::ll::TypedStorage<1, 1, bool> mArePositionsAbsolute;
     // NOLINTEND
 
 public:
@@ -41,10 +41,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
@@ -71,4 +71,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

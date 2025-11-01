@@ -16,4 +16,5 @@ public:
 
     MCNAPI void ejectAllPassengers(::Actor& owner);
     // NOLINTEND
+
 };

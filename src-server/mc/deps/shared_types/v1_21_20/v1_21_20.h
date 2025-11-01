@@ -15,4 +15,4 @@ MCNAPI void bindDimensionPaddingTypes(::cereal::ReflectionCtx& ctx);
 MCNAPI void bindIntProviderTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-} // namespace SharedTypes::v1_21_20
+}

@@ -16,14 +16,14 @@ struct IteratorBinding : public ::Scripting::TaggedBinding {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>  mUnk1afcd4;
-    ::ll::UntypedStorage<8, 16>  mUnkb3a8f1;
-    ::ll::UntypedStorage<8, 16>  mUnk6d4a21;
-    ::ll::UntypedStorage<8, 16>  mUnk947f9a;
+    ::ll::UntypedStorage<8, 16> mUnk1afcd4;
+    ::ll::UntypedStorage<8, 16> mUnkb3a8f1;
+    ::ll::UntypedStorage<8, 16> mUnk6d4a21;
+    ::ll::UntypedStorage<8, 16> mUnk947f9a;
     ::ll::UntypedStorage<8, 160> mUnk5f052a;
-    ::ll::UntypedStorage<8, 8>   mUnkcaebdd;
-    ::ll::UntypedStorage<8, 16>  mUnk54998d;
-    ::ll::UntypedStorage<8, 32>  mUnk2f9c97;
+    ::ll::UntypedStorage<8, 8> mUnkcaebdd;
+    ::ll::UntypedStorage<8, 16> mUnk54998d;
+    ::ll::UntypedStorage<8, 32> mUnk2f9c97;
     // NOLINTEND
 
 public:
@@ -42,17 +42,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI IteratorBinding(
-        ::std::string                                         iteratorClassName,
-        ::std::shared_ptr<::Scripting::Reflection::IFunction> nextCallback
-    );
+    MCNAPI IteratorBinding(::std::string iteratorClassName, ::std::shared_ptr<::Scripting::Reflection::IFunction> nextCallback);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::std::string iteratorClassName, ::std::shared_ptr<::Scripting::Reflection::IFunction> nextCallback);
+    MCNAPI void* $ctor(::std::string iteratorClassName, ::std::shared_ptr<::Scripting::Reflection::IFunction> nextCallback);
     // NOLINTEND
 
 public:
@@ -66,6 +62,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

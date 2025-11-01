@@ -16,4 +16,4 @@ MCNAPI ::mce::MathUtility::GramSchmidtResult computeGramSchmidtBasis(::Vec3 cons
 MCNAPI ::glm::mat4x4 generateRotationAroundPivotMat(::glm::mat4x4 const& rotation, ::glm::vec3 const& pivot);
 // NOLINTEND
 
-} // namespace mce::MathUtility
+}

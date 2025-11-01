@@ -19,33 +19,11 @@ struct VehicleComponent;
 namespace RemovePassengersSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void removePassengersSystem(
-    ::StrictEntityContext const& vehicleEntity,
-    ::RemovePassengersComponent& removePassengersComponent,
-    ::VehicleComponent&          vehicleComponent,
-    ::EntityModifier<
-        ::VehicleComponent,
-        ::RecalculateControlledByLocalInstanceRequestComponent,
-        ::PassengersChangedFlagComponent> modifier
-);
+MCNAPI void removePassengersSystem(::StrictEntityContext const& vehicleEntity, ::RemovePassengersComponent& removePassengersComponent, ::VehicleComponent& vehicleComponent, ::EntityModifier<::VehicleComponent, ::RecalculateControlledByLocalInstanceRequestComponent, ::PassengersChangedFlagComponent> modifier);
 
-MCNAPI void singleTickRemovePassenger(
-    ::StrictEntityContext const&                                                          passengerEntity,
-    ::PassengerComponent const&                                                           passengerComponent,
-    ::ViewT<::StrictEntityContext, ::RemovePassengersComponent const, ::VehicleComponent> vehicleView,
-    ::EntityModifier<
-        ::VehicleComponent,
-        ::RecalculateControlledByLocalInstanceRequestComponent,
-        ::PassengersChangedFlagComponent> modifier
-);
+MCNAPI void singleTickRemovePassenger(::StrictEntityContext const& passengerEntity, ::PassengerComponent const& passengerComponent, ::ViewT<::StrictEntityContext, ::RemovePassengersComponent const, ::VehicleComponent> vehicleView, ::EntityModifier<::VehicleComponent, ::RecalculateControlledByLocalInstanceRequestComponent, ::PassengersChangedFlagComponent> modifier);
 
-MCNAPI void tickRemovePassengersSystem(
-    ::ViewT<::StrictEntityContext, ::RemovePassengersComponent, ::VehicleComponent> view,
-    ::EntityModifier<
-        ::VehicleComponent,
-        ::RecalculateControlledByLocalInstanceRequestComponent,
-        ::PassengersChangedFlagComponent> modifier
-);
+MCNAPI void tickRemovePassengersSystem(::ViewT<::StrictEntityContext, ::RemovePassengersComponent, ::VehicleComponent> view, ::EntityModifier<::VehicleComponent, ::RecalculateControlledByLocalInstanceRequestComponent, ::PassengersChangedFlagComponent> modifier);
 // NOLINTEND
 
-} // namespace RemovePassengersSystemImpl
+}

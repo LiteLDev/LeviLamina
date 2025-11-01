@@ -16,6 +16,7 @@ public:
     Destroy& operator=(Destroy const&);
     Destroy(Destroy const&);
     Destroy();
+
 };
 
-} // namespace AgentComponents::Actions
+}

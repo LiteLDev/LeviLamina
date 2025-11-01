@@ -33,19 +33,15 @@ public:
     virtual ~ScriptDataDrivenActorTriggerEventFilter() /*override*/;
 
     // vIndex: 1
-    virtual bool
-    shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData) /*override*/;
+    virtual bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDataDrivenActorTriggerEventFilter(
-        ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&
-    );
+    MCNAPI ScriptDataDrivenActorTriggerEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&);
 
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter&
-    operator=(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&);
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter& operator=(::ScriptModuleMinecraft::EventFilters::ScriptDataDrivenActorTriggerEventFilter const&);
     // NOLINTEND
 
 public:
@@ -79,6 +75,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft::EventFilters
+}

@@ -18,18 +18,18 @@ class MultifaceFeature : public ::IFeature {
 public:
     // MultifaceFeature inner types define
     using ShuffledFaces = ::Bedrock::small_vector<uchar, 6>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>               mBlock;
-    ::ll::TypedStorage<4, 4, int>                               mSearchRange;
-    ::ll::TypedStorage<1, 1, bool>                              mCanPlaceOnFloor;
-    ::ll::TypedStorage<1, 1, bool>                              mCanPlaceOnCeiling;
-    ::ll::TypedStorage<1, 1, bool>                              mCanPlaceOnWall;
-    ::ll::TypedStorage<4, 4, float>                             mChanceOfSpreading;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlock;
+    ::ll::TypedStorage<4, 4, int> mSearchRange;
+    ::ll::TypedStorage<1, 1, bool> mCanPlaceOnFloor;
+    ::ll::TypedStorage<1, 1, bool> mCanPlaceOnCeiling;
+    ::ll::TypedStorage<1, 1, bool> mCanPlaceOnWall;
+    ::ll::TypedStorage<4, 4, float> mChanceOfSpreading;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mCanBePlacedOn;
-    ::ll::TypedStorage<8, 24, ::std::vector<uchar>>             mValidDirections;
+    ::ll::TypedStorage<8, 24, ::std::vector<uchar>> mValidDirections;
     // NOLINTEND
 
 public:
@@ -45,12 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> _placeBlockIfPossible(
-        ::BlockSource&           region,
-        ::BlockPos const&        pos,
-        ::Random&                random,
-        ::gsl::span<uchar const> placementDirections
-    ) const;
+    MCAPI ::std::optional<::BlockPos> _placeBlockIfPossible(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::gsl::span<uchar const> placementDirections) const;
     // NOLINTEND
 
 public:
@@ -64,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

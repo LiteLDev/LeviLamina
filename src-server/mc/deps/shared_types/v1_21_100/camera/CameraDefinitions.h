@@ -7,6 +7,7 @@
 
 namespace SharedTypes::v1_21_100 {
 
-struct CameraDefinitions : public ::cereal::ComponentStorage {};
+struct CameraDefinitions : public ::cereal::ComponentStorage {
+};
 
-} // namespace SharedTypes::v1_21_100
+}

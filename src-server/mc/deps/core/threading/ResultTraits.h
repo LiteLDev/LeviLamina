@@ -4,7 +4,8 @@
 
 namespace Bedrock::Threading::AsyncResult {
 
-template <typename T0>
-struct ResultTraits {};
+template<typename T0>
+struct ResultTraits {
+};
 
-} // namespace Bedrock::Threading::AsyncResult
+}

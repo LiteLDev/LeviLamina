@@ -11,7 +11,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
-    ::ll::TypedStorage<8, 152, ::ItemStack>    mHeldItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mHeldItem;
     // NOLINTEND
 
 public:
@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

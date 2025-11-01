@@ -20,12 +20,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::BookEditAction> mAction;
-    ::ll::TypedStorage<4, 4, int>              mBookSlot;
-    ::ll::TypedStorage<4, 4, int>              mPageIndex1;
-    ::ll::TypedStorage<4, 4, int>              mPageIndex2;
-    ::ll::TypedStorage<8, 32, ::std::string>   mText1;
-    ::ll::TypedStorage<8, 32, ::std::string>   mText2;
-    ::ll::TypedStorage<8, 32, ::std::string>   mText3;
+    ::ll::TypedStorage<4, 4, int> mBookSlot;
+    ::ll::TypedStorage<4, 4, int> mPageIndex1;
+    ::ll::TypedStorage<4, 4, int> mPageIndex2;
+    ::ll::TypedStorage<8, 32, ::std::string> mText1;
+    ::ll::TypedStorage<8, 32, ::std::string> mText2;
+    ::ll::TypedStorage<8, 32, ::std::string> mText3;
     // NOLINTEND
 
 public:
@@ -37,10 +37,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -78,4 +78,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -17,6 +17,7 @@ public:
     TypedMemberParser& operator=(TypedMemberParser const&);
     TypedMemberParser(TypedMemberParser const&);
     TypedMemberParser();
+
 };
 
-} // namespace webrtc::struct_parser_impl
+}

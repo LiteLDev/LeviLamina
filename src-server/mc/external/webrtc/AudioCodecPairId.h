@@ -22,6 +22,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::webrtc::AudioCodecPairId Create();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

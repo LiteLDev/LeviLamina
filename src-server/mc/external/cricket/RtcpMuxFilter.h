@@ -11,14 +11,14 @@ class RtcpMuxFilter {
 public:
     // RtcpMuxFilter inner types define
     enum class State : int {
-        Init             = 0,
-        Receivedoffer    = 1,
-        Sentoffer        = 2,
-        Sentpranswer     = 3,
+        Init = 0,
+        Receivedoffer = 1,
+        Sentoffer = 2,
+        Sentpranswer = 3,
         Receivedpranswer = 4,
-        Active           = 5,
+        Active = 5,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,6 +58,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

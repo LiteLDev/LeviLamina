@@ -16,4 +16,5 @@ public:
     Spherical& operator=(Spherical const&);
     Spherical(Spherical const&);
     Spherical();
+
 };

@@ -26,22 +26,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 24
-    virtual bool canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const /*override*/;
-
     // vIndex: 56
     virtual bool canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 6
-    virtual bool getCollisionShapeForCamera(
-        ::AABB&                    outAABB,
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos
-    ) const /*override*/;
+    virtual bool getCollisionShapeForCamera(::AABB& outAABB, ::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0
     virtual ~GlassBlock() /*override*/ = default;
@@ -50,18 +42,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canConnect(::Block const& otherBlock, uchar toOther, ::Block const& thisBlock) const;
-
     MCAPI bool $canBeUsedInCommands(::BaseGameVersion const& requiredBaseGameVersion) const;
 
     MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI bool $getCollisionShapeForCamera(
-        ::AABB&                    outAABB,
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos
-    ) const;
+    MCAPI bool $getCollisionShapeForCamera(::AABB& outAABB, ::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
@@ -69,4 +54,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

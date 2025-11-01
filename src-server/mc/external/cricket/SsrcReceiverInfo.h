@@ -17,6 +17,7 @@ public:
     SsrcReceiverInfo& operator=(SsrcReceiverInfo const&);
     SsrcReceiverInfo(SsrcReceiverInfo const&);
     SsrcReceiverInfo();
+
 };
 
-} // namespace cricket
+}

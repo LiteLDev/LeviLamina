@@ -4,6 +4,7 @@
 
 namespace PlayerCapabilities {
 
-struct IClientController {};
+struct IClientController {
+};
 
-} // namespace PlayerCapabilities
+}

@@ -12,6 +12,7 @@ public:
 
     MCNAPI static void mem_free(void* pAddress);
     // NOLINTEND
+
 };
 
-} // namespace xbox::httpclient
+}

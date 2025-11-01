@@ -4,6 +4,6 @@
 
 enum class BlockSupportType : int {
     Center = 0,
-    Edge   = 1,
-    Any    = 2,
+    Edge = 1,
+    Any = 2,
 };

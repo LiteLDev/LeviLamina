@@ -4,6 +4,7 @@
 
 namespace VanillaSystems {
 
-struct PlayerMoveSystems {};
+struct PlayerMoveSystems {
+};
 
-} // namespace VanillaSystems
+}

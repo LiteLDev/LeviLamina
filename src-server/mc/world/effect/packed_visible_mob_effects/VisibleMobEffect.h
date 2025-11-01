@@ -17,6 +17,7 @@ public:
     VisibleMobEffect& operator=(VisibleMobEffect const&);
     VisibleMobEffect(VisibleMobEffect const&);
     VisibleMobEffect();
+
 };
 
-} // namespace PackedVisibleMobEffects
+}

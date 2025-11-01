@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkba7225;
-    ::ll::UntypedStorage<4, 4>  mUnk7653df;
+    ::ll::UntypedStorage<4, 4> mUnk7653df;
     // NOLINTEND
 
 public:
@@ -29,6 +29,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_30
+}

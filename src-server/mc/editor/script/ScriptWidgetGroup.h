@@ -27,21 +27,19 @@ namespace Scripting { struct ClassBinding; }
 
 namespace Editor::ScriptModule {
 
-class ScriptWidgetGroup : public ::Editor::ScriptModule::ScriptWidgetGroup_ServiceInterface,
-                          public ::Editor::ScriptModule::ScriptWidgetGroup_WidgetInterface,
-                          public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptWidgetGroup> {
+class ScriptWidgetGroup : public ::Editor::ScriptModule::ScriptWidgetGroup_ServiceInterface, public ::Editor::ScriptModule::ScriptWidgetGroup_WidgetInterface, public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptWidgetGroup> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk962cc5;
-    ::ll::UntypedStorage<8, 8>  mUnk173882;
-    ::ll::UntypedStorage<8, 8>  mUnkf48be8;
+    ::ll::UntypedStorage<8, 8> mUnk173882;
+    ::ll::UntypedStorage<8, 8> mUnkf48be8;
     ::ll::UntypedStorage<8, 16> mUnk191c2e;
     ::ll::UntypedStorage<8, 24> mUnkd7d46c;
-    ::ll::UntypedStorage<4, 4>  mUnke8b81b;
-    ::ll::UntypedStorage<1, 1>  mUnk9a75fb;
-    ::ll::UntypedStorage<1, 1>  mUnk9e74de;
-    ::ll::UntypedStorage<1, 1>  mUnka85b0a;
+    ::ll::UntypedStorage<4, 4> mUnke8b81b;
+    ::ll::UntypedStorage<1, 1> mUnk9a75fb;
+    ::ll::UntypedStorage<1, 1> mUnk9e74de;
+    ::ll::UntypedStorage<1, 1> mUnka85b0a;
     // NOLINTEND
 
 public:
@@ -63,63 +61,42 @@ public:
     virtual void _setValid(bool valid) /*override*/;
 
     // vIndex: 2
-    virtual void
-    _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload) /*override*/;
+    virtual void _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload) /*override*/;
 
     // vIndex: 3
-    virtual void _handleWidgetComponentStateChangePayload(
-        ::Editor::Network::WidgetComponentStateChangePayload const& payload
-    ) /*override*/;
+    virtual void _handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload) /*override*/;
 
     // vIndex: 4
     virtual void _servicePendingStateChanges() /*override*/;
 
     // vIndex: 0
-    virtual ::Scripting::Result_deprecated<void> _deleteWidget(
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> widgetToDelete
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _deleteWidget(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> widgetToDelete) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetGroup(
-        ::Editor::ServiceProviderCollection&                                           serviceProviders,
-        ::Editor::ScriptModule::ScriptWidgetService&                                   parentService,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
+    MCNAPI ScriptWidgetGroup(::Editor::ServiceProviderCollection& serviceProviders, ::Editor::ScriptModule::ScriptWidgetService& parentService, ::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>
-    _createWidget(
-        ::Vec3 const&                                                             position,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetCreateOptions> const& options
-    );
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>> _createWidget(::Vec3 const& position, ::std::optional<::Editor::ScriptModule::ScriptWidgetCreateOptions> const& options);
 
     MCNAPI void _deleteThisGroup();
 
-    MCNAPI void _forEachWidget(
-        ::std::function<bool(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>)> fn
-    ) const;
+    MCNAPI void _forEachWidget(::std::function<bool(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>)> fn) const;
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject> _scriptDeselectAll();
 
-    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
-    _scriptGetBoundsVisible() const;
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject> _scriptGetBoundsVisible() const;
 
-    MCNAPI ::Scripting::Result<int, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
-    _scriptGetSelectedCount() const;
+    MCNAPI ::Scripting::Result<int, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject> _scriptGetSelectedCount() const;
 
-    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
-    _scriptGetVisible() const;
+    MCNAPI ::Scripting::Result<bool, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject> _scriptGetVisible() const;
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject> _scriptSelectAll();
 
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
-    _scriptSetBoundsVisible(bool visible);
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject> _scriptSetBoundsVisible(bool visible);
 
-    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject>
-    _scriptSetVisible(bool visible);
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetGroupErrorInvalidObject> _scriptSetVisible(bool visible);
     // NOLINTEND
 
 public:
@@ -131,12 +108,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Editor::ServiceProviderCollection&                                           serviceProviders,
-        ::Editor::ScriptModule::ScriptWidgetService&                                   parentService,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::Editor::ScriptModule::ScriptWidgetService& parentService, ::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -148,13 +120,11 @@ public:
 
     MCNAPI void $_handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload);
 
-    MCNAPI void
-    $_handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload);
+    MCNAPI void $_handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload);
 
     MCNAPI void $_servicePendingStateChanges();
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $_deleteWidget(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> widgetToDelete);
+    MCNAPI ::Scripting::Result_deprecated<void> $_deleteWidget(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> widgetToDelete);
     // NOLINTEND
 
 public:
@@ -164,6 +134,7 @@ public:
 
     MCNAPI static void** $vftableForScriptWidgetGroupServiceInterface();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

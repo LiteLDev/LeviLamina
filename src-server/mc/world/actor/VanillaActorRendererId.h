@@ -37,4 +37,4 @@ MCAPI ::HashedString const& thrownPotion();
 MCAPI ::HashedString const& trident();
 // NOLINTEND
 
-} // namespace VanillaActorRendererId
+}

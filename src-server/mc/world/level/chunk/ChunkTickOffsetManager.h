@@ -24,9 +24,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::ChunkPos> getSortedPositionsFromClientOffsets(
-        ::std::vector<::ChunkPos> const& centers,
-        ::std::vector<::ChunkPos> const& offsets
-    );
+    MCNAPI static ::std::vector<::ChunkPos> getSortedPositionsFromClientOffsets(::std::vector<::ChunkPos> const& centers, ::std::vector<::ChunkPos> const& offsets);
     // NOLINTEND
+
 };

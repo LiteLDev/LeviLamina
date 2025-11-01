@@ -24,23 +24,9 @@ class MinecartComeOffRailSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _minecartComeOffRailSystem(
-        ::StrictEntityContext&                    context,
-        ::RailMovementComponent const&            railMovementComponent,
-        ::StateVectorComponent&                   stateVectorComponent,
-        ::Optional<::OnGroundFlagComponent const> onGroundFlagComponent,
-        ::EntityModifier<::MoveRequestComponent>  mod
-    );
+    MCNAPI static void _minecartComeOffRailSystem(::StrictEntityContext& context, ::RailMovementComponent const& railMovementComponent, ::StateVectorComponent& stateVectorComponent, ::Optional<::OnGroundFlagComponent const> onGroundFlagComponent, ::EntityModifier<::MoveRequestComponent> mod);
 
-    MCNAPI static void _tickMinecartComeOffRailSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Exclude<::SnapOnRailComponent>,
-            ::Include<::ActorMovementTickNeededComponent>,
-            ::RailMovementComponent const,
-            ::StateVectorComponent,
-            ::Optional<::OnGroundFlagComponent const>> view,
-        ::EntityModifier<::MoveRequestComponent>       mod
-    );
+    MCNAPI static void _tickMinecartComeOffRailSystem(::ViewT<::StrictEntityContext, ::Exclude<::SnapOnRailComponent>, ::Include<::ActorMovementTickNeededComponent>, ::RailMovementComponent const, ::StateVectorComponent, ::Optional<::OnGroundFlagComponent const>> view, ::EntityModifier<::MoveRequestComponent> mod);
     // NOLINTEND
+
 };

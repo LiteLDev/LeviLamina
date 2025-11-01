@@ -4,6 +4,7 @@
 
 namespace edu::auth {
 
-struct CredsLost {};
+struct CredsLost {
+};
 
-} // namespace edu::auth
+}

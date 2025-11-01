@@ -29,14 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
-        ::IBlockSource& region,
-        ::BlockPos,
-        ::BlockPos,
-        ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
-        ::br::worldgen::StructurePlaceSettings const&
-    ) const /*override*/;
+    virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(::IBlockSource& region, ::BlockPos, ::BlockPos, ::br::worldgen::StructureBlockInfo const&, ::br::worldgen::StructureBlockInfo&& processedBlockInfo, ::br::worldgen::StructurePlaceSettings const&) const /*override*/;
 
     // vIndex: 3
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
@@ -63,14 +56,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
-        ::IBlockSource& region,
-        ::BlockPos,
-        ::BlockPos,
-        ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
-        ::br::worldgen::StructurePlaceSettings const&
-    ) const;
+    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(::IBlockSource& region, ::BlockPos, ::BlockPos, ::br::worldgen::StructureBlockInfo const&, ::br::worldgen::StructureBlockInfo&& processedBlockInfo, ::br::worldgen::StructurePlaceSettings const&) const;
 
     MCFOLD ::br::worldgen::StructureProcessorType $type() const;
 
@@ -82,6 +68,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen::processors
+}

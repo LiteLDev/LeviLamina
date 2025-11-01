@@ -32,8 +32,7 @@ public:
     virtual ~CommandFunctionEntry() /*override*/ = default;
 
     // vIndex: 1
-    virtual void
-    execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) /*override*/;
+    virtual void execute(::FunctionManager& functionManager, ::CommandOrigin const& origin, ::FunctionQueueOrder order) /*override*/;
     // NOLINTEND
 
 public:
@@ -47,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

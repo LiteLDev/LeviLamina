@@ -16,4 +16,5 @@ public:
     MutationFactorData& operator=(MutationFactorData const&);
     MutationFactorData(MutationFactorData const&);
     MutationFactorData();
+
 };

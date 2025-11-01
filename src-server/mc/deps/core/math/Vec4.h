@@ -23,4 +23,5 @@ public:
 
     MCAPI static ::Vec4 const& ZERO();
     // NOLINTEND
+
 };

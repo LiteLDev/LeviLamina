@@ -4,6 +4,6 @@
 
 enum class VerticalHalfEnum : uchar {
     Bottom = 0,
-    Top    = 1,
-    Count  = 2,
+    Top = 1,
+    Count = 2,
 };

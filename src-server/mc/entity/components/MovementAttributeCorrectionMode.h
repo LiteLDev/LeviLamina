@@ -4,5 +4,5 @@
 
 enum class MovementAttributeCorrectionMode : uchar {
     RewindIfDifferentPreservePrediction = 0,
-    NoRewindNoPrediction                = 1,
+    NoRewindNoPrediction = 1,
 };

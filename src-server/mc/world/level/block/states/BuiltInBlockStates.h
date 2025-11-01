@@ -14,9 +14,17 @@ MCAPI ::BuiltInBlockStateVariant<uchar> const& BlockFace();
 
 MCAPI ::BuiltInBlockStateVariant<::Direction::Type> const& CardinalDirection();
 
+MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionEast();
+
+MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionNorth();
+
+MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionSouth();
+
+MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionWest();
+
 MCAPI ::BuiltInBlockStateVariant<uchar> const& FacingDirection();
 
 MCAPI ::BuiltInBlockStateVariant<::VerticalHalfEnum> const& VerticalHalf();
 // NOLINTEND
 
-} // namespace BuiltInBlockStates
+}

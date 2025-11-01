@@ -19,12 +19,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkd82752;
-    ::ll::UntypedStorage<8, 8>  mUnk6712ef;
-    ::ll::UntypedStorage<8, 8>  mUnk2c70eb;
-    ::ll::UntypedStorage<8, 8>  mUnkcba34b;
-    ::ll::UntypedStorage<1, 1>  mUnke84df7;
-    ::ll::UntypedStorage<8, 8>  mUnk831992;
-    ::ll::UntypedStorage<8, 8>  mUnkcbba10;
+    ::ll::UntypedStorage<8, 8> mUnk6712ef;
+    ::ll::UntypedStorage<8, 8> mUnk2c70eb;
+    ::ll::UntypedStorage<8, 8> mUnkcba34b;
+    ::ll::UntypedStorage<1, 1> mUnke84df7;
+    ::ll::UntypedStorage<8, 8> mUnk831992;
+    ::ll::UntypedStorage<8, 8> mUnkcbba10;
     // NOLINTEND
 
 public:
@@ -40,12 +40,7 @@ public:
 
     MCNAPI void HandleHeartbeatRequest(::dcsctp::HeartbeatRequestChunk chunk);
 
-    MCNAPI HeartbeatHandler(
-        ::std::string_view             log_prefix,
-        ::dcsctp::DcSctpOptions const& options,
-        ::dcsctp::Context*             context,
-        ::dcsctp::TimerManager*        timer_manager
-    );
+    MCNAPI HeartbeatHandler(::std::string_view log_prefix, ::dcsctp::DcSctpOptions const& options, ::dcsctp::Context* context, ::dcsctp::TimerManager* timer_manager);
 
     MCNAPI ::webrtc::TimeDelta OnIntervalTimerExpiry();
 
@@ -59,12 +54,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::string_view             log_prefix,
-        ::dcsctp::DcSctpOptions const& options,
-        ::dcsctp::Context*             context,
-        ::dcsctp::TimerManager*        timer_manager
-    );
+    MCNAPI void* $ctor(::std::string_view log_prefix, ::dcsctp::DcSctpOptions const& options, ::dcsctp::Context* context, ::dcsctp::TimerManager* timer_manager);
     // NOLINTEND
 
 public:
@@ -72,6 +62,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

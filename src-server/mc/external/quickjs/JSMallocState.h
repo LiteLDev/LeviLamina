@@ -17,4 +17,5 @@ public:
     JSMallocState& operator=(JSMallocState const&);
     JSMallocState(JSMallocState const&);
     JSMallocState();
+
 };

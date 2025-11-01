@@ -21,7 +21,7 @@ class File_c_windows : public ::Core::FileImpl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk67f6f1;
+    ::ll::UntypedStorage<8, 8> mUnk67f6f1;
     ::ll::UntypedStorage<8, 32> mUnk849a86;
     // NOLINTEND
 
@@ -56,8 +56,7 @@ public:
     virtual ::Core::Result _readExactly(void* buf, uint64 numBytes) /*override*/;
 
     // vIndex: 8
-    virtual ::Core::Result
-    _readAtPosition(uint64 position, void* buf, uint64 numBytes, uint64* pNumBytesRead) /*override*/;
+    virtual ::Core::Result _readAtPosition(uint64 position, void* buf, uint64 numBytes, uint64* pNumBytesRead) /*override*/;
 
     // vIndex: 11
     virtual ::Core::Result _write(void const* buf, uint64 numBytes) /*override*/;
@@ -84,13 +83,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Core::Result _open(
-        ::Core::FileSystem_windows*          pTransaction,
-        ::std::unique_ptr<::Core::FileImpl>& uptFile,
-        ::Core::PathView                     filePath,
-        ::Core::FileOpenMode                 fileOpenMode,
-        ::Core::FileBufferingMode            bufferingMode
-    );
+    MCNAPI static ::Core::Result _open(::Core::FileSystem_windows* pTransaction, ::std::unique_ptr<::Core::FileImpl>& uptFile, ::Core::PathView filePath, ::Core::FileOpenMode fileOpenMode, ::Core::FileBufferingMode bufferingMode);
+
+    MCNAPI static ::std::string getExtendedLengthPath(::Core::PathView path);
     // NOLINTEND
 
 public:
@@ -130,6 +125,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

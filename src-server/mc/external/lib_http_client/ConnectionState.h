@@ -5,12 +5,12 @@
 namespace xbox::httpclient {
 
 enum class ConnectionState : uint {
-    Initialized        = 0,
-    WinHttpRunning     = 1,
+    Initialized = 0,
+    WinHttpRunning = 1,
     WebSocketConnected = 2,
-    WebSocketClosing   = 3,
-    WinHttpClosing     = 4,
-    Closed             = 5,
+    WebSocketClosing = 3,
+    WinHttpClosing = 4,
+    Closed = 5,
 };
 
 }

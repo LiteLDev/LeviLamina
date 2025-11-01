@@ -13,4 +13,4 @@ namespace ActorLifecycle {
 MCNAPI bool isFirstTick(::EntityContext const& entity);
 // NOLINTEND
 
-} // namespace ActorLifecycle
+}

@@ -43,6 +43,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

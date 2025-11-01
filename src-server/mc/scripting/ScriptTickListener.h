@@ -23,15 +23,15 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnka92da0;
-    ::ll::UntypedStorage<8, 8>  mUnk2bc345;
-    ::ll::UntypedStorage<8, 8>  mUnk5417e6;
-    ::ll::UntypedStorage<8, 8>  mUnke390a2;
-    ::ll::UntypedStorage<8, 8>  mUnke4e75b;
-    ::ll::UntypedStorage<8, 8>  mUnkcc025a;
-    ::ll::UntypedStorage<8, 8>  mUnke6f367;
-    ::ll::UntypedStorage<8, 8>  mUnke18734;
-    ::ll::UntypedStorage<8, 8>  mUnkd3f5bd;
-    ::ll::UntypedStorage<8, 8>  mUnk4ba995;
+    ::ll::UntypedStorage<8, 8> mUnk2bc345;
+    ::ll::UntypedStorage<8, 8> mUnk5417e6;
+    ::ll::UntypedStorage<8, 8> mUnke390a2;
+    ::ll::UntypedStorage<8, 8> mUnke4e75b;
+    ::ll::UntypedStorage<8, 8> mUnkcc025a;
+    ::ll::UntypedStorage<8, 8> mUnke6f367;
+    ::ll::UntypedStorage<8, 8> mUnke18734;
+    ::ll::UntypedStorage<8, 8> mUnkd3f5bd;
+    ::ll::UntypedStorage<8, 8> mUnk4ba995;
     // NOLINTEND
 
 public:
@@ -62,13 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptTickListener(
-        ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
-        ::LevelEventCoordinator&          levelEventCoordinator,
-        ::ScriptPluginManager&            pluginManager,
-        ::ScriptDiagnostics&              diagnostics,
-        ::ScriptAsyncJobCoordinator&      asyncJobCoordinator
-    );
+    MCNAPI ScriptTickListener(::ScriptDeferredEventCoordinator& deferredEventCoordinator, ::LevelEventCoordinator& levelEventCoordinator, ::ScriptPluginManager& pluginManager, ::ScriptDiagnostics& diagnostics, ::ScriptAsyncJobCoordinator& asyncJobCoordinator);
 
     MCNAPI ::ServerPerformanceData& _getServerPerfData();
     // NOLINTEND
@@ -76,13 +70,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::ScriptDeferredEventCoordinator& deferredEventCoordinator,
-        ::LevelEventCoordinator&          levelEventCoordinator,
-        ::ScriptPluginManager&            pluginManager,
-        ::ScriptDiagnostics&              diagnostics,
-        ::ScriptAsyncJobCoordinator&      asyncJobCoordinator
-    );
+    MCNAPI void* $ctor(::ScriptDeferredEventCoordinator& deferredEventCoordinator, ::LevelEventCoordinator& levelEventCoordinator, ::ScriptPluginManager& pluginManager, ::ScriptDiagnostics& diagnostics, ::ScriptAsyncJobCoordinator& asyncJobCoordinator);
     // NOLINTEND
 
 public:
@@ -110,4 +98,5 @@ public:
 
     MCNAPI static void** $vftableForLevelEventListener();
     // NOLINTEND
+
 };

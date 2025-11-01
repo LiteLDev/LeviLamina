@@ -13,9 +13,7 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace Editor::Network {
 
-class WidgetDeleteComponentPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetDeleteComponentPayload>,
-  public ::Editor::Network::WidgetCommonBasePayload {
+class WidgetDeleteComponentPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetDeleteComponentPayload>, public ::Editor::Network::WidgetCommonBasePayload {
 public:
     // member variables
     // NOLINTBEGIN
@@ -46,6 +44,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

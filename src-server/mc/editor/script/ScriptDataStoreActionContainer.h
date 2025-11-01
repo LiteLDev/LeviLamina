@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk4ac3e4;
-    ::ll::UntypedStorage<8, 8>  mUnkc98f52;
+    ::ll::UntypedStorage<8, 8> mUnkc98f52;
     // NOLINTEND
 
 public:
@@ -29,11 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void>
-    bindActionToControl(::std::string controlId, ::std::string const& actionPayload);
+    MCNAPI ::Scripting::Result_deprecated<void> bindActionToControl(::std::string controlId, ::std::string const& actionPayload);
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    removeActionFromControl(::std::string controlId, ::std::optional<::std::string> actionPayload);
+    MCNAPI ::Scripting::Result_deprecated<void> removeActionFromControl(::std::string controlId, ::std::optional<::std::string> actionPayload);
     // NOLINTEND
 
 public:
@@ -41,6 +39,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

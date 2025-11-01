@@ -13,4 +13,4 @@ namespace ScriptModuleDiagnostics::Betas {
 MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-} // namespace ScriptModuleDiagnostics::Betas
+}

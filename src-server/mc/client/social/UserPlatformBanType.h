@@ -5,7 +5,7 @@
 namespace Social {
 
 enum class UserPlatformBanType : int {
-    Xbox      = 0,
+    Xbox = 0,
     Minecraft = 1,
 };
 

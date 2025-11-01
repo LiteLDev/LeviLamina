@@ -26,18 +26,19 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnkb96c8d;
-    ::ll::UntypedStorage<8, 8>  mUnk4f9819;
-    ::ll::UntypedStorage<8, 8>  mUnk809618;
-    ::ll::UntypedStorage<8, 8>  mUnkd638dd;
-    ::ll::UntypedStorage<8, 8>  mUnk7a20a8;
-    ::ll::UntypedStorage<8, 8>  mUnk296ec8;
-    ::ll::UntypedStorage<8, 8>  mUnk9cce53;
-    ::ll::UntypedStorage<8, 8>  mUnk69ba5b;
+    ::ll::UntypedStorage<8, 8> mUnk4f9819;
+    ::ll::UntypedStorage<8, 8> mUnk809618;
+    ::ll::UntypedStorage<8, 8> mUnkd638dd;
+    ::ll::UntypedStorage<8, 8> mUnk7a20a8;
+    ::ll::UntypedStorage<8, 8> mUnk296ec8;
+    ::ll::UntypedStorage<8, 8> mUnk9cce53;
+    ::ll::UntypedStorage<8, 8> mUnk69ba5b;
     ::ll::UntypedStorage<8, 32> mUnk67648f;
-    ::ll::UntypedStorage<1, 1>  mUnk84ade0;
-    ::ll::UntypedStorage<1, 1>  mUnkacc084;
-    ::ll::UntypedStorage<1, 1>  mUnk384e00;
-    ::ll::UntypedStorage<8, 8>  mUnk661f94;
+    ::ll::UntypedStorage<1, 1> mUnk84ade0;
+    ::ll::UntypedStorage<1, 1> mUnkacc084;
+    ::ll::UntypedStorage<1, 1> mUnk384e00;
+    ::ll::UntypedStorage<1, 1> mUnk6891be;
+    ::ll::UntypedStorage<8, 8> mUnk661f94;
     ::ll::UntypedStorage<8, 24> mUnk77052a;
     ::ll::UntypedStorage<8, 24> mUnk3bf93e;
     // NOLINTEND
@@ -58,58 +59,37 @@ public:
     virtual bool load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const /*override*/;
 
     // vIndex: 2
-    virtual bool load(
-        ::ResourceLocation const&        resourceLocation,
-        ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensionList
-    ) const /*override*/;
+    virtual bool load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream, ::gsl::span<::std::string const> extensionList) const /*override*/;
 
     // vIndex: 1
-    virtual bool load(
-        ::ResourceLocationPair const&    resourceLocationPair,
-        ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensionList
-    ) const /*override*/;
+    virtual bool load(::ResourceLocationPair const& resourceLocation, ::std::string& resourceStream, ::gsl::span<::std::string const> extensions) const /*override*/;
 
     // vIndex: 4
     virtual bool loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const /*override*/;
 
     // vIndex: 5
-    virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const
-        /*override*/;
+    virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const /*override*/;
 
     // vIndex: 7
     virtual bool isInStreamableLocation(::ResourceLocation const& resourceLocation) const /*override*/;
 
     // vIndex: 6
-    virtual bool isInStreamableLocation(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
-    ) const /*override*/;
+    virtual bool isInStreamableLocation(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const /*override*/;
 
     // vIndex: 9
     virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const& resourceLocation) const /*override*/;
 
     // vIndex: 8
-    virtual ::Core::PathBuffer<::std::string>
-    getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const
-        /*override*/;
+    virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const /*override*/;
 
     // vIndex: 11
-    virtual ::Core::PathBuffer<::std::string>
-    getPathContainingResource(::ResourceLocation const& resourceLocation) const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> getPathContainingResource(::ResourceLocation const& resourceLocation) const /*override*/;
 
     // vIndex: 10
-    virtual ::Core::PathBuffer<::std::string> getPathContainingResource(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
-    ) const /*override*/;
+    virtual ::Core::PathBuffer<::std::string> getPathContainingResource(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const /*override*/;
 
     // vIndex: 12
-    virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
-    ) const /*override*/;
+    virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const /*override*/;
 
     // vIndex: 13
     virtual bool hasCapability(::std::string_view requiredCapability) const;
@@ -118,32 +98,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ResourcePackManager(
-        ::std::function<::Core::PathBuffer<::std::string>()>              getPath,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
-        bool                                                              needsToInitialize
-    );
+    MCNAPI ResourcePackManager(::std::function<::Core::PathBuffer<::std::string>()> getPath, ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager, bool needsToInitialize);
 
     MCNAPI void _calculateMinEngineVersionFromFullStack();
 
     MCNAPI void _composeFullStack();
 
-    MCNAPI void _getResourcesOfGroup(
-        ::PackInstance const&        packInstance,
-        ::std::string const&         group,
-        ::std::vector<::Core::Path>& resources
-    ) const;
-
-    MCNAPI bool _shouldRebuildStack() const;
+    MCNAPI void _getResourcesOfGroup(::PackInstance const& packInstance, ::std::string const& group, ::std::vector<::Core::Path>& resources) const;
 
     MCNAPI void _updateLanguageSubpacks();
 
-    MCNAPI int composeFullStack(
-        ::ResourcePackStack&       output,
-        ::ResourcePackStack const& globalStack,
-        ::ResourcePackStack const& levelStack,
-        ::ResourcePackStack const& addonStack
-    ) const;
+    MCNAPI int composeFullStack(::ResourcePackStack& output, ::ResourcePackStack const& globalStack, ::ResourcePackStack const& levelStack, ::ResourcePackStack const& addonStack) const;
 
     MCNAPI ::ResourceGroup getResourcesOfGroup(::std::string const& group) const;
 
@@ -157,18 +122,13 @@ public:
 
     MCNAPI void setPackSourceReport(::PackSourceReport&& report);
 
-    MCNAPI bool
-    setStack(::std::unique_ptr<::ResourcePackStack> stack, ::ResourcePackStackType stackType, bool composeStack);
+    MCNAPI bool setStack(::std::unique_ptr<::ResourcePackStack> stack, ::ResourcePackStackType stackType);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::function<::Core::PathBuffer<::std::string>()>              getPath,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
-        bool                                                              needsToInitialize
-    );
+    MCNAPI void* $ctor(::std::function<::Core::PathBuffer<::std::string>()> getPath, ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager, bool needsToInitialize);
     // NOLINTEND
 
 public:
@@ -182,17 +142,9 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
-    MCNAPI bool $load(
-        ::ResourceLocation const&        resourceLocation,
-        ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensionList
-    ) const;
+    MCNAPI bool $load(::ResourceLocation const& resourceLocation, ::std::string& resourceStream, ::gsl::span<::std::string const> extensionList) const;
 
-    MCNAPI bool $load(
-        ::ResourceLocationPair const&    resourceLocationPair,
-        ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensionList
-    ) const;
+    MCNAPI bool $load(::ResourceLocationPair const& resourceLocation, ::std::string& resourceStream, ::gsl::span<::std::string const> extensions) const;
 
     MCNAPI bool $loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
@@ -200,28 +152,17 @@ public:
 
     MCNAPI bool $isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
 
-    MCNAPI bool $isInStreamableLocation(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
-    ) const;
+    MCNAPI bool $isInStreamableLocation(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const;
 
     MCNAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string>
-    $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string>
-    $getPathContainingResource(::ResourceLocation const& resourceLocation) const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(::ResourceLocation const& resourceLocation) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
-    ) const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
-    MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensionList
-    ) const;
+    MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensionList) const;
 
     MCNAPI bool $hasCapability(::std::string_view requiredCapability) const;
     // NOLINTEND
@@ -231,4 +172,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

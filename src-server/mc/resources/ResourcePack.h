@@ -12,6 +12,7 @@
 class Pack;
 class PackAccessStrategy;
 struct SubpackInfo;
+namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -19,23 +20,23 @@ class ResourcePack {
 public:
     // ResourcePack inner types define
     using Callback = ::std::function<void(::Core::Path const&)>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                              mHidden;
-    ::ll::TypedStorage<1, 1, bool>                                              mError;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::Pack>>>       mPack;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>>           mSubpackAccessStrategy;
-    ::ll::TypedStorage<8, 248, ::PackReport>                                    mPackReport;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::Pack>>>         mSubPacks;
+    ::ll::TypedStorage<1, 1, bool> mHidden;
+    ::ll::TypedStorage<1, 1, bool> mError;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::Pack>>> mPack;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackAccessStrategy>> mSubpackAccessStrategy;
+    ::ll::TypedStorage<8, 248, ::PackReport> mPackReport;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::Pack>>> mSubPacks;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::ResourcePack>>> mSubResourcePacks;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                mIconPath;
-    ::ll::TypedStorage<8, 8, double>                                            mLoadTime;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsBaseGamePack;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsSlicePack;
-    ::ll::TypedStorage<8, 64, ::ResourceSignature>                              mResourceSignature;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsMarkedForRemoval;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mIconPath;
+    ::ll::TypedStorage<8, 8, double> mLoadTime;
+    ::ll::TypedStorage<1, 1, bool> mIsBaseGamePack;
+    ::ll::TypedStorage<1, 1, bool> mIsSlicePack;
+    ::ll::TypedStorage<8, 64, ::ResourceSignature> mResourceSignature;
+    ::ll::TypedStorage<1, 1, bool> mIsMarkedForRemoval;
     // NOLINTEND
 
 public:
@@ -53,14 +54,11 @@ public:
 
     MCAPI void _generateIconPath();
 
+    MCAPI bool _supportsPreload() const;
+
     MCAPI bool areKnownFilesValid();
 
-    MCAPI void forEachIn(
-        ::Core::Path const&                        filePath,
-        ::std::function<void(::Core::Path const&)> callback,
-        int                                        subpackIndex,
-        bool                                       recurseAnyways
-    ) const;
+    MCAPI void forEachIn(::Core::Path const& filePath, ::std::function<void(::Core::Path const&)> callback, int subpackIndex, bool recurseAnyways) const;
 
     MCAPI void generateAssetSet();
 
@@ -69,6 +67,8 @@ public:
     MCAPI bool hasResource(::Core::Path const& resourceName, int subpackIndex) const;
 
     MCAPI bool isAssetExtractionViable() const;
+
+    MCAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle> preloadPath(::Core::Path const& packRelativePath, int subpackIndex, bool) const;
 
     MCAPI void setLocale(::std::string const& code);
 
@@ -96,4 +96,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

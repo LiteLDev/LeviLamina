@@ -7,8 +7,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class BoundingBox;
 class Vec3;
+namespace ScriptModuleMinecraft { class ScriptAABB; }
 namespace ScriptModuleMinecraft { class ScriptBlock; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
@@ -31,10 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BoundingBox _getSpawnAABB(::Vec3 const& position) const;
+    MCNAPI ::ScriptModuleMinecraft::ScriptAABB _getSpawnAABB(::Vec3 const& position) const;
 
-    MCNAPI bool
-    _isBlockDangerous(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock> const& block) const;
+    MCNAPI bool _isBlockDangerous(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock> const& block) const;
 
     MCNAPI ~ScriptEntitySpawnType();
     // NOLINTEND
@@ -50,6 +49,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

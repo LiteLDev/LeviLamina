@@ -15,4 +15,5 @@ public:
     LineNumberSlot& operator=(LineNumberSlot const&);
     LineNumberSlot(LineNumberSlot const&);
     LineNumberSlot();
+
 };

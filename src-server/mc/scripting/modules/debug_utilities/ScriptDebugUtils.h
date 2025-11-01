@@ -19,18 +19,13 @@ class ScriptDebugUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ScriptModuleDebugUtilities::ScriptPluginStats
-    collectPluginStats(::Scripting::DependencyLocator& locator);
+    MCNAPI static ::ScriptModuleDebugUtilities::ScriptPluginStats collectPluginStats(::Scripting::DependencyLocator& locator);
 
-    MCNAPI static ::ScriptModuleDebugUtilities::ScriptRuntimeStats
-    collectRuntimeStats(::Scripting::DependencyLocator& locator);
+    MCNAPI static ::ScriptModuleDebugUtilities::ScriptRuntimeStats collectRuntimeStats(::Scripting::DependencyLocator& locator);
 
-    MCNAPI static ::Scripting::Result_deprecated<void> disableWatchdogTimingWarnings(
-        ::Scripting::WeakLifetimeScope& scope,
-        ::Scripting::DependencyLocator& locator,
-        bool                            disable
-    );
+    MCNAPI static ::Scripting::Result_deprecated<void> disableWatchdogTimingWarnings(::Scripting::WeakLifetimeScope& scope, ::Scripting::DependencyLocator& locator, bool disable);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleDebugUtilities
+}

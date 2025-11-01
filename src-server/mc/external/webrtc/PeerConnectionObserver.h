@@ -54,16 +54,16 @@ public:
     virtual void OnConnectionChange(::webrtc::PeerConnectionInterface::PeerConnectionState);
 
     // vIndex: 10
-    virtual void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState) = 0;
+    virtual void OnIceGatheringChange(::webrtc::PeerConnectionInterface::IceGatheringState new_state) = 0;
 
     // vIndex: 11
     virtual void OnIceCandidate(::webrtc::IceCandidateInterface const*) = 0;
 
     // vIndex: 12
-    virtual void OnIceCandidateError(::std::string const&, int, ::std::string const&, int, ::std::string const&);
+    virtual void OnIceCandidateError(::std::string const& address, int port, ::std::string const& url, int error_code, ::std::string const& error_text);
 
     // vIndex: 13
-    virtual void OnIceCandidatesRemoved(::std::vector<::cricket::Candidate> const&);
+    virtual void OnIceCandidatesRemoved(::std::vector<::cricket::Candidate> const& candidates);
 
     // vIndex: 14
     virtual void OnIceConnectionReceivingChange(bool);
@@ -72,10 +72,7 @@ public:
     virtual void OnIceSelectedCandidatePairChanged(::cricket::CandidatePairChangeEvent const&);
 
     // vIndex: 16
-    virtual void OnAddTrack(
-        ::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>,
-        ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&
-    );
+    virtual void OnAddTrack(::webrtc::scoped_refptr<::webrtc::RtpReceiverInterface>, ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> const&);
 
     // vIndex: 17
     virtual void OnTrack(::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>);
@@ -92,6 +89,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

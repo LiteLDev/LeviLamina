@@ -64,18 +64,10 @@ public:
     virtual void Unsubscribe(::DataStructures::List<::RakNet::CloudKey>&, ::RakNet::RakNetGUID);
 
     // vIndex: 24
-    virtual void Unsubscribe(
-        ::DataStructures::List<::RakNet::CloudKey>&,
-        ::DataStructures::List<::RakNet::RakNetGUID>&,
-        ::RakNet::RakNetGUID
-    );
+    virtual void Unsubscribe(::DataStructures::List<::RakNet::CloudKey>&, ::DataStructures::List<::RakNet::RakNetGUID>&, ::RakNet::RakNetGUID);
 
     // vIndex: 23
-    virtual void Unsubscribe(
-        ::DataStructures::List<::RakNet::CloudKey>&,
-        ::DataStructures::List<::RakNet::CloudQueryRow*>&,
-        ::RakNet::RakNetGUID
-    );
+    virtual void Unsubscribe(::DataStructures::List<::RakNet::CloudKey>&, ::DataStructures::List<::RakNet::CloudQueryRow*>&, ::RakNet::RakNetGUID);
 
     // vIndex: 27
     virtual void OnGetReponse(::RakNet::Packet*, ::RakNet::CloudClientCallback*, ::RakNet::CloudAllocator*);
@@ -84,12 +76,10 @@ public:
     virtual void OnGetReponse(::RakNet::CloudQueryResult*, ::RakNet::Packet*, ::RakNet::CloudAllocator*);
 
     // vIndex: 29
-    virtual void
-    OnSubscriptionNotification(::RakNet::Packet*, ::RakNet::CloudClientCallback*, ::RakNet::CloudAllocator*);
+    virtual void OnSubscriptionNotification(::RakNet::Packet*, ::RakNet::CloudClientCallback*, ::RakNet::CloudAllocator*);
 
     // vIndex: 28
-    virtual void
-    OnSubscriptionNotification(bool*, ::RakNet::CloudQueryRow*, ::RakNet::Packet*, ::RakNet::CloudAllocator*);
+    virtual void OnSubscriptionNotification(bool*, ::RakNet::CloudQueryRow*, ::RakNet::Packet*, ::RakNet::CloudAllocator*);
 
     // vIndex: 31
     virtual void DeallocateWithDefaultAllocator(::RakNet::CloudQueryResult*);
@@ -106,6 +96,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

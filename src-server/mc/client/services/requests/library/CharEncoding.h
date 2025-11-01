@@ -6,7 +6,7 @@ namespace librarySearch {
 
 enum class CharEncoding : uchar {
     Ascii = 1,
-    Utf8  = 2,
+    Utf8 = 2,
 };
 
 }

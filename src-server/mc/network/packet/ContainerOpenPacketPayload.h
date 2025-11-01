@@ -12,9 +12,10 @@ struct ContainerOpenPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerID>                        mContainerId;
+    ::ll::TypedStorage<1, 1, ::ContainerID> mContainerId;
     ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mType;
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>              mPos;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mEntityUniqueID;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityUniqueID;
     // NOLINTEND
+
 };

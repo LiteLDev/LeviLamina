@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

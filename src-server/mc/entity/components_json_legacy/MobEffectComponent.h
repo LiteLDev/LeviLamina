@@ -16,11 +16,11 @@ class MobEffectComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                            mEffectRange;
-    ::ll::TypedStorage<4, 4, int>                              mEffectId;
-    ::ll::TypedStorage<4, 4, ::EffectDuration>                 mEffectTime;
-    ::ll::TypedStorage<2, 2, ushort>                           mCooldownTicks;
-    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>              mEntityFilter;
+    ::ll::TypedStorage<4, 4, float> mEffectRange;
+    ::ll::TypedStorage<4, 4, int> mEffectId;
+    ::ll::TypedStorage<4, 4, ::EffectDuration> mEffectTime;
+    ::ll::TypedStorage<2, 2, ushort> mCooldownTicks;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mEntityFilter;
     ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mCooldown;
     // NOLINTEND
 
@@ -37,4 +37,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

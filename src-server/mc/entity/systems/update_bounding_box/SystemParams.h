@@ -40,9 +40,9 @@ public:
     ::ll::UntypedStorage<8, 80> mUnk59f3ba;
     ::ll::UntypedStorage<8, 80> mUnk667de1;
     ::ll::UntypedStorage<8, 72> mUnk55da99;
-    ::ll::UntypedStorage<8, 8>  mUnkc9eb45;
-    ::ll::UntypedStorage<4, 4>  mUnk2271a3;
-    ::ll::UntypedStorage<1, 1>  mUnkc7b55d;
+    ::ll::UntypedStorage<8, 8> mUnkc9eb45;
+    ::ll::UntypedStorage<4, 4> mUnk2271a3;
+    ::ll::UntypedStorage<1, 1> mUnkc7b55d;
     // NOLINTEND
 
 public:
@@ -54,46 +54,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SystemParams(
-        ::StrictExecutionContext<
-            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
-            ::Read<>,
-            ::Write<
-                ::AABBShapeComponent,
-                ::ActorDataBoundingBoxComponent,
-                ::ActorDataDirtyFlagsComponent,
-                ::DepenetrationComponent,
-                ::OffsetsComponent>,
-            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& c,
-        float                    sneakHeight,
-        bool                     isClientSide
-    );
+    MCNAPI SystemParams(::StrictExecutionContext<::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>, ::Read<>, ::Write<::AABBShapeComponent, ::ActorDataBoundingBoxComponent, ::ActorDataDirtyFlagsComponent, ::DepenetrationComponent, ::OffsetsComponent>, ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& c, float sneakHeight, bool isClientSide);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::StrictExecutionContext<
-            ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
-            ::Read<>,
-            ::Write<
-                ::AABBShapeComponent,
-                ::ActorDataBoundingBoxComponent,
-                ::ActorDataDirtyFlagsComponent,
-                ::DepenetrationComponent,
-                ::OffsetsComponent>,
-            ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& c,
-        float                    sneakHeight,
-        bool                     isClientSide
-    );
+    MCNAPI void* $ctor(::StrictExecutionContext<::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>, ::Read<>, ::Write<::AABBShapeComponent, ::ActorDataBoundingBoxComponent, ::ActorDataDirtyFlagsComponent, ::DepenetrationComponent, ::OffsetsComponent>, ::AddRemove<::ShouldUpdateBoundingBoxRequestComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& c, float sneakHeight, bool isClientSide);
     // NOLINTEND
+
 };
 
-} // namespace UpdateBoundingBox
+}

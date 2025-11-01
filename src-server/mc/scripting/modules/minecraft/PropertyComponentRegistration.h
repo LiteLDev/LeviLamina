@@ -21,8 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    PropertyComponentRegistration(::ScriptModuleMinecraft::ScriptPropertyComponents::PropertyComponentRegistration&&);
+    MCNAPI PropertyComponentRegistration(::ScriptModuleMinecraft::ScriptPropertyComponents::PropertyComponentRegistration&&);
 
     MCNAPI ~PropertyComponentRegistration();
     // NOLINTEND
@@ -38,6 +37,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft::ScriptPropertyComponents
+}

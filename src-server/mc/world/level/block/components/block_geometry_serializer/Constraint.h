@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/Constraint.h"
+#include "mc/deps/cereal/ConstraintHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,29 +14,26 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 namespace BlockGeometrySerializer {
 
-struct Constraint : public ::cereal::Constraint {
-public:
-    // Constraint inner types define
-    using CastType = ::BlockGeometrySerializer::Proxy const;
-
+struct Constraint : public ::cereal::ConstraintHandle<::BlockGeometrySerializer::Constraint> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual void doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const /*override*/;
-
     // vIndex: 3
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
-    // vIndex: 2
+    // vIndex: 1
     virtual ~Constraint() /*override*/ = default;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI void validateValue(::BlockGeometrySerializer::Proxy const& proxy, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
-
     MCFOLD ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 
@@ -45,6 +42,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace BlockGeometrySerializer
+}

@@ -17,19 +17,9 @@ class ActorDefinitionEventLoader {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _loadCollection(
-        ::ActorDefinitionEvent&            defEvent,
-        ::Json::Value const&               collection,
-        ::MinEngineVersion const&          minEngineVersion,
-        ::ActorEventResponseFactory const* responseFactory,
-        ::JsonBetaState                    useBetaFeatures
-    );
+    MCNAPI static void _loadCollection(::ActorDefinitionEvent& defEvent, ::Json::Value const& collection, ::MinEngineVersion const& minEngineVersion, ::ActorEventResponseFactory const* responseFactory, ::JsonBetaState useBetaFeatures);
 
-    MCNAPI static ::ActorDefinitionEvent _loadEvent(
-        ::Json::Value&                     root,
-        ::MinEngineVersion const&          minEngineVersion,
-        ::ActorEventResponseFactory const* responseFactory,
-        ::JsonBetaState                    useBetaFeatures
-    );
+    MCNAPI static ::ActorDefinitionEvent _loadEvent(::Json::Value& root, ::MinEngineVersion const& minEngineVersion, ::ActorEventResponseFactory const* responseFactory, ::JsonBetaState useBetaFeatures);
     // NOLINTEND
+
 };

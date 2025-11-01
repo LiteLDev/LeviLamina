@@ -15,4 +15,5 @@ public:
     RidingOffsetInterpolationPair& operator=(RidingOffsetInterpolationPair const&);
     RidingOffsetInterpolationPair(RidingOffsetInterpolationPair const&);
     RidingOffsetInterpolationPair();
+
 };

@@ -16,4 +16,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::DimensionType> mType;
     // NOLINTEND
+
 };

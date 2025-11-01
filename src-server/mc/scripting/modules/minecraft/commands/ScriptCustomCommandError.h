@@ -17,15 +17,15 @@ struct ScriptCustomCommandError : public ::Scripting::BaseError {
 public:
     // ScriptCustomCommandError inner types define
     enum class Reason : int {
-        AlreadyRegistered     = 0,
-        ParameterLimit        = 1,
-        RegistryInvalid       = 2,
-        RegistryReadOnly      = 3,
-        NamespaceMismatch     = 4,
+        AlreadyRegistered = 0,
+        ParameterLimit = 1,
+        RegistryInvalid = 2,
+        RegistryReadOnly = 3,
+        NamespaceMismatch = 4,
         EnumDependencyMissing = 5,
-        UnexpectedEnumName    = 6,
+        UnexpectedEnumName = 6,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -57,6 +57,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

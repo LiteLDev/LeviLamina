@@ -20,6 +20,7 @@ public:
     // vIndex: 0
     virtual ~IScriptCustomComponentAfterEventSignal() /*override*/ = default;
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -13,7 +13,7 @@ public:
     // clang-format off
     class Registry;
     // clang-format on
-
+    
     // Motif inner types define
     class Registry {
     public:
@@ -22,41 +22,42 @@ public:
         ::ll::UntypedStorage<8, 24> mUnk402e1f;
         ::ll::UntypedStorage<8, 24> mUnkfc49c5;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Registry& operator=(Registry const&);
         Registry(Registry const&);
         Registry();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::std::vector<::Motif const*> _getBaseMotifs() const;
-
+    
         MCNAPI ::std::vector<::Motif const*> _getR21Motifs() const;
-
+    
         MCNAPI ::Motif const& getMotifByName(::std::string const& name) const;
-
+    
         MCNAPI void init(::BaseGameVersion const& baseGameVersion);
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
         MCNAPI static ::Motif::Registry& get();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnke1aa42;
-    ::ll::UntypedStorage<4, 4>  mUnk6836f0;
-    ::ll::UntypedStorage<4, 4>  mUnkb22223;
+    ::ll::UntypedStorage<4, 4> mUnk6836f0;
+    ::ll::UntypedStorage<4, 4> mUnkb22223;
     ::ll::UntypedStorage<4, 16> mUnkcaf965;
-    ::ll::UntypedStorage<1, 1>  mUnkf1ff0b;
-    ::ll::UntypedStorage<1, 1>  mUnk5d9ae9;
+    ::ll::UntypedStorage<1, 1> mUnkf1ff0b;
+    ::ll::UntypedStorage<1, 1> mUnk5d9ae9;
     // NOLINTEND
 
 public:
@@ -172,4 +173,5 @@ public:
 
     MCNAPI static ::Motif const& mWither();
     // NOLINTEND
+
 };

@@ -12,11 +12,10 @@
 // clang-format off
 class ChunkSource;
 class CompoundTag;
-class ILevel;
 class LevelChunk;
-class Scheduler;
 class Vec3;
 class WorldGenerator;
+struct DerivedDimensionArguments;
 namespace br::worldgen { class StructureSetRegistry; }
 namespace mce { class Color; }
 // clang-format on
@@ -36,8 +35,7 @@ public:
     virtual ::Vec3 translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const /*override*/;
 
     // vIndex: 17
-    virtual ::std::unique_ptr<::WorldGenerator>
-    createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
+    virtual ::std::unique_ptr<::WorldGenerator> createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry) /*override*/;
 
     // vIndex: 20
     virtual bool levelChunkNeedsUpgrade(::LevelChunk const& lc) const /*override*/;
@@ -52,29 +50,25 @@ public:
     virtual short getCloudHeight() const /*override*/;
 
     // vIndex: 22
-    virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const
-        /*override*/;
+    virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const /*override*/;
 
-    // vIndex: 39
+    // vIndex: 41
     virtual void _upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers) /*override*/;
 
-    // vIndex: 40
-    virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
-        ::std::unique_ptr<::ChunkSource> storageSource,
-        ::StorageVersion                 levelVersion
-    ) /*override*/;
+    // vIndex: 42
+    virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OverworldDimension(::ILevel& level, ::Scheduler& context);
+    MCAPI explicit OverworldDimension(::DerivedDimensionArguments&& args);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ILevel& level, ::Scheduler& context);
+    MCAPI void* $ctor(::DerivedDimensionArguments&& args);
     // NOLINTEND
 
 public:
@@ -82,8 +76,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
-    MCAPI ::std::unique_ptr<::WorldGenerator>
-    $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
+    MCAPI ::std::unique_ptr<::WorldGenerator> $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
     MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
@@ -97,8 +90,7 @@ public:
 
     MCFOLD void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 
-    MCAPI ::std::unique_ptr<::ChunkSource>
-    $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
+    MCAPI ::std::unique_ptr<::ChunkSource> $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
     // NOLINTEND
 
 public:
@@ -112,4 +104,5 @@ public:
 
     MCNAPI static void** $vftableForSavedData();
     // NOLINTEND
+
 };

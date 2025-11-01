@@ -26,41 +26,39 @@ public:
     // clang-format off
     struct ColorInfo;
     // clang-format on
-
+    
     // SparklerItem inner types define
     struct ColorInfo {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, ::ItemColor>    mDyeId;
+        ::ll::TypedStorage<1, 1, ::ItemColor> mDyeId;
         ::ll::TypedStorage<1, 1, ::CompoundType> mColorCompound;
-        ::ll::TypedStorage<4, 4, int>            mVariantIndex;
-        ::ll::TypedStorage<4, 4, int>            mRGB;
+        ::ll::TypedStorage<4, 4, int> mVariantIndex;
+        ::ll::TypedStorage<4, 4, int> mRGB;
         // NOLINTEND
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 89
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    // vIndex: 90
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+
+    // vIndex: 111
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+
+    // vIndex: 95
+    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const /*override*/;
 
     // vIndex: 110
-    virtual ::ResolvedItemIconInfo
-    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
-
-    // vIndex: 94
-    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const
-        /*override*/;
-
-    // vIndex: 109
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
     // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
 
-    // vIndex: 114
+    // vIndex: 115
     virtual ::Brightness getLightEmission(int auxValue) const /*override*/;
 
     // vIndex: 0
@@ -76,15 +74,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCAPI ::ResolvedItemIconInfo
-    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int slot, bool selected) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCFOLD bool $isHandEquipped() const;
 
@@ -96,4 +92,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

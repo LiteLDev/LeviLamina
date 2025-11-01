@@ -16,13 +16,21 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::BiomeWeightedData>> mTransformsInto;
-    ::ll::TypedStorage<2, 2, ushort>                              mConditionJson;
-    ::ll::TypedStorage<4, 4, uint>                                mMinPassingNeighbors;
+    ::ll::TypedStorage<2, 2, ushort> mConditionJson;
+    ::ll::TypedStorage<4, 4, uint> mMinPassingNeighbors;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    BiomeConditionalTransformationData& operator=(BiomeConditionalTransformationData const&);
+    BiomeConditionalTransformationData(BiomeConditionalTransformationData const&);
+    BiomeConditionalTransformationData();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI BiomeConditionalTransformationData(::BiomeConditionalTransformationData&&);
+
     MCAPI ~BiomeConditionalTransformationData();
     // NOLINTEND
 
@@ -33,8 +41,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BiomeConditionalTransformationData&&);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

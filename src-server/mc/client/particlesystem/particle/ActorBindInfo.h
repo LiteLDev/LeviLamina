@@ -18,6 +18,7 @@ public:
     ActorBindInfo& operator=(ActorBindInfo const&);
     ActorBindInfo(ActorBindInfo const&);
     ActorBindInfo();
+
 };
 
-} // namespace ParticleSystem
+}

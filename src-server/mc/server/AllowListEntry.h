@@ -16,9 +16,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mName;
-    ::ll::TypedStorage<8, 16, ::mce::UUID>   mUuid;
+    ::ll::TypedStorage<8, 16, ::mce::UUID> mUuid;
     ::ll::TypedStorage<8, 32, ::std::string> mXuid;
-    ::ll::TypedStorage<1, 1, bool>           mIgnoresPlayerLimit;
+    ::ll::TypedStorage<1, 1, bool> mIgnoresPlayerLimit;
     // NOLINTEND
 
 public:
@@ -53,4 +53,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

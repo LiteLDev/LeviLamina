@@ -32,15 +32,14 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ContainerManagerModel>> mContainerManagerModel;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::ContainerController>>>
-                                                                              mContainers;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ContainerSplitControl>>         mContainerSplitItemStackItems;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::shared_ptr<::ContainerController>>> mContainers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ContainerSplitControl>> mContainerSplitItemStackItems;
     ::ll::TypedStorage<8, 24, ::std::vector<::ContainerSimulationSplitStack>> mContainerSimulationSplitItemStacks;
-    ::ll::TypedStorage<4, 4, int>                                             mSplitItemRemainder;
-    ::ll::TypedStorage<1, 1, bool>                                            mContainerDirty;
-    ::ll::TypedStorage<1, 1, bool>                                            mContainersClosed;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerScreenSimulation>>  mSimulation;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                mDynamicContainerNotifier;
+    ::ll::TypedStorage<4, 4, int> mSplitItemRemainder;
+    ::ll::TypedStorage<1, 1, bool> mContainerDirty;
+    ::ll::TypedStorage<1, 1, bool> mContainersClosed;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerScreenSimulation>> mSimulation;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mDynamicContainerNotifier;
     // NOLINTEND
 
 public:
@@ -92,16 +91,10 @@ public:
     virtual void handlePlaceAmount(::SlotData const&, int, ::SlotData const&);
 
     // vIndex: 15
-    virtual int
-    handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
+    virtual int handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
 
     // vIndex: 16
-    virtual int handleAutoPlaceStack(
-        ::SlotData const&,
-        ::ItemTakeType,
-        ::std::vector<::AutoPlaceItem> const&,
-        ::std::vector<::AutoPlaceResult>&
-    );
+    virtual int handleAutoPlaceStack(::SlotData const&, ::ItemTakeType, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&);
 
     // vIndex: 17
     virtual void handleSplitSingle(::SlotData const&, ::SlotData const&);
@@ -137,11 +130,7 @@ public:
     virtual bool isOutputSlot(::std::string const&) const;
 
     // vIndex: 28
-    virtual void _updateItemStackRequest(
-        ::ContainerScreenRequestActionType,
-        ::ContainerScreenActionResult const&,
-        ::ItemStackRequestScope&
-    );
+    virtual void _updateItemStackRequest(::ContainerScreenRequestActionType, ::ContainerScreenActionResult const&, ::ItemStackRequestScope&);
 
     // vIndex: 29
     virtual ::CreateContainerItemScope _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&);
@@ -175,4 +164,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

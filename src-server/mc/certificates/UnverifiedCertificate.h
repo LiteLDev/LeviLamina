@@ -15,7 +15,7 @@ class UnverifiedCertificate {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 128, ::WebToken const>                         mRawToken;
+    ::ll::TypedStorage<8, 128, ::WebToken const> mRawToken;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UnverifiedCertificate>> mParentUnverifiedCertificate;
     // NOLINTEND
 
@@ -57,4 +57,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

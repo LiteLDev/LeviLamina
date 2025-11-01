@@ -4,6 +4,7 @@
 
 namespace Social {
 
-class SocialSystem {};
+class SocialSystem {
+};
 
-} // namespace Social
+}

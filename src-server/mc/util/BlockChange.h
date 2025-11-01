@@ -16,4 +16,5 @@ public:
     BlockChange& operator=(BlockChange const&);
     BlockChange(BlockChange const&);
     BlockChange();
+
 };

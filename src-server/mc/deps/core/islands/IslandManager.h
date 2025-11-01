@@ -13,15 +13,14 @@ namespace Bedrock { class IslandRegistrationInfo; }
 
 namespace Bedrock {
 
-class IslandManager : public ::Bedrock::IIslandManager,
-                      public ::std::enable_shared_from_this<::Bedrock::IslandManager> {
+class IslandManager : public ::Bedrock::IIslandManager, public ::std::enable_shared_from_this<::Bedrock::IslandManager> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk4be2b1;
+    ::ll::UntypedStorage<8, 8> mUnk4be2b1;
     ::ll::UntypedStorage<8, 80> mUnk6ed9b3;
-    ::ll::UntypedStorage<1, 1>  mUnk42cc4a;
-    ::ll::UntypedStorage<4, 4>  mUnk277a64;
+    ::ll::UntypedStorage<1, 1> mUnk42cc4a;
+    ::ll::UntypedStorage<4, 4> mUnk277a64;
     ::ll::UntypedStorage<8, 80> mUnkc574d9;
     ::ll::UntypedStorage<8, 24> mUnk1bb8f4;
     // NOLINTEND
@@ -68,6 +67,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

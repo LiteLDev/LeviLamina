@@ -18,11 +18,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool isValidTag(::IRequestAction::RequestActionType actionType, ::CompoundTag const& tag);
 
-    MCNAPI static ::std::unique_ptr<::IRequestAction> load(
-        ::IRequestAction::RequestActionType actionType,
-        ::CompoundTag const&                tag,
-        ::ICommandOriginLoader&             loader,
-        ::std::string const&                dimensionPrefix
-    );
+    MCNAPI static ::std::unique_ptr<::IRequestAction> load(::IRequestAction::RequestActionType actionType, ::CompoundTag const& tag, ::ICommandOriginLoader& loader, ::std::string const& dimensionPrefix);
     // NOLINTEND
+
 };

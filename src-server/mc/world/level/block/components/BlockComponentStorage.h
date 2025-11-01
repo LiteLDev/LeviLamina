@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockConnectionComponent;
 class BlockCustomComponentsComponent;
 class BlockEntityFallOnConfigurationComponent;
 class BlockRandomOffsetComponent;
@@ -42,11 +43,13 @@ struct BlockMapColorComponent;
 struct BlockMaterialInstancesComponent;
 struct BlockMovableComponent;
 struct BlockPlacementFilterComponent;
+struct BlockPrecipitationInteractionsComponent;
 struct BlockQueuedTickingComponent;
 struct BlockRandomTickingComponent;
 struct BlockRedstoneComponent;
 struct BlockRedstoneProducerComponent;
 struct BlockSelectionBoxComponent;
+struct BlockSupportComponent;
 struct BlockVoxelShapesCullingComponent;
 // clang-format on
 
@@ -57,7 +60,7 @@ public:
     struct ComponentBase;
     template<typename T0> struct ComponentInstance;
     // clang-format on
-
+    
     // BlockComponentStorage inner types define
     struct ComponentBase {
     public:
@@ -66,32 +69,18 @@ public:
         // vIndex: 0
         virtual ~ComponentBase() = default;
         // NOLINTEND
+    
     };
-
-    template <typename T0>
-    struct ComponentInstance {};
-
+    
+    template<typename T0>
+    struct ComponentInstance {
+    };
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        56,
-        ::brstd::flat_map<
-            ::Bedrock::typeid_t<void>,
-            ::std::unique_ptr<::BlockComponentStorage::ComponentBase>,
-            ::std::less<::Bedrock::typeid_t<void>>,
-            ::std::vector<::Bedrock::typeid_t<void>>,
-            ::std::vector<::std::unique_ptr<::BlockComponentStorage::ComponentBase>>>>
-        mComponents;
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::brstd::flat_set<
-            ::Bedrock::typeid_t<void>,
-            ::std::less<::Bedrock::typeid_t<void>>,
-            ::std::vector<::Bedrock::typeid_t<void>>>>
-                                   mStatelessComponents;
+    ::ll::TypedStorage<8, 56, ::brstd::flat_map<::Bedrock::typeid_t<void>, ::std::unique_ptr<::BlockComponentStorage::ComponentBase>, ::std::less<::Bedrock::typeid_t<void>>, ::std::vector<::Bedrock::typeid_t<void>>, ::std::vector<::std::unique_ptr<::BlockComponentStorage::ComponentBase>>>> mComponents;
+    ::ll::TypedStorage<8, 40, ::brstd::flat_set<::Bedrock::typeid_t<void>, ::std::less<::Bedrock::typeid_t<void>>, ::std::vector<::Bedrock::typeid_t<void>>>> mStatelessComponents;
     ::ll::TypedStorage<1, 1, bool> mAllowModifyingComponents;
     ::ll::TypedStorage<1, 1, bool> mAllowComponentReplacement;
     ::ll::TypedStorage<1, 1, bool> mAllowTryGetComponentBeforeFinalization;
@@ -110,4 +99,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

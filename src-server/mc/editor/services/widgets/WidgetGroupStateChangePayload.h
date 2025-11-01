@@ -13,9 +13,7 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace Editor::Network {
 
-class WidgetGroupStateChangePayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetGroupStateChangePayload>,
-  public ::Editor::Network::WidgetCommonBasePayload {
+class WidgetGroupStateChangePayload : public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetGroupStateChangePayload>, public ::Editor::Network::WidgetCommonBasePayload {
 public:
     // member variables
     // NOLINTBEGIN
@@ -49,6 +47,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

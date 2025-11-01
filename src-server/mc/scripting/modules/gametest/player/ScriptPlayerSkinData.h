@@ -15,7 +15,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkae6bca;
     ::ll::UntypedStorage<4, 32> mUnk7ec2fa;
-    ::ll::UntypedStorage<8, 16> mUnke3c76a;
+    ::ll::UntypedStorage<1, 2> mUnke3c76a;
     // NOLINTEND
 
 public:
@@ -41,6 +41,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleGameTest
+}

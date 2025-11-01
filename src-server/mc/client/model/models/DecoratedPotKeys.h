@@ -12,4 +12,4 @@ MCNAPI ::std::string const& CONTAINED_ITEM();
 MCNAPI ::std::string const& SHERDS();
 // NOLINTEND
 
-} // namespace DecoratedPotKeys
+}

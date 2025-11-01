@@ -16,6 +16,7 @@ public:
     RegisteredEnum& operator=(RegisteredEnum const&);
     RegisteredEnum(RegisteredEnum const&);
     RegisteredEnum();
+
 };
 
-} // namespace Scripting::QuickJS
+}

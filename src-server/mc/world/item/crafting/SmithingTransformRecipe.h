@@ -34,8 +34,7 @@ public:
     virtual bool matches(::CraftingContainer const& craftingContainer, ::CraftingContext const&) const /*override*/;
 
     // vIndex: 1
-    virtual ::std::vector<::ItemInstance> const&
-    assemble(::CraftingContainer& craftingContainer, ::CraftingContext&) const /*override*/;
+    virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftingContainer, ::CraftingContext&) const /*override*/;
 
     // vIndex: 0
     virtual ~SmithingTransformRecipe() /*override*/ = default;
@@ -44,14 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SmithingTransformRecipe(
-        ::std::string const&      recipeId,
-        ::RecipeIngredient const& templateIngredient,
-        ::RecipeIngredient const& baseIngredient,
-        ::RecipeIngredient const& additionIngredient,
-        ::Recipe::Results&&       results,
-        ::HashedString const&     tag
-    );
+    MCAPI SmithingTransformRecipe(::std::string const& recipeId, ::RecipeIngredient const& templateIngredient, ::RecipeIngredient const& baseIngredient, ::RecipeIngredient const& additionIngredient, ::Recipe::Results&& results, ::HashedString const& tag);
     // NOLINTEND
 
 public:
@@ -63,14 +55,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&      recipeId,
-        ::RecipeIngredient const& templateIngredient,
-        ::RecipeIngredient const& baseIngredient,
-        ::RecipeIngredient const& additionIngredient,
-        ::Recipe::Results&&       results,
-        ::HashedString const&     tag
-    );
+    MCAPI void* $ctor(::std::string const& recipeId, ::RecipeIngredient const& templateIngredient, ::RecipeIngredient const& baseIngredient, ::RecipeIngredient const& additionIngredient, ::Recipe::Results&& results, ::HashedString const& tag);
     // NOLINTEND
 
 public:
@@ -78,8 +63,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $matches(::CraftingContainer const& craftingContainer, ::CraftingContext const&) const;
 
-    MCAPI ::std::vector<::ItemInstance> const&
-    $assemble(::CraftingContainer& craftingContainer, ::CraftingContext&) const;
+    MCAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer& craftingContainer, ::CraftingContext&) const;
     // NOLINTEND
 
 public:
@@ -87,4 +71,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

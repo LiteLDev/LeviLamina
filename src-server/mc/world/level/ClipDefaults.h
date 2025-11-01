@@ -14,4 +14,4 @@ namespace ClipDefaults {
 MCNAPI ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const& CHECK_ALL_PICKABLE_BLOCKS();
 // NOLINTEND
 
-} // namespace ClipDefaults
+}

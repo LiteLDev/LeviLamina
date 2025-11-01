@@ -32,69 +32,50 @@ class ShieldItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 94
-    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int, bool selected) const
-        /*override*/;
+    // vIndex: 95
+    virtual bool inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int, bool selected) const /*override*/;
 
-    // vIndex: 54
+    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 53
-    virtual bool isValidRepairItem(
-        ::ItemStackBase const&   source,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const /*override*/;
+    // vIndex: 54
+    virtual bool isValidRepairItem(::ItemStackBase const& source, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const /*override*/;
 
     // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
 
-    // vIndex: 104
+    // vIndex: 105
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 85
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 100
-    virtual ::InHandUpdateType getInHandUpdateType(
-        ::Player const&    player,
-        ::ItemStack const& oldItem,
-        ::ItemStack const& newItem,
-        bool const         isMainHand,
-        bool const         slotChanged
-    ) const /*override*/;
+    // vIndex: 101
+    virtual ::InHandUpdateType getInHandUpdateType(::Player const& player, ::ItemStack const& oldItem, ::ItemStack const& newItem, bool const isMainHand, bool const slotChanged) const /*override*/;
 
-    // vIndex: 76
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 80
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
-        /*override*/;
-
-    // vIndex: 91
-    virtual void
-    readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const
-        /*override*/;
+    // vIndex: 81
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const /*override*/;
 
     // vIndex: 92
+    virtual void readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const /*override*/;
+
+    // vIndex: 93
     virtual void writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const /*override*/;
 
-    // vIndex: 96
+    // vIndex: 97
     virtual ::HashedString const& getCooldownCategory() const /*override*/;
 
-    // vIndex: 97
+    // vIndex: 98
     virtual int getCooldownDuration() const /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 52
-    virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const /*override*/;
+    // vIndex: 53
+    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
 
     // vIndex: 0
     virtual ~ShieldItem() /*override*/ = default;
@@ -115,11 +96,7 @@ public:
 
     MCAPI int $getEnchantSlot() const;
 
-    MCAPI bool $isValidRepairItem(
-        ::ItemStackBase const&   source,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const;
+    MCAPI bool $isValidRepairItem(::ItemStackBase const& source, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const;
 
     MCFOLD bool $isHandEquipped() const;
 
@@ -127,20 +104,13 @@ public:
 
     MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI ::InHandUpdateType $getInHandUpdateType(
-        ::Player const&    player,
-        ::ItemStack const& oldItem,
-        ::ItemStack const& newItem,
-        bool const         isMainHand,
-        bool const         slotChanged
-    ) const;
+    MCAPI ::InHandUpdateType $getInHandUpdateType(::Player const& player, ::ItemStack const& oldItem, ::ItemStack const& newItem, bool const isMainHand, bool const slotChanged) const;
 
     MCFOLD ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCAPI void
-    $readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
+    MCAPI void $readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
 
     MCAPI void $writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const;
 
@@ -150,12 +120,7 @@ public:
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
 
-    MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const;
+    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
     // NOLINTEND
 
 public:
@@ -163,4 +128,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

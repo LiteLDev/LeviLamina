@@ -17,27 +17,27 @@ class SwimWithEntityGoal : public ::Goal {
 public:
     // SwimWithEntityGoal inner types define
     enum class EntityGoals : int {
-        CatchUpToEntity      = 0,
+        CatchUpToEntity = 0,
         MatchEntityDirection = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                            mMob;
-    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>              mFollowing;
-    ::ll::TypedStorage<4, 4, int>                               mIntervalRefreshTicks;
-    ::ll::TypedStorage<4, 4, int>                               mIntervalTicks;
-    ::ll::TypedStorage<4, 4, float>                             mChanceToStop;
-    ::ll::TypedStorage<4, 4, float>                             mSuccessRate;
-    ::ll::TypedStorage<4, 4, float>                             mCatchUpThreshold;
-    ::ll::TypedStorage<4, 4, float>                             mMatchDirectionThreshold;
-    ::ll::TypedStorage<4, 4, float>                             mCatchUpMultiplier;
-    ::ll::TypedStorage<4, 4, float>                             mSpeedMultiplier;
-    ::ll::TypedStorage<4, 4, float>                             mSearchRange;
-    ::ll::TypedStorage<4, 4, float>                             mStopDistance;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mFollowing;
+    ::ll::TypedStorage<4, 4, int> mIntervalRefreshTicks;
+    ::ll::TypedStorage<4, 4, int> mIntervalTicks;
+    ::ll::TypedStorage<4, 4, float> mChanceToStop;
+    ::ll::TypedStorage<4, 4, float> mSuccessRate;
+    ::ll::TypedStorage<4, 4, float> mCatchUpThreshold;
+    ::ll::TypedStorage<4, 4, float> mMatchDirectionThreshold;
+    ::ll::TypedStorage<4, 4, float> mCatchUpMultiplier;
+    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, float> mSearchRange;
+    ::ll::TypedStorage<4, 4, float> mStopDistance;
     ::ll::TypedStorage<4, 4, ::SwimWithEntityGoal::EntityGoals> mCurrentGoal;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>>   mTargetTypes;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mTargetTypes;
     // NOLINTEND
 
 public:
@@ -103,4 +103,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

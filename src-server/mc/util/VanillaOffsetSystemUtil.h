@@ -18,32 +18,11 @@ struct VanillaOffsetComponent;
 namespace VanillaOffsetSystemUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI void _clientTick(
-    ::StrictEntityContext&,
-    ::VanillaOffsetComponent&                         vanillaOffsetComponent,
-    ::OffsetsComponent const&                         offsetComponent,
-    ::ActorDataFlagComponent const&                   actorDataFlag,
-    ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag,
-    ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag,
-    float                                             sneakHeight
-);
+MCNAPI void _clientTick(::StrictEntityContext&, ::VanillaOffsetComponent& vanillaOffsetComponent, ::OffsetsComponent const& offsetComponent, ::ActorDataFlagComponent const& actorDataFlag, ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag, ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag, float sneakHeight);
 
-MCNAPI void _serverTick(
-    ::StrictEntityContext&,
-    ::VanillaOffsetComponent&                         vanillaOffsetComponent,
-    ::OffsetsComponent const&                         offsetComponent,
-    ::ActorDataFlagComponent const&                   actorDataFlag,
-    ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag,
-    ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag,
-    float                                             sneakHeight
-);
+MCNAPI void _serverTick(::StrictEntityContext&, ::VanillaOffsetComponent& vanillaOffsetComponent, ::OffsetsComponent const& offsetComponent, ::ActorDataFlagComponent const& actorDataFlag, ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag, ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag, float sneakHeight);
 
-MCNAPI float getCameraOffset(
-    ::ActorDataFlagComponent const&                   actorDataFlag,
-    ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag,
-    ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag,
-    float                                             sneakHeight
-);
+MCNAPI float getCameraOffset(::ActorDataFlagComponent const& actorDataFlag, ::Optional<::PlayerIsSleepingFlagComponent const> isSleepingFlag, ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontalFlag, float sneakHeight);
 // NOLINTEND
 
-} // namespace VanillaOffsetSystemUtil
+}

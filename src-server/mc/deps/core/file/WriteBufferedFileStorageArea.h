@@ -24,9 +24,9 @@ public:
     ::ll::UntypedStorage<8, 64> mUnk889f10;
     ::ll::UntypedStorage<8, 80> mUnkba13b1;
     ::ll::UntypedStorage<8, 24> mUnk7cfba8;
-    ::ll::UntypedStorage<1, 1>  mUnk13aec3;
-    ::ll::UntypedStorage<1, 1>  mUnk61c0ed;
-    ::ll::UntypedStorage<1, 1>  mUnkafc03c;
+    ::ll::UntypedStorage<1, 1> mUnk13aec3;
+    ::ll::UntypedStorage<1, 1> mUnk61c0ed;
+    ::ll::UntypedStorage<1, 1> mUnkafc03c;
     // NOLINTEND
 
 public:
@@ -92,6 +92,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

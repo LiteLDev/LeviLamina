@@ -4,7 +4,8 @@
 
 namespace details {
 
-template <typename... T0>
-struct filter_to_type_lists {};
+template<typename... T0>
+struct filter_to_type_lists {
+};
 
-} // namespace details
+}

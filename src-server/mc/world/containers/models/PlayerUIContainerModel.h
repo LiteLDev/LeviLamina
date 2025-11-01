@@ -22,7 +22,7 @@ public:
     // vIndex: 1
     virtual ~PlayerUIContainerModel() /*override*/ = default;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual int _getContainerOffset() const /*override*/;
     // NOLINTEND
 
@@ -49,4 +49,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -19,14 +19,14 @@ class SniffGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                    mMob;
-    ::ll::TypedStorage<4, 12, ::Vec3>                   mSniffingRadius;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 12, ::Vec3> mSniffingRadius;
     ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mCooldownRangeSeconds;
-    ::ll::TypedStorage<2, 2, ushort>                    mDurationTicks;
-    ::ll::TypedStorage<8, 8, ::Tick>                    mEndTick;
-    ::ll::TypedStorage<8, 8, ::Tick>                    mCooldownExpiryTick;
-    ::ll::TypedStorage<4, 4, float>                     mSuspicionRadiusHorizontal;
-    ::ll::TypedStorage<4, 4, float>                     mSuspicionRadiusVertical;
+    ::ll::TypedStorage<2, 2, ushort> mDurationTicks;
+    ::ll::TypedStorage<8, 8, ::Tick> mEndTick;
+    ::ll::TypedStorage<8, 8, ::Tick> mCooldownExpiryTick;
+    ::ll::TypedStorage<4, 4, float> mSuspicionRadiusHorizontal;
+    ::ll::TypedStorage<4, 4, float> mSuspicionRadiusVertical;
     // NOLINTEND
 
 public:
@@ -89,4 +89,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

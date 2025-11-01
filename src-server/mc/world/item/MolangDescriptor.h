@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/molang/MolangVersion.h"
 #include "mc/platform/Result.h"
+#include "mc/versionless/molang/MolangVersion.h"
 #include "mc/world/item/ItemDescriptor.h"
 
 // auto generated forward declare list
@@ -65,8 +65,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::std::unique_ptr<::MolangDescriptor>> deserialize(::ReadOnlyBinaryStream& stream);
 
-    MCAPI static ::std::unique_ptr<::MolangDescriptor>
-    fromExpressionTag(::std::string const& tagExpression, ::MolangVersion molangVersion);
+    MCAPI static ::std::unique_ptr<::MolangDescriptor> fromExpressionTag(::std::string const& tagExpression, ::MolangVersion molangVersion);
     // NOLINTEND
 
 public:
@@ -98,4 +97,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

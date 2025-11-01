@@ -23,8 +23,7 @@ public:
     virtual ~IScriptItemCustomComponentSignalCollection() /*override*/ = default;
 
     // vIndex: 13
-    virtual void
-    registerClosures(::HashedString const&, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&) = 0;
+    virtual void registerClosures(::HashedString const&, ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&&) = 0;
 
     // vIndex: 14
     virtual void subscribeToItemForComponent(::ComponentItem&, ::std::vector<::ItemCustomComponentData> const&) = 0;
@@ -38,6 +37,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

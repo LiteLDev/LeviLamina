@@ -5,8 +5,8 @@
 namespace Scripting {
 
 enum class RetrievedHandleType : int {
-    TypedObject       = 0,
-    WeakTypedObject   = 1,
+    TypedObject = 0,
+    WeakTypedObject = 1,
     StrongTypedObject = 2,
 };
 

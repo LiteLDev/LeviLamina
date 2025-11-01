@@ -76,6 +76,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI uint nextInt(uint bound);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
@@ -120,4 +126,5 @@ public:
 
     MCNAPI static void** $vftableForIRandomSeeded();
     // NOLINTEND
+
 };

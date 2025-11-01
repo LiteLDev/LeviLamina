@@ -19,6 +19,7 @@ public:
     SequenceLockGenerator& operator=(SequenceLockGenerator const&);
     SequenceLockGenerator(SequenceLockGenerator const&);
     SequenceLockGenerator();
+
 };
 
-} // namespace Bedrock::Threading
+}

@@ -4,7 +4,8 @@
 
 namespace cg {
 
-template <typename T0>
-struct TaskDispatcherSchedulerTraits {};
+template<typename T0>
+struct TaskDispatcherSchedulerTraits {
+};
 
-} // namespace cg
+}

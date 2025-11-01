@@ -18,4 +18,5 @@ public:
     ProductInfo& operator=(ProductInfo const&);
     ProductInfo(ProductInfo const&);
     ProductInfo();
+
 };

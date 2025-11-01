@@ -16,6 +16,7 @@ public:
     ScriptPacketEventFilterData& operator=(ScriptPacketEventFilterData const&);
     ScriptPacketEventFilterData(ScriptPacketEventFilterData const&);
     ScriptPacketEventFilterData();
+
 };
 
-} // namespace ScriptModuleMinecraftNet::EventFilters
+}

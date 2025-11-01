@@ -14,4 +14,5 @@ public:
     MaelstromConfig& operator=(MaelstromConfig const&);
     MaelstromConfig(MaelstromConfig const&);
     MaelstromConfig();
+
 };

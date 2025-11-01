@@ -2,13 +2,18 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace webrtc { class SessionDescriptionInterface; }
+// clang-format on
+
 namespace NetherNet {
 
 class ConnectResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk6205dd;
+    ::ll::UntypedStorage<8, 8> mUnk6205dd;
     ::ll::UntypedStorage<8, 32> mUnk3bd634;
     // NOLINTEND
 
@@ -22,8 +27,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::std::string ToString() const;
-
-    MCNAPI ~ConnectResponse();
     // NOLINTEND
 
 public:
@@ -31,8 +34,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::NetherNet::ConnectResponse Create(uint64 sessionId, ::std::string sdp);
 
-    MCNAPI static ::std::optional<::NetherNet::ConnectResponse>
-    TryParse(::std::array<::std::string_view, 3> const& tokens);
+    MCNAPI static ::std::optional<::NetherNet::ConnectResponse> TryCreate(uint64 sessionId, ::webrtc::SessionDescriptionInterface const& session);
+
+    MCNAPI static ::std::optional<::NetherNet::ConnectResponse> TryParse(::std::array<::std::string_view, 3> const& tokens);
     // NOLINTEND
 
 public:
@@ -41,11 +45,6 @@ public:
     MCNAPI static ::std::string_view const& kIdentifier();
     // NOLINTEND
 
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };
 
-} // namespace NetherNet
+}

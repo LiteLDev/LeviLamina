@@ -15,4 +15,4 @@ MCNAPI ::BlendingConfig const& config119();
 MCNAPI ::BlendingConfig const& configPre118();
 // NOLINTEND
 
-} // namespace BlendingDataUtil
+}

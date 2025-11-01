@@ -13,7 +13,7 @@ struct ProjectileItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk79e1ba;
+    ::ll::UntypedStorage<4, 4> mUnk79e1ba;
     ::ll::UntypedStorage<8, 32> mUnk94924e;
     // NOLINTEND
 
@@ -26,8 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_20_50::ProjectileItemComponent&
-    operator=(::SharedTypes::v1_20_50::ProjectileItemComponent&&);
+    MCNAPI ::SharedTypes::v1_20_50::ProjectileItemComponent& operator=(::SharedTypes::v1_20_50::ProjectileItemComponent&&);
 
     MCNAPI ~ProjectileItemComponent();
     // NOLINTEND
@@ -43,6 +42,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_50
+}

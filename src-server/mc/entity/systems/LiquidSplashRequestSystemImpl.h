@@ -22,16 +22,7 @@ struct WaterSplashEffectRequestComponent;
 namespace LiquidSplashRequestSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doTick(
-    ::StrictEntityContext const&                                                                 entity,
-    ::UpdateWaterStateRequestComponent const&                                                    waterState,
-    ::Optional<::ActorGameTypeComponent const> const&                                            playerGameType,
-    ::Optional<::WasInLavaFlagComponent const> const&                                            wasInLava,
-    ::Optional<::ActorHeadInWaterFlagComponent const> const&                                     headInWater,
-    ::Optional<::ActorHeadWasInWaterFlagComponent const> const&                                  headWasInWater,
-    ::EntityModifier<::PostSplashGameEventRequestComponent, ::WaterSplashEffectRequestComponent> modifier,
-    ::ExternalDataInterface const&                                                               externalData
-);
+MCNAPI void doTick(::StrictEntityContext const& entity, ::UpdateWaterStateRequestComponent const& waterState, ::Optional<::ActorGameTypeComponent const> const& playerGameType, ::Optional<::WasInLavaFlagComponent const> const& wasInLava, ::Optional<::ActorHeadInWaterFlagComponent const> const& headInWater, ::Optional<::ActorHeadWasInWaterFlagComponent const> const& headWasInWater, ::EntityModifier<::PostSplashGameEventRequestComponent, ::WaterSplashEffectRequestComponent> modifier, ::ExternalDataInterface const& externalData);
 // NOLINTEND
 
-} // namespace LiquidSplashRequestSystemImpl
+}

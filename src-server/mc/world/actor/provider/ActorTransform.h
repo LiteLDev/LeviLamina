@@ -13,4 +13,4 @@ namespace ActorTransform {
 MCNAPI void initializeActor(::EntityContext& entity);
 // NOLINTEND
 
-} // namespace ActorTransform
+}

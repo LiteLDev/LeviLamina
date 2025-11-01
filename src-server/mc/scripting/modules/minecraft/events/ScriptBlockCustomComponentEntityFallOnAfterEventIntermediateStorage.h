@@ -8,13 +8,12 @@
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage
-: public ::ScriptModuleMinecraft::ScriptBlockCustomComponentAfterEventIntermediateStorage {
+struct ScriptBlockCustomComponentEntityFallOnAfterEventIntermediateStorage : public ::ScriptModuleMinecraft::ScriptBlockCustomComponentAfterEventIntermediateStorage {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mEntity;
-    ::ll::TypedStorage<4, 4, float const>            mFallDistance;
+    ::ll::TypedStorage<4, 4, float const> mFallDistance;
     // NOLINTEND
 
 public:
@@ -28,6 +27,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

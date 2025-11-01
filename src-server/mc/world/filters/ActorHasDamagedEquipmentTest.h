@@ -17,7 +17,7 @@ public:
     // vIndex: 4
     virtual ::std::string_view getName() const /*override*/;
 
-    // vIndex: 7
+    // vIndex: 9
     virtual bool _isExpectedItem(::std::vector<::ItemStack const*> const& itemList) const /*override*/;
 
     // vIndex: 0
@@ -43,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

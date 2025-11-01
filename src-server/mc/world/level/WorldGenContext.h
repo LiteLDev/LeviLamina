@@ -14,7 +14,7 @@ struct WorldGenContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Aquifer*>                                                     mAquifer;
+    ::ll::TypedStorage<8, 8, ::Aquifer*> mAquifer;
     ::ll::TypedStorage<8, 64, ::std::function<void(::BlockPos const&, ::Block const&, int)>> mTickUpdateFn;
     ::ll::TypedStorage<8, 8, ::IPreliminarySurfaceProvider const*> mPreliminarySurfaceProvider;
     // NOLINTEND
@@ -43,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

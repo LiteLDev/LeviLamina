@@ -15,7 +15,7 @@ class AttackDefinition : public ::BehaviorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk976952;
+    ::ll::UntypedStorage<4, 4> mUnk976952;
     ::ll::UntypedStorage<8, 32> mUnkfd92bc;
     // NOLINTEND
 
@@ -46,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

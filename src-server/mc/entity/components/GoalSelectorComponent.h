@@ -12,11 +12,11 @@ class GoalSelectorComponent {
 public:
     // GoalSelectorComponent inner types define
     using GoalElement = ::std::pair<ushort, ::PrioritizedGoal>;
-
-    using GoalCondition = bool (*)(::std::pair<ushort, ::PrioritizedGoal>&);
-
+    
+    using GoalCondition = bool(*) (::std::pair<ushort, ::PrioritizedGoal>&);
+    
     using GoalMap = ::std::vector<::std::pair<ushort, ::PrioritizedGoal>>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _eraseGoals(bool (*condition)(::std::pair<ushort, ::PrioritizedGoal>&));
+    MCAPI void _eraseGoals(bool(*condition) (::std::pair<ushort, ::PrioritizedGoal>&));
 
     MCAPI void addGoal(int priority, ::std::unique_ptr<::Goal> goal);
 
@@ -44,4 +44,5 @@ public:
 
     MCAPI void stopNonTargetedGoals();
     // NOLINTEND
+
 };

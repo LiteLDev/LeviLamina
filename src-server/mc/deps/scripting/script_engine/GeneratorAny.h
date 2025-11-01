@@ -41,15 +41,9 @@ public:
     // NOLINTBEGIN
     MCNAPI GeneratorAny(::Scripting::GeneratorAny const& rhs);
 
-    MCNAPI GeneratorAny(
-        ::Scripting::IRuntime*                                                  runtime,
-        ::Scripting::ContextId                                                  contextId,
-        ::Scripting::WeakLifetimeScope                                          scope,
-        ::Scripting::StrongTypedObjectHandle<::Scripting::GeneratorType> const& generatorHandle
-    );
+    MCNAPI GeneratorAny(::Scripting::IRuntime* runtime, ::Scripting::ContextId contextId, ::Scripting::WeakLifetimeScope scope, ::Scripting::StrongTypedObjectHandle<::Scripting::GeneratorType> const& generatorHandle);
 
-    MCNAPI ::Scripting::ResultAny
-    nextGeneric(::entt::meta_any& argAny, ::entt::meta_type const& expectedReturnType) const;
+    MCNAPI ::Scripting::ResultAny nextGeneric(::entt::meta_any& argAny, ::entt::meta_type const& expectedReturnType) const;
 
     MCNAPI ::Scripting::GeneratorAny& operator=(::Scripting::GeneratorAny&& rhs);
     // NOLINTEND
@@ -59,12 +53,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Scripting::GeneratorAny const& rhs);
 
-    MCNAPI void* $ctor(
-        ::Scripting::IRuntime*                                                  runtime,
-        ::Scripting::ContextId                                                  contextId,
-        ::Scripting::WeakLifetimeScope                                          scope,
-        ::Scripting::StrongTypedObjectHandle<::Scripting::GeneratorType> const& generatorHandle
-    );
+    MCNAPI void* $ctor(::Scripting::IRuntime* runtime, ::Scripting::ContextId contextId, ::Scripting::WeakLifetimeScope scope, ::Scripting::StrongTypedObjectHandle<::Scripting::GeneratorType> const& generatorHandle);
     // NOLINTEND
 
 public:
@@ -78,6 +67,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

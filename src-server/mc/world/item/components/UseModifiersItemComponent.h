@@ -19,8 +19,9 @@ class UseModifiersItemComponent : public ::NetworkedItemComponent<::UseModifiers
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                            mUseDuration;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>>           mMovementModifier;
+    ::ll::TypedStorage<4, 4, float> mUseDuration;
+    ::ll::TypedStorage<1, 1, bool> mEmitVibrations;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mMovementModifier;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseSubscription;
     // NOLINTEND
 
@@ -37,11 +38,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -57,4 +54,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

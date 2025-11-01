@@ -10,6 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 8, ::InterpolationPair> mSwellAmount;
-    ::ll::TypedStorage<4, 4, int>                 mSwellDirection;
+    ::ll::TypedStorage<4, 4, int> mSwellDirection;
     // NOLINTEND
+
 };

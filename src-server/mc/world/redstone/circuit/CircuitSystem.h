@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/redstone/circuit/CircuitSceneGraph.h"
 
 // auto generated forward declare list
@@ -18,7 +18,7 @@ public:
     // clang-format off
     class LevelChunkTracking;
     // clang-format on
-
+    
     // CircuitSystem inner types define
     class LevelChunkTracking {
     public:
@@ -26,22 +26,22 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 12, ::BlockPos> mChunkPos;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                                mLockGraph;
-    ::ll::TypedStorage<8, 408, ::CircuitSceneGraph>                               mSceneGraph;
+    ::ll::TypedStorage<1, 1, bool> mLockGraph;
+    ::ll::TypedStorage<8, 408, ::CircuitSceneGraph> mSceneGraph;
     ::ll::TypedStorage<8, 24, ::std::vector<::CircuitSystem::LevelChunkTracking>> mAddedLevelChunk;
-    ::ll::TypedStorage<1, 1, bool>                                                mHasBeenEvaluated;
+    ::ll::TypedStorage<1, 1, bool> mHasBeenEvaluated;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BaseCircuitComponent*
-    createComponent(::BlockPos const& pos, uchar direction, ::std::unique_ptr<::BaseCircuitComponent> newComponent);
+    MCAPI ::BaseCircuitComponent* createComponent(::BlockPos const& pos, uchar direction, ::std::unique_ptr<::BaseCircuitComponent> newComponent);
 
     MCAPI void evaluate(::BlockSource* region);
 
@@ -57,4 +57,5 @@ public:
 
     MCAPI void updateBlocks(::BlockSource& region, ::BlockPos const& chunkPos);
     // NOLINTEND
+
 };

@@ -15,7 +15,7 @@ class OcelotAttackDefinition : public ::BaseGoalDefinition {
 public:
     // OcelotAttackDefinition inner types define
     using self = ::OcelotAttackDefinition;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -41,10 +41,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        ::std::string const&                                                                                   name,
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OcelotAttackDefinition>>& root
-    );
+    MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OcelotAttackDefinition>>& root);
     // NOLINTEND
 
 public:
@@ -52,4 +49,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

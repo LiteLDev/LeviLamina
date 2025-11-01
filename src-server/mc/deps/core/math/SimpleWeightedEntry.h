@@ -4,7 +4,8 @@
 
 namespace Core {
 
-template <typename T0>
-struct SimpleWeightedEntry {};
+template<typename T0>
+struct SimpleWeightedEntry {
+};
 
-} // namespace Core
+}

@@ -4,7 +4,8 @@
 
 namespace Realms {
 
-template <typename T0>
-class CacheDetails {};
+template<typename T0>
+class CacheDetails {
+};
 
-} // namespace Realms
+}

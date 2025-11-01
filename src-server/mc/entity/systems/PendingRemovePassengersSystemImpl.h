@@ -19,13 +19,7 @@ struct VehicleComponent;
 namespace PendingRemovePassengersSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void pendingRemovePassengers(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::VehicleComponent>>,
-    ::StrictEntityContext const&        vehicle,
-    ::PendingRemovePassengersComponent& pendingPassengersToRemoveComponent,
-    ::EntityModifier<::ExitFromPassengerFlagComponent, ::PendingRemovePassengersComponent, ::RemovePassengersComponent>
-        modifier
-);
+MCNAPI void pendingRemovePassengers(::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::VehicleComponent>>, ::StrictEntityContext const& vehicle, ::PendingRemovePassengersComponent& pendingPassengersToRemoveComponent, ::EntityModifier<::ExitFromPassengerFlagComponent, ::PendingRemovePassengersComponent, ::RemovePassengersComponent> modifier);
 // NOLINTEND
 
-} // namespace PendingRemovePassengersSystemImpl
+}

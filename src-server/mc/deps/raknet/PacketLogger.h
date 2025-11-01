@@ -17,9 +17,9 @@ class PacketLogger : public ::RakNet::PluginInterface2 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnka75ee5;
-    ::ll::UntypedStorage<1, 1>   mUnk6e7e17;
-    ::ll::UntypedStorage<1, 1>   mUnk72a124;
+    ::ll::UntypedStorage<1, 1> mUnka75ee5;
+    ::ll::UntypedStorage<1, 1> mUnk6e7e17;
+    ::ll::UntypedStorage<1, 1> mUnk72a124;
     ::ll::UntypedStorage<1, 256> mUnk439e27;
     ::ll::UntypedStorage<1, 256> mUnk2674b6;
     // NOLINTEND
@@ -37,40 +37,10 @@ public:
     virtual ~PacketLogger() /*override*/ = default;
 
     // vIndex: 18
-    virtual void FormatLine(
-        char*,
-        char const*,
-        char const*,
-        uint,
-        uint,
-        uchar,
-        uint const,
-        uint64,
-        ::RakNet::SystemAddress const&,
-        ::RakNet::SystemAddress const&,
-        uint,
-        uint,
-        uint,
-        uint
-    );
+    virtual void FormatLine(char*, char const*, char const*, uint, uint, uchar, uint const, uint64, ::RakNet::SystemAddress const&, ::RakNet::SystemAddress const&, uint, uint, uint, uint);
 
     // vIndex: 17
-    virtual void FormatLine(
-        char*,
-        char const*,
-        char const*,
-        uint,
-        uint,
-        char const*,
-        uint const,
-        uint64,
-        ::RakNet::SystemAddress const&,
-        ::RakNet::SystemAddress const&,
-        uint,
-        uint,
-        uint,
-        uint
-    );
+    virtual void FormatLine(char*, char const*, char const*, uint, uint, char const*, uint const, uint64, ::RakNet::SystemAddress const&, ::RakNet::SystemAddress const&, uint, uint, uint, uint);
 
     // vIndex: 11
     virtual void OnDirectSocketSend(char const*, uint const, ::RakNet::SystemAddress) /*override*/;
@@ -126,6 +96,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

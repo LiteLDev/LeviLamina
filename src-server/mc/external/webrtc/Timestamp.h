@@ -7,6 +7,7 @@
 
 namespace webrtc {
 
-class Timestamp : public ::webrtc::rtc_units_impl::UnitBase<::webrtc::Timestamp> {};
+class Timestamp : public ::webrtc::rtc_units_impl::UnitBase<::webrtc::Timestamp> {
+};
 
-} // namespace webrtc
+}

@@ -14,12 +14,4 @@ struct PlayerPositionModeComponent;
 // clang-format on
 
 class ResetPositionModeSystem {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void tickResetPositionModeSystem(
-        ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::PlayerPositionModeComponent>
-            view
-    );
-    // NOLINTEND
 };

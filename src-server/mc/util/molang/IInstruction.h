@@ -26,7 +26,7 @@ public:
     virtual uint64 getSize() const = 0;
 
     // vIndex: 4
-    virtual auto getCodeAddress() const -> void (*)(::MolangEvalParams&, void*) = 0;
+    virtual auto getCodeAddress() const -> void(*) (::MolangEvalParams&, void*) = 0;
     // NOLINTEND
 
 public:
@@ -34,6 +34,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Molang::details
+}

@@ -22,8 +22,7 @@ public:
     virtual ::std::shared_ptr<::FillingContainer> getBackingContainer(::FullContainerName const&) = 0;
 
     // vIndex: 2
-    virtual void
-    tryCreateEntry(::StorageItemComponent*, ::StorageWeightLimitItemComponent*, ::FullContainerName const&) = 0;
+    virtual void tryCreateEntry(::StorageItemComponent*, ::StorageWeightLimitItemComponent*, ::FullContainerName const&) = 0;
 
     // vIndex: 3
     virtual ~IContainerRegistryAccess();
@@ -46,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

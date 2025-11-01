@@ -16,6 +16,7 @@ public:
     INIParser& operator=(INIParser const&);
     INIParser(INIParser const&);
     INIParser();
+
 };
 
-} // namespace cereal
+}

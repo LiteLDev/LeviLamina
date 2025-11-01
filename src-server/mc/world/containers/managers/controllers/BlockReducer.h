@@ -15,23 +15,24 @@ public:
     // clang-format off
     struct Reduction;
     // clang-format on
-
+    
     // BlockReducer inner types define
     struct Reduction {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 152> mUnkd6e80f;
-        ::ll::UntypedStorage<8, 24>  mUnk1e0fd9;
+        ::ll::UntypedStorage<8, 24> mUnk1e0fd9;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Reduction& operator=(Reduction const&);
         Reduction(Reduction const&);
         Reduction();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -75,4 +76,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

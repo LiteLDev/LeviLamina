@@ -21,27 +21,27 @@ class CameraItemComponentLegacy : public ::ICameraItemComponent {
 public:
     // CameraItemComponentLegacy inner types define
     enum class UseAction : uchar {
-        None  = 0,
+        None = 0,
         Place = 1,
-        Use   = 2,
+        Use = 2,
     };
-
+    
     using PlaceCallback = ::std::function<void(::Vec3 const&, ::Player&)>;
-
+    
     using UseCallback = ::std::function<void(::Player&)>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>              mBlackBarsDuration;
-    ::ll::TypedStorage<4, 4, float>              mBlackBarsScreenRatio;
-    ::ll::TypedStorage<4, 4, float>              mShutterScreenRatio;
-    ::ll::TypedStorage<4, 4, float>              mShutterDuration;
-    ::ll::TypedStorage<4, 4, float>              mPictureDuration;
-    ::ll::TypedStorage<4, 4, float>              mSlideAwayDuration;
-    ::ll::TypedStorage<1, 1, bool>               mPlacingTripod;
-    ::ll::TypedStorage<8, 8, uint64>             mPlacingTripodClientTick;
-    ::ll::TypedStorage<8, 8, uint64>             mPlacingTripodServerTick;
+    ::ll::TypedStorage<4, 4, float> mBlackBarsDuration;
+    ::ll::TypedStorage<4, 4, float> mBlackBarsScreenRatio;
+    ::ll::TypedStorage<4, 4, float> mShutterScreenRatio;
+    ::ll::TypedStorage<4, 4, float> mShutterDuration;
+    ::ll::TypedStorage<4, 4, float> mPictureDuration;
+    ::ll::TypedStorage<4, 4, float> mSlideAwayDuration;
+    ::ll::TypedStorage<1, 1, bool> mPlacingTripod;
+    ::ll::TypedStorage<8, 8, uint64> mPlacingTripodClientTick;
+    ::ll::TypedStorage<8, 8, uint64> mPlacingTripodServerTick;
     ::ll::TypedStorage<8, 8, ::CameraCallbacks*> mCallbacks;
     // NOLINTEND
 
@@ -61,12 +61,10 @@ public:
     virtual void releaseUsing(::ItemStack& instance, ::Player& player, int durationLeft) /*override*/;
 
     // vIndex: 12
-    virtual bool
-    useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const&) /*override*/;
+    virtual bool useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const&) /*override*/;
 
     // vIndex: 7
-    virtual bool canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face) const
-        /*override*/;
+    virtual bool canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face) const /*override*/;
 
     // vIndex: 1
     virtual float blackBarsDuration() const /*override*/;
@@ -93,13 +91,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CameraItemComponentLegacy::UseAction _tryPlace(
-        ::ItemStack const& instance,
-        ::Actor&           actor,
-        ::BlockPos const&  blockPos,
-        uchar              face,
-        ::Vec3&            spawnPos
-    ) const;
+    MCAPI ::CameraItemComponentLegacy::UseAction _tryPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3& spawnPos) const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
     // NOLINTEND
@@ -143,4 +135,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

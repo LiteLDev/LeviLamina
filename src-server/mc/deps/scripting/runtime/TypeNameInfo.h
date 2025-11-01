@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mBindingName;
     ::ll::TypedStorage<8, 32, ::std::string> mTypeName;
-    ::ll::TypedStorage<1, 1, bool>           mIsBound;
+    ::ll::TypedStorage<1, 1, bool> mIsBound;
     // NOLINTEND
 
 public:
@@ -36,6 +36,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

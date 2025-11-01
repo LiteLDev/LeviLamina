@@ -4,7 +4,8 @@
 
 namespace JsonUtil {
 
-template <typename T0, typename T1, typename T2>
-class JsonSchemaTypedNode {};
+template<typename T0, typename T1, typename T2>
+class JsonSchemaTypedNode {
+};
 
-} // namespace JsonUtil
+}

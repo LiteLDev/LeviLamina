@@ -16,10 +16,10 @@ class RoarGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>           mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mRoarTarget;
-    ::ll::TypedStorage<2, 2, ushort>           mDurationTicks;
-    ::ll::TypedStorage<8, 8, ::Tick>           mEndTick;
+    ::ll::TypedStorage<2, 2, ushort> mDurationTicks;
+    ::ll::TypedStorage<8, 8, ::Tick> mEndTick;
     // NOLINTEND
 
 public:
@@ -80,4 +80,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

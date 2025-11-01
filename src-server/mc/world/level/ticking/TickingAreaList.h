@@ -17,11 +17,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool removeDistantEntityAreasAndCheckForRemoved(
-        ::std::vector<::Vec3> const&                 playerPositions,
-        ::std::function<void(::ITickingArea const&)> requeue,
-        ::LevelStorage&                              levelStorage
-    ) /*override*/;
+    virtual bool removeDistantEntityAreasAndCheckForRemoved(::std::vector<::Vec3> const& playerPositions, ::std::function<void(::ITickingArea const&)> requeue, ::LevelStorage& levelStorage) /*override*/;
 
     // vIndex: 0
     virtual ~TickingAreaList() /*override*/;
@@ -36,11 +32,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $removeDistantEntityAreasAndCheckForRemoved(
-        ::std::vector<::Vec3> const&                 playerPositions,
-        ::std::function<void(::ITickingArea const&)> requeue,
-        ::LevelStorage&                              levelStorage
-    );
+    MCAPI bool $removeDistantEntityAreasAndCheckForRemoved(::std::vector<::Vec3> const& playerPositions, ::std::function<void(::ITickingArea const&)> requeue, ::LevelStorage& levelStorage);
     // NOLINTEND
 
 public:
@@ -48,4 +40,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

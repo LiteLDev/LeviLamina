@@ -17,9 +17,9 @@ class NBStartPiece : public ::NBBridgeCrossing {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                    previousPiece;
-    ::ll::TypedStorage<8, 24, ::std::vector<::PieceWeight>>     availableBridgePieces;
-    ::ll::TypedStorage<8, 24, ::std::vector<::PieceWeight>>     availableCastlePieces;
+    ::ll::TypedStorage<8, 32, ::std::string> previousPiece;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PieceWeight>> availableBridgePieces;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PieceWeight>> availableCastlePieces;
     ::ll::TypedStorage<8, 24, ::std::vector<::StructurePiece*>> pendingChildren;
     // NOLINTEND
 
@@ -60,4 +60,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

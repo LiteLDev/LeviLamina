@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/CrashDumpLogBlobHeader.h"
+#include "mc/platform/diagnostics/CrashDumpLogBlobHeader.h"
 
 struct CrashDumpGameplayDataArray : public ::CrashDumpLogBlobHeader {
 public:
@@ -17,4 +17,5 @@ public:
     CrashDumpGameplayDataArray& operator=(CrashDumpGameplayDataArray const&);
     CrashDumpGameplayDataArray(CrashDumpGameplayDataArray const&);
     CrashDumpGameplayDataArray();
+
 };

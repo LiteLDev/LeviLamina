@@ -16,6 +16,7 @@
 #include "mc/world/level/CommandOriginSystem.h"
 #include "mc/world/level/Level.h"
 #include "mc/world/level/LevelChunkMetaDataManager.h"
+#include "mc/world/level/biome/glue/BiomeJsonDocumentGlue.h"
 #include "mc/world/persistence/DynamicPropertiesDefinition.h"
 
 // auto generated forward declare list
@@ -62,26 +63,23 @@ class ServerLevel : public ::Level {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ResourcePackManager&>                           mServerResourcePackManager;
-    ::ll::TypedStorage<8, 8, ::ResourcePackManager&>                           mClientResourcePackManager;
-    ::ll::TypedStorage<8, 64, ::TradeTables>                                   mTradeTable;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager&> mServerResourcePackManager;
+    ::ll::TypedStorage<8, 8, ::ResourcePackManager&> mClientResourcePackManager;
+    ::ll::TypedStorage<8, 64, ::TradeTables> mTradeTable;
     ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::CommandManager>> mCommandManager;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MobEvents>>                   mMobEvents;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MobEvents>> mMobEvents;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::TagCacheManager>>> mTagCacheManager;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PositionTrackingDB::PositionTrackingDBServer>>
-                                                                             mServerPositionTrackerDB;
-    ::ll::TypedStorage<8, 64, ::BossbarManager>                              mBossbarManager;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PositionTrackingDB::PositionTrackingDBServer>> mServerPositionTrackerDB;
+    ::ll::TypedStorage<8, 64, ::BossbarManager> mBossbarManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VolumeEntityManagerServer>> mVolumeEntityManager;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DynamicPropertiesManager>>  mDynamicPropertiesManager;
-    ::ll::TypedStorage<8, 72, ::DynamicPropertiesDefinition>                 mDynamicPropertiesDefinition;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>               mOnActorEntityAdded;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ChunkGenerationManager>>>
-        mChunkGenerationManager;
-    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ServerPlayerSleepManager>>>
-                                                               mServerPlayerSleepManager;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DynamicPropertiesManager>> mDynamicPropertiesManager;
+    ::ll::TypedStorage<8, 72, ::DynamicPropertiesDefinition> mDynamicPropertiesDefinition;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnActorEntityAdded;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ChunkGenerationManager>>> mChunkGenerationManager;
+    ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ServerPlayerSleepManager>>> mServerPlayerSleepManager;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlayerWakeUpSubscription;
-    ::ll::TypedStorage<8, 168, ::PlayerDeathManager>           mPlayerDeathManager;
-    ::ll::TypedStorage<8, 48, ::LevelChunkMetaDataManager>     mLevelChunkMetaDataManager;
+    ::ll::TypedStorage<8, 168, ::PlayerDeathManager> mPlayerDeathManager;
+    ::ll::TypedStorage<8, 48, ::LevelChunkMetaDataManager> mLevelChunkMetaDataManager;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::ServerMapDataManager>>> mMapDataManager;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mNextTelemetrySendTime;
     // NOLINTEND
@@ -99,124 +97,91 @@ public:
     virtual ~ServerLevel() /*override*/;
 
     // vIndex: 1
-    virtual bool initialize(
-        ::std::string const&   levelName,
-        ::LevelSettings const& levelSettings,
-        ::Experiments const&   experiments,
-        ::std::string const*   levelId
-    ) /*override*/;
-
-    // vIndex: 393
-    virtual ::PlayerSleepManager const& getPlayerSleepManager() const /*override*/;
+    virtual bool initialize(::std::string const& levelName, ::LevelSettings const& levelSettings, ::Experiments const& experiments, ::std::string const* levelId, ::std::optional<::std::reference_wrapper<::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>> biomeIdToResolvedData) /*override*/;
 
     // vIndex: 392
+    virtual ::PlayerSleepManager const& getPlayerSleepManager() const /*override*/;
+
+    // vIndex: 391
     virtual ::PlayerSleepManager& getPlayerSleepManager() /*override*/;
 
-    // vIndex: 158
+    // vIndex: 159
     virtual ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> getServerPlayerSleepManager() /*override*/;
 
-    // vIndex: 157
-    virtual ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> getServerPlayerSleepManager() const
-        /*override*/;
-
-    // vIndex: 159
-    virtual void setCommandsEnabled(bool commandsEnabled) /*override*/;
+    // vIndex: 158
+    virtual ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> getServerPlayerSleepManager() const /*override*/;
 
     // vIndex: 160
+    virtual void setCommandsEnabled(bool commandsEnabled) /*override*/;
+
+    // vIndex: 161
     virtual void setWorldTemplateOptionsUnlocked() /*override*/;
 
-    // vIndex: 273
+    // vIndex: 274
     virtual ::ResourcePackManager* getClientResourcePackManager() const /*override*/;
 
-    // vIndex: 274
+    // vIndex: 275
     virtual ::ResourcePackManager* getServerResourcePackManager() const /*override*/;
 
-    // vIndex: 275
+    // vIndex: 276
     virtual ::TradeTables* getTradeTables() /*override*/;
 
-    // vIndex: 290
-    virtual void
-    runCommand(::HashedString const&, ::CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion const) /*override*/;
+    // vIndex: 291
+    virtual void runCommand(::HashedString const&, ::CommandOrigin&, ::CommandOriginSystem, ::CurrentCmdVersion const) /*override*/;
 
-    // vIndex: 289
+    // vIndex: 290
     virtual void runCommand(::Command&, ::CommandOrigin&, ::CommandOriginSystem) /*override*/;
 
-    // vIndex: 276
-    virtual void decrementTagCache(
-        ::std::string const& tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
-    ) /*override*/;
-
     // vIndex: 277
-    virtual void incrementTagCache(
-        ::std::string const& tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
-    ) /*override*/;
+    virtual void decrementTagCache(::std::string const& tag, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&) /*override*/;
 
     // vIndex: 278
+    virtual void incrementTagCache(::std::string const& tag, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&) /*override*/;
+
+    // vIndex: 279
     virtual ::Bedrock::NonOwnerPointer<::TagCacheManager> getTagCacheManager() /*override*/;
 
-    // vIndex: 229
+    // vIndex: 230
     virtual ::LevelChunkMetaDataManager* getLevelChunkMetaDataManager() /*override*/;
 
-    // vIndex: 236
+    // vIndex: 237
     virtual void loadFunctionManager() /*override*/;
 
-    // vIndex: 323
+    // vIndex: 324
     virtual ::Random& getThreadRandom() const /*override*/;
 
-    // vIndex: 302
+    // vIndex: 303
     virtual ::PositionTrackingDB::PositionTrackingDBServer* getPositionTrackerDBServer() const /*override*/;
 
-    // vIndex: 288
-    virtual ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> tryGetVolumeEntityManagerServer() const
-        /*override*/;
-
-    // vIndex: 371
-    virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> getChunkGenerationManager() /*override*/;
+    // vIndex: 289
+    virtual ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> tryGetVolumeEntityManagerServer() const /*override*/;
 
     // vIndex: 370
+    virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> getChunkGenerationManager() /*override*/;
+
+    // vIndex: 369
     virtual ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> getChunkGenerationManager() const /*override*/;
 
-    // vIndex: 372
+    // vIndex: 371
     virtual ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> getMapDataManager() /*override*/;
 
-    // vIndex: 394
+    // vIndex: 393
     virtual void _subTick() /*override*/;
 
-    // vIndex: 387
+    // vIndex: 386
     virtual ::PlayerDeathManager* _getPlayerDeathManager() /*override*/;
 
-    // vIndex: 388
+    // vIndex: 387
     virtual ::MapDataManager& _getMapDataManager() /*override*/;
 
-    // vIndex: 395
+    // vIndex: 394
     virtual void _initializeMapDataManager() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerLevel(
-        ::Bedrock::NotNullNonOwnerPtr<::PacketSender>                packetSender,
-        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
-        ::Bedrock::UniqueOwnerPointer<::LevelStorage>                levelStorage,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelData>                   levelData,
-        ::IMinecraftEventing&                                        eventing,
-        ::ResourcePackManager&                                       serverResourcePackManager,
-        ::ResourcePackManager&                                       clientResourcePackManager,
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>            structureManager,
-        ::MinecraftCommands&                                         commands,
-        ::Scheduler&                                                 callbackContext,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner> const& entityRegistryOwner,
-        ::WeakRef<::EntityContext>                                   levelEntity,
-        ::ItemRegistryRef                                            itemRegistry,
-        bool                                                         clientSideChunkGenerationEnabled,
-        bool                                                         blockNetworkIdsAreHashes,
-        ::NetworkPermissions const&                                  networkPermissions,
-        ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry>           blockTypeRegistry,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>           validator
-    );
+    MCAPI ServerLevel(::Bedrock::NotNullNonOwnerPtr<::PacketSender> packetSender, ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer, ::Bedrock::UniqueOwnerPointer<::LevelStorage> levelStorage, ::Bedrock::NotNullNonOwnerPtr<::LevelData> levelData, ::IMinecraftEventing& eventing, ::ResourcePackManager& serverResourcePackManager, ::ResourcePackManager& clientResourcePackManager, ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager, ::MinecraftCommands& commands, ::Scheduler& callbackContext, ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner> const& entityRegistryOwner, ::WeakRef<::EntityContext> levelEntity, ::ItemRegistryRef itemRegistry, bool clientSideChunkGenerationEnabled, bool blockNetworkIdsAreHashes, ::NetworkPermissions const& networkPermissions, ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry> blockTypeRegistry, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
 
     MCAPI void _initializeActorManager();
 
@@ -234,26 +199,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::PacketSender>                packetSender,
-        ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer,
-        ::Bedrock::UniqueOwnerPointer<::LevelStorage>                levelStorage,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelData>                   levelData,
-        ::IMinecraftEventing&                                        eventing,
-        ::ResourcePackManager&                                       serverResourcePackManager,
-        ::ResourcePackManager&                                       clientResourcePackManager,
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager>            structureManager,
-        ::MinecraftCommands&                                         commands,
-        ::Scheduler&                                                 callbackContext,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner> const& entityRegistryOwner,
-        ::WeakRef<::EntityContext>                                   levelEntity,
-        ::ItemRegistryRef                                            itemRegistry,
-        bool                                                         clientSideChunkGenerationEnabled,
-        bool                                                         blockNetworkIdsAreHashes,
-        ::NetworkPermissions const&                                  networkPermissions,
-        ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry>           blockTypeRegistry,
-        ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>           validator
-    );
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::PacketSender> packetSender, ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer, ::Bedrock::UniqueOwnerPointer<::LevelStorage> levelStorage, ::Bedrock::NotNullNonOwnerPtr<::LevelData> levelData, ::IMinecraftEventing& eventing, ::ResourcePackManager& serverResourcePackManager, ::ResourcePackManager& clientResourcePackManager, ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager, ::MinecraftCommands& commands, ::Scheduler& callbackContext, ::Bedrock::NotNullNonOwnerPtr<::IEntityRegistryOwner> const& entityRegistryOwner, ::WeakRef<::EntityContext> levelEntity, ::ItemRegistryRef itemRegistry, bool clientSideChunkGenerationEnabled, bool blockNetworkIdsAreHashes, ::NetworkPermissions const& networkPermissions, ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry> blockTypeRegistry, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
     // NOLINTEND
 
 public:
@@ -265,12 +211,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $initialize(
-        ::std::string const&   levelName,
-        ::LevelSettings const& levelSettings,
-        ::Experiments const&   experiments,
-        ::std::string const*   levelId
-    );
+    MCAPI bool $initialize(::std::string const& levelName, ::LevelSettings const& levelSettings, ::Experiments const& experiments, ::std::string const* levelId, ::std::optional<::std::reference_wrapper<::std::unordered_map<::std::string, ::std::unique_ptr<::BiomeJsonDocumentGlue::ResolvedBiomeData>>>> biomeIdToResolvedData);
 
     MCFOLD ::PlayerSleepManager const& $getPlayerSleepManager() const;
 
@@ -290,15 +231,9 @@ public:
 
     MCAPI ::TradeTables* $getTradeTables();
 
-    MCAPI void $decrementTagCache(
-        ::std::string const& tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
-    );
+    MCAPI void $decrementTagCache(::std::string const& tag, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&);
 
-    MCAPI void $incrementTagCache(
-        ::std::string const& tag,
-        ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&
-    );
+    MCAPI void $incrementTagCache(::std::string const& tag, ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>&);
 
     MCAPI ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();
 
@@ -336,4 +271,5 @@ public:
 
     MCNAPI static void** $vftableForILevel();
     // NOLINTEND
+
 };

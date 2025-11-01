@@ -4,7 +4,8 @@
 
 namespace Core {
 
-template <typename T0, typename T1>
-struct Keyframes {};
+template<typename T0, typename T1>
+struct Keyframes {
+};
 
-} // namespace Core
+}

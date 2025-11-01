@@ -24,4 +24,5 @@ public:
 
     MCNAPI float getTimeSumAverageSeconds() const;
     // NOLINTEND
+
 };

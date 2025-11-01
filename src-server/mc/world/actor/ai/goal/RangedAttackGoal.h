@@ -17,31 +17,31 @@ class RangedAttackGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>               mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mTarget;
-    ::ll::TypedStorage<1, 1, bool>                 mIsChargedAttack;
-    ::ll::TypedStorage<1, 1, bool>                 mUsingChargedItem;
-    ::ll::TypedStorage<1, 1, bool>                 mSetPersistent;
-    ::ll::TypedStorage<1, 1, bool>                 mSwing;
-    ::ll::TypedStorage<4, 4, int>                  mReloadBurstTicks;
-    ::ll::TypedStorage<4, 4, int>                  mCanSeeTargetTicks;
-    ::ll::TypedStorage<4, 4, int>                  mBurstShotsLeft;
-    ::ll::TypedStorage<4, 4, int>                  mBurstTicks;
-    ::ll::TypedStorage<4, 4, int>                  mBurstCooldownTicks;
-    ::ll::TypedStorage<4, 4, int>                  mChargeTicks;
-    ::ll::TypedStorage<4, 4, int>                  mReloadTicksMin;
-    ::ll::TypedStorage<4, 4, int>                  mReloadTicksMax;
-    ::ll::TypedStorage<4, 4, int>                  mChargeReadyTicks;
-    ::ll::TypedStorage<4, 4, int>                  mChargeReloadTicks;
-    ::ll::TypedStorage<4, 4, int>                  mBurstShots;
-    ::ll::TypedStorage<4, 4, int>                  mTargetInSightTicks;
-    ::ll::TypedStorage<4, 4, float>                mAttackRadius;
-    ::ll::TypedStorage<4, 4, float>                mAttackRadiusMin;
-    ::ll::TypedStorage<4, 4, float>                mAttackRadiusMinSq;
-    ::ll::TypedStorage<4, 4, float>                mMaxRotationX;
-    ::ll::TypedStorage<4, 4, float>                mMaxHeadRotationY;
-    ::ll::TypedStorage<4, 4, float>                mRangedFov;
-    ::ll::TypedStorage<4, 4, float>                mSpeedMultiplier;
+    ::ll::TypedStorage<1, 1, bool> mIsChargedAttack;
+    ::ll::TypedStorage<1, 1, bool> mUsingChargedItem;
+    ::ll::TypedStorage<1, 1, bool> mSetPersistent;
+    ::ll::TypedStorage<1, 1, bool> mSwing;
+    ::ll::TypedStorage<4, 4, int> mReloadBurstTicks;
+    ::ll::TypedStorage<4, 4, int> mCanSeeTargetTicks;
+    ::ll::TypedStorage<4, 4, int> mBurstShotsLeft;
+    ::ll::TypedStorage<4, 4, int> mBurstTicks;
+    ::ll::TypedStorage<4, 4, int> mBurstCooldownTicks;
+    ::ll::TypedStorage<4, 4, int> mChargeTicks;
+    ::ll::TypedStorage<4, 4, int> mReloadTicksMin;
+    ::ll::TypedStorage<4, 4, int> mReloadTicksMax;
+    ::ll::TypedStorage<4, 4, int> mChargeReadyTicks;
+    ::ll::TypedStorage<4, 4, int> mChargeReloadTicks;
+    ::ll::TypedStorage<4, 4, int> mBurstShots;
+    ::ll::TypedStorage<4, 4, int> mTargetInSightTicks;
+    ::ll::TypedStorage<4, 4, float> mAttackRadius;
+    ::ll::TypedStorage<4, 4, float> mAttackRadiusMin;
+    ::ll::TypedStorage<4, 4, float> mAttackRadiusMinSq;
+    ::ll::TypedStorage<4, 4, float> mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float> mMaxHeadRotationY;
+    ::ll::TypedStorage<4, 4, float> mRangedFov;
+    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
     // NOLINTEND
 
 public:
@@ -80,8 +80,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _dischargeCarriedItem();
 
-    MCAPI void
-    handleAttackBehavior(::Actor* lockedTarget, ::Vec3 const& lockedTargetPos, float targetDistanceSq, bool canSee);
+    MCAPI void handleAttackBehavior(::Actor* lockedTarget, ::Vec3 const& lockedTargetPos, float targetDistanceSq, bool canSee);
     // NOLINTEND
 
 public:
@@ -105,4 +104,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

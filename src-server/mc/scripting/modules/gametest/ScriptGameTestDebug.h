@@ -19,6 +19,7 @@ public:
 
     MCNAPI static void timeout(int seconds);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleGameTest
+}

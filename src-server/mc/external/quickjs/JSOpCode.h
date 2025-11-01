@@ -17,4 +17,5 @@ public:
     JSOpCode& operator=(JSOpCode const&);
     JSOpCode(JSOpCode const&);
     JSOpCode();
+
 };

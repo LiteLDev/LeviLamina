@@ -13,4 +13,4 @@ namespace EmitParticleSystem {
 MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
-} // namespace EmitParticleSystem
+}

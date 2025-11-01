@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/CrashDumpLogFieldFormat.h"
+#include "mc/platform/diagnostics/CrashDumpLogFieldFormat.h"
 
-struct CrashDumpFormatEntryImpl : public ::CrashDumpLogFieldFormat {};
+struct CrashDumpFormatEntryImpl : public ::CrashDumpLogFieldFormat {
+};

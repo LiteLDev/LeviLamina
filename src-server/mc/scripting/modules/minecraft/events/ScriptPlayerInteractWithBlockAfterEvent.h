@@ -22,16 +22,8 @@ struct ScriptPlayerInteractWithBlockAfterEvent : public ::ScriptModuleMinecraft:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-        mBeforeItemStack;
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-        mAfterItemStack;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mBeforeItemStack;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mAfterItemStack;
     // NOLINTEND
 
 public:
@@ -42,20 +34,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    ScriptPlayerInteractWithBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent const&);
+    MCAPI ScriptPlayerInteractWithBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent const&);
 
     MCAPI ScriptPlayerInteractWithBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent&&);
 
-    MCAPI ScriptPlayerInteractWithBlockAfterEvent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>                     player,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>                      block,
-        ::ScriptModuleMinecraft::ScriptFacing                                                           blockFace,
-        ::Vec3                                                                                          faceLocation,
-        bool                                                                                            isFirstEvent
-    );
+    MCAPI ScriptPlayerInteractWithBlockAfterEvent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock> block, ::ScriptModuleMinecraft::ScriptFacing blockFace, ::Vec3 faceLocation, bool isFirstEvent);
 
     MCAPI ~ScriptPlayerInteractWithBlockAfterEvent();
     // NOLINTEND
@@ -73,15 +56,7 @@ public:
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockAfterEvent&&);
 
-    MCAPI void* $ctor(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>                     player,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>                      block,
-        ::ScriptModuleMinecraft::ScriptFacing                                                           blockFace,
-        ::Vec3                                                                                          faceLocation,
-        bool                                                                                            isFirstEvent
-    );
+    MCAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock> block, ::ScriptModuleMinecraft::ScriptFacing blockFace, ::Vec3 faceLocation, bool isFirstEvent);
     // NOLINTEND
 
 public:
@@ -89,6 +64,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -15,7 +15,7 @@ class BribeableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk9dc398;
+    ::ll::UntypedStorage<4, 4> mUnk9dc398;
     ::ll::UntypedStorage<8, 24> mUnk1fe0be;
     // NOLINTEND
 
@@ -34,8 +34,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BribeableDefinition>>& root
-    );
+    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BribeableDefinition>>& root);
     // NOLINTEND
+
 };

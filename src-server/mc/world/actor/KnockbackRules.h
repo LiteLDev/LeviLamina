@@ -23,4 +23,4 @@ MCNAPI bool isKnockbackResistant(::Actor const& actor);
 MCNAPI float const& KNOCKBACK_DAMPENING();
 // NOLINTEND
 
-} // namespace KnockbackRules
+}

@@ -13,4 +13,4 @@ MCNAPI ::Bedrock::Result<::std::string> _writeFile(::std::string const& filePath
 MCNAPI bool isFileTypeValid(::std::string const& filePath);
 // NOLINTEND
 
-} // namespace MakeCodeFileIO
+}

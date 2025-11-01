@@ -15,11 +15,11 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk1011ef;
     ::ll::UntypedStorage<8, 32> mUnk2172c9;
-    ::ll::UntypedStorage<8, 8>  mUnk657388;
-    ::ll::UntypedStorage<8, 8>  mUnk5990e0;
-    ::ll::UntypedStorage<4, 4>  mUnk657618;
-    ::ll::UntypedStorage<8, 8>  mUnkd41f5c;
-    ::ll::UntypedStorage<8, 8>  mUnkf25ac3;
+    ::ll::UntypedStorage<8, 8> mUnk657388;
+    ::ll::UntypedStorage<8, 8> mUnk5990e0;
+    ::ll::UntypedStorage<4, 4> mUnk657618;
+    ::ll::UntypedStorage<8, 8> mUnkd41f5c;
+    ::ll::UntypedStorage<8, 8> mUnkf25ac3;
     // NOLINTEND
 
 public:
@@ -41,6 +41,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

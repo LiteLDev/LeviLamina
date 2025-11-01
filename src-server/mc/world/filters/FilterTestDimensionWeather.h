@@ -16,12 +16,12 @@ class FilterTestDimensionWeather : public ::FilterTest {
 public:
     // FilterTestDimensionWeather inner types define
     enum class WeatherType : int {
-        Undefined     = -1,
-        Clear         = 0,
+        Undefined = -1,
+        Clear = 0,
         Precipitation = 1,
-        Thunderstorm  = 2,
+        Thunderstorm = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -41,6 +41,9 @@ public:
     virtual ::std::string_view getName() const /*override*/;
 
     // vIndex: 6
+    virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getValue() const /*override*/;
+
+    // vIndex: 8
     virtual ::Json::Value _serializeValue() const /*override*/;
 
     // vIndex: 0
@@ -56,6 +59,8 @@ public:
 
     MCNAPI ::std::string_view $getName() const;
 
+    MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getValue() const;
+
     MCNAPI ::Json::Value $_serializeValue() const;
     // NOLINTEND
 
@@ -64,4 +69,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

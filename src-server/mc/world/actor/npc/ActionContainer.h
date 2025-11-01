@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::variant<::npc::CommandAction, ::npc::UrlAction>>> mActions;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                                                 mButtons;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>> mButtons;
     // NOLINTEND
 
 public:
@@ -41,6 +41,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace npc
+}

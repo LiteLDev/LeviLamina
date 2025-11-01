@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk5253c3;
-    ::ll::UntypedStorage<4, 4>  mUnk376641;
+    ::ll::UntypedStorage<4, 4> mUnk376641;
     // NOLINTEND
 
 public:
@@ -21,8 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch&
-    operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch&&);
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch& operator=(::SharedTypes::v1_21_20::JigsawStructure::ProcessorRule::RandomBlockMatch&&);
 
     MCNAPI ~RandomBlockMatch();
     // NOLINTEND
@@ -32,6 +31,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_20::JigsawStructure::ProcessorRule
+}

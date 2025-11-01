@@ -10,6 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::LoadingState> mLoadingState;
-    ::ll::TypedStorage<4, 4, float>          mLoadingProgress;
+    ::ll::TypedStorage<4, 4, float> mLoadingProgress;
     // NOLINTEND
+
 };

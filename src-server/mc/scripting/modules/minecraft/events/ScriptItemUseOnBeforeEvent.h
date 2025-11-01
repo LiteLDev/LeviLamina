@@ -34,14 +34,9 @@ public:
 
     MCAPI ScriptItemUseOnBeforeEvent(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
 
-    MCAPI ScriptItemUseOnBeforeEvent(
-        ::ItemUseOnEvent const&               itemEvent,
-        ::Player const&                       player,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
+    MCAPI ScriptItemUseOnBeforeEvent(::ItemUseOnEvent const& itemEvent, ::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&
-    operator=(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent& operator=(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
     // NOLINTEND
 
 public:
@@ -59,9 +54,9 @@ public:
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent&&);
 
-    MCAPI void*
-    $ctor(::ItemUseOnEvent const& itemEvent, ::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
+    MCAPI void* $ctor(::ItemUseOnEvent const& itemEvent, ::Player const& player, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

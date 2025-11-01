@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void addEnvironmentTrigger(::ActorDefinitionTrigger const& trigger);
     // NOLINTEND
+
 };

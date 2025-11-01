@@ -16,6 +16,7 @@ public:
     FileWatcherHandle& operator=(FileWatcherHandle const&);
     FileWatcherHandle(FileWatcherHandle const&);
     FileWatcherHandle();
+
 };
 
-} // namespace mce
+}

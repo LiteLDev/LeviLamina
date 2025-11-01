@@ -5,7 +5,7 @@
 namespace Editor::ScriptModule {
 
 enum class ScriptBlockPaletteItemType : int {
-    Simple      = 0,
+    Simple = 0,
     Probability = 1,
 };
 

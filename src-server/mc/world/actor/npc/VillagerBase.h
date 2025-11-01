@@ -20,16 +20,16 @@ class VillagerBase : public ::Mob {
 public:
     // VillagerBase inner types define
     enum class BiomeType : int {
-        Plains   = 0,
-        Desert   = 1,
-        Jungle   = 2,
+        Plains = 0,
+        Desert = 1,
+        Jungle = 2,
         Savannah = 3,
-        Snow     = 4,
-        Swamp    = 5,
-        Taiga    = 6,
-        Count    = 7,
+        Snow = 4,
+        Swamp = 5,
+        Taiga = 6,
+        Count = 7,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -63,11 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VillagerBase(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI VillagerBase(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCAPI void _addParticlesAroundSelf(::ParticleType particleType);
 
@@ -79,11 +75,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -109,4 +101,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

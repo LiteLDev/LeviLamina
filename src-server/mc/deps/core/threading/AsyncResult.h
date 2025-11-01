@@ -11,4 +11,4 @@ namespace Bedrock::Threading::AsyncResult {
 MCNAPI ::Bedrock::Threading::Async<void> done();
 // NOLINTEND
 
-} // namespace Bedrock::Threading::AsyncResult
+}

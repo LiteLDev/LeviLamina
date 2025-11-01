@@ -17,8 +17,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 59
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
-        /*override*/;
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const /*override*/;
 
     // vIndex: 0
     virtual ~GlowstoneBlock() /*override*/ = default;
@@ -35,4 +34,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -16,4 +16,5 @@ public:
     RelocEntry& operator=(RelocEntry const&);
     RelocEntry(RelocEntry const&);
     RelocEntry();
+
 };

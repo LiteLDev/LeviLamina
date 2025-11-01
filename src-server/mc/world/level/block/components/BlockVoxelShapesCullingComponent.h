@@ -11,13 +11,13 @@ struct BlockVoxelShapesCullingComponent {
 public:
     // BlockVoxelShapesCullingComponent inner types define
     using FaceShapeHandles = ::Bedrock::DenseEnumMap<::SharedTypes::Facing, ::VoxelShapes::RegistryHandle, 6>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                mOcclusionShapeName;
+    ::ll::TypedStorage<8, 32, ::std::string> mOcclusionShapeName;
     ::ll::TypedStorage<2, 2, ::VoxelShapes::RegistryHandle> mOcclusionShapeHandle;
-    ::ll::TypedStorage<2, 12, ::Bedrock::DenseEnumMap<::SharedTypes::Facing, ::VoxelShapes::RegistryHandle, 6>>
-        mOcclusionShapeHandlesByFace;
+    ::ll::TypedStorage<2, 12, ::Bedrock::DenseEnumMap<::SharedTypes::Facing, ::VoxelShapes::RegistryHandle, 6>> mOcclusionShapeHandlesByFace;
     // NOLINTEND
+
 };

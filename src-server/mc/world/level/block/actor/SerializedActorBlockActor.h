@@ -29,22 +29,23 @@ public:
     // clang-format off
     struct SerializedActor;
     // clang-format on
-
+    
     // SerializedActorBlockActor inner types define
     struct SerializedActor {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mActorIdentifier;
-        ::ll::TypedStorage<8, 24, ::CompoundTag>                mSaveData;
+        ::ll::TypedStorage<8, 24, ::CompoundTag> mSaveData;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 200, ::SerializedActorBlockActor::SerializedActor> mSerializedActor;
-    ::ll::TypedStorage<4, 4, int>                                            mPose;
+    ::ll::TypedStorage<4, 4, int> mPose;
     // NOLINTEND
 
 public:
@@ -60,25 +61,15 @@ public:
     virtual void onChanged(::BlockSource& region) /*override*/;
 
     // vIndex: 17
-    virtual void executeEvent(
-        ::BlockSource&,
-        ::BlockPos const& pos,
-        ::Block const&,
-        ::std::string const& eventName,
-        ::Actor&             actor
-    ) /*override*/;
+    virtual void executeEvent(::BlockSource&, ::BlockPos const& pos, ::Block const&, ::std::string const& eventName, ::Actor& actor) /*override*/;
 
     // vIndex: 23
-    virtual void getDebugText(
-        ::std::vector<::std::string>& outputInfo,
-        ::BlockPos const&             debugPos,
-        ::BlockSource const*          region
-    ) const /*override*/;
-
-    // vIndex: 41
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+    virtual void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos, ::BlockSource const* region) const /*override*/;
 
     // vIndex: 42
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
+
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -88,12 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Actor* _loadSerializedActor(
-        ::BlockSource&  region,
-        ::ActorFactory& actorFactory,
-        ::Vec3 const&   pos,
-        ::Vec2 const&   rotation
-    ) const;
+    MCAPI ::Actor* _loadSerializedActor(::BlockSource& region, ::ActorFactory& actorFactory, ::Vec3 const& pos, ::Vec2 const& rotation) const;
 
     MCAPI void loadUserData(::CompoundTag const& tag);
 
@@ -123,19 +109,9 @@ public:
 
     MCAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void $executeEvent(
-        ::BlockSource&,
-        ::BlockPos const& pos,
-        ::Block const&,
-        ::std::string const& eventName,
-        ::Actor&             actor
-    );
+    MCAPI void $executeEvent(::BlockSource&, ::BlockPos const& pos, ::Block const&, ::std::string const& eventName, ::Actor& actor);
 
-    MCAPI void $getDebugText(
-        ::std::vector<::std::string>& outputInfo,
-        ::BlockPos const&             debugPos,
-        ::BlockSource const*          region
-    ) const;
+    MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos, ::BlockSource const* region) const;
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
@@ -147,4 +123,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

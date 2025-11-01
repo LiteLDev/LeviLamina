@@ -16,4 +16,5 @@ public:
     // NOLINTBEGIN
     MCAPI static int const& MAX_THREAT_LEVEL();
     // NOLINTEND
+
 };

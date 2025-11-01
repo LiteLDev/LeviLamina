@@ -20,13 +20,7 @@ struct StateVectorComponent;
 namespace UpdateEntityAfterFallOn {
 // functions
 // NOLINTBEGIN
-MCNAPI void onBounceStarted(
-    ::StrictEntityContext const&                                                                      entity,
-    ::BlockPos const&                                                                                 bounceStartPos,
-    ::Block const&                                                                                    block,
-    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::BounceComponent> const&            playerView,
-    ::ViewT<::StrictEntityContext, ::Include<::MinecartFlagComponent>, ::StateVectorComponent> const& minecartView
-);
+MCNAPI void onBounceStarted(::StrictEntityContext const& entity, ::BlockPos const& bounceStartPos, ::Block const& block, ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::BounceComponent> const& playerView, ::ViewT<::StrictEntityContext, ::Include<::MinecartFlagComponent>, ::StateVectorComponent> const& minecartView);
 // NOLINTEND
 
-} // namespace UpdateEntityAfterFallOn
+}

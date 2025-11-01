@@ -19,21 +19,19 @@ class MaceItem : public ::WeaponItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 54
+    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 53
-    virtual bool
-    isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const
-        /*override*/;
+    // vIndex: 54
+    virtual bool isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 85
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
     // vIndex: 37
     virtual float getAttackDamageBonus(::Actor const& attacker) const /*override*/;
 
-    // vIndex: 83
+    // vIndex: 84
     virtual float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const /*override*/;
 
     // vIndex: 32
@@ -48,8 +46,7 @@ public:
     // NOLINTBEGIN
     MCAPI int $getEnchantSlot() const;
 
-    MCAPI bool
-    $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
+    MCAPI bool $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
 
     MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
@@ -65,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

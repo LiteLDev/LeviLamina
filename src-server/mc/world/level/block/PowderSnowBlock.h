@@ -25,24 +25,19 @@ class PowderSnowBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&                                  pos,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const /*override*/;
+    virtual ::AABB getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const> entity) const /*override*/;
 
-    // vIndex: 111
+    // vIndex: 110
     virtual bool causesFreezeEffect() const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     // vIndex: 22
@@ -50,9 +45,6 @@ public:
 
     // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
-
-    // vIndex: 24
-    virtual bool canConnect(::Block const&, uchar, ::Block const&) const /*override*/;
 
     // vIndex: 0
     virtual ~PowderSnowBlock() /*override*/ = default;
@@ -77,12 +69,7 @@ public:
 
     MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI ::AABB $getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&                                  pos,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
+    MCAPI ::AABB $getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const> entity) const;
 
     MCFOLD bool $causesFreezeEffect() const;
 
@@ -91,8 +78,6 @@ public:
     MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
 
     MCFOLD bool $isLavaBlocking() const;
-
-    MCFOLD bool $canConnect(::Block const&, uchar, ::Block const&) const;
     // NOLINTEND
 
 public:
@@ -100,4 +85,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

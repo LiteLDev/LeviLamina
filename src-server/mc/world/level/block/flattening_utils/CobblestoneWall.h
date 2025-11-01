@@ -13,4 +13,4 @@ namespace FlatteningUtils::CobblestoneWall {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-} // namespace FlatteningUtils::CobblestoneWall
+}

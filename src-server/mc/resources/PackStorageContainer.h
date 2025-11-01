@@ -6,4 +6,5 @@
 #include "mc/deps/core/threading/SharedLockbox.h"
 #include "mc/resources/PackStorage.h"
 
-class PackStorageContainer : public ::Bedrock::Threading::SharedLockbox<::PackStorage, ::std::shared_mutex> {};
+class PackStorageContainer : public ::Bedrock::Threading::SharedLockbox<::PackStorage, ::std::shared_mutex> {
+};

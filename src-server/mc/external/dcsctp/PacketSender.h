@@ -17,7 +17,7 @@ class PacketSender {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkcfadc4;
+    ::ll::UntypedStorage<8, 8> mUnkcfadc4;
     ::ll::UntypedStorage<8, 64> mUnk6c0f8b;
     // NOLINTEND
 
@@ -30,10 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PacketSender(
-        ::dcsctp::DcSctpSocketCallbacks&                                                 callbacks,
-        ::std::function<void(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)> on_sent_packet
-    );
+    MCNAPI PacketSender(::dcsctp::DcSctpSocketCallbacks& callbacks, ::std::function<void(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)> on_sent_packet);
 
     MCNAPI bool Send(::dcsctp::SctpPacket::Builder& builder, bool write_checksum);
 
@@ -43,10 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::dcsctp::DcSctpSocketCallbacks&                                                 callbacks,
-        ::std::function<void(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)> on_sent_packet
-    );
+    MCNAPI void* $ctor(::dcsctp::DcSctpSocketCallbacks& callbacks, ::std::function<void(::rtc::ArrayView<uchar const>, ::dcsctp::SendPacketStatus)> on_sent_packet);
     // NOLINTEND
 
 public:
@@ -54,6 +48,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

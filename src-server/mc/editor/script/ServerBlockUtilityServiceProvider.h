@@ -24,13 +24,7 @@ public:
     virtual ::Editor::BlockUtils::CommonBlockUtilityServiceProvider& getCommonInterface() = 0;
 
     // vIndex: 2
-    virtual void fillVolume(
-        ::std::variant<
-            ::BlockVolumeBase const*,
-            ::CompoundBlockVolume const*,
-            ::Editor::RelativeVolumeListBlockVolume const*> const,
-        ::std::optional<::Block const*> const
-    ) = 0;
+    virtual void fillVolume(::std::variant<::BlockVolumeBase const*, ::CompoundBlockVolume const*, ::Editor::RelativeVolumeListBlockVolume const*> const, ::std::optional<::Block const*> const) = 0;
     // NOLINTEND
 
 public:
@@ -38,6 +32,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Editor::BlockUtils
+}

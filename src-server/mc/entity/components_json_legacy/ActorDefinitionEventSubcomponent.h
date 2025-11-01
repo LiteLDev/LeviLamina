@@ -17,11 +17,11 @@ class ActorDefinitionEventSubcomponent : public ::OnHitSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                       mAffectShooter;
-    ::ll::TypedStorage<1, 1, bool>                       mAffectProjectile;
-    ::ll::TypedStorage<1, 1, bool>                       mAffectTarget;
-    ::ll::TypedStorage<1, 1, bool>                       mAffectSplashArea;
-    ::ll::TypedStorage<4, 4, float>                      mSplashArea;
+    ::ll::TypedStorage<1, 1, bool> mAffectShooter;
+    ::ll::TypedStorage<1, 1, bool> mAffectProjectile;
+    ::ll::TypedStorage<1, 1, bool> mAffectTarget;
+    ::ll::TypedStorage<1, 1, bool> mAffectSplashArea;
+    ::ll::TypedStorage<4, 4, float> mSplashArea;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mTrigger;
     // NOLINTEND
 
@@ -41,7 +41,7 @@ public:
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent&) /*override*/;
 
     // vIndex: 4
-    virtual char const* getName() /*override*/;
+    virtual char const* getName() const /*override*/;
     // NOLINTEND
 
 public:
@@ -53,7 +53,7 @@ public:
 
     MCNAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent&);
 
-    MCNAPI char const* $getName();
+    MCNAPI char const* $getName() const;
     // NOLINTEND
 
 public:
@@ -61,4 +61,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

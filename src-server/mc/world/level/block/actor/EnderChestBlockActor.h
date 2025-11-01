@@ -18,7 +18,7 @@ public:
     // vIndex: 0
     virtual ~EnderChestBlockActor() /*override*/ = default;
 
-    // vIndex: 46
+    // vIndex: 47
     virtual void openBy(::Player& p) /*override*/;
 
     // vIndex: 32
@@ -45,4 +45,5 @@ public:
 
     MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
+
 };

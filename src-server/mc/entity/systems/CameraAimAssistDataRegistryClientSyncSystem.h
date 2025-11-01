@@ -13,4 +13,4 @@ namespace CameraAimAssistDataRegistryClientSyncSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace CameraAimAssistDataRegistryClientSyncSystem
+}

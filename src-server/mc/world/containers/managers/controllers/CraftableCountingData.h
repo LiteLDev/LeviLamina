@@ -15,4 +15,5 @@ public:
     CraftableCountingData& operator=(CraftableCountingData const&);
     CraftableCountingData(CraftableCountingData const&);
     CraftableCountingData();
+
 };

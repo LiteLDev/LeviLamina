@@ -18,4 +18,5 @@ public:
     zip_extra_field& operator=(zip_extra_field const&);
     zip_extra_field(zip_extra_field const&);
     zip_extra_field();
+
 };

@@ -13,4 +13,4 @@ MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getDeadSpli
 MCAPI ::std::vector<::BlockType::RemovedStateCollection::SplitBlock> getHangTypeSplitStates(bool dead);
 // NOLINTEND
 
-} // namespace FlatteningUtils::CoralWallFan1
+}

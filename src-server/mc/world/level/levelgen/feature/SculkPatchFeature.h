@@ -19,14 +19,14 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mCanPlaceSculkPatchOn;
-    ::ll::TypedStorage<8, 8, ::Block const*>                    mBlock;
-    ::ll::TypedStorage<4, 4, float>                             mBlockPlacementChance;
-    ::ll::TypedStorage<4, 4, int>                               mCursorCount;
-    ::ll::TypedStorage<4, 4, int>                               mChargeAmount;
-    ::ll::TypedStorage<4, 4, int>                               mSpreadAttempts;
-    ::ll::TypedStorage<4, 4, int>                               mGrowthRounds;
-    ::ll::TypedStorage<4, 4, int>                               mSpreadRounds;
-    ::ll::TypedStorage<4, 8, ::IntRange>                        mExtraGrowthChance;
+    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
+    ::ll::TypedStorage<4, 4, float> mBlockPlacementChance;
+    ::ll::TypedStorage<4, 4, int> mCursorCount;
+    ::ll::TypedStorage<4, 4, int> mChargeAmount;
+    ::ll::TypedStorage<4, 4, int> mSpreadAttempts;
+    ::ll::TypedStorage<4, 4, int> mGrowthRounds;
+    ::ll::TypedStorage<4, 4, int> mSpreadRounds;
+    ::ll::TypedStorage<4, 8, ::IntRange> mExtraGrowthChance;
     // NOLINTEND
 
 public:
@@ -56,4 +56,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

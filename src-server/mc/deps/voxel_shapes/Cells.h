@@ -19,9 +19,9 @@ class Cells {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3e79bc;
-    ::ll::UntypedStorage<1, 1>  mUnkc1f84e;
-    ::ll::UntypedStorage<1, 1>  mUnk69d3a4;
+    ::ll::UntypedStorage<1, 1> mUnk3e79bc;
+    ::ll::UntypedStorage<1, 1> mUnkc1f84e;
+    ::ll::UntypedStorage<1, 1> mUnk69d3a4;
     ::ll::UntypedStorage<8, 72> mUnk3ea7f6;
     // NOLINTEND
 
@@ -36,12 +36,7 @@ public:
     // NOLINTBEGIN
     MCNAPI Cells(::VoxelShapes::Cells&&);
 
-    MCNAPI void forEachBox(
-        ::brstd::function_ref<
-            void(schar, schar, schar, schar, schar, schar) const,
-            void(schar, schar, schar, schar, schar, schar)> consumer,
-        bool                                                mergeNeighbors
-    ) const;
+    MCNAPI void forEachBox(::brstd::function_ref<void(schar, schar, schar, schar, schar, schar)const, void(schar, schar, schar, schar, schar, schar)> consumer, bool mergeNeighbors) const;
 
     MCNAPI ::VoxelShapes::Cells& operator=(::VoxelShapes::Cells&&);
 
@@ -55,14 +50,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::VoxelShapes::Cells join(
-        ::VoxelShapes::Cells const&       first,
-        ::VoxelShapes::Cells const&       second,
-        ::VoxelShapes::IndexMerger const& xMerger,
-        ::VoxelShapes::IndexMerger const& yMerger,
-        ::VoxelShapes::IndexMerger const& zMerger,
-        ::VoxelShapes::JoinOperation      operation
-    );
+    MCNAPI static ::VoxelShapes::Cells join(::VoxelShapes::Cells const& first, ::VoxelShapes::Cells const& second, ::VoxelShapes::IndexMerger const& xMerger, ::VoxelShapes::IndexMerger const& yMerger, ::VoxelShapes::IndexMerger const& zMerger, ::VoxelShapes::JoinOperation operation);
     // NOLINTEND
 
 public:
@@ -76,6 +64,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace VoxelShapes
+}

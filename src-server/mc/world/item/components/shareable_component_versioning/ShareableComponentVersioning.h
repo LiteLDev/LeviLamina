@@ -14,4 +14,4 @@ namespace ShareableComponentVersioning {
 MCFOLD bool isSupported(::Level const& level, ::BaseGameVersion version);
 // NOLINTEND
 
-} // namespace ShareableComponentVersioning
+}

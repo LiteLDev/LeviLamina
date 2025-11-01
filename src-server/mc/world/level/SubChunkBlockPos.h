@@ -15,4 +15,5 @@ public:
         ::ll::TypedStorage<4, 4, uint> packed;
     };
     // NOLINTEND
+
 };

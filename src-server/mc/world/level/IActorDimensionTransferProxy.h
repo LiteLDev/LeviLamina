@@ -24,8 +24,7 @@ public:
     virtual void removeActorFromLevelChunk(::Actor&) const = 0;
 
     // vIndex: 3
-    virtual void
-    transferActorToDimension(::Actor const&, ::Dimension&, ::Vec3 const&, ::std::unique_ptr<::CompoundTag>) const = 0;
+    virtual void transferActorToDimension(::Actor const&, ::Dimension&, ::Vec3 const&, ::std::unique_ptr<::CompoundTag>) const = 0;
     // NOLINTEND
 
 public:
@@ -33,4 +32,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

@@ -21,12 +21,12 @@ class DtlsTransport : public ::webrtc::DtlsTransportInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf33c20;
-    ::ll::UntypedStorage<8, 8>  mUnk63ee28;
+    ::ll::UntypedStorage<8, 8> mUnkf33c20;
+    ::ll::UntypedStorage<8, 8> mUnk63ee28;
     ::ll::UntypedStorage<8, 40> mUnk912461;
     ::ll::UntypedStorage<8, 48> mUnk35d5aa;
-    ::ll::UntypedStorage<8, 8>  mUnk679e66;
-    ::ll::UntypedStorage<8, 8>  mUnka7df75;
+    ::ll::UntypedStorage<8, 8> mUnk679e66;
+    ::ll::UntypedStorage<8, 8> mUnka7df75;
     // NOLINTEND
 
 public:
@@ -97,6 +97,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

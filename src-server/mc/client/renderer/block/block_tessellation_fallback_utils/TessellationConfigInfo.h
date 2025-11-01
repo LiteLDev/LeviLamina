@@ -4,6 +4,7 @@
 
 namespace BlockTessellationFallbackUtils {
 
-struct TessellationConfigInfo {};
+struct TessellationConfigInfo {
+};
 
-} // namespace BlockTessellationFallbackUtils
+}

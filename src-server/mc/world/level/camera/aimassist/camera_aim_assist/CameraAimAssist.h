@@ -20,4 +20,4 @@ MCNAPI void bindTargetModeType(::cereal::ReflectionCtx& ctx);
 MCNAPI ::Bedrock::Result<::CameraAimAssist::TargetMode> readTargetMode(::ReadOnlyBinaryStream& stream);
 // NOLINTEND
 
-} // namespace CameraAimAssist
+}

@@ -4,7 +4,8 @@
 
 namespace Bedrock {
 
-template <typename T0>
-class typeid_t {};
+template<typename T0>
+class typeid_t {
+};
 
-} // namespace Bedrock
+}

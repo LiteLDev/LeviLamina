@@ -4,7 +4,8 @@
 
 namespace absl::internal_any_invocable {
 
-template <int T0, typename... T1>
-class CoreImpl {};
+template<int T0, typename... T1>
+class CoreImpl {
+};
 
-} // namespace absl::internal_any_invocable
+}

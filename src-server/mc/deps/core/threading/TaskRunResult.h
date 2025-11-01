@@ -4,6 +4,6 @@
 
 enum class TaskRunResult : int {
     Requeue = 0,
-    Done    = 1,
-    Noop    = 2,
+    Done = 1,
+    Noop = 2,
 };

@@ -27,16 +27,16 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkb24ea2;
-    ::ll::UntypedStorage<8, 8>  mUnk356cd6;
-    ::ll::UntypedStorage<8, 8>  mUnkcfaa94;
+    ::ll::UntypedStorage<8, 8> mUnk356cd6;
+    ::ll::UntypedStorage<8, 8> mUnkcfaa94;
     ::ll::UntypedStorage<8, 32> mUnka7d9a1;
     ::ll::UntypedStorage<8, 32> mUnk1d0c4e;
-    ::ll::UntypedStorage<1, 1>  mUnk113178;
-    ::ll::UntypedStorage<1, 1>  mUnk29784c;
-    ::ll::UntypedStorage<8, 8>  mUnke25532;
-    ::ll::UntypedStorage<8, 8>  mUnk66b4ba;
+    ::ll::UntypedStorage<1, 1> mUnk113178;
+    ::ll::UntypedStorage<1, 1> mUnk29784c;
+    ::ll::UntypedStorage<8, 8> mUnke25532;
+    ::ll::UntypedStorage<8, 8> mUnk66b4ba;
     ::ll::UntypedStorage<4, 16> mUnk44554b;
-    ::ll::UntypedStorage<4, 4>  mUnkabbaf7;
+    ::ll::UntypedStorage<4, 4> mUnkabbaf7;
     ::ll::UntypedStorage<8, 40> mUnka50bee;
     // NOLINTEND
 
@@ -52,95 +52,94 @@ public:
     // vIndex: 0
     virtual ~AppPlatform_win32() /*override*/;
 
-    // vIndex: 100
-    virtual ::std::string readAssetFile(::Core::Path const& filename) /*override*/;
+    // vIndex: 102
+    virtual ::std::string _readAssetFileInternal(::Core::Path const& filename) /*override*/;
 
-    // vIndex: 99
+    // vIndex: 101
     virtual ::Core::PathBuffer<::std::string> getAssetFileFullPath(::Core::Path const& filename) /*override*/;
 
-    // vIndex: 103
-    virtual ::std::set<::Core::PathBuffer<::std::string>>
-    listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const /*override*/;
+    // vIndex: 105
+    virtual ::std::set<::Core::PathBuffer<::std::string>> listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const /*override*/;
 
-    // vIndex: 67
+    // vIndex: 69
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
-    // vIndex: 119
+    // vIndex: 121
     virtual bool canLaunchUri(::std::string const& uri) /*override*/;
 
-    // vIndex: 120
+    // vIndex: 122
     virtual void launchUri(::std::string const& uri) /*override*/;
 
-    // vIndex: 32
+    // vIndex: 34
     virtual ::Core::PathBuffer<::std::string> getPackagePath() const /*override*/;
 
     // vIndex: 2
     virtual ::Core::PathBuffer<::std::string> getLoggingPath() const /*override*/;
 
-    // vIndex: 157
+    // vIndex: 159
     virtual ::std::string getEdition() const /*override*/;
 
-    // vIndex: 158
+    // vIndex: 160
     virtual ::OsVersion getOSVersion() const /*override*/;
 
-    // vIndex: 97
+    // vIndex: 99
     virtual bool supportsVibration() const /*override*/;
 
-    // vIndex: 174
+    // vIndex: 176
     virtual bool supportsFliteTTS() const /*override*/;
 
-    // vIndex: 70
+    // vIndex: 72
     virtual int getScreenWidth() const /*override*/;
 
-    // vIndex: 71
+    // vIndex: 73
     virtual int getScreenHeight() const /*override*/;
 
-    // vIndex: 72
+    // vIndex: 74
     virtual int getDisplayWidth() /*override*/;
 
-    // vIndex: 73
+    // vIndex: 75
     virtual int getDisplayHeight() /*override*/;
 
-    // vIndex: 74
+    // vIndex: 76
     virtual void setScreenSize(int width, int height) /*override*/;
 
-    // vIndex: 75
+    // vIndex: 77
     virtual void setWindowSize(int width, int height) /*override*/;
 
-    // vIndex: 76
+    // vIndex: 78
     virtual void setWindowText(::std::string const& title) /*override*/;
 
-    // vIndex: 93
+    // vIndex: 95
     virtual ::std::string getTextBoxBackend() const /*override*/;
 
-    // vIndex: 94
+    // vIndex: 96
     virtual void setTextBoxBackend(::std::string const& newText) /*override*/;
 
-    // vIndex: 95
+    // vIndex: 97
     virtual int getCaretPosition() const /*override*/;
 
-    // vIndex: 96
+    // vIndex: 98
     virtual void setCaretPosition(int position) /*override*/;
 
-    // vIndex: 107
+    // vIndex: 109
     virtual bool hasBuyButtonWhenInvalidLicense() /*override*/;
 
-    // vIndex: 134
+    // vIndex: 136
     virtual ::std::string getApplicationId() const /*override*/;
 
-    // vIndex: 124
+    // vIndex: 126
     virtual bool isCentennial() const /*override*/;
 
-    // vIndex: 125
+    // vIndex: 127
     virtual ::std::string getPackageFamilyName() const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 125
     virtual ::PlatformType getPlatformType() const /*override*/;
 
-    // vIndex: 18
+    // vIndex: 19
     virtual ::BuildPlatform getBuildPlatform() const /*override*/;
 
-    // vIndex: 175
+    // vIndex: 177
     virtual ::std::unique_ptr<::SecureStorage> getSecureStorage() /*override*/;
 
     // vIndex: 1
@@ -149,66 +148,59 @@ public:
     // vIndex: 2
     virtual void setSecureStorageKey(::std::string const&, ::SecureStorageKey const&) /*override*/;
 
-    // vIndex: 19
+    // vIndex: 20
     virtual ::std::string getPlatformString() const /*override*/;
 
-    // vIndex: 126
+    // vIndex: 128
     virtual ::std::string getSubPlatformString() const /*override*/;
 
-    // vIndex: 135
+    // vIndex: 137
     virtual uint64 getFreeMemory() const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 138
     virtual uint64 getMemoryLimit() const /*override*/;
 
-    // vIndex: 137
+    // vIndex: 139
     virtual uint64 getUsedMemory() /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual uint64 getTotalPhysicalMemory() const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 152
     virtual ::std::string getModelName() /*override*/;
 
-    // vIndex: 153
+    // vIndex: 155
     virtual void setFullscreenMode(::FullscreenMode const fullscreenMode) /*override*/;
 
-    // vIndex: 206
+    // vIndex: 207
     virtual bool isWebviewSupported() const /*override*/;
 
-    // vIndex: 207
+    // vIndex: 208
     virtual ::std::shared_ptr<::WebviewInterface> createWebview(::Webview::PlatformArguments&& args) const /*override*/;
 
-    // vIndex: 210
+    // vIndex: 211
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
-    // vIndex: 211
+    // vIndex: 212
     virtual ::std::variant<::HWND__*, ::std::monostate> getRenderSurfaceParameters() const /*override*/;
 
-    // vIndex: 110
+    // vIndex: 112
     virtual ::std::optional<bool> isOnWifiConnectionTelemetryValue() /*override*/;
 
-    // vIndex: 38
+    // vIndex: 40
     virtual void hideSplashScreen() /*override*/;
 
-    // vIndex: 237
+    // vIndex: 238
     virtual int getPlatformDpi() const /*override*/;
 
-    // vIndex: 238
+    // vIndex: 239
     virtual ::UIScalingRules getPlatformUIScalingRules() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AppPlatform_win32(
-        ::HWND__*            hWnd,
-        ::std::string const& dataFolder,
-        ::std::string_view,
-        ::std::shared_ptr<::HIDController> HIDControllerWinRT,
-        int                                screenWidth,
-        int                                screenHeight
-    );
+    MCNAPI AppPlatform_win32(::HWND__* hWnd, ::std::string const& dataFolder, ::std::string_view, ::std::shared_ptr<::HIDController> HIDControllerWinRT, int screenWidth, int screenHeight);
 
     MCNAPI ::OSInformation _fetchOSInformation() const;
     // NOLINTEND
@@ -216,14 +208,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::HWND__*            hWnd,
-        ::std::string const& dataFolder,
-        ::std::string_view,
-        ::std::shared_ptr<::HIDController> HIDControllerWinRT,
-        int                                screenWidth,
-        int                                screenHeight
-    );
+    MCNAPI void* $ctor(::HWND__* hWnd, ::std::string const& dataFolder, ::std::string_view, ::std::shared_ptr<::HIDController> HIDControllerWinRT, int screenWidth, int screenHeight);
     // NOLINTEND
 
 public:
@@ -235,12 +220,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $readAssetFile(::Core::Path const& filename);
+    MCNAPI ::std::string $_readAssetFileInternal(::Core::Path const& filename);
 
     MCNAPI ::Core::PathBuffer<::std::string> $getAssetFileFullPath(::Core::Path const& filename);
 
-    MCNAPI ::std::set<::Core::PathBuffer<::std::string>>
-    $listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
+    MCNAPI ::std::set<::Core::PathBuffer<::std::string>> $listAssetFilesIn(::Core::Path const& path, ::std::string const& extension) const;
 
     MCNAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
@@ -292,8 +276,6 @@ public:
 
     MCNAPI ::PlatformType $getPlatformType() const;
 
-    MCNAPI ::BuildPlatform $getBuildPlatform() const;
-
     MCNAPI ::std::unique_ptr<::SecureStorage> $getSecureStorage();
 
     MCNAPI ::SecureStorageKey $getSecureStorageKey(::std::string const&);
@@ -340,4 +322,5 @@ public:
 
     MCNAPI static void** $vftableForISecureStorageKeySystem();
     // NOLINTEND
+
 };

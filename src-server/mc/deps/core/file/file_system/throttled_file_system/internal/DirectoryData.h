@@ -8,8 +8,8 @@ class DirectoryData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk3e4712;
-    ::ll::UntypedStorage<8, 8>  mUnk4dd4bf;
+    ::ll::UntypedStorage<8, 8> mUnk3e4712;
+    ::ll::UntypedStorage<8, 8> mUnk4dd4bf;
     ::ll::UntypedStorage<8, 64> mUnk3eb97d;
     // NOLINTEND
 
@@ -18,6 +18,7 @@ public:
     DirectoryData& operator=(DirectoryData const&);
     DirectoryData(DirectoryData const&);
     DirectoryData();
+
 };
 
-} // namespace Core::Internal
+}

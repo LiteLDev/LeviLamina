@@ -28,6 +28,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace AppExtensions
+}

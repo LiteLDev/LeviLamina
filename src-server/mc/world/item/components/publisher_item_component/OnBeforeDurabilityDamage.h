@@ -17,10 +17,7 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 
 namespace PublisherItemComponent {
 
-struct OnBeforeDurabilityDamage
-: public ::ItemComponent,
-  public ::Bedrock::PubSub::
-      Publisher<void(int&, ::ItemStack&, ::Actor&, ::Mob&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
+struct OnBeforeDurabilityDamage : public ::ItemComponent, public ::Bedrock::PubSub::Publisher<void(int&, ::ItemStack&, ::Actor&, ::Mob&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -43,6 +40,7 @@ public:
 
     MCNAPI static void** $vftableForConnector();
     // NOLINTEND
+
 };
 
-} // namespace PublisherItemComponent
+}

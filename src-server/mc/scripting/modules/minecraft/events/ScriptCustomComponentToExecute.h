@@ -4,7 +4,8 @@
 
 namespace ScriptModuleMinecraft {
 
-template <typename T0, typename T1>
-class ScriptCustomComponentToExecute {};
+template<typename T0, typename T1>
+class ScriptCustomComponentToExecute {
+};
 
-} // namespace ScriptModuleMinecraft
+}

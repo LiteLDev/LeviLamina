@@ -24,6 +24,7 @@ public:
     SimulcastStream& operator=(SimulcastStream const&);
     SimulcastStream(SimulcastStream const&);
     SimulcastStream();
+
 };
 
-} // namespace webrtc
+}

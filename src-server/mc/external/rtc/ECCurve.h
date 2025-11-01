@@ -6,7 +6,7 @@ namespace rtc {
 
 enum class ECCurve : int {
     NistP256 = 0,
-    Last     = 1,
+    Last = 1,
 };
 
 }

@@ -4,7 +4,8 @@
 
 namespace cereal {
 
-template <typename T0>
-class SequenceContainerConstraint {};
+template<typename T0>
+class SequenceContainerConstraint {
+};
 
-} // namespace cereal
+}

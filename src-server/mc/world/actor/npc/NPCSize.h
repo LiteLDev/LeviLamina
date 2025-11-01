@@ -14,4 +14,4 @@ namespace NPCSize {
 MCAPI void updateSize(::AABBShapeComponent const& aabbShape, ::OffsetsComponent& offsets);
 // NOLINTEND
 
-} // namespace NPCSize
+}

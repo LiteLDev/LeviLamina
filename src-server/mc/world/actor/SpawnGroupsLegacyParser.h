@@ -15,4 +15,4 @@ namespace SpawnGroupsLegacyParser {
 MCNAPI ::ActorSpawnRuleData parseSpawnRulesData(::Puv::Input const& input, ::Puv::Logger& logger);
 // NOLINTEND
 
-} // namespace SpawnGroupsLegacyParser
+}

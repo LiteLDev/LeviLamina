@@ -16,6 +16,7 @@ public:
     DropAll& operator=(DropAll const&);
     DropAll(DropAll const&);
     DropAll();
+
 };
 
-} // namespace AgentComponents::Actions
+}

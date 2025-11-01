@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Squid&> mSquid;
-    ::ll::TypedStorage<4, 4, int>      mNumIdleTicks;
+    ::ll::TypedStorage<4, 4, int> mNumIdleTicks;
     // NOLINTEND
 
 public:
@@ -70,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

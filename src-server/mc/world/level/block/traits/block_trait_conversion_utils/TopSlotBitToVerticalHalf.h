@@ -13,4 +13,4 @@ namespace BlockTraitConversionUtils::TopSlotBitToVerticalHalf {
 MCAPI ::BlockTraitConversionUtils::ConvertedSet& R20U2();
 // NOLINTEND
 
-} // namespace BlockTraitConversionUtils::TopSlotBitToVerticalHalf
+}

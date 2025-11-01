@@ -5,9 +5,9 @@
 namespace webrtc {
 
 enum class PortPrunePolicy : int {
-    NoPrune              = 0,
+    NoPrune = 0,
     PruneBasedOnPriority = 1,
-    KeepFirstReady       = 2,
+    KeepFirstReady = 2,
 };
 
 }

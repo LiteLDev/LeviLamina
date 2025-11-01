@@ -5,6 +5,6 @@
 enum class PluginExecutionGroup : uchar {
     PrePackLoadExecution = 0,
     ServerStartExecution = 1,
-    ClientLevelCreation  = 2,
-    All                  = 3,
+    ClientLevelCreation = 2,
+    All = 3,
 };

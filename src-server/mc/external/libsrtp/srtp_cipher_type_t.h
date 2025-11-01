@@ -24,4 +24,5 @@ public:
     srtp_cipher_type_t& operator=(srtp_cipher_type_t const&);
     srtp_cipher_type_t(srtp_cipher_type_t const&);
     srtp_cipher_type_t();
+
 };

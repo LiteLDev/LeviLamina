@@ -6,7 +6,7 @@ class TaskResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                    mIsDone;
+    ::ll::TypedStorage<1, 1, bool> mIsDone;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mRunAtTime;
     // NOLINTEND
 
@@ -23,4 +23,5 @@ public:
 
     MCNAPI static ::TaskResult const& Requeue();
     // NOLINTEND
+
 };

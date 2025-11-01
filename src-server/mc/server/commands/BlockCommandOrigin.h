@@ -25,9 +25,9 @@ class BlockCommandOrigin : public ::CommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk93b0b4;
+    ::ll::UntypedStorage<8, 8> mUnk93b0b4;
     ::ll::UntypedStorage<4, 12> mUnke10705;
-    ::ll::UntypedStorage<4, 4>  mUnk7ba504;
+    ::ll::UntypedStorage<4, 4> mUnk7ba504;
     ::ll::UntypedStorage<8, 32> mUnkefdc9d;
     // NOLINTEND
 
@@ -156,4 +156,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

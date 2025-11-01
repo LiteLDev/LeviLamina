@@ -18,41 +18,19 @@ namespace ActorInventoryUtils {
 // NOLINTBEGIN
 MCNAPI void forEachItemOnActor(::Actor const& actor, ::std::function<void(::ItemStack const&)> callback);
 
-MCNAPI void forEachItemOnActor(
-    ::Actor const&                            actor,
-    ::SharedTypes::Legacy::EquipmentSlot      equipmentSlot,
-    ::CommandIntegerRange const&              slot,
-    ::std::function<void(::ItemStack const&)> callback
-);
+MCNAPI void forEachItemOnActor(::Actor const& actor, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::CommandIntegerRange const& slot, ::std::function<void(::ItemStack const&)> callback);
 
-MCNAPI void forEachItemOnActorChest(
-    ::Actor const&                            actor,
-    ::CommandIntegerRange const&              slot,
-    ::std::function<void(::ItemStack const&)> callback
-);
+MCNAPI void forEachItemOnActorChest(::Actor const& actor, ::CommandIntegerRange const& slot, ::std::function<void(::ItemStack const&)> callback);
 
-MCNAPI void forEachItemOnActorEnderChest(
-    ::Actor const&                            actor,
-    ::CommandIntegerRange const&              slot,
-    ::std::function<void(::ItemStack const&)> callback
-);
+MCNAPI void forEachItemOnActorEnderChest(::Actor const& actor, ::CommandIntegerRange const& slot, ::std::function<void(::ItemStack const&)> callback);
 
-MCNAPI void
-forEachItemOnActorHandSlot(::Actor const& actor, ::HandSlot slot, ::std::function<void(::ItemStack const&)> callback);
+MCNAPI void forEachItemOnActorHandSlot(::Actor const& actor, ::HandSlot slot, ::std::function<void(::ItemStack const&)> callback);
 
-MCNAPI void forEachItemOnActorHotbar(
-    ::Actor const&                            actor,
-    ::CommandIntegerRange const&              slot,
-    ::std::function<void(::ItemStack const&)> callback
-);
+MCNAPI void forEachItemOnActorHotbar(::Actor const& actor, ::CommandIntegerRange const& slot, ::std::function<void(::ItemStack const&)> callback);
 
-MCNAPI void forEachItemOnActorInventory(
-    ::Actor const&                            actor,
-    ::CommandIntegerRange const&              slot,
-    ::std::function<void(::ItemStack const&)> callback
-);
+MCNAPI void forEachItemOnActorInventory(::Actor const& actor, ::CommandIntegerRange const& slot, ::std::function<void(::ItemStack const&)> callback);
 
 MCNAPI ::ItemStack const* getItem(::Actor const& actor, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, int slotId);
 // NOLINTEND
 
-} // namespace ActorInventoryUtils
+}

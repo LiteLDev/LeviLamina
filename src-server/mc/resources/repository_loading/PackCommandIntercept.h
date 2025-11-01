@@ -21,7 +21,7 @@ class PackCommandIntercept : public ::PackCommand::IPackCommandPipeline {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkd8d66c;
+    ::ll::UntypedStorage<8, 8> mUnkd8d66c;
     ::ll::UntypedStorage<8, 24> mUnk688368;
     ::ll::UntypedStorage<8, 24> mUnk216a5b;
     // NOLINTEND
@@ -39,8 +39,7 @@ public:
     virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands) /*override*/;
 
     // vIndex: 2
-    virtual ::PackCommand::PackCommandHandle
-    submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&) /*override*/;
+    virtual ::PackCommand::PackCommandHandle submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&) /*override*/;
 
     // vIndex: 3
     virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&& commands) /*override*/;
@@ -69,8 +68,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::PackCommand::PackCommandHandle $submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands);
 
-    MCNAPI ::PackCommand::PackCommandHandle
-    $submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&);
+    MCNAPI ::PackCommand::PackCommandHandle $submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&&);
 
     MCNAPI ::PackCommand::PackCommandHandle $submitRemove(::PackCommand::RemoveBatch&& commands);
 
@@ -82,6 +80,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace RepositoryLoading
+}

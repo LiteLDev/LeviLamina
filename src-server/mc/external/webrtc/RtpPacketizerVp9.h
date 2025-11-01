@@ -18,11 +18,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 1640> mUnk9addc6;
-    ::ll::UntypedStorage<4, 4>    mUnkecb493;
-    ::ll::UntypedStorage<4, 4>    mUnk5e2fc6;
-    ::ll::UntypedStorage<8, 16>   mUnkc19163;
-    ::ll::UntypedStorage<8, 24>   mUnka558b0;
-    ::ll::UntypedStorage<8, 8>    mUnka9b7da;
+    ::ll::UntypedStorage<4, 4> mUnkecb493;
+    ::ll::UntypedStorage<4, 4> mUnk5e2fc6;
+    ::ll::UntypedStorage<8, 16> mUnkc19163;
+    ::ll::UntypedStorage<8, 24> mUnka558b0;
+    ::ll::UntypedStorage<8, 8> mUnka9b7da;
     // NOLINTEND
 
 public:
@@ -47,11 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RtpPacketizerVp9(
-        ::rtc::ArrayView<uchar const>              payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
-        ::webrtc::RTPVideoHeaderVP9 const&         hdr
-    );
+    MCNAPI RtpPacketizerVp9(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits, ::webrtc::RTPVideoHeaderVP9 const& hdr);
 
     MCNAPI bool WriteHeader(bool layer_begin, bool layer_end, ::rtc::ArrayView<uchar> buffer) const;
     // NOLINTEND
@@ -59,11 +55,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::rtc::ArrayView<uchar const>              payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
-        ::webrtc::RTPVideoHeaderVP9 const&         hdr
-    );
+    MCNAPI void* $ctor(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits, ::webrtc::RTPVideoHeaderVP9 const& hdr);
     // NOLINTEND
 
 public:
@@ -85,6 +77,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

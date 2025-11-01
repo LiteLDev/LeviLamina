@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<1, 1, bool> mCanFloat;
     ::ll::TypedStorage<1, 1, bool> mNeedToResurface;
     // NOLINTEND
+
 };

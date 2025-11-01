@@ -8,4 +8,4 @@ namespace Scripting::OptionalHelper {
 MCNAPI bool isOptionalAny(::entt::meta_type const& type);
 // NOLINTEND
 
-} // namespace Scripting::OptionalHelper
+}

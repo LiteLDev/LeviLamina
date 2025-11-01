@@ -12,8 +12,7 @@ struct IncomingPacketEvent;
 struct OutgoingPacketEvent;
 // clang-format on
 
-struct ServerNetworkGameplayNotificationEvent
-: public ::EventVariantImpl<::ChatEvent const, ::IncomingPacketEvent const, ::OutgoingPacketEvent const> {
+struct ServerNetworkGameplayNotificationEvent : public ::EventVariantImpl<::ChatEvent const, ::IncomingPacketEvent const, ::OutgoingPacketEvent const> {
 public:
     // member functions
     // NOLINTBEGIN
@@ -25,4 +24,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

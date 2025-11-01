@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct UnresolvableAddressCauseConfig {};
+struct UnresolvableAddressCauseConfig {
+};
 
-} // namespace dcsctp
+}

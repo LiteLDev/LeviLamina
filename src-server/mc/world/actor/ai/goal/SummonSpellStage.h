@@ -12,18 +12,18 @@ struct SummonSpellStage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SummonShape>                          shape;
-    ::ll::TypedStorage<4, 4, ::SummonTarget>                         target;
-    ::ll::TypedStorage<4, 4, float>                                  size;
-    ::ll::TypedStorage<4, 4, int>                                    baseDelay;
-    ::ll::TypedStorage<4, 4, int>                                    delayPerSummoning;
-    ::ll::TypedStorage<4, 4, int>                                    summonCap;
-    ::ll::TypedStorage<4, 4, float>                                  summonCapRadius;
-    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>          entityIdentifier;
-    ::ll::TypedStorage<4, 4, int>                                    entityLifespan;
-    ::ll::TypedStorage<4, 4, int>                                    entityCount;
+    ::ll::TypedStorage<4, 4, ::SummonShape> shape;
+    ::ll::TypedStorage<4, 4, ::SummonTarget> target;
+    ::ll::TypedStorage<4, 4, float> size;
+    ::ll::TypedStorage<4, 4, int> baseDelay;
+    ::ll::TypedStorage<4, 4, int> delayPerSummoning;
+    ::ll::TypedStorage<4, 4, int> summonCap;
+    ::ll::TypedStorage<4, 4, float> summonCapRadius;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> entityIdentifier;
+    ::ll::TypedStorage<4, 4, int> entityLifespan;
+    ::ll::TypedStorage<4, 4, int> entityCount;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> stageSoundEvent;
-    ::ll::TypedStorage<8, 32, ::std::string>                         summonEvent;
+    ::ll::TypedStorage<8, 32, ::std::string> summonEvent;
     // NOLINTEND
 
 public:
@@ -37,4 +37,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

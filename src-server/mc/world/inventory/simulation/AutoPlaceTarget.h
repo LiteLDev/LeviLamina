@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnka77396;
-    ::ll::UntypedStorage<1, 1>  mUnkba18e0;
+    ::ll::UntypedStorage<1, 1> mUnkba18e0;
     // NOLINTEND
 
 public:
@@ -15,4 +15,5 @@ public:
     AutoPlaceTarget& operator=(AutoPlaceTarget const&);
     AutoPlaceTarget(AutoPlaceTarget const&);
     AutoPlaceTarget();
+
 };

@@ -16,7 +16,7 @@ struct ServerNetworkController : public ::IServerNetworkController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk522e4e;
+    ::ll::UntypedStorage<1, 1> mUnk522e4e;
     ::ll::UntypedStorage<8, 16> mUnk1ced00;
     ::ll::UntypedStorage<8, 64> mUnk733c97;
     // NOLINTEND
@@ -58,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

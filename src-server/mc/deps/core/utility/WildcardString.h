@@ -6,10 +6,10 @@ class WildcardString {
 public:
     // WildcardString inner types define
     enum class Case : int {
-        Sensitive   = 0,
+        Sensitive = 0,
         Insensitive = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -21,4 +21,5 @@ public:
     WildcardString& operator=(WildcardString const&);
     WildcardString(WildcardString const&);
     WildcardString();
+
 };

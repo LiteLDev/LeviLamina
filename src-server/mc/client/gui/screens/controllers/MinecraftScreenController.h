@@ -15,47 +15,46 @@
 class UIPropertyBag;
 // clang-format on
 
-class MinecraftScreenController : public ::ScreenController,
-                                  public ::Bedrock::EnableNonOwnerReferences,
-                                  public ::std::enable_shared_from_this<::MinecraftScreenController> {
+class MinecraftScreenController : public ::ScreenController, public ::Bedrock::EnableNonOwnerReferences, public ::std::enable_shared_from_this<::MinecraftScreenController> {
 public:
     // MinecraftScreenController inner types declare
     // clang-format off
     struct LeaveScreenInfo;
     // clang-format on
-
+    
     // MinecraftScreenController inner types define
     struct LeaveScreenInfo {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkdf9d74;
+        ::ll::UntypedStorage<1, 1> mUnkdf9d74;
         ::ll::UntypedStorage<8, 32> mUnke11e12;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         LeaveScreenInfo& operator=(LeaveScreenInfo const&);
         LeaveScreenInfo(LeaveScreenInfo const&);
         LeaveScreenInfo();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk597512;
-    ::ll::UntypedStorage<4, 4>  mUnk6b49e5;
-    ::ll::UntypedStorage<4, 4>  mUnk3fbbc6;
-    ::ll::UntypedStorage<4, 4>  mUnk9d8073;
-    ::ll::UntypedStorage<1, 1>  mUnk398789;
+    ::ll::UntypedStorage<4, 4> mUnk6b49e5;
+    ::ll::UntypedStorage<4, 4> mUnk3fbbc6;
+    ::ll::UntypedStorage<4, 4> mUnk9d8073;
+    ::ll::UntypedStorage<1, 1> mUnk398789;
     ::ll::UntypedStorage<8, 64> mUnk74da16;
     ::ll::UntypedStorage<8, 32> mUnk88ae43;
     ::ll::UntypedStorage<8, 32> mUnke0c100;
     ::ll::UntypedStorage<8, 40> mUnk48d201;
-    ::ll::UntypedStorage<1, 1>  mUnk500617;
+    ::ll::UntypedStorage<1, 1> mUnk500617;
     ::ll::UntypedStorage<8, 64> mUnked78bd;
     ::ll::UntypedStorage<8, 64> mUnkba0362;
-    ::ll::UntypedStorage<1, 1>  mUnk611fb7;
+    ::ll::UntypedStorage<1, 1> mUnk611fb7;
     // NOLINTEND
 
 public:
@@ -98,62 +97,54 @@ public:
     virtual void onOpen() /*override*/;
 
     // vIndex: 19
-    virtual bool bind(
-        ::std::string const&,
-        uint,
-        int,
-        ::std::string const&,
-        uint,
-        ::std::string const&,
-        ::UIPropertyBag&
-    ) /*override*/;
+    virtual bool bind(::std::string const&, uint, int, ::std::string const&, uint, ::std::string const&, ::UIPropertyBag&) /*override*/;
 
     // vIndex: 18
     virtual bool bind(::std::string const&, uint, ::std::string const&, ::UIPropertyBag&) /*override*/;
 
-    // vIndex: 38
+    // vIndex: 37
     virtual bool _doesScreenHaveExitBehavior() const /*override*/;
 
-    // vIndex: 40
+    // vIndex: 39
     virtual bool _isStillValid() const;
 
-    // vIndex: 41
+    // vIndex: 40
     virtual bool _getGamepadHelperVisible() const;
 
-    // vIndex: 42
+    // vIndex: 41
     virtual bool _getMixedHelperVisible() const;
 
-    // vIndex: 43
+    // vIndex: 42
     virtual bool _getKeyboardHelperVisible() const;
 
-    // vIndex: 44
+    // vIndex: 43
     virtual bool _getGestureControlEnabled() const;
 
-    // vIndex: 45
+    // vIndex: 44
     virtual ::std::string _getButtonStartDescription();
 
-    // vIndex: 46
+    // vIndex: 45
     virtual ::std::string _getButtonADescription();
 
-    // vIndex: 47
+    // vIndex: 46
     virtual ::std::string _getButtonBDescription();
 
-    // vIndex: 48
+    // vIndex: 47
     virtual ::std::string _getButtonXDescription();
 
-    // vIndex: 49
+    // vIndex: 48
     virtual ::std::string _getButtonYDescription();
 
-    // vIndex: 50
+    // vIndex: 49
     virtual ::std::string _getButtonKeyboardDescription();
 
-    // vIndex: 51
+    // vIndex: 50
     virtual void showPickCustomSkinDialog(::std::function<void(::PickCustomSkinResult)>);
 
-    // vIndex: 52
+    // vIndex: 51
     virtual ::std::string _getScreenName() const;
 
-    // vIndex: 53
+    // vIndex: 52
     virtual ::ui::ViewRequest promptConnect(bool, ::std::function<void(::Social::UserPlatformConnectionResult)>);
     // NOLINTEND
 
@@ -162,4 +153,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

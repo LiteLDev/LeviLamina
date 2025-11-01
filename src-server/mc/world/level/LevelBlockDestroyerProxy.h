@@ -18,12 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void sendEvents(
-        ::LevelEventManager& levelEventManager,
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block
-    ) /*override*/;
+    virtual void sendEvents(::LevelEventManager& levelEventManager, ::BlockSource& region, ::BlockPos const& pos, ::Block const& block) /*override*/;
 
     // vIndex: 2
     virtual void dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) /*override*/;
@@ -35,12 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $sendEvents(
-        ::LevelEventManager& levelEventManager,
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block
-    );
+    MCNAPI void $sendEvents(::LevelEventManager& levelEventManager, ::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
 
     MCNAPI void $dropResources(::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
     // NOLINTEND
@@ -50,4 +40,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

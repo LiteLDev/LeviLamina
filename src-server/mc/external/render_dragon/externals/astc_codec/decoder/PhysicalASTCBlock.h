@@ -16,6 +16,7 @@ public:
     PhysicalASTCBlock& operator=(PhysicalASTCBlock const&);
     PhysicalASTCBlock(PhysicalASTCBlock const&);
     PhysicalASTCBlock();
+
 };
 
-} // namespace astc_codec
+}

@@ -17,6 +17,7 @@ public:
     cipher_list& operator=(cipher_list const&);
     cipher_list(cipher_list const&);
     cipher_list();
+
 };
 
-} // namespace rtc
+}

@@ -29,21 +29,21 @@ class TickingArea : public ::ITickingArea {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::mce::UUID>              mUID;
-    ::ll::TypedStorage<8, 32, ::std::string>            mName;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>           mEntityId;
-    ::ll::TypedStorage<4, 4, float>                     mMaxDistToPlayers;
-    ::ll::TypedStorage<1, 1, bool>                      mAlwaysActive;
-    ::ll::TypedStorage<1, 1, bool>                      mEntityFound;
-    ::ll::TypedStorage<1, 1, bool>                      mSizeChanged;
-    ::ll::TypedStorage<1, 1, bool>                      mRemoved;
-    ::ll::TypedStorage<1, 1, ::TickingAreaLoadMode>     mLoadMode;
-    ::ll::TypedStorage<4, 12, ::Vec3>                   mLastChunkUpdatePos;
-    ::ll::TypedStorage<4, 12, ::Vec3>                   mLastPos;
-    ::ll::TypedStorage<4, 4, uint>                      mLastRadius;
-    ::ll::TypedStorage<8, 504, ::ChunkViewSource>       mChunkSource;
+    ::ll::TypedStorage<8, 16, ::mce::UUID> mUID;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityId;
+    ::ll::TypedStorage<4, 4, float> mMaxDistToPlayers;
+    ::ll::TypedStorage<1, 1, bool> mAlwaysActive;
+    ::ll::TypedStorage<1, 1, bool> mEntityFound;
+    ::ll::TypedStorage<1, 1, bool> mSizeChanged;
+    ::ll::TypedStorage<1, 1, bool> mRemoved;
+    ::ll::TypedStorage<1, 1, ::TickingAreaLoadMode> mLoadMode;
+    ::ll::TypedStorage<4, 12, ::Vec3> mLastChunkUpdatePos;
+    ::ll::TypedStorage<4, 12, ::Vec3> mLastPos;
+    ::ll::TypedStorage<4, 4, uint> mLastRadius;
+    ::ll::TypedStorage<8, 504, ::ChunkViewSource> mChunkSource;
     ::ll::TypedStorage<8, 16, ::WeakRef<::BlockSource>> mBlockSource;
-    ::ll::TypedStorage<8, 32, ::TickingAreaView>        mView;
+    ::ll::TypedStorage<8, 32, ::TickingAreaView> mView;
     // NOLINTEND
 
 public:
@@ -129,31 +129,13 @@ public:
     virtual void remove(::LevelStorage& levelStorage) /*override*/;
 
     // vIndex: 25
-    virtual void onComponentChanged(
-        uint            radius,
-        float           maxDistToPlayers,
-        bool            alwaysActive,
-        ::LevelStorage& levelStorage
-    ) /*override*/;
-
-    // vIndex: 26
-    virtual void updateBlockSourceCurrentTick(::Tick const& currentTick) /*override*/;
+    virtual void onComponentChanged(uint radius, float maxDistToPlayers, bool alwaysActive, ::LevelStorage& levelStorage) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TickingArea(
-        ::Dimension&          dimension,
-        ::mce::UUID           uniqueId,
-        ::std::string const&  name,
-        ::ActorUniqueID       entityId,
-        ::Bounds const&       bounds,
-        bool                  isCircle,
-        float                 maxDistToPlayers,
-        bool                  alwaysActive,
-        ::TickingAreaLoadMode loadMode
-    );
+    MCAPI TickingArea(::Dimension& dimension, ::mce::UUID uniqueId, ::std::string const& name, ::ActorUniqueID entityId, ::Bounds const& bounds, bool isCircle, float maxDistToPlayers, bool alwaysActive, ::TickingAreaLoadMode loadMode);
 
     MCAPI void _center(::LevelStorage& levelStorage);
 
@@ -163,17 +145,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Dimension&          dimension,
-        ::mce::UUID           uniqueId,
-        ::std::string const&  name,
-        ::ActorUniqueID       entityId,
-        ::Bounds const&       bounds,
-        bool                  isCircle,
-        float                 maxDistToPlayers,
-        bool                  alwaysActive,
-        ::TickingAreaLoadMode loadMode
-    );
+    MCAPI void* $ctor(::Dimension& dimension, ::mce::UUID uniqueId, ::std::string const& name, ::ActorUniqueID entityId, ::Bounds const& bounds, bool isCircle, float maxDistToPlayers, bool alwaysActive, ::TickingAreaLoadMode loadMode);
     // NOLINTEND
 
 public:
@@ -231,10 +203,7 @@ public:
 
     MCAPI void $remove(::LevelStorage& levelStorage);
 
-    MCAPI void
-    $onComponentChanged(uint radius, float maxDistToPlayers, bool alwaysActive, ::LevelStorage& levelStorage);
-
-    MCAPI void $updateBlockSourceCurrentTick(::Tick const& currentTick);
+    MCAPI void $onComponentChanged(uint radius, float maxDistToPlayers, bool alwaysActive, ::LevelStorage& levelStorage);
     // NOLINTEND
 
 public:
@@ -242,4 +211,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

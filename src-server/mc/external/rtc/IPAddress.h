@@ -8,7 +8,7 @@ class IPAddress {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk63462f;
+    ::ll::UntypedStorage<4, 4> mUnk63462f;
     ::ll::UntypedStorage<2, 16> mUnk9e8d7c;
     // NOLINTEND
 
@@ -56,6 +56,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

@@ -15,4 +15,5 @@ public:
     EduContentDocument& operator=(EduContentDocument const&);
     EduContentDocument(EduContentDocument const&);
     EduContentDocument();
+
 };

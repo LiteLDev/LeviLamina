@@ -13,4 +13,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::EventResponse>>> mResponses;
     // NOLINTEND
+
 };

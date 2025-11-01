@@ -14,7 +14,7 @@ public:
     struct ClientSubChunkCache;
     struct ServerChunkLoading;
     // clang-format on
-
+    
     // ChunkLoadTelemetryData inner types define
     struct ServerChunkLoading {
     public:
@@ -24,14 +24,15 @@ public:
         ::ll::UntypedStorage<4, 4> mUnk233b11;
         ::ll::UntypedStorage<4, 4> mUnkf2b37c;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ServerChunkLoading& operator=(ServerChunkLoading const&);
         ServerChunkLoading(ServerChunkLoading const&);
         ServerChunkLoading();
+    
     };
-
+    
     struct ClientSubChunkCache {
     public:
         // member variables
@@ -40,25 +41,24 @@ public:
         ::ll::UntypedStorage<4, 4> mUnk84bbfb;
         ::ll::UntypedStorage<4, 4> mUnk507fa8;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ClientSubChunkCache& operator=(ClientSubChunkCache const&);
         ClientSubChunkCache(ClientSubChunkCache const&);
         ClientSubChunkCache();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>                                          mServerSimDistance;
+    ::ll::TypedStorage<4, 4, uint> mServerSimDistance;
     ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ServerChunkLoading> mServerChunkLoading;
     ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ServerChunkLoading> mServerChunkLoadingInsideTickRange;
     ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ServerChunkLoading> mServerChunkLoadingOutsideTickRange;
-    ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ServerChunkLoading>
-        mServerChunkLoadingRequestedInsideTickRangeLoadedOutsideTickRange;
-    ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ServerChunkLoading>
-        mServerChunkLoadingRequestedOutsideTickRangeLoadedInsideTickRange;
+    ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ServerChunkLoading> mServerChunkLoadingRequestedInsideTickRangeLoadedOutsideTickRange;
+    ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ServerChunkLoading> mServerChunkLoadingRequestedOutsideTickRangeLoadedInsideTickRange;
     ::ll::TypedStorage<4, 12, ::ChunkLoadTelemetryData::ClientSubChunkCache> mClientSubChunkCache;
     // NOLINTEND
 
@@ -67,4 +67,5 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Json::Value toJson() const;
     // NOLINTEND
+
 };

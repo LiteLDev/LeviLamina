@@ -21,10 +21,10 @@ class BellBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>              mRinging;
+    ::ll::TypedStorage<1, 1, bool> mRinging;
     ::ll::TypedStorage<1, 1, ::Direction::Type> mMovementDirection;
-    ::ll::TypedStorage<1, 1, bool>              mPowered;
-    ::ll::TypedStorage<4, 4, int>               mAlarmCooldown;
+    ::ll::TypedStorage<1, 1, bool> mPowered;
+    ::ll::TypedStorage<4, 4, int> mAlarmCooldown;
     // NOLINTEND
 
 public:
@@ -39,10 +39,10 @@ public:
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -74,4 +74,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

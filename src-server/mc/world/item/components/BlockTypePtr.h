@@ -19,4 +19,5 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string toString() const;
     // NOLINTEND
+
 };

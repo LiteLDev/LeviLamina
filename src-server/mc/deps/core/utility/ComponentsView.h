@@ -31,6 +31,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool operator==(::Util::Url::Components const& other) const;
     // NOLINTEND
+
 };
 
-} // namespace Util::Url
+}

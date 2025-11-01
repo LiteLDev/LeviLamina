@@ -17,7 +17,7 @@ class IWatchdog {
 public:
     // IWatchdog inner types define
     using WatchdogEventHandler = ::std::function<void(::Scripting::WatchdogEvent)>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -57,6 +57,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

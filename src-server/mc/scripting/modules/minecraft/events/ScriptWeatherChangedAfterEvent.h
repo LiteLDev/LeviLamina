@@ -14,10 +14,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mDimension;
-    ::ll::TypedStorage<1, 1, bool>           mWasRaining;
-    ::ll::TypedStorage<1, 1, bool>           mWasLightning;
-    ::ll::TypedStorage<1, 1, bool>           mIsRaining;
-    ::ll::TypedStorage<1, 1, bool>           mIsLightning;
+    ::ll::TypedStorage<1, 1, bool> mWasRaining;
+    ::ll::TypedStorage<1, 1, bool> mWasLightning;
+    ::ll::TypedStorage<1, 1, bool> mIsRaining;
+    ::ll::TypedStorage<1, 1, bool> mIsLightning;
     // NOLINTEND
 
 public:
@@ -29,8 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&
-    operator=(::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent& operator=(::ScriptModuleMinecraft::ScriptWeatherChangedAfterEvent&&);
     // NOLINTEND
 
 public:
@@ -40,6 +39,7 @@ public:
 
     MCAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

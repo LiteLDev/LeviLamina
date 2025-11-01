@@ -10,6 +10,7 @@
 namespace SharedTypes::v1_20_80 { struct ParticleEffectData; }
 namespace SharedTypes::v1_21_100 { struct CameraDocument; }
 namespace SharedTypes::v1_21_110 { struct VoxelShapeDocument; }
+namespace SharedTypes::v1_21_30 { struct TradeTableData; }
 // clang-format on
 
 namespace Bedrock::Resources {
@@ -41,6 +42,9 @@ public:
 
     // vIndex: 3
     virtual ::Puv::Loader<::SharedTypes::v1_21_110::VoxelShapeDocument> const& getVoxelShapeLoader() const = 0;
+
+    // vIndex: 4
+    virtual ::Puv::Loader<::SharedTypes::v1_21_30::TradeTableData> const& getTradeTableLoader() const = 0;
     // NOLINTEND
 
 public:
@@ -48,6 +52,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Resources
+}

@@ -15,10 +15,10 @@ class ContainerScreenActionScope {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                                        mTemporaryScope;
-    ::ll::TypedStorage<8, 8, ::ContainerScreenActionScope*>                               mParentScope;
+    ::ll::TypedStorage<1, 1, bool> mTemporaryScope;
+    ::ll::TypedStorage<8, 8, ::ContainerScreenActionScope*> mParentScope;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ContainerScreenSimulation>> mSimulation;
-    ::ll::TypedStorage<8, 56, ::ContainerScreenActionResult>                              mScreenSimulationResult;
+    ::ll::TypedStorage<8, 56, ::ContainerScreenActionResult> mScreenSimulationResult;
     // NOLINTEND
 
 public:
@@ -27,4 +27,5 @@ public:
     // vIndex: 0
     virtual ~ContainerScreenActionScope() = default;
     // NOLINTEND
+
 };

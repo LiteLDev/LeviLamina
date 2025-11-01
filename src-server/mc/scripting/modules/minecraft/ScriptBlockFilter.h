@@ -40,17 +40,13 @@ public:
 
     MCNAPI ScriptBlockFilter(::ScriptModuleMinecraft::ScriptBlockFilter const&);
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>>
-    getExcludePermutations() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>> getExcludePermutations() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getExcludeTags() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getExcludeTypes() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>>
-    getIncludePermutations() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>> getIncludePermutations() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::vector<::std::string>>> getIncludeTags() const;
 
@@ -66,21 +62,13 @@ public:
 
     MCNAPI ::ScriptModuleMinecraft::ScriptBlockFilter& operator=(::ScriptModuleMinecraft::ScriptBlockFilter&&);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setExcludePermutations(
-        ::std::optional<
-            ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>> const&
-            permutations
-    );
+    MCNAPI ::Scripting::Result_deprecated<void> setExcludePermutations(::std::optional<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>> const& permutations);
 
     MCNAPI ::Scripting::Result_deprecated<void> setExcludeTags(::std::optional<::std::vector<::std::string>> strings);
 
     MCNAPI ::Scripting::Result_deprecated<void> setExcludeTypes(::std::optional<::std::vector<::std::string>> strings);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setIncludePermutations(
-        ::std::optional<
-            ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>> const&
-            permutations
-    );
+    MCNAPI ::Scripting::Result_deprecated<void> setIncludePermutations(::std::optional<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>> const& permutations);
 
     MCNAPI ::Scripting::Result_deprecated<void> setIncludeTags(::std::optional<::std::vector<::std::string>> strings);
 
@@ -108,6 +96,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

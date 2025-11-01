@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,8 +17,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::BlockPos>> mBlocks;
-    ::ll::TypedStorage<8, 8, ::Dimension&>                      mDimension;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>       mSource;
+    ::ll::TypedStorage<8, 8, ::Dimension&> mDimension;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mSource;
     // NOLINTEND
 
 public:
@@ -45,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

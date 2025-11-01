@@ -21,13 +21,13 @@ public:
     // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 54
+    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 55
+    // vIndex: 56
     virtual int getEnchantValue() const /*override*/;
 
     // vIndex: 0
@@ -63,4 +63,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

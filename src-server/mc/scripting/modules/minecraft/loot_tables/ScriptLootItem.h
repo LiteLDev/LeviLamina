@@ -10,6 +10,7 @@
 // clang-format off
 class LootPoolEntry;
 namespace ScriptModuleMinecraft { class ScriptItemType; }
+namespace ScriptModuleMinecraft { class ScriptLootItemFunction; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -20,6 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnk1c74a4;
+    ::ll::UntypedStorage<8, 32> mUnk746251;
     // NOLINTEND
 
 public:
@@ -41,8 +43,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>>
-    getName() const;
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemFunction>> getFunctions();
+
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType>> getName() const;
     // NOLINTEND
 
 public:
@@ -62,6 +65,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

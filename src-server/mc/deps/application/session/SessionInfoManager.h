@@ -16,8 +16,7 @@ namespace Bedrock::Threading { class Mutex; }
 
 namespace Bedrock {
 
-class SessionInfoManager : public ::Bedrock::EnableNonOwnerReferences,
-                           public ::Bedrock::ImplBase<::Bedrock::SessionInfoManager> {
+class SessionInfoManager : public ::Bedrock::EnableNonOwnerReferences, public ::Bedrock::ImplBase<::Bedrock::SessionInfoManager> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,19 +30,10 @@ public:
     virtual ::std::shared_ptr<::Bedrock::SessionInfo const> getCurrentSession() const = 0;
 
     // vIndex: 4
-    virtual ::Bedrock::AccessUpdateEditor<
-        ::std::shared_ptr<::Bedrock::SessionInfo>,
-        ::Bedrock::SessionInfoManagerImpl,
-        ::Bedrock::Detail::AccessUpdateEditorAccessor<::std::shared_ptr<::Bedrock::SessionInfo>, void>,
-        ::Bedrock::Threading::Mutex>
-    editCurrentSession() = 0;
+    virtual ::Bedrock::AccessUpdateEditor<::std::shared_ptr<::Bedrock::SessionInfo>, ::Bedrock::SessionInfoManagerImpl, ::Bedrock::Detail::AccessUpdateEditorAccessor<::std::shared_ptr<::Bedrock::SessionInfo>, void>, ::Bedrock::Threading::Mutex> editCurrentSession() = 0;
 
     // vIndex: 5
-    virtual ::Bedrock::PubSub::Connector<void(
-        ::Bedrock::NonOwnerPointer<::Bedrock::SessionInfoManager> const&,
-        ::std::shared_ptr<::Bedrock::SessionInfo const> const&
-    )>&
-    onCurrentSessionChanged() = 0;
+    virtual ::Bedrock::PubSub::Connector<void(::Bedrock::NonOwnerPointer<::Bedrock::SessionInfoManager> const&, ::std::shared_ptr<::Bedrock::SessionInfo const> const&)>& onCurrentSessionChanged() = 0;
 
     // vIndex: 6
     virtual ::std::string serializeSession(::Bedrock::SessionInfo const&) const = 0;
@@ -66,6 +56,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

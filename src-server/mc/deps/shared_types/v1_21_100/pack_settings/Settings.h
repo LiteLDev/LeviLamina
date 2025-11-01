@@ -9,6 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnka21638;
+    ::ll::UntypedStorage<8, 16> mUnk50ebaa;
     ::ll::UntypedStorage<8, 16> mUnk5fa28c;
     // NOLINTEND
 
@@ -21,9 +22,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&
-    operator=(::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&&);
+    MCNAPI ::SharedTypes::v1_21_100::PackSettingsDefinition::Settings& operator=(::SharedTypes::v1_21_100::PackSettingsDefinition::Settings&&);
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_100::PackSettingsDefinition
+}

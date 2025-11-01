@@ -19,7 +19,7 @@ public:
     // clang-format off
     struct BiomeReplacement;
     // clang-format on
-
+    
     // ReplaceBiomesBiomeJsonComponent inner types define
     struct BiomeReplacement {
     public:
@@ -27,32 +27,32 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnkf6afd7;
         ::ll::UntypedStorage<8, 24> mUnkb5d95a;
-        ::ll::UntypedStorage<4, 4>  mUnk6d510f;
-        ::ll::UntypedStorage<4, 4>  mUnkbc3bd5;
+        ::ll::UntypedStorage<4, 4> mUnk6d510f;
+        ::ll::UntypedStorage<4, 4> mUnkbc3bd5;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         BiomeReplacement& operator=(BiomeReplacement const&);
         BiomeReplacement(BiomeReplacement const&);
         BiomeReplacement();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&
-        operator=(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&&);
-
+        MCNAPI ::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement& operator=(::SharedTypes::v1_21_80::ReplaceBiomesBiomeJsonComponent::BiomeReplacement&&);
+    
         MCNAPI ~BiomeReplacement();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -100,6 +100,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_80
+}

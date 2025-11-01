@@ -26,13 +26,13 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 192, ::BaseCommandBlock> mBaseCB;
-    ::ll::TypedStorage<1, 1, bool>                 mPowered;
-    ::ll::TypedStorage<1, 1, bool>                 mConditionMet;
-    ::ll::TypedStorage<1, 1, bool>                 mRedstoneMode;
-    ::ll::TypedStorage<1, 1, bool>                 mLastPerformedConditionalMode;
-    ::ll::TypedStorage<1, 1, bool>                 mLastPerformedRedstoneMode;
-    ::ll::TypedStorage<1, 1, bool>                 mExecuteFirstTickOnPlace;
-    ::ll::TypedStorage<2, 2, ::CommandBlockMode>   mLastPerformedCBMode;
+    ::ll::TypedStorage<1, 1, bool> mPowered;
+    ::ll::TypedStorage<1, 1, bool> mConditionMet;
+    ::ll::TypedStorage<1, 1, bool> mRedstoneMode;
+    ::ll::TypedStorage<1, 1, bool> mLastPerformedConditionalMode;
+    ::ll::TypedStorage<1, 1, bool> mLastPerformedRedstoneMode;
+    ::ll::TypedStorage<1, 1, bool> mExecuteFirstTickOnPlace;
+    ::ll::TypedStorage<2, 2, ::CommandBlockMode> mLastPerformedCBMode;
     // NOLINTEND
 
 public:
@@ -52,8 +52,7 @@ public:
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 5
-    virtual void
-    loadBlockData(::CompoundTag const& tag, ::BlockSource& region, ::DataLoadHelper& dataLoadHelper) /*override*/;
+    virtual void loadBlockData(::CompoundTag const& tag, ::BlockSource& region, ::DataLoadHelper& dataLoadHelper) /*override*/;
 
     // vIndex: 6
     virtual void onCustomTagLoadDone(::BlockSource& region) /*override*/;
@@ -68,15 +67,15 @@ public:
     virtual ::Bedrock::Safety::RedactableString const& getCustomName() const /*override*/;
 
     // vIndex: 26
-    virtual void setCustomName(::Bedrock::Safety::RedactableString const& str) /*override*/;
-
-    // vIndex: 41
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
+    virtual void setCustomName(::Bedrock::Safety::RedactableString const& name) /*override*/;
 
     // vIndex: 42
-    virtual void _onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region) /*override*/;
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
     // vIndex: 43
+    virtual void _onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region) /*override*/;
+
+    // vIndex: 44
     virtual bool _playerCanUpdate(::Player const& player) const /*override*/;
 
     // vIndex: 0
@@ -96,23 +95,9 @@ public:
 
     MCAPI bool markConditionMet(::BlockSource& region);
 
-    MCAPI void markForSaving(::BlockSource& region);
-
-    MCAPI void markForSaving(::BlockSource& region, int oldSuccessCount, bool oldConditionMet);
-
     MCAPI bool performCommand(::BlockSource& region);
 
-    MCAPI void updateBlock(
-        ::BlockSource&                             region,
-        ::std::string const&                       cmd,
-        ::Bedrock::Safety::RedactableString const& name,
-        ::CommandBlockMode                         newMode,
-        bool                                       isConditional,
-        bool                                       redstoneMode,
-        bool                                       trackOutput,
-        int                                        tickDelay,
-        bool                                       executeFirstTick
-    );
+    MCAPI void updateBlock(::BlockSource& region, ::std::string const& cmd, ::Bedrock::Safety::RedactableString const& name, ::CommandBlockMode newMode, bool isConditional, bool redstoneMode, bool trackOutput, int tickDelay, bool executeFirstTick);
     // NOLINTEND
 
 public:
@@ -140,7 +125,7 @@ public:
 
     MCFOLD ::Bedrock::Safety::RedactableString const& $getCustomName() const;
 
-    MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& str);
+    MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
 
     MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
@@ -154,4 +139,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

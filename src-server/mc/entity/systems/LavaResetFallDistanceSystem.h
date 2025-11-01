@@ -13,4 +13,4 @@ namespace LavaResetFallDistanceSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace LavaResetFallDistanceSystem
+}

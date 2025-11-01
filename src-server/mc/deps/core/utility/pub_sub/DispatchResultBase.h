@@ -23,6 +23,7 @@ public:
     // vIndex: 0
     virtual ~DispatchResultBase() = default;
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::PubSub::Detail
+}

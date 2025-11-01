@@ -20,4 +20,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::ActorUniqueID const& INVALID_ID();
     // NOLINTEND
+
 };

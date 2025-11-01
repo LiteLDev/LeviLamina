@@ -19,6 +19,7 @@ public:
     LoadResultWithTiming& operator=(LoadResultWithTiming const&);
     LoadResultWithTiming(LoadResultWithTiming const&);
     LoadResultWithTiming();
+
 };
 
-} // namespace PuvLoadData
+}

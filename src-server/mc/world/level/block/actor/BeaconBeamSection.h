@@ -9,7 +9,8 @@ struct BeaconBeamSection {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>           mHeight;
+    ::ll::TypedStorage<4, 4, int> mHeight;
     ::ll::TypedStorage<4, 16, ::mce::Color> mColor;
     // NOLINTEND
+
 };

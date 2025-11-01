@@ -8,12 +8,12 @@ struct UpscalingParameters {
 public:
     // UpscalingParameters inner types define
     enum class Mode : int {
-        Taau              = 0,
-        Bilinear          = 1,
-        Fsr1              = 2,
+        Taau = 0,
+        Bilinear = 1,
+        Fsr1 = 2,
         Fsr1DebugBilinear = 3,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -40,6 +40,7 @@ public:
     UpscalingParameters& operator=(UpscalingParameters const&);
     UpscalingParameters(UpscalingParameters const&);
     UpscalingParameters();
+
 };
 
-} // namespace dragon::framerenderer::modules
+}

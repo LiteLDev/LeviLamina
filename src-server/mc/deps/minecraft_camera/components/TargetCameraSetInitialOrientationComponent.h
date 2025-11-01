@@ -4,6 +4,7 @@
 
 namespace MinecraftCamera {
 
-struct TargetCameraSetInitialOrientationComponent {};
+struct TargetCameraSetInitialOrientationComponent {
+};
 
-} // namespace MinecraftCamera
+}

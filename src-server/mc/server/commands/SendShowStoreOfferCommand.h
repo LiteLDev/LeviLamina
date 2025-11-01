@@ -17,8 +17,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 200> mUnke18603;
-    ::ll::UntypedStorage<8, 32>  mUnkb8fbcc;
-    ::ll::UntypedStorage<1, 1>   mUnkc234e2;
+    ::ll::UntypedStorage<8, 32> mUnkb8fbcc;
+    ::ll::UntypedStorage<1, 1> mUnkc234e2;
     // NOLINTEND
 
 public:
@@ -54,4 +54,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

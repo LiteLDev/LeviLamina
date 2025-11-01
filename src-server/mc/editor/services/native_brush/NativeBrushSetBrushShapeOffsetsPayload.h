@@ -7,8 +7,7 @@
 
 namespace Editor::Network {
 
-class NativeBrushSetBrushShapeOffsetsPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::NativeBrushSetBrushShapeOffsetsPayload> {
+class NativeBrushSetBrushShapeOffsetsPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::NativeBrushSetBrushShapeOffsetsPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,6 +38,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

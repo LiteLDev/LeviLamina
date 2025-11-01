@@ -23,20 +23,20 @@ class ItemUseOnActorInventoryTransaction : public ::ComplexInventoryTransaction 
 public:
     // ItemUseOnActorInventoryTransaction inner types define
     enum class ActionType : int {
-        Interact     = 0,
-        Attack       = 1,
+        Interact = 0,
+        Attack = 1,
         ItemInteract = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                                 mRuntimeId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
     ::ll::TypedStorage<4, 4, ::ItemUseOnActorInventoryTransaction::ActionType> mActionType;
-    ::ll::TypedStorage<4, 4, int>                                              mSlot;
-    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                    mItem;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                          mFromPos;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                          mHitPos;
+    ::ll::TypedStorage<4, 4, int> mSlot;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mItem;
+    ::ll::TypedStorage<4, 12, ::Vec3> mFromPos;
+    ::ll::TypedStorage<4, 12, ::Vec3> mHitPos;
     // NOLINTEND
 
 public:
@@ -86,4 +86,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

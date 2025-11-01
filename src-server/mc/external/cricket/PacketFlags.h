@@ -5,7 +5,7 @@
 namespace cricket {
 
 enum class PacketFlags : int {
-    Normal     = 0,
+    Normal = 0,
     SrtpBypass = 1,
 };
 

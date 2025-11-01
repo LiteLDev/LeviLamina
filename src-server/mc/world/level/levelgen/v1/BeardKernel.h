@@ -8,4 +8,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::array<float, 13824> const& getKernel();
     // NOLINTEND
+
 };

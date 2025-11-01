@@ -24,12 +24,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::DimensionType, ::OwnerPtr<::Dimension>>> mDimensions;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> const>       mDimensionFactory;
-    ::ll::TypedStorage<
-        8,
-        128,
-        ::Bedrock::PubSub::Publisher<void(::Dimension&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
-                                                                           mOnNewDimensionCreatedPublisher;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> const> mDimensionFactory;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::Dimension&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mOnNewDimensionCreatedPublisher;
     ::ll::TypedStorage<8, 24, ::std::optional<::DimensionDefinitionGroup>> mDimensionDefinitions;
     // NOLINTEND
 
@@ -50,10 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DimensionManager(
-        ::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory,
-        ::std::optional<::DimensionDefinitionGroup>        dimensionDefinitions
-    );
+    MCNAPI DimensionManager(::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory, ::std::optional<::DimensionDefinitionGroup> dimensionDefinitions);
 
     MCNAPI void forEachDimension(::std::function<bool(::Dimension&)> callback);
 
@@ -65,10 +58,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory,
-        ::std::optional<::DimensionDefinitionGroup>        dimensionDefinitions
-    );
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory, ::std::optional<::DimensionDefinitionGroup> dimensionDefinitions);
     // NOLINTEND
 
 public:
@@ -82,4 +72,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

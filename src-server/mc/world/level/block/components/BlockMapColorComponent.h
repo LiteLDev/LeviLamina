@@ -11,6 +11,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 16, ::mce::Color> mMapColor;
-    ::ll::TypedStorage<1, 1, ::TintMethod>  mTintMethod;
+    ::ll::TypedStorage<1, 1, ::TintMethod> mTintMethod;
     // NOLINTEND
+
 };

@@ -17,6 +17,7 @@ public:
     FourCCAliasEntry& operator=(FourCCAliasEntry const&);
     FourCCAliasEntry(FourCCAliasEntry const&);
     FourCCAliasEntry();
+
 };
 
-} // namespace cricket
+}

@@ -13,7 +13,7 @@ struct CameraPresetFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk4e6eb2;
+    ::ll::UntypedStorage<8, 32> mUnk4e6eb2;
     ::ll::UntypedStorage<8, 288> mUnkf545ff;
     // NOLINTEND
 
@@ -28,6 +28,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_80
+}

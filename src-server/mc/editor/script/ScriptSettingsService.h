@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk2048e5;
-    ::ll::UntypedStorage<8, 8>  mUnke626b3;
+    ::ll::UntypedStorage<8, 8> mUnke626b3;
     ::ll::UntypedStorage<8, 32> mUnkc35cdf;
     ::ll::UntypedStorage<8, 32> mUnk8931ad;
     ::ll::UntypedStorage<8, 32> mUnk1f47ab;
@@ -57,6 +57,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

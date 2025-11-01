@@ -24,8 +24,8 @@ class FireworksRocketActor : public ::PredictableProjectile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>  mLife;
-    ::ll::TypedStorage<4, 4, int>  mLifeTime;
+    ::ll::TypedStorage<4, 4, int> mLife;
+    ::ll::TypedStorage<4, 4, int> mLifeTime;
     ::ll::TypedStorage<1, 1, bool> mDispensed;
     // NOLINTEND
 
@@ -61,24 +61,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FireworksRocketActor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI FireworksRocketActor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCAPI void checkAchievement() const;
 
     MCAPI void dealExplosionDamage();
 
-    MCAPI void init(
-        ::Level& level,
-        ::Vec3 const&,
-        ::CompoundTag const& rocketUserData,
-        ::Vec3 const&        dir,
-        ::ActorUniqueID      attachedEntity,
-        bool                 isProjectile
-    );
+    MCAPI void init(::Level& level, ::Vec3 const&, ::CompoundTag const& rocketUserData, ::Vec3 const& dir, ::ActorUniqueID attachedEntity, bool isProjectile);
 
     MCAPI void initTagData(::Random& random);
 
@@ -88,22 +77,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initData(
-        ::SynchedActorDataEntityWrapper& data,
-        ::CompoundTag const&             rocketUserData,
-        ::Vec3 const&                    dir,
-        ::ActorUniqueID                  attachedEntity
-    );
+    MCAPI static void initData(::SynchedActorDataEntityWrapper& data, ::CompoundTag const& rocketUserData, ::Vec3 const& dir, ::ActorUniqueID attachedEntity);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -127,4 +107,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

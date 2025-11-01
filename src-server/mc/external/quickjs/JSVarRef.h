@@ -11,8 +11,8 @@ public:
         struct {
             ::ll::UntypedStorage<4, 4> mUnk8b6006;
             ::ll::UntypedStorage<1, 1> mUnk64c48a;
-            uchar                      mUnkd819b3 : 1;
-            uchar                      mUnk2df9bc : 1;
+            uchar mUnkd819b3 : 1;
+            uchar mUnk2df9bc : 1;
             ::ll::UntypedStorage<2, 2> mUnke2ff49;
         };
     };
@@ -29,4 +29,5 @@ public:
     JSVarRef& operator=(JSVarRef const&);
     JSVarRef(JSVarRef const&);
     JSVarRef();
+
 };

@@ -4,7 +4,8 @@
 
 namespace ScriptModuleMinecraft {
 
-template <typename T0, typename T1, typename T2>
-class ScriptCustomComponentPubSubAdapter {};
+template<typename T0, typename T1, typename T2>
+class ScriptCustomComponentPubSubAdapter {
+};
 
-} // namespace ScriptModuleMinecraft
+}

@@ -9,16 +9,16 @@ public:
     // RtpExtension inner types define
     enum class Filter : int {
         KDiscardEncryptedExtension = 0,
-        KPreferEncryptedExtension  = 1,
+        KPreferEncryptedExtension = 1,
         KRequireEncryptedExtension = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk886741;
-    ::ll::UntypedStorage<4, 4>  mUnka4ad53;
-    ::ll::UntypedStorage<1, 1>  mUnkc5ca2a;
+    ::ll::UntypedStorage<4, 4> mUnka4ad53;
+    ::ll::UntypedStorage<1, 1> mUnkc5ca2a;
     // NOLINTEND
 
 public:
@@ -44,22 +44,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::webrtc::RtpExtension> const DeduplicateHeaderExtensions(
-        ::std::vector<::webrtc::RtpExtension> const& extensions,
-        ::webrtc::RtpExtension::Filter               filter
-    );
+    MCNAPI static ::std::vector<::webrtc::RtpExtension> const DeduplicateHeaderExtensions(::std::vector<::webrtc::RtpExtension> const& extensions, ::webrtc::RtpExtension::Filter filter);
 
-    MCNAPI static ::webrtc::RtpExtension const* FindHeaderExtensionByUri(
-        ::std::vector<::webrtc::RtpExtension> const& extensions,
-        ::std::string_view                           uri,
-        ::webrtc::RtpExtension::Filter               filter
-    );
+    MCNAPI static ::webrtc::RtpExtension const* FindHeaderExtensionByUri(::std::vector<::webrtc::RtpExtension> const& extensions, ::std::string_view uri, ::webrtc::RtpExtension::Filter filter);
 
-    MCNAPI static ::webrtc::RtpExtension const* FindHeaderExtensionByUriAndEncryption(
-        ::std::vector<::webrtc::RtpExtension> const& extensions,
-        ::std::string_view                           uri,
-        bool                                         encrypt
-    );
+    MCNAPI static ::webrtc::RtpExtension const* FindHeaderExtensionByUriAndEncryption(::std::vector<::webrtc::RtpExtension> const& extensions, ::std::string_view uri, bool encrypt);
 
     MCNAPI static bool IsEncryptionSupported(::std::string_view uri);
     // NOLINTEND
@@ -105,6 +94,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

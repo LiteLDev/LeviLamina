@@ -16,11 +16,11 @@ struct ActorAcquiredItemEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Actor&>                mActor;
-    ::ll::TypedStorage<8, 128, ::ItemInstance const>  mItem;
-    ::ll::TypedStorage<4, 4, int>                     mAmountAcquired;
+    ::ll::TypedStorage<8, 8, ::Actor&> mActor;
+    ::ll::TypedStorage<8, 128, ::ItemInstance const> mItem;
+    ::ll::TypedStorage<4, 4, int> mAmountAcquired;
     ::ll::TypedStorage<4, 4, ::ItemAcquisitionMethod> mAcquireMethod;
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>        mSecondaryActorContext;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mSecondaryActorContext;
     // NOLINTEND
 
 public:
@@ -47,4 +47,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

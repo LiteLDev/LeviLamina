@@ -34,37 +34,16 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
-    virtual bool getNearestGeneratedFeature(
-        ::Dimension&                           dimension,
-        ::BiomeSource const&                   biomeSource,
-        ::BlockPos const&                      origin,
-        ::BlockPos&                            pos,
-        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
-        bool                                   mustBeInNewChunks,
-        ::std::optional<::HashedString> const& biomeTag
-    ) /*override*/;
+    virtual bool getNearestGeneratedFeature(::Dimension& dimension, ::BiomeSource const& biomeSource, ::BlockPos const& origin, ::BlockPos& pos, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, bool mustBeInNewChunks, ::std::optional<::HashedString> const& biomeTag) /*override*/;
 
     // vIndex: 2
     virtual bool shouldPostProcessMobs() const /*override*/;
 
     // vIndex: 5
-    virtual bool isFeatureChunk(
-        ::BiomeSource const&,
-        ::Random&                            random,
-        ::ChunkPos const&                    pos,
-        uint                                 levelSeed,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        ::Dimension const&                   dimension
-    ) /*override*/;
+    virtual bool isFeatureChunk(::BiomeSource const&, ::Random& random, ::ChunkPos const& pos, uint levelSeed, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, ::Dimension const& dimension) /*override*/;
 
     // vIndex: 6
-    virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension& dimension,
-        ::BiomeSource const&,
-        ::Random&         random,
-        ::ChunkPos const& pos,
-        ::IPreliminarySurfaceProvider const&
-    ) /*override*/;
+    virtual ::std::unique_ptr<::StructureStart> createStructureStart(::Dimension& dimension, ::BiomeSource const&, ::Random& random, ::ChunkPos const& pos, ::IPreliminarySurfaceProvider const&) /*override*/;
 
     // vIndex: 0
     virtual ~EndCityFeature() /*override*/ = default;
@@ -73,34 +52,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $getNearestGeneratedFeature(
-        ::Dimension&                           dimension,
-        ::BiomeSource const&                   biomeSource,
-        ::BlockPos const&                      origin,
-        ::BlockPos&                            pos,
-        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
-        bool                                   mustBeInNewChunks,
-        ::std::optional<::HashedString> const& biomeTag
-    );
+    MCAPI bool $getNearestGeneratedFeature(::Dimension& dimension, ::BiomeSource const& biomeSource, ::BlockPos const& origin, ::BlockPos& pos, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, bool mustBeInNewChunks, ::std::optional<::HashedString> const& biomeTag);
 
     MCFOLD bool $shouldPostProcessMobs() const;
 
-    MCAPI bool $isFeatureChunk(
-        ::BiomeSource const&,
-        ::Random&                            random,
-        ::ChunkPos const&                    pos,
-        uint                                 levelSeed,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        ::Dimension const&                   dimension
-    );
+    MCAPI bool $isFeatureChunk(::BiomeSource const&, ::Random& random, ::ChunkPos const& pos, uint levelSeed, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, ::Dimension const& dimension);
 
-    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension& dimension,
-        ::BiomeSource const&,
-        ::Random&         random,
-        ::ChunkPos const& pos,
-        ::IPreliminarySurfaceProvider const&
-    );
+    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(::Dimension& dimension, ::BiomeSource const&, ::Random& random, ::ChunkPos const& pos, ::IPreliminarySurfaceProvider const&);
     // NOLINTEND
 
 public:
@@ -108,4 +66,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

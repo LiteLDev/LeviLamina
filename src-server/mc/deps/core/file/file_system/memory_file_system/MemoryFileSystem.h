@@ -38,80 +38,65 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 7
-    virtual ::Core::Result _openFile(
-        ::std::unique_ptr<::Core::FileImpl>&,
-        ::Core::PathView,
-        ::Core::FileOpenMode,
-        ::Core::FileBufferingMode
-    ) /*override*/;
+    // vIndex: 6
+    virtual ::Core::Result _openFile(::std::unique_ptr<::Core::FileImpl>&, ::Core::PathView, ::Core::FileOpenMode, ::Core::FileBufferingMode) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual bool _fileExists(::Core::PathView) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual ::Core::Result _deleteFile(::Core::PathView) /*override*/;
 
-    // vIndex: 11
+    // vIndex: 10
     virtual ::Core::Result _getFileSize(::Core::PathView, uint64*) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 11
     virtual ::Core::Result _renameFile(::Core::PathView, ::Core::PathView) /*override*/;
 
-    // vIndex: 13
+    // vIndex: 12
     virtual ::Core::Result _createEmptyFile(::Core::PathView fileName) /*override*/;
 
-    // vIndex: 17
+    // vIndex: 16
     virtual ::Core::Result _createOneDirectory(::Core::PathView) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual bool _directoryExists(::Core::PathView) /*override*/;
 
-    // vIndex: 21
+    // vIndex: 20
     virtual ::Core::Result _deleteEmptyDirectory(::Core::PathView) /*override*/;
 
-    // vIndex: 22
+    // vIndex: 21
     virtual ::Core::Result _deleteDirectoryAndContentsRecursively(::Core::PathView directoryPath) /*override*/;
 
-    // vIndex: 23
+    // vIndex: 22
     virtual ::Core::Result _deleteDirectoryContentsRecursively(::Core::PathView directoryPath) /*override*/;
 
-    // vIndex: 25
+    // vIndex: 24
     virtual ::Core::Result _renameDirectory(::Core::PathView, ::Core::PathView) /*override*/;
 
-    // vIndex: 26
-    virtual ::Core::Result _iterateOverDirectory(
-        ::Core::PathView,
-        ::Core::DirectoryIterationFlags,
-        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
-    ) /*override*/;
+    // vIndex: 25
+    virtual ::Core::Result _iterateOverDirectory(::Core::PathView, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>) /*override*/;
 
-    // vIndex: 32
+    // vIndex: 31
     virtual bool _fileOrDirectoryExists(::Core::PathView) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 44
     virtual ::Core::Result _getLastModificationTime(::Core::PathView, int64*) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 45
     virtual ::Core::Result _copyTimeAndAccessRights(::Core::PathView, ::Core::PathView) /*override*/;
 
-    // vIndex: 34
+    // vIndex: 33
     virtual ::Core::Result _getEntryType(::Core::PathView, ::Core::FileType&) /*override*/;
 
-    // vIndex: 49
+    // vIndex: 48
     virtual void _initializeInternal() /*override*/;
 
-    // vIndex: 48
-    virtual ::Core::Result _writeOperation(
-        ::Core::PathView                                fullPath,
-        ::Core::Result&&                                result,
-        ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull,
-        uint64                                          numBytesWritten
-    ) /*override*/;
+    // vIndex: 47
+    virtual ::Core::Result _writeOperation(::Core::PathView fullPath, ::Core::Result&& result, ::std::function<void(::Core::FileStorageArea*)> observerCallOrNull, uint64 numBytesWritten) /*override*/;
 
-    // vIndex: 50
-    virtual ::std::unique_ptr<::Core::FileImpl>
-    _createMemoryFileHandle(::Core::MemoryFileSystemEntryFile*, ::Core::FileOpenMode, uint64);
+    // vIndex: 49
+    virtual ::std::unique_ptr<::Core::FileImpl> _createMemoryFileHandle(::Core::MemoryFileSystemEntryFile*, ::Core::FileOpenMode, uint64);
 
     // vIndex: 0
     virtual ~MemoryFileSystem() /*override*/ = default;
@@ -122,6 +107,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

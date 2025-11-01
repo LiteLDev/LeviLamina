@@ -21,7 +21,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk6214d6;
     ::ll::UntypedStorage<8, 40> mUnk5f78a2;
-    ::ll::UntypedStorage<8, 8>  mUnkf83ed2;
+    ::ll::UntypedStorage<8, 8> mUnkf83ed2;
     // NOLINTEND
 
 public:
@@ -37,8 +37,7 @@ public:
     virtual ~RobustThroughputEstimator() /*override*/;
 
     // vIndex: 1
-    virtual void
-    IncomingPacketFeedbackVector(::std::vector<::webrtc::PacketResult> const& packet_feedback_vector) /*override*/;
+    virtual void IncomingPacketFeedbackVector(::std::vector<::webrtc::PacketResult> const& packet_feedback_vector) /*override*/;
 
     // vIndex: 2
     virtual ::std::optional<::webrtc::DataRate> bitrate() const /*override*/;
@@ -92,6 +91,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

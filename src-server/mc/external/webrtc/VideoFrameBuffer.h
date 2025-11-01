@@ -18,16 +18,16 @@ public:
     // VideoFrameBuffer inner types define
     enum class Type : int {
         KNative = 0,
-        KI420   = 1,
-        KI420A  = 2,
-        KI422   = 3,
-        KI444   = 4,
-        KI010   = 5,
-        KI210   = 6,
-        KI410   = 7,
-        KNV12   = 8,
+        KI420 = 1,
+        KI420A = 2,
+        KI422 = 3,
+        KI444 = 4,
+        KI010 = 5,
+        KI210 = 6,
+        KI410 = 7,
+        KNV12 = 8,
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -47,12 +47,10 @@ public:
     virtual ::webrtc::I420BufferInterface const* GetI420() const;
 
     // vIndex: 8
-    virtual ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
-    CropAndScale(int offset_x, int offset_y, int crop_width, int crop_height, int scaled_width, int scaled_height);
+    virtual ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> CropAndScale(int offset_x, int offset_y, int crop_width, int crop_height, int scaled_width, int scaled_height);
 
     // vIndex: 9
-    virtual ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
-    GetMappedFrameBuffer(::rtc::ArrayView<::webrtc::VideoFrameBuffer::Type> types);
+    virtual ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> GetMappedFrameBuffer(::rtc::ArrayView<::webrtc::VideoFrameBuffer::Type> types);
 
     // vIndex: 2
     virtual ~VideoFrameBuffer() /*override*/ = default;
@@ -61,12 +59,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
-    $CropAndScale(int offset_x, int offset_y, int crop_width, int crop_height, int scaled_width, int scaled_height);
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> $CropAndScale(int offset_x, int offset_y, int crop_width, int crop_height, int scaled_width, int scaled_height);
 
-    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer>
-    $GetMappedFrameBuffer(::rtc::ArrayView<::webrtc::VideoFrameBuffer::Type> types);
+    MCNAPI ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> $GetMappedFrameBuffer(::rtc::ArrayView<::webrtc::VideoFrameBuffer::Type> types);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

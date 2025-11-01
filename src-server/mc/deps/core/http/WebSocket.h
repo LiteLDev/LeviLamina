@@ -21,8 +21,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnk59fcc6;
-    ::ll::UntypedStorage<8, 8>  mUnk2d81af;
-    ::ll::UntypedStorage<8, 8>  mUnk5cda29;
+    ::ll::UntypedStorage<8, 8> mUnk2d81af;
+    ::ll::UntypedStorage<8, 8> mUnk5cda29;
     // NOLINTEND
 
 public:
@@ -55,8 +55,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::HC_WEBSOCKET_OBSERVER* _allocateSocket(::std::future<void> connectCompleted);
 
-    MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>
-    connect(::std::string const& uri, ::Bedrock::Http::HeaderCollection const& headers);
+    MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>> connect(::std::string const& uri, ::Bedrock::Http::HeaderCollection const& headers);
     // NOLINTEND
 
 public:
@@ -64,13 +63,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void _deallocateSocketAsync(::HC_WEBSOCKET_OBSERVER* handle);
 
-    MCNAPI static void _onConnect(
-        ::XAsyncBlock*                              asyncConnect,
-        ::std::weak_ptr<::Bedrock::Http::WebSocket> weakThis,
-        ::Bedrock::Threading::AsyncPromise<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>
-                                 onComplete,
-        ::HC_WEBSOCKET_OBSERVER* connectHandle
-    );
+    MCNAPI static void _onConnect(::XAsyncBlock* asyncConnect, ::std::weak_ptr<::Bedrock::Http::WebSocket> weakThis, ::Bedrock::Threading::AsyncPromise<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>> onComplete, ::HC_WEBSOCKET_OBSERVER* connectHandle);
     // NOLINTEND
 
 public:
@@ -90,6 +83,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Http
+}

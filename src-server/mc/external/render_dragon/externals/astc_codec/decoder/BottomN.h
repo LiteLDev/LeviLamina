@@ -4,6 +4,7 @@
 
 namespace astc_codec::base {
 
-class BottomN {};
+class BottomN {
+};
 
-} // namespace astc_codec::base
+}

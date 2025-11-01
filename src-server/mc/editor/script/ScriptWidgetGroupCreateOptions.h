@@ -32,6 +32,7 @@ public:
 
     MCNAPI static ::Scripting::InterfaceBinding bindScript();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

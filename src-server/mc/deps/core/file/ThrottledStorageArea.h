@@ -21,8 +21,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk1a9a2d;
-    ::ll::UntypedStorage<8, 8>  mUnk7d5463;
-    ::ll::UntypedStorage<1, 1>  mUnk8fa819;
+    ::ll::UntypedStorage<8, 8> mUnk7d5463;
+    ::ll::UntypedStorage<1, 1> mUnk8fa819;
     // NOLINTEND
 
 public:
@@ -61,6 +61,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

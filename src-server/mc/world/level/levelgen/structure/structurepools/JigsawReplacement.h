@@ -5,7 +5,7 @@
 namespace br::worldgen {
 
 enum class JigsawReplacement : uchar {
-    Keep    = 0,
+    Keep = 0,
     Replace = 1,
 };
 

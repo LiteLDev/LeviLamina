@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 72> mUnke7aa60;
-    ::ll::UntypedStorage<8, 8>  mUnk62b5d6;
+    ::ll::UntypedStorage<8, 8> mUnk62b5d6;
     ::ll::UntypedStorage<8, 24> mUnk29ce5e;
     // NOLINTEND
 
@@ -157,6 +157,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cereal
+}

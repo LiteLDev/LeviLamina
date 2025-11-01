@@ -6,8 +6,8 @@ namespace Social {
 
 enum class EduJoinerResponse : int {
     Disconnect = 0,
-    Requeue    = 1,
-    Accept     = 2,
+    Requeue = 1,
+    Accept = 2,
 };
 
 }

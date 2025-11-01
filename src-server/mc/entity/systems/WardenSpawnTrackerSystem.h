@@ -42,4 +42,5 @@ public:
 
     MCNAPI static void** $vftableForITickingSystem();
     // NOLINTEND
+
 };

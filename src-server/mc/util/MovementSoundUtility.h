@@ -13,4 +13,4 @@ namespace MovementSoundUtility {
 MCNAPI float getNextStep(::SynchedActorDataEntityWrapper const& synchedActorData, float moveDistance);
 // NOLINTEND
 
-} // namespace MovementSoundUtility
+}

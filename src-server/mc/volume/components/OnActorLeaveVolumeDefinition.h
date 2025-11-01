@@ -14,4 +14,5 @@ public:
     OnActorLeaveVolumeDefinition& operator=(OnActorLeaveVolumeDefinition const&);
     OnActorLeaveVolumeDefinition(OnActorLeaveVolumeDefinition const&);
     OnActorLeaveVolumeDefinition();
+
 };

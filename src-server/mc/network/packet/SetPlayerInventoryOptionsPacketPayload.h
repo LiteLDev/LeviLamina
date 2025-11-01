@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 20, ::InventoryOptions> mInventoryOptions;
     // NOLINTEND
+
 };

@@ -15,4 +15,5 @@ public:
 
     MCAPI static ::ExplorationMapData const* getExplorationMapDataByFeatureName(::std::string const& featureName);
     // NOLINTEND
+
 };

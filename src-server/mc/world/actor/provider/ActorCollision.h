@@ -15,7 +15,7 @@ MCAPI float getPickRadius(::EntityContext const& provider);
 
 MCAPI ::ActorUniqueID getPushedByID(::EntityContext const& provider);
 
-MCAPI bool hasCollision(::EntityContext const& provider);
+MCFOLD bool hasCollision(::EntityContext const& provider);
 
 MCFOLD bool hasHorizontalCollision(::EntityContext const& provider);
 
@@ -33,8 +33,6 @@ MCFOLD bool isOnGround(::EntityContext const& provider);
 
 MCAPI bool isPickable(::EntityContext const& provider);
 
-MCAPI void setCollision(::EntityContext& provider, bool value);
-
 MCAPI void setHorizontalCollision(::EntityContext& provider, bool value);
 
 MCAPI void setOnGround(::EntityContext& provider, bool value);
@@ -46,4 +44,4 @@ MCAPI void setWasOnGround(::EntityContext& provider, bool value);
 MCFOLD bool wasOnGround(::EntityContext const& provider);
 // NOLINTEND
 
-} // namespace ActorCollision
+}

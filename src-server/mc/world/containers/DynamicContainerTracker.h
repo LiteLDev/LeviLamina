@@ -21,10 +21,9 @@ class DynamicContainerTracker {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryAccess>>  mContainerRegistryAccess;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryAccess>> mContainerRegistryAccess;
     ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryTracker>> mContainerRegistryManager;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::FullContainerName, ::std::unique_ptr<::DynamicContainerManager>>>
-                                                                         mTrackedContainers;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::FullContainerName, ::std::unique_ptr<::DynamicContainerManager>>> mTrackedContainers;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::FullContainerName>> mMarkedReachable;
     // NOLINTEND
 
@@ -35,16 +34,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DynamicContainerTracker(
-        ::WeakRef<::IContainerRegistryAccess>  registryAccess,
-        ::WeakRef<::IContainerRegistryTracker> registryManager
-    );
+    MCNAPI DynamicContainerTracker(::WeakRef<::IContainerRegistryAccess> registryAccess, ::WeakRef<::IContainerRegistryTracker> registryManager);
 
-    MCNAPI ::std::optional<::ItemStack> _initializeStorageItem(
-        ::ItemStack const&                 item,
-        ::StorageItemComponent*            storageItemComponent,
-        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
-    );
+    MCNAPI ::std::optional<::ItemStack> _initializeStorageItem(::ItemStack const& item, ::StorageItemComponent* storageItemComponent, ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent);
 
     MCNAPI void _markAux(::ItemStack const& item, int depth);
 
@@ -60,7 +52,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::WeakRef<::IContainerRegistryAccess> registryAccess, ::WeakRef<::IContainerRegistryTracker> registryManager);
+    MCNAPI void* $ctor(::WeakRef<::IContainerRegistryAccess> registryAccess, ::WeakRef<::IContainerRegistryTracker> registryManager);
     // NOLINTEND
+
 };

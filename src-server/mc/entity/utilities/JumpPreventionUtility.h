@@ -13,8 +13,7 @@ struct JumpPreventionResult;
 namespace JumpPreventionUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI ::JumpPreventionResult
-getJumpPrevention(bool isOnGround, ::AABB const& aabb, ::BlockPos pos, ::IConstBlockSource const& region);
+MCNAPI ::JumpPreventionResult getJumpPrevention(bool isOnGround, ::AABB const& aabb, ::BlockPos pos, ::IConstBlockSource const& region);
 // NOLINTEND
 
-} // namespace JumpPreventionUtility
+}

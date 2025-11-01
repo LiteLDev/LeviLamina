@@ -4,7 +4,8 @@
 
 namespace Scripting {
 
-template <typename T0, typename T1, typename T2>
-class Promise {};
+template<typename T0, typename T1, typename T2>
+class Promise {
+};
 
-} // namespace Scripting
+}

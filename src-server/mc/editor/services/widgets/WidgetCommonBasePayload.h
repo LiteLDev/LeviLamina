@@ -18,6 +18,7 @@ public:
     WidgetCommonBasePayload& operator=(WidgetCommonBasePayload const&);
     WidgetCommonBasePayload(WidgetCommonBasePayload const&);
     WidgetCommonBasePayload();
+
 };
 
-} // namespace Editor::Network
+}

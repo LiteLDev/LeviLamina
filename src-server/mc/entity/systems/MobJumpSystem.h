@@ -4,7 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/Optional.h"
+#include "mc/deps/ecs/ViewT.h"
 #include "mc/deps/ecs/strict/EntityModifier.h"
+#include "mc/deps/ecs/strict/Exclude.h"
+#include "mc/deps/ecs/strict/Include.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,13 +17,17 @@ class StrictEntityContext;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct ActorHeadInWaterFlagComponent;
+struct ActorMovementTickNeededComponent;
 struct CanStandOnSnowFlagComponent;
 struct HasLightweightFamilyFlagComponent;
 struct ImmuneToLavaDragComponent;
 struct JumpFromGroundRequestComponent;
 struct MobEffectsComponent;
+struct MobFlagComponent;
+struct MobIsJumpingFlagComponent;
 struct MobJumpComponent;
 struct OnGroundFlagComponent;
+struct PassengerComponent;
 struct PlayerComponent;
 struct SquidFlagComponent;
 struct StateVectorComponent;
@@ -35,49 +42,21 @@ namespace MobJumpSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createCleanupSystem();
 
+MCNAPI ::TickingSystemWithInfo createResetNoJumpDelaySystem();
+
 MCNAPI void doDecrementNoJumpDelaySystem(::MobJumpComponent& mobJumpComponent);
 
-MCNAPI void doMobJumpSystem(
-    ::StrictEntityContext const&                          context,
-    ::Optional<::JumpControlComponent const>              jumpControl,
-    ::Optional<::OnGroundFlagComponent const>             onGround,
-    ::Optional<::PlayerComponent const>                   isPlayer,
-    ::Optional<::SquidFlagComponent const>                isSquid,
-    ::Optional<::WasInWaterFlagComponent const>           isInWater,
-    ::Optional<::ActorHeadInWaterFlagComponent const>     breathingPointInWater,
-    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnow,
-    ::Optional<::HasLightweightFamilyFlagComponent const> isLightweightFamily,
-    ::Optional<::ImmuneToLavaDragComponent const>         isImmuneToLavaDrag,
-    ::AABBShapeComponent const&                           aabbShape,
-    ::SwimAmountComponent const&                          swimAmount,
-    ::MobEffectsComponent const&                          mobEffects,
-    ::SubBBsComponent const&                              subBBs,
-    ::ActorDataFlagComponent const&                       synchedActorData,
-    ::MobJumpComponent&                                   mobJump,
-    ::StateVectorComponent&                               stateVector,
-    ::EntityModifier<::JumpFromGroundRequestComponent>    entityModifier,
-    ::IConstBlockSource const&                            region
-);
+MCNAPI void doMobJumpSystem(::StrictEntityContext const& context, ::Optional<::JumpControlComponent const> jumpControl, ::Optional<::OnGroundFlagComponent const> onGround, ::Optional<::PlayerComponent const> isPlayer, ::Optional<::SquidFlagComponent const> isSquid, ::Optional<::WasInWaterFlagComponent const> isInWater, ::Optional<::ActorHeadInWaterFlagComponent const> breathingPointInWater, ::Optional<::CanStandOnSnowFlagComponent const> canStandOnSnow, ::Optional<::HasLightweightFamilyFlagComponent const> isLightweightFamily, ::Optional<::ImmuneToLavaDragComponent const> isImmuneToLavaDrag, ::AABBShapeComponent const& aabbShape, ::SwimAmountComponent const& swimAmount, ::MobEffectsComponent const& mobEffects, ::SubBBsComponent const& subBBs, ::ActorDataFlagComponent const& synchedActorData, ::MobJumpComponent& mobJump, ::StateVectorComponent& stateVector, ::EntityModifier<::JumpFromGroundRequestComponent> entityModifier, ::IConstBlockSource const& region);
 
 MCNAPI void doResetNoJumpDelaySystem(::StrictEntityContext const&, ::MobJumpComponent& mobJumpComponent);
 
-MCNAPI void doSwimmerSwimUp(
-    ::Optional<::JumpControlComponent const> const& jumpControl,
-    ::Optional<::SquidFlagComponent const> const&   isSquid,
-    ::MobEffectsComponent const&                    mobEffects,
-    ::MobJumpComponent&                             mobJump,
-    ::StateVectorComponent&                         stateVector
-);
+MCNAPI void doSwimmerSwimUp(::Optional<::JumpControlComponent const> const& jumpControl, ::Optional<::SquidFlagComponent const> const& isSquid, ::MobEffectsComponent const& mobEffects, ::MobJumpComponent& mobJump, ::StateVectorComponent& stateVector);
 
-MCNAPI bool shouldAscendLadder(
-    ::Optional<::PlayerComponent const> const&                   isPlayer,
-    ::Optional<::CanStandOnSnowFlagComponent const> const&       canStandOnSnow,
-    ::Optional<::HasLightweightFamilyFlagComponent const> const& isLightweightFamily,
-    ::AABBShapeComponent const&                                  aabbShapeComponent,
-    ::ActorDataFlagComponent const&                              synchedActorDataComponent,
-    ::StateVectorComponent const&                                stateVectorComponent,
-    ::IConstBlockSource const&                                   region
-);
+MCNAPI bool shouldAscendLadder(::Optional<::PlayerComponent const> const& isPlayer, ::Optional<::CanStandOnSnowFlagComponent const> const& canStandOnSnow, ::Optional<::HasLightweightFamilyFlagComponent const> const& isLightweightFamily, ::AABBShapeComponent const& aabbShapeComponent, ::ActorDataFlagComponent const& synchedActorDataComponent, ::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region);
+
+MCNAPI void tickDecrementNoJumpDelaySystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>, ::MobJumpComponent> view);
+
+MCNAPI void tickResetNoJumpDelaySystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>, ::Exclude<::MobIsJumpingFlagComponent, ::PassengerComponent>, ::MobJumpComponent> view);
 // NOLINTEND
 
-} // namespace MobJumpSystem
+}

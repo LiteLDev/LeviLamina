@@ -30,25 +30,13 @@ public:
     virtual ::Json::Value clientConfig(::Json::Value const&) const = 0;
 
     // vIndex: 2
-    virtual ::Identity::_TokenRefreshState::Enum refreshToken(
-        ::Identity::IEduAuth&,
-        ::AccessTokenInfo const&,
-        int64,
-        ::Identity::EduResourceType,
-        ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>,
-        ::std::function<void()>
-    ) = 0;
+    virtual ::Identity::_TokenRefreshState::Enum refreshToken(::Identity::IEduAuth&, ::AccessTokenInfo const&, int64, ::Identity::EduResourceType, ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>, ::std::function<void()>) = 0;
 
     // vIndex: 3
     virtual void onRefreshedToken(bool, ::Identity::EduResourceType) = 0;
 
     // vIndex: 4
-    virtual ::Identity::SsoPromptMode signIn(
-        ::Identity::IEduAuth&,
-        int64,
-        ::std::function<void()>,
-        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
-    ) = 0;
+    virtual ::Identity::SsoPromptMode signIn(::Identity::IEduAuth&, int64, ::std::function<void()>, ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>) = 0;
 
     // vIndex: 5
     virtual void signInSuccess(::std::string const&) = 0;
@@ -63,11 +51,7 @@ public:
     virtual bool isDemoConversion() const = 0;
 
     // vIndex: 9
-    virtual void signInGraph(
-        ::Identity::IEduAuth&,
-        ::std::string const&,
-        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
-    ) = 0;
+    virtual void signInGraph(::Identity::IEduAuth&, ::std::string const&, ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>) = 0;
     // NOLINTEND
 
 public:
@@ -75,6 +59,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Identity
+}

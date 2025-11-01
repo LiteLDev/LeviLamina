@@ -14,7 +14,7 @@ class BlockEventDispatcherToken {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                                 mHandle;
+    ::ll::TypedStorage<4, 4, int> mHandle;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::BlockEventDispatcher>> mDispatcher;
     // NOLINTEND
 
@@ -39,4 +39,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

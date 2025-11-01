@@ -16,15 +16,7 @@ struct StateVectorComponent;
 namespace SwimControlSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doSwimControl(
-    ::StrictEntityContext const&,
-    ::ActorDataFlagComponent const&      synchedActorDataComponent,
-    ::MovementAbilitiesComponent const&  abilitiesComponent,
-    ::ActorRotationComponent const&      actorRotationComponent,
-    ::MoveInputComponent const&          moveInputComponent,
-    ::PlayerInputRequestComponent const& request,
-    ::StateVectorComponent&              stateVectorComponent
-);
+MCNAPI void doSwimControl(::StrictEntityContext const&, ::ActorDataFlagComponent const& synchedActorDataComponent, ::MovementAbilitiesComponent const& abilitiesComponent, ::ActorRotationComponent const& actorRotationComponent, ::MoveInputComponent const& moveInputComponent, ::PlayerInputRequestComponent const& request, ::StateVectorComponent& stateVectorComponent);
 // NOLINTEND
 
-} // namespace SwimControlSystemImpl
+}

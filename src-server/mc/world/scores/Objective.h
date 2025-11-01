@@ -19,9 +19,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ScoreboardId, int>> mScores;
-    ::ll::TypedStorage<8, 32, ::std::string const>                       mName;
-    ::ll::TypedStorage<8, 32, ::std::string>                             mDisplayName;
-    ::ll::TypedStorage<8, 8, ::ObjectiveCriteria const&>                 mCriteria;
+    ::ll::TypedStorage<8, 32, ::std::string const> mName;
+    ::ll::TypedStorage<8, 32, ::std::string> mDisplayName;
+    ::ll::TypedStorage<8, 8, ::ObjectiveCriteria const&> mCriteria;
     // NOLINTEND
 
 public:
@@ -70,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

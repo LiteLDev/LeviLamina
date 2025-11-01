@@ -4,6 +4,7 @@
 
 namespace ScriptModuleMinecraft::Detail {
 
-struct BeforeEventExecutor {};
+struct BeforeEventExecutor {
+};
 
-} // namespace ScriptModuleMinecraft::Detail
+}

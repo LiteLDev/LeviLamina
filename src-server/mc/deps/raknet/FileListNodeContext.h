@@ -19,4 +19,5 @@ public:
     FileListNodeContext& operator=(FileListNodeContext const&);
     FileListNodeContext(FileListNodeContext const&);
     FileListNodeContext();
+
 };

@@ -8,10 +8,10 @@
 #include "mc/entity/components_json_legacy/DwellerRole.h"
 #include "mc/legacy/ActorUniqueID.h"
 #include "mc/platform/UUID.h"
+#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/versionless/world/phys/AABB.h"
 #include "mc/world/actor/ai/village/POIType.h"
-#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
-#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -38,79 +38,79 @@ public:
     struct DwellerData;
     struct StandingModifiers;
     // clang-format on
-
+    
     // Village inner types define
     struct StandingModifiers {
     public:
         // static variables
         // NOLINTBEGIN
         MCAPI static int const& GOLEM_DEATH_PENALTY();
-
+    
         MCAPI static int const& LARGE_PENALTY();
-
+    
         MCAPI static int const& LARGE_REWARD();
-
+    
         MCAPI static int const& MEDIUM_PENALTY();
-
+    
         MCAPI static int const& SMALL_PENALTY();
-
+    
         MCAPI static int const& SMALL_REWARD();
         // NOLINTEND
+    
     };
-
+    
     enum class VillageVersion : uchar {
-        Base                 = 0,
+        Base = 0,
         WorksiteInitEventFix = 1,
-        Count                = 2,
+        Count = 2,
     };
-
+    
     struct DwellerData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::Tick>      mLastTicked;
+        ::ll::TypedStorage<8, 8, ::Tick> mLastTicked;
         ::ll::TypedStorage<4, 12, ::BlockPos> mLastSavedPosition;
         // NOLINTEND
+    
     };
-
+    
     using UnclaimedPOIList = ::std::array<::std::vector<::std::weak_ptr<::POIInstance>>, 3>;
-
+    
     using DwellerMap = ::std::unordered_map<::ActorUniqueID, ::Village::DwellerData>;
-
+    
     using ClaimedPOIList = ::std::unordered_map<::ActorUniqueID, ::std::array<::std::weak_ptr<::POIInstance>, 3>>;
-
+    
     using DwellerTimestamp = ::std::pair<::ActorUniqueID, ::Tick>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::mce::UUID>                                                    mUniqueID;
-    ::ll::TypedStorage<8, 8, ::Dimension&>                                                    mDimension;
+    ::ll::TypedStorage<8, 16, ::mce::UUID> mUniqueID;
+    ::ll::TypedStorage<8, 8, ::Dimension&> mDimension;
     ::ll::TypedStorage<8, 72, ::std::array<::std::vector<::std::weak_ptr<::POIInstance>>, 3>> mUnclaimedPOIStacks;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::std::array<::std::weak_ptr<::POIInstance>, 3>>>
-        mClaimedPOIs;
-    ::ll::TypedStorage<8, 256, ::std::array<::std::unordered_map<::ActorUniqueID, ::Village::DwellerData>, 4>>
-                                                                                             mDwellers;
-    ::ll::TypedStorage<4, 24, ::AABB>                                                        mBounds;
-    ::ll::TypedStorage<4, 24, ::AABB>                                                        mStaticRaidBounds;
-    ::ll::TypedStorage<1, 1, uchar>                                                          mVillageVersion;
-    ::ll::TypedStorage<8, 8, ::Tick>                                                         mGameTick;
-    ::ll::TypedStorage<8, 8, ::Tick>                                                         mSaveTick;
-    ::ll::TypedStorage<8, 8, ::Tick>                                                         mRingTick;
-    ::ll::TypedStorage<8, 8, ::Tick>                                                         mNoBreedTimer;
-    ::ll::TypedStorage<8, 8, ::Tick>                                                         mBadStandingDecayTimer;
-    ::ll::TypedStorage<8, 8, ::Tick>                                                         mGoodStandingDecayTimer;
-    ::ll::TypedStorage<8, 8, ::Tick>                                                         mPassiveDwellerSpawnTimer;
-    ::ll::TypedStorage<4, 4, int>                                                            mInitializationTimer;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, int>>                    mPlayerStanding;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::std::array<::std::weak_ptr<::POIInstance>, 3>>> mClaimedPOIs;
+    ::ll::TypedStorage<8, 256, ::std::array<::std::unordered_map<::ActorUniqueID, ::Village::DwellerData>, 4>> mDwellers;
+    ::ll::TypedStorage<4, 24, ::AABB> mBounds;
+    ::ll::TypedStorage<4, 24, ::AABB> mStaticRaidBounds;
+    ::ll::TypedStorage<1, 1, uchar> mVillageVersion;
+    ::ll::TypedStorage<8, 8, ::Tick> mGameTick;
+    ::ll::TypedStorage<8, 8, ::Tick> mSaveTick;
+    ::ll::TypedStorage<8, 8, ::Tick> mRingTick;
+    ::ll::TypedStorage<8, 8, ::Tick> mNoBreedTimer;
+    ::ll::TypedStorage<8, 8, ::Tick> mBadStandingDecayTimer;
+    ::ll::TypedStorage<8, 8, ::Tick> mGoodStandingDecayTimer;
+    ::ll::TypedStorage<8, 8, ::Tick> mPassiveDwellerSpawnTimer;
+    ::ll::TypedStorage<4, 4, int> mInitializationTimer;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, int>> mPlayerStanding;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::Village::DwellerData>> mAggressors;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ActorUniqueID, ::Tick>>>           mVillagerWorkTimestamps;
-    ::ll::TypedStorage<1, 1, bool>                                                           mVillageInitialized;
-    ::ll::TypedStorage<8, 48, ::HashedString const>                                          mNitwitFamily;
-    ::ll::TypedStorage<8, 48, ::HashedString const>                                          mVillagePrefix;
-    ::ll::TypedStorage<8, 48, ::HashedString const>                                          mVillagePrefixOld;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Raid>>                                      mRaid;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>>                         mSoundTheAlarmPlayerList;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ActorUniqueID, ::Tick>>> mVillagerWorkTimestamps;
+    ::ll::TypedStorage<1, 1, bool> mVillageInitialized;
+    ::ll::TypedStorage<8, 48, ::HashedString const> mNitwitFamily;
+    ::ll::TypedStorage<8, 48, ::HashedString const> mVillagePrefix;
+    ::ll::TypedStorage<8, 48, ::HashedString const> mVillagePrefixOld;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Raid>> mRaid;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ActorUniqueID>> mSoundTheAlarmPlayerList;
     // NOLINTEND
 
 public:
@@ -138,22 +138,11 @@ public:
 
     MCAPI bool _findPlayerCentricSpawnPointForRaid(::Vec3& outSpawnPoint, bool snapToSurface) const;
 
-    MCAPI bool _findSpawnPointForRaid(
-        ::Vec3& outSpawnPoint,
-        float   distanceTolerance,
-        float   boundsScaling,
-        bool    snapToSurface,
-        bool    outsideOfVillage
-    ) const;
+    MCAPI bool _findSpawnPointForRaid(::Vec3& outSpawnPoint, float distanceTolerance, float boundsScaling, bool snapToSurface, bool outsideOfVillage) const;
 
-    MCAPI ::BlockSource*
-    _findSpawnableRegion(::Vec3 spawnPosition, int xzSpreadDistance, bool& outHasSpawnAreaLoaded) const;
+    MCAPI ::BlockSource* _findSpawnableRegion(::Vec3 spawnPosition, int xzSpreadDistance, bool& outHasSpawnAreaLoaded) const;
 
-    MCAPI void _findWeightedPOI(
-        ::std::vector<::std::weak_ptr<::POIInstance>>& unclaimedPOIStack,
-        ::Random&                                      random,
-        ::ActorUniqueID                                id
-    );
+    MCAPI void _findWeightedPOI(::std::vector<::std::weak_ptr<::POIInstance>>& unclaimedPOIStack, ::Random& random, ::ActorUniqueID id);
 
     MCAPI void _helpLocateRaiders(::Raid const& raid);
 
@@ -185,8 +174,7 @@ public:
 
     MCAPI void _spawnPassiveDwellers(::BlockSource& region, int);
 
-    MCAPI bool
-    _spawnRaidGroup(::Vec3 spawnPosition, uchar groupNumber, ::std::unordered_set<::ActorUniqueID>& spawnedMobs) const;
+    MCAPI bool _spawnRaidGroup(::Vec3 spawnPosition, uchar groupNumber, ::std::unordered_set<::ActorUniqueID>& spawnedMobs) const;
 
     MCAPI void _tryAddPoiToVillage(::ActorUniqueID const& villager, ::std::weak_ptr<::POIInstance> pi);
 
@@ -226,9 +214,7 @@ public:
 
     MCAPI int modifyStanding(::ActorUniqueID const& playerID, int delta);
 
-    MCAPI ::std::_List_iterator<
-        ::std::_List_val<::std::_List_simple_types<::std::pair<::ActorUniqueID const, ::Village::DwellerData>>>>
-    removeActorFromVillage(::DwellerRole role, ::ActorUniqueID const& actor);
+    MCAPI ::std::_List_iterator<::std::_List_val<::std::_List_simple_types<::std::pair<::ActorUniqueID const, ::Village::DwellerData>>>> removeActorFromVillage(::DwellerRole role, ::ActorUniqueID const& actor);
 
     MCAPI void removeAllInstancesofActorFromVillage(::ActorUniqueID const& actor);
 
@@ -252,10 +238,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::POIInstance> _findPreferredPOI(
-        ::std::vector<::std::weak_ptr<::POIInstance>>& unclaimedPOIStack,
-        ::HashedString const&                          preferredPOI
-    );
+    MCAPI static ::std::shared_ptr<::POIInstance> _findPreferredPOI(::std::vector<::std::weak_ptr<::POIInstance>>& unclaimedPOIStack, ::HashedString const& preferredPOI);
 
     MCAPI static bool isVillagePOI(::VillageManager const& villageManager, ::Block const& block);
     // NOLINTEND
@@ -307,4 +290,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

@@ -22,47 +22,45 @@ public:
     // clang-format off
     class Definition;
     // clang-format on
-
+    
     // CroakGoal inner types define
     class Definition : public ::BaseGoalDefinition {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 8, ::FloatRange>        mIntervalRange;
-        ::ll::TypedStorage<4, 8, ::FloatRange>        mDurationRange;
+        ::ll::TypedStorage<4, 8, ::FloatRange> mIntervalRange;
+        ::ll::TypedStorage<4, 8, ::FloatRange> mDurationRange;
         ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
         // NOLINTEND
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const&                                                                                  name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::CroakGoal::Definition>>& root
-        );
+        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::CroakGoal::Definition>>& root);
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                   mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     ::ll::TypedStorage<8, 96, ::CroakGoal::Definition> mDefinition;
-    ::ll::TypedStorage<8, 8, ::Tick>                   mTickOfNextCroak;
-    ::ll::TypedStorage<8, 8, ::Tick>                   mTickOfEndCroak;
+    ::ll::TypedStorage<8, 8, ::Tick> mTickOfNextCroak;
+    ::ll::TypedStorage<8, 8, ::Tick> mTickOfEndCroak;
     // NOLINTEND
 
 public:
@@ -112,4 +110,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

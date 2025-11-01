@@ -16,6 +16,7 @@ public:
     PerCascadeDrawingParameters& operator=(PerCascadeDrawingParameters const&);
     PerCascadeDrawingParameters(PerCascadeDrawingParameters const&);
     PerCascadeDrawingParameters();
+
 };
 
-} // namespace mce::framebuilder
+}

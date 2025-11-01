@@ -19,8 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 4
-    virtual void
-    initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 172
     virtual float _getWalkTargetValue(::BlockPos const& pos) /*override*/;
@@ -47,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

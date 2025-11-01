@@ -13,4 +13,4 @@ namespace SoulSandBlockUtils {
 MCNAPI ::AABB const& SOUL_SAND_BLOCK_AABB();
 // NOLINTEND
 
-} // namespace SoulSandBlockUtils
+}

@@ -13,4 +13,4 @@ namespace SpawnCategory {
 MCNAPI ::std::array<::SpawnCategory::Config const, 8> const& CONFIG();
 // NOLINTEND
 
-} // namespace SpawnCategory
+}

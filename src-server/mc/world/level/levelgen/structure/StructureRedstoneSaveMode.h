@@ -4,5 +4,5 @@
 
 enum class StructureRedstoneSaveMode : uchar {
     SavesToMemory = 0,
-    SavesToDisk   = 1,
+    SavesToDisk = 1,
 };

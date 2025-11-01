@@ -28,6 +28,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::mce::Color const&);
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes
+}

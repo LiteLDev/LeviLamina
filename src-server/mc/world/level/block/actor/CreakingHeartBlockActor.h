@@ -23,10 +23,10 @@ class CreakingHeartBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>            mCooldown;
+    ::ll::TypedStorage<4, 4, uint> mCooldown;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mSpawnedCreakingID;
-    ::ll::TypedStorage<4, 4, uint>            mTrailResidualDuration;
-    ::ll::TypedStorage<4, 4, uint>            mElapsedCooldownsWithBlockedPlayer;
+    ::ll::TypedStorage<4, 4, uint> mTrailResidualDuration;
+    ::ll::TypedStorage<4, 4, uint> mElapsedCooldownsWithBlockedPlayer;
     // NOLINTEND
 
 public:
@@ -48,13 +48,7 @@ public:
     virtual void onRemoved(::BlockSource& region) /*override*/;
 
     // vIndex: 17
-    virtual void executeEvent(
-        ::BlockSource& region,
-        ::BlockPos const&,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             actor
-    ) /*override*/;
+    virtual void executeEvent(::BlockSource& region, ::BlockPos const&, ::Block const& block, ::std::string const& eventName, ::Actor& actor) /*override*/;
 
     // vIndex: 0
     virtual ~CreakingHeartBlockActor() /*override*/ = default;
@@ -79,13 +73,7 @@ public:
 
     MCAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void $executeEvent(
-        ::BlockSource& region,
-        ::BlockPos const&,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             actor
-    );
+    MCAPI void $executeEvent(::BlockSource& region, ::BlockPos const&, ::Block const& block, ::std::string const& eventName, ::Actor& actor);
     // NOLINTEND
 
 public:
@@ -93,4 +81,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

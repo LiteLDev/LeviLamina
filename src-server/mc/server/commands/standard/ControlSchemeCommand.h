@@ -16,16 +16,16 @@ class ControlSchemeCommand : public ::Command {
 public:
     // ControlSchemeCommand inner types define
     enum class Action : uchar {
-        Set   = 0,
+        Set = 0,
         Clear = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 200> mUnkecf6f1;
-    ::ll::UntypedStorage<1, 1>   mUnk90a465;
-    ::ll::UntypedStorage<1, 1>   mUnk97d303;
+    ::ll::UntypedStorage<1, 1> mUnk90a465;
+    ::ll::UntypedStorage<1, 1> mUnk97d303;
     // NOLINTEND
 
 public:
@@ -61,4 +61,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -18,4 +18,4 @@ MCNAPI void bindType(::cereal::ReflectionCtx& ctx);
 MCNAPI ::TintMethod fromString(::std::string const& tintMethodString, ::TintMethod defaultValue);
 // NOLINTEND
 
-} // namespace TintMethodUtility
+}

@@ -5,7 +5,7 @@
 namespace SharedTypes {
 
 enum class Side : int {
-    Left  = 0,
+    Left = 0,
     Right = 1,
     Count = 2,
 };

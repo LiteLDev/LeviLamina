@@ -3,6 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class UpdateSliderProgressMode : int {
-    WhenChanged  = 0,
+    WhenChanged = 0,
     WhenFinished = 1,
 };

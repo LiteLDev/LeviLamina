@@ -4,6 +4,7 @@
 
 namespace rtc {
 
-struct ProxyInfo {};
+struct ProxyInfo {
+};
 
-} // namespace rtc
+}

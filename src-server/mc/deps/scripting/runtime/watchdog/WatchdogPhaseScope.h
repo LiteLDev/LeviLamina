@@ -15,6 +15,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Scripting::IWatchdog*> mWatchdog;
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

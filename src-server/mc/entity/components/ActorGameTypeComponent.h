@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::GameType> mGameType;
     // NOLINTEND
+
 };

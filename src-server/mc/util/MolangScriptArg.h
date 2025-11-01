@@ -34,30 +34,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::MolangScriptArgType> mType;
-    ::ll::TypedStorage<8, 8, ::MolangScriptArgPOD>  mPOD;
-    ::ll::TypedStorage<
-        8,
-        72,
-        ::std::variant<
-            ::MolangMatrix,
-            ::MaterialVariants,
-            ::MolangActorArrayPtr,
-            ::MolangActorIdArrayPtr,
-            ::MolangArrayVariable,
-            ::MolangClientTextureSet,
-            ::MolangContextVariable,
-            ::MolangDataDrivenGeometry,
-            ::MolangEntityVariable,
-            ::MolangGeometryVariable,
-            ::MolangMaterialVariable,
-            ::MolangMemberAccessor,
-            ::MolangMemberArray,
-            ::MolangQueryFunctionPtr,
-            ::MolangTempVariable,
-            ::MolangTextureVariable,
-            ::MolangOffsetPlaceholder,
-            ::MolangResourceOffset>>
-        mData;
+    ::ll::TypedStorage<8, 8, ::MolangScriptArgPOD> mPOD;
+    ::ll::TypedStorage<8, 72, ::std::variant<::MolangMatrix, ::MaterialVariants, ::MolangActorArrayPtr, ::MolangActorIdArrayPtr, ::MolangArrayVariable, ::MolangClientTextureSet, ::MolangContextVariable, ::MolangDataDrivenGeometry, ::MolangEntityVariable, ::MolangGeometryVariable, ::MolangMaterialVariable, ::MolangMemberAccessor, ::MolangMemberArray, ::MolangQueryFunctionPtr, ::MolangTempVariable, ::MolangTextureVariable, ::MolangOffsetPlaceholder, ::MolangResourceOffset>> mData;
     // NOLINTEND
 
 public:
@@ -119,4 +97,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

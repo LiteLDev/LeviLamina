@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct WriteTimeEstimate;
     // clang-format on
-
+    
     // ThrottledFileWriteEstimator inner types define
     struct WriteTimeEstimate {
     public:
@@ -21,13 +21,15 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk9859d3;
         ::ll::UntypedStorage<1, 1> mUnkf4f881;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         WriteTimeEstimate& operator=(WriteTimeEstimate const&);
         WriteTimeEstimate(WriteTimeEstimate const&);
         WriteTimeEstimate();
+    
     };
+    
 };
 
-} // namespace Core::WriteThrottledOS
+}

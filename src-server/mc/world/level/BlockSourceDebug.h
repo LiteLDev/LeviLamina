@@ -25,4 +25,5 @@ public:
     // vIndex: 0
     virtual ~BlockSourceDebug() /*override*/ = default;
     // NOLINTEND
+
 };

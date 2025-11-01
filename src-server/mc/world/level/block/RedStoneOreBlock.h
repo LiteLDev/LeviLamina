@@ -30,28 +30,28 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 95
+    // vIndex: 94
     virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 134
+    // vIndex: 133
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     // vIndex: 46
     virtual bool canBeOriginalSurface(bool) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual void _lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual void _unlightBlock(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -93,4 +93,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

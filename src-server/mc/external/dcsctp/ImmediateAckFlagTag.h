@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-class ImmediateAckFlagTag {};
+class ImmediateAckFlagTag {
+};
 
-} // namespace dcsctp
+}

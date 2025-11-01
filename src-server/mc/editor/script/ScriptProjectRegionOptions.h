@@ -32,6 +32,7 @@ public:
 
     MCNAPI static ::Scripting::EnumBinding bindScriptLoadState();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

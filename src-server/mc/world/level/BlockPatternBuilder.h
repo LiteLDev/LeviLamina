@@ -33,10 +33,7 @@ public:
 
     MCNAPI ::BlockPatternData buildOrAssert();
 
-    MCNAPI ::BlockPatternBuilder& define(
-        char                                                                                       pattern,
-        ::brstd::move_only_function<bool(::BlockSource&, ::BlockPos const&, ::Block const&) const> tester
-    );
+    MCNAPI ::BlockPatternBuilder& define(char pattern, ::brstd::move_only_function<bool(::BlockSource&, ::BlockPos const&, ::Block const&)const> tester);
 
     MCNAPI ~BlockPatternBuilder();
     // NOLINTEND
@@ -46,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

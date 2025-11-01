@@ -16,12 +16,12 @@ class LookControlComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                             mHasWantedPosition;
-    ::ll::TypedStorage<1, 1, bool>                             mHasWantedRotation;
-    ::ll::TypedStorage<4, 4, float>                            mYMax;
-    ::ll::TypedStorage<4, 4, float>                            mXMax;
-    ::ll::TypedStorage<4, 12, ::Vec3>                          mWantedPosition;
-    ::ll::TypedStorage<4, 12, ::Vec3>                          mWantedRotation;
+    ::ll::TypedStorage<1, 1, bool> mHasWantedPosition;
+    ::ll::TypedStorage<1, 1, bool> mHasWantedRotation;
+    ::ll::TypedStorage<4, 4, float> mYMax;
+    ::ll::TypedStorage<4, 4, float> mXMax;
+    ::ll::TypedStorage<4, 12, ::Vec3> mWantedPosition;
+    ::ll::TypedStorage<4, 12, ::Vec3> mWantedRotation;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LookControl>> mLookControl;
     // NOLINTEND
 
@@ -34,4 +34,5 @@ public:
 
     MCAPI void setLookAtPosition(::Actor const* target, float yMax, float xMax);
     // NOLINTEND
+
 };

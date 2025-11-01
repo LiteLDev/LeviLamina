@@ -17,6 +17,7 @@ public:
     VariationMap& operator=(VariationMap const&);
     VariationMap(VariationMap const&);
     VariationMap();
+
 };
 
-} // namespace cg
+}

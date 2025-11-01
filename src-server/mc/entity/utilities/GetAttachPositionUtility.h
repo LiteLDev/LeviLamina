@@ -21,31 +21,11 @@ struct VanillaOffsetComponent;
 namespace GetAttachPositionUtility {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Vec3 _getBaseAttachPoint(
-    ::SharedTypes::Legacy::ActorLocation                            location,
-    ::Vec3 const&                                                   interpolatedPosition,
-    ::AABBShapeComponent const&                                     aabbShapeComponent,
-    ::ActorRotationComponent const&                                 actorRotationComponent,
-    ::OffsetsComponent const&                                       offsetsComponent,
-    ::optional_ref<::PassengerRenderingRidingOffsetComponent const> ridingOffset,
-    ::optional_ref<::VanillaOffsetComponent const>                  vanillaOffsetComponent,
-    float                                                           actorHeadRotation,
-    float                                                           alpha
-);
+MCNAPI ::Vec3 _getBaseAttachPoint(::SharedTypes::Legacy::ActorLocation location, ::Vec3 const& interpolatedPosition, ::AABBShapeComponent const& aabbShapeComponent, ::ActorRotationComponent const& actorRotationComponent, ::OffsetsComponent const& offsetsComponent, ::optional_ref<::PassengerRenderingRidingOffsetComponent const> ridingOffset, ::optional_ref<::VanillaOffsetComponent const> vanillaOffsetComponent, float actorHeadRotation, float alpha);
 
-MCNAPI ::std::optional<::Vec3> getAttachPosition(
-    ::StrictEntityContext const&         entity,
-    ::GetAttachPositionViews const&      views,
-    ::SharedTypes::Legacy::ActorLocation location,
-    ::Vec3 const&                        interpolatedPosition
-);
+MCNAPI ::std::optional<::Vec3> getAttachPosition(::StrictEntityContext const& entity, ::GetAttachPositionViews const& views, ::SharedTypes::Legacy::ActorLocation location, ::Vec3 const& interpolatedPosition);
 
-MCNAPI ::Vec3 getPassengerAttachPos(
-    ::StrictEntityContext const&         entity,
-    ::GetAttachPositionViews const&      views,
-    ::SharedTypes::Legacy::ActorLocation location,
-    float                                alpha
-);
+MCNAPI ::Vec3 getPassengerAttachPos(::StrictEntityContext const& entity, ::GetAttachPositionViews const& views, ::SharedTypes::Legacy::ActorLocation location, float alpha);
 // NOLINTEND
 
-} // namespace GetAttachPositionUtility
+}

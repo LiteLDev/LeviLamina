@@ -17,10 +17,10 @@ struct PlayerArmorExchangeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                 mPlayer;
-    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ArmorSlot>            mArmorSlot;
-    ::ll::TypedStorage<8, 152, ::ItemStack>                               mOldItem;
-    ::ll::TypedStorage<8, 152, ::ItemStack>                               mItem;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ArmorSlot> mArmorSlot;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mOldItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mItem;
     ::ll::TypedStorage<4, 4, ::PlayerArmorExchangeEventTriggeredLocation> mTriggeredLocation;
     // NOLINTEND
 
@@ -48,4 +48,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

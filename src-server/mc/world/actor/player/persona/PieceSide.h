@@ -5,8 +5,8 @@
 namespace persona {
 
 enum class PieceSide : uint {
-    Left  = 0,
-    Both  = 1,
+    Left = 0,
+    Both = 1,
     Right = 2,
 };
 

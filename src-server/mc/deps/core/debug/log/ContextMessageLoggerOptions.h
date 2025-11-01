@@ -18,4 +18,5 @@ public:
     ContextMessageLoggerOptions& operator=(ContextMessageLoggerOptions const&);
     ContextMessageLoggerOptions(ContextMessageLoggerOptions const&);
     ContextMessageLoggerOptions();
+
 };

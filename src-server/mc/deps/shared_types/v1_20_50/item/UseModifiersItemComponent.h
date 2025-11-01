@@ -14,6 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4> mUnk546ab3;
+    ::ll::UntypedStorage<1, 1> mUnk69fbff;
     ::ll::UntypedStorage<4, 8> mUnk51e95b;
     // NOLINTEND
 
@@ -28,6 +29,15 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static bool const& DEFAULT_EMIT_VIBRATIONS();
+
+    MCNAPI static float const& DEFAULT_USE_DURATION();
+    // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_50
+}

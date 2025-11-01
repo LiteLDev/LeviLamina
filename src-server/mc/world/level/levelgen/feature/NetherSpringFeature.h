@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
-    ::ll::TypedStorage<1, 1, bool>           mInsideRock;
+    ::ll::TypedStorage<1, 1, bool> mInsideRock;
     // NOLINTEND
 
 public:
@@ -66,4 +66,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

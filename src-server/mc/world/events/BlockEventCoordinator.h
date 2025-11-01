@@ -37,11 +37,9 @@ public:
     // NOLINTBEGIN
     MCFOLD void registerBlockGameplayHandler(::std::unique_ptr<::BlockGameplayHandler>&& handler);
 
-    MCAPI void
-    sendBlockDestructionStarted(::Player& player, ::BlockPos const& blockPos, ::Block const& hitBlock, uchar face);
+    MCAPI void sendBlockDestructionStarted(::Player& player, ::BlockPos const& blockPos, ::Block const& hitBlock, uchar face);
 
-    MCAPI void
-    sendBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+    MCAPI void sendBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
     MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableBlockGameplayEvent<::CoordinatorResult>> event);
 
@@ -53,4 +51,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

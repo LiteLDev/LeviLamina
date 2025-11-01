@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+struct PackSettingValueAndDefault;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace SharedTypes::v3_0_0::PackManifestDefinition { struct DropdownSetting; }
 namespace SharedTypes::v3_0_0::PackManifestDefinition { struct LabelSetting; }
@@ -20,16 +21,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::mce::UUID const> mPackId;
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::std::weak_ptr<::Bedrock::PubSub::Publisher<
-            void(::mce::UUID const&, ::std::string const&, ::std::variant<float, bool, ::std::string> const&),
-            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
-            0>>>
-        mOnChangePublisher;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::variant<float, bool, ::std::string>>>
-        mNameValueMap;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Bedrock::PubSub::Publisher<void(::mce::UUID const&, ::std::string const&, ::std::variant<float, bool, ::std::string> const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>> mOnChangePublisher;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::PackSettingValueAndDefault>> mNameValueMap;
+    ::ll::TypedStorage<8, 8, uint64> mLastUsed;
     // NOLINTEND
 
 public:
@@ -39,36 +33,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackSettings(
-        ::mce::UUID const&                                                           packId,
-        ::std::vector<::std::variant<
-            ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>> const&  packSettingDef,
-        ::std::map<::std::string, ::std::variant<float, bool, ::std::string>> const* loadedValues,
-        ::std::weak_ptr<::Bedrock::PubSub::Publisher<
-            void(::mce::UUID const&, ::std::string const&, ::std::variant<float, bool, ::std::string> const&),
-            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
-            0>>                                                                      publisher
-    );
+    MCNAPI PackSettings(::mce::UUID const& packId, ::std::vector<::std::variant<::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting, ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting, ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting, ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>> const& packSettingDef, ::std::map<::std::string, ::std::variant<float, bool, ::std::string>> const* userOverrides, ::std::weak_ptr<::Bedrock::PubSub::Publisher<void(::mce::UUID const&, ::std::string const&, ::std::variant<float, bool, ::std::string> const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> publisher, uint64 lastUsed);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::mce::UUID const&                                                           packId,
-        ::std::vector<::std::variant<
-            ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting,
-            ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>> const&  packSettingDef,
-        ::std::map<::std::string, ::std::variant<float, bool, ::std::string>> const* loadedValues,
-        ::std::weak_ptr<::Bedrock::PubSub::Publisher<
-            void(::mce::UUID const&, ::std::string const&, ::std::variant<float, bool, ::std::string> const&),
-            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
-            0>>                                                                      publisher
-    );
+    MCNAPI void* $ctor(::mce::UUID const& packId, ::std::vector<::std::variant<::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting, ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting, ::SharedTypes::v3_0_0::PackManifestDefinition::ToggleSetting, ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting>> const& packSettingDef, ::std::map<::std::string, ::std::variant<float, bool, ::std::string>> const* userOverrides, ::std::weak_ptr<::Bedrock::PubSub::Publisher<void(::mce::UUID const&, ::std::string const&, ::std::variant<float, bool, ::std::string> const&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> publisher, uint64 lastUsed);
     // NOLINTEND
+
 };

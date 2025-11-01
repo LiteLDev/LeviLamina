@@ -26,8 +26,8 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk78404f;
     ::ll::UntypedStorage<8, 32> mUnk50281b;
     ::ll::UntypedStorage<8, 32> mUnk842973;
-    ::ll::UntypedStorage<4, 4>  mUnk6b6842;
-    ::ll::UntypedStorage<1, 1>  mUnk6aeab6;
+    ::ll::UntypedStorage<4, 4> mUnk6b6842;
+    ::ll::UntypedStorage<1, 1> mUnk6aeab6;
     // NOLINTEND
 
 public:
@@ -40,11 +40,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void initialize(
-        ::Core::Path const&,
-        ::Core::Path const&,
-        ::Bedrock::StorageMigration::StorageMigrationType
-    ) /*override*/;
+    virtual void initialize(::Core::Path const&, ::Core::Path const&, ::Bedrock::StorageMigration::StorageMigrationType) /*override*/;
 
     // vIndex: 2
     virtual bool checkMigrationPreviouslyCompleted() /*override*/;
@@ -85,6 +81,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::StorageMigration
+}

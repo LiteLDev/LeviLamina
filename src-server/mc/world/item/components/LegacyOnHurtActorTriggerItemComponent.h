@@ -21,7 +21,7 @@ class LegacyOnHurtActorTriggerItemComponent : public ::LegacyTriggerItemComponen
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnHurtActorSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnHurtActorSubscription;
     ::ll::TypedStorage<8, 64, ::std::optional<::DefinitionTrigger>> mOnHurtActor;
     // NOLINTEND
 
@@ -70,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

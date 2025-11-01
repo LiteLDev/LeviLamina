@@ -15,5 +15,6 @@ public:
     ::ll::UntypedStorage<8, 8> mUnk16c262;
     ::ll::UntypedStorage<8, 8> mUnk94ff63;
     // NOLINTEND
+
 };
-} // namespace webrtc::trace_event_internal
+}

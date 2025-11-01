@@ -17,4 +17,5 @@ public:
     DiscoveryConfig& operator=(DiscoveryConfig const&);
     DiscoveryConfig(DiscoveryConfig const&);
     DiscoveryConfig();
+
 };

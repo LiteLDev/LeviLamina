@@ -24,4 +24,5 @@ public:
     ProfilerResourceUsage& operator=(ProfilerResourceUsage const&);
     ProfilerResourceUsage(ProfilerResourceUsage const&);
     ProfilerResourceUsage();
+
 };

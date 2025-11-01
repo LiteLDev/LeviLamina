@@ -37,6 +37,15 @@ public:
 
     // vIndex: 2
     virtual void apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context) /*override*/;
+
+    // vIndex: 5
+    virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI int _getLootingEnchantLevel(::LootTableContext& context) const;
     // NOLINTEND
 
 public:
@@ -45,6 +54,8 @@ public:
     MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
     MCNAPI void $apply(::ItemInstance& itemInstance, ::Random& random, ::LootTableContext& context);
+
+    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
     // NOLINTEND
 
 public:
@@ -52,4 +63,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -21,7 +21,7 @@ class IEduAuth : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk8954c5;
+    ::ll::UntypedStorage<8, 8> mUnk8954c5;
     ::ll::UntypedStorage<8, 64> mUnkc06796;
     // NOLINTEND
 
@@ -38,11 +38,7 @@ public:
     virtual ~IEduAuth() /*override*/ = default;
 
     // vIndex: 1
-    virtual void Authenticate(
-        ::Identity::AuthArgs const&,
-        ::std::function<void()>,
-        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
-    ) = 0;
+    virtual void Authenticate(::Identity::AuthArgs const&, ::std::function<void()>, ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>) = 0;
 
     // vIndex: 2
     virtual void resetAuthenticationState() = 0;
@@ -54,11 +50,7 @@ public:
     virtual void signOut(::std::string_view, ::std::function<void(::Identity::SignOutResult)>) = 0;
 
     // vIndex: 5
-    virtual void authenticateSilently(
-        ::std::string_view,
-        ::std::string const&,
-        ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>
-    ) = 0;
+    virtual void authenticateSilently(::std::string_view, ::std::string const&, ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>) = 0;
 
     // vIndex: 6
     virtual void authenticateSilentlyCredentialed();
@@ -77,6 +69,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Identity
+}

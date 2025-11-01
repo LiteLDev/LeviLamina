@@ -9,8 +9,7 @@
 
 namespace Editor::Services {
 
-class TelemetryService : public ::Editor::Services::IEditorService,
-                         public ::Editor::Services::TelemetryServiceProvider {
+class TelemetryService : public ::Editor::Services::IEditorService, public ::Editor::Services::TelemetryServiceProvider {
 public:
     // member variables
     // NOLINTBEGIN
@@ -51,23 +50,13 @@ public:
     virtual void fireRedoEvent(::std::string const& transactionName) /*override*/;
 
     // vIndex: 4
-    virtual void
-    fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const modifiers) /*override*/;
+    virtual void fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const modifiers) /*override*/;
 
     // vIndex: 5
-    virtual void fireEditorScriptEvent(
-        ::std::string const& source,
-        ::std::string const& eventName,
-        ::std::string const& metadata
-    ) /*override*/;
+    virtual void fireEditorScriptEvent(::std::string const& source, ::std::string const& eventName, ::std::string const& metadata) /*override*/;
 
     // vIndex: 6
-    virtual void fireTutorialEvent(
-        ::std::string_view                    type,
-        ::std::optional<::std::string> const& state,
-        ::std::string const&                  currentStage,
-        ::std::optional<::std::string> const& previousStage
-    ) /*override*/;
+    virtual void fireTutorialEvent(::std::string_view type, ::std::optional<::std::string> const& state, ::std::string const& currentStage, ::std::optional<::std::string> const& previousStage) /*override*/;
     // NOLINTEND
 
 public:
@@ -89,15 +78,9 @@ public:
 
     MCNAPI void $fireEditorKeybindUpdate(::std::string const& keybindName, int const key, int const modifiers);
 
-    MCNAPI void
-    $fireEditorScriptEvent(::std::string const& source, ::std::string const& eventName, ::std::string const& metadata);
+    MCNAPI void $fireEditorScriptEvent(::std::string const& source, ::std::string const& eventName, ::std::string const& metadata);
 
-    MCNAPI void $fireTutorialEvent(
-        ::std::string_view                    type,
-        ::std::optional<::std::string> const& state,
-        ::std::string const&                  currentStage,
-        ::std::optional<::std::string> const& previousStage
-    );
+    MCNAPI void $fireTutorialEvent(::std::string_view type, ::std::optional<::std::string> const& state, ::std::string const& currentStage, ::std::optional<::std::string> const& previousStage);
     // NOLINTEND
 
 public:
@@ -107,6 +90,7 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

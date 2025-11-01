@@ -21,4 +21,5 @@ public:
     // NOLINTBEGIN
     MCNAPI int64 nextLong();
     // NOLINTEND
+
 };

@@ -22,8 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    UpgradeLegacyDependenciesCommand(::std::shared_ptr<::Pack> pack, ::std::vector<::PackIdVersion> newDependencies);
+    MCNAPI UpgradeLegacyDependenciesCommand(::std::shared_ptr<::Pack> pack, ::std::vector<::PackIdVersion> newDependencies);
 
     MCNAPI ~UpgradeLegacyDependenciesCommand();
     // NOLINTEND
@@ -39,6 +38,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace PackCommand
+}

@@ -4,7 +4,8 @@
 
 namespace rtc {
 
-template <typename T0>
-class UniqueNumberGenerator {};
+template<typename T0>
+class UniqueNumberGenerator {
+};
 
-} // namespace rtc
+}

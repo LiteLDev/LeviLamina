@@ -35,4 +35,5 @@ public:
     ScreenViewCommand& operator=(ScreenViewCommand const&);
     ScreenViewCommand(ScreenViewCommand const&);
     ScreenViewCommand();
+
 };

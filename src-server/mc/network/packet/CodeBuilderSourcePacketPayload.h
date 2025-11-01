@@ -12,7 +12,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::CodeBuilderStorageQueryOptions::Operation> mOperation;
-    ::ll::TypedStorage<1, 1, ::CodeBuilderStorageQueryOptions::Category>  mCategory;
-    ::ll::TypedStorage<1, 1, ::CodeBuilderExecutionState::CodeStatus>     mCodeStatus;
+    ::ll::TypedStorage<1, 1, ::CodeBuilderStorageQueryOptions::Category> mCategory;
+    ::ll::TypedStorage<1, 1, ::CodeBuilderExecutionState::CodeStatus> mCodeStatus;
     // NOLINTEND
+
 };

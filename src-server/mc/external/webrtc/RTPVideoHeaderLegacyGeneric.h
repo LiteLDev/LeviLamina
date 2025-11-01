@@ -16,6 +16,7 @@ public:
     RTPVideoHeaderLegacyGeneric& operator=(RTPVideoHeaderLegacyGeneric const&);
     RTPVideoHeaderLegacyGeneric(RTPVideoHeaderLegacyGeneric const&);
     RTPVideoHeaderLegacyGeneric();
+
 };
 
-} // namespace webrtc
+}

@@ -4,6 +4,7 @@
 
 namespace Screenshots {
 
-struct RawShowcasedScreenshot {};
+struct RawShowcasedScreenshot {
+};
 
-} // namespace Screenshots
+}

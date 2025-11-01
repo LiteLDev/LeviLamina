@@ -18,9 +18,8 @@ class SaddleItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 80
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
-        /*override*/;
+    // vIndex: 81
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const /*override*/;
 
     // vIndex: 0
     virtual ~SaddleItem() /*override*/ = default;
@@ -45,4 +44,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

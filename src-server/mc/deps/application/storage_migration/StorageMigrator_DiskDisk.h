@@ -39,12 +39,7 @@ public:
     virtual bool doQuickCompletionCheck() /*override*/;
 
     // vIndex: 2
-    virtual void _runMigration(
-        ::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>,
-        ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>,
-        ::std::function<void(::Bedrock::StorageMigration::StorageMigrator::MigrationProgress)>,
-        ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>
-    ) const /*override*/;
+    virtual void _runMigration(::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>, ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>, ::std::function<void(::Bedrock::StorageMigration::StorageMigrator::MigrationProgress)>, ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>) const /*override*/;
     // NOLINTEND
 
 public:
@@ -52,6 +47,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::StorageMigration
+}

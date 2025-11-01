@@ -15,38 +15,19 @@ namespace Json { class Value; }
 namespace JsonPackUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::pair<::Json::Value const, ::PackParseErrorType>
-readRequiredValue(::Json::Value const& value, ::std::string const& propertyName, ::Json::ValueType type);
+MCNAPI bool readBoolAndReport(::Json::Value const& parent, ::std::string const& element, ::std::vector<::std::string>& errorPath, ::PackReport& report, bool optional, bool defaultVal);
 
-MCNAPI ::std::string readStringAndReport(
-    ::Json::Value const&          parent,
-    ::std::string const&          element,
-    ::std::vector<::std::string>& errorPath,
-    ::PackReport&                 report,
-    bool                          optional
-);
+MCNAPI ::std::pair<::Json::Value const, ::PackParseErrorType> readRequiredValue(::Json::Value const& value, ::std::string const& propertyName, ::Json::ValueType type);
 
-MCNAPI ::std::vector<::std::string> readStringArrayAndReport(
-    ::Json::Value const&          parent,
-    ::std::string const&          element,
-    ::std::vector<::std::string>& errorPath,
-    ::PackReport&                 report,
-    bool                          optional
-);
+MCNAPI ::std::string readStringAndReport(::Json::Value const& parent, ::std::string const& element, ::std::vector<::std::string>& errorPath, ::PackReport& report, bool optional);
 
-MCNAPI ::std::pair<::Json::Value const*, ::PackParseErrorType>
-readValue(::Json::Value const& value, ::std::string const& propertyName);
+MCNAPI ::std::vector<::std::string> readStringArrayAndReport(::Json::Value const& parent, ::std::string const& element, ::std::vector<::std::string>& errorPath, ::PackReport& report, bool optional);
 
-MCNAPI ::std::pair<::Json::Value const, ::PackParseErrorType> readValueAndReportErrors(
-    ::Json::Value const&          parent,
-    ::std::string const&          element,
-    ::Json::ValueType             type,
-    ::std::vector<::std::string>& errorPath,
-    ::PackReport&                 report,
-    bool                          optional
-);
+MCNAPI ::std::pair<::Json::Value const*, ::PackParseErrorType> readValue(::Json::Value const& value, ::std::string const& propertyName);
+
+MCNAPI ::std::pair<::Json::Value const, ::PackParseErrorType> readValueAndReportErrors(::Json::Value const& parent, ::std::string const& element, ::Json::ValueType type, ::std::vector<::std::string>& errorPath, ::PackReport& report, bool optional);
 
 MCNAPI ::std::string stringizePath(::std::vector<::std::string> const& pathElements);
 // NOLINTEND
 
-} // namespace JsonPackUtils
+}

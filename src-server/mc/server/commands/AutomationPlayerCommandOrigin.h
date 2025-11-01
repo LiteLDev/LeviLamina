@@ -20,7 +20,7 @@ class AutomationPlayerCommandOrigin : public ::PlayerCommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnke41da0;
+    ::ll::UntypedStorage<8, 32> mUnke41da0;
     ::ll::UntypedStorage<8, 176> mUnk8ae9e9;
     // NOLINTEND
 
@@ -64,23 +64,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AutomationPlayerCommandOrigin(
-        ::ActorUniqueID            playerId,
-        ::Level&                   level,
-        ::std::string const&       requestId,
-        ::NetworkIdentifier const& sourceId
-    );
+    MCNAPI AutomationPlayerCommandOrigin(::ActorUniqueID playerId, ::Level& level, ::std::string const& requestId, ::NetworkIdentifier const& sourceId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::ActorUniqueID            playerId,
-        ::Level&                   level,
-        ::std::string const&       requestId,
-        ::NetworkIdentifier const& sourceId
-    );
+    MCNAPI void* $ctor(::ActorUniqueID playerId, ::Level& level, ::std::string const& requestId, ::NetworkIdentifier const& sourceId);
     // NOLINTEND
 
 public:
@@ -108,4 +98,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

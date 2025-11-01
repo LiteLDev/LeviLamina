@@ -13,4 +13,4 @@ namespace WorldTransferResultType {
 MCNAPI void bindType(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-} // namespace WorldTransferResultType
+}

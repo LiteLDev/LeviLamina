@@ -21,46 +21,47 @@ public:
     // clang-format off
     struct DataToSend;
     // clang-format on
-
+    
     // SendQueue inner types define
     struct DataToSend {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk9d97ac;
+        ::ll::UntypedStorage<4, 4> mUnk9d97ac;
         ::ll::UntypedStorage<8, 48> mUnkced954;
-        ::ll::UntypedStorage<2, 2>  mUnkf9616a;
-        ::ll::UntypedStorage<8, 8>  mUnk3cd7e5;
-        ::ll::UntypedStorage<8, 8>  mUnkec05f7;
+        ::ll::UntypedStorage<2, 2> mUnkf9616a;
+        ::ll::UntypedStorage<8, 8> mUnk3cd7e5;
+        ::ll::UntypedStorage<8, 8> mUnkec05f7;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         DataToSend& operator=(DataToSend const&);
         DataToSend(DataToSend const&);
         DataToSend();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI DataToSend(::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint> message_id, ::dcsctp::Data data);
-
+    
         MCNAPI ~DataToSend();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint> message_id, ::dcsctp::Data data);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -71,10 +72,7 @@ public:
     virtual ::std::optional<::dcsctp::SendQueue::DataToSend> Produce(::webrtc::Timestamp, uint64) = 0;
 
     // vIndex: 2
-    virtual bool Discard(
-        ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>,
-        ::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>
-    ) = 0;
+    virtual bool Discard(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::OutgoingMessageIdTag, uint>) = 0;
 
     // vIndex: 3
     virtual void PrepareResetStream(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>) = 0;
@@ -115,6 +113,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

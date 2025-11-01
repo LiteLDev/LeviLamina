@@ -13,4 +13,4 @@ namespace SharedTypes::VersionLess {
 MCNAPI void bindAll(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-} // namespace SharedTypes::VersionLess
+}

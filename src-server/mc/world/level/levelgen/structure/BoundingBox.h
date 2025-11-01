@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/Rotation.h"
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/util/Rotation.h"
+#include "mc/versionless/world/level/BlockPos.h"
 
 class BoundingBox {
 public:
@@ -25,17 +25,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::optional<::BoundingBox> intersect(::BoundingBox const& lhs, ::BoundingBox const& rhs);
 
-    MCAPI static ::BoundingBox orientBox(
-        int footX,
-        int footY,
-        int footZ,
-        int offX,
-        int offY,
-        int offZ,
-        int width,
-        int height,
-        int depth,
-        int orientation
-    );
+    MCAPI static ::BoundingBox orientBox(int footX, int footY, int footZ, int offX, int offY, int offZ, int width, int height, int depth, int orientation);
     // NOLINTEND
+
 };

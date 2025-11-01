@@ -22,50 +22,46 @@ public:
     // clang-format off
     class VillagerCelebrationDefinition;
     // clang-format on
-
+    
     // VillagerCelebrationGoal inner types define
     class VillagerCelebrationDefinition : public ::BaseGoalDefinition {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>                      mDuration;
-        ::ll::TypedStorage<4, 8, ::FloatRange>               mFireworksInterval;
+        ::ll::TypedStorage<4, 4, float> mDuration;
+        ::ll::TypedStorage<4, 8, ::FloatRange> mFireworksInterval;
         ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mCelebrationEndEvent;
         // NOLINTEND
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~VillagerCelebrationDefinition() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const&                                            name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
-                ::JsonUtil::EmptyClass,
-                ::VillagerCelebrationGoal::VillagerCelebrationDefinition>>& root
-        );
+        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::VillagerCelebrationGoal::VillagerCelebrationDefinition>>& root);
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                     mMob;
-    ::ll::TypedStorage<8, 8, ::Tick>                     mNextFireworkTick;
-    ::ll::TypedStorage<8, 8, ::Tick>                     mEndTick;
-    ::ll::TypedStorage<4, 4, float>                      mDuration;
-    ::ll::TypedStorage<4, 8, ::FloatRange>               mFireworksInterval;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 8, ::Tick> mNextFireworkTick;
+    ::ll::TypedStorage<8, 8, ::Tick> mEndTick;
+    ::ll::TypedStorage<4, 4, float> mDuration;
+    ::ll::TypedStorage<4, 8, ::FloatRange> mFireworksInterval;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mCelebrationEndEvent;
     // NOLINTEND
 
@@ -129,4 +125,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

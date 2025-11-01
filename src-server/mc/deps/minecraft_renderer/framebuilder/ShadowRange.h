@@ -17,6 +17,7 @@ public:
     ShadowRange& operator=(ShadowRange const&);
     ShadowRange(ShadowRange const&);
     ShadowRange();
+
 };
 
-} // namespace mce::framebuilder
+}

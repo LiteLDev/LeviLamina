@@ -16,4 +16,5 @@ public:
     ExtraLicenseData& operator=(ExtraLicenseData const&);
     ExtraLicenseData(ExtraLicenseData const&);
     ExtraLicenseData();
+
 };

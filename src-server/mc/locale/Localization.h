@@ -13,19 +13,19 @@ class Localization {
 public:
     // Localization inner types define
     using Map = ::std::map<::std::string, ::std::string>;
-
+    
     using StoreLocMap = ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool const>                                mCommaSeperator;
-    ::ll::TypedStorage<8, 32, ::std::string const>                      mDigitGroupSeparator;
-    ::ll::TypedStorage<8, 32, ::std::string const>                      mCode;
+    ::ll::TypedStorage<1, 1, bool const> mCommaSeperator;
+    ::ll::TypedStorage<8, 32, ::std::string const> mDigitGroupSeparator;
+    ::ll::TypedStorage<8, 32, ::std::string const> mCode;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::string>> mStrings;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::string>> mCaseSensitiveCache;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::shared_mutex>>    mCaseSensitiveCacheMutex;
-    ::ll::TypedStorage<1, 1, bool>                                      mMayContainIdentifier;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::shared_mutex>> mCaseSensitiveCacheMutex;
+    ::ll::TypedStorage<1, 1, bool> mMayContainIdentifier;
     // NOLINTEND
 
 public:
@@ -52,34 +52,19 @@ public:
 
     MCAPI void _replaceTokens(::std::string& string, ::std::vector<::std::string> const& params) const;
 
-    MCAPI void
-    _replaceUTCDateTimeIdentifier(::std::string& strToParse, ::std::optional<::std::locale> const& locale) const;
+    MCAPI void _replaceUTCDateTimeIdentifier(::std::string& strToParse, ::std::optional<::std::locale> const& locale) const;
 
     MCAPI void addKeys(::Localization&& from);
 
-    MCAPI void appendTranslations(
-        ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& locStrings
-    );
+    MCAPI void appendTranslations(::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& locStrings);
 
     MCAPI void appendTranslations(::Localization const& other);
 
-    MCAPI void appendTranslations(
-        ::std::string const&                fileContent,
-        ::std::vector<::std::string> const& blockedKeys,
-        ::std::vector<::std::string> const& allowedKeys,
-        ::std::string const&                keyPrefix
-    );
+    MCAPI void appendTranslations(::std::string const& fileContent, ::std::vector<::std::string> const& blockedKeys, ::std::vector<::std::string> const& allowedKeys, ::std::string const& keyPrefix);
 
-    MCAPI void loadFromPack(
-        ::std::string const&                keyPrefix,
-        ::PackAccessStrategy const&         accessStrategy,
-        ::std::vector<::std::string> const& allowedKeys
-    );
+    MCAPI void loadFromPack(::std::string const& keyPrefix, ::PackAccessStrategy const& accessStrategy, ::std::vector<::std::string> const& allowedKeys);
 
-    MCAPI void loadFromResourcePackManager(
-        ::ResourcePackManager&              resourcePackManager,
-        ::std::vector<::std::string> const& blockedKeys
-    );
+    MCAPI void loadFromResourcePackManager(::ResourcePackManager& resourcePackManager, ::std::vector<::std::string> const& blockedKeys);
 
     MCAPI void replaceIdentifiers();
 
@@ -111,4 +96,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

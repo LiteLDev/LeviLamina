@@ -4,6 +4,7 @@
 
 namespace DataStructures {
 
-class OrderedList {};
+class OrderedList {
+};
 
-} // namespace DataStructures
+}

@@ -27,12 +27,10 @@ public:
     virtual ::Player* getPlayer() const = 0;
 
     // vIndex: 2
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-        registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)>) = 0;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> registerTickSubscriber(::std::function<void(::Editor::ServiceProviderCollection&)>) = 0;
 
     // vIndex: 3
-    virtual ::Bedrock::PubSub::Subscription
-        registerDimensionChange(::std::function<void(::DimensionType, ::DimensionType)>) = 0;
+    virtual ::Bedrock::PubSub::Subscription registerDimensionChange(::std::function<void(::DimensionType, ::DimensionType)>) = 0;
     // NOLINTEND
 
 public:
@@ -40,6 +38,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Editor
+}

@@ -32,4 +32,5 @@ public:
 
     MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND
+
 };

@@ -19,20 +19,11 @@ namespace TickMobEffectsSystem { struct RemoveMobEffectsRequestComponent; }
 namespace TickMobEffectsSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _removeMobEffects(
-    ::TickMobEffectsSystem::RemoveMobEffectsRequestComponent const& removeMobEffectsRequest,
-    ::AttributesComponent&                                          attributesComponent,
-    ::MobEffectsComponent&                                          mobEffectsComponent
-);
+MCNAPI void _removeMobEffects(::TickMobEffectsSystem::RemoveMobEffectsRequestComponent const& removeMobEffectsRequest, ::AttributesComponent& attributesComponent, ::MobEffectsComponent& mobEffectsComponent);
 
-MCNAPI void _tickMobEffects(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::StrictEntityContext const&                                               entity,
-    ::MobEffectsComponent&                                                     mobEffectsComponent,
-    ::EntityModifier<::TickMobEffectsSystem::RemoveMobEffectsRequestComponent> mod
-);
+MCNAPI void _tickMobEffects(::entt::type_list<::Include<::ActorMovementTickNeededComponent>>, ::StrictEntityContext const& entity, ::MobEffectsComponent& mobEffectsComponent, ::EntityModifier<::TickMobEffectsSystem::RemoveMobEffectsRequestComponent> mod);
 
 MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
-} // namespace TickMobEffectsSystem
+}

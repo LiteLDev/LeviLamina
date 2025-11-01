@@ -18,12 +18,12 @@ class CraftingDataEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Recipe>>      mRecipe;
-    ::ll::TypedStorage<4, 4, int>                              mItemData;
-    ::ll::TypedStorage<4, 4, int>                              mItemAux;
-    ::ll::TypedStorage<8, 48, ::HashedString>                  mTag;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Recipe>> mRecipe;
+    ::ll::TypedStorage<4, 4, int> mItemData;
+    ::ll::TypedStorage<4, 4, int> mItemAux;
+    ::ll::TypedStorage<8, 48, ::HashedString> mTag;
     ::ll::TypedStorage<8, 64, ::NetworkItemInstanceDescriptor> mItemResult;
-    ::ll::TypedStorage<4, 4, ::CraftingDataEntryType>          mEntryType;
+    ::ll::TypedStorage<4, 4, ::CraftingDataEntryType> mEntryType;
     // NOLINTEND
 
 public:
@@ -57,4 +57,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

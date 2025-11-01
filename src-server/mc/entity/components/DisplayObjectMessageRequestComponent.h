@@ -21,4 +21,5 @@ public:
     // NOLINTBEGIN
     MCFOLD ::DisplayObjectMessageRequestComponent& operator=(::DisplayObjectMessageRequestComponent&&);
     // NOLINTEND
+
 };

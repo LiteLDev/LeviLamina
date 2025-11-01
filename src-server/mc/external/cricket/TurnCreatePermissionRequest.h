@@ -19,8 +19,8 @@ class TurnCreatePermissionRequest : public ::cricket::StunRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkb9e084;
-    ::ll::UntypedStorage<8, 8>  mUnk2488e8;
+    ::ll::UntypedStorage<8, 8> mUnkb9e084;
+    ::ll::UntypedStorage<8, 8> mUnk2488e8;
     ::ll::UntypedStorage<8, 80> mUnk20eab9;
     // NOLINTEND
 
@@ -52,11 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TurnCreatePermissionRequest(
-        ::cricket::TurnPort*        port,
-        ::cricket::TurnEntry*       entry,
-        ::rtc::SocketAddress const& ext_addr
-    );
+    MCNAPI TurnCreatePermissionRequest(::cricket::TurnPort* port, ::cricket::TurnEntry* entry, ::rtc::SocketAddress const& ext_addr);
     // NOLINTEND
 
 public:
@@ -88,6 +84,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

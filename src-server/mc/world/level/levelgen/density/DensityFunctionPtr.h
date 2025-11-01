@@ -13,4 +13,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::IDensityFunction>>> mDensityFunction;
     // NOLINTEND
+
 };

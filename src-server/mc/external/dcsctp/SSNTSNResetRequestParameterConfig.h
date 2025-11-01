@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct SSNTSNResetRequestParameterConfig {};
+struct SSNTSNResetRequestParameterConfig {
+};
 
-} // namespace dcsctp
+}

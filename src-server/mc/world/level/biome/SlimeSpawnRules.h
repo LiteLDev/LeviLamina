@@ -17,4 +17,4 @@ MCAPI bool checkSpawnRulesCallback(::SpawnConditions const& conditions, ::BlockS
 MCAPI bool isSlimeChunk(::ChunkPos const& chunkPos);
 // NOLINTEND
 
-} // namespace SlimeSpawnRules
+}

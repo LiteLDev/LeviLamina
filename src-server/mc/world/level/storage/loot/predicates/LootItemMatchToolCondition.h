@@ -21,28 +21,29 @@ public:
     // clang-format off
     struct EnchantInfo;
     // clang-format on
-
+    
     // LootItemMatchToolCondition inner types define
     struct EnchantInfo {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk5d9cea;
-        ::ll::UntypedStorage<4, 8>  mUnkeb6509;
+        ::ll::UntypedStorage<4, 8> mUnkeb6509;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         EnchantInfo& operator=(EnchantInfo const&);
         EnchantInfo(EnchantInfo const&);
         EnchantInfo();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnkeb8bef;
-    ::ll::UntypedStorage<4, 8>  mUnkf68036;
+    ::ll::UntypedStorage<4, 8> mUnkeb8bef;
+    ::ll::UntypedStorage<4, 8> mUnkf68036;
     ::ll::UntypedStorage<8, 32> mUnk8cc4d1;
     ::ll::UntypedStorage<8, 24> mUnk3540d9;
     ::ll::UntypedStorage<8, 24> mUnk48f8f4;
@@ -62,6 +63,9 @@ public:
     // vIndex: 1
     virtual bool applies(::Random&, ::LootTableContext& context) /*override*/;
 
+    // vIndex: 2
+    virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
+
     // vIndex: 0
     virtual ~LootItemMatchToolCondition() /*override*/;
     // NOLINTEND
@@ -69,15 +73,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LootItemMatchToolCondition(
-        ::IntRange                                               count,
-        ::IntRange                                               durability,
-        ::std::string                                            itemName,
-        ::std::vector<::LootItemMatchToolCondition::EnchantInfo> enchantments,
-        ::std::vector<::ItemDescriptor>                          itemTagsAny,
-        ::std::vector<::ItemDescriptor>                          itemTagsAll,
-        ::std::vector<::ItemDescriptor>                          itemTagsNone
-    );
+    MCNAPI LootItemMatchToolCondition(::IntRange count, ::IntRange durability, ::std::string itemName, ::std::vector<::LootItemMatchToolCondition::EnchantInfo> enchantments, ::std::vector<::ItemDescriptor> itemTagsAny, ::std::vector<::ItemDescriptor> itemTagsAll, ::std::vector<::ItemDescriptor> itemTagsNone);
 
     MCNAPI bool _doItemTagsMatch(::Item const& item) const;
     // NOLINTEND
@@ -91,15 +87,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::IntRange                                               count,
-        ::IntRange                                               durability,
-        ::std::string                                            itemName,
-        ::std::vector<::LootItemMatchToolCondition::EnchantInfo> enchantments,
-        ::std::vector<::ItemDescriptor>                          itemTagsAny,
-        ::std::vector<::ItemDescriptor>                          itemTagsAll,
-        ::std::vector<::ItemDescriptor>                          itemTagsNone
-    );
+    MCNAPI void* $ctor(::IntRange count, ::IntRange durability, ::std::string itemName, ::std::vector<::LootItemMatchToolCondition::EnchantInfo> enchantments, ::std::vector<::ItemDescriptor> itemTagsAny, ::std::vector<::ItemDescriptor> itemTagsAll, ::std::vector<::ItemDescriptor> itemTagsNone);
     // NOLINTEND
 
 public:
@@ -112,6 +100,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $applies(::Random&, ::LootTableContext& context);
+
+    MCNAPI ::LootItemCondition::ConditionType $getConditionType() const;
     // NOLINTEND
 
 public:
@@ -119,4 +109,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

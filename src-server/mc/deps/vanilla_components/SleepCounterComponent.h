@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<2, 2, short> mSleepCounter;
     ::ll::TypedStorage<2, 2, short> mPrevSleepCounter;
     // NOLINTEND
+
 };

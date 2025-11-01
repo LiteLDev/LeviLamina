@@ -11,7 +11,6 @@ namespace Editor { class ServiceProviderCollection; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ModuleBinding; }
 namespace Scripting { struct ModuleDependency; }
-namespace Scripting { struct ModuleDescriptor; }
 namespace Scripting { struct Version; }
 // clang-format on
 
@@ -36,20 +35,15 @@ public:
 
     MCNAPI void _addVersions(::Editor::ServiceProviderCollection& managerServices);
 
-    MCNAPI ::Scripting::ModuleBinding _generateBindings(
-        ::Editor::ServiceProviderCollection& managerServices,
-        ::Scripting::ModuleBindingBuilder&   builder,
-        bool                                 allowUntagged,
-        ::std::vector<::std::string> const&  additionalTags
-    );
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(::Editor::ServiceProviderCollection& managerServices, ::Scripting::ModuleBindingBuilder& builder, bool allowUntagged, ::std::vector<::std::string> const& additionalTags);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::std::vector<::Scripting::Version> versions);
+    MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::Scripting::Version version);
 
-    MCNAPI static ::Scripting::ModuleDescriptor makeModuleDescriptorFor(::Scripting::Version version);
+    MCNAPI static ::Scripting::ModuleDependency makeModuleDependencyFor(::std::vector<::Scripting::Version> versions);
     // NOLINTEND
 
 public:
@@ -69,6 +63,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::API
+}

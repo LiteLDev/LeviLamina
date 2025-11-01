@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::EntitySet> mEntities;
     // NOLINTEND
+
 };

@@ -20,69 +20,70 @@ public:
     // clang-format off
     class VanillaWorldChecker;
     // clang-format on
-
+    
     // DebugEndPoint inner types define
     class VanillaWorldChecker : public ::ResourcePackListener {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 64> mUnka84c93;
-        ::ll::UntypedStorage<1, 1>  mUnkac0f45;
-        ::ll::UntypedStorage<1, 1>  mUnk6685cb;
+        ::ll::UntypedStorage<1, 1> mUnkac0f45;
+        ::ll::UntypedStorage<1, 1> mUnk6685cb;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         VanillaWorldChecker& operator=(VanillaWorldChecker const&);
         VanillaWorldChecker(VanillaWorldChecker const&);
         VanillaWorldChecker();
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
         virtual void onActiveResourcePacksChanged(::ResourcePackManager& mgr) /*override*/;
-
+    
         // vIndex: 5
         virtual void onResourceManagerDestroyed(::ResourcePackManager& mgr) /*override*/;
-
+    
         // vIndex: 0
         virtual ~VanillaWorldChecker() /*override*/;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI void checkWorldData(::Core::Path const& levelPath);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager& mgr);
-
+    
         MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager& mgr);
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnk9aec1e;
-    ::ll::UntypedStorage<1, 1>  mUnked2556;
-    ::ll::UntypedStorage<4, 8>  mUnk71077b;
+    ::ll::UntypedStorage<1, 1> mUnked2556;
+    ::ll::UntypedStorage<4, 8> mUnk71077b;
     // NOLINTEND
 
 public:
@@ -165,4 +166,5 @@ public:
 
     MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
+
 };

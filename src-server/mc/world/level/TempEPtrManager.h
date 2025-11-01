@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void unregisterTemporaryPointer(::_TickPtr& ptr);
     // NOLINTEND
+
 };

@@ -17,6 +17,7 @@ public:
     DirectoryPickerConfig& operator=(DirectoryPickerConfig const&);
     DirectoryPickerConfig(DirectoryPickerConfig const&);
     DirectoryPickerConfig();
+
 };
 
-} // namespace Bedrock
+}

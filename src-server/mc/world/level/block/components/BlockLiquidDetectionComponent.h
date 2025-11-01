@@ -18,4 +18,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::set<::LiquidType> const& supportedLiquids();
     // NOLINTEND
+
 };

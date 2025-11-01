@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/CrashDumpLogBlobHeader.h"
+#include "mc/platform/diagnostics/CrashDumpLogBlobHeader.h"
 
 struct CrashDumpFrameDataArray : public ::CrashDumpLogBlobHeader {
 public:
@@ -17,4 +17,5 @@ public:
     CrashDumpFrameDataArray& operator=(CrashDumpFrameDataArray const&);
     CrashDumpFrameDataArray(CrashDumpFrameDataArray const&);
     CrashDumpFrameDataArray();
+
 };

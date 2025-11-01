@@ -4,6 +4,7 @@
 
 namespace VanillaSystemCategories {
 
-struct StopRiding {};
+struct StopRiding {
+};
 
-} // namespace VanillaSystemCategories
+}

@@ -10,7 +10,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause> mCause;
-    ::ll::TypedStorage<4, 4, int>                                     mDmg;
-    ::ll::TypedStorage<4, 4, ::std::bitset<5>>                        mArmorSlots;
+    ::ll::TypedStorage<4, 4, int> mDmg;
+    ::ll::TypedStorage<4, 4, ::std::bitset<5>> mArmorSlots;
     // NOLINTEND
+
 };

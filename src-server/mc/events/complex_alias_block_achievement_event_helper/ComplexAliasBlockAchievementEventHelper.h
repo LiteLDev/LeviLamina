@@ -10,13 +10,9 @@ namespace ComplexAliasBlockAchievementEventHelper { struct ComplexAliasBlockPreS
 namespace ComplexAliasBlockAchievementEventHelper {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::optional<
-    ::std::reference_wrapper<::ComplexAliasBlockAchievementEventHelper::ComplexAliasBlockPreSplitBlockInfo const>>
-getPostComplexAliasBlockToPreSplitBlockInfo(::std::string const& blockFullName);
+MCNAPI ::std::optional<::std::reference_wrapper<::ComplexAliasBlockAchievementEventHelper::ComplexAliasBlockPreSplitBlockInfo const>> getPostComplexAliasBlockToPreSplitBlockInfo(::std::string const& blockFullName);
 
-MCNAPI ::std::
-    unordered_map<::std::string, ::ComplexAliasBlockAchievementEventHelper::ComplexAliasBlockPreSplitBlockInfo>
-    makePostComplexAliasBlockToPreSplitBlockMap();
+MCNAPI ::std::unordered_map<::std::string, ::ComplexAliasBlockAchievementEventHelper::ComplexAliasBlockPreSplitBlockInfo> makePostComplexAliasBlockToPreSplitBlockMap();
 // NOLINTEND
 
-} // namespace ComplexAliasBlockAchievementEventHelper
+}

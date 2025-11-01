@@ -9,10 +9,10 @@
 // clang-format off
 class Biome;
 class BiomeArea;
-class BlockPos;
 class BoundingBox;
 class ChunkLocalNoiseCache;
 class LevelChunk;
+struct BiomeHashType;
 struct BiomeIdType;
 struct GetBiomeOptions;
 // clang-format on
@@ -25,7 +25,7 @@ public:
     virtual ~BiomeSource() = default;
 
     // vIndex: 1
-    virtual void fillBiomes(::LevelChunk&, ::ChunkLocalNoiseCache const&) const = 0;
+    virtual void fillBiomes(::LevelChunk&, ::ChunkLocalNoiseCache const*) const = 0;
 
     // vIndex: 3
     virtual ::BiomeArea getBiomeArea(::BoundingBox const&, uint) const = 0;
@@ -36,23 +36,17 @@ public:
     // vIndex: 4
     virtual bool containsOnly(int, int, int, int, ::gsl::span<::BiomeIdType const>) const = 0;
 
-    // vIndex: 7
-    virtual ::Biome const* getBiome(::BlockPos const&) const = 0;
-
-    // vIndex: 6
-    virtual ::Biome const* getBiome(::GetBiomeOptions const&) const = 0;
-
     // vIndex: 5
-    virtual ::Biome const* getBiome(int, int, int) const = 0;
-
-    // vIndex: 8
     virtual bool hasBiomeById(::BiomeIdType) const = 0;
 
-    // vIndex: 9
-    virtual bool hasBiomeByNameHash(uint64) const = 0;
+    // vIndex: 6
+    virtual bool hasBiomeByNameHash(::BiomeHashType) const = 0;
 
-    // vIndex: 10
+    // vIndex: 7
     virtual ::BiomeSourceType const getType() const = 0;
+
+    // vIndex: 8
+    virtual ::Biome const* _getBiome(::GetBiomeOptions const&) const = 0;
     // NOLINTEND
 
 public:
@@ -60,4 +54,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

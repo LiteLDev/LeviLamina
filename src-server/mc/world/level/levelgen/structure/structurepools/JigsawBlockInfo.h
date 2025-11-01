@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/JigsawEditorData.h"
 
 // auto generated forward declare list
@@ -15,9 +15,9 @@ class JigsawBlockInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::BlockPos>          mPos;
-    ::ll::TypedStorage<8, 8, ::Block const*>       mBlock;
-    ::ll::TypedStorage<8, 8, ::Block const*>       mFinalBlock;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mPos;
+    ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*> mFinalBlock;
     ::ll::TypedStorage<8, 144, ::JigsawEditorData> mEditorData;
     // NOLINTEND
 
@@ -32,12 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI JigsawBlockInfo(::JigsawBlockInfo&&);
 
-    MCAPI JigsawBlockInfo(
-        ::BlockPos const&  pos,
-        ::Block const*     block,
-        ::Block const*     finalBlock,
-        ::JigsawEditorData editorData
-    );
+    MCAPI JigsawBlockInfo(::BlockPos const& pos, ::Block const* block, ::Block const* finalBlock, ::JigsawEditorData editorData);
 
     MCAPI ~JigsawBlockInfo();
     // NOLINTEND
@@ -47,8 +42,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::JigsawBlockInfo&&);
 
-    MCAPI void*
-    $ctor(::BlockPos const& pos, ::Block const* block, ::Block const* finalBlock, ::JigsawEditorData editorData);
+    MCAPI void* $ctor(::BlockPos const& pos, ::Block const* block, ::Block const* finalBlock, ::JigsawEditorData editorData);
     // NOLINTEND
 
 public:
@@ -56,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

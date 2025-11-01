@@ -59,15 +59,10 @@ public:
     virtual ::Core::Result getExtendSizeThreshold(uint64& outExtendSizeThreshold) const /*override*/;
 
     // vIndex: 17
-    virtual void
-    attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback) /*override*/;
+    virtual void attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback) /*override*/;
 
     // vIndex: 18
-    virtual void preemptiveExtendSize(
-        uint64 const            expectedContentSize,
-        ::std::function<void()> successCallback,
-        ::std::function<void()> failureCallback
-    ) /*override*/;
+    virtual void preemptiveExtendSize(uint64 const expectedContentSize, ::std::function<void()> successCallback, ::std::function<void()> failureCallback) /*override*/;
 
     // vIndex: 19
     virtual uint64 getAvailableUserStorageSize() /*override*/;
@@ -77,9 +72,6 @@ public:
 
     // vIndex: 35
     virtual bool shouldRecordFileError(::Core::PathView path, ::std::error_code error) const /*override*/;
-
-    // vIndex: 22
-    virtual void flushImmediately() /*override*/;
 
     // vIndex: 0
     virtual ~StorageArea_windows() /*override*/ = default;
@@ -108,19 +100,13 @@ public:
 
     MCNAPI void $attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
 
-    MCNAPI void $preemptiveExtendSize(
-        uint64 const            expectedContentSize,
-        ::std::function<void()> successCallback,
-        ::std::function<void()> failureCallback
-    );
+    MCNAPI void $preemptiveExtendSize(uint64 const expectedContentSize, ::std::function<void()> successCallback, ::std::function<void()> failureCallback);
 
     MCNAPI uint64 $getAvailableUserStorageSize();
 
     MCNAPI ::Core::FileStorageArea::StorageAreaSpaceInfo $getStorageAreaSpaceInfo();
 
     MCNAPI bool $shouldRecordFileError(::Core::PathView path, ::std::error_code error) const;
-
-    MCNAPI void $flushImmediately();
     // NOLINTEND
 
 public:
@@ -128,6 +114,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

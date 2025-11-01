@@ -16,4 +16,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
     // NOLINTEND
+
 };

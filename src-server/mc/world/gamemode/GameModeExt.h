@@ -17,4 +17,4 @@ MCAPI ::std::unique_ptr<::IGameModeMessenger> createDefaultMessenger(::Player& p
 MCAPI ::std::unique_ptr<::IGameModeTimer> createDefaultTimer(::Player const& player);
 // NOLINTEND
 
-} // namespace GameModeExt
+}

@@ -19,7 +19,7 @@ struct ComplexAliasDescriptor : public ::ItemDescriptor::BaseDescriptor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString>              mFullName;
+    ::ll::TypedStorage<8, 48, ::HashedString> mFullName;
     ::ll::TypedStorage<8, 16, ::ItemDescriptor::ItemEntry> mDefaultItem;
     // NOLINTEND
 
@@ -76,8 +76,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ComplexAliasDescriptor>>
-    deserialize(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::std::unique_ptr<::ComplexAliasDescriptor>> deserialize(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
@@ -117,4 +116,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

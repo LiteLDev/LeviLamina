@@ -30,31 +30,25 @@ class ItemStackNetManagerServer : public ::ItemStackNetManagerBase {
 public:
     // ItemStackNetManagerServer inner types define
     enum class TextFilterState : int {
-        None     = 0,
-        Waiting  = 1,
+        None = 0,
+        Waiting = 1,
         Timedout = 2,
     };
-
+    
     using RetainScope = ::gsl::final_action<::std::function<void()>>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestActionHandler>> mRequestActionHandler;
-    ::ll::TypedStorage<1, 1, bool>                                               mRetainSetItemStackNetIdVariants;
-    ::ll::TypedStorage<4, 4, ::ItemStackNetManagerServer::TextFilterState>       mTextFilterState;
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::
-            queue<::std::unique_ptr<::ItemStackRequestData>, ::std::deque<::std::unique_ptr<::ItemStackRequestData>>>>
-                                                                                    mRequestsQueue;
+    ::ll::TypedStorage<1, 1, bool> mRetainSetItemStackNetIdVariants;
+    ::ll::TypedStorage<4, 4, ::ItemStackNetManagerServer::TextFilterState> mTextFilterState;
+    ::ll::TypedStorage<8, 40, ::std::queue<::std::unique_ptr<::ItemStackRequestData>, ::std::deque<::std::unique_ptr<::ItemStackRequestData>>>> mRequestsQueue;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>> mTextFilteringProcessor;
-    ::ll::TypedStorage<8, 8, ::Tick>                                                mTextFilterRequestTimer;
-    ::ll::TypedStorage<8, 8, ::Tick const>                                          mTextFilterRequestTimeout;
-    ::ll::TypedStorage<8, 16, ::CallbackToken>                                      mTextFilterRequestToken;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CallbackTokenContext<::std::function<void()>>>>
-        mOnContainerScreenCloseCB;
+    ::ll::TypedStorage<8, 8, ::Tick> mTextFilterRequestTimer;
+    ::ll::TypedStorage<8, 8, ::Tick const> mTextFilterRequestTimeout;
+    ::ll::TypedStorage<8, 16, ::CallbackToken> mTextFilterRequestToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CallbackTokenContext<::std::function<void()>>>> mOnContainerScreenCloseCB;
     // NOLINTEND
 
 public:
@@ -88,19 +82,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ItemStackNetManagerServer(::ServerPlayer& serverPlayer, bool isEnabled);
 
-    MCNAPI void _filterStrings(
-        ::ItemStackRequestId                requestId,
-        ::std::vector<::std::string> const& stringsToFilter,
-        ::TextProcessingEventOrigin const&  stringsToFilterOrigin
-    );
+    MCNAPI void _filterStrings(::ItemStackRequestId requestId, ::std::vector<::std::string> const& stringsToFilter, ::TextProcessingEventOrigin const& stringsToFilterOrigin);
 
-    MCNAPI void _handleLegacyTransactionRequest(
-        ::ItemStackLegacyRequestId const&                                            legacyClientRequestId,
-        ::std::vector<::std::pair<::ContainerEnumName, ::std::vector<uchar>>> const& legacySetItemSlots
-    );
+    MCNAPI void _handleLegacyTransactionRequest(::ItemStackLegacyRequestId const& legacyClientRequestId, ::std::vector<::std::pair<::ContainerEnumName, ::std::vector<uchar>>> const& legacySetItemSlots);
 
-    MCNAPI void
-    _handleRequestData(::std::vector<::ItemStackResponseInfo>& responses, ::ItemStackRequestData const* requestData);
+    MCNAPI void _handleRequestData(::std::vector<::ItemStackResponseInfo>& responses, ::ItemStackRequestData const* requestData);
 
     MCNAPI void _processQueue();
 
@@ -142,4 +128,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

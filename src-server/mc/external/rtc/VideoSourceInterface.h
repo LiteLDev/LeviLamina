@@ -4,7 +4,8 @@
 
 namespace rtc {
 
-template <typename T0>
-class VideoSourceInterface {};
+template<typename T0>
+class VideoSourceInterface {
+};
 
-} // namespace rtc
+}

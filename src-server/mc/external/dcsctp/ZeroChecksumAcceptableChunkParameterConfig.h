@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct ZeroChecksumAcceptableChunkParameterConfig {};
+struct ZeroChecksumAcceptableChunkParameterConfig {
+};
 
-} // namespace dcsctp
+}

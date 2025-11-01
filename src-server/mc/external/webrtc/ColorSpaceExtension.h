@@ -18,11 +18,7 @@ class ColorSpaceExtension {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static uchar CombineRangeAndChromaSiting(
-        ::webrtc::ColorSpace::RangeID      range,
-        ::webrtc::ColorSpace::ChromaSiting chroma_siting_horizontal,
-        ::webrtc::ColorSpace::ChromaSiting chroma_siting_vertical
-    );
+    MCNAPI static uchar CombineRangeAndChromaSiting(::webrtc::ColorSpace::RangeID range, ::webrtc::ColorSpace::ChromaSiting chroma_siting_horizontal, ::webrtc::ColorSpace::ChromaSiting chroma_siting_vertical);
 
     MCNAPI static bool Write(::rtc::ArrayView<uchar> data, ::webrtc::ColorSpace const& color_space);
 
@@ -32,6 +28,7 @@ public:
 
     MCNAPI static uint64 WriteLuminance(uchar* data, float f, int denominator);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

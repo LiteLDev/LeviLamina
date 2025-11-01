@@ -21,7 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mFullName;
-    ::ll::TypedStorage<2, 2, short>          mAuxValue;
+    ::ll::TypedStorage<2, 2, short> mAuxValue;
     // NOLINTEND
 
 public:
@@ -64,8 +64,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor>
-    _initFromBlockType(::BlockType const& block, ::WeakPtr<::Item>&& item) const;
+    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> _initFromBlockType(::BlockType const& block, ::WeakPtr<::Item>&& item) const;
 
     MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> _initFromItem(::WeakPtr<::Item>&& item, short aux) const;
     // NOLINTEND
@@ -105,4 +104,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

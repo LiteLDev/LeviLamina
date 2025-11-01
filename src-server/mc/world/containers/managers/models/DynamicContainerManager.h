@@ -18,12 +18,12 @@ class DynamicContainerManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::FullContainerName const>           mFullContainerName;
+    ::ll::TypedStorage<4, 12, ::FullContainerName const> mFullContainerName;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerModel>> mModel;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Container>>        mContainer;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>          mLastSlots;
-    ::ll::TypedStorage<1, 1, ::ContainerID>                        mContainerID;
-    ::ll::TypedStorage<8, 152, ::ItemStack>                        mStorageItem;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Container>> mContainer;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mLastSlots;
+    ::ll::TypedStorage<1, 1, ::ContainerID> mContainerID;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mStorageItem;
     // NOLINTEND
 
 public:
@@ -33,12 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DynamicContainerManager(
-        ::FullContainerName const&          name,
-        ::std::shared_ptr<::ContainerModel> model,
-        ::std::shared_ptr<::Container>      container,
-        ::ItemStack const&                  storageItem
-    );
+    MCAPI DynamicContainerManager(::FullContainerName const& name, ::std::shared_ptr<::ContainerModel> model, ::std::shared_ptr<::Container> container, ::ItemStack const& storageItem);
 
     MCAPI void broadcastChanges(::PlayerContainerRefresher const& refresher);
 
@@ -48,12 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::FullContainerName const&          name,
-        ::std::shared_ptr<::ContainerModel> model,
-        ::std::shared_ptr<::Container>      container,
-        ::ItemStack const&                  storageItem
-    );
+    MCAPI void* $ctor(::FullContainerName const& name, ::std::shared_ptr<::ContainerModel> model, ::std::shared_ptr<::Container> container, ::ItemStack const& storageItem);
     // NOLINTEND
 
 public:
@@ -61,4 +51,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

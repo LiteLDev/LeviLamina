@@ -8,10 +8,11 @@ public:
     // clang-format off
     struct ActorUniqueIDCompare;
     // clang-format on
-
+    
     // PlayerLocationReceiver inner types define
-    struct ActorUniqueIDCompare {};
-
+    struct ActorUniqueIDCompare {
+    };
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -23,4 +24,5 @@ public:
     PlayerLocationReceiver& operator=(PlayerLocationReceiver const&);
     PlayerLocationReceiver(PlayerLocationReceiver const&);
     PlayerLocationReceiver();
+
 };

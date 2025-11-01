@@ -18,7 +18,7 @@ class LayeredAbilities {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 2, ::PermissionsHandler>            mPermissions;
+    ::ll::TypedStorage<1, 2, ::PermissionsHandler> mPermissions;
     ::ll::TypedStorage<4, 1440, ::std::array<::Abilities, 6>> mLayers;
     // NOLINTEND
 
@@ -29,10 +29,7 @@ public:
 
     MCAPI void _handlePlayerPermissionsChange(::PlayerPermissionLevel from, ::PlayerPermissionLevel to);
 
-    MCAPI void forEachAbility(
-        ::std::function<void(::Ability const&, ::AbilitiesIndex)> const& callback,
-        ::Ability::Options                                               requiredOptions
-    ) const;
+    MCAPI void forEachAbility(::std::function<void(::Ability const&, ::AbilitiesIndex)> const& callback, ::Ability::Options requiredOptions) const;
     // NOLINTEND
 
 public:
@@ -46,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
     // NOLINTEND
+
 };

@@ -29,26 +29,10 @@ public:
     virtual bool canChangeBlockOnSpread() const /*override*/;
 
     // vIndex: 3
-    virtual bool attemptSpreadVeins(
-        ::IBlockWorldGenAPI& target,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        int,
-        ::SculkSpreader&
-    ) const /*override*/;
+    virtual bool attemptSpreadVeins(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, int, ::SculkSpreader&) const /*override*/;
 
     // vIndex: 4
-    virtual int attemptUseCharge(
-        ::IBlockWorldGenAPI& target,
-        ::BlockSource*       region,
-        ::BlockPos const&    originPos,
-        ::BlockPos const&    pos,
-        int                  charge,
-        int,
-        ::Random&        random,
-        ::SculkSpreader& spreader,
-        bool const
-    ) const /*override*/;
+    virtual int attemptUseCharge(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& originPos, ::BlockPos const& pos, int charge, int, ::Random& random, ::SculkSpreader& spreader, bool const) const /*override*/;
 
     // vIndex: 5
     virtual void onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const /*override*/;
@@ -57,13 +41,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _placeGrowthAt(
-        ::IBlockWorldGenAPI& target,
-        ::BlockSource*       region,
-        ::BlockPos const&    pos,
-        ::Random&            random,
-        ::SculkSpreader&     spreader
-    );
+    MCAPI static void _placeGrowthAt(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& pos, ::Random& random, ::SculkSpreader& spreader);
     // NOLINTEND
 
 public:
@@ -75,25 +53,9 @@ public:
 
     MCFOLD bool $canChangeBlockOnSpread() const;
 
-    MCFOLD bool $attemptSpreadVeins(
-        ::IBlockWorldGenAPI& target,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        int,
-        ::SculkSpreader&
-    ) const;
+    MCFOLD bool $attemptSpreadVeins(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Block const& block, int, ::SculkSpreader&) const;
 
-    MCAPI int $attemptUseCharge(
-        ::IBlockWorldGenAPI& target,
-        ::BlockSource*       region,
-        ::BlockPos const&    originPos,
-        ::BlockPos const&    pos,
-        int                  charge,
-        int,
-        ::Random&        random,
-        ::SculkSpreader& spreader,
-        bool const
-    ) const;
+    MCAPI int $attemptUseCharge(::IBlockWorldGenAPI& target, ::BlockSource* region, ::BlockPos const& originPos, ::BlockPos const& pos, int charge, int, ::Random& random, ::SculkSpreader& spreader, bool const) const;
 
     MCFOLD void $onDischarged(::IBlockWorldGenAPI&, ::BlockSource*, ::BlockPos const&) const;
     // NOLINTEND
@@ -103,4 +65,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

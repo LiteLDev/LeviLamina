@@ -8,9 +8,9 @@ struct PathSwapper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkb4921f;
+    ::ll::UntypedStorage<8, 8> mUnkb4921f;
     ::ll::UntypedStorage<8, 224> mUnkb6ad25;
-    ::ll::UntypedStorage<1, 1>   mUnkb0d597;
+    ::ll::UntypedStorage<1, 1> mUnkb0d597;
     // NOLINTEND
 
 public:
@@ -30,6 +30,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Puv::internal
+}

@@ -10,6 +10,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool Write(::rtc::ArrayView<uchar> data, uint time_24bits);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

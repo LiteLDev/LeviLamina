@@ -23,28 +23,12 @@ namespace br::worldgen::processors::BlockRules {
 struct Test : public ::br::worldgen::processors::BlockRules::TestType {
 public:
     // Test inner types define
-    using Type = ::std::variant<
-        ::br::worldgen::processors::BlockRules::AlwaysTrue,
-        ::br::worldgen::processors::BlockRules::BlockMatch,
-        ::br::worldgen::processors::BlockRules::RandomBlockMatch,
-        ::br::worldgen::processors::BlockRules::TagMatch,
-        ::br::worldgen::processors::BlockRules::BlockStateMatch,
-        ::br::worldgen::processors::BlockRules::RandomBlockStateMatch>;
-
+    using Type = ::std::variant<::br::worldgen::processors::BlockRules::AlwaysTrue, ::br::worldgen::processors::BlockRules::BlockMatch, ::br::worldgen::processors::BlockRules::RandomBlockMatch, ::br::worldgen::processors::BlockRules::TagMatch, ::br::worldgen::processors::BlockRules::BlockStateMatch, ::br::worldgen::processors::BlockRules::RandomBlockStateMatch>;
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::variant<
-            ::br::worldgen::processors::BlockRules::AlwaysTrue,
-            ::br::worldgen::processors::BlockRules::BlockMatch,
-            ::br::worldgen::processors::BlockRules::RandomBlockMatch,
-            ::br::worldgen::processors::BlockRules::TagMatch,
-            ::br::worldgen::processors::BlockRules::BlockStateMatch,
-            ::br::worldgen::processors::BlockRules::RandomBlockStateMatch>>
-        mData;
+    ::ll::TypedStorage<8, 64, ::std::variant<::br::worldgen::processors::BlockRules::AlwaysTrue, ::br::worldgen::processors::BlockRules::BlockMatch, ::br::worldgen::processors::BlockRules::RandomBlockMatch, ::br::worldgen::processors::BlockRules::TagMatch, ::br::worldgen::processors::BlockRules::BlockStateMatch, ::br::worldgen::processors::BlockRules::RandomBlockStateMatch>> mData;
     // NOLINTEND
 
 public:
@@ -100,6 +84,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen::processors::BlockRules
+}

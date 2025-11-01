@@ -15,9 +15,9 @@ class SaveTransactionManager : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80>  mUnk5ac7c8;
+    ::ll::UntypedStorage<8, 80> mUnk5ac7c8;
     ::ll::UntypedStorage<8, 336> mUnk54446c;
-    ::ll::UntypedStorage<8, 64>  mUnk97a76d;
+    ::ll::UntypedStorage<8, 64> mUnk97a76d;
     // NOLINTEND
 
 public:
@@ -36,11 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SaveTransactionManager(
-        ::WorkerPool&               workerPool,
-        ::Scheduler&                scheduler,
-        ::std::function<void(bool)> showIconFunction
-    );
+    MCNAPI SaveTransactionManager(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::function<void(bool)> showIconFunction);
 
     MCNAPI void _hideGlobalSaveIcon();
 
@@ -58,4 +54,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

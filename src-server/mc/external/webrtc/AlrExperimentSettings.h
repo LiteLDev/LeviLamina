@@ -30,8 +30,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::webrtc::AlrExperimentSettings>
-    CreateFromFieldTrial(::webrtc::FieldTrialsView const& key_value_config, ::std::string_view experiment_name);
+    MCNAPI static ::std::optional<::webrtc::AlrExperimentSettings> CreateFromFieldTrial(::webrtc::FieldTrialsView const& key_value_config, ::std::string_view experiment_name);
 
     MCNAPI static bool MaxOneFieldTrialEnabled(::webrtc::FieldTrialsView const& key_value_config);
     // NOLINTEND
@@ -43,6 +42,7 @@ public:
 
     MCNAPI static ::std::string_view const& kStrictPacingAndProbingExperimentName();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

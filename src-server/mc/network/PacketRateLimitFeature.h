@@ -21,9 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit PacketRateLimitFeature(
-        ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder
-    );
+    MCNAPI explicit PacketRateLimitFeature(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder);
     // NOLINTEND
 
 public:
@@ -31,4 +29,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder> packetGroupBuilder);
     // NOLINTEND
+
 };

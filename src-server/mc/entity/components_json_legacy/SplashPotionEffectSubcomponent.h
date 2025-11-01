@@ -40,24 +40,13 @@ public:
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
     // vIndex: 4
-    virtual char const* getName() /*override*/;
+    virtual char const* getName() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void applyMobEffects(
-        ::MobEffectInstance const&     effectInst,
-        ::std::vector<::Actor*> const& actors,
-        ::Actor&                       projectile,
-        ::std::shared_ptr<::Potion const> const&,
-        float                    splashRange,
-        float                    collisionMargin,
-        ::MobEffect*             effect,
-        ::HitResult&             res,
-        int                      aux,
-        ::BaseGameVersion const& currVer
-    );
+    MCAPI void applyMobEffects(::MobEffectInstance const& effectInst, ::std::vector<::Actor*> const& actors, ::Actor& projectile, ::std::shared_ptr<::Potion const> const&, float splashRange, float collisionMargin, ::MobEffect* effect, ::HitResult& res, int aux, ::BaseGameVersion const& currVer);
     // NOLINTEND
 
 public:
@@ -67,4 +56,5 @@ public:
 
     MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
     // NOLINTEND
+
 };

@@ -44,6 +44,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_110
+}

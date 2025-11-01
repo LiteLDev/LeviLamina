@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class FurnaceContainerData : int {
-    SetTickCount   = 0,
-    SetLitTime     = 1,
+    SetTickCount = 0,
+    SetLitTime = 1,
     SetLitDuration = 2,
-    SetStoredXP    = 3,
+    SetStoredXP = 3,
 };

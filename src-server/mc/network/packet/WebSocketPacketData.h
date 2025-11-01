@@ -30,4 +30,5 @@ public:
 
     MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
+
 };

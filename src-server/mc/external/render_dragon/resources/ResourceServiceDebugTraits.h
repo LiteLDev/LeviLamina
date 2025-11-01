@@ -4,7 +4,8 @@
 
 namespace mce {
 
-template <typename T0>
-struct ResourceServiceDebugTraits {};
+template<typename T0>
+struct ResourceServiceDebugTraits {
+};
 
-} // namespace mce
+}

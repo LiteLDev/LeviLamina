@@ -17,10 +17,10 @@ public:
     // PressurePlateBlock inner types define
     enum class Sensitivity : int {
         Everything = 0,
-        Mobs       = 1,
-        Players    = 2,
+        Mobs = 1,
+        Players = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -30,16 +30,16 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 148
+    // vIndex: 147
     virtual int getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual int getSignalForData(int data) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual int getRedstoneSignal(int signal) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
@@ -63,4 +63,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

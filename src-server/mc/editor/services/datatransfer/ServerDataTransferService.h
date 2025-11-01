@@ -19,16 +19,14 @@ namespace mce { class UUID; }
 
 namespace Editor::Services {
 
-class ServerDataTransferService : public ::Editor::Services::IEditorService,
-                                  public ::Editor::Services::ServerDataTransferServiceProvider,
-                                  public ::Editor::Services::PayloadStoreHelper {
+class ServerDataTransferService : public ::Editor::Services::IEditorService, public ::Editor::Services::ServerDataTransferServiceProvider, public ::Editor::Services::PayloadStoreHelper {
 public:
     // ServerDataTransferService inner types declare
     // clang-format off
     struct PendingDataRequest;
     struct RegisteredCollection;
     // clang-format on
-
+    
     // ServerDataTransferService inner types define
     struct RegisteredCollection {
     public:
@@ -37,26 +35,27 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk87ab4d;
         ::ll::UntypedStorage<8, 32> mUnka75c69;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         RegisteredCollection& operator=(RegisteredCollection const&);
         RegisteredCollection(RegisteredCollection const&);
         RegisteredCollection();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~RegisteredCollection();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct PendingDataRequest {
     public:
         // member variables
@@ -64,26 +63,27 @@ public:
         ::ll::UntypedStorage<8, 64> mUnkcf69c7;
         ::ll::UntypedStorage<8, 32> mUnk711599;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         PendingDataRequest& operator=(PendingDataRequest const&);
         PendingDataRequest(PendingDataRequest const&);
         PendingDataRequest();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~PendingDataRequest();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -113,26 +113,19 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 1
-    virtual void requestData(
-        ::std::string const& collectionName,
-        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback,
-        bool                                                                                                 useSnapshot
-    ) /*override*/;
+    virtual void requestData(::std::string const& collectionName, ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback, bool useSnapshot) /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result_deprecated<::std::string const>
-    requestSchema(::std::string const& collectionName) /*override*/;
+    virtual ::Scripting::Result_deprecated<::std::string const> requestSchema(::std::string const& collectionName) /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result_deprecated<void>
-    sendData(::std::string const& collectionName, ::std::string const& jsonData) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> sendData(::std::string const& collectionName, ::std::string const& jsonData) /*override*/;
 
     // vIndex: 4
     virtual ::Scripting::Result_deprecated<void> sendDataToClipboard(::std::string const& jsonData) /*override*/;
 
     // vIndex: 5
-    virtual ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData> getRegisteredCollections() const
-        /*override*/;
+    virtual ::std::vector<::Editor::ScriptModule::ScriptTransferCollectionNameData> getRegisteredCollections() const /*override*/;
 
     // vIndex: 6
     virtual ::Scripting::Result_deprecated<void> openSession(::std::string const& collectionName) /*override*/;
@@ -146,13 +139,9 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ServerDataTransferService(::Editor::ServiceProviderCollection& providers);
 
-    MCNAPI void _onDataRequestResponsePayloadReceived(
-        ::Editor::Network::DataTransferServiceDataRequestResponsePayload const& payload
-    );
+    MCNAPI void _onDataRequestResponsePayloadReceived(::Editor::Network::DataTransferServiceDataRequestResponsePayload const& payload);
 
-    MCNAPI void _onRegisterCollectionPayloadReceived(
-        ::Editor::Network::DataTransferServiceRegisterCollectionPayload const& payload
-    );
+    MCNAPI void _onRegisterCollectionPayloadReceived(::Editor::Network::DataTransferServiceRegisterCollectionPayload const& payload);
     // NOLINTEND
 
 public:
@@ -176,16 +165,11 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI void $requestData(
-        ::std::string const& collectionName,
-        ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback,
-        bool                                                                                                 useSnapshot
-    );
+    MCNAPI void $requestData(::std::string const& collectionName, ::std::function<void(bool, ::std::string const&, ::std::string const&, ::std::string const&)> const& callback, bool useSnapshot);
 
     MCNAPI ::Scripting::Result_deprecated<::std::string const> $requestSchema(::std::string const& collectionName);
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $sendData(::std::string const& collectionName, ::std::string const& jsonData);
+    MCNAPI ::Scripting::Result_deprecated<void> $sendData(::std::string const& collectionName, ::std::string const& jsonData);
 
     MCNAPI ::Scripting::Result_deprecated<void> $sendDataToClipboard(::std::string const& jsonData);
 
@@ -203,6 +187,7 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

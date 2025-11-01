@@ -17,6 +17,7 @@ public:
     PreBiome& operator=(PreBiome const&);
     PreBiome(PreBiome const&);
     PreBiome();
+
 };
 
-} // namespace OperationNodeValues
+}

@@ -4,6 +4,7 @@
 
 namespace Parties {
 
-class PartySystem {};
+class PartySystem {
+};
 
-} // namespace Parties
+}

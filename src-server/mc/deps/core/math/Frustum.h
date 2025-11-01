@@ -6,22 +6,22 @@ class Frustum {
 public:
     // Frustum inner types define
     enum class FrustumSide : uchar {
-        Right            = 0,
-        Left             = 1,
-        Bottom           = 2,
-        Top              = 3,
-        Back             = 4,
-        Front            = 5,
+        Right = 0,
+        Left = 1,
+        Bottom = 2,
+        Top = 3,
+        Back = 4,
+        Front = 5,
         NumFrustumPlanes = 6,
     };
-
+    
     enum class Plane : uchar {
-        PlaneNormalX          = 0,
-        PlaneNormalY          = 1,
-        PlaneNormalZ          = 2,
+        PlaneNormalX = 0,
+        PlaneNormalY = 1,
+        PlaneNormalZ = 2,
         PlaneToOriginDistance = 3,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,4 +35,5 @@ public:
     Frustum& operator=(Frustum const&);
     Frustum(Frustum const&);
     Frustum();
+
 };

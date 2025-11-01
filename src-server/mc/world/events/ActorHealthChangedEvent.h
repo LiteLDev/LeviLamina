@@ -10,8 +10,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mEntity;
-    ::ll::TypedStorage<4, 4, float>            mOldValue;
-    ::ll::TypedStorage<4, 4, float>            mNewValue;
+    ::ll::TypedStorage<4, 4, float> mOldValue;
+    ::ll::TypedStorage<4, 4, float> mNewValue;
     // NOLINTEND
 
 public:
@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

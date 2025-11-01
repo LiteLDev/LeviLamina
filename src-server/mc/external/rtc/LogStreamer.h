@@ -4,7 +4,8 @@
 
 namespace rtc::webrtc_checks_impl {
 
-template <typename... T0>
-class LogStreamer {};
+template<typename... T0>
+class LogStreamer {
+};
 
-} // namespace rtc::webrtc_checks_impl
+}

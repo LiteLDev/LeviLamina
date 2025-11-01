@@ -11,7 +11,7 @@ public:
     class LockAlgorithm;
     class SequenceId;
     // clang-format on
-
+    
     // SequenceLock inner types define
     class SequenceId {
     public:
@@ -19,16 +19,18 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4> mUnk8183f0;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         SequenceId& operator=(SequenceId const&);
         SequenceId(SequenceId const&);
         SequenceId();
+    
     };
-
-    class LockAlgorithm {};
-
+    
+    class LockAlgorithm {
+    };
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -48,6 +50,7 @@ public:
     SequenceLock& operator=(SequenceLock const&);
     SequenceLock(SequenceLock const&);
     SequenceLock();
+
 };
 
-} // namespace Bedrock::Threading
+}

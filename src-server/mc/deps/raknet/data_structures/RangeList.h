@@ -4,7 +4,8 @@
 
 namespace DataStructures {
 
-template <typename T0>
-class RangeList {};
+template<typename T0>
+class RangeList {
+};
 
-} // namespace DataStructures
+}

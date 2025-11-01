@@ -13,8 +13,7 @@ class AsyncVerdictPromise;
 namespace ScriptModuleServerAdmin {
 // functions
 // NOLINTBEGIN
-MCNAPI bool
-OnTickCallback(::Scripting::Future<void()> future, ::std::shared_ptr<::AsyncVerdictPromise> networkPromisePtr);
+MCNAPI bool OnTickCallback(::Scripting::Future<void()> future, ::std::shared_ptr<::AsyncVerdictPromise> networkPromisePtr);
 // NOLINTEND
 
-} // namespace ScriptModuleServerAdmin
+}

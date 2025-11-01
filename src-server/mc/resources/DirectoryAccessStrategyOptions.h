@@ -17,4 +17,5 @@ public:
     DirectoryAccessStrategyOptions& operator=(DirectoryAccessStrategyOptions const&);
     DirectoryAccessStrategyOptions(DirectoryAccessStrategyOptions const&);
     DirectoryAccessStrategyOptions();
+
 };

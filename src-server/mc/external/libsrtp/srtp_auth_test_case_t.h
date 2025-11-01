@@ -20,4 +20,5 @@ public:
     srtp_auth_test_case_t& operator=(srtp_auth_test_case_t const&);
     srtp_auth_test_case_t(srtp_auth_test_case_t const&);
     srtp_auth_test_case_t();
+
 };

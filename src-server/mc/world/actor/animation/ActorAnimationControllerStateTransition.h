@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkeb47df;
-    ::ll::UntypedStorage<8, 8>  mUnk54d5ca;
+    ::ll::UntypedStorage<8, 8> mUnk54d5ca;
     ::ll::UntypedStorage<8, 16> mUnkc8f8ff;
     // NOLINTEND
 
@@ -16,4 +16,5 @@ public:
     ActorAnimationControllerStateTransition& operator=(ActorAnimationControllerStateTransition const&);
     ActorAnimationControllerStateTransition(ActorAnimationControllerStateTransition const&);
     ActorAnimationControllerStateTransition();
+
 };

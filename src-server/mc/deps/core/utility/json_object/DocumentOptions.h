@@ -20,6 +20,7 @@ public:
     DocumentOptions& operator=(DocumentOptions const&);
     DocumentOptions(DocumentOptions const&);
     DocumentOptions();
+
 };
 
-} // namespace Bedrock::JSONObject
+}

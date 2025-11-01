@@ -16,44 +16,43 @@ public:
     // clang-format off
     struct ComponentInfo;
     // clang-format on
-
+    
     // InternalComponentRegistry inner types define
     struct ComponentInfo {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 64, ::std::function<void(::CompoundTag const&, ::CompoundTag&)>>
-                                                                                         mLegacyDataConversionFunc;
+        ::ll::TypedStorage<8, 64, ::std::function<void(::CompoundTag const&, ::CompoundTag&)>> mLegacyDataConversionFunc;
         ::ll::TypedStorage<8, 64, ::std::function<void(::Actor&, ::CompoundTag const&)>> mCreateAndLoadComponentFunc;
         ::ll::TypedStorage<8, 64, ::std::function<void(::Actor const&, ::CompoundTag&)>> mSaveComponentFunc;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ComponentInfo& operator=(ComponentInfo const&);
         ComponentInfo(ComponentInfo const&);
         ComponentInfo();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::InternalComponentRegistry::ComponentInfo& operator=(::InternalComponentRegistry::ComponentInfo&&);
-
+    
         MCNAPI ~ComponentInfo();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo>>
-        mRegistry;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo>> mRegistry;
     // NOLINTEND
 
 public:
@@ -97,4 +96,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

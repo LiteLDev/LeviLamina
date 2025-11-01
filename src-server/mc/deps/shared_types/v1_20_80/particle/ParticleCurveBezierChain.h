@@ -23,7 +23,6 @@ public:
 
 public:
     // prevent constructor by default
-    ParticleCurveBezierChain& operator=(ParticleCurveBezierChain const&);
     ParticleCurveBezierChain(ParticleCurveBezierChain const&);
     ParticleCurveBezierChain();
 
@@ -39,8 +38,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ParticleCurveBezierChain(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ParticleCurveBezierChain&
-    operator=(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
+    MCNAPI ::SharedTypes::v1_20_80::ParticleCurveBezierChain& operator=(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
+
+    MCNAPI ::SharedTypes::v1_20_80::ParticleCurveBezierChain& operator=(::SharedTypes::v1_20_80::ParticleCurveBezierChain&&);
     // NOLINTEND
 
 public:
@@ -66,6 +66,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_80
+}

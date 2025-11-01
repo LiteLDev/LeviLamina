@@ -16,9 +16,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 40, ::BeardingDescriptionCache const> mCache;
-    ::ll::TypedStorage<8, 8, ::BeardKernel const&>              mBeardKernel;
-    ::ll::TypedStorage<4, 4, float const>                       mMinBeardWidth;
-    ::ll::TypedStorage<4, 4, float const>                       mMaxBeardWidth;
+    ::ll::TypedStorage<8, 8, ::BeardKernel const&> mBeardKernel;
+    ::ll::TypedStorage<4, 4, float const> mMinBeardWidth;
+    ::ll::TypedStorage<4, 4, float const> mMaxBeardWidth;
     // NOLINTEND
 
 public:
@@ -32,4 +32,5 @@ public:
     // NOLINTBEGIN
     MCAPI float calculateContribution(::BlockPos const& pos) const;
     // NOLINTEND
+
 };

@@ -18,6 +18,7 @@ public:
     PlayerStatusTransitions& operator=(PlayerStatusTransitions const&);
     PlayerStatusTransitions(PlayerStatusTransitions const&);
     PlayerStatusTransitions();
+
 };
 
-} // namespace SneakTriggerSystem
+}

@@ -51,6 +51,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(uchar* bytes, uint64 byte_count);
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

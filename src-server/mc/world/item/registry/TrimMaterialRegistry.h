@@ -22,4 +22,5 @@ public:
 
     MCAPI ::std::optional<::TrimMaterial> getTrimMaterialByMaterialId(::HashedString const& materialId) const;
     // NOLINTEND
+
 };

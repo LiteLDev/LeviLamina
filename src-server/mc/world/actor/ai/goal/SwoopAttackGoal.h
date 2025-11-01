@@ -15,11 +15,11 @@ class SwoopAttackGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                    mMob;
-    ::ll::TypedStorage<1, 1, bool>                      mHurtTarget;
-    ::ll::TypedStorage<4, 4, int>                       mAttackTicks;
-    ::ll::TypedStorage<4, 4, float>                     mDamageReach;
-    ::ll::TypedStorage<4, 4, float>                     mSpeedMultiplier;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<1, 1, bool> mHurtTarget;
+    ::ll::TypedStorage<4, 4, int> mAttackTicks;
+    ::ll::TypedStorage<4, 4, float> mDamageReach;
+    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
     ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mCooldownTicks;
     // NOLINTEND
 
@@ -75,4 +75,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

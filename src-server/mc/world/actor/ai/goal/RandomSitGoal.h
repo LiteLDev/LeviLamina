@@ -14,13 +14,13 @@ class RandomSitGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>      mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     ::ll::TypedStorage<4, 4, float const> mStartChance;
     ::ll::TypedStorage<4, 4, float const> mStopChance;
-    ::ll::TypedStorage<8, 8, uint64>      mCooldown;
-    ::ll::TypedStorage<4, 4, int const>   mSitCooldownTotal;
-    ::ll::TypedStorage<4, 4, int const>   mMinSitTick;
-    ::ll::TypedStorage<4, 4, int>         mCurrentSitTick;
+    ::ll::TypedStorage<8, 8, uint64> mCooldown;
+    ::ll::TypedStorage<4, 4, int const> mSitCooldownTotal;
+    ::ll::TypedStorage<4, 4, int const> mMinSitTick;
+    ::ll::TypedStorage<4, 4, int> mCurrentSitTick;
     // NOLINTEND
 
 public:
@@ -70,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

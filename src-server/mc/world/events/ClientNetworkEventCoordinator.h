@@ -17,4 +17,5 @@ public:
     // vIndex: 0
     virtual ~ClientNetworkEventCoordinator() /*override*/ = default;
     // NOLINTEND
+
 };

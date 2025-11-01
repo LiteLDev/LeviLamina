@@ -4,7 +4,8 @@
 
 namespace rtc::webrtc_checks_impl {
 
-template <int T0, typename T1>
-struct Val {};
+template<int T0, typename T1>
+struct Val {
+};
 
-} // namespace rtc::webrtc_checks_impl
+}

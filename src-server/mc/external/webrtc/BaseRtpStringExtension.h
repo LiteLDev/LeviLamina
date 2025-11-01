@@ -12,6 +12,7 @@ public:
 
     MCNAPI static bool Write(::rtc::ArrayView<uchar> data, ::std::string_view str);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

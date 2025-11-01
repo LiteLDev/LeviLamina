@@ -6,10 +6,10 @@ struct ShareToTeams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkba749a;
+    ::ll::UntypedStorage<1, 1> mUnkba749a;
     ::ll::UntypedStorage<8, 32> mUnk2c3600;
-    ::ll::UntypedStorage<1, 1>  mUnkede9d2;
-    ::ll::UntypedStorage<1, 1>  mUnk8bf7b9;
+    ::ll::UntypedStorage<1, 1> mUnkede9d2;
+    ::ll::UntypedStorage<1, 1> mUnk8bf7b9;
     ::ll::UntypedStorage<8, 32> mUnkf4c149;
     // NOLINTEND
 
@@ -18,4 +18,5 @@ public:
     ShareToTeams& operator=(ShareToTeams const&);
     ShareToTeams(ShareToTeams const&);
     ShareToTeams();
+
 };

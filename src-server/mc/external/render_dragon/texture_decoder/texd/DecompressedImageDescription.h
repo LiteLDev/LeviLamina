@@ -19,6 +19,7 @@ public:
     DecompressedImageDescription& operator=(DecompressedImageDescription const&);
     DecompressedImageDescription(DecompressedImageDescription const&);
     DecompressedImageDescription();
+
 };
 
-} // namespace texd
+}

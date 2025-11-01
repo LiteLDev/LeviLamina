@@ -15,8 +15,8 @@ class MoveTowardsRestrictionGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
-    ::ll::TypedStorage<4, 4, float>   mSpeedMultiplier;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
     ::ll::TypedStorage<4, 12, ::Vec3> mWantedPosition;
     // NOLINTEND
 
@@ -52,4 +52,5 @@ public:
 
     MCFOLD void $start();
     // NOLINTEND
+
 };

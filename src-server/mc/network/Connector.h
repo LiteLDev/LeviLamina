@@ -10,6 +10,7 @@
 // clang-format off
 class NetworkIdentifier;
 class NetworkPeer;
+namespace Json { class Value; }
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
@@ -19,7 +20,7 @@ public:
     // clang-format off
     struct ConnectionCallbacks;
     // clang-format on
-
+    
     // Connector inner types define
     struct ConnectionCallbacks {
     public:
@@ -27,29 +28,25 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~ConnectionCallbacks() = default;
-
+    
         // vIndex: 1
         virtual bool onNewIncomingConnection(::NetworkIdentifier const&, ::std::shared_ptr<::NetworkPeer>&&) = 0;
-
+    
         // vIndex: 2
         virtual bool onNewOutgoingConnection(::NetworkIdentifier const&, ::std::shared_ptr<::NetworkPeer>&&) = 0;
-
+    
         // vIndex: 3
-        virtual void onConnectionClosed(
-            ::NetworkIdentifier const&,
-            ::Connection::DisconnectFailReason const,
-            ::std::string const&,
-            bool
-        ) = 0;
+        virtual void onConnectionClosed(::NetworkIdentifier const&, ::Connection::DisconnectFailReason const, ::std::string const&, bool, ::Json::Value const&) = 0;
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
-
+    
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -124,4 +121,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

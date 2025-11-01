@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/util/Reference.h"
+#include "mc/deps/shared_types/versionless/util/Reference.h"
 #include "mc/world/level/levelgen/v2/processors/StructureProcessor.h"
 #include "mc/world/level/levelgen/v2/processors/StructureProcessorType.h"
 
@@ -31,14 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(
-        ::IBlockSource&,
-        ::BlockPos,
-        ::BlockPos,
-        ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
-        ::br::worldgen::StructurePlaceSettings const&
-    ) const /*override*/;
+    virtual ::std::optional<::br::worldgen::StructureBlockInfo> process(::IBlockSource&, ::BlockPos, ::BlockPos, ::br::worldgen::StructureBlockInfo const&, ::br::worldgen::StructureBlockInfo&& processedBlockInfo, ::br::worldgen::StructurePlaceSettings const&) const /*override*/;
 
     // vIndex: 3
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
@@ -57,8 +50,7 @@ public:
 
     MCAPI static ::br::worldgen::processors::BlockIgnore from(::std::vector<::HashedString> const& toIgnore);
 
-    MCAPI static ::br::worldgen::processors::BlockIgnore
-    from(::std::vector<::SharedTypes::Reference<0>> const& toIgnore);
+    MCAPI static ::br::worldgen::processors::BlockIgnore from(::std::vector<::SharedTypes::Reference<0>> const& toIgnore);
     // NOLINTEND
 
 public:
@@ -76,14 +68,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
-        ::IBlockSource&,
-        ::BlockPos,
-        ::BlockPos,
-        ::br::worldgen::StructureBlockInfo const&,
-        ::br::worldgen::StructureBlockInfo&& processedBlockInfo,
-        ::br::worldgen::StructurePlaceSettings const&
-    ) const;
+    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(::IBlockSource&, ::BlockPos, ::BlockPos, ::br::worldgen::StructureBlockInfo const&, ::br::worldgen::StructureBlockInfo&& processedBlockInfo, ::br::worldgen::StructurePlaceSettings const&) const;
 
     MCFOLD ::br::worldgen::StructureProcessorType $type() const;
 
@@ -95,6 +80,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen::processors
+}

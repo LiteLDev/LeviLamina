@@ -4,6 +4,7 @@
 
 namespace Bedrock {
 
-struct ExclusiveEnumRangeT {};
+struct ExclusiveEnumRangeT {
+};
 
-} // namespace Bedrock
+}

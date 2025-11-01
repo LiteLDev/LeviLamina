@@ -18,27 +18,28 @@ public:
     // clang-format off
     struct FeatureExpressionNodePair;
     // clang-format on
-
+    
     // ConditionalListFeature inner types define
     enum class EarlyOutScheme : int {
         ConditionSuccess = 0,
         PlacementSuccess = 1,
     };
-
+    
     struct FeatureExpressionNodePair {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeatureRef;
-        ::ll::TypedStorage<8, 16, ::ExpressionNode>      mExpressionNode;
+        ::ll::TypedStorage<8, 16, ::ExpressionNode> mExpressionNode;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ConditionalListFeature::FeatureExpressionNodePair>> mFeatureCollection;
-    ::ll::TypedStorage<4, 4, ::ConditionalListFeature::EarlyOutScheme>                            mEarlyOutScheme;
+    ::ll::TypedStorage<4, 4, ::ConditionalListFeature::EarlyOutScheme> mEarlyOutScheme;
     // NOLINTEND
 
 public:
@@ -62,4 +63,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

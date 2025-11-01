@@ -17,9 +17,9 @@ public:
     // VideoFecGenerator inner types define
     enum class FecType : int {
         KFlexFec = 0,
-        KUlpFec  = 1,
+        KUlpFec = 1,
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -39,8 +39,7 @@ public:
     virtual ::webrtc::DataRate CurrentFecRate() const = 0;
 
     // vIndex: 5
-    virtual void
-    SetProtectionParameters(::webrtc::FecProtectionParams const&, ::webrtc::FecProtectionParams const&) = 0;
+    virtual void SetProtectionParameters(::webrtc::FecProtectionParams const&, ::webrtc::FecProtectionParams const&) = 0;
 
     // vIndex: 6
     virtual void AddPacketAndGenerateFec(::webrtc::RtpPacketToSend const&) = 0;
@@ -57,6 +56,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

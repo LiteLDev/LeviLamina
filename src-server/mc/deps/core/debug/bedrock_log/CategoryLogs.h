@@ -7,6 +7,7 @@
 
 namespace BedrockLog {
 
-struct CategoryLogs : public ::std::array<::BedrockLog::CategoryLogFile, 7> {};
+struct CategoryLogs : public ::std::array<::BedrockLog::CategoryLogFile, 7> {
+};
 
-} // namespace BedrockLog
+}

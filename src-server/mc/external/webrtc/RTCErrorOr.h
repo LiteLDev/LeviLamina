@@ -4,7 +4,8 @@
 
 namespace webrtc {
 
-template <typename T0>
-class RTCErrorOr {};
+template<typename T0>
+class RTCErrorOr {
+};
 
-} // namespace webrtc
+}

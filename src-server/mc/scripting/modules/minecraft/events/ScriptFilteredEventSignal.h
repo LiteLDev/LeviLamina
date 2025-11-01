@@ -4,7 +4,8 @@
 
 namespace ScriptModuleMinecraft {
 
-template <typename T0, int T1, typename T2>
-class ScriptFilteredEventSignal {};
+template<typename T0, int T1, typename T2>
+class ScriptFilteredEventSignal {
+};
 
-} // namespace ScriptModuleMinecraft
+}

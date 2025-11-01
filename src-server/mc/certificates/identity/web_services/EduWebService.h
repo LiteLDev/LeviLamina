@@ -19,11 +19,11 @@ class EduWebService : public ::WebServices::IEduWebService, public ::Bedrock::Th
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk3d9fcd;
+    ::ll::UntypedStorage<8, 8> mUnk3d9fcd;
     ::ll::UntypedStorage<8, 64> mUnk1bb14b;
     ::ll::UntypedStorage<8, 64> mUnk3498df;
     ::ll::UntypedStorage<8, 32> mUnk11b994;
-    ::ll::UntypedStorage<8, 8>  mUnk3d0bad;
+    ::ll::UntypedStorage<8, 8> mUnk3d0bad;
     // NOLINTEND
 
 public:
@@ -42,24 +42,16 @@ public:
     virtual void setEula() /*override*/;
 
     // vIndex: 2
-    virtual void
-    setPurchaseReceipt(::std::string const&, ::std::function<void(bool)> const&, ::std::string const&) /*override*/;
+    virtual void setPurchaseReceipt(::std::string const&, ::std::function<void(bool)> const&, ::std::string const&) /*override*/;
 
     // vIndex: 3
     virtual void setSkin(::std::string const&) /*override*/;
 
     // vIndex: 4
-    virtual void signinForDemo(
-        ::std::function<
-            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
-    ) /*override*/;
+    virtual void signinForDemo(::std::function<void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>) /*override*/;
 
     // vIndex: 5
-    virtual void signin(
-        ::std::function<
-            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>,
-        ::std::string const&
-    ) /*override*/;
+    virtual void signin(::std::function<void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>, ::std::string const&) /*override*/;
 
     // vIndex: 6
     virtual void sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)>) /*override*/;
@@ -70,6 +62,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace WebServices
+}

@@ -20,13 +20,13 @@ public:
     enum class EventAction : uchar {
         Entity = 0,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::EventCommand::EventAction>  mAction;
+    ::ll::TypedStorage<1, 1, ::EventCommand::EventAction> mAction;
     ::ll::TypedStorage<8, 200, ::CommandSelector<::Actor>> mTargets;
-    ::ll::TypedStorage<8, 32, ::std::string>               mEventName;
+    ::ll::TypedStorage<8, 32, ::std::string> mEventName;
     // NOLINTEND
 
 public:
@@ -56,4 +56,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

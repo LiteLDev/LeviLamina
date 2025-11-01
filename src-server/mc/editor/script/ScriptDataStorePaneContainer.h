@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk49b16c;
-    ::ll::UntypedStorage<8, 8>  mUnk64a573;
+    ::ll::UntypedStorage<8, 8> mUnk64a573;
     // NOLINTEND
 
 public:
@@ -30,8 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void>
-    createPane(::Scripting::ContextConfig const& contextConfig, ::std::string id);
+    MCNAPI ::Scripting::Result_deprecated<void> createPane(::Scripting::ContextConfig const& contextConfig, ::std::string id);
 
     MCNAPI ::Scripting::Result_deprecated<void> destroyPane(::std::string id);
     // NOLINTEND
@@ -41,6 +40,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

@@ -16,7 +16,7 @@ struct BlockEmbeddedVisualDescription : public ::NetworkedBlockComponentDescript
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 216, ::BlockGeometryDescription>          mGeometry;
+    ::ll::TypedStorage<8, 216, ::BlockGeometryDescription> mGeometry;
     ::ll::TypedStorage<8, 144, ::BlockMaterialInstancesDescription> mMaterialInstances;
     // NOLINTEND
 
@@ -57,4 +57,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

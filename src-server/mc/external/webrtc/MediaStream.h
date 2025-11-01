@@ -49,12 +49,10 @@ public:
     virtual bool RemoveTrack(::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> track) /*override*/;
 
     // vIndex: 6
-    virtual ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>
-    FindAudioTrack(::std::string const& track_id) /*override*/;
+    virtual ::webrtc::scoped_refptr<::webrtc::AudioTrackInterface> FindAudioTrack(::std::string const& track_id) /*override*/;
 
     // vIndex: 7
-    virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface>
-    FindVideoTrack(::std::string const& track_id) /*override*/;
+    virtual ::webrtc::scoped_refptr<::webrtc::VideoTrackInterface> FindVideoTrack(::std::string const& track_id) /*override*/;
 
     // vIndex: 4
     virtual ::std::vector<::webrtc::scoped_refptr<::webrtc::AudioTrackInterface>> GetAudioTracks() /*override*/;
@@ -119,6 +117,7 @@ public:
 
     MCNAPI static void** $vftableForNotifierInterface();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

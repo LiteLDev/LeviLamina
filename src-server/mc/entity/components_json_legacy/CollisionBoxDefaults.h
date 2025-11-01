@@ -8,4 +8,4 @@ namespace CollisionBoxDefaults {
 MCNAPI float const& BB_EPSILON();
 // NOLINTEND
 
-} // namespace CollisionBoxDefaults
+}

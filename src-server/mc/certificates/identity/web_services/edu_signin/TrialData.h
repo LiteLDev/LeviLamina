@@ -16,6 +16,7 @@ public:
     TrialData& operator=(TrialData const&);
     TrialData(TrialData const&);
     TrialData();
+
 };
 
-} // namespace WebServices::EduSignin
+}

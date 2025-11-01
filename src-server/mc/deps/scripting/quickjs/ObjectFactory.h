@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk7c0899;
-    ::ll::UntypedStorage<8, 8>  mUnk282d2d;
+    ::ll::UntypedStorage<8, 8> mUnk282d2d;
     // NOLINTEND
 
 public:
@@ -35,8 +35,7 @@ public:
     virtual ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> makePromise() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType>
-    makeDataBuffer(uchar const* data, uint64 size, ::entt::meta_type const& dataType) /*override*/;
+    virtual ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType> makeDataBuffer(uchar const* data, uint64 size, ::entt::meta_type const& dataType) /*override*/;
 
     // vIndex: 0
     virtual ~ObjectFactory() /*override*/ = default;
@@ -47,8 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::StrongTypedObjectHandle<::Scripting::PromiseType> $makePromise();
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType>
-    $makeDataBuffer(uchar const* data, uint64 size, ::entt::meta_type const& dataType);
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::Scripting::DataBufferHandleType> $makeDataBuffer(uchar const* data, uint64 size, ::entt::meta_type const& dataType);
     // NOLINTEND
 
 public:
@@ -56,6 +54,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting::QuickJS
+}

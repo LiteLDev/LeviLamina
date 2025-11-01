@@ -18,6 +18,7 @@ struct ActorDataFlagComponent;
 struct ActorRotationComponent;
 struct DashActionComponent;
 struct DashCooldownTimerComponent;
+struct DashJumpFlagComponent;
 struct JumpPendingScaleComponent;
 struct JumpPreventionResult;
 struct MobEffectsComponent;
@@ -31,45 +32,13 @@ struct VehicleComponent;
 namespace DashActionSystem {
 // functions
 // NOLINTBEGIN
+MCNAPI void _tickApplyDashModifierSystem(::ViewT<::StrictEntityContext, ::Include<::DashJumpFlagComponent>, ::TriggerJumpRequestComponent const, ::DashActionComponent const, ::MovementAttributesComponent const, ::ActorRotationComponent const, ::MobEffectsComponent const, ::Optional<::VehicleComponent const>, ::StateVectorComponent, ::JumpPendingScaleComponent, ::ActorDataFlagComponent, ::ActorDataDirtyFlagsComponent> vehicleView, ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ActorRotationComponent const> passengerView, ::EntityModifier<::DashCooldownTimerComponent> mod);
+
 MCNAPI ::Vec3 dashForwardCamera(::Vec3 const& momentum, ::ActorRotationComponent const& cameraRotation);
 
-MCNAPI ::Vec3 dashForwardPassengerCamera(
-    ::Vec3 const&                                                                                momentum,
-    ::VehicleComponent const&                                                                    vehicleComponent,
-    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ActorRotationComponent const> playerPassengerView
-);
+MCNAPI void doDash(::StrictEntityContext const& context, ::JumpPreventionResult const& jumpPreventionResult, ::MovementAttributesComponent const& attributes, ::std::vector<::MobEffectInstance> const& mobEffects, ::DashActionComponent const& dashAction, ::ActorRotationComponent const& actorRotationComponent, ::Optional<::VehicleComponent const> vehicleComponent, ::Vec3& posDelta, float& jumpPendingScale, ::ActorDataFlagComponent& actorDataFlag, ::ActorDataDirtyFlagsComponent& dirtyFlags, ::EntityModifier<::DashCooldownTimerComponent>& mod, ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ActorRotationComponent const> passengerView);
 
-MCNAPI void doDash(
-    ::StrictEntityContext const&                                                                 context,
-    ::JumpPreventionResult const&                                                                jumpPreventionResult,
-    ::MovementAttributesComponent const&                                                         attributes,
-    ::std::vector<::MobEffectInstance> const&                                                    mobEffects,
-    ::DashActionComponent const&                                                                 dashAction,
-    ::ActorRotationComponent const&                                                              actorRotationComponent,
-    ::Optional<::VehicleComponent const>                                                         vehicleComponent,
-    ::Vec3&                                                                                      posDelta,
-    float&                                                                                       jumpPendingScale,
-    ::ActorDataFlagComponent&                                                                    actorDataFlag,
-    ::ActorDataDirtyFlagsComponent&                                                              dirtyFlags,
-    ::EntityModifier<::DashCooldownTimerComponent>&                                              mod,
-    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ActorRotationComponent const> passengerView
-);
-
-MCNAPI void tickApplyDashModifierSystem(
-    ::StrictEntityContext const&                    context,
-    ::TriggerJumpRequestComponent const&            triggerJumpRequestComponent,
-    ::DashActionComponent const&                    dashComponent,
-    ::MovementAttributesComponent const&            attributesComponent,
-    ::ActorRotationComponent const&                 actorRotationComponent,
-    ::MobEffectsComponent const&                    mobEffectsComponent,
-    ::Optional<::VehicleComponent const>            vehicleComponent,
-    ::StateVectorComponent&                         stateVectorComponent,
-    ::JumpPendingScaleComponent&                    jumpPendingScaleComponent,
-    ::ActorDataFlagComponent&                       actorDataFlagComponent,
-    ::ActorDataDirtyFlagsComponent&                 dirtyFlagsComponent,
-    ::EntityModifier<::DashCooldownTimerComponent>& mod,
-    ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ActorRotationComponent const> passengerView
-);
+MCNAPI void tickApplyDashModifierSystem(::StrictEntityContext const& context, ::TriggerJumpRequestComponent const& triggerJumpRequestComponent, ::DashActionComponent const& dashComponent, ::MovementAttributesComponent const& attributesComponent, ::ActorRotationComponent const& actorRotationComponent, ::MobEffectsComponent const& mobEffectsComponent, ::Optional<::VehicleComponent const> vehicleComponent, ::StateVectorComponent& stateVectorComponent, ::JumpPendingScaleComponent& jumpPendingScaleComponent, ::ActorDataFlagComponent& actorDataFlagComponent, ::ActorDataDirtyFlagsComponent& dirtyFlagsComponent, ::EntityModifier<::DashCooldownTimerComponent>& mod, ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent>, ::ActorRotationComponent const> passengerView);
 // NOLINTEND
 
-} // namespace DashActionSystem
+}

@@ -167,4 +167,4 @@ MCAPI ::mce::Color const& WOOD();
 MCAPI ::mce::Color const& WOOL();
 // NOLINTEND
 
-} // namespace VanillaMapColor
+}

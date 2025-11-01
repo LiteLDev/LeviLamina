@@ -17,6 +17,7 @@ public:
     ChanceInfoIntermediate& operator=(ChanceInfoIntermediate const&);
     ChanceInfoIntermediate(ChanceInfoIntermediate const&);
     ChanceInfoIntermediate();
+
 };
 
-} // namespace JsonUtil::details
+}

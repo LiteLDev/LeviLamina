@@ -18,11 +18,11 @@ class Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                      mVersion;
+    ::ll::TypedStorage<4, 4, int> mVersion;
     ::ll::TypedStorage<8, 8, ::CommandRegistry const*> mRegistry;
-    ::ll::TypedStorage<4, 4, int>                      mCommandSymbol;
+    ::ll::TypedStorage<4, 4, int> mCommandSymbol;
     ::ll::TypedStorage<1, 1, ::CommandPermissionLevel> mPermissionLevel;
-    ::ll::TypedStorage<2, 2, ::CommandFlag>            mFlags;
+    ::ll::TypedStorage<2, 2, ::CommandFlag> mFlags;
     // NOLINTEND
 
 public:
@@ -85,4 +85,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

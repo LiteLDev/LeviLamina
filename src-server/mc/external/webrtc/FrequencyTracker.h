@@ -39,6 +39,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::TimeDelta max_window_size);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

@@ -18,4 +18,5 @@ public:
     srtp_auth_t& operator=(srtp_auth_t const&);
     srtp_auth_t(srtp_auth_t const&);
     srtp_auth_t();
+
 };

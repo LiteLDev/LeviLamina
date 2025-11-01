@@ -8,4 +8,4 @@ namespace ClientSideChunkGeneration {
 MCNAPI ::std::optional<float>& ServerBuildRatioOverride();
 // NOLINTEND
 
-} // namespace ClientSideChunkGeneration
+}

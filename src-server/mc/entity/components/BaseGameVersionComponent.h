@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/resources/BaseGameVersion.h"
+#include "mc/versionless/util/BaseGameVersion.h"
 
 struct BaseGameVersionComponent {
 public:
@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::BaseGameVersion> mBaseGameVersion;
     // NOLINTEND
+
 };

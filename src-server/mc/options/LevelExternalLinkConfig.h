@@ -14,4 +14,5 @@ public:
     LevelExternalLinkConfig& operator=(LevelExternalLinkConfig const&);
     LevelExternalLinkConfig(LevelExternalLinkConfig const&);
     LevelExternalLinkConfig();
+
 };

@@ -32,30 +32,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unordered_map<::Scripting::VersionRequestKey, ::std::vector<::Scripting::VersionRequestedBy>>
-    _buildVersionRequestTable(
-        ::Scripting::ModuleDescriptor const&                forModule,
-        ::std::vector<::Scripting::ModuleDescriptor> const& dependencies
-    ) const;
+    MCNAPI ::std::unordered_map<::Scripting::VersionRequestKey, ::std::vector<::Scripting::VersionRequestedBy>> _buildVersionRequestTable(::Scripting::ModuleDescriptor const& forModule, ::std::vector<::Scripting::ModuleDescriptor> const& unsortedDependencies) const;
 
-    MCNAPI bool _isVersionMissing(
-        ::Scripting::IModuleBindingFactory const& moduleFactory,
-        ::Scripting::Version const&               version
-    ) const;
+    MCNAPI bool _isVersionMissing(::Scripting::IModuleBindingFactory const& moduleFactory, ::Scripting::Version const& version) const;
 
-    MCNAPI bool _isVersionSupported(
-        ::Scripting::IModuleBindingFactory const& moduleFactory,
-        ::Scripting::Version const&               version
-    ) const;
+    MCNAPI bool _isVersionSupported(::Scripting::IModuleBindingFactory const& moduleFactory, ::Scripting::Version const& version) const;
 
-    MCNAPI ::std::vector<::Scripting::ModuleDescriptor>
-    _orderModulesByDependency(::std::vector<::Scripting::SupportedBindingModule>&& unorderedModules) const;
+    MCNAPI ::std::vector<::Scripting::ModuleDescriptor> _orderModulesByDependency(::std::vector<::Scripting::SupportedBindingModule>&& unorderedModules) const;
 
-    MCNAPI ::Scripting::ModuleResolveResult _resolveDependencyRequests(
-        ::std::unordered_map<::Scripting::VersionRequestKey, ::std::vector<::Scripting::VersionRequestedBy>> const&
-            versionRequestTable
-    ) const;
+    MCNAPI ::Scripting::ModuleResolveResult _resolveDependencyRequests(::std::unordered_map<::Scripting::VersionRequestKey, ::std::vector<::Scripting::VersionRequestedBy>> const& versionRequestTable) const;
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

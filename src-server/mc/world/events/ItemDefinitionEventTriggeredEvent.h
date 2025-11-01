@@ -12,7 +12,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 128, ::ItemInstance> mItemInstance;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mActor;
-    ::ll::TypedStorage<8, 32, ::std::string>   mEventName;
+    ::ll::TypedStorage<8, 32, ::std::string> mEventName;
     // NOLINTEND
 
 public:
@@ -43,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

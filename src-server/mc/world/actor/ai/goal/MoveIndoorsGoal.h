@@ -4,11 +4,11 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/versionless/world/phys/AABB.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
-#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
-#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -22,59 +22,55 @@ public:
     // clang-format off
     class MoveIndoorsDefinition;
     // clang-format on
-
+    
     // MoveIndoorsGoal inner types define
     class MoveIndoorsDefinition : public ::BaseGoalDefinition {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::Tick> mTimeoutCooldown;
-        ::ll::TypedStorage<4, 4, float>  mSpeedModifier;
+        ::ll::TypedStorage<4, 4, float> mSpeedModifier;
         // NOLINTEND
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~MoveIndoorsDefinition() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI void addCooldownTicksBySeconds(float const& seconds);
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MoveIndoorsGoal::MoveIndoorsDefinition>>&
-                root
-        );
+        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MoveIndoorsGoal::MoveIndoorsDefinition>>& root);
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>        mUsingPOI;
-    ::ll::TypedStorage<1, 1, bool>        mPathingInvalid;
+    ::ll::TypedStorage<1, 1, bool> mUsingPOI;
+    ::ll::TypedStorage<1, 1, bool> mPathingInvalid;
     ::ll::TypedStorage<4, 12, ::BlockPos> mInsidePos;
     ::ll::TypedStorage<4, 12, ::BlockPos> mStartPos;
-    ::ll::TypedStorage<4, 24, ::AABB>     mPOIBoundingBox;
-    ::ll::TypedStorage<8, 8, ::Tick>      mCooldownTimer;
-    ::ll::TypedStorage<8, 8, ::Mob&>      mMob;
-    ::ll::TypedStorage<8, 8, ::Tick>      mTimeoutCooldown;
-    ::ll::TypedStorage<4, 4, float>       mSpeedModifier;
+    ::ll::TypedStorage<4, 24, ::AABB> mPOIBoundingBox;
+    ::ll::TypedStorage<8, 8, ::Tick> mCooldownTimer;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 8, ::Tick> mTimeoutCooldown;
+    ::ll::TypedStorage<4, 4, float> mSpeedModifier;
     // NOLINTEND
 
 public:
@@ -137,4 +133,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

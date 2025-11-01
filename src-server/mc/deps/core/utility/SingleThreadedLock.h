@@ -4,6 +4,7 @@
 
 namespace Core {
 
-class SingleThreadedLock {};
+class SingleThreadedLock {
+};
 
-} // namespace Core
+}

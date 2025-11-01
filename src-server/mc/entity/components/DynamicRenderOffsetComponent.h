@@ -12,7 +12,8 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3> mCurrentOffset;
     ::ll::TypedStorage<4, 12, ::Vec3> mNormalizedOffset;
     ::ll::TypedStorage<4, 12, ::Vec3> mPreviousOffset;
-    ::ll::TypedStorage<4, 4, float>   mInterpolationSpeed;
+    ::ll::TypedStorage<4, 4, float> mInterpolationSpeed;
     ::ll::TypedStorage<4, 12, ::Vec3> mCurrentPosDelta;
     // NOLINTEND
+
 };

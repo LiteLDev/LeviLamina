@@ -13,10 +13,10 @@ class ScriptContainerRules {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk6e3899;
+    ::ll::UntypedStorage<1, 1> mUnk6e3899;
     ::ll::UntypedStorage<8, 24> mUnkda46d7;
     ::ll::UntypedStorage<8, 24> mUnkde0160;
-    ::ll::UntypedStorage<4, 8>  mUnkff9dc0;
+    ::ll::UntypedStorage<4, 8> mUnkff9dc0;
     // NOLINTEND
 
 public:
@@ -46,6 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

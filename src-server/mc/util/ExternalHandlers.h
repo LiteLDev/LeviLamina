@@ -17,12 +17,7 @@ struct VariantParameterList;
 namespace ExternalHandlers {
 // functions
 // NOLINTBEGIN
-MCNAPI void executeActorTrigger(
-    ::Actor&                                                              actor,
-    ::ActorDefinitionTrigger const&                                       actorTrigger,
-    ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
-    ::VariantParameterList const&                                         params
-);
+MCNAPI void executeActorTrigger(::Actor& actor, ::ActorDefinitionTrigger const& actorTrigger, ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack, ::VariantParameterList const& params);
 
 MCNAPI void executeBlockEvent(::Block const* block, ::std::string const& name, ::RenderParams& params);
 
@@ -33,4 +28,4 @@ MCNAPI void executeEventResponse(::EventResponse const& response, ::RenderParams
 MCNAPI bool executeItemStackEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params);
 // NOLINTEND
 
-} // namespace ExternalHandlers
+}

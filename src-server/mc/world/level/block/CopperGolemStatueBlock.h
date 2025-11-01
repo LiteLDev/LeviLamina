@@ -23,26 +23,22 @@ class CopperGolemStatueBlock : public ::CopperBlock<::ActorBlock> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 100
-    virtual void executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const /*override*/;
+    // vIndex: 135
+    virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 99
+    virtual void executeEvent(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& eventName, ::Actor& sourceEntity) const /*override*/;
+
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const* blockActor) const /*override*/;
 
-    // vIndex: 105
+    // vIndex: 104
     virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 106
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
-        /*override*/;
+    // vIndex: 105
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -58,13 +54,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const;
+    MCFOLD bool $isInteractiveBlock() const;
+
+    MCAPI void $executeEvent(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& eventName, ::Actor& sourceEntity) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const* blockActor) const;
 
@@ -80,4 +72,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

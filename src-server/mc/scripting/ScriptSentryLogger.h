@@ -26,16 +26,10 @@ public:
     virtual ~ScriptSentryLogger() /*override*/ = default;
 
     // vIndex: 4
-    virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const
-        /*override*/;
+    virtual void onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const /*override*/;
 
     // vIndex: 6
-    virtual void onPromiseRejection(
-        ::Scripting::ContextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&,
-        bool isHandled
-    ) const /*override*/;
+    virtual void onPromiseRejection(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&, bool isHandled) const /*override*/;
     // NOLINTEND
 
 public:
@@ -43,12 +37,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const;
 
-    MCAPI void $onPromiseRejection(
-        ::Scripting::ContextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&,
-        bool isHandled
-    ) const;
+    MCAPI void $onPromiseRejection(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&, bool isHandled) const;
     // NOLINTEND
 
 public:
@@ -56,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

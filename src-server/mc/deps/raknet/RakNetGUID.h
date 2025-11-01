@@ -17,6 +17,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::string ToString() const;
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

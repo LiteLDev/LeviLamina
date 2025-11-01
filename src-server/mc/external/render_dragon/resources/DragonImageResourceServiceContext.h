@@ -16,6 +16,7 @@ public:
     DragonImageResourceServiceContext& operator=(DragonImageResourceServiceContext const&);
     DragonImageResourceServiceContext(DragonImageResourceServiceContext const&);
     DragonImageResourceServiceContext();
+
 };
 
-} // namespace dragon
+}

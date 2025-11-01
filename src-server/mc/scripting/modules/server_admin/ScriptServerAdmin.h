@@ -18,13 +18,9 @@ class ScriptServerAdmin {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::Result_deprecated<void> transferPlayer(
-        ::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer,
-        ::std::variant<
-            ::ScriptModuleServerAdmin::ScriptTransferPlayerIpPortOptions,
-            ::ScriptModuleServerAdmin::ScriptTransferPlayerNetherNetOptions> options
-    );
+    MCNAPI static ::Scripting::Result_deprecated<void> transferPlayer(::ScriptModuleMinecraft::ScriptPlayer& scriptPlayer, ::std::variant<::ScriptModuleServerAdmin::ScriptTransferPlayerIpPortOptions, ::ScriptModuleServerAdmin::ScriptTransferPlayerNetherNetOptions> options);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleServerAdmin
+}

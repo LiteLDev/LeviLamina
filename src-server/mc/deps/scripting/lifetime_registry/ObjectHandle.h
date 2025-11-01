@@ -17,6 +17,7 @@ public:
     ObjectHandle& operator=(ObjectHandle const&);
     ObjectHandle(ObjectHandle const&);
     ObjectHandle();
+
 };
 
-} // namespace Scripting
+}

@@ -16,8 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ::SpawnBiomeType> type;
-    ::ll::TypedStorage<8, 32, ::std::string>   userDefinedBiomeName;
-    ::ll::TypedStorage<4, 4, ::DimensionType>  dimension;
+    ::ll::TypedStorage<8, 32, ::std::string> userDefinedBiomeName;
+    ::ll::TypedStorage<4, 4, ::DimensionType> dimension;
     // NOLINTEND
 
 public:
@@ -44,4 +44,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

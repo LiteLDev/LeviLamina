@@ -20,14 +20,7 @@ struct PlayerInputRequestComponent;
 namespace ItemUseSlowdownSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doItemUseSlowdownSystem(
-    ::entt::type_list<
-        ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>,
-        ::Exclude<::PassengerComponent>>,
-    ::StrictEntityContext const&                         entity,
-    ::ItemInUseComponent const&                          itemInUse,
-    ::EntityModifier<::ItemUseSlowdownModifierComponent> entityModifier
-);
+MCNAPI void doItemUseSlowdownSystem(::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent>, ::Exclude<::PassengerComponent>>, ::StrictEntityContext const& entity, ::ItemInUseComponent const& itemInUse, ::EntityModifier<::ItemUseSlowdownModifierComponent> entityModifier);
 // NOLINTEND
 
-} // namespace ItemUseSlowdownSystemImpl
+}

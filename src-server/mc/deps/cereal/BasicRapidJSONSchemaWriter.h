@@ -4,7 +4,8 @@
 
 namespace cereal {
 
-template <typename T0>
-class BasicRapidJSONSchemaWriter {};
+template<typename T0>
+class BasicRapidJSONSchemaWriter {
+};
 
-} // namespace cereal
+}

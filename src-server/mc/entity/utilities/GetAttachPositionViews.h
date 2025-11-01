@@ -40,4 +40,5 @@ public:
 
     MCNAPI void* $ctor(::GetAttachPositionViews const&);
     // NOLINTEND
+
 };

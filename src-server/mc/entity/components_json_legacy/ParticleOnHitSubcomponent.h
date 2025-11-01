@@ -17,10 +17,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 56> mUnk4e61de;
-    ::ll::UntypedStorage<4, 4>  mUnk46defb;
-    ::ll::UntypedStorage<4, 4>  mUnk50b2c7;
-    ::ll::UntypedStorage<1, 1>  mUnkd77bcf;
-    ::ll::UntypedStorage<1, 1>  mUnk946ea2;
+    ::ll::UntypedStorage<4, 4> mUnk46defb;
+    ::ll::UntypedStorage<4, 4> mUnk50b2c7;
+    ::ll::UntypedStorage<1, 1> mUnkd77bcf;
+    ::ll::UntypedStorage<1, 1> mUnk946ea2;
     // NOLINTEND
 
 public:
@@ -45,7 +45,7 @@ public:
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
     // vIndex: 4
-    virtual char const* getName() /*override*/;
+    virtual char const* getName() const /*override*/;
     // NOLINTEND
 
 public:
@@ -57,7 +57,7 @@ public:
 
     MCNAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 
-    MCNAPI char const* $getName();
+    MCNAPI char const* $getName() const;
     // NOLINTEND
 
 public:
@@ -65,4 +65,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

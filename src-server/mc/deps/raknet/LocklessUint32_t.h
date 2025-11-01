@@ -16,6 +16,7 @@ public:
     LocklessUint32_t& operator=(LocklessUint32_t const&);
     LocklessUint32_t(LocklessUint32_t const&);
     LocklessUint32_t();
+
 };
 
-} // namespace RakNet
+}

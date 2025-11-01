@@ -19,6 +19,7 @@ public:
     FreeStringBuffer& operator=(FreeStringBuffer const&);
     FreeStringBuffer(FreeStringBuffer const&);
     FreeStringBuffer();
+
 };
 
-} // namespace Bedrock::JSONObject::Detail
+}

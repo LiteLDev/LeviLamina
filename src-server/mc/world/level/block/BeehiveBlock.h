@@ -23,39 +23,31 @@ class BeehiveBlock : public ::FaceDirectionalActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 100
-    virtual void executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const /*override*/;
+    // vIndex: 99
+    virtual void executeEvent(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& eventName, ::Actor& sourceEntity) const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 105
+    // vIndex: 104
     virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 106
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
-        /*override*/;
+    // vIndex: 105
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const /*override*/;
 
-    // vIndex: 89
-    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
-        /*override*/;
+    // vIndex: 88
+    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const /*override*/;
 
     // vIndex: 2
     virtual ::Block const* getNextBlockPermutation(::Block const& currentBlock) const /*override*/;
 
-    // vIndex: 121
+    // vIndex: 120
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -65,13 +57,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _fillHoneyBottle(
-        ::Player&         player,
-        ::ItemStack&      emptyBottle,
-        ::ItemStack&      honeyBottle,
-        ::BlockSource&    region,
-        ::BlockPos const& pos
-    ) const;
+    MCAPI void _fillHoneyBottle(::Player& player, ::ItemStack& emptyBottle, ::ItemStack& honeyBottle, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void emitHoneyComb(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -85,8 +71,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::BeehiveBlockActor* _getBeehiveBlockActor(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static ::ItemStack
-    getHiveItemWithOccupants(::Block const& block, ::BeehiveBlockActor const* beehiveBlockActor);
+    MCAPI static ::ItemStack getHiveItemWithOccupants(::Block const& block, ::BeehiveBlockActor const* beehiveBlockActor);
 
     MCAPI static void resetHoneyLevel(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
     // NOLINTEND
@@ -96,13 +81,7 @@ public:
     // NOLINTBEGIN
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCAPI void $executeEvent(
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Block const&       block,
-        ::std::string const& eventName,
-        ::Actor&             sourceEntity
-    ) const;
+    MCAPI void $executeEvent(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& eventName, ::Actor& sourceEntity) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
@@ -124,4 +103,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

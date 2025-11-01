@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeatureToPlace;
-    ::ll::TypedStorage<4, 4, int>                    mMinimumDistanceBelowSurface;
+    ::ll::TypedStorage<4, 4, int> mMinimumDistanceBelowSurface;
     // NOLINTEND
 
 public:
@@ -40,4 +40,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

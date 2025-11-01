@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkdcf7f7;
-    ::ll::UntypedStorage<2, 4>  mUnkec6ca8;
+    ::ll::UntypedStorage<2, 4> mUnkec6ca8;
     // NOLINTEND
 
 public:
@@ -15,4 +15,5 @@ public:
     UIMeshOffscreenCaptureDescription& operator=(UIMeshOffscreenCaptureDescription const&);
     UIMeshOffscreenCaptureDescription(UIMeshOffscreenCaptureDescription const&);
     UIMeshOffscreenCaptureDescription();
+
 };

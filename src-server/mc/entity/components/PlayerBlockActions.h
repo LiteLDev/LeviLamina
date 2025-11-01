@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::PlayerBlockActions& operator=(::PlayerBlockActions&&);
+    MCAPI ::PlayerBlockActions& operator=(::PlayerBlockActions&&);
 
     MCAPI ~PlayerBlockActions();
     // NOLINTEND
@@ -43,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

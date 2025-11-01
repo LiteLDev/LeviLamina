@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::optional<::Tick>> mLastVibrationTick;
     // NOLINTEND
+
 };

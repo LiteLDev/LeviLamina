@@ -20,6 +20,7 @@ public:
     TransportLossReport& operator=(TransportLossReport const&);
     TransportLossReport(TransportLossReport const&);
     TransportLossReport();
+
 };
 
-} // namespace webrtc
+}

@@ -21,6 +21,7 @@ public:
     DeferredLightingUpscaleParameters& operator=(DeferredLightingUpscaleParameters const&);
     DeferredLightingUpscaleParameters(DeferredLightingUpscaleParameters const&);
     DeferredLightingUpscaleParameters();
+
 };
 
-} // namespace mce::framebuilder
+}

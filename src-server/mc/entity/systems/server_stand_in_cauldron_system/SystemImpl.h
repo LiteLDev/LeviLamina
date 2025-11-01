@@ -22,41 +22,15 @@ struct UpdateWaterStateRequestComponent;
 
 namespace ServerStandInCauldronSystem {
 
-class SystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<
-                       ::Filter<::UpdateWaterStateRequestComponent>,
-                       ::Read<::ActorOwnerComponent>,
-                       ::Write<>,
-                       ::AddRemove<>,
-                       ::GlobalRead<>,
-                       ::GlobalWrite<>,
-                       ::EntityFactoryT<>>> {
+class SystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::UpdateWaterStateRequestComponent>, ::Read<::ActorOwnerComponent>, ::Write<>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(
-        ::StrictExecutionContext<
-            ::Filter<::UpdateWaterStateRequestComponent>,
-            ::Read<::ActorOwnerComponent>,
-            ::Write<>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext
-    ) /*override*/;
+    virtual void tick(::StrictExecutionContext<::Filter<::UpdateWaterStateRequestComponent>, ::Read<::ActorOwnerComponent>, ::Write<>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext) /*override*/;
 
     // vIndex: 6
-    virtual void singleTick(
-        ::StrictExecutionContext<
-            ::Filter<::UpdateWaterStateRequestComponent>,
-            ::Read<::ActorOwnerComponent>,
-            ::Write<>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext,
-        ::StrictEntityContext&   entityContext
-    ) /*override*/;
+    virtual void singleTick(::StrictExecutionContext<::Filter<::UpdateWaterStateRequestComponent>, ::Read<::ActorOwnerComponent>, ::Write<>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext, ::StrictEntityContext& entityContext) /*override*/;
 
     // vIndex: 0
     virtual ~SystemImpl() /*override*/ = default;
@@ -71,28 +45,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
-        ::StrictExecutionContext<
-            ::Filter<::UpdateWaterStateRequestComponent>,
-            ::Read<::ActorOwnerComponent>,
-            ::Write<>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext
-    );
+    MCNAPI void $tick(::StrictExecutionContext<::Filter<::UpdateWaterStateRequestComponent>, ::Read<::ActorOwnerComponent>, ::Write<>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext);
 
-    MCNAPI void $singleTick(
-        ::StrictExecutionContext<
-            ::Filter<::UpdateWaterStateRequestComponent>,
-            ::Read<::ActorOwnerComponent>,
-            ::Write<>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext,
-        ::StrictEntityContext&   entityContext
-    );
+    MCNAPI void $singleTick(::StrictExecutionContext<::Filter<::UpdateWaterStateRequestComponent>, ::Read<::ActorOwnerComponent>, ::Write<>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext, ::StrictEntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -100,6 +55,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ServerStandInCauldronSystem
+}

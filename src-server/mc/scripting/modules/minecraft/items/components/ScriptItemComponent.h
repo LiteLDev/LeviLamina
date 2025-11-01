@@ -43,11 +43,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptItemComponent(::ScriptModuleMinecraft::ScriptItemComponent const&);
 
-    MCNAPI ScriptItemComponent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Scripting::WeakLifetimeScope const&                                          scope,
-        ::std::string                                                                  id
-    );
+    MCNAPI ScriptItemComponent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Scripting::WeakLifetimeScope const& scope, ::std::string id);
     // NOLINTEND
 
 public:
@@ -61,11 +57,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemComponent const&);
 
-    MCNAPI void* $ctor(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Scripting::WeakLifetimeScope const&                                          scope,
-        ::std::string                                                                  id
-    );
+    MCNAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Scripting::WeakLifetimeScope const& scope, ::std::string id);
     // NOLINTEND
 
 public:
@@ -85,6 +77,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

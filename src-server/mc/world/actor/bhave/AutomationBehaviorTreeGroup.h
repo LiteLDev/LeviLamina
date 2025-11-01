@@ -12,8 +12,8 @@ class AutomationBehaviorTreeGroup {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk6be485;
-    ::ll::UntypedStorage<8, 8>  mUnkf40c09;
+    ::ll::UntypedStorage<8, 8> mUnk6be485;
+    ::ll::UntypedStorage<8, 8> mUnkf40c09;
     ::ll::UntypedStorage<8, 64> mUnk9e3c09;
     ::ll::UntypedStorage<8, 64> mUnkcdf6b0;
     // NOLINTEND
@@ -31,4 +31,5 @@ public:
 
     MCNAPI ::BehaviorTreeDefinitionPtr tryGetDefinition(::std::string const& defId);
     // NOLINTEND
+
 };

@@ -6,9 +6,9 @@ struct PackSourceLoadOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk2d9743;
+    ::ll::UntypedStorage<8, 8> mUnk2d9743;
     ::ll::UntypedStorage<8, 24> mUnk2ff64e;
-    ::ll::UntypedStorage<8, 8>  mUnk567c72;
+    ::ll::UntypedStorage<8, 8> mUnk567c72;
     // NOLINTEND
 
 public:
@@ -28,4 +28,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

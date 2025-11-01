@@ -13,9 +13,9 @@ struct IGameModeMessenger {
 public:
     // IGameModeMessenger inner types define
     using BlockBreakCaptureToken = ::gsl::final_action<::std::function<void()>>;
-
+    
     using BlockBreakCallback = ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>;
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -23,9 +23,7 @@ public:
     virtual ~IGameModeMessenger() = default;
 
     // vIndex: 1
-    virtual ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(
-        ::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>
-    ) = 0;
+    virtual ::gsl::final_action<::std::function<void()>> createBlockBreakCaptureScope(::std::function<void(::ItemStack const&, ::ItemStack const&, ::BlockPos const&)>) = 0;
 
     // vIndex: 2
     virtual void sendDenyDestroyBlock(::BlockPos const&, int) = 0;
@@ -34,8 +32,7 @@ public:
     virtual void sendStartDestroyBlock(::BlockPos const&, int) = 0;
 
     // vIndex: 4
-    virtual bool
-    sendTryDestroyBlock(::BlockPos const&, int, ::std::function<bool(::std::optional<::ItemStack>&)> const&) = 0;
+    virtual bool sendTryDestroyBlock(::BlockPos const&, int, ::std::function<bool(::std::optional<::ItemStack>&)> const&) = 0;
 
     // vIndex: 5
     virtual void sendDestroyBlock(::Block const&, ::BlockPos const&, int) = 0;
@@ -64,4 +61,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

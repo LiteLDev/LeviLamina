@@ -23,4 +23,5 @@ public:
     zip_win32_file_operations& operator=(zip_win32_file_operations const&);
     zip_win32_file_operations(zip_win32_file_operations const&);
     zip_win32_file_operations();
+
 };

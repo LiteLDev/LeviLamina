@@ -4,6 +4,6 @@
 
 enum class ExportedNameEntryEnum : int {
     Ambiguous = 0,
-    Normal    = 1,
-    Ns        = 2,
+    Normal = 1,
+    Ns = 2,
 };

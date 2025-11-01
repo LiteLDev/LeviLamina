@@ -22,15 +22,7 @@ struct SetMovingFlagRequestComponent;
 namespace CacheMovingStateSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickPassengerEntity(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::PassengerComponent const&                                                            passenger,
-    ::ActorDataFlagComponent&                                                              actorDataFlag,
-    ::ActorDataDirtyFlagsComponent&                                                        dirtyFlags,
-    ::ActorRotationComponent&                                                              rotation,
-    ::Optional<::SetMovingFlagRequestComponent>                                            setMovingFlagRequest,
-    ::ViewT<::StrictEntityContext, ::Include<::ControlledByLocalInstanceComponent>> const& controlledByLocalInstanceView
-);
+MCNAPI void tickPassengerEntity(::entt::type_list<::Include<::ActorMovementTickNeededComponent>>, ::PassengerComponent const& passenger, ::ActorDataFlagComponent& actorDataFlag, ::ActorDataDirtyFlagsComponent& dirtyFlags, ::ActorRotationComponent& rotation, ::Optional<::SetMovingFlagRequestComponent> setMovingFlagRequest, ::ViewT<::StrictEntityContext, ::Include<::ControlledByLocalInstanceComponent>> const& controlledByLocalInstanceView);
 // NOLINTEND
 
-} // namespace CacheMovingStateSystem
+}

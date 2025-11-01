@@ -6,8 +6,8 @@ namespace RotationCommandUtils {
 
 enum class FacingResult : int {
     HaveFacing = 0,
-    NoFacing   = 1,
-    Error      = 2,
+    NoFacing = 1,
+    Error = 2,
 };
 
 }

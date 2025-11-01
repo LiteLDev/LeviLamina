@@ -10,8 +10,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkc8beac;
     ::ll::UntypedStorage<8, 16> mUnk638fc6;
-    ::ll::UntypedStorage<8, 8>  mUnkcae018;
-    ::ll::UntypedStorage<8, 64> mUnkce2d98;
+    ::ll::UntypedStorage<8, 8> mUnkcae018;
+    ::ll::UntypedStorage<8, 64> mUnk411087;
     // NOLINTEND
 
 public:
@@ -19,6 +19,7 @@ public:
     WriteAppendEvent& operator=(WriteAppendEvent const&);
     WriteAppendEvent(WriteAppendEvent const&);
     WriteAppendEvent();
+
 };
 
-} // namespace Core::Internal
+}

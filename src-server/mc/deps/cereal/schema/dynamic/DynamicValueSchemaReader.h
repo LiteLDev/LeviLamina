@@ -20,7 +20,7 @@ public:
     // clang-format off
     struct State;
     // clang-format on
-
+    
     // DynamicValueSchemaReader inner types define
     struct State {
     public:
@@ -29,14 +29,15 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkd21fad;
         ::ll::UntypedStorage<8, 8> mUnk8c2496;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         State& operator=(State const&);
         State(State const&);
         State();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -95,7 +96,7 @@ public:
     virtual ::Bedrock::Result<double> asDouble() /*override*/;
 
     // vIndex: 15
-    virtual ::Bedrock::Result<::std::string> asString() /*override*/;
+    virtual ::Bedrock::Result<::std::string> asString(uint64 maxInputLength) /*override*/;
 
     // vIndex: 16
     virtual ::std::optional<bool> readValidityFlag() /*override*/;
@@ -174,7 +175,7 @@ public:
 
     MCNAPI ::Bedrock::Result<double> $asDouble();
 
-    MCNAPI ::Bedrock::Result<::std::string> $asString();
+    MCNAPI ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
 
     MCNAPI ::std::optional<bool> $readValidityFlag();
 
@@ -198,6 +199,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cereal
+}

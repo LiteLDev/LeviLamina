@@ -22,4 +22,5 @@ public:
     PackLoadRequirement& operator=(PackLoadRequirement const&);
     PackLoadRequirement(PackLoadRequirement const&);
     PackLoadRequirement();
+
 };

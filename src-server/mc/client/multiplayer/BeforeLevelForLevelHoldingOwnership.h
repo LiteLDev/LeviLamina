@@ -14,4 +14,5 @@ public:
     BeforeLevelForLevelHoldingOwnership& operator=(BeforeLevelForLevelHoldingOwnership const&);
     BeforeLevelForLevelHoldingOwnership(BeforeLevelForLevelHoldingOwnership const&);
     BeforeLevelForLevelHoldingOwnership();
+
 };

@@ -13,8 +13,8 @@ struct TransportPacketsFeedback {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc96d46;
-    ::ll::UntypedStorage<8, 8>  mUnkafc205;
+    ::ll::UntypedStorage<8, 8> mUnkc96d46;
+    ::ll::UntypedStorage<8, 8> mUnkafc205;
     ::ll::UntypedStorage<8, 24> mUnk5e1828;
     ::ll::UntypedStorage<8, 24> mUnk5b275d;
     // NOLINTEND
@@ -52,6 +52,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

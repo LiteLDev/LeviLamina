@@ -4,7 +4,8 @@
 
 namespace mce::framebuilder {
 
-template <int T0, int T1, int T2>
-struct ShadowParametersImplBase {};
+template<int T0, int T1, int T2>
+struct ShadowParametersImplBase {
+};
 
-} // namespace mce::framebuilder
+}

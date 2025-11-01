@@ -17,6 +17,7 @@ public:
     Bounds& operator=(Bounds const&);
     Bounds(Bounds const&);
     Bounds();
+
 };
 
-} // namespace SharedTypes::v1_21_60::DimensionDefinition
+}

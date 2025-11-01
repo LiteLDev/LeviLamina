@@ -6,11 +6,11 @@ class ActorTerrainInterlockData {
 public:
     // ActorTerrainInterlockData inner types define
     enum class VisibilityState : uchar {
-        InitialNotVisible            = 0,
-        Visible                      = 1,
+        InitialNotVisible = 0,
+        Visible = 1,
         DelayedDestructionNotVisible = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -30,4 +30,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void setCreationTime();
     // NOLINTEND
+
 };

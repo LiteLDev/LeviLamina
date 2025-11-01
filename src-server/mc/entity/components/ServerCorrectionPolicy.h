@@ -18,22 +18,16 @@ class ServerCorrectionPolicy : public ::IReplayStatePolicy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>                   mLastCorrection;
+    ::ll::TypedStorage<8, 8, uint64> mLastCorrection;
     ::ll::TypedStorage<8, 16, ::std::optional<uint64>> mLastExternalCorrection;
-    ::ll::TypedStorage<4, 20, ::ReplayStateConfig>     mConfig;
+    ::ll::TypedStorage<4, 20, ::ReplayStateConfig> mConfig;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual ::MovementCorrection shouldCorrectMovement(
-        ::EntityContext&               entity,
-        ::PlayerAuthInputPacket const& packet,
-        uint64                         frame,
-        uchar const                    currentCounter,
-        bool                           isStrictMovement
-    ) /*override*/;
+    virtual ::MovementCorrection shouldCorrectMovement(::EntityContext& entity, ::PlayerAuthInputPacket const& packet, uint64 frame, uchar const currentCounter, bool isStrictMovement) /*override*/;
 
     // vIndex: 1
     virtual bool isReplayNeeded(::AdvanceFrameResult) const /*override*/;
@@ -48,13 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MovementCorrection $shouldCorrectMovement(
-        ::EntityContext&               entity,
-        ::PlayerAuthInputPacket const& packet,
-        uint64                         frame,
-        uchar const                    currentCounter,
-        bool                           isStrictMovement
-    );
+    MCAPI ::MovementCorrection $shouldCorrectMovement(::EntityContext& entity, ::PlayerAuthInputPacket const& packet, uint64 frame, uchar const currentCounter, bool isStrictMovement);
 
     MCFOLD bool $isReplayNeeded(::AdvanceFrameResult) const;
 
@@ -66,4 +54,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

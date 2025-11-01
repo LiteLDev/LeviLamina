@@ -2,5 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <typename T0, typename T1>
-class OperationNode {};
+template<typename T0, typename T1>
+class OperationNode {
+};

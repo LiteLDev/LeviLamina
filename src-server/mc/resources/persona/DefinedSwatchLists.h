@@ -25,6 +25,7 @@ public:
 
     MCNAPI static ::std::unique_ptr<::persona::color::SwatchList> const& mSkinColors();
     // NOLINTEND
+
 };
 
-} // namespace persona::color
+}

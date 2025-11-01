@@ -77,6 +77,7 @@ public:
 
     MCNAPI ::rtc::Socket* $Accept(::rtc::SocketAddress* paddr);
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

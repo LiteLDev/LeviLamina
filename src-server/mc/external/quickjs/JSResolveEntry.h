@@ -15,4 +15,5 @@ public:
     JSResolveEntry& operator=(JSResolveEntry const&);
     JSResolveEntry(JSResolveEntry const&);
     JSResolveEntry();
+
 };

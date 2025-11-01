@@ -15,21 +15,9 @@ struct BiomeStringList;
 namespace BiomeChunkGenSerialization {
 // functions
 // NOLINTBEGIN
-MCAPI void applySerializedChunkGenData(
-    ::BiomeDefinitionChunkGenData const& data,
-    ::Biome&                             biome,
-    ::BlockPalette const&                blockPalette,
-    ::BiomeRegistry const&               biomeRegistry,
-    ::FeatureRegistry&                   featureRegistry,
-    ::BiomeStringList const&             stringList
-);
+MCAPI void applySerializedChunkGenData(::BiomeDefinitionChunkGenData const& data, ::Biome& biome, ::BlockPalette const& blockPalette, ::BiomeRegistry const& biomeRegistry, ::FeatureRegistry& featureRegistry, ::BiomeStringList const& stringList);
 
-MCAPI void serializeChunkGenData(
-    ::Biome const&                 biome,
-    ::BiomeDefinitionChunkGenData& data,
-    ::FeatureRegistry const&       featureRegistry,
-    ::BiomeStringList&             stringList
-);
+MCAPI void serializeChunkGenData(::Biome const& biome, ::BiomeDefinitionChunkGenData& data, ::FeatureRegistry const& featureRegistry, ::BiomeStringList& stringList);
 // NOLINTEND
 
-} // namespace BiomeChunkGenSerialization
+}

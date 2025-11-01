@@ -39,8 +39,7 @@ public:
     virtual ~IResourcePackRepository() /*override*/;
 
     // vIndex: 1
-    virtual void
-    getResourcePacksByPackId(::std::vector<::PackInstanceId> const&, ::std::vector<::PackInstance>&) const = 0;
+    virtual void getResourcePacksByPackId(::std::vector<::PackInstanceId> const&, ::std::vector<::PackInstance>&) const = 0;
 
     // vIndex: 2
     virtual ::std::shared_ptr<::ResourcePack> getResourcePackForPackId(::PackIdVersion const&) const = 0;
@@ -64,8 +63,7 @@ public:
     virtual ::ResourcePack* getResourcePackContainingModule(::PackIdVersion const&) const = 0;
 
     // vIndex: 9
-    virtual ::Bedrock::Threading::Async<::std::shared_ptr<::ResourcePack>>
-    getResourcePackInPath(::Core::Path const&) const = 0;
+    virtual ::Bedrock::Threading::Async<::std::shared_ptr<::ResourcePack>> getResourcePackInPath(::Core::Path const&) const = 0;
 
     // vIndex: 10
     virtual bool isResourcePackLoaded(::PackIdVersion const&, ::PackOrigin const&) = 0;
@@ -164,8 +162,7 @@ public:
     virtual ::std::vector<::ResourcePack*> getPacksByType(::PackType) const = 0;
 
     // vIndex: 42
-    virtual ::std::vector<::gsl::not_null<::std::shared_ptr<::ResourcePack>>>
-        getPacksByCategory(::PackCategory) const = 0;
+    virtual ::std::vector<::gsl::not_null<::std::shared_ptr<::ResourcePack>>> getPacksByCategory(::PackCategory) const = 0;
 
     // vIndex: 43
     virtual void forEachPack(::std::function<void(::ResourcePack const&)> const&) const = 0;
@@ -206,4 +203,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

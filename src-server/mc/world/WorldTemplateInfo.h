@@ -16,7 +16,7 @@ struct WorldTemplateInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 1080> mUnk207bb5;
+    ::ll::UntypedStorage<8, 1104> mUnk207bb5;
     // NOLINTEND
 
 public:
@@ -33,10 +33,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::WorldTemplateData buildTemplateData(
-        ::WorldTemplatePackManifest const&        manifest,
-        ::Bedrock::NonOwnerPointer<::IFileAccess> fileAccess
-    );
+    MCNAPI static ::WorldTemplateData buildTemplateData(::WorldTemplatePackManifest const& manifest, ::Bedrock::NonOwnerPointer<::IFileAccess> fileAccess);
 
     MCNAPI static ::WorldTemplateInfo const& getInvalid();
     // NOLINTEND
@@ -46,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::WorldTemplateInfo const&);
     // NOLINTEND
+
 };

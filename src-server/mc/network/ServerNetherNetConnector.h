@@ -59,4 +59,5 @@ public:
 
     MCNAPI static void** $vftableForConnector();
     // NOLINTEND
+
 };

@@ -4,6 +4,6 @@
 
 enum class RealmsPurchaseStage : int {
     PrePurchase = 0,
-    Purchasing  = 1,
+    Purchasing = 1,
     Fulfillment = 2,
 };

@@ -24,8 +24,8 @@ public:
     ::ll::TypedStorage<4, 4, float> mShakeAnimO;
     ::ll::TypedStorage<4, 4, float> mInterestedAngle;
     ::ll::TypedStorage<4, 4, float> mInterestedAngleO;
-    ::ll::TypedStorage<1, 1, bool>  mIsWet;
-    ::ll::TypedStorage<1, 1, bool>  mIsShaking;
+    ::ll::TypedStorage<1, 1, bool> mIsWet;
+    ::ll::TypedStorage<1, 1, bool> mIsShaking;
     // NOLINTEND
 
 public:
@@ -99,4 +99,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

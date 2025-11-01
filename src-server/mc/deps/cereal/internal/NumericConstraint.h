@@ -4,7 +4,8 @@
 
 namespace cereal::internal {
 
-template <typename T0>
-struct NumericConstraint {};
+template<typename T0>
+struct NumericConstraint {
+};
 
-} // namespace cereal::internal
+}

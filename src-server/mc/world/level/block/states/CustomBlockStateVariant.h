@@ -16,7 +16,7 @@ class CustomBlockStateVariant : public ::BlockState {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ListTag>>               mEnumValues;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ListTag>> mEnumValues;
     ::ll::TypedStorage<8, 128, ::BidirectionalUnorderedMap<int, uint64>> mHashIndexMap;
     // NOLINTEND
 
@@ -62,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

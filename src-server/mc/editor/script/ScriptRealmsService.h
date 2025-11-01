@@ -3,12 +3,12 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/EditorRealmsServiceAvailability.h"
+#include "mc/common/editor/RealmsServiceStatus.h"
+#include "mc/common/editor/RealmsWorldUploadResult.h"
 #include "mc/deps/scripting/lifetime_registry/WeakHandleFromThis.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/deps/scripting/script_engine/Promise.h"
-#include "mc/editor/EditorRealmsServiceAvailability.h"
-#include "mc/editor/RealmsServiceStatus.h"
-#include "mc/editor/RealmsWorldUploadResult.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -38,7 +38,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnke5e21d;
     ::ll::UntypedStorage<8, 16> mUnk6d20ef;
     ::ll::UntypedStorage<8, 16> mUnkdb0f42;
-    ::ll::UntypedStorage<8, 8>  mUnk3aa445;
+    ::ll::UntypedStorage<8, 8> mUnk3aa445;
     ::ll::UntypedStorage<8, 24> mUnk4d1c99;
     // NOLINTEND
 
@@ -53,35 +53,19 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptRealmsService(::Editor::ScriptModule::ScriptRealmsService&&);
 
-    MCNAPI ScriptRealmsService(
-        ::Editor::Services::EditorRealmsServiceProvider* realmsService,
-        ::Editor::EditorPlayerServiceProvider*           playerService,
-        ::Scripting::WeakLifetimeScope const&            scope
-    );
+    MCNAPI ScriptRealmsService(::Editor::Services::EditorRealmsServiceProvider* realmsService, ::Editor::EditorPlayerServiceProvider* playerService, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::string const, ::Scripting::Error, void>>
-    beginDownloadFromRealms(::std::string realmsWorldId, int slotId, ::Scripting::ScriptObjectFactory& factory);
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::string const, ::Scripting::Error, void>> beginDownloadFromRealms(::std::string realmsWorldId, int slotId, ::Scripting::ScriptObjectFactory& factory);
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::Promise<::Editor::Services::RealmsWorldUploadResult, ::Scripting::Error, void>>
-    beginUploadToRealms(
-        ::std::string                             realmsWorldId,
-        int                                       slotId,
-        ::Editor::ScriptModule::ScriptGameOptions gameOptions,
-        ::Scripting::ScriptObjectFactory&         factory
-    );
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::Editor::Services::RealmsWorldUploadResult, ::Scripting::Error, void>> beginUploadToRealms(::std::string realmsWorldId, int slotId, ::Editor::ScriptModule::ScriptGameOptions gameOptions, ::Scripting::ScriptObjectFactory& factory);
 
     MCNAPI bool canUploadWorld();
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorld>, ::Scripting::Error, void>>
-    getRealmWorldlist(::Scripting::ScriptObjectFactory& factory);
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorld>, ::Scripting::Error, void>> getRealmWorldlist(::Scripting::ScriptObjectFactory& factory);
 
     MCNAPI ::Editor::Services::RealmsServiceStatus getServiceStatus();
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorldSlot>, ::Scripting::Error, void>>
-    getSlots(::std::string const& worldId, ::Scripting::ScriptObjectFactory& factory);
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<::std::vector<::Editor::Services::EditorRealmsWorldSlot>, ::Scripting::Error, void>> getSlots(::std::string const& worldId, ::Scripting::ScriptObjectFactory& factory);
 
     MCNAPI ::Editor::Services::EditorRealmsServiceAvailability isRealmsServiceAvailable();
 
@@ -111,11 +95,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptRealmsService&&);
 
-    MCNAPI void* $ctor(
-        ::Editor::Services::EditorRealmsServiceProvider* realmsService,
-        ::Editor::EditorPlayerServiceProvider*           playerService,
-        ::Scripting::WeakLifetimeScope const&            scope
-    );
+    MCNAPI void* $ctor(::Editor::Services::EditorRealmsServiceProvider* realmsService, ::Editor::EditorPlayerServiceProvider* playerService, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -123,6 +103,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

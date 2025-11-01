@@ -16,16 +16,16 @@ class EnderpearlItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 76
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 20
     virtual bool isThrowable() const /*override*/;
 
-    // vIndex: 96
+    // vIndex: 97
     virtual ::HashedString const& getCooldownCategory() const /*override*/;
 
-    // vIndex: 97
+    // vIndex: 98
     virtual int getCooldownDuration() const /*override*/;
 
     // vIndex: 0
@@ -55,4 +55,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

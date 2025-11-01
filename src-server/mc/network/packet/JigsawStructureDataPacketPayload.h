@@ -26,9 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JigsawStructureDataPacketPayload(
-        ::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData
-    );
+    MCAPI explicit JigsawStructureDataPacketPayload(::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData);
 
     MCFOLD ::JigsawStructureDataPacketPayload& operator=(::JigsawStructureDataPacketPayload&&);
 
@@ -46,4 +44,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

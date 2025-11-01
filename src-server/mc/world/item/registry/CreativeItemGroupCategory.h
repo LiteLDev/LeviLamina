@@ -18,11 +18,11 @@ class CreativeItemGroupCategory : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                              mName;
-    ::ll::TypedStorage<4, 4, ::CreativeItemCategory>                      mCategory;
-    ::ll::TypedStorage<8, 8, ::CreativeItemRegistry*>                     mRegistry;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<4, 4, ::CreativeItemCategory> mCategory;
+    ::ll::TypedStorage<8, 8, ::CreativeItemRegistry*> mRegistry;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, uint>> mNamedGroupIndex;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint>>                        mGroupIndexes;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>> mGroupIndexes;
     // NOLINTEND
 
 public:
@@ -51,4 +51,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

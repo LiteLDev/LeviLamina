@@ -19,8 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::Scripting::Result_deprecated<void>
-        _groupDeleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>) = 0;
+    virtual ::Scripting::Result_deprecated<void> _groupDeleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>) = 0;
 
     // vIndex: 1
     virtual ::AABB const& _getDimensionBounds() const = 0;
@@ -31,6 +30,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

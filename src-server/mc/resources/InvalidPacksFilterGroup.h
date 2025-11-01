@@ -14,4 +14,5 @@ public:
     InvalidPacksFilterGroup& operator=(InvalidPacksFilterGroup const&);
     InvalidPacksFilterGroup(InvalidPacksFilterGroup const&);
     InvalidPacksFilterGroup();
+
 };

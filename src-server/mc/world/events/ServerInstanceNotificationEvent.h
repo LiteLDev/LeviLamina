@@ -11,8 +11,7 @@ struct ServerInstanceLeaveGameDoneEvent;
 struct ServerInstanceRequestResourceReload;
 // clang-format on
 
-struct ServerInstanceNotificationEvent
-: public ::EventVariantImpl<::ServerInstanceLeaveGameDoneEvent const, ::ServerInstanceRequestResourceReload const> {
+struct ServerInstanceNotificationEvent : public ::EventVariantImpl<::ServerInstanceLeaveGameDoneEvent const, ::ServerInstanceRequestResourceReload const> {
 public:
     // member functions
     // NOLINTBEGIN
@@ -24,4 +23,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

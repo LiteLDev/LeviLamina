@@ -21,7 +21,7 @@ class PersistentWebSocket : public ::Bedrock::Http::WebSocket {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk5730d9;
+    ::ll::UntypedStorage<8, 8> mUnk5730d9;
     ::ll::UntypedStorage<8, 104> mUnkd613a3;
     // NOLINTEND
 
@@ -63,22 +63,11 @@ public:
     // NOLINTBEGIN
     MCNAPI PersistentWebSocket();
 
-    MCNAPI void _connectWithRetry(
-        ::std::string const&                                               uri,
-        ::Bedrock::Http::HeaderCollection const&                           headers,
-        ::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code> lastResult,
-        ::Bedrock::Http::RetryPolicy&&                                     retry
-    );
+    MCNAPI void _connectWithRetry(::std::string const& uri, ::Bedrock::Http::HeaderCollection const& headers, ::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code> lastResult, ::Bedrock::Http::RetryPolicy&& retry);
 
-    MCNAPI void _onConnect(
-        ::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code> result,
-        ::Bedrock::Http::RetryPolicy&&                                     retry
-    );
+    MCNAPI void _onConnect(::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code> result, ::Bedrock::Http::RetryPolicy&& retry);
 
-    MCNAPI void _reconnect(
-        ::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code> lastResult,
-        ::Bedrock::Http::RetryPolicy&&                                     retry
-    );
+    MCNAPI void _reconnect(::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code> lastResult, ::Bedrock::Http::RetryPolicy&& retry);
 
     MCNAPI void disconnect();
     // NOLINTEND
@@ -116,6 +105,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Http
+}

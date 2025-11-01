@@ -27,6 +27,9 @@ public:
 
     // vIndex: 2
     virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext&) /*override*/;
+
+    // vIndex: 5
+    virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
 
 public:
@@ -43,6 +46,8 @@ public:
     MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext&);
 
     MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext&);
+
+    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
     // NOLINTEND
 
 public:
@@ -50,4 +55,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

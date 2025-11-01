@@ -36,60 +36,57 @@ public:
     // clang-format off
     struct RtpSenderContext;
     // clang-format on
-
+    
     // ModuleRtpRtcpImpl2 inner types define
     struct RtpSenderContext {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 360> mUnk5e9bb6;
-        ::ll::UntypedStorage<1, 1>   mUnkaf31e8;
-        ::ll::UntypedStorage<8, 64>  mUnk35434b;
+        ::ll::UntypedStorage<1, 1> mUnkaf31e8;
+        ::ll::UntypedStorage<8, 64> mUnk35434b;
         ::ll::UntypedStorage<8, 488> mUnkb717e8;
-        ::ll::UntypedStorage<8, 48>  mUnk15cbc0;
+        ::ll::UntypedStorage<8, 48> mUnk15cbc0;
         ::ll::UntypedStorage<8, 280> mUnkec2288;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         RtpSenderContext& operator=(RtpSenderContext const&);
         RtpSenderContext(RtpSenderContext const&);
         RtpSenderContext();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI RtpSenderContext(
-            ::webrtc::TaskQueueBase&                         worker_queue,
-            ::webrtc::RtpRtcpInterface::Configuration const& config
-        );
+        MCNAPI RtpSenderContext(::webrtc::TaskQueueBase& worker_queue, ::webrtc::RtpRtcpInterface::Configuration const& config);
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void*
-        $ctor(::webrtc::TaskQueueBase& worker_queue, ::webrtc::RtpRtcpInterface::Configuration const& config);
+        MCNAPI void* $ctor(::webrtc::TaskQueueBase& worker_queue, ::webrtc::RtpRtcpInterface::Configuration const& config);
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk909e53;
-    ::ll::UntypedStorage<1, 1>   mUnkdb6f5b;
-    ::ll::UntypedStorage<8, 8>   mUnke2365b;
+    ::ll::UntypedStorage<8, 8> mUnk909e53;
+    ::ll::UntypedStorage<1, 1> mUnkdb6f5b;
+    ::ll::UntypedStorage<8, 8> mUnke2365b;
     ::ll::UntypedStorage<8, 680> mUnke4397b;
     ::ll::UntypedStorage<8, 520> mUnke545e2;
-    ::ll::UntypedStorage<8, 8>   mUnkaca0fc;
-    ::ll::UntypedStorage<2, 2>   mUnk693b30;
-    ::ll::UntypedStorage<8, 8>   mUnkd32067;
-    ::ll::UntypedStorage<2, 2>   mUnk400446;
-    ::ll::UntypedStorage<8, 8>   mUnk52edea;
-    ::ll::UntypedStorage<8, 8>   mUnkcf7fd5;
-    ::ll::UntypedStorage<8, 40>  mUnkcd70d0;
-    ::ll::UntypedStorage<8, 8>   mUnke906ef;
-    ::ll::UntypedStorage<8, 8>   mUnk32ab75;
+    ::ll::UntypedStorage<8, 8> mUnkaca0fc;
+    ::ll::UntypedStorage<2, 2> mUnk693b30;
+    ::ll::UntypedStorage<8, 8> mUnkd32067;
+    ::ll::UntypedStorage<2, 2> mUnk400446;
+    ::ll::UntypedStorage<8, 8> mUnk52edea;
+    ::ll::UntypedStorage<8, 8> mUnkcf7fd5;
+    ::ll::UntypedStorage<8, 40> mUnkcd70d0;
+    ::ll::UntypedStorage<8, 8> mUnke906ef;
+    ::ll::UntypedStorage<8, 8> mUnk32ab75;
     // NOLINTEND
 
 public:
@@ -201,8 +198,7 @@ public:
     virtual void SetAsPartOfAllocation(bool part_of_allocation) /*override*/;
 
     // vIndex: 41
-    virtual bool
-    OnSendingRtpFrame(uint timestamp, int64 capture_time_ms, int payload_type, bool force_sender_report) /*override*/;
+    virtual bool OnSendingRtpFrame(uint timestamp, int64 capture_time_ms, int payload_type, bool force_sender_report) /*override*/;
 
     // vIndex: 43
     virtual bool CanSendPacket(::webrtc::RtpPacketToSend const& packet) const /*override*/;
@@ -211,25 +207,16 @@ public:
     virtual void AssignSequenceNumber(::webrtc::RtpPacketToSend& packet) /*override*/;
 
     // vIndex: 45
-    virtual void SendPacket(
-        ::std::unique_ptr<::webrtc::RtpPacketToSend> packet,
-        ::webrtc::PacedPacketInfo const&             pacing_info
-    ) /*override*/;
+    virtual void SendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::PacedPacketInfo const& pacing_info) /*override*/;
 
     // vIndex: 42
-    virtual bool TrySendPacket(
-        ::std::unique_ptr<::webrtc::RtpPacketToSend> packet,
-        ::webrtc::PacedPacketInfo const&             pacing_info
-    ) /*override*/;
+    virtual bool TrySendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::PacedPacketInfo const& pacing_info) /*override*/;
 
     // vIndex: 46
     virtual void OnBatchComplete() /*override*/;
 
     // vIndex: 47
-    virtual void SetFecProtectionParams(
-        ::webrtc::FecProtectionParams const& delta_params,
-        ::webrtc::FecProtectionParams const& key_params
-    ) /*override*/;
+    virtual void SetFecProtectionParams(::webrtc::FecProtectionParams const& delta_params, ::webrtc::FecProtectionParams const& key_params) /*override*/;
 
     // vIndex: 48
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> FetchFecPackets() /*override*/;
@@ -241,12 +228,10 @@ public:
     virtual void OnPacketsAcknowledged(::rtc::ArrayView<ushort const> sequence_numbers) /*override*/;
 
     // vIndex: 51
-    virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>
-    GeneratePadding(uint64 target_size_bytes) /*override*/;
+    virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GeneratePadding(uint64 target_size_bytes) /*override*/;
 
     // vIndex: 52
-    virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    GetSentRtpPacketInfos(::rtc::ArrayView<ushort const> sequence_numbers) const /*override*/;
+    virtual ::std::vector<::webrtc::RtpSequenceNumberMap::Info> GetSentRtpPacketInfos(::rtc::ArrayView<ushort const> sequence_numbers) const /*override*/;
 
     // vIndex: 53
     virtual uint64 ExpectedPerPacketOverhead() const /*override*/;
@@ -273,10 +258,7 @@ public:
     virtual int SendRTCP(::webrtc::RTCPPacketType packet_type) /*override*/;
 
     // vIndex: 61
-    virtual void GetSendStreamDataCounters(
-        ::webrtc::StreamDataCounters* rtp_counters,
-        ::webrtc::StreamDataCounters* rtx_counters
-    ) const /*override*/;
+    virtual void GetSendStreamDataCounters(::webrtc::StreamDataCounters* rtp_counters, ::webrtc::StreamDataCounters* rtx_counters) const /*override*/;
 
     // vIndex: 62
     virtual ::std::vector<::webrtc::ReportBlockData> GetLatestReportBlockData() const /*override*/;
@@ -312,16 +294,10 @@ public:
     virtual void SetStorePacketsStatus(bool enable, ushort number_to_store) /*override*/;
 
     // vIndex: 1
-    virtual void
-    SendCombinedRtcpPacket(::std::vector<::std::unique_ptr<::webrtc::rtcp::RtcpPacket>> rtcp_packets) /*override*/;
+    virtual void SendCombinedRtcpPacket(::std::vector<::std::unique_ptr<::webrtc::rtcp::RtcpPacket>> rtcp_packets) /*override*/;
 
     // vIndex: 69
-    virtual int SendLossNotification(
-        ushort last_decoded_seq_num,
-        ushort last_received_seq_num,
-        bool   decodability_flag,
-        bool   buffering_allowed
-    ) /*override*/;
+    virtual int SendLossNotification(ushort last_decoded_seq_num, ushort last_received_seq_num, bool decodability_flag, bool buffering_allowed) /*override*/;
 
     // vIndex: 38
     virtual ::webrtc::RtpSendRates GetSendRates() const /*override*/;
@@ -330,8 +306,7 @@ public:
     virtual void OnReceivedNack(::std::vector<ushort> const& nack_sequence_numbers) /*override*/;
 
     // vIndex: 3
-    virtual void
-    OnReceivedRtcpReportBlocks(::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks) /*override*/;
+    virtual void OnReceivedRtcpReportBlocks(::rtc::ArrayView<::webrtc::ReportBlockData const> report_blocks) /*override*/;
 
     // vIndex: 1
     virtual void OnRequestSendReport() /*override*/;
@@ -359,8 +334,7 @@ public:
 
     MCNAPI void PeriodicUpdate();
 
-    MCNAPI void
-    ScheduleMaybeSendRtcpAtOrAfterTimestamp(::webrtc::Timestamp execution_time, ::webrtc::TimeDelta duration);
+    MCNAPI void ScheduleMaybeSendRtcpAtOrAfterTimestamp(::webrtc::Timestamp execution_time, ::webrtc::TimeDelta duration);
 
     MCNAPI void ScheduleRtcpSendEvaluation(::webrtc::TimeDelta duration);
 
@@ -376,8 +350,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::webrtc::ModuleRtpRtcpImpl2>
-    Create(::webrtc::RtpRtcpInterface::Configuration const& configuration);
+    MCNAPI static ::std::unique_ptr<::webrtc::ModuleRtpRtcpImpl2> Create(::webrtc::RtpRtcpInterface::Configuration const& configuration);
     // NOLINTEND
 
 public:
@@ -465,18 +438,13 @@ public:
 
     MCNAPI void $AssignSequenceNumber(::webrtc::RtpPacketToSend& packet);
 
-    MCNAPI void
-    $SendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::PacedPacketInfo const& pacing_info);
+    MCNAPI void $SendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::PacedPacketInfo const& pacing_info);
 
-    MCNAPI bool
-    $TrySendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::PacedPacketInfo const& pacing_info);
+    MCNAPI bool $TrySendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::PacedPacketInfo const& pacing_info);
 
     MCNAPI void $OnBatchComplete();
 
-    MCNAPI void $SetFecProtectionParams(
-        ::webrtc::FecProtectionParams const& delta_params,
-        ::webrtc::FecProtectionParams const& key_params
-    );
+    MCNAPI void $SetFecProtectionParams(::webrtc::FecProtectionParams const& delta_params, ::webrtc::FecProtectionParams const& key_params);
 
     MCNAPI ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> $FetchFecPackets();
 
@@ -486,8 +454,7 @@ public:
 
     MCNAPI ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> $GeneratePadding(uint64 target_size_bytes);
 
-    MCNAPI ::std::vector<::webrtc::RtpSequenceNumberMap::Info>
-    $GetSentRtpPacketInfos(::rtc::ArrayView<ushort const> sequence_numbers) const;
+    MCNAPI ::std::vector<::webrtc::RtpSequenceNumberMap::Info> $GetSentRtpPacketInfos(::rtc::ArrayView<ushort const> sequence_numbers) const;
 
     MCNAPI uint64 $ExpectedPerPacketOverhead() const;
 
@@ -505,10 +472,7 @@ public:
 
     MCNAPI int $SendRTCP(::webrtc::RTCPPacketType packet_type);
 
-    MCNAPI void $GetSendStreamDataCounters(
-        ::webrtc::StreamDataCounters* rtp_counters,
-        ::webrtc::StreamDataCounters* rtx_counters
-    ) const;
+    MCNAPI void $GetSendStreamDataCounters(::webrtc::StreamDataCounters* rtp_counters, ::webrtc::StreamDataCounters* rtx_counters) const;
 
     MCNAPI ::std::vector<::webrtc::ReportBlockData> $GetLatestReportBlockData() const;
 
@@ -534,12 +498,7 @@ public:
 
     MCNAPI void $SendCombinedRtcpPacket(::std::vector<::std::unique_ptr<::webrtc::rtcp::RtcpPacket>> rtcp_packets);
 
-    MCNAPI int $SendLossNotification(
-        ushort last_decoded_seq_num,
-        ushort last_received_seq_num,
-        bool   decodability_flag,
-        bool   buffering_allowed
-    );
+    MCNAPI int $SendLossNotification(ushort last_decoded_seq_num, ushort last_received_seq_num, bool decodability_flag, bool buffering_allowed);
 
     MCNAPI ::webrtc::RtpSendRates $GetSendRates() const;
 
@@ -563,6 +522,7 @@ public:
 
     MCNAPI static void** $vftableForModuleRtpRtcp();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

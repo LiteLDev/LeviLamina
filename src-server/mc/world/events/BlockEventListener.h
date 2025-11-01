@@ -23,7 +23,7 @@ class BlockEventListener {
 public:
     // BlockEventListener inner types define
     using EventType = ::BlockNotificationEvent;
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,24 +31,16 @@ public:
     virtual ~BlockEventListener() = default;
 
     // vIndex: 1
-    virtual ::EventResult
-    onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+    virtual ::EventResult onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
     // vIndex: 2
-    virtual ::EventResult onBlockDestroyedByPlayer(
-        ::Player&         player,
-        ::Block const&    destroyedBlock,
-        ::BlockPos const& pos,
-        ::ItemStackBase const&,
-        ::ItemStackBase const&
-    );
+    virtual ::EventResult onBlockDestroyedByPlayer(::Player& player, ::Block const& destroyedBlock, ::BlockPos const& pos, ::ItemStackBase const&, ::ItemStackBase const&);
 
     // vIndex: 3
     virtual ::EventResult onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
 
     // vIndex: 4
-    virtual ::EventResult
-    onBlockMovedByPiston(::BlockPos const& pistonPos, ::BlockPos const& blockPos, ::PistonState const action);
+    virtual ::EventResult onBlockMovedByPiston(::BlockPos const& pistonPos, ::BlockPos const& blockPos, ::PistonState const action);
 
     // vIndex: 5
     virtual ::EventResult onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
@@ -60,8 +52,7 @@ public:
     virtual ::EventResult onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 
     // vIndex: 8
-    virtual ::EventResult
-    onBlockExploded(::Dimension& dimension, ::BlockPos const& blockPos, ::Block const& destroyedBlock, ::Actor* source);
+    virtual ::EventResult onBlockExploded(::Dimension& dimension, ::BlockPos const& blockPos, ::Block const& destroyedBlock, ::Actor* source);
 
     // vIndex: 9
     virtual ::EventResult onBlockModified(::BlockPos const& pos, ::Block const& oldBlock, ::Block const& newBlock);
@@ -76,21 +67,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult
-    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+    MCFOLD ::EventResult $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
-    MCFOLD ::EventResult $onBlockDestroyedByPlayer(
-        ::Player&         player,
-        ::Block const&    destroyedBlock,
-        ::BlockPos const& pos,
-        ::ItemStackBase const&,
-        ::ItemStackBase const&
-    );
+    MCFOLD ::EventResult $onBlockDestroyedByPlayer(::Player& player, ::Block const& destroyedBlock, ::BlockPos const& pos, ::ItemStackBase const&, ::ItemStackBase const&);
 
     MCFOLD ::EventResult $onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
 
-    MCFOLD ::EventResult
-    $onBlockMovedByPiston(::BlockPos const& pistonPos, ::BlockPos const& blockPos, ::PistonState const action);
+    MCFOLD ::EventResult $onBlockMovedByPiston(::BlockPos const& pistonPos, ::BlockPos const& blockPos, ::PistonState const action);
 
     MCFOLD ::EventResult $onBlockDestructionStopped(::Player& player, ::BlockPos const& blockPos, int progress);
 
@@ -98,12 +81,7 @@ public:
 
     MCFOLD ::EventResult $onBlockInteractedWith(::Player& player, ::BlockPos const& blockPos);
 
-    MCFOLD ::EventResult $onBlockExploded(
-        ::Dimension&      dimension,
-        ::BlockPos const& blockPos,
-        ::Block const&    destroyedBlock,
-        ::Actor*          source
-    );
+    MCFOLD ::EventResult $onBlockExploded(::Dimension& dimension, ::BlockPos const& blockPos, ::Block const& destroyedBlock, ::Actor* source);
 
     MCFOLD ::EventResult $onBlockModified(::BlockPos const& pos, ::Block const& oldBlock, ::Block const& newBlock);
 
@@ -117,4 +95,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

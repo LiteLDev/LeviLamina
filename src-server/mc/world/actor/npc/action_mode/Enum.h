@@ -5,9 +5,9 @@
 namespace npc::_ActionMode {
 
 enum class Enum : uchar {
-    Button  = 0,
+    Button = 0,
     OnClose = 1,
-    OnOpen  = 2,
+    OnOpen = 2,
 };
 
 }

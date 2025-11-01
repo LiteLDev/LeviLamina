@@ -21,4 +21,5 @@ public:
     // NOLINTBEGIN
     MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
+
 };

@@ -13,4 +13,4 @@ namespace ScriptModuleMinecraft::Internals {
 MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-} // namespace ScriptModuleMinecraft::Internals
+}

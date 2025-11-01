@@ -14,7 +14,7 @@ class ElementBlockItem : public ::ChemistryAuxDataBlockItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 99
+    // vIndex: 100
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
     // vIndex: 0
@@ -32,4 +32,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct UnrecognizedChunkTypeCauseConfig {};
+struct UnrecognizedChunkTypeCauseConfig {
+};
 
-} // namespace dcsctp
+}

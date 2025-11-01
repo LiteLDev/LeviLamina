@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ScriptModuleDebugUtilities { struct PacketShapeData; }
+struct ShapeDataPayload;
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -29,10 +29,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void populatePacketData(::ScriptModuleDebugUtilities::PacketShapeData& packetShapeData) const /*override*/;
+    virtual void populatePacketData(::ShapeDataPayload& packetShapeData) const /*override*/;
 
     // vIndex: 2
-    virtual void applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& packet) /*override*/;
+    virtual void applyUpdatedData(::ShapeDataPayload const& existing) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptLineShape() /*override*/;
@@ -43,8 +43,7 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptLineShape(::ScriptModuleDebugUtilities::ScriptLineShape const&);
 
-    MCFOLD ::ScriptModuleDebugUtilities::ScriptLineShape&
-    operator=(::ScriptModuleDebugUtilities::ScriptLineShape const&);
+    MCFOLD ::ScriptModuleDebugUtilities::ScriptLineShape& operator=(::ScriptModuleDebugUtilities::ScriptLineShape const&);
     // NOLINTEND
 
 public:
@@ -68,9 +67,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $populatePacketData(::ScriptModuleDebugUtilities::PacketShapeData& packetShapeData) const;
+    MCAPI void $populatePacketData(::ShapeDataPayload& packetShapeData) const;
 
-    MCAPI void $applyUpdatedData(::ScriptModuleDebugUtilities::PacketShapeData const& packet);
+    MCAPI void $applyUpdatedData(::ShapeDataPayload const& existing);
     // NOLINTEND
 
 public:
@@ -78,6 +77,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleDebugUtilities
+}

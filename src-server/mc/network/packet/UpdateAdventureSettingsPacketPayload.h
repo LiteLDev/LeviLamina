@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 5, ::AdventureSettings> mAdventureSettings;
     // NOLINTEND
+
 };

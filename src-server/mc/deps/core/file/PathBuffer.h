@@ -4,7 +4,8 @@
 
 namespace Core {
 
-template <typename T0>
-class PathBuffer {};
+template<typename T0>
+class PathBuffer {
+};
 
-} // namespace Core
+}

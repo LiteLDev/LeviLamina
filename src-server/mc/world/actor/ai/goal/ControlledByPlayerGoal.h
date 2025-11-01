@@ -15,9 +15,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 4, float>  mFractionalRotation;
-    ::ll::TypedStorage<4, 4, float>  mFractionalRotationLimit;
-    ::ll::TypedStorage<4, 4, float>  mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, float> mFractionalRotation;
+    ::ll::TypedStorage<4, 4, float> mFractionalRotationLimit;
+    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
     // NOLINTEND
 
 public:
@@ -73,4 +73,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

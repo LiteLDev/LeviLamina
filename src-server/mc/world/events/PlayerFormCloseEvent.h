@@ -16,8 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
-    ::ll::TypedStorage<4, 4, uint>                        mFormId;
-    ::ll::TypedStorage<4, 4, ::PlayerFormCloseReason>     mFormCloseReason;
+    ::ll::TypedStorage<4, 4, uint> mFormId;
+    ::ll::TypedStorage<4, 4, ::PlayerFormCloseReason> mFormCloseReason;
     // NOLINTEND
 
 public:
@@ -31,4 +31,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

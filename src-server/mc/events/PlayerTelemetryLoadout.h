@@ -19,6 +19,7 @@ public:
     PlayerTelemetryLoadout& operator=(PlayerTelemetryLoadout const&);
     PlayerTelemetryLoadout(PlayerTelemetryLoadout const&);
     PlayerTelemetryLoadout();
+
 };
 
-} // namespace Social::Events
+}

@@ -4,6 +4,7 @@
 
 namespace dragon::framerenderer {
 
-class CommandContext {};
+class CommandContext {
+};
 
-} // namespace dragon::framerenderer
+}

@@ -4,7 +4,8 @@
 
 namespace webrtc {
 
-template <typename T0>
-class DtmfSenderProxyWithInternal {};
+template<typename T0>
+class DtmfSenderProxyWithInternal {
+};
 
-} // namespace webrtc
+}

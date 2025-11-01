@@ -19,7 +19,7 @@ class TransporterComponent : public ::BaseCircuitComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                          mNextStrength;
+    ::ll::TypedStorage<4, 4, int> mNextStrength;
     ::ll::TypedStorage<8, 8, ::CircuitComponentType const> mCircuitComponentType;
     // NOLINTEND
 
@@ -30,16 +30,10 @@ public:
     virtual void cacheValues(::CircuitSystem& system, ::BlockPos const& pos) /*override*/;
 
     // vIndex: 11
-    virtual bool addSource(
-        ::CircuitSceneGraph&         graph,
-        ::CircuitTrackingInfo const& info,
-        int&                         dampening,
-        bool&                        bDirectlyPowered
-    ) /*override*/;
+    virtual bool addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered) /*override*/;
 
     // vIndex: 12
-    virtual bool
-    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
+    virtual bool allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     // vIndex: 7
     virtual bool canConsumerPower() const /*override*/;
@@ -62,8 +56,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $cacheValues(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI bool
-    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    MCAPI bool $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
@@ -81,4 +74,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -19,11 +19,7 @@ class ActorEventResponseFactory : public ::IPackLoadScoped, public ::Factory<::A
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>>
-        mSchema;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>> mSchema;
     // NOLINTEND
 
 public:
@@ -52,4 +48,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

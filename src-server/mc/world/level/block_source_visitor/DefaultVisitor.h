@@ -16,6 +16,7 @@ public:
     DefaultVisitor& operator=(DefaultVisitor const&);
     DefaultVisitor(DefaultVisitor const&);
     DefaultVisitor();
+
 };
 
-} // namespace BlockSourceVisitor
+}

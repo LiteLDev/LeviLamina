@@ -22,4 +22,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::Result<::EntityNetId> deserialize(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
+
 };

@@ -15,4 +15,5 @@ public:
     ResolveData& operator=(ResolveData const&);
     ResolveData(ResolveData const&);
     ResolveData();
+
 };

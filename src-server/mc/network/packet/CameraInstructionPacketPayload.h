@@ -9,6 +9,19 @@ struct CameraInstructionPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 192, ::CameraInstruction> mCameraInstruction;
+    ::ll::TypedStorage<8, 296, ::CameraInstruction> mCameraInstruction;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCAPI ~CameraInstructionPacketPayload();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCFOLD void $dtor();
+    // NOLINTEND
+
 };

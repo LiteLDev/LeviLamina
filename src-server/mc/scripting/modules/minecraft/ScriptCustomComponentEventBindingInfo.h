@@ -4,7 +4,8 @@
 
 namespace ScriptModuleMinecraft::CustomComponentEventHelpers {
 
-template <typename T0>
-struct ScriptCustomComponentEventBindingInfo {};
+template<typename T0>
+struct ScriptCustomComponentEventBindingInfo {
+};
 
-} // namespace ScriptModuleMinecraft::CustomComponentEventHelpers
+}

@@ -4,6 +4,7 @@
 
 namespace VanillaSystemCategories {
 
-struct UpdateWaterState {};
+struct UpdateWaterState {
+};
 
-} // namespace VanillaSystemCategories
+}

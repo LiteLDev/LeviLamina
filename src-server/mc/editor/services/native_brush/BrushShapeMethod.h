@@ -5,7 +5,7 @@
 namespace Editor::Brush {
 
 enum class BrushShapeMethod : int {
-    Offsets        = 0,
+    Offsets = 0,
     WeightedSphere = 1,
 };
 

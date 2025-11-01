@@ -16,6 +16,7 @@ public:
     QRCode& operator=(QRCode const&);
     QRCode(QRCode const&);
     QRCode();
+
 };
 
-} // namespace Bedrock
+}

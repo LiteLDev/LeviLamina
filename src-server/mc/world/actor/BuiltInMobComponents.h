@@ -15,6 +15,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::DeathTickingComponent*>> mDeathTickingComponent;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::MobAnimationComponent*>> mMobAnimationComponent;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::MobHurtTimeComponent*>>  mMobHurtTimeComponent;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::MobHurtTimeComponent*>> mMobHurtTimeComponent;
     // NOLINTEND
+
 };

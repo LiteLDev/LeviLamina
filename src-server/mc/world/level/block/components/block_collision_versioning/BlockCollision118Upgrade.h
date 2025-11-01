@@ -17,20 +17,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool previousSchema(
-        ::rapidjson::GenericValue<
-            ::rapidjson::UTF8<char>,
-            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
-    ) const /*override*/;
+    virtual bool previousSchema(::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component) const /*override*/;
 
     // vIndex: 2
-    virtual void upgradeToNext(
-        ::rapidjson::GenericDocument<
-            ::rapidjson::UTF8<char>,
-            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-            ::rapidjson::CrtAllocator>& document,
-        ::SemVersion const&
-    ) const /*override*/;
+    virtual void upgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>& document, ::SemVersion const&) const /*override*/;
 
     // vIndex: 0
     virtual ~BlockCollision118Upgrade() /*override*/ = default;
@@ -51,19 +41,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $previousSchema(
-        ::rapidjson::GenericValue<
-            ::rapidjson::UTF8<char>,
-            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
-    ) const;
+    MCFOLD bool $previousSchema(::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component) const;
 
-    MCAPI void $upgradeToNext(
-        ::rapidjson::GenericDocument<
-            ::rapidjson::UTF8<char>,
-            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-            ::rapidjson::CrtAllocator>& document,
-        ::SemVersion const&
-    ) const;
+    MCAPI void $upgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>& document, ::SemVersion const&) const;
     // NOLINTEND
 
 public:
@@ -71,6 +51,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace BlockCollisionVersioning
+}

@@ -11,7 +11,7 @@ public:
     struct DeltaTime;
     struct ElapsedTime;
     // clang-format on
-
+    
     // CameraTimeComponent inner types define
     struct ElapsedTime {
     public:
@@ -19,14 +19,15 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4> mUnk4cdc0e;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ElapsedTime& operator=(ElapsedTime const&);
         ElapsedTime(ElapsedTime const&);
         ElapsedTime();
+    
     };
-
+    
     struct DeltaTime {
     public:
         // member variables
@@ -34,14 +35,15 @@ public:
         ::ll::UntypedStorage<4, 4> mUnkbfa4b0;
         ::ll::UntypedStorage<4, 8> mUnkef482d;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         DeltaTime& operator=(DeltaTime const&);
         DeltaTime(DeltaTime const&);
         DeltaTime();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -54,6 +56,7 @@ public:
     CameraTimeComponent& operator=(CameraTimeComponent const&);
     CameraTimeComponent(CameraTimeComponent const&);
     CameraTimeComponent();
+
 };
 
-} // namespace MinecraftCamera
+}

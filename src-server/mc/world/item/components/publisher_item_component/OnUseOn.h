@@ -20,11 +20,7 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace PublisherItemComponent {
 
-struct OnUseOn : public ::ItemComponent,
-                 public ::Bedrock::PubSub::Publisher<
-                     void(bool&, ::ItemStack const&, ::ItemStack&, ::Actor&, ::BlockPos, uchar, ::Vec3 const&),
-                     ::Bedrock::PubSub::ThreadModel::SingleThreaded,
-                     0> {
+struct OnUseOn : public ::ItemComponent, public ::Bedrock::PubSub::Publisher<void(bool&, ::ItemStack const&, ::ItemStack&, ::Actor&, ::BlockPos, uchar, ::Vec3 const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -72,6 +68,7 @@ public:
 
     MCNAPI static void** $vftableForConnector();
     // NOLINTEND
+
 };
 
-} // namespace PublisherItemComponent
+}

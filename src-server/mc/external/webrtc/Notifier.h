@@ -4,7 +4,8 @@
 
 namespace webrtc {
 
-template <typename T0>
-class Notifier {};
+template<typename T0>
+class Notifier {
+};
 
-} // namespace webrtc
+}

@@ -4,7 +4,8 @@
 
 namespace SharedTypes::v1_21_20 {
 
-template <int T0>
-struct VerticalAnchorValue {};
+template<int T0>
+struct VerticalAnchorValue {
+};
 
-} // namespace SharedTypes::v1_21_20
+}

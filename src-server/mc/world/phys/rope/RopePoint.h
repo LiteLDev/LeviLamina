@@ -12,4 +12,5 @@ public:
     ::ll::TypedStorage<4, 12, ::Vec3> mOldPos;
     ::ll::TypedStorage<4, 12, ::Vec3> mToNewPos;
     // NOLINTEND
+
 };

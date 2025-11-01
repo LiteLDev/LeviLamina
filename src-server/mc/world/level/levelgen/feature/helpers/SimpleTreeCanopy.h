@@ -21,14 +21,14 @@ class SimpleTreeCanopy : public ::ITreeCanopy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                  mMinOffset;
-    ::ll::TypedStorage<4, 4, int>                                  mMaxOffset;
-    ::ll::TypedStorage<4, 4, int>                                  mMinWidth;
-    ::ll::TypedStorage<4, 4, float>                                mRiseInv;
-    ::ll::TypedStorage<4, 4, int>                                  mRun;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mLeafBlockDescriptor;
+    ::ll::TypedStorage<4, 4, int> mMinOffset;
+    ::ll::TypedStorage<4, 4, int> mMaxOffset;
+    ::ll::TypedStorage<4, 4, int> mMinWidth;
+    ::ll::TypedStorage<4, 4, float> mRiseInv;
+    ::ll::TypedStorage<4, 4, int> mRun;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mLeafBlockDescriptor;
     ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ChanceInformation>>  mVariationChancePerLayer;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ChanceInformation>> mVariationChancePerLayer;
     // NOLINTEND
 
 public:
@@ -38,27 +38,13 @@ public:
     virtual ~SimpleTreeCanopy() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos> placeCanopy(
-        ::IBlockWorldGenAPI&             target,
-        ::BlockPos const&                pos,
-        ::Random&                        random,
-        ::RenderParams&                  renderParams,
-        ::TreeHelper::TreeParams const&  treeParams,
-        ::std::vector<::BlockPos> const& attachmentPositions
-    ) const /*override*/;
+    virtual ::std::optional<::BlockPos> placeCanopy(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams, ::TreeHelper::TreeParams const& treeParams, ::std::vector<::BlockPos> const& attachmentPositions) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $placeCanopy(
-        ::IBlockWorldGenAPI&             target,
-        ::BlockPos const&                pos,
-        ::Random&                        random,
-        ::RenderParams&                  renderParams,
-        ::TreeHelper::TreeParams const&  treeParams,
-        ::std::vector<::BlockPos> const& attachmentPositions
-    ) const;
+    MCAPI ::std::optional<::BlockPos> $placeCanopy(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, ::RenderParams& renderParams, ::TreeHelper::TreeParams const& treeParams, ::std::vector<::BlockPos> const& attachmentPositions) const;
     // NOLINTEND
 
 public:
@@ -66,4 +52,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

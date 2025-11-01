@@ -30,11 +30,7 @@ public:
     virtual ~StringPayload() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::ResultAny runOn(
-        ::Scripting::ContextId                  contextId,
-        ::Scripting::StringBasedRuntime&        runtime,
-        ::std::optional<::Scripting::Privilege> privilege
-    ) /*override*/;
+    virtual ::Scripting::ResultAny runOn(::Scripting::ContextId contextId, ::Scripting::StringBasedRuntime& runtime, ::std::optional<::Scripting::Privilege> privilege) /*override*/;
     // NOLINTEND
 
 public:
@@ -46,11 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::ResultAny $runOn(
-        ::Scripting::ContextId                  contextId,
-        ::Scripting::StringBasedRuntime&        runtime,
-        ::std::optional<::Scripting::Privilege> privilege
-    );
+    MCAPI ::Scripting::ResultAny $runOn(::Scripting::ContextId contextId, ::Scripting::StringBasedRuntime& runtime, ::std::optional<::Scripting::Privilege> privilege);
     // NOLINTEND
 
 public:
@@ -58,6 +50,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

@@ -15,4 +15,5 @@ public:
     LoadingScreenScheduleData& operator=(LoadingScreenScheduleData const&);
     LoadingScreenScheduleData(LoadingScreenScheduleData const&);
     LoadingScreenScheduleData();
+
 };

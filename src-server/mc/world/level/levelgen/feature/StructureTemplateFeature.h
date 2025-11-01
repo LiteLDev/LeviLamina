@@ -17,9 +17,9 @@ class StructureTemplateFeature : public ::IFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::StructureTemplate*>                                      mStructure;
-    ::ll::TypedStorage<4, 4, int>                                                       mAdjustmentRadius;
-    ::ll::TypedStorage<1, 1, ::Direction::Type>                                         mFaceDirection;
+    ::ll::TypedStorage<8, 8, ::StructureTemplate*> mStructure;
+    ::ll::TypedStorage<4, 4, int> mAdjustmentRadius;
+    ::ll::TypedStorage<1, 1, ::Direction::Type> mFaceDirection;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::IStructureConstraint>>> mConstraints;
     // NOLINTEND
 
@@ -44,4 +44,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

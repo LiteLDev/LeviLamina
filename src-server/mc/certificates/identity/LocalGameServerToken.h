@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/util/NewType.h"
 
-struct LocalGameServerToken : public ::NewType<::std::string> {};
+struct LocalGameServerToken : public ::NewType<::std::string> {
+};

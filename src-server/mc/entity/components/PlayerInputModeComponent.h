@@ -10,7 +10,8 @@ struct PlayerInputModeComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::InputMode>      mInputMode;
+    ::ll::TypedStorage<4, 4, ::InputMode> mInputMode;
     ::ll::TypedStorage<4, 4, ::ClientPlayMode> mPlayMode;
     // NOLINTEND
+
 };

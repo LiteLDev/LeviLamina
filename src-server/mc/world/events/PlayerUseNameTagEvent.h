@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
-#include "mc/world/item/ItemStack.h"
+#include "mc/safety/RedactableString.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -16,18 +16,34 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
-    ::ll::TypedStorage<8, 152, ::ItemStack>               mItem;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mEntityNamed;
+    ::ll::TypedStorage<8, 80, ::std::optional<::Bedrock::Safety::RedactableString>> mPreviousName;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mNewName;
     // NOLINTEND
+
+public:
+    // prevent constructor by default
+    PlayerUseNameTagEvent& operator=(PlayerUseNameTagEvent const&);
+    PlayerUseNameTagEvent();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI PlayerUseNameTagEvent(::PlayerUseNameTagEvent const&);
+
     MCAPI ~PlayerUseNameTagEvent();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::PlayerUseNameTagEvent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
+
 };

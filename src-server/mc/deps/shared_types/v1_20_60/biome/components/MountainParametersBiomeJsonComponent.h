@@ -20,67 +20,68 @@ public:
     struct SteepMaterial;
     struct TopSlideSettings;
     // clang-format on
-
+    
     // MountainParametersBiomeJsonComponent inner types define
     struct SteepMaterial {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 104> mUnkfaeed2;
-        ::ll::UntypedStorage<1, 2>   mUnkee83ea;
-        ::ll::UntypedStorage<1, 2>   mUnkc86c61;
-        ::ll::UntypedStorage<1, 2>   mUnk12935d;
-        ::ll::UntypedStorage<1, 2>   mUnk5e5ce6;
+        ::ll::UntypedStorage<1, 2> mUnkee83ea;
+        ::ll::UntypedStorage<1, 2> mUnkc86c61;
+        ::ll::UntypedStorage<1, 2> mUnk12935d;
+        ::ll::UntypedStorage<1, 2> mUnk5e5ce6;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         SteepMaterial& operator=(SteepMaterial const&);
         SteepMaterial();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI SteepMaterial(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&);
-
-        MCNAPI ::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial&
-        operator=(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial&&);
-
+    
+        MCNAPI ::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial& operator=(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial&&);
+    
         MCNAPI ~SteepMaterial();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::SharedTypes::v1_20_60::MountainParametersBiomeJsonComponent::SteepMaterial const&);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct TopSlideSettings {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1> mUnk99c314;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         TopSlideSettings& operator=(TopSlideSettings const&);
         TopSlideSettings(TopSlideSettings const&);
         TopSlideSettings();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 120> mUnk3ec318;
-    ::ll::UntypedStorage<1, 2>   mUnk576525;
+    ::ll::UntypedStorage<1, 2> mUnk576525;
     // NOLINTEND
 
 public:
@@ -124,6 +125,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_60
+}

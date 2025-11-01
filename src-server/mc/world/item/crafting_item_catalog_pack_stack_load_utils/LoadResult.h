@@ -13,7 +13,7 @@ struct LoadResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::SharedTypes::v1_21_60::CraftingCatalogDocument>           mData;
+    ::ll::TypedStorage<8, 24, ::SharedTypes::v1_21_60::CraftingCatalogDocument> mData;
     ::ll::TypedStorage<8, 1032, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>> mPackCraftingCatalogFilePath;
     // NOLINTEND
 
@@ -42,6 +42,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace CraftingItemCatalogPackStackLoadUtils
+}

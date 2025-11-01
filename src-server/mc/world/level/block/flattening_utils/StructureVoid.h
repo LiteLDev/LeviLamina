@@ -13,4 +13,4 @@ namespace FlatteningUtils::StructureVoid {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-} // namespace FlatteningUtils::StructureVoid
+}

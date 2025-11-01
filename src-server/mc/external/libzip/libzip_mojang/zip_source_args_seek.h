@@ -15,4 +15,5 @@ public:
     zip_source_args_seek& operator=(zip_source_args_seek const&);
     zip_source_args_seek(zip_source_args_seek const&);
     zip_source_args_seek();
+
 };

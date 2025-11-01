@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<1, 1, bool> mCanRetrieveFrom;
     ::ll::TypedStorage<1, 1, bool> mCanLeashToWithoutSneaking;
     // NOLINTEND
+
 };

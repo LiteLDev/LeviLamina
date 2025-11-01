@@ -13,9 +13,9 @@ struct ScriptPluginDetails {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                            mName;
-    ::ll::TypedStorage<8, 32, ::std::string>                            mPackId;
-    ::ll::TypedStorage<8, 32, ::std::string>                            mModuleUUID;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<8, 32, ::std::string> mPackId;
+    ::ll::TypedStorage<8, 32, ::std::string> mModuleUUID;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, int>> mHandleCounts;
     // NOLINTEND
 
@@ -30,8 +30,7 @@ public:
 
     MCNAPI ScriptPluginDetails(::ScriptModuleDebugUtilities::ScriptPluginDetails const&);
 
-    MCNAPI ::ScriptModuleDebugUtilities::ScriptPluginDetails&
-    operator=(::ScriptModuleDebugUtilities::ScriptPluginDetails&&);
+    MCNAPI ::ScriptModuleDebugUtilities::ScriptPluginDetails& operator=(::ScriptModuleDebugUtilities::ScriptPluginDetails&&);
 
     MCNAPI ~ScriptPluginDetails();
     // NOLINTEND
@@ -55,6 +54,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleDebugUtilities
+}

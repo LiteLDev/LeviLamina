@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_21_110::BlockDefinition {
 
 struct Traits {
@@ -17,6 +22,13 @@ public:
     Traits& operator=(Traits const&);
     Traits(Traits const&);
     Traits();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_110::BlockDefinition
+}

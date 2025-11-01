@@ -4,5 +4,5 @@
 
 enum class RakNetServerLANVisibility : int {
     Visible = 0,
-    Hidden  = 1,
+    Hidden = 1,
 };

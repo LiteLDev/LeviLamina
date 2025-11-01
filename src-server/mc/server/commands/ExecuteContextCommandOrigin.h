@@ -24,15 +24,15 @@ class ExecuteContextCommandOrigin : public ::CommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkda6576;
+    ::ll::UntypedStorage<8, 8> mUnkda6576;
     ::ll::UntypedStorage<4, 12> mUnk653f48;
     ::ll::UntypedStorage<4, 12> mUnkef108c;
-    ::ll::UntypedStorage<8, 8>  mUnk7a9c6b;
-    ::ll::UntypedStorage<8, 8>  mUnk537eb8;
-    ::ll::UntypedStorage<4, 4>  mUnk145a23;
-    ::ll::UntypedStorage<4, 4>  mUnk6bc1f5;
-    ::ll::UntypedStorage<8, 8>  mUnk5bc335;
-    ::ll::UntypedStorage<4, 4>  mUnkb8eb4f;
+    ::ll::UntypedStorage<8, 8> mUnk7a9c6b;
+    ::ll::UntypedStorage<8, 8> mUnk537eb8;
+    ::ll::UntypedStorage<4, 4> mUnk145a23;
+    ::ll::UntypedStorage<4, 4> mUnk6bc1f5;
+    ::ll::UntypedStorage<8, 8> mUnk5bc335;
+    ::ll::UntypedStorage<4, 4> mUnkb8eb4f;
     // NOLINTEND
 
 public:
@@ -81,8 +81,7 @@ public:
     virtual void updateValues() /*override*/;
 
     // vIndex: 28
-    virtual ::Vec3 const getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const
-        /*override*/;
+    virtual ::Vec3 const getExecutePosition(int version, ::CommandPositionFloat const& commandPosition) const /*override*/;
 
     // vIndex: 6
     virtual ::Level* getLevel() const /*override*/;
@@ -147,4 +146,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

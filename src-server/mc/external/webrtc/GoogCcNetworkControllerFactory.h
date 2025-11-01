@@ -19,7 +19,7 @@ class GoogCcNetworkControllerFactory : public ::webrtc::NetworkControllerFactory
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk647ace;
+    ::ll::UntypedStorage<8, 8> mUnk647ace;
     ::ll::UntypedStorage<8, 24> mUnk8703af;
     // NOLINTEND
 
@@ -33,8 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::unique_ptr<::webrtc::NetworkControllerInterface>
-    Create(::webrtc::NetworkControllerConfig config) /*override*/;
+    virtual ::std::unique_ptr<::webrtc::NetworkControllerInterface> Create(::webrtc::NetworkControllerConfig config) /*override*/;
 
     // vIndex: 2
     virtual ::webrtc::TimeDelta GetProcessInterval() const /*override*/;
@@ -46,9 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit GoogCcNetworkControllerFactory(
-        ::webrtc::NetworkStatePredictorFactoryInterface* network_state_predictor_factory
-    );
+    MCNAPI explicit GoogCcNetworkControllerFactory(::webrtc::NetworkStatePredictorFactoryInterface* network_state_predictor_factory);
     // NOLINTEND
 
 public:
@@ -70,6 +67,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

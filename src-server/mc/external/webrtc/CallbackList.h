@@ -4,7 +4,8 @@
 
 namespace webrtc {
 
-template <typename... T0>
-class CallbackList {};
+template<typename... T0>
+class CallbackList {
+};
 
-} // namespace webrtc
+}

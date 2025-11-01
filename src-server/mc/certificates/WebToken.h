@@ -34,6 +34,8 @@ public:
 
     MCNAPI ::std::string toString() const;
 
+    MCNAPI bool verifyWithExternalKey(::std::string const& publicKey) const;
+
     MCNAPI bool verifyWithIncludedKey(::std::vector<::std::string> const& trustedKeys) const;
 
     MCNAPI ~WebToken();
@@ -44,11 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string _DERToBinary(::std::string const& derSignature, int outputLength);
 
-    MCNAPI static ::std::unique_ptr<::WebToken> createFromData(
-        ::Json::Value const&                                           dataInfo,
-        ::PrivateKeyManager const&                                     manager,
-        ::std::variant<::PublicKeySignatureType, ::CertificateSNIType> signatureType
-    );
+    MCNAPI static ::std::unique_ptr<::WebToken> createFromData(::Json::Value const& dataInfo, ::PrivateKeyManager const& manager, ::std::variant<::PublicKeySignatureType, ::CertificateSNIType> signatureType);
     // NOLINTEND
 
 public:
@@ -64,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

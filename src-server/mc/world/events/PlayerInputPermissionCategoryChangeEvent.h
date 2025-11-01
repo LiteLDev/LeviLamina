@@ -10,9 +10,9 @@ struct PlayerInputPermissionCategoryChangeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>          mPlayer;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
     ::ll::TypedStorage<1, 1, ::ClientInputLockCategory> mCategory;
-    ::ll::TypedStorage<1, 1, bool>                      mState;
+    ::ll::TypedStorage<1, 1, bool> mState;
     // NOLINTEND
 
 public:
@@ -26,4 +26,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

@@ -20,10 +20,10 @@ class PhotoManager : public ::IPhotoManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk9d30d8;
-    ::ll::UntypedStorage<8, 24>  mUnkb6ff69;
-    ::ll::UntypedStorage<8, 32>  mUnk15bb57;
-    ::ll::UntypedStorage<1, 1>   mUnk418844;
+    ::ll::UntypedStorage<8, 8> mUnk9d30d8;
+    ::ll::UntypedStorage<8, 24> mUnkb6ff69;
+    ::ll::UntypedStorage<8, 32> mUnk15bb57;
+    ::ll::UntypedStorage<1, 1> mUnk418844;
     ::ll::UntypedStorage<8, 128> mUnk1ac7e9;
     // NOLINTEND
 
@@ -40,14 +40,7 @@ public:
     virtual ~PhotoManager() = default;
 
     // vIndex: 0
-    virtual ::Bedrock::PubSub::Connector<void(
-        ::cg::ImageBuffer&,
-        ::Actor*,
-        ::Actor*,
-        ::ScreenshotOptions&,
-        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
-    )>&
-    getPictureTakenConnector() /*override*/;
+    virtual ::Bedrock::PubSub::Connector<void(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&, ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>)>& getPictureTakenConnector() /*override*/;
     // NOLINTEND
 
 public:
@@ -69,14 +62,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::PubSub::Connector<void(
-        ::cg::ImageBuffer&,
-        ::Actor*,
-        ::Actor*,
-        ::ScreenshotOptions&,
-        ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>
-    )>&
-    $getPictureTakenConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::cg::ImageBuffer&, ::Actor*, ::Actor*, ::ScreenshotOptions&, ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)>)>& $getPictureTakenConnector();
     // NOLINTEND
 
 public:
@@ -84,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

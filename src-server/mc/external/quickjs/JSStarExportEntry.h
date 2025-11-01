@@ -14,4 +14,5 @@ public:
     JSStarExportEntry& operator=(JSStarExportEntry const&);
     JSStarExportEntry(JSStarExportEntry const&);
     JSStarExportEntry();
+
 };

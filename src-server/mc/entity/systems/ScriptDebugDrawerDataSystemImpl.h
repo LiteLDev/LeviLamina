@@ -16,4 +16,4 @@ namespace ScriptDebugDrawerDataSystemImpl {
 MCNAPI void tick(::OptionalGlobal<::ScriptModuleDebugUtilities::ScriptDebugDrawerDataComponent> shapesDataComponent);
 // NOLINTEND
 
-} // namespace ScriptDebugDrawerDataSystemImpl
+}

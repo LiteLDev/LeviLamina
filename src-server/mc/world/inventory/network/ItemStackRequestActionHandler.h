@@ -46,135 +46,126 @@ public:
     struct RequestSlotIdAssignment;
     struct ScreenData;
     // clang-format on
-
+    
     // ItemStackRequestActionHandler inner types define
     enum class RemoveType : int {
-        Drop         = 0,
+        Drop = 0,
         DropRandomly = 1,
-        Destroy      = 2,
-        Consume      = 3,
+        Destroy = 2,
+        Consume = 3,
     };
-
+    
     struct RequestSlotIdAssignment {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, uchar>            mSlot;
+        ::ll::TypedStorage<1, 1, uchar> mSlot;
         ::ll::TypedStorage<4, 4, ::ItemStackNetId> mServerNetId;
         // NOLINTEND
+    
     };
-
+    
     struct RequestIdAssignments {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mExpireTime;
-        ::ll::TypedStorage<
-            8,
-            64,
-            ::std::unordered_map<
-                ::ContainerRuntimeId,
-                ::std::unordered_map<uchar, ::ItemStackRequestActionHandler::RequestSlotIdAssignment>>>
-            mContainers;
+        ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContainerRuntimeId, ::std::unordered_map<uchar, ::ItemStackRequestActionHandler::RequestSlotIdAssignment>>> mContainers;
         // NOLINTEND
+    
     };
-
+    
     struct PlayerLegacyRequestSlotIdAssignment {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, ::ContainerEnumName const>  mContainerName;
+        ::ll::TypedStorage<1, 1, ::ContainerEnumName const> mContainerName;
         ::ll::TypedStorage<4, 4, ::ContainerRuntimeId const> mContainerRuntimeId;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemStackLegacyRequestId, ::ItemStackNetId>>> mSlots;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         PlayerLegacyRequestSlotIdAssignment();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI PlayerLegacyRequestSlotIdAssignment(::ContainerEnumName containerName, ::Container& container);
-
+    
         MCNAPI ~PlayerLegacyRequestSlotIdAssignment();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::ContainerEnumName containerName, ::Container& container);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct ScreenData {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStackRequestActionCraftHandler>> mCraftRequestHandler;
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScreenHandlerBase>>                  mScreenHandler;
-        ::ll::
-            TypedStorage<8, 64, ::std::unordered_map<::ContainerRuntimeId, ::std::shared_ptr<::SimpleSparseContainer>>>
-                mRuntimeIdSparseContainerMap;
-        ::ll::TypedStorage<
-            8,
-            64,
-            ::std::unordered_map<::ItemStackRequestId, ::ItemStackRequestActionHandler::RequestIdAssignments>>
-            mRecentRequests;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScreenHandlerBase>> mScreenHandler;
+        ::ll::TypedStorage<8, 64, ::std::unordered_map<::ContainerRuntimeId, ::std::shared_ptr<::SimpleSparseContainer>>> mRuntimeIdSparseContainerMap;
+        ::ll::TypedStorage<8, 64, ::std::unordered_map<::ItemStackRequestId, ::ItemStackRequestActionHandler::RequestIdAssignments>> mRecentRequests;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ScreenData& operator=(ScreenData const&);
         ScreenData(ScreenData const&);
         ScreenData();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ScreenData(::ItemStackRequestActionHandler::ScreenData&&);
-
+    
         MCNAPI ::ItemStackRequestActionHandler::ScreenData& operator=(::ItemStackRequestActionHandler::ScreenData&&);
-
+    
         MCNAPI ~ScreenData();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::ItemStackRequestActionHandler::ScreenData&&);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Player&>                    mPlayer;
+    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
     ::ll::TypedStorage<8, 8, ::ItemStackNetManagerServer&> mItemStackNetManager;
-    ::ll::TypedStorage<4, 4, ::ContainerRuntimeId const>   mPlayerArmorContainerRuntimeId;
-    ::ll::TypedStorage<4, 4, ::ContainerRuntimeId const>   mPlayerHandContainerRuntimeId;
-    ::ll::TypedStorage<4, 4, ::ContainerRuntimeId const>   mPlayerUIContainerRuntimeId;
-    ::ll::TypedStorage<8, 96, ::std::array<::ItemStackRequestActionHandler::PlayerLegacyRequestSlotIdAssignment, 3>>
-                                                                                       mPlayerLegacyRequests;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                  mLastTime;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>>                              mCurrentRequestScreen;
-    ::ll::TypedStorage<4, 16, ::ItemStackRequestId>                                    mClientRequestId;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStackResponseContainerInfo>>         mResponseContainerInfos;
+    ::ll::TypedStorage<4, 4, ::ContainerRuntimeId const> mPlayerArmorContainerRuntimeId;
+    ::ll::TypedStorage<4, 4, ::ContainerRuntimeId const> mPlayerHandContainerRuntimeId;
+    ::ll::TypedStorage<4, 4, ::ContainerRuntimeId const> mPlayerUIContainerRuntimeId;
+    ::ll::TypedStorage<8, 96, ::std::array<::ItemStackRequestActionHandler::PlayerLegacyRequestSlotIdAssignment, 3>> mPlayerLegacyRequests;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastTime;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mCurrentRequestScreen;
+    ::ll::TypedStorage<4, 16, ::ItemStackRequestId> mClientRequestId;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStackResponseContainerInfo>> mResponseContainerInfos;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::vector<::std::string>>> mFilteredStrings;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::vector<::std::string>>> mStrings;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerScreenValidation>>           mScreenValidation;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerScreenValidation>> mScreenValidation;
     // NOLINTEND
 
 public:
@@ -190,54 +181,29 @@ public:
 
     MCAPI void _addResponseSlotInfo(::ItemStackRequestHandlerSlotInfo const& slotInfo, ::ItemStack const& item);
 
-    MCAPI void _cacheLegacySlotIdAssignment(
-        ::ContainerEnumName               containerName,
-        uchar                             slot,
-        ::ItemStackLegacyRequestId const& legacyClientRequestId,
-        ::ItemStackNetId const&           serverNetId
-    );
+    MCAPI void _cacheLegacySlotIdAssignment(::ContainerEnumName containerName, uchar slot, ::ItemStackLegacyRequestId const& legacyClientRequestId, ::ItemStackNetId const& serverNetId);
 
-    MCAPI void _cacheSlotIdAssigment(
-        ::ContainerRuntimeId const& containerRuntimeId,
-        uchar                       requestSlot,
-        uchar                       slot,
-        ::ItemStackNetId const&     serverNetId
-    );
+    MCAPI void _cacheSlotIdAssigment(::ContainerRuntimeId const& containerRuntimeId, uchar requestSlot, uchar slot, ::ItemStackNetId const& serverNetId);
 
     MCAPI ::std::unique_ptr<::ScreenHandlerBase> _createScreenHandler(::ContainerScreenContext const& screenContext);
 
-    MCAPI ::std::shared_ptr<::SimpleSparseContainer>
-    _getOrInitSparseContainer(::FullContainerName const& openContainerId);
+    MCAPI ::std::shared_ptr<::SimpleSparseContainer> _getOrInitSparseContainer(::FullContainerName const& openContainerId);
 
-    MCAPI ::ItemStackNetResult _handleRemove(
-        ::ItemStackRequestActionTransferBase const& requestAction,
-        ::ItemStack&                                removedItem,
-        ::ItemStackRequestActionHandler::RemoveType removeType
-    );
+    MCAPI ::ItemStackNetResult _handleRemove(::ItemStackRequestActionTransferBase const& requestAction, ::ItemStack& removedItem, ::ItemStackRequestActionHandler::RemoveType removeType);
 
-    MCAPI ::ItemStackNetResult _handleTransfer(
-        ::ItemStackRequestActionTransferBase const& requestAction,
-        bool                                        isSrcHintSlot,
-        bool                                        isDstHintSlot,
-        bool                                        isSwap
-    );
+    MCAPI ::ItemStackNetResult _handleTransfer(::ItemStackRequestActionTransferBase const& requestAction, bool isSrcHintSlot, bool isDstHintSlot, bool isSwap);
 
     MCAPI void _initScreen(::ItemStackNetManagerScreen& screen);
 
-    MCAPI ::std::optional<::ItemStackRequestActionHandler::RequestSlotIdAssignment> _resolveSlotIdAssignment(
-        ::ItemStackRequestSlotInfo const& requestSlotInfo,
-        ::ContainerRuntimeId const&       containerRuntimeId
-    );
+    MCAPI ::std::optional<::ItemStackRequestActionHandler::RequestSlotIdAssignment> _resolveSlotIdAssignment(::ItemStackRequestSlotInfo const& requestSlotInfo, ::ContainerRuntimeId const& containerRuntimeId);
 
-    MCAPI ::ItemStackRequestHandlerSlotInfo
-    _validateRequestSlot(::ItemStackRequestSlotInfo const& requestSlotInfo, bool isItemRequired, bool isHintSlot);
+    MCAPI ::ItemStackRequestHandlerSlotInfo _validateRequestSlot(::ItemStackRequestSlotInfo const& requestSlotInfo, bool isItemRequired, bool isHintSlot);
 
     MCAPI void addStrings(::ItemStackRequestId requestId, ::std::vector<::std::string> strings);
 
     MCAPI void beginRequest(::ItemStackRequestId const& clientRequestId, ::ItemStackNetManagerScreen& screen);
 
-    MCAPI ::std::tuple<::ItemStackNetResult, ::std::vector<::ItemStackResponseContainerInfo>>
-    endRequest(::ItemStackNetResult currentResult);
+    MCAPI ::std::tuple<::ItemStackNetResult, ::std::vector<::ItemStackResponseContainerInfo>> endRequest(::ItemStackNetResult currentResult);
 
     MCAPI ::std::vector<::std::string> const& getFilteredStrings(::ItemStackRequestId requestId) const;
 
@@ -249,8 +215,7 @@ public:
 
     MCAPI void normalTick();
 
-    MCAPI ::std::vector<::ItemInstance>
-    tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar numCrafts);
+    MCAPI ::std::vector<::ItemInstance> tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar numCrafts);
     // NOLINTEND
 
 public:
@@ -258,4 +223,5 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ItemStackNetManagerServer& itemStackNetManager, ::Player& player);
     // NOLINTEND
+
 };

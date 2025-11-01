@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ::BiomeIdType> biome;
     // NOLINTEND
+
 };

@@ -13,6 +13,7 @@ class BoneOrientation;
 class ExpressionNode;
 class HashedString;
 class RenderParams;
+struct AnimationVisitor;
 // clang-format on
 
 class ActorAnimationPlayer {
@@ -21,8 +22,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnkd5fe13;
     ::ll::UntypedStorage<8, 16> mUnkad5060;
-    ::ll::UntypedStorage<1, 1>  mUnk923d16;
-    ::ll::UntypedStorage<1, 1>  mUnkdcf6cd;
+    ::ll::UntypedStorage<1, 1> mUnk923d16;
+    ::ll::UntypedStorage<1, 1> mUnkdcf6cd;
     // NOLINTEND
 
 public:
@@ -38,11 +39,7 @@ public:
     virtual ~ActorAnimationPlayer();
 
     // vIndex: 1
-    virtual void applyToPose(
-        ::RenderParams&,
-        ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>&,
-        float
-    ) = 0;
+    virtual void applyToPose(::RenderParams&, ::std::unordered_map<::SkeletalHierarchyIndex, ::std::vector<::BoneOrientation>>&, float) = 0;
 
     // vIndex: 2
     virtual void resetAnimation() = 0;
@@ -67,6 +64,9 @@ public:
 
     // vIndex: 9
     virtual ::HashedString const& getRawName() const = 0;
+
+    // vIndex: 10
+    virtual void visit(::AnimationVisitor&& dispatcher);
     // NOLINTEND
 
 public:
@@ -95,6 +95,8 @@ public:
     MCNAPI void $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const&);
 
     MCNAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const&);
+
+    MCNAPI void $visit(::AnimationVisitor&& dispatcher);
     // NOLINTEND
 
 public:
@@ -102,4 +104,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -38,57 +38,53 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 109
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+    // vIndex: 110
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    // vIndex: 93
+    // vIndex: 94
     virtual uchar getMaxStackSize(::ItemDescriptor const&) const /*override*/;
 
-    // vIndex: 75
+    // vIndex: 76
     virtual bool canUseOnSimTick() const /*override*/;
 
-    // vIndex: 76
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 82
+    // vIndex: 83
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
-    // vIndex: 81
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
-        /*override*/;
+    // vIndex: 82
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const /*override*/;
 
-    // vIndex: 63
+    // vIndex: 64
     virtual bool uniqueAuxValues() const /*override*/;
 
     // vIndex: 12
     virtual bool isBucket() const /*override*/;
 
-    // vIndex: 80
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
-        /*override*/;
+    // vIndex: 81
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const /*override*/;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual bool isLiquidClipItem() const /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 101
+    // vIndex: 102
     virtual bool validFishInteraction(int) const /*override*/;
 
-    // vIndex: 114
+    // vIndex: 115
     virtual ::Brightness getLightEmission(int) const /*override*/;
 
-    // vIndex: 60
+    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual bool isDestructive(int auxValue) const /*override*/;
 
-    // vIndex: 122
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    // vIndex: 123
+    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
 
     // vIndex: 0
     virtual ~BucketItem() /*override*/ = default;
@@ -97,22 +93,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canEmptyBucketIntoBlock(
-        ::BlockSource&    region,
-        ::BlockPos const& pos,
-        ::Block const&    block,
-        ::Block const&    extraBlock,
-        ::Actor const*    placer
-    ) const;
+    MCAPI bool _canEmptyBucketIntoBlock(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Block const& extraBlock, ::Actor const* placer) const;
 
-    MCAPI bool _emptyBucket(
-        ::BlockSource&     region,
-        ::Block const&     contents,
-        ::BlockPos const&  pos,
-        ::Actor*           placer,
-        ::ItemStack const& instance,
-        uchar              face
-    ) const;
+    MCAPI bool _emptyBucket(::BlockSource& region, ::Block const& contents, ::BlockPos const& pos, ::Actor* placer, ::ItemStack const& instance, uchar face) const;
 
     MCAPI bool _supportsEntityType(::ActorType const& entityType, ::HashedString& bucketType) const;
 
@@ -124,12 +107,7 @@ public:
 
     MCAPI void addBucketEntitySaveData(::Actor& entity, ::ItemStack& instance) const;
 
-    MCAPI bool readBucketEntitySaveData(
-        ::BlockSource&        region,
-        ::Actor*              placer,
-        ::BlockPos            pos,
-        ::ItemInstance const& instance
-    ) const;
+    MCAPI bool readBucketEntitySaveData(::BlockSource& region, ::Actor* placer, ::BlockPos pos, ::ItemInstance const& instance) const;
     // NOLINTEND
 
 public:
@@ -141,7 +119,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
     MCAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
 
@@ -169,8 +147,7 @@ public:
 
     MCAPI bool $isDestructive(int auxValue) const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -178,4 +155,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

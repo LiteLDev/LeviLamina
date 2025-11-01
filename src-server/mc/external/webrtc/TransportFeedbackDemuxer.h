@@ -18,7 +18,7 @@ class TransportFeedbackDemuxer : public ::webrtc::StreamFeedbackProvider {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk545058;
+    ::ll::UntypedStorage<1, 1> mUnk545058;
     ::ll::UntypedStorage<8, 16> mUnkeb048e;
     ::ll::UntypedStorage<8, 16> mUnk6eab8d;
     ::ll::UntypedStorage<8, 24> mUnkb88dca;
@@ -33,8 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual void
-    RegisterStreamFeedbackObserver(::std::vector<uint> ssrcs, ::webrtc::StreamFeedbackObserver* observer) /*override*/;
+    virtual void RegisterStreamFeedbackObserver(::std::vector<uint> ssrcs, ::webrtc::StreamFeedbackObserver* observer) /*override*/;
 
     // vIndex: 1
     virtual void DeRegisterStreamFeedbackObserver(::webrtc::StreamFeedbackObserver* observer) /*override*/;
@@ -78,6 +77,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

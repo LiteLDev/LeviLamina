@@ -34,10 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI File(::Core::File&& rhs);
-
-    MCNAPI
-    File(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
+    MCNAPI File(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
 
     MCNAPI ::Core::Result close();
 
@@ -45,10 +42,11 @@ public:
 
     MCNAPI ::Core::Result getSize(uint64* pSize);
 
-    MCNAPI ::Core::Result
-    open(::Core::PathView fileName, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
+    MCNAPI ::Core::Result open(::Core::PathView fileName, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
 
     MCNAPI ::Core::File& operator=(::Core::File&& rhs);
+
+    MCNAPI ::Core::Result read(void* buf, uint64 numBytes, uint64* pNumBytesRead);
 
     MCNAPI ::Core::Result readExactly(void* buf, uint64 numBytes);
 
@@ -62,22 +60,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Core::Result writeCreateOrAppendFileData(
-        ::Core::PathView         path,
-        uint64                   offset,
-        uint64                   numBytesToWrite,
-        uchar const*             buffer,
-        ::brstd::source_location sourceLocation
-    );
+    MCNAPI static ::Core::Result writeCreateOrAppendFileData(::Core::PathView path, uint64 offset, uint64 numBytesToWrite, uchar const* buffer, ::brstd::source_location sourceLocation);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::File&& rhs);
-
-    MCNAPI void*
-    $ctor(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
+    MCNAPI void* $ctor(::std::unique_ptr<::Core::FileImpl>&& uptFile, ::std::unique_ptr<::Core::FileSystemImpl>&& uptTransaction);
     // NOLINTEND
 
 public:
@@ -85,6 +74,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

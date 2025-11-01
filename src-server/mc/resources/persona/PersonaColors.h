@@ -25,6 +25,7 @@ public:
 
     MCNAPI static ::std::vector<::std::pair<::mce::Color, ::std::string>> const& mSkinColors();
     // NOLINTEND
+
 };
 
-} // namespace persona
+}

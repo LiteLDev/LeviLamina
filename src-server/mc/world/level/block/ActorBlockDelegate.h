@@ -13,13 +13,7 @@ class BlockSource;
 namespace ActorBlockDelegate {
 // functions
 // NOLINTBEGIN
-MCAPI void executeEvent(
-    ::BlockSource&       region,
-    ::BlockPos const&    pos,
-    ::Block const&       block,
-    ::std::string const& eventName,
-    ::Actor&             sourceEntity
-);
+MCAPI void executeEvent(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& eventName, ::Actor& sourceEntity);
 // NOLINTEND
 
-} // namespace ActorBlockDelegate
+}

@@ -16,10 +16,10 @@ class FreezeOnHitSubcomponent : public ::OnHitSubcomponent {
 public:
     // FreezeOnHitSubcomponent inner types define
     enum class Shape : uchar {
-        Cube   = 0,
+        Cube = 0,
         Sphere = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -47,7 +47,7 @@ public:
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
     // vIndex: 4
-    virtual char const* getName() /*override*/;
+    virtual char const* getName() const /*override*/;
 
     // vIndex: 0
     virtual ~FreezeOnHitSubcomponent() /*override*/ = default;
@@ -62,7 +62,7 @@ public:
 
     MCNAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 
-    MCNAPI char const* $getName();
+    MCNAPI char const* $getName() const;
     // NOLINTEND
 
 public:
@@ -70,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

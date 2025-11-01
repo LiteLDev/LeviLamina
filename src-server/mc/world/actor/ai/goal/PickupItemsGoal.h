@@ -24,24 +24,24 @@ class PickupItemsGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>                   mTarget;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                mTargetPos;
-    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
-    ::ll::TypedStorage<4, 4, int>                                    mSearchRange;
-    ::ll::TypedStorage<4, 4, int>                                    mSearchHeight;
-    ::ll::TypedStorage<4, 4, float>                                  mSpeedModifier;
-    ::ll::TypedStorage<1, 1, bool>                                   mTrackTarget;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>              mPath;
-    ::ll::TypedStorage<4, 4, int>                                    mRandomStopInterval;
-    ::ll::TypedStorage<4, 4, float>                                  mGoalRadiusSq;
-    ::ll::TypedStorage<4, 4, int>                                    mTimeToRecalcPath;
-    ::ll::TypedStorage<1, 1, bool>                                   mPickupBasedOnChance;
-    ::ll::TypedStorage<1, 1, bool>                                   mCanPickupAnyItem;
-    ::ll::TypedStorage<4, 4, int>                                    mTimeoutAfterBeingAttacked;
-    ::ll::TypedStorage<1, 1, bool>                                   mCanPickupToHandOrEquipment;
-    ::ll::TypedStorage<1, 1, bool>                                   mPickupSameItemsAsInHand;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mTarget;
+    ::ll::TypedStorage<4, 12, ::Vec3> mTargetPos;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, int> mSearchRange;
+    ::ll::TypedStorage<4, 4, int> mSearchHeight;
+    ::ll::TypedStorage<4, 4, float> mSpeedModifier;
+    ::ll::TypedStorage<1, 1, bool> mTrackTarget;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
+    ::ll::TypedStorage<4, 4, int> mRandomStopInterval;
+    ::ll::TypedStorage<4, 4, float> mGoalRadiusSq;
+    ::ll::TypedStorage<4, 4, int> mTimeToRecalcPath;
+    ::ll::TypedStorage<1, 1, bool> mPickupBasedOnChance;
+    ::ll::TypedStorage<1, 1, bool> mCanPickupAnyItem;
+    ::ll::TypedStorage<4, 4, int> mTimeoutAfterBeingAttacked;
+    ::ll::TypedStorage<1, 1, bool> mCanPickupToHandOrEquipment;
+    ::ll::TypedStorage<1, 1, bool> mPickupSameItemsAsInHand;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor> const> mExcludedItemsList;
-    ::ll::TypedStorage<8, 24, ::std::vector<::WeakEntityRef>>        mFilteredPickupTargets;
+    ::ll::TypedStorage<8, 24, ::std::vector<::WeakEntityRef>> mFilteredPickupTargets;
     // NOLINTEND
 
 public:
@@ -80,8 +80,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _dropItem(::ItemStack const& item) const;
 
-    MCAPI ::std::vector<::WeakEntityRef>
-    _filterValidTargets(::std::vector<::DistanceSortedActor> const& entities) const;
+    MCAPI ::std::vector<::WeakEntityRef> _filterValidTargets(::std::vector<::DistanceSortedActor> const& entities) const;
 
     MCAPI ::Shareable const* _getShareableItem(::ItemStack const& item) const;
 
@@ -121,4 +120,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

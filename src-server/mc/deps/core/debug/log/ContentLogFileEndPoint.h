@@ -16,12 +16,12 @@ class ContentLogFileEndPoint : public ::ContentLogEndPoint {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk6b4db6;
+    ::ll::UntypedStorage<8, 8> mUnk6b4db6;
     ::ll::UntypedStorage<8, 32> mUnk3cdcd4;
     ::ll::UntypedStorage<8, 32> mUnk355928;
-    ::ll::UntypedStorage<4, 4>  mUnkbe8544;
-    ::ll::UntypedStorage<1, 1>  mUnke5cbb0;
-    ::ll::UntypedStorage<4, 8>  mUnk299ac4;
+    ::ll::UntypedStorage<4, 4> mUnkbe8544;
+    ::ll::UntypedStorage<1, 1> mUnke5cbb0;
+    ::ll::UntypedStorage<4, 8> mUnk299ac4;
     // NOLINTEND
 
 public:
@@ -55,11 +55,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ContentLogFileEndPoint(
-        ::Core::Path                debugLogDirectory,
-        ::Core::Path                fileName,
-        ::std::optional<::LogLevel> minLogLevel
-    );
+    MCNAPI ContentLogFileEndPoint(::Core::Path debugLogDirectory, ::Core::Path fileName, ::std::optional<::LogLevel> minLogLevel);
     // NOLINTEND
 
 public:
@@ -101,4 +97,5 @@ public:
 
     MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
+
 };

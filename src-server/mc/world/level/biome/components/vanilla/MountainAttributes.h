@@ -17,32 +17,34 @@ public:
     struct SteepMaterial;
     struct TopSlideSettings;
     // clang-format on
-
+    
     // MountainAttributes inner types define
     struct SteepMaterial {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::Block const*> mSteep;
-        ::ll::TypedStorage<1, 1, bool>           mNorthSlopes;
-        ::ll::TypedStorage<1, 1, bool>           mSouthSlopes;
-        ::ll::TypedStorage<1, 1, bool>           mWestSlopes;
-        ::ll::TypedStorage<1, 1, bool>           mEastSlopes;
+        ::ll::TypedStorage<1, 1, bool> mNorthSlopes;
+        ::ll::TypedStorage<1, 1, bool> mSouthSlopes;
+        ::ll::TypedStorage<1, 1, bool> mWestSlopes;
+        ::ll::TypedStorage<1, 1, bool> mEastSlopes;
         // NOLINTEND
+    
     };
-
+    
     struct TopSlideSettings {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 1, bool> mEnabled;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::MountainAttributes::SteepMaterial>   mSteepMaterial;
+    ::ll::TypedStorage<8, 16, ::MountainAttributes::SteepMaterial> mSteepMaterial;
     ::ll::TypedStorage<1, 1, ::MountainAttributes::TopSlideSettings> mTopSlideSettings;
     // NOLINTEND
 
@@ -58,4 +60,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

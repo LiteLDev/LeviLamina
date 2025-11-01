@@ -24,6 +24,7 @@ struct PlayerInventoryItemChangeEvent;
 struct PlayerRespawnEvent;
 struct PlayerScriptInputEvent;
 struct PlayerSwingStartEvent;
+struct PlayerUseNameTagEvent;
 namespace ScriptModuleMinecraft { class IScriptWorldAfterEvents; }
 // clang-format on
 
@@ -34,51 +35,52 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-    ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
-        mScriptEventsHandle;
+    ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>> mScriptEventsHandle;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 57
+    // vIndex: 60
     virtual ::EventResult onEvent(::PlayerRespawnEvent const& respawnEvent) /*override*/;
 
-    // vIndex: 62
+    // vIndex: 65
     virtual ::EventResult onEvent(::PlayerInitialSpawnEvent const& initialSpawnEvent) /*override*/;
 
-    // vIndex: 52
+    // vIndex: 54
     virtual ::EventResult onEvent(::PlayerDimensionChangeAfterEvent const& playerDimensionChangeEvent) /*override*/;
 
-    // vIndex: 63
+    // vIndex: 66
     virtual ::EventResult onEvent(::PlayerInputModeChangeEvent const& playerInputModeChangeEvent) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 47
     virtual ::EventResult onEvent(::PlayerInputPermissionCategoryChangeEvent const& event) /*override*/;
 
-    // vIndex: 51
-    virtual ::EventResult
-    onEvent(::PlayerInteractWithEntityAfterEvent const& playerInteractWithEntityEvent) /*override*/;
+    // vIndex: 53
+    virtual ::EventResult onEvent(::PlayerInteractWithEntityAfterEvent const& playerInteractWithEntityEvent) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 52
     virtual ::EventResult onEvent(::PlayerInteractWithBlockAfterEvent const& playerInteractWithBlockEvent) /*override*/;
 
-    // vIndex: 39
+    // vIndex: 41
     virtual ::EventResult onEvent(::PlayerGameModeChangeEvent const& playerGameModeChangeEvent) /*override*/;
 
-    // vIndex: 49
+    // vIndex: 51
     virtual ::EventResult onEvent(::PlayerEmoteEvent const& playerEmoteEvent) /*override*/;
 
-    // vIndex: 48
+    // vIndex: 50
     virtual ::EventResult onEvent(::PlayerScriptInputEvent const& e) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 49
     virtual ::EventResult onEvent(::PlayerInventoryItemChangeEvent const& e) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 48
     virtual ::EventResult onEvent(::PlayerHotbarSelectedSlotChangeEvent const& e) /*override*/;
 
-    // vIndex: 58
+    // vIndex: 73
+    virtual ::EventResult onEvent(::PlayerUseNameTagEvent const& nameTagEvent) /*override*/;
+
+    // vIndex: 61
     virtual ::EventResult onEvent(::PlayerSwingStartEvent const& e) /*override*/;
 
     // vIndex: 0
@@ -112,6 +114,8 @@ public:
 
     MCAPI ::EventResult $onEvent(::PlayerHotbarSelectedSlotChangeEvent const& e);
 
+    MCAPI ::EventResult $onEvent(::PlayerUseNameTagEvent const& nameTagEvent);
+
     MCAPI ::EventResult $onEvent(::PlayerSwingStartEvent const& e);
     // NOLINTEND
 
@@ -120,6 +124,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

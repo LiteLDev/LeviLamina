@@ -32,50 +32,50 @@ class WitherBoss : public ::Monster {
 public:
     // WitherBoss inner types define
     enum class WitherAttackType : int {
-        Charge        = 0,
+        Charge = 0,
         HurtExplosion = 1,
-        Projectile    = 2,
+        Projectile = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                    MAX_SHIELD_HEALTH;
-    ::ll::TypedStorage<4, 4, int>                                    mShieldHealth;
-    ::ll::TypedStorage<4, 24, ::Vec2[3]>                             mHeadRots;
-    ::ll::TypedStorage<4, 24, ::Vec2[3]>                             mOldHeadRots;
-    ::ll::TypedStorage<4, 12, int[3]>                                mNextHeadUpdate;
-    ::ll::TypedStorage<4, 12, int[3]>                                mIdleHeadUpdates;
-    ::ll::TypedStorage<4, 4, int>                                    mDestroyBlocksTick;
-    ::ll::TypedStorage<4, 4, int>                                    mHealthThreshold;
-    ::ll::TypedStorage<4, 4, int>                                    mPhase;
-    ::ll::TypedStorage<1, 1, bool>                                   mWantsToExplode;
-    ::ll::TypedStorage<1, 1, bool>                                   mCharging;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                mChargeDirection;
-    ::ll::TypedStorage<4, 4, int>                                    mChargeFrames;
-    ::ll::TypedStorage<4, 4, int>                                    mPreparingCharge;
-    ::ll::TypedStorage<4, 4, int>                                    mProjectileCounter;
-    ::ll::TypedStorage<4, 4, int>                                    mSpawningFrames;
-    ::ll::TypedStorage<4, 4, int>                                    mTimeTillNextShot;
-    ::ll::TypedStorage<4, 4, int>                                    mFireRate;
-    ::ll::TypedStorage<4, 4, float>                                  mSpinSpeed;
-    ::ll::TypedStorage<4, 4, int>                                    mStunTimer;
-    ::ll::TypedStorage<4, 4, int>                                    mFramesTillMove;
-    ::ll::TypedStorage<1, 1, bool>                                   mWantsMove;
-    ::ll::TypedStorage<1, 1, bool>                                   mIsPathing;
-    ::ll::TypedStorage<4, 4, int>                                    mMaxHealth;
-    ::ll::TypedStorage<4, 4, int>                                    mNumSkeletons;
-    ::ll::TypedStorage<4, 4, int>                                    mMaxSkeletons;
-    ::ll::TypedStorage<4, 4, int>                                    mMovementTime;
-    ::ll::TypedStorage<4, 4, int>                                    mHealthIntervals;
-    ::ll::TypedStorage<4, 4, int>                                    mLastHealthValue;
-    ::ll::TypedStorage<4, 4, int>                                    mDelayShot;
-    ::ll::TypedStorage<4, 4, int>                                    mTimeSinceLastShot;
-    ::ll::TypedStorage<4, 4, float>                                  mAttackRange;
-    ::ll::TypedStorage<1, 1, bool>                                   mSecondVolley;
-    ::ll::TypedStorage<4, 4, int>                                    mMainHeadAttackCountdown;
+    ::ll::TypedStorage<4, 4, int> MAX_SHIELD_HEALTH;
+    ::ll::TypedStorage<4, 4, int> mShieldHealth;
+    ::ll::TypedStorage<4, 24, ::Vec2[3]> mHeadRots;
+    ::ll::TypedStorage<4, 24, ::Vec2[3]> mOldHeadRots;
+    ::ll::TypedStorage<4, 12, int[3]> mNextHeadUpdate;
+    ::ll::TypedStorage<4, 12, int[3]> mIdleHeadUpdates;
+    ::ll::TypedStorage<4, 4, int> mDestroyBlocksTick;
+    ::ll::TypedStorage<4, 4, int> mHealthThreshold;
+    ::ll::TypedStorage<4, 4, int> mPhase;
+    ::ll::TypedStorage<1, 1, bool> mWantsToExplode;
+    ::ll::TypedStorage<1, 1, bool> mCharging;
+    ::ll::TypedStorage<4, 12, ::Vec3> mChargeDirection;
+    ::ll::TypedStorage<4, 4, int> mChargeFrames;
+    ::ll::TypedStorage<4, 4, int> mPreparingCharge;
+    ::ll::TypedStorage<4, 4, int> mProjectileCounter;
+    ::ll::TypedStorage<4, 4, int> mSpawningFrames;
+    ::ll::TypedStorage<4, 4, int> mTimeTillNextShot;
+    ::ll::TypedStorage<4, 4, int> mFireRate;
+    ::ll::TypedStorage<4, 4, float> mSpinSpeed;
+    ::ll::TypedStorage<4, 4, int> mStunTimer;
+    ::ll::TypedStorage<4, 4, int> mFramesTillMove;
+    ::ll::TypedStorage<1, 1, bool> mWantsMove;
+    ::ll::TypedStorage<1, 1, bool> mIsPathing;
+    ::ll::TypedStorage<4, 4, int> mMaxHealth;
+    ::ll::TypedStorage<4, 4, int> mNumSkeletons;
+    ::ll::TypedStorage<4, 4, int> mMaxSkeletons;
+    ::ll::TypedStorage<4, 4, int> mMovementTime;
+    ::ll::TypedStorage<4, 4, int> mHealthIntervals;
+    ::ll::TypedStorage<4, 4, int> mLastHealthValue;
+    ::ll::TypedStorage<4, 4, int> mDelayShot;
+    ::ll::TypedStorage<4, 4, int> mTimeSinceLastShot;
+    ::ll::TypedStorage<4, 4, float> mAttackRange;
+    ::ll::TypedStorage<1, 1, bool> mSecondVolley;
+    ::ll::TypedStorage<4, 4, int> mMainHeadAttackCountdown;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorDamageSource>> mDeathSource;
-    ::ll::TypedStorage<4, 4, int>                                    mlastFiredHead;
+    ::ll::TypedStorage<4, 4, int> mlastFiredHead;
     // NOLINTEND
 
 public:
@@ -101,7 +101,7 @@ public:
     virtual bool canFreeze() const /*override*/;
 
     // vIndex: 105
-    virtual bool canBeAffected(uint effectId) const /*override*/;
+    virtual bool canBeAffected(uint id) const /*override*/;
 
     // vIndex: 106
     virtual bool canBeAffectedByArrow(::MobEffectInstance const& effect) const /*override*/;
@@ -131,7 +131,7 @@ public:
     virtual bool startRiding(::Actor& vehicle, bool forceRiding) /*override*/;
 
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 64
     virtual bool isInvulnerableTo(::ActorDamageSource const& source) const /*override*/;
@@ -152,19 +152,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WitherBoss(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI WitherBoss(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
-    MCAPI void _destroyBlocks(
-        ::Level&                       level,
-        ::AABB const&                  bb,
-        ::BlockSource&                 region,
-        int                            range,
-        ::WitherBoss::WitherAttackType attackType
-    );
+    MCAPI void _destroyBlocks(::Level& level, ::AABB const& bb, ::BlockSource& region, int range, ::WitherBoss::WitherAttackType attackType);
 
     MCAPI void _performRangedAttack(int headID, ::Actor& target);
 
@@ -196,11 +186,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -216,7 +202,7 @@ public:
 
     MCFOLD bool $canFreeze() const;
 
-    MCAPI bool $canBeAffected(uint effectId) const;
+    MCAPI bool $canBeAffected(uint id) const;
 
     MCAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
@@ -236,7 +222,7 @@ public:
 
     MCFOLD bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
@@ -252,4 +238,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -33,8 +33,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static float const& DEFAULT_DISTANCE_TO_PLAYERS();
+
+    MCNAPI static bool const& DEFAULT_NEVER_DESPAWN();
+
+    MCNAPI static uint const& DEFAULT_RADIUS();
+
     MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_100
+}

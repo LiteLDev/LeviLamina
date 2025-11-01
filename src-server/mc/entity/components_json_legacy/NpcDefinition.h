@@ -14,4 +14,5 @@ public:
     NpcDefinition& operator=(NpcDefinition const&);
     NpcDefinition(NpcDefinition const&);
     NpcDefinition();
+
 };

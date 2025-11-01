@@ -20,4 +20,5 @@ public:
     RetryDelay& operator=(RetryDelay const&);
     RetryDelay(RetryDelay const&);
     RetryDelay();
+
 };

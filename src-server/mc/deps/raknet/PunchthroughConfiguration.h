@@ -26,6 +26,7 @@ public:
     PunchthroughConfiguration& operator=(PunchthroughConfiguration const&);
     PunchthroughConfiguration(PunchthroughConfiguration const&);
     PunchthroughConfiguration();
+
 };
 
-} // namespace RakNet
+}

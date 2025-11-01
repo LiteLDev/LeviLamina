@@ -14,6 +14,7 @@ class ContentIdentity;
 class IContentKeyProvider;
 class PackAccessStrategy;
 class ResourceLocation;
+namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Core { class Path; }
 // clang-format on
 
@@ -22,7 +23,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk4c959c;
-    ::ll::UntypedStorage<8, 8>  mUnkbe582d;
+    ::ll::UntypedStorage<8, 8> mUnkbe582d;
     // NOLINTEND
 
 public:
@@ -41,11 +42,7 @@ public:
     virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
     // vIndex: 9
-    virtual void forEachIn(
-        ::Core::Path const&                        packRelativePath,
-        ::std::function<void(::Core::Path const&)> callback,
-        bool                                       recurseAnyways
-    ) const /*override*/;
+    virtual void forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool recurseAnyways) const /*override*/;
 
     // vIndex: 11
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
@@ -59,11 +56,14 @@ public:
     // vIndex: 14
     virtual ::std::unique_ptr<::PackAccessStrategy> createSubPack(::Core::Path const& subPath) const /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual ::std::string _getContentsFile() /*override*/;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual ::std::string _getEncryptedAssetStream(::Core::Path const& packRelativePath) const /*override*/;
+
+    // vIndex: 22
+    virtual ::std::vector<::Bedrock::Resources::PreloadedPathHandle> _preloadSubFolders(::Core::Path const& packRelativePath) const /*override*/;
 
     // vIndex: 0
     virtual ~ZippedEncryptedFilesAccessStrategy() /*override*/ = default;
@@ -72,25 +72,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ZippedEncryptedFilesAccessStrategy(
-        ::ResourceLocation const&                                         archiveLocation,
-        ::ContentIdentity const&                                          contentIdentity,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::Core::Path const&                                               subPath,
-        ::std::unique_ptr<::PackAccessStrategy>                           zipSubPack
-    );
+    MCNAPI ZippedEncryptedFilesAccessStrategy(::ResourceLocation const& archiveLocation, ::ContentIdentity const& contentIdentity, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider, ::Core::Path const& subPath, ::std::unique_ptr<::PackAccessStrategy> zipSubPack);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::ResourceLocation const&                                         archiveLocation,
-        ::ContentIdentity const&                                          contentIdentity,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
-        ::Core::Path const&                                               subPath,
-        ::std::unique_ptr<::PackAccessStrategy>                           zipSubPack
-    );
+    MCNAPI void* $ctor(::ResourceLocation const& archiveLocation, ::ContentIdentity const& contentIdentity, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider, ::Core::Path const& subPath, ::std::unique_ptr<::PackAccessStrategy> zipSubPack);
     // NOLINTEND
 
 public:
@@ -100,11 +88,7 @@ public:
 
     MCNAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
 
-    MCNAPI void $forEachIn(
-        ::Core::Path const&                        packRelativePath,
-        ::std::function<void(::Core::Path const&)> callback,
-        bool                                       recurseAnyways
-    ) const;
+    MCNAPI void $forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool recurseAnyways) const;
 
     MCNAPI ::PackAccessStrategyType $getStrategyType() const;
 
@@ -117,6 +101,8 @@ public:
     MCNAPI ::std::string $_getContentsFile();
 
     MCNAPI ::std::string $_getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
+
+    MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle> $_preloadSubFolders(::Core::Path const& packRelativePath) const;
     // NOLINTEND
 
 public:
@@ -124,4 +110,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

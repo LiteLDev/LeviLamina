@@ -10,4 +10,4 @@ MCAPI float const& BACKWARD_SPEED_MODIFIER();
 MCAPI float const& STRAFE_SPEED_MODIFIER();
 // NOLINTEND
 
-} // namespace FreeCameraControlled::Defaults
+}

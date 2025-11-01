@@ -9,11 +9,11 @@ class Int64Option : public ::Option {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk510608;
-    ::ll::UntypedStorage<8, 8>  mUnk29d63f;
-    ::ll::UntypedStorage<8, 8>  mUnkbcb0b8;
-    ::ll::UntypedStorage<8, 8>  mUnk9d0523;
-    ::ll::UntypedStorage<1, 1>  mUnkd62eb8;
+    ::ll::UntypedStorage<8, 8> mUnk510608;
+    ::ll::UntypedStorage<8, 8> mUnk29d63f;
+    ::ll::UntypedStorage<8, 8> mUnkbcb0b8;
+    ::ll::UntypedStorage<8, 8> mUnk9d0523;
+    ::ll::UntypedStorage<1, 1> mUnkd62eb8;
     ::ll::UntypedStorage<8, 24> mUnkb7d350;
     ::ll::UntypedStorage<8, 64> mUnk1830cd;
     // NOLINTEND
@@ -42,4 +42,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

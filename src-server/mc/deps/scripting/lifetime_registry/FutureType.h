@@ -4,6 +4,7 @@
 
 namespace Scripting {
 
-struct FutureType {};
+struct FutureType {
+};
 
-} // namespace Scripting
+}

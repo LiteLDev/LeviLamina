@@ -5,10 +5,10 @@
 namespace Editor {
 
 enum class LogLevel : uchar {
-    Info    = 0,
+    Info = 0,
     Warning = 1,
-    Error   = 2,
-    Debug   = 3,
+    Error = 2,
+    Debug = 3,
 };
 
 }

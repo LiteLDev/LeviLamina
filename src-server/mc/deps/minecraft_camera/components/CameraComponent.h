@@ -11,10 +11,10 @@ public:
     ::ll::UntypedStorage<8, 48> mUnkf8e177;
     ::ll::UntypedStorage<4, 16> mUnkf4021d;
     ::ll::UntypedStorage<4, 12> mUnk26a2d8;
-    ::ll::UntypedStorage<4, 4>  mUnkaf174f;
-    ::ll::UntypedStorage<4, 4>  mUnk506048;
-    ::ll::UntypedStorage<4, 4>  mUnk89eba8;
-    ::ll::UntypedStorage<4, 4>  mUnk235890;
+    ::ll::UntypedStorage<4, 4> mUnkaf174f;
+    ::ll::UntypedStorage<4, 4> mUnk506048;
+    ::ll::UntypedStorage<4, 4> mUnk89eba8;
+    ::ll::UntypedStorage<4, 4> mUnk235890;
     ::ll::UntypedStorage<4, 64> mUnk14898c;
     ::ll::UntypedStorage<4, 64> mUnk918a1b;
     ::ll::UntypedStorage<4, 64> mUnkaff809;
@@ -42,6 +42,7 @@ public:
 
     MCNAPI void* $ctor(::MinecraftCamera::CameraComponent const&);
     // NOLINTEND
+
 };
 
-} // namespace MinecraftCamera
+}

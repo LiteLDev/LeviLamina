@@ -23,7 +23,7 @@ public:
     // clang-format off
     struct RM3World;
     // clang-format on
-
+    
     // ReplicaManager3 inner types define
     struct RM3World {
     public:
@@ -31,29 +31,30 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk7d05cb;
         ::ll::UntypedStorage<8, 16> mUnk488ed8;
-        ::ll::UntypedStorage<1, 1>  mUnk276acd;
-        ::ll::UntypedStorage<8, 8>  mUnk897a58;
+        ::ll::UntypedStorage<1, 1> mUnk276acd;
+        ::ll::UntypedStorage<8, 8> mUnk897a58;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         RM3World& operator=(RM3World const&);
         RM3World(RM3World const&);
         RM3World();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 16>   mUnke2a442;
-    ::ll::UntypedStorage<8, 8>    mUnk5a07cb;
-    ::ll::UntypedStorage<8, 8>    mUnkd01707;
-    ::ll::UntypedStorage<1, 1>    mUnk1afc11;
-    ::ll::UntypedStorage<1, 1>    mUnk4cf2be;
-    ::ll::UntypedStorage<8, 8>    mUnk699238;
-    ::ll::UntypedStorage<4, 4>    mUnk96de56;
+    ::ll::UntypedStorage<4, 16> mUnke2a442;
+    ::ll::UntypedStorage<8, 8> mUnk5a07cb;
+    ::ll::UntypedStorage<8, 8> mUnkd01707;
+    ::ll::UntypedStorage<1, 1> mUnk1afc11;
+    ::ll::UntypedStorage<1, 1> mUnk4cf2be;
+    ::ll::UntypedStorage<8, 8> mUnk699238;
+    ::ll::UntypedStorage<4, 4> mUnk96de56;
     ::ll::UntypedStorage<8, 2040> mUnka1f83b;
-    ::ll::UntypedStorage<8, 16>   mUnkc236ed;
+    ::ll::UntypedStorage<8, 16> mUnkc236ed;
     // NOLINTEND
 
 public:
@@ -81,11 +82,7 @@ public:
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
     // vIndex: 7
-    virtual void OnClosedConnection(
-        ::RakNet::SystemAddress const&,
-        ::RakNet::RakNetGUID,
-        ::RakNet::PI2_LostConnectionReason
-    ) /*override*/;
+    virtual void OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason) /*override*/;
 
     // vIndex: 8
     virtual void OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool) /*override*/;
@@ -102,6 +99,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

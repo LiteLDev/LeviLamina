@@ -23,18 +23,7 @@ class NativeFunctionPayload : public ::Scripting::IPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::function<::Scripting::ResultAny(
-            ::Scripting::NativeRuntime&,
-            ::Scripting::ContextId,
-            ::Scripting::WeakLifetimeScope,
-            ::Scripting::ModuleBindingBundle const&,
-            ::Scripting::IDependencyLoader*,
-            ::Scripting::IPrinter*
-        )>>
-        mFunction;
+    ::ll::TypedStorage<8, 64, ::std::function<::Scripting::ResultAny(::Scripting::NativeRuntime&, ::Scripting::ContextId, ::Scripting::WeakLifetimeScope, ::Scripting::ModuleBindingBundle const&, ::Scripting::IDependencyLoader*, ::Scripting::IPrinter*)>> mFunction;
     // NOLINTEND
 
 public:
@@ -44,11 +33,7 @@ public:
     virtual ~NativeFunctionPayload() /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::ResultAny runOn(
-        ::Scripting::ContextId      contextId,
-        ::Scripting::NativeRuntime& runtime,
-        ::std::optional<::Scripting::Privilege>
-    ) /*override*/;
+    virtual ::Scripting::ResultAny runOn(::Scripting::ContextId contextId, ::Scripting::NativeRuntime& runtime, ::std::optional<::Scripting::Privilege>) /*override*/;
     // NOLINTEND
 
 public:
@@ -60,11 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::ResultAny $runOn(
-        ::Scripting::ContextId      contextId,
-        ::Scripting::NativeRuntime& runtime,
-        ::std::optional<::Scripting::Privilege>
-    );
+    MCAPI ::Scripting::ResultAny $runOn(::Scripting::ContextId contextId, ::Scripting::NativeRuntime& runtime, ::std::optional<::Scripting::Privilege>);
     // NOLINTEND
 
 public:
@@ -72,6 +53,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

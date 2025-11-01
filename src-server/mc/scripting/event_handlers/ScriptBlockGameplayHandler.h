@@ -19,22 +19,18 @@ namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
-class ScriptBlockGameplayHandler : public ::EventHandlerDispatcher<::BlockGameplayHandler>,
-                                   public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
+class ScriptBlockGameplayHandler : public ::EventHandlerDispatcher<::BlockGameplayHandler>, public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6
-    virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::ExplosionStartedEvent& explosionStartedEvent) /*override*/;
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ExplosionStartedEvent& explosionStartedEvent) /*override*/;
 
     // vIndex: 5
-    virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::BlockTryDestroyByPlayerEvent& eventData) /*override*/;
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::BlockTryDestroyByPlayerEvent& eventData) /*override*/;
 
     // vIndex: 8
-    virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::BlockTryPlaceByPlayerEvent const& eventData) /*override*/;
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::BlockTryPlaceByPlayerEvent const& eventData) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptBlockGameplayHandler() /*override*/ = default;
@@ -43,23 +39,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _handleBlockTryDestroyByPlayerEvent(
-        ::BlockTryDestroyByPlayerEvent&                                                   eventData,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
+    MCNAPI bool _handleBlockTryDestroyByPlayerEvent(::BlockTryDestroyByPlayerEvent& eventData, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle) const;
 
-    MCNAPI bool _handleBlockTryPlaceByPlayerEvent(
-        ::BlockTryPlaceByPlayerEvent const&                                               eventData,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
+    MCNAPI bool _handleBlockTryPlaceByPlayerEvent(::BlockTryPlaceByPlayerEvent const& eventData, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle) const;
 
-    MCNAPI bool _handleExplosionStartedEvent(
-        ::ExplosionStartedEvent&                                                          explosionStartedEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
+    MCNAPI bool _handleExplosionStartedEvent(::ExplosionStartedEvent& explosionStartedEvent, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle) const;
     // NOLINTEND
 
 public:
@@ -77,4 +61,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

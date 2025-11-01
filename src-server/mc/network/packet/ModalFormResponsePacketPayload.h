@@ -10,8 +10,8 @@ struct ModalFormResponsePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>                                     mFormId;
-    ::ll::TypedStorage<8, 24, ::std::optional<::Json::Value>>          mJSONResponse;
+    ::ll::TypedStorage<4, 4, uint> mFormId;
+    ::ll::TypedStorage<8, 24, ::std::optional<::Json::Value>> mJSONResponse;
     ::ll::TypedStorage<1, 2, ::std::optional<::ModalFormCancelReason>> mFormCancelReason;
     // NOLINTEND
 
@@ -26,4 +26,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

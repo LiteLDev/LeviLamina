@@ -18,8 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::Scripting::Result_deprecated<void>
-        _deleteWidget(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>) = 0;
+    virtual ::Scripting::Result_deprecated<void> _deleteWidget(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>) = 0;
     // NOLINTEND
 
 public:
@@ -27,6 +26,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

@@ -44,6 +44,7 @@ public:
 
     MCNAPI void* $ctor(::webrtc::RtpPacketToSend const& packet_to_send);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

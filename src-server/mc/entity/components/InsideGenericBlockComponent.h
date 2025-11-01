@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/phys/AABB.h"
+#include "mc/versionless/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -15,9 +15,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::InsideBlockData>> mData;
-    ::ll::TypedStorage<4, 28, ::std::optional<::AABB>>          mSubstituteAABB;
-    ::ll::TypedStorage<4, 4, float>                             mGrow;
-    ::ll::TypedStorage<1, 1, bool>                              mHasChunks;
+    ::ll::TypedStorage<4, 28, ::std::optional<::AABB>> mSubstituteAABB;
+    ::ll::TypedStorage<4, 4, float> mGrow;
+    ::ll::TypedStorage<1, 1, bool> mHasChunks;
     // NOLINTEND
 
 public:
@@ -31,4 +31,5 @@ public:
     // NOLINTBEGIN
     MCAPI ::InsideGenericBlockComponent& operator=(::InsideGenericBlockComponent&&);
     // NOLINTEND
+
 };

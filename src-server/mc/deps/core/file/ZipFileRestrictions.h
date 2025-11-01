@@ -29,6 +29,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool allowFile(::Core::PathView file) const;
     // NOLINTEND
+
 };
 
-} // namespace Core::ZipUtils
+}

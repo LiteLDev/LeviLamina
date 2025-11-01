@@ -5,7 +5,7 @@
 namespace Crypto::Asymmetric {
 
 enum class Padding : int {
-    Pkcs1     = 0,
+    Pkcs1 = 0,
     Pkcs1Oaep = 1,
 };
 

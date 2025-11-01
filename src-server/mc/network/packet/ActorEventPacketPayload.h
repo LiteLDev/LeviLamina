@@ -11,7 +11,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
-    ::ll::TypedStorage<1, 1, ::ActorEvent>     mEventId;
-    ::ll::TypedStorage<4, 4, int>              mData;
+    ::ll::TypedStorage<1, 1, ::ActorEvent> mEventId;
+    ::ll::TypedStorage<4, 4, int> mData;
     // NOLINTEND
+
 };

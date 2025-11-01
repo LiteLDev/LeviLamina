@@ -5,8 +5,8 @@
 namespace webrtc {
 
 enum class RtxMode : int {
-    KRtxOff               = 0,
-    KRtxRetransmitted     = 1,
+    KRtxOff = 0,
+    KRtxRetransmitted = 1,
     KRtxRedundantPayloads = 2,
 };
 

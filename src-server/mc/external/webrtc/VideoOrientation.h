@@ -13,6 +13,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool Write(::rtc::ArrayView<uchar> data, ::webrtc::VideoRotation rotation);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

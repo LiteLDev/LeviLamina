@@ -5,7 +5,7 @@
 namespace EntityGoalUtility {
 
 enum class AddRangeNodeFlags : uchar {
-    None                = 0,
+    None = 0,
     AllowNegativeValues = 1,
 };
 

@@ -27,19 +27,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool previousSchema(
-        ::rapidjson::
-            GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
-    ) const /*override*/;
+    virtual bool previousSchema(::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&) const /*override*/;
 
     // vIndex: 2
-    virtual void upgradeToNext(
-        ::rapidjson::GenericDocument<
-            ::rapidjson::UTF8<char>,
-            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-            ::rapidjson::CrtAllocator>& document,
-        ::SemVersion const&             documentOriginalVersion
-    ) const /*override*/;
+    virtual void upgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>& document, ::SemVersion const& documentOriginalVersion) const /*override*/;
 
     // vIndex: 0
     virtual ~CerealSchemaDeprecate() /*override*/ = default;
@@ -48,35 +39,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CerealSchemaDeprecate(
-        ::SemVersion         deprecateVersion,
-        ::std::string const& schemaKey,
-        ::std::string const& jsonMemberName
-    );
+    MCNAPI CerealSchemaDeprecate(::SemVersion deprecateVersion, ::std::string const& schemaKey, ::std::string const& jsonMemberName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::SemVersion deprecateVersion, ::std::string const& schemaKey, ::std::string const& jsonMemberName);
+    MCNAPI void* $ctor(::SemVersion deprecateVersion, ::std::string const& schemaKey, ::std::string const& jsonMemberName);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $previousSchema(
-        ::rapidjson::
-            GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&
-    ) const;
+    MCNAPI bool $previousSchema(::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const&) const;
 
-    MCNAPI void $upgradeToNext(
-        ::rapidjson::GenericDocument<
-            ::rapidjson::UTF8<char>,
-            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
-            ::rapidjson::CrtAllocator>& document,
-        ::SemVersion const&             documentOriginalVersion
-    ) const;
+    MCNAPI void $upgradeToNext(::rapidjson::GenericDocument<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>, ::rapidjson::CrtAllocator>& document, ::SemVersion const& documentOriginalVersion) const;
     // NOLINTEND
 
 public:
@@ -84,4 +61,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

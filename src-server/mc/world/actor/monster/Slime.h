@@ -23,18 +23,18 @@ class Slime : public ::Monster {
 public:
     // Slime inner types define
     enum class ClientEvent : schar {
-        None       = 0,
+        None = 0,
         JustLanded = 1,
         JustJumped = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>          mTargetSquish;
+    ::ll::TypedStorage<4, 4, float> mTargetSquish;
     ::ll::TypedStorage<4, 4, ::ParticleType> mParticleType;
-    ::ll::TypedStorage<4, 4, float>          mSquish;
-    ::ll::TypedStorage<4, 4, float>          mOldSquish;
+    ::ll::TypedStorage<4, 4, float> mSquish;
+    ::ll::TypedStorage<4, 4, float> mOldSquish;
     // NOLINTEND
 
 public:
@@ -87,11 +87,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Slime(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI Slime(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCFOLD int getSlimeSize() const;
 
@@ -107,11 +103,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -153,4 +145,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

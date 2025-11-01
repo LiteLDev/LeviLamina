@@ -26,7 +26,7 @@ public:
     ::ll::UntypedStorage<8, 48> mUnkf8514d;
     ::ll::UntypedStorage<8, 48> mUnk98c54b;
     ::ll::UntypedStorage<8, 48> mUnkb94f82;
-    ::ll::UntypedStorage<1, 1>  mUnk7e10bf;
+    ::ll::UntypedStorage<1, 1> mUnk7e10bf;
     ::ll::UntypedStorage<8, 32> mUnkab850a;
     ::ll::UntypedStorage<8, 32> mUnkf1b4ec;
     // NOLINTEND
@@ -78,12 +78,9 @@ public:
 
     MCNAPI PacketTransportInternal();
 
-    MCNAPI void RegisterReceivedPacketCallback(
-        void*                                                                                     id,
-        ::absl::AnyInvocable<void(::rtc::PacketTransportInternal*, ::rtc::ReceivedPacket const&)> callback
-    );
+    MCNAPI void RegisterReceivedPacketCallback(void* id, ::absl::AnyInvocable<void(::rtc::PacketTransportInternal*, ::rtc::ReceivedPacket const&)> callback);
 
-    MCNAPI void SetOnCloseCallback(::absl::AnyInvocable<void() &&> callback);
+    MCNAPI void SetOnCloseCallback(::absl::AnyInvocable<void()&&> callback);
     // NOLINTEND
 
 public:
@@ -111,6 +108,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

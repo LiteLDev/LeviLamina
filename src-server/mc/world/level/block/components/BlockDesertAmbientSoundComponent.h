@@ -14,4 +14,5 @@ public:
     // NOLINTBEGIN
     MCAPI static bool canPlaySound(::BlockSource const& region, ::BlockPos const& pos);
     // NOLINTEND
+
 };

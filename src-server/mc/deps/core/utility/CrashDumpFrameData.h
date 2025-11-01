@@ -31,4 +31,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::add_lvalue_reference_t<::CrashDumpFormatEntryImpl const[]> kFormat();
     // NOLINTEND
+
 };

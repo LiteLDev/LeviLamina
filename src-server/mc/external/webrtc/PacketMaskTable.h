@@ -11,7 +11,7 @@ class PacketMaskTable {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk581c3c;
+    ::ll::UntypedStorage<8, 8> mUnk581c3c;
     ::ll::UntypedStorage<1, 288> mUnkfa290d;
     // NOLINTEND
 
@@ -48,6 +48,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc::internal
+}

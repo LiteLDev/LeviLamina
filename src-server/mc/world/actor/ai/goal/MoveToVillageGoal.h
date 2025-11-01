@@ -17,7 +17,7 @@ class MoveToVillageGoal : public ::BaseMoveToGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>  mVillageSearchRangeBlocks;
+    ::ll::TypedStorage<4, 4, int> mVillageSearchRangeBlocks;
     ::ll::TypedStorage<1, 1, bool> mReachedVillage;
     // NOLINTEND
 
@@ -95,4 +95,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

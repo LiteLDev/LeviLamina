@@ -12,10 +12,10 @@ class MediaStreamTrackInterface : public ::webrtc::RefCountInterface, public ::w
 public:
     // MediaStreamTrackInterface inner types define
     enum class TrackState : int {
-        KLive  = 0,
+        KLive = 0,
         KEnded = 1,
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -51,6 +51,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

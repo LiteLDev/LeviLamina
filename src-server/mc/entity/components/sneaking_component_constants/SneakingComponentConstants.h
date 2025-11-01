@@ -15,4 +15,4 @@ MCAPI ::SneakingComponentConstants::SneakingInfo const& SNEAK_V1();
 MCAPI ::SneakingComponentConstants::SneakingInfo const& SNEAK_V2();
 // NOLINTEND
 
-} // namespace SneakingComponentConstants
+}

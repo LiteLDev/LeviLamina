@@ -70,6 +70,7 @@ public:
 
     MCNAPI ::webrtc::MediaStreamTrackInterface* $FindVideoTrack(::std::string const& id);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

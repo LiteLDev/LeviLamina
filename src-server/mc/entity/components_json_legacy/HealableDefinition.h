@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk583cd0;
-    ::ll::UntypedStorage<1, 1>  mUnk60fbdc;
+    ::ll::UntypedStorage<1, 1> mUnk60fbdc;
     ::ll::UntypedStorage<8, 64> mUnkf91ef7;
     // NOLINTEND
 
@@ -37,8 +37,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::HealableDefinition>>& root
-    );
+    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::HealableDefinition>>& root);
     // NOLINTEND
+
 };

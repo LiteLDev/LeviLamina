@@ -4,6 +4,7 @@
 
 namespace MSGraph::Models {
 
-struct DriveItem {};
+struct DriveItem {
+};
 
-} // namespace MSGraph::Models
+}

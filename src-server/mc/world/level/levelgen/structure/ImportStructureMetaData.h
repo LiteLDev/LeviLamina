@@ -14,8 +14,8 @@ struct ImportStructureMetaData : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                                             mIsDirty;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, bool>>                       mNewStructuresDirty;
+    ::ll::TypedStorage<1, 1, bool> mIsDirty;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, bool>> mNewStructuresDirty;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::StructureTemplate const*>> mNewStructureTemplates;
     // NOLINTEND
 
@@ -31,4 +31,5 @@ public:
     // NOLINTBEGIN
     MCAPI ::StructureTemplate const* getStructure(::std::string const& name);
     // NOLINTEND
+
 };

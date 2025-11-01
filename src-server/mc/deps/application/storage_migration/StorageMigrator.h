@@ -20,26 +20,27 @@ public:
     // clang-format off
     class MigrationProgress;
     // clang-format on
-
+    
     // StorageMigrator inner types define
     class MigrationProgress {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnkdd4c51;
-        ::ll::UntypedStorage<4, 4>  mUnk43a903;
-        ::ll::UntypedStorage<4, 4>  mUnk1ca0e6;
+        ::ll::UntypedStorage<4, 4> mUnkdd4c51;
+        ::ll::UntypedStorage<4, 4> mUnk43a903;
+        ::ll::UntypedStorage<4, 4> mUnk1ca0e6;
         ::ll::UntypedStorage<8, 32> mUnk7978a9;
         ::ll::UntypedStorage<8, 32> mUnk61d1d0;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         MigrationProgress& operator=(MigrationProgress const&);
         MigrationProgress(MigrationProgress const&);
         MigrationProgress();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -50,12 +51,7 @@ public:
     virtual bool doQuickCompletionCheck() = 0;
 
     // vIndex: 2
-    virtual void _runMigration(
-        ::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>,
-        ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>,
-        ::std::function<void(::Bedrock::StorageMigration::StorageMigrator::MigrationProgress)>,
-        ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>
-    ) const = 0;
+    virtual void _runMigration(::std::shared_ptr<::Bedrock::StorageMigration::ManifestData>, ::std::shared_ptr<::Bedrock::StorageMigration::FoundFiles>, ::std::function<void(::Bedrock::StorageMigration::StorageMigrator::MigrationProgress)>, ::std::function<void(::Bedrock::StorageMigration::MigrationResult)>) const = 0;
     // NOLINTEND
 
 public:
@@ -63,6 +59,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::StorageMigration
+}

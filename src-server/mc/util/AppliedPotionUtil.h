@@ -13,4 +13,4 @@ namespace AppliedPotionUtil {
 MCNAPI bool canHaveAppliedPotion(::ItemStackBase const& item);
 // NOLINTEND
 
-} // namespace AppliedPotionUtil
+}

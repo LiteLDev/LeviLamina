@@ -37,22 +37,10 @@ public:
     virtual ::webrtc::scoped_refptr<::webrtc::AudioState> GetAudioState() const = 0;
 
     // vIndex: 4
-    virtual ::std::unique_ptr<::cricket::VoiceMediaSendChannelInterface> CreateSendChannel(
-        ::webrtc::Call*,
-        ::cricket::MediaConfig const&,
-        ::cricket::AudioOptions const&,
-        ::webrtc::CryptoOptions const&,
-        ::webrtc::AudioCodecPairId
-    );
+    virtual ::std::unique_ptr<::cricket::VoiceMediaSendChannelInterface> CreateSendChannel(::webrtc::Call*, ::cricket::MediaConfig const&, ::cricket::AudioOptions const&, ::webrtc::CryptoOptions const&, ::webrtc::AudioCodecPairId);
 
     // vIndex: 5
-    virtual ::std::unique_ptr<::cricket::VoiceMediaReceiveChannelInterface> CreateReceiveChannel(
-        ::webrtc::Call*,
-        ::cricket::MediaConfig const&,
-        ::cricket::AudioOptions const&,
-        ::webrtc::CryptoOptions const&,
-        ::webrtc::AudioCodecPairId
-    );
+    virtual ::std::unique_ptr<::cricket::VoiceMediaReceiveChannelInterface> CreateReceiveChannel(::webrtc::Call*, ::cricket::MediaConfig const&, ::cricket::AudioOptions const&, ::webrtc::CryptoOptions const&, ::webrtc::AudioCodecPairId);
 
     // vIndex: 6
     virtual ::std::vector<::cricket::Codec> const& send_codecs() const = 0;
@@ -75,6 +63,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

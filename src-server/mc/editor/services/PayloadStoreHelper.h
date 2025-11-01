@@ -8,7 +8,7 @@ class PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc52f22;
+    ::ll::UntypedStorage<8, 8> mUnkc52f22;
     ::ll::UntypedStorage<8, 24> mUnk47c2ce;
     // NOLINTEND
 
@@ -29,6 +29,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

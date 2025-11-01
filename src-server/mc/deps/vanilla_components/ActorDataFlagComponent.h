@@ -20,4 +20,5 @@ public:
 
     MCAPI static ::std::bitset<126> const& ALL_LOWER_ONES();
     // NOLINTEND
+
 };

@@ -17,6 +17,7 @@ public:
     ObjectID& operator=(ObjectID const&);
     ObjectID(ObjectID const&);
     ObjectID();
+
 };
 
-} // namespace glTF
+}

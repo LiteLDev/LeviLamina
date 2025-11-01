@@ -48,78 +48,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptItemEnchantmentComponent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
+    MCNAPI ScriptItemEnchantmentComponent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCNAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError,
-        ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError,
-        ::ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError,
-        ::Scripting::Error>
-    addEnchantment(::ScriptModuleMinecraft::ScriptItemEnchantmentInstance const& inst);
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError, ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError, ::ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError, ::Scripting::Error> addEnchantment(::ScriptModuleMinecraft::ScriptItemEnchantmentInstance const& inst);
 
-    MCNAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError,
-        ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError,
-        ::ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError,
-        ::Scripting::Error>
-    addEnchantments(::std::vector<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance> const& enchants);
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError, ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError, ::ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError, ::Scripting::Error> addEnchantments(::std::vector<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance> const& enchants);
 
-    MCNAPI ::Scripting::Result<
-        bool,
-        ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError,
-        ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError>
-    canAddEnchantment(::ScriptModuleMinecraft::ScriptItemEnchantmentInstance const& inst);
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError, ::ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError> canAddEnchantment(::ScriptModuleMinecraft::ScriptItemEnchantmentInstance const& inst);
 
-    MCNAPI ::Scripting::Result<
-        ::std::optional<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance>,
-        ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError>
-    getEnchantment(
-        ::Scripting::WeakLifetimeScope& scope,
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
-            ::std::string> enchantmentTypeOrId
-    );
+    MCNAPI ::Scripting::Result<::std::optional<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance>, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError> getEnchantment(::Scripting::WeakLifetimeScope& scope, ::std::variant<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>, ::std::string> enchantmentTypeOrId);
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance>>
-    getEnchantments(::Scripting::WeakLifetimeScope& scope) const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::ScriptModuleMinecraft::ScriptItemEnchantmentInstance>> getEnchantments(::Scripting::WeakLifetimeScope& scope) const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::vector<::Enchant::Slot>> getSlots() const;
 
-    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError> hasEnchantment(
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
-            ::std::string> enchantmentTypeOrId
-    ) const;
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError> hasEnchantment(::std::variant<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>, ::std::string> enchantmentTypeOrId) const;
 
     MCNAPI ::Scripting::Result_deprecated<void> removeAllEnchantments();
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError, ::Scripting::Error>
-    removeEnchantment(
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>,
-            ::std::string> enchantmentTypeOrId
-    );
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError, ::Scripting::Error> removeEnchantment(::std::variant<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemEnchantmentType>, ::std::string> enchantmentTypeOrId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
+    MCNAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -127,6 +86,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

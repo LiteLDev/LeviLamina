@@ -4,7 +4,8 @@
 
 namespace brstd {
 
-template <typename T0, typename T1>
-class function_ref {};
+template<typename T0, typename T1>
+class function_ref {
+};
 
-} // namespace brstd
+}

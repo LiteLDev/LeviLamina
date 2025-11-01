@@ -15,35 +15,36 @@ public:
     // clang-format off
     struct State;
     // clang-format on
-
+    
     // JSONCppSchemaReaderBase inner types define
     struct State {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnke8c05a;
+        ::ll::UntypedStorage<8, 8> mUnke8c05a;
         ::ll::UntypedStorage<8, 16> mUnka2d671;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         State& operator=(State const&);
         State(State const&);
         State();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~State();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -103,7 +104,7 @@ public:
     virtual ::Bedrock::Result<double> asDouble() /*override*/;
 
     // vIndex: 15
-    virtual ::Bedrock::Result<::std::string> asString() /*override*/;
+    virtual ::Bedrock::Result<::std::string> asString(uint64 maxInputLength) /*override*/;
 
     // vIndex: 16
     virtual ::std::optional<bool> readValidityFlag() /*override*/;
@@ -203,7 +204,7 @@ public:
 
     MCNAPI ::Bedrock::Result<double> $asDouble();
 
-    MCNAPI ::Bedrock::Result<::std::string> $asString();
+    MCNAPI ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
 
     MCNAPI ::std::optional<bool> $readValidityFlag();
 
@@ -227,6 +228,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cereal
+}

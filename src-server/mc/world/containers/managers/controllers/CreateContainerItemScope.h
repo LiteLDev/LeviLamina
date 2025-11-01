@@ -15,8 +15,9 @@ struct CreateContainerItemScope {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::SlotData const* const>                   mSrcSlot;
+    ::ll::TypedStorage<8, 8, ::SlotData const* const> mSrcSlot;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ContainerController>> mCreatedItemContainerController;
-    ::ll::TypedStorage<8, 16, ::ItemStackRequestScope>                  mItemStackRequestScope;
+    ::ll::TypedStorage<8, 16, ::ItemStackRequestScope> mItemStackRequestScope;
     // NOLINTEND
+
 };

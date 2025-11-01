@@ -5,8 +5,8 @@
 namespace BlockBreadthFirst {
 
 enum class Result : uchar {
-    Ignore               = 0,
-    ProvideMore          = 1,
+    Ignore = 0,
+    ProvideMore = 1,
     ProcessedProvideMore = 2,
 };
 

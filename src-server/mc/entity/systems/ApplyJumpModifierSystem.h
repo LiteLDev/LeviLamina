@@ -26,15 +26,9 @@ struct ApplyJumpModifierSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickApplyJumpModifierSystem(
-        ::StrictEntityContext const&,
-        ::TriggerJumpRequestComponent const& triggerJumpRequestComponent,
-        ::ActorRotationComponent const&      actorRotationComponent,
-        ::MovementAttributesComponent const& attributesComponent,
-        ::MobEffectsComponent const&         mobEffectsComponent,
-        ::MobTravelComponent const&          mobTravelComponent,
-        ::JumpPendingScaleComponent&         jumpPendingScaleComponent,
-        ::StateVectorComponent&              stateVectorComponent
-    );
+    MCNAPI static void _tickApplyJumpModifierSystem(::ViewT<::StrictEntityContext, ::Include<::OnGroundFlagComponent, ::PowerJumpFlagComponent>, ::Exclude<::MobIsJumpingFlagComponent>, ::TriggerJumpRequestComponent const, ::ActorRotationComponent const, ::MovementAttributesComponent const, ::MobEffectsComponent const, ::MobTravelComponent const, ::JumpPendingScaleComponent, ::StateVectorComponent> view);
+
+    MCNAPI static void tickApplyJumpModifierSystem(::StrictEntityContext const&, ::TriggerJumpRequestComponent const& triggerJumpRequestComponent, ::ActorRotationComponent const& actorRotationComponent, ::MovementAttributesComponent const& attributesComponent, ::MobEffectsComponent const& mobEffectsComponent, ::MobTravelComponent const& mobTravelComponent, ::JumpPendingScaleComponent& jumpPendingScaleComponent, ::StateVectorComponent& stateVectorComponent);
     // NOLINTEND
+
 };

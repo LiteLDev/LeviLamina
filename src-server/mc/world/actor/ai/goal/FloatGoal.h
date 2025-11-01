@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<1, 1, bool>   mSinkWithPassengers;
+    ::ll::TypedStorage<1, 1, bool> mSinkWithPassengers;
     // NOLINTEND
 
 public:
@@ -55,4 +55,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

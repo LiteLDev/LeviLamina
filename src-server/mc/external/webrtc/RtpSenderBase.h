@@ -31,7 +31,7 @@ public:
     // clang-format off
     class SetStreamsObserver;
     // clang-format on
-
+    
     // RtpSenderBase inner types define
     class SetStreamsObserver {
     public:
@@ -39,40 +39,41 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~SetStreamsObserver() = default;
-
+    
         // vIndex: 1
         virtual void OnSetStreams() = 0;
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
-
+    
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkcfb04f;
-    ::ll::UntypedStorage<8, 8>   mUnk4f7245;
-    ::ll::UntypedStorage<4, 4>   mUnka71bc1;
-    ::ll::UntypedStorage<1, 1>   mUnk3a48da;
-    ::ll::UntypedStorage<1, 1>   mUnk6b9467;
-    ::ll::UntypedStorage<4, 4>   mUnkec7d87;
-    ::ll::UntypedStorage<8, 32>  mUnkeeca2f;
-    ::ll::UntypedStorage<8, 24>  mUnkb1c1d7;
+    ::ll::UntypedStorage<8, 8> mUnkcfb04f;
+    ::ll::UntypedStorage<8, 8> mUnk4f7245;
+    ::ll::UntypedStorage<4, 4> mUnka71bc1;
+    ::ll::UntypedStorage<1, 1> mUnk3a48da;
+    ::ll::UntypedStorage<1, 1> mUnk6b9467;
+    ::ll::UntypedStorage<4, 4> mUnkec7d87;
+    ::ll::UntypedStorage<8, 32> mUnkeeca2f;
+    ::ll::UntypedStorage<8, 24> mUnkb1c1d7;
     ::ll::UntypedStorage<8, 192> mUnkd68b10;
-    ::ll::UntypedStorage<8, 24>  mUnk871216;
-    ::ll::UntypedStorage<8, 8>   mUnk1a7b11;
-    ::ll::UntypedStorage<8, 8>   mUnkffabe7;
-    ::ll::UntypedStorage<8, 8>   mUnk92bc60;
-    ::ll::UntypedStorage<8, 8>   mUnke1b367;
-    ::ll::UntypedStorage<8, 40>  mUnk2e12f7;
-    ::ll::UntypedStorage<8, 24>  mUnk403096;
-    ::ll::UntypedStorage<8, 8>   mUnk7d6a99;
-    ::ll::UntypedStorage<8, 8>   mUnk3e58b8;
-    ::ll::UntypedStorage<8, 8>   mUnk22488a;
+    ::ll::UntypedStorage<8, 24> mUnk871216;
+    ::ll::UntypedStorage<8, 8> mUnk1a7b11;
+    ::ll::UntypedStorage<8, 8> mUnkffabe7;
+    ::ll::UntypedStorage<8, 8> mUnk92bc60;
+    ::ll::UntypedStorage<8, 8> mUnke1b367;
+    ::ll::UntypedStorage<8, 40> mUnk2e12f7;
+    ::ll::UntypedStorage<8, 24> mUnk403096;
+    ::ll::UntypedStorage<8, 8> mUnk7d6a99;
+    ::ll::UntypedStorage<8, 8> mUnk3e58b8;
+    ::ll::UntypedStorage<8, 8> mUnk22488a;
     // NOLINTEND
 
 public:
@@ -100,20 +101,13 @@ public:
     virtual ::webrtc::RTCError SetParameters(::webrtc::RtpParameters const& parameters) /*override*/;
 
     // vIndex: 14
-    virtual void SetParametersAsync(
-        ::webrtc::RtpParameters const&                    parameters,
-        ::absl::AnyInvocable<void(::webrtc::RTCError) &&> callback
-    ) /*override*/;
+    virtual void SetParametersAsync(::webrtc::RtpParameters const& parameters, ::absl::AnyInvocable<void(::webrtc::RTCError)&&> callback) /*override*/;
 
     // vIndex: 26
     virtual ::webrtc::RtpParameters GetParametersInternal() const /*override*/;
 
     // vIndex: 27
-    virtual void SetParametersInternal(
-        ::webrtc::RtpParameters const&                    parameters,
-        ::absl::AnyInvocable<void(::webrtc::RTCError) &&> callback,
-        bool                                              blocking
-    ) /*override*/;
+    virtual void SetParametersInternal(::webrtc::RtpParameters const& parameters, ::absl::AnyInvocable<void(::webrtc::RTCError)&&> callback, bool blocking) /*override*/;
 
     // vIndex: 30
     virtual ::webrtc::RTCError CheckCodecParameters(::webrtc::RtpParameters const& parameters) /*override*/;
@@ -122,8 +116,7 @@ public:
     virtual ::webrtc::RtpParameters GetParametersInternalWithAllLayers() const /*override*/;
 
     // vIndex: 29
-    virtual ::webrtc::RTCError
-    SetParametersInternalWithAllLayers(::webrtc::RtpParameters const& parameters) /*override*/;
+    virtual ::webrtc::RTCError SetParametersInternalWithAllLayers(::webrtc::RtpParameters const& parameters) /*override*/;
 
     // vIndex: 21
     virtual void SetSsrc(uint ssrc) /*override*/;
@@ -144,8 +137,7 @@ public:
     virtual ::std::string id() const /*override*/;
 
     // vIndex: 23
-    virtual void
-    set_init_send_encodings(::std::vector<::webrtc::RtpEncodingParameters> const& init_send_encodings) /*override*/;
+    virtual void set_init_send_encodings(::std::vector<::webrtc::RtpEncodingParameters> const& init_send_encodings) /*override*/;
 
     // vIndex: 11
     virtual ::std::vector<::webrtc::RtpEncodingParameters> init_send_encodings() const /*override*/;
@@ -157,8 +149,7 @@ public:
     virtual ::webrtc::scoped_refptr<::webrtc::DtlsTransportInterface> dtls_transport() const /*override*/;
 
     // vIndex: 16
-    virtual void
-    SetFrameEncryptor(::webrtc::scoped_refptr<::webrtc::FrameEncryptorInterface> frame_encryptor) /*override*/;
+    virtual void SetFrameEncryptor(::webrtc::scoped_refptr<::webrtc::FrameEncryptorInterface> frame_encryptor) /*override*/;
 
     // vIndex: 17
     virtual ::webrtc::scoped_refptr<::webrtc::FrameEncryptorInterface> GetFrameEncryptor() const /*override*/;
@@ -173,14 +164,10 @@ public:
     virtual ::webrtc::RTCError DisableEncodingLayers(::std::vector<::std::string> const& rids) /*override*/;
 
     // vIndex: 18
-    virtual void SetEncoderToPacketizerFrameTransformer(
-        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
-    ) /*override*/;
+    virtual void SetEncoderToPacketizerFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer) /*override*/;
 
     // vIndex: 19
-    virtual void SetEncoderSelector(
-        ::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> encoder_selector
-    ) /*override*/;
+    virtual void SetEncoderSelector(::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> encoder_selector) /*override*/;
 
     // vIndex: 33
     virtual void SetTransceiverAsStopped() /*override*/;
@@ -221,11 +208,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::webrtc::RTCError CheckSetParameters(::webrtc::RtpParameters const& parameters);
 
-    MCNAPI RtpSenderBase(
-        ::rtc::Thread*                               worker_thread,
-        ::std::string const&                         id,
-        ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer
-    );
+    MCNAPI RtpSenderBase(::rtc::Thread* worker_thread, ::std::string const& id, ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer);
 
     MCNAPI void SetEncoderSelectorOnChannel();
     // NOLINTEND
@@ -233,11 +216,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::rtc::Thread*                               worker_thread,
-        ::std::string const&                         id,
-        ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer
-    );
+    MCNAPI void* $ctor(::rtc::Thread* worker_thread, ::std::string const& id, ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer);
     // NOLINTEND
 
 public:
@@ -259,18 +238,11 @@ public:
 
     MCNAPI ::webrtc::RTCError $SetParameters(::webrtc::RtpParameters const& parameters);
 
-    MCNAPI void $SetParametersAsync(
-        ::webrtc::RtpParameters const&                    parameters,
-        ::absl::AnyInvocable<void(::webrtc::RTCError) &&> callback
-    );
+    MCNAPI void $SetParametersAsync(::webrtc::RtpParameters const& parameters, ::absl::AnyInvocable<void(::webrtc::RTCError)&&> callback);
 
     MCNAPI ::webrtc::RtpParameters $GetParametersInternal() const;
 
-    MCNAPI void $SetParametersInternal(
-        ::webrtc::RtpParameters const&                    parameters,
-        ::absl::AnyInvocable<void(::webrtc::RTCError) &&> callback,
-        bool                                              blocking
-    );
+    MCNAPI void $SetParametersInternal(::webrtc::RtpParameters const& parameters, ::absl::AnyInvocable<void(::webrtc::RTCError)&&> callback, bool blocking);
 
     MCNAPI ::webrtc::RTCError $CheckCodecParameters(::webrtc::RtpParameters const& parameters);
 
@@ -308,12 +280,9 @@ public:
 
     MCNAPI ::webrtc::RTCError $DisableEncodingLayers(::std::vector<::std::string> const& rids);
 
-    MCNAPI void $SetEncoderToPacketizerFrameTransformer(
-        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer
-    );
+    MCNAPI void $SetEncoderToPacketizerFrameTransformer(::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer);
 
-    MCNAPI void
-    $SetEncoderSelector(::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> encoder_selector);
+    MCNAPI void $SetEncoderSelector(::std::unique_ptr<::webrtc::VideoEncoderFactory::EncoderSelectorInterface> encoder_selector);
 
     MCNAPI void $SetTransceiverAsStopped();
 
@@ -335,6 +304,7 @@ public:
 
     MCNAPI static void** $vftableForObserverInterface();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

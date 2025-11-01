@@ -8,8 +8,8 @@ struct QueueItem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnkd8f0ed;
-    ::ll::UntypedStorage<4, 4>   mUnk9fed68;
+    ::ll::UntypedStorage<8, 32> mUnkd8f0ed;
+    ::ll::UntypedStorage<4, 4> mUnk9fed68;
     ::ll::UntypedStorage<8, 168> mUnk919642;
     // NOLINTEND
 
@@ -38,6 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace AgentComponents::Actions
+}

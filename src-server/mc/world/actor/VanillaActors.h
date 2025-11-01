@@ -14,4 +14,4 @@ namespace VanillaActors {
 MCNAPI void registerVanillaActorData(::BaseGameVersion const& version, ::Experiments const& experiments);
 // NOLINTEND
 
-} // namespace VanillaActors
+}

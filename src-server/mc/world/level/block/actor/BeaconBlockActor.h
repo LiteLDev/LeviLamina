@@ -29,24 +29,24 @@ class BeaconBlockActor : public ::BlockActor, public ::Container {
 public:
     // BeaconBlockActor inner types define
     using BeaconBeamSections = ::std::vector<::BeaconBeamSection>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::BeaconBeamSection>>         mBeamSections;
-    ::ll::TypedStorage<4, 4, float>                                       mBeamRot;
-    ::ll::TypedStorage<4, 4, int>                                         mNumLevels;
-    ::ll::TypedStorage<4, 4, int>                                         mNumLevelsSet;
-    ::ll::TypedStorage<4, 4, int>                                         mBlockRefreshCounter;
-    ::ll::TypedStorage<4, 4, int>                                         mPrimaryEffectId;
-    ::ll::TypedStorage<4, 4, int>                                         mSecondaryEffectId;
-    ::ll::TypedStorage<4, 4, int>                                         mPrimaryEffectTier;
-    ::ll::TypedStorage<4, 4, int>                                         mSecondaryEffectTier;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffect*>>                mBeaconEffects;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BeaconBeamSection>> mBeamSections;
+    ::ll::TypedStorage<4, 4, float> mBeamRot;
+    ::ll::TypedStorage<4, 4, int> mNumLevels;
+    ::ll::TypedStorage<4, 4, int> mNumLevelsSet;
+    ::ll::TypedStorage<4, 4, int> mBlockRefreshCounter;
+    ::ll::TypedStorage<4, 4, int> mPrimaryEffectId;
+    ::ll::TypedStorage<4, 4, int> mSecondaryEffectId;
+    ::ll::TypedStorage<4, 4, int> mPrimaryEffectTier;
+    ::ll::TypedStorage<4, 4, int> mSecondaryEffectTier;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobEffect*>> mBeaconEffects;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<::MobEffect*>>> mTierEffects;
-    ::ll::TypedStorage<1, 1, bool>                                        mPermanentlyRendered;
-    ::ll::TypedStorage<1, 1, bool>                                        mClientRenderingNeedsUpdate;
-    ::ll::TypedStorage<1, 1, bool>                                        mIsBlockBaseLoaded;
+    ::ll::TypedStorage<1, 1, bool> mPermanentlyRendered;
+    ::ll::TypedStorage<1, 1, bool> mClientRenderingNeedsUpdate;
+    ::ll::TypedStorage<1, 1, bool> mIsBlockBaseLoaded;
     // NOLINTEND
 
 public:
@@ -81,7 +81,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 14
     virtual void removeItem(int slot, int count) /*override*/;
@@ -102,11 +102,7 @@ public:
     virtual void stopOpen(::Actor& actor) /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
 
     // vIndex: 31
     virtual ::Container* getContainer() /*override*/;
@@ -114,10 +110,10 @@ public:
     // vIndex: 30
     virtual ::Container const* getContainer() const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
     // NOLINTEND
 
@@ -128,8 +124,7 @@ public:
 
     MCAPI void _applyEffects(::BlockSource& region);
 
-    MCAPI void
-    _notifyBeamSectionsChange(::BlockSource& region, ::std::vector<::BeaconBeamSection> const& oldBeamSections);
+    MCAPI void _notifyBeamSectionsChange(::BlockSource& region, ::std::vector<::BeaconBeamSection> const& oldBeamSections);
 
     MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
@@ -185,7 +180,7 @@ public:
 
     MCFOLD ::ItemStack const& $getItem(int slot) const;
 
-    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
+    MCFOLD void $setItem(int slot, ::ItemStack const& item);
 
     MCFOLD void $removeItem(int slot, int count);
 
@@ -199,11 +194,7 @@ public:
 
     MCFOLD void $stopOpen(::Actor& actor);
 
-    MCFOLD void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
+    MCFOLD void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCFOLD ::Container* $getContainer();
 
@@ -221,4 +212,5 @@ public:
 
     MCNAPI static void** $vftableForContainer();
     // NOLINTEND
+
 };

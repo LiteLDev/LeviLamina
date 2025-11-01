@@ -9,9 +9,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkfcf74d;
-    ::ll::UntypedStorage<4, 4>  mUnk474277;
-    ::ll::UntypedStorage<4, 4>  mUnkd23379;
-    ::ll::UntypedStorage<4, 4>  mUnk799c27;
+    ::ll::UntypedStorage<4, 4> mUnk474277;
+    ::ll::UntypedStorage<4, 4> mUnkd23379;
+    ::ll::UntypedStorage<4, 4> mUnk799c27;
     // NOLINTEND
 
 public:
@@ -31,6 +31,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ComplexAliasBlockAchievementEventHelper
+}

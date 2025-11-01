@@ -15,4 +15,5 @@ public:
     HasPermissionFilter& operator=(HasPermissionFilter const&);
     HasPermissionFilter(HasPermissionFilter const&);
     HasPermissionFilter();
+
 };

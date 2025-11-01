@@ -24,17 +24,7 @@ public:
     virtual ~StubServerLocator() /*override*/ = default;
 
     // vIndex: 3
-    virtual void startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                gameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
-    ) /*override*/;
+    virtual void startAnnouncingServer(::std::string const& playerName, ::std::string const& worldName, ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform, ::GameType gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore) /*override*/;
 
     // vIndex: 4
     virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform) /*override*/;
@@ -64,11 +54,7 @@ public:
     virtual float getPingTimeForGUID(::std::string const& guid) /*override*/;
 
     // vIndex: 13
-    virtual void checkCanConnectToCustomServerAsync(
-        ::std::string                                         hostIpAddress,
-        int                                                   port,
-        ::std::function<void(::ServerConnectivityTestResult)> callback
-    ) /*override*/;
+    virtual void checkCanConnectToCustomServerAsync(::std::string hostIpAddress, int port, ::std::function<void(::ServerConnectivityTestResult)> callback) /*override*/;
     // NOLINTEND
 
 public:
@@ -86,17 +72,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                gameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
-    );
+    MCNAPI void $startAnnouncingServer(::std::string const& playerName, ::std::string const& worldName, ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform, ::GameType gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore);
 
     MCNAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
 
@@ -116,11 +92,7 @@ public:
 
     MCNAPI float $getPingTimeForGUID(::std::string const& guid);
 
-    MCNAPI void $checkCanConnectToCustomServerAsync(
-        ::std::string                                         hostIpAddress,
-        int                                                   port,
-        ::std::function<void(::ServerConnectivityTestResult)> callback
-    );
+    MCNAPI void $checkCanConnectToCustomServerAsync(::std::string hostIpAddress, int port, ::std::function<void(::ServerConnectivityTestResult)> callback);
     // NOLINTEND
 
 public:
@@ -128,4 +100,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

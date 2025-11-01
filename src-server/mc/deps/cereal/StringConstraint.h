@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/Constraint.h"
+#include "mc/deps/cereal/ConstraintHandle.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,11 +13,11 @@ namespace cereal::internal { struct ConstraintDescription; }
 
 namespace cereal {
 
-class StringConstraint : public ::cereal::Constraint {
+class StringConstraint : public ::cereal::ConstraintHandle<::cereal::StringConstraint> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 88> mUnke1d8a5;
+    ::ll::UntypedStorage<8, 80> mUnke1d8a5;
     // NOLINTEND
 
 public:
@@ -28,13 +28,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual void doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const /*override*/;
-
     // vIndex: 3
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
-    // vIndex: 2
+    // vIndex: 1
     virtual ~StringConstraint() /*override*/;
     // NOLINTEND
 
@@ -45,9 +42,15 @@ public:
 
     MCNAPI StringConstraint(::cereal::StringConstraint&&);
 
-    MCNAPI void doValidate(::std::string const& str, ::cereal::SerializerContext& context) const;
+    MCNAPI ::cereal::StringConstraint& regex(::std::string str, ::std::regex_constants::syntax_option_type flag);
 
-    MCNAPI ::cereal::StringConstraint& regex(::std::string str);
+    MCNAPI void validateValue(::std::string const& str, ::cereal::SerializerContext& context) const;
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::string flagsToString(::std::regex_constants::syntax_option_type flags);
     // NOLINTEND
 
 public:
@@ -67,8 +70,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
-
     MCNAPI ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 
@@ -77,6 +78,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cereal
+}

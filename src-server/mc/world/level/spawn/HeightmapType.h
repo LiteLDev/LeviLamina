@@ -21,4 +21,4 @@ MCAPI ::std::vector<::std::tuple<::std::string, ::std::function<bool(::Block con
 MCAPI ::br::spawn::HeightmapToken const& MOTION_BLOCKING_NO_LEAVES();
 // NOLINTEND
 
-} // namespace br::spawn::HeightmapType
+}

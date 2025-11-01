@@ -7,8 +7,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk328dfd;
-    ::ll::UntypedStorage<4, 4>  mUnk8b9765;
-    ::ll::UntypedStorage<4, 4>  mUnk137e0e;
+    ::ll::UntypedStorage<4, 4> mUnk8b9765;
+    ::ll::UntypedStorage<4, 4> mUnk137e0e;
     // NOLINTEND
 
 public:
@@ -22,4 +22,5 @@ public:
     // NOLINTBEGIN
     MCNAPI ::OverloadSyntaxInformation& operator=(::OverloadSyntaxInformation&&);
     // NOLINTEND
+
 };

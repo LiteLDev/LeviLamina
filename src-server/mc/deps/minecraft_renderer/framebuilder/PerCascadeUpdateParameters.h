@@ -17,6 +17,7 @@ public:
     PerCascadeUpdateParameters& operator=(PerCascadeUpdateParameters const&);
     PerCascadeUpdateParameters(PerCascadeUpdateParameters const&);
     PerCascadeUpdateParameters();
+
 };
 
-} // namespace mce::framebuilder
+}

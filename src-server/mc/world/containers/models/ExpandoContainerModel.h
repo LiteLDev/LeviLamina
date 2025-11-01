@@ -20,14 +20,14 @@ class ExpandoContainerModel : public ::ContainerModel {
 public:
     // ExpandoContainerModel inner types define
     using OnItemExpandedCallback = ::std::function<void(::std::string const&, int, int)>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemInstance, uint>>>      mItems;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ExpandoModelElement>>                  mCurrentItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemInstance, uint>>> mItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpandoModelElement>> mCurrentItems;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::CreativeItemRegistry>> mCreativeItemRegistry;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ExpandoModelElement>>                  mExpandedItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpandoModelElement>> mExpandedItems;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&, int, int)>> mOnItemExpanded;
     // NOLINTEND
 
@@ -43,7 +43,7 @@ public:
     // vIndex: 10
     virtual ::ItemInstance const& getItemInstance(int modelSlot) const /*override*/;
 
-    // vIndex: 25
+    // vIndex: 26
     virtual void setItemInstance(int, ::ItemInstance const&);
 
     // vIndex: 12
@@ -76,13 +76,13 @@ public:
     // vIndex: 19
     virtual void switchItemExpando(int itemId) /*override*/;
 
-    // vIndex: 26
-    virtual void refreshContainer(bool);
+    // vIndex: 21
+    virtual void refreshContainer(bool) /*override*/;
 
     // vIndex: 27
     virtual int getIndexForCreativeItem(::ItemStackBase const&) const;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual void _init() /*override*/;
     // NOLINTEND
 
@@ -91,4 +91,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

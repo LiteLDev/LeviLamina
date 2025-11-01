@@ -37,56 +37,57 @@ public:
     // clang-format off
     struct ButtonEventCallbackKeyHasher;
     // clang-format on
-
+    
     // ScreenController inner types define
     enum class PreviousButtonStateRequirement : int {
-        Any     = 0,
-        Down    = 1,
-        Up      = 2,
+        Any = 0,
+        Down = 1,
+        Up = 2,
         NotDown = 3,
-        NotUp   = 4,
+        NotUp = 4,
     };
-
+    
     enum class SliderChangeType : int {
-        AnyChange    = 0,
+        AnyChange = 0,
         NotFinalized = 1,
-        Finalized    = 2,
+        Finalized = 2,
     };
-
-    struct ButtonEventCallbackKeyHasher {};
-
+    
+    struct ButtonEventCallbackKeyHasher {
+    };
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>   mUnk8a7418;
-    ::ll::UntypedStorage<8, 64>   mUnk82db40;
-    ::ll::UntypedStorage<8, 64>   mUnk575ccd;
-    ::ll::UntypedStorage<8, 64>   mUnk5c1102;
-    ::ll::UntypedStorage<8, 8>    mUnk376fda;
-    ::ll::UntypedStorage<1, 1>    mUnkd9ae2b;
-    ::ll::UntypedStorage<1, 1>    mUnk658e75;
-    ::ll::UntypedStorage<1, 1>    mUnka0b766;
+    ::ll::UntypedStorage<8, 64> mUnk8a7418;
+    ::ll::UntypedStorage<8, 64> mUnk82db40;
+    ::ll::UntypedStorage<8, 64> mUnk575ccd;
+    ::ll::UntypedStorage<8, 64> mUnk5c1102;
+    ::ll::UntypedStorage<8, 8> mUnk376fda;
+    ::ll::UntypedStorage<1, 1> mUnkd9ae2b;
+    ::ll::UntypedStorage<1, 1> mUnk658e75;
+    ::ll::UntypedStorage<1, 1> mUnka0b766;
     ::ll::UntypedStorage<8, 1408> mUnkf888ac;
-    ::ll::UntypedStorage<1, 1>    mUnkdcae0f;
-    ::ll::UntypedStorage<8, 64>   mUnke5c710;
-    ::ll::UntypedStorage<8, 64>   mUnka9059e;
-    ::ll::UntypedStorage<8, 64>   mUnk8a2aa4;
-    ::ll::UntypedStorage<8, 24>   mUnkef27f7;
-    ::ll::UntypedStorage<8, 24>   mUnkdd0f55;
-    ::ll::UntypedStorage<8, 24>   mUnk1c1018;
-    ::ll::UntypedStorage<8, 64>   mUnk60893a;
-    ::ll::UntypedStorage<8, 64>   mUnk3c1132;
-    ::ll::UntypedStorage<8, 64>   mUnk20b072;
-    ::ll::UntypedStorage<8, 24>   mUnkc3d6bf;
-    ::ll::UntypedStorage<8, 64>   mUnk392f36;
-    ::ll::UntypedStorage<8, 64>   mUnkaa9757;
-    ::ll::UntypedStorage<8, 64>   mUnk955ba0;
-    ::ll::UntypedStorage<8, 64>   mUnk9c1f6f;
-    ::ll::UntypedStorage<8, 64>   mUnk38743d;
-    ::ll::UntypedStorage<8, 64>   mUnka545bb;
-    ::ll::UntypedStorage<8, 64>   mUnkcd76db;
-    ::ll::UntypedStorage<8, 64>   mUnk1669d5;
-    ::ll::UntypedStorage<8, 8>    mUnk458aec;
+    ::ll::UntypedStorage<1, 1> mUnkdcae0f;
+    ::ll::UntypedStorage<8, 64> mUnke5c710;
+    ::ll::UntypedStorage<8, 64> mUnka9059e;
+    ::ll::UntypedStorage<8, 64> mUnk8a2aa4;
+    ::ll::UntypedStorage<8, 24> mUnkef27f7;
+    ::ll::UntypedStorage<8, 24> mUnkdd0f55;
+    ::ll::UntypedStorage<8, 24> mUnk1c1018;
+    ::ll::UntypedStorage<8, 64> mUnk60893a;
+    ::ll::UntypedStorage<8, 64> mUnk3c1132;
+    ::ll::UntypedStorage<8, 64> mUnk20b072;
+    ::ll::UntypedStorage<8, 24> mUnkc3d6bf;
+    ::ll::UntypedStorage<8, 64> mUnk392f36;
+    ::ll::UntypedStorage<8, 64> mUnkaa9757;
+    ::ll::UntypedStorage<8, 64> mUnk955ba0;
+    ::ll::UntypedStorage<8, 64> mUnk9c1f6f;
+    ::ll::UntypedStorage<8, 64> mUnk38743d;
+    ::ll::UntypedStorage<8, 64> mUnka545bb;
+    ::ll::UntypedStorage<8, 64> mUnkcd76db;
+    ::ll::UntypedStorage<8, 64> mUnk1669d5;
+    ::ll::UntypedStorage<8, 8> mUnk458aec;
     // NOLINTEND
 
 public:
@@ -153,8 +154,7 @@ public:
     virtual ::ui::DirtyFlag handleGameEventNotification(::ui::GameEventNotification);
 
     // vIndex: 19
-    virtual bool
-    bind(::std::string const&, uint, int, ::std::string const&, uint, ::std::string const&, ::UIPropertyBag&);
+    virtual bool bind(::std::string const&, uint, int, ::std::string const&, uint, ::std::string const&, ::UIPropertyBag&);
 
     // vIndex: 18
     virtual bool bind(::std::string const&, uint, ::std::string const&, ::UIPropertyBag&);
@@ -199,24 +199,21 @@ public:
     virtual uint getSceneId() const;
 
     // vIndex: 33
-    virtual bool screenHandlesGamepadMenuButton() const;
-
-    // vIndex: 34
     virtual ::ScreenControllerProxy* getProxy();
 
-    // vIndex: 35
+    // vIndex: 34
     virtual void onEntered();
 
-    // vIndex: 36
+    // vIndex: 35
     virtual void onScreenPushedAbove();
 
-    // vIndex: 37
+    // vIndex: 36
     virtual void onEntering();
 
-    // vIndex: 38
+    // vIndex: 37
     virtual bool _doesScreenHaveExitBehavior() const;
 
-    // vIndex: 39
+    // vIndex: 38
     virtual bool _isContainerScreen() const;
     // NOLINTEND
 
@@ -225,4 +222,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/legacy/ActorUniqueID.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
-#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
@@ -19,8 +19,8 @@ class LevelContainerManagerModel : public ::ContainerManagerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::BlockPos>      mBlockPos;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>  mEntityUniqueID;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityUniqueID;
     ::ll::TypedStorage<1, 1, ::BlockActorType> mBlockActorType;
     // NOLINTEND
 
@@ -87,4 +87,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

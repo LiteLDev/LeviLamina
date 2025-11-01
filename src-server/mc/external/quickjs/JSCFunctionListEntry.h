@@ -6,11 +6,11 @@ struct JSCFunctionListEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkdc409f;
-    ::ll::UntypedStorage<1, 1>  mUnk804d1b;
-    ::ll::UntypedStorage<1, 1>  mUnkc474b0;
-    ::ll::UntypedStorage<2, 2>  mUnk80c2ee;
-    ::ll::UntypedStorage<8, 16> mUnk83820c;
+    ::ll::UntypedStorage<8, 8> mUnkdc409f;
+    ::ll::UntypedStorage<1, 1> mUnk804d1b;
+    ::ll::UntypedStorage<1, 1> mUnkc474b0;
+    ::ll::UntypedStorage<2, 2> mUnk80c2ee;
+    ::ll::UntypedStorage<8, 16> mUnk8ae004;
     // NOLINTEND
 
 public:
@@ -18,4 +18,5 @@ public:
     JSCFunctionListEntry& operator=(JSCFunctionListEntry const&);
     JSCFunctionListEntry(JSCFunctionListEntry const&);
     JSCFunctionListEntry();
+
 };

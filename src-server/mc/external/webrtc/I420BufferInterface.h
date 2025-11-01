@@ -51,6 +51,7 @@ public:
 
     MCNAPI ::webrtc::I420BufferInterface const* $GetI420() const;
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

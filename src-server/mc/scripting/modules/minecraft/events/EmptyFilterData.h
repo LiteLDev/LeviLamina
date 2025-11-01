@@ -4,6 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-struct EmptyFilterData {};
+struct EmptyFilterData {
+};
 
-} // namespace ScriptModuleMinecraft
+}

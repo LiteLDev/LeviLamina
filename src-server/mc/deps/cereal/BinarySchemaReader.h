@@ -68,7 +68,7 @@ public:
     virtual ::Bedrock::Result<double> asDouble() /*override*/;
 
     // vIndex: 15
-    virtual ::Bedrock::Result<::std::string> asString() /*override*/;
+    virtual ::Bedrock::Result<::std::string> asString(uint64 maxInputLength) /*override*/;
 
     // vIndex: 16
     virtual ::std::optional<bool> readValidityFlag() /*override*/;
@@ -129,7 +129,7 @@ public:
 
     MCNAPI ::Bedrock::Result<double> $asDouble();
 
-    MCNAPI ::Bedrock::Result<::std::string> $asString();
+    MCNAPI ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
 
     MCNAPI ::std::optional<bool> $readValidityFlag();
 
@@ -153,6 +153,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cereal
+}

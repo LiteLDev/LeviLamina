@@ -15,4 +15,4 @@ MCNAPI ::TickingSystemWithInfo createRemoveItemInUseSystem();
 MCNAPI ::TickingSystemWithInfo createStartOrStopUsingItemSystem();
 // NOLINTEND
 
-} // namespace ItemInUseComponentRemoveSystem
+}

@@ -20,14 +20,9 @@ struct StructurePools {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bootstrap(
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-        ::FeatureRegistry&                                featureRegistry,
-        ::JigsawStructureRegistry&                        jigsawStructureRegistry,
-        ::BaseGameVersion const&                          baseGameVersion,
-        ::Experiments const&                              experiments
-    );
+    MCAPI static void bootstrap(::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager, ::FeatureRegistry& featureRegistry, ::JigsawStructureRegistry& jigsawStructureRegistry, ::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen
+}

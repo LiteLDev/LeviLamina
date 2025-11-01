@@ -7,8 +7,8 @@
 #include "mc/server/commands/CommandPosition.h"
 #include "mc/server/commands/standard/StructureActionType.h"
 #include "mc/util/AnimationMode.h"
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
+#include "mc/versionless/util/Mirror.h"
+#include "mc/versionless/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/StructureRedstoneSaveMode.h"
 
 // auto generated forward declare list
@@ -28,21 +28,21 @@ class StructureCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::StructureActionType>       mAction;
+    ::ll::TypedStorage<4, 4, ::StructureActionType> mAction;
     ::ll::TypedStorage<1, 1, ::StructureRedstoneSaveMode> mSaveMode;
-    ::ll::TypedStorage<1, 1, ::Rotation>                  mRotation;
-    ::ll::TypedStorage<1, 1, ::Mirror>                    mMirror;
-    ::ll::TypedStorage<1, 1, ::AnimationMode>             mAnimationMode;
-    ::ll::TypedStorage<4, 4, float>                       mAnimationTimeSeconds;
-    ::ll::TypedStorage<8, 32, ::std::string>              mName;
-    ::ll::TypedStorage<8, 32, ::std::string>              mSeed;
-    ::ll::TypedStorage<4, 16, ::CommandPosition>          mFrom;
-    ::ll::TypedStorage<4, 16, ::CommandPosition>          mTo;
-    ::ll::TypedStorage<4, 4, float>                       mIntegrity;
-    ::ll::TypedStorage<1, 1, bool>                        mSeedSpecified;
-    ::ll::TypedStorage<1, 1, bool>                        mIncludeEntities;
-    ::ll::TypedStorage<1, 1, bool>                        mIncludeBlocks;
-    ::ll::TypedStorage<1, 1, bool>                        mWaterlogged;
+    ::ll::TypedStorage<1, 1, ::Rotation> mRotation;
+    ::ll::TypedStorage<1, 1, ::Mirror> mMirror;
+    ::ll::TypedStorage<1, 1, ::AnimationMode> mAnimationMode;
+    ::ll::TypedStorage<4, 4, float> mAnimationTimeSeconds;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<8, 32, ::std::string> mSeed;
+    ::ll::TypedStorage<4, 16, ::CommandPosition> mFrom;
+    ::ll::TypedStorage<4, 16, ::CommandPosition> mTo;
+    ::ll::TypedStorage<4, 4, float> mIntegrity;
+    ::ll::TypedStorage<1, 1, bool> mSeedSpecified;
+    ::ll::TypedStorage<1, 1, bool> mIncludeEntities;
+    ::ll::TypedStorage<1, 1, bool> mIncludeBlocks;
+    ::ll::TypedStorage<1, 1, bool> mWaterlogged;
     // NOLINTEND
 
 public:
@@ -60,32 +60,15 @@ public:
     // NOLINTBEGIN
     MCAPI void _delete(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-    MCAPI void
-    _editorDelete(::CommandOrigin const& origin, ::CommandOutput& output, ::std::string const& fullName) const;
+    MCAPI void _editorDelete(::CommandOrigin const& origin, ::CommandOutput& output, ::std::string const& fullName) const;
 
-    MCAPI void _editorLoad(
-        ::CommandOrigin const& origin,
-        ::CommandOutput&       output,
-        ::Level&               level,
-        ::std::string const&   fullName,
-        ::BlockPos const&      loadPosition,
-        ::StructureEditorData& settings
-    ) const;
+    MCAPI void _editorLoad(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::std::string const& fullName, ::BlockPos const& loadPosition, ::StructureEditorData& settings) const;
 
-    MCAPI void _editorSave(
-        ::CommandOrigin const&     origin,
-        ::CommandOutput&           output,
-        ::BlockSource&             region,
-        ::std::string const&       fullName,
-        ::BlockPos                 from,
-        ::BlockPos                 to,
-        ::StructureSettings const& settings
-    ) const;
+    MCAPI void _editorSave(::CommandOrigin const& origin, ::CommandOutput& output, ::BlockSource& region, ::std::string const& fullName, ::BlockPos from, ::BlockPos to, ::StructureSettings const& settings) const;
 
     MCAPI ::std::string _getFullName() const;
 
-    MCAPI bool
-    _isValidSize(::BlockPos const& size, ::DimensionHeightRange const& heightRange, ::CommandOutput& output) const;
+    MCAPI bool _isValidSize(::BlockPos const& size, ::DimensionHeightRange const& heightRange, ::CommandOutput& output) const;
 
     MCAPI void _load(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
@@ -109,4 +92,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

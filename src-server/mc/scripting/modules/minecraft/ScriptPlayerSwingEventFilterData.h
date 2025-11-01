@@ -16,6 +16,7 @@ public:
     ScriptPlayerSwingEventFilterData& operator=(ScriptPlayerSwingEventFilterData const&);
     ScriptPlayerSwingEventFilterData(ScriptPlayerSwingEventFilterData const&);
     ScriptPlayerSwingEventFilterData();
+
 };
 
-} // namespace ScriptModuleMinecraft::EventFilters
+}

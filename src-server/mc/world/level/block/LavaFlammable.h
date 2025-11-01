@@ -4,5 +4,5 @@
 
 enum class LavaFlammable : uchar {
     Always = 1,
-    Never  = 0,
+    Never = 0,
 };

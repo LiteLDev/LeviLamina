@@ -4,7 +4,8 @@
 
 namespace ScriptModuleMinecraft {
 
-template <typename T0, typename T1>
-class ScriptAfterEventSignalBuilder {};
+template<typename T0, typename T1>
+class ScriptAfterEventSignalBuilder {
+};
 
-} // namespace ScriptModuleMinecraft
+}

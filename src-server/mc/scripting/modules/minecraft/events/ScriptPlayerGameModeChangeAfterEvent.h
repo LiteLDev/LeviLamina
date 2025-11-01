@@ -20,8 +20,7 @@ struct ScriptPlayerGameModeChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
-                                         mPlayerHandle;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayerHandle;
     ::ll::TypedStorage<4, 4, ::GameType> mFromGameMode;
     ::ll::TypedStorage<4, 4, ::GameType> mToGameMode;
     // NOLINTEND
@@ -33,12 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerGameModeChangeAfterEvent(
-        ::Player const&                       player,
-        ::GameType                            fromGameMode,
-        ::GameType                            toGameMode,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
+    MCAPI ScriptPlayerGameModeChangeAfterEvent(::Player const& player, ::GameType fromGameMode, ::GameType toGameMode, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -50,13 +44,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Player const&                       player,
-        ::GameType                            fromGameMode,
-        ::GameType                            toGameMode,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
+    MCAPI void* $ctor(::Player const& player, ::GameType fromGameMode, ::GameType toGameMode, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

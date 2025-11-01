@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mCurrent;
     ::ll::TypedStorage<4, 4, float> mPrevious;
     // NOLINTEND
+
 };

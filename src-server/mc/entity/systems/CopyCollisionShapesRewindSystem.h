@@ -13,4 +13,4 @@ namespace CopyCollisionShapesRewindSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace CopyCollisionShapesRewindSystem
+}

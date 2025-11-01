@@ -17,9 +17,8 @@ class InventoryPacket : public ::Packet {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 16
-    virtual void
-    handle(::ServerPlayer&, ::BlockPalette&, ::MoveInputComponent const&, ::ActorRotationComponent&, bool) const = 0;
+    // vIndex: 17
+    virtual void handle(::ServerPlayer&, ::BlockPalette&, ::MoveInputComponent const&, ::ActorRotationComponent&, bool) const = 0;
 
     // vIndex: 0
     virtual ~InventoryPacket() /*override*/;
@@ -36,4 +35,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

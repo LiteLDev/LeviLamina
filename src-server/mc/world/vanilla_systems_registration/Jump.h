@@ -11,12 +11,9 @@ namespace VanillaSystemsRegistration { struct RegistrationOptions; }
 namespace VanillaSystemsRegistration::Jump {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerNormalJumpSystems(
-    ::EntitySystems&                                         systemRegistry,
-    ::VanillaSystemsRegistration::RegistrationOptions const& options
-);
+MCNAPI void registerNormalJumpSystems(::EntitySystems& systemRegistry, ::VanillaSystemsRegistration::RegistrationOptions const& options);
 
 MCNAPI void registerPowerJumpSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
-} // namespace VanillaSystemsRegistration::Jump
+}

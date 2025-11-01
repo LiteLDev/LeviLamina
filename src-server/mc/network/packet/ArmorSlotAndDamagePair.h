@@ -10,6 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ArmorSlot> mArmorSlot;
-    ::ll::TypedStorage<2, 2, short>                            mDamage;
+    ::ll::TypedStorage<2, 2, short> mDamage;
     // NOLINTEND
+
 };

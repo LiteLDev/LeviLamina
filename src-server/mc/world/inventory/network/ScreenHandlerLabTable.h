@@ -20,8 +20,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ContainerScreenContext const&> mScreenContext;
-    ::ll::TypedStorage<8, 8, ::ChemistryTableBlockActor*>     mChemistryTableBlockActor;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>     mConsumedInput;
+    ::ll::TypedStorage<8, 8, ::ChemistryTableBlockActor*> mChemistryTableBlockActor;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mConsumedInput;
     // NOLINTEND
 
 public:
@@ -67,4 +67,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

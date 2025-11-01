@@ -12,7 +12,7 @@ struct VersionInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 56, ::Puv::VersionRange>             mVersionRange;
+    ::ll::TypedStorage<8, 56, ::Puv::VersionRange> mVersionRange;
     ::ll::TypedStorage<4, 4, ::FeatureLoading::FeatureVersion> mFeatureVersion;
     // NOLINTEND
 
@@ -25,8 +25,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::Puv::VersionRange>
-    getRangeFromVersion(::FeatureLoading::FeatureVersion const& version);
+    MCAPI static ::std::optional<::Puv::VersionRange> getRangeFromVersion(::FeatureLoading::FeatureVersion const& version);
     // NOLINTEND
 
 public:
@@ -34,6 +33,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace FeatureLoading
+}

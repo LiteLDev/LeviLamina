@@ -4,6 +4,8 @@
 
 namespace Bedrock::Resources {
 
-struct SharedSlicesTraits {};
+template<int T0>
+struct SharedSlicesTraits {
+};
 
-} // namespace Bedrock::Resources
+}

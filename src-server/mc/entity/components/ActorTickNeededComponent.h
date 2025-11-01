@@ -16,4 +16,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::WeakRef<::BlockSource>> mBlockSource;
     // NOLINTEND
+
 };

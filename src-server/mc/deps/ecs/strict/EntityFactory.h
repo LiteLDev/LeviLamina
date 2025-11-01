@@ -14,4 +14,5 @@ public:
     EntityFactory& operator=(EntityFactory const&);
     EntityFactory(EntityFactory const&);
     EntityFactory();
+
 };

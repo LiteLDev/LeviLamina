@@ -16,6 +16,7 @@ public:
     RemovePack& operator=(RemovePack const&);
     RemovePack(RemovePack const&);
     RemovePack();
+
 };
 
-} // namespace PackCommand
+}

@@ -11,7 +11,6 @@
 #include "mc/client/services/ms_graph/GraphResponse.h"
 #include "mc/client/util/edu_cloud_utils/Operation.h"
 #include "mc/client/util/edu_cloud_utils/UploadType.h"
-#include "mc/common/edu_cloud_proxy/Operation.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/threading/IAsyncResult.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
@@ -21,7 +20,6 @@
 // auto generated forward declare list
 // clang-format off
 struct LevelSummary;
-namespace EduCloudProxy { struct CloudProject; }
 namespace MSGraph::Models { struct DownloadUrlInfo; }
 namespace MSGraph::Models { struct DriveItem; }
 namespace MSGraph::Models { struct DriveItemCollection; }
@@ -56,8 +54,7 @@ public:
     virtual void setShowingConflictPopup(bool) = 0;
 
     // vIndex: 7
-    virtual void
-    queueCloudWorldDownload(::std::string const&, ::std::string const&, ::EduCloud::LaunchOptions, bool const) = 0;
+    virtual void queueCloudWorldDownload(::std::string const&, ::std::string const&, ::EduCloud::LaunchOptions, bool const) = 0;
 
     // vIndex: 8
     virtual ::EduCloudUtils::Operation getCurrentOperation() = 0;
@@ -66,60 +63,28 @@ public:
     virtual ::EduCloudUtils::UploadType getWorldUploadType() = 0;
 
     // vIndex: 10
-    virtual void receivedMakeCodeRequest(
-        ::std::string const,
-        ::EduCloudProxy::Operation const,
-        ::std::string const,
-        ::std::vector<::std::string> const,
-        ::EduCloudProxy::CloudProject
-    ) = 0;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<::std::string, ::MSGraph::Models::GraphError>>> getUploadFolderUrl() = 0;
 
     // vIndex: 11
-    virtual void initializeCloudProxy(::std::function<void(::std::string const&)>) = 0;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<bool>>> uploadWorld(::std::string const&, ::std::string const&, ::std::function<void(::EduCloud::UploadWorldProgress, ::MSGraph::GraphResponse)>, ::std::function<void(uint64, uint64)>, bool) = 0;
 
     // vIndex: 12
-    virtual ::Bedrock::Threading::Async<
-        ::Bedrock::Copyable<::Bedrock::Result<::std::string, ::MSGraph::Models::GraphError>>>
-    getUploadFolderUrl() = 0;
-
-    // vIndex: 13
-    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<bool>>> uploadWorld(
-        ::std::string const&,
-        ::std::string const&,
-        ::std::function<void(::EduCloud::UploadWorldProgress, ::MSGraph::GraphResponse)>,
-        ::std::function<void(uint64, uint64)>,
-        bool
-    ) = 0;
-
-    // vIndex: 14
-    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<bool>>>
-    uploadMakeCodeProject(::std::string const, ::EduCloudProxy::CloudProject&) = 0;
-
-    // vIndex: 15
     virtual ::std::string getFolderDisplayName() = 0;
 
+    // vIndex: 13
+    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::DriveItemCollection, ::MSGraph::Models::GraphError>>> fetch(::std::string, ::EduCloud::DrivePaths) = 0;
+
+    // vIndex: 14
+    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::DownloadUrlInfo, ::MSGraph::Models::GraphError>>> getDownloadUrlInfo(::EduCloud::CloudItemType const, ::std::string const&) = 0;
+
+    // vIndex: 15
+    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::DriveItem, ::MSGraph::Models::GraphError>>> getCloudItemById(::EduCloud::CloudItemType const, ::std::string const&) = 0;
+
     // vIndex: 16
-    virtual ::Bedrock::Threading::Async<
-        ::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::DriveItemCollection, ::MSGraph::Models::GraphError>>>
-        fetch(::EduCloud::CloudItemType, ::std::string, ::EduCloud::DrivePaths) = 0;
+    virtual ::EduCloud::ConflictResolutionStatus determineConflictResolutionStatus(::std::string const&, ::std::string const&, bool, bool) = 0;
 
     // vIndex: 17
-    virtual ::Bedrock::Threading::Async<
-        ::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::DownloadUrlInfo, ::MSGraph::Models::GraphError>>>
-    getDownloadUrlInfo(::EduCloud::CloudItemType const, ::std::string const&) = 0;
-
-    // vIndex: 18
-    virtual ::Bedrock::Threading::Async<
-        ::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::DriveItem, ::MSGraph::Models::GraphError>>>
-    getCloudItemById(::EduCloud::CloudItemType const, ::std::string const&) = 0;
-
-    // vIndex: 19
-    virtual ::EduCloud::ConflictResolutionStatus
-    determineConflictResolutionStatus(::std::string const&, ::std::string const&, bool, bool) = 0;
-
-    // vIndex: 20
-    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::GraphError>>>
-    deleteItemById(::std::string const&) = 0;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<::MSGraph::Models::GraphError>>> deleteItemById(::std::string const&) = 0;
     // NOLINTEND
 
 public:
@@ -127,6 +92,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace EduCloud
+}

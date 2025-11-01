@@ -29,7 +29,7 @@ public:
     // clang-format off
     struct Definition;
     // clang-format on
-
+    
     // PlaceBlockGoal inner types define
     struct Definition : public ::BaseGoalDefinition {
     public:
@@ -37,7 +37,7 @@ public:
         // clang-format off
         struct WeightedBlockDescriptor;
         // clang-format on
-
+        
         // Definition inner types define
         struct WeightedBlockDescriptor {
         public:
@@ -45,81 +45,78 @@ public:
             // NOLINTBEGIN
             ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlock;
             ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilter;
-            ::ll::TypedStorage<4, 4, int>                 mWeight;
+            ::ll::TypedStorage<4, 4, int> mWeight;
             // NOLINTEND
-
+        
         public:
             // member functions
             // NOLINTBEGIN
             MCAPI ~WeightedBlockDescriptor();
             // NOLINTEND
-
+        
         public:
             // destructor thunk
             // NOLINTBEGIN
             MCAPI void $dtor();
             // NOLINTEND
+        
         };
-
+        
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mPlaceableCarriedBlocks;
-        ::ll::TypedStorage<8, 24, ::std::vector<::PlaceBlockGoal::Definition::WeightedBlockDescriptor>>
-                                                             mRandomlyPlaceableBlocks;
-        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mCanPlace;
+        ::ll::TypedStorage<8, 24, ::std::vector<::PlaceBlockGoal::Definition::WeightedBlockDescriptor>> mRandomlyPlaceableBlocks;
+        ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mCanPlace;
         ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnPlace;
-        ::ll::TypedStorage<4, 8, ::IntRange>                 mXZRange;
-        ::ll::TypedStorage<4, 8, ::IntRange>                 mYRange;
-        ::ll::TypedStorage<4, 4, float>                      mChance;
-        ::ll::TypedStorage<1, 1, bool>                       mAffectedByGriefingRule;
+        ::ll::TypedStorage<4, 8, ::IntRange> mXZRange;
+        ::ll::TypedStorage<4, 8, ::IntRange> mYRange;
+        ::ll::TypedStorage<4, 4, float> mChance;
+        ::ll::TypedStorage<1, 1, bool> mAffectedByGriefingRule;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Definition(Definition const&);
         Definition();
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::PlaceBlockGoal::Definition& operator=(::PlaceBlockGoal::Definition const&);
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::PlaceBlockGoal::Definition>>&
-                root
-        );
+        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::PlaceBlockGoal::Definition>>& root);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                         mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     ::ll::TypedStorage<8, 256, ::PlaceBlockGoal::Definition> mDefinition;
     // NOLINTEND
 
@@ -148,17 +145,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _placeBlock(
-        ::BlockSource&                region,
-        ::BlockPos const&             targetPos,
-        ::VariantParameterList const& params,
-        ::Block const&                placementBlock
-    );
+    MCAPI void _placeBlock(::BlockSource& region, ::BlockPos const& targetPos, ::VariantParameterList const& params, ::Block const& placementBlock);
 
     MCAPI ::Block const* _tryGetRandomPlaceBlock(::VariantParameterListConst const& params, ::Random& random) const;
 
-    MCAPI void
-    _tryPlaceCarriedBlock(::BlockSource& region, ::BlockPos const& targetPos, ::VariantParameterList const& params);
+    MCAPI void _tryPlaceCarriedBlock(::BlockSource& region, ::BlockPos const& targetPos, ::VariantParameterList const& params);
     // NOLINTEND
 
 public:
@@ -176,4 +167,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

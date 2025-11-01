@@ -16,8 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ContainerValidationOperation>> mOperations;
-    ::ll::TypedStorage<4, 4, ::ContainerValidationOutcome>                   mOutcome;
-    ::ll::TypedStorage<1, 1, ::ContainerScreenRequestActionType>             mRequestActionType;
+    ::ll::TypedStorage<4, 4, ::ContainerValidationOutcome> mOutcome;
+    ::ll::TypedStorage<1, 1, ::ContainerScreenRequestActionType> mRequestActionType;
     // NOLINTEND
 
 public:
@@ -44,4 +44,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

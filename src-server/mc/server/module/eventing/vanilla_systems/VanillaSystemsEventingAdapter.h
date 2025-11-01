@@ -24,8 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void
-    doFireEventActorValueValidationFailed(::std::string const& invalidValue, char const* caller) /*override*/;
+    virtual void doFireEventActorValueValidationFailed(::std::string const& invalidValue, char const* caller) /*override*/;
 
     // vIndex: 0
     virtual ~VanillaSystemsEventingAdapter() /*override*/ = default;
@@ -42,6 +41,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace VanillaSystems
+}

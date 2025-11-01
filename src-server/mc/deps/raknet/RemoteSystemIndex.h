@@ -17,6 +17,7 @@ public:
     RemoteSystemIndex& operator=(RemoteSystemIndex const&);
     RemoteSystemIndex(RemoteSystemIndex const&);
     RemoteSystemIndex();
+
 };
 
-} // namespace RakNet
+}

@@ -20,6 +20,7 @@ public:
     TimerOptions& operator=(TimerOptions const&);
     TimerOptions(TimerOptions const&);
     TimerOptions();
+
 };
 
-} // namespace dcsctp
+}

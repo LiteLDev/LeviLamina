@@ -22,6 +22,7 @@ public:
     AudioCodecInfo& operator=(AudioCodecInfo const&);
     AudioCodecInfo(AudioCodecInfo const&);
     AudioCodecInfo();
+
 };
 
-} // namespace webrtc
+}

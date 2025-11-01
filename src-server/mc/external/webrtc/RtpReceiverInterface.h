@@ -76,6 +76,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $SetParameters(::webrtc::RtpParameters const& parameters);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

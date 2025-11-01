@@ -17,6 +17,7 @@ public:
     PlayerTickResult& operator=(PlayerTickResult const&);
     PlayerTickResult(PlayerTickResult const&);
     PlayerTickResult();
+
 };
 
-} // namespace PlayerTickSystemImpl
+}

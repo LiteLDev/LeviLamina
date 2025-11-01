@@ -3,7 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/world/level/chunk/NeighborAwareBlockUpdateType.h"
 #include "mc/world/level/levelgen/structure/ILegacyStructureTemplate.h"
 #include "mc/world/level/levelgen/structure/IStructureTemplate.h"
 #include "mc/world/level/levelgen/structure/LegacyStructureBlockPalette.h"
@@ -25,10 +26,11 @@ class LegacyStructureTemplate : public ::ILegacyStructureTemplate, public ::IStr
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                             mAuthor;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                                mSize;
-    ::ll::TypedStorage<8, 64, ::LegacyStructureBlockPalette>             mPalette;
-    ::ll::TypedStorage<8, 64, ::LegacyStructureBlockPalette>             mExtraBlockPalette;
+    ::ll::TypedStorage<8, 32, ::std::string> mAuthor;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mSize;
+    ::ll::TypedStorage<4, 4, int> mDataVersion;
+    ::ll::TypedStorage<8, 64, ::LegacyStructureBlockPalette> mPalette;
+    ::ll::TypedStorage<8, 64, ::LegacyStructureBlockPalette> mExtraBlockPalette;
     ::ll::TypedStorage<8, 24, ::std::vector<::LegacyStructureBlockInfo>> mBlockInfo;
     ::ll::TypedStorage<8, 24, ::std::vector<::LegacyStructureActorInfo>> mEntityInfo;
     // NOLINTEND
@@ -40,16 +42,13 @@ public:
     virtual ~LegacyStructureTemplate() /*override*/;
 
     // vIndex: 0
-    virtual ::std::unordered_map<::BlockPos, ::std::string>
-    getMarkers(::BlockPos const& position, ::LegacyStructureSettings& settings) const /*override*/;
+    virtual ::std::unordered_map<::BlockPos, ::std::string> getMarkers(::BlockPos const& position, ::LegacyStructureSettings& settings) const /*override*/;
 
     // vIndex: 1
-    virtual void placeInWorld(
-        ::BlockSource&             region,
-        ::BlockPos const&          pos,
-        ::LegacyStructureSettings& settings,
-        ::Random&                  random
-    ) const /*override*/;
+    virtual void placeInWorld(::BlockSource& region, ::BlockPos const& pos, ::LegacyStructureSettings& settings, ::Random& random) const /*override*/;
+
+    // vIndex: 3
+    virtual ::NeighborAwareBlockUpdateType shouldHandleUpgradeForBlock(::Block const& block) const /*override*/;
 
     // vIndex: 2
     virtual ::BlockPos rawSize() const /*override*/;
@@ -77,25 +76,15 @@ public:
 
     MCAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
 
-    MCAPI static void _mapPropertyToTag(
-        ::CompoundTag&       originalTag,
-        ::std::string const& propertyString,
-        ::std::string const& valueString
-    );
+    MCAPI static void _mapPropertyToTag(::CompoundTag& originalTag, ::std::string const& propertyString, ::std::string const& valueString);
 
-    MCAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
-        ::std::unique_ptr<::CompoundTag> originalTag,
-        ::std::string const&             javaBlockName,
-        int                              dataVersion,
-        ::Block const*&                  block
-    );
+    MCAPI static ::std::unique_ptr<::CompoundTag> _mapTag(::std::unique_ptr<::CompoundTag> originalTag, ::std::string const& javaBlockName, int dataVersion, ::Block const*& block);
 
     MCAPI static ::Block const* _mapToBlock(::std::string const& blockName);
 
     MCAPI static ::Block const& _mapToData(::Block const& curr, ::LegacyStructureSettings const& settings);
 
-    MCAPI static ::Block const*
-    _mapToProperty(::std::string const& propertyString, ::std::string const& valueString, ::Block const& block);
+    MCAPI static ::Block const* _mapToProperty(::std::string const& propertyString, ::std::string const& valueString, ::Block const& block);
     // NOLINTEND
 
 public:
@@ -145,15 +134,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<::BlockPos, ::std::string>
-    $getMarkers(::BlockPos const& position, ::LegacyStructureSettings& settings) const;
+    MCAPI ::std::unordered_map<::BlockPos, ::std::string> $getMarkers(::BlockPos const& position, ::LegacyStructureSettings& settings) const;
 
-    MCAPI void $placeInWorld(
-        ::BlockSource&             region,
-        ::BlockPos const&          pos,
-        ::LegacyStructureSettings& settings,
-        ::Random&                  random
-    ) const;
+    MCAPI void $placeInWorld(::BlockSource& region, ::BlockPos const& pos, ::LegacyStructureSettings& settings, ::Random& random) const;
+
+    MCAPI ::NeighborAwareBlockUpdateType $shouldHandleUpgradeForBlock(::Block const& block) const;
 
     MCAPI ::BlockPos $rawSize() const;
 
@@ -167,4 +152,5 @@ public:
 
     MCNAPI static void** $vftableForIStructureTemplate();
     // NOLINTEND
+
 };

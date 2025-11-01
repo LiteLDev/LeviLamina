@@ -18,12 +18,12 @@ class FillingContainer : public ::Container {
 public:
     // FillingContainer inner types define
     using ItemList = ::std::vector<::ItemStack>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
-    ::ll::TypedStorage<8, 8, ::Player*>                   mPlayer;
+    ::ll::TypedStorage<8, 8, ::Player*> mPlayer;
     // NOLINTEND
 
 public:
@@ -78,11 +78,7 @@ public:
     virtual void startOpen(::Actor&) /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
 
     // vIndex: 52
     virtual void _trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
@@ -145,11 +141,7 @@ public:
 
     MCFOLD void $startOpen(::Actor&);
 
-    MCFOLD void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
+    MCFOLD void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCAPI void $_trySetInSlot(::ItemStack& item, int const& slot, int const& inventorySize, int& backCompatOffset);
     // NOLINTEND
@@ -159,4 +151,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

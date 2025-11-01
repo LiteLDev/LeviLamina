@@ -16,11 +16,11 @@ class BlockBreakSensorComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                               mSensorRadius;
-    ::ll::TypedStorage<4, 12, ::Vec3>                             mSensorPos;
-    ::ll::TypedStorage<8, 32, ::BlockEventDispatcherToken>        mListener;
+    ::ll::TypedStorage<4, 4, float> mSensorRadius;
+    ::ll::TypedStorage<4, 12, ::Vec3> mSensorPos;
+    ::ll::TypedStorage<8, 32, ::BlockEventDispatcherToken> mListener;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockListEventMap>> mBlockSets;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ActorFilterGroup>>  mSourceFilters;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorFilterGroup>> mSourceFilters;
     // NOLINTEND
 
 public:
@@ -50,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

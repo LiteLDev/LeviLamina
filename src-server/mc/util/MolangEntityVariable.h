@@ -37,4 +37,5 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::HashedString value);
     // NOLINTEND
+
 };

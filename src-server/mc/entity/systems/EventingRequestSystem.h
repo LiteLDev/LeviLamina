@@ -17,19 +17,13 @@ class EventingRequestSystem {
 public:
     // EventingRequestSystem inner types define
     using SystemView = ::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent, ::LevelComponent>;
-
+    
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _eventingRequestSystem(
-        ::StrictEntityContext const&,
-        ::EventingRequestQueueComponent& eventingRequestQueueComponent,
-        ::LevelComponent&                levelComponent
-    );
-
-    MCNAPI static void
-    _tickEventingRequestSystem(::ViewT<::StrictEntityContext, ::EventingRequestQueueComponent, ::LevelComponent> view);
+    MCNAPI static void _eventingRequestSystem(::StrictEntityContext const&, ::EventingRequestQueueComponent& eventingRequestQueueComponent, ::LevelComponent& levelComponent);
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
+
 };

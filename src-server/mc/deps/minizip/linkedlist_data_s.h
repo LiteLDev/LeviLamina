@@ -15,4 +15,5 @@ public:
     linkedlist_data_s& operator=(linkedlist_data_s const&);
     linkedlist_data_s(linkedlist_data_s const&);
     linkedlist_data_s();
+
 };

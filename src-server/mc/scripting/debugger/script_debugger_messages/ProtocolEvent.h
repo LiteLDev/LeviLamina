@@ -14,9 +14,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkdd594f;
-    ::ll::UntypedStorage<4, 4>  mUnk554323;
+    ::ll::UntypedStorage<4, 4> mUnk554323;
     ::ll::UntypedStorage<8, 24> mUnkab449e;
-    ::ll::UntypedStorage<1, 1>  mUnk32b407;
+    ::ll::UntypedStorage<1, 1> mUnk32b407;
     // NOLINTEND
 
 public:
@@ -46,6 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptDebuggerMessages
+}

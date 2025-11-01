@@ -34,10 +34,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void upgrade(
-        ::std::optional<::SharedTypes::v1_20_50::IconItemComponent>& oldDefinition,
-        ::std::optional<::SharedTypes::v1_20_60::IconItemComponent>& newDefinition
-    );
+    MCNAPI static void upgrade(::std::optional<::SharedTypes::v1_20_50::IconItemComponent>& oldDefinition, ::std::optional<::SharedTypes::v1_20_60::IconItemComponent>& newDefinition);
     // NOLINTEND
 
 public:
@@ -45,6 +42,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_60
+}

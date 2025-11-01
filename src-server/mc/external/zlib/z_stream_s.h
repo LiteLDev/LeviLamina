@@ -27,4 +27,5 @@ public:
     z_stream_s& operator=(z_stream_s const&);
     z_stream_s(z_stream_s const&);
     z_stream_s();
+
 };

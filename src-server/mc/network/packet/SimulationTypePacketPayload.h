@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::SimulationType> mSimType;
     // NOLINTEND
+
 };

@@ -30,4 +30,5 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::HitboxComponent const& rhs);
     // NOLINTEND
+
 };

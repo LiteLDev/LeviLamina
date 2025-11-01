@@ -27,8 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool
-    _runInteraction(::Actor& owner, ::Interaction const& desc, ::Player& player, ::ActorInteraction& interaction);
+    MCNAPI bool _runInteraction(::Actor& owner, ::Interaction const& desc, ::Player& player, ::ActorInteraction& interaction);
 
     MCNAPI bool getInteraction(::Actor& owner, ::Player& player, ::ActorInteraction& interaction);
     // NOLINTEND
@@ -36,24 +35,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tryEquipItem(
-        ::Actor&              owner,
-        ::Player&             player,
-        ::ItemStack&          usingItem,
-        ::ItemStack const&    usedItemCopy,
-        ::ItemSlotInfo const& itemSlotInfo,
-        bool&                 useItemEventSent,
-        bool&                 postponedReplace
-    );
+    MCNAPI static void _tryEquipItem(::Actor& owner, ::Player& player, ::ItemStack& usingItem, ::ItemStack const& usedItemCopy, ::ItemSlotInfo const& itemSlotInfo, bool& useItemEventSent, bool& postponedReplace);
 
     MCNAPI static void _trySendEquipmentSlot(::Actor& owner, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
 
-    MCNAPI static void _trySpawnItems(
-        ::Level&             level,
-        ::Actor&             owner,
-        ::LootTables&        lootTables,
-        ::std::string const& lootTableName,
-        float                yOffset
-    );
+    MCNAPI static void _trySpawnItems(::Level& level, ::Actor& owner, ::LootTables& lootTables, ::std::string const& lootTableName, float yOffset);
     // NOLINTEND
+
 };

@@ -7,12 +7,11 @@
 
 namespace Editor::Network {
 
-class GraphicsSettingsChangedPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::GraphicsSettingsChangedPayload> {
+class GraphicsSettingsChangedPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::GraphicsSettingsChangedPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 6> mUnkfa4646;
+    ::ll::UntypedStorage<1, 11> mUnkfa4646;
     // NOLINTEND
 
 public:
@@ -33,6 +32,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

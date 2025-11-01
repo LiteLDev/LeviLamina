@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::RecipeNetId> mRecipeNetId;
-    ::ll::TypedStorage<4, 4, int>           mFilteredStringIndex;
+    ::ll::TypedStorage<4, 4, int> mFilteredStringIndex;
     // NOLINTEND
 
 public:
@@ -53,4 +53,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -23,24 +23,25 @@ public:
     // clang-format off
     struct ConstructorToken;
     // clang-format on
-
+    
     // BlockGraphics inner types define
-    struct ConstructorToken {};
-
+    struct ConstructorToken {
+    };
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk6b9406;
-    ::ll::UntypedStorage<4, 4>  mUnkf361c7;
-    ::ll::UntypedStorage<4, 4>  mUnkb40d00;
-    ::ll::UntypedStorage<1, 1>  mUnk56f9b4;
-    ::ll::UntypedStorage<1, 1>  mUnk3736cf;
-    ::ll::UntypedStorage<1, 1>  mUnkb0552c;
-    ::ll::UntypedStorage<1, 1>  mUnk341d8f;
+    ::ll::UntypedStorage<8, 8> mUnk6b9406;
+    ::ll::UntypedStorage<4, 4> mUnkf361c7;
+    ::ll::UntypedStorage<4, 4> mUnkb40d00;
+    ::ll::UntypedStorage<1, 1> mUnk56f9b4;
+    ::ll::UntypedStorage<1, 1> mUnk3736cf;
+    ::ll::UntypedStorage<1, 1> mUnkb0552c;
+    ::ll::UntypedStorage<1, 1> mUnk341d8f;
     ::ll::UntypedStorage<8, 32> mUnk232607;
     ::ll::UntypedStorage<4, 24> mUnkbcd0bf;
     ::ll::UntypedStorage<8, 24> mUnkbe394e;
-    ::ll::UntypedStorage<8, 8>  mUnk24c02c;
+    ::ll::UntypedStorage<8, 8> mUnk24c02c;
     // NOLINTEND
 
 public:
@@ -88,4 +89,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

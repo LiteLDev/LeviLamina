@@ -4,10 +4,10 @@
 
 // auto generated inclusion list
 #include "mc/deps/resource_processing/category/CategoryLoader.h"
+#include "mc/deps/resource_processing/category/SharedSlicesTraits.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace Bedrock::Resources { struct SharedSlicesTraits; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -44,4 +44,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

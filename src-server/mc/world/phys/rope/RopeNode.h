@@ -11,6 +11,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::Vec3> mPos;
     ::ll::TypedStorage<4, 12, ::Vec3> mPrevPos;
-    ::ll::TypedStorage<1, 1, char>    mFrictionAxis;
+    ::ll::TypedStorage<1, 1, char> mFrictionAxis;
     // NOLINTEND
+
 };

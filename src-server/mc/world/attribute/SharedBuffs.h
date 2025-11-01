@@ -31,4 +31,5 @@ public:
 
     MCNAPI static ::std::shared_ptr<::AttributeBuff>& WITHER();
     // NOLINTEND
+
 };

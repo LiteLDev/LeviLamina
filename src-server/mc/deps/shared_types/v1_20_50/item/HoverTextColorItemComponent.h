@@ -27,8 +27,7 @@ public:
     // NOLINTBEGIN
     MCNAPI HoverTextColorItemComponent(::SharedTypes::v1_20_50::HoverTextColorItemComponent&&);
 
-    MCNAPI ::SharedTypes::v1_20_50::HoverTextColorItemComponent&
-    operator=(::SharedTypes::v1_20_50::HoverTextColorItemComponent&&);
+    MCNAPI ::SharedTypes::v1_20_50::HoverTextColorItemComponent& operator=(::SharedTypes::v1_20_50::HoverTextColorItemComponent&&);
 
     MCNAPI ~HoverTextColorItemComponent();
     // NOLINTEND
@@ -50,6 +49,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_50
+}

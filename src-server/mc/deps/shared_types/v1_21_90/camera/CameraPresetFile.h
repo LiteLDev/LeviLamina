@@ -14,7 +14,7 @@ struct CameraPresetFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk690306;
+    ::ll::UntypedStorage<8, 32> mUnk690306;
     ::ll::UntypedStorage<8, 288> mUnk90f743;
     // NOLINTEND
 
@@ -47,6 +47,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_90
+}

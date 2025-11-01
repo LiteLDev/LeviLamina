@@ -23,18 +23,18 @@ class LegacyChunkStorage : public ::ChunkSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                             mDone;
-    ::ll::TypedStorage<8, 40, ::PerlinSimplexNoise const>                      mGrassNoise;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const>         mLevelPath;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const>         mImportedChunksPath;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RegionFile>>                  mRegionFile;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RegionFile>>                  mEntitiesFile;
-    ::ll::TypedStorage<4, 4, ::StorageVersion>                                 mLoadedStorageVersion;
-    ::ll::TypedStorage<8, 8, ::Biome&>                                         mDefaultBiome;
+    ::ll::TypedStorage<1, 1, bool> mDone;
+    ::ll::TypedStorage<8, 40, ::PerlinSimplexNoise const> mGrassNoise;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const> mLevelPath;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string> const> mImportedChunksPath;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RegionFile>> mRegionFile;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RegionFile>> mEntitiesFile;
+    ::ll::TypedStorage<4, 4, ::StorageVersion> mLoadedStorageVersion;
+    ::ll::TypedStorage<8, 8, ::Biome&> mDefaultBiome;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::string>> mChunkEntities;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ChunkPos, ::std::string>> mChunkBlockEntities;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                     mRegionFileMutex;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                     mChunkMapMutex;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mRegionFileMutex;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mChunkMapMutex;
     // NOLINTEND
 
 public:
@@ -49,27 +49,20 @@ public:
     // vIndex: 0
     virtual ~LegacyChunkStorage() /*override*/;
 
-    // vIndex: 11
+    // vIndex: 14
     virtual void loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad) /*override*/;
 
-    // vIndex: 14
+    // vIndex: 17
     virtual bool saveLiveChunk(::LevelChunk& lc) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 23
     virtual void acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacyChunkStorage(
-        ::std::unique_ptr<::ChunkSource> parent,
-        ::LevelStorage&                  levelStorage,
-        ::StorageVersion                 v,
-        ::Biome&                         defaultBiome
-    );
-
-    MCNAPI bool _isImported(::ChunkPos const& pos);
+    MCNAPI LegacyChunkStorage(::std::unique_ptr<::ChunkSource> parent, ::LevelStorage& levelStorage, ::StorageVersion v, ::Biome& defaultBiome);
 
     MCNAPI bool _loadChunk(::LevelChunk& lc);
 
@@ -83,12 +76,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::unique_ptr<::ChunkSource> parent,
-        ::LevelStorage&                  levelStorage,
-        ::StorageVersion                 v,
-        ::Biome&                         defaultBiome
-    );
+    MCNAPI void* $ctor(::std::unique_ptr<::ChunkSource> parent, ::LevelStorage& levelStorage, ::StorageVersion v, ::Biome& defaultBiome);
     // NOLINTEND
 
 public:
@@ -112,4 +100,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

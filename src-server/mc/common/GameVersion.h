@@ -11,19 +11,19 @@ class GameVersion {
 public:
     // GameVersion inner types define
     enum class Octet : uint {
-        Major     = 0,
-        Minor     = 1,
-        Patch     = 2,
-        Revision  = 3,
-        Beta      = 4,
+        Major = 0,
+        Minor = 1,
+        Patch = 2,
+        Revision = 3,
+        Beta = 4,
         NumOctets = 5,
-        Invalid   = 5,
+        Invalid = 5,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 20, uint[5]>       mDigit;
+    ::ll::TypedStorage<4, 20, uint[5]> mDigit;
     ::ll::TypedStorage<8, 32, ::std::string> mString;
     // NOLINTEND
 
@@ -79,4 +79,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

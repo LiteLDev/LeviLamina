@@ -4,6 +4,7 @@
 
 namespace CameraAimAssistErrorType {
 
-struct MissingDependencies {};
+struct MissingDependencies {
+};
 
-} // namespace CameraAimAssistErrorType
+}

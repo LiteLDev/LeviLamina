@@ -23,9 +23,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnkdeb5b0;
-    ::ll::UntypedStorage<1, 1>  mUnk2fa62e;
-    ::ll::UntypedStorage<8, 8>  mUnk22118d;
-    ::ll::UntypedStorage<8, 8>  mUnkff69b3;
+    ::ll::UntypedStorage<1, 1> mUnk2fa62e;
+    ::ll::UntypedStorage<8, 8> mUnk22118d;
+    ::ll::UntypedStorage<8, 8> mUnkff69b3;
     // NOLINTEND
 
 public:
@@ -89,23 +89,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptCommandOrigin(
-        ::ServerLevel&                              origin,
-        ::Dimension*                                dimension,
-        ::std::function<void(int, ::std::string&&)> outputCallback,
-        ::std::optional<::CommandPermissionLevel>   permissionLevel
-    );
+    MCAPI ScriptCommandOrigin(::ServerLevel& origin, ::Dimension* dimension, ::std::function<void(int, ::std::string&&)> outputCallback, ::std::optional<::CommandPermissionLevel> permissionLevel);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ServerLevel&                              origin,
-        ::Dimension*                                dimension,
-        ::std::function<void(int, ::std::string&&)> outputCallback,
-        ::std::optional<::CommandPermissionLevel>   permissionLevel
-    );
+    MCAPI void* $ctor(::ServerLevel& origin, ::Dimension* dimension, ::std::function<void(int, ::std::string&&)> outputCallback, ::std::optional<::CommandPermissionLevel> permissionLevel);
     // NOLINTEND
 
 public:
@@ -153,4 +143,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

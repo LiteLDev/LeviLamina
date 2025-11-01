@@ -5,7 +5,7 @@
 namespace DashAction {
 
 enum class Direction : uchar {
-    Entity    = 0,
+    Entity = 0,
     Passenger = 1,
 };
 

@@ -4,7 +4,8 @@
 
 namespace NetherNet {
 
-template <typename T0, typename T1>
-struct ErrorOr {};
+template<typename T0, typename T1>
+struct ErrorOr {
+};
 
-} // namespace NetherNet
+}

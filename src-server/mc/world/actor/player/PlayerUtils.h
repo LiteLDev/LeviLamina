@@ -20,4 +20,4 @@ MCNAPI bool canUseItemToIgnite(::ItemStack const& item, ::BaseGameVersion const&
 MCNAPI void onAttackAwardAchievements(::Player& player, float damage);
 // NOLINTEND
 
-} // namespace PlayerUtils
+}

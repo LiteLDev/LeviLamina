@@ -18,6 +18,7 @@ public:
     LoadState& operator=(LoadState const&);
     LoadState(LoadState const&);
     LoadState();
+
 };
 
-} // namespace cereal::internal
+}

@@ -13,4 +13,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void initialize(::JigsawStructureRegistry& jigsawRegistry);
     // NOLINTEND
+
 };

@@ -21,7 +21,7 @@ public:
     // clang-format off
     struct EncodedResolution;
     // clang-format on
-
+    
     // RecordableEncodedFrame inner types define
     struct EncodedResolution {
     public:
@@ -30,14 +30,15 @@ public:
         ::ll::UntypedStorage<4, 4> mUnkf36f21;
         ::ll::UntypedStorage<4, 4> mUnk5fc684;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         EncodedResolution& operator=(EncodedResolution const&);
         EncodedResolution(EncodedResolution const&);
         EncodedResolution();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -68,6 +69,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

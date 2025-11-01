@@ -14,7 +14,7 @@ class ScriptingEventListener {
 public:
     // ScriptingEventListener inner types define
     using EventType = ::ScriptingNotificationEvent;
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -36,4 +36,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -5,8 +5,7 @@
 namespace EduCloud {
 
 enum class CloudItemType : int {
-    MCWorld         = 0,
-    MakeCodeProject = 1,
+    MCWorld = 0,
 };
 
 }

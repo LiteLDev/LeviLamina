@@ -15,4 +15,5 @@ public:
     RandomValueBounds& operator=(RandomValueBounds const&);
     RandomValueBounds(RandomValueBounds const&);
     RandomValueBounds();
+
 };

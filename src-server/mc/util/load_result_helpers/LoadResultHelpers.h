@@ -15,11 +15,9 @@ namespace Puv { class Logger; }
 namespace LoadResultHelpers {
 // functions
 // NOLINTBEGIN
-MCNAPI bool
-validate(::Puv::LoadResultAny const& result, ::LogArea logArea, ::LoadResultHelpers::ContentLogOptions options);
+MCNAPI bool validate(::Puv::LoadResultAny const& result, ::LogArea logArea, ::LoadResultHelpers::ContentLogOptions options);
 
-MCNAPI void
-writeToContentLog(::Puv::Logger const& logger, ::LogArea logArea, ::LoadResultHelpers::ContentLogOptions options);
+MCNAPI void writeToContentLog(::Puv::Logger const& logger, ::LogArea logArea, ::LoadResultHelpers::ContentLogOptions options);
 // NOLINTEND
 
-} // namespace LoadResultHelpers
+}

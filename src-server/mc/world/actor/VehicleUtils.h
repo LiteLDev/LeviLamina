@@ -22,20 +22,11 @@ MCAPI bool ignoredExitCollisionBlock(::Block const& block);
 
 MCAPI bool isPassengerOfActor(::Actor const& maybePassenger, ::ActorUniqueID const& actorID);
 
-MCAPI ::std::optional<::Vec3> testPosFollowingEjectPattern(
-    ::VehicleUtils::VehicleDirections const&            vehicleDirections,
-    ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
-);
+MCAPI ::std::optional<::Vec3> testPosFollowingEjectPattern(::VehicleUtils::VehicleDirections const& vehicleDirections, ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback);
 
-MCAPI ::std::optional<::Vec3> testPosFollowingLegacyActivatorRailPattern(
-    ::VehicleUtils::VehicleDirections const&            vehicleDirections,
-    ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
-);
+MCAPI ::std::optional<::Vec3> testPosFollowingLegacyActivatorRailPattern(::VehicleUtils::VehicleDirections const& vehicleDirections, ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback);
 
-MCAPI ::std::optional<::Vec3> testPosFollowingLegacyActorPattern(
-    ::VehicleUtils::VehicleDirections const&,
-    ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
-);
+MCAPI ::std::optional<::Vec3> testPosFollowingLegacyActorPattern(::VehicleUtils::VehicleDirections const&, ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback);
 // NOLINTEND
 
-} // namespace VehicleUtils
+}

@@ -29,11 +29,11 @@ class PlanterItemComponent : public ::NetworkedItemComponent<::PlanterItemCompon
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BlockTypePtr>                    mBlock;
+    ::ll::TypedStorage<8, 8, ::BlockTypePtr> mBlock;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedUseBlocks;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>  mOnUseOnSubscription;
-    ::ll::TypedStorage<1, 1, bool>                              mCanUseBlockAsIcon;
-    ::ll::TypedStorage<1, 1, bool>                              mReplaceBlockItem;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseOnSubscription;
+    ::ll::TypedStorage<1, 1, bool> mCanUseBlockAsIcon;
+    ::ll::TypedStorage<1, 1, bool> mReplaceBlockItem;
     // NOLINTEND
 
 public:
@@ -64,38 +64,21 @@ public:
     // NOLINTBEGIN
     MCAPI explicit PlanterItemComponent(::SharedTypes::v1_21_40::PlanterItemComponent component);
 
-    MCAPI bool _placeBlock(
-        ::ItemStack&      item,
-        ::Actor&          entity,
-        ::Block const&    block,
-        ::BlockPos const& placePos,
-        uchar             face,
-        ::Vec3 const&     clickPos
-    ) const;
+    MCAPI bool _placeBlock(::ItemStack& item, ::Actor& entity, ::Block const& block, ::BlockPos const& placePos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCAPI void _useOn(
-        bool&              result,
-        ::ItemStack const& initialItemStack,
-        ::ItemStack&       currentItemStack,
-        ::Actor&           entity,
-        ::BlockPos const&  blockPos,
-        uchar              face,
-        ::Vec3 const&      clickPos
-    );
+    MCAPI void _useOn(bool& result, ::ItemStack const& initialItemStack, ::ItemStack& currentItemStack, ::Actor& entity, ::BlockPos const& blockPos, uchar face, ::Vec3 const& clickPos);
 
     MCAPI bool calculatePlacePos(::ItemStackBase const& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
     MCAPI bool canUseOn(::ItemStack const& instance, ::Actor& entity, ::BlockPos const& pos, uchar face) const;
+
+    MCAPI ::HashedString const& getBlockIdentifier() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -123,4 +106,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

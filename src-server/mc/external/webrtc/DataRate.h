@@ -7,6 +7,7 @@
 
 namespace webrtc {
 
-class DataRate : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::DataRate> {};
+class DataRate : public ::webrtc::rtc_units_impl::RelativeUnit<::webrtc::DataRate> {
+};
 
-} // namespace webrtc
+}

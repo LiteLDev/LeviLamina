@@ -24,6 +24,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::sim::ExecutionResult execute(::SimulatedPlayer& player);
     // NOLINTEND
+
 };
 
-} // namespace sim
+}

@@ -17,11 +17,11 @@ class GlideMoveControl : public ::MoveControl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>   mSpeed;
-    ::ll::TypedStorage<4, 4, float>   mStartSpeed;
-    ::ll::TypedStorage<4, 4, float>   mSpeedWhenTurning;
+    ::ll::TypedStorage<4, 4, float> mSpeed;
+    ::ll::TypedStorage<4, 4, float> mStartSpeed;
+    ::ll::TypedStorage<4, 4, float> mSpeedWhenTurning;
     ::ll::TypedStorage<4, 12, ::Vec3> mCurrentWantedPos;
-    ::ll::TypedStorage<4, 4, int>     mNumberOfFrontalCollisions;
+    ::ll::TypedStorage<4, 4, int> mNumberOfFrontalCollisions;
     // NOLINTEND
 
 public:
@@ -50,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

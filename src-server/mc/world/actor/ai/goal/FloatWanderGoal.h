@@ -18,20 +18,20 @@ class FloatWanderGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>       mMob;
-    ::ll::TypedStorage<4, 12, ::Vec3>      mTargetPos;
-    ::ll::TypedStorage<4, 4, int>          mFloatDuration;
-    ::ll::TypedStorage<4, 4, float>        mTargetXZDist;
-    ::ll::TypedStorage<4, 4, float>        mTargetYDist;
-    ::ll::TypedStorage<4, 4, float>        mSurfaceXZDist;
-    ::ll::TypedStorage<4, 4, float>        mSurfaceYDist;
-    ::ll::TypedStorage<4, 4, float>        mYOffset;
-    ::ll::TypedStorage<1, 1, bool>         mMustReach;
-    ::ll::TypedStorage<1, 1, bool>         mRandomReselect;
-    ::ll::TypedStorage<1, 1, bool>         mUseHomePositionRestriction;
-    ::ll::TypedStorage<1, 1, bool>         mAdditionalCollisionBuffer;
-    ::ll::TypedStorage<1, 1, bool>         mAllowNavigatingThroughLiquids;
-    ::ll::TypedStorage<1, 1, bool>         mNavigateAroundSurface;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 12, ::Vec3> mTargetPos;
+    ::ll::TypedStorage<4, 4, int> mFloatDuration;
+    ::ll::TypedStorage<4, 4, float> mTargetXZDist;
+    ::ll::TypedStorage<4, 4, float> mTargetYDist;
+    ::ll::TypedStorage<4, 4, float> mSurfaceXZDist;
+    ::ll::TypedStorage<4, 4, float> mSurfaceYDist;
+    ::ll::TypedStorage<4, 4, float> mYOffset;
+    ::ll::TypedStorage<1, 1, bool> mMustReach;
+    ::ll::TypedStorage<1, 1, bool> mRandomReselect;
+    ::ll::TypedStorage<1, 1, bool> mUseHomePositionRestriction;
+    ::ll::TypedStorage<1, 1, bool> mAdditionalCollisionBuffer;
+    ::ll::TypedStorage<1, 1, bool> mAllowNavigatingThroughLiquids;
+    ::ll::TypedStorage<1, 1, bool> mNavigateAroundSurface;
     ::ll::TypedStorage<4, 8, ::FloatRange> mFloatDurationRange;
     // NOLINTEND
 
@@ -66,12 +66,7 @@ public:
 
     MCAPI ::Vec3 const _getSuitableTargetPosition();
 
-    MCAPI bool const _isPosCloseToSurface(
-        ::BlockSource& region,
-        ::Vec3 const&  targetPos,
-        int            distanceToBlocksY,
-        int            distanceToBlocksXZ
-    ) const;
+    MCAPI bool const _isPosCloseToSurface(::BlockSource& region, ::Vec3 const& targetPos, int distanceToBlocksY, int distanceToBlocksXZ) const;
     // NOLINTEND
 
 public:
@@ -89,4 +84,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

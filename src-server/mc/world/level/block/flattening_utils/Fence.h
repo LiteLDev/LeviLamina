@@ -13,4 +13,4 @@ namespace FlatteningUtils::Fence {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-} // namespace FlatteningUtils::Fence
+}

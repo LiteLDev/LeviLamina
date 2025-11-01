@@ -10,4 +10,5 @@ public:
     ::ll::TypedStorage<4, 4, int> mDamageTimeInterval;
     ::ll::TypedStorage<4, 4, int> mDamageTime;
     // NOLINTEND
+
 };

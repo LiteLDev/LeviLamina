@@ -13,4 +13,4 @@ namespace MovementSoundSystems {
 MCNAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
-} // namespace MovementSoundSystems
+}

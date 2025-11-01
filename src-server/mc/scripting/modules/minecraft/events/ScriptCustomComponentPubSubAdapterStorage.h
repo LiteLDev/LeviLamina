@@ -4,7 +4,8 @@
 
 namespace ScriptModuleMinecraft {
 
-template <typename T0>
-struct ScriptCustomComponentPubSubAdapterStorage {};
+template<typename T0>
+struct ScriptCustomComponentPubSubAdapterStorage {
+};
 
-} // namespace ScriptModuleMinecraft
+}

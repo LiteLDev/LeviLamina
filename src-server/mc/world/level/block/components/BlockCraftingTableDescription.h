@@ -17,8 +17,8 @@ struct BlockCraftingTableDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                  mGridSize;
-    ::ll::TypedStorage<8, 32, ::std::string>       mTableName;
+    ::ll::TypedStorage<4, 4, int> mGridSize;
+    ::ll::TypedStorage<8, 32, ::std::string> mTableName;
     ::ll::TypedStorage<8, 24, ::CraftingTagsProxy> mCraftingTags;
     // NOLINTEND
 
@@ -75,4 +75,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

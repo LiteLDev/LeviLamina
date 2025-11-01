@@ -20,7 +20,7 @@ class PackCommandPipelineImpl : public ::PackCommand::IPackCommandPipeline {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk56a0ad;
+    ::ll::UntypedStorage<8, 8> mUnk56a0ad;
     ::ll::UntypedStorage<8, 16> mUnk39534f;
     // NOLINTEND
 
@@ -37,8 +37,7 @@ public:
     virtual ::PackCommand::PackCommandHandle submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands) /*override*/;
 
     // vIndex: 2
-    virtual ::PackCommand::PackCommandHandle
-    submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&& commands) /*override*/;
+    virtual ::PackCommand::PackCommandHandle submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&& commands) /*override*/;
 
     // vIndex: 3
     virtual ::PackCommand::PackCommandHandle submitRemove(::PackCommand::RemoveBatch&& commands) /*override*/;
@@ -53,12 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::PackCommand::PackCommandHandle enqueueCommands(
-        ::std::variant<
-            ::PackCommand::UpgradeLegacyDependenciesBatch,
-            ::PackCommand::MoveReplaceBatch,
-            ::PackCommand::RemoveBatch>&& commands
-    );
+    MCNAPI ::PackCommand::PackCommandHandle enqueueCommands(::std::variant<::PackCommand::UpgradeLegacyDependenciesBatch, ::PackCommand::MoveReplaceBatch, ::PackCommand::RemoveBatch>&& commands);
     // NOLINTEND
 
 public:
@@ -66,8 +60,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::PackCommand::PackCommandHandle $submitMoveReplace(::PackCommand::MoveReplaceBatch&& commands);
 
-    MCNAPI ::PackCommand::PackCommandHandle
-    $submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&& commands);
+    MCNAPI ::PackCommand::PackCommandHandle $submitUpgradeLegacyDependencies(::PackCommand::UpgradeLegacyDependenciesBatch&& commands);
 
     MCNAPI ::PackCommand::PackCommandHandle $submitRemove(::PackCommand::RemoveBatch&& commands);
 
@@ -79,6 +72,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace PackCommand
+}

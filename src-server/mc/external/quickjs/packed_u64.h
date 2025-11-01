@@ -14,4 +14,5 @@ public:
     packed_u64& operator=(packed_u64 const&);
     packed_u64(packed_u64 const&);
     packed_u64();
+
 };

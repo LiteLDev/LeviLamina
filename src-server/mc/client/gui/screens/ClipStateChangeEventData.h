@@ -11,8 +11,9 @@ struct ClipStateChangeEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>             id;
+    ::ll::TypedStorage<4, 4, uint> id;
     ::ll::TypedStorage<8, 8, ::UIPropertyBag*> propertyBag;
-    ::ll::TypedStorage<1, 1, bool>             isClipped;
+    ::ll::TypedStorage<1, 1, bool> isClipped;
     // NOLINTEND
+
 };

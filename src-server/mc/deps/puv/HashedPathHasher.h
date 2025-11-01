@@ -4,6 +4,7 @@
 
 namespace Puv::internal {
 
-struct HashedPathHasher {};
+struct HashedPathHasher {
+};
 
-} // namespace Puv::internal
+}

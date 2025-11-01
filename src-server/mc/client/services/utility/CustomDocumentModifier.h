@@ -14,4 +14,5 @@ public:
     CustomDocumentModifier& operator=(CustomDocumentModifier const&);
     CustomDocumentModifier(CustomDocumentModifier const&);
     CustomDocumentModifier();
+
 };

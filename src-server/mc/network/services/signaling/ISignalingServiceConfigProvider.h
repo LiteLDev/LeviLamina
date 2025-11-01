@@ -17,7 +17,7 @@ public:
     // clang-format off
     struct Token;
     // clang-format on
-
+    
     // ISignalingServiceConfigProvider inner types define
     struct Token : public ::std::string {
     public:
@@ -25,14 +25,15 @@ public:
         // NOLINTBEGIN
         MCNAPI ~Token();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -57,4 +58,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

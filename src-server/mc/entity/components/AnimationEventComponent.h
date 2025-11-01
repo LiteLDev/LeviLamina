@@ -8,7 +8,7 @@ public:
     // clang-format off
     struct AnimationStateData;
     // clang-format on
-
+    
     // AnimationEventComponent inner types define
     struct AnimationStateData {
     public:
@@ -18,17 +18,19 @@ public:
         ::ll::UntypedStorage<1, 1> mUnkd296f6;
         ::ll::UntypedStorage<1, 1> mUnkc892bb;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         AnimationStateData& operator=(AnimationStateData const&);
         AnimationStateData(AnimationStateData const&);
         AnimationStateData();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::AnimationEventComponent::AnimationStateData>> mObservedAnimationStates;
     // NOLINTEND
+
 };

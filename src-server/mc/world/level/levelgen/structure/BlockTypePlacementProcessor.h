@@ -16,10 +16,10 @@ class BlockTypePlacementProcessor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                                                                mChance;
-    ::ll::TypedStorage<8, 2576, ::Random>                                                          mRandom;
-    ::ll::TypedStorage<1, 1, bool>                                                                 mHasGravity;
-    ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*>    mBlockRules;
+    ::ll::TypedStorage<4, 4, float> mChance;
+    ::ll::TypedStorage<8, 2576, ::Random> mRandom;
+    ::ll::TypedStorage<1, 1, bool> mHasGravity;
+    ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*> mBlockRules;
     ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const*> mBlockTagRules;
     // NOLINTEND
 
@@ -46,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

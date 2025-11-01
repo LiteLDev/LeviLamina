@@ -14,4 +14,5 @@ public:
     BoneOrientationTransform& operator=(BoneOrientationTransform const&);
     BoneOrientationTransform(BoneOrientationTransform const&);
     BoneOrientationTransform();
+
 };

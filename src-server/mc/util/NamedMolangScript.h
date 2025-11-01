@@ -10,7 +10,7 @@ struct NamedMolangScript {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString>   mName;
+    ::ll::TypedStorage<8, 48, ::HashedString> mName;
     ::ll::TypedStorage<8, 16, ::ExpressionNode> mScript;
     // NOLINTEND
 
@@ -40,4 +40,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

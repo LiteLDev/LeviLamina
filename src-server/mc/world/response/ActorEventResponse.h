@@ -27,11 +27,7 @@ public:
     virtual void executeAction(::RenderParams&) const = 0;
 
     // vIndex: 3
-    virtual void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
-                                               schema,
-        ::Factory<::ActorEventResponse> const& factory
-    ) const;
+    virtual void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>& schema, ::Factory<::ActorEventResponse> const& factory) const;
     // NOLINTEND
 
 public:
@@ -39,11 +35,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string const& $getName() const;
 
-    MCNAPI void $buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
-                                               schema,
-        ::Factory<::ActorEventResponse> const& factory
-    ) const;
+    MCNAPI void $buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>& schema, ::Factory<::ActorEventResponse> const& factory) const;
     // NOLINTEND
 
 public:
@@ -51,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

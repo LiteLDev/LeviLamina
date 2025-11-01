@@ -17,16 +17,16 @@ public:
     enum class Task : int {
         None = -1,
         Reap = 0,
-        Sow  = 1,
+        Sow = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                          mMaximumTicksUntilSearch;
-    ::ll::TypedStorage<4, 4, int>                          mSearchCooldownMaximumTicks;
-    ::ll::TypedStorage<4, 4, int>                          mTaskCooldownTicks;
-    ::ll::TypedStorage<4, 4, int>                          mInventorySeedsIndex;
+    ::ll::TypedStorage<4, 4, int> mMaximumTicksUntilSearch;
+    ::ll::TypedStorage<4, 4, int> mSearchCooldownMaximumTicks;
+    ::ll::TypedStorage<4, 4, int> mTaskCooldownTicks;
+    ::ll::TypedStorage<4, 4, int> mInventorySeedsIndex;
     ::ll::TypedStorage<4, 4, ::HarvestFarmBlockGoal::Task> mCurrentTask;
     // NOLINTEND
 
@@ -87,4 +87,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

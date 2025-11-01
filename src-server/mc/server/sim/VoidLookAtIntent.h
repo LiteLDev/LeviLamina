@@ -4,6 +4,7 @@
 
 namespace sim {
 
-struct VoidLookAtIntent {};
+struct VoidLookAtIntent {
+};
 
-} // namespace sim
+}

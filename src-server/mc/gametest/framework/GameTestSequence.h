@@ -13,8 +13,8 @@ class GameTestSequence {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk10d998;
-    ::ll::UntypedStorage<8, 8>  mUnk8825e0;
+    ::ll::UntypedStorage<4, 4> mUnk10d998;
+    ::ll::UntypedStorage<8, 8> mUnk8825e0;
     ::ll::UntypedStorage<8, 24> mUnk452f28;
     // NOLINTEND
 
@@ -31,19 +31,17 @@ public:
 
     MCNAPI ::gametest::GameTestSequence& thenExecute(::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
-    MCNAPI ::gametest::GameTestSequence&
-    thenExecuteAfter(int tickDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
+    MCNAPI ::gametest::GameTestSequence& thenExecuteAfter(int tickDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
-    MCNAPI ::gametest::GameTestSequence&
-    thenExecuteFor(int tickCount, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
+    MCNAPI ::gametest::GameTestSequence& thenExecuteFor(int tickCount, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCNAPI void thenFail(::gametest::GameTestError error);
 
     MCNAPI void thenSucceed();
 
-    MCNAPI ::gametest::GameTestSequence&
-    thenWaitAfter(int tickDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
+    MCNAPI ::gametest::GameTestSequence& thenWaitAfter(int tickDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
     // NOLINTEND
+
 };
 
-} // namespace gametest
+}

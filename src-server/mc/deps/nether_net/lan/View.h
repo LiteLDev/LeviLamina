@@ -17,6 +17,7 @@ public:
     View& operator=(View const&);
     View(View const&);
     View();
+
 };
 
-} // namespace NetherNet
+}

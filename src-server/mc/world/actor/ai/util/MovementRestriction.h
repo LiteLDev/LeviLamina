@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnk6144fd;
-    ::ll::UntypedStorage<4, 4>  mUnkf57e49;
+    ::ll::UntypedStorage<4, 4> mUnkf57e49;
     // NOLINTEND
 
 public:
@@ -15,4 +15,5 @@ public:
     MovementRestriction& operator=(MovementRestriction const&);
     MovementRestriction(MovementRestriction const&);
     MovementRestriction();
+
 };

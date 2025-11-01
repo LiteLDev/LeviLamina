@@ -28,10 +28,10 @@ public:
     // vIndex: 23
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual ::SharedTypes::Legacy::LevelSoundEvent getOpenSound() const /*override*/;
 
-    // vIndex: 51
+    // vIndex: 52
     virtual ::SharedTypes::Legacy::LevelSoundEvent getCloseSound() const /*override*/;
 
     // vIndex: 0
@@ -61,4 +61,5 @@ public:
 
     MCAPI static void** $vftableForFillingContainer();
     // NOLINTEND
+
 };

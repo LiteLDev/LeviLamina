@@ -22,4 +22,4 @@ MCNAPI ::std::string const& SHOW_INVITATION_BADGE();
 MCNAPI ::std::string const& SHOW_MESSAGE_BADGE();
 // NOLINTEND
 
-} // namespace PlayerMessaging
+}

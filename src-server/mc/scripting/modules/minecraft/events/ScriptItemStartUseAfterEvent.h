@@ -21,10 +21,9 @@ struct ScriptItemStartUseAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
-                                                                                                           mScriptItem;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> mScriptItem;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mSource;
-    ::ll::TypedStorage<4, 4, int>                                                                          mUseDuration;
+    ::ll::TypedStorage<4, 4, int> mUseDuration;
     // NOLINTEND
 
 public:
@@ -37,12 +36,7 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptItemStartUseAfterEvent(::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent const&);
 
-    MCAPI ScriptItemStartUseAfterEvent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Player const&                                                                player,
-        ::ItemStartUseEvent const&                                                     itemEvent,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
+    MCAPI ScriptItemStartUseAfterEvent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Player const& player, ::ItemStartUseEvent const& itemEvent, ::Scripting::WeakLifetimeScope const& scope);
 
     MCAPI ~ScriptItemStartUseAfterEvent();
     // NOLINTEND
@@ -60,12 +54,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStartUseAfterEvent const&);
 
-    MCAPI void* $ctor(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Player const&                                                                player,
-        ::ItemStartUseEvent const&                                                     itemEvent,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
+    MCAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Player const& player, ::ItemStartUseEvent const& itemEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -73,6 +62,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

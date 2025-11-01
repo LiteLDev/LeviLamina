@@ -12,7 +12,7 @@ public:
     // clang-format off
     class Definition;
     // clang-format on
-
+    
     // TimerActorFlag2Goal inner types define
     class Definition : public ::TimerActorFlagBaseDefinition {
     public:
@@ -21,14 +21,15 @@ public:
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -41,4 +42,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -18,4 +18,5 @@ public:
     PredictedMovementSystemParams& operator=(PredictedMovementSystemParams const&);
     PredictedMovementSystemParams(PredictedMovementSystemParams const&);
     PredictedMovementSystemParams();
+
 };

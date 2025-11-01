@@ -4,6 +4,7 @@
 
 namespace edu::auth {
 
-struct SignInCredsRefreshFailed {};
+struct SignInCredsRefreshFailed {
+};
 
-} // namespace edu::auth
+}

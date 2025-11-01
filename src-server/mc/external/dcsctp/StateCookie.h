@@ -34,6 +34,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::optional<::dcsctp::StateCookie> Deserialize(::rtc::ArrayView<uchar const> cookie);
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

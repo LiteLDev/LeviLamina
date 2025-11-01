@@ -16,4 +16,5 @@ public:
     DenySameParentsVariantData& operator=(DenySameParentsVariantData const&);
     DenySameParentsVariantData(DenySameParentsVariantData const&);
     DenySameParentsVariantData();
+
 };

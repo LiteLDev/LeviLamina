@@ -25,12 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool executeTrigger(
-        ::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers,
-        ::ItemStackBase&                                              item,
-        ::DefinitionTrigger const&                                    trigger,
-        ::RenderParams&                                               params
-    ) const /*override*/;
+    virtual bool executeTrigger(::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers, ::ItemStackBase& item, ::DefinitionTrigger const& trigger, ::RenderParams& params) const /*override*/;
 
     // vIndex: 0
     virtual ~LegacyItemTriggerHandler() /*override*/ = default;
@@ -39,32 +34,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _executeEvent(
-        ::std::unordered_map<::std::string, ::DefinitionEvent> const&         eventHandlers,
-        ::ItemStackBase&                                                      item,
-        ::std::string const&                                                  name,
-        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
-        ::RenderParams&                                                       params
-    ) const;
+    MCAPI void _executeEvent(::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers, ::ItemStackBase& item, ::std::string const& name, ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack, ::RenderParams& params) const;
 
-    MCAPI bool _forceExecuteTrigger(
-        ::std::unordered_map<::std::string, ::DefinitionEvent> const&         eventHandlers,
-        ::ItemStackBase&                                                      item,
-        ::DefinitionTrigger const&                                            trigger,
-        ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack,
-        ::RenderParams&                                                       params
-    ) const;
+    MCAPI bool _forceExecuteTrigger(::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers, ::ItemStackBase& item, ::DefinitionTrigger const& trigger, ::std::vector<::std::pair<::std::string const, ::std::string const>>& eventStack, ::RenderParams& params) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $executeTrigger(
-        ::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers,
-        ::ItemStackBase&                                              item,
-        ::DefinitionTrigger const&                                    trigger,
-        ::RenderParams&                                               params
-    ) const;
+    MCAPI bool $executeTrigger(::std::unordered_map<::std::string, ::DefinitionEvent> const& eventHandlers, ::ItemStackBase& item, ::DefinitionTrigger const& trigger, ::RenderParams& params) const;
     // NOLINTEND
 
 public:
@@ -72,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

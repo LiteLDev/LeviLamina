@@ -15,4 +15,5 @@ public:
     FreeCameraControlledDefinition& operator=(FreeCameraControlledDefinition const&);
     FreeCameraControlledDefinition(FreeCameraControlledDefinition const&);
     FreeCameraControlledDefinition();
+
 };

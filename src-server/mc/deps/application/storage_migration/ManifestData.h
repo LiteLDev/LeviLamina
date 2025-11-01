@@ -18,6 +18,7 @@ public:
     ManifestData& operator=(ManifestData const&);
     ManifestData(ManifestData const&);
     ManifestData();
+
 };
 
-} // namespace Bedrock::StorageMigration
+}

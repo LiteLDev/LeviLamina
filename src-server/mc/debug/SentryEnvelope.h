@@ -11,8 +11,8 @@ struct SentryEnvelope {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64>  mUnk557017;
-    ::ll::UntypedStorage<4, 4>   mUnk73b89d;
+    ::ll::UntypedStorage<8, 64> mUnk557017;
+    ::ll::UntypedStorage<4, 4> mUnk73b89d;
     ::ll::UntypedStorage<8, 424> mUnkf0c92f;
     // NOLINTEND
 
@@ -39,4 +39,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

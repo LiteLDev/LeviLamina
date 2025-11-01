@@ -18,4 +18,4 @@ MCNAPI ::std::defer_lock_t const&& DeferLock();
 MCNAPI ::std::try_to_lock_t const&& TryToLock();
 // NOLINTEND
 
-} // namespace Bedrock::Threading
+}

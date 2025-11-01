@@ -17,16 +17,16 @@ class NearestAttackableTargetGoal : public ::TargetGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                       mTargetID;
-    ::ll::TypedStorage<8, 8, ::MobDescriptor const*>                                mTargetDescriptor;
-    ::ll::TypedStorage<1, 1, bool>                                                  mReselectTargets;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mTargetID;
+    ::ll::TypedStorage<8, 8, ::MobDescriptor const*> mTargetDescriptor;
+    ::ll::TypedStorage<1, 1, bool> mReselectTargets;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::MobDescriptor const*, ::Tick>> mTargetCooldowns;
-    ::ll::TypedStorage<4, 4, int>                                                   mAttackInterval;
-    ::ll::TypedStorage<4, 4, int>                                                   mScanInterval;
-    ::ll::TypedStorage<1, 1, bool>                                                  mSetPersistent;
-    ::ll::TypedStorage<4, 4, float>                                                 mTargetSearchHeight;
-    ::ll::TypedStorage<4, 4, float>                                                 mTargetInvisibleMultiplier;
-    ::ll::TypedStorage<4, 4, float>                                                 mTargetSneakVisibilityMultiplier;
+    ::ll::TypedStorage<4, 4, int> mAttackInterval;
+    ::ll::TypedStorage<4, 4, int> mScanInterval;
+    ::ll::TypedStorage<1, 1, bool> mSetPersistent;
+    ::ll::TypedStorage<4, 4, float> mTargetSearchHeight;
+    ::ll::TypedStorage<4, 4, float> mTargetInvisibleMultiplier;
+    ::ll::TypedStorage<4, 4, float> mTargetSneakVisibilityMultiplier;
     // NOLINTEND
 
 public:
@@ -100,4 +100,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

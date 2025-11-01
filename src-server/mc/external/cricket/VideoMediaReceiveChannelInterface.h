@@ -49,8 +49,7 @@ public:
     virtual ::std::vector<::webrtc::RtpSource> GetSources(uint) const = 0;
 
     // vIndex: 25
-    virtual void
-        SetRecordableEncodedFrameCallback(uint, ::std::function<void(::webrtc::RecordableEncodedFrame const&)>) = 0;
+    virtual void SetRecordableEncodedFrameCallback(uint, ::std::function<void(::webrtc::RecordableEncodedFrame const&)>) = 0;
 
     // vIndex: 26
     virtual void ClearRecordableEncodedFrameCallback(uint) = 0;
@@ -73,6 +72,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

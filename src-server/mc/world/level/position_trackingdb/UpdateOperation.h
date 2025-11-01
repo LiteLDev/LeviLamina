@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnke09c99;
-    ::ll::UntypedStorage<4, 4>  mUnk1a37d7;
+    ::ll::UntypedStorage<4, 4> mUnk1a37d7;
     // NOLINTEND
 
 public:
@@ -34,10 +34,7 @@ public:
     virtual ~UpdateOperation() /*override*/ = default;
 
     // vIndex: 1
-    virtual bool tick(
-        ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>,
-        ::PositionTrackingDB::TrackingRecord&
-    ) /*override*/;
+    virtual bool tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&) /*override*/;
 
     // vIndex: 2
     virtual char const* getDescription() const /*override*/;
@@ -48,6 +45,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace PositionTrackingDB
+}

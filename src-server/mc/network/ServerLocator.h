@@ -24,17 +24,7 @@ public:
     virtual ~ServerLocator() /*override*/;
 
     // vIndex: 3
-    virtual void startAnnouncingServer(
-        ::std::string const&,
-        ::std::string const&,
-        ::Bedrock::NonOwnerPointer<::AppPlatform>,
-        ::GameType,
-        int,
-        int,
-        bool,
-        bool,
-        bool
-    ) = 0;
+    virtual void startAnnouncingServer(::std::string const&, ::std::string const&, ::Bedrock::NonOwnerPointer<::AppPlatform>, ::GameType, int, int, bool, bool, bool) = 0;
 
     // vIndex: 4
     virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform>) = 0;
@@ -64,8 +54,7 @@ public:
     virtual float getPingTimeForGUID(::std::string const&) = 0;
 
     // vIndex: 13
-    virtual void
-    checkCanConnectToCustomServerAsync(::std::string, int, ::std::function<void(::ServerConnectivityTestResult)>) = 0;
+    virtual void checkCanConnectToCustomServerAsync(::std::string, int, ::std::function<void(::ServerConnectivityTestResult)>) = 0;
 
     // vIndex: 1
     virtual void _onDisable() /*override*/;
@@ -93,4 +82,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

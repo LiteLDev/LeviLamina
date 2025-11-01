@@ -62,6 +62,8 @@ namespace VanillaStates {
 // functions
 // NOLINTBEGIN
 MCAPI ::BlockState const* getState(::HashedString const& name);
+
+MCAPI void registerStates();
 // NOLINTEND
 
 // static variables
@@ -353,4 +355,4 @@ MCAPI ::BlockStateVariant<int> const& WeepingVinesAge();
 MCAPI ::BlockStateVariant<int> const& WeirdoDirection();
 // NOLINTEND
 
-} // namespace VanillaStates
+}

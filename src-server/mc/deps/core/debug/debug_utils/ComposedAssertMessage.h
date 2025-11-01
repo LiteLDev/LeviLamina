@@ -13,7 +13,7 @@ class ComposedAssertMessage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk46006e;
+    ::ll::UntypedStorage<1, 1> mUnk46006e;
     ::ll::UntypedStorage<8, 32> mUnk903de1;
     // NOLINTEND
 
@@ -36,6 +36,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace DebugUtils
+}

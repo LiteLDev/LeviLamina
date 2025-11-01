@@ -13,11 +13,11 @@ class RateLimiter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk2e9817;
+    ::ll::UntypedStorage<8, 8> mUnk2e9817;
     ::ll::UntypedStorage<8, 40> mUnk74385f;
     ::ll::UntypedStorage<8, 88> mUnkb52e97;
-    ::ll::UntypedStorage<8, 8>  mUnkf4354a;
-    ::ll::UntypedStorage<4, 4>  mUnk6b82f1;
+    ::ll::UntypedStorage<8, 8> mUnkf4354a;
+    ::ll::UntypedStorage<4, 4> mUnk6b82f1;
     // NOLINTEND
 
 public:
@@ -49,6 +49,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

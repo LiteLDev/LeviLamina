@@ -20,15 +20,15 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk1113ec;
-    ::ll::UntypedStorage<4, 4>  mUnkc8d6d3;
+    ::ll::UntypedStorage<4, 4> mUnkc8d6d3;
     ::ll::UntypedStorage<8, 24> mUnk4ecfbb;
     ::ll::UntypedStorage<8, 16> mUnk9f3f62;
-    ::ll::UntypedStorage<8, 8>  mUnk75fc0f;
-    ::ll::UntypedStorage<8, 8>  mUnkadefe5;
+    ::ll::UntypedStorage<8, 8> mUnk75fc0f;
+    ::ll::UntypedStorage<8, 8> mUnkadefe5;
     ::ll::UntypedStorage<4, 32> mUnkf0d315;
     ::ll::UntypedStorage<4, 32> mUnk62a6c8;
-    ::ll::UntypedStorage<2, 2>  mUnk24dd54;
-    ::ll::UntypedStorage<1, 1>  mUnk5dfda4;
+    ::ll::UntypedStorage<2, 2> mUnk24dd54;
+    ::ll::UntypedStorage<1, 1> mUnk5dfda4;
     // NOLINTEND
 
 public:
@@ -59,21 +59,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::rtc::Network> CreateNetwork(
-        ::std::string_view      name,
-        ::std::string_view      description,
-        ::rtc::IPAddress const& prefix,
-        int                     prefix_length,
-        ::rtc::AdapterType      type
-    ) const;
+    MCNAPI ::std::unique_ptr<::rtc::Network> CreateNetwork(::std::string_view name, ::std::string_view description, ::rtc::IPAddress const& prefix, int prefix_length, ::rtc::AdapterType type) const;
 
     MCNAPI ::rtc::Network* GetNetworkFromAddress(::rtc::IPAddress const& ip) const;
 
-    MCNAPI void MergeNetworkList(
-        ::std::vector<::std::unique_ptr<::rtc::Network>> new_networks,
-        bool*                                            changed,
-        ::rtc::NetworkManager::Stats*                    stats
-    );
+    MCNAPI void MergeNetworkList(::std::vector<::std::unique_ptr<::rtc::Network>> new_networks, bool* changed, ::rtc::NetworkManager::Stats* stats);
 
     MCNAPI explicit NetworkManagerBase(::webrtc::FieldTrialsView const* field_trials);
 
@@ -117,6 +107,7 @@ public:
 
     MCNAPI static void** $vftableForMdnsResponderProvider();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

@@ -12,7 +12,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityId>> mNewActiveCamera;
-    ::ll::TypedStorage<4, 4, ::EasingType>           mEasingType;
-    ::ll::TypedStorage<4, 4, float>                  mEasingTime;
+    ::ll::TypedStorage<4, 4, ::EasingType> mEasingType;
+    ::ll::TypedStorage<4, 4, float> mEasingTime;
     // NOLINTEND
+
 };

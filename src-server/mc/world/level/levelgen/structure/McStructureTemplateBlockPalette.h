@@ -19,10 +19,10 @@ struct McStructureTemplateBlockPalette {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::StructureTemplateData const*>                                 mMcstructure;
-    ::ll::TypedStorage<8, 8, ::StructureBlockPalette const*>                                 mPalette;
+    ::ll::TypedStorage<8, 8, ::StructureTemplateData const*> mMcstructure;
+    ::ll::TypedStorage<8, 8, ::StructureBlockPalette const*> mPalette;
     ::ll::TypedStorage<8, 8, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> const*> mUnknownBlockRegistry;
-    ::ll::TypedStorage<8, 8, uint64>                                                         mIndex;
+    ::ll::TypedStorage<8, 8, uint64> mIndex;
     // NOLINTEND
 
 public:
@@ -30,6 +30,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> next();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen
+}

@@ -4,7 +4,8 @@
 
 namespace webrtc {
 
-template <typename T0, typename T1>
-class StrongAlias {};
+template<typename T0, typename T1>
+class StrongAlias {
+};
 
-} // namespace webrtc
+}

@@ -4,6 +4,7 @@
 
 namespace br::worldgen::processors {
 
-struct AlwaysTrueType {};
+struct AlwaysTrueType {
+};
 
-} // namespace br::worldgen::processors
+}

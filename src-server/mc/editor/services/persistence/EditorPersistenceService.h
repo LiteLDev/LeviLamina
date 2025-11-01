@@ -19,23 +19,22 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace Editor::Services {
 
-class EditorPersistenceService : public ::Editor::Services::IEditorService,
-                                 public ::Editor::Services::EditorPersistenceServiceProvider {
+class EditorPersistenceService : public ::Editor::Services::IEditorService, public ::Editor::Services::EditorPersistenceServiceProvider {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk95c2f0;
     ::ll::UntypedStorage<8, 48> mUnk76e3f8;
-    ::ll::UntypedStorage<8, 8>  mUnk5f20cb;
+    ::ll::UntypedStorage<8, 8> mUnk5f20cb;
     ::ll::UntypedStorage<8, 16> mUnkbccd2b;
     ::ll::UntypedStorage<8, 16> mUnk3eb25a;
     ::ll::UntypedStorage<8, 16> mUnkfb39fc;
     ::ll::UntypedStorage<8, 16> mUnkd0e172;
-    ::ll::UntypedStorage<1, 1>  mUnkf68ffb;
-    ::ll::UntypedStorage<1, 1>  mUnkc98305;
-    ::ll::UntypedStorage<1, 1>  mUnka0de9e;
-    ::ll::UntypedStorage<4, 4>  mUnk6933a5;
-    ::ll::UntypedStorage<8, 8>  mUnkc95860;
+    ::ll::UntypedStorage<1, 1> mUnkf68ffb;
+    ::ll::UntypedStorage<1, 1> mUnkc98305;
+    ::ll::UntypedStorage<1, 1> mUnka0de9e;
+    ::ll::UntypedStorage<4, 4> mUnk6933a5;
+    ::ll::UntypedStorage<8, 8> mUnkc95860;
     // NOLINTEND
 
 public:
@@ -63,42 +62,31 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 9
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-    listenForPersistDataChanged(::std::function<void(::Editor::Persistence::PersistentData const&)> func) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForPersistDataChanged(::std::function<void(::Editor::Persistence::PersistentData const&)> func) /*override*/;
 
     // vIndex: 10
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForPersistDataRemoved(
-        ::std::function<void(::HashedString const&, ::Editor::Services::PersistentDataType)> func
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForPersistDataRemoved(::std::function<void(::HashedString const&, ::Editor::Services::PersistentDataType)> func) /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<void>
-    addOrUpdatePersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> addOrUpdatePersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
 
     // vIndex: 2
-    virtual ::Scripting::Result_deprecated<void>
-    addPersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> addPersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
 
     // vIndex: 3
-    virtual ::Scripting::Result_deprecated<void>
-    updatePersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> updatePersistData(::Editor::Persistence::PersistentData const& data) /*override*/;
 
     // vIndex: 4
-    virtual ::Scripting::Result_deprecated<void>
-    removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) /*override*/;
 
     // vIndex: 5
-    virtual ::Scripting::Result_deprecated<::std::string>
-    getPersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const /*override*/;
+    virtual ::Scripting::Result_deprecated<::std::string> getPersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result_deprecated<bool>
-    hasData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const /*override*/;
+    virtual ::Scripting::Result_deprecated<bool> hasData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::Result_deprecated<::std::vector<::HashedString>>
-    getKeysStartWith(::std::string const prefix, ::Editor::Services::PersistentDataType const dataType) const
-        /*override*/;
+    virtual ::Scripting::Result_deprecated<::std::vector<::HashedString>> getKeysStartWith(::std::string const prefix, ::Editor::Services::PersistentDataType const dataType) const /*override*/;
 
     // vIndex: 8
     virtual ::std::string const& getPlayerSaveId() const /*override*/;
@@ -144,31 +132,23 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-    $listenForPersistDataChanged(::std::function<void(::Editor::Persistence::PersistentData const&)> func);
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForPersistDataChanged(::std::function<void(::Editor::Persistence::PersistentData const&)> func);
 
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForPersistDataRemoved(
-        ::std::function<void(::HashedString const&, ::Editor::Services::PersistentDataType)> func
-    );
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForPersistDataRemoved(::std::function<void(::HashedString const&, ::Editor::Services::PersistentDataType)> func);
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $addOrUpdatePersistData(::Editor::Persistence::PersistentData const& data);
+    MCNAPI ::Scripting::Result_deprecated<void> $addOrUpdatePersistData(::Editor::Persistence::PersistentData const& data);
 
     MCNAPI ::Scripting::Result_deprecated<void> $addPersistData(::Editor::Persistence::PersistentData const& data);
 
     MCNAPI ::Scripting::Result_deprecated<void> $updatePersistData(::Editor::Persistence::PersistentData const& data);
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType);
+    MCNAPI ::Scripting::Result_deprecated<void> $removePersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType);
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string>
-    $getPersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> $getPersistData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const;
 
-    MCNAPI ::Scripting::Result_deprecated<bool>
-    $hasData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $hasData(::HashedString const& key, ::Editor::Services::PersistentDataType const dataType) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::vector<::HashedString>>
-    $getKeysStartWith(::std::string const prefix, ::Editor::Services::PersistentDataType const dataType) const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::HashedString>> $getKeysStartWith(::std::string const prefix, ::Editor::Services::PersistentDataType const dataType) const;
 
     MCNAPI ::std::string const& $getPlayerSaveId() const;
 
@@ -186,6 +166,7 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

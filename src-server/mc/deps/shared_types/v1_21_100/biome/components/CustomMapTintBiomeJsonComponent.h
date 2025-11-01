@@ -20,29 +20,31 @@ public:
     struct GrassNoise;
     struct GrassTint;
     // clang-format on
-
+    
     // CustomMapTintBiomeJsonComponent inner types define
     enum class GrassType : int {
-        Tint  = 0,
+        Tint = 0,
         Noise = 1,
     };
-
+    
     struct GrassTint {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 16> mUnk4c0413;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         GrassTint& operator=(GrassTint const&);
         GrassTint(GrassTint const&);
         GrassTint();
+    
     };
-
-    struct GrassNoise {};
-
+    
+    struct GrassNoise {
+    };
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -91,6 +93,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_100
+}

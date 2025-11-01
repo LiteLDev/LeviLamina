@@ -16,4 +16,5 @@ public:
     JSPromiseReactionData& operator=(JSPromiseReactionData const&);
     JSPromiseReactionData(JSPromiseReactionData const&);
     JSPromiseReactionData();
+
 };

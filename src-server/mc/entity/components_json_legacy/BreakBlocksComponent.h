@@ -21,4 +21,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool isBreakable(::BreakBlocksDescription const* description, ::BlockType const& block);
     // NOLINTEND
+
 };

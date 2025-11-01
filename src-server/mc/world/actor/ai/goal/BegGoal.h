@@ -17,12 +17,12 @@ class BegGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                           mMob;
-    ::ll::TypedStorage<4, 4, float>                            mLookDistance;
-    ::ll::TypedStorage<4, 4, int>                              mLookTime;
-    ::ll::TypedStorage<4, 4, int>                              mMinLookTime;
-    ::ll::TypedStorage<4, 4, int>                              mMaxLookTime;
-    ::ll::TypedStorage<8, 40, ::TempEPtr<::Player>>            mPlayer;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, float> mLookDistance;
+    ::ll::TypedStorage<4, 4, int> mLookTime;
+    ::ll::TypedStorage<4, 4, int> mMinLookTime;
+    ::ll::TypedStorage<4, 4, int> mMaxLookTime;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Player>> mPlayer;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mItems;
     // NOLINTEND
 
@@ -90,4 +90,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

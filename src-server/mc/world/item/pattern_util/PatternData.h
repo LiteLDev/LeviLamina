@@ -14,8 +14,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::PatternUtil::PatternLayer>> mPatterns;
-    ::ll::TypedStorage<1, 1, uchar>                                       mBaseColor;
+    ::ll::TypedStorage<1, 1, uchar> mBaseColor;
     // NOLINTEND
+
 };
 
-} // namespace PatternUtil
+}

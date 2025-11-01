@@ -14,4 +14,5 @@ public:
     SaveToCloudConfig& operator=(SaveToCloudConfig const&);
     SaveToCloudConfig(SaveToCloudConfig const&);
     SaveToCloudConfig();
+
 };

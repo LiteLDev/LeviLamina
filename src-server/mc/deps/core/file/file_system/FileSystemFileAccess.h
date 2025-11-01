@@ -19,7 +19,7 @@ public:
     class FileSystemFileReadAccess;
     class FileSystemFileWriteAccess;
     // clang-format on
-
+    
     // FileSystemFileAccess inner types define
     class FileSystemFileReadAccess : public ::IFileReadAccess {
     public:
@@ -27,48 +27,50 @@ public:
         // NOLINTBEGIN
         // vIndex: 1
         virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const /*override*/;
-
+    
         // vIndex: 0
         virtual ~FileSystemFileReadAccess() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI uint64 $fread(void* buffer, uint64 size, uint64 count, void* file) const;
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
     class FileSystemFileWriteAccess : public ::IFileWriteAccess {
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
         virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file) /*override*/;
-
+    
         // vIndex: 0
         virtual ~FileSystemFileWriteAccess() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI uint64 $fwrite(void const* buffer, uint64 size, uint64 count, void* file);
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -134,4 +136,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

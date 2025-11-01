@@ -19,10 +19,10 @@ class WeatherManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const>      mDimensionManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const> mDimensionManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> const> mLevelEventCoordinator;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> const>     mLevelEventManager;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IWeatherManagerProxy>>>    mWeatherManagerProxy;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> const> mLevelEventManager;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IWeatherManagerProxy>>> mWeatherManagerProxy;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnWakeUpAllPlayersSubscription;
     // NOLINTEND
 
@@ -33,15 +33,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WeatherManager(
-        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>      dimensionManager,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>     levelEventManager,
-        ::std::unique_ptr<::IWeatherManagerProxy>              weatherManagerProxy
-    );
+    MCAPI WeatherManager(::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator, ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> levelEventManager, ::std::unique_ptr<::IWeatherManagerProxy> weatherManagerProxy);
 
-    MCAPI void
-    registerWithServerPlayerSleepManager(::IServerPlayerSleepManagerConnector& serverPlayerSleepManagerConnector);
+    MCAPI void registerWithServerPlayerSleepManager(::IServerPlayerSleepManagerConnector& serverPlayerSleepManagerConnector);
 
     MCAPI void stopWeather();
 
@@ -53,12 +47,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>      dimensionManager,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager>     levelEventManager,
-        ::std::unique_ptr<::IWeatherManagerProxy>              weatherManagerProxy
-    );
+    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator, ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> levelEventManager, ::std::unique_ptr<::IWeatherManagerProxy> weatherManagerProxy);
     // NOLINTEND
 
 public:
@@ -66,4 +55,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

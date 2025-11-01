@@ -16,6 +16,7 @@ public:
     CachedAsyncRetry& operator=(CachedAsyncRetry const&);
     CachedAsyncRetry(CachedAsyncRetry const&);
     CachedAsyncRetry();
+
 };
 
-} // namespace Bedrock::Threading
+}

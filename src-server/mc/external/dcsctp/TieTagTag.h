@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-class TieTagTag {};
+class TieTagTag {
+};
 
-} // namespace dcsctp
+}

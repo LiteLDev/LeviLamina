@@ -47,31 +47,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError,
-        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
-        ::Scripting::InvalidArgumentError>
-    registerEntitySpawnCallback(
-        ::std::string const& id,
-        ::std::function<bool(
-            ::br::spawn::EntityType const&,
-            ::BlockSource&,
-            ::br::spawn::EntitySpawnReason&,
-            ::BlockPos,
-            ::IRandom&
-        )>                   callback
-    );
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::InvalidArgumentError> registerEntitySpawnCallback(::std::string const& id, ::std::function<bool(::br::spawn::EntityType const&, ::BlockSource&, ::br::spawn::EntitySpawnReason&, ::BlockPos, ::IRandom&)> callback);
 
-    MCNAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError,
-        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
-        ::Scripting::InvalidArgumentError>
-    registerObstructionCallback(
-        ::std::string const&                                                                id,
-        ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)> callback
-    );
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptSpawnRulesInvalidRegistryError, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::InvalidArgumentError> registerObstructionCallback(::std::string const& id, ::std::function<bool(::BlockSource&, ::Mob const&, ::br::spawn::EntityType const&)> callback);
     // NOLINTEND
 
 public:
@@ -85,6 +63,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

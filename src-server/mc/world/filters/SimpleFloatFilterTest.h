@@ -31,6 +31,9 @@ public:
     virtual bool setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs) /*override*/;
 
     // vIndex: 6
+    virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getValue() const /*override*/;
+
+    // vIndex: 8
     virtual ::Json::Value _serializeValue() const /*override*/;
 
     // vIndex: 0
@@ -42,6 +45,9 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $setup(::FilterTest::Definition const& definition, ::FilterInputs const& inputs);
 
+    MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getValue() const;
+
     MCNAPI ::Json::Value $_serializeValue() const;
     // NOLINTEND
+
 };

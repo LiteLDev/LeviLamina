@@ -21,22 +21,9 @@ struct CurrentTickComponent;
 namespace TickLeashedEntitySystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickEntity(
-    ::LeashableComponent&             leashableComponent,
-    ::ActorOwnerComponent&            actorOwnerComponent,
-    ::Optional<::NavigationComponent> navigationComponent,
-    ::CurrentTickComponent const&     currentTick
-);
+MCNAPI void tickEntity(::LeashableComponent& leashableComponent, ::ActorOwnerComponent& actorOwnerComponent, ::Optional<::NavigationComponent> navigationComponent, ::CurrentTickComponent const& currentTick);
 
-MCNAPI void tickView(
-    ::OptionalGlobal<::CurrentTickComponent const> currentTickComponent,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::ActorTickedComponent const>,
-        ::LeashableComponent,
-        ::ActorOwnerComponent,
-        ::Optional<::NavigationComponent>> view
-);
+MCNAPI void tickView(::OptionalGlobal<::CurrentTickComponent const> currentTickComponent, ::ViewT<::StrictEntityContext, ::Include<::ActorTickedComponent const>, ::LeashableComponent, ::ActorOwnerComponent, ::Optional<::NavigationComponent>> view);
 // NOLINTEND
 
-} // namespace TickLeashedEntitySystem
+}

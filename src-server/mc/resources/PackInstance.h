@@ -17,15 +17,15 @@ class PackInstance {
 public:
     // PackInstance inner types define
     using Callback = ::std::function<void(::Core::Path const&)>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 248, ::PackReport>                                      mPackReport;
-    ::ll::TypedStorage<8, 8, ::PackSettings*>                                     mPackSettings;
+    ::ll::TypedStorage<8, 248, ::PackReport> mPackReport;
+    ::ll::TypedStorage<8, 8, ::PackSettings*> mPackSettings;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::ResourcePack>>> mPack;
-    ::ll::TypedStorage<4, 16, ::PackStats>                                        mStats;
-    ::ll::TypedStorage<4, 4, int>                                                 mSubpackIndex;
+    ::ll::TypedStorage<4, 16, ::PackStats> mStats;
+    ::ll::TypedStorage<4, 4, int> mSubpackIndex;
     // NOLINTEND
 
 public:
@@ -35,19 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackInstance(
-        ::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack,
-        int                                                subpackIndex,
-        bool                                               isDependent,
-        ::PackSettings*                                    packSettings
-    );
+    MCAPI PackInstance(::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack, int subpackIndex, bool isDependent, ::PackSettings* packSettings);
 
-    MCAPI PackInstance(
-        ::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack,
-        ::std::string const&                               subpackName,
-        bool                                               isDependent,
-        ::PackSettings*                                    packSettings
-    );
+    MCAPI PackInstance(::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack, ::std::string const& subpackName, bool isDependent, ::PackSettings* packSettings);
 
     MCAPI bool getResource(::Core::Path const& resourceName, ::std::string& resourceStream) const;
 
@@ -57,19 +47,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack,
-        int                                                subpackIndex,
-        bool                                               isDependent,
-        ::PackSettings*                                    packSettings
-    );
+    MCAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack, int subpackIndex, bool isDependent, ::PackSettings* packSettings);
 
-    MCAPI void* $ctor(
-        ::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack,
-        ::std::string const&                               subpackName,
-        bool                                               isDependent,
-        ::PackSettings*                                    packSettings
-    );
+    MCAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack, ::std::string const& subpackName, bool isDependent, ::PackSettings* packSettings);
     // NOLINTEND
 
 public:
@@ -77,4 +57,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

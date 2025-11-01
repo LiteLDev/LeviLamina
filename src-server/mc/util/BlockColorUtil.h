@@ -11,4 +11,4 @@ namespace BlockColorUtil {
 MCNAPI ::std::array<::BlockColor, 16>& RAINBOW();
 // NOLINTEND
 
-} // namespace BlockColorUtil
+}

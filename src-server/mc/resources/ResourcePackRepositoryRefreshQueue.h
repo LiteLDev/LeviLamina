@@ -19,7 +19,7 @@ public:
     struct PreviousTasks;
     struct RefreshResult;
     // clang-format on
-
+    
     // ResourcePackRepositoryRefreshQueue inner types define
     struct RefreshResult {
     public:
@@ -28,44 +28,46 @@ public:
         ::ll::UntypedStorage<8, 16> mUnkdb5a08;
         ::ll::UntypedStorage<8, 16> mUnk9ad35f;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         RefreshResult& operator=(RefreshResult const&);
         RefreshResult(RefreshResult const&);
         RefreshResult();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~RefreshResult();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct PreviousTasks {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk29b357;
-        ::ll::UntypedStorage<1, 1>  mUnk3395ad;
-        ::ll::UntypedStorage<1, 1>  mUnkd0e979;
-        ::ll::UntypedStorage<1, 1>  mUnkb4cbcb;
-        ::ll::UntypedStorage<1, 1>  mUnk79b162;
+        ::ll::UntypedStorage<1, 1> mUnk3395ad;
+        ::ll::UntypedStorage<1, 1> mUnkd0e979;
+        ::ll::UntypedStorage<1, 1> mUnkb4cbcb;
+        ::ll::UntypedStorage<1, 1> mUnk79b162;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         PreviousTasks& operator=(PreviousTasks const&);
         PreviousTasks(PreviousTasks const&);
         PreviousTasks();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -84,4 +86,5 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Bedrock::Threading::Async<void> _tryCompleteInitialization(::TaskGroup& taskGroup);
     // NOLINTEND
+
 };

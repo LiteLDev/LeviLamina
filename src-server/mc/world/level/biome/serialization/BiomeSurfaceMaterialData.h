@@ -19,7 +19,7 @@ public:
     ::ll::TypedStorage<4, 4, uint> mSeaFloorBlock;
     ::ll::TypedStorage<4, 4, uint> mFoundationBlock;
     ::ll::TypedStorage<4, 4, uint> mSeaBlock;
-    ::ll::TypedStorage<4, 4, int>  mSeaFloorDepth;
+    ::ll::TypedStorage<4, 4, int> mSeaFloorDepth;
     // NOLINTEND
 
 public:
@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeSurfaceMaterialData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
+
 };

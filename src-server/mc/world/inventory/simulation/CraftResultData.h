@@ -17,4 +17,5 @@ public:
     CraftResultData& operator=(CraftResultData const&);
     CraftResultData(CraftResultData const&);
     CraftResultData();
+
 };

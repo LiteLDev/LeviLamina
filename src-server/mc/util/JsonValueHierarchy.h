@@ -14,4 +14,5 @@ public:
     JsonValueHierarchy& operator=(JsonValueHierarchy const&);
     JsonValueHierarchy(JsonValueHierarchy const&);
     JsonValueHierarchy();
+
 };

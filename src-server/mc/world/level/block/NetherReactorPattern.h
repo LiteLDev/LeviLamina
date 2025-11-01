@@ -11,6 +11,7 @@ class NetherReactorPattern {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 216, ::BlockType const* [3][3][3]> pattern;
+    ::ll::TypedStorage<8, 216, ::BlockType const*[3][3][3]> pattern;
     // NOLINTEND
+
 };

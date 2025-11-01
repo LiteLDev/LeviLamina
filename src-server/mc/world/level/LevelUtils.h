@@ -14,14 +14,7 @@ class Player;
 namespace LevelUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI bool extinguishFire(
-    ::IBlockSource&      region,
-    ::BlockPos const&    pos,
-    uchar                face,
-    ::Actor*             source,
-    ::LevelSoundManager& levelSoundManager,
-    ::Player*            primaryPlayer
-);
+MCNAPI bool extinguishFire(::IBlockSource& region, ::BlockPos const& pos, uchar face, ::Actor* source, ::LevelSoundManager& levelSoundManager, ::Player* primaryPlayer);
 // NOLINTEND
 
-} // namespace LevelUtils
+}

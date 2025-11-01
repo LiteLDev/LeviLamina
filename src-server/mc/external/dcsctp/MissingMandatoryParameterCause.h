@@ -13,8 +13,7 @@ namespace dcsctp { struct MissingMandatoryParameterCauseConfig; }
 
 namespace dcsctp {
 
-class MissingMandatoryParameterCause : public ::dcsctp::Parameter,
-                                       public ::dcsctp::TLVTrait<::dcsctp::MissingMandatoryParameterCauseConfig> {
+class MissingMandatoryParameterCause : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::MissingMandatoryParameterCauseConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -65,6 +64,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

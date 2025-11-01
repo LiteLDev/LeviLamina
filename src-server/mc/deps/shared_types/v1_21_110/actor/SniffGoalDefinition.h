@@ -38,10 +38,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static float const& DEFAULT_DURATION();
+
+    MCNAPI static float const& DEFAULT_SNIFFING_RADIUS();
+
+    MCNAPI static float const& DEFAULT_SUSPICION_RADIUS_HORIZONTAL();
+
     MCNAPI static float const& DEFAULT_SUSPICION_RADIUS_VERTICAL();
 
     MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_110
+}

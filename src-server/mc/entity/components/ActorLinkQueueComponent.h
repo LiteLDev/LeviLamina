@@ -13,4 +13,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorLink>> mLinks;
     // NOLINTEND
+
 };

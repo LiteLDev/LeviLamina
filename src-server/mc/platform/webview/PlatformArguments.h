@@ -4,6 +4,7 @@
 
 namespace Webview {
 
-class PlatformArguments {};
+class PlatformArguments {
+};
 
-} // namespace Webview
+}

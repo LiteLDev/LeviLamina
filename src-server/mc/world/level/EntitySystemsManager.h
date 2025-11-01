@@ -18,10 +18,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::EntitySystems>> mEntitySystems;
-    ::ll::TypedStorage<1, 1, bool const>                         mIsClientSide;
-    ::ll::TypedStorage<1, 1, ::SubClientId const>                mSubClientId;
-    ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry>>       mEntityRegistry;
-    ::ll::TypedStorage<8, 16, ::WeakRef<::PauseManager>>         mPauseManager;
+    ::ll::TypedStorage<1, 1, bool const> mIsClientSide;
+    ::ll::TypedStorage<1, 1, ::SubClientId const> mSubClientId;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry>> mEntityRegistry;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::PauseManager>> mPauseManager;
     // NOLINTEND
 
 public:
@@ -29,4 +29,5 @@ public:
     // NOLINTBEGIN
     MCAPI void tickEntitySystems();
     // NOLINTEND
+
 };

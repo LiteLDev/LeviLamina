@@ -15,12 +15,11 @@ class BlockPalette;
 class Dimension;
 class FeatureRegistry;
 class FeatureTypeFactory;
-class ILevel;
 class JigsawStructureRegistry;
-class Scheduler;
 class StructureManager;
 class StructureSpawnRegistry;
 class SurfaceBuilderRegistry;
+struct DerivedDimensionArguments;
 // clang-format on
 
 class IWorldRegistriesProvider {
@@ -85,10 +84,10 @@ public:
     virtual ::SurfaceBuilderRegistry& getSurfaceBuilderRegistry() = 0;
 
     // vIndex: 20
-    virtual ::OwnerPtrFactory<::Dimension, ::ILevel&, ::Scheduler&> const& getDimensionFactory() const = 0;
+    virtual ::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&> const& getDimensionFactory() const = 0;
 
     // vIndex: 19
-    virtual ::OwnerPtrFactory<::Dimension, ::ILevel&, ::Scheduler&>& getDimensionFactory() = 0;
+    virtual ::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&>& getDimensionFactory() = 0;
 
     // vIndex: 21
     virtual ::ActorDefinitionGroup* getEntityDefinitions() const = 0;
@@ -99,4 +98,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

@@ -11,10 +11,10 @@ struct SpawnParticleEffectPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar>                                 mVanillaDimensionId;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                       mActorId;
-    ::ll::TypedStorage<4, 12, ::Vec3>                               mPos;
-    ::ll::TypedStorage<8, 32, ::std::string>                        mEffectName;
+    ::ll::TypedStorage<1, 1, uchar> mVanillaDimensionId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mActorId;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
+    ::ll::TypedStorage<8, 32, ::std::string> mEffectName;
     ::ll::TypedStorage<8, 64, ::std::optional<::MolangVariableMap>> mMolangVariables;
     // NOLINTEND
 
@@ -26,12 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnParticleEffectPacketPayload(
-        ::Vec3 const&                        pos,
-        ::std::string const&                 name,
-        uchar                                vanillaDimensionId,
-        ::std::optional<::MolangVariableMap> molangVariables
-    );
+    MCAPI SpawnParticleEffectPacketPayload(::Vec3 const& pos, ::std::string const& name, uchar vanillaDimensionId, ::std::optional<::MolangVariableMap> molangVariables);
 
     MCAPI ::SpawnParticleEffectPacketPayload& operator=(::SpawnParticleEffectPacketPayload const&);
 
@@ -43,12 +38,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Vec3 const&                        pos,
-        ::std::string const&                 name,
-        uchar                                vanillaDimensionId,
-        ::std::optional<::MolangVariableMap> molangVariables
-    );
+    MCAPI void* $ctor(::Vec3 const& pos, ::std::string const& name, uchar vanillaDimensionId, ::std::optional<::MolangVariableMap> molangVariables);
     // NOLINTEND
 
 public:
@@ -56,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

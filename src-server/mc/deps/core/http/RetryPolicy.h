@@ -31,10 +31,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::function<::std::optional<::std::chrono::seconds>(::Bedrock::Http::Response const&)> Chained(
-        ::std::initializer_list<
-            ::std::function<::std::optional<::std::chrono::seconds>(::Bedrock::Http::Response const&)>>&& retryChain
-    );
+    MCNAPI static ::std::function<::std::optional<::std::chrono::seconds>(::Bedrock::Http::Response const&)> Chained(::std::initializer_list<::std::function<::std::optional<::std::chrono::seconds>(::Bedrock::Http::Response const&)>>&& retryChain);
     // NOLINTEND
 
 public:
@@ -42,6 +39,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Http
+}

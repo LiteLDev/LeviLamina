@@ -23,6 +23,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::gsl::span<uchar const> $getLoggableData() const;
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Http
+}

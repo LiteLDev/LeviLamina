@@ -19,7 +19,7 @@ public:
     // clang-format off
     class AudioObserver;
     // clang-format on
-
+    
     // AudioSourceInterface inner types define
     class AudioObserver {
     public:
@@ -27,30 +27,31 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual void OnSetVolume(double) = 0;
-
+    
         // vIndex: 1
         virtual ~AudioObserver();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
-
+    
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -97,6 +98,7 @@ public:
 
     MCNAPI ::cricket::AudioOptions const $options() const;
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

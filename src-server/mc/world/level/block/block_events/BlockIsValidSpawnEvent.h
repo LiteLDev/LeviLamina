@@ -18,9 +18,9 @@ class BlockIsValidSpawnEvent : public ::BlockEvents::BlockEventBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                           canSpawn;
-    ::ll::TypedStorage<8, 8, ::BlockSource&>                 mRegion;
-    ::ll::TypedStorage<8, 8, ::Block const&>                 mState;
+    ::ll::TypedStorage<1, 1, bool> canSpawn;
+    ::ll::TypedStorage<8, 8, ::BlockSource&> mRegion;
+    ::ll::TypedStorage<8, 8, ::Block const&> mState;
     ::ll::TypedStorage<8, 8, ::br::spawn::EntityType const&> mEntityType;
     // NOLINTEND
 
@@ -62,6 +62,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace BlockEvents
+}

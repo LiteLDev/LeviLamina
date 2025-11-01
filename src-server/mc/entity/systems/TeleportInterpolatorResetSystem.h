@@ -24,5 +24,8 @@ public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createTeleportInterpolatorResetSystem();
+
+    MCNAPI static void tickTeleportInterpolatorResetSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::ServerPlayerComponent>, ::Optional<::MovementInterpolatorComponent>, ::PlayerPositionModeComponent const, ::FallDistanceComponent, ::StateVectorComponent> view);
     // NOLINTEND
+
 };

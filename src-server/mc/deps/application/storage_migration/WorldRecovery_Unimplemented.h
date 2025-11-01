@@ -23,14 +23,7 @@ public:
     virtual void initialize() /*override*/;
 
     // vIndex: 2
-    virtual ::std::tuple<
-        ::Bedrock::Threading::Async<::Bedrock::WorldRecovery::RecoveryResult>,
-        ::Bedrock::PubSub::DeferredSubscription>
-        doRecovery(
-            ::std::string_view,
-            ::std::function<void(::Bedrock::WorldRecovery::RecoveryUpdate const&)>,
-            ::Bedrock::PubSub::DeferralType
-        ) /*override*/;
+    virtual ::std::tuple<::Bedrock::Threading::Async<::Bedrock::WorldRecovery::RecoveryResult>, ::Bedrock::PubSub::DeferredSubscription> doRecovery(::std::string_view, ::std::function<void(::Bedrock::WorldRecovery::RecoveryUpdate const&)>, ::Bedrock::PubSub::DeferralType) /*override*/;
 
     // vIndex: 3
     virtual ::Core::PathBuffer<::std::string> const& getRecoveryDestinationPath() const /*override*/;
@@ -44,6 +37,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

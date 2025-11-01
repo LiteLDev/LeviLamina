@@ -4,6 +4,7 @@
 
 namespace webrtc {
 
-class TransportSequenceNumberV2 {};
+class TransportSequenceNumberV2 {
+};
 
-} // namespace webrtc
+}

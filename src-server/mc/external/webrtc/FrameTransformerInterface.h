@@ -25,8 +25,7 @@ public:
     virtual void RegisterTransformedFrameCallback(::webrtc::scoped_refptr<::webrtc::TransformedFrameCallback>);
 
     // vIndex: 5
-    virtual void
-        RegisterTransformedFrameSinkCallback(::webrtc::scoped_refptr<::webrtc::TransformedFrameCallback>, uint);
+    virtual void RegisterTransformedFrameSinkCallback(::webrtc::scoped_refptr<::webrtc::TransformedFrameCallback>, uint);
 
     // vIndex: 6
     virtual void UnregisterTransformedFrameCallback();
@@ -43,6 +42,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

@@ -17,6 +17,7 @@ public:
     DiscoveryPacketHeader& operator=(DiscoveryPacketHeader const&);
     DiscoveryPacketHeader(DiscoveryPacketHeader const&);
     DiscoveryPacketHeader();
+
 };
 
-} // namespace NetherNet
+}

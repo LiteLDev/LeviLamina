@@ -23,11 +23,11 @@ class BannerBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                  mDirtyBounds;
-    ::ll::TypedStorage<1, 1, uchar>                 mBaseColor;
+    ::ll::TypedStorage<1, 1, bool> mDirtyBounds;
+    ::ll::TypedStorage<1, 1, uchar> mBaseColor;
     ::ll::TypedStorage<8, 24, ::std::vector<uchar>> mPatterns;
     ::ll::TypedStorage<8, 24, ::std::vector<uchar>> mColors;
-    ::ll::TypedStorage<4, 4, ::BannerBlockType>     mBannerType;
+    ::ll::TypedStorage<4, 4, ::BannerBlockType> mBannerType;
     // NOLINTEND
 
 public:
@@ -49,10 +49,10 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -130,4 +130,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

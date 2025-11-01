@@ -15,46 +15,47 @@ public:
     // clang-format off
     struct CopyableDataList;
     // clang-format on
-
+    
     // SynchedActorData inner types define
     using TypeInt8 = char;
-
+    
     using TypeShort = short;
-
+    
     using TypeString = ::std::string;
-
+    
     using TypeInt = int;
-
+    
     using TypeInt64 = int64;
-
+    
     using TypeFloat = float;
-
+    
     using TypeVec3 = ::Vec3;
-
+    
     using DataList = ::std::vector<::std::unique_ptr<::DataItem>>;
-
+    
     using ID = ushort;
-
+    
     struct CopyableDataList {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnk6fe7f1;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         CopyableDataList& operator=(CopyableDataList const&);
         CopyableDataList(CopyableDataList const&);
         CopyableDataList();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::DataItem>>> mItemsArray;
-    ::ll::TypedStorage<8, 24, ::std::bitset<136>>                           mDirtyFlags;
-    ::ll::TypedStorage<8, 24, ::std::bitset<136>>                           mHasComponentData;
+    ::ll::TypedStorage<8, 24, ::std::bitset<136>> mDirtyFlags;
+    ::ll::TypedStorage<8, 24, ::std::bitset<136>> mHasComponentData;
     // NOLINTEND
 
 public:
@@ -74,8 +75,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::std::unique_ptr<::DataItem>>
-    cloneDataList(::std::vector<::std::unique_ptr<::DataItem>> const& list);
+    MCNAPI static ::std::vector<::std::unique_ptr<::DataItem>> cloneDataList(::std::vector<::std::unique_ptr<::DataItem>> const& list);
     // NOLINTEND
 
 public:
@@ -93,4 +93,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

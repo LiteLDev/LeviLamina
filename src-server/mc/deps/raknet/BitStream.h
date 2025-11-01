@@ -8,11 +8,11 @@ class BitStream {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk2f223f;
-    ::ll::UntypedStorage<4, 4>   mUnk9ced5a;
-    ::ll::UntypedStorage<4, 4>   mUnkb3cc97;
-    ::ll::UntypedStorage<8, 8>   mUnk87a405;
-    ::ll::UntypedStorage<1, 1>   mUnkb9b8cd;
+    ::ll::UntypedStorage<4, 4> mUnk2f223f;
+    ::ll::UntypedStorage<4, 4> mUnk9ced5a;
+    ::ll::UntypedStorage<4, 4> mUnkb3cc97;
+    ::ll::UntypedStorage<8, 8> mUnk87a405;
+    ::ll::UntypedStorage<1, 1> mUnkb9b8cd;
     ::ll::UntypedStorage<1, 256> mUnkb60a72;
     // NOLINTEND
 
@@ -26,6 +26,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI void AddBitsAndReallocate(uint numberOfBitsToWrite);
+
+    MCAPI BitStream(uchar* _data, uint lengthInBytes, bool _copyData);
 
     MCAPI bool Read(char* outByteArray, uint numberOfBytes);
 
@@ -57,10 +59,17 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(uchar* _data, uint lengthInBytes, bool _copyData);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

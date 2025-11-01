@@ -22,10 +22,10 @@ class BedBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>             mDyeColor;
-    ::ll::TypedStorage<1, 1, bool>            mDirty;
+    ::ll::TypedStorage<4, 4, int> mDyeColor;
+    ::ll::TypedStorage<1, 1, bool> mDirty;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mPetSleepingOnBed;
-    ::ll::TypedStorage<8, 8, ::Block const&>  mBedBlock;
+    ::ll::TypedStorage<8, 8, ::Block const&> mBedBlock;
     // NOLINTEND
 
 public:
@@ -61,10 +61,10 @@ public:
     // vIndex: 25
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -74,7 +74,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI explicit BedBlockActor(::BlockPos const& pos);
+
     MCAPI void stopSleepingOn(::BlockSource& region, bool forcefulAwake);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
@@ -106,4 +114,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

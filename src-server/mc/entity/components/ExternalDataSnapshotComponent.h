@@ -12,12 +12,13 @@ struct ExternalDataSnapshotComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ClientPlayMode>    mPlayMode;
-    ::ll::TypedStorage<4, 4, float>               mSmoothRotationSpeed;
-    ::ll::TypedStorage<4, 4, ::InputMode>         mInputMode;
-    ::ll::TypedStorage<4, 4, ::GameType>          mGameType;
+    ::ll::TypedStorage<4, 4, ::ClientPlayMode> mPlayMode;
+    ::ll::TypedStorage<4, 4, float> mSmoothRotationSpeed;
+    ::ll::TypedStorage<4, 4, ::InputMode> mInputMode;
+    ::ll::TypedStorage<4, 4, ::GameType> mGameType;
     ::ll::TypedStorage<1, 5, ::AdventureSettings> mAdventureSettings;
-    ::ll::TypedStorage<1, 1, bool>                mIsInWorldAndNotShowingAnyMenuScreens;
-    ::ll::TypedStorage<1, 1, bool>                mIsPausingGame;
+    ::ll::TypedStorage<1, 1, bool> mIsInWorldAndNotShowingAnyMenuScreens;
+    ::ll::TypedStorage<1, 1, bool> mIsPausingGame;
     // NOLINTEND
+
 };

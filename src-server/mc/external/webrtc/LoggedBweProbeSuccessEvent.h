@@ -18,6 +18,7 @@ public:
     LoggedBweProbeSuccessEvent& operator=(LoggedBweProbeSuccessEvent const&);
     LoggedBweProbeSuccessEvent(LoggedBweProbeSuccessEvent const&);
     LoggedBweProbeSuccessEvent();
+
 };
 
-} // namespace webrtc
+}

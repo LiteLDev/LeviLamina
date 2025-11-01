@@ -17,11 +17,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
-    virtual bool shouldListen(
-        ::BlockSource&            region,
-        ::GameEvent const&        gameEvent,
-        ::GameEventContext const& gameEventContext
-    ) /*override*/;
+    virtual bool shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext) /*override*/;
 
     // vIndex: 0
     virtual ~CalibratedSculkSensorVibrationConfig() /*override*/ = default;
@@ -30,8 +26,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
-    $shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
+    MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext);
     // NOLINTEND
 
 public:
@@ -39,4 +34,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -34,4 +34,4 @@ MCAPI void checkAndConvertInBlock(::SemVersion const& version, ::Json::Value& ro
 MCAPI ::SemVersionConstant const& BLOCK_PROPERTY_RENAMED_TO_STATE_1_20_20();
 // NOLINTEND
 
-} // namespace BlockPropertyToStateConverter
+}

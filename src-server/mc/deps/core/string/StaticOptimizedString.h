@@ -8,10 +8,10 @@ class StaticOptimizedString {
 public:
     // StaticOptimizedString inner types define
     enum class StorageType : int {
-        Static  = 0,
+        Static = 0,
         Dynamic = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -49,6 +49,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

@@ -11,19 +11,19 @@ struct PageContent {
 public:
     // PageContent inner types define
     enum class PageType : uchar {
-        Text  = 0,
+        Text = 0,
         Photo = 1,
         Count = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                  mText;
+    ::ll::TypedStorage<8, 32, ::std::string> mText;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mFilteredText;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mParsedFilteredText;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mParsedText;
-    ::ll::TypedStorage<8, 32, ::std::string>                  mPhotoName;
+    ::ll::TypedStorage<8, 32, ::std::string> mParsedText;
+    ::ll::TypedStorage<8, 32, ::std::string> mPhotoName;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mFilteredPhotoName;
     // NOLINTEND
 
@@ -76,4 +76,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

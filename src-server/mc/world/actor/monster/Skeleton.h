@@ -21,11 +21,11 @@ public:
     // Skeleton inner types define
     enum class SkeletonType : int {
         Default = 0,
-        Wither  = 1,
-        Stray   = 2,
-        Bogged  = 3,
+        Wither = 1,
+        Stray = 2,
+        Bogged = 3,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -49,7 +49,7 @@ public:
     virtual bool canBeAffected(uint id) const /*override*/;
 
     // vIndex: 51
-    virtual void setTarget(::Actor* target) /*override*/;
+    virtual void setTarget(::Actor* entity) /*override*/;
 
     // vIndex: 24
     virtual void normalTick() /*override*/;
@@ -67,11 +67,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Skeleton(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI Skeleton(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCFOLD void setSkeletonType(::Skeleton::SkeletonType type);
     // NOLINTEND
@@ -79,11 +75,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -93,7 +85,7 @@ public:
 
     MCAPI bool $canBeAffected(uint id) const;
 
-    MCFOLD void $setTarget(::Actor* target);
+    MCFOLD void $setTarget(::Actor* entity);
 
     MCAPI void $normalTick();
 
@@ -107,4 +99,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

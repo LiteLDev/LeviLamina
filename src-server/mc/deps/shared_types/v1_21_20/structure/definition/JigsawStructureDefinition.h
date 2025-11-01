@@ -13,4 +13,4 @@ namespace SharedTypes::v1_21_20::JigsawStructureDefinition {
 MCNAPI void bindTypeMaxDistanceFromCenter(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-} // namespace SharedTypes::v1_21_20::JigsawStructureDefinition
+}

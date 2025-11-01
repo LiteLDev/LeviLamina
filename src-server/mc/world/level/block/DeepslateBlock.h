@@ -17,7 +17,7 @@ public:
     // vIndex: 46
     virtual bool canBeOriginalSurface(bool) const /*override*/;
 
-    // vIndex: 129
+    // vIndex: 128
     virtual ::Block const* tryGetInfested(::Block const& block) const /*override*/;
 
     // vIndex: 0
@@ -37,4 +37,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

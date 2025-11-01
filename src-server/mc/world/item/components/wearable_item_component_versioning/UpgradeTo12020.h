@@ -12,11 +12,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool previousSchema(
-        ::rapidjson::GenericValue<
-            ::rapidjson::UTF8<char>,
-            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
-    ) const /*override*/;
+    virtual bool previousSchema(::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component) const /*override*/;
 
     // vIndex: 0
     virtual ~UpgradeTo12020() /*override*/ = default;
@@ -37,11 +33,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $previousSchema(
-        ::rapidjson::GenericValue<
-            ::rapidjson::UTF8<char>,
-            ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
-    ) const;
+    MCAPI bool $previousSchema(::rapidjson::GenericValue<::rapidjson::UTF8<char>, ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component) const;
     // NOLINTEND
 
 public:
@@ -49,6 +41,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace WearableItemComponentVersioning
+}

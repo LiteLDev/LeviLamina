@@ -26,7 +26,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, uchar> mFacing;
-    ::ll::TypedStorage<1, 1, bool>  mFacingChanged;
+    ::ll::TypedStorage<1, 1, bool> mFacingChanged;
     // NOLINTEND
 
 public:
@@ -62,32 +62,29 @@ public:
     // vIndex: 23
     virtual void stopOpen(::Actor& actor) /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual ::SharedTypes::Legacy::LevelSoundEvent getOpenSound() const /*override*/;
 
-    // vIndex: 51
+    // vIndex: 52
     virtual ::SharedTypes::Legacy::LevelSoundEvent getCloseSound() const /*override*/;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual ::AABB getObstructionAABB() const /*override*/;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual bool _detectEntityObstruction(::BlockSource& region) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec3 _calculateActorMovementIntoShulker(
-        ::std::vector<::AABB> const& intersectingAABBs,
-        ::AABB const&                actorAabbAfterMovement
-    ) const;
+    MCAPI ::Vec3 _calculateActorMovementIntoShulker(::std::vector<::AABB> const& intersectingAABBs, ::AABB const& actorAabbAfterMovement) const;
 
     MCAPI ::Vec3 _calculateMovementWithCollisions(::BlockSource& region, ::Actor* actor) const;
 
@@ -141,4 +138,5 @@ public:
 
     MCNAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
+
 };

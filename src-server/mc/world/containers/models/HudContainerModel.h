@@ -41,10 +41,10 @@ public:
     // vIndex: 7
     virtual ::ContainerWeakRef getContainerWeakRef() const /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual ::Container* _getContainer() const /*override*/;
 
-    // vIndex: 23
+    // vIndex: 24
     virtual void _init() /*override*/;
     // NOLINTEND
 
@@ -79,4 +79,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

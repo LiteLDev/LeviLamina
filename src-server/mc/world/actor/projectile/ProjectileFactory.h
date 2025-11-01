@@ -29,23 +29,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Actor* shootProjectileFromDefinition(
-        ::ActorDefinitionIdentifier const& identifier,
-        ::Mob*                             owner,
-        ::Vec3                             targetDir,
-        int                                auxValue,
-        float                              throwPower,
-        bool                               useUnmodifiedDirection,
-        bool                               overrideSpawnPosition,
-        ::Vec3                             spawnPosition
-    );
+    MCAPI ::Actor* shootProjectileFromDefinition(::ActorDefinitionIdentifier const& identifier, ::Mob* owner, ::Vec3 targetDir, int auxValue, float throwPower, bool useUnmodifiedDirection, bool overrideSpawnPosition, ::Vec3 spawnPosition);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::OnHitSubcomponent>
-    createSubcomponent(::Json::Value& trigger, ::std::string const& name);
+    MCAPI static ::std::unique_ptr<::OnHitSubcomponent> createSubcomponent(::Json::Value& trigger, ::std::string const& name);
 
     MCAPI static void initFactory();
     // NOLINTEND
@@ -53,7 +43,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::std::function<::std::unique_ptr<::OnHitSubcomponent>()>>&
-    mSubcomponentMap();
+    MCAPI static ::std::unordered_map<::std::string, ::std::function<::std::unique_ptr<::OnHitSubcomponent>()>>& mSubcomponentMap();
     // NOLINTEND
+
 };

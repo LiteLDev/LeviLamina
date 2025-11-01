@@ -16,16 +16,16 @@ class WeatherCommand : public ::Command {
 public:
     // WeatherCommand inner types define
     enum class WeatherType : int {
-        Clear   = 0,
-        Rain    = 1,
+        Clear = 0,
+        Rain = 1,
         Thunder = 2,
     };
-
+    
     enum class WeatherRequest : int {
-        Set   = 0,
+        Set = 0,
         Query = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -67,4 +67,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

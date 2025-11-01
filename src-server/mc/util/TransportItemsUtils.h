@@ -17,28 +17,13 @@ struct TransportItemsGoalSettings;
 namespace TransportItemsUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI bool isValidTargetContainer(
-    ::Mob const&                        mob,
-    ::BlockPos const&                   targetPosition,
-    ::TransportItemsGoalSettings const& settings
-);
+MCNAPI bool isValidTargetContainer(::Mob const& mob, ::BlockPos const& targetPosition, ::TransportItemsGoalSettings const& settings);
 
-MCNAPI ::std::weak_ptr<::ChestBlockActor::ChestCloser>
-openContainer(::Mob& mob, ::BlockPos const& targetContainerPosition);
+MCNAPI ::std::weak_ptr<::ChestBlockActor::ChestCloser> openContainer(::Mob& mob, ::BlockPos const& targetContainerPosition);
 
-MCNAPI bool tryPutItem(
-    ::Mob&                              mob,
-    ::BlockPos const&                   targetContainerPosition,
-    ::TransportItemsGoalSettings const& settings,
-    bool                                dryRun
-);
+MCNAPI bool tryPutItem(::Mob& mob, ::BlockPos const& targetContainerPosition, ::TransportItemsGoalSettings const& settings, bool dryRun);
 
-MCNAPI bool tryTakeItem(
-    ::Mob&                              mob,
-    ::BlockPos const&                   targetContainerPosition,
-    ::TransportItemsGoalSettings const& settings,
-    bool                                dryRun
-);
+MCNAPI bool tryTakeItem(::Mob& mob, ::BlockPos const& targetContainerPosition, ::TransportItemsGoalSettings const& settings, bool dryRun);
 // NOLINTEND
 
 // static variables
@@ -48,4 +33,4 @@ MCNAPI ::Bedrock::EnumSet<::BlockActorType, 61> const& VALID_DESTINATION_BLOCKAC
 MCNAPI ::Bedrock::EnumSet<::BlockActorType, 61> const& VALID_SOURCE_BLOCKACTOR_TYPES();
 // NOLINTEND
 
-} // namespace TransportItemsUtils
+}

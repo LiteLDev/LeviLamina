@@ -18,8 +18,7 @@ namespace BlockSerializationUtils {
 // NOLINTBEGIN
 MCAPI void initBlockReplaceDataMap();
 
-MCAPI ::std::pair<::BlockSerializationUtils::NBTState, ::Block const*>
-tryGetBlockFromNBT(::CompoundTag const& tag, ::BlockSerializationUtils::NbtToBlockCache* localCache);
+MCAPI ::std::pair<::BlockSerializationUtils::NBTState, ::Block const*> tryGetBlockFromNBT(::CompoundTag const& tag, ::BlockSerializationUtils::NbtToBlockCache* localCache);
 // NOLINTEND
 
 // static variables
@@ -27,4 +26,4 @@ tryGetBlockFromNBT(::CompoundTag const& tag, ::BlockSerializationUtils::NbtToBlo
 MCAPI ::std::unordered_map<::HashedString, ::std::function<void(int, ::CompoundTag&)>>& BLOCK_REPLACE_DATA_MAP();
 // NOLINTEND
 
-} // namespace BlockSerializationUtils
+}

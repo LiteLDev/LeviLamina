@@ -15,12 +15,7 @@ class GameEventDispatcher {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void post(
-        ::BlockSource&     region,
-        ::Actor*           source,
-        ::GameEvent const& gameEvent,
-        ::Vec3 const&      originPos,
-        ::Block const*     affectedBlock
-    );
+    MCAPI void post(::BlockSource& region, ::Actor* source, ::GameEvent const& gameEvent, ::Vec3 const& originPos, ::Block const* affectedBlock);
     // NOLINTEND
+
 };

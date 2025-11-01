@@ -20,6 +20,7 @@ public:
     // vIndex: 0
     virtual ~BlockCancellableEventBase() /*override*/ = default;
     // NOLINTEND
+
 };
 
-} // namespace BlockEvents
+}

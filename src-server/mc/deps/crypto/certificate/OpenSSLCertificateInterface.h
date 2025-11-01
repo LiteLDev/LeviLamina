@@ -46,16 +46,10 @@ public:
     virtual bool hasValidCertChain() const /*override*/;
 
     // vIndex: 6
-    virtual ::std::string generateCertificateThumbprint(
-        ::Crypto::Hash::HashType                hashFunction,
-        ::Crypto::Certificate::ThumbprintFormat formatting
-    ) const /*override*/;
+    virtual ::std::string generateCertificateThumbprint(::Crypto::Hash::HashType hashFunction, ::Crypto::Certificate::ThumbprintFormat formatting) const /*override*/;
 
     // vIndex: 7
-    virtual ::std::string generatePublicKeyThumbprint(
-        ::Crypto::Hash::HashType                hashFunction,
-        ::Crypto::Certificate::ThumbprintFormat formatting
-    ) const /*override*/;
+    virtual ::std::string generatePublicKeyThumbprint(::Crypto::Hash::HashType hashFunction, ::Crypto::Certificate::ThumbprintFormat formatting) const /*override*/;
     // NOLINTEND
 
 public:
@@ -67,8 +61,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::string
-    _formatThumbprint(::std::string const& rawThumbprint, ::Crypto::Certificate::ThumbprintFormat formatting);
+    MCNAPI static ::std::string _formatThumbprint(::std::string const& rawThumbprint, ::Crypto::Certificate::ThumbprintFormat formatting);
     // NOLINTEND
 
 public:
@@ -90,15 +83,9 @@ public:
 
     MCNAPI bool $hasValidCertChain() const;
 
-    MCNAPI ::std::string $generateCertificateThumbprint(
-        ::Crypto::Hash::HashType                hashFunction,
-        ::Crypto::Certificate::ThumbprintFormat formatting
-    ) const;
+    MCNAPI ::std::string $generateCertificateThumbprint(::Crypto::Hash::HashType hashFunction, ::Crypto::Certificate::ThumbprintFormat formatting) const;
 
-    MCNAPI ::std::string $generatePublicKeyThumbprint(
-        ::Crypto::Hash::HashType                hashFunction,
-        ::Crypto::Certificate::ThumbprintFormat formatting
-    ) const;
+    MCNAPI ::std::string $generatePublicKeyThumbprint(::Crypto::Hash::HashType hashFunction, ::Crypto::Certificate::ThumbprintFormat formatting) const;
     // NOLINTEND
 
 public:
@@ -106,6 +93,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Crypto::Certificate
+}

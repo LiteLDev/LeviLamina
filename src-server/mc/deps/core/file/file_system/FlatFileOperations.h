@@ -21,43 +21,15 @@ class FlatFileOperations {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Core::Result copyFlatFile(
-        ::Core::FileSystemImpl*                    sourceTransaction,
-        ::Core::PathView                           sourceDirectoryPath,
-        ::Core::FileSystemImpl*                    targetTransaction,
-        ::Core::PathView                           targetDirectoryPath,
-        ::std::vector<::Core::ExcludedPath> const& exclusionDirectories,
-        ::std::vector<::Core::ExcludedPath> const& excludedFiles
-    );
+    MCNAPI static ::Core::Result copyFlatFile(::Core::FileSystemImpl* sourceTransaction, ::Core::PathView sourceDirectoryPath, ::Core::FileSystemImpl* targetTransaction, ::Core::PathView targetDirectoryPath, ::std::vector<::Core::ExcludedPath> const& exclusionDirectories, ::std::vector<::Core::ExcludedPath> const& excludedFiles);
 
-    MCNAPI static ::Core::Result createFlatFile(
-        ::Core::FileSystemImpl*                    sourceTransaction,
-        ::Core::PathView                           sourceDirectoryPath,
-        ::Core::FileSystemImpl*                    targetTransaction,
-        ::Core::PathView                           targetDirectoryPath,
-        ::std::vector<::Core::ExcludedPath> const& exclusionPaths,
-        bool                                       deleteSourceDirectory
-    );
+    MCNAPI static ::Core::Result createFlatFile(::Core::FileSystemImpl* sourceTransaction, ::Core::PathView sourceDirectoryPath, ::Core::FileSystemImpl* targetTransaction, ::Core::PathView targetDirectoryPath, ::std::vector<::Core::ExcludedPath> const& exclusionPaths, bool deleteSourceDirectory);
 
-    MCNAPI static ::Core::Result createFlatFileManifest(
-        ::Core::FileSystemImpl&                            transaction,
-        ::Core::PathView                                   flatFileManifestPath,
-        ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector
-    );
+    MCNAPI static ::Core::Result createFlatFileManifest(::Core::FileSystemImpl& transaction, ::Core::PathView flatFileManifestPath, ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector);
 
-    MCNAPI static ::Core::Result replaceFlatFileManifest(
-        ::Core::FileSystemImpl&                            transaction,
-        ::Core::PathView                                   flatFileManifestPath,
-        ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector,
-        bool                                               keepCached
-    );
+    MCNAPI static ::Core::Result replaceFlatFileManifest(::Core::FileSystemImpl& transaction, ::Core::PathView flatFileManifestPath, ::std::vector<::Core::FlatFileManifestInfo> const& manifestInfoVector, bool keepCached);
 
-    MCNAPI static ::Core::Result transferFlatFileDirectory(
-        ::Core::FileSystemImpl* sourceTransaction,
-        ::Core::PathView        sourceDirectoryPath,
-        ::Core::FileSystemImpl* targetTransaction,
-        ::Core::PathView        targetDirectoryPath
-    );
+    MCNAPI static ::Core::Result transferFlatFileDirectory(::Core::FileSystemImpl* sourceTransaction, ::Core::PathView sourceDirectoryPath, ::Core::FileSystemImpl* targetTransaction, ::Core::PathView targetDirectoryPath);
     // NOLINTEND
 
 public:
@@ -75,6 +47,7 @@ public:
 
     MCNAPI static uint64 const& FLAT_FILE_WRITE_CHUNK_SIZE();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

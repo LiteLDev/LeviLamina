@@ -18,6 +18,7 @@ public:
     CameraAdjustedPositionComponent& operator=(CameraAdjustedPositionComponent const&);
     CameraAdjustedPositionComponent(CameraAdjustedPositionComponent const&);
     CameraAdjustedPositionComponent();
+
 };
 
-} // namespace MinecraftCamera
+}

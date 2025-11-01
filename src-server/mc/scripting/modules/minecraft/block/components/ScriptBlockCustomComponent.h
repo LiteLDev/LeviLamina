@@ -41,14 +41,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptBlockCustomComponent(::ScriptModuleMinecraft::ScriptBlockCustomComponent const&);
 
-    MCNAPI ScriptBlockCustomComponent(
-        ::BlockSource&       region,
-        ::BlockPos           position,
-        ::std::string const& name,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
-                                              parameters,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
+    MCNAPI ScriptBlockCustomComponent(::BlockSource& region, ::BlockPos position, ::std::string const& name, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const& parameters, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -62,14 +55,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponent const&);
 
-    MCNAPI void* $ctor(
-        ::BlockSource&       region,
-        ::BlockPos           position,
-        ::std::string const& name,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
-                                              parameters,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
+    MCNAPI void* $ctor(::BlockSource& region, ::BlockPos position, ::std::string const& name, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const& parameters, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -77,6 +63,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

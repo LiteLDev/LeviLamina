@@ -20,17 +20,14 @@ class BottleItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 80
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
-        /*override*/;
+    // vIndex: 81
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const /*override*/;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual bool isLiquidClipItem() const /*override*/;
 
-    // vIndex: 122
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    // vIndex: 123
+    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
 
     // vIndex: 0
     virtual ~BottleItem() /*override*/ = default;
@@ -41,14 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _createBottledItem(::Actor& entity, ::ItemStack& instance, ::std::string_view itemToCreate) const;
 
-    MCAPI void _fillBottleViaDispenser(
-        ::BlockSource&     region,
-        ::std::string_view bottledItem,
-        ::Container&       container,
-        int                slot,
-        ::Vec3 const&      pos,
-        uchar              face
-    ) const;
+    MCAPI void _fillBottleViaDispenser(::BlockSource& region, ::std::string_view bottledItem, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
     // NOLINTEND
 
 public:
@@ -58,8 +48,7 @@ public:
 
     MCFOLD bool $isLiquidClipItem() const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -67,4 +56,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

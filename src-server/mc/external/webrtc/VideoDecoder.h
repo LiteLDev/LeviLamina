@@ -17,23 +17,24 @@ public:
     struct DecoderInfo;
     class Settings;
     // clang-format on
-
+    
     // VideoDecoder inner types define
     struct DecoderInfo {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnkb9e290;
-        ::ll::UntypedStorage<1, 1>  mUnkd8f66f;
+        ::ll::UntypedStorage<1, 1> mUnkd8f66f;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         DecoderInfo& operator=(DecoderInfo const&);
         DecoderInfo(DecoderInfo const&);
         DecoderInfo();
+    
     };
-
+    
     class Settings {
     public:
         // member variables
@@ -43,14 +44,15 @@ public:
         ::ll::UntypedStorage<4, 4> mUnkdf945a;
         ::ll::UntypedStorage<4, 4> mUnke7e8d2;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Settings& operator=(Settings const&);
         Settings(Settings const&);
         Settings();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -84,6 +86,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

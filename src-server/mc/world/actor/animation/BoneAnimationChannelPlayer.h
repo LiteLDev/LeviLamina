@@ -15,4 +15,5 @@ public:
     BoneAnimationChannelPlayer& operator=(BoneAnimationChannelPlayer const&);
     BoneAnimationChannelPlayer(BoneAnimationChannelPlayer const&);
     BoneAnimationChannelPlayer();
+
 };

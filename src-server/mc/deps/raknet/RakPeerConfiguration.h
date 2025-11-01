@@ -16,6 +16,7 @@ public:
     RakPeerConfiguration& operator=(RakPeerConfiguration const&);
     RakPeerConfiguration(RakPeerConfiguration const&);
     RakPeerConfiguration();
+
 };
 
-} // namespace RakNet
+}

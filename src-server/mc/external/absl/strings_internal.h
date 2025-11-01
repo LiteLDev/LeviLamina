@@ -8,4 +8,4 @@ namespace absl::strings_internal {
 MCNAPI int memcasecmp(char const* s1, char const* s2, uint64 len);
 // NOLINTEND
 
-} // namespace absl::strings_internal
+}

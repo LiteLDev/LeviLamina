@@ -16,4 +16,5 @@ public:
     PDFOptions& operator=(PDFOptions const&);
     PDFOptions(PDFOptions const&);
     PDFOptions();
+
 };

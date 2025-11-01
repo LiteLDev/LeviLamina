@@ -16,6 +16,7 @@ public:
     CreateView& operator=(CreateView const&);
     CreateView(CreateView const&);
     CreateView();
+
 };
 
-} // namespace UpdateBoundingBox
+}

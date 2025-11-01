@@ -11,11 +11,11 @@ struct VoiceSenderInfo : public ::cricket::MediaSenderInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk358e9d;
-    ::ll::UntypedStorage<4, 4>   mUnk742eeb;
-    ::ll::UntypedStorage<8, 8>   mUnk9e2794;
-    ::ll::UntypedStorage<8, 8>   mUnk3a796a;
-    ::ll::UntypedStorage<4, 56>  mUnk8b8001;
+    ::ll::UntypedStorage<4, 4> mUnk358e9d;
+    ::ll::UntypedStorage<4, 4> mUnk742eeb;
+    ::ll::UntypedStorage<8, 8> mUnk9e2794;
+    ::ll::UntypedStorage<8, 8> mUnk3a796a;
+    ::ll::UntypedStorage<4, 56> mUnk8b8001;
     ::ll::UntypedStorage<8, 112> mUnk14a9b7;
     // NOLINTEND
 
@@ -43,6 +43,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

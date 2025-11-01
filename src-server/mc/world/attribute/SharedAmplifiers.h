@@ -31,4 +31,5 @@ public:
 
     MCNAPI static ::std::shared_ptr<::Amplifier>& WITHER();
     // NOLINTEND
+
 };

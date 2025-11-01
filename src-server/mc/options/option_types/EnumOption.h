@@ -24,4 +24,5 @@ public:
     // vIndex: 0
     virtual ~EnumOption() /*override*/ = default;
     // NOLINTEND
+
 };

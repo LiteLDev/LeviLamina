@@ -12,6 +12,7 @@ public:
     ::ll::TypedStorage<4, 4, int> mMaxHeight;
     ::ll::TypedStorage<4, 4, int> mSeaLevel;
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen
+}

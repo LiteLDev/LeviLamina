@@ -4,6 +4,7 @@
 
 namespace MSGraph::Models {
 
-struct DownloadUrlInfo {};
+struct DownloadUrlInfo {
+};
 
-} // namespace MSGraph::Models
+}

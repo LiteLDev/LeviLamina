@@ -22,7 +22,7 @@ public:
     // clang-format off
     struct Config;
     // clang-format on
-
+    
     // BasicRegatheringController inner types define
     struct Config {
     public:
@@ -30,14 +30,15 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4> mUnk555f05;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Config& operator=(Config const&);
         Config(Config const&);
         Config();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,11 +65,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BasicRegatheringController(
-        ::webrtc::BasicRegatheringController::Config const& config,
-        ::cricket::IceTransportInternal*                    ice_transport,
-        ::rtc::Thread*                                      thread
-    );
+    MCNAPI BasicRegatheringController(::webrtc::BasicRegatheringController::Config const& config, ::cricket::IceTransportInternal* ice_transport, ::rtc::Thread* thread);
 
     MCNAPI void OnIceTransportNetworkRouteChanged(::std::optional<::rtc::NetworkRoute>);
 
@@ -88,11 +85,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::webrtc::BasicRegatheringController::Config const& config,
-        ::cricket::IceTransportInternal*                    ice_transport,
-        ::rtc::Thread*                                      thread
-    );
+    MCNAPI void* $ctor(::webrtc::BasicRegatheringController::Config const& config, ::cricket::IceTransportInternal* ice_transport, ::rtc::Thread* thread);
     // NOLINTEND
 
 public:
@@ -106,6 +99,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

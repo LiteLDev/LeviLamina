@@ -14,10 +14,7 @@ struct RemoveFromLeashedEntitiesRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::brstd::flat_set<::ActorUniqueID, ::std::less<::ActorUniqueID>, ::std::vector<::ActorUniqueID>>>
-        mLeashedEntities;
+    ::ll::TypedStorage<8, 40, ::brstd::flat_set<::ActorUniqueID, ::std::less<::ActorUniqueID>, ::std::vector<::ActorUniqueID>>> mLeashedEntities;
     // NOLINTEND
+
 };

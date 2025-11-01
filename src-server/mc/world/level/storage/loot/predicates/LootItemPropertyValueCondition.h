@@ -31,7 +31,7 @@ public:
     // vIndex: 1
     virtual bool applies(::Random&, ::LootTableContext& context) /*override*/;
 
-    // vIndex: 2
+    // vIndex: 3
     virtual bool _hasPropertyValue(::PropertyComponent const&) const = 0;
 
     // vIndex: 0
@@ -49,4 +49,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

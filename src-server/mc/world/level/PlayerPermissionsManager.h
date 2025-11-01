@@ -23,27 +23,15 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PlayerAbilitiesManager>> mPlayerAbilitiesManager;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PlayerListManager>>      mPlayerListManager;
-    ::ll::TypedStorage<8, 64, ::std::function<::Player*()>>                         mGetPrimaryLocalPlayer;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                       mCurrentPlayerID;
-    ::ll::TypedStorage<1, 2, ::std::optional<::PlayerPermissionLevel>>              mCurrentPlayerPermissionLevel;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::AbilitiesIndex, bool>>>   mCurrentPlayerPermissionsList;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::AbilitiesIndex, bool>>>   mLocalPlayerPermissionsList;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                      mPlayerAbilitiesSubscription;
-    ::ll::TypedStorage<
-        8,
-        48,
-        ::Bedrock::PubSub::
-            Publisher<void(::ActorUniqueID const&, bool), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
-        mPlayerPermissionsChangedPublisher;
-    ::ll::TypedStorage<
-        8,
-        48,
-        ::Bedrock::PubSub::Publisher<
-            void(::ActorUniqueID const&, ::std::optional<::PlayerPermissionLevel>),
-            ::Bedrock::PubSub::ThreadModel::SingleThreaded,
-            0>>
-        mCachedPlayerPermissionLevelChangedPublisher;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PlayerListManager>> mPlayerListManager;
+    ::ll::TypedStorage<8, 64, ::std::function<::Player*()>> mGetPrimaryLocalPlayer;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mCurrentPlayerID;
+    ::ll::TypedStorage<1, 2, ::std::optional<::PlayerPermissionLevel>> mCurrentPlayerPermissionLevel;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::AbilitiesIndex, bool>>> mCurrentPlayerPermissionsList;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::AbilitiesIndex, bool>>> mLocalPlayerPermissionsList;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPlayerAbilitiesSubscription;
+    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(::ActorUniqueID const&, bool), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>> mPlayerPermissionsChangedPublisher;
+    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(::ActorUniqueID const&, ::std::optional<::PlayerPermissionLevel>), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>> mCachedPlayerPermissionLevelChangedPublisher;
     // NOLINTEND
 
 public:
@@ -63,11 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerPermissionsManager(
-        ::Bedrock::NonOwnerPointer<::PlayerAbilitiesManager> playerAbilitiesManager,
-        ::Bedrock::NonOwnerPointer<::PlayerListManager>      playerListManager,
-        ::std::function<::Player*()>                         getPrimaryLocalPlayer
-    );
+    MCAPI PlayerPermissionsManager(::Bedrock::NonOwnerPointer<::PlayerAbilitiesManager> playerAbilitiesManager, ::Bedrock::NonOwnerPointer<::PlayerListManager> playerListManager, ::std::function<::Player*()> getPrimaryLocalPlayer);
 
     MCAPI void _loadLocalPermissionsList();
 
@@ -77,11 +61,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NonOwnerPointer<::PlayerAbilitiesManager> playerAbilitiesManager,
-        ::Bedrock::NonOwnerPointer<::PlayerListManager>      playerListManager,
-        ::std::function<::Player*()>                         getPrimaryLocalPlayer
-    );
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::PlayerAbilitiesManager> playerAbilitiesManager, ::Bedrock::NonOwnerPointer<::PlayerListManager> playerListManager, ::std::function<::Player*()> getPrimaryLocalPlayer);
     // NOLINTEND
 
 public:
@@ -101,4 +81,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

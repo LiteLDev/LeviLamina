@@ -29,6 +29,7 @@ public:
     // vIndex: 0
     virtual ~GraphicsTasksPerfScaler() /*override*/ = default;
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Threading
+}

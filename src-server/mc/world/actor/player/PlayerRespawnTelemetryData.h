@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string const& mEventName();
     // NOLINTEND
+
 };

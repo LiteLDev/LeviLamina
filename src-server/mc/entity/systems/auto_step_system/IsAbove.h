@@ -16,6 +16,7 @@ public:
     IsAbove& operator=(IsAbove const&);
     IsAbove(IsAbove const&);
     IsAbove();
+
 };
 
-} // namespace AutoStepSystem
+}

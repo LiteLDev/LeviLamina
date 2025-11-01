@@ -22,14 +22,7 @@ namespace ClipUtils {
 // NOLINTBEGIN
 MCNAPI ::HitResult clip(::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::AABB const& aabb);
 
-MCNAPI ::AABB const& getAABB(
-    ::IConstBlockSource const&                         region,
-    ::BlockPos const&                                  pos,
-    ::Block const&                                     block,
-    ::AABB&                                            bufferValue,
-    ::ShapeType                                        aabbType,
-    ::optional_ref<::GetCollisionShapeInterface const> entity
-);
+MCNAPI ::AABB const& getAABB(::IConstBlockSource const& region, ::BlockPos const& pos, ::Block const& block, ::AABB& bufferValue, ::ShapeType aabbType, ::optional_ref<::GetCollisionShapeInterface const> entity);
 // NOLINTEND
 
-} // namespace ClipUtils
+}

@@ -21,18 +21,18 @@ class PhysicalSocket : public ::rtc::Socket, public ::sigslot::has_slots<::sigsl
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnke204df;
-    ::ll::UntypedStorage<8, 8>  mUnk2e4eb5;
-    ::ll::UntypedStorage<1, 1>  mUnka6b4c1;
-    ::ll::UntypedStorage<4, 4>  mUnk83dbee;
+    ::ll::UntypedStorage<8, 8> mUnke204df;
+    ::ll::UntypedStorage<8, 8> mUnk2e4eb5;
+    ::ll::UntypedStorage<1, 1> mUnka6b4c1;
+    ::ll::UntypedStorage<4, 4> mUnk83dbee;
     ::ll::UntypedStorage<8, 40> mUnkf4def3;
-    ::ll::UntypedStorage<4, 4>  mUnkf530c5;
-    ::ll::UntypedStorage<4, 4>  mUnkb6f68b;
-    ::ll::UntypedStorage<8, 8>  mUnk52d5f8;
-    ::ll::UntypedStorage<1, 1>  mUnk70aa9a;
-    ::ll::UntypedStorage<1, 1>  mUnk80a24e;
-    ::ll::UntypedStorage<1, 1>  mUnk5a5112;
-    ::ll::UntypedStorage<1, 1>  mUnk8efe6c;
+    ::ll::UntypedStorage<4, 4> mUnkf530c5;
+    ::ll::UntypedStorage<4, 4> mUnkb6f68b;
+    ::ll::UntypedStorage<8, 8> mUnk52d5f8;
+    ::ll::UntypedStorage<1, 1> mUnk70aa9a;
+    ::ll::UntypedStorage<1, 1> mUnk80a24e;
+    ::ll::UntypedStorage<1, 1> mUnk5a5112;
+    ::ll::UntypedStorage<1, 1> mUnk8efe6c;
     // NOLINTEND
 
 public:
@@ -125,13 +125,7 @@ public:
     // NOLINTBEGIN
     MCNAPI int DoConnect(::rtc::SocketAddress const& connect_addr);
 
-    MCNAPI int DoReadFromSocket(
-        void*                 buffer,
-        uint64                length,
-        ::rtc::SocketAddress* out_addr,
-        int64*                timestamp,
-        ::rtc::EcnMarking*    ecn
-    );
+    MCNAPI int DoReadFromSocket(void* buffer, uint64 length, ::rtc::SocketAddress* out_addr, int64* timestamp, ::rtc::EcnMarking* ecn);
 
     MCNAPI void OnResolveResult(::webrtc::AsyncDnsResolverResult const& result);
 
@@ -215,6 +209,7 @@ public:
 
     MCNAPI static void** $vftableForHasSlots();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

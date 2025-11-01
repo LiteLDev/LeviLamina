@@ -8,4 +8,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::std::atomic<int>> mManagerCounter;
     // NOLINTEND
+
 };

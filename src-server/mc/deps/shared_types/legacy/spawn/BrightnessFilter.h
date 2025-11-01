@@ -18,6 +18,7 @@ public:
     BrightnessFilter& operator=(BrightnessFilter const&);
     BrightnessFilter(BrightnessFilter const&);
     BrightnessFilter();
+
 };
 
-} // namespace SharedTypes::Legacy::Spawn
+}

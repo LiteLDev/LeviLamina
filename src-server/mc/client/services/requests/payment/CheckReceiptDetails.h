@@ -11,7 +11,7 @@ class CheckReceiptDetails {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkd27346;
+    ::ll::UntypedStorage<1, 1> mUnkd27346;
     ::ll::UntypedStorage<8, 24> mUnk90322f;
     // NOLINTEND
 
@@ -42,4 +42,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

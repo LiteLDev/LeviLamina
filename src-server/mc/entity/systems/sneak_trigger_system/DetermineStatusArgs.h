@@ -23,6 +23,7 @@ public:
     DetermineStatusArgs& operator=(DetermineStatusArgs const&);
     DetermineStatusArgs(DetermineStatusArgs const&);
     DetermineStatusArgs();
+
 };
 
-} // namespace SneakTriggerSystem
+}

@@ -13,13 +13,15 @@ public:
     // clang-format off
     struct SpawnBubblesVisitor;
     // clang-format on
-
+    
     // InsideBubbleColumnSystem inner types define
-    struct SpawnBubblesVisitor {};
-
+    struct SpawnBubblesVisitor {
+    };
+    
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem();
     // NOLINTEND
+
 };

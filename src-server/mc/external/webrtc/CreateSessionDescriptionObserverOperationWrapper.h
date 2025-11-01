@@ -17,14 +17,13 @@ class CreateSessionDescriptionObserverOperationWrapper : public ::webrtc::Create
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnked2d31;
+    ::ll::UntypedStorage<8, 8> mUnked2d31;
     ::ll::UntypedStorage<8, 64> mUnk416c19;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    CreateSessionDescriptionObserverOperationWrapper&
-    operator=(CreateSessionDescriptionObserverOperationWrapper const&);
+    CreateSessionDescriptionObserverOperationWrapper& operator=(CreateSessionDescriptionObserverOperationWrapper const&);
     CreateSessionDescriptionObserverOperationWrapper(CreateSessionDescriptionObserverOperationWrapper const&);
     CreateSessionDescriptionObserverOperationWrapper();
 
@@ -54,6 +53,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

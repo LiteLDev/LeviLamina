@@ -3,6 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class MovementAttributeAccess : uchar {
-    Write    = 0,
+    Write = 0,
     ReadOnly = 1,
 };

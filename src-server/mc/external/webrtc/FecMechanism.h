@@ -5,9 +5,9 @@
 namespace webrtc {
 
 enum class FecMechanism : int {
-    Red          = 0,
+    Red = 0,
     RedAndUlpfec = 1,
-    Flexfec      = 2,
+    Flexfec = 2,
 };
 
 }

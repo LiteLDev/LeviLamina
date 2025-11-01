@@ -4,7 +4,8 @@
 
 namespace Core {
 
-template <typename T0, typename T1>
-class Observer {};
+template<typename T0, typename T1>
+class Observer {
+};
 
-} // namespace Core
+}

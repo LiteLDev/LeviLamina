@@ -10,9 +10,10 @@ struct CameraShakePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>               mIntensity;
-    ::ll::TypedStorage<4, 4, float>               mSeconds;
-    ::ll::TypedStorage<1, 1, ::CameraShakeType>   mShakeType;
+    ::ll::TypedStorage<4, 4, float> mIntensity;
+    ::ll::TypedStorage<4, 4, float> mSeconds;
+    ::ll::TypedStorage<1, 1, ::CameraShakeType> mShakeType;
     ::ll::TypedStorage<1, 1, ::CameraShakeAction> mShakeAction;
     // NOLINTEND
+
 };

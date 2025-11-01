@@ -4,14 +4,14 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Core { class File; }
+class LevelDbLazyFile;
 // clang-format on
 
 class LevelDbWritableFile : public ::leveldb::WritableFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkb3ea74;
+    ::ll::UntypedStorage<8, 72> mUnk289cca;
     ::ll::UntypedStorage<8, 32> mUnk5a9cb8;
     // NOLINTEND
 
@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LevelDbWritableFile(::std::string filename, ::Core::File&& file);
+    MCNAPI LevelDbWritableFile(::std::string filename, ::LevelDbLazyFile file);
 
     MCNAPI ::leveldb::Status SyncDirIfManifest();
     // NOLINTEND
@@ -51,7 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string filename, ::Core::File&& file);
+    MCNAPI void* $ctor(::std::string filename, ::LevelDbLazyFile file);
     // NOLINTEND
 
 public:
@@ -71,4 +71,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

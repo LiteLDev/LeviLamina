@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/molang/MolangVersion.h"
 #include "mc/util/molang/ExpressionOp.h"
 #include "mc/util/molang/IComplexExpression.h"
+#include "mc/versionless/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -54,9 +54,7 @@ public:
     virtual ::MolangVersion getMolangVersion() const /*override*/;
 
     // vIndex: 7
-    virtual void replaceArrayVariables(
-        ::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap
-    ) /*override*/;
+    virtual void replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap) /*override*/;
 
     // vIndex: 8
     virtual void validateArrayVariables() const /*override*/;
@@ -113,8 +111,7 @@ public:
 
     MCNAPI ::MolangVersion $getMolangVersion() const;
 
-    MCNAPI void
-    $replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap);
+    MCNAPI void $replaceArrayVariables(::std::unordered_map<::HashedString, ::Molang::details::ExpressionNode>& dataMap);
 
     MCNAPI void $validateArrayVariables() const;
 
@@ -138,6 +135,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Molang::details
+}

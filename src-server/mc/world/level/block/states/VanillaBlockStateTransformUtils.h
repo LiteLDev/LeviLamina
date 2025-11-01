@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/legacy/facing/Name.h"
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
+#include "mc/versionless/util/Mirror.h"
+#include "mc/versionless/util/Rotation.h"
 #include "mc/world/Direction.h"
 #include "mc/world/level/block/CoralDirection.h"
 #include "mc/world/level/block/FrontAndTop.h"
@@ -32,10 +32,15 @@ public:
 
     MCAPI static ::CommonDirection _rotate(::CommonDirection direction, ::Rotation rotation);
 
+    MCAPI static bool hasTransformableWallStates(::Block const& block);
+
     MCAPI static ::Block const* transformBlock(::Block const& block, ::CommonDirection targetDirection);
 
     MCAPI static ::Block const* transformBlock(::Block const& block, ::Rotation rotation, ::Mirror mirror);
 
     MCAPI static ::Block const* transformCardinalDirection(::Block const& block, ::Rotation rotation, ::Mirror mirror);
+
+    MCAPI static ::Block const* transformWallConnectionTypes(::Block const& block, ::Rotation rotation, ::Mirror mirror);
     // NOLINTEND
+
 };

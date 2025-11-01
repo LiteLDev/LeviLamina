@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::BackwardsCompatTextureInfo const& invalidInfo();
     // NOLINTEND
+
 };

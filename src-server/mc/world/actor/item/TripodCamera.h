@@ -22,8 +22,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
-    ::ll::TypedStorage<1, 1, bool>             mActivated;
-    ::ll::TypedStorage<4, 4, int>              mCountdown;
+    ::ll::TypedStorage<1, 1, bool> mActivated;
+    ::ll::TypedStorage<4, 4, int> mCountdown;
     // NOLINTEND
 
 public:
@@ -58,11 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TripodCamera(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI TripodCamera(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCAPI void startTakingPicture(::Player& player);
     // NOLINTEND
@@ -70,11 +66,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -98,4 +90,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

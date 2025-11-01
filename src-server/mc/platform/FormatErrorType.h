@@ -4,7 +4,8 @@
 
 namespace Bedrock::Detail {
 
-template <typename T0>
-struct FormatErrorType {};
+template<typename T0>
+struct FormatErrorType {
+};
 
-} // namespace Bedrock::Detail
+}

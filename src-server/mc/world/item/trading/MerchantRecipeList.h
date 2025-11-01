@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::MerchantRecipe>> mRecipeList;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint>>             mTierExpRequirements;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>> mTierExpRequirements;
     // NOLINTEND
 
 public:
@@ -31,8 +31,7 @@ public:
     virtual void addIfNewOrBetter(::MerchantRecipe* toMatch);
 
     // vIndex: 4
-    virtual ::MerchantRecipe*
-    getMatchingRecipeFor(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
+    virtual ::MerchantRecipe* getMatchingRecipeFor(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
 
     // vIndex: 3
     virtual ::MerchantRecipe* getMatchingRecipeFor(::MerchantRecipe const& recipe);
@@ -57,8 +56,7 @@ public:
 
     MCAPI void $addIfNewOrBetter(::MerchantRecipe* toMatch);
 
-    MCAPI ::MerchantRecipe*
-    $getMatchingRecipeFor(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
+    MCAPI ::MerchantRecipe* $getMatchingRecipeFor(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
 
     MCAPI ::MerchantRecipe* $getMatchingRecipeFor(::MerchantRecipe const& recipe);
 
@@ -72,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

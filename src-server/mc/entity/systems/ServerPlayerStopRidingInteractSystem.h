@@ -15,11 +15,7 @@ namespace ServerPlayerStopRidingInteractSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void makePassengerStopRiding(
-    ::ActorOwnerComponent&           actorOwnerComponent,
-    ::ServerPlayerMovementComponent* serverPlayerMovementComponent,
-    ::ActorRuntimeID const&          vehicleID
-);
+MCNAPI void makePassengerStopRiding(::ActorOwnerComponent& actorOwnerComponent, ::ServerPlayerMovementComponent* serverPlayerMovementComponent, ::ActorRuntimeID const& vehicleID);
 // NOLINTEND
 
-} // namespace ServerPlayerStopRidingInteractSystem
+}

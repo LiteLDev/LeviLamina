@@ -19,20 +19,12 @@ namespace br::worldgen::processors::BlockEntity {
 struct Modifier : public ::br::worldgen::processors::BlockEntity::ModifierType {
 public:
     // Modifier inner types define
-    using Type = ::std::variant<
-        ::br::worldgen::processors::BlockEntity::Passthrough,
-        ::br::worldgen::processors::BlockEntity::AppendLoot>;
-
+    using Type = ::std::variant<::br::worldgen::processors::BlockEntity::Passthrough, ::br::worldgen::processors::BlockEntity::AppendLoot>;
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        48,
-        ::std::variant<
-            ::br::worldgen::processors::BlockEntity::Passthrough,
-            ::br::worldgen::processors::BlockEntity::AppendLoot>>
-        mData;
+    ::ll::TypedStorage<8, 48, ::std::variant<::br::worldgen::processors::BlockEntity::Passthrough, ::br::worldgen::processors::BlockEntity::AppendLoot>> mData;
     // NOLINTEND
 
 public:
@@ -44,8 +36,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom& random, ::CompoundTag const* existingTag) const
-        /*override*/;
+    virtual ::std::unique_ptr<::CompoundTag> apply(::IRandom& random, ::CompoundTag const* existingTag) const /*override*/;
 
     // vIndex: 2
     virtual void appendMetadataKey(::Util::XXHash& hash) const /*override*/;
@@ -89,6 +80,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen::processors::BlockEntity
+}

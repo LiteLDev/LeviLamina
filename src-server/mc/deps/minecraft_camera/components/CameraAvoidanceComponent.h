@@ -15,10 +15,10 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkab1374;
     ::ll::UntypedStorage<8, 24> mUnk40851f;
-    ::ll::UntypedStorage<4, 4>  mUnk9afcb1;
-    ::ll::UntypedStorage<4, 4>  mUnkbb1843;
-    ::ll::UntypedStorage<4, 4>  mUnk4bd5a5;
-    ::ll::UntypedStorage<4, 4>  mUnk9f8889;
+    ::ll::UntypedStorage<4, 4> mUnk9afcb1;
+    ::ll::UntypedStorage<4, 4> mUnkbb1843;
+    ::ll::UntypedStorage<4, 4> mUnk4bd5a5;
+    ::ll::UntypedStorage<4, 4> mUnk9f8889;
     // NOLINTEND
 
 public:
@@ -26,6 +26,7 @@ public:
     CameraAvoidanceComponent& operator=(CameraAvoidanceComponent const&);
     CameraAvoidanceComponent(CameraAvoidanceComponent const&);
     CameraAvoidanceComponent();
+
 };
 
-} // namespace MinecraftCamera
+}

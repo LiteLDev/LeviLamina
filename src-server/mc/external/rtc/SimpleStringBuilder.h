@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk2d6cd4;
-    ::ll::UntypedStorage<8, 8>  mUnkb845df;
+    ::ll::UntypedStorage<8, 8> mUnkb845df;
     // NOLINTEND
 
 public:
@@ -43,6 +43,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::rtc::ArrayView<char> buffer);
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

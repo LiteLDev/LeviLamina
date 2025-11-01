@@ -8,8 +8,7 @@
 
 namespace Editor::Network {
 
-class WidgetDeleteGroupPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetDeleteGroupPayload>,
-                                 public ::Editor::Network::WidgetCommonBasePayload {
+class WidgetDeleteGroupPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetDeleteGroupPayload>, public ::Editor::Network::WidgetCommonBasePayload {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -22,6 +21,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

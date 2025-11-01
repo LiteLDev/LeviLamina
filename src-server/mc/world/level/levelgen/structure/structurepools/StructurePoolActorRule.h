@@ -12,6 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IStructurePoolActorPredicate> const> mSourcePredicate;
-    ::ll::TypedStorage<8, 32, ::std::string const>                                    mResultActor;
+    ::ll::TypedStorage<8, 32, ::std::string const> mResultActor;
     // NOLINTEND
+
 };

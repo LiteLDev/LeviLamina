@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mActor;
-    ::ll::TypedStorage<1, 1, ::ActorInitializationMethod>                                                 mCause;
+    ::ll::TypedStorage<1, 1, ::ActorInitializationMethod> mCause;
     // NOLINTEND
 
 public:
@@ -29,10 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorSpawnAfterEvent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle,
-        ::ActorInitializationMethod                                                cause
-    );
+    MCAPI ScriptActorSpawnAfterEvent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle, ::ActorInitializationMethod cause);
     // NOLINTEND
 
 public:
@@ -44,11 +41,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle,
-        ::ActorInitializationMethod                                                cause
-    );
+    MCAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle, ::ActorInitializationMethod cause);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

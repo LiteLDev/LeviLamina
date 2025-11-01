@@ -19,7 +19,7 @@ class OceanMonumentPiece : public ::StructurePiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                 mDoFill;
+    ::ll::TypedStorage<1, 1, bool> mDoFill;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RoomDefinition>> mRoomDefinition;
     // NOLINTEND
 
@@ -52,31 +52,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OceanMonumentPiece(
-        int                                 genDepth,
-        int&                                orientation,
-        ::std::shared_ptr<::RoomDefinition> roomDefinition,
-        int                                 roomWidth,
-        int                                 roomHeight,
-        int                                 roomDepth
-    );
+    MCAPI OceanMonumentPiece(int genDepth, int& orientation, ::std::shared_ptr<::RoomDefinition> roomDefinition, int roomWidth, int roomHeight, int roomDepth);
 
     MCAPI bool chunkIntersects(::BoundingBox const& chunkBB, int x0, int z0, int x1, int z1);
 
-    MCAPI void generateBoxOnFillOnly(
-        ::BlockSource&       region,
-        ::BoundingBox const& chunkBB,
-        int                  x0,
-        int                  y0,
-        int                  z0,
-        int                  x1,
-        int                  y1,
-        int                  z1,
-        ::Block const&       targetBlock
-    );
+    MCAPI void generateBoxOnFillOnly(::BlockSource& region, ::BoundingBox const& chunkBB, int x0, int y0, int z0, int x1, int y1, int z1, ::Block const& targetBlock);
 
-    MCAPI void
-    generateDefaultFloor(::BlockSource& region, ::BoundingBox const& chunkBB, int xOff, int zOff, bool downOpening);
+    MCAPI void generateDefaultFloor(::BlockSource& region, ::BoundingBox const& chunkBB, int xOff, int zOff, bool downOpening);
 
     MCAPI void spawnElder(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y, int z);
     // NOLINTEND
@@ -102,14 +84,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        int                                 genDepth,
-        int&                                orientation,
-        ::std::shared_ptr<::RoomDefinition> roomDefinition,
-        int                                 roomWidth,
-        int                                 roomHeight,
-        int                                 roomDepth
-    );
+    MCAPI void* $ctor(int genDepth, int& orientation, ::std::shared_ptr<::RoomDefinition> roomDefinition, int roomWidth, int roomHeight, int roomDepth);
     // NOLINTEND
 
 public:
@@ -135,4 +110,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

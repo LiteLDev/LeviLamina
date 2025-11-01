@@ -4,7 +4,8 @@
 
 namespace Bedrock::Threading {
 
-template <typename T0, typename T1>
-class BasicLockbox {};
+template<typename T0, typename T1>
+class BasicLockbox {
+};
 
-} // namespace Bedrock::Threading
+}

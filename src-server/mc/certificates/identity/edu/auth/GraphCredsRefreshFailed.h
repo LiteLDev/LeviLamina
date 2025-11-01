@@ -4,6 +4,7 @@
 
 namespace edu::auth {
 
-struct GraphCredsRefreshFailed {};
+struct GraphCredsRefreshFailed {
+};
 
-} // namespace edu::auth
+}

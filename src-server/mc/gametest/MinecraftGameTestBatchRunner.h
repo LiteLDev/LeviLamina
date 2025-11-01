@@ -33,19 +33,16 @@ public:
     virtual ~MinecraftGameTestBatchRunner() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::gametest::BaseGameTestInstance>
-    _createGameTestInstance(::gametest::BaseGameTestFunction& function) /*override*/;
+    virtual ::std::shared_ptr<::gametest::BaseGameTestInstance> _createGameTestInstance(::gametest::BaseGameTestFunction& function) /*override*/;
 
     // vIndex: 2
-    virtual void
-    _runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker) /*override*/;
+    virtual void _runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::gametest::BaseGameTestInstance>
-    $_createGameTestInstance(::gametest::BaseGameTestFunction& function);
+    MCNAPI ::std::shared_ptr<::gametest::BaseGameTestInstance> $_createGameTestInstance(::gametest::BaseGameTestFunction& function);
 
     MCNAPI void $_runTest(::std::shared_ptr<::gametest::BaseGameTestInstance> test, ::gametest::GameTestTicker& ticker);
     // NOLINTEND
@@ -55,4 +52,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -14,4 +14,4 @@ namespace LightningBoltUtil {
 MCNAPI void _doCopperCleaningStrike(::BlockSource& region, ::BlockPos const& pos);
 // NOLINTEND
 
-} // namespace LightningBoltUtil
+}

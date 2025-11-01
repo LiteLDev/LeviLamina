@@ -5,10 +5,10 @@
 namespace webrtc {
 
 enum class QualityLimitationReason : int {
-    KNone      = 0,
-    KCpu       = 1,
+    KNone = 0,
+    KCpu = 1,
     KBandwidth = 2,
-    KOther     = 3,
+    KOther = 3,
 };
 
 }

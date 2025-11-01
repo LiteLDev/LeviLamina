@@ -22,13 +22,13 @@ class ThrowableItemComponent : public ::NetworkedItemComponent<::ThrowableItemCo
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                             mDoSwing;
-    ::ll::TypedStorage<4, 4, float>                            mMinDrawDuration;
-    ::ll::TypedStorage<4, 4, float>                            mDrawDuration;
-    ::ll::TypedStorage<4, 4, float>                            mLaunchPowerScale;
-    ::ll::TypedStorage<4, 4, float>                            mMaxLaunchPower;
-    ::ll::TypedStorage<1, 1, bool>                             mScalePowerByDrawDuration;
-    ::ll::TypedStorage<1, 1, bool>                             mTriggerActorUseItemEvent;
+    ::ll::TypedStorage<1, 1, bool> mDoSwing;
+    ::ll::TypedStorage<4, 4, float> mMinDrawDuration;
+    ::ll::TypedStorage<4, 4, float> mDrawDuration;
+    ::ll::TypedStorage<4, 4, float> mLaunchPowerScale;
+    ::ll::TypedStorage<4, 4, float> mMaxLaunchPower;
+    ::ll::TypedStorage<1, 1, bool> mScalePowerByDrawDuration;
+    ::ll::TypedStorage<1, 1, bool> mTriggerActorUseItemEvent;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseSubscription;
     // NOLINTEND
 
@@ -48,22 +48,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _doThrow(
-        ::ItemStack&                     item,
-        ::Player&                        player,
-        ::ProjectileItemComponent const& projectileComponent,
-        float                            power
-    ) const;
+    MCAPI void _doThrow(::ItemStack& item, ::Player& player, ::ProjectileItemComponent const& projectileComponent, float power) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -81,4 +72,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

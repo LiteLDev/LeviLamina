@@ -4,6 +4,7 @@
 
 namespace SharedTypes::Legacy::Spawn {
 
-struct DisallowSpawnInBubble {};
+struct DisallowSpawnInBubble {
+};
 
-} // namespace SharedTypes::Legacy::Spawn
+}

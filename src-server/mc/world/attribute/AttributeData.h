@@ -18,13 +18,13 @@ struct AttributeData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                               mCurrentValue;
-    ::ll::TypedStorage<4, 4, float>                               mMinValue;
-    ::ll::TypedStorage<4, 4, float>                               mMaxValue;
-    ::ll::TypedStorage<4, 4, float>                               mDefaultValue;
-    ::ll::TypedStorage<4, 4, float>                               mDefaultMinValue;
-    ::ll::TypedStorage<4, 4, float>                               mDefaultMaxValue;
-    ::ll::TypedStorage<8, 48, ::HashedString>                     mName;
+    ::ll::TypedStorage<4, 4, float> mCurrentValue;
+    ::ll::TypedStorage<4, 4, float> mMinValue;
+    ::ll::TypedStorage<4, 4, float> mMaxValue;
+    ::ll::TypedStorage<4, 4, float> mDefaultValue;
+    ::ll::TypedStorage<4, 4, float> mDefaultMinValue;
+    ::ll::TypedStorage<4, 4, float> mDefaultMaxValue;
+    ::ll::TypedStorage<8, 48, ::HashedString> mName;
     ::ll::TypedStorage<8, 24, ::std::vector<::AttributeModifier>> mModifiers;
     // NOLINTEND
 
@@ -60,4 +60,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

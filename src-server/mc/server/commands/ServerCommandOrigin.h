@@ -24,10 +24,10 @@ class ServerCommandOrigin : public ::CommandOrigin {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ServerLevel&>           mServerLevel;
-    ::ll::TypedStorage<8, 32, ::std::string>           mRequestId;
+    ::ll::TypedStorage<8, 8, ::ServerLevel&> mServerLevel;
+    ::ll::TypedStorage<8, 32, ::std::string> mRequestId;
     ::ll::TypedStorage<1, 1, ::CommandPermissionLevel> mCommandPermissionLevel;
-    ::ll::TypedStorage<4, 4, ::DimensionType>          mDimensionType;
+    ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
     // NOLINTEND
 
 public:
@@ -139,4 +139,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

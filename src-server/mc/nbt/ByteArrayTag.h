@@ -16,7 +16,7 @@ class ByteArrayTag : public ::Tag {
 public:
     // ByteArrayTag inner types define
     using ArrayData = ::std::vector<uchar>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -86,4 +86,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

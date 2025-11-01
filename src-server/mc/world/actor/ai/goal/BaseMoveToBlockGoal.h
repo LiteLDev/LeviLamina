@@ -50,4 +50,5 @@ public:
 
     MCAPI void $_moveToBlock();
     // NOLINTEND
+
 };

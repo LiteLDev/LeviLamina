@@ -23,21 +23,14 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>> mDelegate;
-    ::ll::TypedStorage<4, 32, ::IntProvider>                                                                mLimit;
+    ::ll::TypedStorage<4, 32, ::IntProvider> mLimit;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual ::std::vector<::br::worldgen::StructureBlockInfo> finalize(
-        ::IBlockSource&                                          region,
-        ::BlockPos                                               pos,
-        ::BlockPos                                               structurePos,
-        ::std::vector<::br::worldgen::StructureBlockInfo> const& originalBlocks,
-        ::std::vector<::br::worldgen::StructureBlockInfo>&&      processedBlocks,
-        ::br::worldgen::StructurePlaceSettings const&            settings
-    ) const /*override*/;
+    virtual ::std::vector<::br::worldgen::StructureBlockInfo> finalize(::IBlockSource& region, ::BlockPos pos, ::BlockPos structurePos, ::std::vector<::br::worldgen::StructureBlockInfo> const& originalBlocks, ::std::vector<::br::worldgen::StructureBlockInfo>&& processedBlocks, ::br::worldgen::StructurePlaceSettings const& settings) const /*override*/;
 
     // vIndex: 3
     virtual ::br::worldgen::StructureProcessorType type() const /*override*/;
@@ -52,8 +45,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::processors::Capped
-    from(::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> delegate, ::IntProvider limit);
+    MCAPI static ::br::worldgen::processors::Capped from(::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> delegate, ::IntProvider limit);
     // NOLINTEND
 
 public:
@@ -65,14 +57,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::br::worldgen::StructureBlockInfo> $finalize(
-        ::IBlockSource&                                          region,
-        ::BlockPos                                               pos,
-        ::BlockPos                                               structurePos,
-        ::std::vector<::br::worldgen::StructureBlockInfo> const& originalBlocks,
-        ::std::vector<::br::worldgen::StructureBlockInfo>&&      processedBlocks,
-        ::br::worldgen::StructurePlaceSettings const&            settings
-    ) const;
+    MCAPI ::std::vector<::br::worldgen::StructureBlockInfo> $finalize(::IBlockSource& region, ::BlockPos pos, ::BlockPos structurePos, ::std::vector<::br::worldgen::StructureBlockInfo> const& originalBlocks, ::std::vector<::br::worldgen::StructureBlockInfo>&& processedBlocks, ::br::worldgen::StructurePlaceSettings const& settings) const;
 
     MCFOLD ::br::worldgen::StructureProcessorType $type() const;
 
@@ -84,6 +69,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen::processors
+}

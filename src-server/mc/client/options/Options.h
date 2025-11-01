@@ -32,38 +32,38 @@ class Options : public ::BaseOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf5f65e;
+    ::ll::UntypedStorage<8, 8> mUnkf5f65e;
     ::ll::UntypedStorage<8, 32> mUnka6468d;
-    ::ll::UntypedStorage<1, 1>  mUnk97d4f1;
-    ::ll::UntypedStorage<1, 1>  mUnkbadb16;
-    ::ll::UntypedStorage<1, 1>  mUnk5ef96a;
-    ::ll::UntypedStorage<4, 4>  mUnkf32118;
-    ::ll::UntypedStorage<4, 4>  mUnka00782;
-    ::ll::UntypedStorage<8, 8>  mUnk3ecb86;
-    ::ll::UntypedStorage<8, 8>  mUnk82d36f;
-    ::ll::UntypedStorage<4, 4>  mUnk8a8948;
-    ::ll::UntypedStorage<4, 4>  mUnkf44041;
-    ::ll::UntypedStorage<4, 4>  mUnk24eb7d;
-    ::ll::UntypedStorage<4, 4>  mUnk8f9ddd;
-    ::ll::UntypedStorage<4, 4>  mUnkf45021;
+    ::ll::UntypedStorage<1, 1> mUnk97d4f1;
+    ::ll::UntypedStorage<1, 1> mUnkbadb16;
+    ::ll::UntypedStorage<1, 1> mUnk5ef96a;
+    ::ll::UntypedStorage<4, 4> mUnkf32118;
+    ::ll::UntypedStorage<4, 4> mUnka00782;
+    ::ll::UntypedStorage<8, 8> mUnk3ecb86;
+    ::ll::UntypedStorage<8, 8> mUnk82d36f;
+    ::ll::UntypedStorage<4, 4> mUnk8a8948;
+    ::ll::UntypedStorage<4, 4> mUnkf44041;
+    ::ll::UntypedStorage<4, 4> mUnk24eb7d;
+    ::ll::UntypedStorage<4, 4> mUnk8f9ddd;
+    ::ll::UntypedStorage<4, 4> mUnkf45021;
     ::ll::UntypedStorage<8, 24> mUnkdc670b;
     ::ll::UntypedStorage<8, 24> mUnk727e15;
     ::ll::UntypedStorage<8, 24> mUnked4d9d;
-    ::ll::UntypedStorage<4, 4>  mUnk15219e;
+    ::ll::UntypedStorage<4, 4> mUnk15219e;
     ::ll::UntypedStorage<8, 24> mUnk11e2d9;
-    ::ll::UntypedStorage<8, 8>  mUnk9db756;
+    ::ll::UntypedStorage<8, 8> mUnk9db756;
     ::ll::UntypedStorage<8, 24> mUnk69f7a9;
     ::ll::UntypedStorage<8, 32> mUnkcb61a0;
-    ::ll::UntypedStorage<8, 8>  mUnkd903f8;
-    ::ll::UntypedStorage<1, 1>  mUnk7cacd9;
-    ::ll::UntypedStorage<1, 1>  mUnk9cd155;
+    ::ll::UntypedStorage<8, 8> mUnkd903f8;
+    ::ll::UntypedStorage<1, 1> mUnk7cacd9;
+    ::ll::UntypedStorage<1, 1> mUnk9cd155;
     ::ll::UntypedStorage<8, 24> mUnkfd7ff2;
     ::ll::UntypedStorage<8, 24> mUnk261e43;
     ::ll::UntypedStorage<8, 24> mUnkfaadd9;
     ::ll::UntypedStorage<8, 24> mUnkda32c3;
     ::ll::UntypedStorage<8, 24> mUnk227c67;
-    ::ll::UntypedStorage<1, 1>  mUnkf9748f;
-    ::ll::UntypedStorage<4, 4>  mUnk6814ff;
+    ::ll::UntypedStorage<1, 1> mUnkf9748f;
+    ::ll::UntypedStorage<4, 4> mUnk6814ff;
     // NOLINTEND
 
 public:
@@ -100,8 +100,7 @@ public:
     virtual bool getPrimaryUserStatus() const /*override*/;
 
     // vIndex: 23
-    virtual void
-    setClientInstanceCoordinator(::Bedrock::NonOwnerPointer<::ClientInstanceEventCoordinator> const&) /*override*/;
+    virtual void setClientInstanceCoordinator(::Bedrock::NonOwnerPointer<::ClientInstanceEventCoordinator> const&) /*override*/;
 
     // vIndex: 62
     virtual ::FileStorageDirectory getFileStorageLocation() const /*override*/;
@@ -152,7 +151,7 @@ public:
     virtual ::ChatOptions& getChatOptions() /*override*/;
 
     // vIndex: 37
-    virtual ::std::array<::std::unique_ptr<::Option>, 770> const& getAllRegisteredOptions() /*override*/;
+    virtual ::std::array<::std::unique_ptr<::Option>, 772> const& getAllRegisteredOptions() /*override*/;
 
     // vIndex: 38
     virtual void forEachOption(::std::function<void(::Option*)>) /*override*/;
@@ -169,70 +168,70 @@ public:
     // vIndex: 66
     virtual int getMaxViewDistanceChunksRaw() const /*override*/;
 
-    // vIndex: 77
+    // vIndex: 80
     virtual bool getRayTracing() const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 81
     virtual bool getDeferred() const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 93
     virtual ::GamePadRemappingLayout& getGamePadRemapping() /*override*/;
 
-    // vIndex: 91
+    // vIndex: 94
     virtual ::std::shared_ptr<::KeyboardRemappingLayout> getCurrentKeyboardRemapping() const /*override*/;
 
-    // vIndex: 92
+    // vIndex: 95
     virtual ::std::shared_ptr<::KeyboardRemappingLayout> getKeyboardRemappingByType(::KeyboardType) const /*override*/;
 
-    // vIndex: 93
+    // vIndex: 96
     virtual void setLanguage(::std::string const&) /*override*/;
 
-    // vIndex: 94
+    // vIndex: 97
     virtual ::std::string getLanguage() const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 123
     virtual void setPlayerViewPerspective(int) /*override*/;
 
-    // vIndex: 137
+    // vIndex: 140
     virtual void setRecentSkinIds(::std::vector<::std::string> const&) /*override*/;
 
-    // vIndex: 138
+    // vIndex: 141
     virtual ::std::vector<::std::string> const& getRecentSkinIds() /*override*/;
 
-    // vIndex: 318
+    // vIndex: 323
     virtual float getDefaultPlatformSafeZoneX() const /*override*/;
 
-    // vIndex: 319
+    // vIndex: 324
     virtual float getDefaultPlatformSafeZoneY() const /*override*/;
 
-    // vIndex: 320
+    // vIndex: 325
     virtual bool getServerboundClientDiagnosticsEnabled() const /*override*/;
 
-    // vIndex: 321
+    // vIndex: 326
     virtual ::ScriptDebuggerSettings getScriptDebuggerSettings() const /*override*/;
 
-    // vIndex: 322
+    // vIndex: 327
     virtual ::Scripting::WatchdogSettings getScriptWatchdogSettings() const /*override*/;
 
     // vIndex: 11
     virtual ::GraphicsMode getGraphicsMode() const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 82
     virtual int getGraphicsQualityPresetMode() const /*override*/;
 
-    // vIndex: 80
+    // vIndex: 83
     virtual int getDeferredTargetFrameRate() const /*override*/;
 
-    // vIndex: 338
+    // vIndex: 343
     virtual void setSaveDeferralCount(int) /*override*/;
 
-    // vIndex: 339
+    // vIndex: 344
     virtual int getSaveDeferralCount() const /*override*/;
 
     // vIndex: 9
     virtual ::std::optional<::DeviceMemoryTier> getScriptingMemoryTierOverride() const /*override*/;
 
-    // vIndex: 340
+    // vIndex: 345
     virtual void setForceVibrantVisualsDisabled(bool) /*override*/;
     // NOLINTEND
 
@@ -241,4 +240,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

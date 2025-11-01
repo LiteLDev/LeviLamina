@@ -33,12 +33,7 @@ public:
 
     MCNAPI ::BuildMatch match(::BlockPos const& pos, int subPattern, int rowIndex, uchar forward, uchar up) const;
 
-    MCNAPI void replaceBlocks(
-        char                                                           subPattern,
-        ::BuildMatch const&                                            buildMatch,
-        ::Block const&                                                 block,
-        ::brstd::function_ref<void(::Block const&, ::BlockPos const&)> preReplaceCallback
-    ) const;
+    MCNAPI void replaceBlocks(char subPattern, ::BuildMatch const& buildMatch, ::Block const& block, ::brstd::function_ref<void(::Block const&, ::BlockPos const&)> preReplaceCallback) const;
     // NOLINTEND
 
 public:
@@ -46,4 +41,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void noopCallback(::Block const&, ::BlockPos const&);
     // NOLINTEND
+
 };

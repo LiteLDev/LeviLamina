@@ -15,7 +15,7 @@ class DirectionalProducerComponent : public ::ProducerComponent {
 public:
     // DirectionalProducerComponent inner types define
     using AllowedConnections = ::std::bitset<6>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -26,8 +26,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 12
-    virtual bool
-    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
+    virtual bool allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     // vIndex: 0
     virtual ~DirectionalProducerComponent() /*override*/ = default;
@@ -44,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

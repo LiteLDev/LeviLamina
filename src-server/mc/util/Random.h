@@ -11,7 +11,7 @@ class Random : public ::IRandom {
 public:
     // Random inner types define
     using result_type = uint;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -111,4 +111,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

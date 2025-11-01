@@ -11,8 +11,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::AgentActionType> mAction;
-    ::ll::TypedStorage<8, 32, ::std::string>    mRequestId;
-    ::ll::TypedStorage<8, 16, ::Json::Value>    mResponse;
+    ::ll::TypedStorage<8, 32, ::std::string> mRequestId;
+    ::ll::TypedStorage<8, 16, ::Json::Value> mResponse;
     // NOLINTEND
 
 public:
@@ -34,4 +34,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

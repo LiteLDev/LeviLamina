@@ -15,4 +15,5 @@ public:
     SoundInstanceProperties& operator=(SoundInstanceProperties const&);
     SoundInstanceProperties(SoundInstanceProperties const&);
     SoundInstanceProperties();
+
 };

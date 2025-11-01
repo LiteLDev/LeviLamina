@@ -33,10 +33,10 @@ public:
     // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 44
+    // vIndex: 45
     virtual int getOutputSignal();
 
-    // vIndex: 45
+    // vIndex: 46
     virtual void setOutputSignal(int value);
 
     // vIndex: 0
@@ -52,7 +52,7 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI int $getOutputSignal();
+    MCFOLD int $getOutputSignal();
 
     MCAPI void $setOutputSignal(int value);
     // NOLINTEND
@@ -62,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

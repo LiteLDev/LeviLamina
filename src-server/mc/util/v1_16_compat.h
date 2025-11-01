@@ -12,8 +12,7 @@ struct BiomeIdType;
 namespace BiomeSourceUtil::v1_16_compat {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::optional<::BlockPos>
-locateSpawnBiome2d(::std::set<::BiomeIdType> const& biomes, ::BiomeSource const& biomeSource, int startingX);
+MCNAPI ::std::optional<::BlockPos> locateSpawnBiome2d(::std::set<::BiomeIdType> const& biomes, ::BiomeSource const& biomeSource, int startingX);
 // NOLINTEND
 
-} // namespace BiomeSourceUtil::v1_16_compat
+}

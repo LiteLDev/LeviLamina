@@ -17,4 +17,4 @@ MCNAPI ::TickingSystemWithInfo createOnGroundPostTickSystem();
 MCNAPI ::TickingSystemWithInfo createTickSystem(bool isClientSide);
 // NOLINTEND
 
-} // namespace MovementInterpolatorSystem
+}

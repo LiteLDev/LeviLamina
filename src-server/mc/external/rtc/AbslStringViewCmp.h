@@ -4,6 +4,7 @@
 
 namespace rtc {
 
-struct AbslStringViewCmp {};
+struct AbslStringViewCmp {
+};
 
-} // namespace rtc
+}

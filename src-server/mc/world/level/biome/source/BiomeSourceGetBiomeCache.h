@@ -16,6 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::Biome const*>> mMap;
-    ::ll::TypedStorage<8, 32, ::SpinLockImpl>                                   mLock;
+    ::ll::TypedStorage<8, 32, ::SpinLockImpl> mLock;
     // NOLINTEND
+
 };

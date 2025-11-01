@@ -18,6 +18,7 @@ public:
     KeyBinding& operator=(KeyBinding const&);
     KeyBinding(KeyBinding const&);
     KeyBinding();
+
 };
 
-} // namespace Editor::Input
+}

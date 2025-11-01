@@ -17,4 +17,4 @@ MCNAPI bool getIsInWater(::EntityContext const& provider);
 MCNAPI void setIsInWater(::EntityContext& provider, bool value);
 // NOLINTEND
 
-} // namespace ActorEnvironment
+}

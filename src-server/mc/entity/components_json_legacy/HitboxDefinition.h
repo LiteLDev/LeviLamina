@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void addAABB(::HitboxJson const& aabb);
     // NOLINTEND
+
 };

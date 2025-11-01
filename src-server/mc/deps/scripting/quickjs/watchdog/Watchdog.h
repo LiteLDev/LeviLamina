@@ -21,17 +21,17 @@ class Watchdog : public ::Scripting::IWatchdog {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk4f214f;
+    ::ll::UntypedStorage<8, 8> mUnk4f214f;
     ::ll::UntypedStorage<8, 64> mUnke0fc70;
-    ::ll::UntypedStorage<8, 8>  mUnk74e2d6;
+    ::ll::UntypedStorage<8, 8> mUnk74e2d6;
     ::ll::UntypedStorage<8, 16> mUnk83402b;
     ::ll::UntypedStorage<8, 16> mUnke744e8;
-    ::ll::UntypedStorage<8, 8>  mUnk2babb0;
+    ::ll::UntypedStorage<8, 8> mUnk2babb0;
     ::ll::UntypedStorage<8, 40> mUnk1dbd5d;
     ::ll::UntypedStorage<8, 24> mUnk22872d;
     ::ll::UntypedStorage<8, 24> mUnk3218f5;
-    ::ll::UntypedStorage<8, 8>  mUnk341985;
-    ::ll::UntypedStorage<1, 1>  mUnkc10073;
+    ::ll::UntypedStorage<8, 8> mUnk341985;
+    ::ll::UntypedStorage<1, 1> mUnkc10073;
     // NOLINTEND
 
 public:
@@ -47,8 +47,7 @@ public:
     virtual ~Watchdog() /*override*/ = default;
 
     // vIndex: 1
-    virtual void
-    setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler) /*override*/;
+    virtual void setWatchdogEventHandler(::std::function<void(::Scripting::WatchdogEvent)> watchdogEventHandler) /*override*/;
 
     // vIndex: 2
     virtual void beginTiming(::Scripting::ContextId contextId) /*override*/;
@@ -120,6 +119,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting::QuickJS
+}

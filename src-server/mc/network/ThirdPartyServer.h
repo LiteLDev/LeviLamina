@@ -8,7 +8,7 @@ public:
     // clang-format off
     struct AvailableGame;
     // clang-format on
-
+    
     // ThirdPartyServer inner types define
     struct AvailableGame {
     public:
@@ -19,14 +19,15 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk7173d6;
         ::ll::UntypedStorage<8, 32> mUnk531839;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         AvailableGame& operator=(AvailableGame const&);
         AvailableGame(AvailableGame const&);
         AvailableGame();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -45,11 +46,11 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk7c1e2d;
     ::ll::UntypedStorage<8, 32> mUnka50f16;
     ::ll::UntypedStorage<8, 32> mUnkfc61d8;
-    ::ll::UntypedStorage<1, 1>  mUnkef415d;
+    ::ll::UntypedStorage<1, 1> mUnkef415d;
     ::ll::UntypedStorage<8, 32> mUnke05790;
-    ::ll::UntypedStorage<2, 2>  mUnk571140;
-    ::ll::UntypedStorage<1, 1>  mUnk6977bb;
-    ::ll::UntypedStorage<1, 1>  mUnk1d5f2b;
+    ::ll::UntypedStorage<2, 2> mUnk571140;
+    ::ll::UntypedStorage<1, 1> mUnk6977bb;
+    ::ll::UntypedStorage<1, 1> mUnk1d5f2b;
     // NOLINTEND
 
 public:
@@ -57,4 +58,5 @@ public:
     ThirdPartyServer& operator=(ThirdPartyServer const&);
     ThirdPartyServer(ThirdPartyServer const&);
     ThirdPartyServer();
+
 };

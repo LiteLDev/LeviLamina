@@ -21,14 +21,7 @@ struct StateVectorComponent;
 namespace UpdateMovingFlagSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doTickMovingFlagSystem(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::StrictEntityContext const&                                                    context,
-    ::StateVectorComponent const&                                                   stateVectorComponent,
-    ::Optional<::PassengerComponent const>                                          passengerComponent,
-    ::ViewT<::StrictEntityContext, ::Include<::ControlledByLocalInstanceComponent>> vehicleView,
-    ::EntityModifier<::SetMovingFlagRequestComponent>                               modifier
-);
+MCNAPI void doTickMovingFlagSystem(::entt::type_list<::Include<::ActorMovementTickNeededComponent>>, ::StrictEntityContext const& context, ::StateVectorComponent const& stateVectorComponent, ::Optional<::PassengerComponent const> passengerComponent, ::ViewT<::StrictEntityContext, ::Include<::ControlledByLocalInstanceComponent>> vehicleView, ::EntityModifier<::SetMovingFlagRequestComponent> modifier);
 // NOLINTEND
 
-} // namespace UpdateMovingFlagSystemImpl
+}

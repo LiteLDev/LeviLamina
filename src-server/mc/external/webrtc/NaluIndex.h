@@ -18,6 +18,7 @@ public:
     NaluIndex& operator=(NaluIndex const&);
     NaluIndex(NaluIndex const&);
     NaluIndex();
+
 };
 
-} // namespace webrtc::H264
+}

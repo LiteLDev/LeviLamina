@@ -4,6 +4,6 @@
 
 enum class codetype : int {
     Codes = 0,
-    Lens  = 1,
+    Lens = 1,
     Dists = 2,
 };

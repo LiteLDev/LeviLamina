@@ -17,8 +17,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mArrow;
-    ::ll::TypedStorage<8, 152, ::ItemStack>               mWeaponItem;
-    ::ll::TypedStorage<8, 152, ::ItemStack>               mArrowItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mWeaponItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mArrowItem;
     // NOLINTEND
 
 public:
@@ -45,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

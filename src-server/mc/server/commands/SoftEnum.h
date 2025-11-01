@@ -16,6 +16,7 @@ public:
     SoftEnum& operator=(SoftEnum const&);
     SoftEnum(SoftEnum const&);
     SoftEnum();
+
 };
 
-} // namespace commands
+}

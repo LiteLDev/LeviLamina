@@ -14,4 +14,5 @@ public:
     EnderDragonDeathWrapper& operator=(EnderDragonDeathWrapper const&);
     EnderDragonDeathWrapper(EnderDragonDeathWrapper const&);
     EnderDragonDeathWrapper();
+
 };

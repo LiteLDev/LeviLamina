@@ -14,7 +14,7 @@ class ZlibFileAccessWrapper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk83a38f;
+    ::ll::UntypedStorage<8, 8> mUnk83a38f;
     ::ll::UntypedStorage<8, 24> mUnkbd0b0f;
     // NOLINTEND
 
@@ -43,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

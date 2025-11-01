@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::MobEffectInstance>> mAddEffects;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>       mRemoveEffects;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mRemoveEffects;
     // NOLINTEND
 
 public:
@@ -51,4 +51,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

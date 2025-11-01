@@ -16,17 +16,17 @@ class NearestAttackableTargetDefinition : public ::TargetGoalDefinition {
 public:
     // NearestAttackableTargetDefinition inner types define
     using self = ::NearestAttackableTargetDefinition;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>  mReselectTargets;
-    ::ll::TypedStorage<4, 4, int>   mAttackInterval;
-    ::ll::TypedStorage<4, 4, int>   mScanInterval;
+    ::ll::TypedStorage<1, 1, bool> mReselectTargets;
+    ::ll::TypedStorage<4, 4, int> mAttackInterval;
+    ::ll::TypedStorage<4, 4, int> mScanInterval;
     ::ll::TypedStorage<4, 4, float> mTargetSearchHeight;
     ::ll::TypedStorage<4, 4, float> mTargetInvisibleMultiplier;
     ::ll::TypedStorage<4, 4, float> mTargetSneakVisibilityMultiplier;
-    ::ll::TypedStorage<1, 1, bool>  mSetPersistent;
+    ::ll::TypedStorage<1, 1, bool> mSetPersistent;
     // NOLINTEND
 
 public:
@@ -42,11 +42,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        ::std::string const& name,
-        ::std::shared_ptr<
-            ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::NearestAttackableTargetDefinition>>& root
-    );
+    MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::NearestAttackableTargetDefinition>>& root);
     // NOLINTEND
 
 public:
@@ -60,4 +56,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

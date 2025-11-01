@@ -21,7 +21,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk594722;
     ::ll::UntypedStorage<8, 32> mUnk6033a7;
     ::ll::UntypedStorage<8, 32> mUnk1403b0;
-    ::ll::UntypedStorage<4, 4>  mUnk3feb65;
+    ::ll::UntypedStorage<4, 4> mUnk3feb65;
     ::ll::UntypedStorage<8, 32> mUnkd757b3;
     // NOLINTEND
 
@@ -58,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -16,8 +16,8 @@ class HomeDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkd42972;
-    ::ll::UntypedStorage<4, 4>  mUnk928fa8;
+    ::ll::UntypedStorage<4, 4> mUnkd42972;
+    ::ll::UntypedStorage<4, 4> mUnk928fa8;
     ::ll::UntypedStorage<8, 24> mUnkc7a348;
     // NOLINTEND
 
@@ -40,7 +40,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
-    buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::HomeDefinition>>& root);
+    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::HomeDefinition>>& root);
     // NOLINTEND
+
 };

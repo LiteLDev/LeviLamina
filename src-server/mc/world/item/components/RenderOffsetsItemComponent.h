@@ -20,7 +20,7 @@ public:
     struct ItemTransforms;
     struct TRS;
     // clang-format on
-
+    
     // RenderOffsetsItemComponent inner types define
     struct TRS {
     public:
@@ -30,14 +30,15 @@ public:
         ::ll::TypedStorage<4, 12, ::std::array<float, 3>> mRotation;
         ::ll::TypedStorage<4, 12, ::std::array<float, 3>> mScale;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI bool operator==(::RenderOffsetsItemComponent::TRS const& other) const;
         // NOLINTEND
+    
     };
-
+    
     struct ItemTransforms {
     public:
         // member variables
@@ -45,24 +46,25 @@ public:
         ::ll::TypedStorage<4, 36, ::RenderOffsetsItemComponent::TRS> mFirstPerson;
         ::ll::TypedStorage<4, 36, ::RenderOffsetsItemComponent::TRS> mThirdPerson;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI bool operator==(::RenderOffsetsItemComponent::ItemTransforms const& other) const;
         // NOLINTEND
+    
     };
-
+    
     enum class Hand : int {
         MainHand = 0,
-        OffHand  = 1,
+        OffHand = 1,
     };
-
+    
     enum class Perspective : int {
         FirstPerson = 0,
         ThirdPerson = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -82,11 +84,7 @@ public:
     // NOLINTBEGIN
     MCFOLD static void _fromString(::RenderOffsetsItemComponent&, ::std::string const&);
 
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -104,4 +102,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

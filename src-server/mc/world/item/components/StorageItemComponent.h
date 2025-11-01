@@ -32,21 +32,22 @@ public:
     // clang-format off
     class ContainerRegistryWriteAccess;
     // clang-format on
-
+    
     // StorageItemComponent inner types define
-    class ContainerRegistryWriteAccess {};
-
+    class ContainerRegistryWriteAccess {
+    };
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                          mNumSlots;
-    ::ll::TypedStorage<1, 1, bool>                                         mAllowNestedStorageItem;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>             mBannedItems;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>>             mAllowedItems;
+    ::ll::TypedStorage<4, 4, int> mNumSlots;
+    ::ll::TypedStorage<1, 1, bool> mAllowNestedStorageItem;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mBannedItems;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mAllowedItems;
     ::ll::TypedStorage<8, 16, ::WeakRef<::IDynamicContainerSerialization>> mContainerSerialization;
-    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryAccess>>       mContainerRegistryAccess;
-    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryTracker>>      mContainerRegistryTracker;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>             mOnUseSubscription;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryAccess>> mContainerRegistryAccess;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::IContainerRegistryTracker>> mContainerRegistryTracker;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseSubscription;
     // NOLINTEND
 
 public:
@@ -68,29 +69,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::FillingContainer>
-    getBackingContainer(::FullContainerName id, ::StorageItemComponent::ContainerRegistryWriteAccess writeAccess) const;
+    MCAPI ::std::shared_ptr<::FillingContainer> getBackingContainer(::FullContainerName id, ::StorageItemComponent::ContainerRegistryWriteAccess writeAccess) const;
 
     MCAPI ::StorageItemComponent& operator=(::StorageItemComponent&&);
 
-    MCAPI ::std::unique_ptr<::ListTag>
-    serializeStorageItem(::FullContainerName const& name, ::SaveContext const& saveContext) const;
+    MCAPI ::std::unique_ptr<::ListTag> serializeStorageItem(::FullContainerName const& name, ::SaveContext const& saveContext) const;
 
-    MCAPI void setContainerRegistryHandlers(
-        ::WeakRef<::IDynamicContainerSerialization> containerSerialization,
-        ::WeakRef<::IContainerRegistryAccess>       containerAccess,
-        ::WeakRef<::IContainerRegistryTracker>      containerTracker
-    );
+    MCAPI void setContainerRegistryHandlers(::WeakRef<::IDynamicContainerSerialization> containerSerialization, ::WeakRef<::IContainerRegistryAccess> containerAccess, ::WeakRef<::IContainerRegistryTracker> containerTracker);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
 
     MCAPI static ::HashedString const& getIdentifier();
 
@@ -114,4 +105,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

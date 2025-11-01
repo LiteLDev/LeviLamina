@@ -10,6 +10,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool Write(::rtc::ArrayView<uchar> data, ushort video_frame_tracking_id);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

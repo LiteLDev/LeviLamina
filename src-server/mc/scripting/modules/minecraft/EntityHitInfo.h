@@ -8,9 +8,9 @@ struct EntityHitInfo {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7cc77b;
+    ::ll::UntypedStorage<8, 8> mUnk7cc77b;
     ::ll::UntypedStorage<4, 24> mUnk42f426;
-    ::ll::UntypedStorage<4, 4>  mUnk8a5ddc;
+    ::ll::UntypedStorage<4, 4> mUnk8a5ddc;
     // NOLINTEND
 
 public:
@@ -18,6 +18,7 @@ public:
     EntityHitInfo& operator=(EntityHitInfo const&);
     EntityHitInfo(EntityHitInfo const&);
     EntityHitInfo();
+
 };
 
-} // namespace ScriptModuleMinecraft::ScriptRaycasting
+}

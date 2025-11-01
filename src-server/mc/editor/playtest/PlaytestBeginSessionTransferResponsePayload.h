@@ -7,13 +7,12 @@
 
 namespace Editor::Network {
 
-class PlaytestBeginSessionTransferResponsePayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::PlaytestBeginSessionTransferResponsePayload> {
+class PlaytestBeginSessionTransferResponsePayload : public ::Editor::Network::NetworkPayload<::Editor::Network::PlaytestBeginSessionTransferResponsePayload> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkea5f85;
-    ::ll::UntypedStorage<4, 4>  mUnka29b34;
+    ::ll::UntypedStorage<4, 4> mUnka29b34;
     // NOLINTEND
 
 public:
@@ -34,6 +33,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

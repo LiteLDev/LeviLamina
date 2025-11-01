@@ -17,11 +17,7 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 
 namespace PublisherItemComponent {
 
-struct MiningBlock : public ::ItemComponent,
-                     public ::Bedrock::PubSub::Publisher<
-                         void(bool&, ::ItemStack&, ::Block const&, int, int, int, ::Actor&),
-                         ::Bedrock::PubSub::ThreadModel::SingleThreaded,
-                         0> {
+struct MiningBlock : public ::ItemComponent, public ::Bedrock::PubSub::Publisher<void(bool&, ::ItemStack&, ::Block const&, int, int, int, ::Actor&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -44,6 +40,7 @@ public:
 
     MCNAPI static void** $vftableForConnector();
     // NOLINTEND
+
 };
 
-} // namespace PublisherItemComponent
+}

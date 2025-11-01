@@ -9,7 +9,7 @@ struct RealmEventForPlayer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::RealmEventId>       mRealmEventId;
+    ::ll::TypedStorage<4, 4, ::RealmEventId> mRealmEventId;
     ::ll::TypedStorage<8, 32, ::std::string const> mPlayerXuid;
     // NOLINTEND
 
@@ -24,4 +24,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

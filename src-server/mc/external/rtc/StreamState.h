@@ -5,9 +5,9 @@
 namespace rtc {
 
 enum class StreamState : int {
-    Closed  = 0,
+    Closed = 0,
     Opening = 1,
-    Open    = 2,
+    Open = 2,
 };
 
 }

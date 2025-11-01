@@ -31,10 +31,7 @@ public:
 
     MCNAPI ::Scripting::TaggedBinding& onlyStable();
 
-    MCNAPI ::Scripting::TaggedBinding& release(
-        ::Scripting::Version                                inclusiveLowerVersion,
-        ::std::optional<::Scripting::RemovedInMajorVersion> exclusiveMajorVersionLimit
-    );
+    MCNAPI ::Scripting::TaggedBinding& release(::Scripting::Version inclusiveLowerVersion, ::std::optional<::Scripting::RemovedInMajorVersion> exclusiveMajorVersionLimit);
 
     MCNAPI ~TaggedBinding();
     // NOLINTEND
@@ -50,6 +47,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

@@ -11,12 +11,11 @@
 // clang-format off
 class IAppConfigData;
 class IContentAccessibilityProvider;
-class IEntitlementManager;
-class IMinecraftGame;
 class ISceneStack;
 class IScreenCapabilities;
 class LevelData;
 class SceneFactory;
+struct AppConfigsDependencies;
 struct ConnectionDefinition;
 struct PackIdVersion;
 // clang-format on
@@ -25,16 +24,17 @@ class AppConfigs : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // AppConfigs inner types define
     enum class MaelstromEduUsabilityStatus : uchar {
-        Unknown   = 0,
+        Unknown = 0,
         Unallowed = 1,
-        Allowed   = 2,
+        Allowed = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk9f7098;
-    ::ll::UntypedStorage<8, 8>  mUnke1b346;
+    ::ll::UntypedStorage<8, 8> mUnke1b346;
+    ::ll::UntypedStorage<8, 8> mUnk401edb;
     ::ll::UntypedStorage<8, 64> mUnk6aa499;
     // NOLINTEND
 
@@ -42,6 +42,7 @@ public:
     // prevent constructor by default
     AppConfigs& operator=(AppConfigs const&);
     AppConfigs(AppConfigs const&);
+    AppConfigs();
 
 public:
     // virtual functions
@@ -143,23 +144,22 @@ public:
     virtual bool isDedicatedServerOn() const;
 
     // vIndex: 32
-    virtual void setCanAccessWorldCallback(::IMinecraftGame& minecraftGame);
-
-    // vIndex: 33
     virtual ::std::vector<::PackIdVersion> getAdditionalClientPacks(bool enteringLevel) const;
 
-    // vIndex: 34
+    // vIndex: 33
     virtual ::std::unique_ptr<::IScreenCapabilities> getScreenCapabilities(::std::string const& screenName) const;
 
-    // vIndex: 35
-    virtual ::std::unique_ptr<::IContentAccessibilityProvider>
-    createContentAccessibility(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager) const;
+    // vIndex: 34
+    virtual ::std::unique_ptr<::IContentAccessibilityProvider> createContentAccessibility() const;
 
-    // vIndex: 36
+    // vIndex: 35
     virtual ::std::string getFeedbackURL() const;
 
-    // vIndex: 37
+    // vIndex: 36
     virtual ::std::string getHelpCenterURL() const;
+
+    // vIndex: 37
+    virtual ::std::string getPrivacyAndOnlineSafetyURL() const;
 
     // vIndex: 38
     virtual void applyLevelDataOverride(::LevelData&) const;
@@ -168,13 +168,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AppConfigs();
+    MCNAPI explicit AppConfigs(::AppConfigsDependencies&& dependencies);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCNAPI void* $ctor(::AppConfigsDependencies&& dependencies);
     // NOLINTEND
 
 public:
@@ -248,18 +248,17 @@ public:
 
     MCNAPI bool $isDedicatedServerOn() const;
 
-    MCNAPI void $setCanAccessWorldCallback(::IMinecraftGame& minecraftGame);
-
     MCNAPI ::std::vector<::PackIdVersion> $getAdditionalClientPacks(bool enteringLevel) const;
 
     MCNAPI ::std::unique_ptr<::IScreenCapabilities> $getScreenCapabilities(::std::string const& screenName) const;
 
-    MCNAPI ::std::unique_ptr<::IContentAccessibilityProvider>
-    $createContentAccessibility(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager) const;
+    MCNAPI ::std::unique_ptr<::IContentAccessibilityProvider> $createContentAccessibility() const;
 
     MCNAPI ::std::string $getFeedbackURL() const;
 
     MCNAPI ::std::string $getHelpCenterURL() const;
+
+    MCNAPI ::std::string $getPrivacyAndOnlineSafetyURL() const;
 
     MCNAPI void $applyLevelDataOverride(::LevelData&) const;
     // NOLINTEND
@@ -269,4 +268,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

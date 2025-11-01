@@ -16,4 +16,4 @@ namespace ComponentItemDataValidation {
 MCAPI void validate(::Puv::LoadResult<::ComponentItemDataAll_Latest>& loadResult);
 // NOLINTEND
 
-} // namespace ComponentItemDataValidation
+}

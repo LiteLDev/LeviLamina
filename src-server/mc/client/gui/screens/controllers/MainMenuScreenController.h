@@ -10,15 +10,15 @@ class MainMenuScreenController : public ::MinecraftScreenController {
 public:
     // MainMenuScreenController inner types define
     enum class StartRealmFailureAction : int {
-        ShowModalPopup     = 0,
+        ShowModalPopup = 0,
         JustNotifyCallback = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk793974;
-    ::ll::UntypedStorage<8, 8>  mUnkfd6e69;
+    ::ll::UntypedStorage<8, 8> mUnkfd6e69;
     // NOLINTEND
 
 public:
@@ -36,7 +36,7 @@ public:
     // vIndex: 6
     virtual void onOpen() /*override*/;
 
-    // vIndex: 51
+    // vIndex: 50
     virtual void showPickCustomSkinDialog(::std::function<void(::PickCustomSkinResult)>) /*override*/;
     // NOLINTEND
 
@@ -45,4 +45,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

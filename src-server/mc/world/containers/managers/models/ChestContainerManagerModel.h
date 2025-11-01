@@ -44,12 +44,7 @@ public:
     // NOLINTBEGIN
     MCAPI ChestContainerManagerModel(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
 
-    MCAPI ChestContainerManagerModel(
-        ::ContainerID     containerId,
-        ::Player&         player,
-        ::BlockPos const& blockPos,
-        ::BlockActorType  blockActorType
-    );
+    MCAPI ChestContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos, ::BlockActorType blockActorType);
     // NOLINTEND
 
 public:
@@ -57,8 +52,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::ActorUniqueID uniqueID);
 
-    MCAPI void*
-    $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos, ::BlockActorType blockActorType);
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos, ::BlockActorType blockActorType);
     // NOLINTEND
 
 public:
@@ -74,4 +68,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

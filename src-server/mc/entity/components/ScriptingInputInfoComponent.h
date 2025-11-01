@@ -11,10 +11,11 @@ struct ScriptingInputInfoComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                        mIsHotbarOnlyTouch;
-    ::ll::TypedStorage<4, 4, ::InputMode>                 mInputMode;
+    ::ll::TypedStorage<1, 1, bool> mIsHotbarOnlyTouch;
+    ::ll::TypedStorage<4, 4, ::InputMode> mInputMode;
     ::ll::TypedStorage<4, 4, ::ScriptingInputButtonState> mSneakState;
     ::ll::TypedStorage<4, 4, ::ScriptingInputButtonState> mJumpState;
-    ::ll::TypedStorage<4, 8, ::Vec2>                      mMove;
+    ::ll::TypedStorage<4, 8, ::Vec2> mMove;
     // NOLINTEND
+
 };

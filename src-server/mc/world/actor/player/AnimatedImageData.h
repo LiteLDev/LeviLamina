@@ -13,8 +13,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::persona::AnimatedTextureType> mType;
     ::ll::TypedStorage<4, 4, ::persona::AnimationExpression> mAnimationExpression;
-    ::ll::TypedStorage<8, 48, ::mce::Image>                  mImage;
-    ::ll::TypedStorage<4, 4, float>                          mFrames;
+    ::ll::TypedStorage<8, 48, ::mce::Image> mImage;
+    ::ll::TypedStorage<4, 4, float> mFrames;
     // NOLINTEND
 
 public:
@@ -25,12 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AnimatedImageData(
-        ::persona::AnimatedTextureType type,
-        ::persona::AnimationExpression animationExpression,
-        ::mce::Image const&            animatedImage,
-        float                          frames
-    );
+    MCNAPI AnimatedImageData(::persona::AnimatedTextureType type, ::persona::AnimationExpression animationExpression, ::mce::Image const& animatedImage, float frames);
 
     MCNAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
     // NOLINTEND
@@ -38,11 +33,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::persona::AnimatedTextureType type,
-        ::persona::AnimationExpression animationExpression,
-        ::mce::Image const&            animatedImage,
-        float                          frames
-    );
+    MCNAPI void* $ctor(::persona::AnimatedTextureType type, ::persona::AnimationExpression animationExpression, ::mce::Image const& animatedImage, float frames);
     // NOLINTEND
+
 };

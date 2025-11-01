@@ -5,7 +5,7 @@
 namespace Bedrock::Threading {
 
 enum class AssignedThreadDefaultId : int {
-    EmptyThreadId   = 0,
+    EmptyThreadId = 0,
     CurrentThreadId = 1,
 };
 

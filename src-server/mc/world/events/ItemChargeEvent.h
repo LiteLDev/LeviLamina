@@ -12,7 +12,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 128, ::ItemInstance> mItemInstance;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mActor;
-    ::ll::TypedStorage<4, 4, int>              mUseDuration;
+    ::ll::TypedStorage<4, 4, int> mUseDuration;
     // NOLINTEND
 
 public:
@@ -39,4 +39,5 @@ public:
 
     MCAPI void* $ctor(::ItemInstance const& inst, ::WeakEntityRef actor, int useDuration);
     // NOLINTEND
+
 };

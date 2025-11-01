@@ -11,20 +11,20 @@ class Random : public ::IRandom {
 public:
     // Random inner types define
     using result_type = uint;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>         mSeed;
+    ::ll::TypedStorage<4, 4, uint> mSeed;
     ::ll::TypedStorage<4, 2496, uint[624]> _mt;
-    ::ll::TypedStorage<4, 4, int>          _mti;
-    ::ll::TypedStorage<4, 4, int>          mInitedIdx;
-    ::ll::TypedStorage<4, 4, float>        mNextNextGaussian;
-    ::ll::TypedStorage<8, 8, double>       mNextNextGaussianDouble;
-    ::ll::TypedStorage<4, 4, uint>         mFakeUniformRandomInt;
-    ::ll::TypedStorage<1, 1, bool>         mHaveNextNextGaussian;
-    ::ll::TypedStorage<1, 1, bool>         mHaveNextNextGaussianDouble;
-    ::ll::TypedStorage<1, 1, bool>         mTest_OnlyUsedDeterministically;
+    ::ll::TypedStorage<4, 4, int> _mti;
+    ::ll::TypedStorage<4, 4, int> mInitedIdx;
+    ::ll::TypedStorage<4, 4, float> mNextNextGaussian;
+    ::ll::TypedStorage<8, 8, double> mNextNextGaussianDouble;
+    ::ll::TypedStorage<4, 4, uint> mFakeUniformRandomInt;
+    ::ll::TypedStorage<1, 1, bool> mHaveNextNextGaussian;
+    ::ll::TypedStorage<1, 1, bool> mHaveNextNextGaussianDouble;
+    ::ll::TypedStorage<1, 1, bool> mTest_OnlyUsedDeterministically;
     // NOLINTEND
 
 public:
@@ -122,6 +122,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

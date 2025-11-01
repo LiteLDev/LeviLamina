@@ -57,4 +57,5 @@ public:
 
     MCFOLD bool $isRemoteFire();
     // NOLINTEND
+
 };

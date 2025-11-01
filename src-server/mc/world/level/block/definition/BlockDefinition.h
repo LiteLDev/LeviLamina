@@ -21,12 +21,12 @@ struct BlockDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::SemVersion>                                           mFormatVersion;
-    ::ll::TypedStorage<8, 32, ::MinEngineVersion>                                     mMinEngineVersion;
-    ::ll::TypedStorage<8, 24, ::SemVersion>                                           mOriginalJsonVersion;
-    ::ll::TypedStorage<8, 176, ::BlockDescription>                                    mDescription;
-    ::ll::TypedStorage<8, 112, ::BlockComponentGroupDescription>                      mBaseComponents;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPermutationDescription>>           mPermutationDescriptions;
+    ::ll::TypedStorage<8, 24, ::SemVersion> mFormatVersion;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion> mMinEngineVersion;
+    ::ll::TypedStorage<8, 24, ::SemVersion> mOriginalJsonVersion;
+    ::ll::TypedStorage<8, 176, ::BlockDescription> mDescription;
+    ::ll::TypedStorage<8, 112, ::BlockComponentGroupDescription> mBaseComponents;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPermutationDescription>> mPermutationDescriptions;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DefinitionEvent>> mEventHandlers;
     // NOLINTEND
 
@@ -55,12 +55,7 @@ public:
 
     MCAPI static void registerBlockDefinitionTypes(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::pair<bool, ::SemVersion> upgradeJson(
-        ::cereal::ReflectionCtx const& ctx,
-        ::std::string&                 json,
-        ::Core::Path const&            resourceName,
-        ::std::optional<::SemVersion>  minVersion
-    );
+    MCAPI static ::std::pair<bool, ::SemVersion> upgradeJson(::cereal::ReflectionCtx const& ctx, ::std::string& json, ::Core::Path const& resourceName, ::std::optional<::SemVersion> minVersion);
     // NOLINTEND
 
 public:
@@ -78,4 +73,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 8, float[2]> cursorPosition;
     ::ll::TypedStorage<4, 8, float[2]> deltaPosition;
     // NOLINTEND
+
 };

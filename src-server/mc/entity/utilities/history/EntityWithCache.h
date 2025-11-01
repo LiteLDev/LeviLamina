@@ -17,6 +17,7 @@ public:
     EntityWithCache& operator=(EntityWithCache const&);
     EntityWithCache(EntityWithCache const&);
     EntityWithCache();
+
 };
 
-} // namespace History
+}

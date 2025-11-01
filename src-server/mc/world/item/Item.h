@@ -9,8 +9,8 @@
 #include "mc/deps/shared_types/legacy/actor/ActorLocation.h"
 #include "mc/deps/shared_types/legacy/item/UseAnimation.h"
 #include "mc/gameplayhandlers/CoordinatorResult.h"
-#include "mc/resources/BaseGameVersion.h"
 #include "mc/resources/JsonBetaState.h"
+#include "mc/versionless/util/BaseGameVersion.h"
 #include "mc/world/interactions/mining/MineBlockItemEffectType.h"
 #include "mc/world/item/CreativeItemCategory.h"
 #include "mc/world/item/InHandUpdateType.h"
@@ -67,50 +67,50 @@ class Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ItemVersion>                                   mItemParseVersion;
-    ::ll::TypedStorage<8, 32, ::std::string>                                  mTextureAtlasFile;
-    ::ll::TypedStorage<4, 4, int>                                             mFrameCount;
-    ::ll::TypedStorage<1, 1, bool>                                            mAnimatesInToolbar;
-    ::ll::TypedStorage<1, 1, bool>                                            mIsMirroredArt;
-    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::UseAnimation>             mUseAnim;
-    ::ll::TypedStorage<8, 32, ::std::string>                                  mHoverTextColorFormat;
-    ::ll::TypedStorage<4, 4, int>                                             mIconFrame;
-    ::ll::TypedStorage<4, 4, int>                                             mAtlasFrame;
-    ::ll::TypedStorage<4, 4, int>                                             mAtlasTotalFrames;
-    ::ll::TypedStorage<8, 32, ::std::string>                                  mIconName;
-    ::ll::TypedStorage<8, 32, ::std::string>                                  mAtlasName;
-    ::ll::TypedStorage<1, 1, uchar>                                           mMaxStackSize;
-    ::ll::TypedStorage<2, 2, short>                                           mId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                  mDescriptionId;
-    ::ll::TypedStorage<8, 48, ::HashedString>                                 mRawNameId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                  mNamespace;
-    ::ll::TypedStorage<8, 48, ::HashedString>                                 mFullName;
-    ::ll::TypedStorage<2, 2, short>                                           mMaxDamage;
-    bool                                                                      mIsGlint              : 1;
-    bool                                                                      mHandEquipped         : 1;
-    bool                                                                      mIsStackedByData      : 1;
-    bool                                                                      mRequiresWorldBuilder : 1;
-    bool                                                                      mExplodable           : 1;
-    bool                                                                      mFireResistant        : 1;
-    bool                                                                      mShouldDespawn        : 1;
-    bool                                                                      mAllowOffhand         : 1;
-    bool                                                                      mIgnoresPermissions   : 1;
-    ::ll::TypedStorage<4, 4, int>                                             mMaxUseDuration;
-    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                              mMinRequiredBaseGameVersion;
-    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>>                    mBlockType;
-    ::ll::TypedStorage<4, 4, ::CreativeItemCategory>                          mCreativeCategory;
-    ::ll::TypedStorage<8, 8, ::Item*>                                         mCraftingRemainingItem;
-    ::ll::TypedStorage<8, 32, ::std::string>                                  mCreativeGroup;
-    ::ll::TypedStorage<4, 4, float>                                           mFurnaceBurnIntervalModifier;
-    ::ll::TypedStorage<4, 4, float>                                           mFurnaceXPmultiplier;
-    ::ll::TypedStorage<1, 1, ::ItemCommandVisibility>                         mIsHiddenInCommands;
-    ::ll::TypedStorage<4, 4, ::Rarity>                                        mBaseRarity;
+    ::ll::TypedStorage<4, 4, ::ItemVersion> mItemParseVersion;
+    ::ll::TypedStorage<8, 32, ::std::string> mTextureAtlasFile;
+    ::ll::TypedStorage<4, 4, int> mFrameCount;
+    ::ll::TypedStorage<1, 1, bool> mAnimatesInToolbar;
+    ::ll::TypedStorage<1, 1, bool> mIsMirroredArt;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::UseAnimation> mUseAnim;
+    ::ll::TypedStorage<8, 32, ::std::string> mHoverTextColorFormat;
+    ::ll::TypedStorage<4, 4, int> mIconFrame;
+    ::ll::TypedStorage<4, 4, int> mAtlasFrame;
+    ::ll::TypedStorage<4, 4, int> mAtlasTotalFrames;
+    ::ll::TypedStorage<8, 32, ::std::string> mIconName;
+    ::ll::TypedStorage<8, 32, ::std::string> mAtlasName;
+    ::ll::TypedStorage<1, 1, uchar> mMaxStackSize;
+    ::ll::TypedStorage<2, 2, short> mId;
+    ::ll::TypedStorage<8, 32, ::std::string> mDescriptionId;
+    ::ll::TypedStorage<8, 48, ::HashedString> mRawNameId;
+    ::ll::TypedStorage<8, 32, ::std::string> mNamespace;
+    ::ll::TypedStorage<8, 48, ::HashedString> mFullName;
+    ::ll::TypedStorage<2, 2, short> mMaxDamage;
+    bool mIsGlint : 1;
+    bool mHandEquipped : 1;
+    bool mIsStackedByData : 1;
+    bool mRequiresWorldBuilder : 1;
+    bool mExplodable : 1;
+    bool mFireResistant : 1;
+    bool mShouldDespawn : 1;
+    bool mAllowOffhand : 1;
+    bool mIgnoresPermissions : 1;
+    ::ll::TypedStorage<4, 4, int> mMaxUseDuration;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion> mMinRequiredBaseGameVersion;
+    ::ll::TypedStorage<8, 8, ::WeakPtr<::BlockType const>> mBlockType;
+    ::ll::TypedStorage<4, 4, ::CreativeItemCategory> mCreativeCategory;
+    ::ll::TypedStorage<8, 8, ::Item*> mCraftingRemainingItem;
+    ::ll::TypedStorage<8, 32, ::std::string> mCreativeGroup;
+    ::ll::TypedStorage<4, 4, float> mFurnaceBurnIntervalModifier;
+    ::ll::TypedStorage<4, 4, float> mFurnaceXPmultiplier;
+    ::ll::TypedStorage<1, 1, ::ItemCommandVisibility> mIsHiddenInCommands;
+    ::ll::TypedStorage<4, 4, ::Rarity> mBaseRarity;
     ::ll::TypedStorage<4, 4, ::Interactions::Mining::MineBlockItemEffectType> mMineBlockType;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FoodItemComponentLegacy>>    mFoodComponentLegacy;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SeedItemComponentLegacy>>    mSeedComponent;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CameraItemComponentLegacy>>  mCameraComponentLegacy;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>>         mOnResetBAICallbacks;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemTag>>                       mTags;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::FoodItemComponentLegacy>> mFoodComponentLegacy;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SeedItemComponentLegacy>> mSeedComponent;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CameraItemComponentLegacy>> mCameraComponentLegacy;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void()>>> mOnResetBAICallbacks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemTag>> mTags;
     // NOLINTEND
 
 public:
@@ -124,8 +124,7 @@ public:
     virtual ~Item();
 
     // vIndex: 1
-    virtual ::PuvLoadData::LoadResultWithTiming
-    initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const);
+    virtual ::PuvLoadData::LoadResultWithTiming initServer(::Json::Value const&, ::SemVersion const&, ::IPackLoadContext&, ::JsonBetaState const);
 
     // vIndex: 2
     virtual void tearDown();
@@ -254,256 +253,244 @@ public:
     virtual ::Rarity getRarity(::ItemStackBase const& stack) const;
 
     // vIndex: 44
-    virtual bool showsDurabilityInCreative() const;
+    virtual uint getSwingDuration() const;
 
     // vIndex: 45
-    virtual bool isWearableThroughLootTable(::CompoundTag const*) const;
+    virtual bool showsDurabilityInCreative() const;
 
     // vIndex: 46
-    virtual bool canDestroyInCreative() const;
+    virtual bool isWearableThroughLootTable(::CompoundTag const*) const;
 
     // vIndex: 47
-    virtual bool isDestructive(int) const;
+    virtual bool canDestroyInCreative() const;
 
     // vIndex: 48
-    virtual bool isLiquidClipItem() const;
+    virtual bool isDestructive(int) const;
 
     // vIndex: 49
-    virtual bool shouldInteractionWithBlockBypassLiquid(::Block const&) const;
+    virtual bool isLiquidClipItem() const;
 
     // vIndex: 50
-    virtual bool requiresInteract() const;
+    virtual bool shouldInteractionWithBlockBypassLiquid(::Block const&) const;
 
     // vIndex: 51
-    virtual ::std::string getHoverTextColor(::ItemStackBase const& stack) const;
+    virtual bool requiresInteract() const;
 
     // vIndex: 52
-    virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool                                 showCategory
-    ) const;
+    virtual ::std::string getHoverTextColor(::ItemStackBase const& stack) const;
 
     // vIndex: 53
-    virtual bool isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const&, ::BaseGameVersion const&) const;
+    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool showCategory) const;
 
     // vIndex: 54
-    virtual int getEnchantSlot() const;
+    virtual bool isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const&, ::BaseGameVersion const&) const;
 
     // vIndex: 55
-    virtual int getEnchantValue() const;
+    virtual int getEnchantSlot() const;
 
     // vIndex: 56
-    virtual int getArmorValue() const;
+    virtual int getEnchantValue() const;
 
     // vIndex: 57
-    virtual int getToughnessValue() const;
+    virtual int getArmorValue() const;
 
     // vIndex: 58
-    virtual ::SharedTypes::Legacy::LevelSoundEvent getBreakSound() const;
+    virtual int getToughnessValue() const;
 
     // vIndex: 59
-    virtual bool isComplex() const;
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getBreakSound() const;
 
     // vIndex: 60
-    virtual bool isValidAuxValue(int) const;
+    virtual bool isComplex() const;
 
     // vIndex: 61
-    virtual int getDamageChance(int unbreaking) const;
+    virtual bool isValidAuxValue(int) const;
 
     // vIndex: 62
-    virtual float getViewDamping() const;
+    virtual int getDamageChance(int unbreaking) const;
 
     // vIndex: 63
-    virtual bool uniqueAuxValues() const;
+    virtual float getViewDamping() const;
 
     // vIndex: 64
-    virtual bool isActorPlacerItem() const;
+    virtual bool uniqueAuxValues() const;
 
     // vIndex: 65
-    virtual bool isMultiColorTinted(::ItemStack const&) const;
+    virtual bool isActorPlacerItem() const;
 
     // vIndex: 66
-    virtual ::mce::Color getColor(::CompoundTag const*, ::ItemDescriptor const&) const;
-
-    // vIndex: 68
-    virtual bool hasCustomColor(::ItemStackBase const&) const;
+    virtual bool isMultiColorTinted(::ItemStack const&) const;
 
     // vIndex: 67
-    virtual bool hasCustomColor(::CompoundTag const*) const;
+    virtual ::mce::Color getColor(::CompoundTag const*, ::ItemDescriptor const&) const;
 
     // vIndex: 69
-    virtual void clearColor(::ItemStackBase&) const;
+    virtual bool hasCustomColor(::ItemStackBase const&) const;
+
+    // vIndex: 68
+    virtual bool hasCustomColor(::CompoundTag const*) const;
 
     // vIndex: 70
-    virtual void setColor(::ItemStackBase&, ::mce::Color const&) const;
+    virtual void clearColor(::ItemStackBase&) const;
 
     // vIndex: 71
-    virtual ::mce::Color getBaseColor(::ItemStack const&) const;
+    virtual void setColor(::ItemStackBase&, ::mce::Color const&) const;
 
     // vIndex: 72
-    virtual ::mce::Color getSecondaryColor(::ItemStack const&) const;
+    virtual ::mce::Color getBaseColor(::ItemStack const&) const;
 
     // vIndex: 73
-    virtual ::ActorDefinitionIdentifier getActorIdentifier(::ItemStack const&) const;
+    virtual ::mce::Color getSecondaryColor(::ItemStack const&) const;
 
     // vIndex: 74
-    virtual int buildIdAux(short auxValue, ::CompoundTag const*) const;
+    virtual ::ActorDefinitionIdentifier getActorIdentifier(::ItemStack const&) const;
 
     // vIndex: 75
-    virtual bool canUseOnSimTick() const;
+    virtual int buildIdAux(short auxValue, ::CompoundTag const*) const;
 
     // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const;
+    virtual bool canUseOnSimTick() const;
 
     // vIndex: 77
-    virtual bool canUseAsAttack() const;
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const;
 
     // vIndex: 78
-    virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player&) const;
+    virtual bool canUseAsAttack() const;
 
     // vIndex: 79
-    virtual ::Actor* createProjectileActor(::BlockSource&, ::ItemStack const&, ::Vec3 const&, ::Vec3 const&) const;
+    virtual ::ItemStack& useAsAttack(::ItemStack& item, ::Player&) const;
 
     // vIndex: 80
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    virtual ::Actor* createProjectileActor(::BlockSource&, ::ItemStack const&, ::Vec3 const&, ::Vec3 const&) const;
 
     // vIndex: 81
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
     // vIndex: 82
-    virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
     // vIndex: 83
-    virtual float getDestroySpeed(::ItemStackBase const&, ::Block const&) const;
+    virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
     // vIndex: 84
-    virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    virtual float getDestroySpeed(::ItemStackBase const&, ::Block const&) const;
 
     // vIndex: 85
-    virtual void hitActor(::ItemStack&, ::Actor&, ::Mob&) const;
+    virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
     // vIndex: 86
-    virtual void hitBlock(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&) const;
+    virtual void hitActor(::ItemStack&, ::Actor&, ::Mob&) const;
 
     // vIndex: 87
-    virtual ::std::string buildDescriptionName(::ItemStackBase const& stack) const;
+    virtual void hitBlock(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&) const;
 
     // vIndex: 88
-    virtual ::Bedrock::Safety::RedactableString const buildRedactedDescriptionName(::ItemStackBase const& stack) const;
+    virtual ::std::string buildDescriptionName(::ItemStackBase const& stack) const;
 
     // vIndex: 89
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    virtual ::Bedrock::Safety::RedactableString const buildRedactedDescriptionName(::ItemStackBase const& stack) const;
 
     // vIndex: 90
-    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
     // vIndex: 91
-    virtual void
-    readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
+    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
 
     // vIndex: 92
-    virtual void writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const;
+    virtual void readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
 
     // vIndex: 93
-    virtual uchar getMaxStackSize(::ItemDescriptor const&) const;
+    virtual void writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const;
 
     // vIndex: 94
-    virtual bool inventoryTick(::ItemStack&, ::Level&, ::Actor&, int, bool) const;
+    virtual uchar getMaxStackSize(::ItemDescriptor const&) const;
 
     // vIndex: 95
-    virtual void refreshedInContainer(::ItemStackBase const&, ::Level&) const;
+    virtual bool inventoryTick(::ItemStack&, ::Level&, ::Actor&, int, bool) const;
 
     // vIndex: 96
-    virtual ::HashedString const& getCooldownCategory() const;
+    virtual void refreshedInContainer(::ItemStackBase const&, ::Level&) const;
 
     // vIndex: 97
-    virtual int getCooldownDuration() const;
-
-    // vIndex: 99
-    virtual void fixupCommon(::ItemStackBase& stack) const;
+    virtual ::HashedString const& getCooldownCategory() const;
 
     // vIndex: 98
-    virtual void fixupCommon(::ItemStackBase& stack, ::ILevel&) const;
+    virtual int getCooldownDuration() const;
 
     // vIndex: 100
-    virtual ::InHandUpdateType getInHandUpdateType(
-        ::Player const&    player,
-        ::ItemStack const& oldItem,
-        ::ItemStack const& newItem,
-        bool const,
-        bool const slotChanged
-    ) const;
+    virtual void fixupCommon(::ItemStackBase& stack) const;
+
+    // vIndex: 99
+    virtual void fixupCommon(::ItemStackBase& stack, ::ILevel&) const;
 
     // vIndex: 101
-    virtual bool validFishInteraction(int) const;
+    virtual ::InHandUpdateType getInHandUpdateType(::Player const& player, ::ItemStack const& oldItem, ::ItemStack const& newItem, bool const, bool const slotChanged) const;
 
     // vIndex: 102
-    virtual void enchantProjectile(::ItemStackBase const&, ::Actor&) const;
+    virtual bool validFishInteraction(int) const;
 
     // vIndex: 103
-    virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const;
+    virtual void enchantProjectile(::ItemStackBase const&, ::Actor&) const;
 
     // vIndex: 104
-    virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const;
+    virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const;
 
     // vIndex: 105
-    virtual bool shouldSendInteractionGameEvents() const;
+    virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const;
 
     // vIndex: 106
-    virtual bool useInterruptedByAttacking() const;
+    virtual bool shouldEmitInUseGameEvents() const;
 
     // vIndex: 107
-    virtual bool hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
+    virtual bool useInterruptedByAttacking() const;
 
     // vIndex: 108
-    virtual ::PuvLoadData::LoadResultWithTiming
-    initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&);
+    virtual bool hasSameRelevantUserData(::ItemStackBase const&, ::ItemStackBase const&) const;
 
     // vIndex: 109
-    virtual ::Item& setIconInfo(::std::string const& name, int index);
+    virtual ::PuvLoadData::LoadResultWithTiming initClient(::Json::Value const&, ::SemVersion const&, ::JsonBetaState const, ::IPackLoadContext&);
 
     // vIndex: 110
-    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const;
+    virtual ::Item& setIconInfo(::std::string const& name, int index);
 
     // vIndex: 111
-    virtual ::std::string getInteractText(::Player const& player) const;
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const;
 
     // vIndex: 112
-    virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
+    virtual ::std::string getInteractText(::Player const& player) const;
 
     // vIndex: 113
-    virtual bool isEmissive(int auxValue) const;
+    virtual int getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
 
     // vIndex: 114
-    virtual ::Brightness getLightEmission(int) const;
+    virtual bool isEmissive(int auxValue) const;
 
     // vIndex: 115
-    virtual bool canBeCharged() const;
+    virtual ::Brightness getLightEmission(int) const;
 
     // vIndex: 116
-    virtual void playSoundIncrementally(::ItemStack const&, ::Mob&) const;
+    virtual bool canBeCharged() const;
 
     // vIndex: 117
-    virtual float getFurnaceXPmultiplier(::ItemStackBase const&) const;
+    virtual void playSoundIncrementally(::ItemStack const&, ::Mob&) const;
 
     // vIndex: 118
-    virtual bool calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    virtual float getFurnaceXPmultiplier(::ItemStackBase const&) const;
 
     // vIndex: 119
-    virtual bool
-    _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
+    virtual bool calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
     // vIndex: 120
-    virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor&, uchar&, ::BlockPos&) const;
+    virtual bool _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
     // vIndex: 121
-    virtual bool _shouldAutoCalculatePlacePos() const;
+    virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor&, uchar&, ::BlockPos&) const;
 
     // vIndex: 122
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    virtual bool _shouldAutoCalculatePlacePos() const;
+
+    // vIndex: 123
+    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -513,21 +500,9 @@ public:
 
     MCAPI bool _dispenseHoneycombItem(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos) const;
 
-    MCAPI void _helpChangeInventoryItemInPlace(
-        ::Actor&                actor,
-        ::ItemStack&            startingItem,
-        ::ItemStack&            replacementItem,
-        ::ItemAcquisitionMethod acquisitionMethod
-    ) const;
+    MCAPI void _helpChangeInventoryItemInPlace(::Actor& actor, ::ItemStack& startingItem, ::ItemStack& replacementItem, ::ItemAcquisitionMethod acquisitionMethod) const;
 
-    MCAPI ::CoordinatorResult _sendTryPlaceBlockEvent(
-        ::Block const&       block,
-        ::BlockSource const& region,
-        ::Actor const&       actor,
-        ::BlockPos const&    pos,
-        uchar                face,
-        ::Vec3 const&        clickPos
-    ) const;
+    MCAPI ::CoordinatorResult _sendTryPlaceBlockEvent(::Block const& block, ::BlockSource const& region, ::Actor const& actor, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos) const;
 
     MCAPI ::Item& addTag(::ItemTag const& tag);
 
@@ -547,8 +522,6 @@ public:
 
     MCAPI bool hasTag(::ItemTag const& tag) const;
 
-    MCAPI bool isCommandOnly(::BaseGameVersion const& baseGameVersion) const;
-
     MCAPI bool isElytra() const;
 
     MCAPI bool operator==(::Item const& rhs) const;
@@ -565,19 +538,9 @@ public:
 
     MCAPI ::Item& setStackedByData(bool isStackedByData);
 
-    MCAPI bool
-    updateCustomBlockEntityTag(::BlockSource& region, ::ItemStackBase& instance, ::BlockPos const& pos) const;
+    MCAPI bool updateCustomBlockEntityTag(::BlockSource& region, ::ItemStackBase& instance, ::BlockPos const& pos) const;
 
-    MCAPI ::InteractionResult useOn(
-        ::ItemStack&             item,
-        ::Actor&                 entity,
-        int                      x,
-        int                      y,
-        int                      z,
-        uchar                    face,
-        ::Vec3 const&            clickPos,
-        ::ItemUsedOnEventContext itemUsedOnEventContext
-    ) const;
+    MCAPI ::InteractionResult useOn(::ItemStack& item, ::Actor& entity, int x, int y, int z, uchar face, ::Vec3 const& clickPos, ::ItemUsedOnEventContext itemUsedOnEventContext) const;
     // NOLINTEND
 
 public:
@@ -695,6 +658,8 @@ public:
 
     MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
 
+    MCFOLD uint $getSwingDuration() const;
+
     MCFOLD bool $showsDurabilityInCreative() const;
 
     MCFOLD bool $isWearableThroughLootTable(::CompoundTag const*) const;
@@ -711,12 +676,7 @@ public:
 
     MCAPI ::std::string $getHoverTextColor(::ItemStackBase const& stack) const;
 
-    MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool                                 showCategory
-    ) const;
+    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool showCategory) const;
 
     MCFOLD bool $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const&, ::BaseGameVersion const&) const;
 
@@ -792,10 +752,9 @@ public:
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
-    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
 
-    MCAPI void
-    $readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
+    MCAPI void $readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
 
     MCAPI void $writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const;
 
@@ -813,13 +772,7 @@ public:
 
     MCFOLD void $fixupCommon(::ItemStackBase& stack, ::ILevel&) const;
 
-    MCAPI ::InHandUpdateType $getInHandUpdateType(
-        ::Player const&    player,
-        ::ItemStack const& oldItem,
-        ::ItemStack const& newItem,
-        bool const,
-        bool const slotChanged
-    ) const;
+    MCAPI ::InHandUpdateType $getInHandUpdateType(::Player const& player, ::ItemStack const& oldItem, ::ItemStack const& newItem, bool const, bool const slotChanged) const;
 
     MCFOLD bool $validFishInteraction(int) const;
 
@@ -827,7 +780,7 @@ public:
 
     MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
-    MCFOLD bool $shouldSendInteractionGameEvents() const;
+    MCFOLD bool $shouldEmitInUseGameEvents() const;
 
     MCFOLD bool $useInterruptedByAttacking() const;
 
@@ -853,15 +806,13 @@ public:
 
     MCAPI bool $calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCFOLD bool
-    $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
+    MCFOLD bool $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
     MCFOLD bool $_calculatePlacePos(::ItemStackBase&, ::Actor&, uchar&, ::BlockPos&) const;
 
     MCFOLD bool $_shouldAutoCalculatePlacePos() const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -869,4 +820,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

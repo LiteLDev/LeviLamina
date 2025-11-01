@@ -13,8 +13,7 @@ namespace dcsctp { struct StaleCookieParameterConfig; }
 
 namespace dcsctp {
 
-class StaleCookieErrorCause : public ::dcsctp::Parameter,
-                              public ::dcsctp::TLVTrait<::dcsctp::StaleCookieParameterConfig> {
+class StaleCookieErrorCause : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::StaleCookieParameterConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -59,6 +58,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

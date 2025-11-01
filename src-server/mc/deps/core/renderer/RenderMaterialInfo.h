@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk7e35a8;
-    ::ll::UntypedStorage<8, 8>  mUnke9244b;
+    ::ll::UntypedStorage<8, 8> mUnke9244b;
     // NOLINTEND
 
 public:
@@ -17,6 +17,7 @@ public:
     RenderMaterialInfo& operator=(RenderMaterialInfo const&);
     RenderMaterialInfo(RenderMaterialInfo const&);
     RenderMaterialInfo();
+
 };
 
-} // namespace mce
+}

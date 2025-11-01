@@ -10,7 +10,7 @@ struct BlockPermutationDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::ExpressionNode>                  mCondition;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode> mCondition;
     ::ll::TypedStorage<8, 112, ::BlockComponentGroupDescription> mComponents;
     // NOLINTEND
 
@@ -32,4 +32,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

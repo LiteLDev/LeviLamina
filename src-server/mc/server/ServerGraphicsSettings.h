@@ -14,4 +14,5 @@ public:
     ServerGraphicsSettings& operator=(ServerGraphicsSettings const&);
     ServerGraphicsSettings(ServerGraphicsSettings const&);
     ServerGraphicsSettings();
+
 };

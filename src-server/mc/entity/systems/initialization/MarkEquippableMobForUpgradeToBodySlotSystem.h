@@ -21,19 +21,9 @@ class MarkEquippableMobForUpgradeToBodySlotSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _markForUpgradeIfNeeded(
-        ::StrictEntityContext& strictEntityContext,
-        ::EquippableComponent& equippableComponent,
-        ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent>& modifier
-    );
+    MCNAPI static void _markForUpgradeIfNeeded(::StrictEntityContext& strictEntityContext, ::EquippableComponent& equippableComponent, ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent>& modifier);
 
-    MCNAPI static void _tick(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::EntityNeedsInitializeFlagComponent>,
-            ::Exclude<::SkipBodySlotUpgradeFlagComponent>,
-            ::EquippableComponent>                                                                  view,
-        ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent> modifier
-    );
+    MCNAPI static void _tick(::ViewT<::StrictEntityContext, ::Include<::EntityNeedsInitializeFlagComponent>, ::Exclude<::SkipBodySlotUpgradeFlagComponent>, ::EquippableComponent> view, ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent> modifier);
     // NOLINTEND
+
 };

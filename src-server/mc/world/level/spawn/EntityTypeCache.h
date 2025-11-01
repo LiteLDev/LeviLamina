@@ -14,7 +14,7 @@ class EntityTypeCache {
 public:
     // EntityTypeCache inner types define
     enum class Token : uint {};
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -26,6 +26,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unique_ptr<::br::spawn::EntityTypeCache> from(::Level& level);
     // NOLINTEND
+
 };
 
-} // namespace br::spawn
+}

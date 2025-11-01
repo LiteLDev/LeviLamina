@@ -23,4 +23,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::mce::UUID const& ModuleUUID();
     // NOLINTEND
+
 };

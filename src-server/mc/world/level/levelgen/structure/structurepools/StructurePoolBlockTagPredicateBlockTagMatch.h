@@ -16,7 +16,7 @@ class StructurePoolBlockTagPredicateBlockTagMatch : public ::IStructurePoolBlock
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const&>       mBlock;
+    ::ll::TypedStorage<8, 8, ::Block const&> mBlock;
     ::ll::TypedStorage<8, 8, ::CompoundTag const&> mTag;
     // NOLINTEND
 
@@ -44,4 +44,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

@@ -5,9 +5,9 @@
 namespace ScriptModuleMinecraft {
 
 enum class ScriptEntityRefType : int {
-    Player          = 0,
+    Player = 0,
     SimulatedPlayer = 1,
-    Actor           = 2,
+    Actor = 2,
 };
 
 }

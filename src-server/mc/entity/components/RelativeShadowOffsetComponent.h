@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/entity/components/FloatComponent.h"
 
-struct RelativeShadowOffsetComponent : public ::FloatComponent {};
+struct RelativeShadowOffsetComponent : public ::FloatComponent {
+};

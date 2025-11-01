@@ -5,10 +5,10 @@
 namespace cricket {
 
 enum class IceCandidatePairState : int {
-    Waiting    = 0,
+    Waiting = 0,
     InProgress = 1,
-    Succeeded  = 2,
-    Failed     = 3,
+    Succeeded = 2,
+    Failed = 3,
 };
 
 }

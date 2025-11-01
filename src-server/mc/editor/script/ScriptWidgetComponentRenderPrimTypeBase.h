@@ -14,6 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4> mUnk441514;
+    ::ll::UntypedStorage<4, 4> mUnk57358b;
     // NOLINTEND
 
 public:
@@ -40,6 +41,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

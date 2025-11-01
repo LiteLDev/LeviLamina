@@ -18,7 +18,7 @@ class DurabilityItemComponent : public ::NetworkedItemComponent<::DurabilityItem
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                     mMaxDamage;
+    ::ll::TypedStorage<4, 4, int> mMaxDamage;
     ::ll::TypedStorage<4, 8, ::SharedTypes::IntRange> mDamageChance;
     // NOLINTEND
 
@@ -32,11 +32,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -46,4 +42,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

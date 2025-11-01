@@ -4,6 +4,6 @@
 
 enum class AgentTravelType : int {
     ClientSide = 0,
-    NotMoving  = 1,
-    Moving     = 2,
+    NotMoving = 1,
+    Moving = 2,
 };

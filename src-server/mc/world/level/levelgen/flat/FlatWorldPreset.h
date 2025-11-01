@@ -16,8 +16,8 @@ struct FlatWorldPreset {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::FlatWorldPresetID>              id;
-    ::ll::TypedStorage<2, 2, ::BiomeIdType>                    biome;
+    ::ll::TypedStorage<4, 4, ::FlatWorldPresetID> id;
+    ::ll::TypedStorage<2, 2, ::BiomeIdType> biome;
     ::ll::TypedStorage<8, 24, ::std::vector<::FlatWorldLayer>> layers;
     // NOLINTEND
 
@@ -48,4 +48,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

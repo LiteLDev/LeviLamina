@@ -12,5 +12,6 @@ public:
     ::ll::UntypedStorage<1, 1> mUnk1a1baf;
     ::ll::UntypedStorage<1, 1> mUnka1f72a;
     // NOLINTEND
+
 };
-} // namespace Bedrock::StaticOptimizedStringDetail
+}

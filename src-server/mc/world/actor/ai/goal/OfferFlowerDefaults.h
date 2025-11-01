@@ -13,4 +13,4 @@ namespace OfferFlowerDefaults {
 MCAPI ::Vec3 const& SEARCH_AREA();
 // NOLINTEND
 
-} // namespace OfferFlowerDefaults
+}

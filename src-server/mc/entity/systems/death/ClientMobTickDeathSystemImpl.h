@@ -36,53 +36,12 @@ struct StateVectorComponent;
 struct TickDeathNeededComponent;
 // clang-format on
 
-struct ClientMobTickDeathSystemImpl
-: public ::IStrictTickingSystem<::StrictExecutionContext<
-      ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::MobFlagComponent>,
-      ::Read<
-          ::AABBShapeComponent,
-          ::ActorDefinitionIdentifierComponent,
-          ::ActorUniqueIDComponent,
-          ::DimensionTypeComponent,
-          ::OffsetsComponent,
-          ::SoundEventPlayerComponent,
-          ::StateVectorComponent>,
-      ::Write<
-          ::ActorDataFlagComponent,
-          ::ActorDataDirtyFlagsComponent,
-          ::ActorOwnerComponent,
-          ::DeathTickingComponent,
-          ::PlayerComponent>,
-      ::AddRemove<>,
-      ::GlobalRead<>,
-      ::GlobalWrite<>,
-      ::EntityFactoryT<>>> {
+struct ClientMobTickDeathSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::MobFlagComponent>, ::Read<::AABBShapeComponent, ::ActorDefinitionIdentifierComponent, ::ActorUniqueIDComponent, ::DimensionTypeComponent, ::OffsetsComponent, ::SoundEventPlayerComponent, ::StateVectorComponent>, ::Write<::ActorDataFlagComponent, ::ActorDataDirtyFlagsComponent, ::ActorOwnerComponent, ::DeathTickingComponent, ::PlayerComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(
-        ::StrictExecutionContext<
-            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::MobFlagComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::ActorDefinitionIdentifierComponent,
-                ::ActorUniqueIDComponent,
-                ::DimensionTypeComponent,
-                ::OffsetsComponent,
-                ::SoundEventPlayerComponent,
-                ::StateVectorComponent>,
-            ::Write<
-                ::ActorDataFlagComponent,
-                ::ActorDataDirtyFlagsComponent,
-                ::ActorOwnerComponent,
-                ::DeathTickingComponent,
-                ::PlayerComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
-    ) /*override*/;
+    virtual void tick(::StrictExecutionContext<::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::MobFlagComponent>, ::Read<::AABBShapeComponent, ::ActorDefinitionIdentifierComponent, ::ActorUniqueIDComponent, ::DimensionTypeComponent, ::OffsetsComponent, ::SoundEventPlayerComponent, ::StateVectorComponent>, ::Write<::ActorDataFlagComponent, ::ActorDataDirtyFlagsComponent, ::ActorOwnerComponent, ::DeathTickingComponent, ::PlayerComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& context) /*override*/;
 
     // vIndex: 0
     virtual ~ClientMobTickDeathSystemImpl() /*override*/ = default;
@@ -91,49 +50,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tick(
-        ::StrictEntityContext&                                             entity,
-        ::AABBShapeComponent const&                                        aabbShape,
-        ::ActorDefinitionIdentifierComponent const&                        actorIdentifier,
-        ::ActorUniqueIDComponent const&                                    actorUniqueID,
-        ::DimensionTypeComponent const&                                    dimensionType,
-        ::OffsetsComponent const&                                          offsets,
-        ::SoundEventPlayerComponent const&                                 soundEventPlayer,
-        ::StateVectorComponent const&                                      stateVector,
-        ::ActorDataFlagComponent&                                          actorFlags,
-        ::ActorDataDirtyFlagsComponent&                                    actorDirtyFlags,
-        ::ActorOwnerComponent&                                             actorOwner,
-        ::DeathTickingComponent&                                           deathTicking,
-        ::Optional<::PlayerComponent>                                      player,
-        ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& soundRequestQueueView
-    );
+    MCNAPI static void _tick(::StrictEntityContext& entity, ::AABBShapeComponent const& aabbShape, ::ActorDefinitionIdentifierComponent const& actorIdentifier, ::ActorUniqueIDComponent const& actorUniqueID, ::DimensionTypeComponent const& dimensionType, ::OffsetsComponent const& offsets, ::SoundEventPlayerComponent const& soundEventPlayer, ::StateVectorComponent const& stateVector, ::ActorDataFlagComponent& actorFlags, ::ActorDataDirtyFlagsComponent& actorDirtyFlags, ::ActorOwnerComponent& actorOwner, ::DeathTickingComponent& deathTicking, ::Optional<::PlayerComponent> player, ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& soundRequestQueueView);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
-        ::StrictExecutionContext<
-            ::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::MobFlagComponent>,
-            ::Read<
-                ::AABBShapeComponent,
-                ::ActorDefinitionIdentifierComponent,
-                ::ActorUniqueIDComponent,
-                ::DimensionTypeComponent,
-                ::OffsetsComponent,
-                ::SoundEventPlayerComponent,
-                ::StateVectorComponent>,
-            ::Write<
-                ::ActorDataFlagComponent,
-                ::ActorDataDirtyFlagsComponent,
-                ::ActorOwnerComponent,
-                ::DeathTickingComponent,
-                ::PlayerComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
-    );
+    MCNAPI void $tick(::StrictExecutionContext<::Filter<::ActorTickedComponent, ::TickDeathNeededComponent, ::MobFlagComponent>, ::Read<::AABBShapeComponent, ::ActorDefinitionIdentifierComponent, ::ActorUniqueIDComponent, ::DimensionTypeComponent, ::OffsetsComponent, ::SoundEventPlayerComponent, ::StateVectorComponent>, ::Write<::ActorDataFlagComponent, ::ActorDataDirtyFlagsComponent, ::ActorOwnerComponent, ::DeathTickingComponent, ::PlayerComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& context);
     // NOLINTEND
 
 public:
@@ -141,4 +64,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

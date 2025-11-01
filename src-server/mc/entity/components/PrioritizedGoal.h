@@ -12,9 +12,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Goal>> mGoal;
-    ::ll::TypedStorage<4, 4, int>                       mPriority;
-    ::ll::TypedStorage<1, 1, bool>                      mUsed;
-    ::ll::TypedStorage<1, 1, bool>                      mToStart;
+    ::ll::TypedStorage<4, 4, int> mPriority;
+    ::ll::TypedStorage<1, 1, bool> mUsed;
+    ::ll::TypedStorage<1, 1, bool> mToStart;
     // NOLINTEND
 
 public:
@@ -28,4 +28,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

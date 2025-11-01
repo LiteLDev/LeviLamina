@@ -28,14 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit FileOpenMode(char const* p);
+    MCNAPI explicit FileOpenMode(::std::string_view spec);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(char const* p);
+    MCNAPI void* $ctor(::std::string_view spec);
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

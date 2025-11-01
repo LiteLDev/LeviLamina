@@ -21,21 +21,12 @@ struct ScriptPlayerInventoryItemChangeAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
-        mPlayerHandle;
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-        mBeforeItemStack;
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-                                                                                 mAfterItemStack;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayerHandle;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mBeforeItemStack;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mAfterItemStack;
     ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptPlayerInventoryType> mplayerInventoryType;
-    ::ll::TypedStorage<4, 4, int>                                                mSlotNumber;
-    ::ll::TypedStorage<1, 1, bool>                                               mIsQuantityChangedOnly;
+    ::ll::TypedStorage<4, 4, int> mSlotNumber;
+    ::ll::TypedStorage<1, 1, bool> mIsQuantityChangedOnly;
     // NOLINTEND
 
 public:
@@ -46,22 +37,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    ScriptPlayerInventoryItemChangeAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent&&);
+    MCAPI ScriptPlayerInventoryItemChangeAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent&&);
 
-    MCAPI ScriptPlayerInventoryItemChangeAfterEvent(
-        ::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&
-    );
+    MCAPI ScriptPlayerInventoryItemChangeAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&);
 
-    MCAPI ScriptPlayerInventoryItemChangeAfterEvent(
-        ::Player const&                                                                                 player,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack,
-        ::ScriptModuleMinecraft::ScriptPlayerInventoryType playerInventoryType,
-        int                                                slotNumber,
-        bool                                               isQuantityChanged,
-        ::Scripting::WeakLifetimeScope const&              scope
-    );
+    MCAPI ScriptPlayerInventoryItemChangeAfterEvent(::Player const& player, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack, ::ScriptModuleMinecraft::ScriptPlayerInventoryType playerInventoryType, int slotNumber, bool isQuantityChanged, ::Scripting::WeakLifetimeScope const& scope);
 
     MCAPI ~ScriptPlayerInventoryItemChangeAfterEvent();
     // NOLINTEND
@@ -79,15 +59,7 @@ public:
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&);
 
-    MCAPI void* $ctor(
-        ::Player const&                                                                                 player,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack,
-        ::ScriptModuleMinecraft::ScriptPlayerInventoryType playerInventoryType,
-        int                                                slotNumber,
-        bool                                               isQuantityChanged,
-        ::Scripting::WeakLifetimeScope const&              scope
-    );
+    MCAPI void* $ctor(::Player const& player, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack, ::ScriptModuleMinecraft::ScriptPlayerInventoryType playerInventoryType, int slotNumber, bool isQuantityChanged, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -95,6 +67,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

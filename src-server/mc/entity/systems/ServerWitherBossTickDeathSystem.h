@@ -13,4 +13,4 @@ namespace ServerWitherBossTickDeathSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace ServerWitherBossTickDeathSystem
+}

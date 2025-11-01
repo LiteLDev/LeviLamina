@@ -59,25 +59,19 @@ public:
     virtual void SetMaxMessageSize(uint64) = 0;
 
     // vIndex: 10
-    virtual void SetStreamPriority(
-        ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>,
-        ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>
-    ) = 0;
+    virtual void SetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>, ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>) = 0;
 
     // vIndex: 11
-    virtual ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>
-        GetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>) const = 0;
+    virtual ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort> GetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>) const = 0;
 
     // vIndex: 12
     virtual ::dcsctp::SendStatus Send(::dcsctp::DcSctpMessage, ::dcsctp::SendOptions const&) = 0;
 
     // vIndex: 13
-    virtual ::std::vector<::dcsctp::SendStatus>
-    SendMany(::rtc::ArrayView<::dcsctp::DcSctpMessage>, ::dcsctp::SendOptions const&) = 0;
+    virtual ::std::vector<::dcsctp::SendStatus> SendMany(::rtc::ArrayView<::dcsctp::DcSctpMessage>, ::dcsctp::SendOptions const&) = 0;
 
     // vIndex: 14
-    virtual ::dcsctp::ResetStreamsStatus
-        ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>) = 0;
+    virtual ::dcsctp::ResetStreamsStatus ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>) = 0;
 
     // vIndex: 15
     virtual uint64 buffered_amount(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>) const = 0;
@@ -106,6 +100,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

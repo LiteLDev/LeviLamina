@@ -17,7 +17,7 @@ class FunctionAction : public ::IRequestAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk8bc0e5;
+    ::ll::UntypedStorage<8, 8> mUnk8bc0e5;
     ::ll::UntypedStorage<8, 32> mUnkf9238c;
     // NOLINTEND
 
@@ -76,4 +76,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

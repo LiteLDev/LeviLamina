@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/util/NewType.h"
 
-struct GameRuleId : public ::NewType<int> {};
+struct GameRuleId : public ::NewType<int> {
+};

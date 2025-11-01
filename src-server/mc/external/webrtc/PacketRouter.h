@@ -21,15 +21,15 @@ class PacketRouter : public ::webrtc::PacingController::PacketSender {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3e3400;
+    ::ll::UntypedStorage<1, 1> mUnk3e3400;
     ::ll::UntypedStorage<8, 64> mUnk621066;
     ::ll::UntypedStorage<8, 16> mUnke6b6cb;
-    ::ll::UntypedStorage<8, 8>  mUnkd321a7;
+    ::ll::UntypedStorage<8, 8> mUnkd321a7;
     ::ll::UntypedStorage<8, 24> mUnkf3edee;
     ::ll::UntypedStorage<8, 24> mUnk61f8d8;
     ::ll::UntypedStorage<8, 24> mUnkb30e09;
-    ::ll::UntypedStorage<8, 8>  mUnk7b2465;
-    ::ll::UntypedStorage<8, 8>  mUnk678034;
+    ::ll::UntypedStorage<8, 8> mUnk7b2465;
+    ::ll::UntypedStorage<8, 8> mUnk678034;
     ::ll::UntypedStorage<8, 32> mUnkd39471;
     ::ll::UntypedStorage<8, 24> mUnkb01db3;
     ::ll::UntypedStorage<8, 16> mUnk199a69;
@@ -47,17 +47,13 @@ public:
     virtual ~PacketRouter() /*override*/;
 
     // vIndex: 1
-    virtual void SendPacket(
-        ::std::unique_ptr<::webrtc::RtpPacketToSend> packet,
-        ::webrtc::PacedPacketInfo const&             cluster_info
-    ) /*override*/;
+    virtual void SendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::PacedPacketInfo const& cluster_info) /*override*/;
 
     // vIndex: 2
     virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> FetchFec() /*override*/;
 
     // vIndex: 3
-    virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>>
-    GeneratePadding(::webrtc::DataSize size) /*override*/;
+    virtual ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> GeneratePadding(::webrtc::DataSize size) /*override*/;
 
     // vIndex: 5
     virtual void OnAbortedRetransmissions(uint ssrc, ::rtc::ArrayView<ushort const> sequence_numbers) /*override*/;
@@ -80,14 +76,11 @@ public:
 
     MCNAPI void DetermineActiveRembModule();
 
-    MCNAPI void
-    MaybeRemoveRembModuleCandidate(::webrtc::RtcpFeedbackSenderInterface* candidate_module, bool media_sender);
+    MCNAPI void MaybeRemoveRembModuleCandidate(::webrtc::RtcpFeedbackSenderInterface* candidate_module, bool media_sender);
 
     MCNAPI PacketRouter();
 
-    MCNAPI void RegisterNotifyBweCallback(
-        ::absl::AnyInvocable<void(::webrtc::RtpPacketToSend const&, ::webrtc::PacedPacketInfo const&)> callback
-    );
+    MCNAPI void RegisterNotifyBweCallback(::absl::AnyInvocable<void(::webrtc::RtpPacketToSend const&, ::webrtc::PacedPacketInfo const&)> callback);
 
     MCNAPI void RemoveSendRtpModule(::webrtc::RtpRtcpInterface* rtp_module);
 
@@ -113,8 +106,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
-    $SendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::PacedPacketInfo const& cluster_info);
+    MCNAPI void $SendPacket(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::PacedPacketInfo const& cluster_info);
 
     MCNAPI ::std::vector<::std::unique_ptr<::webrtc::RtpPacketToSend>> $FetchFec();
 
@@ -132,6 +124,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

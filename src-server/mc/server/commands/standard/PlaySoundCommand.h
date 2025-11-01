@@ -16,13 +16,13 @@ class PlaySoundCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnke93a0b;
+    ::ll::UntypedStorage<8, 32> mUnke93a0b;
     ::ll::UntypedStorage<8, 200> mUnk1fb798;
-    ::ll::UntypedStorage<4, 16>  mUnk378eec;
-    ::ll::UntypedStorage<4, 4>   mUnk340a52;
-    ::ll::UntypedStorage<4, 4>   mUnk19049c;
-    ::ll::UntypedStorage<4, 4>   mUnk5ae83f;
-    ::ll::UntypedStorage<1, 1>   mUnk78da2b;
+    ::ll::UntypedStorage<4, 16> mUnk378eec;
+    ::ll::UntypedStorage<4, 4> mUnk340a52;
+    ::ll::UntypedStorage<4, 4> mUnk19049c;
+    ::ll::UntypedStorage<4, 4> mUnk5ae83f;
+    ::ll::UntypedStorage<1, 1> mUnk78da2b;
     // NOLINTEND
 
 public:
@@ -58,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

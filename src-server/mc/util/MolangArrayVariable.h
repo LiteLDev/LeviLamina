@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/util/MolangHashStringVariable.h"
 
-struct MolangArrayVariable : public ::MolangHashStringVariable<::MolangArrayVariable> {};
+struct MolangArrayVariable : public ::MolangHashStringVariable<::MolangArrayVariable> {
+};

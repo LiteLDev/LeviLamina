@@ -26,11 +26,9 @@ public:
 
     MCNAPI Metadata(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
 
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Metadata& operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&&);
 
-    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Metadata&
-    operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata const&);
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Metadata& operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Metadata const&);
 
     MCNAPI ~Metadata();
     // NOLINTEND
@@ -48,6 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v3_0_0::PackManifestDefinition
+}

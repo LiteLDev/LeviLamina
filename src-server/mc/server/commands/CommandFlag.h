@@ -8,4 +8,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ushort> flag;
     // NOLINTEND
+
 };

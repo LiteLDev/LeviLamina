@@ -11,7 +11,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::CorrectionMethod> mMethod;
-    ::ll::TypedStorage<4, 12, ::Vec3>            mAcceptPosition;
-    ::ll::TypedStorage<1, 1, uchar>              mNewDivergenceCounter;
+    ::ll::TypedStorage<4, 12, ::Vec3> mAcceptPosition;
+    ::ll::TypedStorage<1, 1, uchar> mNewDivergenceCounter;
     // NOLINTEND
+
 };

@@ -30,46 +30,48 @@ public:
     struct HttpPerformContext;
     struct WebSocketConnectContext;
     // clang-format on
-
+    
     // NetworkState inner types define
     struct HttpPerformContext {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkb7239c;
-        ::ll::UntypedStorage<8, 8>  mUnka9f0d1;
-        ::ll::UntypedStorage<8, 8>  mUnk35d28e;
+        ::ll::UntypedStorage<8, 8> mUnkb7239c;
+        ::ll::UntypedStorage<8, 8> mUnka9f0d1;
+        ::ll::UntypedStorage<8, 8> mUnk35d28e;
         ::ll::UntypedStorage<8, 56> mUnk50a8b6;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         HttpPerformContext& operator=(HttpPerformContext const&);
         HttpPerformContext(HttpPerformContext const&);
         HttpPerformContext();
+    
     };
-
+    
     struct WebSocketConnectContext {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk8053d2;
+        ::ll::UntypedStorage<8, 8> mUnk8053d2;
         ::ll::UntypedStorage<8, 32> mUnka91597;
         ::ll::UntypedStorage<8, 32> mUnk7e77c3;
-        ::ll::UntypedStorage<8, 8>  mUnk97f975;
+        ::ll::UntypedStorage<8, 8> mUnk97f975;
         ::ll::UntypedStorage<8, 16> mUnk5c6bed;
-        ::ll::UntypedStorage<8, 8>  mUnkf33523;
+        ::ll::UntypedStorage<8, 8> mUnkf33523;
         ::ll::UntypedStorage<8, 56> mUnk77a786;
         ::ll::UntypedStorage<8, 16> mUnk525d61;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         WebSocketConnectContext& operator=(WebSocketConnectContext const&);
         WebSocketConnectContext(WebSocketConnectContext const&);
         WebSocketConnectContext();
+    
     };
-
+    
     struct ActiveWebSocketContext {
     public:
         // member variables
@@ -77,21 +79,22 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkcae69f;
         ::ll::UntypedStorage<8, 8> mUnk5d8094;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ActiveWebSocketContext& operator=(ActiveWebSocketContext const&);
         ActiveWebSocketContext(ActiveWebSocketContext const&);
         ActiveWebSocketContext();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnkf7d9bd;
     ::ll::UntypedStorage<8, 16> mUnk819e6d;
     ::ll::UntypedStorage<8, 16> mUnkea1c7e;
-    ::ll::UntypedStorage<8, 8>  mUnk4112ad;
+    ::ll::UntypedStorage<8, 8> mUnk4112ad;
     ::ll::UntypedStorage<8, 16> mUnk2c70cb;
     ::ll::UntypedStorage<8, 16> mUnke544fc;
     ::ll::UntypedStorage<8, 16> mUnk3b1bcc;
@@ -110,22 +113,11 @@ public:
 
     MCNAPI long HttpCallPerformAsync(::HC_CALL* call, ::XAsyncBlock* async);
 
-    MCNAPI NetworkState(
-        ::std::unique_ptr<::xbox::httpclient::IHttpProvider, ::http_alloc_deleter<::xbox::httpclient::IHttpProvider>>
-            httpProvider,
-        ::std::unique_ptr<
-            ::xbox::httpclient::IWebSocketProvider,
-            ::http_alloc_deleter<::xbox::httpclient::IWebSocketProvider>> webSocketProvider
-    );
+    MCNAPI NetworkState(::std::unique_ptr<::xbox::httpclient::IHttpProvider, ::http_alloc_deleter<::xbox::httpclient::IHttpProvider>> httpProvider, ::std::unique_ptr<::xbox::httpclient::IWebSocketProvider, ::http_alloc_deleter<::xbox::httpclient::IWebSocketProvider>> webSocketProvider);
 
     MCNAPI bool ScheduleCleanup();
 
-    MCNAPI long WebSocketConnectAsync(
-        ::http_string&&          uri,
-        ::http_string&&          subprotocol,
-        ::HC_WEBSOCKET_OBSERVER* clientWebSocketHandle,
-        ::XAsyncBlock*           asyncBlock
-    );
+    MCNAPI long WebSocketConnectAsync(::http_string&& uri, ::http_string&& subprotocol, ::HC_WEBSOCKET_OBSERVER* clientWebSocketHandle, ::XAsyncBlock* asyncBlock);
 
     MCNAPI ::xbox::httpclient::Result<::std::shared_ptr<::xbox::httpclient::WebSocket>> WebSocketCreate();
 
@@ -139,15 +131,7 @@ public:
 
     MCNAPI static void HttpCallPerformComplete(::XAsyncBlock* async);
 
-    MCNAPI static ::xbox::httpclient::Result<
-        ::std::unique_ptr<::xbox::httpclient::NetworkState, ::http_alloc_deleter<::xbox::httpclient::NetworkState>>>
-    Initialize(
-        ::std::unique_ptr<::xbox::httpclient::IHttpProvider, ::http_alloc_deleter<::xbox::httpclient::IHttpProvider>>
-            httpProvider,
-        ::std::unique_ptr<
-            ::xbox::httpclient::IWebSocketProvider,
-            ::http_alloc_deleter<::xbox::httpclient::IWebSocketProvider>> webSocketProvider
-    );
+    MCNAPI static ::xbox::httpclient::Result<::std::unique_ptr<::xbox::httpclient::NetworkState, ::http_alloc_deleter<::xbox::httpclient::NetworkState>>> Initialize(::std::unique_ptr<::xbox::httpclient::IHttpProvider, ::http_alloc_deleter<::xbox::httpclient::IHttpProvider>> httpProvider, ::std::unique_ptr<::xbox::httpclient::IWebSocketProvider, ::http_alloc_deleter<::xbox::httpclient::IWebSocketProvider>> webSocketProvider);
 
     MCNAPI static void WebSocketClosed(::HC_WEBSOCKET_OBSERVER*, ::HCWebSocketCloseStatus, void* c);
 
@@ -159,13 +143,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::unique_ptr<::xbox::httpclient::IHttpProvider, ::http_alloc_deleter<::xbox::httpclient::IHttpProvider>>
-            httpProvider,
-        ::std::unique_ptr<
-            ::xbox::httpclient::IWebSocketProvider,
-            ::http_alloc_deleter<::xbox::httpclient::IWebSocketProvider>> webSocketProvider
-    );
+    MCNAPI void* $ctor(::std::unique_ptr<::xbox::httpclient::IHttpProvider, ::http_alloc_deleter<::xbox::httpclient::IHttpProvider>> httpProvider, ::std::unique_ptr<::xbox::httpclient::IWebSocketProvider, ::http_alloc_deleter<::xbox::httpclient::IWebSocketProvider>> webSocketProvider);
     // NOLINTEND
 
 public:
@@ -173,6 +151,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace xbox::httpclient
+}

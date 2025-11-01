@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkb32d8a;
     ::ll::UntypedStorage<8, 16> mUnk57e818;
-    ::ll::UntypedStorage<4, 4>  mUnk1b0226;
+    ::ll::UntypedStorage<4, 4> mUnk1b0226;
     // NOLINTEND
 
 public:
@@ -43,12 +43,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void computeCubicPolynomial(
-        ::KeyFrameTransform* p0,
-        ::KeyFrameTransform& p1,
-        ::KeyFrameTransform& p2,
-        ::KeyFrameTransform* p3
-    );
+    MCNAPI static void computeCubicPolynomial(::KeyFrameTransform* p0, ::KeyFrameTransform& p1, ::KeyFrameTransform& p2, ::KeyFrameTransform* p3);
     // NOLINTEND
 
 public:
@@ -62,4 +57,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

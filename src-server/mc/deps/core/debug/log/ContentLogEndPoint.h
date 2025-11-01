@@ -54,4 +54,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftableForLogEndPoint();
     // NOLINTEND
+
 };

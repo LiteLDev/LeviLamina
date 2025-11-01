@@ -29,12 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDefinitionLoader(
-        ::gsl::not_null<::BlockDefinitionGroup*>                  group,
-        ::gsl::not_null<::Core::PathBuffer<::std::string> const*> heapPathBuffer,
-        ::std::string                                             resourcePackLocation,
-        ::gsl::not_null<::IPackLoadContext*>                      packLoadContext
-    );
+    MCAPI BlockDefinitionLoader(::gsl::not_null<::BlockDefinitionGroup*> group, ::gsl::not_null<::Core::PathBuffer<::std::string> const*> heapPathBuffer, ::std::string resourcePackLocation, ::gsl::not_null<::IPackLoadContext*> packLoadContext);
 
     MCAPI ::Puv::LoadResult<::BlockDefinition> load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
@@ -44,12 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::gsl::not_null<::BlockDefinitionGroup*>                  group,
-        ::gsl::not_null<::Core::PathBuffer<::std::string> const*> heapPathBuffer,
-        ::std::string                                             resourcePackLocation,
-        ::gsl::not_null<::IPackLoadContext*>                      packLoadContext
-    );
+    MCAPI void* $ctor(::gsl::not_null<::BlockDefinitionGroup*> group, ::gsl::not_null<::Core::PathBuffer<::std::string> const*> heapPathBuffer, ::std::string resourcePackLocation, ::gsl::not_null<::IPackLoadContext*> packLoadContext);
     // NOLINTEND
 
 public:
@@ -57,4 +47,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

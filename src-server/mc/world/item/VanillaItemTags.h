@@ -139,4 +139,5 @@ public:
 
     MCAPI static ::ItemTag const& Wool();
     // NOLINTEND
+
 };

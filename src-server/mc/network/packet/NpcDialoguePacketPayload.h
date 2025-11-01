@@ -15,19 +15,19 @@ struct NpcDialoguePacketPayload {
 public:
     // NpcDialoguePacketPayload inner types define
     enum class NpcDialogueActionType : int {
-        Open  = 0,
+        Open = 0,
         Close = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                   mNpcId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mNpcId;
     ::ll::TypedStorage<4, 4, ::NpcDialoguePacketPayload::NpcDialogueActionType> mNpcDialogueActionType;
-    ::ll::TypedStorage<8, 32, ::std::string>                                    mDialogue;
-    ::ll::TypedStorage<8, 32, ::std::string>                                    mSceneName;
-    ::ll::TypedStorage<8, 32, ::std::string>                                    mNpcName;
-    ::ll::TypedStorage<8, 32, ::std::string>                                    mActionJSON;
+    ::ll::TypedStorage<8, 32, ::std::string> mDialogue;
+    ::ll::TypedStorage<8, 32, ::std::string> mSceneName;
+    ::ll::TypedStorage<8, 32, ::std::string> mNpcName;
+    ::ll::TypedStorage<8, 32, ::std::string> mActionJSON;
     // NOLINTEND
 
 public:
@@ -48,11 +48,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool initializePacket(
-        ::NpcDialoguePacket&        outPacket,
-        ::NpcDialogueStorage const* storage,
-        ::std::string const&        sceneName
-    );
+    MCAPI static bool initializePacket(::NpcDialoguePacket& outPacket, ::NpcDialogueStorage const* storage, ::std::string const& sceneName);
     // NOLINTEND
 
 public:
@@ -60,4 +56,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

@@ -16,8 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
-    ::ll::TypedStorage<4, 4, uint>                        mFormId;
-    ::ll::TypedStorage<8, 16, ::Json::Value>              mFormResponse;
+    ::ll::TypedStorage<4, 4, uint> mFormId;
+    ::ll::TypedStorage<8, 16, ::Json::Value> mFormResponse;
     // NOLINTEND
 
 public:
@@ -31,4 +31,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

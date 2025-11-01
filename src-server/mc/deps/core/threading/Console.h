@@ -17,6 +17,7 @@ public:
     Console& operator=(Console const&);
     Console(Console const&);
     Console();
+
 };
 
-} // namespace Bedrock::Threading::Burst::Strategy
+}

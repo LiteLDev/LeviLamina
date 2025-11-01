@@ -7,24 +7,24 @@ public:
     // CommandRationalRange inner types define
     enum class BoundType : uchar {
         Undefined = 0,
-        Min       = 1,
-        Max       = 2,
+        Min = 1,
+        Max = 2,
     };
-
+    
     enum class ValueType : int {
         Undefined = 0,
-        Int       = 1,
-        Float     = 2,
+        Int = 1,
+        Float = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 16> mUnk22d4a5;
-    ::ll::UntypedStorage<4, 4>  mUnkde7d4d;
-    ::ll::UntypedStorage<1, 1>  mUnk3d8439;
-    ::ll::UntypedStorage<1, 1>  mUnkef96a4;
-    ::ll::UntypedStorage<1, 1>  mUnk7a2deb;
+    ::ll::UntypedStorage<4, 4> mUnkde7d4d;
+    ::ll::UntypedStorage<1, 1> mUnk3d8439;
+    ::ll::UntypedStorage<1, 1> mUnkef96a4;
+    ::ll::UntypedStorage<1, 1> mUnk7a2deb;
     // NOLINTEND
 
 public:
@@ -47,4 +47,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
     // NOLINTEND
+
 };

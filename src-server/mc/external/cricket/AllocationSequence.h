@@ -22,31 +22,31 @@ class AllocationSequence {
 public:
     // AllocationSequence inner types define
     enum class State : int {
-        KInit      = 0,
-        KRunning   = 1,
-        KStopped   = 2,
+        KInit = 0,
+        KRunning = 1,
+        KStopped = 2,
         KCompleted = 3,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc9fdb6;
-    ::ll::UntypedStorage<1, 1>  mUnke16770;
-    ::ll::UntypedStorage<8, 8>  mUnk19017d;
+    ::ll::UntypedStorage<8, 8> mUnkc9fdb6;
+    ::ll::UntypedStorage<1, 1> mUnke16770;
+    ::ll::UntypedStorage<8, 8> mUnk19017d;
     ::ll::UntypedStorage<4, 32> mUnk5c33f7;
-    ::ll::UntypedStorage<8, 8>  mUnkac2dd9;
-    ::ll::UntypedStorage<4, 4>  mUnk7749ac;
-    ::ll::UntypedStorage<4, 4>  mUnk325f64;
+    ::ll::UntypedStorage<8, 8> mUnkac2dd9;
+    ::ll::UntypedStorage<4, 4> mUnk7749ac;
+    ::ll::UntypedStorage<4, 4> mUnk325f64;
     ::ll::UntypedStorage<8, 24> mUnkfacbbe;
     ::ll::UntypedStorage<8, 16> mUnk6c121e;
     ::ll::UntypedStorage<8, 16> mUnk6c0575;
-    ::ll::UntypedStorage<8, 8>  mUnke5c46b;
+    ::ll::UntypedStorage<8, 8> mUnke5c46b;
     ::ll::UntypedStorage<8, 24> mUnk37997a;
-    ::ll::UntypedStorage<4, 4>  mUnk3a8979;
+    ::ll::UntypedStorage<4, 4> mUnk3a8979;
     ::ll::UntypedStorage<8, 64> mUnk74ccd9;
-    ::ll::UntypedStorage<4, 4>  mUnk5fe699;
-    ::ll::UntypedStorage<8, 8>  mUnkdfdd59;
+    ::ll::UntypedStorage<4, 4> mUnk5fe699;
+    ::ll::UntypedStorage<8, 8> mUnkdfdd59;
     // NOLINTEND
 
 public:
@@ -58,13 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AllocationSequence(
-        ::cricket::BasicPortAllocatorSession* session,
-        ::rtc::Network const*                 network,
-        ::cricket::PortConfiguration*         config,
-        uint                                  flags,
-        ::std::function<void()>               port_allocation_complete_callback
-    );
+    MCNAPI AllocationSequence(::cricket::BasicPortAllocatorSession* session, ::rtc::Network const* network, ::cricket::PortConfiguration* config, uint flags, ::std::function<void()> port_allocation_complete_callback);
 
     MCNAPI void Clear();
 
@@ -78,8 +72,7 @@ public:
 
     MCNAPI void CreateUDPPorts();
 
-    MCNAPI void
-    DisableEquivalentPhases(::rtc::Network const* network, ::cricket::PortConfiguration* config, uint* flags);
+    MCNAPI void DisableEquivalentPhases(::rtc::Network const* network, ::cricket::PortConfiguration* config, uint* flags);
 
     MCNAPI void Init();
 
@@ -101,13 +94,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::cricket::BasicPortAllocatorSession* session,
-        ::rtc::Network const*                 network,
-        ::cricket::PortConfiguration*         config,
-        uint                                  flags,
-        ::std::function<void()>               port_allocation_complete_callback
-    );
+    MCNAPI void* $ctor(::cricket::BasicPortAllocatorSession* session, ::rtc::Network const* network, ::cricket::PortConfiguration* config, uint flags, ::std::function<void()> port_allocation_complete_callback);
     // NOLINTEND
 
 public:
@@ -115,6 +102,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

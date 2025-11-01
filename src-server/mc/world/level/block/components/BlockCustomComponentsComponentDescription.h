@@ -19,9 +19,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockCustomComponentData>> mCustomComponentData;
-    ::ll::TypedStorage<1, 1, bool>                                       mIsCustomComponentsV1;
-    ::ll::TypedStorage<1, 1, bool>                                       mHasPlayerInteractEvent;
-    ::ll::TypedStorage<1, 1, bool>                                       mHasPlayerPlacingEvent;
+    ::ll::TypedStorage<1, 1, bool> mIsCustomComponentsV1;
+    ::ll::TypedStorage<1, 1, bool> mHasPlayerInteractEvent;
+    ::ll::TypedStorage<1, 1, bool> mHasPlayerPlacingEvent;
     // NOLINTEND
 
 public:
@@ -49,12 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addCustomComponent(
-        ::std::string_view     compName,
-        ::cereal::DynamicValue compData,
-        bool                   overridePlayerInteract,
-        bool                   overridePlayerPlacing
-    );
+    MCAPI void addCustomComponent(::std::string_view compName, ::cereal::DynamicValue compData, bool overridePlayerInteract, bool overridePlayerPlacing);
     // NOLINTEND
 
 public:
@@ -88,4 +83,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

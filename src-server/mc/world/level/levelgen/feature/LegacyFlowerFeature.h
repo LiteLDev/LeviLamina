@@ -18,9 +18,9 @@ class LegacyFlowerFeature : public ::Feature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::FlowerPlacementType>       mPlacementType;
+    ::ll::TypedStorage<4, 4, ::FlowerPlacementType> mPlacementType;
     ::ll::TypedStorage<8, 40, ::PerlinSimplexNoise const> mBiomeInfoNoise;
-    ::ll::TypedStorage<4, 4, int const>                   mIterations;
+    ::ll::TypedStorage<4, 4, int const> mIterations;
     // NOLINTEND
 
 public:
@@ -44,4 +44,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

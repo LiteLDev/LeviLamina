@@ -22,17 +22,16 @@ class ChorusFlowerBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 87
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
+    // vIndex: 86
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 22
@@ -44,7 +43,7 @@ public:
     // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -68,14 +67,7 @@ public:
     // NOLINTBEGIN
     MCAPI static bool _allNeighborsEmpty(::BlockSource& region, ::BlockPos const& pos, uchar ignore);
 
-    MCAPI static void _growTreeRecursive(
-        ::BlockSource&    region,
-        ::BlockPos const& current,
-        ::BlockPos const& startPos,
-        ::Random&         random,
-        int               maxHorizontalSpread,
-        int               depth
-    );
+    MCAPI static void _growTreeRecursive(::BlockSource& region, ::BlockPos const& current, ::BlockPos const& startPos, ::Random& random, int maxHorizontalSpread, int depth);
     // NOLINTEND
 
 public:
@@ -103,4 +95,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

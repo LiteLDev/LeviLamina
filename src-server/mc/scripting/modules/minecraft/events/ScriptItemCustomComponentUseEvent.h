@@ -27,40 +27,36 @@ public:
     // clang-format off
     struct IntermediateStorage;
     // clang-format on
-
+    
     // ScriptItemCustomComponentUseEvent inner types define
-    using EventConnectorsType =
-        ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<void(bool&, ::ItemStack&, ::Player&)>;
-
+    using EventConnectorsType = ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<void(bool&, ::ItemStack&, ::Player&)>;
+    
     struct IntermediateStorage : public ::ScriptModuleMinecraft::ScriptItemCustomComponentIntermediateStorage {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 152, ::ItemStack const>    mItemStack;
+        ::ll::TypedStorage<8, 152, ::ItemStack const> mItemStack;
         ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mPlayer;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~IntermediateStorage();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-                                                                                                           mScriptItem;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mScriptItem;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayer;
     // NOLINTEND
 
@@ -81,10 +77,7 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptItemCustomComponentUseEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent const&);
 
-    MCAPI ScriptItemCustomComponentUseEvent(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent::IntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                  scope
-    );
+    MCAPI ScriptItemCustomComponentUseEvent(::ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent::IntermediateStorage const& eventData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -98,10 +91,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent const&);
 
-    MCAPI void* $ctor(
-        ::ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent::IntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                  scope
-    );
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemCustomComponentUseEvent::IntermediateStorage const& eventData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -115,6 +105,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

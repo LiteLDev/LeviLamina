@@ -15,4 +15,5 @@ public:
     TypeMapping& operator=(TypeMapping const&);
     TypeMapping(TypeMapping const&);
     TypeMapping();
+
 };

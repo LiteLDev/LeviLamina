@@ -18,14 +18,12 @@ namespace Scripting { class ModuleBindingBuilder; }
 
 namespace ScriptModuleMinecraftNet {
 
-class ScriptNetworkBeforeEvents
-: public ::ScriptModuleMinecraftNet::IScriptNetworkBeforeEvents,
-  public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents> {
+class ScriptNetworkBeforeEvents : public ::ScriptModuleMinecraftNet::IScriptNetworkBeforeEvents, public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnka62ae6;
-    ::ll::UntypedStorage<8, 8>  mUnk3f8513;
+    ::ll::UntypedStorage<8, 8> mUnk3f8513;
     ::ll::UntypedStorage<8, 16> mUnk6a86ea;
     ::ll::UntypedStorage<8, 32> mUnk6ff13e;
     ::ll::UntypedStorage<8, 32> mUnka9ad96;
@@ -44,14 +42,10 @@ public:
     virtual ~ScriptNetworkBeforeEvents() /*override*/;
 
     // vIndex: 1
-    virtual ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent>>
-    onBeforePacketReceive(::IncomingPacketEvent const& packetEvent) /*override*/;
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent>> onBeforePacketReceive(::IncomingPacketEvent const& packetEvent) /*override*/;
 
     // vIndex: 2
-    virtual ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent>>
-    onBeforePacketSend(::OutgoingPacketEvent const& packetEvent) /*override*/;
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent>> onBeforePacketSend(::OutgoingPacketEvent const& packetEvent) /*override*/;
     // NOLINTEND
 
 public:
@@ -59,8 +53,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptNetworkBeforeEvents(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
 
-    MCNAPI ::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&
-    operator=(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
+    MCNAPI ::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents& operator=(::ScriptModuleMinecraftNet::ScriptNetworkBeforeEvents&&);
     // NOLINTEND
 
 public:
@@ -84,13 +77,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent>>
-    $onBeforePacketReceive(::IncomingPacketEvent const& packetEvent);
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent>> $onBeforePacketReceive(::IncomingPacketEvent const& packetEvent);
 
-    MCNAPI ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent>>
-    $onBeforePacketSend(::OutgoingPacketEvent const& packetEvent);
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent>> $onBeforePacketSend(::OutgoingPacketEvent const& packetEvent);
     // NOLINTEND
 
 public:
@@ -98,6 +87,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraftNet
+}

@@ -13,4 +13,4 @@ MCNAPI ::std::unordered_set<uint64> _getFilteredBlockSet();
 MCNAPI ::std::string_view const& EDITOR_PACK_CAPABILITY();
 // NOLINTEND
 
-} // namespace Editor
+}

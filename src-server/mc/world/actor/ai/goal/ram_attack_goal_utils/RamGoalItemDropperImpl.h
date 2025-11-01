@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<1, 1, bool>   mShouldTryToDropHorn;
+    ::ll::TypedStorage<1, 1, bool> mShouldTryToDropHorn;
     // NOLINTEND
 
 public:
@@ -58,6 +58,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace RamAttackGoalUtils
+}

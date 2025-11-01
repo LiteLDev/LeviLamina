@@ -25,8 +25,7 @@ MCNAPI bool canStayLeashedTo(::Actor const& actor, ::Actor const& leashHolder, f
 
 MCNAPI ::std::vector<::gsl::not_null<::Actor*>> getCuttableLeashedActors(::Actor& actor, ::Player const* player);
 
-MCNAPI ::LeashablePreset const&
-getPreset(::Actor const& leashedActor, ::LeashableComponent const& leashableComponent, ::Actor const* leashHolder);
+MCNAPI ::LeashablePreset const& getPreset(::Actor const& leashedActor, ::LeashableComponent const& leashableComponent, ::Actor const* leashHolder);
 
 MCNAPI bool isAboveHardDistance(::Actor const& actor);
 
@@ -34,13 +33,9 @@ MCNAPI void leash(::Actor& entityToLeash, ::Actor& leashHolder, bool emitGameEve
 
 MCNAPI void onLeashHolderSet(::ActorUniqueID const& newLeashHolderID, ::Actor& actor);
 
-MCNAPI bool tryTransferLeashedActors(
-    ::brstd::flat_set<::ActorUniqueID, ::std::less<::ActorUniqueID>, ::std::vector<::ActorUniqueID>> const&
-             leashedActorIDs,
-    ::Actor& newLeashHolder
-);
+MCNAPI bool tryTransferLeashedActors(::brstd::flat_set<::ActorUniqueID, ::std::less<::ActorUniqueID>, ::std::vector<::ActorUniqueID>> const& leashedActorIDs, ::Actor& newLeashHolder);
 
 MCNAPI void unleash(::Actor& entityToUnleash, ::LeashableUtility::UnleashReason unleashReason);
 // NOLINTEND
 
-} // namespace LeashableUtility
+}

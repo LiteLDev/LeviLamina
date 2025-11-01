@@ -4,7 +4,8 @@
 
 namespace Scripting {
 
-template <typename T0, typename... T1>
-class Result {};
+template<typename T0, typename... T1>
+class Result {
+};
 
-} // namespace Scripting
+}

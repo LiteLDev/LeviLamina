@@ -17,6 +17,7 @@ public:
     UniformInt& operator=(UniformInt const&);
     UniformInt(UniformInt const&);
     UniformInt();
+
 };
 
-} // namespace ValueProviders
+}

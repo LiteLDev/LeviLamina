@@ -21,4 +21,4 @@ MCAPI ::HashedString const& SMITHING_TABLE();
 MCAPI ::HashedString const& STONECUTTER();
 // NOLINTEND
 
-} // namespace CraftingTag
+}

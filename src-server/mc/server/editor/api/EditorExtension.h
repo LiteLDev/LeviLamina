@@ -23,15 +23,15 @@ class EditorExtension : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk60f377;
-    ::ll::UntypedStorage<8, 32>  mUnk149d3f;
-    ::ll::UntypedStorage<8, 32>  mUnk4fc1bb;
-    ::ll::UntypedStorage<8, 32>  mUnkcd2171;
-    ::ll::UntypedStorage<4, 4>   mUnkd042ea;
-    ::ll::UntypedStorage<8, 16>  mUnk155d3d;
+    ::ll::UntypedStorage<8, 32> mUnk60f377;
+    ::ll::UntypedStorage<8, 32> mUnk149d3f;
+    ::ll::UntypedStorage<8, 32> mUnk4fc1bb;
+    ::ll::UntypedStorage<8, 32> mUnkcd2171;
+    ::ll::UntypedStorage<4, 4> mUnkd042ea;
+    ::ll::UntypedStorage<8, 16> mUnk155d3d;
     ::ll::UntypedStorage<8, 248> mUnk7bcc01;
     ::ll::UntypedStorage<8, 248> mUnk9025b6;
-    ::ll::UntypedStorage<8, 40>  mUnkc15389;
+    ::ll::UntypedStorage<8, 40> mUnkc15389;
     // NOLINTEND
 
 public:
@@ -50,16 +50,7 @@ public:
     // NOLINTBEGIN
     MCNAPI EditorExtension(::Editor::API::EditorExtension const&);
 
-    MCNAPI EditorExtension(
-        ::std::string const&           name,
-        ::Scripting::WeakLifetimeScope scope,
-        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
-            activationClosure,
-        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
-                                                                          shutdownClosure,
-        ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options,
-        ::Editor::API::ServerScriptPackType                               sourcePackType
-    );
+    MCNAPI EditorExtension(::std::string const& name, ::Scripting::WeakLifetimeScope scope, ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)> activationClosure, ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)> shutdownClosure, ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options, ::Editor::API::ServerScriptPackType sourcePackType);
 
     MCNAPI void _setDescription(::std::string const& value);
 
@@ -85,16 +76,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::API::EditorExtension const&);
 
-    MCNAPI void* $ctor(
-        ::std::string const&           name,
-        ::Scripting::WeakLifetimeScope scope,
-        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
-            activationClosure,
-        ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)>
-                                                                          shutdownClosure,
-        ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options,
-        ::Editor::API::ServerScriptPackType                               sourcePackType
-    );
+    MCNAPI void* $ctor(::std::string const& name, ::Scripting::WeakLifetimeScope scope, ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)> activationClosure, ::Scripting::Closure<void(::Scripting::TypedObjectHandle<::Editor::API::EditorExtensionContext>)> shutdownClosure, ::std::optional<::Editor::API::EditorExtensionOptionalParameters> options, ::Editor::API::ServerScriptPackType sourcePackType);
     // NOLINTEND
 
 public:
@@ -108,6 +90,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::API
+}

@@ -13,4 +13,4 @@ namespace ExecuteEntityEventSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace ExecuteEntityEventSystem
+}

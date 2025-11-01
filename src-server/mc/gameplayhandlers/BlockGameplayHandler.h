@@ -21,16 +21,13 @@ public:
     virtual ::HandlerResult handleEvent(::BlockGameplayEvent<void> const&) = 0;
 
     // vIndex: 3
-    virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::BlockGameplayEvent<::CoordinatorResult> const&) = 0;
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::BlockGameplayEvent<::CoordinatorResult> const&) = 0;
 
     // vIndex: 2
-    virtual ::GameplayHandlerResult<::std::optional<::std::string>>
-    handleEvent(::BlockGameplayEvent<::std::optional<::std::string>> const&) = 0;
+    virtual ::GameplayHandlerResult<::std::optional<::std::string>> handleEvent(::BlockGameplayEvent<::std::optional<::std::string>> const&) = 0;
 
     // vIndex: 1
-    virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::MutableBlockGameplayEvent<::CoordinatorResult>&) = 0;
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::MutableBlockGameplayEvent<::CoordinatorResult>&) = 0;
     // NOLINTEND
 
 public:
@@ -38,4 +35,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

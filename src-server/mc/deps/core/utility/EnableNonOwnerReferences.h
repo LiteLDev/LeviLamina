@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct ControlBlock;
     // clang-format on
-
+    
     // EnableNonOwnerReferences inner types define
     struct ControlBlock {
     public:
@@ -18,8 +18,9 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 1, bool> mIsValid;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,6 +65,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

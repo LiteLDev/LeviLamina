@@ -12,7 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnka05f6e;
-    ::ll::UntypedStorage<8, 8>  mUnk1e5e56;
+    ::ll::UntypedStorage<8, 8> mUnk1e5e56;
     ::ll::UntypedStorage<8, 32> mUnk14f7e3;
     // NOLINTEND
 
@@ -40,6 +40,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleGameTest
+}

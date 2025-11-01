@@ -26,4 +26,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $removeActor(::Actor& actor);
     // NOLINTEND
+
 };

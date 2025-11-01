@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::WitherBoss&> mWitherBoss;
-    ::ll::TypedStorage<8, 8, ::Mob*>        mTarget;
+    ::ll::TypedStorage<8, 8, ::Mob*> mTarget;
     // NOLINTEND
 
 public:
@@ -44,13 +44,7 @@ public:
     virtual void start() /*override*/;
 
     // vIndex: 10
-    virtual bool _canAttack(
-        ::Mob*                  testMob,
-        ::Actor*                target,
-        bool                    allowInvulnerable,
-        bool                    mustSee,
-        ::MobDescriptor const** outDescriptorMatch
-    ) /*override*/;
+    virtual bool _canAttack(::Mob* testMob, ::Actor* target, bool allowInvulnerable, bool mustSee, ::MobDescriptor const** outDescriptorMatch) /*override*/;
 
     // vIndex: 0
     virtual ~WitherTargetHighestDamage() /*override*/ = default;
@@ -73,13 +67,7 @@ public:
 
     MCAPI void $start();
 
-    MCAPI bool $_canAttack(
-        ::Mob*                  testMob,
-        ::Actor*                target,
-        bool                    allowInvulnerable,
-        bool                    mustSee,
-        ::MobDescriptor const** outDescriptorMatch
-    );
+    MCAPI bool $_canAttack(::Mob* testMob, ::Actor* target, bool allowInvulnerable, bool mustSee, ::MobDescriptor const** outDescriptorMatch);
     // NOLINTEND
 
 public:
@@ -87,4 +75,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

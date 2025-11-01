@@ -4,7 +4,8 @@
 
 namespace Bedrock::PubSub::Deferred::Detail {
 
-template <typename T0>
-struct ArgumentInfo {};
+template<typename T0>
+struct ArgumentInfo {
+};
 
-} // namespace Bedrock::PubSub::Deferred::Detail
+}

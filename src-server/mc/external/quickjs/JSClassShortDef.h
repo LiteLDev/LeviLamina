@@ -16,4 +16,5 @@ public:
     JSClassShortDef& operator=(JSClassShortDef const&);
     JSClassShortDef(JSClassShortDef const&);
     JSClassShortDef();
+
 };

@@ -4,6 +4,7 @@
 
 namespace Core::Profile {
 
-class ProfileThread {};
+class ProfileThread {
+};
 
-} // namespace Core::Profile
+}

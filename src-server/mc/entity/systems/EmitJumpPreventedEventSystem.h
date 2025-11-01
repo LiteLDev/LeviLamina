@@ -13,4 +13,4 @@ namespace EmitJumpPreventedEventSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace EmitJumpPreventedEventSystem
+}

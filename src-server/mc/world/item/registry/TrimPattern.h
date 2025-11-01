@@ -14,9 +14,23 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    TrimPattern& operator=(TrimPattern const&);
+    TrimPattern(TrimPattern const&);
+    TrimPattern();
+
+public:
     // member functions
     // NOLINTBEGIN
+    MCAPI TrimPattern(::TrimPattern&&);
+
     MCAPI ~TrimPattern();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor(::TrimPattern&&);
     // NOLINTEND
 
 public:
@@ -24,4 +38,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

@@ -13,4 +13,4 @@ namespace ServerPlayerLoadingScreenInitializer {
 MCNAPI void initializeWithActiveLoadingScreen(::EntityContext& entity);
 // NOLINTEND
 
-} // namespace ServerPlayerLoadingScreenInitializer
+}

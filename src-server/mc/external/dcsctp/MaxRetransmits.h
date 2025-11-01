@@ -12,6 +12,7 @@ namespace dcsctp { class MaxRetransmitsTag; }
 
 namespace dcsctp {
 
-class MaxRetransmits : public ::webrtc::StrongAlias<::dcsctp::MaxRetransmitsTag, ushort> {};
+class MaxRetransmits : public ::webrtc::StrongAlias<::dcsctp::MaxRetransmitsTag, ushort> {
+};
 
-} // namespace dcsctp
+}

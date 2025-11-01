@@ -14,4 +14,5 @@ public:
     TimerFacade& operator=(TimerFacade const&);
     TimerFacade(TimerFacade const&);
     TimerFacade();
+
 };

@@ -9,7 +9,6 @@
 // clang-format off
 class LevelData;
 namespace Bedrock { class ActivationArguments; }
-namespace Core { class Result; }
 // clang-format on
 
 class EditorBootstrapper : public ::Bedrock::EnableNonOwnerReferences {
@@ -38,7 +37,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void processActivationArguments(::Bedrock::ActivationArguments const& args);
 
-    MCNAPI void processLoadedLevel(::LevelData& levelData, ::Core::Result const& levelLoadResult);
+    MCNAPI void processLoadedLevel(::LevelData& levelData, bool levelLoadSucceeded);
     // NOLINTEND
 
 public:
@@ -54,4 +53,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -18,4 +18,5 @@ public:
     WorkerConfiguration& operator=(WorkerConfiguration const&);
     WorkerConfiguration(WorkerConfiguration const&);
     WorkerConfiguration();
+
 };

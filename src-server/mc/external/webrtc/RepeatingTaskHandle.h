@@ -44,14 +44,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::RepeatingTaskHandle DelayedStart(
-        ::webrtc::TaskQueueBase*                    task_queue,
-        ::webrtc::TimeDelta                         first_delay,
-        ::absl::AnyInvocable<::webrtc::TimeDelta()> closure,
-        ::webrtc::TaskQueueBase::DelayPrecision     precision,
-        ::webrtc::Clock*                            clock,
-        ::webrtc::Location const&                   location
-    );
+    MCNAPI static ::webrtc::RepeatingTaskHandle DelayedStart(::webrtc::TaskQueueBase* task_queue, ::webrtc::TimeDelta first_delay, ::absl::AnyInvocable<::webrtc::TimeDelta()> closure, ::webrtc::TaskQueueBase::DelayPrecision precision, ::webrtc::Clock* clock, ::webrtc::Location const& location);
     // NOLINTEND
 
 public:
@@ -59,6 +52,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

@@ -11,14 +11,16 @@ public:
     // clang-format off
     struct Hash;
     // clang-format on
-
+    
     // StrictEntityContext inner types define
-    struct Hash {};
-
+    struct Hash {
+    };
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::EntityId> mEntity;
-    ::ll::TypedStorage<4, 4, uint>       mRegistryId;
+    ::ll::TypedStorage<4, 4, uint> mRegistryId;
     // NOLINTEND
+
 };

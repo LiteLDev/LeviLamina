@@ -16,6 +16,7 @@ public:
     MaterialRepository& operator=(MaterialRepository const&);
     MaterialRepository(MaterialRepository const&);
     MaterialRepository();
+
 };
 
-} // namespace ClientBlockPipeline
+}

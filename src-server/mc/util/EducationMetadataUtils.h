@@ -12,15 +12,9 @@ namespace Json { class Value; }
 namespace EducationMetadataUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI ::EducationMetadata
-parse(::std::string const& manifestContent, ::std::vector<::std::string>& errorPath, ::PackReport& report);
+MCNAPI ::EducationMetadata parse(::std::string const& manifestContent, ::std::vector<::std::string>& errorPath, ::PackReport& report);
 
-MCNAPI void parseEducationMetadataContent(
-    ::Json::Value const&          root,
-    ::std::vector<::std::string>& errorPath,
-    ::EducationMetadata&          metadata,
-    ::PackReport&                 report
-);
+MCNAPI void parseEducationMetadataContent(::Json::Value const& root, ::std::vector<::std::string>& errorPath, ::EducationMetadata& metadata, ::PackReport& report);
 // NOLINTEND
 
-} // namespace EducationMetadataUtils
+}

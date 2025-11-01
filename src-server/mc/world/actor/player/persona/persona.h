@@ -49,4 +49,4 @@ MCNAPI ::std::string const& NONE_PIECE_PATH();
 MCNAPI ::HashedString const& USE_BLINKING_ANIMATION_VARIABLE();
 // NOLINTEND
 
-} // namespace persona
+}

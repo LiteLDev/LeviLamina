@@ -16,11 +16,11 @@ class StructureStart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 24, ::BoundingBox>                                      boundingBox;
-    ::ll::TypedStorage<4, 4, int>                                                 chunkX;
-    ::ll::TypedStorage<4, 4, int>                                                 chunkZ;
+    ::ll::TypedStorage<4, 24, ::BoundingBox> boundingBox;
+    ::ll::TypedStorage<4, 4, int> chunkX;
+    ::ll::TypedStorage<4, 4, int> chunkZ;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::StructurePiece>>> pieces;
-    ::ll::TypedStorage<4, 4, int>                                                 maxYSpawnOffset;
+    ::ll::TypedStorage<4, 4, int> maxYSpawnOffset;
     // NOLINTEND
 
 public:
@@ -69,4 +69,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

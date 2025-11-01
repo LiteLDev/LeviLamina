@@ -17,18 +17,15 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptBlockCustomComponentStepOnAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent,
-                                                    public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
+struct ScriptBlockCustomComponentStepOnAfterEvent : public ::ScriptModuleMinecraft::ScriptBlockEvent, public ::ScriptModuleMinecraft::ScriptCustomComponentAfterEvent {
 public:
     // ScriptBlockCustomComponentStepOnAfterEvent inner types define
     using IntermediateStorage = ::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::
-        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
-            mEntity;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> mEntity;
     // NOLINTEND
 
 public:
@@ -38,10 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentStepOnAfterEvent(
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                         scope
-    );
+    MCAPI ScriptBlockCustomComponentStepOnAfterEvent(::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage const& eventData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -53,11 +47,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(
-        ::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage const& eventData,
-        ::Scripting::WeakLifetimeScope const&                                                         scope
-    );
+    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage const& eventData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

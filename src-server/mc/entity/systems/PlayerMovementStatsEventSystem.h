@@ -17,12 +17,7 @@ class PlayerMovementStatsEventSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickPlayerMovementStatsEventSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::ActorOwnerComponent,
-            ::PlayerPreMobTravelComponent const,
-            ::StateVectorComponent const> view
-    );
+    MCNAPI static void tickPlayerMovementStatsEventSystem(::ViewT<::StrictEntityContext, ::ActorOwnerComponent, ::PlayerPreMobTravelComponent const, ::StateVectorComponent const> view);
     // NOLINTEND
+
 };

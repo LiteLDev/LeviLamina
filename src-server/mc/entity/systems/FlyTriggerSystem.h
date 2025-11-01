@@ -31,24 +31,9 @@ MCNAPI ::TickingSystemWithInfo createIntentSystem();
 
 MCNAPI ::TickingSystemWithInfo createRemovePermissionFlyFlagSystem();
 
-MCNAPI void doActionTick(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::StrictEntityContext const&                   entity,
-    ::PlayerActionComponent const&                 playerAction,
-    ::Optional<::PermissionFlyFlagComponent const> permissionFlyFlag,
-    ::FallDistanceComponent&                       fallDistanceComponent,
-    ::VanillaClientGameplayComponent&              vanillaClientGameplayComponent,
-    ::EntityModifier<::AbilitiesRequestComponent>  modifier
-);
+MCNAPI void doActionTick(::entt::type_list<::Include<::ActorMovementTickNeededComponent>>, ::StrictEntityContext const& entity, ::PlayerActionComponent const& playerAction, ::Optional<::PermissionFlyFlagComponent const> permissionFlyFlag, ::FallDistanceComponent& fallDistanceComponent, ::VanillaClientGameplayComponent& vanillaClientGameplayComponent, ::EntityModifier<::AbilitiesRequestComponent> modifier);
 
-MCNAPI void doIntentTick(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::Optional<::PassengerComponent const> const& passenger,
-    ::MoveInputComponent const&                   moveInputComponent,
-    ::PlayerActionComponent&                      playerAction,
-    ::PlayerInputRequestComponent&                playerInputRequestComponent,
-    ::VanillaClientGameplayComponent&             vanillaClientGameplayComponent
-);
+MCNAPI void doIntentTick(::entt::type_list<::Include<::ActorMovementTickNeededComponent>>, ::Optional<::PassengerComponent const> const& passenger, ::MoveInputComponent const& moveInputComponent, ::PlayerActionComponent& playerAction, ::PlayerInputRequestComponent& playerInputRequestComponent, ::VanillaClientGameplayComponent& vanillaClientGameplayComponent);
 // NOLINTEND
 
-} // namespace FlyTriggerSystem
+}

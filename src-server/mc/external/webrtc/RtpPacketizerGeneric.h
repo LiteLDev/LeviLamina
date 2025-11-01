@@ -17,11 +17,11 @@ class RtpPacketizerGeneric : public ::webrtc::RtpPacketizer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 3>  mUnkd34563;
-    ::ll::UntypedStorage<8, 8>  mUnk2ba69c;
+    ::ll::UntypedStorage<1, 3> mUnkd34563;
+    ::ll::UntypedStorage<8, 8> mUnk2ba69c;
     ::ll::UntypedStorage<8, 16> mUnk2ea1a6;
     ::ll::UntypedStorage<8, 24> mUnkf556a0;
-    ::ll::UntypedStorage<8, 8>  mUnkdfa7c8;
+    ::ll::UntypedStorage<8, 8> mUnkdfa7c8;
     // NOLINTEND
 
 public:
@@ -48,14 +48,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void BuildHeader(::webrtc::RTPVideoHeader const& rtp_video_header);
 
-    MCNAPI
-    RtpPacketizerGeneric(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits);
+    MCNAPI RtpPacketizerGeneric(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits);
 
-    MCNAPI RtpPacketizerGeneric(
-        ::rtc::ArrayView<uchar const>              payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
-        ::webrtc::RTPVideoHeader const&            rtp_video_header
-    );
+    MCNAPI RtpPacketizerGeneric(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits, ::webrtc::RTPVideoHeader const& rtp_video_header);
     // NOLINTEND
 
 public:
@@ -63,11 +58,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits);
 
-    MCNAPI void* $ctor(
-        ::rtc::ArrayView<uchar const>              payload,
-        ::webrtc::RtpPacketizer::PayloadSizeLimits limits,
-        ::webrtc::RTPVideoHeader const&            rtp_video_header
-    );
+    MCNAPI void* $ctor(::rtc::ArrayView<uchar const> payload, ::webrtc::RtpPacketizer::PayloadSizeLimits limits, ::webrtc::RTPVideoHeader const& rtp_video_header);
     // NOLINTEND
 
 public:
@@ -89,6 +80,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

@@ -7,8 +7,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnk26126c;
-    ::ll::UntypedStorage<1, 1>  mUnka50573;
-    ::ll::UntypedStorage<1, 1>  mUnkfb169f;
+    ::ll::UntypedStorage<1, 1> mUnka50573;
+    ::ll::UntypedStorage<1, 1> mUnkfb169f;
     // NOLINTEND
 
 public:
@@ -16,4 +16,5 @@ public:
     AllowedAnywhereConsume& operator=(AllowedAnywhereConsume const&);
     AllowedAnywhereConsume(AllowedAnywhereConsume const&);
     AllowedAnywhereConsume();
+
 };

@@ -7,6 +7,7 @@
 
 namespace Detail {
 
-struct ColorBase : public ::mce::Color {};
+struct ColorBase : public ::mce::Color {
+};
 
-} // namespace Detail
+}

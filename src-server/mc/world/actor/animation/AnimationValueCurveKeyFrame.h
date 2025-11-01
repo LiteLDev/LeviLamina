@@ -15,4 +15,5 @@ public:
     AnimationValueCurveKeyFrame& operator=(AnimationValueCurveKeyFrame const&);
     AnimationValueCurveKeyFrame(AnimationValueCurveKeyFrame const&);
     AnimationValueCurveKeyFrame();
+
 };

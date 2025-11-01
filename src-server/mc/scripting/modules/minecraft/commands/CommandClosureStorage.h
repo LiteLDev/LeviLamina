@@ -17,6 +17,7 @@ public:
     CommandClosureStorage& operator=(CommandClosureStorage const&);
     CommandClosureStorage(CommandClosureStorage const&);
     CommandClosureStorage();
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

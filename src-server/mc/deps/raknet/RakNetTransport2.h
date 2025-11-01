@@ -70,11 +70,7 @@ public:
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
     // vIndex: 7
-    virtual void OnClosedConnection(
-        ::RakNet::SystemAddress const&,
-        ::RakNet::RakNetGUID,
-        ::RakNet::PI2_LostConnectionReason
-    ) /*override*/;
+    virtual void OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason) /*override*/;
 
     // vIndex: 8
     virtual void OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool) /*override*/;
@@ -85,6 +81,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

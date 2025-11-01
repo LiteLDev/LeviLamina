@@ -35,4 +35,5 @@ public:
 
     MCAPI bool pullInEntity(::Actor& vehicle, ::Actor& passenger) const;
     // NOLINTEND
+
 };

@@ -14,4 +14,5 @@ public:
     LocalConnectivitySystem& operator=(LocalConnectivitySystem const&);
     LocalConnectivitySystem(LocalConnectivitySystem const&);
     LocalConnectivitySystem();
+
 };

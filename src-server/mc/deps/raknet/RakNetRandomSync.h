@@ -13,10 +13,10 @@ class RakNetRandomSync {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>   mUnk29fa5e;
-    ::ll::UntypedStorage<4, 4>    mUnk8bb28b;
-    ::ll::UntypedStorage<4, 4>    mUnk5c3494;
-    ::ll::UntypedStorage<4, 4>    mUnk9c386f;
+    ::ll::UntypedStorage<8, 24> mUnk29fa5e;
+    ::ll::UntypedStorage<4, 4> mUnk8bb28b;
+    ::ll::UntypedStorage<4, 4> mUnk5c3494;
+    ::ll::UntypedStorage<4, 4> mUnk9c386f;
     ::ll::UntypedStorage<8, 2520> mUnk804ec3;
     // NOLINTEND
 
@@ -50,6 +50,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<2, 2, short> mMin;
     ::ll::TypedStorage<2, 2, short> mMax;
     // NOLINTEND
+
 };

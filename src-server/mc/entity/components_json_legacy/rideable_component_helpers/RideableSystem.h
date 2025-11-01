@@ -4,6 +4,7 @@
 
 namespace RideableComponentHelpers {
 
-class RideableSystem {};
+class RideableSystem {
+};
 
-} // namespace RideableComponentHelpers
+}

@@ -11,9 +11,9 @@ struct PackIdVersion {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::mce::UUID>  mId;
+    ::ll::TypedStorage<8, 16, ::mce::UUID> mId;
     ::ll::TypedStorage<8, 24, ::SemVersion> mVersion;
-    ::ll::TypedStorage<1, 1, ::PackType>    mPackType;
+    ::ll::TypedStorage<1, 1, ::PackType> mPackType;
     // NOLINTEND
 
 public:
@@ -64,4 +64,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

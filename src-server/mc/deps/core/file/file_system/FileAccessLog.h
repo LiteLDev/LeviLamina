@@ -16,6 +16,7 @@ public:
     FileAccessLog& operator=(FileAccessLog const&);
     FileAccessLog(FileAccessLog const&);
     FileAccessLog();
+
 };
 
-} // namespace Core
+}

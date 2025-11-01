@@ -2,5 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <int T0>
-class DividedPos2d {};
+template<int T0>
+class DividedPos2d {
+};

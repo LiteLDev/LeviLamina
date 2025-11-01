@@ -10,8 +10,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::CompoundTag> mMetaData;
-    ::ll::TypedStorage<8, 8, uint64>         mCurrentHash;
-    ::ll::TypedStorage<1, 1, bool>           mHashNeedsRecomputing;
+    ::ll::TypedStorage<8, 8, uint64> mCurrentHash;
+    ::ll::TypedStorage<1, 1, bool> mHashNeedsRecomputing;
     // NOLINTEND
 
 public:
@@ -33,4 +33,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

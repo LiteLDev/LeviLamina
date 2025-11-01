@@ -12,7 +12,7 @@ namespace dcsctp { class ZeroChecksumAlternateErrorDetectionMethodTag; }
 
 namespace dcsctp {
 
-class ZeroChecksumAlternateErrorDetectionMethod
-: public ::webrtc::StrongAlias<::dcsctp::ZeroChecksumAlternateErrorDetectionMethodTag, uint> {};
+class ZeroChecksumAlternateErrorDetectionMethod : public ::webrtc::StrongAlias<::dcsctp::ZeroChecksumAlternateErrorDetectionMethodTag, uint> {
+};
 
-} // namespace dcsctp
+}

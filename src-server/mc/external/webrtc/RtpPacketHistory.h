@@ -22,28 +22,28 @@ public:
     struct MoreUseful;
     class StoredPacket;
     // clang-format on
-
+    
     // RtpPacketHistory inner types define
     enum class StorageMode : int {
-        KDisabled     = 0,
+        KDisabled = 0,
         KStoreAndCull = 1,
     };
-
+    
     enum class PaddingMode : int {
-        KDefault           = 0,
-        KPriority          = 1,
+        KDefault = 0,
+        KPriority = 1,
         KRecentLargePacket = 2,
     };
-
+    
     struct MoreUseful {
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI bool
-        operator()(::webrtc::RtpPacketHistory::StoredPacket* lhs, ::webrtc::RtpPacketHistory::StoredPacket* rhs) const;
+        MCNAPI bool operator()(::webrtc::RtpPacketHistory::StoredPacket* lhs, ::webrtc::RtpPacketHistory::StoredPacket* rhs) const;
         // NOLINTEND
+    
     };
-
+    
     class StoredPacket {
     public:
         // member variables
@@ -54,57 +54,51 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkca45d9;
         ::ll::UntypedStorage<8, 8> mUnka324a0;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         StoredPacket& operator=(StoredPacket const&);
         StoredPacket(StoredPacket const&);
         StoredPacket();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void IncrementTimesRetransmitted(
-            ::std::set<::webrtc::RtpPacketHistory::StoredPacket*, ::webrtc::RtpPacketHistory::MoreUseful>* priority_set
-        );
-
-        MCNAPI StoredPacket(
-            ::std::unique_ptr<::webrtc::RtpPacketToSend> packet,
-            ::webrtc::Timestamp                          send_time,
-            uint64                                       insert_order
-        );
-
+        MCNAPI void IncrementTimesRetransmitted(::std::set<::webrtc::RtpPacketHistory::StoredPacket*, ::webrtc::RtpPacketHistory::MoreUseful>* priority_set);
+    
+        MCNAPI StoredPacket(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::Timestamp send_time, uint64 insert_order);
+    
         MCNAPI ::webrtc::RtpPacketHistory::StoredPacket& operator=(::webrtc::RtpPacketHistory::StoredPacket&&);
-
+    
         MCNAPI ~StoredPacket();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void*
-        $ctor(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::Timestamp send_time, uint64 insert_order);
+        MCNAPI void* $ctor(::std::unique_ptr<::webrtc::RtpPacketToSend> packet, ::webrtc::Timestamp send_time, uint64 insert_order);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkf11bb5;
-    ::ll::UntypedStorage<4, 4>   mUnk161787;
-    ::ll::UntypedStorage<8, 40>  mUnk692762;
-    ::ll::UntypedStorage<8, 8>   mUnkb2bd65;
-    ::ll::UntypedStorage<4, 4>   mUnk484324;
-    ::ll::UntypedStorage<8, 8>   mUnk6639d4;
-    ::ll::UntypedStorage<8, 40>  mUnk13fef9;
-    ::ll::UntypedStorage<8, 8>   mUnkb40ceb;
-    ::ll::UntypedStorage<8, 16>  mUnk581190;
+    ::ll::UntypedStorage<8, 8> mUnkf11bb5;
+    ::ll::UntypedStorage<4, 4> mUnk161787;
+    ::ll::UntypedStorage<8, 40> mUnk692762;
+    ::ll::UntypedStorage<8, 8> mUnkb2bd65;
+    ::ll::UntypedStorage<4, 4> mUnk484324;
+    ::ll::UntypedStorage<8, 8> mUnk6639d4;
+    ::ll::UntypedStorage<8, 40> mUnk13fef9;
+    ::ll::UntypedStorage<8, 8> mUnkb40ceb;
+    ::ll::UntypedStorage<8, 16> mUnk581190;
     ::ll::UntypedStorage<8, 216> mUnk597307;
     // NOLINTEND
 
@@ -123,16 +117,11 @@ public:
 
     MCNAPI void CullOldPackets();
 
-    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> GetPacketAndMarkAsPending(
-        ushort sequence_number,
-        ::rtc::FunctionView<::std::unique_ptr<::webrtc::RtpPacketToSend>(::webrtc::RtpPacketToSend const&)> encapsulate
-    );
+    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> GetPacketAndMarkAsPending(ushort sequence_number, ::rtc::FunctionView<::std::unique_ptr<::webrtc::RtpPacketToSend>(::webrtc::RtpPacketToSend const&)> encapsulate);
 
     MCNAPI int GetPacketIndex(ushort sequence_number) const;
 
-    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> GetPayloadPaddingPacket(
-        ::rtc::FunctionView<::std::unique_ptr<::webrtc::RtpPacketToSend>(::webrtc::RtpPacketToSend const&)> encapsulate
-    );
+    MCNAPI ::std::unique_ptr<::webrtc::RtpPacketToSend> GetPayloadPaddingPacket(::rtc::FunctionView<::std::unique_ptr<::webrtc::RtpPacketToSend>(::webrtc::RtpPacketToSend const&)> encapsulate);
 
     MCNAPI ::webrtc::RtpPacketHistory::StorageMode GetStorageMode() const;
 
@@ -176,6 +165,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

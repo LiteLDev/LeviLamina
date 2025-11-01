@@ -20,8 +20,7 @@ namespace Editor::Transactions { struct BlockChangedOperationData; }
 
 namespace Editor::Services {
 
-class BlockEventListenerService : public ::Editor::Services::IEditorService,
-                                  public ::EventListenerDispatcher<::BlockEventListener> {
+class BlockEventListenerService : public ::Editor::Services::IEditorService, public ::EventListenerDispatcher<::BlockEventListener> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -38,12 +37,7 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 1
-    virtual ::EventResult onBlockPlacedByPlayer(
-        ::Player&         player,
-        ::Block const&    placedBlock,
-        ::BlockPos const& pos,
-        bool              isUnderwater
-    ) /*override*/;
+    virtual ::EventResult onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater) /*override*/;
 
     // vIndex: 3
     virtual ::EventResult onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos) /*override*/;
@@ -52,11 +46,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::Editor::Transactions::BlockChangedOperationData>
-    _fillDestroyAction(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCNAPI ::std::vector<::Editor::Transactions::BlockChangedOperationData> _fillDestroyAction(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCNAPI ::std::vector<::Editor::Transactions::BlockChangedOperationData>
-    _fillPlacedAction(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCNAPI ::std::vector<::Editor::Transactions::BlockChangedOperationData> _fillPlacedAction(::BlockSource const& region, ::BlockPos const& pos) const;
 
     MCNAPI bool _shouldProcessPlayerEvent(::Player const& player);
     // NOLINTEND
@@ -70,8 +62,7 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::EventResult
-    $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
+    MCNAPI ::EventResult $onBlockPlacedByPlayer(::Player& player, ::Block const& placedBlock, ::BlockPos const& pos, bool isUnderwater);
 
     MCNAPI ::EventResult $onBlockInPosWillBeDestroyedByPlayer(::Player& player, ::BlockPos const& pos);
     // NOLINTEND
@@ -83,6 +74,7 @@ public:
 
     MCNAPI static void** $vftableForEventListenerDispatcher();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

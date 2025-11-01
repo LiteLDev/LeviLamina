@@ -43,35 +43,35 @@ struct ComponentItemComponentData_v1_20_40 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 80, ::std::optional<::ChargeableItemComponentLegacyFactoryData>>    chargeableItemComponent;
-    ::ll::TypedStorage<8, 80, ::std::optional<::CooldownItemComponent>>                       cooldownItemComponent;
-    ::ll::TypedStorage<8, 40, ::std::optional<::DurabilityItemComponent>>                     durabilityItemComponent;
-    ::ll::TypedStorage<8, 104, ::std::optional<::DiggerItemComponentLegacyFactoryData>>       diggerItemComponent;
-    ::ll::TypedStorage<8, 56, ::std::optional<::DisplayNameItemComponent>>                    displayNameItemComponent;
+    ::ll::TypedStorage<8, 80, ::std::optional<::ChargeableItemComponentLegacyFactoryData>> chargeableItemComponent;
+    ::ll::TypedStorage<8, 80, ::std::optional<::CooldownItemComponent>> cooldownItemComponent;
+    ::ll::TypedStorage<8, 40, ::std::optional<::DurabilityItemComponent>> durabilityItemComponent;
+    ::ll::TypedStorage<8, 104, ::std::optional<::DiggerItemComponentLegacyFactoryData>> diggerItemComponent;
+    ::ll::TypedStorage<8, 56, ::std::optional<::DisplayNameItemComponent>> displayNameItemComponent;
     ::ll::TypedStorage<8, 240, ::std::optional<::EntityPlacerItemComponentLegacyFactoryData>> entityPlacerItemComponent;
-    ::ll::TypedStorage<8, 40, ::std::optional<::FoodItemComponentData_v1_20_30>>              foodItemComponent;
-    ::ll::TypedStorage<8, 32, ::std::optional<::FuelItemComponent>>                           fuelItemComponent;
-    ::ll::TypedStorage<8, 48, ::std::optional<::IconItemComponentLegacyFactoryData>>          iconItemComponent;
-    ::ll::TypedStorage<8, 72, ::std::optional<::PlanterItemComponentLegacyFactoryData>>       planterItemComponent;
-    ::ll::TypedStorage<8, 208, ::std::optional<::ProjectileItemComponent>>                    projectileItemComponent;
-    ::ll::TypedStorage<8, 48, ::std::optional<::RepairableItemComponent>>                     repairableItemComponent;
-    ::ll::TypedStorage<8, 48, ::std::optional<::ShooterItemComponentLegacyFactoryData>>       shooterItemComponent;
-    ::ll::TypedStorage<4, 40, ::std::optional<::ThrowableItemComponentLegacyFactoryData>>     throwableItemComponent;
-    ::ll::TypedStorage<4, 24, ::std::optional<::WearableItemComponentLegacyFactoryData>>      wearableItemComponent;
-    ::ll::TypedStorage<8, 40, ::std::optional<::RecordItemComponent>>                         recordItemComponent;
-    ::ll::TypedStorage<8, 32, ::std::optional<::MaxStackSizeItemComponent>>                   maxStackSizeItemComponent;
+    ::ll::TypedStorage<8, 40, ::std::optional<::FoodItemComponentData_v1_20_30>> foodItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::FuelItemComponent>> fuelItemComponent;
+    ::ll::TypedStorage<8, 48, ::std::optional<::IconItemComponentLegacyFactoryData>> iconItemComponent;
+    ::ll::TypedStorage<8, 72, ::std::optional<::PlanterItemComponentLegacyFactoryData>> planterItemComponent;
+    ::ll::TypedStorage<8, 208, ::std::optional<::ProjectileItemComponent>> projectileItemComponent;
+    ::ll::TypedStorage<8, 48, ::std::optional<::RepairableItemComponent>> repairableItemComponent;
+    ::ll::TypedStorage<8, 48, ::std::optional<::ShooterItemComponentLegacyFactoryData>> shooterItemComponent;
+    ::ll::TypedStorage<4, 40, ::std::optional<::ThrowableItemComponentLegacyFactoryData>> throwableItemComponent;
+    ::ll::TypedStorage<4, 24, ::std::optional<::WearableItemComponentLegacyFactoryData>> wearableItemComponent;
+    ::ll::TypedStorage<8, 40, ::std::optional<::RecordItemComponent>> recordItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::MaxStackSizeItemComponent>> maxStackSizeItemComponent;
     ::ll::TypedStorage<8, 32, ::std::optional<::CanDestroyInCreativeItemComponent>> canDestroyInCreativeItemComponent;
-    ::ll::TypedStorage<8, 72, ::std::optional<::HoverTextColorItemComponent>>       hoverTextColorItemComponent;
+    ::ll::TypedStorage<8, 72, ::std::optional<::HoverTextColorItemComponent>> hoverTextColorItemComponent;
     ::ll::TypedStorage<4, 24, ::std::optional<::UseModifiersItemComponentLegacyFactoryData>> useModifiersItemComponent;
-    ::ll::TypedStorage<8, 32, ::std::optional<::StackedByDataItemComponent>>                 stackedByDataItemComponent;
-    ::ll::TypedStorage<8, 32, ::std::optional<::GlintItemComponent>>                         glintItemComponent;
-    ::ll::TypedStorage<8, 32, ::std::optional<::HandEquippedItemComponent>>                  handEquippedItemComponent;
-    ::ll::TypedStorage<8, 32, ::std::optional<::ShouldDespawnItemComponent>>                 shouldDespawnItemComponent;
-    ::ll::TypedStorage<8, 32, ::std::optional<::DamageItemComponent>>                        damageItemComponent;
-    ::ll::TypedStorage<8, 32, ::std::optional<::AllowOffHandItemComponent>>                  allowOffHandItemComponent;
-    ::ll::TypedStorage<8, 32, ::std::optional<::LiquidClippedItemComponent>>                 liquidClippedItemComponent;
-    ::ll::TypedStorage<8, 32, ::std::optional<::UseAnimationItemComponent>>                  useAnimationItemComponent;
-    ::ll::TypedStorage<8, 64, ::std::optional<::EnchantableItemComponent>>                   enchantableItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::StackedByDataItemComponent>> stackedByDataItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::GlintItemComponent>> glintItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::HandEquippedItemComponent>> handEquippedItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::ShouldDespawnItemComponent>> shouldDespawnItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::DamageItemComponent>> damageItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::AllowOffHandItemComponent>> allowOffHandItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::LiquidClippedItemComponent>> liquidClippedItemComponent;
+    ::ll::TypedStorage<8, 32, ::std::optional<::UseAnimationItemComponent>> useAnimationItemComponent;
+    ::ll::TypedStorage<8, 64, ::std::optional<::EnchantableItemComponent>> enchantableItemComponent;
     ::ll::TypedStorage<8, 64, ::std::optional<::InteractButtonItemComponent>> interactButtonItemComponent;
     // NOLINTEND
 
@@ -112,4 +112,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

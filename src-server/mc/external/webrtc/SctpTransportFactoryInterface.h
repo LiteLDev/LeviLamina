@@ -19,8 +19,7 @@ public:
     virtual ~SctpTransportFactoryInterface() = default;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::cricket::SctpTransportInternal>
-    CreateSctpTransport(::webrtc::Environment const&, ::rtc::PacketTransportInternal*) = 0;
+    virtual ::std::unique_ptr<::cricket::SctpTransportInternal> CreateSctpTransport(::webrtc::Environment const&, ::rtc::PacketTransportInternal*) = 0;
     // NOLINTEND
 
 public:
@@ -28,6 +27,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

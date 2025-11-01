@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/editor/BrushFlattenMode.h"
-#include "mc/editor/DirectionalPlacementMode.h"
+#include "mc/common/editor/BrushFlattenMode.h"
+#include "mc/common/editor/DirectionalPlacementMode.h"
 #include "mc/editor/services/native_brush/BrushPaintCompletionState.h"
 #include "mc/editor/services/native_brush/BrushPaintMode.h"
 
@@ -95,12 +95,18 @@ public:
     virtual void setItemPlacement(::HashedString const&) = 0;
 
     // vIndex: 24
-    virtual void pushBlockStateOverride(::HashedString const&, ::std::variant<int, ::std::string, bool> const&) = 0;
+    virtual ::HashedString const& getItemPlacement() const = 0;
 
     // vIndex: 25
-    virtual void clearBlockStateOverrides() = 0;
+    virtual bool const isItemPlacementActive() const = 0;
 
     // vIndex: 26
+    virtual void pushBlockStateOverride(::HashedString const&, ::std::variant<int, ::std::string, bool> const&) = 0;
+
+    // vIndex: 27
+    virtual void clearBlockStateOverrides() = 0;
+
+    // vIndex: 28
     virtual void setBlockFacePlacementBasedOnCamera(bool const) = 0;
     // NOLINTEND
 
@@ -115,6 +121,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

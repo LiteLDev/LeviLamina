@@ -4,7 +4,8 @@
 
 namespace edu::auth {
 
-template <typename T0, typename T1>
-class CredentialReplaySubject {};
+template<typename T0, typename T1>
+class CredentialReplaySubject {
+};
 
-} // namespace edu::auth
+}

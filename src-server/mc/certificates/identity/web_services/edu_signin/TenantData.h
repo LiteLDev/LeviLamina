@@ -16,6 +16,7 @@ public:
     TenantData& operator=(TenantData const&);
     TenantData(TenantData const&);
     TenantData();
+
 };
 
-} // namespace WebServices::EduSignin
+}

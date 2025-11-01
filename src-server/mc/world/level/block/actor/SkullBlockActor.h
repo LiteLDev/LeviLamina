@@ -20,9 +20,9 @@ class SkullBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                   mRotation;
-    ::ll::TypedStorage<1, 1, bool>                    mIsDoingAnimation;
-    ::ll::TypedStorage<4, 4, int>                     mAnimationTickCount;
+    ::ll::TypedStorage<4, 4, float> mRotation;
+    ::ll::TypedStorage<1, 1, bool> mIsDoingAnimation;
+    ::ll::TypedStorage<4, 4, int> mAnimationTickCount;
     ::ll::TypedStorage<4, 4, ::SkullBlock::SkullType> mSkullType;
     // NOLINTEND
 
@@ -41,10 +41,10 @@ public:
     // vIndex: 9
     virtual void tick(::BlockSource& region) /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -72,4 +72,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

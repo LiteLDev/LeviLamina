@@ -13,7 +13,7 @@ struct EnumValue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk8e0140;
+    ::ll::UntypedStorage<8, 8> mUnk8e0140;
     ::ll::UntypedStorage<8, 32> mUnk39fe59;
     ::ll::UntypedStorage<8, 40> mUnk3f41b8;
     ::ll::UntypedStorage<8, 24> mUnkf17687;
@@ -38,6 +38,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::cereal::internal::EnumValue const&);
     // NOLINTEND
+
 };
 
-} // namespace cereal::internal
+}

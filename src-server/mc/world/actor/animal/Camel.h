@@ -18,9 +18,9 @@ class Camel : public ::Animal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                             mWasSitting;
+    ::ll::TypedStorage<1, 1, bool> mWasSitting;
     ::ll::TypedStorage<8, 24, ::std::optional<::ExpiringTick>> mDashCooldown;
-    ::ll::TypedStorage<1, 1, bool>                             mWasInCooldown;
+    ::ll::TypedStorage<1, 1, bool> mWasInCooldown;
     // NOLINTEND
 
 public:
@@ -46,11 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Camel(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI Camel(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCAPI void _monitorSitting();
     // NOLINTEND
@@ -58,11 +54,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -80,4 +72,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

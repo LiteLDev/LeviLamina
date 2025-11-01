@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
-#include "mc/deps/profiler/CounterTokenMarker.h"
+#include "mc/deps/profiler/platform/CounterToken.h"
 #include "mc/deps/raknet/RakNetStatistics.h"
 #include "mc/network/ClientOrServerNetworkSystemRef.h"
 #include "mc/network/PacketObserver.h"
@@ -27,7 +27,7 @@ public:
     // clang-format off
     struct OverviewStats;
     // clang-format on
-
+    
     // NetworkStatistics inner types define
     struct OverviewStats {
     public:
@@ -38,44 +38,45 @@ public:
         ::ll::UntypedStorage<4, 4> mUnk9d2b80;
         ::ll::UntypedStorage<4, 4> mUnkdda2a4;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         OverviewStats& operator=(OverviewStats const&);
         OverviewStats(OverviewStats const&);
         OverviewStats();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::TrackerType const>                                         mType;
-    ::ll::TypedStorage<8, 16, ::ClientOrServerNetworkSystemRef>                           mNetwork;
+    ::ll::TypedStorage<4, 4, ::TrackerType const> mType;
+    ::ll::TypedStorage<8, 16, ::ClientOrServerNetworkSystemRef> mNetwork;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> const> mNetworkDebugManager;
-    ::ll::TypedStorage<4, 4, int>                                                         mTicks;
-    ::ll::TypedStorage<4, 16, ::NetworkStatistics::OverviewStats>                         mTotalOverview;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::PacketObserver::PacketStats>>   mTotalPacketStats;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::PacketObserver::PacketStats>>   mDebuggerPacketStats;
-    ::ll::TypedStorage<8, 24, ::std::vector<::PacketObserver::PacketStats>>               mTotalCSVPacketStats;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::PacketObserver::PacketStats>>   mCurrentPacketStats;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>>       mCurrentSourceNetworkIdentifierStrings;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>>       mCurrentTargetNetworkIdentifierStrings;
-    ::ll::TypedStorage<8, 10560, ::std::array<::std::string, 330>>               mPacketNames;
-    ::ll::TypedStorage<4, 16, ::NetworkStatistics::OverviewStats>                mCurrentOverview;
+    ::ll::TypedStorage<4, 4, int> mTicks;
+    ::ll::TypedStorage<4, 16, ::NetworkStatistics::OverviewStats> mTotalOverview;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::PacketObserver::PacketStats>> mTotalPacketStats;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::PacketObserver::PacketStats>> mDebuggerPacketStats;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PacketObserver::PacketStats>> mTotalCSVPacketStats;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::PacketObserver::PacketStats>> mCurrentPacketStats;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>> mCurrentSourceNetworkIdentifierStrings;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::string>> mCurrentTargetNetworkIdentifierStrings;
+    ::ll::TypedStorage<8, 10624, ::std::array<::std::string, 332>> mPacketNames;
+    ::ll::TypedStorage<4, 16, ::NetworkStatistics::OverviewStats> mCurrentOverview;
     ::ll::TypedStorage<8, 24, ::std::vector<::NetworkStatistics::OverviewStats>> mLastSeconds;
-    ::ll::TypedStorage<8, 8, double>                                             mStartSeconds;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>                       mRakNetStatsReadingLock;
-    ::ll::TypedStorage<8, 224, ::RakNet::RakNetStatistics>                       mRakNetStatsReading;
+    ::ll::TypedStorage<8, 8, double> mStartSeconds;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mRakNetStatsReadingLock;
+    ::ll::TypedStorage<8, 224, ::RakNet::RakNetStatistics> mRakNetStatsReading;
     ::ll::TypedStorage<8, 64, ::std::function<bool(::RakNet::RakNetStatistics&)>> mGetRakNetStatsReading;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Core::OutputFileStream>>         mCSVFile;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterTokenMarker>                 mUserBytesPerSecSentCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterTokenMarker>                 mActualBytesPerSecSentCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterTokenMarker> mActualBytesPerSecReceivedCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterTokenMarker> mUserBytesTotalSentCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterTokenMarker> mActualBytesTotalSentCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterTokenMarker> mActualBytesTotalReceivedCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterTokenMarker> mPacketLossPercentagePerSecCounterToken;
-    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterTokenMarker> mPacketLossPercentageTotalCounterToken;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Core::OutputFileStream>> mCSVFile;
+    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mUserBytesPerSecSentCounterToken;
+    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mActualBytesPerSecSentCounterToken;
+    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mActualBytesPerSecReceivedCounterToken;
+    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mUserBytesTotalSentCounterToken;
+    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mActualBytesTotalSentCounterToken;
+    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mActualBytesTotalReceivedCounterToken;
+    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mPacketLossPercentagePerSecCounterToken;
+    ::ll::TypedStorage<1, 1, ::Core::Profile::CounterToken> mPacketLossPercentageTotalCounterToken;
     // NOLINTEND
 
 public:
@@ -107,19 +108,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkStatistics(
-        ::ClientOrServerNetworkSystemRef&&                   network,
-        ::TrackerType                                        type,
-        ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager
-    );
+    MCAPI NetworkStatistics(::ClientOrServerNetworkSystemRef&& network, ::TrackerType type, ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading, ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager);
 
-    MCAPI NetworkStatistics(
-        ::ServerNetworkSystem&                               server,
-        ::TrackerType                                        type,
-        ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager
-    );
+    MCAPI NetworkStatistics(::ServerNetworkSystem& server, ::TrackerType type, ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading, ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager);
 
     MCAPI void _initRakNetProfileTracking();
 
@@ -133,19 +124,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ClientOrServerNetworkSystemRef&&                   network,
-        ::TrackerType                                        type,
-        ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager
-    );
+    MCAPI void* $ctor(::ClientOrServerNetworkSystemRef&& network, ::TrackerType type, ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading, ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager);
 
-    MCAPI void* $ctor(
-        ::ServerNetworkSystem&                               server,
-        ::TrackerType                                        type,
-        ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
-        ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager
-    );
+    MCAPI void* $ctor(::ServerNetworkSystem& server, ::TrackerType type, ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading, ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager);
     // NOLINTEND
 
 public:
@@ -173,4 +154,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

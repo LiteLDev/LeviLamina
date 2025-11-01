@@ -17,9 +17,9 @@ public:
     // ChangeSettingCommand inner types define
     enum class Setting : int {
         AllowCheats = 0,
-        Difficulty  = 1,
+        Difficulty = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -62,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

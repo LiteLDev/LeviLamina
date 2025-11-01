@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 48, ::HashedString> mMaterialId;
-    ::ll::TypedStorage<8, 32, ::std::string>  mColor;
+    ::ll::TypedStorage<8, 32, ::std::string> mColor;
     ::ll::TypedStorage<8, 48, ::HashedString> mItemName;
     // NOLINTEND
 
@@ -40,6 +40,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
+
 };

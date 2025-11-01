@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::ModuleBinding>> modules;
-    ::ll::TypedStorage<8, 144, ::Scripting::GlobalBinding>               globals;
+    ::ll::TypedStorage<8, 144, ::Scripting::GlobalBinding> globals;
     // NOLINTEND
 
 public:
@@ -45,6 +45,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

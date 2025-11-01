@@ -18,7 +18,7 @@ public:
     ::ll::UntypedStorage<4, 12> mUnk613ab5;
     ::ll::UntypedStorage<4, 24> mUnk4964c1;
     ::ll::UntypedStorage<4, 12> mUnkc7bf8a;
-    ::ll::UntypedStorage<8, 8>  mUnk9b9140;
+    ::ll::UntypedStorage<8, 8> mUnk9b9140;
     // NOLINTEND
 
 public:
@@ -36,13 +36,11 @@ public:
 
     MCNAPI ::std::optional<::webrtc::BitrateConstraints> UpdateConstraints(::std::optional<int> const& new_start);
 
-    MCNAPI ::std::optional<::webrtc::BitrateConstraints>
-    UpdateWithClientPreferences(::webrtc::BitrateSettings const& bitrate_mask);
+    MCNAPI ::std::optional<::webrtc::BitrateConstraints> UpdateWithClientPreferences(::webrtc::BitrateSettings const& bitrate_mask);
 
     MCNAPI ::std::optional<::webrtc::BitrateConstraints> UpdateWithRelayCap(::webrtc::DataRate cap);
 
-    MCNAPI ::std::optional<::webrtc::BitrateConstraints>
-    UpdateWithSdpParameters(::webrtc::BitrateConstraints const& bitrate_config);
+    MCNAPI ::std::optional<::webrtc::BitrateConstraints> UpdateWithSdpParameters(::webrtc::BitrateConstraints const& bitrate_config);
 
     MCNAPI ~RtpBitrateConfigurator();
     // NOLINTEND
@@ -58,6 +56,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

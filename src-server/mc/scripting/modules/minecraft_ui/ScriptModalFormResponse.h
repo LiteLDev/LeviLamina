@@ -28,8 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormResponse&
-    operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormResponse&&);
+    MCNAPI ::ScriptModuleMinecraftServerUI::ScriptModalFormResponse& operator=(::ScriptModuleMinecraftServerUI::ScriptModalFormResponse&&);
 
     MCNAPI ~ScriptModalFormResponse();
     // NOLINTEND
@@ -45,6 +44,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraftServerUI
+}

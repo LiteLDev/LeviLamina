@@ -14,6 +14,7 @@ public:
     // vIndex: 0
     virtual ~GoogCcFeedbackNetworkControllerFactory() /*override*/ = default;
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

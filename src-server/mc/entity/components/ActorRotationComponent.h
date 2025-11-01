@@ -12,4 +12,5 @@ public:
     ::ll::TypedStorage<4, 8, ::Vec2> mRotationDegree;
     ::ll::TypedStorage<4, 8, ::Vec2> mRotationDegreePrevious;
     // NOLINTEND
+
 };

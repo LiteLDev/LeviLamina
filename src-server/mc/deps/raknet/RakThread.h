@@ -4,6 +4,7 @@
 
 namespace RakNet {
 
-class RakThread {};
+class RakThread {
+};
 
-} // namespace RakNet
+}

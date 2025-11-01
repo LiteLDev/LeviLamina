@@ -32,25 +32,9 @@ struct MoveSpeedCapSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tick(
-        ::ViewT<::StrictEntityContext, ::MoveRequestComponent> view,
-        ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorIsImmobileFlagComponent const>>
-            actorView,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::MobFlagComponent>,
-            ::MovementAttributesComponent const,
-            ::Optional<::ActorIsKnockedBackOnDeathFlagComponent const>> mobView,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::ActorDataFlagComponent const,
-            ::Optional<::VehicleInputIntentComponent const>,
-            ::Include<::OnGroundFlagComponent, ::HorseFlagComponent>,
-            ::Exclude<::MobAllowStandSlidingFlagComponent, ::MobIsJumpingFlagComponent>>               horseView,
-        ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>>                                onlyHorseView,
-        ::ViewT<::StrictEntityContext, ::PlayerIsSleepingFlagComponent const, ::PlayerComponent const> playerView
-    );
+    MCNAPI static void tick(::ViewT<::StrictEntityContext, ::MoveRequestComponent> view, ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::ActorIsImmobileFlagComponent const>> actorView, ::ViewT<::StrictEntityContext, ::Include<::MobFlagComponent>, ::MovementAttributesComponent const, ::Optional<::ActorIsKnockedBackOnDeathFlagComponent const>> mobView, ::ViewT<::StrictEntityContext, ::ActorDataFlagComponent const, ::Optional<::VehicleInputIntentComponent const>, ::Include<::OnGroundFlagComponent, ::HorseFlagComponent>, ::Exclude<::MobAllowStandSlidingFlagComponent, ::MobIsJumpingFlagComponent>> horseView, ::ViewT<::StrictEntityContext, ::Include<::HorseFlagComponent>> onlyHorseView, ::ViewT<::StrictEntityContext, ::PlayerIsSleepingFlagComponent const, ::PlayerComponent const> playerView);
     // NOLINTEND
+
 };
 
-} // namespace VanillaSystems
+}

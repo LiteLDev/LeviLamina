@@ -2,5 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <typename T0>
-class Optional {};
+template<typename T0>
+class Optional {
+};

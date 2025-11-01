@@ -22,11 +22,7 @@ public:
     virtual ~DtlsTransportFactory() = default;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::cricket::DtlsTransportInternal> CreateDtlsTransport(
-        ::cricket::IceTransportInternal*,
-        ::webrtc::CryptoOptions const&,
-        ::rtc::SSLProtocolVersion
-    ) = 0;
+    virtual ::std::unique_ptr<::cricket::DtlsTransportInternal> CreateDtlsTransport(::cricket::IceTransportInternal*, ::webrtc::CryptoOptions const&, ::rtc::SSLProtocolVersion) = 0;
     // NOLINTEND
 
 public:
@@ -34,6 +30,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

@@ -8,4 +8,4 @@ namespace ShelfBlockActorKeys {
 MCAPI ::std::string_view const& ITEMS();
 // NOLINTEND
 
-} // namespace ShelfBlockActorKeys
+}

@@ -8,9 +8,9 @@ struct RequestHeader {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkefe2f4;
+    ::ll::UntypedStorage<4, 4> mUnkefe2f4;
     ::ll::UntypedStorage<8, 32> mUnk91d853;
-    ::ll::UntypedStorage<1, 1>  mUnkc57e98;
+    ::ll::UntypedStorage<1, 1> mUnkc57e98;
     // NOLINTEND
 
 public:
@@ -30,6 +30,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace CodeBuilder
+}

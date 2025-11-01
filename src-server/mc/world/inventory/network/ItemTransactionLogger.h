@@ -22,4 +22,4 @@ MCNAPI void log(::InventoryTransactionPacket const& packet, ::std::string const&
 MCNAPI void log(::ItemStackResponsePacket const& packet, ::std::string const& message);
 // NOLINTEND
 
-} // namespace ItemTransactionLogger
+}

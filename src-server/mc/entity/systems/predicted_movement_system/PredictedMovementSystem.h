@@ -29,36 +29,11 @@ namespace PredictedMovementSystem {
 // NOLINTBEGIN
 MCNAPI void _disablePrediction(::PredictedMovementComponent& predictedMovement);
 
-MCNAPI void _tickPredictedMovement(
-    ::PredictedMovementComponent&                    predictedMovement,
-    ::StateVectorComponent&                          stateVector,
-    ::ActorOwnerComponent&                           actorOwnerComponent,
-    ::Optional<::MobFlagComponent const>             isMob,
-    ::Optional<::VehicleInputIntentComponent const>  vehicle,
-    ::Optional<::MovementInterpolatorComponent>      interpolator,
-    ::Optional<::ActorRotationComponent const>       actorRotation,
-    ::Optional<::OnGroundFlagComponent const>        onGround,
-    ::Optional<::ActorHeadRotationComponent const>   headRotation,
-    ::PredictedMovementSystem::SystemUniforms const& uniforms
-);
+MCNAPI void _tickPredictedMovement(::PredictedMovementComponent& predictedMovement, ::StateVectorComponent& stateVector, ::ActorOwnerComponent& actorOwnerComponent, ::Optional<::MobFlagComponent const> isMob, ::Optional<::VehicleInputIntentComponent const> vehicle, ::Optional<::MovementInterpolatorComponent> interpolator, ::Optional<::ActorRotationComponent const> actorRotation, ::Optional<::OnGroundFlagComponent const> onGround, ::Optional<::ActorHeadRotationComponent const> headRotation, ::PredictedMovementSystem::SystemUniforms const& uniforms);
 
-MCNAPI void _tickSystem(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::ActorTickNeededComponent>,
-        ::PredictedMovementComponent,
-        ::StateVectorComponent,
-        ::ActorOwnerComponent,
-        ::Optional<::MobFlagComponent const>,
-        ::Optional<::VehicleInputIntentComponent const>,
-        ::Optional<::MovementInterpolatorComponent>,
-        ::Optional<::ActorRotationComponent const>,
-        ::Optional<::OnGroundFlagComponent const>,
-        ::Optional<::ActorHeadRotationComponent const>>          view,
-    ::ViewT<::StrictEntityContext, ::PredictedMovementComponent> disablingView
-);
+MCNAPI void _tickSystem(::ViewT<::StrictEntityContext, ::Include<::ActorTickNeededComponent>, ::PredictedMovementComponent, ::StateVectorComponent, ::ActorOwnerComponent, ::Optional<::MobFlagComponent const>, ::Optional<::VehicleInputIntentComponent const>, ::Optional<::MovementInterpolatorComponent>, ::Optional<::ActorRotationComponent const>, ::Optional<::OnGroundFlagComponent const>, ::Optional<::ActorHeadRotationComponent const>> view, ::ViewT<::StrictEntityContext, ::PredictedMovementComponent> disablingView);
 
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace PredictedMovementSystem
+}

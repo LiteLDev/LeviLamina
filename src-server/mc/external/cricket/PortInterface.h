@@ -30,11 +30,11 @@ class PortInterface {
 public:
     // PortInterface inner types define
     enum class CandidateOrigin : int {
-        ThisPort  = 0,
+        ThisPort = 0,
         OtherPort = 1,
-        Message   = 2,
+        Message = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -86,8 +86,7 @@ public:
     virtual ::cricket::Connection* GetConnection(::rtc::SocketAddress const&) = 0;
 
     // vIndex: 11
-    virtual ::cricket::Connection*
-    CreateConnection(::cricket::Candidate const&, ::cricket::PortInterface::CandidateOrigin) = 0;
+    virtual ::cricket::Connection* CreateConnection(::cricket::Candidate const&, ::cricket::PortInterface::CandidateOrigin) = 0;
 
     // vIndex: 12
     virtual int SetOption(::rtc::Socket::Option, int) = 0;
@@ -108,8 +107,7 @@ public:
     virtual int SendTo(void const*, uint64, ::rtc::SocketAddress const&, ::rtc::PacketOptions const&, bool) = 0;
 
     // vIndex: 18
-    virtual void
-    SendBindingErrorResponse(::cricket::StunMessage*, ::rtc::SocketAddress const&, int, ::std::string_view) = 0;
+    virtual void SendBindingErrorResponse(::cricket::StunMessage*, ::rtc::SocketAddress const&, int, ::std::string_view) = 0;
 
     // vIndex: 19
     virtual void SubscribePortDestroyed(::std::function<void(::cricket::PortInterface*)>) = 0;
@@ -163,13 +161,7 @@ public:
     virtual ::rtc::DiffServCodePoint StunDscpValue() const = 0;
 
     // vIndex: 36
-    virtual bool GetStunMessage(
-        char const*,
-        uint64,
-        ::rtc::SocketAddress const&,
-        ::std::unique_ptr<::cricket::IceMessage>*,
-        ::std::string*
-    ) = 0;
+    virtual bool GetStunMessage(char const*, uint64, ::rtc::SocketAddress const&, ::std::unique_ptr<::cricket::IceMessage>*, ::std::string*) = 0;
 
     // vIndex: 37
     virtual bool ParseStunUsername(::cricket::StunMessage const*, ::std::string*, ::std::string*) const = 0;
@@ -213,6 +205,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

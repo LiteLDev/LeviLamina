@@ -17,11 +17,11 @@ public:
     // Spider inner types define
     enum class Type : int {
         Normal = 0,
-        Cave   = 1,
+        Cave = 1,
     };
-
+    
     using DataFlagIdType = char;
-
+    
 public:
     // prevent constructor by default
     Spider();
@@ -45,21 +45,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Spider(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI Spider(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -77,4 +69,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

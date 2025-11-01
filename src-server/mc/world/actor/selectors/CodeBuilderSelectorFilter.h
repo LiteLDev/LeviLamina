@@ -6,7 +6,7 @@ struct CodeBuilderSelectorFilter {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkcc5927;
+    ::ll::UntypedStorage<1, 1> mUnkcc5927;
     ::ll::UntypedStorage<8, 32> mUnk9d442a;
     // NOLINTEND
 
@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

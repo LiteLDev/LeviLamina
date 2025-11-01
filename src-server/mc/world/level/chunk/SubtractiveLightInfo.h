@@ -20,4 +20,5 @@ public:
     SubtractiveLightInfo& operator=(SubtractiveLightInfo const&);
     SubtractiveLightInfo(SubtractiveLightInfo const&);
     SubtractiveLightInfo();
+
 };

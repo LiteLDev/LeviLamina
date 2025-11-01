@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/actor/Hopper.h"
-#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -23,4 +23,5 @@ public:
     // NOLINTBEGIN
     MCNAPI bool pullInItems(::Actor& owner);
     // NOLINTEND
+
 };

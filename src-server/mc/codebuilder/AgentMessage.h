@@ -8,7 +8,7 @@ struct AgentMessage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk5dde42;
+    ::ll::UntypedStorage<4, 4> mUnk5dde42;
     ::ll::UntypedStorage<8, 32> mUnkf1e17b;
     ::ll::UntypedStorage<8, 16> mUnkb32a4b;
     // NOLINTEND
@@ -30,6 +30,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace CodeBuilder
+}

@@ -14,4 +14,5 @@ public:
     AutoCompleteInformation& operator=(AutoCompleteInformation const&);
     AutoCompleteInformation(AutoCompleteInformation const&);
     AutoCompleteInformation();
+
 };

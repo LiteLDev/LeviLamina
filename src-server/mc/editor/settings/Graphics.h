@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk705d9d;
-    ::ll::UntypedStorage<1, 6>  mUnk9a807a;
+    ::ll::UntypedStorage<1, 11> mUnk9a807a;
     // NOLINTEND
 
 public:
@@ -25,10 +25,17 @@ public:
     Graphics();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void updateSettings(::Editor::Settings::GraphicsProps const& props, bool notifyUpdate);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
+
 };
 
-} // namespace Editor::Settings
+}

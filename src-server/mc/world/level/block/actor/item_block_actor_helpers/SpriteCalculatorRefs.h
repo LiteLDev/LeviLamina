@@ -14,7 +14,7 @@ struct SpriteCalculatorRefs {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ClockSpriteCalculator&>   mClockSpriteCalc;
+    ::ll::TypedStorage<8, 8, ::ClockSpriteCalculator&> mClockSpriteCalc;
     ::ll::TypedStorage<8, 8, ::CompassSpriteCalculator&> mCompassSpriteCalc;
     ::ll::TypedStorage<8, 8, ::CompassSpriteCalculator&> mRecoveryCompassSpriteCalc;
     // NOLINTEND
@@ -24,6 +24,7 @@ public:
     SpriteCalculatorRefs& operator=(SpriteCalculatorRefs const&);
     SpriteCalculatorRefs(SpriteCalculatorRefs const&);
     SpriteCalculatorRefs();
+
 };
 
-} // namespace ItemBlockActorHelpers
+}

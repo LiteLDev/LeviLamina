@@ -37,6 +37,7 @@ public:
     StorageCache& operator=(StorageCache const&);
     StorageCache(StorageCache const&);
     StorageCache();
+
 };
 
-} // namespace History
+}

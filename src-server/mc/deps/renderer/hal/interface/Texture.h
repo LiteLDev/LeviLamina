@@ -4,6 +4,7 @@
 
 namespace mce {
 
-class Texture {};
+class Texture {
+};
 
-} // namespace mce
+}

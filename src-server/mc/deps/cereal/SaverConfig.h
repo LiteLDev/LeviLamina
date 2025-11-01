@@ -16,6 +16,7 @@ public:
     SaverConfig& operator=(SaverConfig const&);
     SaverConfig(SaverConfig const&);
     SaverConfig();
+
 };
 
-} // namespace cereal
+}

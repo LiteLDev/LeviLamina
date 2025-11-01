@@ -65,8 +65,7 @@ public:
     virtual void itemAcquired(::Player const*, ::ItemDescriptor const&, int, uint, int) const = 0;
 
     // vIndex: 13
-    virtual void
-    itemCrafted(::Player const*, bool, ::ItemInstance const&, bool, bool, bool, int, int, int, bool, bool) const = 0;
+    virtual void itemCrafted(::Player const*, bool, ::ItemInstance const&, bool, bool, bool, int, int, int, bool, bool) const = 0;
 
     // vIndex: 14
     virtual void itemDropped(::Player const*, ::ItemDescriptor const&) const = 0;
@@ -105,8 +104,7 @@ public:
     virtual void playerLeave(::Player const*) const = 0;
 
     // vIndex: 26
-    virtual void
-    playerMessage(::std::string const&, ::std::string const&, ::std::string const&, ::std::string const&) const = 0;
+    virtual void playerMessage(::std::string const&, ::std::string const&, ::std::string const&, ::std::string const&) const = 0;
 
     // vIndex: 27
     virtual void playerTeleported(::Player const*, float, int, int) const = 0;
@@ -121,14 +119,7 @@ public:
     virtual void targetBlockHit(::Player const*, int const) const = 0;
 
     // vIndex: 31
-    virtual void tradeCompleted(
-        ::Player const*,
-        ::Actor*,
-        ::ItemDescriptor const&,
-        ::ItemDescriptor const&,
-        ::ItemInstance const&,
-        int
-    ) const = 0;
+    virtual void tradeCompleted(::Player const*, ::Actor*, ::ItemDescriptor const&, ::ItemDescriptor const&, ::ItemInstance const&, int) const = 0;
     // NOLINTEND
 
 public:
@@ -142,6 +133,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace CodeBuilder
+}

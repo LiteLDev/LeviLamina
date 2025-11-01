@@ -4,7 +4,8 @@
 
 namespace brstd {
 
-template <typename T0>
-class copyable_function {};
+template<typename T0>
+class copyable_function {
+};
 
-} // namespace brstd
+}

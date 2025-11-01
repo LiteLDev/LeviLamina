@@ -2415,4 +2415,4 @@ MCAPI ::HashedString const& YellowWool();
 MCAPI ::HashedString const& ZombieHead();
 // NOLINTEND
 
-} // namespace VanillaBlockTypeIds
+}

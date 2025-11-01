@@ -16,6 +16,7 @@ public:
     CredentialsRefreshSuccess& operator=(CredentialsRefreshSuccess const&);
     CredentialsRefreshSuccess(CredentialsRefreshSuccess const&);
     CredentialsRefreshSuccess();
+
 };
 
-} // namespace edu::auth
+}

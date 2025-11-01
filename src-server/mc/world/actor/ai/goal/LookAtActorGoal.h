@@ -18,15 +18,15 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mLookAt;
-    ::ll::TypedStorage<4, 4, float>                mLookDistance;
-    ::ll::TypedStorage<4, 4, int>                  mAngleOfViewX;
-    ::ll::TypedStorage<4, 4, int>                  mAngleOfViewY;
-    ::ll::TypedStorage<4, 4, int>                  mLookTime;
-    ::ll::TypedStorage<4, 4, int>                  mMinLookTime;
-    ::ll::TypedStorage<4, 4, int>                  mMaxLookTime;
-    ::ll::TypedStorage<4, 4, float>                mProbability;
-    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>  mTargetFilter;
-    ::ll::TypedStorage<8, 8, ::Mob&>               mMob;
+    ::ll::TypedStorage<4, 4, float> mLookDistance;
+    ::ll::TypedStorage<4, 4, int> mAngleOfViewX;
+    ::ll::TypedStorage<4, 4, int> mAngleOfViewY;
+    ::ll::TypedStorage<4, 4, int> mLookTime;
+    ::ll::TypedStorage<4, 4, int> mMinLookTime;
+    ::ll::TypedStorage<4, 4, int> mMaxLookTime;
+    ::ll::TypedStorage<4, 4, float> mProbability;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mTargetFilter;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
 
 public:
@@ -93,4 +93,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

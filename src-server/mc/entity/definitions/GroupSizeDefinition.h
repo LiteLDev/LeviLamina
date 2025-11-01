@@ -6,7 +6,7 @@ class GroupSizeDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkba22e3;
+    ::ll::UntypedStorage<4, 4> mUnkba22e3;
     ::ll::UntypedStorage<8, 64> mUnka73a42;
     // NOLINTEND
 
@@ -15,4 +15,5 @@ public:
     GroupSizeDefinition& operator=(GroupSizeDefinition const&);
     GroupSizeDefinition(GroupSizeDefinition const&);
     GroupSizeDefinition();
+
 };

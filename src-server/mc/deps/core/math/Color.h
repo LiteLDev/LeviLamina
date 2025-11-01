@@ -75,6 +75,7 @@ public:
 
     MCAPI void* $ctor(float r_, float g_, float b_, float a_);
     // NOLINTEND
+
 };
 
-} // namespace mce
+}

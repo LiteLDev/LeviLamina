@@ -17,11 +17,7 @@ MCNAPI bool isAffectedByFreezeEffect(::Actor const& actor);
 
 MCNAPI void processFreezeEffect(::Actor& actor, ::FreezingComponent const& freezeComp);
 
-MCNAPI void tickFreezeComponent(
-    ::EntityContext&       entity,
-    ::ActorOwnerComponent& actorOwnerComponent,
-    ::FreezingComponent&   freezingComponent
-);
+MCNAPI void tickFreezeComponent(::EntityContext& entity, ::ActorOwnerComponent& actorOwnerComponent, ::FreezingComponent& freezingComponent);
 // NOLINTEND
 
-} // namespace FreezingSystemInternal
+}

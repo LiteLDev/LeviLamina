@@ -16,10 +16,10 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnk26e6b4;
     ::ll::UntypedStorage<8, 32> mUnk380d66;
-    ::ll::UntypedStorage<1, 1>  mUnk3f48e4;
-    ::ll::UntypedStorage<1, 1>  mUnk8adcca;
-    ::ll::UntypedStorage<1, 1>  mUnkd72f6a;
-    ::ll::UntypedStorage<1, 1>  mUnk628078;
+    ::ll::UntypedStorage<1, 1> mUnk3f48e4;
+    ::ll::UntypedStorage<1, 1> mUnk8adcca;
+    ::ll::UntypedStorage<1, 1> mUnkd72f6a;
+    ::ll::UntypedStorage<1, 1> mUnk628078;
     ::ll::UntypedStorage<8, 24> mUnk844666;
     // NOLINTEND
 
@@ -32,12 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void checkUserStorage(
-        ::std::weak_ptr<::Core::FileStorageArea>& fileStorageAreaWeakPtr,
-        uint64                                    freeSpace,
-        uint64                                    usedSpace,
-        uint64                                    totalCapacity
-    );
+    MCNAPI void checkUserStorage(::std::shared_ptr<::Core::FileStorageArea> const& fileStorageArea, uint64 freeSpace, uint64 usedSpace, uint64 totalCapacity, bool canExtendSize);
 
     MCNAPI ~StorageAreaState();
     // NOLINTEND
@@ -47,6 +42,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

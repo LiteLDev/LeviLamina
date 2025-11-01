@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/WidgetComponentType.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
-#include "mc/editor/WidgetComponentType.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 #include "mc/scripting/PrimitiveType.h"
 
@@ -54,37 +54,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptWidgetComponentRenderPrim(::Editor::ScriptModule::ScriptWidgetComponentRenderPrim const&);
 
-    MCNAPI ScriptWidgetComponentRenderPrim(
-        ::Editor::ServiceProviderCollection&                                     serviceProviders,
-        ::mce::UUID const&                                                       componentId,
-        ::std::string const&                                                     componentName,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner,
-        ::Editor::ScriptModule::ScriptWidgetService&                             parentService,
-        ::std::variant<
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Box,
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Line,
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Disc,
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere>    primitiveType,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimOptions> options
-    );
+    MCNAPI ScriptWidgetComponentRenderPrim(::Editor::ServiceProviderCollection& serviceProviders, ::mce::UUID const& componentId, ::std::string const& componentName, ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner, ::Editor::ScriptModule::ScriptWidgetService& parentService, ::std::variant<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Box, ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Line, ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Disc, ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere> primitiveType, ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimOptions> options);
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::RenderHelper::PrimitiveType,
-        ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
-    _getPrimitiveType() const;
+    MCNAPI ::Scripting::Result<::Scripting::RenderHelper::PrimitiveType, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject> _getPrimitiveType() const;
 
-    MCNAPI ::Scripting::Result<
-        void,
-        ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent,
-        ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject>
-    _setPrimitive(
-        ::std::variant<
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Box,
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Line,
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Disc,
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere> const& primitive
-    );
+    MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptWidgetComponentErrorInvalidComponent, ::Editor::ScriptModule::ScriptWidgetErrorInvalidObject> _setPrimitive(::std::variant<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Box, ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Line, ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Disc, ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere> const& primitive);
     // NOLINTEND
 
 public:
@@ -98,19 +72,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentRenderPrim const&);
 
-    MCNAPI void* $ctor(
-        ::Editor::ServiceProviderCollection&                                     serviceProviders,
-        ::mce::UUID const&                                                       componentId,
-        ::std::string const&                                                     componentName,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner,
-        ::Editor::ScriptModule::ScriptWidgetService&                             parentService,
-        ::std::variant<
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Box,
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Line,
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Disc,
-            ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere>    primitiveType,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimOptions> options
-    );
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::mce::UUID const& componentId, ::std::string const& componentName, ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner, ::Editor::ScriptModule::ScriptWidgetService& parentService, ::std::variant<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Box, ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Line, ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_Disc, ::Editor::ScriptModule::ScriptWidgetComponentRenderPrimType_AxialSphere> primitiveType, ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentRenderPrimOptions> options);
     // NOLINTEND
 
 public:
@@ -124,6 +86,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

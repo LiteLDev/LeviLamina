@@ -17,9 +17,7 @@ struct ScriptEntityHitInformation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::
-        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
-            mActor;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> mActor;
     // NOLINTEND
 
 public:
@@ -39,6 +37,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

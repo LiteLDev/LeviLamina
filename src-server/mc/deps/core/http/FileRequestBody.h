@@ -13,7 +13,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkf6c20f;
     ::ll::UntypedStorage<8, 16> mUnkbdbe9d;
-    ::ll::UntypedStorage<1, 1>  mUnk84e5f4;
+    ::ll::UntypedStorage<1, 1> mUnk84e5f4;
     // NOLINTEND
 
 public:
@@ -49,6 +49,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Http
+}

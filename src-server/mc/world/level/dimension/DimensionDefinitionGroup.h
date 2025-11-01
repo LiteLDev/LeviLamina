@@ -21,23 +21,23 @@ public:
     // clang-format off
     struct DimensionDefinition;
     // clang-format on
-
+    
     // DimensionDefinitionGroup inner types define
     struct DimensionDefinition {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>             mHeightMinimum;
-        ::ll::TypedStorage<4, 4, int>             mHeightMaximum;
+        ::ll::TypedStorage<4, 4, int> mHeightMinimum;
+        ::ll::TypedStorage<4, 4, int> mHeightMaximum;
         ::ll::TypedStorage<4, 4, ::GeneratorType> mGeneratorType;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::DimensionDefinitionGroup::DimensionDefinition>>
-        mDimensionDefinitions;
+    ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::DimensionDefinitionGroup::DimensionDefinition>> mDimensionDefinitions;
     // NOLINTEND
 
 public:
@@ -52,17 +52,9 @@ public:
 
     MCNAPI DimensionDefinitionGroup(::DimensionDefinitionGroup&&);
 
-    MCNAPI DimensionDefinitionGroup(
-        ::cereal::ReflectionCtx const& ctx,
-        ::ResourcePackManager* const   rpm,
-        ::IMinecraftEventing&          eventing
-    );
+    MCNAPI DimensionDefinitionGroup(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm, ::IMinecraftEventing& eventing);
 
-    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument>
-    tryAddDimensionDefinitionByString(
-        ::std::string const&  dimensionDefinitionJSON,
-        ::DimensionDataLoader dimensionLoader
-    );
+    MCNAPI ::Puv::LoadResult<::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument> tryAddDimensionDefinitionByString(::std::string const& dimensionDefinitionJSON, ::DimensionDataLoader dimensionLoader);
 
     MCNAPI ~DimensionDefinitionGroup();
     // NOLINTEND
@@ -74,8 +66,7 @@ public:
 
     MCNAPI void* $ctor(::DimensionDefinitionGroup&&);
 
-    MCNAPI void*
-    $ctor(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm, ::IMinecraftEventing& eventing);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:
@@ -83,4 +74,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

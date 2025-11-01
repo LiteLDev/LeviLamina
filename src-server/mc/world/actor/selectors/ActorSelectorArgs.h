@@ -22,27 +22,27 @@ struct ActorSelectorArgs {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ActorSelectorType>                               mSelectionType;
-    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                   mExplicitId;
+    ::ll::TypedStorage<4, 4, ::ActorSelectorType> mSelectionType;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mExplicitId;
     ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::std::string>>> mTypeFilters;
     ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::std::string>>> mTagFilters;
     ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::std::string>>> mNameFilters;
     ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::std::string>>> mFamilyFilters;
-    ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::GameType>>>    mGameModeFilters;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>>                              mCount;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>>                            mRadiusMax;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>>                            mRadiusMin;
-    ::ll::TypedStorage<4, 20, ::std::optional<::CommandPosition>>               mPosition;
-    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>>                          mDeltas;
-    ::ll::TypedStorage<4, 12, ::std::optional<::std::pair<float, float>>>       mXRotation;
-    ::ll::TypedStorage<4, 12, ::std::optional<::std::pair<float, float>>>       mYRotation;
-    ::ll::TypedStorage<4, 12, ::std::optional<::std::pair<int, int>>>           mLevel;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                             mForceDimensionFiltering;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InvertableFilter<::GameType>>> mGameModeFilters;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> mCount;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mRadiusMax;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mRadiusMin;
+    ::ll::TypedStorage<4, 20, ::std::optional<::CommandPosition>> mPosition;
+    ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mDeltas;
+    ::ll::TypedStorage<4, 12, ::std::optional<::std::pair<float, float>>> mXRotation;
+    ::ll::TypedStorage<4, 12, ::std::optional<::std::pair<float, float>>> mYRotation;
+    ::ll::TypedStorage<4, 12, ::std::optional<::std::pair<int, int>>> mLevel;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mForceDimensionFiltering;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::CommandIntegerRange>>> mScoreFilters;
-    ::ll::TypedStorage<8, 24, ::std::vector<::HasItemFilter>>                                   mHasItemFilters;
-    ::ll::TypedStorage<8, 24, ::std::vector<::HasPermissionFilter>>                             mHasPermissionFilters;
-    ::ll::TypedStorage<8, 24, ::std::vector<::HasPropertyFilter>>                               mHasPropertyFilters;
-    ::ll::TypedStorage<8, 24, ::std::vector<::CodeBuilderSelectorFilter>>                       mCodeBuilderFilters;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HasItemFilter>> mHasItemFilters;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HasPermissionFilter>> mHasPermissionFilters;
+    ::ll::TypedStorage<8, 24, ::std::vector<::HasPropertyFilter>> mHasPropertyFilters;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CodeBuilderSelectorFilter>> mCodeBuilderFilters;
     // NOLINTEND
 
 public:
@@ -86,4 +86,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

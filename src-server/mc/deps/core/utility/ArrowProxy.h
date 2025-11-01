@@ -4,7 +4,8 @@
 
 namespace Bedrock {
 
-template <typename T0>
-struct ArrowProxy {};
+template<typename T0>
+struct ArrowProxy {
+};
 
-} // namespace Bedrock
+}

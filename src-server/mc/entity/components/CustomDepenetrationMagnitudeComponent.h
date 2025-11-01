@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::Vec3> mValue;
     // NOLINTEND
+
 };

@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mOwner;
-    ::ll::TypedStorage<8, 32, ::std::string>   mSceneName;
+    ::ll::TypedStorage<8, 32, ::std::string> mSceneName;
     // NOLINTEND
 
 public:
@@ -88,4 +88,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

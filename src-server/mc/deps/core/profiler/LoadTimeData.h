@@ -9,8 +9,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk9707d8;
-    ::ll::UntypedStorage<4, 4>  mUnke6e17d;
-    ::ll::UntypedStorage<8, 8>  mUnk721455;
+    ::ll::UntypedStorage<4, 4> mUnke6e17d;
+    ::ll::UntypedStorage<8, 8> mUnk721455;
     // NOLINTEND
 
 public:
@@ -18,6 +18,7 @@ public:
     LoadTimeData& operator=(LoadTimeData const&);
     LoadTimeData(LoadTimeData const&);
     LoadTimeData();
+
 };
 
-} // namespace Core
+}

@@ -37,14 +37,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BoundingBox findPieceBox(
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&,
-        int footX,
-        int footY,
-        int footZ,
-        int direction
-    );
+    MCAPI static ::BoundingBox findPieceBox(::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random&, int footX, int footY, int footZ, int direction);
     // NOLINTEND
 
 public:
@@ -60,4 +53,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

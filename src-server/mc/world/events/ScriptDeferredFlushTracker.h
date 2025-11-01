@@ -15,12 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> mWorkDone;
-    ::ll::TypedStorage<
-        8,
-        8,
-        ::Bedrock::PubSub::
-            Publisher<void(::ScriptDeferredFlushTracker&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>&>
-                                   mFlushingCoroutinePublisher;
+    ::ll::TypedStorage<8, 8, ::Bedrock::PubSub::Publisher<void(::ScriptDeferredFlushTracker&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>&> mFlushingCoroutinePublisher;
     ::ll::TypedStorage<1, 1, bool> mFlushingCoroutines;
     // NOLINTEND
 
@@ -29,4 +24,5 @@ public:
     ScriptDeferredFlushTracker& operator=(ScriptDeferredFlushTracker const&);
     ScriptDeferredFlushTracker(ScriptDeferredFlushTracker const&);
     ScriptDeferredFlushTracker();
+
 };

@@ -21,9 +21,9 @@ class ScriptProjectRegionService : public ::EnableGetWeakRef<::Editor::ProjectRe
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk52d039;
-    ::ll::UntypedStorage<8, 8>  mUnkce957b;
-    ::ll::UntypedStorage<8, 8>  mUnk98822a;
+    ::ll::UntypedStorage<8, 8> mUnk52d039;
+    ::ll::UntypedStorage<8, 8> mUnkce957b;
+    ::ll::UntypedStorage<8, 8> mUnk98822a;
     ::ll::UntypedStorage<8, 64> mUnk907587;
     // NOLINTEND
 
@@ -41,17 +41,11 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> disposeRegion(::std::string const& id);
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptProjectRegion>>
-    getCursorRegion();
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptProjectRegion>> getCursorRegion();
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptProjectRegion>>
-    getSelectionRegion();
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptProjectRegion>> getSelectionRegion();
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptProjectRegion>>
-    leaseRegion(::Editor::ScriptModule::ScriptProjectRegionOptions const& options);
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptProjectRegion>> leaseRegion(::Editor::ScriptModule::ScriptProjectRegionOptions const& options);
     // NOLINTEND
 
 public:
@@ -65,6 +59,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptProjectRegionService const&);
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

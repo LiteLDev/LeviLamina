@@ -21,9 +21,9 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnk34fd9e;
     ::ll::UntypedStorage<4, 16> mUnkbbfeb2;
-    ::ll::UntypedStorage<4, 4>  mUnk7c4f95;
-    ::ll::UntypedStorage<4, 4>  mUnk581d55;
-    ::ll::UntypedStorage<4, 4>  mUnka7a1fd;
+    ::ll::UntypedStorage<4, 4> mUnk7c4f95;
+    ::ll::UntypedStorage<4, 4> mUnk581d55;
+    ::ll::UntypedStorage<4, 4> mUnka7a1fd;
     ::ll::UntypedStorage<8, 24> mUnk93bef8;
     // NOLINTEND
 
@@ -60,6 +60,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Scripting::RenderHelper
+}

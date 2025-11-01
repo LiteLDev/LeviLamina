@@ -26,4 +26,5 @@ public:
     zip_source_file_operations& operator=(zip_source_file_operations const&);
     zip_source_file_operations(zip_source_file_operations const&);
     zip_source_file_operations();
+
 };

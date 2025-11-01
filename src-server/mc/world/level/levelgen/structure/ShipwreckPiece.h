@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/Rotation.h"
+#include "mc/versionless/util/Rotation.h"
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
 
@@ -32,11 +32,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockPos
-    _calculateTargetPos(::BlockSource& region, ::BlockPos origin, ::Rotation rot, ::BlockPos size);
+    MCAPI static ::BlockPos _calculateTargetPos(::BlockSource& region, ::BlockPos origin, ::Rotation rot, ::BlockPos size);
 
-    MCAPI static ::BlockPos
-    _calculateTargetPosLegacy(::BlockSource& region, ::BlockPos origin, ::Rotation rot, ::BlockPos size);
+    MCAPI static ::BlockPos _calculateTargetPosLegacy(::BlockSource& region, ::BlockPos origin, ::Rotation rot, ::BlockPos size);
     // NOLINTEND
 
 public:
@@ -58,4 +56,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -6,9 +6,9 @@ namespace webrtc {
 
 enum class ProvisionalAnswerUsage : int {
     KProvisionalAnswerNotUsed = 0,
-    KProvisionalAnswerLocal   = 1,
-    KProvisionalAnswerRemote  = 2,
-    KProvisionalAnswerMax     = 3,
+    KProvisionalAnswerLocal = 1,
+    KProvisionalAnswerRemote = 2,
+    KProvisionalAnswerMax = 3,
 };
 
 }

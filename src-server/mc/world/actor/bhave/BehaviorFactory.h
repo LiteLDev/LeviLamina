@@ -28,13 +28,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void _initNodes();
 
-    MCNAPI ::std::unique_ptr<::BehaviorDefinition>
-    loadNodeDefinition(::std::string const& name, ::Json::Value root, ::BehaviorTreeDefinitionPtr& ptr) const;
+    MCNAPI ::std::unique_ptr<::BehaviorDefinition> loadNodeDefinition(::std::string const& name, ::Json::Value root, ::BehaviorTreeDefinitionPtr& ptr) const;
 
-    MCNAPI void registerNodePair(
-        ::std::string const&                                       id,
-        ::std::function<::std::unique_ptr<::BehaviorDefinition>()> definitionCreator,
-        ::std::function<::std::unique_ptr<::BehaviorNode>()>       nodeCreator
-    );
+    MCNAPI void registerNodePair(::std::string const& id, ::std::function<::std::unique_ptr<::BehaviorDefinition>()> definitionCreator, ::std::function<::std::unique_ptr<::BehaviorNode>()> nodeCreator);
     // NOLINTEND
+
 };

@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkcd03d3;
-    ::ll::UntypedStorage<8, 8>  mUnk51563d;
+    ::ll::UntypedStorage<8, 8> mUnk51563d;
     ::ll::UntypedStorage<8, 32> mUnk99837b;
     ::ll::UntypedStorage<8, 32> mUnk7f1725;
     // NOLINTEND
@@ -34,8 +34,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptSelectionService(::Editor::ScriptModule::ScriptSelectionService const&);
 
-    MCNAPI
-    ScriptSelectionService(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI ScriptSelectionService(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
 
     MCNAPI ~ScriptSelectionService();
     // NOLINTEND
@@ -59,6 +58,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

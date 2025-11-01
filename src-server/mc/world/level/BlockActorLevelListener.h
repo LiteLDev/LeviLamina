@@ -22,12 +22,7 @@ public:
     virtual void onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc) /*override*/;
 
     // vIndex: 22
-    virtual void onSubChunkLoaded(
-        ::ChunkSource&,
-        ::LevelChunk& lc,
-        short         absoluteSubChunkIndex,
-        bool          subChunkVisibilityChanged
-    ) /*override*/;
+    virtual void onSubChunkLoaded(::ChunkSource&, ::LevelChunk& lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged) /*override*/;
 
     // vIndex: 23
     virtual void onChunkUnloaded(::LevelChunk& lc) /*override*/;
@@ -38,8 +33,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCAPI void
-    $onSubChunkLoaded(::ChunkSource&, ::LevelChunk& lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged);
+    MCAPI void $onSubChunkLoaded(::ChunkSource&, ::LevelChunk& lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged);
 
     MCAPI void $onChunkUnloaded(::LevelChunk& lc);
     // NOLINTEND
@@ -49,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

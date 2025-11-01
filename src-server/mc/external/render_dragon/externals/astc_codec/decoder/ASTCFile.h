@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct Header;
     // clang-format on
-
+    
     // ASTCFile inner types define
     struct Header {
     public:
@@ -23,14 +23,15 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk89858c;
         ::ll::UntypedStorage<8, 8> mUnk4270de;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Header& operator=(Header const&);
         Header(Header const&);
         Header();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -43,6 +44,7 @@ public:
     ASTCFile& operator=(ASTCFile const&);
     ASTCFile(ASTCFile const&);
     ASTCFile();
+
 };
 
-} // namespace astc_codec
+}

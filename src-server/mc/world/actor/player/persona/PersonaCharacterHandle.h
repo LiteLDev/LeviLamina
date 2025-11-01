@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk85c790;
-    ::ll::UntypedStorage<1, 1>  mUnk752aff;
+    ::ll::UntypedStorage<1, 1> mUnk752aff;
     // NOLINTEND
 
 public:
@@ -23,6 +23,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::persona::PersonaCharacterHandle const& INVALID();
     // NOLINTEND
+
 };
 
-} // namespace persona
+}

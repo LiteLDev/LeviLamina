@@ -20,14 +20,14 @@ class StoreUIComponent : public ::std::enable_shared_from_this<::StoreUIComponen
 public:
     // StoreUIComponent inner types define
     using ID = ushort;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::StoreVisualStyle&>                                            mOwner;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MainMenuScreenModel>>                      mMainMenuScreenModel;
+    ::ll::TypedStorage<8, 8, ::StoreVisualStyle&> mOwner;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MainMenuScreenModel>> mMainMenuScreenModel;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::StoreDataDrivenScreenController>> mController;
-    ::ll::TypedStorage<2, 2, ushort>                                                         mId;
+    ::ll::TypedStorage<2, 2, ushort> mId;
     // NOLINTEND
 
 public:
@@ -102,4 +102,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

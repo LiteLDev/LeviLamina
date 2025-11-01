@@ -15,4 +15,5 @@ public:
     ReceiptData_Apple& operator=(ReceiptData_Apple const&);
     ReceiptData_Apple(ReceiptData_Apple const&);
     ReceiptData_Apple();
+
 };

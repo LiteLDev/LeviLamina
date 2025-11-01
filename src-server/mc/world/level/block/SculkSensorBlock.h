@@ -33,46 +33,39 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 22
-    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 134
+    // vIndex: 133
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 67
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 44
     virtual bool isSignalSource() const /*override*/;
 
     // vIndex: 54
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
-        /*override*/;
+    virtual bool shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 126
+    // vIndex: 125
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 143
+    // vIndex: 142
     virtual ::Brightness getEmissiveBrightness(::Block const& block) const /*override*/;
 
-    // vIndex: 105
+    // vIndex: 104
     virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 106
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
-        /*override*/;
+    // vIndex: 105
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const /*override*/;
 
     // vIndex: 18
-    virtual bool liquidCanFlowIntoFromDirection(
-        uchar                                                     flowIntoFacing,
-        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
-        ::BlockPos const&                                         pos
-    ) const /*override*/;
+    virtual bool liquidCanFlowIntoFromDirection(uchar flowIntoFacing, ::std::function<::Block const&(::BlockPos const&)> const& getBlock, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -94,29 +87,23 @@ public:
 
     MCAPI static void _setInactivePhase(::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
-    MCAPI static void
-    _tryResonateVibration(::BlockSource& region, ::BlockPos const& pos, ::Actor* source, int vibrationFrequency);
+    MCAPI static void _tryResonateVibration(::BlockSource& region, ::BlockPos const& pos, ::Actor* source, int vibrationFrequency);
 
-    MCAPI static void setActivePhase(
-        ::BlockSource&    region,
-        ::BlockPos const& pos,
-        ::Actor*          source,
-        int               redstoneStrength,
-        int               vibrationFrequency
-    );
+    MCAPI static void setActivePhase(::BlockSource& region, ::BlockPos const& pos, ::Actor* source, int redstoneStrength, int vibrationFrequency);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType) const;
+
     MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD bool $isSignalSource() const;
 
-    MCFOLD bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+    MCFOLD bool $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
@@ -128,11 +115,7 @@ public:
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCFOLD bool $liquidCanFlowIntoFromDirection(
-        uchar                                                     flowIntoFacing,
-        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
-        ::BlockPos const&                                         pos
-    ) const;
+    MCFOLD bool $liquidCanFlowIntoFromDirection(uchar flowIntoFacing, ::std::function<::Block const&(::BlockPos const&)> const& getBlock, ::BlockPos const& pos) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
     // NOLINTEND
@@ -142,4 +125,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

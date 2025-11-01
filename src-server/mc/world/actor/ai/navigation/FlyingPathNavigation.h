@@ -19,8 +19,8 @@ class FlyingPathNavigation : public ::PathNavigation {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>        mHadGravity;
-    ::ll::TypedStorage<1, 1, bool>        mCanPathFromAir;
+    ::ll::TypedStorage<1, 1, bool> mHadGravity;
+    ::ll::TypedStorage<1, 1, bool> mCanPathFromAir;
     ::ll::TypedStorage<4, 4, float const> mMinWaypointRadius;
     // NOLINTEND
 
@@ -37,12 +37,10 @@ public:
     virtual ::Vec3 getTempMobPos(::Mob const& mob) const /*override*/;
 
     // vIndex: 5
-    virtual ::std::unique_ptr<::Path>
-    createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos) /*override*/;
+    virtual ::std::unique_ptr<::Path> createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos) /*override*/;
 
     // vIndex: 4
-    virtual ::std::unique_ptr<::Path>
-    createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target) /*override*/;
+    virtual ::std::unique_ptr<::Path> createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target) /*override*/;
 
     // vIndex: 9
     virtual void stop(::NavigationComponent& parent, ::Mob& mob) /*override*/;
@@ -92,4 +90,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

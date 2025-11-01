@@ -16,6 +16,7 @@ public:
     Postfix& operator=(Postfix const&);
     Postfix(Postfix const&);
     Postfix();
+
 };
 
-} // namespace commands
+}

@@ -16,12 +16,12 @@ class InventoryAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::InventorySource>            mSource;
-    ::ll::TypedStorage<4, 4, uint>                          mSlot;
+    ::ll::TypedStorage<4, 12, ::InventorySource> mSource;
+    ::ll::TypedStorage<4, 4, uint> mSlot;
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mFromItemDescriptor;
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mToItemDescriptor;
-    ::ll::TypedStorage<8, 152, ::ItemStack>                 mFromItem;
-    ::ll::TypedStorage<8, 152, ::ItemStack>                 mToItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mFromItem;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mToItem;
     // NOLINTEND
 
 public:
@@ -33,12 +33,7 @@ public:
     // NOLINTBEGIN
     MCNAPI InventoryAction(::InventoryAction const&);
 
-    MCNAPI InventoryAction(
-        ::InventorySource                   source,
-        uint                                slot,
-        ::NetworkItemStackDescriptor const& fromItem,
-        ::NetworkItemStackDescriptor const& toItem
-    );
+    MCNAPI InventoryAction(::InventorySource source, uint slot, ::NetworkItemStackDescriptor const& fromItem, ::NetworkItemStackDescriptor const& toItem);
 
     MCNAPI InventoryAction(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
 
@@ -54,12 +49,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::InventoryAction const&);
 
-    MCNAPI void* $ctor(
-        ::InventorySource                   source,
-        uint                                slot,
-        ::NetworkItemStackDescriptor const& fromItem,
-        ::NetworkItemStackDescriptor const& toItem
-    );
+    MCNAPI void* $ctor(::InventorySource source, uint slot, ::NetworkItemStackDescriptor const& fromItem, ::NetworkItemStackDescriptor const& toItem);
 
     MCNAPI void* $ctor(::InventorySource source, uint slot, ::ItemStack const& fromItem, ::ItemStack const& toItem);
     // NOLINTEND
@@ -69,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

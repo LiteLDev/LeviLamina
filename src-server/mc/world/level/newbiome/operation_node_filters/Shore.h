@@ -16,7 +16,7 @@ class Shore : public ::OperationNodeFilters::FilterBase<3, 3, ::Biome const*, ::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk503916;
+    ::ll::UntypedStorage<8, 8> mUnk503916;
     ::ll::UntypedStorage<8, 24> mUnk5b517c;
     // NOLINTEND
 
@@ -25,6 +25,7 @@ public:
     Shore& operator=(Shore const&);
     Shore(Shore const&);
     Shore();
+
 };
 
-} // namespace OperationNodeFilters
+}

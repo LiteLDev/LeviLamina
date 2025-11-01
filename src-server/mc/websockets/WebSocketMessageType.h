@@ -4,6 +4,6 @@
 
 enum class WebSocketMessageType : uint {
     Unknown = 0,
-    Text    = 1,
-    Binary  = 2,
+    Text = 1,
+    Binary = 2,
 };

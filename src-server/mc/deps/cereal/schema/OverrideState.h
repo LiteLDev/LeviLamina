@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4> mUnkbdef12;
-    ::ll::UntypedStorage<2, 2> mUnk73164d;
+    ::ll::UntypedStorage<4, 4> mUnk32924f;
     // NOLINTEND
 
 public:
@@ -17,6 +17,7 @@ public:
     OverrideState& operator=(OverrideState const&);
     OverrideState(OverrideState const&);
     OverrideState();
+
 };
 
-} // namespace cereal::internal
+}

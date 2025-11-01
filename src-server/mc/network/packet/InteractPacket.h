@@ -19,19 +19,19 @@ class InteractPacket : public ::Packet {
 public:
     // InteractPacket inner types define
     enum class Action : uchar {
-        Invalid        = 0,
-        StopRiding     = 3,
+        Invalid = 0,
+        StopRiding = 3,
         InteractUpdate = 4,
-        NpcOpen        = 5,
-        OpenInventory  = 6,
+        NpcOpen = 5,
+        OpenInventory = 6,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::InteractPacket::Action> mAction;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>         mTargetId;
-    ::ll::TypedStorage<4, 12, ::Vec3>                  mPos;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mTargetId;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
     // NOLINTEND
 
 public:
@@ -47,10 +47,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -92,4 +92,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

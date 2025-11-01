@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkf3cebc;
-    ::ll::UntypedStorage<1, 1>  mUnk7b112a;
+    ::ll::UntypedStorage<1, 1> mUnk7b112a;
     // NOLINTEND
 
 public:
@@ -21,9 +21,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Structure&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Structure&&);
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureSet::Structure& operator=(::SharedTypes::v1_21_20::JigsawStructureSet::Structure&&);
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_20::JigsawStructureSet
+}

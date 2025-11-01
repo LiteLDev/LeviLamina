@@ -16,6 +16,7 @@ public:
     BandwidthEstimationSettings& operator=(BandwidthEstimationSettings const&);
     BandwidthEstimationSettings(BandwidthEstimationSettings const&);
     BandwidthEstimationSettings();
+
 };
 
-} // namespace webrtc
+}

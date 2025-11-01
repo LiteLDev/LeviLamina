@@ -13,4 +13,4 @@ namespace PostEntityDismountGameEventSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace PostEntityDismountGameEventSystem
+}

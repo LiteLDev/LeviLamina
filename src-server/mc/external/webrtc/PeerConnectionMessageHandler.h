@@ -31,17 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void
-    PostCreateSessionDescriptionFailure(::webrtc::CreateSessionDescriptionObserver* observer, ::webrtc::RTCError error);
+    MCNAPI void PostCreateSessionDescriptionFailure(::webrtc::CreateSessionDescriptionObserver* observer, ::webrtc::RTCError error);
 
-    MCNAPI void PostGetStats(
-        ::webrtc::StatsObserver*                 observer,
-        ::webrtc::LegacyStatsCollectorInterface* legacy_stats,
-        ::webrtc::MediaStreamTrackInterface*     track
-    );
+    MCNAPI void PostGetStats(::webrtc::StatsObserver* observer, ::webrtc::LegacyStatsCollectorInterface* legacy_stats, ::webrtc::MediaStreamTrackInterface* track);
 
-    MCNAPI void
-    PostSetSessionDescriptionFailure(::webrtc::SetSessionDescriptionObserver* observer, ::webrtc::RTCError&& error);
+    MCNAPI void PostSetSessionDescriptionFailure(::webrtc::SetSessionDescriptionObserver* observer, ::webrtc::RTCError&& error);
 
     MCNAPI void PostSetSessionDescriptionSuccess(::webrtc::SetSessionDescriptionObserver* observer);
 
@@ -55,6 +49,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

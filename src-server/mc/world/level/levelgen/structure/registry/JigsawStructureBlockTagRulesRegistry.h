@@ -10,25 +10,15 @@ class StructurePoolBlockTagRule;
 class JigsawStructureBlockTagRulesRegistry {
 public:
     // JigsawStructureBlockTagRulesRegistry inner types define
-    using BlockTagRulesRegistryMap =
-        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>>;
-
-    using BlockTagRulesLookupMap =
-        ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const*>;
-
+    using BlockTagRulesRegistryMap = ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>>;
+    
+    using BlockTagRulesLookupMap = ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const*>;
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        24,
-        ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>>>
-        mBlockTagRulesRegistry;
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const*>>
-        mBlockTagRuleLookupMap;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>>> mBlockTagRulesRegistry;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const*>> mBlockTagRuleLookupMap;
     // NOLINTEND
 
 public:
@@ -36,10 +26,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* lookupByName(::std::string name) const;
 
-    MCAPI void registerBlockTagRules(
-        ::std::string                                                                      name,
-        ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>&& ruleList
-    );
+    MCAPI void registerBlockTagRules(::std::string name, ::std::unique_ptr<::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>>>&& ruleList);
 
     MCAPI ~JigsawStructureBlockTagRulesRegistry();
     // NOLINTEND
@@ -49,4 +36,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

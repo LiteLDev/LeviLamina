@@ -13,14 +13,13 @@ namespace Bedrock { class DirectoryPickerConfig; }
 
 namespace Bedrock {
 
-class FilePickerManager : public ::Bedrock::ImplBase<::Bedrock::FilePickerManager>,
-                          public ::Bedrock::EnableNonOwnerReferences {
+class FilePickerManager : public ::Bedrock::ImplBase<::Bedrock::FilePickerManager>, public ::Bedrock::EnableNonOwnerReferences {
 public:
     // FilePickerManager inner types declare
     // clang-format off
     struct DirectoryPickerResult;
     // clang-format on
-
+    
     // FilePickerManager inner types define
     struct DirectoryPickerResult {
     public:
@@ -29,26 +28,27 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk181d6d;
         ::ll::UntypedStorage<8, 32> mUnke5bbf5;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         DirectoryPickerResult& operator=(DirectoryPickerResult const&);
         DirectoryPickerResult(DirectoryPickerResult const&);
         DirectoryPickerResult();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~DirectoryPickerResult();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -56,8 +56,7 @@ public:
     virtual bool directoryPickingEnabledForPlatform() const = 0;
 
     // vIndex: 2
-    virtual ::Bedrock::Threading::Async<::Bedrock::FilePickerManager::DirectoryPickerResult>
-    pickDirectory(::Bedrock::DirectoryPickerConfig const&) = 0;
+    virtual ::Bedrock::Threading::Async<::Bedrock::FilePickerManager::DirectoryPickerResult> pickDirectory(::Bedrock::DirectoryPickerConfig const&) = 0;
 
     // vIndex: 0
     virtual ~FilePickerManager() /*override*/ = default;
@@ -68,6 +67,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

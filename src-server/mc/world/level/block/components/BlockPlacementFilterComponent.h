@@ -23,4 +23,5 @@ public:
 
     MCAPI bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
     // NOLINTEND
+
 };

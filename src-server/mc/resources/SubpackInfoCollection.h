@@ -20,4 +20,5 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::vector<::std::string> getSubpackNames() const;
     // NOLINTEND
+
 };

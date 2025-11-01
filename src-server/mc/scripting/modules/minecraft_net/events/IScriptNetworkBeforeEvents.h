@@ -23,14 +23,10 @@ public:
     virtual ~IScriptNetworkBeforeEvents() = default;
 
     // vIndex: 1
-    virtual ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent>>
-    onBeforePacketReceive(::IncomingPacketEvent const&) = 0;
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketReceiveBeforeEvent>> onBeforePacketReceive(::IncomingPacketEvent const&) = 0;
 
     // vIndex: 2
-    virtual ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent>>
-    onBeforePacketSend(::OutgoingPacketEvent const&) = 0;
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftNet::ScriptPacketSendBeforeEvent>> onBeforePacketSend(::OutgoingPacketEvent const&) = 0;
     // NOLINTEND
 
 public:
@@ -44,6 +40,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraftNet
+}

@@ -16,11 +16,11 @@ struct BiomeDecorationFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 216, ::ScatterParams>      mScatter;
+    ::ll::TypedStorage<8, 216, ::ScatterParams> mScatter;
     ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeature;
-    ::ll::TypedStorage<8, 48, ::HashedString>        mIdentifier;
-    ::ll::TypedStorage<8, 32, ::std::string>         mPass;
-    ::ll::TypedStorage<1, 1, bool>                   mCanUseInternalFeature;
+    ::ll::TypedStorage<8, 48, ::HashedString> mIdentifier;
+    ::ll::TypedStorage<8, 32, ::std::string> mPass;
+    ::ll::TypedStorage<1, 1, bool> mCanUseInternalFeature;
     // NOLINTEND
 
 public:
@@ -54,4 +54,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

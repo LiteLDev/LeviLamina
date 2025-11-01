@@ -19,4 +19,5 @@ public:
     // NOLINTBEGIN
     MCAPI bool addCommand(::std::unique_ptr<::AgentCommands::Command> commandObj);
     // NOLINTEND
+
 };

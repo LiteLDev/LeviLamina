@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct HeartbeatInfoParameterConfig {};
+struct HeartbeatInfoParameterConfig {
+};
 
-} // namespace dcsctp
+}

@@ -21,7 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::UpdateBlockSyncedPacketPayload> mPayload;
-    ::ll::TypedStorage<4, 4, ::SerializationMode>               mSerializationMode;
+    ::ll::TypedStorage<4, 4, ::SerializationMode> mSerializationMode;
     // NOLINTEND
 
 public:
@@ -33,44 +33,41 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 11
+    // vIndex: 12
     virtual ::SerializationMode getSerializationMode() const /*override*/;
 
-    // vIndex: 12
+    // vIndex: 13
     virtual void setSerializationMode(::SerializationMode mode) /*override*/;
 
-    // vIndex: 4
-    virtual void writeWithSerializationMode(
-        ::BinaryStream&                      stream,
-        ::cereal::ReflectionCtx const&       reflectionCtx,
-        ::std::optional<::SerializationMode> overrideMode
-    ) const /*override*/;
+    // vIndex: 5
+    virtual void writeWithSerializationMode(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx, ::std::optional<::SerializationMode> overrideMode) const /*override*/;
 
-    // vIndex: 6
+    // vIndex: 7
     virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 8
-    virtual ::Bedrock::Result<void>
-    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
-
     // vIndex: 9
-    virtual bool disallowBatching() const /*override*/;
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
     // vIndex: 10
+    virtual bool disallowBatching() const /*override*/;
+
+    // vIndex: 11
     virtual bool isValid() const /*override*/;
 
-    // vIndex: 13
-    virtual ::std::string toString() const /*override*/;
+    // vIndex: 3
+    virtual uint64 getMaxSize() const /*override*/;
 
     // vIndex: 14
-    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+    virtual ::std::string toString() const /*override*/;
 
     // vIndex: 15
-    virtual ::Bedrock::Result<void>
-    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
+
+    // vIndex: 16
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) /*override*/;
 
     // vIndex: 0
     virtual ~UpdateBlockSyncedPacket() /*override*/;
@@ -93,29 +90,25 @@ public:
 
     MCFOLD void $setSerializationMode(::SerializationMode mode);
 
-    MCAPI void $writeWithSerializationMode(
-        ::BinaryStream&                      stream,
-        ::cereal::ReflectionCtx const&       reflectionCtx,
-        ::std::optional<::SerializationMode> overrideMode
-    ) const;
+    MCAPI void $writeWithSerializationMode(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx, ::std::optional<::SerializationMode> overrideMode) const;
 
     MCFOLD void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void>
-    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
     MCFOLD bool $disallowBatching() const;
 
     MCFOLD bool $isValid() const;
 
+    MCFOLD uint64 $getMaxSize() const;
+
     MCAPI ::std::string $toString() const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::Bedrock::Result<void>
-    $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:
@@ -123,4 +116,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

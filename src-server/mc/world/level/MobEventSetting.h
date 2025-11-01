@@ -10,6 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ::MobEventsIndex> mIndex;
-    ::ll::TypedStorage<1, 1, bool>             mEnabled;
+    ::ll::TypedStorage<1, 1, bool> mEnabled;
     // NOLINTEND
+
 };

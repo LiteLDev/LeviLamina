@@ -13,4 +13,4 @@ namespace ScriptModuleGameTest::Alphas {
 MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-} // namespace ScriptModuleGameTest::Alphas
+}

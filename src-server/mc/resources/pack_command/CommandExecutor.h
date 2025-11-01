@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk3825d9;
-    ::ll::UntypedStorage<8, 8>  mUnke088f7;
+    ::ll::UntypedStorage<8, 8> mUnke088f7;
     // NOLINTEND
 
 public:
@@ -36,6 +36,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace PackCommand
+}

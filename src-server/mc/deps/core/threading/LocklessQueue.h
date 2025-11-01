@@ -2,5 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <typename T0>
-class LocklessQueue {};
+template<typename T0>
+class LocklessQueue {
+};

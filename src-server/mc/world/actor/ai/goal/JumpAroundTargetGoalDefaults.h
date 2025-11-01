@@ -20,4 +20,4 @@ MCAPI int const& REQUIRED_VERTICAL_SPACE();
 MCAPI int const& SNAP_TO_SURFACE_BLOCK_RANGE();
 // NOLINTEND
 
-} // namespace JumpAroundTargetGoalDefaults
+}

@@ -4,7 +4,8 @@
 
 namespace Bedrock {
 
-template <typename T0>
-class SignalPayloadRef {};
+template<typename T0>
+class SignalPayloadRef {
+};
 
-} // namespace Bedrock
+}

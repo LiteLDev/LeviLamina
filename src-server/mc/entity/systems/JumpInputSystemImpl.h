@@ -16,12 +16,7 @@ struct MovementAbilitiesComponent;
 namespace JumpInputSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doJumpInputSystem(
-    ::StrictEntityContext const&                  context,
-    ::MovementAbilitiesComponent const&           abilitiesComponent,
-    ::MoveInputComponent const&                   moveInputComponent,
-    ::EntityModifier<::MobIsJumpingFlagComponent> mod
-);
+MCNAPI void doJumpInputSystem(::StrictEntityContext const& context, ::MovementAbilitiesComponent const& abilitiesComponent, ::MoveInputComponent const& moveInputComponent, ::EntityModifier<::MobIsJumpingFlagComponent> mod);
 // NOLINTEND
 
-} // namespace JumpInputSystemImpl
+}

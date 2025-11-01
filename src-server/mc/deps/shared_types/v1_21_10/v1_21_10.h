@@ -13,4 +13,4 @@ namespace SharedTypes::v1_21_10 {
 MCNAPI void bindCoordinateEvaluationOrder(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-} // namespace SharedTypes::v1_21_10
+}

@@ -5,9 +5,9 @@
 namespace Core::ZipUtils {
 
 enum class ZipCompressionLevel : int {
-    Default         = 0,
-    NoCompression   = 1,
-    BestSpeed       = 2,
+    Default = 0,
+    NoCompression = 1,
+    BestSpeed = 2,
     BestCompression = 3,
 };
 

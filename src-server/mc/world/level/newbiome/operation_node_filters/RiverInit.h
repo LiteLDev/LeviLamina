@@ -24,6 +24,7 @@ public:
     RiverInit& operator=(RiverInit const&);
     RiverInit(RiverInit const&);
     RiverInit();
+
 };
 
-} // namespace OperationNodeFilters
+}

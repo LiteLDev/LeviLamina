@@ -26,10 +26,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickAmbientSoundComponent(
-        ::ActorOwnerComponent&         actorOwnerComponent,
-        ::AmbientSoundServerComponent& ambientSoundServerComponent
-    );
+    MCNAPI static void _tickAmbientSoundComponent(::ActorOwnerComponent& actorOwnerComponent, ::AmbientSoundServerComponent& ambientSoundServerComponent);
     // NOLINTEND
 
 public:
@@ -43,4 +40,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

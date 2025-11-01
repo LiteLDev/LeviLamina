@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-class OutgoingMessageIdTag {};
+class OutgoingMessageIdTag {
+};
 
-} // namespace dcsctp
+}

@@ -22,60 +22,57 @@ public:
     // clang-format off
     class PlayDefinition;
     // clang-format on
-
+    
     // PlayGoal inner types define
     class PlayDefinition : public ::BaseGoalDefinition {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>                           mSpeedModifier;
-        ::ll::TypedStorage<4, 4, float>                           mMaxPlayDurationSeconds;
-        ::ll::TypedStorage<4, 4, float>                           mChanceToStart;
+        ::ll::TypedStorage<4, 4, float> mSpeedModifier;
+        ::ll::TypedStorage<4, 4, float> mMaxPlayDurationSeconds;
+        ::ll::TypedStorage<4, 4, float> mChanceToStart;
         ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mFriendTypes;
-        ::ll::TypedStorage<4, 12, ::Vec3>                         mFriendSearchArea;
-        ::ll::TypedStorage<4, 4, int>                             mRandomPosSearchRange;
-        ::ll::TypedStorage<4, 4, int>                             mRandomPosSearchHeight;
-        ::ll::TypedStorage<4, 4, int>                             mFollowDistanceInBlocks;
+        ::ll::TypedStorage<4, 12, ::Vec3> mFriendSearchArea;
+        ::ll::TypedStorage<4, 4, int> mRandomPosSearchRange;
+        ::ll::TypedStorage<4, 4, int> mRandomPosSearchHeight;
+        ::ll::TypedStorage<4, 4, int> mFollowDistanceInBlocks;
         // NOLINTEND
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~PlayDefinition() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::PlayGoal::PlayDefinition>>&
-                root
-        );
+        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::PlayGoal::PlayDefinition>>& root);
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                           mSpeedModifier;
-    ::ll::TypedStorage<4, 4, int>                             mMaxPlayDurationTicks;
-    ::ll::TypedStorage<4, 4, float>                           mChanceToStart;
+    ::ll::TypedStorage<4, 4, float> mSpeedModifier;
+    ::ll::TypedStorage<4, 4, int> mMaxPlayDurationTicks;
+    ::ll::TypedStorage<4, 4, float> mChanceToStart;
     ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mFriendTypes;
-    ::ll::TypedStorage<4, 12, ::Vec3>                         mFriendSearchArea;
-    ::ll::TypedStorage<4, 4, int>                             mRandomPosSearchRange;
-    ::ll::TypedStorage<4, 4, int>                             mRandomPosSearchHeight;
-    ::ll::TypedStorage<4, 4, int>                             mFollowDistanceInBlocksSquared;
-    ::ll::TypedStorage<4, 4, int>                             mCurrentPlayDurationTicks;
-    ::ll::TypedStorage<8, 8, ::Mob&>                          mMob;
-    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>>              mFollowFriend;
+    ::ll::TypedStorage<4, 12, ::Vec3> mFriendSearchArea;
+    ::ll::TypedStorage<4, 4, int> mRandomPosSearchRange;
+    ::ll::TypedStorage<4, 4, int> mRandomPosSearchHeight;
+    ::ll::TypedStorage<4, 4, int> mFollowDistanceInBlocksSquared;
+    ::ll::TypedStorage<4, 4, int> mCurrentPlayDurationTicks;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>> mFollowFriend;
     // NOLINTEND
 
 public:
@@ -130,4 +127,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

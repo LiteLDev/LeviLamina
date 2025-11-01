@@ -20,16 +20,13 @@ MCAPI int getItemWeightInStorageItem(::ItemStackBase const& item, ::std::optiona
 
 MCAPI ::std::optional<::FullContainerName> getStorageItemID(::ItemStackBase const& storageItem);
 
-MCAPI ::std::optional<::StorageItemUtility::StorageItemWeightData>
-getStorageItemWeightDataServer(::ItemStackBase const& item);
+MCAPI ::std::optional<::StorageItemUtility::StorageItemWeightData> getStorageItemWeightDataServer(::ItemStackBase const& item);
 
-MCAPI ::std::unique_ptr<::CompoundTag> saveDataFixupBySaveContext(
-    ::std::unique_ptr<::CompoundTag> tag,
-    ::SaveContext const&             saveContext,
-    ::ItemStackBase const&           item
-);
+MCAPI ::std::unique_ptr<::CompoundTag> saveDataFixupBySaveContext(::std::unique_ptr<::CompoundTag> tag, ::SaveContext const& saveContext, ::ItemStackBase const& item);
 
 MCAPI void tryFlattenStorageItem(::ItemStackBase& item);
+
+MCAPI void tryMoveStorageItem(::ItemStackBase& item);
 // NOLINTEND
 
-} // namespace StorageItemUtility
+}

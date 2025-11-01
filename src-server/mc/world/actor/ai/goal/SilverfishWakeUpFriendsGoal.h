@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Silverfish&> mSilverfish;
-    ::ll::TypedStorage<4, 4, int>           mLookForFriends;
+    ::ll::TypedStorage<4, 4, int> mLookForFriends;
     // NOLINTEND
 
 public:
@@ -55,4 +55,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

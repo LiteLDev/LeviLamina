@@ -9,10 +9,10 @@ class ReadOnlyBinaryStream {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>      mOwnedBuffer;
+    ::ll::TypedStorage<8, 32, ::std::string> mOwnedBuffer;
     ::ll::TypedStorage<8, 16, ::std::string_view> mView;
-    ::ll::TypedStorage<8, 8, uint64>              mReadPointer;
-    ::ll::TypedStorage<1, 1, bool>                mHasOverflowed;
+    ::ll::TypedStorage<8, 8, uint64> mReadPointer;
+    ::ll::TypedStorage<1, 1, bool> mHasOverflowed;
     // NOLINTEND
 
 public:
@@ -65,6 +65,8 @@ public:
     MCAPI ::Bedrock::Result<int> getVarInt();
 
     MCAPI ::Bedrock::Result<int64> getVarInt64();
+
+    MCAPI void setReadPointer(uint64 pos);
     // NOLINTEND
 
 public:
@@ -84,4 +86,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

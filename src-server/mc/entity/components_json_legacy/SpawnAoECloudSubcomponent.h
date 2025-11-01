@@ -16,14 +16,14 @@ class SpawnAoECloudSubcomponent : public ::OnHitSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnke7e606;
-    ::ll::UntypedStorage<4, 4>  mUnkf1a6ae;
-    ::ll::UntypedStorage<4, 4>  mUnk85c000;
-    ::ll::UntypedStorage<4, 4>  mUnk3d3a04;
-    ::ll::UntypedStorage<4, 4>  mUnk85af42;
-    ::ll::UntypedStorage<4, 4>  mUnk392b11;
+    ::ll::UntypedStorage<4, 4> mUnke7e606;
+    ::ll::UntypedStorage<4, 4> mUnkf1a6ae;
+    ::ll::UntypedStorage<4, 4> mUnk85c000;
+    ::ll::UntypedStorage<4, 4> mUnk3d3a04;
+    ::ll::UntypedStorage<4, 4> mUnk85af42;
+    ::ll::UntypedStorage<4, 4> mUnk392b11;
     ::ll::UntypedStorage<4, 16> mUnk644b1c;
-    ::ll::UntypedStorage<1, 1>  mUnkd7fc0f;
+    ::ll::UntypedStorage<1, 1> mUnkd7fc0f;
     // NOLINTEND
 
 public:
@@ -48,7 +48,7 @@ public:
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent&) /*override*/;
 
     // vIndex: 4
-    virtual char const* getName() /*override*/;
+    virtual char const* getName() const /*override*/;
     // NOLINTEND
 
 public:
@@ -60,7 +60,7 @@ public:
 
     MCNAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent&);
 
-    MCNAPI char const* $getName();
+    MCNAPI char const* $getName() const;
     // NOLINTEND
 
 public:
@@ -68,4 +68,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
