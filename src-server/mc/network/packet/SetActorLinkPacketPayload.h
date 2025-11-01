@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::ActorLink> mLink;
     // NOLINTEND
+
 };

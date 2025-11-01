@@ -11,9 +11,9 @@ class StructureQueryPayload : public ::Editor::Network::NetworkPayload<::Editor:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 176> mUnkb3cb5c;
-    ::ll::UntypedStorage<1, 1>   mUnk279361;
-    ::ll::UntypedStorage<8, 24>  mUnkdba03d;
+    ::ll::UntypedStorage<8, 216> mUnkb3cb5c;
+    ::ll::UntypedStorage<1, 1> mUnk279361;
+    ::ll::UntypedStorage<8, 24> mUnkdba03d;
     // NOLINTEND
 
 public:
@@ -39,6 +39,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

@@ -26,10 +26,10 @@ class StonecutterContainerManagerController : public ::ContainerManagerControlle
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                                  mSelectedStoneIndex;
+    ::ll::TypedStorage<4, 4, int> mSelectedStoneIndex;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::StonecutterContainerManagerModel>> mStonecutterContainerManagerModel;
-    ::ll::TypedStorage<8, 40, ::SlotData const>                                    mCreatedItemOutputSlot;
-    ::ll::TypedStorage<8, 136, ::ItemResultPreview>                                mResultPreview;
+    ::ll::TypedStorage<8, 40, ::SlotData const> mCreatedItemOutputSlot;
+    ::ll::TypedStorage<8, 136, ::ItemResultPreview> mResultPreview;
     // NOLINTEND
 
 public:
@@ -60,12 +60,7 @@ public:
     virtual void handlePlaceOne(::SlotData const&, ::SlotData const&) /*override*/;
 
     // vIndex: 15
-    virtual int handleAutoPlace(
-        ::SlotData const&,
-        int,
-        ::std::vector<::AutoPlaceItem> const&,
-        ::std::vector<::AutoPlaceResult>&
-    ) /*override*/;
+    virtual int handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/;
 
     // vIndex: 8
     virtual ::ItemStackBase const& getTakeableItemStackBase(::SlotData const&) const /*override*/;
@@ -74,18 +69,13 @@ public:
     virtual void _onContainerScreenAction(::ContainerScreenActionResult const&) /*override*/;
 
     // vIndex: 29
-    virtual ::CreateContainerItemScope
-    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
+    virtual ::CreateContainerItemScope _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
 
     // vIndex: 32
     virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
 
     // vIndex: 28
-    virtual void _updateItemStackRequest(
-        ::ContainerScreenRequestActionType,
-        ::ContainerScreenActionResult const&,
-        ::ItemStackRequestScope&
-    ) /*override*/;
+    virtual void _updateItemStackRequest(::ContainerScreenRequestActionType, ::ContainerScreenActionResult const&, ::ItemStackRequestScope&) /*override*/;
     // NOLINTEND
 
 public:
@@ -93,4 +83,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

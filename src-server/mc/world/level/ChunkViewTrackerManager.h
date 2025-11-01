@@ -17,9 +17,9 @@ class ChunkViewTrackerManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const>    mDimensionManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const> mDimensionManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> const> mGameplayUserManager;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::weak_ptr<::ChunkViewSource>>>          mChunkViewTrackers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::weak_ptr<::ChunkViewSource>>> mChunkViewTrackers;
     // NOLINTEND
 
 public:
@@ -29,10 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ChunkViewTrackerManager(
-        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
-        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager
-    );
+    MCNAPI ChunkViewTrackerManager(::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
 
     MCNAPI void addChunkViewTracker(::std::weak_ptr<::ChunkViewSource> chunkViewSource);
 
@@ -44,10 +41,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager,
-        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager
-    );
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
     // NOLINTEND
 
 public:
@@ -55,4 +49,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

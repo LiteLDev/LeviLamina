@@ -4,6 +4,7 @@
 
 namespace sim {
 
-struct VoidMoveIntent {};
+struct VoidMoveIntent {
+};
 
-} // namespace sim
+}

@@ -4,6 +4,7 @@
 
 namespace Util {
 
-struct CaseInsensitiveCompare {};
+struct CaseInsensitiveCompare {
+};
 
-} // namespace Util
+}

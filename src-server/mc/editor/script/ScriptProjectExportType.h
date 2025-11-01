@@ -15,6 +15,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::EnumBinding bindScriptEnumsProjectExportType();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

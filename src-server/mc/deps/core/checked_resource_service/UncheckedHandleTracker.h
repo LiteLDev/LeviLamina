@@ -16,6 +16,7 @@ public:
     UncheckedHandleTracker& operator=(UncheckedHandleTracker const&);
     UncheckedHandleTracker(UncheckedHandleTracker const&);
     UncheckedHandleTracker();
+
 };
 
-} // namespace mce
+}

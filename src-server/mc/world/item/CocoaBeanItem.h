@@ -27,10 +27,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 109
+    // vIndex: 110
     virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
     // vIndex: 16
@@ -39,13 +39,11 @@ public:
     // vIndex: 17
     virtual ::ItemColor getItemColor() const /*override*/;
 
-    // vIndex: 60
+    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 122
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    // vIndex: 123
+    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
 
     // vIndex: 0
     virtual ~CocoaBeanItem() /*override*/ = default;
@@ -62,8 +60,7 @@ public:
 
     MCFOLD bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -71,4 +68,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

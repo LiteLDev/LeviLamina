@@ -20,19 +20,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6
-    virtual void doLoad(
-        ::cereal::SchemaReader&              reader,
-        ::entt::meta_any&                    any,
-        ::entt::meta_any const&              udata,
-        ::cereal::internal::LoadState const& state
-    ) const /*override*/;
+    virtual void doLoad(::cereal::SchemaReader& reader, ::entt::meta_any& any, ::entt::meta_any const& udata, ::cereal::internal::LoadState const& state) const /*override*/;
 
     // vIndex: 7
-    virtual void doSave(
-        ::cereal::SchemaWriter&              writer,
-        ::entt::meta_any const&              any,
-        ::cereal::internal::SaveState const& state
-    ) const /*override*/;
+    virtual void doSave(::cereal::SchemaWriter& writer, ::entt::meta_any const& any, ::cereal::internal::SaveState const& state) const /*override*/;
 
     // vIndex: 0
     virtual ~GenericCompositeSchema() /*override*/ = default;
@@ -41,19 +32,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $doLoad(
-        ::cereal::SchemaReader&              reader,
-        ::entt::meta_any&                    any,
-        ::entt::meta_any const&              udata,
-        ::cereal::internal::LoadState const& state
-    ) const;
+    MCNAPI void $doLoad(::cereal::SchemaReader& reader, ::entt::meta_any& any, ::entt::meta_any const& udata, ::cereal::internal::LoadState const& state) const;
 
-    MCNAPI void $doSave(
-        ::cereal::SchemaWriter&              writer,
-        ::entt::meta_any const&              any,
-        ::cereal::internal::SaveState const& state
-    ) const;
+    MCNAPI void $doSave(::cereal::SchemaWriter& writer, ::entt::meta_any const& any, ::cereal::internal::SaveState const& state) const;
     // NOLINTEND
+
 };
 
-} // namespace cereal::internal
+}

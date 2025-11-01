@@ -17,9 +17,9 @@ public:
     // ReloadCommand inner types define
     enum class ReloadAction : int {
         ScriptsAndFunctions = 0,
-        Everything          = 1,
+        Everything = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -59,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

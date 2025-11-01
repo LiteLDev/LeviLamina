@@ -25,22 +25,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 147
+    // vIndex: 146
     virtual int getTickDelay() const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual int getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual int getSignalForData(int data) const /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual int getRedstoneSignal(int signal) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
@@ -68,4 +68,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

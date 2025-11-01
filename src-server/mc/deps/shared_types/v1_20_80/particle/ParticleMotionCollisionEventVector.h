@@ -28,11 +28,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static void fromSingleEvent(
-        ::SharedTypes::v1_20_80::ParticleMotionCollisionEventVector& instance,
-        ::SharedTypes::v1_20_80::ParticleMotionCollisionEvent const& event
-    );
+    MCNAPI static void fromSingleEvent(::SharedTypes::v1_20_80::ParticleMotionCollisionEventVector& instance, ::SharedTypes::v1_20_80::ParticleMotionCollisionEvent const& event);
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_80
+}

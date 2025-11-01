@@ -18,6 +18,7 @@ public:
     ReceiveTimeInfo& operator=(ReceiveTimeInfo const&);
     ReceiveTimeInfo(ReceiveTimeInfo const&);
     ReceiveTimeInfo();
+
 };
 
-} // namespace webrtc::rtcp
+}

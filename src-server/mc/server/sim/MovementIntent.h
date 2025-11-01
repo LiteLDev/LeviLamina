@@ -15,16 +15,7 @@ struct MovementIntent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        48,
-        ::std::variant<
-            ::sim::VoidMoveIntent,
-            ::sim::MoveInDirectionIntent,
-            ::sim::MoveToPositionIntent,
-            ::sim::NavigateToPositionsIntent,
-            ::sim::NavigateToEntityIntent>>
-        mType;
+    ::ll::TypedStorage<8, 48, ::std::variant<::sim::VoidMoveIntent, ::sim::MoveInDirectionIntent, ::sim::MoveToPositionIntent, ::sim::NavigateToPositionsIntent, ::sim::NavigateToEntityIntent>> mType;
     // NOLINTEND
 
 public:
@@ -34,14 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit MovementIntent(
-        ::std::variant<
-            ::sim::VoidMoveIntent,
-            ::sim::MoveInDirectionIntent,
-            ::sim::MoveToPositionIntent,
-            ::sim::NavigateToPositionsIntent,
-            ::sim::NavigateToEntityIntent> type
-    );
+    MCNAPI explicit MovementIntent(::std::variant<::sim::VoidMoveIntent, ::sim::MoveInDirectionIntent, ::sim::MoveToPositionIntent, ::sim::NavigateToPositionsIntent, ::sim::NavigateToEntityIntent> type);
 
     MCNAPI ~MovementIntent();
     // NOLINTEND
@@ -49,14 +33,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::variant<
-            ::sim::VoidMoveIntent,
-            ::sim::MoveInDirectionIntent,
-            ::sim::MoveToPositionIntent,
-            ::sim::NavigateToPositionsIntent,
-            ::sim::NavigateToEntityIntent> type
-    );
+    MCNAPI void* $ctor(::std::variant<::sim::VoidMoveIntent, ::sim::MoveInDirectionIntent, ::sim::MoveToPositionIntent, ::sim::NavigateToPositionsIntent, ::sim::NavigateToEntityIntent> type);
     // NOLINTEND
 
 public:
@@ -64,6 +41,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace sim
+}

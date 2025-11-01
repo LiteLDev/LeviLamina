@@ -21,8 +21,7 @@ public:
     virtual bool directoryPickingEnabledForPlatform() const /*override*/;
 
     // vIndex: 2
-    virtual ::Bedrock::Threading::Async<::Bedrock::FilePickerManager::DirectoryPickerResult>
-    pickDirectory(::Bedrock::DirectoryPickerConfig const&) /*override*/;
+    virtual ::Bedrock::Threading::Async<::Bedrock::FilePickerManager::DirectoryPickerResult> pickDirectory(::Bedrock::DirectoryPickerConfig const&) /*override*/;
 
     // vIndex: 0
     virtual ~FilePickerManagerImpl() /*override*/ = default;
@@ -33,8 +32,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $directoryPickingEnabledForPlatform() const;
 
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::FilePickerManager::DirectoryPickerResult>
-    $pickDirectory(::Bedrock::DirectoryPickerConfig const&);
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::FilePickerManager::DirectoryPickerResult> $pickDirectory(::Bedrock::DirectoryPickerConfig const&);
     // NOLINTEND
 
 public:
@@ -44,6 +42,7 @@ public:
 
     MCNAPI static void** $vftableForImplBase();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

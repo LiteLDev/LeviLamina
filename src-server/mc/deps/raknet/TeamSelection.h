@@ -17,6 +17,7 @@ public:
     TeamSelection& operator=(TeamSelection const&);
     TeamSelection(TeamSelection const&);
     TeamSelection();
+
 };
 
-} // namespace RakNet
+}

@@ -32,17 +32,7 @@ public:
     virtual void onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
     // vIndex: 4
-    virtual void onBlockChanged(
-        ::BlockSource&                 source,
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 oldBlock,
-        int                            updateFlags,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget      eventTarget,
-        ::Actor*                       blockChangeSource
-    );
+    virtual void onBlockChanged(::BlockSource& source, ::BlockPos const& pos, uint layer, ::Block const& block, ::Block const& oldBlock, int updateFlags, ::ActorBlockSyncMessage const* syncMsg, ::BlockChangedEventTarget eventTarget, ::Actor* blockChangeSource);
 
     // vIndex: 5
     virtual void onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
@@ -72,17 +62,7 @@ public:
 
     MCFOLD void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
-    MCFOLD void $onBlockChanged(
-        ::BlockSource&                 source,
-        ::BlockPos const&              pos,
-        uint                           layer,
-        ::Block const&                 block,
-        ::Block const&                 oldBlock,
-        int                            updateFlags,
-        ::ActorBlockSyncMessage const* syncMsg,
-        ::BlockChangedEventTarget      eventTarget,
-        ::Actor*                       blockChangeSource
-    );
+    MCFOLD void $onBlockChanged(::BlockSource& source, ::BlockPos const& pos, uint layer, ::Block const& block, ::Block const& oldBlock, int updateFlags, ::ActorBlockSyncMessage const* syncMsg, ::BlockChangedEventTarget eventTarget, ::Actor* blockChangeSource);
 
     MCAPI void $onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
 
@@ -98,4 +78,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

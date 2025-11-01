@@ -6,7 +6,7 @@ namespace Identity {
 
 enum class EduResourceType : int {
     EducationService = 0,
-    GraphService     = 1,
+    GraphService = 1,
 };
 
 }

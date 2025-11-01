@@ -7,6 +7,7 @@
 
 namespace Bedrock::JSONObject {
 
-class NullNode : public ::Bedrock::JSONObject::Node {};
+class NullNode : public ::Bedrock::JSONObject::Node {
+};
 
-} // namespace Bedrock::JSONObject
+}

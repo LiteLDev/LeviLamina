@@ -8,7 +8,7 @@ class OneTimeEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk288ba9;
+    ::ll::UntypedStorage<1, 1> mUnk288ba9;
     ::ll::UntypedStorage<8, 40> mUnkd1349e;
     // NOLINTEND
 
@@ -29,6 +29,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

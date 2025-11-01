@@ -4,6 +4,7 @@
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockPistonComponentContainer {};
+class ScriptBlockPistonComponentContainer {
+};
 
-} // namespace ScriptModuleMinecraft
+}

@@ -34,6 +34,7 @@ public:
 
     MCNAPI ::NetherNet::ErrorOr<::NetherNet::View, ::std::error_code> Seal(::NetherNet::View plaintext);
     // NOLINTEND
+
 };
 
-} // namespace NetherNet
+}

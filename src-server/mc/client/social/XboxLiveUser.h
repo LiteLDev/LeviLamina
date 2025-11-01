@@ -4,6 +4,7 @@
 
 namespace Social {
 
-class XboxLiveUser {};
+class XboxLiveUser {
+};
 
-} // namespace Social
+}

@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct UserInitiatedAbortCauseConfig {};
+struct UserInitiatedAbortCauseConfig {
+};
 
-} // namespace dcsctp
+}

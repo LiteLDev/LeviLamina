@@ -13,4 +13,4 @@ namespace CanJoinRaidQueueSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace CanJoinRaidQueueSystem
+}

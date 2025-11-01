@@ -60,13 +60,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void CropAndScaleFrom(
-        ::webrtc::I420BufferInterface const& src,
-        int                                  offset_x,
-        int                                  offset_y,
-        int                                  crop_width,
-        int                                  crop_height
-    );
+    MCNAPI void CropAndScaleFrom(::webrtc::I420BufferInterface const& src, int offset_x, int offset_y, int crop_width, int crop_height);
 
     MCNAPI I420Buffer(int width, int height);
 
@@ -126,6 +120,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

@@ -11,6 +11,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> name;
     ::ll::TypedStorage<8, 32, ::std::string> data;
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

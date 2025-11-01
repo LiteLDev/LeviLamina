@@ -15,54 +15,54 @@ public:
     // clang-format off
     struct UnlockingInstruction;
     // clang-format on
-
+    
     // UnlockedRecipesServerComponent inner types define
     struct UnlockingInstruction {
     public:
         // UnlockingInstruction inner types define
         enum class Instruction : int {
-            UnlockRecipe     = 0,
+            UnlockRecipe = 0,
             UnlockAllRecipes = 1,
-            RemoveRecipe     = 2,
+            RemoveRecipe = 2,
             RemoveAllRecipes = 3,
         };
-
+        
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnkf225ff;
+        ::ll::UntypedStorage<4, 4> mUnkf225ff;
         ::ll::UntypedStorage<8, 32> mUnk231057;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         UnlockingInstruction& operator=(UnlockingInstruction const&);
         UnlockingInstruction(UnlockingInstruction const&);
         UnlockingInstruction();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~UnlockingInstruction();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                 mInventoryHasChanged;
-    ::ll::TypedStorage<1, 1, bool>                                 mInitialDataSent;
-    ::ll::TypedStorage<4, 4, uint>                                 mUsedContexts;
+    ::ll::TypedStorage<1, 1, bool> mInventoryHasChanged;
+    ::ll::TypedStorage<1, 1, bool> mInitialDataSent;
+    ::ll::TypedStorage<4, 4, uint> mUsedContexts;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>> mUnlockedRecipes;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>           mChangedInventorySlots;
-    ::ll::TypedStorage<8, 24, ::std::vector<::UnlockedRecipesServerComponent::UnlockingInstruction>>
-        mUnlockingInstructions;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>> mChangedInventorySlots;
+    ::ll::TypedStorage<8, 24, ::std::vector<::UnlockedRecipesServerComponent::UnlockingInstruction>> mUnlockingInstructions;
     // NOLINTEND
 
 public:
@@ -99,4 +99,5 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::UnlockedRecipesServerComponent const&);
     // NOLINTEND
+
 };

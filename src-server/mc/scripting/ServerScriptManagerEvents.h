@@ -14,12 +14,9 @@ struct ServerScriptManagerEvents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
-        mOnModuleStartupComplete;
-    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
-        mOnWorldInitializeComplete;
-    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
-        mOnPreReload;
+    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>> mOnModuleStartupComplete;
+    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>> mOnWorldInitializeComplete;
+    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>> mOnPreReload;
     // NOLINTEND
 
 public:
@@ -33,4 +30,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

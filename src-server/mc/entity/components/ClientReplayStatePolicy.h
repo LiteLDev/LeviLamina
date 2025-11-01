@@ -21,7 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 8, ::std::optional<::DimensionType>> mLastDimension;
-    ::ll::TypedStorage<4, 20, ::ReplayStateConfig>             mConfig;
+    ::ll::TypedStorage<4, 20, ::ReplayStateConfig> mConfig;
     // NOLINTEND
 
 public:
@@ -31,8 +31,7 @@ public:
     virtual bool isReplayNeeded(::AdvanceFrameResult result) const /*override*/;
 
     // vIndex: 2
-    virtual ::MovementCorrection
-    shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool) /*override*/;
+    virtual ::MovementCorrection shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool) /*override*/;
 
     // vIndex: 3
     virtual void notifyOfExternalCorrection(uint64) /*override*/;
@@ -46,8 +45,7 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isReplayNeeded(::AdvanceFrameResult result) const;
 
-    MCAPI ::MovementCorrection
-    $shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool);
+    MCAPI ::MovementCorrection $shouldCorrectMovement(::EntityContext&, ::PlayerAuthInputPacket const&, uint64, uchar, bool);
 
     MCFOLD void $notifyOfExternalCorrection(uint64);
     // NOLINTEND
@@ -57,4 +55,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

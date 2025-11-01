@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk52cace;
-    ::ll::UntypedStorage<8, 8>  mUnkf09954;
+    ::ll::UntypedStorage<8, 8> mUnkf09954;
     // NOLINTEND
 
 public:
@@ -36,6 +36,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

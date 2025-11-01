@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ResourceLocation;
 namespace Editor { class ServiceProviderCollection; }
 namespace Scripting { class ModuleBindingBuilder; }
 namespace Scripting { struct ModuleBinding; }
@@ -35,15 +34,9 @@ public:
 
     MCNAPI void _addVersions(::Editor::ServiceProviderCollection& managerServices);
 
-    MCNAPI ::Scripting::ModuleBinding _generateBindings(
-        ::Editor::ServiceProviderCollection& managerServices,
-        ::Scripting::ModuleBindingBuilder&   builder,
-        bool                                 allowUntagged,
-        ::std::vector<::std::string> const&  additionalTags
-    );
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(::Editor::ServiceProviderCollection& managerServices, ::Scripting::ModuleBindingBuilder& builder, bool allowUntagged, ::std::vector<::std::string> const& additionalTags);
 
-    MCNAPI ::Scripting::Result_deprecated<::std::string>
-    _loadScriptFromResourcePack(::Editor::ServiceProviderCollection& serviceProviders, ::ResourceLocation const& loc);
+    MCNAPI ::Scripting::Result_deprecated<::std::string> _loadScriptFromResourcePack(::Editor::ServiceProviderCollection& serviceProviders, ::std::string const& scriptPath);
     // NOLINTEND
 
 public:
@@ -63,6 +56,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::API
+}

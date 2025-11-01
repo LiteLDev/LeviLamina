@@ -11,7 +11,7 @@ public:
     struct OSWriteThrottleStats;
     struct WriteThrottleTierInfo;
     // clang-format on
-
+    
     // OSWriteThrottleTracker inner types define
     struct WriteThrottleTierInfo {
     public:
@@ -20,32 +20,34 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk3de7b2;
         ::ll::UntypedStorage<8, 8> mUnkedf517;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         WriteThrottleTierInfo& operator=(WriteThrottleTierInfo const&);
         WriteThrottleTierInfo(WriteThrottleTierInfo const&);
         WriteThrottleTierInfo();
+    
     };
-
+    
     struct OSWriteThrottleStats {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk4318ae;
-        ::ll::UntypedStorage<8, 8>  mUnk5d8848;
-        ::ll::UntypedStorage<8, 8>  mUnk6969bb;
-        ::ll::UntypedStorage<8, 8>  mUnk8cb60b;
-        ::ll::UntypedStorage<1, 1>  mUnk8c9cac;
+        ::ll::UntypedStorage<8, 8> mUnk5d8848;
+        ::ll::UntypedStorage<8, 8> mUnk6969bb;
+        ::ll::UntypedStorage<8, 8> mUnk8cb60b;
+        ::ll::UntypedStorage<1, 1> mUnk8c9cac;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         OSWriteThrottleStats& operator=(OSWriteThrottleStats const&);
         OSWriteThrottleStats(OSWriteThrottleStats const&);
         OSWriteThrottleStats();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -56,8 +58,7 @@ public:
     virtual bool isWriteThrottledOS() const;
 
     // vIndex: 2
-    virtual ::Core::WriteThrottledOS::OSWriteThrottleTracker::OSWriteThrottleStats
-        getCurrentWriteThrottleStats(::std::optional<uint64>) const;
+    virtual ::Core::WriteThrottledOS::OSWriteThrottleTracker::OSWriteThrottleStats getCurrentWriteThrottleStats(::std::optional<uint64>) const;
 
     // vIndex: 3
     virtual uint64 getEstimatedUnthrottledWriteSpeedBytes() const;
@@ -83,6 +84,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Core::WriteThrottledOS
+}

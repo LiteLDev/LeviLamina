@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 160> mUnk5e7675;
-    ::ll::UntypedStorage<8, 24>  mUnk3c16cb;
+    ::ll::UntypedStorage<8, 24> mUnk3c16cb;
     // NOLINTEND
 
 public:
@@ -38,15 +38,10 @@ public:
     virtual ::Bedrock::Http::Request makeListFilesRequest(::Core::Path const&) const;
 
     // vIndex: 2
-    virtual void sendListFilesRequest(
-        ::Bedrock::Http::Request&,
-        ::TaskGroup&,
-        ::std::function<void(::Bedrock::Http::Response const&, ::std::string const&)>
-    ) const;
+    virtual void sendListFilesRequest(::Bedrock::Http::Request&, ::TaskGroup&, ::std::function<void(::Bedrock::Http::Response const&, ::std::string const&)>) const;
 
     // vIndex: 3
-    virtual void
-    downloadSingleFile(::Core::Path const&, ::AzureFileDownloader&, ::std::function<void(::DownloaderResult)>) const;
+    virtual void downloadSingleFile(::Core::Path const&, ::AzureFileDownloader&, ::std::function<void(::DownloaderResult)>) const;
     // NOLINTEND
 
 public:
@@ -54,4 +49,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

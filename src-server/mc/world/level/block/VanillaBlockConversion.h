@@ -16,4 +16,4 @@ namespace VanillaBlockConversion {
 MCAPI ::WeakPtr<::BlockType const> getBlockTypeFromLegacyId(uint id);
 // NOLINTEND
 
-} // namespace VanillaBlockConversion
+}

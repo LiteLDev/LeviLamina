@@ -4,8 +4,8 @@
 
 // auto generated inclusion list
 #include "mc/dataloadhelper/DataLoadHelperType.h"
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
+#include "mc/versionless/util/Mirror.h"
+#include "mc/versionless/util/Rotation.h"
 #include "mc/world/Direction.h"
 #include "mc/world/actor/InternalComponentRegistry.h"
 
@@ -67,10 +67,7 @@ public:
     virtual ::ActorUniqueID loadOwnerID(::ActorUniqueID) = 0;
 
     // vIndex: 15
-    virtual ::InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(
-        ::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const&,
-        ::std::string const&
-    ) = 0;
+    virtual ::InternalComponentRegistry::ComponentInfo const* loadActorInternalComponentInfo(::std::unordered_map<::HashedString, ::InternalComponentRegistry::ComponentInfo> const&, ::std::string const&) = 0;
 
     // vIndex: 16
     virtual ::DataLoadHelperType getType() const = 0;
@@ -84,4 +81,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

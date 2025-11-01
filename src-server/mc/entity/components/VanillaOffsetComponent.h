@@ -11,5 +11,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::Vec3> mCurrentOffset;
     ::ll::TypedStorage<4, 12, ::Vec3> mPreviousOffset;
+    ::ll::TypedStorage<4, 12, ::Vec3> mClimbingOffset;
     // NOLINTEND
+
 };

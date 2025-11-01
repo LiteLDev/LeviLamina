@@ -15,7 +15,7 @@ class ScriptDebuggerProtocol {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk14b32c;
+    ::ll::UntypedStorage<8, 8> mUnk14b32c;
     ::ll::UntypedStorage<8, 24> mUnk6d668e;
     // NOLINTEND
 
@@ -46,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindMessageTypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
+
 };

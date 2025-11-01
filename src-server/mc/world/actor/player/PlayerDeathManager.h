@@ -21,13 +21,9 @@ class PlayerDeathManager : public ::IPlayerDeathManagerConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        128,
-        ::Bedrock::PubSub::Publisher<void(::Player&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
-                                                                                             mOnPlayerDeathPublisher;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::Player&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mOnPlayerDeathPublisher;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IPlayerDeathManagerProxy>>> mPlayerDeathManagerProxy;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>>                    mPacketSender;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>> mPacketSender;
     // NOLINTEND
 
 public:
@@ -63,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

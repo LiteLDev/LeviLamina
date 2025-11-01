@@ -30,10 +30,7 @@ public:
     // NOLINTBEGIN
     MCNAPI IceCandidatePairDescription(::webrtc::IceCandidatePairDescription const& other);
 
-    MCNAPI IceCandidatePairDescription(
-        ::webrtc::IceCandidateType local_candidate_type,
-        ::webrtc::IceCandidateType remote_candidate_type
-    );
+    MCNAPI IceCandidatePairDescription(::webrtc::IceCandidateType local_candidate_type, ::webrtc::IceCandidateType remote_candidate_type);
 
     MCNAPI ~IceCandidatePairDescription();
     // NOLINTEND
@@ -43,8 +40,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::IceCandidatePairDescription const& other);
 
-    MCNAPI void*
-    $ctor(::webrtc::IceCandidateType local_candidate_type, ::webrtc::IceCandidateType remote_candidate_type);
+    MCNAPI void* $ctor(::webrtc::IceCandidateType local_candidate_type, ::webrtc::IceCandidateType remote_candidate_type);
     // NOLINTEND
 
 public:
@@ -52,6 +48,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

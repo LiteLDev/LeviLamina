@@ -26,7 +26,7 @@ public:
     virtual void doOnHitEffect(::Actor&, ::ProjectileComponent&) = 0;
 
     // vIndex: 4
-    virtual char const* getName();
+    virtual char const* getName() const;
     // NOLINTEND
 
 public:
@@ -38,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI char const* $getName();
+    MCNAPI char const* $getName() const;
     // NOLINTEND
 
 public:
@@ -46,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

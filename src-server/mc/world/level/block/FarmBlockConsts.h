@@ -13,4 +13,4 @@ namespace FarmBlockConsts {
 MCAPI ::AABB const& FARM_BLOCK_VISUAL_SHAPE();
 // NOLINTEND
 
-} // namespace FarmBlockConsts
+}

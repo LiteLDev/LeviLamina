@@ -19,12 +19,7 @@ public:
     virtual ~IVehicleStateProvider() = default;
 
     // vIndex: 1
-    virtual bool canAddPassenger(
-        ::std::vector<::StrictActorIDEntityContextPair> const&,
-        ::RideableComponentData const&,
-        ::RideableComponentHelpers::IRideableActor const&,
-        ::RideableComponentHelpers::IRideableActor const&
-    ) const = 0;
+    virtual bool canAddPassenger(::std::vector<::StrictActorIDEntityContextPair> const&, ::RideableComponentData const&, ::RideableComponentHelpers::IRideableActor const&, ::RideableComponentHelpers::IRideableActor const&) const = 0;
     // NOLINTEND
 
 public:
@@ -32,6 +27,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace RideableComponentHelpers
+}

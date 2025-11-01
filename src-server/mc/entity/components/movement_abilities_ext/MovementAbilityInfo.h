@@ -18,6 +18,7 @@ public:
     MovementAbilityInfo& operator=(MovementAbilityInfo const&);
     MovementAbilityInfo(MovementAbilityInfo const&);
     MovementAbilityInfo();
+
 };
 
-} // namespace MovementAbilitiesExt
+}

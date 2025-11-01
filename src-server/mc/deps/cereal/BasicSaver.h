@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 112> mUnke6b1a6;
-    ::ll::UntypedStorage<1, 1>   mUnkfed958;
+    ::ll::UntypedStorage<1, 1> mUnkfed958;
     // NOLINTEND
 
 public:
@@ -38,12 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool saveImpl(
-        ::cereal::SchemaWriter&                writer,
-        ::entt::meta_handle                    handle,
-        ::cereal::internal::BasicSchema const& fallback,
-        ::cereal::SaverConfig const&           config
-    );
+    MCNAPI bool saveImpl(::cereal::SchemaWriter& writer, ::entt::meta_handle handle, ::cereal::internal::BasicSchema const& fallback, ::cereal::SaverConfig const& config);
     // NOLINTEND
 
 public:
@@ -57,6 +52,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cereal
+}

@@ -6,7 +6,7 @@ struct JSProperty {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk790b9f;
+    ::ll::UntypedStorage<8, 16> mUnke49a59;
     // NOLINTEND
 
 public:
@@ -14,4 +14,5 @@ public:
     JSProperty& operator=(JSProperty const&);
     JSProperty(JSProperty const&);
     JSProperty();
+
 };

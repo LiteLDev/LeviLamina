@@ -16,6 +16,7 @@ public:
     EditorBlockPaletteEventPaletteUpdated& operator=(EditorBlockPaletteEventPaletteUpdated const&);
     EditorBlockPaletteEventPaletteUpdated(EditorBlockPaletteEventPaletteUpdated const&);
     EditorBlockPaletteEventPaletteUpdated();
+
 };
 
-} // namespace Editor
+}

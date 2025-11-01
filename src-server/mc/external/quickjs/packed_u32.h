@@ -14,4 +14,5 @@ public:
     packed_u32& operator=(packed_u32 const&);
     packed_u32(packed_u32 const&);
     packed_u32();
+
 };

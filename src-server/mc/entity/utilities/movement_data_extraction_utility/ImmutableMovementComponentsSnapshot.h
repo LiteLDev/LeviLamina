@@ -19,6 +19,7 @@ public:
     ImmutableMovementComponentsSnapshot& operator=(ImmutableMovementComponentsSnapshot const&);
     ImmutableMovementComponentsSnapshot(ImmutableMovementComponentsSnapshot const&);
     ImmutableMovementComponentsSnapshot();
+
 };
 
-} // namespace MovementDataExtractionUtility
+}

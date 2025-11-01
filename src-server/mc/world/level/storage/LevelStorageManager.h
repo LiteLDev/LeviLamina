@@ -29,41 +29,20 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::Bedrock::UniqueOwnerPointer<::LevelStorage>> const> mLevelStorage;
-    ::ll::TypedStorage<8, 80, ::SavedDataStorage>                                                   mSavedDataStorage;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::GameDataSaveTimer>>>               mGameDataSaveTimer;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::UserStorageChecker>>>              mUserStorageChecker;
-    ::ll::TypedStorage<
-        8,
-        128,
-        ::Bedrock::PubSub::Publisher<void(::LevelStorage&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
-        mSavePublisher;
-    ::ll::TypedStorage<
-        8,
-        128,
-        ::Bedrock::PubSub::Publisher<void(::LevelStorage&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
-        mSaveGameDataPublisher;
-    ::ll::TypedStorage<
-        8,
-        128,
-        ::Bedrock::PubSub::Publisher<void(::LevelStorage&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
-        mSaveLevelDataPublisher;
-    ::ll::TypedStorage<
-        8,
-        128,
-        ::Bedrock::PubSub::Publisher<void(bool&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
-        mCanStartSaveTimerCheckPublisher;
-    ::ll::TypedStorage<
-        8,
-        128,
-        ::Bedrock::PubSub::Publisher<void(::LevelStorage&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
-        mOnStartLeaveGamePublisher;
-    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
-                                                               mOnAppSuspendPublisher;
+    ::ll::TypedStorage<8, 80, ::SavedDataStorage> mSavedDataStorage;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::GameDataSaveTimer>>> mGameDataSaveTimer;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::UserStorageChecker>>> mUserStorageChecker;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::LevelStorage&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mSavePublisher;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::LevelStorage&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mSaveGameDataPublisher;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::LevelStorage&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mSaveLevelDataPublisher;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(bool&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mCanStartSaveTimerCheckPublisher;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(::LevelStorage&), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mOnStartLeaveGamePublisher;
+    ::ll::TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>> mOnAppSuspendPublisher;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlayerDeathSubscription;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnDimensionCreatedSubscription;
-    ::ll::TypedStorage<1, 1, bool>                             mIsLevelTearingDown;
-    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>            mEventing;
-    ::ll::TypedStorage<4, 4, uint>                             mPollSaveGameStatisticsCount;
+    ::ll::TypedStorage<1, 1, bool> mIsLevelTearingDown;
+    ::ll::TypedStorage<8, 8, ::IMinecraftEventing&> mEventing;
+    ::ll::TypedStorage<4, 4, uint> mPollSaveGameStatisticsCount;
     // NOLINTEND
 
 public:
@@ -100,12 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelStorageManager(
-        ::Bedrock::UniqueOwnerPointer<::LevelStorage> levelStorage,
-        ::std::unique_ptr<::GameDataSaveTimer>        gameDataSaveTimer,
-        ::std::unique_ptr<::UserStorageChecker>       userStorageChecker,
-        ::IMinecraftEventing&                         eventing
-    );
+    MCAPI LevelStorageManager(::Bedrock::UniqueOwnerPointer<::LevelStorage> levelStorage, ::std::unique_ptr<::GameDataSaveTimer> gameDataSaveTimer, ::std::unique_ptr<::UserStorageChecker> userStorageChecker, ::IMinecraftEventing& eventing);
 
     MCAPI void _onNewDimensionCreated(::Dimension& dimension);
 
@@ -129,12 +103,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::UniqueOwnerPointer<::LevelStorage> levelStorage,
-        ::std::unique_ptr<::GameDataSaveTimer>        gameDataSaveTimer,
-        ::std::unique_ptr<::UserStorageChecker>       userStorageChecker,
-        ::IMinecraftEventing&                         eventing
-    );
+    MCAPI void* $ctor(::Bedrock::UniqueOwnerPointer<::LevelStorage> levelStorage, ::std::unique_ptr<::GameDataSaveTimer> gameDataSaveTimer, ::std::unique_ptr<::UserStorageChecker> userStorageChecker, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:
@@ -164,4 +133,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

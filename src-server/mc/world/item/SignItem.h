@@ -21,11 +21,7 @@ class SignItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::std::map<::SignBlock::SignType, ::std::tuple<::Block const*, ::Block const*, ::Block const*>>>
-                                                    mConvertMap;
+    ::ll::TypedStorage<8, 16, ::std::map<::SignBlock::SignType, ::std::tuple<::Block const*, ::Block const*, ::Block const*>>> mConvertMap;
     ::ll::TypedStorage<4, 4, ::SignBlock::SignType> mType;
     // NOLINTEND
 
@@ -36,16 +32,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 123
+    // vIndex: 124
     virtual ::Block const* getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const;
 
-    // vIndex: 120
+    // vIndex: 121
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
 
-    // vIndex: 122
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    // vIndex: 123
+    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
 
     // vIndex: 0
     virtual ~SignItem() /*override*/;
@@ -76,8 +70,7 @@ public:
 
     MCFOLD bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -85,4 +78,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

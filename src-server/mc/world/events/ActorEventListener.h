@@ -21,7 +21,7 @@ class ActorEventListener {
 public:
     // ActorEventListener inner types define
     using EventType = ::ActorNotificationEvent;
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,11 +32,7 @@ public:
     virtual ::EventResult onEvent(::ActorNotificationEvent const& event);
 
     // vIndex: 2
-    virtual ::EventResult onActorDefinitionEvent(
-        ::Actor&                                  actor,
-        ::std::string const&                      event,
-        ::std::vector<::ActorDefinitionModifier>& modifiers
-    );
+    virtual ::EventResult onActorDefinitionEvent(::Actor& actor, ::std::string const& event, ::std::vector<::ActorDefinitionModifier>& modifiers);
 
     // vIndex: 3
     virtual ::EventResult onActorTick(::Actor& actor);
@@ -48,8 +44,7 @@ public:
     virtual ::EventResult onActorStartRiding(::Actor& actor, ::Actor& vehicle);
 
     // vIndex: 6
-    virtual ::EventResult
-    onActorStopRiding(::Actor& actor, bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
+    virtual ::EventResult onActorStopRiding(::Actor& actor, bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
 
     // vIndex: 7
     virtual ::EventResult onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
@@ -64,11 +59,7 @@ public:
     virtual ::EventResult onActorAttackedActor(::Actor& actor, ::Actor& target);
 
     // vIndex: 11
-    virtual ::EventResult onActorMobInteraction(
-        ::Actor&                             actor,
-        ::MinecraftEventing::InteractionType interactionType,
-        ::ActorType                          interactedActorType
-    );
+    virtual ::EventResult onActorMobInteraction(::Actor& actor, ::MinecraftEventing::InteractionType interactionType, ::ActorType interactedActorType);
 
     // vIndex: 12
     virtual ::EventResult onActorTargetAcquired(::Actor& actor, ::Actor& target);
@@ -100,11 +91,7 @@ public:
     // NOLINTBEGIN
     MCFOLD ::EventResult $onEvent(::ActorNotificationEvent const& event);
 
-    MCFOLD ::EventResult $onActorDefinitionEvent(
-        ::Actor&                                  actor,
-        ::std::string const&                      event,
-        ::std::vector<::ActorDefinitionModifier>& modifiers
-    );
+    MCFOLD ::EventResult $onActorDefinitionEvent(::Actor& actor, ::std::string const& event, ::std::vector<::ActorDefinitionModifier>& modifiers);
 
     MCFOLD ::EventResult $onActorTick(::Actor& actor);
 
@@ -112,8 +99,7 @@ public:
 
     MCFOLD ::EventResult $onActorStartRiding(::Actor& actor, ::Actor& vehicle);
 
-    MCFOLD ::EventResult
-    $onActorStopRiding(::Actor& actor, bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
+    MCFOLD ::EventResult $onActorStopRiding(::Actor& actor, bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles);
 
     MCFOLD ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
 
@@ -123,11 +109,7 @@ public:
 
     MCFOLD ::EventResult $onActorAttackedActor(::Actor& actor, ::Actor& target);
 
-    MCFOLD ::EventResult $onActorMobInteraction(
-        ::Actor&                             actor,
-        ::MinecraftEventing::InteractionType interactionType,
-        ::ActorType                          interactedActorType
-    );
+    MCFOLD ::EventResult $onActorMobInteraction(::Actor& actor, ::MinecraftEventing::InteractionType interactionType, ::ActorType interactedActorType);
 
     MCFOLD ::EventResult $onActorTargetAcquired(::Actor& actor, ::Actor& target);
 
@@ -147,4 +129,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

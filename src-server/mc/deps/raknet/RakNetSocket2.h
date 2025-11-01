@@ -13,11 +13,11 @@ class RakNetSocket2 : public ::std::enable_shared_from_this<::RakNet::RakNetSock
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk45c154;
-    ::ll::UntypedStorage<4, 4>   mUnk71ae1a;
-    ::ll::UntypedStorage<4, 4>   mUnkf42590;
+    ::ll::UntypedStorage<8, 8> mUnk45c154;
+    ::ll::UntypedStorage<4, 4> mUnk71ae1a;
+    ::ll::UntypedStorage<4, 4> mUnkf42590;
     ::ll::UntypedStorage<8, 136> mUnk164a1f;
-    ::ll::UntypedStorage<4, 4>   mUnk923992;
+    ::ll::UntypedStorage<4, 4> mUnk923992;
     // NOLINTEND
 
 public:
@@ -50,6 +50,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

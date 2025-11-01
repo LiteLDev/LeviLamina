@@ -17,12 +17,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool
-    resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&) /*override*/;
+    virtual bool resolveAndValidate(::SharedTypes::v1_20_60::IBiomeJsonComponent const&, ::BiomeRegistry const&) /*override*/;
 
     // vIndex: 2
-    virtual void applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& component) const
-        /*override*/;
+    virtual void applyToBiome(::Biome& biome, ::SharedTypes::v1_20_60::IBiomeJsonComponent const& component) const /*override*/;
 
     // vIndex: 0
     virtual ~CreatureSpawnProbabilityBiomeComponentGlue() /*override*/ = default;
@@ -41,4 +39,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

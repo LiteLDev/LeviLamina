@@ -18,9 +18,9 @@ struct ComponentItemData_v1_21_90 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 88, ::ComponentItemDescriptionData_v1_21_60>               mDescription;
-    ::ll::TypedStorage<8, 1088, ::SharedTypes::v1_21_90::ComponentItemComponentData> mItemComponents;
-    ::ll::TypedStorage<8, 840, ::ComponentItemDeprecatedComponentData_v1_20_80>      mDeprecatedItemComponents;
+    ::ll::TypedStorage<8, 88, ::ComponentItemDescriptionData_v1_21_60> mDescription;
+    ::ll::TypedStorage<8, 1096, ::SharedTypes::v1_21_90::ComponentItemComponentData> mItemComponents;
+    ::ll::TypedStorage<8, 840, ::ComponentItemDeprecatedComponentData_v1_20_80> mDeprecatedItemComponents;
     // NOLINTEND
 
 public:
@@ -33,8 +33,6 @@ public:
     // NOLINTBEGIN
     MCAPI ComponentItemData_v1_21_90(::ComponentItemData_v1_21_90 const&);
 
-    MCAPI ComponentItemData_v1_21_90(::ComponentItemData_v1_21_90&&);
-
     MCAPI ~ComponentItemData_v1_21_90();
     // NOLINTEND
 
@@ -45,8 +43,7 @@ public:
 
     MCAPI static void moveDeprecatedData(::ComponentItemData_v1_21_80& oldData, ::ComponentItemData_v1_21_90& newData);
 
-    MCAPI static void
-    upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_21_80, ::ComponentItemData_v1_21_90, nullptr_t>& upgrader);
+    MCAPI static void upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_21_80, ::ComponentItemData_v1_21_90, nullptr_t>& upgrader);
     // NOLINTEND
 
 public:
@@ -58,14 +55,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ComponentItemData_v1_21_90 const&);
-
-    MCAPI void* $ctor(::ComponentItemData_v1_21_90&&);
+    MCFOLD void* $ctor(::ComponentItemData_v1_21_90 const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
+
 };

@@ -12,9 +12,7 @@ namespace Bedrock { struct ImplCtor; }
 
 namespace Bedrock::Resources::Archive {
 
-class Reader
-: public ::Bedrock::
-      ImplBase<::Bedrock::Resources::Archive::Reader, ::Bedrock::ImplCtor(::std::unique_ptr<uchar[0]>, uint64 const&)> {
+class Reader : public ::Bedrock::ImplBase<::Bedrock::Resources::Archive::Reader, ::Bedrock::ImplCtor(::std::unique_ptr<uchar[0]>, uint64 const&)> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -33,6 +31,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Resources::Archive
+}

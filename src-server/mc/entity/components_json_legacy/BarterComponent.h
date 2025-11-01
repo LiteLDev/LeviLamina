@@ -15,8 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mItemOriginationActorUniqueID;
-    ::ll::TypedStorage<2, 2, short>           mBarterItemId;
-    ::ll::TypedStorage<1, 1, bool>            mExecuteTrade;
+    ::ll::TypedStorage<2, 2, short> mBarterItemId;
+    ::ll::TypedStorage<1, 1, bool> mExecuteTrade;
     // NOLINTEND
 
 public:
@@ -24,4 +24,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void onBarterItemPickedUp(::Actor const& owner, ::ActorUniqueID actorUniqueID, short barterItemId);
     // NOLINTEND
+
 };

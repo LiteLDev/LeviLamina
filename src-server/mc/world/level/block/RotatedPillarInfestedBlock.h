@@ -17,13 +17,8 @@ class RotatedPillarInfestedBlock : public ::RotatedPillarBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 91
-    virtual void spawnAfterBreak(
-        ::BlockSource& region,
-        ::Block const&,
-        ::BlockPos const&             pos,
-        ::ResourceDropsContext const& resourceDropsContext
-    ) const /*override*/;
+    // vIndex: 90
+    virtual void spawnAfterBreak(::BlockSource& region, ::Block const&, ::BlockPos const& pos, ::ResourceDropsContext const& resourceDropsContext) const /*override*/;
 
     // vIndex: 0
     virtual ~RotatedPillarInfestedBlock() /*override*/ = default;
@@ -32,11 +27,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $spawnAfterBreak(
-        ::BlockSource& region,
-        ::Block const&,
-        ::BlockPos const&             pos,
-        ::ResourceDropsContext const& resourceDropsContext
-    ) const;
+    MCFOLD void $spawnAfterBreak(::BlockSource& region, ::Block const&, ::BlockPos const& pos, ::ResourceDropsContext const& resourceDropsContext) const;
     // NOLINTEND
+
 };

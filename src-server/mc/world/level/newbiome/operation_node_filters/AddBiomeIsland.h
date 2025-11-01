@@ -16,8 +16,8 @@ class AddBiomeIsland : public ::OperationNodeFilters::FilterBase<3, 3, ::Biome c
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk12088d;
-    ::ll::UntypedStorage<8, 8>  mUnk8bc886;
+    ::ll::UntypedStorage<8, 8> mUnk12088d;
+    ::ll::UntypedStorage<8, 8> mUnk8bc886;
     ::ll::UntypedStorage<8, 24> mUnke6c20c;
     // NOLINTEND
 
@@ -26,6 +26,7 @@ public:
     AddBiomeIsland& operator=(AddBiomeIsland const&);
     AddBiomeIsland(AddBiomeIsland const&);
     AddBiomeIsland();
+
 };
 
-} // namespace OperationNodeFilters
+}

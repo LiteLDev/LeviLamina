@@ -19,6 +19,7 @@ public:
     IntegerSequenceEncoder& operator=(IntegerSequenceEncoder const&);
     IntegerSequenceEncoder(IntegerSequenceEncoder const&);
     IntegerSequenceEncoder();
+
 };
 
-} // namespace astc_codec
+}

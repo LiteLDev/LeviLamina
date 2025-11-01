@@ -13,8 +13,8 @@ struct SentPacket {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk732f98;
-    ::ll::UntypedStorage<8, 8>  mUnkbe6534;
+    ::ll::UntypedStorage<8, 8> mUnk732f98;
+    ::ll::UntypedStorage<8, 8> mUnkbe6534;
     ::ll::UntypedStorage<8, 40> mUnkaf3c19;
     // NOLINTEND
 
@@ -47,6 +47,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

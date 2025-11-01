@@ -14,14 +14,13 @@ namespace Editor::Input { struct BindingInfo; }
 
 namespace Editor::Network {
 
-class KeyBindingRegisterPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::KeyBindingRegisterPayload> {
+class KeyBindingRegisterPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::KeyBindingRegisterPayload> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48>  mUnk39f3d7;
-    ::ll::UntypedStorage<8, 48>  mUnkc52efa;
-    ::ll::UntypedStorage<4, 12>  mUnkbcc0b4;
+    ::ll::UntypedStorage<8, 48> mUnk39f3d7;
+    ::ll::UntypedStorage<8, 48> mUnkc52efa;
+    ::ll::UntypedStorage<4, 12> mUnkbcc0b4;
     ::ll::UntypedStorage<8, 128> mUnkf93322;
     // NOLINTEND
 
@@ -41,12 +40,7 @@ public:
     // NOLINTBEGIN
     MCNAPI KeyBindingRegisterPayload(::Editor::Network::KeyBindingRegisterPayload const&);
 
-    MCNAPI KeyBindingRegisterPayload(
-        ::HashedString const&               contextId,
-        ::HashedString const&               bindingId,
-        ::Editor::Input::KeyBinding const&  binding,
-        ::Editor::Input::BindingInfo const& info
-    );
+    MCNAPI KeyBindingRegisterPayload(::HashedString const& contextId, ::HashedString const& bindingId, ::Editor::Input::KeyBinding const& binding, ::Editor::Input::BindingInfo const& info);
 
     MCNAPI ::Editor::Network::KeyBindingRegisterPayload& operator=(::Editor::Network::KeyBindingRegisterPayload const&);
     // NOLINTEND
@@ -56,12 +50,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::Network::KeyBindingRegisterPayload const&);
 
-    MCNAPI void* $ctor(
-        ::HashedString const&               contextId,
-        ::HashedString const&               bindingId,
-        ::Editor::Input::KeyBinding const&  binding,
-        ::Editor::Input::BindingInfo const& info
-    );
+    MCNAPI void* $ctor(::HashedString const& contextId, ::HashedString const& bindingId, ::Editor::Input::KeyBinding const& binding, ::Editor::Input::BindingInfo const& info);
     // NOLINTEND
 
 public:
@@ -75,6 +64,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

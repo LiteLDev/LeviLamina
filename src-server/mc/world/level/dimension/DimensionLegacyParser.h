@@ -13,8 +13,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace DimensionLegacyParser {
 // functions
 // NOLINTBEGIN
-MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument
-parseDimensionLegacy(::Puv::Input const& input, ::Puv::Logger& logger, ::cereal::ReflectionCtx const& ctx);
+MCNAPI ::SharedTypes::v1_21_60::DimensionDefinition::DimensionDocument parseDimensionLegacy(::Puv::Input const& input, ::Puv::Logger& logger, ::gsl::not_null<::cereal::ReflectionCtx const*> ctx);
 // NOLINTEND
 
-} // namespace DimensionLegacyParser
+}

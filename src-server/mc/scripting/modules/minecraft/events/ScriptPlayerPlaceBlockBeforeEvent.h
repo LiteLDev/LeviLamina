@@ -27,11 +27,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayer;
-    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptFacing>                                        mFace;
+    ::ll::TypedStorage<4, 4, ::ScriptModuleMinecraft::ScriptFacing> mFace;
     ::ll::TypedStorage<4, 12, ::Vec3> mFaceLocation;
-    ::ll::TypedStorage<1, 1, bool>    mCancel;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
-        mPermutation;
+    ::ll::TypedStorage<1, 1, bool> mCancel;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> mPermutation;
     // NOLINTEND
 
 public:
@@ -46,15 +45,7 @@ public:
 
     MCAPI ScriptPlayerPlaceBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
 
-    MCAPI ScriptPlayerPlaceBlockBeforeEvent(
-        ::Player const&                       player,
-        ::Dimension&                          dimension,
-        ::BlockPos const&                     pos,
-        uchar                                 face,
-        ::Vec3 const&                         faceLocation,
-        ::Block const&                        permutationToPlace,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
+    MCAPI ScriptPlayerPlaceBlockBeforeEvent(::Player const& player, ::Dimension& dimension, ::BlockPos const& pos, uchar face, ::Vec3 const& faceLocation, ::Block const& permutationToPlace, ::Scripting::WeakLifetimeScope const& scope);
 
     MCAPI ~ScriptPlayerPlaceBlockBeforeEvent();
     // NOLINTEND
@@ -72,15 +63,7 @@ public:
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent const&);
 
-    MCAPI void* $ctor(
-        ::Player const&                       player,
-        ::Dimension&                          dimension,
-        ::BlockPos const&                     pos,
-        uchar                                 face,
-        ::Vec3 const&                         faceLocation,
-        ::Block const&                        permutationToPlace,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
+    MCAPI void* $ctor(::Player const& player, ::Dimension& dimension, ::BlockPos const& pos, uchar face, ::Vec3 const& faceLocation, ::Block const& permutationToPlace, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -88,6 +71,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

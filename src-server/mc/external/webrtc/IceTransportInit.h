@@ -21,6 +21,7 @@ public:
     IceTransportInit& operator=(IceTransportInit const&);
     IceTransportInit(IceTransportInit const&);
     IceTransportInit();
+
 };
 
-} // namespace webrtc
+}

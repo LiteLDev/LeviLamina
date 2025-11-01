@@ -22,17 +22,17 @@ class BossEventPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int const>                            FLAG_DARKEN;
-    ::ll::TypedStorage<4, 4, int const>                            FLAG_FOG;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mBossID;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                      mPlayerID;
-    ::ll::TypedStorage<4, 4, ::BossEventUpdateType>                mEventType;
+    ::ll::TypedStorage<4, 4, int const> FLAG_DARKEN;
+    ::ll::TypedStorage<4, 4, int const> FLAG_FOG;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mBossID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mPlayerID;
+    ::ll::TypedStorage<4, 4, ::BossEventUpdateType> mEventType;
     ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mName;
-    ::ll::TypedStorage<4, 4, float>                                mHealthPercent;
-    ::ll::TypedStorage<4, 4, ::BossBarColor>                       mColor;
-    ::ll::TypedStorage<4, 4, ::BossBarOverlay>                     mOverlay;
-    ::ll::TypedStorage<1, 1, uchar>                                mDarkenScreen;
-    ::ll::TypedStorage<1, 1, uchar>                                mCreateWorldFog;
+    ::ll::TypedStorage<4, 4, float> mHealthPercent;
+    ::ll::TypedStorage<4, 4, ::BossBarColor> mColor;
+    ::ll::TypedStorage<4, 4, ::BossBarOverlay> mOverlay;
+    ::ll::TypedStorage<1, 1, uchar> mDarkenScreen;
+    ::ll::TypedStorage<1, 1, uchar> mCreateWorldFog;
     // NOLINTEND
 
 public:
@@ -44,10 +44,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -77,4 +77,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

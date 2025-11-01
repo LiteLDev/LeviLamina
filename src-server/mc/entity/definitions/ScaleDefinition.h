@@ -14,4 +14,5 @@ public:
     ScaleDefinition& operator=(ScaleDefinition const&);
     ScaleDefinition(ScaleDefinition const&);
     ScaleDefinition();
+
 };

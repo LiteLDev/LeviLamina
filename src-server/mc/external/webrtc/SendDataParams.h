@@ -19,6 +19,7 @@ public:
     SendDataParams& operator=(SendDataParams const&);
     SendDataParams(SendDataParams const&);
     SendDataParams();
+
 };
 
-} // namespace webrtc
+}

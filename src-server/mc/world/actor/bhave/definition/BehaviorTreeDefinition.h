@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk8ec4ec;
     ::ll::UntypedStorage<8, 32> mUnk561fd0;
-    ::ll::UntypedStorage<8, 8>  mUnkd26556;
+    ::ll::UntypedStorage<8, 8> mUnkd26556;
     // NOLINTEND
 
 public:
@@ -16,4 +16,5 @@ public:
     BehaviorTreeDefinition& operator=(BehaviorTreeDefinition const&);
     BehaviorTreeDefinition(BehaviorTreeDefinition const&);
     BehaviorTreeDefinition();
+
 };

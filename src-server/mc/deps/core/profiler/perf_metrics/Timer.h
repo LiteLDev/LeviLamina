@@ -19,6 +19,7 @@ public:
     Timer& operator=(Timer const&);
     Timer(Timer const&);
     Timer();
+
 };
 
-} // namespace PerfMetrics
+}

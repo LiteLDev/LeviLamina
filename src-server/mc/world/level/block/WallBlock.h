@@ -32,75 +32,46 @@ class WallBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 92
-    virtual ::Block const&
-    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
-        /*override*/;
+    // vIndex: 91
+    virtual ::Block const& getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const /*override*/;
 
     // vIndex: 65
     virtual void onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 66
-    virtual void onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
-
-    // vIndex: 87
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
+    // vIndex: 86
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
 
     // vIndex: 10
-    virtual ::AABB const&
-    getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const
-        /*override*/;
+    virtual ::AABB const& getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB getCollisionShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const /*override*/;
+    virtual ::AABB getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const /*override*/;
 
     // vIndex: 9
-    virtual ::AABB const& getOutline(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferValue
-    ) const /*override*/;
+    virtual ::AABB const& getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const /*override*/;
 
     // vIndex: 22
-    virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
+    virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     // vIndex: 24
     virtual bool canConnect(::Block const& otherBlock, uchar, ::Block const&) const /*override*/;
 
     // vIndex: 13
-    virtual bool
-    getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const
-        /*override*/;
+    virtual bool getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const /*override*/;
 
     // vIndex: 34
     virtual bool isWallBlock() const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 4
-    virtual ::HitResult clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const /*override*/;
+    virtual ::HitResult clip(::Block const& block, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::ShapeType shapeType, ::optional_ref<::GetCollisionShapeInterface const> entity) const /*override*/;
 
-    // vIndex: 89
-    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
-        /*override*/;
+    // vIndex: 88
+    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -110,8 +81,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::WallConnectionType
-    _desiredConnectionState(::BlockSource& region, ::BlockPos const& pos, uchar neighbor) const;
+    MCAPI ::WallConnectionType _desiredConnectionState(::BlockSource& region, ::BlockPos const& pos, uchar neighbor) const;
 
     MCAPI bool _isCovered(::BlockSource& region, ::BlockPos const& pos, ::AABB const& testAABB) const;
 
@@ -139,59 +109,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $getPlacementBlock(
-        ::Actor const&    by,
-        ::BlockPos const& pos,
-        uchar             face,
-        ::Vec3 const&     clickPos,
-        int               itemValue
-    ) const;
+    MCAPI ::Block const& $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const;
 
-    MCFOLD void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $onStructureBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onStructureNeighborBlockPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI ::AABB const& $getVisualShapeInWorld(::Block const& block, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferAABB) const;
 
-    MCAPI ::AABB const& $getVisualShapeInWorld(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::AABB& bufferAABB
-    ) const;
+    MCAPI ::AABB $getCollisionShape(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
-    MCAPI ::AABB $getCollisionShape(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
+    MCFOLD ::AABB const& $getOutline(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
-    MCFOLD ::AABB const& $getOutline(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferValue
-    ) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCFOLD bool $canConnect(::Block const& otherBlock, uchar, ::Block const&) const;
 
-    MCFOLD bool
-    $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
+    MCFOLD bool $getLiquidClipVolume(::Block const& block, ::BlockSource& region, ::BlockPos const& pos, ::AABB& includeBox) const;
 
     MCFOLD bool $isWallBlock() const;
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
-
-    MCFOLD ::HitResult $clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
 
     MCFOLD ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
@@ -203,4 +141,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

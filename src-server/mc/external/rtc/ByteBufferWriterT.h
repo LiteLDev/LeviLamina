@@ -4,7 +4,8 @@
 
 namespace rtc {
 
-template <typename T0>
-class ByteBufferWriterT {};
+template<typename T0>
+class ByteBufferWriterT {
+};
 
-} // namespace rtc
+}

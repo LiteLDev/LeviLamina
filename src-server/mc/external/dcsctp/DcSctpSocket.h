@@ -46,7 +46,7 @@ public:
     // clang-format off
     struct ConnectParameters;
     // clang-format on
-
+    
     // DcSctpSocket inner types define
     struct ConnectParameters {
     public:
@@ -55,42 +55,43 @@ public:
         ::ll::UntypedStorage<4, 4> mUnkbb01ad;
         ::ll::UntypedStorage<4, 4> mUnkfabbf6;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ConnectParameters& operator=(ConnectParameters const&);
         ConnectParameters(ConnectParameters const&);
         ConnectParameters();
+    
     };
-
+    
     enum class State : int {
-        KClosed           = 0,
-        KCookieWait       = 1,
-        KCookieEchoed     = 2,
-        KEstablished      = 3,
-        KShutdownPending  = 4,
-        KShutdownSent     = 5,
+        KClosed = 0,
+        KCookieWait = 1,
+        KCookieEchoed = 2,
+        KEstablished = 3,
+        KShutdownPending = 4,
+        KShutdownSent = 5,
         KShutdownReceived = 6,
-        KShutdownAckSent  = 7,
+        KShutdownAckSent = 7,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnka66a8b;
-    ::ll::UntypedStorage<8, 8>   mUnk143fb9;
-    ::ll::UntypedStorage<8, 88>  mUnk62c28b;
+    ::ll::UntypedStorage<8, 32> mUnka66a8b;
+    ::ll::UntypedStorage<8, 8> mUnk143fb9;
+    ::ll::UntypedStorage<8, 88> mUnk62c28b;
     ::ll::UntypedStorage<8, 176> mUnk1a131d;
-    ::ll::UntypedStorage<8, 48>  mUnkead560;
-    ::ll::UntypedStorage<8, 88>  mUnkd2281a;
-    ::ll::UntypedStorage<8, 8>   mUnkd97ab8;
-    ::ll::UntypedStorage<8, 8>   mUnkf4f7e6;
-    ::ll::UntypedStorage<8, 8>   mUnk6837e2;
-    ::ll::UntypedStorage<8, 72>  mUnk8f8604;
+    ::ll::UntypedStorage<8, 48> mUnkead560;
+    ::ll::UntypedStorage<8, 88> mUnkd2281a;
+    ::ll::UntypedStorage<8, 8> mUnkd97ab8;
+    ::ll::UntypedStorage<8, 8> mUnkf4f7e6;
+    ::ll::UntypedStorage<8, 8> mUnk6837e2;
+    ::ll::UntypedStorage<8, 72> mUnk8f8604;
     ::ll::UntypedStorage<8, 216> mUnk1c4c5d;
-    ::ll::UntypedStorage<4, 8>   mUnk245a5b;
-    ::ll::UntypedStorage<4, 4>   mUnk21a463;
-    ::ll::UntypedStorage<8, 8>   mUnkf959f9;
+    ::ll::UntypedStorage<4, 8> mUnk245a5b;
+    ::ll::UntypedStorage<4, 4> mUnk21a463;
+    ::ll::UntypedStorage<8, 8> mUnkf959f9;
     // NOLINTEND
 
 public:
@@ -121,19 +122,13 @@ public:
     virtual void Close() /*override*/;
 
     // vIndex: 12
-    virtual ::dcsctp::SendStatus
-    Send(::dcsctp::DcSctpMessage message, ::dcsctp::SendOptions const& send_options) /*override*/;
+    virtual ::dcsctp::SendStatus Send(::dcsctp::DcSctpMessage message, ::dcsctp::SendOptions const& send_options) /*override*/;
 
     // vIndex: 13
-    virtual ::std::vector<::dcsctp::SendStatus> SendMany(
-        ::rtc::ArrayView<::dcsctp::DcSctpMessage> messages,
-        ::dcsctp::SendOptions const&              send_options
-    ) /*override*/;
+    virtual ::std::vector<::dcsctp::SendStatus> SendMany(::rtc::ArrayView<::dcsctp::DcSctpMessage> messages, ::dcsctp::SendOptions const& send_options) /*override*/;
 
     // vIndex: 14
-    virtual ::dcsctp::ResetStreamsStatus ResetStreams(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
-    ) /*override*/;
+    virtual ::dcsctp::ResetStreamsStatus ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams) /*override*/;
 
     // vIndex: 7
     virtual ::dcsctp::SocketState state() const /*override*/;
@@ -145,27 +140,19 @@ public:
     virtual void SetMaxMessageSize(uint64 max_message_size) /*override*/;
 
     // vIndex: 10
-    virtual void SetStreamPriority(
-        ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>       stream_id,
-        ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort> priority
-    ) /*override*/;
+    virtual void SetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id, ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort> priority) /*override*/;
 
     // vIndex: 11
-    virtual ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>
-    GetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const /*override*/;
+    virtual ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort> GetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const /*override*/;
 
     // vIndex: 15
     virtual uint64 buffered_amount(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const /*override*/;
 
     // vIndex: 16
-    virtual uint64 buffered_amount_low_threshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const
-        /*override*/;
+    virtual uint64 buffered_amount_low_threshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const /*override*/;
 
     // vIndex: 17
-    virtual void SetBufferedAmountLowThreshold(
-        ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id,
-        uint64                                               bytes
-    ) /*override*/;
+    virtual void SetBufferedAmountLowThreshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id, uint64 bytes) /*override*/;
 
     // vIndex: 18
     virtual ::std::optional<::dcsctp::Metrics> GetMetrics() const /*override*/;
@@ -188,92 +175,57 @@ public:
     // NOLINTBEGIN
     MCNAPI void CloseConnectionBecauseOfTooManyTransmissionErrors();
 
-    MCNAPI void CreateTransmissionControlBlock(
-        ::dcsctp::Capabilities const&                             capabilities,
-        ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> my_verification_tag,
-        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>             my_initial_tsn,
-        ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> peer_verification_tag,
-        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>             peer_initial_tsn,
-        uint64                                                    a_rwnd,
-        ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64>        tie_tag
-    );
+    MCNAPI void CreateTransmissionControlBlock(::dcsctp::Capabilities const& capabilities, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> my_verification_tag, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint> my_initial_tsn, ::webrtc::StrongAlias<::dcsctp::VerificationTagTag, uint> peer_verification_tag, ::webrtc::StrongAlias<::dcsctp::TSNTag, uint> peer_initial_tsn, uint64 a_rwnd, ::webrtc::StrongAlias<::dcsctp::TieTagTag, uint64> tie_tag);
 
-    MCNAPI DcSctpSocket(
-        ::std::string_view                          log_prefix,
-        ::dcsctp::DcSctpSocketCallbacks&            callbacks,
-        ::std::unique_ptr<::dcsctp::PacketObserver> packet_observer,
-        ::dcsctp::DcSctpOptions const&              options
-    );
+    MCNAPI DcSctpSocket(::std::string_view log_prefix, ::dcsctp::DcSctpSocketCallbacks& callbacks, ::std::unique_ptr<::dcsctp::PacketObserver> packet_observer, ::dcsctp::DcSctpOptions const& options);
 
     MCNAPI bool Dispatch(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleAbort(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleAbort(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleCookieAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleCookieAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleCookieEcho(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleCookieEcho(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
     MCNAPI bool HandleCookieEchoWithTCB(::dcsctp::CommonHeader const& header, ::dcsctp::StateCookie const& cookie);
 
-    MCNAPI void
-    HandleData(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleData(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
     MCNAPI void HandleDataCommon(::dcsctp::AnyDataChunk& chunk);
 
-    MCNAPI void
-    HandleError(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleError(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleForwardTsn(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleForwardTsn(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
     MCNAPI void HandleForwardTsnCommon(::dcsctp::AnyForwardTsnChunk const& chunk);
 
-    MCNAPI void
-    HandleHeartbeatAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleHeartbeatAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void HandleHeartbeatRequest(
-        ::dcsctp::CommonHeader const&                header,
-        ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor
-    );
+    MCNAPI void HandleHeartbeatRequest(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleIData(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleIData(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleIForwardTsn(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleIForwardTsn(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleInit(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleInit(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleInitAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleInitAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleReconfig(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleReconfig(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleSack(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleSack(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleShutdown(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleShutdown(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void
-    HandleShutdownAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
+    MCNAPI void HandleShutdownAck(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
-    MCNAPI void HandleShutdownComplete(
-        ::dcsctp::CommonHeader const&                header,
-        ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor
-    );
+    MCNAPI void HandleShutdownComplete(::dcsctp::CommonHeader const& header, ::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
     MCNAPI bool HandleUnrecognizedChunk(::dcsctp::SctpPacket::ChunkDescriptor const& descriptor);
 
     MCNAPI void InternalClose(::dcsctp::ErrorKind error, ::std::string_view message);
 
-    MCNAPI ::dcsctp::SendStatus
-    InternalSend(::dcsctp::DcSctpMessage const& message, ::dcsctp::SendOptions const& send_options);
+    MCNAPI ::dcsctp::SendStatus InternalSend(::dcsctp::DcSctpMessage const& message, ::dcsctp::SendOptions const& send_options);
 
     MCNAPI void MaybeDeliverMessages();
 
@@ -309,12 +261,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::string_view                          log_prefix,
-        ::dcsctp::DcSctpSocketCallbacks&            callbacks,
-        ::std::unique_ptr<::dcsctp::PacketObserver> packet_observer,
-        ::dcsctp::DcSctpOptions const&              options
-    );
+    MCNAPI void* $ctor(::std::string_view log_prefix, ::dcsctp::DcSctpSocketCallbacks& callbacks, ::std::unique_ptr<::dcsctp::PacketObserver> packet_observer, ::dcsctp::DcSctpOptions const& options);
     // NOLINTEND
 
 public:
@@ -334,11 +281,9 @@ public:
 
     MCNAPI ::dcsctp::SendStatus $Send(::dcsctp::DcSctpMessage message, ::dcsctp::SendOptions const& send_options);
 
-    MCNAPI ::std::vector<::dcsctp::SendStatus>
-    $SendMany(::rtc::ArrayView<::dcsctp::DcSctpMessage> messages, ::dcsctp::SendOptions const& send_options);
+    MCNAPI ::std::vector<::dcsctp::SendStatus> $SendMany(::rtc::ArrayView<::dcsctp::DcSctpMessage> messages, ::dcsctp::SendOptions const& send_options);
 
-    MCNAPI ::dcsctp::ResetStreamsStatus
-    $ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams);
+    MCNAPI ::dcsctp::ResetStreamsStatus $ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams);
 
     MCNAPI ::dcsctp::SocketState $state() const;
 
@@ -346,20 +291,15 @@ public:
 
     MCNAPI void $SetMaxMessageSize(uint64 max_message_size);
 
-    MCNAPI void $SetStreamPriority(
-        ::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort>       stream_id,
-        ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort> priority
-    );
+    MCNAPI void $SetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id, ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort> priority);
 
-    MCNAPI ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort>
-    $GetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const;
+    MCNAPI ::webrtc::StrongAlias<::dcsctp::StreamPriorityTag, ushort> $GetStreamPriority(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const;
 
     MCNAPI uint64 $buffered_amount(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const;
 
     MCNAPI uint64 $buffered_amount_low_threshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) const;
 
-    MCNAPI void
-    $SetBufferedAmountLowThreshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id, uint64 bytes);
+    MCNAPI void $SetBufferedAmountLowThreshold(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id, uint64 bytes);
 
     MCNAPI ::std::optional<::dcsctp::Metrics> $GetMetrics() const;
 
@@ -375,6 +315,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

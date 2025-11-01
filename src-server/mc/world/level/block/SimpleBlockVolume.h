@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/level/block/BlockVolumeBase.h"
 
 // auto generated forward declare list
@@ -18,24 +18,24 @@ class SimpleBlockVolume : public ::BlockVolumeBase {
 public:
     // SimpleBlockVolume inner types define
     enum class IntersectionResult : int {
-        Disjoint   = 0,
-        Contains   = 1,
+        Disjoint = 0,
+        Contains = 1,
         Intersects = 2,
     };
-
+    
     enum class CornerIndex : uchar {
-        FrontBottomLeft  = 0,
-        BackBottomLeft   = 1,
-        FrontTopLeft     = 2,
-        BackTopLeft      = 3,
+        FrontBottomLeft = 0,
+        BackBottomLeft = 1,
+        FrontTopLeft = 2,
+        BackTopLeft = 3,
         FrontBottomRight = 4,
-        BackBottomRight  = 5,
-        FrontTopRight    = 6,
-        BackTopRight     = 7,
+        BackBottomRight = 5,
+        FrontTopRight = 6,
+        BackTopRight = 7,
     };
-
+    
     using CornerHandle = uchar;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -134,4 +134,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

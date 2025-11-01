@@ -24,21 +24,7 @@ struct VerticalCollisionFlagComponent;
 namespace FinalizeMoveSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickFinalizeMoveSystem(
-    ::StrictEntityContext&                         context,
-    ::AABBShapeComponent const&                    aabb,
-    ::MoveRequestComponent const&                  moveRequest,
-    ::OffsetsComponent const&                      offsets,
-    ::StateVectorComponent&                        state,
-    ::Optional<::OnGroundFlagComponent const>      onGround,
-    ::Optional<::MovementAbilitiesComponent const> abilities,
-    ::EntityModifier<
-        ::OnGroundFlagComponent,
-        ::CollisionFlagComponent,
-        ::HorizontalCollisionFlagComponent,
-        ::VerticalCollisionFlagComponent,
-        ::CollidableMobNearFlagComponent>& mod
-);
+MCNAPI void tickFinalizeMoveSystem(::StrictEntityContext& context, ::AABBShapeComponent const& aabb, ::MoveRequestComponent const& moveRequest, ::OffsetsComponent const& offsets, ::StateVectorComponent& state, ::Optional<::OnGroundFlagComponent const> onGround, ::Optional<::MovementAbilitiesComponent const> abilities, ::EntityModifier<::OnGroundFlagComponent, ::CollisionFlagComponent, ::HorizontalCollisionFlagComponent, ::VerticalCollisionFlagComponent, ::CollidableMobNearFlagComponent>& mod);
 // NOLINTEND
 
-} // namespace FinalizeMoveSystemImpl
+}

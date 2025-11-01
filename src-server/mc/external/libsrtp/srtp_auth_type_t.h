@@ -22,4 +22,5 @@ public:
     srtp_auth_type_t& operator=(srtp_auth_type_t const&);
     srtp_auth_type_t(srtp_auth_type_t const&);
     srtp_auth_type_t();
+
 };

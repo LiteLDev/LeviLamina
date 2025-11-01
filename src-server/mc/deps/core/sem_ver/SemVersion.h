@@ -18,15 +18,15 @@ public:
     // SemVersion inner types define
     enum class ParseOption : int {
         AllowWildcards = 0,
-        NoWildcards    = 1,
+        NoWildcards = 1,
     };
-
+    
     enum class MatchType : int {
-        Full    = 0,
+        Full = 0,
         Partial = 1,
-        None    = 2,
+        None = 2,
     };
-
+    
 public:
     // member functions
     // NOLINTBEGIN
@@ -38,13 +38,7 @@ public:
 
     MCAPI explicit SemVersion(::SemVersionConstant const& other);
 
-    MCAPI SemVersion(
-        ushort                           major,
-        ushort                           minor,
-        ushort                           patch,
-        ::Bedrock::StaticOptimizedString preRelease,
-        ::Bedrock::StaticOptimizedString buildMeta
-    );
+    MCAPI SemVersion(ushort major, ushort minor, ushort patch, ::Bedrock::StaticOptimizedString preRelease, ::Bedrock::StaticOptimizedString buildMeta);
 
     MCAPI ::SemVersion& operator=(::SemVersion const&);
 
@@ -56,13 +50,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SemVersion::MatchType
-    fromJson(::Json::Value const& json, ::SemVersion& output, ::SemVersion::ParseOption parseOption);
+    MCAPI static ::SemVersion::MatchType fromJson(::Json::Value const& json, ::SemVersion& output, ::SemVersion::ParseOption parseOption);
 
     MCAPI static ::SemVersion::MatchType fromJsonArray(::Json::Value const& jsonArray, ::SemVersion& output);
 
-    MCAPI static ::SemVersion::MatchType
-    fromString(::std::string const& src, ::SemVersion& output, ::SemVersion::ParseOption parseOption);
+    MCAPI static ::SemVersion::MatchType fromString(::std::string const& src, ::SemVersion& output, ::SemVersion::ParseOption parseOption);
     // NOLINTEND
 
 public:
@@ -76,13 +68,7 @@ public:
 
     MCAPI void* $ctor(::SemVersionConstant const& other);
 
-    MCAPI void* $ctor(
-        ushort                           major,
-        ushort                           minor,
-        ushort                           patch,
-        ::Bedrock::StaticOptimizedString preRelease,
-        ::Bedrock::StaticOptimizedString buildMeta
-    );
+    MCAPI void* $ctor(ushort major, ushort minor, ushort patch, ::Bedrock::StaticOptimizedString preRelease, ::Bedrock::StaticOptimizedString buildMeta);
     // NOLINTEND
 
 public:
@@ -90,4 +76,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

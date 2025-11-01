@@ -5,9 +5,9 @@
 namespace NetherNet {
 
 enum class DiscoveryPacketType : ushort {
-    Request  = 0,
+    Request = 0,
     Response = 1,
-    Message  = 2,
+    Message = 2,
 };
 
 }

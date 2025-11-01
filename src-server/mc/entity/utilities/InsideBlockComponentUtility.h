@@ -14,4 +14,4 @@ namespace InsideBlockComponentUtility {
 MCNAPI void entityInside(::std::vector<::InsideBlockData> const& insideBlockDataVector, ::Actor& actor);
 // NOLINTEND
 
-} // namespace InsideBlockComponentUtility
+}

@@ -15,7 +15,7 @@ public:
     struct ErrorLocalization;
     struct ServerData;
     // clang-format on
-
+    
     // TextObjectParser inner types define
     struct ServerData {
     public:
@@ -25,14 +25,15 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk50aa87;
         ::ll::UntypedStorage<8, 8> mUnk9a53de;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ServerData& operator=(ServerData const&);
         ServerData(ServerData const&);
         ServerData();
+    
     };
-
+    
     struct ErrorLocalization {
     public:
         // member variables
@@ -40,65 +41,41 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk890d87;
         ::ll::UntypedStorage<8, 24> mUnk3f4353;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ErrorLocalization& operator=(ErrorLocalization const&);
         ErrorLocalization(ErrorLocalization const&);
         ErrorLocalization();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~ErrorLocalization();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _getObjectsFromTextObject(
-        ::Json::Value const&                   root,
-        ::TextObjectRoot&                      parsedObject,
-        ::TextObjectParser::ServerData*        serverData,
-        ::TextObjectParser::ErrorLocalization& errorLocalization
-    );
+    MCNAPI static bool _getObjectsFromTextObject(::Json::Value const& root, ::TextObjectRoot& parsedObject, ::TextObjectParser::ServerData* serverData, ::TextObjectParser::ErrorLocalization& errorLocalization);
 
-    MCNAPI static bool _parseScoreTextObject(
-        ::TextObjectRoot&                      parentTextObject,
-        ::Json::Value const&                   scoreObject,
-        ::TextObjectParser::ServerData*        serverData,
-        ::TextObjectParser::ErrorLocalization& errorLocalization
-    );
+    MCNAPI static bool _parseScoreTextObject(::TextObjectRoot& parentTextObject, ::Json::Value const& scoreObject, ::TextObjectParser::ServerData* serverData, ::TextObjectParser::ErrorLocalization& errorLocalization);
 
-    MCNAPI static bool _parseSelectorTextObject(
-        ::TextObjectRoot&                      parentTextObject,
-        ::std::string                          selectorString,
-        ::TextObjectParser::ServerData*        serverData,
-        ::TextObjectParser::ErrorLocalization& errorLocalization
-    );
+    MCNAPI static bool _parseSelectorTextObject(::TextObjectRoot& parentTextObject, ::std::string selectorString, ::TextObjectParser::ServerData* serverData, ::TextObjectParser::ErrorLocalization& errorLocalization);
 
-    MCNAPI static bool _textObjectFromJson(
-        ::Json::Value const&                   root,
-        ::TextObjectRoot&                      parsedObject,
-        ::TextObjectParser::ServerData*        serverData,
-        ::TextObjectParser::ErrorLocalization& errorLocalization
-    );
+    MCNAPI static bool _textObjectFromJson(::Json::Value const& root, ::TextObjectRoot& parsedObject, ::TextObjectParser::ServerData* serverData, ::TextObjectParser::ErrorLocalization& errorLocalization);
 
-    MCNAPI static bool
-    textObjectFromJson(::Json::Value const& root, ::TextObjectRoot& parsedObject, ::std::string& errorMsg);
+    MCNAPI static bool textObjectFromJson(::Json::Value const& root, ::TextObjectRoot& parsedObject, ::std::string& errorMsg);
 
-    MCNAPI static bool textObjectFromJsonString(
-        ::std::string const& jsonAsString,
-        ::TextObjectRoot&    parsedObject,
-        ::std::string&       errorMsg
-    );
+    MCNAPI static bool textObjectFromJsonString(::std::string const& jsonAsString, ::TextObjectRoot& parsedObject, ::std::string& errorMsg);
     // NOLINTEND
 
 public:
@@ -126,4 +103,5 @@ public:
 
     MCNAPI static ::std::string const& RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT();
     // NOLINTEND
+
 };

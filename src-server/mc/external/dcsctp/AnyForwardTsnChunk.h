@@ -19,7 +19,7 @@ public:
     // clang-format off
     struct SkippedStream;
     // clang-format on
-
+    
     // AnyForwardTsnChunk inner types define
     struct SkippedStream {
     public:
@@ -30,18 +30,19 @@ public:
         ::ll::UntypedStorage<1, 1> mUnkdd294b;
         ::ll::UntypedStorage<4, 4> mUnk5e6698;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         SkippedStream& operator=(SkippedStream const&);
         SkippedStream(SkippedStream const&);
         SkippedStream();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk24e7c4;
+    ::ll::UntypedStorage<4, 4> mUnk24e7c4;
     ::ll::UntypedStorage<8, 24> mUnke2548a;
     // NOLINTEND
 
@@ -61,19 +62,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AnyForwardTsnChunk(
-        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>              new_cumulative_tsn,
-        ::std::vector<::dcsctp::AnyForwardTsnChunk::SkippedStream> skipped_streams
-    );
+    MCNAPI AnyForwardTsnChunk(::webrtc::StrongAlias<::dcsctp::TSNTag, uint> new_cumulative_tsn, ::std::vector<::dcsctp::AnyForwardTsnChunk::SkippedStream> skipped_streams);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::webrtc::StrongAlias<::dcsctp::TSNTag, uint>              new_cumulative_tsn,
-        ::std::vector<::dcsctp::AnyForwardTsnChunk::SkippedStream> skipped_streams
-    );
+    MCNAPI void* $ctor(::webrtc::StrongAlias<::dcsctp::TSNTag, uint> new_cumulative_tsn, ::std::vector<::dcsctp::AnyForwardTsnChunk::SkippedStream> skipped_streams);
     // NOLINTEND
 
 public:
@@ -81,6 +76,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

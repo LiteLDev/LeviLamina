@@ -22,13 +22,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual bool isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const,
-        ::ItemStackBase const& item,
-        int const,
-        bool
-    ) const /*override*/;
+    virtual bool isItemAllowedInSlot(::ContainerScreenContext const& screenContext, int const, ::ItemStackBase const& item, int const, bool) const /*override*/;
 
     // vIndex: 8
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
@@ -40,13 +34,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const,
-        ::ItemStackBase const& item,
-        int const,
-        bool
-    ) const;
+    MCNAPI bool $isItemAllowedInSlot(::ContainerScreenContext const& screenContext, int const, ::ItemStackBase const& item, int const, bool) const;
 
     MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
     // NOLINTEND
@@ -56,4 +44,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

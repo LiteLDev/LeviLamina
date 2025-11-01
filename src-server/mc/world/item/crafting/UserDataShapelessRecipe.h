@@ -31,8 +31,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const
-        /*override*/;
+    virtual ::std::vector<::ItemInstance> const& assemble(::CraftingContainer& craftSlots, ::CraftingContext&) const /*override*/;
 
     // vIndex: 13
     virtual bool itemsMatch(::ItemDescriptor const& lhs, ::ItemDescriptor const& rhs) const /*override*/;
@@ -74,4 +73,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

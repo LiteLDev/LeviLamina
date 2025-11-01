@@ -4,7 +4,8 @@
 
 namespace Bedrock::PubSub::Detail {
 
-template <typename T0>
-class ThreadingPublisherBase {};
+template<typename T0>
+class ThreadingPublisherBase {
+};
 
-} // namespace Bedrock::PubSub::Detail
+}

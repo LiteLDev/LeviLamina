@@ -4,7 +4,8 @@
 
 namespace webrtc {
 
-template <typename T0>
-class ReturnType {};
+template<typename T0>
+class ReturnType {
+};
 
-} // namespace webrtc
+}

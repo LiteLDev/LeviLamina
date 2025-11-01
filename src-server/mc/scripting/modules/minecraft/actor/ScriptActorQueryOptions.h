@@ -19,10 +19,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mPosition;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>>   mMinDistance;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>>   mMaxDistance;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>>     mClosest;
-    ::ll::TypedStorage<4, 8, ::std::optional<int>>     mFarthest;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mMinDistance;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mMaxDistance;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> mClosest;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>> mFarthest;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mVolume;
     // NOLINTEND
 
@@ -45,6 +45,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

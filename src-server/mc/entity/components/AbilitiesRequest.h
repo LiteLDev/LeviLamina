@@ -15,4 +15,5 @@ public:
     AbilitiesRequest& operator=(AbilitiesRequest const&);
     AbilitiesRequest(AbilitiesRequest const&);
     AbilitiesRequest();
+
 };

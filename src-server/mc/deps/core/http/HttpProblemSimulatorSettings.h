@@ -11,8 +11,8 @@ class HttpProblemSimulatorSettings : public ::Bedrock::EnableNonOwnerReferences 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk932093;
-    ::ll::UntypedStorage<8, 8>  mUnkc2b700;
+    ::ll::UntypedStorage<8, 8> mUnk932093;
+    ::ll::UntypedStorage<8, 8> mUnkc2b700;
     ::ll::UntypedStorage<8, 24> mUnk708e60;
     // NOLINTEND
 
@@ -28,6 +28,7 @@ public:
     // vIndex: 0
     virtual ~HttpProblemSimulatorSettings() /*override*/ = default;
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Http
+}

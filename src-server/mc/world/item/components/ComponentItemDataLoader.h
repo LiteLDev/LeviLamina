@@ -15,7 +15,7 @@ class SemVersion;
 struct BetaItemComponentData;
 struct ComponentItemDataAll_Latest;
 struct ComponentItemData_Legacy;
-struct ComponentItemData_v1_21_90;
+struct ComponentItemData_v1_21_110;
 struct LegacyEventItemComponentData;
 namespace Json { class Value; }
 namespace cereal { struct ReflectionCtx; }
@@ -25,14 +25,14 @@ class ComponentItemDataLoader {
 public:
     // ComponentItemDataLoader inner types define
     using Validator = ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::cereal::ReflectionCtx const>> mCtx;
-    ::ll::TypedStorage<8, 216, ::CerealComponentItemDataLoader>                             mLoader;
-    ::ll::TypedStorage<8, 8, ::IPackLoadContext&>                                           mPackLoadContext;
-    ::ll::TypedStorage<1, 1, bool>                                                          mIsServer;
+    ::ll::TypedStorage<8, 216, ::CerealComponentItemDataLoader> mLoader;
+    ::ll::TypedStorage<8, 8, ::IPackLoadContext&> mPackLoadContext;
+    ::ll::TypedStorage<1, 1, bool> mIsServer;
     ::ll::TypedStorage<8, 64, ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)>> mValidatorFn;
     // NOLINTEND
 
@@ -45,25 +45,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemDataLoader(
-        ::SemVersion const&                                                      documentVersion,
-        ::IPackLoadContext&                                                      packLoadContext,
-        bool                                                                     isServer,
-        ::cereal::ReflectionCtx const&                                           ctx,
-        ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)> validatorFn
-    );
+    MCAPI ComponentItemDataLoader(::SemVersion const& documentVersion, ::IPackLoadContext& packLoadContext, bool isServer, ::cereal::ReflectionCtx const& ctx, ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)> validatorFn);
 
-    MCAPI ::Puv::LoadResult<::BetaItemComponentData>
-    _parseBeta(::Json::Value const& input, ::JsonBetaState canUseBeta) const;
+    MCAPI ::Puv::LoadResult<::BetaItemComponentData> _parseBeta(::Json::Value const& input, ::JsonBetaState canUseBeta) const;
 
-    MCAPI ::Puv::LoadResult<::ComponentItemData_v1_21_90> _parseCereal(::Json::Value const& input) const;
+    MCAPI ::Puv::LoadResult<::ComponentItemData_v1_21_110> _parseCereal(::Json::Value const& input) const;
 
     MCAPI ::std::optional<::LegacyEventItemComponentData> _parseEvents(::Json::Value const& input) const;
 
     MCAPI ::std::pair<::ComponentItemData_Legacy, bool> _parseLegacyComponents(::Json::Value input) const;
 
-    MCAPI ::Puv::LoadResult<::ComponentItemDataAll_Latest>
-    load(::Json::Value const& input, ::JsonBetaState canUseBeta) const;
+    MCAPI ::Puv::LoadResult<::ComponentItemDataAll_Latest> load(::Json::Value const& input, ::JsonBetaState canUseBeta) const;
 
     MCAPI ~ComponentItemDataLoader();
     // NOLINTEND
@@ -71,13 +63,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::SemVersion const&                                                      documentVersion,
-        ::IPackLoadContext&                                                      packLoadContext,
-        bool                                                                     isServer,
-        ::cereal::ReflectionCtx const&                                           ctx,
-        ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)> validatorFn
-    );
+    MCAPI void* $ctor(::SemVersion const& documentVersion, ::IPackLoadContext& packLoadContext, bool isServer, ::cereal::ReflectionCtx const& ctx, ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)> validatorFn);
     // NOLINTEND
 
 public:
@@ -85,4 +71,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

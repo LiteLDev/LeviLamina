@@ -19,8 +19,8 @@ class UnzipFileMinizip : public ::Core::UnzipFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk27a55a;
-    ::ll::UntypedStorage<8, 8>  mUnk5c2091;
+    ::ll::UntypedStorage<8, 8> mUnk27a55a;
+    ::ll::UntypedStorage<8, 8> mUnk5c2091;
     ::ll::UntypedStorage<8, 32> mUnkb32ca0;
     // NOLINTEND
 
@@ -58,8 +58,7 @@ public:
     virtual void readCurrentFileContentsIntoMemory(::std::string& str) /*override*/;
 
     // vIndex: 8
-    virtual void
-    readCurrentFileContents(uint64 bufferSize, ::std::function<void(int, void const*)> onReadCallback) /*override*/;
+    virtual void readCurrentFileContents(uint64 bufferSize, ::std::function<void(int, void const*)> onReadCallback) /*override*/;
 
     // vIndex: 9
     virtual uint64 getTotalFilesInZip() /*override*/;
@@ -120,6 +119,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

@@ -13,4 +13,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
+
 };

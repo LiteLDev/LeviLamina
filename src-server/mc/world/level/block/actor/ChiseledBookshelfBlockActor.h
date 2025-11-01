@@ -24,7 +24,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
-    ::ll::TypedStorage<4, 4, uint>                        mLastInteractedSlot;
+    ::ll::TypedStorage<4, 4, uint> mLastInteractedSlot;
     // NOLINTEND
 
 public:
@@ -62,11 +62,7 @@ public:
     virtual ::Container const* getContainer() const /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
 
     // vIndex: 42
     virtual bool isEmpty() const /*override*/;
@@ -89,10 +85,10 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -152,11 +148,7 @@ public:
 
     MCFOLD ::Container const* $getContainer() const;
 
-    MCAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
+    MCAPI void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCAPI bool $isEmpty() const;
 
@@ -184,4 +176,5 @@ public:
 
     MCAPI static void** $vftableForBlockActor();
     // NOLINTEND
+
 };

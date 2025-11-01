@@ -17,11 +17,7 @@ struct ScriptModuleShutdownEvent;
 struct ScriptModuleStartupEvent;
 // clang-format on
 
-struct ScriptingNotificationEvent : public ::EventVariantImpl<
-                                        ::BeforeWatchdogTerminateEvent const,
-                                        ::ScriptCommandMessageEvent const,
-                                        ::ScriptModuleStartupEvent const,
-                                        ::ScriptModuleShutdownEvent const> {
+struct ScriptingNotificationEvent : public ::EventVariantImpl<::BeforeWatchdogTerminateEvent const, ::ScriptCommandMessageEvent const, ::ScriptModuleStartupEvent const, ::ScriptModuleShutdownEvent const> {
 public:
     // member functions
     // NOLINTBEGIN
@@ -33,4 +29,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

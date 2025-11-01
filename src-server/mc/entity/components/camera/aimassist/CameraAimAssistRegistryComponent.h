@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::CameraAimAssist::PriorityPreset>> mPriorityPresets;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::CameraAimAssist::PriorityCategory>>
-        mPriorityCategoryList;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::CameraAimAssist::PriorityCategory>> mPriorityCategoryList;
     // NOLINTEND
+
 };

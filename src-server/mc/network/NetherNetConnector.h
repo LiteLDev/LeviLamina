@@ -19,6 +19,7 @@ class NetworkIdentifier;
 class WebRTCNetworkPeer;
 struct ConnectionDefinition;
 namespace Bedrock::Http { class LibHttpClientInstance; }
+namespace Json { class Value; }
 namespace NetherNet { class INetherNetTransportInterface; }
 namespace Social { class GameConnectionInfo; }
 // clang-format on
@@ -31,100 +32,99 @@ public:
     struct NewIncomingConnectionEvent;
     struct NewOutgoingConnectionEvent;
     // clang-format on
-
+    
     // NetherNetConnector inner types define
     using BroadcastRequestCallback = ::std::function<bool(void*, int*)>;
-
+    
     using BroadcastResponseCallback = ::std::function<void(::NetherNet::NetworkID const&, void const*, int)>;
-
+    
     using UniqueLock = ::Bedrock::Threading::UniqueLock<::std::recursive_mutex>;
-
+    
     struct NewIncomingConnectionEvent {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk7e0875;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         NewIncomingConnectionEvent& operator=(NewIncomingConnectionEvent const&);
         NewIncomingConnectionEvent(NewIncomingConnectionEvent const&);
         NewIncomingConnectionEvent();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~NewIncomingConnectionEvent();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct NewOutgoingConnectionEvent {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk7af0fc;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         NewOutgoingConnectionEvent& operator=(NewOutgoingConnectionEvent const&);
         NewOutgoingConnectionEvent(NewOutgoingConnectionEvent const&);
         NewOutgoingConnectionEvent();
+    
     };
-
+    
     struct DisconnectEvent {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnk7dfb60;
-        ::ll::UntypedStorage<8, 8>  mUnk3ff588;
-        ::ll::UntypedStorage<4, 4>  mUnkabfbdc;
+        ::ll::UntypedStorage<8, 8> mUnk3ff588;
+        ::ll::UntypedStorage<4, 4> mUnkabfbdc;
+        ::ll::UntypedStorage<8, 16> mUnkb65022;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         DisconnectEvent& operator=(DisconnectEvent const&);
         DisconnectEvent(DisconnectEvent const&);
         DisconnectEvent();
+    
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~DisconnectEvent();
+        // NOLINTEND
+    
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+    
     };
-
-    using Event = ::std::variant<
-        ::NetherNetConnector::NewIncomingConnectionEvent,
-        ::NetherNetConnector::NewOutgoingConnectionEvent,
-        ::NetherNetConnector::DisconnectEvent>;
-
+    
+    using Event = ::std::variant<::NetherNetConnector::NewIncomingConnectionEvent, ::NetherNetConnector::NewOutgoingConnectionEvent, ::NetherNetConnector::DisconnectEvent>;
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Http::LibHttpClientInstance> const> mHttpLibrary;
-    ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID const>                                    mNetworkID;
-    ::ll::TypedStorage<
-        8,
-        72,
-        ::std::unique_ptr<
-            ::NetherNet::INetherNetTransportInterface,
-            ::std::function<void(::NetherNet::INetherNetTransportInterface*)>>>
-                                                                  mTransport;
-    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex>        mBroadcastCallbackMutex;
+    ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID const> mNetworkID;
+    ::ll::TypedStorage<8, 72, ::std::unique_ptr<::NetherNet::INetherNetTransportInterface, ::std::function<void(::NetherNet::INetherNetTransportInterface*)>>> mTransport;
+    ::ll::TypedStorage<8, 80, ::Bedrock::Threading::Mutex> mBroadcastCallbackMutex;
     ::ll::TypedStorage<8, 64, ::std::function<bool(void*, int*)>> mBroadcastRequestCallback;
-    ::ll::TypedStorage<8, 64, ::std::function<void(::NetherNet::NetworkID const&, void const*, int)>>
-                                                      mBroadcastResponseCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::NetherNet::NetworkID const&, void const*, int)>> mBroadcastResponseCallback;
     ::ll::TypedStorage<8, 80, ::std::recursive_mutex> mEventsMutex;
-    ::ll::TypedStorage<
-        8,
-        8,
-        ::std::unique_ptr<::std::vector<::std::variant<
-            ::NetherNetConnector::NewIncomingConnectionEvent,
-            ::NetherNetConnector::NewOutgoingConnectionEvent,
-            ::NetherNetConnector::DisconnectEvent>>>>
-                                                                                   mEvents;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::vector<::std::variant<::NetherNetConnector::NewIncomingConnectionEvent, ::NetherNetConnector::NewOutgoingConnectionEvent, ::NetherNetConnector::DisconnectEvent>>>> mEvents;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::weak_ptr<::WebRTCNetworkPeer>>> mPeers;
     // NOLINTEND
 
@@ -140,12 +140,6 @@ public:
 
     // vIndex: 18
     virtual void setDisableLanSignaling(bool disableLanSignaling) /*override*/;
-
-    // vIndex: 19
-    virtual void setInactivityTimeout(
-        ::NetworkIdentifier const&              id,
-        ::std::optional<::std::chrono::seconds> inactivityTimeout
-    ) /*override*/;
 
     // vIndex: 9
     virtual bool host(::ConnectionDefinition const& definition) /*override*/;
@@ -181,15 +175,10 @@ public:
     virtual void OnSpopViolation() /*override*/;
 
     // vIndex: 4
-    virtual void OnSessionClose(
-        ::NetherNet::NetworkID     networkID,
-        uint64                     sessionId,
-        ::NetherNet::ESessionError sessionError
-    ) /*override*/;
+    virtual void OnSessionClose(::NetherNet::NetworkID networkID, uint64 sessionId, ::NetherNet::ESessionError sessionError, ::Json::Value summary) /*override*/;
 
     // vIndex: 6
-    virtual void
-    OnBroadcastResponseReceived(::NetherNet::NetworkID networkID, void const* pApplicationData, int size) /*override*/;
+    virtual void OnBroadcastResponseReceived(::NetherNet::NetworkID networkID, void const* pApplicationData, int size) /*override*/;
 
     // vIndex: 7
     virtual bool OnBroadcastDiscoveryRequestReceivedGetResponse(void* pApplicationData, int* pSize) /*override*/;
@@ -201,17 +190,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetherNetConnector(
-        ::NetherNetTransportFactory const&      factory,
-        ::Connector::ConnectionCallbacks&       callbacks,
-        ::std::optional<::NetherNet::NetworkID> networkId
-    );
+    MCAPI NetherNetConnector(::NetherNetTransportFactory const& factory, ::Connector::ConnectionCallbacks& callbacks, ::std::optional<::NetherNet::NetworkID> networkId);
 
-    MCAPI ::gsl::not_null<::std::shared_ptr<::WebRTCNetworkPeer>> _getOrCreatePeer(
-        ::NetherNet::NetworkID const& remoteId,
-        uint64                        sessionId,
-        ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&
-    );
+    MCAPI ::gsl::not_null<::std::shared_ptr<::WebRTCNetworkPeer>> _getOrCreatePeer(::NetherNet::NetworkID const& remoteId, uint64 sessionId, ::Bedrock::Threading::UniqueLock<::std::recursive_mutex> const&);
 
     MCAPI void _prepareForNewSession();
 
@@ -221,11 +202,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::NetherNetTransportFactory const&      factory,
-        ::Connector::ConnectionCallbacks&       callbacks,
-        ::std::optional<::NetherNet::NetworkID> networkId
-    );
+    MCAPI void* $ctor(::NetherNetTransportFactory const& factory, ::Connector::ConnectionCallbacks& callbacks, ::std::optional<::NetherNet::NetworkID> networkId);
     // NOLINTEND
 
 public:
@@ -238,9 +215,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $setDisableLanSignaling(bool disableLanSignaling);
-
-    MCAPI void
-    $setInactivityTimeout(::NetworkIdentifier const& id, ::std::optional<::std::chrono::seconds> inactivityTimeout);
 
     MCFOLD bool $host(::ConnectionDefinition const& definition);
 
@@ -256,16 +230,13 @@ public:
 
     MCFOLD bool $setApplicationHandshakeCompleted(::NetworkIdentifier const&);
 
-    MCFOLD ::TransportLayer $getNetworkType() const;
-
     MCFOLD void $_onDisable();
 
     MCFOLD void $_onEnable();
 
     MCFOLD void $OnSpopViolation();
 
-    MCAPI void
-    $OnSessionClose(::NetherNet::NetworkID networkID, uint64 sessionId, ::NetherNet::ESessionError sessionError);
+    MCAPI void $OnSessionClose(::NetherNet::NetworkID networkID, uint64 sessionId, ::NetherNet::ESessionError sessionError, ::Json::Value summary);
 
     MCAPI void $OnBroadcastResponseReceived(::NetherNet::NetworkID networkID, void const* pApplicationData, int size);
 
@@ -285,4 +256,5 @@ public:
 
     MCNAPI static void** $vftableForConnector();
     // NOLINTEND
+
 };

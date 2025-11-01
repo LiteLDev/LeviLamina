@@ -12,4 +12,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mWalkAnimPos;
     ::ll::TypedStorage<4, 4, float> mMovementThisTick;
     // NOLINTEND
+
 };

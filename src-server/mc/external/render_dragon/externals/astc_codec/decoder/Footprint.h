@@ -18,6 +18,7 @@ public:
     Footprint& operator=(Footprint const&);
     Footprint(Footprint const&);
     Footprint();
+
 };
 
-} // namespace astc_codec
+}

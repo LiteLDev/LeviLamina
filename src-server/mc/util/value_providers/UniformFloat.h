@@ -17,6 +17,7 @@ public:
     UniformFloat& operator=(UniformFloat const&);
     UniformFloat(UniformFloat const&);
     UniformFloat();
+
 };
 
-} // namespace ValueProviders
+}

@@ -35,10 +35,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -68,4 +68,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -18,8 +18,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk78b136;
-    ::ll::UntypedStorage<4, 4>  mUnk9a7963;
-    ::ll::UntypedStorage<4, 4>  mUnkc28247;
+    ::ll::UntypedStorage<4, 4> mUnk9a7963;
+    ::ll::UntypedStorage<4, 4> mUnkc28247;
     // NOLINTEND
 
 public:
@@ -40,8 +40,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ScriptClientSystemInfo(::Player const& player);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptClientSystemInfo&
-    operator=(::ScriptModuleMinecraft::ScriptClientSystemInfo&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptClientSystemInfo& operator=(::ScriptModuleMinecraft::ScriptClientSystemInfo&&);
     // NOLINTEND
 
 public:
@@ -61,6 +60,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

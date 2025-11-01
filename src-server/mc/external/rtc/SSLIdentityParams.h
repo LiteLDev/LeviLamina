@@ -9,8 +9,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkdcd91b;
-    ::ll::UntypedStorage<8, 8>  mUnkafedb9;
-    ::ll::UntypedStorage<8, 8>  mUnkc7c44d;
+    ::ll::UntypedStorage<8, 8> mUnkafedb9;
+    ::ll::UntypedStorage<8, 8> mUnkc7c44d;
     ::ll::UntypedStorage<4, 12> mUnkf1c828;
     // NOLINTEND
 
@@ -31,6 +31,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

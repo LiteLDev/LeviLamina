@@ -20,8 +20,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk7b304f;
-    ::ll::UntypedStorage<8, 8>  mUnk22ad82;
-    ::ll::UntypedStorage<8, 8>  mUnk7949dd;
+    ::ll::UntypedStorage<8, 8> mUnk22ad82;
+    ::ll::UntypedStorage<8, 8> mUnk7949dd;
     ::ll::UntypedStorage<8, 64> mUnk402738;
     // NOLINTEND
 
@@ -38,24 +38,10 @@ public:
     virtual ~ResourcePackFileDownloaderManager() /*override*/ = default;
 
     // vIndex: 1
-    virtual void tryStartDownloadingFile(
-        ::TaskGroup&,
-        ::std::string const&,
-        uint,
-        int,
-        uint64,
-        ::std::string const&,
-        bool,
-        ::PackType,
-        ::std::function<void()>,
-        ::std::function<void(float, uint64)>,
-        ::std::function<void(::Core::Path const&)>,
-        ::std::function<void(::ResourcePackFileDownloadError)>
-    ) /*override*/;
+    virtual void tryStartDownloadingFile(::TaskGroup&, ::std::string const&, uint, int, uint64, ::std::string const&, bool, ::PackType, ::std::function<void()>, ::std::function<void(float, uint64)>, ::std::function<void(::Core::Path const&)>, ::std::function<void(::ResourcePackFileDownloadError)>) /*override*/;
 
     // vIndex: 2
-    virtual ::Bedrock::Threading::SharedAsync<void>
-    chunkReceived(::TaskGroup&, ::std::string const&, ::FileChunkInfo const&, ::std::vector<uchar>) /*override*/;
+    virtual ::Bedrock::Threading::SharedAsync<void> chunkReceived(::TaskGroup&, ::std::string const&, ::FileChunkInfo const&, ::std::vector<uchar>) /*override*/;
 
     // vIndex: 3
     virtual void cleanup() /*override*/;
@@ -66,4 +52,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

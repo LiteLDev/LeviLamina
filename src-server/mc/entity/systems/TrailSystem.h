@@ -20,7 +20,7 @@ public:
     // clang-format off
     struct BlockPositions;
     // clang-format on
-
+    
     // TrailSystem inner types define
     struct BlockPositions {
     public:
@@ -28,14 +28,15 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 48> mUnk371d16;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         BlockPositions& operator=(BlockPositions const&);
         BlockPositions(BlockPositions const&);
         BlockPositions();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -65,4 +66,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

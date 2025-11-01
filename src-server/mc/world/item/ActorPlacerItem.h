@@ -43,44 +43,41 @@ public:
     // vIndex: 2
     virtual void tearDown() /*override*/;
 
-    // vIndex: 110
+    // vIndex: 111
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int, bool) const /*override*/;
 
-    // vIndex: 73
+    // vIndex: 74
     virtual ::ActorDefinitionIdentifier getActorIdentifier(::ItemStack const&) const /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
-    // vIndex: 48
+    // vIndex: 49
     virtual bool isLiquidClipItem() const /*override*/;
 
-    // vIndex: 49
+    // vIndex: 50
     virtual bool shouldInteractionWithBlockBypassLiquid(::Block const& block) const /*override*/;
 
-    // vIndex: 80
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
-        /*override*/;
+    // vIndex: 81
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const /*override*/;
 
-    // vIndex: 60
+    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 65
+    // vIndex: 66
     virtual bool isMultiColorTinted(::ItemStack const&) const /*override*/;
 
-    // vIndex: 71
+    // vIndex: 72
     virtual ::mce::Color getBaseColor(::ItemStack const&) const /*override*/;
 
-    // vIndex: 72
+    // vIndex: 73
     virtual ::mce::Color getSecondaryColor(::ItemStack const&) const /*override*/;
 
-    // vIndex: 64
+    // vIndex: 65
     virtual bool isActorPlacerItem() const /*override*/;
 
-    // vIndex: 122
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    // vIndex: 123
+    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
 
     // vIndex: 0
     virtual ~ActorPlacerItem() /*override*/ = default;
@@ -93,20 +90,13 @@ public:
 
     MCAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
 
-    MCAPI ::Actor* _spawnActorAt(
-        ::BlockSource&     region,
-        ::Vec3 const&      pos,
-        ::Vec3 const&      playerFeetPos,
-        ::ItemStack const& item,
-        ::Actor*           spawner
-    ) const;
+    MCAPI ::Actor* _spawnActorAt(::BlockSource& region, ::Vec3 const& pos, ::Vec3 const& playerFeetPos, ::ItemStack const& item, ::Actor* spawner) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    forEachCustomEgg(::ItemRegistryRef itemRegistry, ::std::function<void(::Item const&)> const& callback);
+    MCAPI static void forEachCustomEgg(::ItemRegistryRef itemRegistry, ::std::function<void(::Item const&)> const& callback);
 
     MCAPI static void registerCustomEggs(::ItemRegistryRef itemRegistry, ::ActorInfoRegistry const& registry);
 
@@ -154,8 +144,7 @@ public:
 
     MCFOLD bool $isActorPlacerItem() const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -163,4 +152,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

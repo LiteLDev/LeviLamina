@@ -25,38 +25,37 @@ public:
     // vIndex: 19
     virtual bool hasVariableLighting() const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 87
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
+    // vIndex: 86
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 126
+    // vIndex: 125
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
-    // vIndex: 145
+    // vIndex: 144
     virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual int _getNumCandles(::Block const&) const;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual void _iterateCandles(::Block const&, ::BlockPos const&, ::std::function<void(::Vec3 const&, int)>) const;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual void _tryLightOnFire(::BlockSource&, ::BlockPos const&, ::Actor*) const;
 
     // vIndex: 0
@@ -70,8 +69,7 @@ public:
 
     MCAPI void _checkForWaterlogging(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void
-    _extinguish(::Actor* extinguisher, ::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _extinguish(::Actor* extinguisher, ::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
@@ -95,4 +93,5 @@ public:
 
     MCAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
     // NOLINTEND
+
 };

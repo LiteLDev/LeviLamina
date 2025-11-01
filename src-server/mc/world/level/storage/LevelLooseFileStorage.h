@@ -28,20 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LevelLooseFileStorage(
-        ::Core::Path const&                                               levelDirectory,
-        ::ContentIdentity const&                                          contentIdentity,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
-    );
+    MCNAPI LevelLooseFileStorage(::Core::Path const& levelDirectory, ::ContentIdentity const& contentIdentity, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Core::Path const&                                               levelDirectory,
-        ::ContentIdentity const&                                          contentIdentity,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
-    );
+    MCNAPI void* $ctor(::Core::Path const& levelDirectory, ::ContentIdentity const& contentIdentity, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider);
     // NOLINTEND
+
 };

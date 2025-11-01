@@ -4,6 +4,7 @@
 
 namespace VanillaSystemCategories {
 
-struct UpdateEntityInside {};
+struct UpdateEntityInside {
+};
 
-} // namespace VanillaSystemCategories
+}

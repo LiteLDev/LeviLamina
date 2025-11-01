@@ -13,4 +13,4 @@ namespace HappyGhastProperties {
 MCNAPI ::HashedString const& CAN_MOVE();
 // NOLINTEND
 
-} // namespace HappyGhastProperties
+}

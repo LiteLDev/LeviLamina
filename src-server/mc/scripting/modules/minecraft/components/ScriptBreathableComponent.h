@@ -18,8 +18,7 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBreathableComponent
-: public ::ScriptModuleMinecraft::ECSScriptActorComponent<::BreathableComponent, ::BreathableDefinition> {
+class ScriptBreathableComponent : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::BreathableComponent, ::BreathableDefinition> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,9 +31,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<short> getAirSupply() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
-    getBreatheBlocks() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>> getBreatheBlocks() const;
 
     MCNAPI ::Scripting::Result_deprecated<bool> getBreathesAir() const;
 
@@ -50,9 +47,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<float> getInhaleTime() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
-    getNonBreatheBlocks() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>> getNonBreatheBlocks() const;
 
     MCNAPI ::Scripting::Result_deprecated<int> getSuffocateTime() const;
 
@@ -64,8 +59,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
@@ -79,6 +73,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -24,12 +24,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual void appendResolvedAliases(::IRandom&, ::PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const
-        /*override*/;
+    virtual void appendResolvedAliases(::IRandom&, ::PoolAliasBinding::PoolAliasLookup& inOutResolvedAliases) const /*override*/;
 
     // vIndex: 1
-    virtual void forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const
-        /*override*/;
+    virtual void forAllTargets(::std::function<void(::std::string const&, ::std::string const&)> const& fn) const /*override*/;
 
     // vIndex: 2
     virtual ~DirectPoolAliasBinding() /*override*/ = default;
@@ -48,6 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace PoolAliasBindingInternal
+}

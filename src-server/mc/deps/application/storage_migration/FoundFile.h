@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk15e4a8;
-    ::ll::UntypedStorage<8, 8>  mUnkf3e2ab;
+    ::ll::UntypedStorage<8, 8> mUnkf3e2ab;
     // NOLINTEND
 
 public:
@@ -17,6 +17,7 @@ public:
     FoundFile& operator=(FoundFile const&);
     FoundFile(FoundFile const&);
     FoundFile();
+
 };
 
-} // namespace Bedrock::StorageMigration
+}

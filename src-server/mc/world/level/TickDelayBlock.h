@@ -11,7 +11,8 @@ struct TickDelayBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>            mTickDelay;
+    ::ll::TypedStorage<4, 4, int> mTickDelay;
     ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
     // NOLINTEND
+
 };

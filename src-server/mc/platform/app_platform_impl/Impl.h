@@ -29,9 +29,9 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk1f9a34;
     ::ll::UntypedStorage<8, 16> mUnk17ea4f;
     ::ll::UntypedStorage<8, 16> mUnk922e4c;
-    ::ll::UntypedStorage<8, 8>  mUnkc6ea0c;
-    ::ll::UntypedStorage<8, 8>  mUnk5f48bd;
-    ::ll::UntypedStorage<8, 8>  mUnkf07172;
+    ::ll::UntypedStorage<8, 8> mUnkc6ea0c;
+    ::ll::UntypedStorage<8, 8> mUnk5f48bd;
+    ::ll::UntypedStorage<8, 8> mUnkf07172;
     // NOLINTEND
 
 public:
@@ -86,18 +86,16 @@ public:
     virtual ::Bedrock::PubSub::Subscription initializeLoadProfiler(::Core::LoadTimeProfiler& profiler) /*override*/;
 
     // vIndex: 7
-    virtual ::Bedrock::Threading::Async<::IntegrityTokenResult>
-    requestIntegrityToken(::std::string const&) /*override*/;
+    virtual ::Bedrock::Threading::Async<::IntegrityTokenResult> requestIntegrityToken(::std::string const&) /*override*/;
 
     // vIndex: 8
     virtual ::std::string getFullLanguageCode() /*override*/;
 
     // vIndex: 16
-    virtual ::UIProfile getDefaultUIProfile(::UIScalingRules uiScalingRules) const /*override*/;
+    virtual ::UIProfile getDefaultUIProfile(::UIScalingRules) const /*override*/;
 
     // vIndex: 1
-    virtual ::std::optional<::ScreenshotOptions> getExtraLevelSaveDataIconParams(::std::string const&) const
-        /*override*/;
+    virtual ::std::optional<::ScreenshotOptions> getExtraLevelSaveDataIconParams(::std::string const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -151,8 +149,6 @@ public:
 
     MCNAPI ::std::string $getFullLanguageCode();
 
-    MCNAPI ::UIProfile $getDefaultUIProfile(::UIScalingRules uiScalingRules) const;
-
     MCNAPI ::std::optional<::ScreenshotOptions> $getExtraLevelSaveDataIconParams(::std::string const&) const;
     // NOLINTEND
 
@@ -163,6 +159,7 @@ public:
 
     MCNAPI static void** $vftableForIAppPlatformImpl();
     // NOLINTEND
+
 };
 
-} // namespace AppPlatformImpl
+}

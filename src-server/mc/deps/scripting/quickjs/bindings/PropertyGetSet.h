@@ -17,6 +17,7 @@ public:
     PropertyGetSet& operator=(PropertyGetSet const&);
     PropertyGetSet(PropertyGetSet const&);
     PropertyGetSet();
+
 };
 
-} // namespace Scripting::QuickJS
+}

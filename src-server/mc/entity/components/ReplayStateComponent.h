@@ -18,13 +18,13 @@ class ReplayStateComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                    mForceCorrection;
-    ::ll::TypedStorage<1, 1, bool>                                    mShouldReportNextCorrectionTelemetry;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsCorrectionTelemetryEnabled;
-    ::ll::TypedStorage<1, 1, uchar>                                   mDivergenceCounter;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorHistory>>       mHistory;
+    ::ll::TypedStorage<1, 1, bool> mForceCorrection;
+    ::ll::TypedStorage<1, 1, bool> mShouldReportNextCorrectionTelemetry;
+    ::ll::TypedStorage<1, 1, bool> mIsCorrectionTelemetryEnabled;
+    ::ll::TypedStorage<1, 1, uchar> mDivergenceCounter;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorHistory>> mHistory;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IReplayStatePolicy>> mPolicy;
-    ::ll::TypedStorage<8, 8, uint64>                                  mCurrentTick;
+    ::ll::TypedStorage<8, 8, uint64> mCurrentTick;
     // NOLINTEND
 
 public:
@@ -36,15 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AdvanceFrameResult _applyCorrection(
-        ::std::shared_ptr<::IMovementCorrection> correction,
-        ::Actor&                                 actor,
-        uint64                                   destinationTimestamp,
-        bool                                     addInput
-    ) const;
+    MCAPI ::AdvanceFrameResult _applyCorrection(::std::shared_ptr<::IMovementCorrection> correction, ::Actor& actor, uint64 destinationTimestamp, bool addInput) const;
 
-    MCAPI ::ReplayCorrectionResult
-    applyFrameCorrection(::Actor& actor, ::std::shared_ptr<::IMovementCorrection> correction, uint64 frame);
+    MCAPI ::ReplayCorrectionResult applyFrameCorrection(::Actor& actor, ::std::shared_ptr<::IMovementCorrection> correction, uint64 frame);
 
     MCAPI void clearHistory();
 
@@ -58,4 +52,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

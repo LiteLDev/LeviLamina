@@ -17,6 +17,7 @@ public:
     VideoTrackSourceConstraints& operator=(VideoTrackSourceConstraints const&);
     VideoTrackSourceConstraints(VideoTrackSourceConstraints const&);
     VideoTrackSourceConstraints();
+
 };
 
-} // namespace webrtc
+}

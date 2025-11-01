@@ -8,10 +8,10 @@ struct CappedSurfaceSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk1dbfab;
-    ::ll::UntypedStorage<8, 24>  mUnkf477bc;
-    ::ll::UntypedStorage<8, 96>  mUnkb36cd8;
-    ::ll::UntypedStorage<8, 96>  mUnk5ef267;
+    ::ll::UntypedStorage<8, 24> mUnk1dbfab;
+    ::ll::UntypedStorage<8, 24> mUnkf477bc;
+    ::ll::UntypedStorage<8, 96> mUnkb36cd8;
+    ::ll::UntypedStorage<8, 96> mUnk5ef267;
     ::ll::UntypedStorage<8, 104> mUnk7c7262;
     // NOLINTEND
 
@@ -22,11 +22,9 @@ public:
 
     MCNAPI CappedSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
 
-    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&
-    operator=(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&&);
+    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings& operator=(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&&);
 
-    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings&
-    operator=(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
+    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings& operator=(::SharedTypes::v1_21_100::SurfaceBuilder::CappedSurfaceSettings const&);
 
     MCNAPI ~CappedSurfaceSettings();
     // NOLINTEND
@@ -44,6 +42,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_100::SurfaceBuilder
+}

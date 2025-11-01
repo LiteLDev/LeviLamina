@@ -5,8 +5,8 @@
 namespace TrapDoorUtils {
 
 enum class TrapDoorDir : uchar {
-    East  = 0,
-    West  = 1,
+    East = 0,
+    West = 1,
     South = 2,
     North = 3,
 };

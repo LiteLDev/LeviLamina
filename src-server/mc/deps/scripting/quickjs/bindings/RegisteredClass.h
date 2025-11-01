@@ -17,6 +17,7 @@ public:
     RegisteredClass& operator=(RegisteredClass const&);
     RegisteredClass(RegisteredClass const&);
     RegisteredClass();
+
 };
 
-} // namespace Scripting::QuickJS
+}

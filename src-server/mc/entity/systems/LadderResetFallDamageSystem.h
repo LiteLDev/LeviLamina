@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createLadderResetFallDamageSystem();
     // NOLINTEND
+
 };

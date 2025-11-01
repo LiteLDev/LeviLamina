@@ -6,7 +6,7 @@ namespace NetherNet {
 
 enum class ESendType : int {
     ESendTypeUnreliable = 0,
-    ESendTypeReliable   = 1,
+    ESendTypeReliable = 1,
 };
 
 }

@@ -31,29 +31,33 @@ public:
     struct UsedInClientMovementCorrections;
     struct UsedInServerPlayerMovement;
     // clang-format on
-
+    
     // EntitySystems inner types define
-    struct UsedInServerPlayerMovement {};
-
-    struct UsedInClientMovementCorrections {};
-
-    using MovementSystemCategory = ::entt::
-        type_list<::EntitySystems::UsedInServerPlayerMovement, ::EntitySystems::UsedInClientMovementCorrections>;
-
-    struct GameSystemCategory {};
-
-    struct EditorSystemCategory {};
-
-    struct RuntimeInitialize {};
-
+    struct UsedInServerPlayerMovement {
+    };
+    
+    struct UsedInClientMovementCorrections {
+    };
+    
+    using MovementSystemCategory = ::entt::type_list<::EntitySystems::UsedInServerPlayerMovement, ::EntitySystems::UsedInClientMovementCorrections>;
+    
+    struct GameSystemCategory {
+    };
+    
+    struct EditorSystemCategory {
+    };
+    
+    struct RuntimeInitialize {
+    };
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerInteractionSystem>>  mPlayerInteractionSystem;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerInteractionSystem>> mPlayerInteractionSystem;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IEntitySystemsCollection>> mSystems;
-    ::ll::TypedStorage<8, 16, ::OwnerPtr<::EcsEventDispatcher>>             mDispatcher;
-    ::ll::TypedStorage<8, 32, ::std::string>                                mName;
-    ::ll::TypedStorage<1, 1, bool>                                          mEnableTimingCapture;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::EcsEventDispatcher>> mDispatcher;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<1, 1, bool> mEnableTimingCapture;
     // NOLINTEND
 
 public:
@@ -73,12 +77,7 @@ public:
     virtual void tickMovementCorrectionReplay(::EntityRegistry& registry) /*override*/;
 
     // vIndex: 1
-    virtual void registerTickingSystem(
-        ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
-        ::std::unique_ptr<::ITickingSystem>                      system,
-        ::SystemInfo const&                                      info,
-        ::EntitySystemTickingMode                                tickingMode
-    ) /*override*/;
+    virtual void registerTickingSystem(::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories, ::std::unique_ptr<::ITickingSystem> system, ::SystemInfo const& info, ::EntitySystemTickingMode tickingMode) /*override*/;
 
     // vIndex: 2
     virtual bool _hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const /*override*/;
@@ -89,8 +88,7 @@ public:
     // NOLINTBEGIN
     MCNAPI EntitySystems(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string name);
 
-    MCNAPI ::std::vector<::gsl::not_null<::SystemInfo const*>>
-    getSystemInfo(::Bedrock::typeid_t<::SystemCategory> const& filter) const;
+    MCNAPI ::std::vector<::gsl::not_null<::SystemInfo const*>> getSystemInfo(::Bedrock::typeid_t<::SystemCategory> const& filter) const;
 
     MCNAPI void registerEditorOnlyTickingSystem(::TickingSystemWithInfo&& system);
 
@@ -122,12 +120,7 @@ public:
 
     MCNAPI void $tickMovementCorrectionReplay(::EntityRegistry& registry);
 
-    MCNAPI void $registerTickingSystem(
-        ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
-        ::std::unique_ptr<::ITickingSystem>                      system,
-        ::SystemInfo const&                                      info,
-        ::EntitySystemTickingMode                                tickingMode
-    );
+    MCNAPI void $registerTickingSystem(::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories, ::std::unique_ptr<::ITickingSystem> system, ::SystemInfo const& info, ::EntitySystemTickingMode tickingMode);
 
     MCNAPI bool $_hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const;
     // NOLINTEND
@@ -139,4 +132,5 @@ public:
 
     MCNAPI static void** $vftableForIEntitySystems();
     // NOLINTEND
+
 };

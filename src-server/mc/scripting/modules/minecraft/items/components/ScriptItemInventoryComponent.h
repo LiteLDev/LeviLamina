@@ -44,24 +44,17 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptItemInventoryComponent(::ScriptModuleMinecraft::ScriptItemInventoryComponent const&);
 
-    MCNAPI ScriptItemInventoryComponent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
+    MCNAPI ScriptItemInventoryComponent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Scripting::WeakLifetimeScope const& scope);
 
     MCNAPI void _tryTrackContainer();
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>,
-        ::ScriptModuleMinecraft::ScriptInvalidContainerError>
-    getOrCreateContainer();
+    MCNAPI ::Scripting::Result<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>, ::ScriptModuleMinecraft::ScriptInvalidContainerError> getOrCreateContainer();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
     MCNAPI static ::std::string const& getTypeName();
     // NOLINTEND
@@ -71,10 +64,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemInventoryComponent const&);
 
-    MCNAPI void* $ctor(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
-        ::Scripting::WeakLifetimeScope const&                                          scope
-    );
+    MCNAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -82,6 +72,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -17,4 +17,5 @@ public:
     EduContentSearchResults& operator=(EduContentSearchResults const&);
     EduContentSearchResults(EduContentSearchResults const&);
     EduContentSearchResults();
+
 };

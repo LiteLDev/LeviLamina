@@ -6,6 +6,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/network/IGameConnectionInfoProvider.h"
 #include "mc/network/NetworkSystem.h"
@@ -15,26 +16,27 @@
 // clang-format off
 class NetworkIdentifier;
 class NetworkStatistics;
+class NetworkSummary;
+class SignalingService;
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
-class ClientNetworkSystem : public ::Social::IGameConnectionInfoProvider,
-                            public ::Bedrock::EnableNonOwnerReferences,
-                            public ::NetworkSystem {
+class ClientNetworkSystem : public ::Social::IGameConnectionInfoProvider, public ::Bedrock::EnableNonOwnerReferences, public ::NetworkSystem {
 public:
     // ClientNetworkSystem inner types define
     using DependencyFactory = ::brstd::function_ref<::NetworkSystem::Dependencies()>;
-
-    using StatisticsFactory =
-        ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>(), ::std::unique_ptr<::NetworkStatistics>()>;
-
+    
+    using StatisticsFactory = ::brstd::function_ref<::std::unique_ptr<::NetworkStatistics>(), ::std::unique_ptr<::NetworkStatistics>()>;
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 336, ::TaskGroup>                    mTaskGroup;
+    ::ll::TypedStorage<8, 336, ::TaskGroup> mTaskGroup;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::SignalingService>> mSignalingService;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mUserLoggingSub;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mUserConnectionQualitySub;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mDisableLanSignalingSub;
+    ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::NetworkSummary>> mNetworkSummary;
     // NOLINTEND
 
 public:
@@ -45,6 +47,9 @@ public:
 
     // vIndex: 1
     virtual ::Social::GameConnectionInfo const& getConnectionInfo() const /*override*/;
+
+    // vIndex: 2
+    virtual ::std::optional<::std::string> getNetworkInfoString() const /*override*/;
     // NOLINTEND
 
 public:
@@ -60,4 +65,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

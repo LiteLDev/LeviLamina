@@ -7,7 +7,7 @@
 #include "mc/network/MinecraftPacketIds.h"
 #include "mc/network/Packet.h"
 #include "mc/platform/Result.h"
-#include "mc/world/level/SubChunkPos.h"
+#include "mc/versionless/world/level/SubChunkPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,45 +24,46 @@ public:
     struct SubChunkPacketData;
     struct SubChunkPosOffset;
     // clang-format on
-
+    
     // SubChunkPacket inner types define
     enum class HeightMapDataType : uchar {
-        NoData     = 0,
-        HasData    = 1,
+        NoData = 0,
+        HasData = 1,
         AllTooHigh = 2,
-        AllTooLow  = 3,
-        AllCopied  = 4,
+        AllTooLow = 3,
+        AllCopied = 4,
     };
-
+    
     enum class SubChunkRequestResult : uchar {
-        Undefined             = 0,
-        Success               = 1,
+        Undefined = 0,
+        Success = 1,
         LevelChunkDoesntExist = 2,
-        WrongDimension        = 3,
-        PlayerDoesntExist     = 4,
-        IndexOutOfBounds      = 5,
-        SuccessAllAir         = 6,
+        WrongDimension = 3,
+        PlayerDoesntExist = 4,
+        IndexOutOfBounds = 5,
+        SuccessAllAir = 6,
     };
-
+    
     struct HeightmapData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, ::SubChunkPacket::HeightMapDataType>         mHeightMapType;
+        ::ll::TypedStorage<1, 1, ::SubChunkPacket::HeightMapDataType> mHeightMapType;
         ::ll::TypedStorage<1, 256, ::std::array<::std::array<schar, 16>, 16>> mSubchunkHeightMap;
-        ::ll::TypedStorage<1, 1, ::SubChunkPacket::HeightMapDataType>         mRenderHeightMapType;
+        ::ll::TypedStorage<1, 1, ::SubChunkPacket::HeightMapDataType> mRenderHeightMapType;
         ::ll::TypedStorage<1, 256, ::std::array<::std::array<schar, 16>, 16>> mSubchunkRenderHeightMap;
         // NOLINTEND
-
+    
     public:
         // static variables
         // NOLINTBEGIN
         MCAPI static schar const& HEIGHT_COLUMN_ABOVE_SUBCHUNK();
-
+    
         MCAPI static schar const& HEIGHT_COLUMN_BELOW_SUBCHUNK();
         // NOLINTEND
+    
     };
-
+    
     struct SubChunkPosOffset {
     public:
         // member variables
@@ -71,60 +72,58 @@ public:
         ::ll::TypedStorage<1, 1, char> mY;
         ::ll::TypedStorage<1, 1, char> mZ;
         // NOLINTEND
+    
     };
-
+    
     struct SubChunkPacketData {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<1, 3, ::SubChunkPacket::SubChunkPosOffset const> mSubChunkPosOffset;
-        ::ll::TypedStorage<8, 32, ::std::string>                            mSerializedSubChunk;
-        ::ll::TypedStorage<1, 1, ::SubChunkPacket::SubChunkRequestResult>   mResult;
-        ::ll::TypedStorage<1, 514, ::SubChunkPacket::HeightmapData>         mHeightMapData;
-        ::ll::TypedStorage<8, 8, uint64>                                    mBlobId;
+        ::ll::TypedStorage<8, 32, ::std::string> mSerializedSubChunk;
+        ::ll::TypedStorage<1, 1, ::SubChunkPacket::SubChunkRequestResult> mResult;
+        ::ll::TypedStorage<1, 514, ::SubChunkPacket::HeightmapData> mHeightMapData;
+        ::ll::TypedStorage<8, 8, uint64> mBlobId;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         SubChunkPacketData& operator=(SubChunkPacketData const&);
         SubChunkPacketData();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI SubChunkPacketData(::SubChunkPacket::SubChunkPacketData const&);
-
-        MCAPI SubChunkPacketData(
-            ::SubChunkPacket::SubChunkPosOffset const& pos,
-            ::SubChunkPacket::SubChunkRequestResult    requestResult
-        );
-
+    
+        MCAPI SubChunkPacketData(::SubChunkPacket::SubChunkPosOffset const& pos, ::SubChunkPacket::SubChunkRequestResult requestResult);
+    
         MCAPI ~SubChunkPacketData();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCAPI void* $ctor(::SubChunkPacket::SubChunkPacketData const&);
-
-        MCAPI void*
-        $ctor(::SubChunkPacket::SubChunkPosOffset const& pos, ::SubChunkPacket::SubChunkRequestResult requestResult);
+    
+        MCAPI void* $ctor(::SubChunkPacket::SubChunkPosOffset const& pos, ::SubChunkPacket::SubChunkRequestResult requestResult);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                                 mCacheEnabled;
-    ::ll::TypedStorage<4, 4, ::DimensionType>                                      mDimensionType;
+    ::ll::TypedStorage<1, 1, bool> mCacheEnabled;
+    ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
     ::ll::TypedStorage<8, 24, ::std::vector<::SubChunkPacket::SubChunkPacketData>> mSubChunkData;
-    ::ll::TypedStorage<4, 12, ::SubChunkPos>                                       mCenterPos;
+    ::ll::TypedStorage<4, 12, ::SubChunkPos> mCenterPos;
     // NOLINTEND
 
 public:
@@ -144,10 +143,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
@@ -186,4 +185,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

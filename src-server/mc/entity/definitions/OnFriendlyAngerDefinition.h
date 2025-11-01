@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 
-struct OnFriendlyAngerDefinition : public ::ActorDefinitionTrigger {};
+struct OnFriendlyAngerDefinition : public ::ActorDefinitionTrigger {
+};

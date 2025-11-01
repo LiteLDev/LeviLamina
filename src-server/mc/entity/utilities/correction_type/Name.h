@@ -5,9 +5,9 @@
 namespace CorrectionType {
 
 enum class Name : uint64 {
-    Explicit   = 0,
+    Explicit = 0,
     Attributes = 1,
-    Size       = 2,
+    Size = 2,
 };
 
 }

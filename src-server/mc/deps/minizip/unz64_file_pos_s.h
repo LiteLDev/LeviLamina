@@ -15,4 +15,5 @@ public:
     unz64_file_pos_s& operator=(unz64_file_pos_s const&);
     unz64_file_pos_s(unz64_file_pos_s const&);
     unz64_file_pos_s();
+
 };

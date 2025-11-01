@@ -19,8 +19,7 @@ public:
     virtual ~RelayPortFactoryInterface() = default;
 
     // vIndex: 2
-    virtual ::std::unique_ptr<::cricket::Port>
-    Create(::cricket::CreateRelayPortArgs const&, ::std::shared_ptr<::rtc::AsyncPacketSocket>) = 0;
+    virtual ::std::unique_ptr<::cricket::Port> Create(::cricket::CreateRelayPortArgs const&, ::std::shared_ptr<::rtc::AsyncPacketSocket>) = 0;
 
     // vIndex: 1
     virtual ::std::unique_ptr<::cricket::Port> Create(::cricket::CreateRelayPortArgs const&, int, int) = 0;
@@ -37,6 +36,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

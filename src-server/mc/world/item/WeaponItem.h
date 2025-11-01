@@ -23,7 +23,7 @@ class WeaponItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>               mDamage;
+    ::ll::TypedStorage<4, 4, int> mDamage;
     ::ll::TypedStorage<8, 8, ::ItemTier const&> mTier;
     // NOLINTEND
 
@@ -36,10 +36,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 83
+    // vIndex: 84
     virtual float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 85
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
     // vIndex: 36
@@ -48,34 +48,25 @@ public:
     // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
 
-    // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    // vIndex: 77
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 32
     virtual bool canDestroySpecial(::Block const& block) const /*override*/;
 
-    // vIndex: 53
-    virtual bool isValidRepairItem(
-        ::ItemStackBase const&,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const /*override*/;
-
     // vIndex: 54
-    virtual int getEnchantSlot() const /*override*/;
+    virtual bool isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const /*override*/;
 
     // vIndex: 55
+    virtual int getEnchantSlot() const /*override*/;
+
+    // vIndex: 56
     virtual int getEnchantValue() const /*override*/;
 
-    // vIndex: 52
-    virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const /*override*/;
+    // vIndex: 53
+    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
 
-    // vIndex: 46
+    // vIndex: 47
     virtual bool canDestroyInCreative() const /*override*/;
 
     // vIndex: 0
@@ -99,26 +90,17 @@ public:
 
     MCFOLD bool $isHandEquipped() const;
 
-    MCFOLD ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCFOLD ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI bool $canDestroySpecial(::Block const& block) const;
 
-    MCAPI bool $isValidRepairItem(
-        ::ItemStackBase const&,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const;
+    MCAPI bool $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const;
 
     MCFOLD int $getEnchantSlot() const;
 
     MCAPI int $getEnchantValue() const;
 
-    MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const;
+    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
 
     MCFOLD bool $canDestroyInCreative() const;
     // NOLINTEND
@@ -128,4 +110,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void setEducationLevelSettings(::EducationLevelSettings settings);
     // NOLINTEND
+
 };

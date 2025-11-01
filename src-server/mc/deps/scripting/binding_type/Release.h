@@ -17,9 +17,9 @@ class Release {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkd7338f;
+    ::ll::UntypedStorage<4, 4> mUnkd7338f;
     ::ll::UntypedStorage<8, 40> mUnkf154f7;
-    ::ll::UntypedStorage<2, 4>  mUnk63e5f1;
+    ::ll::UntypedStorage<2, 4> mUnk63e5f1;
     // NOLINTEND
 
 public:
@@ -31,23 +31,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Release(
-        ::Scripting::Comparison                             comparison_,
-        ::Scripting::Version                                version_,
-        ::std::optional<::Scripting::RemovedInMajorVersion> exclusiveMajorVersionLimit_
-    );
+    MCNAPI Release(::Scripting::Comparison comparison_, ::Scripting::Version version_, ::std::optional<::Scripting::RemovedInMajorVersion> exclusiveMajorVersionLimit_);
 
     MCNAPI ~Release();
     // NOLINTEND
 
 public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& PRE_RELEASE_TAG_ALPHA();
+
+    MCNAPI static ::std::string_view const& PRE_RELEASE_TAG_BETA();
+    // NOLINTEND
+
+public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Scripting::Comparison                             comparison_,
-        ::Scripting::Version                                version_,
-        ::std::optional<::Scripting::RemovedInMajorVersion> exclusiveMajorVersionLimit_
-    );
+    MCNAPI void* $ctor(::Scripting::Comparison comparison_, ::Scripting::Version version_, ::std::optional<::Scripting::RemovedInMajorVersion> exclusiveMajorVersionLimit_);
     // NOLINTEND
 
 public:
@@ -55,6 +55,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

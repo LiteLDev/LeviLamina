@@ -33,9 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CustomComponentsItemComponent(
-        ::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component
-    );
+    MCAPI explicit CustomComponentsItemComponent(::SharedTypes::v1_21_60::CustomComponentsItemComponent const& component);
     // NOLINTEND
 
 public:
@@ -55,4 +53,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -14,13 +14,7 @@ namespace Scripting { class DependencyLocator; }
 namespace ScriptDiagnosticsCollectors {
 // functions
 // NOLINTBEGIN
-MCNAPI void AddScriptStatCollectors(
-    ::ScriptDiagnostics&               diagnostics,
-    ::ServerLevel&                     serverLevel,
-    ::ScriptPluginManager&             pluginManager,
-    ::ScriptClientDiagnosticsListener& clientDiagnostics,
-    ::Scripting::DependencyLocator&    locator
-);
+MCNAPI void AddScriptStatCollectors(::ScriptDiagnostics& diagnostics, ::ServerLevel& serverLevel, ::ScriptPluginManager& pluginManager, ::ScriptClientDiagnosticsListener& clientDiagnostics, ::Scripting::DependencyLocator& locator);
 // NOLINTEND
 
-} // namespace ScriptDiagnosticsCollectors
+}

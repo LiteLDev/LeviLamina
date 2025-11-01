@@ -4,6 +4,7 @@
 
 namespace Bedrock::Http {
 
-class Factory {};
+class Factory {
+};
 
-} // namespace Bedrock::Http
+}

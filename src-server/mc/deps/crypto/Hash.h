@@ -17,7 +17,7 @@ class Hash : public ::Crypto::Hash::IHash {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::Crypto::Hash::HashType>                 mHashType;
+    ::ll::TypedStorage<4, 4, ::Crypto::Hash::HashType> mHashType;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Crypto::Hash::IHash>> mHash;
     // NOLINTEND
 
@@ -69,6 +69,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Crypto::Hash
+}

@@ -14,7 +14,7 @@ public:
     // clang-format off
     struct ScopedPop;
     // clang-format on
-
+    
     // SerializerContext inner types define
     struct ScopedPop {
     public:
@@ -22,26 +22,27 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk9b7aba;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ScopedPop& operator=(ScopedPop const&);
         ScopedPop(ScopedPop const&);
         ScopedPop();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~ScopedPop();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -57,7 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void consumeContext(::cereal::SerializerContext const& other);
+    MCNAPI uint64 consumeContext(::cereal::SerializerContext const& other, ::cereal::ResultCode filter);
 
     MCNAPI ::cereal::SerializerContext detachContext();
 
@@ -67,8 +68,7 @@ public:
 
     MCNAPI void popContext();
 
-    MCNAPI ::cereal::SerializerContext&
-    pushContext(::cereal::BasicSerializerContext::ContextType contextType, ::std::string contextToken);
+    MCNAPI ::cereal::SerializerContext& pushContext(::cereal::BasicSerializerContext::ContextType contextType, ::std::string contextToken);
 
     MCNAPI ~SerializerContext();
     // NOLINTEND
@@ -78,6 +78,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace cereal
+}

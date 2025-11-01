@@ -18,9 +18,7 @@ class NavigationTravelSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tickNavigationTravelSystem(
-        ::ViewT<::StrictEntityContext, ::ActorOwnerComponent, ::MobTravelComponent, ::NavigationComponent> view,
-        ::EntityModifier<::MobTravelComponent>                                                             mod
-    );
+    MCNAPI static void tickNavigationTravelSystem(::ViewT<::StrictEntityContext, ::ActorOwnerComponent, ::MobTravelComponent, ::NavigationComponent> view, ::EntityModifier<::MobTravelComponent> mod);
     // NOLINTEND
+
 };

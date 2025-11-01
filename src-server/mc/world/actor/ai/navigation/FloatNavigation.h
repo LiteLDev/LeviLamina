@@ -22,22 +22,19 @@ public:
     virtual bool travel(::NavigationComponent& parent, ::Mob& mob, float& xa, float& ya, float& za) /*override*/;
 
     // vIndex: 5
-    virtual ::std::unique_ptr<::Path>
-    createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos) /*override*/;
+    virtual ::std::unique_ptr<::Path> createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos) /*override*/;
 
     // vIndex: 4
-    virtual ::std::unique_ptr<::Path>
-    createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target) /*override*/;
+    virtual ::std::unique_ptr<::Path> createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target) /*override*/;
 
     // vIndex: 8
     virtual bool moveTo(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed) /*override*/;
 
     // vIndex: 7
-    virtual bool moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor& target, float speed) /*override*/;
+    virtual bool moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target, float speed) /*override*/;
 
     // vIndex: 6
-    virtual bool
-    moveTo(::NavigationComponent& parent, ::Mob& mob, ::std::unique_ptr<::Path> newPath, float speed) /*override*/;
+    virtual bool moveTo(::NavigationComponent& parent, ::Mob& mob, ::std::unique_ptr<::Path> newPath, float speed) /*override*/;
 
     // vIndex: 0
     virtual ~FloatNavigation() /*override*/ = default;
@@ -54,7 +51,7 @@ public:
 
     MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed);
 
-    MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor& target, float speed);
+    MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target, float speed);
 
     MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::std::unique_ptr<::Path> newPath, float speed);
     // NOLINTEND
@@ -64,4 +61,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

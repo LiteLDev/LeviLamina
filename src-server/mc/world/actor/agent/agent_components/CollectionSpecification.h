@@ -6,8 +6,8 @@ namespace AgentComponents {
 
 enum class CollectionSpecification : uchar {
     SpecificItem = 0,
-    AllItems     = 1,
-    None         = 2,
+    AllItems = 1,
+    None = 2,
 };
 
 }

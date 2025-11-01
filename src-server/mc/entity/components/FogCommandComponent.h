@@ -34,4 +34,5 @@ public:
     // NOLINTBEGIN
     MCAPI static bool isValidIdentifier(::std::string const& format);
     // NOLINTEND
+
 };

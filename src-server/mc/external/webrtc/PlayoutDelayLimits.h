@@ -15,6 +15,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool Write(::rtc::ArrayView<uchar> data, ::webrtc::VideoPlayoutDelay const& playout_delay);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

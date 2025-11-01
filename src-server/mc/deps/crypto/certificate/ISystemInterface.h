@@ -32,12 +32,10 @@ public:
     virtual bool hasValidCertChain() const = 0;
 
     // vIndex: 6
-    virtual ::std::string
-        generateCertificateThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const = 0;
+    virtual ::std::string generateCertificateThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const = 0;
 
     // vIndex: 7
-    virtual ::std::string
-        generatePublicKeyThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const = 0;
+    virtual ::std::string generatePublicKeyThumbprint(::Crypto::Hash::HashType, ::Crypto::Certificate::ThumbprintFormat) const = 0;
     // NOLINTEND
 
 public:
@@ -45,6 +43,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Crypto::Certificate
+}

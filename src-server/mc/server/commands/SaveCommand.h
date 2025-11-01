@@ -18,17 +18,17 @@ class SaveCommand : public ::ServerCommand {
 public:
     // SaveCommand inner types define
     enum class Mode : int {
-        Hold   = 0,
+        Hold = 0,
         Resume = 1,
-        Query  = 2,
+        Query = 2,
     };
-
+    
     enum class State : int {
-        Idle     = 0,
-        Saving   = 1,
+        Idle = 0,
+        Saving = 1,
         Complete = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -84,4 +84,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -13,4 +13,4 @@ MCNAPI ::Bedrock::Result<::std::string> compress(::std::string_view input, int c
 MCNAPI ::Bedrock::Result<::std::string> decompress(::std::string_view input, bool raw);
 // NOLINTEND
 
-} // namespace Core::Compression::Zlib
+}

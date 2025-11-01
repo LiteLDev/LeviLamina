@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mStartTime;
-    ::ll::TypedStorage<1, 1, bool>                                    mGoingDark;
+    ::ll::TypedStorage<1, 1, bool> mGoingDark;
     // NOLINTEND
 
 public:
@@ -68,4 +68,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

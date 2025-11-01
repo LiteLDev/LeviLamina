@@ -18,9 +18,9 @@ public:
     // BlockStateCommandParam inner types define
     enum class Type : int {
         Integer = 0,
-        Float   = 1,
-        Bool    = 2,
-        String  = 3,
+        Float = 1,
+        Bool = 2,
+        String = 3,
         Invalid = 4,
     };
 
@@ -28,7 +28,6 @@ public:
     LLNDAPI ll::Expected<Block::BlockStateValueType> toStateValue() const;
 
     LLNDAPI static ll::Expected<Block::BlockStatesType> toStateMap(std::vector<BlockStateCommandParam> const&);
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -44,8 +43,7 @@ public:
 
     MCAPI ::BlockState const* _getBlockState(::Block const& block) const;
 
-    MCAPI ::std::optional<::std::pair<::HashedString, int>>
-    getNameAndValue(::CommandOutput& output, ::Block const& defaultNewBlock) const;
+    MCAPI ::std::optional<::std::pair<::HashedString, int>> getNameAndValue(::CommandOutput& output, ::Block const& defaultNewBlock) const;
 
     MCAPI bool setBlockState(::Block const** inputBlock, ::CommandOutput& output) const;
 
@@ -57,4 +55,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

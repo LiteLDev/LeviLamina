@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/entity/components/FloatComponent.h"
 
-struct MobRotationComponent : public ::FloatComponent {};
+struct MobRotationComponent : public ::FloatComponent {
+};

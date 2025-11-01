@@ -22,10 +22,10 @@ class EnderMan : public ::Monster {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                             mAggroedByPlayer;
+    ::ll::TypedStorage<1, 1, bool> mAggroedByPlayer;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mCarryBlockSerId;
-    ::ll::TypedStorage<2, 2, ::NewBlockID>                     mCarryBlockId;
-    ::ll::TypedStorage<2, 2, ushort>                           mCarryBlockData;
+    ::ll::TypedStorage<2, 2, ::NewBlockID> mCarryBlockId;
+    ::ll::TypedStorage<2, 2, ushort> mCarryBlockData;
     // NOLINTEND
 
 public:
@@ -66,21 +66,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnderMan(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI EnderMan(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -108,4 +100,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

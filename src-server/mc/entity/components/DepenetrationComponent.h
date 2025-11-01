@@ -16,20 +16,20 @@ public:
     enum class Bit : int {
         IsAlwaysOneWayCollision = 0,
         WasPenetratingLastFrame = 1,
-        IsStuckInCollider       = 2,
-        IsStuckItem             = 3,
+        IsStuckInCollider = 2,
+        IsStuckItem = 3,
         PushTowardsClosestSpace = 4,
-        Count                   = 5,
+        Count = 5,
     };
-
+    
     using Bitset = ::std::bitset<5>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::std::bitset<5>>         mBits;
-    ::ll::TypedStorage<4, 12, ::Vec3>                  mMinDepenetration;
-    ::ll::TypedStorage<8, 24, ::std::vector<::AABB>>   mOneWayPhysicsBlocks;
+    ::ll::TypedStorage<4, 4, ::std::bitset<5>> mBits;
+    ::ll::TypedStorage<4, 12, ::Vec3> mMinDepenetration;
+    ::ll::TypedStorage<8, 24, ::std::vector<::AABB>> mOneWayPhysicsBlocks;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mTemporaryOverride;
     // NOLINTEND
 
@@ -44,4 +44,5 @@ public:
     // NOLINTBEGIN
     MCAPI ::DepenetrationComponent& operator=(::DepenetrationComponent&&);
     // NOLINTEND
+
 };

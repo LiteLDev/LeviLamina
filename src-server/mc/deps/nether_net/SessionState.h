@@ -12,7 +12,7 @@ public:
     ::ll::UntypedStorage<1, 1> mUnkeb22ea;
     ::ll::UntypedStorage<1, 1> mUnkbe96ed;
     ::ll::UntypedStorage<1, 1> mUnkd3398c;
-    ::ll::UntypedStorage<4, 4> mUnk3eaa5b;
+    ::ll::UntypedStorage<4, 4> mUnkdbb5d2;
     ::ll::UntypedStorage<8, 8> mUnkb97b3b;
     ::ll::UntypedStorage<8, 8> mUnk35c5ce;
     ::ll::UntypedStorage<8, 8> mUnka71ed6;
@@ -27,6 +27,7 @@ public:
     SessionState& operator=(SessionState const&);
     SessionState(SessionState const&);
     SessionState();
+
 };
 
-} // namespace NetherNet
+}

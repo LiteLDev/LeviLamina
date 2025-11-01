@@ -16,6 +16,7 @@ public:
     SpeedProps& operator=(SpeedProps const&);
     SpeedProps(SpeedProps const&);
     SpeedProps();
+
 };
 
-} // namespace Editor::Settings
+}

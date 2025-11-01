@@ -24,25 +24,11 @@ class RemovePassengersTooLargeForVehicleSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _removePassengersTooLargeForVehicle(
-        ::StrictEntityContext&                                           strictEntityContext,
-        ::PassengerComponent const&                                      passengerComponent,
-        ::AABBShapeComponent const&                                      aabbShapeComponent,
-        ::ViewT<::StrictEntityContext, ::RideableComponent const> const& vehicleView,
-        ::EntityModifier<::StopRidingRequestComponent>&                  modifier
-    );
+    MCNAPI static void _removePassengersTooLargeForVehicle(::StrictEntityContext& strictEntityContext, ::PassengerComponent const& passengerComponent, ::AABBShapeComponent const& aabbShapeComponent, ::ViewT<::StrictEntityContext, ::RideableComponent const> const& vehicleView, ::EntityModifier<::StopRidingRequestComponent>& modifier);
 
-    MCNAPI static void _tickRemovePassengersTooLargeForVehicle(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent>,
-            ::PassengerComponent const,
-            ::Exclude<::KeepRidingEvenIfTooLargeForVehicleFlagComponent>,
-            ::AABBShapeComponent const>                           view,
-        ::ViewT<::StrictEntityContext, ::RideableComponent const> vehicleView,
-        ::EntityModifier<::StopRidingRequestComponent>            modifier
-    );
+    MCNAPI static void _tickRemovePassengersTooLargeForVehicle(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::PassengerComponent const, ::Exclude<::KeepRidingEvenIfTooLargeForVehicleFlagComponent>, ::AABBShapeComponent const> view, ::ViewT<::StrictEntityContext, ::RideableComponent const> vehicleView, ::EntityModifier<::StopRidingRequestComponent> modifier);
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
+
 };

@@ -38,11 +38,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void appendUpgradeHoverText(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext
-    );
+    MCAPI static void appendUpgradeHoverText(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext);
 
     MCAPI static ::std::optional<::ArmorTrim> getTrim(::ItemStackBase const& instance);
 
@@ -76,4 +72,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

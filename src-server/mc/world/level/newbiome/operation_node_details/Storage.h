@@ -31,6 +31,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(uint64 size);
     // NOLINTEND
+
 };
 
-} // namespace OperationNodeDetails
+}

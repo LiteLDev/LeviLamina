@@ -45,8 +45,7 @@ public:
     virtual ::webrtc::RtpParameters GetParametersInternal() const = 0;
 
     // vIndex: 27
-    virtual void
-    SetParametersInternal(::webrtc::RtpParameters const&, ::absl::AnyInvocable<void(::webrtc::RTCError) &&>, bool) = 0;
+    virtual void SetParametersInternal(::webrtc::RtpParameters const&, ::absl::AnyInvocable<void(::webrtc::RTCError)&&>, bool) = 0;
 
     // vIndex: 28
     virtual ::webrtc::RtpParameters GetParametersInternalWithAllLayers() const = 0;
@@ -84,6 +83,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

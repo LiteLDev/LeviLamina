@@ -13,4 +13,4 @@ namespace MobJump {
 MCNAPI bool isJumping(::EntityContext const& provider);
 // NOLINTEND
 
-} // namespace MobJump
+}

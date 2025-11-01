@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnked4dfa;
-    ::ll::UntypedStorage<4, 8>  mUnke8f7ae;
+    ::ll::UntypedStorage<4, 8> mUnke8f7ae;
     // NOLINTEND
 
 public:
@@ -26,8 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter&
-    operator=(::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter const&);
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter& operator=(::ScriptModuleMinecraft::EventFilters::ScriptInputEventFilter const&);
 
     MCNAPI ~ScriptInputEventFilter();
     // NOLINTEND
@@ -43,6 +42,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft::EventFilters
+}

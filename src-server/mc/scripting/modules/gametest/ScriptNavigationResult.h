@@ -15,7 +15,7 @@ struct ScriptNavigationResult {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                       mIsFullPath;
+    ::ll::TypedStorage<1, 1, bool> mIsFullPath;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>> mPath;
     // NOLINTEND
 
@@ -38,6 +38,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleGameTest
+}

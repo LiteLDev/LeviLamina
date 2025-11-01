@@ -13,4 +13,4 @@ namespace ActorGlobal {
 MCNAPI void addActorGlobalComponents(::EntityContext& entity);
 // NOLINTEND
 
-} // namespace ActorGlobal
+}

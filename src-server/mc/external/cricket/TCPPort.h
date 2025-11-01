@@ -32,42 +32,43 @@ public:
     // clang-format off
     struct Incoming;
     // clang-format on
-
+    
     // TCPPort inner types define
     struct Incoming {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 80> mUnkdb788b;
-        ::ll::UntypedStorage<8, 8>  mUnk830b8d;
+        ::ll::UntypedStorage<8, 8> mUnk830b8d;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Incoming& operator=(Incoming const&);
         Incoming(Incoming const&);
         Incoming();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~Incoming();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnka431b7;
-    ::ll::UntypedStorage<8, 8>  mUnk45f3c5;
+    ::ll::UntypedStorage<1, 1> mUnka431b7;
+    ::ll::UntypedStorage<8, 8> mUnk45f3c5;
     ::ll::UntypedStorage<8, 32> mUnke149f9;
-    ::ll::UntypedStorage<4, 4>  mUnk8b6604;
+    ::ll::UntypedStorage<4, 4> mUnk8b6604;
     ::ll::UntypedStorage<8, 16> mUnkb0d995;
     // NOLINTEND
 
@@ -84,10 +85,7 @@ public:
     virtual ~TCPPort() /*override*/;
 
     // vIndex: 11
-    virtual ::cricket::Connection* CreateConnection(
-        ::cricket::Candidate const&               address,
-        ::cricket::PortInterface::CandidateOrigin origin
-    ) /*override*/;
+    virtual ::cricket::Connection* CreateConnection(::cricket::Candidate const& address, ::cricket::PortInterface::CandidateOrigin origin) /*override*/;
 
     // vIndex: 9
     virtual void PrepareAddress() /*override*/;
@@ -108,13 +106,7 @@ public:
     virtual ::cricket::ProtocolType GetProtocol() const /*override*/;
 
     // vIndex: 17
-    virtual int SendTo(
-        void const*                 data,
-        uint64                      size,
-        ::rtc::SocketAddress const& addr,
-        ::rtc::PacketOptions const& options,
-        bool                        payload
-    ) /*override*/;
+    virtual int SendTo(void const* data, uint64 size, ::rtc::SocketAddress const& addr, ::rtc::PacketOptions const& options, bool payload) /*override*/;
 
     // vIndex: 43
     virtual void OnSentPacket(::rtc::AsyncPacketSocket* socket, ::rtc::SentPacket const& sent_packet) /*override*/;
@@ -131,17 +123,7 @@ public:
 
     MCNAPI void OnReadyToSend(::rtc::AsyncPacketSocket* socket);
 
-    MCNAPI TCPPort(
-        ::rtc::Thread*                   thread,
-        ::rtc::PacketSocketFactory*      factory,
-        ::rtc::Network const*            network,
-        ushort                           min_port,
-        ushort                           max_port,
-        ::std::string_view               username,
-        ::std::string_view               password,
-        bool                             allow_listen,
-        ::webrtc::FieldTrialsView const* field_trials
-    );
+    MCNAPI TCPPort(::rtc::Thread* thread, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ushort min_port, ushort max_port, ::std::string_view username, ::std::string_view password, bool allow_listen, ::webrtc::FieldTrialsView const* field_trials);
 
     MCNAPI void TryCreateServerSocket();
     // NOLINTEND
@@ -149,17 +131,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::rtc::Thread*                   thread,
-        ::rtc::PacketSocketFactory*      factory,
-        ::rtc::Network const*            network,
-        ushort                           min_port,
-        ushort                           max_port,
-        ::std::string_view               username,
-        ::std::string_view               password,
-        bool                             allow_listen,
-        ::webrtc::FieldTrialsView const* field_trials
-    );
+    MCNAPI void* $ctor(::rtc::Thread* thread, ::rtc::PacketSocketFactory* factory, ::rtc::Network const* network, ushort min_port, ushort max_port, ::std::string_view username, ::std::string_view password, bool allow_listen, ::webrtc::FieldTrialsView const* field_trials);
     // NOLINTEND
 
 public:
@@ -171,8 +143,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::cricket::Connection*
-    $CreateConnection(::cricket::Candidate const& address, ::cricket::PortInterface::CandidateOrigin origin);
+    MCNAPI ::cricket::Connection* $CreateConnection(::cricket::Candidate const& address, ::cricket::PortInterface::CandidateOrigin origin);
 
     MCNAPI void $PrepareAddress();
 
@@ -186,13 +157,7 @@ public:
 
     MCNAPI ::cricket::ProtocolType $GetProtocol() const;
 
-    MCNAPI int $SendTo(
-        void const*                 data,
-        uint64                      size,
-        ::rtc::SocketAddress const& addr,
-        ::rtc::PacketOptions const& options,
-        bool                        payload
-    );
+    MCNAPI int $SendTo(void const* data, uint64 size, ::rtc::SocketAddress const& addr, ::rtc::PacketOptions const& options, bool payload);
 
     MCNAPI void $OnSentPacket(::rtc::AsyncPacketSocket* socket, ::rtc::SentPacket const& sent_packet);
     // NOLINTEND
@@ -204,6 +169,7 @@ public:
 
     MCNAPI static void** $vftableForHasSlots();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

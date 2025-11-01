@@ -41,8 +41,7 @@ public:
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     // vIndex: 4
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-    listenForLogMessage(::std::function<void(::Editor::LogMessage const&)> func) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForLogMessage(::std::function<void(::Editor::LogMessage const&)> func) /*override*/;
     // NOLINTEND
 
 public:
@@ -58,8 +57,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-    $listenForLogMessage(::std::function<void(::Editor::LogMessage const&)> func);
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForLogMessage(::std::function<void(::Editor::LogMessage const&)> func);
     // NOLINTEND
 
 public:
@@ -69,6 +67,7 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

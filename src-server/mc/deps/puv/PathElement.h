@@ -12,9 +12,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 160> mUnk4e5dd3;
-    ::ll::UntypedStorage<4, 4>   mUnk38da85;
-    ::ll::UntypedStorage<8, 32>  mUnk42ac2b;
-    ::ll::UntypedStorage<4, 4>   mUnkec9b9a;
+    ::ll::UntypedStorage<4, 4> mUnk38da85;
+    ::ll::UntypedStorage<8, 32> mUnk42ac2b;
+    ::ll::UntypedStorage<4, 4> mUnkec9b9a;
     // NOLINTEND
 
 public:
@@ -28,12 +28,7 @@ public:
     // NOLINTBEGIN
     MCNAPI PathElement(::Puv::internal::PathElement&&);
 
-    MCNAPI PathElement(
-        ::entt::meta_type                             metaType,
-        uint                                          id,
-        ::std::string                                 name,
-        ::cereal::BasicSerializerContext::ContextType type
-    );
+    MCNAPI PathElement(::entt::meta_type metaType, uint id, ::std::string name, ::cereal::BasicSerializerContext::ContextType type);
 
     MCNAPI ~PathElement();
     // NOLINTEND
@@ -49,8 +44,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Puv::internal::PathElement&&);
 
-    MCNAPI void*
-    $ctor(::entt::meta_type metaType, uint id, ::std::string name, ::cereal::BasicSerializerContext::ContextType type);
+    MCNAPI void* $ctor(::entt::meta_type metaType, uint id, ::std::string name, ::cereal::BasicSerializerContext::ContextType type);
     // NOLINTEND
 
 public:
@@ -58,6 +52,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Puv::internal
+}

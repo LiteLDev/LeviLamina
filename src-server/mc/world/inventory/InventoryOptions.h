@@ -11,10 +11,11 @@ struct InventoryOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::InventoryLeftTabIndex>  mLeftInventoryTab;
+    ::ll::TypedStorage<4, 4, ::InventoryLeftTabIndex> mLeftInventoryTab;
     ::ll::TypedStorage<4, 4, ::InventoryRightTabIndex> mRightInventoryTab;
-    ::ll::TypedStorage<1, 1, bool>                     mFiltering;
-    ::ll::TypedStorage<4, 4, ::InventoryLayout>        mLayoutInv;
-    ::ll::TypedStorage<4, 4, ::InventoryLayout>        mLayoutCraft;
+    ::ll::TypedStorage<1, 1, bool> mFiltering;
+    ::ll::TypedStorage<4, 4, ::InventoryLayout> mLayoutInv;
+    ::ll::TypedStorage<4, 4, ::InventoryLayout> mLayoutCraft;
     // NOLINTEND
+
 };

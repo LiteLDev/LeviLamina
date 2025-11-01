@@ -27,14 +27,10 @@ public:
     virtual ~ReassemblyStreams() = default;
 
     // vIndex: 1
-    virtual int
-        Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::dcsctp::Data) = 0;
+    virtual int Add(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::dcsctp::Data) = 0;
 
     // vIndex: 2
-    virtual uint64 HandleForwardTsn(
-        ::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>,
-        ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>
-    ) = 0;
+    virtual uint64 HandleForwardTsn(::dcsctp::UnwrappedSequenceNumber<::webrtc::StrongAlias<::dcsctp::TSNTag, uint>>, ::rtc::ArrayView<::dcsctp::AnyForwardTsnChunk::SkippedStream const>) = 0;
 
     // vIndex: 3
     virtual void ResetStreams(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const>) = 0;
@@ -54,6 +50,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

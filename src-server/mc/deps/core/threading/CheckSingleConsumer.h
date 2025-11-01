@@ -4,7 +4,8 @@
 
 namespace Bedrock::Detail {
 
-template <int T0>
-class CheckSingleConsumer {};
+template<int T0>
+class CheckSingleConsumer {
+};
 
-} // namespace Bedrock::Detail
+}

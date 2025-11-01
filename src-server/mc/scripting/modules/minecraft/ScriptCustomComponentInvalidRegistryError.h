@@ -26,11 +26,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
 
-    MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError>
-    validate(::ScriptModuleMinecraft::ScriptCustomComponentRegistry const& registry);
+    MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError> validate(::ScriptModuleMinecraft::ScriptCustomComponentRegistry const& registry);
 
-    MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError>
-    validateV1(::ScriptModuleMinecraft::ScriptCustomComponentRegistry const& registry);
+    MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptCustomComponentInvalidRegistryError> validateV1(::ScriptModuleMinecraft::ScriptCustomComponentRegistry const& registry);
     // NOLINTEND
 
 public:
@@ -38,6 +36,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

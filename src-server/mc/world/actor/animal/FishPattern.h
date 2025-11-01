@@ -9,5 +9,5 @@ enum class FishPattern : int {
     Pattern4 = 3,
     Pattern5 = 4,
     Pattern6 = 5,
-    Count    = 6,
+    Count = 6,
 };

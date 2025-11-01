@@ -12,42 +12,33 @@ public:
     // clang-format off
     struct LegacyWorldgenYStart;
     // clang-format on
-
+    
     // ImprovedNoise inner types define
     struct LegacyWorldgenYStart {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, float const> startY;
-        ::ll::TypedStorage<4, 4, int const>   startYUnit;
+        ::ll::TypedStorage<4, 4, int const> startYUnit;
         ::ll::TypedStorage<4, 4, float const> startYFraction;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3>                 mOrigin;
-    ::ll::TypedStorage<4, 2048, int[512]>             mNoiseMap;
+    ::ll::TypedStorage<4, 12, ::Vec3> mOrigin;
+    ::ll::TypedStorage<4, 2048, int[512]> mNoiseMap;
     ::ll::TypedStorage<4, 12, ::YBlendingBugSettings> mYBlendingSettings;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _blendCubeCorners(
-        ::Vec3 const& origin,
-        int           X,
-        int           Y,
-        int           Z,
-        float         u,
-        float&        vv0,
-        float&        vv1,
-        float&        vv2,
-        float&        vv3
-    ) const;
+    MCAPI void _blendCubeCorners(::Vec3 const& origin, int X, int Y, int Z, float u, float& vv0, float& vv1, float& vv2, float& vv3) const;
 
-    MCAPI void
-    _readArea(float* buffer, ::Vec3 const& pos, int xSize, int ySize, int zSize, ::Vec3 const& s, float pow) const;
+    MCAPI void readArea(float* buffer, ::Vec3 const& pos, int xCount, int yCount, int zCount, ::Vec3 const& s, float pow, int xStep, int yStep, int zStep) const;
     // NOLINTEND
+
 };

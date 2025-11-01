@@ -23,7 +23,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk731900;
-    ::ll::UntypedStorage<8, 8>  mUnka70c1b;
+    ::ll::UntypedStorage<8, 8> mUnka70c1b;
     ::ll::UntypedStorage<4, 12> mUnk6529e7;
     // NOLINTEND
 
@@ -54,9 +54,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSculkSpreader>>
-    getHandle(::BlockSource& region, ::BlockPos const& pos, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleGameTest::ScriptSculkSpreader>> getHandle(::BlockSource& region, ::BlockPos const& pos, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleGameTest
+}

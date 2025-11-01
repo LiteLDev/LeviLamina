@@ -14,9 +14,9 @@ class SkinInfoData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>    mDefaultMeshName;
-    ::ll::TypedStorage<1, 1, bool>              mIsAlphaTest;
-    ::ll::TypedStorage<1, 1, bool>              mIsDirty;
+    ::ll::TypedStorage<8, 32, ::std::string> mDefaultMeshName;
+    ::ll::TypedStorage<1, 1, bool> mIsAlphaTest;
+    ::ll::TypedStorage<1, 1, bool> mIsDirty;
     ::ll::TypedStorage<8, 16, ::SerializedSkin> mSkin;
     // NOLINTEND
 
@@ -37,14 +37,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool isValidSize(uint64 skinSize);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

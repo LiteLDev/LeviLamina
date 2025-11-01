@@ -17,11 +17,11 @@ class BreedGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>           mOwner;
+    ::ll::TypedStorage<8, 8, ::Mob&> mOwner;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPartner;
-    ::ll::TypedStorage<4, 4, int>              mLoveTime;
-    ::ll::TypedStorage<4, 4, float>            mSpeed;
-    ::ll::TypedStorage<1, 1, bool const>       mStopNavigationOnStop;
+    ::ll::TypedStorage<4, 4, int> mLoveTime;
+    ::ll::TypedStorage<4, 4, float> mSpeed;
+    ::ll::TypedStorage<1, 1, bool const> mStopNavigationOnStop;
     // NOLINTEND
 
 public:
@@ -79,4 +79,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

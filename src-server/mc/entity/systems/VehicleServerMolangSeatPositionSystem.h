@@ -19,31 +19,11 @@ class VehicleServerMolangSeatPositionSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickActor(
-        ::StrictEntityContext&,
-        ::PassengerComponent const&          passengerComponent,
-        ::ActorOwnerComponent&               actorComponent,
-        ::PositionPassengerRequestComponent& positionPassengerRequestComponent,
-        ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView
-    );
+    MCNAPI static void _tickActor(::StrictEntityContext&, ::PassengerComponent const& passengerComponent, ::ActorOwnerComponent& actorComponent, ::PositionPassengerRequestComponent& positionPassengerRequestComponent, ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView);
 
-    MCNAPI static void _tickVehicleServerMolangSeatPositionSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::PassengerComponent const,
-            ::ActorOwnerComponent,
-            ::PositionPassengerRequestComponent>                                            passengerView,
-        ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView
-    );
+    MCNAPI static void _tickVehicleServerMolangSeatPositionSystem(::ViewT<::StrictEntityContext, ::PassengerComponent const, ::ActorOwnerComponent, ::PositionPassengerRequestComponent> passengerView, ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView);
 
-    MCNAPI static void _tickVehicleServerMolangSeatPositionSystemSingleEntity(
-        ::StrictEntityContext const& entityContext,
-        ::ViewT<
-            ::StrictEntityContext,
-            ::PassengerComponent const,
-            ::ActorOwnerComponent,
-            ::PositionPassengerRequestComponent>                                            passengerView,
-        ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView
-    );
+    MCNAPI static void _tickVehicleServerMolangSeatPositionSystemSingleEntity(::StrictEntityContext const& entityContext, ::ViewT<::StrictEntityContext, ::PassengerComponent const, ::ActorOwnerComponent, ::PositionPassengerRequestComponent> passengerView, ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView);
     // NOLINTEND
+
 };

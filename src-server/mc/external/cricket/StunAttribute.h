@@ -63,8 +63,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::cricket::StunAttribute*
-    Create(::cricket::StunAttributeValueType value_type, ushort type, ushort length, ::cricket::StunMessage* owner);
+    MCNAPI static ::cricket::StunAttribute* Create(::cricket::StunAttributeValueType value_type, ushort type, ushort length, ::cricket::StunMessage* owner);
 
     MCNAPI static ::std::unique_ptr<::cricket::StunErrorCodeAttribute> CreateErrorCode();
 
@@ -98,6 +97,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

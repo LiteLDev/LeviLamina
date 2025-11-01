@@ -17,6 +17,7 @@ public:
     PlayFabBanDetails& operator=(PlayFabBanDetails const&);
     PlayFabBanDetails(PlayFabBanDetails const&);
     PlayFabBanDetails();
+
 };
 
-} // namespace Social
+}

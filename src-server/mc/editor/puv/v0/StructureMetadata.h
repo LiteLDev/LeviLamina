@@ -25,16 +25,16 @@ public:
     ::ll::UntypedStorage<8, 32> mUnkd2f24a;
     ::ll::UntypedStorage<8, 32> mUnk5613bb;
     ::ll::UntypedStorage<8, 32> mUnk6d67a2;
-    ::ll::UntypedStorage<1, 1>  mUnk1106dc;
+    ::ll::UntypedStorage<1, 1> mUnk1106dc;
     ::ll::UntypedStorage<4, 12> mUnk3ededd;
     ::ll::UntypedStorage<4, 12> mUnk818894;
     ::ll::UntypedStorage<4, 16> mUnka4846c;
     ::ll::UntypedStorage<4, 16> mUnk9d8a51;
-    ::ll::UntypedStorage<4, 4>  mUnk4d0060;
-    ::ll::UntypedStorage<1, 1>  mUnkf641d5;
-    ::ll::UntypedStorage<4, 4>  mUnk4e091a;
-    ::ll::UntypedStorage<4, 4>  mUnka99d0e;
-    ::ll::UntypedStorage<4, 4>  mUnkef3cba;
+    ::ll::UntypedStorage<4, 4> mUnk4d0060;
+    ::ll::UntypedStorage<1, 1> mUnkf641d5;
+    ::ll::UntypedStorage<4, 4> mUnk4e091a;
+    ::ll::UntypedStorage<4, 4> mUnka99d0e;
+    ::ll::UntypedStorage<4, 4> mUnkef3cba;
     ::ll::UntypedStorage<8, 40> mUnkcc710e;
     ::ll::UntypedStorage<8, 40> mUnk871c1c;
     ::ll::UntypedStorage<8, 40> mUnk6df440;
@@ -49,11 +49,9 @@ public:
 
     MCNAPI StructureMetadata(::Editor::Structures::PUVLoader::v0::StructureMetadata&&);
 
-    MCNAPI ::Editor::Structures::PUVLoader::v0::StructureMetadata&
-    operator=(::Editor::Structures::PUVLoader::v0::StructureMetadata&&);
+    MCNAPI ::Editor::Structures::PUVLoader::v0::StructureMetadata& operator=(::Editor::Structures::PUVLoader::v0::StructureMetadata&&);
 
-    MCNAPI ::Editor::Structures::PUVLoader::v0::StructureMetadata&
-    operator=(::Editor::Structures::PUVLoader::v0::StructureMetadata const&);
+    MCNAPI ::Editor::Structures::PUVLoader::v0::StructureMetadata& operator=(::Editor::Structures::PUVLoader::v0::StructureMetadata const&);
 
     MCNAPI ~StructureMetadata();
     // NOLINTEND
@@ -63,8 +61,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCNAPI static ::Editor::Structures::PUVLoader::v0::StructureMetadata
-    parseLegacy(::Puv::Input const& input, ::Puv::Logger& logger, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI static ::Editor::Structures::PUVLoader::v0::StructureMetadata parseLegacy(::Puv::Input const& input, ::Puv::Logger& logger, ::gsl::not_null<::cereal::ReflectionCtx const*> ctx);
     // NOLINTEND
 
 public:
@@ -88,6 +85,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Structures::PUVLoader::v0
+}

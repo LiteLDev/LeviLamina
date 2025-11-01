@@ -10,9 +10,11 @@ public:
     // clang-format off
     class Definition;
     // clang-format on
-
+    
     // Agent inner types define
-    class Definition {};
+    class Definition {
+    };
+    
 };
 
-} // namespace AgentComponents
+}

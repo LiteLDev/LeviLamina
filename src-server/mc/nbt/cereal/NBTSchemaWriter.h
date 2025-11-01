@@ -18,35 +18,36 @@ public:
     // clang-format off
     struct StackNode;
     // clang-format on
-
+    
     // NBTSchemaWriter inner types define
     struct StackNode {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk1473c9;
+        ::ll::UntypedStorage<8, 8> mUnk1473c9;
         ::ll::UntypedStorage<8, 32> mUnk935d05;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         StackNode& operator=(StackNode const&);
         StackNode(StackNode const&);
         StackNode();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~StackNode();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -181,4 +182,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

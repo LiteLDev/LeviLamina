@@ -17,14 +17,12 @@ namespace Core { class Path; }
 
 namespace Bedrock::StorageMigration {
 
-class StorageMigrationService : public ::Bedrock::EnableNonOwnerReferences,
-                                public ::Bedrock::ImplBase<::Bedrock::StorageMigration::StorageMigrationService> {
+class StorageMigrationService : public ::Bedrock::EnableNonOwnerReferences, public ::Bedrock::ImplBase<::Bedrock::StorageMigration::StorageMigrationService> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void
-    initialize(::Core::Path const&, ::Core::Path const&, ::Bedrock::StorageMigration::StorageMigrationType) = 0;
+    virtual void initialize(::Core::Path const&, ::Core::Path const&, ::Bedrock::StorageMigration::StorageMigrationType) = 0;
 
     // vIndex: 2
     virtual bool checkMigrationPreviouslyCompleted() = 0;
@@ -65,6 +63,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::StorageMigration
+}

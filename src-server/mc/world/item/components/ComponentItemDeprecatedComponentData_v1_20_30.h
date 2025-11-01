@@ -9,8 +9,7 @@ struct ComponentItemDeprecatedComponentData_v1_20_30 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 72, ::std::optional<::LegacyOnConsumeTriggerItemComponentData>>
-        legacyOnConsumeTriggerItemComponent;
+    ::ll::TypedStorage<8, 72, ::std::optional<::LegacyOnConsumeTriggerItemComponentData>> legacyOnConsumeTriggerItemComponent;
     // NOLINTEND
 
 public:
@@ -24,4 +23,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

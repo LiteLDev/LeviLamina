@@ -4,9 +4,9 @@
 
 // auto generated inclusion list
 #include "mc/util/json_util/JsonSchemaObjectNode.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/actor/ai/goal/BaseGoalDefinition.h"
 #include "mc/world/actor/ai/goal/Goal.h"
-#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -21,62 +21,59 @@ public:
     // clang-format off
     class GoHomeDefinition;
     // clang-format on
-
+    
     // GoHomeGoal inner types define
     class GoHomeDefinition : public ::BaseGoalDefinition {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>                                    mSpeedMultiplier;
-        ::ll::TypedStorage<4, 4, int>                                      mInterval;
-        ::ll::TypedStorage<4, 4, float>                                    mGoalRadius;
-        ::ll::TypedStorage<4, 4, float>                                    mCalculateNewPathRadius;
+        ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
+        ::ll::TypedStorage<4, 4, int> mInterval;
+        ::ll::TypedStorage<4, 4, float> mGoalRadius;
+        ::ll::TypedStorage<4, 4, float> mCalculateNewPathRadius;
         ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mOnHomeTriggers;
         ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mOnFailedTriggers;
         // NOLINTEND
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~GoHomeDefinition() /*override*/;
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoHomeGoal::GoHomeDefinition>>&
-                root
-        );
+        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GoHomeGoal::GoHomeDefinition>>& root);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                                   mMob;
-    ::ll::TypedStorage<4, 4, float>                                    mSpeedMultiplier;
-    ::ll::TypedStorage<4, 4, int>                                      mInterval;
-    ::ll::TypedStorage<4, 4, float>                                    mGoalRadius;
-    ::ll::TypedStorage<4, 4, float>                                    mCalculateNewPathRadius;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
+    ::ll::TypedStorage<4, 4, int> mInterval;
+    ::ll::TypedStorage<4, 4, float> mGoalRadius;
+    ::ll::TypedStorage<4, 4, float> mCalculateNewPathRadius;
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mOnHomeTriggers;
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mOnFailedTriggers;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                              mLastEndPos;
-    ::ll::TypedStorage<4, 4, float>                                    mGoalRadiusSqr;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mLastEndPos;
+    ::ll::TypedStorage<4, 4, float> mGoalRadiusSqr;
     // NOLINTEND
 
 public:
@@ -147,4 +144,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

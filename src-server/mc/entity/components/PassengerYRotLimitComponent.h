@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mPassengerYRotLimit;
     ::ll::TypedStorage<4, 4, float> mLockedBodyYRot;
     // NOLINTEND
+
 };

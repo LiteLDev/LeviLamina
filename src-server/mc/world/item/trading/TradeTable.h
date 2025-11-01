@@ -15,6 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mPath;
-    ::ll::TypedStorage<8, 24, ::std::vector<::TradeTier>>        mTiers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::TradeTier>> mTiers;
     // NOLINTEND
+
 };

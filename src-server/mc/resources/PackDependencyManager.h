@@ -6,16 +6,15 @@
 // clang-format off
 class PackManifest;
 class RepositoryPacks;
-struct PackIdVersion;
+namespace mce { class UUID; }
 // clang-format on
 
 namespace PackDependencyManager {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::vector<::PackIdVersion>
-getMissingDependencyIdentities(::RepositoryPacks const& source, ::PackManifest const& manifest);
+MCNAPI bool hasMissingDependencies(::RepositoryPacks const& source, ::PackManifest const& manifest);
 
-MCNAPI bool isNativeModule(::std::string const& uuid);
+MCNAPI bool isNativeModule(::mce::UUID const& uuid);
 // NOLINTEND
 
-} // namespace PackDependencyManager
+}

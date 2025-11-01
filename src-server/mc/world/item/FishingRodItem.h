@@ -27,43 +27,43 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 110
+    // vIndex: 111
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const&, int newAnimationFrame, bool) const /*override*/;
 
-    // vIndex: 76
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 111
+    // vIndex: 112
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    // vIndex: 112
+    // vIndex: 113
     virtual int getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const*, bool) const /*override*/;
 
-    // vIndex: 54
+    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 55
+    // vIndex: 56
     virtual int getEnchantValue() const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 85
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 105
-    virtual bool shouldSendInteractionGameEvents() const /*override*/;
+    // vIndex: 106
+    virtual bool shouldEmitInUseGameEvents() const /*override*/;
 
-    // vIndex: 125
+    // vIndex: 126
     virtual bool shouldUseJsonForRenderMatrix() const /*override*/;
 
-    // vIndex: 109
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    // vIndex: 110
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
     // vIndex: 0
@@ -103,11 +103,11 @@ public:
 
     MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCFOLD bool $shouldSendInteractionGameEvents() const;
+    MCFOLD bool $shouldEmitInUseGameEvents() const;
 
     MCFOLD bool $shouldUseJsonForRenderMatrix() const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
     // NOLINTEND
@@ -117,4 +117,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

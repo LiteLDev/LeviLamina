@@ -13,4 +13,4 @@ namespace rtc::webrtc_network_internal {
 MCNAPI bool CompareNetworks(::std::unique_ptr<::rtc::Network> const& a, ::std::unique_ptr<::rtc::Network> const& b);
 // NOLINTEND
 
-} // namespace rtc::webrtc_network_internal
+}

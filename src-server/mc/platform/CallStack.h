@@ -26,6 +26,7 @@ public:
         ::std::string_view mFilename;
         uint               mLine;
         // NOLINTEND
+
     };
 
     struct Context {
@@ -36,6 +37,33 @@ public:
         ::std::optional<::Bedrock::LogLevel> mLogLevel;
         ::std::optional<::LogAreaID>         mLogArea;
         // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        Context& operator=(Context const&);
+        Context(Context const&);
+        Context();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI Context(::Bedrock::CallStack::Context&&);
+
+        MCNAPI ~Context();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::Bedrock::CallStack::Context&&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+
     };
 
     struct FrameWithContext {
@@ -50,13 +78,13 @@ public:
         FrameWithContext& operator=(FrameWithContext const&) = default;
         FrameWithContext(FrameWithContext const&)            = default;
 
+        // prevent constructor by default
+        FrameWithContext();
+
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FrameWithContext(::Bedrock::CallStack::FrameWithContext&&);
-
-        MCAPI
-        FrameWithContext(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
+        MCAPI FrameWithContext(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
 
         MCAPI ~FrameWithContext();
         // NOLINTEND
@@ -64,10 +92,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Bedrock::CallStack::FrameWithContext&&);
-
-        MCAPI void*
-        $ctor(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
+        MCAPI void* $ctor(::Bedrock::CallStack::Frame&& frame, ::std::optional<::Bedrock::CallStack::Context>&& context);
         // NOLINTEND
 
     public:
@@ -75,6 +100,7 @@ public:
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
+
     };
 
 public:
@@ -100,8 +126,9 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

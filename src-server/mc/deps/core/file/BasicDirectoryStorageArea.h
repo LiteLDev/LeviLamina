@@ -4,7 +4,8 @@
 
 namespace Core {
 
-template <typename T0>
-class BasicDirectoryStorageArea {};
+template<typename T0>
+class BasicDirectoryStorageArea {
+};
 
-} // namespace Core
+}

@@ -26,13 +26,13 @@ class LevelStorage {
 public:
     // LevelStorage inner types define
     enum class StatsType : uint {
-        Level0  = 0,
-        Level1  = 1,
-        Level2  = 2,
-        Memory  = 3,
+        Level0 = 0,
+        Level1 = 1,
+        Level2 = 2,
+        Memory = 3,
         Default = 0,
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -52,11 +52,7 @@ public:
     virtual bool hasKey(::std::string_view, ::DBHelpers::Category) const = 0;
 
     // vIndex: 5
-    virtual void forEachKeyWithPrefix(
-        ::std::string_view,
-        ::DBHelpers::Category,
-        ::std::function<void(::std::string_view, ::std::string_view)> const&
-    ) const = 0;
+    virtual void forEachKeyWithPrefix(::std::string_view, ::DBHelpers::Category, ::std::function<void(::std::string_view, ::std::string_view)> const&) const = 0;
 
     // vIndex: 6
     virtual bool loadLevelData(::LevelData&) = 0;
@@ -71,8 +67,7 @@ public:
     virtual ::Core::PathBuffer<::std::string> const& getFullPath() const = 0;
 
     // vIndex: 11
-    virtual ::Bedrock::Threading::Async<void>
-    saveData(::std::string const&, ::std::string&&, ::DBHelpers::Category) = 0;
+    virtual ::Bedrock::Threading::Async<void> saveData(::std::string const&, ::std::string&&, ::DBHelpers::Category) = 0;
 
     // vIndex: 10
     virtual ::Bedrock::Threading::Async<void> saveData(::LevelStorageWriteBatch const&) = 0;
@@ -152,8 +147,7 @@ public:
 
     MCAPI void save(::Player& player);
 
-    MCAPI ::Bedrock::Threading::Async<void>
-    saveData(::std::string const& key, ::CompoundTag const& tag, ::DBHelpers::Category category);
+    MCAPI ::Bedrock::Threading::Async<void> saveData(::std::string const& key, ::CompoundTag const& tag, ::DBHelpers::Category category);
     // NOLINTEND
 
 public:
@@ -189,4 +183,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

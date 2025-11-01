@@ -30,25 +30,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RuinedPortalStart(
-        ::BiomeRegistry&                     registry,
-        ::BiomeSource const&                 source,
-        int                                  chunkX,
-        int                                  chunkZ,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
-    );
+    MCAPI RuinedPortalStart(::BiomeRegistry& registry, ::BiomeSource const& source, int chunkX, int chunkZ, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::BiomeRegistry&                     registry,
-        ::BiomeSource const&                 source,
-        int                                  chunkX,
-        int                                  chunkZ,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
-    );
+    MCAPI void* $ctor(::BiomeRegistry& registry, ::BiomeSource const& source, int chunkX, int chunkZ, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel);
     // NOLINTEND
 
 public:
@@ -62,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

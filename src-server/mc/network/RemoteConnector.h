@@ -14,9 +14,7 @@ struct ConnectionDefinition;
 namespace Social { class GameConnectionInfo; }
 // clang-format on
 
-class RemoteConnector : public ::Connector,
-                        public ::NetworkEnableDisableListener,
-                        public ::Bedrock::EnableNonOwnerReferences {
+class RemoteConnector : public ::Connector, public ::NetworkEnableDisableListener, public ::Bedrock::EnableNonOwnerReferences {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -50,9 +48,6 @@ public:
     // vIndex: 18
     virtual void setDisableLanSignaling(bool) = 0;
 
-    // vIndex: 19
-    virtual void setInactivityTimeout(::NetworkIdentifier const&, ::std::optional<::std::chrono::seconds>);
-
     // vIndex: 0
     virtual ~RemoteConnector() /*override*/;
     // NOLINTEND
@@ -66,7 +61,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $setInactivityTimeout(::NetworkIdentifier const&, ::std::optional<::std::chrono::seconds>);
+
     // NOLINTEND
 
 public:
@@ -78,4 +73,5 @@ public:
 
     MCNAPI static void** $vftableForNetworkEnableDisableListener();
     // NOLINTEND
+
 };

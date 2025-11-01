@@ -18,6 +18,7 @@ public:
     WidgetPrimComponentLine& operator=(WidgetPrimComponentLine const&);
     WidgetPrimComponentLine(WidgetPrimComponentLine const&);
     WidgetPrimComponentLine();
+
 };
 
-} // namespace Editor::Network
+}

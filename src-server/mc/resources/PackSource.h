@@ -30,7 +30,7 @@ public:
     class RequiredPackType;
     class RequiredResourceOrBehaviorPackType;
     // clang-format on
-
+    
     // PackSource inner types define
     class RequiredPackType {
     public:
@@ -38,42 +38,45 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1> mUnka29ba2;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         RequiredPackType& operator=(RequiredPackType const&);
         RequiredPackType(RequiredPackType const&);
         RequiredPackType();
+    
     };
-
+    
     class RequiredPackOrigin {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1> mUnk6149af;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         RequiredPackOrigin& operator=(RequiredPackOrigin const&);
         RequiredPackOrigin(RequiredPackOrigin const&);
         RequiredPackOrigin();
+    
     };
-
+    
     class RequiredResourceOrBehaviorPackType {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1> mUnk2a81d8;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         RequiredResourceOrBehaviorPackType& operator=(RequiredResourceOrBehaviorPackType const&);
         RequiredResourceOrBehaviorPackType(RequiredResourceOrBehaviorPackType const&);
         RequiredResourceOrBehaviorPackType();
+    
     };
-
+    
     struct PackTaskData {
     public:
         // member variables
@@ -83,26 +86,27 @@ public:
         ::ll::UntypedStorage<8, 64> mUnke8ed21;
         ::ll::UntypedStorage<8, 64> mUnka1631e;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         PackTaskData& operator=(PackTaskData const&);
         PackTaskData(PackTaskData const&);
         PackTaskData();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~PackTaskData();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -146,8 +150,7 @@ public:
 
     MCNAPI ::PackSourceLoadResult _createImmediateLoadResult();
 
-    MCNAPI ::PackSourceLoadResult
-    _getTaskData(::brstd::function_ref<::PackSourceLoadResult(::std::shared_ptr<::PackSource::PackTaskData>)> task);
+    MCNAPI ::PackSourceLoadResult _getTaskData(::brstd::function_ref<::PackSourceLoadResult(::std::shared_ptr<::PackSource::PackTaskData>)> task);
 
     MCNAPI bool _removePack(::brstd::function_ref<bool(::Pack const&)> predicate);
 
@@ -155,15 +158,11 @@ public:
 
     MCNAPI void _setPacks(::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& packs);
 
-    MCNAPI ::PackSourceReport load(
-        ::IPackManifestFactory&                                           manifestFactory,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
-    );
+    MCNAPI ::PackSourceReport load(::IPackManifestFactory& manifestFactory, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider);
 
     MCNAPI ::PackSourceLoadResult requestLoad(::PackSourceLoadOptions&& options);
 
-    MCNAPI void
-    resolveUpgradeDependencies(::std::shared_ptr<::Pack> pack, ::PackCommand::UpgradeLegacyDependenciesBatch& commands);
+    MCNAPI void resolveUpgradeDependencies(::std::shared_ptr<::Pack> pack, ::PackCommand::UpgradeLegacyDependenciesBatch& commands);
     // NOLINTEND
 
 public:
@@ -189,4 +188,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

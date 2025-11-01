@@ -13,4 +13,4 @@ namespace ActorMovement {
 MCNAPI void setHasTeleported(::EntityContext& entity, bool newValue);
 // NOLINTEND
 
-} // namespace ActorMovement
+}

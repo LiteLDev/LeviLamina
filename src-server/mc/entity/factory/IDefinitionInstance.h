@@ -67,4 +67,5 @@ public:
     // NOLINTBEGIN
     MCNAPI ushort $getRuntimeTypeId() const;
     // NOLINTEND
+
 };

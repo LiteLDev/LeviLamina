@@ -4,7 +4,8 @@
 
 namespace Bedrock {
 
-template <typename T0, int T1>
-class EnumSet {};
+template<typename T0, int T1>
+class EnumSet {
+};
 
-} // namespace Bedrock
+}

@@ -32,4 +32,4 @@ MCAPI float const& START_SATURATION();
 MCAPI int const& STARVE_LEVEL();
 // NOLINTEND
 
-} // namespace FoodConstants
+}

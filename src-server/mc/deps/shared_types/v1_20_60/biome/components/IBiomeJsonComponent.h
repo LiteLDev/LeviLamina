@@ -23,6 +23,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_60
+}

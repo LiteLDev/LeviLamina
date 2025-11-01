@@ -20,17 +20,17 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 120> mUnk67324a;
     ::ll::UntypedStorage<8, 152> mUnkd3a2d2;
-    ::ll::UntypedStorage<8, 64>  mUnk991b8c;
-    ::ll::UntypedStorage<8, 64>  mUnkfee08d;
-    ::ll::UntypedStorage<1, 1>   mUnka6cf52;
-    ::ll::UntypedStorage<8, 8>   mUnka26d55;
-    ::ll::UntypedStorage<8, 16>  mUnk8dd78f;
-    ::ll::UntypedStorage<8, 8>   mUnk9052bf;
-    ::ll::UntypedStorage<8, 8>   mUnkc340eb;
-    ::ll::UntypedStorage<8, 8>   mUnk7247f6;
-    ::ll::UntypedStorage<1, 1>   mUnke03888;
-    ::ll::UntypedStorage<1, 1>   mUnkdb76a0;
-    ::ll::UntypedStorage<4, 4>   mUnk1da246;
+    ::ll::UntypedStorage<8, 64> mUnk991b8c;
+    ::ll::UntypedStorage<8, 64> mUnkfee08d;
+    ::ll::UntypedStorage<1, 1> mUnka6cf52;
+    ::ll::UntypedStorage<8, 8> mUnka26d55;
+    ::ll::UntypedStorage<8, 16> mUnk8dd78f;
+    ::ll::UntypedStorage<8, 8> mUnk9052bf;
+    ::ll::UntypedStorage<8, 8> mUnkc340eb;
+    ::ll::UntypedStorage<8, 8> mUnk7247f6;
+    ::ll::UntypedStorage<1, 1> mUnke03888;
+    ::ll::UntypedStorage<1, 1> mUnkdb76a0;
+    ::ll::UntypedStorage<4, 4> mUnk1da246;
     // NOLINTEND
 
 public:
@@ -42,12 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DedicatedServerGameTestRunner(
-        ::TestConfig const&  testConfig,
-        ::MinecraftGameTest& gameTest,
-        ::ServerInstance&    server,
-        ::Level&             level
-    );
+    MCNAPI DedicatedServerGameTestRunner(::TestConfig const& testConfig, ::MinecraftGameTest& gameTest, ::ServerInstance& server, ::Level& level);
 
     MCNAPI ::Dimension* _ensureDimension(::DimensionType dimensionType);
 
@@ -67,8 +62,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::TestConfig const& testConfig, ::MinecraftGameTest& gameTest, ::ServerInstance& server, ::Level& level);
+    MCNAPI void* $ctor(::TestConfig const& testConfig, ::MinecraftGameTest& gameTest, ::ServerInstance& server, ::Level& level);
     // NOLINTEND
 
 public:
@@ -76,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

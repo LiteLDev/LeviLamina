@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/resources/BaseGameVersion.h"
+#include "mc/versionless/util/BaseGameVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -46,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

@@ -37,4 +37,4 @@ MCNAPI ::HashedString& SERVER_AUTH_OPT_OUT_VERSION();
 MCNAPI ::HashedString& SPAWN_POS();
 // NOLINTEND
 
-} // namespace LevelDataKeys
+}

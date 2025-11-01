@@ -84,34 +84,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI AudioRtpSender(
-        ::rtc::Thread*                               worker_thread,
-        ::std::string const&                         id,
-        ::webrtc::LegacyStatsCollectorInterface*     legacy_stats,
-        ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer
-    );
+    MCNAPI AudioRtpSender(::rtc::Thread* worker_thread, ::std::string const& id, ::webrtc::LegacyStatsCollectorInterface* legacy_stats, ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::scoped_refptr<::webrtc::AudioRtpSender> Create(
-        ::rtc::Thread*                               worker_thread,
-        ::std::string const&                         id,
-        ::webrtc::LegacyStatsCollectorInterface*     stats,
-        ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer
-    );
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::AudioRtpSender> Create(::rtc::Thread* worker_thread, ::std::string const& id, ::webrtc::LegacyStatsCollectorInterface* stats, ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::rtc::Thread*                               worker_thread,
-        ::std::string const&                         id,
-        ::webrtc::LegacyStatsCollectorInterface*     legacy_stats,
-        ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer
-    );
+    MCNAPI void* $ctor(::rtc::Thread* worker_thread, ::std::string const& id, ::webrtc::LegacyStatsCollectorInterface* legacy_stats, ::webrtc::RtpSenderBase::SetStreamsObserver* set_streams_observer);
     // NOLINTEND
 
 public:
@@ -159,6 +144,7 @@ public:
 
     MCNAPI static void** $vftableForRtpSenderInternal();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

@@ -13,4 +13,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void reloadComponent(::Actor& actor);
     // NOLINTEND
+
 };

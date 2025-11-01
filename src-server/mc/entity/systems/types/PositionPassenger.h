@@ -4,6 +4,7 @@
 
 namespace VanillaSystemCategories {
 
-struct PositionPassenger {};
+struct PositionPassenger {
+};
 
-} // namespace VanillaSystemCategories
+}

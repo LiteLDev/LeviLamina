@@ -19,4 +19,4 @@ MCNAPI void WriteFatalLog(::std::string_view output);
 MCNAPI void WriteFatalLog(char const* file, int line, ::std::string_view output);
 // NOLINTEND
 
-} // namespace rtc::webrtc_checks_impl
+}

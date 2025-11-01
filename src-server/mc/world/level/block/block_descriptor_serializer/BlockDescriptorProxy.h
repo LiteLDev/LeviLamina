@@ -18,9 +18,9 @@ struct BlockDescriptorProxy {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                            mName;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
     ::ll::TypedStorage<8, 24, ::BlockDescriptorSerializer::StatesProxy> mStates;
-    ::ll::TypedStorage<8, 32, ::BlockDescriptorSerializer::TagsProxy>   mTags;
+    ::ll::TypedStorage<8, 32, ::BlockDescriptorSerializer::TagsProxy> mTags;
     // NOLINTEND
 
 public:
@@ -36,8 +36,7 @@ public:
 
     MCAPI BlockDescriptorProxy(::std::string name, ::std::vector<::BlockDescriptor::State> states, ::std::string tags);
 
-    MCAPI ::BlockDescriptorSerializer::BlockDescriptorProxy&
-    operator=(::BlockDescriptorSerializer::BlockDescriptorProxy&&);
+    MCAPI ::BlockDescriptorSerializer::BlockDescriptorProxy& operator=(::BlockDescriptorSerializer::BlockDescriptorProxy&&);
 
     MCAPI ~BlockDescriptorProxy();
     // NOLINTEND
@@ -55,6 +54,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace BlockDescriptorSerializer
+}

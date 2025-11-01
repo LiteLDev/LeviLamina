@@ -20,39 +20,38 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptItemCustomComponentCompleteUseEvent : public ::ScriptModuleMinecraft::ScriptItemCustomComponentAfterEvent,
-                                                   public ::ScriptModuleMinecraft::ScriptItemCompleteUseEvent {
+struct ScriptItemCustomComponentCompleteUseEvent : public ::ScriptModuleMinecraft::ScriptItemCustomComponentAfterEvent, public ::ScriptModuleMinecraft::ScriptItemCompleteUseEvent {
 public:
     // ScriptItemCustomComponentCompleteUseEvent inner types declare
     // clang-format off
     struct IntermediateStorage;
     // clang-format on
-
+    
     // ScriptItemCustomComponentCompleteUseEvent inner types define
-    using EventConnectorsType = ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<
-        void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&)>;
-
+    using EventConnectorsType = ::ScriptModuleMinecraft::ScriptCustomComponentPubSubConnectors<void(::ItemUseMethod&, ::ItemStack const&, ::ItemStack&, ::Player&, ::Level&)>;
+    
     struct IntermediateStorage : public ::ScriptModuleMinecraft::ScriptItemCustomComponentIntermediateStorage {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 152, ::ItemStack const>    mItemStack;
+        ::ll::TypedStorage<8, 152, ::ItemStack const> mItemStack;
         ::ll::TypedStorage<8, 24, ::WeakEntityRef const> mPlayer;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~IntermediateStorage();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -71,6 +70,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

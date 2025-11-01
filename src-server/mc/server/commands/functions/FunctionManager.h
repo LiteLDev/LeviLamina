@@ -27,7 +27,7 @@ public:
     struct QueuedCommand;
     struct TickFunction;
     // clang-format on
-
+    
     // FunctionManager inner types define
     struct TickFunction {
     public:
@@ -36,14 +36,15 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk482e9d;
         ::ll::UntypedStorage<1, 1> mUnk4d0171;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         TickFunction& operator=(TickFunction const&);
         TickFunction(TickFunction const&);
         TickFunction();
+    
     };
-
+    
     struct QueuedCommand {
     public:
         // member variables
@@ -51,14 +52,15 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkcf60d0;
         ::ll::UntypedStorage<8, 8> mUnkf29853;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         QueuedCommand& operator=(QueuedCommand const&);
         QueuedCommand(QueuedCommand const&);
         QueuedCommand();
+    
     };
-
+    
     struct OriginMapping {
     public:
         // member variables
@@ -66,37 +68,38 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk9600ef;
         ::ll::UntypedStorage<4, 4> mUnk4c4426;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         OriginMapping& operator=(OriginMapping const&);
         OriginMapping(OriginMapping const&);
         OriginMapping();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~OriginMapping();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk434392;
-    ::ll::UntypedStorage<1, 1>  mUnkc90958;
-    ::ll::UntypedStorage<8, 8>  mUnkb87a32;
-    ::ll::UntypedStorage<4, 4>  mUnk5cf55c;
+    ::ll::UntypedStorage<8, 8> mUnk434392;
+    ::ll::UntypedStorage<1, 1> mUnkc90958;
+    ::ll::UntypedStorage<8, 8> mUnkb87a32;
+    ::ll::UntypedStorage<4, 4> mUnk5cf55c;
     ::ll::UntypedStorage<8, 24> mUnkb4927f;
     ::ll::UntypedStorage<8, 64> mUnk34a953;
-    ::ll::UntypedStorage<8, 8>  mUnkd26b3c;
-    ::ll::UntypedStorage<8, 8>  mUnk35042f;
+    ::ll::UntypedStorage<8, 8> mUnkd26b3c;
+    ::ll::UntypedStorage<8, 8> mUnk35042f;
     ::ll::UntypedStorage<8, 64> mUnk754948;
     ::ll::UntypedStorage<8, 24> mUnka7e559;
     // NOLINTEND
@@ -117,11 +120,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FunctionManager(
-        ::std::unique_ptr<::ICommandDispatcher> commandDispatcher,
-        ::std::unique_ptr<::CommandOrigin>      tickOrigin,
-        ::GameRule const*                       gameRule
-    );
+    MCNAPI FunctionManager(::std::unique_ptr<::ICommandDispatcher> commandDispatcher, ::std::unique_ptr<::CommandOrigin> tickOrigin, ::GameRule const* gameRule);
 
     MCNAPI ::CommandOrigin const& _addOriginReference(::CommandOrigin const& origin, uint amount);
 
@@ -129,18 +128,9 @@ public:
 
     MCNAPI void _loadTickFiles(::ResourcePackManager const& serverPackManager);
 
-    MCNAPI void _processFunctionEntry(
-        ::std::string const&                functionName,
-        ::std::vector<::std::string> const& lines,
-        ::std::vector<::std::string>&       errorList,
-        ::CurrentCmdVersion                 commandVersion,
-        ::CommandRegistry const&            registry
-    );
+    MCNAPI void _processFunctionEntry(::std::string const& functionName, ::std::vector<::std::string> const& lines, ::std::vector<::std::string>& errorList, ::CurrentCmdVersion commandVersion, ::CommandRegistry const& registry);
 
-    MCNAPI void _queueCommandsAfterCaller(
-        ::std::vector<::std::unique_ptr<::IFunctionEntry>> const& toQueue,
-        ::CommandOrigin const&                                    origin
-    );
+    MCNAPI void _queueCommandsAfterCaller(::std::vector<::std::unique_ptr<::IFunctionEntry>> const& toQueue, ::CommandOrigin const& origin);
 
     MCNAPI void _removeOriginReference(::CommandOrigin const& origin, uint amount);
 
@@ -160,11 +150,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::unique_ptr<::ICommandDispatcher> commandDispatcher,
-        ::std::unique_ptr<::CommandOrigin>      tickOrigin,
-        ::GameRule const*                       gameRule
-    );
+    MCNAPI void* $ctor(::std::unique_ptr<::ICommandDispatcher> commandDispatcher, ::std::unique_ptr<::CommandOrigin> tickOrigin, ::GameRule const* gameRule);
     // NOLINTEND
 
 public:
@@ -178,4 +164,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

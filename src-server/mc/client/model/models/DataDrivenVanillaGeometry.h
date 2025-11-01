@@ -8,4 +8,4 @@ namespace DataDrivenVanillaGeometry {
 MCNAPI ::std::vector<::std::string> const& GeometryModels();
 // NOLINTEND
 
-} // namespace DataDrivenVanillaGeometry
+}

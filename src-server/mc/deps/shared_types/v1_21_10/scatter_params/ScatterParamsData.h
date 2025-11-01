@@ -13,9 +13,9 @@ struct ScatterParamsData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48>  mUnkf00ebd;
-    ::ll::UntypedStorage<8, 72>  mUnk5514db;
-    ::ll::UntypedStorage<4, 4>   mUnkf0f0dd;
+    ::ll::UntypedStorage<8, 48> mUnkf00ebd;
+    ::ll::UntypedStorage<8, 72> mUnk5514db;
+    ::ll::UntypedStorage<4, 4> mUnkf0f0dd;
     ::ll::UntypedStorage<8, 176> mUnk9d0ec6;
     ::ll::UntypedStorage<8, 176> mUnkf59f65;
     ::ll::UntypedStorage<8, 176> mUnk38631a;
@@ -58,6 +58,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_10
+}

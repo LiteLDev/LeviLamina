@@ -9,4 +9,5 @@ public:
     uint          mFormId;
     ::std::string mFormJSON;
     // NOLINTEND
+
 };

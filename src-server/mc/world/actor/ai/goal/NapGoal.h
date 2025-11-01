@@ -17,13 +17,13 @@ class NapGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
-    ::ll::TypedStorage<8, 8, ::Tick>              mCooldown;
-    ::ll::TypedStorage<8, 8, ::Tick>              mDetectMobsTimer;
-    ::ll::TypedStorage<1, 1, bool>                mInvalidCooldown;
-    ::ll::TypedStorage<4, 4, int const>           mNapCooldownMin;
-    ::ll::TypedStorage<4, 4, int const>           mNapCooldownMax;
-    ::ll::TypedStorage<4, 12, ::Vec3 const>       mDetectRange;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<8, 8, ::Tick> mCooldown;
+    ::ll::TypedStorage<8, 8, ::Tick> mDetectMobsTimer;
+    ::ll::TypedStorage<1, 1, bool> mInvalidCooldown;
+    ::ll::TypedStorage<4, 4, int const> mNapCooldownMin;
+    ::ll::TypedStorage<4, 4, int const> mNapCooldownMax;
+    ::ll::TypedStorage<4, 12, ::Vec3 const> mDetectRange;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mCanNapFilters;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mWakeMobExceptions;
     // NOLINTEND
@@ -59,15 +59,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NapGoal(
-        ::Mob&                    mob,
-        float                     cooldownTimeMin,
-        float                     cooldownTimeMax,
-        float                     detectMobDistXZ,
-        float                     detectMobDistY,
-        ::ActorFilterGroup const& canNapFilters,
-        ::ActorFilterGroup const& wakeMobExceptions
-    );
+    MCAPI NapGoal(::Mob& mob, float cooldownTimeMin, float cooldownTimeMax, float detectMobDistXZ, float detectMobDistY, ::ActorFilterGroup const& canNapFilters, ::ActorFilterGroup const& wakeMobExceptions);
 
     MCAPI bool _canSleep(::Tick const& currentTick) const;
 
@@ -77,15 +69,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                    mob,
-        float                     cooldownTimeMin,
-        float                     cooldownTimeMax,
-        float                     detectMobDistXZ,
-        float                     detectMobDistY,
-        ::ActorFilterGroup const& canNapFilters,
-        ::ActorFilterGroup const& wakeMobExceptions
-    );
+    MCAPI void* $ctor(::Mob& mob, float cooldownTimeMin, float cooldownTimeMax, float detectMobDistXZ, float detectMobDistY, ::ActorFilterGroup const& canNapFilters, ::ActorFilterGroup const& wakeMobExceptions);
     // NOLINTEND
 
 public:
@@ -107,4 +91,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -17,6 +17,7 @@ public:
     IndexAndType& operator=(IndexAndType const&);
     IndexAndType(IndexAndType const&);
     IndexAndType();
+
 };
 
-} // namespace VariadicSQLParser
+}

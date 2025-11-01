@@ -7,8 +7,7 @@
 
 namespace Editor::Network {
 
-class ThemeSettingsNewThemeCreatedPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::ThemeSettingsNewThemeCreatedPayload> {
+class ThemeSettingsNewThemeCreatedPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::ThemeSettingsNewThemeCreatedPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -32,11 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::Network::ThemeSettingsNewThemeCreatedPayload&
-    operator=(::Editor::Network::ThemeSettingsNewThemeCreatedPayload&&);
+    MCNAPI ::Editor::Network::ThemeSettingsNewThemeCreatedPayload& operator=(::Editor::Network::ThemeSettingsNewThemeCreatedPayload&&);
 
-    MCNAPI ::Editor::Network::ThemeSettingsNewThemeCreatedPayload&
-    operator=(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
+    MCNAPI ::Editor::Network::ThemeSettingsNewThemeCreatedPayload& operator=(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const&);
     // NOLINTEND
 
 public:
@@ -50,6 +47,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

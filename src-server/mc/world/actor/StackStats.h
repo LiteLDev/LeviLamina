@@ -16,4 +16,5 @@ public:
     StackStats& operator=(StackStats const&);
     StackStats(StackStats const&);
     StackStats();
+
 };

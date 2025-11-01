@@ -15,7 +15,7 @@ public:
     // clang-format off
     struct CacheLookupData;
     // clang-format on
-
+    
     // HandleCache inner types define
     struct CacheLookupData {
     public:
@@ -24,14 +24,15 @@ public:
         ::ll::UntypedStorage<8, 8> mUnke261b1;
         ::ll::UntypedStorage<8, 8> mUnka32892;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         CacheLookupData& operator=(CacheLookupData const&);
         CacheLookupData(CacheLookupData const&);
         CacheLookupData();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -62,6 +63,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

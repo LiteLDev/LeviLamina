@@ -11,6 +11,7 @@ public:
     ::ll::TypedStorage<4, 4, int> mHorizontal;
     ::ll::TypedStorage<4, 4, int> mVertical;
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen
+}

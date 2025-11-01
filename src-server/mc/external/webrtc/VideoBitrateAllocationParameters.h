@@ -18,6 +18,7 @@ public:
     VideoBitrateAllocationParameters& operator=(VideoBitrateAllocationParameters const&);
     VideoBitrateAllocationParameters(VideoBitrateAllocationParameters const&);
     VideoBitrateAllocationParameters();
+
 };
 
-} // namespace webrtc
+}

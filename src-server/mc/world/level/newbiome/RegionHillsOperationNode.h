@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkc01c9b;
-    ::ll::UntypedStorage<8, 8>  mUnk860d5e;
+    ::ll::UntypedStorage<8, 8> mUnk860d5e;
     // NOLINTEND
 
 public:
@@ -32,12 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
-    virtual void _fillArea(
-        ::OperationNodeDetails::WorkingData<::Biome const*, ::Biome const*>& operationNodeData,
-        ::Pos2d const&                                                       origin,
-        ::Pos2d const&                                                       size,
-        int                                                                  pw
-    ) const /*override*/;
+    virtual void _fillArea(::OperationNodeDetails::WorkingData<::Biome const*, ::Biome const*>& operationNodeData, ::Pos2d const& origin, ::Pos2d const& size, int pw) const /*override*/;
 
     // vIndex: 4
     virtual ::std::tuple<::Pos2d, ::Pos2d> _getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const /*override*/;
@@ -49,34 +44,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RegionHillsOperationNode(
-        uint                                                         seedMixup,
-        ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent,
-        ::std::shared_ptr<::OperationNode<int, ::Pos2d>>&            riverOperationNode,
-        ::BiomeRegistry const&                                       biomeRegistry
-    );
+    MCNAPI RegionHillsOperationNode(uint seedMixup, ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent, ::std::shared_ptr<::OperationNode<int, ::Pos2d>>& riverOperationNode, ::BiomeRegistry const& biomeRegistry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        uint                                                         seedMixup,
-        ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent,
-        ::std::shared_ptr<::OperationNode<int, ::Pos2d>>&            riverOperationNode,
-        ::BiomeRegistry const&                                       biomeRegistry
-    );
+    MCNAPI void* $ctor(uint seedMixup, ::std::shared_ptr<::OperationNode<::Biome const*, ::Pos2d>>& parent, ::std::shared_ptr<::OperationNode<int, ::Pos2d>>& riverOperationNode, ::BiomeRegistry const& biomeRegistry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $_fillArea(
-        ::OperationNodeDetails::WorkingData<::Biome const*, ::Biome const*>& operationNodeData,
-        ::Pos2d const&                                                       origin,
-        ::Pos2d const&                                                       size,
-        int                                                                  pw
-    ) const;
+    MCNAPI void $_fillArea(::OperationNodeDetails::WorkingData<::Biome const*, ::Biome const*>& operationNodeData, ::Pos2d const& origin, ::Pos2d const& size, int pw) const;
 
     MCNAPI ::std::tuple<::Pos2d, ::Pos2d> $_getAreaRead(::Pos2d const& origin, ::Pos2d const& size) const;
     // NOLINTEND
@@ -86,4 +66,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

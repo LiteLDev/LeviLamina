@@ -17,4 +17,4 @@ MCNAPI ::std::string const& getPackageFamilyName();
 MCNAPI void initializeDeviceIdForDev(::std::string& deviceId, bool isAnonymous);
 // NOLINTEND
 
-} // namespace Bedrock::PlatformUtils
+}

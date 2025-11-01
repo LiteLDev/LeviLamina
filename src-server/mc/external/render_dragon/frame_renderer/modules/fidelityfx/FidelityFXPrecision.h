@@ -5,8 +5,8 @@
 namespace dragon::framerenderer::modules::fidelityfx {
 
 enum class FidelityFXPrecision : int {
-    Full  = 0,
-    Half  = 1,
+    Full = 0,
+    Half = 1,
     Count = 2,
 };
 

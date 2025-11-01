@@ -16,6 +16,7 @@ public:
     EmailSender& operator=(EmailSender const&);
     EmailSender(EmailSender const&);
     EmailSender();
+
 };
 
-} // namespace RakNet
+}

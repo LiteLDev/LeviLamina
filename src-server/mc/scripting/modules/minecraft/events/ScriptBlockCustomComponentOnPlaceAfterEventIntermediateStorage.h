@@ -12,8 +12,7 @@ class Block;
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage
-: public ::ScriptModuleMinecraft::ScriptBlockCustomComponentAfterEventIntermediateStorage {
+struct ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage : public ::ScriptModuleMinecraft::ScriptBlockCustomComponentAfterEventIntermediateStorage {
 public:
     // member variables
     // NOLINTBEGIN
@@ -22,12 +21,10 @@ public:
 
 public:
     // prevent constructor by default
-    ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage&
-    operator=(ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage const&);
-    ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage(
-        ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage const&
-    );
+    ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage& operator=(ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage const&);
+    ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage(ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage const&);
     ScriptBlockCustomComponentOnPlaceAfterEventIntermediateStorage();
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

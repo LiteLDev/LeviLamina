@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct OutgoingSSNResetRequestParameterConfig {};
+struct OutgoingSSNResetRequestParameterConfig {
+};
 
-} // namespace dcsctp
+}

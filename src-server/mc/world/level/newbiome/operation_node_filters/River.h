@@ -7,6 +7,7 @@
 
 namespace OperationNodeFilters {
 
-struct River : public ::OperationNodeFilters::FilterBase<3, 3, bool, int> {};
+struct River : public ::OperationNodeFilters::FilterBase<3, 3, bool, int> {
+};
 
-} // namespace OperationNodeFilters
+}

@@ -23,10 +23,10 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 109
+    // vIndex: 110
     virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    // vIndex: 89
+    // vIndex: 90
     virtual ::std::string buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const /*override*/;
 
     // vIndex: 16
@@ -35,7 +35,7 @@ public:
     // vIndex: 17
     virtual ::ItemColor getItemColor() const /*override*/;
 
-    // vIndex: 60
+    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
     // vIndex: 0
@@ -51,8 +51,6 @@ public:
 
     MCFOLD bool $isDye() const;
 
-    MCFOLD ::ItemColor $getItemColor() const;
-
     MCFOLD bool $isValidAuxValue(int auxValue) const;
     // NOLINTEND
 
@@ -61,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

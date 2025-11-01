@@ -4,6 +4,7 @@
 
 namespace mce {
 
-class TextureGroup {};
+class TextureGroup {
+};
 
-} // namespace mce
+}

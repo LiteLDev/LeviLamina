@@ -9,7 +9,7 @@ class HugeMushroomBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 125
+    // vIndex: 124
     virtual ::BlockType& init() /*override*/;
 
     // vIndex: 0
@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

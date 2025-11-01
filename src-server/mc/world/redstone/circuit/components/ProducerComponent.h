@@ -18,9 +18,9 @@ class ProducerComponent : public ::BaseCircuitComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                          mNextStrength;
-    ::ll::TypedStorage<1, 1, bool>                         mAttachedAllowed;
-    ::ll::TypedStorage<1, 1, bool>                         mStopPower;
+    ::ll::TypedStorage<4, 4, int> mNextStrength;
+    ::ll::TypedStorage<1, 1, bool> mAttachedAllowed;
+    ::ll::TypedStorage<1, 1, bool> mStopPower;
     ::ll::TypedStorage<8, 8, ::CircuitComponentType const> mCircuitComponentType;
     // NOLINTEND
 
@@ -34,8 +34,7 @@ public:
     virtual void setStrength(int strength) /*override*/;
 
     // vIndex: 12
-    virtual bool
-    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
+    virtual bool allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     // vIndex: 8
     virtual bool canStopPower() const /*override*/;
@@ -83,4 +82,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

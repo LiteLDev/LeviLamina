@@ -60,6 +60,7 @@ public:
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+
     };
 
     using ItemStackNetIdChangedCallback = ::std::function<void(int, ::ItemStack const&)>;
@@ -91,7 +92,6 @@ public:
     [[nodiscard]] constexpr ConstReverseIterator crbegin() const noexcept { return ConstReverseIterator{cend()}; }
     [[nodiscard]] constexpr ReverseIterator      rend() noexcept { return ReverseIterator{begin()}; }
     [[nodiscard]] constexpr ConstReverseIterator crend() const noexcept { return ConstReverseIterator{cbegin()}; }
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -236,10 +236,7 @@ public:
     virtual void addAdditionalSaveData(::CompoundTag& tag);
 
     // vIndex: 40
-    virtual void createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
-        ::std::function<void()>                                                          execute
-    );
+    virtual void createTransactionContext(::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback, ::std::function<void()> execute);
 
     // vIndex: 41
     virtual void initializeContainerContents(::BlockSource& region);
@@ -260,11 +257,9 @@ public:
 
     MCAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
 
-    MCAPI void
-    _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
+    MCAPI void _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCAPI void
-    _serverInitId(int slot, ::ItemStack& item, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCAPI void _serverInitId(int slot, ::ItemStack& item, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator) const;
 
@@ -288,8 +283,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::SharedTypes::Legacy::ContainerType, ::std::string> const&
-    containerTypeMap();
+    MCAPI static ::BidirectionalUnorderedMap<::SharedTypes::Legacy::ContainerType, ::std::string> const& containerTypeMap();
     // NOLINTEND
 
 public:
@@ -377,10 +371,7 @@ public:
 
     MCAPI void $addAdditionalSaveData(::CompoundTag& tag);
 
-    MCAPI void $createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
-        ::std::function<void()>                                                          execute
-    );
+    MCAPI void $createTransactionContext(::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback, ::std::function<void()> execute);
 
     MCFOLD void $initializeContainerContents(::BlockSource& region);
 
@@ -394,4 +385,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

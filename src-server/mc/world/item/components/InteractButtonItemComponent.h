@@ -20,7 +20,7 @@ class InteractButtonItemComponent : public ::ItemComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>           mRequiresInteract;
+    ::ll::TypedStorage<1, 1, bool> mRequiresInteract;
     ::ll::TypedStorage<8, 32, ::std::string> mInteractText;
     // NOLINTEND
 
@@ -60,11 +60,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -92,4 +88,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

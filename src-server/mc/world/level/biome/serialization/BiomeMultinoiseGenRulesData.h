@@ -26,4 +26,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeMultinoiseGenRulesData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
+
 };

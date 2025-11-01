@@ -19,9 +19,9 @@ class TurnChannelBindRequest : public ::cricket::StunRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk474f3c;
-    ::ll::UntypedStorage<8, 8>  mUnkd4c577;
-    ::ll::UntypedStorage<4, 4>  mUnkdae5bc;
+    ::ll::UntypedStorage<8, 8> mUnk474f3c;
+    ::ll::UntypedStorage<8, 8> mUnkd4c577;
+    ::ll::UntypedStorage<4, 4> mUnkdae5bc;
     ::ll::UntypedStorage<8, 80> mUnka3c978;
     // NOLINTEND
 
@@ -53,19 +53,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TurnChannelBindRequest(
-        ::cricket::TurnPort*        port,
-        ::cricket::TurnEntry*       entry,
-        int                         channel_id,
-        ::rtc::SocketAddress const& ext_addr
-    );
+    MCNAPI TurnChannelBindRequest(::cricket::TurnPort* port, ::cricket::TurnEntry* entry, int channel_id, ::rtc::SocketAddress const& ext_addr);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::cricket::TurnPort* port, ::cricket::TurnEntry* entry, int channel_id, ::rtc::SocketAddress const& ext_addr);
+    MCNAPI void* $ctor(::cricket::TurnPort* port, ::cricket::TurnEntry* entry, int channel_id, ::rtc::SocketAddress const& ext_addr);
     // NOLINTEND
 
 public:
@@ -91,6 +85,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

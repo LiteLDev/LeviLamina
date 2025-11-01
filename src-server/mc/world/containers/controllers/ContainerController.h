@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ContainerModel>> mContainerModel;
-    ::ll::TypedStorage<1, 1, bool>                               mDrop;
+    ::ll::TypedStorage<1, 1, bool> mDrop;
     // NOLINTEND
 
 public:
@@ -45,8 +45,7 @@ public:
     virtual int getBackgroundStyle(int, bool) const;
 
     // vIndex: 6
-    virtual ::ItemSetType
-    _canSet(::ContainerScreenContext const&, int, ::ItemStackBase const&, ::ItemTransferAmount) const;
+    virtual ::ItemSetType _canSet(::ContainerScreenContext const&, int, ::ItemStackBase const&, ::ItemTransferAmount) const;
 
     // vIndex: 7
     virtual int _getAvailableSetCount(::ContainerScreenContext const&, int, ::ItemStackBase const&) const;
@@ -63,4 +62,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

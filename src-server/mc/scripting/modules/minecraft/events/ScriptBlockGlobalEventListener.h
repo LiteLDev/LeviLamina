@@ -26,35 +26,29 @@ public:
     // clang-format off
     struct Listener;
     // clang-format on
-
+    
     // ScriptBlockGlobalEventListener inner types define
     struct Listener {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-        ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
-            mScriptEventsHandle;
+        ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>> mScriptEventsHandle;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptBlockGlobalEventListener::Listener>>
-        mListeners;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptBlockGlobalEventListener::Listener>> mListeners;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 8
-    virtual ::EventResult onBlockExploded(
-        ::Dimension&      dimension,
-        ::BlockPos const& blockPos,
-        ::Block const&    destroyedBlock,
-        ::Actor*          source
-    ) /*override*/;
+    virtual ::EventResult onBlockExploded(::Dimension& dimension, ::BlockPos const& blockPos, ::Block const& destroyedBlock, ::Actor* source) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptBlockGlobalEventListener() /*override*/ = default;
@@ -63,12 +57,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onBlockExploded(
-        ::Dimension&      dimension,
-        ::BlockPos const& blockPos,
-        ::Block const&    destroyedBlock,
-        ::Actor*          source
-    );
+    MCAPI ::EventResult $onBlockExploded(::Dimension& dimension, ::BlockPos const& blockPos, ::Block const& destroyedBlock, ::Actor* source);
     // NOLINTEND
 
 public:
@@ -76,6 +65,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

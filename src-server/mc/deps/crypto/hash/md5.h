@@ -11,14 +11,14 @@ class md5 : public ::Crypto::Hash::IHash {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>       _lo;
-    ::ll::TypedStorage<4, 4, uint>       _hi;
-    ::ll::TypedStorage<4, 4, uint>       _a;
-    ::ll::TypedStorage<4, 4, uint>       _b;
-    ::ll::TypedStorage<4, 4, uint>       _c;
-    ::ll::TypedStorage<4, 4, uint>       _d;
+    ::ll::TypedStorage<4, 4, uint> _lo;
+    ::ll::TypedStorage<4, 4, uint> _hi;
+    ::ll::TypedStorage<4, 4, uint> _a;
+    ::ll::TypedStorage<4, 4, uint> _b;
+    ::ll::TypedStorage<4, 4, uint> _c;
+    ::ll::TypedStorage<4, 4, uint> _d;
     ::ll::TypedStorage<1, 64, uchar[64]> _buffer;
-    ::ll::TypedStorage<4, 64, uint[16]>  _block;
+    ::ll::TypedStorage<4, 64, uint[16]> _block;
     // NOLINTEND
 
 public:
@@ -63,6 +63,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Crypto::Hash
+}

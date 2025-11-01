@@ -25,6 +25,7 @@ public:
 
     MCAPI void rotationTypeFromVec3(::Vec3 const& arr);
     // NOLINTEND
+
 };
 
-} // namespace BlockTransformationSerializer
+}

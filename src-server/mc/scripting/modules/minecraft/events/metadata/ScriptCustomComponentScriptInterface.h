@@ -4,7 +4,8 @@
 
 namespace ScriptModuleMinecraft {
 
-template <int T0>
-class ScriptCustomComponentScriptInterface {};
+template<int T0>
+class ScriptCustomComponentScriptInterface {
+};
 
-} // namespace ScriptModuleMinecraft
+}

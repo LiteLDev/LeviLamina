@@ -6,28 +6,28 @@ struct SetTitlePacketPayload {
 public:
     // SetTitlePacketPayload inner types define
     enum class TitleType : int {
-        Clear               = 0,
-        Reset               = 1,
-        Title               = 2,
-        Subtitle            = 3,
-        Actionbar           = 4,
-        Times               = 5,
-        TitleTextObject     = 6,
-        SubtitleTextObject  = 7,
+        Clear = 0,
+        Reset = 1,
+        Title = 2,
+        Subtitle = 3,
+        Actionbar = 4,
+        Times = 5,
+        TitleTextObject = 6,
+        SubtitleTextObject = 7,
         ActionbarTextObject = 8,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SetTitlePacketPayload::TitleType> mType;
-    ::ll::TypedStorage<8, 32, ::std::string>                     mTitleText;
-    ::ll::TypedStorage<8, 32, ::std::string>                     mFilteredTitleText;
-    ::ll::TypedStorage<4, 4, int>                                mFadeInTime;
-    ::ll::TypedStorage<4, 4, int>                                mStayTime;
-    ::ll::TypedStorage<4, 4, int>                                mFadeOutTime;
-    ::ll::TypedStorage<8, 32, ::std::string>                     mXuid;
-    ::ll::TypedStorage<8, 32, ::std::string>                     mPlatformOnlineId;
+    ::ll::TypedStorage<8, 32, ::std::string> mTitleText;
+    ::ll::TypedStorage<8, 32, ::std::string> mFilteredTitleText;
+    ::ll::TypedStorage<4, 4, int> mFadeInTime;
+    ::ll::TypedStorage<4, 4, int> mStayTime;
+    ::ll::TypedStorage<4, 4, int> mFadeOutTime;
+    ::ll::TypedStorage<8, 32, ::std::string> mXuid;
+    ::ll::TypedStorage<8, 32, ::std::string> mPlatformOnlineId;
     // NOLINTEND
 
 public:
@@ -42,11 +42,7 @@ public:
 
     MCAPI SetTitlePacketPayload(int fadeInTime, int stayTime, int fadeOutTime);
 
-    MCAPI SetTitlePacketPayload(
-        ::SetTitlePacketPayload::TitleType type,
-        ::std::string const&               titleText,
-        ::std::optional<::std::string>     filteredTitleText
-    );
+    MCAPI SetTitlePacketPayload(::SetTitlePacketPayload::TitleType type, ::std::string const& titleText, ::std::optional<::std::string> filteredTitleText);
 
     MCAPI ::SetTitlePacketPayload& operator=(::SetTitlePacketPayload&&);
 
@@ -62,11 +58,7 @@ public:
 
     MCAPI void* $ctor(int fadeInTime, int stayTime, int fadeOutTime);
 
-    MCAPI void* $ctor(
-        ::SetTitlePacketPayload::TitleType type,
-        ::std::string const&               titleText,
-        ::std::optional<::std::string>     filteredTitleText
-    );
+    MCAPI void* $ctor(::SetTitlePacketPayload::TitleType type, ::std::string const& titleText, ::std::optional<::std::string> filteredTitleText);
     // NOLINTEND
 
 public:
@@ -74,4 +66,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

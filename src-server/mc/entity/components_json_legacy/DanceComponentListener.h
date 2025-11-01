@@ -16,9 +16,9 @@ class DanceComponentListener {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7bc365;
-    ::ll::UntypedStorage<4, 4>  mUnkd57385;
-    ::ll::UntypedStorage<8, 8>  mUnk6d47ca;
+    ::ll::UntypedStorage<8, 8> mUnk7bc365;
+    ::ll::UntypedStorage<4, 4> mUnkd57385;
+    ::ll::UntypedStorage<8, 8> mUnk6d47ca;
     ::ll::UntypedStorage<8, 24> mUnkf7e713;
     ::ll::UntypedStorage<4, 12> mUnka58bc4;
     ::ll::UntypedStorage<8, 16> mUnk46cd99;
@@ -33,14 +33,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _onLevelSoundEvent(
-        ::SharedTypes::Legacy::LevelSoundEvent type,
-        ::Vec3 const&                          pos,
-        int,
-        ::ActorSoundIdentifier const&,
-        bool
-    );
+    MCNAPI void _onLevelSoundEvent(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, int, ::ActorSoundIdentifier const&, bool);
 
     MCNAPI void setLevel(::Level& level);
     // NOLINTEND
+
 };

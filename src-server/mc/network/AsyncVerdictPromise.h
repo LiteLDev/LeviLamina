@@ -4,14 +4,15 @@
 
 // auto generated forward declare list
 // clang-format off
-struct AsyncJoinError;
+struct AsyncJoinAllow;
+struct AsyncJoinDeny;
 // clang-format on
 
 class AsyncVerdictPromise {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk6ea85b;
+    ::ll::UntypedStorage<8, 16> mUnke03a8b;
     // NOLINTEND
 
 public:
@@ -23,6 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setPromise(::nonstd::expected<void, ::AsyncJoinError> verdict);
+    MCNAPI void setPromise(::std::variant<::std::monostate, ::AsyncJoinAllow, ::AsyncJoinDeny> verdict);
     // NOLINTEND
+
 };

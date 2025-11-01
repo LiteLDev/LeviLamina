@@ -16,15 +16,16 @@ class ImpactDamageSubcomponent : public ::OnHitSubcomponent {
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 8> mUnk8e7211;
+    ::ll::UntypedStorage<4, 4> mUnka69f08;
     ::ll::UntypedStorage<1, 1> mUnk86604d;
     ::ll::UntypedStorage<1, 1> mUnk9c35c0;
-    ::ll::UntypedStorage<4, 8> mUnk8e7211;
     ::ll::UntypedStorage<1, 1> mUnk6e61b8;
-    ::ll::UntypedStorage<4, 4> mUnka69f08;
     ::ll::UntypedStorage<1, 1> mUnkedacbf;
     ::ll::UntypedStorage<1, 1> mUnk5b9c0f;
     ::ll::UntypedStorage<1, 1> mUnk5f06a5;
     ::ll::UntypedStorage<1, 1> mUnk9cd21d;
+    ::ll::UntypedStorage<1, 1> mUnkb743a5;
     ::ll::UntypedStorage<4, 4> mUnkf6b3c7;
     ::ll::UntypedStorage<4, 4> mUnk63cb41;
     ::ll::UntypedStorage<4, 4> mUnk2a732b;
@@ -52,7 +53,7 @@ public:
     virtual void doOnHitEffect(::Actor& owner, ::ProjectileComponent& component) /*override*/;
 
     // vIndex: 4
-    virtual char const* getName() /*override*/;
+    virtual char const* getName() const /*override*/;
     // NOLINTEND
 
 public:
@@ -64,7 +65,7 @@ public:
 
     MCNAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 
-    MCNAPI char const* $getName();
+    MCNAPI char const* $getName() const;
     // NOLINTEND
 
 public:
@@ -72,4 +73,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -42,16 +42,7 @@ public:
     // NOLINTBEGIN
     MCNAPI IceConfig();
 
-    MCNAPI IceConfig(
-        int                                 receiving_timeout_ms,
-        int                                 backup_connection_ping_interval,
-        ::cricket::ContinualGatheringPolicy gathering_policy,
-        bool                                prioritize_most_likely_candidate_pairs,
-        int                                 stable_writable_connection_ping_interval_ms,
-        bool                                presume_writable_when_fully_relayed,
-        int                                 regather_on_failed_networks_interval_ms,
-        int                                 receiving_switching_delay_ms
-    );
+    MCNAPI IceConfig(int receiving_timeout_ms, int backup_connection_ping_interval, ::cricket::ContinualGatheringPolicy gathering_policy, bool prioritize_most_likely_candidate_pairs, int stable_writable_connection_ping_interval_ms, bool presume_writable_when_fully_relayed, int regather_on_failed_networks_interval_ms, int receiving_switching_delay_ms);
 
     MCNAPI int backup_connection_ping_interval_or_default() const;
 
@@ -85,16 +76,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
 
-    MCNAPI void* $ctor(
-        int                                 receiving_timeout_ms,
-        int                                 backup_connection_ping_interval,
-        ::cricket::ContinualGatheringPolicy gathering_policy,
-        bool                                prioritize_most_likely_candidate_pairs,
-        int                                 stable_writable_connection_ping_interval_ms,
-        bool                                presume_writable_when_fully_relayed,
-        int                                 regather_on_failed_networks_interval_ms,
-        int                                 receiving_switching_delay_ms
-    );
+    MCNAPI void* $ctor(int receiving_timeout_ms, int backup_connection_ping_interval, ::cricket::ContinualGatheringPolicy gathering_policy, bool prioritize_most_likely_candidate_pairs, int stable_writable_connection_ping_interval_ms, bool presume_writable_when_fully_relayed, int regather_on_failed_networks_interval_ms, int receiving_switching_delay_ms);
     // NOLINTEND
 
 public:
@@ -102,6 +84,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

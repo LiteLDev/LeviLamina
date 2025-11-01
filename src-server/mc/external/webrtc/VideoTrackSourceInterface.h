@@ -16,14 +16,13 @@ namespace webrtc { struct VideoTrackSourceConstraints; }
 
 namespace webrtc {
 
-class VideoTrackSourceInterface : public ::webrtc::MediaSourceInterface,
-                                  public ::rtc::VideoSourceInterface<::webrtc::VideoFrame> {
+class VideoTrackSourceInterface : public ::webrtc::MediaSourceInterface, public ::rtc::VideoSourceInterface<::webrtc::VideoFrame> {
 public:
     // VideoTrackSourceInterface inner types declare
     // clang-format off
     struct Stats;
     // clang-format on
-
+    
     // VideoTrackSourceInterface inner types define
     struct Stats {
     public:
@@ -32,14 +31,15 @@ public:
         ::ll::UntypedStorage<4, 4> mUnk8c37b0;
         ::ll::UntypedStorage<4, 4> mUnk104e2b;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Stats& operator=(Stats const&);
         Stats(Stats const&);
         Stats();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -82,6 +82,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $ProcessConstraints(::webrtc::VideoTrackSourceConstraints const& constraints);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

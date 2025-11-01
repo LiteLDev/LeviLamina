@@ -14,4 +14,4 @@ namespace ReplayStatePolicy {
 MCAPI ::std::unique_ptr<::IReplayStatePolicy> createServerContext(::ReplayStateConfig const& config);
 // NOLINTEND
 
-} // namespace ReplayStatePolicy
+}

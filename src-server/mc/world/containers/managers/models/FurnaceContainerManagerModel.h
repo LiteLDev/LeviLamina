@@ -5,10 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/shared_types/legacy/ContainerType.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/ContainerID.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
-#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
 
 // auto generated forward declare list
@@ -23,18 +23,18 @@ class FurnaceContainerManagerModel : public ::ContainerManagerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::BlockPos>               mBlockPos;
-    ::ll::TypedStorage<4, 4, int>                       mLastTickCount;
-    ::ll::TypedStorage<4, 4, int>                       mLastLitTime;
-    ::ll::TypedStorage<4, 4, int>                       mLastLitDuration;
-    ::ll::TypedStorage<4, 4, int>                       mLastStoredXP;
-    ::ll::TypedStorage<4, 4, int>                       mLastInputId;
-    ::ll::TypedStorage<4, 4, int>                       mLastInputAux;
-    ::ll::TypedStorage<8, 32, ::std::string>            mLastOutputName;
-    ::ll::TypedStorage<4, 4, int>                       mLastResultDisplayId;
-    ::ll::TypedStorage<1, 1, ::BlockActorType const>    mBlockActorType;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
+    ::ll::TypedStorage<4, 4, int> mLastTickCount;
+    ::ll::TypedStorage<4, 4, int> mLastLitTime;
+    ::ll::TypedStorage<4, 4, int> mLastLitDuration;
+    ::ll::TypedStorage<4, 4, int> mLastStoredXP;
+    ::ll::TypedStorage<4, 4, int> mLastInputId;
+    ::ll::TypedStorage<4, 4, int> mLastInputAux;
+    ::ll::TypedStorage<8, 32, ::std::string> mLastOutputName;
+    ::ll::TypedStorage<4, 4, int> mLastResultDisplayId;
+    ::ll::TypedStorage<1, 1, ::BlockActorType const> mBlockActorType;
     ::ll::TypedStorage<1, 1, ::ContainerEnumName const> mIngredientContainerName;
-    ::ll::TypedStorage<8, 48, ::HashedString const>     mRecipeTag;
+    ::ll::TypedStorage<8, 48, ::HashedString const> mRecipeTag;
     // NOLINTEND
 
 public:
@@ -72,14 +72,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FurnaceContainerManagerModel(
-        ::HashedString const&                recipeTag,
-        ::SharedTypes::Legacy::ContainerType containerType,
-        ::BlockActorType                     blockActorType,
-        ::ContainerID                        containerId,
-        ::Player&                            player,
-        ::BlockPos const&                    blockPos
-    );
+    MCAPI FurnaceContainerManagerModel(::HashedString const& recipeTag, ::SharedTypes::Legacy::ContainerType containerType, ::BlockActorType blockActorType, ::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
 
     MCAPI ::FurnaceBlockActor* _getFurnaceEntity();
 
@@ -89,14 +82,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::HashedString const&                recipeTag,
-        ::SharedTypes::Legacy::ContainerType containerType,
-        ::BlockActorType                     blockActorType,
-        ::ContainerID                        containerId,
-        ::Player&                            player,
-        ::BlockPos const&                    blockPos
-    );
+    MCAPI void* $ctor(::HashedString const& recipeTag, ::SharedTypes::Legacy::ContainerType containerType, ::BlockActorType blockActorType, ::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
@@ -128,4 +114,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -41,53 +41,44 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 123
+    // vIndex: 124
     virtual ::Potion::PotionType getPotionType() const;
 
-    // vIndex: 109
+    // vIndex: 110
     virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
 
-    // vIndex: 89
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const
-        /*override*/;
-
-    // vIndex: 52
-    virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const /*override*/;
-
     // vIndex: 90
-    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const /*override*/;
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const /*override*/;
 
-    // vIndex: 63
+    // vIndex: 53
+    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
+
+    // vIndex: 91
+    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool) const /*override*/;
+
+    // vIndex: 64
     virtual bool uniqueAuxValues() const /*override*/;
 
-    // vIndex: 110
+    // vIndex: 111
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    // vIndex: 76
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 81
+    // vIndex: 82
     virtual ::ItemUseMethod useTimeDepleted(::ItemStack& instance, ::Level* level, ::Player* player) const /*override*/;
 
-    // vIndex: 80
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
-        /*override*/;
+    // vIndex: 81
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const /*override*/;
 
-    // vIndex: 60
+    // vIndex: 61
     virtual bool isValidAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual bool isDestructive(int auxValue) const /*override*/;
 
-    // vIndex: 122
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    // vIndex: 123
+    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
 
     // vIndex: 0
     virtual ~PotionItem() /*override*/;
@@ -122,14 +113,9 @@ public:
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const*) const;
 
-    MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const;
+    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
 
-    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
 
     MCFOLD bool $uniqueAuxValues() const;
 
@@ -145,8 +131,7 @@ public:
 
     MCAPI bool $isDestructive(int auxValue) const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -154,4 +139,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

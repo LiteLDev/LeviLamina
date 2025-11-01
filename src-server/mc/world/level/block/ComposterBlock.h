@@ -35,68 +35,46 @@ class ComposterBlock : public ::BlockType {
 public:
     // ComposterBlock inner types define
     enum class FillLevel : int {
-        Min   = 0,
-        Max   = 7,
+        Min = 0,
+        Max = 7,
         Ready = 8,
         Count = 9,
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 132
+    // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 62
     virtual void onMove(::BlockSource& region, ::BlockPos const& from, ::BlockPos const& to) const /*override*/;
 
-    // vIndex: 105
+    // vIndex: 104
     virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 106
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
-        /*override*/;
+    // vIndex: 105
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const /*override*/;
 
     // vIndex: 4
-    virtual ::HitResult clip(
-        ::Block const&                                     block,
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const /*override*/;
+    virtual ::HitResult clip(::Block const& block, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::ShapeType shapeType, ::optional_ref<::GetCollisionShapeInterface const> entity) const /*override*/;
 
     // vIndex: 7
-    virtual bool addCollisionShapes(
-        ::Block const&                                     block,
-        ::IConstBlockSource const&                         region,
-        ::BlockPos const&                                  pos,
-        ::AABB const*                                      intersectTestBox,
-        ::std::vector<::AABB>&                             inoutBoxes,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const /*override*/;
+    virtual bool addCollisionShapes(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes, ::optional_ref<::GetCollisionShapeInterface const> entity) const /*override*/;
 
     // vIndex: 8
-    virtual void addAABBs(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB const*              intersectTestBox,
-        ::std::vector<::AABB>&     inoutBoxes
-    ) const /*override*/;
+    virtual void addAABBs(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes) const /*override*/;
 
     // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -108,11 +86,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _emitBoneMeal(::Level&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void _notifyClientComposterUsed(
-        ::Player const&                              player,
-        short                                        itemId,
-        ::MinecraftEventing::POIBlockInteractionType interactionType
-    ) const;
+    MCAPI void _notifyClientComposterUsed(::Player const& player, short itemId, ::MinecraftEventing::POIBlockInteractionType interactionType) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
@@ -126,18 +100,9 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<uint64, schar> const& _getCompostableItems();
 
-    MCAPI static bool addItems(
-        ::Container&      fromContainer,
-        int               slot,
-        ::ItemStack&      item,
-        int               amount,
-        ::BlockSource&    region,
-        ::Block const&    block,
-        ::BlockPos const& pos
-    );
+    MCAPI static bool addItems(::Container& fromContainer, int slot, ::ItemStack& item, int amount, ::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
-    MCAPI static int
-    addItems(::ItemStack const& item, int amount, ::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
+    MCAPI static int addItems(::ItemStack const& item, int amount, ::BlockSource& region, ::Block const& block, ::BlockPos const& pos);
 
     MCAPI static void empty(::BlockSource& region, ::Block const& composter, ::BlockPos const& pos);
 
@@ -163,22 +128,11 @@ public:
 
     MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCFOLD bool $addCollisionShapes(
-        ::Block const&                                     block,
-        ::IConstBlockSource const&                         region,
-        ::BlockPos const&                                  pos,
-        ::AABB const*                                      intersectTestBox,
-        ::std::vector<::AABB>&                             inoutBoxes,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
+    MCFOLD ::HitResult $clip(::Block const& block, ::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::ShapeType shapeType, ::optional_ref<::GetCollisionShapeInterface const> entity) const;
 
-    MCAPI void $addAABBs(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB const*              intersectTestBox,
-        ::std::vector<::AABB>&     inoutBoxes
-    ) const;
+    MCFOLD bool $addCollisionShapes(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes, ::optional_ref<::GetCollisionShapeInterface const> entity) const;
+
+    MCAPI void $addAABBs(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes) const;
 
     MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
@@ -194,4 +148,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -4,6 +4,6 @@
 
 enum class SandType : int {
     Normal = 0,
-    Red    = 1,
-    Count  = 2,
+    Red = 1,
+    Count = 2,
 };

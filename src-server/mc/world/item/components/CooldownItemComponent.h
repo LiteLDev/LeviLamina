@@ -18,7 +18,7 @@ class CooldownItemComponent : public ::NetworkedItemComponent<::CooldownItemComp
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>           mDuration;
+    ::ll::TypedStorage<4, 4, float> mDuration;
     ::ll::TypedStorage<8, 48, ::HashedString> mCategory;
     // NOLINTEND
 
@@ -46,11 +46,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -66,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

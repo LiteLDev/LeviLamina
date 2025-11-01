@@ -19,22 +19,23 @@ public:
     // clang-format off
     struct MessageComponent;
     // clang-format on
-
+    
     // CommandMessage inner types define
     struct MessageComponent {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 32, ::std::string>                                string;
+        ::ll::TypedStorage<8, 32, ::std::string> string;
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandSelector<::Actor>>> selection;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::CommandMessage::MessageComponent>> mData;
-    ::ll::TypedStorage<1, 1, ::CommandMessageParams const>                       mParameters;
+    ::ll::TypedStorage<1, 1, ::CommandMessageParams const> mParameters;
     // NOLINTEND
 
 public:
@@ -42,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCAPI ::GenerateMessageResult generateMessage(::CommandOrigin const& origin, int maxLength) const;
     // NOLINTEND
+
 };

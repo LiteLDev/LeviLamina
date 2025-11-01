@@ -75,4 +75,4 @@ MCAPI ::HashedString const& TemplateTrapdoorOpen();
 MCAPI ::HashedString const& TemplateTrapdoorTop();
 // NOLINTEND
 
-} // namespace VanillaBlockCullingIds
+}

@@ -13,4 +13,4 @@ namespace SetHomePositionSystem {
 MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
-} // namespace SetHomePositionSystem
+}

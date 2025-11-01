@@ -17,4 +17,5 @@ public:
     zip_source_file_stat& operator=(zip_source_file_stat const&);
     zip_source_file_stat(zip_source_file_stat const&);
     zip_source_file_stat();
+
 };

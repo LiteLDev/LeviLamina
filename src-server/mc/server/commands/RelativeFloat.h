@@ -9,4 +9,5 @@ public:
     float mOffset;
     bool  mRelative;
     // NOLINTEND
+
 };

@@ -13,4 +13,4 @@ namespace VillageSerializationHelper {
 MCAPI bool shouldParseAndTruncateDimension(::std::string& currBuffer, ::Dimension const& dimension);
 // NOLINTEND
 
-} // namespace VillageSerializationHelper
+}

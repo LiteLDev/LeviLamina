@@ -21,11 +21,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk821c35;
-    ::ll::UntypedStorage<1, 1>  mUnkb21a6a;
-    ::ll::UntypedStorage<1, 1>  mUnkafda18;
-    ::ll::UntypedStorage<1, 1>  mUnk22bc19;
-    ::ll::UntypedStorage<1, 1>  mUnk780433;
-    ::ll::UntypedStorage<1, 1>  mUnka63529;
+    ::ll::UntypedStorage<1, 1> mUnkb21a6a;
+    ::ll::UntypedStorage<1, 1> mUnkafda18;
+    ::ll::UntypedStorage<1, 1> mUnk22bc19;
+    ::ll::UntypedStorage<1, 1> mUnk780433;
+    ::ll::UntypedStorage<1, 1> mUnka63529;
     ::ll::UntypedStorage<8, 24> mUnke5288a;
     // NOLINTEND
 
@@ -62,11 +62,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void checkAndRemoveIncompletePacks(
-        ::Core::Path const&      path,
-        ::IPackIOProvider const& io,
-        bool                     saveEncryptedWorldTemplatePacksAsZips
-    );
+    MCNAPI static void checkAndRemoveIncompletePacks(::Core::Path const& path, ::IPackIOProvider const& io, bool saveEncryptedWorldTemplatePacksAsZips);
     // NOLINTEND
 
 public:
@@ -96,4 +92,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

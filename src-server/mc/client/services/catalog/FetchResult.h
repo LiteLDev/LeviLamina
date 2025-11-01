@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class FetchResult : uchar {
-    None    = 0,
+    None = 0,
     Success = 1,
-    Fail    = 2,
+    Fail = 2,
 };

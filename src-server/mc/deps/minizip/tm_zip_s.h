@@ -19,4 +19,5 @@ public:
     tm_zip_s& operator=(tm_zip_s const&);
     tm_zip_s(tm_zip_s const&);
     tm_zip_s();
+
 };

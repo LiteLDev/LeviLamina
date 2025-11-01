@@ -12,6 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Actor*> mActor;
-    ::ll::TypedStorage<4, 4, float>    mDistanceSquared;
+    ::ll::TypedStorage<4, 4, float> mDistanceSquared;
     // NOLINTEND
+
 };

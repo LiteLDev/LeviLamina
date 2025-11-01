@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
 #include "mc/editor/script/ScriptWidgetComponentBaseOptions.h"
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
+#include "mc/versionless/util/Mirror.h"
+#include "mc/versionless/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -26,10 +26,10 @@ public:
     ::ll::UntypedStorage<4, 32> mUnk9f8bb6;
     ::ll::UntypedStorage<4, 32> mUnk1fa68a;
     ::ll::UntypedStorage<4, 32> mUnk29cd7c;
-    ::ll::UntypedStorage<1, 2>  mUnk6f9f4f;
-    ::ll::UntypedStorage<1, 2>  mUnkc49051;
-    ::ll::UntypedStorage<1, 2>  mUnkb1ac46;
-    ::ll::UntypedStorage<1, 2>  mUnkf7bd52;
+    ::ll::UntypedStorage<1, 2> mUnk6f9f4f;
+    ::ll::UntypedStorage<1, 2> mUnkc49051;
+    ::ll::UntypedStorage<1, 2> mUnkb1ac46;
+    ::ll::UntypedStorage<1, 2> mUnkf7bd52;
     ::ll::UntypedStorage<4, 16> mUnkf0201b;
     ::ll::UntypedStorage<4, 16> mUnk808108;
     // NOLINTEND
@@ -42,8 +42,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<void>
-    validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
+    virtual ::Scripting::Result_deprecated<void> validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const /*override*/;
 
     // vIndex: 0
     virtual ~ScriptWidgetComponentVolumeOutlineOptions() /*override*/;
@@ -52,17 +51,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    ScriptWidgetComponentVolumeOutlineOptions(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&&);
+    MCNAPI ScriptWidgetComponentVolumeOutlineOptions(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&&);
 
-    MCNAPI
-    ScriptWidgetComponentVolumeOutlineOptions(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions const&);
+    MCNAPI ScriptWidgetComponentVolumeOutlineOptions(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions const&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions const&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions const&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentVolumeOutlineOptions&&);
     // NOLINTEND
 
 public:
@@ -116,8 +111,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
+    MCNAPI ::Scripting::Result_deprecated<void> $validate(::AABB const& absoluteWorldBounds, ::Vec3 const& rootPosition, ::Vec3 const& size) const;
     // NOLINTEND
 
 public:
@@ -125,6 +119,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

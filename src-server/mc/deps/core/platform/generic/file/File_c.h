@@ -17,7 +17,7 @@ class File_c : public ::Core::FileImpl {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk17d1aa;
+    ::ll::UntypedStorage<8, 8> mUnk17d1aa;
     ::ll::UntypedStorage<8, 32> mUnkb978c3;
     // NOLINTEND
 
@@ -81,6 +81,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

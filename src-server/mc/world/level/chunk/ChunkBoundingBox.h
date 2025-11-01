@@ -13,6 +13,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 24, ::BoundingBox> box;
     // NOLINTEND
+
 };
 
-} // namespace br
+}

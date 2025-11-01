@@ -5,18 +5,17 @@
 // auto generated forward declare list
 // clang-format off
 namespace Core { class Path; }
-namespace RakNet { class BitStream; }
 // clang-format on
 
 class RegionFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16>   mUnkca2fa5;
-    ::ll::UntypedStorage<8, 32>   mUnk88d245;
+    ::ll::UntypedStorage<8, 16> mUnkca2fa5;
+    ::ll::UntypedStorage<8, 32> mUnk88d245;
     ::ll::UntypedStorage<4, 4096> mUnkc2201d;
     ::ll::UntypedStorage<4, 4096> mUnkc111dd;
-    ::ll::UntypedStorage<8, 16>   mUnke50b19;
+    ::ll::UntypedStorage<8, 16> mUnke50b19;
     // NOLINTEND
 
 public:
@@ -29,7 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ~RegionFile();
+    virtual ~RegionFile() = default;
     // NOLINTEND
 
 public:
@@ -38,8 +37,6 @@ public:
     MCNAPI explicit RegionFile(::Core::Path const& basePath);
 
     MCNAPI bool open();
-
-    MCNAPI bool readChunk(int x, int z, ::RakNet::BitStream** destChunkData);
     // NOLINTEND
 
 public:
@@ -49,14 +46,9 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
     // vftables
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

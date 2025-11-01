@@ -9,17 +9,17 @@ struct StartScreenCapabilities : public ::TypedScreenCapabilities<::StartScreenC
 public:
     // StartScreenCapabilities inner types define
     enum class PlayButtonTarget : uchar {
-        None    = 0,
+        None = 0,
         Vanilla = 1,
-        Edu     = 2,
+        Edu = 2,
     };
-
+    
     enum class EduManageAccountOptions : uchar {
         Upsell = 0,
         Prompt = 1,
         SignIn = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -50,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

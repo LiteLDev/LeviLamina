@@ -23,14 +23,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void OnFrame(
-        ::rtc::ArrayView<int const> decode_target_protected_by_chain,
-        ::std::bitset<32>           active_decode_targets,
-        bool                        is_keyframe,
-        int64                       frame_id,
-        ::rtc::ArrayView<int const> chain_diffs
-    );
+    MCNAPI void OnFrame(::rtc::ArrayView<int const> decode_target_protected_by_chain, ::std::bitset<32> active_decode_targets, bool is_keyframe, int64 frame_id, ::rtc::ArrayView<int const> chain_diffs);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

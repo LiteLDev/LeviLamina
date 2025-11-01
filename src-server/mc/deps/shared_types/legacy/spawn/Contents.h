@@ -47,6 +47,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::Legacy::Spawn
+}

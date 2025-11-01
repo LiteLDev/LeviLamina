@@ -12,7 +12,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::LookedAtDefinition const*> mDefinition;
-    ::ll::TypedStorage<4, 4, int>                         mCooldown;
-    ::ll::TypedStorage<4, 4, int>                         mLookedAtDuration;
+    ::ll::TypedStorage<4, 4, int> mCooldown;
+    ::ll::TypedStorage<4, 4, int> mLookedAtDuration;
     // NOLINTEND
+
 };

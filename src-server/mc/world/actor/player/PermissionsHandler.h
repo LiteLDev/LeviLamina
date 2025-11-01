@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::CommandPermissionLevel> mCommandPermissions;
-    ::ll::TypedStorage<1, 1, ::PlayerPermissionLevel>  mPlayerPermissions;
+    ::ll::TypedStorage<1, 1, ::PlayerPermissionLevel> mPlayerPermissions;
     // NOLINTEND
 
 public:
@@ -42,4 +42,5 @@ public:
 
     MCNAPI static ::std::string const& DIFF_PLAYER_PERMISSION();
     // NOLINTEND
+
 };

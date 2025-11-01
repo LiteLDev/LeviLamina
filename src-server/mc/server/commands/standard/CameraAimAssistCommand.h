@@ -17,25 +17,25 @@ public:
     // CameraAimAssistCommand inner types define
     enum class TargetMode : uchar {
         Distance = 0,
-        Angle    = 1,
+        Angle = 1,
     };
-
+    
     enum class Action : uchar {
-        Set   = 0,
+        Set = 0,
         Clear = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 200> mUnkfe71c2;
-    ::ll::UntypedStorage<8, 32>  mUnk36dbd0;
-    ::ll::UntypedStorage<4, 4>   mUnk77e3cf;
-    ::ll::UntypedStorage<4, 4>   mUnk662b94;
-    ::ll::UntypedStorage<4, 4>   mUnk1c0114;
-    ::ll::UntypedStorage<1, 1>   mUnkf8ecb8;
-    ::ll::UntypedStorage<1, 1>   mUnk796b68;
-    ::ll::UntypedStorage<1, 1>   mUnkfd52da;
+    ::ll::UntypedStorage<8, 32> mUnk36dbd0;
+    ::ll::UntypedStorage<4, 4> mUnk77e3cf;
+    ::ll::UntypedStorage<4, 4> mUnk662b94;
+    ::ll::UntypedStorage<4, 4> mUnk1c0114;
+    ::ll::UntypedStorage<1, 1> mUnkf8ecb8;
+    ::ll::UntypedStorage<1, 1> mUnk796b68;
+    ::ll::UntypedStorage<1, 1> mUnkfd52da;
     // NOLINTEND
 
 public:
@@ -71,4 +71,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

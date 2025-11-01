@@ -18,11 +18,11 @@ class FullPlayerInventoryWrapper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::PlayerInventory&>             mPlayerInventory;
-    ::ll::TypedStorage<8, 8, ::SimpleContainer&>             mArmorInventory;
-    ::ll::TypedStorage<8, 8, ::SimpleContainer&>             mHandInventory;
+    ::ll::TypedStorage<8, 8, ::PlayerInventory&> mPlayerInventory;
+    ::ll::TypedStorage<8, 8, ::SimpleContainer&> mArmorInventory;
+    ::ll::TypedStorage<8, 8, ::SimpleContainer&> mHandInventory;
     ::ll::TypedStorage<8, 8, ::InventoryTransactionManager*> mTransactionManager;
-    ::ll::TypedStorage<8, 8, ::Player*>                      mPlayer;
+    ::ll::TypedStorage<8, 8, ::Player*> mPlayer;
     // NOLINTEND
 
 public:
@@ -30,24 +30,13 @@ public:
     // NOLINTBEGIN
     MCAPI int _clearSimpleContainerItem(::SimpleContainer& container, ::ContainerID containerId, int slot);
 
-    MCAPI int _getSimpleContainerItemCount(
-        ::SimpleContainer&                        container,
-        int                                       slot,
-        ::std::function<bool(::ItemStack const&)> comparator
-    );
+    MCAPI int _getSimpleContainerItemCount(::SimpleContainer& container, int slot, ::std::function<bool(::ItemStack const&)> comparator);
 
     MCAPI int _removeCursorItem();
 
     MCAPI int _removeCursorItem(::ItemStack const& item, bool requireExactAux, int maxCount);
 
-    MCAPI int _removeSimpleContainerItem(
-        ::SimpleContainer& container,
-        ::ContainerID      containerId,
-        int                slot,
-        ::ItemStack const& sourceItem,
-        bool               requireExactAux,
-        int                maxCount
-    );
+    MCAPI int _removeSimpleContainerItem(::SimpleContainer& container, ::ContainerID containerId, int slot, ::ItemStack const& sourceItem, bool requireExactAux, int maxCount);
 
     MCAPI void _sendCursorSlotPacket() const;
 
@@ -55,11 +44,7 @@ public:
 
     MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
-    MCAPI int removeResource(
-        ::ItemStack const&                        sourceItem,
-        ::std::function<bool(::ItemStack const&)> comparator,
-        bool                                      requireExactAux,
-        int                                       maxCount
-    );
+    MCAPI int removeResource(::ItemStack const& sourceItem, ::std::function<bool(::ItemStack const&)> comparator, bool requireExactAux, int maxCount);
     // NOLINTEND
+
 };

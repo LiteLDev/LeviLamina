@@ -12,18 +12,18 @@ class BlockSource;
 class CompassSpriteCalculator {
 public:
     // CompassSpriteCalculator inner types define
-    using PointToTargetFunction = ::BlockPos (*)(::BlockSource const*, ::Actor*);
-
-    using IsPointingAtTargetFunction = bool (*)(::BlockSource const*, ::Actor*);
-
+    using PointToTargetFunction = ::BlockPos(*) (::BlockSource const*, ::Actor*);
+    
+    using IsPointingAtTargetFunction = bool(*) (::BlockSource const*, ::Actor*);
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::BlockPos (*)(::BlockSource const*, ::Actor*)> mTargetToPointTo;
-    ::ll::TypedStorage<8, 8, bool (*)(::BlockSource const*, ::Actor*)>       mIsPointingAtTarget;
-    ::ll::TypedStorage<4, 4, int>                                            mFrame;
-    ::ll::TypedStorage<4, 4, float>                                          mRot;
-    ::ll::TypedStorage<4, 4, float>                                          mRotA;
+    ::ll::TypedStorage<8, 8, ::BlockPos(*) (::BlockSource const*, ::Actor*)> mTargetToPointTo;
+    ::ll::TypedStorage<8, 8, bool(*) (::BlockSource const*, ::Actor*)> mIsPointingAtTarget;
+    ::ll::TypedStorage<4, 4, int> mFrame;
+    ::ll::TypedStorage<4, 4, float> mRot;
+    ::ll::TypedStorage<4, 4, float> mRotA;
     // NOLINTEND
 
 public:
@@ -31,26 +31,9 @@ public:
     // NOLINTBEGIN
     MCAPI int update(::Actor& actor, bool instant);
 
-    MCAPI int updateFromPosition(
-        ::BlockSource const* region,
-        ::Actor*             actor,
-        float                x,
-        float                z,
-        float                yRot,
-        bool                 isZFlipped,
-        bool                 instant
-    );
+    MCAPI int updateFromPosition(::BlockSource const* region, ::Actor* actor, float x, float z, float yRot, bool isZFlipped, bool instant);
 
-    MCAPI int updateFromPosition(
-        ::BlockSource const*,
-        ::BlockPos const& lookTowards,
-        float             x,
-        float             z,
-        float             yRot,
-        bool              isZFlipped,
-        bool              instant,
-        bool              spin
-    );
+    MCAPI int updateFromPosition(::BlockSource const*, ::BlockPos const& lookTowards, float x, float z, float yRot, bool isZFlipped, bool instant, bool spin);
     // NOLINTEND
 
 public:
@@ -64,4 +47,5 @@ public:
 
     MCAPI static ::BlockPos pointTowardsSpawnPoint(::BlockSource const* region, ::Actor*);
     // NOLINTEND
+
 };

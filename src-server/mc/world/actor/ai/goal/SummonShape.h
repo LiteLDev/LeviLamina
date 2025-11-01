@@ -4,6 +4,6 @@
 
 enum class SummonShape : int {
     Circle = 0,
-    Line   = 1,
-    Count  = 2,
+    Line = 1,
+    Count = 2,
 };

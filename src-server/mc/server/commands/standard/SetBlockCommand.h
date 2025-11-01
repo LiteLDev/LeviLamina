@@ -18,17 +18,17 @@ public:
     enum class SetBlockMode : int {
         Replace = 0,
         Destroy = 1,
-        Keep    = 2,
+        Keep = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 16> mUnka63b9f;
-    ::ll::UntypedStorage<8, 8>  mUnkc41e6f;
+    ::ll::UntypedStorage<8, 8> mUnkc41e6f;
     ::ll::UntypedStorage<8, 24> mUnk714dc2;
-    ::ll::UntypedStorage<4, 4>  mUnk900ebc;
-    ::ll::UntypedStorage<4, 4>  mUnkdcd022;
+    ::ll::UntypedStorage<4, 4> mUnk900ebc;
+    ::ll::UntypedStorage<4, 4> mUnkdcd022;
     // NOLINTEND
 
 public:
@@ -64,4 +64,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

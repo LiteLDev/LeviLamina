@@ -17,19 +17,13 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IStructurePoolBlockPredicate> const> mSourcePredicate;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IStructurePoolBlockPredicate> const> mTargetPredicate;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IStructurePoolBlockPredicate> const> mPositionPredicate;
-    ::ll::TypedStorage<8, 8, ::Block const*>                                          mResultBlock;
+    ::ll::TypedStorage<8, 8, ::Block const*> mResultBlock;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool processRule(
-        ::Block const&    sourceBlock,
-        ::Block const&    targetBlock,
-        ::Random&         random,
-        ::Block const*&   outputBlock,
-        ::BlockPos const& worldPos,
-        ::BlockPos const& refPos
-    ) const;
+    MCAPI bool processRule(::Block const& sourceBlock, ::Block const& targetBlock, ::Random& random, ::Block const*& outputBlock, ::BlockPos const& worldPos, ::BlockPos const& refPos) const;
     // NOLINTEND
+
 };

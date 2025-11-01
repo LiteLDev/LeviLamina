@@ -18,14 +18,14 @@ class BurstReactionComponent : public ::LabTableReactionComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ParticleType>  mParticleType;
+    ::ll::TypedStorage<4, 4, ::ParticleType> mParticleType;
     ::ll::TypedStorage<8, 48, ::HashedString> mNewParticleType;
-    ::ll::TypedStorage<4, 12, ::Vec3>         mDims;
-    ::ll::TypedStorage<4, 12, ::Vec3>         mDirRange;
-    ::ll::TypedStorage<4, 4, int>             mCount;
-    ::ll::TypedStorage<4, 4, int>             mDataMin;
-    ::ll::TypedStorage<4, 4, int>             mDataMax;
-    ::ll::TypedStorage<1, 1, bool>            mDirOneWay;
+    ::ll::TypedStorage<4, 12, ::Vec3> mDims;
+    ::ll::TypedStorage<4, 12, ::Vec3> mDirRange;
+    ::ll::TypedStorage<4, 4, int> mCount;
+    ::ll::TypedStorage<4, 4, int> mDataMin;
+    ::ll::TypedStorage<4, 4, int> mDataMax;
+    ::ll::TypedStorage<1, 1, bool> mDirOneWay;
     // NOLINTEND
 
 public:
@@ -49,4 +49,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

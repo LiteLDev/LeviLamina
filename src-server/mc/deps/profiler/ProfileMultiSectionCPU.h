@@ -10,9 +10,11 @@ public:
     // clang-format off
     class ProfileSectionSuspend;
     // clang-format on
-
+    
     // ProfileMultiSectionCPU inner types define
-    class ProfileSectionSuspend {};
+    class ProfileSectionSuspend {
+    };
+    
 };
 
-} // namespace Core::Profile
+}

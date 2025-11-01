@@ -18,4 +18,5 @@ public:
     zip_buffer& operator=(zip_buffer const&);
     zip_buffer(zip_buffer const&);
     zip_buffer();
+
 };

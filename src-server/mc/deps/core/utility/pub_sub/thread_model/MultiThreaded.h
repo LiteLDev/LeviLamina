@@ -4,6 +4,7 @@
 
 namespace Bedrock::PubSub::ThreadModel {
 
-struct MultiThreaded {};
+struct MultiThreaded {
+};
 
-} // namespace Bedrock::PubSub::ThreadModel
+}

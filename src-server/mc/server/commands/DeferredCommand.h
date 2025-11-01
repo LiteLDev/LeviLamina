@@ -16,9 +16,9 @@ class DeferredCommand : public ::DeferredCommandBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnke036cf;
-    ::ll::UntypedStorage<1, 1>  mUnkfecf3f;
-    ::ll::UntypedStorage<1, 1>  mUnk15a3f4;
+    ::ll::UntypedStorage<8, 8> mUnke036cf;
+    ::ll::UntypedStorage<1, 1> mUnkfecf3f;
+    ::ll::UntypedStorage<1, 1> mUnk15a3f4;
     ::ll::UntypedStorage<8, 64> mUnked4707;
     // NOLINTEND
 
@@ -41,23 +41,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DeferredCommand(
-        ::std::unique_ptr<::CommandContext> context,
-        bool                                suppressOutput,
-        bool                                isRequest,
-        ::std::function<void(::MCRESULT)>   callback
-    );
+    MCNAPI DeferredCommand(::std::unique_ptr<::CommandContext> context, bool suppressOutput, bool isRequest, ::std::function<void(::MCRESULT)> callback);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::unique_ptr<::CommandContext> context,
-        bool                                suppressOutput,
-        bool                                isRequest,
-        ::std::function<void(::MCRESULT)>   callback
-    );
+    MCNAPI void* $ctor(::std::unique_ptr<::CommandContext> context, bool suppressOutput, bool isRequest, ::std::function<void(::MCRESULT)> callback);
     // NOLINTEND
 
 public:
@@ -71,4 +61,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

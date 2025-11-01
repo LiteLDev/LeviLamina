@@ -4,5 +4,5 @@
 
 enum class MolangVariableSetting_AccessSpecifier : int {
     Private = 0,
-    Public  = 1,
+    Public = 1,
 };

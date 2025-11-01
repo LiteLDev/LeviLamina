@@ -16,4 +16,5 @@ public:
     ScoreInfoRef& operator=(ScoreInfoRef const&);
     ScoreInfoRef(ScoreInfoRef const&);
     ScoreInfoRef();
+
 };

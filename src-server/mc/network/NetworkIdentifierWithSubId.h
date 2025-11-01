@@ -14,4 +14,5 @@ public:
     ::NetworkIdentifier id;
     ::SubClientId       subClientId;
     // NOLINTEND
+
 };

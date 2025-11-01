@@ -7,8 +7,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnk872ddf;
-    ::ll::UntypedStorage<4, 4>  mUnkdd90e0;
-    ::ll::UntypedStorage<4, 4>  mUnk1e240f;
+    ::ll::UntypedStorage<4, 4> mUnkdd90e0;
+    ::ll::UntypedStorage<4, 4> mUnk1e240f;
     // NOLINTEND
 
 public:
@@ -16,4 +16,5 @@ public:
     VertexPT& operator=(VertexPT const&);
     VertexPT(VertexPT const&);
     VertexPT();
+
 };

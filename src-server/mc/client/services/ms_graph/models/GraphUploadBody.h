@@ -24,6 +24,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace MSGraph::Models
+}

@@ -18,6 +18,7 @@ public:
     LastSerializationResult& operator=(LastSerializationResult const&);
     LastSerializationResult(LastSerializationResult const&);
     LastSerializationResult();
+
 };
 
-} // namespace RakNet
+}

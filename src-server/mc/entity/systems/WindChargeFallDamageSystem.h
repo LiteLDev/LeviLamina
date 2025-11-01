@@ -29,23 +29,7 @@ struct WindChargeKnockbackComponent;
 namespace WindChargeFallDamageSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tickWindChargeFallDamageSystem(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::FallDistanceComponent>>,
-    ::StrictEntityContext const&                     entity,
-    ::StateVectorComponent const&                    svc,
-    ::WindChargeKnockbackComponent&                  windChargeKnockback,
-    ::Optional<::PlayerComponent const>              playerComponent,
-    ::Optional<::WasInWaterFlagComponent const>      wasInWater,
-    ::Optional<::OnGroundFlagComponent const>        onGround,
-    ::Optional<::LevitateTravelFlagComponent const>  isLevitating,
-    ::Optional<::AutoClimbTravelFlagComponent const> isClimbing,
-    ::Optional<::GlidingTravelFlagComponent const>   isGliding,
-    ::Optional<::LavaTravelFlagComponent const>      isInLava,
-    ::Optional<::PassengerComponent const>           isPassenger,
-    ::Optional<::HasTeleportedFlagComponent const>   didTeleport,
-    ::Optional<::ActorDataFlagComponent const>       actorDataFlag,
-    ::EntityModifier<::WindChargeKnockbackComponent> modifier
-);
+MCNAPI void _tickWindChargeFallDamageSystem(::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::FallDistanceComponent>>, ::StrictEntityContext const& entity, ::StateVectorComponent const& svc, ::WindChargeKnockbackComponent& windChargeKnockback, ::Optional<::PlayerComponent const> playerComponent, ::Optional<::WasInWaterFlagComponent const> wasInWater, ::Optional<::OnGroundFlagComponent const> onGround, ::Optional<::LevitateTravelFlagComponent const> isLevitating, ::Optional<::AutoClimbTravelFlagComponent const> isClimbing, ::Optional<::GlidingTravelFlagComponent const> isGliding, ::Optional<::LavaTravelFlagComponent const> isInLava, ::Optional<::PassengerComponent const> isPassenger, ::Optional<::HasTeleportedFlagComponent const> didTeleport, ::Optional<::ActorDataFlagComponent const> actorDataFlag, ::EntityModifier<::WindChargeKnockbackComponent> modifier);
 // NOLINTEND
 
-} // namespace WindChargeFallDamageSystem
+}

@@ -4,6 +4,7 @@
 
 namespace brstd {
 
-struct synth_three_way {};
+struct synth_three_way {
+};
 
-} // namespace brstd
+}

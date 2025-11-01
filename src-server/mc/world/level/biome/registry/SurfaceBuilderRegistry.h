@@ -22,4 +22,5 @@ public:
     // NOLINTBEGIN
     MCAPI void forEachSurfaceBuilder(::std::function<bool(::ISurfaceBuilder&)> callback) const;
     // NOLINTEND
+
 };

@@ -21,6 +21,7 @@ public:
     FixedLengthEncodingParametersV3& operator=(FixedLengthEncodingParametersV3 const&);
     FixedLengthEncodingParametersV3(FixedLengthEncodingParametersV3 const&);
     FixedLengthEncodingParametersV3();
+
 };
 
-} // namespace webrtc
+}

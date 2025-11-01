@@ -19,15 +19,14 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Vec3 const&> mA;
     ::ll::TypedStorage<8, 8, ::Vec3 const&> mB;
-    ::ll::TypedStorage<8, 8, ::Actor*>      mActor;
-    ::ll::TypedStorage<1, 1, bool>          mLiquid;
-    ::ll::TypedStorage<1, 1, bool>          mFullOnly;
-    ::ll::TypedStorage<1, 1, bool>          mStopOnFirstLiquidHit;
-    ::ll::TypedStorage<1, 1, bool>          mIgnoreBorderBlocks;
-    ::ll::TypedStorage<1, 1, ::ShapeType>   mShapeType;
-    ::ll::TypedStorage<4, 4, int>           mMaxDistance;
-    ::ll::TypedStorage<8, 64, ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const>
-        mShouldCheckBlock;
+    ::ll::TypedStorage<8, 8, ::Actor*> mActor;
+    ::ll::TypedStorage<1, 1, bool> mLiquid;
+    ::ll::TypedStorage<1, 1, bool> mFullOnly;
+    ::ll::TypedStorage<1, 1, bool> mStopOnFirstLiquidHit;
+    ::ll::TypedStorage<1, 1, bool> mIgnoreBorderBlocks;
+    ::ll::TypedStorage<1, 1, ::ShapeType> mShapeType;
+    ::ll::TypedStorage<4, 4, int> mMaxDistance;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::BlockSource const&, ::Block const&, bool)> const> mShouldCheckBlock;
     // NOLINTEND
 
 public:
@@ -47,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

@@ -14,4 +14,5 @@ public:
     Signal& operator=(Signal const&);
     Signal(Signal const&);
     Signal();
+
 };

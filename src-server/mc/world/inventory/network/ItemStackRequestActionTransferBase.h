@@ -17,9 +17,9 @@ class ItemStackRequestActionTransferBase : public ::ItemStackRequestAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                        mIsDstSerialized;
-    ::ll::TypedStorage<1, 1, bool>                        mIsAmountSerialized;
-    ::ll::TypedStorage<1, 1, uchar>                       mAmount;
+    ::ll::TypedStorage<1, 1, bool> mIsDstSerialized;
+    ::ll::TypedStorage<1, 1, bool> mIsAmountSerialized;
+    ::ll::TypedStorage<1, 1, uchar> mAmount;
     ::ll::TypedStorage<4, 40, ::ItemStackRequestSlotInfo> mSrc;
     ::ll::TypedStorage<4, 40, ::ItemStackRequestSlotInfo> mDst;
     // NOLINTEND
@@ -50,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

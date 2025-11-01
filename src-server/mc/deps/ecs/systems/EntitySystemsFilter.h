@@ -16,4 +16,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::SystemCategory>> mIncludeType;
     // NOLINTEND
+
 };

@@ -9,7 +9,8 @@ struct MolangResourceOffset {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>           mOffset;
+    ::ll::TypedStorage<4, 4, uint> mOffset;
     ::ll::TypedStorage<2, 2, ::ExpressionOp> mResourceOp;
     // NOLINTEND
+
 };

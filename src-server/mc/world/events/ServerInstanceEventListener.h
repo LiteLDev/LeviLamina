@@ -18,7 +18,7 @@ class ServerInstanceEventListener {
 public:
     // ServerInstanceEventListener inner types define
     using EventType = ::ServerInstanceNotificationEvent;
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -32,10 +32,7 @@ public:
     virtual ::EventResult onServerInitializeEnd(::ServerInstance& instance);
 
     // vIndex: 3
-    virtual ::EventResult onServerMinecraftInitialized(
-        ::ServerInstance&                                 instance,
-        ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft
-    );
+    virtual ::EventResult onServerMinecraftInitialized(::ServerInstance& instance, ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft);
 
     // vIndex: 4
     virtual ::EventResult onServerLevelInitialized(::ServerInstance& instance, ::Level& level);
@@ -72,10 +69,7 @@ public:
 
     MCFOLD ::EventResult $onServerInitializeEnd(::ServerInstance& instance);
 
-    MCFOLD ::EventResult $onServerMinecraftInitialized(
-        ::ServerInstance&                                 instance,
-        ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft
-    );
+    MCFOLD ::EventResult $onServerMinecraftInitialized(::ServerInstance& instance, ::Bedrock::NotNullNonOwnerPtr<::Minecraft> const& minecraft);
 
     MCFOLD ::EventResult $onServerLevelInitialized(::ServerInstance& instance, ::Level& level);
 
@@ -95,4 +89,5 @@ public:
 
     MCFOLD ::EventResult $onEvent(::ServerInstanceNotificationEvent const& event);
     // NOLINTEND
+
 };

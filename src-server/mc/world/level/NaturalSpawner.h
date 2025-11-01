@@ -33,13 +33,13 @@ class NaturalSpawner : public ::Spawner {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk2d322f;
-    ::ll::UntypedStorage<8, 8>   mUnk9032a6;
-    ::ll::UntypedStorage<8, 48>  mUnk905d1f;
+    ::ll::UntypedStorage<8, 8> mUnk2d322f;
+    ::ll::UntypedStorage<8, 8> mUnk9032a6;
+    ::ll::UntypedStorage<8, 48> mUnk905d1f;
     ::ll::UntypedStorage<8, 272> mUnk504207;
-    ::ll::UntypedStorage<8, 8>   mUnk62f589;
-    ::ll::UntypedStorage<8, 8>   mUnke1fc69;
-    ::ll::UntypedStorage<8, 8>   mUnk5d231c;
+    ::ll::UntypedStorage<8, 8> mUnk62f589;
+    ::ll::UntypedStorage<8, 8> mUnke1fc69;
+    ::ll::UntypedStorage<8, 8> mUnk5d231c;
     // NOLINTEND
 
 public:
@@ -55,17 +55,10 @@ public:
     virtual ~NaturalSpawner() /*override*/ = default;
 
     // vIndex: 18
-    virtual ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
-    filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const /*override*/;
+    virtual ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64> filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const /*override*/;
 
     // vIndex: 19
-    virtual void spawnForChunk(
-        ::BlockSource&,
-        ::LevelChunkVolumeData const&,
-        ::br::spawn::State&,
-        ::gsl::span<::SpawnCategory::Type>,
-        ::IRandom&
-    ) const /*override*/;
+    virtual void spawnForChunk(::BlockSource&, ::LevelChunkVolumeData const&, ::br::spawn::State&, ::gsl::span<::SpawnCategory::Type>, ::IRandom&) const /*override*/;
 
     // vIndex: 20
     virtual void spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const /*override*/;
@@ -110,14 +103,7 @@ public:
     virtual uint getSpawnableTickedMobCountPrevious() const /*override*/;
 
     // vIndex: 16
-    virtual ::std::unordered_set<::ActorUniqueID> spawnMobGroup(
-        ::BlockSource&,
-        ::std::string const&,
-        ::Vec3 const&,
-        bool,
-        bool,
-        ::std::function<void(::Mob&)>&&
-    ) /*override*/;
+    virtual ::std::unordered_set<::ActorUniqueID> spawnMobGroup(::BlockSource&, ::std::string const&, ::Vec3 const&, bool, bool, ::std::function<void(::Mob&)>&&) /*override*/;
     // NOLINTEND
 
 public:
@@ -125,4 +111,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

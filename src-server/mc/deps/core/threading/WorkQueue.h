@@ -4,7 +4,8 @@
 
 namespace Bedrock::Threading::Burst {
 
-template <typename T0, typename T1, typename T2>
-class WorkQueue {};
+template<typename T0, typename T1, typename T2>
+class WorkQueue {
+};
 
-} // namespace Bedrock::Threading::Burst
+}

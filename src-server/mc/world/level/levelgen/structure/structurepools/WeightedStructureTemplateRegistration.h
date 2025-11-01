@@ -15,11 +15,7 @@ struct WeightedStructureTemplateRegistration {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>>
-                                  mElementFactory;
+    ::ll::TypedStorage<8, 64, ::std::function<::StructurePoolElement const&(::StructureTemplateRegistrationContext, ::Projection)>> mElementFactory;
     ::ll::TypedStorage<4, 4, int> mWeight;
     // NOLINTEND
 
@@ -34,4 +30,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

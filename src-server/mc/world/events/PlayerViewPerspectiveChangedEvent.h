@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, int const> mFrom;
     ::ll::TypedStorage<4, 4, int const> mTo;
     // NOLINTEND
+
 };

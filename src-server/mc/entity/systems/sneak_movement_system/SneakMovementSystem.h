@@ -19,22 +19,9 @@ struct StateVectorComponent;
 namespace SneakMovementSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI bool storeSneakStateAndReturnDoSneakMovement(
-    ::ActorDataFlagComponent const&           actorData,
-    ::Optional<::MoveInputComponent const>    moveInputComponent,
-    ::Optional<::OnGroundFlagComponent const> onGround,
-    ::MoveRequestComponent&                   moveRequest
-);
+MCNAPI bool storeSneakStateAndReturnDoSneakMovement(::ActorDataFlagComponent const& actorData, ::Optional<::MoveInputComponent const> moveInputComponent, ::Optional<::OnGroundFlagComponent const> onGround, ::MoveRequestComponent& moveRequest);
 
-MCNAPI void tickSneakMovementSystem(
-    ::ActorDataFlagComponent const&           actorData,
-    ::AABBShapeComponent const&               aabb,
-    ::MaxAutoStepComponent const&             maxAutoStep,
-    ::Optional<::MoveInputComponent const>    moveInputComponent,
-    ::Optional<::OnGroundFlagComponent const> onGround,
-    ::MoveRequestComponent&                   moveRequest,
-    ::StateVectorComponent&                   state
-);
+MCNAPI void tickSneakMovementSystem(::ActorDataFlagComponent const& actorData, ::AABBShapeComponent const& aabb, ::MaxAutoStepComponent const& maxAutoStep, ::Optional<::MoveInputComponent const> moveInputComponent, ::Optional<::OnGroundFlagComponent const> onGround, ::MoveRequestComponent& moveRequest, ::StateVectorComponent& state);
 // NOLINTEND
 
-} // namespace SneakMovementSystem
+}

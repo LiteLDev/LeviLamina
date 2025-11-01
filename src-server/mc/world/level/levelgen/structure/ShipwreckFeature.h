@@ -24,10 +24,10 @@ class ShipwreckFeature : public ::StructureFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool const>                    mUseTiltedSpacing;
-    ::ll::TypedStorage<4, 4, int const>                     mSpacing;
-    ::ll::TypedStorage<4, 4, int const>                     mMinSeparation;
-    ::ll::TypedStorage<8, 8, ::OceanMonumentFeature&>       mMonument;
+    ::ll::TypedStorage<1, 1, bool const> mUseTiltedSpacing;
+    ::ll::TypedStorage<4, 4, int const> mSpacing;
+    ::ll::TypedStorage<4, 4, int const> mMinSeparation;
+    ::ll::TypedStorage<8, 8, ::OceanMonumentFeature&> mMonument;
     ::ll::TypedStorage<8, 24, ::std::vector<::BiomeIdType>> mAllowedBiomes;
     // NOLINTEND
 
@@ -44,34 +44,13 @@ public:
     virtual ::gsl::span<::BiomeIdType const> getRequiredBiomes() const /*override*/;
 
     // vIndex: 4
-    virtual bool getNearestGeneratedFeature(
-        ::Dimension&                           dimension,
-        ::BiomeSource const&                   biomeSource,
-        ::BlockPos const&                      origin,
-        ::BlockPos&                            pos,
-        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
-        bool                                   mustBeInNewChunks,
-        ::std::optional<::HashedString> const& biomeTag
-    ) /*override*/;
+    virtual bool getNearestGeneratedFeature(::Dimension& dimension, ::BiomeSource const& biomeSource, ::BlockPos const& origin, ::BlockPos& pos, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, bool mustBeInNewChunks, ::std::optional<::HashedString> const& biomeTag) /*override*/;
 
     // vIndex: 6
-    virtual ::std::unique_ptr<::StructureStart> createStructureStart(
-        ::Dimension&         generator,
-        ::BiomeSource const& biomeSource,
-        ::Random&            random,
-        ::ChunkPos const&    lc,
-        ::IPreliminarySurfaceProvider const&
-    ) /*override*/;
+    virtual ::std::unique_ptr<::StructureStart> createStructureStart(::Dimension& generator, ::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& lc, ::IPreliminarySurfaceProvider const&) /*override*/;
 
     // vIndex: 5
-    virtual bool isFeatureChunk(
-        ::BiomeSource const&                 biomeSource,
-        ::Random&                            random,
-        ::ChunkPos const&                    pos,
-        uint                                 levelSeed,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        ::Dimension const&                   dimension
-    ) /*override*/;
+    virtual bool isFeatureChunk(::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& pos, uint levelSeed, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, ::Dimension const& dimension) /*override*/;
 
     // vIndex: 0
     virtual ~ShipwreckFeature() /*override*/ = default;
@@ -94,32 +73,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::gsl::span<::BiomeIdType const> $getRequiredBiomes() const;
 
-    MCAPI bool $getNearestGeneratedFeature(
-        ::Dimension&                           dimension,
-        ::BiomeSource const&                   biomeSource,
-        ::BlockPos const&                      origin,
-        ::BlockPos&                            pos,
-        ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
-        bool                                   mustBeInNewChunks,
-        ::std::optional<::HashedString> const& biomeTag
-    );
+    MCAPI bool $getNearestGeneratedFeature(::Dimension& dimension, ::BiomeSource const& biomeSource, ::BlockPos const& origin, ::BlockPos& pos, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, bool mustBeInNewChunks, ::std::optional<::HashedString> const& biomeTag);
 
-    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
-        ::Dimension&         generator,
-        ::BiomeSource const& biomeSource,
-        ::Random&            random,
-        ::ChunkPos const&    lc,
-        ::IPreliminarySurfaceProvider const&
-    );
+    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(::Dimension& generator, ::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& lc, ::IPreliminarySurfaceProvider const&);
 
-    MCAPI bool $isFeatureChunk(
-        ::BiomeSource const&                 biomeSource,
-        ::Random&                            random,
-        ::ChunkPos const&                    pos,
-        uint                                 levelSeed,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel,
-        ::Dimension const&                   dimension
-    );
+    MCAPI bool $isFeatureChunk(::BiomeSource const& biomeSource, ::Random& random, ::ChunkPos const& pos, uint levelSeed, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel, ::Dimension const& dimension);
     // NOLINTEND
 
 public:
@@ -127,4 +85,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

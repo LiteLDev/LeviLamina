@@ -22,7 +22,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnka2dc63;
     ::ll::UntypedStorage<8, 16> mUnk929b66;
     ::ll::UntypedStorage<8, 16> mUnk82da7c;
-    ::ll::UntypedStorage<4, 8>  mUnk89bf2e;
+    ::ll::UntypedStorage<4, 8> mUnk89bf2e;
     // NOLINTEND
 
 public:
@@ -86,6 +86,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

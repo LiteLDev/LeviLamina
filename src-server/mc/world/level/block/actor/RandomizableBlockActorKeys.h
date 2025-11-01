@@ -10,4 +10,4 @@ MCAPI ::std::string const& LOOT_TABLE();
 MCAPI ::std::string const& LOOT_TABLE_SEED();
 // NOLINTEND
 
-} // namespace RandomizableBlockActorKeys
+}

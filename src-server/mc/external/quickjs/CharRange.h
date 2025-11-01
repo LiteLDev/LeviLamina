@@ -18,4 +18,5 @@ public:
     CharRange& operator=(CharRange const&);
     CharRange(CharRange const&);
     CharRange();
+
 };

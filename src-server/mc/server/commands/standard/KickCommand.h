@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 200> mUnke1dc0d;
-    ::ll::UntypedStorage<8, 32>  mUnkc1b069;
+    ::ll::UntypedStorage<8, 32> mUnkc1b069;
     // NOLINTEND
 
 public:
@@ -42,32 +42,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool
-    _canKickPlayerOrGenerateFailureOutput(::Player const& player, ::CommandOutput& output, ::Level* level) const;
+    MCAPI bool _canKickPlayerOrGenerateFailureOutput(::Player const& player, ::CommandOutput& output, ::Level* level) const;
 
-    MCAPI ::Player const* _findTarget(
-        ::CommandOrigin const& origin,
-        ::CommandOutput&       output,
-        ::Level&               level,
-        ::std::string const&   message,
-        ::std::string const&   reason,
-        ::std::string const&   idOrName
-    ) const;
+    MCAPI ::Player const* _findTarget(::CommandOrigin const& origin, ::CommandOutput& output, ::Level& level, ::std::string const& message, ::std::string const& reason, ::std::string const& idOrName) const;
 
-    MCAPI void _generateSuccessOutput(
-        ::CommandOutput&     output,
-        ::std::string const& playerNameTag,
-        ::std::string const& reason
-    ) const;
+    MCAPI void _generateSuccessOutput(::CommandOutput& output, ::std::string const& playerNameTag, ::std::string const& reason) const;
 
-    MCAPI ::Player const* _loopPlayers(
-        ::CommandOrigin const&,
-        ::CommandOutput&,
-        ::Level& level,
-        ::std::string const&,
-        ::std::string const&,
-        ::std::function<bool(::Player const*)> condition
-    ) const;
+    MCAPI ::Player const* _loopPlayers(::CommandOrigin const&, ::CommandOutput&, ::Level& level, ::std::string const&, ::std::string const&, ::std::function<bool(::Player const*)> condition) const;
 
     MCAPI void _refreshJoinCode(::Level& level) const;
     // NOLINTEND
@@ -75,12 +56,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _kickPlayer(
-        ::Minecraft*                   game,
-        ::Player const&                matchingPlayer,
-        ::std::string const&           message,
-        ::std::optional<::std::string> filteredMessage
-    );
+    MCAPI static void _kickPlayer(::Minecraft* game, ::Player const& matchingPlayer, ::std::string const& message, ::std::optional<::std::string> filteredMessage);
 
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
@@ -96,4 +72,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

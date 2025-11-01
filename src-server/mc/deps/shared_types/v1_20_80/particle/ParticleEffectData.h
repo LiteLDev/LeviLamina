@@ -14,9 +14,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 112> mUnk947740;
-    ::ll::UntypedStorage<8, 56>  mUnk4922d2;
-    ::ll::UntypedStorage<8, 24>  mUnkf90292;
-    ::ll::UntypedStorage<8, 24>  mUnk735e26;
+    ::ll::UntypedStorage<8, 56> mUnk4922d2;
+    ::ll::UntypedStorage<8, 24> mUnkf90292;
+    ::ll::UntypedStorage<8, 24> mUnk735e26;
     // NOLINTEND
 
 public:
@@ -31,6 +31,8 @@ public:
     MCNAPI ::SharedTypes::v1_20_80::ParticleEffectData& operator=(::SharedTypes::v1_20_80::ParticleEffectData&&);
 
     MCNAPI ::SharedTypes::v1_20_80::ParticleEffectData& operator=(::SharedTypes::v1_20_80::ParticleEffectData const&);
+
+    MCNAPI ~ParticleEffectData();
     // NOLINTEND
 
 public:
@@ -44,6 +46,13 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEffectData const&);
     // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_80
+}

@@ -64,10 +64,7 @@ public:
     virtual void setPosition(::Vec3 const& position) /*override*/;
 
     // vIndex: 11
-    virtual void createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&& callback,
-        ::std::function<void()>&&                                                          execute
-    ) /*override*/;
+    virtual void createTransactionContext(::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&& callback, ::std::function<void()>&& execute) /*override*/;
 
     // vIndex: 12
     virtual void addExpectedAction(::InventoryAction const& action) /*override*/;
@@ -79,14 +76,7 @@ public:
     virtual bool baseUseItemAsAttack(::ItemStack& item) /*override*/;
 
     // vIndex: 15
-    virtual ::InteractionResult useItemOn(
-        ::ItemStack&      item,
-        ::BlockPos const& at,
-        uchar             face,
-        ::Vec3 const&     hit,
-        ::Block const*    targetBlock,
-        bool              isFirstEvent
-    ) /*override*/;
+    virtual ::InteractionResult useItemOn(::ItemStack& item, ::BlockPos const& at, uchar face, ::Vec3 const& hit, ::Block const* targetBlock, bool isFirstEvent) /*override*/;
 
     // vIndex: 16
     virtual void resendBlocksAroundArea(::BlockPos const& pos, uchar facing) const /*override*/;
@@ -143,10 +133,7 @@ public:
 
     MCNAPI void $setPosition(::Vec3 const& position);
 
-    MCNAPI void $createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&& callback,
-        ::std::function<void()>&&                                                          execute
-    );
+    MCNAPI void $createTransactionContext(::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&& callback, ::std::function<void()>&& execute);
 
     MCNAPI void $addExpectedAction(::InventoryAction const& action);
 
@@ -154,14 +141,7 @@ public:
 
     MCNAPI bool $baseUseItemAsAttack(::ItemStack& item);
 
-    MCNAPI ::InteractionResult $useItemOn(
-        ::ItemStack&      item,
-        ::BlockPos const& at,
-        uchar             face,
-        ::Vec3 const&     hit,
-        ::Block const*    targetBlock,
-        bool              isFirstEvent
-    );
+    MCNAPI ::InteractionResult $useItemOn(::ItemStack& item, ::BlockPos const& at, uchar face, ::Vec3 const& hit, ::Block const* targetBlock, bool isFirstEvent);
 
     MCNAPI void $resendBlocksAroundArea(::BlockPos const& pos, uchar facing) const;
 
@@ -189,4 +169,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

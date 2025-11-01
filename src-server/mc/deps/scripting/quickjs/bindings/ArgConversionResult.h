@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkc57c4f;
-    ::ll::UntypedStorage<4, 4>  mUnkd779cf;
+    ::ll::UntypedStorage<4, 4> mUnkd779cf;
     // NOLINTEND
 
 public:
@@ -17,6 +17,7 @@ public:
     ArgConversionResult& operator=(ArgConversionResult const&);
     ArgConversionResult(ArgConversionResult const&);
     ArgConversionResult();
+
 };
 
-} // namespace Scripting::QuickJS
+}

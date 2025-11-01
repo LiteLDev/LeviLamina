@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Json { class Value; }
 namespace NetherNet { struct NetworkID; }
 // clang-format on
 
@@ -29,7 +30,7 @@ public:
     virtual void OnSessionOpen(::NetherNet::NetworkID, uint64) = 0;
 
     // vIndex: 4
-    virtual void OnSessionClose(::NetherNet::NetworkID, uint64, ::NetherNet::ESessionError) = 0;
+    virtual void OnSessionClose(::NetherNet::NetworkID, uint64, ::NetherNet::ESessionError, ::Json::Value) = 0;
 
     // vIndex: 5
     virtual void OnSpopViolation() = 0;
@@ -46,6 +47,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace NetherNet
+}

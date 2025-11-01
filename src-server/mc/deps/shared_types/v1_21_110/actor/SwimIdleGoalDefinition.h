@@ -35,8 +35,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static float const& DEFAULT_IDLE_TIME();
+
+    MCNAPI static float const& DEFAULT_SUCCESS_RATE();
+
     MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_110
+}

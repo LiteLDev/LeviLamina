@@ -18,6 +18,7 @@ public:
     StreamConfig& operator=(StreamConfig const&);
     StreamConfig(StreamConfig const&);
     StreamConfig();
+
 };
 
-} // namespace webrtc
+}

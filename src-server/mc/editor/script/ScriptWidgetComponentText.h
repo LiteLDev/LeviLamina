@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/WidgetComponentType.h"
 #include "mc/deps/scripting/lifetime_registry/WeakTypedObjectHandle.h"
-#include "mc/editor/WidgetComponentType.h"
 #include "mc/editor/script/ScriptWidgetComponentBase.h"
 
 // auto generated forward declare list
@@ -48,15 +48,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptWidgetComponentText(::Editor::ScriptModule::ScriptWidgetComponentText const&);
 
-    MCNAPI ScriptWidgetComponentText(
-        ::Editor::ServiceProviderCollection&                                      serviceProviders,
-        ::mce::UUID const&                                                        componentId,
-        ::std::string const&                                                      componentName,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>  owner,
-        ::Editor::ScriptModule::ScriptWidgetService&                              parentService,
-        ::std::string const&                                                      textString,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentTextOptions> options
-    );
+    MCNAPI ScriptWidgetComponentText(::Editor::ServiceProviderCollection& serviceProviders, ::mce::UUID const& componentId, ::std::string const& componentName, ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner, ::Editor::ScriptModule::ScriptWidgetService& parentService, ::std::string const& textString, ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentTextOptions> options);
 
     MCNAPI void _setColor(::ScriptModuleMinecraft::ScriptRGBA const& color);
 
@@ -74,15 +66,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Editor::ScriptModule::ScriptWidgetComponentText const&);
 
-    MCNAPI void* $ctor(
-        ::Editor::ServiceProviderCollection&                                      serviceProviders,
-        ::mce::UUID const&                                                        componentId,
-        ::std::string const&                                                      componentName,
-        ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>  owner,
-        ::Editor::ScriptModule::ScriptWidgetService&                              parentService,
-        ::std::string const&                                                      textString,
-        ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentTextOptions> options
-    );
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviders, ::mce::UUID const& componentId, ::std::string const& componentName, ::Scripting::WeakTypedObjectHandle<::Editor::ScriptModule::ScriptWidget> owner, ::Editor::ScriptModule::ScriptWidgetService& parentService, ::std::string const& textString, ::std::optional<::Editor::ScriptModule::ScriptWidgetComponentTextOptions> options);
     // NOLINTEND
 
 public:
@@ -96,6 +80,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

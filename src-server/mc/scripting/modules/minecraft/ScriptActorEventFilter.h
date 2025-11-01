@@ -40,8 +40,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptActorEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
 
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter&
-    operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter& operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilter const&);
 
     MCNAPI void process();
     // NOLINTEND
@@ -77,6 +76,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft::EventFilters
+}

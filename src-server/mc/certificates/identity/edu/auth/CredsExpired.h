@@ -4,6 +4,7 @@
 
 namespace edu::auth {
 
-struct CredsExpired {};
+struct CredsExpired {
+};
 
-} // namespace edu::auth
+}

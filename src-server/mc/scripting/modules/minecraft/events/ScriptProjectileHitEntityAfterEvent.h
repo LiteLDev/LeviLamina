@@ -44,6 +44,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptProjectileHitEntityAfterEvent const&);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

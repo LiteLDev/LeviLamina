@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct ErrorChunkConfig {};
+struct ErrorChunkConfig {
+};
 
-} // namespace dcsctp
+}

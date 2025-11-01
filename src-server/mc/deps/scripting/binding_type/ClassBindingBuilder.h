@@ -4,7 +4,8 @@
 
 namespace Scripting {
 
-template <typename T0>
-class ClassBindingBuilder {};
+template<typename T0>
+class ClassBindingBuilder {
+};
 
-} // namespace Scripting
+}

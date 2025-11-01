@@ -31,27 +31,7 @@ struct UsesDefaultStepSoundComponent;
 namespace PlayActorStepSoundSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void tick(
-    ::entt::type_list<
-        ::Include<::ShouldPlayStepSoundComponent>,
-        ::Exclude<
-            ::UsesDefaultStepSoundComponent,
-            ::GallopSoundCounterComponent,
-            ::CamelFlagComponent,
-            ::MakesLavaStepSoundComponent>>,
-    ::StrictEntityContext const&                                       entity,
-    ::ActorOwnerComponent const&                                       actorOwner,
-    ::ActorDataFlagComponent const&                                    actorFlags,
-    ::ActorDefinitionIdentifierComponent const&                        actorIdentifier,
-    ::ActorUniqueIDComponent const&                                    actorUniqueID,
-    ::DimensionTypeComponent const&                                    dimensionType,
-    ::CurrentlyStandingOnBlockComponent const&                         currentlyStandingOnBlock,
-    ::SoundEventPlayerComponent const&                                 soundEventPlayer,
-    ::RandomReferenceComponent const&                                  randomReference,
-    ::MovementSoundComponent&                                          movementSound,
-    ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& requestQueueView,
-    ::ViewT<::StrictEntityContext, ::RandomComponent>&                 randomView
-);
+MCNAPI void tick(::entt::type_list<::Include<::ShouldPlayStepSoundComponent>, ::Exclude<::UsesDefaultStepSoundComponent, ::GallopSoundCounterComponent, ::CamelFlagComponent, ::MakesLavaStepSoundComponent>>, ::StrictEntityContext const& entity, ::ActorOwnerComponent const& actorOwner, ::ActorDataFlagComponent const& actorFlags, ::ActorDefinitionIdentifierComponent const& actorIdentifier, ::ActorUniqueIDComponent const& actorUniqueID, ::DimensionTypeComponent const& dimensionType, ::CurrentlyStandingOnBlockComponent const& currentlyStandingOnBlock, ::SoundEventPlayerComponent const& soundEventPlayer, ::RandomReferenceComponent const& randomReference, ::MovementSoundComponent& movementSound, ::ViewT<::StrictEntityContext, ::SoundEventRequestQueueComponent>& requestQueueView, ::ViewT<::StrictEntityContext, ::RandomComponent>& randomView);
 // NOLINTEND
 
-} // namespace PlayActorStepSoundSystemImpl
+}

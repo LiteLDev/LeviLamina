@@ -19,16 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> registerAsyncJoinCallback(
-        ::brstd::move_only_function<void(
-            ::NetworkIdentifier const&,
-            ::std::variant<
-                ::std::reference_wrapper<::ConnectionRequest const>,
-                ::std::reference_wrapper<::SubClientConnectionRequest const>> const&,
-            ::SubClientId,
-            ::std::shared_ptr<::AsyncVerdictPromise>
-        )>
-    ) = 0;
+    virtual ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> registerAsyncJoinCallback(::brstd::move_only_function<void(::NetworkIdentifier const&, ::std::variant<::std::reference_wrapper<::ConnectionRequest const>, ::std::reference_wrapper<::SubClientConnectionRequest const>> const&, ::SubClientId, ::std::shared_ptr<::AsyncVerdictPromise>)>) = 0;
 
     // vIndex: 1
     virtual bool isPaused() = 0;
@@ -42,4 +33,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

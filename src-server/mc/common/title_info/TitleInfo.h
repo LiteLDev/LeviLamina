@@ -10,4 +10,4 @@ MCNAPI ::std::string const& BedrockVanillaTag();
 MCNAPI ::std::string const& EarthTag();
 // NOLINTEND
 
-} // namespace TitleInfo
+}

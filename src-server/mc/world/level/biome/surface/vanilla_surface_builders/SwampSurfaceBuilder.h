@@ -18,7 +18,7 @@ class SwampSurfaceBuilder : public ::ISurfaceBuilder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Block const&>                          mWaterBlock;
+    ::ll::TypedStorage<8, 8, ::Block const&> mWaterBlock;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PerlinSimplexNoise>> mPuddleNoise;
     // NOLINTEND
 
@@ -64,6 +64,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace VanillaSurfaceBuilders
+}

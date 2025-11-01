@@ -24,24 +24,23 @@ public:
     // clang-format off
     struct Listener;
     // clang-format on
-
+    
     // ScriptActorGlobalEventListener inner types define
     struct Listener {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-        ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
-                                       mScriptEventsHandle;
+        ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>> mScriptEventsHandle;
         ::ll::TypedStorage<1, 1, bool> mAfterListener;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptActorGlobalEventListener::Listener>>
-        mListeners;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ScriptModuleMinecraft::ScriptActorGlobalEventListener::Listener>> mListeners;
     // NOLINTEND
 
 public:
@@ -70,6 +69,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -5,10 +5,10 @@
 namespace Bedrock {
 
 enum class IslandTransition : int {
-    Start   = 0,
+    Start = 0,
     Suspend = 1,
-    Resume  = 2,
-    Stop    = 3,
+    Resume = 2,
+    Stop = 3,
 };
 
 }

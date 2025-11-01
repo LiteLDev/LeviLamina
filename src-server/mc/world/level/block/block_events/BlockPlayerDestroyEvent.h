@@ -18,7 +18,7 @@ class BlockPlayerDestroyEvent : public ::BlockEvents::BlockEventBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Player&>      mPlayer;
+    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
     ::ll::TypedStorage<8, 8, ::Block const&> mDestroyedBlock;
     // NOLINTEND
 
@@ -55,6 +55,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace BlockEvents
+}

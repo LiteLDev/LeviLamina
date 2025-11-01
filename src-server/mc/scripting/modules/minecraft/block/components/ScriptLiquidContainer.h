@@ -15,6 +15,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

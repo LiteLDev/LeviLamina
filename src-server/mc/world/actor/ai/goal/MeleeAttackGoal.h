@@ -16,21 +16,16 @@ class Vec3;
 class MeleeAttackGoal : public ::MeleeAttackBaseGoal {
 public:
     // MeleeAttackGoal inner types define
-    using LineOfSightEvaluator = bool (*)(::Mob const&, ::Actor const&);
-
-    using AttackReachEvaluator =
-        bool (*)(::Mob const&, ::Vec3 const&, float const, float const, float const, float const, int const);
-
+    using LineOfSightEvaluator = bool(*) (::Mob const&, ::Actor const&);
+    
+    using AttackReachEvaluator = bool(*) (::Mob const&, ::Vec3 const&, float const, float const, float const, float const, int const);
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        8,
-        bool (*)(::Mob const&, ::Vec3 const&, float const, float const, float const, float const, int const)>
-                                                                     mReachEvaluator;
-    ::ll::TypedStorage<8, 8, bool (*)(::Mob const&, ::Actor const&)> mLineOfSightEvaluator;
-    ::ll::TypedStorage<4, 4, float>                                  mReachMultiplier;
+    ::ll::TypedStorage<8, 8, bool(*) (::Mob const&, ::Vec3 const&, float const, float const, float const, float const, int const)> mReachEvaluator;
+    ::ll::TypedStorage<8, 8, bool(*) (::Mob const&, ::Actor const&)> mLineOfSightEvaluator;
+    ::ll::TypedStorage<4, 4, float> mReachMultiplier;
     // NOLINTEND
 
 public:
@@ -61,25 +56,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canReachTarget(
-        ::Mob const&  mob,
-        ::Vec3 const& targetPosition,
-        float         attackReachSq,
-        float         targetMinY,
-        float         targetMaxY,
-        float         targetDistanceSqXZ,
-        int           attackTicks
-    );
+    MCAPI static bool _canReachTarget(::Mob const& mob, ::Vec3 const& targetPosition, float attackReachSq, float targetMinY, float targetMaxY, float targetDistanceSqXZ, int attackTicks);
 
-    MCAPI static bool _canReachTargetLegacy(
-        ::Mob const&  mob,
-        ::Vec3 const& targetPosition,
-        float         attackReachSq,
-        float         targetMinY,
-        float         targetMaxY,
-        float         targetDistanceSqXZ,
-        int           attackTicks
-    );
+    MCAPI static bool _canReachTargetLegacy(::Mob const& mob, ::Vec3 const& targetPosition, float attackReachSq, float targetMinY, float targetMaxY, float targetDistanceSqXZ, int attackTicks);
 
     MCFOLD static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
 
@@ -119,4 +98,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

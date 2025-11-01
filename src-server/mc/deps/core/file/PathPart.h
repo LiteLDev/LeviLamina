@@ -10,6 +10,7 @@ public:
     // NOLINTBEGIN
     ::std::string mUtf8StdString;
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

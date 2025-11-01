@@ -21,4 +21,4 @@ MCAPI ::std::vector<::std::tuple<::std::string, ::std::unique_ptr<::br::spawn::P
 MCAPI ::br::spawn::PlacementTypeToken const& NO_RESTRICTIONS();
 // NOLINTEND
 
-} // namespace br::spawn::PlacementTypes
+}

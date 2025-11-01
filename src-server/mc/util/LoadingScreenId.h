@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/util/NewType.h"
 
-struct LoadingScreenId : public ::NewType<::std::optional<uint>> {};
+struct LoadingScreenId : public ::NewType<::std::optional<uint>> {
+};

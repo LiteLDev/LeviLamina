@@ -8,18 +8,15 @@
 // auto generated forward declare list
 // clang-format off
 class FeatureRegistry;
+class IStructureTemplateManager;
 class JigsawStructureRegistry;
-class StructureManager;
 // clang-format on
 
 class VanillaVillageJigsawStructures {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initialize(
-        ::Bedrock::NotNullNonOwnerPtr<::StructureManager> manager,
-        ::FeatureRegistry&                                featureRegistry,
-        ::JigsawStructureRegistry&                        registry
-    );
+    MCAPI static void initialize(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> manager, ::FeatureRegistry& featureRegistry, ::JigsawStructureRegistry& registry);
     // NOLINTEND
+
 };

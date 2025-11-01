@@ -39,11 +39,7 @@ public:
     virtual bool load(::ResourceLocation const&, ::std::string&, ::gsl::span<::std::string const>) const = 0;
 
     // vIndex: 1
-    virtual bool load(
-        ::ResourceLocationPair const&    resourceLocation,
-        ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensions
-    ) const;
+    virtual bool load(::ResourceLocationPair const& resourceLocation, ::std::string& resourceStream, ::gsl::span<::std::string const> extensions) const;
 
     // vIndex: 4
     virtual bool loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
@@ -55,33 +51,22 @@ public:
     virtual bool isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
 
     // vIndex: 6
-    virtual bool isInStreamableLocation(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
-    ) const;
+    virtual bool isInStreamableLocation(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
     // vIndex: 9
     virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const& resourceLocation) const;
 
     // vIndex: 8
-    virtual ::Core::PathBuffer<::std::string>
-    getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
+    virtual ::Core::PathBuffer<::std::string> getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
     // vIndex: 11
-    virtual ::Core::PathBuffer<::std::string>
-    getPathContainingResource(::ResourceLocation const& resourceLocation) const;
+    virtual ::Core::PathBuffer<::std::string> getPathContainingResource(::ResourceLocation const& resourceLocation) const;
 
     // vIndex: 10
-    virtual ::Core::PathBuffer<::std::string> getPathContainingResource(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
-    ) const;
+    virtual ::Core::PathBuffer<::std::string> getPathContainingResource(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
     // vIndex: 12
-    virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
-    ) const;
+    virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
     // NOLINTEND
 
 public:
@@ -93,38 +78,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $load(
-        ::ResourceLocationPair const&    resourceLocation,
-        ::std::string&                   resourceStream,
-        ::gsl::span<::std::string const> extensions
-    ) const;
+    MCNAPI bool $load(::ResourceLocationPair const& resourceLocation, ::std::string& resourceStream, ::gsl::span<::std::string const> extensions) const;
 
     MCNAPI bool $loadText(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
     MCNAPI bool $isInStreamableLocation(::ResourceLocation const& resourceLocation) const;
 
-    MCNAPI bool $isInStreamableLocation(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
-    ) const;
+    MCNAPI bool $isInStreamableLocation(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
     MCNAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string>
-    $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getPath(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string>
-    $getPathContainingResource(::ResourceLocation const& resourceLocation) const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(::ResourceLocation const& resourceLocation) const;
 
-    MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
-    ) const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getPathContainingResource(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
 
-    MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
-        ::ResourceLocation const&        resourceLocation,
-        ::gsl::span<::std::string const> extensions
-    ) const;
+    MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(::ResourceLocation const& resourceLocation, ::gsl::span<::std::string const> extensions) const;
     // NOLINTEND
 
 public:
@@ -132,4 +102,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

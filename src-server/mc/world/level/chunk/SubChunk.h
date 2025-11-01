@@ -25,43 +25,43 @@ struct SubChunk {
 public:
     // SubChunk inner types define
     using Layer = uchar;
-
+    
     enum class BlockLayer : uchar {
         Standard = 0,
-        Extra    = 1,
-        Count    = 2,
+        Extra = 1,
+        Count = 2,
     };
-
+    
     enum class SubChunkState : int {
-        Invalid                    = -1,
-        Normal                     = 0,
-        IsLightingSystemSubChunk   = 1,
-        NeedsRequest               = 2,
+        Invalid = -1,
+        Normal = 0,
+        IsLightingSystemSubChunk = 1,
+        NeedsRequest = 2,
         ReceivedResponseFromServer = 3,
-        ProcessingSubChunk         = 4,
-        WaitingForCacheResponse    = 5,
-        ProcessedSubChunk          = 6,
-        RequestFinished            = 7,
+        ProcessingSubChunk = 4,
+        WaitingForCacheResponse = 5,
+        ProcessedSubChunk = 6,
+        RequestFinished = 7,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::DirtyTicksCounter>                               mDirtyTicksCounter;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubChunkBrightnessStorage>>    mSkyLight;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubChunkBrightnessStorage>>    mBlockLight;
-    ::ll::TypedStorage<1, 1, bool>                                              mHasMaxSkyLight;
-    ::ll::TypedStorage<4, 4, ::SubChunk::SubChunkState>                         mSubChunkState;
-    ::ll::TypedStorage<1, 1, bool>                                              mNeedsInitLighting;
-    ::ll::TypedStorage<1, 1, bool>                                              mNeedsClientLighting;
+    ::ll::TypedStorage<4, 8, ::DirtyTicksCounter> mDirtyTicksCounter;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubChunkBrightnessStorage>> mSkyLight;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SubChunkBrightnessStorage>> mBlockLight;
+    ::ll::TypedStorage<1, 1, bool> mHasMaxSkyLight;
+    ::ll::TypedStorage<4, 4, ::SubChunk::SubChunkState> mSubChunkState;
+    ::ll::TypedStorage<1, 1, bool> mNeedsInitLighting;
+    ::ll::TypedStorage<1, 1, bool> mNeedsClientLighting;
     ::ll::TypedStorage<8, 16, ::std::unique_ptr<::SubChunkStorage<::Block>>[2]> mBlocks;
-    ::ll::TypedStorage<8, 16, ::SubChunkStorage<::Block>* [2]>                  mBlocksReadPtr;
-    ::ll::TypedStorage<8, 8, ::SpinLockImpl*>                                   mWriteLock;
-    ::ll::TypedStorage<8, 8, uint64>                                            mHash;
-    ::ll::TypedStorage<1, 1, bool>                                              mHashDirty;
-    ::ll::TypedStorage<1, 1, char>                                              mAbsoluteIndex;
-    ::ll::TypedStorage<1, 1, bool>                                              mIsReplacementSubChunk;
-    ::ll::TypedStorage<1, 1, uchar>                                             mRenderChunkTrackingVersionNumber;
+    ::ll::TypedStorage<8, 16, ::SubChunkStorage<::Block>*[2]> mBlocksReadPtr;
+    ::ll::TypedStorage<8, 8, ::SpinLockImpl*> mWriteLock;
+    ::ll::TypedStorage<8, 8, uint64> mHash;
+    ::ll::TypedStorage<1, 1, bool> mHashDirty;
+    ::ll::TypedStorage<1, 1, char> mAbsoluteIndex;
+    ::ll::TypedStorage<1, 1, bool> mIsReplacementSubChunk;
+    ::ll::TypedStorage<1, 1, uchar> mRenderChunkTrackingVersionNumber;
     // NOLINTEND
 
 public:
@@ -73,8 +73,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    SubChunk(::Block const* initBlock, bool maxSkyLight, bool fullyLit, ::SpinLockImpl& spinLock, schar absoluteIndex);
+    MCAPI SubChunk(::Block const* initBlock, bool maxSkyLight, bool fullyLit, ::SpinLockImpl& spinLock, schar absoluteIndex);
 
     MCAPI void _createBlockLightStorage();
 
@@ -84,19 +83,9 @@ public:
 
     MCAPI void _setBlock(uchar layer, ushort index, ::Block const& block);
 
-    MCAPI void deserialize(
-        ::IDataInput&                              stream,
-        ::BlockPalette const&                      palette,
-        ::SubChunkPos const&                       subChunkPos,
-        ::std::optional<::DeserializationChanges*> deserializationChanges
-    );
+    MCAPI void deserialize(::IDataInput& stream, ::BlockPalette const& palette, ::SubChunkPos const& subChunkPos, ::std::optional<::DeserializationChanges*> deserializationChanges);
 
-    MCAPI void fetchBlocks(
-        ::BlockPos const& subChunkOrigin,
-        ::BlockPos const& volumeOrigin,
-        short             dimensionMinHeight,
-        ::BlockVolume&    volume
-    ) const;
+    MCAPI void fetchBlocks(::BlockPos const& subChunkOrigin, ::BlockPos const& volumeOrigin, short dimensionMinHeight, ::BlockVolume& volume) const;
 
     MCAPI bool isUniform(::Block const& block) const;
 
@@ -128,8 +117,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Block const* initBlock, bool maxSkyLight, bool fullyLit, ::SpinLockImpl& spinLock, schar absoluteIndex);
+    MCAPI void* $ctor(::Block const* initBlock, bool maxSkyLight, bool fullyLit, ::SpinLockImpl& spinLock, schar absoluteIndex);
     // NOLINTEND
 
 public:
@@ -137,4 +125,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

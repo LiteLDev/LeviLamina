@@ -29,13 +29,13 @@ class ChemistryTableBlockActor : public ::BlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorUniqueID>>      mOpenedPlayer;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LabTableReaction>>   mCurReaction;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorUniqueID>> mOpenedPlayer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LabTableReaction>> mCurReaction;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CraftableCompounds>> mCraftableCompounds;
-    ::ll::TypedStorage<8, 1368, ::ItemStack[9]>                       mItems;
-    ::ll::TypedStorage<8, 152, ::ItemStack>                           mPendingReactionOutput;
-    ::ll::TypedStorage<1, 1, bool>                                    mIsTableTypeCached;
-    ::ll::TypedStorage<8, 48, ::HashedString>                         mCachedTableType;
+    ::ll::TypedStorage<8, 1368, ::ItemStack[9]> mItems;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mPendingReactionOutput;
+    ::ll::TypedStorage<1, 1, bool> mIsTableTypeCached;
+    ::ll::TypedStorage<8, 48, ::HashedString> mCachedTableType;
     // NOLINTEND
 
 public:
@@ -58,7 +58,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
@@ -85,11 +85,7 @@ public:
     virtual void tick(::BlockSource& region) /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
     // NOLINTEND
 
 public:
@@ -97,8 +93,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit ChemistryTableBlockActor(::BlockPos const& pos);
 
-    MCAPI ::std::unique_ptr<::LabTableReaction>
-    _createReaction(::Random& random, ::std::vector<::ItemStack> const& consumedInput);
+    MCAPI ::std::unique_ptr<::LabTableReaction> _createReaction(::Random& random, ::std::vector<::ItemStack> const& consumedInput);
 
     MCAPI void _popPendingReactionOutput(::BlockSource& region);
 
@@ -134,7 +129,7 @@ public:
 
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD int $getMaxStackSize() const;
 
@@ -152,11 +147,7 @@ public:
 
     MCAPI void $tick(::BlockSource& region);
 
-    MCAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
+    MCAPI void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
     // NOLINTEND
 
 public:
@@ -166,4 +157,5 @@ public:
 
     MCNAPI static void** $vftableForBlockActor();
     // NOLINTEND
+
 };

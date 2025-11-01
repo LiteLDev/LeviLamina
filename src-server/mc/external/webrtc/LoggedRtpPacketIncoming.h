@@ -16,6 +16,7 @@ public:
     LoggedRtpPacketIncoming& operator=(LoggedRtpPacketIncoming const&);
     LoggedRtpPacketIncoming(LoggedRtpPacketIncoming const&);
     LoggedRtpPacketIncoming();
+
 };
 
-} // namespace webrtc
+}

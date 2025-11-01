@@ -4,7 +4,8 @@
 
 namespace Bedrock::Threading::Detail {
 
-template <typename T0>
-struct CachedAsyncImpl {};
+template<typename T0>
+struct CachedAsyncImpl {
+};
 
-} // namespace Bedrock::Threading::Detail
+}

@@ -17,4 +17,5 @@ public:
     AutoplaceResultData& operator=(AutoplaceResultData const&);
     AutoplaceResultData(AutoplaceResultData const&);
     AutoplaceResultData();
+
 };

@@ -26,30 +26,26 @@ public:
     // vIndex: 0
     virtual ~ObserverBlock() /*override*/ = default;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 87
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
+    // vIndex: 86
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
 
-    // vIndex: 132
+    // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 64
     virtual void movedByPiston(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 67
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 61
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const /*override*/;
 
     // vIndex: 54
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
-        /*override*/;
+    virtual bool shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const /*override*/;
 
     // vIndex: 48
     virtual bool isValidAuxValue(int value) const /*override*/;
@@ -57,20 +53,19 @@ public:
     // vIndex: 44
     virtual bool isSignalSource() const /*override*/;
 
-    // vIndex: 137
-    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const
-        /*override*/;
+    // vIndex: 136
+    virtual bool allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 119
     virtual ::Block const& getRenderBlock() const /*override*/;
 
-    // vIndex: 121
+    // vIndex: 120
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 122
+    // vIndex: 121
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
     // NOLINTEND
 
@@ -81,8 +76,7 @@ public:
 
     MCAPI void _startSignal(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void
-    _updateState(::BlockSource& region, ::BlockPos const& pos, ::PulseCapacitor& component, bool turnOn) const;
+    MCAPI void _updateState(::BlockSource& region, ::BlockPos const& pos, ::PulseCapacitor& component, bool turnOn) const;
 
     MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
@@ -110,8 +104,7 @@ public:
 
     MCFOLD void $onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const;
 
-    MCAPI bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+    MCAPI bool $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCAPI bool $isValidAuxValue(int value) const;
 
@@ -133,4 +126,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

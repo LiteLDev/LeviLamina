@@ -14,4 +14,4 @@ namespace PlayerCapabilities {
 MCNAPI ::std::unique_ptr<::PlayerCapabilities::ISharedController> createController(::Level const& level);
 // NOLINTEND
 
-} // namespace PlayerCapabilities
+}

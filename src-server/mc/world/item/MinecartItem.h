@@ -27,17 +27,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 80
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
-        /*override*/;
+    // vIndex: 81
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual bool isDestructive(int) const /*override*/;
 
-    // vIndex: 122
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    // vIndex: 123
+    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
 
     // vIndex: 0
     virtual ~MinecartItem() /*override*/ = default;
@@ -50,8 +47,7 @@ public:
 
     MCAPI bool $isDestructive(int) const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
@@ -59,4 +55,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

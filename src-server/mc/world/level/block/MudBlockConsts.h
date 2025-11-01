@@ -13,4 +13,4 @@ namespace MudBlockConsts {
 MCAPI ::AABB const& MUD_BLOCK_AABB();
 // NOLINTEND
 
-} // namespace MudBlockConsts
+}

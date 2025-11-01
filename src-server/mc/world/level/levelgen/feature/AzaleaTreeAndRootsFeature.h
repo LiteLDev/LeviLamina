@@ -28,8 +28,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool _isLushGroundReplaceable(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool
-    _tryPlaceAzaleaTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uint waterDepth) const;
+    MCAPI bool _tryPlaceAzaleaTree(::BlockSource& region, ::BlockPos const& pos, ::Random& random, uint waterDepth) const;
     // NOLINTEND
 
 public:
@@ -43,4 +42,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -13,4 +13,4 @@ namespace FlatWorldOptionsHelper {
 MCAPI ::std::string getJSON(::LevelData const& levelData);
 // NOLINTEND
 
-} // namespace FlatWorldOptionsHelper
+}

@@ -25,7 +25,7 @@ public:
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mLegs;
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mFeet;
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mBody;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>              mRuntimeId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
     // NOLINTEND
 
 public:
@@ -37,10 +37,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -86,4 +86,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

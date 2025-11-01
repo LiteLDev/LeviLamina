@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/Rotation.h"
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/util/Rotation.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/StructureStart.h"
 
 // auto generated forward declare list
@@ -20,7 +20,7 @@ class WoodlandMansionStart : public ::StructureStart {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::Rotation>  mRotationGenerated;
+    ::ll::TypedStorage<1, 1, ::Rotation> mRotationGenerated;
     ::ll::TypedStorage<4, 12, ::BlockPos> mPositionGenerated;
     // NOLINTEND
 
@@ -42,14 +42,7 @@ public:
     // NOLINTBEGIN
     MCAPI void _create(::Dimension& dimension, ::Random& random, int x, int z);
 
-    MCAPI void _makeStairs(
-        ::BlockPos const&    startPos,
-        ::Block const&       stairBlock,
-        uchar                xStepDir,
-        uchar                yStepDir,
-        ::BlockSource&       region,
-        ::BoundingBox const& chunkBB
-    );
+    MCAPI void _makeStairs(::BlockPos const& startPos, ::Block const& stairBlock, uchar xStepDir, uchar yStepDir, ::BlockSource& region, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:
@@ -65,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

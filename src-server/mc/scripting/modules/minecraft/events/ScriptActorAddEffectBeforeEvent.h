@@ -18,9 +18,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mActor;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                              mEffectType;
-    ::ll::TypedStorage<4, 4, int>                                                                         mDuration;
-    ::ll::TypedStorage<1, 1, bool>                                                                        mCancel;
+    ::ll::TypedStorage<8, 32, ::std::string> mEffectType;
+    ::ll::TypedStorage<4, 4, int> mDuration;
+    ::ll::TypedStorage<1, 1, bool> mCancel;
     // NOLINTEND
 
 public:
@@ -32,8 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&
-    operator=(::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&&);
+    MCAPI ::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent& operator=(::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent&&);
 
     MCAPI ~ScriptActorAddEffectBeforeEvent();
     // NOLINTEND
@@ -49,6 +48,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

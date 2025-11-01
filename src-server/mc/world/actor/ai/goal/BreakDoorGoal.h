@@ -14,10 +14,10 @@ class BreakDoorGoal : public ::DoorInteractGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>       mBreakTime;
+    ::ll::TypedStorage<4, 4, int> mBreakTime;
     ::ll::TypedStorage<4, 4, int const> mBreakDoorTime;
-    ::ll::TypedStorage<4, 4, int>       mLastBreakProgress;
-    ::ll::TypedStorage<8, 8, ::Mob&>    mMob;
+    ::ll::TypedStorage<4, 4, int> mLastBreakProgress;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
 
 public:
@@ -72,4 +72,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

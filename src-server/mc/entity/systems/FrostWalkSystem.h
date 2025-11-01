@@ -13,4 +13,4 @@ namespace FrostWalkSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace FrostWalkSystem
+}

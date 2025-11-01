@@ -18,8 +18,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkc0ba51;
-    ::ll::UntypedStorage<8, 8>  mUnk48bddd;
-    ::ll::UntypedStorage<8, 8>  mUnk39d08b;
+    ::ll::UntypedStorage<8, 8> mUnk48bddd;
+    ::ll::UntypedStorage<8, 8> mUnk39d08b;
     // NOLINTEND
 
 public:
@@ -82,9 +82,6 @@ public:
     // vIndex: 17
     virtual bool setApplicationHandshakeCompleted(::NetworkIdentifier const&) /*override*/;
 
-    // vIndex: 19
-    virtual void setInactivityTimeout(::NetworkIdentifier const&, ::std::optional<::std::chrono::seconds>) /*override*/;
-
     // vIndex: 16
     virtual ::NetworkIdentifier getNetworkIdentifier() const /*override*/;
 
@@ -103,4 +100,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

@@ -60,8 +60,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::scoped_refptr<::webrtc::LocalAudioSource>
-    Create(::cricket::AudioOptions const* audio_options);
+    MCNAPI static ::webrtc::scoped_refptr<::webrtc::LocalAudioSource> Create(::cricket::AudioOptions const* audio_options);
     // NOLINTEND
 
 public:
@@ -85,6 +84,7 @@ public:
 
     MCNAPI static void** $vftableForNotifierInterface();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

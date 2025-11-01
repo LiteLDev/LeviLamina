@@ -4,7 +4,8 @@
 
 namespace details {
 
-template <typename... T0>
-struct view_args_to_filter_read_write {};
+template<typename... T0>
+struct view_args_to_filter_read_write {
+};
 
-} // namespace details
+}

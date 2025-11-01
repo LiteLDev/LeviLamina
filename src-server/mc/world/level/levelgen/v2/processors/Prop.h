@@ -11,6 +11,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::string_view> id;
     ::ll::TypedStorage<8, 16, ::std::string_view> value;
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen::processors::JigsawReplacementHelpers
+}

@@ -25,43 +25,34 @@ class SeagrassBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 87
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
+    // vIndex: 86
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
+
+    // vIndex: 73
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const /*override*/;
 
     // vIndex: 74
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
-        /*override*/;
-
-    // vIndex: 75
     virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
-    // vIndex: 76
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    // vIndex: 75
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 112
+    // vIndex: 111
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const /*override*/;
+    virtual ::AABB getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>) const /*override*/;
 
     // vIndex: 48
     virtual bool isValidAuxValue(int value) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -89,8 +80,7 @@ public:
 
     MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
     MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
 
@@ -100,12 +90,7 @@ public:
 
     MCAPI ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCFOLD ::AABB $getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
+    MCFOLD ::AABB $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
     MCFOLD bool $isValidAuxValue(int value) const;
 
@@ -117,4 +102,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

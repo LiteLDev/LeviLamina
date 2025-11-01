@@ -17,4 +17,5 @@ public:
     JumpInfo& operator=(JumpInfo const&);
     JumpInfo(JumpInfo const&);
     JumpInfo();
+
 };

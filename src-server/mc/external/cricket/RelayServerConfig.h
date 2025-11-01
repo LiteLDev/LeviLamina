@@ -18,10 +18,10 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnka997b0;
     ::ll::UntypedStorage<8, 64> mUnkd81b79;
-    ::ll::UntypedStorage<4, 4>  mUnk765d45;
+    ::ll::UntypedStorage<4, 4> mUnk765d45;
     ::ll::UntypedStorage<8, 24> mUnkf894b9;
     ::ll::UntypedStorage<8, 24> mUnkb36e86;
-    ::ll::UntypedStorage<8, 8>  mUnk3888a0;
+    ::ll::UntypedStorage<8, 8> mUnk3888a0;
     ::ll::UntypedStorage<8, 32> mUnkb68e75;
     // NOLINTEND
 
@@ -36,12 +36,7 @@ public:
 
     MCNAPI RelayServerConfig(::cricket::RelayServerConfig const&);
 
-    MCNAPI RelayServerConfig(
-        ::rtc::SocketAddress const& address,
-        ::std::string_view          username,
-        ::std::string_view          password,
-        ::cricket::ProtocolType     proto
-    );
+    MCNAPI RelayServerConfig(::rtc::SocketAddress const& address, ::std::string_view username, ::std::string_view password, ::cricket::ProtocolType proto);
 
     MCNAPI ~RelayServerConfig();
     // NOLINTEND
@@ -53,12 +48,7 @@ public:
 
     MCNAPI void* $ctor(::cricket::RelayServerConfig const&);
 
-    MCNAPI void* $ctor(
-        ::rtc::SocketAddress const& address,
-        ::std::string_view          username,
-        ::std::string_view          password,
-        ::cricket::ProtocolType     proto
-    );
+    MCNAPI void* $ctor(::rtc::SocketAddress const& address, ::std::string_view username, ::std::string_view password, ::cricket::ProtocolType proto);
     // NOLINTEND
 
 public:
@@ -66,6 +56,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

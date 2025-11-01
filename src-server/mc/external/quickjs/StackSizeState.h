@@ -20,4 +20,5 @@ public:
     StackSizeState& operator=(StackSizeState const&);
     StackSizeState(StackSizeState const&);
     StackSizeState();
+
 };

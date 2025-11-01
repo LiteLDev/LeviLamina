@@ -53,8 +53,7 @@ public:
     virtual int GetError() /*override*/;
 
     // vIndex: 8
-    virtual void
-    OnConnectionRequestResponse(::cricket::StunRequest* req, ::cricket::StunMessage* response) /*override*/;
+    virtual void OnConnectionRequestResponse(::cricket::StunRequest* request, ::cricket::StunMessage* response) /*override*/;
     // NOLINTEND
 
 public:
@@ -78,21 +77,13 @@ public:
 
     MCNAPI void OnReadyToSend(::rtc::AsyncPacketSocket* socket);
 
-    MCNAPI TCPConnection(
-        ::rtc::WeakPtr<::cricket::Port> tcp_port,
-        ::cricket::Candidate const&     candidate,
-        ::rtc::AsyncPacketSocket*       socket
-    );
+    MCNAPI TCPConnection(::rtc::WeakPtr<::cricket::Port> tcp_port, ::cricket::Candidate const& candidate, ::rtc::AsyncPacketSocket* socket);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::rtc::WeakPtr<::cricket::Port> tcp_port,
-        ::cricket::Candidate const&     candidate,
-        ::rtc::AsyncPacketSocket*       socket
-    );
+    MCNAPI void* $ctor(::rtc::WeakPtr<::cricket::Port> tcp_port, ::cricket::Candidate const& candidate, ::rtc::AsyncPacketSocket* socket);
     // NOLINTEND
 
 public:
@@ -108,7 +99,7 @@ public:
 
     MCNAPI int $GetError();
 
-    MCNAPI void $OnConnectionRequestResponse(::cricket::StunRequest* req, ::cricket::StunMessage* response);
+    MCNAPI void $OnConnectionRequestResponse(::cricket::StunRequest* request, ::cricket::StunMessage* response);
     // NOLINTEND
 
 public:
@@ -118,6 +109,7 @@ public:
 
     MCNAPI static void** $vftableForConnection();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

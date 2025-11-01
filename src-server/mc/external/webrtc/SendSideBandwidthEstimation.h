@@ -23,50 +23,50 @@ class SendSideBandwidthEstimation {
 public:
     // SendSideBandwidthEstimation inner types define
     enum class UmaState : int {
-        KNoUpdate  = 0,
+        KNoUpdate = 0,
         KFirstDone = 1,
-        KDone      = 2,
+        KDone = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>    mUnk2749da;
-    ::ll::UntypedStorage<8, 432>  mUnk1826b7;
-    ::ll::UntypedStorage<8, 104>  mUnk8de58b;
-    ::ll::UntypedStorage<8, 40>   mUnk389eb4;
-    ::ll::UntypedStorage<4, 4>    mUnkfca5e3;
-    ::ll::UntypedStorage<4, 4>    mUnka67b68;
-    ::ll::UntypedStorage<8, 16>   mUnkfc0450;
-    ::ll::UntypedStorage<8, 8>    mUnk6de69d;
-    ::ll::UntypedStorage<8, 8>    mUnk4190b2;
-    ::ll::UntypedStorage<8, 8>    mUnkef9cfe;
-    ::ll::UntypedStorage<8, 8>    mUnk4cdf1e;
-    ::ll::UntypedStorage<8, 8>    mUnk8fa63a;
-    ::ll::UntypedStorage<1, 1>    mUnkb2e76f;
-    ::ll::UntypedStorage<8, 8>    mUnkf9e06f;
-    ::ll::UntypedStorage<8, 8>    mUnk296a49;
-    ::ll::UntypedStorage<1, 1>    mUnkb45380;
-    ::ll::UntypedStorage<1, 1>    mUnk78fbbb;
-    ::ll::UntypedStorage<8, 8>    mUnk5de9da;
-    ::ll::UntypedStorage<8, 8>    mUnk35a36d;
-    ::ll::UntypedStorage<8, 8>    mUnkdc28fe;
-    ::ll::UntypedStorage<8, 8>    mUnk9a4167;
-    ::ll::UntypedStorage<8, 8>    mUnk9d57d4;
-    ::ll::UntypedStorage<4, 4>    mUnk6ef5a0;
-    ::ll::UntypedStorage<8, 8>    mUnkb76c59;
-    ::ll::UntypedStorage<4, 4>    mUnkc84f31;
-    ::ll::UntypedStorage<4, 4>    mUnk143d20;
-    ::ll::UntypedStorage<8, 32>   mUnk464255;
-    ::ll::UntypedStorage<8, 8>    mUnkab88db;
-    ::ll::UntypedStorage<8, 8>    mUnk18d152;
-    ::ll::UntypedStorage<4, 4>    mUnkf15cc2;
-    ::ll::UntypedStorage<4, 4>    mUnkbd5b57;
-    ::ll::UntypedStorage<8, 8>    mUnkecd72b;
+    ::ll::UntypedStorage<8, 8> mUnk2749da;
+    ::ll::UntypedStorage<8, 432> mUnk1826b7;
+    ::ll::UntypedStorage<8, 104> mUnk8de58b;
+    ::ll::UntypedStorage<8, 40> mUnk389eb4;
+    ::ll::UntypedStorage<4, 4> mUnkfca5e3;
+    ::ll::UntypedStorage<4, 4> mUnka67b68;
+    ::ll::UntypedStorage<8, 16> mUnkfc0450;
+    ::ll::UntypedStorage<8, 8> mUnk6de69d;
+    ::ll::UntypedStorage<8, 8> mUnk4190b2;
+    ::ll::UntypedStorage<8, 8> mUnkef9cfe;
+    ::ll::UntypedStorage<8, 8> mUnk4cdf1e;
+    ::ll::UntypedStorage<8, 8> mUnk8fa63a;
+    ::ll::UntypedStorage<1, 1> mUnkb2e76f;
+    ::ll::UntypedStorage<8, 8> mUnkf9e06f;
+    ::ll::UntypedStorage<8, 8> mUnk296a49;
+    ::ll::UntypedStorage<1, 1> mUnkb45380;
+    ::ll::UntypedStorage<1, 1> mUnk78fbbb;
+    ::ll::UntypedStorage<8, 8> mUnk5de9da;
+    ::ll::UntypedStorage<8, 8> mUnk35a36d;
+    ::ll::UntypedStorage<8, 8> mUnkdc28fe;
+    ::ll::UntypedStorage<8, 8> mUnk9a4167;
+    ::ll::UntypedStorage<8, 8> mUnk9d57d4;
+    ::ll::UntypedStorage<4, 4> mUnk6ef5a0;
+    ::ll::UntypedStorage<8, 8> mUnkb76c59;
+    ::ll::UntypedStorage<4, 4> mUnkc84f31;
+    ::ll::UntypedStorage<4, 4> mUnk143d20;
+    ::ll::UntypedStorage<8, 32> mUnk464255;
+    ::ll::UntypedStorage<8, 8> mUnkab88db;
+    ::ll::UntypedStorage<8, 8> mUnk18d152;
+    ::ll::UntypedStorage<4, 4> mUnkf15cc2;
+    ::ll::UntypedStorage<4, 4> mUnkbd5b57;
+    ::ll::UntypedStorage<8, 8> mUnkecd72b;
     ::ll::UntypedStorage<8, 1360> mUnk2eba1d;
-    ::ll::UntypedStorage<8, 8>    mUnk82be2e;
-    ::ll::UntypedStorage<4, 4>    mUnk762e5c;
-    ::ll::UntypedStorage<8, 80>   mUnkf3243e;
+    ::ll::UntypedStorage<8, 8> mUnk82be2e;
+    ::ll::UntypedStorage<4, 4> mUnk762e5c;
+    ::ll::UntypedStorage<8, 80> mUnkf3243e;
     // NOLINTEND
 
 public:
@@ -108,17 +108,11 @@ public:
 
     MCNAPI bool PaceAtLossBasedEstimate() const;
 
-    MCNAPI
-    SendSideBandwidthEstimation(::webrtc::FieldTrialsView const* key_value_config, ::webrtc::RtcEventLog* event_log);
+    MCNAPI SendSideBandwidthEstimation(::webrtc::FieldTrialsView const* key_value_config, ::webrtc::RtcEventLog* event_log);
 
     MCNAPI void SetAcknowledgedRate(::std::optional<::webrtc::DataRate> acknowledged_rate, ::webrtc::Timestamp at_time);
 
-    MCNAPI void SetBitrates(
-        ::std::optional<::webrtc::DataRate> send_bitrate,
-        ::webrtc::DataRate                  min_bitrate,
-        ::webrtc::DataRate                  max_bitrate,
-        ::webrtc::Timestamp                 at_time
-    );
+    MCNAPI void SetBitrates(::std::optional<::webrtc::DataRate> send_bitrate, ::webrtc::DataRate min_bitrate, ::webrtc::DataRate max_bitrate, ::webrtc::Timestamp at_time);
 
     MCNAPI void SetMinMaxBitrate(::webrtc::DataRate min_bitrate, ::webrtc::DataRate max_bitrate);
 
@@ -128,12 +122,7 @@ public:
 
     MCNAPI void UpdateEstimate(::webrtc::Timestamp at_time);
 
-    MCNAPI void UpdateLossBasedEstimator(
-        ::webrtc::TransportPacketsFeedback const& report,
-        ::webrtc::BandwidthUsage                  delay_detector_state,
-        ::std::optional<::webrtc::DataRate>       probe_bitrate,
-        bool                                      in_alr
-    );
+    MCNAPI void UpdateLossBasedEstimator(::webrtc::TransportPacketsFeedback const& report, ::webrtc::BandwidthUsage delay_detector_state, ::std::optional<::webrtc::DataRate> probe_bitrate, bool in_alr);
 
     MCNAPI void UpdateMinHistory(::webrtc::Timestamp at_time);
 
@@ -167,6 +156,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

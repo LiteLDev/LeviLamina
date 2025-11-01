@@ -13,5 +13,6 @@ public:
     ::ll::UntypedStorage<4, 16> mUnk21df80;
     ::ll::UntypedStorage<1, 16> mUnk2b9688;
     // NOLINTEND
+
 };
-} // namespace webrtc
+}

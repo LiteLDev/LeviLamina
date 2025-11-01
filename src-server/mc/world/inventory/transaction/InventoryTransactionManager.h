@@ -14,10 +14,10 @@ class InventoryTransactionManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Player&>                                 mPlayer;
+    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::InventoryTransaction>> mCurrentTransaction;
-    ::ll::TypedStorage<8, 24, ::std::vector<::InventoryAction>>         mExpectedActions;
-    ::ll::TypedStorage<1, 1, bool>                                      mEnableLogs;
+    ::ll::TypedStorage<8, 24, ::std::vector<::InventoryAction>> mExpectedActions;
+    ::ll::TypedStorage<1, 1, bool> mEnableLogs;
     // NOLINTEND
 
 public:
@@ -43,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

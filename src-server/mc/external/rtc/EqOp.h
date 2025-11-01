@@ -4,6 +4,7 @@
 
 namespace rtc::safe_cmp_impl {
 
-struct EqOp {};
+struct EqOp {
+};
 
-} // namespace rtc::safe_cmp_impl
+}

@@ -4,7 +4,8 @@
 
 namespace Core {
 
-template <typename T0>
-class RefCountedSet {};
+template<typename T0>
+class RefCountedSet {
+};
 
-} // namespace Core
+}

@@ -10,13 +10,13 @@ struct PhotoTransferPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>  mPhotoName;
-    ::ll::TypedStorage<8, 32, ::std::string>  mPhotoData;
-    ::ll::TypedStorage<8, 32, ::std::string>  mBookId;
-    ::ll::TypedStorage<1, 1, ::PhotoType>     mType;
-    ::ll::TypedStorage<1, 1, ::PhotoType>     mSourceType;
+    ::ll::TypedStorage<8, 32, ::std::string> mPhotoName;
+    ::ll::TypedStorage<8, 32, ::std::string> mPhotoData;
+    ::ll::TypedStorage<8, 32, ::std::string> mBookId;
+    ::ll::TypedStorage<1, 1, ::PhotoType> mType;
+    ::ll::TypedStorage<1, 1, ::PhotoType> mSourceType;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mOwnerId;
-    ::ll::TypedStorage<8, 32, ::std::string>  mNewPhotoName;
+    ::ll::TypedStorage<8, 32, ::std::string> mNewPhotoName;
     // NOLINTEND
 
 public:
@@ -39,4 +39,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

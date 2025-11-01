@@ -10,4 +10,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mPositionAcceptance;
     ::ll::TypedStorage<4, 4, float> mPositionPersuasion;
     // NOLINTEND
+
 };

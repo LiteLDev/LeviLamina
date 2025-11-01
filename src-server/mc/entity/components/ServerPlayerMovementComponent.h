@@ -16,12 +16,12 @@ struct ServerPlayerMovementComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::std::bitset<3>>                       mServerHasMovementAuthority;
-    ::ll::TypedStorage<1, 1, bool>                                   mServerHasInventoryAuthority;
-    ::ll::TypedStorage<4, 8, ::std::optional<float>>                 mAcceptClientPosIfWithinDistanceSq;
-    ::ll::TypedStorage<8, 8, uint64>                                 mPlayerTickCredits;
+    ::ll::TypedStorage<4, 4, ::std::bitset<4>> mServerHasMovementAuthority;
+    ::ll::TypedStorage<1, 1, bool> mServerHasInventoryAuthority;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>> mAcceptClientPosIfWithinDistanceSq;
+    ::ll::TypedStorage<8, 8, uint64> mPlayerTickCredits;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::IPlayerTickPolicy>> mPolicy;
-    ::ll::TypedStorage<8, 40, ::std::deque<::MovementPackets>>       mQueuedUpdates;
+    ::ll::TypedStorage<8, 40, ::std::deque<::MovementPackets>> mQueuedUpdates;
     // NOLINTEND
 
 public:
@@ -52,4 +52,5 @@ public:
 
     MCAPI void* $ctor(::ServerPlayerMovementComponent&&);
     // NOLINTEND
+
 };

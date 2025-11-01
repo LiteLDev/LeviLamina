@@ -7,6 +7,7 @@
 
 namespace Bedrock::PubSub {
 
-class RawSubscription : public ::Bedrock::PubSub::SubscriptionBase {};
+class RawSubscription : public ::Bedrock::PubSub::SubscriptionBase {
+};
 
-} // namespace Bedrock::PubSub
+}

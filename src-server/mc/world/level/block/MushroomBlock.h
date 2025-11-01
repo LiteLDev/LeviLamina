@@ -20,25 +20,22 @@ class MushroomBlock : public ::FoliageBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 80
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 81
+    // vIndex: 80
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 74
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
-        /*override*/;
+    // vIndex: 73
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const /*override*/;
 
-    // vIndex: 76
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    // vIndex: 75
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
@@ -60,8 +57,7 @@ public:
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
@@ -73,4 +69,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

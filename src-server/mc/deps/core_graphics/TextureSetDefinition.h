@@ -13,10 +13,10 @@ class TextureSetDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk117ac6;
-    ::ll::UntypedStorage<1, 1>   mUnkcd60ba;
-    ::ll::UntypedStorage<1, 1>   mUnkaf0821;
-    ::ll::UntypedStorage<8, 8>   mUnk108902;
+    ::ll::UntypedStorage<8, 24> mUnk117ac6;
+    ::ll::UntypedStorage<1, 1> mUnkcd60ba;
+    ::ll::UntypedStorage<1, 1> mUnkaf0821;
+    ::ll::UntypedStorage<8, 8> mUnk108902;
     ::ll::UntypedStorage<8, 112> mUnk3fef51;
     // NOLINTEND
 
@@ -25,6 +25,7 @@ public:
     TextureSetDefinition& operator=(TextureSetDefinition const&);
     TextureSetDefinition(TextureSetDefinition const&);
     TextureSetDefinition();
+
 };
 
-} // namespace cg
+}

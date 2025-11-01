@@ -6,7 +6,7 @@ namespace ScriptModuleMinecraft {
 
 enum class ScriptPlayerInventoryType : int {
     Inventory = -1,
-    Hotbar    = -2,
+    Hotbar = -2,
 };
 
 }

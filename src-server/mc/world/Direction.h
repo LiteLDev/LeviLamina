@@ -6,13 +6,13 @@ class Direction {
 public:
     // Direction inner types define
     enum class Type : uchar {
-        South     = 0,
-        West      = 1,
-        North     = 2,
-        East      = 3,
+        South = 0,
+        West = 1,
+        North = 2,
+        East = 3,
         Undefined = 255,
     };
-
+    
 public:
     // static functions
     // NOLINTBEGIN
@@ -40,4 +40,5 @@ public:
 
     MCNAPI static ::std::unordered_map<uint, ::std::string> const& TO_STRING_MAP();
     // NOLINTEND
+
 };

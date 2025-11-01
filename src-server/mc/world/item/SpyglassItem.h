@@ -17,17 +17,16 @@ class SpyglassItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 82
+    // vIndex: 83
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
-    // vIndex: 81
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
-        /*override*/;
+    // vIndex: 82
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const /*override*/;
 
-    // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
+    // vIndex: 77
+    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
-    // vIndex: 62
+    // vIndex: 63
     virtual float getViewDamping() const /*override*/;
 
     // vIndex: 0
@@ -41,7 +40,7 @@ public:
 
     MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
     MCFOLD float $getViewDamping() const;
     // NOLINTEND
@@ -51,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

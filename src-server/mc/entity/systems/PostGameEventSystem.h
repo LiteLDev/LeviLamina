@@ -13,4 +13,4 @@ namespace PostGameEventSystem {
 MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
-} // namespace PostGameEventSystem
+}

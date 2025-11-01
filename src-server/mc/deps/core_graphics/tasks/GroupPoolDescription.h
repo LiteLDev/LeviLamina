@@ -18,6 +18,7 @@ public:
     GroupPoolDescription& operator=(GroupPoolDescription const&);
     GroupPoolDescription(GroupPoolDescription const&);
     GroupPoolDescription();
+
 };
 
-} // namespace cg
+}

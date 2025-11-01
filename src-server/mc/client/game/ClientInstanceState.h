@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ClientInstanceState : int {
-    Idle             = 0,
+    Idle = 0,
     WaitingForPlayer = 1,
-    WaitingToPlay    = 2,
-    Playing          = 3,
+    WaitingToPlay = 2,
+    Playing = 3,
 };

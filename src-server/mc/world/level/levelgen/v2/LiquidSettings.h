@@ -5,7 +5,7 @@
 namespace br::worldgen {
 
 enum class LiquidSettings : uchar {
-    ApplyWaterlogging  = 0,
+    ApplyWaterlogging = 0,
     IgnoreWaterlogging = 1,
 };
 

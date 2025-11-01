@@ -21,4 +21,5 @@ public:
     // vIndex: 0
     virtual ~GeometryPtr() = default;
     // NOLINTEND
+
 };

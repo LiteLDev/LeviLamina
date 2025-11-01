@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 
 struct MinecartPreNormalTickBlockPosComponent {
 public:
@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::BlockPos> mBlockPos;
     // NOLINTEND
+
 };

@@ -8,4 +8,4 @@ namespace StructureFeatureTypeNames {
 MCAPI ::std::map<::std::string, ::std::string> const& getFeatureNameAliasesMap();
 // NOLINTEND
 
-} // namespace StructureFeatureTypeNames
+}

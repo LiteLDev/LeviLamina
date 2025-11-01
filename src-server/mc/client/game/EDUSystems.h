@@ -15,8 +15,8 @@ class EDUSystems : public ::IEDUSystems {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkbd6e93;
-    ::ll::UntypedStorage<8, 8>  mUnk898d35;
+    ::ll::UntypedStorage<8, 8> mUnkbd6e93;
+    ::ll::UntypedStorage<8, 8> mUnk898d35;
     ::ll::UntypedStorage<8, 16> mUnkbac05e;
     // NOLINTEND
 
@@ -44,4 +44,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

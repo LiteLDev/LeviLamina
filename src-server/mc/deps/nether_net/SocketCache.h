@@ -18,7 +18,7 @@ class SocketCache {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk50509d;
+    ::ll::UntypedStorage<8, 8> mUnk50509d;
     ::ll::UntypedStorage<8, 56> mUnka4351c;
     // NOLINTEND
 
@@ -31,12 +31,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::rtc::AsyncPacketSocket>
-    _tryGetCachedSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort);
+    MCNAPI ::std::shared_ptr<::rtc::AsyncPacketSocket> _tryGetCachedSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort);
 
-    MCNAPI ::std::shared_ptr<::rtc::AsyncPacketSocket>
-    createGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort);
+    MCNAPI ::std::shared_ptr<::rtc::AsyncPacketSocket> createGlobalUdpSocket(::rtc::SocketAddress const& address, ushort minPort, ushort maxPort);
     // NOLINTEND
+
 };
 
-} // namespace NetherNet
+}

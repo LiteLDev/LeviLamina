@@ -17,23 +17,24 @@ public:
     // clang-format off
     class LayerInfoVar;
     // clang-format on
-
+    
     // TextureSetImageDescription inner types define
     class LayerInfoVar {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkf70e18;
+        ::ll::UntypedStorage<1, 1> mUnkf70e18;
         ::ll::UntypedStorage<4, 24> mUnk1eef15;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         LayerInfoVar& operator=(LayerInfoVar const&);
         LayerInfoVar(LayerInfoVar const&);
         LayerInfoVar();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -45,6 +46,7 @@ public:
     TextureSetImageDescription& operator=(TextureSetImageDescription const&);
     TextureSetImageDescription(TextureSetImageDescription const&);
     TextureSetImageDescription();
+
 };
 
-} // namespace cg
+}

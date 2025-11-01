@@ -50,21 +50,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Endermite(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI Endermite(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -86,4 +78,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

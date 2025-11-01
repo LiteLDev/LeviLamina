@@ -18,16 +18,16 @@ class CalibratedSculkSensorBlock : public ::SculkSensorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 121
+    // vIndex: 120
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 122
+    // vIndex: 121
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 67
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0
@@ -37,8 +37,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool
-    _wouldBePoweredByCircuit(::CircuitSystem& circuitSystem, ::BlockPos const& pos, uchar connectionDirection);
+    MCAPI static bool _wouldBePoweredByCircuit(::CircuitSystem& circuitSystem, ::BlockPos const& pos, uchar connectionDirection);
 
     MCAPI static int getInputStrength(::BlockSource const& region, ::BlockPos const& pos);
     // NOLINTEND
@@ -58,4 +57,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

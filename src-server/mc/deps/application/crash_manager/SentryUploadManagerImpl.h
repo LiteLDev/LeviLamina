@@ -36,12 +36,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::string getParameters(::Bedrock::SessionInfo const&, ::Bedrock::PlatformRuntimeInfo const*) const
-        /*override*/;
+    virtual ::std::string getParameters(::Bedrock::SessionInfo const&, ::Bedrock::PlatformRuntimeInfo const*) const /*override*/;
 
     // vIndex: 2
-    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<void>>>
-    uploadMinidump(::TaskGroup&, ::Core::Path const&, ::std::string const&) const /*override*/;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<void>>> uploadMinidump(::TaskGroup&, ::Core::Path const&, ::std::string const&) const /*override*/;
 
     // vIndex: 3
     virtual ::std::string const& getMinidumpUploadUri() const /*override*/;
@@ -55,6 +53,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

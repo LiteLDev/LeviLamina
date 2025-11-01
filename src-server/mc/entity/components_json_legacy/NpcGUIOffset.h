@@ -16,4 +16,5 @@ public:
     NpcGUIOffset& operator=(NpcGUIOffset const&);
     NpcGUIOffset(NpcGUIOffset const&);
     NpcGUIOffset();
+
 };

@@ -38,22 +38,21 @@ namespace Scripting::QuickJS { struct MallocFunctions; }
 
 namespace Scripting::QuickJS {
 
-class QuickJSRuntime : public ::Scripting::StringBasedRuntime,
-                       public ::std::enable_shared_from_this<::Scripting::QuickJS::QuickJSRuntime> {
+class QuickJSRuntime : public ::Scripting::StringBasedRuntime, public ::std::enable_shared_from_this<::Scripting::QuickJS::QuickJSRuntime> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk4a943c;
-    ::ll::UntypedStorage<8, 8>  mUnkfaeecd;
-    ::ll::UntypedStorage<8, 8>  mUnk53e8fe;
-    ::ll::UntypedStorage<8, 8>  mUnkf9e8f9;
+    ::ll::UntypedStorage<8, 8> mUnk4a943c;
+    ::ll::UntypedStorage<8, 8> mUnkfaeecd;
+    ::ll::UntypedStorage<8, 8> mUnk53e8fe;
+    ::ll::UntypedStorage<8, 8> mUnkf9e8f9;
     ::ll::UntypedStorage<8, 64> mUnk1c3b53;
-    ::ll::UntypedStorage<8, 8>  mUnk70cddb;
-    ::ll::UntypedStorage<8, 8>  mUnk6d0b0e;
-    ::ll::UntypedStorage<8, 8>  mUnk2178f5;
+    ::ll::UntypedStorage<8, 8> mUnk70cddb;
+    ::ll::UntypedStorage<8, 8> mUnk6d0b0e;
+    ::ll::UntypedStorage<8, 8> mUnk2178f5;
     ::ll::UntypedStorage<8, 24> mUnke1366a;
     ::ll::UntypedStorage<8, 64> mUnke4ca00;
-    ::ll::UntypedStorage<8, 8>  mUnk4de080;
+    ::ll::UntypedStorage<8, 8> mUnk4de080;
     // NOLINTEND
 
 public:
@@ -75,65 +74,31 @@ public:
     virtual void moveToThread() /*override*/;
 
     // vIndex: 3
-    virtual ::std::optional<::Scripting::ScriptContext> createContext(
-        ::Scripting::ModuleBindingBundle&& bindings,
-        ::Scripting::IDependencyLoader*    loader,
-        ::Scripting::IPrinter*             printer,
-        ::Scripting::ContextConfig const&  config
-    ) /*override*/;
+    virtual ::std::optional<::Scripting::ScriptContext> createContext(::Scripting::ModuleBindingBundle&& bindings, ::Scripting::IDependencyLoader* loader, ::Scripting::IPrinter* printer, ::Scripting::ContextConfig const& config) /*override*/;
 
     // vIndex: 4
     virtual void destroyContext(::Scripting::ContextId contextId) /*override*/;
 
     // vIndex: 22
-    virtual ::Scripting::ResultAny runString(
-        ::Scripting::ContextId                  contextId,
-        ::std::string const&                    scriptName,
-        ::std::string const&                    scriptData,
-        ::std::optional<::Scripting::Privilege> privilege
-    ) /*override*/;
+    virtual ::Scripting::ResultAny runString(::Scripting::ContextId contextId, ::std::string const& scriptName, ::std::string const& scriptData, ::std::optional<::Scripting::Privilege> privilege) /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::ResultAny call(
-        ::Scripting::ContextId                                   contextId,
-        ::Scripting::TypedObjectHandle<::Scripting::ClosureType> closureHandle,
-        ::entt::meta_any*                                        args,
-        uint                                                     argc,
-        ::entt::meta_type const&                                 expectedReturnType,
-        ::std::optional<::Scripting::Privilege>                  privilege
-    ) /*override*/;
+    virtual ::Scripting::ResultAny call(::Scripting::ContextId contextId, ::Scripting::TypedObjectHandle<::Scripting::ClosureType> closureHandle, ::entt::meta_any* args, uint argc, ::entt::meta_type const& expectedReturnType, ::std::optional<::Scripting::Privilege> privilege) /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::ResultAny resolve(
-        ::Scripting::ContextId                                   contextId,
-        ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise,
-        ::entt::meta_any&                                        arg
-    ) /*override*/;
+    virtual ::Scripting::ResultAny resolve(::Scripting::ContextId contextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise, ::entt::meta_any& arg) /*override*/;
 
     // vIndex: 8
-    virtual ::Scripting::ResultAny reject(
-        ::Scripting::ContextId                                   contextId,
-        ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise,
-        ::entt::meta_any&                                        arg
-    ) /*override*/;
+    virtual ::Scripting::ResultAny reject(::Scripting::ContextId contextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise, ::entt::meta_any& arg) /*override*/;
 
     // vIndex: 9
-    virtual ::Scripting::FutureStatus
-        getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const
-        /*override*/;
+    virtual ::Scripting::FutureStatus getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const /*override*/;
 
     // vIndex: 10
-    virtual ::Scripting::ResultAny getFutureResult(
-        ::Scripting::ContextId                                  contextId,
-        ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle,
-        ::entt::meta_type const&                                expectedResultType
-    ) const /*override*/;
+    virtual ::Scripting::ResultAny getFutureResult(::Scripting::ContextId contextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle, ::entt::meta_type const& expectedResultType) const /*override*/;
 
     // vIndex: 11
-    virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> executeCoroutines(
-        ::std::optional<::std::chrono::microseconds> timeSlice,
-        ::std::optional<::Scripting::Privilege>      privilege
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> executeCoroutines(::std::optional<::std::chrono::microseconds> timeSlice, ::std::optional<::Scripting::Privilege> privilege) /*override*/;
 
     // vIndex: 12
     virtual bool hasPendingJobs() /*override*/;
@@ -148,18 +113,13 @@ public:
     virtual void startProfiler() /*override*/;
 
     // vIndex: 16
-    virtual void stopProfiler(
-        ::std::function<void(::std::string_view)>                      captureCb,
-        ::std::optional<::std::reference_wrapper<::std::string const>> savePathOpt
-    ) /*override*/;
+    virtual void stopProfiler(::std::function<void(::std::string_view)> captureCb, ::std::optional<::std::reference_wrapper<::std::string const>> savePathOpt) /*override*/;
 
     // vIndex: 17
     virtual ::Scripting::RuntimeStats computeRuntimeStats() const /*override*/;
 
     // vIndex: 21
-    virtual ::std::optional<::Scripting::TypeNameInfo>
-    getNameForType(::Scripting::ContextId contextId, ::entt::meta_type const& type, bool allowUnknownTypes) const
-        /*override*/;
+    virtual ::std::optional<::Scripting::TypeNameInfo> getNameForType(::Scripting::ContextId contextId, ::entt::meta_type const& type, bool allowUnknownTypes) const /*override*/;
 
     // vIndex: 18
     virtual ::Scripting::IWatchdog* enableWatchdog(::Scripting::WatchdogSettings settings) /*override*/;
@@ -174,27 +134,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI QuickJSRuntime(
-        ::Scripting::RegistryManager&                            registryManager,
-        ::std::unique_ptr<::Scripting::IRuntimeMetadata>         metadata,
-        ::Scripting::DependencyLocator*                          locator,
-        ::std::unique_ptr<::Scripting::QuickJS::MallocFunctions> mallocFns,
-        ::std::function<
-            ::std::string(::std::string_view const&, ::std::string const&, ::std::vector<::std::string> const&)>
-            normalizerFn
-    );
+    MCNAPI QuickJSRuntime(::Scripting::RegistryManager& registryManager, ::std::unique_ptr<::Scripting::IRuntimeMetadata> metadata, ::Scripting::DependencyLocator* locator, ::std::unique_ptr<::Scripting::QuickJS::MallocFunctions> mallocFns, ::std::function<::std::string(::std::string_view const&, ::std::string const&, ::std::vector<::std::string> const&)> normalizerFn);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static int
-    _moduleImportAllowed(::JSContext* ctx, char const* baseName, char const* moduleName, void* opaque);
+    MCNAPI static int _moduleImportAllowed(::JSContext* ctx, char const* baseName, char const* moduleName, void* opaque);
 
     MCNAPI static ::JSModuleDef* _moduleLoader(::JSContext* ctx, char const* moduleName, void* opaque);
 
-    MCNAPI static char*
-    _moduleNameNormalizer(::JSContext* ctx, char const* baseName, char const* moduleName, void* opaque);
+    MCNAPI static char* _moduleNameNormalizer(::JSContext* ctx, char const* baseName, char const* moduleName, void* opaque);
 
     MCNAPI static void _onProfilerCapture(void* opaque, char const* capture);
     // NOLINTEND
@@ -202,15 +152,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Scripting::RegistryManager&                            registryManager,
-        ::std::unique_ptr<::Scripting::IRuntimeMetadata>         metadata,
-        ::Scripting::DependencyLocator*                          locator,
-        ::std::unique_ptr<::Scripting::QuickJS::MallocFunctions> mallocFns,
-        ::std::function<
-            ::std::string(::std::string_view const&, ::std::string const&, ::std::vector<::std::string> const&)>
-            normalizerFn
-    );
+    MCNAPI void* $ctor(::Scripting::RegistryManager& registryManager, ::std::unique_ptr<::Scripting::IRuntimeMetadata> metadata, ::Scripting::DependencyLocator* locator, ::std::unique_ptr<::Scripting::QuickJS::MallocFunctions> mallocFns, ::std::function<::std::string(::std::string_view const&, ::std::string const&, ::std::vector<::std::string> const&)> normalizerFn);
     // NOLINTEND
 
 public:
@@ -226,53 +168,21 @@ public:
 
     MCNAPI void $moveToThread();
 
-    MCNAPI ::std::optional<::Scripting::ScriptContext> $createContext(
-        ::Scripting::ModuleBindingBundle&& bindings,
-        ::Scripting::IDependencyLoader*    loader,
-        ::Scripting::IPrinter*             printer,
-        ::Scripting::ContextConfig const&  config
-    );
+    MCNAPI ::std::optional<::Scripting::ScriptContext> $createContext(::Scripting::ModuleBindingBundle&& bindings, ::Scripting::IDependencyLoader* loader, ::Scripting::IPrinter* printer, ::Scripting::ContextConfig const& config);
 
     MCNAPI void $destroyContext(::Scripting::ContextId contextId);
 
-    MCNAPI ::Scripting::ResultAny $runString(
-        ::Scripting::ContextId                  contextId,
-        ::std::string const&                    scriptName,
-        ::std::string const&                    scriptData,
-        ::std::optional<::Scripting::Privilege> privilege
-    );
+    MCNAPI ::Scripting::ResultAny $runString(::Scripting::ContextId contextId, ::std::string const& scriptName, ::std::string const& scriptData, ::std::optional<::Scripting::Privilege> privilege);
 
-    MCNAPI ::Scripting::ResultAny $call(
-        ::Scripting::ContextId                                   contextId,
-        ::Scripting::TypedObjectHandle<::Scripting::ClosureType> closureHandle,
-        ::entt::meta_any*                                        args,
-        uint                                                     argc,
-        ::entt::meta_type const&                                 expectedReturnType,
-        ::std::optional<::Scripting::Privilege>                  privilege
-    );
+    MCNAPI ::Scripting::ResultAny $call(::Scripting::ContextId contextId, ::Scripting::TypedObjectHandle<::Scripting::ClosureType> closureHandle, ::entt::meta_any* args, uint argc, ::entt::meta_type const& expectedReturnType, ::std::optional<::Scripting::Privilege> privilege);
 
-    MCNAPI ::Scripting::ResultAny $resolve(
-        ::Scripting::ContextId                                   contextId,
-        ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise,
-        ::entt::meta_any&                                        arg
-    );
+    MCNAPI ::Scripting::ResultAny $resolve(::Scripting::ContextId contextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise, ::entt::meta_any& arg);
 
-    MCNAPI ::Scripting::ResultAny $reject(
-        ::Scripting::ContextId                                   contextId,
-        ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise,
-        ::entt::meta_any&                                        arg
-    );
+    MCNAPI ::Scripting::ResultAny $reject(::Scripting::ContextId contextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType> promise, ::entt::meta_any& arg);
 
-    MCNAPI ::Scripting::ResultAny $getFutureResult(
-        ::Scripting::ContextId                                  contextId,
-        ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle,
-        ::entt::meta_type const&                                expectedResultType
-    ) const;
+    MCNAPI ::Scripting::ResultAny $getFutureResult(::Scripting::ContextId contextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType> futureHandle, ::entt::meta_type const& expectedResultType) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> $executeCoroutines(
-        ::std::optional<::std::chrono::microseconds> timeSlice,
-        ::std::optional<::Scripting::Privilege>      privilege
-    );
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> $executeCoroutines(::std::optional<::std::chrono::microseconds> timeSlice, ::std::optional<::Scripting::Privilege> privilege);
 
     MCNAPI bool $hasPendingJobs();
 
@@ -282,15 +192,11 @@ public:
 
     MCNAPI void $startProfiler();
 
-    MCNAPI void $stopProfiler(
-        ::std::function<void(::std::string_view)>                      captureCb,
-        ::std::optional<::std::reference_wrapper<::std::string const>> savePathOpt
-    );
+    MCNAPI void $stopProfiler(::std::function<void(::std::string_view)> captureCb, ::std::optional<::std::reference_wrapper<::std::string const>> savePathOpt);
 
     MCNAPI ::Scripting::RuntimeStats $computeRuntimeStats() const;
 
-    MCNAPI ::std::optional<::Scripting::TypeNameInfo>
-    $getNameForType(::Scripting::ContextId contextId, ::entt::meta_type const& type, bool allowUnknownTypes) const;
+    MCNAPI ::std::optional<::Scripting::TypeNameInfo> $getNameForType(::Scripting::ContextId contextId, ::entt::meta_type const& type, bool allowUnknownTypes) const;
 
     MCNAPI ::Scripting::IWatchdog* $enableWatchdog(::Scripting::WatchdogSettings settings);
 
@@ -304,6 +210,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting::QuickJS
+}

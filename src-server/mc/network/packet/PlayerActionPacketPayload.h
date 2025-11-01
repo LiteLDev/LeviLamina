@@ -13,9 +13,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
     ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mResultPos;
-    ::ll::TypedStorage<4, 4, int>                     mFace;
-    ::ll::TypedStorage<4, 4, ::PlayerActionType>      mAction;
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>        mRuntimeId;
-    ::ll::TypedStorage<1, 1, bool>                    mIsFromServerPlayerMovementSystem;
+    ::ll::TypedStorage<4, 4, int> mFace;
+    ::ll::TypedStorage<4, 4, ::PlayerActionType> mAction;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
+    ::ll::TypedStorage<1, 1, bool> mIsFromServerPlayerMovementSystem;
     // NOLINTEND
+
 };

@@ -6,7 +6,7 @@ namespace PlayerMessaging {
 
 enum class MessageStyle : uchar {
     Default = 0,
-    Realms  = 1,
+    Realms = 1,
 };
 
 }

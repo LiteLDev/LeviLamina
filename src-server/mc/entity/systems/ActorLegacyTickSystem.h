@@ -27,8 +27,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
-    tickActorLegacyTickSystem(::EntityContext& entity, ::Actor& actor, ::ActorTickNeededComponent& tickNeededComponent);
+    MCNAPI static void tickActorLegacyTickSystem(::EntityContext& entity, ::Actor& actor, ::ActorTickNeededComponent& tickNeededComponent);
     // NOLINTEND
 
 public:
@@ -42,4 +41,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

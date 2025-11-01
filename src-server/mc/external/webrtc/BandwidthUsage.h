@@ -5,10 +5,10 @@
 namespace webrtc {
 
 enum class BandwidthUsage : int {
-    KBwNormal     = 0,
+    KBwNormal = 0,
     KBwUnderusing = 1,
-    KBwOverusing  = 2,
-    KLast         = 3,
+    KBwOverusing = 2,
+    KLast = 3,
 };
 
 }

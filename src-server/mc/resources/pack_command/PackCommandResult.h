@@ -4,6 +4,7 @@
 
 namespace PackCommand {
 
-struct PackCommandResult {};
+struct PackCommandResult {
+};
 
-} // namespace PackCommand
+}

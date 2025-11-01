@@ -17,4 +17,5 @@ public:
     ItemNameResultData& operator=(ItemNameResultData const&);
     ItemNameResultData(ItemNameResultData const&);
     ItemNameResultData();
+
 };

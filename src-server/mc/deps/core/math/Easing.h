@@ -5,16 +5,10 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/EasingType.h"
 
-class Easing {
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::string const& getStringFromEasingType(::EasingType easingType);
-    // NOLINTEND
+namespace Easing {
+// functions
+// NOLINTBEGIN
+MCNAPI auto getEasingFunction(::EasingType easingType) -> float(*) (float, float, float);
+// NOLINTEND
 
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCNAPI static ::std::vector<::std::function<float(float, float, float)>>& mEasingFuncs();
-    // NOLINTEND
-};
+}

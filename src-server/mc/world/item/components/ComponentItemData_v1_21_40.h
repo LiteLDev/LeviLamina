@@ -18,9 +18,9 @@ struct ComponentItemData_v1_21_40 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 96, ::ComponentItemDescriptionData_v1_20_20>               mDescription;
-    ::ll::TypedStorage<8, 1072, ::SharedTypes::v1_21_40::ComponentItemComponentData> mItemComponents;
-    ::ll::TypedStorage<8, 840, ::ComponentItemDeprecatedComponentData_v1_20_80>      mDeprecatedItemComponents;
+    ::ll::TypedStorage<8, 96, ::ComponentItemDescriptionData_v1_20_20> mDescription;
+    ::ll::TypedStorage<8, 1080, ::SharedTypes::v1_21_40::ComponentItemComponentData> mItemComponents;
+    ::ll::TypedStorage<8, 840, ::ComponentItemDeprecatedComponentData_v1_20_80> mDeprecatedItemComponents;
     // NOLINTEND
 
 public:
@@ -38,8 +38,7 @@ public:
 
     MCAPI static void moveDeprecatedData(::ComponentItemData_v1_21_30& oldData, ::ComponentItemData_v1_21_40& newData);
 
-    MCAPI static void
-    upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_21_30, ::ComponentItemData_v1_21_40, nullptr_t>& upgrader);
+    MCAPI static void upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_21_30, ::ComponentItemData_v1_21_40, nullptr_t>& upgrader);
     // NOLINTEND
 
 public:
@@ -59,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

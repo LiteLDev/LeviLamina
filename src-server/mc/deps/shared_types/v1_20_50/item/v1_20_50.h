@@ -13,4 +13,4 @@ namespace SharedTypes::v1_20_50 {
 MCNAPI void bindItemComponentTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-} // namespace SharedTypes::v1_20_50
+}

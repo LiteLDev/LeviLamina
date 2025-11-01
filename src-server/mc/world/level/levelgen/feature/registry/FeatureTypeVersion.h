@@ -11,7 +11,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::SemVersion> mFormatVersion;
-    ::ll::TypedStorage<1, 1, bool>          mIsInternal;
+    ::ll::TypedStorage<1, 1, bool> mIsInternal;
     // NOLINTEND
 
 public:
@@ -37,4 +37,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

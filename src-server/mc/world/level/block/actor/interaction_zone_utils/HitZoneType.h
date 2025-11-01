@@ -6,7 +6,7 @@ namespace InteractionZoneUtils {
 
 enum class HitZoneType : int {
     ChiseledBookshelfFront = 0,
-    ShelfFront             = 1,
+    ShelfFront = 1,
 };
 
 }

@@ -7,6 +7,7 @@
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
+#include "mc/platform/Result.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -19,7 +20,6 @@ class LevelStorage;
 class LevelStorageEventing;
 class Scheduler;
 namespace Core { class Path; }
-namespace Core { class Result; }
 // clang-format on
 
 class LevelStorageSource : public ::Bedrock::EnableNonOwnerReferences {
@@ -33,7 +33,7 @@ public:
     virtual ::std::string const& getName() const = 0;
 
     // vIndex: 2
-    virtual ::Core::Result getLevelData(::std::string const&, ::LevelData&) const = 0;
+    virtual ::Bedrock::Result<bool> getLevelData(::std::string const&, ::LevelData&) const = 0;
 
     // vIndex: 3
     virtual void saveLevelData(::std::string const&, ::LevelData const&) = 0;
@@ -42,22 +42,10 @@ public:
     virtual void getLevelList(::std::vector<::Core::PathBuffer<::std::string>>&) = 0;
 
     // vIndex: 5
-    virtual ::Bedrock::UniqueOwnerPointer<::LevelStorage> createLevelStorage(
-        ::Scheduler&,
-        ::std::string const&,
-        ::ContentIdentity const&,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&,
-        ::std::chrono::nanoseconds const&,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>,
-        ::std::unique_ptr<::LevelStorageEventing>
-    ) = 0;
+    virtual ::Bedrock::UniqueOwnerPointer<::LevelStorage> createLevelStorage(::Scheduler&, ::std::string const&, ::ContentIdentity const&, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&, ::std::chrono::nanoseconds const&, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>, ::std::unique_ptr<::LevelStorageEventing>) = 0;
 
     // vIndex: 6
-    virtual ::std::unique_ptr<::LevelLooseFileStorage> createLevelLooseStorage(
-        ::std::string const&,
-        ::ContentIdentity const&,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&
-    ) = 0;
+    virtual ::std::unique_ptr<::LevelLooseFileStorage> createLevelLooseStorage(::std::string const&, ::ContentIdentity const&, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&) = 0;
 
     // vIndex: 7
     virtual void deleteLevel(::std::string const&) = 0;
@@ -112,4 +100,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

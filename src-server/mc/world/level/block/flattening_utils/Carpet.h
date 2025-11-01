@@ -13,4 +13,4 @@ namespace FlatteningUtils::Carpet {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-} // namespace FlatteningUtils::Carpet
+}

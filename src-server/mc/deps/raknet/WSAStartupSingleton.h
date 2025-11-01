@@ -8,4 +8,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static int& refCount();
     // NOLINTEND
+
 };

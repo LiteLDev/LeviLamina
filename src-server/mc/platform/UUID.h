@@ -54,9 +54,10 @@ public:
 
     MCAPI static uint64& STRING_LENGTH();
     // NOLINTEND
+
 };
 
-} // namespace mce
+}
 
 namespace std {
 template <>

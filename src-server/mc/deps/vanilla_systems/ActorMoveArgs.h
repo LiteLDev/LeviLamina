@@ -17,6 +17,7 @@ public:
     ActorMoveArgs& operator=(ActorMoveArgs const&);
     ActorMoveArgs(ActorMoveArgs const&);
     ActorMoveArgs();
+
 };
 
-} // namespace VanillaSystems
+}

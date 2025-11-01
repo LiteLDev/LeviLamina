@@ -71,7 +71,7 @@ public:
     virtual ::Bedrock::Result<double> asDouble() /*override*/;
 
     // vIndex: 15
-    virtual ::Bedrock::Result<::std::string> asString() /*override*/;
+    virtual ::Bedrock::Result<::std::string> asString(uint64 maxInputLength) /*override*/;
 
     // vIndex: 16
     virtual ::std::optional<bool> readValidityFlag() /*override*/;
@@ -132,7 +132,7 @@ public:
 
     MCFOLD ::Bedrock::Result<double> $asDouble();
 
-    MCFOLD ::Bedrock::Result<::std::string> $asString();
+    MCFOLD ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
 
     MCFOLD ::std::optional<bool> $readValidityFlag();
 
@@ -156,4 +156,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

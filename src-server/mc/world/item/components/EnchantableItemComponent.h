@@ -19,7 +19,7 @@ class EnchantableItemComponent : public ::NetworkedItemComponent<::EnchantableIt
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar>          mEnchantValue;
+    ::ll::TypedStorage<1, 1, uchar> mEnchantValue;
     ::ll::TypedStorage<8, 32, ::std::string> mEnchantSlot;
     // NOLINTEND
 
@@ -50,11 +50,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -76,4 +72,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

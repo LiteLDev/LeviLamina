@@ -19,9 +19,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::OceanMonumentPiece>>> mChildPieces;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::RoomDefinition>>>     mRoomGrid;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RoomDefinition>>                    mSourceRoom;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RoomDefinition>>                    mCoreRoom;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::RoomDefinition>>> mRoomGrid;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RoomDefinition>> mSourceRoom;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RoomDefinition>> mCoreRoom;
     // NOLINTEND
 
 public:
@@ -63,8 +63,7 @@ public:
 
     MCAPI void generateUpperWall(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI void
-    generateWing(bool isFlipped, int xoff, ::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCAPI void generateWing(bool isFlipped, int xoff, ::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
     // NOLINTEND
 
 public:
@@ -94,4 +93,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

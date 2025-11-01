@@ -30,8 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual bool _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const
-        /*override*/;
+    virtual bool _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const /*override*/;
 
     // vIndex: 2
     virtual ::LootPoolEntry::EntryType getEntryType() const /*override*/;
@@ -43,8 +42,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootPoolEntry>
-    deserialize(::Json::Value entry, bool usingUpcomingCreatorFeaturesExperiment);
+    MCNAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(::Json::Value entry, bool usingUpcomingCreatorFeaturesExperiment);
     // NOLINTEND
 
 public:
@@ -60,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

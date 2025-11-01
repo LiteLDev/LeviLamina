@@ -4,6 +4,7 @@
 
 namespace dragon {
 
-class RenderMetadataFactory {};
+class RenderMetadataFactory {
+};
 
-} // namespace dragon
+}

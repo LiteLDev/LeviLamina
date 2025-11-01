@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnk5ae1b5;
     ::ll::UntypedStorage<8, 24> mUnk7f55de;
-    ::ll::UntypedStorage<1, 1>  mUnkdacf56;
+    ::ll::UntypedStorage<1, 1> mUnkdacf56;
     // NOLINTEND
 
 public:
@@ -28,4 +28,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string const& name);
     // NOLINTEND
+
 };

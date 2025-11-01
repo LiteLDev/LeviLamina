@@ -14,9 +14,9 @@ class BoostableComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>  mIsBoosting;
-    ::ll::TypedStorage<4, 4, int>   mBoostTime;
-    ::ll::TypedStorage<4, 4, int>   mBoostTimeTotal;
+    ::ll::TypedStorage<1, 1, bool> mIsBoosting;
+    ::ll::TypedStorage<4, 4, int> mBoostTime;
+    ::ll::TypedStorage<4, 4, int> mBoostTimeTotal;
     ::ll::TypedStorage<4, 4, float> mSpeedMultiplier;
     // NOLINTEND
 
@@ -37,4 +37,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::mce::UUID const& SPEED_MODIFIER_BOOSTING_UUID();
     // NOLINTEND
+
 };

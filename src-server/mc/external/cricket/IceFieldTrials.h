@@ -32,6 +32,7 @@ public:
     IceFieldTrials& operator=(IceFieldTrials const&);
     IceFieldTrials(IceFieldTrials const&);
     IceFieldTrials();
+
 };
 
-} // namespace cricket
+}

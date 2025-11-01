@@ -26,17 +26,14 @@ namespace mce { class UUID; }
 
 namespace Editor::ScriptModule {
 
-class ScriptWidgetService : public ::Editor::ScriptModule::ScriptWidgetService_GroupInterface,
-                            public ::Editor::ScriptModule::ScriptWidgetService_WidgetInterface,
-                            public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptWidgetService>,
-                            public ::Editor::Services::PayloadStoreHelper {
+class ScriptWidgetService : public ::Editor::ScriptModule::ScriptWidgetService_GroupInterface, public ::Editor::ScriptModule::ScriptWidgetService_WidgetInterface, public ::Scripting::WeakHandleFromThis<::Editor::ScriptModule::ScriptWidgetService>, public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkce6b5a;
-    ::ll::UntypedStorage<8, 8>  mUnk982857;
+    ::ll::UntypedStorage<8, 8> mUnk982857;
     ::ll::UntypedStorage<8, 16> mUnkeac1e7;
-    ::ll::UntypedStorage<8, 8>  mUnk64880d;
+    ::ll::UntypedStorage<8, 8> mUnk64880d;
     ::ll::UntypedStorage<4, 24> mUnke6f179;
     ::ll::UntypedStorage<8, 16> mUnk166fd8;
     ::ll::UntypedStorage<8, 64> mUnk174897;
@@ -55,9 +52,7 @@ public:
     virtual ~ScriptWidgetService();
 
     // vIndex: 0
-    virtual ::Scripting::Result_deprecated<void> _groupDeleteGroup(
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _groupDeleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete) /*override*/;
 
     // vIndex: 1
     virtual ::AABB const& _getDimensionBounds() const /*override*/;
@@ -66,25 +61,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptWidgetService(
-        ::Editor::ServiceProviderCollection&  serviceProviderCollection,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
+    MCNAPI ScriptWidgetService(::Editor::ServiceProviderCollection& serviceProviderCollection, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>>
-    _createGroup(::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options);
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>> _createGroup(::std::optional<::Editor::ScriptModule::ScriptWidgetGroupCreateOptions> const& options);
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    _deleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete);
+    MCNAPI ::Scripting::Result_deprecated<void> _deleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete);
 
-    MCNAPI ::std::optional<::std::pair<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>,
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>>
-    _getWidgetGroupPair(::mce::UUID const& widgetId) const;
+    MCNAPI ::std::optional<::std::pair<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup>, ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidget>>> _getWidgetGroupPair(::mce::UUID const& widgetId) const;
 
-    MCNAPI void
-    _handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload);
+    MCNAPI void _handleWidgetComponentStateChangePayload(::Editor::Network::WidgetComponentStateChangePayload const& payload);
 
     MCNAPI void _handleWidgetStateChangePayload(::Editor::Network::WidgetStateChangePayload const& payload);
     // NOLINTEND
@@ -98,8 +83,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::Editor::ServiceProviderCollection& serviceProviderCollection, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& serviceProviderCollection, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -111,8 +95,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $_groupDeleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete);
+    MCNAPI ::Scripting::Result_deprecated<void> $_groupDeleteGroup(::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptWidgetGroup> groupToDelete);
 
     MCNAPI ::AABB const& $_getDimensionBounds() const;
     // NOLINTEND
@@ -124,6 +107,7 @@ public:
 
     MCNAPI static void** $vftableForScriptWidgetServiceGroupInterface();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

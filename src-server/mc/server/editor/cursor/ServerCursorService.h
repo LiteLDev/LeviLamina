@@ -25,9 +25,7 @@ namespace Editor::Network { class CursorServicePositionChangePayload; }
 
 namespace Editor::Cursor {
 
-class ServerCursorService : public ::Editor::Services::IEditorService,
-                            public ::Editor::Cursor::ServerCursorServiceProvider,
-                            public ::Editor::Services::PayloadStoreHelper {
+class ServerCursorService : public ::Editor::Services::IEditorService, public ::Editor::Cursor::ServerCursorServiceProvider, public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
@@ -74,29 +72,22 @@ public:
     virtual ::Scripting::Result_deprecated<::Editor::Cursor::CursorState> getCursorState() const /*override*/;
 
     // vIndex: 4
-    virtual ::Scripting::Result_deprecated<::Editor::Cursor::AttachmentProperties> getAttachmentProperties() const
-        /*override*/;
+    virtual ::Scripting::Result_deprecated<::Editor::Cursor::AttachmentProperties> getAttachmentProperties() const /*override*/;
 
     // vIndex: 5
     virtual ::Scripting::Result_deprecated<void> setCursorState(::Editor::Cursor::CursorState&& state) /*override*/;
 
     // vIndex: 6
-    virtual ::Scripting::Result_deprecated<void>
-    setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& properties) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props) /*override*/;
 
     // vIndex: 7
     virtual ::Scripting::Result_deprecated<::BlockPos> moveBy(::glm::ivec3 const& offset) /*override*/;
 
     // vIndex: 8
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForCursorStateChanges(
-        ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)> callback
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForCursorStateChanges(::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)> callback) /*override*/;
 
     // vIndex: 9
-    virtual ::Bedrock::PubSub::Subscription listenForCursorPositionChanges(
-        ::std::function<void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)>
-            callback
-    ) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription listenForCursorPositionChanges(::std::function<void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)> callback) /*override*/;
 
     // vIndex: 10
     virtual ::WeakRef<::Editor::ProjectRegion> getRegion() const /*override*/;
@@ -139,19 +130,13 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> $setCursorState(::Editor::Cursor::CursorState&& state);
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    $setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& properties);
+    MCNAPI ::Scripting::Result_deprecated<void> $setAttachmentProperties(::Editor::Cursor::AttachmentProperties&& props);
 
     MCNAPI ::Scripting::Result_deprecated<::BlockPos> $moveBy(::glm::ivec3 const& offset);
 
-    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForCursorStateChanges(
-        ::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)> callback
-    );
+    MCNAPI ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> $listenForCursorStateChanges(::std::function<void(::Editor::Cursor::CursorState const&, ::Editor::Cursor::CursorState const&)> callback);
 
-    MCNAPI ::Bedrock::PubSub::Subscription $listenForCursorPositionChanges(
-        ::std::function<void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)>
-            callback
-    );
+    MCNAPI ::Bedrock::PubSub::Subscription $listenForCursorPositionChanges(::std::function<void(::std::optional<::Editor::Cursor::Position> const&, ::Editor::Cursor::CursorState const&)> callback);
 
     MCNAPI ::WeakRef<::Editor::ProjectRegion> $getRegion() const;
     // NOLINTEND
@@ -163,6 +148,7 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Cursor
+}

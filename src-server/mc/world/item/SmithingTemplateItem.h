@@ -17,10 +17,10 @@ public:
     // SmithingTemplateItem inner types define
     enum class UpgradeType : int {
         NetheriteUpgrade = 0,
-        ArmorTrim        = 1,
-        Count            = 2,
+        ArmorTrim = 1,
+        Count = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -31,13 +31,8 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 52
-    virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const /*override*/;
+    // vIndex: 53
+    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
 
     // vIndex: 0
     virtual ~SmithingTemplateItem() /*override*/ = default;
@@ -46,12 +41,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const;
+    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
     // NOLINTEND
 
 public:
@@ -59,4 +49,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

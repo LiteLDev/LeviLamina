@@ -2,16 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class File; }
-// clang-format on
-
 class LevelDbSequentialFile : public ::leveldb::SequentialFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk3a2e4e;
+    ::ll::UntypedStorage<8, 72> mUnk4fd923;
     // NOLINTEND
 
 public:
@@ -34,18 +29,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI explicit LevelDbSequentialFile(::Core::File&& file);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::Core::File&& file);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI ::leveldb::Status $Read(uint64 n, ::leveldb::Slice* result, char* scratch);
@@ -58,4 +41,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

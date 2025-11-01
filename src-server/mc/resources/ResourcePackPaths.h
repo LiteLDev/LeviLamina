@@ -14,8 +14,7 @@ namespace ResourcePackPaths { struct AllPaths; }
 namespace ResourcePackPaths {
 // functions
 // NOLINTBEGIN
-MCNAPI ::Core::PathBuffer<::std::string>
-    addServiceLocator(::Core::PathBuffer<::std::string> (*fn)(::AppPlatform const&));
+MCNAPI ::Core::PathBuffer<::std::string> addServiceLocator(::Core::PathBuffer<::std::string>(*fn) (::AppPlatform const&));
 
 MCNAPI ::ResourcePackPaths::AllPaths getAllPaths(::AppPlatform& platform);
 
@@ -65,4 +64,4 @@ MCNAPI ::std::string const& SYSTEM_SERVICE_PACK_PATH();
 MCNAPI ::std::string const& TREATMENT_PACK_PATH();
 // NOLINTEND
 
-} // namespace ResourcePackPaths
+}

@@ -10,4 +10,4 @@ public:
     constexpr void unlock() {}
 };
 
-} // namespace Core
+}

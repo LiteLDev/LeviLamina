@@ -4,7 +4,8 @@
 
 namespace edu::auth {
 
-template <typename T0>
-struct GenericCredentialsEvent {};
+template<typename T0>
+struct GenericCredentialsEvent {
+};
 
-} // namespace edu::auth
+}

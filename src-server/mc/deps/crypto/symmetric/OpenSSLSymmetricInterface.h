@@ -45,8 +45,7 @@ public:
     virtual uint64 getEncryptionBufferSize(uint64 inputSize) const /*override*/;
 
     // vIndex: 7
-    virtual bool
-    encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) /*override*/;
+    virtual bool encryptToBuffer(::gsl::span<char const> input, ::gsl::span<char> output, uint64& bytesWritten) /*override*/;
 
     // vIndex: 0
     virtual ~OpenSSLSymmetricInterface() /*override*/ = default;
@@ -75,6 +74,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Crypto::Symmetric
+}

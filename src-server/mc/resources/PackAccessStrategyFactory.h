@@ -22,14 +22,13 @@ public:
 
     MCNAPI static ::PackAccessStrategies createForDirectory(::DirectoryAccessStrategyOptions const& create);
 
-    MCNAPI static ::PackAccessStrategies
-    createForDirectoryWithEncryptedBlob(::DirectoryWihEncryptedBlobAccessStrategyOptions const& create);
+    MCNAPI static ::PackAccessStrategies createForDirectoryWithEncryptedBlob(::DirectoryWihEncryptedBlobAccessStrategyOptions const& create);
 
     MCNAPI static ::PackAccessStrategies createForEncryptedZip(::EncryptedZipAccessStrategyOptions const& create);
 
     MCNAPI static ::PackAccessStrategies createForZip(::ZipAccessStrategyOptions const& create);
 
-    MCNAPI static ::std::unique_ptr<::DirectoryPackWriteStrategy>
-    tryCreateDirectoryPackWriteStrategy(::ResourceLocation const& location);
+    MCNAPI static ::std::unique_ptr<::DirectoryPackWriteStrategy> tryCreateDirectoryPackWriteStrategy(::ResourceLocation const& location);
     // NOLINTEND
+
 };

@@ -57,8 +57,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::std::unique_ptr<::InternalItemDescriptor>>
-    deserialize(::ReadOnlyBinaryStream& stream);
+    MCAPI static ::Bedrock::Result<::std::unique_ptr<::InternalItemDescriptor>> deserialize(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
@@ -88,4 +87,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -6,8 +6,8 @@ struct SentryEnvelopePayloadException {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnke3aa52;
-    ::ll::UntypedStorage<8, 32>  mUnkb3204a;
+    ::ll::UntypedStorage<8, 32> mUnke3aa52;
+    ::ll::UntypedStorage<8, 32> mUnkb3204a;
     ::ll::UntypedStorage<8, 136> mUnk5ff361;
     // NOLINTEND
 
@@ -42,4 +42,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

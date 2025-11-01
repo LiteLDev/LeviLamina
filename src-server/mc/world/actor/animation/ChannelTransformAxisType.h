@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class ChannelTransformAxisType : int {
-    Uniform   = 0,
-    Xyz       = 1,
+    Uniform = 0,
+    Xyz = 1,
     Arbitrary = 2,
-    Count     = 3,
+    Count = 3,
 };

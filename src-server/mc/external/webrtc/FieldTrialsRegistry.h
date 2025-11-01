@@ -38,6 +38,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::string $Lookup(::std::string_view key) const;
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

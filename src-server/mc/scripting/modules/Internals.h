@@ -13,4 +13,4 @@ namespace ScriptLiveEventsUtilities::Internals {
 MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-} // namespace ScriptLiveEventsUtilities::Internals
+}

@@ -15,4 +15,5 @@ public:
 
     MCNAPI static ::std::string generateName(::std::string name);
     // NOLINTEND
+
 };

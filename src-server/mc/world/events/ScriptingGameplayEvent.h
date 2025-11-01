@@ -7,7 +7,7 @@
 #include "mc/world/events/ScriptModuleShutdownEvent.h"
 #include "mc/world/events/ScriptModuleStartupEvent.h"
 
-template <typename Result>
+template<typename Result>
 struct ScriptingGameplayEvent;
 
 template <>

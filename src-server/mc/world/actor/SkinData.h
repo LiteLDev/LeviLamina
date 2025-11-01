@@ -15,4 +15,5 @@ public:
     SkinData& operator=(SkinData const&);
     SkinData(SkinData const&);
     SkinData();
+
 };

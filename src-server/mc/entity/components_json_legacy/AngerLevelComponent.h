@@ -25,7 +25,7 @@ public:
     struct Nuisance;
     struct NuisanceCompare;
     // clang-format on
-
+    
     // AngerLevelComponent inner types define
     struct Nuisance {
     public:
@@ -35,74 +35,76 @@ public:
         ::ll::UntypedStorage<4, 4> mUnk9415a7;
         ::ll::UntypedStorage<1, 1> mUnka6bff1;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Nuisance& operator=(Nuisance const&);
         Nuisance(Nuisance const&);
         Nuisance();
+    
     };
-
+    
     struct NuisanceCompare {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 4> mUnk927449;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         NuisanceCompare& operator=(NuisanceCompare const&);
         NuisanceCompare(NuisanceCompare const&);
         NuisanceCompare();
+    
     };
-
+    
     using ActorNuisance = ::std::pair<::Actor*, int>;
-
+    
     struct ConditionalSound {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk9863dc;
+        ::ll::UntypedStorage<4, 4> mUnk9863dc;
         ::ll::UntypedStorage<8, 16> mUnkf71226;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ConditionalSound& operator=(ConditionalSound const&);
         ConditionalSound(ConditionalSound const&);
         ConditionalSound();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~ConditionalSound();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Tick>                               mNextAngerDecrementTick;
-    ::ll::TypedStorage<4, 4, int>                                  mDefaultAnnoyingness;
-    ::ll::TypedStorage<4, 4, int>                                  mDefaultProjectileAnnoyingness;
-    ::ll::TypedStorage<4, 4, int>                                  mAngerDecrementIntervalTicks;
-    ::ll::TypedStorage<4, 4, int>                                  mMaxAngerLevel;
-    ::ll::TypedStorage<4, 4, int>                                  mAngryThreshold;
-    ::ll::TypedStorage<1, 1, bool>                                 mRemoveTargetWhenBelowAngryThreshold;
-    ::ll::TypedStorage<4, 4, int>                                  mAngryBoost;
-    ::ll::TypedStorage<4, 4, int>                                  mTopAnger;
+    ::ll::TypedStorage<8, 8, ::Tick> mNextAngerDecrementTick;
+    ::ll::TypedStorage<4, 4, int> mDefaultAnnoyingness;
+    ::ll::TypedStorage<4, 4, int> mDefaultProjectileAnnoyingness;
+    ::ll::TypedStorage<4, 4, int> mAngerDecrementIntervalTicks;
+    ::ll::TypedStorage<4, 4, int> mMaxAngerLevel;
+    ::ll::TypedStorage<4, 4, int> mAngryThreshold;
+    ::ll::TypedStorage<1, 1, bool> mRemoveTargetWhenBelowAngryThreshold;
+    ::ll::TypedStorage<4, 4, int> mAngryBoost;
+    ::ll::TypedStorage<4, 4, int> mTopAnger;
     ::ll::TypedStorage<8, 72, ::std::optional<::ActorFilterGroup>> mNuisanceFilter;
     ::ll::TypedStorage<8, 24, ::std::vector<::AngerLevelComponent::ConditionalSound>> mOnIncreaseSoundDefinitions;
-    ::ll::TypedStorage<4, 4, ::AngerLevelComponent::NuisanceCompare>                  mNuisanceCompare;
-    ::ll::TypedStorage<8, 24, ::std::multiset<::AngerLevelComponent::Nuisance, ::AngerLevelComponent::NuisanceCompare>>
-        mNuisances;
+    ::ll::TypedStorage<4, 4, ::AngerLevelComponent::NuisanceCompare> mNuisanceCompare;
+    ::ll::TypedStorage<8, 24, ::std::multiset<::AngerLevelComponent::Nuisance, ::AngerLevelComponent::NuisanceCompare>> mNuisances;
     // NOLINTEND
 
 public:
@@ -126,8 +128,7 @@ public:
 
     MCNAPI bool canBeNuisance(::Actor* owner, ::Actor* target) const;
 
-    MCNAPI ::std::optional<::std::pair<::Actor*, int>>
-    getTopActiveNuisance(::Actor* owner, ::ILevel const& level) const;
+    MCNAPI ::std::optional<::std::pair<::Actor*, int>> getTopActiveNuisance(::Actor* owner, ::ILevel const& level) const;
 
     MCNAPI ::AngerLevelComponent& operator=(::AngerLevelComponent&&);
 
@@ -159,4 +160,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

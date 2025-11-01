@@ -26,18 +26,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayer;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
-        mBrokenBlockPermutation;
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-        mAfterBreakItemStack;
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-        mBeforeBreakItemStack;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> mBrokenBlockPermutation;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mAfterBreakItemStack;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mBeforeBreakItemStack;
     // NOLINTEND
 
 public:
@@ -52,14 +43,7 @@ public:
 
     MCAPI ScriptPlayerBreakBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
 
-    MCAPI ScriptPlayerBreakBlockAfterEvent(
-        ::Player&                             player,
-        ::BlockPos const&                     pos,
-        ::Block const&                        destroyedBlock,
-        ::ItemStackBase const&                afterBreakItem,
-        ::ItemStackBase const&                beforeBreakItem,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
+    MCAPI ScriptPlayerBreakBlockAfterEvent(::Player& player, ::BlockPos const& pos, ::Block const& destroyedBlock, ::ItemStackBase const& afterBreakItem, ::ItemStackBase const& beforeBreakItem, ::Scripting::WeakLifetimeScope const& scope);
 
     MCAPI ~ScriptPlayerBreakBlockAfterEvent();
     // NOLINTEND
@@ -77,14 +61,7 @@ public:
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEvent&&);
 
-    MCAPI void* $ctor(
-        ::Player&                             player,
-        ::BlockPos const&                     pos,
-        ::Block const&                        destroyedBlock,
-        ::ItemStackBase const&                afterBreakItem,
-        ::ItemStackBase const&                beforeBreakItem,
-        ::Scripting::WeakLifetimeScope const& scope
-    );
+    MCAPI void* $ctor(::Player& player, ::BlockPos const& pos, ::Block const& destroyedBlock, ::ItemStackBase const& afterBreakItem, ::ItemStackBase const& beforeBreakItem, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -92,6 +69,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <typename T, typename Comparator = std::less<T>>
+template<typename T, typename Comparator = std::less<T>>
 class MovePriorityQueue {
 private:
     using Base           = std::vector<T>;

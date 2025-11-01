@@ -62,18 +62,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ScriptModuleMinecraft::ScriptFluidType
-    _getActualCauldronFluidType(::BlockSource& region, ::BlockPos position);
+    MCNAPI static ::ScriptModuleMinecraft::ScriptFluidType _getActualCauldronFluidType(::BlockSource& region, ::BlockPos position);
 
-    MCNAPI static ::Scripting::ClassBinding
-    bindV1(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding bindV1(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
-    MCNAPI static ::Scripting::ClassBinding
-    bindV2(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding bindV2(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
 
-    MCNAPI static ::std::optional<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>>
-    tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>> tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
@@ -99,6 +94,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

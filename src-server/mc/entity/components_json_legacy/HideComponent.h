@@ -20,4 +20,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
     // NOLINTEND
+
 };

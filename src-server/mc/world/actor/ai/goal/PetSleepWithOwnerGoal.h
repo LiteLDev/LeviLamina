@@ -18,11 +18,11 @@ class PetSleepWithOwnerGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 16, ::PetSleepWithOwnerGoalData>                mData;
-    ::ll::TypedStorage<8, 8, ::Mob&>                                      mMob;
+    ::ll::TypedStorage<4, 16, ::PetSleepWithOwnerGoalData> mData;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PetSleepWithOwnerState>> mState;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                     mBedTargetPos;
-    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>>                          mOwner;
+    ::ll::TypedStorage<4, 12, ::Vec3> mBedTargetPos;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>> mOwner;
     // NOLINTEND
 
 public:
@@ -77,4 +77,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

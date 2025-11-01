@@ -24,6 +24,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::function<::std::vector<::std::string>()>& mPlatformAdapterOverride();
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

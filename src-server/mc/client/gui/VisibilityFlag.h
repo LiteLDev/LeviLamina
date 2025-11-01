@@ -5,10 +5,10 @@
 namespace ui {
 
 enum class VisibilityFlag : uchar {
-    None                = 0,
-    Visible             = 1,
+    None = 0,
+    Visible = 1,
     VisibleInStackPanel = 2,
-    All                 = 3,
+    All = 3,
 };
 
 }

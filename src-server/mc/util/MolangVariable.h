@@ -16,9 +16,9 @@ class MolangVariable {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 88, ::MolangScriptArg>                   mValue;
+    ::ll::TypedStorage<8, 88, ::MolangScriptArg> mValue;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::MolangScriptArg>> mPublicValue;
-    ::ll::TypedStorage<4, 8, ::MolangVariableSettings>             mSettings;
+    ::ll::TypedStorage<4, 8, ::MolangVariableSettings> mSettings;
     // NOLINTEND
 
 public:
@@ -35,8 +35,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::MolangVariableIndex
-    _findOrAddVariableIndex(uint64 nameHash, char const* name, bool allowSpecialCharacters);
+    MCAPI static ::MolangVariableIndex _findOrAddVariableIndex(uint64 nameHash, char const* name, bool allowSpecialCharacters);
 
     MCAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash);
 
@@ -64,4 +63,5 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::MolangVariable const& rhs);
     // NOLINTEND
+
 };

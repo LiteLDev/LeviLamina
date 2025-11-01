@@ -18,4 +18,4 @@ MCNAPI void ReportInvalidType(int actual_type, int expected_type);
 MCNAPI void ReportInvalidVariableLengthField(uint64 value, uint64 available);
 // NOLINTEND
 
-} // namespace dcsctp::tlv_trait_impl
+}

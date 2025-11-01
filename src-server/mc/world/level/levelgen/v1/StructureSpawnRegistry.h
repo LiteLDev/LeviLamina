@@ -15,21 +15,14 @@ class StructureSpawnRegistry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::unordered_map<
-            ::std::string,
-            ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>>>
-        mStaticStructures;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::weak_ptr<::br::worldgen::Structure>>>
-        mDynamicStructures;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride>>> mStaticStructures;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::weak_ptr<::br::worldgen::Structure>>> mDynamicStructures;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride> const*
-    get(::std::string const& key) const;
+    MCAPI ::std::unordered_map<::SpawnCategory::Type, ::br::worldgen::StructureSpawnOverride> const* get(::std::string const& key) const;
     // NOLINTEND
+
 };

@@ -27,7 +27,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk564cd3;
     ::ll::UntypedStorage<8, 24> mUnk2863f0;
     ::ll::UntypedStorage<8, 16> mUnk9f6bf9;
-    ::ll::UntypedStorage<8, 8>  mUnk663778;
+    ::ll::UntypedStorage<8, 8> mUnk663778;
     ::ll::UntypedStorage<8, 32> mUnk730abc;
     // NOLINTEND
 
@@ -40,37 +40,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>,
-        ::ScriptModuleMinecraft::ScriptInvalidStructureError,
-        ::Scripting::InvalidArgumentError>
-    getBlockPermutation(::Vec3 const& location) const;
+    MCNAPI ::Scripting::Result<::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError> getBlockPermutation(::Vec3 const& location) const;
 
     MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
 
     MCNAPI bool isValid() const;
 
-    MCNAPI ::Scripting::
-        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError>
-        isWaterlogged(::Vec3 const& location) const;
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError> isWaterlogged(::Vec3 const& location) const;
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>,
-        ::ScriptModuleMinecraft::ScriptInvalidStructureError,
-        ::Scripting::EngineError,
-        ::Scripting::InvalidArgumentError>
-    saveAs(::std::string const& identifier, ::StructureRedstoneSaveMode saveMode);
+    MCNAPI ::Scripting::Result<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::EngineError, ::Scripting::InvalidArgumentError> saveAs(::std::string const& identifier, ::StructureRedstoneSaveMode saveMode);
 
     MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidStructureError> saveToWorld();
 
-    MCNAPI ::Scripting::
-        Result<void, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-        setBlockPermutation(
-            ::Vec3 const& location,
-            ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>
-                 blockPermutation,
-            bool waterlogged
-        );
+    MCNAPI ::Scripting::Result<void, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptInvalidStructureError> setBlockPermutation(::Vec3 const& location, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> blockPermutation, bool waterlogged);
     // NOLINTEND
 
 public:
@@ -86,6 +68,7 @@ public:
 
     MCNAPI static ::Scripting::EnumBinding bindStructureSaveModeEnum();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

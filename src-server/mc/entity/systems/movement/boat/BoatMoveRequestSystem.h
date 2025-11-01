@@ -13,4 +13,4 @@ namespace BoatMoveRequestSystem {
 MCNAPI ::TickingSystemWithInfo createSystem(bool isClientSide);
 // NOLINTEND
 
-} // namespace BoatMoveRequestSystem
+}

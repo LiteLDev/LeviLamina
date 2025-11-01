@@ -17,6 +17,7 @@ public:
     RemoteBitrateReport& operator=(RemoteBitrateReport const&);
     RemoteBitrateReport(RemoteBitrateReport const&);
     RemoteBitrateReport();
+
 };
 
-} // namespace webrtc
+}

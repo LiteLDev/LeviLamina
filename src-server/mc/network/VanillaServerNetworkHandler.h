@@ -22,7 +22,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler>> mBedrockHandler;
-    ::ll::TypedStorage<8, 8, ::ServerInstance&>                                      mServer;
+    ::ll::TypedStorage<8, 8, ::ServerInstance&> mServer;
     // NOLINTEND
 
 public:
@@ -38,8 +38,7 @@ public:
     virtual ~VanillaServerNetworkHandler() /*override*/ = default;
 
     // vIndex: 1
-    virtual void
-    handle(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet) /*override*/;
+    virtual void handle(::NetworkIdentifier const& source, ::ResourcePackClientResponsePacket const& packet) /*override*/;
     // NOLINTEND
 
 public:
@@ -53,4 +52,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

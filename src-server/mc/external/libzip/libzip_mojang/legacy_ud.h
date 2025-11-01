@@ -14,4 +14,5 @@ public:
     legacy_ud& operator=(legacy_ud const&);
     legacy_ud(legacy_ud const&);
     legacy_ud();
+
 };

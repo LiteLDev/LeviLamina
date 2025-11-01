@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct StateCookieParameterConfig {};
+struct StateCookieParameterConfig {
+};
 
-} // namespace dcsctp
+}

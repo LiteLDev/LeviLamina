@@ -30,21 +30,15 @@ public:
     // NOLINTBEGIN
     MCAPI static void _convertBookCheck(::ItemStackBase& out);
 
-    MCAPI static void appendEnchantToFormattedText(
-        ::Enchant::Type                      type,
-        ::std::string_view                   enchantName,
-        ::Bedrock::Safety::RedactableString& formattedEnchantmentText
-    );
+    MCAPI static void appendEnchantToFormattedText(::Enchant::Type type, ::std::string_view enchantName, ::Bedrock::Safety::RedactableString& formattedEnchantmentText);
 
     MCAPI static bool applyEnchant(::ItemStackBase& out, ::Enchant::Type type, int level, bool allowNonVanilla);
 
     MCAPI static int applyEnchant(::ItemStackBase& out, ::ItemEnchants const& enchants, bool allowNonVanilla);
 
-    MCAPI static float
-    calculateAfterBreachArmorFraction(::ActorUniqueID const& attackerID, ::Mob const& target, float armorFraction);
+    MCAPI static float calculateAfterBreachArmorFraction(::ActorUniqueID const& attackerID, ::Mob const& target, float armorFraction);
 
-    MCAPI static int
-    combineEnchantedItems(::ItemStack const& first, ::ItemStack const& second, ::ItemStack& out, bool bookEnchant);
+    MCAPI static int combineEnchantedItems(::ItemStack const& first, ::ItemStack const& second, ::ItemStack& out, bool bookEnchant);
 
     MCAPI static void doPostDamageEffects(::Actor& victim, ::Actor& attacker);
 
@@ -52,8 +46,7 @@ public:
 
     MCAPI static ::ItemInstance generateEnchantedBook(::EnchantmentInstance const& enchant);
 
-    MCAPI static ::std::vector<::std::pair<::EnchantmentInstance, int>>
-    getAvailableEnchantmentResults(::Item const* item, int value, bool treasure);
+    MCAPI static ::std::vector<::std::pair<::EnchantmentInstance, int>> getAvailableEnchantmentResults(::Item const* item, int value, bool treasure);
 
     MCAPI static ::std::vector<::Vec3> getBookCasePositions(::BlockSource& source, ::Vec3 const& pos);
 
@@ -77,8 +70,7 @@ public:
 
     MCAPI static ::ItemStack const& getRandomDamagedItemWithMending(::Mob const& equipped);
 
-    MCAPI static ::ItemStack const&
-    getRandomItemWith(::Enchant::Type type, ::Mob const& equipped, ::EquipmentFilter filter);
+    MCAPI static ::ItemStack const& getRandomItemWith(::Enchant::Type type, ::Mob const& equipped, ::EquipmentFilter filter);
 
     MCAPI static bool hasEnchant(::Enchant::Type enchantType, ::ItemStackBase const& item);
 
@@ -94,4 +86,5 @@ public:
 
     MCAPI static ::std::vector<::std::string>& mEnchantmentNames();
     // NOLINTEND
+
 };

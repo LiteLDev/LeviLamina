@@ -12,6 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::optional<::std::reference_wrapper<::FeatureRegistry>>> mRegistry;
-    ::ll::TypedStorage<8, 8, uint64>                                                        mIndex;
+    ::ll::TypedStorage<8, 8, uint64> mIndex;
     // NOLINTEND
+
 };

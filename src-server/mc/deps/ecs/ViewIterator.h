@@ -2,5 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <typename T0, typename T1>
-struct ViewIterator {};
+template<typename T0, typename T1>
+struct ViewIterator {
+};

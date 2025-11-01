@@ -35,16 +35,15 @@ class Scoreboard {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::CommandSoftEnumRegistry>                                            mRegistry;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DisplayObjective>>             mDisplayObjectives;
-    ::ll::TypedStorage<8, 256, ::IdentityDictionary>                                               mIdentityDict;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ScoreboardId, ::ScoreboardIdentityRef>>       mIdentityRefs;
-    ::ll::TypedStorage<1, 1, bool>                                                                 mShouldUpdateUI;
+    ::ll::TypedStorage<8, 8, ::CommandSoftEnumRegistry> mRegistry;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::DisplayObjective>> mDisplayObjectives;
+    ::ll::TypedStorage<8, 256, ::IdentityDictionary> mIdentityDict;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ScoreboardId, ::ScoreboardIdentityRef>> mIdentityRefs;
+    ::ll::TypedStorage<1, 1, bool> mShouldUpdateUI;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unique_ptr<::Objective>>> mObjectives;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::Bedrock::NonOwnerPointer<::Objective>>>
-        mObjectivesHashLookup;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::Bedrock::NonOwnerPointer<::Objective>>> mObjectivesHashLookup;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unique_ptr<::ObjectiveCriteria>>> mCriteria;
-    ::ll::TypedStorage<8, 96, ::ScoreboardEventCoordinator>    mScoreboardEventCoordinator;
+    ::ll::TypedStorage<8, 96, ::ScoreboardEventCoordinator> mScoreboardEventCoordinator;
     ::ll::TypedStorage<8, 72, ::PlayerScoreboardEventListener> mPlayerListener;
     // NOLINTEND
 
@@ -59,11 +58,7 @@ public:
     virtual ~Scoreboard();
 
     // vIndex: 1
-    virtual ::DisplayObjective const* setDisplayObjective(
-        ::std::string const&       displaySlotName,
-        ::Objective const&         objective,
-        ::ObjectiveSortOrder const order
-    );
+    virtual ::DisplayObjective const* setDisplayObjective(::std::string const& displaySlotName, ::Objective const& objective, ::ObjectiveSortOrder const order);
 
     // vIndex: 2
     virtual ::Objective* clearDisplayObjective(::std::string const& displaySlotName);
@@ -113,23 +108,13 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Scoreboard(::CommandSoftEnumRegistry registry);
 
-    MCAPI ::Objective*
-    addObjective(::std::string const& name, ::std::string const& displayName, ::ObjectiveCriteria const& criteria);
+    MCAPI ::Objective* addObjective(::std::string const& name, ::std::string const& displayName, ::ObjectiveCriteria const& criteria);
 
     MCAPI void addScoreListener(::Player& player, ::std::string const& objective);
 
-    MCAPI int applyPlayerOperation(
-        ::ScoreboardOperationResult&   result,
-        ::std::vector<::ScoreboardId>& sourceErrorIds,
-        ::ScoreboardId const&          target,
-        ::Objective&                   targetObjective,
-        ::std::vector<::ScoreboardId>& selector,
-        ::Objective&                   objective,
-        ::CommandOperator              opCode
-    );
+    MCAPI int applyPlayerOperation(::ScoreboardOperationResult& result, ::std::vector<::ScoreboardId>& sourceErrorIds, ::ScoreboardId const& target, ::Objective& targetObjective, ::std::vector<::ScoreboardId>& selector, ::Objective& objective, ::CommandOperator opCode);
 
-    MCAPI ::ObjectiveCriteria const&
-    createObjectiveCriteria(::std::string const& name, bool readOnly, ::ObjectiveRenderType renderType);
+    MCAPI ::ObjectiveCriteria const& createObjectiveCriteria(::std::string const& name, bool readOnly, ::ObjectiveRenderType renderType);
 
     MCAPI ::ObjectiveCriteria* getCriteria(::std::string const& criteriaName) const;
 
@@ -159,24 +144,15 @@ public:
 
     MCAPI ::std::vector<::ScoreboardId> getTrackedIds() const;
 
-    MCAPI int modifyPlayerScore(
-        ::ScoreboardOperationResult& result,
-        ::ScoreboardId const&        id,
-        ::Objective&                 objective,
-        int                          scoreValue,
-        ::PlayerScoreSetFunction     action
-    );
+    MCAPI int modifyPlayerScore(::ScoreboardOperationResult& result, ::ScoreboardId const& id, ::Objective& objective, int scoreValue, ::PlayerScoreSetFunction action);
 
     MCAPI ::ScoreboardIdentityRef const& registerScoreboardIdentity(::CompoundTag const& loadedData);
 
-    MCAPI ::ScoreboardIdentityRef const&
-    registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::ActorUniqueID const& entityId);
+    MCAPI ::ScoreboardIdentityRef const& registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::ActorUniqueID const& entityId);
 
-    MCAPI ::ScoreboardIdentityRef const&
-    registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::std::string const& name);
+    MCAPI ::ScoreboardIdentityRef const& registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::std::string const& name);
 
-    MCAPI ::ScoreboardIdentityRef const&
-    registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
+    MCAPI ::ScoreboardIdentityRef const& registerScoreboardIdentity(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);
 
     MCAPI bool removeObjective(::Objective* objective);
 
@@ -216,11 +192,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::DisplayObjective const* $setDisplayObjective(
-        ::std::string const&       displaySlotName,
-        ::Objective const&         objective,
-        ::ObjectiveSortOrder const order
-    );
+    MCAPI ::DisplayObjective const* $setDisplayObjective(::std::string const& displaySlotName, ::Objective const& objective, ::ObjectiveSortOrder const order);
 
     MCAPI ::Objective* $clearDisplayObjective(::std::string const& displaySlotName);
 
@@ -256,4 +228,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

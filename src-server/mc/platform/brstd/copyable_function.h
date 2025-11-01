@@ -4,7 +4,7 @@
 
 namespace brstd {
 
-template <class Signature>
+template<class Signature>
 class copyable_function : public detail::function::function_invoke<detail::function::DerivedType::Copyable, Signature> {
     using base = detail::function::function_invoke<detail::function::DerivedType::Copyable, Signature>;
 
@@ -23,4 +23,4 @@ public:
     }
     friend void swap(copyable_function& f1, copyable_function& f2) noexcept { f1.swap(f2); }
 };
-} // namespace brstd
+}

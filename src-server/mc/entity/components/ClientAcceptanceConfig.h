@@ -21,4 +21,5 @@ public:
     ClientAcceptanceConfig& operator=(ClientAcceptanceConfig const&);
     ClientAcceptanceConfig(ClientAcceptanceConfig const&);
     ClientAcceptanceConfig();
+
 };

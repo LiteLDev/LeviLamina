@@ -4,7 +4,8 @@
 
 namespace webrtc {
 
-template <typename T0>
-class MediaStreamProxyWithInternal {};
+template<typename T0>
+class MediaStreamProxyWithInternal {
+};
 
-} // namespace webrtc
+}

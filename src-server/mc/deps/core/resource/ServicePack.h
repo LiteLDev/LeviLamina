@@ -15,4 +15,5 @@ public:
     ServicePack& operator=(ServicePack const&);
     ServicePack(ServicePack const&);
     ServicePack();
+
 };

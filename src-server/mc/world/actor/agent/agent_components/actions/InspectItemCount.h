@@ -16,6 +16,7 @@ public:
     InspectItemCount& operator=(InspectItemCount const&);
     InspectItemCount(InspectItemCount const&);
     InspectItemCount();
+
 };
 
-} // namespace AgentComponents::Actions
+}

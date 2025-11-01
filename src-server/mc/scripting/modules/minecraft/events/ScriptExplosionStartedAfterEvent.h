@@ -23,12 +23,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>> mBlocks;
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
-        mDimension;
-    ::ll::
-        TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
-                                                                    mSource;
-    ::ll::TypedStorage<8, 8, ::BlockSource&>                        mBlockSource;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>> mDimension;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> mSource;
+    ::ll::TypedStorage<8, 8, ::BlockSource&> mBlockSource;
     ::ll::TypedStorage<8, 8, ::Scripting::WeakLifetimeScope const&> mScope;
     // NOLINTEND
 
@@ -42,8 +39,7 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptExplosionStartedAfterEvent(::ScriptModuleMinecraft::ScriptExplosionStartedAfterEvent const&);
 
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>
-    getImpactedBlocks() const;
+    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>> getImpactedBlocks() const;
 
     MCAPI ~ScriptExplosionStartedAfterEvent();
     // NOLINTEND
@@ -65,6 +61,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

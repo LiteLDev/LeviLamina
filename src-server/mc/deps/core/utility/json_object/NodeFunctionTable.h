@@ -28,6 +28,7 @@ public:
     NodeFunctionTable& operator=(NodeFunctionTable const&);
     NodeFunctionTable(NodeFunctionTable const&);
     NodeFunctionTable();
+
 };
 
-} // namespace Bedrock::JSONObject
+}

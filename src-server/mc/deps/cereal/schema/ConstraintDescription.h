@@ -16,14 +16,17 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk38eb24;
     ::ll::UntypedStorage<8, 16> mUnk25067a;
     ::ll::UntypedStorage<8, 40> mUnk250a1f;
+    ::ll::UntypedStorage<8, 40> mUnkf0c4a1;
     ::ll::UntypedStorage<8, 16> mUnk789004;
     ::ll::UntypedStorage<8, 16> mUnkbafc0e;
+    ::ll::UntypedStorage<1, 2> mUnk8435d8;
     ::ll::UntypedStorage<8, 16> mUnkebc71f;
     ::ll::UntypedStorage<8, 16> mUnk8a0316;
     ::ll::UntypedStorage<8, 16> mUnk46888a;
     ::ll::UntypedStorage<8, 16> mUnkf8743f;
     ::ll::UntypedStorage<8, 16> mUnkb3cf53;
     ::ll::UntypedStorage<8, 32> mUnk775e44;
+    ::ll::UntypedStorage<8, 24> mUnk7b0f14;
     // NOLINTEND
 
 public:
@@ -61,6 +64,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace cereal::internal
+}

@@ -24,18 +24,13 @@ public:
     virtual HRESULT GetPortContext(::XTaskQueuePort, ::ITaskQueuePortContext**) = 0;
 
     // vIndex: 5
-    virtual HRESULT
-    RegisterWaitHandle(::XTaskQueuePort, void*, void*, void (*)(void*, bool), ::XTaskQueueRegistrationToken*) = 0;
+    virtual HRESULT RegisterWaitHandle(::XTaskQueuePort, void*, void*, void(*) (void*, bool), ::XTaskQueueRegistrationToken*) = 0;
 
     // vIndex: 6
     virtual void UnregisterWaitHandle(::XTaskQueueRegistrationToken) = 0;
 
     // vIndex: 7
-    virtual HRESULT RegisterSubmitCallback(
-        void*,
-        void (*)(void*, ::XTaskQueueObject*, ::XTaskQueuePort),
-        ::XTaskQueueRegistrationToken*
-    ) = 0;
+    virtual HRESULT RegisterSubmitCallback(void*, void(*) (void*, ::XTaskQueueObject*, ::XTaskQueuePort), ::XTaskQueueRegistrationToken*) = 0;
 
     // vIndex: 8
     virtual void UnregisterSubmitCallback(::XTaskQueueRegistrationToken) = 0;
@@ -47,7 +42,7 @@ public:
     virtual bool CanClose() = 0;
 
     // vIndex: 11
-    virtual HRESULT Terminate(bool, void*, void (*)(void*)) = 0;
+    virtual HRESULT Terminate(bool, void*, void(*) (void*)) = 0;
     // NOLINTEND
 
 public:
@@ -55,4 +50,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

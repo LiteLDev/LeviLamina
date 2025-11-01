@@ -2,8 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/chunk/NeighborAwareBlockUpdateType.h"
+
 // auto generated forward declare list
 // clang-format off
+class Block;
 class BlockPos;
 namespace br::worldgen { struct StructureTemplateBlockPalette; }
 // clang-format on
@@ -20,6 +24,9 @@ public:
 
     // vIndex: 2
     virtual ::BlockPos rawSize() const = 0;
+
+    // vIndex: 3
+    virtual ::NeighborAwareBlockUpdateType shouldHandleUpgradeForBlock(::Block const&) const = 0;
     // NOLINTEND
 
 public:
@@ -27,4 +34,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

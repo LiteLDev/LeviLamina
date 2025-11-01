@@ -4,6 +4,6 @@
 
 enum class TypeExecutingEvent : int {
     Block = 0,
-    Item  = 1,
-    None  = 2,
+    Item = 1,
+    None = 2,
 };

@@ -17,7 +17,7 @@ class ScriptAimAssistCategory {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk56d106;
+    ::ll::UntypedStorage<8, 8> mUnk56d106;
     ::ll::UntypedStorage<8, 32> mUnk4c8cdd;
     // NOLINTEND
 
@@ -40,8 +40,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, int>> getEntityPriorities() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptAimAssistCategory&
-    operator=(::ScriptModuleMinecraft::ScriptAimAssistCategory&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptAimAssistCategory& operator=(::ScriptModuleMinecraft::ScriptAimAssistCategory&&);
     // NOLINTEND
 
 public:
@@ -49,6 +48,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

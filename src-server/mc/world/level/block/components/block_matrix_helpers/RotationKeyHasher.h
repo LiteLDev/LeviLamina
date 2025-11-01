@@ -4,6 +4,7 @@
 
 namespace BlockMatrixHelpers {
 
-struct RotationKeyHasher {};
+struct RotationKeyHasher {
+};
 
-} // namespace BlockMatrixHelpers
+}

@@ -4,5 +4,5 @@
 
 enum class AgentAnimation : uchar {
     ArmSwing = 0,
-    Shrug    = 1,
+    Shrug = 1,
 };

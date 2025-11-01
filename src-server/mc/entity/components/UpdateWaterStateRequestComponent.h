@@ -11,10 +11,11 @@ struct UpdateWaterStateRequestComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::MaterialType>                mMaterialType;
+    ::ll::TypedStorage<4, 4, ::MaterialType> mMaterialType;
     ::ll::TypedStorage<1, 1, ::UpdateWaterStateFlowRequest> mShouldApplyFlow;
-    ::ll::TypedStorage<1, 1, bool>                          mHasAdjacentFlowingBlocks;
-    ::ll::TypedStorage<1, 1, bool>                          mIsAnyWaterInBB;
-    ::ll::TypedStorage<4, 12, ::Vec3>                       mAccumulatedFlow;
+    ::ll::TypedStorage<1, 1, bool> mHasAdjacentFlowingBlocks;
+    ::ll::TypedStorage<1, 1, bool> mIsAnyWaterInBB;
+    ::ll::TypedStorage<4, 12, ::Vec3> mAccumulatedFlow;
     // NOLINTEND
+
 };

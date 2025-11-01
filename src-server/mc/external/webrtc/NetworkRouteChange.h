@@ -8,7 +8,7 @@ struct NetworkRouteChange {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf75962;
+    ::ll::UntypedStorage<8, 8> mUnkf75962;
     ::ll::UntypedStorage<8, 56> mUnk46e4cb;
     // NOLINTEND
 
@@ -39,6 +39,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

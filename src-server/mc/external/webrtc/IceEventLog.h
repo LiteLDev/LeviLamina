@@ -17,7 +17,7 @@ class IceEventLog {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf90fb9;
+    ::ll::UntypedStorage<8, 8> mUnkf90fb9;
     ::ll::UntypedStorage<8, 64> mUnkc90218;
     // NOLINTEND
 
@@ -33,14 +33,9 @@ public:
 
     MCNAPI IceEventLog();
 
-    MCNAPI void LogCandidatePairConfig(
-        ::webrtc::IceCandidatePairConfigType         type,
-        uint                                         candidate_pair_id,
-        ::webrtc::IceCandidatePairDescription const& candidate_pair_desc
-    );
+    MCNAPI void LogCandidatePairConfig(::webrtc::IceCandidatePairConfigType type, uint candidate_pair_id, ::webrtc::IceCandidatePairDescription const& candidate_pair_desc);
 
-    MCNAPI void
-    LogCandidatePairEvent(::webrtc::IceCandidatePairEventType type, uint candidate_pair_id, uint transaction_id);
+    MCNAPI void LogCandidatePairEvent(::webrtc::IceCandidatePairEventType type, uint candidate_pair_id, uint transaction_id);
 
     MCNAPI ~IceEventLog();
     // NOLINTEND
@@ -56,6 +51,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

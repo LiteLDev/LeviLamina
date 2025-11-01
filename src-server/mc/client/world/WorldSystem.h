@@ -4,6 +4,7 @@
 
 namespace World {
 
-class WorldSystem {};
+class WorldSystem {
+};
 
-} // namespace World
+}

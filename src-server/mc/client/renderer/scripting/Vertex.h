@@ -19,6 +19,7 @@ public:
     Vertex& operator=(Vertex const&);
     Vertex(Vertex const&);
     Vertex();
+
 };
 
-} // namespace Scripting::RenderHelper
+}

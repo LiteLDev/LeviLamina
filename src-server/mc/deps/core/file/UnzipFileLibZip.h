@@ -13,13 +13,13 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkd963bc;
-    ::ll::UntypedStorage<8, 8>  mUnkad17b4;
+    ::ll::UntypedStorage<8, 8> mUnkad17b4;
     ::ll::UntypedStorage<8, 16> mUnkb7af5d;
     ::ll::UntypedStorage<8, 80> mUnk32ee59;
     ::ll::UntypedStorage<8, 32> mUnk5aad00;
-    ::ll::UntypedStorage<8, 8>  mUnkd58109;
-    ::ll::UntypedStorage<8, 8>  mUnk3631e8;
-    ::ll::UntypedStorage<8, 8>  mUnkba5020;
+    ::ll::UntypedStorage<8, 8> mUnkd58109;
+    ::ll::UntypedStorage<8, 8> mUnk3631e8;
+    ::ll::UntypedStorage<8, 8> mUnkba5020;
     ::ll::UntypedStorage<8, 32> mUnk2168f3;
     // NOLINTEND
 
@@ -74,6 +74,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

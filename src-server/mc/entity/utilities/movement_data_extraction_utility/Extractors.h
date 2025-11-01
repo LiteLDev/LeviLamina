@@ -16,6 +16,7 @@ public:
     Extractors& operator=(Extractors const&);
     Extractors(Extractors const&);
     Extractors();
+
 };
 
-} // namespace MovementDataExtractionUtility
+}

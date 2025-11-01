@@ -13,4 +13,4 @@ MCNAPI ::std::vector<::MinecraftPacketIds>& mIgnoredPacketIds();
 MCNAPI ::std::vector<::MinecraftPacketIds>& mMonitoredPacketIds();
 // NOLINTEND
 
-} // namespace ScriptModuleMinecraftNet::EventFilters
+}

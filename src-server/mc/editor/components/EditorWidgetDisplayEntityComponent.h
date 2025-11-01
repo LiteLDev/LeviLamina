@@ -12,4 +12,5 @@ public:
     ::ll::TypedStorage<8, 16, ::mce::UUID> displayWidgetId;
     ::ll::TypedStorage<8, 16, ::mce::UUID> displayWidgetComponentId;
     // NOLINTEND
+
 };

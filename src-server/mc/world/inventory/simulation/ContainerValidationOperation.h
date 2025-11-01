@@ -12,8 +12,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::ContainerValidationOperationType> mType;
-    ::ll::TypedStorage<4, 16, ::ContainerValidationSlotData>     mSlotData;
-    ::ll::TypedStorage<4, 4, int>                                mAmount;
-    ::ll::TypedStorage<8, 152, ::ItemStack>                      mStack;
+    ::ll::TypedStorage<4, 16, ::ContainerValidationSlotData> mSlotData;
+    ::ll::TypedStorage<4, 4, int> mAmount;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mStack;
     // NOLINTEND
+
 };

@@ -20,16 +20,8 @@ struct ScriptPlayerInteractWithEntityAfterEvent : public ::ScriptModuleMinecraft
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-        mBeforeItemStack;
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-        mAfterItemStack;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mBeforeItemStack;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mAfterItemStack;
     // NOLINTEND
 
 public:
@@ -42,15 +34,9 @@ public:
     // NOLINTBEGIN
     MCAPI ScriptPlayerInteractWithEntityAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&&);
 
-    MCAPI
-    ScriptPlayerInteractWithEntityAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent const&);
+    MCAPI ScriptPlayerInteractWithEntityAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent const&);
 
-    MCAPI ScriptPlayerInteractWithEntityAfterEvent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>                     player,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>                      target
-    );
+    MCAPI ScriptPlayerInteractWithEntityAfterEvent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> target);
 
     MCAPI ~ScriptPlayerInteractWithEntityAfterEvent();
     // NOLINTEND
@@ -68,12 +54,7 @@ public:
 
     MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent const&);
 
-    MCAPI void* $ctor(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>                     player,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>                      target
-    );
+    MCAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> player, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> beforeItemStack, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>> afterItemStack, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> target);
     // NOLINTEND
 
 public:
@@ -81,6 +62,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

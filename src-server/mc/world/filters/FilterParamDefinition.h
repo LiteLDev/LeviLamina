@@ -17,12 +17,12 @@ struct FilterParamDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk4b4f37;
-    ::ll::UntypedStorage<4, 4>  mUnk3c8bc4;
+    ::ll::UntypedStorage<4, 4> mUnk4b4f37;
+    ::ll::UntypedStorage<4, 4> mUnk3c8bc4;
     ::ll::UntypedStorage<8, 32> mUnk29a8f8;
     ::ll::UntypedStorage<8, 48> mUnk87f316;
     ::ll::UntypedStorage<8, 64> mUnked9a86;
-    ::ll::UntypedStorage<1, 1>  mUnk87e752;
+    ::ll::UntypedStorage<1, 1> mUnk87e752;
     // NOLINTEND
 
 public:
@@ -34,22 +34,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FilterParamDefinition(
-        ::FilterParamType        type,
-        ::FilterParamRequirement requirement,
-        ::std::string            description,
-        ::FilterInput            def,
-        ::FilterStringMap        stringMap
-    );
+    MCNAPI FilterParamDefinition(::FilterParamType type, ::FilterParamRequirement requirement, ::std::string description, ::FilterInput def, ::FilterStringMap stringMap);
 
-    MCNAPI FilterParamDefinition(
-        ::FilterParamType        type,
-        ::FilterParamRequirement requirement,
-        ::std::string            description,
-        ::FilterParamOption      opt,
-        ::FilterInput            def,
-        ::FilterStringMap        stringMap
-    );
+    MCNAPI FilterParamDefinition(::FilterParamType type, ::FilterParamRequirement requirement, ::std::string description, ::FilterParamOption opt, ::FilterInput def, ::FilterStringMap stringMap);
 
     MCNAPI ::FilterParamDefinition& operator=(::FilterParamDefinition&&);
 
@@ -59,22 +46,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::FilterParamType        type,
-        ::FilterParamRequirement requirement,
-        ::std::string            description,
-        ::FilterInput            def,
-        ::FilterStringMap        stringMap
-    );
+    MCNAPI void* $ctor(::FilterParamType type, ::FilterParamRequirement requirement, ::std::string description, ::FilterInput def, ::FilterStringMap stringMap);
 
-    MCNAPI void* $ctor(
-        ::FilterParamType        type,
-        ::FilterParamRequirement requirement,
-        ::std::string            description,
-        ::FilterParamOption      opt,
-        ::FilterInput            def,
-        ::FilterStringMap        stringMap
-    );
+    MCNAPI void* $ctor(::FilterParamType type, ::FilterParamRequirement requirement, ::std::string description, ::FilterParamOption opt, ::FilterInput def, ::FilterStringMap stringMap);
     // NOLINTEND
 
 public:
@@ -82,4 +56,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

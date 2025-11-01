@@ -25,21 +25,21 @@ class Guardian : public ::Monster {
 public:
     // Guardian inner types define
     using DataFlagIdType = char;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>  ATTACK_SOUND;
-    ::ll::TypedStorage<4, 4, float>           ELDER_SIZE_SCALE;
-    ::ll::TypedStorage<4, 4, int>             FLAG_MOVING;
-    ::ll::TypedStorage<4, 4, int>             FLAG_ELDER;
-    ::ll::TypedStorage<4, 12, ::Vec3>         startPos;
-    ::ll::TypedStorage<8, 8, ::Mob*>          clientSideCachedAttackTarget;
-    ::ll::TypedStorage<4, 4, int>             clientSideAttackTime;
-    ::ll::TypedStorage<1, 1, bool>            clientSideTouchedGround;
+    ::ll::TypedStorage<8, 32, ::std::string> ATTACK_SOUND;
+    ::ll::TypedStorage<4, 4, float> ELDER_SIZE_SCALE;
+    ::ll::TypedStorage<4, 4, int> FLAG_MOVING;
+    ::ll::TypedStorage<4, 4, int> FLAG_ELDER;
+    ::ll::TypedStorage<4, 12, ::Vec3> startPos;
+    ::ll::TypedStorage<8, 8, ::Mob*> clientSideCachedAttackTarget;
+    ::ll::TypedStorage<4, 4, int> clientSideAttackTime;
+    ::ll::TypedStorage<1, 1, bool> clientSideTouchedGround;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mAttackTargetId;
-    ::ll::TypedStorage<1, 1, bool>            mElderGhost;
-    ::ll::TypedStorage<8, 8, uint64>          mLaserLoop;
+    ::ll::TypedStorage<1, 1, bool> mElderGhost;
+    ::ll::TypedStorage<8, 8, uint64> mLaserLoop;
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEyeTarget;
     // NOLINTEND
 
@@ -84,11 +84,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Guardian(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI Guardian(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCAPI ::Vec3 getMoveEyeVector();
 
@@ -102,11 +98,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -142,4 +134,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

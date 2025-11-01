@@ -15,4 +15,4 @@ MCNAPI ::std::set<::mce::UUID> const& ALLOW_ITEM_LIST();
 MCNAPI ::std::vector<::std::string> const& EMOTE_LIST();
 // NOLINTEND
 
-} // namespace personaDefault
+}

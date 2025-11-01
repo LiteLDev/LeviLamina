@@ -11,14 +11,13 @@
 struct PurchaseReceiptPacketInfo;
 // clang-format on
 
-class PurchaseReceiptPacket
-: public ::SerializedPayloadPacket<::PurchaseReceiptPacketInfo, ::PurchaseReceiptPacketPayload> {
+class PurchaseReceiptPacket : public ::SerializedPayloadPacket<::PurchaseReceiptPacketInfo, ::PurchaseReceiptPacketPayload> {
 public:
     // PurchaseReceiptPacket inner types define
     using PayloadType = ::PurchaseReceiptPacketPayload;
-
+    
     using PacketInfo = ::PurchaseReceiptPacketInfo;
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,4 +30,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

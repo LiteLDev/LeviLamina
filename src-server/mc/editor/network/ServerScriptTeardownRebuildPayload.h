@@ -12,8 +12,7 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace Editor::Network {
 
-class ServerScriptTeardownRebuildPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::ServerScriptTeardownRebuildPayload> {
+class ServerScriptTeardownRebuildPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::ServerScriptTeardownRebuildPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -46,6 +45,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

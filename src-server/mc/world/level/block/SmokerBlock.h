@@ -18,10 +18,10 @@ class SmokerBlock : public ::FurnaceBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -47,4 +47,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/world/level/Pos2d.h"
 
-template <int T0>
+template<int T0>
 class DividedPos2d : public ::Pos2d {
 public:
     [[nodiscard]] constexpr DividedPos2d() noexcept                        = default;

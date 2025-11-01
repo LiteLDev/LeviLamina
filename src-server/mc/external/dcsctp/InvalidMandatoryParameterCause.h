@@ -13,8 +13,7 @@ namespace dcsctp { struct InvalidMandatoryParameterCauseConfig; }
 
 namespace dcsctp {
 
-class InvalidMandatoryParameterCause : public ::dcsctp::Parameter,
-                                       public ::dcsctp::TLVTrait<::dcsctp::InvalidMandatoryParameterCauseConfig> {
+class InvalidMandatoryParameterCause : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::InvalidMandatoryParameterCauseConfig> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -47,6 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

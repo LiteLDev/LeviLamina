@@ -19,4 +19,4 @@ MCNAPI bool oceanFloor(::Block const& state);
 MCNAPI bool worldSurface(::Block const& state);
 // NOLINTEND
 
-} // namespace Heightmap
+}

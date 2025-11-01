@@ -4,7 +4,7 @@
 
 enum class CreakingHeartState : int {
     Uprooted = 0,
-    Dormant  = 1,
-    Awake    = 2,
-    Count    = 3,
+    Dormant = 1,
+    Awake = 2,
+    Count = 3,
 };

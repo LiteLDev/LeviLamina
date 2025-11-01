@@ -16,16 +16,16 @@ class StyledWriter : public ::Json::Writer {
 public:
     // StyledWriter inner types define
     using ChildValues = ::std::vector<::std::string>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> childValues_;
-    ::ll::TypedStorage<8, 32, ::std::string>                document_;
-    ::ll::TypedStorage<8, 32, ::std::string>                indentString_;
-    ::ll::TypedStorage<4, 4, int>                           rightMargin_;
-    ::ll::TypedStorage<4, 4, int>                           indentSize_;
-    ::ll::TypedStorage<1, 1, bool>                          addChildValues_;
+    ::ll::TypedStorage<8, 32, ::std::string> document_;
+    ::ll::TypedStorage<8, 32, ::std::string> indentString_;
+    ::ll::TypedStorage<4, 4, int> rightMargin_;
+    ::ll::TypedStorage<4, 4, int> indentSize_;
+    ::ll::TypedStorage<1, 1, bool> addChildValues_;
     // NOLINTEND
 
 public:
@@ -81,6 +81,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Json
+}

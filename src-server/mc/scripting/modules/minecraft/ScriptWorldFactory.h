@@ -20,16 +20,11 @@ class ScriptWorldFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorld>>
-    findHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level);
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorld>> findHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level);
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorld> getHandle(
-        ::Scripting::WeakLifetimeScope&   scope,
-        ::ServerLevel&                    level,
-        ::Scripting::DependencyLocator&   locator,
-        ::Scripting::ContextConfig const& config
-    );
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorld> getHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level, ::Scripting::DependencyLocator& locator, ::Scripting::ContextConfig const& config);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

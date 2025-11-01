@@ -22,10 +22,10 @@ public:
     // vIndex: 25
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource& region) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -43,8 +43,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool
-    _tryMoveInItemsAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int slot, int face);
+    MCAPI static bool _tryMoveInItemsAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int slot, int face);
 
     MCAPI static ::Container* getContainerAt(::BlockSource& region, ::Vec3 const& pos);
     // NOLINTEND
@@ -66,4 +65,5 @@ public:
 
     MCNAPI static void** $vftableForContainer();
     // NOLINTEND
+
 };

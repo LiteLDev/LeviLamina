@@ -21,6 +21,7 @@ public:
     BoundingBox& operator=(BoundingBox const&);
     BoundingBox(BoundingBox const&);
     BoundingBox();
+
 };
 
-} // namespace SharedTypes::v1_21_50
+}

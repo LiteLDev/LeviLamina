@@ -18,7 +18,7 @@ class ScriptSettingsGraphics {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk6a5d98;
+    ::ll::UntypedStorage<8, 8> mUnk6a5d98;
     ::ll::UntypedStorage<8, 16> mUnk8653ab;
     // NOLINTEND
 
@@ -31,18 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::std::variant<int, bool, ::std::string>>
-    get(::Editor::ScriptModule::ScriptSettingsGraphicsPropType prop) const;
+    MCNAPI ::std::optional<::std::variant<int, bool, ::std::string>> get(::Editor::ScriptModule::ScriptSettingsGraphicsPropType prop) const;
 
-    MCNAPI ::std::unordered_map<::std::string, ::std::optional<::std::variant<int, bool, ::std::string>>>
-    getAll() const;
+    MCNAPI ::std::unordered_map<::std::string, ::std::optional<::std::variant<int, bool, ::std::string>>> getAll() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    set(::Editor::ScriptModule::ScriptSettingsGraphicsPropType prop,
-        ::std::variant<int, bool, ::std::string> const&        value);
+    MCNAPI ::Scripting::Result_deprecated<void> set(::Editor::ScriptModule::ScriptSettingsGraphicsPropType prop, ::std::variant<int, bool, ::std::string> const& value);
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    setAll(::std::unordered_map<::std::string, ::std::optional<::std::variant<int, bool, ::std::string>>> const& props);
+    MCNAPI ::Scripting::Result_deprecated<void> setAll(::std::unordered_map<::std::string, ::std::optional<::std::variant<int, bool, ::std::string>>> const& props);
     // NOLINTEND
 
 public:
@@ -52,6 +47,7 @@ public:
 
     MCNAPI static ::Scripting::EnumBinding bindScriptPropsEnum();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

@@ -17,4 +17,5 @@ public:
     NetworkStatMetrics& operator=(NetworkStatMetrics const&);
     NetworkStatMetrics(NetworkStatMetrics const&);
     NetworkStatMetrics();
+
 };

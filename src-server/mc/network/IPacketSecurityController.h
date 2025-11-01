@@ -15,21 +15,12 @@ class NetworkIdentifier;
 namespace Bedrock { struct ImplCtor; }
 // clang-format on
 
-class IPacketSecurityController
-: public ::Bedrock::ImplBase<
-      ::IPacketSecurityController,
-      ::Bedrock::ImplCtor(::NetworkIdentifier const&),
-      ::Bedrock::ImplCtor(::NetworkIdentifier const&, ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder>)> {
+class IPacketSecurityController : public ::Bedrock::ImplBase<::IPacketSecurityController, ::Bedrock::ImplCtor(::NetworkIdentifier const&), ::Bedrock::ImplCtor(::NetworkIdentifier const&, ::std::shared_ptr<::PacketGroupDefinition::PacketGroupBuilder>)> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::PacketViolationResponse checkForViolation(
-        ::MinecraftPacketIds,
-        ::SubClientId,
-        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const&,
-        bool*
-    ) = 0;
+    virtual ::PacketViolationResponse checkForViolation(::MinecraftPacketIds, ::SubClientId, ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const&, bool*) = 0;
 
     // vIndex: 2
     virtual uint getTelemetryData() = 0;
@@ -61,4 +52,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

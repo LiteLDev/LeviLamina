@@ -13,11 +13,7 @@ class ScriptCustomComponentAfterEventList {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        24,
-        ::std::vector<::std::unique_ptr<::ScriptModuleMinecraft::IScriptCustomComponentAfterEventSignal>>>
-        mHandles;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::ScriptModuleMinecraft::IScriptCustomComponentAfterEventSignal>>> mHandles;
     // NOLINTEND
 
 public:
@@ -31,6 +27,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

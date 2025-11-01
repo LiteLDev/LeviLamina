@@ -16,4 +16,5 @@ public:
 
     MCNAPI static bool isMobSpawningPaused(::ILevel const& level);
     // NOLINTEND
+
 };

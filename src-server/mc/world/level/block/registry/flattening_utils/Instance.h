@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/sem_ver/SemVersion.h"
-#include "mc/resources/BaseGameVersion.h"
+#include "mc/versionless/util/BaseGameVersion.h"
 #include "mc/world/item/registry/ItemRegistryComplexAlias.h"
 
 // auto generated forward declare list
@@ -20,11 +20,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::FlatteningUtils::LegacyBlockInfo const&> info;
-    ::ll::TypedStorage<8, 64, ::std::function<::Block const*(int)>>     blockComplexAliasCallback;
-    ::ll::TypedStorage<8, 96, ::ItemRegistryComplexAlias>               itemComplexAliasCallback;
-    ::ll::TypedStorage<8, 64, ::std::function<void()>>                  registerAlteredStatesCallback;
-    ::ll::TypedStorage<8, 32, ::BaseGameVersion>                        baseGameVersion;
-    ::ll::TypedStorage<8, 24, ::SemVersion>                             blockJsonFormatVersion;
+    ::ll::TypedStorage<8, 64, ::std::function<::Block const*(int)>> blockComplexAliasCallback;
+    ::ll::TypedStorage<8, 96, ::ItemRegistryComplexAlias> itemComplexAliasCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>> registerAlteredStatesCallback;
+    ::ll::TypedStorage<8, 32, ::BaseGameVersion> baseGameVersion;
+    ::ll::TypedStorage<8, 24, ::SemVersion> blockJsonFormatVersion;
     // NOLINTEND
 
 public:
@@ -44,6 +44,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace FlatteningUtils
+}

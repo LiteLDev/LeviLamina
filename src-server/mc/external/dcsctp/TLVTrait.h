@@ -4,7 +4,8 @@
 
 namespace dcsctp {
 
-template <typename T0>
-class TLVTrait {};
+template<typename T0>
+class TLVTrait {
+};
 
-} // namespace dcsctp
+}

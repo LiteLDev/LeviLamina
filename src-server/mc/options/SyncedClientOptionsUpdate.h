@@ -14,4 +14,5 @@ public:
     SyncedClientOptionsUpdate& operator=(SyncedClientOptionsUpdate const&);
     SyncedClientOptionsUpdate(SyncedClientOptionsUpdate const&);
     SyncedClientOptionsUpdate();
+
 };

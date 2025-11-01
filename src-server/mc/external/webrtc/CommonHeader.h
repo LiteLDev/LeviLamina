@@ -26,6 +26,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool Parse(uchar const* buffer, uint64 size_bytes);
     // NOLINTEND
+
 };
 
-} // namespace webrtc::rtcp
+}

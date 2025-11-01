@@ -36,10 +36,10 @@ public:
     // vIndex: 10
     virtual void onChanged(::BlockSource& region) /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -65,4 +65,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

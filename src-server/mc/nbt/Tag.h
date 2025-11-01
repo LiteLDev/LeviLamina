@@ -78,7 +78,6 @@ public:
     [[nodiscard]] bool operator==(Tag const& other) const { return equals(other); }
 
     LLNDAPI std::string toSnbt(SnbtFormat snbtFormat = SnbtFormat::PrettyFilePrint, uchar indent = 4) const noexcept;
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -153,4 +152,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

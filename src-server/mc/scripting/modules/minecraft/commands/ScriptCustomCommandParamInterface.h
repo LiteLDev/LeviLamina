@@ -14,7 +14,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk779845;
-    ::ll::UntypedStorage<4, 4>  mUnk1962fc;
+    ::ll::UntypedStorage<4, 4> mUnk1962fc;
     ::ll::UntypedStorage<8, 40> mUnk8fcaa8;
     // NOLINTEND
 
@@ -26,11 +26,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&
-    operator=(::ScriptModuleMinecraft::ScriptCustomCommandParamInterface const&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptCustomCommandParamInterface& operator=(::ScriptModuleMinecraft::ScriptCustomCommandParamInterface const&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&
-    operator=(::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptCustomCommandParamInterface& operator=(::ScriptModuleMinecraft::ScriptCustomCommandParamInterface&&);
     // NOLINTEND
 
 public:
@@ -38,6 +36,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

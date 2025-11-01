@@ -2,4 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct HC_PERFORM_ENV {};
+struct HC_PERFORM_ENV {
+};

@@ -16,11 +16,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 4, float>  mSpeed;
-    ::ll::TypedStorage<4, 4, float>  mStartDistance;
-    ::ll::TypedStorage<4, 4, float>  mStopDistance;
-    ::ll::TypedStorage<4, 4, int>    mListenTime;
-    ::ll::TypedStorage<4, 4, int>    mTimeToRecalcPath;
+    ::ll::TypedStorage<4, 4, float> mSpeed;
+    ::ll::TypedStorage<4, 4, float> mStartDistance;
+    ::ll::TypedStorage<4, 4, float> mStopDistance;
+    ::ll::TypedStorage<4, 4, int> mListenTime;
+    ::ll::TypedStorage<4, 4, int> mTimeToRecalcPath;
     // NOLINTEND
 
 public:
@@ -81,4 +81,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

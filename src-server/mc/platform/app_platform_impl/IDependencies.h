@@ -12,7 +12,7 @@ class FeatureToggles;
 class I18n;
 class IMinecraftEventing;
 class ThrottledFileWriteManager;
-namespace flighting { class TreatmentToggles; }
+namespace flighting { class IFlightReader; }
 // clang-format on
 
 namespace AppPlatformImpl {
@@ -34,7 +34,7 @@ public:
     virtual ::Bedrock::NonOwnerPointer<::ThrottledFileWriteManager> getFileWriteManager() = 0;
 
     // vIndex: 4
-    virtual ::ServiceReference<::flighting::TreatmentToggles> getTreatmentToggles() = 0;
+    virtual ::ServiceReference<::flighting::IFlightReader> getTreatmentToggles() = 0;
 
     // vIndex: 5
     virtual ::I18n& getI18n() = 0;
@@ -48,6 +48,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace AppPlatformImpl
+}

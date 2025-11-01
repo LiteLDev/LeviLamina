@@ -4,7 +4,8 @@
 
 namespace Bedrock::PubSub {
 
-template <typename T0>
-class Connector {};
+template<typename T0>
+class Connector {
+};
 
-} // namespace Bedrock::PubSub
+}

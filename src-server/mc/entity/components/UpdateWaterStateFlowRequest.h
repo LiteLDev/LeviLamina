@@ -4,6 +4,6 @@
 
 enum class UpdateWaterStateFlowRequest : uchar {
     NoFlowUnlessMarkedForFlow = 0,
-    ForceNoFlow               = 1,
-    DoFlow                    = 2,
+    ForceNoFlow = 1,
+    DoFlow = 2,
 };

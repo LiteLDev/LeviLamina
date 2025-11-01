@@ -27,52 +27,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _buildHand(
-        ::BlockSource&                                 region,
-        ::BlockPos const&                              pos,
-        ::Random&                                      random,
-        ::std::vector<::BlockPos>&                     topDec,
-        ::std::vector<::std::pair<::BlockPos, uchar>>& sideDec,
-        ::gsl::not_null<::Block const*>                block
-    ) const;
+    MCAPI void _buildHand(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::std::vector<::BlockPos>& topDec, ::std::vector<::std::pair<::BlockPos, uchar>>& sideDec, ::gsl::not_null<::Block const*> block) const;
 
-    MCAPI void _buildPlantArm(
-        ::BlockSource&                                 region,
-        ::Random&                                      random,
-        ::BlockPos const&                              pos,
-        ::gsl::not_null<::Block const*>                block,
-        ::std::vector<::BlockPos>&                     topDec,
-        ::std::vector<::std::pair<::BlockPos, uchar>>& sideDec,
-        uchar                                          direction,
-        bool                                           notTall
-    ) const;
+    MCAPI void _buildPlantArm(::BlockSource& region, ::Random& random, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, ::std::vector<::BlockPos>& topDec, ::std::vector<::std::pair<::BlockPos, uchar>>& sideDec, uchar direction, bool notTall) const;
 
-    MCAPI void _buildPlantLike(
-        ::BlockSource&                                 region,
-        ::BlockPos const&                              pos,
-        ::Random&                                      random,
-        ::std::vector<::BlockPos>&                     topDec,
-        ::std::vector<::std::pair<::BlockPos, uchar>>& sideDec,
-        ::gsl::not_null<::Block const*>                block
-    ) const;
+    MCAPI void _buildPlantLike(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::std::vector<::BlockPos>& topDec, ::std::vector<::std::pair<::BlockPos, uchar>>& sideDec, ::gsl::not_null<::Block const*> block) const;
 
-    MCAPI void _buildSmallClump(
-        ::BlockSource&             region,
-        ::BlockPos const&          pos,
-        ::Random&                  random,
-        ::std::vector<::BlockPos>& topDec,
-        ::std::vector<::std::pair<::BlockPos, uchar>>&,
-        ::gsl::not_null<::Block const*> block
-    ) const;
+    MCAPI void _buildSmallClump(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::std::vector<::BlockPos>& topDec, ::std::vector<::std::pair<::BlockPos, uchar>>&, ::gsl::not_null<::Block const*> block) const;
 
-    MCAPI void _buildSpire(
-        ::BlockSource&                                 region,
-        ::BlockPos const&                              pos,
-        ::Random&                                      random,
-        ::std::vector<::BlockPos>&                     topDec,
-        ::std::vector<::std::pair<::BlockPos, uchar>>& sideDec,
-        ::gsl::not_null<::Block const*>                block
-    ) const;
+    MCAPI void _buildSpire(::BlockSource& region, ::BlockPos const& pos, ::Random& random, ::std::vector<::BlockPos>& topDec, ::std::vector<::std::pair<::BlockPos, uchar>>& sideDec, ::gsl::not_null<::Block const*> block) const;
 
     MCAPI bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos, int color) const;
 
@@ -82,35 +45,13 @@ public:
 
     MCFOLD void _placeTopDecorations(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool
-    _setBlock(::BlockSource& region, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, int color) const;
+    MCAPI bool _setBlock(::BlockSource& region, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, int color) const;
 
-    MCAPI bool _setBlockOnSolid(
-        ::BlockSource&                  region,
-        ::BlockPos const&               pos,
-        ::gsl::not_null<::Block const*> block,
-        int                             color
-    ) const;
+    MCAPI bool _setBlockOnSolid(::BlockSource& region, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, int color) const;
 
-    MCAPI void _starCorners(
-        ::BlockSource&                  region,
-        ::Random&                       random,
-        ::BlockPos const&               pos,
-        ::gsl::not_null<::Block const*> block,
-        float                           chance,
-        int                             iteration,
-        bool                            negateChance
-    ) const;
+    MCAPI void _starCorners(::BlockSource& region, ::Random& random, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, float chance, int iteration, bool negateChance) const;
 
-    MCAPI void _starFormation(
-        ::BlockSource&                  region,
-        ::Random&                       random,
-        ::BlockPos const&               pos,
-        ::gsl::not_null<::Block const*> block,
-        float                           chance,
-        int                             iteration,
-        bool                            negateChance
-    ) const;
+    MCAPI void _starFormation(::BlockSource& region, ::Random& random, ::BlockPos const& pos, ::gsl::not_null<::Block const*> block, float chance, int iteration, bool negateChance) const;
     // NOLINTEND
 
 public:
@@ -124,4 +65,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

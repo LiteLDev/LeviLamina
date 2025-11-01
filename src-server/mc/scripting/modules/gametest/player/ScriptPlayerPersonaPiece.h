@@ -14,9 +14,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk4b93f2;
-    ::ll::UntypedStorage<4, 4>  mUnk91f8e1;
+    ::ll::UntypedStorage<4, 4> mUnk91f8e1;
     ::ll::UntypedStorage<8, 32> mUnk8c15a8;
-    ::ll::UntypedStorage<1, 2>  mUnkd4fae4;
+    ::ll::UntypedStorage<1, 2> mUnkd4fae4;
     ::ll::UntypedStorage<8, 32> mUnk883a04;
     // NOLINTEND
 
@@ -29,8 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleGameTest::ScriptPlayerPersonaPiece&
-    operator=(::ScriptModuleGameTest::ScriptPlayerPersonaPiece&&);
+    MCNAPI ::ScriptModuleGameTest::ScriptPlayerPersonaPiece& operator=(::ScriptModuleGameTest::ScriptPlayerPersonaPiece&&);
 
     MCNAPI ~ScriptPlayerPersonaPiece();
     // NOLINTEND
@@ -46,6 +45,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleGameTest
+}

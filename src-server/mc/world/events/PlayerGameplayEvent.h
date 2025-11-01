@@ -39,7 +39,7 @@
 template <typename Return>
 struct PlayerGameplayEvent;
 
-template <>
+template<>
 struct PlayerGameplayEvent<void> : ConstEventVariant<
                                        PlayerSkinLoadedClientEvent,
                                        PlayerAddEvent,
@@ -76,4 +76,5 @@ struct PlayerGameplayEvent<CoordinatorResult> : ConstEventVariant<
                                                     PlayerGetExperienceOrbEvent,
                                                     PlayerInteractEvent,
                                                     PlayerInteractWithEntityBeforeEvent,
-                                                    PlayerInteractWithBlockBeforeEvent> {};
+                                                    PlayerInteractWithBlockBeforeEvent> {
+};

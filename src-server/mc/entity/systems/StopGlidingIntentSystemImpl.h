@@ -28,24 +28,7 @@ struct WasInWaterFlagComponent;
 namespace StopGlidingIntentSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void doStopGlidingIntent(
-    ::StrictEntityContext const&,
-    ::Optional<::ArmorFlyEnabledFlagComponent const>      hasArmorFlyEnabled,
-    ::Optional<::OnGroundFlagComponent const>             isOnGround,
-    ::Optional<::PassengerComponent const>                isPassenger,
-    ::Optional<::WasInWaterFlagComponent const>           wasInWater,
-    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnow,
-    ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamily,
-    ::AABBShapeComponent const&                           aabbShapeComponent,
-    ::FallFlyTicksComponent const&                        fallFlyTicksComponent,
-    ::MoveInputComponent const&                           moveInputComponent,
-    ::StateVectorComponent const&                         stateVectorComponent,
-    ::ActorDataFlagComponent const&                       synchedActorDataComponent,
-    ::VanillaClientGameplayComponent const&               vanillaClientGameplayComponent,
-    ::PlayerActionComponent&                              playerActionComponent,
-    ::PlayerInputRequestComponent&                        playerInputRequestComponent,
-    ::IConstBlockSource const&                            constBlockSource
-);
+MCNAPI void doStopGlidingIntent(::StrictEntityContext const&, ::Optional<::ArmorFlyEnabledFlagComponent const> hasArmorFlyEnabled, ::Optional<::OnGroundFlagComponent const> isOnGround, ::Optional<::PassengerComponent const> isPassenger, ::Optional<::WasInWaterFlagComponent const> wasInWater, ::Optional<::CanStandOnSnowFlagComponent const> canStandOnSnow, ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamily, ::AABBShapeComponent const& aabbShapeComponent, ::FallFlyTicksComponent const& fallFlyTicksComponent, ::MoveInputComponent const& moveInputComponent, ::StateVectorComponent const& stateVectorComponent, ::ActorDataFlagComponent const& synchedActorDataComponent, ::VanillaClientGameplayComponent const& vanillaClientGameplayComponent, ::PlayerActionComponent& playerActionComponent, ::PlayerInputRequestComponent& playerInputRequestComponent, ::IConstBlockSource const& constBlockSource);
 // NOLINTEND
 
-} // namespace StopGlidingIntentSystemImpl
+}

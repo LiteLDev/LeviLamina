@@ -15,8 +15,8 @@ class RunAroundLikeCrazyGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>  mMob;
-    ::ll::TypedStorage<4, 4, float>   mSpeedModifier;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, float> mSpeedModifier;
     ::ll::TypedStorage<4, 12, ::Vec3> mPos;
     // NOLINTEND
 
@@ -62,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

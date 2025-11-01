@@ -17,6 +17,7 @@ public:
     UniformIntProvider& operator=(UniformIntProvider const&);
     UniformIntProvider(UniformIntProvider const&);
     UniformIntProvider();
+
 };
 
-} // namespace SharedTypes::v1_21_20
+}

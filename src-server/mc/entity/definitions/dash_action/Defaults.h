@@ -12,4 +12,4 @@ MCNAPI float const& HORIZONTAL_MOMENTUM();
 MCNAPI float const& VERTICAL_MOMENTUM();
 // NOLINTEND
 
-} // namespace DashAction::Defaults
+}

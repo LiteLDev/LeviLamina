@@ -19,16 +19,12 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mIdentifier;
     ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mBaseIdentifier;
-    ::ll::TypedStorage<1, 1, bool>                          mAllowSummon;
-    ::ll::TypedStorage<
-        8,
-        8,
-        ::std::unique_ptr<::Actor> (*)(::ActorDefinitionGroup*, ::ActorDefinitionIdentifier const&, ::EntityContext&)>
-                                                   mFactory;
+    ::ll::TypedStorage<1, 1, bool> mAllowSummon;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Actor>(*) (::ActorDefinitionGroup*, ::ActorDefinitionIdentifier const&, ::EntityContext&)> mFactory;
     ::ll::TypedStorage<4, 8, ::std::optional<int>> mExperimentIndex;
-    ::ll::TypedStorage<4, 4, ::ActorType>          mActorType;
-    ::ll::TypedStorage<4, 4, float>                mWalkAnimSpeed;
-    ::ll::TypedStorage<1, 1, bool>                 mIsAlias;
+    ::ll::TypedStorage<4, 4, ::ActorType> mActorType;
+    ::ll::TypedStorage<4, 4, float> mWalkAnimSpeed;
+    ::ll::TypedStorage<1, 1, bool> mIsAlias;
     // NOLINTEND
 
 public:
@@ -50,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

@@ -59,11 +59,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::Core::UnzipFile> create(
-        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess,
-        ::Core::PathView                             zipPath,
-        ::Core::UnzipFileLibrary                     library
-    );
+    MCNAPI static ::std::unique_ptr<::Core::UnzipFile> create(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> fileAccess, ::Core::PathView zipPath, ::Core::UnzipFileLibrary library);
     // NOLINTEND
 
 public:
@@ -83,6 +79,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

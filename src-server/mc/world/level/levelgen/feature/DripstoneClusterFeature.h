@@ -28,17 +28,7 @@ public:
     // NOLINTBEGIN
     MCAPI static int _getDripstoneHeight(::Random& random, int dx, int dz, float density, int maxHeight);
 
-    MCAPI static bool _placeColumn(
-        ::IBlockWorldGenAPI& target,
-        ::Random&            random,
-        ::BlockPos const&    pos,
-        int                  dx,
-        int                  dz,
-        float                chanceOfWater,
-        double               chanceOfStalagmiteOrStalactite,
-        int                  clusterHeight,
-        float                density
-    );
+    MCAPI static bool _placeColumn(::IBlockWorldGenAPI& target, ::Random& random, ::BlockPos const& pos, int dx, int dz, float chanceOfWater, double chanceOfStalagmiteOrStalactite, int clusterHeight, float density);
     // NOLINTEND
 
 public:
@@ -52,4 +42,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

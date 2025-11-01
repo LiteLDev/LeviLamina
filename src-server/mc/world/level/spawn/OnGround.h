@@ -19,8 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const& type) const
-        /*override*/;
+    virtual bool isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const& type) const /*override*/;
 
     // vIndex: 2
     virtual ::BlockPos adjustSpawnPos(::BlockSource& region, ::BlockPos candidate) const /*override*/;
@@ -42,6 +41,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace br::spawn
+}

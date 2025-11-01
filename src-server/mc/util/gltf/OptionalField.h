@@ -4,7 +4,8 @@
 
 namespace glTF {
 
-template <typename T0>
-struct OptionalField {};
+template<typename T0>
+struct OptionalField {
+};
 
-} // namespace glTF
+}

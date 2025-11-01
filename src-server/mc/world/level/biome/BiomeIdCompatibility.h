@@ -13,4 +13,4 @@ namespace BiomeIdCompatibility {
 MCAPI ::std::string_view getFixedBiomeName(::BiomeIdType biomeId);
 // NOLINTEND
 
-} // namespace BiomeIdCompatibility
+}

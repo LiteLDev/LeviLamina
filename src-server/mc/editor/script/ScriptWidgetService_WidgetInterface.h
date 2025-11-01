@@ -22,6 +22,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

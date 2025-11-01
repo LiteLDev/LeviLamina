@@ -15,4 +15,5 @@ public:
     RunTaskOptions& operator=(RunTaskOptions const&);
     RunTaskOptions(RunTaskOptions const&);
     RunTaskOptions();
+
 };

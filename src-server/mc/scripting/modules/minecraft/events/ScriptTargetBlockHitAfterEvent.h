@@ -19,7 +19,7 @@ struct ScriptTargetBlockHitAfterEvent : public ::ScriptModuleMinecraft::ScriptBl
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3>                                                                     mHitVector;
+    ::ll::TypedStorage<4, 12, ::Vec3> mHitVector;
     ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> mSource;
     ::ll::TypedStorage<4, 4, int> mPreviousRedstonePower;
     ::ll::TypedStorage<4, 4, int> mRedstonePower;
@@ -30,6 +30,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

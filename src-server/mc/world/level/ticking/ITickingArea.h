@@ -103,9 +103,6 @@ public:
 
     // vIndex: 25
     virtual void onComponentChanged(uint, float, bool, ::LevelStorage&) = 0;
-
-    // vIndex: 26
-    virtual void updateBlockSourceCurrentTick(::Tick const&) = 0;
     // NOLINTEND
 
 public:
@@ -131,4 +128,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

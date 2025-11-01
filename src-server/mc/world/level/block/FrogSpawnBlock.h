@@ -27,41 +27,33 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual ::AABB getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const /*override*/;
+    virtual ::AABB getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>) const /*override*/;
 
-    // vIndex: 81
+    // vIndex: 80
     virtual bool mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 87
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
+    // vIndex: 86
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
 
-    // vIndex: 89
-    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
-        /*override*/;
+    // vIndex: 88
+    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const /*override*/;
 
     // vIndex: 57
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const /*override*/;
 
-    // vIndex: 112
+    // vIndex: 111
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
     // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -80,17 +72,14 @@ public:
     // static functions
     // NOLINTBEGIN
     MCAPI static void _sendDestroyEggEvents(::BlockSource& region, ::BlockPos const& pos, ::Actor& destroyer);
+
+    MCAPI static void _spawnTadpoles(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::AABB $getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
+    MCFOLD ::AABB $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
     MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -104,6 +93,8 @@ public:
 
     MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
 
+    MCFOLD bool $canProvideSupport(::Block const&, uchar, ::BlockSupportType) const;
+
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
@@ -114,4 +105,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

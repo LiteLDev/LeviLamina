@@ -21,8 +21,7 @@ public:
     virtual void send(void const*) = 0;
 
     // vIndex: 2
-    virtual ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)>
-    getConnectOp(::std::function<void(void const*)>&&) = 0;
+    virtual ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)> getConnectOp(::std::function<void(void const*)>&&) = 0;
     // NOLINTEND
 
 public:
@@ -30,6 +29,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Detail
+}

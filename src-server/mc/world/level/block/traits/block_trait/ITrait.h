@@ -6,6 +6,7 @@
 // clang-format off
 class BlockType;
 class CompoundTag;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace BlockTrait {
@@ -21,10 +22,10 @@ public:
     virtual void applyToBlockType(::BlockType&) const = 0;
 
     // vIndex: 2
-    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag() const = 0;
+    virtual ::std::unique_ptr<::CompoundTag> buildNetworkTag(::cereal::ReflectionCtx const&) const = 0;
 
     // vIndex: 3
-    virtual void initializeFromNetwork(::CompoundTag const&) = 0;
+    virtual void initializeFromNetwork(::CompoundTag const&, ::cereal::ReflectionCtx const&) = 0;
     // NOLINTEND
 
 public:
@@ -38,6 +39,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace BlockTrait
+}

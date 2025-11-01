@@ -27,15 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    SupportedScriptComponentFactoriesEntry(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
+    MCNAPI SupportedScriptComponentFactoriesEntry(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
 
-    MCNAPI SupportedScriptComponentFactoriesEntry(
-        ::BaseGameVersion                        minVersion,
-        ::std::unordered_set<::std::string_view> supportedComponentTypeNames,
-        ::std::string                            prerelease,
-        ::std::optional<::BaseGameVersion>       maxVersionExclusive
-    );
+    MCNAPI SupportedScriptComponentFactoriesEntry(::BaseGameVersion minVersion, ::std::unordered_set<::std::string_view> supportedComponentTypeNames, ::std::string prerelease, ::std::optional<::BaseGameVersion> maxVersionExclusive);
 
     MCNAPI ~SupportedScriptComponentFactoriesEntry();
     // NOLINTEND
@@ -45,12 +39,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraft::SupportedScriptComponentFactoriesEntry const&);
 
-    MCNAPI void* $ctor(
-        ::BaseGameVersion                        minVersion,
-        ::std::unordered_set<::std::string_view> supportedComponentTypeNames,
-        ::std::string                            prerelease,
-        ::std::optional<::BaseGameVersion>       maxVersionExclusive
-    );
+    MCNAPI void* $ctor(::BaseGameVersion minVersion, ::std::unordered_set<::std::string_view> supportedComponentTypeNames, ::std::string prerelease, ::std::optional<::BaseGameVersion> maxVersionExclusive);
     // NOLINTEND
 
 public:
@@ -58,6 +47,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

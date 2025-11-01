@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct ProtocolViolationCauseConfig {};
+struct ProtocolViolationCauseConfig {
+};
 
-} // namespace dcsctp
+}

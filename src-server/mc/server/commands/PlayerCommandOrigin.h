@@ -31,7 +31,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ActorUniqueID> mPlayerId;
-    ::ll::TypedStorage<8, 8, ::Level&>        mLevel;
+    ::ll::TypedStorage<8, 8, ::Level&> mLevel;
     // NOLINTEND
 
 public:
@@ -81,7 +81,7 @@ public:
     virtual ::std::optional<::Vec3> getCursorHitPos() const /*override*/;
 
     // vIndex: 15
-    virtual bool canUseAbility(::AbilitiesIndex ability) const /*override*/;
+    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const /*override*/;
 
     // vIndex: 18
     virtual bool isSelectorExpansionAllowed() const /*override*/;
@@ -144,7 +144,7 @@ public:
 
     MCAPI ::std::optional<::Vec3> $getCursorHitPos() const;
 
-    MCAPI bool $canUseAbility(::AbilitiesIndex ability) const;
+    MCAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
 
     MCFOLD bool $isSelectorExpansionAllowed() const;
 
@@ -166,4 +166,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

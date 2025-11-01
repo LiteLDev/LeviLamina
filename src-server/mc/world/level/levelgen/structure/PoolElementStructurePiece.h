@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/Rotation.h"
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/util/Rotation.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/BoundingBox.h"
 #include "mc/world/level/levelgen/structure/JigsawJunction.h"
 #include "mc/world/level/levelgen/structure/StructurePiece.h"
@@ -26,17 +26,16 @@ class PoolElementStructurePiece : public ::StructurePiece {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 24, ::BoundingBox>                mCachedPieceBounds;
-    ::ll::TypedStorage<4, 4, int>                           mCachedPieceBaseY;
-    ::ll::TypedStorage<4, 4, int>                           mCachedXCenter;
-    ::ll::TypedStorage<4, 4, int>                           mCachedZCenter;
-    ::ll::TypedStorage<4, 4, float>                         mCachedMaxRadius;
+    ::ll::TypedStorage<4, 24, ::BoundingBox> mCachedPieceBounds;
+    ::ll::TypedStorage<4, 4, int> mCachedPieceBaseY;
+    ::ll::TypedStorage<4, 4, int> mCachedXCenter;
+    ::ll::TypedStorage<4, 4, int> mCachedZCenter;
+    ::ll::TypedStorage<4, 4, float> mCachedMaxRadius;
     ::ll::TypedStorage<8, 8, ::StructurePoolElement const&> mElement;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                   mPosition;
-    ::ll::TypedStorage<1, 1, ::Rotation>                    mRotation;
-    ::ll::TypedStorage<4, 24, ::JigsawJunction>             mJigsawJunction;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::std::optional<::ActorDefinitionIdentifier>>>
-                                          mEntitiesToPlace;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mPosition;
+    ::ll::TypedStorage<1, 1, ::Rotation> mRotation;
+    ::ll::TypedStorage<4, 24, ::JigsawJunction> mJigsawJunction;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockPos, ::std::optional<::ActorDefinitionIdentifier>>> mEntitiesToPlace;
     ::ll::TypedStorage<4, 12, ::BlockPos> mRefPos;
     // NOLINTEND
 
@@ -59,12 +58,7 @@ public:
     virtual void moveBoundingBox(int dx, int dy, int dz) /*override*/;
 
     // vIndex: 13
-    virtual int generateHeightAtPosition(
-        ::BlockPos const&,
-        ::Dimension&,
-        ::BlockVolume&,
-        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&
-    ) const = 0;
+    virtual int generateHeightAtPosition(::BlockPos const&, ::Dimension&, ::BlockVolume&, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&) const = 0;
 
     // vIndex: 14
     virtual ::Block const* getSupportBlock(::BlockSource&, ::BlockPos const&, ::Block const&) const = 0;
@@ -99,4 +93,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

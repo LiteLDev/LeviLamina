@@ -24,12 +24,11 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 144
-    virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
-        /*override*/;
+    // vIndex: 143
+    virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const /*override*/;
 
     // vIndex: 0
     virtual ~StrippedLogBlock() /*override*/ = default;
@@ -48,4 +47,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -12,4 +12,5 @@ public:
     // vIndex: 0
     virtual ~BlastFurnaceContainerManagerController() /*override*/ = default;
     // NOLINTEND
+
 };

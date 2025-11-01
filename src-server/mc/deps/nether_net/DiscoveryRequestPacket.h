@@ -7,6 +7,7 @@
 
 namespace NetherNet {
 
-struct DiscoveryRequestPacket : public ::NetherNet::DiscoveryPacket {};
+struct DiscoveryRequestPacket : public ::NetherNet::DiscoveryPacket {
+};
 
-} // namespace NetherNet
+}

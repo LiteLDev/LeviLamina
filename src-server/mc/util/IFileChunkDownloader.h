@@ -15,12 +15,11 @@ class IFileChunkDownloader {
 public:
     // IFileChunkDownloader inner types define
     using WriteCompleteCallback = ::std::function<void(uint64, bool)>;
-
-    using DataCallback =
-        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>;
-
+    
+    using DataCallback = ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>;
+    
     using EndCallback = ::std::function<void(::DownloaderState)>;
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -31,32 +30,13 @@ public:
     virtual void update() = 0;
 
     // vIndex: 2
-    virtual void initRealmsFileDownloader(
-        ::std::string const&,
-        int const,
-        ::std::string const&,
-        ::FileInfo const&,
-        uint64,
-        ::std::string const&,
-        ::std::function<void(::DownloaderResult)>
-    ) = 0;
+    virtual void initRealmsFileDownloader(::std::string const&, int const, ::std::string const&, ::FileInfo const&, uint64, ::std::string const&, ::std::function<void(::DownloaderResult)>) = 0;
 
     // vIndex: 3
-    virtual void initFileDownloader(
-        ::std::string const&,
-        ::std::string const&,
-        ::FileInfo const&,
-        uint64,
-        uint64,
-        ::std::string const&,
-        ::std::function<void(::DownloaderResult)>
-    ) = 0;
+    virtual void initFileDownloader(::std::string const&, ::std::string const&, ::FileInfo const&, uint64, uint64, ::std::string const&, ::std::function<void(::DownloaderResult)>) = 0;
 
     // vIndex: 4
-    virtual void downloadFile(
-        ::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>,
-        ::std::function<void(::DownloaderState)>
-    ) = 0;
+    virtual void downloadFile(::std::function<void(::std::vector<uchar>, uint64, uint64, ::std::function<void(uint64, bool)>)>, ::std::function<void(::DownloaderState)>) = 0;
 
     // vIndex: 5
     virtual bool canCancelDownload() const = 0;
@@ -79,4 +59,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

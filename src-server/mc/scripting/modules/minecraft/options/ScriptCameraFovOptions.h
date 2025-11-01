@@ -13,7 +13,7 @@ struct ScriptCameraFovOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnk367b9f;
+    ::ll::UntypedStorage<4, 8> mUnk367b9f;
     ::ll::UntypedStorage<4, 20> mUnk60672e;
     // NOLINTEND
 
@@ -28,6 +28,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -8,8 +8,8 @@ struct PlaceBlock {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk89eb99;
-    ::ll::UntypedStorage<4, 4>   mUnk93e46e;
+    ::ll::UntypedStorage<1, 1> mUnk89eb99;
+    ::ll::UntypedStorage<4, 4> mUnk93e46e;
     ::ll::UntypedStorage<8, 152> mUnk728042;
     // NOLINTEND
 
@@ -30,6 +30,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace AgentComponents::Actions
+}

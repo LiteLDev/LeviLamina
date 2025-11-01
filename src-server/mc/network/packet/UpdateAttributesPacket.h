@@ -22,9 +22,9 @@ class UpdateAttributesPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>                mRuntimeId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
     ::ll::TypedStorage<8, 24, ::std::vector<::AttributeData>> mAttributeData;
-    ::ll::TypedStorage<8, 8, ::PlayerInputTick>               mTick;
+    ::ll::TypedStorage<8, 8, ::PlayerInputTick> mTick;
     // NOLINTEND
 
 public:
@@ -43,33 +43,23 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpdateAttributesPacket(
-        ::ActorRuntimeID const&                         id,
-        ::BaseAttributeMap const&                       map,
-        ::std::vector<::AttributeInstanceHandle> const& dirtyData,
-        ::PlayerInputTick                               tick
-    );
+    MCAPI UpdateAttributesPacket(::ActorRuntimeID const& id, ::BaseAttributeMap const& map, ::std::vector<::AttributeInstanceHandle> const& dirtyData, ::PlayerInputTick tick);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorRuntimeID const&                         id,
-        ::BaseAttributeMap const&                       map,
-        ::std::vector<::AttributeInstanceHandle> const& dirtyData,
-        ::PlayerInputTick                               tick
-    );
+    MCAPI void* $ctor(::ActorRuntimeID const& id, ::BaseAttributeMap const& map, ::std::vector<::AttributeInstanceHandle> const& dirtyData, ::PlayerInputTick tick);
     // NOLINTEND
 
 public:
@@ -95,4 +85,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

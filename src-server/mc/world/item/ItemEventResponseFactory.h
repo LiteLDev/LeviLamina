@@ -46,4 +46,5 @@ public:
 
     MCNAPI static void** $vftableForIPackLoadScoped();
     // NOLINTEND
+
 };

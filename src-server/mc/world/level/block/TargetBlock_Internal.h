@@ -14,4 +14,4 @@ namespace TargetBlock_Internal {
 MCAPI void sendTargetBlockHitTelemetryEvent(::BlockSource& region, ::Actor const& projectile, int signalStrength);
 // NOLINTEND
 
-} // namespace TargetBlock_Internal
+}

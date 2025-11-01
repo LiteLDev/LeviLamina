@@ -6,7 +6,7 @@ struct BlockSet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkcabbb5;
+    ::ll::UntypedStorage<4, 4> mUnkcabbb5;
     ::ll::UntypedStorage<8, 24> mUnkd8257b;
     // NOLINTEND
 
@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

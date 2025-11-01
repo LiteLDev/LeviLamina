@@ -17,6 +17,7 @@ public:
 
     MCNAPI static ::Scripting::EnumBinding bindV1();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

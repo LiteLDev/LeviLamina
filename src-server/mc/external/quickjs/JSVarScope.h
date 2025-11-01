@@ -15,4 +15,5 @@ public:
     JSVarScope& operator=(JSVarScope const&);
     JSVarScope(JSVarScope const&);
     JSVarScope();
+
 };

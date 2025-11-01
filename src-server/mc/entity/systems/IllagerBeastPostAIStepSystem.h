@@ -19,10 +19,9 @@ class IllagerBeastPostAIStepSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doIllagerBeastPostAIStepSystem(
-        ::StrictEntityContext const&,
-        ::StateVectorComponent const& stateVectorComponent,
-        ::SubBBsComponent&            subBBsComponent
-    );
+    MCNAPI static void _doIllagerBeastPostAIStepSystem(::StrictEntityContext const&, ::StateVectorComponent const& stateVectorComponent, ::SubBBsComponent& subBBsComponent);
+
+    MCNAPI static void _tickIllagerBeastPostAIStepSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::IllagerBeastFlagComponent>, ::StateVectorComponent const, ::SubBBsComponent> view);
     // NOLINTEND
+
 };

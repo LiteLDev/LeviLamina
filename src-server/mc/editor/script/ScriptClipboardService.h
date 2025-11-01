@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnke523df;
-    ::ll::UntypedStorage<8, 8>  mUnk673970;
+    ::ll::UntypedStorage<8, 16> mUnka84e2c;
     // NOLINTEND
 
 public:
@@ -32,13 +32,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>>
-    create();
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>> create();
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>>
-    getPrimaryItem();
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::Editor::ScriptModule::ScriptClipboardItem>> getPrimaryItem();
+
+    MCNAPI ::Editor::ScriptModule::ScriptClipboardService& operator=(::Editor::ScriptModule::ScriptClipboardService&&);
     // NOLINTEND
 
 public:
@@ -46,6 +44,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

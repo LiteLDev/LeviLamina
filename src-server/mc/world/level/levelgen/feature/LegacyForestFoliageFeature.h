@@ -22,13 +22,13 @@ public:
         Flower = 0,
         Normal = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::LegacyForestFoliageFeature::Type> mForestType;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>             mTallGrassFeature;
-    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>>             mDoublePlantFeature;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mTallGrassFeature;
+    ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mDoublePlantFeature;
     // NOLINTEND
 
 public:
@@ -50,8 +50,7 @@ public:
     // NOLINTBEGIN
     MCAPI LegacyForestFoliageFeature(::LegacyForestFoliageFeature::Type forestType, ::FeatureRegistry& registry);
 
-    MCAPI void
-    _placeDoublePlants(::BlockSource& region, ::BlockPos const& origin, ::Random& random, int doublePlantCount) const;
+    MCAPI void _placeDoublePlants(::BlockSource& region, ::BlockPos const& origin, ::Random& random, int doublePlantCount) const;
     // NOLINTEND
 
 public:
@@ -71,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

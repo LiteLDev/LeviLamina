@@ -16,12 +16,12 @@ class ShooterComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                                   mThrowPower;
+    ::ll::TypedStorage<4, 4, float> mThrowPower;
     ::ll::TypedStorage<8, 24, ::std::vector<::ShooterProjectileData>> mShooterProjectileData;
-    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>           mDefaultActorDef;
-    ::ll::TypedStorage<4, 4, int>                                     mDefaultAuxValue;
-    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent>  mSoundEvent;
-    ::ll::TypedStorage<1, 1, bool>                                    mMagicAttacks;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mDefaultActorDef;
+    ::ll::TypedStorage<4, 4, int> mDefaultAuxValue;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
+    ::ll::TypedStorage<1, 1, bool> mMagicAttacks;
     // NOLINTEND
 
 public:
@@ -54,4 +54,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

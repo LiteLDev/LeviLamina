@@ -5,10 +5,10 @@
 namespace Bedrock {
 
 enum class FileType : int {
-    Invalid      = 0,
-    Zip          = 1,
+    Invalid = 0,
+    Zip = 1,
     EncryptedZip = 2,
-    Other        = 3,
+    Other = 3,
 };
 
 }

@@ -37,6 +37,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageSent const&);
     // NOLINTEND
+
 };
 
-} // namespace NetherNet
+}

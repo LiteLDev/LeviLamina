@@ -13,11 +13,11 @@ class TransformableFrameInterface {
 public:
     // TransformableFrameInterface inner types define
     enum class Direction : int {
-        KUnknown  = 0,
+        KUnknown = 0,
         KReceiver = 1,
-        KSender   = 2,
+        KSender = 2,
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -57,6 +57,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

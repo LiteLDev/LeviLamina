@@ -21,13 +21,7 @@ struct VehicleInputIntentComponent;
 namespace BlockPosNotificationSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void tickNotifierFilter(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::OnGroundFlagComponent>>,
-    ::StrictEntityContext const&                                                                strictEntityContext,
-    ::BlockPosTrackerComponent const&                                                           tracker,
-    ::Optional<::VehicleInputIntentComponent const> const&                                      vehicleInputIntent,
-    ::EntityModifier<::StandOnHoneyOrSlimeBlockFlagComponent, ::StandOnOtherBlockFlagComponent> mod
-);
+MCNAPI void tickNotifierFilter(::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::OnGroundFlagComponent>>, ::StrictEntityContext const& strictEntityContext, ::BlockPosTrackerComponent const& tracker, ::Optional<::VehicleInputIntentComponent const> const& vehicleInputIntent, ::EntityModifier<::StandOnHoneyOrSlimeBlockFlagComponent, ::StandOnOtherBlockFlagComponent> mod);
 // NOLINTEND
 
-} // namespace BlockPosNotificationSystem
+}

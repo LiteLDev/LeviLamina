@@ -22,29 +22,29 @@ public:
     // clang-format off
     struct SharedInitializationData;
     // clang-format on
-
+    
     // BlockGeometryDescription inner types define
     struct SharedInitializationData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 48, ::HashedString>                              mCullingName;
+        ::ll::TypedStorage<8, 48, ::HashedString> mCullingName;
         ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::ExpressionNode>> mBoneVisibilities;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 48, ::HashedString> mGeometryName;
-    ::ll::TypedStorage<1, 1, bool>            mNeedsLegacyTopRotation;
-    ::ll::TypedStorage<1, 1, bool>            mUseBlockTypeLightAbsorption;
-    ::ll::TypedStorage<1, 1, bool>            mIgnoreGeometryForIsSolid;
+    ::ll::TypedStorage<1, 1, bool> mNeedsLegacyTopRotation;
+    ::ll::TypedStorage<1, 1, bool> mUseBlockTypeLightAbsorption;
+    ::ll::TypedStorage<1, 1, bool> mIgnoreGeometryForIsSolid;
     ::ll::TypedStorage<8, 48, ::HashedString> mCullingLayer;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockGeometryDescription::SharedInitializationData>>
-                                                                                mSharedInitializationData;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockGeometryDescription::SharedInitializationData>> mSharedInitializationData;
     ::ll::TypedStorage<8, 24, ::std::variant<bool, ::std::set<::HashedString>>> mUVsLocked;
-    ::ll::TypedStorage<4, 52, ::BlockRendererDescription>                       mRenderer;
+    ::ll::TypedStorage<4, 52, ::BlockRendererDescription> mRenderer;
     // NOLINTEND
 
 public:
@@ -79,13 +79,7 @@ public:
 
     MCAPI BlockGeometryDescription(::BlockGeometryDescription const&);
 
-    MCAPI BlockGeometryDescription(
-        ::HashedString const&                                   geometryName,
-        ::HashedString const&                                   cullingName,
-        ::HashedString const&                                   cullingLayer,
-        ::std::variant<bool, ::std::set<::HashedString>> const& uvLock,
-        ::BlockRendererDescription const&                       renderer
-    );
+    MCAPI BlockGeometryDescription(::HashedString const& geometryName, ::HashedString const& cullingName, ::HashedString const& cullingLayer, ::std::variant<bool, ::std::set<::HashedString>> const& uvLock, ::BlockRendererDescription const& renderer);
 
     MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
 
@@ -127,13 +121,7 @@ public:
 
     MCAPI void* $ctor(::BlockGeometryDescription const&);
 
-    MCAPI void* $ctor(
-        ::HashedString const&                                   geometryName,
-        ::HashedString const&                                   cullingName,
-        ::HashedString const&                                   cullingLayer,
-        ::std::variant<bool, ::std::set<::HashedString>> const& uvLock,
-        ::BlockRendererDescription const&                       renderer
-    );
+    MCAPI void* $ctor(::HashedString const& geometryName, ::HashedString const& cullingName, ::HashedString const& cullingLayer, ::std::variant<bool, ::std::set<::HashedString>> const& uvLock, ::BlockRendererDescription const& renderer);
     // NOLINTEND
 
 public:
@@ -163,4 +151,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

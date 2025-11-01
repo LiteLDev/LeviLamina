@@ -19,20 +19,11 @@ class UpdateRenderPosSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doUpdateRenderPosSystem(
-        ::StrictEntityContext const&,
-        ::StateVectorComponent const& stateVectorComponent,
-        ::RenderPositionComponent&    renderPositionComponent
-    );
+    MCNAPI static void _doUpdateRenderPosSystem(::StrictEntityContext const&, ::StateVectorComponent const& stateVectorComponent, ::RenderPositionComponent& renderPositionComponent);
 
-    MCNAPI static void _tickUpdateRenderPosSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent>,
-            ::StateVectorComponent const,
-            ::RenderPositionComponent> view
-    );
+    MCNAPI static void _tickUpdateRenderPosSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::StateVectorComponent const, ::RenderPositionComponent> view);
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
+
 };

@@ -25,6 +25,7 @@ public:
     MeshDataVertexFieldCounts& operator=(MeshDataVertexFieldCounts const&);
     MeshDataVertexFieldCounts(MeshDataVertexFieldCounts const&);
     MeshDataVertexFieldCounts();
+
 };
 
-} // namespace mce
+}

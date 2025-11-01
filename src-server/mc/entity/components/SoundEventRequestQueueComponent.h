@@ -13,4 +13,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::std::queue<::SoundEventRequest, ::std::deque<::SoundEventRequest>>> mRequests;
     // NOLINTEND
+
 };

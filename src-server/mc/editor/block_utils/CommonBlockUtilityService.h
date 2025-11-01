@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/ContiguousSelectionType.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/editor/ContiguousSelectionType.h"
 #include "mc/editor/serviceproviders/CommonBlockUtilityServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
@@ -28,9 +28,7 @@ namespace Editor::BlockMask { class BlockMaskList; }
 
 namespace Editor::BlockUtils {
 
-class CommonBlockUtilityService : public ::Editor::Services::IEditorService,
-                                  public ::Editor::BlockUtils::CommonBlockUtilityServiceProvider,
-                                  public ::Editor::Services::PayloadStoreHelper {
+class CommonBlockUtilityService : public ::Editor::Services::IEditorService, public ::Editor::BlockUtils::CommonBlockUtilityServiceProvider, public ::Editor::Services::PayloadStoreHelper {
 public:
     // member variables
     // NOLINTBEGIN
@@ -78,33 +76,16 @@ public:
     virtual bool isAreaLoaded(::AABB const& aabb) const /*override*/;
 
     // vIndex: 6
-    virtual ::Editor::RelativeVolumeListBlockVolume trimVolumeToFitContents(
-        ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const inVolume,
-        bool                                      retainMarqueeAfterTrimming,
-        bool                                      ignoreLiquid,
-        bool                                      ignoreNoCollision,
-        ::Editor::BlockMask::BlockMaskList const& blockMask
-    ) /*override*/;
+    virtual ::Editor::RelativeVolumeListBlockVolume trimVolumeToFitContents(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const inVolume, bool retainMarqueeAfterTrimming, bool ignoreLiquid, bool ignoreNoCollision, ::Editor::BlockMask::BlockMaskList const& blockMask) /*override*/;
 
     // vIndex: 7
-    virtual ::Editor::RelativeVolumeListBlockVolume findObscuredBlocksWithinVolume(
-        ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const inVolume
-    ) /*override*/;
+    virtual ::Editor::RelativeVolumeListBlockVolume findObscuredBlocksWithinVolume(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const inVolume) /*override*/;
 
     // vIndex: 8
-    virtual ::Editor::RelativeVolumeListBlockVolume shrinkWrapVolume(
-        ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const
-    ) /*override*/;
+    virtual ::Editor::RelativeVolumeListBlockVolume shrinkWrapVolume(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const) /*override*/;
 
     // vIndex: 9
-    virtual bool isLocationInsideDimensionBounds(
-        ::std::variant<
-            ::BlockVolumeBase const*,
-            ::Editor::RelativeVolumeListBlockVolume const*,
-            ::Vec3 const*,
-            ::BoundingBox const*,
-            ::BlockPos const*> const test
-    ) /*override*/;
+    virtual bool isLocationInsideDimensionBounds(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*, ::Vec3 const*, ::BoundingBox const*, ::BlockPos const*> const test) /*override*/;
 
     // vIndex: 13
     virtual ::Vec3 getDimensionMinLocation() const /*override*/;
@@ -116,24 +97,10 @@ public:
     virtual ::BoundingBox getDimensionLocationBoundingBox() const /*override*/;
 
     // vIndex: 10
-    virtual ::CompoundBlockVolume getContiguousSelection(
-        int const                                            size,
-        ::Facing::Name const&                                selectionDirection,
-        ::Vec3 const&                                        startingLocation,
-        bool const                                           isFace,
-        int const                                            fullSelectionToleranceLevel,
-        bool const                                           checkForAdjacentFaceBlocks,
-        ::Editor::BlockUtils::ContiguousSelectionType const& contiguousSelectionType,
-        ::std::vector<::std::string> const&                  contiguousSelectionBlockList
-    ) const /*override*/;
+    virtual ::CompoundBlockVolume getContiguousSelection(int const size, ::Facing::Name const& selectionDirection, ::Vec3 const& startingLocation, bool const isFace, int const fullSelectionToleranceLevel, bool const checkForAdjacentFaceBlocks, ::Editor::BlockUtils::ContiguousSelectionType const& contiguousSelectionType, ::std::vector<::std::string> const& contiguousSelectionBlockList) const /*override*/;
 
     // vIndex: 11
-    virtual bool areBlocksContiguous(
-        ::Editor::BlockUtils::ContiguousSelectionType const& contiguousSelectionType,
-        ::Block const&                                       blockToTest,
-        ::Block const&                                       blockToFollow,
-        ::std::vector<::std::string> const&                  allowList
-    ) const /*override*/;
+    virtual bool areBlocksContiguous(::Editor::BlockUtils::ContiguousSelectionType const& contiguousSelectionType, ::Block const& blockToTest, ::Block const& blockToFollow, ::std::vector<::std::string> const& allowList) const /*override*/;
 
     // vIndex: 12
     virtual ::Vec3 getDeltaFromDirection(::Facing::Name const& selectionDirection) const /*override*/;
@@ -148,19 +115,10 @@ public:
     virtual ::Scripting::Result_deprecated<void> _implQuit() = 0;
 
     // vIndex: 16
-    virtual ::AABB getBoundForContiguousSelection(
-        ::Vec3 const&         initialLocation,
-        ::Facing::Name const& selectionDirection,
-        int const             size,
-        bool const            isFace
-    ) const /*override*/;
+    virtual ::AABB getBoundForContiguousSelection(::Vec3 const& initialLocation, ::Facing::Name const& selectionDirection, int const size, bool const isFace) const /*override*/;
 
     // vIndex: 17
-    virtual bool isBlockExposedInDirection(
-        ::Dimension const&    dimension,
-        ::Vec3 const&         targetLocation,
-        ::Facing::Name const& direction
-    ) const /*override*/;
+    virtual bool isBlockExposedInDirection(::Dimension const& dimension, ::Vec3 const& targetLocation, ::Facing::Name const& direction) const /*override*/;
 
     // vIndex: 18
     virtual bool isSameBlockType(::Block const& blockA, ::Block const& blockB) const /*override*/;
@@ -169,8 +127,7 @@ public:
     virtual bool isSameBlockAndProperties(::Block const& blockA, ::Block const& blockB) const /*override*/;
 
     // vIndex: 20
-    virtual bool isBlockTypeInSelectionList(::Block const& block, ::std::vector<::std::string> const& allowList) const
-        /*override*/;
+    virtual bool isBlockTypeInSelectionList(::Block const& block, ::std::vector<::std::string> const& allowList) const /*override*/;
     // NOLINTEND
 
 public:
@@ -208,29 +165,13 @@ public:
 
     MCNAPI bool $isAreaLoaded(::AABB const& aabb) const;
 
-    MCNAPI ::Editor::RelativeVolumeListBlockVolume $trimVolumeToFitContents(
-        ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const inVolume,
-        bool                                      retainMarqueeAfterTrimming,
-        bool                                      ignoreLiquid,
-        bool                                      ignoreNoCollision,
-        ::Editor::BlockMask::BlockMaskList const& blockMask
-    );
+    MCNAPI ::Editor::RelativeVolumeListBlockVolume $trimVolumeToFitContents(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const inVolume, bool retainMarqueeAfterTrimming, bool ignoreLiquid, bool ignoreNoCollision, ::Editor::BlockMask::BlockMaskList const& blockMask);
 
-    MCNAPI ::Editor::RelativeVolumeListBlockVolume $findObscuredBlocksWithinVolume(
-        ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const inVolume
-    );
+    MCNAPI ::Editor::RelativeVolumeListBlockVolume $findObscuredBlocksWithinVolume(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const inVolume);
 
-    MCNAPI ::Editor::RelativeVolumeListBlockVolume
-    $shrinkWrapVolume(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const);
+    MCNAPI ::Editor::RelativeVolumeListBlockVolume $shrinkWrapVolume(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const);
 
-    MCNAPI bool $isLocationInsideDimensionBounds(
-        ::std::variant<
-            ::BlockVolumeBase const*,
-            ::Editor::RelativeVolumeListBlockVolume const*,
-            ::Vec3 const*,
-            ::BoundingBox const*,
-            ::BlockPos const*> const test
-    );
+    MCNAPI bool $isLocationInsideDimensionBounds(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*, ::Vec3 const*, ::BoundingBox const*, ::BlockPos const*> const test);
 
     MCNAPI ::Vec3 $getDimensionMinLocation() const;
 
@@ -238,38 +179,15 @@ public:
 
     MCNAPI ::BoundingBox $getDimensionLocationBoundingBox() const;
 
-    MCNAPI ::CompoundBlockVolume $getContiguousSelection(
-        int const                                            size,
-        ::Facing::Name const&                                selectionDirection,
-        ::Vec3 const&                                        startingLocation,
-        bool const                                           isFace,
-        int const                                            fullSelectionToleranceLevel,
-        bool const                                           checkForAdjacentFaceBlocks,
-        ::Editor::BlockUtils::ContiguousSelectionType const& contiguousSelectionType,
-        ::std::vector<::std::string> const&                  contiguousSelectionBlockList
-    ) const;
+    MCNAPI ::CompoundBlockVolume $getContiguousSelection(int const size, ::Facing::Name const& selectionDirection, ::Vec3 const& startingLocation, bool const isFace, int const fullSelectionToleranceLevel, bool const checkForAdjacentFaceBlocks, ::Editor::BlockUtils::ContiguousSelectionType const& contiguousSelectionType, ::std::vector<::std::string> const& contiguousSelectionBlockList) const;
 
-    MCNAPI bool $areBlocksContiguous(
-        ::Editor::BlockUtils::ContiguousSelectionType const& contiguousSelectionType,
-        ::Block const&                                       blockToTest,
-        ::Block const&                                       blockToFollow,
-        ::std::vector<::std::string> const&                  allowList
-    ) const;
+    MCNAPI bool $areBlocksContiguous(::Editor::BlockUtils::ContiguousSelectionType const& contiguousSelectionType, ::Block const& blockToTest, ::Block const& blockToFollow, ::std::vector<::std::string> const& allowList) const;
 
     MCNAPI ::Vec3 $getDeltaFromDirection(::Facing::Name const& selectionDirection) const;
 
-    MCNAPI ::AABB $getBoundForContiguousSelection(
-        ::Vec3 const&         initialLocation,
-        ::Facing::Name const& selectionDirection,
-        int const             size,
-        bool const            isFace
-    ) const;
+    MCNAPI ::AABB $getBoundForContiguousSelection(::Vec3 const& initialLocation, ::Facing::Name const& selectionDirection, int const size, bool const isFace) const;
 
-    MCNAPI bool $isBlockExposedInDirection(
-        ::Dimension const&    dimension,
-        ::Vec3 const&         targetLocation,
-        ::Facing::Name const& direction
-    ) const;
+    MCNAPI bool $isBlockExposedInDirection(::Dimension const& dimension, ::Vec3 const& targetLocation, ::Facing::Name const& direction) const;
 
     MCNAPI bool $isSameBlockType(::Block const& blockA, ::Block const& blockB) const;
 
@@ -285,6 +203,7 @@ public:
 
     MCNAPI static void** $vftableForCommonBlockUtilityServiceProvider();
     // NOLINTEND
+
 };
 
-} // namespace Editor::BlockUtils
+}

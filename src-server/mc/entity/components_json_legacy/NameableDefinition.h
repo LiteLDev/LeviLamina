@@ -15,10 +15,10 @@ class NameableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk31ecb1;
+    ::ll::UntypedStorage<8, 24> mUnk31ecb1;
     ::ll::UntypedStorage<8, 104> mUnk5ab49d;
-    ::ll::UntypedStorage<1, 1>   mUnke7efe4;
-    ::ll::UntypedStorage<1, 1>   mUnke1428f;
+    ::ll::UntypedStorage<1, 1> mUnke7efe4;
+    ::ll::UntypedStorage<1, 1> mUnke1428f;
     // NOLINTEND
 
 public:
@@ -38,9 +38,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::NameableDefinition>>& root
-    );
+    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::NameableDefinition>>& root);
     // NOLINTEND
 
 public:
@@ -48,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

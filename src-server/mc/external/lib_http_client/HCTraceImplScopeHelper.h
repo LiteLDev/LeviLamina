@@ -17,4 +17,5 @@ public:
     HCTraceImplScopeHelper& operator=(HCTraceImplScopeHelper const&);
     HCTraceImplScopeHelper(HCTraceImplScopeHelper const&);
     HCTraceImplScopeHelper();
+
 };

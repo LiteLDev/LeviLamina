@@ -8,4 +8,4 @@ namespace EntityGoalUtility {
 MCNAPI ::std::string getNumericNodeSpecifier(ushort id);
 // NOLINTEND
 
-} // namespace EntityGoalUtility
+}

@@ -21,10 +21,10 @@ public:
     enum class Slot : int {
         Item1 = 0,
         Item2 = 1,
-        Sell  = 2,
+        Sell = 2,
         Count = 3,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -96,4 +96,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

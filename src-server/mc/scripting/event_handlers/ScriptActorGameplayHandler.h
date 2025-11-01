@@ -19,14 +19,12 @@ namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
-class ScriptActorGameplayHandler : public ::EventHandlerDispatcher<::ActorGameplayHandler>,
-                                   public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
+class ScriptActorGameplayHandler : public ::EventHandlerDispatcher<::ActorGameplayHandler>, public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent) /*override*/;
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent) /*override*/;
 
     // vIndex: 17
     virtual ::HandlerResult handleEvent(::ActorRemovedEvent const& actorRemovedEvent) /*override*/;
@@ -38,17 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _handleActorEffectAddedEvent(
-        ::ActorAddEffectEvent&                                                            actorEffectAddedEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
+    MCNAPI bool _handleActorEffectAddedEvent(::ActorAddEffectEvent& actorEffectAddedEvent, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle) const;
 
-    MCNAPI bool _handleActorRemoveEvent(
-        ::ActorRemovedEvent const&                                                        actorRemovedEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
+    MCNAPI bool _handleActorRemoveEvent(::ActorRemovedEvent const& actorRemovedEvent, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle) const;
     // NOLINTEND
 
 public:
@@ -64,4 +54,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

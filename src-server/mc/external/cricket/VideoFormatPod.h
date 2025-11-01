@@ -19,6 +19,7 @@ public:
     VideoFormatPod& operator=(VideoFormatPod const&);
     VideoFormatPod(VideoFormatPod const&);
     VideoFormatPod();
+
 };
 
-} // namespace cricket
+}

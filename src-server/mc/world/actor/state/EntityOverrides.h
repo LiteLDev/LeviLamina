@@ -8,7 +8,7 @@ public:
     // clang-format off
     struct PropertiesContainer;
     // clang-format on
-
+    
     // EntityOverrides inner types define
     struct PropertiesContainer {
     public:
@@ -16,14 +16,15 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 64> mUnk27f353;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         PropertiesContainer& operator=(PropertiesContainer const&);
         PropertiesContainer(PropertiesContainer const&);
         PropertiesContainer();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,4 +36,5 @@ public:
     EntityOverrides& operator=(EntityOverrides const&);
     EntityOverrides(EntityOverrides const&);
     EntityOverrides();
+
 };

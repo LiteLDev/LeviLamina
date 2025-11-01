@@ -16,12 +16,7 @@ struct ServerPlayerComponent;
 namespace PlayerPassengerSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void tick(
-    ::entt::type_list<::Include<::ServerPlayerComponent>>,
-    ::ActorTickNeededComponent&                  actorTickNeeded,
-    ::PassengerComponent const&                  passenger,
-    ::EntityModifier<::ActorTickNeededComponent> modifier
-);
+MCNAPI void tick(::entt::type_list<::Include<::ServerPlayerComponent>>, ::ActorTickNeededComponent& actorTickNeeded, ::PassengerComponent const& passenger, ::EntityModifier<::ActorTickNeededComponent> modifier);
 // NOLINTEND
 
-} // namespace PlayerPassengerSystem
+}

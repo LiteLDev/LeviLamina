@@ -4,16 +4,16 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/sem_ver/SemVersion.h"
-#include "mc/molang/MolangVersion.h"
 #include "mc/server/commands/CurrentCmdVersion.h"
+#include "mc/versionless/molang/MolangVersion.h"
 
 class MinEngineVersion {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::SemVersion>       mSemVersion;
+    ::ll::TypedStorage<8, 24, ::SemVersion> mSemVersion;
     ::ll::TypedStorage<4, 4, ::CurrentCmdVersion> mCommandVersion;
-    ::ll::TypedStorage<2, 2, ::MolangVersion>     mMolangVersion;
+    ::ll::TypedStorage<2, 2, ::MolangVersion> mMolangVersion;
     // NOLINTEND
 
 public:
@@ -48,4 +48,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

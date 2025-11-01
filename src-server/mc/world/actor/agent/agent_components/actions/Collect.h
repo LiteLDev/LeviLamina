@@ -17,6 +17,7 @@ public:
     Collect& operator=(Collect const&);
     Collect(Collect const&);
     Collect();
+
 };
 
-} // namespace AgentComponents::Actions
+}

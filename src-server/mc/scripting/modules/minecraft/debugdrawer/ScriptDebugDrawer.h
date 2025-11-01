@@ -21,12 +21,12 @@ class ScriptDebugDrawer : public ::Scripting::WeakHandleFromThis<::ScriptModuleD
 public:
     // ScriptDebugDrawer inner types define
     using Key = int64;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>                               mScope;
-    ::ll::TypedStorage<8, 8, ::ServerLevel&>                                                mLevel;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
+    ::ll::TypedStorage<8, 8, ::ServerLevel&> mLevel;
     ::ll::TypedStorage<8, 8, ::ScriptModuleDebugUtilities::ScriptDebugDrawerDataComponent*> mDataComponent;
     // NOLINTEND
 
@@ -51,9 +51,9 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugDrawer>
-    getHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level);
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDebugDrawer> getHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleDebugUtilities
+}

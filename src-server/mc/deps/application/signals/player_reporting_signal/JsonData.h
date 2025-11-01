@@ -17,6 +17,7 @@ public:
     JsonData& operator=(JsonData const&);
     JsonData(JsonData const&);
     JsonData();
+
 };
 
-} // namespace PlayerReportingSignal
+}

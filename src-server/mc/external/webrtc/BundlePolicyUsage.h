@@ -5,10 +5,10 @@
 namespace webrtc {
 
 enum class BundlePolicyUsage : int {
-    KBundlePolicyUsageBalanced  = 0,
+    KBundlePolicyUsageBalanced = 0,
     KBundlePolicyUsageMaxBundle = 1,
     KBundlePolicyUsageMaxCompat = 2,
-    KBundlePolicyUsageMax       = 3,
+    KBundlePolicyUsageMax = 3,
 };
 
 }

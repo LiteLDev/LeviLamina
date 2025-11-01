@@ -18,4 +18,5 @@ public:
     ClassFieldsDef& operator=(ClassFieldsDef const&);
     ClassFieldsDef(ClassFieldsDef const&);
     ClassFieldsDef();
+
 };

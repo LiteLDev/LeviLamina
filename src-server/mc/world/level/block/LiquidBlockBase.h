@@ -28,32 +28,25 @@ class LiquidBlockBase : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 77
+    // vIndex: 76
     virtual bool mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const /*override*/;
+    virtual ::AABB getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>) const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 87
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
+    // vIndex: 86
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
 
     // vIndex: 57
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const /*override*/;
 
-    // vIndex: 115
+    // vIndex: 114
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -87,12 +80,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $mayPick(::BlockSource const& region, ::Block const& block, bool liquid) const;
 
-    MCFOLD ::AABB $getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
+    MCFOLD ::AABB $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
@@ -110,4 +98,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

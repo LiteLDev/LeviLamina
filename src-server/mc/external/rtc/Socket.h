@@ -15,7 +15,7 @@ public:
     // clang-format off
     struct ReceiveBuffer;
     // clang-format on
-
+    
     // Socket inner types define
     struct ReceiveBuffer {
     public:
@@ -23,56 +23,57 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk1d2bea;
         ::ll::UntypedStorage<8, 80> mUnkfdd128;
-        ::ll::UntypedStorage<4, 4>  mUnkdad96f;
-        ::ll::UntypedStorage<8, 8>  mUnk213b15;
+        ::ll::UntypedStorage<4, 4> mUnkdad96f;
+        ::ll::UntypedStorage<8, 8> mUnk213b15;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ReceiveBuffer& operator=(ReceiveBuffer const&);
         ReceiveBuffer(ReceiveBuffer const&);
         ReceiveBuffer();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~ReceiveBuffer();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     enum class ConnState : int {
-        Closed     = 0,
+        Closed = 0,
         Connecting = 1,
-        Connected  = 2,
+        Connected = 2,
     };
-
+    
     enum class Option : int {
-        Dontfragment      = 0,
-        Rcvbuf            = 1,
-        Sndbuf            = 2,
-        Nodelay           = 3,
-        Ipv6V6only        = 4,
-        Dscp              = 5,
+        Dontfragment = 0,
+        Rcvbuf = 1,
+        Sndbuf = 2,
+        Nodelay = 3,
+        Ipv6V6only = 4,
+        Dscp = 5,
         RtpSendtimeExtnId = 6,
-        SendEcn           = 7,
-        RecvEcn           = 8,
-        Keepalive         = 9,
-        TcpKeepcnt        = 10,
-        TcpKeepidle       = 11,
-        TcpKeepintvl      = 12,
-        TcpUserTimeout    = 13,
-        Broadcast         = 14,
-        Ipv6JoinGroup     = 15,
+        SendEcn = 7,
+        RecvEcn = 8,
+        Keepalive = 9,
+        TcpKeepcnt = 10,
+        TcpKeepidle = 11,
+        TcpKeepintvl = 12,
+        TcpUserTimeout = 13,
+        Broadcast = 14,
+        Ipv6JoinGroup = 15,
         Ipv6MulticastLoop = 16,
-        Ipv6MulticastIf   = 17,
+        Ipv6MulticastIf = 17,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -157,6 +158,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

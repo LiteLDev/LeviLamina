@@ -23,23 +23,17 @@ public:
     // vIndex: 39
     virtual bool isGlint(::ItemStackBase const& stack) const /*override*/;
 
-    // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    // vIndex: 77
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 20
     virtual bool isThrowable() const /*override*/;
 
-    // vIndex: 79
-    virtual ::Actor* createProjectileActor(
-        ::BlockSource&     region,
-        ::ItemStack const& stack,
-        ::Vec3 const&      pos,
-        ::Vec3 const&      direction
-    ) const /*override*/;
-
     // vIndex: 80
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
-        /*override*/;
+    virtual ::Actor* createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction) const /*override*/;
+
+    // vIndex: 81
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const /*override*/;
 
     // vIndex: 0
     virtual ~ExperiencePotionItem() /*override*/ = default;
@@ -50,16 +44,11 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCFOLD bool $isThrowable() const;
 
-    MCAPI ::Actor* $createProjectileActor(
-        ::BlockSource&     region,
-        ::ItemStack const& stack,
-        ::Vec3 const&      pos,
-        ::Vec3 const&      direction
-    ) const;
+    MCAPI ::Actor* $createProjectileActor(::BlockSource& region, ::ItemStack const& stack, ::Vec3 const& pos, ::Vec3 const& direction) const;
 
     MCFOLD bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
     // NOLINTEND
@@ -69,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

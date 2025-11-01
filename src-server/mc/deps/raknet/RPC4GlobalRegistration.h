@@ -4,6 +4,7 @@
 
 namespace RakNet {
 
-class RPC4GlobalRegistration {};
+class RPC4GlobalRegistration {
+};
 
-} // namespace RakNet
+}

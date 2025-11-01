@@ -12,4 +12,5 @@ public:
     // vIndex: 8
     virtual ~DebugInfoPlayer() /*override*/ = default;
     // NOLINTEND
+
 };

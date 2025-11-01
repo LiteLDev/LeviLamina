@@ -19,7 +19,7 @@ public:
     // clang-format off
     struct PackedNack;
     // clang-format on
-
+    
     // Nack inner types define
     struct PackedNack {
     public:
@@ -28,14 +28,15 @@ public:
         ::ll::UntypedStorage<2, 2> mUnkc31428;
         ::ll::UntypedStorage<2, 2> mUnka1eb66;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         PackedNack& operator=(PackedNack const&);
         PackedNack(PackedNack const&);
         PackedNack();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,12 +59,7 @@ public:
     virtual uint64 BlockLength() const /*override*/;
 
     // vIndex: 2
-    virtual bool Create(
-        uchar*                                                   packet,
-        uint64*                                                  index,
-        uint64                                                   max_length,
-        ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
-    ) const /*override*/;
+    virtual bool Create(uchar* packet, uint64* index, uint64 max_length, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback) const /*override*/;
     // NOLINTEND
 
 public:
@@ -99,12 +95,7 @@ public:
     // NOLINTBEGIN
     MCNAPI uint64 $BlockLength() const;
 
-    MCNAPI bool $Create(
-        uchar*                                                   packet,
-        uint64*                                                  index,
-        uint64                                                   max_length,
-        ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback
-    ) const;
+    MCNAPI bool $Create(uchar* packet, uint64* index, uint64 max_length, ::rtc::FunctionView<void(::rtc::ArrayView<uchar const>)> callback) const;
     // NOLINTEND
 
 public:
@@ -112,6 +103,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc::rtcp
+}

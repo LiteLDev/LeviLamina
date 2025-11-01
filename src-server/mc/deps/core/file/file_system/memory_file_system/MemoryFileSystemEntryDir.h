@@ -18,7 +18,7 @@ public:
     // clang-format off
     struct MemoryFileSystemEntryItem;
     // clang-format on
-
+    
     // MemoryFileSystemEntryDir inner types define
     struct MemoryFileSystemEntryItem {
     public:
@@ -27,14 +27,15 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk8d6ff9;
         ::ll::UntypedStorage<8, 8> mUnk9befd9;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         MemoryFileSystemEntryItem& operator=(MemoryFileSystemEntryItem const&);
         MemoryFileSystemEntryItem(MemoryFileSystemEntryItem const&);
         MemoryFileSystemEntryItem();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -65,6 +66,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

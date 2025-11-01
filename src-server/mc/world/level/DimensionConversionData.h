@@ -10,6 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::Vec3> mOverworldSpawnPoint;
-    ::ll::TypedStorage<4, 4, int>     mNetherScale;
+    ::ll::TypedStorage<4, 4, int> mNetherScale;
     // NOLINTEND
+
 };

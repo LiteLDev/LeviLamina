@@ -35,18 +35,13 @@ class Actor;
 namespace CommandUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool
-addItemInstanceComponents(::ItemInstance& itemInstance, ::Json::Value const& components, ::std::string& errorMsg);
+MCAPI bool addItemInstanceComponents(::ItemInstance& itemInstance, ::Json::Value const& components, ::std::string& errorMsg);
 
 MCAPI ::Actor* addToLevel(::OwnerPtr<::EntityContext> entity, ::BlockSource& region);
 
 MCAPI void addtoCSVList(::std::string& list, ::std::string const& newItem);
 
-MCAPI void alterSpawnableEntities(
-    ::LevelData&                       levelData,
-    ::ActorDefinitionIdentifier const& type,
-    ::ActorDefinitionIdentifier&       definition
-);
+MCAPI void alterSpawnableEntities(::LevelData& levelData, ::ActorDefinitionIdentifier const& type, ::ActorDefinitionIdentifier& definition);
 
 MCAPI void broadcastPlayerSpawnedMobEvent(::Actor const& entity, ::Actor& summoner);
 
@@ -62,12 +57,7 @@ MCAPI ::std::vector<::ItemStack> createItemStacks(::ItemInstance const& item, in
 
 MCAPI bool createMapData(::Actor& entity, ::ItemInstance& itemInstance, ::CommandOutput& output);
 
-MCAPI void displayLocalizableMessage(
-    bool                                feedbackRuleDisables,
-    ::Player&                           player,
-    ::std::string const&                message,
-    ::std::vector<::std::string> const& params
-);
+MCAPI void displayLocalizableMessage(bool feedbackRuleDisables, ::Player& player, ::std::string const& message, ::std::vector<::std::string> const& params);
 
 MCAPI ::std::string getActorName(::Actor const& actor);
 
@@ -93,4 +83,4 @@ MCAPI ::std::string const validatePath(::CommandOutput& output, ::CommandFilePat
 MCAPI ::std::vector<::std::pair<::std::string, char>> const& CMD_INPUT_UNICODE_TRANSLATE_MAP();
 // NOLINTEND
 
-} // namespace CommandUtils
+}

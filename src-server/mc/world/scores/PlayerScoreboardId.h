@@ -18,6 +18,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::PlayerScoreboardId const& INVALID();
     // NOLINTEND
+
 };
 
 namespace std {

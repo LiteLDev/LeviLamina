@@ -4,7 +4,8 @@
 
 namespace rtc {
 
-template <typename T0, int T1>
-class BufferT {};
+template<typename T0, int T1>
+class BufferT {
+};
 
-} // namespace rtc
+}

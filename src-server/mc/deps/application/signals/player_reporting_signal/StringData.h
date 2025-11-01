@@ -17,6 +17,7 @@ public:
     StringData& operator=(StringData const&);
     StringData(StringData const&);
     StringData();
+
 };
 
-} // namespace PlayerReportingSignal
+}

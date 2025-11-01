@@ -16,4 +16,5 @@ public:
     FastDivData& operator=(FastDivData const&);
     FastDivData(FastDivData const&);
     FastDivData();
+
 };

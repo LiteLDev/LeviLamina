@@ -19,9 +19,8 @@ struct ScriptPlayerButtonInputAfterEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>
-                                                          mPlayerHandle;
-    ::ll::TypedStorage<4, 4, ::ScriptingInputButton>      mButton;
+    ::ll::TypedStorage<8, 32, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> mPlayerHandle;
+    ::ll::TypedStorage<4, 4, ::ScriptingInputButton> mButton;
     ::ll::TypedStorage<4, 4, ::ScriptingInputButtonState> mNewState;
     // NOLINTEND
 
@@ -30,6 +29,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

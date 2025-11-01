@@ -48,8 +48,7 @@ public:
     virtual ::Block const& getExtraBlock(::BlockPos const&) const = 0;
 
     // vIndex: 7
-    virtual ::gsl::span<::BlockDataFetchResult<::Block> const>
-    fetchBlocksInBox(::BoundingBox const&, ::std::function<bool(::Block const&)>) = 0;
+    virtual ::gsl::span<::BlockDataFetchResult<::Block> const> fetchBlocksInBox(::BoundingBox const&, ::std::function<bool(::Block const&)>) = 0;
 
     // vIndex: 8
     virtual bool hasBiomeTag(uint64, ::BlockPos const&) const = 0;
@@ -116,4 +115,5 @@ public:
 
     MCNAPI ::LevelChunk* $getChunk(::ChunkPos const& pos);
     // NOLINTEND
+
 };

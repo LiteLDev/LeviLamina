@@ -4,6 +4,7 @@
 
 namespace DataStructures {
 
-class Map {};
+class Map {
+};
 
-} // namespace DataStructures
+}

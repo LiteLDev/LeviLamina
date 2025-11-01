@@ -26,14 +26,14 @@ public:
     // clang-format off
     struct StorageAreaSpaceInfo;
     // clang-format on
-
+    
     // FileStorageArea inner types define
     enum class FlushableLevelDbEnvType : int {
-        None        = 0,
-        InMemory    = 1,
+        None = 0,
+        InMemory = 1,
         StorageArea = 2,
     };
-
+    
     struct StorageAreaSpaceInfo {
     public:
         // member variables
@@ -41,35 +41,37 @@ public:
         ::ll::UntypedStorage<8, 8> mUnka44c95;
         ::ll::UntypedStorage<8, 8> mUnk545140;
         ::ll::UntypedStorage<8, 8> mUnkd44356;
+        ::ll::UntypedStorage<1, 1> mUnka493f5;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         StorageAreaSpaceInfo& operator=(StorageAreaSpaceInfo const&);
         StorageAreaSpaceInfo(StorageAreaSpaceInfo const&);
         StorageAreaSpaceInfo();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 80>  mUnk63cc78;
-    ::ll::UntypedStorage<8, 24>  mUnka56475;
-    ::ll::UntypedStorage<1, 1>   mUnk7f3baf;
-    ::ll::UntypedStorage<1, 1>   mUnk6060c1;
-    ::ll::UntypedStorage<8, 64>  mUnk3e8909;
-    ::ll::UntypedStorage<8, 64>  mUnk6a2388;
-    ::ll::UntypedStorage<8, 16>  mUnk683578;
-    ::ll::UntypedStorage<4, 4>   mUnkd6345d;
-    ::ll::UntypedStorage<8, 32>  mUnke4ae6a;
-    ::ll::UntypedStorage<8, 24>  mUnk3c594a;
-    ::ll::UntypedStorage<8, 32>  mUnkedd4a1;
+    ::ll::UntypedStorage<8, 80> mUnk63cc78;
+    ::ll::UntypedStorage<8, 24> mUnka56475;
+    ::ll::UntypedStorage<1, 1> mUnk7f3baf;
+    ::ll::UntypedStorage<1, 1> mUnk6060c1;
+    ::ll::UntypedStorage<8, 64> mUnk3e8909;
+    ::ll::UntypedStorage<8, 64> mUnk6a2388;
+    ::ll::UntypedStorage<8, 16> mUnk683578;
+    ::ll::UntypedStorage<4, 4> mUnkd6345d;
+    ::ll::UntypedStorage<8, 32> mUnke4ae6a;
+    ::ll::UntypedStorage<8, 24> mUnk3c594a;
+    ::ll::UntypedStorage<8, 32> mUnkedd4a1;
     ::ll::UntypedStorage<8, 144> mUnk55245b;
-    ::ll::UntypedStorage<1, 1>   mUnk6e99fd;
-    ::ll::UntypedStorage<8, 88>  mUnk31611b;
-    ::ll::UntypedStorage<1, 1>   mUnkf29ed2;
-    ::ll::UntypedStorage<8, 16>  mUnkecef76;
-    ::ll::UntypedStorage<1, 1>   mUnk949164;
+    ::ll::UntypedStorage<1, 1> mUnk6e99fd;
+    ::ll::UntypedStorage<8, 88> mUnk31611b;
+    ::ll::UntypedStorage<1, 1> mUnkf29ed2;
+    ::ll::UntypedStorage<8, 16> mUnkecef76;
+    ::ll::UntypedStorage<1, 1> mUnk949164;
     // NOLINTEND
 
 public:
@@ -88,8 +90,7 @@ public:
     virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType) = 0;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::Core::FileSystemImpl>
-    createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
+    virtual ::std::unique_ptr<::Core::FileSystemImpl> createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
 
     // vIndex: 3
     virtual bool supportsSizeQuery() const = 0;
@@ -137,11 +138,7 @@ public:
     virtual void attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
 
     // vIndex: 18
-    virtual void preemptiveExtendSize(
-        uint64 const            expectedContentSize,
-        ::std::function<void()> successCallback,
-        ::std::function<void()> failureCallback
-    );
+    virtual void preemptiveExtendSize(uint64 const expectedContentSize, ::std::function<void()> successCallback, ::std::function<void()> failureCallback);
 
     // vIndex: 19
     virtual uint64 getAvailableUserStorageSize();
@@ -207,13 +204,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FileStorageArea(
-        ::Core::FileAccessType                     type,
-        ::Core::PathView                           rootPath,
-        bool                                       usesFlatFiles,
-        bool                                       isAccessedDirectly,
-        ::std::shared_ptr<::Core::FileStorageArea> parent
-    );
+    MCNAPI FileStorageArea(::Core::FileAccessType type, ::Core::PathView rootPath, bool usesFlatFiles, bool isAccessedDirectly, ::std::shared_ptr<::Core::FileStorageArea> parent);
 
     MCNAPI void _addReadOperation(bool succeeded, uint64 numBytesRead);
 
@@ -231,11 +222,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Core::Result
-    _getStorageAreaForPathImpl(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
-
-    MCNAPI static ::Core::Result
-    getStorageAreaForPath(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
+    MCNAPI static ::Core::Result _getStorageAreaForPathImpl(::std::shared_ptr<::Core::FileStorageArea>& fileStorageArea, ::Core::PathView path);
     // NOLINTEND
 
 public:
@@ -251,13 +238,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Core::FileAccessType                     type,
-        ::Core::PathView                           rootPath,
-        bool                                       usesFlatFiles,
-        bool                                       isAccessedDirectly,
-        ::std::shared_ptr<::Core::FileStorageArea> parent
-    );
+    MCNAPI void* $ctor(::Core::FileAccessType type, ::Core::PathView rootPath, bool usesFlatFiles, bool isAccessedDirectly, ::std::shared_ptr<::Core::FileStorageArea> parent);
     // NOLINTEND
 
 public:
@@ -269,8 +250,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::Core::FileSystemImpl>
-    $createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
+    MCNAPI ::std::unique_ptr<::Core::FileSystemImpl> $createTransaction(::Core::FileAccessType fileAccessType, ::Core::TransactionFlags);
 
     MCNAPI void $setUsedSizeOverride(uint64);
 
@@ -296,11 +276,7 @@ public:
 
     MCNAPI void $attemptExtendSize(int64 const& currentFreeSpace, ::std::function<void()> onCompleteCallback);
 
-    MCNAPI void $preemptiveExtendSize(
-        uint64 const            expectedContentSize,
-        ::std::function<void()> successCallback,
-        ::std::function<void()> failureCallback
-    );
+    MCNAPI void $preemptiveExtendSize(uint64 const expectedContentSize, ::std::function<void()> successCallback, ::std::function<void()> failureCallback);
 
     MCNAPI uint64 $getAvailableUserStorageSize();
 
@@ -348,6 +324,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

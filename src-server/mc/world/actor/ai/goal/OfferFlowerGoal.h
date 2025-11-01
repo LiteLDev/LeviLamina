@@ -23,57 +23,53 @@ public:
     // clang-format off
     class OfferFlowerDefinition;
     // clang-format on
-
+    
     // OfferFlowerGoal inner types define
     class OfferFlowerDefinition : public ::BaseGoalDefinition {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>               mMaxOfferFlowerDurationSeconds;
-        ::ll::TypedStorage<4, 4, float>               mChanceToStart;
+        ::ll::TypedStorage<4, 4, float> mMaxOfferFlowerDurationSeconds;
+        ::ll::TypedStorage<4, 4, float> mChanceToStart;
         ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-        ::ll::TypedStorage<4, 12, ::Vec3>             mSearchArea;
-        ::ll::TypedStorage<4, 4, float>               mMaxRotationX;
-        ::ll::TypedStorage<4, 4, float>               mMaxHeadRotationY;
+        ::ll::TypedStorage<4, 12, ::Vec3> mSearchArea;
+        ::ll::TypedStorage<4, 4, float> mMaxRotationX;
+        ::ll::TypedStorage<4, 4, float> mMaxHeadRotationY;
         // NOLINTEND
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~OfferFlowerDefinition() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OfferFlowerGoal::OfferFlowerDefinition>>&
-                root
-        );
+        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OfferFlowerGoal::OfferFlowerDefinition>>& root);
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                 mMaxOfferFlowerDurationTicks;
-    ::ll::TypedStorage<4, 4, float>               mChanceToStart;
+    ::ll::TypedStorage<4, 4, int> mMaxOfferFlowerDurationTicks;
+    ::ll::TypedStorage<4, 4, float> mChanceToStart;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-    ::ll::TypedStorage<4, 12, ::Vec3>             mSearchArea;
-    ::ll::TypedStorage<4, 4, float>               mMaxRotationX;
-    ::ll::TypedStorage<4, 4, float>               mMaxHeadRotationY;
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>    mTakeFlowerMob;
-    ::ll::TypedStorage<8, 8, ::Tick>              mTimeoutTick;
-    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
+    ::ll::TypedStorage<4, 12, ::Vec3> mSearchArea;
+    ::ll::TypedStorage<4, 4, float> mMaxRotationX;
+    ::ll::TypedStorage<4, 4, float> mMaxHeadRotationY;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mTakeFlowerMob;
+    ::ll::TypedStorage<8, 8, ::Tick> mTimeoutTick;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
 
 public:
@@ -128,4 +124,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

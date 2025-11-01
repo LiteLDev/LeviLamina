@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/entity/components/FloatComponent.h"
 
-struct JumpPendingScaleComponent : public ::FloatComponent {};
+struct JumpPendingScaleComponent : public ::FloatComponent {
+};

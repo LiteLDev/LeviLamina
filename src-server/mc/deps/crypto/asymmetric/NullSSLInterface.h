@@ -25,28 +25,16 @@ public:
     virtual bool constructPublicKey(::std::string const&, ::std::string const&, ::std::string&) /*override*/;
 
     // vIndex: 3
-    virtual ::std::string encryptData(
-        ::std::string const&,
-        ::std::string const&,
-        ::Crypto::Asymmetric::Padding,
-        ::Crypto::Asymmetric::PubKeyFormat
-    ) /*override*/;
+    virtual ::std::string encryptData(::std::string const&, ::std::string const&, ::Crypto::Asymmetric::Padding, ::Crypto::Asymmetric::PubKeyFormat, bool) /*override*/;
 
     // vIndex: 4
-    virtual ::std::string
-    decryptData(::std::string const&, ::std::string const&, ::Crypto::Asymmetric::Padding) /*override*/;
+    virtual ::std::string decryptData(::std::string const&, ::std::string const&, ::Crypto::Asymmetric::Padding) /*override*/;
 
     // vIndex: 5
-    virtual ::std::string signData(
-        ::std::string const&,
-        ::std::string const&,
-        ::Crypto::Hash::HashType,
-        ::Crypto::Asymmetric::PrivateKeySigningFormat
-    ) /*override*/;
+    virtual ::std::string signData(::std::string const&, ::std::string const&, ::Crypto::Hash::HashType, ::Crypto::Asymmetric::PrivateKeySigningFormat) /*override*/;
 
     // vIndex: 6
-    virtual bool
-    verifyData(::std::string const&, ::std::string const&, ::std::string const&, ::Crypto::Hash::HashType) /*override*/;
+    virtual bool verifyData(::std::string const&, ::std::string const&, ::std::string const&, ::Crypto::Hash::HashType) /*override*/;
 
     // vIndex: 7
     virtual ::std::string computeSharedSecret(::std::string const&, ::std::string const&) /*override*/;
@@ -57,6 +45,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Crypto::Asymmetric
+}

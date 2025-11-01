@@ -62,4 +62,5 @@ public:
 
     MCNAPI bool $isEnabled() const;
     // NOLINTEND
+
 };

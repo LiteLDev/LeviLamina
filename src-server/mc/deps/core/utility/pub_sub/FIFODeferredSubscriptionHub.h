@@ -36,8 +36,7 @@ public:
     virtual bool _runOneEvent() /*override*/;
 
     // vIndex: 10
-    virtual void
-        _enqueue(::std::function<void()>, ::Bedrock::PubSub::ConnectPosition, ::std::optional<int>) /*override*/;
+    virtual void _enqueue(::std::function<void()>, ::Bedrock::PubSub::ConnectPosition, ::std::optional<int>) /*override*/;
 
     // vIndex: 0
     virtual ~FIFODeferredSubscriptionHub() /*override*/ = default;
@@ -48,6 +47,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::PubSub
+}

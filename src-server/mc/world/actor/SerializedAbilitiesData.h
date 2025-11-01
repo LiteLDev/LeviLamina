@@ -18,36 +18,37 @@ public:
     // clang-format off
     struct SerializedLayer;
     // clang-format on
-
+    
     // SerializedAbilitiesData inner types define
     enum class SerializedAbilitiesLayer : ushort {
-        CustomCache   = 0,
-        Base          = 1,
-        Spectator     = 2,
-        Commands      = 3,
-        Editor        = 4,
+        CustomCache = 0,
+        Base = 1,
+        Spectator = 2,
+        Commands = 3,
+        Editor = 4,
         LoadingScreen = 5,
     };
-
+    
     struct SerializedLayer {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<2, 2, ::SerializedAbilitiesData::SerializedAbilitiesLayer> mSerializedLayer;
-        ::ll::TypedStorage<4, 4, uint>                                                mAbilitiesSet;
-        ::ll::TypedStorage<4, 4, uint>                                                mAbilityValues;
-        ::ll::TypedStorage<4, 4, float>                                               mFlySpeed;
-        ::ll::TypedStorage<4, 4, float>                                               mVerticalFlySpeed;
-        ::ll::TypedStorage<4, 4, float>                                               mWalkSpeed;
+        ::ll::TypedStorage<4, 4, uint> mAbilitiesSet;
+        ::ll::TypedStorage<4, 4, uint> mAbilityValues;
+        ::ll::TypedStorage<4, 4, float> mFlySpeed;
+        ::ll::TypedStorage<4, 4, float> mVerticalFlySpeed;
+        ::ll::TypedStorage<4, 4, float> mWalkSpeed;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                            mTargetPlayer;
-    ::ll::TypedStorage<1, 1, ::CommandPermissionLevel>                                   mCommandPermissions;
-    ::ll::TypedStorage<1, 1, ::PlayerPermissionLevel>                                    mPlayerPermissions;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mTargetPlayer;
+    ::ll::TypedStorage<1, 1, ::CommandPermissionLevel> mCommandPermissions;
+    ::ll::TypedStorage<1, 1, ::PlayerPermissionLevel> mPlayerPermissions;
     ::ll::TypedStorage<8, 24, ::std::vector<::SerializedAbilitiesData::SerializedLayer>> mLayers;
     // NOLINTEND
 
@@ -88,4 +89,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

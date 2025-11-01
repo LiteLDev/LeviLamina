@@ -8,7 +8,7 @@ class Attribute {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk74f5db;
+    ::ll::UntypedStorage<8, 8> mUnk74f5db;
     ::ll::UntypedStorage<8, 16> mUnkaacad1;
     // NOLINTEND
 
@@ -27,6 +27,7 @@ public:
 
     MCNAPI char const* name() const;
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

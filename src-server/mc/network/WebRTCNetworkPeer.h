@@ -18,11 +18,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector> const> mNetherNetConnector;
-    ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID const>                              mPeerId;
-    ::ll::TypedStorage<8, 8, uint64 const>                                               mSessionId;
-    ::ll::TypedStorage<8, 56, ::NetworkPeer::NetworkStatus>                              mNetherNetNetworkStatus;
-    ::ll::TypedStorage<4, 4, uint>                                                       mNumNetworkStatusUpdates;
-    ::ll::TypedStorage<8, 32, ::std::string>                                             mPartialData;
+    ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID const> mPeerId;
+    ::ll::TypedStorage<8, 8, uint64 const> mSessionId;
+    ::ll::TypedStorage<8, 56, ::NetworkPeer::NetworkStatus> mNetherNetNetworkStatus;
+    ::ll::TypedStorage<4, 4, uint> mNumNetworkStatusUpdates;
+    ::ll::TypedStorage<8, 32, ::std::string> mPartialData;
     // NOLINTEND
 
 public:
@@ -32,8 +32,7 @@ public:
     virtual ~WebRTCNetworkPeer() /*override*/;
 
     // vIndex: 1
-    virtual void
-    sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility) /*override*/;
+    virtual void sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility) /*override*/;
 
     // vIndex: 2
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
@@ -48,10 +47,7 @@ public:
     virtual bool isEncrypted() const /*override*/;
 
     // vIndex: 7
-    virtual ::NetworkPeer::DataStatus _receivePacket(
-        ::std::string&                                                    outData,
-        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
-    ) /*override*/;
+    virtual ::NetworkPeer::DataStatus _receivePacket(::std::string& outData, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr) /*override*/;
     // NOLINTEND
 
 public:
@@ -73,10 +69,7 @@ public:
 
     MCNAPI bool $isEncrypted() const;
 
-    MCNAPI ::NetworkPeer::DataStatus $_receivePacket(
-        ::std::string&                                                    outData,
-        ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
-    );
+    MCNAPI ::NetworkPeer::DataStatus $_receivePacket(::std::string& outData, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr);
     // NOLINTEND
 
 public:
@@ -84,4 +77,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

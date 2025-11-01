@@ -18,12 +18,12 @@ class CreativeGroupInfo : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::CreativeItemCategory>  mCategory;
+    ::ll::TypedStorage<4, 4, ::CreativeItemCategory> mCategory;
     ::ll::TypedStorage<8, 8, ::CreativeItemRegistry*> mRegistry;
-    ::ll::TypedStorage<8, 48, ::HashedString>         mName;
-    ::ll::TypedStorage<8, 128, ::ItemInstance>        mIcon;
-    ::ll::TypedStorage<4, 4, uint>                    mIndex;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint>>    mItemIndexes;
+    ::ll::TypedStorage<8, 48, ::HashedString> mName;
+    ::ll::TypedStorage<8, 128, ::ItemInstance> mIcon;
+    ::ll::TypedStorage<4, 4, uint> mIndex;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint>> mItemIndexes;
     // NOLINTEND
 
 public:
@@ -43,13 +43,7 @@ public:
     // NOLINTBEGIN
     MCAPI CreativeGroupInfo(::CreativeGroupInfo const&);
 
-    MCAPI CreativeGroupInfo(
-        ::CreativeItemRegistry* registry,
-        ::CreativeItemCategory  category,
-        ::HashedString const&   name,
-        uint                    index,
-        ::ItemInstance const&   icon
-    );
+    MCAPI CreativeGroupInfo(::CreativeItemRegistry* registry, ::CreativeItemCategory category, ::HashedString const& name, uint index, ::ItemInstance const& icon);
 
     MCAPI void addCreativeItem(::CreativeItemEntry* itemEntry);
     // NOLINTEND
@@ -59,13 +53,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::CreativeGroupInfo const&);
 
-    MCAPI void* $ctor(
-        ::CreativeItemRegistry* registry,
-        ::CreativeItemCategory  category,
-        ::HashedString const&   name,
-        uint                    index,
-        ::ItemInstance const&   icon
-    );
+    MCAPI void* $ctor(::CreativeItemRegistry* registry, ::CreativeItemCategory category, ::HashedString const& name, uint index, ::ItemInstance const& icon);
     // NOLINTEND
 
 public:
@@ -79,4 +67,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -12,9 +12,9 @@ class TrimPatternRegistry {
 public:
     // TrimPatternRegistry inner types define
     using TemplateItemIdToPatternIdMap = ::std::unordered_map<::HashedString, ::HashedString>;
-
+    
     using PatternIdMapToTemplateItemId = ::std::unordered_map<::HashedString, ::HashedString>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -29,4 +29,5 @@ public:
 
     MCAPI void initializeServer(::ItemRegistryRef itemRegistry);
     // NOLINTEND
+
 };

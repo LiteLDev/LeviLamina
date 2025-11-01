@@ -8,8 +8,7 @@
 
 namespace ScriptModuleMinecraft {
 
-struct ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage
-: public ::ScriptModuleMinecraft::ScriptBlockCustomComponentAfterEventIntermediateStorage {
+struct ScriptBlockCustomComponentStepOnAfterEventIntermediateStorage : public ::ScriptModuleMinecraft::ScriptBlockCustomComponentAfterEventIntermediateStorage {
 public:
     // member variables
     // NOLINTBEGIN
@@ -27,6 +26,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

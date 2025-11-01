@@ -11,14 +11,13 @@
 struct GameTestRequestPacketInfo;
 // clang-format on
 
-class GameTestRequestPacket
-: public ::SerializedPayloadPacket<::GameTestRequestPacketInfo, ::GameTestRequestPacketPayload> {
+class GameTestRequestPacket : public ::SerializedPayloadPacket<::GameTestRequestPacketInfo, ::GameTestRequestPacketPayload> {
 public:
     // GameTestRequestPacket inner types define
     using PayloadType = ::GameTestRequestPacketPayload;
-
+    
     using PacketInfo = ::GameTestRequestPacketInfo;
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -43,4 +42,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

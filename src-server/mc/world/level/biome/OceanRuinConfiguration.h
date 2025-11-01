@@ -10,7 +10,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::OceanTempCategory> mType;
-    ::ll::TypedStorage<4, 4, float>               mLargeProbability;
-    ::ll::TypedStorage<4, 4, float>               mClusterProbability;
+    ::ll::TypedStorage<4, 4, float> mLargeProbability;
+    ::ll::TypedStorage<4, 4, float> mClusterProbability;
     // NOLINTEND
+
 };

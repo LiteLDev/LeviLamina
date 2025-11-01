@@ -49,11 +49,7 @@ public:
     virtual bool canExtendSize() const /*override*/;
 
     // vIndex: 18
-    virtual void preemptiveExtendSize(
-        uint64 const            expectedContentSize,
-        ::std::function<void()> successCallback,
-        ::std::function<void()> failureCallback
-    ) /*override*/;
+    virtual void preemptiveExtendSize(uint64 const expectedContentSize, ::std::function<void()> successCallback, ::std::function<void()> failureCallback) /*override*/;
 
     // vIndex: 0
     virtual ~TestMemoryStorageArea() /*override*/ = default;
@@ -64,6 +60,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

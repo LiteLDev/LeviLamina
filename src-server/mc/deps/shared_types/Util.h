@@ -13,4 +13,4 @@ namespace SharedTypes::Util {
 MCNAPI void bindRotationAndMirror(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-} // namespace SharedTypes::Util
+}

@@ -13,4 +13,4 @@ namespace ScriptModuleServerAdmin::Betas {
 MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-} // namespace ScriptModuleServerAdmin::Betas
+}

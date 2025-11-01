@@ -17,6 +17,7 @@ public:
     ArrayProxy& operator=(ArrayProxy const&);
     ArrayProxy(ArrayProxy const&);
     ArrayProxy();
+
 };
 
-} // namespace Scripting::QuickJS
+}

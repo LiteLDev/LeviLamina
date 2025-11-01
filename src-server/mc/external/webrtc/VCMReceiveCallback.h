@@ -20,13 +20,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual int FrameToRender(
-        ::webrtc::VideoFrame&,
-        ::std::optional<uchar>,
-        ::webrtc::TimeDelta,
-        ::webrtc::VideoContentType,
-        ::webrtc::VideoFrameType
-    ) = 0;
+    virtual int FrameToRender(::webrtc::VideoFrame&, ::std::optional<uchar>, ::webrtc::TimeDelta, ::webrtc::VideoContentType, ::webrtc::VideoFrameType) = 0;
 
     // vIndex: 1
     virtual void OnDroppedFrames(uint);
@@ -46,6 +40,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

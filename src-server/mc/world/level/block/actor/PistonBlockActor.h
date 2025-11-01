@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActor.h"
 #include "mc/world/level/block/actor/PistonState.h"
 
@@ -27,19 +27,19 @@ class PistonBlockActor : public ::BlockActor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                        mSticky;
-    ::ll::TypedStorage<4, 4, float>                                       mProgress;
-    ::ll::TypedStorage<4, 4, float>                                       mLastProgress;
-    ::ll::TypedStorage<1, 1, bool>                                        mWasPushedBackwardByANonStickyPiston;
-    ::ll::TypedStorage<1, 1, bool>                                        mWasPulledForwardByAStickyPiston;
-    ::ll::TypedStorage<1, 1, ::PistonState>                               mOldState;
-    ::ll::TypedStorage<1, 1, ::PistonState>                               mState;
-    ::ll::TypedStorage<1, 1, ::PistonState>                               mNewState;
-    ::ll::TypedStorage<1, 1, bool>                                        mVerifyArm;
-    ::ll::TypedStorage<1, 1, bool>                                        mShouldVerifyArmType;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                  mAttachedBlocks;
+    ::ll::TypedStorage<1, 1, bool> mSticky;
+    ::ll::TypedStorage<4, 4, float> mProgress;
+    ::ll::TypedStorage<4, 4, float> mLastProgress;
+    ::ll::TypedStorage<1, 1, bool> mWasPushedBackwardByANonStickyPiston;
+    ::ll::TypedStorage<1, 1, bool> mWasPulledForwardByAStickyPiston;
+    ::ll::TypedStorage<1, 1, ::PistonState> mOldState;
+    ::ll::TypedStorage<1, 1, ::PistonState> mState;
+    ::ll::TypedStorage<1, 1, ::PistonState> mNewState;
+    ::ll::TypedStorage<1, 1, bool> mVerifyArm;
+    ::ll::TypedStorage<1, 1, bool> mShouldVerifyArmType;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>> mAttachedBlocks;
     ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::BlockPos>>> mFutureClientAttachedBlocks;
-    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                  mBreakBlocks;
+    ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>> mBreakBlocks;
     // NOLINTEND
 
 public:
@@ -67,10 +67,10 @@ public:
     // vIndex: 28
     virtual ::PistonBlockActor const* getOwningPiston(::BlockSource&) const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -82,35 +82,19 @@ public:
     // NOLINTBEGIN
     MCAPI PistonBlockActor(::BlockPos const& pos, bool isSticky);
 
-    MCAPI bool _attachedBlockWalker(
-        ::BlockSource&    region,
-        ::BlockPos const& curPos,
-        uchar             curBranchFacing,
-        uchar             pistonMoveFacing
-    );
+    MCAPI bool _attachedBlockWalker(::BlockSource& region, ::BlockPos const& curPos, uchar curBranchFacing, uchar pistonMoveFacing);
 
     MCAPI bool _checkAttachedBlocks(::BlockSource& region);
 
     MCAPI void _checkInceptionAchievement(::BlockActor& be, ::BlockSource& region, ::BlockPos const& facingDir);
 
-    MCAPI bool _handleSlimeConnections(
-        ::BlockSource&    region,
-        ::BlockPos const& curPos,
-        uchar             curBranchFacing,
-        uchar             pistonMoveFacing
-    );
+    MCAPI bool _handleSlimeConnections(::BlockSource& region, ::BlockPos const& curPos, uchar curBranchFacing, uchar pistonMoveFacing);
 
     MCAPI bool _hasBlockAttached(::BlockPos const& blockPos);
 
     MCAPI void _moveCollidedEntities(::BlockSource& region);
 
-    MCAPI void _moveCollidedEntitiesHelper(
-        ::BlockSource&    region,
-        ::AABB const&     insideBlockAABB,
-        ::BlockPos const& facingDir,
-        ::Actor*          ignore,
-        uint              searchHeight
-    );
+    MCAPI void _moveCollidedEntitiesHelper(::BlockSource& region, ::AABB const& insideBlockAABB, ::BlockPos const& facingDir, ::Actor* ignore, uint searchHeight);
 
     MCAPI void _sortAttachedBlocks(::BlockSource& region);
 
@@ -128,12 +112,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _spawnResourcesForBlockAndExtraBlock(
-        ::BlockSource&                region,
-        ::BlockPos const&             blockPos,
-        ::Randomize                   randomize,
-        ::ResourceDropsContext const& resourceDropsContext
-    );
+    MCAPI static void _spawnResourcesForBlockAndExtraBlock(::BlockSource& region, ::BlockPos const& blockPos, ::Randomize randomize, ::ResourceDropsContext const& resourceDropsContext);
     // NOLINTEND
 
 public:
@@ -173,4 +152,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

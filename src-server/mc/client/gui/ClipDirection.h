@@ -5,11 +5,11 @@
 namespace ui {
 
 enum class ClipDirection : schar {
-    None   = 0,
-    Left   = 1,
-    Right  = 2,
-    Up     = 3,
-    Down   = 4,
+    None = 0,
+    Left = 1,
+    Right = 2,
+    Up = 3,
+    Down = 4,
     Center = 5,
 };
 

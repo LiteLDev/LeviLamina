@@ -9,11 +9,11 @@ class ScriptDebuggerTransport : public ::Scripting::IDebuggerTransport {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkeffb26;
-    ::ll::UntypedStorage<8, 8>   mUnk47b104;
+    ::ll::UntypedStorage<8, 8> mUnkeffb26;
+    ::ll::UntypedStorage<8, 8> mUnk47b104;
     ::ll::UntypedStorage<8, 136> mUnkf9bbd8;
-    ::ll::UntypedStorage<8, 8>   mUnk34b362;
-    ::ll::UntypedStorage<8, 8>   mUnk23a39e;
+    ::ll::UntypedStorage<8, 8> mUnk34b362;
+    ::ll::UntypedStorage<8, 8> mUnk23a39e;
     // NOLINTEND
 
 public:
@@ -93,4 +93,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -26,21 +26,7 @@ struct FinalizeMoveSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void tick(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::AABBShapeComponent const,
-            ::MoveRequestComponent const,
-            ::OffsetsComponent const,
-            ::StateVectorComponent,
-            ::Optional<::OnGroundFlagComponent const>,
-            ::Optional<::MovementAbilitiesComponent const>> view,
-        ::EntityModifier<
-            ::OnGroundFlagComponent,
-            ::CollisionFlagComponent,
-            ::HorizontalCollisionFlagComponent,
-            ::VerticalCollisionFlagComponent,
-            ::CollidableMobNearFlagComponent> mod
-    );
+    MCNAPI static void tick(::ViewT<::StrictEntityContext, ::AABBShapeComponent const, ::MoveRequestComponent const, ::OffsetsComponent const, ::StateVectorComponent, ::Optional<::OnGroundFlagComponent const>, ::Optional<::MovementAbilitiesComponent const>> view, ::EntityModifier<::OnGroundFlagComponent, ::CollisionFlagComponent, ::HorizontalCollisionFlagComponent, ::VerticalCollisionFlagComponent, ::CollidableMobNearFlagComponent> mod);
     // NOLINTEND
+
 };

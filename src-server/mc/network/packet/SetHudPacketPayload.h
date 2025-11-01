@@ -11,7 +11,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::HudElement>> mHudElement;
-    ::ll::TypedStorage<4, 4, ::HudVisibility>              mHudVisible;
+    ::ll::TypedStorage<4, 4, ::HudVisibility> mHudVisible;
     // NOLINTEND
 
 public:
@@ -33,4 +33,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

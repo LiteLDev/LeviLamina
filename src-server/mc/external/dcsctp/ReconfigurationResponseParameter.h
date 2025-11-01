@@ -13,20 +13,19 @@ namespace dcsctp { struct ReconfigurationResponseParameterConfig; }
 
 namespace dcsctp {
 
-class ReconfigurationResponseParameter : public ::dcsctp::Parameter,
-                                         public ::dcsctp::TLVTrait<::dcsctp::ReconfigurationResponseParameterConfig> {
+class ReconfigurationResponseParameter : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::ReconfigurationResponseParameterConfig> {
 public:
     // ReconfigurationResponseParameter inner types define
     enum class Result : int {
-        KSuccessNothingToDo            = 0,
-        KSuccessPerformed              = 1,
-        KDenied                        = 2,
-        KErrorWrongSSN                 = 3,
+        KSuccessNothingToDo = 0,
+        KSuccessPerformed = 1,
+        KDenied = 2,
+        KErrorWrongSSN = 3,
         KErrorRequestAlreadyInProgress = 4,
-        KErrorBadSequenceNumber        = 5,
-        KInProgress                    = 6,
+        KErrorBadSequenceNumber = 5,
+        KInProgress = 6,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -74,6 +73,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

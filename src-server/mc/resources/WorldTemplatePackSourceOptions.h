@@ -6,11 +6,11 @@ struct WorldTemplatePackSourceOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf9865e;
-    ::ll::UntypedStorage<8, 8>  mUnk1d7453;
+    ::ll::UntypedStorage<8, 8> mUnkf9865e;
+    ::ll::UntypedStorage<8, 8> mUnk1d7453;
     ::ll::UntypedStorage<8, 16> mUnk6866b1;
-    ::ll::UntypedStorage<1, 1>  mUnkfa6d4c;
-    ::ll::UntypedStorage<1, 1>  mUnke10d57;
+    ::ll::UntypedStorage<1, 1> mUnkfa6d4c;
+    ::ll::UntypedStorage<1, 1> mUnke10d57;
     // NOLINTEND
 
 public:
@@ -30,4 +30,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

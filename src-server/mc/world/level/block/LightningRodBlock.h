@@ -35,22 +35,17 @@ public:
     // vIndex: 44
     virtual bool isSignalSource() const /*override*/;
 
-    // vIndex: 67
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 54
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
-        /*override*/;
+    virtual bool shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const /*override*/;
 
-    // vIndex: 92
-    virtual ::Block const&
-    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
-        /*override*/;
+    // vIndex: 91
+    virtual ::Block const& getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const /*override*/;
 
     // vIndex: 16
-    virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const
-        /*override*/;
+    virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const /*override*/;
 
     // vIndex: 17
     virtual void onLightningHit(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
@@ -58,22 +53,19 @@ public:
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 24
-    virtual bool canConnect(::Block const&, uchar, ::Block const&) const /*override*/;
-
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
     // vIndex: 22
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -101,24 +93,15 @@ public:
 
     MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+    MCFOLD bool $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
-    MCFOLD ::Block const& $getPlacementBlock(
-        ::Actor const&    by,
-        ::BlockPos const& pos,
-        uchar             face,
-        ::Vec3 const&     clickPos,
-        int               itemValue
-    ) const;
+    MCFOLD ::Block const& $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const;
 
     MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const;
 
     MCAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
-
-    MCFOLD bool $canConnect(::Block const&, uchar, ::Block const&) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
@@ -136,4 +119,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -102,9 +102,8 @@ class Level;
 class Actor {
 public:
     // Actor inner types define
-    using EntityBlockCollisionCallback =
-        ::std::function<void(::BlockSource&, ::Block const&, ::BlockPos const&, ::Actor&)>;
-
+    using EntityBlockCollisionCallback = ::std::function<void(::BlockSource&, ::Block const&, ::BlockPos const&, ::Actor&)>;
+    
 public:
     LLNDAPI class EntityContext&       getEntityContext() { return mEntityContext; }
     LLNDAPI class EntityContext const& getEntityContext() const { return mEntityContext; }
@@ -173,98 +172,97 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::EntityContext>                               mEntityContext;
-    ::ll::TypedStorage<8, 72, ::VariantParameterList>                        mInitParams;
-    ::ll::TypedStorage<8, 32, ::std::string>                                 mCustomInitEventName;
-    ::ll::TypedStorage<1, 1, ::ActorInitializationMethod>                    mInitMethod;
-    ::ll::TypedStorage<1, 1, bool>                                           mForceInitMethodToSpawnOnReload;
-    ::ll::TypedStorage<1, 1, bool>                                           mAdded;
-    ::ll::TypedStorage<8, 8, ::ActorDefinitionGroup*>                        mDefinitions;
+    ::ll::TypedStorage<8, 24, ::EntityContext> mEntityContext;
+    ::ll::TypedStorage<8, 72, ::VariantParameterList> mInitParams;
+    ::ll::TypedStorage<8, 32, ::std::string> mCustomInitEventName;
+    ::ll::TypedStorage<1, 1, ::ActorInitializationMethod> mInitMethod;
+    ::ll::TypedStorage<1, 1, bool> mForceInitMethodToSpawnOnReload;
+    ::ll::TypedStorage<1, 1, bool> mAdded;
+    ::ll::TypedStorage<8, 8, ::ActorDefinitionGroup*> mDefinitions;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorDefinitionDescriptor>> mCurrentDescription;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RopeSystem>>               mLeashRopeSystem;
-    ::ll::TypedStorage<8, 32, ::std::string>                                 mAlias;
-    ::ll::TypedStorage<4, 68, ::std::optional<::glm::mat4x4>>                mPreviousRenderTransform;
-    ::ll::TypedStorage<4, 4, int>                                            mLastHurtByPlayerTime;
-    ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::std::vector<::std::vector<::glm::mat4x4>>>>
-                                                                           mPreviousBoneMatrices;
-    ::ll::TypedStorage<8, 48, ::SynchedActorDataEntityWrapper>             mEntityData;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RopeSystem>> mLeashRopeSystem;
+    ::ll::TypedStorage<8, 32, ::std::string> mAlias;
+    ::ll::TypedStorage<4, 68, ::std::optional<::glm::mat4x4>> mPreviousRenderTransform;
+    ::ll::TypedStorage<4, 4, int> mLastHurtByPlayerTime;
+    ::ll::TypedStorage<8, 16, ::std::map<::HashedString, ::std::vector<::std::vector<::glm::mat4x4>>>> mPreviousBoneMatrices;
+    ::ll::TypedStorage<8, 48, ::SynchedActorDataEntityWrapper> mEntityData;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SpatialActorNetworkData>> mNetworkData;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                      mSentDelta;
-    ::ll::TypedStorage<4, 4, float>                                        mScale;
-    ::ll::TypedStorage<4, 4, float>                                        mScalePrev;
-    ::ll::TypedStorage<1, 1, bool>                                         mIgnoreLighting;
-    ::ll::TypedStorage<1, 1, bool>                                         mFilterLighting;
-    ::ll::TypedStorage<4, 4, float>                                        mStepSoundVolume;
-    ::ll::TypedStorage<4, 4, float>                                        mStepSoundPitch;
-    ::ll::TypedStorage<8, 8, ::AABB*>                                      mLastHitBB;
-    ::ll::TypedStorage<8, 8, uint64>                                       mNameTagHash;
-    ::ll::TypedStorage<4, 4, float>                                        mShadowOffset;
-    ::ll::TypedStorage<4, 4, float>                                        mPushThrough;
-    ::ll::TypedStorage<4, 4, int>                                          mTickCount;
-    ::ll::TypedStorage<4, 4, int>                                          mInvulnerableTime;
-    ::ll::TypedStorage<4, 4, int>                                          mLastHealth;
-    ::ll::TypedStorage<1, 1, bool>                                         mInvulnerable;
-    ::ll::TypedStorage<4, 4, int>                                          mFlameTexFrameIndex;
-    ::ll::TypedStorage<4, 4, float>                                        mFlameFrameIncrementTime;
-    ::ll::TypedStorage<1, 1, bool>                                         mAlwaysFireImmune;
-    ::ll::TypedStorage<1, 1, bool>                                         mInheritRotationWhenRiding;
-    ::ll::TypedStorage<1, 1, bool>                                         mForcedLoading;
-    ::ll::TypedStorage<1, 1, bool>                                         mForceSendMotionPacket;
-    ::ll::TypedStorage<1, 1, bool>                                         mHighlightedThisFrame;
-    ::ll::TypedStorage<1, 1, bool>                                         mInitialized;
-    ::ll::TypedStorage<1, 1, bool>                                         mProcessedOnChunkDiscard;
-    ::ll::TypedStorage<4, 4, float>                                        mSoundVolume;
-    ::ll::TypedStorage<4, 4, int>                                          mShakeTime;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                              mLegacyUniqueID;
-    ::ll::TypedStorage<8, 16, ::WeakRef<::Dimension>>                      mDimension;
-    ::ll::TypedStorage<8, 8, ::ILevel*>                                    mLevel;
-    ::ll::TypedStorage<8, 48, ::HashedString>                              mActorRendererId;
-    ::ll::TypedStorage<4, 4, ::ActorCategory>                              mCategories;
-    ::ll::TypedStorage<8, 32, ::BuiltInActorComponents>                    mBuiltInComponents;
+    ::ll::TypedStorage<4, 12, ::Vec3> mSentDelta;
+    ::ll::TypedStorage<4, 4, float> mScale;
+    ::ll::TypedStorage<4, 4, float> mScalePrev;
+    ::ll::TypedStorage<1, 1, bool> mIgnoreLighting;
+    ::ll::TypedStorage<1, 1, bool> mFilterLighting;
+    ::ll::TypedStorage<4, 4, float> mStepSoundVolume;
+    ::ll::TypedStorage<4, 4, float> mStepSoundPitch;
+    ::ll::TypedStorage<8, 8, ::AABB*> mLastHitBB;
+    ::ll::TypedStorage<8, 8, uint64> mNameTagHash;
+    ::ll::TypedStorage<4, 4, float> mShadowOffset;
+    ::ll::TypedStorage<4, 4, float> mPushThrough;
+    ::ll::TypedStorage<4, 4, int> mTickCount;
+    ::ll::TypedStorage<4, 4, int> mInvulnerableTime;
+    ::ll::TypedStorage<4, 4, int> mLastHealth;
+    ::ll::TypedStorage<1, 1, bool> mInvulnerable;
+    ::ll::TypedStorage<4, 4, int> mFlameTexFrameIndex;
+    ::ll::TypedStorage<4, 4, float> mFlameFrameIncrementTime;
+    ::ll::TypedStorage<1, 1, bool> mAlwaysFireImmune;
+    ::ll::TypedStorage<1, 1, bool> mInheritRotationWhenRiding;
+    ::ll::TypedStorage<1, 1, bool> mForcedLoading;
+    ::ll::TypedStorage<1, 1, bool> mForceSendMotionPacket;
+    ::ll::TypedStorage<1, 1, bool> mHighlightedThisFrame;
+    ::ll::TypedStorage<1, 1, bool> mInitialized;
+    ::ll::TypedStorage<1, 1, bool> mProcessedOnChunkDiscard;
+    ::ll::TypedStorage<4, 4, float> mSoundVolume;
+    ::ll::TypedStorage<4, 4, int> mShakeTime;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mLegacyUniqueID;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::Dimension>> mDimension;
+    ::ll::TypedStorage<8, 8, ::ILevel*> mLevel;
+    ::ll::TypedStorage<8, 48, ::HashedString> mActorRendererId;
+    ::ll::TypedStorage<4, 4, ::ActorCategory> mCategories;
+    ::ll::TypedStorage<8, 32, ::BuiltInActorComponents> mBuiltInComponents;
     ::ll::TypedStorage<8, 48, ::HashedString> mActorRendererIdThatAnimationComponentWasInitializedWith;
-    ::ll::TypedStorage<1, 1, bool>            mChanged;
-    ::ll::TypedStorage<1, 1, bool>            mRemoved;
-    ::ll::TypedStorage<1, 1, bool>            mMovedToLimbo;
-    ::ll::TypedStorage<1, 1, bool>            mMovedToUnloadedChunk;
-    ::ll::TypedStorage<1, 1, bool>            mBlocksBuilding;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AnimationComponent>>     mAnimationComponent;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AnimationComponent>>     mUIAnimationComponent;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                              mTargetId;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                              mInLovePartner;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>>             mPersistingTradeOffers;
-    ::ll::TypedStorage<4, 4, int>                                          mPersistingTradeRiches;
-    ::ll::TypedStorage<1, 1, bool>                                         mPersistingTrade;
-    ::ll::TypedStorage<1, 1, bool>                                         mEffectsDirty;
-    ::ll::TypedStorage<1, 1, bool>                                         mLootDropped;
-    ::ll::TypedStorage<1, 1, bool>                                         mLoadedFromNBTThisFrame;
-    ::ll::TypedStorage<4, 16, ::mce::Color>                                mHurtColor;
+    ::ll::TypedStorage<1, 1, bool> mChanged;
+    ::ll::TypedStorage<1, 1, bool> mRemoved;
+    ::ll::TypedStorage<1, 1, bool> mMovedToLimbo;
+    ::ll::TypedStorage<1, 1, bool> mMovedToUnloadedChunk;
+    ::ll::TypedStorage<1, 1, bool> mBlocksBuilding;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AnimationComponent>> mAnimationComponent;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::AnimationComponent>> mUIAnimationComponent;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mTargetId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mInLovePartner;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mPersistingTradeOffers;
+    ::ll::TypedStorage<4, 4, int> mPersistingTradeRiches;
+    ::ll::TypedStorage<1, 1, bool> mPersistingTrade;
+    ::ll::TypedStorage<1, 1, bool> mEffectsDirty;
+    ::ll::TypedStorage<1, 1, bool> mLootDropped;
+    ::ll::TypedStorage<1, 1, bool> mLoadedFromNBTThisFrame;
+    ::ll::TypedStorage<4, 16, ::mce::Color> mHurtColor;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActorDefinitionDiffList>> mDefinitionList;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>>             mLoadedActorPropertyTag;
-    ::ll::TypedStorage<8, 16, ::ActorDefinitionPtr>                        mActorDefinitionPtr;
-    ::ll::TypedStorage<8, 32, ::std::string>                               mFilteredNameTag;
-    ::ll::TypedStorage<8, 24, ::ActorTerrainInterlockData>                 mTerrainInterlockData;
-    ::ll::TypedStorage<1, 1, bool>                                         mWasHurtThisTick;
-    ::ll::TypedStorage<1, 1, bool>                                         mWasHurtLastTick;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                              mLastHurtMobId;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                              mLastHurtByMobId;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                              mLastHurtByPlayerId;
-    ::ll::TypedStorage<8, 8, uint64>                                       mLastHurtTimestamp;
-    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause>      mLastHurtCause;
-    ::ll::TypedStorage<4, 4, float>                                        mLastHurt;
-    ::ll::TypedStorage<4, 4, int>                                          mLastHurtMobTimestamp;
-    ::ll::TypedStorage<4, 4, int>                                          mLastHurtByMobTime;
-    ::ll::TypedStorage<4, 4, int>                                          mLastHurtByMobTimestamp;
-    ::ll::TypedStorage<1, 1, bool>                                         mIsPredictableProjectile;
-    ::ll::TypedStorage<1, 1, bool>                                         mIsRenderingInUI;
-    ::ll::TypedStorage<1, 1, bool>                                         mUpdateEffects;
-    ::ll::TypedStorage<1, 1, bool>                                         mCanPickupItems;
-    ::ll::TypedStorage<1, 1, bool>                                         mHasSetCanPickupItems;
-    ::ll::TypedStorage<1, 1, bool>                                         mChainedDamageEffects;
-    ::ll::TypedStorage<4, 4, int>                                          mAffectedByWaterBottleTicksToEffect;
-    ::ll::TypedStorage<4, 4, ::SpawnRuleEnum>                              mSpawnRulesEnum;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActionQueue>>             mActionQueue;
-    ::ll::TypedStorage<8, 56, ::MolangVariableMap>                         mMolangVariables;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                              mFishingHookID;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mLoadedActorPropertyTag;
+    ::ll::TypedStorage<8, 16, ::ActorDefinitionPtr> mActorDefinitionPtr;
+    ::ll::TypedStorage<8, 32, ::std::string> mFilteredNameTag;
+    ::ll::TypedStorage<8, 24, ::ActorTerrainInterlockData> mTerrainInterlockData;
+    ::ll::TypedStorage<1, 1, bool> mWasHurtThisTick;
+    ::ll::TypedStorage<1, 1, bool> mWasHurtLastTick;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mLastHurtMobId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mLastHurtByMobId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mLastHurtByPlayerId;
+    ::ll::TypedStorage<8, 8, uint64> mLastHurtTimestamp;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ActorDamageCause> mLastHurtCause;
+    ::ll::TypedStorage<4, 4, float> mLastHurt;
+    ::ll::TypedStorage<4, 4, int> mLastHurtMobTimestamp;
+    ::ll::TypedStorage<4, 4, int> mLastHurtByMobTime;
+    ::ll::TypedStorage<4, 4, int> mLastHurtByMobTimestamp;
+    ::ll::TypedStorage<1, 1, bool> mIsPredictableProjectile;
+    ::ll::TypedStorage<1, 1, bool> mIsRenderingInUI;
+    ::ll::TypedStorage<1, 1, bool> mUpdateEffects;
+    ::ll::TypedStorage<1, 1, bool> mCanPickupItems;
+    ::ll::TypedStorage<1, 1, bool> mHasSetCanPickupItems;
+    ::ll::TypedStorage<1, 1, bool> mChainedDamageEffects;
+    ::ll::TypedStorage<4, 4, int> mAffectedByWaterBottleTicksToEffect;
+    ::ll::TypedStorage<4, 4, ::SpawnRuleEnum> mSpawnRulesEnum;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ActionQueue>> mActionQueue;
+    ::ll::TypedStorage<8, 56, ::MolangVariableMap> mMolangVariables;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mFishingHookID;
     // NOLINTEND
 
 public:
@@ -650,10 +648,7 @@ public:
     virtual bool shouldDropDeathLoot() const;
 
     // vIndex: 125
-    virtual void applySnapshot(
-        ::EntityContext const&                                   snapshotEntity,
-        ::MovementDataExtractionUtility::SnapshotAccessor const& originalSnapshotEntity
-    );
+    virtual void applySnapshot(::EntityContext const& snapshotEntity, ::MovementDataExtractionUtility::SnapshotAccessor const& originalSnapshotEntity);
 
     // vIndex: 126
     virtual void onPush(::Actor&);
@@ -697,11 +692,7 @@ public:
     // NOLINTBEGIN
     MCAPI Actor(::ILevel& level, ::EntityContext& entityContext);
 
-    MCAPI Actor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI Actor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCAPI ::BuiltInActorComponents _addActorBuiltInComponents();
 
@@ -711,10 +702,7 @@ public:
 
     MCAPI ::std::vector<::MobEffectInstance>& _getAllEffectsNonConst();
 
-    MCAPI ::AnimationComponent& _getAnimationComponent(
-        ::std::shared_ptr<::AnimationComponent>& animationComponent,
-        ::AnimationComponentGroupType            group
-    );
+    MCAPI ::AnimationComponent& _getAnimationComponent(::std::shared_ptr<::AnimationComponent>& animationComponent, ::AnimationComponentGroupType group);
 
     MCAPI void _initializeLeashRopeSystem(::Actor* holder);
 
@@ -1038,8 +1026,7 @@ public:
 
     MCAPI void loadEntityFlags(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void
-    loadLinks(::CompoundTag const& entityTag, ::std::vector<::ActorLink>& links, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void loadLinks(::CompoundTag const& entityTag, ::std::vector<::ActorLink>& links, ::DataLoadHelper& dataLoadHelper);
 
     MCAPI void move(::Vec3 const& posDelta);
 
@@ -1055,8 +1042,7 @@ public:
 
     MCAPI void playSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, int data);
 
-    MCAPI void
-    playSynchronizedSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, int data, bool isGlobal);
+    MCAPI void playSynchronizedSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, int data, bool isGlobal);
 
     MCAPI void positionPassenger(::Actor& passenger);
 
@@ -1152,8 +1138,7 @@ public:
 
     MCAPI void spawnTrailBubbles();
 
-    MCAPI void
-    stopRiding(bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles, bool isBeingTeleported);
+    MCAPI void stopRiding(bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles, bool isBeingTeleported);
 
     MCAPI void synchronousSetSize(float w, float h);
 
@@ -1170,6 +1155,8 @@ public:
     MCAPI ::std::optional<int> tryGetEquippableSlotForItem(::ItemDescriptor item) const;
 
     MCAPI bool tryTeleportTo(::Vec3 const& pos, bool landOnBlock, bool avoidLiquid, int cause, int entityType);
+
+    MCAPI void updateAnimationComponentOnServer();
 
     MCAPI void updateDescription();
 
@@ -1189,23 +1176,11 @@ public:
     // NOLINTBEGIN
     MCAPI static void _moveRelative(::Vec3& posDelta, float yRotDegrees, float xa, float ya, float za, float speed);
 
-    MCAPI static ::BlockPos getBlockPosCurrentlyStandingOn(
-        ::Vec3 const&                                      pos,
-        ::AABB const&                                      aabb,
-        ::IConstBlockSource const&                         region,
-        float                                              ignoreGapBelow,
-        ::optional_ref<::GetCollisionShapeInterface const> other
-    );
+    MCAPI static ::BlockPos getBlockPosCurrentlyStandingOn(::Vec3 const& pos, ::AABB const& aabb, ::IConstBlockSource const& region, float ignoreGapBelow, ::optional_ref<::GetCollisionShapeInterface const> other);
 
-    MCAPI static ::std::vector<::BlockPos> getBlocksCurrentlyStandingOn(
-        ::AABB const&                                      aabb,
-        ::IConstBlockSource const&                         region,
-        float                                              ignoreGapBelow,
-        ::optional_ref<::GetCollisionShapeInterface const> other
-    );
+    MCAPI static ::std::vector<::BlockPos> getBlocksCurrentlyStandingOn(::AABB const& aabb, ::IConstBlockSource const& region, float ignoreGapBelow, ::optional_ref<::GetCollisionShapeInterface const> other);
 
-    MCAPI static ::MobEffectInstance const*
-    getEffect(::std::vector<::MobEffectInstance> const& effects, ::MobEffect const& effect);
+    MCAPI static ::MobEffectInstance const* getEffect(::std::vector<::MobEffectInstance> const& effects, ::MobEffect const& effect);
 
     MCAPI static ::AABB getLiquidAABB(::AABB const& aabb, ::MaterialType liquidType);
 
@@ -1213,8 +1188,7 @@ public:
 
     MCAPI static bool isImmobile(::EntityContext const& entity);
 
-    MCAPI static ::Actor*
-    tryGetFromEntity(::StrictEntityContext const& entity, ::EntityRegistry& registry, bool includeRemoved);
+    MCAPI static ::Actor* tryGetFromEntity(::StrictEntityContext const& entity, ::EntityRegistry& registry, bool includeRemoved);
     // NOLINTEND
 
 public:
@@ -1222,11 +1196,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::ILevel& level, ::EntityContext& entityContext);
 
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -1478,10 +1448,7 @@ public:
 
     MCAPI bool $shouldDropDeathLoot() const;
 
-    MCAPI void $applySnapshot(
-        ::EntityContext const&                                   snapshotEntity,
-        ::MovementDataExtractionUtility::SnapshotAccessor const& originalSnapshotEntity
-    );
+    MCAPI void $applySnapshot(::EntityContext const& snapshotEntity, ::MovementDataExtractionUtility::SnapshotAccessor const& originalSnapshotEntity);
 
     MCFOLD void $onPush(::Actor&);
 
@@ -1513,4 +1480,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

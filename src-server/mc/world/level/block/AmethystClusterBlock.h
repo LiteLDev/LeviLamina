@@ -29,21 +29,20 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 125
+    // vIndex: 124
     virtual ::BlockType& init() /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 80
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 87
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
+    // vIndex: 86
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
 
     // vIndex: 22
     virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType type) const /*override*/;
@@ -52,10 +51,9 @@ public:
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     // vIndex: 57
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -97,4 +95,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

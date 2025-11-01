@@ -42,4 +42,4 @@ MCNAPI float const& SEPARATION_WEIGHT();
 MCNAPI bool const& USE_CENTER_OF_MASS();
 // NOLINTEND
 
-} // namespace FlockingDefaults
+}

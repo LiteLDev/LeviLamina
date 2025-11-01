@@ -16,10 +16,10 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 1032> mUnk500b9e;
     ::ll::UntypedStorage<8, 1032> mUnkc7e523;
-    ::ll::UntypedStorage<1, 1>    mUnk9d9552;
-    ::ll::UntypedStorage<8, 16>   mUnk9e3f64;
-    ::ll::UntypedStorage<8, 16>   mUnkf97f14;
-    ::ll::UntypedStorage<8, 72>   mUnkad08df;
+    ::ll::UntypedStorage<1, 1> mUnk9d9552;
+    ::ll::UntypedStorage<8, 16> mUnk9e3f64;
+    ::ll::UntypedStorage<8, 16> mUnkf97f14;
+    ::ll::UntypedStorage<8, 72> mUnkad08df;
     // NOLINTEND
 
 public:
@@ -37,12 +37,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Core::Result exec(
-        ::Core::PathView                                                       source,
-        ::Core::PathView                                                       target,
-        ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> sameStorageAreaFunction,
-        ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> differentStorageAreaFunction
-    );
+    MCNAPI static ::Core::Result exec(::Core::PathView source, ::Core::PathView target, ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> sameStorageAreaFunction, ::std::function<::Core::Result(::Core::TransactionFrameSourceTarget&)> differentStorageAreaFunction);
     // NOLINTEND
 
 public:
@@ -50,6 +45,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

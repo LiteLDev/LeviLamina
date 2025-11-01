@@ -20,8 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    RuntimeConditionError(::Scripting::RuntimeConditions const& missingRuntimeConditions, ::std::string const& apiName);
+    MCAPI RuntimeConditionError(::Scripting::RuntimeConditions const& missingRuntimeConditions, ::std::string const& apiName);
 
     MCAPI ~RuntimeConditionError();
     // NOLINTEND
@@ -37,6 +36,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

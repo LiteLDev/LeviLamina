@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/feature/FeaturePlacementFailureLogProxy.h"
 
 // auto generated forward declare list
@@ -21,26 +21,27 @@ public:
     // clang-format off
     struct PlacementContext;
     // clang-format on
-
+    
     // IFeature inner types define
     struct PlacementContext {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::IBlockWorldGenAPI&>              mTarget;
-        ::ll::TypedStorage<4, 12, ::BlockPos>                       mPos;
-        ::ll::TypedStorage<8, 8, ::Random&>                         mRandom;
-        ::ll::TypedStorage<8, 8, ::RenderParams&>                   mRenderParams;
+        ::ll::TypedStorage<8, 8, ::IBlockWorldGenAPI&> mTarget;
+        ::ll::TypedStorage<4, 12, ::BlockPos> mPos;
+        ::ll::TypedStorage<8, 8, ::Random&> mRandom;
+        ::ll::TypedStorage<8, 8, ::RenderParams&> mRenderParams;
         ::ll::TypedStorage<8, 8, ::FeaturePlacementFailureLogProxy> mLogger;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         PlacementContext& operator=(PlacementContext const&);
         PlacementContext(PlacementContext const&);
         PlacementContext();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -67,8 +68,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool
-    isExposedTo(::IBlockWorldGenAPI const& target, ::BlockPos const& candidatePos, ::BlockDescriptor const& exposedTo);
+    MCAPI static bool isExposedTo(::IBlockWorldGenAPI const& target, ::BlockPos const& candidatePos, ::BlockDescriptor const& exposedTo);
     // NOLINTEND
 
 public:
@@ -96,4 +96,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

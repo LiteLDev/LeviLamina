@@ -4,6 +4,7 @@
 
 namespace Scripting {
 
-class GeneratorIterator {};
+class GeneratorIterator {
+};
 
-} // namespace Scripting
+}

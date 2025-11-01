@@ -17,13 +17,13 @@ class UnderwaterTorchBlock : public ::TorchBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
     // vIndex: 56
     virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 30
@@ -50,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

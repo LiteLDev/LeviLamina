@@ -19,8 +19,7 @@ public:
     virtual ~IRepositoryLoader() = default;
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData>
-    buildTaskData(::RepositoryLoading::BuildTaskDataOptions const&) = 0;
+    virtual ::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData> buildTaskData(::RepositoryLoading::BuildTaskDataOptions const&) = 0;
 
     // vIndex: 2
     virtual void applyTaskResults(::RepositoryLoading::AllRefreshTaskData&&) = 0;
@@ -34,6 +33,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace RepositoryLoading
+}

@@ -23,7 +23,7 @@ public:
     struct StreamDetails;
     struct StreamHandle;
     // clang-format on
-
+    
     // MemoryMappedFileAccess inner types define
     class MemoryMappedFileReadAccess : public ::IFileReadAccess {
     public:
@@ -31,90 +31,93 @@ public:
         // NOLINTBEGIN
         // vIndex: 1
         virtual uint64 fread(void* buffer, uint64 size, uint64 count, void* file) const /*override*/;
-
+    
         // vIndex: 0
         virtual ~MemoryMappedFileReadAccess() /*override*/;
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI uint64 $fread(void* buffer, uint64 size, uint64 count, void* file) const;
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
     class MemoryMappedFileWriteAccess : public ::IFileWriteAccess {
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 1
         virtual uint64 fwrite(void const* buffer, uint64 size, uint64 count, void* file) /*override*/;
-
+    
         // vIndex: 0
         virtual ~MemoryMappedFileWriteAccess() /*override*/;
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI uint64 $fwrite(void const* buffer, uint64 size, uint64 count, void* file);
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
     struct StreamDetails {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnk13ab55;
-        ::ll::UntypedStorage<1, 1>  mUnk775850;
-        ::ll::UntypedStorage<1, 1>  mUnkec4701;
-        ::ll::UntypedStorage<1, 1>  mUnkb6b825;
-        ::ll::UntypedStorage<1, 1>  mUnkb136e2;
+        ::ll::UntypedStorage<1, 1> mUnk775850;
+        ::ll::UntypedStorage<1, 1> mUnkec4701;
+        ::ll::UntypedStorage<1, 1> mUnkb6b825;
+        ::ll::UntypedStorage<1, 1> mUnkb136e2;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         StreamDetails& operator=(StreamDetails const&);
         StreamDetails(StreamDetails const&);
         StreamDetails();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~StreamDetails();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct StreamHandle {
     public:
         // member variables
@@ -122,20 +125,21 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkab4f17;
         ::ll::UntypedStorage<8, 8> mUnk52bd0b;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         StreamHandle& operator=(StreamHandle const&);
         StreamHandle(StreamHandle const&);
         StreamHandle();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 8>  mUnk476651;
-    ::ll::UntypedStorage<1, 8>  mUnk78c53b;
-    ::ll::UntypedStorage<8, 8>  mUnk830cbf;
+    ::ll::UntypedStorage<1, 8> mUnk476651;
+    ::ll::UntypedStorage<1, 8> mUnk78c53b;
+    ::ll::UntypedStorage<8, 8> mUnk830cbf;
     ::ll::UntypedStorage<8, 64> mUnkdd41de;
     ::ll::UntypedStorage<8, 80> mUnka79312;
     ::ll::UntypedStorage<8, 16> mUnkfb890c;
@@ -180,10 +184,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MemoryMappedFileAccess(
-        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const& inner,
-        ::std::unique_ptr<::FileAccessTransforms>           transforms
-    );
+    MCNAPI MemoryMappedFileAccess(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const& inner, ::std::unique_ptr<::FileAccessTransforms> transforms);
     // NOLINTEND
 
 public:
@@ -195,10 +196,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const& inner,
-        ::std::unique_ptr<::FileAccessTransforms>           transforms
-    );
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const& inner, ::std::unique_ptr<::FileAccessTransforms> transforms);
     // NOLINTEND
 
 public:
@@ -230,4 +228,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

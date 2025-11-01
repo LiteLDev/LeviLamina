@@ -21,14 +21,14 @@ public:
     // RandomBlockStateFunction inner types define
     enum class RemapComplexAliasBlockResult : int {
         NotComplexAlias = 0,
-        Succeed         = 1,
-        Fail            = 2,
+        Succeed = 1,
+        Fail = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnk5b09a9;
+    ::ll::UntypedStorage<4, 8> mUnk5b09a9;
     ::ll::UntypedStorage<8, 32> mUnk8dfae0;
     // NOLINTEND
 
@@ -49,34 +49,25 @@ public:
 
     // vIndex: 2
     virtual void apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context) /*override*/;
+
+    // vIndex: 5
+    virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult
-    _remapComplexAliasBlock(int randomInt, ::Block const*& inOutItemBlock, ::std::string const& originalNameStr);
+    MCNAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult _remapComplexAliasBlock(int randomInt, ::Block const*& inOutItemBlock, ::std::string const& originalNameStr);
 
-    MCNAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult _tryRemapComplexAliasBlock(
-        ::ItemStack&         item,
-        int                  randomInt,
-        ::Block const*&      inOutItemBlock,
-        ::std::string const& originalName
-    );
+    MCNAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult _tryRemapComplexAliasBlock(::ItemStack& item, int randomInt, ::Block const*& inOutItemBlock, ::std::string const& originalName);
 
-    MCNAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult _tryRemapComplexAliasBlock(
-        ::ItemInstance&      item,
-        int                  randomInt,
-        ::Block const*&      inOutItemBlock,
-        ::std::string const& originalName
-    );
+    MCNAPI ::RandomBlockStateFunction::RemapComplexAliasBlockResult _tryRemapComplexAliasBlock(::ItemInstance& item, int randomInt, ::Block const*& inOutItemBlock, ::std::string const& originalName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemFunction>
-    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    MCNAPI static ::std::unique_ptr<::LootItemFunction> deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
@@ -85,6 +76,8 @@ public:
     MCNAPI void $apply(::ItemStack& item, ::Random& random, ::LootTableContext& context);
 
     MCNAPI void $apply(::ItemInstance& item, ::Random& random, ::LootTableContext& context);
+
+    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
     // NOLINTEND
 
 public:
@@ -92,4 +85,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

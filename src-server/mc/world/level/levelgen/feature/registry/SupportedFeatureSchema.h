@@ -17,12 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 56, ::Puv::VersionRange> mVersionRange;
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::std::shared_ptr<
-            ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>>>
-        mSchema;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>>> mSchema;
     // NOLINTEND
 
 public:
@@ -36,4 +31,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

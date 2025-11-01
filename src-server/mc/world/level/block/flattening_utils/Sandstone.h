@@ -13,4 +13,4 @@ namespace FlatteningUtils::Sandstone {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-} // namespace FlatteningUtils::Sandstone
+}

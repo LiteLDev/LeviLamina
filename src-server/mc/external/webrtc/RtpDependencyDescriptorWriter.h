@@ -17,7 +17,7 @@ public:
     // clang-format off
     struct TemplateMatch;
     // clang-format on
-
+    
     // RtpDependencyDescriptorWriter inner types define
     struct TemplateMatch {
     public:
@@ -29,21 +29,22 @@ public:
         ::ll::UntypedStorage<1, 1> mUnkc231f8;
         ::ll::UntypedStorage<4, 4> mUnk3bcb6e;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         TemplateMatch& operator=(TemplateMatch const&);
         TemplateMatch(TemplateMatch const&);
         TemplateMatch();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk8d437e;
-    ::ll::UntypedStorage<8, 8>  mUnk1a89d6;
-    ::ll::UntypedStorage<8, 8>  mUnk954103;
-    ::ll::UntypedStorage<4, 4>  mUnk26891a;
+    ::ll::UntypedStorage<1, 1> mUnk8d437e;
+    ::ll::UntypedStorage<8, 8> mUnk1a89d6;
+    ::ll::UntypedStorage<8, 8> mUnk954103;
+    ::ll::UntypedStorage<4, 4> mUnk26891a;
     ::ll::UntypedStorage<8, 32> mUnkdf423b;
     ::ll::UntypedStorage<8, 16> mUnkd891db;
     // NOLINTEND
@@ -57,21 +58,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::webrtc::RtpDependencyDescriptorWriter::TemplateMatch CalculateMatch(
-        ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::webrtc::FrameDependencyTemplate>>>
-            frame_template
-    ) const;
+    MCNAPI ::webrtc::RtpDependencyDescriptorWriter::TemplateMatch CalculateMatch(::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::webrtc::FrameDependencyTemplate>>> frame_template) const;
 
     MCNAPI void FindBestTemplate();
 
     MCNAPI bool HasExtendedFields() const;
 
-    MCNAPI RtpDependencyDescriptorWriter(
-        ::rtc::ArrayView<uchar>                   data,
-        ::webrtc::FrameDependencyStructure const& structure,
-        ::std::bitset<32>                         active_chains,
-        ::webrtc::DependencyDescriptor const&     descriptor
-    );
+    MCNAPI RtpDependencyDescriptorWriter(::rtc::ArrayView<uchar> data, ::webrtc::FrameDependencyStructure const& structure, ::std::bitset<32> active_chains, ::webrtc::DependencyDescriptor const& descriptor);
 
     MCNAPI bool ShouldWriteActiveDecodeTargetsBitmask() const;
 
@@ -115,13 +108,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::rtc::ArrayView<uchar>                   data,
-        ::webrtc::FrameDependencyStructure const& structure,
-        ::std::bitset<32>                         active_chains,
-        ::webrtc::DependencyDescriptor const&     descriptor
-    );
+    MCNAPI void* $ctor(::rtc::ArrayView<uchar> data, ::webrtc::FrameDependencyStructure const& structure, ::std::bitset<32> active_chains, ::webrtc::DependencyDescriptor const& descriptor);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

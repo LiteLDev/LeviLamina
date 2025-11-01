@@ -13,4 +13,4 @@ namespace PlayDefaults {
 MCAPI ::Vec3 const& FRIEND_SEARCH_AREA();
 // NOLINTEND
 
-} // namespace PlayDefaults
+}

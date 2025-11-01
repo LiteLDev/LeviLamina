@@ -18,40 +18,41 @@ public:
     // clang-format off
     struct Callback;
     // clang-format on
-
+    
     // CallbackListReceivers inner types define
     struct Callback {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkba1869;
+        ::ll::UntypedStorage<8, 8> mUnkba1869;
         ::ll::UntypedStorage<8, 48> mUnk55fc13;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Callback& operator=(Callback const&);
         Callback(Callback const&);
         Callback();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~Callback();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk33341b;
-    ::ll::UntypedStorage<1, 1>  mUnkc29813;
+    ::ll::UntypedStorage<1, 1> mUnkc29813;
     // NOLINTEND
 
 public:
@@ -82,6 +83,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc::callback_list_impl
+}

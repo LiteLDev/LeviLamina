@@ -15,7 +15,7 @@ class MaterialReducerInputContainerController : public ::ContainerController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>            mEnabled;
+    ::ll::TypedStorage<1, 1, bool> mEnabled;
     ::ll::TypedStorage<8, 8, ::BlockReducer*> mBlockReducer;
     // NOLINTEND
 
@@ -34,4 +34,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

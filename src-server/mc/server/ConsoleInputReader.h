@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnkefe26d;
-    ::ll::UntypedStorage<1, 1>  mUnka4ef70;
+    ::ll::UntypedStorage<1, 1> mUnka4ef70;
     ::ll::UntypedStorage<8, 16> mUnk259952;
     // NOLINTEND
 
@@ -22,4 +22,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void unblockReading();
     // NOLINTEND
+
 };

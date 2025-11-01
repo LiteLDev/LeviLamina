@@ -18,13 +18,13 @@ class WritableBookItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 76
-    virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
+    // vIndex: 77
+    virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 111
+    // vIndex: 112
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
     // vIndex: 0
@@ -42,14 +42,7 @@ public:
 
     MCAPI static void _replacePage(::ItemStackBase& book, int index, ::PageContent const& page);
 
-    MCAPI static void _signBookUserData(
-        ::CompoundTag&                 userData,
-        ::std::string                  title,
-        ::std::optional<::std::string> filteredTitle,
-        ::std::string                  author,
-        ::std::optional<::std::string> filteredAuthor,
-        ::std::string                  xuid
-    );
+    MCAPI static void _signBookUserData(::CompoundTag& userData, ::std::string title, ::std::optional<::std::string> filteredTitle, ::std::string author, ::std::optional<::std::string> filteredAuthor, ::std::string xuid);
 
     MCAPI static void addPageAt(::ItemStack& book, int index, ::PageContent const& page);
 
@@ -57,14 +50,7 @@ public:
 
     MCAPI static ::PageContent deletePage(::ItemStack& book, int index);
 
-    MCAPI static void signBook(
-        ::ItemStack&                   book,
-        ::std::string                  title,
-        ::std::optional<::std::string> filteredTitle,
-        ::std::string                  author,
-        ::std::optional<::std::string> filteredAuthor,
-        ::std::string                  xuid
-    );
+    MCAPI static void signBook(::ItemStack& book, ::std::string title, ::std::optional<::std::string> filteredTitle, ::std::string author, ::std::optional<::std::string> filteredAuthor, ::std::string xuid);
 
     MCAPI static void swapPages(::ItemStack& book, int page1, int page2);
     // NOLINTEND
@@ -72,7 +58,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCFOLD bool $requiresInteract() const;
 
@@ -84,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -16,14 +16,13 @@ class NetworkItemInstanceDescriptor;
 class ReadOnlyBinaryStream;
 // clang-format on
 
-class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING : public ::ItemStackRequestAction,
-                                                                public ::Bedrock::EnableNonOwnerReferences {
+class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING : public ::ItemStackRequestAction, public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, uchar>                                           mNumCrafts;
+    ::ll::TypedStorage<1, 1, uchar> mNumCrafts;
     ::ll::TypedStorage<8, 24, ::std::vector<::NetworkItemInstanceDescriptor>> mCraftResults;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>>                  mLoadedCraftResults;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemInstance>> mLoadedCraftResults;
     // NOLINTEND
 
 public:
@@ -65,4 +64,5 @@ public:
 
     MCNAPI static void** $vftableForItemStackRequestAction();
     // NOLINTEND
+
 };

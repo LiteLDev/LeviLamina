@@ -16,8 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::TempEPtr<::Mob>> mLastOwnerHurt;
-    ::ll::TypedStorage<8, 8, ::Mob&>             mMob;
-    ::ll::TypedStorage<4, 4, int>                mTimestamp;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, int> mTimestamp;
     // NOLINTEND
 
 public:
@@ -52,4 +52,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

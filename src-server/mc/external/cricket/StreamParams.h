@@ -26,12 +26,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool AddSecondarySsrc(::std::string const& semantics, uint primary_ssrc, uint secondary_ssrc);
 
-    MCNAPI void GenerateSsrcs(
-        int                             num_layers,
-        bool                            generate_fid,
-        bool                            generate_fec_fr,
-        ::rtc::UniqueRandomIdGenerator* ssrc_generator
-    );
+    MCNAPI void GenerateSsrcs(int num_layers, bool generate_fid, bool generate_fec_fr, ::rtc::UniqueRandomIdGenerator* ssrc_generator);
 
     MCNAPI StreamParams();
 
@@ -67,6 +62,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

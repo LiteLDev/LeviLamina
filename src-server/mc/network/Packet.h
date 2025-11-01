@@ -118,59 +118,52 @@ public:
     virtual ::std::string getName() const = 0;
 
     // vIndex: 3
-    virtual ::Bedrock::Result<void> checkSize(uint64 packetSize, bool receiverIsServer) const;
+    virtual uint64 getMaxSize() const;
 
     // vIndex: 4
-    virtual void writeWithSerializationMode(
-        ::BinaryStream&                bitStream,
-        ::cereal::ReflectionCtx const& reflectionCtx,
-        ::std::optional<::SerializationMode>
-    ) const;
-
-    // vIndex: 6
-    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    virtual ::Bedrock::Result<void> checkSize(uint64 packetSize, bool receiverIsServer) const;
 
     // vIndex: 5
-    virtual void write(::BinaryStream&) const = 0;
-
-    // vIndex: 8
-    virtual ::Bedrock::Result<void>
-    read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+    virtual void writeWithSerializationMode(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx, ::std::optional<::SerializationMode>) const;
 
     // vIndex: 7
-    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream);
+    virtual void write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+
+    // vIndex: 6
+    virtual void write(::BinaryStream&) const = 0;
 
     // vIndex: 9
-    virtual bool disallowBatching() const;
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    // vIndex: 8
+    virtual ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& bitStream);
 
     // vIndex: 10
-    virtual bool isValid() const;
+    virtual bool disallowBatching() const;
 
     // vIndex: 11
-    virtual ::SerializationMode getSerializationMode() const;
+    virtual bool isValid() const;
 
     // vIndex: 12
-    virtual void setSerializationMode(::SerializationMode);
+    virtual ::SerializationMode getSerializationMode() const;
 
     // vIndex: 13
-    virtual ::std::string toString() const;
-
-    // vIndex: 15
-    virtual ::Bedrock::Result<void>
-    _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+    virtual void setSerializationMode(::SerializationMode);
 
     // vIndex: 14
+    virtual ::std::string toString() const;
+
+    // vIndex: 16
+    virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream&) = 0;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<void> readNoHeader(
-        ::ReadOnlyBinaryStream&        bitstream,
-        ::cereal::ReflectionCtx const& reflectionCtx,
-        ::SubClientId const&           subid
-    );
+    MCAPI ::Bedrock::Result<void> readNoHeader(::ReadOnlyBinaryStream& bitstream, ::cereal::ReflectionCtx const& reflectionCtx, ::SubClientId const& subid);
     // NOLINTEND
 
 public:
@@ -182,18 +175,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCFOLD uint64 $getMaxSize() const;
+
     MCAPI ::Bedrock::Result<void> $checkSize(uint64 packetSize, bool receiverIsServer) const;
 
-    MCAPI void $writeWithSerializationMode(
-        ::BinaryStream&                bitStream,
-        ::cereal::ReflectionCtx const& reflectionCtx,
-        ::std::optional<::SerializationMode>
-    ) const;
+    MCAPI void $writeWithSerializationMode(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx, ::std::optional<::SerializationMode>) const;
 
     MCAPI void $write(::BinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
-    MCFOLD ::Bedrock::Result<void>
-    $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCFOLD ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
     MCAPI ::Bedrock::Result<void> $read(::ReadOnlyBinaryStream& bitStream);
 
@@ -207,8 +197,7 @@ public:
 
     MCFOLD ::std::string $toString() const;
 
-    MCFOLD ::Bedrock::Result<void>
-    $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCFOLD ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
     // NOLINTEND
 
 public:
@@ -216,6 +205,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
 template <class PacketPayloadT>

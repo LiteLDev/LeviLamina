@@ -18,6 +18,7 @@ public:
     OutputOptions& operator=(OutputOptions const&);
     OutputOptions(OutputOptions const&);
     OutputOptions();
+
 };
 
-} // namespace Bedrock::JSONObject
+}

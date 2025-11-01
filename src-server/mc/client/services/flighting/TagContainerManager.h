@@ -4,6 +4,7 @@
 
 namespace flighting {
 
-class TagContainerManager {};
+class TagContainerManager {
+};
 
-} // namespace flighting
+}

@@ -12,4 +12,5 @@ public:
     ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mItemId;
     ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mActorId;
     // NOLINTEND
+
 };

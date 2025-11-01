@@ -16,7 +16,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 69
-    virtual void handleEntityEvent(::ActorEvent id, int data) /*override*/;
+    virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 178
     virtual bool isDarkEnoughToSpawn() const /*override*/;
@@ -37,7 +37,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
     MCFOLD bool $isDarkEnoughToSpawn() const;
 
@@ -53,4 +53,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

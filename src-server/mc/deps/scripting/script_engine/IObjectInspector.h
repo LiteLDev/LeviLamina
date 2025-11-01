@@ -24,8 +24,7 @@ public:
     virtual bool hasBooleanPropertyValue(::Scripting::ObjectHandle, char const*, bool) const = 0;
 
     // vIndex: 3
-    virtual ::std::optional<::Scripting::ResultAny>
-    getPropertyValue(::Scripting::ObjectHandle, char const*, ::entt::meta_type const&) const = 0;
+    virtual ::std::optional<::Scripting::ResultAny> getPropertyValue(::Scripting::ObjectHandle, char const*, ::entt::meta_type const&) const = 0;
 
     // vIndex: 4
     virtual uint getDataBufferLength(::Scripting::ObjectHandle) const = 0;
@@ -42,6 +41,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

@@ -18,4 +18,4 @@ MCAPI ::mce::UUID generateUUID(void const* in, uint size, ::Crypto::Hash::HashTy
 MCAPI ::std::string hash(::Crypto::Hash::HashType type, void const* in, uint size);
 // NOLINTEND
 
-} // namespace Crypto::Hash
+}

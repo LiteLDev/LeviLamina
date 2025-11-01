@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct AddIncomingStreamsRequestParameterConfig {};
+struct AddIncomingStreamsRequestParameterConfig {
+};
 
-} // namespace dcsctp
+}

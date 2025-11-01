@@ -28,28 +28,22 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 76
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
-    // vIndex: 50
+    // vIndex: 51
     virtual bool requiresInteract() const /*override*/;
 
-    // vIndex: 111
+    // vIndex: 112
     virtual ::std::string getInteractText(::Player const& player) const /*override*/;
 
-    // vIndex: 89
-    virtual ::std::string buildDescriptionId(::ItemDescriptor const& item, ::CompoundTag const* userData) const
-        /*override*/;
+    // vIndex: 90
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& item, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 52
-    virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const /*override*/;
+    // vIndex: 53
+    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
 
-    // vIndex: 94
+    // vIndex: 95
     virtual bool inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const /*override*/;
 
     // vIndex: 39
@@ -118,12 +112,7 @@ public:
 
     MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& item, ::CompoundTag const* userData) const;
 
-    MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const;
+    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
 
     MCAPI bool $inventoryTick(::ItemStack&, ::Level& level, ::Actor& owner, int, bool) const;
 
@@ -135,4 +124,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

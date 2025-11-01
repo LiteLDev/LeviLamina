@@ -4,7 +4,8 @@
 
 namespace DataStructures {
 
-template <typename T0>
-class ThreadsafeAllocatingQueue {};
+template<typename T0>
+class ThreadsafeAllocatingQueue {
+};
 
-} // namespace DataStructures
+}

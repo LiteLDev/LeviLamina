@@ -9,7 +9,7 @@ class ItemGroup {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 128, ::ItemInstance>     mItemTemplate;
+    ::ll::TypedStorage<8, 128, ::ItemInstance> mItemTemplate;
     ::ll::TypedStorage<4, 8, ::std::optional<int>> mStackSize;
     // NOLINTEND
 
@@ -36,4 +36,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

@@ -10,7 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk13a1e0;
     ::ll::UntypedStorage<8, 32> mUnk4dde6c;
-    ::ll::UntypedStorage<1, 1>  mUnkc4a555;
+    ::ll::UntypedStorage<1, 1> mUnkc4a555;
     // NOLINTEND
 
 public:
@@ -22,8 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&
-    operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&&);
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement& operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement&&);
 
     MCNAPI ~SinglePoolElement();
     // NOLINTEND
@@ -33,6 +32,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_20::JigsawStructureTemplatePool
+}

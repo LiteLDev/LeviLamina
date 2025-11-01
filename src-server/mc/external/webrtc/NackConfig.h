@@ -16,6 +16,7 @@ public:
     NackConfig& operator=(NackConfig const&);
     NackConfig(NackConfig const&);
     NackConfig();
+
 };
 
-} // namespace webrtc
+}

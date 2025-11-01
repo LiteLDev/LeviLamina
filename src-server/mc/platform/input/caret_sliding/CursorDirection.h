@@ -5,10 +5,10 @@
 namespace CaretSliding {
 
 enum class CursorDirection : int {
-    Left  = 0,
+    Left = 0,
     Right = 1,
-    Up    = 2,
-    Down  = 3,
+    Up = 2,
+    Down = 3,
 };
 
 }

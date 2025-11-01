@@ -4,7 +4,8 @@
 
 namespace dcsctp {
 
-template <typename T0>
-class UnwrappedSequenceNumber {};
+template<typename T0>
+class UnwrappedSequenceNumber {
+};
 
-} // namespace dcsctp
+}

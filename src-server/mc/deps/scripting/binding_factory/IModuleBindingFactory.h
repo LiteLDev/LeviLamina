@@ -36,8 +36,7 @@ public:
     virtual ::std::vector<::Scripting::ModuleDependency> getDependencies(::Scripting::Version) const = 0;
 
     // vIndex: 6
-    virtual ::std::optional<::Scripting::ModuleBinding>
-    createModuleBinding(::Scripting::Version, ::std::optional<::Scripting::ContextConfig> const&) = 0;
+    virtual ::std::optional<::Scripting::ModuleBinding> createModuleBinding(::Scripting::Version, ::std::optional<::Scripting::ContextConfig> const&) = 0;
     // NOLINTEND
 
 public:
@@ -51,6 +50,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

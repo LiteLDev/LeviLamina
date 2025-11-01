@@ -13,4 +13,4 @@ namespace ScaffoldingActionSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace ScaffoldingActionSystem
+}

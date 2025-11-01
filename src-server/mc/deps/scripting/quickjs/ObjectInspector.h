@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkfcc24f;
-    ::ll::UntypedStorage<8, 8>  mUnk78ab83;
+    ::ll::UntypedStorage<8, 8> mUnk78ab83;
     // NOLINTEND
 
 public:
@@ -37,13 +37,10 @@ public:
     virtual bool isSameObject(::Scripting::ObjectHandle handleA, ::Scripting::ObjectHandle handleB) const /*override*/;
 
     // vIndex: 2
-    virtual bool hasBooleanPropertyValue(::Scripting::ObjectHandle handle, char const* name, bool expectedValue) const
-        /*override*/;
+    virtual bool hasBooleanPropertyValue(::Scripting::ObjectHandle handle, char const* name, bool expectedValue) const /*override*/;
 
     // vIndex: 3
-    virtual ::std::optional<::Scripting::ResultAny>
-    getPropertyValue(::Scripting::ObjectHandle handle, char const* name, ::entt::meta_type const& expectedType) const
-        /*override*/;
+    virtual ::std::optional<::Scripting::ResultAny> getPropertyValue(::Scripting::ObjectHandle handle, char const* name, ::entt::meta_type const& expectedType) const /*override*/;
 
     // vIndex: 4
     virtual uint getDataBufferLength(::Scripting::ObjectHandle handle) const /*override*/;
@@ -68,8 +65,7 @@ public:
 
     MCNAPI bool $hasBooleanPropertyValue(::Scripting::ObjectHandle handle, char const* name, bool expectedValue) const;
 
-    MCNAPI ::std::optional<::Scripting::ResultAny>
-    $getPropertyValue(::Scripting::ObjectHandle handle, char const* name, ::entt::meta_type const& expectedType) const;
+    MCNAPI ::std::optional<::Scripting::ResultAny> $getPropertyValue(::Scripting::ObjectHandle handle, char const* name, ::entt::meta_type const& expectedType) const;
 
     MCNAPI uint $getDataBufferLength(::Scripting::ObjectHandle handle) const;
 
@@ -83,6 +79,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting::QuickJS
+}

@@ -15,9 +15,9 @@ class BehaviorComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::BehaviorTreeDefinitionPtr>      mTreeDefinition;
+    ::ll::TypedStorage<8, 16, ::BehaviorTreeDefinitionPtr> mTreeDefinition;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BehaviorNode>> mRoot;
-    ::ll::TypedStorage<8, 88, ::BehaviorData>                   mBehaviorData;
+    ::ll::TypedStorage<8, 88, ::BehaviorData> mBehaviorData;
     // NOLINTEND
 
 public:
@@ -45,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

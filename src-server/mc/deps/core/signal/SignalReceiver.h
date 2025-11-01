@@ -20,28 +20,29 @@ public:
     // clang-format off
     struct ConnectionRecord;
     // clang-format on
-
+    
     // SignalReceiver inner types define
     struct ConnectionRecord {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk40edcb;
-        ::ll::UntypedStorage<4, 4>  mUnk5bd792;
+        ::ll::UntypedStorage<4, 4> mUnk5bd792;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ConnectionRecord& operator=(ConnectionRecord const&);
         ConnectionRecord(ConnectionRecord const&);
         ConnectionRecord();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 80> mUnk36537f;
-    ::ll::UntypedStorage<8, 8>  mUnk956817;
+    ::ll::UntypedStorage<8, 8> mUnk956817;
     ::ll::UntypedStorage<8, 16> mUnk350063;
     // NOLINTEND
 
@@ -50,6 +51,7 @@ public:
     SignalReceiver& operator=(SignalReceiver const&);
     SignalReceiver(SignalReceiver const&);
     SignalReceiver();
+
 };
 
-} // namespace Bedrock
+}

@@ -2,4 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct BlockPlaysStepSoundWhenAboveCurrentPos {};
+struct BlockPlaysStepSoundWhenAboveCurrentPos {
+};

@@ -16,27 +16,27 @@ class TimeCommand : public ::Command {
 public:
     // TimeCommand inner types define
     enum class Mode : int {
-        Set   = 0,
-        Add   = 1,
+        Set = 0,
+        Add = 1,
         Query = 2,
     };
-
+    
     enum class Query : int {
-        DayTime  = 0,
+        DayTime = 0,
         GameTime = 1,
-        Day      = 2,
+        Day = 2,
     };
-
+    
     enum class TimeSpec : int {
-        Sunrise     = 0,
-        Day         = 1,
-        Noon        = 2,
-        Sunset      = 3,
-        Night       = 4,
-        Midnight    = 5,
+        Sunrise = 0,
+        Day = 1,
+        Noon = 2,
+        Sunset = 3,
+        Night = 4,
+        Midnight = 5,
         Unspecified = 6,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -79,4 +79,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

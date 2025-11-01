@@ -24,8 +24,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::CreativeItemEntry>> mCreativeItems;
     ::ll::TypedStorage<8, 24, ::std::vector<::CreativeGroupInfo>> mCreativeGroups;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::CreativeItemCategory, ::CreativeItemGroupCategory>>
-                                                                                 mCreativeGroupCategories;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::CreativeItemCategory, ::CreativeItemGroupCategory>> mCreativeGroupCategories;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::CreativeItemNetId, uint64>> mCreativeNetIdIndex;
     // NOLINTEND
 
@@ -39,20 +38,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::brstd::flat_map<
-        ::CreativeItemCategory,
-        ::gsl::not_null<::CreativeItemGroupCategory*>,
-        ::std::less<::CreativeItemCategory>,
-        ::std::vector<::CreativeItemCategory>,
-        ::std::vector<::gsl::not_null<::CreativeItemGroupCategory*>>>
-    createCategories();
+    MCAPI ::brstd::flat_map<::CreativeItemCategory, ::gsl::not_null<::CreativeItemGroupCategory*>, ::std::less<::CreativeItemCategory>, ::std::vector<::CreativeItemCategory>, ::std::vector<::gsl::not_null<::CreativeItemGroupCategory*>>> createCategories();
 
     MCAPI void forEachCreativeItemInstance(::std::function<bool(::ItemInstance const&)> func) const;
 
     MCAPI ::CreativeItemGroupCategory* newCreativeCategory(::std::string const& name, ::CreativeItemCategory category);
 
-    MCAPI ::CreativeGroupInfo*
-    newCreativeGroup(::CreativeItemCategory category, ::HashedString const& name, ::ItemInstance const& icon);
+    MCAPI ::CreativeGroupInfo* newCreativeGroup(::CreativeItemCategory category, ::HashedString const& name, ::ItemInstance const& icon);
 
     MCAPI void updateNetIdMap();
     // NOLINTEND
@@ -68,4 +60,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

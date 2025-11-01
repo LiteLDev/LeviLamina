@@ -15,4 +15,5 @@ public:
     CommonLocTextPair& operator=(CommonLocTextPair const&);
     CommonLocTextPair(CommonLocTextPair const&);
     CommonLocTextPair();
+
 };

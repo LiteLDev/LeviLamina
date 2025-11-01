@@ -22,81 +22,77 @@ public:
     // clang-format off
     class KnockbackRoarDefinition;
     // clang-format on
-
+    
     // KnockbackRoarGoal inner types define
     class KnockbackRoarDefinition : public ::BaseGoalDefinition {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, float>                      mMaxRoarDurationSeconds;
-        ::ll::TypedStorage<4, 4, float>                      mMaxSecondsUntilAttack;
-        ::ll::TypedStorage<4, 4, int>                        mKnockbackDamage;
-        ::ll::TypedStorage<4, 4, int>                        mKnockbackHorizontalStrength;
-        ::ll::TypedStorage<4, 4, int>                        mKnockbackVerticalStrength;
-        ::ll::TypedStorage<4, 4, float>                      mHeightCap;
-        ::ll::TypedStorage<4, 4, int>                        mKnockbackEffectRange;
-        ::ll::TypedStorage<4, 4, float>                      mMaxCooldownSeconds;
-        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mKnockbackFilterGroup;
-        ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mDamageFilterGroup;
+        ::ll::TypedStorage<4, 4, float> mMaxRoarDurationSeconds;
+        ::ll::TypedStorage<4, 4, float> mMaxSecondsUntilAttack;
+        ::ll::TypedStorage<4, 4, int> mKnockbackDamage;
+        ::ll::TypedStorage<4, 4, int> mKnockbackHorizontalStrength;
+        ::ll::TypedStorage<4, 4, int> mKnockbackVerticalStrength;
+        ::ll::TypedStorage<4, 4, float> mHeightCap;
+        ::ll::TypedStorage<4, 4, int> mKnockbackEffectRange;
+        ::ll::TypedStorage<4, 4, float> mMaxCooldownSeconds;
+        ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mKnockbackFilterGroup;
+        ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mDamageFilterGroup;
         ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnRoarEnd;
-        ::ll::TypedStorage<1, 1, bool>                       mFilterEvaluateFix;
+        ::ll::TypedStorage<1, 1, bool> mFilterEvaluateFix;
         // NOLINTEND
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~KnockbackRoarDefinition() /*override*/;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI void initialize(::EntityContext& entity, ::KnockbackRoarGoal& goal) const;
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::KnockbackRoarGoal::KnockbackRoarDefinition>>&
-                root
-        );
+        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::KnockbackRoarGoal::KnockbackRoarDefinition>>& root);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                     mMob;
-    ::ll::TypedStorage<4, 4, int>                        mMaxRoarDurationTicks;
-    ::ll::TypedStorage<4, 4, int>                        mMaxTicksUntilAttack;
-    ::ll::TypedStorage<4, 4, int>                        mKnockbackDamage;
-    ::ll::TypedStorage<4, 4, int>                        mKnockbackHorizontalStrength;
-    ::ll::TypedStorage<4, 4, int>                        mKnockbackVerticalStrength;
-    ::ll::TypedStorage<4, 4, float>                      mHeightCap;
-    ::ll::TypedStorage<4, 4, int>                        mKnockbackEffectRange;
-    ::ll::TypedStorage<4, 4, int>                        mMaxCooldownTicks;
-    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mKnockbackFilterGroup;
-    ::ll::TypedStorage<8, 64, ::ActorFilterGroup>        mDamageFilterGroup;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, int> mMaxRoarDurationTicks;
+    ::ll::TypedStorage<4, 4, int> mMaxTicksUntilAttack;
+    ::ll::TypedStorage<4, 4, int> mKnockbackDamage;
+    ::ll::TypedStorage<4, 4, int> mKnockbackHorizontalStrength;
+    ::ll::TypedStorage<4, 4, int> mKnockbackVerticalStrength;
+    ::ll::TypedStorage<4, 4, float> mHeightCap;
+    ::ll::TypedStorage<4, 4, int> mKnockbackEffectRange;
+    ::ll::TypedStorage<4, 4, int> mMaxCooldownTicks;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mKnockbackFilterGroup;
+    ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mDamageFilterGroup;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnRoarEnd;
-    ::ll::TypedStorage<1, 1, bool>                       mFilterEvaluateFix;
-    ::ll::TypedStorage<4, 4, int>                        mCurrentCooldownTicks;
-    ::ll::TypedStorage<4, 4, int>                        mCurrentRoarTicks;
+    ::ll::TypedStorage<1, 1, bool> mFilterEvaluateFix;
+    ::ll::TypedStorage<4, 4, int> mCurrentCooldownTicks;
+    ::ll::TypedStorage<4, 4, int> mCurrentRoarTicks;
     // NOLINTEND
 
 public:
@@ -151,4 +147,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

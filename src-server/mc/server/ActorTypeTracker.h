@@ -14,4 +14,5 @@ public:
     ActorTypeTracker& operator=(ActorTypeTracker const&);
     ActorTypeTracker(ActorTypeTracker const&);
     ActorTypeTracker();
+
 };

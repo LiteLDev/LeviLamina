@@ -23,23 +23,20 @@ public:
     virtual ~IPayload() = default;
 
     // vIndex: 2
-    virtual ::Scripting::ResultAny
-    runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);
+    virtual ::Scripting::ResultAny runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);
 
     // vIndex: 1
-    virtual ::Scripting::ResultAny
-    runOn(::Scripting::ContextId, ::Scripting::StringBasedRuntime&, ::std::optional<::Scripting::Privilege>);
+    virtual ::Scripting::ResultAny runOn(::Scripting::ContextId, ::Scripting::StringBasedRuntime&, ::std::optional<::Scripting::Privilege>);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::ResultAny
-    $runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);
+    MCAPI ::Scripting::ResultAny $runOn(::Scripting::ContextId, ::Scripting::NativeRuntime&, ::std::optional<::Scripting::Privilege>);
 
-    MCAPI ::Scripting::ResultAny
-    $runOn(::Scripting::ContextId, ::Scripting::StringBasedRuntime&, ::std::optional<::Scripting::Privilege>);
+    MCAPI ::Scripting::ResultAny $runOn(::Scripting::ContextId, ::Scripting::StringBasedRuntime&, ::std::optional<::Scripting::Privilege>);
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

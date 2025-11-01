@@ -11,5 +11,6 @@ public:
     ::ll::UntypedStorage<4, 4> mUnkb308f4;
     ::ll::UntypedStorage<1, 4> mUnk5f3ace;
     // NOLINTEND
+
 };
-} // namespace Crypto
+}

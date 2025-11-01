@@ -17,15 +17,10 @@ class DecoratedPotBlockItem : public ::BlockItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 52
-    virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const /*override*/;
+    // vIndex: 53
+    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
 
-    // vIndex: 99
+    // vIndex: 100
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
     // vIndex: 0
@@ -41,12 +36,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const;
+    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
 
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
     // NOLINTEND
@@ -56,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

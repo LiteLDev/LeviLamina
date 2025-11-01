@@ -14,7 +14,7 @@ struct EmoteListPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>            mRuntimeId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
     ::ll::TypedStorage<8, 24, ::std::vector<::mce::UUID>> mEmotePieceIds;
     // NOLINTEND
 
@@ -43,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

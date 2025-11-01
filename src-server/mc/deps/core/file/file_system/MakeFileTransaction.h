@@ -4,6 +4,7 @@
 
 namespace Core {
 
-class MakeFileTransaction {};
+class MakeFileTransaction {
+};
 
-} // namespace Core
+}

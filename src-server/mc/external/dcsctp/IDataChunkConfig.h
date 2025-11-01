@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct IDataChunkConfig {};
+struct IDataChunkConfig {
+};
 
-} // namespace dcsctp
+}

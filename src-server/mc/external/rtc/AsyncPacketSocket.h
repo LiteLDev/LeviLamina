@@ -21,13 +21,13 @@ class AsyncPacketSocket : public ::sigslot::has_slots<::sigslot::single_threaded
 public:
     // AsyncPacketSocket inner types define
     enum class State : int {
-        Closed     = 0,
-        Binding    = 1,
-        Bound      = 2,
+        Closed = 0,
+        Binding = 1,
+        Bound = 2,
         Connecting = 3,
-        Connected  = 4,
+        Connected = 4,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,7 +35,7 @@ public:
     ::ll::UntypedStorage<8, 48> mUnka854a1;
     ::ll::UntypedStorage<8, 48> mUnk73987d;
     ::ll::UntypedStorage<8, 48> mUnk748d42;
-    ::ll::UntypedStorage<1, 1>  mUnkd3ab2c;
+    ::ll::UntypedStorage<1, 1> mUnkd3ab2c;
     ::ll::UntypedStorage<8, 32> mUnkf3e89d;
     ::ll::UntypedStorage<8, 32> mUnkb56b47;
     // NOLINTEND
@@ -89,13 +89,9 @@ public:
 
     MCNAPI void NotifyPacketReceived(::rtc::ReceivedPacket const& packet);
 
-    MCNAPI void
-    SubscribeCloseEvent(void const* removal_tag, ::std::function<void(::rtc::AsyncPacketSocket*, int)> callback);
+    MCNAPI void SubscribeCloseEvent(void const* removal_tag, ::std::function<void(::rtc::AsyncPacketSocket*, int)> callback);
 
-    MCNAPI void SubscribeReceivedPacketEvent(
-        void const*                                                                         removal_tag,
-        ::absl::AnyInvocable<void(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&)> received_packet_callback
-    );
+    MCNAPI void SubscribeReceivedPacketEvent(void const* removal_tag, ::absl::AnyInvocable<void(::rtc::AsyncPacketSocket*, ::rtc::ReceivedPacket const&)> received_packet_callback);
 
     MCNAPI void UnsubscribeCloseEvent(void const* removal_tag);
 
@@ -125,6 +121,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

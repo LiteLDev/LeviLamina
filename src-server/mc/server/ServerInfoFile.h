@@ -14,4 +14,5 @@ public:
     ServerInfoFile& operator=(ServerInfoFile const&);
     ServerInfoFile(ServerInfoFile const&);
     ServerInfoFile();
+
 };

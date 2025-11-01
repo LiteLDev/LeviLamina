@@ -4,6 +4,7 @@
 
 namespace webrtc {
 
-struct VideoStream {};
+struct VideoStream {
+};
 
-} // namespace webrtc
+}

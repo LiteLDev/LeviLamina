@@ -7,8 +7,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 136> mUnk38a7aa;
-    ::ll::UntypedStorage<4, 4>   mUnk469027;
-    ::ll::UntypedStorage<4, 4>   mUnk131835;
+    ::ll::UntypedStorage<4, 4> mUnk469027;
+    ::ll::UntypedStorage<4, 4> mUnk131835;
     // NOLINTEND
 
 public:
@@ -16,4 +16,5 @@ public:
     Purchase& operator=(Purchase const&);
     Purchase(Purchase const&);
     Purchase();
+
 };

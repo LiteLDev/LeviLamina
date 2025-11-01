@@ -15,4 +15,5 @@ public:
     DespawnFromDistanceData& operator=(DespawnFromDistanceData const&);
     DespawnFromDistanceData(DespawnFromDistanceData const&);
     DespawnFromDistanceData();
+
 };

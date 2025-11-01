@@ -14,7 +14,7 @@ class ReceiptDetailsSonyStore : public ::SendReceiptDetails {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkafd221;
+    ::ll::UntypedStorage<4, 4> mUnkafd221;
     ::ll::UntypedStorage<8, 32> mUnk58d225;
     ::ll::UntypedStorage<8, 32> mUnkea2080;
     ::ll::UntypedStorage<8, 32> mUnk8b77e6;
@@ -46,4 +46,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

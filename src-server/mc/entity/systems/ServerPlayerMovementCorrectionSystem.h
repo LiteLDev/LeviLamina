@@ -26,34 +26,11 @@ struct TickingSystemWithInfo;
 namespace ServerPlayerMovementCorrectionSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _afterMovementSimulation(
-    ::UserEntityIdentifierComponent const& userIdentifier,
-    ::Actor&                               actor,
-    ::PlayerAuthInputPacket const&         packet,
-    ::ReplayStateComponent&                replay,
-    ::ActorRotationComponent const*        actorRotation,
-    ::ServerPlayerMovementComponent&       serverPlayerMovement,
-    ::StateVectorComponent&                stateVector,
-    ::BoatMovementComponent const*         boat
-);
+MCAPI void _afterMovementSimulation(::UserEntityIdentifierComponent const& userIdentifier, ::Actor& actor, ::PlayerAuthInputPacket const& packet, ::ReplayStateComponent& replay, ::ActorRotationComponent const* actorRotation, ::ServerPlayerMovementComponent& serverPlayerMovement, ::StateVectorComponent& stateVector, ::BoatMovementComponent const* boat);
 
-MCAPI void _tickServerPlayerMovementCorrectionSystem(
-    ::StrictEntityContext const&                  player,
-    ::ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovementComponent,
-    ::UserEntityIdentifierComponent const&        userIdentifierComponent,
-    ::ServerPlayerMovementComponent&              serverPlayerMovementComponent,
-    ::Optional<::PassengerComponent const>        passengerComponent,
-    ::StateVectorComponent&                       playerStateVector,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::ActorRotationComponent const,
-        ::ActorOwnerComponent,
-        ::ReplayStateComponent,
-        ::StateVectorComponent,
-        ::Optional<::BoatMovementComponent const>> const& replayableEntityView
-);
+MCAPI void _tickServerPlayerMovementCorrectionSystem(::StrictEntityContext const& player, ::ServerPlayerCurrentMovementComponent const& serverPlayerCurrentMovementComponent, ::UserEntityIdentifierComponent const& userIdentifierComponent, ::ServerPlayerMovementComponent& serverPlayerMovementComponent, ::Optional<::PassengerComponent const> passengerComponent, ::StateVectorComponent& playerStateVector, ::ViewT<::StrictEntityContext, ::ActorRotationComponent const, ::ActorOwnerComponent, ::ReplayStateComponent, ::StateVectorComponent, ::Optional<::BoatMovementComponent const>> const& replayableEntityView);
 
 MCAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace ServerPlayerMovementCorrectionSystem
+}

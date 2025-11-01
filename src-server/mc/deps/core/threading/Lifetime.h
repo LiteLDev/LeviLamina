@@ -16,6 +16,7 @@ public:
     Lifetime& operator=(Lifetime const&);
     Lifetime(Lifetime const&);
     Lifetime();
+
 };
 
-} // namespace Bedrock::Threading::Burst::Details
+}

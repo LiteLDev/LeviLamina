@@ -18,12 +18,10 @@ public:
     virtual ~ILifetimeObjectListener();
 
     // vIndex: 1
-    virtual void
-    onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) = 0;
+    virtual void onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) = 0;
 
     // vIndex: 2
-    virtual void
-    onDestroyObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) = 0;
+    virtual void onDestroyObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) = 0;
     // NOLINTEND
 
 public:
@@ -43,6 +41,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

@@ -10,7 +10,8 @@ struct RawMoveInputComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 40, ::MoveInputState> mRawInput;
-    ::ll::TypedStorage<4, 8, ::Vec2>            mRawMove;
+    ::ll::TypedStorage<4, 16, ::MoveInputState> mRawInput;
+    ::ll::TypedStorage<4, 8, ::Vec2> mRawMove;
     // NOLINTEND
+
 };

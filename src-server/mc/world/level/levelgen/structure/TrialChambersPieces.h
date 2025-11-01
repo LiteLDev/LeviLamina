@@ -13,4 +13,4 @@ namespace TrialChambersPieces {
 MCAPI ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& ALIAS_BINDINGS();
 // NOLINTEND
 
-} // namespace TrialChambersPieces
+}

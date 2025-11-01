@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/EntityOperation.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/editor/EntityOperation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -51,8 +51,7 @@ public:
     virtual ::Scripting::Result_deprecated<bool> trackBlockChangeVolume(::BlockVolumeBase const&) = 0;
 
     // vIndex: 10
-    virtual ::Scripting::Result_deprecated<bool>
-    addEntityOperation(::Actor*, ::Editor::Transactions::EntityOperation::OperationType const) = 0;
+    virtual ::Scripting::Result_deprecated<bool> addEntityOperation(::Actor*, ::Editor::Transactions::EntityOperation::OperationType const) = 0;
 
     // vIndex: 11
     virtual ::Scripting::Result_deprecated<int> commitTrackedChanges() = 0;
@@ -70,12 +69,7 @@ public:
     virtual ::Scripting::Result_deprecated<bool> discardOpenTransaction() = 0;
 
     // vIndex: 16
-    virtual ::Scripting::Result_deprecated<bool> addUserDefinedOperation(
-        ::std::string const&,
-        ::std::string const&,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)>,
-        ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)>
-    ) = 0;
+    virtual ::Scripting::Result_deprecated<bool> addUserDefinedOperation(::std::string const&, ::std::string const&, ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)>, ::std::function<::Scripting::Result_deprecated<void>(::std::string const&)>) = 0;
 
     // vIndex: 17
     virtual uint64 pendingOperationsSize() const = 0;
@@ -103,6 +97,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

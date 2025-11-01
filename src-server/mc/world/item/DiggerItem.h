@@ -21,9 +21,9 @@ class DiggerItem : public ::Item {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ItemTier const&>     mTier;
+    ::ll::TypedStorage<8, 8, ::ItemTier const&> mTier;
     ::ll::TypedStorage<8, 8, ::HashedString const&> mBlockDestructionTag;
-    ::ll::TypedStorage<4, 4, int>                   mAttackDamage;
+    ::ll::TypedStorage<4, 4, int> mAttackDamage;
     // NOLINTEND
 
 public:
@@ -41,33 +41,23 @@ public:
     // vIndex: 38
     virtual bool isHandEquipped() const /*override*/;
 
-    // vIndex: 55
+    // vIndex: 56
     virtual int getEnchantValue() const /*override*/;
 
-    // vIndex: 53
-    virtual bool isValidRepairItem(
-        ::ItemStackBase const&,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const /*override*/;
+    // vIndex: 54
+    virtual bool isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const /*override*/;
 
-    // vIndex: 52
-    virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const /*override*/;
+    // vIndex: 53
+    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
 
     // vIndex: 32
     virtual bool canDestroySpecial(::Block const& block) const /*override*/;
 
-    // vIndex: 83
+    // vIndex: 84
     virtual float getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const /*override*/;
 
     // vIndex: 8
-    virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const
-        /*override*/;
+    virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const /*override*/;
 
     // vIndex: 0
     virtual ~DiggerItem() /*override*/;
@@ -88,18 +78,9 @@ public:
 
     MCAPI int $getEnchantValue() const;
 
-    MCAPI bool $isValidRepairItem(
-        ::ItemStackBase const&,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const;
+    MCAPI bool $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const;
 
-    MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const;
+    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
 
     MCAPI bool $canDestroySpecial(::Block const& block) const;
 
@@ -113,4 +94,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/LogArea.h"
 #include "mc/deps/core/utility/NumberConversionResult.h"
+#include "mc/deps/core/utility/buffer_span.h"
 #include "mc/util/BidirectionalUnorderedMap.h"
 
 // auto generated forward declare list
@@ -37,8 +38,6 @@ MCNAPI ::BidirectionalUnorderedMap<int, uint64> generateHashMapFromListTag(::Lis
 
 MCNAPI ::std::string generateRandomId(int modifier);
 
-MCNAPI ::std::string_view getNameWithoutNamespace(::std::string_view name);
-
 MCNAPI uint hashCodeAsUtf16(::std::string_view sv);
 
 MCNAPI bool isValidNamespaceFormat(::std::string_view name);
@@ -63,25 +62,19 @@ MCNAPI ::std::vector<::std::string> split(::std::string_view view, char delim);
 
 MCNAPI ::std::vector<::std::string> splitAndDiscardEmpty(::std::string const& str, char delim);
 
-MCNAPI ::std::vector<::std::string> splitLines(
-    ::std::string const&                str,
-    ::std::vector<::std::string> const& delims,
-    bool                                includeDelimCharsInResult,
-    bool                                includeEmptyLines,
-    ::std::istream& (*fnGetline)(::std::istream&, ::std::string&)
-);
+MCNAPI ::std::vector<::std::string> splitLines(::std::string const& str, ::std::vector<::std::string> const& delims, bool includeDelimCharsInResult, bool includeEmptyLines, ::std::istream&(*fnGetline) (::std::istream&, ::std::string&));
 
 MCNAPI ::std::vector<::std::string>& splitString(::std::string_view s, char delim, ::std::vector<::std::string>& elems);
 
-MCNAPI ::std::vector<::std::string_view>&
-splitStringAsViews(::std::string_view s, char delim, ::std::vector<::std::string_view>& elems);
+MCNAPI ::std::vector<::std::string_view>& splitStringAsViews(::std::string_view s, char delim, ::std::vector<::std::string_view>& elems);
 
 MCNAPI ::std::vector<::std::string_view> splitToViews(::std::string_view view, char delim);
 
+MCNAPI ::std::string stringReplace(::std::string str, ::buffer_span<::std::pair<::std::string_view, ::std::string_view>> replacements);
+
 MCNAPI ::std::string& stringReplace(::std::string& s, ::std::string const& src, ::std::string const& dst, int maxCount);
 
-MCNAPI ::std::string
-stringReplaceCopy(::std::string const& s, ::std::string const& src, ::std::string const& dst, int maxCount);
+MCNAPI ::std::string stringReplaceCopy(::std::string const& s, ::std::string const& src, ::std::string const& dst, int maxCount);
 
 MCNAPI ::std::string stringTrim(::std::string const& s);
 
@@ -103,12 +96,7 @@ MCNAPI int utf8len(::std::string_view str);
 
 MCNAPI ::std::string utf8substring(::std::string const& str, int startIndex, int endIndex);
 
-MCNAPI bool validateIdentifier(
-    ::std::string const&                       id,
-    ::LogArea                                  logArea,
-    bool                                       allowMinecraftNamespace,
-    ::std::pair<::std::string, ::std::string>* idNameOut
-);
+MCNAPI bool validateIdentifier(::std::string const& id, ::LogArea logArea, bool allowMinecraftNamespace, ::std::pair<::std::string, ::std::string>* idNameOut);
 
 MCNAPI bool validateIdentifierChunk(::std::string const& chunk, ::LogArea logArea);
 // NOLINTEND
@@ -124,4 +112,4 @@ MCNAPI ::std::string const& HEX_CHARS();
 MCNAPI ::std::string const& NEW_LINE();
 // NOLINTEND
 
-} // namespace Util
+}

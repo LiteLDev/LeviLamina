@@ -23,7 +23,7 @@ public:
 
     MCNAPI uint64 GetAbsoluteTime(uint msFromNow);
 
-    MCNAPI long Initialize(void* context, void (*callback)(void*));
+    MCNAPI long Initialize(void* context, void(*callback) (void*));
 
     MCNAPI void Start(uint64 absoluteTime);
 
@@ -45,6 +45,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace OS
+}

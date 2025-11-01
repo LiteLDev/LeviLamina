@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 4> mUnkc441c0;
     ::ll::UntypedStorage<4, 4> mUnkcbbccb;
-    ::ll::UntypedStorage<8, 8> mUnked9baa;
+    ::ll::UntypedStorage<8, 8> mUnk5746d8;
     // NOLINTEND
 
 public:
@@ -16,4 +16,5 @@ public:
     ExportedNameEntry& operator=(ExportedNameEntry const&);
     ExportedNameEntry(ExportedNameEntry const&);
     ExportedNameEntry();
+
 };

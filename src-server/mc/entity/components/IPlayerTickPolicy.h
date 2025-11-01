@@ -6,11 +6,11 @@ struct IPlayerTickPolicy {
 public:
     // IPlayerTickPolicy inner types define
     enum class TickAction : schar {
-        ProcessTick    = 0,
+        ProcessTick = 0,
         StopProcessing = 1,
-        SkipTick       = 2,
+        SkipTick = 2,
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -35,4 +35,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

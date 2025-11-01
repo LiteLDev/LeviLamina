@@ -4,5 +4,5 @@
 
 enum class SpawnPositionType : int {
     PlayerRespawn = 0,
-    WorldSpawn    = 1,
+    WorldSpawn = 1,
 };

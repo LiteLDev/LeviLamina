@@ -23,6 +23,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::MinecraftCamera::CameraAttachComponent& operator=(::MinecraftCamera::CameraAttachComponent&&);
     // NOLINTEND
+
 };
 
-} // namespace MinecraftCamera
+}

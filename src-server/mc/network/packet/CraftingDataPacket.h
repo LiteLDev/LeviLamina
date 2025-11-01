@@ -22,11 +22,11 @@ class CraftingDataPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::CraftingDataEntry>>        mCraftingEntries;
-    ::ll::TypedStorage<8, 24, ::std::vector<::PotionMixDataEntry>>       mPotionMixEntries;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ContainerMixDataEntry>>    mContainerMixEntries;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CraftingDataEntry>> mCraftingEntries;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PotionMixDataEntry>> mPotionMixEntries;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ContainerMixDataEntry>> mContainerMixEntries;
     ::ll::TypedStorage<8, 24, ::std::vector<::MaterialReducerDataEntry>> mMaterialReducerEntries;
-    ::ll::TypedStorage<1, 1, bool>                                       mClearRecipes;
+    ::ll::TypedStorage<1, 1, bool> mClearRecipes;
     // NOLINTEND
 
 public:
@@ -38,10 +38,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -51,8 +51,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::CraftingDataPacket>
-    prepareFromRecipes(::Recipes const& levelRecipes, bool onlyCraftingRecipes);
+    MCAPI static ::std::unique_ptr<::CraftingDataPacket> prepareFromRecipes(::Recipes const& levelRecipes, bool onlyCraftingRecipes);
     // NOLINTEND
 
 public:
@@ -78,4 +77,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

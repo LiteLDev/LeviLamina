@@ -9,9 +9,10 @@ struct LoopingSoundAttributes {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>           fadeInDuration;
-    ::ll::TypedStorage<4, 4, float>           fadeOutDuration;
-    ::ll::TypedStorage<1, 1, bool>            paused;
+    ::ll::TypedStorage<4, 4, float> fadeInDuration;
+    ::ll::TypedStorage<4, 4, float> fadeOutDuration;
+    ::ll::TypedStorage<1, 1, bool> paused;
     ::ll::TypedStorage<4, 4, ::LoopLifecycle> stage;
     // NOLINTEND
+
 };

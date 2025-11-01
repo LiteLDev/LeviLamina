@@ -13,4 +13,4 @@ namespace Scripting::AxisTypes {
 MCNAPI void bindTypes(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-} // namespace Scripting::AxisTypes
+}

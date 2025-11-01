@@ -37,6 +37,7 @@ public:
 
     MCNAPI HRESULT $CleanupAsync(::XAsyncBlock* async);
     // NOLINTEND
+
 };
 
-} // namespace xbox::httpclient
+}

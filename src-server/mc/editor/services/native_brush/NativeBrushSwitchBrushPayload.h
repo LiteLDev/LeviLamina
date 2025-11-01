@@ -7,8 +7,7 @@
 
 namespace Editor::Network {
 
-class NativeBrushSwitchBrushPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::NativeBrushSwitchBrushPayload> {
+class NativeBrushSwitchBrushPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::NativeBrushSwitchBrushPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -34,6 +33,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

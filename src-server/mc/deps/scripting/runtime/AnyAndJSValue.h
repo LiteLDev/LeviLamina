@@ -16,9 +16,9 @@ struct AnyAndJSValue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 208, ::entt::meta_any>          any;
+    ::ll::TypedStorage<8, 208, ::entt::meta_any> any;
     ::ll::TypedStorage<8, 24, ::std::optional<::JSValue>> jsValue;
-    ::ll::TypedStorage<8, 8, ::JSContext*>                ctx;
+    ::ll::TypedStorage<8, 8, ::JSContext*> ctx;
     // NOLINTEND
 
 public:
@@ -32,6 +32,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

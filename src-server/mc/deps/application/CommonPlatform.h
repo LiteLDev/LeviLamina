@@ -22,14 +22,14 @@ class CommonPlatform {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnka12996;
-    ::ll::UntypedStorage<8, 8>  mUnk3f8781;
-    ::ll::UntypedStorage<8, 8>  mUnkdc7fc5;
-    ::ll::UntypedStorage<8, 8>  mUnk47147a;
+    ::ll::UntypedStorage<8, 8> mUnka12996;
+    ::ll::UntypedStorage<8, 8> mUnk3f8781;
+    ::ll::UntypedStorage<8, 8> mUnkdc7fc5;
+    ::ll::UntypedStorage<8, 8> mUnk47147a;
     ::ll::UntypedStorage<8, 24> mUnk162f42;
     ::ll::UntypedStorage<8, 64> mUnkae2910;
-    ::ll::UntypedStorage<1, 1>  mUnk377acb;
-    ::ll::UntypedStorage<1, 1>  mUnk850436;
+    ::ll::UntypedStorage<1, 1> mUnk377acb;
+    ::ll::UntypedStorage<1, 1> mUnk850436;
     // NOLINTEND
 
 public:
@@ -143,6 +143,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

@@ -5,10 +5,10 @@
 namespace cg {
 
 enum class ImageType : uchar {
-    Texture2D         = 0,
+    Texture2D = 0,
     CubemapDeprecated = 1,
-    Texture3D         = 2,
-    TextureCube       = 3,
+    Texture3D = 2,
+    TextureCube = 3,
 };
 
 }

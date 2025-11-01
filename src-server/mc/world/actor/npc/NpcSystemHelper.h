@@ -14,4 +14,4 @@ namespace NpcSystemHelper {
 MCAPI void sendClosePacket(::EntityContext& entity, ::NpcComponents::LeaveMenuCountdown const& countDown);
 // NOLINTEND
 
-} // namespace NpcSystemHelper
+}

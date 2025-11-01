@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 40, ::BeardingDescriptionCache const> mCache;
-    ::ll::TypedStorage<8, 8, ::BeardKernel const&>              mBeardKernel;
+    ::ll::TypedStorage<8, 8, ::BeardKernel const&> mBeardKernel;
     // NOLINTEND
 
 public:
@@ -23,4 +23,5 @@ public:
     BeardDescription& operator=(BeardDescription const&);
     BeardDescription(BeardDescription const&);
     BeardDescription();
+
 };

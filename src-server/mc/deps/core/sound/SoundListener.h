@@ -17,4 +17,5 @@ public:
     SoundListener& operator=(SoundListener const&);
     SoundListener(SoundListener const&);
     SoundListener();
+
 };

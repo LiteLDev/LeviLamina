@@ -25,50 +25,46 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 320, ::ResolvedItemIconInfo[5]> mFrame;
-    ::ll::TypedStorage<4, 4, int const>                   mMaxDurability;
-    ::ll::TypedStorage<4, 4, int const>                   mMaxMultiShots;
-    ::ll::TypedStorage<4, 4, float const>                 mMultishotAngleDelta;
-    ::ll::TypedStorage<4, 4, float const>                 mDefaultArrowPower;
+    ::ll::TypedStorage<4, 4, int const> mMaxDurability;
+    ::ll::TypedStorage<4, 4, int const> mMaxMultiShots;
+    ::ll::TypedStorage<4, 4, float const> mMultishotAngleDelta;
+    ::ll::TypedStorage<4, 4, float const> mDefaultArrowPower;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 109
-    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
-
     // vIndex: 110
-    virtual ::ResolvedItemIconInfo
-    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
 
-    // vIndex: 112
-    virtual int
-    getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const
-        /*override*/;
+    // vIndex: 111
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    // vIndex: 76
+    // vIndex: 113
+    virtual int getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const /*override*/;
+
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& instance, ::Player& player) const /*override*/;
 
-    // vIndex: 81
-    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const
-        /*override*/;
-
     // vIndex: 82
+    virtual ::ItemUseMethod useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const /*override*/;
+
+    // vIndex: 83
     virtual void releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const /*override*/;
 
-    // vIndex: 116
+    // vIndex: 117
     virtual void playSoundIncrementally(::ItemStack const& item, ::Mob& mob) const /*override*/;
 
-    // vIndex: 54
+    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 115
+    // vIndex: 116
     virtual bool canBeCharged() const /*override*/;
 
     // vIndex: 5
     virtual int getMaxUseDuration(::ItemStack const* instance) const /*override*/;
 
-    // vIndex: 102
+    // vIndex: 103
     virtual void enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const /*override*/;
 
     // vIndex: 0
@@ -80,8 +76,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Vec3 _getShootDir(::Player const& player, float angleOffset) const;
 
-    MCAPI void
-    _shootArrow(::ItemInstance const& crossbow, ::ItemInstance const& projectileInstance, ::Player& player) const;
+    MCAPI void _shootArrow(::ItemInstance const& crossbow, ::ItemInstance const& projectileInstance, ::Player& player) const;
 
     MCAPI void _shootFirework(::ItemInstance const& projectileInstance, ::Player& player) const;
     // NOLINTEND
@@ -89,13 +84,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int index);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCFOLD ::ResolvedItemIconInfo
-    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCFOLD ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI int
-    $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
+    MCAPI int $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;
 
     MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player) const;
 
@@ -119,4 +112,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -4,6 +4,7 @@
 
 namespace Scripting {
 
-struct HashPropertyBinding {};
+struct HashPropertyBinding {
+};
 
-} // namespace Scripting
+}

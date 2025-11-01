@@ -8,27 +8,25 @@ public:
     enum class Type : int {
         SourceMap = 0,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk1f5b2e;
+    ::ll::UntypedStorage<4, 4> mUnk1f5b2e;
     ::ll::UntypedStorage<8, 32> mUnk9aef80;
     ::ll::UntypedStorage<8, 32> mUnk581b7e;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    SentryEnvelopePayloadDebugMetadataSourcemapImage&
-    operator=(SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
+    SentryEnvelopePayloadDebugMetadataSourcemapImage& operator=(SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
     SentryEnvelopePayloadDebugMetadataSourcemapImage(SentryEnvelopePayloadDebugMetadataSourcemapImage const&);
     SentryEnvelopePayloadDebugMetadataSourcemapImage();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SentryEnvelopePayloadDebugMetadataSourcemapImage&
-    operator=(::SentryEnvelopePayloadDebugMetadataSourcemapImage&&);
+    MCNAPI ::SentryEnvelopePayloadDebugMetadataSourcemapImage& operator=(::SentryEnvelopePayloadDebugMetadataSourcemapImage&&);
 
     MCNAPI ~SentryEnvelopePayloadDebugMetadataSourcemapImage();
     // NOLINTEND
@@ -38,4 +36,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

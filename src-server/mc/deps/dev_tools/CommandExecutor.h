@@ -4,6 +4,7 @@
 
 namespace Bedrock::DevTools {
 
-class CommandExecutor {};
+class CommandExecutor {
+};
 
-} // namespace Bedrock::DevTools
+}

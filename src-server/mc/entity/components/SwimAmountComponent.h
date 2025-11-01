@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mSwimAmount;
     ::ll::TypedStorage<4, 4, float> mSwimAmountPrev;
     // NOLINTEND
+
 };

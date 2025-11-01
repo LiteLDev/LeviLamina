@@ -19,6 +19,9 @@ public:
 
     // vIndex: 1
     virtual ::ContentTierInfo getContentTierInfo() const = 0;
+
+    // vIndex: 2
+    virtual bool shouldDeviceAllowAnimation() const = 0;
     // NOLINTEND
 
 public:
@@ -32,4 +35,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

@@ -20,7 +20,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk786da7;
     ::ll::UntypedStorage<8, 80> mUnkc4058d;
-    ::ll::UntypedStorage<8, 8>  mUnk782009;
+    ::ll::UntypedStorage<8, 8> mUnk782009;
     // NOLINTEND
 
 public:
@@ -32,16 +32,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
-    getActor() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> getActor() const;
 
     MCNAPI ::std::string getName() const;
 
     MCNAPI bool isValid() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptScoreboardIdentity&
-    operator=(::ScriptModuleMinecraft::ScriptScoreboardIdentity&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptScoreboardIdentity& operator=(::ScriptModuleMinecraft::ScriptScoreboardIdentity&&);
     // NOLINTEND
 
 public:
@@ -49,6 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

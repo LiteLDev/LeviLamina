@@ -19,6 +19,7 @@ public:
     ContainerReplacementParams& operator=(ContainerReplacementParams const&);
     ContainerReplacementParams(ContainerReplacementParams const&);
     ContainerReplacementParams();
+
 };
 
-} // namespace Util
+}

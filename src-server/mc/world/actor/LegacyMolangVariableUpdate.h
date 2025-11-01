@@ -15,11 +15,7 @@ namespace LegacyMolangVariableUpdate {
 // NOLINTBEGIN
 MCNAPI ::std::array<::HashedString, 24> getEnderDragonHistoricalFrameVariables();
 
-MCNAPI void updateEntitySpecificMolangVariables(
-    ::Mob&                                 mob,
-    ::LegacyMolangVariableComponent const& molangVariableComponent,
-    ::RenderParams&                        renderParams
-);
+MCNAPI void updateEntitySpecificMolangVariables(::Mob& mob, ::LegacyMolangVariableComponent const& molangVariableComponent, ::RenderParams& renderParams);
 // NOLINTEND
 
-} // namespace LegacyMolangVariableUpdate
+}

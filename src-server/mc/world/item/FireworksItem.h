@@ -25,27 +25,19 @@ class FireworksItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 122
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    // vIndex: 123
+    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
 
-    // vIndex: 76
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 80
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
-        /*override*/;
+    // vIndex: 81
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const /*override*/;
 
-    // vIndex: 52
-    virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           advancedToolTips
-    ) const /*override*/;
+    // vIndex: 53
+    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
 
-    // vIndex: 47
+    // vIndex: 48
     virtual bool isDestructive(int) const /*override*/;
 
     // vIndex: 0
@@ -55,14 +47,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ItemInstance const& initFireworksRocketItem(
-        ::ItemInstance&                      itemInstance,
-        ::std::vector<::ItemInstance> const& charges,
-        int                                  sulphurCount
-    );
+    MCAPI static ::ItemInstance const& initFireworksRocketItem(::ItemInstance& itemInstance, ::std::vector<::ItemInstance> const& charges, int sulphurCount);
 
-    MCAPI static ::ItemStack const&
-    initFireworksRocketItem(::ItemStack& item, ::std::vector<::ItemStack> const& charges, int sulphurCount);
+    MCAPI static ::ItemStack const& initFireworksRocketItem(::ItemStack& item, ::std::vector<::ItemStack> const& charges, int sulphurCount);
     // NOLINTEND
 
 public:
@@ -78,19 +65,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           advancedToolTips
-    ) const;
+    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
 
     MCFOLD bool $isDestructive(int) const;
     // NOLINTEND
@@ -100,4 +81,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

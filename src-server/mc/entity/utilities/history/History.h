@@ -15,11 +15,7 @@ namespace History { struct EntityWithCache; }
 namespace History {
 // functions
 // NOLINTBEGIN
-MCNAPI void addMovementEffectsToEntity(
-    ::History::EntityWithCache&                        entity,
-    ::MovementEffectsComponent&                        movementEffects,
-    ::Bedrock::EnumSet<::MovementEffectType, 2> const& toSet
-);
+MCNAPI void addMovementEffectsToEntity(::History::EntityWithCache& entity, ::MovementEffectsComponent& movementEffects, ::Bedrock::EnumSet<::MovementEffectType, 2> const& toSet);
 // NOLINTEND
 
-} // namespace History
+}

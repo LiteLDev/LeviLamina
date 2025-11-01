@@ -4,7 +4,8 @@
 
 namespace xbox::httpclient {
 
-template <typename T0>
-class Result {};
+template<typename T0>
+class Result {
+};
 
-} // namespace xbox::httpclient
+}

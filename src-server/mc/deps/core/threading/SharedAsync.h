@@ -4,7 +4,8 @@
 
 namespace Bedrock::Threading {
 
-template <typename T0>
-class SharedAsync {};
+template<typename T0>
+class SharedAsync {
+};
 
-} // namespace Bedrock::Threading
+}

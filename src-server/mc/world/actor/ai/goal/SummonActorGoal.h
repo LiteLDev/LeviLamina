@@ -18,16 +18,16 @@ class SummonActorGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                            mCaster;
+    ::ll::TypedStorage<8, 8, ::Mob&> mCaster;
     ::ll::TypedStorage<8, 24, ::std::vector<::SummonSpellData>> mSpells;
-    ::ll::TypedStorage<4, 4, int>                               mCurrentTick;
-    ::ll::TypedStorage<4, 4, int>                               mCastTicksRemaining;
-    ::ll::TypedStorage<4, 4, int>                               mCurrentSpellIndex;
-    ::ll::TypedStorage<4, 4, int>                               mCurrentSpellStage;
-    ::ll::TypedStorage<4, 4, int>                               mCurrentSummonCount;
-    ::ll::TypedStorage<8, 8, uint64>                            mCooldownStopTick;
-    ::ll::TypedStorage<4, 12, ::Vec3>                           mTargetPos;
-    ::ll::TypedStorage<4, 12, ::Vec3>                           mCasterPos;
+    ::ll::TypedStorage<4, 4, int> mCurrentTick;
+    ::ll::TypedStorage<4, 4, int> mCastTicksRemaining;
+    ::ll::TypedStorage<4, 4, int> mCurrentSpellIndex;
+    ::ll::TypedStorage<4, 4, int> mCurrentSpellStage;
+    ::ll::TypedStorage<4, 4, int> mCurrentSummonCount;
+    ::ll::TypedStorage<8, 8, uint64> mCooldownStopTick;
+    ::ll::TypedStorage<4, 12, ::Vec3> mTargetPos;
+    ::ll::TypedStorage<4, 12, ::Vec3> mCasterPos;
     // NOLINTEND
 
 public:
@@ -64,16 +64,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _createSpellEntity(
-        float x,
-        float z,
-        float minY,
-        float maxY,
-        float,
-        int                         lifespan,
-        ::ActorDefinitionIdentifier summonType,
-        ::std::string const&        summonEvent
-    ) const;
+    MCAPI void _createSpellEntity(float x, float z, float minY, float maxY, float, int lifespan, ::ActorDefinitionIdentifier summonType, ::std::string const& summonEvent) const;
 
     MCAPI int _selectBestSpell(::Actor& target) const;
     // NOLINTEND
@@ -99,4 +90,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

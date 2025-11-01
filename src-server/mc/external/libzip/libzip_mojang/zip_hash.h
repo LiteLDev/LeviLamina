@@ -16,4 +16,5 @@ public:
     zip_hash& operator=(zip_hash const&);
     zip_hash(zip_hash const&);
     zip_hash();
+
 };

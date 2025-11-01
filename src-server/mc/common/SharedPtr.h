@@ -6,7 +6,7 @@
 template <typename T>
 class WeakPtr;
 
-template <typename T>
+template<typename T>
 class SharedPtr {
 public:
     template <typename... Args>

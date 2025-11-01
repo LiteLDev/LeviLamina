@@ -56,8 +56,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>>
-    CreateStreamsFromIds(::std::vector<::std::string> stream_ids);
+    MCNAPI static ::std::vector<::webrtc::scoped_refptr<::webrtc::MediaStreamInterface>> CreateStreamsFromIds(::std::vector<::std::string> stream_ids);
 
     MCNAPI static int GenerateUniqueId();
     // NOLINTEND
@@ -73,6 +72,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

@@ -7,6 +7,7 @@
 
 namespace Bedrock::JSONObject {
 
-class BooleanNode : public ::Bedrock::JSONObject::Node {};
+class BooleanNode : public ::Bedrock::JSONObject::Node {
+};
 
-} // namespace Bedrock::JSONObject
+}

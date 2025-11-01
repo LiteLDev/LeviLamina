@@ -18,9 +18,10 @@ struct BuiltInActorComponents {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::StateVectorComponent*>>        mStateVectorComponent;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::AABBShapeComponent*>>          mAABBShapeComponent;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorRotationComponent*>>      mActorRotationComponent;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::StateVectorComponent*>> mStateVectorComponent;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::AABBShapeComponent*>> mAABBShapeComponent;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorRotationComponent*>> mActorRotationComponent;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::ActorWalkAnimationComponent*>> mWalkAnimationComponent;
     // NOLINTEND
+
 };

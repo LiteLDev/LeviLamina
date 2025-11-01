@@ -16,6 +16,7 @@ public:
     TrivialDeleter& operator=(TrivialDeleter const&);
     TrivialDeleter(TrivialDeleter const&);
     TrivialDeleter();
+
 };
 
-} // namespace absl::internal_any_invocable
+}

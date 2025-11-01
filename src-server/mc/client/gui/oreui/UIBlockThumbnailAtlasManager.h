@@ -4,6 +4,7 @@
 
 namespace OreUI {
 
-class UIBlockThumbnailAtlasManager {};
+class UIBlockThumbnailAtlasManager {
+};
 
-} // namespace OreUI
+}

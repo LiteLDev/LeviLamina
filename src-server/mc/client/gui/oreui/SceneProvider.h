@@ -4,6 +4,7 @@
 
 namespace OreUI {
 
-class SceneProvider {};
+class SceneProvider {
+};
 
-} // namespace OreUI
+}

@@ -15,4 +15,5 @@ public:
     DeserializationChanges& operator=(DeserializationChanges const&);
     DeserializationChanges(DeserializationChanges const&);
     DeserializationChanges();
+
 };

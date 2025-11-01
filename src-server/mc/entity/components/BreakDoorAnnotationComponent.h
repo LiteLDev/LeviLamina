@@ -5,7 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/Difficulty.h"
 #include "mc/legacy/ActorUniqueID.h"
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,12 +17,12 @@ class BreakDoorAnnotationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                               mBreakTicks;
+    ::ll::TypedStorage<4, 4, int> mBreakTicks;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::Difficulty> mMinDifficulty;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                   mTargetID;
-    ::ll::TypedStorage<4, 4, int>                               mBreakingTime;
-    ::ll::TypedStorage<4, 16, ::std::optional<::BlockPos>>      mObstructionPos;
-    ::ll::TypedStorage<8, 8, uint64>                            mLastPathIndex;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mTargetID;
+    ::ll::TypedStorage<4, 4, int> mBreakingTime;
+    ::ll::TypedStorage<4, 16, ::std::optional<::BlockPos>> mObstructionPos;
+    ::ll::TypedStorage<8, 8, uint64> mLastPathIndex;
     // NOLINTEND
 
 public:
@@ -36,4 +36,5 @@ public:
 
     MCAPI void obstructionCheck(::Mob& mob);
     // NOLINTEND
+
 };

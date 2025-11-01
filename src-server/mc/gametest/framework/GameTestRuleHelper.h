@@ -13,7 +13,7 @@ public:
     // clang-format off
     struct GameRuleInfo;
     // clang-format on
-
+    
     // GameTestRuleHelper inner types define
     struct GameRuleInfo {
     public:
@@ -23,19 +23,20 @@ public:
         ::ll::UntypedStorage<1, 1> mUnk11ddbd;
         ::ll::UntypedStorage<4, 8> mUnk2ef0b5;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         GameRuleInfo& operator=(GameRuleInfo const&);
         GameRuleInfo(GameRuleInfo const&);
         GameRuleInfo();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk849153;
-    ::ll::UntypedStorage<1, 1>  mUnk5d4cbc;
+    ::ll::UntypedStorage<8, 8> mUnk849153;
+    ::ll::UntypedStorage<1, 1> mUnk5d4cbc;
     ::ll::UntypedStorage<8, 24> mUnkdf3a36;
     // NOLINTEND
 
@@ -76,6 +77,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace gametest
+}

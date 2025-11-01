@@ -4,7 +4,8 @@
 
 namespace Bedrock::Detail {
 
-template <typename T0, typename T1>
-class ImplCtors {};
+template<typename T0, typename T1>
+class ImplCtors {
+};
 
-} // namespace Bedrock::Detail
+}

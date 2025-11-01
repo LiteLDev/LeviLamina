@@ -10,8 +10,7 @@ namespace Core { class Path; }
 namespace BiomeLoadingUtil {
 // functions
 // NOLINTBEGIN
-MCNAPI void
-_doContentError(::std::string const& message, ::Core::Path const& filePath, ::std::vector<::std::string> const& errors);
+MCNAPI void _doContentError(::std::string const& message, ::Core::Path const& filePath, ::std::vector<::std::string> const& errors);
 // NOLINTEND
 
-} // namespace BiomeLoadingUtil
+}

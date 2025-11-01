@@ -9,9 +9,9 @@ struct ClientCameraAimAssistPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                      mCameraPresetId;
+    ::ll::TypedStorage<8, 32, ::std::string> mCameraPresetId;
     ::ll::TypedStorage<1, 1, ::ClientCameraAimAssistPacketAction> mAction;
-    ::ll::TypedStorage<1, 1, bool>                                mAllowAimAssist;
+    ::ll::TypedStorage<1, 1, bool> mAllowAimAssist;
     // NOLINTEND
 
 public:
@@ -33,4 +33,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

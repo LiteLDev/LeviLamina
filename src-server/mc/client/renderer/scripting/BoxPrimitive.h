@@ -19,8 +19,8 @@ class BoxPrimitive : public ::Scripting::RenderHelper::BasePrimitivePosition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12>  mUnk6229dd;
-    ::ll::UntypedStorage<4, 16>  mUnk20be55;
+    ::ll::UntypedStorage<4, 12> mUnk6229dd;
+    ::ll::UntypedStorage<4, 16> mUnk20be55;
     ::ll::UntypedStorage<4, 384> mUnkdda332;
     // NOLINTEND
 
@@ -54,6 +54,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Scripting::RenderHelper
+}

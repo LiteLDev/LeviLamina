@@ -16,12 +16,12 @@ class LeashableDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnkd5ac44;
-    ::ll::UntypedStorage<1, 1>   mUnk93a1db;
-    ::ll::UntypedStorage<1, 1>   mUnk4b4c40;
+    ::ll::UntypedStorage<8, 24> mUnkd5ac44;
+    ::ll::UntypedStorage<1, 1> mUnk93a1db;
+    ::ll::UntypedStorage<1, 1> mUnk4b4c40;
     ::ll::UntypedStorage<8, 104> mUnk4ed5a0;
     ::ll::UntypedStorage<8, 104> mUnk1cf322;
-    ::ll::UntypedStorage<1, 1>   mUnk45df51;
+    ::ll::UntypedStorage<1, 1> mUnk45df51;
     // NOLINTEND
 
 public:
@@ -41,9 +41,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::LeashableDefinition>>& root
-    );
+    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::LeashableDefinition>>& root);
     // NOLINTEND
 
 public:
@@ -51,4 +49,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

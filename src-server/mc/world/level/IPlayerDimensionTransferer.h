@@ -26,8 +26,7 @@ public:
     virtual ~IPlayerDimensionTransferer() = default;
 
     // vIndex: 3
-    virtual void
-    playerSaveLimboActors(::Player&, ::ChangeDimensionRequest&, ::Dimension&, ::PlayerLimboActorManager*) = 0;
+    virtual void playerSaveLimboActors(::Player&, ::ChangeDimensionRequest&, ::Dimension&, ::PlayerLimboActorManager*) = 0;
 
     // vIndex: 4
     virtual void playerDestroyRemotePlayers(::GameplayUserManager&) = 0;
@@ -77,4 +76,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

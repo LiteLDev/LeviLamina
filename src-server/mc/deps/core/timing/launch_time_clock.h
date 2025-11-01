@@ -8,4 +8,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::chrono::nanoseconds time_since_launch();
     // NOLINTEND
+
 };

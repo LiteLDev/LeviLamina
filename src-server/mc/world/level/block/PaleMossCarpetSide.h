@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class PaleMossCarpetSide : int {
-    None  = 0,
+    None = 0,
     Short = 1,
-    Tall  = 2,
+    Tall = 2,
     Count = 3,
 };

@@ -16,18 +16,18 @@ class FogCommand : public ::Command {
 public:
     // FogCommand inner types define
     enum class Mode : int {
-        Push   = 0,
-        Pop    = 1,
+        Push = 0,
+        Pop = 1,
         Remove = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 200> mUnkd7c0cd;
-    ::ll::UntypedStorage<4, 4>   mUnk759b03;
-    ::ll::UntypedStorage<8, 32>  mUnk1ad1dd;
-    ::ll::UntypedStorage<8, 32>  mUnkdd8a6b;
+    ::ll::UntypedStorage<4, 4> mUnk759b03;
+    ::ll::UntypedStorage<8, 32> mUnk1ad1dd;
+    ::ll::UntypedStorage<8, 32> mUnkdd8a6b;
     // NOLINTEND
 
 public:
@@ -63,4 +63,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

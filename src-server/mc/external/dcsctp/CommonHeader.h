@@ -19,6 +19,7 @@ public:
     CommonHeader& operator=(CommonHeader const&);
     CommonHeader(CommonHeader const&);
     CommonHeader();
+
 };
 
-} // namespace dcsctp
+}

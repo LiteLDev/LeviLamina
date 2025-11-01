@@ -4,7 +4,8 @@
 
 namespace OperationNodeFilters {
 
-template <typename T0>
-class Smooth {};
+template<typename T0>
+class Smooth {
+};
 
-} // namespace OperationNodeFilters
+}

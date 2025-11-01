@@ -16,7 +16,7 @@ struct AttributeInstanceForwarder {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::AttributeInstance*>           mInstance;
+    ::ll::TypedStorage<8, 8, ::AttributeInstance*> mInstance;
     ::ll::TypedStorage<8, 8, ::AttributeModificationContext> mContext;
     // NOLINTEND
 
@@ -31,4 +31,5 @@ public:
 
     MCNAPI bool removeModifier(::mce::UUID const& id);
     // NOLINTEND
+
 };

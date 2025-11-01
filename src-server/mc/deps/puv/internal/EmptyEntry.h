@@ -16,6 +16,7 @@ public:
     EmptyEntry& operator=(EmptyEntry const&);
     EmptyEntry(EmptyEntry const&);
     EmptyEntry();
+
 };
 
-} // namespace Puv::internal::SliceSequence
+}

@@ -7,6 +7,7 @@
 
 namespace LevelChunkTicking {
 
-struct Registry : public ::entt::basic_registry<::LevelChunkTicking::Entity> {};
+struct Registry : public ::entt::basic_registry<::LevelChunkTicking::Entity> {
+};
 
-} // namespace LevelChunkTicking
+}

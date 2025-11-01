@@ -13,4 +13,4 @@ namespace FlatteningUtils::Wool {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-} // namespace FlatteningUtils::Wool
+}

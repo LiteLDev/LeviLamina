@@ -9,6 +9,7 @@ namespace webrtc { class AudioLevel; }
 
 namespace webrtc {
 
-class AudioLevelExtension {};
+class AudioLevelExtension {
+};
 
-} // namespace webrtc
+}

@@ -14,4 +14,5 @@ public:
     AnimationComponentID& operator=(AnimationComponentID const&);
     AnimationComponentID(AnimationComponentID const&);
     AnimationComponentID();
+
 };

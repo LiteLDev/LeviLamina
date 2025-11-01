@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor { struct EditorStructureMetadataQueryParams; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -14,8 +15,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk98b32e;
+    ::ll::UntypedStorage<8, 40> mUnkb15af5;
     ::ll::UntypedStorage<8, 32> mUnkb53a96;
-    ::ll::UntypedStorage<8, 40> mUnkbd6679;
+    ::ll::UntypedStorage<8, 40> mUnk97a479;
+    ::ll::UntypedStorage<8, 40> mUnk1c15ff;
     ::ll::UntypedStorage<8, 40> mUnk46e81d;
     // NOLINTEND
 
@@ -30,11 +33,11 @@ public:
 
     MCNAPI ScriptEditorStructureSearchOptions(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions&
-    operator=(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
+    MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions& operator=(::Editor::ScriptModule::ScriptEditorStructureSearchOptions&&);
 
-    MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions&
-    operator=(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
+    MCNAPI ::Editor::ScriptModule::ScriptEditorStructureSearchOptions& operator=(::Editor::ScriptModule::ScriptEditorStructureSearchOptions const&);
+
+    MCNAPI ::Editor::EditorStructureMetadataQueryParams toQueryParams() const;
 
     MCNAPI ~ScriptEditorStructureSearchOptions();
     // NOLINTEND
@@ -58,6 +61,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

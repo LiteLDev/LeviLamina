@@ -20,4 +20,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::EffectDuration const& INFINITE_DURATION();
     // NOLINTEND
+
 };

@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 336> mUnk30fe52;
-    ::ll::UntypedStorage<8, 32>  mUnk81336f;
+    ::ll::UntypedStorage<8, 32> mUnk81336f;
     // NOLINTEND
 
 public:
@@ -21,8 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&
-    operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&&);
+    MCNAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions& operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleConditions&&);
 
     MCNAPI ~AutomaticFeatureRuleConditions();
     // NOLINTEND
@@ -32,6 +31,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_20
+}

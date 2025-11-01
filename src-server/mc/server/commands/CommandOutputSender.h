@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk9d00b4;
-    ::ll::UntypedStorage<8, 8>  mUnkf1fd72;
+    ::ll::UntypedStorage<8, 8> mUnkf1fd72;
     // NOLINTEND
 
 public:
@@ -42,8 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void
-    sendToAdmins(::CommandOrigin const& origin, ::CommandOutput const& output, ::CommandPermissionLevel opPermLevel);
+    MCNAPI void sendToAdmins(::CommandOrigin const& origin, ::CommandOutput const& output, ::CommandPermissionLevel opPermLevel);
     // NOLINTEND
 
 public:
@@ -65,4 +64,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

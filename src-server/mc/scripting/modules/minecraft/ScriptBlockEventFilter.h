@@ -29,11 +29,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptBlockEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
 
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&
-    operator=(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter& operator=(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter const&);
 
-    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&
-    operator=(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&&);
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter& operator=(::ScriptModuleMinecraft::EventFilters::ScriptBlockEventFilter&&);
 
     MCNAPI void process();
 
@@ -59,6 +57,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft::EventFilters
+}

@@ -29,20 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptInvalidActorError(
-        ::ScriptModuleMinecraft::ErrorMemberType    memberType,
-        ::ScriptModuleMinecraft::ScriptActor const& invalidActor,
-        ::std::string_view                          functionName,
-        ::std::string_view                          entityName
-    );
+    MCAPI ScriptInvalidActorError(::ScriptModuleMinecraft::ErrorMemberType memberType, ::ScriptModuleMinecraft::ScriptActor const& invalidActor, ::std::string_view functionName, ::std::string_view entityName);
 
-    MCAPI ScriptInvalidActorError(
-        ::ScriptModuleMinecraft::ErrorMemberType memberType,
-        ::std::string_view                       typeId,
-        ::std::string_view                       id,
-        ::std::string_view                       functionName,
-        ::std::string_view                       entityName
-    );
+    MCAPI ScriptInvalidActorError(::ScriptModuleMinecraft::ErrorMemberType memberType, ::std::string_view typeId, ::std::string_view id, ::std::string_view functionName, ::std::string_view entityName);
 
     MCAPI ~ScriptInvalidActorError();
     // NOLINTEND
@@ -56,20 +45,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ScriptModuleMinecraft::ErrorMemberType    memberType,
-        ::ScriptModuleMinecraft::ScriptActor const& invalidActor,
-        ::std::string_view                          functionName,
-        ::std::string_view                          entityName
-    );
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ErrorMemberType memberType, ::ScriptModuleMinecraft::ScriptActor const& invalidActor, ::std::string_view functionName, ::std::string_view entityName);
 
-    MCAPI void* $ctor(
-        ::ScriptModuleMinecraft::ErrorMemberType memberType,
-        ::std::string_view                       typeId,
-        ::std::string_view                       id,
-        ::std::string_view                       functionName,
-        ::std::string_view                       entityName
-    );
+    MCAPI void* $ctor(::ScriptModuleMinecraft::ErrorMemberType memberType, ::std::string_view typeId, ::std::string_view id, ::std::string_view functionName, ::std::string_view entityName);
     // NOLINTEND
 
 public:
@@ -77,6 +55,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

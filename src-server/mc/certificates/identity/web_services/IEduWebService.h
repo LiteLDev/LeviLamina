@@ -30,17 +30,10 @@ public:
     virtual void setSkin(::std::string const&) = 0;
 
     // vIndex: 4
-    virtual void signinForDemo(
-        ::std::function<
-            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>
-    ) = 0;
+    virtual void signinForDemo(::std::function<void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>) = 0;
 
     // vIndex: 5
-    virtual void signin(
-        ::std::function<
-            void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>,
-        ::std::string const&
-    ) = 0;
+    virtual void signin(::std::function<void(::std::variant<::WebServices::EduSignin::SigninResponse, ::WebServices::EduSignin::SigninError>)>, ::std::string const&) = 0;
 
     // vIndex: 6
     virtual void sendInitialPackRequest(::std::function<void(::std::vector<::ServicePack>)>) = 0;
@@ -51,6 +44,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace WebServices
+}

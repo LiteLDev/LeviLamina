@@ -18,11 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::MolangQueryFunctionReturnType> mReturnType;
-    ::ll::TypedStorage<
-        8,
-        8,
-        ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> const*>
-                                              mQueryFunctionPtr;
+    ::ll::TypedStorage<8, 8, ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> const*> mQueryFunctionPtr;
     ::ll::TypedStorage<8, 48, ::HashedString> mName;
     // NOLINTEND
 
@@ -37,4 +33,5 @@ public:
     // NOLINTBEGIN
     MCAPI ::MolangQueryFunctionPtr& operator=(::MolangQueryFunctionPtr&&);
     // NOLINTEND
+
 };

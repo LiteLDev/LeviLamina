@@ -14,7 +14,7 @@ class BodyControl : public ::Control {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>   mStillTicks;
+    ::ll::TypedStorage<4, 4, int> mStillTicks;
     ::ll::TypedStorage<4, 4, float> mLastYHeadRot;
     // NOLINTEND
 
@@ -45,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

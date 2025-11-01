@@ -12,7 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkfdce37;
-    ::ll::UntypedStorage<4, 4>  mUnk5eba57;
+    ::ll::UntypedStorage<4, 4> mUnk5eba57;
     // NOLINTEND
 
 public:
@@ -20,4 +20,5 @@ public:
     StopwatchHandler& operator=(StopwatchHandler const&);
     StopwatchHandler(StopwatchHandler const&);
     StopwatchHandler();
+
 };

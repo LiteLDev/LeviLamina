@@ -20,7 +20,7 @@ public:
     // clang-format off
     struct Key;
     // clang-format on
-
+    
     // ScriptBiomeType inner types define
     struct Key {
     public:
@@ -28,19 +28,20 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnkb84624;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Key& operator=(Key const&);
         Key(Key const&);
         Key();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkb4cea5;
-    ::ll::UntypedStorage<8, 8>  mUnkd2271f;
+    ::ll::UntypedStorage<8, 8> mUnkd2271f;
     // NOLINTEND
 
 public:
@@ -60,9 +61,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType>
-    getOrCreateHandle(::Biome const& biome, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBiomeType> getOrCreateHandle(::Biome const& biome, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

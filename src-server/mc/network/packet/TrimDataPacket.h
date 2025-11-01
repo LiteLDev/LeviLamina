@@ -21,7 +21,7 @@ class TrimDataPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::TrimPattern>>  mTrimPatterns;
+    ::ll::TypedStorage<8, 24, ::std::vector<::TrimPattern>> mTrimPatterns;
     ::ll::TypedStorage<8, 24, ::std::vector<::TrimMaterial>> mTrimMaterials;
     // NOLINTEND
 
@@ -34,10 +34,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -47,8 +47,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TrimDataPacket
-    prepareFromRegistries(::TrimPatternRegistry const& patternRegistry, ::TrimMaterialRegistry const& materialRegistry);
+    MCAPI static ::TrimDataPacket prepareFromRegistries(::TrimPatternRegistry const& patternRegistry, ::TrimMaterialRegistry const& materialRegistry);
     // NOLINTEND
 
 public:
@@ -74,4 +73,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

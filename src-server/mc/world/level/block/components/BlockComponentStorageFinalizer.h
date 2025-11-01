@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void _addMissingVoxelShapesComponent(::Block& block);
     // NOLINTEND
+
 };

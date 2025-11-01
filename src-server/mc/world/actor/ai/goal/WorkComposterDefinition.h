@@ -15,13 +15,13 @@ class WorkComposterDefinition : public ::WorkDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>  mMinUseBlockDelay;
-    ::ll::TypedStorage<4, 4, int>  mMaxUseBlockDelay;
-    ::ll::TypedStorage<4, 4, int>  mMaxItemsPerUse;
-    ::ll::TypedStorage<4, 4, int>  mMaxBlockInteractions;
+    ::ll::TypedStorage<4, 4, int> mMinUseBlockDelay;
+    ::ll::TypedStorage<4, 4, int> mMaxUseBlockDelay;
+    ::ll::TypedStorage<4, 4, int> mMaxItemsPerUse;
+    ::ll::TypedStorage<4, 4, int> mMaxBlockInteractions;
     ::ll::TypedStorage<1, 1, bool> mCanFillComposter;
     ::ll::TypedStorage<1, 1, bool> mCanEmptyComposter;
-    ::ll::TypedStorage<4, 4, int>  mMinItemCount;
+    ::ll::TypedStorage<4, 4, int> mMinItemCount;
     // NOLINTEND
 
 public:
@@ -34,10 +34,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        ::std::string const&                                                                                    name,
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::WorkComposterDefinition>>& root
-    );
+    MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::WorkComposterDefinition>>& root);
     // NOLINTEND
 
 public:
@@ -45,4 +42,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

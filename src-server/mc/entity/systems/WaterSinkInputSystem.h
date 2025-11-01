@@ -21,19 +21,9 @@ class WaterSinkInputSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void doInWaterSinkInputSystem(
-        ::MovementAbilitiesComponent const& abilitiesComponent,
-        ::MoveInputComponent const&         moveInputComponent,
-        ::StateVectorComponent&             stateVectorComponent
-    );
+    MCNAPI static void doInWaterSinkInputSystem(::MovementAbilitiesComponent const& abilitiesComponent, ::MoveInputComponent const& moveInputComponent, ::StateVectorComponent& stateVectorComponent);
 
-    MCNAPI static void tickWaterSinkInputSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent, ::WasInWaterFlagComponent>,
-            ::MovementAbilitiesComponent const,
-            ::MoveInputComponent const,
-            ::StateVectorComponent> view
-    );
+    MCNAPI static void tickWaterSinkInputSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::PlayerInputRequestComponent, ::WasInWaterFlagComponent>, ::MovementAbilitiesComponent const, ::MoveInputComponent const, ::StateVectorComponent> view);
     // NOLINTEND
+
 };

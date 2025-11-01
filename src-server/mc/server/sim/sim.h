@@ -22,4 +22,4 @@ MCAPI ::sim::LookAtIntent lookAt(::SimulatedPlayer& player, ::EntityContext& ent
 MCAPI ::sim::BuildIntent startBuild(::SimulatedPlayer& player, ::BlockSource& region, int slot);
 // NOLINTEND
 
-} // namespace sim
+}

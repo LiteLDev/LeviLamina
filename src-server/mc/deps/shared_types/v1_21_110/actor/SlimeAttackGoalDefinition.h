@@ -40,8 +40,15 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool const& DEFAULT_SET_PERSISTENT();
 
+    MCNAPI static float const& DEFAULT_SPEED_MULTIPLIER();
+
+    MCNAPI static float const& DEFAULT_X_MAX_ROTATION();
+
+    MCNAPI static float const& DEFAULT_Y_MAX_ROTATION();
+
     MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_110
+}

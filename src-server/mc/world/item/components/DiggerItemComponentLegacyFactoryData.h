@@ -18,9 +18,9 @@ struct DiggerItemComponentLegacyFactoryData : public ::IItemComponentLegacyFacto
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                  mUseEfficiency;
+    ::ll::TypedStorage<1, 1, bool> mUseEfficiency;
     ::ll::TypedStorage<8, 24, ::std::vector<::DiggerBlockTypeInfo>> mDestroySpeeds;
-    ::ll::TypedStorage<8, 56, ::DefinitionTrigger>                  mOnDigDefault;
+    ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnDigDefault;
     // NOLINTEND
 
 public:
@@ -46,11 +46,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
     // NOLINTEND
 
 public:
@@ -70,4 +66,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

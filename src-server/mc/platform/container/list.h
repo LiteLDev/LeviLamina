@@ -4,7 +4,8 @@
 
 namespace Bedrock::Intrusive {
 
-template <typename T0, typename T1, typename T2>
-class list {};
+template<typename T0, typename T1, typename T2>
+class list {
+};
 
-} // namespace Bedrock::Intrusive
+}

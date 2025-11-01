@@ -13,8 +13,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::CavifierNoises const&> mCavifierNoises;
-    ::ll::TypedStorage<4, 4, float>                   mMinCellY;
-    ::ll::TypedStorage<4, 4, float>                   mDensityBoost;
+    ::ll::TypedStorage<4, 4, float> mMinCellY;
+    ::ll::TypedStorage<4, 4, float> mDensityBoost;
     // NOLINTEND
 
 public:
@@ -32,4 +32,5 @@ public:
 
     MCAPI float cavify(::Vec3 worldPos, int, float density) const;
     // NOLINTEND
+
 };

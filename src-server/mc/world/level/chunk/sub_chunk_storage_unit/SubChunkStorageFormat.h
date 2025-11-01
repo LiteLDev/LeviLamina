@@ -12,5 +12,6 @@ public:
     ::ll::UntypedStorage<1, 1> mUnk9fe4a1;
     ::ll::UntypedStorage<1, 1> mUnka84941;
     // NOLINTEND
+
 };
-} // namespace SubChunkStorageUnit
+}

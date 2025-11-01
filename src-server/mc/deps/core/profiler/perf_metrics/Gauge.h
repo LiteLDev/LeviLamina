@@ -7,6 +7,7 @@
 
 namespace PerfMetrics {
 
-class Gauge : public ::PerfMetrics::Counter {};
+class Gauge : public ::PerfMetrics::Counter {
+};
 
-} // namespace PerfMetrics
+}

@@ -4,6 +4,6 @@
 
 enum class FileStorageDirectory : int {
     External = 1,
-    AppData  = 2,
-    None     = 3,
+    AppData = 2,
+    None = 3,
 };

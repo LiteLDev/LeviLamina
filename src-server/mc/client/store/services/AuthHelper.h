@@ -24,9 +24,9 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk4aeb32;
     ::ll::UntypedStorage<8, 32> mUnk66b210;
     ::ll::UntypedStorage<8, 32> mUnk55e03e;
-    ::ll::UntypedStorage<8, 8>  mUnkc88383;
+    ::ll::UntypedStorage<8, 8> mUnkc88383;
     ::ll::UntypedStorage<8, 32> mUnk4e0ec8;
-    ::ll::UntypedStorage<4, 4>  mUnk3b7878;
+    ::ll::UntypedStorage<4, 4> mUnk3b7878;
     // NOLINTEND
 
 public:
@@ -47,14 +47,9 @@ public:
     // NOLINTBEGIN
     MCNAPI AuthHelper(::std::string applicationId, ::std::string applicationTenantId, int maxAuthRetryAttempts);
 
-    MCNAPI ::nonstd::expected<::std::string, ::Bedrock::Threading::CachedAsyncRetry>
-    _handleResponse(int retryCount, ::Bedrock::Services::AzureGetTokenHttpResponse responseInfo);
+    MCNAPI ::nonstd::expected<::std::string, ::Bedrock::Threading::CachedAsyncRetry> _handleResponse(int retryCount, ::Bedrock::Services::AzureGetTokenHttpResponse responseInfo);
 
-    MCNAPI ::Bedrock::Threading::Async<::std::string> getAuthToken(
-        ::DiscoveryEnvironment                      environment,
-        ::std::string const&                        serviceName,
-        ::Bedrock::Services::AuthTokenRetrievalType authTokenRetrievalType
-    );
+    MCNAPI ::Bedrock::Threading::Async<::std::string> getAuthToken(::DiscoveryEnvironment environment, ::std::string const& serviceName, ::Bedrock::Services::AuthTokenRetrievalType authTokenRetrievalType);
     // NOLINTEND
 
 public:
@@ -74,6 +69,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Services
+}

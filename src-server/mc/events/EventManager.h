@@ -19,8 +19,6 @@ class EventManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk14b190;
-    ::ll::UntypedStorage<8, 8>  mUnk68606b;
     ::ll::UntypedStorage<8, 24> mUnkabddfc;
     ::ll::UntypedStorage<8, 24> mUnkd72b3b;
     ::ll::UntypedStorage<8, 64> mUnk1501bd;
@@ -28,17 +26,17 @@ public:
     ::ll::UntypedStorage<8, 64> mUnkf7e314;
     ::ll::UntypedStorage<8, 64> mUnke48a90;
     ::ll::UntypedStorage<8, 64> mUnk14f226;
-    ::ll::UntypedStorage<8, 8>  mUnk70a5fe;
-    ::ll::UntypedStorage<8, 8>  mUnk5ff13c;
-    ::ll::UntypedStorage<8, 8>  mUnk27720e;
-    ::ll::UntypedStorage<8, 8>  mUnke742b0;
-    ::ll::UntypedStorage<8, 8>  mUnkb0340f;
-    ::ll::UntypedStorage<8, 8>  mUnk7e8048;
-    ::ll::UntypedStorage<8, 8>  mUnk4a6715;
-    ::ll::UntypedStorage<4, 4>  mUnk4f8cc4;
-    ::ll::UntypedStorage<1, 1>  mUnk6fc9f0;
-    ::ll::UntypedStorage<1, 1>  mUnk60b46f;
-    ::ll::UntypedStorage<8, 8>  mUnk893c04;
+    ::ll::UntypedStorage<8, 8> mUnk70a5fe;
+    ::ll::UntypedStorage<8, 8> mUnk5ff13c;
+    ::ll::UntypedStorage<8, 8> mUnk27720e;
+    ::ll::UntypedStorage<8, 8> mUnke742b0;
+    ::ll::UntypedStorage<8, 8> mUnkb0340f;
+    ::ll::UntypedStorage<8, 8> mUnk7e8048;
+    ::ll::UntypedStorage<8, 8> mUnk4a6715;
+    ::ll::UntypedStorage<4, 4> mUnk4f8cc4;
+    ::ll::UntypedStorage<1, 1> mUnk6fc9f0;
+    ::ll::UntypedStorage<1, 1> mUnk60b46f;
+    ::ll::UntypedStorage<8, 8> mUnk893c04;
     ::ll::UntypedStorage<8, 16> mUnkc396ea;
     // NOLINTEND
 
@@ -59,14 +57,9 @@ public:
 
     MCNAPI void addListener(::std::unique_ptr<::Social::Events::IEventListener> listener);
 
-    MCNAPI ::std::unordered_map<::std::string, ::Social::Events::Property>
-    buildCommonProperties(uint userId, ::std::vector<::std::string> const& exclude) const;
+    MCNAPI ::std::unordered_map<::std::string, ::Social::Events::Property> buildCommonProperties(uint userId, ::std::vector<::std::string> const& exclude) const;
 
-    MCNAPI void buildCommonProperties(
-        ::std::unordered_map<::std::string, ::Social::Events::Property>& props,
-        uint                                                             userId,
-        ::std::vector<::std::string> const&                              exclude
-    ) const;
+    MCNAPI void buildCommonProperties(::std::unordered_map<::std::string, ::Social::Events::Property>& props, uint userId, ::std::vector<::std::string> const& exclude) const;
 
     MCNAPI ::Social::Events::Property getGlobalProperty(::std::string const& name) const;
 
@@ -86,12 +79,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::std::string GetEdition();
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::AppPlatform> const& appPlatform);
@@ -102,6 +89,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Social::Events
+}

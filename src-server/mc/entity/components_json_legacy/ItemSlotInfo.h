@@ -9,7 +9,7 @@ public:
         Inventory = 0,
         Equipment = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -22,4 +22,5 @@ public:
     ItemSlotInfo& operator=(ItemSlotInfo const&);
     ItemSlotInfo(ItemSlotInfo const&);
     ItemSlotInfo();
+
 };

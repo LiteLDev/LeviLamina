@@ -4,6 +4,7 @@
 
 namespace SharedTypes::Legacy::Spawn {
 
-struct IsPersistant {};
+struct IsPersistant {
+};
 
-} // namespace SharedTypes::Legacy::Spawn
+}

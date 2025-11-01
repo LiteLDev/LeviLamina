@@ -22,6 +22,7 @@ public:
     CompressedImageDescription& operator=(CompressedImageDescription const&);
     CompressedImageDescription(CompressedImageDescription const&);
     CompressedImageDescription();
+
 };
 
-} // namespace texd
+}

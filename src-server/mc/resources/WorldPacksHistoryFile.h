@@ -12,10 +12,10 @@ public:
     // WorldPacksHistoryFile inner types define
     enum class ParseResult : int {
         InvalidArrayOfPacks = 0,
-        InvalidPack         = 1,
-        Success             = 2,
+        InvalidPack = 1,
+        Success = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -41,4 +41,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

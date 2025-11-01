@@ -14,7 +14,7 @@ struct ComponentInfo;
 struct SystemInfo {
 public:
     // SystemInfo inner types define
-    using GenerateComponentInfoVectorFunction = ::std::vector<::ComponentInfo> (*)();
+    using GenerateComponentInfoVectorFunction = ::std::vector<::ComponentInfo>(*) ();
 
 public:
     // member variables
@@ -49,4 +49,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

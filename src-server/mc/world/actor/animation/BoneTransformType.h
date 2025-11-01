@@ -5,6 +5,6 @@
 enum class BoneTransformType : int {
     Position = 0,
     Rotation = 1,
-    Scale    = 2,
-    Count    = 3,
+    Scale = 2,
+    Count = 3,
 };

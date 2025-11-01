@@ -24,13 +24,7 @@ public:
     virtual bool canStartLocalServer() const = 0;
 
     // vIndex: 2
-    virtual ::Bedrock::Threading::Async<void> startLocalServerAsync(
-        ::std::string const&,
-        ::std::string const&,
-        ::ContentIdentity const&,
-        ::LevelSettings const&,
-        ::StartIntent
-    ) = 0;
+    virtual ::Bedrock::Threading::Async<void> startLocalServerAsync(::std::string const&, ::std::string const&, ::ContentIdentity const&, ::LevelSettings const&, ::StartIntent) = 0;
 
     // vIndex: 3
     virtual bool isHostingLocalDedicatedServer() const = 0;
@@ -44,4 +38,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

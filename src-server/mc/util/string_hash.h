@@ -4,6 +4,7 @@
 
 namespace Util {
 
-struct string_hash {};
+struct string_hash {
+};
 
-} // namespace Util
+}

@@ -38,45 +38,12 @@ struct VanillaOffsetComponent;
 struct VehicleComponent;
 // clang-format on
 
-class MobSuffocationSystemImpl
-: public ::IStrictTickingSystem<::StrictExecutionContext<
-      ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
-      ::Read<
-          ::StateVectorComponent,
-          ::AABBShapeComponent,
-          ::SynchedActorDataComponent,
-          ::OffsetsComponent,
-          ::VehicleComponent,
-          ::ActorRotationComponent,
-          ::VanillaOffsetComponent,
-          ::PassengerRenderingRidingOffsetComponent>,
-      ::Write<::ActorInWallDetectionComponent>,
-      ::AddRemove<::MobIsSuffocatingFlagComponent>,
-      ::GlobalRead<>,
-      ::GlobalWrite<>,
-      ::EntityFactoryT<>>> {
+class MobSuffocationSystemImpl : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>, ::Read<::StateVectorComponent, ::AABBShapeComponent, ::SynchedActorDataComponent, ::OffsetsComponent, ::VehicleComponent, ::ActorRotationComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent>, ::Write<::ActorInWallDetectionComponent>, ::AddRemove<::MobIsSuffocatingFlagComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(
-        ::StrictExecutionContext<
-            ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
-            ::Read<
-                ::StateVectorComponent,
-                ::AABBShapeComponent,
-                ::SynchedActorDataComponent,
-                ::OffsetsComponent,
-                ::VehicleComponent,
-                ::ActorRotationComponent,
-                ::VanillaOffsetComponent,
-                ::PassengerRenderingRidingOffsetComponent>,
-            ::Write<::ActorInWallDetectionComponent>,
-            ::AddRemove<::MobIsSuffocatingFlagComponent>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext
-    ) /*override*/;
+    virtual void tick(::StrictExecutionContext<::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>, ::Read<::StateVectorComponent, ::AABBShapeComponent, ::SynchedActorDataComponent, ::OffsetsComponent, ::VehicleComponent, ::ActorRotationComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent>, ::Write<::ActorInWallDetectionComponent>, ::AddRemove<::MobIsSuffocatingFlagComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext) /*override*/;
 
     // vIndex: 0
     virtual ~MobSuffocationSystemImpl() /*override*/ = default;
@@ -85,58 +52,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _hasPlayerPassenger(
-        ::Optional<::VehicleComponent const> optionalVehicleComponent,
-        ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent, ::PassengerComponent>> const& playerPassengers
-    );
+    MCNAPI static bool _hasPlayerPassenger(::Optional<::VehicleComponent const> optionalVehicleComponent, ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent, ::PassengerComponent>> const& playerPassengers);
 
-    MCNAPI static void _tickCheckSuffocation(
-        ::StrictEntityContext const&           entity,
-        ::ActorInWallDetectionComponent const& actorInWallDetectionComponent,
-        ::StateVectorComponent const&          stateVectorComponent,
-        ::AABBShapeComponent const&            aabbShapeComponent,
-        ::SynchedActorDataComponent const&     synchedActorDataComponent,
-        ::OffsetsComponent const&              offsetsComponent,
-        ::Optional<::VehicleComponent const>   vehicleComponent,
-        ::GetAttachPositionViews const&        getAttachPosViews,
-        ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent, ::PassengerComponent>> const& playerPassengers,
-        ::EntityModifier<::MobIsSuffocatingFlagComponent>                                         modifier,
-        ::IConstBlockSource const&                                                                region
-    );
+    MCNAPI static void _tickCheckSuffocation(::StrictEntityContext const& entity, ::ActorInWallDetectionComponent const& actorInWallDetectionComponent, ::StateVectorComponent const& stateVectorComponent, ::AABBShapeComponent const& aabbShapeComponent, ::SynchedActorDataComponent const& synchedActorDataComponent, ::OffsetsComponent const& offsetsComponent, ::Optional<::VehicleComponent const> vehicleComponent, ::GetAttachPositionViews const& getAttachPosViews, ::ViewT<::StrictEntityContext, ::Include<::PlayerComponent, ::PassengerComponent>> const& playerPassengers, ::EntityModifier<::MobIsSuffocatingFlagComponent> modifier, ::IConstBlockSource const& region);
 
-    MCNAPI static bool isInWall(
-        ::StrictEntityContext const&           entity,
-        ::ActorInWallDetectionComponent const& actorInWallDetectionComponent,
-        ::StateVectorComponent const&          stateVectorComponent,
-        ::AABBShapeComponent const&            aabbShapeComponent,
-        ::SynchedActorDataComponent const&     synchedActorDataComponent,
-        ::OffsetsComponent const&              offsetsComponent,
-        ::GetAttachPositionViews const&        views,
-        ::IConstBlockSource const&             region
-    );
+    MCNAPI static bool isInWall(::StrictEntityContext const& entity, ::ActorInWallDetectionComponent const& actorInWallDetectionComponent, ::StateVectorComponent const& stateVectorComponent, ::AABBShapeComponent const& aabbShapeComponent, ::SynchedActorDataComponent const& synchedActorDataComponent, ::OffsetsComponent const& offsetsComponent, ::GetAttachPositionViews const& views, ::IConstBlockSource const& region);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
-        ::StrictExecutionContext<
-            ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
-            ::Read<
-                ::StateVectorComponent,
-                ::AABBShapeComponent,
-                ::SynchedActorDataComponent,
-                ::OffsetsComponent,
-                ::VehicleComponent,
-                ::ActorRotationComponent,
-                ::VanillaOffsetComponent,
-                ::PassengerRenderingRidingOffsetComponent>,
-            ::Write<::ActorInWallDetectionComponent>,
-            ::AddRemove<::MobIsSuffocatingFlagComponent>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& executionContext
-    );
+    MCNAPI void $tick(::StrictExecutionContext<::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>, ::Read<::StateVectorComponent, ::AABBShapeComponent, ::SynchedActorDataComponent, ::OffsetsComponent, ::VehicleComponent, ::ActorRotationComponent, ::VanillaOffsetComponent, ::PassengerRenderingRidingOffsetComponent>, ::Write<::ActorInWallDetectionComponent>, ::AddRemove<::MobIsSuffocatingFlagComponent>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& executionContext);
     // NOLINTEND
 
 public:
@@ -144,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

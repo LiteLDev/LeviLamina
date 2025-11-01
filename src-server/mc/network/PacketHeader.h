@@ -14,4 +14,5 @@ public:
     PacketHeader& operator=(PacketHeader const&);
     PacketHeader(PacketHeader const&);
     PacketHeader();
+
 };

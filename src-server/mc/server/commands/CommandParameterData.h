@@ -18,18 +18,11 @@ class CommandRegistry;
 class CommandParameterData {
 public:
     // CommandParameterData inner types define
-    using ParseFunction = bool (::CommandRegistry::*)(
-        void*,
-        ::CommandRegistry::ParseToken const&,
-        ::CommandOrigin const&,
-        int,
-        ::std::string&,
-        ::std::vector<::std::string>&
-    ) const;
+    using ParseFunction = bool(::CommandRegistry::*) (void*, ::CommandRegistry::ParseToken const&, ::CommandOrigin const&, int, ::std::string&, ::std::vector<::std::string>&)const;
 
-    using CustomStorageGetFn = void* (*)(::Command*, int);
+    using CustomStorageGetFn = void*(*) (::Command*, int);
 
-    using CustomStorageIsSetFn = bool* (*)(::Command*, int);
+    using CustomStorageIsSetFn = bool*(*) (::Command*, int);
 
 public:
     // member variables
@@ -47,7 +40,7 @@ public:
     bool                                                 mIsOptional;
     ::CommandParameterOption                             mOptions;
     ::ll::TypedStorage<8, 8, void* (*)(::Command*, int)> mValueGetFn{};
-    ::ll::TypedStorage<8, 8, bool* (*)(::Command*, int)> mValueIsSetFn{};
+    ::ll::TypedStorage<8, 8, bool*(*) (::Command*, int)> mValueIsSetFn{};
     // NOLINTEND
 
 
@@ -82,4 +75,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

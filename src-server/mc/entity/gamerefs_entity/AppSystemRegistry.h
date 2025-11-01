@@ -15,4 +15,5 @@ public:
     AppSystemRegistry& operator=(AppSystemRegistry const&);
     AppSystemRegistry(AppSystemRegistry const&);
     AppSystemRegistry();
+
 };

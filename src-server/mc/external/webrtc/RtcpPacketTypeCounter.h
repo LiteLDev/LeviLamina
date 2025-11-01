@@ -20,6 +20,7 @@ public:
     RtcpPacketTypeCounter& operator=(RtcpPacketTypeCounter const&);
     RtcpPacketTypeCounter(RtcpPacketTypeCounter const&);
     RtcpPacketTypeCounter();
+
 };
 
-} // namespace webrtc
+}

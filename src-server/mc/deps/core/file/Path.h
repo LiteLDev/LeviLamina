@@ -14,10 +14,11 @@ public:
     // clang-format off
     struct path_less;
     // clang-format on
-
+    
     // Path inner types define
-    struct path_less {};
-
+    struct path_less {
+    };
+    
 public:
     Path(std::filesystem::path const& path) : Path(path.u8string()) {}
     Path(std::u8string&& path) { mPathPart.mUtf8StdString = std::move(*reinterpret_cast<std::string*>(&path)); }
@@ -59,6 +60,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

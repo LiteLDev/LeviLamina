@@ -13,8 +13,7 @@ namespace dcsctp { struct InvalidStreamIdentifierCauseConfig; }
 
 namespace dcsctp {
 
-class InvalidStreamIdentifierCause : public ::dcsctp::Parameter,
-                                     public ::dcsctp::TLVTrait<::dcsctp::InvalidStreamIdentifierCauseConfig> {
+class InvalidStreamIdentifierCause : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::InvalidStreamIdentifierCauseConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -59,6 +58,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

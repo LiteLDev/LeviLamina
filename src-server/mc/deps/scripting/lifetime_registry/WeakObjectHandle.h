@@ -28,6 +28,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool valid() const;
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

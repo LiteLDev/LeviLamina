@@ -21,8 +21,7 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptBlockVolumeBase : public ::ScriptModuleMinecraft::ScriptBlockVolumeIterable,
-                              public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptBlockVolumeBase> {
+class ScriptBlockVolumeBase : public ::ScriptModuleMinecraft::ScriptBlockVolumeIterable, public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptBlockVolumeBase> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,8 +41,7 @@ public:
     virtual ~ScriptBlockVolumeBase() /*override*/ = default;
 
     // vIndex: 1
-    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator>
-        getBlockLocationIterator(::Scripting::WeakLifetimeScope) = 0;
+    virtual ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockLocationIterator> getBlockLocationIterator(::Scripting::WeakLifetimeScope) = 0;
 
     // vIndex: 2
     virtual ::std::unique_ptr<::BaseBlockLocationIterator> createBlockLocationIterator() = 0;
@@ -86,6 +84,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

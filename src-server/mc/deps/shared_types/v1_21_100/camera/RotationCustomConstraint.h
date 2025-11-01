@@ -3,36 +3,29 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/cereal/BasicNumericConstraint.h"
+#include "mc/deps/cereal/ConstraintHandle.h"
 
 // auto generated forward declare list
 // clang-format off
-namespace cereal { class SerializerContext; }
 namespace cereal::internal { struct ConstraintDescription; }
 // clang-format on
 
 namespace SharedTypes::v1_21_100 {
 
-class RotationCustomConstraint : public ::cereal::BasicNumericConstraint<double> {
+class RotationCustomConstraint : public ::cereal::ConstraintHandle<::SharedTypes::v1_21_100::RotationCustomConstraint> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 1
-    virtual void doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& serializerContext) const
-        /*override*/;
-
     // vIndex: 3
     virtual ::cereal::internal::ConstraintDescription description() const /*override*/;
 
-    // vIndex: 2
+    // vIndex: 1
     virtual ~RotationCustomConstraint() /*override*/ = default;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $doValidate(::entt::meta_any const& any, ::cereal::SerializerContext& serializerContext) const;
-
     MCNAPI ::cereal::internal::ConstraintDescription $description() const;
     // NOLINTEND
 
@@ -41,6 +34,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_100
+}

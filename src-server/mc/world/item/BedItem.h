@@ -22,25 +22,20 @@ class BedItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 89
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    // vIndex: 90
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 60
+    // vIndex: 61
     virtual bool isValidAuxValue(int value) const /*override*/;
 
-    // vIndex: 110
+    // vIndex: 111
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
-    // vIndex: 122
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    // vIndex: 123
+    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
 
-    // vIndex: 119
-    virtual bool
-    _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const
-        /*override*/;
+    // vIndex: 120
+    virtual bool _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 0
     virtual ~BedItem() /*override*/ = default;
@@ -49,25 +44,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::InteractionResult
-    _tryUseOn(::ItemStackBase& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult _tryUseOn(::ItemStackBase& instance, ::Actor& actor, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
     MCFOLD bool $isValidAuxValue(int value) const;
 
     MCFOLD ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
-    MCAPI bool
-    $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
+    MCAPI bool $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
@@ -75,4 +66,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

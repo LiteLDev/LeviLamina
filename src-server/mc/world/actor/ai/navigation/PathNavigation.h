@@ -40,7 +40,7 @@ public:
     virtual bool moveTo(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed);
 
     // vIndex: 7
-    virtual bool moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor& target, float speed);
+    virtual bool moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target, float speed);
 
     // vIndex: 6
     virtual bool moveTo(::NavigationComponent& parent, ::Mob& mob, ::std::unique_ptr<::Path> newPath, float speed);
@@ -81,7 +81,7 @@ public:
 
     MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed);
 
-    MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor& target, float speed);
+    MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target, float speed);
 
     MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::std::unique_ptr<::Path> newPath, float speed);
 
@@ -99,4 +99,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

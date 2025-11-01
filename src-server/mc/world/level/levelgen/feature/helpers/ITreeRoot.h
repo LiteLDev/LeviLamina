@@ -19,14 +19,7 @@ public:
     virtual ~ITreeRoot() = default;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos> placeRoots(
-        ::IBlockWorldGenAPI&,
-        ::BlockPos const&,
-        ::Random&,
-        int,
-        ::RenderParams&,
-        ::TreeHelper::TreeParams const&
-    ) const = 0;
+    virtual ::std::optional<::BlockPos> placeRoots(::IBlockWorldGenAPI&, ::BlockPos const&, ::Random&, int, ::RenderParams&, ::TreeHelper::TreeParams const&) const = 0;
     // NOLINTEND
 
 public:
@@ -34,4 +27,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

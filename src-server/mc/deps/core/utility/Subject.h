@@ -5,7 +5,7 @@
 
 namespace Core {
 
-template <class ObserverType, class LockType>
+template<class ObserverType, class LockType>
 class Subject {
 public:
     LockType                                  mLock;
@@ -24,4 +24,4 @@ public:
     Subject& operator=(Subject const&) = delete;
 };
 
-} // namespace Core
+}

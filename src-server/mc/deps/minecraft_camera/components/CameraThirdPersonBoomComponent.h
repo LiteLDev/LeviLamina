@@ -21,6 +21,7 @@ public:
     CameraThirdPersonBoomComponent& operator=(CameraThirdPersonBoomComponent const&);
     CameraThirdPersonBoomComponent(CameraThirdPersonBoomComponent const&);
     CameraThirdPersonBoomComponent();
+
 };
 
-} // namespace MinecraftCamera
+}

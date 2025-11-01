@@ -16,6 +16,7 @@ public:
     LoaderConfig& operator=(LoaderConfig const&);
     LoaderConfig(LoaderConfig const&);
     LoaderConfig();
+
 };
 
-} // namespace cereal
+}

@@ -13,4 +13,4 @@ namespace mce::BlobHelper {
 MCNAPI void copyStringIntoBlob(::mce::Blob& blob, ::std::string const& source);
 // NOLINTEND
 
-} // namespace mce::BlobHelper
+}

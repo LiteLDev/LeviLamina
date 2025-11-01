@@ -24,21 +24,14 @@ class BaseContainerMenu : public ::ContainerContentChangeListener, public ::ICon
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Player&>                                     mPlayer;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>                   mLastSlots;
+    ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mLastSlots;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerContainerRefresher>> mContainerRefresher;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::DynamicContainerTracker>> mDynamicContainerTracker;
-    ::ll::TypedStorage<1, 1, ::ContainerID>                                 mContainerId;
-    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType>          mContainerType;
-    ::ll::TypedStorage<4, 4, int>                                           mTicksSinceLastCleanup;
-    ::ll::TypedStorage<
-        8,
-        8,
-        ::std::unique_ptr<::Bedrock::PubSub::Publisher<
-            void(::SharedTypes::Legacy::ContainerType),
-            ::Bedrock::PubSub::ThreadModel::SingleThreaded,
-            0>>>
-        mContainerTypeSubscribers;
+    ::ll::TypedStorage<1, 1, ::ContainerID> mContainerId;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::Legacy::ContainerType> mContainerType;
+    ::ll::TypedStorage<4, 4, int> mTicksSinceLastCleanup;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Bedrock::PubSub::Publisher<void(::SharedTypes::Legacy::ContainerType), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>> mContainerTypeSubscribers;
     // NOLINTEND
 
 public:
@@ -93,9 +86,7 @@ public:
     virtual void setContainerType(::SharedTypes::Legacy::ContainerType type) /*override*/;
 
     // vIndex: 5
-    virtual ::Bedrock::PubSub::Subscription
-    registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const
-        /*override*/;
+    virtual ::Bedrock::PubSub::Subscription registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const /*override*/;
 
     // vIndex: 13
     virtual void broadcastChanges() /*override*/;
@@ -143,8 +134,7 @@ public:
 
     MCNAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
 
-    MCNAPI ::Bedrock::PubSub::Subscription
-    $registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const;
+    MCNAPI ::Bedrock::PubSub::Subscription $registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const;
 
     MCNAPI void $broadcastChanges();
     // NOLINTEND
@@ -156,4 +146,5 @@ public:
 
     MCNAPI static void** $vftableForIContainerManager();
     // NOLINTEND
+
 };

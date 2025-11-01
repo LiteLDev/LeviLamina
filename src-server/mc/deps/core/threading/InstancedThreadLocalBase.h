@@ -4,6 +4,7 @@
 
 namespace Bedrock::Threading {
 
-class InstancedThreadLocalBase {};
+class InstancedThreadLocalBase {
+};
 
-} // namespace Bedrock::Threading
+}

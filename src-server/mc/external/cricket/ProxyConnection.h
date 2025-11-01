@@ -32,7 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6
-    virtual int Send(void const* data, uint64 size, ::rtc::PacketOptions const& options) /*override*/;
+    virtual int Send(void const* data, uint64 len, ::rtc::PacketOptions const& options) /*override*/;
 
     // vIndex: 7
     virtual int GetError() /*override*/;
@@ -44,24 +44,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ProxyConnection(
-        ::rtc::WeakPtr<::cricket::PortInterface> port,
-        uint64                                   index,
-        ::cricket::Candidate const&              remote_candidate
-    );
+    MCNAPI ProxyConnection(::rtc::WeakPtr<::cricket::PortInterface> port, uint64 index, ::cricket::Candidate const& remote_candidate);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::rtc::WeakPtr<::cricket::PortInterface> port, uint64 index, ::cricket::Candidate const& remote_candidate);
+    MCNAPI void* $ctor(::rtc::WeakPtr<::cricket::PortInterface> port, uint64 index, ::cricket::Candidate const& remote_candidate);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $Send(void const* data, uint64 size, ::rtc::PacketOptions const& options);
+    MCNAPI int $Send(void const* data, uint64 len, ::rtc::PacketOptions const& options);
 
     MCNAPI int $GetError();
     // NOLINTEND
@@ -71,6 +66,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

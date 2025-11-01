@@ -19,7 +19,7 @@ struct ItemEventPlaceHolder {
     char pad[N];
 };
 
-template <typename Return>
+template<typename Return>
 struct MutableItemGameplayEvent;
 
 template <>
@@ -33,4 +33,5 @@ struct MutableItemGameplayEvent<CoordinatorResult> : MutableEventVariant<
                                                          ItemStartUseEvent,
                                                          ItemCompleteUseEvent,
                                                          ItemReleaseUseEvent,
-                                                         ItemStopUseEvent> {};
+                                                         ItemStopUseEvent> {
+};

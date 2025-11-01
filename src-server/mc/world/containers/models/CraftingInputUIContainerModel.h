@@ -18,7 +18,7 @@ public:
     // vIndex: 1
     virtual ~CraftingInputUIContainerModel() /*override*/ = default;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual int _getContainerOffset() const /*override*/;
     // NOLINTEND
 
@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

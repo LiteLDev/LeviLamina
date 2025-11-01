@@ -13,12 +13,11 @@
 struct PlayerDamageEvent;
 // clang-format on
 
-class VanillaNetworkEventListener : public ::EventListenerDispatcher<::ActorEventListener>,
-                                    public ::EventListenerDispatcher<::PlayerEventListener> {
+class VanillaNetworkEventListener : public ::EventListenerDispatcher<::ActorEventListener>, public ::EventListenerDispatcher<::PlayerEventListener> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 67
+    // vIndex: 70
     virtual ::EventResult onEvent(::PlayerDamageEvent const&) /*override*/;
 
     // vIndex: 0
@@ -30,4 +29,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

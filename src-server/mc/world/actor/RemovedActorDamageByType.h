@@ -28,8 +28,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 10
-    virtual ::std::pair<::std::string, ::std::vector<::std::string>>
-    getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
+    virtual ::std::pair<::std::string, ::std::vector<::std::string>> getDeathMessage(::std::string deadName, ::Actor* dead) const /*override*/;
 
     // vIndex: 21
     virtual ::std::unique_ptr<::ActorDamageSource> clone() const /*override*/;
@@ -46,4 +45,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

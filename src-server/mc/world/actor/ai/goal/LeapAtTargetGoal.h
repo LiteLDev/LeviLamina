@@ -17,10 +17,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mTarget;
-    ::ll::TypedStorage<4, 4, float>                mYd;
-    ::ll::TypedStorage<1, 1, bool>                 mMustBeOnGround;
-    ::ll::TypedStorage<8, 8, ::Mob&>               mMob;
-    ::ll::TypedStorage<1, 1, bool>                 mSetPersistent;
+    ::ll::TypedStorage<4, 4, float> mYd;
+    ::ll::TypedStorage<1, 1, bool> mMustBeOnGround;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<1, 1, bool> mSetPersistent;
     // NOLINTEND
 
 public:
@@ -65,4 +65,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

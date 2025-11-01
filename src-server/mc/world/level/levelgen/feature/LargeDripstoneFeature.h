@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/feature/IFeature.h"
 
 // auto generated forward declare list
@@ -19,32 +19,29 @@ public:
     // clang-format off
     class LargeDripstone;
     // clang-format on
-
+    
     // LargeDripstoneFeature inner types define
     class LargeDripstone {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 12, ::BlockPos> mRoot;
-        ::ll::TypedStorage<1, 1, bool const>  mPointingUp;
-        ::ll::TypedStorage<4, 4, int>         mRadius;
+        ::ll::TypedStorage<1, 1, bool const> mPointingUp;
+        ::ll::TypedStorage<4, 4, int> mRadius;
         ::ll::TypedStorage<4, 4, float const> mBluntness;
         ::ll::TypedStorage<4, 4, float const> mScale;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(
-            ::IBlockWorldGenAPI&                   target,
-            ::DripstoneUtils::WindOffsetter const& wind
-        );
-
-        MCAPI void
-        placeBlocks(::IBlockWorldGenAPI& target, ::Random& random, ::DripstoneUtils::WindOffsetter const& wind) const;
+        MCAPI bool moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(::IBlockWorldGenAPI& target, ::DripstoneUtils::WindOffsetter const& wind);
+    
+        MCAPI void placeBlocks(::IBlockWorldGenAPI& target, ::Random& random, ::DripstoneUtils::WindOffsetter const& wind) const;
         // NOLINTEND
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -66,4 +63,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

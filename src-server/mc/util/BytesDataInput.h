@@ -60,4 +60,5 @@ public:
 
     MCAPI ::Bedrock::Result<int64> $readLongLongResult();
     // NOLINTEND
+
 };

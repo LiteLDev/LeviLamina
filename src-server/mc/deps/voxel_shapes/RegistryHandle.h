@@ -16,6 +16,7 @@ public:
     RegistryHandle& operator=(RegistryHandle const&);
     RegistryHandle(RegistryHandle const&);
     RegistryHandle();
+
 };
 
-} // namespace VoxelShapes
+}

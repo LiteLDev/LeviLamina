@@ -5,7 +5,7 @@
 namespace Core {
 
 enum class TransactionFlags : int {
-    None             = 0,
+    None = 0,
     OptimizationOnly = 1,
 };
 

@@ -18,8 +18,7 @@ namespace Core { class Path; }
 
 namespace Bedrock {
 
-class SentryUploadManager : public ::Bedrock::EnableNonOwnerReferences,
-                            public ::Bedrock::ImplBase<::Bedrock::SentryUploadManager> {
+class SentryUploadManager : public ::Bedrock::EnableNonOwnerReferences, public ::Bedrock::ImplBase<::Bedrock::SentryUploadManager> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -27,8 +26,7 @@ public:
     virtual ::std::string getParameters(::Bedrock::SessionInfo const&, ::Bedrock::PlatformRuntimeInfo const*) const = 0;
 
     // vIndex: 2
-    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<void>>>
-    uploadMinidump(::TaskGroup&, ::Core::Path const&, ::std::string const&) const = 0;
+    virtual ::Bedrock::Threading::Async<::Bedrock::Copyable<::Bedrock::Result<void>>> uploadMinidump(::TaskGroup&, ::Core::Path const&, ::std::string const&) const = 0;
 
     // vIndex: 3
     virtual ::std::string const& getMinidumpUploadUri() const = 0;
@@ -42,6 +40,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

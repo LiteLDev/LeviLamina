@@ -4,6 +4,6 @@
 
 enum class AnimationLoopMode : int {
     StopApplyingAnimationWhenFinished = 0,
-    Loop                              = 1,
-    HoldOnLastFrame                   = 2,
+    Loop = 1,
+    HoldOnLastFrame = 2,
 };

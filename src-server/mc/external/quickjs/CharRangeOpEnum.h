@@ -5,5 +5,5 @@
 enum class CharRangeOpEnum : int {
     Union = 0,
     Inter = 1,
-    Xor   = 2,
+    Xor = 2,
 };

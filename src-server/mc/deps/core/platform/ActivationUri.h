@@ -15,4 +15,5 @@ public:
     ActivationUri& operator=(ActivationUri const&);
     ActivationUri(ActivationUri const&);
     ActivationUri();
+
 };

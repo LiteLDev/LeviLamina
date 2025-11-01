@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk75885b;
-    ::ll::UntypedStorage<4, 8>  mUnkbf8737;
+    ::ll::UntypedStorage<4, 8> mUnkbf8737;
     // NOLINTEND
 
 public:
@@ -36,8 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentSplineOptions&
-    operator=(::Editor::ScriptModule::ScriptWidgetComponentSplineOptions&&);
+    MCNAPI ::Editor::ScriptModule::ScriptWidgetComponentSplineOptions& operator=(::Editor::ScriptModule::ScriptWidgetComponentSplineOptions&&);
     // NOLINTEND
 
 public:
@@ -57,6 +56,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

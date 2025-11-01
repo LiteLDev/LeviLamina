@@ -29,17 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<
-        ::ScriptModuleMinecraft::ScriptMovementType,
-        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
-        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
-    movementType() const;
+    MCNAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptMovementType, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> movementType() const;
 
-    MCNAPI ::Scripting::Result<
-        ::ScriptModuleMinecraft::ScriptStickyType,
-        ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
-        ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
-    stickyType() const;
+    MCNAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptStickyType, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError> stickyType() const;
     // NOLINTEND
 
 public:
@@ -63,6 +55,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

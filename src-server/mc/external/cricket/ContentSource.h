@@ -5,7 +5,7 @@
 namespace cricket {
 
 enum class ContentSource : int {
-    Local  = 0,
+    Local = 0,
     Remote = 1,
 };
 

@@ -16,14 +16,7 @@ public:
     virtual ~FrameEncryptorInterface() /*override*/ = default;
 
     // vIndex: 3
-    virtual int Encrypt(
-        ::cricket::MediaType,
-        uint,
-        ::rtc::ArrayView<uchar const>,
-        ::rtc::ArrayView<uchar const>,
-        ::rtc::ArrayView<uchar>,
-        uint64*
-    ) = 0;
+    virtual int Encrypt(::cricket::MediaType, uint, ::rtc::ArrayView<uchar const>, ::rtc::ArrayView<uchar const>, ::rtc::ArrayView<uchar>, uint64*) = 0;
 
     // vIndex: 4
     virtual uint64 GetMaxCiphertextByteSize(::cricket::MediaType, uint64) = 0;
@@ -34,6 +27,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

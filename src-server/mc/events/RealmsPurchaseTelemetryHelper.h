@@ -4,6 +4,7 @@
 
 namespace Social::Events {
 
-class RealmsPurchaseTelemetryHelper {};
+class RealmsPurchaseTelemetryHelper {
+};
 
-} // namespace Social::Events
+}

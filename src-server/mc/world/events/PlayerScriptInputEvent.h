@@ -11,8 +11,8 @@ struct PlayerScriptInputEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>            mPlayer;
-    ::ll::TypedStorage<4, 4, ::ScriptingInputButton>      mButton;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
+    ::ll::TypedStorage<4, 4, ::ScriptingInputButton> mButton;
     ::ll::TypedStorage<4, 4, ::ScriptingInputButtonState> mNewState;
     // NOLINTEND
 
@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

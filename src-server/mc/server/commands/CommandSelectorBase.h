@@ -68,27 +68,13 @@ public:
 
     MCAPI void addFilter(::std::function<bool(::CommandOrigin const&, ::Actor const&)> filter);
 
-    MCAPI void addHasItemFilter(
-        ::std::string const&                 itemName,
-        ::std::optional<int>                 auxValue,
-        ::CommandIntegerRange const&         quantity,
-        ::SharedTypes::Legacy::EquipmentSlot equipmentSlot,
-        ::CommandIntegerRange const&         slot
-    );
+    MCAPI void addHasItemFilter(::std::string const& itemName, ::std::optional<int> auxValue, ::CommandIntegerRange const& quantity, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot, ::CommandIntegerRange const& slot);
 
     MCAPI void addHasPermissionFilters(::std::vector<::HasPermissionFilter> const& filters);
 
-    MCAPI void addHasPropertyFilter(
-        ::HashedString const&                                                               propertyName,
-        bool                                                                                inverted,
-        ::std::optional<::std::variant<::CommandRationalRange, bool, ::std::string>> const& optionalValue
-    );
+    MCAPI void addHasPropertyFilter(::HashedString const& propertyName, bool inverted, ::std::optional<::std::variant<::CommandRationalRange, bool, ::std::string>> const& optionalValue);
 
-    MCAPI void addScoreFilter(
-        ::std::string const&                                              objName,
-        ::CommandIntegerRange const&                                      range,
-        ::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback
-    );
+    MCAPI void addScoreFilter(::std::string const& objName, ::CommandIntegerRange const& range, ::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback);
 
     MCAPI void addTypeFilter(::InvertableFilter<::std::string> const& filter);
 
@@ -128,4 +114,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

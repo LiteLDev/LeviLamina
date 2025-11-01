@@ -5,9 +5,9 @@
 namespace cricket {
 
 enum class IceGatheringState : int {
-    KIceGatheringNew       = 0,
+    KIceGatheringNew = 0,
     KIceGatheringGathering = 1,
-    KIceGatheringComplete  = 2,
+    KIceGatheringComplete = 2,
 };
 
 }

@@ -15,10 +15,12 @@ public:
     // clang-format off
     template<typename T0> class SubscriptionBodyImpl;
     // clang-format on
-
+    
     // HubPolicy inner types define
-    template <typename T0>
-    class SubscriptionBodyImpl {};
+    template<typename T0>
+    class SubscriptionBodyImpl {
+    };
+    
 };
 
-} // namespace Bedrock::PubSub::DeferralPolicy
+}

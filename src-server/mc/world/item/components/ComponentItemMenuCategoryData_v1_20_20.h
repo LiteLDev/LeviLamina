@@ -14,10 +14,9 @@ struct ComponentItemMenuCategoryData_v1_20_20 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_19_40::ItemCategory::CreativeItemCategory>>
-                                                              mCreativeCategory;
+    ::ll::TypedStorage<1, 2, ::std::optional<::SharedTypes::v1_19_40::ItemCategory::CreativeItemCategory>> mCreativeCategory;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>> mCreativeGroupName;
-    ::ll::TypedStorage<1, 2, ::std::optional<bool>>           mIsHiddenInCommands;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>> mIsHiddenInCommands;
     // NOLINTEND
 
 public:
@@ -38,9 +37,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void upgrade(
-        ::std::optional<::SharedTypes::v1_19_40::ItemCategory::CreativeItemCategory>& oldData,
-        ::std::optional<::ComponentItemMenuCategoryData_v1_20_20>&                    newData
-    );
+    MCAPI static void upgrade(::std::optional<::SharedTypes::v1_19_40::ItemCategory::CreativeItemCategory>& oldData, ::std::optional<::ComponentItemMenuCategoryData_v1_20_20>& newData);
     // NOLINTEND
+
 };

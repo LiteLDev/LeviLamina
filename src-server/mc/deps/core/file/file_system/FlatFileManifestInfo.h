@@ -18,28 +18,29 @@ public:
     // FlatFileManifestInfo inner types define
     enum class FlatFileManifestInfoFlags : uchar {
         // bitfield representation
-        File    = 1 << 0,
+        File = 1 << 0,
         Deleted = 1 << 7,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk2488ef;
-    ::ll::UntypedStorage<8, 8>  mUnkb6e6bf;
-    ::ll::UntypedStorage<8, 8>  mUnka6c43a;
-    ::ll::UntypedStorage<1, 1>  mUnk3b7215;
+    ::ll::UntypedStorage<8, 8> mUnkb6e6bf;
+    ::ll::UntypedStorage<8, 8> mUnka6c43a;
+    ::ll::UntypedStorage<1, 1> mUnk3b7215;
     // NOLINTEND
 
 public:
     // prevent constructor by default
     FlatFileManifestInfo& operator=(FlatFileManifestInfo const&);
-    FlatFileManifestInfo(FlatFileManifestInfo const&);
     FlatFileManifestInfo();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI FlatFileManifestInfo(::Core::FlatFileManifestInfo const&);
+
     MCNAPI ::Bedrock::Result<void> readFromStream(::ReadOnlyBinaryStream& manifestFileStream);
 
     MCNAPI void setPath(::Core::PathView path);
@@ -48,10 +49,17 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Core::FlatFileManifestInfo const&);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

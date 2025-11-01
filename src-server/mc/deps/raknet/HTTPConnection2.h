@@ -23,35 +23,36 @@ public:
     // clang-format off
     struct Request;
     // clang-format on
-
+    
     // HTTPConnection2 inner types define
     struct Request {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>   mUnk5d9dd1;
-        ::ll::UntypedStorage<8, 8>   mUnke096eb;
-        ::ll::UntypedStorage<8, 8>   mUnkfb5ed2;
+        ::ll::UntypedStorage<8, 8> mUnk5d9dd1;
+        ::ll::UntypedStorage<8, 8> mUnke096eb;
+        ::ll::UntypedStorage<8, 8> mUnkfb5ed2;
         ::ll::UntypedStorage<8, 136> mUnk76fb85;
         ::ll::UntypedStorage<8, 136> mUnk4b91a1;
-        ::ll::UntypedStorage<2, 2>   mUnkfb4a76;
-        ::ll::UntypedStorage<1, 1>   mUnk6a6c57;
-        ::ll::UntypedStorage<4, 4>   mUnkdf4c59;
-        ::ll::UntypedStorage<4, 4>   mUnk3b251f;
-        ::ll::UntypedStorage<4, 4>   mUnkdb560f;
-        ::ll::UntypedStorage<8, 8>   mUnkeadb83;
-        ::ll::UntypedStorage<1, 1>   mUnk199ccd;
-        ::ll::UntypedStorage<8, 8>   mUnk8e7224;
-        ::ll::UntypedStorage<8, 8>   mUnka63d8c;
+        ::ll::UntypedStorage<2, 2> mUnkfb4a76;
+        ::ll::UntypedStorage<1, 1> mUnk6a6c57;
+        ::ll::UntypedStorage<4, 4> mUnkdf4c59;
+        ::ll::UntypedStorage<4, 4> mUnk3b251f;
+        ::ll::UntypedStorage<4, 4> mUnkdb560f;
+        ::ll::UntypedStorage<8, 8> mUnkeadb83;
+        ::ll::UntypedStorage<1, 1> mUnk199ccd;
+        ::ll::UntypedStorage<8, 8> mUnk8e7224;
+        ::ll::UntypedStorage<8, 8> mUnka63d8c;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Request& operator=(Request const&);
         Request(Request const&);
         Request();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -79,11 +80,7 @@ public:
     virtual ::RakNet::PluginReceiveResult OnReceive(::RakNet::Packet*) /*override*/;
 
     // vIndex: 7
-    virtual void OnClosedConnection(
-        ::RakNet::SystemAddress const&,
-        ::RakNet::RakNetGUID,
-        ::RakNet::PI2_LostConnectionReason
-    ) /*override*/;
+    virtual void OnClosedConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, ::RakNet::PI2_LostConnectionReason) /*override*/;
 
     // vIndex: 8
     virtual void OnNewConnection(::RakNet::SystemAddress const&, ::RakNet::RakNetGUID, bool) /*override*/;
@@ -97,6 +94,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

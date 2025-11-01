@@ -18,6 +18,7 @@ public:
     ::RelativeFloat         mRotY;
     ::std::optional<::Vec2> mCommandOriginRotation;
     // NOLINTEND
+
 };
 
-} // namespace RotationCommandUtils
+}

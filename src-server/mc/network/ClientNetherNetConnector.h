@@ -15,7 +15,7 @@ struct ClientNetherNetConnector : public ::NetherNetConnector {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 456> mUnkb30d11;
+    ::ll::UntypedStorage<8, 472> mUnkb30d11;
     // NOLINTEND
 
 public:
@@ -54,4 +54,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

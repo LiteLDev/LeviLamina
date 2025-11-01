@@ -18,8 +18,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk1a868c;
     ::ll::UntypedStorage<8, 24> mUnk7084e3;
-    ::ll::UntypedStorage<1, 1>  mUnkd68461;
-    ::ll::UntypedStorage<1, 1>  mUnk9d6c21;
+    ::ll::UntypedStorage<1, 1> mUnkd68461;
+    ::ll::UntypedStorage<1, 1> mUnk9d6c21;
     // NOLINTEND
 
 public:
@@ -50,6 +50,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Puv
+}

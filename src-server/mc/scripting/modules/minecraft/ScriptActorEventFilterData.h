@@ -17,7 +17,7 @@ struct ScriptActorEventFilterData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkcb08a4;
+    ::ll::UntypedStorage<8, 8> mUnkcb08a4;
     ::ll::UntypedStorage<8, 48> mUnkc3bc53;
     // NOLINTEND
 
@@ -38,8 +38,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::optional<::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData>
-    create(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& actor);
+    MCNAPI static ::std::optional<::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData> create(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& actor);
     // NOLINTEND
 
 public:
@@ -53,6 +52,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft::EventFilters
+}

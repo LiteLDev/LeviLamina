@@ -35,6 +35,7 @@ public:
     NetEqLifetimeStatistics& operator=(NetEqLifetimeStatistics const&);
     NetEqLifetimeStatistics(NetEqLifetimeStatistics const&);
     NetEqLifetimeStatistics();
+
 };
 
-} // namespace webrtc
+}

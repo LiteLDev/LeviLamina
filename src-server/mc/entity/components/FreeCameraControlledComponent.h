@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mStrafeSpeedModifier;
     ::ll::TypedStorage<4, 4, float> mBackwardsSpeedModifier;
     // NOLINTEND
+
 };

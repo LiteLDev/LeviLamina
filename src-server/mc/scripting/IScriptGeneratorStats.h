@@ -24,14 +24,7 @@ public:
     virtual void bucketRan(::Scripting::ContextId, uint64) = 0;
 
     // vIndex: 4
-    virtual void generatorRan(
-        ::Scripting::ContextId,
-        uint,
-        uint,
-        ::std::chrono::microseconds,
-        ::std::chrono::microseconds,
-        ::std::chrono::microseconds
-    ) = 0;
+    virtual void generatorRan(::Scripting::ContextId, uint, uint, ::std::chrono::microseconds, ::std::chrono::microseconds, ::std::chrono::microseconds) = 0;
     // NOLINTEND
 
 public:
@@ -39,4 +32,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

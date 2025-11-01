@@ -20,40 +20,35 @@ public:
     struct DefaultPlusEmbeddedRenderer;
     struct DefaultRenderer;
     // clang-format on
-
+    
     // BlockGeometryComponent inner types define
-    struct DefaultRenderer {};
-
+    struct DefaultRenderer {
+    };
+    
     struct DefaultPlusEmbeddedRenderer {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 64, ::Matrix> mTransformationMatrix;
         // NOLINTEND
+    
     };
-
-    using Renderer = ::std::
-        variant<::BlockGeometryComponent::DefaultRenderer, ::BlockGeometryComponent::DefaultPlusEmbeddedRenderer>;
-
+    
+    using Renderer = ::std::variant<::BlockGeometryComponent::DefaultRenderer, ::BlockGeometryComponent::DefaultPlusEmbeddedRenderer>;
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 48, ::HashedString>                                           mGeometryName;
+    ::ll::TypedStorage<8, 48, ::HashedString> mGeometryName;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>> mBlockSchematic;
-    ::ll::TypedStorage<1, 1, bool>                                                      mNeedsLegacyTopRotation;
-    ::ll::TypedStorage<1, 1, bool>                                                      mUseBlockTypeLightAbsorption;
-    ::ll::TypedStorage<1, 1, bool>                                                      mIsFullBlock;
-    ::ll::TypedStorage<1, 1, bool>                                                      mIgnoreGeometryForIsSolid;
-    ::ll::TypedStorage<8, 48, ::HashedString>                                           mCullingLayer;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockGeometryDescription::SharedInitializationData>>
-                                                                                mSharedInitializationData;
+    ::ll::TypedStorage<1, 1, bool> mNeedsLegacyTopRotation;
+    ::ll::TypedStorage<1, 1, bool> mUseBlockTypeLightAbsorption;
+    ::ll::TypedStorage<1, 1, bool> mIsFullBlock;
+    ::ll::TypedStorage<1, 1, bool> mIgnoreGeometryForIsSolid;
+    ::ll::TypedStorage<8, 48, ::HashedString> mCullingLayer;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockGeometryDescription::SharedInitializationData>> mSharedInitializationData;
     ::ll::TypedStorage<8, 24, ::std::variant<bool, ::std::set<::HashedString>>> mUVsLocked;
-    ::ll::TypedStorage<
-        4,
-        68,
-        ::std::
-            variant<::BlockGeometryComponent::DefaultRenderer, ::BlockGeometryComponent::DefaultPlusEmbeddedRenderer>>
-        mRenderer;
+    ::ll::TypedStorage<4, 68, ::std::variant<::BlockGeometryComponent::DefaultRenderer, ::BlockGeometryComponent::DefaultPlusEmbeddedRenderer>> mRenderer;
     // NOLINTEND
 
 public:
@@ -83,4 +78,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

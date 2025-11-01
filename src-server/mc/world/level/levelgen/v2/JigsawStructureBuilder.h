@@ -24,16 +24,16 @@ class JigsawStructureBuilder : public ::br::worldgen::StructureBuilder<::br::wor
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, char>                                                  mMaxDepth;
-    ::ll::TypedStorage<4, 8, ::br::worldgen::MaxDistanceFromCenter>                 mMaxDistanceFromCenter;
-    ::ll::TypedStorage<4, 8, ::br::worldgen::DimensionPadding>                      mDimensionPadding;
-    ::ll::TypedStorage<8, 32, ::std::string>                                        mStart;
-    ::ll::TypedStorage<8, 32, ::std::string>                                        mStartJigsawName;
-    ::ll::TypedStorage<8, 56, ::br::worldgen::StructureHeightProvider>              mStartHeight;
-    ::ll::TypedStorage<1, 1, ::br::worldgen::HeightmapProjection::Type>             mProjectStartToHeightmap;
+    ::ll::TypedStorage<1, 1, char> mMaxDepth;
+    ::ll::TypedStorage<4, 8, ::br::worldgen::MaxDistanceFromCenter> mMaxDistanceFromCenter;
+    ::ll::TypedStorage<4, 8, ::br::worldgen::DimensionPadding> mDimensionPadding;
+    ::ll::TypedStorage<8, 32, ::std::string> mStart;
+    ::ll::TypedStorage<8, 32, ::std::string> mStartJigsawName;
+    ::ll::TypedStorage<8, 56, ::br::worldgen::StructureHeightProvider> mStartHeight;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::HeightmapProjection::Type> mProjectStartToHeightmap;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PoolAliasBinding>>> mPoolAliases;
-    ::ll::TypedStorage<1, 1, ::br::worldgen::JigsawExpansion>                       mExpansion;
-    ::ll::TypedStorage<1, 1, ::br::worldgen::LiquidSettings>                        mLiquidSettings;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::JigsawExpansion> mExpansion;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::LiquidSettings> mLiquidSettings;
     // NOLINTEND
 
 public:
@@ -58,12 +58,6 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static ::br::worldgen::JigsawStructureBuilder create(::std::string_view key, ::HashedString type);
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::std::string_view key, ::HashedString type);
@@ -80,6 +74,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen
+}

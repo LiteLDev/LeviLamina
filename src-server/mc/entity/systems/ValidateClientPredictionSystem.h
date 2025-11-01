@@ -28,19 +28,7 @@ namespace ValidateClientPredictionSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void tick(
-    ::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::ReplayStateComponent>>,
-    ::StrictEntityContext const&                                                  entity,
-    ::ActorDataBoundingBoxComponent const&                                        actorBoundingBox,
-    ::ActorDataFlagComponent const&                                               actorDataFlag,
-    ::ActorUniqueIDComponent const&                                               actorUniqueId,
-    ::MovementAttributesComponent const&                                          movementAttributes,
-    ::ServerPlayerMovementSyncComponent const&                                    clientPrediction,
-    ::AbilitiesComponent const&                                                   abilities,
-    ::ActorDataDirtyFlagsComponent&                                               actorDataDirtyFlag,
-    ::AttributesComponent&                                                        attributes,
-    ::EntityModifier<::ServerPlayerMovementSyncComponent, ::SendPacketsComponent> modifier
-);
+MCNAPI void tick(::entt::type_list<::Include<::ActorMovementTickNeededComponent, ::ReplayStateComponent>>, ::StrictEntityContext const& entity, ::ActorDataBoundingBoxComponent const& actorBoundingBox, ::ActorDataFlagComponent const& actorDataFlag, ::ActorUniqueIDComponent const& actorUniqueId, ::MovementAttributesComponent const& movementAttributes, ::ServerPlayerMovementSyncComponent const& clientPrediction, ::AbilitiesComponent const& abilities, ::ActorDataDirtyFlagsComponent& actorDataDirtyFlag, ::AttributesComponent& attributes, ::EntityModifier<::ServerPlayerMovementSyncComponent, ::SendPacketsComponent> modifier);
 // NOLINTEND
 
-} // namespace ValidateClientPredictionSystem
+}

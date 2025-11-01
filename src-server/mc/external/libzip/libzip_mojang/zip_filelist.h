@@ -15,4 +15,5 @@ public:
     zip_filelist& operator=(zip_filelist const&);
     zip_filelist(zip_filelist const&);
     zip_filelist();
+
 };

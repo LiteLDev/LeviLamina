@@ -18,16 +18,16 @@ class AngryComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                 mDuration;
-    ::ll::TypedStorage<1, 1, bool>                mHasTicked;
-    ::ll::TypedStorage<1, 1, bool>                mBroadcastAnger;
-    ::ll::TypedStorage<1, 1, bool>                mBroadcastOnAttack;
-    ::ll::TypedStorage<1, 1, bool>                mBroadcastOnBeingAttacked;
-    ::ll::TypedStorage<1, 1, bool>                mBroadcastAngerWhenDying;
-    ::ll::TypedStorage<4, 4, int>                 mBroadcastRange;
+    ::ll::TypedStorage<4, 4, int> mDuration;
+    ::ll::TypedStorage<1, 1, bool> mHasTicked;
+    ::ll::TypedStorage<1, 1, bool> mBroadcastAnger;
+    ::ll::TypedStorage<1, 1, bool> mBroadcastOnAttack;
+    ::ll::TypedStorage<1, 1, bool> mBroadcastOnBeingAttacked;
+    ::ll::TypedStorage<1, 1, bool> mBroadcastAngerWhenDying;
+    ::ll::TypedStorage<4, 4, int> mBroadcastRange;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mBroadcastFilter;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mSubjectFilter;
-    ::ll::TypedStorage<8, 8, ::Tick>              mNextSoundEventTick;
+    ::ll::TypedStorage<8, 8, ::Tick> mNextSoundEventTick;
     // NOLINTEND
 
 public:
@@ -53,4 +53,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

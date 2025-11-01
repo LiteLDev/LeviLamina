@@ -14,8 +14,8 @@ struct MessageEvent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>              mMessageId;
-    ::ll::TypedStorage<8, 32, ::std::string>              mMessageValue;
+    ::ll::TypedStorage<8, 32, ::std::string> mMessageId;
+    ::ll::TypedStorage<8, 32, ::std::string> mMessageValue;
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext>> mPlayer;
     // NOLINTEND
 
@@ -30,4 +30,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

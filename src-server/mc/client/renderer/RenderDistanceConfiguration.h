@@ -8,7 +8,7 @@ public:
     // clang-format off
     struct RenderDistanceConfig;
     // clang-format on
-
+    
     // RenderDistanceConfiguration inner types define
     struct RenderDistanceConfig {
     public:
@@ -16,14 +16,15 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnkbd64c3;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         RenderDistanceConfig& operator=(RenderDistanceConfig const&);
         RenderDistanceConfig(RenderDistanceConfig const&);
         RenderDistanceConfig();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -35,4 +36,5 @@ public:
     RenderDistanceConfiguration& operator=(RenderDistanceConfiguration const&);
     RenderDistanceConfiguration(RenderDistanceConfiguration const&);
     RenderDistanceConfiguration();
+
 };

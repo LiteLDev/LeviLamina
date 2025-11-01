@@ -11,7 +11,7 @@ public:
     // clang-format off
     struct CacheEntry;
     // clang-format on
-
+    
     // ChunkLocalNoiseCache inner types define
     struct CacheEntry {
     public:
@@ -28,13 +28,14 @@ public:
         ::ll::TypedStorage<4, 4, float> temperature;
         ::ll::TypedStorage<4, 4, float> humidity;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::DividedPos2d<4> const>                            mFirstQuartPos;
-    ::ll::TypedStorage<4, 4, int const>                                          mCellCountXZ;
+    ::ll::TypedStorage<4, 8, ::DividedPos2d<4> const> mFirstQuartPos;
+    ::ll::TypedStorage<4, 4, int const> mCellCountXZ;
     ::ll::TypedStorage<8, 24, ::std::vector<::ChunkLocalNoiseCache::CacheEntry>> mNoiseCacheEntries;
     // NOLINTEND
 
@@ -49,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

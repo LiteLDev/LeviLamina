@@ -19,11 +19,11 @@ struct ScriptNamespaceNameError : public ::Scripting::BaseError {
 public:
     // ScriptNamespaceNameError inner types define
     enum class Reason : int {
-        Invalid             = 0,
-        NoNamespace         = 1,
+        Invalid = 0,
+        NoNamespace = 1,
         DisallowedNamespace = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,11 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptNamespaceNameError(
-        ::std::string const&                                      name,
-        ::std::string const&                                      message,
-        ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason
-    );
+    MCNAPI ScriptNamespaceNameError(::std::string const& name, ::std::string const& message, ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason);
 
     MCNAPI ~ScriptNamespaceNameError();
     // NOLINTEND
@@ -55,18 +51,13 @@ public:
 
     MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
 
-    MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::EngineError>
-    validate(::std::string const& name, bool allowMinecraftNamespace, bool allowMultipleNamespaces);
+    MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::EngineError> validate(::std::string const& name, bool allowMinecraftNamespace, bool allowMultipleNamespaces);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::string const&                                      name,
-        ::std::string const&                                      message,
-        ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason
-    );
+    MCNAPI void* $ctor(::std::string const& name, ::std::string const& message, ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason);
     // NOLINTEND
 
 public:
@@ -74,6 +65,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

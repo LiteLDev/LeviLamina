@@ -26,8 +26,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RailMovementDefinition>>& root
-    );
+    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::RailMovementDefinition>>& root);
     // NOLINTEND
+
 };

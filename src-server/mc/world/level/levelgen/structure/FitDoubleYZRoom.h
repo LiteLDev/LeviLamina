@@ -20,8 +20,7 @@ public:
     virtual bool fits(::RoomDefinition const& definition) const /*override*/;
 
     // vIndex: 2
-    virtual ::std::unique_ptr<::OceanMonumentPiece>
-    create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random) /*override*/;
+    virtual ::std::unique_ptr<::OceanMonumentPiece> create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random) /*override*/;
 
     // vIndex: 0
     virtual ~FitDoubleYZRoom() /*override*/ = default;
@@ -32,8 +31,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $fits(::RoomDefinition const& definition) const;
 
-    MCAPI ::std::unique_ptr<::OceanMonumentPiece>
-    $create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random);
+    MCAPI ::std::unique_ptr<::OceanMonumentPiece> $create(int& orientation, ::std::shared_ptr<::RoomDefinition> definition, ::Random& random);
     // NOLINTEND
 
 public:
@@ -41,4 +39,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

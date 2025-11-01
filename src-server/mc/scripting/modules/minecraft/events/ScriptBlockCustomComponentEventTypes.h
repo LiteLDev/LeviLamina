@@ -5,17 +5,18 @@
 namespace ScriptModuleMinecraft {
 
 enum class ScriptBlockCustomComponentEventTypes : ushort {
-    OnStepOn            = 0,
-    OnRandomTick        = 1,
-    OnRandomTickLegacy  = 2,
-    OnEntityFallOn      = 3,
-    OnTick              = 4,
-    OnStepOff           = 5,
-    OnPlayerInteract    = 6,
-    OnPlayerBreak       = 7,
-    OnPlace             = 8,
-    BeforeOnPlayerPlace = 9,
-    Count               = 10,
+    OnStepOn = 0,
+    OnRandomTick = 1,
+    OnRandomTickLegacy = 2,
+    OnEntityFallOn = 3,
+    OnTick = 4,
+    OnStepOff = 5,
+    OnPlayerInteract = 6,
+    OnPlayerBreak = 7,
+    OnPlace = 8,
+    OnBreak = 9,
+    BeforeOnPlayerPlace = 10,
+    Count = 11,
 };
 
 }

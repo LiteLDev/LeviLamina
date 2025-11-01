@@ -22,30 +22,28 @@ class VaultBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 126
+    // vIndex: 125
     virtual ::Brightness getLightEmission(::Block const& block) const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 92
-    virtual ::Block const&
-    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
-        /*override*/;
+    // vIndex: 91
+    virtual ::Block const& getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const /*override*/;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 119
     virtual ::Block const& getRenderBlock() const /*override*/;
 
-    // vIndex: 121
+    // vIndex: 120
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 122
+    // vIndex: 121
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -65,13 +63,7 @@ public:
 
     MCFOLD bool $isInteractiveBlock() const;
 
-    MCAPI ::Block const& $getPlacementBlock(
-        ::Actor const&    by,
-        ::BlockPos const& pos,
-        uchar             face,
-        ::Vec3 const&     clickPos,
-        int               itemValue
-    ) const;
+    MCAPI ::Block const& $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const;
 
     MCAPI int $getVariant(::Block const& block) const;
 
@@ -89,4 +81,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

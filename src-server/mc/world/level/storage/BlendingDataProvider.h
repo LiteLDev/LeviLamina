@@ -15,4 +15,5 @@ public:
     BlendingDataProvider& operator=(BlendingDataProvider const&);
     BlendingDataProvider(BlendingDataProvider const&);
     BlendingDataProvider();
+
 };

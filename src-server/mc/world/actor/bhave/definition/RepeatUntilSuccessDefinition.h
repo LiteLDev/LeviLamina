@@ -15,7 +15,7 @@ class RepeatUntilSuccessDefinition : public ::DecoratorDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk3cbfb8;
+    ::ll::UntypedStorage<4, 4> mUnk3cbfb8;
     ::ll::UntypedStorage<8, 32> mUnk519e19;
     // NOLINTEND
 
@@ -46,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

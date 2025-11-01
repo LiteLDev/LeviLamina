@@ -10,6 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::ClientBlockPipeline::BakedMaterialMap> mBakedMaterials;
-    ::ll::TypedStorage<1, 1, bool>                                     mIsSolidOpaque;
+    ::ll::TypedStorage<1, 1, bool> mIsSolidOpaque;
     // NOLINTEND
+
 };

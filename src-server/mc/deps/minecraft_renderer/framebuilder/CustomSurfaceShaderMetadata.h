@@ -17,6 +17,7 @@ public:
     CustomSurfaceShaderMetadata& operator=(CustomSurfaceShaderMetadata const&);
     CustomSurfaceShaderMetadata(CustomSurfaceShaderMetadata const&);
     CustomSurfaceShaderMetadata();
+
 };
 
-} // namespace mce::framebuilder
+}

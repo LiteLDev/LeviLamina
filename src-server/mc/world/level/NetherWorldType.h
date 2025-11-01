@@ -4,5 +4,5 @@
 
 enum class NetherWorldType : uchar {
     Normal = 0,
-    Flat   = 1,
+    Flat = 1,
 };

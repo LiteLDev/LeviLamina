@@ -16,11 +16,11 @@ class AppPlatformWindows : public ::AppPlatform {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnk387a7f;
-    ::ll::UntypedStorage<8, 32>  mUnk93a477;
-    ::ll::UntypedStorage<8, 32>  mUnk136df8;
-    ::ll::UntypedStorage<8, 32>  mUnk4a65eb;
-    ::ll::UntypedStorage<8, 32>  mUnkb28730;
+    ::ll::UntypedStorage<1, 1> mUnk387a7f;
+    ::ll::UntypedStorage<8, 32> mUnk93a477;
+    ::ll::UntypedStorage<8, 32> mUnk136df8;
+    ::ll::UntypedStorage<8, 32> mUnk4a65eb;
+    ::ll::UntypedStorage<8, 32> mUnkb28730;
     ::ll::UntypedStorage<8, 616> mUnkfe07cc;
     // NOLINTEND
 
@@ -33,65 +33,64 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 27
+    // vIndex: 29
     virtual uint64 getTotalHardwareThreadsCount() const /*override*/;
 
-    // vIndex: 26
+    // vIndex: 28
     virtual uint64 getHighPerformanceThreadsCount() const /*override*/;
 
-    // vIndex: 28
+    // vIndex: 30
     virtual void initializeGraphicsDeviceTier() /*override*/;
 
-    // vIndex: 239
+    // vIndex: 240
     virtual ::Core::PathBuffer<::std::string> getPlatformTempPath() const /*override*/;
 
-    // vIndex: 67
+    // vIndex: 69
     virtual ::Core::PathBuffer<::std::string> copyImportFileToTempFolder(::Core::Path const& filePath) /*override*/;
 
-    // vIndex: 173
+    // vIndex: 175
     virtual uint64 calculateAvailableDiskFreeSpace(::Core::Path const& rootPath) /*override*/;
 
-    // vIndex: 78
+    // vIndex: 80
     virtual bool allowContentLogWriteToDisk() /*override*/;
 
-    // vIndex: 176
+    // vIndex: 178
     virtual bool devHotReloadRenderResources() const /*override*/;
 
-    // vIndex: 80
+    // vIndex: 82
     virtual void queueForMainThread_DEPRECATED(::std::function<void()> callback) /*override*/;
 
-    // vIndex: 81
+    // vIndex: 83
     virtual ::MPMCQueue<::std::function<void()>>& getMainThreadQueue() /*override*/;
 
-    // vIndex: 208
+    // vIndex: 209
     virtual bool canAppSelfTerminate() const /*override*/;
 
-    // vIndex: 209
+    // vIndex: 210
     virtual bool getPlatformTTSExists() const /*override*/;
 
-    // vIndex: 210
+    // vIndex: 211
     virtual bool getPlatformTTSEnabled() const /*override*/;
 
-    // vIndex: 69
-    virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const
-        /*override*/;
+    // vIndex: 71
+    virtual void registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const /*override*/;
 
-    // vIndex: 227
+    // vIndex: 228
     virtual bool is24HourTimeFormat() const /*override*/;
 
-    // vIndex: 229
+    // vIndex: 230
     virtual ::Core::PathBuffer<::std::string> _getCurrentStoragePath() const /*override*/;
 
-    // vIndex: 230
+    // vIndex: 231
     virtual ::Core::PathBuffer<::std::string> _getExternalStoragePath() const /*override*/;
 
-    // vIndex: 231
+    // vIndex: 232
     virtual ::Core::PathBuffer<::std::string> _getInternalStoragePath() const /*override*/;
 
-    // vIndex: 232
+    // vIndex: 233
     virtual ::Core::PathBuffer<::std::string> _getUserdataPath() const /*override*/;
 
-    // vIndex: 47
+    // vIndex: 49
     virtual ::Core::PathBuffer<::std::string> getPackagedShaderCachePath() /*override*/;
 
     // vIndex: 0
@@ -167,4 +166,5 @@ public:
 
     MCNAPI static void** $vftableForISecureStorageKeySystem();
     // NOLINTEND
+
 };

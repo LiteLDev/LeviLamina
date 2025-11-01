@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <typename EventVariant>
+template<typename EventVariant>
 class EventRef {
     static_assert(std::is_copy_constructible_v<EventVariant>, "EventVariant must be copy constructible");
 

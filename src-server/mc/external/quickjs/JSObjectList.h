@@ -18,4 +18,5 @@ public:
     JSObjectList& operator=(JSObjectList const&);
     JSObjectList(JSObjectList const&);
     JSObjectList();
+
 };

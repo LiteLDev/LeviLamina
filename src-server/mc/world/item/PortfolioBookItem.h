@@ -15,7 +15,7 @@ class PortfolioBookItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 76
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
     // vIndex: 0
@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

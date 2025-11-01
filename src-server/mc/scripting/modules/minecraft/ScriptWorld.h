@@ -51,7 +51,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkd2684d;
-    ::ll::UntypedStorage<8, 8>  mUnke52bc0;
+    ::ll::UntypedStorage<8, 8> mUnke52bc0;
     ::ll::UntypedStorage<8, 32> mUnk9fe28f;
     ::ll::UntypedStorage<8, 32> mUnkbcdaa5;
     ::ll::UntypedStorage<8, 32> mUnk735be8;
@@ -71,36 +71,15 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptWorld(::ScriptModuleMinecraft::ScriptWorld&&);
 
-    MCNAPI ScriptWorld(
-        ::Scripting::WeakLifetimeScope const&                scope,
-        ::gsl::not_null<::ServerLevel*>                      level,
-        ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners,
-        ::Scripting::DependencyLocator&                      locator,
-        ::Scripting::ContextConfig const&                    config
-    );
+    MCNAPI ScriptWorld(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level, ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners, ::Scripting::DependencyLocator& locator, ::Scripting::ContextConfig const& config);
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> _playOrQueueMusic(
-        ::std::string const&                                         trackID,
-        ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions,
-        bool                                                         shouldQueue
-    );
+    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> _playOrQueueMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions, bool shouldQueue);
 
-    MCNAPI ::Scripting::Result_deprecated<void> _playOrQueueMusic_010(
-        ::std::string const&                                         trackID,
-        ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions,
-        bool                                                         shouldQueue
-    );
+    MCNAPI ::Scripting::Result_deprecated<void> _playOrQueueMusic_010(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions, bool shouldQueue);
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> _playSoundInternal(
-        ::std::string const&                                              soundID,
-        ::Vec3 const&                                                     location,
-        ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
-    );
+    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> _playSoundInternal(::std::string const& soundID, ::Vec3 const& location, ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions);
 
-    MCNAPI ::std::optional<::Scripting::Error> _validateDynamicProperty_V010(
-        ::std::string const&                                              key,
-        ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value
-    ) const;
+    MCNAPI ::std::optional<::Scripting::Error> _validateDynamicProperty_V010(::std::string const& key, ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value) const;
 
     MCNAPI void broadcastClientMessage(::std::string const& id, ::std::string const& value);
 
@@ -112,14 +91,9 @@ public:
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptAimAssistRegistry> getAimAssist() const;
 
-    MCNAPI ::Scripting::Result<
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>,
-        ::ScriptModuleMinecraft::ScriptCommandError,
-        ::Scripting::InvalidArgumentError>
-    getAllPlayers() const;
+    MCNAPI ::Scripting::Result<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>, ::ScriptModuleMinecraft::ScriptCommandError, ::Scripting::InvalidArgumentError> getAllPlayers() const;
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldBeforeEvents>
-    getBeforeEvents() const;
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldBeforeEvents> getBeforeEvents() const;
 
     MCNAPI int getDay() const;
 
@@ -127,117 +101,67 @@ public:
 
     MCNAPI ::SharedTypes::Legacy::Difficulty getDifficulty() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
-    getDimension(::std::string const& name) const;
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>> getDimension(::std::string const& name) const;
 
-    MCNAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
-    getDynamicProperty(::Scripting::ContextConfig const& contextConfig, ::std::string const& key) const;
+    MCNAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> getDynamicProperty(::Scripting::ContextConfig const& contextConfig, ::std::string const& key) const;
 
     MCNAPI ::std::vector<::std::string> getDynamicPropertyIds(::Scripting::ContextConfig const& contextConfig) const;
 
     MCNAPI int getDynamicPropertyTotalByteCount(::Scripting::ContextConfig const& contextConfig) const;
 
-    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>>
-    getDynamicProperty_V010(::Scripting::ContextConfig const& contextConfig, ::std::string const& key) const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>> getDynamicProperty_V010(::Scripting::ContextConfig const& contextConfig, ::std::string const& key) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
-    getEntity(::std::string const& id) const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> getEntity(::std::string const& id) const;
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptGameRules> getGameRules();
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootTableManager>
-    getLootTableManager() const;
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootTableManager> getLootTableManager() const;
 
     MCNAPI ::MoonPhases getMoonPhase() const;
 
-    MCNAPI ::std::unordered_map<::std::string, ::std::variant<float, bool, ::std::string>>
-    getPackSettings(::Scripting::DependencyLocator& locator, ::Scripting::ContextConfig const& config) const;
+    MCNAPI ::std::unordered_map<::std::string, ::std::variant<float, bool, ::std::string>> getPackSettings(::Scripting::DependencyLocator& locator, ::Scripting::ContextConfig const& config) const;
 
-    MCNAPI ::Scripting::Result<
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>,
-        ::ScriptModuleMinecraft::ScriptCommandError,
-        ::Scripting::InvalidArgumentError>
-    getPlayers(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
+    MCNAPI ::Scripting::Result<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>, ::ScriptModuleMinecraft::ScriptCommandError, ::Scripting::InvalidArgumentError> getPlayers(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerIterator>>
-    getPlayers_V010(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerIterator>> getPlayers_V010(::std::optional<::ScriptModuleMinecraft::ScriptActorQueryOptions> options) const;
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboard> getScoreboard();
 
-    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager>
-    getStructureManager() const;
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureManager> getStructureManager() const;
 
     MCNAPI int getTimeOfDay() const;
 
     MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptV010Events> getWorldV010Events() const;
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError>
-    playMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
+    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> playMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
 
-    MCNAPI ::Scripting::Result_deprecated<void> playMusic_010(
-        ::std::string const&                                         trackID,
-        ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions
-    );
+    MCNAPI ::Scripting::Result_deprecated<void> playMusic_010(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> playSound(
-        ::std::string const&                                              soundID,
-        ::Vec3 const&                                                     location,
-        ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
-    );
+    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> playSound(::std::string const& soundID, ::Vec3 const& location, ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions);
 
-    MCNAPI ::Scripting::Result_deprecated<void> playSound_V010(
-        ::std::string const&                                         soundID,
-        ::std::optional<::ScriptModuleMinecraft::ScriptSoundOptions> soundOptions
-    );
+    MCNAPI ::Scripting::Result_deprecated<void> playSound_V010(::std::string const& soundID, ::std::optional<::ScriptModuleMinecraft::ScriptSoundOptions> soundOptions);
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError>
-    queueMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
+    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> queueMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
 
-    MCNAPI ::Scripting::Result_deprecated<void> queueMusic_010(
-        ::std::string const&                                         trackID,
-        ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions
-    );
+    MCNAPI ::Scripting::Result_deprecated<void> queueMusic_010(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
 
-    MCNAPI ::Scripting::Result_deprecated<bool>
-    removeDynamicProperty_V010(::Scripting::ContextConfig const& contextConfig, ::std::string const& key);
+    MCNAPI ::Scripting::Result_deprecated<bool> removeDynamicProperty_V010(::Scripting::ContextConfig const& contextConfig, ::std::string const& key);
 
-    MCNAPI ::Scripting::Result_deprecated<void> sendMessage(
-        ::Scripting::ContextConfig const& contextConfig,
-        ::std::variant<
-            ::std::string,
-            ::ScriptModuleMinecraft::ScriptRawMessageInterface,
-            ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& var
-    );
+    MCNAPI ::Scripting::Result_deprecated<void> sendMessage(::Scripting::ContextConfig const& contextConfig, ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface, ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>>> const& var);
 
     MCNAPI void setAbsoluteTime(int absoluteTime);
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError, ::Scripting::Error>
-    setDefaultSpawnLocation(::Vec3 const& spawnPosition);
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError, ::Scripting::Error> setDefaultSpawnLocation(::Vec3 const& spawnPosition);
 
     MCNAPI void setDifficulty(::SharedTypes::Legacy::Difficulty difficulty);
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> setDynamicProperties(
-        ::Scripting::ContextConfig const& contextConfig,
-        ::std::unordered_map<::std::string, ::std::variant<double, float, bool, ::std::string, ::Vec3>> const& values
-    );
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> setDynamicProperties(::Scripting::ContextConfig const& contextConfig, ::std::unordered_map<::std::string, ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>> const& values);
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> setDynamicProperty(
-        ::Scripting::ContextConfig const&                                                  contextConfig,
-        ::std::string const&                                                               key,
-        ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& value
-    );
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> setDynamicProperty(::Scripting::ContextConfig const& contextConfig, ::std::string const& key, ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& value);
 
-    MCNAPI ::Scripting::Result_deprecated<void> setDynamicProperty_V010(
-        ::Scripting::ContextConfig const&                           contextConfig,
-        ::std::string const&                                        key,
-        ::std::variant<double, float, bool, ::std::string, ::Vec3>& value
-    );
+    MCNAPI ::Scripting::Result_deprecated<void> setDynamicProperty_V010(::Scripting::ContextConfig const& contextConfig, ::std::string const& key, ::std::variant<double, float, bool, ::std::string, ::Vec3>& value);
 
-    MCNAPI ::Scripting::Result_deprecated<void>
-    setTimeOfDay(::std::variant<int, ::ScriptModuleMinecraft::ScriptTimeOfDay> timeOfDay);
+    MCNAPI ::Scripting::Result_deprecated<void> setTimeOfDay(::std::variant<int, ::ScriptModuleMinecraft::ScriptTimeOfDay> timeOfDay);
 
     MCNAPI void stopMusic();
 
@@ -255,13 +179,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptWorld&&);
 
-    MCNAPI void* $ctor(
-        ::Scripting::WeakLifetimeScope const&                scope,
-        ::gsl::not_null<::ServerLevel*>                      level,
-        ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners,
-        ::Scripting::DependencyLocator&                      locator,
-        ::Scripting::ContextConfig const&                    config
-    );
+    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level, ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners, ::Scripting::DependencyLocator& locator, ::Scripting::ContextConfig const& config);
     // NOLINTEND
 
 public:
@@ -269,6 +187,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

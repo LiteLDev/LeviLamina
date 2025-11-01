@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::HudContainerManagerModel>> mHudContainerManagerModel;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>             mDynamicContainerRemovalNotifier;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mDynamicContainerRemovalNotifier;
     // NOLINTEND
 
 public:
@@ -34,4 +34,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

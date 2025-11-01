@@ -10,6 +10,7 @@ namespace dragon::framerenderer { class CommandContext; }
 
 namespace dragon::framerenderer {
 
-class RenderContext {};
+class RenderContext {
+};
 
-} // namespace dragon::framerenderer
+}

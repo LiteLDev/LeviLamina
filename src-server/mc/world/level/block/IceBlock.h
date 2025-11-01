@@ -26,14 +26,13 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 89
-    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const
-        /*override*/;
+    // vIndex: 88
+    virtual ::Block const* playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 46
@@ -72,4 +71,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

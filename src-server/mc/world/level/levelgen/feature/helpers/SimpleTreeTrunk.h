@@ -22,10 +22,10 @@ class SimpleTreeTrunk : public ::ITreeTrunk {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                  mSubmergedDepth;
-    ::ll::TypedStorage<4, 8, ::IntRange>                           mHeight;
-    ::ll::TypedStorage<4, 8, ::IntRange>                           mHeightModifier;
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                  mTrunkBlockDescriptor;
+    ::ll::TypedStorage<4, 4, int> mSubmergedDepth;
+    ::ll::TypedStorage<4, 8, ::IntRange> mHeight;
+    ::ll::TypedStorage<4, 8, ::IntRange> mHeightModifier;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mTrunkBlockDescriptor;
     ::ll::TypedStorage<8, 208, ::TreeHelper::AttachableDecoration> mDecoration;
     // NOLINTEND
 
@@ -39,15 +39,7 @@ public:
     virtual int getTreeHeight(::Random& random) const /*override*/;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos> placeTrunk(
-        ::IBlockWorldGenAPI&            target,
-        ::BlockPos const&               pos,
-        ::Random&                       random,
-        int                             treeHeight,
-        ::RenderParams&                 renderParams,
-        ::TreeHelper::TreeParams const& treeParams,
-        ::ITreeCanopy const*            canopy
-    ) const /*override*/;
+    virtual ::std::optional<::BlockPos> placeTrunk(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, int treeHeight, ::RenderParams& renderParams, ::TreeHelper::TreeParams const& treeParams, ::ITreeCanopy const* canopy) const /*override*/;
     // NOLINTEND
 
 public:
@@ -55,15 +47,7 @@ public:
     // NOLINTBEGIN
     MCAPI int $getTreeHeight(::Random& random) const;
 
-    MCAPI ::std::optional<::BlockPos> $placeTrunk(
-        ::IBlockWorldGenAPI&            target,
-        ::BlockPos const&               pos,
-        ::Random&                       random,
-        int                             treeHeight,
-        ::RenderParams&                 renderParams,
-        ::TreeHelper::TreeParams const& treeParams,
-        ::ITreeCanopy const*            canopy
-    ) const;
+    MCAPI ::std::optional<::BlockPos> $placeTrunk(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, int treeHeight, ::RenderParams& renderParams, ::TreeHelper::TreeParams const& treeParams, ::ITreeCanopy const* canopy) const;
     // NOLINTEND
 
 public:
@@ -71,4 +55,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -13,4 +13,4 @@ namespace SpawnExperienceOrbSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace SpawnExperienceOrbSystem
+}

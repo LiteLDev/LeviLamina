@@ -12,8 +12,9 @@ public:
     ::ll::UntypedStorage<8, 72> mUnkc78202;
     ::ll::UntypedStorage<8, 80> mUnk287041;
     ::ll::UntypedStorage<8, 24> mUnkf46b0b;
-    ::ll::UntypedStorage<1, 1>  mUnk69d4f7;
-    ::ll::UntypedStorage<1, 1>  mUnkb3997b;
+    ::ll::UntypedStorage<8, 64> mUnk2ffb46;
+    ::ll::UntypedStorage<1, 1> mUnk69d4f7;
+    ::ll::UntypedStorage<1, 1> mUnkb3997b;
     // NOLINTEND
 
 public:
@@ -28,4 +29,5 @@ public:
     // vIndex: 0
     virtual ~SuspendHandler() /*override*/ = default;
     // NOLINTEND
+
 };

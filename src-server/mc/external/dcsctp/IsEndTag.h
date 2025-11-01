@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-class IsEndTag {};
+class IsEndTag {
+};
 
-} // namespace dcsctp
+}

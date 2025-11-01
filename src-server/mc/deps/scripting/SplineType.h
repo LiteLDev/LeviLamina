@@ -5,7 +5,7 @@
 namespace Scripting::RenderHelper {
 
 enum class SplineType : int {
-    Line          = 0,
+    Line = 0,
     HermiteSpline = 1,
 };
 

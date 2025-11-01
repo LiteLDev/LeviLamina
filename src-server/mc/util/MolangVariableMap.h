@@ -17,16 +17,16 @@ class MolangVariableMap {
 public:
     // MolangVariableMap inner types define
     enum class MissingVariableHandling : int {
-        Error   = 0,
+        Error = 0,
         NoError = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<short>> mMapFromVariableIndexToVariableArrayOffset;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::MolangVariable>>> mVariables;
-    ::ll::TypedStorage<1, 1, bool>                                                mHasPublicVariables;
+    ::ll::TypedStorage<1, 1, bool> mHasPublicVariables;
     // NOLINTEND
 
 public:
@@ -55,11 +55,7 @@ public:
 
     MCAPI bool operator==(::MolangVariableMap const& rhs) const;
 
-    MCAPI void setMolangStructMember(
-        ::HashedString const&    rootVariableName,
-        ::HashedString const&    memberNameDepth0,
-        ::MolangScriptArg const& value
-    );
+    MCAPI void setMolangStructMember(::HashedString const& rootVariableName, ::HashedString const& memberNameDepth0, ::MolangScriptArg const& value);
 
     MCAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, ::MolangScriptArg const& value);
 
@@ -77,4 +73,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

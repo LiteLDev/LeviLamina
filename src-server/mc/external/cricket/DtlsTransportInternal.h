@@ -74,21 +74,13 @@ public:
     virtual ::std::unique_ptr<::rtc::SSLCertChain> GetRemoteSSLCertChain() const = 0;
 
     // vIndex: 21
-    virtual bool ExportKeyingMaterial(
-        ::std::string_view label,
-        uchar const*       context,
-        uint64             context_len,
-        bool               use_context,
-        uchar*             result,
-        uint64             result_len
-    ) = 0;
+    virtual bool ExportKeyingMaterial(::std::string_view label, uchar const* context, uint64 context_len, bool use_context, uchar* result, uint64 result_len) = 0;
 
     // vIndex: 22
     virtual bool SetRemoteFingerprint(::std::string_view, uchar const*, uint64) = 0;
 
     // vIndex: 23
-    virtual ::webrtc::RTCError
-    SetRemoteParameters(::std::string_view, uchar const*, uint64, ::std::optional<::rtc::SSLRole>) = 0;
+    virtual ::webrtc::RTCError SetRemoteParameters(::std::string_view, uchar const*, uint64, ::std::optional<::rtc::SSLRole>) = 0;
 
     // vIndex: 24
     virtual ::cricket::IceTransportInternal* ice_transport() = 0;
@@ -123,6 +115,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

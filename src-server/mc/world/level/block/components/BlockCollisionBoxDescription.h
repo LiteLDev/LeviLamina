@@ -17,7 +17,7 @@ struct BlockCollisionBoxDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>    mEnabled;
+    ::ll::TypedStorage<1, 1, bool> mEnabled;
     ::ll::TypedStorage<4, 12, ::Vec3> mOrigin;
     ::ll::TypedStorage<4, 12, ::Vec3> mSize;
     // NOLINTEND
@@ -100,4 +100,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

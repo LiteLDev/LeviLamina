@@ -11,11 +11,12 @@ public:
     enum class Action : uchar {
         Query = 0,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::PositionTrackingDBClientRequestPacketPayload::Action> mAction;
-    ::ll::TypedStorage<4, 4, ::PositionTrackingId>                                   mId;
+    ::ll::TypedStorage<4, 4, ::PositionTrackingId> mId;
     // NOLINTEND
+
 };

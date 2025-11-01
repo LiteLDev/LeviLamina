@@ -41,21 +41,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptActorCommandOrigin(
-        ::Actor const&                              actor,
-        ::std::function<void(int, ::std::string&&)> outputCallback,
-        ::std::optional<::CommandPermissionLevel>   permissionLevel
-    );
+    MCNAPI ScriptActorCommandOrigin(::Actor const& actor, ::std::function<void(int, ::std::string&&)> outputCallback, ::std::optional<::CommandPermissionLevel> permissionLevel);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Actor const&                              actor,
-        ::std::function<void(int, ::std::string&&)> outputCallback,
-        ::std::optional<::CommandPermissionLevel>   permissionLevel
-    );
+    MCNAPI void* $ctor(::Actor const& actor, ::std::function<void(int, ::std::string&&)> outputCallback, ::std::optional<::CommandPermissionLevel> permissionLevel);
     // NOLINTEND
 
 public:
@@ -77,4 +69,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

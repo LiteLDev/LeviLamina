@@ -18,6 +18,7 @@ public:
     AxisOffset& operator=(AxisOffset const&);
     AxisOffset(AxisOffset const&);
     AxisOffset();
+
 };
 
-} // namespace ui
+}

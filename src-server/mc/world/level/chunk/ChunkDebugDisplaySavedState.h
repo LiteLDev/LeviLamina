@@ -4,5 +4,5 @@
 
 enum class ChunkDebugDisplaySavedState : uchar {
     Generated = 0,
-    Saved     = 1,
+    Saved = 1,
 };

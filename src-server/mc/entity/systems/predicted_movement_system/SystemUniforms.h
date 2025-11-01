@@ -17,6 +17,7 @@ public:
     SystemUniforms& operator=(SystemUniforms const&);
     SystemUniforms(SystemUniforms const&);
     SystemUniforms();
+
 };
 
-} // namespace PredictedMovementSystem
+}

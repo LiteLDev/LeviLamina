@@ -5,8 +5,8 @@
 namespace Bedrock::PubSub {
 
 enum class DeferralType : int {
-    KeepAll            = 0,
-    KeepLatest         = 1,
+    KeepAll = 0,
+    KeepLatest = 1,
     ExecuteImmediately = 2,
 };
 

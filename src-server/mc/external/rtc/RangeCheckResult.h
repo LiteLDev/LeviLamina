@@ -5,10 +5,10 @@
 namespace rtc::internal {
 
 enum class RangeCheckResult : int {
-    Valid     = 0,
+    Valid = 0,
     Underflow = 1,
-    Overflow  = 2,
-    Invalid   = 3,
+    Overflow = 2,
+    Invalid = 3,
 };
 
 }

@@ -17,12 +17,12 @@ class ServerScriptDebugCommand : public ::ScriptDebugCommand {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnkbe492c;
-    ::ll::UntypedStorage<4, 4>  mUnk16a659;
-    ::ll::UntypedStorage<4, 4>  mUnk79156f;
-    ::ll::UntypedStorage<4, 4>  mUnke39369;
+    ::ll::UntypedStorage<4, 4> mUnkbe492c;
+    ::ll::UntypedStorage<4, 4> mUnk16a659;
+    ::ll::UntypedStorage<4, 4> mUnk79156f;
+    ::ll::UntypedStorage<4, 4> mUnke39369;
     ::ll::UntypedStorage<8, 32> mUnkb35c35;
-    ::ll::UntypedStorage<4, 4>  mUnk9e0646;
+    ::ll::UntypedStorage<4, 4> mUnk9e0646;
     // NOLINTEND
 
 public:
@@ -62,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

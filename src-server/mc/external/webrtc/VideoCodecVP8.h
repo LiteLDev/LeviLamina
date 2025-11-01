@@ -19,6 +19,7 @@ public:
     VideoCodecVP8& operator=(VideoCodecVP8 const&);
     VideoCodecVP8(VideoCodecVP8 const&);
     VideoCodecVP8();
+
 };
 
-} // namespace webrtc
+}

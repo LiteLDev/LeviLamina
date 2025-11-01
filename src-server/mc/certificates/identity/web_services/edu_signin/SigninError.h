@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk97827c;
-    ::ll::UntypedStorage<1, 1>  mUnk776b09;
+    ::ll::UntypedStorage<1, 1> mUnk776b09;
     ::ll::UntypedStorage<8, 24> mUnk4615f3;
     // NOLINTEND
 
@@ -18,6 +18,7 @@ public:
     SigninError& operator=(SigninError const&);
     SigninError(SigninError const&);
     SigninError();
+
 };
 
-} // namespace WebServices::EduSignin
+}

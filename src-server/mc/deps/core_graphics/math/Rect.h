@@ -4,7 +4,8 @@
 
 namespace cg::math {
 
-template <typename T0>
-struct Rect {};
+template<typename T0>
+struct Rect {
+};
 
-} // namespace cg::math
+}

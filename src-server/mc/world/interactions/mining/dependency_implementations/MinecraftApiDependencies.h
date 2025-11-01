@@ -11,9 +11,9 @@ class MinecraftApiDependencies : public ::Interactions::Mining::IMinecraftApiDep
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk97af03;
-    ::ll::UntypedStorage<8, 8>  mUnk761258;
-    ::ll::UntypedStorage<8, 8>  mUnk354c1f;
+    ::ll::UntypedStorage<8, 8> mUnk97af03;
+    ::ll::UntypedStorage<8, 8> mUnk761258;
+    ::ll::UntypedStorage<8, 8> mUnk354c1f;
     ::ll::UntypedStorage<4, 12> mUnk4c1ab6;
     // NOLINTEND
 
@@ -44,6 +44,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Interactions::Mining
+}

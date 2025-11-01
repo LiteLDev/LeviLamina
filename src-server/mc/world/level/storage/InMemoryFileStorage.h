@@ -12,7 +12,7 @@ class InMemoryFileStorage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkcc7879;
+    ::ll::UntypedStorage<8, 8> mUnkcc7879;
     ::ll::UntypedStorage<8, 80> mUnk54a9a8;
     ::ll::UntypedStorage<8, 24> mUnk57e077;
     ::ll::UntypedStorage<8, 24> mUnkaf8bcd;
@@ -35,4 +35,5 @@ public:
 
     MCNAPI void populateFileList(::std::vector<::std::string>& fileList);
     // NOLINTEND
+
 };

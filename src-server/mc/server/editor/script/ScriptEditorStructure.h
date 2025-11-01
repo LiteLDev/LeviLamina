@@ -3,20 +3,17 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/scripting/lifetime_registry/StrongTypedObjectHandle.h"
 #include "mc/deps/scripting/runtime/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class Vec3;
-namespace Editor::Services { class ServerStructureServiceProvider; }
+namespace Editor { class EditorStructureTemplate; }
 namespace ScriptModuleMinecraft { class ScriptBlockPermutation; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidStructureError; }
-namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct InvalidArgumentError; }
-namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -26,8 +23,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnka12754;
-    ::ll::UntypedStorage<8, 32> mUnka2f54d;
-    ::ll::UntypedStorage<8, 24> mUnk8ceda5;
+    ::ll::UntypedStorage<8, 16> mUnk751c7d;
     ::ll::UntypedStorage<8, 16> mUnk4b8574;
     // NOLINTEND
 
@@ -40,42 +36,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptEditorStructure(
-        ::mce::UUID const&                                                                guid,
-        ::std::string const&                                                              id,
-        ::Bedrock::NotNullNonOwnerPtr<::Editor::Services::ServerStructureServiceProvider> structureManager,
-        ::Scripting::WeakLifetimeScope                                                    scope
-    );
+    MCNAPI ::std::optional<::Editor::EditorStructureTemplate> _getEditorStructureTemplate() const;
 
-    MCNAPI ::Scripting::Result<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>,
-        ::ScriptModuleMinecraft::ScriptInvalidStructureError,
-        ::Scripting::InvalidArgumentError>
-    getBlockPermutation(::Vec3 const& location) const;
+    MCNAPI ::Scripting::Result<::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError> getBlockPermutation(::Vec3 const& location) const;
 
-    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getDisplayName();
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getDescription() const;
+
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getDisplayName() const;
+
+    MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getNormalizedOrigin() const;
+
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getNotes() const;
+
+    MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getOffset() const;
+
+    MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getOriginalWorldLocation() const;
 
     MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getSize() const;
 
-    MCNAPI ::Scripting::Result<::std::vector<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-    getTags();
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getStructureFullName() const;
 
-    MCNAPI ::Scripting::
-        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError>
-        isWaterlogged(::Vec3 const& location) const;
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getStructureName() const;
+
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getStructureNamespace() const;
+
+    MCNAPI ::Scripting::Result<::std::vector<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidStructureError> getTags();
+
+    MCNAPI ::std::string getUUID() const;
+
+    MCNAPI bool isValid() const;
+
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidStructureError, ::Scripting::InvalidArgumentError> isWaterlogged(::Vec3 const& location) const;
 
     MCNAPI ::Editor::ScriptModule::ScriptEditorStructure& operator=(::Editor::ScriptModule::ScriptEditorStructure&&);
 
-    MCNAPI ::Scripting::
-        Result<void, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-        setBlockPermutation(
-            ::Vec3 const&                                                                         location,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation,
-            bool                                                                                  waterlogged
-        );
+    MCNAPI ::Scripting::Result<void, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptInvalidStructureError> setBlockPermutation(::Vec3 const& location, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation, bool waterlogged);
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidStructureError>
-    setTags(::std::vector<::std::string> const& tags) const;
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidStructureError> setTags(::std::vector<::std::string> const& tags) const;
 
     MCNAPI ~ScriptEditorStructure();
     // NOLINTEND
@@ -87,21 +84,11 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::mce::UUID const&                                                                guid,
-        ::std::string const&                                                              id,
-        ::Bedrock::NotNullNonOwnerPtr<::Editor::Services::ServerStructureServiceProvider> structureManager,
-        ::Scripting::WeakLifetimeScope                                                    scope
-    );
-    // NOLINTEND
-
-public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

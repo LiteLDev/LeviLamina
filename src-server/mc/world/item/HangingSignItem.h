@@ -17,11 +17,10 @@ class HangingSignItem : public ::SignItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 123
-    virtual ::Block const* getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const
-        /*override*/;
+    // vIndex: 124
+    virtual ::Block const* getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 121
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
 
     // vIndex: 0
@@ -31,11 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Block const*
-    _getCeilingHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
+    MCAPI ::Block const* _getCeilingHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
 
-    MCAPI ::Block const*
-    _getWallHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
+    MCAPI ::Block const* _getWallHangingSignBlock(::Actor const& entity, uchar const& face, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
@@ -51,4 +48,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

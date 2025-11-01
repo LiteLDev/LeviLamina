@@ -38,6 +38,9 @@ public:
     // vIndex: 6
     virtual bool forEachItemUntil(::std::function<bool(::Item const&, short)> func) const /*override*/;
 
+    // vIndex: 3
+    virtual ::std::string getFullName() const /*override*/;
+
     // vIndex: 4
     virtual ::std::string toString() const /*override*/;
 
@@ -83,6 +86,8 @@ public:
 
     MCAPI bool $forEachItemUntil(::std::function<bool(::Item const&, short)> func) const;
 
+    MCFOLD ::std::string $getFullName() const;
+
     MCAPI ::std::string $toString() const;
 
     MCFOLD ::ItemDescriptor::ItemEntry $getItem() const;
@@ -105,4 +110,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

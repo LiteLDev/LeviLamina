@@ -12,8 +12,8 @@ class PacketViolationHandler : public ::IPacketSecurityHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 32>  mUnkd8ca2f;
-    ::ll::UntypedStorage<8, 8>   mUnk906264;
+    ::ll::UntypedStorage<4, 32> mUnkd8ca2f;
+    ::ll::UntypedStorage<8, 8> mUnk906264;
     ::ll::UntypedStorage<8, 176> mUnk14f8c8;
     // NOLINTEND
 
@@ -27,11 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual ::PacketViolationResponse checkForViolation(
-        ::MinecraftPacketIds                                                     packetId,
-        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result,
-        bool*                                                                    outIsNewOrUpdatedViolation
-    ) /*override*/;
+    virtual ::PacketViolationResponse checkForViolation(::MinecraftPacketIds packetId, ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result, bool* outIsNewOrUpdatedViolation) /*override*/;
 
     // vIndex: 1
     virtual uint getTelemetryData() /*override*/;
@@ -43,18 +39,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::PacketViolationResponse
-    _handleViolation(::MinecraftPacketIds packetId, ::std::error_code const& result, bool* outIsNewOrUpdatedViolation);
+    MCNAPI ::PacketViolationResponse _handleViolation(::MinecraftPacketIds packetId, ::std::error_code const& result, bool* outIsNewOrUpdatedViolation);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::PacketViolationResponse $checkForViolation(
-        ::MinecraftPacketIds                                                     packetId,
-        ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result,
-        bool*                                                                    outIsNewOrUpdatedViolation
-    );
+    MCNAPI ::PacketViolationResponse $checkForViolation(::MinecraftPacketIds packetId, ::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> const& result, bool* outIsNewOrUpdatedViolation);
 
     MCNAPI uint $getTelemetryData();
     // NOLINTEND
@@ -64,4 +55,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

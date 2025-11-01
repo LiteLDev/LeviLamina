@@ -5,8 +5,9 @@
 #include "mc/world/events/EventVariantImpl.h"
 #include "mc/world/events/LevelWeatherChangedEvent.h"
 
-template <typename Return>
+template<typename Return>
 struct MutableLevelGameplayEvent;
 
 template <>
-struct MutableLevelGameplayEvent<CoordinatorResult> : MutableEventVariant<LevelWeatherChangedEvent> {};
+struct MutableLevelGameplayEvent<CoordinatorResult> : MutableEventVariant<LevelWeatherChangedEvent> {
+};

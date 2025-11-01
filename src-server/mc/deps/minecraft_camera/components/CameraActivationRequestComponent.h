@@ -16,6 +16,7 @@ public:
     CameraActivationRequestComponent& operator=(CameraActivationRequestComponent const&);
     CameraActivationRequestComponent(CameraActivationRequestComponent const&);
     CameraActivationRequestComponent();
+
 };
 
-} // namespace MinecraftCamera
+}

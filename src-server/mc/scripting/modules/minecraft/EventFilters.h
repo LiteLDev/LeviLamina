@@ -13,4 +13,4 @@ namespace ScriptModuleMinecraft::EventFilters {
 MCNAPI void bindFilters(::Scripting::ModuleBindingBuilder& moduleBuilder);
 // NOLINTEND
 
-} // namespace ScriptModuleMinecraft::EventFilters
+}

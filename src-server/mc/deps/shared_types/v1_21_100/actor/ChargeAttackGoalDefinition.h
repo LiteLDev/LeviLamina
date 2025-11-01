@@ -38,10 +38,17 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static float const& DEFAULT_MAX_DISTANCE();
+
+    MCNAPI static float const& DEFAULT_MIN_DISTANCE();
+
+    MCNAPI static float const& DEFAULT_SPEED_MULTIPLIER();
+
     MCNAPI static float const& DEFAULT_SUCCESS_RATE();
 
     MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_100
+}

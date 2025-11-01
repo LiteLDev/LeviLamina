@@ -11,9 +11,9 @@ class GameEventListenerRegistry : public ::std::enable_shared_from_this<::GameEv
 public:
     // GameEventListenerRegistry inner types define
     using RegistrationToken = ::gsl::final_action<::std::function<void()>>;
-
+    
     using ListenerVector = ::std::vector<::std::reference_wrapper<::GameEventListener>>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCAPI ::gsl::final_action<::std::function<void()>> registerListener(::GameEventListener& gameEventListener);
     // NOLINTEND
+
 };

@@ -3,6 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class FilterParamOption : uchar {
-    None               = 0,
+    None = 0,
     EmptyDefaultString = 1,
 };

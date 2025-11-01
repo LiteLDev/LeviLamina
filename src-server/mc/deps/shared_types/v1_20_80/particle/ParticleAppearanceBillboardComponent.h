@@ -17,8 +17,8 @@ struct ParticleAppearanceBillboardComponent : public ::SharedTypes::v1_20_80::Pa
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 96>  mUnk252f0f;
-    ::ll::UntypedStorage<8, 56>  mUnk551eba;
+    ::ll::UntypedStorage<8, 96> mUnk252f0f;
+    ::ll::UntypedStorage<8, 56> mUnk551eba;
     ::ll::UntypedStorage<8, 168> mUnk1ea376;
     ::ll::UntypedStorage<8, 392> mUnkc1f356;
     // NOLINTEND
@@ -45,8 +45,7 @@ public:
 
     MCNAPI ParticleAppearanceBillboardComponent(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent const&);
 
-    MCNAPI ::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&
-    operator=(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
+    MCNAPI ::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent& operator=(::SharedTypes::v1_20_80::ParticleAppearanceBillboardComponent&&);
     // NOLINTEND
 
 public:
@@ -86,6 +85,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_80
+}

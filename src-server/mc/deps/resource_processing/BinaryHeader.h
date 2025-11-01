@@ -17,8 +17,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnkf414b0;
-    ::ll::UntypedStorage<2, 2>  mUnkf9cdc5;
-    ::ll::UntypedStorage<8, 8>  mUnk6d8f24;
+    ::ll::UntypedStorage<2, 2> mUnkf9cdc5;
+    ::ll::UntypedStorage<8, 8> mUnk6d8f24;
     // NOLINTEND
 
 public:
@@ -38,8 +38,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool hasMagicNumber(::gsl::span<uchar const> data);
 
-    MCNAPI static ::Bedrock::Result<::Bedrock::Resources::BinaryHeader, ::Puv::Logger>
-    parse(::std::string_view binaryResource);
+    MCNAPI static ::Bedrock::Result<::Bedrock::Resources::BinaryHeader, ::Puv::Logger> parse(::std::string_view binaryResource);
     // NOLINTEND
 
 public:
@@ -47,6 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Resources
+}

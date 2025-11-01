@@ -19,7 +19,7 @@ class CacheManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk948f80;
+    ::ll::UntypedStorage<8, 8> mUnk948f80;
     ::ll::UntypedStorage<8, 16> mUnkaec1ce;
     // NOLINTEND
 
@@ -32,12 +32,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::gsl::not_null<::PositionTrackingDB::TrackingRecord*> createTrackingRecordInLocalCache(
-        ::PositionTrackingId const& id,
-        ::BlockPos const&           pos,
-        ::DimensionType const&      dimension
-    );
+    MCNAPI ::gsl::not_null<::PositionTrackingDB::TrackingRecord*> createTrackingRecordInLocalCache(::PositionTrackingId const& id, ::BlockPos const& pos, ::DimensionType const& dimension);
     // NOLINTEND
+
 };
 
-} // namespace PositionTrackingDB
+}

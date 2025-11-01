@@ -32,4 +32,5 @@ public:
 
     MCAPI static bool shouldKeepOnDeath(::Actor const& actor, ::ItemStackBase const& item);
     // NOLINTEND
+
 };

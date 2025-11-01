@@ -16,6 +16,7 @@ public:
     EduAuthParameters& operator=(EduAuthParameters const&);
     EduAuthParameters(EduAuthParameters const&);
     EduAuthParameters();
+
 };
 
-} // namespace Identity
+}

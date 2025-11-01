@@ -29,38 +29,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 67
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 61
-    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const
-        /*override*/;
+    virtual void onRedstoneUpdate(::BlockSource& region, ::BlockPos const& pos, int strength, bool isFirstTime) const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual int getTickDelay();
 
     // vIndex: 54
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
-        /*override*/;
+    virtual bool shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     // vIndex: 44
     virtual bool isSignalSource() const /*override*/;
 
-    // vIndex: 87
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
+    // vIndex: 86
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
 
-    // vIndex: 119
+    // vIndex: 118
     virtual bool canSpawnOn(::Actor*) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
@@ -86,8 +82,7 @@ public:
 
     MCFOLD int $getTickDelay();
 
-    MCFOLD bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+    MCFOLD bool $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
@@ -105,4 +100,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

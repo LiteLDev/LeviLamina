@@ -10,6 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::GameEventConfig::GameEventType const> mType;
-    ::ll::TypedStorage<1, 1, uchar const>                            mCategories;
+    ::ll::TypedStorage<1, 1, uchar const> mCategories;
     // NOLINTEND
+
 };

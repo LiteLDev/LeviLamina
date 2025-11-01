@@ -29,38 +29,39 @@ public:
     struct SetterDescriptor;
     struct TypeDescriptor;
     // clang-format on
-
+    
     // BasicSchema inner types define
     struct TypeDescriptor {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnk25883b;
+        ::ll::UntypedStorage<8, 8> mUnk25883b;
         ::ll::UntypedStorage<8, 32> mUnka7498e;
         ::ll::UntypedStorage<8, 72> mUnkfb7a42;
         ::ll::UntypedStorage<8, 32> mUnk5fc8e6;
-        ::ll::UntypedStorage<1, 1>  mUnk7fcb00;
+        ::ll::UntypedStorage<1, 1> mUnk7fcb00;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         TypeDescriptor& operator=(TypeDescriptor const&);
         TypeDescriptor(TypeDescriptor const&);
         TypeDescriptor();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~TypeDescriptor();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct SetterDescriptor {
     public:
         // member variables
@@ -68,88 +69,92 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkc28d37;
         ::ll::UntypedStorage<8, 8> mUnk7833a6;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         SetterDescriptor& operator=(SetterDescriptor const&);
         SetterDescriptor(SetterDescriptor const&);
         SetterDescriptor();
+    
     };
-
+    
     struct MemberDescriptor {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkf6e459;
-        ::ll::UntypedStorage<8, 8>  mUnkcc5bac;
+        ::ll::UntypedStorage<8, 8> mUnkf6e459;
+        ::ll::UntypedStorage<8, 8> mUnkcc5bac;
         ::ll::UntypedStorage<8, 32> mUnka15dd0;
         ::ll::UntypedStorage<8, 32> mUnkc97556;
-        ::ll::UntypedStorage<8, 8>  mUnkb0e062;
+        ::ll::UntypedStorage<8, 8> mUnkb0e062;
         ::ll::UntypedStorage<8, 72> mUnk332289;
         ::ll::UntypedStorage<8, 40> mUnk235705;
         ::ll::UntypedStorage<8, 32> mUnke471ac;
-        ::ll::UntypedStorage<1, 1>  mUnk9dbec8;
+        ::ll::UntypedStorage<1, 1> mUnk9dbec8;
+        ::ll::UntypedStorage<1, 1> mUnk39c99d;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         MemberDescriptor& operator=(MemberDescriptor const&);
         MemberDescriptor(MemberDescriptor const&);
         MemberDescriptor();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI MemberDescriptor(::cereal::internal::BasicSchema::MemberDescriptor&&);
-
+    
         MCNAPI ~MemberDescriptor();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::cereal::internal::BasicSchema::MemberDescriptor&&);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct DynamicSetterArg {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 208> mUnka33fb1;
-        ::ll::UntypedStorage<8, 8>   mUnkcc227c;
+        ::ll::UntypedStorage<8, 8> mUnkcc227c;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         DynamicSetterArg& operator=(DynamicSetterArg const&);
         DynamicSetterArg(DynamicSetterArg const&);
         DynamicSetterArg();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~DynamicSetterArg();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     enum class DescriptionMode : int {
-        Brief    = 0,
+        Brief = 0,
         Detailed = 1,
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -169,38 +174,22 @@ public:
     virtual ::cereal::internal::VariantPriorityLevel minVariantPriorityLevel(::entt::meta_ctx const&) const;
 
     // vIndex: 5
-    virtual void validateConstraint(
-        ::cereal::Constraint const&  constraint,
-        ::entt::meta_any const&      any,
-        ::cereal::SerializerContext& context
-    ) const;
+    virtual void validateConstraint(::cereal::Constraint const& constraint, ::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
 
     // vIndex: 6
-    virtual void doLoad(
-        ::cereal::SchemaReader&,
-        ::entt::meta_any&,
-        ::entt::meta_any const&,
-        ::cereal::internal::LoadState const&
-    ) const;
+    virtual void doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::internal::LoadState const&) const;
 
     // vIndex: 7
-    virtual void
-    doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::internal::SaveState const& state) const;
+    virtual void doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::internal::SaveState const&) const;
 
     // vIndex: 8
-    virtual ::cereal::SchemaDescription
-    makeDescription(::entt::meta_ctx const&, ::cereal::internal::BasicSchema::DescriptionMode) const = 0;
+    virtual ::cereal::SchemaDescription makeDescription(::entt::meta_ctx const&, ::cereal::internal::BasicSchema::DescriptionMode) const = 0;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void load(
-        ::cereal::SchemaReader&              value,
-        ::entt::meta_any&                    any,
-        ::entt::meta_any const&              udata,
-        ::cereal::internal::LoadState const& state
-    ) const;
+    MCNAPI void load(::cereal::SchemaReader& value, ::entt::meta_any& any, ::entt::meta_any const& udata, ::cereal::internal::LoadState const& state) const;
     // NOLINTEND
 
 public:
@@ -214,15 +203,9 @@ public:
 
     MCNAPI ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::entt::meta_ctx const&) const;
 
-    MCNAPI void $validateConstraint(
-        ::cereal::Constraint const&  constraint,
-        ::entt::meta_any const&      any,
-        ::cereal::SerializerContext& context
-    ) const;
-
-    MCNAPI void
-    $doSave(::cereal::SchemaWriter&, ::entt::meta_any const&, ::cereal::internal::SaveState const& state) const;
+    MCNAPI void $validateConstraint(::cereal::Constraint const& constraint, ::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
     // NOLINTEND
+
 };
 
-} // namespace cereal::internal
+}

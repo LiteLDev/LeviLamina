@@ -19,20 +19,11 @@ struct LiquidSplashSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _singleTickLiquidSplash(
-        ::StrictEntityContext const&                                                                     entity,
-        ::ViewT<::StrictEntityContext, ::WaterSplashEffectRequestComponent const, ::ActorOwnerComponent> splashEffects,
-        ::ViewT<::StrictEntityContext, ::Include<::PostSplashGameEventRequestComponent>, ::ActorOwnerComponent>
-            gameEvents
-    );
+    MCNAPI static void _singleTickLiquidSplash(::StrictEntityContext const& entity, ::ViewT<::StrictEntityContext, ::WaterSplashEffectRequestComponent const, ::ActorOwnerComponent> splashEffects, ::ViewT<::StrictEntityContext, ::Include<::PostSplashGameEventRequestComponent>, ::ActorOwnerComponent> gameEvents);
 
-    MCNAPI static void _tickLiquidSplash(
-        ::ViewT<::StrictEntityContext, ::WaterSplashEffectRequestComponent const, ::ActorOwnerComponent>
-            waterSplashEffects,
-        ::ViewT<::StrictEntityContext, ::Include<::PostSplashGameEventRequestComponent>, ::ActorOwnerComponent>
-            splashGameEvents
-    );
+    MCNAPI static void _tickLiquidSplash(::ViewT<::StrictEntityContext, ::WaterSplashEffectRequestComponent const, ::ActorOwnerComponent> waterSplashEffects, ::ViewT<::StrictEntityContext, ::Include<::PostSplashGameEventRequestComponent>, ::ActorOwnerComponent> splashGameEvents);
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
+
 };

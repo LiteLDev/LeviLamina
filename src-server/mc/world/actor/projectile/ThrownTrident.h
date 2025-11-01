@@ -26,12 +26,12 @@ public:
     enum class Data : int {
         OwnerID = 17,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>          mDealtDamage;
-    ::ll::TypedStorage<4, 4, int>           mClientSideReturnTridentTickCount;
+    ::ll::TypedStorage<1, 1, bool> mDealtDamage;
+    ::ll::TypedStorage<4, 4, int> mClientSideReturnTridentTickCount;
     ::ll::TypedStorage<8, 152, ::ItemStack> mTrident;
     // NOLINTEND
 
@@ -43,7 +43,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
-    virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&) /*override*/;
 
     // vIndex: 138
     virtual void shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed) /*override*/;
@@ -79,11 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ThrownTrident(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI ThrownTrident(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCAPI void returnWithLoyalty(int enchantLevel);
     // NOLINTEND
@@ -91,18 +87,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
-
     MCFOLD void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
     MCAPI void $playerTouch(::Player& player);
@@ -127,4 +117,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

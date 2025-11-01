@@ -23,7 +23,7 @@ class ActorAnimationGroup : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkcc69e4;
+    ::ll::UntypedStorage<8, 8> mUnkcc69e4;
     ::ll::UntypedStorage<8, 64> mUnk6df89c;
     ::ll::UntypedStorage<8, 80> mUnkc78eae;
     ::ll::UntypedStorage<8, 24> mUnk6b4a97;
@@ -45,21 +45,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<
-        ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorAnimationGroupParseMetaData>>
-    _buildAnimationFileSchema_v1_8(bool isPersonaPack);
+    MCNAPI ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorAnimationGroupParseMetaData>> _buildAnimationFileSchema_v1_8(bool isPersonaPack);
 
     MCNAPI ::std::shared_ptr<::ActorAnimationInfo> getActorAnimationInfo(::HashedString const& name);
 
-    MCNAPI void loadActorAnimation(
-        ::std::string const&      fileData,
-        ::Core::Path const&       filenameWithExtension,
-        ::PackStats&              stats,
-        ::MinEngineVersion const& minEngineVersion,
-        ::CurrentCmdVersion       packCommandVersion,
-        bool                      isPersonaPack,
-        ::std::string const&      personaPieceId
-    );
+    MCNAPI void loadActorAnimation(::std::string const& fileData, ::Core::Path const& filenameWithExtension, ::PackStats& stats, ::MinEngineVersion const& minEngineVersion, ::CurrentCmdVersion packCommandVersion, bool isPersonaPack, ::std::string const& personaPieceId);
 
     MCNAPI void loadActorAnimationsSync(::ResourcePackManager& resourcePackManager);
     // NOLINTEND
@@ -75,4 +65,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

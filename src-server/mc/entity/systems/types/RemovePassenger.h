@@ -4,6 +4,7 @@
 
 namespace VanillaSystemCategories {
 
-struct RemovePassenger {};
+struct RemovePassenger {
+};
 
-} // namespace VanillaSystemCategories
+}

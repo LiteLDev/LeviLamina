@@ -4,7 +4,8 @@
 
 namespace sigslot {
 
-template <typename T0>
-class _signal_base {};
+template<typename T0>
+class _signal_base {
+};
 
-} // namespace sigslot
+}

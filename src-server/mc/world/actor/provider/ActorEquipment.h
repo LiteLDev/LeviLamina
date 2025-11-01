@@ -23,4 +23,4 @@ MCAPI void initializeActor(::EntityContext& provider);
 MCAPI void initializePlayer(::EntityContext& provider, ::Player& player);
 // NOLINTEND
 
-} // namespace ActorEquipment
+}

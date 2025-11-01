@@ -25,9 +25,8 @@ public:
     // vIndex: 33
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 89
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    // vIndex: 90
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 0
     virtual ~AuxDataBlockItem() /*override*/ = default;
@@ -38,8 +37,7 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
     // NOLINTEND
 
 public:
@@ -47,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

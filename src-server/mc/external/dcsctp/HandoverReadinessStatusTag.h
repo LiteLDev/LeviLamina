@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-class HandoverReadinessStatusTag {};
+class HandoverReadinessStatusTag {
+};
 
-} // namespace dcsctp
+}

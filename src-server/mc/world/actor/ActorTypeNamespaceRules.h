@@ -4,5 +4,5 @@
 
 enum class ActorTypeNamespaceRules : int {
     ReturnWithoutNamespace = 0,
-    ReturnWithNamespace    = 1,
+    ReturnWithNamespace = 1,
 };

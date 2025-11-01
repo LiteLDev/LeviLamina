@@ -4,6 +4,7 @@
 
 namespace SharedTypes::v1_21_20::JigsawStructure::ProcessorRule {
 
-struct Passthrough {};
+struct Passthrough {
+};
 
-} // namespace SharedTypes::v1_21_20::JigsawStructure::ProcessorRule
+}

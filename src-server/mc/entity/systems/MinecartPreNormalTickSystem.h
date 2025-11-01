@@ -21,20 +21,9 @@ class MinecartPreNormalTickSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doMinecartPreNormalTickSystem(
-        ::StrictEntityContext&                                     context,
-        ::ActorOwnerComponent&                                     actorOwnerComponent,
-        ::EntityModifier<::MinecartPreNormalTickBlockPosComponent> mod
-    );
-
-    MCNAPI static void _tickMinecartPreNormalTickSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::MinecartFlagComponent>,
-            ::ActorOwnerComponent>                                 view,
-        ::EntityModifier<::MinecartPreNormalTickBlockPosComponent> mod
-    );
+    MCNAPI static void _doMinecartPreNormalTickSystem(::StrictEntityContext& context, ::ActorOwnerComponent& actorOwnerComponent, ::EntityModifier<::MinecartPreNormalTickBlockPosComponent> mod);
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
+
 };

@@ -10,8 +10,7 @@
 class BlockComponentStorage;
 // clang-format on
 
-struct BlockVoxelShapesCullingDescription
-: public ::NetworkedBlockComponentDescription<::BlockVoxelShapesCullingDescription> {
+struct BlockVoxelShapesCullingDescription : public ::NetworkedBlockComponentDescription<::BlockVoxelShapesCullingDescription> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -63,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

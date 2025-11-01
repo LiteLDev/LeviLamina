@@ -9,7 +9,7 @@ class MoveTowardsHomeRestrictionDefinition : public ::MoveTowardsRestrictionDefi
 public:
     // MoveTowardsHomeRestrictionDefinition inner types define
     using self = ::MoveTowardsHomeRestrictionDefinition;
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -22,4 +22,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -37,12 +37,7 @@ public:
 
     MCNAPI VoxelShape(::VoxelShapes::VoxelShape&&);
 
-    MCNAPI VoxelShape(
-        ::VoxelShapes::Cells               cells,
-        ::Bedrock::small_vector<float, 12> xCoords,
-        ::Bedrock::small_vector<float, 12> yCoords,
-        ::Bedrock::small_vector<float, 12> zCoords
-    );
+    MCNAPI VoxelShape(::VoxelShapes::Cells cells, ::Bedrock::small_vector<float, 12> xCoords, ::Bedrock::small_vector<float, 12> yCoords, ::Bedrock::small_vector<float, 12> zCoords);
 
     MCNAPI ::VoxelShapes::VoxelShape computeFaceShape(uchar face) const;
 
@@ -60,31 +55,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::VoxelShapes::VoxelShape
-    createCuboidShape(float xMin, float yMin, float zMin, float xMax, float yMax, float zMax);
+    MCNAPI static ::VoxelShapes::VoxelShape createCuboidShape(float xMin, float yMin, float zMin, float xMax, float yMax, float zMax);
 
     MCNAPI static ::VoxelShapes::VoxelShape createEmptyShape();
 
-    MCNAPI static ::VoxelShapes::VoxelShape join(
-        ::VoxelShapes::VoxelShape const& first,
-        ::VoxelShapes::VoxelShape const& second,
-        ::VoxelShapes::JoinOperation     operation
-    );
+    MCNAPI static ::VoxelShapes::VoxelShape join(::VoxelShapes::VoxelShape const& first, ::VoxelShapes::VoxelShape const& second, ::VoxelShapes::JoinOperation operation);
 
-    MCNAPI static ::VoxelShapes::VoxelShape joinUnoptimized(
-        ::VoxelShapes::VoxelShape const& first,
-        ::VoxelShapes::VoxelShape const& second,
-        ::VoxelShapes::JoinOperation     operation
-    );
+    MCNAPI static ::VoxelShapes::VoxelShape joinUnoptimized(::VoxelShapes::VoxelShape const& first, ::VoxelShapes::VoxelShape const& second, ::VoxelShapes::JoinOperation operation);
 
-    MCNAPI static ::VoxelShapes::VoxelShape transform(
-        ::VoxelShapes::VoxelShape shape,
-        ::Vec3 const&             scale,
-        ::Vec3 const&             scalePivot,
-        ::Vec3 const&             rotation,
-        ::Vec3 const&             rotationPivot,
-        ::Vec3 const&             translation
-    );
+    MCNAPI static ::VoxelShapes::VoxelShape transform(::VoxelShapes::VoxelShape shape, ::Vec3 const& scale, ::Vec3 const& scalePivot, ::Vec3 const& rotation, ::Vec3 const& rotationPivot, ::Vec3 const& translation);
     // NOLINTEND
 
 public:
@@ -102,12 +81,7 @@ public:
 
     MCNAPI void* $ctor(::VoxelShapes::VoxelShape&&);
 
-    MCNAPI void* $ctor(
-        ::VoxelShapes::Cells               cells,
-        ::Bedrock::small_vector<float, 12> xCoords,
-        ::Bedrock::small_vector<float, 12> yCoords,
-        ::Bedrock::small_vector<float, 12> zCoords
-    );
+    MCNAPI void* $ctor(::VoxelShapes::Cells cells, ::Bedrock::small_vector<float, 12> xCoords, ::Bedrock::small_vector<float, 12> yCoords, ::Bedrock::small_vector<float, 12> zCoords);
     // NOLINTEND
 
 public:
@@ -115,6 +89,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace VoxelShapes
+}

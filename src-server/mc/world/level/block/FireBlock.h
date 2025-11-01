@@ -28,38 +28,30 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual ::AABB getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const /*override*/;
+    virtual ::AABB getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>) const /*override*/;
 
     // vIndex: 9
-    virtual ::AABB const&
-    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const /*override*/;
+    virtual ::AABB const& getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 78
+    // vIndex: 77
     virtual bool mayPick() const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual void entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 87
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
+    // vIndex: 86
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
 
     // vIndex: 57
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -73,8 +65,7 @@ public:
 
     MCAPI bool _trySpawnSoulFire(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void
-    checkBurn(::BlockSource& region, ::BlockPos const& pos, int chance, ::Randomize& randomize, int age) const;
+    MCAPI void checkBurn(::BlockSource& region, ::BlockPos const& pos, int chance, ::Randomize& randomize, int age, ::BlockPos const& firePos) const;
 
     MCAPI float getFireOdds(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -94,15 +85,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::AABB $getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
+    MCFOLD ::AABB $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
-    MCFOLD ::AABB const&
-    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const;
+    MCFOLD ::AABB const& $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const;
 
     MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
@@ -124,4 +109,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -28,6 +28,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI FilterTestData(::SharedTypes::v1_21_20::FilterTestData&&);
+
     MCNAPI FilterTestData(::SharedTypes::v1_21_20::FilterTestData const&);
 
     MCNAPI ::SharedTypes::v1_21_20::FilterTestData& operator=(::SharedTypes::v1_21_20::FilterTestData&&);
@@ -44,6 +46,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+    MCNAPI void* $ctor(::SharedTypes::v1_21_20::FilterTestData&&);
+
     MCNAPI void* $ctor(::SharedTypes::v1_21_20::FilterTestData const&);
     // NOLINTEND
 
@@ -52,6 +56,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_20
+}

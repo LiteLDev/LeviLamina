@@ -72,7 +72,7 @@ public:
     virtual bool hasTellPerms() const /*override*/;
 
     // vIndex: 15
-    virtual bool canUseAbility(::AbilitiesIndex ability) const /*override*/;
+    virtual bool canUseAbility(::AbilitiesIndex abilityIndex) const /*override*/;
 
     // vIndex: 16
     virtual bool isWorldBuilder() const /*override*/;
@@ -117,7 +117,7 @@ public:
 
     MCNAPI bool $hasTellPerms() const;
 
-    MCNAPI bool $canUseAbility(::AbilitiesIndex ability) const;
+    MCNAPI bool $canUseAbility(::AbilitiesIndex abilityIndex) const;
 
     MCNAPI bool $isWorldBuilder() const;
 
@@ -131,4 +131,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

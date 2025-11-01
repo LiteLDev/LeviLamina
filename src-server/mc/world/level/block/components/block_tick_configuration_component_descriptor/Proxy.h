@@ -9,8 +9,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 8, ::std::array<int, 2>> mDelayIntervalRange;
-    ::ll::TypedStorage<1, 1, bool>                 mLooping;
+    ::ll::TypedStorage<1, 1, bool> mLooping;
     // NOLINTEND
+
 };
 
-} // namespace BlockTickConfigurationComponentDescriptor
+}

@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::set<::std::string>> mDownloadingPacks;
-    ::ll::TypedStorage<1, 1, ::ResourcePackResponse>     mResponse;
+    ::ll::TypedStorage<1, 1, ::ResourcePackResponse> mResponse;
     // NOLINTEND
 
 public:
@@ -31,10 +31,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -58,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

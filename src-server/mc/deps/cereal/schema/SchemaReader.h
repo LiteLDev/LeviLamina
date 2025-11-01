@@ -15,7 +15,7 @@ public:
     // clang-format off
     struct ScopedPop;
     // clang-format on
-
+    
     // SchemaReader inner types define
     struct ScopedPop {
     public:
@@ -23,26 +23,27 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnk50fc12;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ScopedPop& operator=(ScopedPop const&);
         ScopedPop(ScopedPop const&);
         ScopedPop();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~ScopedPop();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -89,7 +90,7 @@ public:
     virtual ::Bedrock::Result<double> asDouble() = 0;
 
     // vIndex: 15
-    virtual ::Bedrock::Result<::std::string> asString() = 0;
+    virtual ::Bedrock::Result<::std::string> asString(uint64) = 0;
 
     // vIndex: 16
     virtual ::std::optional<bool> readValidityFlag() = 0;
@@ -124,6 +125,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace cereal
+}

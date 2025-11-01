@@ -12,14 +12,21 @@ public:
     // prevent constructor by default
     Subscription& operator=(Subscription const&);
     Subscription(Subscription const&);
-    Subscription();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI Subscription();
+
     MCNAPI ::Bedrock::PubSub::Subscription& operator=(::Bedrock::PubSub::Subscription&& conn);
 
     MCNAPI ~Subscription();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -27,6 +34,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::PubSub
+}

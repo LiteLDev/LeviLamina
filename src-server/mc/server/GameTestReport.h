@@ -11,19 +11,19 @@ struct GameTestReport {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk8ed0c3;
-    ::ll::UntypedStorage<4, 4>  mUnk8a5383;
-    ::ll::UntypedStorage<4, 4>  mUnk16f680;
-    ::ll::UntypedStorage<4, 4>  mUnkf2f840;
-    ::ll::UntypedStorage<4, 4>  mUnkfff9e0;
-    ::ll::UntypedStorage<1, 1>  mUnkb0d7d3;
+    ::ll::UntypedStorage<4, 4> mUnk8ed0c3;
+    ::ll::UntypedStorage<4, 4> mUnk8a5383;
+    ::ll::UntypedStorage<4, 4> mUnk16f680;
+    ::ll::UntypedStorage<4, 4> mUnkf2f840;
+    ::ll::UntypedStorage<4, 4> mUnkfff9e0;
+    ::ll::UntypedStorage<1, 1> mUnkb0d7d3;
     ::ll::UntypedStorage<8, 24> mUnka6d25a;
     ::ll::UntypedStorage<8, 24> mUnk7deb6f;
-    ::ll::UntypedStorage<4, 4>  mUnk97bf5a;
-    ::ll::UntypedStorage<4, 4>  mUnkfdfd01;
+    ::ll::UntypedStorage<4, 4> mUnk97bf5a;
+    ::ll::UntypedStorage<4, 4> mUnkfdfd01;
     ::ll::UntypedStorage<8, 32> mUnk53165d;
     ::ll::UntypedStorage<8, 32> mUnkabbb85;
-    ::ll::UntypedStorage<1, 1>  mUnkaf5c0a;
+    ::ll::UntypedStorage<1, 1> mUnkaf5c0a;
     // NOLINTEND
 
 public:
@@ -49,4 +49,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/entity/components/Vec3Component.h"
 
-struct LocalMoveVelocityComponent : public ::Vec3Component {};
+struct LocalMoveVelocityComponent : public ::Vec3Component {
+};

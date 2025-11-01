@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct StreamPacketInfo;
     // clang-format on
-
+    
     // StreamFeedbackObserver inner types define
     struct StreamPacketInfo {
     public:
@@ -21,14 +21,15 @@ public:
         ::ll::UntypedStorage<2, 2> mUnkc678ee;
         ::ll::UntypedStorage<1, 1> mUnk70e280;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         StreamPacketInfo& operator=(StreamPacketInfo const&);
         StreamPacketInfo(StreamPacketInfo const&);
         StreamPacketInfo();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -44,6 +45,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 72, ::ProfilerLiteTelemetry> mTelemetry;
-    ::ll::TypedStorage<8, 32, ::std::string>           mPlayerName;
+    ::ll::TypedStorage<8, 32, ::std::string> mPlayerName;
     // NOLINTEND
 
 public:
@@ -24,4 +24,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

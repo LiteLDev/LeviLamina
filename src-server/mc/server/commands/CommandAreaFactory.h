@@ -25,19 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::CommandArea> _getArea(
-        ::Bounds const& requiredArea,
-        bool            allowNonTickingPlayerAndTickingAreaChunks,
-        bool            allowUnloadedChunks,
-        bool            allowPlayerChunks
-    ) const;
+    MCNAPI ::std::unique_ptr<::CommandArea> _getArea(::Bounds const& requiredArea, bool allowNonTickingPlayerAndTickingAreaChunks, bool allowUnloadedChunks, bool allowPlayerChunks) const;
 
-    MCNAPI ::std::unique_ptr<::CommandArea> findAreaWithBuffer(
-        ::BlockPos const& min,
-        ::BlockPos const& max,
-        int               commandVersion,
-        bool              allowUnloadedChunks,
-        bool              allowPlayerChunks
-    ) const;
+    MCNAPI ::std::unique_ptr<::CommandArea> findAreaWithBuffer(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks, bool allowPlayerChunks) const;
     // NOLINTEND
+
 };

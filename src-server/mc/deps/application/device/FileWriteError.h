@@ -4,6 +4,7 @@
 
 namespace Bedrock::DeviceIdErrorType {
 
-struct FileWriteError {};
+struct FileWriteError {
+};
 
-} // namespace Bedrock::DeviceIdErrorType
+}

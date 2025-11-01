@@ -17,6 +17,7 @@ public:
     DensityLimit& operator=(DensityLimit const&);
     DensityLimit(DensityLimit const&);
     DensityLimit();
+
 };
 
-} // namespace SharedTypes::Legacy::Spawn
+}

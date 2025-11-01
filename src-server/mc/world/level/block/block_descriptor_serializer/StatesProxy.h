@@ -41,8 +41,7 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound>
-    toMap(::BlockDescriptorSerializer::StatesProxy const& instance);
+    MCAPI static ::std::map<::std::string, ::SharedTypes::Legacy::BlockDescriptor::Compound> toMap(::BlockDescriptorSerializer::StatesProxy const& instance);
     // NOLINTEND
 
 public:
@@ -50,6 +49,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace BlockDescriptorSerializer
+}

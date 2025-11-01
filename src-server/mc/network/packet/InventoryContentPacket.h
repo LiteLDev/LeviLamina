@@ -22,9 +22,9 @@ class InventoryContentPacket : public ::Packet {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerID>                                mInventoryId;
-    ::ll::TypedStorage<4, 12, ::FullContainerName>                         mFullContainerName;
-    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                mStorageItem;
+    ::ll::TypedStorage<1, 1, ::ContainerID> mInventoryId;
+    ::ll::TypedStorage<4, 12, ::FullContainerName> mFullContainerName;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mStorageItem;
     ::ll::TypedStorage<8, 24, ::std::vector<::NetworkItemStackDescriptor>> mSlots;
     // NOLINTEND
 
@@ -41,10 +41,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -54,12 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InventoryContentPacket(
-        ::ContainerID                     id,
-        ::std::vector<::ItemStack> const& items,
-        ::FullContainerName const&        fullContainerName,
-        ::ItemStack const&                storageItem
-    );
+    MCAPI InventoryContentPacket(::ContainerID id, ::std::vector<::ItemStack> const& items, ::FullContainerName const& fullContainerName, ::ItemStack const& storageItem);
     // NOLINTEND
 
 public:
@@ -71,12 +66,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ContainerID                     id,
-        ::std::vector<::ItemStack> const& items,
-        ::FullContainerName const&        fullContainerName,
-        ::ItemStack const&                storageItem
-    );
+    MCAPI void* $ctor(::ContainerID id, ::std::vector<::ItemStack> const& items, ::FullContainerName const& fullContainerName, ::ItemStack const& storageItem);
     // NOLINTEND
 
 public:
@@ -102,4 +92,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

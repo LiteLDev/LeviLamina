@@ -4,7 +4,8 @@
 
 namespace Editor::Network {
 
-template <typename T0>
-class NetworkPayload {};
+template<typename T0>
+class NetworkPayload {
+};
 
-} // namespace Editor::Network
+}

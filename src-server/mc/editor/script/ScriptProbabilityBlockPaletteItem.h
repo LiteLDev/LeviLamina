@@ -24,7 +24,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk581bf9;
-    ::ll::UntypedStorage<4, 4>  mUnk3353bd;
+    ::ll::UntypedStorage<4, 4> mUnk3353bd;
     // NOLINTEND
 
 public:
@@ -40,32 +40,19 @@ public:
     virtual ~ScriptProbabilityBlockPaletteItem() /*override*/;
 
     // vIndex: 1
-    virtual ::Scripting::Result_deprecated<void> setBlock(
-        ::std::variant<
-            ::std::string,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const&
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> setBlock(::std::variant<::std::string, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const&) /*override*/;
 
     // vIndex: 2
-    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
-    getBlock() const /*override*/;
+    virtual ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>> getBlock() const /*override*/;
 
     // vIndex: 4
-    virtual ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
-    getServiceBlockPaletteItem() const /*override*/;
+    virtual ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> getServiceBlockPaletteItem() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> addBlock(
-        ::std::variant<
-            ::std::string,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block,
-        int                                                                                               weight
-    );
+    MCNAPI ::Scripting::Result_deprecated<void> addBlock(::std::variant<::std::string, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block, int weight);
 
     MCNAPI ::std::vector<::Editor::ScriptModule::ScriptWeightedBlock> getBlocks() const;
 
@@ -87,18 +74,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result_deprecated<void> $setBlock(
-        ::std::variant<
-            ::std::string,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const&
-    );
+    MCNAPI ::Scripting::Result_deprecated<void> $setBlock(::std::variant<::std::string, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const&);
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>>
-    $getBlock() const;
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>> $getBlock() const;
 
-    MCNAPI ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
-    $getServiceBlockPaletteItem() const;
+    MCNAPI ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> $getServiceBlockPaletteItem() const;
     // NOLINTEND
 
 public:
@@ -106,6 +86,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

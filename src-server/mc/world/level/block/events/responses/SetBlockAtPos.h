@@ -21,7 +21,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlockType;
-    ::ll::TypedStorage<4, 12, ::Vec3>             mBlockOffset;
+    ::ll::TypedStorage<4, 12, ::Vec3> mBlockOffset;
     // NOLINTEND
 
 public:
@@ -34,10 +34,7 @@ public:
     virtual void executeAction(::RenderParams& params) const /*override*/;
 
     // vIndex: 3
-    virtual void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
-        ::Factory<::EventResponse> const&                                                                       factory
-    ) const /*override*/;
+    virtual void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root, ::Factory<::EventResponse> const& factory) const /*override*/;
 
     // vIndex: 0
     virtual ~SetBlockAtPos() /*override*/ = default;
@@ -56,10 +53,7 @@ public:
 
     MCAPI void $executeAction(::RenderParams& params) const;
 
-    MCAPI void $buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& schema,
-        ::Factory<::EventResponse> const&                                                                       factory
-    ) const;
+    MCAPI void $buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root, ::Factory<::EventResponse> const& factory) const;
     // NOLINTEND
 
 public:
@@ -67,4 +61,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

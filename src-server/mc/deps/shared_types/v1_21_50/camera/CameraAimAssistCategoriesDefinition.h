@@ -16,6 +16,7 @@ public:
     CameraAimAssistCategoriesDefinition& operator=(CameraAimAssistCategoriesDefinition const&);
     CameraAimAssistCategoriesDefinition(CameraAimAssistCategoriesDefinition const&);
     CameraAimAssistCategoriesDefinition();
+
 };
 
-} // namespace SharedTypes::v1_21_50
+}

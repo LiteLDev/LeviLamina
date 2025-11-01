@@ -34,4 +34,4 @@ MCNAPI ::std::vector<::std::pair<::std::string, ::std::string>> const& EMPTY_QUE
 MCNAPI ::Util::Url::Components const& EMPTY_URL();
 // NOLINTEND
 
-} // namespace Util::Url
+}

@@ -4,6 +4,6 @@
 
 enum class CommandExecuteFlag : ushort {
     // bitfield representation
-    Allowed    = 0,
+    Allowed = 0,
     Disallowed = 1 << 5,
 };

@@ -4,7 +4,8 @@
 
 namespace Puv::internal::SliceSequence {
 
-template <typename T0>
-class LegacyParser {};
+template<typename T0>
+class LegacyParser {
+};
 
-} // namespace Puv::internal::SliceSequence
+}

@@ -15,8 +15,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 48> mUnkaf6d04;
-    ::ll::UntypedStorage<4, 8>  mUnka0e799;
-    ::ll::UntypedStorage<4, 8>  mUnk686d88;
+    ::ll::UntypedStorage<4, 8> mUnka0e799;
+    ::ll::UntypedStorage<4, 8> mUnk686d88;
     // NOLINTEND
 
 public:
@@ -27,8 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem&
-    operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
+    MCNAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem& operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolumeItem const& rhs);
 
     MCNAPI ::CompoundBlockVolumeItem toCompoundBlockVolumeItem() const;
 
@@ -46,6 +45,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

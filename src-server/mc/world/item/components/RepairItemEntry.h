@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemDescriptor>> mItems;
-    ::ll::TypedStorage<8, 16, ::ExpressionNode>                mRepairAmount;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode> mRepairAmount;
     // NOLINTEND
 
 public:
@@ -36,4 +36,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

@@ -23,7 +23,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::PropertyGroup const>>> mPropertyGroup;
-    ::ll::TypedStorage<8, 104, ::PropertyValues>                                         mValues;
+    ::ll::TypedStorage<8, 104, ::PropertyValues> mValues;
     // NOLINTEND
 
 public:
@@ -33,10 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PropertyContainer(
-        ::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup,
-        ::RenderParams&                                           renderParams
-    );
+    MCNAPI PropertyContainer(::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup, ::RenderParams& renderParams);
 
     MCNAPI bool _readValueFromTag(::PropertyMetadata const& propertyMetadata, ::Tag const& tag);
 
@@ -46,17 +43,13 @@ public:
 
     MCNAPI bool getMolangValue(uint64 propertyNameHash, ::MolangScriptArg& out) const;
 
-    MCNAPI void setAliasProperties(
-        ::std::unordered_map<::HashedString, ::std::shared_ptr<::Tag>> const& aliasProperties,
-        ::std::string const&                                                  aliasName,
-        ::std::string const&                                                  canonicalName
-    );
+    MCNAPI void setAliasProperties(::std::unordered_map<::HashedString, ::std::shared_ptr<::Tag>> const& aliasProperties, ::std::string const& aliasName, ::std::string const& canonicalName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup, ::RenderParams& renderParams);
+    MCNAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::PropertyGroup const>> propertyGroup, ::RenderParams& renderParams);
     // NOLINTEND
+
 };

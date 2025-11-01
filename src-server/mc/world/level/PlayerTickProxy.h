@@ -19,11 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void preReplicationTick(
-        ::ServerPlayer&  serverPlayer,
-        ::Tick const&    currentTick,
-        ::EntityContext& userEntity
-    ) /*override*/;
+    virtual void preReplicationTick(::ServerPlayer& serverPlayer, ::Tick const& currentTick, ::EntityContext& userEntity) /*override*/;
 
     // vIndex: 2
     virtual void playerTick(::Player& player, ::Tick const& currentTick) /*override*/;
@@ -44,8 +40,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
-    $preReplicationTick(::ServerPlayer& serverPlayer, ::Tick const& currentTick, ::EntityContext& userEntity);
+    MCNAPI void $preReplicationTick(::ServerPlayer& serverPlayer, ::Tick const& currentTick, ::EntityContext& userEntity);
 
     MCNAPI void $playerTick(::Player& player, ::Tick const& currentTick);
 
@@ -61,4 +56,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

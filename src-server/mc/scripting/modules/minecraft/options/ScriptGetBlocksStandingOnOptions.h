@@ -13,7 +13,7 @@ struct ScriptGetBlocksStandingOnOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2>   mUnk4454d9;
+    ::ll::UntypedStorage<1, 2> mUnk4454d9;
     ::ll::UntypedStorage<8, 168> mUnk70e891;
     // NOLINTEND
 
@@ -40,6 +40,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

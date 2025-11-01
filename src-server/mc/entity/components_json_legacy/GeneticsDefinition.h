@@ -17,7 +17,7 @@ class GeneticsDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk6a83da;
+    ::ll::UntypedStorage<4, 4> mUnk6a83da;
     ::ll::UntypedStorage<8, 24> mUnk5906e9;
     // NOLINTEND
 
@@ -38,8 +38,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeneticsDefinition>>& root
-    );
+    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeneticsDefinition>>& root);
     // NOLINTEND
+
 };

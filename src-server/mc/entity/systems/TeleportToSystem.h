@@ -18,12 +18,7 @@ namespace TeleportToSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void teleportTo(
-    ::StrictEntityContext&                         entityContext,
-    ::ActorOwnerComponent&                         actorOwnerComponent,
-    ::TeleportToRequestComponent const&            teleportToRequestComponent,
-    ::EntityModifier<::TeleportToRequestComponent> modifier
-);
+MCNAPI void teleportTo(::StrictEntityContext& entityContext, ::ActorOwnerComponent& actorOwnerComponent, ::TeleportToRequestComponent const& teleportToRequestComponent, ::EntityModifier<::TeleportToRequestComponent> modifier);
 // NOLINTEND
 
-} // namespace TeleportToSystem
+}

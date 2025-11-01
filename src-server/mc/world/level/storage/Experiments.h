@@ -15,6 +15,8 @@ class Experiments : public ::ExperimentStorage {
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI bool ExperimentalCreatorCameras() const;
+
     MCAPI Experiments();
 
     MCAPI ::std::string getExperimentsActiveAsJSONList() const;
@@ -41,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

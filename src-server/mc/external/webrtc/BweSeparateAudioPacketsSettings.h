@@ -44,6 +44,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::webrtc::FieldTrialsView const* key_value_config);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

@@ -8,4 +8,4 @@ namespace ChiseledBookshelfBlockActorKeys {
 MCAPI ::std::string const& Items();
 // NOLINTEND
 
-} // namespace ChiseledBookshelfBlockActorKeys
+}

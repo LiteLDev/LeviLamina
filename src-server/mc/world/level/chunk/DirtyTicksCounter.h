@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, int> totalTime;
     ::ll::TypedStorage<4, 4, int> lastChange;
     // NOLINTEND
+
 };

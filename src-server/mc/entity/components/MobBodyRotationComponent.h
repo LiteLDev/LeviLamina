@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mYBodyRot;
     ::ll::TypedStorage<4, 4, float> mYBodyRotO;
     // NOLINTEND
+
 };

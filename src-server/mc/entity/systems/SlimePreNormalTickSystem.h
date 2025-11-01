@@ -23,22 +23,9 @@ class SlimePreNormalTickSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _doSlimePreNormalTickSystem(
-        ::StrictEntityContext&                                     context,
-        ::ActorOwnerComponent&                                     actorOwnerComponent,
-        ::Optional<::OnGroundFlagComponent const>                  onGround,
-        ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> mod
-    );
-
-    MCNAPI static void _tickSlimePreNormalTickSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::SlimeFlagComponent>,
-            ::ActorOwnerComponent,
-            ::Optional<::OnGroundFlagComponent const>>             view,
-        ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> mod
-    );
+    MCNAPI static void _doSlimePreNormalTickSystem(::StrictEntityContext& context, ::ActorOwnerComponent& actorOwnerComponent, ::Optional<::OnGroundFlagComponent const> onGround, ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> mod);
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
+
 };

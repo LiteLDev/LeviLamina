@@ -13,4 +13,4 @@ namespace AxisAlignedSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace AxisAlignedSystem
+}

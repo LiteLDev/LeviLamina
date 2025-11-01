@@ -32,4 +32,5 @@ public:
     // NOLINTBEGIN
     MCAPI static int const& CurrentVersion();
     // NOLINTEND
+
 };

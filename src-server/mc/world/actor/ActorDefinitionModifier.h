@@ -12,9 +12,9 @@ struct ActorDefinitionModifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>               mAddGroups;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>               mRemoveGroups;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>>    mTriggers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mAddGroups;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mRemoveGroups;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ActorDefinitionTrigger>> mTriggers;
     ::ll::TypedStorage<8, 24, ::std::vector<::ActorEventResponse const*>> mResponses;
     // NOLINTEND
 
@@ -45,4 +45,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

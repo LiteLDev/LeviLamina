@@ -20,25 +20,20 @@ class GoatHornItem : public ::Item {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 76
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 115
+    // vIndex: 116
     virtual bool canBeCharged() const /*override*/;
 
-    // vIndex: 96
+    // vIndex: 97
     virtual ::HashedString const& getCooldownCategory() const /*override*/;
 
-    // vIndex: 97
+    // vIndex: 98
     virtual int getCooldownDuration() const /*override*/;
 
-    // vIndex: 52
-    virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const /*override*/;
+    // vIndex: 53
+    virtual void appendFormattedHovertext(::ItemStackBase const& instance, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
 
     // vIndex: 0
     virtual ~GoatHornItem() /*override*/ = default;
@@ -61,12 +56,7 @@ public:
 
     MCFOLD int $getCooldownDuration() const;
 
-    MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const;
+    MCAPI void $appendFormattedHovertext(::ItemStackBase const& instance, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
     // NOLINTEND
 
 public:
@@ -74,4 +64,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

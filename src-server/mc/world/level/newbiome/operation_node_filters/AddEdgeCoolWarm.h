@@ -12,7 +12,7 @@ namespace OperationNodeValues { struct PreBiome; }
 
 namespace OperationNodeFilters {
 
-struct AddEdgeCoolWarm
-: public ::OperationNodeFilters::FilterBase<3, 3, ::OperationNodeValues::PreBiome, ::OperationNodeValues::PreBiome> {};
+struct AddEdgeCoolWarm : public ::OperationNodeFilters::FilterBase<3, 3, ::OperationNodeValues::PreBiome, ::OperationNodeValues::PreBiome> {
+};
 
-} // namespace OperationNodeFilters
+}

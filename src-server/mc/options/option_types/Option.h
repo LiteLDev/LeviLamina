@@ -21,7 +21,7 @@ public:
     // clang-format off
     class Impl;
     // clang-format on
-
+    
     // Option inner types define
     class Impl {
     public:
@@ -29,65 +29,50 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 128> mUnk6ef4ab;
         ::ll::UntypedStorage<8, 128> mUnk12100e;
-        ::ll::UntypedStorage<8, 8>   mUnk69907c;
-        ::ll::UntypedStorage<8, 32>  mUnk2d706e;
-        ::ll::UntypedStorage<8, 32>  mUnk8face5;
-        ::ll::UntypedStorage<1, 1>   mUnk5d6762;
-        ::ll::UntypedStorage<4, 4>   mUnk7386bb;
-        ::ll::UntypedStorage<4, 4>   mUnk7dec7e;
-        ::ll::UntypedStorage<4, 4>   mUnkf734a9;
-        ::ll::UntypedStorage<8, 32>  mUnka7679a;
-        ::ll::UntypedStorage<8, 56>  mUnk3aef34;
-        ::ll::UntypedStorage<4, 4>   mUnka4b04c;
-        ::ll::UntypedStorage<8, 8>   mUnk461146;
-        ::ll::UntypedStorage<8, 16>  mUnk3e46b2;
-        ::ll::UntypedStorage<8, 16>  mUnk5899f0;
-        ::ll::UntypedStorage<8, 64>  mUnkf1a451;
+        ::ll::UntypedStorage<8, 8> mUnk69907c;
+        ::ll::UntypedStorage<8, 32> mUnk2d706e;
+        ::ll::UntypedStorage<8, 32> mUnk8face5;
+        ::ll::UntypedStorage<1, 1> mUnk5d6762;
+        ::ll::UntypedStorage<4, 4> mUnk7386bb;
+        ::ll::UntypedStorage<4, 4> mUnk7dec7e;
+        ::ll::UntypedStorage<4, 4> mUnkf734a9;
+        ::ll::UntypedStorage<8, 32> mUnka7679a;
+        ::ll::UntypedStorage<8, 56> mUnk3aef34;
+        ::ll::UntypedStorage<4, 4> mUnka4b04c;
+        ::ll::UntypedStorage<8, 8> mUnk461146;
+        ::ll::UntypedStorage<8, 16> mUnk3e46b2;
+        ::ll::UntypedStorage<8, 16> mUnk5899f0;
+        ::ll::UntypedStorage<8, 64> mUnkf1a451;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Impl& operator=(Impl const&);
         Impl(Impl const&);
         Impl();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI Impl(
-            ::OptionID           id,
-            ::OptionOwnerType    ownerType,
-            ::OptionResetFlags   resetFlags,
-            ::std::string const& captionId,
-            ::std::string const& saveTag,
-            ::OptionType         optionType,
-            ::GameVersion        version
-        );
-
+        MCNAPI Impl(::OptionID id, ::OptionOwnerType ownerType, ::OptionResetFlags resetFlags, ::std::string const& captionId, ::std::string const& saveTag, ::OptionType optionType, ::GameVersion version);
+    
         MCNAPI ~Impl();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCNAPI void* $ctor(
-            ::OptionID           id,
-            ::OptionOwnerType    ownerType,
-            ::OptionResetFlags   resetFlags,
-            ::std::string const& captionId,
-            ::std::string const& saveTag,
-            ::OptionType         optionType,
-            ::GameVersion        version
-        );
+        MCNAPI void* $ctor(::OptionID id, ::OptionOwnerType ownerType, ::OptionResetFlags resetFlags, ::std::string const& captionId, ::std::string const& saveTag, ::OptionType optionType, ::GameVersion version);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -122,27 +107,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Option(
-        ::OptionID           id,
-        ::OptionOwnerType    ownerType,
-        ::OptionResetFlags   resetFlags,
-        ::std::string const& captionId,
-        ::std::string const& saveTag,
-        ::OptionType         optionType,
-        ::GameVersion        version
-    );
+    MCNAPI Option(::OptionID id, ::OptionOwnerType ownerType, ::OptionResetFlags resetFlags, ::std::string const& captionId, ::std::string const& saveTag, ::OptionType optionType, ::GameVersion version);
 
-    MCNAPI void _updatePropertyVector(
-        ::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector,
-        ::std::string const&                                      value
-    );
+    MCNAPI void _updatePropertyVector(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector, ::std::string const& value);
 
     MCNAPI bool getBool() const;
 
     MCNAPI ::Bedrock::PubSub::Subscription registerLock(::std::function<void(bool&)> isModifiableCondition);
 
-    MCNAPI ::Bedrock::PubSub::Subscription
-    registerObserver(::std::function<void(::Option const&)> onValueChangedCallback);
+    MCNAPI ::Bedrock::PubSub::Subscription registerObserver(::std::function<void(::Option const&)> onValueChangedCallback);
     // NOLINTEND
 
 public:
@@ -154,15 +127,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::OptionID           id,
-        ::OptionOwnerType    ownerType,
-        ::OptionResetFlags   resetFlags,
-        ::std::string const& captionId,
-        ::std::string const& saveTag,
-        ::OptionType         optionType,
-        ::GameVersion        version
-    );
+    MCNAPI void* $ctor(::OptionID id, ::OptionOwnerType ownerType, ::OptionResetFlags resetFlags, ::std::string const& captionId, ::std::string const& saveTag, ::OptionType optionType, ::GameVersion version);
     // NOLINTEND
 
 public:
@@ -178,4 +143,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

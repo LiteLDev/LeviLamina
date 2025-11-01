@@ -16,7 +16,7 @@ public:
     // clang-format off
     struct StateListNode;
     // clang-format on
-
+    
     // BlockState inner types define
     struct StateListNode {
     public:
@@ -24,22 +24,23 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::BlockState::StateListNode*> mNext;
         ::ll::TypedStorage<8, 8, ::BlockState::StateListNode*> mPrev;
-        ::ll::TypedStorage<8, 8, ::BlockState*>                mState;
+        ::ll::TypedStorage<8, 8, ::BlockState*> mState;
         // NOLINTEND
-
+    
     public:
         // static variables
         // NOLINTBEGIN
         MCAPI static ::BlockState::StateListNode*& mHead();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64 const>                 mID;
-    ::ll::TypedStorage<8, 8, uint64 const>                 mVariationCount;
-    ::ll::TypedStorage<8, 48, ::HashedString const>        mName;
+    ::ll::TypedStorage<8, 8, uint64 const> mID;
+    ::ll::TypedStorage<8, 8, uint64 const> mVariationCount;
+    ::ll::TypedStorage<8, 48, ::HashedString const> mName;
     ::ll::TypedStorage<8, 24, ::BlockState::StateListNode> mNode;
     // NOLINTEND
 
@@ -73,4 +74,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

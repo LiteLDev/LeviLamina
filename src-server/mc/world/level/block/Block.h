@@ -28,6 +28,7 @@ class IConstBlockSource;
 class ItemActor;
 class ItemInstance;
 class ItemStackBase;
+class NeighborBlockDirections;
 class Player;
 class Random;
 class RenderParams;
@@ -86,17 +87,17 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 104, ::BlockComponentStorage>      mComponents;
-    ::ll::TypedStorage<2, 2, ushort const>                   mData;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockType*>>  mBlockType;
-    ::ll::TypedStorage<4, 8, ::CachedComponentData>          mCachedComponentData;
-    ::ll::TypedStorage<8, 96, ::BlockComponentDirectData>    mDirectData;
+    ::ll::TypedStorage<8, 104, ::BlockComponentStorage> mComponents;
+    ::ll::TypedStorage<2, 2, ushort const> mData;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::BlockType*>> mBlockType;
+    ::ll::TypedStorage<4, 8, ::CachedComponentData> mCachedComponentData;
+    ::ll::TypedStorage<8, 112, ::BlockComponentDirectData> mDirectData;
     ::ll::TypedStorage<8, 24, ::std::vector<::HashedString>> mTags;
-    ::ll::TypedStorage<8, 24, ::CompoundTag>                 mSerializationId;
-    ::ll::TypedStorage<8, 8, uint64>                         mSerializationIdHash;
-    ::ll::TypedStorage<4, 4, uint>                           mSerializationIdHashForNetwork;
-    ::ll::TypedStorage<4, 4, uint>                           mNetworkId;
-    ::ll::TypedStorage<1, 1, bool>                           mHasRuntimeId;
+    ::ll::TypedStorage<8, 24, ::CompoundTag> mSerializationId;
+    ::ll::TypedStorage<8, 8, uint64> mSerializationIdHash;
+    ::ll::TypedStorage<4, 4, uint> mSerializationIdHashForNetwork;
+    ::ll::TypedStorage<4, 4, uint> mNetworkId;
+    ::ll::TypedStorage<1, 1, bool> mHasRuntimeId;
     // NOLINTEND
 
 public:
@@ -119,12 +120,7 @@ public:
 
     MCAPI bool _isSolid() const;
 
-    MCAPI void _queueForTickBasedOnComponentConfiguration(
-        ::BlockSource&    region,
-        ::BlockPos const& pos,
-        ::Random&         random,
-        bool              placingBlock
-    ) const;
+    MCAPI void _queueForTickBasedOnComponentConfiguration(::BlockSource& region, ::BlockPos const& pos, ::Random& random, bool placingBlock) const;
 
     MCAPI void _removeFromTickingQueues(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -144,37 +140,21 @@ public:
 
     MCAPI ::HitResult clip(::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::AABB const& aabb) const;
 
-    MCAPI ::HitResult clip(
-        ::BlockSource const&                               region,
-        ::BlockPos const&                                  pos,
-        ::Vec3 const&                                      A,
-        ::Vec3 const&                                      B,
-        ::ShapeType                                        shapeType,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
+    MCAPI ::HitResult clip(::BlockSource const& region, ::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::ShapeType shapeType, ::optional_ref<::GetCollisionShapeInterface const> entity) const;
 
     MCAPI uint computeRawSerializationIdHashForNetwork() const;
+
+    MCAPI ::Block const& connectionUpdate(::BlockSource& region, ::BlockPos const& pos, ::NeighborBlockDirections neighborBlockDirections) const;
 
     MCAPI ::Block const& copyState(::Block const& fromBlock, ::BlockState const& state) const;
 
     MCAPI ::Block const& copyStates(::Block const& fromBlock) const;
 
-    MCAPI void executeItemEvent(
-        ::ItemStackBase&     item,
-        ::std::string const& eventName,
-        ::BlockSource&       region,
-        ::BlockPos const&    pos,
-        ::Actor*             actor
-    ) const;
+    MCAPI void executeItemEvent(::ItemStackBase& item, ::std::string const& eventName, ::BlockSource& region, ::BlockPos const& pos, ::Actor* actor) const;
 
     MCAPI bool executeTrigger(::DefinitionTrigger const& trigger, ::RenderParams& params) const;
 
-    MCAPI bool getCollisionShape(
-        ::AABB&                                            outAABB,
-        ::IConstBlockSource const&                         region,
-        ::BlockPos const&                                  pos,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
+    MCAPI bool getCollisionShape(::AABB& outAABB, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const> entity) const;
 
     MCAPI ::std::string getDescriptionId() const;
 
@@ -206,8 +186,7 @@ public:
 
     MCAPI void playerDestroy(::Player& player, ::BlockPos const& pos) const;
 
-    MCAPI ::ItemActor*
-    popResource(::BlockSource& region, ::BlockPos const& pos, ::ItemInstance const& itemInstance) const;
+    MCAPI ::ItemActor* popResource(::BlockSource& region, ::BlockPos const& pos, ::ItemInstance const& itemInstance) const;
 
     MCAPI void queuedTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
@@ -239,4 +218,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -22,7 +22,7 @@ public:
     struct Brightness;
     struct Population;
     // clang-format on
-
+    
     // SpawnerData inner types define
     struct Population {
     public:
@@ -31,27 +31,29 @@ public:
         ::ll::TypedStorage<2, 2, short> surface;
         ::ll::TypedStorage<2, 2, short> underground;
         // NOLINTEND
+    
     };
-
+    
     struct Brightness {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<2, 2, short> min;
         ::ll::TypedStorage<2, 2, short> max;
-        ::ll::TypedStorage<1, 1, bool>  raw;
+        ::ll::TypedStorage<1, 1, bool> raw;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>                            entity;
-    ::ll::TypedStorage<2, 2, short>                                                    minCount;
-    ::ll::TypedStorage<2, 2, short>                                                    maxCount;
-    ::ll::TypedStorage<1, 1, ::br::worldgen::OverrideState>                            surface;
-    ::ll::TypedStorage<1, 1, ::br::worldgen::OverrideState>                            underground;
-    ::ll::TypedStorage<1, 1, ::br::worldgen::OverrideState>                            underwater;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> entity;
+    ::ll::TypedStorage<2, 2, short> minCount;
+    ::ll::TypedStorage<2, 2, short> maxCount;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::OverrideState> surface;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::OverrideState> underground;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::OverrideState> underwater;
     ::ll::TypedStorage<2, 6, ::std::optional<::br::worldgen::SpawnerData::Population>> population;
     ::ll::TypedStorage<2, 8, ::std::optional<::br::worldgen::SpawnerData::Brightness>> brightness;
     // NOLINTEND
@@ -77,11 +79,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::SpawnerData
-    make(::std::string_view id, short probabilityWeight, short minCount, short maxCount);
+    MCAPI static ::br::worldgen::SpawnerData make(::std::string_view id, short probabilityWeight, short minCount, short maxCount);
 
-    MCAPI static ::br::worldgen::SpawnerData
-    make(::ActorType id, short probabilityWeight, short minCount, short maxCount);
+    MCAPI static ::br::worldgen::SpawnerData make(::ActorType id, short probabilityWeight, short minCount, short maxCount);
     // NOLINTEND
 
 public:
@@ -97,6 +97,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen
+}

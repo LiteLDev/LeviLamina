@@ -26,7 +26,7 @@ public:
     struct ReplaceRulesAccelerator;
     struct SphereData;
     // clang-format on
-
+    
     // OreFeature inner types define
     struct ReplaceRulesAccelerator {
     public:
@@ -34,49 +34,48 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::Block const*, ::std::vector<::BlockType const*>>>> mRules;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI void setRules(::std::vector<::ReplaceRule> const& replaceRules);
         // NOLINTEND
+    
     };
-
+    
     struct SphereData {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 12, ::Vec3> mCenter;
-        ::ll::TypedStorage<4, 4, float>   mHalfRSqr;
-        ::ll::TypedStorage<4, 4, float>   mHalfR;
+        ::ll::TypedStorage<4, 4, float> mHalfRSqr;
+        ::ll::TypedStorage<4, 4, float> mHalfR;
         // NOLINTEND
+    
     };
-
+    
     struct Helper {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::OreFeature::ReplaceRulesAccelerator>    mRulesAccelerator;
-        ::ll::TypedStorage<8, 24, ::std::vector<::OreFeature::SphereData>>  mAllSpheres;
+        ::ll::TypedStorage<8, 24, ::OreFeature::ReplaceRulesAccelerator> mRulesAccelerator;
+        ::ll::TypedStorage<8, 24, ::std::vector<::OreFeature::SphereData>> mAllSpheres;
         ::ll::TypedStorage<8, 24, ::std::vector<::OreFeature::SphereData*>> mSpheres;
-        ::ll::TypedStorage<4, 4, uint>                                      mActiveSpheres;
-        ::ll::TypedStorage<1, 1, bool>                                      mInitialized;
+        ::ll::TypedStorage<4, 4, uint> mActiveSpheres;
+        ::ll::TypedStorage<1, 1, bool> mInitialized;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                           mCount;
-    ::ll::TypedStorage<4, 4, float>                         mCountf;
-    ::ll::TypedStorage<4, 4, float>                         mCountfInv;
-    ::ll::TypedStorage<4, 4, float>                         mDiscardChanceOnAirExposure;
+    ::ll::TypedStorage<4, 4, int> mCount;
+    ::ll::TypedStorage<4, 4, float> mCountf;
+    ::ll::TypedStorage<4, 4, float> mCountfInv;
+    ::ll::TypedStorage<4, 4, float> mDiscardChanceOnAirExposure;
     ::ll::TypedStorage<8, 24, ::std::vector<::ReplaceRule>> mReplaceRules;
-    ::ll::TypedStorage<
-        8,
-        168,
-        ::Bedrock::Threading::InstancedThreadLocal<::OreFeature::Helper, ::std::allocator<::OreFeature::Helper>>>
-        mHelper;
+    ::ll::TypedStorage<8, 168, ::Bedrock::Threading::InstancedThreadLocal<::OreFeature::Helper, ::std::allocator<::OreFeature::Helper>>> mHelper;
     // NOLINTEND
 
 public:
@@ -100,4 +99,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

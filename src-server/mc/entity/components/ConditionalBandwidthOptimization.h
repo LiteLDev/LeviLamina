@@ -6,9 +6,9 @@ struct ConditionalBandwidthOptimization {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnka93dbc;
-    ::ll::UntypedStorage<8, 8>  mUnkda7886;
-    ::ll::UntypedStorage<1, 1>  mUnk640ded;
+    ::ll::UntypedStorage<4, 4> mUnka93dbc;
+    ::ll::UntypedStorage<8, 8> mUnkda7886;
+    ::ll::UntypedStorage<1, 1> mUnk640ded;
     ::ll::UntypedStorage<8, 64> mUnkf1bed1;
     // NOLINTEND
 
@@ -29,4 +29,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

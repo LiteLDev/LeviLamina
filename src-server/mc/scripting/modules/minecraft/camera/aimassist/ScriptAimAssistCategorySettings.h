@@ -16,8 +16,8 @@ public:
     ::ll::UntypedStorage<8, 32> mUnke5a89f;
     ::ll::UntypedStorage<8, 64> mUnkd241f9;
     ::ll::UntypedStorage<8, 64> mUnk198565;
-    ::ll::UntypedStorage<4, 4>  mUnk45f75a;
-    ::ll::UntypedStorage<4, 4>  mUnk21669d;
+    ::ll::UntypedStorage<4, 4> mUnk45f75a;
+    ::ll::UntypedStorage<4, 4> mUnk21669d;
     // NOLINTEND
 
 public:
@@ -51,6 +51,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::std::string name);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

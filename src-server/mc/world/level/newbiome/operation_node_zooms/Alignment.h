@@ -5,9 +5,9 @@
 namespace OperationNodeZooms {
 
 enum class Alignment : int {
-    Min    = 0,
+    Min = 0,
     Center = 1,
-    Max    = 2,
+    Max = 2,
 };
 
 }

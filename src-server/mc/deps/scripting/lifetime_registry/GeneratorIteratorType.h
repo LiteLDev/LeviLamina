@@ -4,6 +4,7 @@
 
 namespace Scripting {
 
-struct GeneratorIteratorType {};
+struct GeneratorIteratorType {
+};
 
-} // namespace Scripting
+}

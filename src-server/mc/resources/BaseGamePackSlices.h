@@ -20,7 +20,7 @@ public:
     // clang-format off
     struct BaseGameVersionPack;
     // clang-format on
-
+    
     // BaseGamePackSlices inner types define
     struct BaseGameVersionPack {
     public:
@@ -29,26 +29,27 @@ public:
         ::ll::UntypedStorage<8, 32> mUnk745cd0;
         ::ll::UntypedStorage<8, 16> mUnkb82ad5;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         BaseGameVersionPack& operator=(BaseGameVersionPack const&);
         BaseGameVersionPack(BaseGameVersionPack const&);
         BaseGameVersionPack();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~BaseGameVersionPack();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -64,17 +65,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void addFromVersions(
-        ::std::vector<::BaseGameVersion> const&                               baseGameVersions,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& resourcePackRepository,
-        ::mce::UUID const&                                                    packId
-    );
+    MCNAPI void addFromVersions(::std::vector<::BaseGameVersion> const& baseGameVersions, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& resourcePackRepository, ::mce::UUID const& packId);
 
-    MCNAPI void applyPackSlices(
-        ::BaseGameVersion const&                                              baseGameVersion,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& resourcePackRepository,
-        ::ResourcePackStack&                                                  packStack
-    ) const;
+    MCNAPI void applyPackSlices(::BaseGameVersion const& baseGameVersion, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& resourcePackRepository, ::ResourcePackStack& packStack) const;
 
     MCNAPI ~BaseGamePackSlices();
     // NOLINTEND
@@ -82,11 +75,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _add(
-        ::std::vector<::BaseGamePackSlices::BaseGameVersionPack>& baseGameVersionPacks,
-        ::BaseGameVersion const&                                  baseGameVersion,
-        ::gsl::not_null<::std::shared_ptr<::ResourcePack>>        pack
-    );
+    MCNAPI static void _add(::std::vector<::BaseGamePackSlices::BaseGameVersionPack>& baseGameVersionPacks, ::BaseGameVersion const& baseGameVersion, ::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack);
     // NOLINTEND
 
 public:
@@ -94,4 +83,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

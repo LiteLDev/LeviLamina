@@ -17,11 +17,12 @@ struct StructurePoolElementSettings {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*>    mBlockRules;
+    ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePoolBlockRule>> const*> mBlockRules;
     ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const*> mBlockTagRules;
-    ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const*>    mActorRules;
-    ::ll::TypedStorage<1, 1, ::Projection>                                                         mProjection;
-    ::ll::TypedStorage<1, 1, ::PostProcessSettings>                                                mPostProcessSettings;
+    ::ll::TypedStorage<8, 8, ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const*> mActorRules;
+    ::ll::TypedStorage<1, 1, ::Projection> mProjection;
+    ::ll::TypedStorage<1, 1, ::PostProcessSettings> mPostProcessSettings;
     ::ll::TypedStorage<1, 1, bool> mReloadActorLootTables;
     // NOLINTEND
+
 };

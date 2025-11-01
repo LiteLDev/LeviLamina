@@ -14,4 +14,5 @@ public:
     EquippableDefinition& operator=(EquippableDefinition const&);
     EquippableDefinition(EquippableDefinition const&);
     EquippableDefinition();
+
 };

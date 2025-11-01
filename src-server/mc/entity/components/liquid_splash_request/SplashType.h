@@ -5,10 +5,10 @@
 namespace LiquidSplashRequest {
 
 enum class SplashType : int {
-    None       = 0,
-    Enter      = 1,
+    None = 0,
+    Enter = 1,
     HeadEnters = 2,
-    HeadExits  = 3,
+    HeadExits = 3,
 };
 
 }

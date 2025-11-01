@@ -4,6 +4,7 @@
 
 namespace mce {
 
-class RenderMaterial {};
+class RenderMaterial {
+};
 
-} // namespace mce
+}

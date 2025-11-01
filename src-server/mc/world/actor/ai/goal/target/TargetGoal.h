@@ -16,21 +16,21 @@ class TargetGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                          mMob;
-    ::ll::TypedStorage<1, 1, bool>                            mAttackOwner;
-    ::ll::TypedStorage<1, 1, bool>                            mMustReach;
-    ::ll::TypedStorage<1, 1, bool>                            mGlobalMustSee;
-    ::ll::TypedStorage<1, 1, bool>                            mTargetMustSee;
-    ::ll::TypedStorage<4, 4, int>                             mTargetMustSeeForgetTicks;
-    ::ll::TypedStorage<1, 1, bool>                            mFilterFailure;
-    ::ll::TypedStorage<4, 4, int>                             mFilterFailureTicks;
-    ::ll::TypedStorage<4, 4, int>                             mGlobalMustSeeForgetTicks;
-    ::ll::TypedStorage<4, 4, int>                             mPersistTargetTicks;
-    ::ll::TypedStorage<4, 4, int>                             mReachCache;
-    ::ll::TypedStorage<4, 4, int>                             mReachCacheTime;
-    ::ll::TypedStorage<4, 4, int>                             mUnseenTicks;
-    ::ll::TypedStorage<4, 4, float>                           mWithinDefault;
-    ::ll::TypedStorage<1, 1, bool>                            mReevaluateTarget;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<1, 1, bool> mAttackOwner;
+    ::ll::TypedStorage<1, 1, bool> mMustReach;
+    ::ll::TypedStorage<1, 1, bool> mGlobalMustSee;
+    ::ll::TypedStorage<1, 1, bool> mTargetMustSee;
+    ::ll::TypedStorage<4, 4, int> mTargetMustSeeForgetTicks;
+    ::ll::TypedStorage<1, 1, bool> mFilterFailure;
+    ::ll::TypedStorage<4, 4, int> mFilterFailureTicks;
+    ::ll::TypedStorage<4, 4, int> mGlobalMustSeeForgetTicks;
+    ::ll::TypedStorage<4, 4, int> mPersistTargetTicks;
+    ::ll::TypedStorage<4, 4, int> mReachCache;
+    ::ll::TypedStorage<4, 4, int> mReachCacheTime;
+    ::ll::TypedStorage<4, 4, int> mUnseenTicks;
+    ::ll::TypedStorage<4, 4, float> mWithinDefault;
+    ::ll::TypedStorage<1, 1, bool> mReevaluateTarget;
     ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mTargetTypes;
     // NOLINTEND
 
@@ -62,13 +62,7 @@ public:
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
     // vIndex: 10
-    virtual bool _canAttack(
-        ::Mob*                  testMob,
-        ::Actor*                target,
-        bool                    allowInvulnerable,
-        bool                    mustSee,
-        ::MobDescriptor const** outDescriptorMatch
-    );
+    virtual bool _canAttack(::Mob* testMob, ::Actor* target, bool allowInvulnerable, bool mustSee, ::MobDescriptor const** outDescriptorMatch);
 
     // vIndex: 0
     virtual ~TargetGoal() /*override*/;
@@ -81,8 +75,7 @@ public:
 
     MCAPI bool _canReach(::Actor& target);
 
-    MCAPI bool
-    _matchesTargetTypes(::Mob* testMob, ::Actor* target, bool mustSee, ::MobDescriptor const** outDescriptorMatch);
+    MCAPI bool _matchesTargetTypes(::Mob* testMob, ::Actor* target, bool mustSee, ::MobDescriptor const** outDescriptorMatch);
 
     MCAPI bool _withinRange(::Actor const& target);
     // NOLINTEND
@@ -108,13 +101,7 @@ public:
 
     MCAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool $_canAttack(
-        ::Mob*                  testMob,
-        ::Actor*                target,
-        bool                    allowInvulnerable,
-        bool                    mustSee,
-        ::MobDescriptor const** outDescriptorMatch
-    );
+    MCAPI bool $_canAttack(::Mob* testMob, ::Actor* target, bool allowInvulnerable, bool mustSee, ::MobDescriptor const** outDescriptorMatch);
     // NOLINTEND
 
 public:
@@ -122,4 +109,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

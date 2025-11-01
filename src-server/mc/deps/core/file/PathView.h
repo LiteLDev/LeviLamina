@@ -19,12 +19,14 @@ public:
     struct Hash;
     struct path_view_less;
     // clang-format on
-
+    
     // PathView inner types define
-    struct Hash {};
-
-    struct path_view_less {};
-
+    struct Hash {
+    };
+    
+    struct path_view_less {
+    };
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -46,6 +48,8 @@ public:
 
     MCNAPI PathView(::Core::PathView&&);
 
+    MCNAPI bool isAbsolute() const;
+
     MCNAPI auto operator==(::Core::PathView const& rhs) const;
 
     MCNAPI ~PathView();
@@ -66,6 +70,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/options/DataBackedAppConfigs.h"
 #include "mc/options/EducationEditionOffer.h"
 
@@ -11,8 +10,6 @@
 // clang-format off
 class IAppConfigData;
 class IContentAccessibilityProvider;
-class IEntitlementManager;
-class IMinecraftGame;
 struct PackIdVersion;
 // clang-format on
 
@@ -38,13 +35,8 @@ public:
     // vIndex: 16
     virtual ::EducationEditionOffer getEducationEditionOffering() const /*override*/;
 
-    // vIndex: 32
-    virtual void setCanAccessWorldCallback(::IMinecraftGame& minecraftGame) /*override*/;
-
-    // vIndex: 35
-    virtual ::std::unique_ptr<::IContentAccessibilityProvider>
-    createContentAccessibility(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager) const
-        /*override*/;
+    // vIndex: 34
+    virtual ::std::unique_ptr<::IContentAccessibilityProvider> createContentAccessibility() const /*override*/;
 
     // vIndex: 27
     virtual bool canUseAzureNotebooks() const /*override*/;
@@ -66,4 +58,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

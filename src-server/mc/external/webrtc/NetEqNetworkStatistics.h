@@ -28,6 +28,7 @@ public:
     NetEqNetworkStatistics& operator=(NetEqNetworkStatistics const&);
     NetEqNetworkStatistics(NetEqNetworkStatistics const&);
     NetEqNetworkStatistics();
+
 };
 
-} // namespace webrtc
+}

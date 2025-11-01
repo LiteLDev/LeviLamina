@@ -11,7 +11,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 16, ::ContainerValidationSlotData> containerSlot;
-    ::ll::TypedStorage<8, 40, ::SlotData>                    slot;
-    ::ll::TypedStorage<4, 4, int>                            addedCount;
+    ::ll::TypedStorage<8, 40, ::SlotData> slot;
+    ::ll::TypedStorage<4, 4, int> addedCount;
     // NOLINTEND
+
 };

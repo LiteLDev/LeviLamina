@@ -10,7 +10,8 @@ struct ContainerPopulationData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::ContainerEnumName>    containerName;
+    ::ll::TypedStorage<1, 1, ::ContainerEnumName> containerName;
     ::ll::TypedStorage<4, 4, ::CreativeItemCategory> itemCategory;
     // NOLINTEND
+
 };

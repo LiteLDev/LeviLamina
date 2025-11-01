@@ -26,7 +26,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk4d3a6b;
     ::ll::UntypedStorage<8, 16> mUnk42db5a;
-    ::ll::UntypedStorage<8, 8>  mUnkbb0bee;
+    ::ll::UntypedStorage<8, 8> mUnkbb0bee;
     // NOLINTEND
 
 public:
@@ -42,25 +42,13 @@ public:
     virtual ::Json::Value clientConfig(::Json::Value const&) const /*override*/;
 
     // vIndex: 2
-    virtual ::Identity::_TokenRefreshState::Enum refreshToken(
-        ::Identity::IEduAuth&,
-        ::AccessTokenInfo const&,
-        int64,
-        ::Identity::EduResourceType,
-        ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>,
-        ::std::function<void()>
-    ) /*override*/;
+    virtual ::Identity::_TokenRefreshState::Enum refreshToken(::Identity::IEduAuth&, ::AccessTokenInfo const&, int64, ::Identity::EduResourceType, ::std::function<void(::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>)>, ::std::function<void()>) /*override*/;
 
     // vIndex: 3
     virtual void onRefreshedToken(bool, ::Identity::EduResourceType) /*override*/;
 
     // vIndex: 4
-    virtual ::Identity::SsoPromptMode signIn(
-        ::Identity::IEduAuth&,
-        int64,
-        ::std::function<void()>,
-        ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>
-    ) /*override*/;
+    virtual ::Identity::SsoPromptMode signIn(::Identity::IEduAuth&, int64, ::std::function<void()>, ::std::function<void(::std::optional<::Bedrock::Result<::Identity::AuthToken, ::Identity::AuthError>>)>) /*override*/;
 
     // vIndex: 5
     virtual void signInSuccess(::std::string const&) /*override*/;
@@ -83,6 +71,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Identity::Strategies
+}

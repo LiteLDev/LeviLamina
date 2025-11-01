@@ -22,13 +22,13 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk18fd21;
-    ::ll::UntypedStorage<8, 8>  mUnk7ca90a;
+    ::ll::UntypedStorage<8, 8> mUnk7ca90a;
     ::ll::UntypedStorage<8, 80> mUnkea609d;
     ::ll::UntypedStorage<8, 56> mUnkadd3fa;
     ::ll::UntypedStorage<8, 32> mUnka8ffe5;
     ::ll::UntypedStorage<8, 32> mUnk5887d5;
-    ::ll::UntypedStorage<1, 1>  mUnkcea598;
-    ::ll::UntypedStorage<1, 1>  mUnk773214;
+    ::ll::UntypedStorage<1, 1> mUnkcea598;
+    ::ll::UntypedStorage<1, 1> mUnk773214;
     // NOLINTEND
 
 public:
@@ -59,22 +59,16 @@ public:
     virtual bool isTrusted() const /*override*/;
 
     // vIndex: 6
-    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
-        /*override*/;
+    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const /*override*/;
 
     // vIndex: 7
     virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
     // vIndex: 8
-    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
-        /*override*/;
+    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const /*override*/;
 
     // vIndex: 9
-    virtual void forEachIn(
-        ::Core::Path const&                        packRelativePath,
-        ::std::function<void(::Core::Path const&)> callback,
-        bool                                       recurseAnyways
-    ) const /*override*/;
+    virtual void forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool recurseAnyways) const /*override*/;
 
     // vIndex: 11
     virtual ::PackAccessStrategyType getStrategyType() const /*override*/;
@@ -98,21 +92,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ZipPackAccessStrategy(
-        ::std::variant<::Bedrock::NotNullNonOwnerPtr<::IFileAccess>, ::gsl::not_null<::std::shared_ptr<::IFileAccess>>>
-                        fileAccess,
-        ::ZipPackArgs&& args
-    );
+    MCNAPI ZipPackAccessStrategy(::std::variant<::Bedrock::NotNullNonOwnerPtr<::IFileAccess>, ::gsl::not_null<::std::shared_ptr<::IFileAccess>>> fileAccess, ::ZipPackArgs&& args);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::variant<::Bedrock::NotNullNonOwnerPtr<::IFileAccess>, ::gsl::not_null<::std::shared_ptr<::IFileAccess>>>
-                        fileAccess,
-        ::ZipPackArgs&& args
-    );
+    MCNAPI void* $ctor(::std::variant<::Bedrock::NotNullNonOwnerPtr<::IFileAccess>, ::gsl::not_null<::std::shared_ptr<::IFileAccess>>> fileAccess, ::ZipPackArgs&& args);
     // NOLINTEND
 
 public:
@@ -140,11 +126,7 @@ public:
 
     MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
-    MCNAPI void $forEachIn(
-        ::Core::Path const&                        packRelativePath,
-        ::std::function<void(::Core::Path const&)> callback,
-        bool                                       recurseAnyways
-    ) const;
+    MCNAPI void $forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool recurseAnyways) const;
 
     MCNAPI ::PackAccessStrategyType $getStrategyType() const;
 
@@ -164,4 +146,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

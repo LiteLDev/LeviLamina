@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/level/levelgen/structure/LegacyStructureSettings.h"
 #include "mc/world/level/levelgen/structure/ScatteredFeaturePiece.h"
 #include "mc/world/level/levelgen/structure/StructurePieceType.h"
@@ -21,9 +21,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 192, ::LegacyStructureSettings> mLabSettings;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                 mLabPos;
-    ::ll::TypedStorage<4, 12, ::Vec3>                     mVillagerPos;
-    ::ll::TypedStorage<4, 12, ::Vec3>                     mZombieVillagerPos;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mLabPos;
+    ::ll::TypedStorage<4, 12, ::Vec3> mVillagerPos;
+    ::ll::TypedStorage<4, 12, ::Vec3> mZombieVillagerPos;
     // NOLINTEND
 
 public:
@@ -69,4 +69,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

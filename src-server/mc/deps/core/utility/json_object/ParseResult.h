@@ -18,6 +18,7 @@ public:
     ParseResult& operator=(ParseResult const&);
     ParseResult(ParseResult const&);
     ParseResult();
+
 };
 
-} // namespace Bedrock::JSONObject
+}

@@ -11,14 +11,10 @@ class AquiferNoises {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-        mBarrierNoise;
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-        mFluidLevelFloodednessNoise;
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-        mLavaNoise;
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-                                                                        mFluidLevelSpreadNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const> mBarrierNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const> mFluidLevelFloodednessNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const> mLavaNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const> mFluidLevelSpreadNoise;
     ::ll::TypedStorage<8, 24, ::XoroshiroPositionalRandomFactory const> mPositionalRandomFactory;
     // NOLINTEND
 
@@ -32,13 +28,7 @@ public:
     // NOLINTBEGIN
     MCAPI AquiferNoises(::AquiferNoises const&);
 
-    MCAPI AquiferNoises(
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> barrierNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> fluidLevelFloodednessNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> lavaNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> fluidLevelSpreadNoise,
-        ::XoroshiroPositionalRandomFactory                                            positionalRandomFactory
-    );
+    MCAPI AquiferNoises(::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> barrierNoise, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> fluidLevelFloodednessNoise, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> lavaNoise, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> fluidLevelSpreadNoise, ::XoroshiroPositionalRandomFactory positionalRandomFactory);
 
     MCAPI ~AquiferNoises();
     // NOLINTEND
@@ -54,13 +44,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor(::AquiferNoises const&);
 
-    MCFOLD void* $ctor(
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> barrierNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> fluidLevelFloodednessNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> lavaNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> fluidLevelSpreadNoise,
-        ::XoroshiroPositionalRandomFactory                                            positionalRandomFactory
-    );
+    MCFOLD void* $ctor(::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> barrierNoise, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> fluidLevelFloodednessNoise, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> lavaNoise, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> fluidLevelSpreadNoise, ::XoroshiroPositionalRandomFactory positionalRandomFactory);
     // NOLINTEND
 
 public:
@@ -68,4 +52,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

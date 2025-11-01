@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/world/level/block/BlockSupportType.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated forward declare list
@@ -26,7 +27,7 @@ class SlabBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>            mIsDouble;
+    ::ll::TypedStorage<1, 1, bool> mIsDouble;
     ::ll::TypedStorage<8, 48, ::HashedString> mOtherSlab;
     // NOLINTEND
 
@@ -44,31 +45,27 @@ public:
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     // vIndex: 14
-    virtual bool isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const
-        /*override*/;
+    virtual bool isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const /*override*/;
 
     // vIndex: 57
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const /*override*/;
 
-    // vIndex: 101
-    virtual ::MobSpawnerData const* getMobToSpawn(::SpawnConditions const& conditions, ::BlockSource& region) const
-        /*override*/;
+    // vIndex: 100
+    virtual ::MobSpawnerData const* getMobToSpawn(::SpawnConditions const& conditions, ::BlockSource& region) const /*override*/;
 
     // vIndex: 18
-    virtual bool liquidCanFlowIntoFromDirection(
-        uchar                                                     flowIntoFacing,
-        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
-        ::BlockPos const&                                         pos
-    ) const /*override*/;
+    virtual bool liquidCanFlowIntoFromDirection(uchar flowIntoFacing, ::std::function<::Block const&(::BlockPos const&)> const& getBlock, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 22
+    virtual bool canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const /*override*/;
+
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
@@ -78,13 +75,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SlabBlock(
-        ::std::string const&  nameId,
-        int                   id,
-        bool                  isDouble,
-        ::Material const&     mat,
-        ::HashedString const& otherSlab
-    );
+    MCAPI SlabBlock(::std::string const& nameId, int id, bool isDouble, ::Material const& mat, ::HashedString const& otherSlab);
 
     MCAPI ::Block const& getDoubleSlab() const;
     // NOLINTEND
@@ -98,8 +89,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::string const& nameId, int id, bool isDouble, ::Material const& mat, ::HashedString const& otherSlab);
+    MCAPI void* $ctor(::std::string const& nameId, int id, bool isDouble, ::Material const& mat, ::HashedString const& otherSlab);
     // NOLINTEND
 
 public:
@@ -121,15 +111,13 @@ public:
 
     MCAPI ::MobSpawnerData const* $getMobToSpawn(::SpawnConditions const& conditions, ::BlockSource& region) const;
 
-    MCAPI bool $liquidCanFlowIntoFromDirection(
-        uchar                                                     flowIntoFacing,
-        ::std::function<::Block const&(::BlockPos const&)> const& getBlock,
-        ::BlockPos const&                                         pos
-    ) const;
+    MCAPI bool $liquidCanFlowIntoFromDirection(uchar flowIntoFacing, ::std::function<::Block const&(::BlockPos const&)> const& getBlock, ::BlockPos const& pos) const;
 
     MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
     MCAPI bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
+
+    MCAPI bool $canProvideSupport(::Block const& block, uchar face, ::BlockSupportType) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const& experiments);
     // NOLINTEND
@@ -139,4 +127,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

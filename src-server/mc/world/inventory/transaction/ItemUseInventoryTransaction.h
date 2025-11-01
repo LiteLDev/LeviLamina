@@ -28,35 +28,35 @@ class ItemUseInventoryTransaction : public ::ComplexInventoryTransaction {
 public:
     // ItemUseInventoryTransaction inner types define
     enum class ActionType : int {
-        Place       = 0,
-        Use         = 1,
-        Destroy     = 2,
+        Place = 0,
+        Use = 1,
+        Destroy = 2,
         UseAsAttack = 3,
     };
-
+    
     enum class TriggerType : uchar {
-        Unknown        = 0,
-        PlayerInput    = 1,
+        Unknown = 0,
+        PlayerInput = 1,
         SimulationTick = 2,
     };
-
+    
     enum class PredictedResult : uchar {
         Failure = 0,
         Success = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ItemUseInventoryTransaction::ActionType>      mActionType;
-    ::ll::TypedStorage<1, 1, ::ItemUseInventoryTransaction::TriggerType>     mTriggerType;
-    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition>                        mPos;
-    ::ll::TypedStorage<4, 4, uint>                                           mTargetBlockId;
-    ::ll::TypedStorage<1, 1, uchar>                                          mFace;
-    ::ll::TypedStorage<4, 4, int>                                            mSlot;
-    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor>                  mItem;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                        mFromPos;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                        mClickPos;
+    ::ll::TypedStorage<4, 4, ::ItemUseInventoryTransaction::ActionType> mActionType;
+    ::ll::TypedStorage<1, 1, ::ItemUseInventoryTransaction::TriggerType> mTriggerType;
+    ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
+    ::ll::TypedStorage<4, 4, uint> mTargetBlockId;
+    ::ll::TypedStorage<1, 1, uchar> mFace;
+    ::ll::TypedStorage<4, 4, int> mSlot;
+    ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mItem;
+    ::ll::TypedStorage<4, 12, ::Vec3> mFromPos;
+    ::ll::TypedStorage<4, 12, ::Vec3> mClickPos;
     ::ll::TypedStorage<1, 1, ::ItemUseInventoryTransaction::PredictedResult> mClientPredictedResult;
     // NOLINTEND
 
@@ -91,11 +91,7 @@ public:
 
     MCAPI explicit ItemUseInventoryTransaction(::InventoryTransaction const& transaction);
 
-    MCAPI ::InventoryTransactionError handle(
-        ::IItemUseTransactionSubject&       player,
-        ::ILegacyItemUseTransactionSubject& legacy,
-        bool                                isSenderAuthority
-    ) const;
+    MCAPI ::InventoryTransactionError handle(::IItemUseTransactionSubject& player, ::ILegacyItemUseTransactionSubject& legacy, bool isSenderAuthority) const;
 
     MCAPI ::ItemUseInventoryTransaction& operator=(::ItemUseInventoryTransaction const&);
 
@@ -113,8 +109,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::ItemUseInventoryTransaction::ActionType, ::std::string> const&
-    actionTypeMap();
+    MCAPI static ::BidirectionalUnorderedMap<::ItemUseInventoryTransaction::ActionType, ::std::string> const& actionTypeMap();
     // NOLINTEND
 
 public:
@@ -152,4 +147,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

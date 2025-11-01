@@ -24,14 +24,14 @@ class CherryTreeTrunk : public ::ITreeTrunk {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 184, ::BlockDescriptor>                                 mTrunkBlockDescriptor;
-    ::ll::TypedStorage<4, 4, int>                                                 mBaseHeight;
-    ::ll::TypedStorage<8, 24, ::std::vector<int>>                                 mHeightIntervals;
+    ::ll::TypedStorage<8, 184, ::BlockDescriptor> mTrunkBlockDescriptor;
+    ::ll::TypedStorage<4, 4, int> mBaseHeight;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>> mHeightIntervals;
     ::ll::TypedStorage<8, 24, ::std::vector<::WeightedRandom::WeighedRandomItem>> mTreeTypeWeights;
-    ::ll::TypedStorage<4, 8, ::IntRange>                                          mBranchHorizontalLength;
-    ::ll::TypedStorage<4, 8, ::IntRange>                                          mBranchStartOffsetFromTop;
-    ::ll::TypedStorage<4, 8, ::IntRange>                                          mBranchEndOffsetFromTop;
-    ::ll::TypedStorage<8, 8, ::ITreeCanopyWrapper>                                mBranchCanopy;
+    ::ll::TypedStorage<4, 8, ::IntRange> mBranchHorizontalLength;
+    ::ll::TypedStorage<4, 8, ::IntRange> mBranchStartOffsetFromTop;
+    ::ll::TypedStorage<4, 8, ::IntRange> mBranchEndOffsetFromTop;
+    ::ll::TypedStorage<8, 8, ::ITreeCanopyWrapper> mBranchCanopy;
     // NOLINTEND
 
 public:
@@ -44,32 +44,13 @@ public:
     virtual int getTreeHeight(::Random& random) const /*override*/;
 
     // vIndex: 1
-    virtual ::std::optional<::BlockPos> placeTrunk(
-        ::IBlockWorldGenAPI&            target,
-        ::BlockPos const&               pos,
-        ::Random&                       random,
-        int                             treeHeight,
-        ::RenderParams&                 renderParams,
-        ::TreeHelper::TreeParams const& treeParams,
-        ::ITreeCanopy const*            canopy
-    ) const /*override*/;
+    virtual ::std::optional<::BlockPos> placeTrunk(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, int treeHeight, ::RenderParams& renderParams, ::TreeHelper::TreeParams const& treeParams, ::ITreeCanopy const* canopy) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockPos _generateBranch(
-        ::IBlockWorldGenAPI&            target,
-        ::Block const&                  trunkBlock,
-        ::Block const&                  sidewaysTrunkBlock,
-        ::Random&                       random,
-        int                             treeHeight,
-        ::BlockPos                      origin,
-        ::TreeHelper::TreeParams const& treeParams,
-        ::BlockPos                      branchDirection,
-        int                             offsetFromOrigin,
-        bool                            middleContinuesUpwards
-    ) const;
+    MCAPI ::BlockPos _generateBranch(::IBlockWorldGenAPI& target, ::Block const& trunkBlock, ::Block const& sidewaysTrunkBlock, ::Random& random, int treeHeight, ::BlockPos origin, ::TreeHelper::TreeParams const& treeParams, ::BlockPos branchDirection, int offsetFromOrigin, bool middleContinuesUpwards) const;
     // NOLINTEND
 
 public:
@@ -77,15 +58,7 @@ public:
     // NOLINTBEGIN
     MCAPI int $getTreeHeight(::Random& random) const;
 
-    MCAPI ::std::optional<::BlockPos> $placeTrunk(
-        ::IBlockWorldGenAPI&            target,
-        ::BlockPos const&               pos,
-        ::Random&                       random,
-        int                             treeHeight,
-        ::RenderParams&                 renderParams,
-        ::TreeHelper::TreeParams const& treeParams,
-        ::ITreeCanopy const*            canopy
-    ) const;
+    MCAPI ::std::optional<::BlockPos> $placeTrunk(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, int treeHeight, ::RenderParams& renderParams, ::TreeHelper::TreeParams const& treeParams, ::ITreeCanopy const* canopy) const;
     // NOLINTEND
 
 public:
@@ -93,4 +66,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

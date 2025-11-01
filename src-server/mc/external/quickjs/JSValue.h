@@ -15,4 +15,5 @@ public:
     JSValue& operator=(JSValue const&);
     JSValue(JSValue const&);
     JSValue();
+
 };

@@ -24,6 +24,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

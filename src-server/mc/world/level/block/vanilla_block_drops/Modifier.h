@@ -13,14 +13,9 @@ struct ResourceDropsContext;
 namespace VanillaBlockDrops::Modifier {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> applyExplosionDecay(
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy
-);
+MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> applyExplosionDecay(::std::function<::ResourceDrops (::Block const &, ::Randomize &, ::ResourceDropsContext const &)> dropStrategy);
 
-MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)>
-applyNameTagFromBlockActor(
-    ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> dropStrategy
-);
+MCAPI ::std::function<::ResourceDrops(::Block const&, ::Randomize&, ::ResourceDropsContext const&)> applyNameTagFromBlockActor(::std::function<::ResourceDrops (::Block const &, ::Randomize &, ::ResourceDropsContext const &)> dropStrategy);
 // NOLINTEND
 
-} // namespace VanillaBlockDrops::Modifier
+}

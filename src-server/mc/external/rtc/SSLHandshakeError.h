@@ -5,9 +5,9 @@
 namespace rtc {
 
 enum class SSLHandshakeError : int {
-    Unknown                 = 0,
+    Unknown = 0,
     IncompatibleCiphersuite = 1,
-    MaxValue                = 2,
+    MaxValue = 2,
 };
 
 }

@@ -10,7 +10,7 @@
 #include "mc/world/events/ScriptingWorldInitializeEvent.h"
 #include "mc/world/level/LevelSoundBroadcastEvent.h"
 
-template <typename Return>
+template<typename Return>
 struct LevelGameplayEvent;
 
 template <>
@@ -21,4 +21,5 @@ struct LevelGameplayEvent<void> : ConstEventVariant<
                                       LevelDayCycleEvent,
                                       LevelStartLeaveGameEvent,
                                       LevelGameRuleChangeEvent,
-                                      ScriptingWorldInitializeEvent> {};
+                                      ScriptingWorldInitializeEvent> {
+};

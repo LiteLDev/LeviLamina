@@ -4,7 +4,8 @@
 
 namespace Bedrock::PubSub {
 
-template <typename T0>
-struct DispatchResult {};
+template<typename T0>
+struct DispatchResult {
+};
 
-} // namespace Bedrock::PubSub
+}

@@ -13,4 +13,4 @@ namespace CryptoUtils {
 MCNAPI ::std::string getFileChecksum(::Core::PathView path);
 // NOLINTEND
 
-} // namespace CryptoUtils
+}

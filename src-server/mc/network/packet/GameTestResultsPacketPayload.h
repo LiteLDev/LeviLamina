@@ -8,7 +8,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string> mTestName;
     ::ll::TypedStorage<8, 32, ::std::string> mError;
-    ::ll::TypedStorage<1, 1, bool>           mSucceeded;
+    ::ll::TypedStorage<1, 1, bool> mSucceeded;
     // NOLINTEND
 
 public:
@@ -30,4 +30,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

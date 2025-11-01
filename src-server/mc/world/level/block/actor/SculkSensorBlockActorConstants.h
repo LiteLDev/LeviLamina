@@ -8,4 +8,4 @@ namespace SculkSensorBlockActorConstants {
 MCAPI ::std::string const& VibrationListenerTag();
 // NOLINTEND
 
-} // namespace SculkSensorBlockActorConstants
+}

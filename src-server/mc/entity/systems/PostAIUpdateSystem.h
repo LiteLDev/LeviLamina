@@ -28,21 +28,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCNAPI static void doPostAiUpdate(
-        ::StrictEntityContext&                       entity,
-        ::Optional<::OnGroundFlagComponent const>    onGround,
-        ::NoActionTimeComponent&                     noActionTime,
-        ::EntityModifier<::WasOnGroundFlagComponent> mod
-    );
+    MCNAPI static void doPostAiUpdate(::StrictEntityContext& entity, ::Optional<::OnGroundFlagComponent const> onGround, ::NoActionTimeComponent& noActionTime, ::EntityModifier<::WasOnGroundFlagComponent> mod);
 
-    MCNAPI static void tick(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
-            ::Exclude<::MobIsImmobileFlagComponent, ::IsDeadFlagComponent>,
-            ::Optional<::OnGroundFlagComponent const>,
-            ::NoActionTimeComponent>                 view,
-        ::EntityModifier<::WasOnGroundFlagComponent> mod
-    );
+    MCNAPI static void tick(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>, ::Exclude<::MobIsImmobileFlagComponent, ::IsDeadFlagComponent>, ::Optional<::OnGroundFlagComponent const>, ::NoActionTimeComponent> view, ::EntityModifier<::WasOnGroundFlagComponent> mod);
     // NOLINTEND
+
 };

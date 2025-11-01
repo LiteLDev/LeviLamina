@@ -4,7 +4,8 @@
 
 namespace absl {
 
-template <typename T0>
-class AnyInvocable {};
+template<typename T0>
+class AnyInvocable {
+};
 
-} // namespace absl
+}

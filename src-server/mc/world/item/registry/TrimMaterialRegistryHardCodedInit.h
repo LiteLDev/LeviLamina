@@ -13,4 +13,4 @@ namespace TrimMaterialRegistryHardCodedInit {
 MCAPI ::std::vector<::TrimMaterial> getMaterials();
 // NOLINTEND
 
-} // namespace TrimMaterialRegistryHardCodedInit
+}

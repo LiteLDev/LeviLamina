@@ -15,7 +15,7 @@ public:
     // clang-format off
     struct SerializedEvent;
     // clang-format on
-
+    
     // DeprecatedEventFactory inner types define
     struct SerializedEvent {
     public:
@@ -24,45 +24,46 @@ public:
         ::ll::UntypedStorage<8, 32> mUnkb37d9e;
         ::ll::UntypedStorage<8, 32> mUnkdf6af7;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         SerializedEvent& operator=(SerializedEvent const&);
         SerializedEvent(SerializedEvent const&);
         SerializedEvent();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~SerializedEvent();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     enum class ClientActionEventType : int {
         ActionExecute = 1,
     };
-
+    
     enum class ServerUXEventType : int {
-        UpdateMenu                     = 3,
-        DestroyMenu                    = 4,
-        UpdateModalToolOption          = 7,
-        DestroyModalToolOption         = 8,
-        BindActionToControl            = 11,
+        UpdateMenu = 3,
+        DestroyMenu = 4,
+        UpdateModalToolOption = 7,
+        DestroyModalToolOption = 8,
+        BindActionToControl = 11,
         RemoveActionBindingFromControl = 12,
     };
-
+    
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Editor::DataStore::DeprecatedEventFactory::SerializedEvent
-    getSerializedEvent(::Json::Value const& payload);
+    MCNAPI static ::Editor::DataStore::DeprecatedEventFactory::SerializedEvent getSerializedEvent(::Json::Value const& payload);
     // NOLINTEND
+
 };
 
-} // namespace Editor::DataStore
+}

@@ -30,33 +30,11 @@ MCNAPI void forNormalGravitySystems(::std::function<void(::TickingSystemWithInfo
 
 MCNAPI bool isCenterTopAndBottomNotInAir(::Vec3 const& pos, ::IConstBlockSource const& region, ::Vec2 const& aabbDim);
 
-MCNAPI void tickAirGravity(
-    ::StrictEntityContext const&,
-    ::ActorDataFlagComponent const& synchedActorData,
-    ::MobEffectsComponent const&    mobEffects,
-    ::StateVectorComponent&         stateVector,
-    ::FallDistanceComponent&        fallDistance
-);
+MCNAPI void tickAirGravity(::StrictEntityContext const&, ::ActorDataFlagComponent const& synchedActorData, ::MobEffectsComponent const& mobEffects, ::StateVectorComponent& stateVector, ::FallDistanceComponent& fallDistance);
 
-MCNAPI void tickLavaGravity(
-    ::StrictEntityContext const&,
-    ::Optional<::NavigationComponent const> navigation,
-    ::Optional<::PhysicsComponent const>    physics,
-    ::AABBShapeComponent const&             aabbShape,
-    ::ActorDataFlagComponent const&         synchedActorData,
-    ::StateVectorComponent&                 stateVector,
-    ::IConstBlockSource const&              region
-);
+MCNAPI void tickLavaGravity(::StrictEntityContext const&, ::Optional<::NavigationComponent const> navigation, ::Optional<::PhysicsComponent const> physics, ::AABBShapeComponent const& aabbShape, ::ActorDataFlagComponent const& synchedActorData, ::StateVectorComponent& stateVector, ::IConstBlockSource const& region);
 
-MCNAPI void tickMobWaterGravity(
-    ::StrictEntityContext const&,
-    ::Optional<::NavigationComponent const> navigation,
-    ::Optional<::PhysicsComponent const>    physics,
-    ::AABBShapeComponent const&             aabbShape,
-    ::ActorDataFlagComponent const&         synchedActorData,
-    ::StateVectorComponent&                 stateVector,
-    ::IConstBlockSource const&              region
-);
+MCNAPI void tickMobWaterGravity(::StrictEntityContext const&, ::Optional<::NavigationComponent const> navigation, ::Optional<::PhysicsComponent const> physics, ::AABBShapeComponent const& aabbShape, ::ActorDataFlagComponent const& synchedActorData, ::StateVectorComponent& stateVector, ::IConstBlockSource const& region);
 // NOLINTEND
 
-} // namespace MobMovementGravity
+}

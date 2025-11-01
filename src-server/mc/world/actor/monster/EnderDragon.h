@@ -30,31 +30,31 @@ class EnderDragon : public ::Monster {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>                  mPath;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
     ::ll::TypedStorage<4, 768, ::std::array<::std::array<float, 3>, 64>> mPositions;
-    ::ll::TypedStorage<4, 4, int>                                        mPosPointer;
-    ::ll::TypedStorage<8, 8, ::AABB*>                                    mHead;
-    ::ll::TypedStorage<8, 8, ::AABB*>                                    mNeck;
-    ::ll::TypedStorage<8, 8, ::AABB*>                                    mBody;
-    ::ll::TypedStorage<8, 8, ::AABB*>                                    mTail1;
-    ::ll::TypedStorage<8, 8, ::AABB*>                                    mTail2;
-    ::ll::TypedStorage<8, 8, ::AABB*>                                    mTail3;
-    ::ll::TypedStorage<8, 8, ::AABB*>                                    mWing1;
-    ::ll::TypedStorage<8, 8, ::AABB*>                                    mWing2;
-    ::ll::TypedStorage<1, 1, bool>                                       mInWall;
-    ::ll::TypedStorage<4, 4, int>                                        mGrowlTime;
-    ::ll::TypedStorage<4, 4, int>                                        mSittingDamageReceived;
-    ::ll::TypedStorage<4, 4, float>                                      mTurnSpeed;
-    ::ll::TypedStorage<4, 12, ::Vec3>                                    mTargetPos;
-    ::ll::TypedStorage<4, 4, int>                                        mFlameAttackCount;
-    ::ll::TypedStorage<1, 1, bool>                                       mNodesFinalized;
-    ::ll::TypedStorage<8, 24, ::std::vector<::PathfinderNode>>           mNodes;
-    ::ll::TypedStorage<8, 24, ::std::vector<int>>                        mNodeAdjacency;
-    ::ll::TypedStorage<8, 32, ::BinaryHeap>                              mOpenSet;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                            mNearestCrystal;
-    ::ll::TypedStorage<4, 4, int>                                        mEnderCrystalsAlive;
-    ::ll::TypedStorage<1, 1, bool>                                       mDragonKilledPreviously;
-    ::ll::TypedStorage<8, 64, ::std::function<void(::EnderDragon&)>>     mDragonKilledCallback;
+    ::ll::TypedStorage<4, 4, int> mPosPointer;
+    ::ll::TypedStorage<8, 8, ::AABB*> mHead;
+    ::ll::TypedStorage<8, 8, ::AABB*> mNeck;
+    ::ll::TypedStorage<8, 8, ::AABB*> mBody;
+    ::ll::TypedStorage<8, 8, ::AABB*> mTail1;
+    ::ll::TypedStorage<8, 8, ::AABB*> mTail2;
+    ::ll::TypedStorage<8, 8, ::AABB*> mTail3;
+    ::ll::TypedStorage<8, 8, ::AABB*> mWing1;
+    ::ll::TypedStorage<8, 8, ::AABB*> mWing2;
+    ::ll::TypedStorage<1, 1, bool> mInWall;
+    ::ll::TypedStorage<4, 4, int> mGrowlTime;
+    ::ll::TypedStorage<4, 4, int> mSittingDamageReceived;
+    ::ll::TypedStorage<4, 4, float> mTurnSpeed;
+    ::ll::TypedStorage<4, 12, ::Vec3> mTargetPos;
+    ::ll::TypedStorage<4, 4, int> mFlameAttackCount;
+    ::ll::TypedStorage<1, 1, bool> mNodesFinalized;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PathfinderNode>> mNodes;
+    ::ll::TypedStorage<8, 24, ::std::vector<int>> mNodeAdjacency;
+    ::ll::TypedStorage<8, 32, ::BinaryHeap> mOpenSet;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mNearestCrystal;
+    ::ll::TypedStorage<4, 4, int> mEnderCrystalsAlive;
+    ::ll::TypedStorage<1, 1, bool> mDragonKilledPreviously;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::EnderDragon&)>> mDragonKilledCallback;
     // NOLINTEND
 
 public:
@@ -110,11 +110,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnderDragon(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI EnderDragon(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCAPI void _checkCrystals();
 
@@ -126,8 +122,7 @@ public:
 
     MCAPI void _knockBack(::gsl::span<::gsl::not_null<::Actor*>> actors) const;
 
-    MCAPI ::std::unique_ptr<::Path>
-    _reconstructPath(::PathfinderNode& from, ::PathfinderNode& to, ::PathCompletionType completionType);
+    MCAPI ::std::unique_ptr<::Path> _reconstructPath(::PathfinderNode& from, ::PathfinderNode& to, ::PathCompletionType completionType);
 
     MCAPI void dieNaturally();
 
@@ -159,11 +154,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -207,4 +198,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

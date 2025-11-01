@@ -28,13 +28,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlayerLimboActorManager> const> mPlayerLimboActorManager;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IPlayerDimensionTransferer>> const>
-                                                                                          mPlayerDimensionTransferer;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::IPlayerDimensionTransferer>> const> mPlayerDimensionTransferer;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> const> mGameplayUserManager;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const>    mDimensionManager;
-    ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry> const>                          mEntityRegistry;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> const> mDimensionManager;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::EntityRegistry> const> mEntityRegistry;
     ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ILevelCrashDumpManager>> const> mLevelCrashDumpManager;
-    ::ll::TypedStorage<1, 1, bool>                             mLevelFinishedInitializing;
+    ::ll::TypedStorage<1, 1, bool> mLevelFinishedInitializing;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserRemoved;
     // NOLINTEND
 
@@ -45,14 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerDimensionTransferManager(
-        ::std::unique_ptr<::PlayerLimboActorManager>               playerLimboActorManager,
-        ::std::unique_ptr<::IPlayerDimensionTransferer>            playerDimensionTransferer,
-        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>          dimensionManager,
-        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager>       gameplayUserManager,
-        ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
-        ::std::unique_ptr<::ILevelCrashDumpManager>                levelCrashDumpManager
-    );
+    MCAPI PlayerDimensionTransferManager(::std::unique_ptr<::PlayerLimboActorManager> playerLimboActorManager, ::std::unique_ptr<::IPlayerDimensionTransferer> playerDimensionTransferer, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager, ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry, ::std::unique_ptr<::ILevelCrashDumpManager> levelCrashDumpManager);
 
     MCAPI ::StackRefResult<::EntityRegistry> _getValidEntityRegistry();
 
@@ -62,11 +54,7 @@ public:
 
     MCAPI bool _playerChangeDimension(::Player& player, ::ChangeDimensionRequest& changeRequest);
 
-    MCAPI bool _playerChangeDimensionWaitingForChunks(
-        ::Player&                 player,
-        ::ChangeDimensionRequest& changeRequest,
-        ::Dimension&              toDimension
-    );
+    MCAPI bool _playerChangeDimensionWaitingForChunks(::Player& player, ::ChangeDimensionRequest& changeRequest, ::Dimension& toDimension);
 
     MCAPI void handleChangeDimensionRequests();
 
@@ -80,14 +68,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::unique_ptr<::PlayerLimboActorManager>               playerLimboActorManager,
-        ::std::unique_ptr<::IPlayerDimensionTransferer>            playerDimensionTransferer,
-        ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>          dimensionManager,
-        ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager>       gameplayUserManager,
-        ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
-        ::std::unique_ptr<::ILevelCrashDumpManager>                levelCrashDumpManager
-    );
+    MCAPI void* $ctor(::std::unique_ptr<::PlayerLimboActorManager> playerLimboActorManager, ::std::unique_ptr<::IPlayerDimensionTransferer> playerDimensionTransferer, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager, ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry, ::std::unique_ptr<::ILevelCrashDumpManager> levelCrashDumpManager);
     // NOLINTEND
 
 public:
@@ -95,4 +76,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

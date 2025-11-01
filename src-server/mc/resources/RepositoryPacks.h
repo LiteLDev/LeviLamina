@@ -33,11 +33,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::RepositoryPackTuple>
-    addResourcePackIfNotAlreadyAdded(::gsl::not_null<::std::shared_ptr<::Pack>> pack);
+    MCNAPI ::std::optional<::RepositoryPackTuple> addResourcePackIfNotAlreadyAdded(::gsl::not_null<::std::shared_ptr<::Pack>> pack);
 
-    MCNAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::ResourcePack>>>
-    getPacksByCategory(::PackCategory category);
+    MCNAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::ResourcePack>>> getPacksByCategory(::PackCategory category);
 
     MCNAPI ::std::shared_ptr<::ResourcePack> getResourcePackForPackId(::PackIdVersion const& idAndVersion) const;
 
@@ -45,4 +43,5 @@ public:
 
     MCNAPI void removePack(::ResourceLocation const& packLocation, ::std::vector<::RepositoryPackTuple>& removedPacks);
     // NOLINTEND
+
 };

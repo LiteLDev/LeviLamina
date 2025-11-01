@@ -8,7 +8,7 @@ struct FlushedTransactions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc279ee;
+    ::ll::UntypedStorage<8, 8> mUnkc279ee;
     ::ll::UntypedStorage<8, 24> mUnk6cd0fd;
     // NOLINTEND
 
@@ -17,6 +17,7 @@ public:
     FlushedTransactions& operator=(FlushedTransactions const&);
     FlushedTransactions(FlushedTransactions const&);
     FlushedTransactions();
+
 };
 
-} // namespace mce
+}

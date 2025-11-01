@@ -3,28 +3,28 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 
 class BaseBlockLocationIterator {
 public:
     // BaseBlockLocationIterator inner types define
     using value_type = ::BlockPos;
-
+    
     using difference_type = int64;
-
+    
     using pointer = ::BlockPos*;
-
+    
     using reference = ::BlockPos;
-
+    
     using iterator_category = ::std::input_iterator_tag;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::BlockPos> mMin;
     ::ll::TypedStorage<4, 12, ::BlockPos> mMax;
     ::ll::TypedStorage<4, 12, ::BlockPos> mCurrent;
-    ::ll::TypedStorage<1, 1, bool>        mDone;
+    ::ll::TypedStorage<1, 1, bool> mDone;
     // NOLINTEND
 
 public:
@@ -59,4 +59,5 @@ public:
 
     MCFOLD void $_end();
     // NOLINTEND
+
 };

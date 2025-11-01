@@ -19,9 +19,9 @@ class ScriptSystemFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystem>
-    getHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level, ::Scripting::DependencyLocator& locator);
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSystem> getHandle(::Scripting::WeakLifetimeScope& scope, ::ServerLevel& level, ::Scripting::DependencyLocator& locator);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

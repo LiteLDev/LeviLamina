@@ -7,14 +7,13 @@
 
 namespace Editor::Network {
 
-class DataTransferServiceRequestDataPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::DataTransferServiceRequestDataPayload> {
+class DataTransferServiceRequestDataPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::DataTransferServiceRequestDataPayload> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk73ce7c;
     ::ll::UntypedStorage<8, 32> mUnk2c41bd;
-    ::ll::UntypedStorage<1, 1>  mUnke3b760;
+    ::ll::UntypedStorage<1, 1> mUnke3b760;
     // NOLINTEND
 
 public:
@@ -41,6 +40,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

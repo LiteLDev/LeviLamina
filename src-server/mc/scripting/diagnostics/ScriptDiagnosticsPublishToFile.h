@@ -19,68 +19,57 @@ public:
     // clang-format off
     class StreamFlusher;
     // clang-format on
-
+    
     // ScriptDiagnosticsPublishToFile inner types define
     class StreamFlusher : public ::Bedrock::FlushingIOController::Flusher {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnka64202;
-        ::ll::UntypedStorage<8, 8>  mUnkf9c1a3;
-        ::ll::UntypedStorage<8, 8>  mUnk3d53df;
+        ::ll::UntypedStorage<8, 8> mUnkf9c1a3;
+        ::ll::UntypedStorage<8, 8> mUnk3d53df;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         StreamFlusher& operator=(StreamFlusher const&);
         StreamFlusher(StreamFlusher const&);
         StreamFlusher();
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~StreamFlusher() /*override*/ = default;
-
+    
         // vIndex: 1
         virtual ::Core::Result _flushBuffer(void const* data, uint64 amount) /*override*/;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI explicit StreamFlusher(::Core::Path const& streamPath);
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(::Core::Path const& streamPath);
-        // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI ::Core::Result $_flushBuffer(void const* data, uint64 amount);
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkbeba36;
-    ::ll::UntypedStorage<4, 4>  mUnkd0b8ad;
-    ::ll::UntypedStorage<4, 4>  mUnk547915;
+    ::ll::UntypedStorage<8, 8> mUnkbeba36;
+    ::ll::UntypedStorage<4, 4> mUnkd0b8ad;
+    ::ll::UntypedStorage<4, 4> mUnk547915;
     ::ll::UntypedStorage<8, 32> mUnk4c3726;
     ::ll::UntypedStorage<8, 32> mUnkfcfb98;
-    ::ll::UntypedStorage<8, 8>  mUnk193591;
-    ::ll::UntypedStorage<8, 8>  mUnke47e3c;
+    ::ll::UntypedStorage<8, 8> mUnk193591;
+    ::ll::UntypedStorage<8, 8> mUnke47e3c;
     // NOLINTEND
 
 public:
@@ -131,4 +120,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

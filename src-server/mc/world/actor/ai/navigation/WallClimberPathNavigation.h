@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/actor/ai/navigation/PathNavigation.h"
-#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,15 +31,13 @@ public:
     virtual void tick(::NavigationComponent& parent, ::Mob& mob) /*override*/;
 
     // vIndex: 5
-    virtual ::std::unique_ptr<::Path>
-    createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos) /*override*/;
+    virtual ::std::unique_ptr<::Path> createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos) /*override*/;
 
     // vIndex: 4
-    virtual ::std::unique_ptr<::Path>
-    createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target) /*override*/;
+    virtual ::std::unique_ptr<::Path> createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target) /*override*/;
 
     // vIndex: 7
-    virtual bool moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor& target, float speed) /*override*/;
+    virtual bool moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target, float speed) /*override*/;
 
     // vIndex: 11
     virtual bool canUpdatePath(::Mob const& mob) const /*override*/;
@@ -63,7 +61,7 @@ public:
 
     MCNAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
 
-    MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor& target, float speed);
+    MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target, float speed);
 
     MCNAPI bool $canUpdatePath(::Mob const& mob) const;
     // NOLINTEND
@@ -73,4 +71,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

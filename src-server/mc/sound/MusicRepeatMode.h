@@ -4,5 +4,5 @@
 
 enum class MusicRepeatMode : uchar {
     PlayOnce = 0,
-    Loop     = 1,
+    Loop = 1,
 };

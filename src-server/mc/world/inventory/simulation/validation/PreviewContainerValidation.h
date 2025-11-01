@@ -20,43 +20,23 @@ public:
     virtual ~PreviewContainerValidation() /*override*/ = default;
 
     // vIndex: 2
-    virtual bool isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const                       slot,
-        ::ItemStackBase const&          item,
-        int const                       amount,
-        bool
-    ) const /*override*/;
+    virtual bool isItemAllowedInSlot(::ContainerScreenContext const& screenContext, int const slot, ::ItemStackBase const& item, int const amount, bool) const /*override*/;
 
     // vIndex: 4
     virtual int getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const /*override*/;
 
     // vIndex: 1
-    virtual bool isValidSlotForContainer(
-        ::ContainerScreenContext const& screenContext,
-        ::Container const&              container,
-        int const                       slot
-    ) const /*override*/;
+    virtual bool isValidSlotForContainer(::ContainerScreenContext const& screenContext, ::Container const& container, int const slot) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isItemAllowedInSlot(
-        ::ContainerScreenContext const& screenContext,
-        int const                       slot,
-        ::ItemStackBase const&          item,
-        int const                       amount,
-        bool
-    ) const;
+    MCNAPI bool $isItemAllowedInSlot(::ContainerScreenContext const& screenContext, int const slot, ::ItemStackBase const& item, int const amount, bool) const;
 
     MCNAPI int $getAllowedAddCount(::ContainerScreenContext const&, ::ItemStackBase const&) const;
 
-    MCNAPI bool $isValidSlotForContainer(
-        ::ContainerScreenContext const& screenContext,
-        ::Container const&              container,
-        int const                       slot
-    ) const;
+    MCNAPI bool $isValidSlotForContainer(::ContainerScreenContext const& screenContext, ::Container const& container, int const slot) const;
     // NOLINTEND
 
 public:
@@ -64,4 +44,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

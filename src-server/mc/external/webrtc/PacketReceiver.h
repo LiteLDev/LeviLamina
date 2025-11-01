@@ -22,11 +22,7 @@ public:
     virtual void DeliverRtcpPacket(::rtc::CopyOnWriteBuffer) = 0;
 
     // vIndex: 1
-    virtual void DeliverRtpPacket(
-        ::webrtc::MediaType,
-        ::webrtc::RtpPacketReceived,
-        ::absl::AnyInvocable<bool(::webrtc::RtpPacketReceived const&)>
-    ) = 0;
+    virtual void DeliverRtpPacket(::webrtc::MediaType, ::webrtc::RtpPacketReceived, ::absl::AnyInvocable<bool(::webrtc::RtpPacketReceived const&)>) = 0;
 
     // vIndex: 2
     virtual ~PacketReceiver() = default;
@@ -37,6 +33,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

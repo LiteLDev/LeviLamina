@@ -31,12 +31,12 @@ class EntityPlacerItemComponent : public ::NetworkedItemComponent<::EntityPlacer
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier>     mIdentifier;
+    ::ll::TypedStorage<8, 176, ::ActorDefinitionIdentifier> mIdentifier;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedUseBlocks;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mAllowedDispenseBlocks;
-    ::ll::TypedStorage<1, 1, bool>                              mCanUseOnMonsterSpawners;
-    ::ll::TypedStorage<1, 1, bool>                              mShouldContentErrorWithoutLiquidClipped;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>  mOnUseOnSubscription;
+    ::ll::TypedStorage<1, 1, bool> mCanUseOnMonsterSpawners;
+    ::ll::TypedStorage<1, 1, bool> mShouldContentErrorWithoutLiquidClipped;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnUseOnSubscription;
     // NOLINTEND
 
 public:
@@ -61,25 +61,11 @@ public:
     // NOLINTBEGIN
     MCAPI explicit EntityPlacerItemComponent(::SharedTypes::v1_20_50::EntityPlacerItemComponent component);
 
-    MCAPI void _positionAndRotateActor(
-        ::Actor&           actor,
-        ::Vec3             position,
-        uchar              face,
-        ::Vec3 const&      playerFeetPos,
-        ::BlockType const* blockType
-    ) const;
+    MCAPI void _positionAndRotateActor(::Actor& actor, ::Vec3 position, uchar face, ::Vec3 const& playerFeetPos, ::BlockType const* blockType) const;
 
     MCAPI void _setActorCustomName(::Actor& actor, ::ItemStack const& item) const;
 
-    MCAPI void _useOn(
-        bool&              result,
-        ::ItemStack const& initialItemStack,
-        ::ItemStack&       currentItemStack,
-        ::Actor&           usingActor,
-        ::BlockPos const&  pos,
-        uchar              face,
-        ::Vec3 const&      clickPos
-    );
+    MCAPI void _useOn(bool& result, ::ItemStack const& initialItemStack, ::ItemStack& currentItemStack, ::Actor& usingActor, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos);
 
     MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
     // NOLINTEND
@@ -87,11 +73,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -121,4 +103,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

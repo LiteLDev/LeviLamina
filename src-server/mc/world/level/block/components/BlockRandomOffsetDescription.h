@@ -18,17 +18,18 @@ public:
     // clang-format off
     struct RangeAndSteps;
     // clang-format on
-
+    
     // BlockRandomOffsetDescription inner types define
     struct RangeAndSteps {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 8, ::SharedTypes::FloatRange> mRange;
-        ::ll::TypedStorage<4, 4, uint>                      mSteps;
+        ::ll::TypedStorage<4, 4, uint> mSteps;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -80,4 +81,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

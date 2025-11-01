@@ -40,65 +40,55 @@ public:
     // vIndex: 0
     virtual ~LruCacheFileSystem() /*override*/ = default;
 
-    // vIndex: 5
+    // vIndex: 4
     virtual ::Core::CrossStorageCopyMode getCrossStorageCopyMode() /*override*/;
 
-    // vIndex: 7
-    virtual ::Core::Result _openFile(
-        ::std::unique_ptr<::Core::FileImpl>&,
-        ::Core::PathView,
-        ::Core::FileOpenMode,
-        ::Core::FileBufferingMode
-    ) /*override*/;
+    // vIndex: 6
+    virtual ::Core::Result _openFile(::std::unique_ptr<::Core::FileImpl>&, ::Core::PathView, ::Core::FileOpenMode, ::Core::FileBufferingMode) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual bool _fileExists(::Core::PathView) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual ::Core::Result _deleteFile(::Core::PathView) /*override*/;
 
-    // vIndex: 11
+    // vIndex: 10
     virtual ::Core::Result _getFileSize(::Core::PathView, uint64*) /*override*/;
 
-    // vIndex: 12
+    // vIndex: 11
     virtual ::Core::Result _renameFile(::Core::PathView, ::Core::PathView) /*override*/;
 
-    // vIndex: 17
+    // vIndex: 16
     virtual ::Core::Result _createOneDirectory(::Core::PathView) /*override*/;
 
-    // vIndex: 20
+    // vIndex: 19
     virtual bool _directoryExists(::Core::PathView) /*override*/;
 
-    // vIndex: 21
+    // vIndex: 20
     virtual ::Core::Result _deleteEmptyDirectory(::Core::PathView) /*override*/;
 
-    // vIndex: 24
-    virtual ::Core::Result
-    _deleteRecursively(::Core::PathView directoryPath, ::Core::FileType deleteFileType) /*override*/;
+    // vIndex: 23
+    virtual ::Core::Result _deleteRecursively(::Core::PathView directoryPath, ::Core::FileType deleteFileType) /*override*/;
 
-    // vIndex: 25
+    // vIndex: 24
     virtual ::Core::Result _renameDirectory(::Core::PathView, ::Core::PathView) /*override*/;
 
-    // vIndex: 26
-    virtual ::Core::Result _iterateOverDirectory(
-        ::Core::PathView,
-        ::Core::DirectoryIterationFlags,
-        ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>
-    ) /*override*/;
+    // vIndex: 25
+    virtual ::Core::Result _iterateOverDirectory(::Core::PathView, ::Core::DirectoryIterationFlags, ::brstd::function_ref<::Core::Result(::Core::DirectoryIterationItem const&)>) /*override*/;
 
-    // vIndex: 32
+    // vIndex: 31
     virtual bool _fileOrDirectoryExists(::Core::PathView) /*override*/;
 
-    // vIndex: 34
+    // vIndex: 33
     virtual ::Core::Result _getEntryType(::Core::PathView, ::Core::FileType&) /*override*/;
 
-    // vIndex: 45
+    // vIndex: 44
     virtual ::Core::Result _getLastModificationTime(::Core::PathView, int64*) /*override*/;
 
-    // vIndex: 46
+    // vIndex: 45
     virtual ::Core::Result _copyTimeAndAccessRights(::Core::PathView, ::Core::PathView) /*override*/;
 
-    // vIndex: 47
+    // vIndex: 46
     virtual ::Core::Result _endTransaction() /*override*/;
     // NOLINTEND
 
@@ -107,6 +97,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

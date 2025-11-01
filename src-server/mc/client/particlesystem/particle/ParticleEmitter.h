@@ -108,6 +108,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace ParticleSystem
+}

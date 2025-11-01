@@ -10,6 +10,7 @@
 class EditorNetworkPacket;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor::Network { class INetworkPayload; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::Network {
@@ -28,8 +29,7 @@ public:
     virtual void onReceivePayload(::EditorNetworkPacket const&) = 0;
 
     // vIndex: 3
-    virtual void
-    _registerPayload(char const*, ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()>) = 0;
+    virtual void _registerPayload(char const*, ::std::function<::std::shared_ptr<::Editor::Network::INetworkPayload>()>) = 0;
 
     // vIndex: 4
     virtual ::Scripting::Result_deprecated<void> _send(::Editor::Network::INetworkPayload&) = 0;
@@ -38,14 +38,19 @@ public:
     virtual ::Scripting::Result_deprecated<void> _sendToManager(::Editor::Network::INetworkPayload&) = 0;
 
     // vIndex: 6
-    virtual ::Scripting::Result_deprecated<void> _broadcastToClients(::Editor::Network::INetworkPayload&) = 0;
+    virtual ::Scripting::Result_deprecated<void> _sendToClientId(::mce::UUID const&, ::Editor::Network::INetworkPayload&) = 0;
 
     // vIndex: 7
-    virtual ::Scripting::Result_deprecated<void> _broadcastToClientManagers(::Editor::Network::INetworkPayload&) = 0;
+    virtual ::Scripting::Result_deprecated<void> _sendToClientIds(::std::vector<::mce::UUID> const&, ::Editor::Network::INetworkPayload&) = 0;
 
     // vIndex: 8
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-    _listenFor(char const*, ::std::function<void(::Editor::Network::INetworkPayload const&)>) = 0;
+    virtual ::Scripting::Result_deprecated<void> _broadcastToClients(::Editor::Network::INetworkPayload&) = 0;
+
+    // vIndex: 9
+    virtual ::Scripting::Result_deprecated<void> _broadcastToClientManagers(::Editor::Network::INetworkPayload&) = 0;
+
+    // vIndex: 10
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> _listenFor(char const*, ::std::function<void(::Editor::Network::INetworkPayload const&)>) = 0;
     // NOLINTEND
 
 public:
@@ -53,6 +58,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

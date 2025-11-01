@@ -31,4 +31,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::BaseGameVersion const& WATER_BUCKET_USEABLE_VERSION();
     // NOLINTEND
+
 };

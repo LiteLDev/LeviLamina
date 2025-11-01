@@ -27,30 +27,24 @@ public:
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const /*override*/;
+    virtual ::AABB getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const /*override*/;
 
     // vIndex: 57
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const /*override*/;
 
-    // vIndex: 80
+    // vIndex: 79
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual float getYRotationInDegrees(::Block const& block) const /*override*/;
 
-    // vIndex: 149
+    // vIndex: 148
     virtual ::ItemInstance _getItemInstance() const /*override*/;
 
     // vIndex: 0
@@ -68,16 +62,11 @@ public:
     // NOLINTBEGIN
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI ::AABB $getCollisionShape(
-        ::Block const& block,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
+    MCAPI ::AABB $getCollisionShape(::Block const& block, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
     MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
@@ -93,4 +82,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

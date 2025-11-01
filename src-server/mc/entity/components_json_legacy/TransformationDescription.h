@@ -15,22 +15,22 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 176> mUnkf1916c;
-    ::ll::UntypedStorage<4, 4>   mUnkfcdacb;
-    ::ll::UntypedStorage<4, 4>   mUnk39f035;
-    ::ll::UntypedStorage<4, 4>   mUnk336375;
-    ::ll::UntypedStorage<1, 1>   mUnk5996f5;
-    ::ll::UntypedStorage<1, 1>   mUnkfb7641;
-    ::ll::UntypedStorage<1, 1>   mUnke83336;
-    ::ll::UntypedStorage<8, 24>  mUnk99cedb;
-    ::ll::UntypedStorage<8, 24>  mUnk6d0106;
-    ::ll::UntypedStorage<4, 4>   mUnkd9418e;
-    ::ll::UntypedStorage<4, 4>   mUnkd2f61c;
-    ::ll::UntypedStorage<4, 4>   mUnk2efb7f;
-    ::ll::UntypedStorage<4, 4>   mUnkab4437;
-    ::ll::UntypedStorage<8, 24>  mUnkfc9115;
-    ::ll::UntypedStorage<8, 24>  mUnkc3397b;
-    ::ll::UntypedStorage<1, 1>   mUnk8bb55a;
-    ::ll::UntypedStorage<1, 1>   mUnk240268;
+    ::ll::UntypedStorage<4, 4> mUnkfcdacb;
+    ::ll::UntypedStorage<4, 4> mUnk39f035;
+    ::ll::UntypedStorage<4, 4> mUnk336375;
+    ::ll::UntypedStorage<1, 1> mUnk5996f5;
+    ::ll::UntypedStorage<1, 1> mUnkfb7641;
+    ::ll::UntypedStorage<1, 1> mUnke83336;
+    ::ll::UntypedStorage<8, 24> mUnk99cedb;
+    ::ll::UntypedStorage<8, 24> mUnk6d0106;
+    ::ll::UntypedStorage<4, 4> mUnkd9418e;
+    ::ll::UntypedStorage<4, 4> mUnkd2f61c;
+    ::ll::UntypedStorage<4, 4> mUnk2efb7f;
+    ::ll::UntypedStorage<4, 4> mUnkab4437;
+    ::ll::UntypedStorage<8, 24> mUnkfc9115;
+    ::ll::UntypedStorage<8, 24> mUnkc3397b;
+    ::ll::UntypedStorage<1, 1> mUnk8bb55a;
+    ::ll::UntypedStorage<1, 1> mUnk240268;
     // NOLINTEND
 
 public:
@@ -71,4 +71,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

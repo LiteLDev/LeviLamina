@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/deps/game_refs/GameRefs.h"
 
-template <typename T>
+template<typename T>
 class StackRefResult : public GameRefs<T>::StackResultStorage {
 public:
     using Base = GameRefs<T>::StackResultStorage;

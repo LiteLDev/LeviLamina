@@ -49,122 +49,25 @@ MCNAPI ::TickingSystemWithInfo createCleanupSystem();
 
 MCNAPI void onBoatAboveBubbleColumn(::Actor& actor);
 
-MCNAPI void tickBoatInsideBubbleColumnBlock(
-    ::InsideBubbleColumnBlockComponent const& insideBlocks,
-    ::FallDistanceComponent&                  fallDistanceComponent,
-    ::StateVectorComponent&                   svc,
-    ::ActorOwnerComponent&                    actorOwnerComponent
-);
+MCNAPI void tickBoatInsideBubbleColumnBlock(::InsideBubbleColumnBlockComponent const& insideBlocks, ::FallDistanceComponent& fallDistanceComponent, ::StateVectorComponent& svc, ::ActorOwnerComponent& actorOwnerComponent);
 
-MCNAPI void tickInsideBubbleColumnBlock(
-    ::InsideBubbleColumnBlockComponent const&          insideBlocks,
-    ::FallDistanceComponent&                           fallDistanceComponent,
-    ::StateVectorComponent&                            svc,
-    ::optional_ref<::MovementAbilitiesComponent const> abilitiesComponent
-);
+MCNAPI void tickInsideBubbleColumnBlock(::InsideBubbleColumnBlockComponent const& insideBlocks, ::FallDistanceComponent& fallDistanceComponent, ::StateVectorComponent& svc, ::optional_ref<::MovementAbilitiesComponent const> abilitiesComponent);
 
-MCNAPI void tickInsideCactusBlock(
-    ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag> const& cactus,
-    ::InsideBlockComponent&                                         insideBlock
-);
+MCNAPI void tickInsideCactusBlock(::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag> const& cactus, ::InsideBlockComponent& insideBlock);
 
-MCNAPI void tickInsideHoneyBlock(
-    ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag> const& insideHoneyBlockComponent,
-    ::AABBShapeComponent const&                                    aabbShapeComponent,
-    ::StateVectorComponent&                                        stateVectorComponent,
-    ::FallDistanceComponent&                                       fallDistanceComponent
-);
+MCNAPI void tickInsideHoneyBlock(::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag> const& insideHoneyBlockComponent, ::AABBShapeComponent const& aabbShapeComponent, ::StateVectorComponent& stateVectorComponent, ::FallDistanceComponent& fallDistanceComponent);
 
-MCNAPI void tickInsideOnewayBlock(
-    ::InsideOnewayBlockComponent const& insideOnewayBlockComponent,
-    ::DepenetrationComponent&           depenetrationComponent
-);
+MCNAPI void tickInsideOnewayBlock(::InsideOnewayBlockComponent const& insideOnewayBlockComponent, ::DepenetrationComponent& depenetrationComponent);
 
-MCNAPI void tickInsidePowderSnowBlock(
-    ::StrictEntityContext const& entity,
-    ::EntityModifier<
-        ::BlockMovementSlowdownAppliedComponent,
-        ::FreezingComponent,
-        ::IgnoresEntityInsideFlagComponent,
-        ::InsideBubbleColumnBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
-        ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
-        ::InsideGenericBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
-        ::InsideOnewayBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
-        ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
-        ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-        ::InsideWebBlockComponent> modifier
-);
+MCNAPI void tickInsidePowderSnowBlock(::StrictEntityContext const& entity, ::EntityModifier<::BlockMovementSlowdownAppliedComponent, ::FreezingComponent, ::IgnoresEntityInsideFlagComponent, ::InsideBubbleColumnBlockComponent, ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>, ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>, ::InsideGenericBlockComponent, ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>, ::InsideOnewayBlockComponent, ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>, ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>, ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>, ::InsideWebBlockComponent> modifier);
 
-MCNAPI void tickInsideWaterLilyBlock(
-    ::InsideBlockWithPosComponent<::WaterlilyBlockFlag> const& insideWaterlilyBlockComponent,
-    ::StateVectorComponent&                                    stateVectorComponent
-);
+MCNAPI void tickInsideWaterLilyBlock(::InsideBlockWithPosComponent<::WaterlilyBlockFlag> const& insideWaterlilyBlockComponent, ::StateVectorComponent& stateVectorComponent);
 
-MCNAPI void tickMovementSlowdown(
-    ::StrictEntityContext const&                entity,
-    ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
-    ::EntityModifier<
-        ::BlockMovementSlowdownAppliedComponent,
-        ::FreezingComponent,
-        ::IgnoresEntityInsideFlagComponent,
-        ::InsideBubbleColumnBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
-        ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
-        ::InsideGenericBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
-        ::InsideOnewayBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
-        ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
-        ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-        ::InsideWebBlockComponent> modifier,
-    ::Vec3                         multiplicationModifier
-);
+MCNAPI void tickMovementSlowdown(::StrictEntityContext const& entity, ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent, ::EntityModifier<::BlockMovementSlowdownAppliedComponent, ::FreezingComponent, ::IgnoresEntityInsideFlagComponent, ::InsideBubbleColumnBlockComponent, ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>, ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>, ::InsideGenericBlockComponent, ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>, ::InsideOnewayBlockComponent, ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>, ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>, ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>, ::InsideWebBlockComponent> modifier, ::Vec3 multiplicationModifier);
 
-MCNAPI void tickSetEntityInside(
-    ::StrictEntityContext const&    entity,
-    ::AABBShapeComponent const&     aabbShape,
-    ::DimensionTypeComponent const& dimension,
-    ::InsideBlockComponent&         insideBlock,
-    ::EntityModifier<
-        ::BlockMovementSlowdownAppliedComponent,
-        ::FreezingComponent,
-        ::IgnoresEntityInsideFlagComponent,
-        ::InsideBubbleColumnBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
-        ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
-        ::InsideGenericBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
-        ::InsideOnewayBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
-        ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
-        ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-        ::InsideWebBlockComponent>                 modifier,
-    ::LocalConstBlockSourceFactoryComponent const& factory,
-    ::LocalConstBlockSource&                       localBlockSource
-);
+MCNAPI void tickSetEntityInside(::StrictEntityContext const& entity, ::AABBShapeComponent const& aabbShape, ::DimensionTypeComponent const& dimension, ::InsideBlockComponent& insideBlock, ::EntityModifier<::BlockMovementSlowdownAppliedComponent, ::FreezingComponent, ::IgnoresEntityInsideFlagComponent, ::InsideBubbleColumnBlockComponent, ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>, ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>, ::InsideGenericBlockComponent, ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>, ::InsideOnewayBlockComponent, ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>, ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>, ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>, ::InsideWebBlockComponent> modifier, ::LocalConstBlockSourceFactoryComponent const& factory, ::LocalConstBlockSource& localBlockSource);
 
-MCNAPI void tickSpectatorSkipEntityInside(
-    ::StrictEntityContext const&    entity,
-    ::ActorGameTypeComponent const& gameType,
-    ::EntityModifier<
-        ::BlockMovementSlowdownAppliedComponent,
-        ::FreezingComponent,
-        ::IgnoresEntityInsideFlagComponent,
-        ::InsideBubbleColumnBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
-        ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
-        ::InsideGenericBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
-        ::InsideOnewayBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
-        ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
-        ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-        ::InsideWebBlockComponent> modifier,
-    ::ExternalDataInterface const& externalData
-);
+MCNAPI void tickSpectatorSkipEntityInside(::StrictEntityContext const& entity, ::ActorGameTypeComponent const& gameType, ::EntityModifier<::BlockMovementSlowdownAppliedComponent, ::FreezingComponent, ::IgnoresEntityInsideFlagComponent, ::InsideBubbleColumnBlockComponent, ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>, ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>, ::InsideGenericBlockComponent, ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>, ::InsideOnewayBlockComponent, ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>, ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>, ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>, ::InsideWebBlockComponent> modifier, ::ExternalDataInterface const& externalData);
 // NOLINTEND
 
-} // namespace EntityInsideSystem
+}

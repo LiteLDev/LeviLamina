@@ -14,4 +14,5 @@ public:
     ::ll::TypedStorage<8, 8, ::Block const*> mBlock;
     ::ll::TypedStorage<8, 8, ::Block const*> mBlockAbove;
     // NOLINTEND
+
 };

@@ -29,7 +29,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk3fe323;
     ::ll::UntypedStorage<8, 24> mUnk980b6f;
     ::ll::UntypedStorage<8, 32> mUnk404961;
-    ::ll::UntypedStorage<8, 8>  mUnk62a176;
+    ::ll::UntypedStorage<8, 8> mUnk62a176;
     ::ll::UntypedStorage<8, 32> mUnke0dd26;
     ::ll::UntypedStorage<8, 32> mUnkcbf87c;
     ::ll::UntypedStorage<8, 32> mUnk39a1b2;
@@ -44,7 +44,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk382c65;
     ::ll::UntypedStorage<8, 32> mUnk3c9355;
     ::ll::UntypedStorage<8, 32> mUnk1a5b9d;
-    ::ll::UntypedStorage<1, 1>  mUnk907821;
+    ::ll::UntypedStorage<1, 1> mUnk907821;
     // NOLINTEND
 
 public:
@@ -63,41 +63,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI EditorExtensionContext(
-        ::Player&                                              player,
-        ::Editor::ServiceProviderCollection&                   serviceProviders,
-        ::Editor::Services::EditorSettingsServiceProvider*     settingsService,
-        ::Editor::Services::TransactionManagerServiceProvider* transactionManagerServiceProvider,
-        ::Editor::Services::ClipboardServiceProvider*          clipboardService,
-        ::Editor::Services::EditorBlockPaletteServiceProvider* blockPaletteService,
-        ::Editor::Services::BrushShapeManagerServiceProvider*  brushShapeService,
-        ::Editor::Services::ServerStructureServiceProvider*    serverStructureService,
-        ::Scripting::WeakLifetimeScope                         scope,
-        ::Editor::API::EditorExtension&                        extension
-    );
+    MCNAPI EditorExtensionContext(::Player& player, ::Editor::ServiceProviderCollection& serviceProviders, ::Editor::Services::EditorSettingsServiceProvider* settingsService, ::Editor::Services::TransactionManagerServiceProvider* transactionManagerServiceProvider, ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider> clipboardServiceRef, ::Editor::Services::EditorBlockPaletteServiceProvider* blockPaletteService, ::Editor::Services::BrushShapeManagerServiceProvider* brushShapeService, ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> serverStructureServiceWeakRef, ::Scripting::WeakLifetimeScope scope, ::Editor::API::EditorExtension& extension);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+
+    MCNAPI static ::std::optional<::std::unique_ptr<::Editor::API::EditorExtensionContext>> tryCreate(::Player& player, ::Scripting::WeakLifetimeScope scope, ::Editor::API::EditorExtension& extension);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Player&                                              player,
-        ::Editor::ServiceProviderCollection&                   serviceProviders,
-        ::Editor::Services::EditorSettingsServiceProvider*     settingsService,
-        ::Editor::Services::TransactionManagerServiceProvider* transactionManagerServiceProvider,
-        ::Editor::Services::ClipboardServiceProvider*          clipboardService,
-        ::Editor::Services::EditorBlockPaletteServiceProvider* blockPaletteService,
-        ::Editor::Services::BrushShapeManagerServiceProvider*  brushShapeService,
-        ::Editor::Services::ServerStructureServiceProvider*    serverStructureService,
-        ::Scripting::WeakLifetimeScope                         scope,
-        ::Editor::API::EditorExtension&                        extension
-    );
+    MCNAPI void* $ctor(::Player& player, ::Editor::ServiceProviderCollection& serviceProviders, ::Editor::Services::EditorSettingsServiceProvider* settingsService, ::Editor::Services::TransactionManagerServiceProvider* transactionManagerServiceProvider, ::std::weak_ptr<::Editor::Services::ClipboardServiceProvider> clipboardServiceRef, ::Editor::Services::EditorBlockPaletteServiceProvider* blockPaletteService, ::Editor::Services::BrushShapeManagerServiceProvider* brushShapeService, ::std::weak_ptr<::Editor::Services::ServerStructureServiceProvider> serverStructureServiceWeakRef, ::Scripting::WeakLifetimeScope scope, ::Editor::API::EditorExtension& extension);
     // NOLINTEND
 
 public:
@@ -111,6 +91,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::API
+}

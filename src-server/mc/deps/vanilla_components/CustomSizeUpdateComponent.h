@@ -12,6 +12,7 @@ struct CustomSizeUpdateComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, void (*)(::AABBShapeComponent const&, ::OffsetsComponent&)> mUpdateSize;
+    ::ll::TypedStorage<8, 8, void(*) (::AABBShapeComponent const&, ::OffsetsComponent&)> mUpdateSize;
     // NOLINTEND
+
 };

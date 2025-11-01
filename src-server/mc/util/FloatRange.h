@@ -29,4 +29,5 @@ public:
 
     MCNAPI bool parseJson(::Json::Value const& node, float minDefault, float maxDefault);
     // NOLINTEND
+
 };

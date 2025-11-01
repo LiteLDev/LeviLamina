@@ -16,28 +16,28 @@ class CloneCommand : public ::Command {
 public:
     // CloneCommand inner types define
     enum class MaskMode : int {
-        Replace  = 0,
+        Replace = 0,
         Filtered = 1,
-        Masked   = 2,
+        Masked = 2,
     };
-
+    
     enum class CloneMode : int {
         Normal = 0,
-        Force  = 1,
-        Move   = 2,
+        Force = 1,
+        Move = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 16> mUnk671ad6;
     ::ll::UntypedStorage<4, 16> mUnkd6681e;
     ::ll::UntypedStorage<4, 16> mUnkfb463c;
-    ::ll::UntypedStorage<4, 4>  mUnkc2ba7c;
-    ::ll::UntypedStorage<4, 4>  mUnk747e1c;
-    ::ll::UntypedStorage<8, 8>  mUnk47641f;
+    ::ll::UntypedStorage<4, 4> mUnkc2ba7c;
+    ::ll::UntypedStorage<4, 4> mUnk747e1c;
+    ::ll::UntypedStorage<8, 8> mUnk47641f;
     ::ll::UntypedStorage<8, 24> mUnk8c4eca;
-    ::ll::UntypedStorage<4, 4>  mUnk14ceb4;
+    ::ll::UntypedStorage<4, 4> mUnk14ceb4;
     // NOLINTEND
 
 public:
@@ -73,4 +73,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

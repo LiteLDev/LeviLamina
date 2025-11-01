@@ -17,4 +17,5 @@ public:
     VolumetricFogConfiguration& operator=(VolumetricFogConfiguration const&);
     VolumetricFogConfiguration(VolumetricFogConfiguration const&);
     VolumetricFogConfiguration();
+
 };

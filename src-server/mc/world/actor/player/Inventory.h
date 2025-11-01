@@ -36,7 +36,7 @@ public:
     virtual void setContainerSize(int size);
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 13
     virtual void setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced) /*override*/;
@@ -67,7 +67,7 @@ public:
 
     MCAPI void $setContainerSize(int size);
 
-    MCFOLD void $setItem(int slot, ::ItemStack const& item);
+    MCFOLD void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
     // NOLINTEND
@@ -77,4 +77,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

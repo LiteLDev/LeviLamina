@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Bedrock::Result<::BiomeMesaSurfaceData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
+
 };

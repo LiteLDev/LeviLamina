@@ -48,6 +48,7 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, char*> cstr_;
         // NOLINTEND
+
     public:
         bool operator<(CZString const& other) const {
             if (cstr_) {
@@ -103,6 +104,7 @@ public:
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
+
     };
 
     struct CZStringCompare {
@@ -119,6 +121,7 @@ public:
         constexpr auto operator()(T const& l, CZString const& r) const {
             return l < r;
         }
+
     };
 
     using ObjectValues = ::std::map<::Json::Value::CZString, ::Json::Value, ::Json::Value::CZStringCompare>;
@@ -129,17 +132,16 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, int64>                    int_;
-        ::ll::TypedStorage<8, 8, uint64>                   uint_;
-        ::ll::TypedStorage<8, 8, double>                   real_;
-        ::ll::TypedStorage<1, 8, bool>                     bool_;
+        ::ll::TypedStorage<8, 8, int64> int_;
+        ::ll::TypedStorage<8, 8, uint64> uint_;
+        ::ll::TypedStorage<8, 8, double> real_;
+        ::ll::TypedStorage<1, 8, bool> bool_;
         ::ll::TypedStorage<8, 8, ::Json::Value::CZString*> string_;
-        ::ll::TypedStorage<8, 8, ::std::map<::Json::Value::CZString, ::Json::Value, ::Json::Value::CZStringCompare>*>
-                                                                 map_;
+        ::ll::TypedStorage<8, 8, ::std::map<::Json::Value::CZString, ::Json::Value, ::Json::Value::CZStringCompare>*> map_;
         ::ll::TypedStorage<8, 8, ::std::vector<::Json::Value*>*> array_;
         // NOLINTEND
-    };
 
+    };
 public:
     // member variables
     // NOLINTBEGIN
@@ -446,6 +448,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Json
+}

@@ -17,52 +17,54 @@ public:
     struct TreeChild;
     struct TreeNode;
     // clang-format on
-
+    
     // StorageAreasTree inner types define
     struct TreeNode {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnk4a01cf;
-        ::ll::UntypedStorage<8, 8>  mUnk37f7a2;
+        ::ll::UntypedStorage<8, 8> mUnk37f7a2;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         TreeNode& operator=(TreeNode const&);
         TreeNode(TreeNode const&);
         TreeNode();
+    
     };
-
+    
     struct TreeChild {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 48> mUnk56eb22;
-        ::ll::UntypedStorage<8, 8>  mUnk6e8504;
+        ::ll::UntypedStorage<8, 8> mUnk6e8504;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         TreeChild& operator=(TreeChild const&);
         TreeChild(TreeChild const&);
         TreeChild();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::Core::StorageAreasTree::TreeChild& operator=(::Core::StorageAreasTree::TreeChild&&);
-
+    
         MCNAPI ~TreeChild();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -87,6 +89,7 @@ public:
 
     MCNAPI void teardown(::std::function<void(::Core::FileStorageArea&)>&& teardownCallback);
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

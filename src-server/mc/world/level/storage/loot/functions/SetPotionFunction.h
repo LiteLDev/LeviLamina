@@ -40,6 +40,9 @@ public:
 
     // vIndex: 2
     virtual void apply(::ItemInstance& item, ::Random&, ::LootTableContext& context) /*override*/;
+
+    // vIndex: 5
+    virtual ::LootItemFunction::FunctionType getFunctionType() const /*override*/;
     // NOLINTEND
 
 public:
@@ -51,8 +54,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootItemFunction>
-    deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
+    MCNAPI static ::std::unique_ptr<::LootItemFunction> deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
@@ -61,6 +63,8 @@ public:
     MCNAPI void $apply(::ItemStack& item, ::Random&, ::LootTableContext& context);
 
     MCNAPI void $apply(::ItemInstance& item, ::Random&, ::LootTableContext& context);
+
+    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
     // NOLINTEND
 
 public:
@@ -68,4 +72,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

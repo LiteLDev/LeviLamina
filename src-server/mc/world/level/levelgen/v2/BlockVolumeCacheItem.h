@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::vector<::Block const*>>> mBuffer;
-    ::ll::TypedStorage<8, 40, ::BlockVolume>                                   mVolume;
+    ::ll::TypedStorage<8, 40, ::BlockVolume> mVolume;
     // NOLINTEND
 
 public:
@@ -31,6 +31,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen
+}

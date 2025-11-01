@@ -24,6 +24,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool operator==(::Editor::Network::WidgetPrimComponentBox const& other) const;
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

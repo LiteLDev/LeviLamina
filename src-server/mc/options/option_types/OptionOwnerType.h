@@ -3,6 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 enum class OptionOwnerType : int {
-    User    = 0,
+    User = 0,
     Machine = 1,
 };

@@ -19,11 +19,11 @@ class PlayerInventory : public ::ContainerSizeChangeListener, public ::Container
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                          mSelected;
-    ::ll::TypedStorage<8, 152, ::ItemStack>                                mInfiniteItem;
-    ::ll::TypedStorage<1, 1, ::ContainerID>                                mSelectedContainerId;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Inventory>>               mInventory;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>>                  mComplexItems;
+    ::ll::TypedStorage<4, 4, int> mSelected;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mInfiniteItem;
+    ::ll::TypedStorage<1, 1, ::ContainerID> mSelectedContainerId;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Inventory>> mInventory;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mComplexItems;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::HudContainerManagerModel>> mHudContainerManager;
     // NOLINTEND
 
@@ -44,10 +44,7 @@ public:
     virtual void containerContentChanged(int slot) /*override*/;
 
     // vIndex: 2
-    virtual void createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
-        ::std::function<void()>                                                          execute
-    );
+    virtual void createTransactionContext(::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback, ::std::function<void()> execute);
     // NOLINTEND
 
 public:
@@ -85,10 +82,7 @@ public:
 
     MCAPI void $containerContentChanged(int slot);
 
-    MCAPI void $createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
-        ::std::function<void()>                                                          execute
-    );
+    MCAPI void $createTransactionContext(::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback, ::std::function<void()> execute);
     // NOLINTEND
 
 public:
@@ -98,4 +92,5 @@ public:
 
     MCAPI static void** $vftableForContainerContentChangeListener();
     // NOLINTEND
+
 };

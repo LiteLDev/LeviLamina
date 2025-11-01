@@ -33,7 +33,6 @@ public:
             map_.~IterT();
         }
     }
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -76,6 +75,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Json
+}

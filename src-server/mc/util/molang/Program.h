@@ -16,7 +16,7 @@ public:
     // clang-format off
     struct UnpackedInstruction;
     // clang-format on
-
+    
     // Program inner types define
     struct UnpackedInstruction {
     public:
@@ -25,14 +25,15 @@ public:
         ::ll::UntypedStorage<8, 8> mUnkb67df9;
         ::ll::UntypedStorage<8, 8> mUnkb78589;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         UnpackedInstruction& operator=(UnpackedInstruction const&);
         UnpackedInstruction(UnpackedInstruction const&);
         UnpackedInstruction();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -49,8 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    Program(::std::vector<::std::unique_ptr<::Molang::details::IInstruction>> instructions, bool storeStackState);
+    MCNAPI Program(::std::vector<::std::unique_ptr<::Molang::details::IInstruction>> instructions, bool storeStackState);
 
     MCNAPI ::Molang::details::Program& operator=(::Molang::details::Program const& rhs);
 
@@ -60,8 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::std::vector<::std::unique_ptr<::Molang::details::IInstruction>> instructions, bool storeStackState);
+    MCNAPI void* $ctor(::std::vector<::std::unique_ptr<::Molang::details::IInstruction>> instructions, bool storeStackState);
     // NOLINTEND
 
 public:
@@ -69,6 +68,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Molang::details
+}

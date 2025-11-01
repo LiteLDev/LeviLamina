@@ -19,7 +19,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::optional<double>> value;
     ::ll::TypedStorage<8, 16, ::std::optional<double>> minValue;
     ::ll::TypedStorage<8, 16, ::std::optional<double>> maxValue;
-    ::ll::TypedStorage<4, 4, int>                      index;
+    ::ll::TypedStorage<4, 4, int> index;
     // NOLINTEND
 
 public:
@@ -32,13 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI ArgumentOutOfBoundsError(::Scripting::ArgumentOutOfBoundsError const&);
 
-    MCAPI ArgumentOutOfBoundsError(
-        ::std::string const&    propertyName,
-        int                     index_,
-        ::std::optional<double> value_,
-        ::std::optional<double> minValue_,
-        ::std::optional<double> maxValue_
-    );
+    MCAPI ArgumentOutOfBoundsError(::std::string const& propertyName, int index_, ::std::optional<double> value_, ::std::optional<double> minValue_, ::std::optional<double> maxValue_);
 
     MCAPI ~ArgumentOutOfBoundsError();
     // NOLINTEND
@@ -54,13 +48,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::Scripting::ArgumentOutOfBoundsError const&);
 
-    MCAPI void* $ctor(
-        ::std::string const&    propertyName,
-        int                     index_,
-        ::std::optional<double> value_,
-        ::std::optional<double> minValue_,
-        ::std::optional<double> maxValue_
-    );
+    MCAPI void* $ctor(::std::string const& propertyName, int index_, ::std::optional<double> value_, ::std::optional<double> minValue_, ::std::optional<double> maxValue_);
     // NOLINTEND
 
 public:
@@ -68,6 +56,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

@@ -13,4 +13,4 @@ namespace ExitVehicleOnTopCenterConstants {
 MCNAPI ::Vec3 const& EXIT_OFFSET();
 // NOLINTEND
 
-} // namespace ExitVehicleOnTopCenterConstants
+}

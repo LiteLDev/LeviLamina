@@ -13,28 +13,29 @@ public:
     // clang-format off
     struct State;
     // clang-format on
-
+    
     // NBTSchemaReader inner types define
     struct State {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkf5c495;
+        ::ll::UntypedStorage<8, 8> mUnkf5c495;
         ::ll::UntypedStorage<8, 16> mUnk7eaaca;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         State& operator=(State const&);
         State(State const&);
         State();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk52ac22;
-    ::ll::UntypedStorage<8, 8>  mUnkf954e9;
+    ::ll::UntypedStorage<8, 8> mUnkf954e9;
     // NOLINTEND
 
 public:
@@ -89,7 +90,7 @@ public:
     virtual ::Bedrock::Result<double> asDouble() /*override*/;
 
     // vIndex: 15
-    virtual ::Bedrock::Result<::std::string> asString() /*override*/;
+    virtual ::Bedrock::Result<::std::string> asString(uint64 maxInputLength) /*override*/;
 
     // vIndex: 16
     virtual ::std::optional<bool> readValidityFlag() /*override*/;
@@ -156,7 +157,7 @@ public:
 
     MCNAPI ::Bedrock::Result<double> $asDouble();
 
-    MCNAPI ::Bedrock::Result<::std::string> $asString();
+    MCNAPI ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
 
     MCNAPI ::std::optional<bool> $readValidityFlag();
 
@@ -180,4 +181,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

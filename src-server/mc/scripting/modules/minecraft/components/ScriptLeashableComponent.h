@@ -18,8 +18,7 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptLeashableComponent
-: public ::ScriptModuleMinecraft::ECSScriptActorComponent<::LeashableComponent, ::LeashableDefinition> {
+class ScriptLeashableComponent : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::LeashableComponent, ::LeashableDefinition> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -36,9 +35,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> getIsLeashed() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
-    getLeashHolder() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>> getLeashHolder() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getLeashHolderActorId() const;
 
@@ -54,8 +51,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
@@ -69,6 +65,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

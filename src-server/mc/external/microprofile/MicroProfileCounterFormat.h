@@ -4,5 +4,5 @@
 
 enum class MicroProfileCounterFormat : int {
     Default = 0,
-    Bytes   = 1,
+    Bytes = 1,
 };

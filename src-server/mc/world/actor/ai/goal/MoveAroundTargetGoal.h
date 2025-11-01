@@ -21,57 +21,54 @@ public:
     // clang-format off
     class Definition;
     // clang-format on
-
+    
     // MoveAroundTargetGoal inner types define
     class Definition : public ::BaseGoalDefinition {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-        ::ll::TypedStorage<4, 4, float>               mSpeed;
-        ::ll::TypedStorage<4, 4, float>               mSpreadDegrees;
-        ::ll::TypedStorage<4, 8, ::FloatRange>        mDestinationRange;
-        ::ll::TypedStorage<4, 4, float>               mHeightDifferenceLimit;
-        ::ll::TypedStorage<4, 4, int>                 mHorizontalSearchDistance;
-        ::ll::TypedStorage<4, 4, int>                 mVerticalSearchDistance;
+        ::ll::TypedStorage<4, 4, float> mSpeed;
+        ::ll::TypedStorage<4, 4, float> mSpreadDegrees;
+        ::ll::TypedStorage<4, 8, ::FloatRange> mDestinationRange;
+        ::ll::TypedStorage<4, 4, float> mHeightDifferenceLimit;
+        ::ll::TypedStorage<4, 4, int> mHorizontalSearchDistance;
+        ::ll::TypedStorage<4, 4, int> mVerticalSearchDistance;
         // NOLINTEND
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~Definition() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MoveAroundTargetGoal::Definition>>& root
-        );
+        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MoveAroundTargetGoal::Definition>>& root);
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>              mMob;
-    ::ll::TypedStorage<1, 1, bool>                mReachedTarget;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<1, 1, bool> mReachedTarget;
     ::ll::TypedStorage<8, 64, ::ActorFilterGroup> mFilters;
-    ::ll::TypedStorage<4, 4, float>               mSpeed;
-    ::ll::TypedStorage<4, 4, float>               mSpreadDegrees;
-    ::ll::TypedStorage<4, 8, ::FloatRange>        mDestinationRange;
-    ::ll::TypedStorage<4, 4, float>               mHeightDifferenceLimit;
-    ::ll::TypedStorage<4, 4, int>                 mHorizontalSearchDistance;
-    ::ll::TypedStorage<4, 4, int>                 mVerticalSearchDistance;
+    ::ll::TypedStorage<4, 4, float> mSpeed;
+    ::ll::TypedStorage<4, 4, float> mSpreadDegrees;
+    ::ll::TypedStorage<4, 8, ::FloatRange> mDestinationRange;
+    ::ll::TypedStorage<4, 4, float> mHeightDifferenceLimit;
+    ::ll::TypedStorage<4, 4, int> mHorizontalSearchDistance;
+    ::ll::TypedStorage<4, 4, int> mVerticalSearchDistance;
     // NOLINTEND
 
 public:
@@ -126,4 +123,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

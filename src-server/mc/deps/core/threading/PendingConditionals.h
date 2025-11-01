@@ -27,6 +27,7 @@ public:
     // vIndex: 0
     virtual ~PendingConditionals() /*override*/ = default;
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Threading
+}

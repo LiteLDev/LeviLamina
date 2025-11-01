@@ -6,13 +6,13 @@ struct Dependencies {
 public:
     // Dependencies inner types define
     enum class AccessType : int {
-        Filter      = 0,
-        Read        = 1,
-        Write       = 2,
-        AddRemove   = 3,
-        GlobalRead  = 4,
+        Filter = 0,
+        Read = 1,
+        Write = 2,
+        AddRemove = 3,
+        GlobalRead = 4,
         GlobalWrite = 5,
-        Count       = 6,
+        Count = 6,
     };
 
 public:
@@ -34,4 +34,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

@@ -20,18 +20,17 @@ class LootItem : public ::LootPoolEntry {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Item const*>                                         mItem;
-    ::ll::TypedStorage<4, 4, int>                                                   mAuxValue;
+    ::ll::TypedStorage<8, 8, ::Item const*> mItem;
+    ::ll::TypedStorage<4, 4, int> mAuxValue;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LootItemFunction>>> mFunctions;
-    ::ll::TypedStorage<8, 32, ::std::string>                                        mOriginalItemName;
+    ::ll::TypedStorage<8, 32, ::std::string> mOriginalItemName;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual bool _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const
-        /*override*/;
+    virtual bool _createItem(::std::vector<::ItemStack>& output, ::Random& random, ::LootTableContext& context) const /*override*/;
 
     // vIndex: 1
     virtual ~LootItem() /*override*/ = default;
@@ -43,13 +42,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(
-        ::Json::Value const&                                   entry,
-        int                                                    weight,
-        int                                                    quality,
-        ::std::vector<::std::unique_ptr<::LootItemCondition>>& conditions,
-        bool                                                   usingUpcomingCreatorFeaturesExperiment
-    );
+    MCNAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(::Json::Value const& entry, int weight, int quality, ::std::vector<::std::unique_ptr<::LootItemCondition>>& conditions, bool usingUpcomingCreatorFeaturesExperiment);
     // NOLINTEND
 
 public:
@@ -65,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

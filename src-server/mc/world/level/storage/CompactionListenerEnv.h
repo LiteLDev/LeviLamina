@@ -9,9 +9,9 @@ class CompactionListenerEnv : public ::leveldb::EnvWrapper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk91de58;
+    ::ll::UntypedStorage<8, 8> mUnk91de58;
     ::ll::UntypedStorage<8, 80> mUnk1753cf;
-    ::ll::UntypedStorage<1, 1>  mUnk17bf1b;
+    ::ll::UntypedStorage<1, 1> mUnk17bf1b;
     ::ll::UntypedStorage<8, 64> mUnk21aba1;
     // NOLINTEND
 
@@ -25,7 +25,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 16
-    virtual void Schedule(void (*function)(void*), void* arg) /*override*/;
+    virtual void Schedule(void(*function) (void*), void* arg) /*override*/;
 
     // vIndex: 0
     virtual ~CompactionListenerEnv() /*override*/ = default;
@@ -40,7 +40,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $Schedule(void (*function)(void*), void* arg);
+    MCNAPI void $Schedule(void(*function) (void*), void* arg);
     // NOLINTEND
 
 public:
@@ -48,4 +48,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

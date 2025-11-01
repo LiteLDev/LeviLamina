@@ -4,5 +4,5 @@
 
 enum class LocateSubcommand : uchar {
     Structure = 0,
-    Biome     = 1,
+    Biome = 1,
 };

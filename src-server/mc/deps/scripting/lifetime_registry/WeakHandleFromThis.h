@@ -4,7 +4,8 @@
 
 namespace Scripting {
 
-template <typename T0>
-class WeakHandleFromThis {};
+template<typename T0>
+class WeakHandleFromThis {
+};
 
-} // namespace Scripting
+}

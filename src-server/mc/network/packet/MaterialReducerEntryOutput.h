@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, int> itemId;
     ::ll::TypedStorage<4, 4, int> itemCount;
     // NOLINTEND
+
 };

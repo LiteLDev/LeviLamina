@@ -20,7 +20,7 @@ public:
     ::ll::TypedStorage<8, 8, ::Block const*> mStemBlock;
     ::ll::TypedStorage<8, 8, ::Block const*> mHatBlock;
     ::ll::TypedStorage<8, 8, ::Block const*> mDecorBlock;
-    ::ll::TypedStorage<1, 1, bool const>     mAllowedToPlaceVines;
+    ::ll::TypedStorage<1, 1, bool const> mAllowedToPlaceVines;
     // NOLINTEND
 
 public:
@@ -66,4 +66,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

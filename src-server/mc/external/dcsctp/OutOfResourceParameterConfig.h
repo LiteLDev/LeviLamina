@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct OutOfResourceParameterConfig {};
+struct OutOfResourceParameterConfig {
+};
 
-} // namespace dcsctp
+}

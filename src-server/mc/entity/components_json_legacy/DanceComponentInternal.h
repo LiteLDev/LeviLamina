@@ -8,4 +8,4 @@ namespace DanceComponentInternal {
 MCNAPI float& DEFAULT_DISTANCE();
 // NOLINTEND
 
-} // namespace DanceComponentInternal
+}

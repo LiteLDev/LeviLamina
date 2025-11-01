@@ -7,6 +7,7 @@
 
 namespace dragon {
 
-struct ImageDescription : public ::cg::ImageDescription {};
+struct ImageDescription : public ::cg::ImageDescription {
+};
 
-} // namespace dragon
+}

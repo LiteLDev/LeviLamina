@@ -16,9 +16,9 @@ class CrashHandlerImpl : public ::Bedrock::CrashFileProcessor::CrashHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnk3b4d5e;
+    ::ll::UntypedStorage<8, 8> mUnk3b4d5e;
     ::ll::UntypedStorage<8, 216> mUnkdcd511;
-    ::ll::UntypedStorage<8, 8>   mUnk622432;
+    ::ll::UntypedStorage<8, 8> mUnk622432;
     // NOLINTEND
 
 public:
@@ -48,6 +48,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

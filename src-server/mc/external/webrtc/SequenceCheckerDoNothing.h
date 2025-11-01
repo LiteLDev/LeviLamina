@@ -4,6 +4,7 @@
 
 namespace webrtc::webrtc_sequence_checker_internal {
 
-class SequenceCheckerDoNothing {};
+class SequenceCheckerDoNothing {
+};
 
-} // namespace webrtc::webrtc_sequence_checker_internal
+}

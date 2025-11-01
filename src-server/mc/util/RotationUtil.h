@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/util/Rotation.h"
+#include "mc/versionless/util/Rotation.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,4 +20,4 @@ MCNAPI ::std::vector<::Rotation> getShuffledRotations(::Random& random);
 MCNAPI uchar rotate(::Rotation source, uchar direction);
 // NOLINTEND
 
-} // namespace RotationUtil
+}

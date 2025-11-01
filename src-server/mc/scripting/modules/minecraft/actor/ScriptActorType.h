@@ -23,7 +23,7 @@ public:
     // clang-format off
     struct Key;
     // clang-format on
-
+    
     // ScriptActorType inner types define
     struct Key {
     public:
@@ -31,20 +31,21 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 48, ::HashedString> mId;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~Key();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -54,9 +55,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<void> addDynamicPropertiesDefinition(
-        ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition
-    );
+    MCAPI ::Scripting::Result_deprecated<void> addDynamicPropertiesDefinition(::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition);
 
     MCAPI ::std::string getId() const;
 
@@ -68,9 +67,9 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>
-    getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::ActorDefinition& actorDef);
+    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType> getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::ActorDefinition& actorDef);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

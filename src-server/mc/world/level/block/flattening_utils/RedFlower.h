@@ -13,4 +13,4 @@ namespace FlatteningUtils::RedFlower {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-} // namespace FlatteningUtils::RedFlower
+}

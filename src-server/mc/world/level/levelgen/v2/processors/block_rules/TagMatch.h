@@ -61,6 +61,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen::processors::BlockRules
+}

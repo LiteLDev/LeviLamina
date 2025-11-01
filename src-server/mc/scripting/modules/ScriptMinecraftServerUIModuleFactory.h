@@ -14,6 +14,18 @@ namespace mce { class UUID; }
 
 class ScriptMinecraftServerUIModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkbccd08;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptMinecraftServerUIModuleFactory& operator=(ScriptMinecraftServerUIModuleFactory const&);
+    ScriptMinecraftServerUIModuleFactory(ScriptMinecraftServerUIModuleFactory const&);
+    ScriptMinecraftServerUIModuleFactory();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -25,11 +37,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void _addVersions();
 
-    MCNAPI ::Scripting::ModuleBinding _generateBindings(
-        ::Scripting::ModuleBindingBuilder&  moduleBuilder,
-        bool                                allowUntagged,
-        ::std::vector<::std::string> const& allowedTags
-    );
+    MCNAPI ::Scripting::ModuleBinding _generateBindings(::Scripting::ModuleBindingBuilder& moduleBuilder, ::std::string const& versionPath);
     // NOLINTEND
 
 public:
@@ -47,4 +55,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

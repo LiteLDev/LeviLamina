@@ -18,11 +18,7 @@ struct ScriptPlayerInteractWithEntityBeforeEvent : public ::ScriptModuleMinecraf
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        40,
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-                                   mItemStack;
+    ::ll::TypedStorage<8, 40, ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> mItemStack;
     ::ll::TypedStorage<1, 1, bool> mCancel;
     // NOLINTEND
 
@@ -31,6 +27,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

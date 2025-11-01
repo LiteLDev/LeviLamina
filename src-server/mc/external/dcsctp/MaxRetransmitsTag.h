@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-class MaxRetransmitsTag {};
+class MaxRetransmitsTag {
+};
 
-} // namespace dcsctp
+}

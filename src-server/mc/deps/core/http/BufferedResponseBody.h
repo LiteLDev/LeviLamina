@@ -13,7 +13,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk5fc0ed;
-    ::ll::UntypedStorage<1, 1>  mUnkea5b17;
+    ::ll::UntypedStorage<1, 1> mUnkea5b17;
     // NOLINTEND
 
 public:
@@ -67,6 +67,7 @@ public:
 
     MCNAPI ::Bedrock::Http::ResponseBodyType $getType() const;
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Http
+}

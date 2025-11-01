@@ -41,15 +41,13 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<void> setName(::std::string name);
 
-    MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::ArgumentOutOfBoundsError>
-    setSkinIndex(int skinIndex);
+    MCNAPI ::Scripting::Result<void, ::Scripting::Error, ::Scripting::ArgumentOutOfBoundsError> setSkinIndex(int skinIndex);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
@@ -69,6 +67,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

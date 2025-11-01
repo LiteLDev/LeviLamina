@@ -10,4 +10,4 @@ MCNAPI ::std::string getTimestampFileName(int64 const& timestamp);
 MCNAPI ::std::string removeSeconds(::std::string const& timeStr);
 // NOLINTEND
 
-} // namespace DateHelper
+}

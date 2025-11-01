@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::NetworkBlockPosition> mPos;
-    ::ll::TypedStorage<8, 24, ::CompoundTag>          mData;
+    ::ll::TypedStorage<8, 24, ::CompoundTag> mData;
     // NOLINTEND
 
 public:
@@ -46,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

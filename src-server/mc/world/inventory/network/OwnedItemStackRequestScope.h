@@ -12,8 +12,9 @@ struct OwnedItemStackRequestScope {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ItemStackNetManagerClient*>               mItemStackNetManagerClient;
-    ::ll::TypedStorage<1, 1, bool>                                       mBeganRequest;
+    ::ll::TypedStorage<8, 8, ::ItemStackNetManagerClient*> mItemStackNetManagerClient;
+    ::ll::TypedStorage<1, 1, bool> mBeganRequest;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ItemStackRequestData>> mResult;
     // NOLINTEND
+
 };

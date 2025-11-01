@@ -10,11 +10,11 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk2de992;
     ::ll::UntypedStorage<8, 16> mUnk906881;
-    ::ll::UntypedStorage<8, 8>  mUnk861a0d;
-    ::ll::UntypedStorage<8, 8>  mUnk56b48d;
-    ::ll::UntypedStorage<1, 1>  mUnkffded2;
-    ::ll::UntypedStorage<1, 1>  mUnkf4e4d7;
-    ::ll::UntypedStorage<1, 1>  mUnk5b2a59;
+    ::ll::UntypedStorage<8, 8> mUnk861a0d;
+    ::ll::UntypedStorage<8, 8> mUnk56b48d;
+    ::ll::UntypedStorage<1, 1> mUnkffded2;
+    ::ll::UntypedStorage<1, 1> mUnkf4e4d7;
+    ::ll::UntypedStorage<1, 1> mUnk5b2a59;
     // NOLINTEND
 
 public:
@@ -22,6 +22,7 @@ public:
     InboxSummaryData& operator=(InboxSummaryData const&);
     InboxSummaryData(InboxSummaryData const&);
     InboxSummaryData();
+
 };
 
-} // namespace Social::Events
+}

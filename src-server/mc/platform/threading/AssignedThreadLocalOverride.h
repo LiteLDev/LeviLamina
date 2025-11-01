@@ -17,6 +17,7 @@ public:
     AssignedThreadLocalOverride& operator=(AssignedThreadLocalOverride const&);
     AssignedThreadLocalOverride(AssignedThreadLocalOverride const&);
     AssignedThreadLocalOverride();
+
 };
 
-} // namespace Bedrock::Threading
+}

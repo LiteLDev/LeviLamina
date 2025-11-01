@@ -10,17 +10,17 @@ struct PositionTrackingDBServerBroadcastPacketPayload {
 public:
     // PositionTrackingDBServerBroadcastPacketPayload inner types define
     enum class Action : uchar {
-        Update   = 0,
-        Destroy  = 1,
+        Update = 0,
+        Destroy = 1,
         NotFound = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::PositionTrackingDBServerBroadcastPacketPayload::Action> mAction;
-    ::ll::TypedStorage<4, 4, ::PositionTrackingId>                                     mId;
-    ::ll::TypedStorage<8, 24, ::CompoundTag>                                           mData;
+    ::ll::TypedStorage<4, 4, ::PositionTrackingId> mId;
+    ::ll::TypedStorage<8, 24, ::CompoundTag> mData;
     // NOLINTEND
 
 public:
@@ -32,8 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PositionTrackingDBServerBroadcastPacketPayload&
-    operator=(::PositionTrackingDBServerBroadcastPacketPayload&&);
+    MCAPI ::PositionTrackingDBServerBroadcastPacketPayload& operator=(::PositionTrackingDBServerBroadcastPacketPayload&&);
 
     MCAPI ~PositionTrackingDBServerBroadcastPacketPayload();
     // NOLINTEND
@@ -43,4 +42,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

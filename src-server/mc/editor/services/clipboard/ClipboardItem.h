@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkf1c8c4;
-    ::ll::UntypedStorage<8, 8>  mUnkad9346;
+    ::ll::UntypedStorage<8, 8> mUnkad9346;
     // NOLINTEND
 
 public:
@@ -31,13 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Editor::RelativeVolumeListBlockVolume
-    getPredictedWriteVolume(::BlockPos const& position, ::Editor::Services::ClipboardWriteOptions const* options) const;
+    MCNAPI ::Editor::RelativeVolumeListBlockVolume getPredictedWriteVolume(::BlockPos const& position, ::Editor::Services::ClipboardWriteOptions const* options) const;
 
-    MCNAPI ::StructureSettings getStructureSettingsFromOptions(
-        ::BlockPos const&                                size,
-        ::Editor::Services::ClipboardWriteOptions const* options
-    ) const;
+    MCNAPI ::StructureSettings getStructureSettingsFromOptions(::BlockPos const& size, ::Editor::Services::ClipboardWriteOptions const* options) const;
 
     MCNAPI bool isEmpty() const;
 
@@ -45,6 +41,7 @@ public:
 
     MCNAPI void readFromWorld(::BlockSource& region, ::Editor::RelativeVolumeListBlockVolume const& volume);
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

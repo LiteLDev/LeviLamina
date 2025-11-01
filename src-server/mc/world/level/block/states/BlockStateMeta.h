@@ -16,11 +16,11 @@ class BlockStateMeta {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::Tag::Type>                                mType;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ListTag>>               mEnumValues;
+    ::ll::TypedStorage<1, 1, ::Tag::Type> mType;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ListTag>> mEnumValues;
     ::ll::TypedStorage<8, 128, ::BidirectionalUnorderedMap<int, uint64>> mHashIndexMap;
-    ::ll::TypedStorage<8, 8, ::BlockState const&>                        mBlockState;
-    ::ll::TypedStorage<8, 32, ::std::string>                             mName;
+    ::ll::TypedStorage<8, 8, ::BlockState const&> mBlockState;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
     // NOLINTEND
 
 public:
@@ -34,4 +34,5 @@ public:
     // NOLINTBEGIN
     MCAPI int indexOf(uint64 const& h) const;
     // NOLINTEND
+
 };

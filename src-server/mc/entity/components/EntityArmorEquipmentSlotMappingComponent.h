@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ArmorSlot> mArmorSlot;
     // NOLINTEND
+
 };

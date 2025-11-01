@@ -16,9 +16,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::EffectDuration> mDuration;
-    ::ll::TypedStorage<4, 4, int>              mLifeTimer;
-    ::ll::TypedStorage<4, 4, float>            mBaseAmount;
-    ::ll::TypedStorage<1, 1, bool>             mIsSerializable;
+    ::ll::TypedStorage<4, 4, int> mLifeTimer;
+    ::ll::TypedStorage<4, 4, float> mBaseAmount;
+    ::ll::TypedStorage<1, 1, bool> mIsSerializable;
     // NOLINTEND
 
 public:
@@ -85,4 +85,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

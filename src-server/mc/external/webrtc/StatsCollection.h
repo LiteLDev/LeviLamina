@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk164237;
-    ::ll::UntypedStorage<1, 1>  mUnk21a3e8;
+    ::ll::UntypedStorage<1, 1> mUnk21a3e8;
     // NOLINTEND
 
 public:
@@ -43,8 +43,7 @@ public:
 
     MCNAPI StatsCollection();
 
-    MCNAPI ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::webrtc::StatsReport*>>>
-    begin() const;
+    MCNAPI ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::webrtc::StatsReport*>>> begin() const;
 
     MCNAPI ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::webrtc::StatsReport*>>> end() const;
 
@@ -64,6 +63,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

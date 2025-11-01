@@ -11,12 +11,9 @@ class FrozenOceanBuilderNoises {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-        mIcebergPillarNoise;
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-        mIcebergSurfaceNoise;
-    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const>
-                                                                        mIcebergPillarRoofNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const> mIcebergPillarNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const> mIcebergSurfaceNoise;
+    ::ll::TypedStorage<8, 56, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> const> mIcebergPillarRoofNoise;
     ::ll::TypedStorage<8, 24, ::XoroshiroPositionalRandomFactory const> mRandomFactory;
     // NOLINTEND
 
@@ -27,12 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FrozenOceanBuilderNoises(
-        ::XoroshiroPositionalRandomFactory                                            positionalRandomFactory,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergSurfaceNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarRoofNoise
-    );
+    MCAPI FrozenOceanBuilderNoises(::XoroshiroPositionalRandomFactory positionalRandomFactory, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarNoise, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergSurfaceNoise, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarRoofNoise);
 
     MCAPI ~FrozenOceanBuilderNoises();
     // NOLINTEND
@@ -46,12 +38,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::XoroshiroPositionalRandomFactory                                            positionalRandomFactory,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergSurfaceNoise,
-        ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarRoofNoise
-    );
+    MCAPI void* $ctor(::XoroshiroPositionalRandomFactory positionalRandomFactory, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarNoise, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergSurfaceNoise, ::NormalNoiseImpl<0, ::MultiOctaveNoiseImpl<0, ::ParityImprovedNoiseImpl<0>>> icebergPillarRoofNoise);
     // NOLINTEND
 
 public:
@@ -59,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

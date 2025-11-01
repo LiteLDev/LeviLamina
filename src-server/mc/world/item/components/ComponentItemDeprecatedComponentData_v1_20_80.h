@@ -23,8 +23,7 @@ public:
     // NOLINTBEGIN
     MCAPI ComponentItemDeprecatedComponentData_v1_20_80(::ComponentItemDeprecatedComponentData_v1_20_80&&);
 
-    MCAPI ::ComponentItemDeprecatedComponentData_v1_20_80&
-    operator=(::ComponentItemDeprecatedComponentData_v1_20_80 const&);
+    MCAPI ::ComponentItemDeprecatedComponentData_v1_20_80& operator=(::ComponentItemDeprecatedComponentData_v1_20_80 const&);
 
     MCAPI ::ComponentItemDeprecatedComponentData_v1_20_80& operator=(::ComponentItemDeprecatedComponentData_v1_20_80&&);
 
@@ -42,4 +41,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

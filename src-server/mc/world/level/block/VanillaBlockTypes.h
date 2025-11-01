@@ -16,4 +16,4 @@ MCAPI void registerBlockMappings();
 MCAPI void registerBlocks(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
 // NOLINTEND
 
-} // namespace VanillaBlockTypes
+}

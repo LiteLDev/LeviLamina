@@ -20,14 +20,10 @@ class PlayerAbilitiesManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::LayeredAbilities>>  mAbilitiesData;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::LayeredAbilities>> mAbilitiesData;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> const> mGameplayUserManager;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>>                 mPacketSender;
-    ::ll::TypedStorage<
-        8,
-        48,
-        ::Bedrock::PubSub::Publisher<void(::ActorUniqueID const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>
-        mPlayerAbilitiesChanged;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::PacketSender>> mPacketSender;
+    ::ll::TypedStorage<8, 48, ::Bedrock::PubSub::Publisher<void(::ActorUniqueID const&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>> mPlayerAbilitiesChanged;
     // NOLINTEND
 
 public:
@@ -57,4 +53,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

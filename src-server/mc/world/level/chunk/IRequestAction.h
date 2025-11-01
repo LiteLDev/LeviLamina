@@ -13,12 +13,12 @@ class IRequestAction {
 public:
     // IRequestAction inner types define
     enum class RequestActionType : uchar {
-        FunctionAction                   = 0,
-        TestAction                       = 1,
-        StructureAnimationAction         = 2,
+        FunctionAction = 0,
+        TestAction = 1,
+        StructureAnimationAction = 2,
         JigsawStructurePostprocessAction = 3,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -58,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

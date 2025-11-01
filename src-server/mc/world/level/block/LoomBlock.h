@@ -18,10 +18,10 @@ public:
     // vIndex: 29
     virtual bool isCraftingBlock() const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -49,4 +49,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

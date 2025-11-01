@@ -27,8 +27,7 @@ public:
     virtual ::Scripting::Result_deprecated<void> trySetMode(::Editor::Mode) = 0;
 
     // vIndex: 3
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-        listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)>) = 0;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForModeChange(::std::function<void(::Editor::Mode, ::Editor::Mode)>) = 0;
     // NOLINTEND
 
 public:
@@ -36,6 +35,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

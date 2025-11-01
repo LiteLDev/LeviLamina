@@ -14,7 +14,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnkf798ba;
     ::ll::UntypedStorage<8, 80> mUnk82b1a0;
-    ::ll::UntypedStorage<4, 4>  mUnk1e31ee;
+    ::ll::UntypedStorage<4, 4> mUnk1e31ee;
     ::ll::UntypedStorage<8, 24> mUnkcf3535;
     // NOLINTEND
 
@@ -48,6 +48,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Threading::Details
+}

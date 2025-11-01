@@ -16,7 +16,7 @@ class SimpleRandom : public ::IRandom, public ::IRandomSeeded {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnke32ad8;
+    ::ll::UntypedStorage<8, 8> mUnke32ad8;
     ::ll::UntypedStorage<8, 16> mUnk5a2dc7;
     // NOLINTEND
 
@@ -76,6 +76,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit SimpleRandom(int64 seed);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(int64 seed);
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
@@ -120,4 +132,5 @@ public:
 
     MCNAPI static void** $vftableForIRandom();
     // NOLINTEND
+
 };

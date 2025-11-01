@@ -19,7 +19,7 @@ class Feature : public ::IFeature {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>           mPlacerID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mPlacerID;
     ::ll::TypedStorage<8, 8, ::WorldChangeTransaction*> mTransaction;
     // NOLINTEND
 
@@ -59,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

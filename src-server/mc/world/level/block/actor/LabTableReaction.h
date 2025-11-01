@@ -17,15 +17,15 @@ class LabTableReaction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                                            mLifetime;
-    ::ll::TypedStorage<4, 4, int>                                                            mMaxLifetime;
-    ::ll::TypedStorage<4, 4, int>                                                            mStartDelay;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStack>>                                 mResultItem;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockPos>>                                  mPos;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Random>>                                    mRandom;
+    ::ll::TypedStorage<4, 4, int> mLifetime;
+    ::ll::TypedStorage<4, 4, int> mMaxLifetime;
+    ::ll::TypedStorage<4, 4, int> mStartDelay;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ItemStack>> mResultItem;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockPos>> mPos;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Random>> mRandom;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::LabTableReactionComponent>>> mComponents;
-    ::ll::TypedStorage<1, 1, ::LabTableReactionType>                                         mType;
-    ::ll::TypedStorage<1, 1, bool>                                                           mIsClientSide;
+    ::ll::TypedStorage<1, 1, ::LabTableReactionType> mType;
+    ::ll::TypedStorage<1, 1, bool> mIsClientSide;
     // NOLINTEND
 
 public:
@@ -42,13 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LabTableReaction(
-        ::LabTableReactionType type,
-        ::BlockPos const&      pos,
-        bool                   isClientSide,
-        int                    maxLifetime,
-        int                    startDelay
-    );
+    MCAPI LabTableReaction(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide, int maxLifetime, int startDelay);
 
     MCFOLD void addComponent(::std::unique_ptr<::LabTableReactionComponent> comp);
 
@@ -58,15 +52,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LabTableReaction>
-    createReaction(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide);
+    MCAPI static ::std::unique_ptr<::LabTableReaction> createReaction(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide, int maxLifetime, int startDelay);
+    MCAPI void* $ctor(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide, int maxLifetime, int startDelay);
     // NOLINTEND
 
 public:
@@ -74,4 +66,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

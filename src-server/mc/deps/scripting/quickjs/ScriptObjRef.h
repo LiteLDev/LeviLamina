@@ -19,7 +19,7 @@ public:
     struct GeneratorData;
     struct PromiseData;
     // clang-format on
-
+    
     // ScriptObjRef inner types define
     struct GeneratorData {
     public:
@@ -27,14 +27,15 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk2b5b0c;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         GeneratorData& operator=(GeneratorData const&);
         GeneratorData(GeneratorData const&);
         GeneratorData();
+    
     };
-
+    
     struct PromiseData {
     public:
         // member variables
@@ -42,22 +43,23 @@ public:
         ::ll::UntypedStorage<8, 16> mUnk71b30f;
         ::ll::UntypedStorage<8, 16> mUnk1c1bd6;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         PromiseData& operator=(PromiseData const&);
         PromiseData(PromiseData const&);
         PromiseData();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk60fd4e;
+    ::ll::UntypedStorage<8, 8> mUnk60fd4e;
     ::ll::UntypedStorage<8, 16> mUnke0e095;
     ::ll::UntypedStorage<8, 40> mUnk50ff94;
-    ::ll::UntypedStorage<1, 1>  mUnke9ae49;
-    ::ll::UntypedStorage<1, 1>  mUnk7fb67c;
+    ::ll::UntypedStorage<1, 1> mUnke9ae49;
+    ::ll::UntypedStorage<1, 1> mUnk7fb67c;
     // NOLINTEND
 
 public:
@@ -107,6 +109,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting::QuickJS
+}

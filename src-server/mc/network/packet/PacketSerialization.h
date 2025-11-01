@@ -13,4 +13,4 @@ namespace PacketSerialization {
 MCAPI void bindPackets(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-} // namespace PacketSerialization
+}

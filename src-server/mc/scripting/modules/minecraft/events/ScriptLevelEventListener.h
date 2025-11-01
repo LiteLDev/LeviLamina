@@ -26,8 +26,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-    ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>>
-                                   mScriptEventsHandle;
+    ::ll::TypedStorage<8, 16, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldAfterEvents>> mScriptEventsHandle;
     ::ll::TypedStorage<1, 1, bool> mAfterListener;
     // NOLINTEND
 
@@ -50,13 +49,7 @@ public:
     virtual ::EventResult onLevelRemovedPlayer(::Player& player) /*override*/;
 
     // vIndex: 8
-    virtual ::EventResult onLevelWeatherChange(
-        ::std::string const& dimension,
-        bool                 wasRaining,
-        bool                 wasLightning,
-        bool                 isRaining,
-        bool                 isLightning
-    ) /*override*/;
+    virtual ::EventResult onLevelWeatherChange(::std::string const& dimension, bool wasRaining, bool wasLightning, bool isRaining, bool isLightning) /*override*/;
 
     // vIndex: 4
     virtual ::EventResult onLevelRemovedActor(::Actor& actor) /*override*/;
@@ -78,13 +71,7 @@ public:
 
     MCAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
 
-    MCAPI ::EventResult $onLevelWeatherChange(
-        ::std::string const& dimension,
-        bool                 wasRaining,
-        bool                 wasLightning,
-        bool                 isRaining,
-        bool                 isLightning
-    );
+    MCAPI ::EventResult $onLevelWeatherChange(::std::string const& dimension, bool wasRaining, bool wasLightning, bool isRaining, bool isLightning);
 
     MCAPI ::EventResult $onLevelRemovedActor(::Actor& actor);
     // NOLINTEND
@@ -94,6 +81,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -16,8 +16,7 @@ struct VillageManagerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::
-        TypedStorage<8, 24, ::std::vector<::std::pair<::DimensionType, ::Bedrock::NonOwnerPointer<::IVillageManager>>>>
-            mVillageManagers;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::DimensionType, ::Bedrock::NonOwnerPointer<::IVillageManager>>>> mVillageManagers;
     // NOLINTEND
+
 };

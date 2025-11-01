@@ -16,18 +16,18 @@ class SneezeGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                    mCooldown;
-    ::ll::TypedStorage<4, 4, int>                                    mCooldownTimer;
-    ::ll::TypedStorage<4, 4, float>                                  mProbability;
-    ::ll::TypedStorage<4, 4, int>                                    mPreSneezeTimer;
-    ::ll::TypedStorage<4, 4, float>                                  mDropItemChance;
-    ::ll::TypedStorage<8, 32, ::std::string>                         mLootTable;
+    ::ll::TypedStorage<4, 4, int> mCooldown;
+    ::ll::TypedStorage<4, 4, int> mCooldownTimer;
+    ::ll::TypedStorage<4, 4, float> mProbability;
+    ::ll::TypedStorage<4, 4, int> mPreSneezeTimer;
+    ::ll::TypedStorage<4, 4, float> mDropItemChance;
+    ::ll::TypedStorage<8, 32, ::std::string> mLootTable;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSneezeSound;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mPreSneezeSound;
-    ::ll::TypedStorage<4, 4, float>                                  mPrepareTime;
-    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor> const>  mReactMobFilters;
-    ::ll::TypedStorage<4, 4, float>                                  mReactWithin;
-    ::ll::TypedStorage<8, 8, ::Mob&>                                 mMob;
+    ::ll::TypedStorage<4, 4, float> mPrepareTime;
+    ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor> const> mReactMobFilters;
+    ::ll::TypedStorage<4, 4, float> mReactWithin;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     // NOLINTEND
 
 public:
@@ -82,4 +82,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

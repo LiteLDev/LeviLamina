@@ -15,4 +15,4 @@ MCNAPI ::Scripting::RuntimeCondition const& CameraExperiment();
 MCNAPI ::Scripting::RuntimeCondition const& SimplifiedSpawnRulesExperiment();
 // NOLINTEND
 
-} // namespace ScriptingRuntimeConditionIds
+}

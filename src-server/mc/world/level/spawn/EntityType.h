@@ -18,11 +18,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SpawnCategory::Type> mType;
-    ::ll::TypedStorage<8, 48, ::HashedString>       mId;
-    ::ll::TypedStorage<1, 1, bool>                  mIsSummonable;
-    ::ll::TypedStorage<1, 1, bool>                  mImmuneFire;
-    ::ll::TypedStorage<4, 4, float>                 mHeight;
-    ::ll::TypedStorage<4, 4, float>                 mWidth;
+    ::ll::TypedStorage<8, 48, ::HashedString> mId;
+    ::ll::TypedStorage<1, 1, bool> mIsSummonable;
+    ::ll::TypedStorage<1, 1, bool> mImmuneFire;
+    ::ll::TypedStorage<4, 4, float> mHeight;
+    ::ll::TypedStorage<4, 4, float> mWidth;
     // NOLINTEND
 
 public:
@@ -38,6 +38,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace br::spawn
+}

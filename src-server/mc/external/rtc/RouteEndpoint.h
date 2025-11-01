@@ -25,6 +25,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool operator==(::rtc::RouteEndpoint const& other) const;
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

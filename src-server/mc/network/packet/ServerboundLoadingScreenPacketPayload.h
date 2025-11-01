@@ -11,6 +11,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::ServerboundLoadingScreenPacketType> mServerboundLoadingScreenPacketType;
-    ::ll::TypedStorage<4, 8, ::LoadingScreenId>                    mLoadingScreenId;
+    ::ll::TypedStorage<4, 8, ::LoadingScreenId> mLoadingScreenId;
     // NOLINTEND
+
 };

@@ -6,7 +6,7 @@ class LocalSpatialEntityFetcher {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 288> mUnk9b8ee4;
+    ::ll::UntypedStorage<8, 280> mUnk9b8ee4;
     // NOLINTEND
 
 public:
@@ -26,4 +26,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

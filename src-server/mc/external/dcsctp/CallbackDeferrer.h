@@ -29,7 +29,7 @@ public:
     class ScopedDeferrer;
     struct StreamReset;
     // clang-format on
-
+    
     // CallbackDeferrer inner types define
     class ScopedDeferrer {
     public:
@@ -37,53 +37,55 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8> mUnkb10993;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ScopedDeferrer& operator=(ScopedDeferrer const&);
         ScopedDeferrer(ScopedDeferrer const&);
         ScopedDeferrer();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~ScopedDeferrer();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct Error {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk2946f5;
+        ::ll::UntypedStorage<4, 4> mUnk2946f5;
         ::ll::UntypedStorage<8, 32> mUnk66944b;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Error& operator=(Error const&);
         Error(Error const&);
         Error();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~Error();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     struct StreamReset {
     public:
         // member variables
@@ -91,31 +93,32 @@ public:
         ::ll::UntypedStorage<8, 24> mUnk677307;
         ::ll::UntypedStorage<8, 32> mUnk5c0dbd;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         StreamReset& operator=(StreamReset const&);
         StreamReset(StreamReset const&);
         StreamReset();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~StreamReset();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk87ee76;
-    ::ll::UntypedStorage<1, 1>  mUnk8cdd55;
+    ::ll::UntypedStorage<8, 8> mUnk87ee76;
+    ::ll::UntypedStorage<1, 1> mUnk8cdd55;
     ::ll::UntypedStorage<8, 24> mUnkeaf150;
     // NOLINTEND
 
@@ -132,8 +135,7 @@ public:
     virtual ::dcsctp::SendPacketStatus SendPacketWithStatus(::rtc::ArrayView<uchar const> data) /*override*/;
 
     // vIndex: 4
-    virtual ::std::unique_ptr<::dcsctp::Timeout>
-    CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision) /*override*/;
+    virtual ::std::unique_ptr<::dcsctp::Timeout> CreateTimeout(::webrtc::TaskQueueBase::DelayPrecision precision) /*override*/;
 
     // vIndex: 5
     virtual ::dcsctp::TimeMs TimeMillis() /*override*/;
@@ -163,20 +165,13 @@ public:
     virtual void OnConnectionRestarted() /*override*/;
 
     // vIndex: 15
-    virtual void OnStreamsResetFailed(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams,
-        ::std::string_view                                                           reason
-    ) /*override*/;
+    virtual void OnStreamsResetFailed(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams, ::std::string_view reason) /*override*/;
 
     // vIndex: 16
-    virtual void OnStreamsResetPerformed(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
-    ) /*override*/;
+    virtual void OnStreamsResetPerformed(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams) /*override*/;
 
     // vIndex: 17
-    virtual void OnIncomingStreamsReset(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams
-    ) /*override*/;
+    virtual void OnIncomingStreamsReset(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams) /*override*/;
 
     // vIndex: 18
     virtual void OnBufferedAmountLow(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id) /*override*/;
@@ -239,18 +234,11 @@ public:
 
     MCNAPI void $OnConnectionRestarted();
 
-    MCNAPI void $OnStreamsResetFailed(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams,
-        ::std::string_view                                                           reason
-    );
+    MCNAPI void $OnStreamsResetFailed(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams, ::std::string_view reason);
 
-    MCNAPI void $OnStreamsResetPerformed(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams
-    );
+    MCNAPI void $OnStreamsResetPerformed(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> outgoing_streams);
 
-    MCNAPI void $OnIncomingStreamsReset(
-        ::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams
-    );
+    MCNAPI void $OnIncomingStreamsReset(::rtc::ArrayView<::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> const> incoming_streams);
 
     MCNAPI void $OnBufferedAmountLow(::webrtc::StrongAlias<::dcsctp::StreamIDTag, ushort> stream_id);
 
@@ -270,6 +258,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

@@ -25,24 +25,9 @@ namespace MobSpawnUtils {
 // NOLINTBEGIN
 MCAPI void onMobSpawned(::BlockPos const& pos, ::Level& level, ::Mob& mob);
 
-MCAPI ::OwnerPtr<::EntityContext> spawnIfSummonable(
-    ::ActorDefinitionIdentifier const& actorIdentifier,
-    ::ActorDefinitionGroup&            actorDefinitions,
-    ::ActorFactory&                    actorFactory,
-    ::Vec3 const&                      position,
-    ::Vec2 const&                      rotation
-);
+MCAPI ::OwnerPtr<::EntityContext> spawnIfSummonable(::ActorDefinitionIdentifier const& actorIdentifier, ::ActorDefinitionGroup& actorDefinitions, ::ActorFactory& actorFactory, ::Vec3 const& position, ::Vec2 const& rotation);
 
-MCAPI ::Mob* trySpawnMob(
-    ::BlockSource&                           region,
-    ::ActorDefinitionIdentifier const&       actorDefinition,
-    ::BlockPos                               start,
-    int                                      spawnAttempts,
-    int                                      spawnRangeXZ,
-    int                                      spawnRangeY,
-    ::std::function<bool(::BlockPos)> const& isGoodSpawnPosition,
-    ::MobSpawnUtils::SurfaceDetectionType    surfaceDetectionType
-);
+MCAPI ::Mob* trySpawnMob(::BlockSource& region, ::ActorDefinitionIdentifier const& actorDefinition, ::BlockPos start, int spawnAttempts, int spawnRangeXZ, int spawnRangeY, ::std::function<bool(::BlockPos)> const& isGoodSpawnPosition, ::MobSpawnUtils::SurfaceDetectionType surfaceDetectionType);
 // NOLINTEND
 
-} // namespace MobSpawnUtils
+}

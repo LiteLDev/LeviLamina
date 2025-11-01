@@ -5,11 +5,11 @@
 namespace webrtc {
 
 enum class RtpPacketMediaType : uint64 {
-    KAudio                  = 0,
-    KVideo                  = 1,
-    KRetransmission         = 2,
+    KAudio = 0,
+    KVideo = 1,
+    KRetransmission = 2,
     KForwardErrorCorrection = 3,
-    KPadding                = 4,
+    KPadding = 4,
 };
 
 }

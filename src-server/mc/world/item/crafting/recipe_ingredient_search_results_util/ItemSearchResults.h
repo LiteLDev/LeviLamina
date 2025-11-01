@@ -15,8 +15,9 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::RecipeIngredientSearchResultsUtil::ContainerInfo>> mContainerPositions;
     ::ll::TypedStorage<8, 24, ::std::vector<int>> mIngredientSlotsItemValidFor;
-    ::ll::TypedStorage<4, 4, int>                 mTotalCount;
+    ::ll::TypedStorage<4, 4, int> mTotalCount;
     // NOLINTEND
+
 };
 
-} // namespace RecipeIngredientSearchResultsUtil
+}

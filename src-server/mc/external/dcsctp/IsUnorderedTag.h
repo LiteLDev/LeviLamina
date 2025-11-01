@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-class IsUnorderedTag {};
+class IsUnorderedTag {
+};
 
-} // namespace dcsctp
+}

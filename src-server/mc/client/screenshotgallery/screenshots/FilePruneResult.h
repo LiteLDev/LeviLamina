@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk2af14c;
-    ::ll::UntypedStorage<8, 8>  mUnk3e049b;
+    ::ll::UntypedStorage<8, 8> mUnk3e049b;
     // NOLINTEND
 
 public:
@@ -17,6 +17,7 @@ public:
     FilePruneResult& operator=(FilePruneResult const&);
     FilePruneResult(FilePruneResult const&);
     FilePruneResult();
+
 };
 
-} // namespace Screenshots
+}

@@ -19,8 +19,7 @@ namespace VanillaSystems {
 // NOLINTBEGIN
 MCNAPI ::std::unique_ptr<::VanillaSystems::IActorAdapter> createActorAdapter(::WeakRef<::EntityRegistry>& registry);
 
-MCNAPI ::std::unique_ptr<::VanillaSystems::IVanillaSystemsEventingAdapter>
-createVanillaSystemsEventingAdapter(::Bedrock::NonOwnerPointer<::IMinecraftEventing> eventing);
+MCNAPI ::std::unique_ptr<::VanillaSystems::IVanillaSystemsEventingAdapter> createVanillaSystemsEventingAdapter(::Bedrock::NonOwnerPointer<::IMinecraftEventing> eventing);
 // NOLINTEND
 
-} // namespace VanillaSystems
+}

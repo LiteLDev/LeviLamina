@@ -30,21 +30,21 @@ class Agent : public ::Mob {
 public:
     // Agent inner types define
     enum class AnimState : int {
-        Idle     = 0,
-        Moving   = 1,
+        Idle = 0,
+        Moving = 1,
         ArmSwing = 2,
-        Shrug    = 3,
+        Shrug = 3,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk618b0a;
-    ::ll::UntypedStorage<4, 8>  mUnka894c6;
-    ::ll::UntypedStorage<4, 4>  mUnkb25082;
-    ::ll::UntypedStorage<4, 4>  mUnk8eff9b;
-    ::ll::UntypedStorage<1, 1>  mUnk666d92;
-    ::ll::UntypedStorage<1, 1>  mUnkb09f58;
+    ::ll::UntypedStorage<1, 1> mUnk618b0a;
+    ::ll::UntypedStorage<4, 8> mUnka894c6;
+    ::ll::UntypedStorage<4, 4> mUnkb25082;
+    ::ll::UntypedStorage<4, 4> mUnk8eff9b;
+    ::ll::UntypedStorage<1, 1> mUnk666d92;
+    ::ll::UntypedStorage<1, 1> mUnkb09f58;
     ::ll::UntypedStorage<8, 16> mUnk306c02;
     // NOLINTEND
 
@@ -76,8 +76,7 @@ public:
     virtual void handleEntityEvent(::ActorEvent eventId, int data) /*override*/;
 
     // vIndex: 4
-    virtual void
-    initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 168
     virtual bool createAIGoals() /*override*/;
@@ -92,8 +91,7 @@ public:
     virtual void baseTick() /*override*/;
 
     // vIndex: 21
-    virtual void
-    teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity) /*override*/;
+    virtual void teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int entityType, bool keepVelocity) /*override*/;
 
     // vIndex: 173
     virtual bool canExistWhenDisallowMob() const /*override*/;
@@ -108,7 +106,7 @@ public:
     virtual void kill() /*override*/;
 
     // vIndex: 55
-    virtual void setOwner(::ActorUniqueID const id) /*override*/;
+    virtual void setOwner(::ActorUniqueID const ownerId) /*override*/;
 
     // vIndex: 135
     virtual bool _hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite) /*override*/;
@@ -123,11 +121,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Agent(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI Agent(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCAPI bool _isOnGround(::AABB const& aabb);
 
@@ -157,11 +151,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -199,7 +189,7 @@ public:
 
     MCAPI void $kill();
 
-    MCAPI void $setOwner(::ActorUniqueID const id);
+    MCAPI void $setOwner(::ActorUniqueID const ownerId);
 
     MCAPI bool $_hurt(::ActorDamageSource const& source, float damage, bool knock, bool ignite);
 
@@ -211,4 +201,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -26,8 +26,6 @@ public:
 
     MCAPI explicit Result(bool success);
 
-    MCAPI ::std::string message() const;
-
     MCAPI ~Result();
     // NOLINTEND
 
@@ -48,6 +46,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

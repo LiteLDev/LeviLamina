@@ -16,6 +16,7 @@ public:
     UnknownCategoryId& operator=(UnknownCategoryId const&);
     UnknownCategoryId(UnknownCategoryId const&);
     UnknownCategoryId();
+
 };
 
-} // namespace CameraAimAssistErrorType
+}

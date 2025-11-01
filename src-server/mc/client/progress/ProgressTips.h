@@ -4,6 +4,7 @@
 
 namespace Progress {
 
-class ProgressTips {};
+class ProgressTips {
+};
 
-} // namespace Progress
+}

@@ -22,38 +22,34 @@ class BambooSaplingBlock : public ::FoliageBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 74
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
-        /*override*/;
+    // vIndex: 73
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const /*override*/;
 
-    // vIndex: 76
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    // vIndex: 75
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const /*override*/;
 
-    // vIndex: 87
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
+    // vIndex: 86
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
 
-    // vIndex: 113
+    // vIndex: 112
     virtual bool isAuxValueRelevantForPicking() const /*override*/;
 
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     // vIndex: 48
     virtual bool isValidAuxValue(int value) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
@@ -73,8 +69,7 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getVariant(::Block const& block) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
@@ -98,4 +93,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

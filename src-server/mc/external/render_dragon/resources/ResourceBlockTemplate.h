@@ -4,7 +4,8 @@
 
 namespace mce {
 
-template <typename T0>
-struct ResourceBlockTemplate {};
+template<typename T0>
+struct ResourceBlockTemplate {
+};
 
-} // namespace mce
+}

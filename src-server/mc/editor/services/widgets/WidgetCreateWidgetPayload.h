@@ -13,23 +13,22 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace Editor::Network {
 
-class WidgetCreateWidgetPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetCreateWidgetPayload>,
-  public ::Editor::Network::WidgetCommonBasePayload {
+class WidgetCreateWidgetPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::WidgetCreateWidgetPayload>, public ::Editor::Network::WidgetCommonBasePayload {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 12> mUnk8ccb65;
-    ::ll::UntypedStorage<1, 1>  mUnk43e0ad;
-    ::ll::UntypedStorage<1, 1>  mUnka2b4fa;
-    ::ll::UntypedStorage<4, 4>  mUnk784f14;
-    ::ll::UntypedStorage<1, 1>  mUnk8212a5;
+    ::ll::UntypedStorage<1, 1> mUnk43e0ad;
+    ::ll::UntypedStorage<1, 1> mUnka2b4fa;
+    ::ll::UntypedStorage<4, 4> mUnk784f14;
+    ::ll::UntypedStorage<1, 1> mUnk8212a5;
     ::ll::UntypedStorage<4, 12> mUnkb78a5f;
-    ::ll::UntypedStorage<1, 1>  mUnkf8f242;
-    ::ll::UntypedStorage<1, 1>  mUnkb7af58;
+    ::ll::UntypedStorage<1, 1> mUnkf8f242;
+    ::ll::UntypedStorage<1, 1> mUnkb7af58;
     ::ll::UntypedStorage<8, 32> mUnkc57b4b;
     ::ll::UntypedStorage<4, 12> mUnkcf1965;
     ::ll::UntypedStorage<4, 12> mUnk1d3ef4;
+    ::ll::UntypedStorage<4, 4> mUnke5939a;
     // NOLINTEND
 
 public:
@@ -62,6 +61,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

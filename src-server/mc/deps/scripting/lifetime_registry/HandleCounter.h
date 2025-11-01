@@ -19,7 +19,7 @@ public:
     // clang-format off
     struct TypeStats;
     // clang-format on
-
+    
     // HandleCounter inner types define
     struct TypeStats {
     public:
@@ -32,14 +32,15 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk745a02;
         ::ll::UntypedStorage<8, 8> mUnk273bf2;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         TypeStats& operator=(TypeStats const&);
         TypeStats(TypeStats const&);
         TypeStats();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -57,20 +58,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual void onMakeObject(
-        ::Scripting::LifetimeRegistry&,
-        ::Scripting::ObjectHandle,
-        ::entt::meta_type const&,
-        uint
-    ) /*override*/;
+    virtual void onMakeObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) /*override*/;
 
     // vIndex: 2
-    virtual void onDestroyObject(
-        ::Scripting::LifetimeRegistry&,
-        ::Scripting::ObjectHandle,
-        ::entt::meta_type const&,
-        uint
-    ) /*override*/;
+    virtual void onDestroyObject(::Scripting::LifetimeRegistry&, ::Scripting::ObjectHandle, ::entt::meta_type const&, uint) /*override*/;
 
     // vIndex: 0
     virtual ~HandleCounter() /*override*/ = default;
@@ -81,6 +72,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

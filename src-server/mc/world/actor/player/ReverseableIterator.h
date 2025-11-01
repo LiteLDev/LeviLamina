@@ -8,7 +8,7 @@ public:
     // clang-format off
     class Iterator;
     // clang-format on
-
+    
     // ReverseableIterator inner types define
     class Iterator {
     public:
@@ -17,14 +17,15 @@ public:
         ::ll::UntypedStorage<4, 4> mUnk16bfb3;
         ::ll::UntypedStorage<1, 1> mUnk47ba99;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Iterator& operator=(Iterator const&);
         Iterator(Iterator const&);
         Iterator();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -38,4 +39,5 @@ public:
     ReverseableIterator& operator=(ReverseableIterator const&);
     ReverseableIterator(ReverseableIterator const&);
     ReverseableIterator();
+
 };

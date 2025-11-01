@@ -33,8 +33,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
-    buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
+    virtual ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError> buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const /*override*/;
 
     // vIndex: 0
     virtual ~DividerControl() /*override*/ = default;
@@ -43,8 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
-    $buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
+    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError> $buildJson(::Player& forPlayer, ::CurrentCmdVersion commandVersion) const;
     // NOLINTEND
 
 public:
@@ -52,6 +50,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraftServerUI
+}

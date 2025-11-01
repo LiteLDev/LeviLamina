@@ -18,7 +18,7 @@ struct BlockItemVisualDescription : public ::BlockComponentDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 216, ::BlockGeometryDescription>          mGeometryDescription;
+    ::ll::TypedStorage<8, 216, ::BlockGeometryDescription> mGeometryDescription;
     ::ll::TypedStorage<8, 144, ::BlockMaterialInstancesDescription> mMaterialInstanceDescription;
     // NOLINTEND
 
@@ -74,4 +74,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

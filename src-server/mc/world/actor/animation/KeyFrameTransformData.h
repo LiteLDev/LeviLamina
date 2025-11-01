@@ -37,4 +37,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::KeyFrameTransformData const&);
     // NOLINTEND
+
 };

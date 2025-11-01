@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void addGiveableTrigger(::GiveableTrigger const& trigger);
     // NOLINTEND
+
 };

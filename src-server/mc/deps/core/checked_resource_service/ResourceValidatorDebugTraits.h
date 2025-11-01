@@ -4,7 +4,8 @@
 
 namespace mce {
 
-template <typename T0>
-struct ResourceValidatorDebugTraits {};
+template<typename T0>
+struct ResourceValidatorDebugTraits {
+};
 
-} // namespace mce
+}

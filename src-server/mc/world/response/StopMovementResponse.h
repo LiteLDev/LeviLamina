@@ -32,11 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
-    virtual void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
-                                               schema,
-        ::Factory<::ActorEventResponse> const& factory
-    ) const /*override*/;
+    virtual void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>& schema, ::Factory<::ActorEventResponse> const& factory) const /*override*/;
 
     // vIndex: 1
     virtual ::std::string const& getName() const /*override*/;
@@ -57,11 +53,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>&
-                                               schema,
-        ::Factory<::ActorEventResponse> const& factory
-    ) const;
+    MCNAPI void $buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ActorEventResponseCollection>>& schema, ::Factory<::ActorEventResponse> const& factory) const;
 
     MCNAPI ::std::string const& $getName() const;
 
@@ -73,4 +65,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

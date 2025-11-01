@@ -6,7 +6,7 @@ struct PropertyGeneticData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk236fbb;
+    ::ll::UntypedStorage<4, 4> mUnk236fbb;
     ::ll::UntypedStorage<8, 24> mUnk7a137a;
     // NOLINTEND
 
@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

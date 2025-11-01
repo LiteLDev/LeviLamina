@@ -16,6 +16,7 @@ public:
     RtpRtxParameters& operator=(RtpRtxParameters const&);
     RtpRtxParameters(RtpRtxParameters const&);
     RtpRtxParameters();
+
 };
 
-} // namespace webrtc
+}

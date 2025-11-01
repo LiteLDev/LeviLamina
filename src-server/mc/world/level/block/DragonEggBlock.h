@@ -22,19 +22,19 @@ class DragonEggBlock : public ::FallingBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 147
+    // vIndex: 146
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
-    // vIndex: 95
+    // vIndex: 94
     virtual bool attack(::Player* player, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const& experiments) /*override*/;
 
     // vIndex: 0
@@ -72,4 +72,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

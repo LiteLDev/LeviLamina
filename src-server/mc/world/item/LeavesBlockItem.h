@@ -27,14 +27,13 @@ public:
     // vIndex: 33
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 89
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
+    // vIndex: 90
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 99
+    // vIndex: 100
     virtual void fixupCommon(::ItemStackBase& stack) const /*override*/;
 
-    // vIndex: 98
+    // vIndex: 99
     virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const /*override*/;
 
     // vIndex: 0
@@ -46,8 +45,7 @@ public:
     // NOLINTBEGIN
     MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
     MCAPI void $fixupCommon(::ItemStackBase& stack) const;
 
@@ -59,4 +57,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

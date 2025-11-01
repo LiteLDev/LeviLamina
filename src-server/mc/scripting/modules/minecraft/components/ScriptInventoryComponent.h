@@ -55,17 +55,11 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<int> getInventorySize() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptInventoryComponentContainer>>
-    getOrCreateContainerV010();
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::WeakTypedObjectHandle<::ScriptModuleMinecraft::ScriptInventoryComponentContainer>> getOrCreateContainerV010();
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>>
-    getOrCreateContainerV1();
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>> getOrCreateContainerV1();
 
-    MCNAPI ::Scripting::Result<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>,
-        ::ScriptModuleMinecraft::ScriptInvalidActorError>
-    getOrCreateContainerV2();
+    MCNAPI ::Scripting::Result<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerWrapper>, ::ScriptModuleMinecraft::ScriptInvalidActorError> getOrCreateContainerV2();
 
     MCNAPI ::Scripting::Result_deprecated<bool> getPrivate() const;
 
@@ -75,8 +69,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
@@ -102,6 +95,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

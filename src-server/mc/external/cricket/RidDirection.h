@@ -5,7 +5,7 @@
 namespace cricket {
 
 enum class RidDirection : int {
-    KSend    = 0,
+    KSend = 0,
     KReceive = 1,
 };
 

@@ -17,6 +17,7 @@ public:
     MergerIndexPair& operator=(MergerIndexPair const&);
     MergerIndexPair(MergerIndexPair const&);
     MergerIndexPair();
+
 };
 
-} // namespace VoxelShapes
+}

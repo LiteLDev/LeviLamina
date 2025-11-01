@@ -27,9 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptActorCreateEvent(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle
-    );
+    MCAPI explicit ScriptActorCreateEvent(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle);
     // NOLINTEND
 
 public:
@@ -43,6 +41,7 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> actorHandle);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

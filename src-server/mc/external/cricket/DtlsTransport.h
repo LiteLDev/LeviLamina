@@ -33,23 +33,23 @@ class DtlsTransport : public ::cricket::DtlsTransportInternal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkd7362e;
-    ::ll::UntypedStorage<4, 4>  mUnk84c612;
-    ::ll::UntypedStorage<4, 4>  mUnk3f8dce;
-    ::ll::UntypedStorage<8, 8>  mUnkc921e6;
-    ::ll::UntypedStorage<8, 8>  mUnk745fa2;
-    ::ll::UntypedStorage<8, 8>  mUnke36806;
+    ::ll::UntypedStorage<1, 1> mUnkd7362e;
+    ::ll::UntypedStorage<4, 4> mUnk84c612;
+    ::ll::UntypedStorage<4, 4> mUnk3f8dce;
+    ::ll::UntypedStorage<8, 8> mUnkc921e6;
+    ::ll::UntypedStorage<8, 8> mUnk745fa2;
+    ::ll::UntypedStorage<8, 8> mUnke36806;
     ::ll::UntypedStorage<8, 24> mUnk17b8a7;
-    ::ll::UntypedStorage<1, 1>  mUnkda6491;
-    ::ll::UntypedStorage<8, 8>  mUnk498d3c;
-    ::ll::UntypedStorage<4, 8>  mUnkb91ba1;
-    ::ll::UntypedStorage<4, 4>  mUnk6540de;
+    ::ll::UntypedStorage<1, 1> mUnkda6491;
+    ::ll::UntypedStorage<8, 8> mUnk498d3c;
+    ::ll::UntypedStorage<4, 8> mUnkb91ba1;
+    ::ll::UntypedStorage<4, 4> mUnk6540de;
     ::ll::UntypedStorage<8, 24> mUnk9d4972;
     ::ll::UntypedStorage<8, 32> mUnk7e7427;
     ::ll::UntypedStorage<8, 24> mUnkd71b90;
-    ::ll::UntypedStorage<1, 1>  mUnk1ef94d;
-    ::ll::UntypedStorage<1, 1>  mUnka04d79;
-    ::ll::UntypedStorage<8, 8>  mUnk93f957;
+    ::ll::UntypedStorage<1, 1> mUnk1ef94d;
+    ::ll::UntypedStorage<1, 1> mUnka04d79;
+    ::ll::UntypedStorage<8, 8> mUnk93f957;
     // NOLINTEND
 
 public:
@@ -83,16 +83,10 @@ public:
     virtual ::webrtc::scoped_refptr<::rtc::RTCCertificate> GetLocalCertificate() const /*override*/;
 
     // vIndex: 22
-    virtual bool
-    SetRemoteFingerprint(::std::string_view digest_alg, uchar const* digest, uint64 digest_len) /*override*/;
+    virtual bool SetRemoteFingerprint(::std::string_view digest_alg, uchar const* digest, uint64 digest_len) /*override*/;
 
     // vIndex: 23
-    virtual ::webrtc::RTCError SetRemoteParameters(
-        ::std::string_view              digest_alg,
-        uchar const*                    digest,
-        uint64                          digest_len,
-        ::std::optional<::rtc::SSLRole> role
-    ) /*override*/;
+    virtual ::webrtc::RTCError SetRemoteParameters(::std::string_view digest_alg, uchar const* digest, uint64 digest_len, ::std::optional<::rtc::SSLRole> role) /*override*/;
 
     // vIndex: 4
     virtual int SendPacket(char const* data, uint64 size, ::rtc::PacketOptions const& options, int flags) /*override*/;
@@ -116,20 +110,13 @@ public:
     virtual bool SetDtlsRole(::rtc::SSLRole role) /*override*/;
 
     // vIndex: 16
-    virtual bool GetSslCipherSuite(int* cipher) /*override*/;
+    virtual bool GetSslCipherSuite(int* cipher_suite) /*override*/;
 
     // vIndex: 20
     virtual ::std::unique_ptr<::rtc::SSLCertChain> GetRemoteSSLCertChain() const /*override*/;
 
     // vIndex: 21
-    virtual bool ExportKeyingMaterial(
-        ::std::string_view label,
-        uchar const*       context,
-        uint64             context_len,
-        bool               use_context,
-        uchar*             result,
-        uint64             result_len
-    ) /*override*/;
+    virtual bool ExportKeyingMaterial(::std::string_view label, uchar const* context, uint64 context_len, bool use_context, uchar* result, uint64 result_len) /*override*/;
 
     // vIndex: 24
     virtual ::cricket::IceTransportInternal* ice_transport() /*override*/;
@@ -157,12 +144,7 @@ public:
 
     MCNAPI void ConnectToIceTransport();
 
-    MCNAPI DtlsTransport(
-        ::cricket::IceTransportInternal* ice_transport,
-        ::webrtc::CryptoOptions const&   crypto_options,
-        ::webrtc::RtcEventLog*           event_log,
-        ::rtc::SSLProtocolVersion        max_version
-    );
+    MCNAPI DtlsTransport(::cricket::IceTransportInternal* ice_transport, ::webrtc::CryptoOptions const& crypto_options, ::webrtc::RtcEventLog* event_log, ::rtc::SSLProtocolVersion max_version);
 
     MCNAPI bool HandleDtlsPacket(::rtc::ArrayView<uchar const> payload);
 
@@ -198,12 +180,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::cricket::IceTransportInternal* ice_transport,
-        ::webrtc::CryptoOptions const&   crypto_options,
-        ::webrtc::RtcEventLog*           event_log,
-        ::rtc::SSLProtocolVersion        max_version
-    );
+    MCNAPI void* $ctor(::cricket::IceTransportInternal* ice_transport, ::webrtc::CryptoOptions const& crypto_options, ::webrtc::RtcEventLog* event_log, ::rtc::SSLProtocolVersion max_version);
     // NOLINTEND
 
 public:
@@ -229,12 +206,7 @@ public:
 
     MCNAPI bool $SetRemoteFingerprint(::std::string_view digest_alg, uchar const* digest, uint64 digest_len);
 
-    MCNAPI ::webrtc::RTCError $SetRemoteParameters(
-        ::std::string_view              digest_alg,
-        uchar const*                    digest,
-        uint64                          digest_len,
-        ::std::optional<::rtc::SSLRole> role
-    );
+    MCNAPI ::webrtc::RTCError $SetRemoteParameters(::std::string_view digest_alg, uchar const* digest, uint64 digest_len, ::std::optional<::rtc::SSLRole> role);
 
     MCNAPI int $SendPacket(char const* data, uint64 size, ::rtc::PacketOptions const& options, int flags);
 
@@ -250,18 +222,11 @@ public:
 
     MCNAPI bool $SetDtlsRole(::rtc::SSLRole role);
 
-    MCNAPI bool $GetSslCipherSuite(int* cipher);
+    MCNAPI bool $GetSslCipherSuite(int* cipher_suite);
 
     MCNAPI ::std::unique_ptr<::rtc::SSLCertChain> $GetRemoteSSLCertChain() const;
 
-    MCNAPI bool $ExportKeyingMaterial(
-        ::std::string_view label,
-        uchar const*       context,
-        uint64             context_len,
-        bool               use_context,
-        uchar*             result,
-        uint64             result_len
-    );
+    MCNAPI bool $ExportKeyingMaterial(::std::string_view label, uchar const* context, uint64 context_len, bool use_context, uchar* result, uint64 result_len);
 
     MCNAPI ::cricket::IceTransportInternal* $ice_transport();
 
@@ -281,6 +246,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

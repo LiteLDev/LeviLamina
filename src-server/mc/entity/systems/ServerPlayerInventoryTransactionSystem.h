@@ -17,14 +17,9 @@ namespace ServerPlayerInventoryTransactionSystem {
 // NOLINTBEGIN
 MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCNAPI void transactInventoryPacket(
-    ::InventoryTransactionPacket const& packet,
-    ::ServerPlayer&                     player,
-    ::BlockPalette&                     blockPalette
-);
+MCNAPI void transactInventoryPacket(::InventoryTransactionPacket const& packet, ::ServerPlayer& player, ::BlockPalette& blockPalette);
 
-MCNAPI void
-transferInventoryTransactionPackets(::ServerPlayerMovementComponent const& movementComponent, ::EntityContext& entity);
+MCNAPI void transferInventoryTransactionPackets(::ServerPlayerMovementComponent const& movementComponent, ::EntityContext& entity);
 // NOLINTEND
 
-} // namespace ServerPlayerInventoryTransactionSystem
+}

@@ -27,10 +27,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelGameplayHandler>> mLevelGameplayHandler;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>          mGameRuleChangeSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>          mOnRemoveActorEntityReferencesSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>          mPostReloadActorAddedSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>          mOnGameplayUserAddedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mGameRuleChangeSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnRemoveActorEntityReferencesSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mPostReloadActorAddedSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnGameplayUserAddedSubscription;
     // NOLINTEND
 
 public:
@@ -61,13 +61,7 @@ public:
 
     MCAPI void sendLevelRemovedActor(::Actor& actor);
 
-    MCAPI void sendLevelWeatherChanged(
-        ::std::string const& dimension,
-        bool                 wasRaining,
-        bool                 wasLightning,
-        bool                 isRaining,
-        bool                 isLightning
-    );
+    MCAPI void sendLevelWeatherChanged(::std::string const& dimension, bool wasRaining, bool wasLightning, bool isRaining, bool isLightning);
     // NOLINTEND
 
 public:
@@ -81,4 +75,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

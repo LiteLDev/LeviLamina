@@ -17,6 +17,7 @@ public:
     INISection& operator=(INISection const&);
     INISection(INISection const&);
     INISection();
+
 };
 
-} // namespace cereal
+}

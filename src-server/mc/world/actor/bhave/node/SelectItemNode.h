@@ -15,18 +15,18 @@ class SelectItemNode : public ::BehaviorNode {
 public:
     // SelectItemNode inner types define
     enum class State : int {
-        Preconditions      = 0,
-        MoveToolToHotbar   = 1,
+        Preconditions = 0,
+        MoveToolToHotbar = 1,
         SelectToolInHotbar = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk4f414e;
-    ::ll::UntypedStorage<8, 8>  mUnkd2abbc;
-    ::ll::UntypedStorage<4, 4>  mUnk2461f1;
-    ::ll::UntypedStorage<4, 4>  mUnkc6056d;
+    ::ll::UntypedStorage<8, 8> mUnkd2abbc;
+    ::ll::UntypedStorage<4, 4> mUnk2461f1;
+    ::ll::UntypedStorage<4, 4> mUnkc6056d;
     // NOLINTEND
 
 public:
@@ -53,4 +53,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

@@ -18,4 +18,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::BidirectionalUnorderedMap<::ItemUseMethod, ::std::string> const& mMap();
     // NOLINTEND
+
 };

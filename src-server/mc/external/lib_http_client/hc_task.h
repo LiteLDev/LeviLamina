@@ -11,6 +11,7 @@ public:
     // vIndex: 0
     virtual ~hc_task() = default;
     // NOLINTEND
+
 };
 
-} // namespace xbox::httpclient
+}

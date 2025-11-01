@@ -67,6 +67,7 @@
 #include <variant>            // STL variant type
 #include <vector>             // STL dynamic array container
 #include <future>             // STL future
+#include <regex>         // Regular expression library
 
 // STL expected for C++23
 #if _HAS_CXX23

@@ -23,11 +23,11 @@ class ResourcePackStack {
 public:
     // ResourcePackStack inner types define
     using PackInstanceStack = ::std::vector<::PackInstance>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::PackInstance>>        mStack;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PackInstance>> mStack;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackSourceReport>> mPackSourceReport;
     // NOLINTEND
 
@@ -45,34 +45,24 @@ public:
     virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const;
 
     // vIndex: 2
-    virtual bool
-    loadAllVersionsOf(::ResourceLocation const& resourceLocation, ::ResourcePackMergeStrategy& mergeStrategy) const;
+    virtual bool loadAllVersionsOf(::ResourceLocation const& resourceLocation, ::ResourcePackMergeStrategy& mergeStrategy) const;
 
     // vIndex: 1
-    virtual bool loadAllVersionsOf(
-        ::ResourceLocation const&                          resourceLocation,
-        ::brstd::function_ref<bool(::PackInstance const&)> packInstanceFilter,
-        ::ResourcePackMergeStrategy&                       mergeStrategy
-    ) const;
+    virtual bool loadAllVersionsOf(::ResourceLocation const& resourceLocation, ::brstd::function_ref<bool(::PackInstance const&)> packInstanceFilter, ::ResourcePackMergeStrategy& mergeStrategy) const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePackStack(
-        ::std::vector<::PackInstanceId> const&                                identities,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
-        bool                                                                  anyVersion
-    );
+    MCAPI ResourcePackStack(::std::vector<::PackInstanceId> const& identities, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo, bool anyVersion);
 
     MCAPI void _setLoadingReport(::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo);
 
-    MCAPI void
-    add(::PackInstance                                                        packInstance,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
-        bool                                                                  isDependent);
+    MCAPI void add(::PackInstance packInstance, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo, bool isDependent);
 
     MCAPI ::std::vector<::std::string> getPackTelemetryNamesWithVersion(::PackType type) const;
+
+    MCAPI ::std::vector<::PackInstance> getPacksWhereAssetExtractionNotViable(::std::function<::std::string(::ContentIdentity const&)> getContentKey, ::std::string const& sourceContext) const;
 
     MCAPI void getSplitStacks(::ResourcePackStack& clientStack, ::ResourcePackStack& serverStack) const;
 
@@ -80,12 +70,7 @@ public:
 
     MCAPI bool hasPlatformLockedContent() const;
 
-    MCAPI bool isAssetExtractionViableForAll(
-        ::std::function<::std::string(::ContentIdentity const&)> getContentKey,
-        ::std::string const&                                     sourceContext
-    ) const;
-
-    MCAPI void removeIf(::std::function<bool(::PackInstance const&)> const& callback);
+    MCAPI bool removeIf(::std::function<bool(::PackInstance const&)> const& callback);
 
     MCAPI void removeInvalidPacks();
     // NOLINTEND
@@ -93,28 +78,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _populateDependencies(
-        ::std::vector<::PackInstance>&                                        packStack,
-        ::PackInstance&                                                       packInstance,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
-        bool                                                                  isDependent
-    );
+    MCAPI static void _populateDependencies(::std::vector<::PackInstance>& packStack, ::PackInstance& packInstance, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo, bool isDependent);
 
-    MCAPI static ::std::unique_ptr<::ResourcePackStack> deserialize(
-        ::std::istream&                                                       fileStream,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
-        ::std::optional<::std::string>                                        levelId
-    );
+    MCAPI static ::std::unique_ptr<::ResourcePackStack> deserialize(::std::istream& fileStream, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo, ::std::optional<::std::string> levelId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::vector<::PackInstanceId> const&                                identities,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
-        bool                                                                  anyVersion
-    );
+    MCAPI void* $ctor(::std::vector<::PackInstanceId> const& identities, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo, bool anyVersion);
     // NOLINTEND
 
 public:
@@ -128,14 +100,9 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::vector<::LoadedResourceData> $loadAllVersionsOf(::ResourceLocation const& resourceLocation) const;
 
-    MCAPI bool
-    $loadAllVersionsOf(::ResourceLocation const& resourceLocation, ::ResourcePackMergeStrategy& mergeStrategy) const;
+    MCAPI bool $loadAllVersionsOf(::ResourceLocation const& resourceLocation, ::ResourcePackMergeStrategy& mergeStrategy) const;
 
-    MCAPI bool $loadAllVersionsOf(
-        ::ResourceLocation const&                          resourceLocation,
-        ::brstd::function_ref<bool(::PackInstance const&)> packInstanceFilter,
-        ::ResourcePackMergeStrategy&                       mergeStrategy
-    ) const;
+    MCAPI bool $loadAllVersionsOf(::ResourceLocation const& resourceLocation, ::brstd::function_ref<bool(::PackInstance const&)> packInstanceFilter, ::ResourcePackMergeStrategy& mergeStrategy) const;
     // NOLINTEND
 
 public:
@@ -143,4 +110,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

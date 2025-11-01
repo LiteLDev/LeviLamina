@@ -14,4 +14,4 @@ namespace UseItemGoalUtilityInternal {
 MCAPI void updateEquipment(::Mob& mob, ::ItemStack const& item);
 // NOLINTEND
 
-} // namespace UseItemGoalUtilityInternal
+}

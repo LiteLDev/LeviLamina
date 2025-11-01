@@ -22,24 +22,10 @@ public:
     virtual ~IResourcePackFileDownloaderManager() = default;
 
     // vIndex: 1
-    virtual void tryStartDownloadingFile(
-        ::TaskGroup&,
-        ::std::string const&,
-        uint,
-        int,
-        uint64,
-        ::std::string const&,
-        bool,
-        ::PackType,
-        ::std::function<void()>,
-        ::std::function<void(float, uint64)>,
-        ::std::function<void(::Core::Path const&)>,
-        ::std::function<void(::ResourcePackFileDownloadError)>
-    ) = 0;
+    virtual void tryStartDownloadingFile(::TaskGroup&, ::std::string const&, uint, int, uint64, ::std::string const&, bool, ::PackType, ::std::function<void()>, ::std::function<void(float, uint64)>, ::std::function<void(::Core::Path const&)>, ::std::function<void(::ResourcePackFileDownloadError)>) = 0;
 
     // vIndex: 2
-    virtual ::Bedrock::Threading::SharedAsync<void>
-    chunkReceived(::TaskGroup&, ::std::string const&, ::FileChunkInfo const&, ::std::vector<uchar>) = 0;
+    virtual ::Bedrock::Threading::SharedAsync<void> chunkReceived(::TaskGroup&, ::std::string const&, ::FileChunkInfo const&, ::std::vector<uchar>) = 0;
 
     // vIndex: 3
     virtual void cleanup() = 0;
@@ -50,4 +36,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

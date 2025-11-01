@@ -29,50 +29,13 @@ struct StateVectorComponent;
 namespace HardcodedAnimationSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void
-addOffsetToMovementThisTick(::DynamicRenderOffsetComponent const& offset, ::ActorWalkAnimationComponent& walk);
+MCNAPI void addOffsetToMovementThisTick(::DynamicRenderOffsetComponent const& offset, ::ActorWalkAnimationComponent& walk);
 
 MCNAPI void computeMovementThisTick(::StateVectorComponent const& stateVector, ::ActorWalkAnimationComponent& walk);
 
-MCNAPI void doHardcodedAnimation(
-    ::StrictEntityContext const&,
-    ::MobAnimationComponent&                      mobAnim,
-    ::MobBodyRotationComponent const&             bodyRot,
-    ::MobHurtTimeComponent const&                 mobHurtTime,
-    ::ActorWalkAnimationComponent&                mobWalkAnimation,
-    ::ActorDataFlagComponent const&               syncedActorData,
-    ::Optional<::BlazeFlagComponent const>        blaze,
-    ::Optional<::LavaSlimeFlagComponent const>    lavaSlime,
-    ::Optional<::OnFireComponent const>           onFire,
-    ::Optional<::PassengerComponent const>        passenger,
-    ::Optional<::MobIsJumpingFlagComponent const> isJumping
-);
+MCNAPI void doHardcodedAnimation(::StrictEntityContext const&, ::MobAnimationComponent& mobAnim, ::MobBodyRotationComponent const& bodyRot, ::MobHurtTimeComponent const& mobHurtTime, ::ActorWalkAnimationComponent& mobWalkAnimation, ::ActorDataFlagComponent const& syncedActorData, ::Optional<::BlazeFlagComponent const> blaze, ::Optional<::LavaSlimeFlagComponent const> lavaSlime, ::Optional<::OnFireComponent const> onFire, ::Optional<::PassengerComponent const> passenger, ::Optional<::MobIsJumpingFlagComponent const> isJumping);
 
-MCNAPI void tick(
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent>,
-        ::StateVectorComponent const,
-        ::ActorWalkAnimationComponent> speedView,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent>,
-        ::DynamicRenderOffsetComponent const,
-        ::ActorWalkAnimationComponent> offsetView,
-    ::ViewT<
-        ::StrictEntityContext,
-        ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>,
-        ::MobAnimationComponent,
-        ::MobBodyRotationComponent const,
-        ::MobHurtTimeComponent const,
-        ::ActorWalkAnimationComponent,
-        ::ActorDataFlagComponent const,
-        ::Optional<::BlazeFlagComponent const>,
-        ::Optional<::LavaSlimeFlagComponent const>,
-        ::Optional<::OnFireComponent const>,
-        ::Optional<::PassengerComponent const>,
-        ::Optional<::MobIsJumpingFlagComponent const>> view
-);
+MCNAPI void tick(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::StateVectorComponent const, ::ActorWalkAnimationComponent> speedView, ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent>, ::DynamicRenderOffsetComponent const, ::ActorWalkAnimationComponent> offsetView, ::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::MobFlagComponent>, ::MobAnimationComponent, ::MobBodyRotationComponent const, ::MobHurtTimeComponent const, ::ActorWalkAnimationComponent, ::ActorDataFlagComponent const, ::Optional<::BlazeFlagComponent const>, ::Optional<::LavaSlimeFlagComponent const>, ::Optional<::OnFireComponent const>, ::Optional<::PassengerComponent const>, ::Optional<::MobIsJumpingFlagComponent const>> view);
 // NOLINTEND
 
-} // namespace HardcodedAnimationSystem
+}

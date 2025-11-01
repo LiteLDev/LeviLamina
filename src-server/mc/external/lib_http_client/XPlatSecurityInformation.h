@@ -16,6 +16,7 @@ public:
     XPlatSecurityInformation& operator=(XPlatSecurityInformation const&);
     XPlatSecurityInformation(XPlatSecurityInformation const&);
     XPlatSecurityInformation();
+
 };
 
-} // namespace xbox::httpclient
+}

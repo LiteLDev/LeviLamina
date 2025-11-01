@@ -22,4 +22,4 @@ MCAPI ::std::add_lvalue_reference_t<::Direction::Type const[]> conversionTable()
 MCAPI ::std::add_lvalue_reference_t<::Direction::Type const[]> furnaceConversionTable();
 // NOLINTEND
 
-} // namespace BlockTraitConversionUtils::FacingDirectionToCardinalDirection
+}

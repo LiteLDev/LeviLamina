@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-class ReconfigRequestSNTag {};
+class ReconfigRequestSNTag {
+};
 
-} // namespace dcsctp
+}

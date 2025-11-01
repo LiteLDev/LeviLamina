@@ -75,6 +75,8 @@ public:
     MCAPI ::Bedrock::Result<int> getVarInt();
 
     MCAPI ::Bedrock::Result<int64> getVarInt64();
+
+    MCAPI void setReadPointer(uint64 pos);
     // NOLINTEND
 
 public:
@@ -94,4 +96,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

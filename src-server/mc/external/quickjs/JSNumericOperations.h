@@ -20,4 +20,5 @@ public:
     JSNumericOperations& operator=(JSNumericOperations const&);
     JSNumericOperations(JSNumericOperations const&);
     JSNumericOperations();
+
 };

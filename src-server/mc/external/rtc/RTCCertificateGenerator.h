@@ -37,11 +37,7 @@ public:
     virtual ~RTCCertificateGenerator() /*override*/ = default;
 
     // vIndex: 1
-    virtual void GenerateCertificateAsync(
-        ::rtc::KeyParams const&                                                       key_params,
-        ::std::optional<uint64> const&                                                expires_ms,
-        ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>) &&> callback
-    ) /*override*/;
+    virtual void GenerateCertificateAsync(::rtc::KeyParams const& key_params, ::std::optional<uint64> const& expires_ms, ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>)&&> callback) /*override*/;
     // NOLINTEND
 
 public:
@@ -53,8 +49,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::webrtc::scoped_refptr<::rtc::RTCCertificate>
-    GenerateCertificate(::rtc::KeyParams const& key_params, ::std::optional<uint64> const& expires_ms);
+    MCNAPI static ::webrtc::scoped_refptr<::rtc::RTCCertificate> GenerateCertificate(::rtc::KeyParams const& key_params, ::std::optional<uint64> const& expires_ms);
     // NOLINTEND
 
 public:
@@ -66,11 +61,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $GenerateCertificateAsync(
-        ::rtc::KeyParams const&                                                       key_params,
-        ::std::optional<uint64> const&                                                expires_ms,
-        ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>) &&> callback
-    );
+    MCNAPI void $GenerateCertificateAsync(::rtc::KeyParams const& key_params, ::std::optional<uint64> const& expires_ms, ::absl::AnyInvocable<void(::webrtc::scoped_refptr<::rtc::RTCCertificate>)&&> callback);
     // NOLINTEND
 
 public:
@@ -78,6 +69,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

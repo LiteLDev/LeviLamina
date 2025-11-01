@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct ShutdownChunkConfig {};
+struct ShutdownChunkConfig {
+};
 
-} // namespace dcsctp
+}

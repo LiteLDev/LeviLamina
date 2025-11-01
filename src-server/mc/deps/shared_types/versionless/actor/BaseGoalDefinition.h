@@ -14,13 +14,13 @@ public:
     // BaseGoalDefinition inner types define
     enum class Flag : int {
         // bitfield representation
-        None              = 0,
-        Move              = 1 << 0,
-        Look              = 1 << 1,
-        Jump              = 1 << 2,
+        None = 0,
+        Move = 1 << 0,
+        Look = 1 << 1,
+        Jump = 1 << 2,
         EnttEnumAsBitmask = Move | Jump,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -45,6 +45,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes
+}

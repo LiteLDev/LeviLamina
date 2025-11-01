@@ -17,16 +17,11 @@ class ShulkerBoxBlockItem : public ::BlockItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 52
-    virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const /*override*/;
+    // vIndex: 53
+    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
 
-    // vIndex: 90
-    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack) const /*override*/;
+    // vIndex: 91
+    virtual ::std::string buildEffectDescriptionName(::ItemStackBase const& stack, bool) const /*override*/;
 
     // vIndex: 33
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
@@ -44,14 +39,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const;
+    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
 
-    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack) const;
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool) const;
 
     MCAPI int $getLevelDataForAuxValue(int auxValue) const;
     // NOLINTEND
@@ -61,4 +51,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -15,9 +15,9 @@ public:
     // GameEventListener inner types define
     enum class DeliveryMode : int {
         Unspecified = 0,
-        ByDistance  = 1,
+        ByDistance = 1,
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -42,4 +42,5 @@ public:
     // NOLINTBEGIN
     MCFOLD ::GameEventListener::DeliveryMode $getDeliveryMode() const;
     // NOLINTEND
+
 };

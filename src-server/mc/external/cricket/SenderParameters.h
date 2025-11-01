@@ -11,9 +11,9 @@ struct SenderParameters : public ::cricket::MediaChannelParameters {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk6eaec3;
+    ::ll::UntypedStorage<4, 4> mUnk6eaec3;
     ::ll::UntypedStorage<8, 32> mUnka5b48c;
-    ::ll::UntypedStorage<1, 1>  mUnkce4355;
+    ::ll::UntypedStorage<1, 1> mUnkce4355;
     // NOLINTEND
 
 public:
@@ -49,6 +49,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

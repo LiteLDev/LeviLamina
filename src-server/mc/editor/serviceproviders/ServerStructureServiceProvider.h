@@ -28,19 +28,13 @@ public:
     virtual ::std::optional<::Editor::EditorStructureTemplate> loadStructure(::std::string const&) = 0;
 
     // vIndex: 2
-    virtual ::std::optional<::std::string> createNewEditorProjectStructure(
-        ::Editor::EditorStructureTemplate const&,
-        ::mce::UUID const&,
-        ::std::string const&
-    ) = 0;
+    virtual ::std::optional<::std::string> createNewEditorProjectStructure(::Editor::EditorStructureTemplate const&, ::mce::UUID const&, ::std::string const&) = 0;
 
     // vIndex: 3
-    virtual ::std::vector<::Editor::EditorStructureDBMetadata>
-    queryDB(::Editor::EditorStructureMetadataQueryParams const&, bool const) = 0;
+    virtual ::std::vector<::Editor::EditorStructureDBMetadata> queryDB(::Editor::EditorStructureMetadataQueryParams const&, bool const) = 0;
 
     // vIndex: 4
-    virtual ::Editor::EditorStructureMetadataDeleteEditResult const
-    editStructureMetadata(::Editor::EditorStructureMetadataEditParams&) = 0;
+    virtual ::Editor::EditorStructureMetadataDeleteEditResult const editStructureMetadata(::Editor::EditorStructureMetadataEditParams&) = 0;
 
     // vIndex: 5
     virtual bool replaceMCStructureFromTemplate(::mce::UUID const&, ::Editor::EditorStructureTemplate const&) = 0;
@@ -72,6 +66,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

@@ -17,6 +17,7 @@ public:
     RenderResolution& operator=(RenderResolution const&);
     RenderResolution(RenderResolution const&);
     RenderResolution();
+
 };
 
-} // namespace webrtc
+}

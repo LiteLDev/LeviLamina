@@ -12,6 +12,18 @@ namespace mce { class UUID; }
 
 class ScriptServerGraphicsModuleFactory : public ::Scripting::GenericModuleBindingFactory {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnkfdad11;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    ScriptServerGraphicsModuleFactory& operator=(ScriptServerGraphicsModuleFactory const&);
+    ScriptServerGraphicsModuleFactory(ScriptServerGraphicsModuleFactory const&);
+    ScriptServerGraphicsModuleFactory();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
@@ -23,4 +35,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::mce::UUID& ModuleUUID();
     // NOLINTEND
+
 };

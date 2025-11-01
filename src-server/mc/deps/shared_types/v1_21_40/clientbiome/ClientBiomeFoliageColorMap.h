@@ -5,11 +5,11 @@
 namespace SharedTypes::v1_21_40 {
 
 enum class ClientBiomeFoliageColorMap : int {
-    Foliage              = 0,
-    Birch                = 1,
-    Evergreen            = 2,
+    Foliage = 0,
+    Birch = 1,
+    Evergreen = 2,
     MangroveSwampFoliage = 3,
-    SwampFoliage         = 4,
+    SwampFoliage = 4,
 };
 
 }

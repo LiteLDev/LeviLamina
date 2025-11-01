@@ -4,6 +4,7 @@
 
 namespace webrtc {
 
-class InbandComfortNoiseExtension {};
+class InbandComfortNoiseExtension {
+};
 
-} // namespace webrtc
+}

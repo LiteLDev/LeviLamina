@@ -4,7 +4,8 @@
 
 namespace ScriptModuleMinecraft {
 
-template <typename T0>
-struct ScriptV130SignalBuilder {};
+template<typename T0>
+struct ScriptV130SignalBuilder {
+};
 
-} // namespace ScriptModuleMinecraft
+}

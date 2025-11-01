@@ -25,52 +25,15 @@ struct TickingSystemWithInfo;
 namespace DefaultMoveSystems {
 // functions
 // NOLINTBEGIN
-MCNAPI void doDefaultMoveSystems(
-    ::StrictEntityContext const&,
-    ::Optional<::OnGroundFlagComponent const>             onGroundFlagComponent,
-    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnowFlagComponent,
-    ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamilyFlagComponent,
-    ::Optional<::MoveInputComponent const>                moveInputComponent,
-    ::AABBShapeComponent const&                           aabbShapeComponent,
-    ::ActorRotationComponent const&                       actorRotationComponent,
-    ::ActorDataFlagComponent const&                       synchedActorDataComponent,
-    ::FallDistanceComponent&                              fallDistanceComponent,
-    ::MobTravelComponent&                                 mobTravelComponent,
-    ::StateVectorComponent&                               stateVectorComponent,
-    ::IConstBlockSource const&                            region
-);
+MCNAPI void doDefaultMoveSystems(::StrictEntityContext const&, ::Optional<::OnGroundFlagComponent const> onGroundFlagComponent, ::Optional<::CanStandOnSnowFlagComponent const> canStandOnSnowFlagComponent, ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamilyFlagComponent, ::Optional<::MoveInputComponent const> moveInputComponent, ::AABBShapeComponent const& aabbShapeComponent, ::ActorRotationComponent const& actorRotationComponent, ::ActorDataFlagComponent const& synchedActorDataComponent, ::FallDistanceComponent& fallDistanceComponent, ::MobTravelComponent& mobTravelComponent, ::StateVectorComponent& stateVectorComponent, ::IConstBlockSource const& region);
 
-MCNAPI void doFlyingPlayerMoveSystems(
-    ::StrictEntityContext const&,
-    ::Optional<::OnGroundFlagComponent const> onGroundFlagComponent,
-    ::AABBShapeComponent const&               aabbShapeComponent,
-    ::ActorRotationComponent const&           actorRotationComponent,
-    ::MobTravelComponent&                     mobTravelComponent,
-    ::StateVectorComponent&                   stateVectorComponent,
-    ::IConstBlockSource const&                region
-);
+MCNAPI void doFlyingPlayerMoveSystems(::StrictEntityContext const&, ::Optional<::OnGroundFlagComponent const> onGroundFlagComponent, ::AABBShapeComponent const& aabbShapeComponent, ::ActorRotationComponent const& actorRotationComponent, ::MobTravelComponent& mobTravelComponent, ::StateVectorComponent& stateVectorComponent, ::IConstBlockSource const& region);
 
 MCNAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCNAPI void horizontalMovement(
-    ::Optional<::OnGroundFlagComponent const> onGroundFlagComponent,
-    ::AABBShapeComponent const&               aabbShapeComponent,
-    ::ActorRotationComponent const&           actorRotationComponent,
-    ::MobTravelComponent&                     mobTravelComponent,
-    ::StateVectorComponent&                   stateVectorComponent,
-    ::IConstBlockSource const&                region
-);
+MCNAPI void horizontalMovement(::Optional<::OnGroundFlagComponent const> onGroundFlagComponent, ::AABBShapeComponent const& aabbShapeComponent, ::ActorRotationComponent const& actorRotationComponent, ::MobTravelComponent& mobTravelComponent, ::StateVectorComponent& stateVectorComponent, ::IConstBlockSource const& region);
 
-MCNAPI void verticalMovement(
-    ::Optional<::CanStandOnSnowFlagComponent const>       canStandOnSnowFlagComponent,
-    ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamilyFlagComponent,
-    ::Optional<::MoveInputComponent const>                moveInputComponent,
-    ::AABBShapeComponent const&                           aabbShapeComponent,
-    ::ActorDataFlagComponent const&                       synchedActorDataComponent,
-    ::FallDistanceComponent&                              fallDistanceComponent,
-    ::StateVectorComponent&                               stateVectorComponent,
-    ::IConstBlockSource const&                            region
-);
+MCNAPI void verticalMovement(::Optional<::CanStandOnSnowFlagComponent const> canStandOnSnowFlagComponent, ::Optional<::HasLightweightFamilyFlagComponent const> hasLightweightFamilyFlagComponent, ::Optional<::MoveInputComponent const> moveInputComponent, ::AABBShapeComponent const& aabbShapeComponent, ::ActorDataFlagComponent const& synchedActorDataComponent, ::FallDistanceComponent& fallDistanceComponent, ::StateVectorComponent& stateVectorComponent, ::IConstBlockSource const& region);
 // NOLINTEND
 
-} // namespace DefaultMoveSystems
+}

@@ -19,8 +19,7 @@ class EnderCrystal : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::function<void(::EnderCrystal&, ::ActorDamageSource const&)>>
-        mCrystalDamagedCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::EnderCrystal&, ::ActorDamageSource const&)>> mCrystalDamagedCallback;
     // NOLINTEND
 
 public:
@@ -55,21 +54,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnderCrystal(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI EnderCrystal(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCAPI static float const& HEAL_DISTANCE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -93,4 +90,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -13,7 +13,7 @@ struct CameraAimAssistPresetFile {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32>  mUnk161ef4;
+    ::ll::UntypedStorage<8, 32> mUnk161ef4;
     ::ll::UntypedStorage<8, 224> mUnkf4f9ce;
     // NOLINTEND
 
@@ -40,6 +40,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_50
+}

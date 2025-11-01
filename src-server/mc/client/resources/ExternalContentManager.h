@@ -2,4 +2,5 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class ExternalContentManager {};
+class ExternalContentManager {
+};

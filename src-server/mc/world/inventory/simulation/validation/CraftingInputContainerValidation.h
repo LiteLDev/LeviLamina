@@ -19,8 +19,7 @@ public:
     virtual int getContainerOffset(::ContainerScreenContext const& screenContext) const /*override*/;
 
     // vIndex: 9
-    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const
-        /*override*/;
+    virtual int getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const /*override*/;
 
     // vIndex: 0
     virtual ~CraftingInputContainerValidation() /*override*/ = default;
@@ -39,4 +38,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

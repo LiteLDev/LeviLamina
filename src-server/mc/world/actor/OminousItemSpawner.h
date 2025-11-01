@@ -20,9 +20,9 @@ class OminousItemSpawner : public ::Actor {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>              mTicksBeforeRemoval;
-    ::ll::TypedStorage<4, 4, int>              mHasTicked;
-    ::ll::TypedStorage<8, 152, ::ItemStack>    mItemToSpawn;
+    ::ll::TypedStorage<4, 4, int> mTicksBeforeRemoval;
+    ::ll::TypedStorage<4, 4, int> mHasTicked;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mItemToSpawn;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mDisplayEntity;
     // NOLINTEND
 
@@ -52,11 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OminousItemSpawner(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI OminousItemSpawner(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCAPI void _clientTick();
 
@@ -70,11 +66,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -94,4 +86,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

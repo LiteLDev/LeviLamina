@@ -4,7 +4,8 @@
 
 namespace PackCommand {
 
-template <typename T0>
-struct PackCommand {};
+template<typename T0>
+struct PackCommand {
+};
 
-} // namespace PackCommand
+}

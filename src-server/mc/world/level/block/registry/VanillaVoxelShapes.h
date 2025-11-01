@@ -13,4 +13,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void addVoxelShapesToBlocks(::Experiments const& experiments);
     // NOLINTEND
+
 };

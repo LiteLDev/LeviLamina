@@ -10,14 +10,14 @@ class WorkDefinition : public ::BaseGoalDefinition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                        mMinSoundDelay;
-    ::ll::TypedStorage<4, 4, int>                        mMaxSoundDelay;
-    ::ll::TypedStorage<4, 4, int>                        mGoalCooldown;
-    ::ll::TypedStorage<4, 4, int>                        mActiveTime;
-    ::ll::TypedStorage<1, 1, bool>                       mCanWorkInRain;
-    ::ll::TypedStorage<4, 4, int>                        mWorkInRainTolerance;
+    ::ll::TypedStorage<4, 4, int> mMinSoundDelay;
+    ::ll::TypedStorage<4, 4, int> mMaxSoundDelay;
+    ::ll::TypedStorage<4, 4, int> mGoalCooldown;
+    ::ll::TypedStorage<4, 4, int> mActiveTime;
+    ::ll::TypedStorage<1, 1, bool> mCanWorkInRain;
+    ::ll::TypedStorage<4, 4, int> mWorkInRainTolerance;
     ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnArrival;
-    ::ll::TypedStorage<4, 4, float>                      mSpeedMod;
+    ::ll::TypedStorage<4, 4, float> mSpeedMod;
     // NOLINTEND
 
 public:
@@ -43,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

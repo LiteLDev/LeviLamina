@@ -16,6 +16,7 @@ public:
     ModuleInitArgs& operator=(ModuleInitArgs const&);
     ModuleInitArgs(ModuleInitArgs const&);
     ModuleInitArgs();
+
 };
 
-} // namespace ECSModule
+}

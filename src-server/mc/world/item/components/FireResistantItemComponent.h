@@ -3,15 +3,18 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/item/components/ItemComponent.h"
+#include "mc/world/item/components/NetworkedItemComponent.h"
+#include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class ComponentItem;
 class HashedString;
+class SemVersion;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
-class FireResistantItemComponent : public ::ItemComponent {
+class FireResistantItemComponent : public ::NetworkedItemComponent<::FireResistantItemComponent> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -31,6 +34,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
+
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
@@ -45,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

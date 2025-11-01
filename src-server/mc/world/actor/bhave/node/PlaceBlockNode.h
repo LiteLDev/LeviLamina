@@ -29,7 +29,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
+    virtual ::BehaviorStatus tick(::Actor&) /*override*/;
 
     // vIndex: 0
     virtual ~PlaceBlockNode() /*override*/ = default;
@@ -38,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
+
     // NOLINTEND
 
 public:
@@ -46,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

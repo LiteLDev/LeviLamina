@@ -5,7 +5,7 @@
 
 namespace Core {
 
-template <class DerivedType, class LockType>
+template<class DerivedType, class LockType>
 class Observer {
 public:
     using SubjectType = ::Core::Subject<DerivedType, LockType>;
@@ -40,4 +40,4 @@ Subject<ObserverType, LockType>::~Subject() {
     }
 }
 
-} // namespace Core
+}

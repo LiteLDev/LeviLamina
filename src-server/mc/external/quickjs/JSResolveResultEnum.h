@@ -4,8 +4,8 @@
 
 enum class JSResolveResultEnum : int {
     Exception = -1,
-    Found     = 0,
-    NotFound  = 1,
-    Circular  = 2,
+    Found = 0,
+    NotFound = 1,
+    Circular = 2,
     Ambiguous = 3,
 };

@@ -16,6 +16,7 @@ public:
     RtpSendRates& operator=(RtpSendRates const&);
     RtpSendRates(RtpSendRates const&);
     RtpSendRates();
+
 };
 
-} // namespace webrtc
+}

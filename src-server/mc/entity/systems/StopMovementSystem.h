@@ -13,4 +13,4 @@ namespace StopMovementSystem {
 MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
-} // namespace StopMovementSystem
+}

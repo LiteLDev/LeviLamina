@@ -13,62 +13,58 @@ public:
     // clang-format off
     class ValidationError;
     // clang-format on
-
+    
     // GameRule inner types define
     enum class Type : uchar {
         Invalid = 0,
-        Bool    = 1,
-        Int     = 2,
-        Float   = 3,
+        Bool = 1,
+        Int = 2,
+        Float = 3,
     };
-
+    
     using Value = ::std::variant<::std::monostate, bool, int, float>;
-
+    
     class ValidationError {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>                          mSuccess;
-        ::ll::TypedStorage<8, 32, ::std::string>                mErrorDescription;
+        ::ll::TypedStorage<1, 1, bool> mSuccess;
+        ::ll::TypedStorage<8, 32, ::std::string> mErrorDescription;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mErrorParameters;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~ValidationError();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     using TagDataNotFoundCallback = ::std::function<void(::GameRule&, ::BaseGameVersion const&)>;
-
-    using ValidateValueCallback =
-        ::std::function<bool(::std::variant<::std::monostate, bool, int, float> const&, ::GameRule::ValidationError*)>;
-
+    
+    using ValidateValueCallback = ::std::function<bool(::std::variant<::std::monostate, bool, int, float> const&, ::GameRule::ValidationError*)>;
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                                          mShouldSave;
-    ::ll::TypedStorage<1, 1, ::GameRule::Type>                                              mType;
-    ::ll::TypedStorage<4, 8, ::std::variant<::std::monostate, bool, int, float>>            mValue;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                mName;
-    ::ll::TypedStorage<1, 1, bool>                                                          mAllowUseInCommand;
-    ::ll::TypedStorage<1, 1, bool>                                                          mAllowUseInScripting;
-    ::ll::TypedStorage<1, 1, bool>                                                          mIsDefaultSet;
-    ::ll::TypedStorage<1, 1, bool>                                                          mRequiresCheats;
-    ::ll::TypedStorage<1, 1, bool>                                                          mCanBeModifiedByPlayer;
+    ::ll::TypedStorage<1, 1, bool> mShouldSave;
+    ::ll::TypedStorage<1, 1, ::GameRule::Type> mType;
+    ::ll::TypedStorage<4, 8, ::std::variant<::std::monostate, bool, int, float>> mValue;
+    ::ll::TypedStorage<8, 32, ::std::string> mName;
+    ::ll::TypedStorage<1, 1, bool> mAllowUseInCommand;
+    ::ll::TypedStorage<1, 1, bool> mAllowUseInScripting;
+    ::ll::TypedStorage<1, 1, bool> mIsDefaultSet;
+    ::ll::TypedStorage<1, 1, bool> mRequiresCheats;
+    ::ll::TypedStorage<1, 1, bool> mCanBeModifiedByPlayer;
     ::ll::TypedStorage<8, 64, ::std::function<void(::GameRule&, ::BaseGameVersion const&)>> mTagNotFoundCallback;
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::std::function<bool(::std::variant<::std::monostate, bool, int, float> const&, ::GameRule::ValidationError*)>>
-        mValidateValueCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<bool(::std::variant<::std::monostate, bool, int, float> const&, ::GameRule::ValidationError*)>> mValidateValueCallback;
     // NOLINTEND
 
 public:
@@ -106,10 +102,7 @@ public:
 
     MCAPI ::GameRule& setTagDataNotFoundCallback(::std::function<void(::GameRule&, ::BaseGameVersion const&)> cb);
 
-    MCAPI ::GameRule& setValidateValueCallback(
-        ::std::function<bool(::std::variant<::std::monostate, bool, int, float> const&, ::GameRule::ValidationError*)>
-            cb
-    );
+    MCAPI ::GameRule& setValidateValueCallback(::std::function<bool(::std::variant<::std::monostate, bool, int, float> const&, ::GameRule::ValidationError*)> cb);
 
     MCAPI ~GameRule();
     // NOLINTEND
@@ -129,4 +122,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

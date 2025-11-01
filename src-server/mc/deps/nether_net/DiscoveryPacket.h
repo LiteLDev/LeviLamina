@@ -20,6 +20,7 @@ public:
     DiscoveryPacket& operator=(DiscoveryPacket const&);
     DiscoveryPacket(DiscoveryPacket const&);
     DiscoveryPacket();
+
 };
 
-} // namespace NetherNet
+}

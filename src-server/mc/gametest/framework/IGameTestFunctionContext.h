@@ -11,6 +11,7 @@ public:
     // vIndex: 0
     virtual ~IGameTestFunctionContext() = default;
     // NOLINTEND
+
 };
 
-} // namespace gametest
+}

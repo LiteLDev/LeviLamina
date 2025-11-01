@@ -9,7 +9,9 @@
 // clang-format off
 namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
+namespace cereal { struct SchemaWriter; }
 namespace cereal::internal { struct LoadState; }
+namespace cereal::internal { struct SaveState; }
 // clang-format on
 
 namespace cereal::internal {
@@ -19,16 +21,13 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 6
-    virtual void doLoad(
-        ::cereal::SchemaReader&,
-        ::entt::meta_any&,
-        ::entt::meta_any const&,
-        ::cereal::internal::LoadState const& state
-    ) const /*override*/;
+    virtual void doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::internal::LoadState const& state) const /*override*/;
+
+    // vIndex: 7
+    virtual void doSave(::cereal::SchemaWriter&, ::entt::meta_any const& any, ::cereal::internal::SaveState const& state) const /*override*/;
 
     // vIndex: 8
-    virtual ::cereal::SchemaDescription
-    makeDescription(::entt::meta_ctx const&, ::cereal::internal::BasicSchema::DescriptionMode) const /*override*/;
+    virtual ::cereal::SchemaDescription makeDescription(::entt::meta_ctx const&, ::cereal::internal::BasicSchema::DescriptionMode) const /*override*/;
 
     // vIndex: 0
     virtual ~UndefinedSchema() /*override*/ = default;
@@ -37,15 +36,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $doLoad(
-        ::cereal::SchemaReader&,
-        ::entt::meta_any&,
-        ::entt::meta_any const&,
-        ::cereal::internal::LoadState const& state
-    ) const;
+    MCNAPI void $doLoad(::cereal::SchemaReader&, ::entt::meta_any&, ::entt::meta_any const&, ::cereal::internal::LoadState const& state) const;
 
-    MCNAPI ::cereal::SchemaDescription
-    $makeDescription(::entt::meta_ctx const&, ::cereal::internal::BasicSchema::DescriptionMode) const;
+    MCNAPI void $doSave(::cereal::SchemaWriter&, ::entt::meta_any const& any, ::cereal::internal::SaveState const& state) const;
+
+    MCNAPI ::cereal::SchemaDescription $makeDescription(::entt::meta_ctx const&, ::cereal::internal::BasicSchema::DescriptionMode) const;
     // NOLINTEND
 
 public:
@@ -53,6 +48,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cereal::internal
+}

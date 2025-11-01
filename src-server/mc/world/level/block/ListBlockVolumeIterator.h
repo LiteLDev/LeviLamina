@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/level/block/BaseBlockLocationIterator.h"
 
 // auto generated forward declare list
@@ -16,10 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ListBlockVolume const&> mListBlockVolume;
-    ::ll::TypedStorage<8, 8, ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::BlockPos>>>>
-        mCurrentIterator;
-    ::ll::TypedStorage<8, 8, ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::BlockPos>>>>
-                                     mEndIterator;
+    ::ll::TypedStorage<8, 8, ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::BlockPos>>>> mCurrentIterator;
+    ::ll::TypedStorage<8, 8, ::std::_List_const_iterator<::std::_List_val<::std::_List_simple_types<::BlockPos>>>> mEndIterator;
     ::ll::TypedStorage<8, 8, uint64> mChangeCount;
     // NOLINTEND
 
@@ -63,4 +61,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

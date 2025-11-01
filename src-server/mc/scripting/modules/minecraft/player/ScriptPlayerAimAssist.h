@@ -39,15 +39,7 @@ public:
 
     MCNAPI ::ScriptModuleMinecraft::ScriptPlayerAimAssist& operator=(::ScriptModuleMinecraft::ScriptPlayerAimAssist&&);
 
-    MCNAPI ::Scripting::Result<
-        void,
-        ::ScriptModuleMinecraft::ScriptNamespaceNameError,
-        ::Scripting::ArgumentOutOfBoundsError,
-        ::Scripting::InvalidArgumentError,
-        ::Scripting::EngineError,
-        ::ScriptModuleMinecraft::ScriptInvalidActorError,
-        ::Scripting::Error>
-    setAimAssistSettings(::std::optional<::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings> settings);
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::InvalidArgumentError, ::Scripting::EngineError, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::Error> setAimAssistSettings(::std::optional<::ScriptModuleMinecraft::ScriptPlayerAimAssistSettings> settings);
     // NOLINTEND
 
 public:
@@ -55,6 +47,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

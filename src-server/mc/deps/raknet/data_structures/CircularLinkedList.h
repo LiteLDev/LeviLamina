@@ -4,7 +4,8 @@
 
 namespace DataStructures {
 
-template <typename T0>
-class CircularLinkedList {};
+template<typename T0>
+class CircularLinkedList {
+};
 
-} // namespace DataStructures
+}

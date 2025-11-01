@@ -15,40 +15,41 @@ public:
     // clang-format off
     struct Rule;
     // clang-format on
-
+    
     // BlockCulling inner types define
     struct Rule {
     public:
         // Rule inner types define
         enum class Condition : int {
-            NotDefined           = 0,
-            SameCullingLayer     = 1,
-            SameBlock            = 2,
+            NotDefined = 0,
+            SameCullingLayer = 1,
+            SameBlock = 2,
             SameBlockPermutation = 3,
         };
-
+        
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 48> mUnk8bb813;
-        ::ll::UntypedStorage<4, 8>  mUnk54eeb9;
-        ::ll::UntypedStorage<1, 1>  mUnke10792;
-        ::ll::UntypedStorage<2, 2>  mUnk587179;
+        ::ll::UntypedStorage<4, 8> mUnk54eeb9;
+        ::ll::UntypedStorage<1, 1> mUnke10792;
+        ::ll::UntypedStorage<2, 2> mUnk587179;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Rule& operator=(Rule const&);
         Rule(Rule const&);
         Rule();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::SharedTypes::v1_21_80::BlockCulling::Rule& operator=(::SharedTypes::v1_21_80::BlockCulling::Rule&&);
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -67,6 +68,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_80
+}

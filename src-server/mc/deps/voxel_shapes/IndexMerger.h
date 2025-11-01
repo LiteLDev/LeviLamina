@@ -24,12 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI IndexMerger(
-        ::Bedrock::small_vector<float, 12> const& first,
-        ::Bedrock::small_vector<float, 12> const& second,
-        bool                                      canTrimExcessOfFirst,
-        bool                                      canTrimExcessOfSecond
-    );
+    MCNAPI IndexMerger(::Bedrock::small_vector<float, 12> const& first, ::Bedrock::small_vector<float, 12> const& second, bool canTrimExcessOfFirst, bool canTrimExcessOfSecond);
 
     MCNAPI ~IndexMerger();
     // NOLINTEND
@@ -43,12 +38,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Bedrock::small_vector<float, 12> const& first,
-        ::Bedrock::small_vector<float, 12> const& second,
-        bool                                      canTrimExcessOfFirst,
-        bool                                      canTrimExcessOfSecond
-    );
+    MCNAPI void* $ctor(::Bedrock::small_vector<float, 12> const& first, ::Bedrock::small_vector<float, 12> const& second, bool canTrimExcessOfFirst, bool canTrimExcessOfSecond);
     // NOLINTEND
 
 public:
@@ -56,6 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace VoxelShapes
+}

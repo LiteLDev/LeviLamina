@@ -20,11 +20,11 @@ class DtlsSrtpTransport : public ::webrtc::SrtpTransport {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkd1f353;
-    ::ll::UntypedStorage<8, 8>  mUnk68dfc5;
+    ::ll::UntypedStorage<8, 8> mUnkd1f353;
+    ::ll::UntypedStorage<8, 8> mUnk68dfc5;
     ::ll::UntypedStorage<8, 32> mUnk3b1eb3;
     ::ll::UntypedStorage<8, 32> mUnkca8629;
-    ::ll::UntypedStorage<1, 1>  mUnkdd5b6e;
+    ::ll::UntypedStorage<1, 1> mUnkdd5b6e;
     ::ll::UntypedStorage<8, 64> mUnk644414;
     // NOLINTEND
 
@@ -54,12 +54,7 @@ public:
 
     MCNAPI DtlsSrtpTransport(bool rtcp_mux_enabled, ::webrtc::FieldTrialsView const& field_trials);
 
-    MCNAPI bool ExtractParams(
-        ::cricket::DtlsTransportInternal* dtls_transport,
-        int*                              selected_crypto_suite,
-        ::rtc::BufferT<uchar, 1>*         send_key,
-        ::rtc::BufferT<uchar, 1>*         recv_key
-    );
+    MCNAPI bool ExtractParams(::cricket::DtlsTransportInternal* dtls_transport, int* selected_crypto_suite, ::rtc::BufferT<uchar, 1>* send_key, ::rtc::BufferT<uchar, 1>* recv_key);
 
     MCNAPI bool IsDtlsActive();
 
@@ -71,15 +66,9 @@ public:
 
     MCNAPI void OnDtlsState(::cricket::DtlsTransportInternal* transport, ::webrtc::DtlsTransportState state);
 
-    MCNAPI void SetDtlsTransport(
-        ::cricket::DtlsTransportInternal*  new_dtls_transport,
-        ::cricket::DtlsTransportInternal** old_dtls_transport
-    );
+    MCNAPI void SetDtlsTransport(::cricket::DtlsTransportInternal* new_dtls_transport, ::cricket::DtlsTransportInternal** old_dtls_transport);
 
-    MCNAPI void SetDtlsTransports(
-        ::cricket::DtlsTransportInternal* rtp_dtls_transport,
-        ::cricket::DtlsTransportInternal* rtcp_dtls_transport
-    );
+    MCNAPI void SetDtlsTransports(::cricket::DtlsTransportInternal* rtp_dtls_transport, ::cricket::DtlsTransportInternal* rtcp_dtls_transport);
 
     MCNAPI void SetOnDtlsStateChange(::std::function<void()> callback);
 
@@ -115,6 +104,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

@@ -21,10 +21,7 @@ public:
     virtual ~ISubscriptionApi() = default;
 
     // vIndex: 1
-    virtual void getSubscriptionDetails(
-        ::Realms::RealmId,
-        ::std::function<void(::Realms::GenericStatus, ::Realms::SubscriptionInfo)>
-    ) = 0;
+    virtual void getSubscriptionDetails(::Realms::RealmId, ::std::function<void(::Realms::GenericStatus, ::Realms::SubscriptionInfo)>) = 0;
     // NOLINTEND
 
 public:
@@ -32,6 +29,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Realms
+}

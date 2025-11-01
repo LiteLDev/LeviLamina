@@ -14,13 +14,13 @@ class BuoyancyComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                             mBaseBuoyancy;
-    ::ll::TypedStorage<4, 4, float>                             mDragDownOnRemoval;
-    ::ll::TypedStorage<4, 4, float>                             mBigWaveProbability;
-    ::ll::TypedStorage<4, 4, float>                             mBigWaveSpeedMultiplier;
-    ::ll::TypedStorage<1, 1, bool>                              mSimulateWaves;
-    ::ll::TypedStorage<1, 1, bool>                              mApplyGravity;
-    ::ll::TypedStorage<8, 8, double>                            mTimer;
+    ::ll::TypedStorage<4, 4, float> mBaseBuoyancy;
+    ::ll::TypedStorage<4, 4, float> mDragDownOnRemoval;
+    ::ll::TypedStorage<4, 4, float> mBigWaveProbability;
+    ::ll::TypedStorage<4, 4, float> mBigWaveSpeedMultiplier;
+    ::ll::TypedStorage<1, 1, bool> mSimulateWaves;
+    ::ll::TypedStorage<1, 1, bool> mApplyGravity;
+    ::ll::TypedStorage<8, 8, double> mTimer;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mLiquidBlocks;
     // NOLINTEND
 
@@ -31,7 +31,7 @@ public:
 
     MCNAPI void loadData(::std::string const& data, ::SemVersion const& engineVersion);
 
-    MCNAPI bool
-    needToResurface(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
+    MCNAPI bool needToResurface(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
     // NOLINTEND
+
 };

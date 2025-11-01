@@ -48,4 +48,5 @@ public:
 
     MCFOLD ::std::string $validate() const;
     // NOLINTEND
+
 };

@@ -4,7 +4,8 @@
 
 namespace Scripting {
 
-template <typename T0>
-class Future {};
+template<typename T0>
+class Future {
+};
 
-} // namespace Scripting
+}

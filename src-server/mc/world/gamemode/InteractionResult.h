@@ -8,12 +8,13 @@ public:
     enum class Result : int {
         Fail    = 0,
         Success = 1,
-        Swing   = 2,
+        Swing = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     Result mResult;
     // NOLINTEND
+
 };

@@ -12,32 +12,45 @@ namespace cereal {
 
 class Constraint {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 8> mUnk9fd194;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    Constraint& operator=(Constraint const&);
+    Constraint(Constraint const&);
+    Constraint();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 0
-    virtual void doPreValidate(::entt::meta_any const&, ::cereal::SerializerContext&) const;
-
-    // vIndex: 1
     virtual void doValidate(::entt::meta_any const&, ::cereal::SerializerContext&) const = 0;
 
-    // vIndex: 2
+    // vIndex: 1
     virtual ~Constraint() = default;
+
+    // vIndex: 2
+    virtual ::cereal::Constraint const* subConstraint(uint64) const;
 
     // vIndex: 3
     virtual ::cereal::internal::ConstraintDescription description() const = 0;
     // NOLINTEND
 
 public:
-    // member functions
+    // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void preValidate(::entt::meta_any const& any, ::cereal::SerializerContext& context) const;
+    MCNAPI ::cereal::Constraint const* $subConstraint(uint64) const;
     // NOLINTEND
 
 public:
-    // virtual function thunks
+    // vftables
     // NOLINTBEGIN
-    MCNAPI void $doPreValidate(::entt::meta_any const&, ::cereal::SerializerContext&) const;
+    MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cereal
+}

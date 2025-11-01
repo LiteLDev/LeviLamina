@@ -9,7 +9,7 @@ class HoeItem : public ::DiggerItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 54
+    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
     // vIndex: 0
@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

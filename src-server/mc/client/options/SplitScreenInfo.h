@@ -17,4 +17,5 @@ public:
     SplitScreenInfo& operator=(SplitScreenInfo const&);
     SplitScreenInfo(SplitScreenInfo const&);
     SplitScreenInfo();
+
 };

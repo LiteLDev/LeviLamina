@@ -4,6 +4,7 @@
 
 namespace VanillaSystemCategories {
 
-struct ActorMove {};
+struct ActorMove {
+};
 
-} // namespace VanillaSystemCategories
+}

@@ -20,15 +20,15 @@ public:
     // PlayerLocationPacket inner types define
     enum class Type : int {
         Coordinates = 0,
-        Hide        = 1,
+        Hide = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::PlayerLocationPacket::Type> mType;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>              mId;
-    ::ll::TypedStorage<4, 12, ::Vec3>                      mPos;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mId;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
     // NOLINTEND
 
 public:
@@ -40,10 +40,10 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -73,4 +73,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

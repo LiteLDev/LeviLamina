@@ -39,4 +39,5 @@ public:
 
     MCAPI void* $ctor(int min, int max);
     // NOLINTEND
+
 };

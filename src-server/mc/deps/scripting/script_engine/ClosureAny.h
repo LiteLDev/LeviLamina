@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnke4d77a;
-    ::ll::UntypedStorage<8, 8>  mUnk1d806b;
+    ::ll::UntypedStorage<8, 8> mUnk1d806b;
     // NOLINTEND
 
 public:
@@ -38,12 +38,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ClosureAny(::Scripting::ClosureAny const& rhs);
 
-    MCNAPI ::Scripting::ResultAny _callGeneric(
-        ::entt::meta_any*                       args,
-        uint                                    argc,
-        ::entt::meta_type const&                expectedReturnType,
-        ::std::optional<::Scripting::Privilege> privilege
-    ) const;
+    MCNAPI ::Scripting::ResultAny _callGeneric(::entt::meta_any* args, uint argc, ::entt::meta_type const& expectedReturnType, ::std::optional<::Scripting::Privilege> privilege) const;
 
     MCNAPI bool compareTo(::Scripting::ClosureAny const& rhs) const;
 
@@ -67,6 +62,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

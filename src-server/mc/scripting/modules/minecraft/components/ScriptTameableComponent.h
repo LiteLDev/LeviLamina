@@ -19,8 +19,7 @@ namespace Scripting { struct ClassBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptTameableComponent
-: public ::ScriptModuleMinecraft::ECSScriptActorComponent<::TameableComponent, ::TameableDefinition> {
+class ScriptTameableComponent : public ::ScriptModuleMinecraft::ECSScriptActorComponent<::TameableComponent, ::TameableDefinition> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -33,9 +32,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Scripting::Result_deprecated<float> getProbability() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
-    getTameItems() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>> getTameItems() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getTameItems_010() const;
 
@@ -45,9 +42,7 @@ public:
 
     MCNAPI ::Scripting::Result_deprecated<bool> tame_010() const;
 
-    MCNAPI ::Scripting::Result_deprecated<
-        ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
-    tamedToPlayer() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>> tamedToPlayer() const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> tamedToPlayerId() const;
     // NOLINTEND
@@ -55,8 +50,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding
-    bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
+    MCNAPI static ::Scripting::ClassBinding bind(::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder);
     // NOLINTEND
 
 public:
@@ -70,6 +64,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

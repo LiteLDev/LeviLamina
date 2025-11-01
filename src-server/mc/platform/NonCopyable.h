@@ -4,6 +4,7 @@
 
 namespace Bedrock {
 
-class NonCopyable {};
+class NonCopyable {
+};
 
-} // namespace Bedrock
+}

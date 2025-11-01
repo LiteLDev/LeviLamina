@@ -22,14 +22,14 @@ struct BlockRedstoneProducerComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, char>                                  mPower;
-    ::ll::TypedStorage<1, 1, uchar>                                 mStronglyPoweredFace;
+    ::ll::TypedStorage<1, 1, char> mPower;
+    ::ll::TypedStorage<1, 1, uchar> mStronglyPoweredFace;
     ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::Facing::Name, 6>> mConnectedFaces;
-    ::ll::TypedStorage<1, 1, bool>                                  mIsTransformRelative;
-    ::ll::TypedStorage<1, 1, bool>                                  mAllowPowerUp;
-    ::ll::TypedStorage<1, 1, bool>                                  mAllowPowerDown;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnPlaceEventSubscription;
-    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>      mOnStateChangeEvenSubscription;
+    ::ll::TypedStorage<1, 1, bool> mIsTransformRelative;
+    ::ll::TypedStorage<1, 1, bool> mAllowPowerUp;
+    ::ll::TypedStorage<1, 1, bool> mAllowPowerDown;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnPlaceEventSubscription;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mOnStateChangeEvenSubscription;
     // NOLINTEND
 
 public:
@@ -39,10 +39,7 @@ public:
 
     MCAPI void _onStateChange(::BlockEvents::BlockStateChangeEvent const& ev) const;
 
-    MCAPI void finalize(
-        ::BlockEvents::BlockEventManager&     eventManager,
-        ::BlockTransformationComponent const* transformationComponent
-    );
+    MCAPI void finalize(::BlockEvents::BlockEventManager& eventManager, ::BlockTransformationComponent const* transformationComponent);
     // NOLINTEND
 
 public:
@@ -52,4 +49,5 @@ public:
 
     MCAPI static void setupRedstoneComponent(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
+
 };

@@ -19,16 +19,11 @@ class SetPreviousPositionSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
-    _doSetPreviousPositionSystem(::StrictEntityContext const&, ::StateVectorComponent& stateVectorComponent);
+    MCNAPI static void _doSetPreviousPositionSystem(::StrictEntityContext const&, ::StateVectorComponent& stateVectorComponent);
 
-    MCNAPI static void _tickSetPreviousPositionSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::ActorMovementTickNeededComponent, ::NeedSetPreviousPositionFlagComponent>,
-            ::StateVectorComponent> view
-    );
+    MCNAPI static void _tickSetPreviousPositionSystem(::ViewT<::StrictEntityContext, ::Include<::ActorMovementTickNeededComponent, ::NeedSetPreviousPositionFlagComponent>, ::StateVectorComponent> view);
 
     MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
+
 };

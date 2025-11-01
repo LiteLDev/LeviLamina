@@ -11,8 +11,9 @@ struct UpdatePlayerGameTypePacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::GameType>        mPlayerGameType;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>   mTargetPlayer;
+    ::ll::TypedStorage<4, 4, ::GameType> mPlayerGameType;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mTargetPlayer;
     ::ll::TypedStorage<8, 8, ::PlayerInputTick> mTick;
     // NOLINTEND
+
 };

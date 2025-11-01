@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/editor/ContiguousSelectionType.h"
+#include "mc/common/editor/ContiguousSelectionType.h"
 #include "mc/legacy/facing/Name.h"
 
 // auto generated forward declare list
@@ -46,53 +46,22 @@ public:
     virtual bool isAreaLoaded(::AABB const&) const = 0;
 
     // vIndex: 6
-    virtual ::Editor::RelativeVolumeListBlockVolume trimVolumeToFitContents(
-        ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const,
-        bool,
-        bool,
-        bool,
-        ::Editor::BlockMask::BlockMaskList const&
-    ) = 0;
+    virtual ::Editor::RelativeVolumeListBlockVolume trimVolumeToFitContents(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const, bool, bool, bool, ::Editor::BlockMask::BlockMaskList const&) = 0;
 
     // vIndex: 7
-    virtual ::Editor::RelativeVolumeListBlockVolume findObscuredBlocksWithinVolume(
-        ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const
-    ) = 0;
+    virtual ::Editor::RelativeVolumeListBlockVolume findObscuredBlocksWithinVolume(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const) = 0;
 
     // vIndex: 8
-    virtual ::Editor::RelativeVolumeListBlockVolume shrinkWrapVolume(
-        ::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const
-    ) = 0;
+    virtual ::Editor::RelativeVolumeListBlockVolume shrinkWrapVolume(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*> const) = 0;
 
     // vIndex: 9
-    virtual bool isLocationInsideDimensionBounds(
-        ::std::variant<
-            ::BlockVolumeBase const*,
-            ::Editor::RelativeVolumeListBlockVolume const*,
-            ::Vec3 const*,
-            ::BoundingBox const*,
-            ::BlockPos const*> const
-    ) = 0;
+    virtual bool isLocationInsideDimensionBounds(::std::variant<::BlockVolumeBase const*, ::Editor::RelativeVolumeListBlockVolume const*, ::Vec3 const*, ::BoundingBox const*, ::BlockPos const*> const) = 0;
 
     // vIndex: 10
-    virtual ::CompoundBlockVolume getContiguousSelection(
-        int const,
-        ::Facing::Name const&,
-        ::Vec3 const&,
-        bool const,
-        int const,
-        bool const,
-        ::Editor::BlockUtils::ContiguousSelectionType const&,
-        ::std::vector<::std::string> const&
-    ) const = 0;
+    virtual ::CompoundBlockVolume getContiguousSelection(int const, ::Facing::Name const&, ::Vec3 const&, bool const, int const, bool const, ::Editor::BlockUtils::ContiguousSelectionType const&, ::std::vector<::std::string> const&) const = 0;
 
     // vIndex: 11
-    virtual bool areBlocksContiguous(
-        ::Editor::BlockUtils::ContiguousSelectionType const&,
-        ::Block const&,
-        ::Block const&,
-        ::std::vector<::std::string> const&
-    ) const = 0;
+    virtual bool areBlocksContiguous(::Editor::BlockUtils::ContiguousSelectionType const&, ::Block const&, ::Block const&, ::std::vector<::std::string> const&) const = 0;
 
     // vIndex: 12
     virtual ::Vec3 getDeltaFromDirection(::Facing::Name const&) const = 0;
@@ -107,8 +76,7 @@ public:
     virtual ::BoundingBox getDimensionLocationBoundingBox() const = 0;
 
     // vIndex: 16
-    virtual ::AABB
-    getBoundForContiguousSelection(::Vec3 const&, ::Facing::Name const&, int const, bool const) const = 0;
+    virtual ::AABB getBoundForContiguousSelection(::Vec3 const&, ::Facing::Name const&, int const, bool const) const = 0;
 
     // vIndex: 17
     virtual bool isBlockExposedInDirection(::Dimension const&, ::Vec3 const&, ::Facing::Name const&) const = 0;
@@ -128,6 +96,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Editor::BlockUtils
+}

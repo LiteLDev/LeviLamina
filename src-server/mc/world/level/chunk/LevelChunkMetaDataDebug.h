@@ -15,7 +15,7 @@ struct LevelChunkMetaDataDebug : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::LevelChunk>>                   mActiveLevelChunk;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::LevelChunk>> mActiveLevelChunk;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::LevelChunkMetaDataDictionary>> mLevelChunkMetaDataDictionary;
     // NOLINTEND
 
@@ -25,4 +25,5 @@ public:
     // vIndex: 0
     virtual ~LevelChunkMetaDataDebug() /*override*/ = default;
     // NOLINTEND
+
 };

@@ -19,8 +19,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual bool isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const&) const
-        /*override*/;
+    virtual bool isSpawnPositionOk(::BlockSource& region, ::BlockPos pos, ::br::spawn::EntityType const&) const /*override*/;
 
     // vIndex: 0
     virtual ~InWater() /*override*/ = default;
@@ -37,6 +36,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace br::spawn
+}

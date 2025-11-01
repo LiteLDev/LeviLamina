@@ -14,9 +14,8 @@ class ScriptPackPermissions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unordered_map<::std::string, ::Json::Value>>>
-                                                                        mModulePermissions;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>             mAllowedModules;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::unordered_map<::std::string, ::Json::Value>>> mModulePermissions;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mAllowedModules;
     ::ll::TypedStorage<1, 2, ::std::optional<::CommandPermissionLevel>> mCommandsPermissionLevel;
     // NOLINTEND
 
@@ -25,4 +24,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string const& sWildCardModuleName();
     // NOLINTEND
+
 };

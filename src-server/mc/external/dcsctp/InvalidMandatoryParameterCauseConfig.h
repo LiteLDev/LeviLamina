@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct InvalidMandatoryParameterCauseConfig {};
+struct InvalidMandatoryParameterCauseConfig {
+};
 
-} // namespace dcsctp
+}

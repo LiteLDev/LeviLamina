@@ -23,21 +23,16 @@ class HoneyBlock : public ::BlockType {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 5
-    virtual ::AABB getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const /*override*/;
+    virtual ::AABB getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const /*override*/;
 
-    // vIndex: 134
+    // vIndex: 133
     virtual void onStandOn(::EntityContext& entity, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 140
+    // vIndex: 139
     virtual int getExtraRenderLayers() const /*override*/;
 
     // vIndex: 11
@@ -64,12 +59,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCAPI ::AABB $getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
+    MCAPI ::AABB $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
     MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
@@ -83,4 +73,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

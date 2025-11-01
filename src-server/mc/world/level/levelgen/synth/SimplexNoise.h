@@ -15,7 +15,7 @@ class SimplexNoise {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::Vec3>     mOrigin;
+    ::ll::TypedStorage<4, 12, ::Vec3> mOrigin;
     ::ll::TypedStorage<4, 2048, int[512]> mNoiseMap;
     // NOLINTEND
 
@@ -38,4 +38,5 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::IRandom& random, bool parityInitialization);
     // NOLINTEND
+
 };

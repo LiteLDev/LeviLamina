@@ -4,6 +4,6 @@
 
 enum class ForceBlockNetworkIdsAreHashes : uchar {
     UseDefault = 0,
-    ForceOff   = 1,
-    ForceOn    = 2,
+    ForceOff = 1,
+    ForceOn = 2,
 };

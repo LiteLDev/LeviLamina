@@ -8,7 +8,6 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
-class ActorOwnerComponent;
 class BlockSource;
 class EntityRegistry;
 class LevelChunk;
@@ -17,6 +16,17 @@ struct Tick;
 // clang-format on
 
 class LevelChunkTickingSystem : public ::ITickingSystem {
+public:
+    // LevelChunkTickingSystem inner types define
+    using LevelChunks = ::std::vector<::std::shared_ptr<::LevelChunk>>;
+    
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::LevelChunk>>> mScratchLevelChunksToTick;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::LevelChunk>>> mScratchLevelChunksBlockEntitiesToTick;
+    // NOLINTEND
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -28,24 +38,15 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _tickLevelChunksAroundActor(::Actor& actor, ::BlockSource& region, ::LoadedChunksComponent& loadedChunksComponent);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _determineLevelChunksToTick(
-        ::Actor const&                                  actor,
-        ::BlockSource&                                  region,
-        ::LoadedChunksComponent&                        loadedChunksComponent,
-        ::std::vector<::std::shared_ptr<::LevelChunk>>& levelChunksToTick,
-        ::std::vector<::std::shared_ptr<::LevelChunk>>& levelChunksBlockEntitiesToTick,
-        ::Tick const&                                   currentTick
-    );
-
-    MCNAPI static void
-    _tickLevelChunksAroundActor(::Actor& actor, ::BlockSource& region, ::LoadedChunksComponent& loadedChunksComponent);
-
-    MCNAPI static void _tickLevelChunksAroundActorView(
-        ::ActorOwnerComponent&   actorOwnerComponent,
-        ::LoadedChunksComponent& loadedChunksComponent
-    );
+    MCNAPI static void _determineLevelChunksToTick(::Actor const& actor, ::BlockSource& region, ::LoadedChunksComponent& loadedChunksComponent, ::std::vector<::std::shared_ptr<::LevelChunk>>& levelChunksToTick, ::std::vector<::std::shared_ptr<::LevelChunk>>& levelChunksBlockEntitiesToTick, ::Tick const& currentTick);
     // NOLINTEND
 
 public:
@@ -59,4 +60,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

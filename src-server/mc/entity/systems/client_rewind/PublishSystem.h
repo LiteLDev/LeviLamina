@@ -27,38 +27,12 @@ struct ReplayStateTrackerComponent;
 
 namespace ClientRewind {
 
-struct PublishSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
-                           ::Filter<::ActorMovementTickNeededComponent>,
-                           ::Read<
-                               ::ActorDataFlagComponent,
-                               ::ActorDataHorseFlagComponent,
-                               ::ActorDataJumpDurationComponent,
-                               ::ActorDataBoundingBoxComponent,
-                               ::ActorDataSeatOffsetComponent>,
-                           ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>,
-                           ::AddRemove<>,
-                           ::GlobalRead<>,
-                           ::GlobalWrite<>,
-                           ::EntityFactoryT<>>> {
+struct PublishSystem : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent>, ::Read<::ActorDataFlagComponent, ::ActorDataHorseFlagComponent, ::ActorDataJumpDurationComponent, ::ActorDataBoundingBoxComponent, ::ActorDataSeatOffsetComponent>, ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(
-        ::StrictExecutionContext<
-            ::Filter<::ActorMovementTickNeededComponent>,
-            ::Read<
-                ::ActorDataFlagComponent,
-                ::ActorDataHorseFlagComponent,
-                ::ActorDataJumpDurationComponent,
-                ::ActorDataBoundingBoxComponent,
-                ::ActorDataSeatOffsetComponent>,
-            ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>&
-    ) /*override*/;
+    virtual void tick(::StrictExecutionContext<::Filter<::ActorMovementTickNeededComponent>, ::Read<::ActorDataFlagComponent, ::ActorDataHorseFlagComponent, ::ActorDataJumpDurationComponent, ::ActorDataBoundingBoxComponent, ::ActorDataSeatOffsetComponent>, ::Write<::ReplayStateTrackerComponent, ::ReplayStateComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>&) /*override*/;
 
     // vIndex: 0
     virtual ~PublishSystem() /*override*/ = default;
@@ -69,6 +43,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace ClientRewind
+}

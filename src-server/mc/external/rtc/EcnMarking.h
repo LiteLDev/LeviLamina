@@ -6,9 +6,9 @@ namespace rtc {
 
 enum class EcnMarking : int {
     KNotEct = 0,
-    KEct1   = 1,
-    KEct0   = 2,
-    KCe     = 3,
+    KEct1 = 1,
+    KEct0 = 2,
+    KCe = 3,
 };
 
 }

@@ -20,7 +20,7 @@ public:
     // clang-format off
     struct DirInfo;
     // clang-format on
-
+    
     // DirectoryManifest inner types define
     struct DirInfo {
     public:
@@ -28,14 +28,15 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 64> mUnka68f2b;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         DirInfo& operator=(DirInfo const&);
         DirInfo(DirInfo const&);
         DirInfo();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -47,6 +48,7 @@ public:
     DirectoryManifest& operator=(DirectoryManifest const&);
     DirectoryManifest(DirectoryManifest const&);
     DirectoryManifest();
+
 };
 
-} // namespace Bedrock
+}

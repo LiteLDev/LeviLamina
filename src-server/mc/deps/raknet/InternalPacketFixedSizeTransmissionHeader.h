@@ -24,6 +24,7 @@ public:
     InternalPacketFixedSizeTransmissionHeader& operator=(InternalPacketFixedSizeTransmissionHeader const&);
     InternalPacketFixedSizeTransmissionHeader(InternalPacketFixedSizeTransmissionHeader const&);
     InternalPacketFixedSizeTransmissionHeader();
+
 };
 
-} // namespace RakNet
+}

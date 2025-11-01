@@ -13,4 +13,4 @@ namespace PlayerSleep {
 MCNAPI void initializePlayer(::EntityContext& provider);
 // NOLINTEND
 
-} // namespace PlayerSleep
+}

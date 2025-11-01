@@ -25,7 +25,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::CommandBlockNameResult resolveBlock(int data) const;
 
-    MCAPI ::CommandBlockNameResult
-    resolveBlock(::std::vector<::BlockStateCommandParam> const& states, ::CommandOutput& output) const;
+    MCAPI ::CommandBlockNameResult resolveBlock(::std::vector<::BlockStateCommandParam> const& states, ::CommandOutput& output) const;
     // NOLINTEND
+
 };

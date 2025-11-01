@@ -13,8 +13,7 @@ namespace dcsctp { struct StateCookieParameterConfig; }
 
 namespace dcsctp {
 
-class StateCookieParameter : public ::dcsctp::Parameter,
-                             public ::dcsctp::TLVTrait<::dcsctp::StateCookieParameterConfig> {
+class StateCookieParameter : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::StateCookieParameterConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -65,6 +64,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

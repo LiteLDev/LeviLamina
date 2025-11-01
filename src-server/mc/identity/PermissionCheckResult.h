@@ -16,6 +16,7 @@ public:
     PermissionCheckResult& operator=(PermissionCheckResult const&);
     PermissionCheckResult(PermissionCheckResult const&);
     PermissionCheckResult();
+
 };
 
-} // namespace Social
+}

@@ -23,18 +23,9 @@ struct ShouldUpdateBoundingBoxRequestComponent;
 namespace ScaleByAgeSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void _tick(
-    ::entt::type_list<::Include<::ActorTickedComponent>>,
-    ::StrictEntityContext const&                                entity,
-    ::AgeableComponent const&                                   ageableComponent,
-    ::ActorDataBoundingBoxComponent&                            actorDataBoundingBox,
-    ::ActorDataDirtyFlagsComponent&                             actorDataDirtyFlags,
-    ::ActorOwnerComponent&                                      actorOwnerComponent,
-    ::ScaleByAgeComponent&                                      scaleByAgeComponent,
-    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> mod
-);
+MCNAPI void _tick(::entt::type_list<::Include<::ActorTickedComponent>>, ::StrictEntityContext const& entity, ::AgeableComponent const& ageableComponent, ::ActorDataBoundingBoxComponent& actorDataBoundingBox, ::ActorDataDirtyFlagsComponent& actorDataDirtyFlags, ::ActorOwnerComponent& actorOwnerComponent, ::ScaleByAgeComponent& scaleByAgeComponent, ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> mod);
 
 MCNAPI void registerSystems(::EntitySystems& systemRegistry, ::BaseGameVersion const& baseGameVersion);
 // NOLINTEND
 
-} // namespace ScaleByAgeSystem
+}

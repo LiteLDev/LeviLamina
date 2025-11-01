@@ -18,6 +18,7 @@ public:
     AtlasCreationTile& operator=(AtlasCreationTile const&);
     AtlasCreationTile(AtlasCreationTile const&);
     AtlasCreationTile();
+
 };
 
-} // namespace cg
+}

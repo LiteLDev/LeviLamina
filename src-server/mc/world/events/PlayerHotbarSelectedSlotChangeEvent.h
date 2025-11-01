@@ -11,9 +11,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
-    ::ll::TypedStorage<4, 4, int>              mPreviousSlotSelected;
-    ::ll::TypedStorage<4, 4, int>              mNewSlotSelected;
-    ::ll::TypedStorage<8, 152, ::ItemStack>    mItem;
+    ::ll::TypedStorage<4, 4, int> mPreviousSlotSelected;
+    ::ll::TypedStorage<4, 4, int> mNewSlotSelected;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mItem;
     // NOLINTEND
 
 public:
@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

@@ -19,6 +19,7 @@ public:
     GpuStreamDescription& operator=(GpuStreamDescription const&);
     GpuStreamDescription(GpuStreamDescription const&);
     GpuStreamDescription();
+
 };
 
-} // namespace texd
+}

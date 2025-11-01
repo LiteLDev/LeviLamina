@@ -8,18 +8,14 @@
 // auto generated forward declare list
 // clang-format off
 class FeatureRegistry;
+class IStructureTemplateManager;
 class JigsawStructureRegistry;
-class StructureManager;
 // clang-format on
 
 namespace StructurePoolUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI void registerDataDrivenStructures(
-    ::JigsawStructureRegistry&                        jigsawStructureRegistry,
-    ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-    ::FeatureRegistry const&                          features
-);
+MCNAPI void registerDataDrivenStructures(::JigsawStructureRegistry& jigsawStructureRegistry, ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager, ::FeatureRegistry const& features);
 // NOLINTEND
 
-} // namespace StructurePoolUtils
+}

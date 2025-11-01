@@ -29,22 +29,22 @@ class ScriptPlugin : public ::Scripting::IDependencyLoader, public ::Scripting::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IScriptPluginSource>>       mPluginSource;
-    ::ll::TypedStorage<8, 96, ::Scripting::ModuleDescriptor>                  mModuleDescriptor;
-    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::ModuleDescriptor>>   mModuleDependencies;
-    ::ll::TypedStorage<1, 1, ::Scripting::Capabilities>                       mCapabilities;
-    ::ll::TypedStorage<8, 32, ::MinEngineVersion const>                       mMinEngineVersion;
-    ::ll::TypedStorage<8, 48, ::PackIdVersion>                                mPackId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                  mRuntimeName;
-    ::ll::TypedStorage<4, 4, ::ScriptRuntimeType>                             mRuntimeType;
-    ::ll::TypedStorage<8, 32, ::std::string>                                  mRuntimeFileExt;
-    ::ll::TypedStorage<8, 32, ::std::string>                                  mMainScriptFilePath;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                   mScriptPaths;
-    ::ll::TypedStorage<8, 32, ::Scripting::ScriptContext>                     mContext;
-    ::ll::TypedStorage<1, 1, ::PluginExecutionGroup const>                    mExecutionGroup;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::IScriptPluginSource>> mPluginSource;
+    ::ll::TypedStorage<8, 96, ::Scripting::ModuleDescriptor> mModuleDescriptor;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Scripting::ModuleDescriptor>> mModuleDependencies;
+    ::ll::TypedStorage<1, 1, ::Scripting::Capabilities> mCapabilities;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion const> mMinEngineVersion;
+    ::ll::TypedStorage<8, 48, ::PackIdVersion> mPackId;
+    ::ll::TypedStorage<8, 32, ::std::string> mRuntimeName;
+    ::ll::TypedStorage<4, 4, ::ScriptRuntimeType> mRuntimeType;
+    ::ll::TypedStorage<8, 32, ::std::string> mRuntimeFileExt;
+    ::ll::TypedStorage<8, 32, ::std::string> mMainScriptFilePath;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mScriptPaths;
+    ::ll::TypedStorage<8, 32, ::Scripting::ScriptContext> mContext;
+    ::ll::TypedStorage<1, 1, ::PluginExecutionGroup const> mExecutionGroup;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ScriptPluginHandleCounter>> mHandleCounter;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptPrintLogger>>          mPrintLogger;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptSentryLogger>>         mSentryLogger;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptPrintLogger>> mPrintLogger;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptSentryLogger>> mSentryLogger;
     // NOLINTEND
 
 public:
@@ -70,43 +70,19 @@ public:
     virtual void onError(::Scripting::ContextId contextId, ::std::string_view message) const /*override*/;
 
     // vIndex: 4
-    virtual void onException(
-        ::Scripting::ContextId        contextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&       errorAny
-    ) const /*override*/;
+    virtual void onException(::Scripting::ContextId contextId, ::Scripting::BaseError const& error, ::entt::meta_any const& errorAny) const /*override*/;
 
     // vIndex: 5
-    virtual bool shouldPrintException(
-        ::Scripting::ContextId        contextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&       errorAny
-    ) const /*override*/;
+    virtual bool shouldPrintException(::Scripting::ContextId contextId, ::Scripting::BaseError const& error, ::entt::meta_any const& errorAny) const /*override*/;
 
     // vIndex: 6
-    virtual void onPromiseRejection(
-        ::Scripting::ContextId        contextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&       errorAny,
-        bool                          isHandled
-    ) const /*override*/;
+    virtual void onPromiseRejection(::Scripting::ContextId contextId, ::Scripting::BaseError const& error, ::entt::meta_any const& errorAny, bool isHandled) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlugin(
-        ::std::shared_ptr<::IScriptPluginSource>       pluginSource,
-        ::Scripting::ModuleDescriptor&&                moduleDesc,
-        ::std::vector<::Scripting::ModuleDescriptor>&& moduleDependencies,
-        ::Scripting::Capabilities&&                    capabilities,
-        ::MinEngineVersion const&                      minEngineVersion,
-        ::PackIdVersion const&                         packId,
-        ::std::string const&                           runtimeName,
-        ::std::string const&                           mainScriptFilePath,
-        ::ResourceInformation::ResourceType            pluginType,
-        ::PluginExecutionGroup                         executionGroup
-    );
+    MCAPI ScriptPlugin(::std::shared_ptr<::IScriptPluginSource> pluginSource, ::Scripting::ModuleDescriptor&& moduleDesc, ::std::vector<::Scripting::ModuleDescriptor>&& moduleDependencies, ::Scripting::Capabilities&& capabilities, ::MinEngineVersion const& minEngineVersion, ::PackIdVersion const& packId, ::std::string const& runtimeName, ::std::string const& mainScriptFilePath, ::ResourceInformation::ResourceType pluginType, ::PluginExecutionGroup executionGroup);
 
     MCAPI ::std::optional<::Scripting::ScriptData> _loadScript(::std::string const& fileName);
 
@@ -116,18 +92,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::IScriptPluginSource>       pluginSource,
-        ::Scripting::ModuleDescriptor&&                moduleDesc,
-        ::std::vector<::Scripting::ModuleDescriptor>&& moduleDependencies,
-        ::Scripting::Capabilities&&                    capabilities,
-        ::MinEngineVersion const&                      minEngineVersion,
-        ::PackIdVersion const&                         packId,
-        ::std::string const&                           runtimeName,
-        ::std::string const&                           mainScriptFilePath,
-        ::ResourceInformation::ResourceType            pluginType,
-        ::PluginExecutionGroup                         executionGroup
-    );
+    MCAPI void* $ctor(::std::shared_ptr<::IScriptPluginSource> pluginSource, ::Scripting::ModuleDescriptor&& moduleDesc, ::std::vector<::Scripting::ModuleDescriptor>&& moduleDependencies, ::Scripting::Capabilities&& capabilities, ::MinEngineVersion const& minEngineVersion, ::PackIdVersion const& packId, ::std::string const& runtimeName, ::std::string const& mainScriptFilePath, ::ResourceInformation::ResourceType pluginType, ::PluginExecutionGroup executionGroup);
     // NOLINTEND
 
 public:
@@ -147,24 +112,11 @@ public:
 
     MCAPI void $onError(::Scripting::ContextId contextId, ::std::string_view message) const;
 
-    MCAPI void $onException(
-        ::Scripting::ContextId        contextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&       errorAny
-    ) const;
+    MCAPI void $onException(::Scripting::ContextId contextId, ::Scripting::BaseError const& error, ::entt::meta_any const& errorAny) const;
 
-    MCAPI bool $shouldPrintException(
-        ::Scripting::ContextId        contextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&       errorAny
-    ) const;
+    MCAPI bool $shouldPrintException(::Scripting::ContextId contextId, ::Scripting::BaseError const& error, ::entt::meta_any const& errorAny) const;
 
-    MCAPI void $onPromiseRejection(
-        ::Scripting::ContextId        contextId,
-        ::Scripting::BaseError const& error,
-        ::entt::meta_any const&       errorAny,
-        bool                          isHandled
-    ) const;
+    MCAPI void $onPromiseRejection(::Scripting::ContextId contextId, ::Scripting::BaseError const& error, ::entt::meta_any const& errorAny, bool isHandled) const;
     // NOLINTEND
 
 public:
@@ -174,4 +126,5 @@ public:
 
     MCNAPI static void** $vftableForIPrinter();
     // NOLINTEND
+
 };

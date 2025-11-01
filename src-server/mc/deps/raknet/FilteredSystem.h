@@ -17,6 +17,7 @@ public:
     FilteredSystem& operator=(FilteredSystem const&);
     FilteredSystem(FilteredSystem const&);
     FilteredSystem();
+
 };
 
-} // namespace RakNet
+}

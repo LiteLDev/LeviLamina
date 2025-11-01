@@ -5,7 +5,7 @@
 
 namespace Bedrock::Application {
 
-template <typename T0, ThreadOwnerBehavior WrongThreadBehavior = ThreadOwnerBehavior::Assert>
+template<typename T0, ThreadOwnerBehavior WrongThreadBehavior = ThreadOwnerBehavior::Assert>
 class ThreadOwner {
 public:
     T0              mObject;
@@ -20,4 +20,4 @@ public:
     ThreadOwner()                              = delete;
 };
 
-} // namespace Bedrock::Application
+}

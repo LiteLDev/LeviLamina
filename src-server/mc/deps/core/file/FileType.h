@@ -5,9 +5,9 @@
 namespace Core {
 
 enum class FileType : int {
-    File      = 0,
+    File = 0,
     Directory = 1,
-    None      = 2,
+    None = 2,
 };
 
 }

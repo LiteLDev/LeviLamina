@@ -13,4 +13,4 @@ namespace FlatteningUtils::LavaCauldron {
 MCAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
 // NOLINTEND
 
-} // namespace FlatteningUtils::LavaCauldron
+}

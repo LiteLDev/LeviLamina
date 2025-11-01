@@ -21,50 +21,46 @@ public:
     // clang-format off
     class MoveOutdoorsDefinition;
     // clang-format on
-
+    
     // MoveOutdoorsGoal inner types define
     class MoveOutdoorsDefinition : public ::BaseGoalDefinition {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, float> mSpeedModifier;
-        ::ll::TypedStorage<4, 4, int>   mSearchRange;
-        ::ll::TypedStorage<4, 4, int>   mSearchHeight;
-        ::ll::TypedStorage<4, 4, int>   mSearchCount;
+        ::ll::TypedStorage<4, 4, int> mSearchRange;
+        ::ll::TypedStorage<4, 4, int> mSearchHeight;
+        ::ll::TypedStorage<4, 4, int> mSearchCount;
         ::ll::TypedStorage<4, 4, float> mGoalRadius;
         ::ll::TypedStorage<4, 4, float> mTimeoutCooldown;
         // NOLINTEND
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~MoveOutdoorsDefinition() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
-            ::std::string const& name,
-            ::std::shared_ptr<
-                ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MoveOutdoorsGoal::MoveOutdoorsDefinition>>&
-                root
-        );
+        MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::MoveOutdoorsGoal::MoveOutdoorsDefinition>>& root);
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 40, ::MoveOutdoorsGoal::MoveOutdoorsDefinition> mDefinition;
-    ::ll::TypedStorage<8, 8, ::Tick>                                      mNextTargetTick;
+    ::ll::TypedStorage<8, 8, ::Tick> mNextTargetTick;
     // NOLINTEND
 
 public:
@@ -120,4 +116,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

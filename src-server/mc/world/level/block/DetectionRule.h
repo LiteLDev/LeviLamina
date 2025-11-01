@@ -12,10 +12,10 @@ struct DetectionRule {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                mCanContainLiquid;
+    ::ll::TypedStorage<1, 1, bool> mCanContainLiquid;
     ::ll::TypedStorage<1, 1, ::BlockedDirections> mStopsFlowDirections;
-    ::ll::TypedStorage<1, 1, ::LiquidReaction>    mOnLiquidTouches;
-    ::ll::TypedStorage<1, 1, ::LiquidType>        mLiquidType;
+    ::ll::TypedStorage<1, 1, ::LiquidReaction> mOnLiquidTouches;
+    ::ll::TypedStorage<1, 1, ::LiquidType> mLiquidType;
     // NOLINTEND
 
 public:
@@ -25,22 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DetectionRule(
-        ::LiquidType                                liquidType,
-        bool                                        canContainLiquid,
-        ::LiquidReaction                            onLiquidTouches,
-        ::std::vector<::SharedTypes::Facing> const& stopsWaterFlowingOutFromDirections
-    );
+    MCAPI DetectionRule(::LiquidType liquidType, bool canContainLiquid, ::LiquidReaction onLiquidTouches, ::std::vector<::SharedTypes::Facing> const& stopsWaterFlowingOutFromDirections);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::LiquidType                                liquidType,
-        bool                                        canContainLiquid,
-        ::LiquidReaction                            onLiquidTouches,
-        ::std::vector<::SharedTypes::Facing> const& stopsWaterFlowingOutFromDirections
-    );
+    MCAPI void* $ctor(::LiquidType liquidType, bool canContainLiquid, ::LiquidReaction onLiquidTouches, ::std::vector<::SharedTypes::Facing> const& stopsWaterFlowingOutFromDirections);
     // NOLINTEND
+
 };

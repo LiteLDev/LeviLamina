@@ -12,6 +12,7 @@ public:
     ::ll::TypedStorage<4, 4, int> mContentsWeight;
     ::ll::TypedStorage<4, 4, int> mContentsWeightLimit;
     // NOLINTEND
+
 };
 
-} // namespace StorageItemUtility
+}

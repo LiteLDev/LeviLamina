@@ -18,6 +18,7 @@ public:
     IBLParameters& operator=(IBLParameters const&);
     IBLParameters(IBLParameters const&);
     IBLParameters();
+
 };
 
-} // namespace dragon::framerenderer::modules
+}

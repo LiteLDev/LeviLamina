@@ -18,17 +18,17 @@ public:
     // JournaledFile inner types define
     enum class Progression : int {
         NeverWritten = 0,
-        WriteFailed  = 1,
+        WriteFailed = 1,
         WriteSuccess = 2,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkcedc45;
     ::ll::UntypedStorage<8, 16> mUnkdff1df;
     ::ll::UntypedStorage<8, 64> mUnkf173f5;
-    ::ll::UntypedStorage<4, 4>  mUnk35a4f6;
+    ::ll::UntypedStorage<4, 4> mUnk35a4f6;
     // NOLINTEND
 
 public:
@@ -44,8 +44,7 @@ public:
 
     MCNAPI ::Core::Result close();
 
-    MCNAPI ::Core::Result
-    open(::Core::Path filePath, ::Core::FileOpenMode fileOpenMode, ::Core::FileBufferingMode bufferingMode);
+    MCNAPI ::Core::Result open(::Core::Path filePath, ::Core::FileOpenMode fileOpenMode, ::Core::FileBufferingMode bufferingMode);
 
     MCNAPI ::Core::Result write(void const* pBuf, uint64 numBytes);
 
@@ -69,4 +68,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

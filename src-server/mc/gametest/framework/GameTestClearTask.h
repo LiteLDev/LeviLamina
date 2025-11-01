@@ -14,8 +14,8 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<4, 24> mUnk5c35f4;
     ::ll::UntypedStorage<8, 16> mUnkac810e;
-    ::ll::UntypedStorage<1, 1>  mUnkf34dd1;
-    ::ll::UntypedStorage<1, 1>  mUnk142d9b;
+    ::ll::UntypedStorage<1, 1> mUnkf34dd1;
+    ::ll::UntypedStorage<1, 1> mUnk142d9b;
     ::ll::UntypedStorage<8, 96> mUnk4af5fa;
     // NOLINTEND
 
@@ -38,4 +38,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::Dimension& dimension, ::BoundingBox const& bounds);
     // NOLINTEND
+
 };

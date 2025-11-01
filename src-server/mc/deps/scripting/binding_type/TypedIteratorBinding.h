@@ -4,7 +4,8 @@
 
 namespace Scripting {
 
-template <typename T0, typename T1, int T2>
-struct TypedIteratorBinding {};
+template<typename T0, typename T1, int T2>
+struct TypedIteratorBinding {
+};
 
-} // namespace Scripting
+}

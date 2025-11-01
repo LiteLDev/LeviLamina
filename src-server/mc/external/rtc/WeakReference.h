@@ -13,7 +13,7 @@ public:
     // clang-format off
     class Flag;
     // clang-format on
-
+    
     // WeakReference inner types define
     class Flag : public ::webrtc::RefCountInterface {
     public:
@@ -22,48 +22,49 @@ public:
         ::ll::UntypedStorage<1, 1> mUnk8c8c56;
         ::ll::UntypedStorage<1, 1> mUnk2575e3;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Flag& operator=(Flag const&);
         Flag(Flag const&);
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 2
         virtual ~Flag() /*override*/;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI Flag();
-
+    
         MCNAPI void Invalidate();
-
+    
         MCNAPI bool IsValid() const;
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -107,6 +108,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace rtc::internal
+}

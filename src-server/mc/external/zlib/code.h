@@ -16,4 +16,5 @@ public:
     code& operator=(code const&);
     code(code const&);
     code();
+
 };

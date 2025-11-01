@@ -28,62 +28,45 @@ public:
     virtual bool SendPacket(::NetherNet::NetworkID, uint64, ::std::string const&, ::NetherNet::ESendType) /*override*/;
 
     // vIndex: 2
-    virtual bool
-    IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize) /*override*/;
+    virtual bool IsPacketAvailable(::NetherNet::NetworkID, uint64, uint*) /*override*/;
 
     // vIndex: 3
-    virtual void ClearPacketData(::NetherNet::NetworkID, uint64) /*override*/;
+    virtual bool ReadPacket(::NetherNet::NetworkID remoteId, uint64 connectionId, void* pubDest, uint cbDest, uint* pcbMessageSize) /*override*/;
 
     // vIndex: 4
-    virtual bool ReadPacket(
-        ::NetherNet::NetworkID remoteId,
-        uint64                 connectionId,
-        void*                  pubDest,
-        uint                   cbDest,
-        uint*                  pcbMessageSize
-    ) /*override*/;
-
-    // vIndex: 5
     virtual bool OpenSessionWithUser(::NetherNet::NetworkID) /*override*/;
 
-    // vIndex: 6
+    // vIndex: 5
     virtual bool CloseSessionWithUser(::NetherNet::NetworkID, uint64) /*override*/;
 
-    // vIndex: 7
-    virtual bool GetSessionState(
-        ::NetherNet::NetworkID     peerId,
-        uint64                     connectionId,
-        ::NetherNet::SessionState* pConnectionState
-    ) /*override*/;
+    // vIndex: 6
+    virtual bool GetSessionState(::NetherNet::NetworkID peerId, uint64 connectionId, ::NetherNet::SessionState* pConnectionState) /*override*/;
 
-    // vIndex: 8
+    // vIndex: 7
     virtual void SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const&) /*override*/;
 
-    // vIndex: 9
+    // vIndex: 8
     virtual void SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const&) /*override*/;
 
-    // vIndex: 10
-    virtual void SetInactivityTimeout(::NetherNet::NetworkID, ::std::optional<::std::chrono::seconds>) /*override*/;
-
-    // vIndex: 11
+    // vIndex: 9
     virtual bool IsBroadcastDiscoveryEnabled() /*override*/;
 
-    // vIndex: 12
+    // vIndex: 10
     virtual void EnableBroadcastDiscovery() /*override*/;
 
-    // vIndex: 13
+    // vIndex: 11
     virtual void DisableBroadcastDiscovery() /*override*/;
 
-    // vIndex: 14
+    // vIndex: 12
     virtual void EnableLANSignaling() /*override*/;
 
-    // vIndex: 15
+    // vIndex: 13
     virtual void DisableLANSignaling() /*override*/;
 
-    // vIndex: 17
+    // vIndex: 15
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler*) /*override*/;
 
-    // vIndex: 16
+    // vIndex: 14
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ILanEventHandler*) /*override*/;
     // NOLINTEND
 
@@ -92,4 +75,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

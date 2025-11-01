@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct NoUserDataCauseConfig {};
+struct NoUserDataCauseConfig {
+};
 
-} // namespace dcsctp
+}

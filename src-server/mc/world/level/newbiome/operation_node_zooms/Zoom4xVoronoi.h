@@ -7,6 +7,7 @@
 
 namespace OperationNodeZooms {
 
-class Zoom4xVoronoi : public ::OperationNodeZooms::ZoomBase<2, 1> {};
+class Zoom4xVoronoi : public ::OperationNodeZooms::ZoomBase<2, 1> {
+};
 
-} // namespace OperationNodeZooms
+}

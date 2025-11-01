@@ -14,4 +14,5 @@ public:
     REOpCode& operator=(REOpCode const&);
     REOpCode(REOpCode const&);
     REOpCode();
+
 };

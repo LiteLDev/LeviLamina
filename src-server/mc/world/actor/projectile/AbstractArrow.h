@@ -25,11 +25,11 @@ public:
     enum class Data : int {
         OwnerID = 17,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>  mFavoredSlot;
+    ::ll::TypedStorage<4, 4, int> mFavoredSlot;
     ::ll::TypedStorage<1, 1, bool> mIsPlayerOwned;
     ::ll::TypedStorage<1, 1, bool> mIsCreative;
     // NOLINTEND
@@ -41,8 +41,7 @@ public:
     virtual void reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 4
-    virtual void
-    initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
+    virtual void initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params) /*override*/;
 
     // vIndex: 22
     virtual void lerpMotion(::Vec3 const& delta) /*override*/;
@@ -111,4 +110,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

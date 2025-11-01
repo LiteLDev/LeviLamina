@@ -8,4 +8,4 @@ namespace webrtc::field_trial {
 MCNAPI ::std::string FindFullName(::std::string_view name);
 // NOLINTEND
 
-} // namespace webrtc::field_trial
+}

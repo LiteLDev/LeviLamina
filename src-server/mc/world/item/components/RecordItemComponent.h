@@ -20,8 +20,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSoundEvent;
-    ::ll::TypedStorage<4, 4, float>                                  mDuration;
-    ::ll::TypedStorage<4, 4, int>                                    mComparatorSignal;
+    ::ll::TypedStorage<4, 4, float> mDuration;
+    ::ll::TypedStorage<4, 4, int> mComparatorSignal;
     // NOLINTEND
 
 public:
@@ -42,11 +42,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
-        ::cereal::ReflectionCtx&               ctx,
-        ::std::vector<::AllExperiments> const& requiredToggles,
-        ::std::optional<::SemVersion>          releasedMinFormatVersion
-    );
+    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::vector<::AllExperiments> const& requiredToggles, ::std::optional<::SemVersion> releasedMinFormatVersion);
 
     MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
@@ -56,4 +52,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

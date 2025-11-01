@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class DensityCalculators;
+class DensityFunctionRegistry;
 // clang-format on
 
 class IDensityFunction {
@@ -21,7 +22,7 @@ public:
     virtual ~IDensityFunction() = default;
 
     // vIndex: 1
-    virtual ushort addToCalculators(::DensityCalculators&) const = 0;
+    virtual ushort addToCalculators(::DensityCalculators&, ::DensityFunctionRegistry const&) const = 0;
     // NOLINTEND
 
 public:
@@ -29,4 +30,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

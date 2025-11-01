@@ -19,9 +19,9 @@ class StorageItemContainerModel : public ::ContainerModel {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::StorageItemComponent const*>            mStorageItemComponent;
+    ::ll::TypedStorage<8, 8, ::StorageItemComponent const*> mStorageItemComponent;
     ::ll::TypedStorage<8, 8, ::StorageWeightLimitItemComponent const*> mStorageWeightLimitComponent;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Container>>            mContainer;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Container>> mContainer;
     // NOLINTEND
 
 public:
@@ -46,26 +46,20 @@ public:
     // vIndex: 7
     virtual ::ContainerWeakRef getContainerWeakRef() const /*override*/;
 
-    // vIndex: 22
+    // vIndex: 23
     virtual int _getContainerOffset() const /*override*/;
 
-    // vIndex: 24
+    // vIndex: 25
     virtual void _onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem) /*override*/;
 
-    // vIndex: 21
+    // vIndex: 22
     virtual ::Container* _getContainer() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StorageItemContainerModel(
-        ::FullContainerName const&         name,
-        ::std::shared_ptr<::Container>     container,
-        bool                               isClientSide,
-        ::StorageItemComponent*            storageItemComponent,
-        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
-    );
+    MCAPI StorageItemContainerModel(::FullContainerName const& name, ::std::shared_ptr<::Container> container, bool isClientSide, ::StorageItemComponent* storageItemComponent, ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent);
 
     MCAPI void _refreshSlot(int modelSlot);
     // NOLINTEND
@@ -73,13 +67,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::FullContainerName const&         name,
-        ::std::shared_ptr<::Container>     container,
-        bool                               isClientSide,
-        ::StorageItemComponent*            storageItemComponent,
-        ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
-    );
+    MCAPI void* $ctor(::FullContainerName const& name, ::std::shared_ptr<::Container> container, bool isClientSide, ::StorageItemComponent* storageItemComponent, ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent);
     // NOLINTEND
 
 public:
@@ -105,4 +93,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

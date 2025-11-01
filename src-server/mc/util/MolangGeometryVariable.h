@@ -17,4 +17,5 @@ public:
     // NOLINTBEGIN
     MCFOLD ::MolangGeometryVariable& operator=(::MolangGeometryVariable&&);
     // NOLINTEND
+
 };

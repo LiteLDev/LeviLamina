@@ -17,27 +17,27 @@ struct OverworldHeightBiomeJsonComponent : public ::SharedTypes::v1_20_60::IBiom
 public:
     // OverworldHeightBiomeJsonComponent inner types define
     enum class NoiseType : int {
-        Default        = 0,
+        Default = 0,
         DefaultMutated = 1,
-        River          = 2,
-        Ocean          = 3,
-        DeepOcean      = 4,
-        Lowlands       = 5,
-        Taiga          = 6,
-        Mountains      = 7,
-        Highlands      = 8,
-        Extreme        = 9,
-        LessExtreme    = 10,
-        Beach          = 11,
-        StoneBeach     = 12,
-        Mushroom       = 13,
-        Swamp          = 14,
+        River = 2,
+        Ocean = 3,
+        DeepOcean = 4,
+        Lowlands = 5,
+        Taiga = 6,
+        Mountains = 7,
+        Highlands = 8,
+        Extreme = 9,
+        LessExtreme = 10,
+        Beach = 11,
+        StoneBeach = 12,
+        Mushroom = 13,
+        Swamp = 14,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnk5dffd9;
+    ::ll::UntypedStorage<4, 8> mUnk5dffd9;
     ::ll::UntypedStorage<4, 12> mUnk347fbf;
     // NOLINTEND
 
@@ -82,6 +82,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_60
+}

@@ -4,11 +4,11 @@
 #include "mc/util/molang/MolangParseConfig.h"
 
 // auto generated inclusion list
-#include "mc/molang/MolangVersion.h"
 #include "mc/platform/brstd/flat_set.h"
 #include "mc/util/MolangCompileResult.h"
 #include "mc/util/MolangQueryFunctionReturnType.h"
 #include "mc/util/molang/ExpressionOp.h"
+#include "mc/versionless/molang/MolangVersion.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -31,33 +31,33 @@ public:
     // clang-format off
     struct ResourceReference;
     // clang-format on
-
+    
     // ExpressionNode inner types define
     struct ResourceReference {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 88> mUnkdeb2d8;
-        ::ll::UntypedStorage<2, 2>  mUnk80cca4;
-        ::ll::UntypedStorage<1, 1>  mUnk749abb;
+        ::ll::UntypedStorage<2, 2> mUnk80cca4;
+        ::ll::UntypedStorage<1, 1> mUnk749abb;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ResourceReference& operator=(ResourceReference const&);
         ResourceReference(ResourceReference const&);
         ResourceReference();
+    
     };
-
+    
     using ResourceTable = ::std::unordered_map<::HashedString, ::ExpressionNode::ResourceReference>;
-
-    using MissingResourceSet =
-        ::brstd::flat_set<::HashedString, ::std::less<::HashedString>, ::std::vector<::HashedString>>;
-
+    
+    using MissingResourceSet = ::brstd::flat_set<::HashedString, ::std::less<::HashedString>, ::std::vector<::HashedString>>;
+    
     using IComplexExpression = ::Molang::details::IComplexExpression;
-
+    
     using GetParticleTintFunc = ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -122,38 +122,19 @@ public:
 
     MCAPI static void initializeMolang();
 
-    MCAPI static ::std::function<
-        ::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> const*
-    queryFunctionAccessorFromString(
-        ::HashedString const&            functionName,
-        ::MolangVersion                  molangVersion,
-        ::MolangQueryFunctionReturnType& functionReturnType,
-        bool                             missingIsOkay_returnNullIfSo
-    );
+    MCAPI static ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> const* queryFunctionAccessorFromString(::HashedString const& functionName, ::MolangVersion molangVersion, ::MolangQueryFunctionReturnType& functionReturnType, bool missingIsOkay_returnNullIfSo);
 
-    MCAPI static ::MolangQueryFunction& registerQueryFunction(
-        ::std::string_view queryFunctionName,
-        ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> accessor,
-        ::std::string_view                  documentation,
-        ::MolangQueryFunctionReturnType     returnType,
-        ::HashedString                      querySetIdentifier,
-        uint64                              minArgumentCount,
-        uint64                              maxArgumentCount,
-        ::std::initializer_list<int> const& experiments
-    );
+    MCAPI static ::MolangQueryFunction& registerQueryFunction(::std::string_view queryFunctionName, ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> accessor, ::std::string_view documentation, ::MolangQueryFunctionReturnType returnType, ::HashedString querySetIdentifier, uint64 minArgumentCount, uint64 maxArgumentCount, ::std::initializer_list<int> const& experiments);
 
-    MCAPI static void
-    unregisterQueryFunction(::std::string const& queryFunctionName, ::HashedString querySetIdentifier);
+    MCAPI static void unregisterQueryFunction(::std::string const& queryFunctionName, ::HashedString querySetIdentifier);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)>&
-    _defaultUnknownQueryFunction();
+    MCAPI static ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)>& _defaultUnknownQueryFunction();
 
-    MCAPI static ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>&
-    mGetParticleTintFunc();
+    MCAPI static ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>& mGetParticleTintFunc();
 
     MCAPI static ::std::unordered_multimap<::HashedString, ::MolangQueryFunction>& mQueryFunctionAccessors();
 
@@ -179,4 +160,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

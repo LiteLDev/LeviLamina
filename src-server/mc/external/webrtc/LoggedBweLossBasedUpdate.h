@@ -19,6 +19,7 @@ public:
     LoggedBweLossBasedUpdate& operator=(LoggedBweLossBasedUpdate const&);
     LoggedBweLossBasedUpdate(LoggedBweLossBasedUpdate const&);
     LoggedBweLossBasedUpdate();
+
 };
 
-} // namespace webrtc
+}

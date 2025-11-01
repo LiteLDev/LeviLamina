@@ -16,7 +16,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkb9afe0;
-    ::ll::UntypedStorage<8, 8>  mUnkaab666;
+    ::ll::UntypedStorage<8, 8> mUnkaab666;
     ::ll::UntypedStorage<8, 88> mUnkba9609;
     // NOLINTEND
 
@@ -30,7 +30,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::BehaviorStatus tick(::Actor& owner) /*override*/;
+    virtual ::BehaviorStatus tick(::Actor&) /*override*/;
 
     // vIndex: 2
     virtual void initializeFromDefinition(::Actor& owner) /*override*/;
@@ -42,8 +42,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
-
     MCNAPI void $initializeFromDefinition(::Actor& owner);
     // NOLINTEND
 
@@ -52,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

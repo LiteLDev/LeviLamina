@@ -4,7 +4,8 @@
 
 namespace brstd {
 
-template <typename T0>
-class unique_lock {};
+template<typename T0>
+class unique_lock {
+};
 
-} // namespace brstd
+}

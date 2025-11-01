@@ -25,10 +25,10 @@ class BrushableBlock : public ::FallingBlock {
 public:
     // BrushableBlock inner types define
     enum class Type : int {
-        Sand   = 0,
+        Sand = 0,
         Gravel = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,37 +42,34 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 125
+    // vIndex: 124
     virtual ::BlockType& init() /*override*/;
 
-    // vIndex: 150
+    // vIndex: 149
     virtual void onLand(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const& block, ::BlockActor const* blockActor) const /*override*/;
 
-    // vIndex: 147
+    // vIndex: 146
     virtual ::mce::Color getDustColor(::Block const&) const /*override*/;
 
-    // vIndex: 148
+    // vIndex: 147
     virtual ::std::string getDustParticleName(::Block const&) const /*override*/;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 74
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
-        /*override*/;
+    // vIndex: 73
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const /*override*/;
 
-    // vIndex: 75
+    // vIndex: 74
     virtual bool mayConsumeFertilizer(::BlockSource& region) const /*override*/;
 
-    // vIndex: 76
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    // vIndex: 75
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -114,8 +111,7 @@ public:
 
     MCAPI int $getVariant(::Block const& block) const;
 
-    MCFOLD bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCFOLD bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
     MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
 
@@ -129,4 +125,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

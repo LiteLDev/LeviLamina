@@ -18,4 +18,4 @@ MCNAPI void chooseRandomDirection(::Actor& owner, ::Vec3& vecOut);
 MCNAPI void getWaterHeights(::Actor const& owner, float& minHeightOut, float& maxHeightOut);
 // NOLINTEND
 
-} // namespace FlockingUtility
+}

@@ -8,4 +8,4 @@ namespace ExperienceConstants {
 MCNAPI ::std::array<int, 10> const& XP_TRUNCATION_THRESHHOLDS();
 // NOLINTEND
 
-} // namespace ExperienceConstants
+}

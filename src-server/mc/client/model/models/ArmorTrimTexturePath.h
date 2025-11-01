@@ -12,4 +12,4 @@ MCNAPI ::std::string const& TRIM_ICON_LOCATION_ROOT();
 MCNAPI ::std::string const& TRIM_SUBSTR();
 // NOLINTEND
 
-} // namespace ArmorTrimTexturePath
+}

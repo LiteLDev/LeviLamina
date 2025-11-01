@@ -23,13 +23,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::TickingSystemWithInfo createJumpInputSystem();
 
-    MCNAPI static void tickJumpInputSystem(
-        ::ViewT<
-            ::StrictEntityContext,
-            ::Include<::PlayerInputRequestComponent>,
-            ::MovementAbilitiesComponent const,
-            ::MoveInputComponent const>               view,
-        ::EntityModifier<::MobIsJumpingFlagComponent> mod
-    );
+    MCNAPI static void tickJumpInputSystem(::ViewT<::StrictEntityContext, ::Include<::PlayerInputRequestComponent>, ::MovementAbilitiesComponent const, ::MoveInputComponent const> view, ::EntityModifier<::MobIsJumpingFlagComponent> mod);
     // NOLINTEND
+
 };

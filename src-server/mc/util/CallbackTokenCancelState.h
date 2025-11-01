@@ -14,4 +14,5 @@ public:
     CallbackTokenCancelState& operator=(CallbackTokenCancelState const&);
     CallbackTokenCancelState(CallbackTokenCancelState const&);
     CallbackTokenCancelState();
+
 };

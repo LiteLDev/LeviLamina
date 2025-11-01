@@ -29,11 +29,11 @@ class SctpTransport : public ::webrtc::SctpTransportInterface, public ::webrtc::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnke8b820;
+    ::ll::UntypedStorage<8, 8> mUnke8b820;
     ::ll::UntypedStorage<8, 40> mUnk1fa385;
-    ::ll::UntypedStorage<8, 8>  mUnk38f880;
-    ::ll::UntypedStorage<8, 8>  mUnk494399;
-    ::ll::UntypedStorage<8, 8>  mUnk4ed708;
+    ::ll::UntypedStorage<8, 8> mUnk38f880;
+    ::ll::UntypedStorage<8, 8> mUnk494399;
+    ::ll::UntypedStorage<8, 8> mUnk4ed708;
     // NOLINTEND
 
 public:
@@ -61,11 +61,7 @@ public:
     virtual ::webrtc::RTCError OpenChannel(int channel_id) /*override*/;
 
     // vIndex: 2
-    virtual ::webrtc::RTCError SendData(
-        int                             channel_id,
-        ::webrtc::SendDataParams const& params,
-        ::rtc::CopyOnWriteBuffer const& buffer
-    ) /*override*/;
+    virtual ::webrtc::RTCError SendData(int channel_id, ::webrtc::SendDataParams const& params, ::rtc::CopyOnWriteBuffer const& buffer) /*override*/;
 
     // vIndex: 3
     virtual ::webrtc::RTCError CloseChannel(int channel_id) /*override*/;
@@ -98,10 +94,7 @@ public:
 
     MCNAPI void OnDtlsStateChange(::cricket::DtlsTransportInternal* transport, ::webrtc::DtlsTransportState state);
 
-    MCNAPI SctpTransport(
-        ::std::unique_ptr<::cricket::SctpTransportInternal> internal,
-        ::webrtc::scoped_refptr<::webrtc::DtlsTransport>    dtls_transport
-    );
+    MCNAPI SctpTransport(::std::unique_ptr<::cricket::SctpTransportInternal> internal, ::webrtc::scoped_refptr<::webrtc::DtlsTransport> dtls_transport);
 
     MCNAPI void Start(int local_port, int remote_port, int max_message_size);
 
@@ -111,10 +104,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::unique_ptr<::cricket::SctpTransportInternal> internal,
-        ::webrtc::scoped_refptr<::webrtc::DtlsTransport>    dtls_transport
-    );
+    MCNAPI void* $ctor(::std::unique_ptr<::cricket::SctpTransportInternal> internal, ::webrtc::scoped_refptr<::webrtc::DtlsTransport> dtls_transport);
     // NOLINTEND
 
 public:
@@ -136,8 +126,7 @@ public:
 
     MCNAPI ::webrtc::RTCError $OpenChannel(int channel_id);
 
-    MCNAPI ::webrtc::RTCError
-    $SendData(int channel_id, ::webrtc::SendDataParams const& params, ::rtc::CopyOnWriteBuffer const& buffer);
+    MCNAPI ::webrtc::RTCError $SendData(int channel_id, ::webrtc::SendDataParams const& params, ::rtc::CopyOnWriteBuffer const& buffer);
 
     MCNAPI ::webrtc::RTCError $CloseChannel(int channel_id);
 
@@ -159,6 +148,7 @@ public:
 
     MCNAPI static void** $vftableForDataChannelTransportInterface();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

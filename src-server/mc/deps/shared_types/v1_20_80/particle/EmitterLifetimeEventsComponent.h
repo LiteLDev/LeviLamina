@@ -45,11 +45,9 @@ public:
 
     MCNAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
 
-    MCNAPI ::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&
-    operator=(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
+    MCNAPI ::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent& operator=(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
 
-    MCNAPI ::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&
-    operator=(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
+    MCNAPI ::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent& operator=(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
     // NOLINTEND
 
 public:
@@ -89,6 +87,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_80
+}

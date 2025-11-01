@@ -5,8 +5,8 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/ecs/WeakEntityRef.h"
-#include "mc/world/level/BlockPos.h"
-#include "mc/world/phys/AABB.h"
+#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/versionless/world/phys/AABB.h"
 #include "mc/world/phys/HitResultType.h"
 
 // auto generated forward declare list
@@ -47,13 +47,7 @@ public:
 
     MCAPI HitResult(::HitResult const&);
 
-    MCAPI HitResult(
-        ::Vec3 const& startPos,
-        ::Vec3 const& rayDir,
-        ::Actor&      entity,
-        ::Vec3 const& pos,
-        ::AABB const& entityAABB
-    );
+    MCAPI HitResult(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos, ::AABB const& entityAABB);
 
     MCAPI ::Actor* getEntity() const;
 
@@ -73,8 +67,7 @@ public:
 
     MCAPI void* $ctor(::HitResult const&);
 
-    MCAPI void*
-    $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos, ::AABB const& entityAABB);
+    MCAPI void* $ctor(::Vec3 const& startPos, ::Vec3 const& rayDir, ::Actor& entity, ::Vec3 const& pos, ::AABB const& entityAABB);
     // NOLINTEND
 
 public:
@@ -82,4 +75,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

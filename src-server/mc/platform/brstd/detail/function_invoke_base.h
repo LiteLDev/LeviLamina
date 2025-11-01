@@ -8,7 +8,7 @@
 
 namespace brstd::detail::function {
 
-template <DerivedType Type, class Signature>
+template<DerivedType Type, class Signature>
 class function_invoke_base;
 
 template <DerivedType Type, class Return, class... Xs>
@@ -213,4 +213,4 @@ public:
     }
 };
 
-} // namespace brstd::detail::function
+}

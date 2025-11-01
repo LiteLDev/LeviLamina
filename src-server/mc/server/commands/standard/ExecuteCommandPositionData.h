@@ -14,4 +14,5 @@ public:
     ExecuteCommandPositionData& operator=(ExecuteCommandPositionData const&);
     ExecuteCommandPositionData(ExecuteCommandPositionData const&);
     ExecuteCommandPositionData();
+
 };

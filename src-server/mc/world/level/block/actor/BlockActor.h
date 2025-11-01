@@ -5,11 +5,11 @@
 // auto generated inclusion list
 #include "mc/deps/core/container/EnumSet.h"
 #include "mc/safety/RedactableString.h"
+#include "mc/versionless/world/level/BlockPos.h"
+#include "mc/versionless/world/phys/AABB.h"
 #include "mc/world/actor/ActorTerrainInterlockData.h"
-#include "mc/world/level/BlockPos.h"
 #include "mc/world/level/block/actor/BlockActorRendererId.h"
 #include "mc/world/level/block/actor/BlockActorType.h"
-#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -33,20 +33,20 @@ class BlockActor {
 public:
     // BlockActor inner types define
     enum class Property : uchar {
-        Changed             = 0,
-        Movable             = 1,
-        ClientSideOnly      = 2,
-        SaveCustomName      = 3,
+        Changed = 0,
+        Movable = 1,
+        ClientSideOnly = 2,
+        SaveCustomName = 3,
         CanRenderCustomName = 4,
-        Count               = 5,
+        Count = 5,
     };
-
+    
     using Properties = ::Bedrock::EnumSet<::BlockActor::Property, 5>;
-
+    
     using MapIdType = ::std::unordered_map<::std::string, ::BlockActorType>;
-
+    
     using MapTypeId = ::std::unordered_map<::BlockActorType, ::std::string>;
-
+    
 public:
     LLAPI void refresh(optional_ref<class BlockSource> blockSource = std::nullopt);
 
@@ -57,15 +57,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                           mTickCount;
-    ::ll::TypedStorage<4, 4, int>                                           mRepairCost;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                                   mPosition;
-    ::ll::TypedStorage<4, 24, ::AABB>                                       mBB;
-    ::ll::TypedStorage<1, 1, ::BlockActorRendererId>                        mRendererId;
-    ::ll::TypedStorage<1, 1, ::BlockActorType const>                        mType;
+    ::ll::TypedStorage<4, 4, int> mTickCount;
+    ::ll::TypedStorage<4, 4, int> mRepairCost;
+    ::ll::TypedStorage<4, 12, ::BlockPos> mPosition;
+    ::ll::TypedStorage<4, 24, ::AABB> mBB;
+    ::ll::TypedStorage<1, 1, ::BlockActorRendererId> mRendererId;
+    ::ll::TypedStorage<1, 1, ::BlockActorType const> mType;
     ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::BlockActor::Property, 5>> mProperties;
-    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>          mCustomName;
-    ::ll::TypedStorage<8, 24, ::ActorTerrainInterlockData>                  mTerrainInterlockData;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mCustomName;
+    ::ll::TypedStorage<8, 24, ::ActorTerrainInterlockData> mTerrainInterlockData;
     // NOLINTEND
 
 public:
@@ -145,11 +145,7 @@ public:
     virtual ::AABB getCollisionShape(::IConstBlockSource const&) const;
 
     // vIndex: 23
-    virtual void getDebugText(
-        ::std::vector<::std::string>& outputInfo,
-        ::BlockPos const&             debugPos,
-        ::BlockSource const*          region
-    ) const;
+    virtual void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos, ::BlockSource const* region) const;
 
     // vIndex: 24
     virtual ::Bedrock::Safety::RedactableString const& getCustomName() const;
@@ -200,15 +196,18 @@ public:
     virtual void setFilteredUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
     // vIndex: 40
-    virtual void fixupOnLoad(::LevelChunk&);
+    virtual bool validateData(::CompoundTag const&) const;
 
     // vIndex: 41
-    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&);
+    virtual void fixupOnLoad(::LevelChunk&);
 
     // vIndex: 42
-    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&);
+    virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&);
 
     // vIndex: 43
+    virtual void _onUpdatePacket(::CompoundTag const&, ::BlockSource&);
+
+    // vIndex: 44
     virtual bool _playerCanUpdate(::Player const&) const;
     // NOLINTEND
 
@@ -225,8 +224,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::unordered_map<::BlockActorType, ::std::string> const& _getClassIdMap();
 
-    MCAPI static ::std::shared_ptr<::BlockActor>
-    loadStatic(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI static ::std::shared_ptr<::BlockActor> loadStatic(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
@@ -260,7 +258,7 @@ public:
 
     MCAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCFOLD void $tick(::BlockSource& region);
 
     MCFOLD void $onChanged(::BlockSource&);
 
@@ -288,11 +286,7 @@ public:
 
     MCAPI ::AABB $getCollisionShape(::IConstBlockSource const&) const;
 
-    MCAPI void $getDebugText(
-        ::std::vector<::std::string>& outputInfo,
-        ::BlockPos const&             debugPos,
-        ::BlockSource const*          region
-    ) const;
+    MCAPI void $getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos, ::BlockSource const* region) const;
 
     MCFOLD ::Bedrock::Safety::RedactableString const& $getCustomName() const;
 
@@ -326,6 +320,8 @@ public:
 
     MCFOLD void $setFilteredUgcStrings(::CompoundTag&, ::std::vector<::std::string> const&) const;
 
+    MCFOLD bool $validateData(::CompoundTag const&) const;
+
     MCFOLD void $fixupOnLoad(::LevelChunk&);
 
     MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
@@ -340,4 +336,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

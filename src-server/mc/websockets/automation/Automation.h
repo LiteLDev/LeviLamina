@@ -10,4 +10,4 @@ MCNAPI char const*& BodyData();
 MCNAPI char const*& HeaderData();
 // NOLINTEND
 
-} // namespace Automation
+}

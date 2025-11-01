@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct AbortChunkConfig {};
+struct AbortChunkConfig {
+};
 
-} // namespace dcsctp
+}

@@ -8,14 +8,14 @@ struct TransportChannelStats {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkff7607;
-    ::ll::UntypedStorage<4, 4>   mUnk257e9d;
-    ::ll::UntypedStorage<4, 4>   mUnkc4d29a;
-    ::ll::UntypedStorage<4, 4>   mUnk640b52;
-    ::ll::UntypedStorage<4, 8>   mUnke9bca3;
-    ::ll::UntypedStorage<4, 4>   mUnk2fe5d6;
+    ::ll::UntypedStorage<4, 4> mUnkff7607;
+    ::ll::UntypedStorage<4, 4> mUnk257e9d;
+    ::ll::UntypedStorage<4, 4> mUnkc4d29a;
+    ::ll::UntypedStorage<4, 4> mUnk640b52;
+    ::ll::UntypedStorage<4, 8> mUnke9bca3;
+    ::ll::UntypedStorage<4, 4> mUnk2fe5d6;
     ::ll::UntypedStorage<8, 136> mUnk589705;
-    ::ll::UntypedStorage<2, 2>   mUnk6b4453;
+    ::ll::UntypedStorage<2, 2> mUnk6b4453;
     // NOLINTEND
 
 public:
@@ -45,6 +45,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

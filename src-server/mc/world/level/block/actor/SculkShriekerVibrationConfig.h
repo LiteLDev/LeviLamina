@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/events/gameevents/VibrationListenerConfig.h"
-#include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -25,19 +25,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 3
-    virtual bool
-    shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext) /*override*/;
+    virtual bool shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext) /*override*/;
 
     // vIndex: 1
-    virtual void onSignalReceive(
-        ::BlockSource& region,
-        ::BlockPos const&,
-        ::GameEvent const&,
-        ::Actor* source,
-        float,
-        uint,
-        ::Actor* projectileOwner
-    ) /*override*/;
+    virtual void onSignalReceive(::BlockSource& region, ::BlockPos const&, ::GameEvent const&, ::Actor* source, float, uint, ::Actor* projectileOwner) /*override*/;
 
     // vIndex: 4
     virtual void onSerializableDataChanged(::BlockSource& region) /*override*/;
@@ -57,15 +48,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $shouldListen(::BlockSource& region, ::GameEvent const&, ::GameEventContext const& gameEventContext);
 
-    MCAPI void $onSignalReceive(
-        ::BlockSource& region,
-        ::BlockPos const&,
-        ::GameEvent const&,
-        ::Actor* source,
-        float,
-        uint,
-        ::Actor* projectileOwner
-    );
+    MCAPI void $onSignalReceive(::BlockSource& region, ::BlockPos const&, ::GameEvent const&, ::Actor* source, float, uint, ::Actor* projectileOwner);
 
     MCFOLD void $onSerializableDataChanged(::BlockSource& region);
 
@@ -79,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

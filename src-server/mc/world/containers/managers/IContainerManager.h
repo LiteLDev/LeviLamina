@@ -33,8 +33,7 @@ public:
     virtual void setContainerType(::SharedTypes::Legacy::ContainerType) = 0;
 
     // vIndex: 5
-    virtual ::Bedrock::PubSub::Subscription
-        registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)>) const = 0;
+    virtual ::Bedrock::PubSub::Subscription registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)>) const = 0;
 
     // vIndex: 6
     virtual void serverInitItemStackIds() = 0;
@@ -78,4 +77,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

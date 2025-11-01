@@ -20,4 +20,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::BlockStateRegistry& get();
     // NOLINTEND
+
 };

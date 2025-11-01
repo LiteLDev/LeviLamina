@@ -14,9 +14,7 @@ namespace Scripting { struct EnumBinding; }
 
 namespace ScriptModuleMinecraft {
 
-class ScriptCompoundBlockVolume
-: public ::ScriptModuleMinecraft::ScriptBlockVolumeIterable,
-  public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptCompoundBlockVolume> {
+class ScriptCompoundBlockVolume : public ::ScriptModuleMinecraft::ScriptBlockVolumeIterable, public ::Scripting::WeakHandleFromThis<::ScriptModuleMinecraft::ScriptCompoundBlockVolume> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -39,8 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolume&
-    operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolume const&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptCompoundBlockVolume& operator=(::ScriptModuleMinecraft::ScriptCompoundBlockVolume const&);
     // NOLINTEND
 
 public:
@@ -58,6 +55,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -16,13 +16,13 @@ class GuardianAttackDefinition : public ::BaseGoalDefinition {
 public:
     // GuardianAttackDefinition inner types define
     using self = ::GuardianAttackDefinition;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>   mMagicDamage;
-    ::ll::TypedStorage<4, 4, int>   mHardModeExtraMagicDamage;
-    ::ll::TypedStorage<4, 4, int>   mElderExtraMagicDamage;
+    ::ll::TypedStorage<4, 4, int> mMagicDamage;
+    ::ll::TypedStorage<4, 4, int> mHardModeExtraMagicDamage;
+    ::ll::TypedStorage<4, 4, int> mElderExtraMagicDamage;
     ::ll::TypedStorage<4, 4, float> mMaxRotationX;
     ::ll::TypedStorage<4, 4, float> mMaxHeadRotationY;
     ::ll::TypedStorage<4, 4, float> mMinDistance;
@@ -42,10 +42,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        ::std::string const&                                                                                     name,
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GuardianAttackDefinition>>& root
-    );
+    MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GuardianAttackDefinition>>& root);
     // NOLINTEND
 
 public:
@@ -59,4 +56,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

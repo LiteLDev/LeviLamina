@@ -4,6 +4,7 @@
 
 namespace Realms {
 
-struct SubscriptionInfo {};
+struct SubscriptionInfo {
+};
 
-} // namespace Realms
+}

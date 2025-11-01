@@ -4,6 +4,7 @@
 
 namespace br::spawn {
 
-struct NullToken {};
+struct NullToken {
+};
 
-} // namespace br::spawn
+}

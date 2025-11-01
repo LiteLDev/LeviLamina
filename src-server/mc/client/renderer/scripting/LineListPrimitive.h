@@ -22,7 +22,7 @@ public:
     struct ColoredLine;
     struct Line;
     // clang-format on
-
+    
     // LineListPrimitive inner types define
     struct Line {
     public:
@@ -31,14 +31,15 @@ public:
         ::ll::UntypedStorage<4, 12> mUnk7bb2c9;
         ::ll::UntypedStorage<4, 12> mUnk984e6d;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Line& operator=(Line const&);
         Line(Line const&);
         Line();
+    
     };
-
+    
     struct ColoredLine {
     public:
         // member variables
@@ -47,14 +48,15 @@ public:
         ::ll::UntypedStorage<4, 12> mUnkd4f0b4;
         ::ll::UntypedStorage<4, 16> mUnk956750;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ColoredLine& operator=(ColoredLine const&);
         ColoredLine(ColoredLine const&);
         ColoredLine();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -96,6 +98,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Scripting::RenderHelper
+}

@@ -62,4 +62,5 @@ public:
 
     MCNAPI bool $logOnlyOnce() const;
     // NOLINTEND
+
 };

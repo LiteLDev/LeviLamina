@@ -14,4 +14,5 @@ public:
     LinksToStyleMap& operator=(LinksToStyleMap const&);
     LinksToStyleMap(LinksToStyleMap const&);
     LinksToStyleMap();
+
 };

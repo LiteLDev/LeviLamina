@@ -9,7 +9,6 @@ class BiomeSource;
 class BlockPos;
 class BoundingBox;
 class Dimension;
-struct BiomeIdType;
 // clang-format on
 
 namespace BiomeSourceUtil {
@@ -17,20 +16,9 @@ namespace BiomeSourceUtil {
 // NOLINTBEGIN
 MCAPI short determineDestinationHeight(::Dimension const& dimension, ::BlockPos const& destination);
 
-MCAPI ::BlockPos determineUndergroundDestinationForBiome(
-    ::Dimension const& dimension,
-    ::BlockPos const&  startDestination,
-    ::BiomeIdType      biomeId,
-    int                searchRadius
-);
+MCAPI ::BlockPos determineUndergroundDestination(::Dimension const& dimension, ::BlockPos const& startDestination, ::std::function<bool(::Biome const&)> const& predicate, int searchRadius);
 
-MCAPI ::std::optional<::BlockPos> locateBiome(
-    ::std::function<bool(::Biome const&)> const& predicate,
-    ::BiomeSource const&                         biomeSource,
-    ::BlockPos const&                            center,
-    ::BoundingBox                                worldBounds,
-    uint                                         resolution
-);
+MCAPI ::std::optional<::BlockPos> locateBiome(::std::function<bool(::Biome const&)> const& predicate, ::BiomeSource const& biomeSource, ::BlockPos const& center, ::BoundingBox worldBounds, uint resolution);
 // NOLINTEND
 
-} // namespace BiomeSourceUtil
+}

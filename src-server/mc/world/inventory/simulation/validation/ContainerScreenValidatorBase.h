@@ -29,19 +29,13 @@ public:
     virtual ~ContainerScreenValidatorBase();
 
     // vIndex: 1
-    virtual ::std::shared_ptr<::ContainerValidationCommitObject>
-    postCommitItemRemoved(::ContainerEnumName const, int const, ::ItemStack const&);
+    virtual ::std::shared_ptr<::ContainerValidationCommitObject> postCommitItemRemoved(::ContainerEnumName const, int const, ::ItemStack const&);
 
     // vIndex: 2
     virtual bool isCraftingImplemented();
 
     // vIndex: 3
-    virtual ::ContainerValidationCraftResult getCraftResult(
-        ::ContainerScreenContext const&,
-        ::ContainerScreenValidation&,
-        ::std::unique_ptr<::ContainerValidationCraftInputs>,
-        uchar const
-    );
+    virtual ::ContainerValidationCraftResult getCraftResult(::ContainerScreenContext const&, ::ContainerScreenValidation&, ::std::unique_ptr<::ContainerValidationCraftInputs>, uchar const);
     // NOLINTEND
 
 public:
@@ -53,17 +47,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::ContainerValidationCommitObject>
-    $postCommitItemRemoved(::ContainerEnumName const, int const, ::ItemStack const&);
+    MCNAPI ::std::shared_ptr<::ContainerValidationCommitObject> $postCommitItemRemoved(::ContainerEnumName const, int const, ::ItemStack const&);
 
     MCNAPI bool $isCraftingImplemented();
 
-    MCNAPI ::ContainerValidationCraftResult $getCraftResult(
-        ::ContainerScreenContext const&,
-        ::ContainerScreenValidation&,
-        ::std::unique_ptr<::ContainerValidationCraftInputs>,
-        uchar const
-    );
+    MCNAPI ::ContainerValidationCraftResult $getCraftResult(::ContainerScreenContext const&, ::ContainerScreenValidation&, ::std::unique_ptr<::ContainerValidationCraftInputs>, uchar const);
     // NOLINTEND
 
 public:
@@ -71,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

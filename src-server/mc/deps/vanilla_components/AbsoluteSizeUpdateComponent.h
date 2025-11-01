@@ -14,4 +14,5 @@ public:
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mBreathingOffset;
     ::ll::TypedStorage<4, 16, ::std::optional<::Vec3>> mMouthOffset;
     // NOLINTEND
+
 };

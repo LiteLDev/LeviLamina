@@ -68,4 +68,5 @@ public:
 
     MCAPI static void** $vftableForRandomizableBlockActorContainerBase();
     // NOLINTEND
+
 };

@@ -18,29 +18,27 @@ class FaceDirectionalBlock : public ::BlockType {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>  mHorizontalOnly;
+    ::ll::TypedStorage<1, 1, bool> mHorizontalOnly;
     ::ll::TypedStorage<4, 4, float> mYRotOffset;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 120
+    // vIndex: 119
     virtual ::Block const& getRenderBlock() const /*override*/;
 
-    // vIndex: 121
+    // vIndex: 120
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 122
+    // vIndex: 121
     virtual ::Flip getFaceFlip(uchar face, ::Block const& block) const /*override*/;
 
-    // vIndex: 92
-    virtual ::Block const&
-    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
-        /*override*/;
+    // vIndex: 91
+    virtual ::Block const& getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const /*override*/;
 
     // vIndex: 48
-    virtual bool isValidAuxValue(int auxValue) const /*override*/;
+    virtual bool isValidAuxValue(int value) const /*override*/;
 
     // vIndex: 0
     virtual ~FaceDirectionalBlock() /*override*/ = default;
@@ -53,14 +51,9 @@ public:
 
     MCFOLD uchar $getMappedFace(uchar face, ::Block const& block) const;
 
-    MCFOLD ::Block const& $getPlacementBlock(
-        ::Actor const&    by,
-        ::BlockPos const& pos,
-        uchar             face,
-        ::Vec3 const&     clickPos,
-        int               itemValue
-    ) const;
+    MCFOLD ::Block const& $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const;
 
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCAPI bool $isValidAuxValue(int value) const;
     // NOLINTEND
+
 };

@@ -4,7 +4,8 @@
 
 namespace rtc {
 
-template <typename T0>
-class FunctionView {};
+template<typename T0>
+class FunctionView {
+};
 
-} // namespace rtc
+}

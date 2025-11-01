@@ -16,6 +16,7 @@ public:
     TargetCameraOrientationComponent& operator=(TargetCameraOrientationComponent const&);
     TargetCameraOrientationComponent(TargetCameraOrientationComponent const&);
     TargetCameraOrientationComponent();
+
 };
 
-} // namespace MinecraftCamera
+}

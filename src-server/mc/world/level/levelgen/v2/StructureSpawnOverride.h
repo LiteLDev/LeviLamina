@@ -17,7 +17,7 @@ struct StructureSpawnOverride {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::br::worldgen::StructureBoundingBoxType>           mBoundingBox;
+    ::ll::TypedStorage<1, 1, ::br::worldgen::StructureBoundingBoxType> mBoundingBox;
     ::ll::TypedStorage<8, 32, ::WeightedRandomList<::br::worldgen::SpawnerData>> mSpawnOverrides;
     // NOLINTEND
 
@@ -32,6 +32,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen
+}

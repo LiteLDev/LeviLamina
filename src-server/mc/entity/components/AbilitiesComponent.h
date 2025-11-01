@@ -11,4 +11,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 1444, ::LayeredAbilities> mAbilities;
     // NOLINTEND
+
 };

@@ -17,4 +17,5 @@ public:
     VanillaActorData& operator=(VanillaActorData const&);
     VanillaActorData(VanillaActorData const&);
     VanillaActorData();
+
 };

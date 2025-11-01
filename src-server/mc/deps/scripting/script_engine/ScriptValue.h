@@ -13,8 +13,8 @@ class ScriptValue {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7e6933;
-    ::ll::UntypedStorage<1, 1>  mUnk979b85;
+    ::ll::UntypedStorage<8, 8> mUnk7e6933;
+    ::ll::UntypedStorage<1, 1> mUnk979b85;
     ::ll::UntypedStorage<8, 16> mUnk5510fe;
     // NOLINTEND
 
@@ -48,6 +48,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

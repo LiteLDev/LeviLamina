@@ -16,7 +16,7 @@ class SensingComponent {
 public:
     // SensingComponent inner types define
     using ActorSet = ::std::unordered_set<::ActorUniqueID>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -27,9 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool canSee(::Mob& owner, ::Actor const& target);
+    MCAPI bool canSee(::Mob const& owner, ::Actor const& target);
 
-    MCAPI bool withinFOV(::Mob& owner, ::Vec3 const& targetPosition, float fov);
+    MCAPI bool withinFOV(::Mob const& owner, ::Vec3 const& targetPosition, float fov) const;
 
     MCAPI ~SensingComponent();
     // NOLINTEND
@@ -39,4 +39,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

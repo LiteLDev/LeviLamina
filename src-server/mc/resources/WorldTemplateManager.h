@@ -25,15 +25,15 @@ class WorldTemplateManager : public ::IWorldTemplateManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48>  mUnk8b6b74;
-    ::ll::UntypedStorage<8, 80>  mUnk4899ec;
-    ::ll::UntypedStorage<1, 1>   mUnkc27adc;
-    ::ll::UntypedStorage<1, 1>   mUnke65739;
+    ::ll::UntypedStorage<8, 48> mUnk8b6b74;
+    ::ll::UntypedStorage<8, 80> mUnk4899ec;
+    ::ll::UntypedStorage<1, 1> mUnkc27adc;
+    ::ll::UntypedStorage<1, 1> mUnke65739;
     ::ll::UntypedStorage<8, 616> mUnk8c2b95;
-    ::ll::UntypedStorage<8, 8>   mUnk6ded12;
-    ::ll::UntypedStorage<8, 64>  mUnk15675e;
+    ::ll::UntypedStorage<8, 8> mUnk6ded12;
+    ::ll::UntypedStorage<8, 64> mUnk15675e;
     ::ll::UntypedStorage<8, 128> mUnk45ddcd;
-    ::ll::UntypedStorage<8, 8>   mUnk4864e0;
+    ::ll::UntypedStorage<8, 8> mUnk4864e0;
     // NOLINTEND
 
 public:
@@ -64,16 +64,13 @@ public:
     virtual ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& getLocalTemplates() const /*override*/;
 
     // vIndex: 2
-    virtual ::WorldTemplateInfo const*
-    findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs) const /*override*/;
+    virtual ::WorldTemplateInfo const* findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs) const /*override*/;
 
     // vIndex: 9
-    virtual ::WorldTemplateInfo const* findInstalledWorldTemplate(::PackIdVersion const& packIdentityToFind) const
-        /*override*/;
+    virtual ::WorldTemplateInfo const* findInstalledWorldTemplate(::PackIdVersion const& packIdentityToFind) const /*override*/;
 
     // vIndex: 11
-    virtual void forEachWorldTemplate(::std::function<void(::WorldTemplateInfo const&)> const& callback) const
-        /*override*/;
+    virtual void forEachWorldTemplate(::std::function<void(::WorldTemplateInfo const&)> const& callback) const /*override*/;
 
     // vIndex: 8
     virtual void deleteWorldTemplateAndFiles(::PackIdVersion const& packIdentity) /*override*/;
@@ -82,9 +79,7 @@ public:
     virtual bool isInitialized() const /*override*/;
 
     // vIndex: 3
-    virtual ::Bedrock::PubSub::Subscription registerModifiedCallback(
-        ::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction
-    ) /*override*/;
+    virtual ::Bedrock::PubSub::Subscription registerModifiedCallback(::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction) /*override*/;
 
     // vIndex: 10
     virtual ::WorldTemplateCollectionView createView(::mce::UUID const& toView) const /*override*/;
@@ -95,10 +90,7 @@ public:
     // NOLINTBEGIN
     MCNAPI WorldTemplateManager(::std::unique_ptr<::IWorldTemplateManagerInitializer> initializer, bool initAsync);
 
-    MCNAPI void _deleteWorldTemplate(
-        ::PackIdVersion const&                     packIdentity,
-        ::std::function<bool(::Core::Path const&)> deleteWorldCallback
-    );
+    MCNAPI void _deleteWorldTemplate(::PackIdVersion const& packIdentity, ::std::function<bool(::Core::Path const&)> deleteWorldCallback);
 
     MCNAPI void _initialize(::WorldTemplateManagerInitData&& data);
 
@@ -130,8 +122,7 @@ public:
 
     MCNAPI ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& $getLocalTemplates() const;
 
-    MCNAPI ::WorldTemplateInfo const*
-    $findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs) const;
+    MCNAPI ::WorldTemplateInfo const* $findInstalledWorldTemplateByUUID(::std::vector<::mce::UUID> const& packUUIDs) const;
 
     MCNAPI ::WorldTemplateInfo const* $findInstalledWorldTemplate(::PackIdVersion const& packIdentityToFind) const;
 
@@ -141,8 +132,7 @@ public:
 
     MCNAPI bool $isInitialized() const;
 
-    MCNAPI ::Bedrock::PubSub::Subscription
-    $registerModifiedCallback(::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction);
+    MCNAPI ::Bedrock::PubSub::Subscription $registerModifiedCallback(::std::function<void(::std::pair<::std::string, bool> const&)> newCallbackFunction);
 
     MCNAPI ::WorldTemplateCollectionView $createView(::mce::UUID const& toView) const;
     // NOLINTEND
@@ -152,4 +142,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

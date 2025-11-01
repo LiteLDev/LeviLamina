@@ -7,6 +7,7 @@
 class EntityContext;
 class Vec2;
 struct ClientInputLockComponent;
+struct MoveInputComponent;
 struct MoveInputState;
 // clang-format on
 
@@ -17,7 +18,9 @@ MCNAPI void applyInputLocks(::ClientInputLockComponent const& lockComponent, ::M
 
 MCNAPI ::Vec2 calculateButtonMoveVector(::MoveInputState const& inputState);
 
+MCNAPI void clearInputState(::MoveInputComponent& input);
+
 MCNAPI void initializePlayer(::EntityContext& provider);
 // NOLINTEND
 
-} // namespace PlayerMovement
+}

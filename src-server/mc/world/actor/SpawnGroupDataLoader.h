@@ -28,8 +28,7 @@ public:
     // NOLINTBEGIN
     MCNAPI SpawnGroupDataLoader();
 
-    MCNAPI ::Puv::LoadResult<::ActorSpawnRuleData>
-    load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
+    MCNAPI ::Puv::LoadResult<::ActorSpawnRuleData> load(::Bedrock::Resources::MinecraftDocumentInput const& input) const;
 
     MCNAPI ~SpawnGroupDataLoader();
     // NOLINTEND
@@ -45,4 +44,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

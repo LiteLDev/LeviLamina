@@ -10,10 +10,10 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk58cc32;
     ::ll::UntypedStorage<8, 32> mUnke5fea4;
     ::ll::UntypedStorage<8, 32> mUnk51e353;
-    ::ll::UntypedStorage<4, 4>  mUnk959cb5;
-    ::ll::UntypedStorage<1, 1>  mUnk628941;
-    ::ll::UntypedStorage<1, 1>  mUnkc3821f;
-    ::ll::UntypedStorage<1, 1>  mUnkd80a73;
+    ::ll::UntypedStorage<4, 4> mUnk959cb5;
+    ::ll::UntypedStorage<1, 1> mUnk628941;
+    ::ll::UntypedStorage<1, 1> mUnkc3821f;
+    ::ll::UntypedStorage<1, 1> mUnkd80a73;
     // NOLINTEND
 
 public:
@@ -21,4 +21,5 @@ public:
     PurchaseInfo& operator=(PurchaseInfo const&);
     PurchaseInfo(PurchaseInfo const&);
     PurchaseInfo();
+
 };

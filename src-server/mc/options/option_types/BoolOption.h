@@ -9,8 +9,8 @@ class BoolOption : public ::Option {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk2714f6;
-    ::ll::UntypedStorage<1, 1>  mUnk7dc59c;
+    ::ll::UntypedStorage<1, 1> mUnk2714f6;
+    ::ll::UntypedStorage<1, 1> mUnk7dc59c;
     ::ll::UntypedStorage<8, 64> mUnkaaf000;
     // NOLINTEND
 
@@ -52,4 +52,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

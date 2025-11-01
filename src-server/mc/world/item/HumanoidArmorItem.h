@@ -34,40 +34,41 @@ public:
     // clang-format off
     class ArmorMaterial;
     // clang-format on
-
+    
     // HumanoidArmorItem inner types define
     enum class Tier : int {
-        Leather   = 0,
-        Chain     = 1,
-        Iron      = 2,
-        Diamond   = 3,
-        Gold      = 4,
-        Elytra    = 5,
-        Turtle    = 6,
+        Leather = 0,
+        Chain = 1,
+        Iron = 2,
+        Diamond = 3,
+        Gold = 4,
+        Elytra = 5,
+        Turtle = 6,
         Netherite = 7,
-        Copper    = 8,
+        Copper = 8,
     };
-
+    
     class ArmorMaterial {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, int>     mDurabilityMultiplier;
+        ::ll::TypedStorage<4, 4, int> mDurabilityMultiplier;
         ::ll::TypedStorage<4, 16, int[4]> mSlotProtections;
-        ::ll::TypedStorage<4, 4, int>     mToughnessValue;
-        ::ll::TypedStorage<4, 4, int>     mEnchantmentValue;
-        ::ll::TypedStorage<4, 4, float>   mKnockbackResistance;
+        ::ll::TypedStorage<4, 4, int> mToughnessValue;
+        ::ll::TypedStorage<4, 4, int> mEnchantmentValue;
+        ::ll::TypedStorage<4, 4, float> mKnockbackResistance;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ArmorSlot const>    mSlot;
-    ::ll::TypedStorage<4, 4, int const>                                 mDefense;
-    ::ll::TypedStorage<4, 4, int const>                                 mModelIndex;
+    ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::ArmorSlot const> mSlot;
+    ::ll::TypedStorage<4, 4, int const> mDefense;
+    ::ll::TypedStorage<4, 4, int const> mModelIndex;
     ::ll::TypedStorage<8, 8, ::HumanoidArmorItem::ArmorMaterial const&> mArmorType;
-    ::ll::TypedStorage<1, 1, bool>                                      mCurrentVersionAllowsTrim;
+    ::ll::TypedStorage<1, 1, bool> mCurrentVersionAllowsTrim;
     // NOLINTEND
 
 public:
@@ -82,38 +83,34 @@ public:
     // vIndex: 10
     virtual bool isHumanoidArmor() const /*override*/;
 
-    // vIndex: 53
-    virtual bool isValidRepairItem(
-        ::ItemStackBase const&   source,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const /*override*/;
-
     // vIndex: 54
-    virtual int getEnchantSlot() const /*override*/;
+    virtual bool isValidRepairItem(::ItemStackBase const& source, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const /*override*/;
 
     // vIndex: 55
-    virtual int getEnchantValue() const /*override*/;
+    virtual int getEnchantSlot() const /*override*/;
 
     // vIndex: 56
-    virtual int getArmorValue() const /*override*/;
+    virtual int getEnchantValue() const /*override*/;
 
     // vIndex: 57
+    virtual int getArmorValue() const /*override*/;
+
+    // vIndex: 58
     virtual int getToughnessValue() const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 124
     virtual float getArmorKnockbackResistance() const;
 
-    // vIndex: 67
+    // vIndex: 68
     virtual bool hasCustomColor(::CompoundTag const* userData) const /*override*/;
 
-    // vIndex: 66
+    // vIndex: 67
     virtual ::mce::Color getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const /*override*/;
 
-    // vIndex: 69
+    // vIndex: 70
     virtual void clearColor(::ItemStackBase& instance) const /*override*/;
 
-    // vIndex: 70
+    // vIndex: 71
     virtual void setColor(::ItemStackBase& item, ::mce::Color const& color) const /*override*/;
 
     // vIndex: 15
@@ -122,38 +119,31 @@ public:
     // vIndex: 22
     virtual bool isTrimAllowed() const /*override*/;
 
-    // vIndex: 103
+    // vIndex: 104
     virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
 
-    // vIndex: 104
+    // vIndex: 105
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
-    // vIndex: 61
+    // vIndex: 62
     virtual int getDamageChance(int unbreaking) const /*override*/;
 
-    // vIndex: 80
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const
-        /*override*/;
+    // vIndex: 81
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const /*override*/;
 
-    // vIndex: 52
-    virtual void appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const /*override*/;
+    // vIndex: 53
+    virtual void appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 85
     virtual void hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const /*override*/;
 
-    // vIndex: 110
-    virtual ::ResolvedItemIconInfo
-    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+    // vIndex: 111
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
-    // vIndex: 76
+    // vIndex: 77
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player) const /*override*/;
 
-    // vIndex: 74
+    // vIndex: 75
     virtual int buildIdAux(short auxValue, ::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 0
@@ -197,11 +187,7 @@ public:
     // NOLINTBEGIN
     MCFOLD bool $isHumanoidArmor() const;
 
-    MCAPI bool $isValidRepairItem(
-        ::ItemStackBase const&   source,
-        ::ItemStackBase const&   repairItem,
-        ::BaseGameVersion const& baseGameVersion
-    ) const;
+    MCAPI bool $isValidRepairItem(::ItemStackBase const& source, ::ItemStackBase const& repairItem, ::BaseGameVersion const& baseGameVersion) const;
 
     MCAPI int $getEnchantSlot() const;
 
@@ -231,17 +217,11 @@ public:
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCAPI void $appendFormattedHovertext(
-        ::ItemStackBase const&               stack,
-        ::Level&                             level,
-        ::Bedrock::Safety::RedactableString& hovertext,
-        bool const                           showCategory
-    ) const;
+    MCAPI void $appendFormattedHovertext(::ItemStackBase const& stack, ::Level& level, ::Bedrock::Safety::RedactableString& hovertext, bool const showCategory) const;
 
     MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI ::ResolvedItemIconInfo
-    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player) const;
 
@@ -253,4 +233,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

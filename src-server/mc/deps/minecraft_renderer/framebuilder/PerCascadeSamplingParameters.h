@@ -20,6 +20,7 @@ public:
     PerCascadeSamplingParameters& operator=(PerCascadeSamplingParameters const&);
     PerCascadeSamplingParameters(PerCascadeSamplingParameters const&);
     PerCascadeSamplingParameters();
+
 };
 
-} // namespace mce::framebuilder
+}

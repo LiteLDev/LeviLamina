@@ -20,7 +20,7 @@ public:
     class FileStorageSystem;
     class StorageSystem;
     // clang-format on
-
+    
     // FileSecureStorage inner types define
     class StorageSystem {
     public:
@@ -28,74 +28,76 @@ public:
         // NOLINTBEGIN
         // vIndex: 0
         virtual bool getData(::std::string&, ::Core::Path);
-
+    
         // vIndex: 1
         virtual void setData(::std::string const&, ::Core::Path);
-
+    
         // vIndex: 2
         virtual ~StorageSystem() = default;
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
-
+    
         // NOLINTEND
+    
     };
-
+    
     class FileStorageSystem : public ::FileSecureStorage::StorageSystem {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 80> mUnkabc774;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         FileStorageSystem& operator=(FileStorageSystem const&);
         FileStorageSystem(FileStorageSystem const&);
         FileStorageSystem();
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual bool getData(::std::string& output, ::Core::Path path) /*override*/;
-
+    
         // vIndex: 1
         virtual void setData(::std::string const& data, ::Core::Path path) /*override*/;
-
+    
         // vIndex: 2
         virtual ~FileStorageSystem() /*override*/ = default;
         // NOLINTEND
-
+    
     public:
         // virtual function thunks
         // NOLINTBEGIN
         MCNAPI bool $getData(::std::string& output, ::Core::Path path);
-
+    
         MCNAPI void $setData(::std::string const& data, ::Core::Path path);
         // NOLINTEND
-
+    
     public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnk3dbac1;
+    ::ll::UntypedStorage<1, 1> mUnk3dbac1;
     ::ll::UntypedStorage<8, 16> mUnk8a969d;
-    ::ll::UntypedStorage<8, 8>  mUnk7832e5;
+    ::ll::UntypedStorage<8, 8> mUnk7832e5;
     ::ll::UntypedStorage<8, 64> mUnk691ea8;
     ::ll::UntypedStorage<8, 64> mUnk36a680;
-    ::ll::UntypedStorage<8, 8>  mUnkf95aee;
-    ::ll::UntypedStorage<8, 8>  mUnk7dfe40;
-    ::ll::UntypedStorage<8, 8>  mUnkd82ddc;
-    ::ll::UntypedStorage<8, 8>  mUnk9dc477;
+    ::ll::UntypedStorage<8, 8> mUnkf95aee;
+    ::ll::UntypedStorage<8, 8> mUnk7dfe40;
+    ::ll::UntypedStorage<8, 8> mUnkd82ddc;
+    ::ll::UntypedStorage<8, 8> mUnk9dc477;
     ::ll::UntypedStorage<8, 32> mUnk9ecaf6;
     // NOLINTEND
 
@@ -127,13 +129,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FileSecureStorage(
-        ::Core::PathView                    settingsPath,
-        ::Core::PathView                    baseSettingsPath,
-        ::ISecureStorageKeySystem*          sskSystem,
-        ::Core::PathView                    userDataPath,
-        ::FileSecureStorage::StorageSystem* storage
-    );
+    MCNAPI FileSecureStorage(::Core::PathView settingsPath, ::Core::PathView baseSettingsPath, ::ISecureStorageKeySystem* sskSystem, ::Core::PathView userDataPath, ::FileSecureStorage::StorageSystem* storage);
 
     MCNAPI ::std::string _contentKeyObfuscator(::std::string const& codedData, ::std::string const& identifier);
 
@@ -149,13 +145,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Core::PathView                    settingsPath,
-        ::Core::PathView                    baseSettingsPath,
-        ::ISecureStorageKeySystem*          sskSystem,
-        ::Core::PathView                    userDataPath,
-        ::FileSecureStorage::StorageSystem* storage
-    );
+    MCNAPI void* $ctor(::Core::PathView settingsPath, ::Core::PathView baseSettingsPath, ::ISecureStorageKeySystem* sskSystem, ::Core::PathView userDataPath, ::FileSecureStorage::StorageSystem* storage);
     // NOLINTEND
 
 public:
@@ -181,4 +171,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

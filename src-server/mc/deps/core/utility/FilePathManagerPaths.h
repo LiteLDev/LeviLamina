@@ -15,7 +15,7 @@ public:
     ::ll::UntypedStorage<8, 32> mUnk42dbbc;
     ::ll::UntypedStorage<8, 32> mUnk10610c;
     ::ll::UntypedStorage<8, 32> mUnk1f66e9;
-    ::ll::UntypedStorage<1, 1>  mUnkba5e88;
+    ::ll::UntypedStorage<1, 1> mUnkba5e88;
     // NOLINTEND
 
 public:
@@ -35,6 +35,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

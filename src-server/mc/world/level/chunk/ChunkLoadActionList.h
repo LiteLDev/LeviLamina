@@ -26,61 +26,27 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::ChunkLoadedRequest>> mChunkLoadedRequests;
     ::ll::TypedStorage<8, 24, ::std::vector<::ChunkLoadedRequest>> mChunkLoadedRequestsWaitForTicking;
-    ::ll::TypedStorage<4, 4, ::DimensionDataSerializer>            mDimensionDataSerializer;
+    ::ll::TypedStorage<4, 4, ::DimensionDataSerializer> mDimensionDataSerializer;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _addChunkLoadedRequest(
-        ::ChunkLoadedRequest chunkLoadedRequest,
-        ::std::string const& dimensionPrefix,
-        ::ChunksLoadedStatus chunksLoadedStatus,
-        ::LevelStorage&      levelStorage
-    );
+    MCNAPI void _addChunkLoadedRequest(::ChunkLoadedRequest chunkLoadedRequest, ::std::string const& dimensionPrefix, ::ChunksLoadedStatus chunksLoadedStatus, ::LevelStorage& levelStorage);
 
-    MCNAPI int
-    _clearRequest(::LevelStorage& levelStorage, ::IRequestAction* actionToRemove, ::std::string_view tickingAreaName);
+    MCNAPI int _clearRequest(::LevelStorage& levelStorage, ::IRequestAction* actionToRemove, ::std::string_view tickingAreaName);
 
-    MCNAPI ::QueueRequestResult _queueRequestOrExecuteAction(
-        ::ChunkLoadedRequest chunkLoadedRequest,
-        ::ServerLevel&       serverLevel,
-        ::LevelStorage&      levelStorage,
-        ::Dimension&         dimension,
-        ::ChunksLoadedStatus chunksLoadedStatus
-    );
+    MCNAPI ::QueueRequestResult _queueRequestOrExecuteAction(::ChunkLoadedRequest chunkLoadedRequest, ::ServerLevel& serverLevel, ::LevelStorage& levelStorage, ::Dimension& dimension, ::ChunksLoadedStatus chunksLoadedStatus);
 
-    MCNAPI void _saveRequest(
-        ::ChunkLoadedRequest&  request,
-        ::std::string const&   dimensionPrefix,
-        ::ChunkRequestListType chunkRequestListType,
-        ::LevelStorage&        levelStorage
-    );
+    MCNAPI void _saveRequest(::ChunkLoadedRequest& request, ::std::string const& dimensionPrefix, ::ChunkRequestListType chunkRequestListType, ::LevelStorage& levelStorage);
 
-    MCNAPI void _updateAsyncList(
-        ::LevelStorage&                                              levelStorage,
-        ::Dimension&                                                 dimension,
-        ::std::function<::ChunksLoadedStatus(::ChunkLoadedRequest&)> chunksLoadedCheckFunction
-    );
+    MCNAPI void _updateAsyncList(::LevelStorage& levelStorage, ::Dimension& dimension, ::std::function<::ChunksLoadedStatus(::ChunkLoadedRequest&)> chunksLoadedCheckFunction);
 
-    MCNAPI void _updateTickingList(
-        ::ServerLevel&                                               serverLevel,
-        ::Dimension&                                                 dimension,
-        ::std::function<::ChunksLoadedStatus(::ChunkLoadedRequest&)> chunksLoadedCheckFunction
-    );
+    MCNAPI void _updateTickingList(::ServerLevel& serverLevel, ::Dimension& dimension, ::std::function<::ChunksLoadedStatus(::ChunkLoadedRequest&)> chunksLoadedCheckFunction);
 
-    MCNAPI void loadRequest(
-        ::std::string const&                    key,
-        ::CompoundTag const&                    tag,
-        ::ICommandOriginLoader&                 loader,
-        ::std::string const&                    dimensionPrefix,
-        ::JigsawStructureElementRegistry const& elementReg
-    );
+    MCNAPI void loadRequest(::std::string const& key, ::CompoundTag const& tag, ::ICommandOriginLoader& loader, ::std::string const& dimensionPrefix, ::JigsawStructureElementRegistry const& elementReg);
 
-    MCNAPI ::QueueRequestResult queueRequestOrExecuteAction(
-        ::ChunkLoadedRequest chunkLoadedRequest,
-        ::ServerLevel&       serverLevel,
-        ::Dimension&         dimension
-    );
+    MCNAPI ::QueueRequestResult queueRequestOrExecuteAction(::ChunkLoadedRequest chunkLoadedRequest, ::ServerLevel& serverLevel, ::Dimension& dimension);
     // NOLINTEND
+
 };

@@ -4,6 +4,7 @@
 
 namespace webrtc {
 
-class Location {};
+class Location {
+};
 
-} // namespace webrtc
+}

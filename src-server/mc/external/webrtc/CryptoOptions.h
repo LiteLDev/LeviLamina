@@ -11,7 +11,7 @@ public:
     struct SFrame;
     struct Srtp;
     // clang-format on
-
+    
     // CryptoOptions inner types define
     struct Srtp {
     public:
@@ -22,28 +22,30 @@ public:
         ::ll::UntypedStorage<1, 1> mUnka663a9;
         ::ll::UntypedStorage<1, 1> mUnk3ec5f1;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Srtp& operator=(Srtp const&);
         Srtp(Srtp const&);
         Srtp();
+    
     };
-
+    
     struct SFrame {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1> mUnk39f362;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         SFrame& operator=(SFrame const&);
         SFrame(SFrame const&);
         SFrame();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -84,6 +86,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

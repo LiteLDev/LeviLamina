@@ -28,15 +28,13 @@ public:
     // vIndex: 30
     virtual bool isLavaBlocking() const /*override*/;
 
-    // vIndex: 92
-    virtual ::Block const&
-    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
-        /*override*/;
+    // vIndex: 91
+    virtual ::Block const& getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const /*override*/;
 
-    // vIndex: 132
+    // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 121
+    // vIndex: 120
     virtual uchar getMappedFace(uchar face, ::Block const& block) const /*override*/;
 
     // vIndex: 51
@@ -45,10 +43,10 @@ public:
     // vIndex: 56
     virtual bool canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -68,13 +66,7 @@ public:
 
     MCFOLD bool $isLavaBlocking() const;
 
-    MCAPI ::Block const& $getPlacementBlock(
-        ::Actor const&    by,
-        ::BlockPos const& pos,
-        uchar             face,
-        ::Vec3 const&     clickPos,
-        int               itemValue
-    ) const;
+    MCAPI ::Block const& $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -94,4 +86,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

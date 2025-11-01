@@ -24,16 +24,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 89
-    virtual ::std::string
-    buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
-
-    // vIndex: 109
-    virtual ::Item& setIconInfo(::std::string const& name, int id) /*override*/;
+    // vIndex: 90
+    virtual ::std::string buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const /*override*/;
 
     // vIndex: 110
-    virtual ::ResolvedItemIconInfo
-    getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
+    virtual ::Item& setIconInfo(::std::string const& name, int index) /*override*/;
+
+    // vIndex: 111
+    virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const /*override*/;
 
     // vIndex: 3
     virtual ::RecordItem& setDescriptionId(::std::string const& description) /*override*/;
@@ -45,35 +43,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RecordItem(
-        ::std::string const&                   name,
-        int                                    id,
-        ::cereal::ReflectionCtx&               ctx,
-        ::SharedTypes::Legacy::LevelSoundEvent soundEvent
-    );
+    MCAPI RecordItem(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx, ::SharedTypes::Legacy::LevelSoundEvent soundEvent);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::string const&                   name,
-        int                                    id,
-        ::cereal::ReflectionCtx&               ctx,
-        ::SharedTypes::Legacy::LevelSoundEvent soundEvent
-    );
+    MCAPI void* $ctor(::std::string const& name, int id, ::cereal::ReflectionCtx& ctx, ::SharedTypes::Legacy::LevelSoundEvent soundEvent);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string
-    $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
+    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+    MCFOLD ::Item& $setIconInfo(::std::string const& name, int index);
 
-    MCFOLD ::ResolvedItemIconInfo
-    $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
+    MCFOLD ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
     MCFOLD ::RecordItem& $setDescriptionId(::std::string const& description);
     // NOLINTEND
@@ -83,4 +69,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

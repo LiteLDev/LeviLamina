@@ -31,27 +31,7 @@ struct WaterlilyBlockFlag;
 namespace EntityInsideSystemImpl {
 // functions
 // NOLINTBEGIN
-MCNAPI void blockProcess(
-    ::StrictEntityContext const& entity,
-    ::EntityModifier<
-        ::BlockMovementSlowdownAppliedComponent,
-        ::FreezingComponent,
-        ::IgnoresEntityInsideFlagComponent,
-        ::InsideBubbleColumnBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>,
-        ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>,
-        ::InsideGenericBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>,
-        ::InsideOnewayBlockComponent,
-        ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>,
-        ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>,
-        ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>,
-        ::InsideWebBlockComponent> modifier,
-    ::Block const&                 block,
-    ::BlockPos const&              pos,
-    ::InsideGenericBlockComponent& insideGeneric,
-    ::IConstBlockSource const&     region
-);
+MCNAPI void blockProcess(::StrictEntityContext const& entity, ::EntityModifier<::BlockMovementSlowdownAppliedComponent, ::FreezingComponent, ::IgnoresEntityInsideFlagComponent, ::InsideBubbleColumnBlockComponent, ::InsideBlockWithPosAndBlockComponent<::CactusBlockFlag>, ::InsideBlockWithPosAndBlockComponent<::EndPortalBlockFlag>, ::InsideGenericBlockComponent, ::InsideBlockWithPosAndBlockComponent<::HoneyBlockFlag>, ::InsideOnewayBlockComponent, ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag>, ::InsideBlockWithPosAndBlockComponent<::SweetBerryBushBlockFlag>, ::InsideBlockWithPosComponent<::WaterlilyBlockFlag>, ::InsideWebBlockComponent> modifier, ::Block const& block, ::BlockPos const& pos, ::InsideGenericBlockComponent& insideGeneric, ::IConstBlockSource const& region);
 // NOLINTEND
 
-} // namespace EntityInsideSystemImpl
+}

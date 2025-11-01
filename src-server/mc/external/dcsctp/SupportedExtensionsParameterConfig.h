@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct SupportedExtensionsParameterConfig {};
+struct SupportedExtensionsParameterConfig {
+};
 
-} // namespace dcsctp
+}

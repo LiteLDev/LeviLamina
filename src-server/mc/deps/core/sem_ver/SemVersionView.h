@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/deps/core/sem_ver/SemVersionBase.h"
 
-class SemVersionView : public ::SemVersionBase<::std::string_view> {};
+class SemVersionView : public ::SemVersionBase<::std::string_view> {
+};

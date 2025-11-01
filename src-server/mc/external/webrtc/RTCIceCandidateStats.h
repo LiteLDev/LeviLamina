@@ -18,22 +18,22 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnkbab829;
-    ::ll::UntypedStorage<1, 2>  mUnk6748a5;
+    ::ll::UntypedStorage<1, 2> mUnk6748a5;
     ::ll::UntypedStorage<8, 40> mUnk34748a;
     ::ll::UntypedStorage<8, 40> mUnk52a1d5;
     ::ll::UntypedStorage<8, 40> mUnk6a678c;
-    ::ll::UntypedStorage<4, 8>  mUnka4a56a;
+    ::ll::UntypedStorage<4, 8> mUnka4a56a;
     ::ll::UntypedStorage<8, 40> mUnk2e96a1;
     ::ll::UntypedStorage<8, 40> mUnk61362f;
     ::ll::UntypedStorage<8, 40> mUnkb0182b;
-    ::ll::UntypedStorage<4, 8>  mUnk3b0203;
+    ::ll::UntypedStorage<4, 8> mUnk3b0203;
     ::ll::UntypedStorage<8, 40> mUnk2d9568;
     ::ll::UntypedStorage<8, 40> mUnke5d5eb;
     ::ll::UntypedStorage<8, 40> mUnk812fe5;
-    ::ll::UntypedStorage<4, 8>  mUnkd51704;
+    ::ll::UntypedStorage<4, 8> mUnkd51704;
     ::ll::UntypedStorage<8, 40> mUnka86b7a;
     ::ll::UntypedStorage<8, 40> mUnk69f42b;
-    ::ll::UntypedStorage<1, 2>  mUnkb7d605;
+    ::ll::UntypedStorage<1, 2> mUnkb7d605;
     ::ll::UntypedStorage<8, 40> mUnkc7c4a8;
     // NOLINTEND
 
@@ -101,6 +101,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

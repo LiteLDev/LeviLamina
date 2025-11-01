@@ -5,8 +5,9 @@
 #include "mc/world/events/EventVariantImpl.h"
 #include "mc/world/events/ShapedRecipeTriggeredEvent.h"
 
-template <typename Return>
+template<typename Return>
 struct ItemGameplayEvent;
 
 template <>
-struct ItemGameplayEvent<void> : ConstEventVariant<ShapedRecipeTriggeredEvent, CraftUpdateResultItemClientEvent> {};
+struct ItemGameplayEvent<void> : ConstEventVariant<ShapedRecipeTriggeredEvent, CraftUpdateResultItemClientEvent> {
+};

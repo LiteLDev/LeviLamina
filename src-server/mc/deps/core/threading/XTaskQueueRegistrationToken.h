@@ -14,4 +14,5 @@ public:
     XTaskQueueRegistrationToken& operator=(XTaskQueueRegistrationToken const&);
     XTaskQueueRegistrationToken(XTaskQueueRegistrationToken const&);
     XTaskQueueRegistrationToken();
+
 };

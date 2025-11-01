@@ -32,6 +32,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor();
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

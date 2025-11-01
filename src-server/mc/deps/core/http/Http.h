@@ -13,4 +13,4 @@ namespace Bedrock::Http {
 MCNAPI ::gsl::not_null<::std::shared_ptr<::Bedrock::Http::LibHttpClientInstance>> getHttpClient();
 // NOLINTEND
 
-} // namespace Bedrock::Http
+}

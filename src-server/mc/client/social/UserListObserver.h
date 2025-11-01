@@ -25,8 +25,7 @@ public:
     virtual void onUserRemoved(::std::shared_ptr<::Social::User> const&);
 
     // vIndex: 4
-    virtual void
-    onUserStorageAreaChanged(::std::shared_ptr<::Social::User> const&, ::std::shared_ptr<::Core::FileStorageArea>&);
+    virtual void onUserStorageAreaChanged(::std::shared_ptr<::Social::User> const&, ::std::shared_ptr<::Core::FileStorageArea>&);
 
     // vIndex: 0
     virtual ~UserListObserver() /*override*/ = default;
@@ -37,6 +36,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Social
+}

@@ -18,11 +18,11 @@ class TeleportResponse : public ::EventResponse {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2>  mUnka87854;
+    ::ll::UntypedStorage<2, 2> mUnka87854;
     ::ll::UntypedStorage<4, 12> mUnk7e21b1;
     ::ll::UntypedStorage<4, 12> mUnkd50951;
-    ::ll::UntypedStorage<1, 1>  mUnk86927e;
-    ::ll::UntypedStorage<1, 1>  mUnk7ba552;
+    ::ll::UntypedStorage<1, 1> mUnk86927e;
+    ::ll::UntypedStorage<1, 1> mUnk7ba552;
     // NOLINTEND
 
 public:
@@ -41,10 +41,7 @@ public:
     virtual void executeAction(::RenderParams& params) const /*override*/;
 
     // vIndex: 3
-    virtual void buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
-        ::Factory<::EventResponse> const&                                                                       factory
-    ) const /*override*/;
+    virtual void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root, ::Factory<::EventResponse> const& factory) const /*override*/;
 
     // vIndex: 0
     virtual ~TeleportResponse() /*override*/ = default;
@@ -63,10 +60,7 @@ public:
 
     MCNAPI void $executeAction(::RenderParams& params) const;
 
-    MCNAPI void $buildSchema(
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root,
-        ::Factory<::EventResponse> const&                                                                       factory
-    ) const;
+    MCNAPI void $buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EventResponseCollection>>& root, ::Factory<::EventResponse> const& factory) const;
     // NOLINTEND
 
 public:
@@ -74,4 +68,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

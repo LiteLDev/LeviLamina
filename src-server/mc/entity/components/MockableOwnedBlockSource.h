@@ -6,8 +6,8 @@ class MockableOwnedBlockSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>   mUnk49fc51;
-    ::ll::UntypedStorage<8, 280> mUnk261323;
+    ::ll::UntypedStorage<4, 8> mUnk49fc51;
+    ::ll::UntypedStorage<8, 272> mUnk261323;
     // NOLINTEND
 
 public:
@@ -15,4 +15,5 @@ public:
     MockableOwnedBlockSource& operator=(MockableOwnedBlockSource const&);
     MockableOwnedBlockSource(MockableOwnedBlockSource const&);
     MockableOwnedBlockSource();
+
 };

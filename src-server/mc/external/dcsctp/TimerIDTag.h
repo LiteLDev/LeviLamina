@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-class TimerIDTag {};
+class TimerIDTag {
+};
 
-} // namespace dcsctp
+}

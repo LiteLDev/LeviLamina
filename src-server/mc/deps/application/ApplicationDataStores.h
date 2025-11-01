@@ -21,7 +21,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk25abfe;
     ::ll::UntypedStorage<8, 96> mUnkddf272;
     ::ll::UntypedStorage<8, 32> mUnk9c8278;
-    ::ll::UntypedStorage<1, 1>  mUnke3598c;
+    ::ll::UntypedStorage<1, 1> mUnke3598c;
     // NOLINTEND
 
 public:
@@ -40,12 +40,10 @@ public:
     virtual void init() /*override*/;
 
     // vIndex: 3
-    virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
-    getDataStore(::Bedrock::IApplicationDataStores::DataStores which) /*override*/;
+    virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore> getDataStore(::Bedrock::IApplicationDataStores::DataStores which) /*override*/;
 
     // vIndex: 2
-    virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
-    getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const /*override*/;
+    virtual ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const> getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const /*override*/;
     // NOLINTEND
 
 public:
@@ -73,11 +71,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void $init();
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore>
-    $getDataStore(::Bedrock::IApplicationDataStores::DataStores which);
+    MCNAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore> $getDataStore(::Bedrock::IApplicationDataStores::DataStores which);
 
-    MCNAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const>
-    $getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::Bedrock::DataStore const> $getDataStore(::Bedrock::IApplicationDataStores::DataStores which) const;
     // NOLINTEND
 
 public:
@@ -85,6 +81,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Bedrock
+}

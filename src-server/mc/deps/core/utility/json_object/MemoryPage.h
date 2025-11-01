@@ -29,6 +29,7 @@ public:
 
     MCNAPI void* allocateFront(uint64 bytes, uint64 align);
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::JSONObject
+}

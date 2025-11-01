@@ -16,4 +16,5 @@ public:
     BasicToggle& operator=(BasicToggle const&);
     BasicToggle(BasicToggle const&);
     BasicToggle();
+
 };

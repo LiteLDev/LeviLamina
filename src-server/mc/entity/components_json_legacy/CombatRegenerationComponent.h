@@ -18,7 +18,7 @@ class CombatRegenerationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                                 mTargetID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mTargetID;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CombatRegenerationListener>> mCombatRegenerationListener;
     // NOLINTEND
 
@@ -33,4 +33,5 @@ public:
 
     MCNAPI void tick(::Actor& owner);
     // NOLINTEND
+
 };

@@ -28,14 +28,7 @@ public:
     virtual int ChromaHeight() const /*override*/;
 
     // vIndex: 8
-    virtual ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> CropAndScale(
-        int offset_x,
-        int offset_y,
-        int crop_width,
-        int crop_height,
-        int scaled_width,
-        int scaled_height
-    ) /*override*/;
+    virtual ::webrtc::scoped_refptr<::webrtc::VideoFrameBuffer> CropAndScale(int offset_x, int offset_y, int crop_width, int crop_height, int scaled_width, int scaled_height) /*override*/;
 
     // vIndex: 2
     virtual ~NV12BufferInterface() /*override*/ = default;
@@ -46,6 +39,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

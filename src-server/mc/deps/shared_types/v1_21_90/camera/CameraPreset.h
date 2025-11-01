@@ -21,32 +21,32 @@ public:
         Camera = 0,
         Player = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk659874;
     ::ll::UntypedStorage<8, 32> mUnk2443c5;
-    ::ll::UntypedStorage<4, 8>  mUnk4a3fd1;
-    ::ll::UntypedStorage<4, 8>  mUnkc7ba64;
-    ::ll::UntypedStorage<4, 8>  mUnk69a72b;
-    ::ll::UntypedStorage<4, 8>  mUnk5239e1;
-    ::ll::UntypedStorage<4, 8>  mUnk5d0d9d;
-    ::ll::UntypedStorage<4, 8>  mUnke8c704;
-    ::ll::UntypedStorage<1, 2>  mUnkee0b06;
+    ::ll::UntypedStorage<4, 8> mUnk4a3fd1;
+    ::ll::UntypedStorage<4, 8> mUnkc7ba64;
+    ::ll::UntypedStorage<4, 8> mUnk69a72b;
+    ::ll::UntypedStorage<4, 8> mUnk5239e1;
+    ::ll::UntypedStorage<4, 8> mUnk5d0d9d;
+    ::ll::UntypedStorage<4, 8> mUnke8c704;
+    ::ll::UntypedStorage<1, 2> mUnkee0b06;
     ::ll::UntypedStorage<4, 12> mUnkf0ddde;
     ::ll::UntypedStorage<4, 12> mUnk49f7ba;
-    ::ll::UntypedStorage<1, 2>  mUnk66070d;
-    ::ll::UntypedStorage<4, 8>  mUnk79ff9e;
+    ::ll::UntypedStorage<1, 2> mUnk66070d;
+    ::ll::UntypedStorage<4, 8> mUnk79ff9e;
     ::ll::UntypedStorage<4, 12> mUnkdbcc63;
     ::ll::UntypedStorage<4, 16> mUnk30034f;
-    ::ll::UntypedStorage<4, 8>  mUnk9feef4;
-    ::ll::UntypedStorage<4, 8>  mUnked89cf;
-    ::ll::UntypedStorage<4, 8>  mUnkf26793;
-    ::ll::UntypedStorage<1, 2>  mUnk2267ee;
-    ::ll::UntypedStorage<1, 2>  mUnkf42f54;
+    ::ll::UntypedStorage<4, 8> mUnk9feef4;
+    ::ll::UntypedStorage<4, 8> mUnked89cf;
+    ::ll::UntypedStorage<4, 8> mUnkf26793;
+    ::ll::UntypedStorage<1, 2> mUnk2267ee;
+    ::ll::UntypedStorage<1, 2> mUnkf42f54;
     ::ll::UntypedStorage<8, 72> mUnk1f91fd;
-    ::ll::UntypedStorage<1, 2>  mUnkcc557d;
+    ::ll::UntypedStorage<1, 2> mUnkcc557d;
     // NOLINTEND
 
 public:
@@ -90,6 +90,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_90
+}

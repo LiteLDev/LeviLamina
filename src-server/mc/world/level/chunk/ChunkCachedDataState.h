@@ -4,6 +4,6 @@
 
 enum class ChunkCachedDataState : uchar {
     NotGenerated = 0,
-    Generating   = 1,
-    Generated    = 2,
+    Generating = 1,
+    Generated = 2,
 };

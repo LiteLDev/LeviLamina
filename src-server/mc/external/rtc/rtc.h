@@ -33,35 +33,13 @@ MCNAPI ::std::string AdapterTypeToString(::rtc::AdapterType type);
 
 MCNAPI uint64 ComputeDigest(::std::string_view alg, void const* input, uint64 in_len, void* output, uint64 out_len);
 
-MCNAPI uint64
-ComputeDigest(::rtc::MessageDigest* digest, void const* input, uint64 in_len, void* output, uint64 out_len);
+MCNAPI uint64 ComputeDigest(::rtc::MessageDigest* digest, void const* input, uint64 in_len, void* output, uint64 out_len);
 
-MCNAPI uint64 ComputeHmac(
-    ::std::string_view alg,
-    void const*        key,
-    uint64             key_len,
-    void const*        input,
-    uint64             in_len,
-    void*              output,
-    uint64             out_len
-);
+MCNAPI uint64 ComputeHmac(::std::string_view alg, void const* key, uint64 key_len, void const* input, uint64 in_len, void* output, uint64 out_len);
 
-MCNAPI uint64 ComputeHmac(
-    ::rtc::MessageDigest* digest,
-    void const*           key,
-    uint64                key_len,
-    void const*           input,
-    uint64                in_len,
-    void*                 output,
-    uint64                out_len
-);
+MCNAPI uint64 ComputeHmac(::rtc::MessageDigest* digest, void const* key, uint64 key_len, void const* input, uint64 in_len, void* output, uint64 out_len);
 
-MCNAPI void CopySocketInformationToPacketInfo(
-    uint64                          packet_size_bytes,
-    ::rtc::AsyncPacketSocket const& socket_from,
-    bool                            is_connectionless,
-    ::rtc::PacketInfo*              info
-);
+MCNAPI void CopySocketInformationToPacketInfo(uint64 packet_size_bytes, ::rtc::AsyncPacketSocket const& socket_from, bool is_connectionless, ::rtc::PacketInfo* info);
 
 MCNAPI ::std::unique_ptr<::rtc::SocketServer> CreateDefaultSocketServer();
 
@@ -269,4 +247,4 @@ MCNAPI ::std::add_lvalue_reference_t<char const[]> kPublicIPv4Host();
 MCNAPI ::std::add_lvalue_reference_t<char const[]> kPublicIPv6Host();
 // NOLINTEND
 
-} // namespace rtc
+}

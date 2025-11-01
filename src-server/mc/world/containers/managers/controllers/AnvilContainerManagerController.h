@@ -30,15 +30,15 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::AnvilContainerManagerModel>> mAnvilContainerManagerModel;
-    ::ll::TypedStorage<4, 4, int>                                            mCost;
-    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>           mPreviewName;
-    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString>           mItemName;
-    ::ll::TypedStorage<1, 1, bool>                                           mIsMapRecipe;
-    ::ll::TypedStorage<8, 136, ::ItemResultPreview>                          mResultPreview;
-    ::ll::TypedStorage<4, 4, int>                                            mRepairItemCountCost;
-    ::ll::TypedStorage<4, 4, ::RecipeNetId>                                  mCurrentRecipeNetId;
-    ::ll::TypedStorage<8, 8, ::Recipe const*>                                mMapCraftingRecipe;
-    ::ll::TypedStorage<8, 40, ::SlotData const>                              mCreatedItemOutputSlot;
+    ::ll::TypedStorage<4, 4, int> mCost;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mPreviewName;
+    ::ll::TypedStorage<8, 72, ::Bedrock::Safety::RedactableString> mItemName;
+    ::ll::TypedStorage<1, 1, bool> mIsMapRecipe;
+    ::ll::TypedStorage<8, 136, ::ItemResultPreview> mResultPreview;
+    ::ll::TypedStorage<4, 4, int> mRepairItemCountCost;
+    ::ll::TypedStorage<4, 4, ::RecipeNetId> mCurrentRecipeNetId;
+    ::ll::TypedStorage<8, 8, ::Recipe const*> mMapCraftingRecipe;
+    ::ll::TypedStorage<8, 40, ::SlotData const> mCreatedItemOutputSlot;
     // NOLINTEND
 
 public:
@@ -81,26 +81,16 @@ public:
     virtual void handleTakeHalf(::SlotData const&, ::SlotData const&) /*override*/;
 
     // vIndex: 15
-    virtual int handleAutoPlace(
-        ::SlotData const&,
-        int,
-        ::std::vector<::AutoPlaceItem> const&,
-        ::std::vector<::AutoPlaceResult>&
-    ) /*override*/;
+    virtual int handleAutoPlace(::SlotData const&, int, ::std::vector<::AutoPlaceItem> const&, ::std::vector<::AutoPlaceResult>&) /*override*/;
 
     // vIndex: 32
     virtual void _onItemAcquired(::ItemInstance const&, ::SlotData const&) /*override*/;
 
     // vIndex: 29
-    virtual ::CreateContainerItemScope
-    _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
+    virtual ::CreateContainerItemScope _makeCreateItemScope(::SlotData const&, ::ItemTransferAmount const&) /*override*/;
 
     // vIndex: 28
-    virtual void _updateItemStackRequest(
-        ::ContainerScreenRequestActionType,
-        ::ContainerScreenActionResult const&,
-        ::ItemStackRequestScope&
-    ) /*override*/;
+    virtual void _updateItemStackRequest(::ContainerScreenRequestActionType, ::ContainerScreenActionResult const&, ::ItemStackRequestScope&) /*override*/;
     // NOLINTEND
 
 public:
@@ -108,4 +98,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

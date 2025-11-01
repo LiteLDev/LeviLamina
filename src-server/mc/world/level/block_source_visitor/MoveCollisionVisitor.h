@@ -16,6 +16,7 @@ public:
     MoveCollisionVisitor& operator=(MoveCollisionVisitor const&);
     MoveCollisionVisitor(MoveCollisionVisitor const&);
     MoveCollisionVisitor();
+
 };
 
-} // namespace BlockSourceVisitor
+}

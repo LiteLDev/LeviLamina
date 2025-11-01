@@ -4,7 +4,8 @@
 
 namespace EntityGoalUtility {
 
-template <typename T0>
-struct UnsignedRange {};
+template<typename T0>
+struct UnsignedRange {
+};
 
-} // namespace EntityGoalUtility
+}

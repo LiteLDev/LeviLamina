@@ -4,7 +4,8 @@
 
 namespace Bedrock {
 
-template <typename T0>
-class Copyable {};
+template<typename T0>
+class Copyable {
+};
 
-} // namespace Bedrock
+}

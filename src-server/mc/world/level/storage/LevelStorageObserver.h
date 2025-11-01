@@ -8,4 +8,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>> mOnSaveCallback;
     // NOLINTEND
+
 };

@@ -4,6 +4,7 @@
 
 namespace ClientBlockPipeline {
 
-class SchematicsRepository {};
+class SchematicsRepository {
+};
 
-} // namespace ClientBlockPipeline
+}

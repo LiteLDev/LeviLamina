@@ -15,4 +15,5 @@ public:
     StrAndBool& operator=(StrAndBool const&);
     StrAndBool(StrAndBool const&);
     StrAndBool();
+
 };

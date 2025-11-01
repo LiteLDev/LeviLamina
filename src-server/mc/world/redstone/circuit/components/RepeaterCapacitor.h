@@ -19,36 +19,31 @@ class RepeaterCapacitor : public ::SidePoweredComponent {
 public:
     // RepeaterCapacitor inner types define
     enum class States : int {
-        Off       = 0,
-        On        = 1,
+        Off = 0,
+        On = 1,
         OffLocked = 2,
-        OnLocked  = 3,
+        OnLocked = 3,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 20, ::RepeaterCapacitor::States[5]> mOnStates;
-    ::ll::TypedStorage<4, 4, int>                             mInsertAt;
-    ::ll::TypedStorage<1, 1, bool>                            mPowered;
-    ::ll::TypedStorage<1, 1, bool>                            mNextPower;
-    ::ll::TypedStorage<1, 1, bool>                            mLocked;
-    ::ll::TypedStorage<4, 4, int>                             mPulseCount;
-    ::ll::TypedStorage<1, 1, bool>                            mPulse;
-    ::ll::TypedStorage<1, 1, bool>                            mNextPulse;
-    ::ll::TypedStorage<8, 8, ::CircuitComponentType const>    mCircuitComponentType;
+    ::ll::TypedStorage<4, 4, int> mInsertAt;
+    ::ll::TypedStorage<1, 1, bool> mPowered;
+    ::ll::TypedStorage<1, 1, bool> mNextPower;
+    ::ll::TypedStorage<1, 1, bool> mLocked;
+    ::ll::TypedStorage<4, 4, int> mPulseCount;
+    ::ll::TypedStorage<1, 1, bool> mPulse;
+    ::ll::TypedStorage<1, 1, bool> mNextPulse;
+    ::ll::TypedStorage<8, 8, ::CircuitComponentType const> mCircuitComponentType;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 11
-    virtual bool addSource(
-        ::CircuitSceneGraph&         graph,
-        ::CircuitTrackingInfo const& info,
-        int&                         dampening,
-        bool&                        bDirectlyPowered
-    ) /*override*/;
+    virtual bool addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered) /*override*/;
 
     // vIndex: 16
     virtual void updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos) /*override*/;
@@ -81,8 +76,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
-    $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
+    MCAPI bool $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
     MCAPI void $updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos);
 
@@ -106,4 +100,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

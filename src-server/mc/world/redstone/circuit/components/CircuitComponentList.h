@@ -4,7 +4,7 @@
 #include "mc/world/level/BlockPos.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -30,6 +30,7 @@ public:
         bool                    mDirectlyPowered;
         int                     mData;
         // NOLINTEND
+
     };
 
 public:
@@ -49,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

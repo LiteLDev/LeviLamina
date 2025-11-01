@@ -16,9 +16,9 @@ struct NavigateToPositionsIntent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                       mSpeed;
+    ::ll::TypedStorage<4, 4, float> mSpeed;
     ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec3>> mTargets;
-    ::ll::TypedStorage<8, 8, uint64>                      mNextTarget;
+    ::ll::TypedStorage<8, 8, uint64> mNextTarget;
     // NOLINTEND
 
 public:
@@ -32,6 +32,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace sim
+}

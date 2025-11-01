@@ -6,8 +6,8 @@ namespace webrtc {
 
 enum class H264PacketizationTypes : int {
     KH264SingleNalu = 0,
-    KH264StapA      = 1,
-    KH264FuA        = 2,
+    KH264StapA = 1,
+    KH264FuA = 2,
 };
 
 }

@@ -13,4 +13,4 @@ namespace ScriptModuleMinecraft::Alphas {
 MCNAPI ::Scripting::Version const& CURRENT();
 // NOLINTEND
 
-} // namespace ScriptModuleMinecraft::Alphas
+}

@@ -6,8 +6,8 @@ class BasicTimer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, double>                     mTimeDelay;
-    ::ll::TypedStorage<8, 8, double>                     mStartTime;
+    ::ll::TypedStorage<8, 8, double> mTimeDelay;
+    ::ll::TypedStorage<8, 8, double> mStartTime;
     ::ll::TypedStorage<8, 64, ::std::function<double()>> mGetCurrentTimeCallback;
     // NOLINTEND
 
@@ -28,4 +28,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

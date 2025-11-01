@@ -35,43 +35,21 @@ namespace SharedTypes::v1_21_50 { struct CameraAimAssistPresetDefinition; }
 namespace ScriptModuleMinecraft {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::vector<::CommandParameterData> CreateCommandParameters(
-    ::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface,
-    ::std::vector<::std::unique_ptr<::std::string>>&             enumNameStorage
-);
+MCNAPI ::std::vector<::CommandParameterData> CreateCommandParameters(::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface, ::std::vector<::std::unique_ptr<::std::string>>& enumNameStorage);
 
-MCNAPI ::std::vector<::std::unique_ptr<::ScriptModuleMinecraft::ParamStorageBase>>
-CreateParamStorage(::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface);
+MCNAPI ::std::vector<::std::unique_ptr<::ScriptModuleMinecraft::ParamStorageBase>> CreateParamStorage(::ScriptModuleMinecraft::ScriptCustomCommandInterface const& commandInterface);
 
-MCNAPI ::std::
-    unordered_map<::std::string_view, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const&
-    _getOrCreateNativeItemComponentFactories();
+MCNAPI ::std::unordered_map<::std::string_view, ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory>> const& _getOrCreateNativeItemComponentFactories();
 
-MCNAPI ::Scripting::Error
-_handleDefinePropertyError(::DynamicPropertyDefinePropertyError error, ::std::string const& identifier);
+MCNAPI ::Scripting::Error _handleDefinePropertyError(::DynamicPropertyDefinePropertyError error, ::std::string const& identifier);
 
-MCNAPI ::PropertyMetadata const*
-_tryGetPropertyMetadata(::PropertyComponent const* props, ::std::string const& identifier);
+MCNAPI ::PropertyMetadata const* _tryGetPropertyMetadata(::PropertyComponent const* props, ::std::string const& identifier);
 
-MCNAPI ::std::optional<::Scripting::Error> _tryQueueUpdateForOverridenProperty(
-    ::Actor&                                          actor,
-    ::PropertyComponent const&                        props,
-    ::PlayerUpdateEntityOverridesPacket&              packet,
-    ::PropertyMetadata const&                         propertyMetadata,
-    ::std::variant<float, bool, ::std::string> const& value
-);
+MCNAPI ::std::optional<::Scripting::Error> _tryQueueUpdateForOverridenProperty(::Actor& actor, ::PropertyComponent const& props, ::PlayerUpdateEntityOverridesPacket& packet, ::PropertyMetadata const& propertyMetadata, ::std::variant<float, bool, ::std::string> const& value);
 
-MCNAPI ::std::optional<::Scripting::Error> _tryQueueUpdateForRemovedOverride(
-    ::Actor&                   actor,
-    ::PropertyComponent const& props,
-    ::PropertyMetadata const&  propertyMetadata
-);
+MCNAPI ::std::optional<::Scripting::Error> _tryQueueUpdateForRemovedOverride(::Actor& actor, ::PropertyComponent const& props, ::PropertyMetadata const& propertyMetadata);
 
-MCNAPI ::std::optional<::Scripting::Error> _validatePropertyMetadata(
-    ::PropertyMetadata const* propertyMetadata,
-    ::Actor const*            actor,
-    ::std::string const&      identifier
-);
+MCNAPI ::std::optional<::Scripting::Error> _validatePropertyMetadata(::PropertyMetadata const* propertyMetadata, ::Actor const* actor, ::std::string const& identifier);
 
 MCNAPI ::Scripting::ClassBinding bindBlockLocation();
 
@@ -119,27 +97,15 @@ MCNAPI ::Scripting::EnumBinding bindTimeOfDay();
 
 MCNAPI ::Scripting::EnumBinding bindTintMethodEnums();
 
-MCNAPI ::Block const* extractBlockFromVariant(
-    ::std::variant<
-        ::std::string,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block
-);
+MCNAPI ::Block const* extractBlockFromVariant(::std::variant<::std::string, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>> const& block);
 
-MCNAPI ::std::string getScriptScoreboardParticipantName(
-    ::std::variant<
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
-        ::std::string> const& participant
-);
+MCNAPI ::std::string getScriptScoreboardParticipantName(::std::variant<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>, ::std::string> const& participant);
 
-MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition
-makeAimAssistCategoryDefinition(::ScriptModuleMinecraft::ScriptAimAssistCategorySettings const& category);
+MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition makeAimAssistCategoryDefinition(::ScriptModuleMinecraft::ScriptAimAssistCategorySettings const& category);
 
-MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition
-makeAimAssistPresetDefinition(::ScriptModuleMinecraft::ScriptAimAssistPresetSettings const& preset);
+MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition makeAimAssistPresetDefinition(::ScriptModuleMinecraft::ScriptAimAssistPresetSettings const& preset);
 
 MCNAPI ::std::optional<::std::shared_ptr<::Potion const> const> tryGetPotion(::std::string const& potionNameId);
 // NOLINTEND
 
-} // namespace ScriptModuleMinecraft
+}

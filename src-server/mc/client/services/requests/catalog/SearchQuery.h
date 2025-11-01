@@ -6,12 +6,12 @@ class SearchQuery {
 public:
     // SearchQuery inner types define
     enum class TagType : schar {
-        And  = 0,
-        Or   = 1,
-        Not  = 2,
+        And = 0,
+        Or = 1,
+        Not = 2,
         Sale = 3,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -36,17 +36,17 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk62afa1;
     ::ll::UntypedStorage<8, 24> mUnkc14acd;
     ::ll::UntypedStorage<8, 24> mUnkb9f971;
-    ::ll::UntypedStorage<4, 8>  mUnkbd2672;
-    ::ll::UntypedStorage<4, 8>  mUnkfcf2e3;
-    ::ll::UntypedStorage<4, 4>  mUnk61d9d8;
-    ::ll::UntypedStorage<4, 4>  mUnk609839;
-    ::ll::UntypedStorage<1, 1>  mUnkc1236e;
+    ::ll::UntypedStorage<4, 8> mUnkbd2672;
+    ::ll::UntypedStorage<4, 8> mUnkfcf2e3;
+    ::ll::UntypedStorage<4, 4> mUnk61d9d8;
+    ::ll::UntypedStorage<4, 4> mUnk609839;
+    ::ll::UntypedStorage<1, 1> mUnkc1236e;
     ::ll::UntypedStorage<8, 32> mUnked7b0d;
-    ::ll::UntypedStorage<1, 1>  mUnk11365b;
-    ::ll::UntypedStorage<1, 1>  mUnk1ea95a;
-    ::ll::UntypedStorage<1, 1>  mUnk452638;
-    ::ll::UntypedStorage<1, 1>  mUnk43c6db;
-    ::ll::UntypedStorage<1, 1>  mUnk8a03d7;
+    ::ll::UntypedStorage<1, 1> mUnk11365b;
+    ::ll::UntypedStorage<1, 1> mUnk1ea95a;
+    ::ll::UntypedStorage<1, 1> mUnk452638;
+    ::ll::UntypedStorage<1, 1> mUnk43c6db;
+    ::ll::UntypedStorage<1, 1> mUnk8a03d7;
     // NOLINTEND
 
 public:
@@ -54,4 +54,5 @@ public:
     SearchQuery& operator=(SearchQuery const&);
     SearchQuery(SearchQuery const&);
     SearchQuery();
+
 };

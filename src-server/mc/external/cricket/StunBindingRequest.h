@@ -18,10 +18,10 @@ class StunBindingRequest : public ::cricket::StunRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkdaece5;
+    ::ll::UntypedStorage<8, 8> mUnkdaece5;
     ::ll::UntypedStorage<8, 80> mUnk1032d6;
-    ::ll::UntypedStorage<8, 8>  mUnk9e9b88;
-    ::ll::UntypedStorage<1, 1>  mUnk3bbf8f;
+    ::ll::UntypedStorage<8, 8> mUnk9e9b88;
+    ::ll::UntypedStorage<1, 1> mUnk3bbf8f;
     // NOLINTEND
 
 public:
@@ -55,8 +55,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    StunBindingRequest(::cricket::UDPPort* port, ::rtc::SocketAddress const& addr, int64 start_time, bool is_keepalive);
+    MCNAPI StunBindingRequest(::cricket::UDPPort* port, ::rtc::SocketAddress const& addr, int64 start_time, bool is_keepalive);
     // NOLINTEND
 
 public:
@@ -84,6 +83,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

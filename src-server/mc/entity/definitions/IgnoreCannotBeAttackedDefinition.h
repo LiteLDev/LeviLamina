@@ -14,4 +14,5 @@ public:
     IgnoreCannotBeAttackedDefinition& operator=(IgnoreCannotBeAttackedDefinition const&);
     IgnoreCannotBeAttackedDefinition(IgnoreCannotBeAttackedDefinition const&);
     IgnoreCannotBeAttackedDefinition();
+
 };

@@ -18,4 +18,5 @@ public:
     PackStatistics& operator=(PackStatistics const&);
     PackStatistics(PackStatistics const&);
     PackStatistics();
+
 };

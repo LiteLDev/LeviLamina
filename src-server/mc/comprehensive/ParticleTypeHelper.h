@@ -23,4 +23,4 @@ MCNAPI ::ParticleType particleTypeFromName(::std::string_view name);
 MCNAPI ::ParticleType particleTypeFromNameOrContentWarn(::std::string_view name, ::LogArea logArea);
 // NOLINTEND
 
-} // namespace ParticleTypeHelper
+}

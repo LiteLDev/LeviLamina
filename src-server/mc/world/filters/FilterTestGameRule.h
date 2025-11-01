@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkc6cac7;
-    ::ll::UntypedStorage<1, 1>  mUnk1bd99d;
+    ::ll::UntypedStorage<1, 1> mUnk1bd99d;
     // NOLINTEND
 
 public:
@@ -39,6 +39,9 @@ public:
     virtual ::std::string_view getName() const /*override*/;
 
     // vIndex: 6
+    virtual ::std::optional<::std::variant<bool, int, float, ::std::string>> getValue() const /*override*/;
+
+    // vIndex: 8
     virtual ::Json::Value _serializeValue() const /*override*/;
 
     // vIndex: 0
@@ -60,6 +63,8 @@ public:
 
     MCNAPI ::std::string_view $getName() const;
 
+    MCNAPI ::std::optional<::std::variant<bool, int, float, ::std::string>> $getValue() const;
+
     MCNAPI ::Json::Value $_serializeValue() const;
     // NOLINTEND
 
@@ -68,4 +73,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

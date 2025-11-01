@@ -17,7 +17,7 @@ public:
     struct Exit;
     struct RailExits;
     // clang-format on
-
+    
     // RailMovementUtility inner types define
     struct Exit {
     public:
@@ -27,8 +27,9 @@ public:
         ::ll::TypedStorage<4, 4, int> y;
         ::ll::TypedStorage<4, 4, int> z;
         // NOLINTEND
+    
     };
-
+    
     struct RailExits {
     public:
         // member variables
@@ -36,37 +37,17 @@ public:
         ::ll::TypedStorage<4, 12, ::RailMovementUtility::Exit> mExitA;
         ::ll::TypedStorage<4, 12, ::RailMovementUtility::Exit> mExitB;
         // NOLINTEND
+    
     };
-
+    
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Vec3 calculateGoldenRailSpeedIncrease(
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        int                        direction,
-        ::Vec3                     posDelta
-    );
+    MCAPI static ::Vec3 calculateGoldenRailSpeedIncrease(::IConstBlockSource const& region, ::BlockPos const& pos, int direction, ::Vec3 posDelta);
 
-    MCAPI static ::Vec3 calculateMoveVelocity(
-        ::Block const&                        block,
-        int                                   railDirection,
-        float                                 maxSpeed,
-        bool                                  hasPassenger,
-        ::Vec3&                               posDelta,
-        bool&                                 haltTrack,
-        bool&                                 powerTrack,
-        ::std::function<bool(::Vec3&)> const& calculateAllPassengersInputFunc
-    );
+    MCAPI static ::Vec3 calculateMoveVelocity(::Block const& block, int railDirection, float maxSpeed, bool hasPassenger, ::Vec3& posDelta, bool& haltTrack, bool& powerTrack, ::std::function<bool(::Vec3&)> const& calculateAllPassengersInputFunc);
 
-    MCAPI static ::Vec3 calculatePostRailMovementMinecartPosition(
-        ::IConstBlockSource const& region,
-        ::Vec3 const&              originalEntityPosition,
-        ::Vec3                     entityPos,
-        ::BlockPos const&          pos,
-        int                        railDirection,
-        ::Vec3&                    posDelta
-    );
+    MCAPI static ::Vec3 calculatePostRailMovementMinecartPosition(::IConstBlockSource const& region, ::Vec3 const& originalEntityPosition, ::Vec3 entityPos, ::BlockPos const& pos, int railDirection, ::Vec3& posDelta);
 
     MCAPI static bool getPos(::IConstBlockSource const& region, ::Vec3& valueVec, ::Vec3 pos);
     // NOLINTEND
@@ -76,4 +57,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::array<::RailMovementUtility::RailExits, 10> const& RAIL_EXITS();
     // NOLINTEND
+
 };

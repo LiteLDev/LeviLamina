@@ -16,6 +16,7 @@ public:
     BuildTaskDataOptions& operator=(BuildTaskDataOptions const&);
     BuildTaskDataOptions(BuildTaskDataOptions const&);
     BuildTaskDataOptions();
+
 };
 
-} // namespace RepositoryLoading
+}

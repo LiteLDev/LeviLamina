@@ -83,12 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HangingActor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext,
-        int                                wouldSurviveCheckCooldown
-    );
+    MCAPI HangingActor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext, int wouldSurviveCheckCooldown);
 
     MCAPI bool _blockIsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
 
@@ -108,12 +103,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext,
-        int                                wouldSurviveCheckCooldown
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext, int wouldSurviveCheckCooldown);
     // NOLINTEND
 
 public:
@@ -151,4 +141,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

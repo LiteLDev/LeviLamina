@@ -25,14 +25,14 @@ class MobEquipmentPacket : public ::InventoryPacket {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorRuntimeID>              mRuntimeId;
+    ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
     ::ll::TypedStorage<8, 96, ::NetworkItemStackDescriptor> mItem;
-    ::ll::TypedStorage<4, 4, int>                           mSlot;
-    ::ll::TypedStorage<4, 4, int>                           mSelectedSlot;
-    ::ll::TypedStorage<1, 1, ::ContainerID>                 mContainerId;
-    ::ll::TypedStorage<1, 1, uchar>                         mSlotByte;
-    ::ll::TypedStorage<1, 1, uchar>                         mSelectedSlotByte;
-    ::ll::TypedStorage<1, 1, uchar>                         mContainerIdByte;
+    ::ll::TypedStorage<4, 4, int> mSlot;
+    ::ll::TypedStorage<4, 4, int> mSelectedSlot;
+    ::ll::TypedStorage<1, 1, ::ContainerID> mContainerId;
+    ::ll::TypedStorage<1, 1, uchar> mSlotByte;
+    ::ll::TypedStorage<1, 1, uchar> mSelectedSlotByte;
+    ::ll::TypedStorage<1, 1, uchar> mContainerIdByte;
     // NOLINTEND
 
 public:
@@ -50,15 +50,13 @@ public:
     // vIndex: 2
     virtual ::std::string getName() const /*override*/;
 
-    // vIndex: 16
-    virtual void
-    handle(::ServerPlayer& player, ::BlockPalette&, ::MoveInputComponent const&, ::ActorRotationComponent&, bool) const
-        /*override*/;
+    // vIndex: 17
+    virtual void handle(::ServerPlayer& player, ::BlockPalette&, ::MoveInputComponent const&, ::ActorRotationComponent&, bool) const /*override*/;
 
-    // vIndex: 5
+    // vIndex: 6
     virtual void write(::BinaryStream& stream) const /*override*/;
 
-    // vIndex: 14
+    // vIndex: 15
     virtual ::Bedrock::Result<void> _read(::ReadOnlyBinaryStream& stream) /*override*/;
 
     // vIndex: 0
@@ -70,21 +68,9 @@ public:
     // NOLINTBEGIN
     MCAPI MobEquipmentPacket(::MobEquipmentPacket&&);
 
-    MCAPI MobEquipmentPacket(
-        ::ActorRuntimeID                    runtimeId,
-        ::NetworkItemStackDescriptor const& item,
-        int                                 slot,
-        int                                 selectedSlot,
-        ::ContainerID                       containerId
-    );
+    MCAPI MobEquipmentPacket(::ActorRuntimeID runtimeId, ::NetworkItemStackDescriptor const& item, int slot, int selectedSlot, ::ContainerID containerId);
 
-    MCAPI MobEquipmentPacket(
-        ::ActorRuntimeID   runtimeId,
-        ::ItemStack const& item,
-        int                slot,
-        int                selectedSlot,
-        ::ContainerID      containerId
-    );
+    MCAPI MobEquipmentPacket(::ActorRuntimeID runtimeId, ::ItemStack const& item, int slot, int selectedSlot, ::ContainerID containerId);
     // NOLINTEND
 
 public:
@@ -92,16 +78,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::MobEquipmentPacket&&);
 
-    MCAPI void* $ctor(
-        ::ActorRuntimeID                    runtimeId,
-        ::NetworkItemStackDescriptor const& item,
-        int                                 slot,
-        int                                 selectedSlot,
-        ::ContainerID                       containerId
-    );
+    MCAPI void* $ctor(::ActorRuntimeID runtimeId, ::NetworkItemStackDescriptor const& item, int slot, int selectedSlot, ::ContainerID containerId);
 
-    MCAPI void*
-    $ctor(::ActorRuntimeID runtimeId, ::ItemStack const& item, int slot, int selectedSlot, ::ContainerID containerId);
+    MCAPI void* $ctor(::ActorRuntimeID runtimeId, ::ItemStack const& item, int slot, int selectedSlot, ::ContainerID containerId);
     // NOLINTEND
 
 public:
@@ -117,13 +96,7 @@ public:
 
     MCAPI ::std::string $getName() const;
 
-    MCAPI void $handle(
-        ::ServerPlayer& player,
-        ::BlockPalette&,
-        ::MoveInputComponent const&,
-        ::ActorRotationComponent&,
-        bool
-    ) const;
+    MCAPI void $handle(::ServerPlayer& player, ::BlockPalette&, ::MoveInputComponent const&, ::ActorRotationComponent&, bool) const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 
@@ -135,4 +108,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

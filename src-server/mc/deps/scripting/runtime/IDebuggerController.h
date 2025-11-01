@@ -8,7 +8,7 @@ class IDebuggerController {
 public:
     // IDebuggerController inner types define
     using MessageHandler = ::std::function<void(::std::string_view)>;
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -33,6 +33,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

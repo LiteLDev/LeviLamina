@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mStandAnim;
     ::ll::TypedStorage<4, 4, float> mStandAnimO;
     // NOLINTEND
+
 };

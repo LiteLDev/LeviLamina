@@ -40,27 +40,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VillageStart(
-        ::Dimension&                         generator,
-        ::BiomeSource const&                 biomeSource,
-        ::Random&                            random,
-        int                                  chunkX,
-        int                                  chunkZ,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
-    );
+    MCAPI VillageStart(::Dimension& generator, ::BiomeSource const& biomeSource, ::Random& random, int chunkX, int chunkZ, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Dimension&                         generator,
-        ::BiomeSource const&                 biomeSource,
-        ::Random&                            random,
-        int                                  chunkX,
-        int                                  chunkZ,
-        ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
-    );
+    MCAPI void* $ctor(::Dimension& generator, ::BiomeSource const& biomeSource, ::Random& random, int chunkX, int chunkZ, ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel);
     // NOLINTEND
 
 public:
@@ -76,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -4,7 +4,8 @@
 
 namespace Bedrock::Threading {
 
-template <typename T0>
-class SharedLock : public std::shared_lock<T0> {};
+template<typename T0>
+class SharedLock : public std::shared_lock<T0> {
+};
 
-} // namespace Bedrock::Threading
+}

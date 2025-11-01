@@ -11,14 +11,14 @@ class EncodedFrame : public ::webrtc::EncodedImage {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>    mUnk44c8dc;
-    ::ll::UntypedStorage<8, 40>   mUnkb61d62;
-    ::ll::UntypedStorage<1, 1>    mUnk3145ef;
-    ::ll::UntypedStorage<8, 8>    mUnk500e37;
-    ::ll::UntypedStorage<1, 1>    mUnk16d9a7;
+    ::ll::UntypedStorage<8, 8> mUnk44c8dc;
+    ::ll::UntypedStorage<8, 40> mUnkb61d62;
+    ::ll::UntypedStorage<1, 1> mUnk3145ef;
+    ::ll::UntypedStorage<8, 8> mUnk500e37;
+    ::ll::UntypedStorage<1, 1> mUnk16d9a7;
     ::ll::UntypedStorage<8, 2008> mUnk1b4158;
-    ::ll::UntypedStorage<4, 4>    mUnk948ed8;
-    ::ll::UntypedStorage<8, 8>    mUnke15765;
+    ::ll::UntypedStorage<4, 4> mUnk948ed8;
+    ::ll::UntypedStorage<8, 8> mUnke15765;
     // NOLINTEND
 
 public:
@@ -48,6 +48,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

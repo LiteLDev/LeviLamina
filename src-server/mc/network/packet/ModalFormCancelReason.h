@@ -4,5 +4,5 @@
 
 enum class ModalFormCancelReason : uchar {
     UserClosed = 0,
-    UserBusy   = 1,
+    UserBusy = 1,
 };

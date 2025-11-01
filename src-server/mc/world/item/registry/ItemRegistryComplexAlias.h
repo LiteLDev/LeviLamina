@@ -11,9 +11,9 @@ struct ItemRegistryComplexAlias {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::function<::HashedString(short)>>                        mCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<::HashedString(short)>> mCallback;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::reference_wrapper<::HashedString const>>> mSplitNames;
-    ::ll::TypedStorage<1, 1, bool>                                                           allowCommands;
+    ::ll::TypedStorage<1, 1, bool> allowCommands;
     // NOLINTEND
 
 public:
@@ -27,4 +27,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

@@ -18,6 +18,7 @@ public:
     StaticPayloadAudioCodec& operator=(StaticPayloadAudioCodec const&);
     StaticPayloadAudioCodec(StaticPayloadAudioCodec const&);
     StaticPayloadAudioCodec();
+
 };
 
-} // namespace webrtc
+}

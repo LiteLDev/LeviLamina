@@ -4,7 +4,8 @@
 
 namespace cricket {
 
-template <typename T0>
-class UsedIds {};
+template<typename T0>
+class UsedIds {
+};
 
-} // namespace cricket
+}

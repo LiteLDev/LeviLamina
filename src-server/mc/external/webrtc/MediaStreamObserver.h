@@ -18,7 +18,7 @@ class MediaStreamObserver : public ::webrtc::ObserverInterface {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk640d1a;
+    ::ll::UntypedStorage<8, 8> mUnk640d1a;
     ::ll::UntypedStorage<8, 24> mUnk81a3ea;
     ::ll::UntypedStorage<8, 24> mUnke44b06;
     ::ll::UntypedStorage<8, 64> mUnk3d48af;
@@ -46,33 +46,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI MediaStreamObserver(
-        ::webrtc::MediaStreamInterface* stream,
-        ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>
-            audio_track_added_callback,
-        ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>
-            audio_track_removed_callback,
-        ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>
-            video_track_added_callback,
-        ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>
-            video_track_removed_callback
-    );
+    MCNAPI MediaStreamObserver(::webrtc::MediaStreamInterface* stream, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)> audio_track_added_callback, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)> audio_track_removed_callback, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)> video_track_added_callback, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)> video_track_removed_callback);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::webrtc::MediaStreamInterface* stream,
-        ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>
-            audio_track_added_callback,
-        ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)>
-            audio_track_removed_callback,
-        ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>
-            video_track_added_callback,
-        ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)>
-            video_track_removed_callback
-    );
+    MCNAPI void* $ctor(::webrtc::MediaStreamInterface* stream, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)> audio_track_added_callback, ::std::function<void(::webrtc::AudioTrackInterface*, ::webrtc::MediaStreamInterface*)> audio_track_removed_callback, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)> video_track_added_callback, ::std::function<void(::webrtc::VideoTrackInterface*, ::webrtc::MediaStreamInterface*)> video_track_removed_callback);
     // NOLINTEND
 
 public:
@@ -92,6 +72,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

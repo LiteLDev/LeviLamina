@@ -16,7 +16,7 @@ class Beardifier {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::Rigid>>          mPieces;
+    ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::Rigid>> mPieces;
     ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::JigsawJunction>> mJunctions;
     // NOLINTEND
 
@@ -37,8 +37,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::Beardifier
-    forStructuresInChunk(::br::worldgen::StructureCache const& structureCache, ::ChunkPos pos);
+    MCAPI static ::br::worldgen::Beardifier forStructuresInChunk(::br::worldgen::StructureCache const& structureCache, ::ChunkPos pos);
     // NOLINTEND
 
 public:
@@ -46,6 +45,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen
+}

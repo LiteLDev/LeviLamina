@@ -14,6 +14,7 @@
 // auto generated forward declare list
 // clang-format off
 class AnimatedImageData;
+class Certificate;
 class MinEngineVersion;
 class MinecraftServiceKeyManager;
 class SerializedPersonaPieceHandle;
@@ -27,14 +28,14 @@ class ConnectionRequest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                       mIsVerified;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WebToken>>              mRawToken;
+    ::ll::TypedStorage<1, 1, bool> mIsVerified;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WebToken>> mRawToken;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UnverifiedCertificate>> mCertificateData;
-    ::ll::TypedStorage<8, 8, ::LegacyMultiplayerToken>                   mLegacyMultiplayerToken;
-    ::ll::TypedStorage<8, 32, ::RawGameServerToken>                      mUnverifiedGameServerToken;
-    ::ll::TypedStorage<8, 136, ::GameServerToken>                        mVerifiedGameServerToken;
-    ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType>                 mAuthenticationType;
-    ::ll::TypedStorage<8, 272, ::PlayerAuthenticationInfo>               mAuthenticationInfo;
+    ::ll::TypedStorage<8, 8, ::LegacyMultiplayerToken> mLegacyMultiplayerToken;
+    ::ll::TypedStorage<8, 32, ::RawGameServerToken> mUnverifiedGameServerToken;
+    ::ll::TypedStorage<8, 136, ::GameServerToken> mVerifiedGameServerToken;
+    ::ll::TypedStorage<4, 4, ::PlayerAuthenticationType> mAuthenticationType;
+    ::ll::TypedStorage<8, 272, ::PlayerAuthenticationInfo> mAuthenticationInfo;
     // NOLINTEND
 
 public:
@@ -69,9 +70,11 @@ public:
 
     MCFOLD ::std::string getDeviceId() const;
 
-    MCAPI ::std::string getEduTokenChain() const;
+    MCAPI ::std::string getEduJoinerToHostNonce() const;
 
-    MCAPI ::std::string getJoinerToHostNonce() const;
+    MCAPI ::std::string getEduSessionToken() const;
+
+    MCAPI ::std::string getEduTokenChain() const;
 
     MCFOLD ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
 
@@ -99,18 +102,13 @@ public:
 
     MCFOLD void invalidate();
 
-    MCFOLD bool isPersonaSkin() const;
-
     MCAPI bool isWellFormed() const;
 
     MCFOLD ::std::string toString();
 
-    MCAPI bool verify(
-        ::std::vector<::std::string> const& trustedKeys,
-        int64                               currentTime,
-        ::MinecraftServiceKeyManager const& mcServiceKeyManager,
-        bool                                checkExpired
-    );
+    MCAPI ::std::unique_ptr<::Certificate> validate(::std::unique_ptr<::Certificate> certificate, int64 currentTime, bool isSelfSigned, bool checkExpired) const;
+
+    MCAPI bool verify(::std::vector<::std::string> const& trustedKeys, int64 currentTime, ::MinecraftServiceKeyManager const& mcServiceKeyManager, bool checkExpired);
 
     MCAPI bool verifySelfSigned(bool checkExpired);
 
@@ -136,4 +134,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

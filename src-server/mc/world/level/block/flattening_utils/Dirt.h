@@ -13,4 +13,4 @@ namespace FlatteningUtils::Dirt {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-} // namespace FlatteningUtils::Dirt
+}

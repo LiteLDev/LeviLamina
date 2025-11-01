@@ -16,6 +16,7 @@ public:
     DemoData& operator=(DemoData const&);
     DemoData(DemoData const&);
     DemoData();
+
 };
 
-} // namespace WebServices::EduSignin
+}

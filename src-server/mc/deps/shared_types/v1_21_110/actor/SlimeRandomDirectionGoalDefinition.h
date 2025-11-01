@@ -36,8 +36,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+    MCNAPI static int const& DEFAULT_ADD_RANDOM_TIME_RANGE();
+
+    MCNAPI static float const& DEFAULT_MIN_CHANGE_DIRECTION_TIME();
+
+    MCNAPI static int const& DEFAULT_TURN_RANGE();
+
     MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_110
+}

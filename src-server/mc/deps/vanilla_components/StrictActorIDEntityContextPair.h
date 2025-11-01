@@ -11,6 +11,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 8, ::StrictEntityContext> mEntity;
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>       mActorID;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mActorID;
     // NOLINTEND
+
 };

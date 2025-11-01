@@ -28,48 +28,38 @@ public:
     // vIndex: 11
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 92
-    virtual ::Block const&
-    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
-        /*override*/;
+    // vIndex: 91
+    virtual ::Block const& getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& actor) const /*override*/;
 
-    // vIndex: 138
+    // vIndex: 137
     virtual bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 87
-    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const
-        /*override*/;
+    // vIndex: 86
+    virtual void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const /*override*/;
 
     // vIndex: 64
     virtual void movedByPiston(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 67
+    // vIndex: 66
     virtual void setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
     // vIndex: 54
-    virtual bool
-    shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const
-        /*override*/;
+    virtual bool shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const /*override*/;
 
     // vIndex: 16
-    virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const
-        /*override*/;
+    virtual void onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
-    // vIndex: 24
-    virtual bool canConnect(::Block const&, uchar, ::Block const&) const /*override*/;
-
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 145
-    virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const
-        /*override*/;
+    // vIndex: 144
+    virtual void _onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const /*override*/;
 
     // vIndex: 0
     virtual ~BellBlock() /*override*/ = default;
@@ -78,19 +68,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Block const&
-    _determineAttachment(::Actor const& by, ::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCAPI ::Block const& _determineAttachment(::Actor const& by, ::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCAPI short _getItemId(::BlockSource const& region, ::std::string_view itemName) const;
 
     MCAPI void _sendBellUsedEventToClient(::BlockSource const& region, ::Actor const& sourceActor) const;
 
-    MCAPI void _tryAttachToNeighbors(
-        ::BlockSource&    region,
-        ::BlockPos const& pos,
-        ::BlockPos const& neighborPos,
-        int               updateFlags
-    ) const;
+    MCAPI void _tryAttachToNeighbors(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos, int updateFlags) const;
 
     MCAPI bool hasValidAttachment(::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -106,13 +90,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI ::Block const& $getPlacementBlock(
-        ::Actor const&    by,
-        ::BlockPos const& pos,
-        uchar             face,
-        ::Vec3 const&     clickPos,
-        int               itemValue
-    ) const;
+    MCAPI ::Block const& $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const;
 
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& actor) const;
 
@@ -124,14 +102,11 @@ public:
 
     MCFOLD void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool
-    $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
+    MCFOLD bool $shouldConnectToRedstone(::BlockSource& region, ::BlockPos const& pos, ::Direction::Type direction) const;
 
     MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const;
 
     MCFOLD bool $isInteractiveBlock() const;
-
-    MCFOLD bool $canConnect(::Block const&, uchar, ::Block const&) const;
 
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
@@ -143,4 +118,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

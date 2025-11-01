@@ -14,13 +14,7 @@ struct GameRuleId;
 namespace GameRuleUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI void setGameRule(
-    ::Level&                         level,
-    ::GameRuleId const&              ruleId,
-    ::std::variant<int, float, bool> value,
-    ::GameRule::ValidationError*     validationError,
-    bool                             sendTelemetry
-);
+MCNAPI void setGameRule(::Level& level, ::GameRuleId const& ruleId, ::std::variant<int, float, bool> value, ::GameRule::ValidationError* validationError, bool sendTelemetry);
 // NOLINTEND
 
-} // namespace GameRuleUtils
+}

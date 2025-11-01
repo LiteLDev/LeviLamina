@@ -18,8 +18,7 @@ namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
-class ScriptItemGameplayHandler : public ::EventHandlerDispatcher<::ItemGameplayHandler>,
-                                  public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
+class ScriptItemGameplayHandler : public ::EventHandlerDispatcher<::ItemGameplayHandler>, public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -36,17 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _handleItemUseEvent(
-        ::ItemUseEvent&                                                                   itemEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    );
+    MCNAPI bool _handleItemUseEvent(::ItemUseEvent& itemEvent, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle);
 
-    MCNAPI bool _handleItemUseOnEvent(
-        ::ItemUseOnEvent&                                                                 itemEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    );
+    MCNAPI bool _handleItemUseOnEvent(::ItemUseOnEvent& itemEvent, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle);
     // NOLINTEND
 
 public:
@@ -62,4 +53,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

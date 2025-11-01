@@ -112,18 +112,10 @@ public:
     virtual bool IsUnifiedPlan() const = 0;
 
     // vIndex: 24
-    virtual bool ValidateBundleSettings(
-        ::cricket::SessionDescription const*,
-        ::std::map<::std::string, ::cricket::ContentGroup const*> const&
-    ) = 0;
+    virtual bool ValidateBundleSettings(::cricket::SessionDescription const*, ::std::map<::std::string, ::cricket::ContentGroup const*> const&) = 0;
 
     // vIndex: 25
-    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(
-        ::cricket::MediaType,
-        ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>,
-        ::webrtc::RtpTransceiverInit const&,
-        bool
-    ) = 0;
+    virtual ::webrtc::RTCErrorOr<::webrtc::scoped_refptr<::webrtc::RtpTransceiverInterface>> AddTransceiver(::cricket::MediaType, ::webrtc::scoped_refptr<::webrtc::MediaStreamTrackInterface>, ::webrtc::RtpTransceiverInit const&, bool) = 0;
 
     // vIndex: 26
     virtual void StartSctpTransport(int, int, int) = 0;
@@ -155,6 +147,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

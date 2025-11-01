@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -15,14 +14,8 @@ class VanillaBlockData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>            mBlockID;
+    ::ll::TypedStorage<4, 4, int> mBlockID;
     ::ll::TypedStorage<4, 4, ::MaterialType> mMaterial;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
     // NOLINTEND
 
 public:
@@ -30,4 +23,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
+
 };

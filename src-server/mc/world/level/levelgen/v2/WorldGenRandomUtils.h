@@ -11,8 +11,7 @@ class XoroshiroRandom;
 namespace br::worldgen::WorldGenRandomUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::variant<::SimpleRandom, ::XoroshiroRandom>
-copySource(::std::variant<::SimpleRandom, ::XoroshiroRandom> const& source);
+MCAPI ::std::variant<::SimpleRandom, ::XoroshiroRandom> copySource(::std::variant<::SimpleRandom, ::XoroshiroRandom> const& source);
 // NOLINTEND
 
-} // namespace br::worldgen::WorldGenRandomUtils
+}

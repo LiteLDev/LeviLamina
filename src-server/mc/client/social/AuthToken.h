@@ -7,6 +7,7 @@
 
 namespace Social {
 
-struct AuthToken : public ::NewType<::std::string> {};
+struct AuthToken : public ::NewType<::std::string> {
+};
 
-} // namespace Social
+}

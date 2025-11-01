@@ -25,34 +25,23 @@ class MovingBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
     // vIndex: 10
-    virtual ::AABB const& getVisualShapeInWorld(
-        ::Block const&,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferAABB
-    ) const /*override*/;
+    virtual ::AABB const& getVisualShapeInWorld(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferAABB) const /*override*/;
 
-    // vIndex: 103
+    // vIndex: 102
     virtual bool pushesUpFallingBlocks() const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const /*override*/;
+    virtual ::AABB getCollisionShape(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const /*override*/;
 
-    // vIndex: 68
-    virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const
-        /*override*/;
+    // vIndex: 67
+    virtual void updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const /*override*/;
 
     // vIndex: 25
     virtual bool isMovingBlock() const /*override*/;
@@ -74,21 +63,11 @@ public:
 
     MCFOLD ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI ::AABB const& $getVisualShapeInWorld(
-        ::Block const&,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB&                    bufferAABB
-    ) const;
+    MCAPI ::AABB const& $getVisualShapeInWorld(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB& bufferAABB) const;
 
     MCFOLD bool $pushesUpFallingBlocks() const;
 
-    MCAPI ::AABB $getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
+    MCAPI ::AABB $getCollisionShape(::Block const&, ::IConstBlockSource const& region, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
     MCAPI void $updateEntityAfterFallOn(::BlockPos const& pos, ::UpdateEntityAfterFallOnInterface& entity) const;
 
@@ -100,4 +79,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

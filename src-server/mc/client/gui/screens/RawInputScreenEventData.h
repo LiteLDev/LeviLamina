@@ -10,9 +10,10 @@ struct RawInputScreenEventData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>            id;
+    ::ll::TypedStorage<4, 4, int> id;
     ::ll::TypedStorage<1, 1, ::RawInputType> keyType;
-    ::ll::TypedStorage<1, 1, ::ButtonState>  state;
-    ::ll::TypedStorage<1, 1, bool>           allowRemapping;
+    ::ll::TypedStorage<1, 1, ::ButtonState> state;
+    ::ll::TypedStorage<1, 1, bool> allowRemapping;
     // NOLINTEND
+
 };

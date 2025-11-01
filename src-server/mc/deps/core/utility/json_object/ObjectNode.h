@@ -20,11 +20,12 @@ public:
     // clang-format off
     template<int T0> class iterator_base;
     // clang-format on
-
+    
     // ObjectNode inner types define
-    template <int T0>
-    class iterator_base {};
-
+    template<int T0>
+    class iterator_base {
+    };
+    
 public:
     // member functions
     // NOLINTBEGIN
@@ -32,11 +33,11 @@ public:
 
     MCNAPI void clear();
 
-    MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<0>
-    insert(::std::string_view keyStr, ::Bedrock::JSONObject::ValueWrapper const& value, bool copyKey);
+    MCNAPI ::Bedrock::JSONObject::ObjectNode::iterator_base<0> insert(::std::string_view keyStr, ::Bedrock::JSONObject::ValueWrapper const& value, bool copyKey);
 
     MCNAPI bool setContents(::Bedrock::JSONObject::ValueWrapper const& contents);
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::JSONObject
+}

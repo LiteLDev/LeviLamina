@@ -4,5 +4,5 @@
 
 enum class OperationMode : int {
     Handheld = 0,
-    Console  = 1,
+    Console = 1,
 };

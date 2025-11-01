@@ -25,11 +25,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&
-    operator=(::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&&);
+    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier& operator=(::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&&);
 
-    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier&
-    operator=(::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier const&);
+    MCNAPI ::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier& operator=(::SharedTypes::v1_21_60::CraftingCatalogGroupIdentifier const&);
 
     MCNAPI ~CraftingCatalogGroupIdentifier();
     // NOLINTEND
@@ -45,6 +43,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_60
+}

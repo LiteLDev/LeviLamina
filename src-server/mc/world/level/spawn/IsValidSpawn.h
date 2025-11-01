@@ -24,4 +24,4 @@ MCAPI bool ocelotOrParrot(::BlockSource const&, ::Block const&, ::BlockPos, ::br
 MCAPI bool polarBear(::BlockSource const&, ::Block const&, ::BlockPos, ::br::spawn::EntityType const& entityType);
 // NOLINTEND
 
-} // namespace IsValidSpawn
+}

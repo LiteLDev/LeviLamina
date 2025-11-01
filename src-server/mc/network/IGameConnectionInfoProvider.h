@@ -18,6 +18,9 @@ public:
 
     // vIndex: 1
     virtual ::Social::GameConnectionInfo const& getConnectionInfo() const = 0;
+
+    // vIndex: 2
+    virtual ::std::optional<::std::string> getNetworkInfoString() const = 0;
     // NOLINTEND
 
 public:
@@ -25,6 +28,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Social
+}

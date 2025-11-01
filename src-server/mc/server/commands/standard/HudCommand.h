@@ -16,8 +16,8 @@ class HudCommand : public ::Command {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnk5ddfaf;
-    ::ll::UntypedStorage<1, 1>   mUnk45df26;
+    ::ll::UntypedStorage<4, 4> mUnk5ddfaf;
+    ::ll::UntypedStorage<1, 1> mUnk45df26;
     ::ll::UntypedStorage<8, 200> mUnk25d4db;
     // NOLINTEND
 
@@ -54,4 +54,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

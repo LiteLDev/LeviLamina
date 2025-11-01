@@ -33,4 +33,4 @@ MCNAPI ::HashedString const& PLAYER_INVENTORY();
 MCNAPI ::HashedString const& PLAYER_SPAWN();
 // NOLINTEND
 
-} // namespace DebugInfoMessageType
+}

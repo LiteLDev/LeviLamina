@@ -6,9 +6,9 @@ class LoadedResourceData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk3cf435;
+    ::ll::UntypedStorage<4, 4> mUnk3cf435;
     ::ll::UntypedStorage<8, 32> mUnk232c89;
-    ::ll::UntypedStorage<1, 1>  mUnkfc66b1;
+    ::ll::UntypedStorage<1, 1> mUnkfc66b1;
     // NOLINTEND
 
 public:
@@ -16,4 +16,5 @@ public:
     LoadedResourceData& operator=(LoadedResourceData const&);
     LoadedResourceData(LoadedResourceData const&);
     LoadedResourceData();
+
 };

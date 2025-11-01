@@ -20,4 +20,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::BidirectionalUnorderedMap<::std::string, ::SharedTypes::Legacy::LevelSoundEvent> const& map();
     // NOLINTEND
+
 };

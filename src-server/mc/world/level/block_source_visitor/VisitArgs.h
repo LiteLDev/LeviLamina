@@ -20,6 +20,7 @@ public:
     VisitArgs& operator=(VisitArgs const&);
     VisitArgs(VisitArgs const&);
     VisitArgs();
+
 };
 
-} // namespace BlockSourceVisitor
+}

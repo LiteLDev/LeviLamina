@@ -14,4 +14,5 @@ public:
     unz_file_info64_internal_s& operator=(unz_file_info64_internal_s const&);
     unz_file_info64_internal_s(unz_file_info64_internal_s const&);
     unz_file_info64_internal_s();
+
 };

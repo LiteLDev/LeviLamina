@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/ThemeSettingsColorKey.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/editor/ThemeSettingsColorKey.h"
 #include "mc/editor/services/settings/EditorSettingsService.h"
 #include "mc/options/GraphicsMode.h"
 
@@ -52,41 +52,28 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 7
-    virtual void
-    _handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const& payload) /*override*/;
+    virtual void _handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const& payload) /*override*/;
 
     // vIndex: 8
-    virtual void _handleGraphicsSettingsChangedPayload(
-        ::Editor::Network::GraphicsSettingsChangedPayload const& payload
-    ) /*override*/;
+    virtual void _handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& payload) /*override*/;
 
     // vIndex: 9
-    virtual void
-    _handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload) /*override*/;
+    virtual void _handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload) /*override*/;
 
     // vIndex: 10
-    virtual void
-    _handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload) /*override*/;
+    virtual void _handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload) /*override*/;
 
     // vIndex: 11
-    virtual void _handleThemeSettingsCurrentThemeChangedPayload(
-        ::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const& payload
-    ) /*override*/;
+    virtual void _handleThemeSettingsCurrentThemeChangedPayload(::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const& payload) /*override*/;
 
     // vIndex: 12
-    virtual void _handleThemeSettingsNewThemeCreatedPayload(
-        ::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload
-    ) /*override*/;
+    virtual void _handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload) /*override*/;
 
     // vIndex: 13
-    virtual void _handleThemeSettingsThemeColorUpdatedPayload(
-        ::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload
-    ) /*override*/;
+    virtual void _handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload) /*override*/;
 
     // vIndex: 14
-    virtual void _handleThemeSettingsThemeDeletedPayload(
-        ::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload
-    ) /*override*/;
+    virtual void _handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload) /*override*/;
     // NOLINTEND
 
 public:
@@ -100,19 +87,11 @@ public:
 
     MCNAPI void _handleGraphicsSettingsModified(::Editor::Settings::GraphicsProps const& props);
 
-    MCNAPI void _handleNewThemeCreated(
-        ::std::string const&                  id,
-        ::std::optional<::std::string> const& name,
-        ::std::optional<::std::string> const& sourceThemeId
-    );
+    MCNAPI void _handleNewThemeCreated(::std::string const& id, ::std::optional<::std::string> const& name, ::std::optional<::std::string> const& sourceThemeId);
 
     MCNAPI void _handleSpeedSettingsModified(::Editor::Settings::SpeedProps const& props);
 
-    MCNAPI void _handleThemeColorUpdated(
-        ::std::string const&                      themeId,
-        ::Editor::Settings::ThemeSettingsColorKey colorKey,
-        ::mce::Color const&                       color
-    );
+    MCNAPI void _handleThemeColorUpdated(::std::string const& themeId, ::Editor::Settings::ThemeSettingsColorKey colorKey, ::mce::Color const& color);
 
     MCNAPI void _handleThemeDeleted(::std::string const& id);
 
@@ -142,26 +121,19 @@ public:
 
     MCNAPI void $_handleAudioSettingsChangedPayload(::Editor::Network::AudioSettingsChangedPayload const& payload);
 
-    MCNAPI void
-    $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& payload);
+    MCNAPI void $_handleGraphicsSettingsChangedPayload(::Editor::Network::GraphicsSettingsChangedPayload const& payload);
 
     MCNAPI void $_handleSpeedSettingsChangedPayload(::Editor::Network::SpeedSettingsChangedPayload const& payload);
 
     MCNAPI void $_handleThemeSettingsChangedPayload(::Editor::Network::ThemeSettingsChangedPayload const& payload);
 
-    MCNAPI void $_handleThemeSettingsCurrentThemeChangedPayload(
-        ::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const& payload
-    );
+    MCNAPI void $_handleThemeSettingsCurrentThemeChangedPayload(::Editor::Network::ThemeSettingsCurrentThemeChangedPayload const& payload);
 
-    MCNAPI void
-    $_handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload);
+    MCNAPI void $_handleThemeSettingsNewThemeCreatedPayload(::Editor::Network::ThemeSettingsNewThemeCreatedPayload const& payload);
 
-    MCNAPI void $_handleThemeSettingsThemeColorUpdatedPayload(
-        ::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload
-    );
+    MCNAPI void $_handleThemeSettingsThemeColorUpdatedPayload(::Editor::Network::ThemeSettingsThemeColorUpdatedPayload const& payload);
 
-    MCNAPI void
-    $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload);
+    MCNAPI void $_handleThemeSettingsThemeDeletedPayload(::Editor::Network::ThemeSettingsThemeDeletedPayload const& payload);
     // NOLINTEND
 
 public:
@@ -171,6 +143,7 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

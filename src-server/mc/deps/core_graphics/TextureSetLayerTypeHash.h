@@ -4,6 +4,7 @@
 
 namespace cg {
 
-struct TextureSetLayerTypeHash {};
+struct TextureSetLayerTypeHash {
+};
 
-} // namespace cg
+}

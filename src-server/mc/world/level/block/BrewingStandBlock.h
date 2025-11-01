@@ -28,51 +28,31 @@ class BrewingStandBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 112
+    // vIndex: 111
     virtual ::std::string buildDescriptionId(::Block const&) const /*override*/;
 
     // vIndex: 8
-    virtual void addAABBs(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB const*              intersectTestBox,
-        ::std::vector<::AABB>&     inoutBoxes
-    ) const /*override*/;
+    virtual void addAABBs(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes) const /*override*/;
 
     // vIndex: 7
-    virtual bool addCollisionShapes(
-        ::Block const&                                     block,
-        ::IConstBlockSource const&                         region,
-        ::BlockPos const&                                  pos,
-        ::AABB const*                                      intersectTestBox,
-        ::std::vector<::AABB>&                             inoutBoxes,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const /*override*/;
+    virtual bool addCollisionShapes(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes, ::optional_ref<::GetCollisionShapeInterface const> entity) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const /*override*/;
+    virtual ::AABB getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const /*override*/;
 
     // vIndex: 9
-    virtual ::AABB const&
-    getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const
-        /*override*/;
+    virtual ::AABB const& getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const /*override*/;
 
-    // vIndex: 132
+    // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 136
+    // vIndex: 135
     virtual bool isInteractiveBlock() const /*override*/;
 
     // vIndex: 28
@@ -81,21 +61,19 @@ public:
     // vIndex: 29
     virtual bool isCraftingBlock() const /*override*/;
 
-    // vIndex: 105
+    // vIndex: 104
     virtual bool hasComparatorSignal() const /*override*/;
 
-    // vIndex: 106
-    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const
-        /*override*/;
+    // vIndex: 105
+    virtual int getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const /*override*/;
 
     // vIndex: 57
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const /*override*/;
 
     // vIndex: 22
     virtual bool canProvideSupport(::Block const&, uchar, ::BlockSupportType) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -117,32 +95,13 @@ public:
 
     MCFOLD ::std::string $buildDescriptionId(::Block const&) const;
 
-    MCAPI void $addAABBs(
-        ::Block const&             block,
-        ::IConstBlockSource const& region,
-        ::BlockPos const&          pos,
-        ::AABB const*              intersectTestBox,
-        ::std::vector<::AABB>&     inoutBoxes
-    ) const;
+    MCAPI void $addAABBs(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes) const;
 
-    MCFOLD bool $addCollisionShapes(
-        ::Block const&                                     block,
-        ::IConstBlockSource const&                         region,
-        ::BlockPos const&                                  pos,
-        ::AABB const*                                      intersectTestBox,
-        ::std::vector<::AABB>&                             inoutBoxes,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
+    MCFOLD bool $addCollisionShapes(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes, ::optional_ref<::GetCollisionShapeInterface const> entity) const;
 
-    MCAPI ::AABB $getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const& pos,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
+    MCAPI ::AABB $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
-    MCAPI ::AABB const&
-    $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
+    MCAPI ::AABB const& $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const& pos, ::AABB& bufferValue) const;
 
     MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -154,8 +113,7 @@ public:
 
     MCFOLD bool $hasComparatorSignal() const;
 
-    MCFOLD int
-    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCFOLD int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
     MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
@@ -167,4 +125,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

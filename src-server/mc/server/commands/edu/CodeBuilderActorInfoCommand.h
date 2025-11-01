@@ -18,11 +18,11 @@ public:
     enum class Action : int {
         Inventory = 0,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>   mUnkd6188e;
+    ::ll::UntypedStorage<4, 4> mUnkd6188e;
     ::ll::UntypedStorage<8, 200> mUnke2ab8a;
     // NOLINTEND
 
@@ -59,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

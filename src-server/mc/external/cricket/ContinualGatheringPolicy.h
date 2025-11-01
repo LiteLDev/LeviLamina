@@ -5,7 +5,7 @@
 namespace cricket {
 
 enum class ContinualGatheringPolicy : int {
-    Once        = 0,
+    Once = 0,
     Continually = 1,
 };
 

@@ -16,10 +16,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, uint64> mNextFertilizeStartTick;
-    ::ll::TypedStorage<4, 4, int>    mMaxFertilizerUsage;
-    ::ll::TypedStorage<4, 4, int>    mSearchCooldownMaximumTicks;
-    ::ll::TypedStorage<4, 4, int>    mInventoryFertilizerIndex;
-    ::ll::TypedStorage<4, 4, int>    mTimesFertilized;
+    ::ll::TypedStorage<4, 4, int> mMaxFertilizerUsage;
+    ::ll::TypedStorage<4, 4, int> mSearchCooldownMaximumTicks;
+    ::ll::TypedStorage<4, 4, int> mInventoryFertilizerIndex;
+    ::ll::TypedStorage<4, 4, int> mTimesFertilized;
     // NOLINTEND
 
 public:
@@ -81,4 +81,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

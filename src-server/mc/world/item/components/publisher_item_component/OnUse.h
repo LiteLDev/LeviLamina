@@ -16,9 +16,7 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 
 namespace PublisherItemComponent {
 
-struct OnUse : public ::ItemComponent,
-               public ::Bedrock::PubSub::
-                   Publisher<void(bool&, ::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
+struct OnUse : public ::ItemComponent, public ::Bedrock::PubSub::Publisher<void(bool&, ::ItemStack&, ::Player&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -41,6 +39,7 @@ public:
 
     MCNAPI static void** $vftableForConnector();
     // NOLINTEND
+
 };
 
-} // namespace PublisherItemComponent
+}

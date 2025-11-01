@@ -16,7 +16,7 @@ class TickingAreaListBase {
 public:
     // TickingAreaListBase inner types define
     using RequeueAreaFunc = ::std::function<void(::ITickingArea const&)>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -30,11 +30,7 @@ public:
     virtual ~TickingAreaListBase() = default;
 
     // vIndex: 1
-    virtual bool removeDistantEntityAreasAndCheckForRemoved(
-        ::std::vector<::Vec3> const&                 playerPositions,
-        ::std::function<void(::ITickingArea const&)> requeue,
-        ::LevelStorage&                              levelStorage
-    );
+    virtual bool removeDistantEntityAreasAndCheckForRemoved(::std::vector<::Vec3> const& playerPositions, ::std::function<void(::ITickingArea const&)> requeue, ::LevelStorage& levelStorage);
     // NOLINTEND
 
 public:
@@ -56,18 +52,13 @@ public:
 
     MCAPI ::std::vector<::TickingAreaDescription> removeAllStandaloneAreas(::LevelStorage& levelStorage);
 
-    MCAPI ::std::vector<::TickingAreaDescription>
-    removeAreas(::std::vector<::std::shared_ptr<::ITickingArea>> const& areasToRemove, ::LevelStorage& levelStorage);
+    MCAPI ::std::vector<::TickingAreaDescription> removeAreas(::std::vector<::std::shared_ptr<::ITickingArea>> const& areasToRemove, ::LevelStorage& levelStorage);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $removeDistantEntityAreasAndCheckForRemoved(
-        ::std::vector<::Vec3> const&                 playerPositions,
-        ::std::function<void(::ITickingArea const&)> requeue,
-        ::LevelStorage&                              levelStorage
-    );
+    MCAPI bool $removeDistantEntityAreasAndCheckForRemoved(::std::vector<::Vec3> const& playerPositions, ::std::function<void(::ITickingArea const&)> requeue, ::LevelStorage& levelStorage);
     // NOLINTEND
 
 public:
@@ -75,4 +66,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

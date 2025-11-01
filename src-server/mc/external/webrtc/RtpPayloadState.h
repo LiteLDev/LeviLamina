@@ -19,6 +19,7 @@ public:
     RtpPayloadState& operator=(RtpPayloadState const&);
     RtpPayloadState(RtpPayloadState const&);
     RtpPayloadState();
+
 };
 
-} // namespace webrtc
+}

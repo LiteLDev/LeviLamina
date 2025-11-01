@@ -66,4 +66,5 @@ public:
     // NOLINTBEGIN
     MCAPI ::WeakRef<::EntityContext> getWeakRef() const;
     // NOLINTEND
+
 };

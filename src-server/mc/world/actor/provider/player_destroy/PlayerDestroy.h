@@ -19,4 +19,4 @@ MCNAPI float getDestroyProgress(::PlayerDestroy::DestroyProgressContext& context
 MCNAPI float getDestroySpeed(::PlayerDestroy::DestroyProgressContext& context);
 // NOLINTEND
 
-} // namespace PlayerDestroy
+}

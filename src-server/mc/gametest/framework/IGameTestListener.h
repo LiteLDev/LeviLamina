@@ -50,6 +50,7 @@ public:
 
     MCNAPI void $onTestRetryFinished(::gametest::BaseGameTestInstance&);
     // NOLINTEND
+
 };
 
-} // namespace gametest
+}

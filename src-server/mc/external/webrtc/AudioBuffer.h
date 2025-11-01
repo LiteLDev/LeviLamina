@@ -4,6 +4,7 @@
 
 namespace webrtc {
 
-class AudioBuffer {};
+class AudioBuffer {
+};
 
-} // namespace webrtc
+}

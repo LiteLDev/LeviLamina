@@ -17,6 +17,7 @@ public:
     SaveDocument& operator=(SaveDocument const&);
     SaveDocument(SaveDocument const&);
     SaveDocument();
+
 };
 
-} // namespace SharedTypes::v1_21_100::PackSettingsDefinition
+}

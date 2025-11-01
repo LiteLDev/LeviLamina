@@ -35,4 +35,5 @@ public:
     zip_dirent& operator=(zip_dirent const&);
     zip_dirent(zip_dirent const&);
     zip_dirent();
+
 };

@@ -20,12 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::FeatureParserContext&> mContext;
-    ::ll::TypedStorage<
-        8,
-        8,
-        ::std::shared_ptr<
-            ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>> const&>
-        mSchema;
+    ::ll::TypedStorage<8, 8, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::FeatureLoading::FeatureRootParseContext>> const&> mSchema;
     // NOLINTEND
 
 public:
@@ -55,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

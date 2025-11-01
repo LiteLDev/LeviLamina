@@ -11,30 +11,31 @@ public:
     // clang-format off
     struct WebsocketServerMetaDataPayload;
     // clang-format on
-
+    
     // RakWebSocketServer inner types define
     struct WebsocketServerMetaDataPayload {
     public:
         // WebsocketServerMetaDataPayload inner types define
         enum class MetaDataPayloadType : int {
-            Unknown  = -1,
+            Unknown = -1,
             TextHtml = 0,
         };
-
+        
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnk705ce4;
-        ::ll::UntypedStorage<4, 4>  mUnk25d36e;
+        ::ll::UntypedStorage<4, 4> mUnk25d36e;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         WebsocketServerMetaDataPayload& operator=(WebsocketServerMetaDataPayload const&);
         WebsocketServerMetaDataPayload(WebsocketServerMetaDataPayload const&);
         WebsocketServerMetaDataPayload();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -71,4 +72,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

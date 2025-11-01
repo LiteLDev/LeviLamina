@@ -18,9 +18,9 @@ struct ScriptActorAddEffectAfterEventIntermediateData {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>                          mWeakActorRef;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mWeakActorRef;
     ::ll::TypedStorage<8, 96, ::ScriptModuleMinecraft::ScriptActorData> mActorData;
-    ::ll::TypedStorage<4, 4, int>                                       mMobEffectId;
+    ::ll::TypedStorage<4, 4, int> mMobEffectId;
     // NOLINTEND
 
 public:
@@ -38,6 +38,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::Actor const& actor, ::MobEffectInstance mobEffect);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

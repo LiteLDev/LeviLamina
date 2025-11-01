@@ -5,7 +5,7 @@
 #include "mc/world/level/Tick.h"
 
 // auto generated inclusion list
-#include "mc/world/level/BlockPos.h"
+#include "mc/versionless/world/level/BlockPos.h"
 #include "mc/world/level/Tick.h"
 
 // auto generated forward declare list

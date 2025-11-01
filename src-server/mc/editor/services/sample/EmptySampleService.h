@@ -9,8 +9,7 @@
 
 namespace Editor::Services {
 
-class EmptySampleService : public ::Editor::Services::IEditorService,
-                           public ::Editor::Services::EmptySampleServiceProvider {
+class EmptySampleService : public ::Editor::Services::IEditorService, public ::Editor::Services::EmptySampleServiceProvider {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -49,6 +48,7 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

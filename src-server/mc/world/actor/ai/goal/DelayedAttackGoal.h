@@ -18,10 +18,10 @@ class DelayedAttackGoal : public ::MeleeAttackGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                    mAttackDurationTicks;
-    ::ll::TypedStorage<4, 4, int>                                    mPostPathingTicks;
-    ::ll::TypedStorage<4, 4, int>                                    mHitDelayTicks;
-    ::ll::TypedStorage<4, 4, ::ActorFlags>                           mAttackFlag;
+    ::ll::TypedStorage<4, 4, int> mAttackDurationTicks;
+    ::ll::TypedStorage<4, 4, int> mPostPathingTicks;
+    ::ll::TypedStorage<4, 4, int> mHitDelayTicks;
+    ::ll::TypedStorage<4, 4, ::ActorFlags> mAttackFlag;
     ::ll::TypedStorage<4, 4, ::SharedTypes::Legacy::LevelSoundEvent> mSound;
     // NOLINTEND
 
@@ -46,6 +46,9 @@ public:
     // vIndex: 7
     virtual void appendDebugInfo(::std::string& str) const /*override*/;
 
+    // vIndex: 10
+    virtual int getAttackTicksResetValue() const /*override*/;
+
     // vIndex: 0
     virtual ~DelayedAttackGoal() /*override*/ = default;
     // NOLINTEND
@@ -53,7 +56,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _attemptAttack(::Actor* target, bool canReach, bool hasLineOfSight);
+    MCAPI void _attemptAttack(::Actor& target, bool canReach, bool hasLineOfSight);
     // NOLINTEND
 
 public:
@@ -82,6 +85,8 @@ public:
     MCAPI void $tick();
 
     MCAPI void $appendDebugInfo(::std::string& str) const;
+
+    MCAPI int $getAttackTicksResetValue() const;
     // NOLINTEND
 
 public:
@@ -89,4 +94,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

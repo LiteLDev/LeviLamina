@@ -4,8 +4,8 @@
 
 enum class NewWoodType : int {
     Mangrove = 6,
-    Bamboo   = 7,
-    Cherry   = 8,
-    PaleOak  = 9,
-    Count    = 10,
+    Bamboo = 7,
+    Cherry = 8,
+    PaleOak = 9,
+    Count = 10,
 };

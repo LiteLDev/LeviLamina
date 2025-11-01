@@ -10,6 +10,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::std::thread::id> mThreadId;
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

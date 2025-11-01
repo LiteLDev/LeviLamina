@@ -11,7 +11,7 @@ struct RopePoints {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, uint64>                      mSize;
+    ::ll::TypedStorage<8, 8, uint64> mSize;
     ::ll::TypedStorage<8, 24, ::std::vector<::RopePoint>> mPoints;
     // NOLINTEND
 
@@ -39,4 +39,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

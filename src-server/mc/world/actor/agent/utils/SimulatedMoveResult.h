@@ -18,6 +18,7 @@ public:
     SimulatedMoveResult& operator=(SimulatedMoveResult const&);
     SimulatedMoveResult(SimulatedMoveResult const&);
     SimulatedMoveResult();
+
 };
 
-} // namespace Util::Agent
+}

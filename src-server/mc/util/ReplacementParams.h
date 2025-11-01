@@ -19,6 +19,7 @@ public:
     ReplacementParams& operator=(ReplacementParams const&);
     ReplacementParams(ReplacementParams const&);
     ReplacementParams();
+
 };
 
-} // namespace Util
+}

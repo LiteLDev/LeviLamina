@@ -30,29 +30,30 @@ protected:
     // clang-format off
     struct ItemRenderAdjustments;
     // clang-format on
-
+    
     // ItemActor inner types define
     struct ItemRenderAdjustments {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, bool>  mUseAdjustments;
+        ::ll::TypedStorage<1, 1, bool> mUseAdjustments;
         ::ll::TypedStorage<4, 4, float> mFirstRenderedYaw;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 152, ::ItemStack>                                        mItem;
-    ::ll::TypedStorage<4, 4, int>                                                  mAge;
-    ::ll::TypedStorage<4, 4, int>                                                  mPickupDelay;
-    ::ll::TypedStorage<4, 4, int>                                                  mThrowTime;
-    ::ll::TypedStorage<4, 4, float>                                                mBobOffs;
-    ::ll::TypedStorage<4, 4, int>                                                  mHealth;
-    ::ll::TypedStorage<4, 4, int>                                                  mLifeTime;
-    ::ll::TypedStorage<1, 1, bool>                                                 mIsInItemFrame;
-    ::ll::TypedStorage<1, 1, bool>                                                 mIsFromFishing;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mItem;
+    ::ll::TypedStorage<4, 4, int> mAge;
+    ::ll::TypedStorage<4, 4, int> mPickupDelay;
+    ::ll::TypedStorage<4, 4, int> mThrowTime;
+    ::ll::TypedStorage<4, 4, float> mBobOffs;
+    ::ll::TypedStorage<4, 4, int> mHealth;
+    ::ll::TypedStorage<4, 4, int> mLifeTime;
+    ::ll::TypedStorage<1, 1, bool> mIsInItemFrame;
+    ::ll::TypedStorage<1, 1, bool> mIsFromFishing;
     ::ll::TypedStorage<4, 12, ::std::optional<::ItemActor::ItemRenderAdjustments>> mRenderAdjustments;
     // NOLINTEND
 
@@ -119,11 +120,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemActor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI ItemActor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
 
     MCAPI void _addComponents();
 
@@ -143,11 +140,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::ActorDefinitionGroup*            definitions,
-        ::ActorDefinitionIdentifier const& definitionName,
-        ::EntityContext&                   entityContext
-    );
+    MCAPI void* $ctor(::ActorDefinitionGroup* definitions, ::ActorDefinitionIdentifier const& definitionName, ::EntityContext& entityContext);
     // NOLINTEND
 
 public:
@@ -181,4 +174,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

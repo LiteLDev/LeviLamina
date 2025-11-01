@@ -4,7 +4,8 @@
 
 namespace webrtc::rtc_units_impl {
 
-template <typename T0>
-class UnitBase {};
+template<typename T0>
+class UnitBase {
+};
 
-} // namespace webrtc::rtc_units_impl
+}

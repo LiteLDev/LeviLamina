@@ -8,4 +8,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool> serverAuthSoundEnabled;
     // NOLINTEND
+
 };

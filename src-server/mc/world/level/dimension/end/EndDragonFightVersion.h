@@ -4,5 +4,5 @@
 
 enum class EndDragonFightVersion : uchar {
     Unknown = 0,
-    V1_9_0  = 1,
+    V1_9_0 = 1,
 };

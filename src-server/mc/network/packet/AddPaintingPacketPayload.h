@@ -11,11 +11,11 @@ struct AddPaintingPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>  mEntityId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mEntityId;
     ::ll::TypedStorage<8, 8, ::ActorRuntimeID> mRuntimeId;
-    ::ll::TypedStorage<4, 12, ::Vec3>          mPos;
-    ::ll::TypedStorage<4, 4, int>              mDir;
-    ::ll::TypedStorage<8, 32, ::std::string>   mMotif;
+    ::ll::TypedStorage<4, 12, ::Vec3> mPos;
+    ::ll::TypedStorage<4, 4, int> mDir;
+    ::ll::TypedStorage<8, 32, ::std::string> mMotif;
     // NOLINTEND
 
 public:
@@ -37,4 +37,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

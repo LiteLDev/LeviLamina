@@ -32,8 +32,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::unique_ptr<::Core::FileSizePresetToken>
-    presetInitialSizeForFile(::Core::PathView filePath, uint64 initialFileSize) /*override*/;
+    virtual ::std::unique_ptr<::Core::FileSizePresetToken> presetInitialSizeForFile(::Core::PathView filePath, uint64 initialFileSize) /*override*/;
 
     // vIndex: 2
     virtual ::std::optional<uint64> checkFileInitialSize(::Core::PathView filePath) /*override*/;
@@ -45,8 +44,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::Core::FileSizePresetToken>
-    $presetInitialSizeForFile(::Core::PathView filePath, uint64 initialFileSize);
+    MCNAPI ::std::unique_ptr<::Core::FileSizePresetToken> $presetInitialSizeForFile(::Core::PathView filePath, uint64 initialFileSize);
 
     MCNAPI ::std::optional<uint64> $checkFileInitialSize(::Core::PathView filePath);
     // NOLINTEND
@@ -58,6 +56,7 @@ public:
 
     MCNAPI static void** $vftableForEnableNonOwnerReferences();
     // NOLINTEND
+
 };
 
-} // namespace Core
+}

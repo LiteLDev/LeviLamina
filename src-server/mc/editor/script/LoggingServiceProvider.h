@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/common/editor/LogChannel.h"
 #include "mc/deps/scripting/runtime/Result_deprecated.h"
-#include "mc/editor/LogChannel.h"
 #include "mc/editor/logging/LogLevel.h"
 
 // auto generated forward declare list
@@ -25,13 +25,7 @@ public:
     virtual ~LoggingServiceProvider() = default;
 
     // vIndex: 1
-    virtual void
-    log(::std::string&&,
-        ::Player*,
-        ::Editor::LogLevel,
-        ::std::vector<::HashedString>&&,
-        ::Editor::LogChannel,
-        ::std::string) = 0;
+    virtual void log(::std::string&&, ::Player*, ::Editor::LogLevel, ::std::vector<::HashedString>&&, ::Editor::LogChannel, ::std::string) = 0;
 
     // vIndex: 2
     virtual void flush() = 0;
@@ -40,8 +34,7 @@ public:
     virtual ::std::vector<::Editor::LogMessage> const& getMessages() const = 0;
 
     // vIndex: 4
-    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription>
-        listenForLogMessage(::std::function<void(::Editor::LogMessage const&)>) = 0;
+    virtual ::Scripting::Result_deprecated<::Bedrock::PubSub::Subscription> listenForLogMessage(::std::function<void(::Editor::LogMessage const&)>) = 0;
     // NOLINTEND
 
 public:
@@ -49,6 +42,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

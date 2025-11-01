@@ -27,32 +27,33 @@ public:
     // clang-format off
     struct ExportConversionData;
     // clang-format on
-
+    
     // ProjectConverter inner types define
     struct ExportConversionData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkd2cc4b;
-        ::ll::UntypedStorage<8, 8>  mUnk407f1d;
+        ::ll::UntypedStorage<1, 1> mUnkd2cc4b;
+        ::ll::UntypedStorage<8, 8> mUnk407f1d;
         ::ll::UntypedStorage<8, 16> mUnkd2600a;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ExportConversionData& operator=(ExportConversionData const&);
         ExportConversionData(ExportConversionData const&);
         ExportConversionData();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk510001;
-    ::ll::UntypedStorage<8, 8>  mUnk77ffb6;
+    ::ll::UntypedStorage<8, 8> mUnk77ffb6;
     ::ll::UntypedStorage<8, 24> mUnk1acc17;
     ::ll::UntypedStorage<8, 24> mUnkc7a3bd;
-    ::ll::UntypedStorage<8, 8>  mUnk4fc66b;
+    ::ll::UntypedStorage<8, 8> mUnk4fc66b;
     // NOLINTEND
 
 public:
@@ -68,45 +69,23 @@ public:
     virtual ~ProjectConverter() /*override*/;
 
     // vIndex: 1
-    virtual void enqueueConvertImportingWorldTasks(
-        ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,
-        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
-        ::Bedrock::Threading::Async<void>&                              prevTaskHandle
-    ) /*override*/;
+    virtual void enqueueConvertImportingWorldTasks(::std::shared_ptr<::FileArchiver::Result>& sharedResult, ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress, ::Bedrock::Threading::Async<void>& prevTaskHandle) /*override*/;
 
     // vIndex: 2
     virtual bool shouldCopyWorldForConversion(::std::string const& levelId) const /*override*/;
 
     // vIndex: 3
-    virtual void enqueueConvertExportingWorldTasks(
-        ::std::shared_ptr<::FileArchiver::ExportData>&                  exportData,
-        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
-        ::Bedrock::Threading::Async<void>&                              prevTaskHandle,
-        ::std::function<void(::LevelData&)>                             preExportCallback,
-        ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>>
-            pathCallbacks
-    ) /*override*/;
+    virtual void enqueueConvertExportingWorldTasks(::std::shared_ptr<::FileArchiver::ExportData>& exportData, ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress, ::Bedrock::Threading::Async<void>& prevTaskHandle, ::std::function<void(::LevelData&)> preExportCallback, ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>> pathCallbacks) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ProjectConverter(
-        ::ILevelListCache&                                              levelListCache,
-        ::Scheduler&                                                    scheduler,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
-    );
+    MCNAPI ProjectConverter(::ILevelListCache& levelListCache, ::Scheduler& scheduler, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> keyProvider);
 
-    MCNAPI void _fixupPackHistoryFile(
-        ::Core::PathBuffer<::std::string> const& filePath,
-        ::std::unordered_set<::mce::UUID> const& packsToRemove
-    ) const;
+    MCNAPI void _fixupPackHistoryFile(::Core::PathBuffer<::std::string> const& filePath, ::std::unordered_set<::mce::UUID> const& packsToRemove) const;
 
-    MCNAPI void _fixupPacksFile(
-        ::Core::PathBuffer<::std::string> const& filePath,
-        ::std::unordered_set<::mce::UUID> const& packsToRemove
-    ) const;
+    MCNAPI void _fixupPacksFile(::Core::PathBuffer<::std::string> const& filePath, ::std::unordered_set<::mce::UUID> const& packsToRemove) const;
 
     MCNAPI ::Core::PathBuffer<::std::string> _getLevelFolder(::std::string const& levelId) const;
     // NOLINTEND
@@ -122,12 +101,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::ILevelListCache&                                              levelListCache,
-        ::Scheduler&                                                    scheduler,
-        ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const>      keyProvider
-    );
+    MCNAPI void* $ctor(::ILevelListCache& levelListCache, ::Scheduler& scheduler, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& resourcePackRepository, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> keyProvider);
     // NOLINTEND
 
 public:
@@ -139,22 +113,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $enqueueConvertImportingWorldTasks(
-        ::std::shared_ptr<::FileArchiver::Result>&                      sharedResult,
-        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
-        ::Bedrock::Threading::Async<void>&                              prevTaskHandle
-    );
+    MCNAPI void $enqueueConvertImportingWorldTasks(::std::shared_ptr<::FileArchiver::Result>& sharedResult, ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress, ::Bedrock::Threading::Async<void>& prevTaskHandle);
 
     MCNAPI bool $shouldCopyWorldForConversion(::std::string const& levelId) const;
 
-    MCNAPI void $enqueueConvertExportingWorldTasks(
-        ::std::shared_ptr<::FileArchiver::ExportData>&                  exportData,
-        ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress,
-        ::Bedrock::Threading::Async<void>&                              prevTaskHandle,
-        ::std::function<void(::LevelData&)>                             preExportCallback,
-        ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>>
-            pathCallbacks
-    );
+    MCNAPI void $enqueueConvertExportingWorldTasks(::std::shared_ptr<::FileArchiver::ExportData>& exportData, ::Bedrock::NotNullNonOwnerPtr<::FileArchiver::ProgressReporter> progress, ::Bedrock::Threading::Async<void>& prevTaskHandle, ::std::function<void(::LevelData&)> preExportCallback, ::std::vector<::std::function<void(::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&)>> pathCallbacks);
     // NOLINTEND
 
 public:
@@ -162,6 +125,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor
+}

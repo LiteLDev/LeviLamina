@@ -21,6 +21,7 @@ public:
     ImageDescription& operator=(ImageDescription const&);
     ImageDescription(ImageDescription const&);
     ImageDescription();
+
 };
 
-} // namespace cg
+}

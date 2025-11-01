@@ -13,14 +13,13 @@ namespace dcsctp { struct OutgoingSSNResetRequestParameterConfig; }
 
 namespace dcsctp {
 
-class OutgoingSSNResetRequestParameter : public ::dcsctp::Parameter,
-                                         public ::dcsctp::TLVTrait<::dcsctp::OutgoingSSNResetRequestParameterConfig> {
+class OutgoingSSNResetRequestParameter : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::OutgoingSSNResetRequestParameterConfig> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk9ddbde;
-    ::ll::UntypedStorage<4, 4>  mUnkc1ba54;
-    ::ll::UntypedStorage<4, 4>  mUnkce31a0;
+    ::ll::UntypedStorage<4, 4> mUnk9ddbde;
+    ::ll::UntypedStorage<4, 4> mUnkc1ba54;
+    ::ll::UntypedStorage<4, 4> mUnkce31a0;
     ::ll::UntypedStorage<8, 24> mUnk3f24b7;
     // NOLINTEND
 
@@ -68,6 +67,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

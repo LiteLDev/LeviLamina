@@ -13,4 +13,4 @@ namespace DepenetrationComponentUtility {
 MCNAPI ::Vec3 const& TEMP_Y_OVERRIDE();
 // NOLINTEND
 
-} // namespace DepenetrationComponentUtility
+}

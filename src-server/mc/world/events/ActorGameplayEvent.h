@@ -27,7 +27,7 @@
 #include "mc/world/events/ProjectileHitEvent.h"
 
 
-template <typename Result>
+template<typename Result>
 struct ActorGameplayEvent;
 
 template <>
@@ -54,4 +54,5 @@ struct ActorGameplayEvent<void> : ConstEventVariant<
 
 template <>
 struct ActorGameplayEvent<CoordinatorResult>
-: ConstEventVariant<ProjectileHitEvent, ActorGriefingBlockEvent, ActorStopRidingEvent> {};
+: ConstEventVariant<ProjectileHitEvent, ActorGriefingBlockEvent, ActorStopRidingEvent> {
+};

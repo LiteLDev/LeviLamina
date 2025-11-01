@@ -23,33 +23,19 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 14
-    virtual bool isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const
-        /*override*/;
+    virtual bool isObstructingChests(::BlockSource& region, ::BlockPos const& pos, ::Block const& thisBlock) const /*override*/;
 
-    // vIndex: 72
+    // vIndex: 71
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer heldItemRenderLayer) const /*override*/;
 
     // vIndex: 5
-    virtual ::AABB getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const /*override*/;
+    virtual ::AABB getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>) const /*override*/;
 
     // vIndex: 7
-    virtual bool addCollisionShapes(
-        ::Block const&                                     block,
-        ::IConstBlockSource const&                         region,
-        ::BlockPos const&                                  pos,
-        ::AABB const*                                      intersectTestBox,
-        ::std::vector<::AABB>&                             inoutBoxes,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const /*override*/;
+    virtual bool addCollisionShapes(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes, ::optional_ref<::GetCollisionShapeInterface const> entity) const /*override*/;
 
     // vIndex: 57
-    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const
-        /*override*/;
+    virtual bool checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const /*override*/;
 
     // vIndex: 0
     virtual ~StructureVoidBlock() /*override*/ = default;
@@ -62,21 +48,9 @@ public:
 
     MCAPI bool $canRenderSelectionOverlay(::BlockRenderLayer heldItemRenderLayer) const;
 
-    MCFOLD ::AABB $getCollisionShape(
-        ::Block const&,
-        ::IConstBlockSource const&,
-        ::BlockPos const&,
-        ::optional_ref<::GetCollisionShapeInterface const>
-    ) const;
+    MCFOLD ::AABB $getCollisionShape(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::optional_ref<::GetCollisionShapeInterface const>) const;
 
-    MCFOLD bool $addCollisionShapes(
-        ::Block const&                                     block,
-        ::IConstBlockSource const&                         region,
-        ::BlockPos const&                                  pos,
-        ::AABB const*                                      intersectTestBox,
-        ::std::vector<::AABB>&                             inoutBoxes,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
+    MCFOLD bool $addCollisionShapes(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes, ::optional_ref<::GetCollisionShapeInterface const> entity) const;
 
     MCFOLD bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
     // NOLINTEND
@@ -86,4 +60,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

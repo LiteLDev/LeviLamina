@@ -4,6 +4,7 @@
 
 namespace SharedTypes::Legacy::Spawn {
 
-struct SpawnInLava {};
+struct SpawnInLava {
+};
 
-} // namespace SharedTypes::Legacy::Spawn
+}

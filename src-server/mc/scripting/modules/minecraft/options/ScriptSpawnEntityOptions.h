@@ -13,8 +13,8 @@ struct ScriptSpawnEntityOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 2>  mUnk23fd25;
-    ::ll::UntypedStorage<4, 8>  mUnka4d2c9;
+    ::ll::UntypedStorage<1, 2> mUnk23fd25;
+    ::ll::UntypedStorage<4, 8> mUnka4d2c9;
     ::ll::UntypedStorage<8, 40> mUnkfdf449;
     // NOLINTEND
 
@@ -26,11 +26,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::ScriptModuleMinecraft::ScriptSpawnEntityOptions&
-    operator=(::ScriptModuleMinecraft::ScriptSpawnEntityOptions&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptSpawnEntityOptions& operator=(::ScriptModuleMinecraft::ScriptSpawnEntityOptions&&);
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptSpawnEntityOptions&
-    operator=(::ScriptModuleMinecraft::ScriptSpawnEntityOptions const&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptSpawnEntityOptions& operator=(::ScriptModuleMinecraft::ScriptSpawnEntityOptions const&);
 
     MCNAPI ~ScriptSpawnEntityOptions();
     // NOLINTEND
@@ -46,6 +44,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

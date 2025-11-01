@@ -18,7 +18,7 @@ public:
     // clang-format off
     struct Data;
     // clang-format on
-
+    
     // Input inner types define
     struct Data {
     public:
@@ -27,14 +27,15 @@ public:
         ::ll::UntypedStorage<1, 1> mUnk489f9a;
         ::ll::UntypedStorage<8, 8> mUnk9320ae;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Data& operator=(Data const&);
         Data(Data const&);
         Data();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -56,6 +57,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Puv::Logger const& $getErrors() const;
     // NOLINTEND
+
 };
 
-} // namespace Puv
+}

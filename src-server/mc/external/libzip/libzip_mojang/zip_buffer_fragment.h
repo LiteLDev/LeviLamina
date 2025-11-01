@@ -15,4 +15,5 @@ public:
     zip_buffer_fragment& operator=(zip_buffer_fragment const&);
     zip_buffer_fragment(zip_buffer_fragment const&);
     zip_buffer_fragment();
+
 };

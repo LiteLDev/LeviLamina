@@ -17,10 +17,10 @@ struct ScriptCommandError : public ::Scripting::BaseError {
 public:
     // ScriptCommandError inner types define
     enum class ErrorType : int {
-        Parsing   = 0,
+        Parsing = 0,
         Executing = 1,
     };
-
+    
 public:
     // prevent constructor by default
     ScriptCommandError();
@@ -54,6 +54,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

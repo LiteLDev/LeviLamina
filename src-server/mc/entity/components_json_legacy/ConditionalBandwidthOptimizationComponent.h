@@ -15,10 +15,10 @@ class ConditionalBandwidthOptimizationComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 88, ::ConditionalBandwidthOptimization>                mDefaultValues;
+    ::ll::TypedStorage<8, 88, ::ConditionalBandwidthOptimization> mDefaultValues;
     ::ll::TypedStorage<8, 24, ::std::vector<::ConditionalBandwidthOptimization>> mConditionalValues;
-    ::ll::TypedStorage<8, 8, ::Tick>                                             mLastRequestedValuesTick;
-    ::ll::TypedStorage<8, 88, ::ConditionalBandwidthOptimization>                mCachedOptimizationValues;
+    ::ll::TypedStorage<8, 8, ::Tick> mLastRequestedValuesTick;
+    ::ll::TypedStorage<8, 88, ::ConditionalBandwidthOptimization> mCachedOptimizationValues;
     // NOLINTEND
 
 public:
@@ -50,4 +50,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

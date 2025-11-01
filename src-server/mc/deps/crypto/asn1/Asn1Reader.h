@@ -19,6 +19,7 @@ public:
     Asn1Reader& operator=(Asn1Reader const&);
     Asn1Reader(Asn1Reader const&);
     Asn1Reader();
+
 };
 
-} // namespace Crypto::Asn1
+}

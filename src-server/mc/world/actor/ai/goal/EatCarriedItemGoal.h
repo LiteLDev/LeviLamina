@@ -15,9 +15,9 @@ class EatCarriedItemGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>       mMob;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     ::ll::TypedStorage<8, 8, uint64 const> mStartDelay;
-    ::ll::TypedStorage<8, 8, uint64>       mStartDelayCounter;
+    ::ll::TypedStorage<8, 8, uint64> mStartDelayCounter;
     // NOLINTEND
 
 public:
@@ -78,4 +78,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

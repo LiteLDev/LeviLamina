@@ -32,4 +32,5 @@ public:
 
     MCFOLD void* $ctor(::LegacyOnHitActorTriggerItemComponentData const&);
     // NOLINTEND
+
 };

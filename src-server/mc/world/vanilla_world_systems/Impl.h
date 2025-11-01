@@ -24,13 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Impl(
-        ::Bedrock::NonOwnerPointer<::Level> const& level,
-        ::Experiments const&                       experiments,
-        ::BaseGameVersion const&                   baseGameVersion,
-        ::ItemRegistryRef                          itemRegistry,
-        ::ServerScriptManager const*               scriptManager
-    );
+    MCNAPI Impl(::Bedrock::NonOwnerPointer<::Level> const& level, ::Experiments const& experiments, ::BaseGameVersion const& baseGameVersion, ::ItemRegistryRef itemRegistry, ::ServerScriptManager const* scriptManager);
 
     MCNAPI ~Impl();
     // NOLINTEND
@@ -44,13 +38,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Bedrock::NonOwnerPointer<::Level> const& level,
-        ::Experiments const&                       experiments,
-        ::BaseGameVersion const&                   baseGameVersion,
-        ::ItemRegistryRef                          itemRegistry,
-        ::ServerScriptManager const*               scriptManager
-    );
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::Level> const& level, ::Experiments const& experiments, ::BaseGameVersion const& baseGameVersion, ::ItemRegistryRef itemRegistry, ::ServerScriptManager const* scriptManager);
     // NOLINTEND
 
 public:
@@ -58,6 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace VanillaWorldSystems
+}

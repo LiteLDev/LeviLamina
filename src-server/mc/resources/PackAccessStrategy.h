@@ -98,6 +98,9 @@ public:
 
     // vIndex: 21
     virtual ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> _loadArchive(::Core::Path const&) const;
+
+    // vIndex: 22
+    virtual ::std::vector<::Bedrock::Resources::PreloadedPathHandle> _preloadSubFolders(::Core::Path const&) const;
     // NOLINTEND
 
 public:
@@ -109,9 +112,13 @@ public:
 
     MCNAPI bool _isInAssetSet(::Core::Path const& path) const;
 
+    MCNAPI bool _isInAssetSetCaseInsensative(::Core::Path const& path) const;
+
     MCNAPI void _upgradeContentsFile(::Json::Value& root);
 
-    MCNAPI ::Bedrock::Resources::PreloadedPathHandle preload(::Core::Path const& packRelativePath) const;
+    MCNAPI ::Bedrock::Resources::PreloadedPathHandle preloadArchive(::Core::Path const& packRelativePath) const;
+
+    MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle> preloadPath(::Core::Path const& packRelativePath) const;
     // NOLINTEND
 
 public:
@@ -152,6 +159,8 @@ public:
     MCNAPI bool $isAssetExtractionViable() const;
 
     MCNAPI ::std::unique_ptr<::Bedrock::Resources::Archive::Reader> $_loadArchive(::Core::Path const&) const;
+
+    MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle> $_preloadSubFolders(::Core::Path const&) const;
     // NOLINTEND
 
 public:
@@ -159,4 +168,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

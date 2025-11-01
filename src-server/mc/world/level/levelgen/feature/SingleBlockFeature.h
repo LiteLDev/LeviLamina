@@ -20,71 +20,63 @@ public:
     // clang-format off
     struct WeightedBlockDescriptor;
     // clang-format on
-
+    
     // SingleBlockFeature inner types define
     enum class CheckDirection : uchar {
-        Top      = 0,
-        Bottom   = 1,
-        North    = 2,
-        East     = 3,
-        South    = 4,
-        West     = 5,
-        All      = 6,
-        Sides    = 7,
+        Top = 0,
+        Bottom = 1,
+        North = 2,
+        East = 3,
+        South = 4,
+        West = 5,
+        All = 6,
+        Sides = 7,
         Diagonal = 8,
-        Count    = 9,
+        Count = 9,
     };
-
+    
     enum class AttachCondition : uchar {
-        MayAttachTo    = 0,
+        MayAttachTo = 0,
         MayNotAttachTo = 1,
     };
-
-    using PlacementConditions =
-        ::Bedrock::DenseEnumMap<::SingleBlockFeature::CheckDirection, ::std::vector<::BlockDescriptor>, 9>;
-
+    
+    using PlacementConditions = ::Bedrock::DenseEnumMap<::SingleBlockFeature::CheckDirection, ::std::vector<::BlockDescriptor>, 9>;
+    
     struct WeightedBlockDescriptor {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 184, ::BlockDescriptor> mBlockDescriptor;
-        ::ll::TypedStorage<4, 4, float>               mWeight;
+        ::ll::TypedStorage<4, 4, float> mWeight;
         // NOLINTEND
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ~WeightedBlockDescriptor();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCFOLD void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::SingleBlockFeature::WeightedBlockDescriptor>> mPossibleBlocks;
-    ::ll::TypedStorage<
-        8,
-        216,
-        ::Bedrock::DenseEnumMap<::SingleBlockFeature::CheckDirection, ::std::vector<::BlockDescriptor>, 9>>
-        mMayAttachTo;
-    ::ll::TypedStorage<
-        8,
-        216,
-        ::Bedrock::DenseEnumMap<::SingleBlockFeature::CheckDirection, ::std::vector<::BlockDescriptor>, 9>>
-                                                                mMayNotAttachTo;
+    ::ll::TypedStorage<8, 216, ::Bedrock::DenseEnumMap<::SingleBlockFeature::CheckDirection, ::std::vector<::BlockDescriptor>, 9>> mMayAttachTo;
+    ::ll::TypedStorage<8, 216, ::Bedrock::DenseEnumMap<::SingleBlockFeature::CheckDirection, ::std::vector<::BlockDescriptor>, 9>> mMayNotAttachTo;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockDescriptor>> mMayReplace;
-    ::ll::TypedStorage<4, 4, int>                               mMinAttachedSides;
-    ::ll::TypedStorage<1, 1, bool>                              mEnforcePlacementRules;
-    ::ll::TypedStorage<1, 1, bool>                              mEnforceSurvivabilityRules;
-    ::ll::TypedStorage<1, 1, bool>                              mAutoRotate;
-    ::ll::TypedStorage<1, 1, bool>                              mRandomRotation;
-    ::ll::TypedStorage<1, 1, bool>                              mEnforceAttachmentRules;
+    ::ll::TypedStorage<4, 4, int> mMinAttachedSides;
+    ::ll::TypedStorage<1, 1, bool> mEnforcePlacementRules;
+    ::ll::TypedStorage<1, 1, bool> mEnforceSurvivabilityRules;
+    ::ll::TypedStorage<1, 1, bool> mAutoRotate;
+    ::ll::TypedStorage<1, 1, bool> mRandomRotation;
+    ::ll::TypedStorage<1, 1, bool> mEnforceAttachmentRules;
     // NOLINTEND
 
 public:
@@ -100,8 +92,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Block const*
-    _mayAttach(::BlockDescriptor const& blockDescriptor, ::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
+    MCAPI ::Block const* _mayAttach(::BlockDescriptor const& blockDescriptor, ::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
 
     MCAPI bool _mayNotAttach(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
     // NOLINTEND
@@ -123,4 +114,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

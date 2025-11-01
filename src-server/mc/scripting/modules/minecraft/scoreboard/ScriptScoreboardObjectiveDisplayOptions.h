@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkf923d0;
-    ::ll::UntypedStorage<4, 8>  mUnk86abb2;
+    ::ll::UntypedStorage<4, 8> mUnk86abb2;
     // NOLINTEND
 
 public:
@@ -31,10 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptScoreboardObjectiveDisplayOptions(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective> objective,
-        ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType                                    sortOrder
-    );
+    MCNAPI ScriptScoreboardObjectiveDisplayOptions(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective> objective, ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType sortOrder);
 
     MCNAPI ~ScriptScoreboardObjectiveDisplayOptions();
     // NOLINTEND
@@ -48,10 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective> objective,
-        ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType                                    sortOrder
-    );
+    MCNAPI void* $ctor(::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective> objective, ::ScriptModuleMinecraft::ScriptObjectiveSortOrderType sortOrder);
     // NOLINTEND
 
 public:
@@ -59,6 +53,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

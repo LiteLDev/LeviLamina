@@ -17,6 +17,7 @@ public:
     TexturePtr& operator=(TexturePtr const&);
     TexturePtr(TexturePtr const&);
     TexturePtr();
+
 };
 
-} // namespace mce
+}

@@ -4,5 +4,5 @@
 
 enum class OutgoingPacketFilterResult : int {
     Allowed = 0,
-    Reject  = 1,
+    Reject = 1,
 };

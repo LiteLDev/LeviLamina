@@ -8,9 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
-namespace Puv { class Logger; }
 namespace Puv { class VersionRange; }
-namespace cereal { class BasicSerializerContext; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -39,24 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI CerealParserBase(
-        ::cereal::ReflectionCtx const& ctx,
-        ::SemVersion                   parserVersion,
-        ::Puv::VersionRange            supportedRange
-    );
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Puv::Logger makeLogger(::cereal::BasicSerializerContext const& log);
+    MCNAPI CerealParserBase(::cereal::ReflectionCtx const& ctx, ::SemVersion parserVersion, ::Puv::VersionRange supportedRange);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::cereal::ReflectionCtx const& ctx, ::SemVersion parserVersion, ::Puv::VersionRange supportedRange);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::SemVersion parserVersion, ::Puv::VersionRange supportedRange);
     // NOLINTEND
 
 public:
@@ -70,6 +57,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Puv
+}

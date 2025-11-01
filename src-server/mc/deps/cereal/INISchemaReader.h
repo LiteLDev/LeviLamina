@@ -14,8 +14,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 96> mUnk21bb5f;
-    ::ll::UntypedStorage<8, 8>  mUnke11cc5;
-    ::ll::UntypedStorage<8, 8>  mUnk1a7f3a;
+    ::ll::UntypedStorage<8, 8> mUnke11cc5;
+    ::ll::UntypedStorage<8, 8> mUnk1a7f3a;
     // NOLINTEND
 
 public:
@@ -70,7 +70,7 @@ public:
     virtual ::Bedrock::Result<double> asDouble() /*override*/;
 
     // vIndex: 15
-    virtual ::Bedrock::Result<::std::string> asString() /*override*/;
+    virtual ::Bedrock::Result<::std::string> asString(uint64) /*override*/;
 
     // vIndex: 16
     virtual ::std::optional<bool> readValidityFlag() /*override*/;
@@ -105,6 +105,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace cereal
+}

@@ -17,6 +17,7 @@ public:
     ConditionVariableShim& operator=(ConditionVariableShim const&);
     ConditionVariableShim(ConditionVariableShim const&);
     ConditionVariableShim();
+
 };
 
-} // namespace brstd::detail
+}

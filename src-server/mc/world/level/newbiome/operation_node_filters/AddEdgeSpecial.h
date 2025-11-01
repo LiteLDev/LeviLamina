@@ -12,7 +12,7 @@ namespace OperationNodeValues { struct PreBiome; }
 
 namespace OperationNodeFilters {
 
-struct AddEdgeSpecial
-: public ::OperationNodeFilters::FilterBase<1, 1, ::OperationNodeValues::PreBiome, ::OperationNodeValues::PreBiome> {};
+struct AddEdgeSpecial : public ::OperationNodeFilters::FilterBase<1, 1, ::OperationNodeValues::PreBiome, ::OperationNodeValues::PreBiome> {
+};
 
-} // namespace OperationNodeFilters
+}

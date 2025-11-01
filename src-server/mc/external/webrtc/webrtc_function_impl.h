@@ -9,4 +9,4 @@ enum : uint64 {
     KInlineStorageWords = 1ull << 2,
 };
 
-} // namespace webrtc::webrtc_function_impl
+}

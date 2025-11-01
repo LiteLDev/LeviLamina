@@ -16,6 +16,7 @@ public:
     SanitizedFormatStringManager& operator=(SanitizedFormatStringManager const&);
     SanitizedFormatStringManager(SanitizedFormatStringManager const&);
     SanitizedFormatStringManager();
+
 };
 
-} // namespace Bedrock
+}

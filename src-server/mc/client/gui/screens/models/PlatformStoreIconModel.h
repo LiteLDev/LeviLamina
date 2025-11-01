@@ -8,7 +8,7 @@ public:
     // clang-format off
     struct PlatformStoreIconVisibility;
     // clang-format on
-
+    
     // PlatformStoreIconModel inner types define
     struct PlatformStoreIconVisibility {
     public:
@@ -17,14 +17,15 @@ public:
         ::ll::UntypedStorage<1, 1> mUnka858a6;
         ::ll::UntypedStorage<1, 1> mUnk53ae1c;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         PlatformStoreIconVisibility& operator=(PlatformStoreIconVisibility const&);
         PlatformStoreIconVisibility(PlatformStoreIconVisibility const&);
         PlatformStoreIconVisibility();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -37,4 +38,5 @@ public:
     PlatformStoreIconModel& operator=(PlatformStoreIconModel const&);
     PlatformStoreIconModel(PlatformStoreIconModel const&);
     PlatformStoreIconModel();
+
 };

@@ -21,7 +21,7 @@ class CommandPositionFloat;
 
 namespace Bedrock {
 
-template <typename Category>
+template<typename Category>
 class typeid_t {
 public:
     ushort value{};

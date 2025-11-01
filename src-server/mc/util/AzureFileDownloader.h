@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkb90acb;
-    ::ll::UntypedStorage<1, 1>  mUnkae9c0d;
+    ::ll::UntypedStorage<1, 1> mUnkae9c0d;
     // NOLINTEND
 
 public:
@@ -25,4 +25,5 @@ public:
     // vIndex: 0
     virtual ~AzureFileDownloader() /*override*/ = default;
     // NOLINTEND
+
 };

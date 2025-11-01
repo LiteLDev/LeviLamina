@@ -21,4 +21,5 @@ public:
     BackgroundWorkerPerfInfo& operator=(BackgroundWorkerPerfInfo const&);
     BackgroundWorkerPerfInfo(BackgroundWorkerPerfInfo const&);
     BackgroundWorkerPerfInfo();
+
 };

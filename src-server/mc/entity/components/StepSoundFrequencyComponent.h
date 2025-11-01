@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mMoveDist;
     ::ll::TypedStorage<4, 4, float> mNextStep;
     // NOLINTEND
+
 };

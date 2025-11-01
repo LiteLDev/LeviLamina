@@ -4,6 +4,7 @@
 
 namespace AgentComponents {
 
-struct AnimationShrug {};
+struct AnimationShrug {
+};
 
-} // namespace AgentComponents
+}

@@ -4,7 +4,8 @@
 
 namespace SynchedActorDataAdapterUtil {
 
-template <typename T0>
-struct ActorDataComponentReplayableInput {};
+template<typename T0>
+struct ActorDataComponentReplayableInput {
+};
 
-} // namespace SynchedActorDataAdapterUtil
+}

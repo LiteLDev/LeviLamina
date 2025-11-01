@@ -25,4 +25,5 @@ public:
     // NOLINTBEGIN
     MCNAPI ::InsideBlockNotifierComponent& operator=(::InsideBlockNotifierComponent&&);
     // NOLINTEND
+
 };

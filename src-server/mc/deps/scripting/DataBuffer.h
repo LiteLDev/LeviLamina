@@ -4,6 +4,7 @@
 
 namespace Scripting {
 
-class DataBuffer {};
+class DataBuffer {
+};
 
-} // namespace Scripting
+}

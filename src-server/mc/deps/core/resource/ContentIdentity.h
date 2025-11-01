@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::mce::UUID> mUUID;
-    ::ll::TypedStorage<1, 1, bool>         mValid;
+    ::ll::TypedStorage<1, 1, bool> mValid;
     // NOLINTEND
 
 public:
@@ -30,4 +30,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::ContentIdentity& EMPTY();
     // NOLINTEND
+
 };

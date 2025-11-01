@@ -17,4 +17,5 @@ public:
     PointLightLODingConfiguration& operator=(PointLightLODingConfiguration const&);
     PointLightLODingConfiguration(PointLightLODingConfiguration const&);
     PointLightLODingConfiguration();
+
 };

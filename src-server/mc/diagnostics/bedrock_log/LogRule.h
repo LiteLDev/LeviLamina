@@ -5,7 +5,7 @@
 namespace BedrockLog {
 
 enum class LogRule : int {
-    DefaultRules    = 0,
+    DefaultRules = 0,
     ClientAndServer = 1,
 };
 

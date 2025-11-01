@@ -155,4 +155,4 @@ MCNAPI ::HashedString const& USE_ITEM_STARTUP_PROGRESS();
 MCNAPI ::HashedString const& WING_FLAP();
 // NOLINTEND
 
-} // namespace EntitySpecificMolang::VariableNames
+}

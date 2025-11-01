@@ -27,62 +27,54 @@ public:
     // clang-format off
     struct ComponentMetadata;
     // clang-format on
-
+    
     // BlockComponentFactory inner types define
     struct ComponentMetadata {
     public:
         // ComponentMetadata inner types define
-        using ParseFunction =
-            ::std::function<bool(::Experiments const&, ::Json::Value const&, ::SemVersion const&, bool)>;
-
-        using Ctor = ::std::unique_ptr<::BlockComponentDescription> (*)();
-
+        using ParseFunction = ::std::function<bool(::Experiments const&, ::Json::Value const&, ::SemVersion const&, bool)>;
+        
+        using Ctor = ::std::unique_ptr<::BlockComponentDescription>(*) ();
+        
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockComponentDescription> (*)()> makeUnique;
-        ::ll::TypedStorage<8, 24, ::std::vector<::PackLoadRequirement>>                requirements;
-        ::ll::TypedStorage<8, 32, ::std::optional<::SemVersion>>                       releasedMinFormatVersion;
-        ::ll::TypedStorage<8, 24, ::CerealSchemaUpgradeSet>                            versionUpgrades;
-        ::ll::TypedStorage<
-            8,
-            64,
-            ::std::function<bool(::Experiments const&, ::Json::Value const&, ::SemVersion const&, bool)>>
-                                       onParseCallback;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockComponentDescription>(*) ()> makeUnique;
+        ::ll::TypedStorage<8, 24, ::std::vector<::PackLoadRequirement>> requirements;
+        ::ll::TypedStorage<8, 32, ::std::optional<::SemVersion>> releasedMinFormatVersion;
+        ::ll::TypedStorage<8, 24, ::CerealSchemaUpgradeSet> versionUpgrades;
+        ::ll::TypedStorage<8, 64, ::std::function<bool(::Experiments const&, ::Json::Value const&, ::SemVersion const&, bool)>> onParseCallback;
         ::ll::TypedStorage<1, 1, bool> mIsCustomComponent;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ComponentMetadata& operator=(ComponentMetadata const&);
         ComponentMetadata(ComponentMetadata const&);
         ComponentMetadata();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCAPI ::BlockComponentFactory::ComponentMetadata& operator=(::BlockComponentFactory::ComponentMetadata&&);
-
+    
         MCAPI ~ComponentMetadata();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
     using CerealComponentsMap = ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        16,
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>>>
-        mBlockComponentsSchema;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BlockComponentGroupDescription>>> mBlockComponentsSchema;
     // NOLINTEND
 
 public:
@@ -106,8 +98,7 @@ public:
 
     MCAPI void _registerLegacyDescriptions(::IPackLoadContext const* packLoadContext);
 
-    MCAPI ::std::unique_ptr<::BlockComponentDescription>
-    createDescription(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
+    MCAPI ::std::unique_ptr<::BlockComponentDescription> createDescription(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
 
     MCAPI ::BlockComponentFactory& operator=(::BlockComponentFactory const&);
     // NOLINTEND
@@ -115,8 +106,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>*
-    contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
+    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>* contextInstanceIfAvailable(::cereal::ReflectionCtx const& ctx);
 
     MCAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
@@ -138,4 +128,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -38,4 +38,5 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::WeakStorageEntity const& weakStorage);
     // NOLINTEND
+
 };

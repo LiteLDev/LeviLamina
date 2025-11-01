@@ -19,6 +19,7 @@ public:
     StoreOfferClickedData& operator=(StoreOfferClickedData const&);
     StoreOfferClickedData(StoreOfferClickedData const&);
     StoreOfferClickedData();
+
 };
 
-} // namespace Social::eventData
+}

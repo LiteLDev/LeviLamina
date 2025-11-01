@@ -4,6 +4,7 @@
 
 namespace Bedrock::Threading::Burst::Strategy::Execution {
 
-class GreedyExecution {};
+class GreedyExecution {
+};
 
-} // namespace Bedrock::Threading::Burst::Strategy::Execution
+}

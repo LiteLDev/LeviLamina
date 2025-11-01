@@ -13,17 +13,16 @@ class BlockComponentStorage;
 class CompoundTag;
 // clang-format on
 
-struct BlockRedstoneProducerDescription
-: public ::NetworkedBlockComponentDescription<::BlockRedstoneProducerDescription> {
+struct BlockRedstoneProducerDescription : public ::NetworkedBlockComponentDescription<::BlockRedstoneProducerDescription> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, char>                                  mPower;
-    ::ll::TypedStorage<1, 1, uchar>                                 mStronglyPoweredFace;
+    ::ll::TypedStorage<1, 1, char> mPower;
+    ::ll::TypedStorage<1, 1, uchar> mStronglyPoweredFace;
     ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::Facing::Name, 6>> mConnectedFaces;
-    ::ll::TypedStorage<1, 1, bool>                                  mIsTransformRelative;
-    ::ll::TypedStorage<1, 1, bool>                                  mAllowPowerUp;
-    ::ll::TypedStorage<1, 1, bool>                                  mAllowPowerDown;
+    ::ll::TypedStorage<1, 1, bool> mIsTransformRelative;
+    ::ll::TypedStorage<1, 1, bool> mAllowPowerUp;
+    ::ll::TypedStorage<1, 1, bool> mAllowPowerDown;
     // NOLINTEND
 
 public:
@@ -55,14 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockRedstoneProducerDescription(
-        int                                   outputPower,
-        uchar                                 stronglyPoweredFace,
-        ::Bedrock::EnumSet<::Facing::Name, 6> connectedFaces,
-        bool                                  isTransformRelative,
-        bool                                  allowPowerUp,
-        bool                                  allowPowerDown
-    );
+    MCAPI BlockRedstoneProducerDescription(int outputPower, uchar stronglyPoweredFace, ::Bedrock::EnumSet<::Facing::Name, 6> connectedFaces, bool isTransformRelative, bool allowPowerUp, bool allowPowerDown);
     // NOLINTEND
 
 public:
@@ -74,14 +66,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        int                                   outputPower,
-        uchar                                 stronglyPoweredFace,
-        ::Bedrock::EnumSet<::Facing::Name, 6> connectedFaces,
-        bool                                  isTransformRelative,
-        bool                                  allowPowerUp,
-        bool                                  allowPowerDown
-    );
+    MCAPI void* $ctor(int outputPower, uchar stronglyPoweredFace, ::Bedrock::EnumSet<::Facing::Name, 6> connectedFaces, bool isTransformRelative, bool allowPowerUp, bool allowPowerDown);
     // NOLINTEND
 
 public:
@@ -109,4 +94,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

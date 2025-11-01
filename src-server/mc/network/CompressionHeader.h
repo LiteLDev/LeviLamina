@@ -14,4 +14,5 @@ public:
     CompressionHeader& operator=(CompressionHeader const&);
     CompressionHeader(CompressionHeader const&);
     CompressionHeader();
+
 };

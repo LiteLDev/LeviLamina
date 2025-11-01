@@ -10,12 +10,12 @@ class RandomLookAroundAndSitGoal : public ::RandomLookAroundGoal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>   mContinueSittingOnReload;
-    ::ll::TypedStorage<1, 1, bool>   mContinueIfLeashed;
-    ::ll::TypedStorage<4, 4, int>    mMinLookCount;
-    ::ll::TypedStorage<4, 4, int>    mMaxLookCount;
-    ::ll::TypedStorage<4, 4, int>    mRemainingLookCount;
-    ::ll::TypedStorage<4, 4, int>    mRandomLookAroundCooldown;
+    ::ll::TypedStorage<1, 1, bool> mContinueSittingOnReload;
+    ::ll::TypedStorage<1, 1, bool> mContinueIfLeashed;
+    ::ll::TypedStorage<4, 4, int> mMinLookCount;
+    ::ll::TypedStorage<4, 4, int> mMaxLookCount;
+    ::ll::TypedStorage<4, 4, int> mRemainingLookCount;
+    ::ll::TypedStorage<4, 4, int> mRandomLookAroundCooldown;
     ::ll::TypedStorage<8, 8, ::Tick> mNextAvailableSitTick;
     // NOLINTEND
 
@@ -65,4 +65,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

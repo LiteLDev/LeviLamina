@@ -14,15 +14,15 @@ class RandomLookAroundGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>  mMinAngleOfView;
-    ::ll::TypedStorage<4, 4, float>  mMaxAngleOfView;
-    ::ll::TypedStorage<4, 4, int>    mMinLookTime;
-    ::ll::TypedStorage<4, 4, int>    mMaxLookTime;
-    ::ll::TypedStorage<4, 4, float>  mProbability;
+    ::ll::TypedStorage<4, 4, float> mMinAngleOfView;
+    ::ll::TypedStorage<4, 4, float> mMaxAngleOfView;
+    ::ll::TypedStorage<4, 4, int> mMinLookTime;
+    ::ll::TypedStorage<4, 4, int> mMaxLookTime;
+    ::ll::TypedStorage<4, 4, float> mProbability;
     ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 4, int>    mTotalLookTime;
-    ::ll::TypedStorage<4, 4, float>  mInitialRotation;
-    ::ll::TypedStorage<4, 4, float>  mTargetRotation;
+    ::ll::TypedStorage<4, 4, int> mTotalLookTime;
+    ::ll::TypedStorage<4, 4, float> mInitialRotation;
+    ::ll::TypedStorage<4, 4, float> mTargetRotation;
     // NOLINTEND
 
 public:
@@ -78,4 +78,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

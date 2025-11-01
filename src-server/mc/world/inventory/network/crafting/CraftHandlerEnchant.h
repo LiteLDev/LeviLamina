@@ -20,9 +20,9 @@ class CraftHandlerEnchant : public ::CraftHandlerBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>       mEnchantCost;
+    ::ll::TypedStorage<4, 4, int> mEnchantCost;
     ::ll::TypedStorage<8, 8, ::Player&> mPlayer;
-    ::ll::TypedStorage<1, 1, bool>      mRecalculateOptions;
+    ::ll::TypedStorage<1, 1, bool> mRecalculateOptions;
     // NOLINTEND
 
 public:
@@ -38,8 +38,7 @@ public:
     virtual ~CraftHandlerEnchant() /*override*/ = default;
 
     // vIndex: 4
-    virtual ::ItemStackNetResult
-    _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
+    virtual ::ItemStackNetResult _handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction) /*override*/;
 
     // vIndex: 5
     virtual void _postCraftRequest(bool const wasSuccess) /*override*/;
@@ -71,4 +70,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

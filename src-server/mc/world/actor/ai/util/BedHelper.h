@@ -23,4 +23,5 @@ public:
     BedHelper& operator=(BedHelper const&);
     BedHelper(BedHelper const&);
     BedHelper();
+
 };

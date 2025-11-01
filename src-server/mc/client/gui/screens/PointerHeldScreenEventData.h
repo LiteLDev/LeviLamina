@@ -8,6 +8,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 8, float[2]> position;
     ::ll::TypedStorage<4, 8, float[2]> relativePosition;
-    ::ll::TypedStorage<1, 1, bool>     moved;
+    ::ll::TypedStorage<1, 1, bool> moved;
     // NOLINTEND
+
 };

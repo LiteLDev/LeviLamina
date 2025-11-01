@@ -30,7 +30,7 @@ public:
     // clang-format off
     struct ParticleParams;
     // clang-format on
-
+    
     // LeavesBlock inner types define
     struct ParticleParams {
     public:
@@ -38,27 +38,25 @@ public:
         // clang-format off
         struct BiomeTintedColor;
         // clang-format on
-
+        
         // ParticleParams inner types define
-        struct BiomeTintedColor {};
-
+        struct BiomeTintedColor {
+        };
+        
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<
-            4,
-            20,
-            ::std::variant<::ParticleType, ::mce::Color, ::LeavesBlock::ParticleParams::BiomeTintedColor>>
-                                      mParticle;
+        ::ll::TypedStorage<4, 20, ::std::variant<::ParticleType, ::mce::Color, ::LeavesBlock::ParticleParams::BiomeTintedColor>> mParticle;
         ::ll::TypedStorage<4, 4, int> mOneOutOfChance;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                                            mHasTransparentLeaves;
-    ::ll::TypedStorage<8, 8, ::HashedString const&>                           mSapling;
+    ::ll::TypedStorage<1, 1, bool> mHasTransparentLeaves;
+    ::ll::TypedStorage<8, 8, ::HashedString const&> mSapling;
     ::ll::TypedStorage<4, 28, ::std::optional<::LeavesBlock::ParticleParams>> mParticleParams;
     // NOLINTEND
 
@@ -71,34 +69,31 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 132
+    // vIndex: 131
     virtual void onRemove(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 118
+    // vIndex: 117
     virtual int getVariant(::Block const& block) const /*override*/;
 
-    // vIndex: 114
+    // vIndex: 113
     virtual bool isSeasonTinted(::Block const& block, ::BlockSource& region, ::BlockPos const& p) const /*override*/;
 
-    // vIndex: 139
-    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const
-        /*override*/;
+    // vIndex: 138
+    virtual ::BlockRenderLayer getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 141
+    // vIndex: 140
     virtual ::HashedString const& getCullingLayer() const /*override*/;
 
-    // vIndex: 124
+    // vIndex: 123
     virtual void animateTick(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 84
+    // vIndex: 83
     virtual bool breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const /*override*/;
 
-    // vIndex: 92
-    virtual ::Block const&
-    getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const
-        /*override*/;
+    // vIndex: 91
+    virtual ::Block const& getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const /*override*/;
 
-    // vIndex: 115
+    // vIndex: 114
     virtual void onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context) /*override*/;
 
     // vIndex: 22
@@ -107,7 +102,7 @@ public:
     // vIndex: 23
     virtual bool canProvideMultifaceSupport(::Block const& block, uchar face) const /*override*/;
 
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 0
@@ -151,13 +146,7 @@ public:
 
     MCFOLD bool $breaksFallingBlocks(::Block const& block, ::BaseGameVersion const version) const;
 
-    MCAPI ::Block const& $getPlacementBlock(
-        ::Actor const&    by,
-        ::BlockPos const& pos,
-        uchar             face,
-        ::Vec3 const&     clickPos,
-        int               itemValue
-    ) const;
+    MCAPI ::Block const& $getPlacementBlock(::Actor const& by, ::BlockPos const& pos, uchar face, ::Vec3 const& clickPos, int itemValue) const;
 
     MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
@@ -173,4 +162,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

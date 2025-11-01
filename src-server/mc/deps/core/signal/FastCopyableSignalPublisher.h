@@ -20,7 +20,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 128> mUnk2e7d25;
-    ::ll::UntypedStorage<8, 8>   mUnk5566e5;
+    ::ll::UntypedStorage<8, 8> mUnk5566e5;
     // NOLINTEND
 
 public:
@@ -36,8 +36,7 @@ public:
     virtual void send(void const*) /*override*/;
 
     // vIndex: 2
-    virtual ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)>
-    getConnectOp(::std::function<void(void const*)>&&) /*override*/;
+    virtual ::std::function<::Bedrock::PubSub::RawSubscription(::Bedrock::PubSub::DeferredSubscriptionHub&, int)> getConnectOp(::std::function<void(void const*)>&&) /*override*/;
 
     // vIndex: 0
     virtual ~FastCopyableSignalPublisher() /*override*/ = default;
@@ -48,6 +47,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace Bedrock::Detail
+}

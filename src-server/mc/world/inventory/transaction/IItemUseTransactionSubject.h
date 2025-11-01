@@ -57,10 +57,7 @@ public:
     virtual void setPosition(::Vec3 const&) = 0;
 
     // vIndex: 11
-    virtual void createTransactionContext(
-        ::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&&,
-        ::std::function<void()>&&
-    ) = 0;
+    virtual void createTransactionContext(::std::function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)>&&, ::std::function<void()>&&) = 0;
 
     // vIndex: 12
     virtual void addExpectedAction(::InventoryAction const&) = 0;
@@ -72,8 +69,7 @@ public:
     virtual bool baseUseItemAsAttack(::ItemStack&) = 0;
 
     // vIndex: 15
-    virtual ::InteractionResult
-    useItemOn(::ItemStack&, ::BlockPos const&, uchar, ::Vec3 const&, ::Block const*, bool) = 0;
+    virtual ::InteractionResult useItemOn(::ItemStack&, ::BlockPos const&, uchar, ::Vec3 const&, ::Block const*, bool) = 0;
 
     // vIndex: 16
     virtual void resendBlocksAroundArea(::BlockPos const&, uchar) const = 0;
@@ -108,4 +104,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

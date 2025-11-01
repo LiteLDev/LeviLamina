@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-template <typename A, typename T>
+template<typename A, typename T>
 class AutomaticID {
 public:
     T id;

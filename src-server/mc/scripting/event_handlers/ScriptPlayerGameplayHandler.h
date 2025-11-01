@@ -21,21 +21,18 @@ namespace ScriptModuleMinecraft { class IScriptWorldBeforeEvents; }
 namespace Scripting { class WeakLifetimeScope; }
 // clang-format on
 
-class ScriptPlayerGameplayHandler : public ::EventHandlerDispatcher<::PlayerGameplayHandler>,
-                                    public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
+class ScriptPlayerGameplayHandler : public ::EventHandlerDispatcher<::PlayerGameplayHandler>, public ::ScriptEventHandler<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 31
+    // vIndex: 32
     virtual ::HandlerResult handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent) /*override*/;
 
     // vIndex: 1
-    virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event) /*override*/;
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event) /*override*/;
 
     // vIndex: 2
-    virtual ::GameplayHandlerResult<::CoordinatorResult>
-    handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event) /*override*/;
+    virtual ::GameplayHandlerResult<::CoordinatorResult> handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event) /*override*/;
 
     // vIndex: 0
     virtual ~ScriptPlayerGameplayHandler() /*override*/ = default;
@@ -44,29 +41,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _handleCoordinatorPlayerGameplayEvent(
-        ::PlayerGameplayEvent<::CoordinatorResult> const&                                 event,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    );
+    MCNAPI bool _handleCoordinatorPlayerGameplayEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle);
 
-    MCNAPI bool _handleMutablePlayerGameplayEvent(
-        ::MutablePlayerGameplayEvent<::CoordinatorResult>&                                event,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
+    MCNAPI bool _handleMutablePlayerGameplayEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle) const;
 
-    MCNAPI bool _handlePlayerDisconnectEvent(
-        ::PlayerDisconnectEvent const&                                                    playerDisconnectEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
+    MCNAPI bool _handlePlayerDisconnectEvent(::PlayerDisconnectEvent const& playerDisconnectEvent, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle) const;
 
-    MCNAPI bool _handlePlayerGameModeChangeEvent(
-        ::PlayerGameModeChangeEvent&                                                      playerGameModeChangeEvent,
-        ::Scripting::WeakLifetimeScope const&                                             scope,
-        ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle
-    ) const;
+    MCNAPI bool _handlePlayerGameModeChangeEvent(::PlayerGameModeChangeEvent& playerGameModeChangeEvent, ::Scripting::WeakLifetimeScope const& scope, ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::IScriptWorldBeforeEvents> scriptLevelEventsHandle) const;
     // NOLINTEND
 
 public:
@@ -74,11 +55,9 @@ public:
     // NOLINTBEGIN
     MCNAPI ::HandlerResult $handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent);
 
-    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
-    $handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event);
 
-    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
-    $handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event);
     // NOLINTEND
 
 public:
@@ -86,4 +65,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

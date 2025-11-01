@@ -15,7 +15,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
-    facingVectorToMask(::BlockedDirections& instance, ::std::vector<::SharedTypes::Facing> const& faces);
+    MCAPI static void facingVectorToMask(::BlockedDirections& instance, ::std::vector<::SharedTypes::Facing> const& faces);
     // NOLINTEND
+
 };

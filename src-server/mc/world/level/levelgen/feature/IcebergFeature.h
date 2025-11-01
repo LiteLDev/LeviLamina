@@ -43,34 +43,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _generateIcebergBlock(
-        ::BlockSource&    region,
-        ::Random&         random,
-        ::BlockPos const& origin,
-        int               height,
-        int               xo,
-        int               yOff,
-        int               zo,
-        int               radius,
-        int               a,
-        bool              snowOnTop,
-        bool              isEllipse,
-        float             shapeAngle,
-        int               ellipseC,
-        ::Block const&    blockToPlace
-    ) const;
+    MCAPI void _generateIcebergBlock(::BlockSource& region, ::Random& random, ::BlockPos const& origin, int height, int xo, int yOff, int zo, int radius, int a, bool snowOnTop, bool isEllipse, float shapeAngle, int ellipseC, ::Block const& blockToPlace) const;
 
-    MCAPI void carve(
-        int               radius,
-        int               yOff,
-        ::BlockPos const& globalOrigin,
-        ::BlockSource&    region,
-        bool              underWater,
-        float             angle,
-        ::BlockPos const& localOrigin,
-        int               ellipseA,
-        int               ellipseC
-    ) const;
+    MCAPI void carve(int radius, int yOff, ::BlockPos const& globalOrigin, ::BlockSource& region, bool underWater, float angle, ::BlockPos const& localOrigin, int ellipseA, int ellipseC) const;
     // NOLINTEND
 
 public:
@@ -84,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

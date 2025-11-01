@@ -22,22 +22,22 @@ class VideoFrameMetadata {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>    mUnkff2514;
-    ::ll::UntypedStorage<2, 2>    mUnk27790b;
-    ::ll::UntypedStorage<2, 2>    mUnkc44e66;
-    ::ll::UntypedStorage<4, 4>    mUnke4d394;
-    ::ll::UntypedStorage<1, 1>    mUnkb5d5b6;
-    ::ll::UntypedStorage<8, 16>   mUnkf2b551;
-    ::ll::UntypedStorage<4, 4>    mUnk6330cf;
-    ::ll::UntypedStorage<4, 4>    mUnkc14eee;
-    ::ll::UntypedStorage<8, 48>   mUnka483dc;
-    ::ll::UntypedStorage<8, 48>   mUnk430c4a;
-    ::ll::UntypedStorage<1, 1>    mUnk861a48;
-    ::ll::UntypedStorage<1, 1>    mUnkb071ed;
-    ::ll::UntypedStorage<4, 4>    mUnk3f825f;
+    ::ll::UntypedStorage<4, 4> mUnkff2514;
+    ::ll::UntypedStorage<2, 2> mUnk27790b;
+    ::ll::UntypedStorage<2, 2> mUnkc44e66;
+    ::ll::UntypedStorage<4, 4> mUnke4d394;
+    ::ll::UntypedStorage<1, 1> mUnkb5d5b6;
+    ::ll::UntypedStorage<8, 16> mUnkf2b551;
+    ::ll::UntypedStorage<4, 4> mUnk6330cf;
+    ::ll::UntypedStorage<4, 4> mUnkc14eee;
+    ::ll::UntypedStorage<8, 48> mUnka483dc;
+    ::ll::UntypedStorage<8, 48> mUnk430c4a;
+    ::ll::UntypedStorage<1, 1> mUnk861a48;
+    ::ll::UntypedStorage<1, 1> mUnkb071ed;
+    ::ll::UntypedStorage<4, 4> mUnk3f825f;
     ::ll::UntypedStorage<8, 1648> mUnk5b8abb;
-    ::ll::UntypedStorage<4, 4>    mUnk377efc;
-    ::ll::UntypedStorage<8, 24>   mUnk94dc87;
+    ::ll::UntypedStorage<4, 4> mUnk377efc;
+    ::ll::UntypedStorage<8, 24> mUnk94dc87;
     // NOLINTEND
 
 public:
@@ -66,12 +66,7 @@ public:
 
     MCNAPI bool GetIsLastFrameInPicture() const;
 
-    MCNAPI ::std::variant<
-        ::std::monostate,
-        ::webrtc::RTPVideoHeaderVP8,
-        ::webrtc::RTPVideoHeaderVP9,
-        ::webrtc::RTPVideoHeaderH264> const&
-    GetRTPVideoHeaderCodecSpecifics() const;
+    MCNAPI ::std::variant<::std::monostate, ::webrtc::RTPVideoHeaderVP8, ::webrtc::RTPVideoHeaderVP9, ::webrtc::RTPVideoHeaderH264> const& GetRTPVideoHeaderCodecSpecifics() const;
 
     MCNAPI ::webrtc::VideoRotation GetRotation() const;
 
@@ -91,8 +86,7 @@ public:
 
     MCNAPI void SetCsrcs(::std::vector<uint> csrcs);
 
-    MCNAPI void
-    SetDecodeTargetIndications(::rtc::ArrayView<::webrtc::DecodeTargetIndication const> decode_target_indications);
+    MCNAPI void SetDecodeTargetIndications(::rtc::ArrayView<::webrtc::DecodeTargetIndication const> decode_target_indications);
 
     MCNAPI void SetFrameDependencies(::rtc::ArrayView<int64 const> frame_dependencies);
 
@@ -104,13 +98,7 @@ public:
 
     MCNAPI void SetIsLastFrameInPicture(bool is_last_frame_in_picture);
 
-    MCNAPI void SetRTPVideoHeaderCodecSpecifics(
-        ::std::variant<
-            ::std::monostate,
-            ::webrtc::RTPVideoHeaderVP8,
-            ::webrtc::RTPVideoHeaderVP9,
-            ::webrtc::RTPVideoHeaderH264> codec_specifics
-    );
+    MCNAPI void SetRTPVideoHeaderCodecSpecifics(::std::variant<::std::monostate, ::webrtc::RTPVideoHeaderVP8, ::webrtc::RTPVideoHeaderVP9, ::webrtc::RTPVideoHeaderH264> codec_specifics);
 
     MCNAPI void SetRotation(::webrtc::VideoRotation rotation);
 
@@ -140,6 +128,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

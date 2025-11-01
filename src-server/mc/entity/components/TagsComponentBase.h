@@ -13,4 +13,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void _writeAdditionalSaveData(::CompoundTag& tag, ::std::vector<::std::string> const& componentTags);
     // NOLINTEND
+
 };

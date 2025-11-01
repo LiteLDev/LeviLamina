@@ -26,14 +26,14 @@ class ShelfBlockActor : public ::BlockActor, public ::Container {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator>    mClockSpriteCalc;
-    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator>  mCompassSpriteCalc;
-    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator>  mRecoveryCompassSpriteCalc;
-    ::ll::TypedStorage<1, 1, bool>                        mUpdateCalculators;
+    ::ll::TypedStorage<4, 12, ::ClockSpriteCalculator> mClockSpriteCalc;
+    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mCompassSpriteCalc;
+    ::ll::TypedStorage<8, 32, ::CompassSpriteCalculator> mRecoveryCompassSpriteCalc;
+    ::ll::TypedStorage<1, 1, bool> mUpdateCalculators;
     ::ll::TypedStorage<8, 24, ::std::vector<::ItemStack>> mItems;
-    ::ll::TypedStorage<1, 1, bool>                        mIgnoreLighting;
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>            mDisplayEntity;
-    ::ll::TypedStorage<1, 1, bool>                        mEmitSingleItemSwapVibration;
+    ::ll::TypedStorage<1, 1, bool> mIgnoreLighting;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mDisplayEntity;
+    ::ll::TypedStorage<1, 1, bool> mEmitSingleItemSwapVibration;
     // NOLINTEND
 
 public:
@@ -65,7 +65,7 @@ public:
     virtual ::ItemStack const& getItem(int slot) const /*override*/;
 
     // vIndex: 12
-    virtual void setItem(int slot, ::ItemStack const& item) /*override*/;
+    virtual void setItem(int modelSlot, ::ItemStack const& item) /*override*/;
 
     // vIndex: 21
     virtual int getMaxStackSize() const /*override*/;
@@ -80,11 +80,7 @@ public:
     virtual void stopOpen(::Actor& actor) /*override*/;
 
     // vIndex: 2
-    virtual void serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    ) /*override*/;
+    virtual void serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged) /*override*/;
 
     // vIndex: 1
     virtual void load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper) /*override*/;
@@ -92,10 +88,10 @@ public:
     // vIndex: 2
     virtual bool save(::CompoundTag& tag, ::SaveContext const& saveContext) const /*override*/;
 
-    // vIndex: 41
+    // vIndex: 42
     virtual ::std::unique_ptr<::BlockActorDataPacket> _getUpdatePacket(::BlockSource&) /*override*/;
 
-    // vIndex: 42
+    // vIndex: 43
     virtual void _onUpdatePacket(::CompoundTag const& data, ::BlockSource& region) /*override*/;
 
     // vIndex: 0
@@ -143,7 +139,7 @@ public:
 
     MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
     MCFOLD int $getMaxStackSize() const;
 
@@ -153,11 +149,7 @@ public:
 
     MCFOLD void $stopOpen(::Actor& actor);
 
-    MCAPI void $serverInitItemStackIds(
-        int                                            containerSlot,
-        int                                            count,
-        ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
-    );
+    MCAPI void $serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
@@ -175,4 +167,5 @@ public:
 
     MCNAPI static void** $vftableForContainer();
     // NOLINTEND
+
 };

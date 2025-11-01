@@ -4,6 +4,7 @@
 
 namespace dcsctp {
 
-struct ForwardTsnChunkConfig {};
+struct ForwardTsnChunkConfig {
+};
 
-} // namespace dcsctp
+}

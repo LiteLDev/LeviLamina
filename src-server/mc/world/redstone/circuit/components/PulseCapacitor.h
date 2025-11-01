@@ -18,8 +18,8 @@ class PulseCapacitor : public ::CapacitorComponent {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                         mPowered;
-    ::ll::TypedStorage<1, 1, bool>                         mNewPowered;
+    ::ll::TypedStorage<1, 1, bool> mPowered;
+    ::ll::TypedStorage<1, 1, bool> mNewPowered;
     ::ll::TypedStorage<8, 8, ::CircuitComponentType const> mCircuitComponentType;
     // NOLINTEND
 
@@ -33,8 +33,7 @@ public:
     virtual bool canConsumerPower() const /*override*/;
 
     // vIndex: 12
-    virtual bool
-    allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
+    virtual bool allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered) /*override*/;
 
     // vIndex: 26
     virtual uchar getPoweroutDirection() const /*override*/;
@@ -80,4 +79,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

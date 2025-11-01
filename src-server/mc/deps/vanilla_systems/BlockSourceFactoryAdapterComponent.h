@@ -17,6 +17,7 @@ public:
     BlockSourceFactoryAdapterComponent& operator=(BlockSourceFactoryAdapterComponent const&);
     BlockSourceFactoryAdapterComponent(BlockSourceFactoryAdapterComponent const&);
     BlockSourceFactoryAdapterComponent();
+
 };
 
-} // namespace VanillaSystems
+}

@@ -4,6 +4,7 @@
 
 namespace br {
 
-struct DynamicSpawnArea {};
+struct DynamicSpawnArea {
+};
 
-} // namespace br
+}

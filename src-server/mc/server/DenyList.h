@@ -16,14 +16,14 @@ public:
     // clang-format off
     struct Entry;
     // clang-format on
-
+    
     // DenyList inner types define
     enum class Duration : int {
         Session = 0,
         OneTime = 1,
         Invalid = 2,
     };
-
+    
     struct Entry {
     public:
         // member variables
@@ -31,36 +31,37 @@ public:
         ::ll::UntypedStorage<8, 16> mUnk89b913;
         ::ll::UntypedStorage<8, 40> mUnk8e3c22;
         ::ll::UntypedStorage<8, 32> mUnk99d06f;
-        ::ll::UntypedStorage<4, 4>  mUnk657815;
+        ::ll::UntypedStorage<4, 4> mUnk657815;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Entry& operator=(Entry const&);
         Entry(Entry const&);
         Entry();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI Entry(::mce::UUID const& uuid, ::std::string const& xuid);
-
+    
         MCNAPI ~Entry();
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(::mce::UUID const& uuid, ::std::string const& xuid);
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -72,14 +73,17 @@ public:
     // prevent constructor by default
     DenyList& operator=(DenyList const&);
     DenyList(DenyList const&);
-    DenyList();
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI DenyList();
+
     MCNAPI void addEntry(::DenyList::Entry const& entry);
 
     MCNAPI ::DenyList::Duration getDuration(::DenyList::Entry const& entry) const;
+
+    MCNAPI ::std::string const& getMessage(::DenyList::Entry const& entry) const;
 
     MCNAPI bool isBlocked(::DenyList::Entry const& entry) const;
 
@@ -87,8 +91,15 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

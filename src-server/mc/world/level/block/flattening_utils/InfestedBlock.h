@@ -13,4 +13,4 @@ namespace FlatteningUtils::InfestedBlock {
 MCAPI ::FlatteningUtils::Instance get();
 // NOLINTEND
 
-} // namespace FlatteningUtils::InfestedBlock
+}

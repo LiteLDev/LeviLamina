@@ -18,8 +18,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::std::unique_ptr<::webrtc::RtpTransportControllerSendInterface>
-    Create(::webrtc::RtpTransportConfig const& config) /*override*/;
+    virtual ::std::unique_ptr<::webrtc::RtpTransportControllerSendInterface> Create(::webrtc::RtpTransportConfig const& config) /*override*/;
 
     // vIndex: 0
     virtual ~RtpTransportControllerSendFactory() /*override*/ = default;
@@ -28,8 +27,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::webrtc::RtpTransportControllerSendInterface>
-    $Create(::webrtc::RtpTransportConfig const& config);
+    MCNAPI ::std::unique_ptr<::webrtc::RtpTransportControllerSendInterface> $Create(::webrtc::RtpTransportConfig const& config);
     // NOLINTEND
 
 public:
@@ -37,6 +35,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

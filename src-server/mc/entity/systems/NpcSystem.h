@@ -26,8 +26,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
-    tickCountdown(::EntityContext& entity, ::NpcComponents::LeaveMenuCountdown& leaveMenuCountdownComponent);
+    MCNAPI static void tickCountdown(::EntityContext& entity, ::NpcComponents::LeaveMenuCountdown& leaveMenuCountdownComponent);
     // NOLINTEND
 
 public:
@@ -41,4 +40,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -71,22 +71,10 @@ public:
     virtual void removeObserver(::LevelListCacheObserver&) = 0;
 
     // vIndex: 14
-    virtual ::Bedrock::UniqueOwnerPointer<::LevelStorage> createLevelStorage(
-        ::Scheduler&,
-        ::std::string const&,
-        ::ContentIdentity const&,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&,
-        ::std::chrono::nanoseconds const&,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>,
-        ::std::unique_ptr<::LevelStorageEventing>
-    ) = 0;
+    virtual ::Bedrock::UniqueOwnerPointer<::LevelStorage> createLevelStorage(::Scheduler&, ::std::string const&, ::ContentIdentity const&, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&, ::std::chrono::nanoseconds const&, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>, ::std::unique_ptr<::LevelStorageEventing>) = 0;
 
     // vIndex: 15
-    virtual ::std::unique_ptr<::LevelLooseFileStorage> createLevelLooseStorage(
-        ::std::string const&,
-        ::ContentIdentity const&,
-        ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&
-    ) = 0;
+    virtual ::std::unique_ptr<::LevelLooseFileStorage> createLevelLooseStorage(::std::string const&, ::ContentIdentity const&, ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const&) = 0;
 
     // vIndex: 16
     virtual ::LevelSummary* getLevelSummary(::std::string const&) = 0;
@@ -145,4 +133,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -15,11 +15,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::Mob&> mMob;
-    ::ll::TypedStorage<4, 4, int>    mNextRandomizeTicks;
-    ::ll::TypedStorage<4, 4, int>    mMinChangeDirectionTicks;
-    ::ll::TypedStorage<4, 4, int>    mAddRandomTicks;
-    ::ll::TypedStorage<4, 4, int>    mTurnRange;
-    ::ll::TypedStorage<4, 4, float>  mChosenDegrees;
+    ::ll::TypedStorage<4, 4, int> mNextRandomizeTicks;
+    ::ll::TypedStorage<4, 4, int> mMinChangeDirectionTicks;
+    ::ll::TypedStorage<4, 4, int> mAddRandomTicks;
+    ::ll::TypedStorage<4, 4, int> mTurnRange;
+    ::ll::TypedStorage<4, 4, float> mChosenDegrees;
     // NOLINTEND
 
 public:
@@ -59,4 +59,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

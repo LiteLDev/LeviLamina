@@ -11,7 +11,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::std::string>>> mPackCDNUrls;
-    ::ll::TypedStorage<8, 32, ::Core::Path const>                                       mPath;
+    ::ll::TypedStorage<8, 32, ::Core::Path const> mPath;
     // NOLINTEND
 
 public:
@@ -32,4 +32,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -13,9 +13,9 @@ class IFunction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>  mUnkb83a18;
-    ::ll::UntypedStorage<4, 4>  mUnkd34dfa;
-    ::ll::UntypedStorage<4, 4>  mUnk89701f;
+    ::ll::UntypedStorage<1, 1> mUnkb83a18;
+    ::ll::UntypedStorage<4, 4> mUnkd34dfa;
+    ::ll::UntypedStorage<4, 4> mUnk89701f;
     ::ll::UntypedStorage<8, 24> mUnk84c109;
     // NOLINTEND
 
@@ -73,6 +73,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Scripting::Reflection
+}

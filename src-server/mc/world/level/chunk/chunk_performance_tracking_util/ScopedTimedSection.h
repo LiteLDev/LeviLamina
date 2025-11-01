@@ -4,6 +4,7 @@
 
 namespace ChunkPerformanceTrackingUtil {
 
-struct ScopedTimedSection {};
+struct ScopedTimedSection {
+};
 
-} // namespace ChunkPerformanceTrackingUtil
+}

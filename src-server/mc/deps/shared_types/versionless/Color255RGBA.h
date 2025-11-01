@@ -7,6 +7,7 @@
 
 namespace SharedTypes {
 
-struct Color255RGBA : public ::Detail::ColorBase {};
+struct Color255RGBA : public ::Detail::ColorBase {
+};
 
-} // namespace SharedTypes
+}

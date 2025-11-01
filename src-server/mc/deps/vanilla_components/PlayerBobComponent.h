@@ -9,4 +9,5 @@ public:
     ::ll::TypedStorage<4, 4, float> mBob;
     ::ll::TypedStorage<4, 4, float> mBobPrev;
     // NOLINTEND
+
 };

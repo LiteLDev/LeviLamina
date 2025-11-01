@@ -32,11 +32,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void _generateAllEffectsHandles(::Scripting::WeakLifetimeScope& scope);
 
-    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>>
-    get(::Scripting::WeakLifetimeScope& scope, ::std::string const& effectName);
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> get(::Scripting::WeakLifetimeScope& scope, ::std::string const& effectName);
 
-    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>>
-    getAllEffectTypes(::Scripting::WeakLifetimeScope& scope);
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> getAllEffectTypes(::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 
 public:
@@ -46,6 +44,7 @@ public:
 
     MCNAPI static void bindV010(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

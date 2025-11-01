@@ -23,14 +23,7 @@ struct TickingSystemWithInfo;
 
 namespace PlayerValidation {
 
-struct ValidationSystem : public ::IStrictTickingSystem<::StrictExecutionContext<
-                              ::Filter<::PlayerComponent>,
-                              ::Read<::StateVectorComponent>,
-                              ::Write<::ActorOwnerComponent>,
-                              ::AddRemove<>,
-                              ::GlobalRead<>,
-                              ::GlobalWrite<>,
-                              ::EntityFactoryT<>>> {
+struct ValidationSystem : public ::IStrictTickingSystem<::StrictExecutionContext<::Filter<::PlayerComponent>, ::Read<::StateVectorComponent>, ::Write<::ActorOwnerComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -47,16 +40,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 5
-    virtual void tick(
-        ::StrictExecutionContext<
-            ::Filter<::PlayerComponent>,
-            ::Read<::StateVectorComponent>,
-            ::Write<::ActorOwnerComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
-    ) /*override*/;
+    virtual void tick(::StrictExecutionContext<::Filter<::PlayerComponent>, ::Read<::StateVectorComponent>, ::Write<::ActorOwnerComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& context) /*override*/;
 
     // vIndex: 0
     virtual ~ValidationSystem() /*override*/ = default;
@@ -71,16 +55,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
-        ::StrictExecutionContext<
-            ::Filter<::PlayerComponent>,
-            ::Read<::StateVectorComponent>,
-            ::Write<::ActorOwnerComponent>,
-            ::AddRemove<>,
-            ::GlobalRead<>,
-            ::GlobalWrite<>,
-            ::EntityFactoryT<>>& context
-    );
+    MCNAPI void $tick(::StrictExecutionContext<::Filter<::PlayerComponent>, ::Read<::StateVectorComponent>, ::Write<::ActorOwnerComponent>, ::AddRemove<>, ::GlobalRead<>, ::GlobalWrite<>, ::EntityFactoryT<>>& context);
     // NOLINTEND
 
 public:
@@ -88,6 +63,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace PlayerValidation
+}

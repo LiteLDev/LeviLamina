@@ -35,14 +35,10 @@ public:
     virtual void setupStartMenuScreen(::CommandRegistry&) = 0;
 
     // vIndex: 5
-    virtual ::std::unique_ptr<::AppExtensions::IAppClientInstanceTestInterface>
-    createClientInstanceTestInterface(::IClientInstance&) const = 0;
+    virtual ::std::unique_ptr<::AppExtensions::IAppClientInstanceTestInterface> createClientInstanceTestInterface(::IClientInstance&) const = 0;
 
     // vIndex: 6
-    virtual ::std::unique_ptr<::AppExtensions::IAppTestClientInterface> createTestClientInterface(
-        ::IMinecraftGame&,
-        ::Bedrock::NotNullNonOwnerPtr<::Bedrock::DevTools::CommandExecutor>
-    ) const = 0;
+    virtual ::std::unique_ptr<::AppExtensions::IAppTestClientInterface> createTestClientInterface(::IMinecraftGame&, ::Bedrock::NotNullNonOwnerPtr<::Bedrock::DevTools::CommandExecutor>) const = 0;
 
     // vIndex: 7
     virtual void beginProfilerCaptureInPath(char const*) = 0;
@@ -62,6 +58,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace AppExtensions
+}

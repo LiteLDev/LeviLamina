@@ -28,7 +28,7 @@ public:
     struct ScalingSettings;
     struct Settings;
     // clang-format on
-
+    
     // VideoEncoder inner types define
     struct QpThresholds {
     public:
@@ -37,38 +37,41 @@ public:
         ::ll::UntypedStorage<4, 4> mUnk5e7fe6;
         ::ll::UntypedStorage<4, 4> mUnk96a8cc;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         QpThresholds& operator=(QpThresholds const&);
         QpThresholds(QpThresholds const&);
         QpThresholds();
+    
     };
-
+    
     struct ScalingSettings {
     public:
         // ScalingSettings inner types declare
         // clang-format off
         struct KOff;
         // clang-format on
-
+        
         // ScalingSettings inner types define
-        struct KOff {};
-
+        struct KOff {
+        };
+        
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 12> mUnk9e2e3e;
-        ::ll::UntypedStorage<4, 4>  mUnkfbf585;
+        ::ll::UntypedStorage<4, 4> mUnkfbf585;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ScalingSettings& operator=(ScalingSettings const&);
         ScalingSettings(ScalingSettings const&);
         ScalingSettings();
+    
     };
-
+    
     struct ResolutionBitrateLimits {
     public:
         // member variables
@@ -78,63 +81,66 @@ public:
         ::ll::UntypedStorage<4, 4> mUnkb47c68;
         ::ll::UntypedStorage<4, 4> mUnke3bcf5;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ResolutionBitrateLimits& operator=(ResolutionBitrateLimits const&);
         ResolutionBitrateLimits(ResolutionBitrateLimits const&);
         ResolutionBitrateLimits();
+    
     };
-
+    
     struct EncoderInfo {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 16>  mUnkbc9641;
-        ::ll::UntypedStorage<4, 4>   mUnkf0b580;
-        ::ll::UntypedStorage<1, 1>   mUnkaa5060;
-        ::ll::UntypedStorage<1, 1>   mUnka8a3b9;
-        ::ll::UntypedStorage<8, 32>  mUnk603a57;
-        ::ll::UntypedStorage<1, 1>   mUnk67e473;
-        ::ll::UntypedStorage<1, 1>   mUnk4f4269;
+        ::ll::UntypedStorage<4, 16> mUnkbc9641;
+        ::ll::UntypedStorage<4, 4> mUnkf0b580;
+        ::ll::UntypedStorage<1, 1> mUnkaa5060;
+        ::ll::UntypedStorage<1, 1> mUnka8a3b9;
+        ::ll::UntypedStorage<8, 32> mUnk603a57;
+        ::ll::UntypedStorage<1, 1> mUnk67e473;
+        ::ll::UntypedStorage<1, 1> mUnk4f4269;
         ::ll::UntypedStorage<1, 120> mUnk716bb6;
-        ::ll::UntypedStorage<8, 24>  mUnkc10a5b;
-        ::ll::UntypedStorage<1, 1>   mUnk6b7257;
-        ::ll::UntypedStorage<1, 32>  mUnke37d9f;
-        ::ll::UntypedStorage<1, 2>   mUnkc35f3d;
+        ::ll::UntypedStorage<8, 24> mUnkc10a5b;
+        ::ll::UntypedStorage<1, 1> mUnk6b7257;
+        ::ll::UntypedStorage<1, 32> mUnke37d9f;
+        ::ll::UntypedStorage<1, 2> mUnkc35f3d;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         EncoderInfo& operator=(EncoderInfo const&);
         EncoderInfo(EncoderInfo const&);
         EncoderInfo();
+    
     };
-
+    
     struct RateControlParameters {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<4, 168> mUnk88beae;
         ::ll::UntypedStorage<4, 168> mUnk7f026f;
-        ::ll::UntypedStorage<8, 8>   mUnkf17317;
-        ::ll::UntypedStorage<8, 8>   mUnka186d5;
+        ::ll::UntypedStorage<8, 8> mUnkf17317;
+        ::ll::UntypedStorage<8, 8> mUnka186d5;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         RateControlParameters& operator=(RateControlParameters const&);
         RateControlParameters(RateControlParameters const&);
         RateControlParameters();
-
+    
     public:
         // virtual functions
         // NOLINTBEGIN
         // vIndex: 0
         virtual ~RateControlParameters() = default;
         // NOLINTEND
+    
     };
-
+    
     struct LossNotification {
     public:
         // member variables
@@ -144,28 +150,30 @@ public:
         ::ll::UntypedStorage<1, 2> mUnk849bfb;
         ::ll::UntypedStorage<1, 2> mUnk803218;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         LossNotification& operator=(LossNotification const&);
         LossNotification(LossNotification const&);
         LossNotification();
+    
     };
-
+    
     struct Capabilities {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<1, 1> mUnk2f0cd1;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Capabilities& operator=(Capabilities const&);
         Capabilities(Capabilities const&);
         Capabilities();
+    
     };
-
+    
     struct Settings {
     public:
         // member variables
@@ -175,14 +183,15 @@ public:
         ::ll::UntypedStorage<8, 8> mUnke8baf6;
         ::ll::UntypedStorage<4, 8> mUnk99cf04;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Settings& operator=(Settings const&);
         Settings(Settings const&);
         Settings();
+    
     };
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -228,6 +237,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

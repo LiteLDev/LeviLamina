@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/level/storage/loot/predicates/LootItemCondition.h"
 #include "mc/world/level/storage/loot/predicates/LootItemPropertyValueCondition.h"
 
 // auto generated forward declare list
@@ -29,6 +30,9 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 2
+    virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
+
+    // vIndex: 3
     virtual bool _hasPropertyValue(::PropertyComponent const& component) const /*override*/;
 
     // vIndex: 0
@@ -44,6 +48,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::LootItemCondition::ConditionType $getConditionType() const;
+
     MCNAPI bool $_hasPropertyValue(::PropertyComponent const& component) const;
     // NOLINTEND
 
@@ -52,4 +58,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

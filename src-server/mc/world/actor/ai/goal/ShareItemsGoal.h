@@ -17,15 +17,15 @@ class ShareItemsGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Mob&>                          mMob;
-    ::ll::TypedStorage<4, 4, int>                             mThrowCountdown;
-    ::ll::TypedStorage<4, 4, int>                             mSearchRange;
-    ::ll::TypedStorage<4, 4, float>                           mSpeedModifier;
-    ::ll::TypedStorage<4, 4, float>                           mGoalRadiusSq;
-    ::ll::TypedStorage<4, 4, int>                             mTimeToRecalcPath;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
+    ::ll::TypedStorage<4, 4, int> mThrowCountdown;
+    ::ll::TypedStorage<4, 4, int> mSearchRange;
+    ::ll::TypedStorage<4, 4, float> mSpeedModifier;
+    ::ll::TypedStorage<4, 4, float> mGoalRadiusSq;
+    ::ll::TypedStorage<4, 4, int> mTimeToRecalcPath;
     ::ll::TypedStorage<8, 24, ::std::vector<::MobDescriptor>> mMobFilters;
-    ::ll::TypedStorage<8, 152, ::ItemStack>                   mItemToShare;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>>       mPath;
+    ::ll::TypedStorage<8, 152, ::ItemStack> mItemToShare;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
     // NOLINTEND
 
 public:
@@ -62,8 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::pair<int, ::ItemStack>
-    selectEntityToShareWith(::std::vector<::std::pair<int, ::ItemStack>> const& shareableItems);
+    MCAPI ::std::pair<int, ::ItemStack> selectEntityToShareWith(::std::vector<::std::pair<int, ::ItemStack>> const& shareableItems);
     // NOLINTEND
 
 public:
@@ -93,4 +92,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

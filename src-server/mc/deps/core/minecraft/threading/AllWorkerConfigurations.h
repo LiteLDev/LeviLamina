@@ -28,4 +28,5 @@ public:
     AllWorkerConfigurations& operator=(AllWorkerConfigurations const&);
     AllWorkerConfigurations(AllWorkerConfigurations const&);
     AllWorkerConfigurations();
+
 };

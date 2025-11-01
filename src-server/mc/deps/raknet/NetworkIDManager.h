@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8192> mUnkfcc08d;
-    ::ll::UntypedStorage<8, 8>    mUnk2bd39e;
+    ::ll::UntypedStorage<8, 8> mUnk2bd39e;
     // NOLINTEND
 
 public:
@@ -24,6 +24,7 @@ public:
     // vIndex: 0
     virtual ~NetworkIDManager() = default;
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

@@ -16,4 +16,5 @@ public:
     srtp_kernel_auth_type& operator=(srtp_kernel_auth_type const&);
     srtp_kernel_auth_type(srtp_kernel_auth_type const&);
     srtp_kernel_auth_type();
+
 };

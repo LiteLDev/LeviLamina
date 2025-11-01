@@ -24,12 +24,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 13
-    virtual int generateHeightAtPosition(
-        ::BlockPos const&,
-        ::Dimension&,
-        ::BlockVolume&,
-        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&
-    ) const /*override*/;
+    virtual int generateHeightAtPosition(::BlockPos const&, ::Dimension&, ::BlockVolume&, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&) const /*override*/;
 
     // vIndex: 14
     virtual ::Block const* getSupportBlock(::BlockSource&, ::BlockPos const&, ::Block const&) const /*override*/;
@@ -47,24 +42,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addPieces(
-        ::BlockPos                                          position,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random,
-        ::JigsawStructureRegistry&                          pools,
-        ::Dimension&                                        dimension
-    );
+    MCAPI static void addPieces(::BlockPos position, ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces, ::Random& random, ::JigsawStructureRegistry& pools, ::Dimension& dimension);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $generateHeightAtPosition(
-        ::BlockPos const&,
-        ::Dimension&,
-        ::BlockVolume&,
-        ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&
-    ) const;
+    MCAPI int $generateHeightAtPosition(::BlockPos const&, ::Dimension&, ::BlockVolume&, ::std::unordered_map<::ChunkPos, ::std::unique_ptr<::std::vector<short>>>&) const;
 
     MCFOLD ::Block const* $getSupportBlock(::BlockSource&, ::BlockPos const&, ::Block const&) const;
 
@@ -78,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

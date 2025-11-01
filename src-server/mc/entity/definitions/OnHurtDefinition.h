@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 
-struct OnHurtDefinition : public ::ActorDefinitionTrigger {};
+struct OnHurtDefinition : public ::ActorDefinitionTrigger {
+};

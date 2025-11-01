@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/shared_types/util/Identifier.h"
+#include "mc/deps/shared_types/versionless/util/Identifier.h"
 #include "mc/world/item/components/ComponentItemMenuCategoryData_v1_21_60.h"
 
 // auto generated forward declare list
@@ -15,7 +15,7 @@ struct ComponentItemDescriptionData_v1_21_60 {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::SharedTypes::Identifier<10>>            mIdentifier;
+    ::ll::TypedStorage<8, 32, ::SharedTypes::Identifier<10>> mIdentifier;
     ::ll::TypedStorage<8, 56, ::ComponentItemMenuCategoryData_v1_21_60> mCategory;
     // NOLINTEND
 
@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ComponentItemDescriptionData_v1_21_60& operator=(::ComponentItemDescriptionData_v1_21_60&&);
+    MCFOLD ::ComponentItemDescriptionData_v1_21_60& operator=(::ComponentItemDescriptionData_v1_21_60&&);
 
     MCAPI ~ComponentItemDescriptionData_v1_21_60();
     // NOLINTEND
@@ -42,6 +42,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
+
 };

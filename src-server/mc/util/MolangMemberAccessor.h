@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/util/MolangHashStringVariable.h"
 
-struct MolangMemberAccessor : public ::MolangHashStringVariable<::MolangMemberAccessor> {};
+struct MolangMemberAccessor : public ::MolangHashStringVariable<::MolangMemberAccessor> {
+};

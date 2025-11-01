@@ -21,10 +21,11 @@ public:
     struct ValidatorRegisterer;
     class ValidatorRegistryValidators;
     // clang-format on
-
+    
     // ValidatorRegistry inner types define
-    struct ValidatorRegisterer {};
-
+    struct ValidatorRegisterer {
+    };
+    
     class ValidatorRegistryValidators {
     public:
         // member variables
@@ -32,26 +33,27 @@ public:
         ::ll::UntypedStorage<8, 64> mUnk25ba02;
         ::ll::UntypedStorage<8, 64> mUnk317db0;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ValidatorRegistryValidators& operator=(ValidatorRegistryValidators const&);
         ValidatorRegistryValidators(ValidatorRegistryValidators const&);
         ValidatorRegistryValidators();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ~ValidatorRegistryValidators();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -76,18 +78,11 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Bedrock::NonOwnerPointer<::ValidatorRegistry> _get();
 
-    MCNAPI static bool
-    findValidators(::std::string const& validatorName, ::ValidatorRegistry::ValidatorRegistryValidators& validatorPair);
+    MCNAPI static bool findValidators(::std::string const& validatorName, ::ValidatorRegistry::ValidatorRegistryValidators& validatorPair);
 
-    MCNAPI static ::std::unordered_map<::std::string, ::ValidatorRegistry::ValidatorRegistryValidators> const&
-    getValidatorMap();
+    MCNAPI static ::std::unordered_map<::std::string, ::ValidatorRegistry::ValidatorRegistryValidators> const& getValidatorMap();
 
-    MCNAPI static void registerValidators(
-        ::std::string_view                                                                                validatorName,
-        ::std::function<::ContentTierIncompatibleReason(::PackInstance const&, ::ContentTierInfo const&)> packValidator,
-        ::std::function<::ContentTierIncompatibleReason(::SubpackInfo const&, ::ContentTierInfo const&)>
-            subpackValidator
-    );
+    MCNAPI static void registerValidators(::std::string_view validatorName, ::std::function<::ContentTierIncompatibleReason(::PackInstance const&, ::ContentTierInfo const&)> packValidator, ::std::function<::ContentTierIncompatibleReason(::SubpackInfo const&, ::ContentTierInfo const&)> subpackValidator);
     // NOLINTEND
 
 public:
@@ -101,4 +96,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

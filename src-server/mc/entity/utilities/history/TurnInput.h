@@ -16,6 +16,7 @@ public:
     TurnInput& operator=(TurnInput const&);
     TurnInput(TurnInput const&);
     TurnInput();
+
 };
 
-} // namespace History
+}

@@ -5,7 +5,7 @@
 namespace Bedrock::Services {
 
 enum class AuthTokenRetrievalType : int {
-    Get     = 0,
+    Get = 0,
     Refresh = 1,
 };
 

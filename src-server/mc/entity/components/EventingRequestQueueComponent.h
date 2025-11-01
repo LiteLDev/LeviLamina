@@ -13,4 +13,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::std::queue<::EventingRequest, ::std::deque<::EventingRequest>>> mRequests;
     // NOLINTEND
+
 };

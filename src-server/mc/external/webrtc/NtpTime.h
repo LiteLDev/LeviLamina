@@ -16,6 +16,7 @@ public:
     NtpTime& operator=(NtpTime const&);
     NtpTime(NtpTime const&);
     NtpTime();
+
 };
 
-} // namespace webrtc
+}

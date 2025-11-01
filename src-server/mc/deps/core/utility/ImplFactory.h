@@ -4,7 +4,8 @@
 
 namespace Bedrock::Detail {
 
-template <typename T0>
-class ImplFactory {};
+template<typename T0>
+class ImplFactory {
+};
 
-} // namespace Bedrock::Detail
+}

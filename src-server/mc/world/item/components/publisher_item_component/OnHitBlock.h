@@ -18,11 +18,7 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 
 namespace PublisherItemComponent {
 
-struct OnHitBlock : public ::ItemComponent,
-                    public ::Bedrock::PubSub::Publisher<
-                        void(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&),
-                        ::Bedrock::PubSub::ThreadModel::SingleThreaded,
-                        0> {
+struct OnHitBlock : public ::ItemComponent, public ::Bedrock::PubSub::Publisher<void(::ItemStack&, ::Block const&, ::BlockPos const&, ::Mob&), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0> {
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -45,6 +41,7 @@ public:
 
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace PublisherItemComponent
+}

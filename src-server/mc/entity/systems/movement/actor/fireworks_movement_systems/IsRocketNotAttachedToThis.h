@@ -17,6 +17,7 @@ public:
     IsRocketNotAttachedToThis& operator=(IsRocketNotAttachedToThis const&);
     IsRocketNotAttachedToThis(IsRocketNotAttachedToThis const&);
     IsRocketNotAttachedToThis();
+
 };
 
-} // namespace FireworksMovementSystems
+}

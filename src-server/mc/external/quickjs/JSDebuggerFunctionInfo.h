@@ -16,4 +16,5 @@ public:
     JSDebuggerFunctionInfo& operator=(JSDebuggerFunctionInfo const&);
     JSDebuggerFunctionInfo(JSDebuggerFunctionInfo const&);
     JSDebuggerFunctionInfo();
+
 };

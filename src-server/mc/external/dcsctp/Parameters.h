@@ -16,7 +16,7 @@ public:
     // clang-format off
     class Builder;
     // clang-format on
-
+    
     // Parameters inner types define
     class Builder {
     public:
@@ -24,28 +24,29 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 24> mUnka0a698;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Builder& operator=(Builder const&);
         Builder(Builder const&);
         Builder();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::dcsctp::Parameters::Builder& Add(::dcsctp::Parameter const& p);
-
+    
         MCNAPI ~Builder();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -77,6 +78,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}

@@ -4,6 +4,7 @@
 
 namespace Lockless {
 
-class WeakAtomic {};
+class WeakAtomic {
+};
 
-} // namespace Lockless
+}

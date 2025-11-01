@@ -24,26 +24,26 @@ public:
     // DwellerComponent inner types define
     enum class DwellingType : int {
         VillageDwelling = 0,
-        Count           = 1,
+        Count = 1,
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool>                             mCanFindPOI;
-    ::ll::TypedStorage<1, 1, bool>                             mCanMigrate;
-    ::ll::TypedStorage<1, 1, bool>                             mHasJoinedDwelling;
-    ::ll::TypedStorage<1, 1, bool>                             mFixUpRole;
-    ::ll::TypedStorage<1, 1, bool>                             mRewardPlayersOnFirstFounding;
-    ::ll::TypedStorage<8, 48, ::HashedString>                  mPreferredProfession;
-    ::ll::TypedStorage<4, 4, int>                              mFirstFoundingReward;
-    ::ll::TypedStorage<4, 4, int>                              mUpdateIntervalVariant;
-    ::ll::TypedStorage<8, 8, uint64>                           mDwellingUpdateInterval;
-    ::ll::TypedStorage<8, 8, uint64>                           mUpdateIntervalBase;
-    ::ll::TypedStorage<4, 4, float>                            mDwellingBoundsTolerance;
+    ::ll::TypedStorage<1, 1, bool> mCanFindPOI;
+    ::ll::TypedStorage<1, 1, bool> mCanMigrate;
+    ::ll::TypedStorage<1, 1, bool> mHasJoinedDwelling;
+    ::ll::TypedStorage<1, 1, bool> mFixUpRole;
+    ::ll::TypedStorage<1, 1, bool> mRewardPlayersOnFirstFounding;
+    ::ll::TypedStorage<8, 48, ::HashedString> mPreferredProfession;
+    ::ll::TypedStorage<4, 4, int> mFirstFoundingReward;
+    ::ll::TypedStorage<4, 4, int> mUpdateIntervalVariant;
+    ::ll::TypedStorage<8, 8, uint64> mDwellingUpdateInterval;
+    ::ll::TypedStorage<8, 8, uint64> mUpdateIntervalBase;
+    ::ll::TypedStorage<4, 4, float> mDwellingBoundsTolerance;
     ::ll::TypedStorage<4, 4, ::DwellerComponent::DwellingType> mType;
-    ::ll::TypedStorage<4, 4, ::DwellerRole>                    mRole;
-    ::ll::TypedStorage<8, 16, ::mce::UUID>                     mDwellingUniqueID;
+    ::ll::TypedStorage<4, 4, ::DwellerRole> mRole;
+    ::ll::TypedStorage<8, 16, ::mce::UUID> mDwellingUniqueID;
     // NOLINTEND
 
 public:
@@ -95,4 +95,5 @@ public:
 
     MCNAPI static ::std::unordered_map<::std::string, ::DwellerComponent::DwellingType> const& DWELLING_TYPES();
     // NOLINTEND
+
 };

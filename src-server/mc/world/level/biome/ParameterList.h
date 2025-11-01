@@ -15,7 +15,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::BiomeNoiseTarget>> mNoiseTargets;
-    ::ll::TypedStorage<8, 168, ::std::optional<::RTree>>         mTree;
+    ::ll::TypedStorage<8, 168, ::std::optional<::RTree>> mTree;
     // NOLINTEND
 
 public:
@@ -43,4 +43,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

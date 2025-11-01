@@ -15,4 +15,5 @@ public:
 
     MCNAPI static bool canSpawnWithWorldGeneration(::ILevel const& level);
     // NOLINTEND
+
 };

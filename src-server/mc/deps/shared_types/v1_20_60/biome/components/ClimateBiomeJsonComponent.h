@@ -17,9 +17,9 @@ struct ClimateBiomeJsonComponent : public ::SharedTypes::v1_20_60::IBiomeJsonCom
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnk1b4d75;
+    ::ll::UntypedStorage<4, 8> mUnk1b4d75;
     ::ll::UntypedStorage<4, 12> mUnkc82d0c;
-    ::ll::UntypedStorage<4, 8>  mUnke3d151;
+    ::ll::UntypedStorage<4, 8> mUnke3d151;
     // NOLINTEND
 
 public:
@@ -63,6 +63,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_20_60
+}

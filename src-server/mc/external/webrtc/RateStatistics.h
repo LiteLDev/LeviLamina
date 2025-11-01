@@ -10,7 +10,7 @@ public:
     // clang-format off
     struct Bucket;
     // clang-format on
-
+    
     // RateStatistics inner types define
     struct Bucket {
     public:
@@ -20,37 +20,38 @@ public:
         ::ll::UntypedStorage<4, 4> mUnkf2406f;
         ::ll::UntypedStorage<8, 8> mUnkd31e36;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         Bucket& operator=(Bucket const&);
         Bucket(Bucket const&);
         Bucket();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI explicit Bucket(int64 timestamp);
         // NOLINTEND
-
+    
     public:
         // constructor thunks
         // NOLINTBEGIN
         MCNAPI void* $ctor(int64 timestamp);
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnka616c6;
-    ::ll::UntypedStorage<8, 8>  mUnkcb55b6;
-    ::ll::UntypedStorage<8, 8>  mUnk592d19;
-    ::ll::UntypedStorage<1, 1>  mUnk127b06;
-    ::ll::UntypedStorage<4, 4>  mUnkb1b1b8;
-    ::ll::UntypedStorage<4, 4>  mUnk758253;
-    ::ll::UntypedStorage<8, 8>  mUnk4cc246;
-    ::ll::UntypedStorage<8, 8>  mUnk426aa8;
+    ::ll::UntypedStorage<8, 8> mUnkcb55b6;
+    ::ll::UntypedStorage<8, 8> mUnk592d19;
+    ::ll::UntypedStorage<1, 1> mUnk127b06;
+    ::ll::UntypedStorage<4, 4> mUnkb1b1b8;
+    ::ll::UntypedStorage<4, 4> mUnk758253;
+    ::ll::UntypedStorage<8, 8> mUnk4cc246;
+    ::ll::UntypedStorage<8, 8> mUnk426aa8;
     // NOLINTEND
 
 public:
@@ -87,6 +88,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

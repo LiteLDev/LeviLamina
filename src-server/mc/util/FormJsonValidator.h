@@ -9,16 +9,7 @@ class FormJsonValidator {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::JsonValidator::Property getContentItemProperty(
-        ::JsonValidator::Property const& labelType,
-        ::JsonValidator::Property const& toggleType,
-        ::JsonValidator::Property const& sliderType,
-        ::JsonValidator::Property const& stepSliderType,
-        ::JsonValidator::Property const& dropdownType,
-        ::JsonValidator::Property const& textInputType,
-        ::JsonValidator::Property const& headerType,
-        ::JsonValidator::Property const& dividerType
-    );
+    MCNAPI static ::JsonValidator::Property getContentItemProperty(::JsonValidator::Property const& labelType, ::JsonValidator::Property const& toggleType, ::JsonValidator::Property const& sliderType, ::JsonValidator::Property const& stepSliderType, ::JsonValidator::Property const& dropdownType, ::JsonValidator::Property const& textInputType, ::JsonValidator::Property const& headerType, ::JsonValidator::Property const& dividerType);
 
     MCNAPI static ::JsonValidator::Property getControlLockedProperty();
 
@@ -34,4 +25,5 @@ public:
 
     MCNAPI static ::JsonValidator::Property getToggleProperty(bool requiresDefault);
     // NOLINTEND
+
 };

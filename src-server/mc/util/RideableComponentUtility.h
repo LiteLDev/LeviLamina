@@ -13,4 +13,4 @@ namespace RideableComponentUtility {
 MCNAPI void updateFromActorFlags(::EntityContext& context);
 // NOLINTEND
 
-} // namespace RideableComponentUtility
+}

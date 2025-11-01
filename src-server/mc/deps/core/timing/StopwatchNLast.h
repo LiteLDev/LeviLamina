@@ -9,10 +9,10 @@ class StopwatchNLast : public ::Stopwatch {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk34c336;
-    ::ll::UntypedStorage<4, 4>  mUnk8d9881;
+    ::ll::UntypedStorage<4, 4> mUnk34c336;
+    ::ll::UntypedStorage<4, 4> mUnk8d9881;
     ::ll::UntypedStorage<8, 24> mUnk2f1f3e;
-    ::ll::UntypedStorage<8, 8>  mUnk661d05;
+    ::ll::UntypedStorage<8, 8> mUnk661d05;
     ::ll::UntypedStorage<8, 56> mUnk8bc093;
     // NOLINTEND
 
@@ -40,4 +40,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

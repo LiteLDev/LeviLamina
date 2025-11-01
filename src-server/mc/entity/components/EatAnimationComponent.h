@@ -5,4 +5,5 @@
 // auto generated inclusion list
 #include "mc/entity/components/IntComponent.h"
 
-struct EatAnimationComponent : public ::IntComponent {};
+struct EatAnimationComponent : public ::IntComponent {
+};

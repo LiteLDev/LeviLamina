@@ -39,8 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI
-    RtcEventIceCandidatePair(::webrtc::IceCandidatePairEventType type, uint candidate_pair_id, uint transaction_id);
+    MCNAPI RtcEventIceCandidatePair(::webrtc::IceCandidatePairEventType type, uint candidate_pair_id, uint transaction_id);
     // NOLINTEND
 
 public:
@@ -68,6 +67,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

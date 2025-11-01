@@ -20,11 +20,7 @@ namespace ScriptModuleMinecraftServerUI {
 // NOLINTBEGIN
 MCNAPI ::Scripting::EnumBinding bindScriptFormRejectReason();
 
-MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError> resolveRawMessageAsJson(
-    ::Player&                                                                                player,
-    ::CurrentCmdVersion                                                                      commandVersion,
-    ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text
-);
+MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError> resolveRawMessageAsJson(::Player& player, ::CurrentCmdVersion commandVersion, ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text);
 // NOLINTEND
 
-} // namespace ScriptModuleMinecraftServerUI
+}

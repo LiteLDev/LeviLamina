@@ -11,7 +11,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 176> mUnkb97280;
-    ::ll::UntypedStorage<8, 24>  mUnk372c7f;
+    ::ll::UntypedStorage<8, 24> mUnk372c7f;
     // NOLINTEND
 
 public:
@@ -30,8 +30,7 @@ public:
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
 
     // vIndex: 7
-    virtual ::NetworkPeer::DataStatus
-    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
+    virtual ::NetworkPeer::DataStatus _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
 
     // vIndex: 0
     virtual ~ObservingNetworkPeer() /*override*/ = default;
@@ -42,4 +41,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

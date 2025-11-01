@@ -17,17 +17,17 @@ class FindMountGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>>      mTarget;
-    ::ll::TypedStorage<4, 4, float>                     mTargetDist;
-    ::ll::TypedStorage<4, 4, int>                       mTimeToRecalcPath;
-    ::ll::TypedStorage<4, 4, int>                       mStartCounter;
-    ::ll::TypedStorage<4, 4, int>                       mStartDelay;
-    ::ll::TypedStorage<1, 1, bool>                      mAvoidWater;
-    ::ll::TypedStorage<1, 1, bool>                      mTargetNeeded;
-    ::ll::TypedStorage<4, 4, float>                     mMountDistance;
-    ::ll::TypedStorage<4, 4, int>                       mFailedAttemptsCounter;
-    ::ll::TypedStorage<4, 4, int>                       mMaxFailedAttempts;
-    ::ll::TypedStorage<8, 8, ::Mob&>                    mMob;
+    ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mTarget;
+    ::ll::TypedStorage<4, 4, float> mTargetDist;
+    ::ll::TypedStorage<4, 4, int> mTimeToRecalcPath;
+    ::ll::TypedStorage<4, 4, int> mStartCounter;
+    ::ll::TypedStorage<4, 4, int> mStartDelay;
+    ::ll::TypedStorage<1, 1, bool> mAvoidWater;
+    ::ll::TypedStorage<1, 1, bool> mTargetNeeded;
+    ::ll::TypedStorage<4, 4, float> mMountDistance;
+    ::ll::TypedStorage<4, 4, int> mFailedAttemptsCounter;
+    ::ll::TypedStorage<4, 4, int> mMaxFailedAttempts;
+    ::ll::TypedStorage<8, 8, ::Mob&> mMob;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Path>> mPath;
     // NOLINTEND
 
@@ -89,4 +89,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -26,6 +26,7 @@ public:
     // vIndex: 3
     virtual ~AutoSocketServerThread() /*override*/ = default;
     // NOLINTEND
+
 };
 
-} // namespace rtc
+}

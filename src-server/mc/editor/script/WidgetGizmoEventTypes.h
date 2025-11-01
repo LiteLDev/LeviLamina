@@ -13,4 +13,4 @@ namespace Editor::ScriptModule::WidgetGizmoEventTypes {
 MCNAPI ::Scripting::EnumBinding bindEventEnums();
 // NOLINTEND
 
-} // namespace Editor::ScriptModule::WidgetGizmoEventTypes
+}

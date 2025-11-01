@@ -31,6 +31,9 @@ public:
     // vIndex: 1
     virtual bool applies(::Random&, ::LootTableContext& context) /*override*/;
 
+    // vIndex: 2
+    virtual ::LootItemCondition::ConditionType getConditionType() const /*override*/;
+
     // vIndex: 0
     virtual ~LootItemKilledByActorCondition() /*override*/ = default;
     // NOLINTEND
@@ -45,6 +48,8 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $applies(::Random&, ::LootTableContext& context);
+
+    MCNAPI ::LootItemCondition::ConditionType $getConditionType() const;
     // NOLINTEND
 
 public:
@@ -52,4 +57,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

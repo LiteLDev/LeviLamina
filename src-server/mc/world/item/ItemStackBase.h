@@ -47,6 +47,7 @@ public:
         ::ll::TypedStorage<1, 1, bool> mCompareRelevantUserData;
         ::ll::TypedStorage<1, 1, bool> mCompareDamage;
         // NOLINTEND
+
     };
 
 public:
@@ -54,7 +55,6 @@ public:
     LLNDAPI std::string getDescriptionName() const;
     LLNDAPI bool isEnchanted() const;
     LLNDAPI bool removeEnchants() const;
-
 public:
     // member variables
     // NOLINTBEGIN
@@ -82,13 +82,13 @@ public:
     virtual ~ItemStackBase();
 
     // vIndex: 3
-    virtual void reinit(::Item const& item, int count, int auxValue);
+    virtual void reinit(::Item const&, int, int);
 
     // vIndex: 2
-    virtual void reinit(::Block const& block, int count);
+    virtual void reinit(::Block const&, int);
 
     // vIndex: 1
-    virtual void reinit(::std::string_view const name, int count, int auxValue);
+    virtual void reinit(::std::string_view const, int, int);
 
     // vIndex: 4
     virtual void setNull(::std::optional<::std::string> reason);
@@ -168,8 +168,7 @@ public:
 
     MCAPI ::std::unique_ptr<::DynamicProperties> getDynamicProperties() const;
 
-    MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
-    getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
+    MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
 
     MCAPI ::HashedString const& getFullNameHash() const;
 
@@ -217,6 +216,8 @@ public:
 
     MCAPI bool isDamageableItem() const;
 
+    MCAPI bool isDamaged() const;
+
     MCAPI bool isEnchantingBook() const;
 
     MCAPI bool isHorseArmorItem() const;
@@ -227,15 +228,13 @@ public:
 
     MCAPI bool isNull() const;
 
-    MCAPI bool
-    isOneOfBlockInstances(::std::vector<::std::reference_wrapper<::HashedString const>> const& blockTypeIds) const;
+    MCAPI bool isOneOfBlockInstances(::std::vector<::std::reference_wrapper<::HashedString const>> const& blockTypeIds) const;
 
-    MCAPI bool isOneOfInstances(
-        ::std::initializer_list<::std::reference_wrapper<::HashedString const>> items,
-        bool                                                                    useItemLookup
-    ) const;
+    MCAPI bool isOneOfInstances(::std::initializer_list<::std::reference_wrapper<::HashedString const>> items, bool useItemLookup) const;
 
     MCAPI bool isPotionItem() const;
+
+    MCAPI bool isStackable() const;
 
     MCAPI bool isStackable(::ItemStackBase const& other) const;
 
@@ -275,11 +274,7 @@ public:
 
     MCAPI void setDamageValue(short newDamage);
 
-    MCAPI void setDynamicProperty(
-        ::std::string const&                                              key,
-        ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value,
-        ::std::string const&                                              collectionName
-    );
+    MCAPI void setDynamicProperty(::std::string const& key, ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value, ::std::string const& collectionName);
 
     MCAPI void setRepairCost(int cost);
 
@@ -293,8 +288,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool
-    _loadBlocksForCanPlaceOnCanDestroy(::std::vector<::BlockType const*>& blockList, ::std::string const& blockName);
+    MCAPI static bool _loadBlocksForCanPlaceOnCanDestroy(::std::vector<::BlockType const*>& blockList, ::std::string const& blockName);
     // NOLINTEND
 
 public:
@@ -321,6 +315,8 @@ public:
     MCAPI static ::std::string const& TAG_STORE_CAN_DESTROY();
 
     MCAPI static ::std::string const& TAG_STORE_CAN_PLACE_ON();
+
+    MCAPI static ::std::string const& TAG_UNBREAKABLE();
     // NOLINTEND
 
 public:
@@ -346,11 +342,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $reinit(::Item const& item, int count, int auxValue);
+    MCFOLD void $reinit(::Item const&, int, int);
 
-    MCFOLD void $reinit(::Block const& block, int count);
+    MCFOLD void $reinit(::Block const&, int);
 
-    MCFOLD void $reinit(::std::string_view const name, int count, int auxValue);
+    MCFOLD void $reinit(::std::string_view const, int, int);
 
     MCAPI void $setNull(::std::optional<::std::string> reason);
 
@@ -364,4 +360,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

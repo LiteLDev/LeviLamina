@@ -18,8 +18,7 @@ public:
     virtual ~ActiveIceControllerFactoryInterface() = default;
 
     // vIndex: 1
-    virtual ::std::unique_ptr<::cricket::ActiveIceControllerInterface>
-    Create(::cricket::ActiveIceControllerFactoryArgs const&) = 0;
+    virtual ::std::unique_ptr<::cricket::ActiveIceControllerInterface> Create(::cricket::ActiveIceControllerFactoryArgs const&) = 0;
     // NOLINTEND
 
 public:
@@ -27,6 +26,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace cricket
+}

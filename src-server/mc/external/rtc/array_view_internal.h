@@ -8,4 +8,4 @@ enum : int64 {
     KArrayViewVarSize = -4711,
 };
 
-} // namespace rtc::array_view_internal
+}

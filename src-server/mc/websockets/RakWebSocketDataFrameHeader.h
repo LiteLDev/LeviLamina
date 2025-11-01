@@ -15,4 +15,5 @@ public:
     RakWebSocketDataFrameHeader& operator=(RakWebSocketDataFrameHeader const&);
     RakWebSocketDataFrameHeader(RakWebSocketDataFrameHeader const&);
     RakWebSocketDataFrameHeader();
+
 };

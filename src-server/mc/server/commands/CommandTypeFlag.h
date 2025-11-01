@@ -4,6 +4,6 @@
 
 enum class CommandTypeFlag : ushort {
     // bitfield representation
-    None    = 0,
+    None = 0,
     Message = 1 << 6,
 };

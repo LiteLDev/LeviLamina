@@ -15,4 +15,5 @@ public:
     BlendingBiomeProvider2D& operator=(BlendingBiomeProvider2D const&);
     BlendingBiomeProvider2D(BlendingBiomeProvider2D const&);
     BlendingBiomeProvider2D();
+
 };

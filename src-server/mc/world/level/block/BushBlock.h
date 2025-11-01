@@ -22,17 +22,14 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 79
+    // vIndex: 78
     virtual bool mayPlace(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
 
-    // vIndex: 76
-    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const
-        /*override*/;
+    // vIndex: 75
+    virtual bool canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const /*override*/;
 
-    // vIndex: 74
-    virtual bool
-    onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
-        /*override*/;
+    // vIndex: 73
+    virtual bool onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const /*override*/;
 
     // vIndex: 0
     virtual ~BushBlock() /*override*/;
@@ -63,8 +60,7 @@ public:
 
     MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool
-    $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
+    MCAPI bool $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
     // NOLINTEND
 
 public:
@@ -72,4 +68,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

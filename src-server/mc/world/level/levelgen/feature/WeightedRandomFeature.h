@@ -17,17 +17,18 @@ public:
     // clang-format off
     struct WeightedFeatureReference;
     // clang-format on
-
+    
     // WeightedRandomFeature inner types define
     struct WeightedFeatureReference {
     public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::WeakRef<::IFeature>> mFeature;
-        ::ll::TypedStorage<4, 4, float>                  mWeight;
+        ::ll::TypedStorage<4, 4, float> mWeight;
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -55,4 +56,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

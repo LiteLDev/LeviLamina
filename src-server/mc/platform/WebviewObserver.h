@@ -74,4 +74,5 @@ public:
 
     MCNAPI void $onMessageRecieved(::std::string const&);
     // NOLINTEND
+
 };

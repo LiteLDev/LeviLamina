@@ -28,7 +28,7 @@ public:
     // clang-format off
     struct ServerData;
     // clang-format on
-
+    
     // NetherNetServerLocator inner types define
     struct ServerData {
     public:
@@ -36,38 +36,39 @@ public:
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 32> mUnkb518a7;
         ::ll::UntypedStorage<8, 32> mUnk2d2ca2;
-        ::ll::UntypedStorage<4, 4>  mUnkab0aac;
-        ::ll::UntypedStorage<4, 4>  mUnk3ed176;
-        ::ll::UntypedStorage<4, 4>  mUnkc83c1f;
-        ::ll::UntypedStorage<1, 1>  mUnk91bac1;
-        ::ll::UntypedStorage<1, 1>  mUnk1b4aaf;
-        ::ll::UntypedStorage<4, 4>  mUnk21552f;
-        ::ll::UntypedStorage<2, 2>  mUnkb17aa9;
+        ::ll::UntypedStorage<4, 4> mUnkab0aac;
+        ::ll::UntypedStorage<4, 4> mUnk3ed176;
+        ::ll::UntypedStorage<4, 4> mUnkc83c1f;
+        ::ll::UntypedStorage<1, 1> mUnk91bac1;
+        ::ll::UntypedStorage<1, 1> mUnk1b4aaf;
+        ::ll::UntypedStorage<4, 4> mUnk21552f;
+        ::ll::UntypedStorage<2, 2> mUnkb17aa9;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         ServerData& operator=(ServerData const&);
         ServerData(ServerData const&);
         ServerData();
-
+    
     public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
-
+    
         MCNAPI void write(::BinaryStream& stream) const;
-
+    
         MCNAPI ~ServerData();
         // NOLINTEND
-
+    
     public:
         // destructor thunk
         // NOLINTBEGIN
         MCNAPI void $dtor();
         // NOLINTEND
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
@@ -75,8 +76,8 @@ public:
     ::ll::UntypedStorage<8, 24> mUnka0ecad;
     ::ll::UntypedStorage<8, 32> mUnkcf0391;
     ::ll::UntypedStorage<8, 16> mUnkeab7f7;
-    ::ll::UntypedStorage<1, 1>  mUnkfee0d4;
-    ::ll::UntypedStorage<1, 1>  mUnk646852;
+    ::ll::UntypedStorage<1, 1> mUnkfee0d4;
+    ::ll::UntypedStorage<1, 1> mUnk646852;
     ::ll::UntypedStorage<8, 88> mUnk330682;
     ::ll::UntypedStorage<8, 80> mUnk1547c8;
     // NOLINTEND
@@ -94,17 +95,7 @@ public:
     virtual ~NetherNetServerLocator() /*override*/;
 
     // vIndex: 3
-    virtual void startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                gameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
-    ) /*override*/;
+    virtual void startAnnouncingServer(::std::string const& playerName, ::std::string const& worldName, ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform, ::GameType gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore) /*override*/;
 
     // vIndex: 4
     virtual void stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform) /*override*/;
@@ -128,10 +119,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI NetherNetServerLocator(
-        ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&& connector,
-        ::Bedrock::NonOwnerPointer<::SignalingService>        signalingService
-    );
+    MCNAPI NetherNetServerLocator(::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&& connector, ::Bedrock::NonOwnerPointer<::SignalingService> signalingService);
 
     MCNAPI void _cacheDiscoveryResponseData();
 
@@ -149,17 +137,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::PingedCompatibleServer
-    _transformFrom(::NetherNet::NetworkID const& networkID, ::NetherNetServerLocator::ServerData&& serverData);
+    MCNAPI static ::PingedCompatibleServer _transformFrom(::NetherNet::NetworkID const& networkID, ::NetherNetServerLocator::ServerData&& serverData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&& connector,
-        ::Bedrock::NonOwnerPointer<::SignalingService>        signalingService
-    );
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>&& connector, ::Bedrock::NonOwnerPointer<::SignalingService> signalingService);
     // NOLINTEND
 
 public:
@@ -171,17 +155,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $startAnnouncingServer(
-        ::std::string const&                      playerName,
-        ::std::string const&                      worldName,
-        ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
-        ::GameType                                gameType,
-        int                                       numPlayers,
-        int                                       maxNumPlayers,
-        bool                                      isJoinableThroughServerScreen,
-        bool                                      isEditorWorld,
-        bool                                      isHardcore
-    );
+    MCNAPI void $startAnnouncingServer(::std::string const& playerName, ::std::string const& worldName, ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform, ::GameType gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore);
 
     MCNAPI void $stopAnnouncingServer(::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform);
 
@@ -201,4 +175,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

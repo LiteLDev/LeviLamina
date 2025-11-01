@@ -22,4 +22,4 @@ MCAPI void setColor(::SynchedActorDataComponent& entityData, ::SharedTypes::Lega
 MCAPI void setColor2(::SynchedActorDataComponent& entityData, ::SharedTypes::Legacy::PaletteColor color);
 // NOLINTEND
 
-} // namespace ActorColor
+}

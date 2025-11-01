@@ -38,11 +38,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void buildSchema(
-        ::std::shared_ptr<
-            ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ConditionalBandwidthOptimizationDefinition>>&
-            root
-    );
+    MCNAPI static void buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ConditionalBandwidthOptimizationDefinition>>& root);
     // NOLINTEND
 
 public:
@@ -50,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

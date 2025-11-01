@@ -5,9 +5,9 @@
 namespace sim {
 
 enum class LookDuration : uchar {
-    Instant    = 0,
+    Instant = 0,
     Continuous = 1,
-    UntilMove  = 2,
+    UntilMove = 2,
 };
 
 }

@@ -7,8 +7,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk3bbcac;
-    ::ll::UntypedStorage<4, 4>  mUnk854e15;
-    ::ll::UntypedStorage<4, 4>  mUnk92c9e3;
+    ::ll::UntypedStorage<4, 4> mUnk854e15;
+    ::ll::UntypedStorage<4, 4> mUnk92c9e3;
     // NOLINTEND
 
 public:
@@ -24,4 +24,5 @@ public:
 
     MCNAPI void setMinDelayTicks(float const& seconds);
     // NOLINTEND
+
 };

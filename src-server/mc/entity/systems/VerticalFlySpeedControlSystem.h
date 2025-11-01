@@ -17,16 +17,7 @@ struct StateVectorComponent;
 namespace VerticalFlySpeedControlSystem {
 // functions
 // NOLINTBEGIN
-MCNAPI void doFlySpeedControlSystem(
-    ::StrictEntityContext const&,
-    ::MoveInputComponent const&          moveInputComponent,
-    ::PlayerInputRequestComponent const& playerInputRequestComponent,
-    ::ActorGameTypeComponent const&      actorGameTypeComponent,
-    ::FrictionModifierComponent&         frictionModifierComponent,
-    ::MovementAbilitiesComponent const&  movementAbilitiesComponent,
-    ::StateVectorComponent&              stateVectorComponent,
-    ::ExternalDataInterface const&       externalData
-);
+MCNAPI void doFlySpeedControlSystem(::StrictEntityContext const&, ::MoveInputComponent const& moveInputComponent, ::PlayerInputRequestComponent const& playerInputRequestComponent, ::ActorGameTypeComponent const& actorGameTypeComponent, ::FrictionModifierComponent& frictionModifierComponent, ::MovementAbilitiesComponent const& movementAbilitiesComponent, ::StateVectorComponent& stateVectorComponent, ::ExternalDataInterface const& externalData);
 // NOLINTEND
 
-} // namespace VerticalFlySpeedControlSystem
+}

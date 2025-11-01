@@ -8,22 +8,9 @@
 // auto generated forward declare list
 // clang-format off
 class EntityRegistry;
-class IClientInstance;
 // clang-format on
 
 class MolangUpdateSystem : public ::ITickingSystem {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::IClientInstance&> mClientInstance;
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    MolangUpdateSystem& operator=(MolangUpdateSystem const&);
-    MolangUpdateSystem(MolangUpdateSystem const&);
-    MolangUpdateSystem();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -39,4 +26,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

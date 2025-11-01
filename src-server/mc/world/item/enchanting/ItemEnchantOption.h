@@ -15,10 +15,10 @@ class ItemEnchantOption {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>             mCost;
+    ::ll::TypedStorage<4, 4, int> mCost;
     ::ll::TypedStorage<8, 80, ::ItemEnchants> mEnchants;
-    ::ll::TypedStorage<8, 32, ::std::string>  mEnchantName;
-    ::ll::TypedStorage<4, 4, ::RecipeNetId>   mEnchantNetId;
+    ::ll::TypedStorage<8, 32, ::std::string> mEnchantName;
+    ::ll::TypedStorage<4, 4, ::RecipeNetId> mEnchantNetId;
     // NOLINTEND
 
 public:
@@ -46,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

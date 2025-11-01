@@ -47,52 +47,31 @@ public:
     virtual void moveToThread();
 
     // vIndex: 3
-    virtual ::std::optional<::Scripting::ScriptContext> createContext(
-        ::Scripting::ModuleBindingBundle&&,
-        ::Scripting::IDependencyLoader*,
-        ::Scripting::IPrinter*,
-        ::Scripting::ContextConfig const&
-    ) = 0;
+    virtual ::std::optional<::Scripting::ScriptContext> createContext(::Scripting::ModuleBindingBundle&&, ::Scripting::IDependencyLoader*, ::Scripting::IPrinter*, ::Scripting::ContextConfig const&) = 0;
 
     // vIndex: 4
     virtual void destroyContext(::Scripting::ContextId) = 0;
 
     // vIndex: 5
-    virtual ::Scripting::ResultAny
-    run(::Scripting::ContextId, ::Scripting::IPayload*, ::std::optional<::Scripting::Privilege>) = 0;
+    virtual ::Scripting::ResultAny run(::Scripting::ContextId, ::Scripting::IPayload*, ::std::optional<::Scripting::Privilege>) = 0;
 
     // vIndex: 6
-    virtual ::Scripting::ResultAny call(
-        ::Scripting::ContextId,
-        ::Scripting::TypedObjectHandle<::Scripting::ClosureType>,
-        ::entt::meta_any*,
-        uint,
-        ::entt::meta_type const&,
-        ::std::optional<::Scripting::Privilege>
-    ) = 0;
+    virtual ::Scripting::ResultAny call(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::ClosureType>, ::entt::meta_any*, uint, ::entt::meta_type const&, ::std::optional<::Scripting::Privilege>) = 0;
 
     // vIndex: 7
-    virtual ::Scripting::ResultAny
-    resolve(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) = 0;
+    virtual ::Scripting::ResultAny resolve(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) = 0;
 
     // vIndex: 8
-    virtual ::Scripting::ResultAny
-    reject(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) = 0;
+    virtual ::Scripting::ResultAny reject(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::PromiseType>, ::entt::meta_any&) = 0;
 
     // vIndex: 9
-    virtual ::Scripting::FutureStatus
-        getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const = 0;
+    virtual ::Scripting::FutureStatus getFutureStatus(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>) const = 0;
 
     // vIndex: 10
-    virtual ::Scripting::ResultAny getFutureResult(
-        ::Scripting::ContextId,
-        ::Scripting::TypedObjectHandle<::Scripting::FutureType>,
-        ::entt::meta_type const&
-    ) const = 0;
+    virtual ::Scripting::ResultAny getFutureResult(::Scripting::ContextId, ::Scripting::TypedObjectHandle<::Scripting::FutureType>, ::entt::meta_type const&) const = 0;
 
     // vIndex: 11
-    virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult>
-        executeCoroutines(::std::optional<::std::chrono::microseconds>, ::std::optional<::Scripting::Privilege>) = 0;
+    virtual ::Scripting::Result_deprecated<::Scripting::CoRoutineResult> executeCoroutines(::std::optional<::std::chrono::microseconds>, ::std::optional<::Scripting::Privilege>) = 0;
 
     // vIndex: 12
     virtual bool hasPendingJobs() = 0;
@@ -107,10 +86,7 @@ public:
     virtual void startProfiler() = 0;
 
     // vIndex: 16
-    virtual void stopProfiler(
-        ::std::function<void(::std::string_view)>,
-        ::std::optional<::std::reference_wrapper<::std::string const>>
-    ) = 0;
+    virtual void stopProfiler(::std::function<void(::std::string_view)>, ::std::optional<::std::reference_wrapper<::std::string const>>) = 0;
 
     // vIndex: 17
     virtual ::Scripting::RuntimeStats computeRuntimeStats() const = 0;
@@ -125,8 +101,7 @@ public:
     virtual ::Scripting::IWatchdog* getWatchdog() const = 0;
 
     // vIndex: 21
-    virtual ::std::optional<::Scripting::TypeNameInfo>
-    getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const = 0;
+    virtual ::std::optional<::Scripting::TypeNameInfo> getNameForType(::Scripting::ContextId, ::entt::meta_type const&, bool) const = 0;
     // NOLINTEND
 
 public:
@@ -136,6 +111,7 @@ public:
 
     MCFOLD void $moveToThread();
     // NOLINTEND
+
 };
 
-} // namespace Scripting
+}

@@ -16,6 +16,7 @@ public:
     XUID& operator=(XUID const&);
     XUID(XUID const&);
     XUID();
+
 };
 
-} // namespace Social
+}

@@ -11,4 +11,4 @@ public:
     ::Bedrock::Intrusive::list_base_hook<T0>* mPrev;
 };
 
-} // namespace Bedrock::Intrusive
+}

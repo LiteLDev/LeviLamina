@@ -14,9 +14,9 @@ struct AttackDescription : public ::AttributeDescription {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 8>  mUnka0e703;
+    ::ll::UntypedStorage<4, 8> mUnka0e703;
     ::ll::UntypedStorage<8, 32> mUnk3c0ac5;
-    ::ll::UntypedStorage<4, 4>  mUnk948a72;
+    ::ll::UntypedStorage<4, 4> mUnk948a72;
     // NOLINTEND
 
 public:
@@ -57,4 +57,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

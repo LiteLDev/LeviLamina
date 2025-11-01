@@ -15,9 +15,9 @@ struct FilterInputs {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<2, 2>  mUnke637f5;
+    ::ll::UntypedStorage<2, 2> mUnke637f5;
     ::ll::UntypedStorage<8, 48> mUnk260a64;
-    ::ll::UntypedStorage<2, 2>  mUnkf5bc24;
+    ::ll::UntypedStorage<2, 2> mUnkf5bc24;
     ::ll::UntypedStorage<8, 48> mUnk6920e4;
     // NOLINTEND
 
@@ -30,12 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FilterInputs(
-        ::SharedTypes::Legacy::FilterSubject subject,
-        ::FilterInput                        domain,
-        ::FilterOperator                     op,
-        ::FilterInput                        value
-    );
+    MCNAPI FilterInputs(::SharedTypes::Legacy::FilterSubject subject, ::FilterInput domain, ::FilterOperator op, ::FilterInput value);
 
     MCNAPI ~FilterInputs();
     // NOLINTEND
@@ -43,8 +38,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void*
-    $ctor(::SharedTypes::Legacy::FilterSubject subject, ::FilterInput domain, ::FilterOperator op, ::FilterInput value);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::FilterSubject subject, ::FilterInput domain, ::FilterOperator op, ::FilterInput value);
     // NOLINTEND
 
 public:
@@ -52,4 +46,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

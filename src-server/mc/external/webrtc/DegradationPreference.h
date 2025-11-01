@@ -5,10 +5,10 @@
 namespace webrtc {
 
 enum class DegradationPreference : int {
-    Disabled           = 0,
-    MaintainFramerate  = 1,
+    Disabled = 0,
+    MaintainFramerate = 1,
     MaintainResolution = 2,
-    Balanced           = 3,
+    Balanced = 3,
 };
 
 }

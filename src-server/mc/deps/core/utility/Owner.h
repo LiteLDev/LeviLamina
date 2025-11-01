@@ -4,7 +4,8 @@
 
 namespace Bedrock {
 
-template <typename T0>
-class Owner {};
+template<typename T0>
+class Owner {
+};
 
-} // namespace Bedrock
+}

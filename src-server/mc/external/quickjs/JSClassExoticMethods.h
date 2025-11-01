@@ -20,4 +20,5 @@ public:
     JSClassExoticMethods& operator=(JSClassExoticMethods const&);
     JSClassExoticMethods(JSClassExoticMethods const&);
     JSClassExoticMethods();
+
 };

@@ -17,8 +17,8 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk70535d;
     ::ll::UntypedStorage<8, 72> mUnkf36b3e;
     ::ll::UntypedStorage<8, 16> mUnkedd084;
-    ::ll::UntypedStorage<1, 1>  mUnk52558d;
-    ::ll::UntypedStorage<1, 1>  mUnk9866d4;
+    ::ll::UntypedStorage<1, 1> mUnk52558d;
+    ::ll::UntypedStorage<1, 1> mUnk9866d4;
     // NOLINTEND
 
 public:
@@ -26,6 +26,7 @@ public:
     WorldCache& operator=(WorldCache const&);
     WorldCache(WorldCache const&);
     WorldCache();
+
 };
 
-} // namespace Realms
+}

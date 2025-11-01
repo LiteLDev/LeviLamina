@@ -17,6 +17,8 @@ MCAPI ::std::string const& ENTITIES();
 
 MCAPI ::std::string const& FORMAT_VERSION();
 
+MCAPI ::std::string const& NEIGHBOR_AWARE_BLOCK_UPGRADE_VERSION();
+
 MCAPI ::std::string const& PALETTE();
 
 MCAPI ::std::string const& SIZE();
@@ -30,4 +32,4 @@ MCAPI ::std::string const& TICK_DELAY();
 MCAPI ::std::string const& TICK_QUEUE_DATA();
 // NOLINTEND
 
-} // namespace StructureTag
+}

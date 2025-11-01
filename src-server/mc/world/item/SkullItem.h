@@ -26,7 +26,7 @@ class SkullItem : public ::BlockItem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 110
+    // vIndex: 111
     virtual ::ResolvedItemIconInfo getIconInfo(::ItemStackBase const& item, int, bool) const /*override*/;
 
     // vIndex: 43
@@ -35,28 +35,25 @@ public:
     // vIndex: 33
     virtual int getLevelDataForAuxValue(int auxValue) const /*override*/;
 
-    // vIndex: 80
-    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const
-        /*override*/;
+    // vIndex: 81
+    virtual bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const /*override*/;
 
     // vIndex: 30
     virtual ::BlockShape getBlockShape() const /*override*/;
 
-    // vIndex: 54
+    // vIndex: 55
     virtual int getEnchantSlot() const /*override*/;
 
-    // vIndex: 103
+    // vIndex: 104
     virtual ::SharedTypes::Legacy::ActorLocation getEquipLocation() const /*override*/;
 
-    // vIndex: 104
+    // vIndex: 105
     virtual ::SharedTypes::Legacy::LevelSoundEvent getEquipSound() const /*override*/;
 
-    // vIndex: 122
-    virtual ::InteractionResult
-    _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const
-        /*override*/;
+    // vIndex: 123
+    virtual ::InteractionResult _useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const /*override*/;
 
-    // vIndex: 120
+    // vIndex: 121
     virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
 
     // vIndex: 0
@@ -67,8 +64,6 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
-
-    MCAPI ::Rarity $getRarity(::ItemStackBase const& stack) const;
 
     MCFOLD int $getLevelDataForAuxValue(int auxValue) const;
 
@@ -82,8 +77,7 @@ public:
 
     MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
-    MCAPI ::InteractionResult
-    $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
+    MCAPI ::InteractionResult $_useOn(::ItemStack& instance, ::Actor& entity, ::BlockPos pos, uchar face, ::Vec3 const& clickPos) const;
 
     MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
     // NOLINTEND
@@ -93,4 +87,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

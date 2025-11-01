@@ -15,4 +15,4 @@ MCNAPI void bindClientBiomeFoliageColorMapEnum(::cereal::ReflectionCtx& ctx);
 MCNAPI void bindClientBiomeGrassColorMapEnum(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
-} // namespace SharedTypes::v1_21_40
+}

@@ -35,17 +35,10 @@ public:
     virtual ::std::string_view getServiceName() const /*override*/;
 
     // vIndex: 7
-    virtual ::Scripting::Result_deprecated<void> _handleEvents(
-        ::HashedString const& dataTag,
-        ::Editor::DataStore::EventType,
-        ::Json::Value const&,
-        ::Editor::DataStore::PayloadDescription const&,
-        bool
-    ) /*override*/;
+    virtual ::Scripting::Result_deprecated<void> _handleEvents(::HashedString const& dataTag, ::Editor::DataStore::EventType, ::Json::Value const&, ::Editor::DataStore::PayloadDescription const&, bool) /*override*/;
 
     // vIndex: 8
-    virtual ::Json::Value
-    _getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const&) const /*override*/;
+    virtual ::Json::Value _getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const&) const /*override*/;
     // NOLINTEND
 
 public:
@@ -67,16 +60,9 @@ public:
 
     MCNAPI ::std::string_view $getServiceName() const;
 
-    MCNAPI ::Scripting::Result_deprecated<void> $_handleEvents(
-        ::HashedString const& dataTag,
-        ::Editor::DataStore::EventType,
-        ::Json::Value const&,
-        ::Editor::DataStore::PayloadDescription const&,
-        bool
-    );
+    MCNAPI ::Scripting::Result_deprecated<void> $_handleEvents(::HashedString const& dataTag, ::Editor::DataStore::EventType, ::Json::Value const&, ::Editor::DataStore::PayloadDescription const&, bool);
 
-    MCNAPI ::Json::Value
-    $_getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const&) const;
+    MCNAPI ::Json::Value $_getPayload(::HashedString const& dataTag, ::Editor::DataStore::PayloadDescription const&) const;
     // NOLINTEND
 
 public:
@@ -86,6 +72,7 @@ public:
 
     MCNAPI static void** $vftableForIEditorService();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Services
+}

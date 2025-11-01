@@ -17,11 +17,7 @@ struct SetPreviousPosRotSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _setPreviousPosRot(
-        ::StrictEntityContext&                                 entity,
-        ::StateVectorComponent&                                stateVectorComponent,
-        ::ActorRotationComponent&                              actorRotationComponent,
-        ::EntityModifier<::PrevPosRotSetThisTickFlagComponent> modifier
-    );
+    MCNAPI static void _setPreviousPosRot(::StrictEntityContext& entity, ::StateVectorComponent& stateVectorComponent, ::ActorRotationComponent& actorRotationComponent, ::EntityModifier<::PrevPosRotSetThisTickFlagComponent> modifier);
     // NOLINTEND
+
 };

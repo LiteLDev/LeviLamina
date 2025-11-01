@@ -17,7 +17,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk85e372;
-    ::ll::UntypedStorage<8, 8>  mUnkb09688;
+    ::ll::UntypedStorage<8, 8> mUnkb09688;
     // NOLINTEND
 
 public:
@@ -31,6 +31,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
     // NOLINTEND
+
 };
 
-} // namespace Editor::ScriptModule
+}

@@ -18,8 +18,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::BlockSource&> mRegion;
-    ::ll::TypedStorage<8, 8, ::Actor&>       mEntity;
-    ::ll::TypedStorage<4, 4, float>          mFallDistance;
+    ::ll::TypedStorage<8, 8, ::Actor&> mEntity;
+    ::ll::TypedStorage<4, 4, float> mFallDistance;
     // NOLINTEND
 
 public:
@@ -55,6 +55,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace BlockEvents
+}

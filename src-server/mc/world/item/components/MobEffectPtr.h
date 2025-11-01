@@ -13,4 +13,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::MobEffect const*> mMobEffect;
     // NOLINTEND
+
 };

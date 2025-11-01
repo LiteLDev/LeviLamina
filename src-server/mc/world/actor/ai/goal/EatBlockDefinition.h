@@ -20,13 +20,13 @@ class EatBlockDefinition : public ::BaseGoalDefinition {
 public:
     // EatBlockDefinition inner types define
     using self = ::EatBlockDefinition;
-
+    
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float>                                                         mTimeUntilEat;
-    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger>                                    mOnEat;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>>                              mSuccessChance;
+    ::ll::TypedStorage<4, 4, float> mTimeUntilEat;
+    ::ll::TypedStorage<8, 104, ::ActorDefinitionTrigger> mOnEat;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>> mSuccessChance;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::BlockType const*, ::BlockType const*>> mEatAndReplaceBlockPairs;
     // NOLINTEND
 
@@ -48,10 +48,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
-        ::std::string const&                                                                               name,
-        ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EatBlockDefinition>>& root
-    );
+    MCAPI static void buildSchema(::std::string const& name, ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EatBlockDefinition>>& root);
     // NOLINTEND
 
 public:
@@ -65,4 +62,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

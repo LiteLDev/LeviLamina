@@ -17,9 +17,9 @@ class SwellGoal : public ::Goal {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::WeakEntityRef>     mCreeperRef;
-    ::ll::TypedStorage<4, 4, float>                mStartSwellDist;
-    ::ll::TypedStorage<4, 4, float>                mStopSwellDist;
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mCreeperRef;
+    ::ll::TypedStorage<4, 4, float> mStartSwellDist;
+    ::ll::TypedStorage<4, 4, float> mStopSwellDist;
     ::ll::TypedStorage<8, 40, ::TempEPtr<::Actor>> mTarget;
     // NOLINTEND
 
@@ -80,4 +80,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

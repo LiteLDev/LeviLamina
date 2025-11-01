@@ -11,11 +11,11 @@ class NetworkIdentifier {
 public:
     // NetworkIdentifier inner types define
     enum class Type : int {
-        RakNet    = 0,
-        Address   = 1,
-        Address6  = 2,
+        RakNet = 0,
+        Address = 1,
+        Address6 = 2,
         NetherNet = 3,
-        Invalid   = 4,
+        Invalid = 4,
     };
 
 public:
@@ -35,6 +35,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCAPI NetworkIdentifier();
+
     MCAPI bool equalsTypeData(::NetworkIdentifier const& other) const;
 
     MCAPI ::std::string getAddress() const;
@@ -46,6 +48,8 @@ public:
     MCAPI ::std::string getNetherNetOrRakNetIDAsString() const;
 
     MCAPI bool isUnassigned() const;
+
+    MCAPI ::NetworkIdentifier& operator=(::NetworkIdentifier&&);
 
     MCAPI ::std::string toString() const;
     // NOLINTEND
@@ -61,6 +65,13 @@ public:
     // NOLINTBEGIN
     MCAPI static ::NetworkIdentifier& INVALID_ID();
     // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCAPI void* $ctor();
+    // NOLINTEND
+
 };
 
 namespace std {

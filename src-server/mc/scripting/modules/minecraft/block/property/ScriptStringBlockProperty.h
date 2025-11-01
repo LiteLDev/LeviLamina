@@ -39,17 +39,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptStringBlockProperty(
-        ::std::string                                                                         name,
-        ::BlockState const&                                                                   blockState,
-        ::std::vector<::std::string>                                                          validValues,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
-    );
+    MCNAPI ScriptStringBlockProperty(::std::string name, ::BlockState const& blockState, ::std::vector<::std::string> validValues, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation);
 
     MCNAPI ::Scripting::Result_deprecated<::std::string> getState() const;
 
-    MCNAPI ::ScriptModuleMinecraft::ScriptStringBlockProperty&
-    operator=(::ScriptModuleMinecraft::ScriptStringBlockProperty&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptStringBlockProperty& operator=(::ScriptModuleMinecraft::ScriptStringBlockProperty&&);
 
     MCNAPI ::Scripting::Result_deprecated<void> setState(::std::string state);
     // NOLINTEND
@@ -63,12 +57,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::std::string                                                                         name,
-        ::BlockState const&                                                                   blockState,
-        ::std::vector<::std::string>                                                          validValues,
-        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
-    );
+    MCNAPI void* $ctor(::std::string name, ::BlockState const& blockState, ::std::vector<::std::string> validValues, ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation);
     // NOLINTEND
 
 public:
@@ -76,6 +65,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

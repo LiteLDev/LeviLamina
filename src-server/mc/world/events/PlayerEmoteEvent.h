@@ -10,7 +10,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
-    ::ll::TypedStorage<8, 32, ::std::string>   mEmotePieceId;
+    ::ll::TypedStorage<8, 32, ::std::string> mEmotePieceId;
     // NOLINTEND
 
 public:
@@ -24,4 +24,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

@@ -23,4 +23,5 @@ public:
     buffer& operator=(buffer const&);
     buffer(buffer const&);
     buffer();
+
 };

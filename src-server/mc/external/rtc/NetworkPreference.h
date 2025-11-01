@@ -5,7 +5,7 @@
 namespace rtc {
 
 enum class NetworkPreference : int {
-    Neutral      = 0,
+    Neutral = 0,
     NotPreferred = -1,
 };
 

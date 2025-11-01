@@ -17,6 +17,7 @@ public:
     RtcpParameters& operator=(RtcpParameters const&);
     RtcpParameters(RtcpParameters const&);
     RtcpParameters();
+
 };
 
-} // namespace cricket
+}

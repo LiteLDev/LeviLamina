@@ -27,11 +27,11 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnk84f084;
-    ::ll::UntypedStorage<8, 8>  mUnke6cf5a;
-    ::ll::UntypedStorage<8, 8>  mUnk47aa09;
-    ::ll::UntypedStorage<4, 4>  mUnk1b8819;
-    ::ll::UntypedStorage<8, 8>  mUnk900129;
-    ::ll::UntypedStorage<1, 1>  mUnkbd23c2;
+    ::ll::UntypedStorage<8, 8> mUnke6cf5a;
+    ::ll::UntypedStorage<8, 8> mUnk47aa09;
+    ::ll::UntypedStorage<4, 4> mUnk1b8819;
+    ::ll::UntypedStorage<8, 8> mUnk900129;
+    ::ll::UntypedStorage<1, 1> mUnkbd23c2;
     // NOLINTEND
 
 public:
@@ -58,12 +58,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void Init();
 
-    MCNAPI RTPSenderVideoFrameTransformerDelegate(
-        ::webrtc::RTPVideoFrameSenderInterface*                      sender,
-        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer,
-        uint                                                         ssrc,
-        ::webrtc::TaskQueueFactory*                                  task_queue_factory
-    );
+    MCNAPI RTPSenderVideoFrameTransformerDelegate(::webrtc::RTPVideoFrameSenderInterface* sender, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer, uint ssrc, ::webrtc::TaskQueueFactory* task_queue_factory);
 
     MCNAPI void Reset();
 
@@ -73,25 +68,13 @@ public:
 
     MCNAPI void SetVideoStructureUnderLock(::webrtc::FrameDependencyStructure const* video_structure);
 
-    MCNAPI bool TransformFrame(
-        int                                       payload_type,
-        ::std::optional<::webrtc::VideoCodecType> codec_type,
-        uint                                      rtp_timestamp,
-        ::webrtc::EncodedImage const&             encoded_image,
-        ::webrtc::RTPVideoHeader                  video_header,
-        ::webrtc::TimeDelta                       expected_retransmission_time
-    );
+    MCNAPI bool TransformFrame(int payload_type, ::std::optional<::webrtc::VideoCodecType> codec_type, uint rtp_timestamp, ::webrtc::EncodedImage const& encoded_image, ::webrtc::RTPVideoHeader video_header, ::webrtc::TimeDelta expected_retransmission_time);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::webrtc::RTPVideoFrameSenderInterface*                      sender,
-        ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer,
-        uint                                                         ssrc,
-        ::webrtc::TaskQueueFactory*                                  task_queue_factory
-    );
+    MCNAPI void* $ctor(::webrtc::RTPVideoFrameSenderInterface* sender, ::webrtc::scoped_refptr<::webrtc::FrameTransformerInterface> frame_transformer, uint ssrc, ::webrtc::TaskQueueFactory* task_queue_factory);
     // NOLINTEND
 
 public:
@@ -107,6 +90,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

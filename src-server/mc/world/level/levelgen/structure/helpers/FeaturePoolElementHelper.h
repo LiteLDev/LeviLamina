@@ -14,4 +14,4 @@ namespace FeaturePoolElementHelper {
 MCAPI ::JigsawBlockInfo createJigsawBlockInfo(::BlockPos pos);
 // NOLINTEND
 
-} // namespace FeaturePoolElementHelper
+}

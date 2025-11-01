@@ -17,6 +17,7 @@ public:
 
     MCAPI static void DeallocRNS2(::RakNet::RakNetSocket2* s);
     // NOLINTEND
+
 };
 
-} // namespace RakNet
+}

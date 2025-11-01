@@ -20,6 +20,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace VanillaSystems
+}

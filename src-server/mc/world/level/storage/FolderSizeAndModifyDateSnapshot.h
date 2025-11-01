@@ -16,7 +16,7 @@ public:
     // clang-format off
     class FileSnapshot;
     // clang-format on
-
+    
     // FolderSizeAndModifyDateSnapshot inner types define
     class FileSnapshot {
     public:
@@ -25,19 +25,20 @@ public:
         ::ll::UntypedStorage<8, 8> mUnk4b0190;
         ::ll::UntypedStorage<8, 8> mUnk6eba40;
         // NOLINTEND
-
+    
     public:
         // prevent constructor by default
         FileSnapshot& operator=(FileSnapshot const&);
         FileSnapshot(FileSnapshot const&);
         FileSnapshot();
+    
     };
-
+    
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnk4ecdc8;
-    ::ll::UntypedStorage<8, 8>  mUnkb46dbd;
+    ::ll::UntypedStorage<8, 8> mUnkb46dbd;
     // NOLINTEND
 
 public:
@@ -73,4 +74,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

@@ -8,4 +8,5 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::vector<::std::string> const*> mPreviousDefinitions;
     // NOLINTEND
+
 };

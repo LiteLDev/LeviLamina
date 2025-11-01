@@ -27,8 +27,7 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual int sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const
-        /*override*/;
+    virtual int sample(::IRandom& randomSource, ::br::worldgen::WorldGenContext const& heightAccessor) const /*override*/;
 
     // vIndex: 0
     virtual ~UniformHeight() /*override*/ = default;
@@ -51,6 +50,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace br::worldgen
+}

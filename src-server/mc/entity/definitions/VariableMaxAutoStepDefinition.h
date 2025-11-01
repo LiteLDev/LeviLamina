@@ -16,4 +16,5 @@ public:
     VariableMaxAutoStepDefinition& operator=(VariableMaxAutoStepDefinition const&);
     VariableMaxAutoStepDefinition(VariableMaxAutoStepDefinition const&);
     VariableMaxAutoStepDefinition();
+
 };

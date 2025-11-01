@@ -7,6 +7,7 @@
 
 namespace webrtc {
 
-class RtpMid : public ::webrtc::BaseRtpStringExtension {};
+class RtpMid : public ::webrtc::BaseRtpStringExtension {
+};
 
-} // namespace webrtc
+}

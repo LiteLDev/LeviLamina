@@ -12,8 +12,8 @@ class BiomeArea {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, uint>                           mStrideX;
-    ::ll::TypedStorage<4, 4, uint>                           mStrideY;
+    ::ll::TypedStorage<4, 4, uint> mStrideX;
+    ::ll::TypedStorage<4, 4, uint> mStrideY;
     ::ll::TypedStorage<8, 24, ::std::vector<::Biome const*>> mBiomes;
     // NOLINTEND
 
@@ -40,4 +40,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

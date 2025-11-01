@@ -19,4 +19,5 @@ public:
     ZipAccessStrategyOptions& operator=(ZipAccessStrategyOptions const&);
     ZipAccessStrategyOptions(ZipAccessStrategyOptions const&);
     ZipAccessStrategyOptions();
+
 };

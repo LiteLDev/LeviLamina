@@ -14,9 +14,9 @@ struct SystemTiming {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::std::string>                        mSystemName;
-    ::ll::TypedStorage<4, 4, int>                                   mEntityCount;
-    ::ll::TypedStorage<4, 4, float>                                 mTimeMs;
+    ::ll::TypedStorage<8, 32, ::std::string> mSystemName;
+    ::ll::TypedStorage<4, 4, int> mEntityCount;
+    ::ll::TypedStorage<4, 4, float> mTimeMs;
     ::ll::TypedStorage<2, 2, ::Bedrock::typeid_t<::SystemCategory>> mCategory;
     // NOLINTEND
 
@@ -31,4 +31,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

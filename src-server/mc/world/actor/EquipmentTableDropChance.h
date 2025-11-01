@@ -21,4 +21,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void setSlotFromEquipmentSlotName(::std::string const& equipmentSlotName);
     // NOLINTEND
+
 };

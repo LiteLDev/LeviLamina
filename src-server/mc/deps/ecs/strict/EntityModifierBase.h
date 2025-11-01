@@ -14,4 +14,5 @@ public:
     EntityModifierBase& operator=(EntityModifierBase const&);
     EntityModifierBase(EntityModifierBase const&);
     EntityModifierBase();
+
 };

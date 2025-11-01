@@ -4,6 +4,7 @@
 
 namespace ScriptModuleMinecraft::details {
 
-struct DecomposeBeforeEventSignalProperty {};
+struct DecomposeBeforeEventSignalProperty {
+};
 
-} // namespace ScriptModuleMinecraft::details
+}

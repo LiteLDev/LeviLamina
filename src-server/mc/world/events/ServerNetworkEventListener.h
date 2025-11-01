@@ -16,7 +16,7 @@ class ServerNetworkEventListener {
 public:
     // ServerNetworkEventListener inner types define
     using EventType = ::ServerNetworkGameplayNotificationEvent;
-
+    
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -54,4 +54,5 @@ public:
     // NOLINTBEGIN
     MCAPI static void** $vftable();
     // NOLINTEND
+
 };

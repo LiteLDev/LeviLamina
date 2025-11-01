@@ -17,6 +17,7 @@ public:
 
     MCNAPI static bool Write(::rtc::ArrayView<uchar> data, ::webrtc::AbsoluteCaptureTime const& extension);
     // NOLINTEND
+
 };
 
-} // namespace webrtc
+}

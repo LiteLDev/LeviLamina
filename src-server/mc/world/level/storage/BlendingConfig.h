@@ -17,4 +17,5 @@ public:
     BlendingConfig& operator=(BlendingConfig const&);
     BlendingConfig(BlendingConfig const&);
     BlendingConfig();
+
 };

@@ -16,6 +16,7 @@ public:
     RefCounter& operator=(RefCounter const&);
     RefCounter(RefCounter const&);
     RefCounter();
+
 };
 
-} // namespace webrtc::webrtc_impl
+}

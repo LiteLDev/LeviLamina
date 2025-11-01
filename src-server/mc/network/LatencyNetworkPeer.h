@@ -11,9 +11,9 @@ class LatencyNetworkPeer : public ::NetworkPeer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk7d0116;
+    ::ll::UntypedStorage<8, 8> mUnk7d0116;
     ::ll::UntypedStorage<8, 96> mUnk7c2d2e;
-    ::ll::UntypedStorage<8, 8>  mUnk9e18c2;
+    ::ll::UntypedStorage<8, 8> mUnk9e18c2;
     // NOLINTEND
 
 public:
@@ -32,8 +32,7 @@ public:
     virtual void sendPacket(::std::string const&, ::NetworkPeer::Reliability, ::Compressibility) /*override*/;
 
     // vIndex: 7
-    virtual ::NetworkPeer::DataStatus
-    _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
+    virtual ::NetworkPeer::DataStatus _receivePacket(::std::string&, ::std::shared_ptr<::std::chrono::steady_clock::time_point> const&) /*override*/;
 
     // vIndex: 2
     virtual ::NetworkPeer::NetworkStatus getNetworkStatus() const /*override*/;
@@ -44,4 +43,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

@@ -11,12 +11,7 @@ class ItemStack;
 namespace SmithingTrimRecipeUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI bool doesItemHaveResultingTrim(
-    ::CraftingContext const& craftingContext,
-    ::ItemStack const&       item,
-    ::std::string const&     templateName,
-    ::std::string const&     materialName
-);
+MCNAPI bool doesItemHaveResultingTrim(::CraftingContext const& craftingContext, ::ItemStack const& item, ::std::string const& templateName, ::std::string const& materialName);
 // NOLINTEND
 
-} // namespace SmithingTrimRecipeUtils
+}

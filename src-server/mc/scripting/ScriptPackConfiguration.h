@@ -16,7 +16,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::Json::Value>> mPackVariables;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::std::string>> mPackSecrets;
-    ::ll::TypedStorage<8, 96, ::ScriptPackPermissions>                            mPackPermisions;
+    ::ll::TypedStorage<8, 96, ::ScriptPackPermissions> mPackPermisions;
     // NOLINTEND
 
 public:
@@ -52,4 +52,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

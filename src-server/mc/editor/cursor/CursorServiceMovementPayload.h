@@ -7,8 +7,7 @@
 
 namespace Editor::Network {
 
-class CursorServiceMovementPayload
-: public ::Editor::Network::NetworkPayload<::Editor::Network::CursorServiceMovementPayload> {
+class CursorServiceMovementPayload : public ::Editor::Network::NetworkPayload<::Editor::Network::CursorServiceMovementPayload> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -33,6 +32,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };
 
-} // namespace Editor::Network
+}

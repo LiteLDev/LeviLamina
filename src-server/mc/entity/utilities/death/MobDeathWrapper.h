@@ -14,4 +14,5 @@ public:
     MobDeathWrapper& operator=(MobDeathWrapper const&);
     MobDeathWrapper(MobDeathWrapper const&);
     MobDeathWrapper();
+
 };

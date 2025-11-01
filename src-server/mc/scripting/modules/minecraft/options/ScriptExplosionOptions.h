@@ -15,9 +15,9 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk9fed69;
-    ::ll::UntypedStorage<1, 2>  mUnk72424f;
-    ::ll::UntypedStorage<1, 2>  mUnk5a3dc4;
-    ::ll::UntypedStorage<1, 2>  mUnkf77c5a;
+    ::ll::UntypedStorage<1, 2> mUnk72424f;
+    ::ll::UntypedStorage<1, 2> mUnk5a3dc4;
+    ::ll::UntypedStorage<1, 2> mUnkf77c5a;
     // NOLINTEND
 
 public:
@@ -43,6 +43,7 @@ public:
 
     MCNAPI static bool const& CAUSES_FIRE_DEFAULT();
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

@@ -28,29 +28,22 @@ class EndPortalBlock : public ::ActorBlock {
 public:
     // virtual functions
     // NOLINTBEGIN
-    // vIndex: 131
+    // vIndex: 130
     virtual void _addHardCodedBlockComponents(::Experiments const&) /*override*/;
 
     // vIndex: 7
-    virtual bool addCollisionShapes(
-        ::Block const&                                     block,
-        ::IConstBlockSource const&                         region,
-        ::BlockPos const&                                  pos,
-        ::AABB const*                                      intersectTestBox,
-        ::std::vector<::AABB>&                             inoutBoxes,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const /*override*/;
+    virtual bool addCollisionShapes(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes, ::optional_ref<::GetCollisionShapeInterface const> entity) const /*override*/;
 
-    // vIndex: 146
+    // vIndex: 145
     virtual void entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const /*override*/;
 
-    // vIndex: 123
+    // vIndex: 122
     virtual void animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const /*override*/;
 
-    // vIndex: 90
+    // vIndex: 89
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
 
-    // vIndex: 72
+    // vIndex: 71
     virtual bool canRenderSelectionOverlay(::BlockRenderLayer) const /*override*/;
 
     // vIndex: 30
@@ -71,14 +64,7 @@ public:
     // NOLINTBEGIN
     MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
-    MCAPI bool $addCollisionShapes(
-        ::Block const&                                     block,
-        ::IConstBlockSource const&                         region,
-        ::BlockPos const&                                  pos,
-        ::AABB const*                                      intersectTestBox,
-        ::std::vector<::AABB>&                             inoutBoxes,
-        ::optional_ref<::GetCollisionShapeInterface const> entity
-    ) const;
+    MCAPI bool $addCollisionShapes(::Block const& block, ::IConstBlockSource const& region, ::BlockPos const& pos, ::AABB const* intersectTestBox, ::std::vector<::AABB>& inoutBoxes, ::optional_ref<::GetCollisionShapeInterface const> entity) const;
 
     MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
@@ -96,4 +82,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

@@ -16,6 +16,7 @@ public:
     FLR_MemoryBlock& operator=(FLR_MemoryBlock const&);
     FLR_MemoryBlock(FLR_MemoryBlock const&);
     FLR_MemoryBlock();
+
 };
 
-} // namespace RakNet
+}

@@ -6,7 +6,7 @@ class StoreCatalogItemVisualLayer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnka50e48;
+    ::ll::UntypedStorage<8, 8> mUnkb89a06;
     ::ll::UntypedStorage<8, 64> mUnkc2388b;
     // NOLINTEND
 
@@ -15,4 +15,5 @@ public:
     StoreCatalogItemVisualLayer& operator=(StoreCatalogItemVisualLayer const&);
     StoreCatalogItemVisualLayer(StoreCatalogItemVisualLayer const&);
     StoreCatalogItemVisualLayer();
+
 };

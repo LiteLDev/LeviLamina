@@ -19,6 +19,7 @@ public:
     ScopedActiveTracker& operator=(ScopedActiveTracker const&);
     ScopedActiveTracker(ScopedActiveTracker const&);
     ScopedActiveTracker();
+
 };
 
-} // namespace OreUI
+}

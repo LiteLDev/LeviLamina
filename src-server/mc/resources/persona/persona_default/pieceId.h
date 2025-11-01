@@ -22,4 +22,4 @@ MCNAPI ::std::string const& STEVE_TOP_PIECE();
 MCNAPI ::std::add_lvalue_reference_t<char const[]> WAVE_EMOTE();
 // NOLINTEND
 
-} // namespace personaDefault::pieceId
+}

@@ -75,11 +75,7 @@ public:
 
     MCAPI explicit CommandOutput(::CommandOutputType type);
 
-    MCAPI void addMessage(
-        ::std::string const&                           msgId,
-        ::std::vector<::CommandOutputParameter> const& params,
-        ::CommandOutputMessageType                     type
-    );
+    MCAPI void addMessage(::std::string const& msgId, ::std::vector<::CommandOutputParameter> const& params, ::CommandOutputMessageType type);
 
     MCAPI void addToResultList(::std::string const& key, ::Actor const& element);
 
@@ -105,4 +101,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

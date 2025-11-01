@@ -13,7 +13,9 @@ struct BlockDefinitionDocument {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 344> mUnkbb9602;
+    ::ll::UntypedStorage<8, 408> mUnkbb9602;
+    ::ll::UntypedStorage<8, 56> mUnk400d63;
+    ::ll::UntypedStorage<8, 24> mUnk7e6825;
     // NOLINTEND
 
 public:
@@ -27,6 +29,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
+
 };
 
-} // namespace SharedTypes::v1_21_110::BlockDefinition
+}

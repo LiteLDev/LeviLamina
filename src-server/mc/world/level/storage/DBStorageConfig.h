@@ -21,20 +21,20 @@ struct DBStorageConfig {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::Scheduler&>                                             scheduler;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                       fullPath;
-    ::ll::TypedStorage<8, 32, ::std::string>                                           levelId;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                       dbSubfolder;
-    ::ll::TypedStorage<8, 8, ::ContentIdentity const*>                                 contentIdentity;
+    ::ll::TypedStorage<8, 8, ::Scheduler&> scheduler;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> fullPath;
+    ::ll::TypedStorage<8, 32, ::std::string> levelId;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> dbSubfolder;
+    ::ll::TypedStorage<8, 8, ::ContentIdentity const*> contentIdentity;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IContentKeyProvider const>> keyProvider;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::SaveTransactionManager>>    saveTransactionManager;
-    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                               compactionInterval;
-    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                               writeFlushInterval;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Core::FileStorageArea>>              storageArea;
-    ::ll::TypedStorage<1, 1, bool>                                                     enableCompactionListener;
-    ::ll::TypedStorage<1, 1, bool>                                                     enableStorage;
-    ::ll::TypedStorage<1, 1, bool>                                                     enableSnapshots;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelStorageEventing>>                levelStorageEventing;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::SaveTransactionManager>> saveTransactionManager;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> compactionInterval;
+    ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds> writeFlushInterval;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Core::FileStorageArea>> storageArea;
+    ::ll::TypedStorage<1, 1, bool> enableCompactionListener;
+    ::ll::TypedStorage<1, 1, bool> enableStorage;
+    ::ll::TypedStorage<1, 1, bool> enableSnapshots;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelStorageEventing>> levelStorageEventing;
     // NOLINTEND
 
 public:
@@ -51,4 +51,5 @@ public:
     // NOLINTBEGIN
     MCAPI void $dtor();
     // NOLINTEND
+
 };

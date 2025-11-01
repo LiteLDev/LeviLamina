@@ -9,7 +9,7 @@ struct MapInfoRequestPacketPayload {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::ActorUniqueID>                           mMapId;
+    ::ll::TypedStorage<8, 8, ::ActorUniqueID> mMapId;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<uint, ushort>>> mClientPixels;
     // NOLINTEND
 
@@ -39,4 +39,5 @@ public:
     // NOLINTBEGIN
     MCFOLD void $dtor();
     // NOLINTEND
+
 };

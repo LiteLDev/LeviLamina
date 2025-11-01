@@ -17,9 +17,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit FilterStringMap(
-        ::std::initializer_list<::std::pair<::std::string const, ::FilterInputDefinition>> l
-    );
+    MCNAPI explicit FilterStringMap(::std::initializer_list<::std::pair<::std::string const, ::FilterInputDefinition>> l);
 
     MCNAPI ::FilterStringMap& operator=(::FilterStringMap&&);
 
@@ -37,4 +35,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void $dtor();
     // NOLINTEND
+
 };

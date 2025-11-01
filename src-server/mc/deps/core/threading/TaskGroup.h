@@ -8,6 +8,7 @@
 #include "mc/deps/core/threading/IBackgroundTaskOwner.h"
 #include "mc/deps/core/threading/SharedAsync.h"
 #include "mc/deps/core/threading/TaskGroupState.h"
+#include "mc/deps/nether_net/ESessionError.h"
 #include "mc/network/services/signaling/ISignalingServiceConfigProvider.h"
 #include "mc/platform/Copyable.h"
 #include "mc/platform/ErrorInfo.h"
@@ -26,7 +27,8 @@ class Scheduler;
 class TaskResult;
 class WorkerPool;
 class WorldPacksHistoryFile;
-struct AsyncJoinError;
+struct AsyncJoinAllow;
+struct AsyncJoinDeny;
 struct MinecraftServiceKeyInfo;
 struct MinecraftServiceKeysMetadata;
 struct PackSourceLoadResult;
@@ -40,6 +42,8 @@ namespace Bedrock::Services { struct EnvironmentQueryResponse; }
 namespace Bedrock::Threading { class Mutex; }
 namespace Bedrock::Threading { struct CachedAsyncRetry; }
 namespace Json { class Value; }
+namespace JsonRpc { class JsonRpcError; }
+namespace JsonRpc { class TurnConfigResult; }
 namespace MakeCodeFileIO { struct MakeCodeFileIOReadResult; }
 namespace PackCommand { struct PackCommandResult; }
 namespace RepositoryLoading { struct PackModifications; }
@@ -52,11 +56,11 @@ public:
     ::ll::UntypedStorage<8, 24> mUnka60b44;
     ::ll::UntypedStorage<8, 24> mUnk52e5c4;
     ::ll::UntypedStorage<8, 32> mUnkb19a11;
-    ::ll::UntypedStorage<1, 1>  mUnk10d96b;
+    ::ll::UntypedStorage<1, 1> mUnk10d96b;
     ::ll::UntypedStorage<8, 80> mUnk77531a;
-    ::ll::UntypedStorage<4, 4>  mUnk10adf7;
+    ::ll::UntypedStorage<4, 4> mUnk10adf7;
     ::ll::UntypedStorage<8, 16> mUnk5e5b8e;
-    ::ll::UntypedStorage<8, 8>  mUnk5bad41;
+    ::ll::UntypedStorage<8, 8> mUnk5bad41;
     ::ll::UntypedStorage<8, 16> mUnkfe21d9;
     ::ll::UntypedStorage<8, 16> mUnke12816;
     ::ll::UntypedStorage<8, 16> mUnka3e26c;
@@ -73,17 +77,10 @@ public:
     // virtual functions
     // NOLINTBEGIN
     // vIndex: 1
-    virtual ::Bedrock::Threading::Async<void> queue_DEPRECATED(
-        ::TaskStartInfo const&                        startInfo,
-        ::brstd::move_only_function<::TaskResult()>&& task,
-        ::std::function<void()>&&                     callback
-    ) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> queue_DEPRECATED(::TaskStartInfo const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task, ::std::function<void()>&& callback) /*override*/;
 
     // vIndex: 2
-    virtual ::Bedrock::Threading::Async<void> queueSync_DEPRECATED(
-        ::TaskStartInfo const&                        startInfo,
-        ::brstd::move_only_function<::TaskResult()>&& task
-    ) /*override*/;
+    virtual ::Bedrock::Threading::Async<void> queueSync_DEPRECATED(::TaskStartInfo const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task) /*override*/;
 
     // vIndex: 0
     virtual ~TaskGroup() /*override*/;
@@ -114,10 +111,7 @@ public:
 
     MCNAPI void _doWorkUntil(::Bedrock::Threading::SharedAsync<void> task, ::std::promise<void>* workStarted);
 
-    MCNAPI void _forAllTasks(
-        ::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>&        lock,
-        ::std::function<void(::std::shared_ptr<::BackgroundTaskBase> const&)> callback
-    );
+    MCNAPI void _forAllTasks(::Bedrock::Threading::UniqueLock<::Bedrock::Threading::Mutex>& lock, ::std::function<void(::std::shared_ptr<::BackgroundTaskBase> const&)> callback);
 
     MCNAPI void _queueInternal(::std::shared_ptr<::BackgroundTaskBase> bgtask);
 
@@ -149,14 +143,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Threading::Async<void> $queue_DEPRECATED(
-        ::TaskStartInfo const&                        startInfo,
-        ::brstd::move_only_function<::TaskResult()>&& task,
-        ::std::function<void()>&&                     callback
-    );
+    MCNAPI ::Bedrock::Threading::Async<void> $queue_DEPRECATED(::TaskStartInfo const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task, ::std::function<void()>&& callback);
 
-    MCNAPI ::Bedrock::Threading::Async<void>
-    $queueSync_DEPRECATED(::TaskStartInfo const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task);
+    MCNAPI ::Bedrock::Threading::Async<void> $queueSync_DEPRECATED(::TaskStartInfo const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task);
 
     MCNAPI void $taskRegister(::std::shared_ptr<::BackgroundTaskBase> task);
 
@@ -176,4 +165,5 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftable();
     // NOLINTEND
+
 };

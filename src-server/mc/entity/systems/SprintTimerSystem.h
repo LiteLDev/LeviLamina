@@ -13,4 +13,4 @@ namespace SprintTimerSystem {
 MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
-} // namespace SprintTimerSystem
+}

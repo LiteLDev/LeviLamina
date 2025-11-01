@@ -9,7 +9,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 40> mUnk92312f;
-    ::ll::UntypedStorage<8, 32> mUnk926e3f;
+    ::ll::UntypedStorage<8, 64> mUnk8a5135;
     // NOLINTEND
 
 public:
@@ -17,6 +17,7 @@ public:
     EduFetchServersResponse& operator=(EduFetchServersResponse const&);
     EduFetchServersResponse(EduFetchServersResponse const&);
     EduFetchServersResponse();
+
 };
 
-} // namespace Social
+}

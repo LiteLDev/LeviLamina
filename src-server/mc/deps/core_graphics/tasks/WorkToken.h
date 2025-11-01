@@ -16,6 +16,7 @@ public:
     WorkToken& operator=(WorkToken const&);
     WorkToken(WorkToken const&);
     WorkToken();
+
 };
 
-} // namespace cg::details
+}

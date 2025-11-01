@@ -8,7 +8,7 @@ class ProfileSectionGroup {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8> mUnkaf1be4;
+    ::ll::UntypedStorage<8, 8> mUnkeb9438;
     ::ll::UntypedStorage<1, 1> mUnkf8f57a;
     // NOLINTEND
 
@@ -17,6 +17,7 @@ public:
     ProfileSectionGroup& operator=(ProfileSectionGroup const&);
     ProfileSectionGroup(ProfileSectionGroup const&);
     ProfileSectionGroup();
+
 };
 
-} // namespace Core::Profile
+}

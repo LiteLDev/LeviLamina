@@ -33,4 +33,5 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::XAsyncBlock* asyncBlock);
     // NOLINTEND
+
 };

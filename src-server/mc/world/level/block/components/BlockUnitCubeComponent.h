@@ -13,4 +13,5 @@ public:
     // NOLINTBEGIN
     MCAPI static ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>& mBlockSchematic();
     // NOLINTEND
+
 };

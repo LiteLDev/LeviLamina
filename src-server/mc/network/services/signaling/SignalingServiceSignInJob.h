@@ -9,19 +9,20 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace NetherNet { struct NetworkID; }
 namespace NetherNet::LanEvents { struct MessageReceived; }
 namespace NetherNet::LanEvents { struct MessageSent; }
 // clang-format on
 
-class SignalingServiceSignInJob : public ::NetherNet::ILanEventHandler,
-                                  public ::std::enable_shared_from_this<::SignalingServiceSignInJob> {
+class SignalingServiceSignInJob : public ::NetherNet::ILanEventHandler, public ::std::enable_shared_from_this<::SignalingServiceSignInJob> {
 public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24> mUnk5e1ef6;
-    ::ll::UntypedStorage<8, 24> mUnk79b023;
-    ::ll::UntypedStorage<8, 8>  mUnk2f768f;
+    ::ll::UntypedStorage<8, 16> mUnk503029;
+    ::ll::UntypedStorage<8, 8> mUnk2f768f;
+    ::ll::UntypedStorage<8, 48> mUnk63e84c;
+    ::ll::UntypedStorage<8, 16> mUnk3d4965;
+    ::ll::UntypedStorage<1, 1> mUnkabebe1;
     ::ll::UntypedStorage<8, 16> mUnk3ab861;
     // NOLINTEND
 
@@ -47,14 +48,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _handleSignInResult(
-        ::std::error_code                                       error,
-        ::Bedrock::Threading::AsyncPromise<::std::error_code>&& signInPromise,
-        bool                                                    fetchRelayConfig
-    ) const;
+    MCNAPI void _handleSignInResult(::std::error_code error, ::Bedrock::Threading::AsyncPromise<::std::error_code>&& signInPromise, bool fetchRelayConfig) const;
 
-    MCNAPI ::Bedrock::Threading::Async<::std::error_code>
-    signin(bool fetchRelayConfig, ::std::optional<::NetherNet::NetworkID> playerMessagingId) const;
+    MCNAPI ::Bedrock::Threading::Async<::std::error_code> signin(bool fetchRelayConfig);
     // NOLINTEND
 
 public:
@@ -62,4 +58,5 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };

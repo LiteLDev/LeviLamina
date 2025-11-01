@@ -21,6 +21,7 @@ public:
     RenderFeaturesConfiguration& operator=(RenderFeaturesConfiguration const&);
     RenderFeaturesConfiguration(RenderFeaturesConfiguration const&);
     RenderFeaturesConfiguration();
+
 };
 
-} // namespace cg
+}

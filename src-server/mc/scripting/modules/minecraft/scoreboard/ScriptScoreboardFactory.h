@@ -18,9 +18,9 @@ class ScriptScoreboardFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboard>
-    getHandle(::Scripting::WeakLifetimeScope& scope, ::Level& level);
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboard> getHandle(::Scripting::WeakLifetimeScope& scope, ::Level& level);
     // NOLINTEND
+
 };
 
-} // namespace ScriptModuleMinecraft
+}

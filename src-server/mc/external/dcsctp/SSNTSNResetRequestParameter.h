@@ -13,8 +13,7 @@ namespace dcsctp { struct SSNTSNResetRequestParameterConfig; }
 
 namespace dcsctp {
 
-class SSNTSNResetRequestParameter : public ::dcsctp::Parameter,
-                                    public ::dcsctp::TLVTrait<::dcsctp::SSNTSNResetRequestParameterConfig> {
+class SSNTSNResetRequestParameter : public ::dcsctp::Parameter, public ::dcsctp::TLVTrait<::dcsctp::SSNTSNResetRequestParameterConfig> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -45,6 +44,7 @@ public:
     // NOLINTBEGIN
 
     // NOLINTEND
+
 };
 
-} // namespace dcsctp
+}
